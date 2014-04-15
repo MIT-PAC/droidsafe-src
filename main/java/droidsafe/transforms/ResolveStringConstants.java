@@ -9,6 +9,7 @@ import droidsafe.android.app.resources.RString;
 import droidsafe.android.app.resources.RStringArray;
 import droidsafe.android.system.API;
 import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
 import java.util.Arrays;
@@ -181,7 +182,7 @@ public class ResolveStringConstants extends BodyTransformer {
     protected void inspectAndReplaceCalls(Chain<Unit> units, AssignStmt parent, InvokeExpr expr,
                                           HashMap<String, RString> stringNameToRString,
                                           HashMap<String, RStringArray> stringArrayNameToRStringArray) {
-        Collection<SootMethod> targets = getTargets(expr);
+        Collection<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(parent);
 
         for (SootMethod target : targets) {
             boolean replaced = false;
@@ -268,28 +269,5 @@ public class ResolveStringConstants extends BodyTransformer {
             if (replaced) 
                 return;
         }
-    }
-
-
-    /**
-     * Given an invoke expression, return the set of methods that could possibly be called. 
-     */
-    private Collection<SootMethod> getTargets(InvokeExpr expr) {
-        if (expr instanceof InstanceInvokeExpr) {
-            try {
-                return PTABridge.v().resolveInstanceInvokeIns((InstanceInvokeExpr)expr);
-            } catch (CannotFindMethodException e) {
-               logger.error("Error resolving virtual call: {}", e);
-               droidsafe.main.Main.exit(1);
-            }
-        } else if (expr instanceof StaticInvokeExpr) {
-            Set<SootMethod> method = new HashSet<SootMethod>();
-            method.add(((StaticInvokeExpr)expr).getMethod());
-            return method;
-        } else {
-            logger.error("Unknown invoke expr {}", expr);
-            droidsafe.main.Main.exit(1);
-        }
-        return null;
     }
 }

@@ -1,6 +1,7 @@
 package droidsafe.transforms.va;
 
 import droidsafe.analyses.pta.PTABridge;
+import droidsafe.reports.UnresolvedICC;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 
@@ -68,16 +69,24 @@ public class VATransformsSuite  {
                     continue;
                 InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
 
+                boolean handled = false;
+                boolean resolvesToIPCSink = false;
+                
                 for (VATransform transform : transforms) { 
-                    try {
-                        for (SootMethod callee : PTABridge.v().resolveInvokeIns(invokeExpr)) {
-                            if (isInvokeCandidateForTransform(transform, callee))
-                                transform.tranformsInvoke(containingMthd, callee, invokeExpr, stmt, stmtBody);
-                        } 
-                    } catch (CannotFindMethodException e) {
-                        continue;
-                    }
-                }                
+                    for (SootMethod callee : PTABridge.v().getTargetsInsNoContext(containingMthd, stmt)) {
+                        if (API.v().isIPCSink(callee)) {
+                            resolvesToIPCSink = true;
+                        }
+
+                        if (isInvokeCandidateForTransform(transform, callee)) {
+                            handled = true;
+                            transform.tranformsInvoke(containingMthd, callee, invokeExpr, stmt, stmtBody);
+                        }
+                    } 
+                }     
+                
+                if (!handled && resolvesToIPCSink && !API.v().isSystemMethod(containingMthd)) 
+                    UnresolvedICC.v().addInfo(stmt);
             }
         }
     }

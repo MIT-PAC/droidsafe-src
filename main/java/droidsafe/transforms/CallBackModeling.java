@@ -144,7 +144,7 @@ public class CallBackModeling {
                 //a parent
                 if (API.v().isSystemMethod(method) || 
                         PTABridge.v().isReachableMethod(method) || 
-                        !Hierarchy.isImplementedSystemMethod(method))
+                        (!Hierarchy.isImplementedSystemMethod(method) && !API.v().isIPCCallback(method)))
                     continue;
 
                 //find system method that is inherited

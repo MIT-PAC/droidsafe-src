@@ -91,7 +91,7 @@ class StartActivityTransform implements VATransform {
             return;
             
 
-        for (SootField activityField : IntentUtils.v().getIntentActivityTargetHarnessFields(intentNodes)) {
+        for (SootField activityField : IntentUtils.v().getIntentActivityTargetHarnessFields(stmt, intentNodes)) {
             logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
             //call set intent on these activities with local   
 

@@ -24,6 +24,7 @@ import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 import soot.Body;
 import soot.Local;
+import soot.MethodOrMethodContext;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
@@ -72,41 +73,38 @@ public class BroadcastReceiverTransform implements VATransform {
                 if (!stmt.containsInvokeExpr())
                     continue;
                 InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
-                try {
-                    for (SootMethod callee : PTABridge.v().resolveInvokeIns(invokeExpr)) {                        
-                        if (sigsOfRegisterReceiver().contains(callee.getSignature())) {
-                            //arg 0 classes -> string of arg 1 intent filters
-                            List<String> actions = 
-                                    VAUtils.<String>getAnyVAValuesForField(
-                                        (Set<IAllocNode>)PTABridge.v().getPTSetIns(invokeExpr.getArg(1)), 
-                                            "mActions");
+                
+                for (SootMethod callee : PTABridge.v().getTargetsInsNoContext(containingMthd, stmt)) {                        
+                    if (sigsOfRegisterReceiver().contains(callee.getSignature())) {
+                        //arg 0 classes -> string of arg 1 intent filters
+                        List<String> actions = 
+                                VAUtils.<String>getAnyVAValuesForField(
+                                    (Set<IAllocNode>)PTABridge.v().getPTSetIns(invokeExpr.getArg(1)), 
+                                    "mActions");
 
-                            //build list of BroadcastReceiver classes that could be referenced in the 0th argument
-                            //these are the receivers we are registering
-                            List<SootClass> brs = new LinkedList<SootClass>();
-                            for (IAllocNode node : PTABridge.v().getPTSetIns(invokeExpr.getArg(0))) {
-                                if (node.getType() instanceof RefType) {
-                                    SootClass clz = ((RefType)node.getType()).getSootClass(); 
-                                    brs.add(clz);
-                                 
-                                }
-                            }
+                        //build list of BroadcastReceiver classes that could be referenced in the 0th argument
+                        //these are the receivers we are registering
+                        List<SootClass> brs = new LinkedList<SootClass>();
+                        for (IAllocNode node : PTABridge.v().getPTSetIns(invokeExpr.getArg(0))) {
+                            if (node.getType() instanceof RefType) {
+                                SootClass clz = ((RefType)node.getType()).getSootClass(); 
+                                brs.add(clz);
 
-                            for (String action : actions) {
-                                //associate with sootclass of arg 0
-                                for (SootClass clz : brs) {
-                                    if (!filterActionsToClass.containsKey(action)) {
-                                        filterActionsToClass.put(action, new HashSet<SootClass>());
-                                    }
-                                    filterActionsToClass.get(action).add(clz);
-                                    logger.info("Mapping BroadcastReceiver: {} -> {}", action, clz);
-                                }
                             }
                         }
-                    } 
-                } catch (CannotFindMethodException e) {
-                    continue;
-                }
+
+                        for (String action : actions) {
+                            //associate with sootclass of arg 0
+                            for (SootClass clz : brs) {
+                                if (!filterActionsToClass.containsKey(action)) {
+                                    filterActionsToClass.put(action, new HashSet<SootClass>());
+                                }
+                                filterActionsToClass.get(action).add(clz);
+                                logger.info("Mapping BroadcastReceiver: {} -> {}", action, clz);
+                            }
+                        }
+                    }
+                } 
             }                
         }
     }
@@ -131,22 +129,22 @@ public class BroadcastReceiverTransform implements VATransform {
         Set<IAllocNode> intentNodes;
 
         intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
-        
+
         //find actions strings of intents
         List<String> intentActions = VAUtils.<String>getAnyVAValuesForField(intentNodes, "mAction");
-        
+
         for (String action : intentActions) {
             if (!filterActionsToClass.containsKey(action))
                 continue;
-            
+
             for (SootClass target : filterActionsToClass.get(action)) {
                 //report in ICC json report
                 ICCMap.v().addInfo(containingMthd.getDeclaringClass(), target, stmt);
-                
+
                 SootField brField = Harness.v().getFieldForCreatedClass(target);
                 if (brField == null)
                     continue;
-                
+
                 logger.info("Adding onReceive call in {} to {}", JimpleRelationships.v().getEnclosingMethod(stmt), brField);
                 //call set intent on these activities with local   
 
@@ -174,7 +172,7 @@ public class BroadcastReceiverTransform implements VATransform {
                 RCFG.v().ignoreInvokeForOutputEvents(onReceiveCall);
             }
         }
-       
+
     }
 
     @Override
@@ -195,7 +193,7 @@ public class BroadcastReceiverTransform implements VATransform {
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendOrderedBroadcast(android.content.Intent,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendStickyBroadcast(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendStickyOrderedBroadcast(android.content.Intent,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
-            
+
             sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendBroadcast(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendBroadcast(android.content.Intent,java.lang.String)>");
             sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendOrderedBroadcast(android.content.Intent,java.lang.String)>");

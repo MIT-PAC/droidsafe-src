@@ -64,7 +64,7 @@ public class StartServiceTransform implements VATransform {
 
         intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
        
-        for (SootField serviceField : IntentUtils.v().getIntentServiceTargetHarnessFields(intentNodes)) {
+        for (SootField serviceField : IntentUtils.v().getIntentServiceTargetHarnessFields(stmt, intentNodes)) {
             logger.info("Adding onStartCommand call in {} to {}", JimpleRelationships.v().getEnclosingMethod(stmt), serviceField);
             //call set intent on these activities with local   
 

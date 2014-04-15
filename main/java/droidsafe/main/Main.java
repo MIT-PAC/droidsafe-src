@@ -29,6 +29,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.AutomatedSourceTagging;
 import droidsafe.android.system.Permissions;
 import droidsafe.reports.ICCMap;
+import droidsafe.reports.UnresolvedICC;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
@@ -145,7 +146,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-       driverMsg("Calling scalar optimizations.");
+        driverMsg("Calling scalar optimizations.");
         monitor.subTask("Scalar Optimization");
         ScalarAppOptimizations.run();
         monitor.worked(1);
@@ -255,9 +256,9 @@ public class Main {
         {
             //patch in messages
             //ServiceTransforms.v().run();
-            
+
         }
-        
+
         //add fallback object modeling for any value from the api that leaks into user
         //code as null    
         if (Config.v().addFallbackModeling) {
@@ -281,16 +282,16 @@ public class Main {
 
             // Search for catch blocks
             if (Config.v().runCatchBlocksFast) {
-            	driverMsg ("Searching for catch blocks (fast)");
-            	StopWatch cbtimer = new StopWatch();
-            	cbtimer.start();
-            	CatchBlocks cb = new CatchBlocks();
-            	cb.run();
-            	cbtimer.stop();
-            	driverMsg ("Finished Catch Block Analysis: " + cbtimer);
-            	System.exit (0);
+                driverMsg ("Searching for catch blocks (fast)");
+                StopWatch cbtimer = new StopWatch();
+                cbtimer.start();
+                CatchBlocks cb = new CatchBlocks();
+                cb.run();
+                cbtimer.stop();
+                driverMsg ("Finished Catch Block Analysis: " + cbtimer);
+                System.exit (0);
             } else {
-            	driverMsg ("no catch block run");
+                driverMsg ("no catch block run");
             }
 
             if (Config.v().dumpCallGraph) {
@@ -305,18 +306,7 @@ public class Main {
 
         if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-        
-        // Search for catch blocks
-        if (Config.v().runCatchBlocks) {
-            driverMsg ("Searching for catch blocks (precise)");
-            StopWatch cbtimer = new StopWatch();
-            cbtimer.start();
-            CatchBlocks cb = new CatchBlocks();
-            cb.run();
-            cbtimer.stop();
-            driverMsg ("Finished Catch Block Analysis: " + cbtimer);
-        }
-       
+
         //new TestPTA();
 
         driverMsg("Starting Generate RCFG...");
@@ -357,7 +347,7 @@ public class Main {
         if (Config.v().debug) {
             writeSrcAndGeneratedJimple();
         }
-        
+
 
         if (Config.v().writeJimpleAppClasses) {
             driverMsg("Writing Jimple Classes.");
@@ -368,7 +358,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
+
         writeJSONReports();
 
         if (Config.v().infoFlow) {
@@ -515,9 +505,29 @@ public class Main {
     }
 
     private static void writeJSONReports() {
-        ICCMap.v().toJSON(Project.v().getOutputDir());
+        try {
+            ICCMap.v().toJSON(Project.v().getOutputDir());
+            UnresolvedICC.v().toJSON(Project.v().getOutputDir());
+        } catch (Exception e) {
+            logger.error("Error writing json indicator, ignoring and moving on...", e);
+        }
+        
+        
+        try {
+            driverMsg ("Searching for catch blocks (precise)");
+            StopWatch cbtimer = new StopWatch();
+            cbtimer.start();
+            CatchBlocks cb = new CatchBlocks();
+            cb.run();
+            cbtimer.stop();
+            driverMsg ("Finished Catch Block Analysis: " + cbtimer);
+        } catch (Exception e) {
+            logger.error("Error writing json indicator, ignoring and moving on...", e);
+        }
+
+
     }
-    
+
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
         if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -544,7 +554,7 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-               
+
         //need this pta run to account for jsa injection and class / forname
         if (afterTransformPrecise(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -633,7 +643,7 @@ public class Main {
 
         return afterTransform(monitor, recordTime, opts);
     }
-    
+
     public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime) {
         Map<String,String> opts = new HashMap<String,String>();
 
@@ -700,7 +710,7 @@ public class Main {
             }
         }
     }
-    
+
     /**
      * Dump jimple files for all application classes.
      */

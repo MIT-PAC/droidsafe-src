@@ -963,6 +963,22 @@ public class SootUtils {
         else 
             return type;
     }
+    
+    /**
+     * Given a type of a receiver, get the sootclass that will be used to resolve calls
+     * for this type
+     */
+    public static SootClass getCallingTypeForReceiver(RefLikeType type) {
+        if (type instanceof RefType) {
+            return ((RefType)type).getSootClass();
+        } else if (type instanceof ArrayType) {
+            return Scene.v().getSootClass("java.lang.Object");
+        } else {
+            logger.error("Calling getCallingType() with {}", type.getClass());
+        }
+            
+        return null;        
+    }
 
     /**
      * Try to grab an instance invoke expr from a statement, if it does not

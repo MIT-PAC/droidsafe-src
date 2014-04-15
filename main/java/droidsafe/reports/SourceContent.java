@@ -1,5 +1,6 @@
 package droidsafe.reports;
 
+import soot.SootClass;
 import soot.SootMethod;
 import soot.jimple.Stmt;
 

@@ -45,27 +45,25 @@ public class ICCMap {
         indicator = new Indicator<TopLevelContent>("ICC: Resolved Map");
         indicator.addVisibility("icc_source");
         
-        indicator.addDisplay("dest");
-        indicator.addDisplay("src");
      }
     
     private class TopLevelContent {
         String type = "icc_source";
-        String src;
+        String label;
         ArrayList<InnerContent> contents = new ArrayList<InnerContent>();        
 
         
         public TopLevelContent(String src) {
-            this.src = src;
+            this.label = src;
         }
     }
     
     private class InnerContent extends SourceContent {
         String type = "icc_dest";
-        String dest;
+        String label;
         
         public InnerContent(String dest, Stmt genStmt) {
-            this.dest = dest;
+            this.label = "Destination: " + dest;
             this.setSource(genStmt);
         }
     }

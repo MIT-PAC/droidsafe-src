@@ -293,7 +293,9 @@ public class Method implements Comparable<Method> {
         for (String str : Permissions.v().getPermissions(sootMethod)) 
             ret.append("// Requires permission: " + str + "\n");
 
-
+        if (API.v().isIPCCallback(sootMethod)) {
+            ret.append("// Possible IPC callback method\n");
+        }
 
         if (!getSourcesInfoKinds().isEmpty()) {
             //print resolved high-level information flows
@@ -566,19 +568,17 @@ public class Method implements Comparable<Method> {
             InvokeExpr invoke = stmt.getInvokeExpr();
             //for each of the targets see if they have an Info Kind
 
-            try {
-                //TODO: CONTEXT HERE FROM THE INFOVALUE
-                Collection<SootMethod> targets = 
-                        PTABridge.v().resolveInvokeIns(invoke);
 
-                for (SootMethod target : targets) { 
-                    for (InfoKind kind : API.v().getSourceInfoKinds(target)) {
-                        srcKinds.add(kind);
-                    }
+            //TODO: CONTEXT HERE FROM THE INFOVALUE
+            Collection<SootMethod> targets = 
+                    PTABridge.v().getTargetsInsNoContext(stmt);
+
+            for (SootMethod target : targets) { 
+                for (InfoKind kind : API.v().getSourceInfoKinds(target)) {
+                    srcKinds.add(kind);
                 }
-            } catch (CannotFindMethodException e) {
-
             }
+
         } else if (iv instanceof InfoKind) {
             srcKinds.add((InfoKind)iv);
         } else {

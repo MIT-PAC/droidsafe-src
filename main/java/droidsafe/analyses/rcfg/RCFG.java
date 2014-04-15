@@ -118,7 +118,7 @@ public class RCFG  {
 
         //print unreachable methods to the debug log
         v().printReachableMethods();
-        
+
         //System.out.println(v().toString());
     }
 
@@ -129,7 +129,7 @@ public class RCFG  {
         for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
             SootMethod sootMethod = momc.method();
             Context context = momc.context();
-            
+
             //don't do anything for system methods
             if (API.v().isSystemMethod(sootMethod))
                 continue;
@@ -137,7 +137,7 @@ public class RCFG  {
             visitedMethods.add(sootMethod);
 
             logger.info("RCFG: looking at method {}", momc);
-            
+
             Iterator<Edge> incomingEdges = cg.edgesInto(momc);
             while (incomingEdges.hasNext()) {
                 Edge incomingEdge = incomingEdges.next();
@@ -188,11 +188,11 @@ public class RCFG  {
             //iterate over all the ci edges from soot, and check to see
             //if they are valid given the context
             while (ciEdges.hasNext()) {
-                
+
                 Edge outgoingEdge = ciEdges.next();
 
                 logger.info("Looking at edge: {}", outgoingEdge);
-                
+
                 SootMethod calleeMethod = outgoingEdge.tgt();
 
                 if (API.v().isSystemMethod(calleeMethod)) {
@@ -269,9 +269,9 @@ public class RCFG  {
         /*System.out.printf("Checking for output edge: %s %s %s %s\n", callee, API.v().isSystemMethod(callee), 
             !API.v().isSystemMethod(caller),
             API.v().isInterestingMethod(callee));
-        
+
         System.out.println("\t" + callEdge.srcStmt());*/
-        
+
         if (API.v().isSystemMethod(callee) && 
                 !API.v().isSystemMethod(caller) && 
                 API.v().reportInSpec(callee) &&
@@ -279,51 +279,51 @@ public class RCFG  {
                 !ignoreSet.contains(callEdge.srcStmt())) {
 
             RCFGNode node = getNodeForEntryEdge(eventEdge);
-            
+
             Context context = callEdge.srcCtxt();
-            
+
             SourceLocationTag line = 
                     SootUtils.getSourceLocation(callEdge.srcStmt(), callEdge.src().getDeclaringClass());
 
             InvokeExpr invoke = callEdge.srcStmt().getInvokeExpr();
             if (invoke instanceof InstanceInvokeExpr) {
                 InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
-                try {
-                    //use the pta to find all the alloc nodes for the source call
-                    //for each, see if they map to the destination method, if they do,
-                    //create the output event
-                    for (Map.Entry<IAllocNode, SootMethod> entry : 
-                        PTABridge.v().resolveInstanceInvokeMap(iie, context).entrySet()) {
-                        //System.out.printf("\t %s %s %s\n", entry.getKey(), entry.getValue(), callee);
-                        //System.out.println("\tReachable: " + Scene.v().getReachableMethods().contains(entry.getValue()));
-                        if (entry.getValue().equals(callee)) {
-                            if (debug)
-                                System.out.println(entry.getKey());
 
-                            if (node.hasOutputEventEdge(callEdge)) {
-                                //we already have added an output event for this call site, so just add
-                                //the new allocnode
-                                OutputEvent oe = node.getOutputEvent(callEdge);
-                                oe.addReceiverNode(entry.getKey());
-                            } else {
-                                //new output event that we have not seen, create output event and install it
-                                OutputEvent oe = new OutputEvent(callEdge, node, line);
-                                logger.debug("Found output event: {}", callEdge.tgt());
-                                oe.addReceiverNode(entry.getKey());
-                                node.addOutputEvent(callEdge, oe);
-                                apiCallNodes.addAll(oe.getAllArgsPTSet());
-                            }
+                //use the pta to find all the alloc nodes for the source call
+                //for each, see if they map to the destination method, if they do,
+                //create the output event
+                for (IAllocNode allocNode : PTABridge.v().getPTSet(iie.getBase(), context)) {
+                    //System.out.printf("\t %s %s %s\n", entry.getKey(), entry.getValue(), callee);
+                    //System.out.println("\tReachable: " + Scene.v().getReachableMethods().contains(entry.getValue()));
 
-                            //remember interesting alloc nodes
-                            apiCallNodes.add(entry.getKey());                            
+                    SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(
+                        SootUtils.getCallingTypeForReceiver((RefLikeType)allocNode.getType()), 
+                        iie.getMethod());
+
+                    if (resolved.equals(callee)) {
+                        if (debug)
+                            System.out.println(allocNode);
+
+                        if (node.hasOutputEventEdge(callEdge)) {
+                            //we already have added an output event for this call site, so just add
+                            //the new allocnode
+                            OutputEvent oe = node.getOutputEvent(callEdge);
+                            oe.addReceiverNode(allocNode);
+                        } else {
+                            //new output event that we have not seen, create output event and install it
+                            OutputEvent oe = new OutputEvent(callEdge, node, line);
+                            logger.debug("Found output event: {}", callEdge.tgt());
+                            oe.addReceiverNode(allocNode);
+                            node.addOutputEvent(callEdge, oe);
+                            apiCallNodes.addAll(oe.getAllArgsPTSet());
                         }
 
+                        //remember interesting alloc nodes
+                        apiCallNodes.add(allocNode);                            
                     }
-                } catch (CannotFindMethodException e) {
-                    logger.error("Could not find a possible target for a call (RCFG): {} in {}", iie, 
-                        callEdge.getSrc());
-                    droidsafe.main.Main.exit(1);
+
                 }
+
             } else {
                 if (!node.hasOutputEventEdge(callEdge)) {
                     OutputEvent oe = new OutputEvent(callEdge, node, line);
@@ -335,7 +335,7 @@ public class RCFG  {
         }
     }
 
- 
+
     /**
      * Find and return a string of all invoke statements that could invoke an API call.
      */
@@ -385,7 +385,7 @@ public class RCFG  {
 
             for (MethodOrMethodContext mc : PTABridge.v().getReachableMethodContexts()) {
                 SootMethod method = mc.method();
-                
+
                 if (!API.v().isSystemMethod(method) || 
                         method.getDeclaringClass().getName().startsWith("droidsafe.generated")) {
                     fw.write(mc + "\n");
@@ -399,7 +399,7 @@ public class RCFG  {
                     while (edges.hasNext()){
                         fw.write("\t" + edges.next() + "\n");
                     } 
-                    */      
+                     */      
                     fw.write("\n");
                 }
             }

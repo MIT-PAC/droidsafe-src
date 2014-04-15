@@ -15,6 +15,8 @@ import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.JimpleRelationships;
+import droidsafe.utils.SootUtils;
+import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
@@ -45,7 +47,7 @@ public class FindAPICallsWithNonLocalEffects {
 
         receiverToReturns = new HashMap<ReceiverTarget, Set<IAllocNode>>();
         receiverToArgs = new HashMap<ReceiverTarget, Set<IAllocNode>>();
-        
+
     }
 
     public void run() {
@@ -54,7 +56,7 @@ public class FindAPICallsWithNonLocalEffects {
         for (SootMethod method : PTABridge.v().getReachableMethods()) {
             if (API.v().isSystemMethod(method)) 
                 continue;
-            
+
             if (method.isAbstract() || method.isPhantom() || !method.isConcrete())
                 continue;
 
@@ -75,7 +77,7 @@ public class FindAPICallsWithNonLocalEffects {
                 try {
                     //for nonlocals
                     boolean found = false;
-                    for (SootMethod target : PTABridge.v().resolveInvokeIns(invoke)) {
+                    for (SootMethod target : PTABridge.v().getTargetsInsNoContext(method, stmt)) {
                         if (!API.v().isSystemMethod(target))
                             continue;
 
@@ -109,72 +111,75 @@ public class FindAPICallsWithNonLocalEffects {
                                 if (!(an.getNewExpr() instanceof NewExpr))
                                     continue;
                                 SootClass enclosingC =  ((NewExpr)an.getNewExpr()).getBaseType().getSootClass();
-                                        
-                                
+
+
                                 if (!PTABridge.v().shouldIgnoreForStats(enclosingC))
                                     returnNodes.add(an);
                             }
-                            
-                            
+
+
                             Set<IAllocNode> argNodes = new HashSet<IAllocNode>();
                             //now for args:
-                            for (Value arg : invoke.getArgs()) {
-                                if (!(arg.getType() instanceof RefType) || arg instanceof Constant)
-                                    continue;
-                                for (IAllocNode an : PTABridge.v().getPTSetIns(arg)) {
-                                    if (!(an.getNewExpr() instanceof NewExpr))
+                                for (Value arg : invoke.getArgs()) {
+                                    if (!(arg.getType() instanceof RefType) || arg instanceof Constant)
                                         continue;
-                                    SootClass enclosingC =  ((NewExpr)an.getNewExpr()).getBaseType().getSootClass();
-                                            
-                                    
-                                    if (!PTABridge.v().shouldIgnoreForStats(enclosingC))
-                                        argNodes.add(an);
+                                    for (IAllocNode an : PTABridge.v().getPTSetIns(arg)) {
+                                        if (!(an.getNewExpr() instanceof NewExpr))
+                                            continue;
+                                        SootClass enclosingC =  ((NewExpr)an.getNewExpr()).getBaseType().getSootClass();
+
+
+                                        if (!PTABridge.v().shouldIgnoreForStats(enclosingC))
+                                            argNodes.add(an);
+                                    }
                                 }
-                            }
-                            
-                            //cull return node
 
-                            for (Map.Entry<IAllocNode,SootMethod> entry : PTABridge.v().resolveInstanceInvokeMapIns((InstanceInvokeExpr)invoke).entrySet()) {
-                                SootMethod target = entry.getValue();
-                                IAllocNode receiver = entry.getKey();
-                                
-                                if (!(receiver.getNewExpr() instanceof NewExpr))
-                                    continue;
-                                                                
-                                SootClass receiverClass = ((NewExpr)receiver.getNewExpr()).getBaseType().getSootClass();
-                                
-                                if (PTABridge.v().shouldIgnoreForStats(receiverClass))
-                                    continue;
-                                
-                               
-                                if (!API.v().isSystemMethod(target) || !API.v().isSystemClass(receiverClass)) 
-                                    continue;
-                                
-                                ReceiverTarget recTar = new ReceiverTarget(receiver, target); 
-                                
-                                if (!receiverToReturns.containsKey(recTar)) 
-                                    receiverToReturns.put(recTar, new HashSet<IAllocNode>());
-                                
-                                receiverToReturns.get(recTar).addAll(returnNodes);
-                                
-                           
-                                if (!receiverToArgs.containsKey(recTar)) 
-                                    receiverToArgs.put(recTar, new HashSet<IAllocNode>());
-                                        
-                                receiverToArgs.get(recTar).addAll(argNodes);
+                                //cull return node
 
-                            }
+                                for (SootMethod target : PTABridge.v().getTargetsInsNoContext(method, stmt)) {
+                                    for (IAllocNode receiver : PTABridge.v().getPTSetIns(((InstanceInvokeExpr)invoke).getBase())) {
+                                        if (!target.equals(Scene.v().getActiveHierarchy().resolveConcreteDispatch(
+                                            SootUtils.getCallingTypeForReceiver((RefLikeType)receiver.getType()), 
+                                            invoke.getMethod())))
+                                            continue;
 
+                                        if (!(receiver.getNewExpr() instanceof NewExpr))
+                                            continue;
+
+                                        SootClass receiverClass = ((NewExpr)receiver.getNewExpr()).getBaseType().getSootClass();
+
+                                        if (PTABridge.v().shouldIgnoreForStats(receiverClass))
+                                            continue;
+
+
+                                        if (!API.v().isSystemMethod(target) || !API.v().isSystemClass(receiverClass)) 
+                                            continue;
+
+                                        ReceiverTarget recTar = new ReceiverTarget(receiver, target); 
+
+                                        if (!receiverToReturns.containsKey(recTar)) 
+                                            receiverToReturns.put(recTar, new HashSet<IAllocNode>());
+
+                                        receiverToReturns.get(recTar).addAll(returnNodes);
+
+
+                                        if (!receiverToArgs.containsKey(recTar)) 
+                                            receiverToArgs.put(recTar, new HashSet<IAllocNode>());
+
+                                        receiverToArgs.get(recTar).addAll(argNodes);
+
+                                    }
+                                }
                         }
                     }
-                  
+
                 } catch (Exception e) {
                     //ignore
                     e.printStackTrace();
                 }
             }
-            
-            
+
+
 
         }
         try {
@@ -192,18 +197,18 @@ public class FindAPICallsWithNonLocalEffects {
         int intersections = 0;
         Set<ReceiverTarget> receiverTargets = new HashSet<ReceiverTarget>();
         receiverTargets.addAll(receiverToReturns.keySet());
-                
+
         Set<ReceiverTarget> completed = new HashSet<ReceiverTarget>();
         for (ReceiverTarget recTar : receiverTargets) {
-            
+
             for (ReceiverTarget otherRecTar : receiverToReturns.keySet()) {
                 if (completed.contains(recTar))
                     continue;
-                
+
                 if (!recTar.receiver.equals(otherRecTar.receiver)) {
                     Set<IAllocNode> intersection = new HashSet<IAllocNode>(receiverToReturns.get(recTar));
                     intersection.retainAll(receiverToReturns.get(otherRecTar));
-                    
+
                     if (!intersection.isEmpty()) {
                         //found something!
                         fw.write(String.format("%s.%s and %s.%s share return allocnode.\n", recTar.receiver, recTar.target, otherRecTar.receiver, otherRecTar.target));
@@ -213,20 +218,20 @@ public class FindAPICallsWithNonLocalEffects {
             }
             completed.add(recTar);
         }
-        
+
         receiverTargets = new HashSet<ReceiverTarget>();
         receiverTargets.addAll(receiverToArgs.keySet());
         completed = new HashSet<ReceiverTarget>();
-             
+
         for (ReceiverTarget recTar : receiverTargets) {
             for (ReceiverTarget otherRecTar : receiverToArgs.keySet()) {
                 if (completed.contains(recTar))
                     continue;
-                
+
                 if (!recTar.receiver.equals(otherRecTar.receiver)) {
                     Set<IAllocNode> intersection = new HashSet<IAllocNode>(receiverToArgs.get(recTar));
                     intersection.retainAll(receiverToArgs.get(otherRecTar));
-                    
+
                     if (!intersection.isEmpty()) {
                         //found something!
                         fw.write(String.format("%s.%s and %s.%s share args allocnode.\n", recTar.receiver, recTar.target, otherRecTar.receiver, otherRecTar.target));
@@ -236,7 +241,7 @@ public class FindAPICallsWithNonLocalEffects {
             }
             completed.add(recTar);
         }
-        
+
         System.out.println("Intersections of arg / return calls on API with different receivers: " + intersections);
     }
 
@@ -264,7 +269,7 @@ public class FindAPICallsWithNonLocalEffects {
                     !PTABridge.v().shouldIgnoreForStats(targetClass)) {
                 //TODO: DO NOT WRITE FOR NOW, ALREADY INSPECTED OUTPUT
                 //fw.write(String.format("%s calls %s with %s and returns / arg from %s\n\n", 
-                    //caller, callee, invoke, enclosingC));
+                //caller, callee, invoke, enclosingC));
                 found = true;
             }
         }
@@ -275,14 +280,14 @@ public class FindAPICallsWithNonLocalEffects {
     class ReceiverTarget {
         IAllocNode receiver;
         SootMethod target;
-        
+
         public ReceiverTarget(IAllocNode receiver, SootMethod target) {
             super();
             this.receiver = receiver;
             this.target = target;
         }
-     
-        
+
+
         @Override
         public int hashCode() {
             final int prime = 31;
@@ -310,7 +315,7 @@ public class FindAPICallsWithNonLocalEffects {
         private FindAPICallsWithNonLocalEffects getOuterType() {
             return FindAPICallsWithNonLocalEffects.this;
         }
-        
-        
+
+
     }
 }

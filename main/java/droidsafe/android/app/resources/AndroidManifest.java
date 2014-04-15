@@ -38,6 +38,7 @@ public class AndroidManifest {
   public List<Provider> providers = new ArrayList<Provider>();
   /** All component classes registered in the manifest */
   Set<SootClass> components = new LinkedHashSet<SootClass>();
+  Map<SootClass, ComponentBaseElement> scToBaseElement = new HashMap<SootClass, ComponentBaseElement>();
   
   public UsesSDK uses_sdk = null;
   public List<UsesPermission> uses_permissions 
@@ -68,6 +69,20 @@ public class AndroidManifest {
     this.manifest = new Manifest (null, e);
  }
 
+  public boolean isDefinedInManifest(SootClass clz) {
+      return scToBaseElement.containsKey(clz);
+  }
+  
+  public boolean isExported(SootClass clz) {
+      if (!isDefinedInManifest(clz))
+          return true;
+      
+      if (scToBaseElement.get(clz).hasIntentFilter())
+          return true;
+      
+      return scToBaseElement.get(clz).isExported();
+  }
+  
   /**
    * Return the set of all components as sootclasses.
    */
@@ -233,6 +248,8 @@ public class AndroidManifest {
 
 			  sootClass = Scene.v().getSootClass(className);
 
+			  scToBaseElement.put(sootClass, this);
+			  
 			  if (sootClass.isPhantom() || !sootClass.isInScene())
 				  throw new Exception();
 		  } catch (Exception e) {
@@ -248,6 +265,23 @@ public class AndroidManifest {
 		  return sootClass;
 	  } 
 
+	  public boolean isExported() {
+	     String exported = get_attr("exported");
+	     if (exported == null)
+	         return true;
+	     
+	     return "true".equals(exported);
+	  }
+	  
+	  public boolean hasIntentFilter() {
+	      for (Node child : gather_children()) {
+	          String name = child.getNodeName();
+	          if (name.equalsIgnoreCase ("intent-filter"))
+	            return true;
+	      }
+	      
+	      return false;
+	  }
   }
 
   public class Activity extends ComponentBaseElement {

@@ -208,16 +208,13 @@ public class InsertUnmodeledObjects {
                             if (!(invoke.getMethodRef().returnType() instanceof RefLikeType))
                                 continue;            
 
-                            try {
-                                Collection<SootMethod> targets = PTABridge.v().resolveInvokeIns(invoke);
-                                for (SootMethod target : targets) 
-                                    if (API.v().isSystemMethod(target)) {
-                                        hasAPITarget = true;
-                                        break;
-                                    }
-                            } catch (CannotFindMethodException e) {
 
-                            }
+                            Collection<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(stmt);
+                            for (SootMethod target : targets) 
+                                if (API.v().isSystemMethod(target)) {
+                                    hasAPITarget = true;
+                                    break;
+                                }
 
 
                             if (hasAPITarget) {

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 import soot.Context;
 import soot.G;
@@ -193,45 +195,7 @@ public abstract class PTABridge {
     /** Return the possible alloc nodes that the given alloc node could point to, with alloc node arg an array */
     public abstract Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode nodes);
     
-    /** Resolve the targets of the invoke statement given the PTA and an insensitive search */
-    public abstract Collection<SootMethod> resolveInvokeIns(InvokeExpr invoke)  throws CannotFindMethodException;
-    
-    /** Resolve the targets of the invoke statement given the PTA and the context*/
-    public abstract Collection<SootMethod> resolveInvoke(InvokeExpr invoke, Context context) 
-        
-         throws CannotFindMethodException;
-    
-    /**
-     * Use the PTA to resolve the set of methods that an instance invoke could call.  In this
-     * version, use the context insensitive PTA result.
-     * 
-     * If the method cannot be found, then throw a specialized exception.
-     */
-    public Collection<SootMethod> resolveInstanceInvokeIns(InstanceInvokeExpr invoke)
-            throws CannotFindMethodException {
-        return resolveInstanceInvokeMapIns(invoke).values();
-    }
-    
-    /**
-     * Use the PTA to resolve the set of methods that an instance invoke could call.  
-     * 
-     * If the method cannot be found, then throw a specialized exception.
-     */
-    public Collection<SootMethod> resolveInstanceInvoke(InstanceInvokeExpr invoke, Context context)
-            throws CannotFindMethodException {
-        return resolveInstanceInvokeMap(invoke, context).values();
-    }
-    
-    /** Resolve the targets of the invoke statement for each alloc node that the receiver could reference 
-    given the PTA and an insensitive search */
-    public abstract Map<IAllocNode,SootMethod> resolveInstanceInvokeMapIns(InstanceInvokeExpr invoke)
-            throws CannotFindMethodException;
-    
-    /** Resolve the targets of the invoke statement for each alloc node that the receiver could reference 
-        given the PTA and a context */
-    public abstract Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, Context context)
-            throws CannotFindMethodException;
-    
+  
     /** dump the pta result */
     public abstract void dumpPTA();
     
@@ -265,6 +229,45 @@ public abstract class PTABridge {
         }
         
         return callingMethods;
+    }
+    
+    public Set<SootMethod> getTargetsInsNoContext(Stmt stmt) {
+        return getTargetsInsNoContext(JimpleRelationships.v().getEnclosingMethod(stmt), stmt);
+    }
+    
+    public Set<SootMethod> getTargetsInsNoContext(SootMethod enclosingMethod, Stmt stmt) {
+        Set<SootMethod> ret = new LinkedHashSet<SootMethod>();
+        
+        for (MethodOrMethodContext momc : getMethodContexts(enclosingMethod)) {
+            for (MethodOrMethodContext tgt : getTargets(momc, stmt)) {
+                ret.add(tgt.method());
+            }
+        }
+        
+        return ret;
+        
+    }
+    
+    public Set<MethodOrMethodContext> getTargetsInsWithContext(SootMethod enclosingMethod, Stmt stmt) {
+        Set<MethodOrMethodContext> ret = new LinkedHashSet<MethodOrMethodContext>();
+        
+        for (MethodOrMethodContext momc : getMethodContexts(enclosingMethod)) {
+            ret.addAll(getTargets(momc, stmt));
+        }
+        
+        return ret;
+        
+    }
+    
+    public Set<MethodOrMethodContext> getTargets(MethodOrMethodContext momc, Stmt stmt) {
+        List<Edge> edges = outgoingEdges(momc, stmt);
+        
+        Set<MethodOrMethodContext> ret = new LinkedHashSet<MethodOrMethodContext>();
+        for (Edge edge : edges) {
+            ret.add(edge.getTgt());
+        }
+                
+        return ret;
     }
     
     /** return edges out of a method/method+context that have stmt as source */
