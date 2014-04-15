@@ -15,11 +15,16 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerComparator;
+import org.eclipse.swt.dnd.Clipboard;
+import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 
 import com.google.gson.JsonObject;
 
+import droidsafe.analyses.value.VAUtils;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.filters.Filter;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
@@ -337,6 +342,35 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
     
     public void setRootElements(Object[] rootElements) {
         fState.rootElements = rootElements;
+    }
+    
+    public void copyTreeToClipboard() {
+        Clipboard cb = new Clipboard(Display.getDefault());
+        String text = contentToText();
+        TextTransfer textTransfer = TextTransfer.getInstance();
+        cb.setContents(new Object[]{text}, new Transfer[] {textTransfer});
+    }
+
+    public String contentToText() {
+        StringBuffer buf = new StringBuffer();
+        IndicatorTreeElementContentProvider contentProvider = (IndicatorTreeElementContentProvider)fContentProvider;
+        for (Object rootElement: contentProvider.getSortedRootElements()) {
+            contentToText(rootElement, 0, buf);
+        }
+        return buf.toString();
+    }
+
+    private void contentToText(Object element, int level, StringBuffer buf) {
+        String indent = VAUtils.indent(level);
+        buf.append(indent);
+        String label = fLabelProvider.getText(element);
+        buf.append(label);
+        buf.append("\n");
+        if (getViewer().getExpandedState(element)) {
+            for (Object child: fContentProvider.getSortedChildren(element)) {
+                contentToText(child, level + 1, buf);
+            }   
+        }
     }
 
 }
