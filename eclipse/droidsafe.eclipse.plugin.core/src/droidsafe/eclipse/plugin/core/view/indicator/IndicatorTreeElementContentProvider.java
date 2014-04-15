@@ -42,6 +42,13 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         viewPart.setRootElements(rootElements);
     }
 
+    public Object[] getSortedRootElements() {
+        Object[] rootElements = viewPart.getRootElements();
+        if (rootElements != null)
+            sort(rootElements);
+        return rootElements;
+    }
+    
     public IndicatorTreeElementContentProvider(IndicatorViewPart viewPart) {
         this.viewPart = viewPart;
     }

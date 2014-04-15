@@ -27,6 +27,7 @@ import com.google.gson.JsonObject;
 import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
+import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.speclang.model.MethodArgumentModel;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.utils.SourceLocationTag;
@@ -83,11 +84,15 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
             @Override
             public void keyReleased(final KeyEvent e) {
                 int modifier = (Util.isMac()) ? SWT.COMMAND : SWT.CTRL;
-                if ((e.stateMask & modifier) == modifier && e.keyCode == 'f') {
-                    if (fContentProvider.getRootElements() != null) {
-                        IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-                        SearchDialog dialog = new SearchDialog(window.getShell(), DroidsafeInfoOutlineViewPart.this);
-                        dialog.open();
+                if ((e.stateMask & modifier) == modifier) {
+                    if (e.keyCode == 'f') {
+                        if (fContentProvider.getRootElements() != null) {
+                            IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+                            SearchDialog dialog = new SearchDialog(window.getShell(), DroidsafeInfoOutlineViewPart.this);
+                            dialog.open();
+                        }
+                    } else if (e.keyCode == 'c' && DroidsafeInfoOutlineViewPart.this instanceof IndicatorViewPart) {
+                        ((IndicatorViewPart) DroidsafeInfoOutlineViewPart.this).copyTreeToClipboard();
                     }
                 }
             }
