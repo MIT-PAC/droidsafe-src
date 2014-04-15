@@ -15,12 +15,15 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 
+import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
+import droidsafe.analyses.collapsedcg.StmtEdge;
 import droidsafe.transforms.va.ServiceBindTransform;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 
 public class ICCMap {
@@ -29,6 +32,8 @@ public class ICCMap {
     private static ICCMap v;
     
     private Map<String, TopLevelContent> topLevelMap = new HashMap<String, TopLevelContent>();
+    
+    private Map<Stmt, InnerContent> innerContentMap = new HashMap<Stmt, InnerContent>();
     
     private Indicator<TopLevelContent> indicator;
     
@@ -58,17 +63,41 @@ public class ICCMap {
         }
     }
     
-    private class InnerContent extends SourceContent {
+    private class InnerInnerContent extends SourceContent {
         String type = "icc_dest";
-        String label;
+        String signature;
+        String link = "as_entry_point";
         
-        public InnerContent(String dest, Stmt genStmt) {
-            this.label = "Destination: " + dest;
-            this.setSource(genStmt);
+        public InnerInnerContent(SootMethod method) {
+            setSource(method);
+            this.signature = method.getSignature();
         }
     }
     
-    public void addInfo(SootClass src, SootClass dest, Stmt genStmt) {
+    private class InnerContent extends SourceContent {
+        String type = "icc_stmt";
+        String signature;
+        String link = "as_call";
+        
+        ArrayList<InnerInnerContent> contents = new ArrayList<InnerInnerContent>();
+        
+        public InnerContent(Stmt genStmt) {
+            this.setSource(genStmt);
+            
+            if (genStmt.containsInvokeExpr()) {
+                InvokeExpr ie = genStmt.getInvokeExpr();
+                this.signature = ie.getMethodRef().getSignature();
+            } else {
+                this.signature = ""; 
+            }
+        }
+        
+        public void addTarget(SootMethod method) {
+            contents.add(new InnerInnerContent(method));
+        }
+    }
+    
+    public void addInfo(SootClass src, SootClass dest, Stmt genStmt, SootMethod target) {
         String srcStr = src.getName();
         String destStr = dest.getName();
         
@@ -79,10 +108,28 @@ public class ICCMap {
         }
        
         TopLevelContent tlc = topLevelMap.get(srcStr);
-        tlc.contents.add(new InnerContent(destStr, genStmt));
+        
+        if (!innerContentMap.containsKey(genStmt)) {
+            InnerContent ic = new InnerContent(genStmt);
+            innerContentMap.put(genStmt, ic);
+            tlc.contents.add(ic);
+            ic.addTarget(target);
+        }
+    }
+    
+    //Add all edges that go through the api in the collasped call graph
+    //these edges are only created for IPC calls 
+    private void addAllIPC() {
+        for (StmtEdge<SootMethod> edge : CollaspedCallGraph.v().getAllThroughAPIEdges()) {
+            SootClass src = edge.getV1().getDeclaringClass();
+            SootClass tgt = edge.getV2().getDeclaringClass();
+            addInfo(src, tgt, edge.getStmt(), edge.getV2());
+        }
     }
     
     public void toJSON(String parentDir) {
+        addAllIPC();
+        
         Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
         String output = gson.toJson(indicator);
         FileWriter fw;

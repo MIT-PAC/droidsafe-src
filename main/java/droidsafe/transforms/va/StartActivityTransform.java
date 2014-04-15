@@ -119,9 +119,11 @@ class StartActivityTransform implements VATransform {
             
             //register in report of icc
             if (activityField.getType() instanceof RefType) {
+                SootClass target  = ((RefType)activityField.getType()).getSootClass();
+                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, setIntentMethod);
                 ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
-                    ((RefType)activityField.getType()).getSootClass(), 
-                    stmt);
+                    target, 
+                    stmt, resolved);
             }
         }
     }

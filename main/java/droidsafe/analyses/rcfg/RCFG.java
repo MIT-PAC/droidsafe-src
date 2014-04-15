@@ -26,6 +26,7 @@ import soot.ArrayType;
 import soot.Body;
 import soot.Context;
 import soot.Kind;
+import soot.MethodContext;
 import soot.MethodOrMethodContext;
 import soot.RefType;
 import soot.Scene;
@@ -121,6 +122,42 @@ public class RCFG  {
 
         //System.out.println(v().toString());
     }
+    
+        
+    /**
+     * Return true if the method or method x content could be an entry point, meaning it is
+     * defined in a user class, and it is called from the api.
+     */
+    public static boolean isUserEntryPoint(MethodOrMethodContext method) {
+        CallGraph cg = Scene.v().getCallGraph();
+        
+        if (API.v().isSystemMethod(method.method()))
+            return false;
+        
+        //here we know it is a user method
+        
+        if (method instanceof SootMethod) {
+            for (MethodOrMethodContext mc : PTABridge.v().getMethodContexts((SootMethod)method)) {
+                Iterator<Edge> incomings = cg.edgesInto(mc);
+                while (incomings.hasNext()) {
+                    Edge incoming = incomings.next();
+                    if (API.v().isSystemMethod(incoming.src()))
+                        return true;
+                }
+            }
+            
+        } else if (method instanceof MethodContext) {
+            Iterator<Edge> incomings = cg.edgesInto(method);
+            while (incomings.hasNext()) {
+                Edge incoming = incomings.next();
+                if (API.v().isSystemMethod(incoming.src()))
+                    return true;
+            }
+        }
+        
+        return false;
+    }
+    
 
     private void runAlt() {
         CallGraph cg = Scene.v().getCallGraph();

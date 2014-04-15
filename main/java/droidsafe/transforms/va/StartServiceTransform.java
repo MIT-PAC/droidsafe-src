@@ -20,6 +20,7 @@ import soot.Body;
 import soot.Local;
 import soot.RefType;
 import soot.Scene;
+import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Value;
@@ -93,9 +94,13 @@ public class StartServiceTransform implements VATransform {
             RCFG.v().ignoreInvokeForOutputEvents(onStartCall);
             
             //add to icc report 
-            if (serviceField.getType() instanceof RefType)
+            if (serviceField.getType() instanceof RefType) {
+                SootClass target = ((RefType)serviceField.getType()).getSootClass(); 
+                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStartCommand);
+                        
                 ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
-                    ((RefType)serviceField.getType()).getSootClass(), stmt);
+                    target, stmt, resolved);
+            }
         }
     }
 

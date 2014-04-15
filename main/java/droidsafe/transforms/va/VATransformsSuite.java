@@ -74,7 +74,7 @@ public class VATransformsSuite  {
                 
                 for (VATransform transform : transforms) { 
                     for (SootMethod callee : PTABridge.v().getTargetsInsNoContext(containingMthd, stmt)) {
-                        if (API.v().isIPCSink(callee)) {
+                        if (API.v().isIPCMethod(callee)) {
                             resolvesToIPCSink = true;
                         }
 

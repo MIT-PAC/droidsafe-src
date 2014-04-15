@@ -294,8 +294,13 @@ public class Method implements Comparable<Method> {
             ret.append("// Requires permission: " + str + "\n");
 
         if (API.v().isIPCCallback(sootMethod)) {
-            ret.append("// Possible IPC callback method\n");
+            if (API.v().isRemoteIPCCallback(sootMethod))
+                ret.append("// Possible remote IPC callback method\n");
+            else 
+                ret.append("// Possible IPC callback method\n");
         }
+        
+        
 
         if (!getSourcesInfoKinds().isEmpty()) {
             //print resolved high-level information flows

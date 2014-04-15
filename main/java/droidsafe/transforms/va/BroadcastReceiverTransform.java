@@ -138,8 +138,7 @@ public class BroadcastReceiverTransform implements VATransform {
                 continue;
 
             for (SootClass target : filterActionsToClass.get(action)) {
-                //report in ICC json report
-                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), target, stmt);
+               
 
                 SootField brField = Harness.v().getFieldForCreatedClass(target);
                 if (brField == null)
@@ -170,6 +169,10 @@ public class BroadcastReceiverTransform implements VATransform {
                 body.getUnits().insertAfter(onReceiveCall, localAssign);
                 //ignore making output events for this call we add
                 RCFG.v().ignoreInvokeForOutputEvents(onReceiveCall);
+                
+                //report in ICC json report
+                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onReceive);
+                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), target, stmt, resolved);
             }
         }
 

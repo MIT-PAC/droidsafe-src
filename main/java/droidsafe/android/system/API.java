@@ -34,6 +34,7 @@ import soot.tagkit.VisibilityAnnotationTag;
 import droidsafe.analyses.SafeAndroidClassesAndMethods;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
+import droidsafe.android.app.resources.Resources;
 import droidsafe.main.Config;
 import droidsafe.utils.SootMethodList;
 import droidsafe.utils.SootUtils;
@@ -959,8 +960,15 @@ public class API {
     }
 
     /**
+     * Is this method labeled as a safe or spec with the IPC DSCat.
+     */
+    public boolean isIPCMethod(SootMethod method) {
+        return ipcMethods.containsPoly(method);
+    }
+    
+    /**
      * Return true if this method is or overrides a method that is marked as 
-     * an IPC call back.
+     * an IPC call back, either local to the application or remote to other apps.
      */
     public boolean isIPCCallback(SootMethod method) {
         //any public methods of a service could be called by a another component
@@ -976,9 +984,34 @@ public class API {
     }
     
     /**
-     * 
-     * @param method
-     * @return
+     * return true if method is a callback target for remote ipc from remote applications,
+     * include the aidl. defined based on the exported attribute in the manifest.
+     */
+    public boolean isRemoteIPCCallback(SootMethod method) {
+        if (!isIPCCallback(method))
+           return false;
+        
+        if (isAIDLCallback(method))
+            return true;
+        
+        //a callback
+        SootClass dClass = method.getDeclaringClass();
+        
+        if (Hierarchy.isAndroidComponentClass(dClass)) {
+            if (Resources.v().getManifest().isDefinedInManifest(dClass)) { 
+                 if (Resources.v().getManifest().isExported(dClass))
+                     return true;
+                 else
+                     return false;
+                        
+            } else
+                return false;  //TODO: if component and not in manifest, who knows, need to test in emulator
+        } else 
+            return false;
+    }
+    
+    /**
+     * is this method a sink with the IPC kind?
      */
     public boolean isIPCSink(SootMethod method) {
         Set<InfoKind> infoKinds = getSinkInfoKinds(method);

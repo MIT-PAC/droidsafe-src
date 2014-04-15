@@ -2,6 +2,7 @@ package droidsafe.main;
 
 import au.com.bytecode.opencsv.CSVWriter;
 import droidsafe.analyses.CheckInvokeSpecials;
+import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
 import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
@@ -506,6 +507,8 @@ public class Main {
 
     private static void writeJSONReports() {
         try {
+            CollaspedCallGraph.v();
+            
             ICCMap.v().toJSON(Project.v().getOutputDir());
             UnresolvedICC.v().toJSON(Project.v().getOutputDir());
         } catch (Exception e) {

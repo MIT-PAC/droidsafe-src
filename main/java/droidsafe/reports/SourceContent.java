@@ -11,14 +11,16 @@ import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 
 public abstract class SourceContent {
-    String signature;
     
     @SerializedName("src-loc")
     SourceLocationTag src_loc;
     
     protected void setSource(Stmt genStmt) {
         SootMethod method = JimpleRelationships.v().getEnclosingMethod(genStmt);
-        signature = method.getSignature();
         src_loc = SootUtils.getSourceLocation(genStmt);
+    }
+    
+    protected void setSource(SootMethod method) {
+        src_loc = SootUtils.getMethodLocation(method);
     }
 }
