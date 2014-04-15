@@ -1056,6 +1056,34 @@ public class SootUtils {
     }
 
     /**
+     * Is this class an innner class based on the presence of $ in the name.
+     */
+    public static boolean isInnerClass(SootClass clz) {
+        return clz.getName().contains("$");        
+    }
+    
+    /**
+     * If this class is an inner class with "$" separating outer from inner, then,
+     * return the outerclass defintion.
+     */
+    public static SootClass getOuterClass(SootClass clz) {
+        if (!isInnerClass(clz))
+            return null;
+        
+        String outer = clz.getName().substring(0, clz.getName().indexOf("$"));
+        
+        try {
+            SootClass o = Scene.v().getSootClass(outer);
+            return o;
+        } catch (Exception e) {
+            logger.warn("Exception trying to resolve outer class: {} for {}", outer, clz, e);
+        }
+        
+        return null;
+    }
+    
+    
+    /**
      * Given two classes that could be related (one is a parent of the other or vice versa), return 
      * the child class.  If not related, then return null
      */

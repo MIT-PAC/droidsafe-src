@@ -85,7 +85,7 @@ public class API {
     /** default info kind for a spec or ban method that is not labeled */
     public InfoKind SENSITIVE_UNCATEGORIZED;
     public InfoKind UNMODELED;
-    
+
     private SootMethodList ipcMethods = new SootMethodList();
     private SootMethodList ipcCallBackMethods = new SootMethodList();
 
@@ -472,13 +472,13 @@ public class API {
                 ipcMethods.addMethod(method);
                 logger.info("Noting method as ipc: " + method);
             }
-            
+
             if ("IPC_CALLBACK".equals(category)) {
                 ipcCallBackMethods.addMethod(method);
                 logger.info("Noting method as ipc callback: " + method);
             }
-          
-            
+
+
             if (sourceTaintArgs && !source) {
                 logger.error("Method that taints all args but is not a source: {}", method);
             }
@@ -531,7 +531,7 @@ public class API {
                 String pkg = sootMethod.getDeclaringClass().getPackageName();
                 infoKind = pkg.substring(pkg.indexOf(".") + 1).toUpperCase();
             } 
-            
+
             if (!sinksMapping.containsKey(sootMethod)) {
                 sinksMapping.put(sootMethod, new HashSet<InfoKind>());
             }
@@ -965,7 +965,7 @@ public class API {
     public boolean isIPCMethod(SootMethod method) {
         return ipcMethods.containsPoly(method);
     }
-    
+
     /**
      * Return true if this method is or overrides a method that is marked as 
      * an IPC call back, either local to the application or remote to other apps.
@@ -975,65 +975,69 @@ public class API {
         SootClass dClz = method.getDeclaringClass();
         if (Hierarchy.inheritsFromAndroidService(dClz) &&  method.isPublic())
             return true;
-        
+
         if (isAIDLCallback(method))
             return true;
-        
+
         //otherwise, see if it inherits from a method that has the IPC_CALLBACK annotation
         return ipcCallBackMethods.containsPoly(method);
     }
-    
+
     /**
      * return true if method is a callback target for remote ipc from remote applications,
      * include the aidl. defined based on the exported attribute in the manifest.
      */
     public boolean isRemoteIPCCallback(SootMethod method) {
         if (!isIPCCallback(method))
-           return false;
-        
+            return false;
+
         if (isAIDLCallback(method))
             return true;
-        
+
         //a callback
-        SootClass dClass = method.getDeclaringClass();
+        List<SootClass> classes = new LinkedList<SootClass>();
+        classes.add(method.getDeclaringClass());
         
-        if (Hierarchy.isAndroidComponentClass(dClass)) {
-            if (Resources.v().getManifest().isDefinedInManifest(dClass)) { 
-                 if (Resources.v().getManifest().isExported(dClass))
-                     return true;
-                 else
-                     return false;
-                        
-            } else
-                return false;  //TODO: if component and not in manifest, who knows, need to test in emulator
-        } else 
-            return false;
+        if (SootUtils.isInnerClass(method.getDeclaringClass())) {
+            SootClass outer = SootUtils.getOuterClass(method.getDeclaringClass());
+            if (outer != null)
+                classes.add(outer);
+        }
+        
+        for (SootClass clz : classes) {
+            if (Hierarchy.isAndroidComponentClass(clz) &&
+                    Resources.v().getManifest().isDefinedInManifest(clz) &&
+                    Resources.v().getManifest().isExported(clz))
+                return true;
+        }
+
+        return false;
     }
-    
+
     /**
      * is this method a sink with the IPC kind?
      */
     public boolean isIPCSink(SootMethod method) {
         Set<InfoKind> infoKinds = getSinkInfoKinds(method);
-        
+
         for (InfoKind kind : infoKinds) {
             if ("IPC".equals(kind.toString()))
                 return true;
         }
-        
+
         return false;
     }
-    
-    
+
+
     /**
      * Hack for determining if a method is defined in an AIDL interface.  Should work well enough.
      */
     public boolean isAIDLCallback(SootMethod method) {
         SootClass iInterface = Scene.v().getSootClass("android.os.IInterface");
         SootClass declaringClass = method.getDeclaringClass();
-        
+
         Set<SootClass> parents = SootUtils.getParents(declaringClass);
-        
+
         if (parents.contains(iInterface)) {
             for (SootClass parent : parents) {
                 if (!parent.isInterface() || !Scene.v().getActiveHierarchy().isInterfaceDirectSubinterfaceOf(parent, iInterface))
@@ -1042,10 +1046,10 @@ public class API {
                     return true;
             }
         }
-        
+
         return false;
     }
-    
+
     public enum Classification {
         SAFE, SPEC, BAN, NONE;
     }

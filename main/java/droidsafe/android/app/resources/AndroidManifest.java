@@ -247,14 +247,14 @@ public class AndroidManifest {
 				  throw new Exception();
 
 			  sootClass = Scene.v().getSootClass(className);
-
+			  
 			  scToBaseElement.put(sootClass, this);
 			  
 			  if (sootClass.isPhantom() || !sootClass.isInScene())
 				  throw new Exception();
 		  } catch (Exception e) {
 			  logger.error("Unable to resolve underlying class for component in Manifest (Manifest Error): {}, from {} ", 
-			          className, name);
+			          className, name, e);
 			  logger.error("Package name from AndroidManifest.xml: {} ", Resources.v().package_name);
 			  droidsafe.main.Main.exit(1);
 		  }
