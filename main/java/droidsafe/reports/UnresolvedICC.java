@@ -68,11 +68,15 @@ public class UnresolvedICC {
         
         public InnerLevelCallContent(Stmt genStmt) {
             setSource(genStmt);
-            if (genStmt.containsInvokeExpr()) {
-                InvokeExpr ie = genStmt.getInvokeExpr();
-                this.signature = ie.getMethodRef().getSignature();
-            } else {
-                this.signature = ""; 
+            try {
+                if (genStmt.containsInvokeExpr()) {
+                    InvokeExpr ie = genStmt.getInvokeExpr();
+                    this.signature = ie.getMethodRef().resolve().getSignature();
+                } else {
+                    this.signature = ""; 
+                }
+            } catch (Exception e) {
+                this.signature = "";
             }
         }
     }
