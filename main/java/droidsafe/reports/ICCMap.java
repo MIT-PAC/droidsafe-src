@@ -113,8 +113,10 @@ public class ICCMap {
             InnerContent ic = new InnerContent(genStmt);
             innerContentMap.put(genStmt, ic);
             tlc.contents.add(ic);
-            ic.addTarget(target);
         }
+        
+        innerContentMap.get(genStmt).addTarget(target);
+
     }
     
     //Add all edges that go through the api in the collasped call graph

@@ -45,6 +45,7 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.reports.UnresolvedICC;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.DroidsafeExecutionStatus;
 import droidsafe.utils.SootUtils;
@@ -143,9 +144,11 @@ public class CallBackModeling {
                 //if method is reachable or is not an implemented system method or is itself a system method from 
                 //a parent
                 if (API.v().isSystemMethod(method) || 
-                        PTABridge.v().isReachableMethod(method) || 
-                        (!Hierarchy.isImplementedSystemMethod(method) && !API.v().isIPCCallback(method)))
+                        PTABridge.v().isReachableMethod(method))
                     continue;
+                
+                if (!(Hierarchy.isImplementedSystemMethod(method) || API.v().isIPCCallback(method)))
+                        continue;
 
                 //find system method that is inherited
                 SootMethod closetSystemParent = Hierarchy.closestOverridenSystemMethodNoInterfaces(method);
@@ -165,16 +168,21 @@ public class CallBackModeling {
                             break;
                         }
                     }
-
+                    
                 } else {
                     //don't add fallback callback modeling the method is verified, but if the class is a 
                     //component, then we cannot rely on the verified tag, so fake anyway
                     if (!API.v().isDSVerifiedMethod(closetSystemParent) || Hierarchy.isAndroidComponentClass(clz))
                         shouldFake = true;
                 }
+                
+                if (API.v().isAIDLCallback(method)) 
+                    shouldFake = true; 
 
                 if (shouldFake) {
                     logger.info("Need to fake method %s in %s\n", method, clz);
+                    if (API.v().isIPCCallback(method))
+                        UnresolvedICC.v().addInfo(method);
                     toFake.add(method);
                 }
             }

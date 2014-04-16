@@ -98,9 +98,6 @@ public class ServiceBindTransform implements VATransform {
             //insert the statement
             body.getUnits().insertAfter(call, localAssign);
             
-            //delete the original bindService call
-            body.getUnits().remove(stmt);
-            
             //report in ICCMap 
             SootMethod onBindMethod = Scene.v().getSootClass("android.app.Service").getMethodByName("onBind");
             SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(serviceClz, onBindMethod);

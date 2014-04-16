@@ -1037,11 +1037,13 @@ public class API {
         SootClass declaringClass = method.getDeclaringClass();
 
         Set<SootClass> parents = SootUtils.getParents(declaringClass);
-
-        if (parents.contains(iInterface)) {
-            for (SootClass parent : parents) {
+        
+         if (parents.contains(iInterface)) {
+             for (SootClass parent : parents) {
+             
                 if (!parent.isInterface() || !Scene.v().getActiveHierarchy().isInterfaceDirectSubinterfaceOf(parent, iInterface))
                     continue;
+                
                 if (parent.declaresMethodByName(method.getName()))
                     return true;
             }

@@ -122,7 +122,7 @@ public class BroadcastReceiverTransform implements VATransform {
         }
         modified.add(stmt);
 
-        SootMethod onReceive = Scene.v().getMethod("<android.content.BroadcastReceiver: void droidSafeOnReceive(android.content.Context,android.content.Intent)>");
+        SootMethod onReceive = Scene.v().getMethod("<android.content.BroadcastReceiver: void onReceive(android.content.Context,android.content.Intent)>");
 
         Value intentArg = invoke.getArg(0);
 

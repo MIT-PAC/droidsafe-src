@@ -515,7 +515,6 @@ public class Main {
             logger.error("Error writing json indicator, ignoring and moving on...", e);
         }
         
-        
         try {
             driverMsg ("Searching for catch blocks (precise)");
             StopWatch cbtimer = new StopWatch();
@@ -527,7 +526,6 @@ public class Main {
         } catch (Exception e) {
             logger.error("Error writing json indicator, ignoring and moving on...", e);
         }
-
 
     }
 

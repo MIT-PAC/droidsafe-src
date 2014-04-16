@@ -69,24 +69,14 @@ public class VATransformsSuite  {
                     continue;
                 InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
 
-                boolean handled = false;
-                boolean resolvesToIPCSink = false;
-                
                 for (VATransform transform : transforms) { 
                     for (SootMethod callee : PTABridge.v().getTargetsInsNoContext(containingMthd, stmt)) {
-                        if (API.v().isIPCMethod(callee)) {
-                            resolvesToIPCSink = true;
-                        }
-
                         if (isInvokeCandidateForTransform(transform, callee)) {
-                            handled = true;
                             transform.tranformsInvoke(containingMthd, callee, invokeExpr, stmt, stmtBody);
                         }
                     } 
                 }     
                 
-                if (!handled && resolvesToIPCSink && !API.v().isSystemMethod(containingMthd)) 
-                    UnresolvedICC.v().addInfo(stmt);
             }
         }
     }

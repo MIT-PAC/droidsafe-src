@@ -135,6 +135,8 @@ public class RCFG  {
             return false;
         
         //here we know it is a user method
+        if (API.v().isAIDLCallback(method.method())) 
+            return true;
         
         if (method instanceof SootMethod) {
             for (MethodOrMethodContext mc : PTABridge.v().getMethodContexts((SootMethod)method)) {
@@ -179,8 +181,7 @@ public class RCFG  {
             while (incomingEdges.hasNext()) {
                 Edge incomingEdge = incomingEdges.next();
                 //if method is user, and has incoming edge from system, then it is an entry point
-                logger.info(incomingEdge + " " + API.v().isSystemMethod(incomingEdge.src()));
-                if (API.v().isSystemMethod(incomingEdge.src())) {
+                if (API.v().isSystemMethod(incomingEdge.src()) || API.v().isAIDLCallback(sootMethod)) {
                     //System.out.println("Event Edge: " + incomingEdge);
                     //now we have an entry point
                     //find all reachable user code from method

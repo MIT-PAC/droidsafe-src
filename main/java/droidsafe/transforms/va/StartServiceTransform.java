@@ -57,7 +57,7 @@ public class StartServiceTransform implements VATransform {
         }
         modified.add(stmt);
 
-        SootMethod onStartCommand = Scene.v().getMethod("<android.app.Service: void droidSafeOnStartCommand(android.content.Intent,int,int)>");
+        SootMethod onStartCommand = Scene.v().getMethod("<android.app.Service: int onStartCommand(android.content.Intent,int,int)>");
 
         Value intentArg = invoke.getArg(0);
 
