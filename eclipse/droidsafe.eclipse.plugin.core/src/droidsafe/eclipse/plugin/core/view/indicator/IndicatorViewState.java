@@ -2,6 +2,7 @@ package droidsafe.eclipse.plugin.core.view.indicator;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,11 @@ import com.google.gson.JsonObject;
 import droidsafe.eclipse.plugin.core.filters.Filter;
 import droidsafe.eclipse.plugin.core.filters.FilterException;
 import droidsafe.eclipse.plugin.core.filters.FilterOp;
+import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
+import droidsafe.utils.SourceLocationTag;
 
 public class IndicatorViewState {
 
@@ -44,9 +49,16 @@ public class IndicatorViewState {
     public boolean longLabel = false;
 
     public Object[] rootElements;
+
+    public Map<JsonObject, MethodModel> methodMap = new HashMap<JsonObject, MethodModel>();
+
+    private SecuritySpecModel spec;
         
-    public IndicatorViewState(File indicatorFile, JsonObject jsonObject, IndicatorViewState oldState) {
-        this.jsonObject = jsonObject;
+    private static String CONTEXT_PROP = "_context_";
+    
+    public IndicatorViewState(File indicatorFile, JsonObject jsonObject, SecuritySpecModel spec, IndicatorViewState oldState) {
+        this.spec = spec;
+        linkMethods(jsonObject, spec, oldState);
         computeDefaultVisibilityMap(jsonObject);
         computeVisibilityMapFromDefault(oldState);
         computeDefaultDisplayMap(jsonObject);
@@ -59,6 +71,97 @@ public class IndicatorViewState {
             int pos = fileName.indexOf(".");
             indicatorType = fileName.substring(0, pos).replace('_', ' ');
         }
+    }
+
+    private void linkMethods(JsonObject jsonObject,
+            SecuritySpecModel spec, IndicatorViewState oldState) {
+        if (oldState != null) {
+            this.jsonObject = oldState.jsonObject;
+            this.methodMap = oldState.methodMap;
+        } else {
+            this.jsonObject = jsonObject;
+            computeMethodMap(jsonObject);
+        }
+    }
+
+    private void computeMethodMap(JsonObject jsonObj) {
+        JsonArray childrenArray = Utils.getChildrenArray(jsonObj);
+        if (childrenArray != null) {
+            JsonArray newChildrenArray = new JsonArray();
+            boolean changed = false;
+            for (int i = 0; i < childrenArray.size(); i++) {
+                JsonElement child = childrenArray.get(i);
+                newChildrenArray.add(child);
+                if (child.isJsonObject()) {
+                    JsonObject childObj = child.getAsJsonObject();
+                    computeMethodMap(childObj);
+                    newChildrenArray.add(childObj);
+                    List<MethodModel> methods = getMethodModels(childObj);
+                    if (!methods.isEmpty()) {
+                        if (methods.size() > 1) {
+                            changed = true;
+                            for (int j = 1; j < methods.size(); j++) {
+                                MethodModel method = methods.get(j);
+                                JsonObject copy = copyWithContext(childObj, j + 1);
+                                newChildrenArray.add(copy);
+                                methodMap.put(copy, method);
+                            }
+                            childObj.addProperty(CONTEXT_PROP, Integer.valueOf(1));
+                        }
+                        methodMap.put(childObj, methods.get(0));
+                    }
+                } 
+            }
+            if (changed) {
+                jsonObj.remove(Utils.CHILDREN_PROP);
+                jsonObj.add(Utils.CHILDREN_PROP, newChildrenArray);
+            }
+        }
+    }
+    
+    private JsonObject copyWithContext(JsonObject jsonObj, int context) {
+        JsonObject copy = new JsonObject();
+        for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+            String field = entry.getKey();
+            if (!field.equals(Utils.CHILDREN_PROP)) {
+                copy.add(field, entry.getValue());
+            }
+        }
+        copy.addProperty(CONTEXT_PROP, Integer.valueOf(context));
+        return copy;
+    }
+
+    private List<MethodModel> getMethodModels(JsonObject jsonObj) {
+        String link = Utils.getFieldValueAsString(jsonObj, "link");
+        String sig = Utils.getSignature(jsonObj);
+        String srcClass = Utils.getSourceClass(jsonObj);
+        int srcLine = Utils.getSourceLine(jsonObj);
+       return getMethodModels(spec, sig, srcClass, srcLine, link);
+    }
+
+    private List<MethodModel> getMethodModels(SecuritySpecModel spec, String sig, String srcClass,
+            int srcLine, String link) {
+        List<MethodModel> result = new ArrayList<MethodModel>();
+        if (sig != null && srcClass != null && srcLine >= 0) {
+            if (link != null) {
+                if (link.equals("as_entry_point")) {
+                    for (MethodModel entryPoint: spec.getInputEventBlocks().keySet()) {
+                        if (sig.equals(entryPoint.getSignature()))
+                            result.add(entryPoint);
+                    }
+                } else if (link.equals("as_call")) {
+                    for (MethodModel call: spec.getOutputEventBlocks().keySet()) {
+                        if (sig.equals(call.getSignature())) {
+                            SourceLocationTag line = DroidsafePluginUtilities.getLine(call);
+                            if (line != null && line.getClz().equals(srcClass) && line.getLine() == srcLine) {
+                                result.add(call);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return result;
     }
 
     private void computeDefaultFilters(File indicatorFile, JsonObject jsonObj) {

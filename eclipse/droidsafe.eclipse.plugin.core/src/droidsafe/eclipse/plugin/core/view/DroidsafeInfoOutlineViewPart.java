@@ -28,6 +28,7 @@ import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
+import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 import droidsafe.speclang.model.MethodArgumentModel;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.utils.SourceLocationTag;
@@ -39,8 +40,6 @@ import droidsafe.utils.SourceLocationTag;
  * 
  */
 abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart implements ISelectionChangedListener {
-
-    private static final String SOURCE_LOCATION_PROP = "src-loc";
 
     /** The main tree viewer used to display droidsafe analysis info. */
     protected TreeViewer fTreeViewer;
@@ -165,18 +164,16 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
                 } else if (data instanceof MethodModel) {
                     DroidsafePluginUtilities.revealInEditor(getProject(), (MethodModel) data, activate);
                 } else if (data instanceof JsonObject) {
-                    JsonElement srcLoc = ((JsonObject) data).get(SOURCE_LOCATION_PROP);
-                    if (srcLoc != null && srcLoc.isJsonObject()) {
-                        JsonObject srcLocObj = (JsonObject) srcLoc;
-                        String className = srcLocObj.get("class").getAsString();
-                        int lineNumber = srcLocObj.get("line").getAsInt();
+                    JsonObject jsonObject = (JsonObject) data;
+                    String className = Utils.getSourceClass(jsonObject);
+                    int lineNumber = Utils.getSourceLine(jsonObject);
+                    if (className != null && lineNumber >= 0)
                         DroidsafePluginUtilities.revealInEditor(getProject(), className, lineNumber, activate); 
-                    }
                 }
             }
         }
     }
-
+    
     public DroidsafeInfoTreeElementContentProvider getContentProvider() {
         return fContentProvider;
     }

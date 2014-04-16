@@ -19,6 +19,7 @@ import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 
@@ -32,6 +33,16 @@ import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
+import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
+import droidsafe.eclipse.plugin.core.view.infoflow.MethodWithSourceSinkFilter;
+import droidsafe.eclipse.plugin.core.view.infoflow.SourceSinkPair;
+import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
+import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
+import droidsafe.utils.SourceLocationTag;
 
 /**
  * View for displaying the points-to info on the receiver/arguments of a given method. 
@@ -136,7 +147,7 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
                 JsonObject jsonObject = DroidsafePluginUtilities.parseIndicatorFile(fInputElement);
                 if (jsonObject == null)
                     return;
-                fState = new IndicatorViewState(fInputElement, jsonObject, oldState);
+                fState = new IndicatorViewState(fInputElement, jsonObject, getSecuritySpec(), oldState);
                 fStateMap.put(fInputElement, fState);
             } else {
                 fState = oldState;
@@ -200,9 +211,42 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
     @Override
     public void selectionChanged(SelectionChangedEvent e) {
         if (e.getSelectionProvider() == fTreeViewer) {
-          ISelection selection = e.getSelection();
+            ISelection selection = e.getSelection();
             revealSelectionInEditor(selection, false);
+            if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
+                Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
+                if (selectedNode instanceof TreeElement<?, ?>) {
+                    TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
+                    Object data = treeElement.getData();
+                    if (data instanceof JsonObject) {
+                        MethodModel method = getMethodModel((JsonObject) data);
+                        InfoFlowDetailsViewPart.openView(method);
+                        ValueViewPart.openView(method);
+                        PointsToViewPart.openView(method);
+                    }
+                }
+            }
         }
+    }
+
+    private MethodModel getMethodModel(JsonObject data) {
+        Map<JsonObject, MethodModel> methodMap = fState.methodMap;
+        return methodMap.get(data);
+    }
+
+    public SecuritySpecModel getSecuritySpec() {
+        IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
+        IViewPart view = activePage.findView(SecuritySpecOutlineViewPart.VIEW_ID);
+        if (view == null) {
+            // open the view
+            try {
+                view = activePage.showView(SecuritySpecOutlineViewPart.VIEW_ID);
+            } catch (PartInitException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        return ((SecuritySpecOutlineViewPart)view).getSecuritySpec();
     }
 
     protected void projectSelected() {
@@ -294,7 +338,7 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
                     }
                 }
             });
-            viewer.expandAll();
+//            viewer.expandAll();
             selectObjects(savedSelections);
         }
     }
