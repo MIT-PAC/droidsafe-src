@@ -23,4 +23,8 @@ public abstract class SourceContent {
     protected void setSource(SootMethod method) {
         src_loc = SootUtils.getMethodLocation(method);
     }
+    
+    protected void setSource(SourceLocationTag slt) {
+        this.src_loc = slt;
+    }
 }

@@ -834,7 +834,23 @@ public class SootUtils {
             logger.error("Error writing class to file {}", clz, e);
         }
     }
-
+    
+    /** 
+     * Return location for a class as the location of some constructor for the class
+     * or null if no constructors with source location.
+     */
+    public static SourceLocationTag getClassLocation(SootClass clz) {
+        for (SootMethod method : clz.getMethods()) {
+            if (method.isConstructor()) {
+                SourceLocationTag slt = getMethodLocation(method);
+                if (slt != null) 
+                    return slt;
+            }
+        }
+        
+        return null;
+    }
+    
     /**
      * Return the source location of a method based on its first statement.
      */

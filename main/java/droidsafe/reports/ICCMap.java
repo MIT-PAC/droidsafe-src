@@ -31,11 +31,11 @@ public class ICCMap {
     
     private static ICCMap v;
     
-    private Map<String, TopLevelContent> topLevelMap = new HashMap<String, TopLevelContent>();
+    private Map<String, ClassContent> topLevelMap = new HashMap<String, ClassContent>();
     
-    private Map<Stmt, InnerContent> innerContentMap = new HashMap<Stmt, InnerContent>();
+    private Map<Stmt, ICCCallContent> innerContentMap = new HashMap<Stmt, ICCCallContent>();
     
-    private Indicator<TopLevelContent> indicator;
+    private Indicator<ClassContent> indicator;
     
     private static final String FILE_NAME = "iccmap.json";
     
@@ -47,41 +47,52 @@ public class ICCMap {
     }
   
     private ICCMap() {
-        indicator = new Indicator<TopLevelContent>("ICC: Resolved Map");
+        indicator = new Indicator<ClassContent>("ICC: Resolved Map");
         indicator.addVisibility("icc_source");
         
      }
     
-    private class TopLevelContent {
+    private class ClassContent {
         String type = "icc_source";
         String label;
-        ArrayList<InnerContent> contents = new ArrayList<InnerContent>();        
+        ArrayList<ICCCallContent> contents = new ArrayList<ICCCallContent>();        
 
         
-        public TopLevelContent(String src) {
+        public ClassContent(String src) {
             this.label = src;
         }
     }
     
-    private class InnerInnerContent extends SourceContent {
+    private class ICCUndefinedCallBack extends SourceContent {
+        String type = "icc_dest";
+        String label;
+        
+        public ICCUndefinedCallBack(SootClass clz, SootMethod method) {
+            SourceLocationTag slt = new SourceLocationTag(clz.getName(), 1);
+           setSource(slt);
+            this.label = clz + " " + method.getSubSignature();
+        }
+    }
+    
+    private class ICCConcreteCallBack extends SourceContent {
         String type = "icc_dest";
         String signature;
         String link = "as_entry_point";
         
-        public InnerInnerContent(SootMethod method) {
+        public ICCConcreteCallBack(SootMethod method) {
             setSource(method);
             this.signature = method.getSignature();
         }
     }
     
-    private class InnerContent extends SourceContent {
+    private class ICCCallContent extends SourceContent {
         String type = "icc_stmt";
         String signature;
         String link = "as_call";
         
-        ArrayList<InnerInnerContent> contents = new ArrayList<InnerInnerContent>();
+        ArrayList<Object> contents = new ArrayList<Object>();
         
-        public InnerContent(Stmt genStmt) {
+        public ICCCallContent(Stmt genStmt) {
             this.setSource(genStmt);
             
             if (genStmt.containsInvokeExpr()) {
@@ -93,7 +104,11 @@ public class ICCMap {
         }
         
         public void addTarget(SootMethod method) {
-            contents.add(new InnerInnerContent(method));
+            contents.add(new ICCConcreteCallBack(method));
+        }
+        
+        public void addUnResolvedTarget(SootClass dest, SootMethod method) {
+            contents.add(new ICCUndefinedCallBack(dest, method));
         }
     }
     
@@ -102,20 +117,23 @@ public class ICCMap {
         String destStr = dest.getName();
         
         if (!topLevelMap.containsKey(srcStr)) {
-            TopLevelContent newTL = new TopLevelContent(srcStr);
+            ClassContent newTL = new ClassContent(srcStr);
             topLevelMap.put(srcStr, newTL);
             indicator.addContents(newTL);
         }
        
-        TopLevelContent tlc = topLevelMap.get(srcStr);
+        ClassContent tlc = topLevelMap.get(srcStr);
         
         if (!innerContentMap.containsKey(genStmt)) {
-            InnerContent ic = new InnerContent(genStmt);
+            ICCCallContent ic = new ICCCallContent(genStmt);
             innerContentMap.put(genStmt, ic);
             tlc.contents.add(ic);
         }
         
-        innerContentMap.get(genStmt).addTarget(target);
+        if (dest.declaresMethod(target.getSubSignature())) {
+            innerContentMap.get(genStmt).addTarget(target);
+        } else
+            innerContentMap.get(genStmt).addUnResolvedTarget(dest, target);
 
     }
     

@@ -58,6 +58,7 @@ public class StartServiceTransform implements VATransform {
         modified.add(stmt);
 
         SootMethod onStartCommand = Scene.v().getMethod("<android.app.Service: int onStartCommand(android.content.Intent,int,int)>");
+        SootMethod onStart = Scene.v().getMethod("<android.app.Service: void onStart(android.content.Intent,int)>");
 
         Value intentArg = invoke.getArg(0);
 
@@ -93,12 +94,32 @@ public class StartServiceTransform implements VATransform {
             //ignore making output events for this call we add
             RCFG.v().ignoreInvokeForOutputEvents(onStartCall);
             
+            //now add the call to onStart()
+            
+            args = new LinkedList<Value>();
+
+            args.add(intentArg);
+            args.add(IntConstant.v(0));
+            Stmt onStartDepCall = 
+                    Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
+                        (local, onStart.makeRef(), args));
+
+            body.getUnits().insertAfter(onStartDepCall, onStartCall);
+            //ignore making output events for this call we add
+            RCFG.v().ignoreInvokeForOutputEvents(onStartDepCall);
+            
             //add to icc report 
             if (serviceField.getType() instanceof RefType) {
                 SootClass target = ((RefType)serviceField.getType()).getSootClass(); 
                 SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStartCommand);
                         
                 ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
+                    target, stmt, resolved);          
+                
+                resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStart);
+                System.out.println(target);
+                System.out.println(resolved);
+                ICCMap.v().addInfo(containingMthd.getDeclaringClass(),
                     target, stmt, resolved);
             }
         }
