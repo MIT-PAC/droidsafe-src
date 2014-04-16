@@ -118,8 +118,7 @@ ReceiverRestrictedContext(Context base) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.008 -0500", hash_original_method = "E81E60407BE1AC3446285185653F6DEC", hash_generated_method = "70CCA2B262847282DDB92A6E7AC7ABF3")   
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
-        throw new ReceiverCallNotAllowedException(
-                "IntentReceiver components are not allowed to bind to services");
+        return true;
         //ex.fillInStackTrace();
         //Log.e("IntentReceiver", ex.getMessage(), ex);
         //return mContext.bindService(service, interfaceName, conn, flags);

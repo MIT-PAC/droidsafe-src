@@ -37,10 +37,6 @@ public abstract class BroadcastReceiver {
 public BroadcastReceiver() {
     }
 
-    public void droidSafeOnReceive(Context context, Intent intent) {
-        onReceive(context, intent);
-    }
-
     /**
      * This method is called when the BroadcastReceiver is receiving an Intent
      * broadcast.  During this time you can use the other methods on

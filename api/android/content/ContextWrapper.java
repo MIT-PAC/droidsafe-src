@@ -675,7 +675,7 @@ public Context getBaseContext() {
 @Override
     public boolean bindService(Intent service, ServiceConnection conn,
             int flags) {
-        return mBase.bindService(service, conn, flags);
+        return true; //mBase.bindService(service, conn, flags);
     }
 
     @DSComment("No action for callback unregistration")
