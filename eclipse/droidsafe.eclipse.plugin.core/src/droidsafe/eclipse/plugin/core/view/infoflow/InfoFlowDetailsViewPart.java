@@ -22,9 +22,6 @@ public class InfoFlowDetailsViewPart extends MethodInfoOutlineViewPart {
     /** The ID of the view as specified by the extension. */
     public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.InfoFlowDetailslView";
 
-    /** The text displayed on the empty page. */
-    protected static String EMPTY_PAGE_LABEL = "To display the high-level info flow info, first select a method from the 'Security Spec Outline'";
-    
     @Override
     protected DroidsafeInfoTreeElementContentProvider makeContentProvider() {
         return new InfoFlowDetailsTreeElementContentProvider();

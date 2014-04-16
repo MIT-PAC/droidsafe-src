@@ -18,7 +18,9 @@ public class Utils {
     public static final String CHILDREN_PROP = "contents";
     
     public static final List<String> SIGNATURE_FIELDS;
-    
+
+    public static final String SOURCE_LOCATION_PROP = "src-loc";
+
     static {
         String[] sigFields = {"class", "method-name"};
         SIGNATURE_FIELDS = Arrays.asList(sigFields);
@@ -246,6 +248,31 @@ public class Utils {
             return str1.compareTo(str2);
         }
         return 0;
+    }
+
+    public static String getSignature(JsonObject jsonObj) {
+        String sig = getFieldValueAsString(jsonObj, "signature");
+        if (sig != null && sig.startsWith("<"))
+            sig = sig.substring(1, sig.length() - 1);
+        return sig;
+    }
+
+    public static JsonObject getSourceLoc(JsonObject jsonObject) {
+        return Utils.getFieldValueAsObject(jsonObject, SOURCE_LOCATION_PROP);
+    }
+    
+    public static String getSourceClass(JsonObject jsonObject) {
+        JsonObject sourceLoc = getSourceLoc(jsonObject);
+        if (sourceLoc != null)
+            return Utils.getFieldValueAsString(sourceLoc, "class");
+        return null;
+    }
+
+    public static int getSourceLine(JsonObject jsonObject) {
+        JsonObject sourceLoc = getSourceLoc(jsonObject);
+        if (sourceLoc != null)
+            return sourceLoc.get("line").getAsInt();
+        return -1;
     }
 
 }
