@@ -18,6 +18,7 @@ import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
@@ -34,15 +35,11 @@ import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
-import droidsafe.eclipse.plugin.core.view.infoflow.MethodWithSourceSinkFilter;
-import droidsafe.eclipse.plugin.core.view.infoflow.SourceSinkPair;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
-import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
-import droidsafe.utils.SourceLocationTag;
 
 /**
  * View for displaying the points-to info on the receiver/arguments of a given method. 
@@ -73,6 +70,12 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
         return fState.visibilityMap;
     }
 
+    @Override
+    public void createPartControl(Composite parent) {
+        showOtherDroidsafeViews(VIEW_ID);
+        super.createPartControl(parent);
+    }
+    
     public boolean getVisibility(String type) {
         Map<String, Boolean> visibilityMap = getVisibilityMap();
         Boolean visibility = visibilityMap.get(type);
@@ -254,6 +257,7 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
         fIndicatorFiles = getIndicatorFiles();
         if (fIndicatorFiles == null || fIndicatorFiles.length == 0) {
             fEmptyPageLabel.setText(noJsonFileMessage());
+            setPartName("Indicator");
             showPage(PAGE_EMPTY);
         } else {
             File indicatorFile = fIndicatorFiles[0];

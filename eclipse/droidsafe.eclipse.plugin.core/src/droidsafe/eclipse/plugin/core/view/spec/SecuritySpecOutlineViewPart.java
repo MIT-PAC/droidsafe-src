@@ -42,6 +42,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
@@ -204,6 +205,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
      */
     @Override
     public void createPartControl(Composite parent) {
+        DroidsafeInfoViewPart.showOtherDroidsafeViews(VIEW_ID);
         this.parentComposite = parent;
         setSelectionListener();
         this.contentProvider = new TreeElementContentProvider();
