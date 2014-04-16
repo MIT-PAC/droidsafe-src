@@ -19,6 +19,27 @@ import org.eclipse.ui.actions.CompoundContributionItem;
 
 public class IndicatorMenu extends CompoundContributionItem {
 
+    static IContributionItem[] NO_INDICATOR;
+    static IContributionItem[] NO_OTHER_INDICATOR;
+    
+    static {
+        NO_INDICATOR = new IContributionItem[1];
+        NO_INDICATOR[0] = new ContributionItem() {
+            public void fill(Menu menu, int index) {
+                MenuItem item = new MenuItem(menu, SWT.READ_ONLY);
+                item.setText("<No indicators>");
+            }
+        };
+        
+        NO_OTHER_INDICATOR = new IContributionItem[1];
+        NO_OTHER_INDICATOR[0] = new ContributionItem() {
+            public void fill(Menu menu, int index) {
+                MenuItem item = new MenuItem(menu, SWT.READ_ONLY);
+                item.setText("<No other indicators>");
+            }
+        };
+    }
+    
     @Override
     protected IContributionItem[] getContributionItems() {
         final IndicatorViewPart view = getView();
@@ -28,9 +49,12 @@ public class IndicatorMenu extends CompoundContributionItem {
         File[] indicatorFiles = view.getIndicatorFiles();
         File indicatorFile = view.getInputElement();
 
-        if (indicatorFiles == null || indicatorFiles.length <= 1)
-            return new IContributionItem[0];
+        if (indicatorFiles == null || indicatorFiles.length == 0)
+            return NO_INDICATOR;
         
+        if (indicatorFiles.length == 1) {
+            return NO_OTHER_INDICATOR;
+        }
         IContributionItem[] items = new IContributionItem[indicatorFiles.length - 1];
         int i = 0;
         for (final File file: indicatorFiles) {

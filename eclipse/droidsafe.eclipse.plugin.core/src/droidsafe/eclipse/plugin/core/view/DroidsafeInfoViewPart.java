@@ -13,11 +13,20 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.ISelectionService;
+import org.eclipse.ui.IViewPart;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.PageBook;
 import org.eclipse.ui.part.ViewPart;
 
 import droidsafe.eclipse.plugin.core.Activator;
+import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
+import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
+import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
+import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 
 /**
  * View for displaying droidsafe analysis info on a given method. 
@@ -43,6 +52,13 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
 
     /** The label for the empty page. */
     protected Label fEmptyPageLabel;
+    
+    static final String[] ALL_VIEW_IDS = {SecuritySpecOutlineViewPart.VIEW_ID,
+                                          InfoFlowSummaryViewPart.VIEW_ID,
+                                          IndicatorViewPart.VIEW_ID,
+                                          InfoFlowDetailsViewPart.VIEW_ID,
+                                          ValueViewPart.VIEW_ID,
+                                          PointsToViewPart.VIEW_ID};
 
     /** 
      * The selection listener that resets the contents of the viewer
@@ -70,6 +86,23 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
         else
             projectSelected();
         setSelectionListener();
+    }
+
+    public static void showOtherDroidsafeViews(String currentViewId) {
+        IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
+        for (String viewId: ALL_VIEW_IDS) {
+            if (!viewId.equals(currentViewId)) {
+                IViewPart view = activePage.findView(viewId);
+                if (view == null) {
+                    // open the view
+                    try {
+                        activePage.showView(viewId);
+                    } catch (PartInitException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
     }
 
     /**
