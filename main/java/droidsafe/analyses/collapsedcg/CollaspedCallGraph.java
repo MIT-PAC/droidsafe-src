@@ -61,6 +61,13 @@ public class CollaspedCallGraph {
         Set<StmtEdge> edges = callgraph.getAllEdges(v1, v2);
         
         for (StmtEdge edge : edges) {
+            if (stmt == null) {
+                if (edge.getStmt() == null)
+                    return true;
+                else 
+                    continue;
+            }
+            
             if (stmt.equals(edge.getStmt())) 
                 return true;
         }
