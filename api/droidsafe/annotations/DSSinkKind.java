@@ -26,5 +26,9 @@ public enum DSSinkKind {
     UNSPECIFIED,
     USB,
     REFLECTION,
-    IPC
+    IPC,
+    DATABASE,
+    RESOURCES,
+    IO,
+    PROCESS
 }
