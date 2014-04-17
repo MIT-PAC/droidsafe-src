@@ -29,9 +29,12 @@ import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.system.API;
 import droidsafe.android.system.AutomatedSourceTagging;
 import droidsafe.android.system.Permissions;
+import droidsafe.reports.ICCEntryPointCallTree;
 import droidsafe.reports.ICCMap;
+import droidsafe.reports.IPCEntryPointCallTree;
 import droidsafe.reports.SensitiveSources;
 import droidsafe.reports.UnresolvedICC;
+import droidsafe.reports.AllEntryPointCallTree;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
@@ -510,6 +513,9 @@ public class Main {
         try {
             CollaspedCallGraph.v();
             
+            AllEntryPointCallTree.v().toJson(Project.v().getOutputDir());
+            IPCEntryPointCallTree.v().toJson(Project.v().getOutputDir());
+            ICCEntryPointCallTree.v().toJson(Project.v().getOutputDir());
             ICCMap.v().toJSON(Project.v().getOutputDir());
             UnresolvedICC.v().toJSON(Project.v().getOutputDir());
             SensitiveSources.v().toJSON(Project.v().getOutputDir());
@@ -522,8 +528,8 @@ public class Main {
             driverMsg ("Searching for catch blocks (precise)");
             StopWatch cbtimer = new StopWatch();
             cbtimer.start();
-            CatchBlocks cb = new CatchBlocks();
-            cb.run();
+            //CatchBlocks cb = new CatchBlocks();
+            //cb.run();
             cbtimer.stop();
             driverMsg ("Finished Catch Block Analysis: " + cbtimer);
         } catch (Exception e) {
