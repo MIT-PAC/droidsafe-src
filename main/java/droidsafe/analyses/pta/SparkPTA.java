@@ -217,7 +217,7 @@ public class SparkPTA extends PTABridge {
                 (((double)reachableMethodContexts.size()) / ((double)reachableMethods.size())));
         System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
         
-        dumpReachablesAndAllocNodes();
+        //dumpReachablesAndAllocNodes();
         //dumpCallGraphReachablesCSV();
         //dumpOutdegreesCSV();
         
@@ -814,6 +814,12 @@ public class SparkPTA extends PTABridge {
             opt.put("kobjsens-important-allocators", "");
         else 
             opt.put("kobjsens-important-allocators", buildImportantAllocs());
+        
+        if (Config.v().limitHeapContextForStrings) {
+            opt.put("kobjsens-limit-context-for-strings", "true");
+        } else {
+            opt.put("kobjsens-limit-context-for-strings", "false");
+        }
         
         
         //now overwrite options with options that are passed in

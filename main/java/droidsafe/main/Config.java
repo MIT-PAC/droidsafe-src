@@ -159,6 +159,8 @@ public class Config {
     public boolean staticinitcontext = true;
     /** if true, use types (instead of alloc sites) for object sensitive context elements > 1 */
     public boolean typesForContext = false;
+    /** in spark limit heap context for strings if we are object sensitive */
+    public boolean limitHeapContextForStrings = false;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -250,6 +252,10 @@ public class Config {
 
         Option impreciseStrs = new Option("imprecisestrings", "turn off precision for all strings, FAST and IMPRECISE");
         options.addOption(impreciseStrs);
+        
+
+        Option limitHeapContextForStrings = new Option("limitcontextforstrings", "Limit heap context to 1 for Strings in PTA");
+        options.addOption(limitHeapContextForStrings);
         
         Option allcontext = new Option("allcontext", "Track context on all objects, not just starting at user code.");
         options.addOption(allcontext);
@@ -438,6 +444,10 @@ public class Config {
 
         if (cmd.hasOption("imprecisestrings")) {
             this.impreciseStrings = true;
+        }
+        
+        if (cmd.hasOption("limitcontextforstrings")) {
+            this.limitHeapContextForStrings = true;
         }
        
         if (cmd.hasOption("allcontext")) {
