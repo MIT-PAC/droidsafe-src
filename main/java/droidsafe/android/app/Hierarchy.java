@@ -55,6 +55,9 @@ public class Hierarchy {
      * that inherits from android/app/Service
      */
     public static boolean inheritsFromAndroidService(final SootClass cn) {
+        if (cn.isInterface())
+            return false;
+        
         return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
             Scene.v().getSootClass(Components.SERVICE_CLASS));
     }
@@ -64,6 +67,9 @@ public class Hierarchy {
 	 * that inherits from android/app/Activity
 	 */
 	public static boolean inheritsFromAndroidActivity(final SootClass cn) {
+	    if (cn.isInterface())
+            return false;
+	    
 		return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
 		    Scene.v().getSootClass(Components.ACTIVITY_CLASS));
 	}
@@ -73,6 +79,9 @@ public class Hierarchy {
      * that inherits from android/content/BroadcastReceiver
      */
     public static boolean inheritsFromAndroidBroadcastReceiver(final SootClass cn) {
+        if (cn.isInterface())
+            return false;
+        
         return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
             Scene.v().getSootClass(Components.BROADCASTRECEIVER_CLASS));
     }

@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.IntentUtils;
+import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.reports.ICCMap;
 import droidsafe.utils.JimpleRelationships;
@@ -65,8 +66,14 @@ public class StartServiceTransform implements VATransform {
         Set<IAllocNode> intentNodes;
 
         intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
-       
+
         for (SootField serviceField : IntentUtils.v().getIntentServiceTargetHarnessFields(stmt, intentNodes)) {
+            if (!(serviceField.getType() instanceof RefType))
+                continue;           
+
+            if (!Hierarchy.inheritsFromAndroidService(((RefType)serviceField.getType()).getSootClass()))
+                continue;
+
             logger.info("Adding onStartCommand call in {} to {}", JimpleRelationships.v().getEnclosingMethod(stmt), serviceField);
             //call set intent on these activities with local   
 
@@ -93,9 +100,9 @@ public class StartServiceTransform implements VATransform {
             body.getUnits().insertAfter(onStartCall, localAssign);
             //ignore making output events for this call we add
             RCFG.v().ignoreInvokeForOutputEvents(onStartCall);
-            
+
             //now add the call to onStart()
-            
+
             args = new LinkedList<Value>();
 
             args.add(intentArg);
@@ -107,21 +114,19 @@ public class StartServiceTransform implements VATransform {
             body.getUnits().insertAfter(onStartDepCall, onStartCall);
             //ignore making output events for this call we add
             RCFG.v().ignoreInvokeForOutputEvents(onStartDepCall);
-            
+
             //add to icc report 
-            if (serviceField.getType() instanceof RefType) {
-                SootClass target = ((RefType)serviceField.getType()).getSootClass(); 
-                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStartCommand);
-                        
-                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
-                    target, stmt, resolved);          
-                
-                resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStart);
-                System.out.println(target);
-                System.out.println(resolved);
-                ICCMap.v().addInfo(containingMthd.getDeclaringClass(),
-                    target, stmt, resolved);
-            }
+
+            SootClass target = ((RefType)serviceField.getType()).getSootClass(); 
+            SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStartCommand);
+
+            ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
+                target, stmt, resolved);          
+
+            resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStart);
+            ICCMap.v().addInfo(containingMthd.getDeclaringClass(),
+                target, stmt, resolved);
+
         }
     }
 

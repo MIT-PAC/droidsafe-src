@@ -28,28 +28,32 @@ public class FilterPredClause {
             JsonObject jsonObj = jsonElt.getAsJsonObject();
             if (field.equals("signature")) {
                 String sig = Utils.getFieldValueAsString(jsonObj, field);
-                return compOp.apply(sig, value);
+                if (sig != null)
+                    return compOp.apply(sig, value);
             } else if (Utils.SIGNATURE_FIELDS.contains(field)){
                 String str1 = Utils.getSignatureFieldValueAsString(jsonObj, field);
-                return compOp.apply(str1, value);
+                if (str1 != null)
+                    return compOp.apply(str1, value);
             } else {
                 JsonElement ovalue = jsonObj.get(field);
-                if (ovalue.isJsonPrimitive()) {
-                    JsonPrimitive pvalue = (JsonPrimitive) ovalue;
-                    if (pvalue.isBoolean()) {
-                        boolean bool1 = pvalue.getAsBoolean();
-                        boolean bool2 = Boolean.parseBoolean(value);
-                        return compOp.apply(bool1, bool2);
-                    }
-                    if (pvalue.isNumber()) {
-                        // TODO: handle all numeric types
-                        int int1 = pvalue.getAsInt();
-                        int int2 = Integer.parseInt(value);
-                        return compOp.apply(int1, int2);
-                    }
-                    if (pvalue.isString()) {
-                        String str1 = pvalue.getAsString();
-                        return compOp.apply(str1, value);
+                if (ovalue != null) {
+                    if (ovalue.isJsonPrimitive()) {
+                        JsonPrimitive pvalue = (JsonPrimitive) ovalue;
+                        if (pvalue.isBoolean()) {
+                            boolean bool1 = pvalue.getAsBoolean();
+                            boolean bool2 = Boolean.parseBoolean(value);
+                            return compOp.apply(bool1, bool2);
+                        }
+                        if (pvalue.isNumber()) {
+                            // TODO: handle all numeric types
+                            int int1 = pvalue.getAsInt();
+                            int int2 = Integer.parseInt(value);
+                            return compOp.apply(int1, int2);
+                        }
+                        if (pvalue.isString()) {
+                            String str1 = pvalue.getAsString();
+                            return compOp.apply(str1, value);
+                        }
                     }
                 }
             }

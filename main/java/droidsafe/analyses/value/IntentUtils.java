@@ -128,7 +128,7 @@ public class IntentUtils {
                     Set<SootField> targetHarnessFlds = getHarnessFldsForClsStrings(targetClsStrings);
                     // If we didn't get a field for each possible target class, then be conservative and use all
                     if (targetClsStrings.size() > targetHarnessFlds.size()){
-                        UnresolvedICC.v().addInfo(stmt);
+                        UnresolvedICC.v().addInfo(stmt, "Unresolved Intent");
                         if (CONSERVATIVE) 
                             resolvedTargetHarnessFlds.addAll(allPossibleFieldTargets);
                         else 
@@ -140,11 +140,11 @@ public class IntentUtils {
                         //System.exit(1);
                     }
                 } else {
-                    UnresolvedICC.v().addInfo(stmt);
+                    UnresolvedICC.v().addInfo(stmt, "Unresolved Intent");
                     resolvedTargetHarnessFlds.addAll(allPossibleFieldTargets);
                 }
             } else {
-                UnresolvedICC.v().addInfo(stmt);
+                UnresolvedICC.v().addInfo(stmt, "Unresolved Intent");
                 resolvedTargetHarnessFlds.addAll(allPossibleFieldTargets);
             }
         }
@@ -213,7 +213,7 @@ public class IntentUtils {
             for (VAModel clz : clsFldVAModels) {
                 if (clz.invalidated()) {
                     allConstants = false;
-                    UnresolvedICC.v().addInfo(stmt);
+                    UnresolvedICC.v().addInfo(stmt, "Unresolved Intent");
                     continue;
                 }
                     
@@ -224,7 +224,7 @@ public class IntentUtils {
                         System.out.println("resolve explicit intent: " + value.getName());
                     }
                 } else {
-                    UnresolvedICC.v().addInfo(stmt);
+                    UnresolvedICC.v().addInfo(stmt, "Unresolved Intent");
                     allConstants = false;
                 } 
             }
@@ -232,7 +232,7 @@ public class IntentUtils {
             if (allConstants)
                 return targetClsStrings;
         } else {
-            UnresolvedICC.v().addInfo(stmt);
+            UnresolvedICC.v().addInfo(stmt, "Unresolved Intent");
         }
 
         
@@ -242,7 +242,7 @@ public class IntentUtils {
             // if any of the component name VA models are invalidated, we cannot unambiguously determine all target
             // cls strings and must return null
             if(componentNameFldVAModel.invalidated() || componentNameFldVAModel instanceof UnknownVAModel){
-                UnresolvedICC.v().addInfo(stmt);
+                UnresolvedICC.v().addInfo(stmt, "Unresolved Intent");
                 return null;
             }
             // the next four lines get the VA models for the 'mClass' field
@@ -255,7 +255,7 @@ public class IntentUtils {
                 // if any of the classVAModels are invalidated, we cannot unambiguously determine all target cls
                 // strings and must return null
                 if(mClassVAModel.invalidated() || mClassVAModel instanceof UnknownVAModel) {
-                    UnresolvedICC.v().addInfo(stmt);
+                    UnresolvedICC.v().addInfo(stmt, "Unresolved Intent");
                     return null;
                 }
                 // get the class strings
@@ -276,7 +276,7 @@ public class IntentUtils {
         // for each Activity
         // for each intentFilter
         // if match, return cls string of activity
-        UnresolvedICC.v().addInfo(stmt);
+        UnresolvedICC.v().addInfo(stmt, "Unresolved Intent");
         return null;
     }
 

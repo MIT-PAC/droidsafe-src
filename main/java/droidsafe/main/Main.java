@@ -29,8 +29,12 @@ import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.system.API;
 import droidsafe.android.system.AutomatedSourceTagging;
 import droidsafe.android.system.Permissions;
+import droidsafe.reports.ICCEntryPointCallTree;
 import droidsafe.reports.ICCMap;
+import droidsafe.reports.IPCEntryPointCallTree;
+import droidsafe.reports.SensitiveSources;
 import droidsafe.reports.UnresolvedICC;
+import droidsafe.reports.AllEntryPointCallTree;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
@@ -509,18 +513,23 @@ public class Main {
         try {
             CollaspedCallGraph.v();
             
+            AllEntryPointCallTree.v().toJson(Project.v().getOutputDir());
+            IPCEntryPointCallTree.v().toJson(Project.v().getOutputDir());
+            ICCEntryPointCallTree.v().toJson(Project.v().getOutputDir());
             ICCMap.v().toJSON(Project.v().getOutputDir());
             UnresolvedICC.v().toJSON(Project.v().getOutputDir());
+            SensitiveSources.v().toJSON(Project.v().getOutputDir());
         } catch (Exception e) {
             logger.error("Error writing json indicator, ignoring and moving on...", e);
         }
         
+
         try {
             driverMsg ("Searching for catch blocks (precise)");
             StopWatch cbtimer = new StopWatch();
             cbtimer.start();
-            CatchBlocks cb = new CatchBlocks();
-            cb.run();
+            //CatchBlocks cb = new CatchBlocks();
+            //cb.run();
             cbtimer.stop();
             if (cb.timeout())
                 driverMsg ("Catch Block Analysis timed out: " + cbtimer);
@@ -529,7 +538,6 @@ public class Main {
         } catch (Exception e) {
             logger.error("Error writing json indicator, ignoring and moving on...", e);
         }
-
     }
 
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {

@@ -46,6 +46,7 @@ public class UnresolvedICC {
     private UnresolvedICC() {
         indicator = new Indicator<TopLevelContent>("ICC: Unresolved Calls");
         added = new HashMap<SootClass, TopLevelContent>();
+        indicator.addDisplay("desc");
     }
     
     private class TopLevelContent {
@@ -65,8 +66,9 @@ public class UnresolvedICC {
         String type = "icc_call";
         String signature;  
         String link = "as_call";
+        String desc;
         
-        public InnerLevelCallContent(Stmt genStmt) {
+        public InnerLevelCallContent(Stmt genStmt, String desc) {
             setSource(genStmt);
             try {
                 if (genStmt.containsInvokeExpr()) {
@@ -78,6 +80,8 @@ public class UnresolvedICC {
             } catch (Exception e) {
                 this.signature = "";
             }
+            
+            this.desc = desc;
         }
     }
   
@@ -85,14 +89,17 @@ public class UnresolvedICC {
         String type = "icc_callback";
         String signature;  
         String link = "as_entry_point";
+        String desc;
         
-        public InnerLevelCallbackContent(SootMethod method) {
+        public InnerLevelCallbackContent(SootMethod method, String desc) {
             setSource(method);
             signature = method.getSignature();
+            this.desc = desc;
         }
+        
     }
     
-    public void addInfo(SootMethod method) {
+    public void addInfo(SootMethod method, String desc) {
         SootClass clz = method.getDeclaringClass();
        
         if (!added.containsKey(clz)) {
@@ -101,11 +108,11 @@ public class UnresolvedICC {
             added.put(clz, newTlc);
         }
         
-        InnerLevelContent newIL = new InnerLevelCallbackContent(method);
+        InnerLevelContent newIL = new InnerLevelCallbackContent(method, desc);
         added.get(clz).contents.add(newIL);
     }
     
-    public void addInfo(Stmt genStmt) {
+    public void addInfo(Stmt genStmt, String desc) {
         SootClass clz = JimpleRelationships.v().getEnclosingMethod(genStmt).getDeclaringClass();
        
         if (!added.containsKey(clz)) {
@@ -114,7 +121,7 @@ public class UnresolvedICC {
             added.put(clz, newTlc);
         }
         
-        InnerLevelContent newIL = new InnerLevelCallContent(genStmt);
+        InnerLevelContent newIL = new InnerLevelCallContent(genStmt, desc);
         added.get(clz).contents.add(newIL);
     }
     

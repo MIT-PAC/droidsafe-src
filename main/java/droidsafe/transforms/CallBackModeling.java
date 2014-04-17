@@ -182,7 +182,7 @@ public class CallBackModeling {
                 if (shouldFake) {
                     logger.info("Need to fake method %s in %s\n", method, clz);
                     if (API.v().isIPCCallback(method))
-                        UnresolvedICC.v().addInfo(method);
+                        UnresolvedICC.v().addInfo(method, "AIDL Callback");
                     toFake.add(method);
                 }
             }

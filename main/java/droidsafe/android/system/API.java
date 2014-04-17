@@ -557,9 +557,11 @@ public class API {
 
             String infoKind = ((AnnotationEnumElem)ae).getConstantName();
 
-            //don't add uncategorized if we have an uncategorized source
-            if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind))
-                continue;
+            //get more information for uncategorized
+            if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind)) {
+                String pkg = sootMethod.getDeclaringClass().getPackageName();
+                infoKind = pkg.substring(pkg.indexOf(".") + 1);
+            } 
 
             if (!srcsMapping.containsKey(sootMethod)) {
                 srcsMapping.put(sootMethod, new HashSet<InfoKind>());

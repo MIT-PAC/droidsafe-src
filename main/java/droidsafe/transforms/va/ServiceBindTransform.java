@@ -69,9 +69,12 @@ public class ServiceBindTransform implements VATransform {
         Set<? extends IAllocNode> intentNodes = PTABridge.v().getPTSetIns(invoke.getArg(0));
         for (SootField serviceFld : IntentUtils.v().getIntentServiceTargetHarnessFields(stmt, intentNodes)) {
             if (!(serviceFld.getType() instanceof RefType))
-                continue;
+                continue;           
             
             SootClass serviceClz = ((RefType)serviceFld.getType()).getSootClass();
+            
+            if (!Hierarchy.inheritsFromAndroidService(serviceClz))
+                continue;
             
             logger.info("Adding call to droidSafeOnBind() with target {}", serviceClz);
             

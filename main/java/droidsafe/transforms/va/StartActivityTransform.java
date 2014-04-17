@@ -11,6 +11,7 @@ import droidsafe.analyses.value.UnknownVAModel;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.API;
 import droidsafe.reports.ICCMap;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.JimpleRelationships;
@@ -78,7 +79,7 @@ class StartActivityTransform implements VATransform {
         Value intentArg = invoke.getArg(0);
 
         Set<IAllocNode> intentNodes;
-        
+
         if (intentArg.getType() instanceof RefType) 
             intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
         else if (intentArg.getType() instanceof ArrayType) {
@@ -89,9 +90,13 @@ class StartActivityTransform implements VATransform {
             }
         } else
             return;
-            
+
 
         for (SootField activityField : IntentUtils.v().getIntentActivityTargetHarnessFields(stmt, intentNodes)) {
+            if (!(activityField.getType() instanceof RefType) || 
+                    !Hierarchy.inheritsFromAndroidActivity(((RefType)activityField.getType()).getSootClass()))
+                continue;
+
             logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
             //call set intent on these activities with local   
 
@@ -116,14 +121,17 @@ class StartActivityTransform implements VATransform {
             body.getUnits().insertAfter(setIntentCall, localAssign);
             //ignore making output events for this call we add
             RCFG.v().ignoreInvokeForOutputEvents(setIntentCall);
-            
-            //register in report of icc
-            if (activityField.getType() instanceof RefType) {
-                SootClass target  = ((RefType)activityField.getType()).getSootClass();
-                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, setIntentMethod);
-                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
-                    target, 
-                    stmt, resolved);
+            try  {
+                //register in report of icc
+                if (activityField.getType() instanceof RefType) {
+                    SootClass target  = ((RefType)activityField.getType()).getSootClass();
+                    SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, setIntentMethod);
+                    ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
+                        target, 
+                        stmt, resolved);
+                }
+            } catch (Exception e) {
+                logger.warn("Issue resolve method for target in startActivityTransform:", e);
             }
         }
     }

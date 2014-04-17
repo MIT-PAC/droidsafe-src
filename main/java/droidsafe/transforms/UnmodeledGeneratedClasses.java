@@ -306,6 +306,10 @@ public class UnmodeledGeneratedClasses {
             
             clone.addMethod(init);
             
+            if (API.v().isSystemClass(clone)) {
+                API.v().addSafeMethod(init);
+            }
+            
             Body newBody = Jimple.v().newBody(init);
             init.setActiveBody(newBody);
             
