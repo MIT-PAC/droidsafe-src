@@ -18,18 +18,30 @@ import org.eclipse.ui.actions.CompoundContributionItem;
 
 public class TypeVisibilityMenu extends CompoundContributionItem {
 
+    static IContributionItem[] NO_VISIBILITY_CONTROL;
+    
+    static {
+        NO_VISIBILITY_CONTROL = new IContributionItem[1];
+        NO_VISIBILITY_CONTROL[0] = new ContributionItem() {
+            public void fill(Menu menu, int index) {
+                MenuItem item = new MenuItem(menu, SWT.READ_ONLY);
+                item.setText("<No visibility control>");
+            }
+        };
+    }
+    
     @Override
     protected IContributionItem[] getContributionItems() {
         final IndicatorViewPart view = getView();
         if (view == null)
             return new IContributionItem[0];
 
-        Map<String, Boolean> labelDisplayMap = view.getVisibilityMap();
+        Map<String, Boolean> visibilityMap = view.getVisibilityMap();
 
-        if (labelDisplayMap.isEmpty())
-            return new IContributionItem[0];
+        if (visibilityMap.isEmpty())
+            return NO_VISIBILITY_CONTROL;
         
-        Set<String> fields = labelDisplayMap.keySet();
+        Set<String> fields = visibilityMap.keySet();
         IContributionItem[] items = new IContributionItem[fields.size()];
         int i = 0;
         for (final String field: fields) {
