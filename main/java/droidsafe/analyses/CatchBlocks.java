@@ -60,6 +60,9 @@ import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 
+import static droidsafe.analyses.CallChainInfo.*;
+import static droidsafe.analyses.CallChainBuilder.*;
+
 
 /**
  * Catch block indicator. Looks for catch blocks in the application code and
@@ -301,7 +304,8 @@ public class CatchBlocks {
     				    for (String call : calls)
     				        fp.println (call);
     				} else {
-    					CallChainInfo dcall = process_call_chain (mc, s, stack);
+    				    CallChainBuilder ccb = new CallChainBuilder (timeout - (int)timer.getTime(), true);
+    					CallChainInfo dcall = ccb.process_call_chain (s, mc);
     					dcall.type = "direct-call";
     					if (ignore_dup_methods) {
     					    if (!processed_methods.contains (mc.method())) {
@@ -324,73 +328,7 @@ public class CatchBlocks {
 		return cci;
     }
     
-    /**
-     * Process the call chain and returns a CallChainInfo that 
-     * describes this call and any call that it makes.
-     * Ignores any calls that are within the API. Ignores recursive
-     * calls and static initializers.  Terminates on system calls
-     * that do not contain callbacks.
-     * 
-     * @param mc      - Method to start at
-     * @param s		  - Stmt that called mc
-     * @param stack   - Current call chain, used to check for recursion
-     */
-    private CallChainInfo process_call_chain (MethodOrMethodContext mc, 
-            Stmt s, Stack<SootMethod> stack) {
-        
-    	if (is_terminal (mc))
-    		return new CallChainInfo (mc.method(), s, "syscall");
-    	
-    	CallChainInfo cci = new CallChainInfo (mc.method(), s, "call-chain");
-        CallGraph cg = PTABridge.v().getCallGraph();
-        
-        Set<SootMethod> processed_methods = new HashSet<SootMethod>();
-        List<CallChainInfo> calls = new ArrayList<CallChainInfo>();
-        for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
-            if (timeout())
-                break;
-            Edge e = tit.next();
-            SootMethod m = e.getTgt().method();
-            if (ignore_dup_methods) {
-                if (processed_methods.contains(m)) {
-                    logger.info ("pcc: method {}, duplicate callee {}", mc.method(), m);
-                    continue;
-                }
-                processed_methods.add (m);
-            }
-            boolean print_m = !(is_system(mc.method()) && is_system (m));
-            if (m.toString().contains ("<clinit>")) {
-                continue;
-            } else if (stack.contains(m)) {
-                // ignore recursive  call
-            } else { // normal call 
-            	stack.push (m);
-            	CallChainInfo callee = process_call_chain (e.getTgt(), e.srcStmt(), stack);
-            	stack.pop();
-            	if (print_m) {
-            	    calls.add (callee);
-            	} else { // skip callee and just add what it calls
-            	    if (ignore_dup_methods) {
-            	        for (CallChainInfo callee_call : callee.contents) {
-            	            if (!processed_methods.contains (callee_call.method)) {
-            	                calls.add (callee_call);
-            	                processed_methods.add(callee_call.method);
-            	            }
-            	        }
-            	    } else {
-            	        calls.addAll (Arrays.asList(callee.contents));
-            	    }
-            	}
-            }
-        }
-        cci.contents = calls.toArray(cci.contents);
-        if (ignore_dup_methods)
-            Arrays.sort(cci.contents);
-        else
-            cci.merge_contents();
-        return cci;
-    }
-    
+   
     private void print_call (SootMethod m, Stmt s, String indent, String type, boolean contents) {
         fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
         fp.printf ("%s  %s,\n", indent, json_field ("signature", m.getSignature()));
@@ -471,82 +409,7 @@ public class CatchBlocks {
     	return calls;
     }
     
-    /**
-     * Returns true if the specified method should terminate the call graph
-     * The call graph is terminated on system calls that do not have callbacks
-     * into application code.
-     * @param m
-     * @return
-     */
-    private boolean is_terminal (MethodOrMethodContext mc) {
-    	Stack<SootMethod> stack = new Stack<SootMethod>();
-    	boolean result = is_system (mc.method()) && !calls_app_method (mc, stack);
-    	logger.info ("  {} terminal = {}", mc.method(), result);
-    	return result;
-    }
-    
-    /** Returns true if an app method is called directly or indirectly from mc **/
-    private boolean calls_app_method (MethodOrMethodContext mc, Stack<SootMethod> stack) {
-    	CallGraph cg = PTABridge.v().getCallGraph();
-    	logger.info("  cam: entering iterator, stack = {}", stack);
-    	if (no_callback_methods.contains (mc.method().getName()))
-    	    return false;
-    	if (system_depth (stack) > 5)
-    	    return false;
-    	int ii = 0;
-    	for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
-    		Edge e = tit.next();
-    		SootMethod m = e.getTgt().method();
-    		logger.info("  cam: considering method {} ({})", m, ii++);
-            MethodInfo mi = methods.get(m);
-            if (mi != null) {
-                if (mi.terminal) 
-                    continue;
-                else
-                    return true;
-            }
-            if (no_callback_methods.contains (m.getName()))
-                continue;
-            if (m.toString().contains("<clinit>"))
-    			continue;
-    		if (!is_system (m)) {
-    		    logger.info ("  cam: {} is not a system call");
-    		    return true;
-    		}
-    		if (!stack.contains(m)) {
-    			stack.push(m);
-    			boolean result = calls_app_method (e.getTgt(), stack);
-    			methods.put (m, new MethodInfo(-1, !result));
-    			stack.pop();
-    			if (result) {
-    			    logger.info ("  cam: {} true", m);
-    			    return true;
-    			}
-    		}
-    	}
-    	logger.info("  cam: {} is terminal", mc.method());
-    	return false;
-    }
-    
-    /** Returns the number of calls back to the last non-system call **/
-    private int system_depth (Stack<SootMethod> stack) {
-        for (int ii = stack.size()-1; ii > 0; ii--) {
-            SootMethod m = stack.get(ii);
-            if (!is_system(m))
-                return stack.size() - ii;
-        }
-        return stack.size();
-    }
-    /** Returns true if the specified method is a system (android or java) class **/
-    public static boolean is_system (SootMethod m) {
-    	Project p = Project.v();
-    	SootClass c = m.getDeclaringClass();
-    	return !p.isSrcClass(c) && !p.isLibClass(c);
-    }
-    /** gets the source location for unit (which must be a stmt) **/
-    public static SourceLocationTag getSourceLocation (Unit s) {
-    	return SootUtils.getSourceLocation((Stmt) s);
-    }
+ 
     /** 
      * formats an instruction using lnums to fill in branch destinations
      * and offsets in the current method

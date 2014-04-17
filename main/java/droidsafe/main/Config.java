@@ -228,7 +228,11 @@ public class Config {
         Option debug =
                 new Option("debug", "Enable debugging: log at ./droidsafe/droidsafe.log");
         options.addOption(debug);
-
+        
+        Option debug_user 
+            = new Option ("debuguser", "Enable debugging with log config file user-logback-debug.xml");
+        options.addOption(debug_user);
+        
         Option jsa = new Option("nojsa", "Do not use JSA");
         options.addOption(jsa);
 
@@ -502,6 +506,11 @@ public class Config {
             configureDebugLog();
             this.debug = true;
         }
+        
+        if (cmd.hasOption("debug-user")) {
+            configureUserDebugLog();
+            this.debug = true;
+        }
 
         if (cmd.hasOption("analyzestrings_unfiltered")) {
             this.unfilteredStringAnalysis = true;
@@ -526,6 +535,26 @@ public class Config {
             // configuration. For multi-step configuration, omit calling context.reset().
             context.reset();
             configurator.doConfigure(apacHome + File.separator + "config-files/logback-debug.xml");
+        } catch (JoranException je) {
+            // StatusPrinter will handle this
+        }
+        StatusPrinter.printInCaseOfErrorsOrWarnings(context);
+    }
+    
+    /**
+     * Method to configure the logging infrastructure to use the debug logging configuration file.
+     */
+    public void configureUserDebugLog() {
+        // Load $user-logback.xml from the config files directory
+        // assume SLF4J is bound to logback in the current environment
+        LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+        try {
+            JoranConfigurator configurator = new JoranConfigurator();
+            configurator.setContext(context);
+            // Call context.reset() to clear any previous configuration, e.g. default
+            // configuration. For multi-step configuration, omit calling context.reset().
+            context.reset();
+            configurator.doConfigure(apacHome + File.separator + "config-files/user-logback-debug.xml");
         } catch (JoranException je) {
             // StatusPrinter will handle this
         }
