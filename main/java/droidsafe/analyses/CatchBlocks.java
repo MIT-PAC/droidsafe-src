@@ -122,134 +122,7 @@ public class CatchBlocks {
         }
     }
     
-    /** information about each call in the call chain **/
-    static class CallChainInfo implements Comparable<CallChainInfo>{
-    	String type;
-    	SootMethod method;
-    	Stmt stmt;
-    	int syscalls;
-    	int calls;
-    	int score;
-    	CallChainInfo[] contents = new CallChainInfo[0];
-    	public CallChainInfo (SootMethod m, Stmt s, String type) {
-    		this.type = type;
-    		this.method = m;
-    		this.stmt = s;
-    		calls = 1;
-    		if (type.equals ("syscall"))
-    			syscalls = 1;
-    	}
-    	/** merge multiple call chains from different contexts **/
-    	public void merge (CallChainInfo other) {
-    	   if (method != other.method) 
-    	       throw new RuntimeException ("methods don't match: " 
-    	               + method + ", " + other.method + " " + method.equals(other.method)
-    	               + " " + method.hashCode() + " " + other.method.hashCode());
-    	   if (contents.length == 0) {
-    	       contents = other.contents;
-    	       return;
-    	   } else if (other.contents.length == 0) {
-    	       return;
-    	   }
-    	   List<CallChainInfo> ccis = new ArrayList<CallChainInfo>(Arrays.asList(contents));
-    	   Map<SootMethod,CallChainInfo> minfo = new HashMap<SootMethod,CallChainInfo>();
-    	   for (CallChainInfo cci : contents) 
-    	       minfo.put(cci.method, cci);
-    	   for (CallChainInfo other_cci : other.contents) {
-    	       CallChainInfo cci = minfo.get(other_cci.method);
-    	       if (cci == null)
-    	           ccis.add(other_cci);
-    	       else
-    	           cci.merge (other_cci);
-    	   }
-    	   if (contents.length == ccis.size())
-    	       logger.info ("merge: {} old/new size = {}", method, ccis.size());
-    	   else
-    	       logger.info ("merge: {} orig {} elems, new {} elems", method, 
-    	               contents.length, ccis.size());
-    	   contents = ccis.toArray (new CallChainInfo[0]);
-    	}
-    	/** merge any duplicate method calls **/
-    	public void merge_contents() {
-    	    if (contents.length == 0)
-    	        return;
-    	    Arrays.sort (contents);
-    	    List<CallChainInfo> unique_calls = new ArrayList<CallChainInfo>();
-    	    unique_calls.add (contents[0]);
-    	    for (int ii = 1; ii < contents.length; ii++) {
-    	        CallChainInfo top = unique_calls.get(unique_calls.size()-1);
-    	        if (contents[ii].method == top.method)
-    	            top.merge (contents[ii]);
-    	        else
-    	            unique_calls.add(contents[ii]);
-    	    }
-    	    logger.info ("merge_contents {}: old {} elems, new {} elems", 
-    	            method, contents.length, unique_calls.size());
-            contents = unique_calls.toArray(new CallChainInfo[0]);
-    	}
-    	
-    	/** order by signature **/
-    	public int compareTo (CallChainInfo other) {
-    	    return method.getSignature().compareTo(other.method.getSignature());
-    	}
-    	public void calculate_scores() {
-    	    score = 0;
-    	    if (contents.length == 0) {
-    	        API api = API.v();
-    	        Set<InfoKind> source = api.getSourceInfoKinds(method);
-    	        Set<InfoKind> sink = api.getSinkInfoKinds(method);
-    	        if (is_system (method)) {
-    	            if (api.isSafeMethod(method))
-    	                score = 0;
-    	            else if (api.isSpecMethod(method))
-    	                score = 5;
-    	            else if (api.isBannedMethod(method))
-    	                score = 6;  
-    	            if (!source.isEmpty())
-    	                score += 1;
-    	            else if (!sink.isEmpty())
-    	                score += 2;
-    	        }    	            
-    	        return;
-    	    }
-    	    for (CallChainInfo cci : contents) {
-    	        cci.calculate_scores();
-    	        calls += cci.calls;
-    	        syscalls += cci.syscalls;
-    	        if (cci.score > score)
-    	            score = cci.score;
-    	    }
-    	    
-    	}
-    	public void dump_json (PrintStream fp, String indent) {
-       		fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
-    		fp.printf ("%s  %s,\n", indent, json_field ("signature", method.getSignature()));
-    		SourceLocationTag slt = getSourceLocation(stmt);
-    		if (slt != null) {
-    			fp.printf ("%s  %s", indent, json_field ("src-loc"));
-    			fp.printf ("{ %s, %s},\n", json_field ("class", slt.getClz()), 
-    					json_field ("line", slt.getLine()));
-    		}   
-    		fp.printf ("%s  %s,\n", indent, json_field ("syscalls", syscalls));
-    		fp.printf ("%s  %s,\n", indent, json_field ("calls", calls));
-    		
-    		if ((contents != null) && (contents.length > 0)) {
-    			fp.printf ("%s  %s,\n", indent, json_field ("score", score));
-    			fp.printf ("%s  %s [\n", indent, json_field ("contents"));
-    			String delim = "";
-    			for (CallChainInfo cci : contents) {
-    				fp.print (delim);
-    				delim = ",\n";
-    				cci.dump_json (fp, indent + "  ");
-    			}
-    			fp.printf ("\n%s]}", indent);
-    		} else {
-    			fp.printf ("%s  %s\n", indent, json_field ("score", score));
-    			fp.printf ("%s}", indent);
-    		}
-    	}
-    }
-    
+ 
     /** Find all catch blocks and characterize their contents 
      * @throws FileNotFoundException **/
     public void run() throws FileNotFoundException {
@@ -536,21 +409,21 @@ public class CatchBlocks {
         }
     }
     
-    private static String json_field (String name) {
+    public static String json_field (String name) {
         return json_field (name, null);
     }
-    private static String json_field (String name, String value) {
+    public static String json_field (String name, String value) {
         name = "\"" + name + "\"";
         if (value == null)
             return String.format ("%-12s : ", name);
         return String.format ("%-12s : \"%s\"", name, value);
     }
     
-    private static String json_field (String name, int value) {
+    public static String json_field (String name, int value) {
         return String.format ("%-12s : %d", "\"" + name + "\"", value);
     }
           
-    private static String json_field (String name, boolean value) {
+    public static String json_field (String name, boolean value) {
         return String.format ("%-12s : %b", "\"" + name + "\"", value);
     }
           
@@ -665,13 +538,13 @@ public class CatchBlocks {
         return stack.size();
     }
     /** Returns true if the specified method is a system (android or java) class **/
-    private static boolean is_system (SootMethod m) {
+    public static boolean is_system (SootMethod m) {
     	Project p = Project.v();
     	SootClass c = m.getDeclaringClass();
     	return !p.isSrcClass(c) && !p.isLibClass(c);
     }
     /** gets the source location for unit (which must be a stmt) **/
-    private static SourceLocationTag getSourceLocation (Unit s) {
+    public static SourceLocationTag getSourceLocation (Unit s) {
     	return SootUtils.getSourceLocation((Stmt) s);
     }
     /** 
