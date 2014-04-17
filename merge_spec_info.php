@@ -26,11 +26,19 @@ class SpecInfo {
   var $ss;
   var $comment;
   var $person;
+  var $cur_specdiff = null;
+  var $cur_ssdiff = null;
 
   public function __construct ($sig, $spec, $ss, $comment=null, $person=null) {
     $this->sig = trim($sig);
-    $this->spec = trim($spec);
-    $this->ss = trim($ss);
+    $spec = trim ($spec);
+    if (true && starts_with ($spec, "DS"))
+      $spec = "@$spec";
+    $this->spec = $spec;
+    $ss = trim ($ss);
+    if (true && starts_with ($ss, "DS"))
+      $ss = "@$ss";
+    $this->ss = $ss;
     $this->comment = trim($comment);
     $this->person = trim($person);
   }
@@ -65,6 +73,7 @@ USAGE;
   $report_file = null;
   $print_classes_only = false;
   $apac = getenv ("APAC");
+  $merged_input = false;
 
   // Process arguments
   for ($i = 1; $i < count ($argv); $i++) {
@@ -73,6 +82,8 @@ USAGE;
       $debug = true;
     else if ($arg == '-classes')
       $print_classes_only = true;
+    else if ($arg == '-merged_input')
+      $merged_input = true;
     else if (starts_with ($arg, "-"))
       usage_err ("Unexpected argument $arg", $usage);
     else {
@@ -90,9 +101,23 @@ USAGE;
   // Process the info file and put all of the information
   // into info_map and bcomment
   $all_info = file ($info_file, FILE_IGNORE_NEW_LINES);
+  if (!$all_info)
+    throw new Exception ("Can't open $info_file");
   $info_map = array();
+  $cur_specdiff = null;
+  $cur_ssdiff = null; 
+  $new_block_comment = false;
   foreach ($all_info as $info) {
-    @list ($person, $spec, $ss, $sig, $comment) = explode ("\t", $info);
+    if ($merged_input)
+      @list ($person, $cur_specdiff, $spec, $curspec, $cur_ssdiff, 
+             $ss, $curss, $freq_cnt, $sig, $comment) = explode ("\t", $info);
+    else {
+      @list ($person, $spec, $ss, $sig, $comment) = explode ("\t", $info);
+    }
+    
+    // sometimes the spreadsheet puts quotes around some items (why??)
+    $sig = trim ($sig, '"');
+
     if ($person)
       $last_person = $person;
     if (!$sig && !$spec) {
@@ -106,13 +131,17 @@ USAGE;
       if ($person || $ss || $comment || !$spec)
         // echo "Warning: odd input line: $info\n";
         throw new exception ("odd input line: $info");
-      $block_comment = $spec;
+      $block_comment = trim($spec, '"');
       $new_block_comment = true;
       continue;
     }
     if (!$person)
       $person = $last_person;
     $specinfo = new SpecInfo ($sig, $spec, $ss, $comment, $person);
+    if (($cur_specdiff) && !starts_with ($cur_specdiff, "X"))
+      $specinfo->cur_specdiff = $cur_specdiff;
+    if (($cur_ssdiff) && !starts_with ($cur_ssdiff, "X"))
+      $specinfo->cur_ssdiff = $cur_ssdiff;
     
     // If there was a block comment for this class, remember it
     if ($new_block_comment) {
@@ -185,15 +214,15 @@ USAGE;
     if (array_key_exists ($cm, $freq_map)) 
       $freq_cnt = $freq_map[$cm];
     if ($class != $last_class) {
+      if ($class_cnt > 0) 
+        printf ("\n");
+      $class_cnt = 0;
       if (array_key_exists ($class, $bcomment))
         printf ("\t\t$bcomment[$class]\n");
       $verified = in_array ($class, $verified_classes);
       if ($verified)
         fwrite(STDERR, "$class is verified\n");
       $last_class = $class;
-      if ($class_cnt > 0) 
-        printf ("\n");
-      $class_cnt = 0;
     }
     if ($si && $ri) { 
       $specdiff = "XX";
@@ -206,6 +235,11 @@ USAGE;
         $specdiff = "XXXXXX";
       if (contains ($ri->ss, "IPC"))
         $ssdiff = "XXXXXX";
+      // echo "cur = '$si->cur_specdiff', '$si->cur_ssdiff'\n";
+      if ($si->cur_specdiff)
+        $specdiff = $si->cur_specdiff;
+      if ($si->cur_ssdiff)
+        $ssdiff = $si->cur_ssdiff;
       if ($si->spec == $ri->spec)
         $specdiff = " ";
       if ($si->ss == $ri->ss)
