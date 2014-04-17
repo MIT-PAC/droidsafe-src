@@ -64,6 +64,7 @@ USAGE;
   $info_file = null;
   $report_file = null;
   $print_classes_only = false;
+  $apac = getenv ("APAC");
 
   // Process arguments
   for ($i = 1; $i < count ($argv); $i++) {
@@ -153,16 +154,36 @@ USAGE;
   }
   // printf ("verified_classes = %s\n", implode($verified_classes,":"));
 
+  // Get the frequency counts for each method
+  $freq_cnt_file = "$apac/todo/engagement-3-api-calls/calls_by_freq.no_support";
+  $freq_array = file ($freq_cnt_file, FILE_IGNORE_NEW_LINES);
+  if (!$freq_array) {
+    fwrite(STDERR, "can't open $freq_cnt_file\n");
+    exit (-1);
+  }
+  foreach ($freq_array as $finfo) {
+    list ($cnt, $class, $method) = preg_split ("/[\s]+/", trim($finfo));
+    $index = "$class: $method";
+    $freq_map[$index] = $cnt;
+    // printf ("'$index' -> '$cnt'\n");
+  }
+
   // Sort the results and output everything together
   ksort ($info_map);
   $last_class = null;
   $class_cnt = 0;
   printf ("%s\n", record ("who", "SDiff", "New Spec", "Cur Spec", "SSDiff",
-                          "New SS", "Cur SS", "Signature", "Comment"));
+                          "New SS", "Cur SS", "Cnt", "Signature", "Comment"));
   foreach ($info_map as $sig => $allinfo) {
     $si = $allinfo->spec;
     $ri = $allinfo->report;
     $class = sig_to_class ($sig);
+    $method_name = sig_to_method ($sig);
+    $cm = "$class: $method_name";
+    // printf ("looking up '$cm' in freq_map\n");
+    $freq_cnt = -1;
+    if (array_key_exists ($cm, $freq_map)) 
+      $freq_cnt = $freq_map[$cm];
     if ($class != $last_class) {
       if (array_key_exists ($class, $bcomment))
         printf ("\t\t$bcomment[$class]\n");
@@ -181,21 +202,26 @@ USAGE;
         $specdiff = "XXXX";
         $ssdiff = "XXXX";
       }
+      if (contains ($ri->spec, "IPC"))
+        $specdiff = "XXXXXX";
+      if (contains ($ri->ss, "IPC"))
+        $ssdiff = "XXXXXX";
       if ($si->spec == $ri->spec)
         $specdiff = " ";
       if ($si->ss == $ri->ss)
         $ssdiff = " ";
       printf ("%s\n", record($si->person, $specdiff, $si->spec, $ri->spec,
-                             $ssdiff, $si->ss, $ri->ss, $sig, $si->comment));
+                             $ssdiff, $si->ss, $ri->ss, $freq_cnt, 
+                             $sig, $si->comment));
       $class_cnt++;
     } else if ($si) {
       printf ("%s\n", record ($si->person, " ", $si->spec, " ", " ", $si->ss,
-                              " ", $sig, $si->comment));
+                              " ", $freq_cnt, $sig, $si->comment));
       $class_cnt++;
     } else if ($ri) {
       if (false) {
         printf ("%s\n", record ($ri->person, " ", " ", $ri->spec, " ", 
-                                " ", $ri->ss, $sig, $ri->comment));
+                                " ", $ri->ss, $freq_cnt, $sig, $ri->comment));
         $class_cnt++;
       }
     } else {
@@ -210,7 +236,13 @@ function sig_to_class ($sig) {
   return str_replace("<", "", preg_replace ("/:.*/", "", $sig));
 }
 
+/** Returns the method name from the specified signature **/
+function sig_to_method ($sig) {
+  $method_and_args = preg_replace ("/^.*: *[^\s]* /", "", $sig);
+  return (preg_replace ("/ *[(].*$/", "", $method_and_args));
+}
+
 function record ($person, $specdiff, $spec1, $spec2, $ssdiff, $ss1, $ss2, 
-                 $sig, $comment) {
-  return "$person\t$specdiff\t$spec1\t$spec2\t$ssdiff\t$ss1\t$ss2\t$sig";
+                 $freq_cnt, $sig, $comment) {
+  return "$person\t$specdiff\t$spec1\t$spec2\t$ssdiff\t$ss1\t$ss2\t$freq_cnt\t$sig";
 }
