@@ -30,6 +30,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.AutomatedSourceTagging;
 import droidsafe.android.system.Permissions;
 import droidsafe.reports.ICCMap;
+import droidsafe.reports.SensitiveSources;
 import droidsafe.reports.UnresolvedICC;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
@@ -511,10 +512,12 @@ public class Main {
             
             ICCMap.v().toJSON(Project.v().getOutputDir());
             UnresolvedICC.v().toJSON(Project.v().getOutputDir());
+            SensitiveSources.v().toJSON(Project.v().getOutputDir());
         } catch (Exception e) {
             logger.error("Error writing json indicator, ignoring and moving on...", e);
         }
         
+
         try {
             driverMsg ("Searching for catch blocks (precise)");
             StopWatch cbtimer = new StopWatch();
@@ -526,7 +529,6 @@ public class Main {
         } catch (Exception e) {
             logger.error("Error writing json indicator, ignoring and moving on...", e);
         }
-
     }
 
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {

@@ -57,6 +57,10 @@ public class CollaspedCallGraph {
         v = null;
     }
     
+    public Set<SootMethod> getAllMethods() {
+        return callgraph.vertexSet();
+    }
+    
     public boolean containsEdge(SootMethod v1, SootMethod v2, Stmt stmt) {
         Set<StmtEdge> edges = callgraph.getAllEdges(v1, v2);
         
@@ -123,14 +127,15 @@ public class CollaspedCallGraph {
         
         Stmt stmt = orginalEdge.srcStmt();
         callgraph.addVertex(orginalEdge.src());
+        
         for (SootMethod userTarget : userMethods) {
             callgraph.addVertex(userTarget);
-
+            
             if (!containsEdge(orginalEdge.src(), userTarget, stmt)) {
                 StmtEdge<SootMethod> newEdge = new StmtEdge<SootMethod>(orginalEdge.src(), userTarget, stmt, true);
                 
                 callgraph.addEdge(orginalEdge.src(), userTarget, newEdge);
-                
+                                
                 if (!stmtToEdges.containsKey(stmt)) {
                     stmtToEdges.put(stmt, new LinkedHashSet<StmtEdge<SootMethod>>());
                 }
@@ -151,7 +156,7 @@ public class CollaspedCallGraph {
                 continue;
             
             callgraph.addVertex(src);
-            
+                        
             Iterator<Edge> outgoingEs = ptaCG.edgesOutOf(momc); 
             while (outgoingEs.hasNext()) {
                 Edge edge = outgoingEs.next();
@@ -164,7 +169,7 @@ public class CollaspedCallGraph {
                     continue;
                 
                 callgraph.addVertex(tgt);
-                
+                                
                 if (!containsEdge(src, tgt, edge.srcStmt())) {
                     StmtEdge<SootMethod> newEdge = new StmtEdge<SootMethod>(src, tgt, edge.srcStmt(), false);
                     
@@ -220,17 +225,69 @@ public class CollaspedCallGraph {
      * Returns all system methods called from method, does not prune the list based
      * on API.v().isInterestingMethod().
      */
-    public Set<SootMethod> getAPICallTargets(SootMethod method) {
-        Set<SootMethod> apiTargets = new LinkedHashSet<SootMethod>();
+    public Set<CallToTarget> getAPICallTargets(SootMethod method) {
+        Set<CallToTarget> apiTargets = new LinkedHashSet<CallToTarget>();
         for (MethodOrMethodContext mc : PTABridge.v().getMethodContexts(method)) {
             Iterator<Edge> outgoing = Scene.v().getCallGraph().edgesOutOf(mc);
             while  (outgoing.hasNext()) {
                 Edge edge = outgoing.next();
                 
                 if (API.v().isSystemMethod(edge.tgt())) 
-                    apiTargets.add(edge.tgt());
+                    apiTargets.add(new CallToTarget(edge.srcStmt(),edge.tgt()));
             }
         }
         return apiTargets;
+    }
+    
+    public class CallToTarget {
+        Stmt stmt;
+        SootMethod target;
+        
+        public CallToTarget(Stmt stmt, SootMethod target) {
+            super();
+            this.stmt = stmt;
+            this.target = target;
+        }
+        public Stmt getStmt() {
+            return stmt;
+        }
+        public void setStmt(Stmt stmt) {
+            this.stmt = stmt;
+        }
+        public SootMethod getTarget() {
+            return target;
+        }
+        public void setTarget(SootMethod target) {
+            this.target = target;
+        }
+        @Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+            result = prime * result + getOuterType().hashCode();
+            result = prime * result + ((stmt == null) ? 0 : stmt.hashCode());
+            result = prime * result + ((target == null) ? 0 : target.hashCode());
+            return result;
+        }
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (obj == null) return false;
+            if (getClass() != obj.getClass()) return false;
+            CallToTarget other = (CallToTarget) obj;
+            if (!getOuterType().equals(other.getOuterType())) return false;
+            if (stmt == null) {
+                if (other.stmt != null) return false;
+            } else if (!stmt.equals(other.stmt)) return false;
+            if (target == null) {
+                if (other.target != null) return false;
+            } else if (!target.equals(other.target)) return false;
+            return true;
+        }
+        private CollaspedCallGraph getOuterType() {
+            return CollaspedCallGraph.this;
+        }
+        
+        
     }
 }
