@@ -24,5 +24,8 @@ public enum DSSourceKind {
     REFLECTION,
     SERIALIZATION,
     IPC,
-    IO
+    IO,
+    AUDIO,
+    OS_STATE,
+    XML
 }
