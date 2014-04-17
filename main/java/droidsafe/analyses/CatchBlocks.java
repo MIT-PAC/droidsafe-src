@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
+import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -72,6 +73,12 @@ public class CatchBlocks {
     /** Logging field */
     private static final Logger logger = LoggerFactory.getLogger(CatchBlocks.class);
 
+    /** timer so we can timeout after a reasonable amount of time **/
+    private StopWatch timer = new StopWatch();
+    
+    /** Timeout (milliseconds).  The output will be incomplete **/
+    private int timeout = 5 * 60 * 1000;
+    
     /** Enable/Disable the transformation **/
     static boolean enabled = true;
     
@@ -248,6 +255,7 @@ public class CatchBlocks {
     public void run() throws FileNotFoundException {
 
         if (!enabled) return;
+        timer.start();
         
         fp = new PrintStream (Project.v().getOutputDir() + "/catch_blocks.json");
         fp.printf("{\n");
@@ -285,8 +293,12 @@ public class CatchBlocks {
             }
         }
         fp.println ("  {}");
-        fp.println ("]}");
+        if (timeout())
+            fp.printf ("], %s}\n", json_field ("timeout", true));
+        else
+            fp.println ("]}");
         fp.close();
+        timer.stop();
         
         }
 
@@ -462,6 +474,8 @@ public class CatchBlocks {
         Set<SootMethod> processed_methods = new HashSet<SootMethod>();
         List<CallChainInfo> calls = new ArrayList<CallChainInfo>();
         for (Iterator<Edge> tit = cg.edgesOutOf(mc); tit.hasNext(); ) {
+            if (timeout())
+                break;
             Edge e = tit.next();
             SootMethod m = e.getTgt().method();
             if (ignore_dup_methods) {
@@ -797,6 +811,17 @@ public class CatchBlocks {
         units.remove(stmt);
 
         return (true);
+    }
+    
+    /** Returns true if we have timed out **/
+    public boolean timeout() {
+        return (timer.getTime() > timeout);
+    }
+           
+    /** throw an exception if we have timed out **/
+    private void check_timeout() {
+        if (timeout())
+            throw new RuntimeException ("Catch Block Timeout");
     }
 
 }

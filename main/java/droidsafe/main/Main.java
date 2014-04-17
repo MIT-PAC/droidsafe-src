@@ -522,7 +522,10 @@ public class Main {
             CatchBlocks cb = new CatchBlocks();
             cb.run();
             cbtimer.stop();
-            driverMsg ("Finished Catch Block Analysis: " + cbtimer);
+            if (cb.timeout())
+                driverMsg ("Catch Block Analysis timed out: " + cbtimer);
+            else
+                driverMsg ("Finished Catch Block Analysis: " + cbtimer);
         } catch (Exception e) {
             logger.error("Error writing json indicator, ignoring and moving on...", e);
         }
