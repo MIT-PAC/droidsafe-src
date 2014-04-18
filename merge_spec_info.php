@@ -163,6 +163,9 @@ USAGE;
   $linenum = 0;
   foreach ($lines as $line) {
     $linenum++;
+    if (!trim($line) || starts_with ($line, "===========") 
+        || contains ($line, "No Source Found") || !contains ($line, "-"))
+        continue;
     $line = str_replace ("DSSinkKind", "DSout", $line);
     $line = str_replace ("DSSourceKind", "DSin", $line);
     @list ($sig, $spec, $ss) = preg_split ("/ +- +/", $line);
@@ -242,7 +245,8 @@ USAGE;
         $specdiff = $si->cur_specdiff;
       if ($si->cur_ssdiff)
         $ssdiff = $si->cur_ssdiff;
-      if ($si->spec == $ri->spec)
+      if (($si->spec == $ri->spec) || 
+          (str_replace("DSSpec2", "DSSpec", $si->spec) == $ri->spec))
         $specdiff = " ";
       if ($si->ss == $ri->ss)
         $ssdiff = " ";
