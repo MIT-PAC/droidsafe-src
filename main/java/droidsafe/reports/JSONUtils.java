@@ -8,10 +8,13 @@ public class JSONUtils {
     
         String out = String.format("{\n")
         + String.format("  %s,\n", json_field ("indicator-type", type))
-        + String.format("  %s {\n", json_field ("visibility"));
+        + String.format("  %s {", json_field ("visibility"));
         
+        String delim = "\n";
         for (String name : visibility_map.keySet()) {
-            out += String.format ("    %s,\n", json_field (name, visibility_map.get(name)));
+            out += delim;
+            delim = ",\n";
+            out += String.format ("    %s", json_field (name, visibility_map.get(name)));
         }
         out += String.format("  },\n")
         + String.format("  %s {\n", json_field ("display"))
