@@ -115,6 +115,17 @@ public class API {
                 "java.util.Hashtable"
                     ));
 
+    private String[] GUI_PACKAGE_PREFIXES = 
+        {
+           "android.animation",
+           "com.android.internal.view",
+           "android.widget",
+           "android.graphics",
+           "android.view",
+           "android.opengl",
+           "android.text"
+        };
+
 
 
     static {
@@ -1054,6 +1065,16 @@ public class API {
         return false;
     }
 
+    public boolean isGUIClass(SootClass clz) {
+        for (String guiPackagePrefix : GUI_PACKAGE_PREFIXES) {
+            if (clz.getName().startsWith(guiPackagePrefix)) {
+                return true;
+            }           
+        }
+        
+        return false;
+    }
+    
     public enum Classification {
         SAFE, SPEC, BAN, NONE;
     }
