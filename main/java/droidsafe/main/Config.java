@@ -92,11 +92,6 @@ public class Config {
     /** should we call unreachable callbacks, and insert dummy objects for unmodeled api calls? */
     public boolean addFallbackModeling = true;
 
-    /**
-     * If true, classes loaded from android.jar will be treated as application classes and analysis
-     * may analyze them.
-     */
-    public boolean apiClassesAreApp = false;
     /** if true, write readable jimple output for all app classes */
     public boolean writeJimpleAppClasses = false;
 
@@ -343,6 +338,15 @@ public class Config {
                         "Print contexts and local variables that have INFOVALUE")
                         .withLongOpt("infoflow-value").create("x");
         options.addOption(infoFlowValue);
+        
+        Option precisionLevel = 
+                OptionBuilder.withArgName("INT").
+                    hasArg().
+                    withDescription("Run with precision level: 0 - 5").
+                    withLongOpt("precision").
+                    create("p");
+        
+        options.addOption(precisionLevel);
 
         Option infoFlowTrackAll = new Option("trackallflows", 
                 "Track all methods (excluding those in java.lang) during information flow analysis");
@@ -388,6 +392,11 @@ public class Config {
             droidsafe.main.Main.exit(0);
         }
 
+        if (cmd.hasOption("precision")) {
+            int level = Integer.parseInt(cmd.getOptionValue("precision"));
+            setPrecisionLevel(level);
+        }
+        
         if (cmd.hasOption("target")) {
             this.target = cmd.getOptionValue("target");
         }
@@ -646,4 +655,75 @@ public class Config {
         }
     }
 
+    private void setPrecisionLevel(int level) {
+                
+        switch (level) {
+            case 0:
+                kobjsens = 1;
+                ignoreNoContextFlows = true;
+                limitHeapContextForGUI = false;
+                limitHeapContextForStrings = false;
+                runStringAnalysis = false;
+                runValueAnalysis = false;
+                cloneStaticCalls = false;
+                staticinitcontext = false;
+                break;
+            case 1: 
+                kobjsens = 2;
+                ignoreNoContextFlows = true;
+                limitHeapContextForGUI = false;
+                limitHeapContextForStrings = false;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = true;
+                staticinitcontext = true;
+                break;
+            case 2: 
+                kobjsens = 2;
+                allContextForPTA = true;
+                ignoreNoContextFlows = false;
+                limitHeapContextForGUI = false;
+                limitHeapContextForStrings = false;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = true;
+                staticinitcontext = false;
+                break;
+            case 3: 
+                kobjsens = 3;
+                ignoreNoContextFlows = true;
+                limitHeapContextForGUI = true;
+                limitHeapContextForStrings = false;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = true;
+                staticinitcontext = false;
+                break;
+            case 4: 
+                kobjsens = 4;
+                ignoreNoContextFlows = true;
+                limitHeapContextForGUI = true;
+                limitHeapContextForStrings = true;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = true;
+                staticinitcontext = false;
+                break;
+            case 5: 
+                kobjsens = 4;
+                ignoreNoContextFlows = true;
+                limitHeapContextForGUI = false;
+                limitHeapContextForStrings = false;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = true;
+                staticinitcontext = true;                
+                break;
+            default:
+                logger.error("Invalid precision level, must be between 0 and 5 inclusive.");
+                droidsafe.main.Main.exit(1);          
+                break;
+        }
+    }
+    
 }
