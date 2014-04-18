@@ -118,6 +118,8 @@ USAGE;
     // sometimes the spreadsheet puts quotes around some items (why??)
     $sig = trim ($sig, '"');
 
+    if ($person == "who")
+      continue;
     if ($person)
       $last_person = $person;
     if (!$sig && !$spec) {
@@ -138,9 +140,9 @@ USAGE;
     if (!$person)
       $person = $last_person;
     $specinfo = new SpecInfo ($sig, $spec, $ss, $comment, $person);
-    if (($cur_specdiff) && !starts_with ($cur_specdiff, "X"))
+    if (trim($cur_specdiff) && !starts_with ($cur_specdiff, "X"))
       $specinfo->cur_specdiff = $cur_specdiff;
-    if (($cur_ssdiff) && !starts_with ($cur_ssdiff, "X"))
+    if (trim($cur_ssdiff) && !starts_with ($cur_ssdiff, "X"))
       $specinfo->cur_ssdiff = $cur_ssdiff;
     
     // If there was a block comment for this class, remember it
