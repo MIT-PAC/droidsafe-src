@@ -168,9 +168,13 @@ public class CallChainBuilder {
      * @param m
      * @return
      */
-    public static boolean is_terminal (MethodOrMethodContext mc) {
+    public  boolean is_terminal (MethodOrMethodContext mc) {
         Stack<SootMethod> stack = new Stack<SootMethod>();
-        boolean result = is_system (mc.method()) && !calls_app_method (mc, stack);
+        boolean result;
+        if (process_callbacks) 
+            result = is_system (mc.method());
+        else
+            result = is_system (mc.method()) && !calls_app_method (mc, stack);
         logger.info ("  {} terminal = {}", mc.method(), result);
         return result;
     }
@@ -179,7 +183,9 @@ public class CallChainBuilder {
     private static boolean calls_app_method (MethodOrMethodContext mc, Stack<SootMethod> stack) {
         CallGraph cg = PTABridge.v().getCallGraph();
         logger.info("  cam: entering iterator, stack = {}", stack);
-        if (no_callback_methods.contains (mc.method().getName()))
+       //if (is_system(mc.method()) && !can_have_callbacks (mc.method()))
+       //    return false;
+       if (no_callback_methods.contains (mc.method().getName()))
             return false;
         if (system_depth (stack) > 5) {
             no_callback_methods.add (mc.method().getName());
@@ -232,6 +238,16 @@ public class CallChainBuilder {
         return !p.isSrcClass(c) && !p.isLibClass(c);
     }  
     
+    /**
+     * Returns true if the specified system method can possibly
+     * have callbacks (according to our annotations).  In this case
+     * we are primarily interested in IPC callbacks (to other threads)
+     * and not indirect callbacks via the GUI (eg. setting up various
+     * listeners)
+     */
+    public static boolean can_have_callbacks (SootMethod m) {
+        return (API.v().isIPCSink(m) || API.v().isIPCMethod(m));
+    }
     /** Returns true if we have timed out **/
     public boolean timeout() {
         return (timer.getTime() > timeout);

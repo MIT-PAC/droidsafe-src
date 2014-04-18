@@ -62,6 +62,7 @@ import droidsafe.utils.SourceLocationTag;
 
 import static droidsafe.analyses.CatchBlocks.*;
 import static droidsafe.analyses.CallChainBuilder.*;
+import static droidsafe.reports.JSONUtils.*;
 
 
 /** 
@@ -73,7 +74,7 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
     /** Logging field */
     private static final Logger logger = LoggerFactory.getLogger(CallChainInfo.class);
            
-    String type;
+    public String type;
     SootMethod method;
     Stmt stmt;
     int syscalls;
@@ -184,11 +185,13 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
     public void dump_json (PrintStream fp, String indent) {
         fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
         fp.printf ("%s  %s,\n", indent, json_field ("signature", method.getSignature()));
-        SourceLocationTag slt = getSourceLocation(stmt);
-        if (slt != null) {
-            fp.printf ("%s  %s", indent, json_field ("src-loc"));
-            fp.printf ("{ %s, %s},\n", json_field ("class", slt.getClz()), 
-                    json_field ("line", slt.getLine()));
+        if (stmt != null) {
+            SourceLocationTag slt = getSourceLocation(stmt);
+            if (slt != null) {
+                fp.printf ("%s  %s", indent, json_field ("src-loc"));
+                fp.printf ("{ %s, %s},\n", json_field ("class", slt.getClz()), 
+                        json_field ("line", slt.getLine()));
+            }
         }   
         fp.printf ("%s  %s,\n", indent, json_field ("syscalls", syscalls));
         fp.printf ("%s  %s,\n", indent, json_field ("calls", calls));

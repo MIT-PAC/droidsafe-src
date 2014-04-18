@@ -62,6 +62,7 @@ import droidsafe.utils.SourceLocationTag;
 
 import static droidsafe.analyses.CallChainInfo.*;
 import static droidsafe.analyses.CallChainBuilder.*;
+import static droidsafe.reports.JSONUtils.*;
 
 
 /**
@@ -347,23 +348,7 @@ public class CatchBlocks {
         }
     }
     
-    public static String json_field (String name) {
-        return json_field (name, null);
-    }
-    public static String json_field (String name, String value) {
-        name = "\"" + name + "\"";
-        if (value == null)
-            return String.format ("%-12s : ", name);
-        return String.format ("%-12s : \"%s\"", name, value);
-    }
-    
-    public static String json_field (String name, int value) {
-        return String.format ("%-12s : %d", "\"" + name + "\"", value);
-    }
-          
-    public static String json_field (String name, boolean value) {
-        return String.format ("%-12s : %b", "\"" + name + "\"", value);
-    }
+
           
     /**
      * Process the call chain and returns a list of strings where the
