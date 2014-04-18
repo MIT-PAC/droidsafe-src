@@ -854,23 +854,23 @@ public class SparkPTA extends PTABridge {
     }
 
     private void addGUIClasses(StringBuffer buf) {
-        List<SootClass> clzs = new LinkedList<SootClass>();
-        clzs.add(Scene.v().getSootClass("android.view.View"));
-        clzs.add(Scene.v().getSootClass("android.text.Layout"));
-
-        for (SootClass clz : clzs) {
+        if (buf.length() > 0 && ',' != buf.charAt(buf.length() - 1))
+            buf.append(',');
+        
+        for (SootClass clz : Scene.v().getClasses()) {
             if (clz.isInterface())
                 continue;
             
-            for (SootClass child : Scene.v().getActiveHierarchy().getSubclassesOfIncluding(clz)) { 
-                buf.append(child + ",");
-                logger.info("Adding class to limit heap context list of spark: {}", child);
+            if (API.v().isGUIClass(clz)) {
+                buf.append(clz + ",");
+                logger.info("Adding class to limit heap context list of spark: {}", clz);
             }
+            
         }
     }
 
     private void addStringClasses(StringBuffer buf) {
-        if (',' != buf.charAt(buf.length() - 1))
+        if (buf.length() > 0 && ',' != buf.charAt(buf.length() - 1))
             buf.append(',');
 
         buf.append("java.lang.String,java.lang.StringBuffer,java.lang.StringBuilder");
