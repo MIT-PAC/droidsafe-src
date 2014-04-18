@@ -70,7 +70,7 @@ public class ICCEntryPointCallTree {
         PrintStream fp;
         try {
             fp = new PrintStream(parentDir + File.separator + FILE_NAME);
-            fp.print (json_call_graph_header ("Entry Points", visibility_map));
+            fp.print (json_call_graph_header ("ICC Entry Points", visibility_map));
             for (CallChainInfo cci : icc_entry_points) {
                 cci.dump_json (fp, "  ");
                 fp.print(",");
