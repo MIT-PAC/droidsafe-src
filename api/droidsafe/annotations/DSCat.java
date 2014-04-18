@@ -96,6 +96,7 @@ public enum DSCat {
     SECURITY,
     SERIALIZATION,
     TELEPHONY,
+    XML,
     
     THREADING, //threading/execution
     TRIGGER,
