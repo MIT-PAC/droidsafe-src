@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+apac_home=${APAC_HOME?"Need to define APAC_HOME"}
+
+${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -arg "p 5" 
+${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 4" 
+${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 3" 
+${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 2" 
+${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 1" 
+${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 0" 
+
