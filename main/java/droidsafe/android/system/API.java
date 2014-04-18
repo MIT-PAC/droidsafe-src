@@ -122,7 +122,8 @@ public class API {
            "android.widget",
            "android.graphics",
            "android.view",
-           "android.opengl"
+           "android.opengl",
+           "android.text"
         };
 
 

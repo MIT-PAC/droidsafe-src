@@ -66,8 +66,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -98,6 +101,12 @@ public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     private static IDroidsafeProgressMonitor sMonitor;
+    
+    private static Date startTime;
+    
+    private static final String COMPLETION_FILE_NAME = "completed.log";
+    
+    private static String commandLineArgs = "";
 
     /**
      * Entry point of DroidSafe Tool.
@@ -106,6 +115,11 @@ public class Main {
      */
     public static void main(String[] args) throws FileNotFoundException {
         driverMsg("Starting DroidSafe Run");
+        
+        for (String arg : args) {
+            commandLineArgs += (arg + " ");
+        }
+        
         // grab command line args and set some globals
         Config.v().init(args);
 
@@ -114,11 +128,26 @@ public class Main {
 
     public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) throws FileNotFoundException {
         sMonitor = monitor;
+        
+        //get current date time with Date()
+        startTime = new Date();
+        
         monitor.subTask("Initializing Environment");
         G.reset();
         // initial project directories and lib jar files
         Project.v().init();
         // configure soot and soot classpath
+        
+        //delete completed file if it exist 
+        try {
+            File completedFile = new File(Project.v().getOutputDir() + File.separator + COMPLETION_FILE_NAME);
+            if (completedFile.exists() && !completedFile.isDirectory()) {
+                completedFile.delete();
+            }
+        } catch (Exception e) {
+            logger.error("Could not delete completed file!", e);
+        }
+        
         SootConfig.init();
         // load the api classes and modeling classes
         API.v().init();
@@ -474,8 +503,31 @@ public class Main {
         }
 
         monitor.worked(1);
+        writeCompletionFile();
+        
         System.out.println("Finished!");
         return DroidsafeExecutionStatus.OK_STATUS;
+    }
+    
+    private static void writeCompletionFile() {
+        try {
+            Date endTime = new Date();
+            
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + COMPLETION_FILE_NAME);
+            fw.write("Cmd line options = " + commandLineArgs + "\n");            
+            fw.write("Start time = " + dateFormat.format(startTime) + "\n");
+            fw.write("End time = " + dateFormat.format(endTime) + "\n");    
+            
+            long elapsedTime = endTime.getTime() - startTime.getTime();
+            
+            fw.write("Elapsed Minutes: " + ((int) ((elapsedTime / 1000) / 60)) + ":" + 
+                    ((int) ((elapsedTime / 1000) % 60)) + "\n");
+            
+            fw.close();
+        } catch (Exception e) {
+            logger.error("Error writing completed file.", e);
+        }
     }
 
     /**
