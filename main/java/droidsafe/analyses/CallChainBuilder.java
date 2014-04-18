@@ -80,7 +80,7 @@ public class CallChainBuilder {
     
     /** just ignore duplicate methods rather than merging call chains **/
     private boolean ignore_dup_methods = false;
-        
+            
     /** Call stack to detect recursion **/
     Stack<SootMethod> stack = new Stack<SootMethod>();
  
@@ -169,22 +169,35 @@ public class CallChainBuilder {
      * @return
      */
     public  boolean is_terminal (MethodOrMethodContext mc) {
-        Stack<SootMethod> stack = new Stack<SootMethod>();
+        Stack<SootMethod> sys_stack = new Stack<SootMethod>();
         boolean result;
-        if (process_callbacks) 
-            result = is_system (mc.method());
-        else
-            result = is_system (mc.method()) && !calls_app_method (mc, stack);
+        
+        if (!is_system(mc.method()))
+            result = false;
+        else { // calling system method
+            if (!process_callbacks) 
+                result = true;
+            else { // looking for callbacks
+                if ((stack.size() > 0) && is_system(stack.peek()))
+                    result = !calls_app_method (mc, sys_stack);
+                else { // user calling system, make sure marked IPC
+                    if (can_have_callbacks (mc.method()))
+                        result = !calls_app_method (mc, sys_stack);
+                    else
+                        result = true;
+                }
+            }
+        }
+ 
         logger.info ("  {} terminal = {}", mc.method(), result);
         return result;
     }
     
     /** Returns true if an app method is called directly or indirectly from mc **/
-    private static boolean calls_app_method (MethodOrMethodContext mc, Stack<SootMethod> stack) {
+    private boolean calls_app_method (MethodOrMethodContext mc, Stack<SootMethod> stack) {
         CallGraph cg = PTABridge.v().getCallGraph();
         logger.info("  cam: entering iterator, stack = {}", stack);
-       //if (is_system(mc.method()) && !can_have_callbacks (mc.method()))
-       //    return false;
+        
        if (no_callback_methods.contains (mc.method().getName()))
             return false;
         if (system_depth (stack) > 5) {
@@ -245,8 +258,10 @@ public class CallChainBuilder {
      * and not indirect callbacks via the GUI (eg. setting up various
      * listeners)
      */
-    public static boolean can_have_callbacks (SootMethod m) {
-        return (API.v().isIPCSink(m) || API.v().isIPCMethod(m));
+    public boolean can_have_callbacks (SootMethod m) {
+        logger.info ("method {} ipcsink = {}, ipcmethod = {}", m, 
+                API.v().isIPCSink(m), API.v().isIPCMethod(m));
+         return (API.v().isIPCSink(m) || API.v().isIPCMethod(m));
     }
     /** Returns true if we have timed out **/
     public boolean timeout() {

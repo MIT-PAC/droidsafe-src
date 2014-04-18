@@ -61,9 +61,10 @@ public class AllEntryPointCallTree {
         for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
             if (RCFG.isUserEntryPoint(momc)) {
                 logger.info ("Found entry  point {}", momc);
-                CallChainBuilder cb = new CallChainBuilder (timeout, false);
+                CallChainBuilder cb = new CallChainBuilder (timeout, true);
                 CallChainInfo cci = cb.process_call_chain (null, momc);
                 cci.type = "entry-point";
+                cci.link = "as_entry_point";
                 cci.calculate_scores();
                 entry_points.add (cci);
             }            

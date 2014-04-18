@@ -59,9 +59,10 @@ public class IPCEntryPointCallTree {
         for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
             if (!API.v().isSystemMethod(momc.method()) && API.v().isRemoteIPCCallback(momc.method())) {
                 logger.info ("Found IPC entry point {}", momc);
-                CallChainBuilder cb = new CallChainBuilder (timeout, false);
+                CallChainBuilder cb = new CallChainBuilder (timeout, true);
                 CallChainInfo cci = cb.process_call_chain (null, momc);
                 cci.type = "entry-point";
+                cci.link = "as_entry_point";
                 cci.calculate_scores();
                 ipc_entry_points.add (cci);                
             }

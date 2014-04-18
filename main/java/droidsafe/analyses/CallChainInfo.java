@@ -75,6 +75,7 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
     private static final Logger logger = LoggerFactory.getLogger(CallChainInfo.class);
            
     public String type;
+    public String link;
     SootMethod method;
     Stmt stmt;
     int syscalls;
@@ -86,6 +87,7 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
     public CallChainInfo (SootMethod m, Stmt s, String type) {
 
         this.type = type;
+        this.link = "as_call";
         this.method = m;
         this.stmt = s;
         calls = 1;
@@ -184,6 +186,7 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
     /** Dumps out the call chain in json format **/
     public void dump_json (PrintStream fp, String indent) {
         fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
+        fp.printf ("%s  %s,\n", indent, json_field ("link", link));
         fp.printf ("%s  %s,\n", indent, json_field ("signature", method.getSignature()));
         if (stmt != null) {
             SourceLocationTag slt = getSourceLocation(stmt);
