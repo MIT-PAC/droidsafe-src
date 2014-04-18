@@ -524,6 +524,25 @@ public class Main {
             fw.write("Elapsed Minutes: " + ((int) ((elapsedTime / 1000) / 60)) + ":" + 
                     ((int) ((elapsedTime / 1000) % 60)) + "\n");
             
+            int GB = 1024*1024*1024;
+            
+            //Getting the runtime reference from system
+            Runtime runtime = Runtime.getRuntime();
+             
+            //Print used memory
+            fw.write("Used Memory: "
+                + (runtime.totalMemory() - runtime.freeMemory()) / GB + " GB\n");
+     
+            //Print free memory
+            fw.write("Free Memory: "
+                + runtime.freeMemory() / GB + " GB\n");
+             
+            //Print total available memory
+                fw.write("Total Memory: " + runtime.totalMemory() / GB + " GB\n");
+     
+            //Print Maximum available memory
+                fw.write("Max Memory: " + runtime.maxMemory() / GB + " GB\n");
+            
             fw.close();
         } catch (Exception e) {
             logger.error("Error writing completed file.", e);
