@@ -24,6 +24,7 @@ public HttpPost() {
         super();
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.331 -0500", hash_original_method = "160A4A8C6AAC5C78A2F503FA797FE66F", hash_generated_method = "B46316C1B560DDE61F4B685238FCB29F")
     
 public HttpPost(final URI uri) {
@@ -31,7 +32,8 @@ public HttpPost(final URI uri) {
         setURI(uri);
     }
     
-	public HttpPost(final String uri) {
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public HttpPost(final String uri) {
         super();
         try {
             setURI(new URI(uri));

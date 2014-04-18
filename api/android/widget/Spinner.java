@@ -658,7 +658,7 @@ public boolean isShowing() {
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.133 -0500", hash_original_method = "8403FBCA2C28723FD059691B00D88CE1", hash_generated_method = "FB46A4D60BCA34B418049BC3864C846B")
-        
+    @DSSafe(DSCat.SAFE_OTHERS)
 public void setAdapter(ListAdapter adapter) {
             mListAdapter = adapter;
         }

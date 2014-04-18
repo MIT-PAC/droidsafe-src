@@ -866,7 +866,7 @@ public String getRequestProperty(String field) {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.150 -0500", hash_original_method = "2F8DA67F8DE7FED0345BBAE8C82F68E5", hash_generated_method = "D6D7197D0CF613F7A230574C15135383")
-    
+   @DSSafe(DSCat.SAFE_OTHERS) 
 public URL getURL() {
         return url;
     }

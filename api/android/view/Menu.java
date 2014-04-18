@@ -42,31 +42,34 @@ public interface Menu {
     
     @DSVerified
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem add(int titleRes);
     
         @DSVerified
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem add(int groupId, int itemId, int order, CharSequence title);
     
         @DSVerified
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem add(int groupId, int itemId, int order, int titleRes);
     
     @DSVerified
     @DSComment("Abstract Method")
+    @DSSafe(DSCat.GUI)
     SubMenu addSubMenu(final CharSequence title);
     
     @DSVerified
     @DSComment("Abstract Method")
+    @DSSafe(DSCat.GUI)
     SubMenu addSubMenu(final int titleRes);
     
+    @DSSafe(DSCat.GUI)
     SubMenu addSubMenu(final int groupId, final int itemId, int order, final CharSequence title);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     SubMenu addSubMenu(int groupId, int itemId, int order, int titleRes);
     
     @DSVerified
@@ -85,7 +88,7 @@ public interface Menu {
     public void removeGroup(int groupId);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public void clear();
     
     @DSComment("Abstract Method")
@@ -105,7 +108,7 @@ public interface Menu {
     public boolean hasVisibleItems();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem findItem(int id);
     
     @DSComment("Abstract Method")
@@ -113,7 +116,7 @@ public interface Menu {
     public int size();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem getItem(int index);
     
     @DSComment("Abstract Method")

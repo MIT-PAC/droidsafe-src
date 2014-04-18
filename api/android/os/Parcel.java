@@ -1284,6 +1284,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+   @DSSafe(DSCat.DATA_STRUCTURE)     
     public final <T extends Parcelable> void writeTypedArray(T[] val,
             int parcelableFlags){
 		mValueTypedArray = val;

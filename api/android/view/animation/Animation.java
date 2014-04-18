@@ -288,7 +288,7 @@ public void initialize(int width, int height, int parentWidth, int parentHeight)
      */
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.828 -0500", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "BE3242216311F89FBBEC5A97D66A30C9")
-    
+   @DSSafe(DSCat.SAFE_OTHERS) 
 public void setInterpolator(Context context, int resID) {
         setInterpolator(AnimationUtils.loadInterpolator(context, resID));
     }

@@ -384,6 +384,7 @@ public Builder(Context context, int theme) {
          */
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.064 -0500", hash_original_method = "D1A12C2F09D145663A4318954DC7CD00", hash_generated_method = "5AE1219313A917C064B5760C49E9B59F")
+        @DSSafe(DSCat.GUI)
         
 public Context getContext() {
             return P.mContext;
@@ -395,7 +396,7 @@ public Context getContext() {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.066 -0500", hash_original_method = "E63FAC4DEED51E16AAD703A71B581EEF", hash_generated_method = "C1B321AD7C109A70C6B989AF777C61FA")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setTitle(int titleId) {
             P.mTitle = P.mContext.getText(titleId);
             return this;
@@ -407,7 +408,7 @@ public Builder setTitle(int titleId) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.068 -0500", hash_original_method = "255D326AF0B389CCA9CBF4AFBC3FE756", hash_generated_method = "1AFDB2B8A5FCE2E28D2D1C58F58EC5B8")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setTitle(CharSequence title) {
             P.mTitle = title;
             return this;
@@ -425,7 +426,7 @@ public Builder setTitle(CharSequence title) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.071 -0500", hash_original_method = "0009CCFABCB39131348E93CD167BBCD7", hash_generated_method = "71642A15466E050148BEE69BDB2B1787")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setCustomTitle(View customTitleView) {
             P.mCustomTitleView = customTitleView;
             return this;
@@ -437,7 +438,7 @@ public Builder setCustomTitle(View customTitleView) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.074 -0500", hash_original_method = "3B23BD93B750653B90374824F5917D89", hash_generated_method = "8C276A1062CC9ECE1527F7D9107E8E66")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setMessage(int messageId) {
             P.mMessage = P.mContext.getText(messageId);
             return this;
@@ -449,7 +450,7 @@ public Builder setMessage(int messageId) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.076 -0500", hash_original_method = "F560859B14C962F22BDF3327E633A8EC", hash_generated_method = "BC1096BDDA51F124002315B6E17E5702")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setMessage(CharSequence message) {
             P.mMessage = message;
             return this;
@@ -461,7 +462,7 @@ public Builder setMessage(CharSequence message) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.078 -0500", hash_original_method = "EBD38AA9C651B93ADF14B14E5D33C5C9", hash_generated_method = "94655B8424EF9A24442657C671A58206")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setIcon(int iconId) {
             P.mIconId = iconId;
             return this;
@@ -473,7 +474,7 @@ public Builder setIcon(int iconId) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.080 -0500", hash_original_method = "EDCD80F224B2F3CED85A928D84460540", hash_generated_method = "3C6ED940C21C72F0CCD25F6246E11021")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setIcon(Drawable icon) {
             P.mIcon = icon;
             return this;
@@ -485,7 +486,7 @@ public Builder setIcon(Drawable icon) {
          * @param attrId ID of a theme attribute that points to a drawable resource.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.082 -0500", hash_original_method = "3A94A6A2822E55FB53EB2F980E52FF8E", hash_generated_method = "3E02C58DA8DADBC3FB261BAACAC5BA20")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setIconAttribute(int attrId) {
             TypedValue out = new TypedValue();
             P.mContext.getTheme().resolveAttribute(attrId, out, true);
@@ -501,7 +502,7 @@ public Builder setIconAttribute(int attrId) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.084 -0500", hash_original_method = "1908B917B7F2E57ADC23D5E48F4386F2", hash_generated_method = "2F5BAAC067B9ADA408583697C46D7274")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setPositiveButton(int textId, final OnClickListener listener) {
             P.mPositiveButtonText = P.mContext.getText(textId);
             P.mPositiveButtonListener = listener;
@@ -516,7 +517,7 @@ public Builder setPositiveButton(int textId, final OnClickListener listener) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.087 -0500", hash_original_method = "1500328C36AB679D672A26C184A5FC31", hash_generated_method = "1B725E35B3DB53C9480DA42C86D26A92")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setPositiveButton(CharSequence text, final OnClickListener listener) {
             P.mPositiveButtonText = text;
             P.mPositiveButtonListener = listener;
@@ -531,7 +532,7 @@ public Builder setPositiveButton(CharSequence text, final OnClickListener listen
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.090 -0500", hash_original_method = "375537371A0A52AA7AA0B24EAC6A7474", hash_generated_method = "B8835945689101A5B72EC7CF869619DA")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setNegativeButton(int textId, final OnClickListener listener) {
             P.mNegativeButtonText = P.mContext.getText(textId);
             P.mNegativeButtonListener = listener;
@@ -546,7 +547,7 @@ public Builder setNegativeButton(int textId, final OnClickListener listener) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.092 -0500", hash_original_method = "50EFB872DEBCC22CFB32B40979906BC8", hash_generated_method = "94AF7F7BDC95ADF7F606F7D6302D55C4")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setNegativeButton(CharSequence text, final OnClickListener listener) {
             P.mNegativeButtonText = text;
             P.mNegativeButtonListener = listener;
@@ -561,7 +562,7 @@ public Builder setNegativeButton(CharSequence text, final OnClickListener listen
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.094 -0500", hash_original_method = "0D40DB16A6B6349ABA0D8583C3D4D844", hash_generated_method = "6402658DECA119E7ABB66256669A75CD")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setNeutralButton(int textId, final OnClickListener listener) {
             P.mNeutralButtonText = P.mContext.getText(textId);
             P.mNeutralButtonListener = listener;
@@ -576,7 +577,7 @@ public Builder setNeutralButton(int textId, final OnClickListener listener) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.097 -0500", hash_original_method = "4D91C8A8E1E08D55171F5837D3929412", hash_generated_method = "F7A58A0D5FAA5472EA021A9A5916CD3A")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setNeutralButton(CharSequence text, final OnClickListener listener) {
             P.mNeutralButtonText = text;
             P.mNeutralButtonListener = listener;
@@ -589,7 +590,7 @@ public Builder setNeutralButton(CharSequence text, final OnClickListener listene
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.099 -0500", hash_original_method = "D23CAE45E6F3DF826F9F93A9D8E4F37B", hash_generated_method = "511A8EFD482F74CB240B2FF5E5CE817C")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setCancelable(boolean cancelable) {
             P.mCancelable = cancelable;
             return this;
@@ -602,7 +603,7 @@ public Builder setCancelable(boolean cancelable) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.101 -0500", hash_original_method = "D6E5909FD450512C75F4E75E987AC229", hash_generated_method = "48D9633D0088989C2BDE9DFDAEA0D8D0")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setOnCancelListener(OnCancelListener onCancelListener) {
             P.mOnCancelListener = onCancelListener;
             return this;
@@ -614,7 +615,7 @@ public Builder setOnCancelListener(OnCancelListener onCancelListener) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.103 -0500", hash_original_method = "6E5FB56A362A817B52A235DFACC25DAE", hash_generated_method = "E1F90638C4DF6B880D4A71B27B9AB750")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setOnKeyListener(OnKeyListener onKeyListener) {
             P.mOnKeyListener = onKeyListener;
             return this;
@@ -627,7 +628,7 @@ public Builder setOnKeyListener(OnKeyListener onKeyListener) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.105 -0500", hash_original_method = "6D193582453841FD4D6BB305EA061757", hash_generated_method = "2EE86EC3C773C994166A055A443210DA")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setItems(int itemsId, final OnClickListener listener) {
             P.mItems = P.mContext.getResources().getTextArray(itemsId);
             P.mOnClickListener = listener;
@@ -641,7 +642,7 @@ public Builder setItems(int itemsId, final OnClickListener listener) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.108 -0500", hash_original_method = "AFD2C4146CF077CBCC62EEF7225AE645", hash_generated_method = "1DE5D2AB39561FE0EB9ED55669BB02AD")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setItems(CharSequence[] items, final OnClickListener listener) {
             P.mItems = items;
             P.mOnClickListener = listener;
@@ -659,7 +660,7 @@ public Builder setItems(CharSequence[] items, final OnClickListener listener) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.110 -0500", hash_original_method = "2FCAEDE0B3C9195EDB3158F22A7C0109", hash_generated_method = "5EFDB3AA1BD0466672A2A8C5BFD10D57")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setAdapter(final ListAdapter adapter, final OnClickListener listener) {
             P.mAdapter = adapter;
             P.mOnClickListener = listener;
@@ -679,7 +680,7 @@ public Builder setAdapter(final ListAdapter adapter, final OnClickListener liste
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.113 -0500", hash_original_method = "7DFF15703A2CCBB36AC3557F6AE7E187", hash_generated_method = "D1F2CC81FB32C7181079A669AD1EEA5A")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setCursor(final Cursor cursor, final OnClickListener listener,
                 String labelColumn) {
             P.mCursor = cursor;
@@ -707,7 +708,7 @@ public Builder setCursor(final Cursor cursor, final OnClickListener listener,
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.116 -0500", hash_original_method = "7878252A286B56EBCE9E439D4FCEB298", hash_generated_method = "6701BC1622752371D4F62F38ACAA84FE")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setMultiChoiceItems(int itemsId, boolean[] checkedItems, 
                 final OnMultiChoiceClickListener listener) {
             P.mItems = P.mContext.getResources().getTextArray(itemsId);
@@ -735,7 +736,7 @@ public Builder setMultiChoiceItems(int itemsId, boolean[] checkedItems,
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.118 -0500", hash_original_method = "73AB6C3AD26EFF6561BAC3BA481ECFD7", hash_generated_method = "97E9BF19397F59DD8D525153E723E5F8")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setMultiChoiceItems(CharSequence[] items, boolean[] checkedItems, 
                 final OnMultiChoiceClickListener listener) {
             P.mItems = items;
@@ -765,7 +766,7 @@ public Builder setMultiChoiceItems(CharSequence[] items, boolean[] checkedItems,
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.121 -0500", hash_original_method = "E8A3FFCE7184DC2DAE306B849E312FF3", hash_generated_method = "BC32B07AAA253F2377B40FE6AE14D358")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setMultiChoiceItems(Cursor cursor, String isCheckedColumn, String labelColumn, 
                 final OnMultiChoiceClickListener listener) {
             P.mCursor = cursor;
@@ -792,7 +793,7 @@ public Builder setMultiChoiceItems(Cursor cursor, String isCheckedColumn, String
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.123 -0500", hash_original_method = "CF9378D7D2AE06BB2F5FFE088D660C44", hash_generated_method = "6B40AC85A4B478B0B3BE50193B7D295E")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setSingleChoiceItems(int itemsId, int checkedItem, 
                 final OnClickListener listener) {
             P.mItems = P.mContext.getResources().getTextArray(itemsId);
@@ -819,7 +820,7 @@ public Builder setSingleChoiceItems(int itemsId, int checkedItem,
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.125 -0500", hash_original_method = "02441459B611830238DF1D8B31546828", hash_generated_method = "0D4613148EE114E4101E8FE15EA82382")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setSingleChoiceItems(Cursor cursor, int checkedItem, String labelColumn, 
                 final OnClickListener listener) {
             P.mCursor = cursor;
@@ -845,7 +846,7 @@ public Builder setSingleChoiceItems(Cursor cursor, int checkedItem, String label
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.128 -0500", hash_original_method = "7491118E608CEFA972DD3B23E3E7B8C6", hash_generated_method = "55C7F08B04F9720934A616734548F4F9")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setSingleChoiceItems(CharSequence[] items, int checkedItem, final OnClickListener listener) {
             P.mItems = items;
             P.mOnClickListener = listener;
@@ -869,7 +870,7 @@ public Builder setSingleChoiceItems(CharSequence[] items, int checkedItem, final
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.130 -0500", hash_original_method = "06BB43759703ED3EE55275B85ACF4622", hash_generated_method = "9B2F3B167497F8BA7E022001EE927AC5")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setSingleChoiceItems(ListAdapter adapter, int checkedItem, final OnClickListener listener) {
             P.mAdapter = adapter;
             P.mOnClickListener = listener;
@@ -887,7 +888,7 @@ public Builder setSingleChoiceItems(ListAdapter adapter, int checkedItem, final 
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.132 -0500", hash_original_method = "2F93F9BAEF2ABE538EE141EAC45DF294", hash_generated_method = "B9B840396D5C1F2D12D374A69232DD85")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setOnItemSelectedListener(final AdapterView.OnItemSelectedListener listener) {
             P.mOnItemSelectedListener = listener;
             return this;
@@ -902,7 +903,7 @@ public Builder setOnItemSelectedListener(final AdapterView.OnItemSelectedListene
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.135 -0500", hash_original_method = "ECE0E9F89C9289601A4B4F810B41F8E6", hash_generated_method = "7928CC8716E776AC2961F8AA517FB3E2")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setView(View view) {
             P.mView = view;
             P.mViewSpacingSpecified = false;
@@ -932,7 +933,7 @@ public Builder setView(View view) {
          * @hide
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.137 -0500", hash_original_method = "BAFAE1A19AC8AE3D7A23796C6231E632", hash_generated_method = "2C41C333F81092D3948E6DDB11667FAB")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setView(View view, int viewSpacingLeft, int viewSpacingTop,
                 int viewSpacingRight, int viewSpacingBottom) {
             P.mView = view;
@@ -953,7 +954,7 @@ public Builder setView(View view, int viewSpacingLeft, int viewSpacingTop,
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.139 -0500", hash_original_method = "574A516CEEC9B60678E7B4D3D76288FB", hash_generated_method = "B32914095F6F5C84CCEA954B030A0DAA")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setInverseBackgroundForced(boolean useInverseBackground) {
             P.mForceInverseBackground = useInverseBackground;
             return this;
@@ -963,7 +964,7 @@ public Builder setInverseBackgroundForced(boolean useInverseBackground) {
          * @hide
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.143 -0500", hash_original_method = "B90B897256AEB065436BDBB1FFCE63CD", hash_generated_method = "6CC8DBE7F755A014019857E9072DEA3D")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setRecycleOnMeasureEnabled(boolean enabled) {
             P.mRecycleOnMeasure = enabled;
             return this;
@@ -1050,7 +1051,7 @@ public AlertDialog show() {
      */
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.042 -0500", hash_original_method = "1B8133F4D68862D013C951EDD0C82832", hash_generated_method = "6E400D4EB3C46F271936899BA09F853E")
-    
+    @DSSafe(DSCat.GUI)
 public void setIconAttribute(int attrId) {
         TypedValue out = new TypedValue();
         mContext.getTheme().resolveAttribute(attrId, out, true);
@@ -1059,7 +1060,7 @@ public void setIconAttribute(int attrId) {
 
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.044 -0500", hash_original_method = "21C74C630736CECBD7AD6F509C2AA5D7", hash_generated_method = "22B6B58432E30210C8CBE76AA4BB4DEB")
-    
+    @DSSafe(DSCat.GUI)
 public void setInverseBackgroundForced(boolean forceInverseBackground) {
         mAlert.setInverseBackgroundForced(forceInverseBackground);
     }
@@ -1073,7 +1074,7 @@ public void setInverseBackgroundForced(boolean forceInverseBackground) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.048 -0500", hash_original_method = "BF8AB256B91D3A887301218CA5494F2D", hash_generated_method = "27DFB88588CFB33554A656F3049D56EF")
-    
+    @DSSafe(DSCat.GUI)
 @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (mAlert.onKeyDown(keyCode, event)) return true;
@@ -1081,7 +1082,7 @@ public void setInverseBackgroundForced(boolean forceInverseBackground) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.051 -0500", hash_original_method = "A1B1EEF278CFBA53A19AA72D7DAA37CB", hash_generated_method = "A096E8FF98E1A1DD6D94952D3A8CA1EB")
-    
+    @DSSafe(DSCat.GUI)
 @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (mAlert.onKeyUp(keyCode, event)) return true;

@@ -2914,6 +2914,7 @@ public LayoutParams(int width, int height) {
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.109 -0500", hash_original_method = "2BA3A180B45B8CE1CC5399F5BB84EEDE", hash_generated_method = "EC6F79F691EDE0AFA12359A87D1F6AEE")
         
+        @DSSafe(DSCat.SAFE_OTHERS)
 public LayoutParams(LayoutParams source) {
             this.width = source.width;
             this.height = source.height;
@@ -3018,6 +3019,7 @@ public MarginLayoutParams(int width, int height) {
             super(width, height);
         }
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         public MarginLayoutParams(MarginLayoutParams source){
 			/*
 			this.width = source.width;
@@ -3036,6 +3038,7 @@ public MarginLayoutParams(int width, int height) {
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.157 -0500", hash_original_method = "E2A57B11F6C8009C3B5E4EDAD0277412", hash_generated_method = "7A6F66E61F46286624966B680FE047F1")
         
+        @DSSafe(DSCat.SAFE_OTHERS)
 public MarginLayoutParams(LayoutParams source) {
             super(source);
         }

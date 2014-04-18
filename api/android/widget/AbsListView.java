@@ -3181,6 +3181,7 @@ public LayoutParams(int w, int h) {
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.734 -0500", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "35FAB65EFD30EE5BC910187CB4DA6F67")
         
+        @DSSafe(DSCat.SAFE_OTHERS)
 public LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
         }

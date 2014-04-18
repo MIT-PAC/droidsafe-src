@@ -1737,7 +1737,7 @@ public Builder() {}
          * @param scheme name or {@code null} if this is a relative Uri
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.313 -0500", hash_original_method = "1FAF048543AEDF54BF8218C15362FDC3", hash_generated_method = "96BDFF6D7293B0C9E7E466CD527BE2B3")
-        
+       @DSSafe(DSCat.UTIL_FUNCTION) 
 public Builder scheme(String scheme) {
             this.scheme = scheme;
             return this;
@@ -1773,7 +1773,7 @@ public Builder encodedOpaquePart(String opaquePart) {
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.323 -0500", hash_original_method = "CE12FA6D2315F74B1A3B79C027FFFA6D", hash_generated_method = "98DCEE1FFE85A89C0BEF38663C36C6FC")
-        
+       @DSBan(DSCat.PRIVATE_METHOD) 
 Builder authority(Part authority) {
             // This URI will be hierarchical.
             this.opaquePart = null;
@@ -1786,7 +1786,7 @@ Builder authority(Part authority) {
          * Encodes and sets the authority.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.325 -0500", hash_original_method = "8B987B114EF487282F33A481DCB273CB", hash_generated_method = "3F1CD1513DF2B9AA237EA1AEB4374316")
-        
+       @DSSafe(DSCat.UTIL_FUNCTION) 
 public Builder authority(String authority) {
             return authority(Part.fromDecoded(authority));
         }
@@ -1795,6 +1795,7 @@ public Builder authority(String authority) {
          * Sets the previously encoded authority.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.327 -0500", hash_original_method = "2AF9D1463857894BBB2A3B7E377A77BB", hash_generated_method = "FF5E086FF567F3975804752188384374")
+       @DSSafe(DSCat.UTIL_FUNCTION) 
         
 public Builder encodedAuthority(String authority) {
             return authority(Part.fromEncoded(authority));
@@ -1832,6 +1833,7 @@ public Builder path(String path) {
          * given path with a '/'.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.334 -0500", hash_original_method = "B2733F0C4852B782EB87F01613E6C574", hash_generated_method = "A058284D73BCE21547C46FC15EAF01A1")
+       @DSSafe(DSCat.UTIL_FUNCTION) 
         
 public Builder encodedPath(String path) {
             return path(PathPart.fromEncoded(path));

@@ -142,7 +142,7 @@ public abstract SelectorProvider provider();
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.075 -0500", hash_original_method = "9EF0D8B0DC0E3104C0F2D3C59F2DDC24", hash_generated_method = "1C9A11BE9729A3914363B7EB05FAC26C")
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
 public final SelectionKey register(Selector selector, int operations)
             throws ClosedChannelException {
         return register(selector, operations, null);

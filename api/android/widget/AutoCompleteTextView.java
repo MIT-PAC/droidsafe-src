@@ -647,6 +647,8 @@ public ListAdapter getAdapter() {
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.696 -0400", hash_original_method = "18CB1EEAAEFB5BC2DC3ECE426EBE9928", hash_generated_method = "F0E69E1084FD7B774906C79EDAFD6B58")
+
+    @DSSafe(DSCat.GUI)
     public <T extends ListAdapter & Filterable> void setAdapter(T adapter) {
         if(mObserver == null)        
         {

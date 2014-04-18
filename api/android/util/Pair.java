@@ -27,7 +27,7 @@ public class Pair<F, S> {
      * @param second the second object in the pair
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.656 -0500", hash_original_method = "2958ED2AC94D7F1EF56F55D0DF355D40", hash_generated_method = "5D1F833FF2D2A33E3458CD780D201C52")
-    
+    @DSSafe(DSCat.SAFE_OTHERS) 
 public Pair(F first, S second) {
         this.first = first;
         this.second = second;

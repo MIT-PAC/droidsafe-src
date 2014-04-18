@@ -212,7 +212,7 @@ protected abstract void implCloseSelectableChannel() throws IOException;
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.119 -0500", hash_original_method = "CF2B6308C435D16AFC21EE86C3F92787", hash_generated_method = "FA36D79444E8DDCA69DD1A6EA5C660CB")
-    
+   @DSSafe(DSCat.SAFE_OTHERS) 
 @Override
     public final Object blockingLock() {
         return blockingLock;

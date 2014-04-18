@@ -82,7 +82,7 @@ public FaceDetector(int width, int height, int maxFaces)
      *               at initialization
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.565 -0500", hash_original_method = "3B299240BA81D20DD0BB998342A5B688", hash_generated_method = "510FAF624686E6371A1EA933AC4B2B26")
-    
+   @DSSafe(DSCat.SAFE_OTHERS) 
 public int findFaces(Bitmap bitmap, Face[] faces)
     {
         if (!sInitialized) {

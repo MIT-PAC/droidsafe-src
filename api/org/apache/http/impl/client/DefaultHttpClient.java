@@ -65,6 +65,7 @@ public class DefaultHttpClient extends AbstractHttpClient {
      * @param params    the parameters
      * @param conman    the connection manager
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.247 -0500", hash_original_method = "F1394B84DFE9E4D59F4D1D68B51FC2CF", hash_generated_method = "F906F7D9FEB9182ED6C9030C043C536D")
     
 public DefaultHttpClient(
@@ -73,6 +74,7 @@ public DefaultHttpClient(
         super(conman, params);
     }
        
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.249 -0500", hash_original_method = "E0C829A12DCA716ADA587F6BA150989E", hash_generated_method = "A8A0D17BBC5D360DC78B763D6D829C3F")
     
 public DefaultHttpClient(final HttpParams params) {

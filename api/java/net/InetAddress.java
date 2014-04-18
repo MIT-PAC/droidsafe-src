@@ -791,6 +791,7 @@ public boolean isReachable(int timeout) throws IOException {
         return isReachable(null, 0, timeout);
     }
     
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.773 -0400", hash_original_method = "A1A0F0207714140D12E9E4AE2187615D", hash_generated_method = "DA703A9943F73B00CF0C811D2AFDC4FE")
     public boolean isReachable(NetworkInterface networkInterface, final int ttl, final int timeout) throws IOException {
         addTaint(timeout);

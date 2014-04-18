@@ -12,7 +12,7 @@ public interface CharSequence {
     public int length();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public char charAt(int index);
     
     @DSComment("Abstract Method")

@@ -2786,6 +2786,7 @@ public static short[] copyOf(short[] original, int newLength) {
         return copyOfRange(original, 0, newLength);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T, U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();

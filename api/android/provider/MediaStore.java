@@ -245,7 +245,7 @@ static void cancelThumbnailRequest(ContentResolver cr, long origId, Uri baseUri,
          * @return Bitmap bitmap of specified thumbnail kind
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.482 -0500", hash_original_method = "BF0AC792D5E1630C97F13B7A4FE7C203", hash_generated_method = "DD44E1F24FCA640B73CF7DDB7DDEF9A9")
-        
+            
 static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId, int kind,
                 BitmapFactory.Options options, Uri baseUri, boolean isVideo) {
             Bitmap bitmap = null;
@@ -653,7 +653,8 @@ public static void cancelThumbnailRequest(ContentResolver cr, long origId) {
              *         associated with origId doesn't exist or memory is not enough.
              */
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.549 -0500", hash_original_method = "069003E9CCA7A32718F8DD9AFC8DF3AC", hash_generated_method = "A2CA56D487630ADB7C82FA26BA7E1D58")
-            
+            @DSSafe(DSCat.SAFE_OTHERS)  
+            @DSSource({DSSourceKind.IMAGE})
 public static Bitmap getThumbnail(ContentResolver cr, long origId, int kind,
                     BitmapFactory.Options options) {
                 return InternalThumbnails.getThumbnail(cr, origId,
@@ -690,6 +691,8 @@ public static void cancelThumbnailRequest(ContentResolver cr, long origId, long 
              */
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.555 -0500", hash_original_method = "5AD0BFBA0AD49773CFC5CC711D3149F0", hash_generated_method = "0DB0B69D293B44BF86D28E74E32FBB26")
             
+               @DSSafe(DSCat.SAFE_OTHERS)
+               @DSSource({DSSourceKind.IMAGE})
 public static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId,
                     int kind, BitmapFactory.Options options) {
                 return InternalThumbnails.getThumbnail(cr, origId, groupId, kind, options,

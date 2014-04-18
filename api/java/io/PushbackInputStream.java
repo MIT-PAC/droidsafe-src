@@ -256,7 +256,7 @@ private IOException streamClosed() throws IOException  {
      *             sufficient to store the contents of {@code buffer}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.573 -0500", hash_original_method = "C8192A3011924069F2B71E7D3088F3DC", hash_generated_method = "E3B26592E9220AEE0471A023816C1918")
-    
+   @DSSpec(DSCat.IO)
 public void unread(byte[] buffer) throws IOException {
         unread(buffer, 0, buffer.length);
     }

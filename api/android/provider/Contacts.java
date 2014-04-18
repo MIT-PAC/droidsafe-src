@@ -325,7 +325,8 @@ private Settings() {}
          * @deprecated see {@link android.provider.ContactsContract}
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.612 -0500", hash_original_method = "50F8519255BFC8FA08076C6C60F3293C", hash_generated_method = "256A2A02373F69088619FBBAA5BA9D8B")
-        
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
+       @DSSpec(DSCat.SPEC_OTHERS) 
 @Deprecated
         public static Bitmap loadContactPhoto(Context context, Uri person,
                 int placeholderImageResource, BitmapFactory.Options options) {

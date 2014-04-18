@@ -200,6 +200,7 @@ public void addAll(Collection<? extends T> collection) {
      * @param items The items to add at the end of the array.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.977 -0500", hash_original_method = "0FB4566239B43452682D3C6768E6D3AE", hash_generated_method = "B9CC032117011CACFB53540192F33883")
+    @DSSafe(DSCat.GUI)
     
 public void addAll(T ... items) {
         synchronized (mLock) {

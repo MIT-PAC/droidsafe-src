@@ -901,7 +901,7 @@ public Builder setSmallIcon(int icon) {
          * @see Notification#iconLevel
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.994 -0500", hash_original_method = "686130331B3575C911C4ACE6437F15B8", hash_generated_method = "7BE460678B06457C86890879443CBA20")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setSmallIcon(int icon, int level) {
             mSmallIcon = icon;
             mSmallIconLevel = level;
@@ -912,7 +912,7 @@ public Builder setSmallIcon(int icon, int level) {
          * Set the first line of text in the platform notification template.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.996 -0500", hash_original_method = "51D215D9B594EB5434D1A4893B0851B6", hash_generated_method = "A24D5A5914321447B8D2056822EB1FA2")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setContentTitle(CharSequence title) {
             mContentTitle = title;
             return this;
@@ -922,7 +922,7 @@ public Builder setContentTitle(CharSequence title) {
          * Set the second line of text in the platform notification template.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.998 -0500", hash_original_method = "3B85C73BAA4531891B097F4FBFA7845D", hash_generated_method = "9A0C65143F929FA192B834775CCB4487")
-        
+        @DSSafe(DSCat.GUI)
 public Builder setContentText(CharSequence text) {
             mContentText = text;
             return this;

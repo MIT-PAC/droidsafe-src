@@ -18,7 +18,7 @@ public interface Set<E> extends Collection<E> {
     public boolean contains(Object object);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public boolean containsAll(Collection<?> collection);
     
     public boolean equals(Object object);
@@ -26,11 +26,11 @@ public interface Set<E> extends Collection<E> {
     public int hashCode();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public boolean isEmpty();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public Iterator<E> iterator();
     
     public boolean remove(Object object);
@@ -40,12 +40,13 @@ public interface Set<E> extends Collection<E> {
     public boolean retainAll(Collection<?> collection);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public int size();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public Object[] toArray();
     
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public <T> T[] toArray(T[] array);
 }

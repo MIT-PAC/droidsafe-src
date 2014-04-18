@@ -182,7 +182,6 @@ public abstract int read(char[] buf, int offset, int count) throws IOException;
      * @see #read(char[], int, int)
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.848 -0500", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "94CE574D8F9043761F4405DCC097C872")
     
 public boolean ready() throws IOException {

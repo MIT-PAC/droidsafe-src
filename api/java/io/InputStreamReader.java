@@ -58,6 +58,7 @@ public InputStreamReader(InputStream in) {
      * @throws UnsupportedEncodingException
      *             if the encoding specified by {@code enc} cannot be found.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.969 -0500", hash_original_method = "EBBB6FD529AC9BA283207DBA01D68764", hash_generated_method = "928B63F479963A3A8B7A87B65C786357")
     
 public InputStreamReader(InputStream in, final String enc)
@@ -175,7 +176,8 @@ public String getEncoding() {
      *             if this reader is closed or some other I/O error occurs.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.983 -0500", hash_original_method = "42220754D208F7633D722D928E4FD163", hash_generated_method = "608AB390C1A12B16DEDCCA342E1016AE")
-    
+    @DSSpec(DSCat.IO) 
+    @DSSource({DSSourceKind.IO})
 @Override
     public int read() throws IOException {
         synchronized (lock) {
