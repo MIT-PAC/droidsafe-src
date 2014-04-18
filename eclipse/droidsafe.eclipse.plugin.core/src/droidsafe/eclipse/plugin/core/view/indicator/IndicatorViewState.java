@@ -49,7 +49,7 @@ public class IndicatorViewState {
 
     public Object[] rootElements;
 
-    public Map<JsonObject, MethodModel> methodMap;
+    public Map<JsonObject, MethodModel> methodMap = new HashMap<JsonObject, MethodModel>();;
 
     private SecuritySpecModel spec;
         
@@ -74,7 +74,6 @@ public class IndicatorViewState {
     }
 
     private void computeMethodMap(JsonObject jsonObj) {
-        methodMap = new HashMap<JsonObject, MethodModel>();
         JsonArray childrenArray = Utils.getChildrenArray(jsonObj);
         if (childrenArray != null) {
             JsonArray newChildrenArray = new JsonArray();
@@ -85,7 +84,6 @@ public class IndicatorViewState {
                 if (child.isJsonObject()) {
                     JsonObject childObj = child.getAsJsonObject();
                     computeMethodMap(childObj);
-                    newChildrenArray.add(childObj);
                     List<MethodModel> methods = getMethodModels(childObj);
                     if (!methods.isEmpty()) {
                         if (methods.size() > 1) {
