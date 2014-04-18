@@ -16,7 +16,6 @@ import com.google.gson.JsonObject;
 import droidsafe.eclipse.plugin.core.filters.Filter;
 import droidsafe.eclipse.plugin.core.filters.FilterException;
 import droidsafe.eclipse.plugin.core.filters.FilterOp;
-import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
@@ -24,17 +23,17 @@ import droidsafe.utils.SourceLocationTag;
 
 public class IndicatorViewState {
 
-    public Map<String, Boolean> visibilityMap = new TreeMap<String, Boolean>();
+    public Map<String, Boolean> visibilityMap;
     
-    public Map<String, Boolean> defaultVisibilityMap = null;
+    public Map<String, Boolean> defaultVisibilityMap;
     
-    public Map<String, Boolean> displayMap = new TreeMap<String, Boolean>();
+    public Map<String, Boolean> displayMap;
     
-    public Map<String, Boolean> defaultDisplayMap = null;
+    public Map<String, Boolean> defaultDisplayMap;
 
     public List<Filter> defaultFilters;
     
-    public List<Filter> filters = new ArrayList<Filter>();
+    public List<Filter> filters;
     
     public String[] filterFields;
 
@@ -50,15 +49,16 @@ public class IndicatorViewState {
 
     public Object[] rootElements;
 
-    public Map<JsonObject, MethodModel> methodMap = new HashMap<JsonObject, MethodModel>();
+    public Map<JsonObject, MethodModel> methodMap;
 
     private SecuritySpecModel spec;
         
     private static String CONTEXT_PROP = "_context_";
     
     public IndicatorViewState(File indicatorFile, JsonObject jsonObject, SecuritySpecModel spec, IndicatorViewState oldState) {
+        this.jsonObject = jsonObject;
         this.spec = spec;
-        linkMethods(jsonObject, spec, oldState);
+        computeMethodMap(jsonObject);
         computeDefaultVisibilityMap(jsonObject);
         computeVisibilityMapFromDefault(oldState);
         computeDefaultDisplayMap(jsonObject);
@@ -73,18 +73,8 @@ public class IndicatorViewState {
         }
     }
 
-    private void linkMethods(JsonObject jsonObject,
-            SecuritySpecModel spec, IndicatorViewState oldState) {
-        if (oldState != null) {
-            this.jsonObject = oldState.jsonObject;
-            this.methodMap = oldState.methodMap;
-        } else {
-            this.jsonObject = jsonObject;
-            computeMethodMap(jsonObject);
-        }
-    }
-
     private void computeMethodMap(JsonObject jsonObj) {
+        methodMap = new HashMap<JsonObject, MethodModel>();
         JsonArray childrenArray = Utils.getChildrenArray(jsonObj);
         if (childrenArray != null) {
             JsonArray newChildrenArray = new JsonArray();
@@ -186,18 +176,17 @@ public class IndicatorViewState {
     }
 
     private void computeFiltersFromDefault(IndicatorViewState oldState) {
-        Set<String> filterNames = new HashSet<String>();
-        if (oldState != null) {
-            filters = oldState.filters;
-            for (Filter filter: filters) {
-                if (filter.name != null)
-                    filterNames.add(filter.name);
-            }
-        }
+        filters = new ArrayList<Filter>();
+        Set<String> defaultFilterNames = new HashSet<String>();
         for (Filter defaultFilter: defaultFilters) {
-            String name = defaultFilter.name;
-            if (name != null && !filterNames.contains(name))
-                filters.add(defaultFilter);
+            filters.add(defaultFilter);
+            defaultFilterNames.add(defaultFilter.name);
+        }
+        if (oldState != null) {
+            for (Filter oldFilter: oldState.filters) {
+                if (oldFilter.name == null || !defaultFilterNames.contains(oldFilter.name))
+                    filters.add(oldFilter);
+            }
         }
     }
 
@@ -214,17 +203,15 @@ public class IndicatorViewState {
     }
 
     private void computeVisibilityMapFromDefault(IndicatorViewState oldState) {
-        if (oldState != null) {
-            visibilityMap = oldState.visibilityMap;
-            for (String key: visibilityMap.keySet()) {
-                if (!defaultVisibilityMap.containsKey(key)) {
-                    visibilityMap.remove(key);
-                }
-            }
-        }
+        visibilityMap = new HashMap<String, Boolean>();
         for (String key: defaultVisibilityMap.keySet()) {
-            if (!visibilityMap.containsKey(key)) {
-                visibilityMap.put(key, defaultVisibilityMap.get(key));
+            visibilityMap.put(key, defaultVisibilityMap.get(key));
+            if (oldState != null) {
+                Boolean oldDefaultVisibility = oldState.defaultVisibilityMap.get(key);
+                Boolean oldVisibility = oldState.visibilityMap.get(key);
+                if (oldDefaultVisibility != null && oldVisibility != null && !oldVisibility.equals(oldDefaultVisibility)) {
+                    visibilityMap.put(key, oldVisibility);
+                }
             }
         }
     }
@@ -242,17 +229,15 @@ public class IndicatorViewState {
     }
 
     private void computeDisplayMapFromDefault(IndicatorViewState oldState) {
-        if (oldState != null) {
-            displayMap = oldState.displayMap;
-            for (String key: displayMap.keySet()) {
-                if (!defaultDisplayMap.containsKey(key)) {
-                    displayMap.remove(key);
-                }
-            }
-        }
+        displayMap = new HashMap<String, Boolean>();
         for (String key: defaultDisplayMap.keySet()) {
-            if (!displayMap.containsKey(key)) {
-                displayMap.put(key, defaultDisplayMap.get(key));
+            displayMap.put(key, defaultDisplayMap.get(key));
+            if (oldState != null) {
+                Boolean oldDefaultDisplay = oldState.defaultDisplayMap.get(key);
+                Boolean oldDisplay = oldState.displayMap.get(key);
+                if (oldDefaultDisplay != null && oldDisplay != null && !oldDisplay.equals(oldDefaultDisplay)) {
+                    displayMap.put(key, oldDisplay);
+                }
             }
         }
     }
