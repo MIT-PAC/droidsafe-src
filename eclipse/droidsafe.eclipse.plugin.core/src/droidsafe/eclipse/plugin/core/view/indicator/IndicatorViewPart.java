@@ -24,6 +24,7 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import droidsafe.analyses.value.VAUtils;
@@ -329,24 +330,48 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
                     } else if (o1 instanceof JsonObject && o2 instanceof JsonObject) {
                         JsonObject jsonObj1 = (JsonObject) o1;
                         JsonObject jsonObj2 = (JsonObject) o2;
-                        int result = Utils.compareField(jsonObj1, jsonObj2, field);
-                        for (String sigField: Utils.SIGNATURE_FIELDS) {
-                            if (result != 0)
-                                break;
-                            if (!field.equals(sigField))
-                                result = Utils.compareField(jsonObj1, jsonObj2, sigField);
+                        if (field.equals("label")) {
+                            return compareLabel(jsonObj1, jsonObj1);
                         }
-                        return result;
+                        int result = Utils.compareField(jsonObj1, jsonObj2, field);
+                        return (result == 0) ? compareLabel(jsonObj1, jsonObj1) : result;
                     } else {
                         return 0;
                     }
                 }
+
             });
 //            viewer.expandAll();
             selectObjects(savedSelections);
         }
     }
 
+    private int compareLabel(JsonObject jsonObj1, JsonObject jsonObj2) {
+        String label1 = getLabel(jsonObj1);
+        String label2 = getLabel(jsonObj2);
+        return label1.compareTo(label2);
+    }
+
+    public String getLabel(JsonObject jsonObj) {
+        String label = Utils.getFieldValueAsString(jsonObj, "label");
+        if (label != null)
+            return label;
+        String sig = Utils.getFieldValueAsString(jsonObj, "signature");
+        if (sig != null) {
+            if (longLabel())
+                sig = sig.substring(1, sig.length() - 1);
+            else
+                sig = Utils.shortSignature(sig);
+            label = DroidsafePluginUtilities.removeCloneSuffix(sig);
+            for (Map.Entry<String, JsonElement> entry: jsonObj.entrySet()) {
+                String field = entry.getKey();
+                if (getDisplay(field))
+                    label = label + " (" + field + "=" + entry.getValue() + ")";
+            }
+            return label;
+        }
+        return null;
+    }
     /**
      * This method will re-select the nodes that were selected before the change in the outline
      * structure.
@@ -420,5 +445,5 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
             }   
         }
     }
-
+    
 }
