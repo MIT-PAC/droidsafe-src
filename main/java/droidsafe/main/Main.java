@@ -299,9 +299,11 @@ public class Main {
                 driverMsg ("no catch block run");
             }
 
+            /*
             if (Config.v().dumpCallGraph) {
                 CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
             }
+            */
 
             //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()
             //replace calls with new expressions, and let the modeling pass taint appropriately
