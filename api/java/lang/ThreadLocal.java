@@ -48,7 +48,7 @@ public ThreadLocal() {}
      */
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.327 -0500", hash_original_method = "17AB1D63AD8B7EADE4880D6FD1744965", hash_generated_method = "487B38E97D772D8EDC85719FC3E88B3F")
     
 @SuppressWarnings("unchecked")

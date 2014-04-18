@@ -457,7 +457,7 @@ public Date(long milliseconds) {
      *         {@code false} otherwise.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.926 -0500", hash_original_method = "A5A1DDC35C23D543E612D23967A596DA", hash_generated_method = "87A78078C3DF1A7ADCBEEDE885C5F4B2")
     
 public boolean after(Date date) {
@@ -473,7 +473,7 @@ public boolean after(Date date) {
      *         {@code false} otherwise.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.928 -0500", hash_original_method = "EB21B83A31DD3DBD1842C230376F433E", hash_generated_method = "E0137EB8EDE8D78F6CC82CE799F2E2C2")
     
 public boolean before(Date date) {
@@ -581,8 +581,8 @@ public int compareTo(Date date) {
      * @deprecated use {@code Calendar.get(Calendar.HOUR_OF_DAY)}
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.TRIGGER)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.943 -0500", hash_original_method = "E9FAB79941832FB5BB28A56A75132611", hash_generated_method = "C7916E717A7AB29533C2BB1C1C15BB2D")
     
 @Deprecated
@@ -598,8 +598,8 @@ public int compareTo(Date date) {
      * @deprecated use {@code Calendar.get(Calendar.MINUTE)}
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.TRIGGER)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.946 -0500", hash_original_method = "905F61D3BDD6A004D6695A8C4C0A588F", hash_generated_method = "EF947D8DA80AAE9230D7A14A9CE6DA79")
     
 @Deprecated
@@ -648,8 +648,8 @@ public int compareTo(Date date) {
      * @return the number of milliseconds since Jan. 1, 1970, midnight GMT.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.TRIGGER)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.953 -0500", hash_original_method = "6634404A1A66BE1A7302C8A8E427A289", hash_generated_method = "7F40D28ACFD573A56785C7EF4B951249")
     
 public long getTime() {
@@ -868,8 +868,9 @@ public void setTime(long milliseconds) {
      * locale are used. If you need control over the time zone or locale,
      * use {@code SimpleDateFormat} instead.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.996 -0500", hash_original_method = "6C5F0B4EE91530ACACAA7ACB374F6D90", hash_generated_method = "F709BAEEF90A917275EA136C85EF5182")
     
 @Override

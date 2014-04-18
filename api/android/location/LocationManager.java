@@ -942,7 +942,7 @@ public void removeProximityAlert(PendingIntent intent) {
      */
     @DSComment("Location manager")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.108 -0500", hash_original_method = "A73A17F882D5C0CB78BFCF12E6BF5D56", hash_generated_method = "661252561785095187961056FE5269CA")
     
 public boolean isProviderEnabled(String provider) {

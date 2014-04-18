@@ -327,7 +327,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
      */
     @DSComment("Java language reflection")
     @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.294 -0500", hash_original_method = "7AE3BC00249CC99885BB0445C93FB18A", hash_generated_method = "81AB090C4B0E06E8EAE64B54F604EA2C")
     
 public Object get(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -521,7 +521,7 @@ public float getFloat(Object object) throws IllegalAccessException, IllegalArgum
      */
     @DSComment("Java language reflection")
     @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.312 -0500", hash_original_method = "5CB83BC53ADA020FA0FD37C15AAD9E62", hash_generated_method = "9D7296B3392D54E0B4B59D734A1FEECF")
     
 public int getInt(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -746,7 +746,7 @@ public void set(Object object, Object value) throws IllegalAccessException,
      */
     @DSComment("Java language reflection")
     @DSBan(DSCat.REFLECTION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.337 -0500", hash_original_method = "25FFB4639E444F2A9FD12AF0E909B7A5", hash_generated_method = "50D46A62976E2A32D29DFB63C6D79FD9")
     
 public void setBoolean(Object object, boolean value) throws IllegalAccessException,

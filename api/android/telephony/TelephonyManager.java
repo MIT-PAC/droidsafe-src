@@ -552,7 +552,7 @@ private int getPhoneTypeFromNetworkType() {
      * on a CDMA network).
      */
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSafe(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.935 -0500", hash_original_method = "832612984320BCC9B2F167CB90709724", hash_generated_method = "672EA881CE48DF4044DDF5A0EF8FB5E1")
     
@@ -1124,7 +1124,7 @@ private ITelephony getITelephony() {
     }
     
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSafe(DSCat.ANDROID_MANAGER)
     @DSVerified
     public void listen(PhoneStateListener listener, int events) {/* removed for compilation
         String pkgForDebug = sContext != null ? sContext.getPackageName() : "<unknown>";

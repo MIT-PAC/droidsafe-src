@@ -398,7 +398,7 @@ final CharSequence getPooledString(int block, int id) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.RESOURCES})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.900 -0500", hash_original_method = "7E1B14522C484E4F1B470AEA16F877D6", hash_generated_method = "30526FA7EE5BA7ADC855EA97F46AE7D4")
     
 public final InputStream open(String fileName) throws IOException {
@@ -424,7 +424,7 @@ public final InputStream open(String fileName) throws IOException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.RESOURCES})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.902 -0500", hash_original_method = "EB9FEA0B2CEADB65FF0921C2B52A13F4", hash_generated_method = "4BBF30831C3143B01679ADF8D444356C")
     
 public final InputStream open(String fileName, int accessMode)

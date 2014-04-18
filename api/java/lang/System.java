@@ -84,14 +84,14 @@ public static void setErr(PrintStream newErr) {
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     public static long currentTimeMillis() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048;
 	}
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     public static long nanoTime() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111;
@@ -369,7 +369,7 @@ private static void parsePropertyAssignments(Properties p, String[] assignments)
      */
     @DSComment("JVM/DVM parameters")
     @DSSpec(DSCat.JAVA_SECURITY)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.664 -0500", hash_original_method = "06C945E6AB6193665AD35FBCA9AFCB6D", hash_generated_method = "766C443FD74124DA91FB9FB0825E934E")
     
 public static String getProperty(String propertyName) {
@@ -390,7 +390,7 @@ public static String getProperty(String propertyName) {
      */
     @DSComment("System information")
     @DSSpec(DSCat.SYSTEM)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.667 -0500", hash_original_method = "0AD78573C84AE39631B832983C262457", hash_generated_method = "01672AFEB4169F8733E9B7130C897E0E")
     
 public static String getProperty(String prop, String defaultValue) {

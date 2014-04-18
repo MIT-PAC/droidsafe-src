@@ -210,7 +210,7 @@ protected HttpURLConnection(URL url) {
      * @see URLConnection#connected
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.606 -0500", hash_original_method = "3C68B068054EBA545E5AA24799ED950D", hash_generated_method = "0F5A9F285A124D64FA561BD6158DD33E")
     
 public abstract void disconnect();
@@ -224,7 +224,7 @@ public abstract void disconnect();
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.608 -0500", hash_original_method = "6640096D2D877ED3E740627246DA5AF9", hash_generated_method = "58330C89C9E2E008813741E1516603AD")
     
 public InputStream getErrorStream() {
@@ -280,8 +280,8 @@ public String getRequestMethod() {
      * @see #getResponseMessage
      */
     @DSComment("accessing network response data")
-    @DSSpec(DSCat.NETWORKING)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.619 -0500", hash_original_method = "7D3B203196D55AEFB0033919830A54D2", hash_generated_method = "E5CEF15CCA918C333D4C4BE375BE6761")
     
 public int getResponseCode() throws IOException {
@@ -316,8 +316,8 @@ public int getResponseCode() throws IOException {
      *             if there is an error during the retrieval.
      * @see #getResponseCode()
      */
-    @DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.IO)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.621 -0500", hash_original_method = "2B517AE93F70715BB09FC42E79EE9551", hash_generated_method = "268A72CA5053EB689B330389DCC43810")
     
 public String getResponseMessage() throws IOException {
@@ -342,7 +342,7 @@ public String getResponseMessage() throws IOException {
      */
     @DSComment("no suspicious activity, just gets string")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.627 -0500", hash_original_method = "3B5EB6833E70FFDCB063E860A5177AF6", hash_generated_method = "CB9578508F0DA92FBC57641C0CFBE1C1")
     
 public void setRequestMethod(String method) throws ProtocolException {

@@ -93,7 +93,7 @@ public FileInputStream(String path) throws FileNotFoundException {
     }
 
     @DSComment("File Input Stream")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.119 -0500", hash_original_method = "EBD7B964937B6AA7FA3657DA1AAC30BC", hash_generated_method = "ADA0D7075AE3399605E425074EC4F63B")
     
 @Override
@@ -103,7 +103,7 @@ public FileInputStream(String path) throws FileNotFoundException {
     }
 
     @DSComment("File Input Stream")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.122 -0500", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "0DF0B8874963515CB2F09EA5F083FA85")
     
 @Override
@@ -155,7 +155,7 @@ public FileInputStream(String path) throws FileNotFoundException {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.127 -0500", hash_original_method = "BB4E25A77FBA5E31003F6019B5643EE2", hash_generated_method = "2FB2F921FF08661F63F300CEEF489872")
     
 public FileChannel getChannel() {
@@ -179,6 +179,7 @@ public final FileDescriptor getFD() throws IOException {
         return fd;
     }
 
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.132 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
@@ -188,6 +189,7 @@ public final FileDescriptor getFD() throws IOException {
         return droidsafeRead();
     }
 
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.135 -0500", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "E85E2815A9A684302F2788213CC7C71B")
@@ -198,7 +200,7 @@ public final FileDescriptor getFD() throws IOException {
     }
 
     @DSComment("File Input Stream")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.137 -0500", hash_original_method = "4138A4F75DA401A9AB2AB0F0CF384113", hash_generated_method = "E06C26822D1847D5403C294FF6E5D395")
     
 @Override

@@ -329,7 +329,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * and lastChar, and change the call to the following method.
      */
     @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.039 -0500", hash_original_method = "22B32FEEB55C55BB6E6C36B65473E566", hash_generated_method = "D7CB1AC8FEA0128C6B82B8491B1759C5")
     
         @FindBugsSuppressWarnings("UPM_UNCALLED_PRIVATE_METHOD")
@@ -347,7 +347,6 @@ public final class String implements Serializable, Comparable<String>, CharSeque
 
     public static final Comparator<String> CASE_INSENSITIVE_ORDER = new CaseInsensitiveComparator();
 
-
     /**
      * Creates an empty string.
      */
@@ -358,7 +357,6 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         public String() {
         //        value = EmptyArray.CHAR;
     }
-    
 
     /*    
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
@@ -451,7 +449,6 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         this.addTaint(high);
         this.addTaint(offset);
         this.addTaint(byteCount);
-        
 
         //End block
         // ---------- Original Method ----------
@@ -863,7 +860,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      */
     @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.883 -0500", hash_original_method = "2E4CA200D3933E45C3FC02936B120C89", hash_generated_method = "0A6A6039C4B3B9F2FADF6ED1F57152BB")
     
         public byte[] getBytes() {
@@ -881,7 +878,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      */
     @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.886 -0500", hash_original_method = "D1476A765D84241818C22751CEBD7DE3", hash_generated_method = "DC158139A24E25D529425729D16D0CBF")
     
         public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
@@ -906,7 +903,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      */
     @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.888 -0500", hash_original_method = "56FDAE3B6641018546E6C6674268142D", hash_generated_method = "B122503E334C5D64C92FAC8F5D7C7C64")
     
         public byte[] getBytes(Charset charset) {

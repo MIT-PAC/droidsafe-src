@@ -791,7 +791,7 @@ DisplayInfoForClient(IRemoteControlDisplay rcd, int w, int h) {
      * @see AudioManager#registerMediaButtonEventReceiver(ComponentName)
      * @see AudioManager#registerRemoteControlClient(RemoteControlClient)
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 12:25:06.036 -0500", hash_original_method = "AD6CCD9D9B436D492F90BC57466F8BB6", hash_generated_method = "28D4AB3908D0D540BF76A156E34290C8")
     
 public RemoteControlClient(PendingIntent mediaButtonIntent) {
@@ -823,7 +823,7 @@ public RemoteControlClient(PendingIntent mediaButtonIntent) {
      * @see AudioManager#registerMediaButtonEventReceiver(ComponentName)
      * @see AudioManager#registerRemoteControlClient(RemoteControlClient)
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 12:25:06.039 -0500", hash_original_method = "BBCB02942EAA4463B06F3A8D8D85915D", hash_generated_method = "7765B7729477EAF97C8D70200FCA521F")
     
 public RemoteControlClient(PendingIntent mediaButtonIntent, Looper looper) {
@@ -869,7 +869,7 @@ public MetadataEditor editMetadata(boolean startEmpty) {
      *       {@link #PLAYSTATE_BUFFERING},
      *       {@link #PLAYSTATE_ERROR}.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 12:25:06.096 -0500", hash_original_method = "D38A15416CE332DCCFDCF1A5EC6FC0CD", hash_generated_method = "E0CBFDA35DA6885C16682FAA32BB6C7A")
     

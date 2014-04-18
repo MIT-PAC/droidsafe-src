@@ -911,7 +911,7 @@ final void runWorker(Worker w) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.881 -0500", hash_original_method = "D2720E6C2ABD70ABBFB850D5E1C9152E", hash_generated_method = "AF11F840864428AD43826C563AB6247D")
     @DSVerified
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.OS_GENERAL)
 public void execute(Runnable command) {
         if (command == null)
             throw new NullPointerException();
@@ -1377,7 +1377,7 @@ public BlockingQueue<Runnable> getQueue() {
      * @param task the task to remove
      * @return true if the task was removed
      */
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.937 -0500", hash_original_method = "79BF7D79C72AB53C9D385B8F29AB696D", hash_generated_method = "D3CC93BB4DBD07F46B86AB7121E4A5CD")
     
 public boolean remove(Runnable task) {

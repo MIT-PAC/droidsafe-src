@@ -232,7 +232,7 @@ public int getMethod() {
      * @return the entry name.
      */
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.325 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {

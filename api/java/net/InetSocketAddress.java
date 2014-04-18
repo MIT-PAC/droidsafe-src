@@ -149,7 +149,7 @@ InetSocketAddress(String hostname, int port, boolean needResolved) {
      * @return the socket endpoint port number.
      */
     @DSSpec(DSCat.NETWORKING)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.643 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "E126B6DCEFD20BABFE67A5DF1C3260B4")
     
 public final int getPort() {
@@ -173,7 +173,7 @@ public final InetAddress getAddress() {
      * hostname string was provided at construction time.
      */
     @DSSpec(DSCat.NETWORKING)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.648 -0500", hash_original_method = "6B2BE268DC286B10AABA01E5C61B1025", hash_generated_method = "47DBD0EB47A52E31FF9344CBBA2DA06B")
     
 public final String getHostName() {

@@ -33,7 +33,7 @@ public static Locale[] getAvailableLocales() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.163 -0500", hash_original_method = "36423D53959653C2984C84B905F35ABE", hash_generated_method = "5922C2B7903C130A111FFD3F547D8C2C")
     
 public static Collator getInstance() {
@@ -45,7 +45,7 @@ public static Collator getInstance() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.166 -0500", hash_original_method = "FDDB3D7E9466CD25FA15155141F4B994", hash_generated_method = "8A20382FC64DCF44DF83452E25D2BB49")
     
 public static Collator getInstance(Locale locale) {
@@ -137,7 +137,7 @@ protected Collator() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.146 -0500", hash_original_method = "7C02E06D11E019F44D80294CC033745E", hash_generated_method = "F85FDF97A13D35C0B3110E84B80DDE74")
     
 public int compare(Object object1, Object object2) {
@@ -156,7 +156,7 @@ public int compare(Object object1, Object object2) {
      *         greater than {@code string2}.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.148 -0500", hash_original_method = "9DEFA3A080C5B36241D14E3A04AEFBBF", hash_generated_method = "260149D2BD45EA572C2F49EEC2BD0711")
     
 public abstract int compare(String string1, String string2);
@@ -287,7 +287,7 @@ public void setDecomposition(int value) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.176 -0500", hash_original_method = "EE6B9836B69B72CAEC3F00255CD1C53E", hash_generated_method = "70C8E85EC36DDE7A493D9EF302947660")
     
 public void setStrength(int value) {

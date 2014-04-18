@@ -342,7 +342,7 @@ public void updateDynamicallyConfigurableProperties(AccessibilityServiceInfo oth
      */
     @DSComment("Describes Acessibility Service")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.278 -0500", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "8F9FC8944DF69B66CB8D7A8B6ABB6416")
     
 public String getId() {
@@ -375,7 +375,7 @@ public ResolveInfo getResolveInfo() {
      */
     @DSComment("Describes Acessibility Service")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.283 -0500", hash_original_method = "193585B262D581003491A72A585CC7AB", hash_generated_method = "4412660C2BE872F360536E29B777FE85")
     
 public String getSettingsActivityName() {
@@ -392,7 +392,7 @@ public String getSettingsActivityName() {
      */
     @DSComment("Describes Acessibility Service")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.285 -0500", hash_original_method = "E6B94BCDAE7DB4F02CCDA58E176F7C09", hash_generated_method = "97B8477AF04EA26C388EF92B9525C33D")
     
 public boolean getCanRetrieveWindowContent() {
@@ -413,7 +413,7 @@ public boolean getCanRetrieveWindowContent() {
      */
     @DSComment("Describes Acessibility Service")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.288 -0500", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "C24A704C1B7693A32CE618B690D2C768")
     
 public String getDescription() {

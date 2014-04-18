@@ -628,6 +628,7 @@ public void stop()
      *    the parameters don't resolve to valid data and indexes.
      *    The number of bytes will not exceed sizeInBytes.
      */    
+    @DSSource({DSSourceKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.862 -0500", hash_original_method = "B2BF87214356B1865A95A687C4A6B1B8", hash_generated_method = "46C02CDEC81CE567375CF0A8C8480E97")
     @DSVerified
     @DSSpec(DSCat.IO)
@@ -654,6 +655,7 @@ public int read(byte[] audioData, int offsetInBytes, int sizeInBytes) {
      *    the parameters don't resolve to valid data and indexes.
      *    The number of shorts will not exceed sizeInShorts.
      */    
+    @DSSource({DSSourceKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.868 -0500", hash_original_method = "31830FEBBB69B42EDEDE540E14955C0E", hash_generated_method = "3B938B52E7C2B587F334F201EFCCD73C")
     @DSVerified
     @DSSpec(DSCat.IO)
@@ -680,6 +682,7 @@ public int read(short[] audioData, int offsetInShorts, int sizeInShorts) {
      *    the parameters don't resolve to valid data and indexes.
      *    The number of bytes will not exceed sizeInBytes.
      */    
+    @DSSource({DSSourceKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.875 -0500", hash_original_method = "2CBF0F4953E69C144CF30A698A24018A", hash_generated_method = "E84D426E817ED34BC874E8108047567F")
     @DSVerified
     @DSSpec(DSCat.IO)

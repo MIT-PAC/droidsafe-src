@@ -426,7 +426,7 @@ public final int countActions() {
      */
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.788 -0500", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "CCCD1EB514435FFA0F2B8D27E682ABE9")
     
 public final String getAction(int index) {
@@ -1559,9 +1559,6 @@ private final boolean findMimeType(String type) {
     public IntentFilter[] newArray(int size) {
             return new IntentFilter[size];
         }
-
-
-
 
     Uri dataUri;
     

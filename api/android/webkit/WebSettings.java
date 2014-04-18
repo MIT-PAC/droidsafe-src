@@ -482,7 +482,7 @@ boolean supportTouchOnly() {
      * Set whether the WebView supports zoom
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.313 -0500", hash_original_method = "6B7C7B097AE4AF077C4ED1E2A5D10429", hash_generated_method = "9AD8CD43D414B15C5C81F48132666191")
     
 public void setSupportZoom(boolean support) {
@@ -504,7 +504,7 @@ public boolean supportZoom() {
      */
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.317 -0500", hash_original_method = "16CDF55EE98C899167571FFC15609D2B", hash_generated_method = "453D17A868C2DCA7A2E28D62ACBA5A60")
     
 public void setBuiltInZoomControls(boolean enabled) {
@@ -668,7 +668,7 @@ public boolean enableSmoothTransition() {
      * Store whether the WebView is saving form data.
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.348 -0500", hash_original_method = "BAE3B161CD7589698136E106A2876792", hash_generated_method = "374F121303AD8BD6516B2DBD6D8CB63E")
     
 public void setSaveFormData(boolean save) {
@@ -690,7 +690,7 @@ public boolean getSaveFormData() {
      *  Store whether the WebView is saving password.
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.352 -0500", hash_original_method = "B2DE3A754D34523602EAE606838B5563", hash_generated_method = "C270DE2E6B44D4B1AA54E72FEE5E1D4B")
     
 public void setSavePassword(boolean save) {
@@ -1390,7 +1390,7 @@ private void verifyNetworkAccess() {
      */
     @DSComment("enable javascript setting")
     @DSSpec(DSCat.SECURITY)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.470 -0500", hash_original_method = "0BBFCDC224ADE5D71512B3B9C5FED4DC", hash_generated_method = "524201A68D16D11518F913CE7AD4EBEF")
     
 public synchronized void setJavaScriptEnabled(boolean flag) {
@@ -1914,7 +1914,7 @@ public synchronized void setRenderPriority(RenderPriority priority) {
      * @param mode One of the LOAD_ values.
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.556 -0500", hash_original_method = "C16F91A0BF5BCFC94071B85F47E4B2E9", hash_generated_method = "1B4CE6ECBB354B1224D7BA7B78B92FF7")
     
 public void setCacheMode(int mode) {

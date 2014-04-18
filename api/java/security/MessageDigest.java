@@ -25,7 +25,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
      */
     @DSComment("no suspicious activity, just creates object")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.388 -0500", hash_original_method = "5C601ADA1D2E18CF500EF6D66253600E", hash_generated_method = "7136D7DF10FBBCC2A23B2BFE80B5FAB3")
     
 public static MessageDigest getInstance(String algorithm)
@@ -64,7 +64,7 @@ public static MessageDigest getInstance(String algorithm)
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.391 -0500", hash_original_method = "4A47CCCAB9E7CA50F3AD4953C61AD60D", hash_generated_method = "E109005BEF06DBB9107F58DD5DA16131")
     
 public static MessageDigest getInstance(String algorithm, String provider)
@@ -96,7 +96,7 @@ public static MessageDigest getInstance(String algorithm, String provider)
      * @throws IllegalArgumentException if {@code provider == null}
      */
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.393 -0500", hash_original_method = "723C5C1CC0AC6B47325C4EFD63C83CA5", hash_generated_method = "FB6253B2AEE8F1F7762F8C00D3303C27")
     
 public static MessageDigest getInstance(String algorithm, Provider provider)
@@ -244,7 +244,7 @@ public void update(byte[] input) {
      */
     @DSComment("no suspicious activity, just creates object")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.405 -0500", hash_original_method = "BFC8812962D9635EA2DD9DD3F9DF8CCE", hash_generated_method = "D12C891E70E59E44A3EA8AAE84399358")
     
 public byte[] digest() {
@@ -295,7 +295,7 @@ public int digest(byte[] buf, int offset, int len) throws DigestException {
      */
     @DSComment("no suspicious activity, just creates object")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.410 -0500", hash_original_method = "C04191B06E52578EA4C996F47114224E", hash_generated_method = "7A58DB51A97D433F63CE5548A9BE7778")
     
 public byte[] digest(byte[] input) {

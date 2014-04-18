@@ -1460,7 +1460,7 @@ private void writeNull() throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.115 -0500", hash_original_method = "D65EE5B0FE82553B53FE321A403242DE", hash_generated_method = "0F7F1300E84E4CF37EC57773C07CEC2E")
     
 public final void writeObject(Object object) throws IOException {
@@ -1486,6 +1486,7 @@ public void writeUnshared(Object object) throws IOException {
         writeObject(object, true);
     }
 
+    @DSSink({DSSinkKind.IO})
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.120 -0500", hash_original_method = "6135D4458B19CC3120CAE3855FF2BEA8", hash_generated_method = "E5BDC9807B0FDC2792FD9C88BAFE44FB")

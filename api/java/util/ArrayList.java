@@ -212,7 +212,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
 
    @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override
     
     public E get(int location) {

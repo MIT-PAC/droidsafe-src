@@ -20,7 +20,7 @@ public abstract class SSLSocketFactory extends SocketFactory {
      * @return the default ssl socket factory instance.
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.846 -0500", hash_original_method = "F37B707301EB6A97B76ADAB5F497E9E1", hash_generated_method = "B4D96C783A50122614CF39201E30880B")
     
 public static synchronized SocketFactory getDefault() {
@@ -119,7 +119,7 @@ public abstract String[] getSupportedCipherSuites();
      * @throws java.net.UnknownHostException
      *             if the host is unknown.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.856 -0500", hash_original_method = "92AB7E02FDD9B6DD187F9A9C0226B2B5", hash_generated_method = "B9E6F078DE3B349829055D34988DB96B")

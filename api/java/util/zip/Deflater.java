@@ -434,7 +434,7 @@ public synchronized void setDictionary(byte[] buf, int offset, int byteCount) {
      * for later compression.
      */
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.857 -0500", hash_original_method = "76E6701B8618856CEE42A14EB071C689", hash_generated_method = "19B3B4D9BFCD113AADCC6DB794F536DA")
     
 public void setInput(byte[] buf) {

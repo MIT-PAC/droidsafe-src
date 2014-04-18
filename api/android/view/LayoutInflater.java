@@ -342,7 +342,7 @@ public View inflate(XmlPullParser parser, ViewGroup root) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.802 -0500", hash_original_method = "9DFC9AE5F080C22C20FBC66EE3D8715B", hash_generated_method = "61A1FCF5FE21DE83BA36DB488F2EE8AC")
     
 public View inflate(XmlPullParser parser, ViewGroup root, boolean attachToRoot) {

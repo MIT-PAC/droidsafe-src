@@ -1472,7 +1472,7 @@ public final void scale(float scale) {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.794 -0500", hash_original_method = "FA5880EB8F61D955AC5922ACE620FCE2", hash_generated_method = "0179DCDBED0C80F6D103A239F3884634")
     
 public final int getAction() {
@@ -1587,7 +1587,7 @@ public final void setDownTime(long downTime) {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.816 -0500", hash_original_method = "CCF6A1C7FFBA398090457272FB07E7C9", hash_generated_method = "88BA2C3FDA0F218BB6D1E6E0DAFA6CAD")
     
 public final long getEventTime() {
@@ -1615,7 +1615,7 @@ public final long getEventTimeNano() {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.820 -0500", hash_original_method = "4BF6642E766343B332FD98949BC6C582", hash_generated_method = "E774E1D7846DB35D7F1CB7A3E088FA67")
     
 public final float getX() {
@@ -1630,7 +1630,7 @@ public final float getX() {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.823 -0500", hash_original_method = "91A63DEAB3A8AC7438EA04466792BD82", hash_generated_method = "EC2C2BD98A3263DC8F891D4B3BDEE4E1")
     
 public final float getY() {
@@ -1750,7 +1750,7 @@ public final float getAxisValue(int axis) {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.845 -0500", hash_original_method = "2050CCC0293D52B162C880AD9BC3C6F6", hash_generated_method = "47EC7AB67BCA05539C0F93193D87B8C3")
     
 public final int getPointerCount() {
@@ -1767,7 +1767,7 @@ public final int getPointerCount() {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.847 -0500", hash_original_method = "43D465AFB7AC0153BC6ACD556C5FF613", hash_generated_method = "B99662569C98F0E25C05C1CC7A03F83D")
     
 public final int getPointerId(int pointerIndex) {
@@ -1826,7 +1826,7 @@ public final int findPointerIndex(int pointerId) {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.855 -0500", hash_original_method = "13E56CEAC1D2714A9A1790EF5117F935", hash_generated_method = "D7BF3F326723077266BC957BEF7B8FFD")
     
 public final float getX(int pointerIndex) {
@@ -1846,7 +1846,7 @@ public final float getX(int pointerIndex) {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.857 -0500", hash_original_method = "9A0C47F653E064961B232F3274CD29C9", hash_generated_method = "71BE84DA9B597D86FE06FCA23AC26688")
     
 public final float getY(int pointerIndex) {

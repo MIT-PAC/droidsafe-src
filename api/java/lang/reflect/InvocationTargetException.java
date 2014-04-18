@@ -73,8 +73,8 @@ public Throwable getTargetException() {
      * @return the cause of this exception
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.239 -0500", hash_original_method = "D8C22D14C73496EF517FF8FC6C6B2CD8", hash_generated_method = "99CD47B0697B3B8C9C0B34299EA01FAB")
     
 @Override

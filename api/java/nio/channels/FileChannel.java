@@ -395,7 +395,7 @@ public abstract long read(ByteBuffer[] buffers, int start, int number)
      *             if an I/O error occurs while getting the size of the file.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.386 -0500", hash_original_method = "533E99DC61BBBC696C27BAAAE618F5D9", hash_generated_method = "CDF3B561CA5CAE9E5BFB6F445BEFCE76")
     
 public abstract long size() throws IOException;

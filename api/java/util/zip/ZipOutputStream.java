@@ -240,6 +240,7 @@ public void closeEntry() throws IOException {
      *             If an error occurs storing the entry.
      * @see #write
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("zip/io")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.731 -0500", hash_original_method = "B67EF5B3649AC60448D5855D166716A9", hash_generated_method = "6577F6E7EF0A9824426666CBE3AAA8F0")
@@ -398,7 +399,7 @@ private int writeShort(OutputStream os, int i) throws IOException {
      *                If an error occurs writing to the stream
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.746 -0500", hash_original_method = "F9EBE9ED855C5E2014EA6CAF53F89130", hash_generated_method = "3F4E55B962E176E96CF3299F7DB01ADA")
     
 @Override

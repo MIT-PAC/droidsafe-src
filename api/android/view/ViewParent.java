@@ -10,7 +10,7 @@ import android.view.accessibility.AccessibilityEvent;
 public interface ViewParent {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public void requestLayout();
     
     @DSComment("Abstract Method")

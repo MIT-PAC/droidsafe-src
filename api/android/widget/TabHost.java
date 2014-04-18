@@ -102,7 +102,7 @@ private void initTabHost() {
      * Get a new {@link TabSpec} associated with this tab host.
      * @param tag required tag of tab.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.574 -0500", hash_original_method = "9E260D3987C01C55D906A5443FE1F250", hash_generated_method = "A4E462546AA9F6622B95E5FD4A82210C")
     
@@ -320,7 +320,7 @@ public View getCurrentView() {
 
     @DSComment("TabHost, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.612 -0500", hash_original_method = "8C15D02B8DC442237A4CA8C57AA1B8BD", hash_generated_method = "FB2B46C880E73551097555E51328B111")
     
 public void setCurrentTabByTag(String tag) {

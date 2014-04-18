@@ -306,7 +306,7 @@ protected URLConnection(URL url) {
      * @throws IOException
      *             if an error occurs while connecting to the resource.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.074 -0500", hash_original_method = "E3B3D609A299C20BEA286BB272FDF5DD", hash_generated_method = "12E46584ED58D785D1E4DDAC8B414223")
@@ -779,7 +779,7 @@ public long getIfModifiedSince() {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.138 -0500", hash_original_method = "AC7495DD6573AA12A9CB49C509EE6FD0", hash_generated_method = "FAAEE0050218252D181324FD0AF4D174")
     
 public InputStream getInputStream() throws IOException {
@@ -1019,7 +1019,7 @@ public void setIfModifiedSince(long newValue) {
      */
     @DSComment("no suspicious activity")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.187 -0500", hash_original_method = "EB8A856B35FAF51399B9B389D895E434", hash_generated_method = "897791F44B5080C11972AA64B89EBE20")
     
 public void setRequestProperty(String field, String newValue) {

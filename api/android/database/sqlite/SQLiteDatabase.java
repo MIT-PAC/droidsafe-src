@@ -61,7 +61,7 @@ public class SQLiteDatabase extends SQLiteClosable {
      * @return the newly opened database
      * @throws SQLiteException if the database cannot be opened
      */
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.138 -0500", hash_original_method = "561EAEA4DA554DB918DDA9176F70DC13", hash_generated_method = "4942BCB41767BFD0488622F1AB1E7C65")
     
@@ -88,7 +88,7 @@ public static SQLiteDatabase openDatabase(String path, CursorFactory factory, in
      * @return the newly opened database
      * @throws SQLiteException if the database cannot be opened
      */
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.141 -0500", hash_original_method = "528BDC0ADA7690DDC947E526A8FE7C65", hash_generated_method = "A09B47EAA0844CC09CC8C7D4BD955518")
     
@@ -1853,7 +1853,7 @@ public Cursor rawQueryWithFactory(
      *            column values
      * @return the row ID of the newly inserted row, or -1 if an error occurred
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.229 -0500", hash_original_method = "7C0142B65481E16DCFB76B6C0BD0AF64", hash_generated_method = "B95E58E579B5A6D9594C3B5AF493AAD3")
@@ -1966,7 +1966,7 @@ public long replaceOrThrow(String table, String nullColumnHack,
      * {@link #CONFLICT_IGNORE}
      * OR -1 if any error
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.239 -0500", hash_original_method = "4E696CAC31E62C2450813F66BA0D3688", hash_generated_method = "D3FFFFD73FA936FAF47289C5F6C32E7E")
@@ -2050,7 +2050,7 @@ public int delete(String table, String whereClause, String[] whereArgs) {
      */
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.245 -0500", hash_original_method = "1314F51B10A849824DA60B76F1896857", hash_generated_method = "46D3DA0A1268F6E19F89D81DC65B48FD")
     
 public int update(String table, ContentValues values, String whereClause, String[] whereArgs) {

@@ -19,7 +19,7 @@ public class MimeTypeMap {
      * @return The file extension of the given url.
      */
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.152 -0500", hash_original_method = "5C8472A4BF23E5ABD60543D4D726ECB1", hash_generated_method = "53F198E505517BB1B332F50D0B132F1F")
     
 public static String getFileExtensionFromUrl(String url) {
@@ -67,7 +67,7 @@ private static String mimeTypeFromExtension(String extension) {
      */
     @DSComment("Data structure factory")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.167 -0500", hash_original_method = "73A67A406B5A25034635E2FEA1819640", hash_generated_method = "169C199BAED4B582FF1B5FA6B4FA7742")
     
 public static MimeTypeMap getSingleton() {
@@ -102,7 +102,7 @@ public boolean hasMimeType(String mimeType) {
      */
     @DSComment("Utility function")
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.156 -0500", hash_original_method = "9405A52065BBD485ABF37D1CA921E56B", hash_generated_method = "EDD49E0F199A255FBC119868328FE566")
     
 public String getMimeTypeFromExtension(String extension) {

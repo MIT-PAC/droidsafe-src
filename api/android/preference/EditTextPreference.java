@@ -92,7 +92,7 @@ public void setText(String text) {
      */
     @DSComment("Perference UI, only change preference is spec")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.698 -0500", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "7675B56A832FA6E1A4872CB2A7C75222")
     
 public String getText() {

@@ -103,7 +103,7 @@ public RowBuilder newRow() {
      * @param columnValues in the same order as the the column names specified
      *  at cursor construction time
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.748 -0500", hash_original_method = "48B10D52D633E686D99B492C35189F09", hash_generated_method = "87F3E7DEB331588F9FEE85FE0B266C4D")
@@ -129,7 +129,7 @@ public void addRow(Object[] columnValues) {
      * @param columnValues in the same order as the the column names specified
      *  at cursor construction time
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("MatrixCursor is array backed data structure")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.751 -0500", hash_original_method = "30233D359459EB079BFCFD374250902B", hash_generated_method = "56703011C0300D55CE4BB4F75D9CA356")
@@ -166,6 +166,7 @@ public void addRow(Iterable<?> columnValues) {
     }
 
     /** Optimization for {@link ArrayList}. */
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.753 -0500", hash_original_method = "F5D0F3FA334A37A2680A290D6DEEBDBE", hash_generated_method = "4542ED27461748289DDD7AF553420831")

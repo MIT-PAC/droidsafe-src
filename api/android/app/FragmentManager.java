@@ -66,7 +66,7 @@ public static void enableDebugLogging(boolean enabled) {
      * in the state, and if changes are made after the state is saved then they
      * will be lost.</p>
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSComment("Abstract Method")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.282 -0500", hash_original_method = "BE048CD13A2D9177864E9AE5CA89385C", hash_generated_method = "179BF9392A437EED545CF6A3F093EC20")
@@ -108,7 +108,7 @@ public abstract boolean executePendingTransactions();
      * on the back stack associated with this ID are searched.
      * @return The fragment if found or null otherwise.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSComment("Abstract Method")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.289 -0500", hash_original_method = "F331A49B0DAC9D1709118DA3B3769DC9", hash_generated_method = "4C6F6CF41EE287D45A81567EBA8CB5D6")
@@ -123,7 +123,7 @@ public abstract Fragment findFragmentById(int id);
      * on the back stack are searched.
      * @return The fragment if found or null otherwise.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSComment("Abstract Method")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.291 -0500", hash_original_method = "06F2C60B02B6436122252A9A18FF6B5B", hash_generated_method = "8A748374863BCFCFE22454ABCA2FE261")

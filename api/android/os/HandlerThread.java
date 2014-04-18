@@ -72,7 +72,7 @@ public void run() {
      */
     @DSComment("General android operation, no security concern")
     @DSSafe(DSCat.OS_GENERAL)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.214 -0500", hash_original_method = "0FC13809696BA2D6DC441C842770D0F1", hash_generated_method = "4B1708DC77C7D7E3B2BA2EC8692FAEBE")
     
 public Looper getLooper() {

@@ -37,7 +37,7 @@ public interface Menu {
     
     @DSVerified
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem add(CharSequence title);
     
     @DSVerified
@@ -55,11 +55,9 @@ public interface Menu {
     @DSSafe(DSCat.ABSTRACT_METHOD)
     public MenuItem add(int groupId, int itemId, int order, int titleRes);
     
-    
     @DSVerified
     @DSComment("Abstract Method")
     SubMenu addSubMenu(final CharSequence title);
-    
     
     @DSVerified
     @DSComment("Abstract Method")

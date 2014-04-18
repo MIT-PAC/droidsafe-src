@@ -122,7 +122,7 @@ public Resources getResources() {
     
 	@DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public String getString(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -183,7 +183,6 @@ public Resources getResources() {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean getBoolean(int index, boolean defValue){
@@ -215,7 +214,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getInt(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -245,7 +244,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public float getFloat(int index, float defValue){
 		return getTaintFloat();
 		// Original method
@@ -254,7 +253,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getColor(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -278,7 +277,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getInteger(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -347,7 +346,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getDimensionPixelSize(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -436,7 +435,7 @@ public Resources getResources() {
     
 	@DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getResourceId(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -457,7 +456,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public Drawable getDrawable(int index){
 		return mResources.loadDrawable(mValue, mValue.resourceId);
 		// Original method

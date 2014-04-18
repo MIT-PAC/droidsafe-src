@@ -133,7 +133,7 @@ public boolean markSupported() {
      * @throws IOException
      *             if the stream is closed or another IOException occurs.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IO})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.138 -0500", hash_original_method = "F11529017A51516EAF2106297C9899F8", hash_generated_method = "BB7CD99365BF090BE44CD77DA108B2A5")
@@ -153,11 +153,12 @@ public abstract int read() throws IOException;
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public int droidsafeAvailable() {
         return getTaintInt();
-    } 
+    }
     
     /**
      * Equivalent to {@code read(buffer, 0, buffer.length)}.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.141 -0500", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "6E5D00FFA2D494E6084FF31B9747697A")
@@ -186,6 +187,7 @@ public int read(byte[] buffer) throws IOException {
      * @throws IOException
      *             if the stream is closed or another IOException occurs.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.143 -0500", hash_original_method = "287E8AA63F5F0E35884524D6430753F1", hash_generated_method = "3E33A9206B048B67D482B00E90537C7C")

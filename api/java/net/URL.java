@@ -478,7 +478,7 @@ public final Object getContent() throws IOException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.814 -0500", hash_original_method = "EA6B256CF4DB87F83CFE1379BEA78831", hash_generated_method = "20204A59BCA9CBCE334EE2309DE1C2D7")
     
 public final InputStream openStream() throws IOException {
@@ -509,6 +509,7 @@ public URLConnection openConnection() throws IOException {
      * @throws UnsupportedOperationException if the protocol handler does not
      *     support opening connections through proxies.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.819 -0500", hash_original_method = "CB72409718452D46955A0A85FC179645", hash_generated_method = "9FFC82767BCEE2CD44BAA6101C4AB2EB")
@@ -632,7 +633,7 @@ public int getEffectivePort() {
      */
     @DSComment("no suspicious activity, just gets string")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.839 -0500", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "777D707579F7653F7954BDBD83E0BBF8")
     
 public String getProtocol() {
@@ -665,7 +666,7 @@ public String getUserInfo() {
      */
     @DSComment("no suspicious activity, just gets string")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.846 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
     
 public String getHost() {
@@ -719,7 +720,7 @@ public String getFile() {
      */
     @DSComment("No action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.855 -0500", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "685DA06B3205BF0988B63E7E0C7CEB6C")
     
 public String getPath() {

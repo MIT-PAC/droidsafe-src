@@ -31,8 +31,8 @@ public class SmsMessage {
      * such as dual-mode GSM/CDMA and CDMA/LTE phones.
      */
     @DSComment("SMS message creation from raw data")
-    @DSSpec(DSCat.TELEPHONY)
-    @DSSource({DSSourceKind.SMS_MMS})
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.603 -0500", hash_original_method = "CF7F94C2BDE173AF6CC483B3F8BE19B9", hash_generated_method = "D130F6B0A70B67E3ACC0B0A502946CA3")
     
 public static SmsMessage createFromPdu(byte[] pdu) {
@@ -51,8 +51,8 @@ public static SmsMessage createFromPdu(byte[] pdu) {
      * @param format the format extra from the SMS_RECEIVED_ACTION intent
      * @hide pending API council approval
      */
-    @DSSpec(DSCat.SMS)
-    @DSSource({DSSourceKind.SMS_MMS})
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.608 -0500", hash_original_method = "B5B0C01DE595010BFEEC3AB703E88508", hash_generated_method = "FDF9E8B8EA9AE0FA9656134B5470A32A")
     
 public static SmsMessage createFromPdu(byte[] pdu, String format) {

@@ -323,7 +323,7 @@ private AccessibilityNodeInfo() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.253 -0500", hash_original_method = "D6E0A07A0224052514955EB47C47B111", hash_generated_method = "B0768DD9771DC23834BE3F5048303A52")
     
 public void setSource(View source) {
@@ -339,7 +339,7 @@ public void setSource(View source) {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.256 -0500", hash_original_method = "6C41AAD35FD64A253FB83D406AD6C88C", hash_generated_method = "7FA239C11065357F8BE2BF8E10A8B6DC")
     
 public int getWindowId() {
@@ -353,7 +353,7 @@ public int getWindowId() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.258 -0500", hash_original_method = "7C8926FBBCF561C891F2F5FFEAFED8AF", hash_generated_method = "7336BD0E8C8F2AD3910E9826485E3136")
     
 public int getChildCount() {
@@ -376,7 +376,7 @@ public int getChildCount() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.260 -0500", hash_original_method = "E9093B8E79E0C35ACECC8F5F72DA0B71", hash_generated_method = "7C1F662C65428D59AF8FE6D0094E79E7")
     
 public AccessibilityNodeInfo getChild(int index) {
@@ -425,7 +425,7 @@ public void addChild(View child) {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.265 -0500", hash_original_method = "60E376BAD814E27A83B622ADA78DD695", hash_generated_method = "B97242529A14D415A2C43E774342A447")
     
 public int getActions() {
@@ -466,8 +466,8 @@ public void addAction(int action) {
      * @throws IllegalStateException If called outside of an AccessibilityService.
      */
     @DSComment("View state info")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.269 -0500", hash_original_method = "CDA2E61C3267971FAEFED5DF1BBF4146", hash_generated_method = "C4E25EF5BE24BB112C6D27E03FDB35F7")
     
 public boolean performAction(int action) {
@@ -520,7 +520,7 @@ public List<AccessibilityNodeInfo> findAccessibilityNodeInfosByText(String text)
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.275 -0500", hash_original_method = "F4DB109D13E56E0D98A6319CC588873D", hash_generated_method = "EA071BCDC57E94EA0FBFC36A75B68395")
     
 public AccessibilityNodeInfo getParent() {
@@ -547,7 +547,7 @@ public AccessibilityNodeInfo getParent() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.278 -0500", hash_original_method = "0FE0BB8E7E891FFE4D867C8196AE43B4", hash_generated_method = "B862371144AE2D17ADD412F9AC4626C5")
     
 public void setParent(View parent) {
@@ -583,7 +583,7 @@ public void getBoundsInParent(Rect outBounds) {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.282 -0500", hash_original_method = "DC2A2D1F16BCFDB8F09D047ED8729F2A", hash_generated_method = "BB4DFEC82A270850989D1E81907DDAD5")
     
 public void setBoundsInParent(Rect bounds) {
@@ -619,7 +619,7 @@ public void getBoundsInScreen(Rect outBounds) {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.287 -0500", hash_original_method = "770F78071B2EB9D2396840AB4AD2ADB5", hash_generated_method = "04DB0EE04ED4620E2D4573D5295ECDF8")
     
 public void setBoundsInScreen(Rect bounds) {
@@ -654,7 +654,7 @@ public boolean isCheckable() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.291 -0500", hash_original_method = "516AC58EA6CB8A6948778CD704999386", hash_generated_method = "4862A301DEE8D182A6712253F9109D40")
     
 public void setCheckable(boolean checkable) {
@@ -688,7 +688,7 @@ public boolean isChecked() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.296 -0500", hash_original_method = "930075A9DA99BE3539B9BAFC112A5160", hash_generated_method = "E3F1ADAF5AA4E7375D26140A03C7C90F")
     
 public void setChecked(boolean checked) {
@@ -722,7 +722,7 @@ public boolean isFocusable() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.301 -0500", hash_original_method = "A4FE2C9F5A8AC78848A5BB7FA1A98C8F", hash_generated_method = "134AF0816CBDF82D5886CE028A3B9EB8")
     
 public void setFocusable(boolean focusable) {
@@ -756,7 +756,7 @@ public boolean isFocused() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.305 -0500", hash_original_method = "6C2B5793CEDC3F6B1248DAB365B53404", hash_generated_method = "556C06FB803FC6F62DE8D25C00AF067B")
     
 public void setFocused(boolean focused) {
@@ -790,7 +790,7 @@ public boolean isSelected() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.309 -0500", hash_original_method = "0890254D4AC82258F1AAEA57F8827B54", hash_generated_method = "3F08ADF8B86A84D31BD7B7C6BD7E0AEA")
     
 public void setSelected(boolean selected) {
@@ -824,7 +824,7 @@ public boolean isClickable() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.314 -0500", hash_original_method = "2AB4084D18C97615027F882B075290EA", hash_generated_method = "587A02CEC97FDC23A4227EAE10EAE6C1")
     
 public void setClickable(boolean clickable) {
@@ -858,7 +858,7 @@ public boolean isLongClickable() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.319 -0500", hash_original_method = "BBEB96E07778625102E9D70952371D0D", hash_generated_method = "3A6C1DB697D2E264D8ADA130FC8FA2BB")
     
 public void setLongClickable(boolean longClickable) {
@@ -892,7 +892,7 @@ public boolean isEnabled() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.324 -0500", hash_original_method = "2D7E6331314DB7964C417618AC2EB5EA", hash_generated_method = "A6C15B8E32077183A0CADDAA94492167")
     
 public void setEnabled(boolean enabled) {
@@ -926,7 +926,7 @@ public boolean isPassword() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.328 -0500", hash_original_method = "4C0E98701874539EDF8F49BF5002C98F", hash_generated_method = "4999C0531E23CE05A038C8BD67D1727E")
     
 public void setPassword(boolean password) {
@@ -960,7 +960,7 @@ public boolean isScrollable() {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.333 -0500", hash_original_method = "C8E19EB47E895659C0D234F60CD63E87", hash_generated_method = "12E034E4311AAEA337DF8A82E5AB3864")
     
 public void setScrollable(boolean scrollable) {
@@ -975,7 +975,7 @@ public void setScrollable(boolean scrollable) {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.336 -0500", hash_original_method = "6D18CADAD3BE855C953B6A82043EA347", hash_generated_method = "62E16594ED1E4D773FC387EB5B07A489")
     
 public CharSequence getPackageName() {
@@ -1010,7 +1010,7 @@ public void setPackageName(CharSequence packageName) {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.340 -0500", hash_original_method = "3625856433EBE1C9C9A90132A3C58D3F", hash_generated_method = "26599164AEA75289AA6AEFE666301F84")
     
 public CharSequence getClassName() {
@@ -1045,7 +1045,7 @@ public void setClassName(CharSequence className) {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.USER_INPUT})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.345 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3C5AE00E10DCE5E04049FCC58EEF7C48")
     
 public CharSequence getText() {
@@ -1080,7 +1080,7 @@ public void setText(CharSequence text) {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.349 -0500", hash_original_method = "6DAFF86A43A6BABA543C66C7DDAE7D00", hash_generated_method = "F956064663F9FEBB2E9D4DEF23399995")
     
 public CharSequence getContentDescription() {
@@ -1521,7 +1521,7 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
      * @see #FOCUS_ACCESSIBILITY
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource(DSSourceKind.SENSITIVE_UNCATEGORIZED)
+    
     public AccessibilityNodeInfo findFocus(int focus) {
         enforceSealed();
         //enforceValidFocusType(focus);
@@ -1553,7 +1553,7 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
      * @return The node info for the view that can take accessibility focus.
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public AccessibilityNodeInfo focusSearch(int direction) {
         enforceSealed();
         if (!canPerformRequestOverConnection(mSourceNodeId)) {

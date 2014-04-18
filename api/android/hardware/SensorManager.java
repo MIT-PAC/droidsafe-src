@@ -162,7 +162,7 @@ public class SensorManager {
 
     @DSComment("Request/Change/Listen Android Manger")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.037 -0500", hash_original_method = "80FFBDA32F1CA6FB68C3B24B9C01CA42", hash_generated_method = "C2361A9E50FB5E2540C47B2203847598")
     
 public static boolean getRotationMatrix(float[] R, float[] I,
@@ -455,7 +455,7 @@ private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.SENSOR})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.051 -0500", hash_original_method = "48D1C344F1CE2628DE4C68ABB227A1F6", hash_generated_method = "5E0C14D6CF43554F17C02DEA9C8592AA")
     
 public static float[] getOrientation(float[] R, float values[]) {
@@ -2188,7 +2188,7 @@ private void unregisterListener(Object listener) {
     
 	@DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public Sensor getDefaultSensor(int i) {
 		return new Sensor(i);
 	}

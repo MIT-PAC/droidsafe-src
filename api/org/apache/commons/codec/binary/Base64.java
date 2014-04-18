@@ -150,8 +150,8 @@ public static byte[] encodeBase64(byte[] binaryData, boolean isChunked) {
      * @return The data, less whitespace (see RFC 2045).
      */
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.965 -0500", hash_original_method = "9BCC1A7457934BC771EBD3626A0DE18B", hash_generated_method = "3CBB1FFB63A50C335D002AC2738F9D2B")
     
 static byte[] discardWhitespace(byte[] data) {
@@ -187,8 +187,8 @@ static byte[] discardWhitespace(byte[] data) {
      * @return The data, less non-base64 characters (see RFC 2045).
      */
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.968 -0500", hash_original_method = "94A8BA1BB14E20FE8AAE958A036048A6", hash_generated_method = "03DE6BA56337AAD75057F043E8AE104E")
     
 static byte[] discardNonBase64(byte[] data) {
@@ -291,7 +291,7 @@ public Object decode(Object pObject) throws DecoderException {
      * @param pArray A byte array containing Base64 character data
      * @return a byte array containing binary data
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.953 -0500", hash_original_method = "E9A5741B84FE67E582817B8B79597420", hash_generated_method = "C17AE6177C5668A0F0E5EE932AEF930C")
     @DSVerified
     @DSSafe(DSCat.UTIL_FUNCTION)
@@ -331,7 +331,7 @@ public Object encode(Object pObject) throws EncoderException {
      * @param pArray a byte array containing binary data
      * @return A byte array containing only Base64 character data
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.972 -0500", hash_original_method = "D3EC39ECED0CD0D362D80F2CDBB3BB21", hash_generated_method = "067C5861BBE1F6A7C3E18A7150299C2B")
     @DSVerified
     @DSSafe(DSCat.UTIL_FUNCTION)

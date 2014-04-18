@@ -1124,7 +1124,7 @@ public DhcpInfo getDhcpInfo() {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSink({DSSinkKind.NETWORK})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.343 -0500", hash_original_method = "B9430AD639DDE3004B577A4BF40EB18B", hash_generated_method = "6C2F829AF169DACAFAEEDD10ED44992C")
     
 public boolean setWifiEnabled(boolean enabled) {

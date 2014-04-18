@@ -82,7 +82,7 @@ public SAXException (String message, Exception e)
      */
     @DSComment("no input, no suspicious activity and just exception")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.835 -0500", hash_original_method = "7F1A7B3B4DC8BE54F069CECA78CE108B", hash_generated_method = "12DA191F9DBC64AF796DE8AD6D0DE39C")
     
 public String getMessage ()

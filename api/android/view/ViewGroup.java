@@ -1375,7 +1375,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void setMotionEventSplittingEnabled(boolean split){
 		// Original method
 		/*
@@ -3140,7 +3140,6 @@ public MarginLayoutParams(LayoutParams source) {
 			//Return nothing
 		}
         
-        
         /**
          * Set the layout direction
          * @param layoutDirection the layout direction.
@@ -3179,7 +3178,6 @@ public MarginLayoutParams(LayoutParams source) {
             setLayoutDirection(layoutDirection);
 
             if (!isMarginRelative()) return;
-
      
             switch(layoutDirection) {
                 case View.LAYOUT_DIRECTION_RTL:
@@ -3202,7 +3200,6 @@ public MarginLayoutParams(LayoutParams source) {
         public boolean isLayoutRtl() {
             return (layoutDirection == View.LAYOUT_DIRECTION_RTL);
         }
-        
 
         /**
          * Sets the relative start margin.
@@ -3218,7 +3215,6 @@ public MarginLayoutParams(LayoutParams source) {
         }
         
         int layoutDirection =  View.LAYOUT_DIRECTION_LTR;
-
 
         /**
          * Sets the relative end margin.
@@ -3502,14 +3498,14 @@ private HoverTarget() {
     @DSVerified
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getChildCount(){
 		return getTaintInt();
 	}
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public View getChildAt(int index){
 		return mChildren[0];
 	}

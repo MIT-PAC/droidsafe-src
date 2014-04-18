@@ -119,7 +119,7 @@ private ContentValues(HashMap<String, Object> values) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.405 -0500", hash_original_method = "65B11A528910ED48D0A8C0B3A81DCA11", hash_generated_method = "B5C901E1F01EEDB880F526FCDBB68387")
     
 public void put(String key, String value) {
@@ -146,7 +146,7 @@ public void putAll(ContentValues other) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.409 -0500", hash_original_method = "46309CD6AABC048E549ED8D367B97222", hash_generated_method = "3AC3EEB729C4601EC06C6443D14BA600")
     
 public void put(String key, Byte value) {
@@ -161,7 +161,7 @@ public void put(String key, Byte value) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.411 -0500", hash_original_method = "19B45CF10C6274AA18ED4281EBB4A7D5", hash_generated_method = "7097D4FC5474B218D98D39DBDCF261FE")
     
 public void put(String key, Short value) {
@@ -176,7 +176,7 @@ public void put(String key, Short value) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.413 -0500", hash_original_method = "519D763DA29CBC7E3659F73066396076", hash_generated_method = "8B8E1E074EA3F65B4B1F9E5DDE6B2927")
     
 public void put(String key, Integer value) {
@@ -191,7 +191,7 @@ public void put(String key, Integer value) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.416 -0500", hash_original_method = "68C6754D41E6DE24B60EFC88A41FDF20", hash_generated_method = "6D544EC8491E760D52C3029F0A93F4D4")
     
 public void put(String key, Long value) {
@@ -206,7 +206,7 @@ public void put(String key, Long value) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.418 -0500", hash_original_method = "66DA1C106B1B7F2AFB03D110B785A501", hash_generated_method = "2C261E0300BC82829635A8C7705EBEBA")
     
 public void put(String key, Float value) {
@@ -221,7 +221,7 @@ public void put(String key, Float value) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.420 -0500", hash_original_method = "1050A4E9D6DF2BBB4B07F9E50B35502F", hash_generated_method = "114BF55AC26E62B9CA474044AEB4178D")
     
 public void put(String key, Double value) {
@@ -236,7 +236,7 @@ public void put(String key, Double value) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.422 -0500", hash_original_method = "C35988B4D54806692C616FB01B8C7793", hash_generated_method = "85E7BF1BC6441FD82F6063C8524910C6")
     
 public void put(String key, Boolean value) {
@@ -251,7 +251,7 @@ public void put(String key, Boolean value) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.424 -0500", hash_original_method = "79D16814F7AC00D5B324C095EC421557", hash_generated_method = "E5447840A038CF6FF4B838DA64F9014B")
     
 public void put(String key, byte[] value) {
@@ -332,7 +332,7 @@ public boolean containsKey(String key) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.437 -0500", hash_original_method = "F0AF95EE9AB5B022FDA3C4DAA44F68C1", hash_generated_method = "90455CF295F390F2AAF28D8F1514C03B")
     
 public Object get(String key) {
@@ -347,7 +347,7 @@ public Object get(String key) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.439 -0500", hash_original_method = "FD6B0B33BC77B5F3D2D2C6DE92834A83", hash_generated_method = "7199169D6D2219FAEE1D4C15DF024A82")
     
 public String getAsString(String key) {
@@ -391,7 +391,7 @@ public Long getAsLong(String key) {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.444 -0500", hash_original_method = "C11C55EBF0D230069C8558AD456DF6B2", hash_generated_method = "BC9A5C1FBC18FEA67B7B9944B7CC111E")
     
 public Integer getAsInteger(String key) {

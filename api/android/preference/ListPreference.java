@@ -70,7 +70,7 @@ public ListPreference(Context context) {
      * @see #setEntryValues(CharSequence[])
      */
     @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.270 -0500", hash_original_method = "92444C405286C6A282911C360FA1B20D", hash_generated_method = "302950FB7BED9885645124DF239A43F9")
     
 public void setEntries(CharSequence[] entries) {
@@ -81,7 +81,7 @@ public void setEntries(CharSequence[] entries) {
      * @see #setEntries(CharSequence[])
      * @param entriesResId The entries array as a resource.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.272 -0500", hash_original_method = "F8AB6256811E3BA7AD610D04605DBEC4", hash_generated_method = "7BA5761937675BD0B0EC2B67C45A8475")
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSVerified
@@ -111,7 +111,7 @@ public CharSequence[] getEntries() {
      * @param entryValues The array to be used as values to save for the preference.
      */
     @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.276 -0500", hash_original_method = "33C67F5304EFCF57E93FE56574A29FD8", hash_generated_method = "5508A90163592EA1632D80E304D0522A")
     @DSVerified
 public void setEntryValues(CharSequence[] entryValues) {
@@ -123,8 +123,8 @@ public void setEntryValues(CharSequence[] entryValues) {
      * @param entryValuesResId The entry values array as a resource.
      */
     @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.278 -0500", hash_original_method = "7F861B3AE1A834F9F6742B52B4830C35", hash_generated_method = "3F6606757B98ACF0AA1E729E6A5C13C6")
     
 public void setEntryValues(int entryValuesResId) {

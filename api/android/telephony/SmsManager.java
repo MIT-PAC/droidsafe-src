@@ -26,7 +26,7 @@ public final class SmsManager {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.962 -0500", hash_original_method = "90BE6788389BCE1C80031293D6D7E760", hash_generated_method = "9C1A166120752C95ACA753CF105E8926")
     
 public static SmsManager getDefault() {
@@ -205,7 +205,7 @@ public void sendTextMessage(
      */
     @DSComment("SMS message data structure")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.951 -0500", hash_original_method = "C15BF98DC594420F78E24C2D1AF66E37", hash_generated_method = "E54848E4BC4358D067F4D82AB65C1FE4")
     
 public ArrayList<String> divideMessage(String text) {

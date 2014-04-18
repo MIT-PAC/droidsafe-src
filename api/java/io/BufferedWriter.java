@@ -190,7 +190,7 @@ public void newLine() throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.424 -0500", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "210CE2FA3BEB7A9654223F17CE4CC4B5")
     
 @Override
@@ -241,6 +241,7 @@ public void newLine() throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.427 -0500", hash_original_method = "C57AC7B5490B3E246FD3E407701AE232", hash_generated_method = "5754A8963C9C380CBB2742943A30E3F9")
@@ -279,7 +280,7 @@ public void newLine() throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.432 -0500", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "CC19827EBE9A9C4E7EA3C6B136BC89B1")
     
 @Override

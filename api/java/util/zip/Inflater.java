@@ -376,7 +376,7 @@ public synchronized void setDictionary(byte[] dictionary, int offset, int byteCo
      * called if {@link #needsInput} returns {@code true}.
      */
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.384 -0500", hash_original_method = "76E6701B8618856CEE42A14EB071C689", hash_generated_method = "2F3B40F86F19A07DE7F3CED216B3F40D")
     
 public synchronized void setInput(byte[] buf) {

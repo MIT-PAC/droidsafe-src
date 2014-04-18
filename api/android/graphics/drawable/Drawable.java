@@ -398,7 +398,7 @@ public final Rect copyBounds() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.912 -0500", hash_original_method = "F9C4E095C08A855B9547E5FC046C50BF", hash_generated_method = "BB0D4C947EFB311B6298FBD3B2491C35")
     @DSVerified
     
@@ -724,7 +724,7 @@ public void jumpToCurrentState() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.958 -0500", hash_original_method = "00D08FCE0657F40CBD93DF1CB810B766", hash_generated_method = "A9832292CF51056A0946F9B8A2FBC09B")
     @DSVerified
     
@@ -924,7 +924,7 @@ protected void onBoundsChange(Rect bounds) {}
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.983 -0500", hash_original_method = "EB5466611B82CCCED48E9C76B5992F82", hash_generated_method = "5707369824F06C6C8C5FEA2B9FD95BE8")
     
 public int getIntrinsicWidth() {
@@ -937,7 +937,7 @@ public int getIntrinsicWidth() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.985 -0500", hash_original_method = "4249F2736881F978DCEB3B683D79E5C9", hash_generated_method = "6747FB53BFD3B8723F7B12E72210E2E9")
     
 public int getIntrinsicHeight() {

@@ -290,7 +290,7 @@ void init(AccessibilityEvent event) {
      */
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.441 -0500", hash_original_method = "E3578B8B8EBF3C6DE3B4CEB5DF2FD3A0", hash_generated_method = "45AE797C926A97FF4238FE89EE498366")
     
 public int getRecordCount() {
@@ -321,7 +321,7 @@ public void appendRecord(AccessibilityRecord record) {
      */
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.445 -0500", hash_original_method = "9E2314A76EC6019735F4372CBF34D41F", hash_generated_method = "16B8C87E554CC89ED26CAC1F3B820131")
     
 public AccessibilityRecord getRecord(int index) {
@@ -335,7 +335,7 @@ public AccessibilityRecord getRecord(int index) {
      */
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.447 -0500", hash_original_method = "4F017DE4F3DB5F93E271E04CA9550DB1", hash_generated_method = "01F97DA7B4B424BFB276760D3ABE3C6A")
     
 public int getEventType() {

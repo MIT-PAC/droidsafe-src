@@ -8,7 +8,7 @@ import droidsafe.annotations.*;
 public interface Enumeration<E> {
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public boolean hasMoreElements();
     
     @DSComment("Abstract Method")

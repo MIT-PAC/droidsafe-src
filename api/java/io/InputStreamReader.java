@@ -129,7 +129,7 @@ public InputStreamReader(InputStream in, Charset charset) {
      *             if an error occurs attempting to close this reader.
      */
     @DSComment("InputStreamReader class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.978 -0500", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "64568DB66E5B89ACA9154E9C002982F9")
     
 @Override

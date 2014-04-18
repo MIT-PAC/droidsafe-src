@@ -132,10 +132,9 @@ public class SMTPClient extends SMTP
     @DSComment("Constructor")
     @DSVerified
     @DSSafe(DSCat.SAFE_OTHERS)
-    public SMTPClient() {  
+    public SMTPClient() {
         
     }
-
 
     /***
      * At least one SMTPClient method ({@link #sendMessageData  sendMessageData })
@@ -177,7 +176,6 @@ public boolean completePendingCommand() throws IOException
         return SMTPReply.isPositiveCompletion(getReply());
     }
 
-
     /***
      * Login to the SMTP server by sending the HELO command with the
      * given hostname as an argument.  Before performing any mail commands,
@@ -201,7 +199,6 @@ public boolean login(String hostname) throws IOException
     {
         return SMTPReply.isPositiveCompletion(helo(hostname));
     }
-
 
     /***
      * Login to the SMTP server by sending the HELO command with the
@@ -235,7 +232,6 @@ public boolean login() throws IOException
         return SMTPReply.isPositiveCompletion(helo(name));
     }
 
-
     /***
      * Set the sender of a message using the SMTP MAIL command, specifying
      * a reverse relay path.  The sender must be set first before any
@@ -259,7 +255,6 @@ public boolean setSender(RelayPath path) throws IOException
     {
         return SMTPReply.isPositiveCompletion(mail(path.toString()));
     }
-
 
     /***
      * Set the sender of a message using the SMTP MAIL command, specifying
@@ -285,7 +280,6 @@ public boolean setSender(String address) throws IOException
         return SMTPReply.isPositiveCompletion(mail("<" + address + ">"));
     }
 
-
     /***
      * Add a recipient for a message using the SMTP RCPT command, specifying
      * a forward relay path.  The sender must be set first before any
@@ -310,7 +304,6 @@ public boolean addRecipient(RelayPath path) throws IOException
         return SMTPReply.isPositiveCompletion(rcpt(path.toString()));
     }
 
-
     /***
      * Add a recipient for a message using the SMTP RCPT command, the
      * recipient's email address.  The sender must be set first before any
@@ -334,8 +327,6 @@ public boolean addRecipient(String address) throws IOException
     {
         return SMTPReply.isPositiveCompletion(rcpt("<" + address + ">"));
     }
-
-
 
     /***
      * Send the SMTP DATA command in preparation to send an email message.
@@ -388,7 +379,6 @@ public Writer sendMessageData() throws IOException
         return new DotTerminatedMessageWriter(_writer);
     }
 
-
     /***
      * A convenience method for sending short messages.  This method fetches
      * the Writer returned by {@link #sendMessageData  sendMessageData() }
@@ -426,7 +416,6 @@ public boolean sendShortMessageData(String message) throws IOException
         return completePendingCommand();
     }
 
-
     /***
      * A convenience method for a sending short email without having to
      * explicitly set the sender and recipient(s).  This method
@@ -463,8 +452,6 @@ public boolean sendSimpleMessage(String sender, String recipient,
 
         return sendShortMessageData(message);
     }
-
-
 
     /***
      * A convenience method for a sending short email without having to
@@ -512,7 +499,6 @@ public boolean sendSimpleMessage(String sender, String[] recipients,
         return sendShortMessageData(message);
     }
 
-
     /***
      * Logout of the SMTP server by sending the QUIT command.
      * <p>
@@ -527,14 +513,12 @@ public boolean sendSimpleMessage(String sender, String[] recipients,
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.941 -0500", hash_original_method = "86625BE6BC74680BCE9F9FD0AA53BF54", hash_generated_method = "8AE8656DED621D60E849739B60BF3CA8")
     @DSVerified
-    @DSSpec(DSCat.IO)   
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSafe(DSCat.IO)
+    
 public boolean logout() throws IOException
     {
         return SMTPReply.isPositiveCompletion(quit());
     }
-
-
 
     /***
      * Aborts the current mail transaction, resetting all server stored
@@ -557,7 +541,6 @@ public boolean reset() throws IOException
     {
         return SMTPReply.isPositiveCompletion(rset());
     }
-
 
     /***
      * Verify that a username or email address is valid, i.e., that mail
@@ -587,7 +570,6 @@ public boolean verify(String username) throws IOException
                 result == SMTPReply.USER_NOT_LOCAL_WILL_FORWARD);
     }
 
-
     /***
      * Fetches the system help information from the server and returns the
      * full string.
@@ -612,7 +594,6 @@ public String listHelp() throws IOException
             return getReplyString();
         return null;
     }
-
 
     /***
      * Fetches the help information for a given command from the server and
@@ -639,7 +620,6 @@ public String listHelp(String command) throws IOException
             return getReplyString();
         return null;
     }
-
 
     /***
      * Sends a NOOP command to the SMTP server.  This is useful for preventing

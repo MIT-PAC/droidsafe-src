@@ -127,7 +127,7 @@ public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
      *             if an error occurs while closing this writer.
      */
     @DSComment("OutputStreamWrite class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.585 -0500", hash_original_method = "348EDF61477AE4A3DCAC4870D899F874", hash_generated_method = "5D0388D5AAD5F0793DE2F1E9322C0CED")
     
 @Override

@@ -37,7 +37,7 @@ public static Locale[] getAvailableLocales() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.056 -0500", hash_original_method = "492FD3DDCD551887FA928B87F9CDC015", hash_generated_method = "1584BAADDCCEE1FD6566ABD02B67F340")
     
 public static final DateFormat getDateInstance() {
@@ -58,7 +58,7 @@ public static final DateFormat getDateInstance() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.059 -0500", hash_original_method = "E9C515926F59D15FF7CB88B0B60D9C22", hash_generated_method = "AA5C2AC1481A266A9A2F2128C5031964")
     
 public static final DateFormat getDateInstance(int style) {
@@ -82,7 +82,7 @@ public static final DateFormat getDateInstance(int style) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.061 -0500", hash_original_method = "2C09A4D27D27084B3D92D338508BC4B1", hash_generated_method = "0A3BDC25EFBB4AF2B4D924801B40054C")
     
 public static final DateFormat getDateInstance(int style, Locale locale) {
@@ -98,7 +98,7 @@ public static final DateFormat getDateInstance(int style, Locale locale) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.064 -0500", hash_original_method = "83705E0AAFF633A246DC83A01D518F12", hash_generated_method = "E8401EC0A796A90AF72EB9263851C999")
     
 public static final DateFormat getDateTimeInstance() {
@@ -121,7 +121,7 @@ public static final DateFormat getDateTimeInstance() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.067 -0500", hash_original_method = "A7E6AB35D13132D438F9DCCBC72BE606", hash_generated_method = "3900BD34F97E39BD1CA09511756D47FF")
     
 public static final DateFormat getDateTimeInstance(int dateStyle, int timeStyle) {
@@ -148,7 +148,7 @@ public static final DateFormat getDateTimeInstance(int dateStyle, int timeStyle)
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.071 -0500", hash_original_method = "2285EB3463305C879C637226A064045A", hash_generated_method = "FF7CBCCFC8E13A430AD369002279FC0F")
     
 public static final DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale locale) {
@@ -547,7 +547,7 @@ protected DateFormat() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.042 -0500", hash_original_method = "B3CAB535AB645340CDBC761CC64061A2", hash_generated_method = "A2E0A989B834C4E2B1CAFCE3FEA7CA69")
     
 @Override
@@ -572,7 +572,7 @@ protected DateFormat() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.044 -0500", hash_original_method = "2A35FD3F5DCDDD81B439EA4274C41413", hash_generated_method = "EEB1197F390F746EAF296F0CBA3BE616")
     
 public final String format(Date date) {
@@ -599,7 +599,7 @@ public final String format(Date date) {
      * @return the string buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.048 -0500", hash_original_method = "CCA64E9C4F95BFBA0963A237E8C02CBB", hash_generated_method = "B7B10EE9D6E6167008ADC116705062BB")
     
 public abstract StringBuffer format(Date date, StringBuffer buffer,

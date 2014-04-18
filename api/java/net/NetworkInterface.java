@@ -52,7 +52,7 @@ static NetworkInterface forUnboundMulticastSocket() {
      */
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.641 -0500", hash_original_method = "EC81104C8006573D0B5015A0AF9F06F0", hash_generated_method = "EF8E107A0F265E928EBACFC41E9A3312")
     
 public static NetworkInterface getByName(String interfaceName) throws SocketException {
@@ -243,7 +243,7 @@ public static NetworkInterface getByIndex(int index) throws SocketException {
      */
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.664 -0500", hash_original_method = "5454C5CAD241A70EC9EE91DB383A2F54", hash_generated_method = "0CEDC7EDC80F26805703027D51D30853")
     
 public static Enumeration<NetworkInterface> getNetworkInterfaces() throws SocketException {
@@ -341,7 +341,7 @@ public int getIndex() {
      */
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.634 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -353,7 +353,7 @@ public String getName() {
      */
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.636 -0500", hash_original_method = "8FEC8BEDC3DD9B76E3DD04718D2DB944", hash_generated_method = "30C46E758838E31C55A96F50F7CEE90F")
     
 public Enumeration<InetAddress> getInetAddresses() {
@@ -366,7 +366,7 @@ public Enumeration<InetAddress> getInetAddresses() {
      */
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.638 -0500", hash_original_method = "8EA44302895F236212D41E0DDEBDF9A7", hash_generated_method = "338C1CAD35E4DEB5DCEAB0CFAAB84764")
     
 public String getDisplayName() {

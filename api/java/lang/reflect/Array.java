@@ -403,8 +403,8 @@ public static short getShort(Object array, int index)
      *             limit of the number of dimension for an array (currently 255)
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.REFLECTION)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.922 -0500", hash_original_method = "9C554BC8C0AA11B64E6653FCAA15C2E7", hash_generated_method = "4A9297550B4F9160675971DAFB19C3B9")
     
 public static Object newInstance(Class<?> componentType, int... dimensions)
@@ -448,8 +448,8 @@ public static Object newInstance(Class<?> componentType, int... dimensions)
      *             if {@code size < 0}
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.REFLECTION)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.930 -0500", hash_original_method = "8C1FC94B96B7DFB690D4B009645E9D92", hash_generated_method = "7B175AE1219E00BE34100EB87DDF9825")
     
 public static Object newInstance(Class<?> componentType, int size)

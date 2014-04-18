@@ -646,7 +646,7 @@ public final String getName() {
      */
     @DSComment("No action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.597 -0500", hash_original_method = "0FA6C5514FC3354D3A5FFA078FF2070D", hash_generated_method = "B4B45689BCD450DB4D8629E0D5D6C977")
     
 public final int getPriority() {

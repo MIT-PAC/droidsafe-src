@@ -326,7 +326,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     /** Return the application that owns this activity. */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.444 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "63791FE33C4BA47B317000A8E62CC095")
     
 public final Application getApplication() {
@@ -387,7 +387,7 @@ public WindowManager getWindowManager() {
      */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.468 -0500", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "331876D44C3CE896E388411794B32F6E")
     
 public Window getWindow() {
@@ -1160,7 +1160,7 @@ public View findViewById(int id) {
      */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.736 -0500", hash_original_method = "EC6DC7C8BFDE6FF47CE21F97E3274EE5", hash_generated_method = "E5E94BEBC452D594395C0CA7D5A6B868")
     
 public ActionBar getActionBar() {
@@ -1332,7 +1332,6 @@ public void setFinishOnTouchOutside(boolean finish) {
         onGenericMotionEvent(motionEv);
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onKeyDown(int keyCode, KeyEvent event){
@@ -2420,7 +2419,7 @@ public final void setFeatureDrawableAlpha(int featureId, int alpha) {
      */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.117 -0500", hash_original_method = "2F200E491A9F2CDC38C392035D21ED48", hash_generated_method = "3A16D6A7B6ED88109371E767B4893157")
     
 public LayoutInflater getLayoutInflater() {
@@ -2805,7 +2804,7 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
      */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.207 -0500", hash_original_method = "88476E01B039440C5805C3F210A00F20", hash_generated_method = "58BEC1DE13ECDF0590CAF7A4888B9BD6")
     
 public String getCallingPackage() {
@@ -2832,7 +2831,7 @@ public String getCallingPackage() {
      */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.212 -0500", hash_original_method = "BA5844B2C9F3C6D12393731B7AECDFB9", hash_generated_method = "7A4424A9746EA476713AFC880E62344D")
     
 public ComponentName getCallingActivity() {
@@ -3230,7 +3229,7 @@ public boolean moveTaskToBack(boolean nonRoot) {
      */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.304 -0500", hash_original_method = "6C1D36E28C0C97736EA4779A7FB1715C", hash_generated_method = "0218C20A36476A71EF5D80D906810879")
     
 public ComponentName getComponentName()
@@ -3344,7 +3343,7 @@ public SharedPreferences getPreferences(int mode) {
      */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.328 -0500", hash_original_method = "A39F8277E51A7F6BD4A471D6255FEBC5", hash_generated_method = "7A9BBE5713B6FFC0915F0D939CBD832F")
     
 public void setTitle(int titleId) {
@@ -3385,7 +3384,7 @@ public final CharSequence getTitle() {
 	}
     
     @DSSpec(DSCat.IPC)
-    @DSSink(DSSinkKind.IPC)
+    @DSSink({DSSinkKind.IPC})
     public boolean navigateUpTo (Intent upIntent) {
         return getTaintBoolean();
     }
@@ -3441,7 +3440,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public final void setProgressBarIndeterminateVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_INDETERMINATE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
@@ -3561,7 +3560,7 @@ public final int getVolumeControlStream() {
 	@DSVerified
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */

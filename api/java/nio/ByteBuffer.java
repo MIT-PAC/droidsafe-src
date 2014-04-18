@@ -306,7 +306,7 @@ public abstract ShortBuffer asShortBuffer();
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.815 -0500", hash_original_method = "6034C0C2CF299086DEAB3934133CDE65", hash_generated_method = "0ED3116A7F719F0E8523D8C2365B0391")
     
 public abstract ByteBuffer compact();
@@ -831,7 +831,7 @@ abstract boolean protectedHasArray();
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.891 -0500", hash_original_method = "983CB5E1253F102F78ED5C2EA2A5C64E", hash_generated_method = "F8C5B1E091128CE11734F291E1363FC9")
     
 public abstract ByteBuffer put(byte b);
@@ -882,7 +882,7 @@ public final ByteBuffer put(byte[] src) {
      */
     @DSComment("memory buffer only")
     @DSSafe(DSCat.MEM_BUFFER)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.896 -0500", hash_original_method = "D0316A3A41AD4E9576A2DF2983507374", hash_generated_method = "242B2D84BCF2BAED8FD10923575F609F")
     
 public ByteBuffer put(byte[] src, int srcOffset, int byteCount) {
@@ -960,7 +960,7 @@ public ByteBuffer put(ByteBuffer src) {
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.902 -0500", hash_original_method = "2EBD837469F8F98183BF1C66B6EF96DD", hash_generated_method = "7FC9FF03AFC347A0BA849BA2BC07C996")
     
 public abstract ByteBuffer put(int index, byte b);

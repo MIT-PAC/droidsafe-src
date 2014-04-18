@@ -845,7 +845,7 @@ public String[] newArray(int size) {
     
     @DSComment("check any serialization")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public final void writeIntArray(int[] val){
 		mValueIntArray = val;
 		// Original method
@@ -1077,7 +1077,7 @@ public String[] newArray(int size) {
     
     @DSComment("check any serialization")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public final void writeStringArray(String[] val){
 		mValueStringArray = val;
 		// Original method
@@ -1312,7 +1312,7 @@ public String[] newArray(int size) {
     
     @DSComment("check any serialization")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public final void writeValue(Object v){
 		mValueObject = v;
 		// Original method
@@ -1581,7 +1581,7 @@ public String[] newArray(int size) {
 	}
     
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
     public final void readList(List outVal, ClassLoader loader){
 		outVal.addAll(mValueList);
 		// Original method
@@ -1595,7 +1595,7 @@ public String[] newArray(int size) {
 	}
     
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
     public final HashMap readHashMap(ClassLoader loader){
 		return (HashMap)mValueMap;
 		// Original method
@@ -1625,7 +1625,7 @@ public String[] newArray(int size) {
 	}
     
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
     public final Bundle readBundle(ClassLoader loader){
 		return mValueBundle;
 		// Original method
@@ -1909,7 +1909,6 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSSafe(DSCat.SAFE_OTHERS)
     public final <T> T[] createTypedArray(Parcelable.Creator<T> c) {
 		return (T[]) this.mValueTypedArray;
@@ -1984,15 +1983,14 @@ public String[] newArray(int size) {
 	}
     
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.REFLECTION)
+    
     public final Object readValue(ClassLoader loader){
 		return mValueObject;
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSSafe(DSCat.SAFE_OTHERS)
     public final <T extends Parcelable> T readParcelable(ClassLoader loader) {
 		return (T) mValueParcelable;

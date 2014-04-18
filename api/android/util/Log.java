@@ -139,7 +139,7 @@ public static int w(String tag, String msg, Throwable tr) {
     }
     
     @DSComment("Android logging subsystem")
-    @DSSpec(DSCat.LOGGING)
+    @DSSafe(DSCat.SAFE_LIST)
     public static boolean isLoggable(String tag, int level) {
         return Object.toTaintBoolean(tag.getTaintInt() + level);
     }
@@ -260,7 +260,7 @@ public static TerribleFailureHandler setWtfHandler(TerribleFailureHandler handle
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.125 -0500", hash_original_method = "7719F1A14DFF815E0B66B3EB7CF1C00E", hash_generated_method = "16AFC01DBED706B77B6A4AB015FDC5BD")
     
 public static String getStackTraceString(Throwable tr) {

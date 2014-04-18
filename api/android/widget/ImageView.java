@@ -431,7 +431,7 @@ public Drawable getDrawable() {
      */
     @DSComment("Safe excetp setImageURI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.891 -0500", hash_original_method = "5426F5FAF3C8635D29ADE0169269A6F9", hash_generated_method = "37AAC6991023BB22E48327E3EA2C66CF")
     
 public void setImageDrawable(Drawable drawable) {
@@ -1135,7 +1135,7 @@ private void applyColorMod() {
 
     @DSComment("Safe excetp setImageURI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.975 -0500", hash_original_method = "C6B07741C64FD260DDE5C02AC0455E05", hash_generated_method = "AFDD61839AA6E68F5AC2CEE81161A784")
     
 @RemotableViewMethod

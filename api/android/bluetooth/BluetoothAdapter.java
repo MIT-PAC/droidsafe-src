@@ -39,7 +39,7 @@ public final class BluetoothAdapter {
      */
     @DSComment("Bluetooth subsystem")
     @DSSpec(DSCat.BLUETOOTH)
-    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.735 -0500", hash_original_method = "0EA032C93B9BB6C4C1D29146E96BABA8", hash_generated_method = "2A85D30D637B72EC36DE7AF12AA14DD7")
     
 public static synchronized BluetoothAdapter getDefaultAdapter() {

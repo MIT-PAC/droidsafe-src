@@ -1378,7 +1378,7 @@ public List<ApplicationInfo> getRunningExternalApplications() {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.OS_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.928 -0500", hash_original_method = "BB41AA7EC02A452F0653300FBA1EFF8A", hash_generated_method = "9EC32489CD95F6B4ED507EAF40FA8F6E")
     
 public List<RunningAppProcessInfo> getRunningAppProcesses() {

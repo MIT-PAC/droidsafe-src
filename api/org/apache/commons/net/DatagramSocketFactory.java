@@ -46,7 +46,7 @@ public interface DatagramSocketFactory
      * <p>
      * @exception SocketException If the socket could not be created.
      ***/
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     public DatagramSocket createDatagramSocket() throws SocketException;
 
     /***

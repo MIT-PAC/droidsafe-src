@@ -1264,7 +1264,7 @@ public boolean getClipBounds(Rect bounds) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.222 -0500", hash_original_method = "081EA481AF3998560C2A7BDAF7DC2D73", hash_generated_method = "C7F3C9DD4F71BE5FE3E931C0C7EA11E6")
     
 public final Rect getClipBounds() {

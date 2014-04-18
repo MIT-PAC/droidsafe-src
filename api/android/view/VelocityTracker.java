@@ -252,7 +252,7 @@ public void computeCurrentVelocity(int units, float maxVelocity) {
      */
     @DSComment("Touch event tracking")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.364 -0500", hash_original_method = "175B9FF596A60DD4A27A3E2F4F8FB36B", hash_generated_method = "94CCC2DA112CB63C65BA90B4DDA5148C")
     
 public float getXVelocity() {
@@ -267,7 +267,7 @@ public float getXVelocity() {
      */
     @DSComment("Touch event tracking")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.366 -0500", hash_original_method = "7522D7DB1CC0324C793DB225FECF96EF", hash_generated_method = "80CFA04123F5CBED265101B2C2CBD499")
     
 public float getYVelocity() {
@@ -283,7 +283,7 @@ public float getYVelocity() {
      */
     @DSComment("Touch event tracking")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.368 -0500", hash_original_method = "E88E46619158ECDA6CFC39862B1412B8", hash_generated_method = "B748F5D2BE8C4D50D5F5618A39676648")
     
 public float getXVelocity(int id) {
@@ -359,7 +359,7 @@ private float estimate(float time, float[] c) {
      */
     @DSComment("Touch event tracking")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.370 -0500", hash_original_method = "3A1681E069274B63F81D41BA2ABBDF60", hash_generated_method = "E7C14CBE4FCD8C82AF134F1984CE7BE0")
     
 public float getYVelocity(int id) {

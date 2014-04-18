@@ -521,7 +521,7 @@ public final Message obtainMessage()
     // we could instead export a getMessageQueue() method... 
     @DSComment("General android operation, no security concern")
     @DSSafe(DSCat.OS_GENERAL)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.087 -0500", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "98064444349E07D7BAA3C9B4FAC15DC7")
     
 public final Looper getLooper() {

@@ -384,6 +384,7 @@ private void newline() {
     /**
      * Prints the string representation of the character array {@code chars}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.057 -0500", hash_original_method = "4DD9E13DA9D3ED57FA18E838A052301E", hash_generated_method = "11ED1780228B502450BA8A221394877E")
@@ -395,6 +396,7 @@ public void print(char[] chars) {
     /**
      * Prints the string representation of the char {@code c}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.059 -0500", hash_original_method = "C9EF4F31D0CD27922D7B220DA437A7D8", hash_generated_method = "6CEBC2F82D21BF559E12C90A3D8E19A5")
@@ -406,6 +408,7 @@ public void print(char c) {
     /**
      * Prints the string representation of the double {@code d}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.062 -0500", hash_original_method = "7C6D053B4D54D80C9838D841006F1F5C", hash_generated_method = "58A01733132BC6CCDEB5D240F498B36F")
@@ -417,6 +420,7 @@ public void print(double d) {
     /**
      * Prints the string representation of the float {@code f}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.064 -0500", hash_original_method = "A190B4C4751A586A57985573C64F773B", hash_generated_method = "962C13EEE455314007099C3A6CD2D084")
@@ -428,6 +432,7 @@ public void print(float f) {
     /**
      * Prints the string representation of the int {@code i}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.066 -0500", hash_original_method = "9B0E5210436ABAF1CDC241F3CE945D0E", hash_generated_method = "FADE47AC1A634AD994A0F184BE398837")
@@ -439,6 +444,7 @@ public void print(int i) {
     /**
      * Prints the string representation of the long {@code l}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.068 -0500", hash_original_method = "ABA84580B4C740A85A05D502E7787C38", hash_generated_method = "C45FEB84A6EFC606463B784C6B78DFA2")
@@ -450,6 +456,7 @@ public void print(long l) {
     /**
      * Prints the string representation of the Object {@code o}, or {@code "null"}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.071 -0500", hash_original_method = "56B00C0EF01C99C01A3E7CAB0AC14873", hash_generated_method = "581D9A606F1CEDFB3C9C70F6CC66072B")
@@ -472,7 +479,7 @@ public void print(Object o) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.073 -0500", hash_original_method = "EC0BC9FFC97B234EE7DA16C4D893B8BD", hash_generated_method = "489F7F4EEA6ECCC433FBCD9535D0F2B2")
     
 public synchronized void print(String str) {
@@ -499,6 +506,7 @@ public synchronized void print(String str) {
     /**
      * Prints the string representation of the boolean {@code b}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.076 -0500", hash_original_method = "D26761927DA4C2D28104AACA6719892E", hash_generated_method = "ABD327A177FABF113139187D82522D24")
@@ -510,6 +518,7 @@ public void print(boolean b) {
     /**
      * Prints a newline.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.078 -0500", hash_original_method = "9182DD9F41FA957369047C0FC9C79FCF", hash_generated_method = "2FB2249EAF550DB99337C4213777CDD2")
@@ -523,7 +532,7 @@ public void println() {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.081 -0500", hash_original_method = "C86060CC83A142ED26FEFD1C4AFF06F6", hash_generated_method = "401BCD9244EE35B0A776F2A2CEDD37CF")
     
 public void println(char[] chars) {
@@ -535,7 +544,7 @@ public void println(char[] chars) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.083 -0500", hash_original_method = "0AD803DE0349B67DF3766F5E61BB22D0", hash_generated_method = "82BB46696338001ACA80E01920212F73")
     
 public void println(char c) {
@@ -547,7 +556,7 @@ public void println(char c) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.086 -0500", hash_original_method = "1C71B315F5691439EEEA0D1A39435B84", hash_generated_method = "84BC8C6D54950BCAF58BC3BD27296799")
     
 public void println(double d) {
@@ -559,7 +568,7 @@ public void println(double d) {
      */
    @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.088 -0500", hash_original_method = "303071589A63282B34174CD2B6A3FE64", hash_generated_method = "9D7FF09A264CAD926D6BBFC063392F4E")
     
 public void println(float f) {
@@ -571,7 +580,7 @@ public void println(float f) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.090 -0500", hash_original_method = "5AD4BE5FC276B9D22B3857BC3A21F6AF", hash_generated_method = "98B5DD023B996103C774771444368106")
     
 public void println(int i) {
@@ -583,7 +592,7 @@ public void println(int i) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.093 -0500", hash_original_method = "13C762985E9CE0F97BF4916754E07523", hash_generated_method = "82CA901E151A642E436F396BAF71A3BB")
     
 public void println(long l) {
@@ -596,7 +605,7 @@ public void println(long l) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.096 -0500", hash_original_method = "320F49F677524EBEDCEEC6E202E646D4", hash_generated_method = "69578B780CE18EFA9BFBB5EC9A3A6677")
     
 public void println(Object o) {
@@ -614,6 +623,7 @@ public void println(Object o) {
      *            the string to print to the target stream.
      * @see #write(int)
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.098 -0500", hash_original_method = "0E73500566456C691BD3FFBE8C8D630F", hash_generated_method = "4A512F9EF154A49E278AEE766A83050C")
@@ -628,7 +638,7 @@ public synchronized void println(String str) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.101 -0500", hash_original_method = "63B90E61F0F8C1638BDCBB4A882302BD", hash_generated_method = "D2EE9655DC271F139DF31A427D683083")
     
 public void println(boolean b) {

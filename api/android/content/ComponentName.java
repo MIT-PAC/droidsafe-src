@@ -213,7 +213,7 @@ public ComponentName clone() {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.574 -0500", hash_original_method = "89B4378559F402BEFD7FD434E355C3B4", hash_generated_method = "63FE5FEFF39BF20BDF4A467B3EECCD22")
     
 public String getPackageName() {
@@ -225,7 +225,7 @@ public String getPackageName() {
      */
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.576 -0500", hash_original_method = "ABD4E1FA4C56F78B933D2E76ACF407D1", hash_generated_method = "7FDE699C4ACD1575C4F6A08F82280495")
     
 public String getClassName() {

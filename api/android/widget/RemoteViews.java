@@ -452,8 +452,8 @@ public void setProgressBar(int viewId, int max, int progress,
      * @param pendingIntent The {@link PendingIntent} to send when user clicks
      */
     @DSComment("check setOnClickPendingIntent")
-    @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.047 -0500", hash_original_method = "84C6A4280B6852D03015FA2AE8D65E64", hash_generated_method = "927278201C3266DF8CCC1D5611BF65BC")
     
 public void setOnClickPendingIntent(int viewId, PendingIntent pendingIntent) {

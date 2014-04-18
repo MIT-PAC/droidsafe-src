@@ -11,6 +11,6 @@ public interface WritableByteChannel extends Channel {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     public int write(ByteBuffer buffer) throws IOException;
 }

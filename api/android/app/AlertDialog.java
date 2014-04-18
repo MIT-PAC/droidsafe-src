@@ -122,7 +122,7 @@ protected AlertDialog(Context context, boolean cancelable, OnCancelListener canc
      */
     @DSComment("GUI, alert dialog")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.003 -0500", hash_original_method = "2277A8C194577CB499FB53C1370D61D1", hash_generated_method = "B085ED52457D458E48F09C261A47BA82")
     
 public Button getButton(int whichButton) {

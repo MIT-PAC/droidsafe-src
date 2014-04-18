@@ -356,9 +356,8 @@ public boolean removeFooterView(View v) {
         return false;
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("ListView")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Override
 	public ListAdapter getAdapter() {
 		// TODO Auto-generated method stub
@@ -1867,7 +1866,7 @@ private void setupChild(View child, int position, int y, boolean flowDown, int c
     
     @DSComment("ListView")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override
 	public void setSelection(int position) {
 		// TODO Auto-generated method stub

@@ -68,7 +68,7 @@ public String getPattern() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.740 -0500", hash_original_method = "103F1174601A04B5B5C014BF3A77F551", hash_generated_method = "3C2F0A3444D1C62640570528625D59B6")
     
 @Override

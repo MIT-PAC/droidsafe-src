@@ -28,7 +28,7 @@ public BadTokenException(String name) {
     }
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public Display getDefaultDisplay();
     
     public void removeViewImmediate(View view);

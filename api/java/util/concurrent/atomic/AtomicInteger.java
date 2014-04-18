@@ -167,7 +167,7 @@ public final boolean weakCompareAndSet(int expect, int update) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.345 -0500", hash_original_method = "621C33BC86CD3122044A53600F895B29", hash_generated_method = "425725E2DE13479856F360A7F13BBBA6")
     
 public final int getAndIncrement() {

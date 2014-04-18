@@ -81,7 +81,7 @@ private UriMatcher()
      */
     @DSComment("URL matching utility")
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.371 -0500", hash_original_method = "2E3898492678127443A40FFAA44913F1", hash_generated_method = "A56B1FF934AE2286266D1A896140FC75")
     
 public void addURI(String authority, String path, int code)

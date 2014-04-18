@@ -148,7 +148,7 @@ public static File getDataDirectory() {
      * @see #getExternalStorageState()
      * @see #isExternalStorageRemovable()
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.771 -0500", hash_original_method = "5C670B147F567F755C94F9F92181BB98", hash_generated_method = "B877242D587754ED3BC1634CE142E9AB")    
@@ -247,7 +247,7 @@ public static File getDownloadCacheDirectory() {
      * <p>See {@link #getExternalStorageDirectory()} for more information.
      */
     @DSSpec(DSCat.STORAGE_STATE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.832 -0500", hash_original_method = "BEB54D71784BB9886D2BD75DEB648BB3", hash_generated_method = "35AF323F642F3C48729D391565433D5F")
     
 public static String getExternalStorageState() {

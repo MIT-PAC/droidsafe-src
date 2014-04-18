@@ -519,7 +519,7 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      */
     @DSComment("Reaching to files/URI")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.652 -0500", hash_original_method = "70B5385C7A556D37595F97E42F2F2DFE", hash_generated_method = "6626A2BDF4397DFEA415ACCA7CB59089")
     
     public void setDataSource(String path)
@@ -537,7 +537,7 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      * @hide pending API council
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.655 -0500", hash_original_method = "21A95B4BC3854510C509CF1B7B37D46D", hash_generated_method = "77957DCFCCF9D67F2710FFEB1E1A6307")
     
 public void setDataSource(String path, Map<String, String> headers)

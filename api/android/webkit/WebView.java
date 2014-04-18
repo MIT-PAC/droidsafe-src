@@ -3692,7 +3692,7 @@ private int computeRealVerticalScrollRange() {
      * @return The url for the current page.
      */
     @DSSpec(DSCat.URI_EXCHANGE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.790 -0500", hash_original_method = "C4EBBFF9818941C5D5824E8B3F51971E", hash_generated_method = "F38C676B99E9ECCC987DAE6C3277ADF4")
     
 public String getUrl() {
@@ -4565,7 +4565,7 @@ private void contentSizeChanged(boolean updateLayout) {
      */
     @DSComment("Webview display, no IO access to outside world")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.908 -0500", hash_original_method = "769F6743ED2D17827D8530B0462AC06C", hash_generated_method = "62BFFE4108BE3AC6FAE4A3DFA32B6093")
     
     @DSVerified
@@ -4607,7 +4607,7 @@ public void setDownloadListener(DownloadListener listener) {
      */
     @DSComment("Webview display, no IO access to outside world")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.914 -0500", hash_original_method = "2B899D0DAE9F57DC761251705A20EE74", hash_generated_method = "4EEA2E22B4A1041289EAF3F896446D14")
     
 public void setWebChromeClient(WebChromeClient client) {
@@ -4746,7 +4746,7 @@ public void removeJavascriptInterface(String interfaceName) {
      */
     @DSComment("Spec classification done at the Setting manipulation level")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.933 -0500", hash_original_method = "AE8854F55F54F48403D38F822FA4F88C", hash_generated_method = "A532D40D6A49AAE15F166EE8766438A8")
     
 public WebSettings getSettings() {

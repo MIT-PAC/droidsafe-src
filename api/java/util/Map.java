@@ -25,7 +25,7 @@ public interface Map<K,V> {
     };
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public void clear();
     
     @DSComment("Abstract Method")

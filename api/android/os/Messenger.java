@@ -67,8 +67,6 @@ public Messenger[] newArray(int size) {
         }
     };
 
-
-
     /**
      * Create a new Messenger pointing to the given Handler.  Any Message
      * objects sent through this Messenger will appear in the Handler as if
@@ -112,7 +110,7 @@ public Messenger(IBinder target) {
      * Handler no longer exists.
      */
     @DSComment("IO movement methodName")
-    @DSSafe(DSCat.IPC)
+    @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.405 -0500", hash_original_method = "87BB77B45562A993DA127AF8A28A35EF", hash_generated_method = "14BEC707A4A52F5122FCA56614674178")
 public void send(Message message) throws RemoteException {
@@ -129,7 +127,7 @@ public void send(Message message) throws RemoteException {
      * @return Returns the IBinder backing this Messenger.
      */
     @DSComment("Binder is vague, need modeling")
-    @DSSafe()
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.407 -0500", hash_original_method = "4371CC0F380F9E28159928FBC65693A0", hash_generated_method = "CF424504EFFD31AD8ED006BBB939C76F")
 public IBinder getBinder() {
         return mIBinder;

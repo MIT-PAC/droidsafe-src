@@ -24,7 +24,7 @@ public class ViewConfiguration {
      */
     @DSComment("View configuration")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.372 -0500", hash_original_method = "EAB98871E057FCDFFF813B18E6EC4641", hash_generated_method = "65D047D00C018AF4F4B8E7987373C246")
     
 public static ViewConfiguration get(Context context) {
@@ -104,7 +104,7 @@ public static int getPressedStateDuration() {
      */
     @DSComment("View configuration")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.392 -0500", hash_original_method = "4FEA2532A879AC8499A02B1497AE3156", hash_generated_method = "5BDFE3F6B4823EA868E8FC12A1E27412")
     
 public static int getLongPressTimeout() {
@@ -139,7 +139,7 @@ public static int getKeyRepeatDelay() {
      */
     @DSComment("View configuration")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.399 -0500", hash_original_method = "2054B3BE796FC76059006CC8B92F3425", hash_generated_method = "5AD9BFA0A5FAC59C26025C95AC442E44")
     
 public static int getTapTimeout() {
@@ -165,7 +165,7 @@ public static int getJumpTapTimeout() {
      */
     @DSComment("View configuration")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.404 -0500", hash_original_method = "C6977CF707F5347B0F237AB856D16490", hash_generated_method = "2CBE85464FBF2DA33E26EE594A400A04")
     
 public static int getDoubleTapTimeout() {
@@ -625,7 +625,7 @@ public int getScaledEdgeSlop() {
      */
     @DSComment("View configuration")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.418 -0500", hash_original_method = "60BD37725F7CBB3A1C18E0C12D7EC92F", hash_generated_method = "E802D556E6ABBEE6F96FBE3BE1B8413A")
     
 public int getScaledTouchSlop() {
@@ -638,7 +638,7 @@ public int getScaledTouchSlop() {
      */
     @DSComment("View configuration")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.420 -0500", hash_original_method = "4AE776F4126E41D66D9D9E5C3DD06CAD", hash_generated_method = "9E7AEC3E9084B4301C8E6EFAB2887388")
     
 public int getScaledPagingTouchSlop() {
@@ -651,7 +651,7 @@ public int getScaledPagingTouchSlop() {
      */
     @DSComment("View configuration")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.425 -0500", hash_original_method = "6B30BD1A6859DBFC35C31996D22D0A66", hash_generated_method = "1B58B94371B51D3B39CAAF7010CA5769")
     
 public int getScaledDoubleTapSlop() {
@@ -688,7 +688,7 @@ public int getScaledWindowTouchSlop() {
      */
     @DSComment("View configuration")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.439 -0500", hash_original_method = "0486ED6F0D874BB9D1C234D99788A23A", hash_generated_method = "1F4D3A154C5ECE9F6A3AA812BF168D34")
     
 public int getScaledMinimumFlingVelocity() {
@@ -700,7 +700,7 @@ public int getScaledMinimumFlingVelocity() {
      */
     @DSComment("View configuration")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.443 -0500", hash_original_method = "FB70B19A53E289FD25C6D1F0C8994CAD", hash_generated_method = "5D95E56454A0B57E4EA671E692E22083")
     
 public int getScaledMaximumFlingVelocity() {

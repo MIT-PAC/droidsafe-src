@@ -18,7 +18,7 @@ public class Date extends java.util.Date {
      *             if the format of the supplied string does not match the SQL
      *             format.
      */
-    @DSSafe(DSCat.UTIL_FUNCTION)
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.285 -0500", hash_original_method = "FC7C79FC527809241DADD4534B95BE5B", hash_generated_method = "19DF358F7CC2DBEF4A33710192D3BA9D")
     
 public static Date valueOf(String dateString) {
@@ -214,7 +214,7 @@ public Date(long theDate) {
      *            the time in milliseconds since the Epoch.
      */
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.275 -0500", hash_original_method = "58DD96CFC8DDA00016DEC24CC6519017", hash_generated_method = "1F810C618BA62488684578EB05C3C6A1")
     
 @Override

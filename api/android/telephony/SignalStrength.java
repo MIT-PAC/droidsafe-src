@@ -706,6 +706,7 @@ public int getLteAsuLevel() {
     /**
      * @return true if this is for GSM
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSpec(DSCat.PHONE_STATE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.682 -0500", hash_original_method = "7CBC52492CE7EC66B1A8811456B7D40A", hash_generated_method = "B70409FA6ADEB0B1159578592B61EB05")
     

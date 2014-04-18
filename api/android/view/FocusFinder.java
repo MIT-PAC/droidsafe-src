@@ -17,7 +17,7 @@ public class FocusFinder {
      */
     @DSComment("Normal UI operations")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.077 -0500", hash_original_method = "0A266F2F30A26FB4FFDB8BE1FD52ABAB", hash_generated_method = "794ADD475B07C31945BF5DC360FCCB11")
     
 public static FocusFinder getInstance() {

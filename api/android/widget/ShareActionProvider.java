@@ -248,7 +248,7 @@ public void setShareHistoryFileName(String shareHistoryFile) {
      */
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.267 -0500", hash_original_method = "0DAF31F3B630D54C36D98C14F5BC8D8F", hash_generated_method = "CC784081647578CB91B85D7C5DF7179C")
     
 public void setShareIntent(Intent shareIntent) {

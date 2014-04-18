@@ -256,8 +256,8 @@ public InetAddress getInetAddress() {
      *         null} if this socket is closed.
      */
     @DSComment("Could try to obtain device IP")
-    @DSSpec(DSCat.NETWORK)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.626 -0500", hash_original_method = "120EDBD12BFFA2CD78689E1CCCEFC0A6", hash_generated_method = "A531F469508AA52D412D092323D2C43A")
     
 public InetAddress getLocalAddress() {
@@ -278,7 +278,7 @@ public InetAddress getLocalAddress() {
      */
     @DSComment("no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.628 -0500", hash_original_method = "C20A7438B6018D8C8B6C316459831E1B", hash_generated_method = "E91F065498979E799788353E3516CE74")
     
 public int getLocalPort() {
@@ -347,7 +347,7 @@ public synchronized int getSendBufferSize() throws SocketException {
      */
     @DSComment("no suspicious activity")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.642 -0500", hash_original_method = "E87267C7B03A68795BE159270DE33B7D", hash_generated_method = "9F7A1F60E76959A75DD2FB96D8E81523")
     
 public synchronized int getSoTimeout() throws SocketException {
@@ -369,7 +369,6 @@ public synchronized int getSoTimeout() throws SocketException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSource(DSSourceKind.NETWORK_INFORMATION)
     @DSSourceTaintArgs
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.645 -0500", hash_original_method = "C2244B28A3A8977EAD72461E3F35998B", hash_generated_method = "FA40C6DCB99A1FF924F067925A9AE9BC")
 public synchronized void receive(DatagramPacket pack) throws IOException {
@@ -398,7 +397,7 @@ public synchronized void receive(DatagramPacket pack) throws IOException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.648 -0500", hash_original_method = "F0676E3BCA654DF56D2BFA1EDDBDFD76", hash_generated_method = "2353F46655A0E31C5FAD87BE14A59420")
     
 public void send(DatagramPacket pack) throws IOException {
@@ -488,8 +487,8 @@ public synchronized void setReceiveBufferSize(int size) throws SocketException {
      *                if an error occurs while setting the option.
      */
     @DSComment("no information leakage")
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.NETWORKING)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.658 -0500", hash_original_method = "FEB39AD74968ADEBB5E7B7804953C3DE", hash_generated_method = "50EB82C7A51A39A5708F4D2AE00058D5")
     
 public synchronized void setSoTimeout(int timeout) throws SocketException {
@@ -618,7 +617,7 @@ public void connect(InetAddress address, int port) {
     /**
      * Returns true if this socket is bound to a local address. See {@link #bind}.
      */
-    @DSSpec(DSCat.NETWORKING)
+    @DSSafe(DSCat.NETWORKING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.681 -0500", hash_original_method = "589AFDD4CA6BF38ABB5F59E26BB3DC6D", hash_generated_method = "A878CB652BF3277F9F7822AB8074E046")
     
 public boolean isBound() {
@@ -675,7 +674,7 @@ public SocketAddress getLocalSocketAddress() {
      *             if the socket is closed or the option could not be set.
      */
     @DSSpec(DSCat.NETWORKING)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.692 -0500", hash_original_method = "D6CD69E67882E49578E557811A0FC457", hash_generated_method = "F94F3DC09B3E131C2F7D5BA39FFC9336")
     
 public void setReuseAddress(boolean reuse) throws SocketException {
@@ -708,7 +707,7 @@ public boolean getReuseAddress() throws SocketException {
      *             if the socket is closed or the option could not be set.
      */
     @DSSpec(DSCat.NETWORKING)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.697 -0500", hash_original_method = "16BACAE92585B22CC8D47D482CFB74B4", hash_generated_method = "80E17E7313B16739DDEA9982B0678291")
     
 public void setBroadcast(boolean broadcast) throws SocketException {

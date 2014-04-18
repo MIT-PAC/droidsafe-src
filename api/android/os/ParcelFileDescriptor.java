@@ -291,7 +291,7 @@ public ParcelFileDescriptor dup() throws IOException {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.061 -0500", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "E5BF1F22A9EE48D78F7BADE5BB998512")
     
 public FileDescriptor getFileDescriptor() {

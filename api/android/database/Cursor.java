@@ -21,7 +21,7 @@ public interface Cursor {
     static final int FIELD_TYPE_BLOB = 4;
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     int getCount();
     
     @DSComment("Abstract Method")
@@ -78,10 +78,12 @@ public interface Cursor {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     String getColumnName(int columnIndex);
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     String[] getColumnNames();
     
     @DSComment("Abstract Method")
@@ -90,10 +92,12 @@ public interface Cursor {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     byte[] getBlob(int columnIndex);
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     String getString(int columnIndex);
     
     @DSComment("Abstract Method")
@@ -106,7 +110,7 @@ public interface Cursor {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    
     int getInt(int columnIndex);
     
     @DSComment("Abstract Method")

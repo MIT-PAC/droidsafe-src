@@ -28,7 +28,7 @@ public final class ProcessBuilder
     
     @DSComment("No action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public List<String> command() { 
         List<String> ret = new LinkedList<String>();
         ret.add(commands);

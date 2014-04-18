@@ -2281,7 +2281,7 @@ public final boolean hasDefaultAction() {
      */
     @DSComment("data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.185 -0500", hash_original_method = "8A0F7162152E6ECED85F47A14B4B5FFC", hash_generated_method = "78D86D905B6385129B1C9EEB9CFA8449")
     
 public final int getMetaState() {
@@ -2518,7 +2518,7 @@ public final boolean isScrollLockOn() {
      */
     @DSComment("data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.251 -0500", hash_original_method = "96C17C1FB3A34A2A0AFECF0EC83B48C2", hash_generated_method = "76861B724DE778DC880D3D0375E21B8D")
     
 public final int getAction() {
@@ -2585,7 +2585,7 @@ public final boolean isLongPress() {
      */
     @DSComment("data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.265 -0500", hash_original_method = "AA2A4756B9F9E3EBD53F7A185B310C03", hash_generated_method = "5529A683B3D9F1E49CF91B4CB6E54CBC")
     
 public final int getKeyCode() {
@@ -2633,7 +2633,7 @@ public final int getScanCode() {
      */
     @DSComment("data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.272 -0500", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "BF1FFFF7864A26F75F1F53545CCD4C5A")
     
 public final int getRepeatCount() {

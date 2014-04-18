@@ -58,7 +58,7 @@ public final Object attach(Object anObject) {
      */
     @DSComment("No action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.186 -0500", hash_original_method = "F29A40DBFBA770DAC2D3ED3DF7881B6F", hash_generated_method = "8BA2F3446477E1CEF6EBC6E7B1482BDB")
     
 public final Object attachment() {
@@ -79,7 +79,7 @@ public final Object attachment() {
      * selector.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.189 -0500", hash_original_method = "BA1BF94FB859172DDE80A7E9000639D0", hash_generated_method = "6D2C251EA0784ADEFD27C351E9E0B5A6")
     
 public abstract void cancel();
@@ -90,7 +90,7 @@ public abstract void cancel();
      * @return the channel of this key.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.191 -0500", hash_original_method = "A96F47B526978A006380DE215C852EE6", hash_generated_method = "8FEDD3EB21EEFBE8F103B7BB3A0ADFEB")
     
 public abstract SelectableChannel channel();
@@ -104,7 +104,7 @@ public abstract SelectableChannel channel();
      *             if the key has already been canceled.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.193 -0500", hash_original_method = "78422C81123C4D37C8FE06F27419342C", hash_generated_method = "F65B80C6BA29ABE55D61E052EE9CA5D7")
     
 public abstract int interestOps();
@@ -123,7 +123,7 @@ public abstract int interestOps();
      *             if the key has already been canceled.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.196 -0500", hash_original_method = "80BDE0F6570E7C1C49E762ED6594C3D2", hash_generated_method = "873E1FA71A8833E8EB21E863581A8F49")
     
 public abstract SelectionKey interestOps(int operations);
@@ -186,7 +186,7 @@ public final boolean isReadable() {
      *         otherwise.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.206 -0500", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "DEB105C1692FABA897B5C0B0EC6247FE")
     
 public abstract boolean isValid();

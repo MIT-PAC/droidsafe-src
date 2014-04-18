@@ -171,7 +171,7 @@ public IAccessibilityManagerClient getClient() {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.LOG})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.021 -0500", hash_original_method = "ECD9D39E5E16C36757C6B1E94F274A8A", hash_generated_method = "CA5BF0D0ADC7B8C240FD07115789791C")
     
 public void sendAccessibilityEvent(AccessibilityEvent event) {
@@ -246,8 +246,8 @@ public void interrupt() {
      * @return An unmodifiable list with {@link AccessibilityServiceInfo}s.
      */
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.030 -0500", hash_original_method = "4069133ECADF858B249C4B9AC03C2D2A", hash_generated_method = "BEC0F9CC527984268D14449285115DD1")
     
 public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList() {
@@ -277,8 +277,8 @@ public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList() {
      * @see AccessibilityServiceInfo#FEEDBACK_VISUAL
      */
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.033 -0500", hash_original_method = "0B36972F320E6D77C70DA2DE64F6CDA9", hash_generated_method = "DC96427724681BD4AFE1360F7CC3ED88")
     
 public List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(

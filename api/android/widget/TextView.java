@@ -227,7 +227,7 @@ private static int desired(Layout layout) {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.660 -0500", hash_original_method = "610DF4562C72E9710D612FAA54D67DFE", hash_generated_method = "A75A6D7F80F1F0271AD4582D7821E552")
     
 public static ColorStateList getTextColors(Context context, TypedArray attrs) {
@@ -1504,7 +1504,7 @@ private void setRelativeDrawablesIfNeeded(Drawable start, Drawable end) {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.553 -0500", hash_original_method = "6CE73F981984CDCC5004358BB070DFC0", hash_generated_method = "3E90EBA10091B15BB3C4DBAFB3CF7D7F")
     
 public void setTypeface(Typeface tf, int style) {
@@ -1559,7 +1559,7 @@ protected MovementMethod getDefaultMovementMethod() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.GUI})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.559 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "07E497F06FCA3C4F8CABDACFD16853C1")
     
 @ViewDebug.CapturedViewProperty
@@ -2531,7 +2531,7 @@ public int getCompoundDrawablePadding() {
 
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.649 -0500", hash_original_method = "4C42E9479946D6D8F38619DA66232863", hash_generated_method = "FA118EB41CF7D8B2AE88A6737B993C6A")
     
 @Override
@@ -2570,7 +2570,7 @@ public final int getAutoLinkMask() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.654 -0500", hash_original_method = "FFEF779179433D30901B486DA8C4C9D0", hash_generated_method = "47F0432AEA180ACF38ECBDDDB45C9850")
     
 public void setTextAppearance(Context context, int resid) {
@@ -2651,7 +2651,7 @@ public float getTextSize() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.658 -0500", hash_original_method = "7DB2A551583349AB1C418E0528006365", hash_generated_method = "B390E22B85EE4C4563DD2C9B1E564055")
     
 @android.view.RemotableViewMethod
@@ -2670,7 +2670,7 @@ public float getTextSize() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.660 -0500", hash_original_method = "487975E6A0CF72E721F7BDECB44E1312", hash_generated_method = "4B39AC24B650C96ECA78ECD296D29BD0")
     
 public void setTextSize(int unit, float size) {
@@ -2751,7 +2751,7 @@ public float getTextScaleX() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.671 -0500", hash_original_method = "780D15535FA403FCFD3F32D6E7303769", hash_generated_method = "6847AC35599A30DFD5FF0D7ECC908CC0")
     
 public void setTypeface(Typeface tf) {
@@ -2787,7 +2787,7 @@ public Typeface getTypeface() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.675 -0500", hash_original_method = "7D6C422943C1CBA6B222D2B0CA531386", hash_generated_method = "5D82075A69C90ECDFAAB52071D154026")
     
 @android.view.RemotableViewMethod
@@ -2821,7 +2821,7 @@ public void setTextColor(ColorStateList colors) {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.679 -0500", hash_original_method = "E9708E6780595497A0F38B1A3DFD4921", hash_generated_method = "7370868768EEE725AC2F3C6CF89297D0")
     
 public final ColorStateList getTextColors() {
@@ -3825,7 +3825,7 @@ public void setText(CharSequence text, BufferType type) {
     }
     
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.534 -0400", hash_original_method = "EBAE4ED74D570AD4FF310073DD3BF4E5", hash_generated_method = "2BA93A7A63A103A1E7CA1F5FB9BB442F")
     private void setText(CharSequence text, BufferType type,
                          boolean notifyBefore, int oldlen) {
@@ -3994,7 +3994,7 @@ for(int i = 0;i < n;i++)
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.841 -0500", hash_original_method = "36BFF315CD4AAC9D68E14477979C2AB5", hash_generated_method = "C07655603B1C7698549A580EC59D382A")
     
 public final void setText(char[] text, int start, int len) {
@@ -4048,8 +4048,7 @@ public final void setTextKeepState(CharSequence text, BufferType type) {
             }
         }
     }
-
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.887 -0500", hash_original_method = "F67FB9F700F5516CACC8B84E46FAB678", hash_generated_method = "929DBDF02CD46CB45E799900F9F11CB3")
@@ -7412,7 +7411,6 @@ public void setIncludeFontPadding(boolean includepad) {
         if (mMaxMode == LINES && mLayout.getLineCount() > mMaximum) {
             unpaddedHeight = Math.min(unpaddedHeight, mLayout.getLineTop(mMaximum));
         }
-
         
          * We didn't let makeNewLayout() register to bring the cursor into view,
          * so do it here if there is any possibility that it is needed.
@@ -8095,7 +8093,7 @@ public void setAllCaps(boolean allCaps) {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.288 -0500", hash_original_method = "F67AECEDD15B73EEA4C7246A27A881B1", hash_generated_method = "A632A942888A523DC93F0E9011802DB2")
     
 @android.view.RemotableViewMethod
@@ -8162,7 +8160,7 @@ private void applySingleLine(boolean singleLine, boolean applyTransformation,
      *
      * @attr ref android.R.styleable#TextView_ellipsize
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.297 -0500", hash_original_method = "8F48F7BF1B8DCE5D5519F1200A0ED853", hash_generated_method = "F285A0E27AA103D42B31FA598A7067B7")
     
 public void setEllipsize(TextUtils.TruncateAt where) {

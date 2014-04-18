@@ -77,7 +77,7 @@ public boolean isDone() {
     }
 
     @DSComment("No action/impact")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.320 -0500", hash_original_method = "88A87863EC7E1056D8FE46146EF894BC", hash_generated_method = "2B9A6D8E962965597198EE7EF5CC30EB")
     
 public boolean cancel(boolean mayInterruptIfRunning) {
@@ -89,7 +89,7 @@ public boolean cancel(boolean mayInterruptIfRunning) {
      */
     @DSComment("No action/impact")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.322 -0500", hash_original_method = "162C3BFD86443C5C054F309FCD025483", hash_generated_method = "4BA8D097AA6015B36B09431BCBD339FE")
     
 public V get() throws InterruptedException, ExecutionException {
@@ -101,7 +101,7 @@ public V get() throws InterruptedException, ExecutionException {
      */
     @DSComment("No action/impact")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.324 -0500", hash_original_method = "90F54A92EEE05A0240D215CA50ECEC0E", hash_generated_method = "F2C4282953312CB1FC8BB08A4E7F5CE4")
     
 public V get(long timeout, TimeUnit unit)

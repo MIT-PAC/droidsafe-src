@@ -1102,7 +1102,7 @@ public static int getType(int codePoint) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.194 -0500", hash_original_method = "BAAC4031CE67ACBF5435C0572C9451C4", hash_generated_method = "B52A40EC5B7F7D5A95A5416ED7B666B9")
     
 public static byte getDirectionality(char c) {
@@ -1118,7 +1118,7 @@ public static byte getDirectionality(char c) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.196 -0500", hash_original_method = "B9E955EF2712E02C1EDBC21B558449AF", hash_generated_method = "EEF8D7AA68CE492EFDDA0E97E21487CA")
     
 public static byte getDirectionality(int codePoint) {

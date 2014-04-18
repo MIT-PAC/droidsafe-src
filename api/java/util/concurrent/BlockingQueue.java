@@ -10,7 +10,7 @@ import java.util.Queue;
 public interface BlockingQueue<E> extends Queue<E> {
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     boolean add(E e);
     
     @DSComment("Abstract Method")

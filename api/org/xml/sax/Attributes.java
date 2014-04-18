@@ -9,7 +9,7 @@ public interface Attributes
 {
     
     public abstract @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     int getLength ();
     
     public abstract @DSComment("Abstract Method")
@@ -30,6 +30,7 @@ public interface Attributes
     
     public abstract @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.XML})
     String getValue (int index);
     
     @DSComment("Abstract Method")
@@ -50,10 +51,12 @@ public interface Attributes
     
     public abstract @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.XML})
     String getValue (String uri, String localName);
     
     public abstract @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.XML})
     String getValue (String qName);
 
 }

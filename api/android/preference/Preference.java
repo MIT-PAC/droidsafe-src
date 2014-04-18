@@ -622,7 +622,7 @@ public int getOrder() {
      * @param title The title for this Preference.
      */
     @DSComment("data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.837 -0500", hash_original_method = "B4BEC153E73D566AEC40ED844297CB0F", hash_generated_method = "284FCF2293D68D214B8F1E0343747F63")
     
 public void setTitle(CharSequence title) {
@@ -640,8 +640,8 @@ public void setTitle(CharSequence title) {
      * @param titleResId The title as a resource ID.
      */
     @DSComment("data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.839 -0500", hash_original_method = "4E4A93A9A53A92BE0779D6D57BF6863D", hash_generated_method = "33703268DB5598045A51C7BA745C2ABE")
     
 public void setTitle(int titleResId) {
@@ -743,7 +743,7 @@ public CharSequence getSummary() {
      * @param summary The summary for the preference.
      */
     @DSComment("data structure only")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.854 -0500", hash_original_method = "9397E34A85A0111B42F6FFB9A2837DEB", hash_generated_method = "473E4AE991A26B165213F8390D5E8AF8")
     @DSVerified
 public void setSummary(CharSequence summary) {
@@ -760,8 +760,8 @@ public void setSummary(CharSequence summary) {
      * @param summaryResId The summary as a resource.
      */
     @DSComment("data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.856 -0500", hash_original_method = "7AEFEE5A5E2C81392912FC13D133C130", hash_generated_method = "5E42DB8EFDCE67E38657239ACF0C48B4")
     
 public void setSummary(int summaryResId) {

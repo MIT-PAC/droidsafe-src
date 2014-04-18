@@ -67,7 +67,7 @@ public class Resources {
     
 	@DSComment("System resources")
     @DSSpec(DSCat.SYSTEM)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public static Resources getSystem(){
 	    if (mSystem == null)
 	        mSystem = new Resources();
@@ -262,7 +262,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	
 	@DSComment("Accessing App Resource")
     @DSSpec(DSCat.APP_RESOURCE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final String getString(int resId) {
 		String str = new String();
         str.addTaint(resId);
@@ -271,7 +271,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	
 	@DSComment("Resource is a data structure, getting system resource is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
@@ -302,7 +302,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	
 	@DSComment("Accessing App Resource")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public String getString(int id, Object... formatArgs){
 		String str = new String();
 		str.addTaint(id);
@@ -333,7 +333,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	}
     
 	@DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public CharSequence getText(int id, CharSequence def){
     	String str = new String();
 		str.addTaint(id);
@@ -365,7 +365,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     
 	@DSComment("Accessing App Resource")
     @DSSpec(DSCat.APP_RESOURCE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public String[] getStringArray(int id){
 		// Original method
 		/*
@@ -519,7 +519,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public Drawable getDrawable(int id){
         return loadDrawable(null, id);
 	}
@@ -556,7 +556,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     
 	@DSComment("Resource is a data structure, getting system resource is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getColor(int id){
 		// Original method
 		/*
@@ -785,7 +785,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     
     @DSComment("seemed harmless")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public DisplayMetrics getDisplayMetrics(){
 		return mMetrics;
 		// Original method
@@ -806,7 +806,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
      */
     @DSComment("System resources")
     @DSSpec(DSCat.SYSTEM)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.440 -0500", hash_original_method = "11CE3ED49D23B920A1DF6398548CD42B", hash_generated_method = "EE9863339B6D3DC9E206378BA342F32D")
     
 public Configuration getConfiguration() {
@@ -852,7 +852,7 @@ public Configuration getConfiguration() {
     
     @DSComment("Resource is a data structure, getting system resource is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public String getResourceName(int resid){
 		// Original method
 		/*
@@ -868,7 +868,7 @@ public Configuration getConfiguration() {
     
     @DSComment("Resource is a data structure, getting system resource is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public String getResourcePackageName(int resid){
 		// Original method
 		/*
@@ -884,7 +884,7 @@ public Configuration getConfiguration() {
     
     @DSComment("Resource is a data structure, getting system resource is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public String getResourceTypeName(int resid){
 		// Original method
 		/*
@@ -1023,7 +1023,7 @@ public NotFoundException(String name) {
     
     @DSComment("Resource is a data structure, getting system resource is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public String getResourceEntryName(int resid){
 		// Original method
 		/*

@@ -545,8 +545,8 @@ public int getModifiers() {
      * @return the name of this method
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.566 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -561,8 +561,8 @@ public String getName() {
      * @return the parameter types
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.568 -0500", hash_original_method = "860AC8CD4E2F5F390A65618A1941DEDE", hash_generated_method = "0845E4F05C4F8FB178489C01FC4EE8B5")
     
 public Class<?>[] getParameterTypes() {
@@ -642,8 +642,8 @@ public Class<?> getReturnType() {
      */
     @DSComment("Java language reflection")
     @DSSpec(DSCat.REFLECTION)
-    @DSSource(DSSourceKind.REFLECTION)
-    @DSSink(DSSinkKind.REFLECTION)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.576 -0500", hash_original_method = "4A7D773CBB2CABEB3FBD24437D2F9CE8", hash_generated_method = "2FD521E61FBF204709DD6167E6F69FD0")
     
 public Object invoke(Object receiver, Object... args)

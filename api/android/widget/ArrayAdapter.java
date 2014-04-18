@@ -361,7 +361,7 @@ public Context getContext() {
     
     @DSComment("Binding data, need modeling to be safe")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override
 	public Object getItem(int position) {
 		return getTaint();

@@ -2477,7 +2477,7 @@ public View(Context context, AttributeSet attrs) {
     
     @DSVerified
     @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void sendAccessibilityEvent(int eventType){
 		// Original method
         if (mAccessibilityDelegate != null) {
@@ -2977,7 +2977,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.ExportedProperty(mapping={@ViewDebug.IntToString(from=VISIBLE,to="VISIBLE"),@ViewDebug.IntToString(from=INVISIBLE,to="INVISIBLE"),@ViewDebug.IntToString(from=GONE,to="GONE")}) 
 	public int getVisibility(){
 		// Original method
@@ -2986,7 +2986,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @RemotableViewMethod 
 	public void setVisibility(int visibility){
 		addTaintLocal(visibility);
@@ -3119,7 +3119,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.ExportedProperty(category="layout",mapping={@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LTR,to="LTR"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_RTL,to="RTL"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_INHERIT,to="INHERIT"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LOCALE,to="LOCALE")}) 
 	public int getLayoutDirection(){
 		// Original method
@@ -3133,7 +3133,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @RemotableViewMethod 
 	public void setLayoutDirection(int layoutDirection){
 		// Original method
@@ -4033,7 +4033,7 @@ protected void onDisplayHint(int hint) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getWindowVisibility(){
 		// Original method
 		/*
@@ -4172,7 +4172,7 @@ protected void onConfigurationChanged(Configuration newConfig) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.137 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "2565E6BAF7209C441ED7A2A85B82D51F")
     
 @ViewDebug.CapturedViewProperty
@@ -4781,7 +4781,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final ViewParent getParent(){
 		return (ViewParent)getTaint();
 		// Original method
@@ -4812,7 +4812,7 @@ protected void dispatchDraw(Canvas canvas) {
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final int getScrollX(){
 		// Original method
         return mScrollX;
@@ -4820,7 +4820,7 @@ protected void dispatchDraw(Canvas canvas) {
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final int getScrollY(){
 		// Original method
         return mScrollY;
@@ -4828,7 +4828,7 @@ protected void dispatchDraw(Canvas canvas) {
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.ExportedProperty(category="layout") 
 	public final int getWidth(){
 		// Original method
@@ -4837,7 +4837,7 @@ protected void dispatchDraw(Canvas canvas) {
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.ExportedProperty(category="layout") 
 	public final int getHeight(){
 		// Original method
@@ -4862,14 +4862,14 @@ protected void dispatchDraw(Canvas canvas) {
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final int getMeasuredWidth(){
         return mMeasuredWidth;
 	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final int getMeasuredWidthAndState(){
 		// Original method
         return mMeasuredWidth;
@@ -4877,7 +4877,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final int getMeasuredHeight(){
 		// Original method
         return mMeasuredHeight & MEASURED_SIZE_MASK;
@@ -4885,7 +4885,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final int getMeasuredHeightAndState(){
 		// Original method
         return mMeasuredHeight;
@@ -4893,7 +4893,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final int getMeasuredState(){
 		// Original method
         return (mMeasuredWidth&MEASURED_STATE_MASK)
@@ -5256,7 +5256,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public float getAlpha(){
 		// Original method
 		/*
@@ -5313,7 +5313,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.CapturedViewProperty 
 	public final int getTop(){
 		// Original method
@@ -5331,7 +5331,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.CapturedViewProperty 
 	public final int getBottom(){
         return mBottom;
@@ -5356,7 +5356,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.CapturedViewProperty 
 	public final int getLeft(){
         return mLeft;
@@ -5374,7 +5374,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.CapturedViewProperty 
 	public final int getRight(){
         return mRight;
@@ -7824,7 +7824,7 @@ protected void onDraw(Canvas canvas) {
     
     @DSComment("Binder is vague, need modeling")
     @DSSpec(DSCat.IPC)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public IBinder getWindowToken(){
 		// Original method
         {
@@ -8036,7 +8036,7 @@ protected void onDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getLayerType(){
 		return getTaintInt();
 		// Original method
@@ -8114,7 +8114,7 @@ protected void onDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void setDrawingCacheEnabled(boolean enabled){
 		// Original method
 		/*
@@ -8195,7 +8195,7 @@ protected void dispatchGetDisplayList() {}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public Bitmap getDrawingCache(){
 		// Original method
         return getDrawingCache(false);
@@ -8203,7 +8203,7 @@ protected void dispatchGetDisplayList() {}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public Bitmap getDrawingCache(boolean autoScale){
 		// Original method
         if ((mViewFlags & WILL_NOT_CACHE_DRAWING) == WILL_NOT_CACHE_DRAWING) {
@@ -8544,7 +8544,7 @@ protected void onFinishInflate() {
      */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.712 -0500", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "05B1D2D3E0E7E913183B96A460337403")
     
 public Resources getResources() {
@@ -8723,7 +8723,7 @@ public final int[] getDrawableState() {
     @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @RemotableViewMethod 
 	public void setBackgroundColor(int color){
 		// Original method
@@ -8772,7 +8772,7 @@ public final int[] getDrawableState() {
      */
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.768 -0500", hash_original_method = "80971671F36DCDE8D8060A8575F1E0DF", hash_generated_method = "F2BD5CE67A49674BC981C81EA9A10491")
     
 public Drawable getBackground() {
@@ -9081,7 +9081,7 @@ protected void dispatchSetActivated(boolean activated) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public ViewTreeObserver getViewTreeObserver(){
 		return mFloatingTreeObserver;
 		// Original method
@@ -9174,7 +9174,7 @@ protected void dispatchSetActivated(boolean activated) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public final View findViewById(int id){
         /*
         if (id < 0) {
@@ -9290,7 +9290,7 @@ protected void dispatchSetActivated(boolean activated) {
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.CapturedViewProperty 
 	public int getId(){
 		return getTaintInt();
@@ -9304,7 +9304,7 @@ protected void dispatchSetActivated(boolean activated) {
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.ExportedProperty 
 	public Object getTag(){
 		return (Object)getTaint();
@@ -9336,7 +9336,7 @@ public void setTag(final Object tag) {
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public Object getTag(int key){
 		return mKeyedTags.get(key);
 		// Original method
@@ -9970,7 +9970,7 @@ protected void onOverScrolled(int scrollX, int scrollY,
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getOverScrollMode(){
 		return getTaintInt();
 		// Original method
@@ -10243,7 +10243,7 @@ protected void resolveTextDirection() {
      * @see AccessibilityNodeProvider
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public AccessibilityNodeProvider getAccessibilityNodeProvider() {
         if (mAccessibilityDelegate != null) {
             return mAccessibilityDelegate.getAccessibilityNodeProvider(this);
@@ -10277,7 +10277,7 @@ protected void resolveTextDirection() {
      *
      * @return The parent for accessibility purposes.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     public ViewParent getParentForAccessibility() {
         if (mParent instanceof View) {
             View parentView = (View) mParent;

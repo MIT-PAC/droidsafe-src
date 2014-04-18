@@ -329,7 +329,7 @@ public Runnable getCallback() {
     
 	@DSComment("OS Message")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IPC})
     public Bundle getData(){
         return data = new Bundle();
 	}

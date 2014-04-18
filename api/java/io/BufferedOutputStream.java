@@ -103,7 +103,7 @@ private void checkNotClosed() throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.500 -0500", hash_original_method = "EC14898AF1C6D500DEF61C098384315C", hash_generated_method = "0A30862E0D81C221231B60E443A2F762")
     
 @Override
@@ -160,6 +160,7 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if an error occurs attempting to write to this stream.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.505 -0500", hash_original_method = "45333A97ED5F96C22A3D88C235B79D5A", hash_generated_method = "5AA7A43BC98370BA14A74751C65BA048")

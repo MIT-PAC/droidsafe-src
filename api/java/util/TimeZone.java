@@ -75,7 +75,7 @@ public static synchronized TimeZone getDefault() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.901 -0500", hash_original_method = "A9702CAFEC1BDFDDFFC4258E6C6ABF00", hash_generated_method = "65D278D3A5C10E4945F47E0E9E8E83E2")
     
 public static synchronized TimeZone getTimeZone(String id) {

@@ -124,7 +124,7 @@ public FileOutputStream(String path, boolean append) throws FileNotFoundExceptio
     }
 
     @DSComment("File Output Stream")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.265 -0500", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "0DF0B8874963515CB2F09EA5F083FA85")
     
 @Override
@@ -171,7 +171,7 @@ public FileOutputStream(String path, boolean append) throws FileNotFoundExceptio
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.271 -0500", hash_original_method = "ED8CC62185555A958270FAF77C7A0E38", hash_generated_method = "9A812DB1A2B8287B9416C38AD1DB0488")
     
 public FileChannel getChannel() {
@@ -188,7 +188,7 @@ public FileChannel getChannel() {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.273 -0500", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "BF99A80A25EF13693DBEFA2A53118A0A")
     
 public final FileDescriptor getFD() throws IOException {

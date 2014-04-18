@@ -9,8 +9,10 @@ public enum DSSourceKind {
     CONTACT_INFORMATION,
     DATABASE_INFORMATION,
     EMAIL,
+    FILE,
     FILE_INFORMATION,
     IMAGE,
+    LOCATION,
     LOCATION_INFORMATION,
     NETWORK_INFORMATION,
     NFC,
@@ -22,10 +24,12 @@ public enum DSSourceKind {
     UNSPECIFIED,
     UNMODELED,
     REFLECTION,
+    SENSOR,
     SERIALIZATION,
     IPC,
     IO,
     AUDIO,
+    USER_INPUT,
     OS_STATE,
     XML
 }

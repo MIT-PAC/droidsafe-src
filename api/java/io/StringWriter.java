@@ -116,7 +116,7 @@ public StringBuffer getBuffer() {
      *             offset + count} is greater than the size of {@code buf}.
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.106 -0500", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "9CDF0FF8BCA96E90FC2C10775DCA5372")
     
 @Override
@@ -136,7 +136,7 @@ public StringBuffer getBuffer() {
      *            the character to write to this writer's {@code StringBuffer}.
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.109 -0500", hash_original_method = "9E74599A1E38039394CB519CF0982BB0", hash_generated_method = "C5C3795F9028875601BFA514394360DA")
     
 @Override
@@ -152,7 +152,7 @@ public StringBuffer getBuffer() {
      *            the non-null string containing the characters to write.
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.111 -0500", hash_original_method = "C709310F14478B827E3F0AC974DDA1E9", hash_generated_method = "B9E6C838B077F39FFE8F290B8FE54952")
     
 @Override
@@ -175,7 +175,7 @@ public StringBuffer getBuffer() {
      *             offset + count} is greater than the length of {@code str}.
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.114 -0500", hash_original_method = "944E85902A11A60E741C7A4261619164", hash_generated_method = "A8BBB0A5273822517081196A431752C3")
     
 @Override

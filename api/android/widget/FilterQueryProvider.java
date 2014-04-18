@@ -11,6 +11,6 @@ public interface FilterQueryProvider {
     @DSVerified
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     Cursor runQuery(CharSequence constraint);
 }

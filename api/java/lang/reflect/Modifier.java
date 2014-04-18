@@ -181,7 +181,7 @@ public static boolean isPublic(int modifiers) {
      *         static} modifier, {@code false} otherwise
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.613 -0500", hash_original_method = "F73282A82DE53F4E8602A983F3FBD929", hash_generated_method = "4F839491C85D91B0C9553754D6711D11")
     
 public static boolean isStatic(int modifiers) {

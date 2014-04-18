@@ -8,7 +8,7 @@ import droidsafe.annotations.*;
 public interface AttributeSet {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public int getAttributeCount();
     
     @DSComment("Abstract Method")

@@ -160,7 +160,7 @@ public void removeProtocolCommandListener(ProtocolCommandListener listener)
      * <p>
      * @return The number of ProtocolCommandListeners currently registered.
      ***/
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.580 -0500", hash_original_method = "0341EF00CE2D6A0D116D4599A710DD9D", hash_generated_method = "863A9ADABBC8E3D79823EA3D9745525B")
     

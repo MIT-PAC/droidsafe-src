@@ -96,10 +96,8 @@ public class SMTP extends SocketClient
     private static final String __DEFAULT_ENCODING = "ISO-8859-1";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.356 -0500", hash_original_field = "5851BF2FEF5A8535EAD5AA9837C9C499", hash_generated_field = "B44FD5DD0C96DE651EF02982D44EF837")
 
-
     private StringBuffer __commandBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.360 -0500", hash_original_field = "3B06A6A58FD8BA55C2BC8C2DF80650D4", hash_generated_field = "3B06A6A58FD8BA55C2BC8C2DF80650D4")
-
 
     BufferedReader _reader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.363 -0500", hash_original_field = "6D9F052A13DE4C4E60F654F796978D79", hash_generated_field = "6D9F052A13DE4C4E60F654F796978D79")
@@ -264,7 +262,6 @@ protected void _connectAction_() throws IOException
         __getReply();
     }
 
-
     /***
      * Adds a ProtocolCommandListener.  Delegates this task to
      * {@link #_commandSupport_  _commandSupport_ }.
@@ -293,7 +290,6 @@ public void removeProtocolCommandistener(ProtocolCommandListener listener)
         _commandSupport_.removeProtocolCommandListener(listener);
     }
 
-
     /***
      * Closes the connection to the SMTP server and sets to null
      * some internal data so that the memory may be reclaimed by the
@@ -314,7 +310,6 @@ public void disconnect() throws IOException
         _replyLines.setSize(0);
         _newReplyString = false;
     }
-
 
     /***
      * Sends an SMTP command to the server, waits for a reply and returns the
@@ -344,7 +339,6 @@ public int sendCommand(String command, String args) throws IOException
     {
         return __sendCommand(command, args, true);
     }
-
 
     /***
      * Sends an SMTP command to the server, waits for a reply and returns the
@@ -376,7 +370,6 @@ public int sendCommand(int command, String args) throws IOException
         return sendCommand(SMTPCommand._commands[command], args);
     }
 
-
     /***
      * Sends an SMTP command with no arguments to the server, waits for a
      * reply and returns the numerical response code.  After invocation, for
@@ -403,7 +396,6 @@ public int sendCommand(String command) throws IOException
     {
         return sendCommand(command, null);
     }
-
 
     /***
      * Sends an SMTP command with no arguments to the server, waits for a
@@ -432,7 +424,6 @@ public int sendCommand(int command) throws IOException
     {
         return sendCommand(command, null);
     }
-
 
     /***
      * Returns the integer value of the reply code of the last SMTP reply.
@@ -477,7 +468,6 @@ public int getReply() throws IOException
         return _replyCode;
     }
 
-
     /***
      * Returns the lines of text from the last SMTP server response as an array
      * of strings, one entry per line.  The end of line markers of each are
@@ -507,7 +497,7 @@ public String[] getReplyStrings()
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.439 -0500", hash_original_method = "84E293B796CFF792E36C37EFD2119006", hash_generated_method = "7A2D3AD43224B53EF4FBD29D4B1D280A")
     @DSVerified
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
 public String getReplyString()
     {
         Enumeration en;
@@ -528,7 +518,6 @@ public String getReplyString()
 
         return (_replyString = buffer.toString());
     }
-
 
     /***
      * A convenience method to send the SMTP HELO command to the server,
@@ -553,7 +542,6 @@ public int helo(String hostname) throws IOException
         return sendCommand(SMTPCommand.HELO, hostname);
     }
 
-
     /***
      * A convenience method to send the SMTP MAIL command to the server,
      * receive the reply, and return the reply code.
@@ -576,7 +564,6 @@ public int mail(String reversePath) throws IOException
     {
         return __sendCommand(SMTPCommand.MAIL, reversePath, false);
     }
-
 
     /***
      * A convenience method to send the SMTP RCPT command to the server,
@@ -601,7 +588,6 @@ public int rcpt(String forwardPath) throws IOException
         return __sendCommand(SMTPCommand.RCPT, forwardPath, false);
     }
 
-
     /***
      * A convenience method to send the SMTP DATA command to the server,
      * receive the reply, and return the reply code.
@@ -623,7 +609,6 @@ public int data() throws IOException
     {
         return sendCommand(SMTPCommand.DATA);
     }
-
 
     /***
      * A convenience method to send the SMTP SEND command to the server,
@@ -648,7 +633,6 @@ public int send(String reversePath) throws IOException
         return sendCommand(SMTPCommand.SEND, reversePath);
     }
 
-
     /***
      * A convenience method to send the SMTP SOML command to the server,
      * receive the reply, and return the reply code.
@@ -671,7 +655,6 @@ public int soml(String reversePath) throws IOException
     {
         return sendCommand(SMTPCommand.SOML, reversePath);
     }
-
 
     /***
      * A convenience method to send the SMTP SAML command to the server,
@@ -696,7 +679,6 @@ public int saml(String reversePath) throws IOException
         return sendCommand(SMTPCommand.SAML, reversePath);
     }
 
-
     /***
      * A convenience method to send the SMTP RSET command to the server,
      * receive the reply, and return the reply code.
@@ -720,7 +702,6 @@ public int rset() throws IOException
         return sendCommand(SMTPCommand.RSET);
     }
 
-
     /***
      * A convenience method to send the SMTP VRFY command to the server,
      * receive the reply, and return the reply code.
@@ -743,7 +724,6 @@ public int vrfy(String user) throws IOException
     {
         return sendCommand(SMTPCommand.VRFY, user);
     }
-
 
     /***
      * A convenience method to send the SMTP VRFY command to the server,
@@ -835,7 +815,6 @@ public int noop() throws IOException
         return sendCommand(SMTPCommand.NOOP);
     }
 
-
     /***
      * A convenience method to send the SMTP TURN command to the server,
      * receive the reply, and return the reply code.
@@ -857,7 +836,6 @@ public int turn() throws IOException
     {
         return sendCommand(SMTPCommand.TURN);
     }
-
 
     /***
      * A convenience method to send the SMTP QUIT command to the server,

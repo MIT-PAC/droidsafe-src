@@ -121,6 +121,7 @@ public PushbackInputStream(InputStream in, int size) {
      *             if this stream is closed or an I/O error occurs while reading
      *             from this stream.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.563 -0500", hash_original_method = "146BBECA823F7801A366293B4A5C7497", hash_generated_method = "ABC96A72A8ADD58AE2E0786F9FC8E24B")
@@ -165,6 +166,7 @@ public PushbackInputStream(InputStream in, int size) {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.566 -0500", hash_original_method = "1B53276B26E96C9AEFE2F3C951EF5EAE", hash_generated_method = "8166BEB41CDADC014E3C1918E6FB3725")

@@ -105,7 +105,7 @@ public boolean weakCompareAndSet(boolean expect, boolean update) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.099 -0500", hash_original_method = "FD0CF162327E2AB30C8884FB52F6FB5F", hash_generated_method = "B7867BD27F3347CA40707405C7C5B66A")
     
 public final void set(boolean newValue) {

@@ -1159,7 +1159,7 @@ public void onStart() {
      * Activity's lifecycle.
      */
     @DSComment("normal android callback")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSpec(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.111 -0500", hash_original_method = "3B8608ED59C2663D271D57F8D8F534C0", hash_generated_method = "4D7A6260998C4FCE09C9F7547BB0088D")
     
 public void onResume() {

@@ -221,7 +221,7 @@ protected Dialog(Context context, boolean cancelable,
      */
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.059 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "DDB999668EFCAD36DFA58D5D665B592E")
     
 public final Context getContext() {
@@ -515,7 +515,7 @@ public Bundle onSaveInstanceState() {
      */
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.100 -0500", hash_original_method = "EE5C9B4EF0AAEC8AB3AF49A30F3FD2D3", hash_generated_method = "BEE22EB7A0FCFB296E957648A81A3257")
     @DSVerified
     
@@ -542,7 +542,7 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
      */
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.103 -0500", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "331876D44C3CE896E388411794B32F6E")
     @DSVerified
     
@@ -590,7 +590,7 @@ public View findViewById(int id) {
      */
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.110 -0500", hash_original_method = "A6A8A3E553FD4B026D939E9AE3AC9985", hash_generated_method = "34F06CEA5B574E84E31D5E5187CA0961")
     
 public void setContentView(int layoutResID) {
@@ -606,7 +606,7 @@ public void setContentView(int layoutResID) {
      */
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.112 -0500", hash_original_method = "64A976C0ECE03B8AD97B801012E7B71B", hash_generated_method = "8505878B7681F77E00CE8368877013C5")
     
 public void setContentView(View view) {

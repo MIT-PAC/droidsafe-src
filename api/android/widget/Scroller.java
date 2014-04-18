@@ -229,7 +229,7 @@ public final void forceFinished(boolean finished) {
      */
     @DSComment("Scroller")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.159 -0500", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "435A63AD7A59A60E85ECBFA35C286957")
     
 public final int getDuration() {
@@ -243,7 +243,7 @@ public final int getDuration() {
      */
     @DSComment("Scroller")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.162 -0500", hash_original_method = "BBE38D2570F755B77B8BCEE3883878A8", hash_generated_method = "4E41D36F526AAF68C1E1DC2FBC513434")
     
 public final int getCurrX() {
@@ -257,7 +257,7 @@ public final int getCurrX() {
      */
     @DSComment("Scroller")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.164 -0500", hash_original_method = "F6ADC6344D48E201FCE3042AD823C1E1", hash_generated_method = "0FA9E998037FCAAD2F3E776A3158CAED")
     
 public final int getCurrY() {
@@ -310,7 +310,7 @@ public final int getStartY() {
      */
     @DSComment("Scroller")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.172 -0500", hash_original_method = "FA811E85285FC4A5EAEC6F3CADDA829D", hash_generated_method = "BDFA12568F79C06B41890291C1FF1C7E")
     
 public final int getFinalX() {
@@ -324,7 +324,7 @@ public final int getFinalX() {
      */
     @DSComment("Scroller")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.175 -0500", hash_original_method = "39F49202EF2D412808D46FE4B1B455BA", hash_generated_method = "B4E63B164A6B85616E03240C535C53EE")
     
 public final int getFinalY() {
@@ -410,7 +410,7 @@ public boolean computeScrollOffset() {
      */
     @DSComment("Scroller")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.181 -0500", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "F9CD515A4E2C5B16D0DE692CF1A61742")
     
 public void startScroll(int startX, int startY, int dx, int dy) {

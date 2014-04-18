@@ -376,7 +376,7 @@ public static final int getParentPid(int pid) {
         return (int) procStatusValues[0];
     }
     
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.SAFE_OTHERS)
     public static final void setThreadPriority(int tid, int priority) throws IllegalArgumentException, SecurityException {
     }
     
@@ -390,7 +390,7 @@ public static final int getParentPid(int pid) {
     }
     
     @DSComment("not sensitive/not an action")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SAFE_OTHERS)
     public static final void setThreadPriority(int priority) throws IllegalArgumentException, SecurityException {
     }
     

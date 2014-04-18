@@ -57,12 +57,12 @@ public interface SharedPreferences {
     }
 
     @DSVerified("no callback, delegated to implementation")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     Map<String, ?> getAll();
 
     @DSVerified("no callback, delegated to implementation")
     @DSSafe(DSCat.ABSTRACT_METHOD)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     String getString(String key, String defValue);
     
     @DSVerified("no callback, delegated to implementation")

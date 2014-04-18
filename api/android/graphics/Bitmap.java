@@ -152,7 +152,7 @@ public static Bitmap createBitmap(Bitmap src) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.789 -0500", hash_original_method = "FDCB5D0AAFA9E01A4FEEBED763708DF4", hash_generated_method = "0310C45601B1271997169FB3A2B77AE7")
     
 public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height) {
@@ -179,7 +179,7 @@ public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int he
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.792 -0500", hash_original_method = "2890F109635B7BA47A6C3B31AD4C0C33", hash_generated_method = "5E5AAE5AD4DB8799AE28E84D198E7FB9")
     
 public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height,
@@ -448,14 +448,12 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     private static int nativeHeight(int nativeBitmap) {
         return nativeBitmap;
     }
-
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static int nativeRowBytes(int nativeBitmap) {
         return nativeBitmap;
     }
-        
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -915,7 +913,7 @@ public final boolean isMutable() {
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getWidth() {
 		//Synthetic method in order to track width taints, which are managed in native code
 		return getTaintInt();
@@ -923,7 +921,7 @@ public final boolean isMutable() {
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getHeight() {
 		//Synthetic method in order to track height taints, which are managed in native code
 		return getTaintInt();
@@ -1047,7 +1045,7 @@ public final int getByteCount() {
      * If the bitmap's internal config is in one of the public formats, return
      * that config, otherwise return null.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.845 -0500", hash_original_method = "2965E803C3174189F0506D62E1B543D4", hash_generated_method = "8C8D5743BC9562CEC4C6371B676EA621")
     
@@ -1099,7 +1097,7 @@ public void eraseColor(int c) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.854 -0500", hash_original_method = "C5A0202C662F7E6C05A2B74C54AEFFD9", hash_generated_method = "EFFA5266C3DD741088C782B66E1F1119")
     
 public int getPixel(int x, int y) {
@@ -1222,7 +1220,7 @@ private void checkPixelsAccess(int x, int y, int width, int height,
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.864 -0500", hash_original_method = "85459627EEB2B6C6AD7EB511C3D7B6BB", hash_generated_method = "E77E619233DD0365AE14DA47202B7F88")
     
 public void setPixel(int x, int y, int color) {

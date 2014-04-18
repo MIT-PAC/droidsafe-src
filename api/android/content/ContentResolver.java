@@ -894,7 +894,7 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.159 -0500", hash_original_method = "741F25E5E9079F60798D64718B03495A", hash_generated_method = "FF40C3A8319AD1636D47F56A713B2AB4")
     
 public final InputStream openInputStream(Uri uri)
@@ -1597,7 +1597,7 @@ public final void unregisterContentObserver(ContentObserver observer) {
      */
     @DSComment("Content model/data manipulation")
     @DSSpec(DSCat.CONTENT)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.219 -0500", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "3A5872C192B574229FFFA2AFF9004DE8")
     
 public void notifyChange(Uri uri, ContentObserver observer) {
@@ -1615,7 +1615,7 @@ public void notifyChange(Uri uri, ContentObserver observer) {
      */
     @DSComment("Content model/data manipulation")
     @DSSpec(DSCat.CONTENT)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.222 -0500", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "D4B7A5BA283E58792D86DBEA8A8D8DD8")
     
 public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwork) {

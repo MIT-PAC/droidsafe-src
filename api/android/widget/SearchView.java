@@ -561,7 +561,7 @@ public void setAppSearchData(Bundle appSearchData) {
      */
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.758 -0500", hash_original_method = "A9C55FF5F962662498ECAD2C137876AF", hash_generated_method = "CD89AF8E515C0184BE23683937420891")
     
 public void setImeOptions(int imeOptions) {
@@ -578,7 +578,7 @@ public void setImeOptions(int imeOptions) {
      */
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.760 -0500", hash_original_method = "48CC06180C89621288EE9E924CBC5764", hash_generated_method = "346C2C21BCF3B3A413D45389660087CA")
     
 public void setInputType(int inputType) {
@@ -706,7 +706,7 @@ public void setOnSearchClickListener(OnClickListener listener) {
      */
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.778 -0500", hash_original_method = "BDCF19F1BD9841AC2C41BDBA087D55A0", hash_generated_method = "6AB3F6E16C358175AE4C893210CE3A7A")
     
 public CharSequence getQuery() {
@@ -799,7 +799,7 @@ public boolean isIconfiedByDefault() {
      */
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.789 -0500", hash_original_method = "1D615B467973354655EE36C4E6E1B780", hash_generated_method = "C09A92E6147C8CBBBE9D074799B9E1A8")
     
 public void setIconified(boolean iconify) {
@@ -1639,7 +1639,7 @@ private void launchIntent(Intent intent) {
      * Sets the text in the query box, without updating the suggestions.
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.117 -0500", hash_original_method = "39B31EC96E94C2151059B7594679485C", hash_generated_method = "0271B3329C99C1677684038522E73CAF")
     
 private void setQuery(CharSequence query) {

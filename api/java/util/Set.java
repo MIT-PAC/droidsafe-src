@@ -8,7 +8,7 @@ import droidsafe.annotations.*;
 public interface Set<E> extends Collection<E> {
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public boolean add(E object);
     
     public boolean addAll(Collection<? extends E> collection);

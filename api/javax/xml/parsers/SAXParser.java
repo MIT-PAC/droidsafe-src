@@ -200,7 +200,7 @@ public void parse(
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.687 -0500", hash_original_method = "67AC143C34CF78ECFB000A375BF6460F", hash_generated_method = "43D13F5939334F2F10AB50C8971F6DF9")
     
 public void parse(String uri, HandlerBase hb)
@@ -227,7 +227,7 @@ public void parse(String uri, HandlerBase hb)
      *
      * @see org.xml.sax.DocumentHandler
      */
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.689 -0500", hash_original_method = "9D1B9B5B338D189F5FEB6183087C0F90", hash_generated_method = "C9998E6A83F4A64846D1FFF9E7C51719")
     
 public void parse(String uri, DefaultHandler dh)

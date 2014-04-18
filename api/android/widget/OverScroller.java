@@ -176,7 +176,7 @@ public final void forceFinished(boolean finished) {
      * @return The new X offset as an absolute distance from the origin.
      */
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.509 -0500", hash_original_method = "935C47FB8A3CB470F597BC28E107035C", hash_generated_method = "53B4A4CD497A9D5DB67229573C2C599A")
     
 public final int getCurrX() {
@@ -189,7 +189,7 @@ public final int getCurrX() {
      * @return The new Y offset as an absolute distance from the origin.
      */
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.512 -0500", hash_original_method = "4ECEC07425ABC9DEFD7B203A5114566B", hash_generated_method = "E2A744CFD1190860F0D4BDB7448D0F72")
     
 public final int getCurrY() {
@@ -202,7 +202,7 @@ public final int getCurrY() {
      * @return The original velocity less the deceleration, norm of the X and Y velocity vector.
      */
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.514 -0500", hash_original_method = "64BF41B2D89FD1AD797ACAED97E05500", hash_generated_method = "7C8FCD2CBE06F83A568B96C0E16D4F7E")
     
 public float getCurrVelocity() {
@@ -241,7 +241,7 @@ public final int getStartY() {
      * @return The final X offset as an absolute distance from the origin.
      */
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.521 -0500", hash_original_method = "B59ED352B9AEDA78AFFC00B7CFC03926", hash_generated_method = "5D94BA28B978E4A121B5EA36EF43E61C")
     
 public final int getFinalX() {
@@ -254,7 +254,7 @@ public final int getFinalX() {
      * @return The final Y offset as an absolute distance from the origin.
      */
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.523 -0500", hash_original_method = "35D86359302D602175EC68518CA83146", hash_generated_method = "99FD42909C9877A51B345A36A5CEA1DE")
     
 public final int getFinalY() {
@@ -416,7 +416,7 @@ public boolean computeScrollOffset() {
      *        content up.
      */
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.537 -0500", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "F9CD515A4E2C5B16D0DE692CF1A61742")
     
 public void startScroll(int startX, int startY, int dx, int dy) {
@@ -437,7 +437,7 @@ public void startScroll(int startX, int startY, int dx, int dy) {
      * @param duration Duration of the scroll in milliseconds.
      */
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.540 -0500", hash_original_method = "C7C9FE1639F9BA6211C746BC2E590EF8", hash_generated_method = "B751B33CC0BF2EE6E2C7273D514854B1")
     
 public void startScroll(int startX, int startY, int dx, int dy, int duration) {
@@ -537,7 +537,7 @@ public void fling(int startX, int startY, int velocityX, int velocityY,
      *              desired distance from finalX. Absolute value - must be positive.
      */
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.549 -0500", hash_original_method = "B9132D3CC6E7407A65F178898D94F282", hash_generated_method = "6D02779E22897C5CCC1B61B4DC8471C5")
     
 public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
@@ -558,7 +558,7 @@ public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
      *              desired distance from finalY. Absolute value - must be positive.
      */
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.551 -0500", hash_original_method = "EAACB5866396964CA4004FBBF9350F29", hash_generated_method = "85C49A64CA88551D9AB324C5AED2C0C3")
     
 public void notifyVerticalEdgeReached(int startY, int finalY, int overY) {

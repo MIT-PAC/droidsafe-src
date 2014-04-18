@@ -53,6 +53,8 @@ public enum DSCat {
     DEFAULT_MODIFIER,  
     DEVICE,    
     
+    EXEC,
+    
     FILE_SYSTEM,
     MONITORING,
 
@@ -96,6 +98,7 @@ public enum DSCat {
     TELEPHONY,
     
     THREADING, //threading/execution
+    TRIGGER,
     URI_EXCHANGE,
     WIFI,
     

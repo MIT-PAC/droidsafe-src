@@ -8,7 +8,7 @@ import droidsafe.annotations.*;
 public interface Deque<E> extends Queue<E> {
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     void addFirst(E e);
     
     @DSComment("Abstract Method")

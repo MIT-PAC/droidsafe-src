@@ -18,7 +18,7 @@ extends CharSequence, GetChars, Spannable, Appendable
     public Editable insert(int where, CharSequence text);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public Editable delete(int st, int en);
     
     @DSComment("Abstract Method")

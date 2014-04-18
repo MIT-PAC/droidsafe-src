@@ -134,6 +134,7 @@ public int read() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.843 -0500", hash_original_method = "E743E3D19B5FD453D0CBC2E5CA424673", hash_generated_method = "F1D6C9070AD8A49F0385879A6200617D")
@@ -160,7 +161,7 @@ public int read(char[] buf) throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IO})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.846 -0500", hash_original_method = "BAAE620DD47C67A7C9FA2D182BB45EC6", hash_generated_method = "9A8DFEF4E7A8AC2186089662A0C89E20")
@@ -269,7 +270,7 @@ public long skip(long charCount) throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.856 -0500", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "C5940F6106B7BDD695AB535DD92FD3DC")
     
 public int read(CharBuffer target) throws IOException {

@@ -479,7 +479,7 @@ public InputStream getResourceAsStream(String resName) {
      */
     @DSComment("Refelction/class loader")
     @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.750 -0500", hash_original_method = "B81E0F32DC432F0B3276D4B4E41F12D0", hash_generated_method = "2C14505DFAF9AA253FE895FDE3C6A4AA")
     
 public Class<?> loadClass(String className) throws ClassNotFoundException {
@@ -514,7 +514,7 @@ public Class<?> loadClass(String className) throws ClassNotFoundException {
      */
     @DSComment("Refelction/class loader")
     @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.752 -0500", hash_original_method = "733CC3AC678FE7D7ABDA5F1E7A258EB2", hash_generated_method = "7E554DAE64821C187FBA4D370660E9DF")
     
 protected Class<?> loadClass(String className, boolean resolve) throws ClassNotFoundException {
@@ -848,7 +848,6 @@ public BootClassLoader() {
 
 /*  commented out by droidsafe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.807 -0500", hash_original_method = "0FBC8B1C710D0CE61299895128455485", hash_generated_method = "32D6ECFE7C4B8FD34375E6F47B87EC79")
-
     
 @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {

@@ -243,7 +243,7 @@ public final OnItemSelectedListener getOnItemSelectedListener() {
      * @return The adapter used to provide this view's content.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.004 -0500", hash_original_method = "A0D14CFDF948E28FE8D8741A033FF666", hash_generated_method = "6F799C158744ABEEA3E3237B64E67AE4")
     
 public abstract T getAdapter();
@@ -657,7 +657,7 @@ private void updateEmptyStatus(boolean empty) {
      */
     @DSComment("GUI, AdapterView")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.064 -0500", hash_original_method = "D3C6D351E34AE1C5D83960F098A550AE", hash_generated_method = "0AFA26C7A541A584DF50322067FC59B2")
     
 public Object getItemAtPosition(int position) {
