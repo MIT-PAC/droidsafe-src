@@ -153,6 +153,7 @@ public FileInputStream(String path) throws FileNotFoundException {
      * Returns a read-only {@link FileChannel} that shares its position with
      * this stream.
      */
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     

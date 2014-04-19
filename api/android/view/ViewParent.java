@@ -30,7 +30,7 @@ public interface ViewParent {
     public ViewParent invalidateChildInParent(int[] location, Rect r);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public ViewParent getParent();
     
     @DSComment("Abstract Method")
@@ -76,7 +76,7 @@ public interface ViewParent {
     public void childDrawableStateChanged(View child);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept);
     
     @DSComment("Abstract Method")
@@ -85,7 +85,7 @@ public interface ViewParent {
             boolean immediate);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event);
 
     @DSComment("Abstract Method")

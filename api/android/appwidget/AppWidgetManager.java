@@ -234,6 +234,7 @@ public void partiallyUpdateAppWidget(int appWidgetId, RemoteViews views) {
      *                      for your AppWidget.
      * @param views         The RemoteViews object to show.
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("Request update on remote view")
     @DSSafe(DSCat.GUI)
     

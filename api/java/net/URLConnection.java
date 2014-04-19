@@ -307,6 +307,7 @@ protected URLConnection(URL url) {
      *             if an error occurs while connecting to the resource.
      */
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.074 -0500", hash_original_method = "E3B3D609A299C20BEA286BB272FDF5DD", hash_generated_method = "12E46584ED58D785D1E4DDAC8B414223")

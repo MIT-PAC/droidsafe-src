@@ -18,7 +18,7 @@ public interface BlockingQueue<E> extends Queue<E> {
     boolean offer(E e);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     void put(E e) throws InterruptedException;
     
     @DSComment("Abstract Method")
@@ -27,7 +27,7 @@ public interface BlockingQueue<E> extends Queue<E> {
         throws InterruptedException;
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     E take() throws InterruptedException;
     
     @DSComment("Abstract Method")

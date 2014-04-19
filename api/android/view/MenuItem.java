@@ -54,15 +54,15 @@ public interface MenuItem {
     public int getOrder();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setTitle(CharSequence title);
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setTitle(int title);
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public CharSequence getTitle();
     
     @DSVerified
@@ -74,11 +74,11 @@ public interface MenuItem {
     public CharSequence getTitleCondensed();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setIcon(Drawable icon);
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setIcon(int iconRes);
     
     @DSVerified
@@ -86,7 +86,7 @@ public interface MenuItem {
     public Drawable getIcon();
     
     @DSVerified
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.GUI)
     public MenuItem setIntent(Intent intent);
     
     @DSVerified
@@ -106,7 +106,7 @@ public interface MenuItem {
     public char getNumericShortcut();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setAlphabeticShortcut(char alphaChar);
     
     @DSVerified
@@ -130,7 +130,7 @@ public interface MenuItem {
     public boolean isChecked();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setVisible(boolean visible);
     
     @DSVerified
@@ -138,7 +138,7 @@ public interface MenuItem {
     public boolean isVisible();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setEnabled(boolean enabled);
     
     @DSVerified
@@ -146,7 +146,7 @@ public interface MenuItem {
     public boolean isEnabled();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public boolean hasSubMenu();
     
     @DSVerified
@@ -154,15 +154,15 @@ public interface MenuItem {
     public SubMenu getSubMenu();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener menuItemClickListener);
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public ContextMenuInfo getMenuInfo();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public void setShowAsAction(int actionEnum);
     
     @DSVerified
@@ -170,38 +170,38 @@ public interface MenuItem {
     public MenuItem setShowAsActionFlags(int actionEnum);
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setActionView(View view);
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setActionView(int resId);
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public View getActionView();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setActionProvider(ActionProvider actionProvider);
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public ActionProvider getActionProvider();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public boolean expandActionView();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public boolean collapseActionView();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public boolean isActionViewExpanded();
     
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public MenuItem setOnActionExpandListener(OnActionExpandListener listener);
 }

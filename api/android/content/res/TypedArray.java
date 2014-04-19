@@ -120,7 +120,8 @@ public Resources getResources() {
 		*/
 	}
     
-	@DSComment("data structure class")
+	@DSSource({DSSourceKind.RESOURCES})
+    @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
     public String getString(int index){
@@ -183,6 +184,7 @@ public Resources getResources() {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean getBoolean(int index, boolean defValue){
@@ -212,6 +214,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -242,6 +245,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -251,6 +255,7 @@ public Resources getResources() {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -275,6 +280,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -344,6 +350,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -433,7 +440,8 @@ public Resources getResources() {
 		*/
 	}
     
-	@DSComment("data structure class")
+	@DSSource({DSSourceKind.RESOURCES})
+    @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
     public int getResourceId(int index, int defValue){
@@ -454,6 +462,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     

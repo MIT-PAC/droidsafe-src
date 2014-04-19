@@ -87,20 +87,20 @@ public class ListView extends AbsListView {
     private FocusSelector mFocusSelector;
     
 	@DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     public ListView(Context context) {
 		super(context);
 	}
     
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     public ListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
     
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     public ListView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		// TODO Auto-generated constructor stub
@@ -357,7 +357,7 @@ public boolean removeFooterView(View v) {
     }
     
     @DSComment("ListView")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     @Override
 	public ListAdapter getAdapter() {
 		// TODO Auto-generated method stub
@@ -378,7 +378,7 @@ public boolean removeFooterView(View v) {
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @Override
 	
 	public void setAdapter(ListAdapter adapter) {

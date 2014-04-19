@@ -704,6 +704,7 @@ public void setOnSearchClickListener(OnClickListener listener) {
      *
      * @return the query string
      */
+    @DSSource({DSSourceKind.GUI})
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
     

@@ -22,19 +22,22 @@ extends CharSequence, GetChars, Spannable, Appendable
     public Editable delete(int st, int en);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SCREEN})
     public Editable append(CharSequence text);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SCREEN})
     public Editable append(CharSequence text, int start, int end);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SCREEN})
     public Editable append(char text);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public void clear();
     
     public void clearSpans();

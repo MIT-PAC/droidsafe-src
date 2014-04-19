@@ -260,7 +260,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	    mAssets = null;
 	}
 	
-	@DSComment("Accessing App Resource")
+	@DSSource({DSSourceKind.RESOURCES})
+    @DSComment("Accessing App Resource")
     @DSSpec(DSCat.APP_RESOURCE)
     
     public final String getString(int resId) {
@@ -269,7 +270,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
         return str;
 	}
 	
-	@DSComment("Resource is a data structure, getting system resource is spec")
+	@DSSource({DSSourceKind.RESOURCES})
+    @DSComment("Resource is a data structure, getting system resource is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
     public final CharSequence getText(int resId) {
@@ -300,7 +302,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
         }
 	}
 	
-	@DSComment("Accessing App Resource")
+	@DSSource({DSSourceKind.RESOURCES})
+    @DSComment("Accessing App Resource")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
     public String getString(int id, Object... formatArgs){
@@ -332,7 +335,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return str;
 	}
     
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSource({DSSourceKind.RESOURCES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     public CharSequence getText(int id, CharSequence def){
     	String str = new String();
@@ -363,7 +367,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
         return obj;
 	}
     
-	@DSComment("Accessing App Resource")
+	@DSSource({DSSourceKind.RESOURCES})
+    @DSComment("Accessing App Resource")
     @DSSpec(DSCat.APP_RESOURCE)
     
     public String[] getStringArray(int id){

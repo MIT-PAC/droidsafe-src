@@ -2398,6 +2398,7 @@ public WebBackForwardList restoreState(Bundle inState) {
      *            controlling caching, accept types or the User-Agent, their
      *            values may be overriden by the WebView's defaults.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.565 -0500", hash_original_method = "66CEDD7560D58AC5C6DF5108A28592A9", hash_generated_method = "5B9D1B63FC1E7B285328458907CCA0A9")
     
@@ -2428,6 +2429,7 @@ private void loadUrlImpl(String url, Map<String, String> extraHeaders) {
      * Load the given URL.
      * @param url The URL of the resource to load.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSComment("I/O load/store/Internet")
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.569 -0500", hash_original_method = "900343F64392479D278DAE2853AD0CAD", hash_generated_method = "AACBEEE0E28FE1B64F1E9BC46034B940")

@@ -29,7 +29,7 @@ public interface Attributes
     String getType (int index);
     
     public abstract @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.XML)
     @DSSource({DSSourceKind.XML})
     String getValue (int index);
     
@@ -50,12 +50,12 @@ public interface Attributes
     String getType (String qName);
     
     public abstract @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.XML)
     @DSSource({DSSourceKind.XML})
     String getValue (String uri, String localName);
     
     public abstract @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.XML)
     @DSSource({DSSourceKind.XML})
     String getValue (String qName);
 

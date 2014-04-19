@@ -242,8 +242,7 @@ public abstract boolean finishConnect() throws IOException;
      * @see java.nio.channels.ReadableByteChannel#read(java.nio.ByteBuffer)
      */
     
-    @DSSourceTaintArgs()
-    @DSSource(DSSourceKind.NETWORK_INFORMATION)
+    @DSSource({DSSourceKind.IO})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.649 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
@@ -285,8 +284,7 @@ public abstract int read(ByteBuffer target) throws IOException;
      * @see java.nio.channels.ScatteringByteChannel#read(java.nio.ByteBuffer[],
      *      int, int)
      */
-    @DSSourceTaintArgs()
-    @DSSource(DSSourceKind.NETWORK_INFORMATION)
+    @DSSource({DSSourceKind.IO})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.651 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
@@ -324,8 +322,7 @@ public abstract long read(ByteBuffer[] targets, int offset, int length) throws I
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSourceTaintArgs()
-    @DSSource(DSSourceKind.NETWORK_INFORMATION)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.654 -0500", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "ED00F097F990FA72EFB9F785613CC911")
     
 public synchronized final long read(ByteBuffer[] targets) throws IOException {

@@ -61,7 +61,7 @@ public interface SharedPreferences {
     Map<String, ?> getAll();
 
     @DSVerified("no callback, delegated to implementation")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
     
     String getString(String key, String defValue);
     
@@ -70,12 +70,12 @@ public interface SharedPreferences {
     Set<String> getStringSet(String key, Set<String> defValues);
     
     @DSVerified("no callback, delegated to implementation")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     int getInt(String key, int defValue);
     
     @DSVerified("no callback, delegated to implementation")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     long getLong(String key, long defValue);
     
@@ -84,7 +84,7 @@ public interface SharedPreferences {
     float getFloat(String key, float defValue);
     
     @DSVerified("no callback, delegated to implementation")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     boolean getBoolean(String key, boolean defValue);
 
@@ -93,14 +93,14 @@ public interface SharedPreferences {
     boolean contains(String key);
     
     @DSVerified("no callback, delegated to implementation")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
     Editor edit();
 
     @DSVerified("no callback, delegated to implementation")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     void registerOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener);
     
     @DSVerified("no callback, delegated to implementation")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     void unregisterOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener);
 }

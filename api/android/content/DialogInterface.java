@@ -28,7 +28,7 @@ public interface DialogInterface {
     public void cancel();
 
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public void dismiss();
     
     interface OnCancelListener {

@@ -16,15 +16,15 @@ public interface AttributeSet {
     public String getAttributeName(int index);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public String getAttributeValue(int index);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public String getAttributeValue(String namespace, String name);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public String getPositionDescription();
     
     @DSComment("Abstract Method")

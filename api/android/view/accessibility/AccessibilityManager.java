@@ -169,6 +169,7 @@ public IAccessibilityManagerClient getClient() {
      *
      * @throws IllegalStateException if accessibility is not enabled.
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     

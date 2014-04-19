@@ -40,7 +40,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
      * @throws FileNotFoundException if file cannot be opened for writing.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.250 -0500", hash_original_method = "FCD724AE92A53995D4248A6FA35A6403", hash_generated_method = "5CA8ED8E9C177F71E64A9FC67130AD07")
     
 public FileOutputStream(File file) throws FileNotFoundException {
@@ -60,7 +60,7 @@ public FileOutputStream(File file) throws FileNotFoundException {
      * @throws FileNotFoundException if the file cannot be opened for writing.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.253 -0500", hash_original_method = "E1E823059D628A64A7C3F0D9FD132483", hash_generated_method = "E40C8D38C9C606422A657576F3C3F690")
     
 public FileOutputStream(File file, boolean append) throws FileNotFoundException {
@@ -79,7 +79,7 @@ public FileOutputStream(File file, boolean append) throws FileNotFoundException 
      * @throws NullPointerException if {@code fd} is null.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.256 -0500", hash_original_method = "CA1AE4948CB074C25B5079F997384B75", hash_generated_method = "3ADA39C2CD37854FCB7C6FEEDDF8F6B3")
     
 public FileOutputStream(FileDescriptor fd) {
@@ -101,7 +101,7 @@ public FileOutputStream(FileDescriptor fd) {
      * @throws FileNotFoundException if file cannot be opened for writing.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.259 -0500", hash_original_method = "ACD65E09F20B5B610F80054FC06EAD01", hash_generated_method = "06712B4764DEFF8D08AB3A20DDAF8BC3")
     
 public FileOutputStream(String path) throws FileNotFoundException {
@@ -116,7 +116,7 @@ public FileOutputStream(String path) throws FileNotFoundException {
      * @throws FileNotFoundException if the file cannot be opened for writing.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.263 -0500", hash_original_method = "2C15450100DC44A70908DD69335AD0CF", hash_generated_method = "6E4F3CA1AD99189EA98540B9544BCE06")
     
 public FileOutputStream(String path, boolean append) throws FileNotFoundException {

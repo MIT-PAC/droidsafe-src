@@ -1758,7 +1758,7 @@ public void registerMediaButtonIntent(PendingIntent pi, ComponentName eventRecei
      *      that was registered with {@link #registerMediaButtonEventReceiver(ComponentName)}.
      */
     @DSComment("Controlling audio")
-    @DSSpec(DSCat.DEVICE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.335 -0500", hash_original_method = "50FCC009A55C4B527D3EADAFCCF926C2", hash_generated_method = "B08E5578BA52F57410A395515F4F1E33")
     
 public void unregisterMediaButtonEventReceiver(ComponentName eventReceiver) {
@@ -1821,7 +1821,7 @@ public void registerRemoteControlClient(RemoteControlClient rcClient) {
      * @see #registerRemoteControlClient(RemoteControlClient)
      */
     @DSComment("Controlling audio")
-    @DSSpec(DSCat.DEVICE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.343 -0500", hash_original_method = "61965062F9C113F5A501568B9F9D00FE", hash_generated_method = "F3B68DDCB4B5D644E2811C9E0FD270CB")
     
 public void unregisterRemoteControlClient(RemoteControlClient rcClient) {

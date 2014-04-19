@@ -33,6 +33,7 @@ import java.lang.ref.WeakReference;
 
 public final class GestureLibraries {
     
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.014 -0500", hash_original_method = "36C2566972C9E7C5A89CB148B99828C5", hash_generated_method = "EB171114E70DEA09E730F03A5BA67241")
     
@@ -40,6 +41,7 @@ public static GestureLibrary fromFile(String path) {
         return fromFile(new File(path));
     }
     
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.019 -0500", hash_original_method = "7E84D781468DAB3B4FC2BB57E6984751", hash_generated_method = "9FB20FF54F87CC5A2BCE073191450279")
     @DSComment("Gesture instantiation")
     @DSSpec(DSCat.SPEC_OTHERS)
@@ -54,6 +56,7 @@ public static GestureLibrary fromPrivateFile(Context context, String name) {
         return fromFile(context.getFileStreamPath(name));
     }
     
+    @DSSource({DSSourceKind.RESOURCES})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.033 -0500", hash_original_method = "ECCCCFA4B335026C9D86999C5E7C070D", hash_generated_method = "9638F4AEB2445A7384294C50E43D9FC7")
     @DSComment("Gesture instantiation")
     @DSSpec(DSCat.SPEC_OTHERS)

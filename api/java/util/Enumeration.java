@@ -12,6 +12,6 @@ public interface Enumeration<E> {
     public boolean hasMoreElements();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     public E nextElement();
 }

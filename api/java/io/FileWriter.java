@@ -16,7 +16,7 @@ public class FileWriter extends OutputStreamWriter {
      *             if {@code file} cannot be opened for writing.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.163 -0500", hash_original_method = "B243913791A4955722C7446949980DA0", hash_generated_method = "D6DAF213F6D3B38533FFD8AF2E1BB16E")
     
 public FileWriter(File file) throws IOException {
@@ -36,7 +36,7 @@ public FileWriter(File file) throws IOException {
      *             if the {@code file} cannot be opened for writing.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.166 -0500", hash_original_method = "79860F10C9F09BC3FC3374E75EC2439D", hash_generated_method = "7EFD327773EA8ABA2873A2E9933FED3A")
     
 public FileWriter(File file, boolean append) throws IOException {
@@ -50,7 +50,7 @@ public FileWriter(File file, boolean append) throws IOException {
      *            the non-null FileDescriptor to write bytes to.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.168 -0500", hash_original_method = "83907072F4E4E17B7331DF75EE7AA617", hash_generated_method = "67AC3D6EBB5AD77899C2BAC092758EA4")
     
 public FileWriter(FileDescriptor fd) {
@@ -66,7 +66,7 @@ public FileWriter(FileDescriptor fd) {
      *             if the file cannot be opened for writing.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.172 -0500", hash_original_method = "7A60608F9C8A66E68FB25FC3BD2DB01D", hash_generated_method = "2434875F8167778129CD26B8C797A068")
     
 public FileWriter(String filename) throws IOException {
@@ -86,7 +86,7 @@ public FileWriter(String filename) throws IOException {
      *             if the {@code file} cannot be opened for writing.
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.FILE_SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.174 -0500", hash_original_method = "754E5DA17049F1720720C66817C48E5C", hash_generated_method = "A8E2C54EB46A112F5B8B861711B5F8D6")
     
 public FileWriter(String filename, boolean append) throws IOException {

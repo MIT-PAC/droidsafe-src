@@ -12,5 +12,6 @@ public interface FilterQueryProvider {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     
+    @DSSource({DSSourceKind.DATABASE})
     Cursor runQuery(CharSequence constraint);
 }

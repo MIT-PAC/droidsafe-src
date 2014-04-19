@@ -50,6 +50,7 @@ static NetworkInterface forUnboundMulticastSocket() {
      * @throws SocketException if an error occurs.
      * @throws NullPointerException if {@code interfaceName == null}.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
     
@@ -241,6 +242,7 @@ public static NetworkInterface getByIndex(int index) throws SocketException {
      *             if an error occurs while getting the network interface
      *             information.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
     
@@ -339,6 +341,7 @@ public int getIndex() {
     /**
      * Returns the name of this network interface (such as "eth0" or "lo").
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
     
@@ -351,6 +354,7 @@ public String getName() {
     /**
      * Returns an enumeration of the addresses bound to this network interface.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
     
@@ -364,6 +368,7 @@ public Enumeration<InetAddress> getInetAddresses() {
      * Returns a human-readable name for this network interface. On Android, this is the same
      * string as returned by {@link #getName}.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Network interface accessing")
     @DSSpec(DSCat.NETWORK)
     

@@ -369,6 +369,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
         //getApplicationContext().unregisterComponentCallbacks(callback);
     }
     
+    @DSSource({DSSourceKind.RESOURCES})
     @DSSafe(DSCat.SAFE_OTHERS)
     
     public final CharSequence getText(int resId) {
@@ -390,6 +391,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
      *
      * @param resId Resource id for the string
      */
+    @DSSource({DSSourceKind.RESOURCES})
     @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.875 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
@@ -407,6 +409,7 @@ public final String getString(int resId) {
      * @param formatArgs The format arguments that will be used for substitution.
      */
 
+    @DSSource({DSSourceKind.RESOURCES})
     @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.877 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")

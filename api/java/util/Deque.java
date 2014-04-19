@@ -84,15 +84,15 @@ public interface Deque<E> extends Queue<E> {
     E element();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     E peek();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     void push(E e);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     E pop();
     
     @DSComment("Abstract Method")

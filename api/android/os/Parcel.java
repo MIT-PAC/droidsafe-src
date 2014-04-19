@@ -1992,7 +1992,7 @@ public String[] newArray(int size) {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.REFLECTION)
     public final <T extends Parcelable> T readParcelable(ClassLoader loader) {
 		return (T) mValueParcelable;
 		// Original method

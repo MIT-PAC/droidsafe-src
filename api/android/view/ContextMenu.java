@@ -15,7 +15,7 @@ public interface ContextMenu extends Menu {
     public ContextMenu setHeaderTitle(int titleRes);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     public ContextMenu setHeaderTitle(CharSequence title);
     
     @DSComment("Abstract Method")

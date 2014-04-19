@@ -33,7 +33,7 @@ public class ParcelFileDescriptor implements Parcelable {
      */
     @DSComment("Data serialization/deserialization")
     @DSSpec(DSCat.SERIALIZATION)
-    @DSSink({DSSinkKind.FILE})
+    @DSSource({DSSourceKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.028 -0500", hash_original_method = "6C139DF2C99367764164B889BB05F5C6", hash_generated_method = "A4FC67A1E0EC81E84D832D0DE58F7F12")
     
 public static ParcelFileDescriptor open(File file, int mode)
@@ -289,6 +289,7 @@ public ParcelFileDescriptor dup() throws IOException {
      *
      * @return Returns the FileDescriptor associated with this object.
      */
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     

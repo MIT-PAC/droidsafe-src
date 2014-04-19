@@ -213,7 +213,7 @@ public long nextLong() {
      * Art of Computer Programming, Volume 2</i>, Section 3.2.1.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SECURITY_VIOLATION)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.565 -0500", hash_original_method = "7BB21D33F15BE2B6645BBF6EE498410D", hash_generated_method = "958B70DFEDEAC53E8F47EC09205A4BC7")
     

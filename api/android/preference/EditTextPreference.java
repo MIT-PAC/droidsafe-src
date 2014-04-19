@@ -68,6 +68,7 @@ public EditTextPreference(Context context) {
      * 
      * @param text The text to save
      */
+    @DSSink({DSSinkKind.SCREEN})
     @DSComment("Persists text to disk")
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.696 -0500", hash_original_method = "CEF16EBC31082C193A3B95CCEE8E6067", hash_generated_method = "61C2AD4A3938034FD3E8FC91B0853EB0")
@@ -90,6 +91,7 @@ public void setText(String text) {
      * 
      * @return The current preference value.
      */
+    @DSSource({DSSourceKind.USER_INPUT})
     @DSComment("Perference UI, only change preference is spec")
     @DSSafe(DSCat.GUI)
     

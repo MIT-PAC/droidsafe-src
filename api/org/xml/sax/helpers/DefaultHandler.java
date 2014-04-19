@@ -19,7 +19,7 @@ import org.xml.sax.SAXParseException;
 public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandler, ErrorHandler {
     
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.XML)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.326 -0400", hash_original_method = "C916F3EC761E0C154A1A9AFCDD294D40", hash_generated_method = "C916F3EC761E0C154A1A9AFCDD294D40")
     public DefaultHandler ()
     {
@@ -168,7 +168,7 @@ public void startDocument ()
      * @see org.xml.sax.ContentHandler#endDocument
      */
     @DSComment("No op default handler")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.XML)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.144 -0500", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "2E393C8D7D82B97D34D7D61966B266D5")
     
 public void endDocument ()
@@ -243,7 +243,7 @@ public void endPrefixMapping (String prefix)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.151 -0500", hash_original_method = "4370BBADFC324ACBBC533D016E5331B9", hash_generated_method = "A43BCFB3590903ED462CCADA0953A76D")
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.XML)
 public void startElement (String uri, String localName,
                   String qName, Attributes attributes)
     throws SAXException
@@ -273,7 +273,7 @@ public void startElement (String uri, String localName,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.153 -0500", hash_original_method = "D1BB65E44FB06EB911D3CDAFED8D37CD", hash_generated_method = "0BCE982FF5852BF7039A7416E6F1C03A")
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.XML)
 public void endElement (String uri, String localName, String qName)
     throws SAXException
     {
@@ -298,7 +298,7 @@ public void endElement (String uri, String localName, String qName)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.156 -0500", hash_original_method = "62C2434D460BC8554CF92975C4745DF3", hash_generated_method = "D16272D013A1528940CEA00C0F124898")
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.XML)
 public void characters (char ch[], int start, int length)
     throws SAXException
     {
@@ -416,7 +416,7 @@ public void warning (SAXParseException e)
      * @see org.xml.sax.SAXParseException
      */
     @DSComment("No op default handler")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.XML)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.168 -0500", hash_original_method = "3C476190220BFC4330D41CB0A7E5D96B", hash_generated_method = "CACE9FD48F5BBAC46481DE007E53B3CB")
     
 public void error (SAXParseException e)

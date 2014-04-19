@@ -217,6 +217,7 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.807 -0500", hash_original_method = "434E790CE8DCEADB6D081C3AE915A829", hash_generated_method = "BD51F80B0E1483CC290DA4C926697DD8")
@@ -347,6 +348,7 @@ final void chompNewline() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("From safe class list")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.816 -0500", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "4EED909B4B3AA6607F4DB5B32DA059E8")

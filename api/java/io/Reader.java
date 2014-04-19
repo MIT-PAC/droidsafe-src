@@ -108,6 +108,7 @@ public boolean markSupported() {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.841 -0500", hash_original_method = "4B904F9F4843983C12271BC14A375F35", hash_generated_method = "3181BD79906C23198BB1DA8AE2668AD1")

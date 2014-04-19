@@ -10,7 +10,7 @@ import java.util.List;
 public interface ExecutorService extends Executor {
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.ABSTRACT_METHOD)
     void shutdown();
     
     @DSComment("Abstract Method")
@@ -18,13 +18,13 @@ public interface ExecutorService extends Executor {
     List<Runnable> shutdownNow();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     boolean isShutdown();
     
     boolean isTerminated();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     boolean awaitTermination(long timeout, TimeUnit unit)
         throws InterruptedException;
     

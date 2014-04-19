@@ -111,10 +111,12 @@ public interface Cursor {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     int getInt(int columnIndex);
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     long getLong(int columnIndex);
     
     @DSComment("Abstract Method")
@@ -127,6 +129,7 @@ public interface Cursor {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     int getType(int columnIndex);
     
     @DSComment("Abstract Method")

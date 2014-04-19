@@ -26,7 +26,7 @@ public interface Collection<E> extends Iterable<E> {
     public boolean isEmpty();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public Iterator<E> iterator();
     
     public boolean remove(Object object);
