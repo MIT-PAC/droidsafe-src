@@ -46,23 +46,7 @@ public class IndicatorTreeElementLabelProvider extends DroidsafeInfoTreeElementL
             Object data = treeElement.getData();
             if (data instanceof JsonObject) {
                 JsonObject jsonObj = (JsonObject) data;
-                String label = Utils.getFieldValueAsString(jsonObj, "label");
-                if (label != null)
-                    return label;
-                String sig = Utils.getFieldValueAsString(jsonObj, "signature");
-                if (sig != null) {
-                    if (viewPart.longLabel())
-                        sig = sig.substring(1, sig.length() - 1);
-                    else
-                        sig = Utils.shortSignature(sig);
-                    label = DroidsafePluginUtilities.removeCloneSuffix(sig);
-                    for (Map.Entry<String, JsonElement> entry: jsonObj.entrySet()) {
-                        String field = entry.getKey();
-                        if (viewPart.getDisplay(field))
-                            label = label + " (" + field + "=" + entry.getValue() + ")";
-                    }
-                    return label;
-                }
+                return viewPart.getLabel(jsonObj);
             }
             return DroidsafePluginUtilities.removeCloneSuffix(data.toString());
         }

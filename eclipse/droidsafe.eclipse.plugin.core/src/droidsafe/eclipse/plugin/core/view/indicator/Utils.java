@@ -12,6 +12,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 
 import droidsafe.analyses.value.VAUtils;
+import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 
 public class Utils {
     
@@ -142,6 +143,7 @@ public class Utils {
 
     public static Set<String> getSortByFields(JsonObject jsonObj) {
         Set<String> fields = new TreeSet<String>();
+        fields.add("label");
         JsonArray childrenArray = Utils.getChildrenArray(jsonObj);
         if (childrenArray != null && childrenArray.size() > 0) {
             jsonObj = (JsonObject) childrenArray.get(0);
@@ -228,7 +230,9 @@ public class Utils {
         if (SIGNATURE_FIELDS.contains(field)) {
             String val1 = getSignatureFieldValueAsString(jsonObj1, field);
             String val2 = getSignatureFieldValueAsString(jsonObj2, field);
-            return val1.compareTo(val2);
+            if (val1 != null && val2 != null)
+                return val1.compareTo(val2);
+            return 0;
         }
         JsonElement val1 = jsonObj1.get(field);
         JsonElement val2 = jsonObj2.get(field);

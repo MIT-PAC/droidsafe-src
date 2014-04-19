@@ -274,7 +274,7 @@ public class IndicatorViewState {
             if (fields.contains("class"))
                 sortByField = "class";
             else
-                sortByField = fields.iterator().next();
+                sortByField = "label";
         }
         return sortByField;
     }
