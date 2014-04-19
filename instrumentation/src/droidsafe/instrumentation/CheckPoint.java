@@ -55,18 +55,29 @@ public class CheckPoint {
 
     }
     
-
     static public void beforeMethodInvoke(Object obj, String fullSig) {
-        instance.checkpointBeforeMethodInvoke(obj, fullSig, new LinkedList<Object>());
+        instance.checkpointBeforeMethodInvoke(obj, fullSig, null);
     }
+
     static public void beforeMethodInvoke(Object obj, String fullSig, ListWrapper argList) {
-        instance.checkpointBeforeMethodInvoke(obj, fullSig, argList.getList());
+        List<Object> list = null;
+        if (argList != null)
+            list = argList.getList();
+        
+        instance.checkpointBeforeMethodInvoke(obj, fullSig, list);
     }
     
     static public void afterMethodInvoke(Object obj, String fullSig) {
-        instance.checkpointAfterMethodInvoke(obj, fullSig);
+        instance.checkpointAfterMethodInvoke(obj, fullSig, null);
     }
-    
+
+    static public void afterMethodInvoke(Object obj, String fullSig, ListWrapper argList) {
+        List<Object> list = null;
+        if (argList != null)
+            list = argList.getList();
+        instance.checkpointAfterMethodInvoke(obj, fullSig, list);
+    }
+ 
     private void checkpointBeforeMethodInvoke(Object obj, String fullSig, List<Object> argList) {
         
         try {
@@ -80,6 +91,8 @@ public class CheckPoint {
                     String limited = argObj.toString();
                     if (limited.length() > 100)
                         limited = limited.substring(0, 100);
+                    if (sb.length() != 0)
+                        sb.append(", ");
                     sb.append(limited);
                 }
             }
@@ -95,22 +108,37 @@ public class CheckPoint {
         }
     }
     
-    private void checkpointAfterMethodInvoke(Object obj, String fullSig) {
+    private void checkpointAfterMethodInvoke(Object obj, String fullSig, List<Object> argList) {
+        
         try {
             String className = "";
             if (obj != null)
                 className = obj.getClass().getCanonicalName();
 
-            String msg = String.format("-[%d] %s [%s]", 
+            StringBuilder sb = new StringBuilder();
+            if (argList != null) {
+                for (Object argObj: argList) {
+                    String limited = argObj.toString();
+                    if (limited.length() > 100)
+                        limited = limited.substring(0, 100);
+
+                    if (sb.length() != 0)
+                        sb.append(", ");
+                    sb.append(limited);
+                }
+            }
+
+            String msg = String.format("-[%d] %s [%s] [%s]", 
                     (int)Thread.currentThread().getId(),
-                    fullSig, className); 
+                    fullSig, className, sb.toString()); 
 
             Log.i(tag, msg);
         }
-        catch (Exception ex) {
+        catch  (Exception ex) {
             System.out.printf("Exception %s \n", ex.toString());
         }
     }
+    
     
     Stack<String> getCurrentStack() {
         String key = Long.toString(Thread.currentThread().getId());
@@ -148,5 +176,9 @@ public class CheckPoint {
             parent = parent.getSuperclass();
         }
         return false;
+    }
+    
+    private boolean testPresent(String str) {
+        return (str != null);
     }
 }

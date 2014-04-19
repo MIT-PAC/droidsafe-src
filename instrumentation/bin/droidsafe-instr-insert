@@ -13,16 +13,6 @@ for JARFILE in $LIBDIR/*.jar; do
     APP_CLASSPATH=$APP_CLASSPATH:$JARFILE
 done
 
-export CLASSPATH=$JAVA_HOME/jre/lib:~/tools/soot/lib:.
-
-#echo java -cp $APP_CLASSPATH:$APPJAR $APPCLASS  -cp .:$APPJAR:$JAVA_RT  $1 $2 $3 $4 $5 $6 $7 $8 $9
-# the first -cp is needed to run soot, the second cp is the path for soot to analyze data
-java -cp $APP_CLASSPATH:$APPJAR $APPCLASS  -cp .:$APPJAR:$ANDROID_JAR:$JAVA_RT $1 $2 $3 $4 $5 $6 $7 $8 $9 -allow-phantom-refs
-
-#java -cp sootclasses.jar soot.Main -cp .:/path/to/jdk/jre/lib/rt.jar <other options>
-
-#export ANDROID_JAR=~/tools/sdk/platforms/android-15/android.jar
-#java -cp sootclasses.jar soot.Main -cp .:/path/to/jdk/jre/lib/rt.jar
-#java -jar ~/tools/soot/lib/soot-2.5.0.jar $1 $2 $3 $4 $5 $6 $7 $8 $9
-#java -cp ~/tools/soot/lib/soot-2.5.0.jar soot.Main  -cp .:$JAVA_HOME/jre/lib/rt.jar:$ANDROID_JAR $1 $2 $3 $4 $5 $6 $7 $8 $9
+echo java -cp $APP_CLASSPATH:$APPJAR $APPCLASS  -cp .:$APPJAR:$ANDROID_JAR:$JAVA_RT $1 $2 $3 $4 $5 $6 $7 $8 $9 -allow-phantom-refs
+java -cp $APP_CLASSPATH:$APPJAR $APPCLASS  -cp $APPJAR $1 $2 $3 $4 $5 $6 $7 $8 $9 -allow-phantom-refs
 
