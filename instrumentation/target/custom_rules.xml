@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="PickContacts" default="help">
+<project>
 <property name="out.dex.input.absolute.dir" value="bin/classes.mod"/>
 <property name="classes.mod"  value="${out.dex.input.absolute.dir}"/>
 <property name="classes.orig" value="bin/classes"/>
@@ -8,15 +8,13 @@
 <property name="instr.tool.jar" value="${instr.tool.dir}/droidsafe-instr.jar"/>
 <property name="instr.lib.package" value="droidsafe/instrumentation"/>
 <property name="instr.code.injector" value="${instr.tool.dir}/droidsafe-instr-insert"/>
+<property name="manifest.dump.tool" value="${droidsafe.dir}/tools/DumpManifest"/>
 
 <target name="-post-compile">
     <echo>
         Instrumentation code injection
     </echo> 
     <mkdir dir="${classes.mod}"/>
-    <copy todir="${classes.mod}" flatten="false">
-        <fileset dir="bin/classes/"/>
-    </copy>
     <exec command="${instr.code.injector}">
         <arg value="-process-dir ${classes.orig} -d ${classes.mod}"/>
     </exec>
@@ -25,6 +23,36 @@
             <include name="**/instrumentation/*.class"/>
         </patternset>
     </unjar>
+    <!--
     <delete dir="${classes.orig}"/>
-    </target>
+    -->
+</target>
+<target name="instr"
+    depends="debug, install, manifest-dump">
+    <echo> "To run launch the app from the CLI do: "</echo>
+    <echo>
+    "adb shell am start -n package/activity_fullname"
+    </echo>
+</target>
+
+
+<target name="install"
+    depends="-set-debug-files">
+    <echo>
+    "${out.final.file}" 
+    </echo>
+    <exec executable="adb">
+        <arg value="install"/>
+        <arg value="-r"/>
+        <arg value="${out.final.file}"/>
+    </exec>
+</target>
+
+<target name="manifest-dump">
+    <exec executable="${manifest.dump.tool}">
+        <arg value="."/>
+    </exec>
+</target>
+
+
 </project>

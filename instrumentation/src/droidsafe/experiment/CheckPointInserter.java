@@ -136,6 +136,9 @@ class InvokeInstrumenter extends BodyTransformer
         SootMethod listAddMethod =  
                 Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(java.lang.Object)>");
 
+        SootMethod listAddMethodPrim =  
+                Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(double)>");
+
         Iterator<Unit> stmtIt = units.snapshotIterator();
         
         Expr newListExpr = Jimple.v().newNewExpr(RefType.v("droidsafe.instrumentation.ListWrapper"));
@@ -206,13 +209,11 @@ class InvokeInstrumenter extends BodyTransformer
 
                         postInvokeList.addLast(Jimple.v().newInvokeStmt(addArgExpr));
                     }
-                    /*
-                else if (argValue.getType() instanceof PrimType) {
-                    PrimType primType = (PrimType)argValue.getType();
-                    addArgExpr = Jimple.v().newVirtualInvokeExpr(
-                        argListLocal, listAddMethod.makeRef(), argValue.
-                }
-                     */
+                    else if (argValue.getType() instanceof PrimType) {
+                        PrimType primType = (PrimType)argValue.getType();
+                        addArgExpr = Jimple.v().newVirtualInvokeExpr(
+                                argListLocal, listAddMethodPrim.makeRef(), argValue);
+                    }
                 }   
             }
             
