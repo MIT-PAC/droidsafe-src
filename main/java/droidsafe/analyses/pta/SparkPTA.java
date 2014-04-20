@@ -178,10 +178,14 @@ public class SparkPTA extends PTABridge {
 
         long totalIndegree = 0;
 
+        int totalReachableMethodLines = 0;
+        
         while (qr.hasNext()) {
             MethodOrMethodContext momc = qr.next();
 
-            reachableMethods.add(momc.method());
+            if (reachableMethods.add(momc.method())) {
+                totalReachableMethodLines += SootUtils.getNumLines(momc.method());
+            }
 
             reachableMethodContexts.add(momc);
 
@@ -216,6 +220,7 @@ public class SparkPTA extends PTABridge {
         System.out.println("Average Contexts per Method: " + 
                 (((double)reachableMethodContexts.size()) / ((double)reachableMethods.size())));
         System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
+        System.out.println("Total lines of reachable methods: " + totalReachableMethodLines);
 
         for (SootMethod method : getReachableMethods()) {
             Set<MethodOrMethodContext> mcs = getMethodContexts(method);

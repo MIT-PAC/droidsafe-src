@@ -486,7 +486,7 @@ public class SootUtils {
     public static SootClass getSootClass(ClassConstant cc) {
         return Scene.v().getSootClass(cc.getValue().replaceAll("/", "."));
     }
-    
+
 
     /**
      * Matching a callback method.  We ignore return type as it is not important in callback
@@ -834,7 +834,7 @@ public class SootUtils {
             logger.error("Error writing class to file {}", clz, e);
         }
     }
-    
+
     /** 
      * Return location for a class as the location of some constructor for the class
      * or null if no constructors with source location.
@@ -847,10 +847,10 @@ public class SootUtils {
                     return slt;
             }
         }
-        
+
         return null;
     }
-    
+
     /**
      * Return the source location of a method based on its first statement.
      */
@@ -979,7 +979,7 @@ public class SootUtils {
         else 
             return type;
     }
-    
+
     /**
      * Given a type of a receiver, get the sootclass that will be used to resolve calls
      * for this type
@@ -992,7 +992,7 @@ public class SootUtils {
         } else {
             logger.error("Calling getCallingType() with {}", type.getClass());
         }
-            
+
         return null;        
     }
 
@@ -1077,7 +1077,7 @@ public class SootUtils {
     public static boolean isInnerClass(SootClass clz) {
         return clz.getName().contains("$");        
     }
-    
+
     /**
      * If this class is an inner class with "$" separating outer from inner, then,
      * return the outerclass defintion.
@@ -1085,20 +1085,20 @@ public class SootUtils {
     public static SootClass getOuterClass(SootClass clz) {
         if (!isInnerClass(clz))
             return null;
-        
+
         String outer = clz.getName().substring(0, clz.getName().indexOf("$"));
-        
+
         try {
             SootClass o = Scene.v().getSootClass(outer);
             return o;
         } catch (Exception e) {
             logger.warn("Exception trying to resolve outer class: {} for {}", outer, clz, e);
         }
-        
+
         return null;
     }
-    
-    
+
+
     /**
      * Given two classes that could be related (one is a parent of the other or vice versa), return 
      * the child class.  If not related, then return null
@@ -1494,6 +1494,37 @@ public class SootUtils {
 
     }
 
+    public static int getNumLines(SootMethod method) {
+        if (method.isAbstract() || !method.isConcrete()) 
+            return 0;
+
+        try {
+            int startingLine = getMethodLocation(method).getLine();
+            
+            Body body = method.retrieveActiveBody();
+
+            Chain<Unit> units = body.getUnits();
+
+            Unit curUnit = units.getLast();
+            Unit first = units.getFirst();
+
+            while (curUnit != first) {
+                Stmt curStmt = (Stmt)curUnit;
+                SourceLocationTag sl = getSourceLocation(curStmt); 
+                if (sl != null)
+                    return sl.getLine() - startingLine;
+
+                curUnit = units.getPredOf(curUnit);
+            }
+
+        } catch (Exception e) {
+            return 0;
+        }
+        
+        return 0;
+    }
+
+
     /** 
      * Returns a string describing the specified stmt.  
      * Used for error messages 
@@ -1558,16 +1589,16 @@ public class SootUtils {
             ancestors.add(curAncestor.getSuperclass());
             curAncestor = curAncestor.getSuperclass();
         }
-        
+
         return ancestors;
     }
 
-      /**
-           * get a list of statements that a method calls the other
-                * @param sootMethod
-                     * @param callee
-                          * @return
-                               */
+    /**
+     * get a list of statements that a method calls the other
+     * @param sootMethod
+     * @param callee
+     * @return
+     */
     public static List<Stmt> getInvokeStatements(SootMethod sootMethod, SootMethod callee) {
         List<Stmt> invokeStmtList = new LinkedList<Stmt>();
 
