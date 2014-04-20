@@ -2,16 +2,20 @@
 
 apac_home=${APAC_HOME?"Need to define APAC_HOME"}
 
-echo "=== Precision Level 5 ==="
-${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -arg "p 5" 
-echo "=== Precision Level 4 ==="
-${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 4" 
-echo "=== Precision Level 3 ==="
-${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 3" 
-echo "=== Precision Level 2 ==="
-${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 2" 
-echo "=== Precision Level 1 ==="
-${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 1" 
-echo "=== Precision Level 0 ==="
-${apac_home}/system-tests/regtest.py -threads 1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 0" 
+ARGS=1        # Number of arguments expected.
 
+test $# -ne $ARGS && \
+echo "Usage: ds-dec-precision THREADS" && exit 1
+
+echo "=== Precision Level 5 ==="
+${apac_home}/system-tests/regtest.py -threads $1 -timeout 18000 -dir . -skipcompleted -arg "p 5" 
+echo "=== Precision Level 4 ==="
+${apac_home}/system-tests/regtest.py -threads $1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 4" 
+echo "=== Precision Level 3 ==="
+${apac_home}/system-tests/regtest.py -threads $1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 3" 
+echo "=== Precision Level 2 ==="
+${apac_home}/system-tests/regtest.py -threads $1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 2" 
+echo "=== Precision Level 1 ==="
+${apac_home}/system-tests/regtest.py -threads $1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 1" 
+echo "=== Precision Level 0 ==="
+${apac_home}/system-tests/regtest.py -threads $1 -timeout 18000 -dir . -skipcompleted -nosetup -arg "p 0" 
