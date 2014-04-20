@@ -29,10 +29,7 @@
 </target>
 <target name="instr"
     depends="debug, install, manifest-dump">
-    <echo> "To run launch the app from the CLI do: "</echo>
-    <echo>
-    "adb shell am start -n package/activity_fullname"
-    </echo>
+    <echo> "To run launch the app from the CLI do suggest command from Manifiest "</echo>
 </target>
 
 

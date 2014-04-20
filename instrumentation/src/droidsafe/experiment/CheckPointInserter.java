@@ -104,13 +104,15 @@ class InvokeInstrumenter extends BodyTransformer
         soot.Scene.v().addBasicClass("android.instrumentation.CheckPoint");
 
         Chain<Unit> units = body.getUnits();
+        boolean insertParamList = true;
 
         // Add code to increase goto counter each time a goto is encountered
         Local tmpLocal = Jimple.v().newLocal("droidsafeInstrTmp", RefType.v("java.lang.String"));
         body.getLocals().addLast(tmpLocal);
         
         Local argListLocal = Jimple.v().newLocal("droidsafeArgList", RefType.v("droidsafe.instrumentation.ListWrapper"));
-        //body.getLocals().addLast(argListLocal);
+        if (insertParamList)
+            body.getLocals().addLast(argListLocal);
 
         SootClass sootClass = Scene.v().getSootClass("droidsafe.instrumentation.CheckPoint");
         
@@ -222,18 +224,18 @@ class InvokeInstrumenter extends BodyTransformer
                 }   
             }
             
-      /*      if (!specialInvoke)
+            if (!specialInvoke && insertParamList)
                 listLocal = argListLocal;
-*/
+
             Expr afterInvokeExpr = Jimple.v().newStaticInvokeExpr(
                     afterInvokeMethod.makeRef(), callerObject, tmpLocal, listLocal);
             Stmt afterInvokeStmt = Jimple.v().newInvokeStmt(afterInvokeExpr);
 
             units.insertAfter(afterInvokeStmt, s); 
-/*
-            if (!specialInvoke)
+
+            if (!specialInvoke && insertParamList)
                 units.insertAfter(postInvokeList, s);
-*/
+
 
             // we are going to inert instruction before and after the current one
             //logger.info("use boxes: {} ", useBoxes);
