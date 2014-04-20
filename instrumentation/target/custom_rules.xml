@@ -54,5 +54,7 @@
     </exec>
 </target>
 
-
+<target name="instr-remove">
+    <delete file="custom_rules.xml"/>
+</target>
 </project>

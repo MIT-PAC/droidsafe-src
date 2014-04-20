@@ -110,7 +110,7 @@ class InvokeInstrumenter extends BodyTransformer
         body.getLocals().addLast(tmpLocal);
         
         Local argListLocal = Jimple.v().newLocal("droidsafeArgList", RefType.v("droidsafe.instrumentation.ListWrapper"));
-        body.getLocals().addLast(argListLocal);
+        //body.getLocals().addLast(argListLocal);
 
         SootClass sootClass = Scene.v().getSootClass("droidsafe.instrumentation.CheckPoint");
         
@@ -135,9 +135,6 @@ class InvokeInstrumenter extends BodyTransformer
         
         SootMethod listAddMethod =  
                 Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(java.lang.Object)>");
-
-        SootMethod listAddMethodPrim =  
-                Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(double)>");
 
         Iterator<Unit> stmtIt = units.snapshotIterator();
         
@@ -164,6 +161,12 @@ class InvokeInstrumenter extends BodyTransformer
             }
             
             List<ValueBox> useBoxes = invokeExpr.getUseBoxes();
+            
+            if (useBoxes.size() == 0)
+            {
+                logger.info("methd call has no uses {} ", invokeExpr);
+                continue;
+            }
             Value callerObject = useBoxes.get(0).getValue();
             Value callerObjectForBeforeInvoke = callerObject;
 
@@ -209,25 +212,28 @@ class InvokeInstrumenter extends BodyTransformer
 
                         postInvokeList.addLast(Jimple.v().newInvokeStmt(addArgExpr));
                     }
-                    else if (argValue.getType() instanceof PrimType) {
-                        PrimType primType = (PrimType)argValue.getType();
-                        addArgExpr = Jimple.v().newVirtualInvokeExpr(
-                                argListLocal, listAddMethodPrim.makeRef(), argValue);
-                    }
+                    /*
+                else if (argValue.getType() instanceof PrimType) {
+                    PrimType primType = (PrimType)argValue.getType();
+                    addArgExpr = Jimple.v().newVirtualInvokeExpr(
+                        argListLocal, listAddMethod.makeRef(), argValue.
+                }
+                     */
                 }   
             }
             
-            if (!specialInvoke)
+      /*      if (!specialInvoke)
                 listLocal = argListLocal;
-
+*/
             Expr afterInvokeExpr = Jimple.v().newStaticInvokeExpr(
                     afterInvokeMethod.makeRef(), callerObject, tmpLocal, listLocal);
             Stmt afterInvokeStmt = Jimple.v().newInvokeStmt(afterInvokeExpr);
 
             units.insertAfter(afterInvokeStmt, s); 
-
+/*
             if (!specialInvoke)
                 units.insertAfter(postInvokeList, s);
+*/
 
             // we are going to inert instruction before and after the current one
             //logger.info("use boxes: {} ", useBoxes);
