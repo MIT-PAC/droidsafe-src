@@ -15,6 +15,7 @@ MAIN_CLASS = "droidsafe.main.Main"
 APAC_HOME = os.environ['APAC_HOME'] + os.sep
 
 SERVER_MEMORY="96"
+DESKTOP_MEMORY="16"
 
 def run_droidsafe(args):
     libs = APAC_HOME + "bin" + os.sep
@@ -41,7 +42,7 @@ def run_droidsafe(args):
         java_command.append("-Xmx" + SERVER_MEMORY+ "g")
     else:
         java_command.append("-Xms1g")
-        java_command.append("-Xmx16g")
+        java_command.append("-Xmx" + DESKTOP_MEMORY+ "g")
 
 #   java_command.append("-Xrunhprof:heap=sites,depth=6")
     java_command.append("-Dfile.encoding=UTF-8")
