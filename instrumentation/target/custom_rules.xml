@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+<property name="out.dex.input.absolute.dir" value="bin/classes.mod"/>
+<property name="classes.mod"  value="${out.dex.input.absolute.dir}"/>
+<property name="classes.mod.jimple"  value="${out.dex.input.absolute.dir}/jimple"/>
+
+<property name="classes.orig" value="bin/classes"/>
+<property name="droidsafe.dir" value="${env.APAC_HOME}"/>
+<property name="instr.tool.dir" value="${droidsafe.dir}/tools/instrumentation/bin"/>
+<property name="instr.tool.jar" value="${instr.tool.dir}/droidsafe-instr.jar"/>
+<property name="instr.lib.package" value="droidsafe/instrumentation"/>
+<property name="instr.code.injector" value="${instr.tool.dir}/droidsafe-instr-insert"/>
+<property name="instr.logcat.capture" value="${instr.tool.dir}/logcat-capture.sh"/>
+<property name="manifest.dump.tool" value="${droidsafe.dir}/tools/DumpManifest"/>
+
+<target name="-post-compile">
+    <echo>
+        Instrumentation code injection
+    </echo> 
+    <mkdir dir="${classes.mod}"/>
+    <exec command="${instr.code.injector}">
+        <arg value="-process-dir ${classes.orig} -d ${classes.mod}"/>
+    </exec>
+    <unjar src="${instr.tool.jar}"  dest="${classes.mod}">
+        <patternset>
+            <include name="**/instrumentation/*.class"/>
+        </patternset>
+    </unjar>
+    <!--
+    <delete dir="${classes.orig}"/>
+    -->
+</target>
+<target name="instr"
+    depends="debug, install, manifest-dump">
+    <echo> "To run launch the app from the CLI do suggest command from Manifiest "</echo>
+</target>
+
+
+<target name="install"
+    depends="-set-debug-files">
+    <echo>
+    "${out.final.file}" 
+    </echo>
+    <exec executable="adb">
+        <arg value="install"/>
+        <arg value="-r"/>
+        <arg value="${out.final.file}"/>
+    </exec>
+</target>
+
+<target name="manifest-dump">
+    <exec executable="${manifest.dump.tool}">
+        <arg value="."/>
+    </exec>
+</target>
+
+<target name="instr-remove">
+    <delete file="custom_rules.xml"/>
+</target>
+
+<target name="logcat">
+    <exec executable="${instr.logcat.capture}">
+        <arg value="logcat.txt"/>
+    </exec>
+
+</target>
+
+
+
+<target name="tx-classes"
+    depends="-set-debug-files">
+    <exec command="${instr.code.injector}">
+        <arg value="-process-dir ${classes.orig} -d ${classes.mod.jimple} -f J -validate"/>
+    </exec>
+</target>
+ 
+</project>
