@@ -10,6 +10,7 @@
 <property name="instr.tool.jar" value="${instr.tool.dir}/droidsafe-instr.jar"/>
 <property name="instr.lib.package" value="droidsafe/instrumentation"/>
 <property name="instr.code.injector" value="${instr.tool.dir}/droidsafe-instr-insert"/>
+<property name="instr.logcat.capture" value="${instr.tool.dir}/logcat-capture.sh"/>
 <property name="manifest.dump.tool" value="${droidsafe.dir}/tools/DumpManifest"/>
 
 <target name="-post-compile">
@@ -56,6 +57,15 @@
 <target name="instr-remove">
     <delete file="custom_rules.xml"/>
 </target>
+
+<target name="logcat">
+    <exec executable="${instr.logcat.capture}">
+        <arg value="logcat.txt"/>
+    </exec>
+
+</target>
+
+
 
 <target name="tx-classes"
     depends="-set-debug-files">
