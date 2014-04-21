@@ -89,6 +89,13 @@ class InvokeInstrumenter extends BodyTransformer
     
     protected void internalTransform(Body body, String phaseName, Map options)
     {
+        /*
+        int a = 0;
+        int b = 1;
+        if (a != b)
+            return;
+        */
+        
         SootClass sClass = body.getMethod().getDeclaringClass();
         
         String className = sClass.getName();
@@ -100,6 +107,11 @@ class InvokeInstrumenter extends BodyTransformer
             return;
         }
 
+        SootMethod myMethod = body.getMethod();
+        if (myMethod.getSignature().matches(".*\\$\\d.*")) {
+            logger.warn("Skipping annonymous stuff");
+            return;
+        }
         soot.Scene.v().addBasicClass("android.instrumentation.ListWrapper");
         soot.Scene.v().addBasicClass("android.instrumentation.CheckPoint");
 
