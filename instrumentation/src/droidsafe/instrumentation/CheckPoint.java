@@ -101,7 +101,7 @@ public class CheckPoint {
                     (int)Thread.currentThread().getId(),
                     fullSig, className, sb.toString()); 
 
-            Log.i(tag, msg);
+            Log.w(tag, msg);
         }
         catch  (Exception ex) {
             System.out.printf("Exception %s \n", ex.toString());
@@ -132,7 +132,7 @@ public class CheckPoint {
                     (int)Thread.currentThread().getId(),
                     fullSig, className, sb.toString()); 
 
-            Log.i(tag, msg);
+            Log.w(tag, msg);
         }
         catch  (Exception ex) {
             System.out.printf("Exception %s \n", ex.toString());

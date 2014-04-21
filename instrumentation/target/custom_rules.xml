@@ -2,6 +2,8 @@
 <project>
 <property name="out.dex.input.absolute.dir" value="bin/classes.mod"/>
 <property name="classes.mod"  value="${out.dex.input.absolute.dir}"/>
+<property name="classes.mod.jimple"  value="${out.dex.input.absolute.dir}/jimple"/>
+
 <property name="classes.orig" value="bin/classes"/>
 <property name="droidsafe.dir" value="${env.APAC_HOME}"/>
 <property name="instr.tool.dir" value="${droidsafe.dir}/tools/instrumentation/bin"/>
@@ -54,4 +56,12 @@
 <target name="instr-remove">
     <delete file="custom_rules.xml"/>
 </target>
+
+<target name="tx-classes"
+    depends="-set-debug-files">
+    <exec command="${instr.code.injector}">
+        <arg value="-process-dir ${classes.orig} -d ${classes.mod.jimple} -f J -validate"/>
+    </exec>
+</target>
+ 
 </project>

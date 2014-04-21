@@ -104,7 +104,7 @@ class InvokeInstrumenter extends BodyTransformer
         soot.Scene.v().addBasicClass("android.instrumentation.CheckPoint");
 
         Chain<Unit> units = body.getUnits();
-        boolean insertParamList = true;
+        boolean insertParamList = false;
 
         // Add code to increase goto counter each time a goto is encountered
         Local tmpLocal = Jimple.v().newLocal("droidsafeInstrTmp", RefType.v("java.lang.String"));
@@ -127,7 +127,9 @@ class InvokeInstrumenter extends BodyTransformer
                 "<droidsafe.instrumentation.CheckPoint: void beforeMethodInvoke(java.lang.Object,java.lang.String)>");
 
         afterInvokeMethod = Scene.v().getMethod(
-                "<droidsafe.instrumentation.CheckPoint: void afterMethodInvoke(java.lang.Object,java.lang.String,droidsafe.instrumentation.ListWrapper)>");
+                "<droidsafe.instrumentation.CheckPoint: void afterMethodInvoke(java.lang.Object,java.lang.String)>");
+
+//                "<droidsafe.instrumentation.CheckPoint: void afterMethodInvoke(java.lang.Object,java.lang.String,droidsafe.instrumentation.ListWrapper)>");
 
         SootMethod listCreateMethod =  
                 Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void <init>()>");
@@ -173,9 +175,11 @@ class InvokeInstrumenter extends BodyTransformer
             Value callerObjectForBeforeInvoke = callerObject;
 
             boolean specialInvoke = false;
-            if (invokeExpr instanceof SpecialInvokeExpr) {
+            if (invokeExpr instanceof SpecialInvokeExpr || invokeExpr instanceof StaticInvokeExpr) {
                 logger.debug("Skip special invoke");
                 callerObjectForBeforeInvoke = NullConstant.v();
+
+                callerObject = callerObjectForBeforeInvoke; 
                 specialInvoke = true;
             }
             
@@ -228,7 +232,8 @@ class InvokeInstrumenter extends BodyTransformer
                 listLocal = argListLocal;
 
             Expr afterInvokeExpr = Jimple.v().newStaticInvokeExpr(
-                    afterInvokeMethod.makeRef(), callerObject, tmpLocal, listLocal);
+                    afterInvokeMethod.makeRef(), callerObject, tmpLocal);
+
             Stmt afterInvokeStmt = Jimple.v().newInvokeStmt(afterInvokeExpr);
 
             units.insertAfter(afterInvokeStmt, s); 
