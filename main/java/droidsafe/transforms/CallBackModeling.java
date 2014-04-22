@@ -161,9 +161,12 @@ public class CallBackModeling {
                     //and make sure all of them are verified, if any of them is unverified, then we need 
                     //to fake (maybe, who knows, that is what we do)...
                     for (SootClass parent : SootUtils.getParents(clz)) {
+                        if (!API.v().isSystemClass(parent))
+                            continue;
+                        
                         if (parent.isInterface() && 
-                                parent.declaresMethod(method.getSubSignature()) &&
-                                !API.v().isDSVerifiedMethod(parent.getMethod(method.getSubSignature()))) {
+                                parent.declaresMethod(method.getSubSignature()) /*&&
+                                !API.v().isDSVerifiedMethod(parent.getMethod(method.getSubSignature()))*/) {
                             shouldFake = true;
                             break;
                         }
@@ -172,8 +175,9 @@ public class CallBackModeling {
                 } else {
                     //don't add fallback callback modeling the method is verified, but if the class is a 
                     //component, then we cannot rely on the verified tag, so fake anyway
-                    if (!API.v().isDSVerifiedMethod(closetSystemParent) || Hierarchy.isAndroidComponentClass(clz))
-                        shouldFake = true;
+                    //if (!API.v().isDSVerifiedMethod(closetSystemParent) || Hierarchy.isAndroidComponentClass(clz))
+                    
+                    shouldFake = true;
                 }
                 
                 if (API.v().isAIDLCallback(method)) 
