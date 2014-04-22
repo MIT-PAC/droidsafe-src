@@ -20,8 +20,8 @@ public enum FilterOp {
     public String toString() {
         switch (this) {
             case EXCLUDE: return "exclude";
-            case INCLUDE: return "include";
-            default: return "show";
+            case INCLUDE: return "include (if true for node and all parents)";
+            default: return "include (if true for any children)";
         }
     }
     
