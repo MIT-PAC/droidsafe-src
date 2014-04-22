@@ -97,13 +97,7 @@ class InvokeInstrumenter extends BodyTransformer
      */
     protected void internalTransform(Body body, String phaseName, Map options)
     {
-        /*
-        int a = 0;
-        int b = 1;
-        if (a != b)
-            return;
-        */
-        
+       
         SootClass sClass = body.getMethod().getDeclaringClass();
         
         String className = sClass.getName();
@@ -161,13 +155,17 @@ class InvokeInstrumenter extends BodyTransformer
         
         SootMethod listAddMethod =  
                 Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(java.lang.Object)>");
+        
+        SootMethod listAddDoubleMethod =  
+                Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(double)>");
+
+        SootMethod listAddBooleanMethod =  
+                Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(boolean)>");
 
         Iterator<Unit> stmtIt = units.snapshotIterator();
         
         Expr newListExpr = Jimple.v().newNewExpr(RefType.v("droidsafe.instrumentation.ListWrapper"));
 
-
-        boolean firstInvoke = true;
 
         while(stmtIt.hasNext())
         {
@@ -175,19 +173,19 @@ class InvokeInstrumenter extends BodyTransformer
 
             if (!s.containsInvokeExpr())
                 continue;
-            
+
             InvokeExpr invokeExpr = (InvokeExpr)s.getInvokeExpr();
             Type type = invokeExpr.getType();
             SootMethod method = invokeExpr.getMethod();
-            
+
             logger.debug("invokestemt: {}, type:{}, method:{}", invokeExpr, type, method);
             if (s instanceof InvokeStmt) {
                 ValueBox valueBox = ((InvokeStmt)(s)).getInvokeExprBox();
                 logger.debug("invokeexprbox: {} ", valueBox);
             }
-            
+
             List<ValueBox> useBoxes = invokeExpr.getUseBoxes();
-            
+
             if (useBoxes.size() == 0)
             {
                 logger.info("methd call has no uses {} ", invokeExpr);
@@ -203,29 +201,27 @@ class InvokeInstrumenter extends BodyTransformer
                 callerObjectForBeforeInvoke = NullConstant.v();
                 specialInvoke = true;
             }
-            
+
             if (invokeExpr instanceof StaticInvokeExpr) {
                 callerObjectForBeforeInvoke = NullConstant.v();
                 callerObjectForAfterInvoke = NullConstant.v();
             }
-            
+
             Stmt strAssign = Jimple.v().newAssignStmt(tmpLocal, StringConstant.v(method.toString()));
             units.insertBefore(strAssign, s);
-            
+
             Expr beforeInvokeExpr;
             beforeInvokeExpr = Jimple.v().newStaticInvokeExpr(
                     beforeInvokeMethod.makeRef(), callerObjectForBeforeInvoke, tmpLocal);
-      
+
             Stmt beforeInvokeStmt = Jimple.v().newInvokeStmt(beforeInvokeExpr);
             units.insertBefore(beforeInvokeStmt, s); 
-                        
+
             Chain<Unit> postInvokeList = new HashChain<Unit>();
             // clear argument list
             postInvokeList.addLast(Jimple.v().newAssignStmt(argListLocal, newListExpr));
             postInvokeList.addLast(Jimple.v().newInvokeStmt(
                     Jimple.v().newSpecialInvokeExpr(argListLocal, listCreateMethod.makeRef())));
-
-            firstInvoke = false;
 
             postInvokeList.addLast(Jimple.v().newInvokeStmt(
                     Jimple.v().newVirtualInvokeExpr(argListLocal, 
@@ -244,16 +240,18 @@ class InvokeInstrumenter extends BodyTransformer
 
                         postInvokeList.addLast(Jimple.v().newInvokeStmt(addArgExpr));
                     }
-                    /*
-                else if (argValue.getType() instanceof PrimType) {
-                    PrimType primType = (PrimType)argValue.getType();
-                    addArgExpr = Jimple.v().newVirtualInvokeExpr(
-                        argListLocal, listAddMethod.makeRef(), argValue.
+                    else if (argValue.getType() instanceof BooleanType) {
+                        BooleanType primType = (BooleanType)argValue.getType();
+                        addArgExpr = Jimple.v().newVirtualInvokeExpr(
+                                argListLocal, listAddBooleanMethod.makeRef(), argValue);
+                    }   
+                    else if (argValue.getType() instanceof PrimType) {
+                        addArgExpr = Jimple.v().newVirtualInvokeExpr(
+                                argListLocal, listAddDoubleMethod.makeRef(), argValue);
+                    }
                 }
-                     */
-                }   
             }
-            
+
             if (!specialInvoke && insertParamList)
                 listLocal = argListLocal;
 
