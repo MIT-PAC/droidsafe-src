@@ -144,6 +144,10 @@ public class Method implements Comparable<Method> {
         }
     }
 
+    public InvokeExpr getInvokeExpr() {
+        return ptaInfo.getInvokeExpr();
+    }
+    
     public SootMethod getSootMethod() {
         return sootMethod;
     }

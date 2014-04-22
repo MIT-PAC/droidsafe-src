@@ -29,6 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootMethod;
+import soot.jimple.InvokeExpr;
 
 
 /**
@@ -213,8 +214,8 @@ public class SecuritySpecification  {
     }
 
     private String calculateHighlevelFlows() {
-        Map<SootMethod, Set<InfoKind>> methodToSinks = new HashMap<SootMethod, Set<InfoKind>>();
-        Map<SootMethod, Set<InfoKind>> methodToSources = new HashMap<SootMethod, Set<InfoKind>>();
+        Map<InvokeExpr, Set<InfoKind>> methodToSinks = new HashMap<InvokeExpr, Set<InfoKind>>();
+        Map<InvokeExpr, Set<InfoKind>> methodToSources = new HashMap<InvokeExpr, Set<InfoKind>>();
 
 
         List<Method> methods = new ArrayList<Method>(eventBlocks.keySet());
@@ -226,35 +227,35 @@ public class SecuritySpecification  {
             Collections.sort (outm);
 
             for (Method oe : outm) {
-                SootMethod oeSM = oe.getSootMethod();
-
+                InvokeExpr invokeE = oe.getInvokeExpr();
+                
                 Set<InfoKind> sinks = oe.getSinkInfoKinds();
                 Set<InfoKind> sources = oe.getSourcesInfoKinds();
 
                 for (InfoKind srcKind : sources) {
-                    if (! methodToSources.containsKey(oeSM))
-                        methodToSources.put(oeSM, new HashSet<InfoKind>());
+                    if (! methodToSources.containsKey(invokeE))
+                        methodToSources.put(invokeE, new HashSet<InfoKind>());
                     
-                    methodToSources.get(oeSM).add(srcKind);
+                    methodToSources.get(invokeE).add(srcKind);
                 }
 
                 for (InfoKind sinkKind : sinks) {
-                    if (! methodToSinks.containsKey(oeSM))
-                        methodToSinks.put(oeSM, new HashSet<InfoKind>());
+                    if (! methodToSinks.containsKey(invokeE))
+                        methodToSinks.put(invokeE, new HashSet<InfoKind>());
                     
-                    methodToSinks.get(oeSM).add(sinkKind);
+                    methodToSinks.get(invokeE).add(sinkKind);
                 }
             }
         }
         
         int highLevelFlows = 0;
         StringBuffer sb = new StringBuffer();
-        for (SootMethod sinkM : methodToSinks.keySet()) {
-            for (InfoKind sinkKind : methodToSinks.get(sinkM)) {
-                if (!methodToSources.containsKey(sinkM))
+        for (InvokeExpr invokeE : methodToSinks.keySet()) {
+            for (InfoKind sinkKind : methodToSinks.get(invokeE)) {
+                if (!methodToSources.containsKey(invokeE))
                     continue;
                 
-                for (InfoKind srcKind : methodToSources.get(sinkM)) {
+                for (InfoKind srcKind : methodToSources.get(invokeE)) {
                     sb.append("\t" + srcKind + " -> " + sinkKind + "\n");
                     highLevelFlows++;
                 }
