@@ -87,7 +87,7 @@ public class TraceLine {
             //method signature
             ind = line.indexOf("<");
             endInd = line.indexOf(")>");
-            list.add(line.substring(ind+1, endInd+2));
+            list.add(line.substring(ind, endInd+2));
 
             //Actual class
             line = line.substring(endInd + 2);

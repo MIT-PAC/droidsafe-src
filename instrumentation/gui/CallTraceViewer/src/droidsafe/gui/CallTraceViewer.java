@@ -43,13 +43,19 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import droidsafe.gui.FileTypeDetector.FileType;
+import droidsafe.gui.FileTypeDetector;
 
 public class CallTraceViewer extends JPanel 
                              implements ActionListener {
@@ -90,7 +96,8 @@ public class CallTraceViewer extends JPanel
         loadButton.addActionListener(this);
 
         //Lay everything out.
-        treePanel.setPreferredSize(new Dimension(800, 600)); 
+        treePanel.setPreferredSize(new Dimension(900, 600)); 
+       
         add(treePanel, BorderLayout.CENTER);
 
         JPanel panel = new JPanel(new GridLayout(0,4));
@@ -103,37 +110,55 @@ public class CallTraceViewer extends JPanel
 
     public void populateTree(DynamicTree treePanel) {
         String p1Name = new String("Parent 1");
-        String p2Name = new String("Parent 2");
         String c1Name = new String("Child 1");
         String c2Name = new String("Child 2");
 
-        DefaultMutableTreeNode p1, p2;
+        DefaultMutableTreeNode p1;
 
         p1 = treePanel.addObject(null, p1Name);
-        p2 = treePanel.addObject(null, p2Name);
-
 
         treePanel.addObject(p1, c1Name);
         treePanel.addObject(p1, c2Name);
 
-        treePanel.addObject(p2, c1Name);
-        treePanel.addObject(p2, c2Name);
     }
         
     
     private void loadFromFile() {
         final JFileChooser fc = new JFileChooser();
-        Dimension dialogDim = new Dimension(600, 400);
+        Dimension dialogDim = new Dimension(800, 400);
         fc.setSize(dialogDim);
         fc.setPreferredSize(dialogDim);
         int returnValue = fc.showOpenDialog(this);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
            
-            callTree.load(fc.getSelectedFile());
+            File selectedFile = fc.getSelectedFile();
+            List<String> lines = null;
+            try {
+                lines = IOUtils.readLines(new FileInputStream(selectedFile));
+            }
+            catch (Exception ex) {
+                return;
+            }
             
-            logger.info("Dumping Tree {}", callTree);
-                        
-            treePanel.populateTree(callTree);
+            switch (FileTypeDetector.v().getFileType(lines)) {
+                case CALLTRACE: 
+                    {
+                        callTree.loadLines(lines);
+                        logger.info("Dumping Tree {}", callTree);
+                        treePanel.populateTree(callTree);                    
+                    }
+                break;
+                    
+                case CLASSIFCATION:
+                {
+                    ApiClassifier.v().loadLines(lines);
+                }
+                break;
+                    
+                default:
+                    break;
+            }
+
         }
         
     }
