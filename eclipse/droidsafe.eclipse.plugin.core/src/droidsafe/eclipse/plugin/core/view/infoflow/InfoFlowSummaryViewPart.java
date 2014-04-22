@@ -1,10 +1,8 @@
 package droidsafe.eclipse.plugin.core.view.infoflow;
 
 import org.eclipse.jface.util.Util;
-import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
@@ -21,7 +19,6 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.SpecInfoOutlineViewPart;
-import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 import droidsafe.speclang.model.MethodModel;
@@ -127,6 +124,7 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
                 }
               }
             }
+            fTreeViewer.getControl().setFocus();
         }
     }
     

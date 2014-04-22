@@ -254,6 +254,7 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
                     }
                 }
             }
+            fTreeViewer.getControl().setFocus();
         }
     }
 

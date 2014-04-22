@@ -8,41 +8,32 @@ import org.eclipse.core.commands.State;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.jface.action.MenuManager;
-import org.eclipse.jface.text.Document;
-import org.eclipse.jface.text.IDocument;
-import org.eclipse.jface.text.TextViewer;
-import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
-import org.eclipse.jface.viewers.DoubleClickEvent;
-import org.eclipse.jface.viewers.IBaseLabelProvider;
-import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.util.Util;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.BusyIndicator;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Menu;
-import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.ISelectionService;
-import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
-import org.eclipse.ui.part.ViewPart;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.Activator;
+import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
-import droidsafe.eclipse.plugin.core.view.DroidsafeInfoViewPart;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
+import droidsafe.eclipse.plugin.core.view.SpecInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
@@ -64,41 +55,11 @@ import droidsafe.utils.SourceLocationTag;
  * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
-public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionChangedListener {
+public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
     private static final Logger logger = LoggerFactory.getLogger(SecuritySpecOutlineViewPart.class);
 
     /** The ID of the view as specified by the extension. */
     public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.DroidsafeSpecView";
-
-    /** The project selected on the Project Explorer View. */
-    private IProject selectedProject;
-
-    /* The model for the security spec we are displaying on the outline view. */
-    private SecuritySpecModel securitySpecModel;
-
-    /** The main tree viewer used to display the outline of the security spec */
-    private TreeViewer viewer;
-
-    /**
-     * A Text viewer we use to display a message to the user if no project is selected.
-     */
-    private TextViewer textViewer;
-
-    /** Standard Eclipse content provider to populate the tree viewer. */
-    private ITreeContentProvider contentProvider;
-
-    /**
-     * Standard Eclipse label provider to provide images and labels to the different tree nodes.
-     */
-    private IBaseLabelProvider labelProvider;
-
-    /**
-     * A listener to keep track if the current selected project in the Explorer View
-     */
-    private ISelectionListener selectionListener;
-
-    /** The container for the text or tree view used in the class. */
-    private Composite parentComposite;
 
     /**
      * Tries to find a security spec model for the currently selected project. If there is no selected
@@ -112,89 +73,36 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
      * @param parent The composite container for the viewer. Used to create a text viewer in case a
      *        security spec for the currently selected project cannot be found.
      */
-    private void initializeSecuritySpec(Composite parent) {
-
-        this.selectedProject = getSelectedProject();
-        if (this.selectedProject == null) {
-            disposeTreeViewer();
-            disposeTextViewer();
-            this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
-            IDocument document = new Document();
-            document.set("No Android Project selected. "
-                    + "\nSelect an Android project in the Project Explorer."
-                    + "\nYou may also need to run the Droidsafe spec generation "
-                    + "command from the project context menu.");
-            this.textViewer.setDocument(document);
-            parent.redraw();
-            parent.layout();
-        } else {
-            String projectRootPath = this.selectedProject.getLocation().toOSString();
-            this.securitySpecModel = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
-
-            if (this.securitySpecModel == null) {
-                disposeTreeViewer();
-                disposeTextViewer();
-                this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
-                IDocument document = new Document();
-                document.set("Droidsafe spec for selected project has not been computed yet. "
-                        + "\nSelect the project on the Project Explorer "
-                        + "\nand run the Droidsafe spec generation command from the project context menu.");
-                this.textViewer.setDocument(document);
-                parent.redraw();
-                parent.layout();
-
-            }
-        }
-    }
-
-    /**
-     * Auxiliary function to setup a selection listener that would replace the contents of the outline
-     * view once a different project is selected.
-     * 
-     * Every time the user changes the selected project in the Project Explorer, the contents of the
-     * Droidsafe outline view are updated with the spec of the selected project, if a spec for that
-     * app is already available.
-     */
-    private void setSelectionListener() {
-        this.selectionListener = new ISelectionListener() {
-            public void selectionChanged(IWorkbenchPart part, ISelection sel) {
-                if (!(sel instanceof IStructuredSelection)) return;
-                IStructuredSelection ss = (IStructuredSelection) sel;
-                Object selectedObject = ss.getFirstElement();
-                if (selectedObject instanceof IAdaptable) {
-                    IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
-                    IProject project = (res != null) ? res.getProject() : null;
-                    if (project != null && project != SecuritySpecOutlineViewPart.this.selectedProject) {
-                        BusyIndicator.showWhile(Display.getCurrent(), new Runnable() {
-                            @Override
-                            public void run() {
-                              refreshSpecAndOutlineView();
-                            }
-                          });
-                    }
-                }
-            }
-        };
-        getSite().getPage().addSelectionListener(this.selectionListener);
+    private SecuritySpecModel initializeSecuritySpec(Composite parent) {
+        String projectRootPath = getProject().getLocation().toOSString();
+        return SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
     }
 
     /**
      * Rereads the serialized spec from file and resets the tree input.
      */
     public void refreshSpecAndOutlineView() {
-        this.securitySpecModel = null;
-        initializeSecuritySpec(this.parentComposite);
-        if (this.securitySpecModel != null) {
-            if (getViewer() == null) {
-                initializeTreeViewer();
-            } else {
-                getViewer().setInput(securitySpecModel);
-                updateCurrentViewerSettings();
-            }
-            InfoFlowSummaryViewPart.openView(this.securitySpecModel);
+        fInputElement = null;
+        fInputElement = initializeSecuritySpec(fParentComposite);
+        if (fInputElement == null) {
+            fEmptyPageLabel.setText("Droidsafe spec for selected project has not been computed yet. "
+                    + "\nSelect the project on the Project Explorer "
+                    + "\nand run the Droidsafe spec generation command from the project context menu.");
+            showPage(PAGE_EMPTY);
+        } else {
+            updateView();
+            InfoFlowSummaryViewPart.openView(fInputElement);
         }
-        if (getViewer() != null) {
-            this.parentComposite.layout();
+    }
+
+    @Override
+    protected void updateView() {
+        if (fInputElement != null && fParentComposite != null) {
+            updateCurrentViewerSettings();
+            showPage(PAGE_VIEWER);
+            if (fTreeViewer.getSorter() == null)
+                sortViewByMethodName();
+            fTreeViewer.setInput(fInputElement);
         }
     }
 
@@ -205,18 +113,25 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
      */
     @Override
     public void createPartControl(Composite parent) {
-        DroidsafeInfoViewPart.showOtherDroidsafeViews(VIEW_ID);
-        this.parentComposite = parent;
-        setSelectionListener();
-        this.contentProvider = new TreeElementContentProvider();
-        this.labelProvider = new TreeElementLabelProvider();
-        initializeSecuritySpec(parent);
-        if (this.securitySpecModel != null) {
-            initializeTreeViewer();
-            InfoFlowSummaryViewPart.openView(this.securitySpecModel);
-        }
+        super.createPartControl(parent);
+        fTreeViewer.getControl().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(final KeyEvent e) {
+                int modifier = (Util.isMac()) ? SWT.COMMAND : SWT.CTRL;
+                if ((e.stateMask & modifier) == modifier) {
+                    if (e.keyCode == 'f') {
+                        if (fContentProvider.getRootElements() != null) {
+                            IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+                            SearchDialog dialog = new SearchDialog(window.getShell(), SecuritySpecOutlineViewPart.this);
+                            dialog.open();
+                        }
+                    }
+                }
+            }
+        });
+        showOtherDroidsafeViews(VIEW_ID);
     }
-
+    
     private void updateCurrentViewerSettings() {
         ICommandService service =
                 (ICommandService) PlatformUI.getWorkbench().getService(ICommandService.class);
@@ -241,58 +156,9 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
         }
     }
 
-    /**
-     * Initialize the tree viewer with content provider, label provider, and inuput model.
-     */
-    private void initializeTreeViewer() {
-        if (this.securitySpecModel != null && this.parentComposite != null) {
-            disposeTextViewer();
-            disposeTreeViewer();
-            this.viewer = new TreeViewer(parentComposite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
-            viewer.setContentProvider(this.contentProvider);
-            viewer.setLabelProvider(this.labelProvider);
-            viewer.setAutoExpandLevel(1);
-            viewer.setUseHashlookup(true);
-            viewer.addSelectionChangedListener(this);
-            ColumnViewerToolTipSupport.enableFor(viewer);
-            sortViewByMethodName();
-
-            // Make sure there is no text viewer in the container otherwise we
-            // get a split screen.
-
-            viewer.setInput(securitySpecModel);
-
-            MenuManager menuManager = new MenuManager();
-            Menu menu = menuManager.createContextMenu(viewer.getTree());
-            // Set the MenuManager
-            viewer.getTree().setMenu(menu);
-            getSite().registerContextMenu(menuManager, viewer);
-
-            // Make the selection available to other views
-            getSite().setSelectionProvider(viewer);
-            addDoubleClickListener();
-            updateCurrentViewerSettings();
-        }
-    }
-
-    /**
-     * Add a double click listener to the TreeViewr. Double clicking on a tree node will expand the
-     * node and open a text editor and position the caret on the line of code corresponding to the
-     * line of the method.
-     * 
-     */
-    private void addDoubleClickListener() {
-        if (this.viewer != null) {
-            // Add a doubleclicklistener
-            this.viewer.addDoubleClickListener(new IDoubleClickListener() {
-
-                @Override
-                public void doubleClick(DoubleClickEvent event) {
-                    revealSelectionInEditor(event.getSelection(), true);
-                }
-            });
-        }
-    }
+    protected int autoExpandLevel() {
+        return 1;
+      }
 
     protected void revealSelectionInEditor(ISelection selection, boolean activate) {
         // TreeViewer viewer = (TreeViewer) event.getViewer();
@@ -319,28 +185,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
         }
     }
 
-    /**
-     * Removes any text viewer from the outline panel
-     * 
-     */
-    private void disposeTextViewer() {
-        if (this.textViewer != null) {
-            textViewer.getTextWidget().dispose();
-            textViewer = null;
-        }
-    }
-
-    /**
-     * Removes any tree viewer from the outline panel
-     * 
-     */
-    private void disposeTreeViewer() {
-        if (this.viewer != null) {
-            viewer.getTree().dispose();
-            viewer = null;
-        }
-    }
-
     @Override
     public void setFocus() {
         //    if (viewer != null) {
@@ -350,20 +194,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
         //    }
     }
 
-    /**
-     * 
-     * @return the current TreeViewer.
-     */
-    public TreeViewer getViewer() {
-        return this.viewer;
-    }
-
     public SecuritySpecModel getSecuritySpec() {
-        return this.securitySpecModel;
-    }
-
-    public void dispose() {
-        getSite().getPage().removeSelectionListener(selectionListener);
+        return fInputElement;
     }
 
     /**
@@ -395,13 +227,13 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
     }
 
     private void setContentProviderTopLevelParent(TopLevelParentEntity parentEntityType) {
-        if (this.contentProvider instanceof TreeElementContentProvider) {
-            TreeElementContentProvider contProvider = (TreeElementContentProvider) this.contentProvider;
+        if (fContentProvider instanceof TreeElementContentProvider) {
+            TreeElementContentProvider contProvider = (TreeElementContentProvider) fContentProvider;
             if (contProvider.getContentProviderTopLevelParent() != parentEntityType) {
                 contProvider.setContentProviderTopLevelParent(parentEntityType);
-                if (this.viewer != null) {
+                if (fTreeViewer != null) {
                     ISelection savedSelections = getViewerSelection();
-                    this.viewer.refresh();
+                    fTreeViewer.refresh();
                     selectObjects(savedSelections);
                 }
             }
@@ -435,7 +267,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
             }
         }
         if (!selectedElements.isEmpty()) {
-            this.viewer.setSelection(new StructuredSelection(selectedElements), true);
+            fTreeViewer.setSelection(new StructuredSelection(selectedElements), true);
         }
     }
 
@@ -471,19 +303,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
         return null;
     }
 
-    /**
-     * Sets the value of the selectedProject field if it is null and returns the value of the
-     * selectedProject field.
-     * 
-     * @return The android app Eclipse project corresponding to the security spec in the outline view.
-     */
-    public IProject getProject() {
-        if (this.selectedProject == null) {
-            this.selectedProject = getSelectedProject();
-        }
-        return this.selectedProject;
-    }
-
     public void setLabelTypeForMethodName(String currentState) {
         if (currentState.equals("short_label")) {
             setUseShortSignatureForMethods(true);
@@ -503,11 +322,11 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
      */
     public void setUseShortSignatureForMethods(boolean useShortSignature) {
         boolean oldValue =
-                ((TreeElementLabelProvider) this.labelProvider)
+                ((TreeElementLabelProvider) fLabelProvider)
                 .setUseShortSignatureForMethods(useShortSignature);
-        if (this.viewer != null && oldValue != useShortSignature) {
+        if (fTreeViewer != null && oldValue != useShortSignature) {
             ISelection savedSelections = getViewerSelection();
-            this.viewer.refresh();
+            fTreeViewer.refresh();
             selectObjects(savedSelections);
         }
     }
@@ -535,17 +354,17 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
     }
 
     private ISelection getViewerSelection() {
-        if (this.viewer != null) {
-            return this.viewer.getSelection();
+        if (fTreeViewer != null) {
+            return fTreeViewer.getSelection();
         }
         return null;
     }
 
     public void sortViewByMethodName() {
-        if (this.viewer != null) {
+        if (fTreeViewer != null) {
             ISelection savedSelections = getViewerSelection();
 
-            this.viewer.setSorter(new ViewerSorter() {
+            fTreeViewer.setComparator(new ViewerComparator() {
                 public int compare(Viewer view, Object o1, Object o2) {
                     int result = 0;
                     if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
@@ -579,10 +398,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
     }
 
     public void sortViewByClassName() {
-        if (this.viewer != null) {
+        if (fTreeViewer != null) {
             ISelection savedSelections = getViewerSelection();
 
-            this.viewer.setSorter(new ViewerSorter() {
+            fTreeViewer.setComparator(new ViewerComparator() {
                 public int compare(Viewer view, Object o1, Object o2) {
                     int result = 0;
                     if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
@@ -629,10 +448,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
     }
 
     public void sortViewByStatusAndClassName() {
-        if (this.viewer != null) {
+        if (fTreeViewer != null) {
             ISelection savedSelections = getViewerSelection();
 
-            this.viewer.setSorter(new ViewerSorter() {
+            fTreeViewer.setComparator(new ViewerComparator() {
                 public int compare(Viewer view, Object o1, Object o2) {
                     int result = 0;
                     if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
@@ -685,10 +504,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
     }
 
     public void sortViewByPriorityAndClassName() {
-        if (this.viewer != null) {
+        if (fTreeViewer != null) {
             ISelection savedSelections = getViewerSelection();
 
-            this.viewer.setSorter(new ViewerSorter() {
+            fTreeViewer.setComparator(new ViewerComparator() {
                 public int compare(Viewer view, Object o1, Object o2) {
                     int result = 0;
                     if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
@@ -764,14 +583,15 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
      * 
      */
     public TreeElement<?, ?> findTreeElementForModelObject(IModelChangeSupport modelObject) {
-        return ((TreeElementContentProvider) this.contentProvider)
+        return ((TreeElementContentProvider) fContentProvider)
                 .findTreeElementForModelObject(modelObject);
     }
 
     @Override
     public void selectionChanged(SelectionChangedEvent event) {
-        if (event.getSelectionProvider() == viewer) {
+        if (event.getSelectionProvider() == fTreeViewer) {
             ISelection selection = event.getSelection();
+            revealSelectionInEditor(selection, false);
             if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
                 Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
                 if (selectedNode instanceof TreeElement<?, ?>) {
@@ -785,7 +605,31 @@ public class SecuritySpecOutlineViewPart extends ViewPart implements ISelectionC
                     }
                 }
             }
+            fTreeViewer.getControl().setFocus();
         }
+    }
+
+    @Override
+    protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
+        return new TreeElementLabelProvider();
+    }
+
+    @Override
+    protected DroidsafeInfoTreeElementContentProvider makeContentProvider() {
+        return new TreeElementContentProvider();
+    }
+
+    @Override
+    protected void projectSelected() {
+        refreshSpecAndOutlineView();
+    }
+
+    @Override
+    protected String emptyPageText() {
+        return "No Android Project selected. "
+                + "\nSelect an Android project in the Project Explorer."
+                + "\nYou may also need to run the Droidsafe spec generation "
+                + "command from the project context menu.";
     }
 
 }
