@@ -97,7 +97,6 @@ public class Handler {
     @DSComment("General android operation, no security concern")
     @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.014 -0500", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "C6FC13FE8E92DCBE16F162867E28E817")
-    @DSVerified
     public void handleMessage(Message msg) {
     }
     
