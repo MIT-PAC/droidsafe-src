@@ -92,7 +92,9 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
 
     public void sort(Object[] elements) {
         ViewerComparator comparator = fViewer.getComparator();
-        comparator.sort(fViewer, elements);
+        if (comparator != null) {
+            comparator.sort(fViewer, elements);
+        }
     }
 
     @Override

@@ -79,23 +79,6 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         fTreeViewer.setAutoExpandLevel(autoExpandLevel());
         fTreeViewer.setUseHashlookup(true);
         fTreeViewer.getControl().setLayoutData(new GridData(GridData.FILL_BOTH));
-        fTreeViewer.getControl().addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyReleased(final KeyEvent e) {
-                int modifier = (Util.isMac()) ? SWT.COMMAND : SWT.CTRL;
-                if ((e.stateMask & modifier) == modifier) {
-                    if (e.keyCode == 'f') {
-                        if (fContentProvider.getRootElements() != null) {
-                            IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-                            SearchDialog dialog = new SearchDialog(window.getShell(), DroidsafeInfoOutlineViewPart.this);
-                            dialog.open();
-                        }
-                    } else if (e.keyCode == 'c' && DroidsafeInfoOutlineViewPart.this instanceof IndicatorViewPart) {
-                        ((IndicatorViewPart) DroidsafeInfoOutlineViewPart.this).copyTreeToClipboard();
-                    }
-                }
-            }
-        });
 
         ColumnViewerToolTipSupport.enableFor(fTreeViewer);
         fTreeViewer.addSelectionChangedListener(this);
