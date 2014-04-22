@@ -2,6 +2,10 @@
 
 1. Find your ~/.eclipse directory
 2. Navigate to ~/eclipse/org.eclipse.platform_3.7.0_NUMBER/plugins
+
+(Some of us don't have ~/.eclipse directories, for some reason.  It
+seems to be fine to copy the plugin into <eclipse_install_dir>/plugins).
+
 3. Restart eclipse.
 4. There is now a Magpie drop-down menu on the toolbar.
 
