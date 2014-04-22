@@ -14,13 +14,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
+import droidsafe.eclipse.plugin.core.view.SpecInfoTreeElementContentProvider;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.HotspotModel;
 import droidsafe.speclang.model.IModelChangeSupport;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 
-public class TreeElementContentProvider implements ITreeContentProvider, PropertyChangeListener {
+public class TreeElementContentProvider extends SpecInfoTreeElementContentProvider implements ITreeContentProvider, PropertyChangeListener {
 
   private static final Logger logger = LoggerFactory.getLogger(TreeElementContentProvider.class);
 
@@ -54,9 +56,6 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   /** Constant to return when there are no children for an object */
   private static final Object[] NO_CHILDREN = new Object[0];
 
-  /** The model for the spec to be displayed in the outline view */
-  private SecuritySpecModel model;
-
   /** Variable to control the structure of spec outline tree view. */
   public TopLevelParentEntity selectedTopLevelParentEntity =
       TopLevelParentEntity.ENTRY_POINT_AS_TOP_PARENT;
@@ -77,25 +76,19 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   public void dispose() {}
 
   @Override
-  public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-    this.viewer = (TreeViewer) viewer;
-    if (newInput instanceof SecuritySpecModel) {
-      this.model = (SecuritySpecModel) newInput;
-    }
-  }
-
-  @Override
   public Object[] getElements(Object parent) {
-    if (parent instanceof SecuritySpecModel) {
-      TreeElement<?, ?> invisibleRoot = initializeRoot();
-      // if (logger.isDebugEnabled()) {
-      // for (TreeElement<?, ?> child : invisibleRoot.getChildren()) {
-      // logger.debug(" Child of root = " + child.getName());
-      // }
-      // }
-      return getChildren(invisibleRoot);
-    }
-    return NO_CHILDREN;
+      if (parent instanceof SecuritySpecModel) {
+          TreeElement<?, ?> invisibleRoot = initializeRoot();
+          // if (logger.isDebugEnabled()) {
+          // for (TreeElement<?, ?> child : invisibleRoot.getChildren()) {
+          // logger.debug(" Child of root = " + child.getName());
+          // }
+          // }
+          Object[] roots = getChildren(invisibleRoot);
+          setRootElements(roots);
+          return roots;
+      }
+      return NO_CHILDREN;
   }
 
   @Override
@@ -192,7 +185,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
    */
   private void createModelWithApiAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
     Map<MethodModel, Map<MethodModel, List<CodeLocationModel>>> outputEventBlocks =
-        this.model.getOutputEventBlocks();
+        fSpec.getOutputEventBlocks();
 //    Map<String, TreeElement<Object, MethodModel>> localNodeLabelToTreeElementMap =
 //        new HashMap<String, TreeElement<Object, MethodModel>>();
 
@@ -268,7 +261,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   private void createModelWithCodeLocationAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
     clearPropertyChangeListeners();
     Map<CodeLocationModel, Map<MethodModel, List<MethodModel>>> codeLocationEventBlocks =
-        this.model.getCodeLocationEventBlocks();
+        fSpec.getCodeLocationEventBlocks();
     if (codeLocationEventBlocks != null) {
       for (CodeLocationModel location : codeLocationEventBlocks.keySet()) {
         TreeElement<Object, MethodModel> locationElement =
@@ -309,7 +302,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
    * @param root The TreeElement corresponding to security spec model.
    */
   private void createModelWithEntryPointAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
-    Map<MethodModel, List<MethodModel>> inputEventBlocks = this.model.getInputEventBlocks();
+    Map<MethodModel, List<MethodModel>> inputEventBlocks = fSpec.getInputEventBlocks();
     if (inputEventBlocks != null) {
 
       for (MethodModel inputMethod : inputEventBlocks.keySet()) {
@@ -373,12 +366,12 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   public TreeElement<?, ?> initializeRoot() {
     clearPropertyChangeListeners();
     TreeElement<SecuritySpecModel, Object> root =
-        new TreeElement<SecuritySpecModel, Object>("SecuritySpec", this.model, Object.class);
+        new TreeElement<SecuritySpecModel, Object>("SecuritySpec", fSpec, Object.class);
     TreeElement<Object, MethodModel> whitelist =
-        new TreeElement<Object, MethodModel>("Whitelist", this.model.getWhitelist(),
+        new TreeElement<Object, MethodModel>("Whitelist", fSpec.getWhitelist(),
             MethodModel.class);
     root.addChild(whitelist);
-    for (MethodModel m : this.model.getWhitelist()) {
+    for (MethodModel m : fSpec.getWhitelist()) {
       TreeElement<MethodModel, Object> mTreeElement =
           new TreeElement<MethodModel, Object>(m.getShortSignature(), m, Object.class);
       whitelist.addChild(mTreeElement);
@@ -424,5 +417,17 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
       logger.debug("Could not find tree element for data item {}", modelObject);
       return null;
     }
+  }
+
+  @Override
+  protected Object[] initializeRoots() {
+      // TODO Auto-generated method stub
+      return null;
+  }
+
+  @Override
+  protected void reset() {
+      // TODO Auto-generated method stub
+
   }
 }

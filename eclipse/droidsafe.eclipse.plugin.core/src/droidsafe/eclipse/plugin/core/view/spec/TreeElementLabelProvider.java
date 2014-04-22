@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.HotspotModel;
 import droidsafe.speclang.model.MethodModel;
@@ -38,8 +39,7 @@ import droidsafe.transforms.objsensclone.ClassCloner;
  * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
-public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelProvider
-                                                                       // {
+public class TreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
 
   /** Logger for class */
   @SuppressWarnings("unused")
@@ -220,14 +220,14 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
 //    }
 //  };
 
-  /**
-   * The method that provides the desired style for the Tree node label.
-   * 
-   * @see org.eclipse.jface.viewers.StyledCellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
-   */
-  @Override
-  public void update(ViewerCell cell) {
-    Object obj = cell.getElement();
+//  /**
+//   * The method that provides the desired style for the Tree node label.
+//   * 
+//   * @see org.eclipse.jface.viewers.StyledCellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
+//   */
+//  @Override
+//  public void update(ViewerCell cell) {
+//    Object obj = cell.getElement();
 //    StyledString styledString = new StyledString(getText(obj));
 //
 //    if (obj instanceof TreeElement<?, ?>) {
@@ -258,9 +258,9 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
 //    }
 //    cell.setText(styledString.toString());
 //    cell.setStyleRanges(styledString.getStyleRanges());
-    cell.setText(getText(obj));
-    cell.setImage(getImage(obj));
-    super.update(cell);
-  }
+//    cell.setText(getText(obj));
+//    cell.setImage(getImage(obj));
+//    super.update(cell);
+//  }
 
 }
