@@ -30,6 +30,8 @@ public class CallNode {
         return null;
     }
     
+    public boolean isLeaf() { return children.size() == 0; }
+    
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();        

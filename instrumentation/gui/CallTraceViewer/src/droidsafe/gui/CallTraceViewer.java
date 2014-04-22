@@ -29,6 +29,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */ 
 
+//This code was copied from Sun tutorial initially
+
 package droidsafe.gui;
 
 /*
@@ -49,7 +51,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DynamicTreeDemo extends JPanel 
+public class CallTraceViewer extends JPanel 
                              implements ActionListener {
     private int newNodeSuffix = 1;
     private static String ADD_COMMAND = "add";
@@ -60,9 +62,9 @@ public class DynamicTreeDemo extends JPanel
     private DynamicTree treePanel;  //panel to hold tree
     private CallTree callTree;
     
-    private static Logger logger = LoggerFactory.getLogger(DynamicTreeDemo.class);
+    private static Logger logger = LoggerFactory.getLogger(CallTraceViewer.class);
 
-    public DynamicTreeDemo() {
+    public CallTraceViewer() {
         super(new BorderLayout());
         
         callTree = new CallTree();
@@ -165,7 +167,7 @@ public class DynamicTreeDemo extends JPanel
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Create and set up the content pane.
-        DynamicTreeDemo newContentPane = new DynamicTreeDemo();
+        CallTraceViewer newContentPane = new CallTraceViewer();
         newContentPane.setOpaque(true); //content panes must be opaque
         frame.setContentPane(newContentPane);
 

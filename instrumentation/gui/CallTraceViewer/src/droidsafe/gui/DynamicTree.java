@@ -62,12 +62,13 @@ public class DynamicTree extends JPanel {
         treeModel = new DefaultTreeModel(rootNode);
         treeModel.addTreeModelListener(new MyTreeModelListener());
         tree = new JTree(treeModel);
-        tree.setEditable(true);
+        tree.setEditable(false);
         tree.getSelectionModel().setSelectionMode
                 (TreeSelectionModel.SINGLE_TREE_SELECTION);
         tree.setShowsRootHandles(true);
         
-              
+        tree.setCellRenderer(new CellRenderer());
+        
         JScrollPane scrollPane = new JScrollPane(tree);
         add(scrollPane);
     }
