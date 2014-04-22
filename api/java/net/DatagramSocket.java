@@ -404,6 +404,7 @@ public void send(DatagramPacket pack) throws IOException {
         pack.getTaint();
         checkOpen();
         ensureBound();
+        this.addTaint(pack.data[0]);
 
         InetAddress packAddr = pack.getAddress();
         if (address != null) { // The socket is connected

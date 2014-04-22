@@ -42,7 +42,7 @@ protected AbstractQueue() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.070 -0500", hash_original_method = "1A50CFE77F83A9D61A2F23666507E72F", hash_generated_method = "9301EF03F4097022CBB38B7C603C1D58")
     
 public boolean add(E e) {
-        if (offer(e))
+        if (super.add(e))
             return true;
         else
             throw new IllegalStateException("Queue full");
