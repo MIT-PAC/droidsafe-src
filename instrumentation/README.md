@@ -60,6 +60,11 @@ Let's start with PickContacts as an example.
 6. Once Step 5 is done, hit Ctrl-C to stop logcat collection.  
 7. The file logcat.txt can be analyzed by the GUI tool or human should be able to read it as well.
 
+If you would like to rerun instrumentation again do:
+  * `ant instr`   
+
+This will rerun step 3. without copying setup files again
+
 Once the instrumentation is done and you do not want the instrumentation code to be part of the app, do:
   * `ant instr-remove` to remove the instrumention from a normal build process.
 
