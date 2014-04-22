@@ -85,6 +85,16 @@ class InvokeInstrumenter extends BodyTransformer
 
     public static InvokeInstrumenter v() { return instance; }
     
+    /**
+     * This method is called by soot framework to perform method transformation.
+     * 
+     * Currently, the following transformations are done:
+     * 1. insert checkpoint at the function entrance
+     * 2. insert a checkpoint at before a function invoke
+     * 3. insert a checkpoint after a function invoke
+     * 
+     * These transformations are needed to assist with the transformation
+     */
     protected void internalTransform(Body body, String phaseName, Map options)
     {
         /*
@@ -105,16 +115,18 @@ class InvokeInstrumenter extends BodyTransformer
             return;
         }
 
+        /*
         SootMethod myMethod = body.getMethod();
         if (myMethod.getSignature().matches(".*\\$\\d.*")) {
             logger.warn("Skipping annonymous stuff");
             return;
         }
+        */
         soot.Scene.v().addBasicClass("android.instrumentation.ListWrapper");
         soot.Scene.v().addBasicClass("android.instrumentation.CheckPoint");
 
         Chain<Unit> units = body.getUnits();
-        boolean insertParamList = false;
+        boolean insertParamList = true;
 
         // Add code to increase goto counter each time a goto is encountered
         Local tmpLocal = Jimple.v().newLocal("droidsafeInstrTmp", RefType.v("java.lang.String"));
@@ -137,9 +149,9 @@ class InvokeInstrumenter extends BodyTransformer
                 "<droidsafe.instrumentation.CheckPoint: void beforeMethodInvoke(java.lang.Object,java.lang.String)>");
 
         afterInvokeMethod = Scene.v().getMethod(
-                "<droidsafe.instrumentation.CheckPoint: void afterMethodInvoke(java.lang.Object,java.lang.String)>");
+                "<droidsafe.instrumentation.CheckPoint: void afterMethodInvoke(java.lang.Object,java.lang.String,droidsafe.instrumentation.ListWrapper)>");
+                //"<droidsafe.instrumentation.CheckPoint: void afterMethodInvoke(java.lang.Object,java.lang.String)>");
 
-//                "<droidsafe.instrumentation.CheckPoint: void afterMethodInvoke(java.lang.Object,java.lang.String,droidsafe.instrumentation.ListWrapper)>");
 
         SootMethod listCreateMethod =  
                 Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void <init>()>");
@@ -183,14 +195,18 @@ class InvokeInstrumenter extends BodyTransformer
             }
             Value callerObject = useBoxes.get(0).getValue();
             Value callerObjectForBeforeInvoke = callerObject;
+            Value callerObjectForAfterInvoke = callerObject;
 
             boolean specialInvoke = false;
-            if (invokeExpr instanceof SpecialInvokeExpr || invokeExpr instanceof StaticInvokeExpr) {
+            if (invokeExpr instanceof SpecialInvokeExpr) {
                 logger.debug("Skip special invoke");
                 callerObjectForBeforeInvoke = NullConstant.v();
-
-                callerObject = callerObjectForBeforeInvoke; 
                 specialInvoke = true;
+            }
+            
+            if (invokeExpr instanceof StaticInvokeExpr) {
+                callerObjectForBeforeInvoke = NullConstant.v();
+                callerObjectForAfterInvoke = NullConstant.v();
             }
             
             Stmt strAssign = Jimple.v().newAssignStmt(tmpLocal, StringConstant.v(method.toString()));
@@ -242,13 +258,13 @@ class InvokeInstrumenter extends BodyTransformer
                 listLocal = argListLocal;
 
             Expr afterInvokeExpr = Jimple.v().newStaticInvokeExpr(
-                    afterInvokeMethod.makeRef(), callerObject, tmpLocal);
+                    afterInvokeMethod.makeRef(), callerObjectForAfterInvoke, tmpLocal, listLocal);
 
             Stmt afterInvokeStmt = Jimple.v().newInvokeStmt(afterInvokeExpr);
 
             units.insertAfter(afterInvokeStmt, s); 
 
-            if (!specialInvoke && insertParamList)
+            if (insertParamList)
                 units.insertAfter(postInvokeList, s);
 
 
