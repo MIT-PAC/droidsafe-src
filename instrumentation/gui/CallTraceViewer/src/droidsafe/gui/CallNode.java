@@ -33,7 +33,7 @@ public class CallNode {
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();        
-        sb.append(String.format("[%s - %d children]", data.toString(), children.size()));
+        sb.append(String.format("[%s]", data.toString(), children.size()));
         return sb.toString();
     }
     

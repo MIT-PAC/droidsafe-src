@@ -45,6 +45,7 @@ public class CallTree {
      * @param file 
      */
     public void load(File file) {
+        root = new CallNode("Root");
         InputStream apiListFile = null;
         try {
             apiListFile = new FileInputStream(file);
@@ -54,52 +55,88 @@ public class CallTree {
             
             Map<String, Stack<CallNode>> callStackMap = new HashMap<String, Stack<CallNode>>();
         
-       
+            TraceLine.TraceType prevTraceType = TraceLine.TraceType.UNKNOWN;
+            
             for (String line : apiList) {
                          
                 if (!line.contains("/DSI")) {
                     continue;
                 }
+      
+                TraceLine traceLine = TraceLine.parseTraceLine(line);
                 
-                List<String> tokens = parseLine(line);
-                if (tokens == null || tokens.size() == 0)
-                    continue;
-                
-                if (tokens.size() < 3) {
-                    // need to dump out the error
+                if (traceLine == null) {
+                    logger.warn("Cannot parse trace line {} ", line);
                     continue;
                 }
                 
-                String direction = tokens.get(0);
-                String threadId  = tokens.get(1);
-                String method  = tokens.get(2);
-                boolean traverseDown = (direction.equals("+"));
+                String threadIdString = String.format("Thread-%s", traceLine.threadId);
                 
-                if (!callStackMap.containsKey(threadId)) {
-                    logger.info("Adding stack for thread <{}> ", threadId);
-                    callStackMap.put(threadId, new Stack<CallNode>());
+                if (!callStackMap.containsKey(threadIdString)) {
+                    logger.info("Adding stack for thread <{}> ", threadIdString);
+                    callStackMap.put(threadIdString, new Stack<CallNode>());
                 }
                 
-                Stack<CallNode> callStack = callStackMap.get(threadId);
+                Stack<CallNode> callStack = callStackMap.get(threadIdString);
                 
                 if (callStack.size() == 0) {
-                    CallNode threadNode = new CallNode(threadId);
+                    CallNode threadNode = new CallNode(threadIdString);
                     root.addChild(threadNode);
                     callStack.push(threadNode);
                 }
                 
                 CallNode parent = callStack.peek();
                 
-                if (traverseDown) {
-                    CallNode newNode = new CallNode(method);
-                    logger.info("Adding method {} ", method); 
-                    parent.addChild(newNode);
-                    callStack.push(newNode);                 
+                // Dealing with  entering method trace (+)
+                switch(traceLine.traceType) {
+                    case ENTERING:
+                    {
+                        logger.info("Adding method {} ", traceLine); 
+                        CallNode newNode = new CallNode(traceLine);
+                        parent.addChild(newNode);
+                        callStack.push(newNode);      
+                    }
+                    break;
+                        
+                    case EXITING:
+                    {
+                         // we probably should pop until it matches with the traceline
+                        CallNode node = callStack.pop();      
+                        logger.info("popping {} ", node);
+                        
+                        //we may be able to detect exception
+                                                
+                        // Store data on the exit, it's the only place that has parameter value
+                        if (node.data instanceof TraceLine) {
+                            TraceLine myLine = (TraceLine)node.data;
+                            myLine.parameterString = traceLine.parameterString;
+                        }
+                    }
+                    break;
+                        
+                    case INSIDE:
+                    {
+                        // we jump to the top if not coming from a previous entry
+                        if (prevTraceType != TraceLine.TraceType.ENTERING) {
+                            logger.info("Adding Entry method {} ", traceLine); 
+                            CallNode newNode = new CallNode(traceLine);                            
+                            while (callStack.size() > 1) {
+                                parent = callStack.pop();
+                            }
+                            parent = callStack.peek();
+                            parent.addChild(newNode);
+                            callStack.push(newNode);                                  
+                        }                        
+                    }
+                    break;
+                        
+                    default:
+                        break;
+                        
                 }
-                else {
-                    callStack.pop();
-                }                       
+               
                 logger.info("callStack: {} ", callStack);
+                prevTraceType = traceLine.traceType;
             }
 
         } catch (Exception ex) {
@@ -107,29 +144,6 @@ public class CallTree {
         }
 
     }
-    
-    private List<String> parseLine(String line) {
-        List<String> list = new LinkedList<String>();
-        int ind = line.indexOf(":");
-        
-        if (ind == -1)
-            return list;
-        line = line.substring(ind+1).trim();
-                
-
-        list.add("" + line.charAt(0));
-        
-        ind = line.indexOf("[");
-        int endInd = line.indexOf("]");       
-        list.add(line.substring(ind+1, endInd));
-        ind = line.indexOf("<");
-        endInd = line.indexOf(")>");
-        list.add(line.substring(ind+1, endInd+2));
-        
-        return list;
-
-    }
-    
     
     void dumpNode(StringBuilder sb, int indentLevel, CallNode node) {
         sb.append(String.format("[%d]: %s\n", indentLevel, node.data));

@@ -66,7 +66,8 @@ public class DynamicTree extends JPanel {
         tree.getSelectionModel().setSelectionMode
                 (TreeSelectionModel.SINGLE_TREE_SELECTION);
         tree.setShowsRootHandles(true);
-      
+        
+              
         JScrollPane scrollPane = new JScrollPane(tree);
         add(scrollPane);
     }
@@ -77,6 +78,12 @@ public class DynamicTree extends JPanel {
         treeModel.reload();
     }
 
+    public void expandAllNodes() {        
+        for (int i = 0; i< tree.getRowCount(); i++) {
+            tree.expandRow(i);
+        }
+    }
+    
     /**
      * Quick hack to insert call tree into the graphical view
      * @param callTree 
@@ -87,7 +94,12 @@ public class DynamicTree extends JPanel {
        clear(); 
        rootNode.removeAllChildren();
        rootNode.removeFromParent();       
-       populateTreeNode(null, callTree.getRoot());       
+       
+       // we are not populating the root
+       for(CallNode node: callTree.getRoot().children)
+        populateTreeNode(null, node);     
+       
+       expandAllNodes();
     }
     
     public void populateTreeNode(DefaultMutableTreeNode parent, CallNode node) {
