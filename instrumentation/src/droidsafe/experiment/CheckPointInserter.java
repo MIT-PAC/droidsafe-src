@@ -37,8 +37,6 @@ import java.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dk.brics.string.intermediate.StringType;
-
 /** 
    Example to instrument a classfile to produce goto counts. 
  */
