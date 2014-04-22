@@ -26,6 +26,10 @@ public class CheckPoint {
     
     private String tag = "DSI";
     
+    private static String PREINVOKE_SYMBOL    = "+";
+    private static String POSTINVOKE_SYMBOL   = "-";
+    private static String INSIDEMETHOD_SYMBOL = "=";
+    
     private Map<String, Stack<String>> callStacks = new HashMap<String, Stack<String>>();
     
     public CheckPoint v() { return instance; }
@@ -56,7 +60,7 @@ public class CheckPoint {
     }
     
     static public void beforeMethodInvoke(Object obj, String fullSig) {
-        instance.checkpointBeforeMethodInvoke(obj, fullSig, null);
+        beforeMethodInvoke(obj, fullSig, null);
     }
 
     static public void beforeMethodInvoke(Object obj, String fullSig, ListWrapper argList) {
@@ -64,21 +68,29 @@ public class CheckPoint {
         if (argList != null)
             list = argList.getList();
         
-        instance.checkpointBeforeMethodInvoke(obj, fullSig, list);
+        instance.checkpointTag(PREINVOKE_SYMBOL, obj, fullSig, list);
     }
     
     static public void afterMethodInvoke(Object obj, String fullSig) {
-        instance.checkpointAfterMethodInvoke(obj, fullSig, null);
+        afterMethodInvoke(obj, fullSig, null);
     }
 
     static public void afterMethodInvoke(Object obj, String fullSig, ListWrapper argList) {
         List<Object> list = null;
         if (argList != null)
             list = argList.getList();
-        instance.checkpointAfterMethodInvoke(obj, fullSig, list);
+        instance.checkpointTag(POSTINVOKE_SYMBOL, obj, fullSig, list);
     }
- 
-    private void checkpointBeforeMethodInvoke(Object obj, String fullSig, List<Object> argList) {
+        
+    
+    static public void insideMethod(Object obj, String fullSig, ListWrapper argList) {
+        List<Object> list = null;
+        if (argList != null)
+            list = argList.getList();
+        instance.checkpointTag(INSIDEMETHOD_SYMBOL, obj, fullSig, list);
+    }
+        
+    private void checkpointTag(String dirTag, Object obj, String fullSig, List<Object> argList) {
         
         try {
             String className = "";
@@ -97,7 +109,7 @@ public class CheckPoint {
                 }
             }
 
-            String msg = String.format("+[%d] %s [%s] [%s]", 
+            String msg = String.format("%s[%d] %s [%s] [%s]", dirTag,
                     (int)Thread.currentThread().getId(),
                     fullSig, className, sb.toString()); 
 
@@ -108,36 +120,6 @@ public class CheckPoint {
         }
     }
     
-    private void checkpointAfterMethodInvoke(Object obj, String fullSig, List<Object> argList) {
-        
-        try {
-            String className = "";
-            if (obj != null)
-                className = obj.getClass().getCanonicalName();
-
-            StringBuilder sb = new StringBuilder();
-            if (argList != null) {
-                for (Object argObj: argList) {
-                    String limited = argObj.toString();
-                    if (limited.length() > 100)
-                        limited = limited.substring(0, 100);
-
-                    if (sb.length() != 0)
-                        sb.append(", ");
-                    sb.append(limited);
-                }
-            }
-
-            String msg = String.format("-[%d] %s [%s] [%s]", 
-                    (int)Thread.currentThread().getId(),
-                    fullSig, className, sb.toString()); 
-
-            Log.w(tag, msg);
-        }
-        catch  (Exception ex) {
-            System.out.printf("Exception %s \n", ex.toString());
-        }
-    }
     
     
     Stack<String> getCurrentStack() {
