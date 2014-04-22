@@ -77,6 +77,8 @@ class InvokeInstrumenter extends BodyTransformer
 {
     private static final Logger logger = LoggerFactory.getLogger(InvokeInstrumenter.class);
     private static InvokeInstrumenter instance = new InvokeInstrumenter();
+    private SootMethod beforeInvokeMethod;
+    private SootMethod afterInvokeMethod;
     private InvokeInstrumenter() {
         
     }
@@ -95,9 +97,9 @@ class InvokeInstrumenter extends BodyTransformer
      */
     protected void internalTransform(Body body, String phaseName, Map options)
     {
-       
+
         SootClass sClass = body.getMethod().getDeclaringClass();
-        
+
         String className = sClass.getName();
         if (className.contains("droidsafe.experiment")) {
             return;
@@ -107,6 +109,13 @@ class InvokeInstrumenter extends BodyTransformer
             return;
         }
 
+        /*
+        SootMethod myMethod = body.getMethod();
+        if (myMethod.getSignature().matches(".*\\$\\d.*")) {
+            logger.warn("Skipping annonymous stuff");
+            return;
+        }
+         */
         soot.Scene.v().addBasicClass("android.instrumentation.ListWrapper");
         soot.Scene.v().addBasicClass("android.instrumentation.CheckPoint");
 
@@ -116,118 +125,64 @@ class InvokeInstrumenter extends BodyTransformer
         // Add code to increase goto counter each time a goto is encountered
         Local tmpLocal = Jimple.v().newLocal("droidsafeInstrTmp", RefType.v("java.lang.String"));
         body.getLocals().addLast(tmpLocal);
-        
+
         Local argListLocal = Jimple.v().newLocal("droidsafeArgList", RefType.v("droidsafe.instrumentation.ListWrapper"));
         if (insertParamList)
             body.getLocals().addLast(argListLocal);
 
-        SootMethod beforeInvokeMethod = Scene.v().getMethod(
+        SootClass sootClass = Scene.v().getSootClass("droidsafe.instrumentation.CheckPoint");
+
+        for (Tag tag: sootClass.getTags()) {
+            logger.info("tag {} ", tag);
+        }
+        for (SootMethod method: sootClass.getMethods()) {
+            logger.info("CheckPoint method: {}", method);
+        }
+
+        beforeInvokeMethod = Scene.v().getMethod(
                 "<droidsafe.instrumentation.CheckPoint: void beforeMethodInvoke(java.lang.Object,java.lang.String)>");
 
-        SootMethod afterInvokeMethod = Scene.v().getMethod(
+        afterInvokeMethod = Scene.v().getMethod(
                 "<droidsafe.instrumentation.CheckPoint: void afterMethodInvoke(java.lang.Object,java.lang.String,droidsafe.instrumentation.ListWrapper)>");
+        //"<droidsafe.instrumentation.CheckPoint: void afterMethodInvoke(java.lang.Object,java.lang.String)>");
 
-        SootMethod insideMethodMethod = Scene.v().getMethod(
+        SootMethod insideMethod = Scene.v().getMethod(
                 "<droidsafe.instrumentation.CheckPoint: void insideMethod(java.lang.Object,java.lang.String,droidsafe.instrumentation.ListWrapper)>");
 
-        SootMethod listInitMethod =  
+        SootMethod listCreateMethod =  
                 Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void <init>()>");
 
         SootMethod listClearMethod =  
                 Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void clear()>");
-        
+
         SootMethod listAddMethod =  
                 Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(java.lang.Object)>");
-        
+
         SootMethod listAddDoubleMethod =  
                 Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(double)>");
 
-        SootMethod listAddIntegerMethod =  
-                Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(int)>");
+        SootMethod listAddBooleanMethod =  
+                Scene.v().getMethod("<droidsafe.instrumentation.ListWrapper: void add(boolean)>");
+
+        Iterator<Unit> stmtIt = units.snapshotIterator();
 
         Expr newListExpr = Jimple.v().newNewExpr(RefType.v("droidsafe.instrumentation.ListWrapper"));
 
-        SootMethod myMethod = body.getMethod();
-        
-        SootClass sootClass = Scene.v().getSootClass("droidsafe.instrumentation.CheckPoint");
-        
-        for (Tag tag: sootClass.getTags()) {
-            logger.info("tag {} => {}/{} ", tag, tag.getName(), tag.getClass().getName());
-        }
-       
-        Chain<Unit> methodEntryList = new HashChain<Unit>();
-        // clear argument list
-        methodEntryList.add(Jimple.v().newAssignStmt(argListLocal, newListExpr));
-        methodEntryList.add(Jimple.v().newInvokeStmt(
-                Jimple.v().newSpecialInvokeExpr(argListLocal, listInitMethod.makeRef())));
 
-        methodEntryList.add(Jimple.v().newAssignStmt(tmpLocal, StringConstant.v(myMethod.toString())));
-
-        //body.getParameterLocal(arg0)
-        // This loop deals with method entry (= symbol)
-        Iterator<Unit> stmtIt = units.snapshotIterator();
-        Stmt firstStatement = null;
-        while(stmtIt.hasNext()){
-            Stmt stmt = (Stmt) stmtIt.next();
-
-            logger.info("{} ", stmt);
-            // first instrution that is not parameter assignment
-            if (!(stmt instanceof IdentityStmt)) {
-                Expr insideMethodExpr = Jimple.v().newStaticInvokeExpr(
-                        insideMethodMethod.makeRef(), NullConstant.v(), tmpLocal, argListLocal);
-
-                Stmt insideMethodStmt = Jimple.v().newInvokeStmt(insideMethodExpr);
-                
-                methodEntryList.addLast(insideMethodStmt);
-                
-                logger.info("Insert at inst {} ", stmt);
-                logger.info("{} ", methodEntryList);
-                firstStatement = stmt;
-                //units.insertBefore(methodEntryList, stmt);
-                break;
-            }
-            //collecting arguments
-            /*
-            Value argValue = stmt.getDefBoxes().get(0).getValue();
-            Expr addArgExpr;
-            
-            if ((argValue.getType() instanceof RefType) ||
-                    (argValue.getType() instanceof ArrayType)) {
-                addArgExpr = Jimple.v().newVirtualInvokeExpr(
-                        argListLocal, listAddMethod.makeRef(), argValue);    
-
-                methodEntryList.addLast(Jimple.v().newInvokeStmt(addArgExpr));
-            }
-            else if (argValue.getType() instanceof IntegerType) {
-                addArgExpr = Jimple.v().newVirtualInvokeExpr(
-                        argListLocal, listAddIntegerMethod.makeRef(), argValue);
-                methodEntryList.addLast(Jimple.v().newInvokeStmt(addArgExpr));
-            }   
-            else if (argValue.getType() instanceof DoubleType) {
-                addArgExpr = Jimple.v().newVirtualInvokeExpr(
-                        argListLocal, listAddDoubleMethod.makeRef(), argValue);
-                methodEntryList.addLast(Jimple.v().newInvokeStmt(addArgExpr));
-            }
-            */
-        }
-        
-        
-        // This loop deals with invoke statements (+|- symbols)
-        stmtIt = units.snapshotIterator();
         while(stmtIt.hasNext())
         {
-            Stmt stmt = (Stmt) stmtIt.next();
+            Stmt s = (Stmt) stmtIt.next();
 
-            if (!stmt.containsInvokeExpr())
+            if (!s.containsInvokeExpr())
                 continue;
 
-            InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
+            InvokeExpr invokeExpr = (InvokeExpr)s.getInvokeExpr();
             Type type = invokeExpr.getType();
             SootMethod method = invokeExpr.getMethod();
 
             logger.debug("invokestemt: {}, type:{}, method:{}", invokeExpr, type, method);
-            if (stmt instanceof InvokeStmt) {
-                ValueBox valueBox = ((InvokeStmt)(stmt)).getInvokeExprBox();
+            if (s instanceof InvokeStmt) {
+                ValueBox valueBox = ((InvokeStmt)(s)).getInvokeExprBox();
                 logger.debug("invokeexprbox: {} ", valueBox);
             }
 
@@ -244,6 +199,7 @@ class InvokeInstrumenter extends BodyTransformer
 
             boolean specialInvoke = false;
             if (invokeExpr instanceof SpecialInvokeExpr) {
+                logger.debug("Skip special invoke");
                 callerObjectForBeforeInvoke = NullConstant.v();
                 specialInvoke = true;
             }
@@ -254,22 +210,20 @@ class InvokeInstrumenter extends BodyTransformer
             }
 
             Stmt strAssign = Jimple.v().newAssignStmt(tmpLocal, StringConstant.v(method.toString()));
-            units.insertBefore(strAssign, stmt);
+            units.insertBefore(strAssign, s);
 
             Expr beforeInvokeExpr;
             beforeInvokeExpr = Jimple.v().newStaticInvokeExpr(
                     beforeInvokeMethod.makeRef(), callerObjectForBeforeInvoke, tmpLocal);
 
             Stmt beforeInvokeStmt = Jimple.v().newInvokeStmt(beforeInvokeExpr);
-            units.insertBefore(beforeInvokeStmt, stmt); 
+            units.insertBefore(beforeInvokeStmt, s); 
 
             Chain<Unit> postInvokeList = new HashChain<Unit>();
             // clear argument list
-            // postInvokeList.addLast(Jimple.v().newAssignStmt(argListLocal, newListExpr));
-            /*
+            postInvokeList.addLast(Jimple.v().newAssignStmt(argListLocal, newListExpr));
             postInvokeList.addLast(Jimple.v().newInvokeStmt(
-                    Jimple.v().newSpecialInvokeExpr(argListLocal, listInitMethod.makeRef())));
-            */
+                    Jimple.v().newSpecialInvokeExpr(argListLocal, listCreateMethod.makeRef())));
 
             postInvokeList.addLast(Jimple.v().newInvokeStmt(
                     Jimple.v().newVirtualInvokeExpr(argListLocal, 
@@ -288,15 +242,14 @@ class InvokeInstrumenter extends BodyTransformer
 
                         postInvokeList.addLast(Jimple.v().newInvokeStmt(addArgExpr));
                     }
-                    else if (argValue.getType() instanceof IntegerType) {
+                    else if (argValue.getType() instanceof BooleanType) {
+                        BooleanType primType = (BooleanType)argValue.getType();
                         addArgExpr = Jimple.v().newVirtualInvokeExpr(
-                                argListLocal, listAddIntegerMethod.makeRef(), argValue);
-                        postInvokeList.addLast(Jimple.v().newInvokeStmt(addArgExpr));
+                                argListLocal, listAddBooleanMethod.makeRef(), argValue);
                     }   
-                    else if (argValue.getType() instanceof DoubleType) {
+                    else if (argValue.getType() instanceof PrimType) {
                         addArgExpr = Jimple.v().newVirtualInvokeExpr(
                                 argListLocal, listAddDoubleMethod.makeRef(), argValue);
-                        postInvokeList.addLast(Jimple.v().newInvokeStmt(addArgExpr));
                     }
                 }
             }
@@ -309,21 +262,46 @@ class InvokeInstrumenter extends BodyTransformer
 
             Stmt afterInvokeStmt = Jimple.v().newInvokeStmt(afterInvokeExpr);
 
-            units.insertAfter(afterInvokeStmt, stmt); 
+            units.insertAfter(afterInvokeStmt, s); 
 
             if (insertParamList)
-                units.insertAfter(postInvokeList, stmt);
+                units.insertAfter(postInvokeList, s);
+
 
             // we are going to inert instruction before and after the current one
             //logger.info("use boxes: {} ", useBoxes);
         }
-        
-        //defer until here so that the chain does not alter
-        if (firstStatement != null) {
-            units.insertAfter(methodEntryList, firstStatement);
+
+        SootMethod myMethod = body.getMethod();
+        Chain<Unit> methodEntryList = new HashChain<Unit>();
+
+        // clear argument list
+        methodEntryList.add(Jimple.v().newAssignStmt(tmpLocal, StringConstant.v(myMethod.toString())));
+
+        //body.getParameterLocal(arg0)
+        // This loop deals with method entry (= symbol)
+        stmtIt = units.snapshotIterator();
+        while(stmtIt.hasNext()){
+            Stmt stmt = (Stmt)stmtIt.next();
+            logger.info("{} ", stmt);
+            // first instrution that is not parameter assignment
+            if (!(stmt instanceof IdentityStmt)) {
+                Expr insideMethodExpr = Jimple.v().newStaticInvokeExpr(
+                        insideMethod.makeRef(), NullConstant.v(), tmpLocal, NullConstant.v());
+
+                Stmt insideMethodStmt = Jimple.v().newInvokeStmt(insideMethodExpr);
+
+                methodEntryList.addLast(insideMethodStmt);
+
+                logger.info("Insert at inst {} ", stmt);
+                logger.info("{} ", methodEntryList);
+                units.insertBefore(methodEntryList, stmt);
+                break;
+            }
+            //collecting arguments
+
         }
-        
-        
+
     }
 }
 
