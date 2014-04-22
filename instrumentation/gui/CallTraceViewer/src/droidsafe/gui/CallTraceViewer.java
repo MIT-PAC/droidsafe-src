@@ -90,7 +90,7 @@ public class CallTraceViewer extends JPanel
         loadButton.addActionListener(this);
 
         //Lay everything out.
-        treePanel.setPreferredSize(new Dimension(300, 150));
+        treePanel.setPreferredSize(new Dimension(800, 600)); 
         add(treePanel, BorderLayout.CENTER);
 
         JPanel panel = new JPanel(new GridLayout(0,4));
@@ -123,6 +123,9 @@ public class CallTraceViewer extends JPanel
     
     private void loadFromFile() {
         final JFileChooser fc = new JFileChooser();
+        Dimension dialogDim = new Dimension(600, 400);
+        fc.setSize(dialogDim);
+        fc.setPreferredSize(dialogDim);
         int returnValue = fc.showOpenDialog(this);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
            

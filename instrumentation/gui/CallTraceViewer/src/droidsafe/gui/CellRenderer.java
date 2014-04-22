@@ -52,6 +52,7 @@ public class CellRenderer extends DefaultTreeCellRenderer  {
                 hasFocus);               
         
         setFont(defaultFont);
+        setForeground(Color.BLACK);
         if (value instanceof DefaultMutableTreeNode) {
             DefaultMutableTreeNode node = (DefaultMutableTreeNode)value;
             Object obj = node.getUserObject();            
@@ -59,8 +60,10 @@ public class CellRenderer extends DefaultTreeCellRenderer  {
                 CallNode callNode = (CallNode)obj;                
                 if ((callNode.data instanceof TraceLine) && callNode.isLeaf()) {                
                     TraceLine traceLine = (TraceLine)callNode.data;
-                    if (ApiClassifier.v().isSpec(traceLine.methodSignature))
+                    if (ApiClassifier.v().isSpec(traceLine.methodSignature)) {
+                        setForeground(Color.decode("#F02060"));
                         setFont(specFont);
+                    }
                 }
             }                    
         }
