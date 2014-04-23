@@ -68,14 +68,16 @@ public class TraceLine {
      private static List<String> parseLine(String line) {
         String origLine = line;
         List<String> list = new LinkedList<String>();
-        int ind = line.indexOf(":");
+        int ind = line.indexOf("[");
         
         if (ind == -1)
             return list;
         
+        ind -= 2;
         try {
             line = line.substring(ind+1).trim();
 
+            logger.info("{}", line);
             //direction 
             list.add("" + line.charAt(0));
 
