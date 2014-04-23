@@ -38,6 +38,8 @@ package droidsafe.gui;
  * a tutorial reader.
  */
 
+import droidsafe.gui.FileTypeDetector;
+import droidsafe.gui.FileTypeDetector.FileType;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -49,13 +51,12 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import droidsafe.gui.FileTypeDetector.FileType;
-import droidsafe.gui.FileTypeDetector;
 
 public class CallTraceViewer extends JPanel 
                              implements ActionListener {
@@ -82,14 +83,17 @@ public class CallTraceViewer extends JPanel
         JButton addButton = new JButton("Add");
         addButton.setActionCommand(ADD_COMMAND);
         addButton.addActionListener(this);
+        addButton.setEnabled(false);
         
         JButton removeButton = new JButton("Remove");
         removeButton.setActionCommand(REMOVE_COMMAND);
         removeButton.addActionListener(this);
+        removeButton.setEnabled(false);
         
         JButton clearButton = new JButton("Clear");
         clearButton.setActionCommand(CLEAR_COMMAND);
         clearButton.addActionListener(this);
+        clearButton.setEnabled(false);
 
         JButton loadButton = new JButton("Load");
         loadButton.setActionCommand(LOAD_COMMAND);
@@ -106,6 +110,9 @@ public class CallTraceViewer extends JPanel
         panel.add(removeButton); 
         panel.add(clearButton);
         add(panel, BorderLayout.SOUTH);
+        panel = new JPanel();
+        panel.add(new JLabel("Use Load to load logcat.txt and classification fie, separately"));
+        add(panel, BorderLayout.NORTH);
     }
 
     public void populateTree(DynamicTree treePanel) {
@@ -124,7 +131,14 @@ public class CallTraceViewer extends JPanel
         
     
     private void loadFromFile() {
-        final JFileChooser fc = new JFileChooser();
+        
+        String dir = "./";
+        String apacDir = System.getenv("APAC_HOME");
+        if (apacDir != null) {
+            dir = apacDir + "/android-apps";
+        }
+        
+        final JFileChooser fc = new JFileChooser(dir);
         Dimension dialogDim = new Dimension(800, 400);
         fc.setSize(dialogDim);
         fc.setPreferredSize(dialogDim);

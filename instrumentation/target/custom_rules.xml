@@ -10,6 +10,7 @@
 <property name="instr.tool.jar" value="${instr.tool.dir}/droidsafe-instr.jar"/>
 <property name="instr.lib.package" value="droidsafe/instrumentation"/>
 <property name="instr.code.injector" value="${instr.tool.dir}/droidsafe-instr-insert"/>
+<property name="instr.trace.viewer" value="${instr.tool.dir}/droidsafe-trace-viewer"/>
 <property name="instr.logcat.capture" value="${instr.tool.dir}/logcat-capture.sh"/>
 <property name="manifest.dump.tool" value="${droidsafe.dir}/tools/DumpManifest"/>
 
@@ -65,12 +66,15 @@
 
 </target>
 
-
-
 <target name="tx-classes"
     depends="-set-debug-files">
     <exec command="${instr.code.injector}">
         <arg value="-process-dir ${classes.orig} -d ${classes.mod.jimple} -f J -validate"/>
+    </exec>
+</target>
+
+<target name="trace-viewer">
+    <exec command="${instr.trace.viewer}">
     </exec>
 </target>
  
