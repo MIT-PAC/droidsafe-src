@@ -670,13 +670,13 @@ public class Config {
                 break;
             case 1: 
                 kobjsens = 2;
-                ignoreNoContextFlows = true;
-                limitHeapContextForGUI = false;
-                limitHeapContextForStrings = false;
+                ignoreNoContextFlows = false;
+                limitHeapContextForGUI = true;
+                limitHeapContextForStrings = true;
                 runStringAnalysis = true;
                 runValueAnalysis = true;
-                cloneStaticCalls = true;
-                staticinitcontext = true;
+                cloneStaticCalls = false;
+                staticinitcontext = false;
                 break;
             case 2: 
                 kobjsens = 2;
