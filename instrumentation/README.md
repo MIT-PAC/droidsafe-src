@@ -36,9 +36,8 @@ To automate the instrumentation process, a few scripts were added to the working
   * This is a wrapper script for instrumentation injection code
 * $APAC_HOME/toosl/instrumentation/bin/logcat-capture.sh
   * This script perfoms a logcat capturing.  The output of this process is stored to a file for later analysis by call tree viewer.
-* GUI to view logcat trace:
-  * This GUI tools allows the analyst to view runtime execution call graph with possible parameter values.  Currently if there is an exception
-  in the callgraph, the tool may misguide you.
+* $APAC_HOME/tools/instrumentation/bin/droidsafe-trace-viewer: 
+  * This is the wrapper script to invoke the GUI to view logcat trace.  It allows the analyst to view runtime execution call graph with possible parameter values.  Currently if there is an exception in the callgraph, the tool may misguide you.
 
 Log Analysis/Display:
 --------------------
@@ -62,7 +61,7 @@ Let's start with PickContacts as an example.
 5. Launch the application from the target device & interfact with the app
 6. Once Step 5 is done, hit Ctrl-C to stop logcat collection.  
 7. The file logcat.txt can be analyzed by the GUI tool or human should be able to read it as well.
-8. To invoke the GUI, type `ant trace-viewer` to invoke the GUI.  When the GUI is open, you need to load 2 files (classification and logcat.txt).  The classification for engangement 3b is located under APAC_HOME/android-apps/classification.  The locagat file  is the one generated from step 4.  Once both of the load, you should see the calltree.  When an API is either SPEC/Sink/BAN, then it is displayed in RED.
+8. To invoke the GUI, type `ant trace-viewer` to invoke the GUI.  When the GUI is open, you need to load 2 files (classification and logcat.txt).  The classification for engangement 3b is located under APAC_HOME/android-apps/classification.  The locagat file  is the one generated from step 4.  Once both of the load, you should see the calltree.  When an API is in one of the SPEC/SINK/BAN, then it is displayed in RED.
 
 If you would like to rerun instrumentation again do:
   * `ant instr`   
