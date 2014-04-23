@@ -11,6 +11,10 @@ Droidsafe instrumention tool consists of 5 pieces:
 * Log collection 
 * Log analysis/display
 
+Setup:
+
+1. Android `build-tools` and `platform-tools` should be in your path.
+
 Instrumentation Code Injection
 ------------------------------
 The instrumentation code injection process involves injecting instrumentation code at the points of interest.  
