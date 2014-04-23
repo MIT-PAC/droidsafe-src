@@ -66,7 +66,7 @@ public class CallTree {
 
         for (String line : lines) {
 
-            if (!line.contains("/DSI")) {
+            if (!line.contains("/DSI") && !line.contains(" DSI")) {
                 continue;
             }
 

@@ -105,6 +105,8 @@ public class CheckPoint {
                         limited = limited.substring(0, 100);
                     if (sb.length() != 0)
                         sb.append(", ");
+                    limited = limited.replaceAll("\\n", "<nl>");
+                    limited = limited.replaceAll("\\r", "<cr>");
                     sb.append(limited);
                 }
             }
