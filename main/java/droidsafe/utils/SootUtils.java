@@ -1070,6 +1070,31 @@ public class SootUtils {
 
         return methods;
     }
+    
+    
+     /**
+     * Return all methods that override the given method (in the given class). Search all children
+     * all methods including abstract classes are collected
+     */
+    public static Set<SootMethod> getAllOverridingMethodsIncluding(SootMethod method) {
+        
+        SootClass clz = method.getDeclaringClass();
+        String subSig = method.getSubSignature();
+        
+        Set<SootMethod> methods = new LinkedHashSet<SootMethod>();
+
+        List<SootClass> childrenIncluding = getChildrenIncluding(clz);
+
+        for (SootClass child : childrenIncluding) {
+            if (child.declaresMethod(subSig)) {
+                SootMethod meth = child.getMethod(subSig);
+                methods.add(meth);
+            }
+        }
+
+        return methods;
+    }
+
 
     /**
      * Is this class an innner class based on the presence of $ in the name.
