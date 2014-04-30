@@ -32,6 +32,7 @@ public class Sets {
         return set;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.491 -0400", hash_original_method = "CE24FF7C45F6DB60D6991058AB32CAAF", hash_generated_method = "CE24FF7C45F6DB60D6991058AB32CAAF")
     public Sets ()
     {

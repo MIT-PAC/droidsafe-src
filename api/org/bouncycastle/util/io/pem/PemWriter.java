@@ -27,6 +27,7 @@ public class PemWriter extends BufferedWriter {
      *
      * @param out output stream to use.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.648 -0500", hash_original_method = "FE3DCCF7A57AE41AA2B9ABB8B6650E80", hash_generated_method = "22D2ABCA7296FD2295DAB4E5937CF45B")
     
 public PemWriter(Writer out)

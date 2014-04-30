@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw;
 
 import droidsafe.annotations.*;
@@ -49,13 +48,11 @@ import java.util.ArrayList;
 public class GraphEnvironment extends MffEnvironment {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.999 -0400", hash_original_field = "46AC5AD01E31ADAE0332CD75378448C0", hash_generated_field = "CC77BD5CBB1D0C31C1B25951FA40EB4D")
 
-
     public static final int MODE_ASYNCHRONOUS = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.003 -0400", hash_original_field = "63A849870A2D1DA5DB49865AFBA5218E", hash_generated_field = "DE7E005E8ADB7F8192203AE40552D7DD")
 
     public static final int MODE_SYNCHRONOUS  = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.007 -0400", hash_original_field = "EBBB2A7741D31DBFB0EE7BC27263EF56", hash_generated_field = "D3DA74FDA0E1BECDF32780C95D76A866")
-
 
     private GraphReader mGraphReader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.010 -0400", hash_original_field = "1CDEFECAF79D1EF4E6F7B8472AA35A0F", hash_generated_field = "8B8D23F7B9A6A779A9253E42D3020070")
@@ -108,6 +105,7 @@ public GraphRunner getSyncRunner(FilterContext environment) {
     /**
      * Create a new GraphEnvironment with default components.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.040 -0400", hash_original_method = "2FE3DF2A181D04B622B627D661DD5F8F", hash_generated_method = "F19E4AF2315240F3614DF3012C7D3968")
     
 public GraphEnvironment() {

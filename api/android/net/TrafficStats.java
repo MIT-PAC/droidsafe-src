@@ -360,6 +360,7 @@ private static NetworkStats getDataLayerSnapshotForUid(Context context) {
 
     private static Object sProfilingLock = new Object();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.336 -0400", hash_original_method = "0A5769A7A7853AFB0195EA94063CCE5B", hash_generated_method = "0A5769A7A7853AFB0195EA94063CCE5B")
     public TrafficStats ()
     {

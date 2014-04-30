@@ -45,6 +45,7 @@ public static ASN1GeneralizedTime getInstance() {
      * To get a default implementation it is recommended to use
      * getInstance() method.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.045 -0500", hash_original_method = "BB0F4D8A317B403CA2CD2FD0C74F8C92", hash_generated_method = "867C6ED7D91667F6ECC9996437FF15A5")
     
 public ASN1GeneralizedTime() {

@@ -20,6 +20,7 @@ public class AccessControlException extends SecurityException {
      * @param message
      *            the detail message for this exception.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.401 -0500", hash_original_method = "A915208612B5792FCAB4EB90528BDE0E", hash_generated_method = "D739F9EC186CFA800C2855DE03A4C4B5")
     
 public AccessControlException(String message) {

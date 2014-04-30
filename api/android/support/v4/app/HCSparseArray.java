@@ -70,7 +70,6 @@ static int idealIntArraySize(int need) {
 
     private boolean mGarbage = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:12.470 -0500", hash_original_field = "904D0E6EB4847EA02E1703FDE76AE0FF", hash_generated_field = "61AC896AB2732D0B3CF0262159DAE2AD")
-
     
     private int[] mKeys;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:12.473 -0500", hash_original_field = "D3F28F3EBFA7D0D8D614CF293C7CCCA8", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
@@ -83,6 +82,7 @@ static int idealIntArraySize(int need) {
     /**
      * Creates a new SparseArray containing no mappings.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:12.378 -0500", hash_original_method = "22E432D55E87D9B082CFCE15ABC7A111", hash_generated_method = "4B41BA1002EC2475651508F5034D86F3")
     
 public HCSparseArray() {

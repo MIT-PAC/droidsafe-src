@@ -51,6 +51,7 @@ public static void enableDebugLogging(boolean enabled) {
 
     public static final int POP_BACK_STACK_INCLUSIVE = 1<<0;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.334 -0400", hash_original_method = "0D3FEDE97BC3242ED64134E1F014EA11", hash_generated_method = "0D3FEDE97BC3242ED64134E1F014EA11")
     public FragmentManager ()
     {
@@ -383,6 +384,7 @@ public FragmentManagerState[] newArray(int size) {
 
     BackStackState[] mBackStack;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.199 -0500", hash_original_method = "4ADB2DBBD6899E89144480A7958A6490", hash_generated_method = "001680BC3C0AA33814887A60387200FC")
     
 public FragmentManagerState() {
@@ -612,6 +614,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         
 };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.354 -0400", hash_original_method = "57A648A59831AB7BB1637AFC6125C81E", hash_generated_method = "57A648A59831AB7BB1637AFC6125C81E")
     public FragmentManagerImpl ()
     {

@@ -41,6 +41,7 @@ public class CheckedTextView extends TextView implements Checkable {
 
     private boolean mNeedRequestlayout;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.348 -0500", hash_original_method = "D98B8279143D8DB42D11ECE4C668DA6C", hash_generated_method = "60B4C5D328B63E776B25C5B794E14856")
     
 public CheckedTextView(Context context) {
@@ -55,6 +56,7 @@ public CheckedTextView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.354 -0500", hash_original_method = "B58B3AE8D95B44872F8433BF803A9C37", hash_generated_method = "9B7B6ACD5749F41A993994BA38B9308F")
     
 public CheckedTextView(Context context, AttributeSet attrs, int defStyle) {

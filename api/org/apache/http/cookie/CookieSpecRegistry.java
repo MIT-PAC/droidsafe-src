@@ -17,6 +17,7 @@ public final class CookieSpecRegistry {
 
     private  Map<String,CookieSpecFactory> registeredSpecs;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.339 -0500", hash_original_method = "87109D006D3940B2EC7D884D0D44DEE0", hash_generated_method = "A9BB432EBF45DB1187902365BF6F14A9")
     
 public CookieSpecRegistry() {

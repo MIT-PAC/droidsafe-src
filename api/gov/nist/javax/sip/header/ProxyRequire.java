@@ -19,6 +19,7 @@ public class ProxyRequire extends SIPHeader implements ProxyRequireHeader {
     /**
      * Default  Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.631 -0500", hash_original_method = "313262BBE47BF259092F8848A4D13338", hash_generated_method = "285B287E7C11CBCB6E456C35E2CB8B48")
     
 public ProxyRequire() {

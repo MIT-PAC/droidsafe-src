@@ -26,6 +26,7 @@ public class NameValueList implements Serializable, Cloneable, Map<String,NameVa
     /**
      * default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.297 -0500", hash_original_method = "E8FF7D679153D33DE114891B4F9D5A45", hash_generated_method = "9F6507F0D8B8A1423A04394E2886FDD2")
     
 public NameValueList() {

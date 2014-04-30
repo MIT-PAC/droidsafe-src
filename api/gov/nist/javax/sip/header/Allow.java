@@ -16,6 +16,7 @@ public final class Allow extends SIPHeader implements javax.sip.header.AllowHead
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.315 -0500", hash_original_method = "473413697039914FAE978B5460F14DD9", hash_generated_method = "7144F05B316388D4FB02D674281EA11A")
     
 public Allow() {

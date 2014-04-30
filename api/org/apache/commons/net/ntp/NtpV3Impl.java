@@ -32,13 +32,11 @@ public class NtpV3Impl implements NtpV3Packet
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.021 -0500", hash_original_field = "2FE8B959F33371290601EAB99A984ADD", hash_generated_field = "2C4223A63C74CABEB2FDCCA04ED07C75")
 
-
     private static final int MODE_INDEX = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.033 -0500", hash_original_field = "41484C45A110C0E16850AF102BDDA7CF", hash_generated_field = "DD51AB82431B0461A989487137F5B324")
 
     private static final int MODE_SHIFT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.044 -0500", hash_original_field = "539DD8A2DDFD2ED99C19260A86F0CD9C", hash_generated_field = "52C279095B78062175A994B129E1355A")
-
 
     private static final int VERSION_INDEX = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.055 -0500", hash_original_field = "546D23CC1E4F30F1C2A6D3D48C255813", hash_generated_field = "BC98D967D2A063B23507EA946711A75B")
@@ -46,13 +44,11 @@ public class NtpV3Impl implements NtpV3Packet
     private static final int VERSION_SHIFT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.062 -0500", hash_original_field = "9B533DF0FADF10B8A1A78B5D61445652", hash_generated_field = "EC7F2A32367E9CB7C3E174485DFCF12C")
 
-
     private static final int LI_INDEX = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.071 -0500", hash_original_field = "416D159C5D1B283FACA3351DD70D40A5", hash_generated_field = "5A89344241C96B983A4B5EA5C75F8A3C")
 
     private static final int LI_SHIFT = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.079 -0500", hash_original_field = "34B8081D10267B7D5F7CFA0E88E702EF", hash_generated_field = "E09C424F8A31F9CE06F6368CC7E6A3D4")
-
 
     private static final int STRATUM_INDEX = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.087 -0500", hash_original_field = "42A660FE12D3D204BFDF31A90D0A2D8B", hash_generated_field = "27594DAE19890C46612EB7B82DFEB925")
@@ -63,7 +59,6 @@ public class NtpV3Impl implements NtpV3Packet
     private static final int PRECISION_INDEX = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.107 -0500", hash_original_field = "3C97ED78D076847474DD47075B3C3C46", hash_generated_field = "CC8577655A8E028550A0C6E31D4EB2B7")
 
-
     private static final int ROOT_DELAY_INDEX = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.114 -0500", hash_original_field = "D3DA64ECE15DE520A524EEF8DE0A2B87", hash_generated_field = "175D294D7AA28BC9DB577D5B1D3347E6")
 
@@ -72,7 +67,6 @@ public class NtpV3Impl implements NtpV3Packet
 
     private static final int REFERENCE_ID_INDEX = 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.129 -0500", hash_original_field = "3868B2A74D4EB39F0B61A2A4914C18D4", hash_generated_field = "A031AB42AB79CA5410E2B59FA6BAA3DC")
-
 
     private static final int REFERENCE_TIMESTAMP_INDEX = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.138 -0500", hash_original_field = "1399324B4EB43B8B6B4E1F097590DA05", hash_generated_field = "CD343D8CEAD0462D499B71887AE49C21")
@@ -85,7 +79,6 @@ public class NtpV3Impl implements NtpV3Packet
 
     private static final int TRANSMIT_TIMESTAMP_INDEX = 40;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.160 -0500", hash_original_field = "F26FB6951E305C30C9D7D35FB5E3263D", hash_generated_field = "AD0A56D08FD1C6275D479677EE919306")
-
 
     private static final int KEY_IDENTIFIER_INDEX = 48;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.167 -0500", hash_original_field = "5A62262FEAABCA47D051BBF97CA7D525", hash_generated_field = "83A4CA2AB188C6B507C80A507004D70B")
@@ -125,14 +118,13 @@ protected final static long ul(byte b)
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.175 -0500", hash_original_field = "A6385E83F8F84C48091095858EC308D8", hash_generated_field = "A0AA2FE522842972BFE03F375CB01402")
 
-
     private byte[] buf = new byte[48];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.182 -0500", hash_original_field = "A1D26CC6B997CD5A7248D6E02382993B", hash_generated_field = "19B7EAD3976E05D3BCEEC1DF62B85F44")
-
 
     private DatagramPacket dp;
 
     /** Creates a new instance of NtpV3Impl */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.189 -0500", hash_original_method = "56AB1D6DB13A65C15890A0555B72FBBF", hash_generated_method = "04376E4F938AA94376D86D8CAEB2C6ED")
     
 public NtpV3Impl()

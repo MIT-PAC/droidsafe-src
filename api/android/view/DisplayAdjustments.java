@@ -31,16 +31,15 @@ public class DisplayAdjustments {
     public static final boolean DEVELOPMENT_RESOURCES_DEPEND_ON_ACTIVITY_TOKEN = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:06:10.735 -0500", hash_original_field = "EB66FD95EA0C9978AFF3048D54FFA6D5", hash_generated_field = "478114736FF744527146FD2DFD8F6FD9")
 
-
     public static final DisplayAdjustments DEFAULT_DISPLAY_ADJUSTMENTS = new DisplayAdjustments();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:06:10.739 -0500", hash_original_field = "E5B566789C44F2CF56BA88B943058EF6", hash_generated_field = "5A8F1066A37F831BD10CAF4B8FC9C285")
-
 
     private volatile CompatibilityInfo mCompatInfo = CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:06:10.742 -0500", hash_original_field = "E5471F0C03B08F98EE10B0F0E117A36C", hash_generated_field = "43AD28DFD27BD5445752248E4FFE1654")
 
     private volatile IBinder mActivityToken;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:06:10.745 -0500", hash_original_method = "6E253AB26463FBEBDC80C273E7CAAA30", hash_generated_method = "127C3E4AF5081C9D39388944233AFFB6")
     
 public DisplayAdjustments() {

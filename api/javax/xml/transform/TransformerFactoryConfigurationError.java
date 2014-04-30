@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class TransformerFactoryConfigurationError extends Error {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.520 -0500", hash_original_field = "2CBC6074DF6BD2C2AC2A7CA4BC170BEC", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
 
@@ -18,6 +14,7 @@ public class TransformerFactoryConfigurationError extends Error {
      * Create a new <code>TransformerFactoryConfigurationError</code> with no
      * detail message.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.523 -0500", hash_original_method = "B5236C2B50936EBB19164E0470E786D0", hash_generated_method = "1DCB431931DDB47E6A2B64E4103C4F35")
     
 public TransformerFactoryConfigurationError() {
@@ -30,6 +27,7 @@ public TransformerFactoryConfigurationError() {
      *
      * @param msg The error message for the exception.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.526 -0500", hash_original_method = "A106770FA0B10D144DFE1AE3A1F6A82D", hash_generated_method = "FB4B56F381D8C7CF1378D43C73163DED")
     
 public TransformerFactoryConfigurationError(String msg) {
@@ -103,7 +101,6 @@ public String getMessage() {
 public Exception getException() {
         return exception;
     }
-
     
 }
 

@@ -115,6 +115,7 @@ public static void execute(Runnable runnable) {
     /**
      * Creates a new asynchronous task. This constructor must be invoked on the UI thread.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.828 -0500", hash_original_method = "23205AF15CA33077DF5B8FA9588BE2E9", hash_generated_method = "6B985BD717BDC8527E4D4E1E53738C56")
     
 public ModernAsyncTask() {

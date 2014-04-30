@@ -325,6 +325,7 @@ public static String stripInternalSpaces(
         return res.toString();
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.478 -0400", hash_original_method = "A1DC5483E864AC4E5F00EC3185D86BA1", hash_generated_method = "A1DC5483E864AC4E5F00EC3185D86BA1")
     public IETFUtils ()
     {

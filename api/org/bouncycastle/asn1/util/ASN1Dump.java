@@ -459,6 +459,7 @@ private static String calculateAscString(byte[] bytes, int off, int len)
 
     private static final int SAMPLE_SIZE = 32;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.277 -0400", hash_original_method = "3C39DC3F42F8284331A1E50F07E6A630", hash_generated_method = "3C39DC3F42F8284331A1E50F07E6A630")
     public ASN1Dump ()
     {

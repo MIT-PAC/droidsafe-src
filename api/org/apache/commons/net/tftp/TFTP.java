@@ -73,7 +73,6 @@ public class TFTP extends DatagramSocketClient
 
     static final int PACKET_SIZE = TFTPPacket.SEGMENT_SIZE + 4;
 
-
     /***
      * Returns the TFTP string representation of a TFTP transfer mode.
      * Will throw an ArrayIndexOutOfBoundsException if an invalid transfer
@@ -105,6 +104,7 @@ public static final String getModeName(int mode)
      * Creates a TFTP instance with a default timeout of DEFAULT_TIMEOUT,
      * a null socket, and buffered operations disabled.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:03.671 -0500", hash_original_method = "247BE4E7D133B432CB20B5679BCB76D6", hash_generated_method = "CE13AD9BB58BCCE8B1D2A97E213F8E5F")
     
 public TFTP()
@@ -149,7 +149,6 @@ public final void discardPackets() throws IOException
 
         setSoTimeout(to);
     }
-
 
     /***
      * This is a special method to perform a more efficient packet receive.
@@ -215,7 +214,6 @@ public final void bufferedSend(TFTPPacket packet) throws IOException
         _socket_.send(packet._newDatagram(__sendDatagram, _sendBuffer));
     }
 
-
     /***
      * Initializes the internal buffers. Buffers are used by
      * {@link #bufferedSend  bufferedSend() } and
@@ -249,7 +247,6 @@ public final void endBufferedOps()
         __sendDatagram = null;
     }
 
-
     /***
      * Sends a TFTP packet to its destination.
      * <p>
@@ -262,7 +259,6 @@ public final void send(TFTPPacket packet) throws IOException
     {
         _socket_.send(packet.newDatagram());
     }
-
 
     /***
      * Receives a TFTPPacket.
@@ -292,6 +288,5 @@ public final TFTPPacket receive() throws IOException, InterruptedIOException,
 
         return TFTPPacket.newTFTPPacket(packet);
     }
-
 
 }

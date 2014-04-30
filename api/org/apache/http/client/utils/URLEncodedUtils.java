@@ -177,6 +177,7 @@ private static String encode (final String content, final String encoding) {
 
     private static final String NAME_VALUE_SEPARATOR = "=";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-18 10:03:54.756 -0400", hash_original_method = "81DBDF8E46C8CBBC080FA6A7719DA672", hash_generated_method = "81DBDF8E46C8CBBC080FA6A7719DA672")
     public URLEncodedUtils ()
     {

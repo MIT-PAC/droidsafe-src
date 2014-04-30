@@ -19,6 +19,7 @@ public class DuplicateNameValueList implements Serializable, Cloneable {
 
     private String separator;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.635 -0500", hash_original_method = "20742916A9CB1D797182F33AF39D95AA", hash_generated_method = "D06C3D0FE64A73CD5E2FF1308498E4CC")
     
 public DuplicateNameValueList()

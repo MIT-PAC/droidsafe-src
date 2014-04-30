@@ -24,6 +24,7 @@ protected PAssertedService(String name) {
         super(NAME);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.425 -0500", hash_original_method = "AA5E567A5261831D339C7F3E134619EA", hash_generated_method = "3FC74D34556E6AD4E53A3DA7F74BCDAE")
     
 public PAssertedService()

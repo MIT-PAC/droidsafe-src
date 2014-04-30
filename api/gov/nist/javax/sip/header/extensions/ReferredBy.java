@@ -21,6 +21,7 @@ public final class ReferredBy extends AddressParametersHeader implements Extensi
 
     /** default Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.235 -0500", hash_original_method = "C3DEC8F418CE8BBD8D4ED1D7A2F51A12", hash_generated_method = "30E71F39A1AD50D68074E783C22D51B4")
     
 public ReferredBy() {

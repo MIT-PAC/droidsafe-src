@@ -19,6 +19,7 @@ public class SAXException extends Exception {
     /**
      * Create a new SAXException.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.824 -0500", hash_original_method = "D831304643C6F5E396859CE263E8CD25", hash_generated_method = "B7D291EEFF0635366305D2FB3943B22D")
     
 public SAXException ()
@@ -31,6 +32,7 @@ public SAXException ()
      *
      * @param message The error or warning message.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.827 -0500", hash_original_method = "0B6772DEF84C5953639B673A22CD2D87", hash_generated_method = "ED8B68B0FCFC2C7A0FAC4B07EE3A164E")
     
 public SAXException (String message) {

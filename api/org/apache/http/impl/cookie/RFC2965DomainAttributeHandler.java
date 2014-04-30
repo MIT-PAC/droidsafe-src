@@ -13,10 +13,9 @@ import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-
-
 public class RFC2965DomainAttributeHandler implements CookieAttributeHandler {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.243 -0500", hash_original_method = "5C926F9EE1EA6288872238281D019BE6", hash_generated_method = "CF3A76679EF46895931226F828AC53C7")
     
 public RFC2965DomainAttributeHandler() {
@@ -169,7 +168,6 @@ public boolean match(final Cookie cookie, final CookieOrigin origin) {
                 0, host.length() - cookieDomain.length());
         return effectiveHostWithoutDomain.indexOf('.') == -1;
     }
-
     
 }
 

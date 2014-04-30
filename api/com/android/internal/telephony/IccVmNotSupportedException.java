@@ -15,6 +15,7 @@ IccVmNotSupportedException()
 
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.658 -0500", hash_original_method = "BF0F5F61FF78864DF45F6E5D7B53B506", hash_generated_method = "AA80B144A73957FBD94202B176E85276")
     
 public IccVmNotSupportedException(String s)

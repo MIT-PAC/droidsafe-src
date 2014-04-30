@@ -6,16 +6,12 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public class PEMException extends IOException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.852 -0500", hash_original_field = "C31C43ABE3D5D61AFE96A228698D8959", hash_generated_field = "C31C43ABE3D5D61AFE96A228698D8959")
 
     Exception    underlying;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.855 -0500", hash_original_method = "DBCE2D6935FCAE6513D26D3BE9F92180", hash_generated_method = "FBB110F8C2C8D2BDA1B7FB415599F813")
     
 public PEMException(
@@ -41,14 +37,12 @@ public Exception getUnderlyingException()
         return underlying;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.862 -0500", hash_original_method = "F2813220852B09056C9C149C0538BE80", hash_generated_method = "8657704834A58ECB84D4FA51B844934B")
     
 public Throwable getCause()
     {
         return underlying;
     }
-
     
 }
 

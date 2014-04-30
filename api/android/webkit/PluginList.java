@@ -21,6 +21,7 @@ public class PluginList {
     * @deprecated This interface was intended to be used by Gears. Since Gears was
     * deprecated, so is this class.
     */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.119 -0500", hash_original_method = "AFA11BE3CB57F72948CE6AE6103E33EF", hash_generated_method = "C450610E90B426B4B4E1C5DF32174271")
     
 @Deprecated

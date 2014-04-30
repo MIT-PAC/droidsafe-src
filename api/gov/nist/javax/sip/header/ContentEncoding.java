@@ -17,6 +17,7 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.656 -0500", hash_original_method = "AF3A83AEFF326F1AB1D055130F5C4343", hash_generated_method = "09CFAB9F360924133F778652D1D0B4E0")
     
 public ContentEncoding() {

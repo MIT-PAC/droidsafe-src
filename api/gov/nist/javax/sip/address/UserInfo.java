@@ -27,6 +27,7 @@ public final class UserInfo extends NetObject {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.768 -0500", hash_original_method = "F45B016F8E384DB218E594119B9CAF8C", hash_generated_method = "D72E2E8D97932CF9D212F26545BD45ED")
     
 public UserInfo() {

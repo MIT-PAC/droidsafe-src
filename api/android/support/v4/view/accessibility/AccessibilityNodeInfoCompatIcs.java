@@ -303,6 +303,7 @@ public static void recycle(Object info) {
         ((AccessibilityNodeInfo) info).recycle();
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.967 -0400", hash_original_method = "90D82575443FCC4920A59159F197ECDC", hash_generated_method = "90D82575443FCC4920A59159F197ECDC")
     public AccessibilityNodeInfoCompatIcs ()
     {

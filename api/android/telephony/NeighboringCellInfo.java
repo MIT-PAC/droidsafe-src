@@ -62,6 +62,7 @@ public NeighboringCellInfo[] newArray(int size) {
      *
      * @deprecated by {@link #NeighboringCellInfo(int, String, int)}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.327 -0500", hash_original_method = "BD76A3213F8AC49348CAF06FA32CACCC", hash_generated_method = "60DD6DB1EB7CD4DA3DC21B209839C437")
     
 @Deprecated

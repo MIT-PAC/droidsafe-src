@@ -13,31 +13,25 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.SAXNotRecognizedException;
 
-
-
-
 public class SAXParserFactoryImpl extends SAXParserFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.741 -0500", hash_original_field = "23D5E90A009660027D8004B0865026CF", hash_generated_field = "BE5F1192FB3C2F3EED9964DA7D958C23")
-
 
     private static final String NAMESPACES
             = "http://xml.org/sax/features/namespaces";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.744 -0500", hash_original_field = "82AE1762CE90A109938E89B1ADAFE1BF", hash_generated_field = "70ED57CE87CAB83D17A94161FFE3B368")
 
-
     private static final String VALIDATION
             = "http://xml.org/sax/features/validation";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.746 -0500", hash_original_field = "52DB9F5445142ACC1EFB3E9C4AA84BD1", hash_generated_field = "BBF36E0D89D30BFFC00EE4B538D5AA0E")
 
-
     private Map<String, Boolean> features = new HashMap<String, Boolean>();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.792 -0400", hash_original_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A", hash_generated_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A")
     public SAXParserFactoryImpl ()
     {
         //Synthesized constructor
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.793 -0400", hash_original_method = "7A2715D86ACB75E2F46F70864B886736", hash_generated_method = "3D8F90B43D8CCB46BB10FF9414B01FBF")
     @Override
@@ -105,7 +99,6 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
             throw new ParserConfigurationException(ex.toString());
         }
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.796 -0400", hash_original_method = "F8C86ADBC38F5FA5C922066DFA926032", hash_generated_method = "1A427FE4D75D4A651B4E08CFE65A510C")
     @Override

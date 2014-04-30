@@ -6,8 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-
-
 class WTauNafMultiplier implements ECMultiplier {
 
     /**
@@ -60,6 +58,7 @@ private static ECPoint.F2m multiplyFromWTnaf(ECPoint.F2m p, byte[] u,
         return q;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.921 -0400", hash_original_method = "25BA0794289AAEB8CCD4FF1151858B35", hash_generated_method = "25BA0794289AAEB8CCD4FF1151858B35")
     public WTauNafMultiplier ()
     {
@@ -129,7 +128,6 @@ private ECPoint.F2m multiplyWTnaf(ECPoint.F2m p, ZTauElement lambda,
 
         return multiplyFromWTnaf(p, u, preCompInfo);
     }
-
     
 }
 

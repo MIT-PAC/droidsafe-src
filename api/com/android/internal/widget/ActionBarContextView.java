@@ -80,18 +80,21 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
 
     private int mAnimationMode;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.111 -0500", hash_original_method = "2EBFD0846938BB846291BE9F4AD94F04", hash_generated_method = "5204B1F16256DBE4D4C418301785327D")
     
 public ActionBarContextView(Context context) {
         this(context, null);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.113 -0500", hash_original_method = "43CDEE17F6E403B0B882E0F499365FE4", hash_generated_method = "348B0930F38AD43D786D05BDE59E7074")
     
 public ActionBarContextView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.actionModeStyle);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.116 -0500", hash_original_method = "19C70EFA7CD06BD307662BD45113B543", hash_generated_method = "513528AC2564102B25E794BB862225FD")
     
 public ActionBarContextView(Context context, AttributeSet attrs, int defStyle) {

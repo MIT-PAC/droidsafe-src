@@ -299,6 +299,7 @@ private static SecretKey getKey(
 
     private static final Set PKCS5_SCHEME_2 = new HashSet();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.115 -0400", hash_original_method = "5344C5F9BC7B07765B0DBE5794533466", hash_generated_method = "5344C5F9BC7B07765B0DBE5794533466")
     public PEMUtilities ()
     {

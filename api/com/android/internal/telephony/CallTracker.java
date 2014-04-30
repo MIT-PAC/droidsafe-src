@@ -70,6 +70,7 @@ public abstract class CallTracker extends Handler {
 
     public CommandsInterface cm;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.520 -0400", hash_original_method = "A8AA2346503563FF548E182F14163DE2", hash_generated_method = "A8AA2346503563FF548E182F14163DE2")
     public CallTracker ()
     {

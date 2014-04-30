@@ -261,6 +261,7 @@ private static void removeExpiredEntries(Context context) {
     public static final Uri CONTENT_URI =
         Uri.parse("content://" + AUTHORITY);
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.096 -0400", hash_original_method = "EA6E95983D6BBE8DD1267831A542BD27", hash_generated_method = "EA6E95983D6BBE8DD1267831A542BD27")
     public CallLog ()
     {

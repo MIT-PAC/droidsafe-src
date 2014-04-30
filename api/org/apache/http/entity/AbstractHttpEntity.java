@@ -22,7 +22,8 @@ public abstract class AbstractHttpEntity implements HttpEntity {
 
     protected boolean chunked;
     
-	protected AbstractHttpEntity() {}
+	@DSSafe(DSCat.SAFE_OTHERS)
+    protected AbstractHttpEntity() {}
 
     /**
      * Obtains the Content-Type header.

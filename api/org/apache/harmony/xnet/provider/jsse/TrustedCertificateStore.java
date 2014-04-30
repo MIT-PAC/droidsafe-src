@@ -63,6 +63,7 @@ public static final boolean isUser(String alias) {
 
     private  File deletedDir;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.130 -0500", hash_original_method = "2FF99D64326A5347B39C240182ABD235", hash_generated_method = "D1E157B1702BA3A6ECB5A3192553879A")
     
 public TrustedCertificateStore() {

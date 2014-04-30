@@ -27,6 +27,7 @@ public abstract class GestureLibrary {
 
     protected  GestureStore mStore;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.482 -0500", hash_original_method = "311DE826347EAA4CD94EF3C48A5F8D66", hash_generated_method = "8019A0A1CC8C35C00F8F81ACC5929E7E")
     
 protected GestureLibrary() {

@@ -53,6 +53,7 @@ private static int compateOids(ObjectIdentifier oid1, ObjectIdentifier oid2) {
 
     private static final long serialVersionUID = -1286471842007103132L;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.531 -0400", hash_original_method = "A875CA77DCF86273FF83ADF73F0AA798", hash_generated_method = "A875CA77DCF86273FF83ADF73F0AA798")
     public AttributeTypeAndValueComparator ()
     {

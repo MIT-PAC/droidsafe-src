@@ -15,6 +15,7 @@ public class RSeq extends SIPHeader implements javax.sip.header.RSeqHeader {
     protected long sequenceNumber;
 
     /** Creates a new instance of RSeq */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.452 -0500", hash_original_method = "1AAF86792C53F220850630A2C399A377", hash_generated_method = "F23EB0EE2ABF189E0964015CD69CAB2F")
     
 public RSeq() {

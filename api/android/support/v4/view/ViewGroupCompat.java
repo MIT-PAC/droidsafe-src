@@ -55,7 +55,6 @@ public boolean onRequestSendAccessibilityEvent(
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:28.492 -0500", hash_original_field = "B1B66CC23CA7DFB890A608C54A7234A0", hash_generated_field = "E257834CBFA3D612BE0D9147AAF7AA2F")
 
-
     static  ViewGroupCompatImpl IMPL;
     static {
         if (Build.VERSION.SDK_INT >= 14) {
@@ -90,6 +89,7 @@ public static boolean onRequestSendAccessibilityEvent(ViewGroup group, View chil
     /*
      * Hide the constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:28.493 -0500", hash_original_method = "C9E473FFFB3F968718996597E8C1665E", hash_generated_method = "4204166126FD256F38E2FC1681739B07")
     
 private ViewGroupCompat() {

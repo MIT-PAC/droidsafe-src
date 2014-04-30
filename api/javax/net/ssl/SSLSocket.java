@@ -16,6 +16,7 @@ public abstract class SSLSocket extends Socket {
      * <p>
      * Creates a TCP socket.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.332 -0500", hash_original_method = "65A9306BD8ABF19429A09B81D2DB8751", hash_generated_method = "79C24DC7FBEDF6FC9189D433464AE63B")
     
 protected SSLSocket() {
@@ -36,6 +37,7 @@ protected SSLSocket() {
      * @throws UnknownHostException
      *             if the specified host is not known.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.335 -0500", hash_original_method = "7A9B2251249D4A1F85A734BE270C0240", hash_generated_method = "56827ADB3FC9F1133B4C327EC8FD8250")
     
 protected SSLSocket(String host, int port) throws IOException, UnknownHostException {
@@ -55,6 +57,7 @@ protected SSLSocket(String host, int port) throws IOException, UnknownHostExcept
      * @throws IOException
      *             if creating the socket fails.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.338 -0500", hash_original_method = "E1BBFC80ACA37B77A62FE55F8E5644EC", hash_generated_method = "02F6A23E4908270BBEE10ABB5513A8F3")
     
 protected SSLSocket(InetAddress address, int port) throws IOException {
@@ -80,6 +83,7 @@ protected SSLSocket(InetAddress address, int port) throws IOException {
      * @throws UnknownHostException
      *             if the specified host is not known.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.340 -0500", hash_original_method = "A98E3D3F4703F52B86E74E8B006B047C", hash_generated_method = "F94C2ABC483A9F1A0B00B8F9F0839B05")
     
 protected SSLSocket(String host, int port, InetAddress clientAddress, int clientPort)
@@ -104,6 +108,7 @@ protected SSLSocket(String host, int port, InetAddress clientAddress, int client
      * @throws IOException
      *             if creating the socket fails.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.343 -0500", hash_original_method = "0B70D3C7F543DCBA51EA559CD021E805", hash_generated_method = "A94FA805013A9A40525A32FAE3664F98")
     
 protected SSLSocket(InetAddress address, int port, InetAddress clientAddress, int clientPort)

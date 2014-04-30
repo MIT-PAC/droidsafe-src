@@ -107,6 +107,7 @@ public static char[] encodeHex(byte[] data) {
            '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
     };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.678 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
     public Hex ()
     {

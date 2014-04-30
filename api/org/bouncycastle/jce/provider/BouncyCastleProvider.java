@@ -60,6 +60,7 @@ public final class BouncyCastleProvider extends Provider implements Configurable
      * using runtime registration of the provider using the
      * <code>Security.addProvider()</code> mechanism.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.133 -0500", hash_original_method = "A959A465DC8BCFFC9B23D0D2C15418FF", hash_generated_method = "83263833380411A00F94F79786397F7A")
     
 public BouncyCastleProvider()

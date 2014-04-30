@@ -16,7 +16,6 @@
 
 package com.android.internal.view.menu;
 
-
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -46,6 +45,7 @@ public final class ExpandedMenuView extends ListView implements ItemInvoker, Men
      * Instantiates the ExpandedMenuView that is linked with the provided MenuBuilder.
      * @param menu The model for the menu which this MenuView will display
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.020 -0400", hash_original_method = "2D7D395683AE9CE33D072044336B70BB", hash_generated_method = "59D12AAE3F3B3C5A4F5D7E6DAC60500B")
     
 public ExpandedMenuView(Context context, AttributeSet attrs) {

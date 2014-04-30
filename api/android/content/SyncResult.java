@@ -69,6 +69,7 @@ public SyncResult[] newArray(int size) {
      * {@link SyncResult#hasHardError()} and  {@link SyncResult#hasSoftError()}. If both are
      * true then the SyncManager treats it as a hard error, not a soft error.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.079 -0500", hash_original_method = "74DBC91B11F83F26A5C8672BC9110150", hash_generated_method = "B051DFA8BAF8903AFC907085721076D3")
     
 public SyncResult() {

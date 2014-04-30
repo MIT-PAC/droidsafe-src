@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.geometry;
 
 import droidsafe.annotations.*;
@@ -52,6 +51,7 @@ public static Rectangle fromCenterVerticalAxis(Point center, Point vAxis, Point 
                              center.plus(dx).plus(dy));
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:13.099 -0400", hash_original_method = "7D3811CB1678D30D8D27D4A02039CDAE", hash_generated_method = "5AB663F6126041E31DF8F10097075BA9")
     
 public Rectangle() {

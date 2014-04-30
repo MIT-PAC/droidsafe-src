@@ -7,9 +7,8 @@ import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
-
-
 public class PlainServerSocketImpl extends PlainSocketImpl {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.375 -0500", hash_original_method = "CB92FA37CCF842A0A29D6A265F149C47", hash_generated_method = "8358F680F9D52E3259C8D1FCC816F95B")
     
 public PlainServerSocketImpl() {
@@ -30,7 +29,6 @@ public PlainServerSocketImpl(FileDescriptor fd) {
             setOption(SocketOptions.SO_REUSEADDR, Boolean.TRUE);
         }
     }
-
     
 }
 

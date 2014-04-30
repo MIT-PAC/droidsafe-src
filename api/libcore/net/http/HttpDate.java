@@ -81,6 +81,7 @@ public static String format(Date value) {
             "EEE MMM d yyyy HH:mm:ss z",
     };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.172 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
     public HttpDate ()
     {

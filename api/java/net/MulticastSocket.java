@@ -18,6 +18,7 @@ public class MulticastSocket extends DatagramSocket {
      *
      * @throws IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.588 -0500", hash_original_method = "E00E381299DD101E8388BF5692519367", hash_generated_method = "9B8253BC9D1C81B18F2BAC30CDA612F3")
     
 public MulticastSocket() throws IOException {
@@ -30,6 +31,7 @@ public MulticastSocket() throws IOException {
      *
      * @throws IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.590 -0500", hash_original_method = "AEBFC898C5450F1ABC3134E881783937", hash_generated_method = "11CFA2DF20D7A17268C97729453FFBB5")
     
 public MulticastSocket(int port) throws IOException {
@@ -45,6 +47,7 @@ public MulticastSocket(int port) throws IOException {
      * an {@code InetSocketAddress}, say).
      * @throws IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.593 -0500", hash_original_method = "04DD868DCBB43DC9F285487EAD012BAF", hash_generated_method = "2D7146D92DFA7317318A1D2FC98B3D06")
     
 public MulticastSocket(SocketAddress localAddress) throws IOException {

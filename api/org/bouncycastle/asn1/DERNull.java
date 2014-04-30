@@ -16,6 +16,7 @@ public class DERNull extends ASN1Null {
     // END android-changed
 
     // BEGIN android-changed
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.631 -0500", hash_original_method = "99B54E5156DA58D37DF99A37E5693124", hash_generated_method = "0320D726E6AAAD1B47BECB90C90AD692")
     
 protected DERNull()

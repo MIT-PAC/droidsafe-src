@@ -65,7 +65,6 @@ public static synchronized BluetoothTetheringDataTracker getInstance() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:11.908 -0400", hash_original_field = "6541C6711D6BE05C9C021C8620DD0C06", hash_generated_field = "4EA0249F3CB1F25DEEB7A2D599960CCF")
 
-
     private AtomicBoolean mTeardownRequested = new AtomicBoolean(false);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:11.911 -0400", hash_original_field = "0CBE9DA0B72CF8A774EFC63D7BE3C8AE", hash_generated_field = "3C2E61E069E7AE1880AD97C845BB54D0")
 
@@ -78,7 +77,6 @@ public static synchronized BluetoothTetheringDataTracker getInstance() {
     private AtomicBoolean mDefaultRouteSet = new AtomicBoolean(false);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:11.917 -0400", hash_original_field = "3AC154B48A5E86BD2F0F7B931CFF2258", hash_generated_field = "9F649FE3D9C6025A8AFED4B89BAD6B4C")
 
-
     private LinkProperties mLinkProperties;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:11.920 -0400", hash_original_field = "1351E512E27F9F6433090E613107A8FA", hash_generated_field = "A9452502E20D0089CC2F2695F26B7137")
 
@@ -87,7 +85,6 @@ public static synchronized BluetoothTetheringDataTracker getInstance() {
 
     private NetworkInfo mNetworkInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:11.924 -0400", hash_original_field = "B9CD495C4335B9BDF4D3DF44104103AC", hash_generated_field = "88E222EF7AC6D17D41069DC9735DDE20")
-
 
     private BluetoothPan mBluetoothPan;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:11.926 -0400", hash_original_field = "793253818BA6C7B0BA0EE44002B9EC24", hash_generated_field = "E4571726F4118D3C8C7A8AF1D003C1BF")
@@ -100,7 +97,6 @@ public static synchronized BluetoothTetheringDataTracker getInstance() {
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:11.959 -0400", hash_original_field = "A37954B7ACFD41DCB2A95B39A75A2A3C", hash_generated_field = "C48754FEB28FB5513A32BE302F1420F4")
-
 
     private BluetoothProfile.ServiceListener mProfileServiceListener =
         new BluetoothProfile.ServiceListener() {
@@ -116,6 +112,7 @@ public void onServiceDisconnected(int profile) {
         }
     };
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:11.939 -0400", hash_original_method = "E333130020C6323F086A67DCFD787729", hash_generated_method = "3E84013271C4A314948B37E023E57403")
     
 private BluetoothTetheringDataTracker() {
@@ -341,7 +338,6 @@ public void defaultRouteSet(boolean enabled) {
 public String getTcpBufferSizesPropName() {
         return "net.tcp.buffersize.wifi";
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:12.006 -0400", hash_original_method = "6D2EE25D5E1C8FDE216F03246F7F479B", hash_generated_method = "09FB26A549076303A3868E905BC5AA40")
     

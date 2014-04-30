@@ -15,6 +15,7 @@ public class DrmException extends Exception {
 private DrmException() {
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.112 -0500", hash_original_method = "8E7A7AD1E370694486A4B27CB4185F34", hash_generated_method = "3096C622627001639EFA03283A23642E")
     
 public DrmException(String message) {

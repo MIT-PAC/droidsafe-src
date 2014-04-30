@@ -48,17 +48,14 @@ public class Gesture implements Parcelable {
     private static final long GESTURE_ID_BASE = System.currentTimeMillis();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.252 -0500", hash_original_field = "7C779589A1410DE8DA8E8EABAC4F93CC", hash_generated_field = "90C0408E8A5AB402B75AAA3B303237D0")
 
-
     private static final int BITMAP_RENDERING_WIDTH = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.260 -0500", hash_original_field = "5BA4E275A4DE9E31469F76AE75C7E9A1", hash_generated_field = "922C5ED1D7A64B6BFAA6BDDE01C3EA59")
-
 
     private static final boolean BITMAP_RENDERING_ANTIALIAS = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.269 -0500", hash_original_field = "F6615C20C4FA6299531D545D11D82A2A", hash_generated_field = "EB0244A71FAAB93211FD398D574A5B54")
 
     private static final boolean BITMAP_RENDERING_DITHER = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.278 -0500", hash_original_field = "5CBB25D2ED9B6FBD70ACC5441BABC613", hash_generated_field = "00C4EC8CD37B12CB146DBC271EC98866")
-
 
     private static final AtomicInteger sGestureCount = new AtomicInteger(0);
 
@@ -79,7 +76,6 @@ static Gesture deserialize(DataInputStream in) throws IOException {
         return gesture;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.506 -0500", hash_original_field = "A7061D7E636EC2E39C59A88912C2604F", hash_generated_field = "62E1536C57E8701BFD2818B7105E7D29")
-
 
     public static final Parcelable.Creator<Gesture> CREATOR = new Parcelable.Creator<Gesture>() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:36.305 -0500", hash_original_method = "EB993F665DB343ED1E9AF0775BEE74CA", hash_generated_method = "B4CE95667D377DB3029586150EA96CF7")
@@ -114,16 +110,15 @@ public Gesture[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.298 -0500", hash_original_field = "5FE9FB072EC5AB9D41472CC3ECD64AA1", hash_generated_field = "3D8E981E064D40B31D458007C3410434")
 
-
     private final RectF mBoundingBox = new RectF();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.306 -0500", hash_original_field = "53D996EF5C3AC7865B47201F58E2FB48", hash_generated_field = "D3E1AA26AF029A069592AF83B1507112")
 
     private long mGestureID;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.315 -0500", hash_original_field = "4E990228142264618C9982F84FD7A05B", hash_generated_field = "51189B296B288EB557512B8559591D71")
 
-
     private final ArrayList<GestureStroke> mStrokes = new ArrayList<GestureStroke>();
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.324 -0500", hash_original_method = "73730C41097D241C4B58E2EF29274F0D", hash_generated_method = "2F03906A7557BEE3E8383505498FECDA")
     
 public Gesture() {

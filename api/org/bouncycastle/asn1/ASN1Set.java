@@ -114,6 +114,7 @@ public static ASN1Set getInstance(
 
             private final int max = size();
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.511 -0500", hash_original_method = "565D53F8B19BD627340B9CF494B1B831", hash_generated_method = "726CDC3CD2E34F5070D0A6F729BA86FA")
     
 public ASN1Set()

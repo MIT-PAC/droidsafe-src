@@ -14,6 +14,7 @@ public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpa
 
     private int mBackgroundColor;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.598 -0500", hash_original_method = "BE3451A654F6E9FD9B583E5F598309FD", hash_generated_method = "B973EA819EA16286EAAE8A0719DFF0FB")
     
 public SuggestionRangeSpan() {

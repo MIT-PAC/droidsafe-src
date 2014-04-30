@@ -489,6 +489,7 @@ public void writeMeasurement(String label, String value) {
 
     private int mDelayMsec;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.710 -0400", hash_original_method = "4F1BA42F3F5EBFB30B61E510F40B73D6", hash_generated_method = "4F1BA42F3F5EBFB30B61E510F40B73D6")
     public InstrumentationTestRunner ()
     {

@@ -84,18 +84,21 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
 
     protected String[] mExcludeMimes = null;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.370 -0500", hash_original_method = "F698EB0A9BF86C10F29F79F4D1EFD1DC", hash_generated_method = "E606BDD76AA44C2129C3ADDD227FC669")
     
 public QuickContactBadge(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.373 -0500", hash_original_method = "ADED2BA446D2A9BF4C8E4781CE5F3F84", hash_generated_method = "3F05716E9814AD5BB783CFF0A6097297")
     
 public QuickContactBadge(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.375 -0500", hash_original_method = "0171DAF66D107836BC0033CB50F41701", hash_generated_method = "BB3E0EBFAF3B9ED2C102EB011DEB0044")
     
 public QuickContactBadge(Context context, AttributeSet attrs, int defStyle) {

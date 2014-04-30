@@ -188,6 +188,7 @@ private Method(Class<?> declaring, Class<?>[] paramTypes, Class<?>[] exceptTypes
     }
     // orphaned legacy method
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Method() {
 
 	}

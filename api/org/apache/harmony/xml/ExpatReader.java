@@ -44,6 +44,7 @@ public class ExpatReader implements XMLReader {
 
     private boolean processNamespacePrefixes = false;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.111 -0400", hash_original_method = "0527B9275A46E7773519FE6EE020706F", hash_generated_method = "0527B9275A46E7773519FE6EE020706F")
     public ExpatReader ()
     {

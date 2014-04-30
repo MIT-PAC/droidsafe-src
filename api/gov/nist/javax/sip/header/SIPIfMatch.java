@@ -19,6 +19,7 @@ public class SIPIfMatch extends SIPHeader implements SIPIfMatchHeader, Extension
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.162 -0500", hash_original_method = "BAD2DC814CD45D5939615C62F83835FA", hash_generated_method = "EEDADED6A8326FC09068A059D953851F")
     
 public SIPIfMatch() {

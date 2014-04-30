@@ -23,6 +23,7 @@ public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
     protected String method;
 
     /** Creates a new instance of RAck */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.623 -0500", hash_original_method = "7C5933C28B73D77B67311599A1BD6348", hash_generated_method = "CDB735DF58562B10FB6D23459A5ACA7C")
     
 public RAck() {

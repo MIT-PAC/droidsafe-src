@@ -40,6 +40,7 @@ static DERSet createSet(ASN1EncodableVector v, boolean needsSorting)
 
     static final DERSet EMPTY_SET = new DERSet();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.247 -0400", hash_original_method = "2DA71B0AE496B3C2B80EF0106AA885B2", hash_generated_method = "2DA71B0AE496B3C2B80EF0106AA885B2")
     public DERFactory ()
     {

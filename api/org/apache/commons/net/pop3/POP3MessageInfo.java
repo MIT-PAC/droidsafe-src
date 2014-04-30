@@ -57,6 +57,7 @@ public final class POP3MessageInfo
      * <code> size </code> set to 0, and <code>identifier</code> set to
      * null.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.681 -0500", hash_original_method = "13B1FF58505B03B773361DF63AF568E6", hash_generated_method = "9F267A49ADDC5290BF7F6DFE87C65E78")
     
 public POP3MessageInfo()

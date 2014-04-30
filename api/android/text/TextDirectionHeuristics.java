@@ -237,6 +237,7 @@ public TextDirectionHeuristicLocale() {
 
     public static final TextDirectionHeuristic LOCALE = TextDirectionHeuristicLocale.INSTANCE;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.745 -0400", hash_original_method = "58EF974DE9597127C18BC29D51581A83", hash_generated_method = "58EF974DE9597127C18BC29D51581A83")
     public TextDirectionHeuristics ()
     {

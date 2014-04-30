@@ -320,6 +320,7 @@ switch(msg.what){
         
 };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.779 -0400", hash_original_method = "B288376D7B2CF1E43051C02ADD9C845F", hash_generated_method = "0668F9B7EED578A01EBF32C393CBEB3E")
     public  KeyboardView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.keyboardViewStyle);
@@ -328,6 +329,7 @@ switch(msg.what){
         // ---------- Original Method ----------
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.794 -0400", hash_original_method = "80CA0EE637E9962775AB4968127C795F", hash_generated_method = "2751E8359B3FC69B2C71DD40BB4907EA")
     public  KeyboardView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

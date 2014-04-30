@@ -20,6 +20,7 @@ public abstract class DatagramSocketImpl implements SocketOptions {
     /**
      * Constructs an unbound datagram socket implementation.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.711 -0500", hash_original_method = "36741B3348F3C30E5BB773EA210AEA7B", hash_generated_method = "E9785178B93C83BC1AE083F584295263")
     
 public DatagramSocketImpl() {

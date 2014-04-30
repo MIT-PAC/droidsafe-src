@@ -63,6 +63,7 @@ private static SelectorProvider loadProviderByJar() {
     /**
      * Constructs a new {@code SelectorProvider}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.274 -0500", hash_original_method = "DDE564F0B2C96394E14746CA546F5611", hash_generated_method = "39A5CB46BA9F7F74268BE7C809F20830")
     
 protected SelectorProvider() {

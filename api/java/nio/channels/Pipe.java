@@ -8,10 +8,6 @@ import java.io.IOException;
 import java.nio.channels.spi.AbstractSelectableChannel;
 import java.nio.channels.spi.SelectorProvider;
 
-
-
-
-
 public abstract class Pipe {
 
     /**
@@ -29,6 +25,7 @@ public static Pipe open() throws IOException {
     /**
      * The protected default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.781 -0500", hash_original_method = "AB1C252ACF4CEE3E1F01631225D9EB55", hash_generated_method = "402940CFAE1ABA8620A2D5B606F4117F")
     
 protected Pipe() {
@@ -51,7 +48,6 @@ public abstract SinkChannel sink();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.786 -0500", hash_original_method = "B343D6974A4C4F073595EF38542D761F", hash_generated_method = "C2E867FEB59FED1AE08078B3B51F39A5")
     
 public abstract SourceChannel source();
-
     
     public static abstract class SinkChannel extends AbstractSelectableChannel implements WritableByteChannel, GatheringByteChannel {
         /**
@@ -77,11 +73,8 @@ protected SinkChannel(SelectorProvider provider) {
         public final int validOps() {
             return SelectionKey.OP_WRITE;
         }
-
         
     }
-
-
     
     public static abstract class SourceChannel extends AbstractSelectableChannel implements ReadableByteChannel, ScatteringByteChannel {
         /**
@@ -107,11 +100,8 @@ protected SourceChannel(SelectorProvider provider) {
         public final int validOps() {
             return SelectionKey.OP_READ;
         }
-
         
     }
-
-
     
 }
 

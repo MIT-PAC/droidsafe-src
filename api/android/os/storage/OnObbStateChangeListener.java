@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class OnObbStateChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.900 -0500", hash_original_field = "0FA8F94F6F155CFFF48E555DB5861E69", hash_generated_field = "72AB3A6E0714445A3E8F5C7F68917D4B")
 
@@ -35,6 +31,7 @@ public abstract class OnObbStateChangeListener {
 
     public static final int ERROR_PERMISSION_DENIED = 25;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.020 -0400", hash_original_method = "67C83AF74DC57D0B71995A60795CAB4A", hash_generated_method = "67C83AF74DC57D0B71995A60795CAB4A")
     public OnObbStateChangeListener ()
     {

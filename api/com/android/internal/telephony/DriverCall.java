@@ -132,6 +132,7 @@ public static int
 
     public UUSInfo uusInfo;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:35.065 -0500", hash_original_method = "DF91F81E80FDB939BBEABFE9635EC975", hash_generated_method = "4D9CB9EAF629F81486ABF5AA58FF9D42")
     
 public

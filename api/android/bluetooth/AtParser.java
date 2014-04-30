@@ -100,7 +100,6 @@ public class AtParser {
 
     private static final int TYPE_TEST = 3;
 
-
     /**
      * Strip input of whitespace and force Uppercase - except sections inside
      * quotes. Also fixes unmatched quotes (by appending a quote). Double
@@ -215,13 +214,11 @@ static private int findEndExtendedName(String input, int index) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:01.493 -0400", hash_original_field = "5ED6C8209A1BDDF253B542DBEAA25B26", hash_generated_field = "A70564404D23FC6EFF9CFE93A43CFBFB")
 
-
     private HashMap<String, AtCommandHandler> mExtHandlers;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:01.498 -0400", hash_original_field = "C8231A97311E6D5773E80D7A7E656763", hash_generated_field = "1FC7C8BEFF733381365B0EED297CBC8A")
 
     private HashMap<Character, AtCommandHandler> mBasicHandlers;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:01.503 -0400", hash_original_field = "C2991DB82F67966AC5EA0BE54BAAD09A", hash_generated_field = "CC7D8A444ED75F21A28407F977C1A351")
-
 
     private String mLastInput;  // for "A/" (repeat last command) support
 
@@ -229,6 +226,7 @@ static private int findEndExtendedName(String input, int index) {
      * Create a new AtParser.<p>
      * No handlers are registered.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:01.508 -0400", hash_original_method = "A9DEAEFACA924C792443989EB127F9DE", hash_generated_method = "AA3EB45FD65D0E088548003CE64926D1")
     
 public AtParser() {

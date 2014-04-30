@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import android.view.MenuItem;
 import android.view.View;
 
-
-
-
 class MenuItemCompatHoneycomb {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.556 -0500", hash_original_method = "89CD2C30CF5A705FF97EBB7DAEFF0B6A", hash_generated_method = "DDAF007DCCB4122BF03524C617CCE49F")
     
@@ -23,12 +20,12 @@ public static MenuItem setActionView(MenuItem item, View view) {
         return item.setActionView(view);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.265 -0400", hash_original_method = "7746D8AEA87F7C8BC2BBB0341ED8F77D", hash_generated_method = "7746D8AEA87F7C8BC2BBB0341ED8F77D")
     public MenuItemCompatHoneycomb ()
     {
         //Synthesized constructor
     }
-
     
 }
 

@@ -11,6 +11,7 @@ public class State implements IState {
     /**
      * Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.959 -0500", hash_original_method = "1314C653F2455ACB4C7CC9637DF86BCF", hash_generated_method = "515F83F87C0E6701C630976BB07638BA")
     
 protected State() {

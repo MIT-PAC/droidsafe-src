@@ -120,6 +120,7 @@ static int getReadLimit(InputStream in)
 
     private static volatile ECParameterSpec ecImplicitCaParams;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.672 -0400", hash_original_method = "3B38983DBBB4F78AB4315AD498EBEF25", hash_generated_method = "3B38983DBBB4F78AB4315AD498EBEF25")
     public ProviderUtil ()
     {

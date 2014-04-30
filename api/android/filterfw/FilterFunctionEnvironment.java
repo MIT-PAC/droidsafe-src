@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw;
 
 import droidsafe.annotations.*;
@@ -42,6 +41,7 @@ public class FilterFunctionEnvironment extends MffEnvironment {
     /**
      * Create a new FilterFunctionEnvironment with the default components.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.912 -0400", hash_original_method = "C940420702EC6CB67ACCB966A7226BA0", hash_generated_method = "074625E39B68E2CEB9C760ACE5F6FC21")
     
 public FilterFunctionEnvironment() {

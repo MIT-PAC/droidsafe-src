@@ -269,7 +269,8 @@ private Object decodeObject() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.050 -0500", hash_original_field = "39E0092CD8E52E82EAEEDF9A3B1DCB9A", hash_generated_field = "CEA5978C366D6C8CA48AD139365847FD")
 
     private static HashMap<Integer, String> sTagNames = null;
-    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.036 -0500", hash_original_method = "F2F67500BFF17861178525A826A9D5EF", hash_generated_method = "4FB5F007601D335E5DA571D7EA402053")
+    /** @hide */ @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.036 -0500", hash_original_method = "F2F67500BFF17861178525A826A9D5EF", hash_generated_method = "4FB5F007601D335E5DA571D7EA402053")
     
 public EventLog() {}
 }

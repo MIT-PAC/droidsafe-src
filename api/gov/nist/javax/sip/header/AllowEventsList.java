@@ -18,6 +18,7 @@ public class AllowEventsList extends SIPHeaderList<AllowEvents> {
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.822 -0500", hash_original_method = "BE25141B87EEBB7CC79E715B98DBCC1B", hash_generated_method = "1830E60686F9030EC32D01D2CE2303E3")
     
 public AllowEventsList() {

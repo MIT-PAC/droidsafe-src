@@ -317,6 +317,7 @@ private static void insertValuesInMap(Map<String, Integer> map, String[] values)
     /**
      * Constructs a {@code Calendar} instance using the default {@code TimeZone} and {@code Locale}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.771 -0500", hash_original_method = "E09C10A5808D539238E77D59E7FF85D8", hash_generated_method = "61F8E9015365C5C0B51221FA55530C4E")
     
 protected Calendar() {

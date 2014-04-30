@@ -81,12 +81,14 @@ public class ViewFlipper extends ViewAnimator {
         
 };
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.683 -0500", hash_original_method = "A199B0DFDE8F43BC0101C713FC646DAD", hash_generated_method = "F1434FE2DD7F51D20188988B1483EF43")
     
 public ViewFlipper(Context context) {
         super(context);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.685 -0500", hash_original_method = "723832B306031BCDBE4BDCBA5DD42292", hash_generated_method = "EB20B59F8C96A8F49C048C0431FD3F80")
     
 public ViewFlipper(Context context, AttributeSet attrs) {

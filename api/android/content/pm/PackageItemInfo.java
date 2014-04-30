@@ -37,6 +37,7 @@ public class PackageItemInfo {
 
     public Bundle metaData;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.319 -0500", hash_original_method = "0DA45D98B1805BAB6DB37663419819EF", hash_generated_method = "FA7F902D5212EFF50E51D00BC4A84214")
     
 public PackageItemInfo() {

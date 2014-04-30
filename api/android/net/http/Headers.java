@@ -262,6 +262,7 @@ public final class Headers {
 
     private ArrayList<String> mExtraHeaderValues = new ArrayList<String>(4);
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.478 -0500", hash_original_method = "4806F09499B83A0F8F6BA6D2EDAE6CDA", hash_generated_method = "CB40F30DFBA49920D9EBB0495998DDE2")
     
 public Headers() {

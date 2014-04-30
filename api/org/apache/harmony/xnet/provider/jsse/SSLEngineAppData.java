@@ -8,11 +8,6 @@ import java.nio.ByteBuffer;
 
 import javax.net.ssl.SSLException;
 
-
-
-
-
-
 public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.Appendable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.803 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "3923F3F9F9ECABE8D28493E863FC2CD8")
 
@@ -21,6 +16,7 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
     /**
      * Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.806 -0500", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "1BA161F1DDD021955650564C16242D36")
     
 protected SSLEngineAppData() {}
@@ -82,7 +78,6 @@ protected int placeTo(ByteBuffer[] dsts, int offset, int length) {
         buffer = null;
         return len;
     }
-
     
 }
 

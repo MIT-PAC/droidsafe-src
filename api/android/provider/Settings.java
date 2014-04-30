@@ -156,7 +156,6 @@ public String getString(ContentResolver cr, String name) {
             result.addTaint(name.getTaint());
             result.addTaint(getTaint());
             return result;
-
            
           /*  long newValuesVersion = SystemProperties.getLong(mVersionSystemProperty, 0);
 
@@ -2778,6 +2777,7 @@ public static CharSequence getTitle(Context context, Cursor cursor) {
 
     private static final boolean LOCAL_LOGV = false || false;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.671 -0400", hash_original_method = "D105991E634C8DCAFDA0F30054C63045", hash_generated_method = "D105991E634C8DCAFDA0F30054C63045")
     public Settings ()
     {

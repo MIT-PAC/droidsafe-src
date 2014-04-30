@@ -152,6 +152,7 @@ public static XmlPullParserFactory newInstance (String classNames, Class context
      * Protected constructor to be called by factory implementations.
      */
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.099 -0500", hash_original_method = "59320E09A9AFF113592C1ECE87FC559F", hash_generated_method = "FA362A326E78E98959AFC1700BB3C521")
     
 protected XmlPullParserFactory() {

@@ -25,6 +25,7 @@ public class SocketHttpClientConnection extends AbstractHttpClientConnection imp
 
     private Socket socket = null;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.689 -0500", hash_original_method = "8247D33E6B1FB68E086BB1CE85A17BB9", hash_generated_method = "175251D7AC8F0A7AFFD4206B646A063D")
     
 public SocketHttpClientConnection() {

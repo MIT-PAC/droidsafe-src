@@ -40,6 +40,7 @@ public final class ORAddress {
     // orphaned legacy field
     private final Object foo = new Object();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.553 -0400", hash_original_method = "522F011D4D6C75313C82A000AA454708", hash_generated_method = "522F011D4D6C75313C82A000AA454708")
     public ORAddress ()
     {

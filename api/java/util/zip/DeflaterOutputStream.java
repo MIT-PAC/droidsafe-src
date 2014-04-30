@@ -55,6 +55,7 @@ public DeflaterOutputStream(OutputStream os, Deflater def) {
      * @param os
      *            is the OutputStream where to write the compressed data to.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.806 -0500", hash_original_method = "D833AEB9A421148720E02F65A02537D6", hash_generated_method = "CB7727C149413E86090AB532C121E3D9")
     
 public DeflaterOutputStream(OutputStream os) {

@@ -19,6 +19,7 @@ public class Event extends ParametersHeader implements EventHeader {
     /**
      * Creates a new instance of Event
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.862 -0500", hash_original_method = "4CF8CB38A5AC53FB99D6035A88D058D2", hash_generated_method = "B69A43EE6162F9A2F92FB3768A16E282")
     
 public Event() {

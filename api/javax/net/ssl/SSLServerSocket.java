@@ -18,6 +18,7 @@ public abstract class SSLServerSocket extends ServerSocket {
      * @throws IOException
      *             if creating the socket fails.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.915 -0500", hash_original_method = "0C32E268EE0846B0058E51DE9119BB88", hash_generated_method = "5B51B10964DA93A3055EC005CD7C304D")
     
 protected SSLServerSocket() throws IOException {
@@ -34,6 +35,7 @@ protected SSLServerSocket() throws IOException {
      * @throws IOException
      *             if creating the socket fails.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.917 -0500", hash_original_method = "6BF605439AB4EACD05FCE94D8066CA51", hash_generated_method = "419EF33FAD140A7F0B998C17FB501FB0")
     
 protected SSLServerSocket(int port) throws IOException {
@@ -53,6 +55,7 @@ protected SSLServerSocket(int port) throws IOException {
      * @throws IOException
      *             if creating the socket fails.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.920 -0500", hash_original_method = "B059A4E5C7C0ACF77295A5FB6F9F0E0C", hash_generated_method = "4D6BA631027E01646DD5DADA2E526176")
     
 protected SSLServerSocket(int port, int backlog) throws IOException {
@@ -75,6 +78,7 @@ protected SSLServerSocket(int port, int backlog) throws IOException {
      * @throws IOException
      *             if creating the socket fails.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.922 -0500", hash_original_method = "52663793633798E1236728C0ACB46452", hash_generated_method = "E22A2A023BF325A7A62A6CCDD23EAF79")
     
 protected SSLServerSocket(int port, int backlog, InetAddress address) throws IOException {

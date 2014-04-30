@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.Log;
 
-
-
-
-
 public abstract class CatLog {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.577 -0500", hash_original_method = "AF350D0856318B413CE9EEACFA77CF8E", hash_generated_method = "029FE6B8655ACF581A2DFE991C4656E2")
@@ -37,6 +33,7 @@ public static void d(String caller, String msg) {
 
     static final boolean DEBUG = true;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.721 -0400", hash_original_method = "FB8735822A90C92F7E615B03189A3F55", hash_generated_method = "FB8735822A90C92F7E615B03189A3F55")
     public CatLog ()
     {

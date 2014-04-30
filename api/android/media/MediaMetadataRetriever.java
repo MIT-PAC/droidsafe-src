@@ -135,6 +135,7 @@ public class MediaMetadataRetriever {
     @SuppressWarnings("unused")
     private int mNativeContext;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.075 -0500", hash_original_method = "38580FA1CFCA0A8BC70F7859DD8ED432", hash_generated_method = "E8A79BC0816761C8EA9D84D271D3ABA4")
     
 public MediaMetadataRetriever() {

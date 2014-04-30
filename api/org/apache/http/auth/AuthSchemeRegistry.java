@@ -17,6 +17,7 @@ public final class AuthSchemeRegistry {
 
     private  Map<String,AuthSchemeFactory> registeredSchemes;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.162 -0500", hash_original_method = "22746583E1A94F633C7199B49397C3E9", hash_generated_method = "111F085ED72F7E6F8F03A7FC65727737")
     
 public AuthSchemeRegistry() {

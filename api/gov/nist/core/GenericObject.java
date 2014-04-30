@@ -178,6 +178,7 @@ public static Object makeClone(Object obj) {
 
     protected Match matchExpression;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.789 -0500", hash_original_method = "26BB6C9083355DA218DE35B50B1395A1", hash_generated_method = "1EDC7F93E170B3C09DA6CE0C48C88764")
     
 protected GenericObject() {

@@ -20,6 +20,7 @@ public class PemReader extends BufferedReader {
 
     private static final String END = "-----END ";
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.422 -0500", hash_original_method = "422165DD33429D3A249B1D2E2C0897A9", hash_generated_method = "81E0698B66208C250B9CA5E2B4379DC6")
     
 public PemReader(Reader reader)

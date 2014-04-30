@@ -86,6 +86,7 @@ private static boolean allowIndirectBuffers(String appName) {
 
     private boolean have_OES_texture_cube_map;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.015 -0500", hash_original_method = "B8D773F1A7CFA96D2497C742B1D0AB9A", hash_generated_method = "9F5A49AA48AD01F7014749F961360A93")
     
 public GLImpl() {

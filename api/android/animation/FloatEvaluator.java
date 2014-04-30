@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class FloatEvaluator implements TypeEvaluator<Number> {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.524 -0400", hash_original_method = "C987E70D238EF2ACA67A1E1BCA95D64E", hash_generated_method = "C987E70D238EF2ACA67A1E1BCA95D64E")
     
     public FloatEvaluator ()

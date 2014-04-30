@@ -43,6 +43,7 @@ public class GenericURI extends NetObject implements javax.sip.address.URI {
 
     /** Consturctor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.261 -0500", hash_original_method = "523B0443B4AA531D1FAD6DE404409AD6", hash_generated_method = "7A397D0EC2365EC6740C8983075150E7")
     
 protected GenericURI() {

@@ -228,6 +228,7 @@ public static X509Name getInstance(
 
     private int                     hashCodeValue;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.902 -0500", hash_original_method = "E0A402814C87C5337199B2B0EDD62792", hash_generated_method = "4C8C3C7FF82B27C841BA9074162C5C32")
     
 protected X509Name()

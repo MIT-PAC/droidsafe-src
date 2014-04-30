@@ -13,6 +13,7 @@ public abstract class SSLContextSpi {
     /**
      * Creates a new {@code SSLContextSpi} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.598 -0500", hash_original_method = "C071A8DB81BAA2AB9BA30E20CDF7E4D3", hash_generated_method = "C7069F93AA2E00C38D14556562CFA0A9")
     
 public SSLContextSpi() {

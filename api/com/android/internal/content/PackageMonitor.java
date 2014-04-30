@@ -59,6 +59,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     
     String[] mTempArray = new String[1];
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.102 -0400", hash_original_method = "F34C1916D9BDCE721C31545D6BFA0910", hash_generated_method = "F34C1916D9BDCE721C31545D6BFA0910")
     public PackageMonitor ()
     {

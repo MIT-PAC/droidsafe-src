@@ -7,8 +7,6 @@ import droidsafe.annotations.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
 public class AndroidConfig {
 
     /**
@@ -16,6 +14,7 @@ public class AndroidConfig {
      * named class is instantiated, the constructor is assumed to tweak the
      * configuration, the instance itself is of no interest.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.792 -0500", hash_original_method = "C1A94E93768B2642CCBAA40A11700DD6", hash_generated_method = "552BBAF613451D21B2E3FBE44D5C4689")
     
 public AndroidConfig() {
@@ -32,7 +31,6 @@ public AndroidConfig() {
             ex.printStackTrace();
         }
     }
-
     
 }
 

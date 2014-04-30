@@ -13,6 +13,7 @@ class Indentation {
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.102 -0500", hash_original_method = "3ED5D9003C94B37DFE34F7E548B0A049", hash_generated_method = "01789C865C695B271AD5A54B932E1C62")
     
 protected Indentation() {

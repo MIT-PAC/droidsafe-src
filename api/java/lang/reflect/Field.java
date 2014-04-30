@@ -129,6 +129,7 @@ private Field(Class<?> declaringClass, Class<?> type, String name, int slot) {
     }
     // orphaned legacy method
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Field() {
     	
     }

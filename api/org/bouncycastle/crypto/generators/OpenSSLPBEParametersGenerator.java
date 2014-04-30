@@ -19,6 +19,7 @@ public class OpenSSLPBEParametersGenerator extends PBEParametersGenerator {
     /**
      * Construct a OpenSSL Parameters generator. 
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.709 -0500", hash_original_method = "469CB0205646D06181D1559BA7D61CF9", hash_generated_method = "81337774ED506DBA26C3B2CACBFB0825")
     
 public OpenSSLPBEParametersGenerator()

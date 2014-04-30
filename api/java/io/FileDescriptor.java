@@ -28,6 +28,7 @@ public final class FileDescriptor {
     /**
      * Constructs a new invalid FileDescriptor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.709 -0500", hash_original_method = "8A46F9D63ACB608022037D6ACF8ADC11", hash_generated_method = "5B6815BD039578BB6C860D2F4455A90B")
     
 public FileDescriptor() {

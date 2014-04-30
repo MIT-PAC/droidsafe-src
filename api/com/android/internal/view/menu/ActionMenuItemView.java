@@ -49,18 +49,21 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
 
     private int mMinWidth;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.154 -0500", hash_original_method = "A9C9E45D494EF4E28228859D4DA5948C", hash_generated_method = "91AFDFED7E9E4BB957665A65DA1425D2")
     
 public ActionMenuItemView(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.156 -0500", hash_original_method = "414C1C737BA41080151B3C84CB3C1FDA", hash_generated_method = "87214AEC09D948C7F0D6DC9CACBE6A85")
     
 public ActionMenuItemView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.159 -0500", hash_original_method = "7FEBDC4FE1DC1778EBE8D4C1AD12D9F5", hash_generated_method = "4F4C16A002E5D0E7A8BE8981108E7614")
     
 public ActionMenuItemView(Context context, AttributeSet attrs, int defStyle) {

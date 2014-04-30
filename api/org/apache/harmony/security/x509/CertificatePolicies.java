@@ -50,6 +50,7 @@ public static CertificatePolicies decode(byte[] encoding) throws IOException {
     /**
      * Constructs an object representing the value of CertificatePolicies.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.216 -0500", hash_original_method = "C31E4B8F2A567252600FDAE2EEE40805", hash_generated_method = "4CD365A78323C4BB36D47418BB273373")
     
 public CertificatePolicies() {}

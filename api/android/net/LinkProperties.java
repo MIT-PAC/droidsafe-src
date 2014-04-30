@@ -75,6 +75,7 @@ public LinkProperties[] newArray(int size) {
 
     private ProxyProperties mHttpProxy;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.455 -0500", hash_original_method = "A2AA1798C08A5590A3DB637A5B794F80", hash_generated_method = "273E9D346883D9675472869A1CFB54C7")
     
 public LinkProperties() {

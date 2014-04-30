@@ -179,6 +179,7 @@ public DbStats(String dbName, long pageCount, long pageSize, int lookaside,
 
     private static int sNumActiveCursorsFinalized = 0;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.719 -0400", hash_original_method = "E568765EE49290FB5EEF63EB9FC3FADB", hash_generated_method = "E568765EE49290FB5EEF63EB9FC3FADB")
     public SQLiteDebug ()
     {

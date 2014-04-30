@@ -113,11 +113,11 @@ public static void printThread(Article article, int depth) {
 
 	private boolean isReply = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:08.459 -0500", hash_original_field = "1B8AA6306F1F24D7A6A598E8509430D8", hash_generated_field = "44DC1AF7F81A01D8275E8D6EF9791EF3")
-
 	
 	public Article kid, next;
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:08.463 -0500", hash_original_method = "92666D6EA1E33E9CD3A5521B843BEBBC", hash_generated_method = "B9A2095532502B82BB1EAF7D4183773F")
+	@DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:08.463 -0500", hash_original_method = "92666D6EA1E33E9CD3A5521B843BEBBC", hash_generated_method = "B9A2095532502B82BB1EAF7D4183773F")
 	
 public Article() {
 		header = new StringBuffer();
@@ -295,7 +295,6 @@ public void setFrom(String string) {
 public void setSubject(String string) {
 		subject = string;
 	}
-
 	
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:08.526 -0500", hash_original_method = "E278C1B3D6919FD1D8D546530F6036CE", hash_generated_method = "686AA24403A4F6137115446107F218F5")
 	
@@ -322,7 +321,6 @@ public String simplifiedSubject() {
 			simplifySubject();
 		return simplifiedSubject;
 	}
-
 	
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:08.546 -0500", hash_original_method = "49974B224A7041AE9594CB571D129955", hash_generated_method = "39AFBF142CAEFC5BCF2398F7CFB6875A")
 	
@@ -331,7 +329,6 @@ public boolean subjectIsReply() {
 			simplifySubject();
 		return isReply;
 	}
-
 	
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:08.549 -0500", hash_original_method = "445CD0A0B26668E523A235D160BE7BAC", hash_generated_method = "4A524F0DB2E647E7FB188C7CDB1353A3")
 	
@@ -345,7 +342,6 @@ public void setChild(Threadable child) {
 private void flushSubjectCache() {
 		simplifiedSubject = null;
 	}
-
 	
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:08.556 -0500", hash_original_method = "1194F5D02EA97ACE953FAAFF017727F5", hash_generated_method = "A7333C9EC45BF9A1D0324049B96B14F7")
 	
@@ -353,7 +349,6 @@ public void setNext(Threadable next) {
 		this.next = (Article)next;
 		flushSubjectCache();
 	}
-
 	
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:08.559 -0500", hash_original_method = "F7EE12DBF5AF00AF31C1981E4BF53C13", hash_generated_method = "F644B5C816D672148F81C651E9862E4C")
 	

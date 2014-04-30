@@ -34,7 +34,6 @@ public final class NNTPReply
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:07.360 -0500", hash_original_field = "6AA90F7420D1ECFBA88BD78FE174E9C9", hash_generated_field = "C6B840EFCD1D52FC873F1F6BE4E76DAB")
 
-
     public static final int CODE_100 = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:07.363 -0500", hash_original_field = "C31B46033013F5D77533C1F1B8CBCAD4", hash_generated_field = "87378D31AB55C2E1303A5D18A158DDB2")
 
@@ -151,7 +150,6 @@ public final class NNTPReply
 
     public static final int CODE_503 = 503;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:07.532 -0500", hash_original_field = "90E5A8885CED402661553EBFE58C1F44", hash_generated_field = "F1FB528F5904DD7E1F16C384B5FBD3C4")
-
 
     public static final int HELP_TEXT_FOLLOWS                = CODE_100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:07.536 -0500", hash_original_field = "94DAAD06DEFF59FE15B9A404E6632094", hash_generated_field = "52C285DF6E89BBD463B034FAB12ED4E7")
@@ -360,6 +358,7 @@ public static boolean isNegativePermanent(int reply)
 
     // Cannot be instantiated
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:07.716 -0500", hash_original_method = "D768CE8026EA9A8093F7E74AA979B58B", hash_generated_method = "31403F4926719D14741A9A8455FD1EDC")
     
 private NNTPReply()

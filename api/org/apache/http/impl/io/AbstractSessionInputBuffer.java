@@ -45,6 +45,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     
     private HttpTransportMetricsImpl metrics;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.425 -0400", hash_original_method = "C27F370149363385AD6F9F81753F4445", hash_generated_method = "C27F370149363385AD6F9F81753F4445")
     public AbstractSessionInputBuffer ()
     {

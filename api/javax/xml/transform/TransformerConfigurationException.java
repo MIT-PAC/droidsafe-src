@@ -5,13 +5,13 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public class TransformerConfigurationException extends TransformerException {
 
     /**
      * Create a new <code>TransformerConfigurationException</code> with no
      * detail message.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.578 -0500", hash_original_method = "BD9B4D3E21457DCFC8705065705F7747", hash_generated_method = "4D8300DC52435F7C51CE1BCC47D4B828")
     
 public TransformerConfigurationException() {
@@ -24,6 +24,7 @@ public TransformerConfigurationException() {
      *
      * @param msg The error message for the exception.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.580 -0500", hash_original_method = "69DD6C44C48D0F6E1DFC35936EC71C54", hash_generated_method = "1DA52A124EF9A0857EAB5EB6F9595CB2")
     
 public TransformerConfigurationException(String msg) {
@@ -37,6 +38,7 @@ public TransformerConfigurationException(String msg) {
      * @param e The exception to be encapsulated in a
      * TransformerConfigurationException.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.583 -0500", hash_original_method = "E488733BAF7BF3463DC8581AFFE97D88", hash_generated_method = "AAD3A6B5BCB22726BABE1F817C39C043")
     
 public TransformerConfigurationException(Throwable e) {
@@ -51,6 +53,7 @@ public TransformerConfigurationException(Throwable e) {
      *      TransformerConfigurationException
      * @param msg The detail message.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.585 -0500", hash_original_method = "BD51DDC4165DA92B6AA2ED19748DFB52", hash_generated_method = "2478274CC8587AAA739966AD0079D7D8")
     
 public TransformerConfigurationException(String msg, Throwable e) {
@@ -89,7 +92,6 @@ public TransformerConfigurationException(String message,
                                              Throwable e) {
         super(message, locator, e);
     }
-
     
 }
 

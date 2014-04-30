@@ -23,6 +23,7 @@ public abstract class X509CRL extends CRL implements X509Extension {
     /**
      * Creates a new {@code X509CRL} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.704 -0500", hash_original_method = "2D9BCEC4939C6B2A16B59D950D508E2F", hash_generated_method = "A0991578263BE5A21B57395E595617A0")
     
 protected X509CRL() {

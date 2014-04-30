@@ -83,7 +83,6 @@ public class AccessibilityEventCompat {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.589 -0500", hash_original_field = "7B8855635B22B57E8F1D8B59D0220DA9", hash_generated_field = "4324F97AEF46831155DDBB54D409FF66")
 
-
     private  static AccessibilityEventVersionImpl IMPL;
 
     static {
@@ -182,6 +181,7 @@ public static AccessibilityRecordCompat getRecord(AccessibilityEvent event, int 
     /*
      * Hide constructor from clients.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.620 -0500", hash_original_method = "7235302697174B91ED05919A9677679C", hash_generated_method = "4AFDAD85305AB637CA1E101B4A51862E")
     
 private AccessibilityEventCompat() {

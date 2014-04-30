@@ -21,6 +21,7 @@ public class MimeVersion extends SIPHeader implements MimeVersionHeader {
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.516 -0500", hash_original_method = "30624564A4AC1D2B636F927C84B1D79A", hash_generated_method = "AC3E6C1D290EEE6927D3611547E59433")
     
 public MimeVersion() {

@@ -50,6 +50,7 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
     /**
      * Constructs an empty HashMap
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.798 -0500", hash_original_method = "294B6DEE36941009B0B201B0BEC2DD67", hash_generated_method = "7C91D3CE551988D4DFA74FC99CD84DC2")
     
 public TwoKeyHashMap() {

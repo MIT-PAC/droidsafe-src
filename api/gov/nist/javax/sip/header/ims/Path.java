@@ -26,6 +26,7 @@ public Path(AddressImpl address) {
     /**
      * default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.805 -0500", hash_original_method = "1037FC87002CAE3F016A3DA3F4CF1390", hash_generated_method = "A7FBED19E61D5686DE78CCC8163A8A82")
     
 public Path()

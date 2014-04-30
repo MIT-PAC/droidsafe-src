@@ -52,10 +52,8 @@ public class Base64OutputStream extends FilterOutputStream {
     private  boolean doEncode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:10.039 -0500", hash_original_field = "7FD8C736AE32FE8DF05681358D1096BD", hash_generated_field = "1766A614F9FE1DA8D7613293052FF924")
 
-
     private  Base64 base64;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:10.048 -0500", hash_original_field = "C563C497DF1B0B36C3B298AC6308EB3F", hash_generated_field = "9BD39ECEAC31FB507C39A41CCA51990D")
-
 
     private final byte[] singleByte = new byte[1];
 
@@ -65,6 +63,7 @@ public class Base64OutputStream extends FilterOutputStream {
      * @param out
      *            OutputStream to wrap.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:10.059 -0500", hash_original_method = "D429979643A042485DCB33B3CB11511A", hash_generated_method = "1CBADFC2814802505AC6D93CE89ED5E5")
     
 public Base64OutputStream(OutputStream out) {

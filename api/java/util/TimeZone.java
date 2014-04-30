@@ -213,6 +213,7 @@ public static synchronized void setDefault(TimeZone timeZone) {
 
     private String ID;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.863 -0500", hash_original_method = "9668D4D4A28DB894D48B4297168D73B9", hash_generated_method = "6245B52E9EE0FEAF2124F4ED5AD69880")
     
 public TimeZone() {}

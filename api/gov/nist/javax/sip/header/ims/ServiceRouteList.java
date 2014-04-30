@@ -6,17 +6,14 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.SIPHeaderList;
 
-
-
 public class ServiceRouteList extends SIPHeaderList<ServiceRoute> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.586 -0500", hash_original_field = "42A2D6950650105ED6F19C5327C09D8A", hash_generated_field = "6B0CBD0A78E3E34C35CAC0019012F837")
-
-
 
     private static final long serialVersionUID = -4264811439080938519L;
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.590 -0500", hash_original_method = "C0CA39C0A35C17F8012D1D71020C7494", hash_generated_method = "F817F67D70DE3897FF24BE183ED21BC3")
     
 public ServiceRouteList() {

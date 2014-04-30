@@ -15,6 +15,7 @@ public abstract class SIPObject extends GenericObject {
 
     /** default Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.421 -0500", hash_original_method = "F2415C91D035ABB45320678077A163BD", hash_generated_method = "EF0377E88863F74D89719B23AA2BF7B9")
     
 protected SIPObject() {

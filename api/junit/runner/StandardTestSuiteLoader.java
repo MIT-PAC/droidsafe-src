@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class StandardTestSuiteLoader implements TestSuiteLoader {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.406 -0400", hash_original_method = "5793FEEF6F25BC48377D1976D0FE8F1B", hash_generated_method = "5793FEEF6F25BC48377D1976D0FE8F1B")
     public StandardTestSuiteLoader ()
     {

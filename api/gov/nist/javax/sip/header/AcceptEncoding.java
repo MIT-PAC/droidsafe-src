@@ -20,6 +20,7 @@ public final class AcceptEncoding extends ParametersHeader implements AcceptEnco
     /**
      * default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.239 -0500", hash_original_method = "45FBA71B6A8F004018F3CEEA4ED1F1C4", hash_generated_method = "E9BA953A1356F68167BEB2C6A48B09A0")
     
 public AcceptEncoding() {

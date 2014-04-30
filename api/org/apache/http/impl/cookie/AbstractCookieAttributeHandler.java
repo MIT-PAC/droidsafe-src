@@ -9,10 +9,9 @@ import org.apache.http.cookie.CookieAttributeHandler;
 import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 
-
-
 public abstract class AbstractCookieAttributeHandler implements CookieAttributeHandler {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.516 -0400", hash_original_method = "ACDC61E94AD035B91D0DD3AC627F0897", hash_generated_method = "ACDC61E94AD035B91D0DD3AC627F0897")
     public AbstractCookieAttributeHandler ()
     {
@@ -32,7 +31,6 @@ public boolean match(final Cookie cookie, final CookieOrigin origin) {
         // Always match
         return true;
     }
-
     
 }
 

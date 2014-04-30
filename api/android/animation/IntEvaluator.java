@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class IntEvaluator implements TypeEvaluator<Integer> {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.616 -0400", hash_original_method = "2EF7111110D38FEB0992107126625CBA", hash_generated_method = "2EF7111110D38FEB0992107126625CBA")
     
     public IntEvaluator ()

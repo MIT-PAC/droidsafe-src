@@ -29,15 +29,12 @@ import org.apache.http.cookie.CookieSpecRegistry;
 import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HttpContext;
 
-
-
-
 public class RequestAddCookies implements HttpRequestInterceptor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.734 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
-
     private final Log log = LogFactory.getLog(getClass());
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.736 -0500", hash_original_method = "33F7F2F89F06A1D5C3C4E627DB5C44E6", hash_generated_method = "C8C07D397BBD3C87402B5D7CCF39E7E5")
     
 public RequestAddCookies() {
@@ -159,7 +156,6 @@ public void process(final HttpRequest request, final HttpContext context)
         context.setAttribute(ClientContext.COOKIE_SPEC, cookieSpec);
         context.setAttribute(ClientContext.COOKIE_ORIGIN, cookieOrigin);
     }
-
     
 }
 

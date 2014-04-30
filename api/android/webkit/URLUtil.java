@@ -449,6 +449,7 @@ static String parseContentDisposition(String contentDisposition) {
             Pattern.compile("attachment;\\s*filename\\s*=\\s*(\"?)([^\"]*)\\1\\s*$",
             Pattern.CASE_INSENSITIVE);
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.216 -0400", hash_original_method = "581EF9FF4A1E1085E3970232802A3705", hash_generated_method = "581EF9FF4A1E1085E3970232802A3705")
     public URLUtil ()
     {

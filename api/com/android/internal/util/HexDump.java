@@ -174,6 +174,7 @@ public static byte[] hexStringToByteArray(String hexString)
 
     private final static char[] HEX_DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.746 -0400", hash_original_method = "41D5EB93F66EEE1C2A5191C2288E5263", hash_generated_method = "41D5EB93F66EEE1C2A5191C2288E5263")
     public HexDump ()
     {

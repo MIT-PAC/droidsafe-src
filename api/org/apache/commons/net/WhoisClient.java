@@ -57,11 +57,11 @@ public final class WhoisClient extends FingerClient
 
     public static final int DEFAULT_PORT = 43;
 
-
     /***
      * The default whois constructor.    Initializes the
      * default port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.406 -0500", hash_original_method = "C196A1C4CA062B9CB50F14103D33FE2B", hash_generated_method = "9A5B1CADAB5F32ABE60C1E4FBCF6DD48")
     
 public WhoisClient()
@@ -85,7 +85,6 @@ public String query(String handle) throws IOException
     {
         return query(false, handle);
     }
-
 
     /***
      * Queries the connected whois server for information regarding

@@ -18,6 +18,7 @@ public class SIPDateHeader extends SIPHeader implements DateHeader {
 
     /** Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.188 -0500", hash_original_method = "1EECE0587E859340DA3FB0354A4B8225", hash_generated_method = "F01F1BDF394072AAA4573EE5D427CA0C")
     
 public SIPDateHeader() {

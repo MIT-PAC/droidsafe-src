@@ -66,6 +66,7 @@ static int resolveDialogTheme(Context context, int resid) {
 
     private AlertController mAlert;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.990 -0500", hash_original_method = "3B9AE3A4287FBB2F8914E3FC42E19D75", hash_generated_method = "C00D98D2C1C3A60A7C1F347ACBD61899")
     
 protected AlertDialog(Context context) {
@@ -80,6 +81,7 @@ protected AlertDialog(Context context) {
      * or one of the constants {@link #THEME_TRADITIONAL},
      * {@link #THEME_HOLO_DARK}, or {@link #THEME_HOLO_LIGHT}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.993 -0500", hash_original_method = "C5FA972556687388DAE356FD387A2EE9", hash_generated_method = "11835A879826C9E25E737022FC134103")
     
 protected AlertDialog(Context context, int theme) {

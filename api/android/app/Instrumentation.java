@@ -135,6 +135,7 @@ static void checkStartActivityResult(int res, Object intent) {
 
     private Bundle mPerfMetrics = new Bundle();
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.037 -0500", hash_original_method = "2A2FEB9F4AAE35A924F5C88DA8F6FDF1", hash_generated_method = "DAAC01208288F58E96162AA048AA39F5")
     
 public Instrumentation() {

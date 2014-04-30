@@ -24,6 +24,7 @@ public RetryableOutputStream(int limit) {
         this.content = new ByteArrayOutputStream(limit);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.093 -0500", hash_original_method = "ACF7E60D1B2648BBC92003365E201CCA", hash_generated_method = "1F009154985A291FDCB976FF76C38E99")
     
 public RetryableOutputStream() {

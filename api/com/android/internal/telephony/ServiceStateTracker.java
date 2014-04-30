@@ -236,6 +236,7 @@ public abstract class ServiceStateTracker extends Handler {
 
     private boolean mWantSingleLocationUpdate;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.320 -0500", hash_original_method = "9FCBDF2ED872770289A466CFAFBF2272", hash_generated_method = "E4D781633E934366A825EA47602B9CE2")
     
 public ServiceStateTracker() {

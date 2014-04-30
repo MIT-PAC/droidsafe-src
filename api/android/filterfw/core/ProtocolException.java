@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 /**
@@ -25,12 +24,14 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 public class ProtocolException extends RuntimeException {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:04.828 -0400", hash_original_method = "CB5496AEB6C4A3E562F8F77722FABABF", hash_generated_method = "8B6696BF29FAAB0012126FB460B9E25B")
     
 public ProtocolException() {
         super();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:04.830 -0400", hash_original_method = "4EA2FDECEBB843A0FFF4778186BBC741", hash_generated_method = "954604A616CA94114D25DB22D29E9C2A")
     
 public ProtocolException(String message) {

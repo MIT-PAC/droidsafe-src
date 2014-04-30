@@ -42,12 +42,14 @@ public class ActionBarContainer extends FrameLayout {
 
     private boolean mIsStacked;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.350 -0500", hash_original_method = "11ADB8FB86182A3641DB27767A9D337F", hash_generated_method = "10AB43CF85BDA56018E50CC1F591270B")
     
 public ActionBarContainer(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.353 -0500", hash_original_method = "63748832C1944A3823B0F9894E29E249", hash_generated_method = "D5A536066B5CC5F1C40ADED7CD0C7534")
     
 public ActionBarContainer(Context context, AttributeSet attrs) {

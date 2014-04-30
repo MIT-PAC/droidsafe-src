@@ -46,6 +46,7 @@ public static boolean isIPv6Reference(String address) {
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.093 -0500", hash_original_method = "11FB0BA24AED11EB92365CE28BAFE602", hash_generated_method = "7E8DEF282BCE0FE74D10AA663220ABD9")
     
 public Host() {

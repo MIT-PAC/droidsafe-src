@@ -15,6 +15,7 @@ public abstract class IntRangeManager {
 
     private ArrayList<IntRange> mRanges = new ArrayList<IntRange>();
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.650 -0500", hash_original_method = "362FA502CCB486C4D0A9F66987CBC492", hash_generated_method = "B41342CA1903927E4B1C4E6DFD5B5AB9")
     
 protected IntRangeManager() {}

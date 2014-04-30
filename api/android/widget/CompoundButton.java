@@ -43,18 +43,21 @@ public abstract class CompoundButton extends Button implements Checkable {
 
     private OnCheckedChangeListener mOnCheckedChangeWidgetListener;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.493 -0500", hash_original_method = "09BDBE7CE6F05C0EF8277BC374FA0AC6", hash_generated_method = "A9E97A4AFA342D66315064AF0A314479")
     
 public CompoundButton(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.496 -0500", hash_original_method = "971C0A1E5EDCDBE9454DEBB4776AC79B", hash_generated_method = "B5D87F626977611FCBCE617C5544201D")
     
 public CompoundButton(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.499 -0500", hash_original_method = "486B323903576A8E24B1C8D9A5D1C983", hash_generated_method = "BA463A9F24DA6CA2DE55B2F8FE60A76E")
     
 public CompoundButton(Context context, AttributeSet attrs, int defStyle) {

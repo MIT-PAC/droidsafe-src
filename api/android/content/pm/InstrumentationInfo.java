@@ -46,6 +46,7 @@ public InstrumentationInfo[] newArray(int size) {
 
     public boolean functionalTest;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.713 -0500", hash_original_method = "34F974A68EBB10BE10D867312E044FDF", hash_generated_method = "531DD31DFE59E5552883C2D1CC120AB9")
     
 public InstrumentationInfo() {

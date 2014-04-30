@@ -103,6 +103,7 @@ public class RCommandClient extends RExecClient
      * The default RCommandClient constructor.  Initializes the
      * default port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.215 -0500", hash_original_method = "1188D4273316F9B5EDA39665C10C9828", hash_generated_method = "58A6E3A25432CE31F9C1159CB1B0C65B")
     
 public RCommandClient()
@@ -158,7 +159,6 @@ InputStream _createErrorStream() throws IOException
         return (new SocketInputStream(socket, socket.getInputStream()));
     }
 
-
     /***
      * Opens a Socket connected to a remote host at the specified port and
      * originating from the specified local address using a port in a range
@@ -204,8 +204,6 @@ public void connect(InetAddress host, int port, InetAddress localAddr)
         _connectAction_();
     }
 
-
-
     /***
      * Opens a Socket connected to a remote host at the specified port and
      * originating from the current host at a port in a range acceptable
@@ -228,7 +226,6 @@ public void connect(InetAddress host, int port)
     {
         connect(host, port, InetAddress.getLocalHost());
     }
-
 
     /***
      * Opens a Socket connected to a remote host at the specified port and
@@ -254,7 +251,6 @@ public void connect(String hostname, int port)
         connect(InetAddress.getByName(hostname), port, InetAddress.getLocalHost());
     }
 
-
     /***
      * Opens a Socket connected to a remote host at the specified port and
      * originating from the specified local address using a port in a range
@@ -278,7 +274,6 @@ public void connect(String hostname, int port, InetAddress localAddr)
     {
         connect(InetAddress.getByName(hostname), port, localAddr);
     }
-
 
     /***
      * Opens a Socket connected to a remote host at the specified port and
@@ -311,7 +306,6 @@ public void connect(InetAddress host, int port,
         super.connect(host, port, localAddr, localPort);
     }
 
-
     /***
      * Opens a Socket connected to a remote host at the specified port and
      * originating from the specified local address and port. The
@@ -343,7 +337,6 @@ public void connect(String hostname, int port,
             throw new IllegalArgumentException("Invalid port number " + localPort);
         super.connect(hostname, port, localAddr, localPort);
     }
-
 
     /***
      * Remotely executes a command through the rshd daemon on the server
@@ -389,7 +382,6 @@ public void rcommand(String localUsername, String remoteUsername,
     {
         rexec(localUsername, remoteUsername, command, separateErrorStream);
     }
-
 
     /***
      * Same as

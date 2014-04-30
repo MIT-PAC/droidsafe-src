@@ -19,6 +19,7 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
 
     private boolean isQuoted;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.662 -0500", hash_original_method = "051A535620162843E1B90678BF3DA49E", hash_generated_method = "A9BE25365A900113C5ACF49C81B6F012")
     
 public PVisitedNetworkID() {

@@ -5,11 +5,9 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class StorageEventListener {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.025 -0400", hash_original_method = "61076BC963620255AB850D9EEFFDEDA8", hash_generated_method = "61076BC963620255AB850D9EEFFDEDA8")
     public StorageEventListener ()
     {
@@ -34,7 +32,6 @@ public void onUsbMassStorageConnectionChanged(boolean connected) {
     
 public void onStorageStateChanged(String path, String oldState, String newState) {
     }
-
     
 }
 

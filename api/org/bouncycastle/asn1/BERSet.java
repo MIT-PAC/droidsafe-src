@@ -11,6 +11,7 @@ public class BERSet extends DERSet {
     /**
      * create an empty sequence
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.729 -0500", hash_original_method = "3B0CACFC7D97D5B3260958CA327C2CC2", hash_generated_method = "735EAA498A9F3963503D9EAE1819DBB2")
     
 public BERSet()

@@ -62,6 +62,7 @@ public StatusBarNotification[] newArray(int size)
 
     public int priority = PRIORITY_NORMAL;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.675 -0500", hash_original_method = "67871004722566D23E9A988108B7F987", hash_generated_method = "A4C3BAA3205AD5EE64B3A32DD0FBE32F")
     
 public StatusBarNotification() {

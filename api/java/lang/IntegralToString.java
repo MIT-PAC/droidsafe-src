@@ -389,7 +389,8 @@ public static String longToOctalString(long v) {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.171 -0500", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "F9A5116623A8F121F9E7894C48ABCCA4")
     */    
-private IntegralToString() {
+@DSSafe(DSCat.SAFE_OTHERS)
+    private IntegralToString() {
     }
 }
 

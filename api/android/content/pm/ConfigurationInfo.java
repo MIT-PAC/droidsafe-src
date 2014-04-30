@@ -48,6 +48,7 @@ public ConfigurationInfo[] newArray(int size) {
 
     public int reqGlEsVersion;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:45.439 -0500", hash_original_method = "6A0CBEBA9367A4C86820E8B74F6CB393", hash_generated_method = "3664BCA479C3BA8728AC189B5CF4B2E1")
     
 public ConfigurationInfo() {

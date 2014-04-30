@@ -35,6 +35,7 @@ public final class POP3Reply
     public static int ERROR = 1;
 
     // Cannot be instantiated.
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.731 -0500", hash_original_method = "D31481D2F9208B7F32B889BFCE88134D", hash_generated_method = "C6A072065C11097F0B6D6856979C0AED")
     
 private POP3Reply()

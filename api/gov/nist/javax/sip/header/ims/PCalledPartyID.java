@@ -26,6 +26,7 @@ public PCalledPartyID(AddressImpl address) {
     /**
      * default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.646 -0500", hash_original_method = "D34D544F1730F850E33368222A05354C", hash_generated_method = "81ABECEB5F5C720846B9347695736CA3")
     
 public PCalledPartyID() {

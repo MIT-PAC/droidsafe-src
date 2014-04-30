@@ -7,13 +7,12 @@ import droidsafe.annotations.*;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-
-
 public abstract class BluetoothHealthCallback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.659 -0500", hash_original_field = "642BDE9D66CC618D4867D292C96D4AE8", hash_generated_field = "382730F49298B348E501E4E6F20F9E07")
 
     private static final String TAG = "BluetoothHealthCallback";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.475 -0400", hash_original_method = "248F99D825023B041C440E742D314E3D", hash_generated_method = "248F99D825023B041C440E742D314E3D")
     public BluetoothHealthCallback ()
     {

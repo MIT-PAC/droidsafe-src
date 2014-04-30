@@ -157,6 +157,7 @@ public static int countDots(final String s) {
           { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
             "lg", "ne", "net", "or", "org" };
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.992 -0500", hash_original_method = "F9761A2E230B965E685AB0F097FC8BA3", hash_generated_method = "B66C7E209ED5CE42E8339DFC872489A0")
     
 public AbstractVerifier() {

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.sip.header.AcceptHeader;
 
-
-
-
-
-
 public class AcceptList extends SIPHeaderList<Accept> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.003 -0500", hash_original_field = "C61EC703D8A7A3917185EDDEEA8CEF11", hash_generated_field = "B64F155B1415D0AC54A9E69071A95C83")
 
@@ -18,6 +13,7 @@ public class AcceptList extends SIPHeaderList<Accept> {
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.011 -0500", hash_original_method = "51B5F4325CF7E310BAF41022AF7E4824", hash_generated_method = "96BD397756DDEB5AA68DD348EB765748")
     
 public AcceptList() {

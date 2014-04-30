@@ -49,6 +49,7 @@ public PlainDatagramSocketImpl(FileDescriptor fd, int localPort) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.856 -0500", hash_original_method = "D4BBB37482735C0570902FEE6B871111", hash_generated_method = "1127C899720EE2506E7999AAA4DA17BE")
     
 public PlainDatagramSocketImpl() {

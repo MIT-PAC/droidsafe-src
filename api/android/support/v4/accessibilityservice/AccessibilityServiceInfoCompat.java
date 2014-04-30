@@ -118,7 +118,6 @@ public String getSettingsActivityName(AccessibilityServiceInfo info) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:55.482 -0500", hash_original_field = "06E92EBA6EFADAF7E9703BD10F5C0C98", hash_generated_field = "1DC55DFB6E1C100103DCE6F7C5F9F7EF")
 
-
     private static  AccessibilityServiceInfoVersionImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:55.490 -0500", hash_original_field = "31B80D955EEE0256F9A05F7B5AF3D0EE", hash_generated_field = "F30739AC04BDBB3384FC429FE4C84EAD")
 
@@ -260,6 +259,7 @@ public static String flagToString(int flag) {
     /*
      * Hide constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:55.494 -0500", hash_original_method = "D8AB65AF287380F89DD694FBDE44A931", hash_generated_method = "F48AF8F7E07818646539A4B9CB89609E")
     
 private AccessibilityServiceInfoCompat() {

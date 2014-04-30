@@ -85,6 +85,7 @@ public static String getSDPFieldName(String line) {
 
     protected int savedPtr;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.402 -0500", hash_original_method = "54BA219EC49F828609CB54EE2A82793E", hash_generated_method = "0E93752D6CB767CE259C282DCA9D66A9")
     
 protected StringTokenizer() {

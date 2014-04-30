@@ -31,6 +31,7 @@ static public IBulkCursor asInterface(IBinder obj)
 
         return new BulkCursorProxy(obj);
     }
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.533 -0500", hash_original_method = "DBBF6D4FB94E7243F8FE13872836805D", hash_generated_method = "50CCF7129DEBE42BE14A842ECF8748F8")
     
 public BulkCursorNative()

@@ -71,6 +71,7 @@ public static synchronized SocketFactory getDefault() {
     /**
      * Creates a new {@code SSLSocketFactory}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.849 -0500", hash_original_method = "A3C82F74D64165B62D4E0BF2DAC4717C", hash_generated_method = "1A3C4ADDC93D3C6DB5B85245756B722D")
     
 public SSLSocketFactory() {

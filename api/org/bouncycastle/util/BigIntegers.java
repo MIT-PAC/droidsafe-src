@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
-
-
-
 public final class BigIntegers {
 
     /**
@@ -87,6 +84,7 @@ public static BigInteger createRandomInRange(
 
     private static final BigInteger ZERO = BigInteger.valueOf(0);
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.169 -0400", hash_original_method = "25F257C0960313729C88DA7CF764C995", hash_generated_method = "25F257C0960313729C88DA7CF764C995")
     public BigIntegers ()
     {

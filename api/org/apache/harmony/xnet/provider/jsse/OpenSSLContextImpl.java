@@ -10,10 +10,9 @@ import java.security.GeneralSecurityException;
 import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSocketFactory;
 
-
-
 public class OpenSSLContextImpl extends SSLContextImpl {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.954 -0500", hash_original_method = "AC85303C5261AE8C561C9D0D813887D0", hash_generated_method = "2DAB3756C0B77899A95338CABCD4E299")
     
 public OpenSSLContextImpl() {}
@@ -44,7 +43,6 @@ protected OpenSSLContextImpl(DefaultSSLContextImpl dummy)
         }
         return new OpenSSLServerSocketFactoryImpl(sslParameters);
     }
-
     
 }
 

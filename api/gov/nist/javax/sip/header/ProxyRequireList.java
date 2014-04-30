@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.sip.header.ProxyRequireHeader;
 
-
-
-
-
-
 public class ProxyRequireList extends SIPHeaderList<ProxyRequire> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.532 -0500", hash_original_field = "4110172A587E9CF7DC46A40DB4BEF1DC", hash_generated_field = "210395FBA80388CA1983FDB080800955")
 
@@ -18,6 +13,7 @@ public class ProxyRequireList extends SIPHeaderList<ProxyRequire> {
 
     /** Default Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.538 -0500", hash_original_method = "029C98C6EA119F5ED189F5C1632A9558", hash_generated_method = "B849ED7812D8467803C50B14D6D6C492")
     
 public ProxyRequireList() {

@@ -353,6 +353,7 @@ static Object parseValue(StreamTokenizer st, final int type) throws IOException 
     /**
      * Creates an empty TypedProperties instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.746 -0500", hash_original_method = "ECB16241B0AB765E13051ACDAE33A02C", hash_generated_method = "1F56D9702D0332A1D17344B96D52752A")
     
 public TypedProperties() {

@@ -59,6 +59,7 @@ public RFC2109Spec(final String[] datepatterns, boolean oneHeader) {
     }
 
     /** Default constructor */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.009 -0500", hash_original_method = "2854FB63A9A4FFE7625656D05E6D284B", hash_generated_method = "9300A0014D424ED468601EDD0D0C2BCD")
     
 public RFC2109Spec() {

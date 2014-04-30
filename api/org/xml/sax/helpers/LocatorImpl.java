@@ -29,6 +29,7 @@ public class LocatorImpl implements Locator {
      * <p>This will not normally be useful, since the main purpose
      * of this class is to make a snapshot of an existing Locator.</p>
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.723 -0500", hash_original_method = "1944A965405A65742195C130B4EA39CD", hash_generated_method = "218A149222E5E1AB758208A2B8FEE7B9")
     
 public LocatorImpl ()

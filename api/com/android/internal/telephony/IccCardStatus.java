@@ -33,6 +33,7 @@ public class IccCardStatus {
     private ArrayList<IccCardApplication> mApplications =
             new ArrayList<IccCardApplication>(CARD_MAX_APPS);
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.014 -0400", hash_original_method = "E3AA20EE9B616A59DB2B25CE475E2F88", hash_generated_method = "E3AA20EE9B616A59DB2B25CE475E2F88")
     public IccCardStatus ()
     {

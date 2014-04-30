@@ -205,6 +205,7 @@ public final int compare(ApplicationInfo aa, ApplicationInfo ab) {
 
     public int installLocation = PackageInfo.INSTALL_LOCATION_UNSPECIFIED;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.563 -0500", hash_original_method = "5A2EFBCC396F3478953F6D70829229DF", hash_generated_method = "AA119110F11F1B5175C63CF83D4EA78E")
     
 public ApplicationInfo() {

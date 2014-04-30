@@ -51,6 +51,7 @@ private static void setReason(int status, String reason) {
      * Restricted default constructor, for derived classes.
      * If you need an instance of this class, use {@link #INSTANCE INSTANCE}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.173 -0500", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "72ADC483D87ABD7A7321DAAD98293FF1")
     
 protected EnglishReasonPhraseCatalog() {

@@ -116,6 +116,7 @@ public ScrollView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.scrollViewStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.501 -0500", hash_original_method = "A71F55C63B3167922F139A658C272800", hash_generated_method = "47CFB5CD81B7AD8DF57BA08FB42EBD0E")
     
 public ScrollView(Context context, AttributeSet attrs, int defStyle) {

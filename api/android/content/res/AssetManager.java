@@ -171,6 +171,7 @@ public static AssetManager getSystem() {
      * use by applications.
      * {@hide}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.867 -0500", hash_original_method = "59A199C9627818EA5BC55C2223B1B671", hash_generated_method = "E88B08B9F7477CB197F9A4223A2ECB4B")
     
 public AssetManager() {

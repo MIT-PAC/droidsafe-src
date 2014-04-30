@@ -111,6 +111,7 @@ public class SIPDate implements Cloneable, Serializable {
     /**
      * Initializer, sets all the fields to invalid values.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.970 -0500", hash_original_method = "C73CBA236E994654D9EB18CB745C41F4", hash_generated_method = "DBE8EADF017633BD71ABF01BC72E1357")
     
 public SIPDate() {

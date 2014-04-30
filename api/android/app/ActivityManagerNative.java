@@ -118,6 +118,7 @@ static public void noteWakeupAlarm(PendingIntent ps) {
         
 };
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.087 -0500", hash_original_method = "444DC66B3432907DFEA55328E5B69649", hash_generated_method = "CA241610C52E4659313FA08BF918B84A")
     
 public ActivityManagerNative() {

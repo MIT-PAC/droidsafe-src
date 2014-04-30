@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class AllowAllHostnameVerifier extends AbstractVerifier {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.049 -0400", hash_original_method = "0CAE1F760C1CA01C015DCB961B7341AF", hash_generated_method = "0CAE1F760C1CA01C015DCB961B7341AF")
     public AllowAllHostnameVerifier ()
     {

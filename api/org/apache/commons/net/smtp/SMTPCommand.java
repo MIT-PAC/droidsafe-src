@@ -34,8 +34,6 @@ public final class SMTPCommand
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.139 -0500", hash_original_field = "CFF41351A80A8122D7B7583B2512B89A", hash_generated_field = "E4B7A9D51BBD3D01A2C78386CB368092")
 
-
-
     public static final int HELO = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.148 -0500", hash_original_field = "290235FD08C2A109808EB927A7D92440", hash_generated_field = "B4BAAD190FD61659A62FAA608ADB9BB2")
 
@@ -78,7 +76,6 @@ public final class SMTPCommand
     public static final int QUIT = 13;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.198 -0500", hash_original_field = "8E0AECA8A4C2F31FCAEC7AB29FEC11A5", hash_generated_field = "786C65804402CDA076B652E6166E2B45")
 
-
     public static final int HELLO = HELO;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.201 -0500", hash_original_field = "590DCD3ABF8D5E728E2634DF78D32898", hash_generated_field = "9229598A08BA5E69B5DBC7BA7E537342")
 
@@ -118,12 +115,10 @@ public final class SMTPCommand
     public static final int LOGOUT = QUIT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.251 -0500", hash_original_field = "E684C9AEF1B4C4AD4F8CE877295AF32F", hash_generated_field = "DAA2574BDEACA8FC0DC2C6223D997D59")
 
-
     static final String[] _commands = {
                                           "HELO", "MAIL FROM:", "RCPT TO:", "DATA", "SEND FROM:", "SOML FROM:",
                                           "SAML FROM:", "RSET", "VRFY", "EXPN", "HELP", "NOOP", "TURN", "QUIT"
                                       };
-
 
     /***
      * Retrieve the SMTP protocol command string corresponding to a specified
@@ -141,6 +136,7 @@ public static final String getCommand(int command)
     }
 
     // Cannot be instantiated
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:01.247 -0500", hash_original_method = "5354EDA6BABF6D32AE02D2AFA879F3F5", hash_generated_method = "0A095AE3D16540CC8EB953AB476EDD28")
     
 private SMTPCommand()

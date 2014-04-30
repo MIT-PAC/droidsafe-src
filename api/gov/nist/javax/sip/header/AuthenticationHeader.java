@@ -74,6 +74,7 @@ public AuthenticationHeader(String name) {
         this.scheme = ParameterNames.DIGEST;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.972 -0500", hash_original_method = "DB765A091C9F86F3B91F21F5A402D773", hash_generated_method = "1B70B5A7CD2F5AE89D02CE6BC90B33B3")
     
 public AuthenticationHeader() {

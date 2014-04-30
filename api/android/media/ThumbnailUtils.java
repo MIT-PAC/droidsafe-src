@@ -534,6 +534,7 @@ private static void createThumbnailFromEXIF(String filePath, int targetSize,
 
     public static final int TARGET_SIZE_MICRO_THUMBNAIL = 96;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.260 -0400", hash_original_method = "569A57C095D8F73163C7FEBA6E020B38", hash_generated_method = "569A57C095D8F73163C7FEBA6E020B38")
     public ThumbnailUtils ()
     {

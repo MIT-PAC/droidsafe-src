@@ -17,6 +17,7 @@ public class MinExpires extends SIPHeader implements MinExpiresHeader {
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.337 -0500", hash_original_method = "E220E899B716906991999B2A4C081552", hash_generated_method = "5E2FB99412D48084AF18A0C77A12C1BC")
     
 public MinExpires() {

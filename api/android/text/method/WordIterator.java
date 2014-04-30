@@ -27,6 +27,7 @@ public class WordIterator implements Selection.PositionIterator {
     /**
      * Constructs a WordIterator using the default locale.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.764 -0500", hash_original_method = "AB8CC8AEC36CC88806001A57825CD492", hash_generated_method = "BC051192CB190142B14BAD493C862225")
     
 public WordIterator() {

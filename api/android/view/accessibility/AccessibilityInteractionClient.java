@@ -79,6 +79,7 @@ public static AccessibilityInteractionClient getInstance() {
 
     private final Rect mTempBounds = new Rect();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.266 -0400", hash_original_method = "974B96BB2B096535DAB8082291151E7A", hash_generated_method = "974B96BB2B096535DAB8082291151E7A")
     public AccessibilityInteractionClient ()
     {

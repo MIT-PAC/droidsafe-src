@@ -32,6 +32,7 @@ public static void setDefault(ResponseCache responseCache) {
 
     private static ResponseCache defaultResponseCache = null;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.356 -0400", hash_original_method = "D16C43EEDC21B64FF5979CBD3059BA6B", hash_generated_method = "D16C43EEDC21B64FF5979CBD3059BA6B")
     public ResponseCache ()
     {

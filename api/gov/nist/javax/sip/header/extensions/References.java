@@ -19,6 +19,7 @@ public class References extends ParametersHeader implements ReferencesHeader, Ex
     
     private String callId;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.096 -0500", hash_original_method = "6B62E640F31436F860F8D9827B037777", hash_generated_method = "41066D355824B0A21C80A54990B2CD49")
     
 public References() {

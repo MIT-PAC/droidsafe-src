@@ -18,6 +18,7 @@ public class ContentLength extends SIPHeader implements javax.sip.header.Content
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.819 -0500", hash_original_method = "6E8A391CB1CB04739D58E661944CCFB0", hash_generated_method = "3098EB1A73E7D4E551F84D82834943DF")
     
 public ContentLength() {

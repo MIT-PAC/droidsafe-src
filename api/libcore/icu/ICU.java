@@ -302,6 +302,7 @@ public static Locale[] getAvailableNumberFormatLocales() {
 
     private static Locale[] availableLocalesCache;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.567 -0400", hash_original_method = "41D0A20E3850008EA50DF809FC4EB919", hash_generated_method = "41D0A20E3850008EA50DF809FC4EB919")
     public ICU ()
     {

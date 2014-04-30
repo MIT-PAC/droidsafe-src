@@ -209,6 +209,7 @@ public static boolean isResponseHeader(SIPHeader sipHeader) {
      * multiple occurances in a message are derived from the SIPHeaderListClass. All singleton
      * headers are derived from SIPHeader class.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.190 -0500", hash_original_method = "7EF8FE4247F4A54A74550FF503F5DF85", hash_generated_method = "0F2A3ECA62D279DBBB696F4C055DD2C2")
     
 public SIPMessage() {

@@ -90,6 +90,7 @@ public static byte[] PKCS12PasswordToBytes(
     /**
      * base constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.536 -0500", hash_original_method = "1EFCFCAED54D10FE929FE2EAEA704D32", hash_generated_method = "B033747BF6995BE8502732A0A8B762BD")
     
 protected PBEParametersGenerator()

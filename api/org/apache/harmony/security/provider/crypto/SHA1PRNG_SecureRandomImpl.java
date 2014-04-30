@@ -142,6 +142,7 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     /**
      *  Creates object and sets implementation variables to their initial values
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.906 -0500", hash_original_method = "D644E56206842370DC4588BE79799AE3", hash_generated_method = "DF9C009961D95E0DC22956E98C1707F5")
     
 public SHA1PRNG_SecureRandomImpl() {

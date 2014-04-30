@@ -13,6 +13,7 @@ public class AnticipateInterpolator implements Interpolator {
 
     private  float mTension;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.249 -0500", hash_original_method = "7C2506D70A86643AB33B7796EA331F9D", hash_generated_method = "56386AE77777F64CC46CB677C4AD5216")
     
 public AnticipateInterpolator() {

@@ -17,6 +17,7 @@ public final class ContentDisposition extends ParametersHeader implements javax.
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.607 -0500", hash_original_method = "43E6E51171C31AE017D057FA4552D811", hash_generated_method = "68EEB813A55415DF9B5B717F2AD84B12")
     
 public ContentDisposition() {

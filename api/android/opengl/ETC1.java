@@ -64,6 +64,7 @@ public class ETC1 {
 
     public static final int ETC1_RGB8_OES = 0x8D64;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.897 -0400", hash_original_method = "A91C782DE4E2E5AE629C67E54AACAB60", hash_generated_method = "A91C782DE4E2E5AE629C67E54AACAB60")
     public ETC1 ()
     {

@@ -16,6 +16,7 @@ public final class AllowEvents extends SIPHeader implements javax.sip.header.All
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.899 -0500", hash_original_method = "B300CC10915D88E488A895EA20EE2A09", hash_generated_method = "3F78B17A57F39E6EC2308911F306E996")
     
 public AllowEvents() {

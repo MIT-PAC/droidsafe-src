@@ -209,6 +209,7 @@ TimeOfDay(int h, int m, int s) {
     private static final Pattern HTTP_DATE_ANSIC_PATTERN =
             Pattern.compile(HTTP_DATE_ANSIC_REGEXP);
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.204 -0400", hash_original_method = "7CB4B1DA681A2A8A056262512BDE8871", hash_generated_method = "7CB4B1DA681A2A8A056262512BDE8871")
     public HttpDateTime ()
     {

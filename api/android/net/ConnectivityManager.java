@@ -234,6 +234,7 @@ public ConnectivityManager(IConnectivityManager service) {
     
     //added for Modeling
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ConnectivityManager(){
         
     }

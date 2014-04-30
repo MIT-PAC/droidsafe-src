@@ -133,6 +133,7 @@ public static String getCannonicalName(String method) {
     /**
      * Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.841 -0500", hash_original_method = "CD96843F1E97D10004B6B61F026BE84E", hash_generated_method = "298D3F4037F1E431175B5ECCFB75FF39")
     
 public SIPRequest() {

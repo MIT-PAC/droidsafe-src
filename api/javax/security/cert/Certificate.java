@@ -16,6 +16,7 @@ public abstract class Certificate {
     /**
      * Creates a new {@code Certificate}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.704 -0500", hash_original_method = "EF3B6A1B9C3991494D57A734B30AC9EA", hash_generated_method = "20DF396713DAA02310F7328ADDA40AD2")
     
 public Certificate() {}

@@ -23,6 +23,7 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
  
     protected List responseInterceptors = null;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.271 -0400", hash_original_method = "9C379E6850D70F22993610B85EB51FC7", hash_generated_method = "9C379E6850D70F22993610B85EB51FC7")
     public BasicHttpProcessor ()
     {

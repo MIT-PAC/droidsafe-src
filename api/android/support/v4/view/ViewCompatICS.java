@@ -48,6 +48,7 @@ public static void onInitializeAccessibilityNodeInfo(View v, Object info) {
         v.onInitializeAccessibilityNodeInfo((AccessibilityNodeInfo) info);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.384 -0400", hash_original_method = "216CDC7D30D86F2C2CF6BA6EB77F522A", hash_generated_method = "216CDC7D30D86F2C2CF6BA6EB77F522A")
     public ViewCompatICS ()
     {

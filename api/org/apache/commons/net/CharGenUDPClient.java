@@ -69,7 +69,6 @@ public final class CharGenUDPClient extends DatagramSocketClient
     public static final int DEFAULT_PORT = 19;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.964 -0500", hash_original_field = "140AB95FF05F6D5B0CA471B45F025B51", hash_generated_field = "2BE99DB36337645D32A62863921CB3D2")
 
-
     private byte[] __receiveData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.966 -0500", hash_original_field = "45F1278E374F48AF0B2EC2000DE0B25D", hash_generated_field = "98287AAF88C9703D4ED1044852AFFF98")
 
@@ -83,6 +82,7 @@ public final class CharGenUDPClient extends DatagramSocketClient
      * data structures for sending and receiving the necessary datagrams for
      * the chargen and related protocols.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.973 -0500", hash_original_method = "1269355D60D7190EAE617D5C71982259", hash_generated_method = "5E1FC5222F1D24E03DD02D8882E1411F")
     
 public CharGenUDPClient()
@@ -92,7 +92,6 @@ public CharGenUDPClient()
         __receivePacket = new DatagramPacket(__receiveData, 512);
         __sendPacket = new DatagramPacket(new byte[0], 0);
     }
-
 
     /***
      * Sends the data initiation datagram.  This data in the packet is ignored

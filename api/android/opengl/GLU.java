@@ -243,6 +243,7 @@ public static int gluUnProject(float winX, float winY, float winZ,
 
     private static final float[] sScratch = new float[32];
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.361 -0400", hash_original_method = "81777980E1C12E67D555E59C0A8957E0", hash_generated_method = "81777980E1C12E67D555E59C0A8957E0")
     public GLU ()
     {

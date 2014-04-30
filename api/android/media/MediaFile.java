@@ -396,6 +396,7 @@ MediaFileType(int fileType, String mimeType) {
     private static HashMap<Integer, String> sFormatToMimeTypeMap
             = new HashMap<Integer, String>();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.479 -0400", hash_original_method = "F8094BC7E14C0E050681E430B28230AD", hash_generated_method = "F8094BC7E14C0E050681E430B28230AD")
     public MediaFile ()
     {

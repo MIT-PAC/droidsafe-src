@@ -394,6 +394,7 @@ Provider getProvider()
 
     private static Set       noParams = new HashSet();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.603 -0400", hash_original_method = "19DD25388D9EA3D8C5EFD26CD223A84A", hash_generated_method = "19DD25388D9EA3D8C5EFD26CD223A84A")
     public X509Util ()
     {

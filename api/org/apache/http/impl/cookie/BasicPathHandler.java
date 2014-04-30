@@ -10,10 +10,9 @@ import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-
-
 public class BasicPathHandler implements CookieAttributeHandler {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.857 -0500", hash_original_method = "D507B370C20AEA12D2B2206AC852AB3E", hash_generated_method = "67ED4D0442F1DBE4BB8514DF826F20D6")
     
 public BasicPathHandler() {
@@ -71,7 +70,6 @@ public boolean match(final Cookie cookie, final CookieOrigin origin) {
         }
         return match;
     }
-
     
 }
 

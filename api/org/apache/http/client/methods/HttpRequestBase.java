@@ -38,7 +38,8 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
 
     private ConnectionReleaseTrigger releaseTrigger;
     
-	public HttpRequestBase() { 
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public HttpRequestBase() { 
 		super();
 	}
 

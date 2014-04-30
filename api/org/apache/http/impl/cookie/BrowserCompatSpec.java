@@ -63,6 +63,7 @@ public BrowserCompatSpec(final String[] datepatterns) {
     }
 
     /** Default constructor */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.853 -0500", hash_original_method = "C508CCBAE435AF6EA5073D1CDD101081", hash_generated_method = "90648FA6E43E44AA1A60F2B9ED760AA9")
     
 public BrowserCompatSpec() {

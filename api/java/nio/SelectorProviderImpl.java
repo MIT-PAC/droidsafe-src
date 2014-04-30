@@ -12,12 +12,9 @@ import java.nio.channels.SocketChannel;
 import java.nio.channels.spi.AbstractSelector;
 import java.nio.channels.spi.SelectorProvider;
 
-
-
-
-
 public final class SelectorProviderImpl extends SelectorProvider {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.908 -0400", hash_original_method = "0FAD76CB1DA362BA4B44B65B1490E94B", hash_generated_method = "0FAD76CB1DA362BA4B44B65B1490E94B")
     public SelectorProviderImpl ()
     {
@@ -52,7 +49,6 @@ public ServerSocketChannel openServerSocketChannel() throws IOException {
 public SocketChannel openSocketChannel() throws IOException {
         return new SocketChannelImpl(this);
     }
-
     
 }
 

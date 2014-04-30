@@ -15,6 +15,7 @@ public class PipedOutputStream extends OutputStream {
      * stream must be connected to a {@link PipedInputStream} before data can be
      * written to it.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.405 -0500", hash_original_method = "E4156F592468799387F97AC767717CEE", hash_generated_method = "2D2802C47FF4B77E0138846DE35E266E")
     
 public PipedOutputStream() {

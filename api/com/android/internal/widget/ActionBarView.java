@@ -234,6 +234,7 @@ public class ActionBarView extends AbsActionBarView {
         
 };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.042 -0400", hash_original_method = "29E0288B7F0720C76BE42483EEC0C7FB", hash_generated_method = "0898DC393C560D3D16DF123CFB75AA46")
     public  ActionBarView(Context context, AttributeSet attrs) {
         super(context, attrs);

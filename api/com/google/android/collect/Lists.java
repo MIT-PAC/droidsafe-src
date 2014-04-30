@@ -20,6 +20,7 @@ public class Lists {
         return list;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.483 -0400", hash_original_method = "440C6E9BC1692F21363DE1B8F62E6180", hash_generated_method = "440C6E9BC1692F21363DE1B8F62E6180")
     public Lists ()
     {

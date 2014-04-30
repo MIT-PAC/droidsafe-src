@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class BatteryManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.084 -0500", hash_original_field = "2292E02218D54BAF718FEC054ADAA31A", hash_generated_field = "BCC0736EDE3B26CB905D1BB3B56EDBCE")
 
@@ -86,6 +84,7 @@ public class BatteryManager {
 
     public static final int BATTERY_PLUGGED_USB = 2;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.640 -0400", hash_original_method = "46CB3C3298CDC989655A7D5A93769408", hash_generated_method = "46CB3C3298CDC989655A7D5A93769408")
     public BatteryManager ()
     {

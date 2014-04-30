@@ -29,6 +29,7 @@ public class DOMSource implements Source {
      *
      * @see javax.xml.transform.Transformer#transform(Source xmlSource, Result outputTarget)
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.303 -0500", hash_original_method = "C22C4B52562F798E2DC7E2B5F763062E", hash_generated_method = "5A01E933F6E8AF5A24CC3F6F9F33278E")
     
 public DOMSource() { }

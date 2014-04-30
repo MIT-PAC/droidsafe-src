@@ -264,7 +264,8 @@ public abstract class Context {
 	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
 	public List<Intent> __ds__intentsFromFilter = new LinkedList<Intent>();
 
-	public Context() {
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public Context() {
 		//Do Nothing
 	}
 

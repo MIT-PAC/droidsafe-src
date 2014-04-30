@@ -51,6 +51,7 @@ public TableRow(Context context) {
      * @param context the application environment
      * @param attrs a collection of attributes
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.203 -0500", hash_original_method = "BE346953D196911D47A80804A6B74A8F", hash_generated_method = "FA1FF0D936D9A45B6AB85F09FD7B00BB")
     
 public TableRow(Context context, AttributeSet attrs) {

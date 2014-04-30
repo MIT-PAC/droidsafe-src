@@ -59,6 +59,7 @@ public Menu[] newArray(int size) {
 
     public boolean itemsIconSelfExplanatory;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.337 -0500", hash_original_method = "2E99B961E06FFBDF1C6EFBD0F84C03B4", hash_generated_method = "A963A89D2776C4758E3A6BD8BB0ADD34")
     
 public Menu() {

@@ -93,6 +93,7 @@ public final static String formatHeader(final Header header,
 
     public final static BasicLineFormatter DEFAULT = new BasicLineFormatter();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.925 -0400", hash_original_method = "8022E7B2B110A3478739271765EA4718", hash_generated_method = "8022E7B2B110A3478739271765EA4718")
     public BasicLineFormatter ()
     {

@@ -306,6 +306,7 @@ static public InputMethodManager peekInstance() {
     
     //Hand modeling
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public InputMethodManager() {
      
     }

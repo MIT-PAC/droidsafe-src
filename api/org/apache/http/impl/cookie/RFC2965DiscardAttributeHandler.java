@@ -11,13 +11,10 @@ import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 import org.apache.http.cookie.SetCookie2;
 
-
-
-
-
 public class RFC2965DiscardAttributeHandler implements CookieAttributeHandler {
 
-      @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.116 -0500", hash_original_method = "40A04040358E10BE463BC9E2FF4354F7", hash_generated_method = "1A6125E1646FB264469B1BE642A8BAE0")
+      @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.116 -0500", hash_original_method = "40A04040358E10BE463BC9E2FF4354F7", hash_generated_method = "1A6125E1646FB264469B1BE642A8BAE0")
     
 public RFC2965DiscardAttributeHandler() {
           super();
@@ -44,7 +41,6 @@ public void validate(final Cookie cookie, final CookieOrigin origin)
 public boolean match(final Cookie cookie, final CookieOrigin origin) {
           return true;
       }
-
     
 }
 

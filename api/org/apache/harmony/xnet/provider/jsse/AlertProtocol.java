@@ -103,6 +103,7 @@ public class AlertProtocol {
      * record protocol
      * @see #setRecordProtocol
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.397 -0500", hash_original_method = "E092E2209250C02F09C22B7C95E9AB91", hash_generated_method = "A72600933EA880F69BAE3F07B74702DB")
     
 protected AlertProtocol() {}

@@ -88,6 +88,7 @@ static int getAndroidLevel(Level level) {
     /**
      * Constructs a new instance of the Android log handler.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.838 -0500", hash_original_method = "3144D6BF2066D661F792BBA409558AA4", hash_generated_method = "743A6DC2556A7FDAC6C726598DD2E01D")
     
 public AndroidHandler() {

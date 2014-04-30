@@ -677,6 +677,7 @@ public static final void killProcessQuiet(int pid) {
 
     public static final int PROC_OUT_FLOAT = 0x4000;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.388 -0400", hash_original_method = "F1A8A517686D0631650544C6E6120854", hash_generated_method = "F1A8A517686D0631650544C6E6120854")
     public Process ()
     {

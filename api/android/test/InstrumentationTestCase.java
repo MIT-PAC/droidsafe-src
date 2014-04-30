@@ -22,6 +22,7 @@ public class InstrumentationTestCase extends TestCase {
 
     private Instrumentation mInstrumentation;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.606 -0400", hash_original_method = "F06054A79CB0E1296A7D2CB8684D0A88", hash_generated_method = "F06054A79CB0E1296A7D2CB8684D0A88")
     public InstrumentationTestCase ()
     {

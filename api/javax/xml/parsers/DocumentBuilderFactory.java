@@ -75,6 +75,7 @@ public static DocumentBuilderFactory newInstance(String factoryClassName,
 
     private boolean coalescing = false;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.031 -0500", hash_original_method = "49D4E4D47C8CF413B98AC9B42DF82DC4", hash_generated_method = "3C2F0A523B35EC7AA446B70E23453FD4")
     
 protected DocumentBuilderFactory () {

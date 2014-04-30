@@ -360,6 +360,7 @@ public AndroidProxySelectorRoutePlanner(SchemeRegistry schreg, ProxySelector pro
 
     private static  Pattern EXCLLIST_PATTERN;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.092 -0400", hash_original_method = "9B17734F1ACD31FFE2C2D0AFEC291967", hash_generated_method = "9B17734F1ACD31FFE2C2D0AFEC291967")
     public Proxy ()
     {

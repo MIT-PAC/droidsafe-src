@@ -15,6 +15,7 @@ public abstract class Overlay
 
     protected MapView mMapView;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Overlay() {
         mMapView = new MapView(null, "");
         this.onTouchEvent(new MotionEvent(), mMapView);

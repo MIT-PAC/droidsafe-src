@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -64,15 +63,10 @@ private static GLEnvironment getGLEnvironment(FilterContext context) {
     	return retObj;
     }
 
-
-
-
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.237 -0400", hash_original_field = "2997954D90226209869558A38138D2C4", hash_generated_field = "A4DE4B4D843E75EEA85A7DD019A2F6CE")
-
 
     private int shaderProgramId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.239 -0400", hash_original_field = "9452392755D4B9DB97BB4BD054F03F43", hash_generated_field = "E1B9BD1DBDAA8063BF9373C763FDCE1A")
-
 
     private int mMaxTileSize = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.240 -0400", hash_original_field = "8BDB18895FCC3C3DE30D4A8182B759B0", hash_generated_field = "36BA6D777A2DEF7FA06871FE424D0166")
@@ -81,10 +75,10 @@ private static GLEnvironment getGLEnvironment(FilterContext context) {
     private GLEnvironment mGLEnvironment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.242 -0400", hash_original_field = "9B00ED9622D774FE98BBA25FBA3C718F", hash_generated_field = "F65B4040D4A62DDAA67369124ECCF33C")
 
-
     private StopWatchMap mTimer = null;
 
     // Used from native layer for creating empty wrapper only!
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.246 -0400", hash_original_method = "EBB0A24BB54A3C2183FA64B479A47560", hash_generated_method = "2763176A91C5FE20A497F8E1AF3714FB")
     
 private ShaderProgram() {
@@ -349,7 +343,6 @@ public void beginDrawing() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:45.093 -0400", hash_original_method = "8AF148E20F2332AA6C9887D50C0F196C", hash_generated_method = "94778360B3ACE73928DE8B6E44A291EC")
     
     private boolean compileAndLink(){
@@ -358,9 +351,6 @@ public void beginDrawing() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.027 -0400", hash_original_method = "56CACE7B1111C40C912A571DEA490194", hash_generated_method = "60DE510454E6012A957ADDB59F73DBAE")
     
@@ -374,7 +364,6 @@ public void beginDrawing() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.031 -0400", hash_original_method = "02242603F41A919B6900325BC0CB472A", hash_generated_method = "400D93FBD418C26255680F8581E00D4A")
     
     private boolean setUniformValue(String name, Object value){
@@ -386,7 +375,6 @@ public void beginDrawing() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.035 -0400", hash_original_method = "0375EA9105518F02B068F631222F799F", hash_generated_method = "1FA273FA8F6DD7AF2403597560FCD31F")
     
@@ -400,7 +388,6 @@ public void beginDrawing() {
     	retObj.addTaint(taintDouble);
     	return retObj;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.040 -0400", hash_original_method = "4F9E5F5A1C81EB9F81B8A264C64333EA", hash_generated_method = "8B7120AD46851075F3D32EC12153E400")
     
@@ -420,7 +407,6 @@ public void beginDrawing() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.044 -0400", hash_original_method = "0A6D1E9787CD1A3592E7EE16DE33F6B5", hash_generated_method = "4E06F509C514A883DFD5876F7F9761A4")
     
@@ -452,7 +438,6 @@ public void beginDrawing() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:55.174 -0400", hash_original_method = "A877920A933240EB26149604AF6DAB65", hash_generated_method = "5837E6038E807F3EECE2CB085E972852")
     
     private boolean setShaderBlendEnabled(boolean enable){
@@ -463,8 +448,6 @@ public void beginDrawing() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.061 -0400", hash_original_method = "A703E8E2D56F488E1B7A9936A9DB9BCF", hash_generated_method = "12F09D52B4C49EB64D19D862A7BF10CD")
     
@@ -477,7 +460,6 @@ public void beginDrawing() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.065 -0400", hash_original_method = "174C7B19100D70D5D83DBF0E71D8C40D", hash_generated_method = "A75019B7BA64CDAF150422CDE400D3BC")
     
@@ -492,7 +474,6 @@ public void beginDrawing() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.069 -0400", hash_original_method = "4F5825A74EACEDBEA33A8AE3B2BA1DE1", hash_generated_method = "965FE68B00B4D6A1D4B05AD04B7F1030")
     
     private boolean setShaderDrawMode(int drawMode){
@@ -503,7 +484,6 @@ public void beginDrawing() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.074 -0400", hash_original_method = "7E24AA3DE2F23987F17F823DAD41B466", hash_generated_method = "CE408237BB5377D7CF0AE12235E9F108")
     
@@ -516,7 +496,6 @@ public void beginDrawing() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.077 -0400", hash_original_method = "F5CCA9000D603F753022C746FC4B770D", hash_generated_method = "D5DD67C845ABF42485BFFC0509F8D0FC")
     
@@ -537,9 +516,6 @@ public void beginDrawing() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.085 -0400", hash_original_method = "166895198048089D3756FB69404DAC65", hash_generated_method = "24CD0C16BA9C77F60B1E51E82A2B5D5A")
     
@@ -578,9 +554,5 @@ public void beginDrawing() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
-
 
 }

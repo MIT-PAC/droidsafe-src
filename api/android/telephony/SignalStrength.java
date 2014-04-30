@@ -130,6 +130,7 @@ public SignalStrength[] newArray(int size) {
      *
      * @hide
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.529 -0500", hash_original_method = "39BD55AB1A011261FC242AC9054B9C2E", hash_generated_method = "5B311C8F95E0463D19E33F59389E3E80")
     
 public SignalStrength() {

@@ -20,6 +20,7 @@ public class MultiValueMapImpl<V> implements MultiValueMap<String, V>, Cloneable
 
     private HashMap<String, ArrayList<V>> map = new HashMap<String, ArrayList<V>>();
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.019 -0500", hash_original_method = "92FBF841CDA8BB538E9BCFC9D2E80E36", hash_generated_method = "365E207D667D243D23CD1C022BBE4132")
     
 public MultiValueMapImpl() {

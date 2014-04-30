@@ -25,6 +25,7 @@ public abstract class SelectionKey {
     /**
      * Constructs a new {@code SelectionKey}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.180 -0500", hash_original_method = "506BAEF14D6E9F731FF32E7686B78589", hash_generated_method = "F0644C046FE50CCFCA76332566892C03")
     
 protected SelectionKey() {

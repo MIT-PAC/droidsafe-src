@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -41,7 +40,6 @@ import android.util.Log;
 public class FilterGraph {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.693 -0400", hash_original_field = "7125DFA043A6D9AA078014FB9DA3F90E", hash_generated_field = "C99065676256306448CF387B87621C10")
 
-
     public static final int AUTOBRANCH_OFF      = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.695 -0400", hash_original_field = "5381B9E374FF0A9CF43D52DA7E6C5C09", hash_generated_field = "8B9D86FA2E27968BF23ABC3E9025CED5")
 
@@ -50,7 +48,6 @@ public class FilterGraph {
 
     public static final int AUTOBRANCH_UNSYNCED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.702 -0400", hash_original_field = "6BEFC175606F418EC3E694A5B7B42748", hash_generated_field = "EB75A4F042E75E550B08D3DF63F34582")
-
 
     public static final int TYPECHECK_OFF       = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.705 -0400", hash_original_field = "7F29334267F3545B577F182AA25BBF94", hash_generated_field = "A1F757B10C8D561B0EE71F9A22083AAD")
@@ -61,7 +58,6 @@ public class FilterGraph {
     public static final int TYPECHECK_STRICT    = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.685 -0400", hash_original_field = "BF32CE7B9A3E9B8FB2F502444AA4E62F", hash_generated_field = "47FEE82991933E82A97C571610BA23C3")
 
-
     private HashSet<Filter> mFilters = new HashSet<Filter>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.688 -0400", hash_original_field = "8B0F78C6A6C04AF8CFEC48AB65BBF805", hash_generated_field = "79F7B60E2634A4906E5988D39955D8D6")
 
@@ -71,7 +67,6 @@ public class FilterGraph {
     private HashMap<OutputPort, LinkedList<InputPort>> mPreconnections = new
             HashMap<OutputPort, LinkedList<InputPort>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.710 -0400", hash_original_field = "17C239AFC6C8089DCC75043C54D5A297", hash_generated_field = "07E85A0ED7BE23248D219CDC62FA19F4")
-
 
     private boolean mIsReady = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.713 -0400", hash_original_field = "FD6B2102EBDC90C13F60991560FF6D37", hash_generated_field = "2F85FF93A2F1BA3D39A1191A3CC93108")
@@ -85,12 +80,12 @@ public class FilterGraph {
     private boolean mDiscardUnconnectedOutputs = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.721 -0400", hash_original_field = "CCFB9E24DC58F9E64BC75A559E0C33FC", hash_generated_field = "29542B7EA5B26DA8ADF116C9866AA3F1")
 
-
     private boolean mLogVerbose;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.723 -0400", hash_original_field = "238C8CBA0BD34A77D90E2F550CDB5036", hash_generated_field = "A88ABD9F4B7A5EEF0C26E5BE6B34BC63")
 
     private String TAG = "FilterGraph";
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.726 -0400", hash_original_method = "8CAF45DFA731D769944D30DF0E9CB2E0", hash_generated_method = "7DCFD6339B5F831653C6C84E0B28DCAE")
     
 public FilterGraph() {

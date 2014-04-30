@@ -27,6 +27,7 @@ public PPreferredIdentity(AddressImpl address) {
     /**
      * default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.894 -0500", hash_original_method = "87907696BDC4EF5B0ECA8FC9DCAB5991", hash_generated_method = "B6B59C91235DAD0966DAABAAD7D50348")
     
 public PPreferredIdentity() {

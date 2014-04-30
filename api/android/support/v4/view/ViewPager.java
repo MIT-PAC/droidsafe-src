@@ -227,6 +227,7 @@ public class ViewPager extends ViewGroup {
 
     private int mScrollState = SCROLL_STATE_IDLE;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.370 -0500", hash_original_method = "167A05D4ABF68D419B8302604913DA0C", hash_generated_method = "62F3333EA112767F01F430A2A57F2524")
     
 public ViewPager(Context context) {
@@ -234,6 +235,7 @@ public ViewPager(Context context) {
         initViewPager();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.372 -0500", hash_original_method = "2DA5D82366012C7A6B734AF18B26B0B4", hash_generated_method = "60A628B9709D77E2B006BAE809F668F9")
     
 public ViewPager(Context context, AttributeSet attrs) {
@@ -2058,7 +2060,6 @@ SavedState(Parcel in, ClassLoader loader) {
          * Current child index within the ViewPager that this view occupies
          */
         int childIndex;
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.595 -0500", hash_original_method = "22352D37EA586BAB2B06261A9354918D", hash_generated_method = "7FE9663220C0107D37C7BA8C1C30C316")
         

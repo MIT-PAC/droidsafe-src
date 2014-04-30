@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Vector;
 
-
-
-
 public class DEREncodableVector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.698 -0500", hash_original_field = "A7A9A9F7A17391F6E585D35448FF7802", hash_generated_field = "A7A9A9F7A17391F6E585D35448FF7802")
 
@@ -17,6 +14,7 @@ public class DEREncodableVector {
     /**
      * @deprecated use ASN1EncodableVector instead.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.701 -0500", hash_original_method = "4B1458BF3C50FB4227938042BB3B78D8", hash_generated_method = "4DFB1B6B60EA995D6120F4C94D3E7A09")
     
 public DEREncodableVector()
@@ -46,7 +44,6 @@ public int size()
     {
         return v.size();
     }
-
     
 }
 

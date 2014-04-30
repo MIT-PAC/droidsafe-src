@@ -112,6 +112,7 @@ public static GeolocationPermissions getInstance() {
 
     private Vector<Message> mQueuedMessages;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:51.833 -0400", hash_original_method = "BCFC7E69B898D596BF2DB066E056C985", hash_generated_method = "BCFC7E69B898D596BF2DB066E056C985")
     public GeolocationPermissions ()
     {

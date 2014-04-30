@@ -58,6 +58,7 @@ public class FastXmlSerializer implements XmlSerializer {
 
     private boolean mInTag;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.714 -0400", hash_original_method = "14D217AC288267AE1031A94F745E4E30", hash_generated_method = "14D217AC288267AE1031A94F745E4E30")
     public FastXmlSerializer ()
     {

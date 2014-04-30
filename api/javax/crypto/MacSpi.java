@@ -15,6 +15,7 @@ public abstract class MacSpi {
     /**
      * Creates a new {@code MacSpi} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.463 -0500", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "132FD63D4BAF7B3BF5EECA165BAC8542")
     
 public MacSpi() {

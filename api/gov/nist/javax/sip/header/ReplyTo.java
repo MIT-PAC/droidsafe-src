@@ -16,6 +16,7 @@ public final class ReplyTo extends AddressParametersHeader implements ReplyToHea
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.381 -0500", hash_original_method = "39A6C3CE738448740A75D288CF2B6517", hash_generated_method = "215C0EB654E39530A8A56A4BBF05A692")
     
 public ReplyTo() {

@@ -54,6 +54,7 @@ public static synchronized DrmRightsManager getInstance() {
     /**
      * Construct a DrmRightsManager
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.770 -0500", hash_original_method = "9CECCAD6D8D5F2E74B9B1C7CC1642036", hash_generated_method = "2905FE266121C8BB7EB4FAF5BE38823B")
     
 protected DrmRightsManager() {

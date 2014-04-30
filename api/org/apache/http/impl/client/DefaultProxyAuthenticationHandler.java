@@ -13,10 +13,9 @@ import org.apache.http.auth.AUTH;
 import org.apache.http.auth.MalformedChallengeException;
 import org.apache.http.protocol.HttpContext;
 
-
-
 public class DefaultProxyAuthenticationHandler extends AbstractAuthenticationHandler {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.296 -0500", hash_original_method = "BD7E104E787325F5148E620FC3E1650F", hash_generated_method = "18ABD62D916C65D4440332F51E3D0656")
     
 public DefaultProxyAuthenticationHandler() {
@@ -46,7 +45,6 @@ public Map<String, Header> getChallenges(
         Header[] headers = response.getHeaders(AUTH.PROXY_AUTH);
         return parseChallenges(headers);
     }
-
     
 }
 

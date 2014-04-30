@@ -39,6 +39,7 @@ public WifiP2pDeviceList[] newArray(int size) {
 
     private Collection<WifiP2pDevice> mDevices;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.231 -0500", hash_original_method = "711A9A33382FDEBAFBD29DC2083BF3E5", hash_generated_method = "26BCD1798670B841955278A6D31256B1")
     
 public WifiP2pDeviceList() {

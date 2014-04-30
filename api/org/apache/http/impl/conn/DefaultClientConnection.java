@@ -46,6 +46,7 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
 
     private volatile boolean shutdown;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.963 -0500", hash_original_method = "90469C020BD0C2691C8C778F609E10DE", hash_generated_method = "71B2B2ABCF6DAD2E7D91FE82AA783C86")
     
 public DefaultClientConnection() {

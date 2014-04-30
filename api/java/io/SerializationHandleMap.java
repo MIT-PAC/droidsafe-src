@@ -22,6 +22,7 @@ final class SerializationHandleMap {
 
     private int threshold;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.953 -0500", hash_original_method = "A15E80CA3FF7B3935AD371814D8F0A08", hash_generated_method = "3E02B7005E9729B7D5EA8B9F32A356E0")
     
 public SerializationHandleMap() {

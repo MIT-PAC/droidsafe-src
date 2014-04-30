@@ -12,19 +12,15 @@ import java.text.ParseException;
 import javax.sip.address.SipURI;
 import javax.sip.address.TelURL;
 
-
-
-
-
 public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
 
     /** Creates a new instance of AddressFactoryImpl
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.638 -0500", hash_original_method = "5EAE66D49E862BAEE0E410CA69871D83", hash_generated_method = "1F6A742B0361C640F57D2BBE59EB53D0")
     
 public AddressFactoryImpl() {
     }
-
 
     /**
      *
@@ -215,7 +211,6 @@ public javax.sip.address.URI createURI(String uri) throws ParseException {
         }
         return new gov.nist.javax.sip.address.GenericURI(uri);
     }
-
     
 }
 

@@ -692,6 +692,7 @@ public static void setEnabledCompressionMethods(int ssl, String[] methods) {
 
     public static final int SSL_VERIFY_FAIL_IF_NO_PEER_CERT = 0x02;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.716 -0400", hash_original_method = "DDEFB157515C7447D58E1F6901777126", hash_generated_method = "DDEFB157515C7447D58E1F6901777126")
     public NativeCrypto ()
     {

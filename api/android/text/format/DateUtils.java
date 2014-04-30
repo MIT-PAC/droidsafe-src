@@ -1819,6 +1819,7 @@ public static CharSequence getRelativeTimeSpanString(Context c, long millis) {
 
     private static Time sThenTime;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.651 -0400", hash_original_method = "15B73761459E939452D7F92AFEA42834", hash_generated_method = "15B73761459E939452D7F92AFEA42834")
     public DateUtils ()
     {

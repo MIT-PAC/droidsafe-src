@@ -23,6 +23,7 @@ public class RatingBar extends AbsSeekBar {
     
     private OnRatingBarChangeListener mOnRatingBarChangeListener;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.727 -0500", hash_original_method = "938147F53CB460240E2DF1224551ED40", hash_generated_method = "E1CAA32CA5D4A2CA00CB0DCF155F6C90")
     
 public RatingBar(Context context, AttributeSet attrs, int defStyle) {
@@ -55,12 +56,14 @@ public RatingBar(Context context, AttributeSet attrs, int defStyle) {
         mTouchProgressOffset = 1.1f;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.730 -0500", hash_original_method = "C497D2C446013A8A61B261C3CBB506B4", hash_generated_method = "51F527CA15CA20A377AAA7F486443DB0")
     
 public RatingBar(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.ratingBarStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.732 -0500", hash_original_method = "D42949600C8B60C6F46AA1F41FAE4EFB", hash_generated_method = "EAC85E9403699D559CDAA3872A132ABB")
     
 public RatingBar(Context context) {

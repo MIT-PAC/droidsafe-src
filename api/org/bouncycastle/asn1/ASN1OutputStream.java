@@ -7,11 +7,8 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
-
 public class ASN1OutputStream extends DEROutputStream {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.092 -0500", hash_original_method = "B585D0D3F95079429B677B297C18775F", hash_generated_method = "B569EF4B8419AD672B8625889975F8A7")
     
 public ASN1OutputStream(
@@ -43,7 +40,6 @@ public void writeObject(
             throw new IOException("object not ASN1Encodable");
         }
     }
-
     
 }
 

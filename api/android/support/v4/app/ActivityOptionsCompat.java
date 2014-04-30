@@ -103,7 +103,7 @@ public static ActivityOptionsCompat makeThumbnailScaleUpAnimation(View source,
         return new ActivityOptionsCompat();
     }
 
-
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:12.127 -0500", hash_original_method = "C3D8A08DB57C7D5061C47B6764CF0D6D", hash_generated_method = "830C483BBC9EBC1A9B02D162E181CF3C")
     
 protected ActivityOptionsCompat() {

@@ -5,6 +5,7 @@ import droidsafe.annotations.*;
 public class GeoPoint
 {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public GeoPoint() {
         
     }
@@ -25,7 +26,7 @@ public class GeoPoint
     
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSSafe(DSCat.LOCATION)
-    public String toString() { 
+    public String toString() {
         
         return "";
     }

@@ -17,6 +17,7 @@ public abstract class SSLEngine {
     /**
      * Creates a new {@code SSLEngine} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.528 -0500", hash_original_method = "4DB69FC0D6B2C4EA5754BFEC7A5A4921", hash_generated_method = "E2FBEE686069E89CC1293D27865A5E4A")
     
 protected SSLEngine() {

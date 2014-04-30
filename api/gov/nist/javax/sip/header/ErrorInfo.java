@@ -22,6 +22,7 @@ public final class ErrorInfo extends ParametersHeader implements ErrorInfoHeader
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.835 -0500", hash_original_method = "E4884C80CFD3760FF481610C05E97D11", hash_generated_method = "920425A7F961A766542027E68BBE215D")
     
 public ErrorInfo() {

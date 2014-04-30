@@ -40,6 +40,7 @@ public class JarEntry extends ZipEntry {
      * @param name
      *            The name of the new {@code JarEntry}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.580 -0500", hash_original_method = "AEA0BF7FF3634BE004E609E393DDAC13", hash_generated_method = "8AA59FC24C0EBBA738B0C9EF6B870A0D")
     
 public JarEntry(String name) {
@@ -52,6 +53,7 @@ public JarEntry(String name) {
      * @param entry
      *            The ZipEntry to obtain values from.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.593 -0500", hash_original_method = "506E89BB6203E00495B453235D9825F2", hash_generated_method = "12B972B2E5039535BB717C01C9A22741")
     
 public JarEntry(ZipEntry entry) {

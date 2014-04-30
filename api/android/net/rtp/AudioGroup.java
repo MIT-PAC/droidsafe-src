@@ -36,6 +36,7 @@ public class AudioGroup {
     /**
      * Creates an empty AudioGroup.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.267 -0500", hash_original_method = "9E113DACC3DCFC949CC90EBD557A2ACA", hash_generated_method = "834E7F118B11507315081F9FC7A5FE41")
     
 public AudioGroup() {

@@ -62,6 +62,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
 
     private boolean mForceShowIcon;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.293 -0500", hash_original_method = "C8B59316A7D022025F82FC9BA82661FF", hash_generated_method = "5D90EA356D559FFECBA629AF8451A873")
     
 public ListMenuItemView(Context context, AttributeSet attrs, int defStyle) {
@@ -81,6 +82,7 @@ public ListMenuItemView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.296 -0500", hash_original_method = "8379DAC15AF7C56B575365B6BA969EC4", hash_generated_method = "3ECE3954132A49C62527952B04FFC2A2")
     
 public ListMenuItemView(Context context, AttributeSet attrs) {

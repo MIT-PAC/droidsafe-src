@@ -49,6 +49,7 @@ public final class EchoTCPClient extends DiscardTCPClient
      * The default EchoTCPClient constructor.  It merely sets the default
      * port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.880 -0500", hash_original_method = "C8722E45395B8D0E325E78C6DAD1FA33", hash_generated_method = "7BD2897E12594136CD8B608E7D50E285")
     
 public EchoTCPClient ()

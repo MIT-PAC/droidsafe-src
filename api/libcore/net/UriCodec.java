@@ -116,6 +116,7 @@ private static void appendHex(StringBuilder sb, byte b) {
         sb.append(Byte.toHexString(b, true));
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.874 -0400", hash_original_method = "4BF02B8F3FC732245257150462C2453A", hash_generated_method = "4BF02B8F3FC732245257150462C2453A")
     public UriCodec ()
     {

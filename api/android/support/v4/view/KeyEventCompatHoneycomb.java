@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.view.KeyEvent;
 
-
-
-
 class KeyEventCompatHoneycomb {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.796 -0500", hash_original_method = "79BE0D2D02FC363E2DC3AC75A06B389D", hash_generated_method = "4B3DD113D59C5E46AABF7963C281AC7C")
     
@@ -28,12 +25,12 @@ public static boolean metaStateHasNoModifiers(int metaState) {
         return KeyEvent.metaStateHasNoModifiers(metaState);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.249 -0400", hash_original_method = "2025FF61554914F4FC15F8674DA32210", hash_generated_method = "2025FF61554914F4FC15F8674DA32210")
     public KeyEventCompatHoneycomb ()
     {
         //Synthesized constructor
     }
-
     
 }
 

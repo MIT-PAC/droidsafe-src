@@ -35,6 +35,7 @@ public class RetryManager {
     private Random rng = new Random();
 
     /** Constructor */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.953 -0500", hash_original_method = "86AB11F27A0B5AC38FB55D7069405F57", hash_generated_method = "C83CF8A9D7F1E339DB21D2990562C126")
     
 public RetryManager() {

@@ -34,6 +34,7 @@ public static synchronized ServerSocketFactory getDefault() {
     /**
      * Creates a new {@code ServerSocketFactory} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.870 -0500", hash_original_method = "50A5AD4489C33A1F5479F4B6ACCE6C5A", hash_generated_method = "F66458F9D1456DEE896C0D9D4A2BB371")
     
 protected ServerSocketFactory() {

@@ -112,6 +112,7 @@ public static boolean isMySubclass(Class<?> other) {
 
     protected String separator;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.265 -0500", hash_original_method = "B4C0906D853ADC385414EECD7EA637D1", hash_generated_method = "98933C3BD03DC1FC95EBBE8EE8A04F02")
     
 protected GenericObjectList() {

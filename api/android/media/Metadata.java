@@ -322,6 +322,7 @@ public static int lastType() { return LAST_TYPE; }
     /**
      * {@hide}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.232 -0500", hash_original_method = "42EB03B7CCF72771EC09BC7329CF6561", hash_generated_method = "CF0B8922A36F31DD9957EECFBC74138D")
     
 public Metadata() { }

@@ -65,6 +65,7 @@ public final class CharGenTCPClient extends SocketClient
      * The default constructor for CharGenTCPClient.  It merely sets the
      * default port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.606 -0500", hash_original_method = "74919E562F51AE29699191F0B83C4E29", hash_generated_method = "8B3823FD97ADA1658D8DD25FD3FD2630")
     
 public CharGenTCPClient ()

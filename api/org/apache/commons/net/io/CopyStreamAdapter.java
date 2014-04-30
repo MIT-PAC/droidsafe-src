@@ -48,6 +48,7 @@ public class CopyStreamAdapter implements CopyStreamListener
     /**
      * Creates a new copyStreamAdapter.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.216 -0500", hash_original_method = "2CBB805BB0A161F5128CD7B1280D9949", hash_generated_method = "27092FC110AA8FE32A5A4C706D52F461")
     
 public CopyStreamAdapter()

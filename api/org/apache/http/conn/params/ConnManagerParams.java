@@ -141,6 +141,7 @@ public static int getMaxTotalConnections(
         
 };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.733 -0400", hash_original_method = "8D73F0F63C95FBB6C86DB2075286A73B", hash_generated_method = "8D73F0F63C95FBB6C86DB2075286A73B")
     public ConnManagerParams ()
     {

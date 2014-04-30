@@ -108,6 +108,7 @@ public static byte[] getRandomBits(int numBytes) {
 
     private static final String DEVICE_NAMES[] = { "/dev/urandom" /*, "/dev/random" */ };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.222 -0400", hash_original_method = "C2EAC1E8FB299AA5C7A70ED055C01714", hash_generated_method = "C2EAC1E8FB299AA5C7A70ED055C01714")
     public RandomBitsSupplier ()
     {

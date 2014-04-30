@@ -19,6 +19,7 @@ public class AllowList extends SIPHeaderList<Allow> {
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.473 -0500", hash_original_method = "F4CA7E921A2CAA269087CDE3B4673EDF", hash_generated_method = "72E03A22D2A84D8D19DD811CA6FF01E8")
     
 public AllowList() {

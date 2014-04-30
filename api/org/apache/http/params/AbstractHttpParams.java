@@ -5,12 +5,12 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public abstract class AbstractHttpParams implements HttpParams {
 
     /**
      * Instantiates parameters.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.767 -0500", hash_original_method = "A2A1500AC9CF1B321965DC9E32B8AC94", hash_generated_method = "D0F41019489829B54E3B637A038A3594")
     
 protected AbstractHttpParams() {
@@ -96,7 +96,6 @@ public boolean isParameterTrue(final String name) {
 public boolean isParameterFalse(final String name) {
         return !getBooleanParameter(name, false);
     }
-
     
 }
 

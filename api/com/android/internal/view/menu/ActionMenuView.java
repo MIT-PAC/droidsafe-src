@@ -98,12 +98,14 @@ static int measureChildForCells(View child, int cellSize, int cellsRemaining,
 
     private int mMeasuredExtraWidth;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.774 -0500", hash_original_method = "AC153E2863979DC17A482AC64988B640", hash_generated_method = "F29E54B2D2D6FAF44C6B2C23AD66A8B4")
     
 public ActionMenuView(Context context) {
         this(context, null);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.777 -0500", hash_original_method = "35E28BCF8B52367FF953A9B63C9F4F20", hash_generated_method = "1552265F67243F06076559D9E0410C2C")
     
 public ActionMenuView(Context context, AttributeSet attrs) {

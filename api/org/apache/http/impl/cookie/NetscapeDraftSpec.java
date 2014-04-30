@@ -47,6 +47,7 @@ public NetscapeDraftSpec(final String[] datepatterns) {
     }
 
     /** Default constructor */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.717 -0500", hash_original_method = "6C3990D1C0CF4149D1074399C8EE261A", hash_generated_method = "5B163E0752DF35376C5CABAC764B2B58")
     
 public NetscapeDraftSpec() {

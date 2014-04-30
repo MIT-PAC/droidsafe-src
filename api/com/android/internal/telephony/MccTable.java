@@ -280,6 +280,7 @@ public int compareTo(MccEntry o)
 
     static ArrayList<MccEntry> table;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.532 -0400", hash_original_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED", hash_generated_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED")
     public MccTable ()
     {

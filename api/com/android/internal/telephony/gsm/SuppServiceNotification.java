@@ -6,11 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.telephony.PhoneNumberUtils;
 
-
-
 public class SuppServiceNotification {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:25.503 -0500", hash_original_field = "AE081512BA6A61C402E7FE5CED6A10CB", hash_generated_field = "F1EB9FE835B3169EA7FA978525F8CCB7")
-
 
     static public final int MO_CODE_UNCONDITIONAL_CF_ACTIVE     = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:25.507 -0500", hash_original_field = "EA7D1255B737BCB0B208CFABCDDBE402", hash_generated_field = "4408785A22772243D1EE59B708DB0AB3")
@@ -38,7 +35,6 @@ public class SuppServiceNotification {
 
     static public final int MO_CODE_CALL_DEFLECTED              = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:25.529 -0500", hash_original_field = "7B9E300FEDCFAAF5F1EA70CF68BF9852", hash_generated_field = "6CA71A07413071AD10505CE94E4E783C")
-
 
     static public final int MT_CODE_FORWARDED_CALL              = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:25.531 -0500", hash_original_field = "FE15C5D425E62E4FD3A99320BA7E6FBB", hash_generated_field = "00E2099D68C6E75FC8FB2221615EF10F")
@@ -87,6 +83,7 @@ public class SuppServiceNotification {
 
     public String number;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.879 -0400", hash_original_method = "874E946CBC113089EBEC7DA6D34DA654", hash_generated_method = "874E946CBC113089EBEC7DA6D34DA654")
     public SuppServiceNotification ()
     {

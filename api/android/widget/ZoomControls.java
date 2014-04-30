@@ -21,12 +21,14 @@ public class ZoomControls extends LinearLayout {
 
     private  ZoomButton mZoomOut;
         
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.778 -0500", hash_original_method = "10F3E3D1A11DC20FE44EEC423922BDF4", hash_generated_method = "279325BDB5D027EAB92B07192EE1F979")
     
 public ZoomControls(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.781 -0500", hash_original_method = "EEE1D0E353F6E8D1719CC2CAB69CDDDF", hash_generated_method = "E7F1E612271E33BA336A0C0059655608")
     
 public ZoomControls(Context context, AttributeSet attrs) {

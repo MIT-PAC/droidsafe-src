@@ -149,6 +149,7 @@ public static ObjectAnimator ofPropertyValuesHolder(Object target,
      * use internally; the other constructors which take parameters are more generally
      * useful.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.551 -0500", hash_original_method = "C409E7B2E0E9411E53B94F67FBBD17CB", hash_generated_method = "EC0F459776122EDCE3E2989B148B5549")
     
 public ObjectAnimator() {

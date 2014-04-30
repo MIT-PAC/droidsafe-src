@@ -36,6 +36,7 @@ public class StreamResult implements Result {
     /**
      * Zero-argument default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.125 -0500", hash_original_method = "C19C2736EBF8CAB01BA3786E202D7316", hash_generated_method = "C62C7E08EF665E676AD2CE92B8B97F31")
     
 public StreamResult() {

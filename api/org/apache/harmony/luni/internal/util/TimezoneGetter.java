@@ -37,6 +37,7 @@ public static void setInstance(TimezoneGetter getter) {
 
     private static TimezoneGetter instance;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.880 -0400", hash_original_method = "66ED1F8E1E851198705C6DFD8EC10BBB", hash_generated_method = "66ED1F8E1E851198705C6DFD8EC10BBB")
     public TimezoneGetter ()
     {

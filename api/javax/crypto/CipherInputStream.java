@@ -62,6 +62,7 @@ public CipherInputStream(InputStream is, Cipher c) {
      * @param is
      *            the input stream to read data from.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.861 -0500", hash_original_method = "3F50D5CECF426A3B563FBE87D10C056C", hash_generated_method = "09DCFC4A18D77F03F0A4F62AB1516ED5")
     
 protected CipherInputStream(InputStream is) {

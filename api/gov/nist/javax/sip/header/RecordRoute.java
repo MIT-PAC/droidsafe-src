@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.address.AddressImpl;
 
-
-
-
-
 public class RecordRoute extends AddressParametersHeader implements javax.sip.header.RecordRouteHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.745 -0500", hash_original_field = "0CC8C4545E3BD3FC39865092180091DE", hash_generated_field = "E1824FFE4050EC4E12856745910C83B9")
 
@@ -29,6 +25,7 @@ public RecordRoute(AddressImpl address) {
     /**
      * default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.751 -0500", hash_original_method = "F63822F670C4D20D985D1B2C470568FD", hash_generated_method = "17F61CC6B71508A7BB61DE330A2E0A08")
     
 public RecordRoute() {

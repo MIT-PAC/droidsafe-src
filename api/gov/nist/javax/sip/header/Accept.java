@@ -16,6 +16,7 @@ public final class Accept extends ParametersHeader implements javax.sip.header.A
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.315 -0500", hash_original_method = "4311F842678DE87ACCC1A689A829FC2C", hash_generated_method = "DC21DEC775081BB21A131888BE403E8B")
     
 public Accept() {

@@ -60,7 +60,6 @@ public static Object newAccessibilityDelegateBridge(final AccessibilityDelegateB
 
             @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
 
-
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:26.078 -0500", hash_original_method = "4E1388AB899A33FE609ED751D5CD6F19", hash_generated_method = "4A279A00CE3545BD6A0104190CC10258")
             
 @Override
@@ -131,6 +130,7 @@ public static void sendAccessibilityEventUnchecked(Object delegate, View host,
         ((AccessibilityDelegate) delegate).sendAccessibilityEventUnchecked(host, event);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.210 -0400", hash_original_method = "879A5ED94FFF8E2596509D34ABD5C8D4", hash_generated_method = "879A5ED94FFF8E2596509D34ABD5C8D4")
     public AccessibilityDelegateCompatIcs ()
     {

@@ -28,6 +28,7 @@ public class BasicCookieStore implements CookieStore {
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.545 -0500", hash_original_method = "7CB52AB4B53860D7A09DB1DA893E1548", hash_generated_method = "888F20966991AE81C667B903F9B4799E")
     
 public BasicCookieStore() {

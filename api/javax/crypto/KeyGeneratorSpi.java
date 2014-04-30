@@ -13,6 +13,7 @@ public abstract class KeyGeneratorSpi {
     /**
      * Creates a new {@code KeyGeneratorSpi} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.115 -0500", hash_original_method = "A75599FEFECBB1DE286B9919E5114FFE", hash_generated_method = "8575C1F81F960CBF97E36CFAA017FE2F")
     
 public KeyGeneratorSpi() {

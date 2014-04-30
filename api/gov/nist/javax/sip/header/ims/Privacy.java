@@ -18,6 +18,7 @@ public class Privacy extends SIPHeader implements PrivacyHeader, SIPHeaderNamesI
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.301 -0500", hash_original_method = "A1E2C85381DFB17E59FB5DEA35C141AD", hash_generated_method = "01ED2EC6F46120598F832753E092D125")
     
 public Privacy() {

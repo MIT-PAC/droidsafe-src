@@ -26,6 +26,7 @@ public final class SessionExpires extends ParametersHeader implements ExtensionH
     public int expires;
     /** default Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.317 -0500", hash_original_method = "A8246024A4BBDCEF318DB7F6B74C4E64", hash_generated_method = "C0E3824F3D5FC3EED24B81C128C28905")
     
 public SessionExpires() {

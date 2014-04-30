@@ -1921,6 +1921,7 @@ public CodingException(String s) {
 
     public CdmaSmsAddress callbackNumber;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.682 -0400", hash_original_method = "035CB3DD1AE9F589077AA91F91422CE0", hash_generated_method = "035CB3DD1AE9F589077AA91F91422CE0")
     public BearerData ()
     {

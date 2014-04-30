@@ -45,6 +45,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
 
     private int write_pos_beg;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.377 -0500", hash_original_method = "C3B776612EB17DF4F4BD48A7062A61E9", hash_generated_method = "A85DFED1B2178607730CA20A4B83210B")
     
 public HandshakeIODataStream() {}

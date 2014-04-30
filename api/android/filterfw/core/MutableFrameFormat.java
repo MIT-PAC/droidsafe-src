@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -30,6 +29,7 @@ import java.util.Arrays;
  */
 public class MutableFrameFormat extends FrameFormat {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:03.670 -0400", hash_original_method = "DC9C26E6E459CEACEF6CAC640B451B3E", hash_generated_method = "5D855EA98210374D9D4D8B8DDD840354")
     
 public MutableFrameFormat() {

@@ -194,6 +194,7 @@ public static String charAsString(char ch) {
 
     protected Token currentMatch;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.940 -0500", hash_original_method = "F81A1A23CDDF7D21ADD1D8559F70EDF8", hash_generated_method = "6E14F6FB40CAAC0B0BCB06CF8D99CF22")
     
 protected LexerCore() {

@@ -107,6 +107,7 @@ public HorizontalScrollView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.horizontalScrollViewStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.281 -0500", hash_original_method = "ABF3CE2040AE9A0702C38DF91EEF10E7", hash_generated_method = "CED8F03071A47F49443E17D9C2289960")
     
 public HorizontalScrollView(Context context, AttributeSet attrs, int defStyle) {
@@ -943,7 +944,7 @@ public boolean pageScroll(int direction) {
                 View view = getChildAt(0);
                 mTempRect.addTaint(view.getRight());
             }
-        } 
+        }
 
         return scrollAndFocus(direction, mTempRect.left, mTempRect.right);
     }

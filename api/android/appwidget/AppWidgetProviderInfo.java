@@ -80,6 +80,7 @@ public AppWidgetProviderInfo[] newArray(int size)
 
     public int resizeMode;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.200 -0500", hash_original_method = "420920366E9BF4F133486E6ABF721531", hash_generated_method = "0CF797CC9D9CFB9D6846EB1CCE858995")
     
 public AppWidgetProviderInfo() {

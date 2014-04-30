@@ -15,10 +15,9 @@ import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 
-
-
 public class LaxContentLengthStrategy implements ContentLengthStrategy {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.770 -0500", hash_original_method = "8B5512428A3E2CA95F49978B80962BF4", hash_generated_method = "530DBE2B6CA7006F8F3A1D095E5580B4")
     
 public LaxContentLengthStrategy() {
@@ -99,7 +98,6 @@ public long determineLength(final HttpMessage message) throws HttpException {
             return IDENTITY;
         }
     }
-
     
 }
 

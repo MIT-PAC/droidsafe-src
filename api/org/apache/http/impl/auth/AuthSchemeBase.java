@@ -17,6 +17,7 @@ public abstract class AuthSchemeBase implements AuthScheme {
 
     private boolean proxy;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.989 -0500", hash_original_method = "7082ED5A83D0EFFA08BB77E1EC0EBD1E", hash_generated_method = "1D5E2B500DFB12B2C729D4BF7177F556")
     
 public AuthSchemeBase() {

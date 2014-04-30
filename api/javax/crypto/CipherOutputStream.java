@@ -42,6 +42,7 @@ public CipherOutputStream(OutputStream os, Cipher c) {
      * @param os
      *            the output stream to write the data to.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.315 -0500", hash_original_method = "1AEB5C9039E95E13C9B65FD65F4D37C9", hash_generated_method = "5DB4712ED6FE8A34E26D58DC7C8C055E")
     
 protected CipherOutputStream(OutputStream os) {

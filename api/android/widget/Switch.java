@@ -135,6 +135,7 @@ public class Switch extends CompoundButton {
      *
      * @param context The Context that will determine this widget's theming.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.955 -0500", hash_original_method = "A519C4334A107DCE43F6A6D72AE8F654", hash_generated_method = "C17E9A35FEB240A0BF8BBDE9F07315B8")
     
 public Switch(Context context) {
@@ -148,6 +149,7 @@ public Switch(Context context) {
      * @param context The Context that will determine this widget's theming.
      * @param attrs Specification of attributes that should deviate from default styling.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.957 -0500", hash_original_method = "0FB069D8C375377E937B40F8D8C213ED", hash_generated_method = "BAC494EA4140FA064A4C6448498E2454")
     
 public Switch(Context context, AttributeSet attrs) {
@@ -163,6 +165,7 @@ public Switch(Context context, AttributeSet attrs) {
      * @param defStyle An attribute ID within the active theme containing a reference to the
      *                 default style for this widget. e.g. android.R.attr.switchStyle.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.961 -0500", hash_original_method = "7052304410F6ACDD18F00D1DE979132C", hash_generated_method = "BB80C96EAFAACFABC6CADBC976E9EB8F")
     
 public Switch(Context context, AttributeSet attrs, int defStyle) {

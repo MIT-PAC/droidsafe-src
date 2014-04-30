@@ -49,6 +49,7 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
      *            cannot be instantiated or if the
      *            org.xml.sax.driver property is not specified.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.782 -0500", hash_original_method = "76BB97F012769A161CBA88EA8A2E4EBA", hash_generated_method = "BF80F476B3ED4C700CD6C964F72A2D1A")
     
 public XMLReaderAdapter ()

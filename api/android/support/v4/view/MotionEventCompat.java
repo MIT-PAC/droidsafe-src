@@ -248,6 +248,7 @@ public static int getPointerCount(MotionEvent event) {
 
     public static final int ACTION_HOVER_EXIT = 10;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.277 -0400", hash_original_method = "5A13315CB97E0E2867AD42FF281F6179", hash_generated_method = "5A13315CB97E0E2867AD42FF281F6179")
     public MotionEventCompat ()
     {

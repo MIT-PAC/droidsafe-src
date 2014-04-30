@@ -23,6 +23,7 @@ public abstract class ParametersHeader extends SIPHeader implements javax.sip.he
     
     protected DuplicateNameValueList duplicates;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.672 -0500", hash_original_method = "F0D4DB9CA1B200FF922CDFAC26AB7615", hash_generated_method = "91FA51006E0B9AB91F2A71115C8E62B5")
     
 protected ParametersHeader() {

@@ -18,6 +18,7 @@ public class OpenSSLSocketFactoryImpl extends javax.net.ssl.SSLSocketFactory {
 
     private  IOException instantiationException;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.869 -0500", hash_original_method = "954C1C672B3FA3A56F7D19D272F9A35A", hash_generated_method = "E519A9E864F8B77F1FDD8245DAFBF33B")
     
 public OpenSSLSocketFactoryImpl() {

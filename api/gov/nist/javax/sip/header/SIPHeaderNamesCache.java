@@ -8,9 +8,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
 
-
-
-
 public abstract class SIPHeaderNamesCache {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.007 -0500", hash_original_method = "33ED352FA65DF9495F02E79B54AC6C8B", hash_generated_method = "7BDA4AA0B3380EEBA1F0140C36E7FE2A")
@@ -28,6 +25,7 @@ public static String toLowerCase(String headerName) {
 
     private static final HashMap lowercaseMap = new HashMap();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.359 -0400", hash_original_method = "8D520759A4CF14512CFF6A3164E1C68E", hash_generated_method = "8D520759A4CF14512CFF6A3164E1C68E")
     public SIPHeaderNamesCache ()
     {

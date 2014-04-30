@@ -32,6 +32,7 @@ private static float o(float t, float s) {
 
     private  float mTension;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.615 -0500", hash_original_method = "ADFB7B1CA7D165BA838134D2684973F5", hash_generated_method = "922D6BCD7E48564F6BB97F43A8785749")
     
 public AnticipateOvershootInterpolator() {

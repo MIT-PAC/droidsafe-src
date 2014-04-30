@@ -14,6 +14,7 @@ public class UnsupportedEncodingException extends IOException {
      * Constructs a new {@code UnsupportedEncodingException} with its stack
      * trace filled in.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.105 -0500", hash_original_method = "120B741722292072F71D190D9178D3DA", hash_generated_method = "8F10FE929352D2B7D8DE6A7330B7BA78")
     
 public UnsupportedEncodingException() {

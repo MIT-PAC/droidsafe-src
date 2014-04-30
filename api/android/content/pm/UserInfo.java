@@ -50,6 +50,7 @@ public UserInfo(int id, String name, int flags) {
         this.flags = flags;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.398 -0500", hash_original_method = "FFEDB19A4FE2EC199D413AD96B705A93", hash_generated_method = "C5E9627FDFB0959113BC24F322946A9E")
     
 public UserInfo() {

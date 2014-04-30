@@ -133,6 +133,7 @@ private ControlSettings(int bitmask) {
 
     static String MAGIC = "JAVA PROFILE ";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.871 -0400", hash_original_method = "5337F4C002A0025B40CFBFFF348D94A9", hash_generated_method = "5337F4C002A0025B40CFBFFF348D94A9")
     public BinaryHprof ()
     {

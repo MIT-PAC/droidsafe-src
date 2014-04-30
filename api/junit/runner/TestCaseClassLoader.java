@@ -39,7 +39,8 @@ public class TestCaseClassLoader extends ClassLoader {
 	 * Constructs a TestCaseLoader. It scans the class path
 	 * and the excluded package paths
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.608 -0500", hash_original_method = "34D150DBA15CCC20FE0F33E337B5D5A0", hash_generated_method = "B95E5DE1929152BD530E9CE4F42C9C2C")
+	@DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.608 -0500", hash_original_method = "34D150DBA15CCC20FE0F33E337B5D5A0", hash_generated_method = "B95E5DE1929152BD530E9CE4F42C9C2C")
 	
 public TestCaseClassLoader() {
 		this(System.getProperty("java.class.path"));

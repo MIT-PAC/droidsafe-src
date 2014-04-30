@@ -11,6 +11,7 @@ public abstract class SecureRandomSpi implements Serializable {
 
     private static final long serialVersionUID = -2991854161009191830L;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.358 -0400", hash_original_method = "80C7AF93ECB1E3D5135CFB765D8A9626", hash_generated_method = "80C7AF93ECB1E3D5135CFB765D8A9626")
     public SecureRandomSpi ()
     {

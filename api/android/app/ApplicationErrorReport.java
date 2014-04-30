@@ -444,6 +444,7 @@ public void dump(Printer pw, String prefix) {
     /**
      * Create an uninitialized instance of {@link ApplicationErrorReport}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.783 -0500", hash_original_method = "6CC6117712C6457F9E284742535D4C3A", hash_generated_method = "41DDB6AC8B65C05EFD93A733AB6D913C")
     
 public ApplicationErrorReport() {

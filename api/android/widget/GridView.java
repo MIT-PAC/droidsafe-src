@@ -78,12 +78,14 @@ public GridView(Context context) {
         super(context);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.413 -0500", hash_original_method = "2A531A248703ACB5E0E1C6A31088A2B2", hash_generated_method = "C8E003F513916A22C8931158363EF113")
     
 public GridView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.gridViewStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.416 -0500", hash_original_method = "49F6501DFACF5B2EADDBFC02F7376929", hash_generated_method = "DCB10ACAC309C5FAFBFCB89156380193")
     
 public GridView(Context context, AttributeSet attrs, int defStyle) {

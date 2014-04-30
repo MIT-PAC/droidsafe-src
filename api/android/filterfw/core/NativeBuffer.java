@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -34,16 +33,15 @@ public class NativeBuffer {
     private int mSize = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:03.859 -0400", hash_original_field = "0659D5A855AFC79C0067D9EF29420CFF", hash_generated_field = "64E186B0E05F11DBFB5049FCBCF08F89")
 
-
     private Frame mAttachedFrame;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:03.861 -0400", hash_original_field = "D124C9F22F4BEE4D8D8728E6606003EF", hash_generated_field = "6F6C1C060CD71338E60C58D9BE845630")
-
 
     private boolean mOwnsData = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:03.863 -0400", hash_original_field = "5E75406CC6A7CE5E4451339FE88A3205", hash_generated_field = "C766A1E7B558DC67EE2FA8C43E3C2E49")
 
     private int mRefCount = 1;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:03.865 -0400", hash_original_method = "AE79FD9D9CF58F971A0F1132297DC574", hash_generated_method = "04112FB53BE1369715ABE32EE1C62201")
     
 public NativeBuffer() {
@@ -179,7 +177,6 @@ protected void assertWritable() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.540 -0400", hash_original_method = "C03D70BB82D2A03447A2A16734005831", hash_generated_method = "04A6057D33096A64659E52508ED1FB9D")
     
     private boolean nativeCopyTo(NativeBuffer buffer){
@@ -190,7 +187,5 @@ protected void assertWritable() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
 
 }

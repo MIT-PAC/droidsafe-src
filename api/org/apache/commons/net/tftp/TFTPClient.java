@@ -69,6 +69,7 @@ public class TFTPClient extends TFTP
      * maximum timeouts value of DEFAULT_MAX_TIMEOUTS, a null socket,
      * and buffered operations disabled.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:03.269 -0500", hash_original_method = "03A3B0C88D7350527C9A84271D66FB59", hash_generated_method = "2A0D691EF18D2CA6B1BC62CDF9C5FDF8")
     
 public TFTPClient()
@@ -108,7 +109,6 @@ public int getMaxTimeouts()
     {
         return __maxTimeouts;
     }
-
 
     /***
      * Requests a named file from a remote host, writes the
@@ -285,7 +285,6 @@ _receivePacket:
         return bytesRead;
     }
 
-
     /***
      * Requests a named file from a remote host, writes the
      * file to an OutputStream, closes the connection, and returns the number
@@ -312,7 +311,6 @@ public int receiveFile(String filename, int mode, OutputStream output,
         return receiveFile(filename, mode, output, InetAddress.getByName(hostname),
                            port);
     }
-
 
     /***
      * Same as calling receiveFile(filename, mode, output, host, TFTP.DEFAULT_PORT).
@@ -353,7 +351,6 @@ public int receiveFile(String filename, int mode, OutputStream output,
         return receiveFile(filename, mode, output, InetAddress.getByName(hostname),
                            DEFAULT_PORT);
     }
-
 
     /***
      * Requests to send a file to a remote host, reads the file from an
@@ -526,7 +523,6 @@ _receivePacket:
         endBufferedOps();
     }
 
-
     /***
      * Requests to send a file to a remote host, reads the file from an
      * InputStream, sends the file to the remote host, and closes the
@@ -552,7 +548,6 @@ public void sendFile(String filename, int mode, InputStream input,
     {
         sendFile(filename, mode, input, InetAddress.getByName(hostname), port);
     }
-
 
     /***
      * Same as calling sendFile(filename, mode, input, host, TFTP.DEFAULT_PORT).

@@ -8,11 +8,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
-
-
 public class Base64 {
     
     /**
@@ -141,6 +136,7 @@ public static int decode(
 
     private static final Encoder encoder = new Base64Encoder();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.234 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
     public Base64 ()
     {

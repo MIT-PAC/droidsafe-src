@@ -27,7 +27,6 @@ import droidsafe.helpers.*;
 public class MtpDeviceInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.563 -0400", hash_original_field = "FAC2F85538315F855B4418F994096B5B", hash_generated_field = "FB8FA14B444DCDECB7E1F2DE256B790B")
 
-
     private String mManufacturer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.565 -0400", hash_original_field = "30F6FA923CB98DBE04C90A0F74F44429", hash_generated_field = "35458D5F083D1893A2F645F3B2CF5FC8")
 
@@ -40,6 +39,7 @@ public class MtpDeviceInfo {
     private String mSerialNumber;
 
     // only instantiated via JNI
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.570 -0400", hash_original_method = "63AF4C5B06472E53D57F0E9CF2BD1925", hash_generated_method = "6A683661154CB9027A890737FC2B29A5")
     
 private MtpDeviceInfo() {

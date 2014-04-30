@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.io;
 
 /**
@@ -25,12 +24,14 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 public class GraphIOException extends Exception {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:13.207 -0400", hash_original_method = "C023FE09445F40E6D39A91518C2CB31B", hash_generated_method = "7A0641EDBE704DB3871F84935C96E3CA")
     
 public GraphIOException() {
         super();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:13.209 -0400", hash_original_method = "DBA1F8B31A44EDFED5C3DC90B5EFD77F", hash_generated_method = "8F90C21600FFBA62D2C6AEB1495A97EE")
     
 public GraphIOException(String message) {

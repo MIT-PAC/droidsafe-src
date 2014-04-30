@@ -16,6 +16,7 @@ public class BounceInterpolator implements Interpolator {
 private static float bounce(float t) {
         return t * t * 8.0f;
     }
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.080 -0500", hash_original_method = "D77038D4E75CFBDE4153E26F51FE597B", hash_generated_method = "6C70A431107080396FEEE77824D013BB")
     
 public BounceInterpolator() {

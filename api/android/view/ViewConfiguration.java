@@ -509,6 +509,7 @@ public static float getScrollFriction() {
     /**
      * @deprecated Use {@link android.view.ViewConfiguration#get(android.content.Context)} instead.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.366 -0500", hash_original_method = "24918D20351FE8A86EAEEE2EEBA5EB08", hash_generated_method = "9E19C6DE73B3C14DD0E2FF28C2CCBCDA")
     
 @Deprecated

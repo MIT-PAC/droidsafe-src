@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -34,7 +33,6 @@ import java.util.TreeMap;
 public class CachedFrameManager extends SimpleFrameManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.931 -0400", hash_original_field = "178A8D77F1C6217F355D749D05D1E534", hash_generated_field = "94A5E005B649F10706DA53C2E1182E90")
 
-
     private SortedMap<Integer, Frame> mAvailableFrames;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.933 -0400", hash_original_field = "A753A93C7B165F825D83F7A3BEFCF70B", hash_generated_field = "78D4B6CCA746325DAA30CEC80A2E3AA5")
 
@@ -46,6 +44,7 @@ public class CachedFrameManager extends SimpleFrameManager {
 
     private int mTimeStamp = 0;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.941 -0400", hash_original_method = "F9EC82BCEE4B4C71D07C0F23FA2360EA", hash_generated_method = "CFA6D10B95C7DD8F3D1AAD1A89BAFB7D")
     
 public CachedFrameManager() {

@@ -17,6 +17,7 @@ public class InvocationTargetException extends Exception {
      * Constructs a new {@code InvocationTargetException} instance with a
      * {@code null} cause / target exception.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.228 -0500", hash_original_method = "5EBB00A3899F4B7F5118F6E64DAF6A94", hash_generated_method = "F002C28ED5B431C1069BCA418FDA04D5")
     
 protected InvocationTargetException() {
@@ -31,6 +32,7 @@ protected InvocationTargetException() {
      *            the exception which occurred while running the Method or
      *            Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.231 -0500", hash_original_method = "D75C8652A4FC35D535700D06AA8AC5D8", hash_generated_method = "2FDFDD6B083187F65DFBB9D56DD19A0F")
     
 public InvocationTargetException(Throwable exception) {

@@ -319,6 +319,7 @@ public void surfaceDestroyed(SurfaceHolder holder)
         
 };
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.710 -0500", hash_original_method = "84429BD4462769BE0107008470199557", hash_generated_method = "D419452986F58FA2C07BB22660FCDA16")
     
 public VideoView(Context context) {
@@ -326,6 +327,7 @@ public VideoView(Context context) {
         initVideoView();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.713 -0500", hash_original_method = "9DA181463C1E3F8A8538BD444B82D669", hash_generated_method = "014787D126A1C04F68EB494859288C0E")
     
 public VideoView(Context context, AttributeSet attrs) {
@@ -333,6 +335,7 @@ public VideoView(Context context, AttributeSet attrs) {
         initVideoView();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.715 -0500", hash_original_method = "424FE4A877CF5C3A8D4BF3ED46B161CB", hash_generated_method = "E6755EA68A3830AF33892F6DC3E92839")
     
 public VideoView(Context context, AttributeSet attrs, int defStyle) {

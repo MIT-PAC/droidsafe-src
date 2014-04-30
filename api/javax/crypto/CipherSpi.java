@@ -18,6 +18,7 @@ public abstract class CipherSpi {
     /**
      * Creates a new {@code CipherSpi} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.455 -0500", hash_original_method = "57088A35FB2104AD2CEDD2998A7B7578", hash_generated_method = "D1A563210D3C3C201F22771993828D27")
     
 public CipherSpi() {

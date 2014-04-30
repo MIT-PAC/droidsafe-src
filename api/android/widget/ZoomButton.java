@@ -40,18 +40,21 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
 
     private boolean mIsInLongpress;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.853 -0500", hash_original_method = "FE073AFFD3994A95FEC890EBCF528CD3", hash_generated_method = "AFD0D1CDF55A5DA2813185BA6AF8FCCC")
     
 public ZoomButton(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.856 -0500", hash_original_method = "2E206A8DD55CDB4EE0CBFCA63CB6A076", hash_generated_method = "49DF8193C8EBA7BCD3525BBB86756295")
     
 public ZoomButton(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.858 -0500", hash_original_method = "C3304F204963574721B46CA6BEC245F6", hash_generated_method = "2F733D407C2FED559AECD84327BB3A2A")
     
 public ZoomButton(Context context, AttributeSet attrs, int defStyle) {

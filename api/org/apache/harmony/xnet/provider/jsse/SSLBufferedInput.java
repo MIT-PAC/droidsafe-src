@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
-
-
-
-
-
 public class SSLBufferedInput extends SSLInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.915 -0500", hash_original_field = "1A56AB50090D28A02F47C32C2668C7FD", hash_generated_field = "3B141A9D4793286CCC8107F666C9770C")
-
 
     private ByteBuffer in;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.918 -0500", hash_original_field = "532D7488A927B1D867DA636C071D1BB6", hash_generated_field = "57C57C6B5A44D0B945AC629B5C8D3802")
@@ -27,6 +21,7 @@ public class SSLBufferedInput extends SSLInputStream {
     /**
      * Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.923 -0500", hash_original_method = "0FA622847329CF4AC911569EF96C37AF", hash_generated_method = "C8B59A0FF5C0D8A4086B76B2389A8D68")
     
 protected SSLBufferedInput() {}
@@ -72,7 +67,6 @@ protected int consumed() {
         consumed ++;
         return bytik;
     }
-
     
 }
 

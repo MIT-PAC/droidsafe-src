@@ -111,6 +111,7 @@ public static MenuItem setActionView(MenuItem item, View view) {
 
     static  MenuVersionImpl IMPL;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.257 -0400", hash_original_method = "70825ED8217B35997B960B05005B76A3", hash_generated_method = "70825ED8217B35997B960B05005B76A3")
     public MenuItemCompat ()
     {

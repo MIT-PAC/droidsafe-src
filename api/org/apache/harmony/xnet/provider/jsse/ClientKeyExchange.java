@@ -60,6 +60,7 @@ public ClientKeyExchange(BigInteger dh_Yc) {
      * Creates empty message
      *
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.454 -0500", hash_original_method = "F9E21C88B251C3A8D5F2F68FD08CDC9E", hash_generated_method = "898A8CFB30DDF1C33784F7A96F82C351")
     
 public ClientKeyExchange() {

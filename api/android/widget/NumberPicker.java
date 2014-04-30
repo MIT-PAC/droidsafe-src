@@ -280,6 +280,7 @@ public String format(int value) {
      *
      * @param context The application environment.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.102 -0500", hash_original_method = "F79ABC70152851F522A29F89B10B477D", hash_generated_method = "DD86D98F065C04AD05C029FCCF3292E5")
     
 public NumberPicker(Context context) {
@@ -292,6 +293,7 @@ public NumberPicker(Context context) {
      * @param context The application environment.
      * @param attrs A collection of attributes.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.105 -0500", hash_original_method = "C1116E13D5D84737E9D8F11A400A580C", hash_generated_method = "07F802BBB2558FEFA105C5B815465D9D")
     
 public NumberPicker(Context context, AttributeSet attrs) {
@@ -305,6 +307,7 @@ public NumberPicker(Context context, AttributeSet attrs) {
      * @param attrs a collection of attributes.
      * @param defStyle The default style to apply to this view.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.129 -0500", hash_original_method = "8AC7B7259BDDBD9FCC66E09C35F9B950", hash_generated_method = "D67E8F3103C43FA353F778229973A259")
     
 public NumberPicker(Context context, AttributeSet attrs, int defStyle) {

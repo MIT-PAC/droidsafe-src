@@ -24,6 +24,7 @@ public class MinSE extends ParametersHeader implements ExtensionHeader, MinSEHea
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.435 -0500", hash_original_method = "FF95F949FD2A1D95680CD0A1163B2941", hash_generated_method = "4172B9FE86B01C0D3EF8B23A8BE967CF")
     
 public MinSE() {

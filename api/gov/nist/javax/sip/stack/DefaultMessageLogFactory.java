@@ -7,11 +7,9 @@ import droidsafe.annotations.*;
 import gov.nist.javax.sip.LogRecord;
 import gov.nist.javax.sip.LogRecordFactory;
 
-
-
-
 public class DefaultMessageLogFactory implements LogRecordFactory {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.199 -0400", hash_original_method = "21AC114112EFF523B2B54D53457EBCA3", hash_generated_method = "21AC114112EFF523B2B54D53457EBCA3")
     public DefaultMessageLogFactory ()
     {
@@ -35,7 +33,6 @@ public LogRecord createLogRecord(String message, String source,
         return new MessageLog(message, source, destination, timeStamp,
                 isSender, firstLine, tid, callId, timestampVal);
     }
-
     
 }
 

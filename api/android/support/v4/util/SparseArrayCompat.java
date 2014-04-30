@@ -70,6 +70,7 @@ static int idealIntArraySize(int need) {
     /**
      * Creates a new SparseArray containing no mappings.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.162 -0500", hash_original_method = "852197A14CD77BDEC27A8A7AFA07662E", hash_generated_method = "7FFC0A51857E059433B560391A26606F")
     
 public SparseArrayCompat() {

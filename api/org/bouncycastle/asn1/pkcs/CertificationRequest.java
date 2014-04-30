@@ -12,11 +12,6 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 
-
-
-
-
-
 public class CertificationRequest extends ASN1Encodable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.800 -0500", hash_original_method = "9ADEAA5B9ED42763F6D36948E570D4D8", hash_generated_method = "D46C098F1E26C015A778C7B8ED3EED0F")
@@ -45,6 +40,7 @@ public static CertificationRequest getInstance(Object o)
 
     protected DERBitString sigBits = null;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.803 -0500", hash_original_method = "1CFEB89AC9CC2F01B2815840CE7D5DC0", hash_generated_method = "0981917C55C818AEAD949C537664417D")
     
 protected CertificationRequest()
@@ -107,7 +103,6 @@ public DERObject toASN1Object()
 
         return new DERSequence(v);
     }
-
     
 }
 

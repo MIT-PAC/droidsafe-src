@@ -51,7 +51,6 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
     private static final String TAG = "PagerTitleStrip";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.105 -0500", hash_original_field = "82335EE1BEC03B36DC6A2AC07F11DA63", hash_generated_field = "A8654C767D4C14AFF9FCA02480C43040")
 
-
     private static final int[] ATTRS = new int[] {
         android.R.attr.textAppearance,
         android.R.attr.textSize,
@@ -60,19 +59,16 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.107 -0500", hash_original_field = "E85DAA5F18839F3EB4D6EFAAEB49EDCE", hash_generated_field = "6956ED794238A34B480322E284060485")
 
-
     private static final int[] TEXT_ATTRS = new int[] {
         0x0101038c // android.R.attr.textAllCaps
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.108 -0500", hash_original_field = "AAF3379FEB1228848EE07B6286AAA9AB", hash_generated_field = "EEFAD9B6C9950C781BDFB1FF111DA31B")
-
 
     private static final float SIDE_ALPHA = 0.6f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.109 -0500", hash_original_field = "C81215EBF934E1A366D619C0380BD19D", hash_generated_field = "E1365F97F5735C3551DC5975CFC1349F")
 
     private static final int TEXT_SPACING = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.119 -0500", hash_original_field = "F5AFD37F005442D1DA5BECFAE34D10F2", hash_generated_field = "FC43287A1B05CC67CD71D2D929E632B7")
-
 
     private static  PagerTitleStripImpl IMPL;
 
@@ -82,7 +78,6 @@ private static void setSingleLineAllCaps(TextView text) {
         IMPL.setSingleLineAllCaps(text);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.090 -0500", hash_original_field = "1A8F7587F4799795AFC9E6CF3AD21423", hash_generated_field = "1A8F7587F4799795AFC9E6CF3AD21423")
-
 
     ViewPager mPager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.091 -0500", hash_original_field = "758380EDFA6EB374B3DB5871CBD34D35", hash_generated_field = "758380EDFA6EB374B3DB5871CBD34D35")
@@ -96,7 +91,6 @@ private static void setSingleLineAllCaps(TextView text) {
     TextView mNextText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.094 -0500", hash_original_field = "09CB2B0FB30EBEFF47F696BB0E97DE21", hash_generated_field = "90F5F9FB1487026D75D6D5D3AB10A419")
 
-
     private int mLastKnownCurrentPage = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.096 -0500", hash_original_field = "69D24EDA951514F016F84869EFA2ABD6", hash_generated_field = "CB0C3B4B9C508B6F14C55441D0AD8B91")
 
@@ -109,17 +103,14 @@ private static void setSingleLineAllCaps(TextView text) {
     private int mGravity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.100 -0500", hash_original_field = "03F2092D9B5049EF80466CF3FCCB54AA", hash_generated_field = "3E47E0ADC999C3364DCD228C5D3CD605")
 
-
     private boolean mUpdatingText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.101 -0500", hash_original_field = "5F88EF089749DF9B92D51DD66306AE4E", hash_generated_field = "664984FC99328963C219145CAEA3A509")
 
     private boolean mUpdatingPositions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.102 -0500", hash_original_field = "ED9D2255D5F7C8970291D49955E4969D", hash_generated_field = "1EFB716647F058CFCB36D954D70AC09A")
 
-
     private final PageListener mPageListener = new PageListener();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.103 -0500", hash_original_field = "4291F85FF2F5BF7125A9DDF18D846F18", hash_generated_field = "26A2F398E2C092065BC88A0258E63DDF")
-
 
     private WeakReference<PagerAdapter> mWatchingAdapter;
 
@@ -144,7 +135,6 @@ public void setSingleLineAllCaps(TextView text) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.111 -0500", hash_original_field = "9804C64E83F313F5DDE5967F03B81389", hash_generated_field = "28DD24027C59F108FB986079494AC102")
 
-
     private int mNonPrimaryAlpha;
     static {
         if (android.os.Build.VERSION.SDK_INT >= 14) {
@@ -157,12 +147,14 @@ public void setSingleLineAllCaps(TextView text) {
 
     int mTextColor;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.122 -0500", hash_original_method = "58D8374F43287A498EE1AB9EF078D682", hash_generated_method = "B577D5234D9B218F9DE2B292C9C311C1")
     
 public PagerTitleStrip(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.129 -0500", hash_original_method = "ED55AE7F2AC5ABBC94F0D0AB4842FE7D", hash_generated_method = "3BBB2A7AB0DA8C68DA2D46396FB2D74A")
     
 public PagerTitleStrip(Context context, AttributeSet attrs) {

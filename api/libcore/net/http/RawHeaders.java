@@ -71,6 +71,7 @@ public static RawHeaders fromMultimap(Map<String, List<String>> map) {
 
     private String responseMessage;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.296 -0500", hash_original_method = "29CBB7411AB87121F534DC6D89E1C3FF", hash_generated_method = "74EA0C366FBBEE690531A70E581FDE00")
     
 public RawHeaders() {}

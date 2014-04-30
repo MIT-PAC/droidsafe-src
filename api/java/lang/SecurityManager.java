@@ -14,6 +14,7 @@ public class SecurityManager {
     @Deprecated
     protected boolean inCheck;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.790 -0500", hash_original_method = "7FD71E6D3FB4A8DD9BF04FA4D2AAA4D4", hash_generated_method = "FD88BDF8371DB2DFC2413091C4C1CFA8")
     
 public SecurityManager() { }

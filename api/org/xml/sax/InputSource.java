@@ -36,6 +36,7 @@ public class InputSource {
      * @see #setCharacterStream
      * @see #setEncoding
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.614 -0500", hash_original_method = "ECF04DED512C86950B6E52F582DBB4DE", hash_generated_method = "217A98420DCE906E732B6983D19C2476")
     
 public InputSource ()

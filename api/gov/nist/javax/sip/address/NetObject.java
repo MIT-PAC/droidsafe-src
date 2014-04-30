@@ -65,6 +65,7 @@ public abstract class NetObject extends GenericObject {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.959 -0500", hash_original_method = "C4442EA667C9A2BEB67B2F1E6DC6F09B", hash_generated_method = "B6853C18CCFB456413C2D77962EC3F79")
     
 public NetObject() {

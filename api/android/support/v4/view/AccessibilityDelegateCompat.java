@@ -24,6 +24,7 @@ public class AccessibilityDelegateCompat {
     /**
      * Creates a new instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.630 -0500", hash_original_method = "97DB5C1E35BD81C1D800183C23794857", hash_generated_method = "5F972D2D6251E8B0920DE31F0A14B3B7")
     
 public AccessibilityDelegateCompat() {
@@ -217,7 +218,6 @@ public Object newAccessiblityDelegateDefaultImpl() {
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
 
-
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.032 -0500", hash_original_method = "62BC6D1148E35F68F64E7D17E3EF0845", hash_generated_method = "6811E1A481F9E3BBCB1261B1C21BDD57")
         
 @Override
@@ -294,7 +294,6 @@ public Object newAccessiblityDelegateDefaultImpl() {
                 }
 
                 @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-
 
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:28.053 -0500", hash_original_method = "70D63C2BFF8EC6B97AB4FDD168BE56A7", hash_generated_method = "D6F327288AD1C658F9D9FA615ABA939B")
                 

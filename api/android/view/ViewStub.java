@@ -27,6 +27,7 @@ public final class ViewStub extends View {
 
     private OnInflateListener mInflateListener;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.935 -0500", hash_original_method = "D5B4F404EDB1F7EE3A8219EE57BB8326", hash_generated_method = "A754F8EB006299F9824EAF2C692C5001")
     
 public ViewStub(Context context) {
@@ -46,12 +47,14 @@ public ViewStub(Context context, int layoutResource) {
         initialize(context);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.940 -0500", hash_original_method = "333AE282E8B61286AB619D673C2E7E08", hash_generated_method = "7EB3FFEF98194F07EC596E4D14EC8605")
     
 public ViewStub(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.944 -0500", hash_original_method = "D3AED5A95127BD0FBA7E121FA6467007", hash_generated_method = "2B96CCB8CFC4E14A21FC5381DDC7F770")
     
 @SuppressWarnings({"UnusedDeclaration"})

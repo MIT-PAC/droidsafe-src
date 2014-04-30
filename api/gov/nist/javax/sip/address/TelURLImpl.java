@@ -18,6 +18,7 @@ public class TelURLImpl extends GenericURI implements javax.sip.address.TelURL {
     protected TelephoneNumber telephoneNumber;
 
     /** Creates a new instance of TelURLImpl */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.554 -0500", hash_original_method = "C17135FC5CC76AEB5F88156629F51796", hash_generated_method = "B29099714AF8AAA83987C7A4AD7ED6B1")
     
 public TelURLImpl() {

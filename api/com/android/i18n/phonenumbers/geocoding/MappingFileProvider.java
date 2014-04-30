@@ -39,7 +39,8 @@ public class MappingFileProvider implements Externalizable {
    * implementing {@link Externalizable}. The empty provider could later be populated by
    * {@link #readFileConfigs(java.util.SortedMap)} or {@link #readExternal(java.io.ObjectInput)}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.137 -0500", hash_original_method = "8FB53B01F748B2BCB846F8E0ABF1A4BF", hash_generated_method = "113E1FE8A1E6BE8880D11B9E05256657")
+  @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.137 -0500", hash_original_method = "8FB53B01F748B2BCB846F8E0ABF1A4BF", hash_generated_method = "113E1FE8A1E6BE8880D11B9E05256657")
     
 public MappingFileProvider() {
   }

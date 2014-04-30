@@ -52,6 +52,7 @@ public class UUSInfo {
 
     private byte[] uusData;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.992 -0500", hash_original_method = "934109F2717BDFE423352F8C63ADD428", hash_generated_method = "0814DDBBAB7C462BF82DB0C74725D5EF")
     
 public UUSInfo() {

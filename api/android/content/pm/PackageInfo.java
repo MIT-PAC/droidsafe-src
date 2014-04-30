@@ -97,6 +97,7 @@ public PackageInfo[] newArray(int size) {
 
     public int installLocation = INSTALL_LOCATION_INTERNAL_ONLY;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.774 -0500", hash_original_method = "28FD03AD36E70CA65DC12DAEBF4BAB2B", hash_generated_method = "C51A23F157275D7AF9F27C62F2349ED2")
     
 public PackageInfo() {

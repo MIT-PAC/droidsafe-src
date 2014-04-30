@@ -32,6 +32,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
 
     private String mProvider;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.847 -0400", hash_original_method = "F88E45C8A992B3EE5445BCFA92AD005E", hash_generated_method = "F88E45C8A992B3EE5445BCFA92AD005E")
     public SyncActivityTooManyDeletes ()
     {

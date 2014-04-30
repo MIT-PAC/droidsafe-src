@@ -62,6 +62,7 @@ public static boolean draw(Object edgeEffect, Canvas canvas) {
         return ((EdgeEffect) edgeEffect).draw(canvas);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.027 -0400", hash_original_method = "2ED7C9E04D60E9925816E3B452B1FB7F", hash_generated_method = "2ED7C9E04D60E9925816E3B452B1FB7F")
     public EdgeEffectCompatIcs ()
     {

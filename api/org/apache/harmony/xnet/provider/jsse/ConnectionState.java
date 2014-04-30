@@ -48,6 +48,7 @@ protected static void incSequenceNumber(byte[] seq_num) {
 
     protected Logger.Stream logger = Logger.getStream("conn_state");
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.311 -0400", hash_original_method = "88641B04B82E21943FBE8D6E4F07DC57", hash_generated_method = "88641B04B82E21943FBE8D6E4F07DC57")
     public ConnectionState ()
     {

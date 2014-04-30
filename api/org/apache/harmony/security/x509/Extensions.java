@@ -67,6 +67,7 @@ public final class Extensions {
     /**
      * Constructs an object representing the value of Extensions.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.380 -0500", hash_original_method = "4F6254C867328A153FDD5BD23453E816", hash_generated_method = "DA7F1F18A359C63EC62E782C4227E19E")
     
 public Extensions() {}

@@ -553,6 +553,7 @@ private static int[] getCLUT(byte[] rawData, int offset, int number) {
 
     static final String LOG_TAG="IccUtils";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.409 -0400", hash_original_method = "7497E316CBF08BC6A4E1097E009E4B82", hash_generated_method = "7497E316CBF08BC6A4E1097E009E4B82")
     public IccUtils ()
     {

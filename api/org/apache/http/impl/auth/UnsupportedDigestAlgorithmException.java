@@ -5,17 +5,15 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class UnsupportedDigestAlgorithmException extends RuntimeException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.042 -0500", hash_original_field = "47DF2A481C6BC40752D3C4F1C2886B2D", hash_generated_field = "61CED41D2DA90D7495CCD2197DC1362E")
-
 
     private static final long serialVersionUID = 319558534317118022L;
 
     /**
      * Creates a new UnsupportedAuthAlgoritmException with a <tt>null</tt> detail message. 
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.045 -0500", hash_original_method = "4D7AFBD3BCBFF7BF63D8A1B788355A01", hash_generated_method = "0D0E9BD43ABF71A78095A031D34B153D")
     
 public UnsupportedDigestAlgorithmException() {
@@ -27,6 +25,7 @@ public UnsupportedDigestAlgorithmException() {
      * 
      * @param message the exception detail message
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.047 -0500", hash_original_method = "53A11CFB931BDAEE1F32CE61EF0BEDA2", hash_generated_method = "42AD5E13A84C0A5943C2A2C723DC64B6")
     
 public UnsupportedDigestAlgorithmException(String message) {
@@ -40,6 +39,7 @@ public UnsupportedDigestAlgorithmException(String message) {
      * @param cause the <tt>Throwable</tt> that caused this exception, or <tt>null</tt>
      * if the cause is unavailable, unknown, or not a <tt>Throwable</tt>
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.050 -0500", hash_original_method = "2D686768D3996E22528B81DECB6C8570", hash_generated_method = "766A17FA3CDCBCBF06E26F240ACBF411")
     
 public UnsupportedDigestAlgorithmException(String message, Throwable cause) {

@@ -62,6 +62,7 @@ public InterfaceConfiguration[] newArray(int size) {
 
     public String interfaceFlags;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:13.689 -0400", hash_original_method = "523C01300D35910BBD3295D95AC6D51D", hash_generated_method = "B3E68325E7C854EFD956E051BD393275")
     
 public InterfaceConfiguration() {

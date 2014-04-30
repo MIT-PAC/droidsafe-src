@@ -14,10 +14,9 @@ import org.apache.http.HttpRequestInterceptor;
 import org.apache.http.client.params.ClientPNames;
 import org.apache.http.protocol.HttpContext;
 
-
-
 public class RequestDefaultHeaders implements HttpRequestInterceptor {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.666 -0500", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BD7FFDE8DB7E8AE23358B8D03BBB8E00")
     
 public RequestDefaultHeaders() {
@@ -40,7 +39,6 @@ public void process(final HttpRequest request, final HttpContext context)
             }
         }
     }
-
     
 }
 

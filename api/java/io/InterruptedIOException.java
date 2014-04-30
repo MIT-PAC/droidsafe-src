@@ -16,6 +16,7 @@ public class InterruptedIOException extends IOException {
     /**
      * Constructs a new instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.625 -0500", hash_original_method = "BB9DACD07ED93D41347C3772C10021CB", hash_generated_method = "DA2DCBE5F00DBE7618C1F279A9CD37FF")
     
 public InterruptedIOException() {
@@ -36,6 +37,7 @@ public InterruptedIOException(String detailMessage) {
      * Constructs a new instance with given detail message and cause.
      * @hide internal use only
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.630 -0500", hash_original_method = "4976F1F97DF8BBE1F3AC7D56299FEDE9", hash_generated_method = "B7BD75FFB7A63D382828D0D142B70454")
     
 public InterruptedIOException(String detailMessage, Throwable cause) {

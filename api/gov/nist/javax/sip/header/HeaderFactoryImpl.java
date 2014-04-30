@@ -136,6 +136,7 @@ public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.398 -0500", hash_original_method = "EA4ABB94B4CFEF029E31D8F450F44C66", hash_generated_method = "7C59928D1BF5C24D54A1BBDB8351FCF2")
     
 public HeaderFactoryImpl() {

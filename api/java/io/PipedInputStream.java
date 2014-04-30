@@ -37,6 +37,7 @@ public class PipedInputStream extends InputStream {
      * stream must be connected to a {@link PipedOutputStream} before data may
      * be read from it.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.840 -0500", hash_original_method = "EAE18C87236155EAE738625B0EE95D6C", hash_generated_method = "E7FB40C6AB2C8096523A1C2B218A59B4")
     
 public PipedInputStream() {}

@@ -33,6 +33,7 @@ public static ASN1OctetString getInstance() {
      * To get a default implementation it is recommended to use
      * getInstance() method.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.963 -0500", hash_original_method = "FE8C061A61754FEAD4E80D2F91CDD232", hash_generated_method = "9BC78B95E5579B87EF4717DF3A05097B")
     
 public ASN1OctetString() {

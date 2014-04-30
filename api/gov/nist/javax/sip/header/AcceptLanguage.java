@@ -21,6 +21,7 @@ public final class AcceptLanguage extends ParametersHeader implements AcceptLang
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.723 -0500", hash_original_method = "8CFB40CB8981635645AE5871E0424817", hash_generated_method = "75824B913F16BD6E58C9722BFA359007")
     
 public AcceptLanguage() {

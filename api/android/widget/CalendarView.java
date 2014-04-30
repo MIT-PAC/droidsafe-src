@@ -206,18 +206,21 @@ public class CalendarView extends FrameLayout {
 
     private Locale mCurrentLocale;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.013 -0500", hash_original_method = "52384FB40509E71BA2451D4915E5D413", hash_generated_method = "D92C0D13DD14AA039D389307D686CE10")
     
 public CalendarView(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.016 -0500", hash_original_method = "79D5762FBD0B1A46CF2745AED4E3FAD9", hash_generated_method = "DEB888F78800DDEBF0847FD965B6D45B")
     
 public CalendarView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.021 -0500", hash_original_method = "B881CA40E8482968634BC9086836F338", hash_generated_method = "D2E54F84E88D0B00B462C87EBAFB569E")
     
 public CalendarView(Context context, AttributeSet attrs, int defStyle) {

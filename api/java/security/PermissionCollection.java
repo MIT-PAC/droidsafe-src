@@ -9,6 +9,7 @@ import java.util.Enumeration;
 
 public abstract class PermissionCollection implements Serializable {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.124 -0400", hash_original_method = "9068D0108294B13066862778786146D9", hash_generated_method = "9068D0108294B13066862778786146D9")
     public PermissionCollection ()
     {

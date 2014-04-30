@@ -1328,6 +1328,7 @@ public static boolean isPhoneNumber(String number) {
     private static final boolean LOCAL_LOGV = false;
 
     // Constructor
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.506 -0500", hash_original_method = "2CAFC6EF3CCF11FE20893B46D3EAF4A2", hash_generated_method = "02158B301D581EDC7CDC2F4792882F93")
     
 public Telephony() {

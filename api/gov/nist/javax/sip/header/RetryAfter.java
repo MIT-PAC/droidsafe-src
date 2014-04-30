@@ -25,6 +25,7 @@ public class RetryAfter extends ParametersHeader implements RetryAfterHeader {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.903 -0500", hash_original_method = "5EF666CD25CA3C0D16B00CF8EC3126E1", hash_generated_method = "5B9A1EA301F48CD574745C730D016F37")
     
 public RetryAfter() {

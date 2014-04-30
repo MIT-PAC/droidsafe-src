@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class SSLv3Constants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.743 -0500", hash_original_field = "482F285FA9AA42CA2EE6C3E837E2A52F", hash_generated_field = "CE048B7B4D0111789ECE79B63547CA09")
 
@@ -43,6 +41,7 @@ public class SSLv3Constants {
             0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C,
             0x5C, 0x5C, 0x5C };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.628 -0400", hash_original_method = "69F121EA0CB9BBC349DC8505C0D3C215", hash_generated_method = "69F121EA0CB9BBC349DC8505C0D3C215")
     public SSLv3Constants ()
     {

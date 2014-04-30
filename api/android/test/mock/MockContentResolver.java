@@ -63,6 +63,7 @@ public class MockContentResolver extends ContentResolver {
      * Creates a local map of providers. This map is used instead of the global map when an
      * API call tries to acquire a provider.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.013 -0500", hash_original_method = "A661690524C88F823732CD1198B81C7F", hash_generated_method = "69AC10086FD726A936B085DBF3B465C6")
     
 public MockContentResolver() {

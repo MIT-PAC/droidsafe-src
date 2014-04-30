@@ -51,6 +51,7 @@ public class ScrollBarDrawable extends Drawable {
 
     private boolean mAlwaysDrawVerticalTrack;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.014 -0500", hash_original_method = "F6C29E547BD302257DEE1C67DCEB3680", hash_generated_method = "DA32E396AC9BDA3E856F588C4EBBA3FE")
     
 public ScrollBarDrawable() {

@@ -77,6 +77,7 @@ static synchronized void removeActiveWebView(WebView webview) {
      * Construct a new JWebCoreJavaBridge to interface with
      * WebCore timers and cookies.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.939 -0500", hash_original_method = "24BC54E57520E50B51FEB9301490242D", hash_generated_method = "FAE9CEF2DB2F0021A995BEA229699877")
     
 public JWebCoreJavaBridge() {

@@ -107,6 +107,7 @@ public static String name(int type)
 
     public static final int CHUNK_FAIL = type("FAIL");
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.483 -0500", hash_original_method = "0BD4350C5F4AC480382F0B830C677606", hash_generated_method = "8C7D92051A6E50910F5A66858FFA4A09")
     
 public ChunkHandler() {}

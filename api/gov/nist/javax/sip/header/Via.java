@@ -50,6 +50,7 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
 
     /** Default constructor
     */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.065 -0500", hash_original_method = "7D07E05C0BEE96603D98F8B1E7A2E317", hash_generated_method = "CF253407FBFFE348FD46E59E622DDD53")
     
 public Via() {

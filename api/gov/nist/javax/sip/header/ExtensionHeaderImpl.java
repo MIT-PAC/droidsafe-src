@@ -16,6 +16,7 @@ public class ExtensionHeaderImpl extends SIPHeader implements javax.sip.header.E
     /**
      * This was added to allow for automatic cloning of headers.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.371 -0500", hash_original_method = "0D428BF693BC145CE79E697041FDBB13", hash_generated_method = "C6043CD0EAD75587ED688DD1766D732D")
     
 public ExtensionHeaderImpl() {

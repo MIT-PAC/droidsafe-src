@@ -32,6 +32,7 @@ public static void setDefault(CookieHandler cHandler) {
 
     private static CookieHandler systemWideCookieHandler;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.319 -0400", hash_original_method = "88D15E3335299CEFE37CA24D0A89E063", hash_generated_method = "88D15E3335299CEFE37CA24D0A89E063")
     public CookieHandler ()
     {

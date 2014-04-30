@@ -38,6 +38,7 @@ public BestMatchSpec(final String[] datepatterns, boolean oneHeader) {
         this.oneHeader = oneHeader;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.432 -0500", hash_original_method = "4DB7B6528BCAE4846E927270A5376336", hash_generated_method = "4DD3C5F85A6982498A68B4C61A462C0C")
     
 public BestMatchSpec() {

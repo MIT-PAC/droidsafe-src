@@ -22,6 +22,7 @@ public class IdleConnectionHandler {
 
     private  Map<HttpConnection,TimeValues> connectionToTimes;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.994 -0500", hash_original_method = "3E916BA1101D3583C84AA90CF4FC67D4", hash_generated_method = "A9AAD52CD1E2DDD3F31EE212EFDACC40")
     
 public IdleConnectionHandler() {

@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.util.Vector;
 
-
-
-
-
 public final class Strings {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.062 -0500", hash_original_method = "B47613E89A2CC1F48721E17BD0A5946A", hash_generated_method = "EA309DDF6AF776480907963056B451E4")
     
@@ -279,12 +275,12 @@ public static String[] split(String input, char delimiter)
         return res;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.225 -0400", hash_original_method = "C84AA02E5DB471302FEEBC62E754E49D", hash_generated_method = "C84AA02E5DB471302FEEBC62E754E49D")
     public Strings ()
     {
         //Synthesized constructor
     }
-
     
 }
 

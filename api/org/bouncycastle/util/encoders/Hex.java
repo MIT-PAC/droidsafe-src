@@ -8,11 +8,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
-
-
 public class Hex {
     
     /**
@@ -153,6 +148,7 @@ public static int decode(
 
     private static final Encoder encoder = new HexEncoder();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.306 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
     public Hex ()
     {

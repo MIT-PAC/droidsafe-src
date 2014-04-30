@@ -336,6 +336,7 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
 
     public int languageShiftTable;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.705 -0500", hash_original_method = "F06BD280EA34997B1794CB44E7D9D16A", hash_generated_method = "20434C5602DDE5E1F119335782D90E72")
     
 public SmsHeader() {}

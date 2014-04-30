@@ -28,6 +28,7 @@ public class ServiceCompat {
 
     public static final int START_STICKY = 1;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:12.589 -0500", hash_original_method = "8BB6B39EA0E2BA3E5AB42590EAA0D4AE", hash_generated_method = "72EDB185A7ED47292A15524CDAAC2AE4")
     
 private ServiceCompat() {

@@ -12,6 +12,7 @@ public abstract class CacheRequest {
     /**
      * This implementation does nothing.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.208 -0500", hash_original_method = "EF935F4A27F0AD3C6EAFD085021C924B", hash_generated_method = "85DB54FA4E841108F707942963E84F89")
     
 public CacheRequest() {

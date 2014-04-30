@@ -54,6 +54,7 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
 
     private boolean wellFormed = true;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.235 -0400", hash_original_method = "4D153F5051BE9FB53ACB86332ED9FE59", hash_generated_method = "4D153F5051BE9FB53ACB86332ED9FE59")
     public DOMConfigurationImpl ()
     {

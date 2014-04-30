@@ -5,9 +5,9 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public class BasicRouteDirector implements HttpRouteDirector {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.788 -0400", hash_original_method = "AEF78390BB51E5E5DCB8CA44B8B94889", hash_generated_method = "AEF78390BB51E5E5DCB8CA44B8B94889")
     public BasicRouteDirector ()
     {
@@ -15,7 +15,6 @@ public class BasicRouteDirector implements HttpRouteDirector {
     }
 
     // public default constructor
-
 
     /**
      * Provides the next step.
@@ -49,7 +48,6 @@ public int nextStep(RouteInfo plan, RouteInfo fact) {
 
     } // nextStep
 
-
     /**
      * Determines the first step to establish a route.
      *
@@ -64,7 +62,6 @@ protected int firstStep(RouteInfo plan) {
         return (plan.getHopCount() > 1) ?
             CONNECT_PROXY : CONNECT_TARGET;
     }
-
 
     /**
      * Determines the next step to establish a direct connection.
@@ -101,7 +98,6 @@ protected int directStep(RouteInfo plan, RouteInfo fact) {
 
         return COMPLETE;
     }
-
 
     /**
      * Determines the next step to establish a connection via proxy.
@@ -151,7 +147,6 @@ protected int proxiedStep(RouteInfo plan, RouteInfo fact) {
 
         return COMPLETE;
     }
-
     
 }
 

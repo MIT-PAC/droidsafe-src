@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class TemporaryBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.263 -0500", hash_original_method = "479CBA9FC8EA655BBDC28F01631A11FA", hash_generated_method = "66B1007AD9440A141FCEE73F59A60847")
     
@@ -40,9 +35,9 @@ public static void recycle(char[] temp) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.267 -0500", hash_original_field = "55DA4B3993779389A3DF2C10AD0407DA", hash_generated_field = "D5B55575C53803B48B8DF0B1F8C65A25")
 
-
     private static char[] sTemp = null;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.182 -0400", hash_original_method = "4FF062759AAFC6722B3224BBA791BE93", hash_generated_method = "4FF062759AAFC6722B3224BBA791BE93")
     public TemporaryBuffer ()
     {

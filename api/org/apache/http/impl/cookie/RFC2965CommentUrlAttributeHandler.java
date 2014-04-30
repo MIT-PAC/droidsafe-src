@@ -11,11 +11,10 @@ import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 import org.apache.http.cookie.SetCookie2;
 
-
-
 public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler {
 
-      @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.907 -0500", hash_original_method = "099D2A6A922F722517A29E0583320390", hash_generated_method = "F34BA6D6F101B42AA87F8CB18B7723D7")
+      @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.907 -0500", hash_original_method = "099D2A6A922F722517A29E0583320390", hash_generated_method = "F34BA6D6F101B42AA87F8CB18B7723D7")
     
 public RFC2965CommentUrlAttributeHandler() {
           super();
@@ -42,7 +41,6 @@ public void validate(final Cookie cookie, final CookieOrigin origin)
 public boolean match(final Cookie cookie, final CookieOrigin origin) {
           return true;
       }
-
     
 }
 

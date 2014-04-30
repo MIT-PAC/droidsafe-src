@@ -105,6 +105,7 @@ protected static Map<String, String> generateHeaders(String url,
 
     public boolean mPlayerBuffering = false;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.025 -0500", hash_original_method = "28D653DD01D92986A2B4676333E22F44", hash_generated_method = "0DDAE4F950D92719B95655EE43F24E23")
     
 protected HTML5VideoView() {

@@ -18,6 +18,7 @@ public class SIPDuplicateHeaderException extends ParseException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.966 -0500", hash_original_field = "788242283F58A2359ABCFCC146D1CC65", hash_generated_field = "86237427033BC6809F24E6EB9253E570")
 
     protected SIPMessage sipMessage;
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.968 -0500", hash_original_method = "C7110F542E7C86523593AC1F47E9C6EF", hash_generated_method = "02F33437832C04B777F555761C875C37")
     
 public SIPDuplicateHeaderException(String msg) {

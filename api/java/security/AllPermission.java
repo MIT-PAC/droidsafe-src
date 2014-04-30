@@ -10,6 +10,7 @@ public final class AllPermission extends Permission {
     
 public AllPermission(String name, String actions) { super(""); }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.580 -0500", hash_original_method = "8D01BAC0F6DD766A4223D24BBCA0691E", hash_generated_method = "A4DE2B1B831335E9A20B2B49A39FD848")
     
 public AllPermission() { super(""); }

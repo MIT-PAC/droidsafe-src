@@ -114,18 +114,21 @@ private static int getCenterOfView(View view) {
 
     private boolean mIsRtl = true;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.628 -0500", hash_original_method = "475E2614DCD8BCA86D0A9A2D522E9160", hash_generated_method = "5D2B28164208956EDB8DB13C5E51AD07")
     
 public Gallery(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.630 -0500", hash_original_method = "6F70D7EE2D6B35912A9443CBD20034EA", hash_generated_method = "21ED4F65019F580F3C31181AE87FE21C")
     
 public Gallery(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.galleryStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.633 -0500", hash_original_method = "D87B27451B638EC2EE79D6B32CF2AC05", hash_generated_method = "3554C9B7B729D4C75C7512891DA0C273")
     
 public Gallery(Context context, AttributeSet attrs, int defStyle) {

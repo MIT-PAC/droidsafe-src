@@ -19,6 +19,7 @@ public class CallID extends SIPHeader implements javax.sip.header.CallIdHeader {
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.850 -0500", hash_original_method = "253D83F9785581049F0DE9229A1A9A12", hash_generated_method = "978E2112F7179924505FE3D3DE4CD1D1")
     
 public CallID() {

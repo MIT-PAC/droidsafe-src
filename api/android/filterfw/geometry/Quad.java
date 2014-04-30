@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.geometry;
 
 import droidsafe.annotations.*;
@@ -33,7 +32,6 @@ import java.util.List;
 public class Quad {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:12.975 -0400", hash_original_field = "BBA76B717567CC37DBA239BA64988B33", hash_generated_field = "ABD4A0A69CD7BB8E6E5734D8B7392636")
 
-
     public Point p0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:12.977 -0400", hash_original_field = "4B3043BDDCF823402C5220BE06C543A5", hash_generated_field = "7B91C914A0039DA78C8EA504C6EA072C")
 
@@ -45,6 +43,7 @@ public class Quad {
 
     public Point p3;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:12.982 -0400", hash_original_method = "71C10F40874C2D5B9F6AD58AC815F12B", hash_generated_method = "9265B039FE721481C0E98D530DF1D27D")
     
 public Quad() {

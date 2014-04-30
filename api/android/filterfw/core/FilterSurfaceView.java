@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -31,7 +30,6 @@ import android.view.SurfaceView;
 public class FilterSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.258 -0400", hash_original_field = "1CD49A1ED622DBD6D69152AE221D989D", hash_generated_field = "341DF832D8EC61BC59CD76271E2736DB")
 
-
     private static int STATE_ALLOCATED      = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.260 -0400", hash_original_field = "467228AB394C5C54B1CA24645DCA463B", hash_generated_field = "87FCAA6D81EA7C58C0162E97C74E6D9B")
 
@@ -40,7 +38,6 @@ public class FilterSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     private static int STATE_INITIALIZED    = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.265 -0400", hash_original_field = "D5C0673909C74BAA499B1989D81ECBA0", hash_generated_field = "A21C0E570C0F3793E2D8F9F3E341F072")
-
 
     private int mState = STATE_ALLOCATED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.267 -0400", hash_original_field = "E27A02F6D2ED96D98F69FD560570C6F6", hash_generated_field = "A572404D3A48A460F6F616D51D9B5EA1")
@@ -62,6 +59,7 @@ public class FilterSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     private int mSurfaceId = -1;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.291 -0400", hash_original_method = "C44FC0AAF3C7D9F32B8A130C19AD092F", hash_generated_method = "E3FC263DA5C45B4EE9AC3B7E359CB118")
     
 public FilterSurfaceView(Context context) {
@@ -69,6 +67,7 @@ public FilterSurfaceView(Context context) {
         getHolder().addCallback(this);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.293 -0400", hash_original_method = "91843FCEC035649C2E408E08D2824364", hash_generated_method = "085612AC3FD4613F0F02D352DD4B44E4")
     
 public FilterSurfaceView(Context context, AttributeSet attrs) {

@@ -350,6 +350,7 @@ private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser p
 
     private static final int SEQUENTIALLY = 1;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.854 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
     
     public AnimationUtils ()

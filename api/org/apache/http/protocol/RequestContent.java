@@ -15,12 +15,9 @@ import org.apache.http.HttpVersion;
 import org.apache.http.ProtocolException;
 import org.apache.http.ProtocolVersion;
 
-
-
-
-
 public class RequestContent implements HttpRequestInterceptor {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.957 -0500", hash_original_method = "9AE5E648CA522092E457677BB79033D0", hash_generated_method = "62DAC680EB3AF0AA19FB0F5C6FD20DC4")
     
 public RequestContent() {
@@ -69,7 +66,6 @@ public void process(final HttpRequest request, final HttpContext context)
             }
         }
     }
-
     
 }
 

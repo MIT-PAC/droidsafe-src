@@ -13,6 +13,7 @@ public abstract class X509ExtendedKeyManager implements X509KeyManager {
      * <p>
      * Creates a new {@code X509ExtendedKeyManager} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.107 -0500", hash_original_method = "F0C30C87B7D84E85B2225C595BCE43AB", hash_generated_method = "A93D721B75516A1B09A7C59D7033A769")
     
 protected X509ExtendedKeyManager() {

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class DEROutputStream extends FilterOutputStream implements DERTags {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.702 -0500", hash_original_method = "D6882926F90F93A386C7D4D8D57DD786", hash_generated_method = "A320D981703EC188191226365DD3CBBD")
     
 public DEROutputStream(

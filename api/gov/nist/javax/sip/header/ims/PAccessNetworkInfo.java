@@ -21,6 +21,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     /**
      * Public constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.615 -0500", hash_original_method = "DEE74A53744AC3C87B8E5D43A4E5AAF1", hash_generated_method = "91E7EF6609D8DAD04F568A7121A83655")
     
 public PAccessNetworkInfo() {

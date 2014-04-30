@@ -41,7 +41,6 @@ import static android.gesture.GestureConstants.*;
  */
 public final class GestureUtils {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:41.094 -0500", hash_original_field = "98F502D6C1A9DC3DA3DE886709668D78", hash_generated_field = "E478F339E61B045FA25E7EFCA197B3F8")
-
   
     private static final float SCALING_THRESHOLD = 0.26f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:41.098 -0500", hash_original_field = "F10EED9ECBB6BCDF017A1E5907C40E5A", hash_generated_field = "B257425A0C598244057ABBBF9B63BD37")
@@ -597,7 +596,6 @@ private static float[] computeOrientation(float[][] covarianceMatrix) {
         return targetVector;
     }
     
-    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:41.182 -0500", hash_original_method = "578EF458F2D6855BA78C07E71E0F3496", hash_generated_method = "67C1E45CFEFCB83CA34A8E06429C81FD")
     
 static float[] rotate(float[] points, float angle) {
@@ -635,6 +633,7 @@ static float[] scale(float[] points, float sx, float sy) {
         return points;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:41.101 -0500", hash_original_method = "924877739959A3756D2A4D30C807989C", hash_generated_method = "CA5CE4CFABAE9C71DD8D8BCA7CBC55D6")
     
 private GestureUtils() {

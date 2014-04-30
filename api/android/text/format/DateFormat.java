@@ -566,6 +566,7 @@ private static final String zeroPad(int inValue, int inMinDigits) {
 
     private static boolean sIs24Hour;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.413 -0400", hash_original_method = "4FB6BE40E4FA388ABA6A7CE788B3C64B", hash_generated_method = "4FB6BE40E4FA388ABA6A7CE788B3C64B")
     public DateFormat ()
     {

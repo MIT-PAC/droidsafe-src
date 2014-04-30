@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public abstract class DERObject extends ASN1Encodable implements DERTags {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.404 -0400", hash_original_method = "75E493BEC3007387001199C11DB165C7", hash_generated_method = "75E493BEC3007387001199C11DB165C7")
     public DERObject ()
     {

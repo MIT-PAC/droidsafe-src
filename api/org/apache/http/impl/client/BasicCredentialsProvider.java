@@ -10,11 +10,6 @@ import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.Credentials;
 import org.apache.http.client.CredentialsProvider;
 
-
-
-
-
-
 public class BasicCredentialsProvider implements CredentialsProvider {
 
     /**
@@ -52,12 +47,12 @@ private static Credentials matchCredentials(
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.474 -0500", hash_original_field = "1E8313F9EEBE642AC22DE9A578EF7E98", hash_generated_field = "4CB8755C3EC5F46FD31D578864B43B48")
 
-
     private  HashMap<AuthScope, Credentials> credMap;
 
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.477 -0500", hash_original_method = "5972EEB8CE88F96A462831B5B8532572", hash_generated_method = "A8BCCD00D446B6E31B47D169AE8D8F0E")
     
 public BasicCredentialsProvider() {
@@ -118,7 +113,6 @@ public synchronized Credentials getCredentials(final AuthScope authscope) {
 public synchronized void clear() {
         this.credMap.clear();
     }
-
     
 }
 

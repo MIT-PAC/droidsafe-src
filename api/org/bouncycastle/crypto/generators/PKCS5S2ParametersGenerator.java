@@ -20,6 +20,7 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     /**
      * construct a PKCS5 Scheme 2 Parameters generator.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.841 -0500", hash_original_method = "B69BB14B43B673ED175B53A442E5BA52", hash_generated_method = "593916AB818176A1FF3DCE8385A308C4")
     
 public PKCS5S2ParametersGenerator()

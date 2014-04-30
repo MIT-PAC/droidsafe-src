@@ -29,12 +29,14 @@ public class ExtractEditLayout extends LinearLayout {
 
     Button mEditButton;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.017 -0500", hash_original_method = "5E5A3BB351E8D9D7F73E3207F63F4561", hash_generated_method = "F7A56E72915119248656F6E915BD40B9")
     
 public ExtractEditLayout(Context context) {
         super(context);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.020 -0500", hash_original_method = "5B5DDD3A07057211F0994E26CEDA1A4A", hash_generated_method = "3FF74879CD47B620FD3745A8116422F0")
     
 public ExtractEditLayout(Context context, AttributeSet attrs) {

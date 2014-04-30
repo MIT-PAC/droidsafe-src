@@ -71,6 +71,7 @@ private static boolean portMatch(int port, int[] ports) {
         return portInList;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.204 -0500", hash_original_method = "E334DF66885CCF73C2314DA776277136", hash_generated_method = "D94E788DC5A68180A8234C1DA7C81D8C")
     
 public RFC2965PortAttributeHandler() {

@@ -31,7 +31,6 @@ public final class NNTPCommand
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:10.478 -0500", hash_original_field = "A474724B8B3C726E87521EE3326CBD82", hash_generated_field = "9854E4A31446A4143DDCEE0BDA0C9803")
 
-
     public static final int ARTICLE   = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:10.481 -0500", hash_original_field = "2AA3C04303D7BAC1BF530F9505A1C354", hash_generated_field = "0916A2F9E3316E146E19E06877BE3716")
 
@@ -86,13 +85,11 @@ public final class NNTPCommand
     public static final int XHDR      = 17;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:10.537 -0500", hash_original_field = "1DA1FDA7630D56F396835F10A54783C4", hash_generated_field = "7970895F62D6D64209247ACB7BC88A5A")
 
-
     static final String[] _commands = {
         "ARTICLE", "BODY", "GROUP", "HEAD", "HELP", "IHAVE", "LAST", "LIST",
         "NEWGROUPS", "NEWNEWS", "NEXT", "POST", "QUIT", "SLAVE", "STAT",
         "AUTHINFO", "XOVER", "XHDR"
     };
-
 
     /***
      * Retrieve the NNTP protocol command string corresponding to a specified
@@ -110,6 +107,7 @@ public static final String getCommand(int command)
     }
 
     // Cannot be instantiated
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:10.534 -0500", hash_original_method = "C8D053290B1C889DDFB4046FB8856A18", hash_generated_method = "7EF2D1A4F13E969BB60E3FE9560C7D13")
     
 private NNTPCommand()

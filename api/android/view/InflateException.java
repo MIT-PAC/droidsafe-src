@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class InflateException extends RuntimeException {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:09.718 -0500", hash_original_method = "0CE2909AE04CF0521618BA35C7B8DC0B", hash_generated_method = "D4CAA5B21518BB66978DE02952E46A95")
     
 public InflateException() {
@@ -29,6 +30,7 @@ public InflateException(String detailMessage) {
         super(detailMessage);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:09.726 -0500", hash_original_method = "D6B4BD85C2EC6AC3FF7C8DC3F1D9D2C5", hash_generated_method = "37D65122EF1CAD69D887066C5329339B")
     
 public InflateException(Throwable throwable) {

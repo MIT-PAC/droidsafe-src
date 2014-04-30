@@ -121,7 +121,8 @@ protected LayoutInflater(LayoutInflater original, Context newContext) {
     }
     // orphaned legacy method
     
-	public LayoutInflater() {
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public LayoutInflater() {
 		
 	}
 

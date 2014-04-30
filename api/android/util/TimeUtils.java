@@ -304,7 +304,8 @@ public static void formatDuration(long time, long now, PrintWriter pw) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.952 -0500", hash_original_field = "2C9FFE246E6936B3E5EBBCA18E32E183", hash_generated_field = "23A1022E9F725A0F3BAADDA607255C69")
 
     private static char[] sFormatStr = new char[HUNDRED_DAY_FIELD_LEN+5];
-    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.928 -0500", hash_original_method = "90FFA2BDF77FA646318F5F30EF504BD2", hash_generated_method = "361EF821BA5F43FC70E63C69D2D0B27E")
+    /** @hide */ @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.928 -0500", hash_original_method = "90FFA2BDF77FA646318F5F30EF504BD2", hash_generated_method = "361EF821BA5F43FC70E63C69D2D0B27E")
     
 public TimeUtils() {}
 }

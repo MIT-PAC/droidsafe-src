@@ -84,6 +84,7 @@ public static String getDefaultContentEncodingCharset() {
     /**
      * Creates a new instance of MessageFactoryImpl
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.638 -0500", hash_original_method = "1A6840ADE4B5EE3A7D8D47E6638687F6", hash_generated_method = "60B67C93F701D6B0EF25391D410DC2A2")
     
 public MessageFactoryImpl() {

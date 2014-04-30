@@ -122,6 +122,7 @@ public static int compareToIgnoreCase(CharSequence me, CharSequence another) {
         return myLen - anotherLen;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.659 -0400", hash_original_method = "1F7BA79C239DAD6228A2DB1150F5EF80", hash_generated_method = "1F7BA79C239DAD6228A2DB1150F5EF80")
     public CharSequences ()
     {

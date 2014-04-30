@@ -191,6 +191,7 @@ public static void writeTexture(ETC1Texture texture, OutputStream output) throws
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.918 -0400", hash_original_method = "16CF83B5F57C13CA789F8B6C84B3B95D", hash_generated_method = "16CF83B5F57C13CA789F8B6C84B3B95D")
     public ETC1Util ()
     {

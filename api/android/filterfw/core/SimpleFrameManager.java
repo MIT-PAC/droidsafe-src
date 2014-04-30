@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -33,6 +32,7 @@ import android.filterfw.core.VertexFrame;
  */
 public class SimpleFrameManager extends FrameManager {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.606 -0400", hash_original_method = "9AE489D1DB0431630039A7615731833A", hash_generated_method = "60B9148A91F4DC25161EB3BB30A9E49F")
     
 public SimpleFrameManager() {

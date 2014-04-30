@@ -232,6 +232,7 @@ public AccessibilityServiceInfo[] newArray(int size) {
     /**
      * Creates a new instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.269 -0500", hash_original_method = "32AC306673DA52F864FB7CE370FDF901", hash_generated_method = "175458E7CDA47AE2731389BF733FFE33")
     
 public AccessibilityServiceInfo() {

@@ -9,7 +9,8 @@ import android.hardware.SensorManager;
 
 public class DroidSafeSensorManager extends SensorManager {
 
-	public DroidSafeSensorManager() {
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public DroidSafeSensorManager() {
 		super(null);	
 	}
 	

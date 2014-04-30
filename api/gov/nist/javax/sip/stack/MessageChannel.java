@@ -123,6 +123,7 @@ private static final boolean copyViaHeaders(String fromReq, StringBuffer buf) {
 
     protected transient MessageProcessor messageProcessor;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.466 -0400", hash_original_method = "1B1EF2D32056DF45EB39273AF108BD8B", hash_generated_method = "1B1EF2D32056DF45EB39273AF108BD8B")
     public MessageChannel ()
     {

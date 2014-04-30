@@ -21,6 +21,7 @@ import android.util.AndroidRuntimeException;
 import android.view.inputmethod.InputMethodManager;
 
 final class WindowLeaked extends AndroidRuntimeException {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.116 -0500", hash_original_method = "FBED2002249AD131D5B5A71E6D66FC21", hash_generated_method = "830B11ED5FB821F5D9E7920CDFE106DD")
     
 public WindowLeaked(String msg) {
@@ -149,6 +150,7 @@ private static void removeItem(Object[] dst, Object[] src, int index) {
 
     private WindowManager.LayoutParams[] mParams;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.125 -0400", hash_original_method = "3EABCF2A614A6DEC3CA7FC91E47982AB", hash_generated_method = "3EABCF2A614A6DEC3CA7FC91E47982AB")
     public WindowManagerImpl ()
     {

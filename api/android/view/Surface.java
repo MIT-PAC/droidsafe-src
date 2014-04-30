@@ -228,6 +228,7 @@ public Surface(SurfaceSession s,
      * readFromParcel().
      * @hide
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.558 -0500", hash_original_method = "CA741F0DB07B20B1C302E68F5EF5136C", hash_generated_method = "C48BCEC0AB24F9C8AB381CE696E70EFA")
     
 public Surface() {

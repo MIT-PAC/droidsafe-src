@@ -27,7 +27,6 @@ import droidsafe.helpers.*;
 public final class MtpStorageInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:21.495 -0400", hash_original_field = "7015602EB998005E8CF8D68C38A07905", hash_generated_field = "BE33FDB6E306D30BAB61D2858311778E")
 
-
     private int mStorageId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:21.497 -0400", hash_original_field = "00AAC8F91C0830A7D32CA406DCEF5839", hash_generated_field = "369D4DB14EFCBC35C6D2A6D50E694267")
 
@@ -43,6 +42,7 @@ public final class MtpStorageInfo {
     private String mVolumeIdentifier;
 
     // only instantiated via JNI
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:21.504 -0400", hash_original_method = "23CF4D294B06EA70C27E2BD6043A36D4", hash_generated_method = "680BF5CD263A0B22D111CDC144A3F387")
     
 private MtpStorageInfo() {

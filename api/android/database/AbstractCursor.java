@@ -60,6 +60,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
 
     /* -------------------------------------------------------- */
     /* Implementation */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.047 -0500", hash_original_method = "F60281D0CC7516E8B7AB1E4DD5850BC4", hash_generated_method = "E2F4207EC6D455951FC8AC978B5BEFE4")
     
 public AbstractCursor() {

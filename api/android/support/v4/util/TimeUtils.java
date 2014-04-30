@@ -184,6 +184,7 @@ public static void formatDuration(long time, long now, PrintWriter pw) {
 
     private static char[] sFormatStr = new char[HUNDRED_DAY_FIELD_LEN+5];
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.156 -0400", hash_original_method = "6BC0B1A4515F305A86E1A30B3A6583CB", hash_generated_method = "6BC0B1A4515F305A86E1A30B3A6583CB")
     public TimeUtils ()
     {

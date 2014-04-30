@@ -71,6 +71,7 @@ public abstract class DatagramSocketClient
      * Default constructor for DatagramSocketClient.  Initializes
      * _socket_ to null, _timeout_ to 0, and _isOpen_ to false.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.706 -0500", hash_original_method = "78E49BB35B919B0760E543E32DBDB577", hash_generated_method = "B19DBE2859E4F8D0C99247FA78659753")
     
 public DatagramSocketClient()
@@ -80,7 +81,6 @@ public DatagramSocketClient()
         _isOpen_ = false;
         _socketFactory_ = __DEFAULT_SOCKET_FACTORY;
     }
-
 
     /***
      * Opens a DatagramSocket on the local host at the first available port.
@@ -102,7 +102,6 @@ public void open() throws SocketException
         _isOpen_ = true;
     }
 
-
     /***
      * Opens a DatagramSocket on the local host at a specified port.
      * Also sets the timeout on the socket to the default timeout set
@@ -123,7 +122,6 @@ public void open(int port) throws SocketException
         _socket_.setSoTimeout(_timeout_);
         _isOpen_ = true;
     }
-
 
     /***
      * Opens a DatagramSocket at the specified address on the local host
@@ -148,8 +146,6 @@ public void open(int port, InetAddress laddr) throws SocketException
         _isOpen_ = true;
     }
 
-
-
     /***
      * Closes the DatagramSocket used for the connection.
      * You should call this method after you've finished using the class
@@ -167,7 +163,6 @@ public void close()
         _isOpen_ = false;
     }
 
-
     /***
      * Returns true if the client has a currently open socket.
      * <p>
@@ -179,7 +174,6 @@ public boolean isOpen()
     {
         return _isOpen_;
     }
-
 
     /***
      * Set the default timeout in milliseconds to use when opening a socket.
@@ -199,7 +193,6 @@ public void setDefaultTimeout(int timeout)
         _timeout_ = timeout;
     }
 
-
     /***
      * Returns the default timeout in milliseconds that is used when
      * opening a socket.
@@ -213,7 +206,6 @@ public int getDefaultTimeout()
     {
         return _timeout_;
     }
-
 
     /***
      * Set the timeout in milliseconds of a currently open connection.
@@ -230,7 +222,6 @@ public void setSoTimeout(int timeout) throws SocketException
         _socket_.setSoTimeout(timeout);
     }
 
-
     /***
      * Returns the timeout in milliseconds of the currently opened socket.
      * If you call this method when the client socket is not open,
@@ -244,7 +235,6 @@ public int getSoTimeout() throws SocketException
     {
         return _socket_.getSoTimeout();
     }
-
 
     /***
      * Returns the port number of the open socket on the local host used
@@ -261,7 +251,6 @@ public int getLocalPort()
         return _socket_.getLocalPort();
     }
 
-
     /***
      * Returns the local address to which the client's socket is bound.
      * If you call this method when the client socket is not open, a
@@ -275,7 +264,6 @@ public InetAddress getLocalAddress()
     {
         return _socket_.getLocalAddress();
     }
-
 
     /***
      * Sets the DatagramSocketFactory used by the DatagramSocketClient

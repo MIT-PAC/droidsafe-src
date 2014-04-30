@@ -64,6 +64,7 @@ public static GestureLibrary fromPrivateFile(Context context, String name) {
 public static GestureLibrary fromRawResource(Context context, int resourceId) {
         return new ResourceGestureLibrary(context, resourceId);
     }
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.004 -0500", hash_original_method = "5D35F1C2DD549E898BC93F9B607C5349", hash_generated_method = "625250A16EA789F15A1A86A124DC62B4")
     
 private GestureLibraries() {

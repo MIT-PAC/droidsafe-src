@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class WNafPreCompInfo implements PreCompInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.646 -0500", hash_original_field = "62ACEF08F2D2C038DD15DFD492CE20D9", hash_generated_field = "8395F613D674E288AEA3589FC60978CE")
 
@@ -17,6 +13,7 @@ class WNafPreCompInfo implements PreCompInfo {
 
     private ECPoint twiceP = null;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.899 -0400", hash_original_method = "00CB459868C44A39A2332485F966568C", hash_generated_method = "00CB459868C44A39A2332485F966568C")
     public WNafPreCompInfo ()
     {
@@ -50,7 +47,6 @@ protected void setTwiceP(ECPoint twiceThis)
     {
         this.twiceP = twiceThis;
     }
-
     
 }
 

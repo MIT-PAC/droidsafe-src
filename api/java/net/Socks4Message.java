@@ -59,6 +59,7 @@ class Socks4Message {
 
     protected byte[] buffer;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.134 -0500", hash_original_method = "B36A7D8FEC73E76C782613C0576445D4", hash_generated_method = "631B85F303C413E68FF6BF74A769BF42")
     
 public Socks4Message() {

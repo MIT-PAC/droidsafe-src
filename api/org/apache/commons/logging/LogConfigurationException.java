@@ -13,6 +13,7 @@ public class LogConfigurationException extends RuntimeException {
     /**
      * Construct a new exception with <code>null</code> as its detail message.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.644 -0500", hash_original_method = "5BD29D5C4388EC618AF76FB6968F33B3", hash_generated_method = "B17AA50EA89B76D08F40185F34724ACC")
     
 public LogConfigurationException() {
@@ -26,6 +27,7 @@ public LogConfigurationException() {
      *
      * @param message The detail message
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.647 -0500", hash_original_method = "DDAD033C1D6A94945D0EFE9FFDFBD321", hash_generated_method = "5B4389D4B9B55FA9762BA09D54DAC0CC")
     
 public LogConfigurationException(String message) {
@@ -40,6 +42,7 @@ public LogConfigurationException(String message) {
      *
      * @param cause The underlying cause
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.649 -0500", hash_original_method = "4454085F5358E0B8D9507639FB30951F", hash_generated_method = "1A9B82FCE81633FF238B936267427CF4")
     
 public LogConfigurationException(Throwable cause) {
@@ -54,6 +57,7 @@ public LogConfigurationException(Throwable cause) {
      * @param message The detail message
      * @param cause The underlying cause
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.652 -0500", hash_original_method = "451E311949AEF6CA521A34CAA7EB210C", hash_generated_method = "71F12EF3151EC3E6B6E3F6468216C725")
     
 public LogConfigurationException(String message, Throwable cause) {

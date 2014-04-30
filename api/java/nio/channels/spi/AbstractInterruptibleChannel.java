@@ -36,6 +36,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
         
 };
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.853 -0500", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "AEB2875D39F3451BA1CDF86D6F8E0B58")
     
 protected AbstractInterruptibleChannel() {

@@ -17,9 +17,6 @@ import org.bouncycastle.crypto.params.ECPublicKeyParameters;
 import org.bouncycastle.math.ec.ECConstants;
 import org.bouncycastle.math.ec.ECPoint;
 
-
-
-
 public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.774 -0500", hash_original_field = "1AFC7445D28E654B0EF1545F8475DF56", hash_generated_field = "1AFC7445D28E654B0EF1545F8475DF56")
 
@@ -28,6 +25,7 @@ public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECC
 
     SecureRandom        random;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.969 -0400", hash_original_method = "179E873A290E5A119544D1E31906496A", hash_generated_method = "179E873A290E5A119544D1E31906496A")
     public ECKeyPairGenerator ()
     {
@@ -69,7 +67,6 @@ public AsymmetricCipherKeyPair generateKeyPair()
             new ECPublicKeyParameters(Q, params),
             new ECPrivateKeyParameters(d, params));
     }
-
     
 }
 

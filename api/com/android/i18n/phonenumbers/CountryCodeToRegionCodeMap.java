@@ -884,6 +884,7 @@ static Map<Integer, List<String>> getCountryCodeToRegionCodeMap() {
     return countryCodeToRegionCodeMap;
   }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.582 -0400", hash_original_method = "63FC822C4B5F1AC648A20B30DF86BC44", hash_generated_method = "63FC822C4B5F1AC648A20B30DF86BC44")
     public CountryCodeToRegionCodeMap ()
     {

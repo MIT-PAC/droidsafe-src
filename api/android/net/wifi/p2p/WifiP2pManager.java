@@ -336,6 +336,7 @@ public WifiP2pManager(IWifiP2pManager service) {
         mService = service;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.775 -0400", hash_original_method = "E626A45256220AE3F4AF9F0577D669AE", hash_generated_method = "AE4DAB67531AE0D3DD7CB41C112DC312")
     public  WifiP2pManager() {
         // ---------- Original Method ----------

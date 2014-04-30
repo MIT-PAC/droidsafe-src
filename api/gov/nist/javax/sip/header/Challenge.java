@@ -51,6 +51,7 @@ public class Challenge extends SIPObject {
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.125 -0500", hash_original_method = "8BBE6E62DECF2D10899FEF6115E55B0A", hash_generated_method = "DE7C269A3CBD9505E5C2DB474FE0DBD0")
     
 public Challenge() {

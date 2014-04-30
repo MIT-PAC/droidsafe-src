@@ -27,6 +27,7 @@ public static void enableDebugLogging(boolean enabled) {
         LoaderManagerImpl.DEBUG = enabled;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.011 -0400", hash_original_method = "921B150ED82AB2739CD0194A062DB550", hash_generated_method = "921B150ED82AB2739CD0194A062DB550")
     public LoaderManager ()
     {

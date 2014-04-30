@@ -104,7 +104,8 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 	 * Creates a new instance of SipStackImpl.
 	 */
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.607 -0500", hash_original_method = "BD80EAD073CED4ACABB1B92EBB481070", hash_generated_method = "AD468FA240B2CFDF2CB2457F1BA5A08C")
+	@DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.607 -0500", hash_original_method = "BD80EAD073CED4ACABB1B92EBB481070", hash_generated_method = "AD468FA240B2CFDF2CB2457F1BA5A08C")
 	
 protected SipStackImpl() {
 		super();

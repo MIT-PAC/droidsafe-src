@@ -691,6 +691,7 @@ public static void setLookAtM(float[] rm, int rmOffset,
 
     private final static float[] sTemp = new float[32];
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.550 -0400", hash_original_method = "80154EE353DD9055CB6181108953825F", hash_generated_method = "80154EE353DD9055CB6181108953825F")
     public Matrix ()
     {

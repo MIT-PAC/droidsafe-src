@@ -25,6 +25,7 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
     /**
      * Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.983 -0500", hash_original_method = "3B70F1FB7142745DE6253CA770AA85DF", hash_generated_method = "9D44063F9C2F23EC5F27E497F6609A78")
     
 public SSLSocketFactoryImpl() {

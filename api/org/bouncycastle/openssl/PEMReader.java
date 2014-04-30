@@ -62,24 +62,20 @@ import org.bouncycastle.util.io.pem.PemObjectParser;
 import org.bouncycastle.util.io.pem.PemReader;
 import org.bouncycastle.x509.X509V2AttributeCertificate;
 
-
-
-
 public class PEMReader extends PemReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.361 -0500", hash_original_field = "9B1CD2D518DEAD091777D6CB81C5816E", hash_generated_field = "1B324848B9CCB600B6F9F412146CB5D6")
 
     private final Map parsers = new HashMap();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.363 -0500", hash_original_field = "75C5E5F13C2720237139D3675B80F4E6", hash_generated_field = "7A318D1FC589B8A927004A5BBE837049")
 
-
     private PasswordFinder pFinder;
-
 
     /**
      * Create a new PEMReader
      *
      * @param reader the Reader
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.366 -0500", hash_original_method = "2732903E834E35077990228D3EC5372C", hash_generated_method = "874B62147D53C021C6F32B5DF2CF4549")
     
 public PEMReader(
@@ -180,7 +176,6 @@ public Object readObject()
 
         return null;
     }
-
     
     private abstract class KeyPairParser implements PemObjectParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.380 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "AFDE0FC943DF429CC56BE81349BC4014")
@@ -274,11 +269,8 @@ protected ASN1Sequence readKeyPair(
                 }
             }
         }
-
         
     }
-
-
     
     private class DSAKeyPairParser extends KeyPairParser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.392 -0500", hash_original_method = "ADBD617F929757840A0FD32FA3C710F1", hash_generated_method = "5DE1123A8D868D13C61FFB66BA6883C1")
@@ -332,11 +324,8 @@ public Object parseObject(PemObject obj)
                     "problem creating DSA private key: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
     private class ECDSAKeyPairParser extends KeyPairParser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.400 -0500", hash_original_method = "3D5918BC33C2E8750A0F79CF102B6DFC", hash_generated_method = "FC6CB8564356E7B70EFBC5E495CF5A60")
@@ -363,9 +352,7 @@ public Object parseObject(PemObject obj)
                 PKCS8EncodedKeySpec privSpec = new PKCS8EncodedKeySpec(privInfo.getEncoded());
                 X509EncodedKeySpec pubSpec = new X509EncodedKeySpec(pubInfo.getEncoded());
 
-
                 KeyFactory fact = KeyFactory.getInstance("ECDSA", provider);
-
 
                 return new KeyPair(
                     fact.generatePublic(pubSpec),
@@ -381,11 +368,8 @@ public Object parseObject(PemObject obj)
                     "problem creating EC private key: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
     private class RSAKeyPairParser extends KeyPairParser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.408 -0500", hash_original_method = "77B6A791758EAFC47A0B2DE5F4E18FED", hash_generated_method = "46B4C2C7A3D7DE2ED540B58D362D44E3")
@@ -427,9 +411,7 @@ public Object parseObject(PemObject obj)
                     exp1.getValue(), exp2.getValue(),
                     crtCoef.getValue());
 
-
                 KeyFactory fact = KeyFactory.getInstance("RSA", provider);
-
 
                 return new KeyPair(
                     fact.generatePublic(pubSpec),
@@ -445,11 +427,8 @@ public Object parseObject(PemObject obj)
                     "problem creating RSA private key: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
     private class PublicKeyParser implements PemObjectParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.416 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
@@ -495,11 +474,8 @@ public Object parseObject(PemObject obj)
 
             return null;
         }
-
         
     }
-
-
     
     private class RSAPublicKeyParser implements PemObjectParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.426 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
@@ -528,7 +504,6 @@ public Object parseObject(PemObject obj)
                     rsaPubStructure.getModulus(),
                     rsaPubStructure.getPublicExponent());
 
-
                     KeyFactory keyFact = KeyFactory.getInstance("RSA", provider);
 
                     return keyFact.generatePublic(keySpec);
@@ -546,11 +521,8 @@ public Object parseObject(PemObject obj)
                 throw new PEMException("problem extracting key: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
     private class X509CertificateParser implements PemObjectParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.436 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
@@ -589,11 +561,8 @@ public Object parseObject(PemObject obj)
                 throw new PEMException("problem parsing cert: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
     private class X509CRLParser implements PemObjectParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.446 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
@@ -632,11 +601,8 @@ public Object parseObject(PemObject obj)
                 throw new PEMException("problem parsing cert: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
     private class PKCS10CertificationRequestParser implements PemObjectParser {
         
@@ -665,11 +631,8 @@ public Object parseObject(PemObject obj)
                 throw new PEMException("problem parsing certrequest: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
     private class PKCS7Parser implements PemObjectParser {
         
@@ -701,11 +664,8 @@ public Object parseObject(PemObject obj)
                 throw new PEMException("problem parsing PKCS7 object: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
     private class X509AttributeCertificateParser implements PemObjectParser {
         
@@ -721,11 +681,8 @@ public Object parseObject(PemObject obj)
         {
             return new X509V2AttributeCertificate(obj.getContent());
         }
-
         
     }
-
-
     
     private class ECNamedCurveSpecParser implements PemObjectParser {
         
@@ -761,11 +718,8 @@ public Object parseObject(PemObject obj)
                 throw new PEMException("exception extracting EC named curve: " + e.toString());
             }
         }
-
         
     }
-
-
     
     private class EncryptedPrivateKeyParser implements PemObjectParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.475 -0500", hash_original_field = "9BA4AFAAF50A40E3743CD384237FD874", hash_generated_field = "7250E15B2C636F0751D5B7C0DD47B256")
@@ -886,11 +840,8 @@ public Object parseObject(PemObject obj)
                 throw new PEMException("problem parsing ENCRYPTED PRIVATE KEY: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
     private class PrivateKeyParser implements PemObjectParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.491 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
@@ -923,11 +874,8 @@ public Object parseObject(PemObject obj)
                 throw new PEMException("problem parsing PRIVATE KEY: " + e.toString(), e);
             }
         }
-
         
     }
-
-
     
 }
 

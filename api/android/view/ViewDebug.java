@@ -1975,6 +1975,7 @@ private void saveTraces() {
     private static final ThreadLocal<LooperProfiler> sLooperProfilerStorage =
             new ThreadLocal<LooperProfiler>();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.264 -0400", hash_original_method = "F785FDC015B150C7B28C32B4894B3E15", hash_generated_method = "F785FDC015B150C7B28C32B4894B3E15")
     public ViewDebug ()
     {

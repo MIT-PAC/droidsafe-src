@@ -10,23 +10,22 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public class AbsoluteLayout extends ViewGroup {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.350 -0500", hash_original_method = "5954FDB18E14B0E14B8E157FD227CC59", hash_generated_method = "A7C45DA430A7B42C1B84E6A031A7B645")
     
 public AbsoluteLayout(Context context) {
         super(context);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.352 -0500", hash_original_method = "B433FCC2495B1A37134076C038FD96A0", hash_generated_method = "08FD635A9C3578232FE0538924C4248E")
     
 public AbsoluteLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.355 -0500", hash_original_method = "153087F001B91B4A777A0B839E669EB1", hash_generated_method = "2A1FAF1BD1202129629A928A9283D870")
     
 public AbsoluteLayout(Context context, AttributeSet attrs,
@@ -141,7 +140,6 @@ public AbsoluteLayout(Context context, AttributeSet attrs,
     public boolean shouldDelayChildPressedState() {
         return false;
     }
-
     
     public static class LayoutParams extends ViewGroup.LayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.376 -0500", hash_original_field = "3ECDEC351FCE13CBA8A59E38409B3C9E", hash_generated_field = "DC9CDA960147F3D22D20E612AF25CB17")
@@ -216,11 +214,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
                     + sizeToString(width) + ", height=" + sizeToString(height)
                     + " x=" + x + " y=" + y + "}";
         }
-
         
     }
-
-
     
 }
 

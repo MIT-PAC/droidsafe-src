@@ -354,6 +354,7 @@ private static void errorCallbackFromNative(int error)
 
     private static final int NUM_FORCE_USE = 4;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:16.078 -0400", hash_original_method = "54895CB2BF1D5A08CFD79D31582209F6", hash_generated_method = "54895CB2BF1D5A08CFD79D31582209F6")
     public AudioSystem ()
     {

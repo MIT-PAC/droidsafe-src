@@ -20,6 +20,7 @@ public final class To extends AddressParametersHeader implements javax.sip.heade
     /**
      * default Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.634 -0500", hash_original_method = "7CFB3ABB21EF244A9FD6E54AD9CC5173", hash_generated_method = "4828F1DE18A86B8D31FB2CBCD9275ED5")
     
 public To() {

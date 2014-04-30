@@ -1546,6 +1546,7 @@ public void close() {
 
     private static Collator mColl = null;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.928 -0400", hash_original_method = "333D4DF31C6A57BA4790D091F2223BA8", hash_generated_method = "333D4DF31C6A57BA4790D091F2223BA8")
     public DatabaseUtils ()
     {

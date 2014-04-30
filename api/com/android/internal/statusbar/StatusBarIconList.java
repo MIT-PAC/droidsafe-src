@@ -37,6 +37,7 @@ public StatusBarIconList[] newArray(int size)
 
     private StatusBarIcon[] mIcons;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.334 -0500", hash_original_method = "AE97EF368FDECF0406590DF857395AB5", hash_generated_method = "EF7F956843935C6E574AB062FB991A25")
     
 public StatusBarIconList() {

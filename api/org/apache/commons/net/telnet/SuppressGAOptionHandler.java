@@ -49,6 +49,7 @@ public SuppressGAOptionHandler(boolean initlocal, boolean initremote,
      * Constructor for the SuppressGAOptionHandler. Initial and accept
      * behaviour flags are set to false
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:56.138 -0500", hash_original_method = "865A5634A871639454EF2E313098786A", hash_generated_method = "DBAAC143854D428B9525897993FCCF6A")
     
 public SuppressGAOptionHandler()

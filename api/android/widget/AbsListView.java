@@ -446,6 +446,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 
     private int mLastHandledItemCount;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public AbsListView(Context context){
 		super(context);
 		/*
@@ -457,12 +458,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		*/
 	}
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.064 -0500", hash_original_method = "7DDDAAAF35FACBC75E4AE745F69121D4", hash_generated_method = "4637FB18A2EACE0A46AFED02056DE2C3")
     
 public AbsListView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.absListViewStyle);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public AbsListView(Context context, AttributeSet attrs, int defStyle){
 		super(context, attrs, defStyle);
 		/* Original Method Too Long, Refer to Original Implementation */

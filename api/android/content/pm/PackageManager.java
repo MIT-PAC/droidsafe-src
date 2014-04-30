@@ -512,6 +512,7 @@ public NameNotFoundException(String name) {
     public static final String EXTRA_VERIFICATION_INSTALL_FLAGS
             = "android.content.pm.extra.VERIFICATION_INSTALL_FLAGS";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.294 -0400", hash_original_method = "5D24F7B229838E6C5BA06DA6570E4474", hash_generated_method = "5D24F7B229838E6C5BA06DA6570E4474")
     public PackageManager ()
     {

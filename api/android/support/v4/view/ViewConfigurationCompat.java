@@ -63,6 +63,7 @@ public static int getScaledPagingTouchSlop(ViewConfiguration config) {
         public int getScaledPagingTouchSlop(ViewConfiguration config);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.387 -0400", hash_original_method = "4E5705462ABC07218BC228DFC04D8AC2", hash_generated_method = "4E5705462ABC07218BC228DFC04D8AC2")
     public ViewConfigurationCompat ()
     {

@@ -50,6 +50,7 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
 
     private HttpConnectionMetricsImpl metrics = null;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.508 -0500", hash_original_method = "69689155BD098727A81CB27002CF309C", hash_generated_method = "E5AF705A59AF0D1E36D9FB31C022A11A")
     
 public AbstractHttpClientConnection() {

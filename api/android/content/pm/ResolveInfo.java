@@ -71,6 +71,7 @@ public ResolveInfo[] newArray(int size) {
 
     public boolean system;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.606 -0500", hash_original_method = "C76263445BA130B9E024AB7275119550", hash_generated_method = "2D789C4B3776F6A12FC3B9469B05CDC9")
     
 public ResolveInfo() {

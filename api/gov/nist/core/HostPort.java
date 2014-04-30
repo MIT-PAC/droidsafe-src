@@ -21,6 +21,7 @@ public final class HostPort extends GenericObject {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.505 -0500", hash_original_method = "53C1CBAC5F64E6F014615AADE272B0C0", hash_generated_method = "69D61C714181FF9F621B4F053D667AD2")
     
 public HostPort() {

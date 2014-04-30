@@ -37,6 +37,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
 
     protected TelephoneNumber telephoneSubscriber;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.589 -0500", hash_original_method = "4581AC1C0AE43A94306BF80DA76A0B36", hash_generated_method = "C8E16539FAB337F317DAC05A532E9D7B")
     
 public SipUri() {

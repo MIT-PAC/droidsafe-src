@@ -40,10 +40,8 @@ import java.io.OutputStream;
 public class WaveHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:13:48.126 -0400", hash_original_field = "1DC951243192CAA5F9F478A309D9F90C", hash_generated_field = "78D374B52CD0EEAAE30AC735B5C4422C")
 
-
     private static final String TAG = "WaveHeader";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:13:48.128 -0400", hash_original_field = "76F8743158D84C3E3DD326101BF3EBCC", hash_generated_field = "95F96C7C887E97A95676D77A2F8557F6")
-
     
     private static final int HEADER_LENGTH = 44;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:13:48.130 -0400", hash_original_field = "B5D881127A1037EA544BF09BB8AF86F3", hash_generated_field = "BEE7417D733F49023EA4DD595CB10BB9")
@@ -98,7 +96,6 @@ private static void writeShort(OutputStream out, short val) throws IOException {
         out.write(val >> 8);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:13:48.134 -0400", hash_original_field = "1DAB2EB1E00CC9957CC4A0AC7BE14905", hash_generated_field = "481669C62BD570C9F73ADCEE233E941C")
-
     
     private short mFormat;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:13:48.136 -0400", hash_original_field = "BB2B13C2A1ADE982E38F0A5B1CC4EBB3", hash_generated_field = "A50B04E0191FF635EDBF177D248F20B5")
@@ -117,6 +114,7 @@ private static void writeShort(OutputStream out, short val) throws IOException {
     /**
      * Construct a WaveHeader, with all fields defaulting to zero.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:13:48.141 -0400", hash_original_method = "97EB53FCD1385046D183D3B84D3EFDC0", hash_generated_method = "7A87D5A5389578D4361D0717F8B1E8C9")
     
 public WaveHeader() {

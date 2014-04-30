@@ -44,16 +44,15 @@ public class DiscardUDPClient extends DatagramSocketClient
     public static final int DEFAULT_PORT = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:55.937 -0500", hash_original_field = "91F1DB583CB61BDB6C036D49D41E43F2", hash_generated_field = "91F1DB583CB61BDB6C036D49D41E43F2")
 
-
     DatagramPacket _sendPacket;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:55.942 -0500", hash_original_method = "FF4EC507253E9DA2552C15FE5ECB96ED", hash_generated_method = "9B0D9952F4605AA62C83951E9C71DF87")
     
 public DiscardUDPClient()
     {
         _sendPacket = new DatagramPacket(new byte[0], 0);
     }
-
 
     /***
      * Sends the specified data to the specified server at the specified port.
@@ -78,7 +77,6 @@ public void send(byte[] data, int length, InetAddress host, int port)
         _socket_.send(_sendPacket);
     }
 
-
     /***
      * Same as
      * <code>send(data, length, host. DiscardUDPClient.DEFAULT_PORT)</code>.
@@ -90,7 +88,6 @@ public void send(byte[] data, int length, InetAddress host)
     {
         send(data, length, host, DEFAULT_PORT);
     }
-
 
     /***
      * Same as

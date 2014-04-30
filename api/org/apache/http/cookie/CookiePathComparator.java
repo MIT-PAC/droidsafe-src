@@ -12,6 +12,7 @@ public class CookiePathComparator implements Serializable, Comparator<Cookie> {
 
     private static final long serialVersionUID = 7523645369616405818L;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.138 -0400", hash_original_method = "29A50A9D1E136547D3D05BF6575A3E25", hash_generated_method = "29A50A9D1E136547D3D05BF6575A3E25")
     public CookiePathComparator ()
     {

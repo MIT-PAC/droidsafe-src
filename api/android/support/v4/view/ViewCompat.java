@@ -358,6 +358,7 @@ public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompa
 
     static  ViewCompatImpl IMPL;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.357 -0400", hash_original_method = "2D3AD98427119C7C46265965AF02446D", hash_generated_method = "2D3AD98427119C7C46265965AF02446D")
     public ViewCompat ()
     {

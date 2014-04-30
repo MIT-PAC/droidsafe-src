@@ -26,6 +26,7 @@ final class PipeImpl extends Pipe {
 
     private  PipeSourceChannel source;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.249 -0500", hash_original_method = "9FBC1B65DC8611548C416344C4B3828B", hash_generated_method = "83CBB9A1E2C73E3B207317EF44483184")
     
 public PipeImpl() throws IOException {

@@ -213,6 +213,7 @@ private static Bundle getBinderCounts() {
 
     private long mExecTime;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.739 -0500", hash_original_method = "405D2609A0193176D2AFC5D34E96663C", hash_generated_method = "95048C1E06FA66DBDE41482B341D09BD")
     
 public PerformanceCollector() {

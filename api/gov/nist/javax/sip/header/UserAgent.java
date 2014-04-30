@@ -22,6 +22,7 @@ public class UserAgent extends SIPHeader implements UserAgentHeader {
     /**
      * Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.744 -0500", hash_original_method = "92D698CE7378CD097EA41B036334F01C", hash_generated_method = "B26AE426956163A1512FF8A689376196")
     
 public UserAgent() {

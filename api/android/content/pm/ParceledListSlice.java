@@ -58,6 +58,7 @@ public ParceledListSlice[] newArray(int size) {
 
     private boolean mIsLastSlice;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.736 -0500", hash_original_method = "24B996F8F50716248E38E24116049A17", hash_generated_method = "117732B140E042977F7EDC522CE6B60A")
     
 public ParceledListSlice() {

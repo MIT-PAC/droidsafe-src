@@ -20,6 +20,7 @@ public class HeaderGroup implements Cloneable {
     /**
      * Constructor for HeaderGroup.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.687 -0500", hash_original_method = "04659297943FDC7530B5F805B712786E", hash_generated_method = "80BF1020C905672ED39C1585D02A9065")
     
 public HeaderGroup() {

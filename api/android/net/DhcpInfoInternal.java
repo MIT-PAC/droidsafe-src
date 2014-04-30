@@ -60,6 +60,7 @@ public class DhcpInfoInternal {
 
     private Collection<RouteInfo> mRoutes;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.913 -0500", hash_original_method = "C24463A395F151F1ED18C8AE3DD2E8F1", hash_generated_method = "D598DB2FEE11DEDC87D5D95BE8F56029")
     public DhcpInfoInternal() {
         mRoutes = new ArrayList<RouteInfo>();

@@ -23,6 +23,7 @@ public abstract class GeneralDigest implements ExtendedDigest {
     /**
      * Standard constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.038 -0500", hash_original_method = "33929E7FC3CB1C0A7849A234D0A1D124", hash_generated_method = "FBAD8AE896CBA798BFEACCA37936C14A")
     
 protected GeneralDigest()

@@ -39,6 +39,7 @@ public FeatureInfo[] newArray(int size) {
 
     public int flags;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.229 -0500", hash_original_method = "41B0CF3D831DF05554CAE06DC339C2C3", hash_generated_method = "C2DE53BB65835B07F932FDCB9F54E0DE")
     
 public FeatureInfo() {

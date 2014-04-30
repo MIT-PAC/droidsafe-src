@@ -275,6 +275,7 @@ public class MediaController extends FrameLayout {
         
 };
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.796 -0500", hash_original_method = "3C97480952764669863839416E96E876", hash_generated_method = "94596EE07B21FB06526340B7B4E93FC5")
     
 public MediaController(Context context, AttributeSet attrs) {

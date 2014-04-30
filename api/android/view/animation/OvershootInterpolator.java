@@ -13,6 +13,7 @@ public class OvershootInterpolator implements Interpolator {
 
     private  float mTension;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.409 -0500", hash_original_method = "3B6B46657965F6A20EBA4BBC6ADB2DCC", hash_generated_method = "73002248E41892E5A1F876CA5B1EB772")
     
 public OvershootInterpolator() {

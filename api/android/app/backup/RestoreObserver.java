@@ -5,11 +5,9 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class RestoreObserver {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.533 -0400", hash_original_method = "F9D1A298B1697AD74387E190133C441C", hash_generated_method = "F9D1A298B1697AD74387E190133C441C")
     public RestoreObserver ()
     {
@@ -72,7 +70,6 @@ public void onUpdate(int nowBeingRestored, String currentPackage) {
     
 public void restoreFinished(int error) {
     }
-
     
 }
 

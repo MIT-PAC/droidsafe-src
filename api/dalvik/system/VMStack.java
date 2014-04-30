@@ -30,6 +30,7 @@ public final class VMStack {
         return t.getTaintInt() + stackTraceElements.getTaintInt() + stackTraceElements[0].getTaintInt();
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.859 -0400", hash_original_method = "48F2A5F5D0FB61BCDEE57F0E62DA7F3A", hash_generated_method = "48F2A5F5D0FB61BCDEE57F0E62DA7F3A")
     public VMStack ()
     {

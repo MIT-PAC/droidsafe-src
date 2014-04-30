@@ -104,18 +104,21 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
 
     private Runnable mPendingCheckForTap;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.431 -0500", hash_original_method = "5A28C6E6B4D6383379224D19746F7CDC", hash_generated_method = "F8A11874EB4985473EE0C2CA9B2C56F0")
     
 public AdapterViewAnimator(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.434 -0500", hash_original_method = "ADD24FA1FA279C1B8387D7B0109F9EEC", hash_generated_method = "AB6BC801BD81C35C61A819C26913A433")
     
 public AdapterViewAnimator(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.437 -0500", hash_original_method = "C5643612A08EABEF3EDB2D9CFA87FEC7", hash_generated_method = "F6C673D6425F0E1F00DFBD5760BB6E60")
     
 public AdapterViewAnimator(Context context, AttributeSet attrs, int defStyleAttr) {

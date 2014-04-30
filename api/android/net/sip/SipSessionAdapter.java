@@ -5,11 +5,9 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class SipSessionAdapter extends ISipSessionListener.Stub {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.742 -0400", hash_original_method = "9DC88F582875C7B48FD10A36B308060E", hash_generated_method = "9DC88F582875C7B48FD10A36B308060E")
     public SipSessionAdapter ()
     {
@@ -84,7 +82,6 @@ public void onRegistrationFailed(ISipSession session, int errorCode,
     
 public void onRegistrationTimeout(ISipSession session) {
     }
-
     
 }
 

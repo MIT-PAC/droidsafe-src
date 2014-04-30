@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.view.MotionEvent;
 
-
-
-
 class MotionEventCompatEclair {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.499 -0500", hash_original_method = "4532F0A9C8412F2F18F248FA9DC36704", hash_generated_method = "07394EB775CDD65867A9302D3C85D64A")
     
@@ -36,12 +33,12 @@ public static int getPointerCount(MotionEvent event) {
         return event.getPointerCount();
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.302 -0400", hash_original_method = "5ACF9ABC04422C9663D1A845A64C1366", hash_generated_method = "5ACF9ABC04422C9663D1A845A64C1366")
     public MotionEventCompatEclair ()
     {
         //Synthesized constructor
     }
-
     
 }
 

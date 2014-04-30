@@ -34,6 +34,7 @@ public static ASN1Any getInstance() {
      * To get a default implementation it is recommended to use
      * getInstance() method.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.215 -0500", hash_original_method = "DC9940F4B091FD322F1F3A80DE5DA9F7", hash_generated_method = "DB9067BFFCD040D7590D1C209BF6EF7C")
     
 public ASN1Any() {

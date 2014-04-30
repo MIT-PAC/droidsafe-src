@@ -66,6 +66,7 @@ private static CookieOrigin adjustEffectiveHost(final CookieOrigin origin) {
      * Default constructor 
      * 
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.698 -0500", hash_original_method = "0C9AFF04E5BAABEBA18893034F65C0B5", hash_generated_method = "77B409F61B87ACCB7BC9C1AE9C45590A")
     
 public RFC2965Spec() {

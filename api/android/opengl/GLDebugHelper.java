@@ -9,11 +9,6 @@ import java.io.Writer;
 import javax.microedition.khronos.egl.EGL;
 import javax.microedition.khronos.opengles.GL;
 
-
-
-
-
-
 public class GLDebugHelper {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.269 -0500", hash_original_method = "3FDF6703384D4E41EEF76E141F8C8728", hash_generated_method = "3D57EDEF1159FF57CAACEB711656CD59")
@@ -49,7 +44,6 @@ public static EGL wrap(EGL egl, int configFlags, Writer log) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.260 -0500", hash_original_field = "8634DC21B60A7745545626CDA1664051", hash_generated_field = "E70990D438E81EE44253E4CB5AF689BC")
 
-
     /**
      * Check glError() after every call.
      */
@@ -64,6 +58,7 @@ public static EGL wrap(EGL egl, int configFlags, Writer log) {
 
     public static final int ERROR_WRONG_THREAD = 0x7000;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.927 -0400", hash_original_method = "E7190AE5B0A4A36A0341193EE8AF97D9", hash_generated_method = "E7190AE5B0A4A36A0341193EE8AF97D9")
     public GLDebugHelper ()
     {

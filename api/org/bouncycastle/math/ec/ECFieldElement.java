@@ -9,6 +9,7 @@ import java.util.Random;
 
 public abstract class ECFieldElement implements ECConstants {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.559 -0400", hash_original_method = "18B929116CB81747CE726807F2C6A2C0", hash_generated_method = "18B929116CB81747CE726807F2C6A2C0")
     public ECFieldElement ()
     {

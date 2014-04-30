@@ -392,6 +392,7 @@ public IKeyChainService getService() {
     // Compatible with old android.security.Credentials.PKCS12
     public static final String EXTRA_PKCS12 = "PKCS12";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.021 -0400", hash_original_method = "72F463E9A92E033797A9FA0AB2D9F5CF", hash_generated_method = "72F463E9A92E033797A9FA0AB2D9F5CF")
     public KeyChain ()
     {

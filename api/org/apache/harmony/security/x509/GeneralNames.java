@@ -38,6 +38,7 @@ public final class GeneralNames {
 
     private byte[] encoding;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.575 -0500", hash_original_method = "900922C5A2333ABDC3D6DB9D2843B6C9", hash_generated_method = "8EEE6CC0CA35A8F9FFE56BB73F14D846")
     
 public GeneralNames() {

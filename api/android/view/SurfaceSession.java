@@ -16,7 +16,6 @@
 
 package android.view;
 
-
 /**
  * An instance of this class represents a connection to the surface
  * flinger, in which you can create one or more Surface instances that will
@@ -28,10 +27,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 public class SurfaceSession {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:51.073 -0500", hash_original_field = "2F6FF5EA29921F70A9C5DDA8BCF79233", hash_generated_field = "3E3D5E9063EF194136095621B51E9E94")
-
     
     private int mClient;
     /** Create a new connection with the surface flinger. */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:51.061 -0500", hash_original_method = "3090E932217661E4843C4AD83F04C6C8", hash_generated_method = "D9A3006296F54DC57E69AF99BF01795B")
     public SurfaceSession() {
         init();

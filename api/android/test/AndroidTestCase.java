@@ -13,19 +13,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-
-
-
-
 public class AndroidTestCase extends TestCase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.465 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
-
 
     protected Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.467 -0500", hash_original_field = "04AD68CC6EA94CE4EAEB7BB7E922A064", hash_generated_field = "4100C2793C522C9FB77478AD95CF578C")
 
     private Context mTestContext;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.283 -0400", hash_original_method = "FA9720D40CDC95CCAA7E59BD6F9C75E3", hash_generated_method = "FA9720D40CDC95CCAA7E59BD6F9C75E3")
     public AndroidTestCase ()
     {
@@ -118,7 +114,6 @@ public void assertActivityRequiresPermission(
         }
     }
 
-
     /**
      * Asserts that reading from the content uri requires a particular permission by querying the
      * uri and ensuring a {@link SecurityException} is thrown mentioning the particular permission.
@@ -191,7 +186,6 @@ protected void scrubClass(final Class<?> testCaseClass)
             }
         }
     }
-
     
 }
 

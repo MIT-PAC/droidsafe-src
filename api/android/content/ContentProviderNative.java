@@ -49,6 +49,7 @@ static public IContentProvider asInterface(IBinder obj)
 
     private static final String TAG = "ContentProvider";
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.809 -0500", hash_original_method = "AF85EE1D14BCBAFA210CD4FE8D0D0EAA", hash_generated_method = "CFE5E0066E05F25A806F951AD41ED017")
     
 public ContentProviderNative()

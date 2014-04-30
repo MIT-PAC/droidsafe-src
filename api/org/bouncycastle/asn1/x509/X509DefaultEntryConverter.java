@@ -13,12 +13,9 @@ import org.bouncycastle.asn1.DERObjectIdentifier;
 import org.bouncycastle.asn1.DERPrintableString;
 import org.bouncycastle.asn1.DERUTF8String;
 
-
-
-
-
 public class X509DefaultEntryConverter extends X509NameEntryConverter {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.011 -0400", hash_original_method = "685C200736A0E688088DFBD6E10169A1", hash_generated_method = "685C200736A0E688088DFBD6E10169A1")
     public X509DefaultEntryConverter ()
     {
@@ -72,7 +69,6 @@ public DERObject getConvertedValue(
         
         return new DERUTF8String(value);
     }
-
     
 }
 

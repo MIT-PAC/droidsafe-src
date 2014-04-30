@@ -37,6 +37,7 @@ public DefaultHttpRequestRetryHandler(int retryCount, boolean requestSentRetryEn
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.150 -0500", hash_original_method = "5F4132CBD367F2EB70F7284BB1D2E959", hash_generated_method = "AD0DC257A3D41506A418B6E40F879F9E")
     
 public DefaultHttpRequestRetryHandler() {

@@ -190,7 +190,8 @@ Encoding(String expatName) {
             this.expatName = expatName;
         }
     }
-    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.324 -0500", hash_original_method = "6C88D7BAFDCBAE4F23C5F1A45165C3FD", hash_generated_method = "08859956CBF946AC287CC885505E1037")
+    /** @hide */ @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.324 -0500", hash_original_method = "6C88D7BAFDCBAE4F23C5F1A45165C3FD", hash_generated_method = "08859956CBF946AC287CC885505E1037")
     
 public Xml() {}
 }

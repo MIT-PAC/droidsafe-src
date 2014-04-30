@@ -87,6 +87,7 @@ public class MD5Digest extends GeneralDigest {
     /**
      * Standard constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:31.761 -0500", hash_original_method = "CA98629A68DF074D716C2EED7E360A30", hash_generated_method = "D16AFD0F211EF85EF9DCA2E0F0F2606C")
     
 public MD5Digest()

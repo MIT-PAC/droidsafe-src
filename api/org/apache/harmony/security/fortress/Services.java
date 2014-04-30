@@ -241,6 +241,7 @@ public static void refresh() {
 
     private static final Map<String, Provider> providersNames = new HashMap<String, Provider>(20);
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.030 -0400", hash_original_method = "719D73AD00F3F6FC30282996B569C5B0", hash_generated_method = "719D73AD00F3F6FC30282996B569C5B0")
     public Services ()
     {

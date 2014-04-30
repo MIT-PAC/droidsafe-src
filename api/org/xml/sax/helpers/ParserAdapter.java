@@ -104,6 +104,7 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
      *            cannot be instantiated or if the
      *            org.xml.sax.parser property is not specified.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.265 -0500", hash_original_method = "6A3B211FACF5438B3BC1ECD3BFD1BA43", hash_generated_method = "544C0D3DAB56E3314810F0B4B486C230")
     
 public ParserAdapter ()

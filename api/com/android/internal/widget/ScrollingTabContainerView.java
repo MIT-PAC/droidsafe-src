@@ -70,6 +70,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
 
     protected final VisibilityAnimListener mVisAnimListener = new VisibilityAnimListener();
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.700 -0500", hash_original_method = "B354C67837F2A6192494F63E2EFB003B", hash_generated_method = "AA9DC1D9C1C54B4AEA3061EC1CAF2A5B")
     
 public ScrollingTabContainerView(Context context) {

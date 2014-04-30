@@ -27,6 +27,7 @@ public class SubscriptionState extends ParametersHeader implements SubscriptionS
     protected String state;
 
     /** Creates a new instance of SubscriptionState */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.906 -0500", hash_original_method = "2AE8767260EE49A022E5D260FFA8A02D", hash_generated_method = "BCB85E6C5BD5F2DE055E2E90D28EE64A")
     
 public SubscriptionState() {

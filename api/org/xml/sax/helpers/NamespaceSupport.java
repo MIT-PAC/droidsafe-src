@@ -56,6 +56,7 @@ public class NamespaceSupport {
     /**
      * Create a new Namespace support object.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.362 -0500", hash_original_method = "1F62AD2938072A93E19EAFFCDA555D07", hash_generated_method = "E522C6EE17CC779935F0D04DE1F1F350")
     
 public NamespaceSupport ()

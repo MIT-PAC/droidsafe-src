@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.security.GeneralSecurityException;
 
-
-
-
 public class InvalidParameterSpecException extends GeneralSecurityException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.010 -0500", hash_original_field = "BA17B4FB265B7E555FAC823B44C2A1C2", hash_generated_field = "D7B23BABA4FB334103D8F72DD98A7A49")
 
@@ -21,6 +18,7 @@ public class InvalidParameterSpecException extends GeneralSecurityException {
      * @param msg
      *            the detail message for this exception.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.012 -0500", hash_original_method = "4F41FA7C8D97BC8BFE10106F914E22B9", hash_generated_method = "91F2E20D6EC1D690792217B1643F9979")
     
 public InvalidParameterSpecException(String msg) {
@@ -30,6 +28,7 @@ public InvalidParameterSpecException(String msg) {
     /**
      * Creates a new {@code InvalidParameterSpecException}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.015 -0500", hash_original_method = "8EAE2A7FB2FA88B3FDA40537BCBC1806", hash_generated_method = "45BA54F57967D5B879775B1EE5635F1D")
     
 public InvalidParameterSpecException() {

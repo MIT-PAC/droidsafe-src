@@ -27,6 +27,7 @@ public class TimeStamp extends SIPHeader implements TimeStampHeader {
     /**
      * Default Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.142 -0500", hash_original_method = "02FBDC0E6C2AA0154E61A684C5364628", hash_generated_method = "224AF76B92873CD39BAFF4F7188111B3")
     
 public TimeStamp() {

@@ -28,6 +28,7 @@ public abstract class FragmentTransaction {
 
     public static final int TRANSIT_FRAGMENT_FADE = 3 | TRANSIT_ENTER_MASK;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.445 -0400", hash_original_method = "B5A603083BF658FD0649843C639EBB28", hash_generated_method = "B5A603083BF658FD0649843C639EBB28")
     public FragmentTransaction ()
     {

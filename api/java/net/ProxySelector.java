@@ -32,6 +32,7 @@ public static void setDefault(ProxySelector selector) {
 
     private static ProxySelector defaultSelector = new ProxySelectorImpl();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.322 -0400", hash_original_method = "58B949A565A2A9912CEB4CE07BFCA43A", hash_generated_method = "58B949A565A2A9912CEB4CE07BFCA43A")
     public ProxySelector ()
     {

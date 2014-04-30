@@ -30,6 +30,7 @@ public class LocalSocket {
     /**
      * Creates a AF_LOCAL/UNIX domain stream socket.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.186 -0500", hash_original_method = "FEA4ACACBEC27CDC2E19A445360CDF2B", hash_generated_method = "BB97870F58D7F42B8A597BDBDE78E2D6")
     
 public LocalSocket() {

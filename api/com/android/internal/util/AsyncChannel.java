@@ -88,6 +88,7 @@ private static void log(String s) {
     /**
      * AsyncChannel constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.467 -0500", hash_original_method = "FDD6D3EF5F7BC7D6883E0BF7536BB913", hash_generated_method = "7B270163FB00B2D668E83F5F3AC47A37")
     
 public AsyncChannel() {

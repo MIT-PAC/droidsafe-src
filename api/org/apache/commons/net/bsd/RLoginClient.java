@@ -75,13 +75,13 @@ public class RLoginClient extends RCommandClient
      * The default RLoginClient constructor.  Initializes the
      * default port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.372 -0500", hash_original_method = "137F9E248231F2FA54CF674E7086700C", hash_generated_method = "37B44EAC1C6E84FF6770EF17014684A2")
     
 public RLoginClient()
     {
         setDefaultPort(DEFAULT_PORT);
     }
-
 
     /***
      * Logins into a remote machine through the rlogind daemon on the server

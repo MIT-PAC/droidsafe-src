@@ -625,6 +625,7 @@ public static final void requestAllIcons(ContentResolver cr, String where,
 
     public final static String EXTRA_SHARE_FAVICON = "share_favicon";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.002 -0400", hash_original_method = "B2A4FF14215B3ADDA31B48F394E70575", hash_generated_method = "B2A4FF14215B3ADDA31B48F394E70575")
     public Browser ()
     {

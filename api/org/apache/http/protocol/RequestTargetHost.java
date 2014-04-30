@@ -17,10 +17,9 @@ import org.apache.http.HttpVersion;
 import org.apache.http.ProtocolException;
 import org.apache.http.ProtocolVersion;
 
-
-
 public class RequestTargetHost implements HttpRequestInterceptor {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.161 -0500", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "2DA67DBB12ACDFB89AED93D7A8F52839")
     
 public RequestTargetHost() {
@@ -64,7 +63,6 @@ public void process(final HttpRequest request, final HttpContext context)
             request.addHeader(HTTP.TARGET_HOST, targethost.toHostString());
         }
     }
-
     
 }
 

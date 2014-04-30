@@ -18,6 +18,7 @@ public class MediaRange extends SIPObject {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.989 -0500", hash_original_method = "A8D138215FF2330241D1163A7469BE2F", hash_generated_method = "332D28D485461FAA474C57BB36549724")
     
 public MediaRange() {

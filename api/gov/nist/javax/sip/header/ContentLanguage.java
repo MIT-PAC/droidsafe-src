@@ -14,6 +14,7 @@ public class ContentLanguage extends SIPHeader implements javax.sip.header.Conte
 
     protected Locale locale;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.727 -0500", hash_original_method = "04F34AE7A99F7FC60EC2CE238423FC91", hash_generated_method = "C1C43149E28DA7A6DC93F17973FCBD19")
     
 public ContentLanguage() {

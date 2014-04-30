@@ -220,6 +220,7 @@ private static X509Certificate findCert(Principal issuer, X509Certificate[] cand
     private static final int[] MESSAGE_DIGEST_OID =
         new int[] {1, 2, 840, 113549, 1, 9, 4};
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.425 -0400", hash_original_method = "C4E6A9DD3A1CC4544C825D59A384053A", hash_generated_method = "C4E6A9DD3A1CC4544C825D59A384053A")
     public JarUtils ()
     {

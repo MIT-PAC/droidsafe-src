@@ -5,19 +5,15 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class WaitingThreadAborter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.342 -0500", hash_original_field = "F1A0AC4A2E7C774F3DAB11506EBBCA82", hash_generated_field = "C79D835D74C6AC2AE8A11E51B7EFA777")
-
     
     private WaitingThread waitingThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.344 -0500", hash_original_field = "D257EA6B1465C401242DE11DC61376AA", hash_generated_field = "7C8E769DDEE22768B70313CCC815CA01")
 
     private boolean aborted;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.510 -0400", hash_original_method = "41E9B73CB6D6B9988302B233DF5A4C64", hash_generated_method = "41E9B73CB6D6B9988302B233DF5A4C64")
     public WaitingThreadAborter ()
     {
@@ -50,7 +46,6 @@ public void setWaitingThread(WaitingThread waitingThread) {
         if (aborted)
             waitingThread.interrupt();
     }
-
     
 }
 

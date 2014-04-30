@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.microedition.khronos.egl.EGLSurface;
 
-
-
-
-
-
 public class EGLSurfaceImpl extends EGLSurface {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.658 -0500", hash_original_field = "296DD015E00E19A6AFBFBEA67F8ACDA3", hash_generated_field = "296DD015E00E19A6AFBFBEA67F8ACDA3")
 
@@ -18,6 +13,7 @@ public class EGLSurfaceImpl extends EGLSurface {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.660 -0500", hash_original_field = "56DA9E94FD7AA86E5CD2913D51F85F53", hash_generated_field = "76B5871A33DA54FE461481FECA9BEAF0")
 
     private int mNativePixelRef;
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.662 -0500", hash_original_method = "86437EA058F070B58780D104343F6F45", hash_generated_method = "0723C6460ED17317E4124F3363AEBCA3")
     
 public EGLSurfaceImpl() {
@@ -50,7 +46,6 @@ public EGLSurfaceImpl(int surface) {
     public int hashCode() {
         return mEGLSurface;
     }
-
     
 }
 

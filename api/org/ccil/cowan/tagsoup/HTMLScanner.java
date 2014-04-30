@@ -440,6 +440,7 @@ private static String nicechar(int in) {
 		0xFFFD, 0x2018, 0x2019, 0x201C, 0x201D, 0x2022, 0x2013, 0x2014,
 		0x02DC, 0x2122, 0x0161, 0x203A, 0x0153, 0xFFFD, 0x017E, 0x0178};
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.835 -0400", hash_original_method = "A8030374AECACF3BB4D2A2FA58C4A7D8", hash_generated_method = "A8030374AECACF3BB4D2A2FA58C4A7D8")
     public HTMLScanner ()
     {

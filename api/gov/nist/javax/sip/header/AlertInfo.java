@@ -23,6 +23,7 @@ public final class AlertInfo extends ParametersHeader implements javax.sip.heade
 
     /** Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.661 -0500", hash_original_method = "573DE3A32F61321788993C5785A09259", hash_generated_method = "05A7F92A5AB73275159FE69FD9E5483B")
     
 public AlertInfo() {

@@ -10,10 +10,9 @@ import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-
-
 public class BasicDomainHandler implements CookieAttributeHandler {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.636 -0500", hash_original_method = "3582ADBB5BDD47EB6552162B7BD8CF14", hash_generated_method = "D8DEDBB3B8F867A8A1B8836B4222678A")
     
 public BasicDomainHandler() {
@@ -102,7 +101,6 @@ public boolean match(final Cookie cookie, final CookieOrigin origin) {
         }
         return host.endsWith(domain) || host.equals(domain.substring(1));
     }
-
     
 }
 

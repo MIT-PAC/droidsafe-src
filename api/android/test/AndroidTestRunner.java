@@ -45,6 +45,7 @@ public class AndroidTestRunner extends BaseTestRunner {
 
     private PerformanceResultsWriter mPerfWriter;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.343 -0400", hash_original_method = "2722F23348F424AF929858C44CF90573", hash_generated_method = "2722F23348F424AF929858C44CF90573")
     public AndroidTestRunner ()
     {

@@ -13,6 +13,7 @@ import javax.sip.header.ExtensionHeader;
 
 public class PProfileKey extends AddressParametersHeader implements PProfileKeyHeader, SIPHeaderNamesIms, ExtensionHeader {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.714 -0500", hash_original_method = "62A39FCB1E97FABE3CE56B88DF28D500", hash_generated_method = "E6217F21E92E9525E5A60A2562FACB76")
     
 public PProfileKey( ) {

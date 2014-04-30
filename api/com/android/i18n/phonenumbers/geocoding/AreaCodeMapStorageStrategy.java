@@ -18,7 +18,8 @@ abstract class AreaCodeMapStorageStrategy {
 
   protected final TreeSet<Integer> possibleLengths = new TreeSet<Integer>();
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.963 -0500", hash_original_method = "552FE922C6186E104B342E1C364AC348", hash_generated_method = "23406EDC9C84BF42534B33340C50DEFB")
+  @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.963 -0500", hash_original_method = "552FE922C6186E104B342E1C364AC348", hash_generated_method = "23406EDC9C84BF42534B33340C50DEFB")
     
 public AreaCodeMapStorageStrategy() {}
 

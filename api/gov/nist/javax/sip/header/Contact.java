@@ -41,6 +41,7 @@ public final class Contact extends AddressParametersHeader implements javax.sip.
 
     /** Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.595 -0500", hash_original_method = "91EC1BE71FCEDDA82A3A1E5DD0E8F369", hash_generated_method = "C2E35331058AC0FEDE392895A2E0540F")
     
 public Contact() {

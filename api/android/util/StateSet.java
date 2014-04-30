@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.R;
 
-
-
-
-
-
 public class StateSet {
 
     /**
@@ -161,12 +156,12 @@ public static String dump(int[] states) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.369 -0500", hash_original_field = "79D0C37080C510F8FE894AED6839F7EB", hash_generated_field = "BBCDB5A3ADE5DE7629B847ADCE0E35A0")
 
-
     public static final int[] WILD_CARD = new int[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.371 -0500", hash_original_field = "7089E518E3F996A9D873AB431350B75E", hash_generated_field = "FAD61E8722399A25F2FC6B2DDAC2CAD2")
 
     public static final int[] NOTHING = new int[] { 0 };
-    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.366 -0500", hash_original_method = "79AB7B9503F54BBEB1788CC595AD92D4", hash_generated_method = "488F22D2CBEC08C5F9781ED20E8E125F")
+    /** @hide */ @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.366 -0500", hash_original_method = "79AB7B9503F54BBEB1788CC595AD92D4", hash_generated_method = "488F22D2CBEC08C5F9781ED20E8E125F")
     
 public StateSet() {}
 }

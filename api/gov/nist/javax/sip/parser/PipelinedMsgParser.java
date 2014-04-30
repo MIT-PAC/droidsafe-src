@@ -47,6 +47,7 @@ private static synchronized int getNewUid() {
     /**
      * default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.955 -0500", hash_original_method = "E22CE959BAB24F19C875E84872180E07", hash_generated_method = "2C194672D47C6EEA080B4FF20D4E0703")
     
 protected PipelinedMsgParser() {

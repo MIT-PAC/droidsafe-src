@@ -26,6 +26,7 @@ public ServiceRoute(AddressImpl address) {
     /**
      * default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.388 -0500", hash_original_method = "DFE1A15880B80307A8195E7AA915629C", hash_generated_method = "B5AFD475FF0665ED6A60C95F14F88ADA")
     
 public ServiceRoute() {

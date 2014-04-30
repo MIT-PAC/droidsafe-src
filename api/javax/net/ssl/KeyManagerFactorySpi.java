@@ -15,6 +15,7 @@ public abstract class KeyManagerFactorySpi {
     /**
      * Creates a new {@code KeyManagerFactorySpi} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.279 -0500", hash_original_method = "6A7E81CC9CE1799ACFD008A7DC048460", hash_generated_method = "F5CC1388BD4584472660C93AE5203C58")
     
 public KeyManagerFactorySpi() {

@@ -167,6 +167,7 @@ public class SlidingDrawer extends ViewGroup {
      * @param context The application's environment.
      * @param attrs The attributes defined in XML.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.688 -0500", hash_original_method = "0C587242BBF05ECC28F9594E1E56F522", hash_generated_method = "751231F7332979B8B118A367DDB23774")
     
 public SlidingDrawer(Context context, AttributeSet attrs) {
@@ -180,6 +181,7 @@ public SlidingDrawer(Context context, AttributeSet attrs) {
      * @param attrs The attributes defined in XML.
      * @param defStyle The style to apply to this widget.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.692 -0500", hash_original_method = "C8EE8FBE152C147E7717480946CCA8E7", hash_generated_method = "8E73886E17112DE14A0E5AD4F36CD4DA")
     
 public SlidingDrawer(Context context, AttributeSet attrs, int defStyle) {

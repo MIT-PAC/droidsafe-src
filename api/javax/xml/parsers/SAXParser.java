@@ -28,6 +28,7 @@ public abstract class SAXParser {
      * <p>Protected constructor to prevent instantiation.
      * Use {@link javax.xml.parsers.SAXParserFactory#newSAXParser()}.</p>
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.672 -0500", hash_original_method = "60861A80C08610A003AEF9BD086AC67B", hash_generated_method = "956B7A546D3F4BF1BA883D180DA1FB4A")
     
 protected SAXParser () {

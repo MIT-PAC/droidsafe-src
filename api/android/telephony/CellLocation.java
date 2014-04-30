@@ -80,6 +80,7 @@ public static CellLocation getEmpty() {
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.070 -0400", hash_original_method = "18EEA113758CA529F35B4B776EC100D9", hash_generated_method = "18EEA113758CA529F35B4B776EC100D9")
     public CellLocation ()
     {

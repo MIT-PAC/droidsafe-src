@@ -38,54 +38,46 @@ import android.text.Layout;
  */
 public final class IconMenuItemView extends TextView implements MenuView.ItemView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.120 -0400", hash_original_field = "F40A65A0161E245EB9410D7A796FE9B3", hash_generated_field = "0FC0F1E74EFFD499D7E9EC90666C1A5B")
-
     
     private static final int NO_ALPHA = 0xFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.134 -0400", hash_original_field = "59B421A8FE3BC25F62030250529693D7", hash_generated_field = "FC531438BE18962F76B22C0A35F07352")
-
     
     private static String sPrependShortcutLabel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.121 -0400", hash_original_field = "DCCB6493F341F9AED8C66CE3143E378A", hash_generated_field = "F84531E38F2FCF9F5A9F318DF05E11F8")
-
     
     private IconMenuView mIconMenuView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.122 -0400", hash_original_field = "04D7C0759CCBFA2E3CE809820984D44F", hash_generated_field = "D2D54C24932B8B9548FB244B0C3E4266")
-
     
     private ItemInvoker mItemInvoker;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.123 -0400", hash_original_field = "DBB703567F4F0AD8C976E510ACED07CC", hash_generated_field = "B32E7CB0DF6786FBC4DDA7C50169A79B")
 
     private MenuItemImpl mItemData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.125 -0400", hash_original_field = "D2DFC3A60DC024AFBB674A2D69ECB436", hash_generated_field = "FFB83F2A7C9A877B036AAEB7C21DDF6E")
- 
     
     private Drawable mIcon;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.126 -0400", hash_original_field = "12897BEF89A4C72FECFFDFE7F1200971", hash_generated_field = "E1363564E2F8BE551770EA738359CA9A")
-
     
     private int mTextAppearance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.127 -0400", hash_original_field = "79934C5A9636D82AF51CC71C9BB83C43", hash_generated_field = "FABF004F46FE66709A563A85D0AA3A43")
 
     private Context mTextAppearanceContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.128 -0400", hash_original_field = "C7A330BE7142327056539F5ED284903D", hash_generated_field = "BE45430B4E582ECC76FDAE96B324FF18")
-
     
     private float mDisabledAlpha;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.129 -0400", hash_original_field = "4FF807289BB442CD7A293263C1B97554", hash_generated_field = "7F2AAB3196817165636438306614137E")
-
 
     private Rect mPositionIconAvailable = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.130 -0400", hash_original_field = "55A7AB3ED9A573FE7433EBFE5919291E", hash_generated_field = "8094973E932B3E44C1D67FDB46FBAE57")
 
     private Rect mPositionIconOutput = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.131 -0400", hash_original_field = "0808000BC906BBFFF9347349D6CEF4D2", hash_generated_field = "B974C6A55EADCFD20CCECF43CCCF46A3")
-
     
     private boolean mShortcutCaptionMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.132 -0400", hash_original_field = "5829ED07E1B99332CFBD705AF3039B46", hash_generated_field = "9F852047E3713B4D362B0C9DE43574F4")
 
     private String mShortcutCaption;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.135 -0400", hash_original_method = "333E717CC82B8C7442AB1D0ECD021DDF", hash_generated_method = "6F6B0D78E1CF377096D851457BF351AE")
     
 public IconMenuItemView(Context context, AttributeSet attrs, int defStyle) {
@@ -113,6 +105,7 @@ public IconMenuItemView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.136 -0400", hash_original_method = "E8E8FF94AF2AEB616F5543925159C808", hash_generated_method = "9F99E7611BDC55B34DAF01DA96E1EDFE")
     
 public IconMenuItemView(Context context, AttributeSet attrs) {

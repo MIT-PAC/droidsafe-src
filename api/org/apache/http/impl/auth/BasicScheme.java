@@ -66,6 +66,7 @@ public static Header authenticate(
     /**
      * Default constructor for the basic authetication scheme.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.890 -0500", hash_original_method = "34C51F903ABE689F4DFB975D927E1D44", hash_generated_method = "7E698B321E9117B4B56D78F5DF699EBE")
     
 public BasicScheme() {

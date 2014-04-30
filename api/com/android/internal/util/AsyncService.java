@@ -35,6 +35,7 @@ abstract public class AsyncService extends Service {
 
     AsyncServiceInfo mAsyncServiceInfo;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.610 -0400", hash_original_method = "CDBBAD55BFC0A5CC84037EA07FE5935A", hash_generated_method = "CDBBAD55BFC0A5CC84037EA07FE5935A")
     public AsyncService ()
     {

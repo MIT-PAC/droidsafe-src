@@ -15,8 +15,6 @@ import org.apache.http.cookie.CookieAttributeHandler;
 import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 
-
-
 public abstract class CookieSpecBase extends AbstractCookieSpec {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.325 -0500", hash_original_method = "30B41D24286C7189E29DEA64831989FB", hash_generated_method = "EF5417DA86A84284985159116ECAF0D6")
@@ -40,6 +38,7 @@ protected static String getDefaultDomain(final CookieOrigin origin) {
         return origin.getHost();
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.806 -0400", hash_original_method = "934E7FA8F396BCCDD4329254EAF6D731", hash_generated_method = "934E7FA8F396BCCDD4329254EAF6D731")
     public CookieSpecBase ()
     {
@@ -111,7 +110,6 @@ public boolean match(final Cookie cookie, final CookieOrigin origin) {
         }
         return true;
     }
-
     
 }
 

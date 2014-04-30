@@ -63,6 +63,7 @@ public DhcpInfo[] newArray(int size) {
 
     public int leaseDuration;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.817 -0500", hash_original_method = "C1DF7E5F229CB04932AB2C91464EDDF1", hash_generated_method = "277E1F8AB1BB05F0D3B5C79F1B46AC7E")
     
 public DhcpInfo() {

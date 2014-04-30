@@ -20,6 +20,7 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
     /**
      * Defaul Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.501 -0500", hash_original_method = "8D7038EECA0B07E6CABE7C4563FEE1B0", hash_generated_method = "97630B1F07A042D4DB456E7449447A07")
     
 public PChargingFunctionAddresses() {

@@ -15,6 +15,7 @@ IccVmFixedException()
 
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.163 -0500", hash_original_method = "765EFB197D88CEFF63C1DCD793F9D41E", hash_generated_method = "DB8D00A2E70B50165965DAB4D7ADE2F7")
     
 public IccVmFixedException(String s)

@@ -19,6 +19,7 @@ public final class From extends AddressParametersHeader implements javax.sip.hea
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.047 -0500", hash_original_method = "A8AF16A2B82DF0D28539600E0CD03867", hash_generated_method = "899EB84ED191678A55E747A0C61E3112")
     
 public From() {

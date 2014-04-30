@@ -10,10 +10,9 @@ import gov.nist.javax.sip.stack.MessageProcessor;
 
 import javax.sip.address.Hop;
 
-
-
 public class DefaultAddressResolver implements AddressResolver {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.383 -0500", hash_original_method = "DF566229E3B5A08AB8CBD467E13866C4", hash_generated_method = "B406D79324664E28CC70541D3A8B451C")
     
 public DefaultAddressResolver() {
@@ -33,7 +32,6 @@ public Hop resolveAddress(Hop inputAddress) {
                     MessageProcessor.getDefaultPort(inputAddress.getTransport()),inputAddress.getTransport());
         }
     }
-
     
 }
 

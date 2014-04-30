@@ -115,6 +115,7 @@ public static String getLocalisedString(int id) {
 
     private static Map<Integer, SoftReference<String> > mStrings;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.295 -0400", hash_original_method = "E0BD4E5359B29F1B1ED75AB21E0F35C1", hash_generated_method = "E0BD4E5359B29F1B1ED75AB21E0F35C1")
     public L10nUtils ()
     {

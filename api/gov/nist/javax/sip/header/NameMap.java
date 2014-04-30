@@ -206,6 +206,7 @@ private static void initializeNameMap() {
 
     static Hashtable nameMap;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.605 -0400", hash_original_method = "4E6FA555129DB964A8E35D51AC605671", hash_generated_method = "4E6FA555129DB964A8E35D51AC605671")
     public NameMap ()
     {

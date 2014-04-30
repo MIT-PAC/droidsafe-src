@@ -11,6 +11,7 @@ public class HttpTransportMetricsImpl implements HttpTransportMetrics {
 
     private long bytesTransferred = 0;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.382 -0500", hash_original_method = "7D2D78BCCD20A0F0768C108C18222508", hash_generated_method = "5F095FB2C9B4C0EB13FBD76A4AF11235")
     
 public HttpTransportMetricsImpl() {

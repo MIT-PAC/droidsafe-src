@@ -25,6 +25,7 @@ public class ComponentInfo extends PackageItemInfo {
 
     public boolean exported = false;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.123 -0500", hash_original_method = "40B8C3B7DAB12BDDED651BA5685CD836", hash_generated_method = "FEDD4837038806A793BB3B640CA381C3")
     
 public ComponentInfo() {

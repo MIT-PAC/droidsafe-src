@@ -291,6 +291,7 @@ public PopupWindow(Context context, AttributeSet attrs, int defStyleAttr, int de
      * <p>The popup does not provide any background. This should be handled
      * by the content view.</p>
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.957 -0500", hash_original_method = "E34384426EB8697F688915D9E72B588C", hash_generated_method = "A33D4E1EFE4B410E56E7CFC190D37881")
     
 public PopupWindow() {

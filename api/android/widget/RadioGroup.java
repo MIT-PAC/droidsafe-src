@@ -45,6 +45,7 @@ public RadioGroup(Context context) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.167 -0500", hash_original_method = "90AD2839FB0C3C5CF6A003259AE74157", hash_generated_method = "69E782FDA7881A382953429DF0F9F7B4")
     
 public RadioGroup(Context context, AttributeSet attrs) {

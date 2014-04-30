@@ -93,10 +93,8 @@ public class NNTP extends SocketClient
     private static final String __DEFAULT_ENCODING = "ISO-8859-1";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:09.042 -0500", hash_original_field = "5851BF2FEF5A8535EAD5AA9837C9C499", hash_generated_field = "B44FD5DD0C96DE651EF02982D44EF837")
 
-
     private StringBuffer __commandBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:09.044 -0500", hash_original_field = "DB5F342E07F2229507AC31C58B3E5E99", hash_generated_field = "DB5F342E07F2229507AC31C58B3E5E99")
-
 
     boolean _isAllowedToPost;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:09.053 -0500", hash_original_field = "96C814136BEA461ACBAD7291EA9D0AEA", hash_generated_field = "96C814136BEA461ACBAD7291EA9D0AEA")
@@ -120,6 +118,7 @@ public class NNTP extends SocketClient
      * <code>DEFAULT_PORT</code> and initializes internal data structures
      * for saving NNTP reply information.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:09.076 -0500", hash_original_method = "E2C53E6840825B1D96699D1CA06CCBF1", hash_generated_method = "4C1308095C5465ED842A718296CD85B8")
     
 public NNTP()
@@ -234,7 +233,6 @@ public void disconnect() throws IOException
         _isAllowedToPost = false;
     }
 
-
     /***
      * Indicates whether or not the client is allowed to post articles to
      * the server it is currently connected to.
@@ -248,7 +246,6 @@ public boolean isAllowedToPost()
     {
         return _isAllowedToPost;
     }
-
 
     /***
      * Sends an NNTP command to the server, waits for a reply and returns the
@@ -295,7 +292,6 @@ public int sendCommand(String command, String args) throws IOException
         return _replyCode;
     }
 
-
     /***
      * Sends an NNTP command to the server, waits for a reply and returns the
      * numerical response code.  After invocation, for more detailed
@@ -324,7 +320,6 @@ public int sendCommand(int command, String args) throws IOException
         return sendCommand(NNTPCommand._commands[command], args);
     }
 
-
     /***
      * Sends an NNTP command with no arguments to the server, waits for a
      * reply and returns the numerical response code.  After invocation, for
@@ -349,7 +344,6 @@ public int sendCommand(String command) throws IOException
     {
         return sendCommand(command, null);
     }
-
 
     /***
      * Sends an NNTP command with no arguments to the server, waits for a
@@ -376,7 +370,6 @@ public int sendCommand(int command) throws IOException
     {
         return sendCommand(command, null);
     }
-
 
     /***
      * Returns the integer value of the reply code of the last NNTP reply.
@@ -418,7 +411,6 @@ public int getReply() throws IOException
         return _replyCode;
     }
 
-
     /***
      * Returns the entire text of the last NNTP server response exactly
      * as it was received, not including the end of line marker.
@@ -431,7 +423,6 @@ public String getReplyString()
     {
         return _replyString;
     }
-
 
     /***
      * A convenience method to send the NNTP ARTICLE command to the server,
@@ -497,8 +488,6 @@ public int article() throws IOException
         return sendCommand(NNTPCommand.ARTICLE);
     }
 
-
-
     /***
      * A convenience method to send the NNTP BODY command to the server,
      * receive the initial reply, and return the reply code.
@@ -562,8 +551,6 @@ public int body() throws IOException
     {
         return sendCommand(NNTPCommand.BODY);
     }
-
-
 
     /***
      * A convenience method to send the NNTP HEAD command to the server,
@@ -629,8 +616,6 @@ public int head() throws IOException
         return sendCommand(NNTPCommand.HEAD);
     }
 
-
-
     /***
      * A convenience method to send the NNTP STAT command to the server,
      * receive the initial reply, and return the reply code.
@@ -695,7 +680,6 @@ public int stat() throws IOException
         return sendCommand(NNTPCommand.STAT);
     }
 
-
     /***
      * A convenience method to send the NNTP GROUP command to the server,
      * receive the reply, and return the reply code.
@@ -717,7 +701,6 @@ public int group(String newsgroup) throws IOException
         return sendCommand(NNTPCommand.GROUP, newsgroup);
     }
 
-
     /***
      * A convenience method to send the NNTP HELP command to the server,
      * receive the reply, and return the reply code.
@@ -737,7 +720,6 @@ public int help() throws IOException
     {
         return sendCommand(NNTPCommand.HELP);
     }
-
 
     /***
      * A convenience method to send the NNTP IHAVE command to the server,
@@ -761,7 +743,6 @@ public int ihave(String messageId) throws IOException
         return sendCommand(NNTPCommand.IHAVE, messageId);
     }
 
-
     /***
      * A convenience method to send the NNTP LAST command to the server,
      * receive the reply, and return the reply code.
@@ -781,8 +762,6 @@ public int last() throws IOException
     {
         return sendCommand(NNTPCommand.LAST);
     }
-
-
 
     /***
      * A convenience method to send the NNTP LIST command to the server,
@@ -804,8 +783,6 @@ public int list() throws IOException
         return sendCommand(NNTPCommand.LIST);
     }
 
-
-
     /***
      * A convenience method to send the NNTP NEXT command to the server,
      * receive the reply, and return the reply code.
@@ -825,7 +802,6 @@ public int next() throws IOException
     {
         return sendCommand(NNTPCommand.NEXT);
     }
-
 
     /***
      * A convenience method to send the NNTP NEWGROUPS command to the server,
@@ -873,7 +849,6 @@ public int newgroups(String date, String time, boolean GMT,
 
         return sendCommand(NNTPCommand.NEWGROUPS, buffer.toString());
     }
-
 
     /***
      * A convenience method to send the NNTP NEWGROUPS command to the server,
@@ -926,8 +901,6 @@ public int newnews(String newsgroups, String date, String time, boolean GMT,
         return sendCommand(NNTPCommand.NEWNEWS, buffer.toString());
     }
 
-
-
     /***
      * A convenience method to send the NNTP POST command to the server,
      * receive the reply, and return the reply code.
@@ -947,8 +920,6 @@ public int post() throws IOException
     {
         return sendCommand(NNTPCommand.POST);
     }
-
-
 
     /***
      * A convenience method to send the NNTP QUIT command to the server,

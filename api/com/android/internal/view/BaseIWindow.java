@@ -13,10 +13,6 @@ import android.view.DragEvent;
 import android.view.IWindow;
 import android.view.IWindowSession;
 
-
-
-
-
 public class BaseIWindow extends IWindow.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.371 -0500", hash_original_field = "380F2E6581760A76AE57EA2F3E243A67", hash_generated_field = "223A16F1854300B80614F0CB3E74795C")
 
@@ -25,6 +21,7 @@ public class BaseIWindow extends IWindow.Stub {
 
     public int mSeq;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.099 -0400", hash_original_method = "FC9DB18371C1F1F6390E84279F9FE89A", hash_generated_method = "FC9DB18371C1F1F6390E84279F9FE89A")
     public BaseIWindow ()
     {
@@ -108,7 +105,6 @@ public void dispatchWallpaperCommand(String action, int x, int y,
             }
         }
     }
-
     
 }
 

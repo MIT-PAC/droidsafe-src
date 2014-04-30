@@ -8,6 +8,7 @@ import java.util.TimerTask;
 
 public abstract class SIPStackTimerTask extends TimerTask {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.996 -0400", hash_original_method = "CF93C0792FF2A4713A916D013DB0C142", hash_generated_method = "CF93C0792FF2A4713A916D013DB0C142")
     public SIPStackTimerTask ()
     {

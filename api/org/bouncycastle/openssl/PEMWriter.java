@@ -13,11 +13,6 @@ import org.bouncycastle.util.io.pem.PemGenerationException;
 import org.bouncycastle.util.io.pem.PemObjectGenerator;
 import org.bouncycastle.util.io.pem.PemWriter;
 
-
-
-
-
-
 public class PEMWriter extends PemWriter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.145 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
@@ -28,6 +23,7 @@ public class PEMWriter extends PemWriter {
      * 
      * @param out output stream to use.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.147 -0500", hash_original_method = "B56F352F75A7EE5ED66D1919C9935D1C", hash_generated_method = "946695F5B327A7727FC03A7E7E6005C9")
     
 public PEMWriter(Writer out)
@@ -94,7 +90,6 @@ public void writeObject(
             throw new EncryptionException(e.getMessage(), e);
         }
     }
-
     
 }
 

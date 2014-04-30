@@ -114,6 +114,7 @@ public static String createCnonce() {
     /**
      * Default constructor for the digest authetication scheme.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.685 -0500", hash_original_method = "7496779349A4F9577FBBD3B727B27A4A", hash_generated_method = "BE409823F44A564F2AD29E64A4C62CA9")
     
 public DigestScheme() {

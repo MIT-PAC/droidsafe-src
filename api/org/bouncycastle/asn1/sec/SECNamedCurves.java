@@ -949,6 +949,7 @@ public static Enumeration getNames()
 
     static final Hashtable names = new Hashtable();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.204 -0400", hash_original_method = "23A51E56E8942FF07ABE86D375C28B89", hash_generated_method = "23A51E56E8942FF07ABE86D375C28B89")
     public SECNamedCurves ()
     {

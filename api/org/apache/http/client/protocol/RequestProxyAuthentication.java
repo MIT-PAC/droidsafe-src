@@ -18,17 +18,12 @@ import org.apache.http.auth.AuthenticationException;
 import org.apache.http.auth.Credentials;
 import org.apache.http.protocol.HttpContext;
 
-
-
-
-
-
 public class RequestProxyAuthentication implements HttpRequestInterceptor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.045 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
-
     private final Log log = LogFactory.getLog(getClass());
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.048 -0500", hash_original_method = "A74AF022CE8AD2F75949F498B58D4DA7", hash_generated_method = "859BEF5FB636720B0C133A44490FE68E")
     
 public RequestProxyAuthentication() {
@@ -77,7 +72,6 @@ public void process(final HttpRequest request, final HttpContext context)
             }
         }
     }
-
     
 }
 

@@ -12,6 +12,7 @@ public class DERSet extends ASN1Set {
     /**
      * create an empty set
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.326 -0500", hash_original_method = "80B25DE2FCBFBCCF6E0A2A88A3316812", hash_generated_method = "901CD9BB0992FD3EB90507D2EC9F1B80")
     
 public DERSet()

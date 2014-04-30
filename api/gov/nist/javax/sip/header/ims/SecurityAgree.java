@@ -41,6 +41,7 @@ public SecurityAgree(String name)
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.028 -0500", hash_original_method = "0AED97FED716BE0BE4710B84F9A63527", hash_generated_method = "0C3A350126268E87A2E25AC163DCCBF6")
     
 public SecurityAgree()

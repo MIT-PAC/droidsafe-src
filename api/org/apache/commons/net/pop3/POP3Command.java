@@ -65,7 +65,6 @@ public final class POP3Command
     public static final int UIDL = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.803 -0500", hash_original_field = "3645B28A0B89C49B56FD0AF2EF2342CE", hash_generated_field = "3CFD93D6314E605565F5FF4BBBF31320")
 
-
     static final String[] _commands = {
                                           "USER", "PASS", "QUIT", "STAT", "LIST", "RETR", "DELE", "NOOP", "RSET",
                                           "APOP", "TOP", "UIDL"
@@ -84,6 +83,7 @@ public static final String getCommand(int command)
     }
 
     // Cannot be instantiated.
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:12.807 -0500", hash_original_method = "22F8EC87B5F45AEF318E46284FAECCA4", hash_generated_method = "4BB2A3295000D1FF764A83834DC41367")
     
 private POP3Command()

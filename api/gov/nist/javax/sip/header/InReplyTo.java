@@ -18,6 +18,7 @@ public class InReplyTo extends SIPHeader implements InReplyToHeader {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.026 -0500", hash_original_method = "561B527F5C5623362D2C0AB5E9627468", hash_generated_method = "0D2F2FAA86EA541868D67EC13712D252")
     
 public InReplyTo() {

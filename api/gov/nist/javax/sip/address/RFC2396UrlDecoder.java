@@ -6,8 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 
-
-
 public class RFC2396UrlDecoder {
 
     /**
@@ -66,12 +64,12 @@ public static String decode(String uri) {
         return translatedUri.toString();
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:32.135 -0400", hash_original_method = "9568D8B70D3A77B07F9F9DE5F70834DD", hash_generated_method = "9568D8B70D3A77B07F9F9DE5F70834DD")
     public RFC2396UrlDecoder ()
     {
         //Synthesized constructor
     }
-
     
 }
 

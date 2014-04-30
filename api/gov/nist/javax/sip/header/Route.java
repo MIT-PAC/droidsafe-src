@@ -8,11 +8,6 @@ import gov.nist.javax.sip.address.AddressImpl;
 
 import javax.sip.header.RouteHeader;
 
-
-
-
-
-
 public class Route extends AddressParametersHeader implements javax.sip.header.RouteHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.656 -0500", hash_original_field = "F8DC85A0AD0D626F0F9A280EED3C4B95", hash_generated_field = "CDE0CEB85AD3435FE4139286512ECD09")
 
@@ -20,6 +15,7 @@ public class Route extends AddressParametersHeader implements javax.sip.header.R
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.660 -0500", hash_original_method = "B9CE287F547A57CF29833C977E422F42", hash_generated_method = "E7DDB49436889CB1A25CF544B2324647")
     
 public Route() {

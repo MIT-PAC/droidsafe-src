@@ -400,6 +400,7 @@ private Status() { }
 
     public LinkProperties linkProperties;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.994 -0500", hash_original_method = "D3E8F62AB6837E859D554E7D52419BA9", hash_generated_method = "EE6B001ACF00E83FA0ABDD66A7DF337B")
     
 public WifiConfiguration() {

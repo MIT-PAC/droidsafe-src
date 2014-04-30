@@ -12,8 +12,6 @@ import android.util.Log;
 
 import com.android.internal.telephony.PhoneNotifier;
 
-
-
 public class SipPhoneFactory {
     /**
      * Makes a {@link SipPhone} object.
@@ -36,12 +34,12 @@ public static SipPhone makePhone(String sipUri, Context context,
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.399 -0400", hash_original_method = "15E2472645F6BD56CA55CE00B2D7EBA0", hash_generated_method = "15E2472645F6BD56CA55CE00B2D7EBA0")
     public SipPhoneFactory ()
     {
         //Synthesized constructor
     }
-
     
 }
 

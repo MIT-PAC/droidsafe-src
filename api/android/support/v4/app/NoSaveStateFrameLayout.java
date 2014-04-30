@@ -29,6 +29,7 @@ static ViewGroup wrap(View child) {
         return wrapper;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.045 -0500", hash_original_method = "3889CE5B7CA4679ACCB4D7B5EA6FB087", hash_generated_method = "DF955BECD4F08BC950719D74FE4A3E8B")
     
 public NoSaveStateFrameLayout(Context context) {

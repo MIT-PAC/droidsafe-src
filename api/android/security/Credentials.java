@@ -119,6 +119,7 @@ public static Credentials getInstance() {
 
     private static Credentials singleton;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.930 -0400", hash_original_method = "1F7275C8DACF289F4D2AEA7102114D3A", hash_generated_method = "1F7275C8DACF289F4D2AEA7102114D3A")
     public Credentials ()
     {

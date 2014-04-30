@@ -189,6 +189,7 @@ static DERObject createPrimitiveDERObject(
 
     private  boolean lazyEvaluate;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.054 -0500", hash_original_method = "A509F95CC009C058902019FB1EA46111", hash_generated_method = "BA3E4D0FD6E7D5DDB1E283FEFA913242")
     
 public ASN1InputStream(

@@ -71,6 +71,7 @@ public InputChannel[] newArray(int size) {
      * It can be initialized by reading from a Parcel or by transferring the state of
      * another input channel into this one.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.379 -0500", hash_original_method = "0BA27F691F89E713693B84FE27F01014", hash_generated_method = "D35B2854DF5C3BF5BD0B678DF456EC8A")
     
 public InputChannel() {

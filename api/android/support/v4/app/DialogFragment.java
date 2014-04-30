@@ -73,6 +73,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
 
     boolean mShownByMe;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.620 -0500", hash_original_method = "0534DFBA1BDB91809702979D0F5FEACD", hash_generated_method = "CFA527E8B5A5174F7A9660414809174D")
     
 public DialogFragment() {

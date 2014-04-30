@@ -24,6 +24,7 @@ protected PPreferredService(String name) {
         super(NAME);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.003 -0500", hash_original_method = "80DD74DB52B5BA3BF0297E04ECC509FE", hash_generated_method = "508F419AAA59A5014EADC4F1F3547488")
     
 public PPreferredService()

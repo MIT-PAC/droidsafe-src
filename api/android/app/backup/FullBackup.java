@@ -166,6 +166,7 @@ static public void restoreFile(ParcelFileDescriptor data,
 
     public static final String CONF_TOKEN_INTENT_EXTRA = "conftoken";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.342 -0400", hash_original_method = "E56D2C5902E2E32DC49936A701F181C3", hash_generated_method = "E56D2C5902E2E32DC49936A701F181C3")
     public FullBackup ()
     {

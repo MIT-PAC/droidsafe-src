@@ -24,6 +24,7 @@ public class RequestLine extends SIPObject implements SipRequestLine {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.350 -0500", hash_original_method = "E4B7F4B41910EC919E5F140217342F7C", hash_generated_method = "0C3AC04EB0C8B36380A7117E78C5276B")
     
 public RequestLine() {

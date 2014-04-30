@@ -75,6 +75,7 @@ static String getClassSignatureAttribute(Class clazz) {
      * AccessibleObject} instances can only be constructed by the virtual
      * machine.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.339 -0500", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "07D69BA5ABE497283D1B6DE52B581BA9")
     
 protected AccessibleObject() {

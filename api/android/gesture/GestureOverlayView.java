@@ -64,13 +64,11 @@ public class GestureOverlayView extends FrameLayout {
     public static final int GESTURE_STROKE_TYPE_MULTIPLE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.581 -0500", hash_original_field = "52A309EB0E3683A7462D15119396AD5F", hash_generated_field = "F5AA8D432C85B67F2F1A59A2F86C9B4F")
 
-
     public static final int ORIENTATION_HORIZONTAL = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.587 -0500", hash_original_field = "676F5EBA34BAB3502E0DFDCC4B4606F0", hash_generated_field = "F0C280EF3D60F4930A958E8EA2B6AC4A")
 
     public static final int ORIENTATION_VERTICAL = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.591 -0500", hash_original_field = "9A07AA42A262110A7DFD729AF0B167A1", hash_generated_field = "CEEBD65F6001366032FE15AB80DA5212")
-
 
     private static final int FADE_ANIMATION_RATE = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.596 -0500", hash_original_field = "EB08919EC2EBEFDFCDFB246B382FA97E", hash_generated_field = "D05A97BE31019579FED4EB7FDC30D6E1")
@@ -81,10 +79,8 @@ public class GestureOverlayView extends FrameLayout {
     private static final boolean DITHER_FLAG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.606 -0500", hash_original_field = "50AF1A7309F30140E7CA65A6BCC3EA53", hash_generated_field = "479EAB42222A96049EBE27F444ED9B01")
 
-
     private final Paint mGesturePaint = new Paint();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.610 -0500", hash_original_field = "AEE21B4D28055AC35B356CDC3D7F6198", hash_generated_field = "A126B8FD1FB1147AABAF0124CED0E792")
-
 
     private long mFadeDuration = 150;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.614 -0500", hash_original_field = "B2152E30024531B1607EB43DB65F4B9F", hash_generated_field = "3A944B14D56B40E1FF0156E0C92A7D05")
@@ -101,7 +97,6 @@ public class GestureOverlayView extends FrameLayout {
     private boolean mFadeEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.630 -0500", hash_original_field = "177551318CAD9CD123B2D7C3BB0D805E", hash_generated_field = "38B5DFACC590CC89DF2B5575EDA9CFCD")
 
-
     private int mCurrentColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.634 -0500", hash_original_field = "107078F79900840F4B2DEEEDC6C8E919", hash_generated_field = "BF61072394273599ACFF700A74AF6493")
 
@@ -117,7 +112,6 @@ public class GestureOverlayView extends FrameLayout {
     private int mInvalidateExtraBorder = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.650 -0500", hash_original_field = "FA7CC50884AA8252BE5B9EBC59E75A20", hash_generated_field = "CE4EDBB52190ADD57103E661BE2AA1BC")
 
-
     private int mGestureStrokeType = GESTURE_STROKE_TYPE_SINGLE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.654 -0500", hash_original_field = "9D44C1C61BB407B8D1051493616D70EC", hash_generated_field = "C7F0545F3FED6F399EA25C1EDC03DBE4")
 
@@ -130,10 +124,8 @@ public class GestureOverlayView extends FrameLayout {
     private float mGestureStrokeAngleThreshold = 40.0f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.666 -0500", hash_original_field = "382A52DEF1457A276AB94F4A12A86CEC", hash_generated_field = "358F100671988652DB1F92C6C12DC772")
 
-
     private int mOrientation = ORIENTATION_VERTICAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.670 -0500", hash_original_field = "A31E2FA3BADB841F3C7DA6F140830C12", hash_generated_field = "7419BDB406EE3A78930F7DD605CD17A7")
-
 
     private final Rect mInvalidRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.675 -0500", hash_original_field = "9F8A427DBED06081C76DCB512FA4C1C6", hash_generated_field = "1C9B38C7F9B71799B7B8F281B135448B")
@@ -144,20 +136,17 @@ public class GestureOverlayView extends FrameLayout {
     private boolean mGestureVisible = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.682 -0500", hash_original_field = "8174733DF249E326666A04F4BE58CCC8", hash_generated_field = "4B20CDC18EBFA25CB5A845DE66FEE33E")
 
-
     private float mX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.687 -0500", hash_original_field = "5EA984BC6FFFB7EE5487B162E48C8CE7", hash_generated_field = "4A4EBB51050C24C2B262E3BAA3D2DD27")
 
     private float mY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.690 -0500", hash_original_field = "2A075AB9BBD7B647D478A5D498BEB6B8", hash_generated_field = "5B0D0CE43F2397829EF22DEED867B3B8")
 
-
     private float mCurveEndX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.694 -0500", hash_original_field = "8A150517B92F308B0B029CC1E90C677C", hash_generated_field = "26D615A313A619EB5BB2E61BD0C8494A")
 
     private float mCurveEndY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.698 -0500", hash_original_field = "246E47CC094CB4C5FAD9FB1FD6C41033", hash_generated_field = "2C825ADD3051870796FDEAABFD509AA3")
-
 
     private float mTotalLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.703 -0500", hash_original_field = "71BF694C4E99D11D41216945DF9115DB", hash_generated_field = "580FB3AA57A533873CA0A385D15702E0")
@@ -195,7 +184,6 @@ public class GestureOverlayView extends FrameLayout {
             new ArrayList<OnGesturingListener>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.744 -0500", hash_original_field = "481123107ADEF2AE0B495091378F022D", hash_generated_field = "923A30D46A856F5085B3E37D7E75156A")
 
-
     private boolean mHandleGestureActions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.747 -0500", hash_original_field = "6663C30FD0EE8FE940346862A69C9217", hash_generated_field = "0334DA4FC1CF5337DF4C056ADE9D729F")
 
@@ -209,9 +197,9 @@ public class GestureOverlayView extends FrameLayout {
             new AccelerateDecelerateInterpolator();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.760 -0500", hash_original_field = "1E4DBF91775627A5C89416CC0C1B72C6", hash_generated_field = "38D768E60C8583DA83B2BD6AFAC7AB12")
 
-
     private final FadeOutRunnable mFadingOut = new FadeOutRunnable();
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.763 -0500", hash_original_method = "5F4969C68D604539D10BBB23C41E999A", hash_generated_method = "A05CBBFF2522ABDD22C6C7D57C5ED304")
     
 public GestureOverlayView(Context context) {
@@ -219,12 +207,14 @@ public GestureOverlayView(Context context) {
         init();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.767 -0500", hash_original_method = "07C3ECF4E7F63F312E8076CE7D57AE8D", hash_generated_method = "69643E98B73F7D479D8E3A19A1C102C8")
     
 public GestureOverlayView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.gestureOverlayViewStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.773 -0500", hash_original_method = "4403B612E3FBF9C0D5C8293235B72DDB", hash_generated_method = "C1442319C059C00AACC7655B06B1D03A")
     
 public GestureOverlayView(Context context, AttributeSet attrs, int defStyle) {

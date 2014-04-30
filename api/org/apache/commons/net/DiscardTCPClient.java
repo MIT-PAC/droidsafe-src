@@ -46,6 +46,7 @@ public class DiscardTCPClient extends SocketClient
      * The default DiscardTCPClient constructor.  It merely sets the default
      * port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:51.247 -0500", hash_original_method = "DE198E34D03C0E3D0A6C2DCF24EBCF72", hash_generated_method = "E1398558A0DEB7C5FA6FAB05913757CB")
     
 public DiscardTCPClient ()

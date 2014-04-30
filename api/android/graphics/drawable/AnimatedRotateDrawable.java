@@ -38,6 +38,7 @@ public class AnimatedRotateDrawable extends Drawable implements Drawable.Callbac
 
     private boolean mRunning;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.515 -0500", hash_original_method = "69ED55E7C9BDFB1CF0205590E3E993B2", hash_generated_method = "97D85F0291C818293A666051BBB96F70")
     
 public AnimatedRotateDrawable() {

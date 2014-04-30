@@ -52,18 +52,21 @@ public abstract class AbsActionBarView extends ViewGroup {
 
     protected final VisibilityAnimListener mVisAnimListener = new VisibilityAnimListener();
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.240 -0500", hash_original_method = "824EFC2CD32C0974302E563583F4C727", hash_generated_method = "3CCCEBF4ABA5EC8D15C23485280BD3BF")
     
 public AbsActionBarView(Context context) {
         super(context);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.243 -0500", hash_original_method = "F88AEDA5B22A6879EF9493B8EB4FB02B", hash_generated_method = "A9F1032592146F82C510D3EE54EA9D47")
     
 public AbsActionBarView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.245 -0500", hash_original_method = "FEA19398278F8B5B6B30417AB1F0C217", hash_generated_method = "FA969A6C27B14E3031A9932BF9A98274")
     
 public AbsActionBarView(Context context, AttributeSet attrs, int defStyle) {

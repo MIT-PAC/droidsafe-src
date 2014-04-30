@@ -3374,6 +3374,7 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     private static Pattern SPLIT_PATTERN =
         Pattern.compile("([\\w-\\.]+)@((?:[\\w]+\\.)+)([a-zA-Z]{2,4})|[\\w]+");
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.204 -0400", hash_original_method = "0E78EC66D3E46BD387B4E4A98C6CA3E4", hash_generated_method = "0E78EC66D3E46BD387B4E4A98C6CA3E4")
     public ContactsContract ()
     {

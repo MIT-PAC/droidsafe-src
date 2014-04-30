@@ -20,6 +20,7 @@ public class UnsupportedCharsetException extends IllegalArgumentException {
      * @param charsetName
      *            the encountered unsupported charset name.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.562 -0500", hash_original_method = "EF2B407E9854D147BA5248D252ABFDC1", hash_generated_method = "B4FDE7E2EC7B1837A116402CE571ED86")
     
 public UnsupportedCharsetException(String charsetName) {

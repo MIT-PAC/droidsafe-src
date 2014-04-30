@@ -19,6 +19,7 @@ public class SIPETag extends SIPHeader implements SIPETagHeader, ExtensionHeader
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.775 -0500", hash_original_method = "BAC01810EAA501495132ECB89EEE2B88", hash_generated_method = "EC2DC771D40B7E2C73BE7AF5ED7C94FC")
     
 public SIPETag() {

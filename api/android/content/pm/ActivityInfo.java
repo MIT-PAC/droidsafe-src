@@ -210,6 +210,7 @@ public ActivityInfo[] newArray(int size) {
     // orphaned legacy field
     public String parentActivityName;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.285 -0500", hash_original_method = "AADA555071E489A7B136029649F29F63", hash_generated_method = "9A690FFA3F11B547A41D0A455A52FE55")
     
 public ActivityInfo() {

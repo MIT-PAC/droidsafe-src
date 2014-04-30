@@ -145,6 +145,7 @@ public class BCStyle implements X500NameStyle {
 
     private static final Hashtable DefaultLookUp = new Hashtable();
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.301 -0500", hash_original_method = "0ABD618DA1E5963140699C4BF03983EF", hash_generated_method = "61B48DA66F30B4E5130E97C77C601644")
     
 protected BCStyle()

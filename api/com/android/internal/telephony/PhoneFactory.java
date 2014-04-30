@@ -261,6 +261,7 @@ public static SipPhone makeSipPhone(String sipUri) {
 
     static final int preferredCdmaSubscription = RILConstants.PREFERRED_CDMA_SUBSCRIPTION;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.753 -0400", hash_original_method = "BADF3E1DCB0337DAED03CEBED853A313", hash_generated_method = "BADF3E1DCB0337DAED03CEBED853A313")
     public PhoneFactory ()
     {

@@ -16,7 +16,6 @@
 
 package android.media;
 
-
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -116,7 +115,6 @@ public class JetPlayer
 
     private static final int JET_EVENT_SEG_SHIFT   = 24;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.595 -0400", hash_original_field = "439F7310E727F238FB6A37AECDDE0163", hash_generated_field = "1D456669D0FBC84C0F88F7F36136FD11")
-
     
     // to keep in sync with values used in external/sonivox/arm-wt-22k/Android.mk
     // Jet rendering audio parameters
@@ -126,10 +124,8 @@ public class JetPlayer
     private static final int JET_OUTPUT_CHANNEL_CONFIG =
             AudioFormat.CHANNEL_OUT_STEREO;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.606 -0400", hash_original_field = "483A2AF7D4FEC5505C677E0967FC0287", hash_generated_field = "08A7D69B264701FB4C7139A1CBF7D967")
-
     
     private static JetPlayer singletonRef;
-
     
     //--------------------------------------------
     // Constructor, finalize
@@ -146,7 +142,6 @@ public static JetPlayer getJetPlayer() {
         }
         return singletonRef;
     }
-    
     
     //--------------------------------------------
     // Getters
@@ -196,8 +191,6 @@ private static void loge(String msg) {
         Log.e(TAG, "[ android.media.JetPlayer ] " + msg);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.599 -0400", hash_original_field = "29698EFF4BDA1A12C2604E1C6C5D984E", hash_generated_field = "E9F3B7E4A638D5CE6466FC09BA9A11CF")
-
-
     
     //--------------------------------------------
     // Member variables
@@ -213,7 +206,6 @@ private static void loge(String msg) {
 
     private final Object mEventListenerLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.604 -0400", hash_original_field = "8CD68628E7ADF52F4951CEB6E7F9FF01", hash_generated_field = "1600516CBE96A7E27DAAB07D89499276")
-
     
     private OnJetEventListener mJetEventListener = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.608 -0400", hash_original_field = "0192CB31F1FF2639C1A2220C6BF03F75", hash_generated_field = "C24CA9C5A7613664D10DF63528987822")
@@ -225,8 +217,8 @@ private static void loge(String msg) {
      */
     @SuppressWarnings("unused")
     private int mNativePlayerInJavaObj;
-    
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.614 -0400", hash_original_method = "9447B9206AACDF5876AD405FE8D8E739", hash_generated_method = "FBD9D904E131D53CB6FC8CBDE8F78381")
     
 private JetPlayer() {
@@ -261,13 +253,11 @@ public Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException();    
     }
     
-    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.616 -0400", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "0B0876BF1ABAEEEA48DBC201644DDC0B")
     
 protected void finalize() { 
         native_finalize(); 
     }
-    
     
     /**
      * Stops the current JET playback, and releases all associated native resources.
@@ -280,7 +270,6 @@ public void release() {
         native_release();
         singletonRef = null;
     }
-    
     
     //--------------------------------------------
     // Jet functionality
@@ -295,7 +284,6 @@ public void release() {
 public boolean loadJetFile(String path) {
         return native_loadJetFromFile(path);
     }
-    
     
     /**
      * Loads a .jet file from an asset file descriptor.
@@ -323,7 +311,6 @@ public boolean closeJetFile() {
         return native_closeJetFile();
     }
     
-    
     /**
      * Starts playing the JET segment queue.
      * @return true if rendering and playback is successfully started, false otherwise.
@@ -334,7 +321,6 @@ public boolean play() {
         return native_playJet();
     }
     
-    
     /**
      * Pauses the playback of the JET segment queue.
      * @return true if rendering and playback is successfully paused, false otherwise.
@@ -344,7 +330,6 @@ public boolean play() {
 public boolean pause() {
         return native_pauseJet();
     }
-    
     
     /**
      * Queues the specified segment in the JET queue.
@@ -374,7 +359,6 @@ public boolean queueJetSegment(int segmentNum, int libNum, int repeatCount,
         return native_queueJetSegment(segmentNum, libNum, repeatCount, 
                 transpose, muteFlags, userID);
     }
-    
     
     /**
      * Queues the specified segment in the JET queue.
@@ -409,7 +393,6 @@ public boolean queueJetSegmentMuteArray(int segmentNum, int libNum, int repeatCo
                 transpose, muteArray, userID);
     }
     
-    
     /**
      * Modifies the mute flags.
      * @param muteFlags a bitmask to specify which MIDI tracks are muted. Bit 0 affects track 0,
@@ -425,7 +408,6 @@ public boolean queueJetSegmentMuteArray(int segmentNum, int libNum, int repeatCo
 public boolean setMuteFlags(int muteFlags, boolean sync) {
         return native_setMuteFlags(muteFlags, sync);
     }
-    
      
     //---------------------------------------------------------
     // Internal class to handle events posted from native code
@@ -489,7 +471,6 @@ public NativeEventHandler(JetPlayer jet, Looper looper) {
         }
     }
     
-    
     /**
      * Modifies the mute flags for the current active segment.
      * @param muteArray an array of booleans to specify which MIDI tracks are muted. The value at
@@ -509,7 +490,6 @@ public boolean setMuteArray(boolean[] muteArray, boolean sync) {
         return native_setMuteArray(muteArray, sync);
     }
     
-    
     /**
      * Mutes or unmutes a single track.
      * @param trackId the index of the track to mute.
@@ -525,7 +505,6 @@ public boolean setMuteArray(boolean[] muteArray, boolean sync) {
 public boolean setMuteFlag(int trackId, boolean muteFlag, boolean sync) {
         return native_setMuteFlag(trackId, muteFlag, sync);
     }
-    
     
     /**
      * Handles the notification when the JET engine generates an event.
@@ -569,7 +548,6 @@ public boolean setMuteFlag(int trackId, boolean muteFlag, boolean sync) {
         void onJetPauseUpdate(JetPlayer player, int paused);
     }
     
-    
     /**
      * Schedules the playback of a clip.
      * This will automatically update the mute flags in sync with the JET Clip Marker (controller 
@@ -587,7 +565,6 @@ public boolean triggerClip(int clipId) {
         return native_triggerClip(clipId);
     }
     
-    
     /**
      * Empties the segment queue, and clears all clips that are scheduled for playback.
      * @return true if the queue was successfully cleared, false otherwise.
@@ -597,7 +574,6 @@ public boolean triggerClip(int clipId) {
 public boolean clearQueue() {
         return native_clearQueue();
     }
-    
     
     //--------------------------------------------
     // Jet event listener
@@ -644,7 +620,6 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
         }
     }
     
-    
     //--------------------------------------------
     // Native methods
     //------------------------
@@ -672,7 +647,6 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     private final void    native_release(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:25.558 -0400", hash_original_method = "213E36FD97A620D7ADFF881F9825BC99", hash_generated_method = "A2CF5810D64DFBE371D8D149343A6C45")
     
@@ -723,8 +697,6 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:25.579 -0400", hash_original_method = "36A18D7794B4AF7C18E21A1C8DD303FE", hash_generated_method = "0E672690FCCB8E10C6069BEA79CCD53A")
     
@@ -796,7 +768,6 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:25.599 -0400", hash_original_method = "A83C9A030FE24E78D0EF202E36F789B6", hash_generated_method = "667369581D1D397BC0290D071620D539")
     
     private final boolean native_triggerClip(int clipId){
@@ -815,10 +786,5 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
-
-
  
 }

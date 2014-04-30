@@ -1633,7 +1633,8 @@ public void onRotationChanged(int rotation) {
     
     // orphaned legacy method
     
-	public SensorManager() {
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public SensorManager() {
 	}
     
     @DSComment("Private Method")

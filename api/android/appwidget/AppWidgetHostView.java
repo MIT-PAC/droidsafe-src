@@ -153,6 +153,7 @@ public static Rect getDefaultPaddingForWidget(Context context, ComponentName com
     /**
      * Create a host view.  Uses default fade animations.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.279 -0500", hash_original_method = "D3533BC730DCD2115B028F12761A2C9B", hash_generated_method = "7F50C522F4B68CA7E0C0A921198A7547")
     
 public AppWidgetHostView(Context context) {

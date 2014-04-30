@@ -157,6 +157,7 @@ public static void set(String key, String val) {
 
     public static final int PROP_VALUE_MAX = 91;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.812 -0400", hash_original_method = "2ADA160F039E0597E5E49685589340CB", hash_generated_method = "2ADA160F039E0597E5E49685589340CB")
     public SystemProperties ()
     {

@@ -43,6 +43,7 @@ public class TFTPPacketException extends Exception
     /***
      * Simply calls the corresponding constructor of its superclass.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.312 -0500", hash_original_method = "920DD3340F1E0137F4765138B1C75566", hash_generated_method = "46D0CA645E4940709444F87FC684C99E")
     
 public TFTPPacketException()
@@ -53,6 +54,7 @@ public TFTPPacketException()
     /***
      * Simply calls the corresponding constructor of its superclass.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.319 -0500", hash_original_method = "03263E664C0E0B65A45F88CCBC8C3A51", hash_generated_method = "E10EA6EEC145B90EF9BB144F87311C5E")
     
 public TFTPPacketException(String message)

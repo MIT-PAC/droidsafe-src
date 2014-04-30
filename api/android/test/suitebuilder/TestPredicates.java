@@ -15,12 +15,8 @@ import android.test.suitebuilder.annotation.Suppress;
 import com.android.internal.util.Predicate;
 import com.android.internal.util.Predicates;
 
-
-
-
 public class TestPredicates {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.115 -0500", hash_original_field = "0A64915FB6577E86F8CA4A7848878ED0", hash_generated_field = "0145998528421DE1B82B1666CCF5A917")
-
 
     public static final Predicate<TestMethod> SELECT_INSTRUMENTATION =
             new AssignableFrom(InstrumentationTestCase.class);
@@ -29,7 +25,6 @@ public class TestPredicates {
     public static final Predicate<TestMethod> REJECT_INSTRUMENTATION =
             Predicates.not(SELECT_INSTRUMENTATION);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.120 -0500", hash_original_field = "027291695C4D8055B0E4C11285DD728C", hash_generated_field = "AA13A147D8DECDDC99A121CBD577E359")
-
 
     public static final Predicate<TestMethod> SELECT_SMOKE = new HasAnnotation(Smoke.class);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.122 -0500", hash_original_field = "377F4E6A4FEE1E5129FB82398A58746D", hash_generated_field = "07798F2411DFDA2434B51420ACE2D2BB")
@@ -46,6 +41,7 @@ public class TestPredicates {
     public static final Predicate<TestMethod> REJECT_SUPPRESSED =
             Predicates.not(new HasAnnotation(Suppress.class));
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.243 -0400", hash_original_method = "4FB472B861AF10AEED876CF7DD7E397C", hash_generated_method = "4FB472B861AF10AEED876CF7DD7E397C")
     public TestPredicates ()
     {

@@ -25,6 +25,7 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
     /** Set the cause.
 
     /** Creates a new instance of Reason */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.084 -0500", hash_original_method = "49B37C8425CF255FB1500AD2816C1ABC", hash_generated_method = "3E2A51EAE5404A0B504CFC44DF350058")
     
 public Reason() {

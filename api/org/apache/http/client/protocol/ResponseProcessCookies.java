@@ -27,6 +27,7 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
 
     private final Log log = LogFactory.getLog(getClass());
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.888 -0500", hash_original_method = "4D600FAEAE45D81498CB22DB2E88FC55", hash_generated_method = "95C54D99D61E30AA2AC73FAE19D71C3A")
     
 public ResponseProcessCookies() {

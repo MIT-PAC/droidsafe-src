@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
-
-
-
 public class Chunk {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.181 -0500", hash_original_field = "961B4204667A4AE2FF8DD374E6728ADE", hash_generated_field = "6AC5CE4BE311ED1283E9BD812937901E")
 
@@ -26,6 +23,7 @@ public class Chunk {
     /**
      * Blank constructor.  Fill in your own fields.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.188 -0500", hash_original_method = "6A535F879971D0788BB13E4964856994", hash_generated_method = "C7E2E20F4D9C5CE6F4D248CA29ADE431")
     
 public Chunk() {}
@@ -55,7 +53,6 @@ public Chunk(int type, ByteBuffer buf) {
         this.offset = buf.arrayOffset();
         this.length = buf.position();
     }
-
     
 }
 

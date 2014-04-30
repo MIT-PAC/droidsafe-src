@@ -32,6 +32,7 @@ public PermissionGroupInfo[] newArray(int size) {
 
     public CharSequence nonLocalizedDescription;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.011 -0500", hash_original_method = "82344B3D2D2745586AE3E2C39F67E56D", hash_generated_method = "AF08E9B69596662C63F486D2E119E1D6")
     
 public PermissionGroupInfo() {

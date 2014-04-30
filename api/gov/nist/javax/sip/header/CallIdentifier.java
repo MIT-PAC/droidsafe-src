@@ -19,6 +19,7 @@ public final class CallIdentifier extends SIPObject {
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.776 -0500", hash_original_method = "725C6736E3C17143B15C26E546AA8C2D", hash_generated_method = "E496F5BBFDD5DD78C9074B543E8ACBB6")
     
 public CallIdentifier() {

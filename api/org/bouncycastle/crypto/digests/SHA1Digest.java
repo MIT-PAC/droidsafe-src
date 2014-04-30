@@ -49,6 +49,7 @@ public class SHA1Digest extends GeneralDigest {
     /**
      * Standard constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:32.708 -0500", hash_original_method = "1DF8B488961A33FC47935CC7CCD682F9", hash_generated_method = "D8CCC0990960E028FDB6580339F29524")
     
 public SHA1Digest()

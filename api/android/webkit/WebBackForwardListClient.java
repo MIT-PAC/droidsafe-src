@@ -5,11 +5,9 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class WebBackForwardListClient {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.340 -0400", hash_original_method = "3EE15C74E8939A7E4FFBB261B684E6CA", hash_generated_method = "3EE15C74E8939A7E4FFBB261B684E6CA")
     public WebBackForwardListClient ()
     {
@@ -34,7 +32,6 @@ public void onNewHistoryItem(WebHistoryItem item) { }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.841 -0500", hash_original_method = "DA8164C67D7B3779FDED447EEF1649BA", hash_generated_method = "D1F90A23A260AF74142BEABDA486C7C2")
     
 public void onIndexChanged(WebHistoryItem item, int index) { }
-
     
 }
 

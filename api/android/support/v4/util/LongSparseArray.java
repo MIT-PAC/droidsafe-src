@@ -72,7 +72,6 @@ public static int idealLongArraySize(int need) {
     private boolean mGarbage = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.345 -0500", hash_original_field = "7F71001B36E5A98550DE3229F909BE4A", hash_generated_field = "10A03D33DDA7196CABEC9D15EF00ADBE")
 
-
     private long[] mKeys;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.346 -0500", hash_original_field = "D3F28F3EBFA7D0D8D614CF293C7CCCA8", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
 
@@ -84,6 +83,7 @@ public static int idealLongArraySize(int need) {
     /**
      * Creates a new LongSparseArray containing no mappings.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.349 -0500", hash_original_method = "F893922E2C2E4CF6AF95C190516DB394", hash_generated_method = "FDE8D96477E28E3BDD367BAF0ED08001")
     
 public LongSparseArray() {

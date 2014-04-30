@@ -12,6 +12,7 @@ import java.lang.reflect.Modifier;
 
 public abstract class MessageObject extends GenericObject {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.224 -0500", hash_original_method = "FC3F0C40EB43CAA923D6D6A1BF0E3847", hash_generated_method = "1DCA3CCA8E6E09BBA7F86CAD1E1D5F4C")
     
 protected MessageObject() {

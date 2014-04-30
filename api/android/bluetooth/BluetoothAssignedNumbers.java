@@ -326,6 +326,7 @@ public class BluetoothAssignedNumbers {
     /*
      * You can't instantiate one of these.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:12.803 -0400", hash_original_method = "85AE327C086086F2FECFDE2A8FEB346F", hash_generated_method = "BD611D86198408216DD8C8EDD39C75F5")
     
 private BluetoothAssignedNumbers() {

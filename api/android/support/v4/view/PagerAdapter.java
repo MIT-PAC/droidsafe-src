@@ -21,6 +21,7 @@ public abstract class PagerAdapter {
 
     private DataSetObservable mObservable = new DataSetObservable();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.317 -0400", hash_original_method = "FE6E138A162115EAC1384653A4B660CF", hash_generated_method = "FE6E138A162115EAC1384653A4B660CF")
     public PagerAdapter ()
     {
@@ -273,9 +274,7 @@ public void notifyDataSetChanged() {
 
     @DSBan(DSCat.DEFAULT_MODIFIER)
 
-
     @DSComment("Package priviledge")
-
 
     /**
      * Register an observer to receive callbacks related to the adapter's data changing.
@@ -290,9 +289,7 @@ public void registerDataSetObserver(DataSetObserver observer) {
 
     @DSBan(DSCat.DEFAULT_MODIFIER)
 
-
     @DSComment("Package priviledge")
-
 
     /**
      * Unregister an observer from callbacks related to the adapter's data changing.

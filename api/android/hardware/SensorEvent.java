@@ -27,6 +27,7 @@ SensorEvent(int size) {
     
     // orphaned legacy method
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public SensorEvent() {
     	//Method doesn't exist in original implementation, needed for specdump
     	this(0);  //Call the original constructor with a size of 0

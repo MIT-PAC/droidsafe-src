@@ -18,6 +18,7 @@ public class ContentType extends ParametersHeader implements javax.sip.header.Co
 
     /** Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.397 -0500", hash_original_method = "DFB0ACA07F1EF34999053FFFBC3153AF", hash_generated_method = "91D1A3B70B932D9094CCB4912BAFC4B1")
     
 public ContentType() {

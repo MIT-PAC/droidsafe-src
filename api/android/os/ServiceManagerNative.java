@@ -26,6 +26,7 @@ static public IServiceManager asInterface(IBinder obj)
         return new ServiceManagerProxy(obj);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.143 -0500", hash_original_method = "9F01F56EAD98DCCF5588838D591C9215", hash_generated_method = "7743C90D46ECC76BC540EE37951A682D")
     
 public ServiceManagerNative()

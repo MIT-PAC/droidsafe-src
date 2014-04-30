@@ -20,6 +20,7 @@ public class InvalidClassException extends ObjectStreamException {
      * @param detailMessage
      *            the detail message for this exception.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.100 -0500", hash_original_method = "EFF9B20162E74D1DBB80ACE44E70A573", hash_generated_method = "CAD53EAF9451EB48A06C746A30654AAE")
     
 public InvalidClassException(String detailMessage) {

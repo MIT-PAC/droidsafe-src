@@ -813,6 +813,7 @@ public void run(AccountManagerFuture<Bundle> future) {
     
     //DS: we added method to allow creation of account manager from getSystemService()
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public AccountManager() {
         
     }

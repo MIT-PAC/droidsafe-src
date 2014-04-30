@@ -420,6 +420,7 @@ public SurfaceView(Context context, AttributeSet attrs) {
         init();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.321 -0500", hash_original_method = "56551BC688438C77EC1087EC18E1D5A3", hash_generated_method = "E60A198277FDD607DC15186BA89DA660")
     
 public SurfaceView(Context context, AttributeSet attrs, int defStyle) {

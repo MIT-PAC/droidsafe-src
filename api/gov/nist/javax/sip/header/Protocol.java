@@ -23,6 +23,7 @@ public class Protocol extends SIPObject {
     /**
     * Default constructor.
     */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.898 -0500", hash_original_method = "B029C737A70A786967A2F293EBAB35D1", hash_generated_method = "C1460450827126E64BFBFB3B004B2B52")
     
 public Protocol() {

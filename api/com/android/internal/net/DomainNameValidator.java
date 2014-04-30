@@ -271,6 +271,7 @@ private static boolean domainTokenMatch(String thisDomainToken, String thatDomai
 
     private static final int ALT_IPA_NAME = 7;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.388 -0400", hash_original_method = "C5190347A8092226EE089C86AEE611D1", hash_generated_method = "C5190347A8092226EE089C86AEE611D1")
     public DomainNameValidator ()
     {

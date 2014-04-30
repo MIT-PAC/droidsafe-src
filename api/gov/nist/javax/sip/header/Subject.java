@@ -18,6 +18,7 @@ public class Subject extends SIPHeader implements SubjectHeader {
 
     /** Default Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.554 -0500", hash_original_method = "D63809B6DE8F5F47E85D84EB99E1AE5D", hash_generated_method = "15598A1FA38378CE2423367C317B39C1")
     
 public Subject() {

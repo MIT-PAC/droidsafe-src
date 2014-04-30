@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-
-
-
-
 public class DebugUtils {
 
     /**
@@ -113,10 +109,10 @@ public static void buildShortClassTag(Object cls, StringBuilder out) {
             out.append(Integer.toHexString(System.identityHashCode(cls)));
         }
     }
-    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.460 -0500", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "BF5454E33769117159B2FC3ECE3C6B8B")
+    /** @hide */ @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.460 -0500", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "BF5454E33769117159B2FC3ECE3C6B8B")
     
 public DebugUtils() {}
-
     
 }
 

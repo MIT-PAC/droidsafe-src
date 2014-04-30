@@ -82,14 +82,11 @@ public class GestureStore {
     static final int ORIENTATION_SENSITIVE_8 = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.783 -0500", hash_original_field = "9E68DF176A20C2A6C15BA4854FB042DB", hash_generated_field = "8D4E0C641B1DD0FFC89C73E774AAA09F")
 
-
     private static final short FILE_FORMAT_VERSION = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.789 -0500", hash_original_field = "34F8A4231AE9F15473E313C743283593", hash_generated_field = "E93907938589DAF2F36FFE8BEA861530")
 
-
     private static final boolean PROFILE_LOADING_SAVING = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.793 -0500", hash_original_field = "D3B7F2247E481F307324C6381621E171", hash_generated_field = "EB0FADE2CBD0CE9ADEF190FF36F60F55")
-
 
     private int mSequenceType = SEQUENCE_SENSITIVE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.798 -0500", hash_original_field = "F83952CD23675F150A9EB0618B68D522", hash_generated_field = "0EF8D3B30CC905D106824AA77D27E948")
@@ -97,18 +94,16 @@ public class GestureStore {
     private int mOrientationStyle = ORIENTATION_SENSITIVE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.806 -0500", hash_original_field = "359B39415917E696A664DC44EAAEACDC", hash_generated_field = "F641260C7ECA51BF0B73CABEF65EC6A5")
 
-
     private final HashMap<String, ArrayList<Gesture>> mNamedGestures =
             new HashMap<String, ArrayList<Gesture>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.815 -0500", hash_original_field = "FE1C8DF163FBB25E4EC4185FE30A8EA6", hash_generated_field = "1C2992F0AB4BCF48731CE0CABDD3AD64")
 
-
     private Learner mClassifier;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.819 -0500", hash_original_field = "9EFC71A998E071EF3DEE17FEDF3B1CE2", hash_generated_field = "F4B4AF3458A522C6D37D71090AF57699")
 
-
     private boolean mChanged = false;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.824 -0500", hash_original_method = "5531FB549AC0E038D97F4F08F63CA9BD", hash_generated_method = "679BB693BC85FD66BBC23785498F4D48")
     
 public GestureStore() {

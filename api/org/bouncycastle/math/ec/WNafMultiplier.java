@@ -6,10 +6,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-
-
 class WNafMultiplier implements ECMultiplier {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.888 -0400", hash_original_method = "C00227C22ED402D319A853243DDBC230", hash_generated_method = "C00227C22ED402D319A853243DDBC230")
     public WNafMultiplier ()
     {
@@ -247,7 +246,6 @@ public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo)
         p.setPreCompInfo(wnafPreCompInfo);
         return q;
     }
-
     
 }
 

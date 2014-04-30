@@ -57,6 +57,7 @@ public static String decode(String s, String encoding) throws UnsupportedEncodin
         return UriCodec.decode(s, true, Charset.forName(encoding));
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.082 -0400", hash_original_method = "857A327B54EFC5B6C22CAE0D3F8923A2", hash_generated_method = "857A327B54EFC5B6C22CAE0D3F8923A2")
     public URLDecoder ()
     {

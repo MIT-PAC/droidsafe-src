@@ -11,6 +11,7 @@ import android.graphics.Rect;
 
 public abstract class HardwareCanvas extends Canvas {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.414 -0400", hash_original_method = "B9875B3DDCC23B593D0FCAB83616982C", hash_generated_method = "B9875B3DDCC23B593D0FCAB83616982C")
     public HardwareCanvas ()
     {

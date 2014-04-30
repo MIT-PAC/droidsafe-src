@@ -56,6 +56,7 @@ public class AccessibilityNodeProviderCompat {
     /**
      * Creates a new instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.769 -0500", hash_original_method = "91BF216ED8536154020FF4A2846E1987", hash_generated_method = "AA9708B2E188F2186761F4411A283FC5")
     
 public AccessibilityNodeProviderCompat() {

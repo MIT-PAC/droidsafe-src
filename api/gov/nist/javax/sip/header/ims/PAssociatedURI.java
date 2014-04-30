@@ -18,6 +18,7 @@ public class PAssociatedURI extends gov.nist.javax.sip.header.AddressParametersH
     /**
      * Default Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.842 -0500", hash_original_method = "0CE9AC4DACE0AF9EAE08E4894C346C94", hash_generated_method = "376327DCAE4A50DE63C0C1864E9666E2")
     
 public PAssociatedURI()

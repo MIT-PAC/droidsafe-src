@@ -29,13 +29,11 @@ import java.util.HashMap;
 class StopWatch {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.701 -0400", hash_original_field = "EE5B21F26DF8E8294E24DDB73B354D7A", hash_generated_field = "F1069CFE00514D7ACB7D2E26B0B846D0")
 
-
     private int STOP_WATCH_LOGGING_PERIOD = 200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.703 -0400", hash_original_field = "82F07ED610CB5588CAE4B4F06973ADEF", hash_generated_field = "08CDB1D7AC6B2B3AC7CF7009CC8064AD")
 
     private String TAG = "MFF";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.704 -0400", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
-
 
     private String mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.706 -0400", hash_original_field = "3C3A30DDD94D9D47CBB52C3848791CE7", hash_generated_field = "20EEDA67D8E4F20D3E4CA3D911CCA492")
@@ -91,13 +89,12 @@ public void stop() {
 public class StopWatchMap {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.720 -0400", hash_original_field = "3FA6D48EDE48E41164B16612F2558351", hash_generated_field = "83A2B520C0BDB04671E8BA831C751F0B")
 
-
     public boolean LOG_MFF_RUNNING_TIMES = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.722 -0400", hash_original_field = "B9E7CAB756A881DB43DE86394C201323", hash_generated_field = "1EB78790224B3AA4E3416A465578B281")
 
-
     private HashMap<String, StopWatch> mStopWatches = null;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.725 -0400", hash_original_method = "3BD99ED6F710FDF86CC4807541E072C9", hash_generated_method = "D638D9C6002502B87C5CA824DE748150")
     
 public StopWatchMap() {

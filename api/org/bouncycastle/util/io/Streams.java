@@ -9,9 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
-
-
 public final class Streams {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.756 -0500", hash_original_method = "B652CC7FFE463ED9BB2F1EA52C4B64E0", hash_generated_method = "269D98D0B99CDBE9FDD076841803007C")
@@ -107,6 +104,7 @@ public static long pipeAllLimited(InputStream inStr, long limit, OutputStream ou
 
     private static int BUFFER_SIZE = 512;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.352 -0400", hash_original_method = "E89EB8DDFA560D5750506701D7919D33", hash_generated_method = "E89EB8DDFA560D5750506701D7919D33")
     public Streams ()
     {

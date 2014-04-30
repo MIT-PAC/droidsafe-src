@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class WarningList extends SIPHeaderList<Warning> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.531 -0500", hash_original_field = "9E25FFFCE541C6A5AF3A6BB5686A4CB8", hash_generated_field = "546B02DCE7471BB4B665A16CFACDC783")
 
@@ -16,6 +12,7 @@ public class WarningList extends SIPHeaderList<Warning> {
     /**
      * Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.537 -0500", hash_original_method = "8098AC8A06CDB819C465A9D30CC2E5BB", hash_generated_method = "9A9C483885958DD0B2EF686698AB11CB")
     
 public WarningList() {

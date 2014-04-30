@@ -35,6 +35,7 @@ public class TelephoneNumber extends NetObject {
     protected NameValueList parameters;
 
     /** Creates new TelephoneNumber */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.999 -0500", hash_original_method = "C2E661A0F0E8603FDB28C1E5F6957C6B", hash_generated_method = "95DC2C129422F64A66344E11E737DF10")
     
 public TelephoneNumber() {

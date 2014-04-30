@@ -34,6 +34,7 @@ public ServiceInfo[] newArray(int size) {
 
     public int flags;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.877 -0500", hash_original_method = "F8437ACFEC0EA098621A29EA36F6AD07", hash_generated_method = "CD2038A4FA51EE8D98D0458B3EFA463A")
     
 public ServiceInfo() {

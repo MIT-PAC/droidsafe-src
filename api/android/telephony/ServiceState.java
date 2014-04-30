@@ -262,6 +262,7 @@ public ServiceState[] newArray(int size) {
     /**
      * Empty constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.176 -0500", hash_original_method = "36476E21C74B3827A7B01BE12F666937", hash_generated_method = "E1C15B4F542AD467405E97DA0D1B729E")
     
 public ServiceState() {

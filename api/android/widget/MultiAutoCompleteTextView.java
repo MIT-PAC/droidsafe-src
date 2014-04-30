@@ -17,18 +17,21 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
 
     private Tokenizer mTokenizer;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.618 -0500", hash_original_method = "94554F2B341FB5EE45055739E2680C3D", hash_generated_method = "C2F49C3CAFFC526DD205A72441BE92F0")
     
 public MultiAutoCompleteTextView(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.621 -0500", hash_original_method = "42976CB810392B93881A9DEB6E0BA159", hash_generated_method = "A6B2BA027B1DC0B0A5DF3B4D6B203004")
     
 public MultiAutoCompleteTextView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.autoCompleteTextViewStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.623 -0500", hash_original_method = "C6A2FA85257B49A1F6B493810F60209F", hash_generated_method = "4BACF8B5978871C953956D2130A61715")
     
 public MultiAutoCompleteTextView(Context context, AttributeSet attrs, int defStyle) {

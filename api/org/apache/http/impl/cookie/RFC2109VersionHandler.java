@@ -9,10 +9,9 @@ import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-
-
 public class RFC2109VersionHandler extends AbstractCookieAttributeHandler {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.561 -0500", hash_original_method = "A02637D5820C2A953A6FE290A5D120D8", hash_generated_method = "73431DE712B4616B42E146AFD36FC06E")
     
 public RFC2109VersionHandler() {
@@ -52,7 +51,6 @@ public void parse(final SetCookie cookie, final String value)
             throw new MalformedCookieException("Cookie version may not be negative");
         }
     }
-
     
 }
 

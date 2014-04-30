@@ -35,6 +35,7 @@ public static ASN1Enumerated getInstance() {
      * To get a default implementation it is recommended to use
      * getInstance() method.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.932 -0500", hash_original_method = "AA03F41F75612EB5366E32BDDDAEA1AC", hash_generated_method = "B1AF031E55F072085D1941D198CBEAFE")
     
 public ASN1Enumerated() {

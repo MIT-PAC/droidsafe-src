@@ -11,10 +11,6 @@ import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 
-
-
-
-
 public class NetscapeDomainHandler extends BasicDomainHandler {
 
    /**
@@ -36,6 +32,7 @@ private static boolean isSpecialDomain(final String domain) {
                || ucDomain.endsWith(".INT");
    }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.458 -0500", hash_original_method = "F95FAB28024AE66FDF40AADA9827F511", hash_generated_method = "E7D994F1C98A89A459D370F62F5D2494")
     
 public NetscapeDomainHandler() {
@@ -88,7 +85,6 @@ public boolean match(Cookie cookie, CookieOrigin origin) {
        }
        return host.endsWith(domain);
    }
-
     
 }
 

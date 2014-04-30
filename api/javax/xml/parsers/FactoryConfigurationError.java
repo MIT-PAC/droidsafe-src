@@ -15,6 +15,7 @@ public class FactoryConfigurationError extends Error {
      * detail message.
      */
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.290 -0500", hash_original_method = "6620C9D65D7B9B8AED04F1E2286BE37D", hash_generated_method = "745C8338A29F863D10814EC116A8F2BD")
     
 public FactoryConfigurationError() {
@@ -28,6 +29,7 @@ public FactoryConfigurationError() {
      * @param msg The error message for the exception.
      */
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.292 -0500", hash_original_method = "48F1E682C4A714972A38A39D612B5275", hash_generated_method = "D0676D1AFF49D70AC248B711D650CDA6")
     
 public FactoryConfigurationError(String msg) {

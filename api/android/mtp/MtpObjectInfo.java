@@ -87,6 +87,7 @@ public final class MtpObjectInfo {
     private String mKeywords;
 
     // only instantiated via JNI
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.648 -0400", hash_original_method = "B1033B968FE0C00CBA0D2CC79B28A728", hash_generated_method = "0C767BE790DADDB0C04905D68BA56A0F")
     
 private MtpObjectInfo() {

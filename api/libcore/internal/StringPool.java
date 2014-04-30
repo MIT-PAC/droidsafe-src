@@ -26,6 +26,7 @@ private static boolean contentEquals(String s, char[] chars, int start, int leng
 
     private final String[] pool = new String[512];
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.919 -0400", hash_original_method = "47E61A2F931E9ECD5F1435DEB562B68F", hash_generated_method = "47E61A2F931E9ECD5F1435DEB562B68F")
     public StringPool ()
     {

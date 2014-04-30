@@ -217,6 +217,7 @@ public static int setCallbackEncode(long converterHandle, CharsetEncoder encoder
         return ((int)converterHandle + onMalformedInput + onUnmappableInput + subBytes.getTaintInt() + subBytes[0]);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.997 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")
     public NativeConverter ()
     {

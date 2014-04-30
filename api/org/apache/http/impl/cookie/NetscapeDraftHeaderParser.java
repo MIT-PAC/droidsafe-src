@@ -15,23 +15,18 @@ import org.apache.http.message.BasicHeaderValueParser;
 import org.apache.http.message.ParserCursor;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
 public class NetscapeDraftHeaderParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.600 -0500", hash_original_field = "FB20D70F09B1AA5B72BC385F58A11077", hash_generated_field = "94EFCB742F16A6A619D5679042344819")
 
-
     public final static NetscapeDraftHeaderParser DEFAULT = new NetscapeDraftHeaderParser();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.603 -0500", hash_original_field = "629B9DCEAACB9F96AFCA1CB0ED0BDE17", hash_generated_field = "D5F52B0DDD543B0DC0444DE5C5A210D6")
-
     
     private final static char[] DELIMITERS = new char[] { ';' };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.605 -0500", hash_original_field = "63BB4DDBEEFACB4F4E91079B4CA5F251", hash_generated_field = "0A4D0DC8AD150348B21035D26D544819")
-
     
     private  BasicHeaderValueParser nvpParser;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.607 -0500", hash_original_method = "5814035B8E0ECDCEC909AB1CD6C37999", hash_generated_method = "ED3A7624C7A9CE509FEDF5C7FD351C1C")
     
 public NetscapeDraftHeaderParser() {

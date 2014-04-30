@@ -29,6 +29,7 @@ public class Join extends ParametersHeader implements ExtensionHeader, JoinHeade
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.571 -0500", hash_original_method = "87F4B3791A773FA2D819A20B11BB86DF", hash_generated_method = "44EA0F517AE602FB270366BA1C98296E")
     
 public Join() {

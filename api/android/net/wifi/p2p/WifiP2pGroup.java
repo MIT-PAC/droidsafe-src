@@ -59,6 +59,7 @@ public WifiP2pGroup[] newArray(int size) {
 
     private String mInterface;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.745 -0500", hash_original_method = "BC18BEC489FA7E8F37CA54A3CD540A78", hash_generated_method = "50BE05574BAFE54B42B3583E008D5D2E")
     
 public WifiP2pGroup() {

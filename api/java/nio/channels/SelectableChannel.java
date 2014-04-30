@@ -13,6 +13,7 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
     /**
      * Constructs a new {@code SelectableChannel}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.058 -0500", hash_original_method = "134796BB126CC075543A5858F980D0FB", hash_generated_method = "BC0C1F6680988B6C0F8648856F2CE483")
     
 protected SelectableChannel() {

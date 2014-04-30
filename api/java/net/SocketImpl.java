@@ -27,6 +27,7 @@ public abstract class SocketImpl implements SocketOptions {
     @DSVAModeled
     protected int localport;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.521 -0400", hash_original_method = "64E339C1199B48FCA9D5B6162E68A4EE", hash_generated_method = "64E339C1199B48FCA9D5B6162E68A4EE")
     public SocketImpl ()
     {

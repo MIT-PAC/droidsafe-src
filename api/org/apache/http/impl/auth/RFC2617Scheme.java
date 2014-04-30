@@ -23,6 +23,7 @@ public abstract class RFC2617Scheme extends AuthSchemeBase {
     /**
      * Default constructor for RFC2617 compliant authetication schemes.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.086 -0500", hash_original_method = "80ED69FEE6B04980340E6722B9C707A6", hash_generated_method = "C7EAA723926AA5834DD84B52434026ED")
     
 public RFC2617Scheme() {

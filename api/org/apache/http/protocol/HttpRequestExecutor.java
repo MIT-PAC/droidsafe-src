@@ -17,13 +17,12 @@ import org.apache.http.HttpVersion;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.params.CoreProtocolPNames;
 
-
-
 public class HttpRequestExecutor {
 
     /**
      * Create a new request executor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.065 -0500", hash_original_method = "1B3D6EB0D2C9672C0490DD487A44B10E", hash_generated_method = "FCD633531AD55B8EC2ADF8EE06DBC285")
     
 public HttpRequestExecutor() {
@@ -214,7 +213,7 @@ protected HttpResponse doSendRequest(
         conn.flush();
         context.setAttribute(ExecutionContext.HTTP_REQ_SENT, Boolean.TRUE);
         return response;
-    } 
+    }
 
     /**
      * Wait for and receive a response.
@@ -296,7 +295,6 @@ public void postProcess(
         }
         processor.process(response, context);
     }
-
     
 }
 

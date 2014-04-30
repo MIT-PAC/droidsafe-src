@@ -74,6 +74,7 @@ public static SAXParserFactory newInstance(String factoryClassName,
     /**
      * <p>Protected constructor to force use of {@link #newInstance()}.</p>
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.641 -0500", hash_original_method = "5B4969E70C1A248827CF399EDBDC2A24", hash_generated_method = "C73DF4EC20E38CBE562282707D25088E")
     
 protected SAXParserFactory () {

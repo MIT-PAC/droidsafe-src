@@ -16,6 +16,7 @@ public class Unsupported extends SIPHeader implements javax.sip.header.Unsupport
 
     /** Default Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.555 -0500", hash_original_method = "7F4BD1C3AF5762ECCF124F3A56ADDC67", hash_generated_method = "C7539E168CCF8644EA352FC2FA7CBB57")
     
 public Unsupported() {

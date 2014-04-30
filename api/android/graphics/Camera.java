@@ -12,6 +12,7 @@ public class Camera {
     /**
      * Creates a new camera, with empty transformations.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.144 -0500", hash_original_method = "6DBF72AF7766D4EB810EDB03D8391F19", hash_generated_method = "685553C2A5173BA484ADB3CA6336847B")
     
 public Camera() {

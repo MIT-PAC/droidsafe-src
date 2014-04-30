@@ -8,9 +8,6 @@ import android.util.Log;
 
 import com.android.internal.telephony.Connection;
 
-
-
-
 public class CdmaCallWaitingNotification {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.348 -0500", hash_original_method = "17134404D2294EBB271C484F185A3E7C", hash_generated_method = "E834F62839EEEE49114E40E15C4CF912")
@@ -62,6 +59,7 @@ public static int
 
     public int signal = 0;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.317 -0400", hash_original_method = "EA80599905C22E601830CAF570ACF6E5", hash_generated_method = "EA80599905C22E601830CAF570ACF6E5")
     public CdmaCallWaitingNotification ()
     {

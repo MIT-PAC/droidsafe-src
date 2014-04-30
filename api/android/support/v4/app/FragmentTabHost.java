@@ -125,7 +125,6 @@ public DummyTabFactory(Context context) {
     static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.584 -0500", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
-
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:27.311 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
@@ -175,6 +174,7 @@ private SavedState(Parcel in) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.589 -0500", hash_original_method = "62BE1A1BB2CD272E6608731E0EF5DED6", hash_generated_method = "C9BFC9FF4D8A6757123E071A3E8C2184")
     
 public FragmentTabHost(Context context) {
@@ -184,6 +184,7 @@ public FragmentTabHost(Context context) {
         initFragmentTabHost(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.590 -0500", hash_original_method = "C58235E7C037C7EDF921B140B94EF8FB", hash_generated_method = "B8D66B6E3E915575A1F595BDCE032876")
     
 public FragmentTabHost(Context context, AttributeSet attrs) {

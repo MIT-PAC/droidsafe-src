@@ -49,14 +49,11 @@ import java.io.InputStream;
 public class Base64InputStream extends FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:08:59.910 -0500", hash_original_field = "E72EF02D0C2DDFF4BA821DB2B3D8E361", hash_generated_field = "84E7C226D49AED72233210CA671D90FD")
 
-
     private  boolean doEncode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:08:59.922 -0500", hash_original_field = "7FD8C736AE32FE8DF05681358D1096BD", hash_generated_field = "1766A614F9FE1DA8D7613293052FF924")
 
-
     private  Base64 base64;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:08:59.931 -0500", hash_original_field = "C563C497DF1B0B36C3B298AC6308EB3F", hash_generated_field = "9BD39ECEAC31FB507C39A41CCA51990D")
-
 
     private final byte[] singleByte = new byte[1];
 
@@ -66,6 +63,7 @@ public class Base64InputStream extends FilterInputStream {
      * @param in
      *            InputStream to wrap.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:08:59.941 -0500", hash_original_method = "612D3C1E6035002373F03BD8EC0E9C65", hash_generated_method = "9C480270CA2F5682204AA0F324D67102")
     
 public Base64InputStream(InputStream in) {

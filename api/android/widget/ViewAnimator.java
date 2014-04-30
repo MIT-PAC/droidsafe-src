@@ -29,6 +29,7 @@ public class ViewAnimator extends FrameLayout {
 
     Animation mOutAnimation;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.355 -0500", hash_original_method = "66F6B937748E2D301A30C8F3ECD323BD", hash_generated_method = "C416DCDEE73239E8D576D62488884402")
     
 public ViewAnimator(Context context) {
@@ -36,6 +37,7 @@ public ViewAnimator(Context context) {
         initViewAnimator(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.358 -0500", hash_original_method = "F8EF7A2A27A81BBBD9162F58F1DAF59B", hash_generated_method = "7BAB977C1DC3579243763FE6D1628B34")
     
 public ViewAnimator(Context context, AttributeSet attrs) {

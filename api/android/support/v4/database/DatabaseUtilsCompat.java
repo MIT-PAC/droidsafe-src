@@ -59,6 +59,7 @@ public static String[] appendSelectionArgs(String[] originalValues, String[] new
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:56.179 -0500", hash_original_method = "BAEEDBDBBA493F3625FAAFB8B3FE331D", hash_generated_method = "B1D13A3BFA2815C4352EA23C6DED5118")
     
 private DatabaseUtilsCompat() {

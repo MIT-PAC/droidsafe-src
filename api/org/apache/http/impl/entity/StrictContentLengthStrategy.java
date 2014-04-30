@@ -12,10 +12,9 @@ import org.apache.http.ProtocolException;
 import org.apache.http.entity.ContentLengthStrategy;
 import org.apache.http.protocol.HTTP;
 
-
-
 public class StrictContentLengthStrategy implements ContentLengthStrategy {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.643 -0500", hash_original_method = "A65C37571E3ECC9A929C203280BB89E8", hash_generated_method = "44602CACFC5191B9BF91741DE7D47859")
     
 public StrictContentLengthStrategy() {
@@ -60,7 +59,6 @@ public long determineLength(final HttpMessage message) throws HttpException {
             return IDENTITY; 
         }
     }
-
     
 }
 

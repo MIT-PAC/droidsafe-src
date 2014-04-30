@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public final class Config {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.592 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "477F41B88EB579D31433C154AF346064")
 
@@ -28,7 +26,8 @@ public final class Config {
 
     @Deprecated
     public static final boolean LOGD = true;
-    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.586 -0500", hash_original_method = "467612B76C57CE77319DA48736E53678", hash_generated_method = "11DC9B3F37B6FC865F887E3FAA28D5A4")
+    /** @hide */ @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.586 -0500", hash_original_method = "467612B76C57CE77319DA48736E53678", hash_generated_method = "11DC9B3F37B6FC865F887E3FAA28D5A4")
     
 public Config() {}
 }

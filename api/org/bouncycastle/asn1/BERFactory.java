@@ -40,6 +40,7 @@ static BERSet createSet(ASN1EncodableVector v, boolean needsSorting)
 
     static final BERSet EMPTY_SET = new BERSet();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.934 -0400", hash_original_method = "2004A08EE5598C5717D896D52ED3CFF9", hash_generated_method = "2004A08EE5598C5717D896D52ED3CFF9")
     public BERFactory ()
     {

@@ -63,6 +63,7 @@ public class TelnetClient extends Telnet
     /***
      * Default TelnetClient constructor.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.379 -0500", hash_original_method = "15A0010D4AABD66B282741758C2E805C", hash_generated_method = "556FA5FB890A2B790D6C1C65038D9781")
     
 public TelnetClient()
@@ -115,7 +116,6 @@ protected void _connectAction_() throws IOException
             input = new FromNetASCIIInputStream(_input_);
         else
             input = _input_;
-
 
         tmp = new TelnetInputStream(input, this, readerThread);
         if(readerThread)

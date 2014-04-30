@@ -33,6 +33,7 @@ abstract class LoggingPrintStream extends PrintStream {
 
     private final Formatter formatter = new Formatter(builder, null);
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.035 -0400", hash_original_method = "9EC321B6DFE561BEEE5F374ADAFA7A30", hash_generated_method = "0CF066A83124D2B7F58571604E6E54B0")
     protected  LoggingPrintStream() {
         super(new OutputStream() {

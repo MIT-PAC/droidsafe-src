@@ -37,6 +37,7 @@ public static ASN1BitString getInstance() {
      * To get a default implementation it is recommended to use
      * getInstance() method.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.096 -0500", hash_original_method = "AD601F3532730C1588B10C0B2F4700C0", hash_generated_method = "7CF3579665197E3D9616E88D35150E2D")
     
 public ASN1BitString() {

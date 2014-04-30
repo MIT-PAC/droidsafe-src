@@ -13,6 +13,7 @@ public abstract class TrustManagerFactorySpi {
     /**
      * Creates a new {@code TrustManagerFactorySpi} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.357 -0500", hash_original_method = "A9501ACA551B0C72B8BE137F9D419E50", hash_generated_method = "39185E31F9FDBB49C07C5ECBF777DFC1")
     
 public TrustManagerFactorySpi() {

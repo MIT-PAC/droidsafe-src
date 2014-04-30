@@ -8,20 +8,14 @@ import java.util.ListIterator;
 
 import javax.sip.header.RouteHeader;
 
-
-
-
-
-
 public class RouteList extends SIPHeaderList<Route> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.629 -0500", hash_original_field = "FBB315F346145333B7DA5F8B44F1528B", hash_generated_field = "E9DB318843918A7C1284240E819CF95B")
 
-
     private static final long serialVersionUID = 3407603519354809748L;
-
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.632 -0500", hash_original_method = "D139D7EC1148299A31F54E2FC8ABBD38", hash_generated_method = "CB92DE875B9E55E495E5D29EFAA43A60")
     
 public RouteList() {
@@ -43,7 +37,6 @@ public String encode() {
         if ( super.hlist.isEmpty()) return "";
         else return super.encode();
     }
-
 
     /**
     * Order is important when comparing route lists.

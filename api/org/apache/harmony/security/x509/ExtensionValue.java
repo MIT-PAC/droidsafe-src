@@ -12,6 +12,7 @@ public class ExtensionValue {
     protected byte[] encoding;
 
     /** Default constructor. */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.595 -0500", hash_original_method = "92B36A954C74D787717A80E6E1DCF4CB", hash_generated_method = "D1D0CC2F98E8E8D6230AA8A987B52F25")
     
 public ExtensionValue() {}

@@ -22,6 +22,7 @@ public class Server extends SIPHeader implements ServerHeader {
     /**
      * Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.367 -0500", hash_original_method = "28A485C01704A957BCAF31556583EFBE", hash_generated_method = "E049C03A454C678F415C7FC04628FD9F")
     
 public Server() {

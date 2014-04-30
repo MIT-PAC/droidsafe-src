@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.view.Gravity;
 public class MockView extends TextView {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.270 -0500", hash_original_method = "754CE43714B2EA9ED234F73E3E58D74C", hash_generated_method = "0552A3C7E3A64D6625E4C229F580D12E")
     
 public MockView(Context context, AttributeSet attrs, int defStyle) {
@@ -29,7 +30,6 @@ public MockView(Context context, AttributeSet attrs, int defStyle) {
 
         super.onDraw(canvas);
     }
-
     
 }
 

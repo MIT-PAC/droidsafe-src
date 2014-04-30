@@ -16,10 +16,6 @@ import org.bouncycastle.jce.spec.ECNamedCurveParameterSpec;
 import org.bouncycastle.jce.spec.ECNamedCurveSpec;
 import org.bouncycastle.math.ec.ECCurve;
 
-
-
-
-
 public class EC5Util {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.032 -0500", hash_original_method = "D2830BD07D3130852D457ED09BAC30B4", hash_generated_method = "E87384123D53EA285E4CC0C45416B41E")
     
@@ -140,12 +136,12 @@ public static org.bouncycastle.math.ec.ECPoint convertPoint(
         return curve.createPoint(point.getAffineX(), point.getAffineY(), withCompression);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.676 -0400", hash_original_method = "11F174102611A1F3EFF98B0ED6DCCE74", hash_generated_method = "11F174102611A1F3EFF98B0ED6DCCE74")
     public EC5Util ()
     {
         //Synthesized constructor
     }
-
     
 }
 

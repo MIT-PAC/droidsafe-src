@@ -61,6 +61,7 @@ public PlainSocketImpl(Proxy proxy) {
         this.proxy = proxy;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.925 -0500", hash_original_method = "9AFAA74CF852E1C405941486398C4C8B", hash_generated_method = "C45452C008FB51031723E1A52F90A02E")
     
 public PlainSocketImpl() {

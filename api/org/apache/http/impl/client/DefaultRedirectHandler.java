@@ -23,19 +23,15 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HttpContext;
 
-
-
-
 public class DefaultRedirectHandler implements RedirectHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.806 -0500", hash_original_field = "4C021DF32978B8873540C8586D107095", hash_generated_field = "AED16E84EEB6EA92E138FA12F2449034")
-
     
     private static final String REDIRECT_LOCATIONS = "http.protocol.redirect-locations";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.803 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
-
     private final Log log = LogFactory.getLog(getClass());
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.808 -0500", hash_original_method = "2DD669B5624C7C7440898F877B0DEDA7", hash_generated_method = "648FCB378FF86F9EEBDEE287A5FDE4BB")
     
 public DefaultRedirectHandler() {

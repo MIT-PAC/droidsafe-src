@@ -102,7 +102,6 @@ public final class TelnetCommand
             };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.077 -0500", hash_original_field = "64A133464BD487C502135936B948BFFE", hash_generated_field = "B2C7C6778F0A4670D609B5816375E3DF")
 
-
     private static final int __FIRST_COMMAND = IAC;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.080 -0500", hash_original_field = "45F7262FBC382AF6C2BFF2E944385226", hash_generated_field = "121C5E5B411AA49C4079565E549BFF75")
 
@@ -137,6 +136,7 @@ public static final boolean isValidCommand(int code)
     }
 
     // Cannot be instantiated
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.092 -0500", hash_original_method = "30DDC75EA8D4EFF80E3C73F9CE19A917", hash_generated_method = "48B8FC30CB357F8CF0428E8BA2BD15E6")
     
 private TelnetCommand()

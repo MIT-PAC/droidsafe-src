@@ -57,7 +57,6 @@ public final class IconMenuView extends ViewGroup implements ItemInvoker, MenuVi
     private static final int ITEM_CAPTION_CYCLE_DELAY = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.572 -0400", hash_original_field = "E0FA7D9C40725579D8730D3DABE74643", hash_generated_field = "D444FB62DCB4C4F94C883BDD2D0F7012")
 
-
     private MenuBuilder mMenu;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.573 -0400", hash_original_field = "0D4B92245EAA55B5717D79B860396671", hash_generated_field = "50554ED84AE3E1341AD54F95D6B009DB")
 
@@ -120,6 +119,7 @@ public final class IconMenuView extends ViewGroup implements ItemInvoker, MenuVi
     /**
      * Instantiates the IconMenuView that is linked with the provided MenuBuilder.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.597 -0400", hash_original_method = "0D98049E3DCF0B0B79B4780ADF666819", hash_generated_method = "A97063EB3364CDEDB3BADB876C5562D6")
     
 public IconMenuView(Context context, AttributeSet attrs) {
@@ -320,7 +320,6 @@ IconMenuItemView createMoreItemView() {
         return itemView;
     }
     
-    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.607 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "4239B6BD8C1C7C2E7AC8C3A17352B70E")
     
 public void initialize(MenuBuilder menu) {
@@ -348,7 +347,7 @@ private void positionChildren(int menuWidth, int menuHeight) {
         // The item position across all rows
         int itemPos = 0;
         View child;
-        IconMenuView.LayoutParams childLayoutParams = null; 
+        IconMenuView.LayoutParams childLayoutParams = null;
 
         // Use float for this to get precise positions (uniform item widths
         // instead of last one taking any slack), and then convert to ints at last opportunity
@@ -379,7 +378,7 @@ private void positionChildren(int menuWidth, int menuHeight) {
                 childLayoutParams.left = (int) itemLeft;
                 childLayoutParams.right = (int) (itemLeft + itemWidth);
                 childLayoutParams.top = (int) itemTop;
-                childLayoutParams.bottom = (int) (itemTop + itemHeight); 
+                childLayoutParams.bottom = (int) (itemTop + itemHeight);
                 
                 // Increment by item width
                 itemLeft += itemWidth;
@@ -438,7 +437,6 @@ private void positionChildren(int menuWidth, int menuHeight) {
             positionChildren(getMeasuredWidth(), getMeasuredHeight());
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.613 -0400", hash_original_method = "DC7318F4A96694F755DACF211BFD8BCE", hash_generated_method = "8233A7063AF195260803AD62A3E6860F")
     
@@ -762,7 +760,6 @@ private void calculateItemFittingMetadata(int width) {
 
     private static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.645 -0400", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
-
         
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {
             public SavedState createFromParcel(Parcel in) {

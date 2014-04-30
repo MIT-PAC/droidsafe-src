@@ -22,6 +22,7 @@ public class PMediaAuthorization extends SIPHeader implements PMediaAuthorizatio
     /**
      * Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.485 -0500", hash_original_method = "33816D631C77F21B21E54BBEFDA2795C", hash_generated_method = "0EC23627570F35559E8563A7FA0CCD73")
     
 public PMediaAuthorization()

@@ -434,6 +434,7 @@ void restartConnection(boolean proceed) {
 
 class SSLConnectionClosedByUserException extends SSLException {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.737 -0500", hash_original_method = "1C338196B36BFFFB864A09C466046734", hash_generated_method = "FA4B5BC32C579A431C293C3392E7A18A")
     
 public SSLConnectionClosedByUserException(String reason) {

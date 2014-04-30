@@ -11,6 +11,7 @@ import java.util.List;
 
 public abstract class AbstractExecutorService implements ExecutorService {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.222 -0400", hash_original_method = "3052CE934B3A3FC619D77CE90023EF56", hash_generated_method = "3052CE934B3A3FC619D77CE90023EF56")
     public AbstractExecutorService ()
     {

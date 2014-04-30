@@ -23,6 +23,7 @@ public class SSLEngineDataStream implements DataStream {
 
     private int consumed;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.515 -0500", hash_original_method = "81A231B3D4DD015A439D187A80559964", hash_generated_method = "6103BD62BCBBE9B5F56246FB2AC24064")
     
 protected SSLEngineDataStream() {}

@@ -278,6 +278,7 @@ public static boolean isFinalResponse(int rc) {
 
     /** Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.564 -0500", hash_original_method = "65DF8DACE365B596A00FB19E5D885842", hash_generated_method = "7FEC7FFFD9A82C910E99BC4EE8678350")
     
 public SIPResponse() {

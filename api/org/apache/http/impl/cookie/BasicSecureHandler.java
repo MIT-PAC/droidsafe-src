@@ -9,10 +9,9 @@ import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-
-
 public class BasicSecureHandler extends AbstractCookieAttributeHandler {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.527 -0500", hash_original_method = "8C195B0159F6CD3FDBCB025498841E70", hash_generated_method = "410FDC481EA317E71F8F0BFF49C1BD98")
     
 public BasicSecureHandler() {
@@ -41,7 +40,6 @@ public void parse(final SetCookie cookie, final String value)
         }
         return !cookie.isSecure() || origin.isSecure();
     }
-
     
 }
 

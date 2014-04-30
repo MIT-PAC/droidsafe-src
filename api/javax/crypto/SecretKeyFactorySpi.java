@@ -13,6 +13,7 @@ public abstract class SecretKeyFactorySpi {
     /**
      * Creates a new {@code SecretKeyFactorySpi} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.607 -0500", hash_original_method = "37AA0CEAD968FA5AED19221177267C4C", hash_generated_method = "45D9986BE3FF03E6B58BB0BC2D3DAD9B")
     
 public SecretKeyFactorySpi() {

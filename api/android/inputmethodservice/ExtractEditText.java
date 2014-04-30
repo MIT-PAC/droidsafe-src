@@ -18,18 +18,21 @@ public class ExtractEditText extends EditText {
 
     private int mSettingExtractedText;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:40.832 -0500", hash_original_method = "7A0DE6148CA5B17A67B82391A3703FFF", hash_generated_method = "C1F27FF849A53C3C93FA882BDB95F02B")
     
 public ExtractEditText(Context context) {
         super(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:40.835 -0500", hash_original_method = "4124FA04E6528A50C013D8FF7E28B610", hash_generated_method = "41504CD3E006707537484F2A63D64F2B")
     
 public ExtractEditText(Context context, AttributeSet attrs) {
         super(context, attrs, com.android.internal.R.attr.editTextStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:40.838 -0500", hash_original_method = "E7AB7BAEBF60AF77BB15799C720B6EC6", hash_generated_method = "968DF7B6AC5496B733FF51B31E2A32D3")
     
 public ExtractEditText(Context context, AttributeSet attrs, int defStyle) {

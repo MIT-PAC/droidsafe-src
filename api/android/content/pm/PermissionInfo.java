@@ -49,6 +49,7 @@ public PermissionInfo[] newArray(int size) {
 
     public int protectionLevel;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.545 -0500", hash_original_method = "4363F86D103EC845B9204173BA7C251E", hash_generated_method = "3E257F6676A741715A11CAD661144D62")
     
 public PermissionInfo() {

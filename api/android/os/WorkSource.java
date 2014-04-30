@@ -40,6 +40,7 @@ public WorkSource[] newArray(int size) {
     /**
      * Create an empty work source.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.540 -0500", hash_original_method = "6347D93E04E74669648A802B7921C1D5", hash_generated_method = "4E7EA45BA0A36F9382B93B520D4AEA66")
     
 public WorkSource() {

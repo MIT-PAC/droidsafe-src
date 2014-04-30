@@ -107,18 +107,21 @@ public class DatePicker extends FrameLayout {
 
     private boolean mIsEnabled = DEFAULT_ENABLED_STATE;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.310 -0500", hash_original_method = "50BCEA2D1017959FF4E69EAB1E77D8E2", hash_generated_method = "6F2E61B89CEFB62CF4F71B0972CC40F3")
     
 public DatePicker(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.312 -0500", hash_original_method = "4453FDB9501009C031AB3C09BDDF68BA", hash_generated_method = "8F0012AAAA74FA4B21AE1994580BD446")
     
 public DatePicker(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.datePickerStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.325 -0500", hash_original_method = "4E1923F4C9EC7B5B71246649E14A6878", hash_generated_method = "2C7BE98DEBB79A55EAFF791620D55AF4")
     
 public DatePicker(Context context, AttributeSet attrs, int defStyle) {

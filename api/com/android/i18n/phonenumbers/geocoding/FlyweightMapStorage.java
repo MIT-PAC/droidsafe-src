@@ -142,7 +142,8 @@ private static void writeExternalWord(ObjectOutput objectOutput, int wordSize,
 
   private String[] descriptionPool;
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.783 -0500", hash_original_method = "17265440A4150496F4E4B3AED89DBE4A", hash_generated_method = "0C9658EBFEBC2002E4752BB8AB3C7CA4")
+  @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.783 -0500", hash_original_method = "17265440A4150496F4E4B3AED89DBE4A", hash_generated_method = "0C9658EBFEBC2002E4752BB8AB3C7CA4")
     
 public FlyweightMapStorage() {}
 

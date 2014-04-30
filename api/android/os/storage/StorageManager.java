@@ -70,6 +70,7 @@ public StorageManager(Looper tgtLooper) throws RemoteException {
     
     //Added by manual modeling
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public  StorageManager() {
         /*
         if (DroidSafeAndroidRuntime.control) {

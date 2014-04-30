@@ -239,6 +239,7 @@ public static int getServiceIdentifierFromParcelUuid(ParcelUuid parcelUuid) {
         AudioSink, AudioSource, AdvAudioDist, HSP, Handsfree, AvrcpController, AvrcpTarget,
         ObexObjectPush, PANU, NAP};
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.741 -0400", hash_original_method = "FFEFA3BC7BFF4E84DBF24098C0B3A717", hash_generated_method = "FFEFA3BC7BFF4E84DBF24098C0B3A717")
     public BluetoothUuid ()
     {

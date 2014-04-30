@@ -29,6 +29,7 @@ private static String relativePath(String base, String path) {
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.144 -0400", hash_original_method = "2DD01D30EAA2A038CBAA0D570E27B35E", hash_generated_method = "2DD01D30EAA2A038CBAA0D570E27B35E")
     public URLStreamHandler ()
     {
@@ -87,7 +88,6 @@ protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
             var487662ABA0BC6C0C1954C4C7EC919428_1134314017.addTaint(getTaint());
             throw var487662ABA0BC6C0C1954C4C7EC919428_1134314017;
         } //End block
-        
         
 /*        if(end < start)        
         {

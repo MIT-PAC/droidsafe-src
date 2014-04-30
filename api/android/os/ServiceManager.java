@@ -127,6 +127,7 @@ public static void initServiceCache(Map<String, IBinder> cache) {
 
     private static HashMap<String, IBinder> sCache = new HashMap<String, IBinder>();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.547 -0400", hash_original_method = "C0ECF0E19363472551754760850E1958", hash_generated_method = "C0ECF0E19363472551754760850E1958")
     public ServiceManager ()
     {

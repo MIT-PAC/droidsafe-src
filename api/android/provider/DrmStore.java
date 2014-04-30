@@ -178,6 +178,7 @@ public static void enforceAccessDrmPermission(Context context) {
 
     private static final String ACCESS_DRM_PERMISSION = "android.permission.ACCESS_DRM";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.341 -0400", hash_original_method = "794F8F649F74858E61C047D8FF367CC2", hash_generated_method = "794F8F649F74858E61C047D8FF367CC2")
     public DrmStore ()
     {

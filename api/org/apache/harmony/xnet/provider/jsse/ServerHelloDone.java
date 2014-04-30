@@ -12,6 +12,7 @@ public class ServerHelloDone extends Message {
      * Creates outbound message
      *
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.147 -0500", hash_original_method = "452B2923DC2D49E8C5C850D6FAC160F0", hash_generated_method = "F059B6B18159C31869399583D28BD4E6")
     
 public ServerHelloDone() {

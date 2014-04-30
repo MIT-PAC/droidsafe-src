@@ -16,6 +16,7 @@ public class Expires extends SIPHeader implements javax.sip.header.ExpiresHeader
 
     /** default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.506 -0500", hash_original_method = "0542B72E4A4F7744BB9DEA78B33603A7", hash_generated_method = "5594EB26944264DAECACD6792E4A320F")
     
 public Expires() {

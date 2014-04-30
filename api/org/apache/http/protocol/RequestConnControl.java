@@ -10,12 +10,9 @@ import org.apache.http.HttpException;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpRequestInterceptor;
 
-
-
-
-
 public class RequestConnControl implements HttpRequestInterceptor {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.197 -0500", hash_original_method = "76ED84E03F54549E28D46816E0160A3A", hash_generated_method = "CFC97CD76E7073402B6FC020BFA49F5B")
     
 public RequestConnControl() {
@@ -35,7 +32,6 @@ public void process(final HttpRequest request, final HttpContext context)
             request.addHeader(HTTP.CONN_DIRECTIVE, HTTP.CONN_KEEP_ALIVE);
         }
     }
-
     
 }
 

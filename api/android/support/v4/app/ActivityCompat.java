@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 
-
 public class ActivityCompat {
     /**
      * Invalidate the activity's options menu, if able.
@@ -87,12 +86,12 @@ public static boolean startActivities(Activity activity, Intent[] intents) {
         return false;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.588 -0400", hash_original_method = "414402D33DBDAB1C5354F42B198D5939", hash_generated_method = "414402D33DBDAB1C5354F42B198D5939")
     public ActivityCompat ()
     {
         //Synthesized constructor
     }
-
     
 }
 

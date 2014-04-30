@@ -14,8 +14,6 @@ import org.bouncycastle.asn1.ASN1Object;
 import org.bouncycastle.asn1.x509.TBSCertList;
 import org.bouncycastle.asn1.x509.TBSCertificateStructure;
 
-
-
 public class PrincipalUtil {
     /**
      * return the issuer of the given cert as an X509PrincipalObject.
@@ -82,12 +80,12 @@ public static X509Principal getIssuerX509Principal(
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.268 -0400", hash_original_method = "86E544B1F15763FE29D0BFED0D83B178", hash_generated_method = "86E544B1F15763FE29D0BFED0D83B178")
     public PrincipalUtil ()
     {
         //Synthesized constructor
     }
-
     
 }
 

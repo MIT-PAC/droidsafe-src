@@ -29,6 +29,7 @@ public class NameValue extends GenericObject implements Entry<String,String> {
 
     private Object value;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.412 -0500", hash_original_method = "673B7BD3BE99F15EF906052B0E031E5B", hash_generated_method = "2AA7E6D7779ECFDD44134F2929B41A1F")
     
 public NameValue() {

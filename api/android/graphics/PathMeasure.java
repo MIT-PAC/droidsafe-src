@@ -22,7 +22,6 @@ import droidsafe.helpers.*;
 public class PathMeasure {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:13.998 -0400", hash_original_field = "8217D7F8B3D74FF153486AC0FF0C52EB", hash_generated_field = "179467EFDFE8CDC00B1E8371BDDAD764")
 
-
     public static final int POSITION_MATRIX_FLAG = 0x01;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.001 -0400", hash_original_field = "A32FBAD8012EFAFCC7FAABEF5D30F103", hash_generated_field = "9B771BE80F1A50B2BEBD8811894ACEFF")
 
@@ -102,6 +101,7 @@ private  int native_instance;
      * undefined if the path is subsequently modified and the the measure object
      * is used. If the path is modified, you must call setPath with the path.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:13.988 -0400", hash_original_method = "7252BD32CC7657429DF8A7A188F08933", hash_generated_method = "3461AC50EF0367A9F1F25629F9750BDB")
     
 public PathMeasure() {

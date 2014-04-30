@@ -50,6 +50,7 @@ public final class TimeTCPClient extends SocketClient
      * The default TimeTCPClient constructor.  It merely sets the default
      * port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:56.052 -0500", hash_original_method = "BF2A50626BBCB9FAA892D314FA8AC4D5", hash_generated_method = "C2B93624CEC746433B4316798D6BBEDE")
     
 public TimeTCPClient ()

@@ -13,10 +13,9 @@ import org.apache.http.auth.AUTH;
 import org.apache.http.auth.MalformedChallengeException;
 import org.apache.http.protocol.HttpContext;
 
-
-
 public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHandler {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.264 -0500", hash_original_method = "83B142C3BB9A0955DF4A02493E658347", hash_generated_method = "C7E4A60E42DF094EAD56FAE7F7AA14DA")
     
 public DefaultTargetAuthenticationHandler() {
@@ -46,7 +45,6 @@ public Map<String, Header> getChallenges(
         Header[] headers = response.getHeaders(AUTH.WWW_AUTH);
         return parseChallenges(headers);
     }
-
     
 }
 

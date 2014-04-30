@@ -32,6 +32,7 @@ public class Base64Encoder implements Encoder {
 
     protected final byte[] decodingTable = new byte[128];
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.761 -0500", hash_original_method = "680D3875922DD4E67C0EE2E950D928BD", hash_generated_method = "B387633520154ABC53B389F20BADAA16")
     
 public Base64Encoder()

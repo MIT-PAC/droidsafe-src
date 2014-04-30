@@ -50,6 +50,7 @@ AlarmManager(IAlarmManager service) {
         mService = service;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public AlarmManager(){
         
     }

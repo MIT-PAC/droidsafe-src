@@ -47,6 +47,7 @@ private static boolean equalsHandlesNulls(Object a, Object b) {
      * Initializes the BID, SID, NID and base station latitude and longitude
      * to invalid values.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.346 -0500", hash_original_method = "5C896DC446B6DB5EAC37BD66E663CEA5", hash_generated_method = "72C49FE94E405546FA5F71F3CADB7473")
     
 public CdmaCellLocation() {

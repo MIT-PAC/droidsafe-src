@@ -16,6 +16,7 @@ import android.util.Pair;
 
 public class SyncStateContract {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.727 -0400", hash_original_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47", hash_generated_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47")
     public SyncStateContract ()
     {

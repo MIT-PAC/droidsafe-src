@@ -30,6 +30,7 @@ public class Priority extends SIPHeader implements PriorityHeader {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.474 -0500", hash_original_method = "33A980E78264A96D694E0BA8D4330749", hash_generated_method = "7FF26A4D98728ABCE057147217E7CBD7")
     
 public Priority() {

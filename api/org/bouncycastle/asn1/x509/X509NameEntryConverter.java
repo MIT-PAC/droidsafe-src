@@ -14,6 +14,7 @@ import org.bouncycastle.util.Strings;
 
 public abstract class X509NameEntryConverter {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.224 -0400", hash_original_method = "895CB1F94322718A75CF3FC7407A7622", hash_generated_method = "895CB1F94322718A75CF3FC7407A7622")
     public X509NameEntryConverter ()
     {

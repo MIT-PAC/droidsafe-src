@@ -206,6 +206,7 @@ static void updateHash(int[] intArray, byte[] byteInput, int fromByte, int toByt
         return ;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.274 -0400", hash_original_method = "B6630204F62CDE245E871046BDD8B7F9", hash_generated_method = "B6630204F62CDE245E871046BDD8B7F9")
     public SHA1Impl ()
     {

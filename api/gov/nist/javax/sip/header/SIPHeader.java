@@ -24,6 +24,7 @@ protected SIPHeader(String hname) {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.605 -0500", hash_original_method = "1EA533F6110BBCB8F937FFE2E4A5C224", hash_generated_method = "559A2A19463DD7B6887E75F28598268E")
     
 public SIPHeader() {

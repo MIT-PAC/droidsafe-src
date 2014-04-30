@@ -486,6 +486,7 @@ private static String getCurrentCountryIso(Context context, Locale locale) {
 
     private boolean mIsVoiceMail;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.395 -0500", hash_original_method = "35A0AB919675AC2E6DFA09874C99CFA1", hash_generated_method = "3203BA7BAB90011193C0ECF77A188AB3")
     
 public CallerInfo() {

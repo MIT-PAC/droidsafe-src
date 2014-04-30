@@ -53,6 +53,7 @@ static char[] getPasswordFromCallBack(KeyStore.ProtectionParameter protParam)
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.039 -0400", hash_original_method = "0F44DABB4B3060793D573A941E7E27B4", hash_generated_method = "0F44DABB4B3060793D573A941E7E27B4")
     public KeyStoreSpi ()
     {

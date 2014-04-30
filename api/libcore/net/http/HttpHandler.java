@@ -12,6 +12,7 @@ import java.net.URLStreamHandler;
 
 public final class HttpHandler extends URLStreamHandler {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.284 -0400", hash_original_method = "19FB70242B210A6BA2C2EBCBFA2BC8EA", hash_generated_method = "19FB70242B210A6BA2C2EBCBFA2BC8EA")
     public HttpHandler ()
     {

@@ -12,6 +12,7 @@ public class DERSequence extends ASN1Sequence {
     /**
      * create an empty sequence
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.876 -0500", hash_original_method = "B1D7F8D200E7560B8E505C8DEB6A735D", hash_generated_method = "85D53223E55406568DCC1E3049BE6B3B")
     
 public DERSequence()

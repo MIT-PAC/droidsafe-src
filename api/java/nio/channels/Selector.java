@@ -28,6 +28,7 @@ public static Selector open() throws IOException {
     /**
      * Constructs a new {@code Selector}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.530 -0500", hash_original_method = "9524E27FB2E16D9605DE08EA9659D1CB", hash_generated_method = "A38AB5A6C71920FB58A9669AE4FBE902")
     
 protected Selector() {

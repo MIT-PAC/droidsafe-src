@@ -204,6 +204,7 @@ public static boolean isValidIPv6(
         return octets == 8 || doubleColonFound;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.201 -0400", hash_original_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC", hash_generated_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC")
     public IPAddress ()
     {

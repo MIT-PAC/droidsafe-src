@@ -55,6 +55,7 @@ public ProviderInfo[] newArray(int size) {
     @Deprecated
     public boolean isSyncable = false;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.934 -0500", hash_original_method = "D2CF667D6D9DF94B5D6BB6106BFAE873", hash_generated_method = "0D59BDF800C0AC4F938F8BD4F941FEB2")
     
 public ProviderInfo() {

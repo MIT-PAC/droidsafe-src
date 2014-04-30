@@ -19,6 +19,7 @@ public class HexEncoder implements Encoder {
 
     protected final byte[] decodingTable = new byte[128];
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.945 -0500", hash_original_method = "E555776B59F5150257DBB59B34D3D923", hash_generated_method = "4BEBC431C17C68B71FC7481A9C7B95D9")
     
 public HexEncoder()

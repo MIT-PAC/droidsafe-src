@@ -9,6 +9,7 @@ import java.security.spec.KeySpec;
 
 public abstract class KeyFactorySpi {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.907 -0400", hash_original_method = "54B4D82F193E9DD361521453DB006D9F", hash_generated_method = "54B4D82F193E9DD361521453DB006D9F")
     public KeyFactorySpi ()
     {

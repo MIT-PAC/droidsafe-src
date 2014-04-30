@@ -50,6 +50,7 @@ public abstract class AbstractConnPool implements RefQueueHandler {
     /**
      * Creates a new connection pool.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.212 -0500", hash_original_method = "51DB8B1C7B1E70F4AD996E9EEB946CC0", hash_generated_method = "484A456A735BACED6F55D250DDE9F844")
     
 protected AbstractConnPool() {

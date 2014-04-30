@@ -14,6 +14,7 @@ import org.apache.http.protocol.HttpContext;
 
 public class DefaultConnectionKeepAliveStrategy implements ConnectionKeepAliveStrategy {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.664 -0400", hash_original_method = "9F91BCEACEC5544FA32C5606F5B738A8", hash_generated_method = "9F91BCEACEC5544FA32C5606F5B738A8")
     public DefaultConnectionKeepAliveStrategy ()
     {

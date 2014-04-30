@@ -9,9 +9,6 @@ import android.util.SparseIntArray;
 import com.android.internal.telephony.SmsHeader;
 import com.android.internal.util.HexDump;
 
-
-
-
 public class UserData {
 
     /*
@@ -114,13 +111,11 @@ public static byte[] stringToAscii(String str) {
     public boolean msgEncodingSet = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.156 -0500", hash_original_field = "E1F7CA890E089473385A3CC871D268F9", hash_generated_field = "E888D55A5AA03C238E18CFE2D68CBBFF")
 
-
     public int msgType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.160 -0500", hash_original_field = "88E48F3E9BC9A39935A71F37482D370B", hash_generated_field = "867C58A538EC8BA6F8BCCFF77F42BD57")
 
     public int paddingBits;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.162 -0500", hash_original_field = "DA7E6F83BB7DCBEBBE77E96BE71A424C", hash_generated_field = "AAAC31C5909C6EB96CBCAA6BFC1DD04F")
-
 
     public int numFields;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.165 -0500", hash_original_field = "379AC6F271B60152FF88CC8F1BD43D4B", hash_generated_field = "85C99161735D908FB014CA702C49895B")
@@ -137,6 +132,7 @@ public static byte[] stringToAscii(String str) {
         charToAscii.put('\r', ASCII_CR_INDEX);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.754 -0400", hash_original_method = "09164C91BCB463A1239D064C926A7134", hash_generated_method = "09164C91BCB463A1239D064C926A7134")
     public UserData ()
     {

@@ -162,6 +162,7 @@ private static boolean isOneOf(final char ch, final char[] chs) {
                                                                 ELEM_DELIMITER
                                                                 };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.831 -0400", hash_original_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C", hash_generated_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C")
     public BasicHeaderValueParser ()
     {

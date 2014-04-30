@@ -20,12 +20,14 @@ public RadioButton(Context context) {
         this(context, null);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.427 -0500", hash_original_method = "FCCFFF736372EBE3F690E025A55A3D26", hash_generated_method = "1CE647101DE770DCB868C130223B07E9")
     
 public RadioButton(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.radioButtonStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.429 -0500", hash_original_method = "8A4946DCA2378530E5A11522D0746FD0", hash_generated_method = "EB63F6BC032F703A24610404E43AE019")
     
 public RadioButton(Context context, AttributeSet attrs, int defStyle) {

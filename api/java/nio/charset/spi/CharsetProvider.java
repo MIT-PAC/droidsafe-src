@@ -11,6 +11,7 @@ public abstract class CharsetProvider {
     /**
      * Constructor for subclassing with concrete types.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.735 -0500", hash_original_method = "71B9A0846B394A5E85543A853F8CC262", hash_generated_method = "59DF855CF64856033BCC1CA3D13C2C92")
     
 protected CharsetProvider() {

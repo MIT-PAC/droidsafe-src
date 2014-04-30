@@ -19,6 +19,7 @@ public class JSONStringer {
 
     private  String indent;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.884 -0500", hash_original_method = "98D853100F79BF96F83BA7B441C56113", hash_generated_method = "842E6284FCF12AC824A60F0618E2AA25")
     
 public JSONStringer() {

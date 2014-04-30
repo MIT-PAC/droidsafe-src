@@ -20,6 +20,7 @@ public class IllegalCharsetNameException extends IllegalArgumentException {
      * @param charsetName
      *            the encountered illegal charset name.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.714 -0500", hash_original_method = "363E701FA2AE5454AC2A0E287832EEC6", hash_generated_method = "BC521BB8EAFCC2337F4E300A0D10A5BF")
     
 public IllegalCharsetNameException(String charsetName) {

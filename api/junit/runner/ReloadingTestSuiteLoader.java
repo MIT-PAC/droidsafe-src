@@ -5,11 +5,9 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class ReloadingTestSuiteLoader implements TestSuiteLoader {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.403 -0400", hash_original_method = "29760FA8FF235C70A3E71F399656C6F4", hash_generated_method = "29760FA8FF235C70A3E71F399656C6F4")
     public ReloadingTestSuiteLoader ()
     {
@@ -33,7 +31,6 @@ public Class reload(Class aClass) throws ClassNotFoundException {
 protected TestCaseClassLoader createLoader() {
 		return new TestCaseClassLoader();
 	}
-
     
 }
 

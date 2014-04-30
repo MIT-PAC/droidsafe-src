@@ -14,10 +14,6 @@ import junit.runner.StandardTestSuiteLoader;
 import junit.runner.TestSuiteLoader;
 import junit.runner.Version;
 
-
-
-
-
 public class TestRunner extends BaseTestRunner {
 	
 	/**
@@ -72,7 +68,6 @@ public static void main(String args[]) {
 		}
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.849 -0500", hash_original_field = "4ED33DB27C2E5A74F5EE49C4DB6E231F", hash_generated_field = "F3374AC5F86160580EBE72031726DFFD")
-
 	
 	public static final int SUCCESS_EXIT= 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.851 -0500", hash_original_field = "1B2BC5C3F4DBCD29B546FFA6924D21AE", hash_generated_field = "2B56C3FDE1B930F748EE23F4669203F3")
@@ -88,7 +83,8 @@ public static void main(String args[]) {
 	/**
 	 * Constructs a TestRunner.
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.856 -0500", hash_original_method = "3B66BCE498E2DD0699CFFBB4FE4F7076", hash_generated_method = "2CFFD26EC90D471349D71F1206290F26")
+	@DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.856 -0500", hash_original_method = "3B66BCE498E2DD0699CFFBB4FE4F7076", hash_generated_method = "2CFFD26EC90D471349D71F1206290F26")
 	
 public TestRunner() {
 		this(System.out);

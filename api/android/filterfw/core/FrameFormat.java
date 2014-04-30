@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -31,7 +30,6 @@ import java.util.Map.Entry;
  */
 public class FrameFormat {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.100 -0400", hash_original_field = "7238CCD717BE93B5CF613602AFA78E06", hash_generated_field = "F2E2C410BC71BBDA5079A4E8EEE86DDD")
-
 
     public static final int TYPE_UNSPECIFIED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.102 -0400", hash_original_field = "8AFD03C3C7AB96D86519219CCA99152B", hash_generated_field = "0F48A43E665494C72A8C3667B980966C")
@@ -60,7 +58,6 @@ public class FrameFormat {
     public static final int TYPE_OBJECT      = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.124 -0400", hash_original_field = "9A92F81D69A4AE2A934944214A907F8D", hash_generated_field = "200ED2049589639E67A8D67F169736C9")
 
-
     public static final int TARGET_UNSPECIFIED  = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.126 -0400", hash_original_field = "453CD4AB29982F3BF5984560F7C19E80", hash_generated_field = "D9B3F9EC92D312930F7E0952598DB0B5")
 
@@ -79,14 +76,12 @@ public class FrameFormat {
     public static final int TARGET_RS           = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.140 -0400", hash_original_field = "E1235BD0F6CB8DED869C38A2746475D9", hash_generated_field = "E5698265451CFAA66DAB5BD4C45A00B7")
 
-
     public static final int SIZE_UNSPECIFIED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.143 -0400", hash_original_field = "18B97C1FE372E05C3039F47D35F4D606", hash_generated_field = "F4055516C2BACD4B4606D1B54CA12A9F")
 
     // intializers use a proper BPS.
     public static final int BYTES_PER_SAMPLE_UNSPECIFIED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.145 -0400", hash_original_field = "0C97CE321F46D940A744BD9E23D0B5CD", hash_generated_field = "A6B207C2E87211FA768435B542D19962")
-
 
     protected static final int SIZE_UNKNOWN = -1;
 
@@ -200,7 +195,6 @@ public static int readTargetString(String targetString) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.147 -0400", hash_original_field = "61CE6A84987000BFA7AFE7E837F48911", hash_generated_field = "4A4FC639A941091E7FA64DCDA1C3E16C")
 
-
     protected int mBaseType = TYPE_UNSPECIFIED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.150 -0400", hash_original_field = "92DA26A93A8B2EB4A0013366199D33F2", hash_generated_field = "C274EA4A86BDB0DFEE2336AC911564CE")
 
@@ -221,6 +215,7 @@ public static int readTargetString(String targetString) {
 
     protected Class mObjectClass;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.164 -0400", hash_original_method = "DFD8E2341B46A94437D34417CB850E27", hash_generated_method = "65FCB1B56EFCF0B413A2249F69F80299")
     
 protected FrameFormat() {

@@ -91,6 +91,7 @@ public Spinner(Context context, int mode) {
      *        access the current theme, resources, etc.
      * @param attrs The attributes of the XML tag that is inflating the view.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.028 -0500", hash_original_method = "B198D16CD1474762E3B97C016462CA6F", hash_generated_method = "C08B012582A75C24870F29F57E03955F")
     
 public Spinner(Context context, AttributeSet attrs) {
@@ -109,6 +110,7 @@ public Spinner(Context context, AttributeSet attrs) {
      *        either be an attribute resource, whose value will be retrieved
      *        from the current theme, or an explicit style resource.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.032 -0500", hash_original_method = "78C6FE6C5EEF3610339F87F7F649A015", hash_generated_method = "E39FAA2260431DDADB5946A0DF57CCAF")
     
 public Spinner(Context context, AttributeSet attrs, int defStyle) {

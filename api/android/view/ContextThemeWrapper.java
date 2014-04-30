@@ -23,6 +23,7 @@ public class ContextThemeWrapper extends ContextWrapper {
 
     private LayoutInflater mInflater;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ContextThemeWrapper() {
         super(new ContextImpl());
     }

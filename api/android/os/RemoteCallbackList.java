@@ -20,6 +20,7 @@ public class RemoteCallbackList<E extends IInterface> {
 
     private boolean mKilled = false;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.498 -0400", hash_original_method = "7510693ACC17AC22B2C7AA646F89D542", hash_generated_method = "7510693ACC17AC22B2C7AA646F89D542")
     public RemoteCallbackList ()
     {

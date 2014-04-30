@@ -130,6 +130,7 @@ public WifiP2pDevice[] newArray(int size) {
 
     public int status = UNAVAILABLE;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.251 -0500", hash_original_method = "6DEE1BC764FD2CB933A4912269652401", hash_generated_method = "F16508AAFF899630171AC9A8E9233A52")
     
 public WifiP2pDevice() {

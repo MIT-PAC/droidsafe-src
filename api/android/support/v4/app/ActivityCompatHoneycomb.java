@@ -36,6 +36,7 @@ static void dump(Activity activity, String prefix, FileDescriptor fd,
         activity.dump(prefix, fd, writer, args);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.593 -0400", hash_original_method = "EDEF3A05A858D56A3B74BD91E5B0357B", hash_generated_method = "EDEF3A05A858D56A3B74BD91E5B0357B")
     public ActivityCompatHoneycomb ()
     {

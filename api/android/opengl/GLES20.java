@@ -1651,6 +1651,7 @@ public static void glVertexAttribPointer(
 
     public static final int GL_INVALID_FRAMEBUFFER_OPERATION           = 0x0506;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:24.093 -0400", hash_original_method = "36E20589EECCDD2982BE507DDB6EF4A3", hash_generated_method = "36E20589EECCDD2982BE507DDB6EF4A3")
     public GLES20 ()
     {

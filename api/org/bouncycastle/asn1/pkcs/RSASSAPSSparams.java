@@ -16,11 +16,6 @@ import org.bouncycastle.asn1.DERTaggedObject;
 import org.bouncycastle.asn1.oiw.OIWObjectIdentifiers;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 
-
-
-
-
-
 public class RSASSAPSSparams extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.458 -0500", hash_original_method = "387A0A7ABC761B36BE33A4E0140F6D37", hash_generated_method = "0497DBAAF708A7A444B1E708EBB3C15A")
@@ -67,6 +62,7 @@ public static RSASSAPSSparams getInstance(
     /**
      * The default version
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:14.461 -0500", hash_original_method = "E18C025F8AE162B11B2BEFB826A371E0", hash_generated_method = "D18BE62B7BD542E701B03C7182DE5FBD")
     
 public RSASSAPSSparams()

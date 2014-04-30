@@ -1535,6 +1535,7 @@ public static String objectId(Object o) {
     /**
      * Protected constructor that is not available for public use.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.213 -0500", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "60F099FEF67CE9E15E6D08D1618F5B3A")
     
 protected LogFactory() {

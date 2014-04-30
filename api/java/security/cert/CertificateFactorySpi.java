@@ -14,6 +14,7 @@ public abstract class CertificateFactorySpi {
     /**
      * Constructs a new instance of this class.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.657 -0500", hash_original_method = "5D6CCD92AEFDD2109C84465ED1C78995", hash_generated_method = "CB7D73E8C74A00833A1DB1F47F6A7107")
     
 public CertificateFactorySpi() {

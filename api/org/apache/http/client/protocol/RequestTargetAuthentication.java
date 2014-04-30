@@ -18,17 +18,12 @@ import org.apache.http.auth.AuthenticationException;
 import org.apache.http.auth.Credentials;
 import org.apache.http.protocol.HttpContext;
 
-
-
-
-
-
 public class RequestTargetAuthentication implements HttpRequestInterceptor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.991 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
 
-
     private final Log log = LogFactory.getLog(getClass());
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.995 -0500", hash_original_method = "18D614B059705CD511AA931F33F39470", hash_generated_method = "33C74B2F0CAC4A51B51E1576F31D41A5")
     
 public RequestTargetAuthentication() {
@@ -78,7 +73,6 @@ public void process(final HttpRequest request, final HttpContext context)
             }
         }
     }
-
     
 }
 

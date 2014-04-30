@@ -43,6 +43,7 @@ public static int findRowIdColumnIndex(String[] columnNames) {
 
     private boolean mWantsAllOnMoveCalls;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.525 -0400", hash_original_method = "579A2D9511CAAA6B79AA847929FD0E6D", hash_generated_method = "579A2D9511CAAA6B79AA847929FD0E6D")
     public BulkCursorToCursorAdaptor ()
     {

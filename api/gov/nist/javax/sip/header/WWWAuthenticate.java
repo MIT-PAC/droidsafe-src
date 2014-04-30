@@ -17,6 +17,7 @@ public class WWWAuthenticate extends AuthenticationHeader implements WWWAuthenti
     /**
      * Default Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.609 -0500", hash_original_method = "C9FB367FC796E0822ABA8EEBFAE5F2CF", hash_generated_method = "057E821B1D76403A27A40A2FEAB47EEB")
     
 public WWWAuthenticate() {

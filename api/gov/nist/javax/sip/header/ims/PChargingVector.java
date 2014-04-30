@@ -13,6 +13,7 @@ public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader 
     /**
      * Default Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.293 -0500", hash_original_method = "F24963EF187BB1F8C634FCD3043DEC7F", hash_generated_method = "E45256AC9BE7B402FEAB95C496CA137D")
     
 public PChargingVector() {

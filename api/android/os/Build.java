@@ -194,6 +194,7 @@ private static long getLong(String property) {
     public static final boolean IS_DEBUGGABLE =
             SystemProperties.getInt("ro.debuggable", 0) == 1;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.718 -0400", hash_original_method = "F7D4D478B3FB8EE28A8245D7D32DBDD3", hash_generated_method = "F7D4D478B3FB8EE28A8245D7D32DBDD3")
     public Build ()
     {

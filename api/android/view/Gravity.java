@@ -344,6 +344,7 @@ public static int getAbsoluteGravity(int gravity, int layoutDirection) {
 
     public static final int RELATIVE_HORIZONTAL_GRAVITY_MASK = START | END;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.407 -0400", hash_original_method = "C8FD8F8974FEA261C49D0525477D6D45", hash_generated_method = "C8FD8F8974FEA261C49D0525477D6D45")
     public Gravity ()
     {

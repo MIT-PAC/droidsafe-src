@@ -48,6 +48,7 @@ static public IApplicationThread asInterface(IBinder obj) {
         return new ApplicationThreadProxy(obj);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.930 -0500", hash_original_method = "94F554AA12869316A649B35CDD2C48B7", hash_generated_method = "9A0122931DF548A22EFD5BF8230ADA42")
     
 public ApplicationThreadNative() {

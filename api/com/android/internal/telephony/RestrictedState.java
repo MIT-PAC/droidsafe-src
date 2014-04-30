@@ -16,6 +16,7 @@ public class RestrictedState {
 
     private boolean mCsEmergencyRestricted;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.848 -0500", hash_original_method = "F727392B3D49E2225FED35B348D7580F", hash_generated_method = "CD3C8AED478562F9B2580B8D9C0AB7E4")
     
 public RestrictedState() {

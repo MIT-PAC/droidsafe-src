@@ -55,6 +55,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
 
     private Rect mTouchFrame;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.340 -0500", hash_original_method = "CE4C0E9ECE12F7FD7C8BEF83C3609839", hash_generated_method = "C88C95489266CB21082196D3D9887AF4")
     
 public AbsSpinner(Context context) {
@@ -62,12 +63,14 @@ public AbsSpinner(Context context) {
         initAbsSpinner();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.343 -0500", hash_original_method = "48F93C8F12C5C0BCE27736B4F067DE36", hash_generated_method = "BB7AE401C791CE88EB5416C56E9B6281")
     
 public AbsSpinner(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.346 -0500", hash_original_method = "22AD9CC9923933C5995E60FF80D5916E", hash_generated_method = "6D727EB9C5BFAABF4BA8EC95894C7254")
     
 public AbsSpinner(Context context, AttributeSet attrs, int defStyle) {

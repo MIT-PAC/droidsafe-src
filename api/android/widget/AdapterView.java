@@ -123,18 +123,21 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
 
     boolean mBlockLayoutRequests = false;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.962 -0500", hash_original_method = "57FCDFF67BC1DAFCD174DA15B87A1337", hash_generated_method = "E9C90229E9C322934FE6F2DF917493C5")
     
 public AdapterView(Context context) {
         super(context);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.965 -0500", hash_original_method = "A1536CC4437039F5CF27987414A5A415", hash_generated_method = "35DB50F5C1F52B0343CFE06D7DBDB6B0")
     
 public AdapterView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.967 -0500", hash_original_method = "4DD39388BA45E8CBF534A54DFA59E3BD", hash_generated_method = "D0A418215BD49307A90969EF3559552A")
     
 public AdapterView(Context context, AttributeSet attrs, int defStyle) {

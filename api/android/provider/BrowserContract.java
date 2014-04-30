@@ -393,6 +393,7 @@ private Settings() {}
 
     public static final String PARAM_LIMIT = "limit";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.039 -0400", hash_original_method = "826484E4F7C2520B20953309D7672DA9", hash_generated_method = "826484E4F7C2520B20953309D7672DA9")
     public BrowserContract ()
     {

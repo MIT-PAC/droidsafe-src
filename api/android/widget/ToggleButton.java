@@ -30,6 +30,7 @@ public class ToggleButton extends CompoundButton {
 
     private float mDisabledAlpha;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.757 -0500", hash_original_method = "BBF2F051F26D6598677E602500518F20", hash_generated_method = "820D9B1D6BDC20BE50A104E6B330EA32")
     
 public ToggleButton(Context context, AttributeSet attrs, int defStyle) {
@@ -45,6 +46,7 @@ public ToggleButton(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.760 -0500", hash_original_method = "70ADFAB7EB5D059C66B3BA4B8EE96D3C", hash_generated_method = "4B21F05FA4E09C0FF3962EDF0733BEDA")
     
 public ToggleButton(Context context, AttributeSet attrs) {

@@ -17,7 +17,8 @@ class DefaultMapStorage extends AreaCodeMapStorageStrategy {
 
   private String[] descriptions;
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.273 -0500", hash_original_method = "303B051C40F1A8F79D475AA40AA2373B", hash_generated_method = "A1E44B78E3244E61FAD94973D60073EA")
+  @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.273 -0500", hash_original_method = "303B051C40F1A8F79D475AA40AA2373B", hash_generated_method = "A1E44B78E3244E61FAD94973D60073EA")
     
 public DefaultMapStorage() {}
 

@@ -363,6 +363,7 @@ public static java.lang.String toString(int modifiers) {
     /**
      * Constructs a new {@code Modifier} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.580 -0500", hash_original_method = "E43AF8EB2B9E0BF3650B46095E57E1B5", hash_generated_method = "67486C5FCC0D9F62E4BC64BD644C1963")
     
 public Modifier() {

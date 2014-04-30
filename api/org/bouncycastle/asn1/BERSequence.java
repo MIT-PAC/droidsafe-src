@@ -11,6 +11,7 @@ public class BERSequence extends DERSequence {
     /**
      * create an empty sequence
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.254 -0500", hash_original_method = "0D9B441EA6B4B8E8347B85C87EDD1299", hash_generated_method = "134B791CD0D6796A7817E9FBE2672519")
     
 public BERSequence()

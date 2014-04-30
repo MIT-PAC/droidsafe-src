@@ -17,6 +17,7 @@ public static PendingIntent getActivitiesPendingIntent(Context context, int requ
         return PendingIntent.getActivities(context, requestCode, intents, flags);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.742 -0400", hash_original_method = "C1C252B6FF985D09E6DE52071C17C6AB", hash_generated_method = "C1C252B6FF985D09E6DE52071C17C6AB")
     public TaskStackBuilderHoneycomb ()
     {

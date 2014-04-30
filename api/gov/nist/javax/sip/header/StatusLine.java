@@ -25,6 +25,7 @@ public final class StatusLine extends SIPObject implements SipStatusLine {
 
     /** Default Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.894 -0500", hash_original_method = "952A7A04B56CA19CB087E879E7A74676", hash_generated_method = "33EA3B99AA5D0F3D658D8AD4573ED50C")
     
 public StatusLine() {

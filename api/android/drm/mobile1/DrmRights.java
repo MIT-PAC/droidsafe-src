@@ -31,6 +31,7 @@ public class DrmRights {
     /**
      * Construct the DrmRights.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.957 -0500", hash_original_method = "C823F603778B510E6D7C1D7E58C253FF", hash_generated_method = "2A827C56892D4B08767A71820546A180")
     
 public DrmRights() {

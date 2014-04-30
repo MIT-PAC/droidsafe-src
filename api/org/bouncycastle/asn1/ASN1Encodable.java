@@ -15,6 +15,7 @@ public abstract class ASN1Encodable implements DEREncodable {
 
     public static final String BER = "BER";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.598 -0400", hash_original_method = "821D90F216C7C1EC15D73655F548D7FA", hash_generated_method = "821D90F216C7C1EC15D73655F548D7FA")
     public ASN1Encodable ()
     {

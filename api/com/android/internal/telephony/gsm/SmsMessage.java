@@ -512,6 +512,7 @@ public static TextEncodingDetails calculateLength(CharSequence msgBody,
 
     private boolean isStatusReportMessage = false;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.852 -0400", hash_original_method = "6C523C791261F68A00BC5A8339EB91FE", hash_generated_method = "6C523C791261F68A00BC5A8339EB91FE")
     public SmsMessage ()
     {

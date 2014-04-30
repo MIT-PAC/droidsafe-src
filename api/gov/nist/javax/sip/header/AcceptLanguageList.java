@@ -11,6 +11,7 @@ public class AcceptLanguageList extends SIPHeaderList<AcceptLanguage> {
 
     private static final long serialVersionUID = -3289606805203488840L;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.391 -0500", hash_original_method = "240BB3B9B24C078BD16B4E527289E882", hash_generated_method = "3E83EBD18B1DE187BD967F92DA52EE4B")
     
 public AcceptLanguageList() {

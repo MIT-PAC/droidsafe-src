@@ -19,6 +19,7 @@ public class Supported extends SIPHeader implements SupportedHeader {
     /**
      * default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.101 -0500", hash_original_method = "5230DF363A4CA66C4A13E103BCE72C7C", hash_generated_method = "DA6B84DAE57BCABDF40552B8614BA9EB")
     
 public Supported() {

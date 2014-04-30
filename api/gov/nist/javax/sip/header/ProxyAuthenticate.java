@@ -15,6 +15,7 @@ public class ProxyAuthenticate extends AuthenticationHeader implements ProxyAuth
     /**
      * Default Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.168 -0500", hash_original_method = "B80D256AA9E947492E2C0A1F4B8ED695", hash_generated_method = "D3A7B8A928A18C52D613156AA542DCD4")
     
 public ProxyAuthenticate() {

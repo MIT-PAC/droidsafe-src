@@ -13,12 +13,7 @@ import org.apache.http.StatusLine;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
 public class BasicLineParser implements LineParser {
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.024 -0500", hash_original_method = "0AAD6F43EB19D666089E9328760FB37E", hash_generated_method = "BD1D9295E80BF056AEDAD0D273447E7B")
     
@@ -41,8 +36,6 @@ public final static
         return parser.parseProtocolVersion(buffer, cursor);
     }
 
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.036 -0500", hash_original_method = "853D60735C6BCBB19B57E743C939D1E8", hash_generated_method = "A6D147B9274B5C046963186C4AC7D9E6")
     
 public final static
@@ -64,8 +57,6 @@ public final static
         return parser.parseRequestLine(buffer, cursor);
     }
 
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.044 -0500", hash_original_method = "848468A78C901FCE20F620D15728243A", hash_generated_method = "6B50C02D8ABDCF788257D18C2D53AB1D")
     
 public final static
@@ -86,8 +77,6 @@ public final static
         ParserCursor cursor = new ParserCursor(0, value.length());
         return parser.parseStatusLine(buffer, cursor);
     }
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.053 -0500", hash_original_method = "AD8DAE3D775454D5A67D9F9BDF341DE3", hash_generated_method = "190DEEEC0F7712C307245BAECAE9FF6D")
     
@@ -115,7 +104,6 @@ public final static
 
     protected  ProtocolVersion protocol;
 
-
     /**
      * Creates a new line parser for the given HTTP-like protocol.
      *
@@ -132,16 +120,15 @@ public BasicLineParser(ProtocolVersion proto) {
         this.protocol = proto;
     }
 
-
     /**
      * Creates a new line parser for HTTP.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.021 -0500", hash_original_method = "214300EBA90AB0F87C7DC4ACF56AF3C7", hash_generated_method = "F399CF64715CBBD01F5D1839B7643A13")
     
 public BasicLineParser() {
         this(null);
     }
-
 
     // non-javadoc, see interface LineParser
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.028 -0500", hash_original_method = "9BF4BF2A71D6F582F34C94EF6EF05C09", hash_generated_method = "CCF5A9E25E9DF76ABB3B196EB530C05C")
@@ -225,7 +212,6 @@ public ProtocolVersion parseProtocolVersion(final CharArrayBuffer buffer,
 
     } // parseProtocolVersion
 
-
     /**
      * Creates a protocol version.
      * Called from {@link #parseProtocolVersion}.
@@ -240,8 +226,6 @@ public ProtocolVersion parseProtocolVersion(final CharArrayBuffer buffer,
 protected ProtocolVersion createProtocolVersion(int major, int minor) {
         return protocol.forVersion(major, minor);
     }
-
-
 
     // non-javadoc, see interface LineParser
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.033 -0500", hash_original_method = "131811FCACED18FCD6DF993D05551A72", hash_generated_method = "E8314049A250DAA75E533992BB661948")
@@ -275,10 +259,8 @@ public boolean hasProtocolVersion(final CharArrayBuffer buffer,
              }
         } // else within line, don't tolerate whitespace
 
-
         if (index + protolength + 4 > buffer.length())
             return false;
-
 
         // just check protocol name and slash, no need to analyse the version
         boolean ok = true;
@@ -291,7 +273,6 @@ public boolean hasProtocolVersion(final CharArrayBuffer buffer,
 
         return ok;
     }
-
 
     /**
      * Parses a request line.
@@ -356,7 +337,6 @@ public RequestLine parseRequestLine(final CharArrayBuffer buffer,
         }
     } // parseRequestLine
 
-
     /**
      * Instantiates a new request line.
      * Called from {@link #parseRequestLine}.
@@ -374,7 +354,6 @@ protected RequestLine createRequestLine(final String method,
                                             final ProtocolVersion ver) {
         return new BasicRequestLine(method, uri, ver);
     }
-
 
     // non-javadoc, see interface LineParser
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.048 -0500", hash_original_method = "25C42EFA872F90FCC52B9EB0DE702858", hash_generated_method = "D7B4DEF84F8787F85107ED813C79A5D4")
@@ -430,7 +409,6 @@ public StatusLine parseStatusLine(final CharArrayBuffer buffer,
         }
     } // parseStatusLine
 
-
     /**
      * Instantiates a new status line.
      * Called from {@link #parseStatusLine}.
@@ -449,7 +427,6 @@ protected StatusLine createStatusLine(final ProtocolVersion ver,
         return new BasicStatusLine(ver, status, reason);
     }
 
-
     // non-javadoc, see interface LineParser
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.055 -0500", hash_original_method = "96877585E3C205FD7438BA36DB87A742", hash_generated_method = "075B379A31BB36F4FC35D0BAF03C96B1")
     
@@ -459,7 +436,6 @@ public Header parseHeader(CharArrayBuffer buffer)
         // the actual parser code is in the constructor of BufferedHeader
         return new BufferedHeader(buffer);
     }
-
 
     /**
      * Helper to skip whitespace.

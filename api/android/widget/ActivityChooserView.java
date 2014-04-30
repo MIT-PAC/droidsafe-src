@@ -130,6 +130,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
      *
      * @param context The application environment.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.858 -0500", hash_original_method = "B1417C53B7334442AE372C957DCB8F0C", hash_generated_method = "E063C2FA1E7EEC72A2E6214EEDDC4ECF")
     
 public ActivityChooserView(Context context) {
@@ -142,6 +143,7 @@ public ActivityChooserView(Context context) {
      * @param context The application environment.
      * @param attrs A collection of attributes.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.861 -0500", hash_original_method = "5446B591236758FE1022AC56CCF4E7CA", hash_generated_method = "9C4D4A982224BB1AC65996BF330FC39F")
     
 public ActivityChooserView(Context context, AttributeSet attrs) {
@@ -155,6 +157,7 @@ public ActivityChooserView(Context context, AttributeSet attrs) {
      * @param attrs A collection of attributes.
      * @param defStyle The default style to apply to this view.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.867 -0500", hash_original_method = "82640F6029B5DED0016360DF13353C92", hash_generated_method = "3C7C5249E80AC7ABA84B7084BC923A6F")
     
 public ActivityChooserView(Context context, AttributeSet attrs, int defStyle) {

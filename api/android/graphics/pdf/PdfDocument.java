@@ -89,28 +89,24 @@ public class PdfDocument {
 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.656 -0500", hash_original_field = "66D6914E51DD8AC41CB0824DDBC87D26", hash_generated_field = "13B8103D5ACDBF0F01375F93F9250268")
 
-
     private final byte[] mChunk = new byte[4096];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.662 -0500", hash_original_field = "6ADAA7D7C1C7D2FB7CE0E7D55A51778B", hash_generated_field = "91705AACD6DDE42AEA628776AF2A3DC6")
-
 
     private final CloseGuard mCloseGuard = CloseGuard.get();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.665 -0500", hash_original_field = "4174776A08D8808B5F7ACB53D39636F1", hash_generated_field = "2E8BB2587304DA9A1DB990D23C384AA9")
 
-
     private final List<PageInfo> mPages = new ArrayList<PageInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.669 -0500", hash_original_field = "C7163CD25A7BF995059093789827C966", hash_generated_field = "ABDF1D124065B581F8C39AE94B8D5B6A")
 
-
     private int mNativeDocument;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.674 -0500", hash_original_field = "698EE1F1C00519516F09A8F429101D21", hash_generated_field = "009C2173BB4BCEDA0C9D5809AA20CDE4")
-
 
     private Page mCurrentPage;
 
     /**
      * Creates a new instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.707 -0500", hash_original_method = "4A6878651936579B382F987B5333B654", hash_generated_method = "051AC06E323B7B09D3610CF43978BDD0")
     
 public PdfDocument() {
@@ -286,14 +282,12 @@ private void throwIfCurrentPageNotFinished() {
     	return getTaintInt();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.758 -0500", hash_original_method = "E4686B58F673055CA1F3024D45142480", hash_generated_method = "6FEA0007C56D286F9E6DEB982B7C9728")
     
     private void nativeFinalize(int document){
     	//Formerly a native method
     	addTaint(document);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.762 -0500", hash_original_method = "3AD95195E4F45498BF91C745A6ED665C", hash_generated_method = "F76F1DC0E27105247C73023C6E72CFC7")
     
@@ -303,7 +297,6 @@ private void throwIfCurrentPageNotFinished() {
     	addTaint(page);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.768 -0500", hash_original_method = "017D768FE091C818176C18EE0E6D7227", hash_generated_method = "ECE28A0F09D1E8CFE9DC5503EBA5AA4B")
     
     private void nativeWriteTo(int document, OutputStream out, byte[] chunk){
@@ -312,7 +305,6 @@ private void throwIfCurrentPageNotFinished() {
     	addTaint(out.getTaint());
     	addTaint(chunk[0]);
     }
-
 
     private final class PdfCanvas extends Canvas {
 

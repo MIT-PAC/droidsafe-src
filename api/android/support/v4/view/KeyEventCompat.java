@@ -157,6 +157,7 @@ private static int metaStateFilterDirectionalModifiers(int metaState,
         public boolean metaStateHasNoModifiers(int metaState);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.239 -0400", hash_original_method = "532007D9C650EDCB29F8F1C752472985", hash_generated_method = "532007D9C650EDCB29F8F1C752472985")
     public KeyEventCompat ()
     {

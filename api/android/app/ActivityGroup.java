@@ -44,6 +44,7 @@ public class ActivityGroup extends Activity {
 
     protected LocalActivityManager mLocalActivityManager;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.726 -0500", hash_original_method = "2AE03BACAB887CF7A6D90481487D2FF6", hash_generated_method = "FC15AF3FD8F3A1EA0CCD059B29D49F7B")
     
 public ActivityGroup() {

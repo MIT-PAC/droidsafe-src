@@ -27,6 +27,7 @@ public PAssertedIdentity(AddressImpl address) {
     /**
      * default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.004 -0500", hash_original_method = "7A9E6607376C61D3870CDBD630C80B00", hash_generated_method = "29ABC8EEBEF62BFE4F873E3FDD648087")
     
 public PAssertedIdentity()

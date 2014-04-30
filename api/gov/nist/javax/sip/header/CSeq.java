@@ -25,6 +25,7 @@ public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
     /**
      * Constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.119 -0500", hash_original_method = "CAC1D7DD6777B55F66B86A8C606BDF3F", hash_generated_method = "91BA67FAB03ECA27672B1981059D780E")
     
 public CSeq() {

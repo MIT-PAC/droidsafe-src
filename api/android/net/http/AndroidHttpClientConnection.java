@@ -70,6 +70,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
 
     private Socket socket = null;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.920 -0500", hash_original_method = "34D8A32964859B1FAAC1AC49D9EAB8C7", hash_generated_method = "724B23751891E64CC0AE8C46D487447E")
     
 public AndroidHttpClientConnection() {

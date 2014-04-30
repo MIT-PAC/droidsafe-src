@@ -72,6 +72,7 @@ public LinkCapabilities[] newArray(int size) {
     /**
      * Constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.852 -0500", hash_original_method = "8AC97A1FCCB5728EBAB2151990B61507", hash_generated_method = "8897901E4D9614E3F7F033A7202C3B9F")
     
 public LinkCapabilities() {

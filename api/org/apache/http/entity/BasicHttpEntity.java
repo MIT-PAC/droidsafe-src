@@ -24,6 +24,7 @@ public class BasicHttpEntity extends AbstractHttpEntity {
      * The content is initially missing, the content length
      * is set to a negative number.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.279 -0500", hash_original_method = "6C56C11F8A570F150FD118B6F4CE07D0", hash_generated_method = "BAC7665F566F0E3CFE16276162A7B9FB")
     
 public BasicHttpEntity() {

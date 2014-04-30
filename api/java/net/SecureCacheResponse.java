@@ -15,6 +15,7 @@ public abstract class SecureCacheResponse extends CacheResponse {
     /**
      * Creates a new instance of this class.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.203 -0500", hash_original_method = "2B60842F322CE42A5832F1BBB0BB3BBC", hash_generated_method = "E876B20AB059AEB79D3226BCAAD496CE")
     
 public SecureCacheResponse() {

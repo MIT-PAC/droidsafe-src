@@ -20,6 +20,7 @@ public class AuthState {
      * Default constructor.
      * 
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.285 -0500", hash_original_method = "42AD4E0626C603EC8E908340F6792E72", hash_generated_method = "CD5A41D7B6E8944446C7181525AF6289")
     
 public AuthState() {

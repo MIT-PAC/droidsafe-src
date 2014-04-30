@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.channels.SelectionKey;
 
-
-
-
-
-
 public abstract class AbstractSelectionKey extends SelectionKey {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.225 -0500", hash_original_field = "FFFCC50D3A278EF95DEB022E99DE2B21", hash_generated_field = "FFFCC50D3A278EF95DEB022E99DE2B21")
 
@@ -19,6 +14,7 @@ public abstract class AbstractSelectionKey extends SelectionKey {
     /**
      * Constructs a new {@code AbstractSelectionKey}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.228 -0500", hash_original_method = "A659BC27757815EB634E5D963F0A56EB", hash_generated_method = "9B4E27A7807670D7CB0964E7593083F7")
     
 protected AbstractSelectionKey() {
@@ -53,7 +49,6 @@ protected AbstractSelectionKey() {
             ((AbstractSelector) selector()).cancel(this);
         }
     }
-
     
 }
 

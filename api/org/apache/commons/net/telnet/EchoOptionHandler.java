@@ -49,6 +49,7 @@ public EchoOptionHandler(boolean initlocal, boolean initremote,
      * Constructor for the EchoOptionHandler. Initial and accept
      * behaviour flags are set to false
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.020 -0500", hash_original_method = "984A39221B45C2AE17038F1303450D1A", hash_generated_method = "C9B5C281E28AC603E6FB835595DB1C0A")
     
 public EchoOptionHandler()

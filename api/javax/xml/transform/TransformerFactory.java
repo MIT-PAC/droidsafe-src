@@ -86,6 +86,7 @@ public static TransformerFactory newInstance(String factoryClassName, ClassLoade
     /**
      * Default constructor is protected on purpose.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.644 -0500", hash_original_method = "882398A945C9CF8F9D3ABF21E7DFDBFC", hash_generated_method = "BA555873591AEA4A7BD8800DE10FD6DF")
     
 protected TransformerFactory() { }

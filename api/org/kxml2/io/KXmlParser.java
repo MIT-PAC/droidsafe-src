@@ -240,6 +240,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
 
     public final StringPool stringPool = new StringPool();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.002 -0400", hash_original_method = "010DAC0EB3331EDC25D05B4FF02298A9", hash_generated_method = "010DAC0EB3331EDC25D05B4FF02298A9")
     public KXmlParser ()
     {

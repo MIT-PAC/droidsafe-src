@@ -288,6 +288,7 @@ private void enqueue(Reference<?> list) {
 
     private static final long MAX_FINALIZE_MILLIS = 10L * 1000L;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.801 -0400", hash_original_method = "12604031794E0E37BA5BBC4D434861F1", hash_generated_method = "12604031794E0E37BA5BBC4D434861F1")
     public Daemons ()
     {

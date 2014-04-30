@@ -398,6 +398,7 @@ static File getDirectory(String variableName, String defaultPath) {
 
     public static final String MEDIA_UNMOUNTABLE = "unmountable";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.936 -0400", hash_original_method = "241E3402842314122858FA6ADB8EF111", hash_generated_method = "241E3402842314122858FA6ADB8EF111")
     public Environment ()
     {

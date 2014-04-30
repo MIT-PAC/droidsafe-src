@@ -24,6 +24,7 @@ public class SSLParameters {
      * protocols are initialized to null and client authentication
      * options are initialized to false.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.160 -0500", hash_original_method = "022ED5C9FE213591085C06A06ECFC7AA", hash_generated_method = "D8AAAAD2ED74A48ABFD89E669FBE2085")
     
 public SSLParameters() {}

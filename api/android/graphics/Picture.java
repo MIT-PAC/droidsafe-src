@@ -77,6 +77,7 @@ public static Picture createFromStream(InputStream stream) {
 
     private  int mNativePicture;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.312 -0500", hash_original_method = "2489F1714C6AB52D2B9965C8B69500DD", hash_generated_method = "360AE2114FD70BE19076AFC8712FC708")
     
 public Picture() {

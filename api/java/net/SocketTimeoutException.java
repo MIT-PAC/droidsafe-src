@@ -14,6 +14,7 @@ public class SocketTimeoutException extends InterruptedIOException {
     /**
      * Constructs a new instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.053 -0500", hash_original_method = "4A11638BF238EC4AAC97B2692C051A84", hash_generated_method = "8903FA48DC3DA7ABC8ACEDC2841258A0")
     
 public SocketTimeoutException() {
@@ -34,6 +35,7 @@ public SocketTimeoutException(String detailMessage) {
      * Constructs a new instance with given cause.
      * @hide internal use only
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.058 -0500", hash_original_method = "154D3A6011E860B522250E3541FB283D", hash_generated_method = "ECA46341136F35A0D143427AC23AAAC1")
     
 public SocketTimeoutException(Throwable cause) {
@@ -44,6 +46,7 @@ public SocketTimeoutException(Throwable cause) {
      * Constructs a new instance with given detail message and cause.
      * @hide internal use only
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.061 -0500", hash_original_method = "A2F64A06EC646B0B6CC4F19E5E317D3C", hash_generated_method = "B65CC9595F8C152168EA0D7A0AF56977")
     
 public SocketTimeoutException(String detailMessage, Throwable cause) {

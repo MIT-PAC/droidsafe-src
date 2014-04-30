@@ -18,6 +18,7 @@ public class MaxForwards extends SIPHeader implements MaxForwardsHeader {
 
     /** Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.768 -0500", hash_original_method = "112FF42CCB27FA28BF813D0D5005682D", hash_generated_method = "B8A1AA2ED7A081F7B36310F2B22C2B73")
     
 public MaxForwards() {

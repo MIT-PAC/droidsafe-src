@@ -8,8 +8,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 
-
-
 public final class NfcFragment extends Fragment {
 
     /**
@@ -49,6 +47,7 @@ public static void remove(Activity activity) {
 
     static NfcActivityManager sNfcActivityManager;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.274 -0400", hash_original_method = "F4666E8353F6FA3AAFC2948046892751", hash_generated_method = "F4666E8353F6FA3AAFC2948046892751")
     public NfcFragment ()
     {

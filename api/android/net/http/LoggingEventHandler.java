@@ -6,11 +6,9 @@ import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
 
-
-
-
 public class LoggingEventHandler implements EventHandler {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.285 -0400", hash_original_method = "2BC51DEB89C6AF0C6217972A72FE9112", hash_generated_method = "2BC51DEB89C6AF0C6217972A72FE9112")
     public LoggingEventHandler ()
     {
@@ -97,7 +95,6 @@ public boolean handleSslErrorRequest(SslError error) {
         // return false so that the caller thread won't wait forever
         return false;
     }
-
     
 }
 

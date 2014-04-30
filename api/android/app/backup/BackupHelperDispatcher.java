@@ -47,6 +47,7 @@ public class BackupHelperDispatcher {
 
     TreeMap<String,BackupHelper> mHelpers = new TreeMap<String,BackupHelper>();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.672 -0500", hash_original_method = "85B87DA3FD92CDAA8B7FFA5F20C0A756", hash_generated_method = "02FD004804F6626B90557A7727E0C650")
     
 public BackupHelperDispatcher() {

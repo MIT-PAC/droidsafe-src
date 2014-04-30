@@ -9,6 +9,7 @@ import java.io.InputStream;
 
 public abstract class SSLInputStream extends InputStream {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.274 -0400", hash_original_method = "B3907DD288EBA16F858ADC5177372075", hash_generated_method = "B3907DD288EBA16F858ADC5177372075")
     public SSLInputStream ()
     {

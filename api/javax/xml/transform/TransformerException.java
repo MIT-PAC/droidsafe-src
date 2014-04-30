@@ -21,6 +21,7 @@ public class TransformerException extends Exception {
      *
      * @param message The error or warning message.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.409 -0500", hash_original_method = "ABE089B555C0BBE77A7ADBD2839474AC", hash_generated_method = "000E1DE47EA28A846705866007F87BFF")
     
 public TransformerException(String message) {
@@ -36,6 +37,7 @@ public TransformerException(String message) {
      *
      * @param e The exception to be wrapped.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.411 -0500", hash_original_method = "BCE7B8322CC2320F24F40E1C57B1D6A6", hash_generated_method = "25936BC200236774CFBBA514A187D197")
     
 public TransformerException(Throwable e) {
@@ -56,6 +58,7 @@ public TransformerException(Throwable e) {
      *                use the message from the embedded exception.
      * @param e Any exception
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.414 -0500", hash_original_method = "D45FC511BA6A923B19FFB66FC049AAEB", hash_generated_method = "7756E00B3977CA5B64F45C943CD8A29B")
     
 public TransformerException(String message, Throwable e) {

@@ -28,6 +28,7 @@ public class ActivityInfoCompat {
 
     public static final int CONFIG_UI_MODE = 0x0200;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:34.229 -0500", hash_original_method = "2275A02B669F92A02F358A244BFF491E", hash_generated_method = "0751ADDDC9BC194164A93862DBA0BC5C")
     
 private ActivityInfoCompat() {

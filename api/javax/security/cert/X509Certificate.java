@@ -211,6 +211,7 @@ public static final X509Certificate getInstance(byte[] certData)
     /**
      * Creates a new {@code X509Certificate}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.828 -0500", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "947DC153C927E5F73C306FE5828C199C")
     
 public X509Certificate() {

@@ -650,7 +650,8 @@ Bitmap(int nativeBitmap, byte[] buffer, boolean isMutable, byte[] ninePatchChunk
     
     // orphaned legacy method
     
-	public Bitmap() {
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public Bitmap() {
 		super();
 		//Doesn't exist in the real class but was showing up in specdump
 	}

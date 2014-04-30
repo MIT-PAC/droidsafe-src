@@ -32,6 +32,7 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
 
     protected GenericURI address;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.477 -0500", hash_original_method = "19BCE3FEC6F8BEE2FAC9ED705C20C9DE", hash_generated_method = "773AFF092714F5016BA7C1575D84CA80")
     
 public AddressImpl() {

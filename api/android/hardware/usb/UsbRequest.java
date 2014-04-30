@@ -27,6 +27,7 @@ public class UsbRequest {
 
     private Object mClientData;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.322 -0500", hash_original_method = "1841EBA816AAD9B3CFCC9CFB82F138AB", hash_generated_method = "29EDDA0A00AD55F3A076CC16100CFCF0")
     
 public UsbRequest() {

@@ -2756,6 +2756,7 @@ public CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
 
     private static final int CCC_LENGTH = COUNTRY_CALLING_CALL.length;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.335 -0400", hash_original_method = "0471222FC8B1AE7B60D0D4D370DECD9E", hash_generated_method = "0471222FC8B1AE7B60D0D4D370DECD9E")
     public PhoneNumberUtils ()
     {

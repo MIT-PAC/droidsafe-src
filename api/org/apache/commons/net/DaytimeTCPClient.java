@@ -51,6 +51,7 @@ public final class DaytimeTCPClient extends SocketClient
      * The default DaytimeTCPClient constructor.  It merely sets the default
      * port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.331 -0500", hash_original_method = "65C3F07BD3FAC7A17371D28051A56D90", hash_generated_method = "263BD4846436A305C070872FAABE7F68")
     
 public DaytimeTCPClient ()

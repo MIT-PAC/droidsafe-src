@@ -19,6 +19,7 @@ public class Require extends SIPHeader implements RequireHeader {
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.194 -0500", hash_original_method = "7D717471F4A5D7EAD23BC013F4963192", hash_generated_method = "A0A2E0AF3EDD799961D1B9F4DCE6008E")
     
 public Require() {

@@ -280,6 +280,7 @@ public static boolean isDialogCreated(String method) {
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.364 -0500", hash_original_method = "58A99E16B05D3536C850145BF176F1CB", hash_generated_method = "831260624412E7D13ACE7897F697D54E")
     
 protected SIPTransactionStack() {

@@ -28,6 +28,7 @@ public PUserDatabase(String databaseName)
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.856 -0500", hash_original_method = "E39FCB193BD9E02D223AAEA09A512240", hash_generated_method = "4A7D58B86640240005440BF8BA013D2B")
     
 public PUserDatabase() {

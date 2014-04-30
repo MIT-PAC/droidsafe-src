@@ -16,11 +16,6 @@ import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 
-
-
-
-
-
 public class SSLContextImpl extends SSLContextSpi {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.804 -0500", hash_original_field = "4EBEB241E2C5CFE70E86D8F5229E7F98", hash_generated_field = "705088B5C2C8B220095047F197D99BA7")
 
@@ -33,9 +28,9 @@ public class SSLContextImpl extends SSLContextSpi {
     private  ServerSessionContext serverSessionContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.811 -0500", hash_original_field = "8EC89ADA2574F1DBC3DD4508F1BBC0BF", hash_generated_field = "193A05E0CE57E1D6165874B1C5DC807D")
 
-
     protected SSLParametersImpl sslParameters;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.813 -0500", hash_original_method = "BB3D0F5B2222977574D305A8CAD6912B", hash_generated_method = "A37171A2B26C512FA6F9A10F6396EDDE")
     
 public SSLContextImpl() {

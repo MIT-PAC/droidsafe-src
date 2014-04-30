@@ -12,10 +12,9 @@ import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-
-
 public class RFC2109DomainHandler implements CookieAttributeHandler {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.339 -0500", hash_original_method = "BA3C0693A4254304D076B6F4F238BB9F", hash_generated_method = "0D0338E60825442D248A100FA990C162")
     
 public RFC2109DomainHandler() {
@@ -106,7 +105,6 @@ public boolean match(final Cookie cookie, final CookieOrigin origin) {
         }
         return host.equals(domain) || (domain.startsWith(".") && host.endsWith(domain));
     }
-
     
 }
 

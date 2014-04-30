@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class SyncStats implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.769 -0400", hash_original_field = "55F2D29CBE234779B1FDF539D493D020", hash_generated_field = "17E16BE7064CEFEFD5C68A11BA2D5E7F")
 
@@ -57,6 +52,7 @@ public SyncStats[] newArray(int size) {
 
     public long numSkippedEntries;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.187 -0500", hash_original_method = "AD75EEB91F0DE3327218E1B3E5E5D264", hash_generated_method = "243FB9DD19779AAF19CB4B2AD5A5C3A3")
     
 public SyncStats() {

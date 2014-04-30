@@ -1596,6 +1596,7 @@ public static Uri getContentUri(String volumeName) {
 
     public static final String MEDIA_IGNORE_FILENAME = ".nomedia";
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.452 -0400", hash_original_method = "463B9D094169FDB0633EE291129364D2", hash_generated_method = "463B9D094169FDB0633EE291129364D2")
     public MediaStore ()
     {

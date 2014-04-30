@@ -13,6 +13,7 @@ public class SpellCheckSpan implements ParcelableSpan {
 
     private boolean mSpellCheckInProgress;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.447 -0500", hash_original_method = "F1D4E96290AC8C7754627E362363B9DA", hash_generated_method = "312C28E8749A7E188B801215CF7716D6")
     
 public SpellCheckSpan() {

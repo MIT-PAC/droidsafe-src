@@ -17,8 +17,6 @@ import org.apache.http.conn.ManagedClientConnection;
 import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HttpContext;
 
-
-
 public class DefaultUserTokenHandler implements UserTokenHandler {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.225 -0500", hash_original_method = "014F1AE5D382F95DB9F2CCB7F72FA9B6", hash_generated_method = "FB75E729A5E78AD3D12831F68EE97C53")
@@ -34,6 +32,7 @@ private static Principal getAuthPrincipal(final AuthState authState) {
         return null;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.867 -0400", hash_original_method = "55806A67FE4596FA71F9FF04E560BE1C", hash_generated_method = "55806A67FE4596FA71F9FF04E560BE1C")
     public DefaultUserTokenHandler ()
     {
@@ -70,7 +69,6 @@ public Object getUserToken(final HttpContext context) {
         
         return userPrincipal;
     }
-
     
 }
 

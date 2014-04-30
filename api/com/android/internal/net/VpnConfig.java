@@ -101,6 +101,7 @@ public static PendingIntent getIntentForStatusPanel(Context context, VpnConfig c
 
     public long startTime = -1;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.426 -0400", hash_original_method = "0CC41B74437C55587D7B09044ACFFB33", hash_generated_method = "0CC41B74437C55587D7B09044ACFFB33")
     public VpnConfig ()
     {

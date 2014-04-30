@@ -71,17 +71,16 @@ public class RExecClient extends SocketClient
     public static final int DEFAULT_PORT = 512;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.055 -0500", hash_original_field = "0403A10F429DBA727A18F7B08AAE9617", hash_generated_field = "71EB29C591E35D926D58C0E99490EB00")
 
-
     private boolean __remoteVerificationEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.058 -0500", hash_original_field = "A85808C7CA7EABB042A3E88C09C6B8F4", hash_generated_field = "484F7A98B93DC22F370239738497CA80")
 
     protected InputStream _errorStream_;
 
-
     /***
      * The default RExecClient constructor.  Initializes the
      * default port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.064 -0500", hash_original_method = "FA53100D9673C8250DDDB2DABAFFF1EA", hash_generated_method = "EA67D5D4E3644B63BA9E1EAD6AE9DA2E")
     
 public RExecClient()
@@ -119,7 +118,6 @@ InputStream _createErrorStream() throws IOException
         return (new SocketInputStream(socket, socket.getInputStream()));
     }
 
-
     /***
      * Returns the InputStream from which the standard outputof the remote
      * process can be read.  The input stream will only be set after a
@@ -135,7 +133,6 @@ public InputStream getInputStream()
         return _input_;
     }
 
-
     /***
      * Returns the OutputStream through which the standard input of the remote
      * process can be written.  The output stream will only be set after a
@@ -150,7 +147,6 @@ public OutputStream getOutputStream()
     {
         return _output_;
     }
-
 
     /***
      * Returns the InputStream from which the standard error of the remote
@@ -168,7 +164,6 @@ public InputStream getErrorStream()
     {
         return _errorStream_;
     }
-
 
     /***
      * Remotely executes a command through the rexecd daemon on the server
@@ -243,7 +238,6 @@ public void rexec(String username, String password,
         }
     }
 
-
     /***
      * Same as <code> rexec(username, password, command, false); </code>
      ***/
@@ -271,7 +265,6 @@ public void disconnect() throws IOException
         _errorStream_ = null;
         super.disconnect();
     }
-
 
     /***
      * Enable or disable verification that the remote host connecting to

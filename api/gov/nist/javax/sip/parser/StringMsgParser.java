@@ -135,6 +135,7 @@ public static void main(String[] args) throws ParseException {
     /**
      * @since v0.9
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.424 -0500", hash_original_method = "03434E90443FF3CC6928C5F00042D419", hash_generated_method = "35B29D519ACA0C846314797028EE4DBC")
     
 public StringMsgParser() {

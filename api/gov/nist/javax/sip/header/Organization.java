@@ -19,6 +19,7 @@ public class Organization extends SIPHeader implements OrganizationHeader {
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.584 -0500", hash_original_method = "A22A45BA0A2B2678454705CA5BB968BD", hash_generated_method = "31BA1324E7F2B90B300FFF12A86A746C")
     
 public Organization() {

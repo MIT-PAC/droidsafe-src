@@ -73,6 +73,7 @@ public static Object fromIntValue(int value) {
      * To get a default implementation it is recommended to use
      * getInstance() method.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.183 -0500", hash_original_method = "46ADEA8E713BD711C252666C512B58BA", hash_generated_method = "5234CE4192CB7739898FB9F5A94CDDD8")
     
 public ASN1Integer() {

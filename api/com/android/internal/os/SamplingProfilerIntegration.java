@@ -237,6 +237,7 @@ public Thread newThread(Runnable r) {
 
     private static long startMillis;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.675 -0400", hash_original_method = "C843367E35B636EBAF34BDED63CFE66E", hash_generated_method = "C843367E35B636EBAF34BDED63CFE66E")
     public SamplingProfilerIntegration ()
     {

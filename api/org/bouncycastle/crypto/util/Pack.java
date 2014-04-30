@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class Pack {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.673 -0500", hash_original_method = "BEE7BDB9EC50CA7A0AB2196E0174132D", hash_generated_method = "44337B78D46232E2B0109ADC34575A40")
     
@@ -85,12 +82,12 @@ public static void longToLittleEndian(long n, byte[] bs, int off)
         intToLittleEndian((int)(n >>> 32), bs, off + 4);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.178 -0400", hash_original_method = "7D61F0FDEC5E1A91AB83D504A09E89B5", hash_generated_method = "7D61F0FDEC5E1A91AB83D504A09E89B5")
     public Pack ()
     {
         //Synthesized constructor
     }
-
     
 }
 

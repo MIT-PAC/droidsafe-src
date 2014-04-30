@@ -61,7 +61,6 @@ private static int toUNormalizationMode(Form form) {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:31:16.529 -0400", hash_original_method = "EE3335322C022FC69A7D7D5DDF7823DA", hash_generated_method = "D56D3F268C39B2DC47AF16A25FCEDF01")
     
     private static boolean isNormalizedImpl(String src, int form){
@@ -73,12 +72,7 @@ private static int toUNormalizationMode(Form form) {
     	return toTaintBoolean(taintDouble);
     }
 
-
-
-
-
-
-
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:13:48.274 -0400", hash_original_method = "8A2F14029E65BB1B41923DA00040CBFE", hash_generated_method = "B72D1261B946E0DC337363522C54BB8A")
     
 private NativeNormalizer() {}

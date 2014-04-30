@@ -56,6 +56,7 @@ public static ASN1UTCTime getInstance() {
      * To get a default implementation it is recommended to use
      * getInstance() method.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.567 -0500", hash_original_method = "26950815C4CFBBF28A3CFECAD840C50B", hash_generated_method = "86C9598356A193D1F9A9F222507B558C")
     
 public ASN1UTCTime() {

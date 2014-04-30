@@ -58,10 +58,8 @@ public class FingerClient extends SocketClient
     public static final int DEFAULT_PORT = 79;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.183 -0500", hash_original_field = "53747FAF3B74697FB72CBF578F664CBF", hash_generated_field = "0A4A8E13FF83FD664B42FED328F494AF")
 
-
     private static final String __LONG_FLAG = "/W ";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.186 -0500", hash_original_field = "070520B24C657DD573A20ADDA34EBA8E", hash_generated_field = "309EB73D1E13AD4431220E040AC161AB")
-
 
     private transient StringBuffer __query = new StringBuffer(64);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.191 -0500", hash_original_field = "6D657336A96973153F06A98271A46026", hash_generated_field = "56B478E465C6965FCA2D464FAFB5ADD1")
@@ -72,13 +70,13 @@ public class FingerClient extends SocketClient
      * The default FingerClient constructor.  Initializes the
      * default port to <code> DEFAULT_PORT </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.194 -0500", hash_original_method = "1D10C2AB7D4A035E3EDB22DE2A4CE492", hash_generated_method = "0435422691E8E273DCF5B48248AF7C2D")
     
 public FingerClient()
     {
         setDefaultPort(DEFAULT_PORT);
     }
-
 
     /***
      * Fingers a user at the connected host and returns the output
@@ -115,7 +113,6 @@ public String query(boolean longOutput, String username) throws IOException
         return result.toString();
     }
 
-
     /***
      * Fingers the connected host and returns the output
      * as a String.  You must first connect to a finger server before
@@ -132,7 +129,6 @@ public String query(boolean longOutput) throws IOException
     {
         return query(longOutput, "");
     }
-
 
     /***
      * Fingers a user and returns the input stream from the network connection
@@ -166,7 +162,6 @@ public InputStream getInputStream(boolean longOutput, String username)
 
         return _input_;
     }
-
 
     /***
      * Fingers the connected host and returns the input stream from

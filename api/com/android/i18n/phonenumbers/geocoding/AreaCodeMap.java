@@ -53,7 +53,8 @@ private static int getSizeOfAreaCodeMapStorage(AreaCodeMapStorageStrategy mapSto
    * {@link Externalizable}. The empty map could later be populated by
    * {@link #readAreaCodeMap(java.util.SortedMap)} or {@link #readExternal(java.io.ObjectInput)}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.571 -0500", hash_original_method = "F2335FCA92B9F7475991523B74CDEDE4", hash_generated_method = "E8845103160A945A6235E4DA785232E3")
+  @DSSafe(DSCat.SAFE_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.571 -0500", hash_original_method = "F2335FCA92B9F7475991523B74CDEDE4", hash_generated_method = "E8845103160A945A6235E4DA785232E3")
     
 public AreaCodeMap() {}
 

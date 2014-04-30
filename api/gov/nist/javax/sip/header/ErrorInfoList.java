@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.sip.header.ErrorInfoHeader;
 
-
-
-
-
-
 public class ErrorInfoList extends SIPHeaderList<ErrorInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.195 -0500", hash_original_field = "7D07EDF60BE7D52BF87500AC6D8FE154", hash_generated_field = "712212474A80BD328114C4C1DC66CBA3")
 
@@ -18,6 +13,7 @@ public class ErrorInfoList extends SIPHeaderList<ErrorInfo> {
     /**
      * Default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.204 -0500", hash_original_method = "BE8380000E3CB2DA0A370B790F9454ED", hash_generated_method = "3D4DC9EEAD92566346F6E429E5110470")
     
 public ErrorInfoList() {

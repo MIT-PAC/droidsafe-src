@@ -141,6 +141,7 @@ public static InputStream getSystemResourceAsStream(String resName) {
      * Constructs a new instance of this class with the system class loader as
      * its parent.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.712 -0500", hash_original_method = "8E76514466172FE6741D8A4C6661DD70", hash_generated_method = "35CA469B9DE7E16FED58BBDA37322DDE")
     
 protected ClassLoader() {
@@ -840,6 +841,7 @@ class BootClassLoader extends ClassLoader {
 
     private static BootClassLoader instance;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.804 -0500", hash_original_method = "D3F85B3CE9250DAE48A2E24200FC3763", hash_generated_method = "863B004167717B564E5F1983A33B20B2")
     
 public BootClassLoader() {

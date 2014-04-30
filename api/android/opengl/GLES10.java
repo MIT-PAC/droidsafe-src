@@ -1690,6 +1690,7 @@ public static void glVertexPointer(
 
     private static Buffer _vertexPointer;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.982 -0400", hash_original_method = "821E4B2AC1205B57597681A054E6B512", hash_generated_method = "821E4B2AC1205B57597681A054E6B512")
     public GLES10 ()
     {

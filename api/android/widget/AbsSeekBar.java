@@ -46,18 +46,21 @@ public abstract class AbsSeekBar extends ProgressBar {
 
     private boolean mIsDragging;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.408 -0500", hash_original_method = "559FDCE349858758D50BC2905EE88B67", hash_generated_method = "C46FBF546DF5E71B0BE095D871862D47")
     
 public AbsSeekBar(Context context) {
         super(context);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.411 -0500", hash_original_method = "9B53DFB86DC24D620F7DF1D33C461438", hash_generated_method = "F87231B1B13D3C212440C6199DF2E606")
     
 public AbsSeekBar(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.413 -0500", hash_original_method = "1A34D5E8CF032B0AA6AD65EE16F7EFF6", hash_generated_method = "48447701C2F88AB3D5BB3C56A26D5D74")
     
 public AbsSeekBar(Context context, AttributeSet attrs, int defStyle) {

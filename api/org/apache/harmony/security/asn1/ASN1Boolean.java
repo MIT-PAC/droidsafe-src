@@ -34,6 +34,7 @@ public static ASN1Boolean getInstance() {
      * To get a default implementation it is recommended to use
      * getInstance() method.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.511 -0500", hash_original_method = "FD99504F4E1A7A3268A56063556CF13F", hash_generated_method = "9775D2BBED0F49B99812D077BDD49BEC")
     
 public ASN1Boolean() {

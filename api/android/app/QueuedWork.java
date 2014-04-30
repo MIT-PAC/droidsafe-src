@@ -8,9 +8,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-
-
-
 public class QueuedWork { // lazy, guarded by class
 
     /**
@@ -87,9 +84,9 @@ public static boolean hasPendingWork() {
             new ConcurrentLinkedQueue<Runnable>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.012 -0500", hash_original_field = "A85FABE3F0CB6E39549C7FC378135E94", hash_generated_field = "48846E427360D3B755393A8B7AB28CDC")
 
-
     private static ExecutorService sSingleThreadExecutor = null;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.510 -0400", hash_original_method = "94C2F41E1F3AD149B563D9E976EAD755", hash_generated_method = "94C2F41E1F3AD149B563D9E976EAD755")
     public QueuedWork ()
     {

@@ -204,6 +204,7 @@ synchronized static void computePRF(byte[] out, byte[] secret,
 
     private static int sha_mac_length;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.025 -0400", hash_original_method = "A5FFDA88D1812D20324981FB63A9C9B4", hash_generated_method = "A5FFDA88D1812D20324981FB63A9C9B4")
     public PRF ()
     {

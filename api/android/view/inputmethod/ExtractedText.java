@@ -60,6 +60,7 @@ public ExtractedText[] newArray(int size) {
 
     public int flags;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.481 -0400", hash_original_method = "B20DB5D63D0394BA39DC79D6F40BFDA5", hash_generated_method = "B20DB5D63D0394BA39DC79D6F40BFDA5")
     public ExtractedText ()
     {

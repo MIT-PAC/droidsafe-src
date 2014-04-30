@@ -19,6 +19,7 @@ public abstract class AbstractCookieSpec implements CookieSpec {
     /** 
      * Default constructor 
      * */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.606 -0500", hash_original_method = "0B3B80B58135DE0CE3912FEB5FB0300B", hash_generated_method = "86A9B77828C40B0D962397C0CA763DAC")
     
 public AbstractCookieSpec() {

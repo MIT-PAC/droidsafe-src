@@ -11,6 +11,7 @@ public abstract class Transformer {
     /**
      * Default constructor is protected on purpose.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.879 -0500", hash_original_method = "962E0FC22D29E2A2CD7F27A68548CC24", hash_generated_method = "EB6A0141A976D3DFFAA6BC425289601A")
     
 protected Transformer() { }

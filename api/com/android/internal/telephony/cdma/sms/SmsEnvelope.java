@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public final class SmsEnvelope {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.373 -0500", hash_original_field = "0FE87CBBA33DE6795A87C7AE12FB63CD", hash_generated_field = "B5E654FAE63C8EC1AEFCC489ABA392C6")
 
@@ -81,6 +79,7 @@ public final class SmsEnvelope {
 
     public byte[] bearerData;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.429 -0500", hash_original_method = "63C615594341C58AE34F731D1CD086D9", hash_generated_method = "79FE2318F1E12B4A5C19B379D86BD6EC")
     
 public SmsEnvelope() {

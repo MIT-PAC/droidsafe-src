@@ -34,6 +34,7 @@ public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
      * that we don't have races in creating the state shared between
      * all default SSLContexts.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.093 -0500", hash_original_method = "09005AB24FD7DF4C7BE4D5BB1BAB63A4", hash_generated_method = "96BEC411EC28BE38E6E384F8FA7CAE60")
     
 public DefaultSSLContextImpl() throws GeneralSecurityException, IOException {

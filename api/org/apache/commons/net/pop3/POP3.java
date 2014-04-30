@@ -73,7 +73,6 @@ public class POP3 extends SocketClient
     public static final int UPDATE_STATE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:13.330 -0500", hash_original_field = "BDC43B603C01DB64CD6AD2EF3B64594A", hash_generated_field = "926FC06D70C35C9CB87E38B312D1DE43")
 
-
     static final String _OK = "+OK";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:13.336 -0500", hash_original_field = "8C7BFC19212229D47BCE8A67EFDE5065", hash_generated_field = "EEC2676B7ACFF8858936950004E41122")
 
@@ -85,7 +84,6 @@ public class POP3 extends SocketClient
     private static final String __DEFAULT_ENCODING = "ISO-8859-1";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:13.347 -0500", hash_original_field = "F31B83C0C1D64B53F76F652AE8321C6D", hash_generated_field = "83E8DA05654F510CBF3B6C73540D31DF")
 
-
     private int __popState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:13.353 -0500", hash_original_field = "E52EBB0C4508DF2885AE07F230BD875D", hash_generated_field = "DDAD9EDD5F48B40E721C2DB7E079A4EF")
 
@@ -94,7 +92,6 @@ public class POP3 extends SocketClient
 
     private StringBuffer __commandBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:13.361 -0500", hash_original_field = "3B06A6A58FD8BA55C2BC8C2DF80650D4", hash_generated_field = "3B06A6A58FD8BA55C2BC8C2DF80650D4")
-
 
     BufferedReader _reader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:13.367 -0500", hash_original_field = "96C814136BEA461ACBAD7291EA9D0AEA", hash_generated_field = "96C814136BEA461ACBAD7291EA9D0AEA")
@@ -114,6 +111,7 @@ public class POP3 extends SocketClient
      * The default POP3Client constructor.  Initializes the state
      * to <code>DISCONNECTED_STATE</code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:13.427 -0500", hash_original_method = "0575B8C0B33C637AFCCDE968DE34C861", hash_generated_method = "1AFA5203D9326303873EF80924E6276B")
     
 public POP3()
@@ -155,7 +153,6 @@ private void __getReply() throws IOException
             _commandSupport_.fireReplyReceived(_replyCode, getReplyString());
     }
 
-
     /***
      * Performs connection initialization and sets state to
      * <code> AUTHORIZATION_STATE </code>.
@@ -174,7 +171,6 @@ protected void _connectAction_() throws IOException
         __getReply();
         setState(AUTHORIZATION_STATE);
     }
-
 
     /***
      * Adds a ProtocolCommandListener.  Delegates this task to
@@ -202,7 +198,6 @@ public void removeProtocolCommandistener(ProtocolCommandListener listener)
         _commandSupport_.removeProtocolCommandListener(listener);
     }
 
-
     /***
      * Sets POP3 client state.  This must be one of the
      * <code>_STATE</code> constants.
@@ -216,7 +211,6 @@ public void setState(int state)
         __popState = state;
     }
 
-
     /***
      * Returns the current POP3 client state.
      * <p>
@@ -228,7 +222,6 @@ public int getState()
     {
         return __popState;
     }
-
 
     /***
      * Retrieves the additional lines of a multi-line server reply.
@@ -249,7 +242,6 @@ public void getAdditionalReply() throws IOException
         }
     }
 
-
     /***
      * Disconnects the client from the server, and sets the state to
      * <code> DISCONNECTED_STATE </code>.  The reply text information
@@ -269,7 +261,6 @@ public void disconnect() throws IOException
         _replyLines.setSize(0);
         setState(DISCONNECTED_STATE);
     }
-
 
     /***
      * Sends a command an arguments to the server and returns the reply code.
@@ -347,7 +338,6 @@ public int sendCommand(int command) throws IOException
     {
         return sendCommand(POP3Command._commands[command], null);
     }
-
 
     /***
      * Returns an array of lines received as a reply to the last command

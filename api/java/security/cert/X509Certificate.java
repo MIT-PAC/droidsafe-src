@@ -21,6 +21,7 @@ public abstract class X509Certificate extends Certificate implements X509Extensi
     /**
      * Creates a new {@code X509Certificate}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.755 -0500", hash_original_method = "91BE0E39C67CC71AFC40C5A05860BC17", hash_generated_method = "19C930C3AE8A07BCD0404159D78050F4")
     
 protected X509Certificate() {

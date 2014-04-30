@@ -335,6 +335,7 @@ public static long checksumCrc32(File file) throws FileNotFoundException, IOExce
 
     private static final Pattern SAFE_FILENAME_PATTERN = Pattern.compile("[\\w%+,./=_-]+");
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.083 -0400", hash_original_method = "68A158D183F246B86320864EE65BA192", hash_generated_method = "68A158D183F246B86320864EE65BA192")
     public FileUtils ()
     {

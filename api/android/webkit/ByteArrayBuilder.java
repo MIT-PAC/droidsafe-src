@@ -25,6 +25,7 @@ class ByteArrayBuilder {
 
     private LinkedList<Chunk> mChunks;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.031 -0500", hash_original_method = "4B643343F90EB2A0E25A848B20B29FC2", hash_generated_method = "70BD4D371B468DC8E79D214F46CEAA88")
     
 public ByteArrayBuilder() {

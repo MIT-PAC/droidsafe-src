@@ -35,6 +35,7 @@ public RestoreSet[] newArray(int size) {
 
     public long token;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.536 -0500", hash_original_method = "8F1DCA72C97A5A82D254BEC6432DE3FB", hash_generated_method = "F72E27EE7BBB93FAA5D5AC97FA16596B")
     
 public RestoreSet() {

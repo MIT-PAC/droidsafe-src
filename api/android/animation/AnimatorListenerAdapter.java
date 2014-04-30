@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public abstract class AnimatorListenerAdapter implements Animator.AnimatorListener {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.968 -0400", hash_original_method = "577D05693184EE178A20150D84A37CD4", hash_generated_method = "577D05693184EE178A20150D84A37CD4")
         
     public AnimatorListenerAdapter ()

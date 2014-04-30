@@ -20,6 +20,7 @@ public class UndeclaredThrowableException extends RuntimeException {
      * @param exception
      *            the undeclared, checked exception that occurred
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.147 -0500", hash_original_method = "2E4465C869474A92C89F11543A5003FF", hash_generated_method = "640184A84C05B7F149271CD80E9EDBB6")
     
 public UndeclaredThrowableException(Throwable exception) {

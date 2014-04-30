@@ -63,6 +63,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
 
     Rect mTmpDirty;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.115 -0400", hash_original_method = "65236AFB54FAB65BD2FC1C8CD2966A75", hash_generated_method = "65236AFB54FAB65BD2FC1C8CD2966A75")
     public BaseSurfaceHolder ()
     {

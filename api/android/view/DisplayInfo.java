@@ -35,7 +35,6 @@ import libcore.util.Objects;
 public final class DisplayInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:02:44.051 -0500", hash_original_field = "6E0D7442AB053AE9DB6EF3D772972E65", hash_generated_field = "3F7429CDD0E8C84C58A4ECC0FCEBD655")
 
-
     public static final Creator<DisplayInfo> CREATOR = new Creator<DisplayInfo>() {
         @Override
         public DisplayInfo createFromParcel(Parcel source) {
@@ -139,6 +138,7 @@ private static String flagsToString(int flags) {
 
     public String ownerPackageName;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:02:44.054 -0500", hash_original_method = "829DBAA73FC1CCEDA7BADF755A27DB9E", hash_generated_method = "DA9C2247A03A298DF6647E2AFD073050")
     
 public DisplayInfo() {

@@ -29,6 +29,7 @@ public class Replaces extends ParametersHeader implements ExtensionHeader, Repla
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.795 -0500", hash_original_method = "573D7C3C26F3FDBFC64B6AAA9C0FB261", hash_generated_method = "B315734C5C461B79013C7F7473402303")
     
 public Replaces() {

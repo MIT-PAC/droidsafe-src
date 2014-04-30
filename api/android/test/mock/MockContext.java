@@ -34,11 +34,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
-
-
-
 public class MockContext extends Context {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.098 -0400", hash_original_method = "3BD432D7D653C5930EE983B863B99E4B", hash_generated_method = "3BD432D7D653C5930EE983B863B99E4B")
     public MockContext ()
     {
@@ -588,7 +586,6 @@ public void enforceUriPermission(
     public boolean isRestricted() {
         throw new UnsupportedOperationException();        
     }
-    
 
     @Override
     @DSSafe(DSCat.SAFE_OTHERS)
@@ -624,8 +621,6 @@ public void enforceUriPermission(
         
         return files;
     }
-    
-
     
 }
 

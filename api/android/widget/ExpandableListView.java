@@ -240,18 +240,21 @@ public static long getPackedPositionForGroup(int groupPosition) {
     
     private OnChildClickListener mOnChildClickListener;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.776 -0500", hash_original_method = "883D95D0AB13C2DE7BE0B98484A4295B", hash_generated_method = "BA07C12D521DFBE960446C3AF40E68D9")
     
 public ExpandableListView(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.779 -0500", hash_original_method = "4019A5446CFBA13B5DEBC7A85D6066EA", hash_generated_method = "5DA27CE48A126D4DD46C60E83CE3DDD2")
     
 public ExpandableListView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.expandableListViewStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.782 -0500", hash_original_method = "9ABBDB13FF145C988C5879C289ADA198", hash_generated_method = "26B658E4AF12632E54E92C248963A216")
     
 public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
@@ -348,7 +351,6 @@ public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
 
             // If this item type and the previous item type are different, then we need to change
             // the left & right bounds
-
             
 /*            if (pos.position.type != lastItemType) {
                 

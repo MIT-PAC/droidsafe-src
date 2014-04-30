@@ -22,6 +22,7 @@ public PServedUser(AddressImpl address)
         this.address = address;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.081 -0500", hash_original_method = "88679C40290AB234E035EF50535B4D0D", hash_generated_method = "3B3C32F8BB1AD7CD5066F4FD57F1F670")
     
 public PServedUser()

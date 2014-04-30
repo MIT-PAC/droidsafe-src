@@ -10,6 +10,7 @@ public abstract class KeyPairGeneratorSpi {
     /**
      * Constructs a new instance of {@code KeyPairGeneratorSpi}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.645 -0500", hash_original_method = "CDF881F5D78C7440721315183DA160B5", hash_generated_method = "7175B6D3A50E38748B9545E8BAA15E45")
     
 public KeyPairGeneratorSpi() {

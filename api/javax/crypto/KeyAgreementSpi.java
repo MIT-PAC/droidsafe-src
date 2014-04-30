@@ -16,6 +16,7 @@ public abstract class KeyAgreementSpi {
     /**
      * Creates a new {@code KeyAgreementSpi} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.172 -0500", hash_original_method = "63241E16415E7B15EEAD7BA66A194D2D", hash_generated_method = "F3BF694B9EC2D906AA84C1583025F530")
     
 public KeyAgreementSpi() {

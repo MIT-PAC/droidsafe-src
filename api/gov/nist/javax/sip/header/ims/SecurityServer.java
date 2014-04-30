@@ -12,6 +12,7 @@ public class SecurityServer extends SecurityAgree implements SecurityServerHeade
 
     // TODO serialVersionUID
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.148 -0500", hash_original_method = "33339D36120DC8E0BA97A29C8E334060", hash_generated_method = "F3C8E0605CC16B3241E68253B5342FEE")
     
 public SecurityServer()

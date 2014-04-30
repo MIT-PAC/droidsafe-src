@@ -36,6 +36,7 @@ private static boolean equalsHandlesNulls(Object a, Object b) {
     /**
      * Empty constructor.  Initializes the LAC and CID to -1.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:43.598 -0500", hash_original_method = "666EDAF57125B4E49F0CA8BF9D68AAC9", hash_generated_method = "FC813C922246E650DA4FDE16B8D8F10A")
     
 public GsmCellLocation() {

@@ -39,6 +39,7 @@ public final class NNTPConnectionClosedException extends IOException
 {
 
     /*** Constructs a NNTPConnectionClosedException with no message ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:10.993 -0500", hash_original_method = "4E1EBB3BBAC8D401DF269C3E01907C25", hash_generated_method = "3F41CB72EDBFBA4B8071CFDBE53B872B")
     
 public NNTPConnectionClosedException()
@@ -51,6 +52,7 @@ public NNTPConnectionClosedException()
      * <p>
      * @param message  The message explaining the reason for the exception.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:10.996 -0500", hash_original_method = "6054E23D0D81F613FCE07FC6523D2D13", hash_generated_method = "245D71CD2C0456855913E82F38D75EE9")
     
 public NNTPConnectionClosedException(String message)

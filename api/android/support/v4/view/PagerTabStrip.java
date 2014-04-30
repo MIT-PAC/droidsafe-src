@@ -47,7 +47,6 @@ public class PagerTabStrip extends PagerTitleStrip {
     private static final String TAG = "PagerTabStrip";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.691 -0500", hash_original_field = "2556A70D2E19F2CBDD2ADBCCB300654E", hash_generated_field = "F815EAE3F4892EA46E413D40A4CACECA")
 
-
     private static final int INDICATOR_HEIGHT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.693 -0500", hash_original_field = "765204A0911B6171A5BF3D7B6D3D41FE", hash_generated_field = "FE15022AF2224D927BC779D4428D97DB")
 
@@ -69,13 +68,11 @@ public class PagerTabStrip extends PagerTitleStrip {
     private static final int MIN_STRIP_HEIGHT = 32;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.703 -0500", hash_original_field = "78A76B1C1E172B7EE02E3193D3E15F67", hash_generated_field = "409FE0E5CDF8B52318C1C752E426E71E")
 
-
     private int mIndicatorColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.705 -0500", hash_original_field = "0B78594062216610AA9AD992AC51C103", hash_generated_field = "83098245E64EBFACE72B4215FEFBC24C")
 
     private int mIndicatorHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.707 -0500", hash_original_field = "FC5A6D8561811ED58F674C54BC342B11", hash_generated_field = "D329705655BA0249AA981002B2E08FFB")
-
 
     private int mMinPaddingBottom;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.708 -0500", hash_original_field = "E3529DDAAA088C9AD89006D0C13170F6", hash_generated_field = "2E19480DB23CD1A94AC53319EE8298A4")
@@ -86,10 +83,8 @@ public class PagerTabStrip extends PagerTitleStrip {
     private int mMinStripHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.710 -0500", hash_original_field = "CBB8A0F8E6555144886323D859053B7F", hash_generated_field = "B4A7B09278766EFD4D68D9CA85E7B4F2")
 
-
     private int mTabPadding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.711 -0500", hash_original_field = "E43EE5FB15F961658A90688AA42DF177", hash_generated_field = "E8B1B360D2FDC03D7C871AFEEE323841")
-
 
     private final Paint mTabPaint = new Paint();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.713 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
@@ -97,10 +92,8 @@ public class PagerTabStrip extends PagerTitleStrip {
     private final Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.714 -0500", hash_original_field = "4F8ED051E13AEA0ECB1167BBDF63AF5A", hash_generated_field = "F19DF385984B4F1145AF1A81FF31F095")
 
-
     private int mTabAlpha = 0xFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.715 -0500", hash_original_field = "79C9C7C7EFB1C524A11E843C423C00F7", hash_generated_field = "3F79DD2994E6DB89CED3A3680B088E83")
-
 
     private boolean mDrawFullUnderline = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.716 -0500", hash_original_field = "936CCA88CFEA633E08F06F4089E4BB87", hash_generated_field = "935435EF24FB211036CB9B2B592AACFC")
@@ -110,7 +103,6 @@ public class PagerTabStrip extends PagerTitleStrip {
 
     private int mFullUnderlineHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.720 -0500", hash_original_field = "C60964F4DE47B6C6022FAC8C5443E6EF", hash_generated_field = "1B7951305AF6C2C0E6775E9A5145CC72")
-
 
     private boolean mIgnoreTap;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:20.721 -0500", hash_original_field = "25CFDFB463A965BC44C22C5B603E6082", hash_generated_field = "E8D995D721D911B655A8BA1B8E85A671")
@@ -123,12 +115,14 @@ public class PagerTabStrip extends PagerTitleStrip {
 
     private int mTouchSlop;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.056 -0500", hash_original_method = "AEED43FFC18977D21094349BF84C20B4", hash_generated_method = "CC0FCF2A99320A7E6A8674B792A0D877")
     
 public PagerTabStrip(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.062 -0500", hash_original_method = "ACA07B5CE6E6B13EE40202110EB75BD3", hash_generated_method = "31EC5D9E2964078A6C7CBD2C03E74FAC")
     
 public PagerTabStrip(Context context, AttributeSet attrs) {

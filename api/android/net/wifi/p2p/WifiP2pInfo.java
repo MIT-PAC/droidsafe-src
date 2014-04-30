@@ -10,12 +10,7 @@ import java.net.UnknownHostException;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class WifiP2pInfo implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.728 -0400", hash_original_field = "AB83BB5FED9FC57A40F7F74C050C8CCC", hash_generated_field = "F2557F2DCFADCE7DD4ED006ED74D08D1")
 
@@ -51,6 +46,7 @@ public WifiP2pInfo[] newArray(int size) {
 
     public InetAddress groupOwnerAddress;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.369 -0500", hash_original_method = "F3F0ABA121ED75F0A34990BB87685D5A", hash_generated_method = "4A17C2D8D9E71E4775DCF43CBC69EFE4")
     
 public WifiP2pInfo() {

@@ -19,6 +19,7 @@ public final class CallInfo extends ParametersHeader implements javax.sip.header
     /**
      * Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.531 -0500", hash_original_method = "E32B7E5F9D4A1980425339805E4FFC9A", hash_generated_method = "5B15A60622536973449DB72A7875F01A")
     
 public CallInfo() {

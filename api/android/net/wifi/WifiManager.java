@@ -672,6 +672,7 @@ public WifiManager(IWifiManager service, Handler handler) {
         mHandler = handler;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.418 -0400", hash_original_method = "45AC664258FD08C08C588B627CDDFFBC", hash_generated_method = "B4F1E9EA15C43234D8FE3A9CE9AF5CBA")
     public  WifiManager() {
         // ---------- Original Method ----------

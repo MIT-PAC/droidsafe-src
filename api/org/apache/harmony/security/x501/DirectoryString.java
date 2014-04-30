@@ -34,6 +34,7 @@ public Object getObjectToEncode(Object object) {
         }
     };
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.725 -0400", hash_original_method = "53F57E3BE98311F5CEA26B08849D5BFD", hash_generated_method = "53F57E3BE98311F5CEA26B08849D5BFD")
     public DirectoryString ()
     {

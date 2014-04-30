@@ -7,11 +7,8 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
-
 public class BEROutputStream extends DEROutputStream {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.040 -0500", hash_original_method = "39D0C914F21422AAB9B31B993D1339D0", hash_generated_method = "28BBAD8BDC7025DAF40DA1211C60EC05")
     
 public BEROutputStream(
@@ -43,7 +40,6 @@ public void writeObject(
             throw new IOException("object not BEREncodable");
         }
     }
-
     
 }
 

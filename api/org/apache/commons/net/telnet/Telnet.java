@@ -36,46 +36,38 @@ class Telnet extends SocketClient
     static final boolean debug =  /*true;*/ false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.750 -0500", hash_original_field = "2302F10CB970FB02521D8AC6E65838C2", hash_generated_field = "070BB9656068DAA7C13D62EA236530EC")
 
-
     static final boolean debugoptions =  /*true;*/ false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.754 -0500", hash_original_field = "377ACED9D4E3F0D127A1BAD30FF4E24C", hash_generated_field = "226458ED41759A560CDB74720E87408C")
-
 
     static final byte[] _COMMAND_DO = {
                                           (byte)TelnetCommand.IAC, (byte)TelnetCommand.DO
                                       };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.758 -0500", hash_original_field = "159FAC1703E61124ADF633BACB64C160", hash_generated_field = "424A6524537D32CC236C0431379CE118")
 
-
     static final byte[] _COMMAND_DONT = {
                                             (byte)TelnetCommand.IAC, (byte)TelnetCommand.DONT
                                         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.762 -0500", hash_original_field = "A002F7E63078DD61D6A508B106297C61", hash_generated_field = "47ACD082BD298E56411C494C3FC88BF9")
-
 
     static final byte[] _COMMAND_WILL = {
                                             (byte)TelnetCommand.IAC, (byte)TelnetCommand.WILL
                                         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.766 -0500", hash_original_field = "D4B7C42E4C22224A1F41DF252523321D", hash_generated_field = "8022CE433A7FE540520C11BA0183EB77")
 
-
     static final byte[] _COMMAND_WONT = {
                                             (byte)TelnetCommand.IAC, (byte)TelnetCommand.WONT
                                         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.773 -0500", hash_original_field = "AE3C091A5A4C65F7EDB967D5572927BB", hash_generated_field = "442350C77B149B1CC4B823A9C55D1905")
-
 
     static final byte[] _COMMAND_SB = {
                                           (byte)TelnetCommand.IAC, (byte)TelnetCommand.SB
                                       };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.777 -0500", hash_original_field = "1DBE3DAEC31843C54A9ECCFF712FDF32", hash_generated_field = "BE40414E92F86AE41F57D16638CAB32D")
 
-
     static final byte[] _COMMAND_SE = {
                                           (byte)TelnetCommand.IAC, (byte)TelnetCommand.SE
                                       };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.781 -0500", hash_original_field = "44EB3E88505D0CAF0E56406633A3FCB4", hash_generated_field = "8842AD718050C188CA7F491B114BAC63")
-
 
     static final int _WILL_MASK = 0x01, _DO_MASK = 0x02,
                                   _REQUESTED_WILL_MASK = 0x04, _REQUESTED_DO_MASK = 0x08;
@@ -101,7 +93,6 @@ class Telnet extends SocketClient
                                       };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.818 -0500", hash_original_field = "6E6FBB4934A2D7F27D0860BC3AECF904", hash_generated_field = "46B77C62454086C9AAFFCE686E3AD462")
 
-
     /* Code Section added for supporting AYT (start)*/
     /***
      * AYT sequence
@@ -111,13 +102,11 @@ class Telnet extends SocketClient
                                        };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.789 -0500", hash_original_field = "FD0A66AD6E5F8C5711ECAD8EDA689414", hash_generated_field = "FD0A66AD6E5F8C5711ECAD8EDA689414")
 
-
     int[] _doResponse, _willResponse, _options;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.810 -0500", hash_original_field = "A0EC44D2AB09F876C99A04C7147D3653", hash_generated_field = "EADC10CEA41F1D22A9F31DFE2829DB17")
 
     private String terminalType = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.813 -0500", hash_original_field = "7FC933476A9E71D352343580ED23A35D", hash_generated_field = "EF47F444A23B4B5F660B09B559162FA7")
-
 
     /* open TelnetOptionHandler functionality (start)*/
     /***
@@ -132,7 +121,6 @@ class Telnet extends SocketClient
     private boolean aytFlag = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.830 -0500", hash_original_field = "47700E7A40FB1245C5D9648875615794", hash_generated_field = "D822518F313C2AE18EABF3F916C1945D")
 
-
     /***
      * The stream on which to spy
      ***/
@@ -143,6 +131,7 @@ class Telnet extends SocketClient
     /***
      * Empty Constructor
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.838 -0500", hash_original_method = "509AF80E298ABDF2249B5169E1218601", hash_generated_method = "509AF80E298ABDF2249B5169E1218601")
     
 Telnet()
@@ -476,7 +465,6 @@ void _processDo(int option) throws IOException
 
         boolean acceptNewState = false;
 
-
         /* open TelnetOptionHandler functionality (start)*/
         if (optionHandlers[option] != null)
         {
@@ -519,7 +507,6 @@ void _processDo(int option) throws IOException
                     break;
 
                 }
-
 
                 if (acceptNewState)
                 {
@@ -605,7 +592,6 @@ void _processDont(int option) throws IOException
         _setWont(option);
     }
 
-
     /***
      * Processes a WILL request.
      * <p>
@@ -658,7 +644,6 @@ void _processWill(int option) throws IOException
                 break;
 
             }
-
 
             if (acceptNewState)
             {
@@ -1034,7 +1019,6 @@ final synchronized void _requestDont(int option)
         ++_doResponse[option];
         _sendDont(option);
     }
-
 
     /***
      * Sends a WILL.

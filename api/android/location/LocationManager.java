@@ -82,6 +82,7 @@ public class LocationManager {
         addTaint(service.getTaint());
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public LocationManager() {
     }
 

@@ -16,6 +16,7 @@ public final class AuthenticationInfo extends ParametersHeader implements javax.
 
     /** Default contstructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.252 -0500", hash_original_method = "501AA426592E66DB320F694568AF73E3", hash_generated_method = "8C779D41B6773A6B4924C7A9509A8B3E")
     
 public AuthenticationInfo() {

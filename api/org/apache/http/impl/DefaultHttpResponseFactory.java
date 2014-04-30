@@ -15,14 +15,10 @@ import org.apache.http.message.BasicHttpResponse;
 import org.apache.http.message.BasicStatusLine;
 import org.apache.http.protocol.HttpContext;
 
-
-
-
 public class DefaultHttpResponseFactory implements HttpResponseFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.406 -0500", hash_original_field = "D8E058CC9400D2B49594453D57519F61", hash_generated_field = "0FC26A15CA4A50E5DB35DC8C30DA85B0")
 
     protected  ReasonPhraseCatalog reasonCatalog;
-
 
     /**
      * Creates a new response factory with the given catalog.
@@ -44,12 +40,12 @@ public DefaultHttpResponseFactory(ReasonPhraseCatalog catalog) {
      * The default catalog is
      * {@link EnglishReasonPhraseCatalog EnglishReasonPhraseCatalog}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.412 -0500", hash_original_method = "FFDB5398ED0A2C8E2758E409B21A6993", hash_generated_method = "25392C23AF85C09C3AE9CC86A3CEDE9C")
     
 public DefaultHttpResponseFactory() {
         this(EnglishReasonPhraseCatalog.INSTANCE);
     }
-
 
     // non-javadoc, see interface HttpResponseFactory
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.414 -0500", hash_original_method = "EC452AB6471CEB13DACC9B1E83291CFC", hash_generated_method = "E2D59D7549F143FB86F464B261D10E45")
@@ -66,7 +62,6 @@ public HttpResponse newHttpResponse(final ProtocolVersion ver,
         return new BasicHttpResponse(statusline, reasonCatalog, loc); 
     }
 
-
     // non-javadoc, see interface HttpResponseFactory
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.417 -0500", hash_original_method = "5A7FFEFCFB2914E81957F795B443D54C", hash_generated_method = "EB230D42CBD98FA096165E124EAA41D1")
     
@@ -78,7 +73,6 @@ public HttpResponse newHttpResponse(final StatusLine statusline,
         final Locale loc = determineLocale(context);
         return new BasicHttpResponse(statusline, reasonCatalog, loc);
     }
-
 
     /**
      * Determines the locale of the response.
@@ -94,7 +88,6 @@ public HttpResponse newHttpResponse(final StatusLine statusline,
 protected Locale determineLocale(HttpContext context) {
         return Locale.getDefault();
     }
-
     
 }
 

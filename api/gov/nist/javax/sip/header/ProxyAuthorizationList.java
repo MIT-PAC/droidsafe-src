@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.sip.header.ProxyAuthorizationHeader;
 
-
-
-
-
-
 public class ProxyAuthorizationList extends SIPHeaderList<ProxyAuthorization> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.057 -0500", hash_original_field = "940086535B5F9C73E65BCC6CBE990443", hash_generated_field = "EC74D7B41C3C9002F8FE992882CA7626")
 
@@ -18,6 +13,7 @@ public class ProxyAuthorizationList extends SIPHeaderList<ProxyAuthorization> {
 
     /** Default constructor
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.065 -0500", hash_original_method = "7E2339716E9E591A456966370DA5C67A", hash_generated_method = "4037AD3E9AF31EE4ED9B1061CD824248")
     
 public ProxyAuthorizationList() {

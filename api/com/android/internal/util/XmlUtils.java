@@ -927,6 +927,7 @@ public static final void nextElement(XmlPullParser parser) throws XmlPullParserE
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.090 -0400", hash_original_method = "76C216707CDD38D546F63E977F5F31C4", hash_generated_method = "76C216707CDD38D546F63E977F5F31C4")
     public XmlUtils ()
     {

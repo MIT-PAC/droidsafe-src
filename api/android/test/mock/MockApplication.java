@@ -7,9 +7,9 @@ import droidsafe.annotations.*;
 import android.app.Application;
 import android.content.res.Configuration;
 
-
 public class MockApplication extends Application {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.971 -0500", hash_original_method = "1B19C6453B2D07E5BCC8816EA82B0228", hash_generated_method = "15C3A0A61B7C0F3007C3F2D0670A6F02")
     
 public MockApplication() {
@@ -35,7 +35,6 @@ public MockApplication() {
     public void onConfigurationChanged(Configuration newConfig) {
         throw new UnsupportedOperationException();
     }
-
     
 }
 

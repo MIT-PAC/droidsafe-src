@@ -74,6 +74,7 @@ public static Time valueOf(String timeString) {
      * @param theSecond
      *            a value in the range {@code [0,59]}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.399 -0500", hash_original_method = "90AD2E582B6AD132E43906287427EB15", hash_generated_method = "CBC503D6A3E6A288968A9EBBC459EA7A")
     
 @SuppressWarnings("deprecation")

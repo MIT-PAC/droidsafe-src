@@ -12,13 +12,10 @@ import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 
-
-
 public class UserDictionary {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.088 -0500", hash_original_field = "78273A4B8EDF5349BB0B456A12086456", hash_generated_field = "B6B30B3A7906E3A97F32B444BC5E6701")
 
     public static final String AUTHORITY = "user_dictionary";
-
 
     public static class Words implements BaseColumns {
 
@@ -72,7 +69,6 @@ public static void addWord(Context context, String word,
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.google.userword";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.102 -0500", hash_original_field = "52863E5ABCE1392E12509003A344A371", hash_generated_field = "89BC66923778B3B398E289E4EE7EE036")
 
-
         public static final String _ID = BaseColumns._ID;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.104 -0500", hash_original_field = "2CAB206DB4DAE038435A2697624F0629", hash_generated_field = "B3FC2FC8E81C6A66A8A7123C0401C73F")
 
@@ -107,6 +103,7 @@ public static void addWord(Context context, String word,
     public static final Uri CONTENT_URI =
         Uri.parse("content://" + AUTHORITY);
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.915 -0400", hash_original_method = "A702CC64E997273813B5205310B01CF9", hash_generated_method = "A702CC64E997273813B5205310B01CF9")
     public UserDictionary ()
     {

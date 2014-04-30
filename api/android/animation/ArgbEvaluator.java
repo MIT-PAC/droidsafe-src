@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class ArgbEvaluator implements TypeEvaluator {
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.508 -0400", hash_original_method = "2B314B5188522F79C40FC502122E5F12", hash_generated_method = "2B314B5188522F79C40FC502122E5F12")
     
     public ArgbEvaluator ()

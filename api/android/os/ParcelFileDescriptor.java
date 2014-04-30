@@ -268,6 +268,7 @@ ParcelFileDescriptor(FileDescriptor descriptor) {
         mParcelDescriptor = null;
     }
     // orphaned legacy method
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ParcelFileDescriptor() {
     	
     }

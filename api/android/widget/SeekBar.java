@@ -20,12 +20,14 @@ public SeekBar(Context context) {
         this(context, null);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.983 -0500", hash_original_method = "CA56E7509993CB1742B0A72C233A6542", hash_generated_method = "C22B818578A9FEC75B80B8D60F2E1184")
     
 public SeekBar(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.seekBarStyle);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.986 -0500", hash_original_method = "639660E10201BDC61C50CFBB9E628106", hash_generated_method = "6D8D681CB48B72CE9066851C8F9B121F")
     
 public SeekBar(Context context, AttributeSet attrs, int defStyle) {

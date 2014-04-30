@@ -15,12 +15,9 @@ import org.apache.http.HttpVersion;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.params.HttpProtocolParams;
 
-
-
-
-
 public class RequestExpectContinue implements HttpRequestInterceptor {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.897 -0500", hash_original_method = "6FB86855078200C1DA7E1696137BDEB8", hash_generated_method = "D711ACED86ED7F27EB808584760CEC1F")
     
 public RequestExpectContinue() {
@@ -46,7 +43,6 @@ public void process(final HttpRequest request, final HttpContext context)
             }
         }
     }
-
     
 }
 

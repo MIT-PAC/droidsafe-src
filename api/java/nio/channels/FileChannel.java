@@ -14,6 +14,7 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
     /**
      * Protected default constructor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.358 -0500", hash_original_method = "EC2F86678151C05272A58EBF4D3007B7", hash_generated_method = "720775B864FB24C368C95FD654F70448")
     
 protected FileChannel() {

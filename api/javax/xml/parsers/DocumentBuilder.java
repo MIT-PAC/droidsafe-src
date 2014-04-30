@@ -23,6 +23,7 @@ public abstract class DocumentBuilder {
     private static final boolean DEBUG = false;
 
     /** Protected constructor */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.092 -0500", hash_original_method = "A55CBA234E1648A7F9C09E5B63DC560C", hash_generated_method = "985F276AAC414AEC932C0CE826CF4F41")
     
 protected DocumentBuilder () {

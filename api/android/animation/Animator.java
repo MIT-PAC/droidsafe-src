@@ -11,6 +11,7 @@ public abstract class Animator implements Cloneable {
 
     ArrayList<AnimatorListener> mListeners = null;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.808 -0400", hash_original_method = "12606DD4E4D75078EE1609D9ED5651A9", hash_generated_method = "12606DD4E4D75078EE1609D9ED5651A9")
     
     public Animator ()

@@ -15,6 +15,7 @@ public RemoteException() {
         super();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.172 -0500", hash_original_method = "DEE27A1F58443ED534CF6DB1DEBB024B", hash_generated_method = "2A817191D7257B6020578B2FF6544476")
     
 public RemoteException(String message) {

@@ -371,6 +371,7 @@ private static String[] split(String val) throws IllegalArgumentException {
 
 	private char[] theCommentBuffer = new char[2000];
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.148 -0400", hash_original_method = "42CBDDB53A445ABDFB908116E235FAA0", hash_generated_method = "42CBDDB53A445ABDFB908116E235FAA0")
     public Parser ()
     {

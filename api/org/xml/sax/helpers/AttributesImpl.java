@@ -24,6 +24,7 @@ public class AttributesImpl implements Attributes {
     /**
      * Construct a new, empty AttributesImpl object.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.909 -0500", hash_original_method = "6313F45FC494FF406CD3064C58B63747", hash_generated_method = "C370A03C37745247C8F94146A819EC26")
     
 public AttributesImpl ()

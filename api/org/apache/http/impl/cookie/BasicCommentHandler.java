@@ -7,10 +7,9 @@ import droidsafe.annotations.*;
 import org.apache.http.cookie.MalformedCookieException;
 import org.apache.http.cookie.SetCookie;
 
-
-
 public class BasicCommentHandler extends AbstractCookieAttributeHandler {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.587 -0500", hash_original_method = "753BC5BDDB6B9E5E273FEAA2E3B0731A", hash_generated_method = "DFFB02DE86EF5BEBC9E2E866FCA59431")
     
 public BasicCommentHandler() {
@@ -26,7 +25,6 @@ public void parse(final SetCookie cookie, final String value)
         }
         cookie.setComment(value);
     }
-
     
 }
 

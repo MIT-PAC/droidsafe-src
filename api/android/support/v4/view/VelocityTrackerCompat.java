@@ -94,6 +94,7 @@ public static float getYVelocity(VelocityTracker tracker, int pointerId) {
         public float getYVelocity(VelocityTracker tracker, int pointerId);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.332 -0400", hash_original_method = "ACE59A9EBE302FC1E1A244DA6E2DCF51", hash_generated_method = "ACE59A9EBE302FC1E1A244DA6E2DCF51")
     public VelocityTrackerCompat ()
     {

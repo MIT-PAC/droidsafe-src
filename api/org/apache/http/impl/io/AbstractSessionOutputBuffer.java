@@ -38,6 +38,7 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     
     private HttpTransportMetricsImpl metrics;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.461 -0400", hash_original_method = "83EACBB816713C51C4560064650A6E91", hash_generated_method = "83EACBB816713C51C4560064650A6E91")
     public AbstractSessionOutputBuffer ()
     {
