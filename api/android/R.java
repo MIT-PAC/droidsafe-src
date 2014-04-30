@@ -10,8 +10,14 @@
  */
 package android;
 
+import droidsafe.annotations.*;
+
 public final class R {
     public static final class anim {
+
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public anim() {}
+        
         public static final int accelerate_decelerate_interpolator=0x010a0004;
         public static final int accelerate_interpolator=0x010a0005;
         public static final int anticipate_interpolator=0x010a0007;
@@ -65,6 +71,9 @@ public final class R {
         public static final int toast_exit=0x010a0032;
     }
     public static final class array {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public array() {}
+        
         /**  This string array should be overridden by the manufacture to present a list of carrier-id,locale pairs.  This is used at startup to set a default locale by checking the system property ro.carrier for the carrier-id and searching through this array 
          */
         public static final int carrier_locales=0x0107000c;
@@ -230,6 +239,9 @@ public final class R {
         public static final int status_bar_icon_order=0x01070009;
     }
     public static final class attr {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public attr() {}
+        
         /**  Default AbsListView style. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -7203,6 +7215,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zAdjustment=0x010101c1;
     }
     public static final class bool {
+
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public bool() {}
         /**  Flag indicating whether Last Name comes before First Name.
          This becomes true in Japan, for example.
          */
@@ -7215,6 +7230,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int config_sf_limitedAlpha=0x010d0000;
     }
     public static final class color {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public color() {}
         public static final int background_dark=0x0106000e;
         public static final int background_light=0x0106000f;
         public static final int black=0x0106000c;
@@ -7269,6 +7286,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int widget_edittext_dark=0x0106000a;
     }
     public static final class dimen {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public dimen() {}
         /**  The standard size (both width and height) of an application icon that
          will be displayed in the app launcher and elsewhere. 
          */
@@ -7285,6 +7304,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int toast_y_offset=0x01050003;
     }
     public static final class drawable {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public drawable() {}
         public static final int activity_title_bar=0x0108009e;
         public static final int alert_dark_frame=0x01080000;
         public static final int alert_light_frame=0x01080001;
@@ -8010,6 +8031,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zoom_plate=0x01080097;
     }
     public static final class id {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public id() {}
         public static final int KEYCODE_0=0x0102007d;
         public static final int KEYCODE_1=0x0102007e;
         public static final int KEYCODE_2=0x0102007f;
@@ -8549,6 +8572,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zoom_page_overview=0x010201e8;
     }
     public static final class integer {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public integer() {}
         /**  The duration (in milliseconds) of a long animation. 
          */
         public static final int config_longAnimTime=0x010e0002;
@@ -8560,6 +8585,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int config_shortAnimTime=0x010e0000;
     }
     public static final class layout {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public layout() {}
         public static final int activity_list=0x01090014;
         public static final int activity_list_item=0x01090000;
         public static final int activity_list_item_2=0x01090015;
@@ -8669,6 +8696,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zoom_magnify=0x0109006a;
     }
     public static final class plurals {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public plurals() {}
         /**  This is used to express that something will occur some number of abbreviated days in the future (e.g., in 5 days). 
          */
         public static final int abbrev_in_num_days=0x010f000f;
@@ -8725,11 +8754,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int wifi_available_detailed=0x010f0011;
     }
     public static final class raw {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public raw() {}
         public static final int fallbackring=0x010c0000;
         public static final int loaderror=0x010c0001;
         public static final int nodomain=0x010c0002;
     }
     public static final class string {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public string() {}
         /**  Displayed as the title for a success/failure report enabling/disabling call barring. 
          */
         public static final int BaMmi=0x010400b7;
@@ -10615,6 +10648,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int yesterday=0x01040064;
     }
     public static final class style {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public style() {}
         public static final int AlertDialog=0x01030061;
         /**  Animations 
          */
@@ -10880,6 +10915,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ZoomControls=0x01030084;
     }
     public static final class xml {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public xml() {}
         public static final int apns=0x010b0000;
         public static final int autotext=0x010b0001;
         public static final int eri=0x010b0002;
@@ -10888,6 +10925,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int time_zones_by_country=0x010b0005;
     }
     public static final class styleable {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public styleable() {}
         /** Attributes that can be used with a AbsListView.
            <p>Includes the following attributes:</p>
            <table border="2" width="85%" align="center" frame="hsides" rules="all" cellpadding="5">
