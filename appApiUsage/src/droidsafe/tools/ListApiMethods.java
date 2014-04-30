@@ -392,17 +392,26 @@ public class ListApiMethods extends ApiUsageListing {
         for(SootClass cls: Scene.v().getClasses()) {
             for (SootMethod method: cls.getMethods()) {
                 
+
                 String name = getMethodFullName(method);
                 //match list only when used with classification
                 if (!methodOfInterest(name) && withinList)
                     continue;
+                
+                logger.info("orig method: {}", method);
+                 
+                Set<SootMethod> allMethods = SootUtils.getAllOverridingMethodsIncluding(method);
 
-                matchedSet.add(name);
-                String line = method.getSignature();
-
-                List<String> annoList = extractDSAnnotations(method);
-                String reportLine = getModelReportLine(line, annoList);
-                outStream.println(reportLine);
+                for (SootMethod subMethod: allMethods) {
+                    
+                    name = getMethodFullName(subMethod);
+                    matchedSet.add(name);
+                    String line = subMethod.getSignature();
+    
+                    List<String> annoList = extractDSAnnotations(subMethod);
+                    String reportLine = getModelReportLine(line, annoList);
+                    outStream.println(reportLine);
+                }
             }
         }    
 
