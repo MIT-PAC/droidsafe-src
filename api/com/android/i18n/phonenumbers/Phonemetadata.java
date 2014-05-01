@@ -52,7 +52,8 @@ public static Builder newBuilder() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.058 -0500", hash_original_field = "C5CDD90D08F0BC6BE53CAA9E8190350D", hash_generated_field = "4E860583F8E21CB17BEAB512DD9874BA")
 
     private String domesticCarrierCodeFormattingRule_ = "";
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.996 -0500", hash_original_method = "AC8E136DE5A642003A57BDCF52FB755A", hash_generated_method = "CC6BC77D87404D536F3CBB3CC13951E4")
+    @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.996 -0500", hash_original_method = "AC8E136DE5A642003A57BDCF52FB755A", hash_generated_method = "CC6BC77D87404D536F3CBB3CC13951E4")
         
 public NumberFormat() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.011 -0500", hash_original_method = "0246232EE6FB2A92C361AD6A40430F9A", hash_generated_method = "D2A81631EB56DA96A36627C9E8CD5E38")
@@ -190,6 +191,7 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
         
         public static final class Builder extends NumberFormat {
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.185 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
             public Builder ()
             {
@@ -248,7 +250,8 @@ public static Builder newBuilder() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.119 -0500", hash_original_field = "F256DEC58A79E26491FB294D557FB16A", hash_generated_field = "D8EDB7AA5577953B265C1D4AEECCDF65")
 
     private String exampleNumber_ = "";
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.083 -0500", hash_original_method = "7B50B3AE2E947514292047EE4CC3D0B3", hash_generated_method = "4F15F34FB8F5976676EE5045476563B6")
+    @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.083 -0500", hash_original_method = "7B50B3AE2E947514292047EE4CC3D0B3", hash_generated_method = "4F15F34FB8F5976676EE5045476563B6")
         
 public PhoneNumberDesc() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.097 -0500", hash_original_method = "7AE951C08CA66D0892FA0795F4703C0D", hash_generated_method = "740669F056F891565FA1250881F9960D")
@@ -338,6 +341,7 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
         
         public static final class Builder extends PhoneNumberDesc {
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.188 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
             public Builder ()
             {
@@ -522,7 +526,8 @@ public static Builder newBuilder() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.442 -0500", hash_original_field = "3145313241F633B5C1F3B2FAEF7741C6", hash_generated_field = "F45DAF5712BFBE9A35415A4D733DC0FC")
 
     private boolean leadingZeroPossible_ = false;
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.144 -0500", hash_original_method = "8411C48F959C93D1C6435DDA5C4FFBF8", hash_generated_method = "0182E170691B81D7A0703D1C83899138")
+    @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.144 -0500", hash_original_method = "8411C48F959C93D1C6435DDA5C4FFBF8", hash_generated_method = "0182E170691B81D7A0703D1C83899138")
         
 public PhoneMetadata() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.159 -0500", hash_original_method = "573E786E141FAAA03A367F49BCA559B5", hash_generated_method = "43E331C0252E1144C5705999F59CF4BE")
@@ -1030,6 +1035,7 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
         
         public static final class Builder extends PhoneMetadata {
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.241 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
             public Builder ()
             {
@@ -1181,7 +1187,8 @@ public static Builder newBuilder() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.481 -0500", hash_original_field = "3428B5E42448C7798A92924D079BB4EB", hash_generated_field = "3988CF3B3569C765826A81A610C2CFA8")
 
     private java.util.List<PhoneMetadata> metadata_ = new java.util.ArrayList<PhoneMetadata>();
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.471 -0500", hash_original_method = "833FEC11FB1A703522FFE165412E2F7D", hash_generated_method = "FC5260D817B36F63FC4698A677B64BDA")
+    @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.471 -0500", hash_original_method = "833FEC11FB1A703522FFE165412E2F7D", hash_generated_method = "FC5260D817B36F63FC4698A677B64BDA")
         
 public PhoneMetadataCollection() {}
 
@@ -1230,6 +1237,7 @@ public void readExternal(ObjectInput objectInput) throws IOException {
         
         public static final class Builder extends PhoneMetadataCollection {
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:09.242 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
             public Builder ()
             {

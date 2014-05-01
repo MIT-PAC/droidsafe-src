@@ -970,6 +970,7 @@ private GroupMembership() {}
         @Deprecated
         public static final String PERSON_ID = "person";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.194 -0400", hash_original_method = "FECDF62B9774A3653EF2E5C629F7A49B", hash_generated_method = "FECDF62B9774A3653EF2E5C629F7A49B")
         public Presence ()
         {
@@ -1147,6 +1148,7 @@ private Photos() {}
             /**
              * @deprecated see {@link android.provider.ContactsContract}
              */
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.961 -0500", hash_original_method = "998C7BFCEA8419BCEF695E421ACA0417", hash_generated_method = "3F4F6D30B2B30561ABE2BF8F1FBA4719")
             
 @Deprecated
@@ -1277,6 +1279,7 @@ private Photos() {}
             /**
              * @deprecated see {@link android.provider.ContactsContract}
              */
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.999 -0500", hash_original_method = "B1003A1FA6FEB1932A0DC162C3E36DDF", hash_generated_method = "E8C8BD9ACDC3EA0449D793FD195D9C41")
             
 @Deprecated
@@ -1318,6 +1321,7 @@ private Photos() {}
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.935 -0500", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "B37546EBBF8A5FDAC2AD283667E9B99B")
         
 @Deprecated

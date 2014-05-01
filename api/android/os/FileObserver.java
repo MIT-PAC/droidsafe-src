@@ -46,6 +46,7 @@ public abstract class FileObserver {
 
         private int m_fd;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.720 -0500", hash_original_method = "3824F66F79A638103BDBC3E2FF39A85C", hash_generated_method = "16801E71DF829F3F33A9FE1858158FE6")
         
 public ObserverThread() {

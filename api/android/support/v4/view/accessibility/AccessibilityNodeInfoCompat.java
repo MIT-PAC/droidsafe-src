@@ -711,6 +711,7 @@ public void setText(CharSequence text) {
     
     static class AccessibilityNodeInfoStubImpl implements AccessibilityNodeInfoImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.913 -0400", hash_original_method = "D9A4AFBF5AD5A775B6C1281730E5BA11", hash_generated_method = "D9A4AFBF5AD5A775B6C1281730E5BA11")
         public AccessibilityNodeInfoStubImpl ()
         {
@@ -913,7 +914,6 @@ public AccessibilityNodeInfoCompat getParent(Object info) {
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
 
-
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.787 -0500", hash_original_method = "6311EA40C38D5B6B34E9E1F7C3DBB879", hash_generated_method = "DCFF1EA124941B45B445643DEA1DCAAD")
         
 @Override
@@ -922,7 +922,6 @@ public AccessibilityNodeInfoCompat getParent(Object info) {
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.788 -0500", hash_original_method = "D2C9C693466BA3A7E4B14036D2B17A5B", hash_generated_method = "3E21410E855A133232A1349240AFF84F")
         
@@ -947,7 +946,6 @@ public AccessibilityNodeInfoCompat getParent(Object info) {
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
 
-
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.793 -0500", hash_original_method = "82032763AB44B88BDF6C3C4AC2ABB1CF", hash_generated_method = "4C629E3ABBF85F5A021382BEC0BE6448")
         
 @Override
@@ -964,7 +962,6 @@ public AccessibilityNodeInfoCompat getParent(Object info) {
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
 
-
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.798 -0500", hash_original_method = "B500330A66D743DBA7E460FD212D7744", hash_generated_method = "6BFB774F2AB1777C633277C9BCD0CE81")
         
 @Override
@@ -973,7 +970,6 @@ public AccessibilityNodeInfoCompat getParent(Object info) {
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.800 -0500", hash_original_method = "2E8A30481E49B666D7564B714DFA8A28", hash_generated_method = "5A19B8A4E7A7EDA1A6783AA1665FA934")
         
@@ -1005,7 +1001,6 @@ public AccessibilityNodeInfoCompat getParent(Object info) {
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
 
-
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.813 -0500", hash_original_method = "7ACCCA5C650FD61E0E741AE4759FF12D", hash_generated_method = "C2D5468919AD98FB91D5B3A5AB6FEC8A")
         
 @Override
@@ -1014,7 +1009,6 @@ public AccessibilityNodeInfoCompat getParent(Object info) {
         }
 
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:21.814 -0500", hash_original_method = "69043B1B7F4EB8EB9BDC8511E4B08BEE", hash_generated_method = "FB1AA3CFB8C0A0C78390E1D51844A74A")
         
@@ -1069,6 +1063,7 @@ public AccessibilityNodeInfoCompat getParent(Object info) {
     
     static class AccessibilityNodeInfoIcsImpl extends AccessibilityNodeInfoStubImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "21FE378E79CF4BF2260F84D20D666AC8", hash_generated_method = "21FE378E79CF4BF2260F84D20D666AC8")
         public AccessibilityNodeInfoIcsImpl ()
         {

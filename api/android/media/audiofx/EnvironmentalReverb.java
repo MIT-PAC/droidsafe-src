@@ -63,7 +63,6 @@ import java.util.StringTokenizer;
 public class EnvironmentalReverb extends AudioEffect {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:17.084 -0400", hash_original_field = "9E2D0E4C37D49C8EE120913D834FC514", hash_generated_field = "55E787782ED4323A5B9425B4FD4940D6")
 
-
     private final static String TAG = "EnvironmentalReverb";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:17.086 -0400", hash_original_field = "EDEC1AE0D72DCDDCF07545BDCADD71D9", hash_generated_field = "ECF78CECF5DB8AE47B9E00F68A7E461E")
 
@@ -431,7 +430,6 @@ public short getDiffusion()
         return byteArrayToShort(param);
     }
 
-
     /**
      * Controls the modal density of the late reverberation decay.
      * <p> The scale should approximately map linearly to the perceived change in reverberation.
@@ -451,7 +449,6 @@ public void setDensity(short density)
         byte[] param = shortToByteArray(density);
         checkStatus(setParameter(PARAM_DENSITY, param));
     }
-
 
     /**
      * The OnParameterChangeListener interface defines a method called by the EnvironmentalReverb
@@ -562,6 +559,7 @@ public short getDensity()
 
         public short density;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:17.180 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "9E9C65F3ECED90949A3BED36B52A3064")
         
 public Settings() {

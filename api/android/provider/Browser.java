@@ -505,6 +505,7 @@ public static final void requestAllIcons(ContentResolver cr, String where,
 
         public static final String USER_ENTERED = "user_entered";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.007 -0400", hash_original_method = "F477E31945C7D2DE3BB9433F18AA1C9B", hash_generated_method = "F477E31945C7D2DE3BB9433F18AA1C9B")
         public BookmarkColumns ()
         {
@@ -524,6 +525,7 @@ public static final void requestAllIcons(ContentResolver cr, String where,
 
         public static final String DATE = "date";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.008 -0400", hash_original_method = "AD4AB7ABF1D748D8E2B97CBDABE5BB4B", hash_generated_method = "AD4AB7ABF1D748D8E2B97CBDABE5BB4B")
         public SearchColumns ()
         {

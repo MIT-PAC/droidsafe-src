@@ -43,6 +43,7 @@ public static MenuItem setActionView(MenuItem item, View view) {
     
     static class BaseMenuVersionImpl implements MenuVersionImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.258 -0400", hash_original_method = "BFDC30535AAA3E19A04AFADFFD50E16A", hash_generated_method = "BFDC30535AAA3E19A04AFADFFD50E16A")
         public BaseMenuVersionImpl ()
         {
@@ -66,6 +67,7 @@ public static MenuItem setActionView(MenuItem item, View view) {
     
     static class HoneycombMenuVersionImpl implements MenuVersionImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.259 -0400", hash_original_method = "1A0F236AE805B2AE3CB14132D083E8D6", hash_generated_method = "1A0F236AE805B2AE3CB14132D083E8D6")
         public HoneycombMenuVersionImpl ()
         {

@@ -258,6 +258,7 @@ public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.200 -0500", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "72A2ECA2CF4C647C2D28F670D4DC27E1")
         
 public LayoutParams(Context c, AttributeSet attrs) {
@@ -278,6 +279,7 @@ public LayoutParams(int w, int h) {
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.205 -0500", hash_original_method = "A72C7A56D1748794301804B2844F1EFE", hash_generated_method = "D9C12FAB2BFA4A4083C418C192DB9624")
         
 public LayoutParams(int w, int h, float initWeight) {
@@ -287,6 +289,7 @@ public LayoutParams(int w, int h, float initWeight) {
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.208 -0500", hash_original_method = "DE4ED36682A1028E303BDCC28A48E06F", hash_generated_method = "AA7E78F64C1B2029CADFD7AA230FA359")
         
 public LayoutParams(ViewGroup.LayoutParams p) {
@@ -296,6 +299,7 @@ public LayoutParams(ViewGroup.LayoutParams p) {
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.211 -0500", hash_original_method = "CC87BD4B8C067788FA2BA37DBA116F62", hash_generated_method = "A83E3EC70AE7CFFC0495D4E169E975D9")
         
 public LayoutParams(MarginLayoutParams source) {

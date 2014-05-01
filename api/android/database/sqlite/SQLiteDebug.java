@@ -115,6 +115,7 @@ static synchronized void notifyActiveCursorFinalized() {
 
         public ArrayList<DbStats> dbStats;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.724 -0400", hash_original_method = "8C8E95FFCB1088531CECBA4CD1169D76", hash_generated_method = "8C8E95FFCB1088531CECBA4CD1169D76")
         public PagerStats ()
         {

@@ -1647,6 +1647,7 @@ public static TimeStamp fromByteArray(byte[] data) {
             return ts;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.736 -0500", hash_original_method = "227CB08289E9E58D2E1A786B0B8104B3", hash_generated_method = "78C48B8E92B103D212B02A82B32484F6")
         
 public TimeStamp() {
@@ -1672,6 +1673,7 @@ public TimeStamp() {
     }
     
     private static class CodingException extends Exception {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.812 -0500", hash_original_method = "7A2C15A084F2DA50BCA20CD284E89E4B", hash_generated_method = "4FED4EE0C00A2998CCB9066876496DF7")
         
 public CodingException(String s) {

@@ -27,6 +27,7 @@ public static int getScaledPagingTouchSlop(ViewConfiguration config) {
     
     static class BaseViewConfigurationVersionImpl implements ViewConfigurationVersionImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.387 -0400", hash_original_method = "A69B2452C79DFBE1CA7B04111C2A43A4", hash_generated_method = "A69B2452C79DFBE1CA7B04111C2A43A4")
         public BaseViewConfigurationVersionImpl ()
         {
@@ -43,6 +44,7 @@ public static int getScaledPagingTouchSlop(ViewConfiguration config) {
     
     static class FroyoViewConfigurationVersionImpl implements ViewConfigurationVersionImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.387 -0400", hash_original_method = "6DBEE8295DE3B0BBCD4D937DD1B1D583", hash_generated_method = "6DBEE8295DE3B0BBCD4D937DD1B1D583")
         public FroyoViewConfigurationVersionImpl ()
         {

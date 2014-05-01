@@ -144,6 +144,7 @@ public Iterator<Intent> iterator() {
     
     static class TaskStackBuilderImplBase implements TaskStackBuilderImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.732 -0400", hash_original_method = "A4B09A1D14221C9A079C3523AB777622", hash_generated_method = "A4B09A1D14221C9A079C3523AB777622")
         public TaskStackBuilderImplBase ()
         {
@@ -162,6 +163,7 @@ public PendingIntent getPendingIntent(Context context, Intent[] intents, int req
     
     static class TaskStackBuilderImplHoneycomb implements TaskStackBuilderImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.733 -0400", hash_original_method = "A254BA88AEF3ECF74695EB22288FD591", hash_generated_method = "A254BA88AEF3ECF74695EB22288FD591")
         public TaskStackBuilderImplHoneycomb ()
         {

@@ -29,6 +29,7 @@ import android.widget.SearchView;
 class SearchViewCompatIcs {
 
     public static class MySearchView extends SearchView {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:34.247 -0500", hash_original_method = "58DCF89988C851B95306F376E575AD93", hash_generated_method = "36515B6A7AFE68522085769DB0B6AF38")
         
 public MySearchView(Context context) {

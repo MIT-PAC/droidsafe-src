@@ -1730,6 +1730,7 @@ private Intent createVoiceWebSearchIntent(Intent baseIntent, SearchableInfo sear
 
         private SearchView mSearchView;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.156 -0500", hash_original_method = "0EFA734BA823B47BC95B6AD45B9E23E2", hash_generated_method = "5BDDD38D08A948F3D58613CDEF29C23F")
         
 public SearchAutoComplete(Context context) {
@@ -1737,6 +1738,7 @@ public SearchAutoComplete(Context context) {
             mThreshold = getThreshold();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.158 -0500", hash_original_method = "D2F6F380F4593BE38169820FCC450031", hash_generated_method = "1F3221D4340B9DFA2F16B84A5D308102")
         
 public SearchAutoComplete(Context context, AttributeSet attrs) {
@@ -1744,6 +1746,7 @@ public SearchAutoComplete(Context context, AttributeSet attrs) {
             mThreshold = getThreshold();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.161 -0500", hash_original_method = "6D01382B108C5B979A3DE77D2755BA0A", hash_generated_method = "5D5ABA41AF1E5A8E0344AE7633B86550")
         
 public SearchAutoComplete(Context context, AttributeSet attrs, int defStyle) {

@@ -14,6 +14,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
 	/** replacing anonymous inner class */
     private static class MyCreator implements Parcelable.Creator<Configuration> {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         public MyCreator() {
 
         }

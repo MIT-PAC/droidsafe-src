@@ -549,11 +549,13 @@ public boolean isTargetedToPackage() {
     }
     
     public static class CanceledException extends AndroidException {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.382 -0500", hash_original_method = "6C791280BC05C3F7B11A7004B8EB7BE8", hash_generated_method = "76984C31773ED74269A80CE848B3D28D")
         
 public CanceledException() {
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.385 -0500", hash_original_method = "C3CBF66373C770C27B2BC8A07C4853B3", hash_generated_method = "63B8C976D89988330EAE08B9D051A4A4")
         
 public CanceledException(String name) {

@@ -774,6 +774,7 @@ public static Builder newInstance(String type, Provider provider,
         /**
          * Constructs a new instance of {@code Builder}.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.406 -0500", hash_original_method = "7023F746232F077A36DCA003B1A512D2", hash_generated_method = "D72EC4D14B5F735B84D6DB27DA28A7C4")
         
 protected Builder() {

@@ -1099,6 +1099,7 @@ public Header[] newArray(int size) {
 
         public Bundle extras;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.533 -0500", hash_original_method = "CC8692EE42ED9AE9CFD9E664B2A1E936", hash_generated_method = "FF5D00D926FE8AA9CB6F2A80117BC757")
         
 public Header() {

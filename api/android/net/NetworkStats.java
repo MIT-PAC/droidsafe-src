@@ -542,6 +542,7 @@ private Entry getTotal(Entry recycle, HashSet<String> limitIface, int limitUid) 
 
         public long operations;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.592 -0500", hash_original_method = "CF147DC846E9FA9CFBACF54E998579AF", hash_generated_method = "7208B80C70B07CF607BBACB029288870")
         
 public Entry() {

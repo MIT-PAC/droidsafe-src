@@ -31,7 +31,6 @@ import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.util.StringTokenizer;
 
-
 /**
  * An Equalizer is used to alter the frequency response of a particular music source or of the main
  * output mix.
@@ -51,7 +50,6 @@ import java.util.StringTokenizer;
 
 public class Equalizer extends AudioEffect {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:17.692 -0400", hash_original_field = "2289CEFF9E5E6AD3CB7BD0405E45EFD8", hash_generated_field = "D047B63ACFB15B2A42C5A7913527AF3D")
-
 
     private final static String TAG = "Equalizer";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:17.694 -0400", hash_original_field = "45533A2D78E7CB805002090A0BDD800C", hash_generated_field = "3C561BE627C03D9EABA8C5306ED81930")
@@ -244,7 +242,6 @@ public short getBandLevel(short band)
 
         return result[0];
     }
-
 
     /**
      * Gets the center frequency of the given band.
@@ -476,6 +473,7 @@ public void setParameterListener(OnParameterChangeListener listener) {
 
         public short[] bandLevels = null;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:17.761 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "9E9C65F3ECED90949A3BED36B52A3064")
         
 public Settings() {
@@ -542,7 +540,6 @@ public Settings(String settings) {
             return str;
         }
     };
-
 
     /**
      * Gets the equalizer properties. This method is useful when a snapshot of current

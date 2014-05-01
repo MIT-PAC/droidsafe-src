@@ -333,7 +333,6 @@ public class SearchViewCompat {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.103 -0500", hash_original_field = "3A56788C22D1BF5CC18CE5F3EAAF4970", hash_generated_field = "BBCCB66EA2DE763E1C8298D067A19169")
 
-
     private static  SearchViewCompatImpl IMPL;
 
     static {
@@ -438,6 +437,7 @@ public static void setOnCloseListener(View searchView, OnCloseListenerCompat lis
 
          Object mListener;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.119 -0500", hash_original_method = "33B8BA196EF02A66C4C50F86A0DE8E7C", hash_generated_method = "295C0DF1B2567A50ACFCE85134F77CDE")
         
 public OnQueryTextListenerCompat() {
@@ -498,6 +498,7 @@ public static CharSequence getQuery(View searchView) {
 
          Object mListener;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.134 -0500", hash_original_method = "75162C0FB43600CA43E619EC75EF7BC7", hash_generated_method = "A67FECEB1010128AFD0BB47B14E774D0")
         
 public OnCloseListenerCompat() {

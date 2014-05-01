@@ -198,6 +198,7 @@ private AnyStrong(boolean lookForRtl) {
         public static final TextDirectionHeuristicLocale INSTANCE =
                 new TextDirectionHeuristicLocale();
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.409 -0500", hash_original_method = "CBB334D6CA70EC7E7043C3529CC3BCF6", hash_generated_method = "1187609E76BC4A6D7EC2495E32911E26")
         
 public TextDirectionHeuristicLocale() {

@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 
-
-
-
-
 public final class CdmaInformationRecords {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.946 -0500", hash_original_method = "363E4156AB88CDD83A91DE74603E128C", hash_generated_method = "8DA8FEC259A14D77E7FD5FE1B1750291")
@@ -36,7 +32,6 @@ public static String idToString(int id) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.917 -0500", hash_original_field = "983F5AB58F39B7278574F3C217433452", hash_generated_field = "77CF7299DA136D5486F92438975FB303")
 
     public static final int RIL_CDMA_CALLED_PARTY_NUMBER_INFO_REC = 1;
-
     
     public static class CdmaSignalInfoRec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.950 -0500", hash_original_field = "3321AC69DCE73708970F1C1826BE015F", hash_generated_field = "766EEFBCBBC32A8B09E311AB27FDF552")
@@ -52,6 +47,7 @@ public static String idToString(int id) {
 
         public int signal;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.959 -0500", hash_original_method = "65C1B1FAB01F8320C332C9AE75D3022E", hash_generated_method = "99F202DFC34ECCBCEA7364DF4F361D84")
         
 public CdmaSignalInfoRec() {}
@@ -76,11 +72,8 @@ public CdmaSignalInfoRec(int isPresent, int signalType, int alertPitch, int sign
                     ", signal: " + signal +
                     " }";
         }
-
         
     }
-
-
     
     public static class CdmaDisplayInfoRec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.970 -0500", hash_original_field = "53E65FEF28E32C7EDCD1B07B4F5A0DE3", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
@@ -106,11 +99,8 @@ public CdmaDisplayInfoRec(int id, String alpha) {
                     ", alpha: " + alpha +
                     " }";
         }
-
         
     }
-
-
     
     public static class CdmaNumberInfoRec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.982 -0500", hash_original_field = "53E65FEF28E32C7EDCD1B07B4F5A0DE3", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
@@ -156,11 +146,8 @@ public CdmaNumberInfoRec(int id, String number, int numberType, int numberPlan, 
                     ", si: " + si +
                     " }";
         }
-
         
     }
-
-
     
     public static class CdmaRedirectingNumberInfoRec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.005 -0500", hash_original_field = "467703D37CFFFBC2FB1AC9EE489F4A33", hash_generated_field = "277DB1ED9D8523A313B00F353F323926")
@@ -182,7 +169,6 @@ public CdmaNumberInfoRec(int id, String number, int numberType, int numberPlan, 
 
         public static final int REASON_CALL_FORWARDING_UNCONDITIONAL = 15;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.021 -0500", hash_original_field = "0E45AF5C5FE766E622184F54082550C1", hash_generated_field = "99633BDA8A94484B44D1C34D187B3B50")
-
 
         public CdmaNumberInfoRec numberInfoRec;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.024 -0500", hash_original_field = "CA7ED3323C32B3B1A05349A72DBEDD7E", hash_generated_field = "9FE98E978C471B60CAECFC7C3520403D")
@@ -208,8 +194,6 @@ public CdmaRedirectingNumberInfoRec(String number, int numberType, int numberPla
                     " }";
         }
     }
-
-
     
     public static class CdmaLineControlInfoRec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.033 -0500", hash_original_field = "4ADA3AB0EBE2F18AEA7A9AAC49C88223", hash_generated_field = "AB56D4429F407E23BE97E22B04B26614")
@@ -246,11 +230,8 @@ public CdmaLineControlInfoRec(int lineCtrlPolarityIncluded, int lineCtrlToggle,
                     " lineCtrlPowerDenial: " + lineCtrlPowerDenial +
                     " }";
         }
-
         
     }
-
-
     
     public static class CdmaT53ClirInfoRec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.051 -0500", hash_original_field = "2F2FD2B8046C188025549F8833026A30", hash_generated_field = "5AFE3443E8650E50C762D52B5A87BAB6")
@@ -271,11 +252,8 @@ public CdmaT53ClirInfoRec(int cause) {
                     " cause: " + cause +
                     " }";
         }
-
         
     }
-
-
     
     public static class CdmaT53AudioControlInfoRec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.061 -0500", hash_original_field = "6269D71D744481E12C5B76B75B116882", hash_generated_field = "9F199F8EB7C7978BE968369E879DA5EF")
@@ -301,7 +279,6 @@ public CdmaT53AudioControlInfoRec(int uplink, int downlink) {
                     " downlink: " + downlink +
                     " }";
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.920 -0500", hash_original_field = "160598A9D8F01D129A355F2D697E72B1", hash_generated_field = "6A383AB2E2A2D5C8791774FF4E731FCA")

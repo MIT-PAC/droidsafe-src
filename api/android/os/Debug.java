@@ -1177,6 +1177,7 @@ public MemoryInfo[] newArray(int size) {
 
         private int[] otherStats = new int[NUM_OTHER_STATS*3];
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.768 -0500", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "1FF0633BAB808AAABE7DEEC0DAD3D78E")
         
 public MemoryInfo() {
@@ -1300,6 +1301,7 @@ public void readFromParcel(Parcel source) {
 
         private int[] mCounts;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.012 -0500", hash_original_method = "409452CAAA99AF062D1B45C0A8D86C97", hash_generated_method = "6FBF8B81EACDD3BCFF0201D965E43623")
         
 public InstructionCount() {

@@ -181,6 +181,7 @@ public final void startInsert(int token, Object cookie, Uri uri,
 
         public ContentValues values;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.435 -0400", hash_original_method = "5AD25B0DEF3037CAAA377C35BF29670C", hash_generated_method = "5AD25B0DEF3037CAAA377C35BF29670C")
         public WorkerArgs ()
         {

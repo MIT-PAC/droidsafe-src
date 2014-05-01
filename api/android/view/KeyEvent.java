@@ -1020,6 +1020,7 @@ public static KeyEvent createFromParcelBody(Parcel in) {
 
         SparseIntArray mActiveLongPresses = new SparseIntArray();
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.353 -0400", hash_original_method = "6A42904977F799CF06B04A57C142AD90", hash_generated_method = "6A42904977F799CF06B04A57C142AD90")
         public DispatcherState ()
         {

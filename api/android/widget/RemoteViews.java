@@ -914,6 +914,7 @@ private Context prepareContext(Context context) {
 public ActionException(Exception ex) {
             super(ex);
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.714 -0500", hash_original_method = "E5DD8B85C6FF17BD695A219FDD405D42", hash_generated_method = "28BBE77B86360930B9436F0DF86632C6")
         
 public ActionException(String message) {

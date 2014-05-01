@@ -915,6 +915,7 @@ public static IMountService asInterface(IBinder obj) {
         }
 
         /** Construct the stub at attach it to the interface. */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.496 -0500", hash_original_method = "9DF31EF661086A2E329E9935CEC58DE7", hash_generated_method = "CC82F397266B7554FEE0F3D6A48B029B")
         
 public Stub() {

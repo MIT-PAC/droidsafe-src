@@ -904,11 +904,13 @@ public Configuration getConfiguration() {
 	}
     
     public static class NotFoundException extends RuntimeException {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.291 -0500", hash_original_method = "16646BE2B605A836CC81C1207D23548C", hash_generated_method = "6D902CC3B723F053FD21F8F6EC56EB38")
         
 public NotFoundException() {
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.294 -0500", hash_original_method = "4E6E00F1F6EDF0AE5B66F6F35CDBCBD1", hash_generated_method = "CC1F9D086F58D5BFF08FBA17AA171A6F")
         
 public NotFoundException(String name) {

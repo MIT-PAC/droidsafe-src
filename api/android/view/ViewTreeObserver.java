@@ -543,6 +543,7 @@ final void dispatchOnComputeInternalInsets(InternalInsetsInfo inoutInfo) {
         
         int mTouchableInsets;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.884 -0400", hash_original_method = "892C39758A803740C8313A0D5A4EBBE8", hash_generated_method = "892C39758A803740C8313A0D5A4EBBE8")
         public InternalInsetsInfo ()
         {
@@ -711,7 +712,6 @@ void set(InternalInsetsInfo other) {
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onWindowDetached();
     }
-    
 
     /**
      * Interface definition for a callback to be invoked when the view hierarchy's window

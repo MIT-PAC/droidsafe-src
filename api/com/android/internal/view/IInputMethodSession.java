@@ -325,7 +325,8 @@ static final int TRANSACTION_toggleSoftInput = (android.os.IBinder.FIRST_CALL_TR
 
 static final int TRANSACTION_finishSession = (android.os.IBinder.FIRST_CALL_TRANSACTION + 10);
 /** Construct the stub at attach it to the interface. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.658 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
+@DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.658 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
         
 public Stub()
 {

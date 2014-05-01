@@ -100,6 +100,7 @@ public BluetoothClass(int classInt) {
 
         public static final int INFORMATION             = 0x800000;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.104 -0400", hash_original_method = "05DD0D3AE8FB07CCF5507C6E023C1B78", hash_generated_method = "05DD0D3AE8FB07CCF5507C6E023C1B78")
         public Service ()
         {
@@ -150,6 +151,7 @@ public BluetoothClass(int classInt) {
 
             public static final int UNCATEGORIZED     = 0x1F00;
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.108 -0400", hash_original_method = "2C98A313400B6C1B74CB3BC1CC68B05F", hash_generated_method = "2C98A313400B6C1B74CB3BC1CC68B05F")
             public Major ()
             {
@@ -322,6 +324,7 @@ public BluetoothClass(int classInt) {
 
         public static final int PERIPHERAL_KEYBOARD_POINTING         = 0x05C0;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.107 -0400", hash_original_method = "40AF3D7165C50C753FB5A8D2115663B9", hash_generated_method = "40AF3D7165C50C753FB5A8D2115663B9")
         public Device ()
         {

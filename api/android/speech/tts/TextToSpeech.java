@@ -1092,6 +1092,7 @@ R var79B35EE005A3F2115C55AE7046E4A0E2_113215503 =                 errorResult;
 
         public int priority;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.488 -0400", hash_original_method = "1BD677F38EE0D51841725F2C2D5029FA", hash_generated_method = "1BD677F38EE0D51841725F2C2D5029FA")
         public EngineInfo ()
         {

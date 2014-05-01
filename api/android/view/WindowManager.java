@@ -15,11 +15,13 @@ import android.util.Log;
 public interface WindowManager extends ViewManager {
     
     public static class BadTokenException extends RuntimeException {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:59.651 -0500", hash_original_method = "B9154FA54F9E87F1168DB918C99950C2", hash_generated_method = "22DF13C3FD6A0238F3E2806F7E1B8FA1")
         
 public BadTokenException() {
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:59.654 -0500", hash_original_method = "21B94DB35E7799DA44FD7BD9793AF220", hash_generated_method = "EEBE5983CA4575E766D2CECF025A20AD")
         
 public BadTokenException(String name) {
@@ -618,6 +620,7 @@ public LayoutParams(int _type) {
             format = PixelFormat.OPAQUE;
         }
     
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.022 -0500", hash_original_method = "967A71E2A08139F35DA4E32248AE1816", hash_generated_method = "FC5F7600326764FA0F6D2F6BFE14A714")
         
 public LayoutParams(int _type, int _flags) {

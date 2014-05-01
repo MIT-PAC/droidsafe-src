@@ -199,6 +199,7 @@ public static Uri addMessage(ContentResolver resolver,
 
             public static final String DEFAULT_SORT_ORDER = "date DESC";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.891 -0400", hash_original_method = "141F91EDC6AE2D7033D3DA3E508699AC", hash_generated_method = "141F91EDC6AE2D7033D3DA3E508699AC")
             public Inbox ()
             {
@@ -233,6 +234,7 @@ public static Uri addMessage(ContentResolver resolver,
 
             public static final String DEFAULT_SORT_ORDER = "date DESC";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.892 -0400", hash_original_method = "01BACB9453826DDA962919BC9AB080EE", hash_generated_method = "01BACB9453826DDA962919BC9AB080EE")
             public Sent ()
             {
@@ -285,6 +287,7 @@ public static boolean saveMessage(ContentResolver resolver,
 
             public static final String DEFAULT_SORT_ORDER = "date DESC";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.892 -0400", hash_original_method = "30DD07C39D661987683E6A54087310F0", hash_generated_method = "30DD07C39D661987683E6A54087310F0")
             public Draft ()
             {
@@ -321,6 +324,7 @@ public static Uri addMessage(ContentResolver resolver,
 
             public static final String DEFAULT_SORT_ORDER = "date DESC";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.893 -0400", hash_original_method = "06FAB0A617CEB33215E397D9BFE9D152", hash_generated_method = "06FAB0A617CEB33215E397D9BFE9D152")
             public Outbox ()
             {
@@ -343,6 +347,7 @@ public static Uri addMessage(ContentResolver resolver,
 
             public static final String MESSAGE_COUNT = "msg_count";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.893 -0400", hash_original_method = "6984BA613DF71E17158BEA5BF9053437", hash_generated_method = "6984BA613DF71E17158BEA5BF9053437")
             public Conversations ()
             {
@@ -427,7 +432,8 @@ public static SmsMessage[] getMessagesFromIntent(
             @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
             public static final String SMS_REJECTED_ACTION =
                 "android.provider.Telephony.SMS_REJECTED";
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.035 -0500", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "133FD0D647CE3722D1F195582DF3CC61")
+        @DSSafe(DSCat.SAFE_OTHERS)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.035 -0500", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "133FD0D647CE3722D1F195582DF3CC61")
         
 private Intents() {
             // Not instantiable
@@ -437,6 +443,7 @@ private Intents() {
 
         public static final String DEFAULT_SORT_ORDER = "date DESC";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.889 -0400", hash_original_method = "6F79CFAC0C9D88274D278FEEB27D8B11", hash_generated_method = "6F79CFAC0C9D88274D278FEEB27D8B11")
         public Sms ()
         {
@@ -639,6 +646,7 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String DEFAULT_SORT_ORDER = "date DESC";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.895 -0400", hash_original_method = "141F91EDC6AE2D7033D3DA3E508699AC", hash_generated_method = "141F91EDC6AE2D7033D3DA3E508699AC")
             public Inbox ()
             {
@@ -656,6 +664,7 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String DEFAULT_SORT_ORDER = "date DESC";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.895 -0400", hash_original_method = "01BACB9453826DDA962919BC9AB080EE", hash_generated_method = "01BACB9453826DDA962919BC9AB080EE")
             public Sent ()
             {
@@ -673,6 +682,7 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String DEFAULT_SORT_ORDER = "date DESC";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.896 -0400", hash_original_method = "30DD07C39D661987683E6A54087310F0", hash_generated_method = "30DD07C39D661987683E6A54087310F0")
             public Draft ()
             {
@@ -690,6 +700,7 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String DEFAULT_SORT_ORDER = "date DESC";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.896 -0400", hash_original_method = "06FAB0A617CEB33215E397D9BFE9D152", hash_generated_method = "06FAB0A617CEB33215E397D9BFE9D152")
             public Outbox ()
             {
@@ -714,6 +725,7 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String CHARSET = "charset";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.896 -0400", hash_original_method = "240C49CE2280315AC94999B4C3BDDDB9", hash_generated_method = "240C49CE2280315AC94999B4C3BDDDB9")
             public Addr ()
             {
@@ -762,6 +774,7 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String TEXT = "text";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.896 -0400", hash_original_method = "9A3D51732327B3711C976CCE6283B7F6", hash_generated_method = "9A3D51732327B3711C976CCE6283B7F6")
             public Part ()
             {
@@ -778,6 +791,7 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String SENT_TIME = "sent_time";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.897 -0400", hash_original_method = "8DE7FBCF11006E383291B1DA82AD2709", hash_generated_method = "8DE7FBCF11006E383291B1DA82AD2709")
             public Rate ()
             {
@@ -836,6 +850,7 @@ public static boolean isPhoneNumber(String number) {
         public static final Pattern QUOTED_STRING_PATTERN =
                 Pattern.compile("\\s*\"([^\"]*)\"\\s*");
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.895 -0400", hash_original_method = "59489CF231D229E8B793F6BB93F87558", hash_generated_method = "59489CF231D229E8B793F6BB93F87558")
         public Mms ()
         {
@@ -879,6 +894,7 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String LAST_TRY = "last_try";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.898 -0400", hash_original_method = "170CA936DAF3534DFB0A0B79794E3A00", hash_generated_method = "170CA936DAF3534DFB0A0B79794E3A00")
             public PendingMessages ()
             {
@@ -900,6 +916,7 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String INDEXED_TEXT = "index_text";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.899 -0400", hash_original_method = "480A168A1C6BA9EBC664C3157DB5A59D", hash_generated_method = "480A168A1C6BA9EBC664C3157DB5A59D")
             public WordsTable ()
             {
@@ -964,6 +981,7 @@ public static boolean isPhoneNumber(String number) {
 
         public static final int ERR_TYPE_MMS_PROTO_PERMANENT  = 12;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.897 -0400", hash_original_method = "9BF54BA5F2455087717E5B05EBB691D5", hash_generated_method = "9BF54BA5F2455087717E5B05EBB691D5")
         public MmsSms ()
         {
@@ -1049,6 +1067,7 @@ public static boolean isPhoneNumber(String number) {
 
         public static final String BEARER = "bearer";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.900 -0400", hash_original_method = "6476EDBFB29271C848491911726650D3", hash_generated_method = "6476EDBFB29271C848491911726650D3")
         public Carriers ()
         {

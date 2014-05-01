@@ -76,6 +76,7 @@ private static int metaStateFilterDirectionalModifiers(int metaState,
 
         private static final int META_ALL_MASK = META_MODIFIER_MASK;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.241 -0400", hash_original_method = "6346EE5F678CD82673E4481506E12189", hash_generated_method = "6346EE5F678CD82673E4481506E12189")
         public BaseKeyEventVersionImpl ()
         {
@@ -117,6 +118,7 @@ private static int metaStateFilterDirectionalModifiers(int metaState,
     
     static class HoneycombKeyEventVersionImpl implements KeyEventVersionImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.244 -0400", hash_original_method = "C9F0128F3261973D5584669E422DE07F", hash_generated_method = "C9F0128F3261973D5584669E422DE07F")
         public HoneycombKeyEventVersionImpl ()
         {

@@ -291,6 +291,7 @@ public static long checksumCrc32(File file) throws FileNotFoundException, IOExce
 
         public long ctime;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.084 -0400", hash_original_method = "CFD6FBC969A1D085C457A3FA7AFEA0D4", hash_generated_method = "CFD6FBC969A1D085C457A3FA7AFEA0D4")
         public FileStatus ()
         {

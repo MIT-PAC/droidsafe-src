@@ -1345,12 +1345,14 @@ private SavedState(Parcel in) {
 
         private int mUpWidth;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.629 -0500", hash_original_method = "D411D61D16BBF4279D3867C1E411F377", hash_generated_method = "994A25BE7423264B200F6B65997FA7C0")
         
 public HomeView(Context context) {
             this(context, null);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.631 -0500", hash_original_method = "A7CE440DF9BFAF8E10FD8D594704D071", hash_generated_method = "A812CA623716D8E85AE1D871C0B5381A")
         
 public HomeView(Context context, AttributeSet attrs) {

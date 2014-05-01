@@ -158,6 +158,7 @@ public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) 
     
     static class AccessibilityDelegateStubImpl implements AccessibilityDelegateImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.190 -0400", hash_original_method = "DD5FA6B7DB30F302274C6D21593F2A63", hash_generated_method = "DD5FA6B7DB30F302274C6D21593F2A63")
         public AccessibilityDelegateStubImpl ()
         {
@@ -237,6 +238,7 @@ public Object newAccessiblityDelegateDefaultImpl() {
     
     static class AccessibilityDelegateIcsImpl extends AccessibilityDelegateStubImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.196 -0400", hash_original_method = "001B0205D9FC59E8AC4A7BF341AF74E0", hash_generated_method = "001B0205D9FC59E8AC4A7BF341AF74E0")
         public AccessibilityDelegateIcsImpl ()
         {

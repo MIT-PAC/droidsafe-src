@@ -425,6 +425,7 @@ public WaitResult[] newArray(int size) {
 
         public long totalTime;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.795 -0500", hash_original_method = "0256A6E035D799D49434166180403C08", hash_generated_method = "575CB7D449B562FE7AF359F5ABF3EE99")
         
 public WaitResult() {

@@ -116,6 +116,7 @@ public boolean onAbsorb(int velocity) {
     
     static class BaseEdgeEffectImpl implements EdgeEffectImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.020 -0400", hash_original_method = "E93AF950D68741CBF25DC67984C27D7B", hash_generated_method = "E93AF950D68741CBF25DC67984C27D7B")
         public BaseEdgeEffectImpl ()
         {
@@ -172,6 +173,7 @@ public boolean draw(Object edgeEffect, Canvas canvas) {
     
     static class EdgeEffectIcsImpl implements EdgeEffectImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.021 -0400", hash_original_method = "722DC077141274393C35BB912CA199C0", hash_generated_method = "722DC077141274393C35BB912CA199C0")
         public EdgeEffectIcsImpl ()
         {

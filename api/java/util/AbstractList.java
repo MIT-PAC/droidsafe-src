@@ -193,6 +193,7 @@ public abstract E get(int location);
      ***********************************************************************/
     public final static class SubAbstractList<E> extends AbstractList<E> {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         public SubAbstractList() {
             
         }

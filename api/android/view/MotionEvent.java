@@ -1071,6 +1071,7 @@ public static PointerCoords[] createArray(int size) {
         /**
          * Creates a pointer coords object with all axes initialized to zero.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:11.029 -0500", hash_original_method = "30C014872AED120D5788F672204C6D56", hash_generated_method = "45EE4D8B4D5F40C0EC03A5329F4F79C2")
         
 public PointerCoords() {
@@ -1284,6 +1285,7 @@ public static PointerProperties[] createArray(int size) {
         /**
          * Creates a pointer properties object with an invalid pointer id.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:11.076 -0500", hash_original_method = "D6AAE40F539D7383E827DA395512E95B", hash_generated_method = "6CAFD55FB74ECA4404786941388DD45A")
         
 public PointerProperties() {

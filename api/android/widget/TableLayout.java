@@ -720,6 +720,7 @@ private void mutateColumnsWidth(SparseBooleanArray columns,
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.522 -0500", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "72A2ECA2CF4C647C2D28F670D4DC27E1")
         
 public LayoutParams(Context c, AttributeSet attrs) {
@@ -729,6 +730,7 @@ public LayoutParams(Context c, AttributeSet attrs) {
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.525 -0500", hash_original_method = "AE70A42624DF2261DCFDCEED49F51EE5", hash_generated_method = "487944804F791683B1D6258C47E2D24F")
         
 public LayoutParams(int w, int h) {
@@ -751,6 +753,7 @@ public LayoutParams(int w, int h, float initWeight) {
          * {@link android.view.ViewGroup.LayoutParams} and the child height to
          * {@link android.view.ViewGroup.LayoutParams#WRAP_CONTENT}.</p>
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.530 -0500", hash_original_method = "23F50431F0504066EA301D42AFB8DAFD", hash_generated_method = "7F742792681744F3E74094BE02839621")
         
 public LayoutParams() {
@@ -760,6 +763,7 @@ public LayoutParams() {
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.533 -0500", hash_original_method = "DE4ED36682A1028E303BDCC28A48E06F", hash_generated_method = "AA7E78F64C1B2029CADFD7AA230FA359")
         
 public LayoutParams(ViewGroup.LayoutParams p) {
@@ -769,6 +773,7 @@ public LayoutParams(ViewGroup.LayoutParams p) {
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.536 -0500", hash_original_method = "CC87BD4B8C067788FA2BA37DBA116F62", hash_generated_method = "A83E3EC70AE7CFFC0495D4E169E975D9")
         
 public LayoutParams(MarginLayoutParams source) {

@@ -231,11 +231,13 @@ public void writeToParcel(Parcel out, int flags) {
     }
     
     public static class SendIntentException extends AndroidException {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.880 -0500", hash_original_method = "3CCB3E3C6E6C65C0BEBBCAEF78CD6FBE", hash_generated_method = "77AA74C5FFB490F5242AC52254BDA8F7")
         
 public SendIntentException() {
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.882 -0500", hash_original_method = "2F0F888808ED374E72461686A526DBD5", hash_generated_method = "FC1B19C1AA015538A5FA8B17571F2263")
         
 public SendIntentException(String name) {

@@ -118,6 +118,7 @@ public static boolean isStatusCompleted(int status) {
 
             public static final String INSERT_KEY_PREFIX = "http_header_";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.298 -0400", hash_original_method = "B06C81148D4BC4223C2D3A656DC9543B", hash_generated_method = "B06C81148D4BC4223C2D3A656DC9543B")
             public RequestHeaders ()
             {

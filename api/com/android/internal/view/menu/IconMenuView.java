@@ -787,6 +787,7 @@ public SavedState(Parcelable superState, int focusedPosition) {
         /**
          * Constructor called from {@link #CREATOR}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.640 -0400", hash_original_method = "62FDA856B6BB84CB97F84F93D2B95AF3", hash_generated_method = "EEF291454A98DFF21835444419B8B80A")
         
 private SavedState(Parcel in) {
@@ -820,12 +821,14 @@ private SavedState(Parcel in) {
 
         int maxNumItemsOnRow;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.651 -0400", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "72A2ECA2CF4C647C2D28F670D4DC27E1")
         
 public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.654 -0400", hash_original_method = "B179862558DB9232A546423CE2E9C45B", hash_generated_method = "5618D547D1ACB51021D28AF4BAF9972B")
         
 public LayoutParams(int width, int height) {

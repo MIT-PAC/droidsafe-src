@@ -92,6 +92,7 @@ public static void addWord(Context context, String word,
 
         public static final String DEFAULT_SORT_ORDER = FREQUENCY + " DESC";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.917 -0400", hash_original_method = "C1D0CFC6A151C5F38326116B5D69C610", hash_generated_method = "C1D0CFC6A151C5F38326116B5D69C610")
         public Words ()
         {

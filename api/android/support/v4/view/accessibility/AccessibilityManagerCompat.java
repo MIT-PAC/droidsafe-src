@@ -159,7 +159,6 @@ public void onAccessibilityStateChanged(boolean enabled) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.757 -0500", hash_original_field = "B87EEC05DAFC17C0065D438877226C06", hash_generated_field = "11030A36D1F404B868FA2500FC50C900")
 
-
     private static  AccessibilityManagerVersionImpl IMPL;
 
     /**
@@ -245,6 +244,7 @@ public static boolean isTouchExplorationEnabled(AccessibilityManager manager) {
 
          Object mListener;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.766 -0500", hash_original_method = "FA0620266C265FA0D90FCFE5DA96B3B2", hash_generated_method = "258522D982E7FA16C9311C52D349CD01")
         
 public AccessibilityStateChangeListenerCompat() {

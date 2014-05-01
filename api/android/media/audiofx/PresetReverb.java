@@ -30,7 +30,6 @@ import java.nio.ByteOrder;
 import java.nio.ByteBuffer;
 import java.util.StringTokenizer;
 
-
 /**
  * A sound generated within a room travels in many directions. The listener first hears the
  * direct sound from the source itself. Later, he or she hears discrete echoes caused by sound
@@ -63,7 +62,6 @@ import java.util.StringTokenizer;
 
 public class PresetReverb extends AudioEffect {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:17.955 -0400", hash_original_field = "CFB548D2597D5DE56161CCA91329E2D9", hash_generated_field = "BD6E75A2A8F29EED4F602E6C9E9093EF")
-
 
     private final static String TAG = "PresetReverb";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:17.956 -0400", hash_original_field = "0C848B968B354528CE96237C3035BA2F", hash_generated_field = "84FEB2714B24EE99C52635D7C26DE93F")
@@ -243,6 +241,7 @@ public void setParameterListener(OnParameterChangeListener listener) {
 
         public short preset;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:17.990 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "9E9C65F3ECED90949A3BED36B52A3064")
         
 public Settings() {
@@ -288,7 +287,6 @@ public Settings(String settings) {
             return str;
         }
     };
-
 
     /**
      * Gets the preset reverb properties. This method is useful when a snapshot of current

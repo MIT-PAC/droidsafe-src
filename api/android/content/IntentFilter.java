@@ -623,11 +623,13 @@ public final boolean hasDataScheme(String scheme) {
     }
     
     public static class MalformedMimeTypeException extends AndroidException {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.759 -0500", hash_original_method = "8500983E91FE33F50F26D266A654E6C8", hash_generated_method = "3EC5ABD340A3F165372D697F56D65E01")
         
 public MalformedMimeTypeException() {
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.761 -0500", hash_original_method = "E06B6BA43D42AE50E4C9A14EEBF56FAC", hash_generated_method = "CD5BFD771B660603FE97A9CDE715BD08")
         
 public MalformedMimeTypeException(String name) {

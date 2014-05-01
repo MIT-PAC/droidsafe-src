@@ -192,6 +192,7 @@ private static void split(String content, List<String> tokens, List<Integer> off
 
         public static final String KEY_AUTHORIZED_URI = "authorized_uri";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.205 -0400", hash_original_method = "130B4481E1D16F5CC0713072784D18C5", hash_generated_method = "130B4481E1D16F5CC0713072784D18C5")
         public Authorization ()
         {
@@ -219,6 +220,7 @@ private static void split(String content, List<String> tokens, List<Integer> off
 
         public static final int DISPLAY_ORDER_ALTERNATIVE = 2;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.205 -0400", hash_original_method = "2E8FE94CA2E5C969DED3F5ED9F537560", hash_generated_method = "2E8FE94CA2E5C969DED3F5ED9F537560")
         public Preferences ()
         {
@@ -463,6 +465,7 @@ private ProfileSyncState() {}
 
         public static final String EXTRA_ADDRESS_BOOK_INDEX_COUNTS = "address_book_index_counts";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.208 -0400", hash_original_method = "CB1CFE8B6024EEF8B52112C6EF2CC42E", hash_generated_method = "CB1CFE8B6024EEF8B52112C6EF2CC42E")
         public ContactCounts ()
         {
@@ -716,6 +719,7 @@ public static final Builder builder() {
 
                 private int mLimit;
                 
+                @DSSafe(DSCat.SAFE_OTHERS)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.210 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
                 public Builder ()
                 {
@@ -1377,6 +1381,7 @@ private StatusUpdates() {}
     
     public static final class Presence extends StatusUpdates {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.216 -0400", hash_original_method = "FECDF62B9774A3653EF2E5C629F7A49B", hash_generated_method = "FECDF62B9774A3653EF2E5C629F7A49B")
         public Presence ()
         {
@@ -1396,6 +1401,7 @@ private StatusUpdates() {}
 
         public static final String DEFERRED_SNIPPETING_KEY = "deferred_snippeting";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.216 -0400", hash_original_method = "04F7D0EC16DDA5BE74B3F08104BE0CC7", hash_generated_method = "04F7D0EC16DDA5BE74B3F08104BE0CC7")
         public SearchSnippetColumns ()
         {
@@ -2573,6 +2579,7 @@ private ProviderStatus() {
 
         public static final String USAGE_TYPE_SHORT_TEXT = "short_text";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.237 -0400", hash_original_method = "63E5D1CFF9704764CDDB806EEC1367A5", hash_generated_method = "63E5D1CFF9704764CDDB806EEC1367A5")
         public DataUsageFeedback ()
         {
@@ -2689,6 +2696,7 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
 
         public static final int MODE_LARGE = 3;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.238 -0400", hash_original_method = "854DF4E0756DCBE90F5C7A53A4D83687", hash_generated_method = "854DF4E0756DCBE90F5C7A53A4D83687")
         public QuickContact ()
         {
@@ -2770,6 +2778,7 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
             public static final String FILTER_TEXT_EXTRA_KEY =
                     "com.android.contacts.extra.FILTER_TEXT";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.240 -0400", hash_original_method = "244D54B89BC2D5ABA32DBC8F28EE0809", hash_generated_method = "244D54B89BC2D5ABA32DBC8F28EE0809")
             public UI ()
             {
@@ -2873,6 +2882,7 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
 
             public static final String DATA_SET = "com.android.contacts.extra.DATA_SET";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.242 -0400", hash_original_method = "2A9E1DC472832B4765A0A21D09988277", hash_generated_method = "2A9E1DC472832B4765A0A21D09988277")
             public Insert ()
             {
@@ -2940,6 +2950,7 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
         @Deprecated
         public static final String EXTRA_EXCLUDE_MIMES = "exclude_mimes";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.240 -0400", hash_original_method = "1E952476DD941AF572EDA8AC50686906", hash_generated_method = "1E952476DD941AF572EDA8AC50686906")
         public Intents ()
         {

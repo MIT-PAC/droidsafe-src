@@ -717,6 +717,7 @@ public Notification build() {
 
         boolean mBigLargeIconSet;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.346 -0500", hash_original_method = "3B87A1538500BE0C4C4429E052CFAA59", hash_generated_method = "4FDCC0CD821A1D50EE7ABFB7CDF9BF0D")
         
 public BigPictureStyle() {
@@ -798,6 +799,7 @@ public BigPictureStyle bigLargeIcon(Bitmap b) {
 
         CharSequence mBigText;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.364 -0500", hash_original_method = "FC2708C6265D9EFE6897BC23F510F3F6", hash_generated_method = "FE81B60BDDB4B029BF42CF95CA1BDD48")
         
 public BigTextStyle() {
@@ -872,6 +874,7 @@ public BigTextStyle bigText(CharSequence cs) {
 
         ArrayList<CharSequence> mTexts = new ArrayList<CharSequence>();
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.383 -0500", hash_original_method = "77F8D142994117520A51F39629CB98C2", hash_generated_method = "954D22E14DF17F2BAAE07500DB83F30E")
         
 public InboxStyle() {

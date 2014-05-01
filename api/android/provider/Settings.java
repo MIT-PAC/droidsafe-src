@@ -60,6 +60,7 @@ public static String getGTalkDeviceId(long androidId) {
     public static final String ACTION_SETTINGS = "android.settings.SETTINGS";
     
     public static class SettingNotFoundException extends AndroidException {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.457 -0500", hash_original_method = "9D3DA3FD01BD65E9C8D44BD33E232128", hash_generated_method = "9CAD6371E48DA955B5974C157A71A1B7")
         
 public SettingNotFoundException(String msg) {
@@ -100,6 +101,7 @@ public static Uri getUriFor(Uri uri, String name) {
 
         public static final String VALUE = "value";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.672 -0400", hash_original_method = "FA7615754860C9050FE125371ADC3B8B", hash_generated_method = "FA7615754860C9050FE125371ADC3B8B")
         public NameValueTable ()
         {
@@ -1201,6 +1203,7 @@ public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
         public static final String WIFI_WATCHDOG_PING_TIMEOUT_MS =
             Secure.WIFI_WATCHDOG_PING_TIMEOUT_MS;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.692 -0400", hash_original_method = "FCC05FCD4F95F74464895D80CA2398E6", hash_generated_method = "FCC05FCD4F95F74464895D80CA2398E6")
         
         public System ()
@@ -2373,6 +2376,7 @@ public static final void setLocationProviderEnabled(ContentResolver cr,
             LOCK_SCREEN_OWNER_INFO_ENABLED
         };
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.700 -0400", hash_original_method = "73610FEA11960E691F3222B2F82B6F9C", hash_generated_method = "73610FEA11960E691F3222B2F82B6F9C")
         public Secure ()
         {
@@ -2568,6 +2572,7 @@ public static CharSequence getTitle(Context context, Cursor cursor) {
 
         private static final String sShortcutSelection = SHORTCUT + "=?";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.709 -0400", hash_original_method = "BB83E969FD06D277BEC07ACFEA741415", hash_generated_method = "BB83E969FD06D277BEC07ACFEA741415")
         public Bookmarks ()
         {

@@ -753,6 +753,7 @@ public final void autoFocus(AutoFocusCallback cb)
 
         public int orientation;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.092 -0400", hash_original_method = "53549141AB7280F9D01DADAF7B2BE301", hash_generated_method = "53549141AB7280F9D01DADAF7B2BE301")
         public CameraInfo ()
         {
@@ -874,6 +875,7 @@ public EventHandler(Camera c, Looper looper) {
         /**
          * Create an empty face.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.186 -0500", hash_original_method = "AEF29885362690B7E7A5098C2C347237", hash_generated_method = "E38E5D01E4BE3229837151E9655E5BA0")
         
 public Face() {

@@ -103,6 +103,7 @@ public ExtendedZoomControls getControls() {
 
         private android.widget.ZoomControls mPlusMinusZoomControls;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.337 -0500", hash_original_method = "C8C43A8C9AE036629588704CF81CC911", hash_generated_method = "2C8C1692A6408D4C6D42DB80627BA9FF")
         
 public ExtendedZoomControls(Context context) {

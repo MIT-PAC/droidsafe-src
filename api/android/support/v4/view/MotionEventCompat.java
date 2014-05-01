@@ -95,6 +95,7 @@ public static int getPointerCount(MotionEvent event) {
     
     static class BaseMotionEventVersionImpl implements MotionEventVersionImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.289 -0400", hash_original_method = "1452E4140DDA36A9AA18888B766DC89D", hash_generated_method = "1452E4140DDA36A9AA18888B766DC89D")
         public BaseMotionEventVersionImpl ()
         {
@@ -153,6 +154,7 @@ public static int getPointerCount(MotionEvent event) {
     
     static class EclairMotionEventVersionImpl implements MotionEventVersionImpl {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.294 -0400", hash_original_method = "042D39F66E91ADDA4B8AD5816FDB91A1", hash_generated_method = "042D39F66E91ADDA4B8AD5816FDB91A1")
         public EclairMotionEventVersionImpl ()
         {

@@ -1185,6 +1185,7 @@ AuthorityInfo(Account account, String authority, int ident) {
 
         String mesg;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.143 -0400", hash_original_method = "2A1719F3DDEE538E4071CFCF49D97D66", hash_generated_method = "2A1719F3DDEE538E4071CFCF49D97D66")
         public SyncHistoryItem ()
         {

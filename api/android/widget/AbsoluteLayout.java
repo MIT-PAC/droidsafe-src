@@ -184,6 +184,7 @@ public LayoutParams(int width, int height, int x, int y) {
          * @param attrs the set of attributes from which to extract the layout
          *              parameters values
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.384 -0500", hash_original_method = "4740233E31DF015F5CE2A2D25007B918", hash_generated_method = "64B72C41FA5D3EDA06CB5C69505EFF3E")
         
 public LayoutParams(Context c, AttributeSet attrs) {
@@ -200,6 +201,7 @@ public LayoutParams(Context c, AttributeSet attrs) {
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.386 -0500", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "35FAB65EFD30EE5BC910187CB4DA6F67")
         
 public LayoutParams(ViewGroup.LayoutParams source) {

@@ -2321,6 +2321,7 @@ public void contextDump() {
 
         protected int mLength;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.189 -0400", hash_original_method = "CBD1456EA4F7D781CE5FB9E407013326", hash_generated_method = "CBD1456EA4F7D781CE5FB9E407013326")
         public RSMessageHandler ()
         {
@@ -2341,6 +2342,7 @@ public void run() {
 
         protected int mErrorNum;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:57.195 -0400", hash_original_method = "7C983344237EA19B56C37B25669FCB61", hash_generated_method = "7C983344237EA19B56C37B25669FCB61")
         public RSErrorHandler ()
         {

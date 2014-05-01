@@ -125,6 +125,7 @@ private Bookmarks() {}
 
         public static final String ROOT_ID = "root_id";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.043 -0400", hash_original_method = "E861E18FAAD07B872BEA69DAA31ED960", hash_generated_method = "E861E18FAAD07B872BEA69DAA31ED960")
         public Accounts ()
         {

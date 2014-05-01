@@ -143,12 +143,14 @@ public SavedState[] newArray(int size) {
 
         String curTab;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.575 -0500", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "89EB4EC154F05BF905ECA8E02BBD14BC")
         
 SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.576 -0500", hash_original_method = "AB7C9954D53F94F9085174F4490CBA05", hash_generated_method = "F3511B3B6291B72E43E2102A04E6B1A0")
         
 private SavedState(Parcel in) {

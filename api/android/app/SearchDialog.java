@@ -694,12 +694,14 @@ protected void launchQuerySearch(int actionKey, String actionMsg) {
 
         private SearchDialog mSearchDialog;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.824 -0500", hash_original_method = "A3B6592F51A27BFA7A85197EDA145FFE", hash_generated_method = "3C08E8235D3A7A15A58812D345A0FCBC")
         
 public SearchBar(Context context, AttributeSet attrs) {
             super(context, attrs);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.828 -0500", hash_original_method = "4392E8B38D4E47AAE679D125E8E4B6FF", hash_generated_method = "D487A1EB20E53F9AFBF66DD2A72E0818")
         
 public SearchBar(Context context) {

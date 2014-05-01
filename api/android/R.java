@@ -13,6 +13,9 @@ package android;
 import droidsafe.annotations.*;
 
 public final class R {
+
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public R() {}
     public static final class anim {
 
         @DSSafe(DSCat.SAFE_OTHERS)

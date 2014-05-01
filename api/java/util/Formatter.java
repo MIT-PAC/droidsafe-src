@@ -1598,6 +1598,7 @@ private void transformG(StringBuilder result) {
 
         public String currentPattern;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.857 -0500", hash_original_method = "3AB4302EBBD3C6ECF16B79A91E887CC6", hash_generated_method = "AA87D92A8081D9CB1A65F0D0ED37AE83")
         
 public CachedDecimalFormat() {

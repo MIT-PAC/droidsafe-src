@@ -604,6 +604,7 @@ public final int compareTo(Charset charset) {
             super(setName, null);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         public MyCharset() {
             super("", null);
         }

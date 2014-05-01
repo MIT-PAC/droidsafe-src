@@ -182,6 +182,7 @@ protected void performFiltering(CharSequence text, int start, int end,
     
     public static class CommaTokenizer implements Tokenizer {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.368 -0400", hash_original_method = "F4BA1DCA501F72677108996A68C84C7B", hash_generated_method = "F4BA1DCA501F72677108996A68C84C7B")
         public CommaTokenizer ()
         {

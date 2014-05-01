@@ -7,8 +7,14 @@
 
 package com.android.internal;
 
+import droidsafe.annotations.*;
+
 public final class R {
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public R() {}
     public static final class anim {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public anim(){}
         public static final int accelerate_decelerate_interpolator=0x010a0004;
         /**  Acceleration curve matching Flash's quadratic ease out function. 
          */
@@ -98,6 +104,9 @@ public final class R {
         public static final int window_move_from_decor=0x010a0052;
     }
     public static final class animator {
+
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public animator() {}
         /**  A simple fade-in animation. 
          */
         public static final int fade_in=0x010b0000;
@@ -112,6 +121,9 @@ public final class R {
         public static final int fragment_open_exit=0x010b0007;
     }
     public static final class array {
+
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public array() {}
         /**  This string array should be overridden by the manufacture to present a list of carrier-id,locale. The wifi regulatory domain is extracted from the locale information. This is used at startup to set system defaults by checking the system property ro.carrier for the carrier-id and searching through this array 
  An Array of [[Carrier-ID]                     
               [default-locale]]                
@@ -496,6 +508,8 @@ public final class R {
         public static final int special_locale_names=0x0107000a;
     }
     public static final class attr {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public attr() {}
         /**  Default AbsListView style. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -11157,6 +11171,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zAdjustment=0x010101c1;
     }
     public static final class bool {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public bool() {}
         /**  Default value used to block data calls if ims is not
          connected.  If you use the ims apn DCT will block
          any other apn from connecting until ims apn is connected
@@ -11365,6 +11381,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int target_honeycomb_needs_options_menu=0x01110005;
     }
     public static final class color {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public color() {}
         public static final int background_dark=0x0106000e;
         public static final int background_holo_dark=0x01060046;
         public static final int background_holo_light=0x01060047;
@@ -11524,6 +11542,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int widget_edittext_dark=0x0106000a;
     }
     public static final class dimen {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public dimen() {}
         /**  Default height of an action bar. 
  Default height of an action bar. 
  Default height of an action bar. 
@@ -11813,6 +11833,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int volume_panel_top=0x01050044;
     }
     public static final class drawable {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public drawable() {}
         public static final int ab_bottom_solid_dark_holo=0x0108009e;
         public static final int ab_bottom_solid_inverse_holo=0x0108009f;
         public static final int ab_bottom_solid_light_holo=0x010800a0;
@@ -13360,6 +13382,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zoom_plate=0x01080097;
     }
     public static final class fraction {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public fraction() {}
         /**  Duration for the dim animation behind a dialog.  This may be either
          a percentage, which is relative to the duration of the enter/open
          animation of the window being shown that is dimming behind, or it may
@@ -13368,6 +13392,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int config_dimBehindFadeDuration=0x01120000;
     }
     public static final class id {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public id() {}
         public static final int KEYCODE_0=0x0102008e;
         public static final int KEYCODE_1=0x0102008f;
         public static final int KEYCODE_2=0x01020090;
@@ -14253,6 +14279,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zoom_page_overview=0x01020338;
     }
     public static final class integer {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public integer() {}
         /**  Max number of downloads allowed to proceed concurrently 
          */
         public static final int config_MaxConcurrentDownloadsAllowed=0x010e0027;
@@ -14468,8 +14496,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int status_bar_notification_info_maxnum=0x010e0003;
     }
     public static final class interpolator {
-        /**  Acceleration curve matching a cubic ease out function. 
-         */
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public interpolator() {}
+        /**  Acceleration curve matching a cubic ease out function. */
         public static final int accelerate_cubic=0x010c0002;
         /**  Acceleration curve matching an ease in + ease out function 
          */
@@ -14512,6 +14541,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int overshoot=0x010c0008;
     }
     public static final class layout {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public layout() {}
         public static final int action_bar_home=0x01090018;
         public static final int action_bar_title_item=0x01090019;
         public static final int action_menu_item_layout=0x0109001a;
@@ -14716,16 +14747,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zoom_magnify=0x010900b9;
     }
     public static final class menu {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public menu() {}
         public static final int webview_copy=0x01140000;
         public static final int webview_find=0x01140001;
     }
     public static final class mipmap {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public mipmap() {}
         public static final int sym_app_on_sd_unavailable_icon=0x010d0001;
         /**  Default icon for applications that don't specify an icon. 
          */
         public static final int sym_def_app_icon=0x010d0000;
     }
     public static final class plurals {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public plurals() {}
         /**  This is used to express that something will occur some number of abbreviated days in the future (e.g., in 5 days). 
          */
         public static final int abbrev_in_num_days=0x01130010;
@@ -14789,12 +14826,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int wifi_available_detailed=0x01130012;
     }
     public static final class raw {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public raw() {}
         public static final int fallbackring=0x01100000;
         public static final int incognito_mode_start_page=0x01100001;
         public static final int loaderror=0x01100002;
         public static final int nodomain=0x01100003;
     }
     public static final class string {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public string() {}
         /**  Displayed as the title for a success/failure report enabling/disabling call barring. 
          */
         public static final int BaMmi=0x010400d6;
@@ -18449,6 +18490,8 @@ zh-CN
         public static final int yesterday=0x01040077;
     }
     public static final class style {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public style() {}
         /**  Style to apply on top of a wallpaper settings theme when it is being
          shown on top of the real wallpaper 
          */
@@ -19568,6 +19611,8 @@ zh-CN
         public static final int ZoomControls=0x0103022b;
     }
     public static final class xml {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public xml() {}
         public static final int apns=0x010f0000;
         public static final int autotext=0x010f0001;
         public static final int eri=0x010f0002;
@@ -19584,6 +19629,8 @@ zh-CN
         public static final int time_zones_by_country=0x010f000d;
     }
     public static final class styleable {
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public styleable() {}
         /** Attributes that can be used with a AbsListView.
            <p>Includes the following attributes:</p>
            <table>

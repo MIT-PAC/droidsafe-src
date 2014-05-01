@@ -585,6 +585,7 @@ public RecentTaskInfo[] newArray(int size) {
 
         public CharSequence description;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.552 -0500", hash_original_method = "C08B7337C6B109635FE340903513A97B", hash_generated_method = "C8BAF0032B31A63722E1DD90A87A7D2A")
         
 public RecentTaskInfo() {
@@ -684,6 +685,7 @@ public RunningTaskInfo[] newArray(int size) {
 
         public int numRunning;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.598 -0500", hash_original_method = "6DA0A8D9CEF41C0CB91D2D95D7E71D44", hash_generated_method = "BA76DBDFB4A16796C3F11F47498425E8")
         
 public RunningTaskInfo() {
@@ -770,6 +772,7 @@ public void readFromParcel(Parcel source) {
 
         public IThumbnailRetriever retriever;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.641 -0500", hash_original_method = "EB2263C71F650A09D4909FB1B34C782F", hash_generated_method = "A382AFF0C24491FA3D072C8401121437")
         
 public TaskThumbnails() {
@@ -907,6 +910,7 @@ public RunningServiceInfo[] newArray(int size) {
 
         public int clientLabel;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.718 -0500", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "46CFC49EE8BA41524B35A3152203501D")
         
 public RunningServiceInfo() {
@@ -1120,6 +1124,7 @@ public void readFromParcel(Parcel source) {
 
         public byte[] crashData = null;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.818 -0500", hash_original_method = "5ED73996FC5896C9F894604FFBFF8609", hash_generated_method = "1FBDA850A41B9F94754C5E3BC554DF24")
         
 public ProcessErrorStateInfo() {
@@ -1258,6 +1263,7 @@ public void readFromParcel(Parcel source) {
 
         public int importanceReasonImportance;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.899 -0500", hash_original_method = "037D75A14244F6412C20718AD220CDB7", hash_generated_method = "F4DAACECB0EFD58E0FCAC4F8BB162B60")
         
 public RunningAppProcessInfo() {

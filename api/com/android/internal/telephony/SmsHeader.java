@@ -197,6 +197,7 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
 
         public boolean areEightBits;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.190 -0400", hash_original_method = "0146EA7913C9A86565770A69E4015B6C", hash_generated_method = "0146EA7913C9A86565770A69E4015B6C")
         public PortAddrs ()
         {
@@ -219,6 +220,7 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
 
         public boolean isEightBits;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.190 -0400", hash_original_method = "F12AD75E9E03099DD407C7814D08C2E0", hash_generated_method = "F12AD75E9E03099DD407C7814D08C2E0")
         public ConcatRef ()
         {
@@ -235,6 +237,7 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
 
         public byte[] data;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.191 -0400", hash_original_method = "424479238E621C77A92D33EDE0B97D13", hash_generated_method = "424479238E621C77A92D33EDE0B97D13")
         public MiscElt ()
         {

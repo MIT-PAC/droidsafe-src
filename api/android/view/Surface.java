@@ -381,10 +381,12 @@ void setCompatibilityTranslator(Translator translator) {
     }
     
     public static class OutOfResourcesException extends Exception {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.487 -0500", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "61E15EE14C5CBDE674C8414A5D82F699")
         
 public OutOfResourcesException() {
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.490 -0500", hash_original_method = "939C993D5367F7A0F0B43DA6997565C5", hash_generated_method = "8B56E09EC06DA5D20A9DD318E0B09E28")
         
 public OutOfResourcesException(String name) {

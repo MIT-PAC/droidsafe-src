@@ -1202,6 +1202,7 @@ public ShortcutIconResource[] newArray(int size) {
 
         public String resourceName;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.474 -0400", hash_original_method = "76C9E47B1998842612265A8369AB620F", hash_generated_method = "76C9E47B1998842612265A8369AB620F")
         public ShortcutIconResource ()
         {

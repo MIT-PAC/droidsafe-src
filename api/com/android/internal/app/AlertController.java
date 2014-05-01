@@ -824,18 +824,21 @@ public ButtonHandler(DialogInterface dialog) {
 
         boolean mRecycleOnMeasure = true;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.568 -0500", hash_original_method = "EE9FD5306D2F93DFDAA34BAADCE625A8", hash_generated_method = "35979333B57FF432DF718DD90B2A1411")
         
 public RecycleListView(Context context) {
             super(context);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.570 -0500", hash_original_method = "FD9F3D8D98E58119FCDEC82734593D0D", hash_generated_method = "B2B531B24B2CDFCEF90E54B2BC50823B")
         
 public RecycleListView(Context context, AttributeSet attrs) {
             super(context, attrs);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.574 -0500", hash_original_method = "B696B9456EBFFE7A743BD389E8B7B605", hash_generated_method = "C185F301BFC244486A27368C446ECAC6")
         
 public RecycleListView(Context context, AttributeSet attrs, int defStyle) {

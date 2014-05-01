@@ -228,6 +228,7 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
     }
     
     public static class UnavailableException extends AndroidRuntimeException {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.877 -0500", hash_original_method = "463842D1BF3FEF123617A569E3B89D0B", hash_generated_method = "C9A1C51EC97A12950DBCAD76008DE8A1")
         
 public UnavailableException(String msg) {
@@ -244,6 +245,7 @@ public UnavailableException(String msg) {
 
         public int metaState;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.182 -0400", hash_original_method = "789B682B3FBE45C1858DC98A8C26817D", hash_generated_method = "789B682B3FBE45C1858DC98A8C26817D")
         public FallbackAction ()
         {

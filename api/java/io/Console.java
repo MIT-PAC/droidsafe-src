@@ -198,6 +198,7 @@ public ConsoleReader(InputStream in) throws IOException {
     }
     
     private static class ConsoleWriter extends PrintWriter {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.473 -0500", hash_original_method = "FA093E69A8E73F56316EC18ECB712B0D", hash_generated_method = "67FBCFEF5ED0B313D9140CDC4784401D")
         
 public ConsoleWriter(OutputStream out) {

@@ -4338,6 +4338,7 @@ int generate(float precision) {
     }
     
     public static final class CalledFromWrongThreadException extends AndroidRuntimeException {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.520 -0500", hash_original_method = "D704015D17B148E0274888D3BE6B5A1B", hash_generated_method = "F83B8D5A7B44F0573183674A6D02059D")
         
 public CalledFromWrongThreadException(String msg) {

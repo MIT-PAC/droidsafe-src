@@ -570,6 +570,7 @@ public int getWindowAnimations() {
 
         public boolean expanded;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.852 -0500", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "72A2ECA2CF4C647C2D28F670D4DC27E1")
         
 public LayoutParams(Context c, AttributeSet attrs) {
@@ -583,6 +584,7 @@ public LayoutParams(LayoutParams other) {
             isOverflowButton = other.isOverflowButton;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.857 -0500", hash_original_method = "5CB9C8D742F9EAB0281FCB85ADC86E3D", hash_generated_method = "FEB49580069182443E8876B33915FFCA")
         
 public LayoutParams(int width, int height) {

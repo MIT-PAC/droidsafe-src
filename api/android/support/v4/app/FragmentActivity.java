@@ -881,6 +881,7 @@ public FragmentManager getSupportFragmentManager() {
 
         HashMap<String, LoaderManagerImpl> loaders;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.074 -0400", hash_original_method = "6ECBAFFBF9F9B3F6A966772230E87049", hash_generated_method = "6ECBAFFBF9F9B3F6A966772230E87049")
         public NonConfigurationInstances ()
         {
@@ -905,6 +906,7 @@ public FragmentManager getSupportFragmentManager() {
 
         public static final int Fragment_tag = 2;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.074 -0400", hash_original_method = "97B15C4C04F651D57AC6A8ACA51C7A09", hash_generated_method = "97B15C4C04F651D57AC6A8ACA51C7A09")
         public FragmentTag ()
         {

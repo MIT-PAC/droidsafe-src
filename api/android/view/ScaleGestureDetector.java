@@ -713,6 +713,7 @@ public float getScaleFactor() {
     
     public static class SimpleOnScaleGestureListener implements OnScaleGestureListener {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.002 -0400", hash_original_method = "AD1F4E6C43CD567296DC4B26B7E79B23", hash_generated_method = "AD1F4E6C43CD567296DC4B26B7E79B23")
         public SimpleOnScaleGestureListener ()
         {

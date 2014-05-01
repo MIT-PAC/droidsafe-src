@@ -1124,6 +1124,7 @@ private VmPolicy(int mask, HashMap<Class, Integer> classInstanceLimit) {
 
             private boolean mClassInstanceLimitNeedCow = false;
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.754 -0400", hash_original_method = "C72380FC51BF6FFB0D8183E2FF7C5DBE", hash_generated_method = "C4A90307B6990541B60C2B86DCD4B526")
             public  Builder() {
                 mMask = 0;
@@ -1680,6 +1681,7 @@ Span(ThreadSpanState threadState) {
         }
 
         // Empty constructor for the NO_OP_SPAN
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.284 -0500", hash_original_method = "35ECB8DB5D2E2401D23EA00A0B49C3B0", hash_generated_method = "ED1A4239CAF71D33303BC23D1C0C3B5A")
         
 protected Span() {
@@ -1794,6 +1796,7 @@ public void finish() {
         /**
          * Create an uninitialized instance of ViolationInfo
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.361 -0500", hash_original_method = "D15EADA574CC6688E3A5C168E5A51EC1", hash_generated_method = "5F00CAF8B081ECDF52D74B2EA73978CD")
         
 public ViolationInfo() {

@@ -328,11 +328,13 @@ public static int getAppId(int uid) {
     public static final int VERIFICATION_ALLOW_WITHOUT_SUFFICIENT = 2;
     
     public static class NameNotFoundException extends AndroidException {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.247 -0500", hash_original_method = "4C893FF4D2386A2E528254CA81C36065", hash_generated_method = "A4B7D83CF9C65DC78B0AB4E6C5EB168F")
         
 public NameNotFoundException() {
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.249 -0500", hash_original_method = "16889A22D22FB47C54F1114D13EC0BEF", hash_generated_method = "760C31BBFB8A023298D668787D4A5572")
         
 public NameNotFoundException(String name) {

@@ -178,6 +178,7 @@ public ApplicationErrorReport[] newArray(int size) {
         /**
          * Create an uninitialized instance of CrashInfo.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.815 -0500", hash_original_method = "A5C69B6119C4811D45501C8F0E46959E", hash_generated_method = "F01CF52EE5C49CE30F45591F6E9FBBA6")
         
 public CrashInfo() {
@@ -284,6 +285,7 @@ public void dump(Printer pw, String prefix) {
         /**
          * Create an uninitialized instance of AnrInfo.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.839 -0500", hash_original_method = "76183B88EF41C33999366984D15A43B8", hash_generated_method = "E42E5828FE7CEF906AC34B480078F837")
         
 public AnrInfo() {
@@ -342,6 +344,7 @@ public void dump(Printer pw, String prefix) {
         /**
          * Create an uninitialized instance of BatteryInfo.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.860 -0500", hash_original_method = "D2192429514F02BB97F8B55205CB5D4D", hash_generated_method = "46098DD1AA981646C8749E2B1102D5BC")
         
 public BatteryInfo() {
@@ -397,6 +400,7 @@ public void dump(Printer pw, String prefix) {
         /**
          * Create an uninitialized instance of RunningServiceInfo.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.878 -0500", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "46CFC49EE8BA41524B35A3152203501D")
         
 public RunningServiceInfo() {

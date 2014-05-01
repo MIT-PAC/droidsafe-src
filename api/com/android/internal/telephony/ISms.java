@@ -470,7 +470,8 @@ static final int TRANSACTION_enableCellBroadcastRange = (android.os.IBinder.FIRS
 
 static final int TRANSACTION_disableCellBroadcastRange = (android.os.IBinder.FIRST_CALL_TRANSACTION + 9);
 /** Construct the stub at attach it to the interface. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.104 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
+@DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.104 -0500", hash_original_method = "02D67B7BBDDCEC9BC9A477128D96A70E", hash_generated_method = "73DCA79669D2BAEA0D08C443D09F446C")
         
 public Stub()
 {

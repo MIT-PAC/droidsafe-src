@@ -2232,6 +2232,7 @@ public void toggleSoftInput(int showFlags, int hideFlags) {
 
         public int touchableInsets;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.685 -0400", hash_original_method = "AB0F14C8125953D4D984387CD9B8D05E", hash_generated_method = "AB0F14C8125953D4D984387CD9B8D05E")
         public Insets ()
         {

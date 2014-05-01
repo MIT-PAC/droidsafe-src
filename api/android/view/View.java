@@ -6167,6 +6167,7 @@ public DragShadowBuilder(View view) {
          * reference to any View object. If they are not overridden, then the result is an
          * invisible drag shadow.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.959 -0500", hash_original_method = "39157EB374747DFD28056DCE3D5D84EC", hash_generated_method = "C44408E3B9B394EB107B05E14439FE63")
         
 public DragShadowBuilder() {
@@ -6291,6 +6292,7 @@ public DragShadowBuilder() {
 
         public static final int AT_MOST     = 2 << MODE_SHIFT;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.651 -0400", hash_original_method = "2EA619F0F89BA048B9092F3C9EFB9775", hash_generated_method = "2EA619F0F89BA048B9092F3C9EFB9775")
         public MeasureSpec ()
         {

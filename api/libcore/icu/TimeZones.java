@@ -80,6 +80,7 @@ public static String[] forLocale(Locale locale) {
 
         private final HashMap<String, String> internTable = new HashMap<String, String>();
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.989 -0500", hash_original_method = "8CBB117BE999E006B1D5CB712A559541", hash_generated_method = "B89F895A69615BFFCCA3C4E0CE9F0729")
         
 public ZoneStringsCache() {

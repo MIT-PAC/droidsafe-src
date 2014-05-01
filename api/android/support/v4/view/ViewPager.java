@@ -1903,6 +1903,7 @@ protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
 
         boolean scrolling;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.828 -0400", hash_original_method = "0E65939D2C485463E4F8D82E04659E59", hash_generated_method = "0E65939D2C485463E4F8D82E04659E59")
         public ItemInfo ()
         {
@@ -1913,6 +1914,7 @@ protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
     
     public static class SimpleOnPageChangeListener implements OnPageChangeListener {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.828 -0400", hash_original_method = "11664B5E2C5AD85381CB52FAE0F3E160", hash_generated_method = "11664B5E2C5AD85381CB52FAE0F3E160")
         public SimpleOnPageChangeListener ()
         {
@@ -1970,6 +1972,7 @@ protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
 
         ClassLoader loader;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.447 -0500", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "E32D4593A5A22DE64D4F3221E06324D4")
         
 public SavedState(Parcelable superState) {
@@ -2061,12 +2064,14 @@ SavedState(Parcel in, ClassLoader loader) {
          */
         int childIndex;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.595 -0500", hash_original_method = "22352D37EA586BAB2B06261A9354918D", hash_generated_method = "7FE9663220C0107D37C7BA8C1C30C316")
         
 public LayoutParams() {
             super(FILL_PARENT, FILL_PARENT);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.598 -0500", hash_original_method = "1F1818866541ED0A2C469168FD0D681B", hash_generated_method = "8BCF43DCC8CF6FD654C3AB52059C1541")
         
 public LayoutParams(Context context, AttributeSet attrs) {

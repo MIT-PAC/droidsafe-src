@@ -65,6 +65,7 @@ private static long getLong(String property) {
         public static final int RESOURCES_SDK_INT = SDK_INT
                 + ("REL".equals(CODENAME) ? 0 : 1);
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.723 -0400", hash_original_method = "36407A5836A03DF2FB40C80D8028F841", hash_generated_method = "36407A5836A03DF2FB40C80D8028F841")
         public VERSION ()
         {
@@ -122,6 +123,7 @@ private static long getLong(String property) {
 
         public static final int ICE_CREAM_SANDWICH_MR1 = 15;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.724 -0400", hash_original_method = "0B6BCBBF45E050C1684E109EABF935A3", hash_generated_method = "0B6BCBBF45E050C1684E109EABF935A3")
         public VERSION_CODES ()
         {

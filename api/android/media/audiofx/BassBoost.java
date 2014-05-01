@@ -31,7 +31,6 @@ import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.util.StringTokenizer;
 
-
 /**
  * Bass boost is an audio effect to boost or amplify low frequencies of the sound. It is comparable
  * to a simple equalizer but limited to one band amplification in the low frequency range.
@@ -50,7 +49,6 @@ import java.util.StringTokenizer;
 
 public class BassBoost extends AudioEffect {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:16.407 -0400", hash_original_field = "E0E097620E7CAC4775D590F62BF2B9B6", hash_generated_field = "C80423C39C9E9D1A789B8C2BB17D9A71")
-
 
     private final static String TAG = "BassBoost";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:16.409 -0400", hash_original_field = "10C80B2446C45AB94FF87C713A1C0A82", hash_generated_field = "061D688B287B2CA8CEC8C1629A106A37")
@@ -232,6 +230,7 @@ public void setParameterListener(OnParameterChangeListener listener) {
 
         public short strength;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:16.439 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "9E9C65F3ECED90949A3BED36B52A3064")
         
 public Settings() {
@@ -277,7 +276,6 @@ public Settings(String settings) {
             return str;
         }
     };
-
 
     /**
      * Gets the bass boost properties. This method is useful when a snapshot of current

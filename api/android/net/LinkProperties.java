@@ -432,6 +432,7 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
 
         public Collection<T> added = new ArrayList<T>();
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.187 -0400", hash_original_method = "8B9C887FE92C246DB85CDDBCEEBB2CF3", hash_generated_method = "8B9C887FE92C246DB85CDDBCEEBB2CF3")
         public CompareResult ()
         {

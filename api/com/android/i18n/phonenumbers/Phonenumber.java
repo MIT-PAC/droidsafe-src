@@ -60,7 +60,8 @@ private Phonenumber() {}
 
     private java.lang.String preferredDomesticCarrierCode_ = "";
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:04.903 -0500", hash_original_method = "BC3E0739FB67F4B1E9E07E3377CC422E", hash_generated_method = "56363C40971DF55803621B192A2493FA")
+    @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:04.903 -0500", hash_original_method = "BC3E0739FB67F4B1E9E07E3377CC422E", hash_generated_method = "56363C40971DF55803621B192A2493FA")
         
 public PhoneNumber() {
       countryCodeSource_ = CountryCodeSource.FROM_NUMBER_WITH_PLUS_SIGN;

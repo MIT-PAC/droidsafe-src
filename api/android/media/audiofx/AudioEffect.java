@@ -66,10 +66,8 @@ public class AudioEffect {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:15.796 -0400", hash_original_field = "12CCD8ADFAD6FB496A9EABA876975CF0", hash_generated_field = "B8E63CF79C51AD4740E4B3809B928B78")
 
-
     private final static String TAG = "AudioEffect-JAVA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:15.798 -0400", hash_original_field = "BAAD236793835E93954C8FF209B52129", hash_generated_field = "2F9E8B2FA7089DBE0AC79578B4A78001")
-
 
     /**
      * The following UUIDs define effect types corresponding to standard audio
@@ -192,6 +190,7 @@ public class AudioEffect {
 
         public String implementor;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:15.844 -0400", hash_original_method = "9B72BF45C1BBE88E29AA7545C060A95C", hash_generated_method = "09BE698700CDABD0979D60778213573F")
         
 public Descriptor() {
@@ -355,9 +354,6 @@ static public Descriptor[] queryPreProcessings(int audioSession) {
     	return retObj;
     }
 
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:26.753 -0400", hash_original_method = "5C7D3E066BE9994BE3BD3F27F596E58B", hash_generated_method = "1557CE409B69242E0702638EDDC0981E")
     
     private static Object[] native_query_pre_processing(int audioSession){
@@ -370,9 +366,6 @@ static public Descriptor[] queryPreProcessings(int audioSession) {
     	retObj.addTaint(taintDouble);
     	return retObj;
     }
-
-
-
 
     /**
      * @hide
@@ -991,7 +984,6 @@ public boolean getEnabled() throws IllegalStateException {
         return native_getEnabled();
     }
 
-
     // ---------------------------------------------------------
     // Inner classes
     // --------------------
@@ -1180,7 +1172,6 @@ private void createNativeEventHandler() {
     	//Formerly a native method
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:22:00.205 -0400", hash_original_method = "29EBD7A2FE8EDC8D2C10EA00B5293031", hash_generated_method = "8E05B7AB4B85F0BA21E048043C2032E1")
     
     private final void native_release(){
@@ -1198,7 +1189,6 @@ private void createNativeEventHandler() {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:48.815 -0400", hash_original_method = "2AFB9A522158996345CFEAF824256F69", hash_generated_method = "1D026D1C1A92C3AAEEBB96B2B79A68C7")
     
     private final boolean native_getEnabled(){
@@ -1208,7 +1198,6 @@ private void createNativeEventHandler() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:48.818 -0400", hash_original_method = "E8B71D39962D5FE9E08B8EAE5FFF8FCD", hash_generated_method = "3C579DE3694F25FC8AFA44571273A968")
     
     private final boolean native_hasControl(){
@@ -1217,9 +1206,6 @@ private void createNativeEventHandler() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:26.737 -0400", hash_original_method = "5898858D61B878A2FF924C9A717767D0", hash_generated_method = "8EA4383B0E5C79D993423BEF795C939F")
     
@@ -1236,7 +1222,6 @@ private void createNativeEventHandler() {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:26.741 -0400", hash_original_method = "7B0B65B6D131A87ABD3AF9287F1A89AF", hash_generated_method = "ED70136A22EA84A541DB1B0B0AA4D463")
     
     private final int native_getParameter(int psize, byte[] param,
@@ -1251,7 +1236,6 @@ private void createNativeEventHandler() {
     
     	return (int)taintDouble;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:26.745 -0400", hash_original_method = "27A0B8B4CE0CEAD0376392AAEE9A2F1A", hash_generated_method = "7CF45BC46090FCD219E8379574A1F6A2")
     
@@ -1268,9 +1252,6 @@ private void createNativeEventHandler() {
     
     	return (int)taintDouble;
     }
-
-
-
 
     // ---------------------------------------------------------
     // Utility methods

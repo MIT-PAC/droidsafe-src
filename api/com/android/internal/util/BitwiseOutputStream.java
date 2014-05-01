@@ -115,6 +115,7 @@ public void skip(int bits) {
     }
     
     public static class AccessException extends Exception {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.012 -0500", hash_original_method = "FD7EE91BB7CFA9004E3BBE9542C9C5B5", hash_generated_method = "B5415AC5E14E36E55E139727BF67CE87")
         
 public AccessException(String s) {

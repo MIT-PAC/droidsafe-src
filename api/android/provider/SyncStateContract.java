@@ -28,6 +28,7 @@ public class SyncStateContract {
 
         public static final String CONTENT_DIRECTORY = "syncstate";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.727 -0400", hash_original_method = "E59499DF9DD0978456F50DA5893CC8F6", hash_generated_method = "E59499DF9DD0978456F50DA5893CC8F6")
         public Constants ()
         {
@@ -186,6 +187,7 @@ public static ContentProviderOperation newUpdateOperation(Uri uri, byte[] data) 
         private static final String SELECT_BY_ACCOUNT =
                 Columns.ACCOUNT_NAME + "=? AND " + Columns.ACCOUNT_TYPE + "=?";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.728 -0400", hash_original_method = "9749A8A424C5761B245394E68B42F39B", hash_generated_method = "9749A8A424C5761B245394E68B42F39B")
         public Helpers ()
         {

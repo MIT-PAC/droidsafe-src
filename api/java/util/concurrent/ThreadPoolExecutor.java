@@ -1494,6 +1494,7 @@ public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
         /**
          * Creates an {@code AbortPolicy}.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.974 -0500", hash_original_method = "0E304EA6C47EF7342B79AE7423647CD0", hash_generated_method = "5A72F746A40381548E8765CAE694BA8B")
         
 public AbortPolicy() { }

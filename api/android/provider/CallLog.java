@@ -250,6 +250,7 @@ private static void removeExpiredEntries(Context context) {
 
         public static final String CACHED_FORMATTED_NUMBER = "formatted_number";
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.097 -0400", hash_original_method = "E2028324A117DAF09158B486FB038B63", hash_generated_method = "E2028324A117DAF09158B486FB038B63")
         public Calls ()
         {

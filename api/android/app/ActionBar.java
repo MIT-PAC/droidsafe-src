@@ -669,6 +669,7 @@ public abstract int getTabCount();
 
         public static final int INVALID_POSITION = -1;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.222 -0400", hash_original_method = "FF0150C0A74BE2A44D0E92299D724EF7", hash_generated_method = "FF0150C0A74BE2A44D0E92299D724EF7")
         public Tab ()
         {
@@ -882,6 +883,7 @@ public abstract CharSequence getContentDescription();
         })
         public int gravity = -1;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.571 -0500", hash_original_method = "0C5088422FF05FC2926C96FAD09DECC3", hash_generated_method = "B33C0A3410ADF109BCB7358E5444EFC1")
         
 public LayoutParams(Context c, AttributeSet attrs) {
@@ -894,6 +896,7 @@ public LayoutParams(Context c, AttributeSet attrs) {
             a.recycle();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.574 -0500", hash_original_method = "FA26D9655708BB18453CC96635B719BA", hash_generated_method = "44704B84EA29B0184A7C2CB2CEEA13AD")
         
 public LayoutParams(int width, int height) {
@@ -914,6 +917,7 @@ public LayoutParams(int gravity) {
             this(WRAP_CONTENT, MATCH_PARENT, gravity);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.582 -0500", hash_original_method = "C6FB589792A8182ED7F972345F7679A3", hash_generated_method = "B6031CB387F4B59E8A655B3D336FFECF")
         
 public LayoutParams(LayoutParams source) {
@@ -922,6 +926,7 @@ public LayoutParams(LayoutParams source) {
             this.gravity = source.gravity;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.585 -0500", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "35FAB65EFD30EE5BC910187CB4DA6F67")
         
 public LayoutParams(ViewGroup.LayoutParams source) {

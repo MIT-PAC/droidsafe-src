@@ -3092,9 +3092,6 @@ protected DeviceOrientationService getDeviceOrientationService() {
         {
             //Synthesized constructor
         }
-        
-        
-  
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.185 -0500", hash_original_method = "82DEF5A0DA884DCAB5C26C3D415DCFF4", hash_generated_method = "2E3D0317EE5893C232A5D0C05FB91FEB")
 public void run() {
@@ -3421,6 +3418,7 @@ public TextSelectionData(int start, int end) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.319 -0500", hash_original_field = "6374BBB14B9C67A0F34854556C13CAA1", hash_generated_field = "31FFD5C014EA21DA4DA7DD8A9D547D53")
 
         private String mPreview;
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.307 -0500", hash_original_method = "1D9359D80D7809D2772AFB2E4DAF56F3", hash_generated_method = "DA6A00B09EBC7FE00BC4DFFFFF9761D6")
         
 public AutoFillData() {

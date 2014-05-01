@@ -143,6 +143,7 @@ public static final Uri getMtpReferencesUri(String volumeName,
                     + "/object/" + fileId + "/references");
         }
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.452 -0400", hash_original_method = "92603C48FC2D95D83FC45AFBA8CE46C5", hash_generated_method = "92603C48FC2D95D83FC45AFBA8CE46C5")
         public Files ()
         {
@@ -377,6 +378,7 @@ static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId, int ki
     
     public static final class Images {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_method = "A3CD75F6AB055CA56651293CB087C6D5", hash_generated_method = "A3CD75F6AB055CA56651293CB087C6D5")
         public Images ()
         {
@@ -594,6 +596,7 @@ public static Uri getContentUri(String volumeName) {
 
             public static final String DEFAULT_SORT_ORDER = ImageColumns.BUCKET_DISPLAY_NAME;
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.454 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
             public Media ()
             {
@@ -752,6 +755,7 @@ public static Uri getContentUri(String volumeName) {
 
             public static final String HEIGHT = "height";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.456 -0400", hash_original_method = "CEC4957051438E94FE667AB7B98C828F", hash_generated_method = "CEC4957051438E94FE667AB7B98C828F")
             public Thumbnails ()
             {
@@ -854,6 +858,7 @@ public static String keyFor(String name) {
             return null;
         }
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.457 -0400", hash_original_method = "553D011F7A7937C6B31A2ECF0083B637", hash_generated_method = "553D011F7A7937C6B31A2ECF0083B637")
         public Audio ()
         {
@@ -907,6 +912,7 @@ public static Uri getContentUriForPath(String path) {
              public static final String EXTRA_MAX_BYTES =
                     "android.provider.MediaStore.extra.MAX_BYTES";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.458 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
             public Media ()
             {
@@ -973,6 +979,7 @@ public static final Uri getContentUri(String volumeName,
 
                 public static final String GENRE_ID = "genre_id";
                 
+                @DSSafe(DSCat.SAFE_OTHERS)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF", hash_generated_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF")
                 public Members ()
                 {
@@ -993,6 +1000,7 @@ public static final Uri getContentUri(String volumeName,
 
             public static final String DEFAULT_SORT_ORDER = NAME;
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.459 -0400", hash_original_method = "5A301F51AFE295226C0A121512898093", hash_generated_method = "5A301F51AFE295226C0A121512898093")
             public Genres ()
             {
@@ -1073,6 +1081,7 @@ public static final boolean moveItem(ContentResolver res,
 
                 public static final String DEFAULT_SORT_ORDER = PLAY_ORDER;
                 
+                @DSSafe(DSCat.SAFE_OTHERS)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF", hash_generated_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF")
                 public Members ()
                 {
@@ -1093,6 +1102,7 @@ public static final boolean moveItem(ContentResolver res,
 
             public static final String DEFAULT_SORT_ORDER = NAME;
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.460 -0400", hash_original_method = "74E3D69F5F937E9AFBC239AC6178742A", hash_generated_method = "74E3D69F5F937E9AFBC239AC6178742A")
             public Playlists ()
             {
@@ -1130,6 +1140,7 @@ public static final Uri getContentUri(String volumeName,
                             + "/audio/artists/" + artistId + "/albums");
                 }
                 
+                @DSSafe(DSCat.SAFE_OTHERS)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "7EBF89799AE4644EBE85B32B12FD367D", hash_generated_method = "7EBF89799AE4644EBE85B32B12FD367D")
                 public Albums ()
                 {
@@ -1151,6 +1162,7 @@ public static final Uri getContentUri(String volumeName,
 
             public static final String DEFAULT_SORT_ORDER = ARTIST_KEY;
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "5A569BA5E9300E73D18EF84988BF2B4D", hash_generated_method = "5A569BA5E9300E73D18EF84988BF2B4D")
             public Artists ()
             {
@@ -1191,6 +1203,7 @@ public static Uri getContentUri(String volumeName) {
 
             public static final String DEFAULT_SORT_ORDER = ALBUM_KEY;
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "7EBF89799AE4644EBE85B32B12FD367D", hash_generated_method = "7EBF89799AE4644EBE85B32B12FD367D")
             public Albums ()
             {
@@ -1334,6 +1347,7 @@ public static Uri getContentUri(String volumeName) {
 
             public static final String DEFAULT_SORT_ORDER = TITLE;
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.462 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
             public Media ()
             {
@@ -1443,6 +1457,7 @@ public static Uri getContentUri(String volumeName) {
 
             public static final String HEIGHT = "height";
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.462 -0400", hash_original_method = "CEC4957051438E94FE667AB7B98C828F", hash_generated_method = "CEC4957051438E94FE667AB7B98C828F")
             public Thumbnails ()
             {
@@ -1485,6 +1500,7 @@ public static Uri getContentUri(String volumeName) {
             public static final String BOOKMARK = "bookmark";
         }
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.461 -0400", hash_original_method = "8FC1394ED845BB72BFE890B41D7CAD7E", hash_generated_method = "8FC1394ED845BB72BFE890B41D7CAD7E")
         public Video ()
         {

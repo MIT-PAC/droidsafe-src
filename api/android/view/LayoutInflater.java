@@ -601,6 +601,7 @@ public View onCreateView(View parent, String name, Context context, AttributeSet
 
         private  Handler mHandler;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.848 -0500", hash_original_method = "3DD68C66D41BE889B84232F33376A99A", hash_generated_method = "CE5C367810014F30C9D2A83677C91192")
         
 public BlinkLayout(Context context, AttributeSet attrs) {

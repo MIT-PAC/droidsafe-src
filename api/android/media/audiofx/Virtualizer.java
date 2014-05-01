@@ -31,7 +31,6 @@ import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.util.StringTokenizer;
 
-
 /**
  * An audio virtualizer is a general name for an effect to spatialize audio channels. The exact
  * behavior of this effect is dependent on the number of audio input channels and the types and
@@ -53,7 +52,6 @@ import java.util.StringTokenizer;
 
 public class Virtualizer extends AudioEffect {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:18.101 -0400", hash_original_field = "A8DF41F4FB520CF4BBA2B9A1E3DB48E8", hash_generated_field = "B6FCC0B34D27D42A687B998D4D525745")
-
 
     private final static String TAG = "Virtualizer";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:18.103 -0400", hash_original_field = "10C80B2446C45AB94FF87C713A1C0A82", hash_generated_field = "AC00C83CA53C1ACE3CD627AD44D330A1")
@@ -234,6 +232,7 @@ public void setParameterListener(OnParameterChangeListener listener) {
 
         public short strength;
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:18.132 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "9E9C65F3ECED90949A3BED36B52A3064")
         
 public Settings() {
@@ -279,7 +278,6 @@ public Settings(String settings) {
             return str;
         }
     };
-
 
     /**
      * Gets the virtualizer properties. This method is useful when a snapshot of current

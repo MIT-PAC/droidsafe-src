@@ -527,6 +527,7 @@ public static final void killProcessQuiet(int pid) {
 
         public boolean usingWrapper;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.394 -0400", hash_original_method = "50DF3C9BB6E8E9D5935D1DE367FC9E29", hash_generated_method = "50DF3C9BB6E8E9D5935D1DE367FC9E29")
         public ProcessStartResult ()
         {
