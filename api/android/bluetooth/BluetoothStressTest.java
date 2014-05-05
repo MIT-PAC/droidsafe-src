@@ -47,6 +47,12 @@ public class BluetoothStressTest extends InstrumentationTestCase {
 
     private BluetoothTestUtils mTestUtils;
 
+    @DSComment("Added for droidsafe")
+    @DSSafe(DSCat.DROIDSAFE_INTERNAL)
+    public BluetoothStressTest () {
+        super();
+    }
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.462 -0400", hash_original_method = "745BD85BD6E3F460090608614DE3001E", hash_generated_method = "5114D2B289C3438393FBBA280AC00621")
     
 @Override

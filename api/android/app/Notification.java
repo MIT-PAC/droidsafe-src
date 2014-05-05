@@ -137,12 +137,16 @@ public class Notification implements Parcelable
     public static final Parcelable.Creator<Notification> CREATOR
             = new Parcelable.Creator<Notification>()
     {
-        public Notification createFromParcel(Parcel parcel)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:16.269 -0400", hash_original_method = "640E6F5E88B10B67950DC22B82259969", hash_generated_method = "DBA7908684BF656EA8BA45DF5B36E06D")
+        
+public Notification createFromParcel(Parcel parcel)
         {
             return new Notification(parcel);
         }
 
-        public Notification[] newArray(int size)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:16.275 -0400", hash_original_method = "FE58AA31658A96AD26D1C6215FA7714A", hash_generated_method = "4A47C730289FE57DF6D6C93315B6DA2F")
+        
+public Notification[] newArray(int size)
         {
             return new Notification[size];
         }
@@ -1578,6 +1582,9 @@ public Notification build() {
 
         protected Builder mBuilder;
 
+        @DSComment("Explicitly added ")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        protected Style() {}
         /**
          * Overrides ContentTitle in the big form of the template.
          * This defaults to the value passed to setContentTitle().

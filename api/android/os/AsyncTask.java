@@ -204,7 +204,9 @@ protected void onPreExecute() {
         
 public synchronized void execute(final Runnable r) {
             mTasks.offer(new Runnable() {
-                public void run() {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:46:09.328 -0400", hash_original_method = "97925E5CC02778827B83E8E0CDA5AF7A", hash_generated_method = "25C12F77650AF9A00834776A199C7DC4")
+                
+public void run() {
                     try {
                         r.run();
                     } finally {

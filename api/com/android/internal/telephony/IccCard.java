@@ -685,7 +685,9 @@ private void onIccSwap(boolean isAdded) {
         //       Radio_off_or_not_available). Have to reset in both both
         //       added or removed situation.
         listener = new DialogInterface.OnClickListener() {
-            @Override
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:46:43.104 -0400", hash_original_method = "9D3F97D682E1929CAA7D6B8E66CF9703", hash_generated_method = "0463FD749C6F3E8DD5354C77C877CBD6")
+            
+@Override
             public void onClick(DialogInterface dialog, int which) {
                 if (which == DialogInterface.BUTTON_POSITIVE) {
                     if (mDbg) log("Reboot due to SIM swap");

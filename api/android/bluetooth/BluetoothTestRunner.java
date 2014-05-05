@@ -55,6 +55,7 @@ import android.util.Log;
  * </pre>
  */
 public class BluetoothTestRunner extends InstrumentationTestRunner {
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.688 -0400", hash_original_field = "76CC11793FD2CBCD84AAD2E8D6ACA33D", hash_generated_field = "79D2F83C1726F164E1BE99815B70145D")
 
     private static final String TAG = "BluetoothTestRunner";
@@ -99,6 +100,13 @@ public class BluetoothTestRunner extends InstrumentationTestRunner {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.708 -0400", hash_original_field = "D5F4883077D38BBACD82C332C7CD7095", hash_generated_field = "F518A84DF58E12B063D9AC94CF9A79CE")
 
     public static int sDevicePairPasskey = 123456;
+
+    @DSComment("Added for droidsafe")
+    @DSSafe(DSCat.DROIDSAFE_INTERNAL)
+    public BluetoothTestRunner() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.709 -0400", hash_original_method = "E1CF533FD89A655DCE04867B3BFB79D6", hash_generated_method = "86F2F0AB1C2F02B85447D9FDD4B5EFAF")
     

@@ -27,6 +27,9 @@ import android.bluetooth.AtCommandResult;
  */
 public abstract class AtCommandHandler {
 
+    @DSComment("Added for droidsafe only")
+    @DSSafe(DSCat.DROIDSAFE_INTERNAL)
+    protected AtCommandHandler() {}
     /**
      * Handle Basic commands "ATA".<p>
      * These are single letter commands such as ATA and ATD. Anything following

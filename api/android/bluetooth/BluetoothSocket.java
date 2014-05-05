@@ -359,15 +359,19 @@ int write(byte[] b, int offset, int length) throws IOException {
     private void initSocketNative() throws IOException{
     	//Formerly a native method
     }
+    @DSBan(DSCat.PRIVATE_METHOD)
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.691 -0500", hash_original_method = "BF4307AC129B0F742AF14FA776C3AE92", hash_generated_method = "D4354584EB2F99B01578B92F535A9B56")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:19.574 -0400", hash_original_method = "BF4307AC129B0F742AF14FA776C3AE92", hash_generated_method = "DD7ADFE68117411B4431B68CF524DBC2")
     
     private void initSocketFromFdNative(int fd) throws IOException{
     	//Formerly a native method
-    	addTaint(fd);
+    	double taintDouble = 0;
+    	taintDouble += fd;
+    	addTaint(taintDouble);
     }
+
 
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -376,21 +380,26 @@ int write(byte[] b, int offset, int length) throws IOException {
     private void connectNative() throws IOException{
     	//Formerly a native method
     }
+    @DSBan(DSCat.PRIVATE_METHOD)
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.698 -0500", hash_original_method = "FBE8044CF5F70E438EC9FC22860EE6EE", hash_generated_method = "32B3706F36C9D2DCD61B35A1274F915C")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:19.588 -0400", hash_original_method = "FBE8044CF5F70E438EC9FC22860EE6EE", hash_generated_method = "71F5A40C43F08DA85421F248DF95123C")
     
     private int bindListenNative(){
     	//Formerly a native method
-    	return getTaintInt();
+    	double taintDouble = 0;
+    
+    	return (int)taintDouble;
     }
+
     
     private enum SocketState {
         INIT,
         CONNECTED,
         CLOSED;
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         SocketState() {
         	
         }
@@ -477,38 +486,53 @@ public synchronized void onRfcommChannelFound(int channel) {
     	BluetoothSocket other = new BluetoothSocket(getTaintInt(), getTaintInt(), mAuth, mEncrypt, mDevice, getTaintInt(), null);
     	return other;
     }
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.705 -0500", hash_original_method = "C51A35C76C1A11634A799600122FA541", hash_generated_method = "BEBDE46472D59239DDC373B2FB4BD396")
+
+    @DSComment("Private Method")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:19.600 -0400", hash_original_method = "C51A35C76C1A11634A799600122FA541", hash_generated_method = "633D10CD3AF74AE340E384B97B57D8F5")
     
     private int availableNative() throws IOException{
     	//Formerly a native method
-    	return getTaintInt();
+    	double taintDouble = 0;
+    
+    	return (int)taintDouble;
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.708 -0500", hash_original_method = "E48C37FA2C3BB9EE05DC3ABFEA76998A", hash_generated_method = "4E5DC766902C2E01B48698C17B636E43")
+
+    @DSComment("Private Method")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:19.606 -0400", hash_original_method = "E48C37FA2C3BB9EE05DC3ABFEA76998A", hash_generated_method = "6B946E5A2F16FE069C0409C0E874956C")
     
     private int readNative(byte[] b, int offset, int length) throws IOException{
     	//Formerly a native method
-    	addTaint(b[0]);
-    	addTaint(offset);
-    	addTaint(length);
-    	return getTaintInt();
+    	double taintDouble = 0;
+    	taintDouble += b[0];
+    	taintDouble += offset;
+    	taintDouble += length;
+    	addTaint(taintDouble);
+    
+    	return (int)taintDouble;
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.712 -0500", hash_original_method = "9C6D3B57E023222AFF04F9EC86966DB6", hash_generated_method = "4374EFD3242C00EABC79B9F658FFFAA1")
+
+    @DSComment("Private Method")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:19.613 -0400", hash_original_method = "9C6D3B57E023222AFF04F9EC86966DB6", hash_generated_method = "D9B375A9D9451989EAE9AEF6B7DEF99F")
     
     private int writeNative(byte[] b, int offset, int length) throws IOException{
     	//Formerly a native method
-    	addTaint(b[0]);
-    	addTaint(offset);
-    	addTaint(length);
-    	return getTaintInt();
+    	double taintDouble = 0;
+    	taintDouble += b[0];
+    	taintDouble += offset;
+    	taintDouble += length;
+    	addTaint(taintDouble);
+    
+    	return (int)taintDouble;
     }
+
 
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -525,19 +549,23 @@ public synchronized void onRfcommChannelFound(int channel) {
     private void destroyNative() throws IOException{
     	//Formerly a native method
     }
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+
+    @DSComment("Package priviledge")
 
     /**
      * Throws an IOException for given posix errno. Done natively so we can
      * use strerr to convert to string error.
      */
-    /*package*/ @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.723 -0500", hash_original_method = "9145588604B9732E698BF5C8CCFBB561", hash_generated_method = "8903B5B8FD3CB27D7411DF82194974D2")
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:19.633 -0400", hash_original_method = "9145588604B9732E698BF5C8CCFBB561", hash_generated_method = "F076DEA927638FA4DB21D6595C96ADAD")
     
     void throwErrnoNative(int errno) throws IOException{
     	//Formerly a native method
-    	addTaint(errno);
+    	double taintDouble = 0;
+    	taintDouble += errno;
+    	addTaint(taintDouble);
     }
+
 
 }
 
