@@ -8,9 +8,11 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.cli.BasicParser;
@@ -352,6 +354,7 @@ public class ListApiMethods extends ApiUsageListing {
     private String getModelReportLine(String line, List<String> annoList) {
 
         String sinkAnno = "NO_INFO";
+        String sourceAnno = "NO_INFO";
         String classification = "UNCLASSIFIED";
         String comment = null;
 
@@ -360,19 +363,30 @@ public class ListApiMethods extends ApiUsageListing {
                 classification = anno;
             }
 
-            if (anno.matches("@DS(Sink|Source).*")) {
+            if (anno.matches("@DSSink.*")) {
                 sinkAnno = anno;
             }
+            if (anno.matches("@DSSource.*")) {
+                sourceAnno = anno;
+            }
+            
             if (anno.matches("@DSComment.*")) {
                 comment = anno;
             }            
         }
+        
         String annoStr = "";
         if ((annotationReportType & ANNO_REPORT_CLASSIFCATION) != 0)             
             annoStr = annoStr + " - " + classification;
         
-        if ((annotationReportType & ANNO_REPORT_INFOFLOW) != 0)             
-            annoStr = annoStr + " - " + sinkAnno;
+        if ((annotationReportType & ANNO_REPORT_INFOFLOW) != 0) {
+            if (sourceAnno.equals("NO_INFO"))
+                annoStr = annoStr + " - " + sinkAnno;
+            else if (sinkAnno.equals("NO_INFO"))
+                annoStr = annoStr + " - " + sourceAnno;
+            else
+                annoStr = annoStr + " - " + sourceAnno + " - " + sinkAnno;
+        }
         
         if ((annotationReportType & ANNO_REPORT_COMMENT) != 0 && comment != null)          
             annoStr = annoStr + " - " + comment;
@@ -409,6 +423,185 @@ public class ListApiMethods extends ApiUsageListing {
                     String line = subMethod.getSignature();
     
                     List<String> annoList = extractDSAnnotations(subMethod);
+                    String reportLine = getModelReportLine(line, annoList);
+                    outStream.println(reportLine);
+                }
+            }
+        }    
+
+        logger.info("Original list: size {}, matched {} ", 
+                interestList.size(), matchedSet.size());
+
+        interestList.removeAll(matchedSet);
+        
+        logger.info("After removed: {} ", interestList.size());
+        
+        String getString = "android.app.Activity.getString";
+        if (interestList.contains(getString)) {
+            logger.info("android.app.Activity.getString is still around");        
+        }
+        
+        if (matchedSet.contains(getString)) {
+            logger.info("getString {} is in matched set", getString);        
+        }
+
+        logger.info("==========Checking superclass's models .... ");
+        if (interestList.size() > 0) {
+            outStream.println("");
+            outStream.println("");
+            outStream.println("=================================================");
+            outStream.println("         Superclass has models ");
+            outStream.println("=================================================");
+            
+            List<String> remainedList = new ArrayList<String>(interestList);
+            Collections.sort(remainedList);          
+            
+            
+            for (String api: remainedList) {
+                String[] tokens = api.split("\\.");
+                String methodName = tokens[tokens.length - 1];
+                
+                String className = "";
+                for (int i = 0; i < tokens.length - 1; i++) {
+                    if (i == 0)
+                        className = tokens[i];
+                    else
+                        className = className + "." + tokens[i];
+                }
+
+                logger.info("{} => {}/{}", api, className, methodName);
+
+                SootClass sootClass = Scene.v().getSootClass(className);
+                List<SootMethod> potentials = SootUtils.findPossibleInheritedMethods(sootClass, methodName);
+                Set<SootMethod> potentialSet = new HashSet<SootMethod>(potentials);
+                
+                boolean hasSuperMethod = false;
+                for (SootMethod method: potentialSet) {
+                    //remove duplicate
+
+                    String name = getMethodFullName(method);
+                    logger.info("api {}, potential {} => name {} ", api, method, name);
+                    
+                    if (matchedSet.contains(name)) {
+                        matchedSet.add(api);
+                        continue;
+                    }
+
+                    List<String> annoList = extractDSAnnotations(method);
+                    String reportLine = getModelReportLine(name, annoList);
+                    outStream.printf("%s - ENG3 %s\n", reportLine, api);
+                    matchedSet.add(name);
+                    matchedSet.add(api);
+                    break;
+                }
+            }
+            
+            outStream.println("");
+            outStream.println("");
+            outStream.println("=================================================");
+            outStream.println("         No Source Found");
+            outStream.println("=================================================");
+            interestList.removeAll(matchedSet);
+            remainedList = new ArrayList<String>(interestList); 
+            Collections.sort(remainedList);
+            for (String api: remainedList) {
+                outStream.println(api);
+            }
+        }
+        outStream.close();
+    }
+    
+    private final static String CLASSIFICATION_KEY = "classification";
+    private final static String SINK_KEY = "sink";
+    private final static String SOURCE_KEY = "source";
+    private final static String COMMENT_KEY = "comment";
+    
+    private final static String UNCLASSIFIED = "UNCLASSIFIED";
+    private final static String NO_INFO = "NO_INFO";
+    private final static String NO_COMMENT = "";
+    
+    public void groupClassify(String fileName, boolean withinList) throws FileNotFoundException {
+        
+        PrintStream outStream = new PrintStream(fileName);
+        Set<String> matchedSet = new HashSet<String>();
+        for(SootClass cls: Scene.v().getClasses()) {
+            for (SootMethod method: cls.getMethods()) {
+                String name = getMethodFullName(method);
+                //match list only when used with classification
+                if (!methodOfInterest(name) && withinList)
+                    continue;
+                
+                logger.info("orig method: {}", method);
+                 
+                Set<SootMethod> allMethods = SootUtils.getAllOverridingMethodsIncluding(method);
+                List<String> parentAnnoList = extractDSAnnotations(method); 
+                Map<String, String> parentAnnotHash = new HashMap<String, String>();
+                parentAnnotHash.put(CLASSIFICATION_KEY, UNCLASSIFIED);
+                parentAnnotHash.put(SINK_KEY, NO_INFO);
+                parentAnnotHash.put(SOURCE_KEY, NO_INFO);
+                parentAnnotHash.put(COMMENT_KEY, NO_COMMENT);
+                
+                for (String ann: parentAnnoList) {
+                    logger.info("parrent {} annotation {} ", method, ann);
+                    if (ann.matches("@DS(Ban|Spec|Safe).*")) {
+                        logger.info("=> Classification***");                        
+                        parentAnnotHash.put(CLASSIFICATION_KEY, ann);
+                    }
+                                        
+                    if (ann.matches("@DSSink.*")) {
+                        logger.info("=> Sink ***");                        
+                        parentAnnotHash.put(SINK_KEY, ann);
+                    }
+                    if (ann.matches("@DSSource.*")) {
+                        logger.info("=> Source ***");                        
+                        parentAnnotHash.put(SOURCE_KEY, ann);
+                    }
+                    if (ann.matches("@DSComment.*")) {
+                        logger.info("=> Comment ***");                        
+                        parentAnnotHash.put(COMMENT_KEY, ann);
+                    }
+                }
+                
+
+                // we carry the annotation of the parent method over
+                for (SootMethod subMethod: allMethods) {
+                    
+                    name = getMethodFullName(subMethod);
+                    matchedSet.add(name);
+                    String line = subMethod.getSignature();    
+                    
+                    Map<String, String> subMethodAnnotHash = new HashMap<String, String>();
+                    
+                    for(String ann: extractDSAnnotations(subMethod)) {
+                        logger.info("method {}, ann {} ", subMethod, ann);
+                        if (ann.matches("@DS(Ban|Spec|Safe).*")) {
+                            logger.info("classification => {} ", ann);
+                            subMethodAnnotHash.put(CLASSIFICATION_KEY, ann);
+                        }
+                        if (ann.matches("@DSSink.*")) {
+                            subMethodAnnotHash.put(SINK_KEY, ann);
+                        }
+                        if (ann.matches("@DSSource.*")) {
+                            subMethodAnnotHash.put(SOURCE_KEY, ann);
+                        }
+                        if (ann.matches("@DSComment.*")) {
+                            subMethodAnnotHash.put(COMMENT_KEY, ann);
+                        }
+                    }
+                    
+                    if (!subMethodAnnotHash.containsKey("CLASSIFICATION_KEY")) {
+                        logger.info("submethod {} got classification ", subMethod);
+                        subMethodAnnotHash.put(CLASSIFICATION_KEY, parentAnnotHash.get(CLASSIFICATION_KEY));
+                    }
+                    
+                    if (!subMethodAnnotHash.containsKey("SINK_KEY"))
+                        subMethodAnnotHash.put(SINK_KEY, parentAnnotHash.get(SINK_KEY));
+                    
+                    if (!subMethodAnnotHash.containsKey("SOURCE_KEY"))
+                        subMethodAnnotHash.put(SOURCE_KEY, parentAnnotHash.get(SOURCE_KEY));
+                    
+                    List<String> annoList = new LinkedList<String>(subMethodAnnotHash.values());
+
                     String reportLine = getModelReportLine(line, annoList);
                     outStream.println(reportLine);
                 }
@@ -620,6 +813,7 @@ public class ListApiMethods extends ApiUsageListing {
         Options options = new Options();
         options.addOption("o", "out",      true,  "output filename");
         options.addOption("c", "classify", false, "automatic classification");
+        options.addOption("gc", "groupclass", true, "Group classification");
         
         options.addOption("a", "apijar",   true,  "Optional API jar file");
         options.addOption("l", "list",     true,  "list of api to list (class methodname)");
@@ -680,6 +874,7 @@ public class ListApiMethods extends ApiUsageListing {
         
         if (!commandLine.hasOption("out") && !commandLine.hasOption("classify") && 
             !commandLine.hasOption("boolcast") &&
+            !commandLine.hasOption("groupclass") &&
             !commandLine.hasOption("report")) {
             System.out.println("Please specify options r, o, or c, b");
             printHelp(options);
@@ -731,6 +926,16 @@ public class ListApiMethods extends ApiUsageListing {
             String fileName = commandLine.getOptionValue("report");
             try {
                 listing.reportModeling(fileName, useList);
+            }
+            catch (Exception ex) {
+                
+            }
+        }
+        
+        if (commandLine.hasOption("gc")) {
+            String fileName = commandLine.getOptionValue("gc");
+            try {
+                listing.groupClassify(fileName, useList);
             }
             catch (Exception ex) {
                 
