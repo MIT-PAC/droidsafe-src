@@ -111,13 +111,15 @@ public class Collections {
 
             Iterator<T> it = c.iterator();
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.651 -0500", hash_original_method = "4980969DA277364900E7318D38FDE590", hash_generated_method = "D29F81F7E6BEA5E599029144BF99998A")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.651 -0500", hash_original_method = "4980969DA277364900E7318D38FDE590", hash_generated_method = "D29F81F7E6BEA5E599029144BF99998A")
             
 @Override public boolean hasMoreElements() {
                 return it.hasNext();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.654 -0500", hash_original_method = "C445C780E0050ADB56BC6AD40ED0BABB", hash_generated_method = "6F110AA01F6ADC090EF33EC78C597AB8")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.654 -0500", hash_original_method = "C445C780E0050ADB56BC6AD40ED0BABB", hash_generated_method = "6F110AA01F6ADC090EF33EC78C597AB8")
             
 @Override public T nextElement() {
                 return it.next();
@@ -2709,7 +2711,7 @@ ListIterator<E> var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926 =             new L
                 }
 
                 @DSComment("From safe class list")
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.403 -0500", hash_original_method = "AA3B17E619A4DDCE5FFF27C1294FF431", hash_generated_method = "2E759C80F5A3750B360B5CEB00C83331")
                 
 @Override public boolean hasNext() {
@@ -2725,7 +2727,7 @@ ListIterator<E> var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926 =             new L
                 }
 
                 @DSComment("From safe class list")
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.409 -0500", hash_original_method = "E4F6FE4F8164B2EF0F004EE03FA1069C", hash_generated_method = "07152F5D2150E9756A5647791A961CB3")
                 
 @Override public E next() {
@@ -3064,8 +3066,8 @@ UnmodifiableMapEntry(Map.Entry<K, V> entry) {
                 }
 
                 @DSComment("From safe class list")
-                @DSSafe(DSCat.SAFE_LIST)
-                @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+                @DSSafe(DSCat.SAFE_OTHERS)
+                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.478 -0500", hash_original_method = "EA1063FCD9D2F699A9610E0A7FDC81FD", hash_generated_method = "A0772F3488EAF611EED535B5C2598DB3")
                 
 @Override public V getValue() {
@@ -3798,7 +3800,7 @@ public CheckedListIterator(ListIterator<E> i, Class<E> type) {
         }
 
         @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.961 -0500", hash_original_method = "59CA86A80410B66286C92523CF35EC7B", hash_generated_method = "82213A18EE2FEB4524B4369446BD59ED")
         
 @Override public boolean hasNext() {
@@ -3806,7 +3808,7 @@ public CheckedListIterator(ListIterator<E> i, Class<E> type) {
         }
 
         @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.963 -0500", hash_original_method = "A2FD0994E634C5BCE4D27AD9176E9A5A", hash_generated_method = "A7FF9DB1B62290274F341260B7DE01C2")
         
 @Override public E next() {
@@ -4183,7 +4185,8 @@ public CheckedEntry(Map.Entry<K, V> e, Class<V> valueType) {
                 return e.getKey();
             }
 
-            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSSafe(DSCat.SAFE_OTHERS)
+            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.120 -0500", hash_original_method = "8EF21B2292AA31AAE181B3282F3F0262", hash_generated_method = "237F2C01626B61F21501FB012D289ABA")
             
 @Override public V getValue() {
@@ -4508,6 +4511,7 @@ CheckedSortedMap(SortedMap<K, V> m, Class<K> keyType, Class<V> valueType) {
 
     private static final Enumeration<?> EMPTY_ENUMERATION = new Enumeration<Object>() {
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "50CD0E92886EDA5BEE0164B092B351EC", hash_generated_method = "5846EE9EB8DDDDC0896316CB4D84FA05")
         @Override
         public boolean hasMoreElements() {
@@ -4516,6 +4520,7 @@ CheckedSortedMap(SortedMap<K, V> m, Class<K> keyType, Class<V> valueType) {
             
         }
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.459 -0400", hash_original_method = "82381D9C34AF9F2E88B673FB4A4E6DDE", hash_generated_method = "C451DB608AE3B7FAE82365C2FA63C59D")
         @Override
         public Object nextElement() {

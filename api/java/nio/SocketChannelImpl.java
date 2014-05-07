@@ -125,6 +125,7 @@ public SocketChannelImpl(SelectorProvider selectorProvider, boolean connect) thr
      * Getting the internal Socket If we have not the socket, we create a new
      * one.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.570 -0500", hash_original_method = "3F3C938694E8E43B39A86772053FE6F3", hash_generated_method = "0E47FA7F91808D54B6ECD725EFB01557")
     
 @Override
@@ -178,6 +179,8 @@ void setBound(boolean flag) {
         return status == SOCKET_STATUS_PENDING;
     }
 
+    @DSSink({DSSinkKind.NETWORK})
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.584 -0500", hash_original_method = "06D5BE9697FA1F6A3605D3BCB50E04A0", hash_generated_method = "933C1AEF1AF9F7DB8391249F1EF00940")
     
 @Override
@@ -254,6 +257,7 @@ private void initLocalAddressAndPort() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.589 -0500", hash_original_method = "240D4967AAA5DC479C6C557DB665D6D5", hash_generated_method = "ABF5955765183FD6F1F24C385B5969A2")
     
 @Override
@@ -302,6 +306,8 @@ void finishAccept() {
         initLocalAddressAndPort();
     }
 
+    @DSSafe(DSCat.IO)
+    @DSSource(DSSourceKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.594 -0500", hash_original_method = "FDE0A0D9A12F7110643554CD43F8D7B6", hash_generated_method = "29907415F13C00476026BBE5FF1B04D5")
     
 @Override
@@ -314,7 +320,8 @@ void finishAccept() {
         return readImpl(dst);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.IO)
+    @DSSource(DSSourceKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.597 -0500", hash_original_method = "CFA00AB281069164ECAB790C179DF3F9", hash_generated_method = "FE3857A82DD1EA3A1C4BEAA5C06E7F35")
     
 @Override
@@ -369,7 +376,8 @@ private int readImpl(ByteBuffer dst) throws IOException {
         }
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink(DSSinkKind.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.604 -0500", hash_original_method = "DCFA2CB99033209FD40A6F8FA617CF19", hash_generated_method = "BDCC9FD4CADB5B4F70B9ADBCC529354B")
     
 @Override
@@ -384,7 +392,8 @@ private int readImpl(ByteBuffer dst) throws IOException {
         return writeImpl(src);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink(DSSinkKind.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.607 -0500", hash_original_method = "92D26B18BB75EB8AD284E7DC348B13D6", hash_generated_method = "857E6DC60E4C264C3B91D4A7844C4B63")
     
 @Override
@@ -631,6 +640,7 @@ public SocketChannelOutputStream(SocketChannel channel) {
          *
          * @exception IOException thrown if an error occurs during the close
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.682 -0500", hash_original_method = "E57206FE07E33F2E755E86DBBBAE8BDB", hash_generated_method = "08D78DA6E3C6A3468EB78586E2EA15E9")
         
 @Override
@@ -651,6 +661,8 @@ public SocketChannelOutputStream(SocketChannel channel) {
             channel.write(buf);
         }
 
+        @DSSink(DSSinkKind.IO)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.688 -0500", hash_original_method = "F1C26F791F3FC6DB336B7A388343CAEE", hash_generated_method = "35B19194AC573BBA34EFEC906FAF146D")
         
 @Override
@@ -679,6 +691,7 @@ public SocketChannelInputStream(SocketChannel channel) {
         /*
          * Closes this stream and channel.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.699 -0500", hash_original_method = "E57206FE07E33F2E755E86DBBBAE8BDB", hash_generated_method = "08D78DA6E3C6A3468EB78586E2EA15E9")
         
 @Override

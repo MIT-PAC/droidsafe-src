@@ -342,6 +342,7 @@ private KeyChainConnection(Context context,
             this.serviceConnection = serviceConnection;
             this.service = service;
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.695 -0500", hash_original_method = "5F7D82BAE91D9994EB60B4EFC2ED07C1", hash_generated_method = "AF4DCBDBDB2A9D97E7BF3B0343EB4EBB")
         
 @Override public void close() {

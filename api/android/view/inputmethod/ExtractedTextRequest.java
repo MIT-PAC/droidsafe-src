@@ -14,6 +14,7 @@ public class ExtractedTextRequest implements Parcelable {
     public static final Parcelable.Creator<ExtractedTextRequest> CREATOR
             = new Parcelable.Creator<ExtractedTextRequest>() {
     	
+        @DSSafe(DSCat.SAFE_OTHERS)
         public ExtractedTextRequest createFromParcel(Parcel source) {
     		addTaint(source.getTaint());
             ExtractedTextRequest res = new ExtractedTextRequest();

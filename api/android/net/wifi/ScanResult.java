@@ -13,7 +13,8 @@ public class ScanResult implements Parcelable {
 
     public static final Creator<ScanResult> CREATOR =
         new Creator<ScanResult>() {
-            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSSafe(DSCat.SAFE_OTHERS)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.202 -0500", hash_original_method = "BC0BC21C35AE7AEEA6D20EE623F1DB0A", hash_generated_method = "B805C8A062C30AB6451CCBD036279207")
         
 public ScanResult createFromParcel(Parcel in) {

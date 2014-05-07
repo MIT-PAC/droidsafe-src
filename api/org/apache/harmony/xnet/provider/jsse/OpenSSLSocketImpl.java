@@ -1116,7 +1116,8 @@ SSLOutputStream() throws IOException {
          * Method acts as described in spec for superclass.
          * @see java.io.OutputStream#write(int)
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSink(DSSinkKind.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.466 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
         
 @Override

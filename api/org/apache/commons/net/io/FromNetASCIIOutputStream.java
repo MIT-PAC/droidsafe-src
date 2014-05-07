@@ -59,7 +59,6 @@ public FromNetASCIIOutputStream(OutputStream output)
         __lastWasCR = false;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.427 -0500", hash_original_method = "42D12089AE481A637844D99861D38A63", hash_generated_method = "9D73230208366CCCA423836286EE2152")
     @DSVerified
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -92,7 +91,6 @@ private void __write(int ch) throws IOException
         }
     }
 
-
     /***
      * Writes a byte to the stream.    Note that a call to this method
      * might not actually write a byte to the underlying stream until a
@@ -107,8 +105,8 @@ private void __write(int ch) throws IOException
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.430 -0500", hash_original_method = "E0D4643D13B7CCDA3167C7EA96CF1000", hash_generated_method = "5CF591D4ECBF29A40680A9E022503132")
     @DSVerified
-    @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink(DSSinkKind.IO)
 public synchronized void write(int ch)
     throws IOException
     {
@@ -120,7 +118,6 @@ public synchronized void write(int ch)
 
         __write(ch);
     }
-
 
     /***
      * Writes a byte array to the stream.
@@ -138,7 +135,6 @@ public synchronized void write(byte buffer[])
     {
         write(buffer, 0, buffer.length);
     }
-
 
     /***
      * Writes a number of bytes from a byte array to the stream starting from
@@ -168,7 +164,6 @@ public synchronized void write(byte buffer[], int offset, int length)
         while (length-- > 0)
             __write(buffer[offset++]);
     }
-
 
     /***
      * Closes the stream, writing all pending data.

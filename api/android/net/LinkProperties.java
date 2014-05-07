@@ -20,7 +20,8 @@ public class LinkProperties implements Parcelable {
 
     public static final Creator<LinkProperties> CREATOR =
         new Creator<LinkProperties>() {
-            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSSafe(DSCat.SAFE_OTHERS)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.518 -0500", hash_original_method = "0C82553AE9182D627E9FE9D3BDCCC2D2", hash_generated_method = "73ADAD9054D4C55BEF76FD0090C4909B")
         
 public LinkProperties createFromParcel(Parcel in) {

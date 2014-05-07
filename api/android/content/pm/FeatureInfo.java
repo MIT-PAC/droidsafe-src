@@ -18,6 +18,7 @@ public class FeatureInfo implements Parcelable {
 
     public static final Creator<FeatureInfo> CREATOR =
         new Creator<FeatureInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.242 -0500", hash_original_method = "795598BB85F5A7B4341D7421A827595B", hash_generated_method = "E99008DA333C88F3533E77F99FD4B80B")
         
 public FeatureInfo createFromParcel(Parcel source) {

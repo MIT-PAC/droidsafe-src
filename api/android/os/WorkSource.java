@@ -19,6 +19,7 @@ public class WorkSource implements Parcelable {
 
     public static final Parcelable.Creator<WorkSource> CREATOR
             = new Parcelable.Creator<WorkSource>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.588 -0500", hash_original_method = "15DC4ADF84BC50464361AC661C12C0D9", hash_generated_method = "B1A6C98EC67832DD002B1B97BB857AB8")
         
 public WorkSource createFromParcel(Parcel in) {

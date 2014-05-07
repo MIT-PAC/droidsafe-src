@@ -259,6 +259,7 @@ ChannelInputStream(ReadableByteChannel channel) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.623 -0500", hash_original_method = "E57206FE07E33F2E755E86DBBBAE8BDB", hash_generated_method = "6098CAE6D79FEEF35314C7AF3CC52F7E")
         
 @Override
@@ -284,6 +285,8 @@ ChannelOutputStream(WritableByteChannel channel) {
             this.channel = channel;
         }
 
+        @DSSink(DSSinkKind.IO)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.634 -0500", hash_original_method = "976097BC4C10B6759034E4B1EDA42187", hash_generated_method = "A2DC5F91B490FB6FF0B7BB1EE34B1473")
         
 @Override
@@ -305,6 +308,7 @@ ChannelOutputStream(WritableByteChannel channel) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.640 -0500", hash_original_method = "E57206FE07E33F2E755E86DBBBAE8BDB", hash_generated_method = "6098CAE6D79FEEF35314C7AF3CC52F7E")
         
 @Override
@@ -330,6 +334,8 @@ InputStreamChannel(InputStream inputStream) {
             this.inputStream = inputStream;
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource(DSSourceKind.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.653 -0500", hash_original_method = "34EE1F263C45AAE8882B54B20392574C", hash_generated_method = "00C5CF0C247E8A6B8E801896DB58BCCF")
         
 public synchronized int read(ByteBuffer target) throws IOException {
@@ -376,7 +382,8 @@ OutputStreamChannel(OutputStream outputStream) {
             this.outputStream = outputStream;
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        @DSSink(DSSinkKind.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.667 -0500", hash_original_method = "F8CFBFA38C000301E03B217F2F97CA8F", hash_generated_method = "4AF989810D5B85B30F3380D1C2BB8FCA")
         
 public synchronized int write(ByteBuffer source) throws IOException {

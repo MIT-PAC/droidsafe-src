@@ -15,6 +15,7 @@ public final class CompletionInfo implements Parcelable {
     public static final Parcelable.Creator<CompletionInfo> CREATOR
             = new Parcelable.Creator<CompletionInfo>() {
     	
+        @DSSafe(DSCat.SAFE_OTHERS)
         public CompletionInfo createFromParcel(Parcel source) {
         	addTaint(source.getTaint());
             return new CompletionInfo(source);

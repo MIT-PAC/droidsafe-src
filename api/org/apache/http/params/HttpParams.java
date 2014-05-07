@@ -12,7 +12,7 @@ public interface HttpParams {
     Object getParameter(String name);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     HttpParams setParameter(String name, Object value);
     
     @DSComment("Abstract Method")

@@ -254,6 +254,7 @@ public static PendingIntent readPendingIntentOrNullFromParcel(Parcel in) {
 
     public static final Parcelable.Creator<PendingIntent> CREATOR
             = new Parcelable.Creator<PendingIntent>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.466 -0500", hash_original_method = "002B3842CB6C032442901D240F958E6F", hash_generated_method = "03E91BD6FC2A0D19BD7193F9F9DCD27E")
         
 public PendingIntent createFromParcel(Parcel in) {

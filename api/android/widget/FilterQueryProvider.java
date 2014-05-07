@@ -10,8 +10,8 @@ public interface FilterQueryProvider {
    
     @DSVerified
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.DATABASE)
     
-    @DSSource({DSSourceKind.DATABASE})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     Cursor runQuery(CharSequence constraint);
 }

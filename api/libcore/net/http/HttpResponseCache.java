@@ -132,7 +132,8 @@ private String uriToKey(URI uri) {
     
 private InputStream newBodyInputStream(final DiskLruCache.Snapshot snapshot) {
         return new FilterInputStream(snapshot.getInputStream(ENTRY_BODY)) {
-            @Override public void close() throws IOException {
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @Override public void close() throws IOException {
                 snapshot.close();
                 super.close();
             }
@@ -272,7 +273,8 @@ public CacheRequestImpl(final DiskLruCache.Editor editor) throws IOException {
             this.editor = editor;
             this.cacheOut = editor.newOutputStream(ENTRY_BODY);
             this.body = new FilterOutputStream(cacheOut) {
-                @Override public void close() throws IOException {
+                @DSSafe(DSCat.SAFE_OTHERS)
+            @Override public void close() throws IOException {
                     synchronized (HttpResponseCache.this) {
                         if (done) {
                             return;

@@ -15,6 +15,7 @@ public final class BluetoothClass implements Parcelable {
 
     public static final Parcelable.Creator<BluetoothClass> CREATOR =
             new Parcelable.Creator<BluetoothClass>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.444 -0500", hash_original_method = "B44CE55AFB9D52E11C79A0FBA01F5306", hash_generated_method = "E9EB8CA077AEC00E8EB952CDCB5A8A96")
         
 public BluetoothClass createFromParcel(Parcel in) {

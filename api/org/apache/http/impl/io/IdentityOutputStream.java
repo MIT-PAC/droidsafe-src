@@ -32,6 +32,7 @@ public IdentityOutputStream(final SessionOutputBuffer out) {
      * 
      * @throws IOException If an I/O problem occurs.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.984 -0500", hash_original_method = "5088685B92B0533111B1789635B9B452", hash_generated_method = "26BE9D5EBA83E15A05E65873FF8E9852")
     
 public void close() throws IOException {
@@ -64,7 +65,8 @@ public void write(byte[] b) throws IOException {
         write(b, 0, b.length);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink(DSSinkKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.994 -0500", hash_original_method = "A7A4BE3D6472F4EA278A930E01512219", hash_generated_method = "1B3E9B9018910F4607B7F2AADA451F40")
     
 public void write(int b) throws IOException {

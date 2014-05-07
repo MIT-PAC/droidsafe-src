@@ -16,6 +16,7 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
 
     public static final Creator<ServiceInfo> CREATOR =
         new Creator<ServiceInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.891 -0500", hash_original_method = "8978DD753FD4CAD4F30EAB16B876BC2A", hash_generated_method = "9BF65EB054B247A0818D16F348DD5D11")
         
 public ServiceInfo createFromParcel(Parcel source) {

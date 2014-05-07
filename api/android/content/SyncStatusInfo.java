@@ -20,6 +20,7 @@ public class SyncStatusInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.818 -0400", hash_original_field = "4B380E2AA31D16D86BF89F8EE0A58282", hash_generated_field = "34F7BA97EC5F779445C9A58D21D7DF7D")
 
     public static final Creator<SyncStatusInfo> CREATOR = new Creator<SyncStatusInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.651 -0500", hash_original_method = "7000403894FD3D88AA5C75270F571170", hash_generated_method = "54800B516C81ACD8991B10950466CDDB")
         
 public SyncStatusInfo createFromParcel(Parcel in) {

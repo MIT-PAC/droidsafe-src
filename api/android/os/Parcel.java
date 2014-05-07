@@ -211,6 +211,7 @@ public final class Parcel {
     private static final int EX_HAS_REPLY_HEADER = -128;
     public final static Parcelable.Creator<String> STRING_CREATOR
              = new Parcelable.Creator<String>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.084 -0500", hash_original_method = "CF5066ADB23AB15A8F47A7B0F4466503", hash_generated_method = "00F386650A051887ED9112C5F2C23E06")
         
 public String createFromParcel(Parcel source) {

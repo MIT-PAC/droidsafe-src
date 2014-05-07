@@ -102,7 +102,8 @@ public final int size() {
      *             if an error occurs while writing to the target stream.
      * @see DataInputStream#readByte()
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink(DSSinkKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.616 -0500", hash_original_method = "480870EC6BADBB21CCFBD983315F3126", hash_generated_method = "0DA8DCF8A72CE0A0690961D8DC195CF7")
     
 @Override

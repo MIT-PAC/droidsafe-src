@@ -466,7 +466,8 @@ VerifierEntry(String name, MessageDigest digest, byte[] hash,
         /**
          * Updates a digest with one byte.
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSink(DSSinkKind.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.369 -0500", hash_original_method = "977E904E5666EA1924971461B3999364", hash_generated_method = "30B825BE9CB2E300173C549DFAB6AC4A")
         
 @Override

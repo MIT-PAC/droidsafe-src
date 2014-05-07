@@ -546,8 +546,8 @@ public void useProtocolVersion(int version) throws IOException {
      *             if an error occurs while writing to the target stream.
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink(DSSinkKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.045 -0500", hash_original_method = "890E7ADC76A0934752F791BA928637BD", hash_generated_method = "76EC2FE8B111D6EFD0C5161A9F8E6AE5")
     
 @Override

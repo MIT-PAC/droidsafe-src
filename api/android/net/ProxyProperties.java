@@ -16,7 +16,8 @@ public class ProxyProperties implements Parcelable {
 
     public static final Creator<ProxyProperties> CREATOR =
         new Creator<ProxyProperties>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.188 -0500", hash_original_method = "A76B576B418A59DA79A74A0B4EFE2DF1", hash_generated_method = "02E09D2E48F74DDE3B43A8B05AED4246")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.188 -0500", hash_original_method = "A76B576B418A59DA79A74A0B4EFE2DF1", hash_generated_method = "02E09D2E48F74DDE3B43A8B05AED4246")
         
 public ProxyProperties createFromParcel(Parcel in) {
                 String host = null;

@@ -40,6 +40,7 @@ public static Bundle forPair(String key, String value) {
 
     public static final Parcelable.Creator<Bundle> CREATOR =
         new Parcelable.Creator<Bundle>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.619 -0500", hash_original_method = "4187614240FC5282A7CB86A3FCAECB06", hash_generated_method = "2886D3B3EE607F31AE6ADF0F5552BE50")
         
 public Bundle createFromParcel(Parcel in) {

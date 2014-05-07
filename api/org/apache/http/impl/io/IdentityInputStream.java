@@ -9,18 +9,11 @@ import java.io.InputStream;
 
 import org.apache.http.io.SessionInputBuffer;
 
-
-
-
-
-
 public class IdentityInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.914 -0500", hash_original_field = "70993BC56EC5FB33DD67D98C82018650", hash_generated_field = "1D4C1FD37762DA513250BEA823E156F5")
-
     
     private  SessionInputBuffer in;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.916 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
-
     
     private boolean closed = false;
     
@@ -44,6 +37,7 @@ public int available() throws IOException {
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.923 -0500", hash_original_method = "311E5281CF91526FD2B39B7023BBB3B5", hash_generated_method = "E9229935EC81724C05DDA3378F484A43")
     
 public void close() throws IOException {
@@ -69,7 +63,6 @@ public int read(final byte[] b, int off, int len) throws IOException {
             return this.in.read(b, off, len);
         }
     }
-
     
 }
 

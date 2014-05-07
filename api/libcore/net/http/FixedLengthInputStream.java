@@ -9,11 +9,6 @@ import java.io.InputStream;
 import java.net.CacheRequest;
 import java.util.Arrays;
 
-
-
-
-
-
 final class FixedLengthInputStream extends AbstractHttpInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.130 -0500", hash_original_field = "85E14E76D885CFD0C41B5E514C78B157", hash_generated_field = "ECAE5742BF4A68ADC431E811786D5F2D")
 
@@ -58,6 +53,7 @@ public FixedLengthInputStream(InputStream is, CacheRequest cacheRequest,
         return bytesRemaining == 0 ? 0 : Math.min(in.available(), bytesRemaining);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.141 -0500", hash_original_method = "D3AA3AF2615FFDD211E9642D1EBA797E", hash_generated_method = "768FDB1E6D57C7631928CDD6A6DF191F")
     
 @Override public void close() throws IOException {
@@ -69,7 +65,6 @@ public FixedLengthInputStream(InputStream is, CacheRequest cacheRequest,
             unexpectedEndOfInput();
         }
     }
-
     
 }
 

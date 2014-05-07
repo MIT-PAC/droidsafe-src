@@ -97,14 +97,16 @@ ReceiverRestrictedContext(Context base) {
         super(base);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.003 -0500", hash_original_method = "E79FC2581462A23AEE3B4180EBBDA608", hash_generated_method = "90430B4E7D776228913823B75B9973EF")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
         return registerReceiver(receiver, filter, null, null);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.005 -0500", hash_original_method = "7DBE869AA37665F34E0D6939DBC75DAB", hash_generated_method = "BE9909161683E82474FD582E36B38112")
     
 @Override
@@ -319,7 +321,8 @@ public ContextImpl(ContextImpl context) {
         throw new UnsupportedOperationException();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @Override
     
     public ContentResolver getContentResolver() {
@@ -332,7 +335,8 @@ public ContextImpl(ContextImpl context) {
     	return Looper.getMainLooper();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @Override
     public Context getApplicationContext() {
         return DroidSafeAndroidRuntime.mApplication;
@@ -355,13 +359,15 @@ public ContextImpl(ContextImpl context) {
         throw new UnsupportedOperationException();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @Override
     public ClassLoader getClassLoader() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @Override
     public String getPackageName() {
         return new String("DSUnknown (Package Name)");
@@ -379,7 +385,8 @@ public ContextImpl(ContextImpl context) {
         return "DSUnknown (Package Resource Path)";
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @Override
     public String getPackageCodePath() {
         return "DSUnknown (Package Code Path)";
@@ -391,7 +398,8 @@ public ContextImpl(ContextImpl context) {
         return new File("DSUnknown");
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @Override
     public SharedPreferences getSharedPreferences(String name, int mode) {        
         return sSharedPrefs;
@@ -414,7 +422,6 @@ private File getPreferencesDir() {
             return mPreferencesDir;
         }
     }
-    
 
     @Override
     @DSSafe(DSCat.FS_INFO)
@@ -422,8 +429,9 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink(DSSinkKind.FILE)
     @Override
-    @DSSafe(DSCat.FS_INFO)
+    @DSSpec(DSCat.IO)
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
         throw new UnsupportedOperationException();
     }
@@ -435,37 +443,32 @@ private File getPreferencesDir() {
         return false;
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSSafe(DSCat.FS_INFO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public File getFilesDir() {
         return new File("<files-dir>");
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSSafe(DSCat.FS_INFO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public File getExternalFilesDir(String type) {
         return new File("<external-files-dir>");
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSSafe(DSCat.FS_INFO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public File getObbDir() {
         return new File("<obb-dir>");
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSSafe(DSCat.FS_INFO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public File getCacheDir() {
         return new File("<cache-dir>");
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSSafe(DSCat.FS_INFO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public File getExternalCacheDir() {
         return new File("<external-cache-dir>");
     }
@@ -612,20 +615,19 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.IPC})
-    @DSSpec(DSCat.IPC)
+    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
     public void startActivity(Intent intent) {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.IPC})
-    @DSSpec(DSCat.IPC)
+    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
     public void startActivities(Intent[] intents) {
         throw new UnsupportedOperationException();
     }
-    
    
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
@@ -637,7 +639,7 @@ private File getPreferencesDir() {
     }
     
     @DSSpec(DSCat.IPC)
-    @DSSink({DSSinkKind.IPC})
+    @DSSink(DSSinkKind.IPC)
     @Override
     public void sendBroadcast(Intent intent) {
         
@@ -688,12 +690,14 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
     	// Generate Intents based on filter
         return receiver.__ds__registerIntentFilter(this, filter)[0];
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
@@ -734,6 +738,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Override
     public void unregisterReceiver(BroadcastReceiver receiver) {
     }
@@ -746,13 +751,13 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     }
     
     @Override
-    @DSSink({DSSinkKind.IPC})
-    @DSSpec(DSCat.IPC)
+    
+    @DSSafe(DSCat.SAFE_OTHERS)
     public boolean stopService(Intent service) {
         return true;
     }
     
-    ComponentName serviceCompName = null; 
+    ComponentName serviceCompName = null;
 
     @DSVerified("Calling connection callback")
     @DSSpec(DSCat.IPC)
@@ -775,7 +780,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     }
 
     @DSVerified
-    @DSSafe(DSCat.ANDROID_CALLBACK) 
+    @DSSafe(DSCat.SAFE_OTHERS) 
     @Override
     public void unbindService(ServiceConnection conn) {
         if (conn != null) {
@@ -940,7 +945,6 @@ private void enforceForUri(
             int pid, int uid, int modeFlags, String message) {
        
     }
-    
     
     @Override
     public Context createPackageContext(String packageName, int flags)
@@ -1156,7 +1160,7 @@ private File makeFilename(File base, String name) {
 
     @Override
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public File[] getExternalCacheDirs() {
         // TODO Auto-generated method stub
         File[] files = new File[1];
@@ -1180,7 +1184,7 @@ private File makeFilename(File base, String name) {
 
     @Override
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public File[] getObbDirs() {
         File[] files = new File[1];
         

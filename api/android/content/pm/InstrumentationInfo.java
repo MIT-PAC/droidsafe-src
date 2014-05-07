@@ -13,6 +13,7 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
 
     public static final Parcelable.Creator<InstrumentationInfo> CREATOR
             = new Parcelable.Creator<InstrumentationInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.726 -0500", hash_original_method = "616D094A5F6275D1C36A99C64CA287B0", hash_generated_method = "2283F092B3D81B193DEC876D255C19CD")
         
 public InstrumentationInfo createFromParcel(Parcel source) {

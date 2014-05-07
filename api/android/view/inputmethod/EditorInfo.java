@@ -63,6 +63,7 @@ public class EditorInfo implements InputType, Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.358 -0400", hash_original_field = "1571425679A71C2B4E211351FA79417D", hash_generated_field = "1554B4BEF2704B75DF5E855F87FA4685")
 
     public static final Parcelable.Creator<EditorInfo> CREATOR = new Parcelable.Creator<EditorInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:20.660 -0500", hash_original_method = "AD6DC78DBEA1B193A565639E1F90B5B3", hash_generated_method = "6BF91C25115F36FB3943132A91712FC0")
         
 public EditorInfo createFromParcel(Parcel source) {

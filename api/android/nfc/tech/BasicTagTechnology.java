@@ -118,6 +118,7 @@ void checkConnected() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.962 -0500", hash_original_method = "DDF274A17EF36B6492A33A14797987DB", hash_generated_method = "581A73B3DE4AC015F592D8F37409570F")
     
 @Override

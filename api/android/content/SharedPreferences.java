@@ -16,7 +16,8 @@ public interface SharedPreferences {
     
     public interface Editor {
         @DSVerified("no callback, delegated to implementation")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSpec(DSCat.SHARED_PREFERENCES)
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
         Editor putString(String key, String value);
         
         @DSVerified("no callback, delegated to implementation")
@@ -24,11 +25,13 @@ public interface SharedPreferences {
         Editor putStringSet(String key, Set<String> values);
         
         @DSVerified("no callback, delegated to implementation")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSpec(DSCat.SHARED_PREFERENCES)
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
         Editor putInt(String key, int value);
         
         @DSVerified("no callback, delegated to implementation")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSpec(DSCat.SHARED_PREFERENCES)
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
         Editor putLong(String key, long value);
         
         @DSVerified("no callback, delegated to implementation")
@@ -36,19 +39,20 @@ public interface SharedPreferences {
         Editor putFloat(String key, float value);
         
         @DSVerified("no callback, delegated to implementation")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSpec(DSCat.SHARED_PREFERENCES)
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
         Editor putBoolean(String key, boolean value);
 
         @DSVerified("no callback, delegated to implementation")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         Editor remove(String key);
 
         @DSVerified("no callback, delegated to implementation")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         Editor clear();
 
         @DSVerified("no callback, delegated to implementation")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         boolean commit();
 
         @DSVerified("no callback, delegated to implementation")

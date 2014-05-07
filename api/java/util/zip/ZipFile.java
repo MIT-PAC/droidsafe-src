@@ -168,14 +168,16 @@ private void checkNotClosed() {
         checkNotClosed();
         final Iterator<ZipEntry> iterator = mEntries.values().iterator();
 Enumeration<? extends ZipEntry> var5C2492AEF6429BB2452507D2F1DD320A_330051403 =         new Enumeration<ZipEntry>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.347 -0500", hash_original_method = "E86ACDCD19145E338744AC3C77C30364", hash_generated_method = "37CEFC45DE5D1AD01FCD8DB0138E5F1F")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.347 -0500", hash_original_method = "E86ACDCD19145E338744AC3C77C30364", hash_generated_method = "37CEFC45DE5D1AD01FCD8DB0138E5F1F")
             
 public boolean hasMoreElements() {
                 checkNotClosed();
                 return iterator.hasNext();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.349 -0500", hash_original_method = "0AFF9A2DED00798BA27B7711FA7E95F7", hash_generated_method = "D79A666F419DCD9B04F294A5770B2CDB")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.349 -0500", hash_original_method = "0AFF9A2DED00798BA27B7711FA7E95F7", hash_generated_method = "D79A666F419DCD9B04F294A5770B2CDB")
             
 public ZipEntry nextElement() {
                 checkNotClosed();

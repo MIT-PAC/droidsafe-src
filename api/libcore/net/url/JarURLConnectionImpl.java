@@ -407,6 +407,7 @@ protected JarURLConnectionInputStream(InputStream in, JarFile file) {
             jarFile = file;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.524 -0500", hash_original_method = "C19810B5404F297C56A9BC5E0816E19A", hash_generated_method = "9B66B1EAA676D3BF6A2B7696D488FA68")
         
 @Override

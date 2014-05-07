@@ -92,6 +92,7 @@ private static void addLong(long[] array, int i, long value) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.939 -0400", hash_original_field = "048BF4BBB96644622132F9F51E1DB96F", hash_generated_field = "D81F6106977C71918B1EF6EAB4131577")
 
     public static final Creator<NetworkStatsHistory> CREATOR = new Creator<NetworkStatsHistory>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.536 -0500", hash_original_method = "83C291D635CD9A2169A9EB499CBBB9B0", hash_generated_method = "77FD148705EC1EB19A1A8739535985EF")
         
 public NetworkStatsHistory createFromParcel(Parcel in) {

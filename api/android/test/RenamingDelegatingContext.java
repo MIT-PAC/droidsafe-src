@@ -213,6 +213,8 @@ private String renamedFileName(String name) {
         }
     }
 
+    @DSSink(DSSinkKind.FILE)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.612 -0500", hash_original_method = "BAFF09712F6A622B6FB90CC40B6EB538", hash_generated_method = "35066B5940DAC2748FDA30C1232F6747")
     
 @Override
@@ -253,6 +255,7 @@ private String renamedFileName(String name) {
      * one) and return it instead.  This code is basically getCacheDir(), except it uses the real
      * cache dir as the parent directory and creates a test cache dir inside that.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.621 -0500", hash_original_method = "46556D7A64741ECB467E5CBBE771B4E0", hash_generated_method = "90BED60B6DFDDAEF16739A02E4D581D8")
     
 @Override

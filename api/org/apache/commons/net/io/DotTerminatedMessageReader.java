@@ -53,7 +53,6 @@ public final class DotTerminatedMessageReader extends Reader
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.631 -0500", hash_original_field = "DE99D136869D4043B79E4FA0D6E7FB41", hash_generated_field = "F1CDF3C91EA45CBB5C4D2E1AB6ED5722")
 
-
     private boolean atBeginning;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.634 -0500", hash_original_field = "F63D5C2A3218247517725999753A7A52", hash_generated_field = "5CB70878869318B356B4B3C25335C11E")
 
@@ -221,6 +220,7 @@ public int read(char[] buffer) throws IOException
      * @exception IOException If an error occurs in reading the underlying
      *            stream.
      */
+    @DSSource(DSSourceKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.663 -0500", hash_original_method = "297F7CC520BE2F901AA36D11D965CF70", hash_generated_method = "F2D860805EDA4A832B634194E89F311B")
     @DSVerified
     @DSSpec(DSCat.IO)

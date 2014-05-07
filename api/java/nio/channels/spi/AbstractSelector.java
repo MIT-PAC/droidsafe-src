@@ -45,6 +45,7 @@ protected AbstractSelector(SelectorProvider selectorProvider) {
      * already closed. The actual closing must be implemented by subclasses in
      * {@code implCloseSelector()}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.951 -0500", hash_original_method = "9F8B8FD2F0A9D2575659CC3A12134435", hash_generated_method = "0A39B328F996F8CAB33E177988E579AB")
     
 @Override
@@ -66,6 +67,7 @@ protected abstract void implCloseSelector() throws IOException;
     /**
      * Returns true if this selector is open.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.956 -0500", hash_original_method = "4BED6A018F66CD694B83A1B1A043078B", hash_generated_method = "39B1B0C30A76F920C21D6AFE814BD237")
     
 @Override

@@ -190,6 +190,7 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
     private static final int MAX_POOL_SIZE = 10;
     public static final Parcelable.Creator<Message> CREATOR
             = new Parcelable.Creator<Message>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.370 -0500", hash_original_method = "C469647B7E7B16486A85AB4B8FE1AC44", hash_generated_method = "5A2A7B37F6B69DB49B562A947E4208DD")
         
 public Message createFromParcel(Parcel source) {

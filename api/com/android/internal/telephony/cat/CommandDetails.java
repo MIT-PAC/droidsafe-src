@@ -30,6 +30,7 @@ class CommandDetails extends ValueObject implements Parcelable {
 
     public static final Parcelable.Creator<CommandDetails> CREATOR =
                                 new Parcelable.Creator<CommandDetails>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.989 -0500", hash_original_method = "6632EE25D694EDC930AA977D0E0974F2", hash_generated_method = "966D944AA96D3324753E78ECE54E6A34")
         
 public CommandDetails createFromParcel(Parcel in) {

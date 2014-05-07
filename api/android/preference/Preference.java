@@ -2049,6 +2049,7 @@ void dispatchRestoreInstanceState(Bundle container) {
         
         public static final Parcelable.Creator<BaseSavedState> CREATOR =
                 new Parcelable.Creator<BaseSavedState>() {
+            @DSSafe(DSCat.SAFE_OTHERS)
             public BaseSavedState createFromParcel(Parcel in) {
                 return new BaseSavedState(in);
             }

@@ -35,19 +35,22 @@ public Cursor getWrappedCursor() {
         return mCursor;
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.630 -0500", hash_original_method = "A32297B2451395D36A70F03B3EF856B3", hash_generated_method = "720E7ACAFC70926E25D574B6002AF184")
     
 public void close() {
         mCursor.close(); 
     }
  
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.632 -0500", hash_original_method = "5DEC02E8332222A3B22751694FFC9CA1", hash_generated_method = "9628F01910A14D0DE5D01EF9DD871921")
     
 public boolean isClosed() {
         return mCursor.isClosed();
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.635 -0500", hash_original_method = "4FB48481E85DFE4DF2798ECB6EF0EBA3", hash_generated_method = "46272F6E8792008A185D594A6B6D2780")
     
 public int getCount() {
@@ -60,27 +63,31 @@ public void deactivate() {
         mCursor.deactivate();
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.639 -0500", hash_original_method = "06CE118A44B1EB36107893954A961568", hash_generated_method = "330A9E2E0BCE286FCA11BEEAC702AFD4")
     
 public boolean moveToFirst() {
         return mCursor.moveToFirst();
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.641 -0500", hash_original_method = "C4C5B8EA665B1F1B5035911D9DA414D1", hash_generated_method = "E8C3082E2638204479494EC3454A9DBB")
     
 public int getColumnCount() {
         return mCursor.getColumnCount();
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.644 -0500", hash_original_method = "06516133B49C0C5A6C5AFB16F4A895DA", hash_generated_method = "EB1A46E098911D4440B6230B22AA55E4")
     
 public int getColumnIndex(String columnName) {
         return mCursor.getColumnIndex(columnName);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.646 -0500", hash_original_method = "183DEEA59B2C5C3992AF879729130A44", hash_generated_method = "F3DD6F35132B6BD369AF142F0CFC13BF")
     
 public int getColumnIndexOrThrow(String columnName)
@@ -88,14 +95,16 @@ public int getColumnIndexOrThrow(String columnName)
         return mCursor.getColumnIndexOrThrow(columnName);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.648 -0500", hash_original_method = "44F4FED765CC72811EDC0508C80F64F0", hash_generated_method = "E0505428F90727E47FADD31A422193BB")
     
 public String getColumnName(int columnIndex) {
          return mCursor.getColumnName(columnIndex);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.652 -0500", hash_original_method = "142DD845520BC77B0415FE801987F673", hash_generated_method = "5FA4F455D72F70F9DFE28FC6BD6D59CD")
     
 public String[] getColumnNames() {
@@ -123,14 +132,16 @@ public float getFloat(int columnIndex) {
         return mCursor.getFloat(columnIndex);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.661 -0500", hash_original_method = "D5F704BE358AD76E0F36741C42927811", hash_generated_method = "0C6E14097AF12068399A97B9BDA0E532")
     
 public int getInt(int columnIndex) {
         return mCursor.getInt(columnIndex);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.663 -0500", hash_original_method = "DBAEB8314692255BFDFEDFF2F8F2444F", hash_generated_method = "A456373B16F20268DCDC0A3F60F86BA8")
     
 public long getLong(int columnIndex) {
@@ -144,7 +155,8 @@ public short getShort(int columnIndex) {
         return mCursor.getShort(columnIndex);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.669 -0500", hash_original_method = "A917FB9A6F4271AAEA85DB37049994B7", hash_generated_method = "68DA2DB1F406D103086EB9C007AAF780")
     
 public String getString(int columnIndex) {
@@ -157,7 +169,8 @@ public void copyStringToBuffer(int columnIndex, CharArrayBuffer buffer) {
         mCursor.copyStringToBuffer(columnIndex, buffer);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.673 -0500", hash_original_method = "8A5315F98F575EC2DBE296FDFC892823", hash_generated_method = "5E077195EF36E4512DEB95B19A4B65C2")
     
 public byte[] getBlob(int columnIndex) {
@@ -171,6 +184,7 @@ public boolean getWantsAllOnMoveCalls() {
         return mCursor.getWantsAllOnMoveCalls();
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.678 -0500", hash_original_method = "6CEAAB581364F2242F0510BD20864F0A", hash_generated_method = "69B71F7B4B238099598CA18252B542E8")
     
 public boolean isAfterLast() {
@@ -195,7 +209,8 @@ public boolean isLast() {
         return mCursor.isLast();
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.687 -0500", hash_original_method = "5A8E2D5ED8A7C02D6DE5EB672DC6B0F6", hash_generated_method = "186C4C1AEED0786A2DA7810563D9B0B0")
     
 public int getType(int columnIndex) {
@@ -208,31 +223,36 @@ public boolean isNull(int columnIndex) {
         return mCursor.isNull(columnIndex);
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.693 -0500", hash_original_method = "347262A632C8F04E94685CE61DC31CB9", hash_generated_method = "6998B59A657FA11F0B1EE1E52F6C45A9")
     
 public boolean moveToLast() {
         return mCursor.moveToLast();
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.695 -0500", hash_original_method = "681CB7A15AB6E4D99994A16A8D62CA1B", hash_generated_method = "FB44AD6A98A08AF27EFA45F3FF20D7C0")
     
 public boolean move(int offset) {
         return mCursor.move(offset);
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.697 -0500", hash_original_method = "E96208B3363A366F1157461AED6DEFE6", hash_generated_method = "AB6AB467FA5787AE5A154ED6BB16B4EF")
     
 public boolean moveToPosition(int position) {
         return mCursor.moveToPosition(position);
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.700 -0500", hash_original_method = "61AD5F99CAC7AA88894F37D4F04385DE", hash_generated_method = "1E6B01E0B977827B282FDD1BAF705E9D")
     
 public boolean moveToNext() {
         return mCursor.moveToNext();
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.702 -0500", hash_original_method = "F334605A0394588BA27C8173FC6583D2", hash_generated_method = "869C851C3A8FA9B55F117A8B0FB11DFF")
     
 public int getPosition() {
@@ -245,18 +265,21 @@ public boolean moveToPrevious() {
         return mCursor.moveToPrevious();
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.706 -0500", hash_original_method = "5A8FF5438803408ADF8327CD33517673", hash_generated_method = "41285738004CC92DBFFF34841A873316")
     
 public void registerContentObserver(ContentObserver observer) {
         mCursor.registerContentObserver(observer);   
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.708 -0500", hash_original_method = "1A519BACFE68557E172B555F0410D9EB", hash_generated_method = "23A18B5837E64076B845A6CECBC8A3F9")
     
 public void registerDataSetObserver(DataSetObserver observer) {
         mCursor.registerDataSetObserver(observer);   
     }
 
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.711 -0500", hash_original_method = "913F5AF57DF0A93E7786005DA9809F4B", hash_generated_method = "0FA5253426D86A2EF20B579620E97E04")
     
 public boolean requery() {
@@ -269,18 +292,21 @@ public Bundle respond(Bundle extras) {
         return mCursor.respond(extras);
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.716 -0500", hash_original_method = "EE868502A4046B2104E93564DA0F8447", hash_generated_method = "50E2244F41DC50ACE68ABA6F98D2A127")
     
 public void setNotificationUri(ContentResolver cr, Uri uri) {
         mCursor.setNotificationUri(cr, uri);        
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.718 -0500", hash_original_method = "18E3DACEB476AA178948B9F95BF27A70", hash_generated_method = "350CD144B64E9C84A340BC5B9F4E6AED")
     
 public void unregisterContentObserver(ContentObserver observer) {
         mCursor.unregisterContentObserver(observer);        
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.720 -0500", hash_original_method = "81F4645F170671B34D8F1F059DABD812", hash_generated_method = "0C4AE2003158EF511A8153427266C0CD")
     
 public void unregisterDataSetObserver(DataSetObserver observer) {

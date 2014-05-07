@@ -269,7 +269,8 @@ public InputStream getErrorStream() {
             return this.errorStream;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        @DSSource(DSSourceKind.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.586 -0500", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "045B7D54BB0AFFCC2F40B43FACDF9DCC")
         
 public InputStream getInputStream() {
@@ -283,6 +284,7 @@ public OutputStream getOutputStream() {
             return this.outputStream;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.591 -0500", hash_original_method = "BE1794A2A2D4EC2F61628D9639894105", hash_generated_method = "CD203357F948B827B4C6BF231EF7FD14")
         
 public int waitFor() throws InterruptedException {
@@ -364,6 +366,7 @@ private ProcessInputStream(FileDescriptor fd) {
             this.fd = fd;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.624 -0500", hash_original_method = "4096AFD26B789321960D656289AA88CA", hash_generated_method = "4733FF6090B618D723DD27CEE6DE9C46")
         
 @Override
@@ -397,6 +400,7 @@ private ProcessOutputStream(FileDescriptor fd) {
             this.fd = fd;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.634 -0500", hash_original_method = "4096AFD26B789321960D656289AA88CA", hash_generated_method = "4733FF6090B618D723DD27CEE6DE9C46")
         
 @Override

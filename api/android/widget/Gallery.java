@@ -998,6 +998,7 @@ private int calculateTop(View child, boolean duringLayout) {
         return retValue;
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.722 -0500", hash_original_method = "19210549229636CE2242C372109B66CE", hash_generated_method = "5F54BEDA3A470E8393EDECDB5EB67EBE")
     
 @Override
@@ -1020,6 +1021,7 @@ private int calculateTop(View child, boolean duringLayout) {
         return false;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.724 -0500", hash_original_method = "FF9AB11CCCE118D19142CC6F38731AB8", hash_generated_method = "0C7145EAEFE08E6BECEE52314B3CA311")
     
 @Override
@@ -1041,6 +1043,7 @@ private int calculateTop(View child, boolean duringLayout) {
         return true;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.727 -0500", hash_original_method = "31AEC3B6889F8B31520E6C555165373C", hash_generated_method = "36F7490D851D27D946F6036397710B79")
     
 @Override
@@ -1082,6 +1085,7 @@ private int calculateTop(View child, boolean duringLayout) {
         return true;
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.729 -0500", hash_original_method = "79E55760FD5CE82C40C265BE8CDD4846", hash_generated_method = "7C075FF0D1620BB011034A95375D4E60")
     
 @Override
@@ -1132,6 +1136,7 @@ void onCancel() {
         onUp();
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.736 -0500", hash_original_method = "950A20F4ED2CBD08065028F466CBAED0", hash_generated_method = "E2C73A1A4E27F25B082F9C937882FF58")
     
 @Override
@@ -1148,6 +1153,7 @@ void onCancel() {
 
     // Unused methods from GestureDetector.OnGestureListener below
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.738 -0500", hash_original_method = "54A2BF3809B435C5302401FC76B54B22", hash_generated_method = "3305222AE6E8BD09D6A57E3FA5D84531")
     
 @Override

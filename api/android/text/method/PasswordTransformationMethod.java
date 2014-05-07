@@ -151,12 +151,14 @@ public PasswordCharSequence(CharSequence source) {
             mSource = source;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.857 -0500", hash_original_method = "FE3E30D6F998A38B269E405486258D53", hash_generated_method = "2718F2DD1771250DF29BF44C4628A630")
         
 public int length() {
             return mSource.length();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.860 -0500", hash_original_method = "9EC5613B57D481274808D46BD66F08EC", hash_generated_method = "1E0A0845D6A0BA9F9D848D44E9318E5A")
         
 public char charAt(int i) {

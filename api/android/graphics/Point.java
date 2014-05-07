@@ -13,6 +13,7 @@ public class Point implements Parcelable {
         /**
          * Return a new point from the data in the specified parcel.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.624 -0500", hash_original_method = "B3310D4E2482FAA9B08EEBCB55A9E59A", hash_generated_method = "9B7D670C9DC0EB16FE01142237FB60EC")
         
 public Point createFromParcel(Parcel in) {

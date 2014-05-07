@@ -1290,6 +1290,7 @@ public boolean isCollapsed() {
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
+            @DSSafe(DSCat.SAFE_OTHERS)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }

@@ -156,7 +156,8 @@ public int getCount() {
         return mPreferenceList.size();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.DB_CURSOR)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.980 -0500", hash_original_method = "B1551AF468D615637FECD6277399376D", hash_generated_method = "62EAC07E967E95133E6C020078002A17")
     
 public Preference getItem(int position) {

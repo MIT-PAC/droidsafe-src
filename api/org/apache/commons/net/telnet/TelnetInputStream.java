@@ -33,7 +33,6 @@ import java.io.InterruptedIOException;
  * @author Bruno D'Avanzo
  ***/
 
-
 final class TelnetInputStream extends BufferedInputStream implements Runnable
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.854 -0500", hash_original_field = "E0445244D7A67E3BEE12186A58D97CD2", hash_generated_field = "8E4EC2729C3B0BA8DE02EAED79B1289D")
@@ -42,7 +41,6 @@ final class TelnetInputStream extends BufferedInputStream implements Runnable
                      _STATE_WONT = 3, _STATE_DO = 4, _STATE_DONT = 5,
                      _STATE_SB = 6, _STATE_SE = 7, _STATE_CR = 8, _STATE_IAC_SB = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.862 -0500", hash_original_field = "1173F66F362C8445F5EAF867F92799DA", hash_generated_field = "57778FC73ACFB7A98988535C015F8C8B")
-
 
     private boolean __hasReachedEOF, __isClosed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.872 -0500", hash_original_field = "409D3B831DEA719A6A0AFC650F419141", hash_generated_field = "6D3C2A909A50D27EAE0C7565ACD11067")
@@ -70,7 +68,6 @@ final class TelnetInputStream extends BufferedInputStream implements Runnable
 
     private int __suboption_count = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.911 -0500", hash_original_field = "30DEA0810623E7BC48AF78EE7C9343B3", hash_generated_field = "90C4EB634461342FD50EE22A84670F25")
-
 
     private boolean __threaded;
 
@@ -126,7 +123,6 @@ void _start()
         __threaded = true;
     }
 
-
     // synchronized(__client) critical sections are to protect against
     // TelnetOutputStream writing through the telnet client at same time
     // as a processDo/Will/etc. command invoked from TelnetInputStream
@@ -178,7 +174,6 @@ _mainSwitch:
                     __receiveState = _STATE_IAC;
                     continue;
                 }
-
 
                 if (ch == '\r')
                 {
@@ -409,7 +404,6 @@ public int read() throws IOException
                                 return (-1);
                             }
 
-
                             try
                             {
                                 if(ch != -2)
@@ -451,7 +445,6 @@ public int read() throws IOException
         }
     }
 
-
     /***
      * Reads the next number of bytes from the stream into an array and
      * returns the number of bytes read.  Returns -1 if the end of the
@@ -469,7 +462,6 @@ public int read(byte buffer[]) throws IOException
     {
         return read(buffer, 0, buffer.length);
     }
-
 
     /***
      * Reads the next number of bytes from the stream into an array and returns
@@ -516,7 +508,6 @@ public int read(byte buffer[], int offset, int length) throws IOException
         return (offset - off);
     }
 
-
     /*** Returns false.  Mark is not supported. ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.969 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "68CB0655189E46325916378CAE21EACC")
     
@@ -536,9 +527,9 @@ public int available() throws IOException
         }
     }
 
-
     // Cannot be synchronized.  Will cause deadlock if run() is blocked
     // in read because BufferedInputStream read() is synchronized.
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.982 -0500", hash_original_method = "F2413E328044212C07B796D6327CE9C1", hash_generated_method = "0209321B632A0EE62F937DD0C28C5FCB")
     
 public void close() throws IOException

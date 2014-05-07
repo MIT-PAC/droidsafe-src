@@ -130,7 +130,7 @@ public InputStreamReader(InputStream in, Charset charset) {
      *             if an error occurs attempting to close this reader.
      */
     @DSComment("InputStreamReader class")
-    @DSSafe(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.978 -0500", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "64568DB66E5B89ACA9154E9C002982F9")
     
 @Override
@@ -213,6 +213,8 @@ public String getEncoding() {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource(DSSourceKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.987 -0500", hash_original_method = "610EEC39BC95175186F6D1B73FBDC240", hash_generated_method = "550A9EF91DBCD99AD901345976E441C5")
     
 @Override

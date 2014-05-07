@@ -16,7 +16,7 @@ public interface Map<K,V> {
         public K getKey();
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         public V getValue();
         
         public int hashCode();

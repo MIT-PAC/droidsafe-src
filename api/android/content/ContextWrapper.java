@@ -136,8 +136,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.109 -0500", hash_original_method = "8EDC66E2D77BCDC119853EA41EA3296B", hash_generated_method = "139D612C99B54783A4962502799FFB5A")
     
 @Override
@@ -156,8 +156,8 @@ public Context getBaseContext() {
     }
     
     @DSComment("delegated to android.content.Context")
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.113 -0500", hash_original_method = "78E13438476D4B526B3AB7AB982B9A37", hash_generated_method = "A6D0C1903DCB48BCDDC31B2E575E3D5A")
     
 @Override
@@ -190,8 +190,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.122 -0500", hash_original_method = "325690D530E21A0AB255EE9D69D84488", hash_generated_method = "CD16D25F5FDB5376B6D65A38DAD451DB")
     
 @Override
@@ -200,8 +200,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("Is there concern about package info harvesting???")
-    @DSSafe(DSCat.OS_GENERAL)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.124 -0500", hash_original_method = "FC1F671DB2DE2D2F1C64463A96604F21", hash_generated_method = "981E8FCA373F2235FD0793073F84BFB1")
     
 @Override
@@ -227,7 +227,8 @@ public Context getBaseContext() {
         return mBase.getPackageResourcePath();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.131 -0500", hash_original_method = "90ECA4CEE907B9CC4828D0F1EDEE17EB", hash_generated_method = "C796F4FD1D22BA33BA9F69A37BB8C39E")
     
 @Override
@@ -244,8 +245,8 @@ public Context getBaseContext() {
         return mBase.getSharedPrefsFile(name);
     }
 
-    @DSSpec(DSCat.SYSTEM_PREFERENCES)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.136 -0500", hash_original_method = "51168DD8811589A8A44258F7BDA9D1F0", hash_generated_method = "BB704DA8F5AC55B97A278F82E1650118")
     @DSVerified
 @Override
@@ -264,11 +265,10 @@ public Context getBaseContext() {
         return mBase.openFileInput(name);
     }
 
-
     @DSVerified
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.FILE})
+    @DSSpec(DSCat.IO)
+    @DSSink(DSSinkKind.FILE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.141 -0500", hash_original_method = "1B551CEA36C6304276D435BC90F14FD3", hash_generated_method = "01EA4CF88D4454D02E59AE01582F31BB")
     
 @Override
@@ -305,8 +305,8 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.150 -0500", hash_original_method = "14B449BDD79B281009CCC9DF0F75EC6B", hash_generated_method = "58D9BF1BB0E543D2ED8CF780E3EDB5A5")
     
 @Override
@@ -314,8 +314,8 @@ public Context getBaseContext() {
         return mBase.getFilesDir();
     }
     @DSVerified
-    @DSSpec(DSCat.FILE_SYSTEM)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.152 -0500", hash_original_method = "BC309698CECF9063C5A4ADDF6C6EC7AF", hash_generated_method = "74788A6B35EEC28097DFD9AF92A3AD42")
     
 @Override
@@ -323,7 +323,8 @@ public Context getBaseContext() {
         return mBase.getExternalFilesDir(type);
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.154 -0500", hash_original_method = "068174B051BB78F57C468F648940D142", hash_generated_method = "4E58085C8DDCC2BDAF8530221C73DDA2")
     
 @Override
@@ -331,30 +332,27 @@ public Context getBaseContext() {
         return mBase.getObbDir();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.156 -0500", hash_original_method = "44DE59125179A0BDED11E57B810BFAF1", hash_generated_method = "0F6E27ED3C39786F554597D2572B5FD9")
     @DSVerified
-    @DSSafe(DSCat.FS_INFO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
 @Override
     public File getCacheDir() {
         return mBase.getCacheDir();
     }
-
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.159 -0500", hash_original_method = "7C2D809316E637C52FE8D4DE0AE386A3", hash_generated_method = "5907DC0B3DDB4625833A1540D8CFA11E")
     
     @DSVerified
-    @DSSafe(DSCat.FS_INFO)
+    @DSSafe(DSCat.SAFE_OTHERS)
 @Override
     public File getExternalCacheDir() {
         return mBase.getExternalCacheDir();
     }
     
-    
     @DSVerified
-    @DSSafe(DSCat.FS_INFO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @Override
     public File[] getExternalCacheDirs() {
         return mBase.getExternalCacheDirs();
@@ -368,10 +366,9 @@ public Context getBaseContext() {
         return mBase.getExternalFileDirs();
     }
 
-
     @DSVerified
-    @DSSafe(DSCat.FS_INFO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @Override
     public File[] getObbDirs() {
         return mBase.getObbDirs();
@@ -495,8 +492,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.IPC)
-    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
+    @DSSink(DSSinkKind.START_ACTIVITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.190 -0500", hash_original_method = "130F62140951A945508EBFB32B94A765", hash_generated_method = "992EA6715D65F485692876B471F1C6B9")
     
 @Override
@@ -504,8 +501,8 @@ public Context getBaseContext() {
         mBase.startActivity(intent);
     }
 
-    @DSSink({DSSinkKind.IPC})
-    @DSSpec(DSCat.IPC)
+    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.193 -0500", hash_original_method = "013A3CF6138EA6FE6C22614936FE13C8", hash_generated_method = "52762932C0CF308D26FC5B36BA40DE9B")
     
 @Override
@@ -526,7 +523,7 @@ public Context getBaseContext() {
     
     @DSComment("IO movement methodName")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.198 -0500", hash_original_method = "CD7D57CF51FEE3E0548133C9C2D084D1", hash_generated_method = "BE288488A1FBD4AF9F7B86466BB1D059")
-    @DSSink({DSSinkKind.IPC})
+    @DSSink(DSSinkKind.IPC)
     @DSSpec(DSCat.IPC)
     @Override
     public void sendBroadcast(Intent intent) {
@@ -578,7 +575,6 @@ public Context getBaseContext() {
         mBase.sendStickyBroadcast(intent);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.210 -0500", hash_original_method = "7E21CD2A51D6CF22EBBD91300928AE98", hash_generated_method = "BE7EB70AC42FBFF67990C422D3707BA6")
     @DSVerified
     @DSComment("Potential intent to trigger other processing")    
@@ -605,7 +601,7 @@ public Context getBaseContext() {
     
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
         return receiver.__ds__registerIntentFilter(this, filter)[0];
@@ -619,7 +615,7 @@ public Context getBaseContext() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.217 -0500", hash_original_method = "C498ADCED351E80E96A53362B4745838", hash_generated_method = "33D6C6769721FBE99429C7A0DC3317BE")
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 @Override
     public Intent registerReceiver(
         BroadcastReceiver receiver, IntentFilter filter,
@@ -658,7 +654,7 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.225 -0500", hash_original_method = "2538E8D6E7BE6E9AB177EECCCE1CB620", hash_generated_method = "DA0A6458C647468F8B3105A4F87E6EDB")
     
 @Override

@@ -1568,6 +1568,7 @@ public Ellipsizer(CharSequence s) {
             mText = s;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.500 -0500", hash_original_method = "D253D2AD2D0DACD122596323ACBBAF25", hash_generated_method = "D7EB4ED1B40207CFF86F497A7967BA70")
         
 public char charAt(int off) {
@@ -1592,6 +1593,7 @@ public void getChars(int start, int end, char[] dest, int destoff) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.505 -0500", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "8958BA6171CC7F46E64433775F1B4CBA")
         
 public int length() {

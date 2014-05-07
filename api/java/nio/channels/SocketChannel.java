@@ -100,7 +100,7 @@ protected SocketChannel(SelectorProvider selectorProvider) {
      * @return the socket assigned to this channel.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.636 -0500", hash_original_method = "D13CC21BE3BC4EA472CA63F894296CE7", hash_generated_method = "9838D871440061866DFAA20C4E5401B9")
     
 public abstract Socket socket();
@@ -167,8 +167,9 @@ public abstract boolean isConnectionPending();
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.644 -0500", hash_original_method = "EF042CD430999BAF5A1AF2158097F6BB", hash_generated_method = "84563A591A56E321A1FB21BE663EFF3F")
     
 public abstract boolean connect(SocketAddress address) throws IOException;
@@ -206,7 +207,7 @@ public abstract boolean connect(SocketAddress address) throws IOException;
      *             if an I/O error occurs.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.646 -0500", hash_original_method = "81C54D102AA55CD30CE0569D1C7BBF90", hash_generated_method = "16F3CFA8A040FF11376537FFBD2C2C0C")
     
 public abstract boolean finishConnect() throws IOException;
@@ -242,9 +243,9 @@ public abstract boolean finishConnect() throws IOException;
      * @see java.nio.channels.ReadableByteChannel#read(java.nio.ByteBuffer)
      */
     
-    @DSSource({DSSourceKind.IO})
+    @DSSource(DSSourceKind.IO)
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.649 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
     
 public abstract int read(ByteBuffer target) throws IOException;
@@ -284,9 +285,9 @@ public abstract int read(ByteBuffer target) throws IOException;
      * @see java.nio.channels.ScatteringByteChannel#read(java.nio.ByteBuffer[],
      *      int, int)
      */
-    @DSSource({DSSourceKind.IO})
+    @DSSource(DSSourceKind.IO)
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.651 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
     
 public abstract long read(ByteBuffer[] targets, int offset, int length) throws IOException;
@@ -358,9 +359,9 @@ public synchronized final long read(ByteBuffer[] targets) throws IOException {
      *             if this channel is not connected yet.
      * @see java.nio.channels.WritableByteChannel#write(java.nio.ByteBuffer)
      */
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSink(DSSinkKind.NETWORK)
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.657 -0500", hash_original_method = "1C9E91C0F072B678D6E4CA1EF7282EDC", hash_generated_method = "CBB72B52B431F1EA5E7EE6413675146F")
     
 public abstract int write(ByteBuffer source) throws IOException;
@@ -402,9 +403,9 @@ public abstract int write(ByteBuffer source) throws IOException;
      * @see java.nio.channels.GatheringByteChannel#write(java.nio.ByteBuffer[],
      *      int, int)
      */
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSink(DSSinkKind.NETWORK)
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.659 -0500", hash_original_method = "0318A187146637F0F5913A32559EC3D8", hash_generated_method = "57D37CA3F87B9F42073B88D7CA95CEF6")
     
 public abstract long write(ByteBuffer[] sources, int offset, int length) throws IOException;

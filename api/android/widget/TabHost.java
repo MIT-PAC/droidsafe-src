@@ -469,7 +469,7 @@ private TabSpec(String tag) {
          * Specify a label as the tab indicator.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.643 -0500", hash_original_method = "5E409F9D1F2DECB24B35FF4D25A5BAE5", hash_generated_method = "6F8A0E39E911288B7F81393CB46277B3")
-       @DSSafe(DSCat.SAFE_OTHERS) 
+       @DSSafe(DSCat.SAFE_OTHERS)
         
 public TabSpec setIndicator(CharSequence label) {
             mIndicatorStrategy = new LabelIndicatorStrategy(label);
@@ -480,7 +480,7 @@ public TabSpec setIndicator(CharSequence label) {
          * Specify a label and icon as the tab indicator.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.646 -0500", hash_original_method = "23880839A48B028850E58B36E2EDF15E", hash_generated_method = "26E97D3A38B37000C1E6CF79E098DEE4")
-       @DSSafe(DSCat.SAFE_OTHERS) 
+       @DSSafe(DSCat.SAFE_OTHERS)
         
 public TabSpec setIndicator(CharSequence label, Drawable icon) {
             mIndicatorStrategy = new LabelAndIconIndicatorStrategy(label, icon);
@@ -491,7 +491,7 @@ public TabSpec setIndicator(CharSequence label, Drawable icon) {
          * Specify a view as the tab indicator.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.648 -0500", hash_original_method = "BD5297BEFA4518E605FA03EA203960DD", hash_generated_method = "EECA0CE53A8F5FA5D88ECA91ECA7F639")
-       @DSSafe(DSCat.SAFE_OTHERS) 
+       @DSSafe(DSCat.SAFE_OTHERS)
         
 public TabSpec setIndicator(View view) {
             mIndicatorStrategy = new ViewIndicatorStrategy(view);
@@ -525,7 +525,7 @@ public TabSpec setContent(TabContentFactory contentFactory) {
          * Specify an intent to use to launch an activity as the tab content.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.655 -0500", hash_original_method = "0D57BE6053E1E40100589C46AD4E8491", hash_generated_method = "3826885F899FE1A7F3E300B46A249FD8")
-       @DSSafe(DSCat.SAFE_OTHERS) 
+       @DSSafe(DSCat.SAFE_OTHERS)
         
 public TabSpec setContent(Intent intent) {
             mContentStrategy = new IntentContentStrategy(mTag, intent);
@@ -781,7 +781,7 @@ public void tabClosed() {
     public interface OnTabChangeListener {
         @DSVerified
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         void onTabChanged(String tabId);
     }
     

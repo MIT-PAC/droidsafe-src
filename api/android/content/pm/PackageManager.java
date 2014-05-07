@@ -2214,7 +2214,7 @@ public abstract int getPreferredActivities(List<IntentFilter> outFilters,
      * @param flags Optional behavior flags: {@link #DONT_KILL_APP} or 0.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.PACKAGE_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.754 -0500", hash_original_method = "66AA009103186E72165D0D729D621664", hash_generated_method = "DCE099311250D0226A7819B73DA59F90")
     
 public abstract void setComponentEnabledSetting(ComponentName componentName,

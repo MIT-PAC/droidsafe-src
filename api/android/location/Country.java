@@ -25,6 +25,7 @@ public class Country implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.923 -0400", hash_original_field = "48FE3108061C8FB14165724DC6609E10", hash_generated_field = "2CCF073B8A235B66F6A4E81108680C92")
 
     public static final Parcelable.Creator<Country> CREATOR = new Parcelable.Creator<Country>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.547 -0500", hash_original_method = "062ED6F072D371D548C69ADA6C3CEA1B", hash_generated_method = "4F690E3F27FC9ACEBAFFB68E1F795670")
         
 public Country createFromParcel(Parcel in) {

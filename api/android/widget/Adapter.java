@@ -24,7 +24,8 @@ public interface Adapter {
     int getCount();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.DB_CURSOR)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     Object getItem(int position);
     
     @DSComment("Abstract Method")

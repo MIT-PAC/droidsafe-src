@@ -703,18 +703,22 @@ DelegatedExecutorService(ExecutorService executor) { e = executor; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.889 -0500", hash_original_method = "680CD1247FE9848C91F828B8B2655AA2", hash_generated_method = "5FF620BA750B9AA4D5060F4389C28B45")
         
 public void execute(Runnable command) { e.execute(command); }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.892 -0500", hash_original_method = "AC5ABD61901BFC6045B0080105C55DDA", hash_generated_method = "47459E05F3A9A2C970C5C1FE50023241")
         
 public void shutdown() { e.shutdown(); }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.894 -0500", hash_original_method = "96CCD300667A8693DD62C1833316B3E7", hash_generated_method = "A990C9CB1A96368BDFAA077334BA9CB2")
         
 public List<Runnable> shutdownNow() { return e.shutdownNow(); }
+        @DSSafe(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.896 -0500", hash_original_method = "6953493B1D30A903FCCDB4081BC753C6", hash_generated_method = "3ED36EAA0FDD5A7DA2E3DB880E4255AC")
         
 public boolean isShutdown() { return e.isShutdown(); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.898 -0500", hash_original_method = "BA72422211BC216152EB93C851C6051E", hash_generated_method = "431E04F8EFA8337811BFB175053A048A")
         
 public boolean isTerminated() { return e.isTerminated(); }
+        @DSSafe(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.902 -0500", hash_original_method = "7B27D3C16A1D302AD16E181EBB018DAC", hash_generated_method = "73417C1B12A9F316B0A3C9BA038DEE1D")
         
 public boolean awaitTermination(long timeout, TimeUnit unit)

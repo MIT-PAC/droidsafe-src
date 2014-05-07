@@ -13,6 +13,7 @@ public class Account implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.359 -0400", hash_original_field = "DE2599644EF9112EA03F6AEF302C05E0", hash_generated_field = "E8FF743E340A29709E9F49FE249853DC")
 
     public static final Creator<Account> CREATOR = new Creator<Account>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.375 -0500", hash_original_method = "71E28F2FAFB9F3EEB2F3FA6DF61F882A", hash_generated_method = "2EA57EEFF611B8231A465F9D9FB85EE1")
         
 public Account createFromParcel(Parcel source) {

@@ -23,6 +23,7 @@ BluetoothOutputStream(BluetoothSocket s) {
     /**
      * Close this output stream and the socket associated with it.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.498 -0500", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "C95071B8627034E7D9B94D5D2A0541A3")
     
 public void close() throws IOException {
@@ -39,6 +40,8 @@ public void close() throws IOException {
      *             if an error occurs while writing to this stream.
      * @since Android 1.0
      */
+    @DSSink(DSSinkKind.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.500 -0500", hash_original_method = "B2E185518772C6191E25665E6AAA6FD5", hash_generated_method = "2D5A46C23DD97DDE153E0C9506B1B72B")
     
 public void write(int oneByte) throws IOException {

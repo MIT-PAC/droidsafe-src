@@ -6400,6 +6400,7 @@ public DragShadowBuilder() {
         
         public static final Parcelable.Creator<BaseSavedState> CREATOR =
                 new Parcelable.Creator<BaseSavedState>() {
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.195 -0500", hash_original_method = "35821D2EA4DFAF558F55A1E0F95556F9", hash_generated_method = "AFA49BD28A79891DE45104F67F4CD08E")
             
 public BaseSavedState createFromParcel(Parcel in) {

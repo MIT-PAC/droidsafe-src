@@ -404,6 +404,7 @@ public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
 
     public static final Parcelable.Creator<Uri> CREATOR
             = new Parcelable.Creator<Uri>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.385 -0500", hash_original_method = "1CCA462AB4D0EF409DF9173916BA5FD8", hash_generated_method = "E7D8D1AE887DF3EC27BA286F1F6632FA")
         
 public Uri createFromParcel(Parcel in) {
@@ -1795,7 +1796,7 @@ public Builder authority(String authority) {
          * Sets the previously encoded authority.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.327 -0500", hash_original_method = "2AF9D1463857894BBB2A3B7E377A77BB", hash_generated_method = "FF5E086FF567F3975804752188384374")
-       @DSSafe(DSCat.UTIL_FUNCTION) 
+       @DSSafe(DSCat.UTIL_FUNCTION)
         
 public Builder encodedAuthority(String authority) {
             return authority(Part.fromEncoded(authority));
@@ -1833,7 +1834,7 @@ public Builder path(String path) {
          * given path with a '/'.
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.334 -0500", hash_original_method = "B2733F0C4852B782EB87F01613E6C574", hash_generated_method = "A058284D73BCE21547C46FC15EAF01A1")
-       @DSSafe(DSCat.UTIL_FUNCTION) 
+       @DSSafe(DSCat.UTIL_FUNCTION)
         
 public Builder encodedPath(String path) {
             return path(PathPart.fromEncoded(path));

@@ -157,7 +157,8 @@ public final int getCount() {
             return mOptions.length();
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.DB_CURSOR)
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.241 -0500", hash_original_method = "8B0C0E62DBC532F544A3C62A19BF4060", hash_generated_method = "80F71820F60B1DF2BFF86DB8B119223E")
         
 public final Object getItem(int position) {

@@ -65,6 +65,7 @@ public SocketInputStream(Socket socket, InputStream stream)
      * @exception IOException  If there is an error in closing the stream
      *                         or socket.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.132 -0500", hash_original_method = "E93BEE50684598E86CF4860142BFC855", hash_generated_method = "5E58DC0AD70210253ADAC11CE7F86386")
     
 public void close() throws IOException

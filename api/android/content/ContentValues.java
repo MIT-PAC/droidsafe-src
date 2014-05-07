@@ -21,6 +21,7 @@ public final class ContentValues implements Parcelable {
 
     public static final Parcelable.Creator<ContentValues> CREATOR =
             new Parcelable.Creator<ContentValues>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.466 -0500", hash_original_method = "408F12EF384AFD72C1D92CDACF4EC38C", hash_generated_method = "A371E979F18D3337928B454C76A92DA5")
         
 @SuppressWarnings({"deprecation", "unchecked"})

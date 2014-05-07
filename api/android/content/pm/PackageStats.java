@@ -7,17 +7,13 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class PackageStats implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.281 -0400", hash_original_field = "A51559A5F0F1A83FF690A9B06BA373A2", hash_generated_field = "F7104BE96BB04B81156FA1552CDC726B")
 
     public static final Parcelable.Creator<PackageStats> CREATOR
             = new Parcelable.Creator<PackageStats>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:45.124 -0500", hash_original_method = "58C55B3A1DD51A94C15BFC575DA60AB7", hash_generated_method = "F038BAA6457C2DF4F3237166A110B9D7")
         
 public PackageStats createFromParcel(Parcel in) {

@@ -16,7 +16,8 @@ public class WifiP2pInfo implements Parcelable {
 
     public static final Creator<WifiP2pInfo> CREATOR =
         new Creator<WifiP2pInfo>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.382 -0500", hash_original_method = "495509163C5863569FB618FB24832814", hash_generated_method = "B41D7DA78EFFE4B989128A612A0EC681")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.382 -0500", hash_original_method = "495509163C5863569FB618FB24832814", hash_generated_method = "B41D7DA78EFFE4B989128A612A0EC681")
         
 public WifiP2pInfo createFromParcel(Parcel in) {
                 WifiP2pInfo info = new WifiP2pInfo();

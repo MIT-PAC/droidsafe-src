@@ -28,6 +28,7 @@ public LogWriter(String tag) {
         mTag = tag;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.552 -0500", hash_original_method = "651C3299C6098C5206251D3395E7F56C", hash_generated_method = "1CD08D4D2256B0899718D98755C4D248")
     
 @Override public void close() {
@@ -40,6 +41,8 @@ public LogWriter(String tag) {
         flushBuilder();
     }
 
+    @DSSink(DSSinkKind.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.558 -0500", hash_original_method = "87C8CDE1CE20D2763C465BB465CBAFDD", hash_generated_method = "72F623F59FC9F90F70CCD532565A22B3")
     
 @Override public void write(char[] buf, int offset, int count) {

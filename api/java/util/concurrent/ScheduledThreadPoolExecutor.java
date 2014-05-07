@@ -612,7 +612,7 @@ boolean getRemoveOnCancelPolicy() { // android-changed
      * @throws SecurityException {@inheritDoc}
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.089 -0500", hash_original_method = "06AE3A71ACDF5D94BFF2BA3486ECC61C", hash_generated_method = "EECA67464F24515745E21751DF906EFD")
     
 public void shutdown() {
@@ -641,8 +641,8 @@ public void shutdown() {
      * @throws SecurityException {@inheritDoc}
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.THREADING)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.091 -0500", hash_original_method = "58CAE4CD18062B6710EA14E24E67D3BE", hash_generated_method = "4310F6E0C68CEDEE4A0BB22C75A7B842")
     
 public List<Runnable> shutdownNow() {

@@ -32,7 +32,8 @@ public CompatCreator(ParcelableCompatCreatorCallbacks<T> callbacks) {
             mCallbacks = callbacks;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_OTHERS)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.620 -0500", hash_original_method = "BC4263EA8B5E453C51CC1CF339ED2394", hash_generated_method = "4EA354AA332798A65F22A475A247ABD1")
         
 @Override

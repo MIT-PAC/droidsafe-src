@@ -120,6 +120,7 @@ public SelectorImpl(SelectorProvider selectorProvider) throws IOException {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.006 -0500", hash_original_method = "6BEEFC0027B3DD3AFC5CFC7324737402", hash_generated_method = "19F9D67FA1C2CC54A025B01F0B15EFB8")
     
 @Override public synchronized Set<SelectionKey> keys() {
@@ -299,6 +300,7 @@ private int processPollFds() throws IOException {
         return readyKeyCount;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.033 -0500", hash_original_method = "0EB011B4E4087026D6BA472324142821", hash_generated_method = "22D639DB95DB32BBCBC318EA4F80B5B4")
     
 @Override public synchronized Set<SelectionKey> selectedKeys() {

@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
 public interface ReadableByteChannel extends Channel {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSSource({DSSourceKind.IO})
+    @DSSpec(DSCat.IO)
+    @DSSource(DSSourceKind.IO)
     public int read(ByteBuffer buffer) throws IOException;
 }

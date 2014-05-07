@@ -101,9 +101,9 @@ public void write(char[] buf) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
-    @DSSink({DSSinkKind.IO})
+    @DSSink(DSSinkKind.IO)
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.993 -0500", hash_original_method = "FA39B0B4ACD833F007B6A5EFA706DF90", hash_generated_method = "1F14AD35BDAC531FAF76D6C9A1E9B3E0")
     
 public abstract void write(char[] buf, int offset, int count) throws IOException;

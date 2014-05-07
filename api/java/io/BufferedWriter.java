@@ -189,8 +189,8 @@ public void newLine() throws IOException {
      *             if this writer is closed or another I/O error occurs.
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink(DSSinkKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.424 -0500", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "210CE2FA3BEB7A9654223F17CE4CC4B5")
     
 @Override

@@ -84,6 +84,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
         }
     }
 
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.756 -0500", hash_original_method = "296E37D815DC1709C2AEF832AA03671B", hash_generated_method = "EFDD6A79C863EB4469F78CA98E03AF0A")
     
 @Override
@@ -100,6 +101,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
         }
     }
     
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.796 -0400", hash_original_method = "F8C86ADBC38F5FA5C922066DFA926032", hash_generated_method = "1A427FE4D75D4A651B4E08CFE65A510C")
     @Override
     public void setFeature(String name, boolean value) throws SAXNotRecognizedException {

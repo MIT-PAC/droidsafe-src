@@ -127,6 +127,7 @@ public DummyTabFactory(Context context) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:27.311 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
@@ -386,6 +387,7 @@ public void addTab(TabHost.TabSpec tabSpec, Class<?> clss, Bundle args) {
         setCurrentTabByTag(ss.curTab);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.618 -0500", hash_original_method = "797307ED4EF363D106B23877320FB5E5", hash_generated_method = "3EDCB157F125CBBD5C7AFD23E4765316")
     
 @Override

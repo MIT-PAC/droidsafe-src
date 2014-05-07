@@ -370,7 +370,7 @@ public synchronized StringBuffer append(char[] chars, int start, int length) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.090 -0500", hash_original_method = "52E39D47ECD902DE3C84A8ACBB2DE582", hash_generated_method = "26FAB4B9F051634BC64E4723138FC5EF")
     
 @Override

@@ -10,17 +10,13 @@ import java.util.Map;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class PkgUsageStats implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.623 -0400", hash_original_field = "A6B7AD8516005FC7EA17662B9B408CF5", hash_generated_field = "65B1A44C53F3FF61EDA70C7F983455D7")
 
     public static final Parcelable.Creator<PkgUsageStats> CREATOR
     = new Parcelable.Creator<PkgUsageStats>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.151 -0500", hash_original_method = "9DA264EB5F24BD17A24D60210BE6F57D", hash_generated_method = "9365278431C65FB576B7576BBF93445D")
         
 public PkgUsageStats createFromParcel(Parcel in) {

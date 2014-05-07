@@ -43,10 +43,8 @@ public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClick
     private static final String TAG = "ListMenuPresenter";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.903 -0400", hash_original_field = "CE5F39C1E0AB5F760958B607370926F1", hash_generated_field = "1DC12F3A8197BE0E527127C9DFF8EC62")
 
-
     public static final String VIEWS_TAG = "android:menu:list";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.893 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
-
 
     Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.894 -0400", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "B03B4DAE3F576B7166425BEE37B96C5E")
@@ -57,10 +55,8 @@ public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClick
     MenuBuilder mMenu;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.896 -0400", hash_original_field = "B73614E12B984F9819EE1358997EAA4E", hash_generated_field = "B73614E12B984F9819EE1358997EAA4E")
 
-
     ExpandedMenuView mMenuView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.897 -0400", hash_original_field = "3244934A1DA054EDA8D434D3E5715CE4", hash_generated_field = "1847A8F34C35735278587A63D3DF790A")
-
 
     private int mItemIndexOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.898 -0400", hash_original_field = "3CCC257450CEEDF9DF4A1B3B44C1CD16", hash_generated_field = "3CCC257450CEEDF9DF4A1B3B44C1CD16")
@@ -71,13 +67,11 @@ public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClick
     int mItemLayoutRes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.900 -0400", hash_original_field = "1A99E72B6409E38FBCC780D1BAB4898D", hash_generated_field = "B05DD02C49016AA70EF55EB624CC40D3")
 
-
     private Callback mCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.901 -0400", hash_original_field = "85BD8C2F470603886C61D670BD662E5D", hash_generated_field = "85BD8C2F470603886C61D670BD662E5D")
 
     MenuAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.902 -0400", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
-
 
     private int mId;
 
@@ -308,6 +302,8 @@ public int getCount() {
             return count - 1;
         }
 
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        @DSSpec(DSCat.DB_CURSOR)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.928 -0400", hash_original_method = "73E2A4B1E49DC28C05ECD9BBA4CB2D70", hash_generated_method = "5EB7275EFDB5148D4A8658694B6545B8")
         
 public MenuItemImpl getItem(int position) {

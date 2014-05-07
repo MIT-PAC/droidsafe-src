@@ -685,6 +685,7 @@ CursorWrapperInner(Cursor cursor, IContentProvider icp) {
             mCloseGuard.open("close");
         }
 
+        @DSSafe(DSCat.DB_CURSOR)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.300 -0500", hash_original_method = "CB76115716387DD39854EA1927F29C52", hash_generated_method = "7F65D1A29AE0504F5BE5938803E17F7A")
         
 @Override

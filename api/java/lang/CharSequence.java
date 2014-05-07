@@ -8,11 +8,11 @@ import droidsafe.annotations.*;
 public interface CharSequence {
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public int length();
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public char charAt(int index);
     
     @DSComment("Abstract Method")

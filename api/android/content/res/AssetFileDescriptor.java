@@ -21,6 +21,7 @@ public class AssetFileDescriptor implements Parcelable {
 
     public static final Parcelable.Creator<AssetFileDescriptor> CREATOR
             = new Parcelable.Creator<AssetFileDescriptor>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.812 -0500", hash_original_method = "1A4F03E8300F0259C61020522681AA45", hash_generated_method = "1A68C4DFC8269B9003C31D1062EC747A")
         
 public AssetFileDescriptor createFromParcel(Parcel in) {
@@ -356,7 +357,8 @@ public AutoCloseOutputStream(AssetFileDescriptor fd) throws IOException {
             super.write(buffer);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSink(DSSinkKind.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.799 -0500", hash_original_method = "1210B34247DB6E03D45CB2428D3624D7", hash_generated_method = "332339B8451EA97A43A552B9C585D46F")
         
 @Override

@@ -262,6 +262,7 @@ private static byte[] concat(byte[]... arrays) {
 
     public static final Parcelable.Creator<NdefRecord> CREATOR =
             new Parcelable.Creator<NdefRecord>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.227 -0500", hash_original_method = "61F0FE49184683E1DD0D669A65FA9F65", hash_generated_method = "E825ACFCA65124C3B19A053A814992A0")
         
 public NdefRecord createFromParcel(Parcel in) {

@@ -9,11 +9,6 @@ import java.io.InputStream;
 
 import javax.net.ssl.SSLException;
 
-
-
-
-
-
 public final class SSLSocketInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.694 -0500", hash_original_field = "277DA66AE6A07AC9858104D25DCF4EE3", hash_generated_field = "5DBC1BD0478978FB5C08FDF3A66AC7FD")
 
@@ -79,6 +74,7 @@ protected void setEnd() {
      * Closes the stream
      * @throws  IOException
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.718 -0500", hash_original_method = "B0B2FCB9CE6FDF4EA578715FA3754421", hash_generated_method = "3FC5DF76B8480C3D8AA91CEAB9060C0C")
     
 @Override
@@ -111,7 +107,6 @@ protected void setEnd() {
         }
         return buffer[pos++] & 0xFF;
     }
-
     
     private class Adapter implements org.apache.harmony.xnet.provider.jsse.Appendable {
         
@@ -150,7 +145,6 @@ public void append(byte[] src) {
             System.arraycopy(src, 0, buffer, end, length);
             end = end + length;
         }
-
         
     }
 

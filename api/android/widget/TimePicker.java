@@ -516,6 +516,7 @@ private void updateAmPmControl() {
 
         @SuppressWarnings({"unused", "hiding"})
         public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
+            @DSSafe(DSCat.SAFE_OTHERS)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }

@@ -569,7 +569,8 @@ public Calendar getSelectedDay() {
             return mTotalWeekCount;
         }
 
-        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+        @DSSpec(DSCat.DB_CURSOR)
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.132 -0500", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "5E5284BEBB44E47AB169D2002D85C125")
         
 @Override
@@ -667,6 +668,7 @@ private void onDateTapped(Calendar day) {
             {
                 //Synthesized constructor
             }
+            @DSSafe(DSCat.ANDROID_CALLBACK)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.149 -0500", hash_original_method = "685EB340645172BC9B4FCDA0078720CA", hash_generated_method = "416B77B32FB67A3E1CDBED860A7F24C6")
             
 @Override

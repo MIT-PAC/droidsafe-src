@@ -30,7 +30,6 @@ import java.io.OutputStream;
  * @author Daniel F. Savarese
  ***/
 
-
 final class TelnetOutputStream extends OutputStream
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.691 -0500", hash_original_field = "C86EE9323E0FFDBCF8BA85F6EF05A76C", hash_generated_field = "3FE186602BDE6904EF3E01EF9B657DE2")
@@ -50,7 +49,6 @@ TelnetOutputStream(TelnetClient client)
         __client = client;
     }
 
-
     /***
      * Writes a byte to the stream.
      * <p>
@@ -58,6 +56,8 @@ TelnetOutputStream(TelnetClient client)
      * @exception IOException If an error occurs while writing to the underlying
      *            stream.
      ***/
+    @DSSink(DSSinkKind.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.716 -0500", hash_original_method = "7CB4C89F951B084D5A9568880FECD763", hash_generated_method = "FD10B01E03D296994182FBFE110A5ED1")
     
 public void write(int ch) throws IOException
@@ -111,7 +111,6 @@ public void write(int ch) throws IOException
         }
     }
 
-
     /***
      * Writes a byte array to the stream.
      * <p>
@@ -125,7 +124,6 @@ public void write(byte buffer[]) throws IOException
     {
         write(buffer, 0, buffer.length);
     }
-
 
     /***
      * Writes a number of bytes from a byte array to the stream starting from
@@ -157,6 +155,7 @@ public void flush() throws IOException
     }
 
     /*** Closes the stream. ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.734 -0500", hash_original_method = "03A9192B11B1B736885F96C916CDF0FD", hash_generated_method = "5B1061F01B494E85EEEDD7C8238270A5")
     
 public void close() throws IOException

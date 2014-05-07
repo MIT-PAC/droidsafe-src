@@ -176,7 +176,8 @@ public boolean isEnabled(int position) {
         return mFooterViewInfos.get(adjPosition - adapterCount).isSelectable;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.DB_CURSOR)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.819 -0500", hash_original_method = "5FB1DDE7849FB7B1EE35000192AE1125", hash_generated_method = "8918F8CAD06FC669E29BCDAAF4D39293")
     
 public Object getItem(int position) {

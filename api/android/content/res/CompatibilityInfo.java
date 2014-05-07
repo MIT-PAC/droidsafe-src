@@ -94,6 +94,7 @@ public static float computeCompatibleScaling(DisplayMetrics dm, DisplayMetrics o
 
     public static final Parcelable.Creator<CompatibilityInfo> CREATOR
             = new Parcelable.Creator<CompatibilityInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.216 -0500", hash_original_method = "2114E6EBB23116BFD4134066FF759826", hash_generated_method = "89274CD61C251EA445D8CD9D28BC58BE")
         
 public CompatibilityInfo createFromParcel(Parcel source) {

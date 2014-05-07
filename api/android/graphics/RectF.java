@@ -38,6 +38,7 @@ public static boolean intersects(RectF a, RectF b) {
         /**
          * Return a new rectangle from the data in the specified parcel.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.947 -0500", hash_original_method = "A6A0C6EE524221145489C3D66C6A94BD", hash_generated_method = "C45F9601A0A982039FA7B7D5119617E1")
         
 public RectF createFromParcel(Parcel in) {
@@ -67,8 +68,6 @@ public RectF[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.862 -0500", hash_original_field = "850F91B179F4198EC71F4EA92A267B16", hash_generated_field = "3601A2C074D2F75BE50976E0F9B684C6")
 
     public float bottom;
-
-    
     
     /**
      * Create a new empty RectF. All coordinates are initialized to 0.

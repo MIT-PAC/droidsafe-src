@@ -27,7 +27,7 @@ public class TextUtils {
         public MyCreator() {}
         
         @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         public CharSequence createFromParcel(Parcel p) {
             return new String();
         }
@@ -1581,6 +1581,7 @@ public Reverser(CharSequence source, int start, int end) {
             mEnd = end;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.918 -0500", hash_original_method = "7B7C0865096082EBDC6C915DBB65AA78", hash_generated_method = "8732E4B13C6B0C6FFDA4771F0D455861")
         
 public int length() {
@@ -1603,6 +1604,7 @@ public CharSequence subSequence(int start, int end) {
             return subSequence(0, length()).toString();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.925 -0500", hash_original_method = "54C9409C1585BDAF025F1FDAAC236D34", hash_generated_method = "284F9981F88BADBF1662D463E6BBD107")
         
 public char charAt(int off) {

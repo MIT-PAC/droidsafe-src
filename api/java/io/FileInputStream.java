@@ -103,7 +103,7 @@ public FileInputStream(String path) throws FileNotFoundException {
     }
 
     @DSComment("File Input Stream")
-    @DSSafe(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.122 -0500", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "0DF0B8874963515CB2F09EA5F083FA85")
     
 @Override

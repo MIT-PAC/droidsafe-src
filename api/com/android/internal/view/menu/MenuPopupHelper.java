@@ -425,7 +425,9 @@ public int getCount() {
             return items.size() - 1;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        @DSSpec(DSCat.DB_CURSOR)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.123 -0500", hash_original_method = "007AF294AD9B69A523B4CB65CF7063F8", hash_generated_method = "63D8E35105523D7DD84EA799E9DF2A2A")
         
 public MenuItemImpl getItem(int position) {

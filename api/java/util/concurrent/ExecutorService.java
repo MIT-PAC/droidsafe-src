@@ -10,11 +10,11 @@ import java.util.List;
 public interface ExecutorService extends Executor {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.SHARED_PREFERENCES)
     void shutdown();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.THREADING)
     List<Runnable> shutdownNow();
     
     @DSComment("Abstract Method")

@@ -434,7 +434,8 @@ public final K getKey() {
             return key;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_OTHERS)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.387 -0500", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "F012337EC034D28D12FEB60EC691650B")
         
 public final V getValue() {
@@ -660,6 +661,7 @@ for(int i = 0;i < size;i++)
             iter = (Iterator<K>) backingMap.keySet.getIterator();
         }
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @Override
         
         public boolean hasMoreElements() {
@@ -667,6 +669,7 @@ for(int i = 0;i < size;i++)
             return Hashtable.this.getTaintBoolean();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @Override
         
         public K nextElement() {
@@ -685,6 +688,7 @@ for(int i = 0;i < size;i++)
             iter = (Iterator<V>) backingMap.valuesCollection.getIterator();
         }
         
+        @DSSafe(DSCat.SAFE_OTHERS)
         @Override
         
         public boolean hasMoreElements() {
@@ -692,6 +696,7 @@ for(int i = 0;i < size;i++)
             return Hashtable.this.getTaintBoolean();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @Override
         
         public V nextElement() {

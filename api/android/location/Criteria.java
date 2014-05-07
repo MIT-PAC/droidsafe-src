@@ -39,6 +39,7 @@ public class Criteria implements Parcelable {
 
     public static final Parcelable.Creator<Criteria> CREATOR =
         new Parcelable.Creator<Criteria>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.343 -0500", hash_original_method = "30491C0C577618E547D91203358C6C24", hash_generated_method = "11A7C9509B71460E736768A86BF2D488")
         
 public Criteria createFromParcel(Parcel in) {

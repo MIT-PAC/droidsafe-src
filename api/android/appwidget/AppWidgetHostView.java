@@ -253,7 +253,8 @@ private int generateId() {
 
         public static final Parcelable.Creator<ParcelableSparseArray> CREATOR =
                 new Parcelable.Creator<ParcelableSparseArray>() {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.348 -0500", hash_original_method = "3205CF4E54D89354D52F839F1E99A1A2", hash_generated_method = "467BB9ECCEFE2242B9A388E9ECB88876")
+                    @DSSafe(DSCat.SAFE_OTHERS)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.348 -0500", hash_original_method = "3205CF4E54D89354D52F839F1E99A1A2", hash_generated_method = "467BB9ECCEFE2242B9A388E9ECB88876")
             
 public ParcelableSparseArray createFromParcel(Parcel source) {
                         final ParcelableSparseArray array = new ParcelableSparseArray();

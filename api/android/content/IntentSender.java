@@ -53,6 +53,7 @@ public static IntentSender readIntentSenderOrNullFromParcel(Parcel in) {
 
     public static final Parcelable.Creator<IntentSender> CREATOR
             = new Parcelable.Creator<IntentSender>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.935 -0500", hash_original_method = "9EBED1E4C9B1116F65CFE56A6D80D60B", hash_generated_method = "88ABDB7AAC9BACBFD6A52657F0A6A102")
         
 public IntentSender createFromParcel(Parcel in) {

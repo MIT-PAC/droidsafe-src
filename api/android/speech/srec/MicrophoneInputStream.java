@@ -17,7 +17,6 @@
  *                                                                           *
  *---------------------------------------------------------------------------*/
 
-
 package android.speech.srec;
 
 import droidsafe.annotations.*;
@@ -27,7 +26,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.IllegalStateException;
 
-
 /**
  * PCM input stream from the microphone, 16 bits per sample.
  */
@@ -36,7 +34,6 @@ public final class MicrophoneInputStream extends InputStream {
         System.loadLibrary("srec_jni");
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.743 -0400", hash_original_field = "05EDAC4E324E51DB104BC9BCCEFF419E", hash_generated_field = "2DBFFE27BD0D45B13A7068B2E631108C")
-
     
     private final static String TAG = "MicrophoneInputStream";
     
@@ -77,7 +74,6 @@ public final class MicrophoneInputStream extends InputStream {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:03.814 -0400", hash_original_method = "A77DE4AAC2F2576DAA0108397051350E", hash_generated_method = "59D355A5AF47503EFEE0FDCD5783E12D")
     
     private static void AudioRecordStop(int audioRecord) throws IOException{
@@ -89,7 +85,6 @@ public final class MicrophoneInputStream extends InputStream {
     private static void AudioRecordDelete(int audioRecord) throws IOException{
     	//Formerly a native method
     }
-
 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.744 -0400", hash_original_field = "5F013BAAA31E1DF6900F559C8F594142", hash_generated_field = "A368EA2657C9671E29F16BF39CB71192")
 
@@ -145,6 +140,7 @@ public MicrophoneInputStream(int sampleRate, int fifoDepth) throws IOException {
     /**
      * Closes this stream.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.754 -0400", hash_original_method = "08D0F54B07D5BDD02D87F89A064DB127", hash_generated_method = "B451B93FC07355C93F3077E905117FAB")
     
 @Override

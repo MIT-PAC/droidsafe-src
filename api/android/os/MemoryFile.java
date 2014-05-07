@@ -365,6 +365,8 @@ public OutputStream getOutputStream() {
             mOffset += count;
         }
 
+        @DSSink(DSSinkKind.IO)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.892 -0500", hash_original_method = "873021528A0C471EBDB778DCC5A89FEF", hash_generated_method = "75081660C8BCEE2C6DE095A6F5387D78")
         
 @Override

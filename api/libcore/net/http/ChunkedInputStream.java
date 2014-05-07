@@ -107,6 +107,7 @@ private void readChunkSize() throws IOException {
         return Math.min(in.available(), bytesRemainingInChunk);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.198 -0500", hash_original_method = "A3F7257F208C4120BEF39F0167994D8B", hash_generated_method = "43ADE6742C42963FB294025234398842")
     
 @Override public void close() throws IOException {

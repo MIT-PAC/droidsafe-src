@@ -98,7 +98,8 @@ public final Enumeration getIds() {
         final Iterator<SSLSession> i = sessionIterator();
         return new Enumeration<byte[]>() {
             private SSLSession next;
-            public boolean hasMoreElements() {
+            @DSSafe(DSCat.SAFE_OTHERS)
+        public boolean hasMoreElements() {
                 if (next != null) {
                     return true;
                 }
@@ -112,7 +113,8 @@ public final Enumeration getIds() {
                 next = null;
                 return false;
             }
-            public byte[] nextElement() {
+            @DSSafe(DSCat.SAFE_OTHERS)
+        public byte[] nextElement() {
                 if (hasMoreElements()) {
                     byte[] id = next.getId();
                     next = null;

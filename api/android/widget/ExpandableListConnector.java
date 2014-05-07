@@ -372,7 +372,8 @@ public int getCount() {
         return mExpandableListAdapter.getGroupCount() + mTotalExpChildrenCount;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.DB_CURSOR)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.784 -0500", hash_original_method = "06B72D417088BC3B17164CA741049075", hash_generated_method = "AB9F9881D27F80592D3E7BA9E009E48F")
     
 public Object getItem(int flatListPos) {
@@ -928,6 +929,7 @@ static GroupMetadata obtain(int flPos, int lastChildFlPos, int gPos, long gId) {
         public static final Parcelable.Creator<GroupMetadata> CREATOR =
                 new Parcelable.Creator<GroupMetadata>() {
             
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.862 -0500", hash_original_method = "7666142641B123E4C50AF29F73470D4C", hash_generated_method = "EC2ECA427037B9F9CB737317DAE26498")
             
 public GroupMetadata createFromParcel(Parcel in) {

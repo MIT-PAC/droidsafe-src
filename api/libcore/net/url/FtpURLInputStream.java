@@ -10,17 +10,11 @@ import java.net.Socket;
 
 import libcore.io.IoUtils;
 
-
-
-
-
 class FtpURLInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.603 -0500", hash_original_field = "B25CAE9BF82BA95FEFAA4B1FEB647560", hash_generated_field = "2E5ED6972CC94407ADA802F01B2A91D3")
 
-
     private InputStream is;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.605 -0500", hash_original_field = "6CF25C888D3E662FD8C4A2A5DD7D4D81", hash_generated_field = "29D7DAD04AED0A3F698C92F271D7CD33")
-
 
     private Socket controlSocket;
 
@@ -66,6 +60,7 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
         return is.markSupported();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.623 -0500", hash_original_method = "AA12D47EE60CC78A392E105684A425D9", hash_generated_method = "81DA28F4488AF203BA7DC1CABC0994B2")
     
 @Override
@@ -87,7 +82,6 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
     public long skip(long byteCount) throws IOException {
         return is.skip(byteCount);
     }
-
     
 }
 

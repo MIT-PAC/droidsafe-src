@@ -44,30 +44,30 @@ public class DSCursor implements Cursor {
 		addTaint(selection.getTaint());
 		addTaint(selectionArgs.toString().getTaint());
 		addTaint(sortOrder.getTaint());
-	}	
+	}
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSafe(DSCat.DB_CURSOR)
+    
     public int getColumnCount() {
         return 0;
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSafe(DSCat.DB_CURSOR)
+    
     public int getColumnIndex(String columnName) {
         return 0;
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSafe(DSCat.DB_CURSOR)
+    
     public int getColumnIndexOrThrow(String columnName) {
         return getTaintInt();
     }
     
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public String getColumnName(int columnIndex) {
         String str = new String("DSUnknown");
@@ -75,15 +75,15 @@ public class DSCursor implements Cursor {
         return str;
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public String[] getColumnNames() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSafe(DSCat.DB_CURSOR)
+    
     public int getCount() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -94,14 +94,15 @@ public class DSCursor implements Cursor {
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public int getInt(int columnIndex) {
         return getTaintInt();
     }
 
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     public long getLong(int columnIndex) {
         return getTaintInt();
     }
@@ -124,33 +125,32 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public byte[] getBlob(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public String getString(int columnIndex) {
         return new String("DSUnknown");
     }
-
     
     public Bundle getExtras() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSafe(DSCat.DB_CURSOR)
+    
     public int getPosition() {
         return 0;
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSafe(DSCat.DB_CURSOR)
+    
     public boolean isAfterLast() {
         return true;
     }
@@ -173,24 +173,24 @@ public class DSCursor implements Cursor {
         return false;
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     public boolean move(int offset) {
         return true;
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     public boolean moveToFirst() {
         return true;
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     public boolean moveToLast() {
         return true;
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     public boolean moveToNext() {
         return true;
     }
@@ -200,7 +200,7 @@ public class DSCursor implements Cursor {
         return false;
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     public boolean moveToPosition(int position) {
         return false;
     }
@@ -216,26 +216,27 @@ public class DSCursor implements Cursor {
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     public void close() {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     public boolean isClosed() {
         return false;
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.DATABASE)
     public boolean requery() {
         return false;
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     public void registerContentObserver(ContentObserver observer) {
         observer.onChange(false);
     }
     
-    
+    @DSSafe(DSCat.DB_CURSOR)
     public void registerDataSetObserver(DataSetObserver observer) {
         observer.onChanged();
         observer.onInvalidated();
@@ -250,22 +251,25 @@ public class DSCursor implements Cursor {
         return false;
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @SuppressWarnings("deprecation")
     public void setNotificationUri(ContentResolver cr, Uri uri) {
         //?? what to model here??
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @SuppressWarnings("deprecation")
     public void unregisterContentObserver(ContentObserver observer) {
         
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @SuppressWarnings("deprecation")
     public void unregisterDataSetObserver(DataSetObserver observer) {
         
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DB_CURSOR)
     @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public int getType(int columnIndex) {
         return 0;

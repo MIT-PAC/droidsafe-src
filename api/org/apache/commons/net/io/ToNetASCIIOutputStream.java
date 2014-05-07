@@ -56,7 +56,6 @@ public ToNetASCIIOutputStream(OutputStream output)
         __lastWasCR = false;
     }
 
-
     /***
      * Writes a byte to the stream.    Note that a call to this method
      * may result in multiple writes to the underlying input stream in order
@@ -70,8 +69,8 @@ public ToNetASCIIOutputStream(OutputStream output)
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.134 -0500", hash_original_method = "C10D4A1492D25EED638CC1439313FEB4", hash_generated_method = "1EB1701C520BB6CD6B5B055C3516E7D2")
     @DSVerified
-    @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink(DSSinkKind.IO)
 public synchronized void write(int ch)
     throws IOException
     {
@@ -92,7 +91,6 @@ public synchronized void write(int ch)
         }
     }
 
-
     /***
      * Writes a byte array to the stream.
      * <p>
@@ -109,7 +107,6 @@ public synchronized void write(byte buffer[])
     {
         write(buffer, 0, buffer.length);
     }
-
 
     /***
      * Writes a number of bytes from a byte array to the stream starting from

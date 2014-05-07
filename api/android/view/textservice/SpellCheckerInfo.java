@@ -33,6 +33,7 @@ public final class SpellCheckerInfo implements Parcelable {
 
     public static final Parcelable.Creator<SpellCheckerInfo> CREATOR
             = new Parcelable.Creator<SpellCheckerInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.793 -0500", hash_original_method = "B57052E05D31390D8AC825C45000906A", hash_generated_method = "0657642A1B5397DC3654D5996FDE0020")
         
 @Override

@@ -53,7 +53,8 @@ public BasicManagedEntity(HttpEntity entity,
     }
 
     // non-javadoc, see interface HttpEntity
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.NETWORK)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.596 -0500", hash_original_method = "5A535D8BC3EB290E639D312782FBEB37", hash_generated_method = "90F1E79E69DFB56FB823CA4316A9689D")
     
 @Override

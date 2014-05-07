@@ -236,7 +236,7 @@ protected void clearError() {
      * If an I/O error occurs, this writer's error flag is set to {@code true}.
      */
     @DSComment("PrintWriter class")
-    @DSSafe(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.532 -0500", hash_original_method = "914ABB48E88E0FB5E2AF825917F549B2", hash_generated_method = "0DD80271147924135BA0F03FF3D404CE")
     
 @Override
@@ -733,6 +733,8 @@ protected void setError() {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the length of {@code buf}.
      */
+    @DSSink(DSSinkKind.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.597 -0500", hash_original_method = "F47BE159FF15FE26B09EE65FDEAB6B8C", hash_generated_method = "1B9EBB736966FD3B4151C6D420711072")
     
 @Override

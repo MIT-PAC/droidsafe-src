@@ -31,7 +31,8 @@ public interface HttpEntity {
     Header getContentEncoding();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.NETWORK)
+    @DSSource({DSSourceKind.NETWORK})
     InputStream getContent() throws IOException, IllegalStateException;
     
     @DSComment("Abstract Method")

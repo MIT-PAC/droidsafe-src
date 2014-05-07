@@ -91,6 +91,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
 
     public static final Parcelable.Creator<ApplicationInfo> CREATOR
             = new Parcelable.Creator<ApplicationInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.576 -0500", hash_original_method = "003CCA274078E72A658F6344F93CD336", hash_generated_method = "3C762487FC20080045E5B7AEE44AC9FA")
         
 public ApplicationInfo createFromParcel(Parcel source) {

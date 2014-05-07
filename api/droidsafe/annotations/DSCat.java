@@ -7,6 +7,7 @@ public enum DSCat {
     OS_GENERAL,
     FS_INFO,
     DATA_STRUCTURE,  
+    DB_CURSOR,
     MEM_BUFFER,
     SAFE_LIST,
     GUI,    
@@ -76,6 +77,7 @@ public enum DSCat {
     
     OS_LOW_LEVEL,    
     PACKAGE_INFO,
+    PACKAGE_MANAGER,
     PHONE_CALL,
     PHONE_STATE,
     POWER_MANAGER,
@@ -92,6 +94,7 @@ public enum DSCat {
     STORAGE_ACCESS,
     SYSTEM,
     SYSTEM_PREFERENCES,
+    SHARED_PREFERENCES,
     SYSTEM_SETTINGS,
     SECURITY,
     SERIALIZATION,

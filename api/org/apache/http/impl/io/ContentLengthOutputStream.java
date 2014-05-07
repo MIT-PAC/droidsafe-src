@@ -51,6 +51,7 @@ public ContentLengthOutputStream(final SessionOutputBuffer out, long contentLeng
      * 
      * @throws IOException If an I/O problem occurs.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.334 -0500", hash_original_method = "5088685B92B0533111B1789635B9B452", hash_generated_method = "26BE9D5EBA83E15A05E65873FF8E9852")
     
 public void close() throws IOException {
@@ -90,7 +91,8 @@ public void write(byte[] b) throws IOException {
         write(b, 0, b.length);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink(DSSinkKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.343 -0500", hash_original_method = "671E4413F0815DA1A7C3D0AAECD8B1E8", hash_generated_method = "54F2DB86A0AF3DDF4E6101BDDBD1BEE4")
     
 public void write(int b) throws IOException {

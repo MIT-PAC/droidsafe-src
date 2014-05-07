@@ -77,6 +77,7 @@ public final class DeviceAdminInfo implements Parcelable {
 
     public static final Parcelable.Creator<DeviceAdminInfo> CREATOR =
             new Parcelable.Creator<DeviceAdminInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.394 -0500", hash_original_method = "7A66852E579D848B03B48F35711A6790", hash_generated_method = "9D8871F81CE2CDD6B825CAAD289DB0F6")
         
 public DeviceAdminInfo createFromParcel(Parcel source) {

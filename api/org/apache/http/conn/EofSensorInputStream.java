@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
 public class EofSensorInputStream extends InputStream implements ConnectionReleaseTrigger {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.212 -0500", hash_original_field = "E9CE5FBAB081267F17B625AD291A8D53", hash_generated_field = "75EE73214070AB1FED136199F98CB7D5")
 
@@ -20,7 +17,6 @@ public class EofSensorInputStream extends InputStream implements ConnectionRelea
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.216 -0500", hash_original_field = "E8DC111D899A245C1B2C406ED53E1859", hash_generated_field = "604EC2A2F6D75D40086FC63DE46C1C59")
 
     private EofSensorWatcher eofWatcher;
-
 
     /**
      * Creates a new EOF sensor.
@@ -47,7 +43,6 @@ public EofSensorInputStream(final InputStream in,
         eofWatcher = watcher;
     }
 
-
     /**
      * Checks whether the underlying stream can be read from.
      *
@@ -65,7 +60,6 @@ protected boolean isReadAllowed() throws IOException {
         }
         return (wrappedStream != null);
     }
-
 
     // non-javadoc, see base class InputStream
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.224 -0500", hash_original_method = "EEFED13FF9B8A7AEEF5F21DDE66222B5", hash_generated_method = "F6963B5AC1FF9608BE1556EF67FD5BEC")
@@ -87,7 +81,6 @@ protected boolean isReadAllowed() throws IOException {
         return l;
     }
 
-
     // non-javadoc, see base class InputStream
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.227 -0500", hash_original_method = "140106DCDF4EB864C1587DEC2B46B903", hash_generated_method = "1569190AC85DA6991387237440E7D269")
     
@@ -108,7 +101,6 @@ protected boolean isReadAllowed() throws IOException {
         return l;
     }
 
-
     // non-javadoc, see base class InputStream
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.230 -0500", hash_original_method = "4F7157F64E168AA9C8D7643824C693E0", hash_generated_method = "26CB21DE6DFA075040FA5A38E66D16CE")
     
@@ -127,7 +119,6 @@ protected boolean isReadAllowed() throws IOException {
         }
         return l;
     }
-
 
     // non-javadoc, see base class InputStream
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.234 -0500", hash_original_method = "4A9A4C62148DEF77484BCFABD0B37515", hash_generated_method = "58A43ADF50A9853C54724443A3D0099A")
@@ -149,8 +140,8 @@ protected boolean isReadAllowed() throws IOException {
         return a;
     }
 
-
     // non-javadoc, see base class InputStream
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.236 -0500", hash_original_method = "BBB2789F4CB1F09FFDECF0070B286C07", hash_generated_method = "2E17330E15F266C5763B12993D02A116")
     
 @Override
@@ -159,7 +150,6 @@ protected boolean isReadAllowed() throws IOException {
         selfClosed = true;
         checkClose();
     }
-
 
     /**
      * Detects EOF and notifies the watcher.
@@ -194,7 +184,6 @@ protected void checkEOF(int eof) throws IOException {
         }
     }
 
-
     /**
      * Detects stream close and notifies the watcher.
      * There's not much to detect since this is called by {@link #close close}.
@@ -222,7 +211,6 @@ protected void checkClose() throws IOException {
             }
         }
     }
-
 
     /**
      * Detects stream abort and notifies the watcher.
@@ -254,7 +242,6 @@ protected void checkAbort() throws IOException {
         }
     }
 
-
     /**
      * Same as {@link #close close()}.
      */
@@ -278,7 +265,6 @@ public void abortConnection() throws IOException {
         selfClosed = true;
         checkAbort();
     }
-
     
 }
 

@@ -263,6 +263,7 @@ public String getKey() {
      * (non-Javadoc)
      * @see java.util.Map$Entry#getValue()
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.452 -0500", hash_original_method = "4618674F7CF871F15A32C0791ACD2466", hash_generated_method = "1934EA858DA05DEBA4327E847B52AB3D")
     
 public String getValue() {

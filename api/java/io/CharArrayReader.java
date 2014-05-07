@@ -78,6 +78,7 @@ public CharArrayReader(char[] buf, int offset, int length) {
      * longer read from it. Only the first invocation of this method has any
      * effect.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.624 -0500", hash_original_method = "D1485373461621933BC43F45AD6A923E", hash_generated_method = "0EFF8C92C50C1B5DB93451D6413713EA")
     
 @Override
@@ -208,6 +209,8 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource(DSSourceKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.642 -0500", hash_original_method = "D326846A8F32FE2907A115981466F659", hash_generated_method = "7649D3039C957740A4B1218A512321CB")
     
 @Override

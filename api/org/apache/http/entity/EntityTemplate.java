@@ -10,7 +10,6 @@ import java.io.IOException;
 public class EntityTemplate extends AbstractHttpEntity {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.587 -0500", hash_original_field = "210DBCA98895B7D0D277EF067D0F94AC", hash_generated_field = "A99FB28A10897E24D1BB65A3EC202A4B")
 
-
     private  ContentProducer contentproducer;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.589 -0500", hash_original_method = "00598D1ACBA1C09EA0328079C62636B7", hash_generated_method = "7F93FBB523AF8124A5F7D93951B5D8C7")
@@ -29,6 +28,8 @@ public long getContentLength() {
         return -1;
     }
 
+    @DSSafe(DSCat.NETWORK)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.594 -0500", hash_original_method = "34C97105122275A5F1AFAA7197ED4E75", hash_generated_method = "FEB25EA7DED1E40060FA9CBD5DD76910")
     
 public InputStream getContent() {
@@ -60,7 +61,6 @@ public boolean isStreaming() {
     
 public void consumeContent() throws IOException {
     }
-
     
 }
 

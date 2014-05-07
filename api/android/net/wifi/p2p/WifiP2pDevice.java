@@ -80,7 +80,8 @@ public class WifiP2pDevice implements Parcelable {
 
     public static final Creator<WifiP2pDevice> CREATOR =
         new Creator<WifiP2pDevice>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.283 -0500", hash_original_method = "5387382CA16A3AD5682D1C391F3488A3", hash_generated_method = "DB007C546816C2DDE05F93E41058B0E5")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.283 -0500", hash_original_method = "5387382CA16A3AD5682D1C391F3488A3", hash_generated_method = "DB007C546816C2DDE05F93E41058B0E5")
         
 public WifiP2pDevice createFromParcel(Parcel in) {
                 WifiP2pDevice device = new WifiP2pDevice();

@@ -78,8 +78,8 @@ public StringEntity(final String s, String charset)
 	}
 
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.NETWORK)
+    @DSSource({DSSourceKind.NETWORK})
     @Override
 	public InputStream getContent() throws IOException, IllegalStateException {
 		// TODO Auto-generated method stub

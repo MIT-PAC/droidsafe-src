@@ -26,6 +26,7 @@ public class AppWidgetProviderInfo implements Parcelable {
     public static final Parcelable.Creator<AppWidgetProviderInfo> CREATOR
             = new Parcelable.Creator<AppWidgetProviderInfo>()
     {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.213 -0500", hash_original_method = "9F6E2268C17C614C77BDB86A1C281911", hash_generated_method = "7CF35D729B98B4ABDC4961BF9B28064A")
         
 public AppWidgetProviderInfo createFromParcel(Parcel parcel)

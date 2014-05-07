@@ -45,6 +45,7 @@ public FixedLengthOutputStream(OutputStream socketOut, int bytesRemaining) {
         socketOut.flush();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.497 -0500", hash_original_method = "FCB6BF5DC7C6AA8912495FC6DAF3D35C", hash_generated_method = "079CB3A803854F6F5634D5FA3EFEAB3A")
     
 @Override public void close() throws IOException {

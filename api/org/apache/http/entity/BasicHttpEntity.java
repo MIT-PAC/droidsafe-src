@@ -50,7 +50,8 @@ public long getContentLength() {
      *          if the content has been obtained before, or
      *          has not yet been provided
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.NETWORK)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.285 -0500", hash_original_method = "DD43DF1BE34625633489098C75403E56", hash_generated_method = "7699A858A6F34F95A95A5ED2ACB23D2A")
     
 public InputStream getContent()

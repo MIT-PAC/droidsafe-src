@@ -169,6 +169,7 @@ public static VerifierDeviceIdentity parse(String deviceIdentity)
 
     public static final Parcelable.Creator<VerifierDeviceIdentity> CREATOR
             = new Parcelable.Creator<VerifierDeviceIdentity>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.296 -0500", hash_original_method = "99DD28BEE7AB4272AC90CC3853107043", hash_generated_method = "CB7F11B01B5E9F7B1F70E0E46EB55613")
         
 public VerifierDeviceIdentity createFromParcel(Parcel source) {

@@ -23,6 +23,7 @@ public LazyDERConstructionEnumeration(byte[] encoded)
         nextObj = readObject();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.590 -0500", hash_original_method = "DE6A082C3D4BE08EE722248DFA2ED752", hash_generated_method = "3E9BC425441608BDA81D5621012B4336")
     
 public boolean hasMoreElements()
@@ -30,6 +31,7 @@ public boolean hasMoreElements()
         return nextObj != null;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.592 -0500", hash_original_method = "7A36257711540715C5E7C9FBD3EAD6E1", hash_generated_method = "26B857524E390BF45A4BC93EE3A0A75E")
     
 public Object nextElement()

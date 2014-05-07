@@ -63,6 +63,8 @@ public Base64OutputStream(OutputStream out, int flags, boolean encode) {
         }
     }
 
+    @DSSink(DSSinkKind.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.732 -0500", hash_original_method = "FE73EB52D6E189AC5420897BE3BAB488", hash_generated_method = "1ADCACF23ED831A66C2E0CE629D2DBDC")
     
 public void write(int b) throws IOException {
@@ -105,6 +107,7 @@ public void write(byte[] b, int off, int len) throws IOException {
         internalWrite(b, off, len, false);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.739 -0500", hash_original_method = "17457DFCCCBD635753AB001ED5B818FB", hash_generated_method = "15381DEED18B66C2741AA8C2FA6A8DD8")
     
 public void close() throws IOException {

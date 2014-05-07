@@ -662,7 +662,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      *             if {@code index < 0} or {@code index >= length()}.
      */
     @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.844 -0500", hash_original_method = "87185450AF15BAF9DFFE5741D5928D9B", hash_generated_method = "272AD850E35F32A66C440BDE6E73AF76")
     
         public char charAt(int index){
@@ -1154,7 +1154,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * @return the number of characters in this string.
      */
     @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.937 -0500", hash_original_method = "026D3AE6EA7284BA85CF864429138595", hash_generated_method = "41F61E755A7C3306650DE1A02239C8F3")
     
         public int length(){

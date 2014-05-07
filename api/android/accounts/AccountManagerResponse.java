@@ -9,17 +9,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 
-
-
-
-
 public class AccountManagerResponse implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.380 -0400", hash_original_field = "C063FF2DAC7085FABC5A4118EBCC8FB6", hash_generated_field = "24EAF1DECF76FE87EC73D7C9E1E10A5E")
 
     public static final Creator<AccountManagerResponse> CREATOR =
             new Creator<AccountManagerResponse>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.077 -0500", hash_original_method = "BC1F78C1DE1163CF39ECBF698C4F20F7", hash_generated_method = "92989100502057C5AC3E470095E1578D")
         
 public AccountManagerResponse createFromParcel(Parcel source) {

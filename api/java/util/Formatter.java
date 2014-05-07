@@ -525,7 +525,7 @@ public void flush() {
      * {@code Formatter} has been closed will raise a {@code FormatterClosedException}.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.923 -0500", hash_original_method = "16C1939C51EF65BBD0A872F925CE78BF", hash_generated_method = "5959B1B6060902934AAAD616AD5F40BD")
     
 public void close() {

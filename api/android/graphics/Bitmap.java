@@ -574,6 +574,7 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
          * @param p    Parcel object to read the bitmap from
          * @return a new bitmap created from the data in the parcel
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.869 -0500", hash_original_method = "A576610C1F5A8AE8D31C4E9A14C2AA39", hash_generated_method = "D8C5F10FF7DDB7A0C2AAF5AD8A55B3CB")
         
 public Bitmap createFromParcel(Parcel p) {

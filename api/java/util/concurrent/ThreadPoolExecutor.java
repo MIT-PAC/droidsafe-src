@@ -966,6 +966,7 @@ public void execute(Runnable command) {
      *
      * @throws SecurityException {@inheritDoc}
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.884 -0500", hash_original_method = "B2E77DE3594C1CCAEA14C26F5B572C39", hash_generated_method = "A6FA5A4736D01AF06261A4017AE2C456")
     
 public void shutdown() {
@@ -999,7 +1000,8 @@ public void shutdown() {
      *
      * @throws SecurityException {@inheritDoc}
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.THREADING)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.886 -0500", hash_original_method = "D65CB76EC87687B7E50B9EEFFDD4C298", hash_generated_method = "0B105F0D7B3C003781CFF00F947B8982")
     
 public List<Runnable> shutdownNow() {
@@ -1018,6 +1020,7 @@ public List<Runnable> shutdownNow() {
         return tasks;
     }
 
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.888 -0500", hash_original_method = "968CAF504B3356CA71CED595275477F9", hash_generated_method = "1542BBFFA0EB9F56281F65599B489EEF")
     
 public boolean isShutdown() {
@@ -1051,7 +1054,7 @@ public boolean isTerminated() {
     }
 
     @DSComment("No action/impact")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.896 -0500", hash_original_method = "D4E88A24481EFB5D05D58739D7C6B24D", hash_generated_method = "285C3A629BCBC28461A60C9C13908699")
     
 public boolean awaitTermination(long timeout, TimeUnit unit)

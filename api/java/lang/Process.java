@@ -60,8 +60,9 @@ public abstract InputStream getErrorStream();
      *         the native process.
      */
     
+    @DSSource(DSSourceKind.IO)
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.958 -0500", hash_original_method = "422D86606304C3F8D9976A0E2284F13F", hash_generated_method = "556020BF6265A6C5614B1CFEE9E2FBA9")
     
 public abstract InputStream getInputStream();
@@ -88,7 +89,7 @@ public abstract OutputStream getOutputStream();
      *             if the calling thread is interrupted.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.962 -0500", hash_original_method = "1FBBA10249C9A6533D34170DE8056745", hash_generated_method = "691F1C6425EB7CF64F1CD4B894D399D7")
     
 public abstract int waitFor() throws InterruptedException;

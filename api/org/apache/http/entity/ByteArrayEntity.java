@@ -37,7 +37,8 @@ public long getContentLength() {
         return this.content.length;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.NETWORK)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.675 -0500", hash_original_method = "004C3F78EC3F500E7D7F762D94BAEB0E", hash_generated_method = "27D3D214D0211F80B5801B5EB21C0033")
     
 public InputStream getContent() {

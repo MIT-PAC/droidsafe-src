@@ -433,6 +433,7 @@ switch(attr){
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.811 -0400", hash_original_method = "EB7C68519BBD5935E699A038D5D44150", hash_generated_method = "B48049B66BF8F951F384E441F62028D6")
     private void initGestureDetector() {
         mGestureDetector = new GestureDetector(getContext(), new GestureDetector.SimpleOnGestureListener() {        
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.804 -0400", hash_original_method = "2781C8B4D42D388F24DF994E21193B51", hash_generated_method = "26649D2363A79B40F6DBE27649621A15")
         @Override
         public boolean onFling(MotionEvent me1, MotionEvent me2, 

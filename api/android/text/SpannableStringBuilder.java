@@ -157,7 +157,7 @@ public SpannableStringBuilder(CharSequence text, int start, int end) {
      * Return the char at the specified offset within the buffer.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.780 -0500", hash_original_method = "8A39C40193810117501439EDABBFE6E5", hash_generated_method = "648001FDA029DADEC8796D207B8A9CB3")
     
 public char charAt(int where) {
@@ -175,7 +175,7 @@ public char charAt(int where) {
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Override
 	public int length() {
 		// TODO Auto-generated method stub

@@ -120,6 +120,7 @@ public PipedInputStream(PipedOutputStream out, int pipeSize) throws IOException 
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.855 -0500", hash_original_method = "3F663E82A2EB3C95CA9BF0AFC9912DC8", hash_generated_method = "DBB377E63B1D8B44DF2588167E13233A")
     
 @Override

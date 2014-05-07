@@ -259,8 +259,9 @@ public abstract FileChannel position(long offset) throws IOException;
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
+    @DSSource(DSSourceKind.IO)
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.375 -0500", hash_original_method = "DE356E2CF3D3B7BE8C5411B6AE364543", hash_generated_method = "E4614D8711BA6249DDF8157E192C267E")
     
 public abstract int read(ByteBuffer buffer) throws IOException;
@@ -598,8 +599,9 @@ public abstract FileLock tryLock(long position, long size, boolean shared)
      *             if another I/O error occurs, details are in the message.
      * @see java.nio.channels.WritableByteChannel#write(java.nio.ByteBuffer)
      */
+    @DSSink(DSSinkKind.IO)
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.401 -0500", hash_original_method = "D87BCA67F95D1FD6B9CB7D4E4ADD1B2A", hash_generated_method = "FA9F2388453D6D813A2368038E57E8FD")
     
 public abstract int write(ByteBuffer src) throws IOException;

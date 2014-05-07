@@ -2546,8 +2546,8 @@ public LayoutInflater getLayoutInflater() {
     
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.IPC)
-    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
+    @DSSink(DSSinkKind.START_ACTIVITY)
     @Override public void startActivity(Intent intent){
 		onActivityResult(-1, -1, intent);
 		
@@ -2592,8 +2592,8 @@ public LayoutInflater getLayoutInflater() {
      * @see #startActivityForResult
      */
     @DSVerified
-    @DSSpec(DSCat.IPC)
-    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
+    @DSSink(DSSinkKind.START_ACTIVITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.156 -0500", hash_original_method = "E2A55AFC4750254BD88786F18353EE8B", hash_generated_method = "0DAB0CC521B4AF9EA1AD5FA3E319D475")
     @Override
     public void startActivities(Intent[] intents) {
@@ -3276,8 +3276,8 @@ public SharedPreferences getPreferences(int mode) {
 	}
     
 	@DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @Override public Object getSystemService(String name){
        
         if (DroidSafeAndroidRuntime.control || getBaseContext()==null) {

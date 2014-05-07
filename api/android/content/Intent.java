@@ -1180,7 +1180,8 @@ public static ShortcutIconResource fromContext(Context context, int resourceId) 
         public static final Parcelable.Creator<ShortcutIconResource> CREATOR =
             new Parcelable.Creator<ShortcutIconResource>() {
 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:08.720 -0500", hash_original_method = "E5EFB41AF12EFD491D45E99DE4F055C4", hash_generated_method = "B87C27F2C8D77B5D6F6D753DDE5B9250")
+                @DSSafe(DSCat.SAFE_OTHERS)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:08.720 -0500", hash_original_method = "E5EFB41AF12EFD491D45E99DE4F055C4", hash_generated_method = "B87C27F2C8D77B5D6F6D753DDE5B9250")
             
 public ShortcutIconResource createFromParcel(Parcel source) {
                     ShortcutIconResource icon = new ShortcutIconResource();
@@ -1618,6 +1619,7 @@ public Intent getIntent() {
 
     public static final Parcelable.Creator<Intent> CREATOR
             = new Parcelable.Creator<Intent>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.617 -0500", hash_original_method = "F9E3C09B709E0EDEDA66B8BB83B427D5", hash_generated_method = "D17491F45B3D1A9A7E33CB57F7E14A74")
         
 public Intent createFromParcel(Parcel in) {

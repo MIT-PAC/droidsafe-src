@@ -360,8 +360,9 @@ public Context getContext() {
         //return mObjects.size();
     }
     
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Binding data, need modeling to be safe")
-    @DSSafe(DSCat.GUI)
+    @DSSpec(DSCat.DB_CURSOR)
     
     @Override
 	public Object getItem(int position) {

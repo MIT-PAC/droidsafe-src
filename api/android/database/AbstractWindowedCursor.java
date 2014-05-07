@@ -17,7 +17,8 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         //Synthesized constructor
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.411 -0500", hash_original_method = "87598253341A04422FF4D21C2BB371F4", hash_generated_method = "21FE6FECFF3DC1D03A016E10D2E7469B")
     
 @Override
@@ -26,7 +27,8 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return mWindow.getBlob(mPos, columnIndex);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.414 -0500", hash_original_method = "80DC04F99A2A57F6C5D41327EC1C50ED", hash_generated_method = "C992940AFCBA03006566656CC0E01999")
     
 @Override
@@ -52,7 +54,8 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return mWindow.getShort(mPos, columnIndex);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.422 -0500", hash_original_method = "A77BC22B3B7D8AA9E2F50FAA1FFFE93C", hash_generated_method = "D9878E6509B31529282362BE1FFF8794")
     
 @Override
@@ -61,7 +64,8 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return mWindow.getInt(mPos, columnIndex);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.424 -0500", hash_original_method = "32AD2A447F72132C95E38AB4CD7276EC", hash_generated_method = "5C325188E6F256F8EE3948C10BDA5743")
     
 @Override
@@ -136,7 +140,8 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return toTaintBoolean(getType(columnIndex) + Cursor.FIELD_TYPE_FLOAT);
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.443 -0500", hash_original_method = "CEEA013C273D2B30A1533873F1614E01", hash_generated_method = "92C7A4CC93BCFF4C40C086DA167A8234")
     
 @Override

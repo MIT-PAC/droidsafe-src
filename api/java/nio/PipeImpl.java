@@ -64,6 +64,7 @@ public PipeImpl() throws IOException {
 private FdCloser(FileDescriptor fd) {
             this.fd = fd;
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.263 -0500", hash_original_method = "086A2D08812022B74CB094B0E86783F6", hash_generated_method = "5DF46B8BB272C1F28F0E5FC3E72691A6")
         
 public void close() throws IOException {
@@ -100,6 +101,8 @@ private PipeSourceChannel(FileDescriptor fd) throws IOException {
             IoUtils.setBlocking(getFD(), blocking);
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource(DSSourceKind.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.282 -0500", hash_original_method = "330EC47CD6DC6EBB9C85D6C0A0075684", hash_generated_method = "4939ADC91FAFF328D02F14DFA3CA1CB4")
         
 public int read(ByteBuffer buffer) throws IOException {
@@ -155,7 +158,8 @@ private PipeSinkChannel(FileDescriptor fd) throws IOException {
             IoUtils.setBlocking(getFD(), blocking);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        @DSSink(DSSinkKind.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.309 -0500", hash_original_method = "9BC03C30CAC8AF5ED6AA22DAB8C2126F", hash_generated_method = "2EC8E2959DE631A84FD0A6D37F43F586")
         
 public int write(ByteBuffer buffer) throws IOException {

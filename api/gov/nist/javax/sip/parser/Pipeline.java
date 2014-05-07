@@ -93,6 +93,7 @@ public void write(byte[] bytes) throws IOException {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.794 -0500", hash_original_method = "9D61CBBC55A04932A86EE90F3831850B", hash_generated_method = "CDDE287FF99A539B653DF429E5750A4C")
     
 public void close() throws IOException {

@@ -12,7 +12,7 @@ public interface ListIterator<E> extends Iterator<E> {
     void add(E object);
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public boolean hasNext();
     
     @DSComment("Abstract Method")
@@ -20,7 +20,7 @@ public interface ListIterator<E> extends Iterator<E> {
     public boolean hasPrevious();
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public E next();
     
     @DSComment("Abstract Method")

@@ -182,6 +182,7 @@ public abstract CharBuffer asReadOnlyBuffer();
      * @exception IndexOutOfBoundsException
      *                if the index is invalid.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.747 -0500", hash_original_method = "064ED2665DC7B0A0ED1B4C93428755B4", hash_generated_method = "E0528FF289F11D7D7DE35009840902E6")
     
 public final char charAt(int index) {
@@ -424,7 +425,7 @@ public abstract boolean isDirect();
      * @return the number of remaining chars.
      */
     @DSComment("memory buffer only")
-    @DSSafe(DSCat.MEM_BUFFER)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.777 -0500", hash_original_method = "C49AE9EB347B20902074CA3EBA57FA96", hash_generated_method = "F35DC62349F3AD30827027EE6CC83782")
     
 public final int length() {

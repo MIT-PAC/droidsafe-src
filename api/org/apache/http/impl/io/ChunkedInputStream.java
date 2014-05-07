@@ -245,6 +245,7 @@ private void parseTrailerHeaders() throws IOException {
      * next response without scanning.
      * @throws IOException If an IO problem occurs.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.206 -0500", hash_original_method = "7C0EA5C3612B6B07D60F3A7E9A05393C", hash_generated_method = "A0CD67C0024A67AF6FE62D0CDBFBCB76")
     
 public void close() throws IOException {

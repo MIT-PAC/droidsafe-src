@@ -46,7 +46,8 @@ public long getContentLength() {
         return this.length;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.NETWORK)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.502 -0500", hash_original_method = "ED2F9B5D6194544F22CDAF63FF5B39F6", hash_generated_method = "6B5E40E201EA1F5BBF016DD855C63153")
     
 public InputStream getContent() throws IOException {

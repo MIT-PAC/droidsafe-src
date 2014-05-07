@@ -530,7 +530,9 @@ public ActionBar.Tab getTab() {
             return mTabLayout.getChildCount();
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        @DSSpec(DSCat.DB_CURSOR)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.791 -0500", hash_original_method = "A98679EF5D46D1EF9814D015704A8113", hash_generated_method = "8A104B02EFEC88B3B0789A63A0438694")
         
 @Override

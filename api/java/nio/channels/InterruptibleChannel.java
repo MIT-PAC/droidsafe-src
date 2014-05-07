@@ -9,6 +9,6 @@ import java.io.IOException;
 public interface InterruptibleChannel extends Channel {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public void close() throws IOException;
 }

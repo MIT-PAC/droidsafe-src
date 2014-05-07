@@ -538,6 +538,7 @@ public String getString(int index) throws IOException {
             return inputStreamToString(getInputStream(index));
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.965 -0500", hash_original_method = "ECD6C2B86E4C6B719F1F8B8AE3B1A8FC", hash_generated_method = "B328862B1CDD3DD77DC537487BB637F1")
         
 @Override public void close() {
@@ -656,6 +657,8 @@ private FaultHidingOutputStream(OutputStream out) {
                 super(out);
             }
 
+            @DSSink(DSSinkKind.IO)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.996 -0500", hash_original_method = "99CEE7897D6B59DCCBF2A9FD6D32C932", hash_generated_method = "6C39B0CF2DD4ABCCAD25CFF7FF28C502")
             
 @Override public void write(int oneByte) {
@@ -676,6 +679,7 @@ private FaultHidingOutputStream(OutputStream out) {
                 }
             }
 
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.001 -0500", hash_original_method = "F955A307858660E97C305258EF6CF319", hash_generated_method = "214AD174D924F08694AA0C872FA681FC")
             
 @Override public void close() {
@@ -843,6 +847,7 @@ public synchronized void flush() throws IOException {
     /**
      * Closes this cache. Stored values will remain on the filesystem.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.942 -0500", hash_original_method = "99CE1AB60FDF93828647C541E1949F71", hash_generated_method = "5DFCE93F99CC30C5C7222F42DC2D6BD3")
     
 public synchronized void close() throws IOException {

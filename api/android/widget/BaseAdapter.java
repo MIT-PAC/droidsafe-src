@@ -27,8 +27,9 @@ public boolean hasStableIds() {
         return false;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSVerified
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.DB_CURSOR)
     public abstract Object getItem(int pos);
 
     @DSVerified

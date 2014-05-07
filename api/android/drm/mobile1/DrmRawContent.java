@@ -210,6 +210,7 @@ public long skip(long n) throws IOException {
         /* Non-javadoc
          * @see java.io.InputStream#close()
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.385 -0500", hash_original_method = "10D4C3BAF156E237AD0273689BD4B9BB", hash_generated_method = "FE341F2CD57CC8E7714B3A32EBC33782")
         
 public void close() {

@@ -69,7 +69,8 @@ public Header getContentEncoding() {
         return wrappedEntity.getContentEncoding();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.NETWORK)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.832 -0500", hash_original_method = "DDB93A3EE1E007696449240BA2D658FB", hash_generated_method = "49F44DDDCF30859499FEBA5D2E51B47E")
     
 public InputStream getContent()

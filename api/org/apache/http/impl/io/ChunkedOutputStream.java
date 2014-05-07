@@ -115,6 +115,8 @@ public void finish() throws IOException {
     }
 
     // -------------------------------------------- OutputStream Methods
+    @DSSink(DSSinkKind.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.523 -0500", hash_original_method = "97963AB3B21DB4797CA6C19C718B8A38", hash_generated_method = "CF1E450E6EB239C83DE93F69EFB91E68")
     
 public void write(int b) throws IOException {
@@ -168,6 +170,7 @@ public void flush() throws IOException {
      * Finishes writing to the underlying stream, but does NOT close the underlying stream.
      * @throws IOException
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.532 -0500", hash_original_method = "E495FD5BB343CF99481A29E811E92BD2", hash_generated_method = "0AF69A29991DEB492291E42E4EEA1909")
     
 public void close() throws IOException {

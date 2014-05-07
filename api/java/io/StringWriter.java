@@ -55,6 +55,7 @@ public StringWriter(int initialSize) {
      * @throws IOException
      *             if an error occurs while closing this writer.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.096 -0500", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "18141BA36FD6959CD13F78BAD6F7E786")
     
 @Override
@@ -115,6 +116,7 @@ public StringBuffer getBuffer() {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the size of {@code buf}.
      */
+    @DSSink(DSSinkKind.IO)
     @DSComment("Activity on IO class")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.106 -0500", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "9CDF0FF8BCA96E90FC2C10775DCA5372")

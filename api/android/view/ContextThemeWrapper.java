@@ -69,7 +69,8 @@ public class ContextThemeWrapper extends ContextWrapper {
         return mTheme;
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @Override
     
     public Object getSystemService(String name) {

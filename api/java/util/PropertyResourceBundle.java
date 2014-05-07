@@ -114,7 +114,8 @@ private boolean findNext() {
                 return false;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.753 -0500", hash_original_method = "0C8D02D40B56817F2309824D8D7773D2", hash_generated_method = "5ADB6DE9484CA7D74BE3178191CB527C")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.753 -0500", hash_original_method = "0C8D02D40B56817F2309824D8D7773D2", hash_generated_method = "5ADB6DE9484CA7D74BE3178191CB527C")
             
 public boolean hasMoreElements() {
                 if (local.hasMoreElements()) {
@@ -123,7 +124,8 @@ public boolean hasMoreElements() {
                 return findNext();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.756 -0500", hash_original_method = "BE1AA467D8342A7EF3FB49068D3D4458", hash_generated_method = "1C519444C9B1D12270F3414AC60E3B19")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.756 -0500", hash_original_method = "BE1AA467D8342A7EF3FB49068D3D4458", hash_generated_method = "1C519444C9B1D12270F3414AC60E3B19")
             
 public String nextElement() {
                 if (local.hasMoreElements()) {

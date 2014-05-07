@@ -285,6 +285,7 @@ public static void distanceBetween(double startLatitude, double startLongitude,
 
     public static final Parcelable.Creator<Location> CREATOR =
         new Parcelable.Creator<Location>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.449 -0500", hash_original_method = "DB5FDF146F5EA69FB4032FD10E69F8C9", hash_generated_method = "620B55AC234CBC6C107A09B2B3194145")
         
 public Location createFromParcel(Parcel in) {

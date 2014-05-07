@@ -44,6 +44,7 @@ public PipedOutputStream(PipedInputStream target) throws IOException {
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.411 -0500", hash_original_method = "3142FC22E0231F063D6673F4E3EF281C", hash_generated_method = "058144D82C5711D4E5D6FAF50756AB26")
     
 @Override
@@ -160,6 +161,8 @@ public void connect(PipedInputStream stream) throws IOException {
      *             closed or if the thread reading from the target stream is no
      *             longer alive. This case is currently not handled correctly.
      */
+    @DSSink(DSSinkKind.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.421 -0500", hash_original_method = "BFD8A7C0A63758DDB744E4CC4F7CF855", hash_generated_method = "F5F1191513F8689106647CDF8D5965FD")
     
 @Override

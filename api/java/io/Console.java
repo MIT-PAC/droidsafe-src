@@ -188,6 +188,7 @@ public ConsoleReader(InputStream in) throws IOException {
             lock = CONSOLE_LOCK;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.468 -0500", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "F57733FD7E5364F9B6017FD9FB0CBFAB")
         
 @Override
@@ -206,6 +207,7 @@ public ConsoleWriter(OutputStream out) {
             lock = CONSOLE_LOCK;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.476 -0500", hash_original_method = "75157B2273B6AA161A7B1B413AEDC095", hash_generated_method = "7617F52AD8B0DD3F40B73D9405DB5418")
         
 @Override

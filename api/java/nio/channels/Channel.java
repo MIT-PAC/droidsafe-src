@@ -14,6 +14,6 @@ public interface Channel extends Closeable {
     public boolean isOpen();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public void close() throws IOException;
 }

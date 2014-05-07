@@ -325,6 +325,8 @@ public int read(ByteBuffer buffer, long position) throws IOException {
         return readImpl(buffer, position);
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource(DSSourceKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.548 -0500", hash_original_method = "5BE7BADF8838BD61276F9CD3980F7CA7", hash_generated_method = "54A47B7BA1FF3C8CDFA763B26A6EAB46")
     
 public int read(ByteBuffer buffer) throws IOException {
@@ -537,7 +539,8 @@ public int write(ByteBuffer buffer, long position) throws IOException {
         return writeImpl(buffer, position);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink(DSSinkKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.580 -0500", hash_original_method = "50D91170AD5AAA80BF5888A2631505BE", hash_generated_method = "D23FCD9ADA11EB30655F72711AF5856C")
     
 public int write(ByteBuffer buffer) throws IOException {

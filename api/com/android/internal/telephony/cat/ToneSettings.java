@@ -12,6 +12,7 @@ public class ToneSettings implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.050 -0400", hash_original_field = "006B52A6764FB6E11133906A413EC74A", hash_generated_field = "FABADDC48937C3190B4F868CEBE56675")
 
     public static final Parcelable.Creator<ToneSettings> CREATOR = new Parcelable.Creator<ToneSettings>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.206 -0500", hash_original_method = "0AF8B6A3D7EC6128A504A6DF918A5419", hash_generated_method = "ECEB41C779D6358CAC1832A8D39688A6")
         
 public ToneSettings createFromParcel(Parcel in) {

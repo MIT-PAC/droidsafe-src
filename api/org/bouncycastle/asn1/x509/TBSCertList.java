@@ -15,11 +15,6 @@ import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERTaggedObject;
 import org.bouncycastle.asn1.DERUTCTime;
 
-
-
-
-
-
 public class TBSCertList extends ASN1Encodable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.239 -0500", hash_original_method = "2B7FC96E3864C0783582A15F9AFDEE89", hash_generated_method = "370AC8AE507B3DE0C02B7825ED66EF0D")
@@ -49,10 +44,8 @@ public static TBSCertList getInstance(
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.221 -0500", hash_original_field = "67B66723C4558F27E19029159A09253A", hash_generated_field = "67B66723C4558F27E19029159A09253A")
 
-
     ASN1Sequence     seq;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.223 -0500", hash_original_field = "E228CDE1667030A19BE9074EE632C2E6", hash_generated_field = "E228CDE1667030A19BE9074EE632C2E6")
-
 
     DERInteger              version;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.226 -0500", hash_original_field = "A9C2427A585DE5C2846E517FA208C326", hash_generated_field = "A9C2427A585DE5C2846E517FA208C326")
@@ -208,14 +201,12 @@ public DERObject toASN1Object()
     {
         return seq;
     }
-
     
     public static class CRLEntry extends ASN1Encodable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.179 -0500", hash_original_field = "67B66723C4558F27E19029159A09253A", hash_generated_field = "67B66723C4558F27E19029159A09253A")
 
         ASN1Sequence  seq;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.182 -0500", hash_original_field = "2B07ABA517A3C72D4D1AE840B26D1CBC", hash_generated_field = "2B07ABA517A3C72D4D1AE840B26D1CBC")
-
 
         DERInteger          userCertificate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.184 -0500", hash_original_field = "6E03E433A7A3E5DD51EB4D05094D4199", hash_generated_field = "6E03E433A7A3E5DD51EB4D05094D4199")
@@ -273,11 +264,8 @@ public DERObject toASN1Object()
         {
             return seq;
         }
-
         
     }
-
-
     
     private class RevokedCertificatesEnumeration implements Enumeration {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.204 -0500", hash_original_field = "B735AEAFD527E582CE7F6A25E23202C6", hash_generated_field = "B0D8CED81BAB00EB7CFC8DD7778DE583")
@@ -291,6 +279,7 @@ RevokedCertificatesEnumeration(Enumeration en)
             this.en = en;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.209 -0500", hash_original_method = "FBC842E02AF9214599A6659CADABA547", hash_generated_method = "42C3F6AFECCFF38DDF9B6CD323C5DD24")
         
 public boolean hasMoreElements()
@@ -298,17 +287,15 @@ public boolean hasMoreElements()
             return en.hasMoreElements();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.212 -0500", hash_original_method = "09463CFA8BEF092B2195E66AA891F38D", hash_generated_method = "B7C30A3A8828630412C17029CDD57588")
         
 public Object nextElement()
         {
             return new CRLEntry(ASN1Sequence.getInstance(en.nextElement()));
         }
-
         
     }
-
-
     
     private class EmptyEnumeration implements Enumeration {
         
@@ -317,6 +304,7 @@ public Object nextElement()
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.216 -0500", hash_original_method = "50CD0E92886EDA5BEE0164B092B351EC", hash_generated_method = "09B05EFBEE1C6D55350683F6624DF863")
         
 public boolean hasMoreElements()
@@ -324,17 +312,15 @@ public boolean hasMoreElements()
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.218 -0500", hash_original_method = "6A32EEF26E654AE1CD00BB3EBA8A611E", hash_generated_method = "1F2D8CE2FE354928B2AFA4255171FA33")
         
 public Object nextElement()
         {
             return null;   // TODO: check exception handling
         }
-
         
     }
-
-
     
 }
 

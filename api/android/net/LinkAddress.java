@@ -18,7 +18,8 @@ public class LinkAddress implements Parcelable {
 
     public static final Creator<LinkAddress> CREATOR =
         new Creator<LinkAddress>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.565 -0500", hash_original_method = "83B2C513933861A367E964D1BD3071CA", hash_generated_method = "433A3DB656F92B4C0F035F29F9FC8587")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.565 -0500", hash_original_method = "83B2C513933861A367E964D1BD3071CA", hash_generated_method = "433A3DB656F92B4C0F035F29F9FC8587")
         
 public LinkAddress createFromParcel(Parcel in) {
                 InetAddress address = null;

@@ -59,7 +59,8 @@ public List<Intent> getAndClearBroadcastIntents() {
         return intents;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.924 -0500", hash_original_method = "DB3EFD57F21462C44953D7817E2D1D0B", hash_generated_method = "B6347C1215DB4B2D838F5B1C3CDF3164")
     
 @Override
@@ -77,6 +78,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return false;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.929 -0500", hash_original_method = "D63A733B99C939E3B044BECFC3A4F3E0", hash_generated_method = "E5AAD7D4F72E710BD5DC260624ED288D")
     
 @Override
@@ -84,6 +86,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.931 -0500", hash_original_method = "5B78FE35E60043EEBC860B3845D6E056", hash_generated_method = "A88662890337D37F90176F4205A80740")
     
 @Override
@@ -91,7 +94,8 @@ public List<Intent> getAndClearBroadcastIntents() {
         // Ignore
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IPC)
+    @DSSink(DSSinkKind.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.933 -0500", hash_original_method = "8D436BAC12DD3DE12E9B49520E96DCDA", hash_generated_method = "FA0007733AD3841AD82594FBA54658F5")
     
 @Override
@@ -123,7 +127,8 @@ public List<Intent> getAndClearBroadcastIntents() {
         return PackageManager.PERMISSION_GRANTED;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.943 -0500", hash_original_method = "97D70C3E7E76864AF838B3F545C2E8EF", hash_generated_method = "2440E6E5B376D731C082D22B5AF4A5C1")
     
 @Override
@@ -135,7 +140,8 @@ public List<Intent> getAndClearBroadcastIntents() {
         return null;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.980 -0500", hash_original_method = "FE53204BB45F48ED45638BEC1B5AA1BA", hash_generated_method = "9CC56171776AE352EA27048C719E9A1D")
     
 @Override

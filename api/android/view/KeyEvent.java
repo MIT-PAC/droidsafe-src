@@ -1789,6 +1789,7 @@ public void handleUpEvent(KeyEvent event) {
     public static final Parcelable.Creator<KeyEvent> CREATOR
             = new Parcelable.Creator<KeyEvent>() {
     	
+        @DSSafe(DSCat.SAFE_OTHERS)
         public KeyEvent createFromParcel(Parcel in) {
     		addTaint(in.getTaint());
             in.readInt(); 

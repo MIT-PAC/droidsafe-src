@@ -14,6 +14,7 @@ public class NetworkQuotaInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.512 -0400", hash_original_field = "C30C13B2174CCA474AC0B4E26A8A8887", hash_generated_field = "10C90A69725B1168CB9C00401EAC67D7")
 
     public static final Creator<NetworkQuotaInfo> CREATOR = new Creator<NetworkQuotaInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.553 -0500", hash_original_method = "85674AC106ECA128FFF8A8B0ECC3EA12", hash_generated_method = "8110533B5D5CA0943FB28EE11803FFFC")
         
 public NetworkQuotaInfo createFromParcel(Parcel in) {

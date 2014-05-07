@@ -45,6 +45,7 @@ public static String getDeviceName(int id) {
 
     public static final Parcelable.Creator<UsbDevice> CREATOR =
         new Parcelable.Creator<UsbDevice>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.379 -0500", hash_original_method = "D327A311D3EFB3F1067E690218A60D9F", hash_generated_method = "5A696985A3716699EDC1B67C001A6FEA")
         
 public UsbDevice createFromParcel(Parcel in) {

@@ -30,6 +30,7 @@ protected HeaderIterator(SIPMessage sipMessage, SIPHeader sipHeader) {
         this.sipHeader = sipHeader;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.052 -0500", hash_original_method = "6FB6963A35AF87D8C9632D10AB0BDA7B", hash_generated_method = "EA23CD685AE3030BB57C56A459B29DDB")
     
 public Object next() throws NoSuchElementException {
@@ -88,6 +89,7 @@ public void remove() throws IllegalStateException {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.069 -0500", hash_original_method = "4022889478A9417F354658DD9E31C17D", hash_generated_method = "F4CEF0BA549C4836311517E1B518CBA4")
     
 public boolean hasNext() {

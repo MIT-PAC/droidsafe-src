@@ -529,6 +529,7 @@ public PlainSocketInputStream(PlainSocketImpl socketImpl) {
             return socketImpl.available();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.976 -0500", hash_original_method = "6270DBEE277D6F2FF2E49396D9FF160A", hash_generated_method = "7E74E92E43F9BAA71C71D362FC69910A")
         
 @Override public void close() throws IOException {
@@ -560,13 +561,15 @@ public PlainSocketOutputStream(PlainSocketImpl socketImpl) {
             this.socketImpl = socketImpl;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.996 -0500", hash_original_method = "6270DBEE277D6F2FF2E49396D9FF160A", hash_generated_method = "7E74E92E43F9BAA71C71D362FC69910A")
         
 @Override public void close() throws IOException {
             socketImpl.close();
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSink(DSSinkKind.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.999 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
         
 @Override public void write(int oneByte) throws IOException {

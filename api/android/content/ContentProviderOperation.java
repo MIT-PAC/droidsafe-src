@@ -79,6 +79,7 @@ public static Builder newAssertQuery(Uri uri) {
 
     public static final Creator<ContentProviderOperation> CREATOR =
             new Creator<ContentProviderOperation>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.160 -0500", hash_original_method = "51820FE0219C3C2B0FA218CF2A0EC3F5", hash_generated_method = "3CCA4777945F471406B35B4E567FB781")
         
 public ContentProviderOperation createFromParcel(Parcel source) {

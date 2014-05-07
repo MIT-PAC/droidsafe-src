@@ -16,6 +16,7 @@ public class GeocoderParams implements Parcelable {
 
     public static final Parcelable.Creator<GeocoderParams> CREATOR =
         new Parcelable.Creator<GeocoderParams>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.643 -0500", hash_original_method = "5BB7C3731AFCBE3C98518839DE06C7C6", hash_generated_method = "FE30200ABAAC02C5AB703BF15D44730E")
         
 public GeocoderParams createFromParcel(Parcel in) {

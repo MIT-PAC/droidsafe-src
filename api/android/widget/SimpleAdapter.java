@@ -84,7 +84,8 @@ public int getCount() {
     /**
      * @see android.widget.Adapter#getItem(int)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.DB_CURSOR)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.335 -0500", hash_original_method = "DCE185E9FC70557F4514C683017F4175", hash_generated_method = "8D686EFAA64456725DD2FB6EC7806F01")
     
 public Object getItem(int position) {

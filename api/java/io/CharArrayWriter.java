@@ -53,6 +53,7 @@ public CharArrayWriter(int initialSize) {
     /**
      * Closes this writer. The implementation in {@code CharArrayWriter} does nothing.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.958 -0500", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "4C888A472B6C97DE4C7EB736D1B2C05B")
     
 @Override
@@ -163,8 +164,9 @@ public char[] toCharArray() {
      *             if {@code offset < 0} or {@code len < 0}, or if
      *             {@code offset + len} is bigger than the size of {@code c}.
      */
+    @DSSink(DSSinkKind.IO)
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.975 -0500", hash_original_method = "17F94D6158075BE971F02096E85AEF33", hash_generated_method = "D05819EC49701A68141E334F53010F6E")
     
 @Override

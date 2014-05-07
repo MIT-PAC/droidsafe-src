@@ -26,6 +26,7 @@ public final class SuggestionsInfo implements Parcelable {
 
     public static final Parcelable.Creator<SuggestionsInfo> CREATOR
             = new Parcelable.Creator<SuggestionsInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.209 -0500", hash_original_method = "F97F550CBFC4BB9C72B2E6BDB6B999E6", hash_generated_method = "3EA9808572723A85D4BB42C2B93DB39F")
         
 @Override

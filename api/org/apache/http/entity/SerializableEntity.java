@@ -46,6 +46,8 @@ private void createBytes(Serializable ser) throws IOException {
         this.objSer = baos.toByteArray();
     }
     
+    @DSSafe(DSCat.NETWORK)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.189 -0500", hash_original_method = "41C62F9ED6209D6FC57675AB476C6A9C", hash_generated_method = "EAFE3C65EBC2C318522248C2A50F220A")
     
 public InputStream getContent() throws IOException, IllegalStateException {

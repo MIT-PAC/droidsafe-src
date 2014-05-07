@@ -273,6 +273,7 @@ private void init(Context context, boolean ignoreMultitouch) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.681 -0500", hash_original_method = "6CD5191C407A0B3CBB6F0A0F3D91B6D6", hash_generated_method = "F1C17BECC5417032DE6EA8755F8D44C0")
         
 public boolean onSingleTapUp(MotionEvent e) {
@@ -286,6 +287,7 @@ public boolean onSingleTapUp(MotionEvent e) {
 public void onLongPress(MotionEvent e) {
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.687 -0500", hash_original_method = "3D0A16086A925B93F4340895FE1B4CBC", hash_generated_method = "94A5CDB9EEDB8388B6F46AFEF8AC63B4")
         
 public boolean onScroll(MotionEvent e1, MotionEvent e2,
@@ -302,11 +304,13 @@ public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
             return false;
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.692 -0500", hash_original_method = "54A2BF3809B435C5302401FC76B54B22", hash_generated_method = "6513E9F2A0B7FC94EDB3BBA119443F8C")
         
 public void onShowPress(MotionEvent e) {
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.694 -0500", hash_original_method = "124BA11CC014942E61EFD87F7F37262C", hash_generated_method = "B3A81FAA49F630EF27C6AFFA59CBE49F")
         
 public boolean onDown(MotionEvent e) {
@@ -319,6 +323,7 @@ public boolean onDoubleTap(MotionEvent e) {
             return false;
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.699 -0500", hash_original_method = "D3FAA1FBAE0BE329BB5AEDA3CD619E7D", hash_generated_method = "F2909936AC699A2498E3CC3AD78BCEDB")
         
 public boolean onDoubleTapEvent(MotionEvent e) {
@@ -378,34 +383,34 @@ GestureHandler(Handler handler) {
     public interface OnGestureListener {
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         boolean onDown(MotionEvent e);
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         void onShowPress(MotionEvent e);
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         boolean onSingleTapUp(MotionEvent e);
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY);
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         void onLongPress(MotionEvent e);
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY);
     }
     
     public interface OnDoubleTapListener {
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         boolean onSingleTapConfirmed(MotionEvent e);
         
         @DSComment("Abstract Method")
@@ -413,7 +418,7 @@ GestureHandler(Handler handler) {
         boolean onDoubleTap(MotionEvent e);
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         boolean onDoubleTapEvent(MotionEvent e);
     }
 

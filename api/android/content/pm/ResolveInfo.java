@@ -20,6 +20,7 @@ public class ResolveInfo implements Parcelable {
 
     public static final Creator<ResolveInfo> CREATOR
             = new Creator<ResolveInfo>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.616 -0500", hash_original_method = "2EFE85D4E7AF81E923B1CAE80AA7FDC7", hash_generated_method = "F224919CC590333341253A2679D1F1C0")
         
 public ResolveInfo createFromParcel(Parcel source) {

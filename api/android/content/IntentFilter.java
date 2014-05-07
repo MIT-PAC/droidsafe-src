@@ -203,6 +203,7 @@ public static IntentFilter create(String action, String dataType) {
 
     public static final Parcelable.Creator<IntentFilter> CREATOR
             = new Parcelable.Creator<IntentFilter>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.909 -0500", hash_original_method = "6AFABEC7B0F2CE7FB89EA092702B6037", hash_generated_method = "A4E611978E149742988D9CAA7F3D195D")
         
 public IntentFilter createFromParcel(Parcel source) {

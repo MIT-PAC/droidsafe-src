@@ -59,7 +59,7 @@ void update(char[] sub, int substart, int subend) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.883 -0500", hash_original_method = "37BE7FFEC25E3F757ADB66C6F1A52CBB", hash_generated_method = "190A26A16D5CCDA3DA923FB44382D646")
     
 public char charAt(int off) {
@@ -70,7 +70,7 @@ public char charAt(int off) {
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Override
 	public int length() {
 		// TODO Auto-generated method stub

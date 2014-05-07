@@ -386,7 +386,7 @@ public abstract Iterator<E> iterator();
         }
         
         @Override
-            @DSSafe()
+            @DSSafe(DSCat.SAFE_OTHERS)
         public boolean hasNext() {
             // TODO Auto-generated method stub
             //return (current < len -1);
@@ -394,7 +394,7 @@ public abstract Iterator<E> iterator();
         }
 
         @Override
-            @DSSafe()
+            @DSSafe(DSCat.SAFE_OTHERS)
         public T next() {
             // TODO Auto-generated method stub
             return (T) collectionData[++current];
@@ -464,13 +464,15 @@ public abstract Iterator<E> iterator();
              start = 0;
          }
          
-         @Override
+         @DSSafe(DSCat.SAFE_OTHERS)
+        @Override
         
          public boolean hasNext(){
              return super.hasPrevious();
          }
          
-         @Override
+         @DSSafe(DSCat.SAFE_OTHERS)
+        @Override
         
          public T next() {
              return super.previous();
@@ -482,6 +484,7 @@ public abstract Iterator<E> iterator();
          public BasicEnumeration() {
              super();
          }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @Override
         
         public boolean hasMoreElements() {
@@ -489,6 +492,7 @@ public abstract Iterator<E> iterator();
             return hasNext();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @Override
         
         public T nextElement() {

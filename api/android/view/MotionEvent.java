@@ -1339,6 +1339,7 @@ public void copyFrom(PointerProperties other) {
 
     public static final Parcelable.Creator<MotionEvent> CREATOR
             = new Parcelable.Creator<MotionEvent>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:11.009 -0500", hash_original_method = "E988C06BFCE97E62AC2813BD29B32BEE", hash_generated_method = "EA7995B37BF37B0A751844672E9AEE92")
         
 public MotionEvent createFromParcel(Parcel in) {

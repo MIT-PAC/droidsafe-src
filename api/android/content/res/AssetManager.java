@@ -1027,6 +1027,7 @@ public final int available() throws IOException {
             long len = getAssetRemainingLength(mAsset);
             return len > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int)len;
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.956 -0500", hash_original_method = "DCE38A6652895F3698A02DE5A8538C09", hash_generated_method = "7F98211E936CF3939DA38782C58B948D")
         
 public final void close() throws IOException {

@@ -7,18 +7,14 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class StatusBarIcon implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.172 -0400", hash_original_field = "0817369B751A1EC947304389BAC8856A", hash_generated_field = "17A23CF6531EE973BFD4DDDD17F8E814")
 
     public static final Parcelable.Creator<StatusBarIcon> CREATOR
             = new Parcelable.Creator<StatusBarIcon>()
     {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:54.745 -0500", hash_original_method = "0CBF415FD85440100C0520ADBF6731D5", hash_generated_method = "10D2BAB95A8F878736012C4B66C57E50")
         
 public StatusBarIcon createFromParcel(Parcel parcel)

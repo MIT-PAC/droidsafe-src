@@ -38,6 +38,7 @@ final class FragmentState implements Parcelable {
 
     public static final Parcelable.Creator<FragmentState> CREATOR
             = new Parcelable.Creator<FragmentState>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.125 -0500", hash_original_method = "EC1ACE39B0D42EA269A848888E85A00F", hash_generated_method = "A5A88BD3A75C773BD237E8D2C9040999")
         
 public FragmentState createFromParcel(Parcel in) {
@@ -1798,6 +1799,7 @@ boolean performContextItemSelected(MenuItem item) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:55:56.313 -0500", hash_original_method = "F6A52F04C4D14500D0C1089F687B7F14", hash_generated_method = "FE85131981ECBA63EB19FB4392208C42")
             
 public SavedState createFromParcel(Parcel in) {

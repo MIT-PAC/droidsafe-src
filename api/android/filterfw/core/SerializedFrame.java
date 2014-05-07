@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -127,6 +126,8 @@ public byte[] getByteArray() {
             mOffset += len;
         }
 
+        @DSSink(DSSinkKind.IO)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.009 -0400", hash_original_method = "E8BCE52F682A74DB971811628682A338", hash_generated_method = "2112BD4FB2BB736357E81C1901E22034")
         
 @Override
@@ -154,7 +155,6 @@ public final DirectByteInputStream getInputStream() {
      */
     private class DirectByteInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.017 -0400", hash_original_field = "2CD4551D9C8A0105C8859C776CE5F7D1", hash_generated_field = "7E4499A9327E01BE29FA9A3BC04544AA")
-
 
         private byte[] mBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.019 -0400", hash_original_field = "332F7E50CDB1E660983C39BBE7FE470C", hash_generated_field = "ACEA92DCB8EDA7B954270B3D7BE26A3F")

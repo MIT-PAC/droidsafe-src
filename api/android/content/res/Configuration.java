@@ -18,6 +18,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         public MyCreator() {
 
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         public Configuration createFromParcel(Parcel source) {
             return new Configuration(source);
         }

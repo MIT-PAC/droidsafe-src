@@ -53,9 +53,8 @@ public interface CopyStreamListener extends EventListener
      *              bytes.
      */
     @DSVerified("callback called in CopyStreamAdapter")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void bytesTransferred(CopyStreamEvent event);
-
 
     /**
      * This method is not part of the JavaBeans model and is used by the
@@ -71,7 +70,7 @@ public interface CopyStreamListener extends EventListener
      *        the size is unknown.
      */
     @DSVerified("callback called in CopyStreamAdapter")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void bytesTransferred(long totalBytesTransferred,
                                  int bytesTransferred,
                                  long streamSize);

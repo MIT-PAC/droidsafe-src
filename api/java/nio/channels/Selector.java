@@ -49,7 +49,7 @@ protected Selector() {
      *             if an I/O error occurs.
      */
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.533 -0500", hash_original_method = "4E507319564A7E0BFD2A58D57A800811", hash_generated_method = "2228FF14FE1AFC53EB7399AA035D1509")
     
 public abstract void close() throws IOException;
@@ -61,7 +61,7 @@ public abstract void close() throws IOException;
      *         otherwise.
      */
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.535 -0500", hash_original_method = "3859B86249112A7F92BB670FE39C106E", hash_generated_method = "A6E9E1944A6F13F6632987071763E93D")
     
 public abstract boolean isOpen();
@@ -73,7 +73,7 @@ public abstract boolean isOpen();
      * @return the set of registered keys.
      */
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.537 -0500", hash_original_method = "3D740AA82C43C55A0EA14A5D7A87B32C", hash_generated_method = "406D8244664E464C6CFD740BCBBB050C")
     
 public abstract Set<SelectionKey> keys();
@@ -141,7 +141,7 @@ public abstract int select(long timeout) throws IOException;
      *             if the selector is closed.
      */
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.548 -0500", hash_original_method = "490F9E171813FF024137F574377AE5EF", hash_generated_method = "7546BF6D634D14B4D39D7777D52810AA")
     
 public abstract Set<SelectionKey> selectedKeys();

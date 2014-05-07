@@ -1301,7 +1301,8 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         return 0;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.PACKAGE_MANAGER)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.050 -0500", hash_original_method = "324289EEBFA692363CEA9B4C548C82A7", hash_generated_method = "34EBF4153AE405446EB1EAF65F614875")
     
 @Override

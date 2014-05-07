@@ -121,7 +121,7 @@ public int countTokens() {
      * @return {@code true} if unprocessed tokens remain.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.856 -0500", hash_original_method = "8165B2FDF405707BFEA9EF223873FBB9", hash_generated_method = "D5A6D5FD357EFF4FEB63192C5E0E5823")
     
 public boolean hasMoreElements() {
@@ -164,7 +164,7 @@ public boolean hasMoreTokens() {
      *                if no tokens remain.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.860 -0500", hash_original_method = "0727048C65431FDBB400A5F8931A38E2", hash_generated_method = "2634E1621F3C8D111804CB487E4DAB7A")
     
 public Object nextElement() {

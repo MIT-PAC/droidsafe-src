@@ -395,6 +395,8 @@ public void setDiskWriteResult(boolean result) {
             //Synthesized constructor
         }
 
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.895 -0500", hash_original_method = "EFFD7B235C5590A6C15EA464602A0862", hash_generated_method = "82DA87CBC74279FC655F72E59DBC7466")
         
 public Editor putString(String key, String value) {
@@ -411,6 +413,8 @@ public Editor putStringSet(String key, Set<String> values) {
                 return this;
             }
         }
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.899 -0500", hash_original_method = "B5181352BC82403801755A11BC05DCE9", hash_generated_method = "FEB23B5D5239BE73E48028E4AC67807F")
         
 public Editor putInt(String key, int value) {
@@ -419,6 +423,8 @@ public Editor putInt(String key, int value) {
                 return this;
             }
         }
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.902 -0500", hash_original_method = "2390F394A779B486378B9C93DB0AC773", hash_generated_method = "68A433FCEF6F5F18A8F0EFF50B293F1B")
         
 public Editor putLong(String key, long value) {
@@ -435,6 +441,8 @@ public Editor putFloat(String key, float value) {
                 return this;
             }
         }
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.906 -0500", hash_original_method = "FBC14C4FFFA5A0EBC88C6D503172C819", hash_generated_method = "B4DD0EC9BE234E95F84C4A4A58B7AEFA")
         
 public Editor putBoolean(String key, boolean value) {
@@ -444,6 +452,7 @@ public Editor putBoolean(String key, boolean value) {
             }
         }
 
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.908 -0500", hash_original_method = "7C60C1DCB4FF55A3B2BA6A50F523FE33", hash_generated_method = "EFA50E21F7BCB42D7FD80A28DF3C2018")
         
 public Editor remove(String key) {
@@ -453,6 +462,7 @@ public Editor remove(String key) {
             }
         }
 
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.911 -0500", hash_original_method = "59F9BBF7AADFDAE77F62CA904307DAB9", hash_generated_method = "8E006F8E896C5083155211611DD21E2F")
         
 public Editor clear() {
@@ -560,6 +570,7 @@ private MemoryCommitResult commitToMemory() {
             return null;
         }
 
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.925 -0500", hash_original_method = "23D73852609E646C4CF9B990F4BA7C23", hash_generated_method = "B941E20570A0708A8A4C7429464090D9")
         
 public boolean commit() {

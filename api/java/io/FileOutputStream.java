@@ -124,7 +124,7 @@ public FileOutputStream(String path, boolean append) throws FileNotFoundExceptio
     }
 
     @DSComment("File Output Stream")
-    @DSSafe(DSCat.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.265 -0500", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "0DF0B8874963515CB2F09EA5F083FA85")
     
 @Override
@@ -206,8 +206,8 @@ public final FileDescriptor getFD() throws IOException {
     }
 
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink(DSSinkKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.278 -0500", hash_original_method = "36E798E1E7EB95F42CDB9DAEDA0C8547", hash_generated_method = "B2300D19D772DA5EE64EF342E1F6E879")
     
 @Override

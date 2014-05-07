@@ -27,6 +27,7 @@ public static float length(float x, float y) {
         /**
          * Return a new point from the data in the specified parcel.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.914 -0500", hash_original_method = "61A0B58FC44A88594A723273F46294F0", hash_generated_method = "C4173C65484473D7D9921BE854FAB1D7")
         
 public PointF createFromParcel(Parcel in) {

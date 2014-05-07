@@ -48,7 +48,7 @@ public interface ProtocolCommandListener extends EventListener
      * @param event The ProtocolCommandEvent fired.
      ***/
     @DSVerified("Called in ProtocolCommandSupport")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void protocolCommandSent(ProtocolCommandEvent event);
 
     /***
@@ -59,7 +59,7 @@ public interface ProtocolCommandListener extends EventListener
      ***/
 
     @DSVerified("Called in ProtocolCommandSupport")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void protocolReplyReceived(ProtocolCommandEvent event);
 
 }

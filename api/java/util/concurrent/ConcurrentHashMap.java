@@ -1055,6 +1055,7 @@ public void remove() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.359 -0500", hash_original_method = "AC02B860B54618170BE24E50FF82F167", hash_generated_method = "5CE69281687197D974EFA494331617C2")
         
 public K next()        { return super.nextEntry().key; }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.361 -0500", hash_original_method = "1473F8B0EF10582FE9B24F9D164CBEAD", hash_generated_method = "7817011C4BB28669D0A37EBAAFD7F6F4")
         
 public K nextElement() { return super.nextEntry().key; }
@@ -1071,6 +1072,7 @@ public K nextElement() { return super.nextEntry().key; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.366 -0500", hash_original_method = "282B954004CE321F97FD15862590F160", hash_generated_method = "D966FC58251295E5B681672FC4C7796B")
         
 public V next()        { return super.nextEntry().value; }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.368 -0500", hash_original_method = "95D48303D225ADC424CB718F2FA08908", hash_generated_method = "8ACA7F961BC7A1ADC3E0C4C639563A1F")
         
 public V nextElement() { return super.nextEntry().value; }

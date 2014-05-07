@@ -118,6 +118,7 @@ private void writeHex(int i) throws IOException {
         socketOut.flush();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.854 -0500", hash_original_method = "319458C7344F8B27CFA895D3D7B87CF0", hash_generated_method = "C4D7B666472B7F938E0721FDE4761124")
     
 @Override public synchronized void close() throws IOException {

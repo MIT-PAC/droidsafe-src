@@ -204,7 +204,8 @@ private void ensureCapacity(int size) {
 
     // AbstractCursor implementation.
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.771 -0500", hash_original_method = "3C738FD66B9E4F046395F2884F1D431C", hash_generated_method = "BD4A1874539187257611830A3697A34B")
     
 @Override
@@ -212,7 +213,8 @@ private void ensureCapacity(int size) {
         return rowCount;
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.774 -0500", hash_original_method = "438CBE048C14BFF65A950EB22F18A5DC", hash_generated_method = "CB5FA49AB8B8C47EBAACD85747BB62B4")
     
 @Override
@@ -220,7 +222,8 @@ private void ensureCapacity(int size) {
         return columnNames;
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.777 -0500", hash_original_method = "FF3178260B85D85D43C7EA714D59B46B", hash_generated_method = "2DBB0A17A3D1D018DA998CC6AF1F85E3")
     
 @Override
@@ -241,7 +244,8 @@ private void ensureCapacity(int size) {
         return Short.parseShort(value.toString());
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.781 -0500", hash_original_method = "20798CD66C6EBCBDA86BE86A1F5C23AA", hash_generated_method = "DA727E8C1F17999E71962CC302754E6C")
     
 @Override
@@ -252,7 +256,8 @@ private void ensureCapacity(int size) {
         return Integer.parseInt(value.toString());
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.784 -0500", hash_original_method = "95E2F837C77BDD8697A8850547DFE4D6", hash_generated_method = "CF9F9B512084A7D31A508D7C70439556")
     
 @Override
@@ -285,7 +290,8 @@ private void ensureCapacity(int size) {
         return Double.parseDouble(value.toString());
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.791 -0500", hash_original_method = "9C5D46FB06759EAD0808F8E5E3B27C37", hash_generated_method = "88D622D24B64CFBE5969609A61CBC5C2")
     
 @Override
@@ -294,7 +300,8 @@ private void ensureCapacity(int size) {
         return (byte[]) value;
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.794 -0500", hash_original_method = "8CE769D01E691B0A57CC7218B148D0E1", hash_generated_method = "562EF6FFF116C251F53E5B67BBE56B11")
     
 @Override

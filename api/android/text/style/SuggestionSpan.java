@@ -56,6 +56,7 @@ private static int hashCodeInternal(String[] suggestions, String locale,
 
     public static final Parcelable.Creator<SuggestionSpan> CREATOR =
             new Parcelable.Creator<SuggestionSpan>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.901 -0500", hash_original_method = "83D0E443CEF3A23105CCAF941D2CD31C", hash_generated_method = "A157438956A6B2EE4126C37B1504B75D")
         
 @Override

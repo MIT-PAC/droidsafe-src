@@ -197,6 +197,7 @@ public static String eventTypeToString(int eventType) {
 
     public static final Parcelable.Creator<AccessibilityEvent> CREATOR =
             new Parcelable.Creator<AccessibilityEvent>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.495 -0500", hash_original_method = "0503BE1AE69FE692C001D30E3726C729", hash_generated_method = "49DCB7243BF2141A3159282BBE55D397")
         
 public AccessibilityEvent createFromParcel(Parcel parcel) {

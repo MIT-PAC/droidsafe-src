@@ -42,7 +42,7 @@ public interface TagTechnology extends Closeable {
     public void reconnect() throws IOException;
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public void close() throws IOException;
     
     @DSComment("Abstract Method")

@@ -916,6 +916,7 @@ public void add(E object) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.138 -0500", hash_original_method = "D639D4E7D9CD50DE4105991F3953FD80", hash_generated_method = "2873F607AF1472B18F1E6FAB71BCBCB5")
         
 public boolean hasNext() {
@@ -928,6 +929,7 @@ public boolean hasPrevious() {
             return index > from;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.143 -0500", hash_original_method = "32D582641092A62093AF5BD2A9D350AD", hash_generated_method = "BABFCAD02FB6CF8FD9AD6A843B7086B3")
         
 @SuppressWarnings("unchecked")

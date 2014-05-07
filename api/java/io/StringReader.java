@@ -42,6 +42,7 @@ public StringReader(String str) {
      * will throw an {@code IOException}. Only the first invocation of this
      * method has any effect.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.766 -0500", hash_original_method = "827A4A30AD2891E9194C78AEA719C92F", hash_generated_method = "4AA1355CB20EA7F230BFADCED89C2935")
     
 @Override
@@ -158,6 +159,8 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource(DSSourceKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.782 -0500", hash_original_method = "85EEB2DAA826BA4238F8F98E34D3FBD9", hash_generated_method = "4EA1787DEA8553F64FE2035C6AED16CA")
     
 @Override

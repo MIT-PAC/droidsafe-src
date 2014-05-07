@@ -38,13 +38,11 @@ public final class UlawEncoderInputStream extends InputStream {
 
     private final static String TAG = "UlawEncoderInputStream";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.858 -0400", hash_original_field = "F11E5B86EE8484D31456A0C345182E10", hash_generated_field = "104ED35BD47322945FE6FFDA2FAFEBD3")
-
     
     private final static int MAX_ULAW = 8192;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.860 -0400", hash_original_field = "C7C4BEA44F362609CAE9B8837C4BB75C", hash_generated_field = "78AECF70FEA25C681FF743C3356603FE")
 
     private final static int SCALE_BITS = 16;
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.870 -0400", hash_original_method = "33F0202E86368E36288B8DD3C594E087", hash_generated_method = "3B387BC340A50634E601F0F5B778B123")
     
@@ -131,22 +129,18 @@ public static int maxAbsPcm(byte[] pcmBuf, int offset, int length) {
         return max;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.861 -0400", hash_original_field = "1634FBC64B8FD325086483774D25FC9C", hash_generated_field = "9DC54C0EDA2EFE184D8D41ADBEAE2CF5")
-
     
     private InputStream mIn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.863 -0400", hash_original_field = "5532C4BFF48CADB5E631372FF8EBCB66", hash_generated_field = "66A5F9DE5276D709F03C7237FE38ABF0")
-
     
     private int mMax = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.864 -0400", hash_original_field = "2BCFB5982CB22E130C6C7D08F1F2B31B", hash_generated_field = "07A0F75F749366F44B5F1F7B93DF4626")
-
     
     private final byte[] mBuf = new byte[1024];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.865 -0400", hash_original_field = "61B66897D77E78D5B8A3298FD8EF469C", hash_generated_field = "257EAB9DE214E9C1A8E04D28FD1FB443")
 
     private int mBufCount = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.867 -0400", hash_original_field = "F2C0D94F7A8C986534145C29C73EBAF7", hash_generated_field = "4218F1CA63F49EC26C9730C12AB316CC")
-
     
     private final byte[] mOneByte = new byte[1];
 
@@ -202,6 +196,7 @@ public UlawEncoderInputStream(InputStream in, int max) {
         return 0xff & (int)mOneByte[0];
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.880 -0400", hash_original_method = "6398F6422A13B336F4E332ED4B6F7FCE", hash_generated_method = "79B81B083278DCDC337EE31024B3A21D")
     
 @Override

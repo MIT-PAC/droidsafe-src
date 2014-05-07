@@ -79,6 +79,7 @@ public SequenceInputStream(Enumeration<? extends InputStream> e) {
      * @throws IOException
      *             if an error occurs while closing any of the input streams.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.528 -0500", hash_original_method = "1749070D39A948E7280B7E9ED33867CE", hash_generated_method = "AF5F3B912050135F4B8E788773021C22")
     
 @Override

@@ -49,6 +49,7 @@ public final class Rect implements Parcelable {
         /**
          * Return a new rectangle from the data in the specified parcel.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.663 -0500", hash_original_method = "A9B8238B616BE351FF7BBE6405761278", hash_generated_method = "F945D9E311BDCA10D30B0106282427DE")
         
 public Rect createFromParcel(Parcel in) {

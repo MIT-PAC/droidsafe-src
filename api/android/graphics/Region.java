@@ -112,7 +112,8 @@ public class Region implements Parcelable {
              * @param p    Parcel object to read the region from
              * @return a new region created from the data in the parcel
              */
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.281 -0500", hash_original_method = "57FADA8DB6AE415E8D7938E17AD42A96", hash_generated_method = "23AC31C1150E253AA6670C5491C86B02")
+            @DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.281 -0500", hash_original_method = "57FADA8DB6AE415E8D7938E17AD42A96", hash_generated_method = "23AC31C1150E253AA6670C5491C86B02")
         
 public Region createFromParcel(Parcel p) {
                 int ni = nativeCreateFromParcel(p);
@@ -629,13 +630,11 @@ protected void finalize() throws Throwable {
 
     private void droidsafeUpdateMembers() {
     }
-
   
     public void addTaintLocal(double t) {
         super.addTaint(t);
         droidsafeUpdateMembers();
     }
-
     
     public enum Op {
         DIFFERENCE(0),

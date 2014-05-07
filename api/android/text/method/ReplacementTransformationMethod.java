@@ -131,12 +131,14 @@ public ReplacementCharSequence(CharSequence source, char[] original,
             mReplacement = replacement;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.418 -0500", hash_original_method = "FE3E30D6F998A38B269E405486258D53", hash_generated_method = "2718F2DD1771250DF29BF44C4628A630")
         
 public int length() {
             return mSource.length();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.421 -0500", hash_original_method = "F5CDEE5D506853CF95A4D9E8A551C716", hash_generated_method = "A08A5C49FE4360DA78BAB7E216493C94")
         
 public char charAt(int i) {

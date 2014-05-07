@@ -1914,6 +1914,7 @@ public void setInput(InputStream is, String charset) throws XmlPullParserExcepti
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.184 -0500", hash_original_method = "7002CA433E430A52F3D361978C362AC4", hash_generated_method = "EFB48E0DE7AC8A4B85F95E019F6DA799")
     
 public void close() throws IOException {

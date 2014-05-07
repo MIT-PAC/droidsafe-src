@@ -201,6 +201,7 @@ private static boolean equalsHandlesNulls (Object a, Object b) {
 
     public static final Parcelable.Creator<ServiceState> CREATOR =
             new Parcelable.Creator<ServiceState>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.197 -0500", hash_original_method = "8CB2CF1085CE8B72C4A34EE92896EB72", hash_generated_method = "B25977DFF69AD999F6142B6D8C68A27E")
         
 public ServiceState createFromParcel(Parcel in) {

@@ -517,7 +517,8 @@ public int getCount() {
             return mAdapter == null ? 0 : mAdapter.getCount();
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.DB_CURSOR)
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.088 -0500", hash_original_method = "E5529375AE985E64AC9FCAEB196D1278", hash_generated_method = "F7E6CB401961A1E291BC7ABB39C301C3")
         
 public Object getItem(int position) {

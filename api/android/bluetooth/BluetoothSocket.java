@@ -194,7 +194,7 @@ public void connect() throws IOException {
      * throw an IOException.
      */
     @DSComment("Bluetooth subsystem")
-    @DSSpec(DSCat.BLUETOOTH)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.663 -0500", hash_original_method = "83CCB2B87AD744C98E63B0BB2187BAC7", hash_generated_method = "710794DFEA4563F61213BB68AAAF0AAA")
     
 public void close() throws IOException {
@@ -372,7 +372,6 @@ int write(byte[] b, int offset, int length) throws IOException {
     	addTaint(taintDouble);
     }
 
-
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.694 -0500", hash_original_method = "A190E917AF0426307B588F8F262C0530", hash_generated_method = "386448654273C48F888727B1858BA821")
@@ -392,7 +391,6 @@ int write(byte[] b, int offset, int length) throws IOException {
     
     	return (int)taintDouble;
     }
-
     
     private enum SocketState {
         INIT,
@@ -533,7 +531,6 @@ public synchronized void onRfcommChannelFound(int channel) {
     	return (int)taintDouble;
     }
 
-
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.717 -0500", hash_original_method = "C1A11630BFE880D237827EBCB744C990", hash_generated_method = "C13D3B90B210DC473EAF0EEBC0B92F2A")
@@ -565,7 +562,6 @@ public synchronized void onRfcommChannelFound(int channel) {
     	taintDouble += errno;
     	addTaint(taintDouble);
     }
-
 
 }
 

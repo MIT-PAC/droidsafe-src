@@ -9,12 +9,8 @@ import java.io.InputStream;
 
 import org.apache.http.io.SessionInputBuffer;
 
-
-
-
 public class ContentLengthInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.052 -0500", hash_original_field = "3FB102CF00D4B531C2E12F98A5BDDBFE", hash_generated_field = "62F0934D18D3617E6D093F1927E1FC4F")
-
     
     private static final int BUFFER_SIZE = 2048;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.055 -0500", hash_original_field = "1E697977C6954C6B938DDD0BFFFD6A14", hash_generated_field = "0235B86EE2D19DB7BC14B5867FCABFC4")
@@ -58,6 +54,7 @@ public ContentLengthInputStream(final SessionInputBuffer in, long contentLength)
      * primed to parse the next response.</p>
      * @throws IOException If an IO problem occurs.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.066 -0500", hash_original_method = "37495B10D833FDE07627744A97E6F360", hash_generated_method = "1C9A247DEF15CC56BBB62F24F77B8BB7")
     
 public void close() throws IOException {
@@ -73,7 +70,6 @@ public void close() throws IOException {
             }
         }
     }
-
 
     /**
      * Read the next byte from the stream
@@ -125,7 +121,6 @@ public int read (byte[] b, int off, int len) throws java.io.IOException {
         pos += count;
         return count;
     }
-
 
     /**
      * Read more bytes from the stream.

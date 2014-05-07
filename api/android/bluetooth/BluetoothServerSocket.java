@@ -80,6 +80,7 @@ public BluetoothSocket accept(int timeout) throws IOException {
      * <p>Closing the {@link BluetoothServerSocket} will <em>not</em>
      * close any {@link BluetoothSocket} received from {@link #accept()}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.477 -0500", hash_original_method = "12F414D50BEA43C33E7778E55DB19BE7", hash_generated_method = "94EA0C5C48630102553B8E5810FF7517")
     
 public void close() throws IOException {

@@ -162,6 +162,7 @@ public IsolatedContext getMockContext() {
             return getContext().getDir("mockcontext2_" + name, mode);
         }
 
+        @DSSpec(DSCat.ABSTRACT_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.161 -0500", hash_original_method = "5BEB3FA867778B3A9B9AEA4D4C069E55", hash_generated_method = "2F5A703F6C0D3A9FAC13CAF76C439DDA")
         
 @Override

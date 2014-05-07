@@ -109,6 +109,7 @@ public ColorStateList[] newArray(int size) {
             return new ColorStateList[size];
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.606 -0500", hash_original_method = "99D1C755B99765C149DCD766D7B3653A", hash_generated_method = "BEE2963FE0C61AAC6280C5B1BD6628DB")
         
 public ColorStateList createFromParcel(Parcel source) {

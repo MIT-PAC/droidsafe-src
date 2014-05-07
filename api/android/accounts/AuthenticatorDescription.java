@@ -26,6 +26,7 @@ public static AuthenticatorDescription newKey(String type) {
     public static final Creator<AuthenticatorDescription> CREATOR =
             new Creator<AuthenticatorDescription>() {
         /** @inheritDoc */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.124 -0500", hash_original_method = "C8C9153CF7DF6BC9F2BC5B781B8F131A", hash_generated_method = "131C5B279DB3464463A5ACA54AA40A18")
         
 public AuthenticatorDescription createFromParcel(Parcel source) {

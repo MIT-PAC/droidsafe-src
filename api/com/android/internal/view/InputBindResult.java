@@ -14,6 +14,7 @@ public final class InputBindResult implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.746 -0400", hash_original_field = "5B120F1D91D62CFFE41182DB1B3AC094", hash_generated_field = "FB8CFB6623F2A703564B3A10377DAF9A")
 
     public static final Parcelable.Creator<InputBindResult> CREATOR = new Parcelable.Creator<InputBindResult>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.564 -0500", hash_original_method = "0DC17695F8002017E94E8D176AF259A9", hash_generated_method = "937E7F387D0B7D759630C2249BA9D9B8")
         
 public InputBindResult createFromParcel(Parcel source) {

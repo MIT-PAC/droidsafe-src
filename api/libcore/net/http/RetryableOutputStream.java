@@ -32,6 +32,7 @@ public RetryableOutputStream() {
         this.content = new ByteArrayOutputStream();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.095 -0500", hash_original_method = "01295B07B18E8DACBE5B67B8ED73AB45", hash_generated_method = "CAA57D29E89B67611D095D7DF9C3D773")
     
 @Override public synchronized void close() throws IOException {

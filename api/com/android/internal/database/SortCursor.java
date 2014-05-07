@@ -96,7 +96,8 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         mCurRowNumCache = new int[ROWCACHESIZE][length];
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.DB_CURSOR)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.161 -0500", hash_original_method = "C94247264BA1143A8EFEBC4EA367BD4C", hash_generated_method = "E2DA0373B706ED60B98BB7FB33055AE0")
     
 @Override
@@ -195,7 +196,8 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         return true;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.166 -0500", hash_original_method = "3CE824B95C82F11BF58FC21A90C6596E", hash_generated_method = "ED07F326C66A892800FB63C8FCD37B48")
     
 @Override
@@ -213,7 +215,8 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         return mCursor.getShort(column);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.171 -0500", hash_original_method = "196BE6610F391149CB98C678C09840A9", hash_generated_method = "C28D8796BE04004FA31D5BCAE54426AF")
     
 @Override
@@ -222,7 +225,8 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         return mCursor.getInt(column);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.173 -0500", hash_original_method = "F9F66E8E22111A5FD3479C47D664F15E", hash_generated_method = "9237FC8AD54C22425AC591AF532E0CF4")
     
 @Override
@@ -249,7 +253,8 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         return mCursor.getDouble(column);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.181 -0500", hash_original_method = "EA5E8A29C1728085016D3A247FDA0EC9", hash_generated_method = "77FBE8C5B4CFC8958A0D479BC66DDA83")
     
 @Override
@@ -265,7 +270,8 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         return mCursor.isNull(column);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.186 -0500", hash_original_method = "9D3EADEAB6620E0607DB05CBA4EF5895", hash_generated_method = "8C73EB5E7F8882B29B28A306EBBD8727")
     
 @Override
@@ -274,7 +280,8 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         return mCursor.getBlob(column);   
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.DB_CURSOR)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.189 -0500", hash_original_method = "FABBE77F00A0F54771EB01C7CA2B1BF3", hash_generated_method = "E2505EC0B33F98A1EFCA150436ED4A1F")
     
 @Override
@@ -307,6 +314,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         }
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.194 -0500", hash_original_method = "78F095A0FFEE3E0B5C15F16DE0B8AED8", hash_generated_method = "CF1FC83A1950C2FD403ADF9C35390EB8")
     
 @Override
@@ -318,6 +326,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         }
     }
 
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.196 -0500", hash_original_method = "3D4B0E24965017562B726DF84968F4EF", hash_generated_method = "9F371C5FA059F5D78543BB6E762EC5D8")
     
 @Override
@@ -330,6 +339,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         }
     }
     
+    @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.199 -0500", hash_original_method = "E4FB1F85847F60D07EB9DA8ACAD3FA45", hash_generated_method = "36BE971EF7BD55D636EF54D72E480F3A")
     
 @Override
@@ -342,6 +352,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         }
     }
     
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.201 -0500", hash_original_method = "3BA588146C61870E37BC59410D39661D", hash_generated_method = "86AA6A890F714127B29E4F8CED4FED83")
     
 @Override

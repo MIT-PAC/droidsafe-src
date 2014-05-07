@@ -806,6 +806,7 @@ public ExpandableListContextMenuInfo(View targetView, long packedPosition, long 
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
+            @DSSafe(DSCat.SAFE_OTHERS)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }

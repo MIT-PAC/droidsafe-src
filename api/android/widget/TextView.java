@@ -10215,6 +10215,7 @@ CharSequence removeSuggestionSpans(CharSequence text) {
         @SuppressWarnings("hiding")
         public static final Parcelable.Creator<SavedState> CREATOR
         = new Parcelable.Creator<SavedState>() {
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.794 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
@@ -10329,12 +10330,14 @@ void set(char[] chars, int start, int len) {
             mLength = len;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.853 -0500", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "8EA7C3FDBAE62B32653DE70AB5661C3A")
         
 public int length() {
             return mLength;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.855 -0500", hash_original_method = "02B707818F2669493B94939B301EE67F", hash_generated_method = "DAB18023A08BDE25422C64C18F46C777")
         
 public char charAt(int off) {
@@ -11807,6 +11810,8 @@ public CustomPopupWindow(Context context, int defStyle) {
                 return mNumberOfSuggestions;
             }
 
+            @DSSource({DSSourceKind.DATABASE_INFORMATION})
+            @DSSpec(DSCat.DB_CURSOR)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.914 -0500", hash_original_method = "AB9B090A0CFC1C7403BFB1F3A94BDE2B", hash_generated_method = "CC534956B1360142C79C8647A2F4F1B9")
             
 @Override

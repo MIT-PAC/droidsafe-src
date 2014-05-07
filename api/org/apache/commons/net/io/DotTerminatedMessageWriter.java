@@ -126,8 +126,8 @@ public void write(int ch) throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            output.
      ***/
-    @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO)
+    @DSSink(DSSinkKind.IO)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.957 -0500", hash_original_method = "41630DBB62E0DD4474E2353E85A23DEC", hash_generated_method = "51F12645A0F3999256B122AE6A18CCC9")
     
 public void write(char[] buffer, int offset, int length) throws IOException
@@ -213,6 +213,7 @@ public void flush() throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            output or closing the Writer.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.973 -0500", hash_original_method = "7531D5F82588F4D92692F66CB681201F", hash_generated_method = "F542C941445B636958D108896311DE9A")
     
 public void close() throws IOException

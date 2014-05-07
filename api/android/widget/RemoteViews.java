@@ -45,6 +45,7 @@ public class RemoteViews implements Parcelable, Filter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.797 -0400", hash_original_field = "3C81D1A6471DBF098FBC5010948AFD3D", hash_generated_field = "BD08AD711A0271B27E85FFB2A2737195")
 
     public static final Parcelable.Creator<RemoteViews> CREATOR = new Parcelable.Creator<RemoteViews>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.117 -0500", hash_original_method = "FC3F962DDEC04FB3CB8064B237D4AD2E", hash_generated_method = "6E797158973DFFCE7F4F903A273D2687")
         
 public RemoteViews createFromParcel(Parcel parcel) {

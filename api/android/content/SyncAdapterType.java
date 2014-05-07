@@ -19,6 +19,7 @@ public static SyncAdapterType newKey(String authority, String accountType) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.915 -0400", hash_original_field = "C0271090D095B41DEE511966A620F157", hash_generated_field = "D799AD48CC34F9F1CF0974DC61C7D14C")
 
     public static final Creator<SyncAdapterType> CREATOR = new Creator<SyncAdapterType>() {
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.533 -0500", hash_original_method = "63BD8FE183983D6CDCBA016F3E24D9D5", hash_generated_method = "7EC49768DC45426B5D5D27A17821CBA7")
         
 public SyncAdapterType createFromParcel(Parcel source) {

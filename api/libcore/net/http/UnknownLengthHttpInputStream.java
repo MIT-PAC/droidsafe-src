@@ -48,6 +48,7 @@ UnknownLengthHttpInputStream(InputStream is, CacheRequest cacheRequest,
         return in == null ? 0 : in.available();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.967 -0500", hash_original_method = "EFD48677D2EFEA5B0824ED8113A97C5A", hash_generated_method = "1F08B95B8160B2DAB74AFA7EBD977F9A")
     
 @Override public void close() throws IOException {
