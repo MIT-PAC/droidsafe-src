@@ -289,6 +289,7 @@ public byte[] getEncoded() {
         return encoding;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.766 -0500", hash_original_method = "20B333A0BC1DB524B0482115BC352DF4", hash_generated_method = "F2B9678F2D1AEFF914C8128D344B6306")
     
 @Override public boolean equals(Object ext) {
@@ -301,6 +302,7 @@ public byte[] getEncoded() {
             && Arrays.equals(extnValue, extension.extnValue);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.769 -0500", hash_original_method = "0E35AAFACBBEB06CE332961CEFE27EA0", hash_generated_method = "F8233D0AE3818FF4813FA16EEE3A50C7")
     
 @Override public int hashCode() {

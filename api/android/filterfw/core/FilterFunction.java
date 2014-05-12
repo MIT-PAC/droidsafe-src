@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -27,7 +26,6 @@ import java.util.Map.Entry;
  */
 public class FilterFunction {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.396 -0400", hash_original_field = "E9FBEB72F5336AFA25831B1B3CB2A4B4", hash_generated_field = "A13F7A33CB1B9B8C8BC52C7A25894515")
-
 
     private Filter mFilter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.399 -0400", hash_original_field = "D7554CB19BD4FB115F2FF07545DAB5A9", hash_generated_field = "54D4403BAC7AC7472A7E8C55A28CC65E")
@@ -153,6 +151,7 @@ public void tearDown() {
         mFilter = null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:00.431 -0400", hash_original_method = "A5AEB9F1EDDBEBEA0E2E3B1A8A53D7DC", hash_generated_method = "834CC7D5A741EC5A02CBC85FCB843CED")
     
 @Override

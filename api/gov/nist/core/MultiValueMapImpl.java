@@ -42,6 +42,7 @@ public List<V> put(String key, V value) {
         return keyList;
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.024 -0500", hash_original_method = "DB86C9FAE576BDCBCAB6ACEF27E24DCF", hash_generated_method = "CEE0A46C40FD207E07B1C5B3BE4B14F0")
     
 public boolean containsValue(Object value) {
@@ -60,6 +61,7 @@ public boolean containsValue(Object value) {
         return false;
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.027 -0500", hash_original_method = "ACD58D82904FAC9C1E105DF6132F728F", hash_generated_method = "733C6DFCBE2A2BCE4B58528AD4BE67AE")
     
 public void clear() {
@@ -73,6 +75,7 @@ public void clear() {
         map.clear();
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.029 -0500", hash_original_method = "9D94995CB4905B7A6A15BF37AA0AF804", hash_generated_method = "9975EB8392C975BCAF68262BC906C38C")
     
 public Collection values() {
@@ -92,6 +95,7 @@ public Collection values() {
         return returnList;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.031 -0500", hash_original_method = "7FD8976C5EB94AF5BEDA5274AB7D4960", hash_generated_method = "C5EFC9B836DA8EF189C1836B03049C57")
     
 public Object clone() {
@@ -100,30 +104,35 @@ public Object clone() {
         return obj;
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.034 -0500", hash_original_method = "5426196537489B9F267A5D92E091E0D1", hash_generated_method = "906D6ACA90D2AB1C36E2015BAA5F50F9")
     
 public int size() {
         return this.map.size();
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.036 -0500", hash_original_method = "51FDEF8A21E6EA5E0FB4715F8113FE74", hash_generated_method = "C774AF9EFA934E85591394B11D4C7343")
     
 public boolean containsKey(Object key) {
         return map.containsKey(key);
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.038 -0500", hash_original_method = "A7117DE6FDE9AB582C79C19A4704EAC3", hash_generated_method = "DF3843AF12A68342434DE17C6F4FCFF5")
     
 public Set entrySet() {
         return map.entrySet();
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.041 -0500", hash_original_method = "193F4487BCC4A9B88FB28866363E7ABF", hash_generated_method = "18D56647BDCE89DD9DAE584B2203FB91")
     
 public boolean isEmpty() {
         return map.isEmpty();
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.044 -0500", hash_original_method = "6CB9892D3A46557FDBF8DC408603010A", hash_generated_method = "7D1023C6550D4C0BAD63D4E2C5DA6F28")
     
 public Set<String> keySet() {
@@ -141,6 +150,7 @@ public Object remove(String key, V item) {
         }
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.051 -0500", hash_original_method = "08F032B341F8C34A7104B10254E1B693", hash_generated_method = "50D00F6756BC4700D7C0AD4E12C562D1")
     
 public List<V> get(Object key) {
@@ -154,12 +164,14 @@ public List<V> put(String key, List<V> value) {
         return this.map.put(key,(ArrayList<V>) value);
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.225 -0500", hash_original_method = "7B07E9B7FC8B36A67A63DC78734F6C09", hash_generated_method = "6A7958B0A3022682292CF76F808DF8BB")
     
 public List<V> remove(Object key) {
         return map.remove(key);
     }
     
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.228 -0500", hash_original_method = "FD6B4077E86FCBA56C835917C4A62A14", hash_generated_method = "C9EC4CB251B636155E1D730CE89CB5C5")
     
 public void putAll(Map< ? extends String, ? extends List<V>> mapToPut) {

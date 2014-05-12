@@ -128,6 +128,7 @@ public void dispose() {
         clearDisconnected();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.800 -0500", hash_original_method = "865768B4EC6A5A664005D55855DE8CD7", hash_generated_method = "CEC8A3635E307D76984D2D973D7278BE")
     
 protected void finalize() {
@@ -974,6 +975,7 @@ private Phone.SuppService getFailedService(int what) {
 
     //****** Overridden from Handler
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.910 -0500", hash_original_method = "3557310B73CAAA9AAFCC17D1978C55CA", hash_generated_method = "2854BAE6CD3971C47DEFF31D97451B9A")
     
 public void

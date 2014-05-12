@@ -74,6 +74,7 @@ public BufferedInputStream(InputStream in, int size) {
      * @return the estimated number of bytes available
      * @throws IOException if this stream is closed or an error occurs
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.156 -0500", hash_original_method = "07FFB00D7B3DCD194F29893BBF5B52EB", hash_generated_method = "E702B54EC9B1A3179D95C3F8C922A986")
     
 @Override
@@ -371,6 +372,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
      * @throws IOException
      *             if this stream is closed or another IOException occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.183 -0500", hash_original_method = "61D210443DD8F238003AAFD35E7B7777", hash_generated_method = "B07EB192285C854B260DCBADFA71F959")
     
 @Override

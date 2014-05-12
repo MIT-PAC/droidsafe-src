@@ -304,7 +304,7 @@ public CharSequence get(int idx) {
         private int marqueeId = -1;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.062 -0400", hash_original_method = "4D3750C386AF43C67E7BA6A1E0512626", hash_generated_method = "4D3750C386AF43C67E7BA6A1E0512626")
         public StyleIDs ()
         {
@@ -395,6 +395,7 @@ public void chooseHeight(CharSequence text, int start, int end,
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.494 -0500", hash_original_method = "0AE42B829C6407A7351435B91C0A8F63", hash_generated_method = "ED04AE5CBF07D783428A00831D294D39")
     
 protected void finalize() throws Throwable {

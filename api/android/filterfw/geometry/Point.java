@@ -146,6 +146,7 @@ public Point rotatedAround(Point center, float radians) {
         return this.minus(center).rotated(radians).plus(center);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:12.846 -0400", hash_original_method = "3BCCF680E1B810A4245E3918FEC22C41", hash_generated_method = "A8D303659B7806D632D7EBFB975AC50A")
     
 @Override

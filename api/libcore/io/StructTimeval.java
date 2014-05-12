@@ -36,6 +36,7 @@ public long toMillis() {
         return (tv_sec * 1000) + (tv_usec / 1000);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.683 -0500", hash_original_method = "0C66DEC6052711C5671EFCEF17FE1D94", hash_generated_method = "FE19BB85024B70B7154B226843FB3886")
     
 @Override public String toString() {

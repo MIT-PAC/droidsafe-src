@@ -112,7 +112,8 @@ private void parseNextElement() {
         }
     }
     
-	@Override
+	@DSSafe(DSCat.DATA_STRUCTURE)
+    @Override
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
 		return false;
@@ -124,12 +125,14 @@ private void parseNextElement() {
            return (HeaderElement)headerIt.next();
 	}
     
-	@Override
+	@DSSafe(DSCat.DATA_STRUCTURE)
+    @Override
 	public Object next() {
 		// TODO Auto-generated method stub
             return headerIt.next();
 	}
     
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @Override
 	public void remove() {
 		// TODO Auto-generated method stub

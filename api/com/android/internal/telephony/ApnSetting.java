@@ -166,6 +166,7 @@ public ApnSetting(int id, String numeric, String carrier, String apn,
         this.bearer = bearer;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.576 -0500", hash_original_method = "A2933E4E94FCB15D27495600AE7ECB36", hash_generated_method = "B90D3A1B8CDDD45FECAA4AF9318F6404")
     
@@ -211,6 +212,7 @@ public boolean canHandleType(String type) {
 
     // TODO - if we have this function we should also have hashCode.
     // Also should handle changes in type order and perhaps case-insensitivity
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.581 -0500", hash_original_method = "08D43BEDE35E924972E54800A3F170A8", hash_generated_method = "7E26A52FCCA10D8B884F3B6A569E864F")
     
 public boolean equals(Object o) {

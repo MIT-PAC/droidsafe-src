@@ -82,6 +82,7 @@ public SyncStats(Parcel in) {
         numSkippedEntries = in.readLong();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.193 -0500", hash_original_method = "2B2EA245A3AB4724B2781C31270E76F8", hash_generated_method = "E85C6836B6E8D17E5DF3DF000EDE6EA4")
     
 @Override

@@ -440,6 +440,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.092 -0500", hash_original_method = "740DEE0C93073DC91C8FEF81BF30F5D6", hash_generated_method = "824D2CBF38887900E00ACD9A85819CD2")
         
 @Override
@@ -447,7 +448,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             canvas.drawBitmap(mBitmap, mDrawLeft, mDrawTop, mPaint);
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_OTHERS)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.094 -0500", hash_original_method = "20937ACEFD1116260A9689661466F3F7", hash_generated_method = "6905288CC17C7D82D00D5533E4517C30")
         
 @Override
@@ -455,7 +457,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return PixelFormat.OPAQUE;
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.097 -0500", hash_original_method = "AD75C11A4E8AD86B9F9EB3DCD5857128", hash_generated_method = "62CD9A0B7E991E8654963885750F8159")
         
 @Override
@@ -464,7 +467,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             mDrawTop = top + (bottom-top - mHeight) / 2;
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_OTHERS)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.099 -0500", hash_original_method = "51482143A770E9CBA4E27420DA4BB83A", hash_generated_method = "CDB6E320C266D3E3D9C1320C38F789E5")
         
 @Override
@@ -496,7 +500,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.108 -0500", hash_original_method = "7C6E7C05DAF2C7C11CBD631A19BA11F2", hash_generated_method = "39278CB6B9C6547F27484D81F3EDE677")
         
 @Override
@@ -504,7 +509,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return mWidth;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.110 -0500", hash_original_method = "3C735D6B09C7947D1D4F4735F7E16410", hash_generated_method = "0269A8752CCD1CA35B4E1D43155EB161")
         
 @Override

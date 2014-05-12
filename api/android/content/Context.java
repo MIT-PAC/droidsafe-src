@@ -655,7 +655,7 @@ public abstract FileInputStream openFileInput(String name)
      * @see #deleteFile
      * @see java.io.FileOutputStream#FileOutputStream(String)
      */
-    @DSSink(DSSinkKind.FILE)
+    @DSSink({DSSinkKind.FILE})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.913 -0500", hash_original_method = "BEE63DE917C6EB7327F3CD638CB5E201", hash_generated_method = "C3F3F1D5E8BA5B4F3D287ECFD48EBDEA")
@@ -1116,7 +1116,7 @@ public abstract String[] databaseList();
      *
      * @see PackageManager#resolveActivity
      */
-    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.963 -0500", hash_original_method = "06B12B71B896DBD5D7C902DA38D16681", hash_generated_method = "BC85A3AAC104AF5786AD1DC454AD7A2D")
@@ -1143,7 +1143,7 @@ public abstract void startActivity(Intent intent);
      *
      * @see PackageManager#resolveActivity
      */
-    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.965 -0500", hash_original_method = "805B1869BDFCE06BF619D5A658DF064F", hash_generated_method = "A0E9D7EE9D2E9CF7F658AE830D92157B")
@@ -1195,7 +1195,7 @@ public abstract void startIntentSender(IntentSender intent,
      * @see #sendOrderedBroadcast(Intent, String)
      * @see #sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle)
      */
-    @DSSink(DSSinkKind.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.969 -0500", hash_original_method = "758F82A7831A3E63BFA33BC1D51204CD", hash_generated_method = "562685EAD67DEDBF8ECDCC3E48DED167")

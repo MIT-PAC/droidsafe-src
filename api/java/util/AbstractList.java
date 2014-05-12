@@ -204,6 +204,7 @@ public abstract E get(int location);
             for (int i = start; i <= end; i++)
                 add((E)original.getElementAt(i));
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @Override
         

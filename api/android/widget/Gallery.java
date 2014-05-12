@@ -274,6 +274,7 @@ public void setUnselectedAlpha(float unselectedAlpha) {
         return mItemCount;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.655 -0500", hash_original_method = "E5E3FCBA546B7CFE2F525BEFE910A396", hash_generated_method = "8E8F0BEBF3E59660E5FA9B2761F7834C")
     
 @Override
@@ -979,6 +980,7 @@ private int calculateTop(View child, boolean duringLayout) {
         return childTop;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.719 -0500", hash_original_method = "E3817DF605584D2699E850A6FB85E3EE", hash_generated_method = "6421945AA01D8D94E2D98D8C1C1D7DE7")
     
 @Override
@@ -1269,6 +1271,7 @@ private boolean dispatchLongPress(View view, int position, long id) {
         return handled;
     }
     
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.759 -0500", hash_original_method = "3AE09BEF1C913F03964B3B1FAAECBEDB", hash_generated_method = "8B4C961C9741B8B4B4BFDD9C057CC6D4")
     
 @Override
@@ -1502,6 +1505,7 @@ private void endFling(boolean scrollIntoSlots) {
             if (scrollIntoSlots) scrollIntoSlots();
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.810 -0500", hash_original_method = "201C15A7F851961F5BCBCACEEAE4B252", hash_generated_method = "B66377B3D3DA3C00F95C7EB3E42BD424")
         
 @Override

@@ -75,6 +75,7 @@ static void forceBinderGc() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.461 -0500", hash_original_method = "D42E2C52A602997A5DDE899C13954EBC", hash_generated_method = "2835620AD59CBECDB4AE305DEB0923E8")
         
 @Override

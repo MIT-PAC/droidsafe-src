@@ -55,6 +55,7 @@ public String encodeBody() {
         return retval.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.011 -0500", hash_original_method = "0E5911CB2B858F97AB1667F7876EAA3E", hash_generated_method = "D65CFBC94D96BD21425B515590201BAF")
     
 public Object clone() {

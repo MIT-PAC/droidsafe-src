@@ -113,6 +113,7 @@ public HttpParams copy() {
         return clone;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.464 -0500", hash_original_method = "D3B18BE40EFEF439795B5F92D987CA92", hash_generated_method = "7287DE456BC2E2CFA515D4865466FDA2")
     
 public Object clone() throws CloneNotSupportedException {

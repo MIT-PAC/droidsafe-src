@@ -552,6 +552,7 @@ public class Linkify {
     }
     
     // orphaned legacy method
+    @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(Object o) {
         return false;
     }

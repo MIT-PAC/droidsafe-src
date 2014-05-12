@@ -191,7 +191,8 @@ private synchronized void removeHistoryItem(int index) {
      * WebView. This creates a copy that should never be modified by any of the
      * webkit package classes.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.301 -0500", hash_original_method = "26B3CB37F20A0B53C2CE3E9A4CAEEB23", hash_generated_method = "65C35583B33AC219F8D79447C6A677D0")
     
 protected synchronized WebBackForwardList clone() {

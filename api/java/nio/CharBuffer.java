@@ -273,6 +273,7 @@ public abstract CharBuffer duplicate();
      * @return {@code true} if this char buffer is equal to {@code other},
      *         {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.757 -0500", hash_original_method = "43FFCFC26BAE21B80C74493A78B534C8", hash_generated_method = "6EEB7BA4B6B7183769BC94F588EE1AF2")
     
 @Override
@@ -391,6 +392,7 @@ public final boolean hasArray() {
      *
      * @return the hash code calculated from the remaining chars.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.772 -0500", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "1E25806FB1ABDE5EAE09DE7EAB683BE8")
     
 @Override

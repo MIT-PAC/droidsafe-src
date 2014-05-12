@@ -63,6 +63,7 @@ public ResultInfo(Parcel in) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.228 -0500", hash_original_method = "45459039AB19A0482EB7D8EB8705A318", hash_generated_method = "E68454FE4A22507D72E6A3A42E3E9044")
     
 public String toString() {

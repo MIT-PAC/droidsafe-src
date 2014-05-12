@@ -124,6 +124,7 @@ public void clearQheaders() {
      *    header equality enforced in comparison
      *
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.609 -0500", hash_original_method = "9EAD5694A977A9D6081FC9F5B163E148", hash_generated_method = "ABE289723C8E0EAB8A9BF25C2A487D9F")
     
 @SuppressWarnings("unchecked")
@@ -241,6 +242,7 @@ public StringBuffer encode(StringBuffer buffer) {
     *@return the String representation of this URI.
     *
     */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.617 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {
@@ -805,6 +807,7 @@ public void setHostPort(HostPort hostPort) {
 
     /** clone this.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.736 -0500", hash_original_method = "4FA40F4F8EA124691CF5F7EB5079802B", hash_generated_method = "85A33A80C3DB89D134F237C5E9C16940")
     
 public Object clone() {

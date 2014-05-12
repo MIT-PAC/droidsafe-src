@@ -76,6 +76,7 @@ void encode(
         out.writeEncoded(isConstructed ? DERTags.CONSTRUCTED : 0, tag, data);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.493 -0500", hash_original_method = "FE1F3CE48FE1BAD33C90012410856208", hash_generated_method = "ABDC6AF96F022683DA39CD32DA0B3CDB")
     
 public boolean equals(
@@ -93,6 +94,7 @@ public boolean equals(
             && Arrays.areEqual(data, other.data);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.496 -0500", hash_original_method = "6125EE5FC147EEAC675704125571B4F0", hash_generated_method = "9D4B600040F00865B640FB3BB3DBD4DD")
     
 public int hashCode()

@@ -135,12 +135,14 @@ HostAndPort(String host, int port) {
             this.port = port;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.922 -0500", hash_original_method = "4275ECED88C546D6C48AA6C77D620659", hash_generated_method = "0DE2937B74880CD8CD342299D9F829D5")
         
 @Override public int hashCode() {
             return host.hashCode() * 31 + port;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.924 -0500", hash_original_method = "B55E1F045FCFEF599209FA0277EB136A", hash_generated_method = "BB250A2B7C9061ECB6E1D7745A7FEABC")
         
 @Override public boolean equals(Object o) {

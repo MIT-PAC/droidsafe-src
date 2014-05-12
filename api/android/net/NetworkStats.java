@@ -170,6 +170,7 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeLongArray(operations);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.613 -0500", hash_original_method = "2B258B3B735A82A55EB3270F9E3A7FB6", hash_generated_method = "6B7196F18D140F6BED0A7B5FA9A51B46")
     
 @Override
@@ -572,6 +573,7 @@ public Entry(String iface, int uid, int set, int tag, long rxBytes, long rxPacke
             this.operations = operations;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.600 -0500", hash_original_method = "8BA58A1912534045F7A50ACBC1B00F2F", hash_generated_method = "4A0F978F85DA003FDC43F22A89581064")
         
 @Override
@@ -798,6 +800,7 @@ public void dump(String prefix, PrintWriter pw) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.687 -0500", hash_original_method = "C185C780AB6AF420802BBBCB2A0DA03E", hash_generated_method = "765A956DC5B32778BE486346E3964079")
     
 @Override

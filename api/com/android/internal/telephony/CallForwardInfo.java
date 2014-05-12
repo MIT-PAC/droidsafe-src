@@ -33,6 +33,7 @@ public class CallForwardInfo {
         //Synthesized constructor
     } /* for CF no reply only */
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.005 -0500", hash_original_method = "EA7E7BF9BED1BC105930545F926483CA", hash_generated_method = "8A06A73622A06D35BA171B322B1FA264")
     

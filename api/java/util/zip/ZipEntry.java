@@ -417,6 +417,7 @@ public void setTime(long value) {
      *
      * @return the string representation of this {@code ZipEntry}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.354 -0500", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "0D841C721535905DD0E9F7FAE6757EB9")
     
 @Override
@@ -427,6 +428,7 @@ public void setTime(long value) {
     /**
      * Returns a deep copy of this zip entry.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.361 -0500", hash_original_method = "CC5347E979B0813386EC9E9DE77BBA76", hash_generated_method = "2369D231E720E4DD7AA31AD4AE508C0D")
     
 @Override public Object clone() {
@@ -444,6 +446,7 @@ public void setTime(long value) {
      *
      * @return the hash code of the entry.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.363 -0500", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "79AB96931D4D2744C8AC02B11E3A7517")
     
 @Override

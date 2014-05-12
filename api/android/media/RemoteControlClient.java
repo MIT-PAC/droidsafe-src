@@ -268,6 +268,7 @@ private MetadataEditor() { }
         /**
          * @hide
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 12:25:06.064 -0500", hash_original_method = "3FF219DE1407B1650498BA4CB70E771E", hash_generated_method = "141020EC3D770673B593D9DD4405C05B")
         
 public Object clone() throws CloneNotSupportedException {
@@ -1036,6 +1037,7 @@ public EventHandler(RemoteControlClient rcc, Looper looper) {
             super(looper);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 12:25:06.257 -0500", hash_original_method = "A42F550C0A33AF3FDEBB42B214E14777", hash_generated_method = "00C15A487A6C470EC84F4EE0858DA75C")
         
 @Override

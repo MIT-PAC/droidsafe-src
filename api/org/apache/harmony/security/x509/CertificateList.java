@@ -100,6 +100,7 @@ public byte[] getSignatureValue() {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.098 -0500", hash_original_method = "80C69E334C5CE31111385C23EECA9331", hash_generated_method = "10A5518EE6A67B7F5FAD0C31338B4C27")
     
 @Override public String toString() {

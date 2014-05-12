@@ -135,6 +135,7 @@ public synchronized StackTraceElement[] getStackTrace() {
             //Synthesized constructor
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.229 -0500", hash_original_method = "16C06FBAF3631080CE709DA6BD6140A9", hash_generated_method = "BB50CA5A56634F733BDC6409BC634E9F")
         
 @Override public void run() {
@@ -199,6 +200,7 @@ private void enqueue(Reference<?> list) {
             //Synthesized constructor
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.248 -0500", hash_original_method = "C183E2A6A7B3ED28464B9D0F97F171B5", hash_generated_method = "481A0A577577C8299EC96B1C29FA2111")
         
 @Override public void run() {
@@ -246,6 +248,7 @@ private void enqueue(Reference<?> list) {
             //Synthesized constructor
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.261 -0500", hash_original_method = "0D26D8241DE84FB86F73D585D59D0B9C", hash_generated_method = "E3A131D6A3B25BC2DFD72F217E1027D6")
         
 @Override public void run() {

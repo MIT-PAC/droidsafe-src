@@ -303,6 +303,7 @@ public int getThirdArgument(int index) {
             return (mActionSequence[index] & THIRD_ARGUMENT_MASK) >> THIRD_ARGUMENT_OFFSET;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.707 -0500", hash_original_method = "DADE2DD09F8576C0E4A43D6B7E83F05B", hash_generated_method = "E6A6AAD15ACE8C8260621F1150C5B272")
         
 @Override

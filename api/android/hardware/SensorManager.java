@@ -942,6 +942,7 @@ void returnToPool(SensorEvent t) {
 SensorThread() {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.909 -0500", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "0B55AC57C8926FC3F550FAB2789DB92D")
         
 @Override
@@ -990,6 +991,7 @@ private boolean open() {
                 return true;
             }
 
+            @DSSpec(DSCat.THREADING)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.925 -0500", hash_original_method = "22D645F37E8BABB44C20A553228E0A5C", hash_generated_method = "22F4AAED4CF9ABF792C121D35EEB6DB4")
             
 public void run() {

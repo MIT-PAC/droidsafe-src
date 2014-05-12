@@ -85,6 +85,7 @@ public boolean isCsRestricted() {
         return mCsNormalRestricted && mCsEmergencyRestricted;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.868 -0500", hash_original_method = "782C42F453BEB7FFF6E7C3BB3C51E5DF", hash_generated_method = "6C14735EBD9731D0BF0F9232BE8DCB3A")
     
 @Override
@@ -106,6 +107,7 @@ public boolean isCsRestricted() {
         && mCsEmergencyRestricted == s.mCsEmergencyRestricted;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.871 -0500", hash_original_method = "845D0E6369A38FB89C7B9C67406A7898", hash_generated_method = "11081E9454E6AB52E292A7C378A60628")
     

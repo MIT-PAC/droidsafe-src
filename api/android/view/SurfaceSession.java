@@ -44,6 +44,7 @@ public class SurfaceSession {
     public native void kill();
 
     /* no user serviceable parts here ... */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:51.066 -0500", hash_original_method = "EC5E3125F13C4F48F4208EA7F748E31A", hash_generated_method = "7AA697ADBFEAED8C69705D222C71A8C1")
     @Override
 protected void finalize() throws Throwable {

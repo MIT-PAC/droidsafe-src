@@ -76,6 +76,7 @@ public NetObject() {
      * An introspection based equality predicate for SIPObjects.
      *@param that is the other object to test against.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.964 -0500", hash_original_method = "26A4AB68F41643C912C51D77CC375C44", hash_generated_method = "02191E5A470E6246C40D89D3F1FC593B")
     
 public boolean equals(Object that) {
@@ -393,6 +394,7 @@ public String debugDump(int indent) {
      *
      *@return string representation for this object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.980 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     

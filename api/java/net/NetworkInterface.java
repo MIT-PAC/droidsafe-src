@@ -390,6 +390,7 @@ public String getDisplayName() {
      *         NetworkInterface}, {@code false} otherwise.
      * @see #hashCode()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.671 -0500", hash_original_method = "BC7B763A69F6C3BA5344751878C41BC9", hash_generated_method = "FF0A8CB79DD8B3C4F13D775F020963DE")
     
 @Override
@@ -412,12 +413,14 @@ public String getDisplayName() {
      * name should be unique for each network interface the hash code is
      * generated using the name.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.673 -0500", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "79AB96931D4D2744C8AC02B11E3A7517")
     
 @Override public int hashCode() {
         return name.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.676 -0500", hash_original_method = "620D41077AD7BF09E0A41C54CA4C93E4", hash_generated_method = "8FF2C959590BE6135D095A2B4564F839")
     
 @Override public String toString() {

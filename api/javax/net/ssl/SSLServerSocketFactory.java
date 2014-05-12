@@ -18,6 +18,7 @@ public abstract class SSLServerSocketFactory extends ServerSocketFactory {
      *
      * @return the default {@code SSLServerSocketFactory} instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.529 -0500", hash_original_method = "A7F1CDDCECEE4B1BBC83F94321EC50FE", hash_generated_method = "1FB4E1E4CDB0F0EE29F19CB3F8E71013")
     

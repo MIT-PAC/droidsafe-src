@@ -115,6 +115,7 @@ private DERObject getObjFromVector(ASN1EncodableVector v, int index)
     /* (non-Javadoc)
      * @see java.lang.Object#hashCode()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.820 -0500", hash_original_method = "E789B91521559DD1093D7E9087176FAE", hash_generated_method = "328CE02F6EDF9C2A733D326777F84E3D")
     
 public int hashCode()

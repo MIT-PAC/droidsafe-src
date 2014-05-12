@@ -552,6 +552,7 @@ public final Looper getLooper() {
         pw.addTaint(getTaintInt() + prefix.getTaintInt());
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public String toString(){
 		// Original method
 		/*

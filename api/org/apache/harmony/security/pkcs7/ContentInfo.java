@@ -145,6 +145,7 @@ public byte[] getEncoded() {
         return encoding;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.610 -0500", hash_original_method = "E27EF60D80B9BCE694BEF49083131D32", hash_generated_method = "ABA044D621D95AEC10AD8F5CAAB28A90")
     
 @Override public String toString() {

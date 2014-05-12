@@ -10,11 +10,6 @@ import java.security.spec.AlgorithmParameterSpec;
 import org.bouncycastle.math.ec.ECCurve;
 import org.bouncycastle.math.ec.ECPoint;
 
-
-
-
-
-
 public class ECParameterSpec implements AlgorithmParameterSpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.547 -0500", hash_original_field = "704A3581F062D90BBFC67E94998B89B2", hash_generated_field = "D4FD3D236F6822F3201F264EA949068E")
 
@@ -132,6 +127,7 @@ public byte[] getSeed()
         return seed;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.579 -0500", hash_original_method = "4D0C476A07E0F700EE67C6B7126A56CA", hash_generated_method = "394C1523507E9B998F8E0755C7E889C9")
     
 public boolean equals(Object o)
@@ -146,13 +142,13 @@ public boolean equals(Object o)
         return this.getCurve().equals(other.getCurve()) && this.getG().equals(other.getG());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.582 -0500", hash_original_method = "222EBFC3DE5F327343BF00A614895E1C", hash_generated_method = "21D68A097E2BCC68EBC27774F7E8B2FA")
     
 public int hashCode()
     {
         return this.getCurve().hashCode() ^ this.getG().hashCode();
     }
-
     
 }
 

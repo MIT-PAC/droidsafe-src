@@ -23,12 +23,14 @@ ByteArray(byte[] bytes) {
         this.hashCode = Arrays.hashCode(bytes);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.074 -0500", hash_original_method = "8BA9483852C95CF52834EFFEFBE67C86", hash_generated_method = "851304E2409C777BC00DDBBB294E80F0")
     
 @Override public int hashCode() {
         return hashCode;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.077 -0500", hash_original_method = "035A671466178159FCEA5052C8344F27", hash_generated_method = "79EBA8C552B7B5EA08711ADA9E10EF98")
     
 @Override public boolean equals(Object o) {

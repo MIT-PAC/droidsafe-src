@@ -36,6 +36,7 @@ public StringBufferInputStream(String str) {
         count = str.length();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.679 -0500", hash_original_method = "60B3E89517A58F980CEC13EE6BBDFCDA", hash_generated_method = "F83D86E173E2EE8747B4A5BEAFCB1DC1")
     
 @Override
@@ -78,6 +79,8 @@ public StringBufferInputStream(String str) {
      * @throws NullPointerException
      *             if {@code b} is {@code null}.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.685 -0500", hash_original_method = "72F57B370F566A93B2245D6F4EE475E3", hash_generated_method = "67AFE95D1DF95898453DD8D3E1C1559C")
     
 @Override
@@ -116,6 +119,7 @@ public StringBufferInputStream(String str) {
      *
      * @return the number of characters actually skipped.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.690 -0500", hash_original_method = "CF6031E947756BEE937415A3AF461C41", hash_generated_method = "A9917BF0DADF84F2E687E96438ADEB0F")
     
 @Override
@@ -134,7 +138,6 @@ public StringBufferInputStream(String str) {
         }
         return numskipped;
     }
-
     
 }
 

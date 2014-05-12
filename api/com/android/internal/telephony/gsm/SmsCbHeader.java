@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.telephony.SmsCbConstants;
 
-
-
-
-
 public class SmsCbHeader implements SmsCbConstants {
 
     /**
@@ -103,46 +99,35 @@ public static boolean isEtwsEmergencyUserAlert(int messageCode) {
     public static final int PDU_LENGTH_ETWS = 56;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.562 -0500", hash_original_field = "F613B1B4B12EADE872DCEAC4272C29B2", hash_generated_field = "1D5E4DABFDDA8C9C0EA798EAAADB2805")
 
-
     public  int geographicalScope;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.565 -0500", hash_original_field = "1426B113078F30C34542A176C3C46771", hash_generated_field = "5A14F88CF089D587182B20FD8BFABCD4")
-
 
     public  int messageCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.567 -0500", hash_original_field = "24DE7F2BBBB2D76B21964A620ECB5E6E", hash_generated_field = "7EC9965A45B411C158B30B7C98CE6E9F")
 
-
     public  int updateNumber;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.569 -0500", hash_original_field = "68EC1A218477F467D3B53D45675E35D0", hash_generated_field = "D0F6F349F40771E87DD4A0D1B07055EF")
-
 
     public  int messageIdentifier;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.572 -0500", hash_original_field = "0463FAC0FF75D1D68251893EEF7FA86E", hash_generated_field = "0532B741E6B346E45FA103D1BFE0FE0D")
 
-
     public  int dataCodingScheme;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.574 -0500", hash_original_field = "CE3729C69607433DACBCD1445FB73F09", hash_generated_field = "9B2C08A54E75C2F08E1D537651339465")
-
 
     public  int pageIndex;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.576 -0500", hash_original_field = "5C605043A45950C5D599C22EABF90700", hash_generated_field = "9F94093BFD073A9802BB5459EAA16BCF")
 
-
     public  int nrOfPages;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.579 -0500", hash_original_field = "DF6A9425E64603B99565AC4512172219", hash_generated_field = "607BD764A61A3197D0A2D65B6E1CF0E2")
-
 
     public  int format;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.582 -0500", hash_original_field = "0F8F9C0CEB0FA2EBC7690A1AC581ED95", hash_generated_field = "A790BFAEF6B0FE178FDF16CD5DDFB350")
 
-
     public  boolean etwsEmergencyUserAlert;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.584 -0500", hash_original_field = "E8101DE63D9C477A83EC6D9095F0707D", hash_generated_field = "F8E090EAD27FBA00AFC967E09A39BD7F")
 
-
     public  boolean etwsPopup;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.586 -0500", hash_original_field = "4B36A14F2D837A7C68AF2C01C76D379F", hash_generated_field = "67B1A0815B115CD87AEEBA262974E91F")
-
 
     public  int etwsWarningType;
 
@@ -216,6 +201,7 @@ public SmsCbHeader(byte[] pdu) throws IllegalArgumentException {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.607 -0500", hash_original_method = "F77CFF978B7542934CFB3B1620EE83C7", hash_generated_method = "0B43DE98EFC8CC82B5F9A939E4FCF369")
     
 @Override

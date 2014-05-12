@@ -168,6 +168,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.260 -0500", hash_original_method = "743C43E5DEE5FAC4123020B60468B1AB", hash_generated_method = "DFDA57643119B4A1B3F31BCCCA687D48")
     
 @Override
@@ -177,6 +178,7 @@ public int describeContents() {
                 + scrubSubscriberId;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.262 -0500", hash_original_method = "61F711039243E011B66A7D31CCB469F2", hash_generated_method = "0062B5AEF7C3F879FE2711F0AFA531AF")
     
 @Override
@@ -184,6 +186,7 @@ public int describeContents() {
         return Objects.hashCode(mMatchRule, mSubscriberId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.265 -0500", hash_original_method = "97109AC3BBA8BEF8ECFCD42700ABFADC", hash_generated_method = "24681A499EAF23F43EAED06C644E4B5D")
     
 @Override

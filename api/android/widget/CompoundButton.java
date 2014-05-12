@@ -216,6 +216,7 @@ public void setButtonDrawable(Drawable d) {
         refreshDrawableState();
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.523 -0500", hash_original_method = "E1DFB2AF73729EA8AA28BE1E77594577", hash_generated_method = "E0A307C13A2B0EF8859DF8BD8C2E8931")
     
 @Override
@@ -224,6 +225,7 @@ public void setButtonDrawable(Drawable d) {
         event.setChecked(mChecked);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.525 -0500", hash_original_method = "9295691F1B4364B400425405F52CF8A7", hash_generated_method = "3C95A34B06BA9302E44D6DF4D25FF9D4")
     
 @Override
@@ -272,6 +274,7 @@ public void setButtonDrawable(Drawable d) {
         return drawableState;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.532 -0500", hash_original_method = "7BF0D1F93DFA890868347E7C98BCCE2C", hash_generated_method = "F9238D1991B9E94BC397105FF8F9EBE0")
     
 @Override
@@ -288,6 +291,7 @@ public void setButtonDrawable(Drawable d) {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.535 -0500", hash_original_method = "63DA0D6846E19577C9E55E51C4E55CAC", hash_generated_method = "7B1D5D8568D0176CDCBC5D2BFB8263D6")
     
 @Override
@@ -303,6 +307,7 @@ public void setButtonDrawable(Drawable d) {
         if (mButtonDrawable != null) mButtonDrawable.jumpToCurrentState();
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.563 -0500", hash_original_method = "C906A6F68E532E790B1685DD63ECE7DE", hash_generated_method = "46FED10CEEBE0245DEE3DC6ADC684074")
     
@@ -368,6 +373,7 @@ private SavedState(Parcel in) {
             out.writeValue(checked);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.551 -0500", hash_original_method = "F6EC4DB06CBAC48467361A043CC860D0", hash_generated_method = "CBCC82CA4F42622C18DE4E08230CA602")
         
 @Override
@@ -396,6 +402,7 @@ private SavedState(Parcel in) {
         void onCheckedChanged(CompoundButton buttonView, boolean isChecked);
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.566 -0500", hash_original_method = "82857D3CD54F7EB52721411B0B0DD538", hash_generated_method = "F662563F5F7128AD9A4ABAE598C094A3")
     
 @Override

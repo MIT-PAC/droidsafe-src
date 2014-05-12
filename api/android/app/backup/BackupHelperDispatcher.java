@@ -135,7 +135,7 @@ private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
         String keyPrefix;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.244 -0400", hash_original_method = "7DC9F4B0B6F0B6B866C998FD2825EB34", hash_generated_method = "7DC9F4B0B6F0B6B866C998FD2825EB34")
         public Header ()
         {

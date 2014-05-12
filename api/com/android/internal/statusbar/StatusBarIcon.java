@@ -68,6 +68,7 @@ public StatusBarIcon(Parcel in) {
         readFromParcel(in);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:54.723 -0500", hash_original_method = "1EE859B2BAC1B0E091951C7E79A1C85B", hash_generated_method = "DF2FC622328504DBBA9D931966BCB57A")
     
 @Override
@@ -77,6 +78,7 @@ public StatusBarIcon(Parcel in) {
                 + " num=" + this.number + " )";
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:54.726 -0500", hash_original_method = "D6D80221D74BF64CC6743E6FD4844F75", hash_generated_method = "2D1C1AB63A238B229AEEFB3303C485A1")
     
 @Override

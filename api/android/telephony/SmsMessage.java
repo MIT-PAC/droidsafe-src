@@ -612,6 +612,7 @@ protected SubmitPdu(SubmitPduBase spb) {
             this.encodedScAddress = spb.encodedScAddress;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SMS_MMS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.588 -0500", hash_original_method = "A866707516A0999C629C71FD5B45C6F7", hash_generated_method = "D0C20D3DE0C0706C4141E4BF6E7BAEC9")
         

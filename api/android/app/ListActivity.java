@@ -84,6 +84,7 @@ protected void onListItemClick(ListView l, View v, int position, long id) {
      *
      *@see Activity#onRestoreInstanceState(Bundle)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.802 -0500", hash_original_method = "39D3E8C83EC5D9AA90999E3A2D1BCB07", hash_generated_method = "2DE8AD90C1A42DCA55687530BB5B9E78")

@@ -162,6 +162,7 @@ public void setCellLocationData(int baseStationId, int baseStationLatitude,
          this.mNetworkId = networkId;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.380 -0500", hash_original_method = "E85418559CBFBFDF0470CD6A904DEAD1", hash_generated_method = "E5373DFFC18A2CEF7D1A5390BFDBF977")
     
 @Override
@@ -170,6 +171,7 @@ public void setCellLocationData(int baseStationId, int baseStationLatitude,
                 ^ this.mSystemId ^ this.mNetworkId;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.383 -0500", hash_original_method = "38D738FF275D66A3A0FE767FC9AC4FB9", hash_generated_method = "A0A2C615D71201572F077EB4640CAEA8")
     
 @Override
@@ -194,6 +196,7 @@ public void setCellLocationData(int baseStationId, int baseStationLatitude,
         );
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.387 -0500", hash_original_method = "3AD4832D3A3F9EB2D9CB5CAE1051FD90", hash_generated_method = "F3A266AAE5B33F24D312A4D2BC366BCB")
     
 @Override

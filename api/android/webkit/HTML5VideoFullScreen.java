@@ -370,6 +370,7 @@ public FullScreenMediaController(Context context, View video) {
             mVideoView = video;
         }
 
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.542 -0500", hash_original_method = "5C37CDC7ADB20FAB9875274C523AD18A", hash_generated_method = "97818857D0E370C844660997C7404E6A")
         
 @Override
@@ -380,6 +381,7 @@ public FullScreenMediaController(Context context, View video) {
             }
         }
 
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.545 -0500", hash_original_method = "82DCA636A8398ED2FB754EAF8FD1AC92", hash_generated_method = "AC5DFDAA003ABCB216CC20C1AD19606E")
         
 @Override

@@ -272,6 +272,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see java.net.ServerSocket#accept()
      * method documentation for more information
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.938 -0500", hash_original_method = "E95178BAD1AB83F5F7B2A543005EDE81", hash_generated_method = "17712134355116B68147B90F3DC24856")
     
 @Override
@@ -292,6 +293,7 @@ protected SSLServerSocketImpl(int port, int backlog,
     /**
      * Returns the string representation of the object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.940 -0500", hash_original_method = "2BD2C11E492A0926A3928FBE6062AA1A", hash_generated_method = "432462BB27832EACC9C5D0D13F532176")
     
 @Override

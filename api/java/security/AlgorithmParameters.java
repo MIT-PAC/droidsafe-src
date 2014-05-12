@@ -298,6 +298,7 @@ public final byte[] getEncoded(String format) throws IOException {
      *
      * @return a printable representation for this {@code AlgorithmParameters}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.971 -0500", hash_original_method = "3487587F52CF5404E8DAC6B47C5FD08C", hash_generated_method = "6F4D8CA2BCED524EC1B179ECDC4095CB")
     
 @Override

@@ -52,6 +52,7 @@ public StringBuffer encode(StringBuffer buffer) {
      * @param other Object to test.
      * @return boolean
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.352 -0500", hash_original_method = "B8EA6629A21322DA3947DE0C5AE42A40", hash_generated_method = "465724610F97AA48C0FBD470721B05CD")
     
 @Override
@@ -237,6 +238,7 @@ public void removeUserInfo() {
         this.userInfo = null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.391 -0500", hash_original_method = "7BE32291F5E6B71E31FC3F9305E1CD28", hash_generated_method = "ACDC0C9FD8840FD42AB9D5AED48027B2")
     
 public Object clone() {
@@ -248,6 +250,7 @@ public Object clone() {
         return retval;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.394 -0500", hash_original_method = "1A4F7C0F8CD9FB9B3174AB163DBDBDD1", hash_generated_method = "77DACF58BE8A29D391F22EE93C65BC18")
     
 @Override

@@ -67,6 +67,7 @@ HttpAuthHandlerImpl(Network network) {
         mLoaderQueue = new LinkedList<LoadListener>();
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.137 -0500", hash_original_method = "92EA526117BA58D828A346DC2F14E6C7", hash_generated_method = "BE888BC2460B85EAE15CD490B47AAED3")
     
 @Override

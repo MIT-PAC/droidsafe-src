@@ -1577,6 +1577,7 @@ private void removeAccessibilityApisFromJavaScript() {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.438 -0500", hash_original_method = "A141DE82EA292EFC5B808A2A34BC42D1", hash_generated_method = "9C9869D5AF6C8E3B7105A50B3FA9F062")
     
 @Override
@@ -1585,6 +1586,7 @@ private void removeAccessibilityApisFromJavaScript() {
         info.setScrollable(isScrollableForAccessibility());
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.441 -0500", hash_original_method = "8DCFDD538D967DF80BFE6CF931F08E30", hash_generated_method = "BBE01BA2FD3032ACC5E9AE713CDD9523")
     
 @Override
@@ -1610,6 +1612,7 @@ private boolean isScrollableForAccessibility() {
                 || contentToViewY(getContentHeight()) > getHeight() - mPaddingTop - mPaddingBottom);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.446 -0500", hash_original_method = "54B3F9F93CD715ABE05B0EE7E2D97801", hash_generated_method = "A9A3F5834D6532D7E3329353C7A555B3")
     
@@ -4771,6 +4774,7 @@ public WebSettings getSettings() {
     // Override View methods
     //-------------------------------------------------------------------------
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.944 -0500", hash_original_method = "4D6290BFCDFFE96473D2F2579D955F79", hash_generated_method = "23D126352E024A64A52BF76C1AAB305D")
     
 @Override
@@ -4789,6 +4793,7 @@ public WebSettings getSettings() {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.947 -0500", hash_original_method = "C0BB867D65C0EAF3817C046AEAC99DE7", hash_generated_method = "4643C6F19C9B35F74E17E7CB604B7AE6")
     
 @Override
@@ -4964,6 +4969,7 @@ private void removeTouchHighlight() {
         setTouchHighlightRects(null);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.961 -0500", hash_original_method = "4D6ED72E1D8734DB9F91C39D11CC17A8", hash_generated_method = "6691979A802DA24E926F97BC7AEFCBFD")
     
 @Override
@@ -6617,6 +6623,7 @@ void setGLRectViewport() {
         }
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.167 -0500", hash_original_method = "49826ABE0ED23F6056684562F9F9C220", hash_generated_method = "DC2D5182AC949B07569F56672D303479")
     
 @Override
@@ -8694,6 +8701,7 @@ public String getExtra() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.393 -0500", hash_original_method = "C1BF85501C9C720293FF5A0F8027F066", hash_generated_method = "FB3AB251B74508B0A5900B8472EB3767")
         
 @Override
@@ -8714,6 +8722,7 @@ public String getExtra() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.412 -0500", hash_original_method = "4BDCCDF31B8D55EFD7432A60E1C7C253", hash_generated_method = "CBB578CAF73EF526C62ECF35CA6BAE6A")
         
 @Override
@@ -8834,6 +8843,7 @@ public RequestFormData(String name, String url, Message msg,
             mWebSettings = getSettings();
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.081 -0500", hash_original_method = "DC6B246047C951370A98CE14CBC8CC44", hash_generated_method = "283587215503832F5607F81DAF7B5DA0")
         
 public void run() {
@@ -9424,6 +9434,7 @@ private void handleQueuedTouchEventData(TouchEventData ted) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.519 -0500", hash_original_method = "9A7677F45780C792E5B09EADF3925AD6", hash_generated_method = "659A1C2DE11BADEDF525CFC062257691")
         
 @Override
@@ -9940,6 +9951,7 @@ private InvokeListBox(String[] array, int[] enabled, int selection) {
             }
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.626 -0500", hash_original_method = "CCFADA0468DA91B20D0D6A2BBC10B3D9", hash_generated_method = "81640B52256D38FF136FE224AACC2881")
         
 public void run() {
@@ -10038,6 +10050,7 @@ public void run() {
                 //Synthesized constructor
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.565 -0500", hash_original_method = "47413D805E887745DF3971F679277823", hash_generated_method = "E7A0B18763B46172481F8F37425DB151")
             
 @Override
@@ -10180,6 +10193,7 @@ public SingleDataSetObserver(long id, ListView l, Adapter a) {
                 mAdapter = a;
             }
 
+            @DSSafe(DSCat.ANDROID_CALLBACK)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.609 -0500", hash_original_method = "C5592B2337B812BBABE83D8EC12313CA", hash_generated_method = "4470FD77F0F3698840B28D2345D482C4")
             
 @Override
@@ -10217,6 +10231,7 @@ public SingleDataSetObserver(long id, ListView l, Adapter a) {
         public void onNewPicture(WebView view, Picture picture);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.407 -0500", hash_original_method = "691C64C606B2F351F3DACFC131AE0C5B", hash_generated_method = "CD9EE6A2D087C138458D3F328272A45F")
     
 @Override

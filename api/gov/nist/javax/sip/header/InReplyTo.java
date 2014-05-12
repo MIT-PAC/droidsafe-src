@@ -79,6 +79,7 @@ public String encodeBody() {
         return callId.encode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.040 -0500", hash_original_method = "AACC864B78324D30A82E58DDECBB4AB7", hash_generated_method = "0E509C6DC96842CC80268F9E3A3514AD")
     
 public Object clone() {

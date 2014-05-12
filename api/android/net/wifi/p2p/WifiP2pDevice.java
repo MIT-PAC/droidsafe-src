@@ -269,6 +269,7 @@ public boolean isGroupOwner() {
         return (groupCapability & GROUP_CAPAB_GROUP_OWNER) != 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.268 -0500", hash_original_method = "09392A3C152DA1725DCCBD5DEBB248C2", hash_generated_method = "5D550A39FAC86B8A1E962F0736DBB9A9")
     
 @Override
@@ -283,6 +284,7 @@ public boolean isGroupOwner() {
         return other.deviceAddress.equals(deviceAddress);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.270 -0500", hash_original_method = "016D59A2B811BA8203F4683B5513F2D5", hash_generated_method = "011133C52A8A5C2BA1398ECCF2140305")
     
 public String toString() {

@@ -23,6 +23,7 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
         //return array;
     }
     
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.685 -0400", hash_original_method = "6AAD1AE5FDA036294C1A8E6B43833A30", hash_generated_method = "A9974704F73CEA49F0CF514F31EB009D")
     public T get(int i) {

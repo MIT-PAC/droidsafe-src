@@ -92,6 +92,7 @@ public CharSequence getNewText() {
         return mNewText;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.785 -0500", hash_original_method = "7D587C528DCE451F3ED32B059F93B063", hash_generated_method = "C69486CC7183B40E68E5B690FD2DB57C")
     
 @Override

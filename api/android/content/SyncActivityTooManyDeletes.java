@@ -39,6 +39,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         //Synthesized constructor
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.911 -0500", hash_original_method = "4083F5BA5A170FDE3F4AF132A8D59C6A", hash_generated_method = "9C321ACB0A6CFD8B64CE048840CF0262")
     
 @Override

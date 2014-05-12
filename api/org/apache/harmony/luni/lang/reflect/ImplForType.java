@@ -89,6 +89,7 @@ Type getResolvedType() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.020 -0500", hash_original_method = "6D877CB8043423D6A95AF1E4F8482A09", hash_generated_method = "E0216B7F50AF807374976755B7848F40")
     
 @Override

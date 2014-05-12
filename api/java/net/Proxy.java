@@ -89,6 +89,7 @@ public SocketAddress address() {
      *
      * @return the representing string of this proxy.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.932 -0500", hash_original_method = "15D85DA96A49804E7A6DD9EB58950877", hash_generated_method = "E6576740E2634FC2E7865B5234D8A111")
     
 @Override
@@ -116,6 +117,7 @@ public SocketAddress address() {
      *         Proxy} as this instance, {@code false} otherwise.
      * @see #hashCode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.936 -0500", hash_original_method = "0AADE3011667515449A8CD7BE7CB43B7", hash_generated_method = "5E4FA92ED2FAEE29695A17E553FEC1CD")
     
 @Override
@@ -142,6 +144,7 @@ public SocketAddress address() {
      *
      * @return the hashcode value for this Proxy instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.939 -0500", hash_original_method = "AFEB3E9B74402AACB68FC4AD63CE261F", hash_generated_method = "AEBC8342316450BCA39FD0E8718D8875")
     
 @Override

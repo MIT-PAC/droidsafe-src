@@ -639,6 +639,7 @@ public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? null : new Bundle(extras);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.036 -0500", hash_original_method = "F2CDEB7D6ECCED8CC4C514EA700B26BB", hash_generated_method = "C7F1A618984BF16555BE41E35CBE58B9")
     
 @Override

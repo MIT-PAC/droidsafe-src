@@ -286,6 +286,7 @@ public boolean unlinkToDeath(DeathRecipient recipient, int flags) {
         return true;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.182 -0500", hash_original_method = "E45E17FA4DD489F5F777D118010D5B05", hash_generated_method = "D713F164488311AD375EE936C161E639")
     
 protected void finalize() throws Throwable {
@@ -475,6 +476,7 @@ public void dumpAsync(FileDescriptor fd, String[] args) throws RemoteException {
         */
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.226 -0500", hash_original_method = "E45E17FA4DD489F5F777D118010D5B05", hash_generated_method = "A5E9738289C22E874EDDA2DFBEABCF79")
     
 @Override

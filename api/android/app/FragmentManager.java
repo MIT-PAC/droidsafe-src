@@ -568,13 +568,14 @@ public static int transitToStyleIndex(int transit, boolean enter) {
 };
     
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.623 -0400", hash_original_method = "57A648A59831AB7BB1637AFC6125C81E", hash_generated_method = "57A648A59831AB7BB1637AFC6125C81E")
     public FragmentManagerImpl ()
     {
         //Synthesized constructor
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.416 -0500", hash_original_method = "FD4DF6D1DA8CD9545895F43FA5CF7B0B", hash_generated_method = "901C9AD0A2A75ECA10E98E593A7AB045")
     
 @Override
@@ -737,6 +738,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.460 -0500", hash_original_method = "A7D5B4266978FAAC75BAC34E53BDC41B", hash_generated_method = "9E28CDC062765D4B518503BD010A8D2B")
     
 @Override
@@ -1494,6 +1496,7 @@ public void attachFragment(Fragment fragment, int transition, int transitionStyl
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.517 -0500", hash_original_method = "846CFE4E6D453F7EB47298FC794E62E7", hash_generated_method = "21D2CD95F031D04F17D8A8EDF7F0C2EE")
     
 public Fragment findFragmentById(int id) {
@@ -1516,6 +1519,7 @@ public Fragment findFragmentById(int id) {
         return null;
     }
     
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.520 -0500", hash_original_method = "5F9B0395F726C1A39BFC043E2E96E889", hash_generated_method = "5A9448D48735E8A336F9FFD7325CB2B4")
     
 public Fragment findFragmentByTag(String tag) {

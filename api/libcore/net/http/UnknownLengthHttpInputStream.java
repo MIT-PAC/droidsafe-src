@@ -23,6 +23,8 @@ UnknownLengthHttpInputStream(InputStream is, CacheRequest cacheRequest,
         super(is, httpEngine, cacheRequest);
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.962 -0500", hash_original_method = "E2336783F7D37948479E1E76BEFE0EF2", hash_generated_method = "60867053817CC2934DD47C29AA0D185D")
     
 @Override public int read(byte[] buffer, int offset, int count) throws IOException {
@@ -41,6 +43,7 @@ UnknownLengthHttpInputStream(InputStream is, CacheRequest cacheRequest,
         return read;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.964 -0500", hash_original_method = "10BF8275103D8B9D888D9077AFBF2526", hash_generated_method = "4B5A7EDE8E8172FFEB7CB29CB95E1A05")
     
 @Override public int available() throws IOException {

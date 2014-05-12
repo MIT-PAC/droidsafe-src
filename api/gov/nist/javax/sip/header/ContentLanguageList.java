@@ -19,6 +19,7 @@ public ContentLanguageList () {
         super(ContentLanguage.class,
             ContentLanguageHeader.NAME);
     }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.764 -0500", hash_original_method = "7F1D883A3CFE2424D76B8075C1055DCD", hash_generated_method = "6163721B2507CBE737CA9EDE02FB4358")
     
 public Object clone() {

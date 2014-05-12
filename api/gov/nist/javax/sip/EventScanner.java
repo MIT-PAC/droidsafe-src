@@ -28,18 +28,11 @@ import javax.sip.TransactionTerminatedEvent;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-
-
-
-
-
 class EventScanner implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.193 -0500", hash_original_field = "028C4EA5C52309C2DE6D499D1B3E3FEF", hash_generated_field = "14EA4271F1CA4E544DF5B6D3AACE226C")
 
-
     private boolean isStopped;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.195 -0500", hash_original_field = "11FA541DFC204F75CB36FDDB52ABFC51", hash_generated_field = "FA603FB92FA509FB776643125A3C791C")
-
 
     private int refCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.198 -0500", hash_original_field = "4CF73E35276C2E18559F95BDB74A21C4", hash_generated_field = "3C5E83405A53D5FBE5E156D2F74AA766")
@@ -47,10 +40,8 @@ class EventScanner implements Runnable {
     private LinkedList pendingEvents = new LinkedList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.201 -0500", hash_original_field = "0919A27EA1347E2B8BF180BE7E741D38", hash_generated_field = "467BA1CC5CE0750BC552D8D3070838DC")
 
-
     private int[] eventMutex = { 0 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.204 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
-
 
     private SipStackImpl sipStack;
 
@@ -463,6 +454,7 @@ public void deliverEvent(EventWrapper eventWrapper) {
      * calls the deliverEvent method above.
      */
 
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.234 -0500", hash_original_method = "5CCAE779A521C5AA39F7D74A098F474A", hash_generated_method = "C673673F7FA2F5C78C4D05886458027F")
     
 public void run() {
@@ -537,7 +529,6 @@ public void run() {
             }
         }
     }
-
     
 }
 

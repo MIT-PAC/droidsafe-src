@@ -20,6 +20,7 @@ public ServiceRouteList() {
         super(ServiceRoute.class, ServiceRouteHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.593 -0500", hash_original_method = "1032498AE96A3DBCEFF1D5F4D42985C8", hash_generated_method = "BC44DEF6E9B0776E11FFC921235E5B34")
     
 public Object clone() {

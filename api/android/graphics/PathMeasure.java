@@ -223,6 +223,7 @@ public boolean nextContour() {
         return native_nextContour(native_instance);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.009 -0400", hash_original_method = "DBBBAD6E9BAAD633272A45BC2D13EFB0", hash_generated_method = "65E92602EF069C56D03620CB6E8DC9E6")
     
 protected void finalize() throws Throwable {

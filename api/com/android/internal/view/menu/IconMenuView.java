@@ -494,6 +494,7 @@ public boolean invokeItem(MenuItemImpl item) {
         return new IconMenuView.LayoutParams(getContext(), attrs);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.618 -0400", hash_original_method = "C6170839D0C24530AF40D6B41DC89AE3", hash_generated_method = "9975831127881415DB1A9F98C11EE9EC")
     
 @Override
@@ -567,6 +568,7 @@ public int getLayoutNumRows() {
         return mLayoutNumRows;
     }
     
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.626 -0400", hash_original_method = "D40C17BF4E36F8FA59B3A091DC2FD968", hash_generated_method = "5EAF53B79221C4AF56FD42CA650C022C")
     
 @Override
@@ -658,6 +660,7 @@ private void setCycleShortcutCaptionMode(boolean cycleShortcutAndNormal) {
      * longpress flag, and start cycling). If it is being longpressed, we cycle
      * to the next mode.
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.632 -0400", hash_original_method = "89F2C35600300C50A3DBB522D6A4DDE2", hash_generated_method = "5146E8B818C8357BD9CA478C2FE8526E")
     
 public void run() {
@@ -724,6 +727,7 @@ private void calculateItemFittingMetadata(int width) {
         }
     }
     
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.636 -0400", hash_original_method = "2D6F044112ADAA2591CF3D217EC1849B", hash_generated_method = "EEAB008C979522F1A2612F4D0FF1D4EB")
     
 @Override
@@ -741,6 +745,7 @@ private void calculateItemFittingMetadata(int width) {
         return new SavedState(superState, -1);
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.637 -0400", hash_original_method = "49AFBE27B9E568F013D030667BB6BE48", hash_generated_method = "EA7A0BF17596655FABFC8CDE09374B8F")
     
 @Override

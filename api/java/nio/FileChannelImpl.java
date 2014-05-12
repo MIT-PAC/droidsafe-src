@@ -326,7 +326,7 @@ public int read(ByteBuffer buffer, long position) throws IOException {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.548 -0500", hash_original_method = "5BE7BADF8838BD61276F9CD3980F7CA7", hash_generated_method = "54A47B7BA1FF3C8CDFA763B26A6EAB46")
     
 public int read(ByteBuffer buffer) throws IOException {
@@ -405,6 +405,7 @@ public long read(ByteBuffer[] buffers, int offset, int length) throws IOExceptio
         return transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.READV));
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.560 -0500", hash_original_method = "BF0F3D7AEFAA2AFACA7A21CBB184DE89", hash_generated_method = "26F7C8C25E81F04259EDA281AEDBBF47")
     
 public long size() throws IOException {
@@ -540,7 +541,7 @@ public int write(ByteBuffer buffer, long position) throws IOException {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.580 -0500", hash_original_method = "50D91170AD5AAA80BF5888A2631505BE", hash_generated_method = "D23FCD9ADA11EB30655F72711AF5856C")
     
 public int write(ByteBuffer buffer) throws IOException {

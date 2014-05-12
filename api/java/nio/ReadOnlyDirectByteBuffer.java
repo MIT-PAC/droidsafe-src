@@ -31,6 +31,7 @@ protected ReadOnlyDirectByteBuffer(MemoryBlock block, int capacity, int offset) 
         return copy(this, mark);
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.162 -0500", hash_original_method = "E9BD68C2A3E399E8B6F437AA7B03F4EC", hash_generated_method = "077F04774A20C0082DD03C3E2A797A75")
     
 @Override
@@ -52,6 +53,7 @@ protected ReadOnlyDirectByteBuffer(MemoryBlock block, int capacity, int offset) 
         return true;
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.170 -0500", hash_original_method = "7260EDFD38A12D119BC6271ED3EA27DF", hash_generated_method = "E9BC339AACB9A8E7D763DEE303F6039F")
     
 @Override
@@ -59,6 +61,7 @@ protected ReadOnlyDirectByteBuffer(MemoryBlock block, int capacity, int offset) 
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.172 -0500", hash_original_method = "1C2CBE90B4E9D1A3B1F660933A2EE69D", hash_generated_method = "F5F6C3399D7EB712FB5C764445F1F84C")
     
 @Override
@@ -66,6 +69,7 @@ protected ReadOnlyDirectByteBuffer(MemoryBlock block, int capacity, int offset) 
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.175 -0500", hash_original_method = "951D4EAC88501D9206E4E1A989B35D3E", hash_generated_method = "D831EC916321DB52F3301DB5CD73F5BC")
     
 @Override
@@ -143,6 +147,7 @@ protected ReadOnlyDirectByteBuffer(MemoryBlock block, int capacity, int offset) 
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.203 -0500", hash_original_method = "927CD040BA02D17CD9D13CDD471B3CCF", hash_generated_method = "69DF853CF3CDE579BA901FAE444AE4A5")
     
 @Override

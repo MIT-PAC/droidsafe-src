@@ -502,6 +502,7 @@ private void createPbrFile(ArrayList<byte[]> records) {
         mPbrFile = new PbrFile(records);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.087 -0500", hash_original_method = "DBCDBDCB51A5EB5E1A763E38D42C7855", hash_generated_method = "867F5F3747F8A06A94F7CA8A00E1E196")
     
 @Override

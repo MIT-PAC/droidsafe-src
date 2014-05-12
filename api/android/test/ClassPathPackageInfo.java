@@ -62,6 +62,7 @@ private void addTopLevelClassesTo(Set<Class<?>> set) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.256 -0500", hash_original_method = "CCAFDBCE1F7EFB06EFE401B73EBC24DB", hash_generated_method = "20714EA5E08211D39A33F42067740A11")
     
 @Override
@@ -73,6 +74,7 @@ private void addTopLevelClassesTo(Set<Class<?>> set) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.259 -0500", hash_original_method = "97236FFE62438E7BA5668D1EFAC10502", hash_generated_method = "A4E7983C761642B928975DFDD712C839")
     
 @Override

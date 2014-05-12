@@ -279,6 +279,7 @@ boolean asn1Equals(
         return time.equals(((DERUTCTime)o).time);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.411 -0500", hash_original_method = "12943BCCC2961451B97E26F622F40AB3", hash_generated_method = "59D726F128FC0EF1749455952581310D")
     
 public int hashCode()
@@ -286,6 +287,7 @@ public int hashCode()
         return time.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.413 -0500", hash_original_method = "0230A74DF7F00CEFAD5D2184A68DC5A0", hash_generated_method = "3DDDB32ACB777E0E45FA1663E03C73C7")
     
 public String toString() 

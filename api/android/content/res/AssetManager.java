@@ -686,6 +686,7 @@ final void releaseTheme(int theme) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.941 -0500", hash_original_method = "C1D87D935BC2D519032BCC6CD9CB5D9B", hash_generated_method = "6DE91437B68837BFBE09E007C8377A2F")
     
 protected void finalize() throws Throwable {
@@ -1021,6 +1022,7 @@ public final int read() throws IOException {
 public final boolean markSupported() {
             return true;
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.953 -0500", hash_original_method = "A5BC52EF5476CDC51345AEEDA1CB06B3", hash_generated_method = "9A118EF71C01252270807CF69ED2E9B3")
         
 public final int available() throws IOException {
@@ -1049,16 +1051,21 @@ public final void mark(int readlimit) {
 public final void reset() throws IOException {
             seekAsset(mAsset, mMarkPos, -1);
         }
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.963 -0500", hash_original_method = "5E34804727014E6FD2F3F87A050AF853", hash_generated_method = "FAB13CFE38B404055F48C43FA31E67F2")
         
 public final int read(byte[] b) throws IOException {
             return readAsset(mAsset, b, 0, b.length);
         }
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.965 -0500", hash_original_method = "AA634A995A76E648DEC57A4EAA0F35C1", hash_generated_method = "F9A24935554623E12AC412D1B6AA4148")
         
 public final int read(byte[] b, int off, int len) throws IOException {
             return readAsset(mAsset, b, off, len);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.967 -0500", hash_original_method = "A27B064C1368239357036D853D73FA32", hash_generated_method = "395A4373A1A2A3DCE0EE309C140EF460")
         
 public final long skip(long n) throws IOException {
@@ -1072,6 +1079,7 @@ public final long skip(long n) throws IOException {
             return n;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.969 -0500", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "0BF8996A0A6FCACED5B5E8AA34F655BA")
         
 protected void finalize() throws Throwable

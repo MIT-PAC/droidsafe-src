@@ -245,7 +245,7 @@ public abstract int send(ByteBuffer source, SocketAddress address) throws IOExce
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.943 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
@@ -360,7 +360,7 @@ public synchronized final long read(ByteBuffer[] targets)
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.951 -0500", hash_original_method = "1C9E91C0F072B678D6E4CA1EF7282EDC", hash_generated_method = "CBB72B52B431F1EA5E7EE6413675146F")

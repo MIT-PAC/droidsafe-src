@@ -54,7 +54,6 @@ import android.util.Log;
 public class BluetoothPbap {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:40:20.739 -0400", hash_original_field = "B7524E04D21BCCC922EFEF4E54B2CF88", hash_generated_field = "814C0F94A7F0F5B0540B77DAA6161024")
 
-
     private static final String TAG = "BluetoothPbap";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:40:20.747 -0400", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
@@ -84,7 +83,6 @@ public class BluetoothPbap {
 
     public static final int STATE_CONNECTED    = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:40:20.818 -0400", hash_original_field = "83085037C92505261DAF694B37B1AB94", hash_generated_field = "ED5FC54A0E1F7E547D6396E3C522384B")
-
 
     public static final int RESULT_FAILURE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:40:20.823 -0400", hash_original_field = "046FF881B1652C5410F7E510A4590BC2", hash_generated_field = "7EAFB7F6A714A396D5FD99B19AFA0BF8")
@@ -123,7 +121,6 @@ private static void log(String msg) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:40:20.774 -0400", hash_original_field = "AF80AF356C99F0396DEA9A78A776DD27", hash_generated_field = "6AE0C7D8AB61D9078F5AF5423B043BD4")
 
-
     private IBluetoothPbap mService;
 
     /**
@@ -155,7 +152,6 @@ private static void log(String msg) {
 
     private ServiceListener mServiceListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:40:20.900 -0400", hash_original_field = "F0D55C23B73B18D189C175C259BB6932", hash_generated_field = "894C40BEEA45122F2AB1A9BAC0BA8E33")
-
 
     private ServiceConnection mConnection = new ServiceConnection() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.085 -0400", hash_original_method = "448C51A87F86E30F78864D74B3DBC838", hash_generated_method = "E31932F9B8598E41281DB71873526FB9")
@@ -191,6 +187,7 @@ public BluetoothPbap(Context context, ServiceListener l) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:40:20.846 -0400", hash_original_method = "6187FAF262C27B43BD19556B133B66CD", hash_generated_method = "E954298D2D755E1C75FE4E4BC8539455")
     
 protected void finalize() throws Throwable {

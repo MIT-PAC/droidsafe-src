@@ -93,7 +93,7 @@ public Bundle() {
      * @param parcelledData a Parcel containing a Bundle
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.407 -0500", hash_original_method = "DB07395F523937B25016D60988A66D69", hash_generated_method = "DB07395F523937B25016D60988A66D69")
     
 Bundle(Parcel parcelledData) {
@@ -101,7 +101,7 @@ Bundle(Parcel parcelledData) {
     }
 
     /* package */ @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.409 -0500", hash_original_method = "4CBA8A75160127E76B9D77B8452C524A", hash_generated_method = "4CBA8A75160127E76B9D77B8452C524A")
     
 Bundle(Parcel parcelledData, int length) {
@@ -242,6 +242,7 @@ public ClassLoader getClassLoader() {
      * Clones the current Bundle. The internal map is cloned, but the keys and
      * values to which it refers are copied by reference.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.431 -0500", hash_original_method = "8ED269C57B5B4F834AF78EEAE05F20CC", hash_generated_method = "05C0BDAE85DE493D806AFBD3AE58240D")
     
 @Override
@@ -1990,7 +1991,7 @@ void readFromParcelInner(Parcel parcel, int length) {
     }
 
     @DSComment("OS Bundle data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.636 -0500", hash_original_method = "6D3D0FD7A771D9A5F3ECAE6DEB73615C", hash_generated_method = "0355024C495606547CD5BFBEF3CBEDE1")
     
 @Override

@@ -85,6 +85,7 @@ public JWebCoreJavaBridge() {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.941 -0500", hash_original_method = "5F428C944882A33820E180A8794913DA", hash_generated_method = "824E91469A1A44167DD4A4345F885232")
     
 @Override
@@ -111,6 +112,7 @@ private void fireSharedTimer() {
      *
      * The only accepted message currently is TIMER_MESSAGE
      */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.951 -0500", hash_original_method = "192555E6E84DEFC9610ACF82B6235778", hash_generated_method = "A02BC465AF7FA4FA10FEE1CD67C31C11")
     
 @Override

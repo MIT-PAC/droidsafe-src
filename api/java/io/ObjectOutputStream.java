@@ -327,6 +327,7 @@ protected boolean enableReplaceObject(boolean enable) {
      *             if an error occurs while writing to or flushing the output
      *             stream.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.013 -0500", hash_original_method = "117A95892DAF31A0926F2E917E5208CF", hash_generated_method = "133BE7A601CE39FEA947C8DB1F698213")
     
 @Override
@@ -526,6 +527,7 @@ public void useProtocolVersion(int version) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.043 -0500", hash_original_method = "4335176A8BF0CB76C8983C14BE755AB0", hash_generated_method = "2396E7855518FCB39100A578F5EF0B6D")
     
@@ -547,7 +549,7 @@ public void useProtocolVersion(int version) throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.045 -0500", hash_original_method = "890E7ADC76A0934752F791BA928637BD", hash_generated_method = "76EC2FE8B111D6EFD0C5161A9F8E6AE5")
     
 @Override

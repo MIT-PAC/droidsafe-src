@@ -70,7 +70,6 @@ public class Visualizer {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:18.276 -0400", hash_original_field = "65F6BFF80E5B935381A9955FED724BC3", hash_generated_field = "89A002C16FAAD5779C2B237C40B0F26D")
 
-
     private final static String TAG = "Visualizer-JAVA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:18.278 -0400", hash_original_field = "DADF89E4937FB007E11FCD2CF7BDDE2E", hash_generated_field = "ABD8681944D12EB0761E4A01DCCA64A7")
 
@@ -131,7 +130,6 @@ public class Visualizer {
     	return retObj;
     }
 
-
     /**
      * Returns the maximum capture rate for the callback capture method. This is the maximum value
      * for the rate parameter of the
@@ -147,11 +145,6 @@ public class Visualizer {
     	return (int)taintDouble;
     }
 
-
-
-
-
-
     //---------------------------------------------------------
     // Interface definitions
     //--------------------
@@ -161,7 +154,6 @@ public class Visualizer {
     private static final void native_init(){
     	//Formerly a native method
     }
-
 
     //---------------------------------------------------------
     // Java methods called from the native side
@@ -267,6 +259,7 @@ public void release() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:18.315 -0400", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "B426276F6755268DFF3429CB984C1F76")
     
 @Override
@@ -437,6 +430,7 @@ public NativeEventHandler(Visualizer v, Looper looper) {
             mVisualizer = v;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:18.339 -0400", hash_original_method = "96F169B520F6500397539A8755B7E979", hash_generated_method = "7318D51A74A50506B3FF6A417F2EDFD1")
         
 @Override
@@ -585,7 +579,6 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     	//Formerly a native method
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:22:02.637 -0400", hash_original_method = "29EBD7A2FE8EDC8D2C10EA00B5293031", hash_generated_method = "8E05B7AB4B85F0BA21E048043C2032E1")
     
     private final void native_release(){
@@ -603,7 +596,6 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:51.188 -0400", hash_original_method = "2AFB9A522158996345CFEAF824256F69", hash_generated_method = "1D026D1C1A92C3AAEEBB96B2B79A68C7")
     
     private final boolean native_getEnabled(){
@@ -612,9 +604,6 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:29.090 -0400", hash_original_method = "EC22AA8EEA04A40F54E298919530920A", hash_generated_method = "BE2754679FD3EF93799F55DCBAECF5B1")
     
@@ -636,7 +625,6 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:51.195 -0400", hash_original_method = "811140457282587FBB6EA82E5142947C", hash_generated_method = "614B39334BC0E497A1C9EF25F850F43F")
     
     private final int native_getSamplingRate(){
@@ -645,9 +633,6 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     
     	return (int)taintDouble;
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:29.101 -0400", hash_original_method = "DD13C778DFD9A8CCEB68CCA8D8EA96A1", hash_generated_method = "E1CE8CB1835C53A20FA9190528483A68")
     
@@ -659,7 +644,6 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     
     	return (int)taintDouble;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:29.105 -0400", hash_original_method = "3EA178C8ADC23C4E3D57A9C08EB404A7", hash_generated_method = "890CC51A983D576040AAFA5FB1211917")
     
@@ -684,10 +668,6 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     
     	return (int)taintDouble;
     }
-
-
-
-
 
 }
 

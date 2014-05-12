@@ -361,6 +361,7 @@ public HistoricalRecord(ComponentName activityName, long time, float weight) {
             this.weight = weight;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.143 -0500", hash_original_method = "4E1A48E49166529A0B7FC03866764063", hash_generated_method = "352078E7B322AA289CCF6775E22D1ADB")
         
 @Override
@@ -373,6 +374,7 @@ public HistoricalRecord(ComponentName activityName, long time, float weight) {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.146 -0500", hash_original_method = "B85F0FF6FF50850EA2189DB29FD09D21", hash_generated_method = "925EC01A17EFCF4C15E96773246D4FC3")
         
 @Override
@@ -403,6 +405,7 @@ public HistoricalRecord(ComponentName activityName, long time, float weight) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.148 -0500", hash_original_method = "DE8206875FA4E924E296C5ACB6D7F3F2", hash_generated_method = "9BB09691C87ABA3B5C765EB27953B0B3")
         
 @Override
@@ -437,6 +440,7 @@ public ActivityResolveInfo(ResolveInfo resolveInfo) {
             this.resolveInfo = resolveInfo;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.161 -0500", hash_original_method = "F192571EE56F5C4051616CB9861F74E4", hash_generated_method = "13AB84BC74D8FAD5F7035FEF73FC4060")
         
 @Override
@@ -444,6 +448,7 @@ public ActivityResolveInfo(ResolveInfo resolveInfo) {
             return 31 + Float.floatToIntBits(weight);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.164 -0500", hash_original_method = "FF799F5AAE6D6CF88DAF4502D583A290", hash_generated_method = "22E769B1C84475BBCF7353D36CFABAAF")
         
 @Override
@@ -470,6 +475,7 @@ public int compareTo(ActivityResolveInfo another) {
              return  Float.floatToIntBits(another.weight) - Float.floatToIntBits(weight);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.168 -0500", hash_original_method = "6B7079774B733597AE380820B7605540", hash_generated_method = "FCB473823D3E65A9CED590AB9A5E1E65")
         
 @Override
@@ -545,7 +551,8 @@ public void sort(Intent intent, List<ActivityResolveInfo> activities,
             //Synthesized constructor
         }
 
-       @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.189 -0500", hash_original_method = "C7992FBC3712621E8BB422FE384E294B", hash_generated_method = "F36BC393F0C978E8C08BA80782762A25")
+       @DSSpec(DSCat.THREADING)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.189 -0500", hash_original_method = "C7992FBC3712621E8BB422FE384E294B", hash_generated_method = "F36BC393F0C978E8C08BA80782762A25")
         
 public void run() {
             FileInputStream fis = null;
@@ -665,6 +672,7 @@ public void run() {
             //Synthesized constructor
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.197 -0500", hash_original_method = "56491CDA5DB122242C8DDE4A7A87359C", hash_generated_method = "0E634B72781F99144EF2F4B3330B50E6")
         
 public void run() {
@@ -1011,6 +1019,7 @@ public int getHistorySize() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.117 -0500", hash_original_method = "37F72BEA9084083CB35C7BD83368023D", hash_generated_method = "248FD8D7CA66D4A764B53D560B63E87E")
     
 @Override

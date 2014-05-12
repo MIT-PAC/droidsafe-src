@@ -224,6 +224,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
         return fd2;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.362 -0500", hash_original_method = "910906868F2A4F19B7D2844E1F779346", hash_generated_method = "40FFCDDF45EF3AA1E9C1A0DE5B81F59B")
     
 public String toString() {
@@ -563,6 +564,7 @@ public LocalSocketAddress getSockAddress() throws IOException
         //return getSockName_native(fd);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.408 -0500", hash_original_method = "CA22E17CA63436350E75BC7DD678FC6C", hash_generated_method = "1437CF8B9AA89AA1DD5C1019A36E2B47")
     
 @Override
@@ -578,6 +580,7 @@ public LocalSocketAddress getSockAddress() throws IOException
             //Synthesized constructor
         }
         /** {@inheritDoc} */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.277 -0500", hash_original_method = "8F92B1C37F1E7B064EB55148DFA3D6F8", hash_generated_method = "13FE18489CE7D80AD7769190047FA841")
         
 @Override
@@ -610,6 +613,8 @@ public LocalSocketAddress getSockAddress() throws IOException
         }
 
         /** {@inheritDoc} */
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.284 -0500", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "CFD5B18414297C5D63F6DE9EDDF7232C")
         
 @Override
@@ -618,6 +623,8 @@ public LocalSocketAddress getSockAddress() throws IOException
         }
 
         /** {@inheritDoc} */
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.286 -0500", hash_original_method = "554DCEA621C79251D4E71F6BA8C4411B", hash_generated_method = "32C6E525B1BE064854CD72B345699AD5")
         
 @Override
@@ -655,7 +662,8 @@ public LocalSocketAddress getSockAddress() throws IOException
         }
 
         /** {@inheritDoc} */
-        @DSSink({DSSinkKind.NETWORK})
+        @DSSpec(DSCat.IO)
+        @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.294 -0500", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "7D09861B37E141F39BE351A56688C45A")
         
 @Override
@@ -664,6 +672,8 @@ public LocalSocketAddress getSockAddress() throws IOException
         }
         
         /** {@inheritDoc} */
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.296 -0500", hash_original_method = "EBF729639A281DEC85F834E9B1299F05", hash_generated_method = "ED4C74392129B7713D5435E0B7CF9389")
         
 @Override
@@ -680,7 +690,7 @@ public LocalSocketAddress getSockAddress() throws IOException
         }
 
         /** {@inheritDoc} */
-        @DSSink(DSSinkKind.IO)
+        @DSSink({DSSinkKind.IO})
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.299 -0500", hash_original_method = "0B4435377A393210C076C48249BA83BB", hash_generated_method = "024C608DDBDDDB6ABBACDC1BA4A0D8E2")
         

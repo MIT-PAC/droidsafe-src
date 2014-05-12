@@ -819,6 +819,7 @@ public boolean equals(Object obj, boolean inOrder)
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.956 -0500", hash_original_method = "F1AF8C1EFC711A1D842EED436165BEED", hash_generated_method = "E12114BF123A62D0442731AC9267F725")
     
 public int hashCode()
@@ -848,6 +849,7 @@ public int hashCode()
     /**
      * test for equality - note: case is ignored.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.959 -0500", hash_original_method = "9BE112C8870FAD3CF61652B8C6BD4A74", hash_generated_method = "F2D77CB590F7FA9E0FF8D44FB616069C")
     
 public boolean equals(Object obj)
@@ -1179,6 +1181,7 @@ private String bytesToString(
         return new String(cs);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.980 -0500", hash_original_method = "E860E9E8B8CF997531DC86A289D376AE", hash_generated_method = "8B72C1A60AC984BE730E0959D0E7CD26")
     
 public String toString()

@@ -68,7 +68,7 @@ public class DeviceAdminReceiver extends BroadcastReceiver {
     private ComponentName mWho;
     
     @DSComment("device administration")
-    @DSSpec(DSCat.DEVICE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.610 -0400", hash_original_method = "D22D7983747EBDA5D1157714B0E9C778", hash_generated_method = "D22D7983747EBDA5D1157714B0E9C778")
     public DeviceAdminReceiver ()
     {
@@ -229,7 +229,7 @@ public void onPasswordExpiring(Context context, Intent intent) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.496 -0500", hash_original_method = "2445129A1CDA7F03AFDA7F9C777F984A", hash_generated_method = "FF7DC1FEB70492C2E8AF52B85A93BCFA")
     @DSVerified
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.IPC_CALLBACK)
 
 @Override
     public void onReceive(Context context, Intent intent) {

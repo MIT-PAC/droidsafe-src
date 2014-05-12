@@ -234,6 +234,7 @@ public void setCheckMarkDrawable(Drawable d) {
         return drawableState;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.377 -0500", hash_original_method = "856DABB8A541BB631DA077FA70F1A5D5", hash_generated_method = "7320FEC9D00974E6AA7959C14068BB00")
     
 @Override
@@ -250,6 +251,7 @@ public void setCheckMarkDrawable(Drawable d) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.379 -0500", hash_original_method = "E1DFB2AF73729EA8AA28BE1E77594577", hash_generated_method = "E0A307C13A2B0EF8859DF8BD8C2E8931")
     
 @Override
@@ -258,6 +260,7 @@ public void setCheckMarkDrawable(Drawable d) {
         event.setChecked(mChecked);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.382 -0500", hash_original_method = "800F92BFA9EDE937B28EAF651D664B90", hash_generated_method = "4788EAEF4BDBCFDCBBBE5CEFA99C5E9D")
     
 @Override
@@ -270,6 +273,7 @@ public void setCheckMarkDrawable(Drawable d) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.384 -0500", hash_original_method = "31E71954214D2E567F10971C83F42BE3", hash_generated_method = "2075A46C2E8F301CC0F3B5E8E3561DBD")
     
 @Override

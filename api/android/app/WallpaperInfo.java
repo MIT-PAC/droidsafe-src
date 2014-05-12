@@ -295,6 +295,7 @@ public void dump(Printer pw, String prefix) {
         pw.println(prefix + "mSettingsActivityName=" + mSettingsActivityName);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.146 -0500", hash_original_method = "01F16DDF22698F82DBFF601E0002CE8F", hash_generated_method = "66DB4E29EAD0EDE7B818ED2F22ED0573")
     
 @Override

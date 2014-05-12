@@ -19,6 +19,7 @@ public SecurityServerList()
         super(SecurityServer.class, SecurityServerHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.930 -0500", hash_original_method = "DB9A46F7231A313671C09010ADA9A7C3", hash_generated_method = "9A26E59B08D0959DFE3D86925B5AB462")
     
 public Object clone() {

@@ -54,7 +54,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     private Drawable mLastDrawable;
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.691 -0400", hash_original_method = "094684F7E86BAEC8B113ECD0EF1A35E3", hash_generated_method = "094684F7E86BAEC8B113ECD0EF1A35E3")
     public DrawableContainer ()
     {
@@ -64,7 +64,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     // overrides from Drawable
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.127 -0500", hash_original_method = "4C0F5C22B9C7136183C2CC55D1B2C479", hash_generated_method = "1C90F3AD456947B775572223615C57E7")
     
 @Override
@@ -108,7 +108,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.134 -0500", hash_original_method = "33F48EB62D0DC564AE5544FE28781DA5", hash_generated_method = "D40D692DA658E707BEA31BCA54538687")
     
 @Override
@@ -263,7 +263,7 @@ public void setExitFadeDuration(int ms) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.158 -0500", hash_original_method = "DE0AA10FF6502448C6D350B4086CE53A", hash_generated_method = "B156F18E6F1E5931B390C1C93F008391")
     
 @Override
@@ -276,7 +276,7 @@ public void setExitFadeDuration(int ms) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.160 -0500", hash_original_method = "FA2E61AFB9D6236C0B64D53932A9175C", hash_generated_method = "4C1235EC697D9AD248FCF617EDC4122E")
     
 @Override
@@ -361,8 +361,8 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.176 -0500", hash_original_method = "1234F5DF929258DFDBB23F3D48CB2B3B", hash_generated_method = "DBAE457F7B48E7BCA3A150147A003E5C")
     
 @Override
@@ -491,7 +491,7 @@ void animate(boolean schedule) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.191 -0500", hash_original_method = "2271215EA07D061295E4A17A597D4C85", hash_generated_method = "126755277D71E0490A3F397762C59936")
     
 @Override

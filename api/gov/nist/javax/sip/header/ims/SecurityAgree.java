@@ -364,6 +364,7 @@ public float getPreference() {
         return (Float.parseFloat(getParameter(ParameterNamesIms.Q)));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.104 -0500", hash_original_method = "AD0CCA4E33EB4C4CCEB107F65F233D48", hash_generated_method = "D2864490D9915CAB3F7DC7D092E6E822")
     
 public boolean equals(Object other)
@@ -379,6 +380,7 @@ public boolean equals(Object other)
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.108 -0500", hash_original_method = "027A143FB16239A6EF6573784EA7EAA2", hash_generated_method = "9CDB4A26E1662D64A7562B06E580DD62")
     

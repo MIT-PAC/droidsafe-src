@@ -213,6 +213,7 @@ private VerifierDeviceIdentity(Parcel source) {
         mIdentityString = encodeBase32(identity);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.281 -0500", hash_original_method = "A24AB6F6393E3B1D0D15482B7A9B6B3D", hash_generated_method = "75A0F641DEED391E9C73ABF86D6CF76B")
     
 @Override
@@ -220,6 +221,7 @@ private VerifierDeviceIdentity(Parcel source) {
         return (int) mIdentity;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.283 -0500", hash_original_method = "C98AD9093350C34D0EE60C856A2859EF", hash_generated_method = "8B5A81F4BB84A602E9EE5396544674BF")
     
 @Override
@@ -233,6 +235,7 @@ private VerifierDeviceIdentity(Parcel source) {
                               mIdentity +  o.mIdentity);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.286 -0500", hash_original_method = "515E509B017A25F880CBE7C878F2607B", hash_generated_method = "08E30F2EC0373C28DD87D94073A647CC")
     
 @Override

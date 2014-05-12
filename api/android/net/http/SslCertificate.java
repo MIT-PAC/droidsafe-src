@@ -450,6 +450,7 @@ public DName getIssuedBy() {
     /**
      * @return A string representation of this certificate for debugging
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.474 -0500", hash_original_method = "F16D936F6355F1722DE333F4EC7C4E06", hash_generated_method = "F210421EBD3B1173ECF5FC877FC82B3E")
     
 public String toString() {

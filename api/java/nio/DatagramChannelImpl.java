@@ -294,7 +294,7 @@ private SocketAddress receiveDirectImpl(ByteBuffer target, boolean loop) throws 
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.538 -0500", hash_original_method = "76528871489F953D405DA27A93276CC2", hash_generated_method = "8944BF1CAF80B301B6D671641BFA6636")
     
 @Override
@@ -380,7 +380,7 @@ private int readImpl(ByteBuffer dst) throws IOException {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.546 -0500", hash_original_method = "EACC5F2E46984D93B58057650609FEF7", hash_generated_method = "13B34C302794F051EED7C644F69CDFAD")
     
 @Override public int write(ByteBuffer src) throws IOException {
@@ -553,6 +553,7 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /**
          * @see java.net.DatagramSocket#isBound()
          */
+        @DSSafe(DSCat.NETWORKING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.579 -0500", hash_original_method = "F11CC1C6B1751A820DF0839300E56C28", hash_generated_method = "C9EA9BB263A8AADCFFEACA24BE2CB395")
         
 @Override
@@ -587,6 +588,7 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /**
          * @see java.net.DatagramSocket#getLocalAddress()
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.587 -0500", hash_original_method = "2C69EB670D32F39C986C933D03BF3A1E", hash_generated_method = "AC7E91C09BE523AD83D9353ACFE886DA")
         
@@ -627,6 +629,8 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /**
          * @see java.net.DatagramSocket#receive(java.net.DatagramPacket)
          */
+        @DSSource({DSSourceKind.IO})
+        @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.596 -0500", hash_original_method = "714770E7AF180E6CA35843F3D6FA59F5", hash_generated_method = "A21E62DEBFA510E7041675E3A1A26F43")
         
 @Override
@@ -640,6 +644,7 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /**
          * @see java.net.DatagramSocket#send(java.net.DatagramPacket)
          */
+        @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.599 -0500", hash_original_method = "B8D9E7A66BAFFB4AAB90A90FE956BDD4", hash_generated_method = "172F7F7608E5B0C383F7277D8B5EDF7A")
         
@@ -654,6 +659,7 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /**
          * @see java.net.DatagramSocket#close()
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.601 -0500", hash_original_method = "46B266D91BAFA027B87005DE54970890", hash_generated_method = "FFA65F4D6DEFB45734BAA4F560DDF3D7")
         
 @Override

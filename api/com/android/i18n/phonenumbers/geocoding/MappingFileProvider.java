@@ -112,7 +112,8 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
    * country calling code. The country calling code is followed by a '|' and then a list of
    * comma-separated languages sorted in ascending order.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.148 -0500", hash_original_method = "17C0EB7BC2271962455DE53D535BEB5E", hash_generated_method = "F5DA2469AC3754FE916038AE7ABFBEE5")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.148 -0500", hash_original_method = "17C0EB7BC2271962455DE53D535BEB5E", hash_generated_method = "F5DA2469AC3754FE916038AE7ABFBEE5")
     
 @Override
   public String toString() {

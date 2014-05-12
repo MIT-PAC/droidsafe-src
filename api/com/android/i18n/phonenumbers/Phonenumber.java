@@ -280,14 +280,16 @@ public boolean exactlySameAs(PhoneNumber other) {
           hasPreferredDomesticCarrierCode() == other.hasPreferredDomesticCarrierCode());
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.011 -0500", hash_original_method = "EF0E3A387E8AEF6EC396B951EC1536A9", hash_generated_method = "23B09A2B6C9F3F5F5263094FB4028E82")
+    @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.011 -0500", hash_original_method = "EF0E3A387E8AEF6EC396B951EC1536A9", hash_generated_method = "23B09A2B6C9F3F5F5263094FB4028E82")
         
 @Override
     public boolean equals(Object that) {
       return (that instanceof PhoneNumber) && exactlySameAs((PhoneNumber) that);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.014 -0500", hash_original_method = "F1BB2EE5D9E77C138CA0D6B9F17756FB", hash_generated_method = "8D8F271DF5F3039F0BB00408A32ADCA4")
+    @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.014 -0500", hash_original_method = "F1BB2EE5D9E77C138CA0D6B9F17756FB", hash_generated_method = "8D8F271DF5F3039F0BB00408A32ADCA4")
         
 @Override
     public int hashCode() {
@@ -314,7 +316,8 @@ public boolean exactlySameAs(PhoneNumber other) {
       FROM_DEFAULT_COUNTRY
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.017 -0500", hash_original_method = "16D1E3F084AA1063C11CF7C5BDA5DD45", hash_generated_method = "AE6BF4EB11153FB9C19327696FB20C56")
+    @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.017 -0500", hash_original_method = "16D1E3F084AA1063C11CF7C5BDA5DD45", hash_generated_method = "AE6BF4EB11153FB9C19327696FB20C56")
         
 @Override
     public String toString() {

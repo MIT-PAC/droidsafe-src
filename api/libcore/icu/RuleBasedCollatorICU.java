@@ -100,6 +100,7 @@ private RuleBasedCollatorICU(int address) {
         this.address = address;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.722 -0500", hash_original_method = "2DC05452E0FCF4981A0124341AE4FC53", hash_generated_method = "D9DCDE634B9DD7E1EDC00D47B8BCB5C5")
     
 public Object clone() {
@@ -202,6 +203,7 @@ private String characterIteratorToString(CharacterIterator it) {
         return result.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.751 -0500", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "4CAD1CB01D670A92D6EFB90260D990B3")
     
 @Override public int hashCode() {
@@ -214,6 +216,7 @@ public boolean equals(String source, String target) {
         return (compare(source, target) == 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.756 -0500", hash_original_method = "7C2D1C08D1C2665AA117147559E8D29C", hash_generated_method = "865FC86F46E7AE571A0A0FA9A5D2D28A")
     
 @Override public boolean equals(Object object) {
@@ -229,6 +232,7 @@ public boolean equals(String source, String target) {
                 getDecomposition() == rhs.getDecomposition();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.758 -0500", hash_original_method = "4A24C365D6C63EAE3926032A3798E7DF", hash_generated_method = "1A5F84BC6C3B184C98C9FC9E49337644")
     
 @Override protected void finalize() throws Throwable {

@@ -78,7 +78,7 @@ private static GLEnvironment getGLEnvironment(FilterContext context) {
     private StopWatchMap mTimer = null;
 
     // Used from native layer for creating empty wrapper only!
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.246 -0400", hash_original_method = "EBB0A24BB54A3C2183FA64B479A47560", hash_generated_method = "2763176A91C5FE20A497F8E1AF3714FB")
     
 private ShaderProgram() {
@@ -117,6 +117,7 @@ private void setTimer() {
         mTimer = new StopWatchMap();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.255 -0400", hash_original_method = "1504DE42C90FC69DAFAB55F0869300BF", hash_generated_method = "2EEA13C3DB2B0DF9F7581C8C3D6CEC6D")
     
 @Override

@@ -38,6 +38,7 @@ private CodingErrorAction(String action) {
      *
      * @return a text description of this action indication.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.610 -0500", hash_original_method = "A74604AE646C671FE46897A241086F47", hash_generated_method = "5056D2985CC88098CE33EFAAF49CE7F6")
     
 @Override

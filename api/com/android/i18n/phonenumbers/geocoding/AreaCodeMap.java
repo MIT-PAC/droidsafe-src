@@ -218,7 +218,8 @@ private int binarySearch(int start, int end, long value) {
   /**
    * Dumps the mappings contained in the area code map.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.597 -0500", hash_original_method = "23EEAC8EFBFA0286A27EC362841462A0", hash_generated_method = "DA24FCBDA3F16A02AD5B756164919AFC")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.597 -0500", hash_original_method = "23EEAC8EFBFA0286A27EC362841462A0", hash_generated_method = "DA24FCBDA3F16A02AD5B756164919AFC")
     
 @Override
   public String toString() {

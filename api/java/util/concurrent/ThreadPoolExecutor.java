@@ -1079,6 +1079,7 @@ public boolean awaitTermination(long timeout, TimeUnit unit)
      * Invokes {@code shutdown} when this executor is no longer
      * referenced and it has no threads.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.898 -0500", hash_original_method = "54A2A12810CC337A284FDAF9A692A515", hash_generated_method = "E6F7EFDBBE10373B82F72016B4042D49")
     
 protected void finalize() {
@@ -1415,6 +1416,7 @@ Worker(Runnable firstTask) {
         }
 
         /** Delegates main run loop to outer runWorker  */
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.805 -0500", hash_original_method = "776DC8B2F80D9EC817EF7446A13B40B9", hash_generated_method = "4413017770EF1F180329D38AA6620E55")
         
 public void run() {
@@ -1731,6 +1733,7 @@ public long getCompletedTaskCount() {
      *
      * @return a string identifying this pool, as well as its state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.955 -0500", hash_original_method = "AA5F5BF44F4DA05ED8C1D4957936AC31", hash_generated_method = "15FC8A3B902B78037562F73229532457")
     
 public String toString() {

@@ -89,6 +89,7 @@ public DisplayMetrics() {
     public void setToDefaults() {
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	
     public String toString() {

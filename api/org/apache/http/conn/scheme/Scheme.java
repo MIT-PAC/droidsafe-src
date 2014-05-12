@@ -131,6 +131,7 @@ public final int resolvePort(int port) {
      *
      * @return  a human-readable string description of this scheme
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.803 -0500", hash_original_method = "DC9B71D58EF4666028CCB60CC7379DF5", hash_generated_method = "E00F298668F65E9C2A06FCA512B9F74F")
     
 @Override
@@ -152,6 +153,7 @@ public final int resolvePort(int port) {
      *
      * @return  <code>true</code> iff the argument is equal to this scheme
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.807 -0500", hash_original_method = "62FA4DFF9313BF5A320239E33F35F300", hash_generated_method = "733B69A8EB45CD063949BB0690FB1778")
     
 @Override
@@ -173,6 +175,7 @@ public final int resolvePort(int port) {
      *
      * @return  the hash code
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.809 -0500", hash_original_method = "D2A22011D07817D724D5F16905D145B4", hash_generated_method = "5AE1AC9C87791C009A45FC7036D03F56")
     
 @Override

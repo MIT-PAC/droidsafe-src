@@ -417,6 +417,7 @@ public void load(Reader r) throws IOException {
         parse(r, this);
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.751 -0500", hash_original_method = "47BA0B831F55080B235C21EE87FA94B0", hash_generated_method = "7E6F6864129E3619C7A395D090949649")
     

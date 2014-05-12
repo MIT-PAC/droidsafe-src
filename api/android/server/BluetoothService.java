@@ -95,13 +95,11 @@ public class BluetoothService extends IBluetooth.Stub {
     private static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.001 -0400", hash_original_field = "4DF5D31E376F27F1ED153009F2B9E52D", hash_generated_field = "A458E8B2DE444E0F35989DFD935DFB5E")
 
-
     private static final String BLUETOOTH_ADMIN_PERM = android.Manifest.permission.BLUETOOTH_ADMIN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.003 -0400", hash_original_field = "7D77AF0882759DFB1A72C6B4C36DC3FE", hash_generated_field = "3A6AE9ED68910A5BD7F7695E524A5EC2")
 
     static final String BLUETOOTH_PERM = android.Manifest.permission.BLUETOOTH;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.005 -0400", hash_original_field = "B5426339E38F6EAD785FB5AD18636C49", hash_generated_field = "FF594C330CD130BC3866DF00C35C79AA")
-
 
     private static final String DOCK_ADDRESS_PATH = "/sys/class/switch/dock/bt_addr";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.007 -0400", hash_original_field = "196F5FBEBCA03F72AC0567F43855CAC1", hash_generated_field = "0D7EC825573C2A91FBDCBBC1CD486219")
@@ -109,13 +107,11 @@ public class BluetoothService extends IBluetooth.Stub {
     private static final String DOCK_PIN_PATH = "/sys/class/switch/dock/bt_pin";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.008 -0400", hash_original_field = "92E204FE2DEEB70B6EC22CB201BEE0A1", hash_generated_field = "B30755FB74F8EA6FA44F87467F43A818")
 
-
     private static final String SHARED_PREFERENCE_DOCK_ADDRESS = "dock_bluetooth_address";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.010 -0400", hash_original_field = "96D9AEB9B2F9E02778D18692F1811DEA", hash_generated_field = "DB89A7AFA177C684A1A4E2E5643E801F")
 
     private static final String SHARED_PREFERENCES_NAME = "bluetooth_service_settings";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.012 -0400", hash_original_field = "C19A4DD7E702A67E40A7E4413C3FAB23", hash_generated_field = "3F3DD211DDE84336BD88B51A21DFD6D6")
-
 
     private static final int MESSAGE_UUID_INTENT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.013 -0400", hash_original_field = "77CC57BCE4E9DC8EAEF5F808984F6C5D", hash_generated_field = "DE5E7ACA1AB6071CCA92759E01D26C33")
@@ -125,7 +121,6 @@ public class BluetoothService extends IBluetooth.Stub {
 
     private static final int MESSAGE_REMOVE_SERVICE_RECORD = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.017 -0400", hash_original_field = "73773FE370FB97789FC03742A7F2DB27", hash_generated_field = "30AF119FA866A2E4F3A5852E1DC29307")
-
 
     private static final int RFCOMM_RECORD_REAPER = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.018 -0400", hash_original_field = "51577D8102133CE0D5B649C52CBE89F4", hash_generated_field = "DFEE02C9088C4A48F8DC82A78E85A33E")
@@ -151,7 +146,6 @@ public class BluetoothService extends IBluetooth.Stub {
             BluetoothUuid.HSP,
             BluetoothUuid.ObexObjectPush };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.051 -0400", hash_original_field = "268F078DD719078930238C82136509B0", hash_generated_field = "8C506375A05E53BB3751D0829D069D64")
-
 
     private static String mDockAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.060 -0400", hash_original_field = "FE2709443B5C5ECD5E5C006670D34A78", hash_generated_field = "5C84FE2FD1C695123A6FAFC4A9AB973E")
@@ -250,7 +244,6 @@ private static void log(String msg) {
 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:25.979 -0400", hash_original_field = "9D85BF891BBAC903760564D2E61B8CF8", hash_generated_field = "3541F10A37794BA2B05C956071806434")
 
-
     private int mNativeData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:25.981 -0400", hash_original_field = "29AEAD506F58EF5BD6922B133DEF064F", hash_generated_field = "A7A3F5E37FF8494C7EC414037E39E69C")
 
@@ -281,7 +274,6 @@ private static void log(String msg) {
     private ParcelUuid[] mAdapterUuids;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:25.994 -0400", hash_original_field = "367F0BC6BC216C571A7E906A286477DF", hash_generated_field = "6EAF57CC559AB78B0231BFFF469261B9")
 
-
     private BluetoothAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:25.995 -0400", hash_original_field = "7F1DF9697AFBCEA7AB570A6F6A2C7E01", hash_generated_field = "265B9055A8DD56B3B72430A147B9B585")
 
@@ -310,13 +302,11 @@ private static void log(String msg) {
         Collections.synchronizedMap(new HashMap<Integer, IBluetoothStateChangeCallback>());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.027 -0400", hash_original_field = "134A566546EEFBEF5593E75B9DD3B101", hash_generated_field = "6DF87A48A4843DF1BA444966AA1221D4")
 
-
     private  BluetoothAdapterProperties mAdapterProperties;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.028 -0400", hash_original_field = "077F66E33B614515E13E9A946C35EF90", hash_generated_field = "D2CEE7C5AB75951E3164B4453B576FD4")
 
     private  BluetoothDeviceProperties mDeviceProperties;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.030 -0400", hash_original_field = "989864FF014B9842052C95A18C8B419B", hash_generated_field = "4EE33B6F857E79F83B190777AFF350FB")
-
 
     private  HashMap<String, Map<ParcelUuid, Integer>> mDeviceServiceChannelCache;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.031 -0400", hash_original_field = "271EFDBF677725BB2A9DD67FE9E49AC5", hash_generated_field = "D32CCF1682F6212F1553BC44A45EC96D")
@@ -330,7 +320,6 @@ private static void log(String msg) {
     private  HashMap<Integer, ServiceRecordClient> mServiceRecordToPid;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.041 -0400", hash_original_field = "1A1262D9167B59D8A868D82B04B39FC0", hash_generated_field = "D4B6EFADDFC7BE38EF114CFC012282A3")
 
-
     private  HashMap<String, BluetoothDeviceProfileState> mDeviceProfileState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.042 -0400", hash_original_field = "A7E641315F3F6F3E96C5633B7E73CF22", hash_generated_field = "CE378AB35CA942BF8277CC972B60A288")
 
@@ -340,13 +329,11 @@ private static void log(String msg) {
     private  BluetoothProfileState mHfpProfileState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.045 -0400", hash_original_field = "B5BD79CF80C7A45A3C622D6A1147302E", hash_generated_field = "21F689A0EBD699248DAD2BA6FCD0BC59")
 
-
     private BluetoothA2dpService mA2dpService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.048 -0400", hash_original_field = "6350D285F86D317EF1B48275741C273C", hash_generated_field = "9A579706D1412E5742DEA42C5D34B09D")
 
     private  HashMap<String, Pair<byte[], byte[]>> mDeviceOobData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.049 -0400", hash_original_field = "48B390D47ACFE8935543C6DBCFF862B0", hash_generated_field = "A4EF9117F3ABABB82F3A05CC0F749FAD")
-
 
     private int mProfilesConnected = 0, mProfilesConnecting = 0, mProfilesDisconnecting = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.052 -0400", hash_original_field = "07A4FCA72C7F2D942D2CDF13C79D5EB0", hash_generated_field = "53518AE4B99D2D78851E382A09E2C21C")
@@ -366,6 +353,7 @@ public RemoteService(String address, ParcelUuid uuid) {
             this.address = address;
             this.uuid = uuid;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.069 -0400", hash_original_method = "38CF1D84AD9F571F6155D626CB58CA52", hash_generated_method = "F42F959C6E5424E19A9662D4E5765368")
         
 @Override
@@ -377,6 +365,7 @@ public RemoteService(String address, ParcelUuid uuid) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.072 -0400", hash_original_method = "DC47F222F6843991F5373A34072A33A0", hash_generated_method = "9BCB80FB00F5A66EF034A29EE52B59C7")
         
 @Override
@@ -392,7 +381,6 @@ public RemoteService(String address, ParcelUuid uuid) {
         classInitNative();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.054 -0400", hash_original_field = "89B05166EEA9FC7957826F3C8FCA006F", hash_generated_field = "DE37F13936E861E75003DE507E47D9C2")
-
 
     private int mAdapterConnectionState = BluetoothAdapter.STATE_DISCONNECTED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.055 -0400", hash_original_field = "50B759D6FE2085680A2A3193A6125D07", hash_generated_field = "5CCEEA482AEB1CE8F8923F025BE82927")
@@ -411,7 +399,6 @@ public RemoteService(String address, ParcelUuid uuid) {
 
     private HashMap<Integer, Pair<Integer, Integer>> mProfileConnectionState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.110 -0400", hash_original_field = "6F42406E65E28F95F83EAE6AAE743547", hash_generated_field = "05B3B5F92AD20EE29B9B3795CA71B377")
-
 
     private final Handler mHandler = new Handler() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:01.918 -0400", hash_original_method = "610D21BB0AF8FF2363485B937DB6A1F2", hash_generated_method = "CA74FAC5A0D078262F10D1CEE3D97F05")
@@ -451,7 +438,6 @@ public RemoteService(String address, ParcelUuid uuid) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.243 -0400", hash_original_field = "D47F02B595692E31C8116EC930D18C35", hash_generated_field = "F6E15F975F68F85484979D898028A0DE")
 
-
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:02.060 -0400", hash_original_method = "8E36B9F665E2C24B0AD717C8B37C0E0E", hash_generated_method = "DC246FA7012B58132759B3BB185B2842")
         
@@ -487,7 +473,6 @@ public RemoteService(String address, ParcelUuid uuid) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.273 -0400", hash_original_field = "5380C6F6C48984BACEC618319E1718F3", hash_generated_field = "58872157A495ED5DB99188FB1B3AEFD0")
-
 
     private BluetoothProfile.ServiceListener mBluetoothProfileServiceListener =
         new BluetoothProfile.ServiceListener() {
@@ -617,6 +602,7 @@ public synchronized void initAfterA2dpRegistration() {
         mEventLoop.getProfileProxy();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.085 -0400", hash_original_method = "2FAAC17FE9D4173D4999AE153FB6D1C2", hash_generated_method = "F8F761A71D5BC7C668EB873FF96B5431")
     
 @Override
@@ -1421,7 +1407,6 @@ Pair<byte[], byte[]> getDeviceOutOfBandData(BluetoothDevice device) {
         return mDeviceOobData.get(device.getAddress());
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.176 -0400", hash_original_method = "7FEF72856B24BEE636F09C0AE3B1871F", hash_generated_method = "0C11425057354798631002B883E4FFF3")
     
 public synchronized byte[] readOutOfBandData() {
@@ -1601,7 +1586,6 @@ public synchronized int getRemoteClass(String address) {
             return Integer.valueOf(val);
         }
     }
-
 
     /**
      * Gets the UUIDs supported by the remote device
@@ -2022,7 +2006,6 @@ private synchronized void checkAndRemoveRecord(int handle, int pid) {
             removeServiceRecordNative(handle);
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.233 -0400", hash_original_method = "0ADF92EDACF4D3EE114023E3EC511C21", hash_generated_method = "979D10954E2D50D4D0BE26DDFBB0280C")
     
@@ -2582,7 +2565,6 @@ public List<BluetoothDevice> getInputDevicesMatchingConnectionStates(
         }
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.307 -0400", hash_original_method = "5AFD014B71CB9B54A1E4186067850654", hash_generated_method = "E445287B04F7E687D71E5A35C8E9EF8A")
     
 public int getInputDevicePriority(BluetoothDevice device) {
@@ -2670,7 +2652,6 @@ public boolean unregisterAppConfiguration(BluetoothHealthAppConfiguration config
                 return mBluetoothHealthProfileHandler.unregisterAppConfiguration(config);
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.317 -0400", hash_original_method = "FF1E0430494F5A124A3423CB184A118C", hash_generated_method = "DE697A6E025E09E7F09DF2549E9CBAB7")
     
@@ -3310,7 +3291,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:22:11.033 -0400", hash_original_method = "3B6CA7B24C36B662CB5B1AEC413DB28D", hash_generated_method = "0DAB225627D67322CE3F5E19CB1C0E87")
     
     private void cleanupNativeDataNative(){
@@ -3326,7 +3306,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	retObj.addTaint(taintDouble);
     	return retObj;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:59.519 -0400", hash_original_method = "8FDD5970CB8E20A1D0859F6D8B91FB0D", hash_generated_method = "6BC15B5E1BE5F13F474F5F39B9AB585C")
     
@@ -3355,7 +3334,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	return (int)taintDouble;
     }
 
-
     /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:59.525 -0400", hash_original_method = "C42E8ED24293A5A097462201923B5488", hash_generated_method = "C7EC3873E886E872E1AD8A18DD682CE3")
     
     Object[] getAdapterPropertiesNative(){
@@ -3367,8 +3345,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	retObj.addTaint(taintDouble);
     	return retObj;
     }
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.587 -0400", hash_original_method = "C8DEEE65E88777753FADC5FE8A446294", hash_generated_method = "DDA7BBB3DA7B48C2CD8BA53BE4B4124A")
     
@@ -3438,9 +3414,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	return toTaintBoolean(taintDouble);
     }
 
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.607 -0400", hash_original_method = "0E72D1B6B60B0E0BAE085493F56B96AA", hash_generated_method = "C0F618BFF2249C003564F4883D5383A2")
     
     private boolean createPairedDeviceNative(String address, int timeout_ms){
@@ -3474,9 +3447,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	retObj[0] = (byte)taintDouble;
     	return retObj;
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.616 -0400", hash_original_method = "AED6ABC66E34EB06D57ABD6C09C96DD2", hash_generated_method = "9A19EE950E1E39E925AB4C8878568738")
     
@@ -3513,7 +3483,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     
     	return (int)taintDouble;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.627 -0400", hash_original_method = "45334E318563A81990E463FB5E592EF3", hash_generated_method = "4D573561642DCC826F54D9F8EF7BF5C3")
     
@@ -3566,7 +3535,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.639 -0400", hash_original_method = "7407BD3CC6544027E5D0C45402CFE147", hash_generated_method = "1EB131CD76A823BC273BD199C8153F12")
     
     private boolean setRemoteOutOfBandDataNative(String address, byte[] hash,
@@ -3581,7 +3549,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.642 -0400", hash_original_method = "21593BFEFF25112A05131665234AEC78", hash_generated_method = "A81646B687D61AC60A958C1AD47D601D")
     
@@ -3634,7 +3601,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.656 -0400", hash_original_method = "765A148A6C0A58403B8E2DB1A1259F87", hash_generated_method = "96E89C347A0176D0BB9A4720740F496A")
     
     private int addRfcommServiceRecordNative(String name, long uuidMsb, long uuidLsb,
@@ -3673,7 +3639,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.665 -0400", hash_original_method = "CE008BD6BF6A1014A4BBD6D0E491D152", hash_generated_method = "2D3F996F5F4F7F474722138C0B5F15AA")
     
     boolean connectInputDeviceNative(String path){
@@ -3708,7 +3673,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.675 -0400", hash_original_method = "437233521ADCB518902AA201E3534A10", hash_generated_method = "85A98BDF6404B89006675EE6C6D3E95A")
     
@@ -3747,7 +3711,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.683 -0400", hash_original_method = "05AAF5040BC1B6D1D2D502B30DC45DEC", hash_generated_method = "8EC2FBEDD9F7E94488FC87B1D6DE1445")
     
     private int[] addReservedServiceRecordsNative(int[] uuuids){
@@ -3771,7 +3734,6 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     // Health API
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.689 -0400", hash_original_method = "2BCFC1A8FC7671C069367FA5CC1410EF", hash_generated_method = "C43AAB74D0EABFDC2DCA60B2A21ED2B6")
@@ -3906,8 +3868,5 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
 
 }

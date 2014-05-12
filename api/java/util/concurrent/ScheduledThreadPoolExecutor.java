@@ -757,6 +757,7 @@ private void setNextRunTime() {
                 time = triggerTime(-p);
         }
 
+        @DSSpec(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.013 -0500", hash_original_method = "A46BB14AFBF2EAB15C2BA654B07B241E", hash_generated_method = "C04EF1B521A1B72CD11AF6E937E1C11E")
         
 public boolean cancel(boolean mayInterruptIfRunning) {
@@ -769,6 +770,7 @@ public boolean cancel(boolean mayInterruptIfRunning) {
         /**
          * Overrides FutureTask version so as to reset/requeue if periodic.
          */
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.016 -0500", hash_original_method = "A673F57B6994AD18C8F1F59AB6BC8846", hash_generated_method = "E25D2BC752A0A896AEF831675748C4CA")
         
 public void run() {
@@ -913,6 +915,7 @@ private int indexOf(Object x) {
             return -1;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.127 -0500", hash_original_method = "5E09E7103DB0A49A13B2DDAFBB485D60", hash_generated_method = "216ADB959F030AF53493922AF9B0DA76")
         
 public boolean contains(Object x) {
@@ -1069,6 +1072,7 @@ public RunnableScheduledFuture poll() {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.160 -0500", hash_original_method = "C35B04B198E2C5886DA81FEFBA3F2D77", hash_generated_method = "EAD227B6DEC0BF18B08A7940F1BAA829")
         
 public RunnableScheduledFuture take() throws InterruptedException {
@@ -1295,12 +1299,14 @@ Itr(RunnableScheduledFuture[] array) {
                 this.array = array;
             }
 
+            @DSSafe(DSCat.DATA_STRUCTURE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.195 -0500", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "CDE3CA7472C460360713EEDFAECC9D23")
             
 public boolean hasNext() {
                 return cursor < array.length;
             }
 
+            @DSSafe(DSCat.DATA_STRUCTURE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.198 -0500", hash_original_method = "3D0866C62F631AE1F3281A9951BE6C06", hash_generated_method = "4B6DACAD5F05336E081AADDDA2E83D77")
             
 public Runnable next() {
@@ -1310,6 +1316,7 @@ public Runnable next() {
                 return array[cursor++];
             }
 
+            @DSSafe(DSCat.DATA_STRUCTURE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.201 -0500", hash_original_method = "560EEAA350DF5EAA4CBD4C138A91D642", hash_generated_method = "BC30726115F8B70642607811DF4303C7")
             
 public void remove() {
@@ -1321,6 +1328,7 @@ public void remove() {
             
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.181 -0500", hash_original_method = "46B1FB64DFD489BA9D84B29257E9B6C6", hash_generated_method = "965D27A073ACACB5FE04A64C9147DBC4")
         
 public Iterator<Runnable> iterator() {

@@ -54,6 +54,7 @@ public ObserverThread() {
             m_fd = init();
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.722 -0500", hash_original_method = "1D431AF3E47E4C831FAF412598272832", hash_generated_method = "1C18F73B691854C851AA61D2F3BFB8BE")
         
 public void run() {
@@ -206,6 +207,7 @@ public FileObserver(String path, int mask) {
         m_descriptor = -1;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.763 -0500", hash_original_method = "C06680780DBA5951A3829CD335D202E8", hash_generated_method = "855EFDC4998FA49DCA64C379A4C6E0AA")
     
 protected void finalize() {

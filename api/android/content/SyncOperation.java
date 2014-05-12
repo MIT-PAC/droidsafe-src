@@ -115,6 +115,7 @@ private void removeFalseExtra(String extraName) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.573 -0500", hash_original_method = "DD55706005FD16094E01DF90CF28D99E", hash_generated_method = "3A3FC0526555367470556D8852FC15EF")
     
 public String toString() {
@@ -176,6 +177,7 @@ public void updateEffectiveRunTime() {
                     backoff);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.589 -0500", hash_original_method = "94E2F05BFAF6BA397C21B12E8FAD132F", hash_generated_method = "D42289A8E926FA909CB715771550D0FA")
     
 public int compareTo(Object o) {

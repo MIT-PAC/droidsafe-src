@@ -40,7 +40,7 @@ public void close() throws IOException {
      *             if an error occurs while writing to this stream.
      * @since Android 1.0
      */
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.500 -0500", hash_original_method = "B2E185518772C6191E25665E6AAA6FD5", hash_generated_method = "2D5A46C23DD97DDE153E0C9506B1B72B")
     
@@ -69,7 +69,8 @@ public void write(int oneByte) throws IOException {
      *             {@code buffer}.
      * @since Android 1.0
      */
-    @DSSink({DSSinkKind.BLUETOOTH})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.503 -0500", hash_original_method = "DFA6C29609C7324702E3356FC466F21E", hash_generated_method = "7AAC56040D447F28CDAF031F1B6BE1B8")
     
 public void write(byte[] b, int offset, int count) throws IOException {

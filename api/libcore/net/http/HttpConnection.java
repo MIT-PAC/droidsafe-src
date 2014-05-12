@@ -370,6 +370,7 @@ public Proxy getProxy() {
             return proxy;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.746 -0500", hash_original_method = "104FF09B2C80755ABB27A6E9EA994C0B", hash_generated_method = "81E6E1D6639F9FB92DB8CE0541AE64F3")
         
 @Override public boolean equals(Object other) {
@@ -383,6 +384,7 @@ public Proxy getProxy() {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.749 -0500", hash_original_method = "03AAE27C923B9ECFDFA09DAEE6900F4B", hash_generated_method = "A5810BB01DEE26B460FB545102FD1166")
         
 @Override public int hashCode() {

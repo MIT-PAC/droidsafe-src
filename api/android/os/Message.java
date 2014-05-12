@@ -237,7 +237,7 @@ public Message[] newArray(int size) {
     /** Constructor (but the preferred way to get a Message is to call {@link #obtain() Message.obtain()}).
     */
     @DSComment("OS Message")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.362 -0500", hash_original_method = "07161C5E5BFC528DA3FC2F6017B16172", hash_generated_method = "C388122C31305A6494A3C73AA60B75A9")
     
 public Message() {
@@ -419,6 +419,7 @@ public void sendToTarget() {
 		//Return nothing
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     public String toString(){
 		// Original method
 		/*

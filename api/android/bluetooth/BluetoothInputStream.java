@@ -23,6 +23,7 @@ BluetoothInputStream(BluetoothSocket s) {
     /**
      * Return number of bytes available before this stream will block.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.442 -0500", hash_original_method = "F8D5D10C5F2F8FB1DCC0A3044A3235C3", hash_generated_method = "698BE5E5354DC14F82BB3A94A7C5289A")
     
 public int available() throws IOException {
@@ -76,6 +77,8 @@ public int read() throws IOException {
      *             if the stream is closed or another IOException occurs.
      * @since Android 1.5
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.449 -0500", hash_original_method = "20F62B1F3CA63F6FE3BCEE9660F3F09F", hash_generated_method = "0DF6D203DCBC3F1E01A85090A3B0A6A7")
     
 public int read(byte[] b, int offset, int length) throws IOException {

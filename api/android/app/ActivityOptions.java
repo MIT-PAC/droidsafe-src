@@ -250,7 +250,7 @@ public static ActivityOptions makeDelayedThumbnailScaleUpAnimation(View source,
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 15:55:43.427 -0500", hash_original_method = "A04E8A694EF6E677608BABF7B29F457F", hash_generated_method = "5D4278489A49B5F407A2715824F8FB64")
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.PRIVATE_METHOD)
 private static ActivityOptions makeThumbnailScaleUpAnimation(View source,
             Bitmap thumbnail, int startX, int startY, OnAnimationStartedListener listener,
             boolean delayed) {
@@ -276,7 +276,6 @@ public static void abort(Bundle options) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 15:55:43.257 -0500", hash_original_field = "7A5990DF4A54BF373C395B6501E20B02", hash_generated_field = "6F81845A3A2771C3EC987E5A01DBA4C6")
-
 
     private String mPackageName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 15:55:43.264 -0500", hash_original_field = "CE05B131079505A74A08C78D5F9ACED4", hash_generated_field = "0C208BC6EF045352D05E326BD173C934")

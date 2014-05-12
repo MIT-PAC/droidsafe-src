@@ -117,6 +117,7 @@ public boolean implies(
         return (this.permissionMask & other.permissionMask) == other.permissionMask;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.429 -0500", hash_original_method = "AB59B8CA6295ACB3F9F36D0B84BA1CCF", hash_generated_method = "700C0B8CC4A33C675D6472DC4F59F222")
     
 public boolean equals(
@@ -137,6 +138,7 @@ public boolean equals(
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.431 -0500", hash_original_method = "8E474C8FDA83B9292E3AC02815650F0C", hash_generated_method = "B64A3FA06ACCEBD33BDB0AF87A33148F")
     
 public int hashCode()

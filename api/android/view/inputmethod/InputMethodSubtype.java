@@ -359,6 +359,7 @@ public String getExtraValueOf(String key) {
         return getExtraValueHashMap().get(key);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.992 -0500", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "59CD8717BAF0B810679FFE0F1F02958C")
     
 @Override
@@ -366,6 +367,7 @@ public String getExtraValueOf(String key) {
         return mSubtypeHashCode;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.995 -0500", hash_original_method = "0FAD58BA0D22A8990D6C7F18B4CA40E4", hash_generated_method = "C468BA013018BFA449F9D6D42B1B0BF1")
     
 @Override

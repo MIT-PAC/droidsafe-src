@@ -338,6 +338,7 @@ private void
 
     //***** Overridden from Handler
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.188 -0500", hash_original_method = "EDA0843A3B437B2415185CC41779F06F", hash_generated_method = "4256A8F1CA7BF019ADF4DAF7DBE8D765")
     

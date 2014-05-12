@@ -54,7 +54,6 @@ public class SearchManagerService extends ISearchManager.Stub {
     private Searchables mSearchables;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.370 -0400", hash_original_field = "103F5FAAFCA2FDAADAD828024F70C190", hash_generated_field = "97116B63A07BEC0CD27D392293B305CA")
 
-
     private ContentObserver mGlobalSearchObserver;
 
     /**
@@ -89,6 +88,7 @@ private synchronized Searchables getSearchables() {
      * Creates the initial searchables list after boot.
      */
     private final class BootCompletedReceiver extends BroadcastReceiver {
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.379 -0400", hash_original_method = "708609F1C0510A1A79E61DD1A21667D8", hash_generated_method = "A16EDB71F0E618458316D623BFFD46F7")
         
 @Override

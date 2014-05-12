@@ -197,6 +197,7 @@ MyHandler(Looper looper) {
             super(looper);
         }
         
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.390 -0500", hash_original_method = "1DE21F974CC2F2B42894E9D98B8A257E", hash_generated_method = "DFA46ACAF15DF6AAFA15883420C7173D")
         
 @Override

@@ -219,6 +219,7 @@ public void connect(InetAddress host, int port, InetAddress localAddr)
      *  cases you will only want to catch IOException since SocketException is
      *  derived from it.
      ***/
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.222 -0500", hash_original_method = "25234E4421C894C46BEFF3C2D6F65EA1", hash_generated_method = "7D529598C4C3E26A3937F0B0DA06109C")
     
 public void connect(InetAddress host, int port)
@@ -243,6 +244,7 @@ public void connect(InetAddress host, int port)
      *  derived from it.
      * @exception UnknownHostException If the hostname cannot be resolved.
      ***/
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.225 -0500", hash_original_method = "3BE6D453A9005138440AA1CF89066F01", hash_generated_method = "CD2C5FD65C265C0E1618FCD65E43913B")
     
 public void connect(String hostname, int port)
@@ -295,6 +297,7 @@ public void connect(String hostname, int port, InetAddress localAddr)
      * @exception IllegalArgumentException If an invalid local port number
      *            is specified.
      ***/
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.230 -0500", hash_original_method = "3233024E7A226F908649D648295A5491", hash_generated_method = "0FFFE0C72EE55BA0C5144FABE2688C3C")
     
 public void connect(InetAddress host, int port,
@@ -327,6 +330,7 @@ public void connect(InetAddress host, int port,
      * @exception IllegalArgumentException If an invalid local port number
      *            is specified.
      ***/
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.234 -0500", hash_original_method = "4CE4B9C6E018E7C294717E37D7F3A45B", hash_generated_method = "E7FA8F09583B1ACDCE7E48866E111B25")
     
 public void connect(String hostname, int port,

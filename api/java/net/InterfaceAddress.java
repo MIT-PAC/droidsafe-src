@@ -65,6 +65,7 @@ InterfaceAddress(Inet6Address address, short prefixLength) {
      * @param obj the object to be compared.
      * @return true if 'obj' is equal to this InterfaceAddress, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.536 -0500", hash_original_method = "C2F63B53807D79A96FCD6544A2D6E3D6", hash_generated_method = "037E561A4D8893183D46362A102CCF13")
     
 @Override
@@ -81,6 +82,7 @@ InterfaceAddress(Inet6Address address, short prefixLength) {
                 ((broadcastAddress == null) ? rhs.broadcastAddress == null : broadcastAddress.equals(rhs.broadcastAddress));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.539 -0500", hash_original_method = "2A9C5EEED856061F72C9734D5432AB47", hash_generated_method = "75B59DC663BD7BA53E5BA8D9940EB99D")
     
 @Override
@@ -97,6 +99,7 @@ InterfaceAddress(Inet6Address address, short prefixLength) {
      *
      * @return a string representation of this interface address.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.541 -0500", hash_original_method = "1F9308CDA843BEB3E12C5EE04150EA0F", hash_generated_method = "5A48EECAEA405813D0EF7C215F9BE110")
     
 @Override

@@ -78,14 +78,14 @@ public AbstractCursor() {
     
 abstract public int getCount();
 
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.002 -0500", hash_original_method = "20F4A69B8C9E8052B7DDCEB1E6CCF87C", hash_generated_method = "2E8BB6B5D2513186C19958DA40A4ED39")
     
 abstract public String[] getColumnNames();
 
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.004 -0500", hash_original_method = "A29078DDCC5E1616CCCFDE82CC5349B3", hash_generated_method = "E42C6A3917990D2C712362CAF69EA81C")
@@ -96,13 +96,13 @@ abstract public String getString(int column);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.007 -0500", hash_original_method = "18208FA7449196F1DD13EFCB3FFFD4E7", hash_generated_method = "327A6D1A2BFF6DFB11FEAD7A3454CDFD")
     
 abstract public short getShort(int column);
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.009 -0500", hash_original_method = "5B223EF5B541E920EC399603E6C0FE88", hash_generated_method = "F63822C459676185F41DA5975BACD7C4")
     
 abstract public int getInt(int column);
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.012 -0500", hash_original_method = "E7F68CAAFCBA03B0F1E2D3E09FB8D97B", hash_generated_method = "8E40DB8C22F362FB17C9B9AA57CE7960")
@@ -125,7 +125,7 @@ abstract public double getDouble(int column);
 abstract public boolean isNull(int column);
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.021 -0500", hash_original_method = "DA5F8C1E79CBE35B90A3C92DA2B8F28D", hash_generated_method = "79F7307668FDED21FDAAA83FC83D8C99")
     
 public int getType(int column) {
@@ -137,7 +137,7 @@ public int getType(int column) {
 
     // TODO implement getBlob in all cursor types
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.024 -0500", hash_original_method = "5BC3F93BAD50F14F34AFA39612F89CC6", hash_generated_method = "84E6BBD2B54F22A58E16CCA0093F8782")
     
 public byte[] getBlob(int column) {
@@ -404,7 +404,7 @@ public int getColumnIndexOrThrow(String columnName) {
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.085 -0500", hash_original_method = "2C8B9F57D7BABEC67595057D4A416343", hash_generated_method = "8D1521F58744E794012D38E9DF858A59")
     
 public String getColumnName(int columnIndex) {
@@ -611,6 +611,7 @@ public SelfContentObserver(AbstractCursor cursor) {
         
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.124 -0500", hash_original_method = "F26D041066C4F03E188153BABFEE500A", hash_generated_method = "B4A7453FF0BF5575568A8D38A84AF984")
     
 @Override

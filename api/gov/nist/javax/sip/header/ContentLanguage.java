@@ -102,6 +102,7 @@ public void setContentLanguage(Locale language) {
         this.locale = language;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.753 -0500", hash_original_method = "CEAD9E53DA5FB3A31278ED5B9373A85D", hash_generated_method = "A3DE4E843567838B73CDB1AB764A0142")
     
 public Object clone() {

@@ -80,38 +80,29 @@ public class ZipInputStream extends InflaterInputStream implements ZipConstants 
     private static final int ZIPLocalHeaderVersionNeeded = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:28.962 -0500", hash_original_field = "EBCD046F74CB70BAE53EBB903C7F21F6", hash_generated_field = "5AB15FDF6F0D00EB61CB356C20A2F949")
 
-
     private boolean entriesEnd = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:28.970 -0500", hash_original_field = "2B861B3B5414D6B5D9284DD415417E9C", hash_generated_field = "01B9B653BA72011921756681A88BB0D4")
-
 
     private boolean hasDD = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:28.977 -0500", hash_original_field = "DA303DBB27BF5F54F7215E11B2D070E2", hash_generated_field = "70C0E1ABC7A2C088413A0DEAD0E06C15")
 
-
     private int entryIn = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:28.985 -0500", hash_original_field = "9E78B9D9236AC98E6EA1E62DE65B039A", hash_generated_field = "D9B9DDAB6E94A633070B4360A0469156")
-
 
     private int inRead, lastRead = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:29.004 -0500", hash_original_field = "AE5E76079A9FB60B306BB24D8DD33468", hash_generated_field = "FAD8DD5A4D43550551E80B6E823A3546")
 
-
     private ZipEntry currentEntry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:29.012 -0500", hash_original_field = "04330805FEF68B2C499795E3642E34F2", hash_generated_field = "56C93EA708A209494AB5E75290EBA950")
-
 
     private final byte[] hdrBuf = new byte[LOCHDR - LOCVER];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:29.020 -0500", hash_original_field = "8797544496C08ADE2D4F77E9A38D0FB1", hash_generated_field = "05500ADE9A7CD6E53D52A131B8F3E602")
 
-
     private final CRC32 crc = new CRC32();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:29.029 -0500", hash_original_field = "4496A3AD30CD6ECCD3C9089BF0ED5F92", hash_generated_field = "6832CEC69BD7D80A32A9BCEB95CC7986")
 
-
     private byte[] nameBuf = new byte[256];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:29.036 -0500", hash_original_field = "CFDCDB01635BC5E0C6D5AC082BC7294A", hash_generated_field = "6A45CE718592EF029A0C7D6F9DC9F60B")
-
 
     private char[] charBuf = new char[256];
 
@@ -380,6 +371,7 @@ public ZipEntry getNextEntry() throws IOException {
         return read;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:29.157 -0500", hash_original_method = "944D3DD754B8DECD27145FEAF048B004", hash_generated_method = "EF7D051F41DC2805D998C7B2E4ABD1FF")
     
 @Override

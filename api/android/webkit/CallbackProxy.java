@@ -357,6 +357,7 @@ public boolean uiOverrideKeyEvent(KeyEvent event) {
         return false;
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.360 -0500", hash_original_method = "643B690E8360A657B90F531CC63147C4", hash_generated_method = "57CA8927B98B324A5347346B5B3E275D")
     
 @Override

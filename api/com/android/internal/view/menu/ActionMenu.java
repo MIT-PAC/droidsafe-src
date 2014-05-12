@@ -40,11 +40,9 @@ public class ActionMenu implements Menu {
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.849 -0400", hash_original_field = "FE62634EEDDD849F0AD3B78507BCB643", hash_generated_field = "D911FF6FA4B9C379C57213626A31ED6D")
-
     
     private boolean mIsQwerty;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.850 -0400", hash_original_field = "316B93930256D6555F8A0E473962A451", hash_generated_field = "41A0E7E8D8FC3F8327FB5FA6FAD654C7")
-
     
     private ArrayList<ActionMenuItem> mItems;
     
@@ -61,24 +59,28 @@ public Context getContext() {
         return mContext;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.854 -0400", hash_original_method = "3A67378AF417362249479437980B3549", hash_generated_method = "6270980F6EAA92DE686F10128DEA7BA7")
     
 public MenuItem add(CharSequence title) {
         return add(0, 0, 0, title);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.855 -0400", hash_original_method = "932BF9FB5552691D63AF6A1DA3DCC48B", hash_generated_method = "24E6B75B646AFBCDD2D3142819F9B9F0")
     
 public MenuItem add(int titleRes) {
         return add(0, 0, 0, titleRes);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.856 -0400", hash_original_method = "7C069140980D746EE1C40D17873C1EA1", hash_generated_method = "638B7F1C716AD9D78886EA9583EE7DDD")
     
 public MenuItem add(int groupId, int itemId, int order, int titleRes) {
         return add(groupId, itemId, order, mContext.getResources().getString(titleRes));
     }
     
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.859 -0400", hash_original_method = "21076FC0A42B5B917B57A4D8E689D0F2", hash_generated_method = "E41C1EA140B3E2AB228E193DD4A7D933")
     
 public MenuItem add(int groupId, int itemId, int order, CharSequence title) {
@@ -120,6 +122,7 @@ public int addIntentOptions(int groupId, int itemId, int order,
         return N;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.862 -0400", hash_original_method = "0068CB4BB6C90B892D0E6E645B6CC6C7", hash_generated_method = "3A775F10E9C2B0278857D235A2B9FAD3")
     
 public SubMenu addSubMenu(CharSequence title) {
@@ -127,6 +130,7 @@ public SubMenu addSubMenu(CharSequence title) {
         return null;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.863 -0400", hash_original_method = "4BD9515780E1D3C62206C12109879106", hash_generated_method = "0A98F695B8D53A113362903227DD1F9D")
     
 public SubMenu addSubMenu(int titleRes) {
@@ -134,6 +138,7 @@ public SubMenu addSubMenu(int titleRes) {
         return null;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.864 -0400", hash_original_method = "E3831C5A978EDF6915F22C914403E787", hash_generated_method = "FD17DAE5CA723E5F9A24A32753DDDFAE")
     
 public SubMenu addSubMenu(int groupId, int itemId, int order,
@@ -142,6 +147,7 @@ public SubMenu addSubMenu(int groupId, int itemId, int order,
         return null;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.865 -0400", hash_original_method = "F3CC4511B7BA6B80F888ADAA6C95898A", hash_generated_method = "71B7CDE8EC2BDC9DF4022A77ABACBD48")
     
 public SubMenu addSubMenu(int groupId, int itemId, int order, int titleRes) {
@@ -149,6 +155,7 @@ public SubMenu addSubMenu(int groupId, int itemId, int order, int titleRes) {
         return null;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.866 -0400", hash_original_method = "78D696A2499079680ADC35CAD457278C", hash_generated_method = "9C8877766AA828E4AD54AE1642291857")
     
 public void clear() {
@@ -174,12 +181,14 @@ private int findItemIndex(int id) {
         return -1;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.869 -0400", hash_original_method = "0B9D8F2BCCAB435BB4CB2F94E8951A1B", hash_generated_method = "BF62218C3B6DB83DE6E526B077BEDD6B")
     
 public MenuItem findItem(int id) {
         return mItems.get(findItemIndex(id));
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.870 -0400", hash_original_method = "95D83605E2F67D61DCAF8140DAB642C1", hash_generated_method = "22137EA46159B80F85AF259824015418")
     
 public MenuItem getItem(int index) {

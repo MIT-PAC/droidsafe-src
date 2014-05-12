@@ -83,6 +83,7 @@ public CharSequence loadDescription(PackageManager pm) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.019 -0500", hash_original_method = "712313A7FB39E8068296CCC509012BB3", hash_generated_method = "F11ADAEA8F676C6A52E6B69310AC7745")
     
 public String toString() {

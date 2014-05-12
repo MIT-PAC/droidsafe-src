@@ -261,6 +261,7 @@ public DEREncodable getName()
         return obj;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.866 -0500", hash_original_method = "6AFE1DDEFB420AC1C3733113CDF77755", hash_generated_method = "DFD4363F51561851C2E908EC45C14087")
     
 public String toString()

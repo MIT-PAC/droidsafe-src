@@ -20,6 +20,7 @@ public AcceptList() {
         super(Accept.class, AcceptHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.006 -0500", hash_original_method = "3C553A191FB2DA2F431571F69D6628C7", hash_generated_method = "565CDA55B83947CB87D8FF4CAE06E754")
     
 @Override

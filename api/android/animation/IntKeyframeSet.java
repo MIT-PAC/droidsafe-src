@@ -36,6 +36,7 @@ public IntKeyframeSet(IntKeyframe... keyframes) {
         return getIntValue(fraction);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.294 -0500", hash_original_method = "9997EE114626B9F926D48E4DA6AD12AC", hash_generated_method = "DA3DC9C66EE70173E0F7E1A807F7BFB8")
     
 @Override

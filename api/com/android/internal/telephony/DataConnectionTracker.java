@@ -465,6 +465,7 @@ public void reset() {
             rxPkts = -1;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.806 -0500", hash_original_method = "1CA3D86B2E80A8520E2DD65A646FFF96", hash_generated_method = "F4BC7C3DD0DC1F5D553327EA4D599FD6")
         
@@ -927,6 +928,7 @@ protected void onDataStallAlarm(int tag) {
         loge("onDataStallAlarm: not impleted tag=" + tag);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.914 -0500", hash_original_method = "F3EE7F03AAF60471D3A97F562455D5DC", hash_generated_method = "BCFC1DBBA7474F43F9FCBD6F645E4BB7")
     
 @Override

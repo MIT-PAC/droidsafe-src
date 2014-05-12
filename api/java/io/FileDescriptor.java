@@ -84,6 +84,7 @@ public final void setInt$(int fd) {
         this.descriptor = fd;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.722 -0500", hash_original_method = "EF72FD893497B2D08C59E275939FAD05", hash_generated_method = "4BC44410938B2FB093B4BC89E5428735")
     
 @Override public String toString() {

@@ -293,6 +293,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
      *         {@code false} otherwise
      * @see #hashCode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.292 -0500", hash_original_method = "955F27DFEC9F7B5FBB7D8BD5BE41A050", hash_generated_method = "2D6DDF2DE351D77D80BAFBA105D2D762")
     
 @Override
@@ -671,6 +672,7 @@ public Class<?> getType() {
      * @return the hash code for this field
      * @see #equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.332 -0500", hash_original_method = "7C0B16AD34D2790FBD73D96D003DD91D", hash_generated_method = "40DF09C1461284A20372BDE4CE08D655")
     
 @Override
@@ -1018,6 +1020,7 @@ public void setShort(Object object, short value) throws IllegalAccessException,
      *
      * @return a printable representation for this field
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.359 -0500", hash_original_method = "2B14553F8A926216EE23C791DBC737FD", hash_generated_method = "644A9AA29183D30BF49FDC488F794AC7")
     
 @Override

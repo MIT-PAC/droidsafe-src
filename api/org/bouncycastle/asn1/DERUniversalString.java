@@ -99,6 +99,7 @@ public String getString()
         return buf.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.980 -0500", hash_original_method = "79F534E26CC8382FAA66B4080878D117", hash_generated_method = "797E25846E0761235375940A5544E1B9")
     
 public String toString()
@@ -139,6 +140,7 @@ boolean asn1Equals(
         return this.getString().equals(((DERUniversalString)o).getString());
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.989 -0500", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "54F3A64DBCC65B097BA7A8E0BB1579E9")
     
 public int hashCode()

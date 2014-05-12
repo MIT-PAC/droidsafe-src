@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -47,6 +46,7 @@ public FinalPort(Filter filter, String name, Field field, boolean hasDefault) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.402 -0400", hash_original_method = "BD065C7A81FC907CB5959AE3DFBE0C0A", hash_generated_method = "02303035FB5835931524FD0E0B6D63B9")
     
 @Override

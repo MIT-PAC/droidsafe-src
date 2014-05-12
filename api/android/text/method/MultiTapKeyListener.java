@@ -259,6 +259,7 @@ public Timeout(Editable buffer) {
             postAtTime(this, SystemClock.uptimeMillis() + 2000);
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.561 -0500", hash_original_method = "9422E834C74E9D65E1B16C1853183F4B", hash_generated_method = "9DFFBED0D2474352FDD7AB21BBC6F531")
         
 public void run() {

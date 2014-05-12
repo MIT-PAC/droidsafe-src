@@ -113,6 +113,7 @@ public ZipFile(String name) throws IOException {
         this(new File(name), OPEN_READ);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.339 -0500", hash_original_method = "A7163D550D593B0FEEAE03A5B45C66A6", hash_generated_method = "91983752378C3E03D46CB5D4FABFFB6C")
     
 @Override protected void finalize() throws IOException {
@@ -247,6 +248,7 @@ public RAFStream(RandomAccessFile raf, long pos) throws IOException {
             mLength = raf.length();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.379 -0500", hash_original_method = "EBB90581A10714B3978F18E12312CB3A", hash_generated_method = "BE241658E106D1C9658EA6A6AA2DAED2")
         
 @Override public int available() throws IOException {
@@ -259,6 +261,8 @@ public RAFStream(RandomAccessFile raf, long pos) throws IOException {
             return Streams.readSingleByte(this);
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.384 -0500", hash_original_method = "EF568FF768F81FE11A38286E6FDCB2E1", hash_generated_method = "912659AC21D2D46002DC681A847896FF")
         
 @Override public int read(byte[] b, int off, int len) throws IOException {
@@ -277,6 +281,7 @@ public RAFStream(RandomAccessFile raf, long pos) throws IOException {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.387 -0500", hash_original_method = "62A626F8A4A0AABE786C23986D3622F2", hash_generated_method = "9E51DF3BA712F2D239DDA032E36B00E3")
         
 @Override
@@ -305,6 +310,8 @@ public ZipInflaterInputStream(InputStream is, Inflater inf, int bsize, ZipEntry 
             this.entry = entry;
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.399 -0500", hash_original_method = "8B6BFDD773126A0A7B62B959FA690E20", hash_generated_method = "CB8B792E53A780626A66D4303BC50012")
         
 @Override
@@ -316,6 +323,7 @@ public ZipInflaterInputStream(InputStream is, Inflater inf, int bsize, ZipEntry 
             return i;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.402 -0500", hash_original_method = "67EB7FFE4182D11E188F79FFA477AD5D", hash_generated_method = "C2E4F4B0D9E6472209109F7183ECDDAF")
         
 @Override

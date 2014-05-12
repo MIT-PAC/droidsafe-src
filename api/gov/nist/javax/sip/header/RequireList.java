@@ -20,6 +20,7 @@ public RequireList() {
         super(Require.class, RequireHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.580 -0500", hash_original_method = "4C9D6FE7DF8BFD06BB544C2582BF8758", hash_generated_method = "86BAA05A4045A31EF70AAA68505D2DBC")
     
 public Object clone() {

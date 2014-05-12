@@ -254,6 +254,7 @@ private void initFromAttributes(Context context, AttributeSet attrs) {
         return mBaselineView != null ? mBaselineView.getBaseline() : super.getBaseline();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.844 -0500", hash_original_method = "D40C3344998DDA8004351F538E92F8E3", hash_generated_method = "2B720D662B7DB6163ABA6B6C3731A805")
     
 @Override
@@ -1577,6 +1578,7 @@ private void centerVertical(View child, LayoutParams params, int myHeight) {
     }
 
     // Override to allow type-checking of LayoutParams.
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.900 -0500", hash_original_method = "7AAD3A1C062434D08215151012F2CF47", hash_generated_method = "5A37B644F5BCF6C2E9DC21DC8359141A")
     
 @Override
@@ -1591,6 +1593,7 @@ private void centerVertical(View child, LayoutParams params, int myHeight) {
         return new LayoutParams(p);
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.904 -0500", hash_original_method = "02980C12A71A151B5687E23560D62A05", hash_generated_method = "4F67BB22C02463A3BF21D4A6D96588A0")
     
 @Override

@@ -3127,6 +3127,7 @@ ArrayList(E[] storage) {
             a = storage;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.923 -0500", hash_original_method = "60C2CE78869B52DAF166079897D78161", hash_generated_method = "009E3274DDF9A4476E9FB92EBEBFD44C")
         
 @Override
@@ -3147,6 +3148,7 @@ ArrayList(E[] storage) {
             return false;
         }
         
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.518 -0400", hash_original_method = "2292A4CE789907EDD632B4A1EB11E4D2", hash_generated_method = "B2FEE0C150F1B0531794BB26ED0C3A5A")
         @Override
@@ -3172,6 +3174,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             //}
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.928 -0500", hash_original_method = "2A691ADB93209815384C011B6281A9FB", hash_generated_method = "4B7EC43DED547E35769F36AFEEF9AD5D")
         
 @Override
@@ -3192,6 +3195,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             return -1;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.931 -0500", hash_original_method = "0667C423DABE9154AC3C7F87378CA39A", hash_generated_method = "B78E3C2101055DD1CC048E1DF3243AAB")
         
 @Override
@@ -3212,6 +3216,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             return -1;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.934 -0500", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "041DFDF040EDA958588DB53691C01A94")
         
@@ -3222,6 +3227,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             return result;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.936 -0500", hash_original_method = "E1955A04BFD4754737F2A0E48B09DBE4", hash_generated_method = "4144419ED260D453601649A3D8DBB6F5")
         
 @Override
@@ -3229,6 +3235,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             return a.length;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.939 -0500", hash_original_method = "4819818080CBECF7C6E758DFD111EA84", hash_generated_method = "041C09F1BF277D3B146122548FB25910")
         
 @Override
@@ -3236,7 +3243,8 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             return a.clone();
         }
                 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.001 -0400", hash_original_method = "7C6C61B0D92D6FAC6E5A876622A28815", hash_generated_method = "F8735DB7EA6ECCE9326BD99AA6BFFDD0")
+@DSSafe(DSCat.DATA_STRUCTURE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.001 -0400", hash_original_method = "7C6C61B0D92D6FAC6E5A876622A28815", hash_generated_method = "F8735DB7EA6ECCE9326BD99AA6BFFDD0")
         @Override
         @SuppressWarnings({"unchecked", "SuspiciousSystemArraycopy"})
         public <T> T[] toArray(T[] contents) {

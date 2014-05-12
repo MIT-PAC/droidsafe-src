@@ -62,6 +62,7 @@ public String getValue() {
      *
      * @return a string
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.040 -0500", hash_original_method = "F969228997B8CD2234867EA0CA894312", hash_generated_method = "ACA16CD0056313E82F84368A4B3CF52E")
     
 public String toString() {
@@ -90,6 +91,7 @@ public HeaderElement[] getElements() throws ParseException {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.045 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "587F7AA34F50D42D8C2635621B97F7C1")
     
 public Object clone() throws CloneNotSupportedException {

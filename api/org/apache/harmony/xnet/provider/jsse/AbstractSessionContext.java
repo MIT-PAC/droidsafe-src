@@ -331,6 +331,7 @@ void putSession(SSLSession session) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.742 -0500", hash_original_method = "F38656E203DF2568CDB8FB5A6C876744", hash_generated_method = "B21566E80A2D5EBF94270E3732AA186A")
     
 @Override protected void finalize() throws Throwable {

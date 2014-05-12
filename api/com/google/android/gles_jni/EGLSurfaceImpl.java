@@ -27,6 +27,7 @@ public EGLSurfaceImpl(int surface) {
         mNativePixelRef = 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.667 -0500", hash_original_method = "686C2DC893E9E8D9D02295779AC83C23", hash_generated_method = "09C81E6A4BBCC1A424B9F1323BED9B21")
     
 @Override
@@ -40,6 +41,7 @@ public EGLSurfaceImpl(int surface) {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.670 -0500", hash_original_method = "688B514F649E9FC55EF131746A1254F0", hash_generated_method = "98A5D045BA43EF4CACB9CA9CC6FC6595")
     
 @Override

@@ -376,6 +376,7 @@ public abstract UUSInfo getUUSInfo();
      * Don't log personal stuff unless in debug mode.
      * @return a string representing the internal state of this connection.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.414 -0500", hash_original_method = "81B11B98158DBCB6EBD3953D4E6C7CF3", hash_generated_method = "F9D02C82B1FE8820E8127AA89EF8D779")
     

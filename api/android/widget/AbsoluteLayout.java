@@ -120,6 +120,7 @@ public AbsoluteLayout(Context context, AttributeSet attrs,
     }
 
     // Override to allow type-checking of LayoutParams. 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.367 -0500", hash_original_method = "E121C7CF679CE7DED988221EA3AFEDE0", hash_generated_method = "4368BF6C9449F4440D3B3E8FD84AF06B")
     
 @Override

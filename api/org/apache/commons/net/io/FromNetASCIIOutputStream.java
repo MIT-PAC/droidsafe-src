@@ -106,7 +106,7 @@ private void __write(int ch) throws IOException
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.430 -0500", hash_original_method = "E0D4643D13B7CCDA3167C7EA96CF1000", hash_generated_method = "5CF591D4ECBF29A40680A9E022503132")
     @DSVerified
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
 public synchronized void write(int ch)
     throws IOException
     {

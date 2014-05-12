@@ -36,6 +36,7 @@ public FloatKeyframeSet(FloatKeyframe... keyframes) {
         return getFloatValue(fraction);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.325 -0500", hash_original_method = "EE8B91077168511971EA1FA3F5AAEF56", hash_generated_method = "6FEEB34F6A405B9AFD766C8976173F9B")
     
 @Override

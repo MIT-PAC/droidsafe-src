@@ -119,6 +119,7 @@ public byte[] getOctets()
         return string;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.334 -0500", hash_original_method = "306C0053EB93BF3AE4D12BCDAA093AD0", hash_generated_method = "CADC956D4F879516E430D0F140A862B4")
     
 public int hashCode()
@@ -157,6 +158,7 @@ public DERObject getLoadedObject()
 abstract void encode(DEROutputStream out)
         throws IOException;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.344 -0500", hash_original_method = "A6F4AE428E861451DA18F2BDC0B16A3E", hash_generated_method = "3A62F662427472D9A778EE9E35AA01D0")
     
 public String toString()

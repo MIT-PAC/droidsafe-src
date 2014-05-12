@@ -120,6 +120,7 @@ public void setPsc(int psc) {
         mPsc = psc;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:43.676 -0500", hash_original_method = "01808FF7591EA9C272F4AD513B525DCA", hash_generated_method = "4CC437BB0D8859A48174A1D7CA5BD802")
     
 @Override
@@ -127,6 +128,7 @@ public void setPsc(int psc) {
         return mLac ^ mCid;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:43.687 -0500", hash_original_method = "A65316AC0F6A2A4C5019C1501720E22E", hash_generated_method = "81ADE2CDDADB9394E165117ECC023AB2")
     
 @Override
@@ -147,6 +149,7 @@ public void setPsc(int psc) {
             && equalsHandlesNulls(mPsc, s.mPsc);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:43.697 -0500", hash_original_method = "ECC0B1700594AB1E58D4785492DA1471", hash_generated_method = "FDEE863DDC078BD27B817D7A6E7D672F")
     
 @Override

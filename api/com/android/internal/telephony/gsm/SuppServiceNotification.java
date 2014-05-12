@@ -90,6 +90,7 @@ public class SuppServiceNotification {
         //Synthesized constructor
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:25.557 -0500", hash_original_method = "A03F8251EC229F0DECFD7D9A52A7C82D", hash_generated_method = "1811F7F2DF592112F2E9142BD3B95082")
     
 public String toString()

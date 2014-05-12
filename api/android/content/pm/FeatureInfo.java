@@ -64,6 +64,7 @@ private FeatureInfo(Parcel source) {
         flags = source.readInt();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.234 -0500", hash_original_method = "CEFF2831199A05D6B9B0449BE07C0CC4", hash_generated_method = "1AA302D0E82FFBA1C766C5B6FC26E4C6")
     
 public String toString() {

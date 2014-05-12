@@ -103,6 +103,8 @@ public int read() throws IOException {
      *
      * @throws java.io.IOException Should an error occur on the wrapped stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.071 -0500", hash_original_method = "7953751167B17924FE4F5EE632E22C6C", hash_generated_method = "87F145D42A3BB632F9457934C2B1F5C7")
     
 public int read (byte[] b, int off, int len) throws java.io.IOException {
@@ -129,6 +131,8 @@ public int read (byte[] b, int off, int len) throws java.io.IOException {
      * @throws IOException If an IO problem occurs
      * @see java.io.InputStream#read(byte[])
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.073 -0500", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "E0F9C5B343EA0376178403393DBFABB2")
     
 public int read(byte[] b) throws IOException {
@@ -143,6 +147,7 @@ public int read(byte[] b) throws IOException {
      * @throws IOException If an error occurs while skipping bytes.
      * @see InputStream#skip(long)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.076 -0500", hash_original_method = "F403C2DD7869661F9202FB887EC75E9B", hash_generated_method = "C71F29B723820B743949EE2ADEE8C074")
     
 public long skip(long n) throws IOException {

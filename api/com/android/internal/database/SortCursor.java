@@ -197,7 +197,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.166 -0500", hash_original_method = "3CE824B95C82F11BF58FC21A90C6596E", hash_generated_method = "ED07F326C66A892800FB63C8FCD37B48")
     
 @Override
@@ -216,7 +216,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.171 -0500", hash_original_method = "196BE6610F391149CB98C678C09840A9", hash_generated_method = "C28D8796BE04004FA31D5BCAE54426AF")
     
 @Override
@@ -226,7 +226,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.173 -0500", hash_original_method = "F9F66E8E22111A5FD3479C47D664F15E", hash_generated_method = "9237FC8AD54C22425AC591AF532E0CF4")
     
 @Override
@@ -254,7 +254,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.181 -0500", hash_original_method = "EA5E8A29C1728085016D3A247FDA0EC9", hash_generated_method = "77FBE8C5B4CFC8958A0D479BC66DDA83")
     
 @Override
@@ -271,7 +271,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.186 -0500", hash_original_method = "9D3EADEAB6620E0607DB05CBA4EF5895", hash_generated_method = "8C73EB5E7F8882B29B28A306EBBD8727")
     
 @Override
@@ -281,7 +281,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
     }
     
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.189 -0500", hash_original_method = "FABBE77F00A0F54771EB01C7CA2B1BF3", hash_generated_method = "E2505EC0B33F98A1EFCA150436ED4A1F")
     
 @Override

@@ -86,6 +86,7 @@ public DhcpInfo(DhcpInfo source) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.822 -0500", hash_original_method = "8D7B8EC19D16628B2975B72E53B9E8C8", hash_generated_method = "5249A72ACA966A97676F9DF740D3607F")
     
 public String toString() {

@@ -16,7 +16,7 @@ public class Xfermode {
     int native_instance;
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.217 -0400", hash_original_method = "C597DAEA4231BF58F4F9DBF898816899", hash_generated_method = "C597DAEA4231BF58F4F9DBF898816899")
     public Xfermode ()
     {

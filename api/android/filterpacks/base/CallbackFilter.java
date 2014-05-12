@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterpacks.base;
 
 import droidsafe.annotations.*;
@@ -41,21 +40,17 @@ import java.lang.Runnable;
 public class CallbackFilter extends Filter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.299 -0400", hash_original_field = "DA1CC322A22874297D9BC3D5725F0E90", hash_generated_field = "CDF9ECD89E0D459D80B955C72EB9CE57")
 
-
     @GenerateFieldPort(name = "listener", hasDefault = true)
     private FilterContext.OnFrameReceivedListener mListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.303 -0400", hash_original_field = "226A7C6502AB948D187D5632223BC72F", hash_generated_field = "56FB14870E68042D9D7BF3D9FD648DAF")
-
 
     @GenerateFieldPort(name = "userData", hasDefault = true)
     private Object mUserData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.306 -0400", hash_original_field = "343FB082C33F88F3E826E914289630FB", hash_generated_field = "2030E1FFD2C63101642DF475D42A3360")
 
-
     @GenerateFinalPort(name = "callUiThread", hasDefault = true)
     private boolean mCallbacksOnUiThread = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.309 -0400", hash_original_field = "7667443146CC3F56EE6876E57EF46DF4", hash_generated_field = "B3091F4E42E4A1AB5D6A4785989484B3")
-
 
     private Handler mUiThreadHandler;
 
@@ -82,6 +77,7 @@ public CallbackRunnable(FilterContext.OnFrameReceivedListener listener, Filter f
             mUserData = userData;
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.329 -0400", hash_original_method = "5A83EF49B6B92DC977E0343EF5C3F232", hash_generated_method = "C59DE47CD8ACB181772B2E58E045F6ED")
         
 public void run() {

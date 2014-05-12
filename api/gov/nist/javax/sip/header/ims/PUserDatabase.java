@@ -82,6 +82,7 @@ protected String encodeBody() {
         return retval.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.870 -0500", hash_original_method = "E720B3A09C72EF9AD917691C9271EB0A", hash_generated_method = "97914C0F9C0738B1832C0F5D20126DF8")
     
 public boolean equals(Object other)
@@ -90,6 +91,7 @@ public boolean equals(Object other)
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.873 -0500", hash_original_method = "0C530D20B34B6FA1A3EDDB9B09D02FD1", hash_generated_method = "6D9B725C8901044875E10FB3FDDD193C")
     
 public Object clone() {

@@ -219,7 +219,8 @@ public void removeAllListeners() {
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.302 -0500", hash_original_method = "D34181C2AB04F8825A2BE8661E83342B", hash_generated_method = "B7F66985686932E1DF636764C91CD1BA")
     
 @Override

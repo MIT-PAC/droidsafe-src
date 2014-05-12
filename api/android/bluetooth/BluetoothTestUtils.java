@@ -144,6 +144,7 @@ public BluetoothReceiver(int expectedFlags) {
             super(expectedFlags);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.539 -0400", hash_original_method = "75C1ABE95D80A79A4011B8BC5342B31B", hash_generated_method = "07F34DE82D1CC1ABEEAD4BB5AA0F958D")
         
 @Override
@@ -199,7 +200,6 @@ public BluetoothReceiver(int expectedFlags) {
         private static final int STATE_NONE_FLAG = 1 << 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.547 -0400", hash_original_field = "793253818BA6C7B0BA0EE44002B9EC24", hash_generated_field = "E4571726F4118D3C8C7A8AF1D003C1BF")
 
-
         private BluetoothDevice mDevice;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.549 -0400", hash_original_field = "D52C02153F76E7B145AB24DDAA220FE4", hash_generated_field = "510E7DEE874C284A83522515DC49323D")
 
@@ -218,6 +218,7 @@ public PairReceiver(BluetoothDevice device, int passkey, byte[] pin, int expecte
             mPin = pin;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.554 -0400", hash_original_method = "58F0FAD155FF4B13D45592A973C4E988", hash_generated_method = "6BB220484C1DF0BA20C534A1CD51819B")
         
 @Override
@@ -277,7 +278,6 @@ public PairReceiver(BluetoothDevice device, int passkey, byte[] pin, int expecte
         private static final int STATE_DISCONNECTING_FLAG = 1 << 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.564 -0400", hash_original_field = "793253818BA6C7B0BA0EE44002B9EC24", hash_generated_field = "E4571726F4118D3C8C7A8AF1D003C1BF")
 
-
         private BluetoothDevice mDevice;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.565 -0400", hash_original_field = "6466AB47A4E8DAAE93C96826CBF42A86", hash_generated_field = "8016B178818EBB90ECC104CA00C7510B")
 
@@ -312,6 +312,7 @@ public ConnectProfileReceiver(BluetoothDevice device, int profile, int expectedF
             }
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.570 -0400", hash_original_method = "F5D523FBF8E24660B850A9FEDD7CDB84", hash_generated_method = "205EC4C4D3FCEC04D03443E53D405A98")
         
 @Override
@@ -354,6 +355,7 @@ public ConnectPanReceiver(BluetoothDevice device, int role, int expectedFlags) {
             mRole = role;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.577 -0400", hash_original_method = "16E4FCB6CB3F0259E1CE523CDAFAABF6", hash_generated_method = "EAF7E0CF4931262AC69B38301C9A5CF6")
         
 @Override
@@ -380,6 +382,7 @@ public StartStopScoReceiver(int expectedFlags) {
             super(expectedFlags);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.584 -0400", hash_original_method = "3A16938D08B9E77933F700F9D8B17E4D", hash_generated_method = "E4CC9072304BBC7685864CB166F6A779")
         
 @Override
@@ -400,7 +403,6 @@ public StartStopScoReceiver(int expectedFlags) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.592 -0400", hash_original_field = "C355CA7426EE39CD66733A35FD2B05F4", hash_generated_field = "859AA50FE4EFB38CAC31689672EF9745")
-
 
     private BluetoothProfile.ServiceListener mServiceListener =
             new BluetoothProfile.ServiceListener() {
@@ -446,10 +448,8 @@ public StartStopScoReceiver(int expectedFlags) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.593 -0400", hash_original_field = "AF0C31E22D91F0A3FF7706E84C57ACF5", hash_generated_field = "57C239A8D629E793653F8820A0293846")
 
-
     private List<BroadcastReceiver> mReceivers = new ArrayList<BroadcastReceiver>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.595 -0400", hash_original_field = "28B83B9653005F5469FB1FEA8B002867", hash_generated_field = "EDEAE859CCBCC94F81FF558FFD9EA39B")
-
 
     private BufferedWriter mOutputWriter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.596 -0400", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
@@ -459,7 +459,6 @@ public StartStopScoReceiver(int expectedFlags) {
 
     private String mOutputFile;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.599 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:16.601 -0400", hash_original_field = "9704B6351549C051CC5CCFF08F4038E9", hash_generated_field = "B8A0E37D8036B450E0B783CADB8E0068")

@@ -284,6 +284,7 @@ public synchronized void setSoTimeout(int timeout) throws SocketException {
      *
      * @return the textual socket representation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.866 -0500", hash_original_method = "577ACC2D572353EA5861EB3648159EF5", hash_generated_method = "6449E1D40009C093BF2C3A48885041E6")
     
 @Override

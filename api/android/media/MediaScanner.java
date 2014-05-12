@@ -115,10 +115,8 @@ public class MediaScanner
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.061 -0400", hash_original_field = "1B9E4A5FDA1296CE78BC6D5BCD671FFB", hash_generated_field = "41F2F3240626996372C97234D04329BE")
 
-
     private final static String TAG = "MediaScanner";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.066 -0400", hash_original_field = "C9F430E557A44261A77736E225F1FC93", hash_generated_field = "16E50C22DC2C6C186FD44814B4CEF145")
-
 
     private static final String[] FILES_PRESCAN_PROJECTION = new String[] {
             Files.FileColumns._ID, // 0
@@ -128,12 +126,10 @@ public class MediaScanner
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.070 -0400", hash_original_field = "CC7F74A8BAFE59070A4347A2CFAB8C1D", hash_generated_field = "78FBBE18B07CAF8553C78B6BCA629584")
 
-
     private static final String[] ID_PROJECTION = new String[] {
             Files.FileColumns._ID,
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.074 -0400", hash_original_field = "45F7F74610F610B98CBC88F17AB57072", hash_generated_field = "82451A6BB84821A9C7EF1F0A864782E4")
-
 
     private static final int FILES_PRESCAN_ID_COLUMN_INDEX = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.080 -0400", hash_original_field = "4E95895AE9E42A5EB6863BE64EEC417F", hash_generated_field = "D682581866DC846DE437184F45B80996")
@@ -147,12 +143,10 @@ public class MediaScanner
     private static final int FILES_PRESCAN_DATE_MODIFIED_COLUMN_INDEX = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.094 -0400", hash_original_field = "1095E43EECA56A2DE14A33CE91DF30D1", hash_generated_field = "4D539A26827BBFA1E60EC944A63C80BF")
 
-
     private static final String[] PLAYLIST_MEMBERS_PROJECTION = new String[] {
             Audio.Playlists.Members.PLAYLIST_ID, // 0
      };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.098 -0400", hash_original_field = "E55B2E5A73AE4F40AFA01F841D057FC5", hash_generated_field = "4584CDEAF8E2FA09FF95B58E6AB72471")
-
 
     private static final int ID_PLAYLISTS_COLUMN_INDEX = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.103 -0400", hash_original_field = "FD8FC1D5FD2509A425AF74B614C75B6C", hash_generated_field = "C3D90E774AE79C7FCFF703D4E3EDE355")
@@ -162,7 +156,6 @@ public class MediaScanner
 
     private static final int DATE_MODIFIED_PLAYLISTS_COLUMN_INDEX = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.112 -0400", hash_original_field = "1F077A85366C52F4C62F97ABDEAD7234", hash_generated_field = "1BBC141167C8F7AE98C790E58212DDB9")
-
 
     private static final String RINGTONES_DIR = "/ringtones/";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.116 -0400", hash_original_field = "0934033B77C8B59249EE2AF74B2867EF", hash_generated_field = "E97B63AB03280D6012529E138AC4FBC0")
@@ -178,7 +171,6 @@ public class MediaScanner
 
     private static final String PODCAST_DIR = "/podcasts/";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.140 -0400", hash_original_field = "8F316F1A0D59440137E88A0FC253D2B6", hash_generated_field = "2CD804A0BD4538BF01FCAD8C5F4CD5EC")
-
 
     private static final String[] ID3_GENRES = {
         // ID3v1 Genres
@@ -420,7 +412,6 @@ public static boolean isNoMediaPath(String path) {
 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.144 -0400", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
 
-
     private int mNativeContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.149 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
@@ -453,7 +444,6 @@ public static boolean isNoMediaPath(String path) {
 
     private int mMtpObjectHandle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.189 -0400", hash_original_field = "4A3D217322886C784D8B4E866EBEC811", hash_generated_field = "C615DB6C87D4B0543F436F7F5621F2FB")
-
 
     private  String mExternalStoragePath;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.198 -0400", hash_original_field = "11775391315C53786DA15113FAF9F21B", hash_generated_field = "7473FBBE81941F5936D591E99FC0A5CC")
@@ -510,6 +500,7 @@ FileCacheEntry(long rowId, String path, long lastModified, int format) {
             mLastModifiedChanged = false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.269 -0400", hash_original_method = "6F1E2B2A8817965D2BC4B732ECC67D6F", hash_generated_method = "AF1285E275D854179DAC6E7043C01D10")
         
 @Override
@@ -526,10 +517,8 @@ FileCacheEntry(long rowId, String path, long lastModified, int format) {
     private boolean mCaseInsensitivePaths;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.240 -0400", hash_original_field = "CB4D2A9A30166F32913FF91112AF5F85", hash_generated_field = "9073907CBE78776DB3D82963F09B99C1")
 
-
     private BitmapFactory.Options mBitmapOptions = new BitmapFactory.Options();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.277 -0400", hash_original_field = "B3990FEA9EC259A0AA8003D61A946AD2", hash_generated_field = "4BB0B8D1E3932D6A223C079298272F2F")
-
 
     private MediaInserter mMediaInserter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.281 -0400", hash_original_field = "1BF2BABAC35481DB877A28A83D563A93", hash_generated_field = "74F74F1775F8824013BBDD36FF4F1363")
@@ -538,20 +527,16 @@ FileCacheEntry(long rowId, String path, long lastModified, int format) {
     private HashMap<String, FileCacheEntry> mFileCache;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.285 -0400", hash_original_field = "0D39BE7E8F641B9A14ED3AB075901B0D", hash_generated_field = "B0505421625F2269DAC50D3C69B06B90")
 
-
     private ArrayList<FileCacheEntry> mPlayLists;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.289 -0400", hash_original_field = "817EEDDF333C63740955B06EA19E288C", hash_generated_field = "B3DBBD0746A148BC82FB9F737DB5EAB8")
 
-
     private DrmManagerClient mDrmManagerClient = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.300 -0400", hash_original_field = "B6BBB12242227A13233624FC93E5E4C8", hash_generated_field = "F121F1DB331E3A6884085D96377FE6DF")
-
 
     private MyMediaScannerClient mClient = new MyMediaScannerClient();
 
     private class MyMediaScannerClient implements MediaScannerClient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.308 -0400", hash_original_field = "22B225E9F231F796AF6C45AE0D8D3BA0", hash_generated_field = "D8849471015CBFFC396FFECCAE15E4AE")
-
 
         private String mArtist;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.311 -0400", hash_original_field = "4DBE31670429CE4E209F02BB919DC72E", hash_generated_field = "B2495105664AE90DCE7778D68765ACAE")
@@ -1674,7 +1659,6 @@ private void processM3uPlayList(String path, String playListDirectory, Uri uri, 
     class WplHandler implements ElementListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.542 -0400", hash_original_field = "72DFA99F316215C323A7733A2B6F975E", hash_generated_field = "72DFA99F316215C323A7733A2B6F975E")
 
-
          ContentHandler handler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.546 -0400", hash_original_field = "705961060831E9B3244774CA9AFB69D6", hash_generated_field = "705961060831E9B3244774CA9AFB69D6")
 
@@ -1884,7 +1868,6 @@ private void processPlayLists() throws RemoteException {
     	addTaint(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.609 -0400", hash_original_method = "427980118EC6FD0FE31E55D23F645BCC", hash_generated_method = "76CE00BB7E90B404C479DC90BD82C306")
     
     public byte[] extractAlbumArt(FileDescriptor fd){
@@ -1910,7 +1893,6 @@ private void processPlayLists() throws RemoteException {
     	//Formerly a native method
     }
 
-
     /**
      * Releases resouces associated with this MediaScanner object.
      * It is considered good practice to call this method when
@@ -1923,6 +1905,7 @@ public void release() {
         native_finalize();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:03.631 -0400", hash_original_method = "6FFFD5AC5802A001D88B918C6B5BBC7B", hash_generated_method = "28A780B9B2F0FCDFC6DC40A44F29707D")
     
 @Override

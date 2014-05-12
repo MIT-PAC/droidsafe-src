@@ -196,6 +196,7 @@ public ECPoint getInfinity()
             return infinity;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.395 -0500", hash_original_method = "937E7F8C7D7C20805F9F2153639BF5E3", hash_generated_method = "45D94D1D50FECC14941481469A03DA13")
         
 public boolean equals(
@@ -217,6 +218,7 @@ public boolean equals(
                     && a.equals(other.a) && b.equals(other.b);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.398 -0500", hash_original_method = "0595BFE04038932B73D34C7D5BF16F78", hash_generated_method = "31A4878ACD6F34DAB83FC535F7DA5760")
         
 public int hashCode() 
@@ -688,6 +690,7 @@ private ECFieldElement solveQuadradicEquation(ECFieldElement beta)
             return z;
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.463 -0500", hash_original_method = "5F33BE6BAAB2ADDEB5EF1D1748825E7B", hash_generated_method = "89142AA3E602F1ACDC942BE955E3EE52")
         
 public boolean equals(
@@ -710,6 +713,7 @@ public boolean equals(
                 && a.equals(other.a) && b.equals(other.b);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.465 -0500", hash_original_method = "E92144A56D15AF334E01FB92437AD76B", hash_generated_method = "2441426CE40B68EFC2358B746BE0070E")
         
 public int hashCode()

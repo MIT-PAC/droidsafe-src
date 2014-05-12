@@ -16,7 +16,7 @@ public class Rasterizer {
     int native_instance;
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.688 -0400", hash_original_method = "11C4CA6DFE8F610B47AB2C394C18DE1F", hash_generated_method = "11C4CA6DFE8F610B47AB2C394C18DE1F")
     public Rasterizer ()
     {

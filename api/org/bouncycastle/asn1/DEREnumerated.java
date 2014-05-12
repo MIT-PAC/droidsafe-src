@@ -118,6 +118,7 @@ boolean asn1Equals(
         return Arrays.areEqual(this.bytes, other.bytes);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.455 -0500", hash_original_method = "ECC4B202736A567045152AD0D498E31B", hash_generated_method = "68A737718BE4129A2E38665F9FD0A635")
     
 public int hashCode()

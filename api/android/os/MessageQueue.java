@@ -92,6 +92,7 @@ MessageQueue() {
         */
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override protected void finalize(){
         nativeDestroy();
         try {

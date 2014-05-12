@@ -996,6 +996,7 @@ void clear() {
         mConnectionId = UNDEFINED;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.103 -0500", hash_original_method = "6984D5C42FE7046E0FC00D15FC78323D", hash_generated_method = "34417318D830F13732943775069038EE")
     
 @Override

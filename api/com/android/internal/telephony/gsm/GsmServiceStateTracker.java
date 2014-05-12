@@ -359,6 +359,7 @@ public void dispose() {
         cr.unregisterContentObserver(this.mAutoTimeZoneObserver);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.708 -0500", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "E743B6DABD28108918049040079C2592")
     
 protected void finalize() {
@@ -373,6 +374,7 @@ protected void finalize() {
         return phone;
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.716 -0500", hash_original_method = "8D6E3CD042747DF0CD652F21C9ED2A0B", hash_generated_method = "0E2A36178E18E7355EF62C3EF6C318DE")
     
 public void handleMessage (Message msg) {

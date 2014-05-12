@@ -158,6 +158,7 @@ protected void setException(Throwable t) {
      * Sets this Future to the result of its computation
      * unless it has been cancelled.
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.334 -0500", hash_original_method = "C774B2E8DA9F32069C4712123B43B6CD", hash_generated_method = "D3AE039B798452ECC87270B249B0B99C")
     
 public void run() {

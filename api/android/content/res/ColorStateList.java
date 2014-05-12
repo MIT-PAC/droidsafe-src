@@ -314,6 +314,7 @@ public int getDefaultColor() {
         return mDefaultColor;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.596 -0500", hash_original_method = "1483B624C0E3738F481F261D24FE0627", hash_generated_method = "016A1A88E69F99946CF20AE7F12AADB0")
     
 public String toString() {

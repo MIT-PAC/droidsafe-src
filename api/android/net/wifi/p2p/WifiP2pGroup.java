@@ -269,6 +269,7 @@ public String getInterface() {
         return mInterface;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.784 -0500", hash_original_method = "D6A6710E4962EEBC5AEB834D1EC25D10", hash_generated_method = "F4BF3F9DFD7D7D3763DCFD756F3D2542")
     
 public String toString() {

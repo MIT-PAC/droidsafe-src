@@ -52,6 +52,7 @@ public StringBuffer encode(StringBuffer buffer) {
      * An introspection based equality predicate for SIPObjects.
      *@param other the other object to test against.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.435 -0500", hash_original_method = "C625D56C28F833180267D6A3AE3C9C8E", hash_generated_method = "3235E79C076831103811E5F9B5DBF5E3")
     
 public boolean equals(Object other) {
@@ -376,6 +377,7 @@ public String debugDump(int indent) {
         return retval;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.453 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     

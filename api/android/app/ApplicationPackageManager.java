@@ -145,7 +145,8 @@ ApplicationPackageManager(ContextImpl context,
         mPM = pm;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.815 -0500", hash_original_method = "B0DADC2DBFEC092F753C36E8DEB385A1", hash_generated_method = "429D1BC09D6C96E00B2D6C8FF80CBED6")
     
 @Override
@@ -302,7 +303,8 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.838 -0500", hash_original_method = "8999420BFE5728B346477621EA154ABF", hash_generated_method = "28CDA3F8FDA37851E62A8AF5FDB0583F")
     
 @Override
@@ -320,7 +322,8 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(packageName);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.841 -0500", hash_original_method = "9B4FC7EA40C0BB7AEEEEEF1D86D28DE8", hash_generated_method = "EF6DFEB0D241F5E7703A22910B5FF935")
     
 @Override
@@ -597,7 +600,8 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.886 -0500", hash_original_method = "613ED89A001624360A0EB6B3BD081707", hash_generated_method = "E6D27C03B3B30501BEBA784C89734ADD")
     
 @Override
@@ -693,7 +697,8 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.907 -0500", hash_original_method = "3A6513CB26C2E0AF7DACFC2B8A5D560B", hash_generated_method = "F53A7551C4AA05FB097DA099CB348C9E")
     
 @Override
@@ -802,7 +807,8 @@ ApplicationPackageManager(ContextImpl context,
         return null;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.921 -0500", hash_original_method = "E8823DE045849946097DF943F50B58DB", hash_generated_method = "04E5C7A2AE8474A337A5572B23A268A8")
     
 @Override public Drawable getActivityIcon(ComponentName activityName)
@@ -810,7 +816,8 @@ ApplicationPackageManager(ContextImpl context,
         return getActivityInfo(activityName, 0).loadIcon(this);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.923 -0500", hash_original_method = "EF5F409F30F5D50F1964B6AB6B7F75B7", hash_generated_method = "C75839D6E1579E8FC96CA43A864F25D8")
     
 @Override public Drawable getActivityIcon(Intent intent)
@@ -836,14 +843,16 @@ ApplicationPackageManager(ContextImpl context,
             com.android.internal.R.drawable.sym_def_app_icon);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.928 -0500", hash_original_method = "C2186A062EDEC18E9DD8F87E8E6291D1", hash_generated_method = "CB3A075E196795909980D831E6793C11")
     
 @Override public Drawable getApplicationIcon(ApplicationInfo info) {
         return info.loadIcon(this);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.931 -0500", hash_original_method = "49256B647BD52234F52BC973E3B03E0B", hash_generated_method = "E0CB6A2F18DB4FEEC1933E37BC8C24EE")
     
 @Override public Drawable getApplicationIcon(String packageName)
@@ -1070,7 +1079,8 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         return null;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.002 -0500", hash_original_method = "4AFDE050276913F392973B277F54706D", hash_generated_method = "6F92466A776DBA6739B13B32017ADBC6")
     
 @Override
@@ -1395,6 +1405,7 @@ ResourceName(ResolveInfo rInfo, int _iconId) {
             this(rInfo.activityInfo.applicationInfo.packageName, _iconId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.982 -0500", hash_original_method = "77EA94B0E7A0581CD73B79023B92E268", hash_generated_method = "77B3F939F06FEF52185FCA37A12A7BBC")
         
 @Override
@@ -1426,6 +1437,7 @@ ResourceName(ResolveInfo rInfo, int _iconId) {
 */
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.985 -0500", hash_original_method = "FE96AD3461E654FCE4E8B88F254AC3EE", hash_generated_method = "762AFF0BD766AF93D60EF5AA43B0A594")
         
 @Override
@@ -1436,6 +1448,7 @@ ResourceName(ResolveInfo rInfo, int _iconId) {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.988 -0500", hash_original_method = "19C1C9668D8A7EEF540F3D9429936D14", hash_generated_method = "03FAF0B089B6194931E4305874DC2344")
         
 @Override

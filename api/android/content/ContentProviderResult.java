@@ -81,6 +81,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.033 -0500", hash_original_method = "892D2D0BDFABE856512808AB86E3168D", hash_generated_method = "C3D4B8EAC4CC3E860B01088872CFE1E5")
     
 public String toString() {

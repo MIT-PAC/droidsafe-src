@@ -727,6 +727,7 @@ public MethodAndArgsCaller(Method method, String[] args) {
             mArgs = args;
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.854 -0500", hash_original_method = "9C4F25D836A229393F13206C69120090", hash_generated_method = "48EB695FC8742900F4B756B96C8623C2")
         
 public void run() {

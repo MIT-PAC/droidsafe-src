@@ -150,6 +150,7 @@ public void setUserId(String id) {
         setString(INDEX_USER_ID, MAX_USER_ID_LENGTH, id);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.156 -0500", hash_original_method = "614A9A2B6D9145E41E65A77CC642278E", hash_generated_method = "4373509DD759957F5328AB53B3836621")
     
 @Override

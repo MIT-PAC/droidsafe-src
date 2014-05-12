@@ -19,6 +19,7 @@ public WarningList() {
         super(Warning.class, Warning.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.533 -0500", hash_original_method = "266F52C906228C3D1DC5D5C7E03D3C84", hash_generated_method = "779799A7CDBBD321B260B7EACF0181CB")
     
 public Object clone() {

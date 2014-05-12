@@ -813,12 +813,14 @@ public ArrayDeque<E> clone() {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.496 -0500", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "14F395F1FB532AA100EDE22B37B73640")
         
 public boolean hasNext() {
             return cursor != fence;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.498 -0500", hash_original_method = "9CABF9BA27B0EE6B683FFA8F5EC2BB0E", hash_generated_method = "9478BC2439BF4281FF464F7B91049C65")
         
 public E next() {
@@ -834,6 +836,7 @@ public E next() {
             return result;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.501 -0500", hash_original_method = "A6EE424EC418974FAC2A0A9E736B0189", hash_generated_method = "1A6384CA52F898C554E9D51E252271AD")
         
 public void remove() {
@@ -865,12 +868,14 @@ public void remove() {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.515 -0500", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "14F395F1FB532AA100EDE22B37B73640")
         
 public boolean hasNext() {
             return cursor != fence;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.518 -0500", hash_original_method = "5248F2967157124DAD3A5B8F2BA1B9D6", hash_generated_method = "BB66E305793B464C8437CE6ADB8BA16A")
         
 public E next() {
@@ -884,6 +889,7 @@ public E next() {
             return result;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.520 -0500", hash_original_method = "C558887990F4F262B85810625D57822A", hash_generated_method = "1E8559E3007914F062C8C373AC943D56")
         
 public void remove() {

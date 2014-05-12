@@ -266,6 +266,7 @@ public final String getClassloader() {
      *
      * @return  a string holding this version information
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.217 -0500", hash_original_method = "8C041823EF127A6F9DCC25E0329C5A09", hash_generated_method = "E6994078FCA41404F2ACCD485CC61315")
     
 public String toString() {

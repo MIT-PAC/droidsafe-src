@@ -159,6 +159,7 @@ private NativeBreakIterator(int address, int type) {
         this.charIter = new StringCharacterIterator("");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.755 -0500", hash_original_method = "E8D9FE5FD19A07CF96575F06CB3EDCC6", hash_generated_method = "C2FB168A1240136A54A391F6EDC2FB38")
     
 @Override
@@ -170,6 +171,7 @@ private NativeBreakIterator(int address, int type) {
         return clone;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.757 -0500", hash_original_method = "C0D37969DD3FDF8DABA3E38E17F8673F", hash_generated_method = "F2AB5C458A26A5EA715085C40C05781E")
     
 @Override
@@ -185,6 +187,7 @@ private NativeBreakIterator(int address, int type) {
         return type == rhs.type && charIter.equals(rhs.charIter);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.759 -0500", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "6FE10F00B45C1B3A5C1E5FE9B1177C9E")
     
 @Override
@@ -192,6 +195,7 @@ private NativeBreakIterator(int address, int type) {
         return 42; // No-one uses BreakIterator as a hash key.
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.762 -0500", hash_original_method = "208EB0EBF488A5AB652AF86235D70FBD", hash_generated_method = "0C61F8DA3E19DDA8A8E21A8EFA0CF440")
     
 @Override protected void finalize() throws Throwable {

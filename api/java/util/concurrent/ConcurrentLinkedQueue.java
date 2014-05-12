@@ -644,12 +644,14 @@ private E advance() {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.798 -0500", hash_original_method = "F3203522041DB53AA10973946A26B4E6", hash_generated_method = "0CE7AB64F14A3A8431434F0197BFFCA6")
         
 public boolean hasNext() {
             return nextNode != null;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.801 -0500", hash_original_method = "0C68CBDEA1D7969059001FABF149348A", hash_generated_method = "DB69FF76B32A8E8E884F805DCD7E6FB7")
         
 public E next() {
@@ -657,6 +659,7 @@ public E next() {
             return advance();
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.803 -0500", hash_original_method = "4D06856C6560F115B6FF7F073DDF82B7", hash_generated_method = "78A2193CDF1ABB9F4A5B94F29BE9C278")
         
 public void remove() {

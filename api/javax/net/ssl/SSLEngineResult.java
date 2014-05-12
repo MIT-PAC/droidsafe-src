@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SSLEngineResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.411 -0500", hash_original_field = "01A57A198287636A7334A3F559B27DB9", hash_generated_field = "3EDB9D951EE040B1BC6830CF666CCCCD")
 
@@ -106,6 +102,7 @@ public final int bytesProduced() {
         return bytesProduced;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.433 -0500", hash_original_method = "FF10D49A46BF312B9918894EBDEF7098", hash_generated_method = "2AE8A0263080A5FEF60E2F9EDD7084F5")
     
 @Override
@@ -114,7 +111,6 @@ public final int bytesProduced() {
                 + "\n                 bytesConsumed = " + bytesConsumed + " bytesProduced = "
                 + bytesProduced;
     }
-
     
     public enum HandshakeStatus {
         NOT_HANDSHAKING,
@@ -123,7 +119,6 @@ public final int bytesProduced() {
         NEED_WRAP,
         NEED_UNWRAP
     }
-
     
     public static enum Status {
         BUFFER_OVERFLOW,
@@ -131,7 +126,6 @@ public final int bytesProduced() {
         CLOSED,
         OK
     }
-
     
 }
 

@@ -20,6 +20,7 @@ public CallInfoList() {
         super(CallInfo.class, CallInfoHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.736 -0500", hash_original_method = "95B657F1A1F55E6349A24A49AE286459", hash_generated_method = "E53DACF95B1EB9EC1A29480796C01A37")
     
 public Object clone() {

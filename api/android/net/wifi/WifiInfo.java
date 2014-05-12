@@ -369,6 +369,7 @@ void setSupplicantState(String stateName) {
         mSupplicantState = valueOf(stateName);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.748 -0500", hash_original_method = "E7F8A705E19A9ABF8AEEB72FBC5B6139", hash_generated_method = "DE0D69B9FB95AB6E04C486EE9BBEF739")
     
 @Override

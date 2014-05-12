@@ -130,6 +130,7 @@ public FileInputStream(String path) throws FileNotFoundException {
      * @throws IOException
      *             if an error occurs attempting to finalize this stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.124 -0500", hash_original_method = "5577B21C22C8702738A871739D038C15", hash_generated_method = "D1DCB3056D2414B4C27AA873251B546E")
     
 @Override protected void finalize() throws IOException {

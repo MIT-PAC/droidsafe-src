@@ -77,6 +77,7 @@ public TransformerFactoryConfigurationError(Exception e, String msg) {
      *
      * @return The error message.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.534 -0500", hash_original_method = "87F4B9D5A318C1C88AAC3D2F1A6663D7", hash_generated_method = "794748C6DD32C677C76CF7827625B0BE")
     
 public String getMessage() {

@@ -117,6 +117,7 @@ public void setAuthScope(final AuthScope authScope) {
         this.authScope = authScope;
      }
      
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.305 -0500", hash_original_method = "CD2C06D38ABEB8110AC037A3B94BECA0", hash_generated_method = "F37DB38818C4B1AFDF67CBBAC2647BEE")
     
 @Override

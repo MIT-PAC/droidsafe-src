@@ -117,6 +117,7 @@ public float getBoundingHeight() {
         return Collections.max(ys) - Collections.min(ys);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:13.003 -0400", hash_original_method = "9B62DF2AC55D694C2B325E458D6BF5E8", hash_generated_method = "791A82AFF47F770C0DACC6BF590D7F13")
     
 @Override

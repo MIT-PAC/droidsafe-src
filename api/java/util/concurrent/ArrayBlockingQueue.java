@@ -762,12 +762,14 @@ Itr() {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.877 -0500", hash_original_method = "BD6D3436A392753337E742307DB75B57", hash_generated_method = "15CE72712ECCDEB0AEF2B96998165717")
         
 public boolean hasNext() {
             return remaining > 0;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.879 -0500", hash_original_method = "707282FAA8902CEC9C63EE3C89931C62", hash_generated_method = "BCDD13E9C1E812E6AE4384F5C204D758")
         
 public E next() {
@@ -793,6 +795,7 @@ public E next() {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.882 -0500", hash_original_method = "E7345F06EBC3C2DA4E698FB7A5897ADC", hash_generated_method = "B073914706CA35E16EABFB7B3B630ABD")
         
 public void remove() {

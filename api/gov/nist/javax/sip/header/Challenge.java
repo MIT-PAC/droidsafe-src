@@ -289,6 +289,7 @@ public void setAuthParams(NameValueList a) {
         authParams = a;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.186 -0500", hash_original_method = "BDAE145DB99173579ABC594BFE585895", hash_generated_method = "2A754E22B34BF385F00A958B8C14DB72")
     
 public Object clone() {

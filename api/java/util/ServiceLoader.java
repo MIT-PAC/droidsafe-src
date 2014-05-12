@@ -91,6 +91,7 @@ public void reload() {
      *
      * <p>The returned iterator does not support {@code remove}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.403 -0500", hash_original_method = "347C14FB6BD1E7714C96867577CC330D", hash_generated_method = "903E79232BB492D8486688E535217E3B")
     
@@ -112,6 +113,7 @@ private void internalLoad() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.417 -0500", hash_original_method = "F8BFF902940FB319A126BEB71F562AF6", hash_generated_method = "E74C9B6A194B8542188350F2CA47D3FB")
     
 @Override
@@ -144,6 +146,7 @@ public ServiceIterator(ServiceLoader<S> sl) {
             this.services = sl.services;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.435 -0500", hash_original_method = "DC8C57213B773C0EB2B0D98440591DD2", hash_generated_method = "93761BE42B0E7B4396883B779BF64698")
         
 public boolean hasNext() {
@@ -153,6 +156,7 @@ public boolean hasNext() {
             return (queue != null && !queue.isEmpty());
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.438 -0500", hash_original_method = "B99394086046EF47562A5B63911931C2", hash_generated_method = "03938AB1B532DD7680A49FA14D21523A")
         
 @SuppressWarnings("unchecked")
@@ -204,6 +208,7 @@ private void readClass() {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.444 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
         
 public void remove() {

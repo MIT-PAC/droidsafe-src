@@ -237,6 +237,7 @@ public class WindowImpl extends Window {
 		return false;
 	}
 	
+    @DSSafe(DSCat.GUI)
     @Override
 	public View getDecorView() {
 		// TODO Auto-generated method stub

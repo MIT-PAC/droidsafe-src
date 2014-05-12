@@ -55,6 +55,8 @@ public DataInputStream(InputStream in) {
     }
 
     // overridden to add 'final'
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.217 -0500", hash_original_method = "FBBAC6E2F22E2CF0617F10AA12B44AF0", hash_generated_method = "6EFE21C624F4526140DE26DD214855F3")
     
 @Override public final int read(byte[] buffer) throws IOException {
@@ -81,6 +83,7 @@ public DataInputStream(InputStream in) {
      * @see DataOutput#write(byte[])
      * @see DataOutput#write(byte[], int, int)
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.220 -0500", hash_original_method = "C547CA79E9FB46C2C7E21DBC0BF20334", hash_generated_method = "FD30BAD0DC3FB7FDB16BB01F578FEE23")

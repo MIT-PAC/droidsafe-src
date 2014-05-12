@@ -68,6 +68,7 @@ public void setZoomSpeed(long speed) {
         mZoomOut.setZoomSpeed(speed);
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.790 -0500", hash_original_method = "D87B32C51AD302A4F9341AA86337AE33", hash_generated_method = "42CEF1B8356646B0110B20CB45E3D9E7")
     
 @Override

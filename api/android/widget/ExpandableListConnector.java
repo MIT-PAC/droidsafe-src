@@ -889,6 +889,7 @@ int findGroupPosition(long groupIdToMatch, int seedGroupPosition) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.832 -0500", hash_original_method = "6638C55358D7A5972C632ED02BA3E5C3", hash_generated_method = "B265B43DFC29D8AF82A6D948594046AD")
         
 @Override
@@ -898,6 +899,7 @@ int findGroupPosition(long groupIdToMatch, int seedGroupPosition) {
             notifyDataSetChanged();
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.834 -0500", hash_original_method = "097361F82E1EAFBA4D6D3BF1780C0DD3", hash_generated_method = "122D3CAD2026DFBB4A415C8D12DED51C")
         
 @Override

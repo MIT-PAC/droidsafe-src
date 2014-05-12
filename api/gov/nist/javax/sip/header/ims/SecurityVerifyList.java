@@ -19,6 +19,7 @@ public SecurityVerifyList()
         super(SecurityVerify.class, SecurityVerifyHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.216 -0500", hash_original_method = "5D85FA960C60C09D5CA838E3BC582AEC", hash_generated_method = "2057FBC99FA363B01459E25630E30E40")
     
 public Object clone() {

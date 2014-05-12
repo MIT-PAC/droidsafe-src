@@ -387,6 +387,7 @@ public int compareTo(UUID uuid) {
      * @return {@code true} if this UUID is equal to {@code object}
      *         or {@code false} if not.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.070 -0500", hash_original_method = "A38435ECE2C3D40D1AE6B3B8E9BB77AD", hash_generated_method = "DAC5BFD454F218AA43C5BFBD266BFE3D")
     
 @Override
@@ -416,6 +417,7 @@ public int compareTo(UUID uuid) {
      *
      * @return an {@code int} value.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.072 -0500", hash_original_method = "2C05F06EE2A592A2D5972AF8C500920F", hash_generated_method = "42F78C5D38BF7B44D96FA3AD3E18463A")
     
 @Override

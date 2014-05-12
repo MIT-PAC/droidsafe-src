@@ -556,6 +556,7 @@ public V setValue(V object) {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.549 -0500", hash_original_method = "3B6A8BF252F73FDC95A7717672A6DE75", hash_generated_method = "D5B9FFF76B2DD708B51243E4D7086BFA")
         
 @Override
@@ -571,6 +572,7 @@ public V setValue(V object) {
                             .equals(entry.getValue()));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.552 -0500", hash_original_method = "D08C41096A06FEDF3165E76D8A8BDE22", hash_generated_method = "6D2A9EA430B7D6F412536172B7348C30")
         
 @Override
@@ -578,6 +580,7 @@ public V setValue(V object) {
             return hash + (value == null ? 0 : value.hashCode());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.555 -0500", hash_original_method = "1EE8DCD6F434B8EBFF147EFC16429262", hash_generated_method = "EB23E3252038C24E74060C0CC22CCEAE")
         
 @Override
@@ -618,6 +621,7 @@ HashIterator(Entry.Type<R, K, V> type) {
             expectedModCount = modCount;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.573 -0500", hash_original_method = "E96FCD52B0E07477D827A4DEB82A49B2", hash_generated_method = "270631B00E29F85530E17B5949D858AB")
         
 public boolean hasNext() {
@@ -644,6 +648,7 @@ public boolean hasNext() {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.576 -0500", hash_original_method = "F6AE8405A941E9948A6F966D8D2D9924", hash_generated_method = "FE9B8EA14816052DAC5FF5E80806B11C")
         
 public R next() {
@@ -661,6 +666,7 @@ public R next() {
             throw new ConcurrentModificationException();
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.580 -0500", hash_original_method = "9519576E1338F396C5D4D192735A75A5", hash_generated_method = "87E03B7F421A15B6D8B56D333DD18131")
         
 public void remove() {

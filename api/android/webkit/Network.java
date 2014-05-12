@@ -352,6 +352,7 @@ public void handleSslErrorRequest(LoadListener loader) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.736 -0500", hash_original_method = "FF6D86ABCD7F084A4EADD45C592C2902", hash_generated_method = "7FC9971AF3685FFFEAE89A59026BBCAC")
         
 @Override

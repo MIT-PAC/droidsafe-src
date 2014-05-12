@@ -54,7 +54,7 @@ public PointF[] newArray(int size) {
     public float y;
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.885 -0500", hash_original_method = "AC71EBB0EDB844032A48DF20A80FB47B", hash_generated_method = "C7971DDDF14A176537AD598EA326BF59")
     
 public PointF() {}

@@ -443,6 +443,7 @@ final boolean isInBackStack() {
     /**
      * Subclasses can not override equals().
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.008 -0500", hash_original_method = "055C1CABEC6B90DB231CF8138F07B9C1", hash_generated_method = "3B58C883A45626CCAC1720C76B088B94")
     
 @Override final public boolean equals(Object o) {
@@ -452,12 +453,14 @@ final boolean isInBackStack() {
     /**
      * Subclasses can not override hashCode().
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.010 -0500", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "235D538D470CAF18D465A30A0FFDA613")
     
 @Override final public int hashCode() {
         return super.hashCode();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.013 -0500", hash_original_method = "5350708001683FB5244A4F612B80A27C", hash_generated_method = "9DFAD998174B68D70A89826D6E15905E")
     
 @Override

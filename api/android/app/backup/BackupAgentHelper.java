@@ -17,7 +17,7 @@ public class BackupAgentHelper extends BackupAgent {
     BackupHelperDispatcher mDispatcher = new BackupHelperDispatcher();
     
     @DSComment("Backup subsystem")
-    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.140 -0400", hash_original_method = "DE5015AA9AF8D8BEBF76E2231F1F38FA", hash_generated_method = "DE5015AA9AF8D8BEBF76E2231F1F38FA")
     public BackupAgentHelper ()
     {

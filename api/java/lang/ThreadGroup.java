@@ -740,6 +740,7 @@ public final void setMaxPriority(int newMax) {
         return suspendCurrent;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.788 -0500", hash_original_method = "54318ADB79169F8C74CBC002CF89020D", hash_generated_method = "5A037D2E66AEA5D460AC5BC74AD15202")
     
 @Override

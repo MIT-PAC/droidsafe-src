@@ -348,6 +348,7 @@ public SlidingDrawer(Context context, AttributeSet attrs, int defStyle) {
         mHandleWidth = handle.getWidth();
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.707 -0500", hash_original_method = "DEC86D4E986198170B4E32A8C9B969F8", hash_generated_method = "F224748B9A74CBC843CAEE7D680AA731")
     
 @Override
@@ -396,6 +397,7 @@ public SlidingDrawer(Context context, AttributeSet attrs, int defStyle) {
         return true;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.710 -0500", hash_original_method = "BD859C70C763183DAB172469AFBE0279", hash_generated_method = "D2D4C6949EE4C21720B1AFDABE023F40")
     
 @Override
@@ -873,6 +875,7 @@ public void onClick(View v) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.782 -0500", hash_original_method = "8F95C74EDA64D211CE1AA49DFEDA489B", hash_generated_method = "3C037423DA10380ECA6255CE2502F12A")
         
 public void handleMessage(Message m) {

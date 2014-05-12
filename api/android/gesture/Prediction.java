@@ -25,7 +25,6 @@ public class Prediction {
     public  String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:42.026 -0500", hash_original_field = "392BAB81EE9DEBA19077E79C97B4E004", hash_generated_field = "EE3D3D796FD28332770323C22B74F7E9")
 
-
     public double score;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:42.030 -0500", hash_original_method = "644866F6976727A13BE3BCA56F0E5002", hash_generated_method = "644866F6976727A13BE3BCA56F0E5002")
@@ -35,6 +34,7 @@ Prediction(String label, double predictionScore) {
         score = predictionScore;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:42.034 -0500", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "0D841C721535905DD0E9F7FAE6757EB9")
     
 @Override

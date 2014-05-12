@@ -111,6 +111,7 @@ public void initialize(MenuItemImpl itemData, int menuType) {
         setEnabled(itemData.isEnabled());
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.169 -0500", hash_original_method = "CB61F2977C03C3D4A47A54A8D609CC23", hash_generated_method = "9ABE21DB6A14905831E45CBC2CD9F24A")
     
 @Override
@@ -214,6 +215,7 @@ public void setTitle(CharSequence title) {
         updateTextButtonVisibility();
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.196 -0500", hash_original_method = "CFB95F18A35F8E50D440D10682646E0E", hash_generated_method = "B2DB9880D1A02B35D29BED9E1EE131DA")
     
 @Override
@@ -222,6 +224,7 @@ public void setTitle(CharSequence title) {
         return true;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.198 -0500", hash_original_method = "FDE4E65FE29B6BBB876E3C716DF53BA6", hash_generated_method = "FC7F3A83CEC8ED8AF4EBACB87FAF6207")
     
 @Override

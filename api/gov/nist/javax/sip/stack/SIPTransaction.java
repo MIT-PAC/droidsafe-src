@@ -932,6 +932,7 @@ public String getTransactionId() {
     /**
      * Hashcode method for fast hashtable lookup.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.953 -0500", hash_original_method = "1EE454052F2EC55F5023F8455F33FFAA", hash_generated_method = "CC786C7918448ECCE3A828F26330D4A2")
     
 public int hashCode() {

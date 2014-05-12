@@ -116,6 +116,7 @@ public Exception getException ()
      *
      * @return A string representation of this exception.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.839 -0500", hash_original_method = "0BE493810C06D201F4519F1260F94FAA", hash_generated_method = "6F181929656BA071E37B5E490E472B19")
     
 public String toString ()

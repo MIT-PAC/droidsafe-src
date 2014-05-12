@@ -725,6 +725,7 @@ private boolean usingSocks() {
      *
      * @return the textual representation of this socket.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.816 -0500", hash_original_method = "881D40A46B027F3EDC8B30A9F4F44097", hash_generated_method = "28E5917CBB14515A1B4DB8F75FF70BE0")
     
 @Override

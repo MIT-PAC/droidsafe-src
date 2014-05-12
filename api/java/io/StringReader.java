@@ -125,6 +125,8 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.779 -0500", hash_original_method = "7FFE2BA54C7A195E9FE8B5D995EC9572", hash_generated_method = "85FFC9978267B1E67AAF608E98C06023")
     
 @Override
@@ -160,7 +162,7 @@ private void checkNotClosed() throws IOException {
      *             if this reader is closed.
      */
     @DSSpec(DSCat.IO)
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.782 -0500", hash_original_method = "85EEB2DAA826BA4238F8F98E34D3FBD9", hash_generated_method = "4EA1787DEA8553F64FE2035C6AED16CA")
     
 @Override

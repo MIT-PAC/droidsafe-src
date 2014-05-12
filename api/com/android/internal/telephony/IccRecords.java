@@ -308,6 +308,7 @@ public boolean getRecordsLoaded() {
     }
 
     //***** Overridden from Handler
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.013 -0500", hash_original_method = "49E7794891C738A256F21E277C3A3E98", hash_generated_method = "E777D1CEC7B1BA9D11C31F97DD888320")
     
 @Override

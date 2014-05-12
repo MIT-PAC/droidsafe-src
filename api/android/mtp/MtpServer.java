@@ -26,7 +26,6 @@ import droidsafe.helpers.*;
 public class MtpServer implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:21.228 -0400", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
 
-
     private int mNativeContext; // accessed by native methods
 
     static {
@@ -46,6 +45,7 @@ public void start() {
         thread.start();
     }
 
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:21.233 -0400", hash_original_method = "47A2D6674D1EEAC8AA96E1344486E702", hash_generated_method = "3F993A79C0313074FABF5C95414A3729")
     
 @Override
@@ -100,7 +100,6 @@ public void removeStorage(MtpStorage storage) {
     	//Formerly a native method
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:32.176 -0400", hash_original_method = "469EF3FF9AABC1B1F9F45D9204598DB3", hash_generated_method = "7B5F7FC2A37C059BB342B311424A8590")
     
     private final void native_send_object_added(int handle){
@@ -136,7 +135,5 @@ public void removeStorage(MtpStorage storage) {
     	taintDouble += storageId;
     	addTaint(taintDouble);
     }
-
-
 
 }

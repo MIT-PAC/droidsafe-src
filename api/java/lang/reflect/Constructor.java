@@ -299,6 +299,7 @@ public boolean isSynthetic() {
      *
      * @see #hashCode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.897 -0500", hash_original_method = "B30900BF5B4B7FDD7368A6CB9464E167", hash_generated_method = "C8AF66BD38D397DF89E4D697F0FC0F82")
     
 @Override
@@ -414,6 +415,7 @@ public Class<?>[] getParameterTypes() {
      *
      * @see #equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.915 -0500", hash_original_method = "B8D03AB769FE0736E7C02030ACA8679C", hash_generated_method = "23EBF2A9186F5D0C599C5C1CCE703357")
     
 @Override
@@ -507,6 +509,7 @@ public T newInstance(Object... args) throws InstantiationException, IllegalAcces
      *
      * @return a printable representation for this constructor
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.924 -0500", hash_original_method = "4738B09E6DE786765E7966DA89BB1975", hash_generated_method = "2EDD7FCF208F6E1D78BDB8F8499E562B")
     
 @Override

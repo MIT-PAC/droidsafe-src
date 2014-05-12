@@ -474,7 +474,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.088 -0500", hash_original_method = "6FA1B7BCBB056D9C6C12415C137DE76D", hash_generated_method = "A90B5DA1A11446CA3441C2EC01CB8A87")
     
 @Override
@@ -517,8 +517,8 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.090 -0500", hash_original_method = "49CE66D09454E056E2AD494EF2DD30A3", hash_generated_method = "83D57727976F7DCF22DCE37B73CF654A")
     
 @Override
@@ -613,7 +613,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.100 -0500", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "21AB0A052F6EA6AC14C0E8AE68C8FF19")
     
 @Override
@@ -623,7 +623,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.102 -0500", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "4C6E95AD1C54FB0FB2042DE89349F724")
     
 @Override
@@ -632,8 +632,8 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.105 -0500", hash_original_method = "9571905A182C10BB0B86009E34DE8EF4", hash_generated_method = "B97E52E400811FB0B91121E4F2CCB5CC")
     
 @Override

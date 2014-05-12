@@ -20,6 +20,7 @@ public AlertInfoList() {
         super( AlertInfo.class,AlertInfoHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.294 -0500", hash_original_method = "DA21929F9B4B968B70B27DDE76B9FF23", hash_generated_method = "9A98783C85E70A790A214AC2CA269F21")
     
 public Object clone() {

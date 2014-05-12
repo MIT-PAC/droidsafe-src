@@ -90,6 +90,7 @@ public RuimSmsInterfaceManager(CDMAPhone phone, SMSDispatcher dispatcher) {
 public void dispose() {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.498 -0500", hash_original_method = "4FA1DF67E8E2FEA7279C76FF6F2C28E0", hash_generated_method = "3DB391A506CF043C160FB3C9EC726A1B")
     
 protected void finalize() {

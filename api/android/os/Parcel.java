@@ -2025,6 +2025,7 @@ public String[] newArray(int size) {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override protected void finalize(){
 		destroy();
 		// Original method

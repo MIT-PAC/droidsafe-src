@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -33,7 +32,6 @@ import java.nio.ByteBuffer;
 
 class GLFrameTimer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.994 -0400", hash_original_field = "9B00ED9622D774FE98BBA25FBA3C718F", hash_generated_field = "6A16B6B16EF0047C2C4069EFE9702905")
-
 
     private static StopWatchMap mTimer = null;
 
@@ -68,7 +66,6 @@ public class GLFrame extends Frame {
 
     public final static int EXTERNAL_TEXTURE         = 104;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:03.016 -0400", hash_original_field = "DBEFE5647E51520EA539EDBE2D59F406", hash_generated_field = "93CD8E3DA00B733348D50625EF8CC82E")
-
 
     private int glFrameId = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:03.019 -0400", hash_original_field = "2496FF4BA626DB98EC8FB170AAC77D59", hash_generated_field = "68D84E2EBAD64E18EDCA6B050B95E0AD")
@@ -379,6 +376,7 @@ public void focus() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:03.084 -0400", hash_original_method = "9F5567D34E7002A8051B2B7F3E0FF329", hash_generated_method = "948A4FE253E4C58D9F72DB5B08749BA5")
     
 @Override
@@ -449,7 +447,6 @@ private void assertGLEnvValid() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.568 -0400", hash_original_method = "03523908ED8B11673A5D48A76B44EE35", hash_generated_method = "8A7FB346EC4BBD84554B7470ECC8F640")
     
     private boolean nativeAllocateWithTexture(GLEnvironment env,
@@ -467,7 +464,6 @@ private void assertGLEnvValid() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.573 -0400", hash_original_method = "DDB58720C6D6E3FE692A9195DAC245D6", hash_generated_method = "3FF7B7D096483F2D2E0A209D601D5875")
     
     private boolean nativeAllocateWithFbo(GLEnvironment env,
@@ -484,7 +480,6 @@ private void assertGLEnvValid() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.577 -0400", hash_original_method = "422CB52C10656D7E44FE121CA126BF91", hash_generated_method = "37C74810B084ABE902C6821785703C64")
     
@@ -505,9 +500,6 @@ private void assertGLEnvValid() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.585 -0400", hash_original_method = "B008EA5EAE1D78CF60323223B23112C0", hash_generated_method = "DB9D3915DCF330A7854A0E564C5106A0")
     
@@ -533,9 +525,6 @@ private void assertGLEnvValid() {
     	return retObj;
     }
 
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.595 -0400", hash_original_method = "2047716A79A9E9406699C20C7A268A40", hash_generated_method = "431F2A0CB3A7814C0347AEEA4DA821C1")
     
     private boolean setNativeInts(int[] ints){
@@ -546,7 +535,6 @@ private void assertGLEnvValid() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.598 -0400", hash_original_method = "88CBED05920219A258C2F99CB4EDFE1D", hash_generated_method = "C0A8BCC26755F86A54824EBDD91E7B3C")
     
@@ -570,7 +558,6 @@ private void assertGLEnvValid() {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.891 -0400", hash_original_method = "7B9A4B17D75D852FBC4B73DC0B2841F8", hash_generated_method = "C87A6A90701A0F1419E4913F6FF445F1")
     
     private float[] getNativeFloats(){
@@ -581,9 +568,6 @@ private void assertGLEnvValid() {
     	retObj[0] = (float)taintDouble;
     	return retObj;
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.611 -0400", hash_original_method = "BDFD1E5FE9C8C95CEEFF6D9A38A19A7D", hash_generated_method = "F321922C1EF145C479A65B6FBD4E48CA")
     
@@ -597,7 +581,6 @@ private void assertGLEnvValid() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.615 -0400", hash_original_method = "23143653D9213132827701339A03557C", hash_generated_method = "337D8AF9E5C736FE34D5923F2C28F107")
     
     private boolean getNativeBitmap(Bitmap bitmap){
@@ -608,7 +591,6 @@ private void assertGLEnvValid() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.619 -0400", hash_original_method = "2308E7A848EC5796D50EF11678C38562", hash_generated_method = "112AD0EE42A32EC3A01B67B636D3EE57")
     
@@ -633,7 +615,6 @@ private void assertGLEnvValid() {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.906 -0400", hash_original_method = "F20CA513CA6E3A14E45EA6864A6BF5B3", hash_generated_method = "6E5EB2C6CEAB691D8944E44CF160736B")
     
     private int getNativeFboId(){
@@ -643,7 +624,6 @@ private void assertGLEnvValid() {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.909 -0400", hash_original_method = "4813D7F0EE69DE38880B62FC08CBF522", hash_generated_method = "5C1271839898763E9ABC99F8AC65488E")
     
     private boolean generateNativeMipMap(){
@@ -652,9 +632,6 @@ private void assertGLEnvValid() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.636 -0400", hash_original_method = "F944BAAF7A5BA111DFDCD72BEF3E8177", hash_generated_method = "A46412658C5ABCCEB4727E1D1F242749")
     
@@ -677,9 +654,6 @@ private void assertGLEnvValid() {
     	return toTaintBoolean(taintDouble);
     }
 
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.644 -0400", hash_original_method = "4AAA1963F74E551C88426B820B381324", hash_generated_method = "D98ADAE63A177915B45128E092AF964A")
     
     private boolean nativeCopyFromNative(NativeFrame frame){
@@ -690,7 +664,6 @@ private void assertGLEnvValid() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.648 -0400", hash_original_method = "8EE5FFA3E1866792DC021D861E52C38E", hash_generated_method = "E181817671F3569D40046BA60CE0103A")
     
@@ -712,7 +685,6 @@ private void assertGLEnvValid() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.928 -0400", hash_original_method = "D9767F3BE31C5055B0252F4C4496F40B", hash_generated_method = "E026546DD6FBE3A92DAF804101696635")
     
     private boolean nativeReattachTexToFbo(){
@@ -722,7 +694,6 @@ private void assertGLEnvValid() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.931 -0400", hash_original_method = "38053EE393261C8440AEFFCC66D98C87", hash_generated_method = "F1CE8C595B03878188E844E11AA72586")
     
     private boolean nativeDetachTexFromFbo(){
@@ -731,9 +702,5 @@ private void assertGLEnvValid() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
-
 
 }

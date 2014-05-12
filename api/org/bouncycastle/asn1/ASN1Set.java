@@ -218,6 +218,7 @@ public DERObject getDERObject()
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.546 -0500", hash_original_method = "169312DEA8D054B4F83730CF694439C2", hash_generated_method = "30BCB15E7964E7556EB51535BFA9820D")
     
 public int hashCode()
@@ -397,6 +398,7 @@ protected void addObject(
 abstract void encode(DEROutputStream out)
             throws IOException;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.569 -0500", hash_original_method = "41D154F65E4EBBCBC7C30CB48ECE000A", hash_generated_method = "B6E945C93269E4763C71B3A12A473EEE")
     
 public String toString() 

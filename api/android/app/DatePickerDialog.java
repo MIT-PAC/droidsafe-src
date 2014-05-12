@@ -71,7 +71,6 @@ public DatePickerDialog(Context context,
         super(context, theme);
 
         mCallBack = callBack;
-        
 
         Context themeContext = getContext();
         setButton(BUTTON_POSITIVE, themeContext.getText(R.string.date_time_set), this);
@@ -140,6 +139,7 @@ public void updateDate(int year, int monthOfYear, int dayOfMonth) {
         mDatePicker.updateDate(year, monthOfYear, dayOfMonth);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.123 -0500", hash_original_method = "66D833569B1DDDA11BC9B393F8A7D6F5", hash_generated_method = "E343E9E8239D6DD1D305FA6AF69FDFBA")
     
 @Override
@@ -151,6 +151,7 @@ public void updateDate(int year, int monthOfYear, int dayOfMonth) {
         return state;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.126 -0500", hash_original_method = "B84D42280083F8905ED43E1BDBCA6009", hash_generated_method = "5997227DAA681715D673AE64C70B6464")
     
 @Override

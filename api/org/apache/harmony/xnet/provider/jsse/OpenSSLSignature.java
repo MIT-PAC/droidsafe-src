@@ -249,6 +249,7 @@ public SHA1DSA() throws NoSuchAlgorithmException {
         
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.749 -0500", hash_original_method = "ADE539E8C8A774F97769C848519F5DF9", hash_generated_method = "4187FDAF6933EA0058CCED9CBB93E57B")
     
 @Override protected void finalize() throws Throwable {

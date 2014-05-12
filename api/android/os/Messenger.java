@@ -138,6 +138,7 @@ public IBinder getBinder() {
      * Comparison operator on two Messenger objects, such that true
      * is returned then they both point to the same Handler.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.409 -0500", hash_original_method = "C149400C0C5347CE34188C78467CE5CF", hash_generated_method = "8409B099537599632B5684367D8F59C3")
     
 public boolean equals(Object otherObj) {
@@ -153,7 +154,7 @@ public boolean equals(Object otherObj) {
     }
 
     @DSComment("not sensitive/not an action")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.412 -0500", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "D3CD0FF680AAF7AE0414AB6B38BC2F04")
     
 public int hashCode() {

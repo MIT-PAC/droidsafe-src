@@ -22,6 +22,7 @@ public PAssertedIdentityList()
         super(PAssertedIdentity.class, PAssertedIdentityHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.228 -0500", hash_original_method = "5563A5DB4245DEBD4AD09019D9E2D95D", hash_generated_method = "D0177B7906254089EAC5F362E6BB0552")
     
 public Object clone() {

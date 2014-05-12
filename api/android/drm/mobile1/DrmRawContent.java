@@ -99,6 +99,7 @@ public DrmInputStream(DrmRights rights) {
         /* Non-javadoc
          * @see java.io.InputStream#available()
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.364 -0500", hash_original_method = "DD7664962C7714C7E289B90A25098018", hash_generated_method = "5E8745AA7EC50347CF05BF3586E3857F")
         
 public int available() throws IOException {
@@ -138,6 +139,8 @@ public int read() throws IOException {
         /* Non-javadoc
          * @see java.io.InputStream#read(byte)
          */
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.370 -0500", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "E0F9C5B343EA0376178403393DBFABB2")
         
 public int read(byte[] b) throws IOException {
@@ -147,6 +150,8 @@ public int read(byte[] b) throws IOException {
         /* Non-javadoc
          * @see java.io.InputStream#read(byte, int, int)
          */
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.373 -0500", hash_original_method = "E3473D498149E2AB489389364DA9079E", hash_generated_method = "B7C55B3E70C5FC955FFDD66F7CBECC55")
         
 public int read(byte[] b, int off, int len) throws IOException {
@@ -201,6 +206,7 @@ public void reset() throws IOException {
         /* Non-javadoc
          * @see java.io.InputStream#skip()
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.382 -0500", hash_original_method = "373BCB0654FCF6410EF04A71B1FD669C", hash_generated_method = "6819F67050416C03BFAA1CF65FCAE7C9")
         
 public long skip(long n) throws IOException {
@@ -460,6 +466,7 @@ public int getContentLength(DrmRights rights) throws DrmException {
     /**
      * The finalizer of the DRMRawContent. Do some cleanup.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.414 -0500", hash_original_method = "45E7CB171B397E7ACAF01FE08BEFF46E", hash_generated_method = "4ABBE9BFD747132A545B2A21176E1B5C")
     
     protected void finalize(){

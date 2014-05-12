@@ -57,7 +57,6 @@ public synchronized static Looper getMainLooper() {
         Message msg = queue.next(); 
         msg.target.dispatchMessage(msg);*/
         
-        
         /*
         if (me == null) {
             throw new RuntimeException("No Looper; Looper.prepare() wasn't called on this thread.");
@@ -181,6 +180,7 @@ public MessageQueue getQueue() {
         pw.addTaint(prefix.getTaint());
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public String toString(){
         String str = new String();
         str.addTaint(getTaint());

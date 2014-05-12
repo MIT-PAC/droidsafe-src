@@ -203,6 +203,7 @@ public String getSettingsActivity() {
         return settingsActivity;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.518 -0500", hash_original_method = "A1CF6D87DAC8D16BD1DD7945C12C597D", hash_generated_method = "087530CFCC4DA554EC8258BACC47DA1E")
     
 public boolean equals(Object o) {
@@ -215,6 +216,7 @@ public boolean equals(Object o) {
                               toTaintInt(accountType.equals(other.accountType)));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.520 -0500", hash_original_method = "16D7E959FAC6345A599199AFC4EA50EB", hash_generated_method = "FD796F4389853C23CBCF318ECE7050C7")
     
 public int hashCode() {
@@ -225,6 +227,7 @@ public int hashCode() {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.522 -0500", hash_original_method = "35ACA65A211F277218A9C2784AA8F4DE", hash_generated_method = "2BCD0886A28F77327C771B41B441D23E")
     
 public String toString() {

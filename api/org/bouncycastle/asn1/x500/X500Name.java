@@ -248,6 +248,7 @@ public DERObject toASN1Object()
         return new DERSequence(rdns);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.797 -0500", hash_original_method = "ECFD9A32E241F4FBD41987B44388CEAF", hash_generated_method = "034D4431D1069929675B7274A736C484")
     
 public int hashCode()
@@ -267,6 +268,7 @@ public int hashCode()
     /**
      * test for equality - note: case is ignored.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.799 -0500", hash_original_method = "75F09C9D81AE7E21861BB145326A0585", hash_generated_method = "39627E1086EAE975BD62CE1141382E57")
     
 public boolean equals(Object obj)
@@ -298,6 +300,7 @@ public boolean equals(Object obj)
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.802 -0500", hash_original_method = "567E5D4F3D1A0F74E3A26BABA7FE2561", hash_generated_method = "11302A94DF0CD8D713F895CEE7CF5332")
     
 public String toString()

@@ -287,6 +287,7 @@ private KeyCharacterMap(int deviceId, int ptr) {
         mPtr = ptr;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.791 -0500", hash_original_method = "C46984664DD9459250D6B9D7539380FB", hash_generated_method = "4E3AA0EA035CE457B89BA83140F5FD0C")
     
 @Override

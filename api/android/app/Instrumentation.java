@@ -1631,6 +1631,7 @@ public Intent getResultData() {
 public InstrumentationThread(String name) {
             super(name);
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.280 -0500", hash_original_method = "801DE955A4997069AEAE1C9E4306FFC2", hash_generated_method = "D266232BF9AA48C02850913B112602E5")
         
 public void run() {
@@ -1652,12 +1653,13 @@ public void run() {
     private static final class EmptyRunnable implements Runnable {
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.475 -0400", hash_original_method = "9351A801773C8F1D9056187EA700F8B4", hash_generated_method = "9351A801773C8F1D9056187EA700F8B4")
         public EmptyRunnable ()
         {
             //Synthesized constructor
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.284 -0500", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "90F21E94AFD861A0B7D82CACD0D3E70A")
         
 public void run() {
@@ -1679,6 +1681,7 @@ public SyncRunnable(Runnable target) {
             mTarget = target;
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.297 -0500", hash_original_method = "44AE594487B622FAC5CF0DF348DF4C16", hash_generated_method = "E1C01245DDFC7780F3E2F65B966E49CD")
         
 public void run() {

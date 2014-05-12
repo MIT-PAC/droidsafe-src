@@ -188,7 +188,7 @@ static public Font create(RenderScript rs, Resources res, String familyName, Sty
         String mBoldItalicFileName;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:43.961 -0400", hash_original_method = "4B1D119D7774A95910A46246D7100E2A", hash_generated_method = "4B1D119D7774A95910A46246D7100E2A")
         public FontFamily ()
         {

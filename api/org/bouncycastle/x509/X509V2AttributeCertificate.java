@@ -363,6 +363,7 @@ public X509Attribute[] getAttributes(String oid)
         return (X509Attribute[])list.toArray(new X509Attribute[list.size()]);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.547 -0500", hash_original_method = "60181B32C72761B75B31B405BBC4804E", hash_generated_method = "030463A25E8B1BD01267EAF961D024DD")
     
 public boolean equals(
@@ -393,6 +394,7 @@ public boolean equals(
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.550 -0500", hash_original_method = "C5506CF7B2024CB4E09A9FBA2D111DDF", hash_generated_method = "EA0C2A58E7CEC2CA556617425637CA25")
     
 public int hashCode()

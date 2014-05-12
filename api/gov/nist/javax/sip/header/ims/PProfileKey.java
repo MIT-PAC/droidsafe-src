@@ -57,6 +57,7 @@ public void setValue(String value) throws ParseException {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.730 -0500", hash_original_method = "9C9266054F44A0CD7DB49784A3A7D69D", hash_generated_method = "C8243591D7C5F9DB63E02C49461527A5")
     
 public boolean equals(Object other)
@@ -65,6 +66,7 @@ public boolean equals(Object other)
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.733 -0500", hash_original_method = "38197786CF7CEF8229067A4B5205EC8C", hash_generated_method = "68016FA5C18470B1E9D06A907448617C")
     
 public Object clone() {

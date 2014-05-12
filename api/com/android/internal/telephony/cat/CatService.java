@@ -227,6 +227,7 @@ public void dispose() {
         this.removeCallbacksAndMessages(null);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.064 -0500", hash_original_method = "0386F7586104C91B22CE4150238AFD39", hash_generated_method = "03349806B78235B92AF3612004ABF5AF")
     
 protected void finalize() {
@@ -626,6 +627,7 @@ private void eventDownload(int event, int sourceId, int destinationId,
         mCmdIf.sendEnvelope(hexString, null);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.103 -0500", hash_original_method = "08AB5E16EBCD81DA8811894A2C2969C7", hash_generated_method = "1FCCDA9D24D3D7DF806F50D3DAC87D4D")
     

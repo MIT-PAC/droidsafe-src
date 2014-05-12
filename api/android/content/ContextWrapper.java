@@ -105,8 +105,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("Accessing App Resource")
-    @DSSpec(DSCat.APP_RESOURCE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.102 -0500", hash_original_method = "207324BD2179C2BB1CD4C22794703A9D", hash_generated_method = "6CB5F06DB234C725609449A49F465CA2")
     
 @Override
@@ -115,8 +115,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("Accessing App Resource")
-    @DSSpec(DSCat.APP_RESOURCE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.104 -0500", hash_original_method = "47F2A94B0203C279563273E1E0895D4D", hash_generated_method = "B4F0C829CD4F5F2C97CA8904752E4CF8")
     
 @Override
@@ -126,8 +126,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("Android Manager retrieved/accessed")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.106 -0500", hash_original_method = "D7F633AF602934F61160FEA442625239", hash_generated_method = "8F16F9223B72E9B17F9B501EDFC09857")
     
 @Override
@@ -146,8 +146,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("General android operation, no security concern")
-    @DSSafe(DSCat.OS_GENERAL)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.111 -0500", hash_original_method = "7DA68BFFD90B5B26D8702419E8D7FC4A", hash_generated_method = "6EEAF27F90D1C6317E7721349FF9813F")
     
 @Override
@@ -268,7 +268,7 @@ public Context getBaseContext() {
     @DSVerified
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO)
-    @DSSink(DSSinkKind.FILE)
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.141 -0500", hash_original_method = "1B551CEA36C6304276D435BC90F14FD3", hash_generated_method = "01EA4CF88D4454D02E59AE01582F31BB")
     
 @Override
@@ -493,7 +493,7 @@ public Context getBaseContext() {
 
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
-    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.190 -0500", hash_original_method = "130F62140951A945508EBFB32B94A765", hash_generated_method = "992EA6715D65F485692876B471F1C6B9")
     
 @Override
@@ -501,7 +501,7 @@ public Context getBaseContext() {
         mBase.startActivity(intent);
     }
 
-    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.193 -0500", hash_original_method = "013A3CF6138EA6FE6C22614936FE13C8", hash_generated_method = "52762932C0CF308D26FC5B36BA40DE9B")
     
@@ -523,7 +523,7 @@ public Context getBaseContext() {
     
     @DSComment("IO movement methodName")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.198 -0500", hash_original_method = "CD7D57CF51FEE3E0548133C9C2D084D1", hash_generated_method = "BE288488A1FBD4AF9F7B86466BB1D059")
-    @DSSink(DSSinkKind.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
     @Override
     public void sendBroadcast(Intent intent) {
@@ -641,8 +641,8 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.IPC)
-    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.SERVICE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.222 -0500", hash_original_method = "460FA5078659EEF29B84A9C36C1BA43F", hash_generated_method = "5AF5415B02FACA6C8C573880AF05D53F")
     
 @Override
@@ -664,8 +664,8 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("Bind a service with a connection")
-    @DSSpec(DSCat.IPC)
-    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.SERVICE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.227 -0500", hash_original_method = "67132A5BC1B8EF0B15B0E872390898A0", hash_generated_method = "5A2B04010F66FEE0B0F4E923A6C9E2B2")
     
 @Override

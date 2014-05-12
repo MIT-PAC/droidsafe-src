@@ -123,6 +123,7 @@ public GridView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.418 -0500", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "5911CDE294032BE1D85FC272F0A8BA9B")
     
 @Override

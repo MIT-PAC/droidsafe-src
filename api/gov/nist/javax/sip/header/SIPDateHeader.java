@@ -73,6 +73,7 @@ public Calendar getDate() {
         return date.getJavaCal();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.202 -0500", hash_original_method = "D8FA67BA672B59A2560C827929374032", hash_generated_method = "49BA62AC1844825032690DB7375DC638")
     
 public Object clone() {

@@ -563,6 +563,7 @@ public void removeValue(String name) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.195 -0500", hash_original_method = "1A939A31B27FEC68DC8C26996575F0FB", hash_generated_method = "FFE7A66666FEE0B5D7AE4F33A403162C")
     
 @Override protected void finalize() throws Throwable {

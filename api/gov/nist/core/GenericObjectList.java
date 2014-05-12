@@ -170,6 +170,7 @@ protected String getIndentation() {
     /**
      * Makes a deep clone of this list.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.260 -0500", hash_original_method = "6368B146C50DA8D7E84E7623E4D72233", hash_generated_method = "B7D1CA39FA0521F03A0F238F949058BF")
     
@@ -410,6 +411,7 @@ public String encode() {
     /**
      * Alias for the encode function above.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.304 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
@@ -433,6 +435,7 @@ public void setSeparator(String sep) {
     /**
      * Hash code. We never expect to put this in a hash table so return a constant.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.308 -0500", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "89015D45CAD68D7E33CD395D18D709AD")
     
 public int hashCode() { return 42; }
@@ -444,6 +447,7 @@ public int hashCode() { return 42; }
      *            is the object to compare ourselves to.
      * @return true if the objects are equal.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.311 -0500", hash_original_method = "DCC9B19E3EEEE0A135F8C5BB2CAD40B2", hash_generated_method = "9D51ADDE99D51277AE98584BD2113C3D")
     
 public boolean equals(Object other) {

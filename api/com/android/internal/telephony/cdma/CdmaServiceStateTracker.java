@@ -274,6 +274,7 @@ public void dispose() {
         cr.unregisterContentObserver(mAutoTimeZoneObserver);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.521 -0500", hash_original_method = "BA9FDB49D0B6CB52D4E369B5C2B6B17A", hash_generated_method = "DA3CD7D1AB48FA88096B8E363EFA84BC")
     
 @Override
@@ -304,6 +305,7 @@ public void unregisterForSubscriptionInfoReady(Handler h) {
         cdmaForSubscriptionInfoReadyRegistrants.remove(h);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.532 -0500", hash_original_method = "754E8D2400977D5A28AAECFFE4ABD510", hash_generated_method = "A5071E1E917C254C16D2A3D3379166BF")
     
 @Override

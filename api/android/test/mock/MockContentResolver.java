@@ -133,6 +133,7 @@ public void addProvider(String name, ContentProvider provider) {
      * @param observer (Ignored) The observer that originated the change.
      * @param syncToNetwork (Ignored) If true, attempt to sync the change to the network.
      */
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.025 -0500", hash_original_method = "0D07CE2954E4C9CEFA50CEA6EA0149DC", hash_generated_method = "A086E5523CC5A4E1BD40AD6DF29C6B52")
     
 @Override

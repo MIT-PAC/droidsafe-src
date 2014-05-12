@@ -605,7 +605,7 @@ private void putIfNonNull(ContentValues contentValues, String key, Object value)
         private boolean mOnlyIncludeVisibleInDownloadsUi = false;
         
         @DSComment("Formulating request to download")
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.054 -0400", hash_original_method = "EFCA8790A91D69466A874AF6524F8E69", hash_generated_method = "EFCA8790A91D69466A874AF6524F8E69")
         public Query ()
         {
@@ -775,7 +775,7 @@ public CursorTranslator(Cursor cursor, Uri baseUri) {
         }
 
         @DSSafe(DSCat.DB_CURSOR)
-        @DSSource(DSSourceKind.DATABASE_INFORMATION)
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.346 -0500", hash_original_method = "34538125BB8387937A75DA11F9FB5B65", hash_generated_method = "E10ECDBF2C54F04D7FF9A1CA174DCCBE")
         
 @Override
@@ -784,7 +784,7 @@ public CursorTranslator(Cursor cursor, Uri baseUri) {
         }
 
         @DSSafe(DSCat.DB_CURSOR)
-        @DSSource(DSSourceKind.DATABASE_INFORMATION)
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.349 -0500", hash_original_method = "744FA54C78DD5C7B6737C741AD0EB8F1", hash_generated_method = "0D6EDC1E2F6C5CBF721F5287DD1EEAD1")
         
 @Override
@@ -799,7 +799,7 @@ public CursorTranslator(Cursor cursor, Uri baseUri) {
         }
 
         @DSSafe(DSCat.DB_CURSOR)
-        @DSSource(DSSourceKind.DATABASE_INFORMATION)
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.352 -0500", hash_original_method = "2A6CC35BB4DF843267A861B5828C6994", hash_generated_method = "929012F2E107068061EF91058A6E83D5")
         
 @Override

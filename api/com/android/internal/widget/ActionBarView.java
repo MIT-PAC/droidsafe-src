@@ -1374,6 +1374,7 @@ public void setIcon(Drawable icon) {
             mIconView.setImageDrawable(icon);
         }
 
+        @DSSpec(DSCat.TO_MODEL)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.639 -0500", hash_original_method = "CFB95F18A35F8E50D440D10682646E0E", hash_generated_method = "B2DB9880D1A02B35D29BED9E1EE131DA")
         
 @Override
@@ -1382,6 +1383,7 @@ public void setIcon(Drawable icon) {
             return true;
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.642 -0500", hash_original_method = "FDE4E65FE29B6BBB876E3C716DF53BA6", hash_generated_method = "FC7F3A83CEC8ED8AF4EBACB87FAF6207")
         
 @Override
@@ -1681,6 +1683,7 @@ public int getLeftOffset() {
         return lp;
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.591 -0500", hash_original_method = "F7EC1EBD6989B5AFA75F6EFE3D4C9302", hash_generated_method = "C8427547B2C211AB3A999A7FEC15F01A")
     
 @Override
@@ -1697,6 +1700,7 @@ public int getLeftOffset() {
         return state;
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.594 -0500", hash_original_method = "2EB5982AB19EADE49A68C3033BC69293", hash_generated_method = "1CA8E45B8A71D1D6D2B7A8D06B45E277")
     
 @Override

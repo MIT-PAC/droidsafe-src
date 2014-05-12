@@ -657,7 +657,7 @@ private FaultHidingOutputStream(OutputStream out) {
                 super(out);
             }
 
-            @DSSink(DSSinkKind.IO)
+            @DSSink({DSSinkKind.IO})
             @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.996 -0500", hash_original_method = "99CEE7897D6B59DCCBF2A9FD6D32C932", hash_generated_method = "6C39B0CF2DD4ABCCAD25CFF7FF28C502")
             
@@ -669,6 +669,8 @@ private FaultHidingOutputStream(OutputStream out) {
                 }
             }
 
+            @DSSink({DSSinkKind.IO})
+            @DSSpec(DSCat.IO)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.999 -0500", hash_original_method = "192A1A5EAAE398CB5AAE810F931045A8", hash_generated_method = "8D7E9EA8033D80E37AF251DE45A28EFE")
             
 @Override public void write(byte[] buffer, int offset, int length) {
@@ -690,6 +692,7 @@ private FaultHidingOutputStream(OutputStream out) {
                 }
             }
 
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.004 -0500", hash_original_method = "A7144C313F2BBCA14DD174D533CF0C30", hash_generated_method = "3F11936379CA62A858501A5B371F8665")
             
 @Override public void flush() {

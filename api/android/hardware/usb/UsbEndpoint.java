@@ -157,6 +157,7 @@ public int getInterval() {
         return mInterval;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.601 -0500", hash_original_method = "B003A6A19E3A4AFD160CE93D619076F2", hash_generated_method = "C828B4354E2E02A9A2E234DF2219ED2C")
     
 @Override

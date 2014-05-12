@@ -56,7 +56,7 @@ TelnetOutputStream(TelnetClient client)
      * @exception IOException If an error occurs while writing to the underlying
      *            stream.
      ***/
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.716 -0500", hash_original_method = "7CB4C89F951B084D5A9568880FECD763", hash_generated_method = "FD10B01E03D296994182FBFE110A5ED1")
     
@@ -118,6 +118,8 @@ public void write(int ch) throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            stream.
      ***/
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.722 -0500", hash_original_method = "11AFF6C7676FEB0968CBC8B8BF9C6A52", hash_generated_method = "7B429BF57D2613ACA216D7C75DB980D2")
     
 public void write(byte buffer[]) throws IOException
@@ -135,6 +137,8 @@ public void write(byte buffer[]) throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            stream.
      ***/
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.727 -0500", hash_original_method = "4D9812CB7B4C707FB9C13C6326E2C974", hash_generated_method = "A70E7E76449691363F4039939B60F329")
     
 public void write(byte buffer[], int offset, int length) throws IOException
@@ -147,6 +151,7 @@ public void write(byte buffer[], int offset, int length) throws IOException
     }
 
     /*** Flushes the stream. ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.730 -0500", hash_original_method = "FD99F31E2E5FFE52E771381277CA5731", hash_generated_method = "68B07C7A80A5D78448CDD84F069CBA73")
     
 public void flush() throws IOException

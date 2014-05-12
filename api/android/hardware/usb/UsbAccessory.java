@@ -175,6 +175,7 @@ public String getSerial() {
         return mSerial;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.619 -0500", hash_original_method = "865A8510E9F7675674A503A19BC93814", hash_generated_method = "86E73AA91ED7758821BE20F4136738A2")
     
 @Override
@@ -191,6 +192,7 @@ public String getSerial() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.623 -0500", hash_original_method = "1CBDEBF34085121F316849C19724C53C", hash_generated_method = "5C80FF58431243E02BE55854CFABBACA")
     
 @Override
@@ -204,7 +206,7 @@ public String getSerial() {
     }
 
     @DSComment("Harvesting information")
-    @DSSpec(DSCat.SECURITY)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.625 -0500", hash_original_method = "95290F8A4A72A3956B1D8FB9C7186754", hash_generated_method = "1C0C4DEDC2B1D558B41C1B01F2E7B4B1")
     
 @Override

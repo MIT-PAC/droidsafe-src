@@ -156,6 +156,8 @@ public UlawEncoderInputStream(InputStream in, int max) {
         mMax = max;
     }
     
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.875 -0400", hash_original_method = "7F6544AC2BC80BD62573014D72475A49", hash_generated_method = "E8EF73931C7DF84103FE1AC9F8FB728E")
     
 @Override
@@ -180,6 +182,8 @@ public UlawEncoderInputStream(InputStream in, int max) {
         return n;
     }
     
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.877 -0400", hash_original_method = "2F668D010292F41F8534D9B42F402EB1", hash_generated_method = "E92D53D06BA9BE55F7FB3173E2C57885")
     
 @Override
@@ -208,6 +212,7 @@ public UlawEncoderInputStream(InputStream in, int max) {
         }
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.882 -0400", hash_original_method = "CD81B4AAF2CD71D1A2AF4CF5851D7D44", hash_generated_method = "72462907F37541A607A475E1C5C61B7C")
     
 @Override

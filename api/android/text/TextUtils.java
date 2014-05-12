@@ -1538,7 +1538,7 @@ public boolean hasNext() {
         }
         
         @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.DATA_STRUCTURE)
         public String next() {
         //public Object next() {
         	/*
@@ -1597,6 +1597,7 @@ public CharSequence subSequence(int start, int end) {
             return new String(buf);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.923 -0500", hash_original_method = "814020AAFF189164368E5EE6B0F105D9", hash_generated_method = "8CE6BEDEE3C1DB727D6F5B17B1D94141")
         
 @Override

@@ -83,6 +83,7 @@ public class DroidSafeContentResolver extends ContentResolver {
      * @param observer (Ignored) The observer that originated the change.
      * @param syncToNetwork (Ignored) If true, attempt to sync the change to the network.
      */
+    @DSSpec(DSCat.CONTENT)
     @Override
     public void notifyChange(Uri uri,
             ContentObserver observer,

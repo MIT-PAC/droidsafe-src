@@ -453,6 +453,7 @@ public final V setValue(V value) {
             return oldValue;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.392 -0500", hash_original_method = "509D67FA76563438156B3275F90914F5", hash_generated_method = "B7AB8038537E8D2F748C3F9D5E76A1F7")
         
 @Override public final boolean equals(Object o) {
@@ -463,12 +464,14 @@ public final V setValue(V value) {
             return key.equals(e.getKey()) && value.equals(e.getValue());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.395 -0500", hash_original_method = "28D407F854479314A0A7C3BE1F12A9AB", hash_generated_method = "9F324F0EFF4E854AF4EF08A4B5EB550F")
         
 @Override public final int hashCode() {
             return key.hashCode() ^ value.hashCode();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.398 -0500", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "1C713F1AABEB092283314E1A4F2FE9EE")
         
 @Override public final String toString() {

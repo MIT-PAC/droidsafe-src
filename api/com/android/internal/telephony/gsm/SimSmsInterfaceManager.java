@@ -122,6 +122,7 @@ public SimSmsInterfaceManager(GSMPhone phone, SMSDispatcher dispatcher) {
 public void dispose() {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.769 -0500", hash_original_method = "B5C7D22959BE2F7C1AB4B825F6E12647", hash_generated_method = "E273096A1042D6FEE88AC16B53B4CA4A")
     
 @Override

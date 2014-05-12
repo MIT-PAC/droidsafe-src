@@ -287,7 +287,7 @@ public SpannableStringBuilder insert(int where, CharSequence tb) {
 
     // Documentation from interface
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.797 -0500", hash_original_method = "CCAFF8AC74D86E62008C289B374BD199", hash_generated_method = "EE1B67175238DA30775E7B85500A64C9")
     
 public SpannableStringBuilder delete(int start, int end) {
@@ -313,6 +313,7 @@ public SpannableStringBuilder delete(int start, int end) {
 		// TODO Auto-generated method stub
 	}
     
+    @DSSink({DSSinkKind.SCREEN})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override
@@ -322,6 +323,7 @@ public SpannableStringBuilder delete(int start, int end) {
     	return replace(length, length, text, 0, text.length());
 	}
     
+    @DSSink({DSSinkKind.SCREEN})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override
@@ -331,6 +333,7 @@ public SpannableStringBuilder delete(int start, int end) {
     	return replace(length, length, text, start, end);
 	}
     
+    @DSSink({DSSinkKind.SCREEN})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override

@@ -104,6 +104,7 @@ private void validateOffset(int offset) {
         return wrapped.preceding(offset);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.418 -0500", hash_original_method = "1C0A7071B8D0A3C31C41CE6D2D9C1AD9", hash_generated_method = "3A0A252B640346A818536EC9CDEC1E0C")
     
 @Override public boolean equals(Object o) {
@@ -113,18 +114,21 @@ private void validateOffset(int offset) {
         return wrapped.equals(((RuleBasedBreakIterator) o).wrapped);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.421 -0500", hash_original_method = "06F92F6D5094F2398873E74C963FD03D", hash_generated_method = "335E1F915D1C60B1566AC8FE334BBCC5")
     
 @Override public String toString() {
         return wrapped.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.423 -0500", hash_original_method = "E6CC31FF7D266DCE2DDA4A7B187D9033", hash_generated_method = "570F0C93134E62B7F7275DF32C549250")
     
 @Override public int hashCode() {
         return wrapped.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.426 -0500", hash_original_method = "CB8345057924EAB3D86F5E280E0AFDC7", hash_generated_method = "D0515A3F5F1D631F9CA0EBA93066D9BF")
     
 @Override public Object clone() {

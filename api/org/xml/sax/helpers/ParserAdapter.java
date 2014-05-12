@@ -881,7 +881,8 @@ public String getType (int i)
      * @param The attribute's index.
      * @return The attribute's value.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.XML)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.394 -0500", hash_original_method = "F0679796EDFA7C65CB4AD5C7F9CBE1FC", hash_generated_method = "59CFC8024232ED8BA11D0FF2A002F6A6")
         
 public String getValue (int i)
@@ -960,7 +961,8 @@ public String getType (String qName)
      * @param localName The local name.
      * @return The attribute's value.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.XML)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.406 -0500", hash_original_method = "A923F17E07DEE910B88DBEE5B2421501", hash_generated_method = "F23C4745139D5FB53F0FBCBD0566CDFA")
         
 public String getValue (String uri, String localName)
@@ -974,7 +976,8 @@ public String getValue (String uri, String localName)
      * @param qName The qualified name.
      * @return The attribute's value.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.XML)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.408 -0500", hash_original_method = "E305D94D7DAD816250B349D4183FD8D8", hash_generated_method = "D9A2660789A3C908966C2DA35937C9E0")
         
 public String getValue (String qName)

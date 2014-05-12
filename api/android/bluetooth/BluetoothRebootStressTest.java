@@ -38,11 +38,10 @@ public class BluetoothRebootStressTest extends InstrumentationTestCase {
     private static final String OUTPUT_FILE = "BluetoothRebootStressTestOutput.txt";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.343 -0400", hash_original_field = "E4ED05226F38F4A27003E8BF404E518E", hash_generated_field = "1F986A3D670BBE53C4AFF5EF8F4000A4")
 
-
     private BluetoothTestUtils mTestUtils;
 
     @DSComment("Added for droidsafe")
-    @DSSafe(DSCat.DROIDSAFE_INTERNAL)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public BluetoothRebootStressTest() {}
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.345 -0400", hash_original_method = "745BD85BD6E3F460090608614DE3001E", hash_generated_method = "5114D2B289C3438393FBBA280AC00621")

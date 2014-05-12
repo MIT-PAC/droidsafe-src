@@ -120,6 +120,7 @@ protected SSLSocket(InetAddress address, int port, InetAddress clientAddress, in
      * Unsupported for SSL because reading from an SSL socket may require
      * writing to the network.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.345 -0500", hash_original_method = "E0A9F4BE9C470EB91D47ECD4E4371B30", hash_generated_method = "B08BF9FD6A8594D256B74001AAB3CC0C")
     
 @Override public void shutdownInput() throws IOException {
@@ -130,6 +131,7 @@ protected SSLSocket(InetAddress address, int port, InetAddress clientAddress, in
      * Unsupported for SSL because writing to an SSL socket may require reading
      * from the network.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.348 -0500", hash_original_method = "70C01DEF86829F68F838E9F8223EE1C9", hash_generated_method = "C660A4FDE54A073E97068B4FD92F16CB")
     
 @Override public void shutdownOutput() throws IOException {

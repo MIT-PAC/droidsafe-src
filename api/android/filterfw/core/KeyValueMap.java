@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -76,6 +75,7 @@ public float getFloat(String key) {
         return result != null ? (Float)result : null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:03.619 -0400", hash_original_method = "B7B69E971D2D8AFF91029559CA0F4A16", hash_generated_method = "82B57D4F9AA87042DBC798AA4C4B8587")
     
 @Override

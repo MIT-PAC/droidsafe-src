@@ -311,6 +311,7 @@ public CalendarView(Context context, AttributeSet attrs, int defStyle) {
         invalidate();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.024 -0500", hash_original_method = "1D9E2CC40134FA188645AC8C7A8FADC7", hash_generated_method = "61E305833BB432899A9B803A8835CCD1")
     
@@ -319,6 +320,7 @@ public CalendarView(Context context, AttributeSet attrs, int defStyle) {
         mListView.setEnabled(enabled);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.026 -0500", hash_original_method = "93B4809DF8FBD1AECB02AFF6547691F9", hash_generated_method = "E3F8EC8548C465830E0A8D0A5727ECFD")
     
 @Override
@@ -465,6 +467,7 @@ public void doScrollStateChange(AbsListView view, int scrollState) {
             postDelayed(this, SCROLL_CHANGE_DELAY);
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.105 -0500", hash_original_method = "62729E70BB0456A375600477CC5D2643", hash_generated_method = "9A5A45E1160235FD96591591BD17E761")
         
 public void run() {

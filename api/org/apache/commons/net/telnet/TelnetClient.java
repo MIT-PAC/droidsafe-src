@@ -104,6 +104,7 @@ void _closeOutputStream() throws IOException
      * <p>
      * @exception IOException  If an error occurs during connection setup.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.400 -0500", hash_original_method = "CBA9C9C2A65EACDAD03B36A06DFF64B0", hash_generated_method = "AF17EEB713B0DE34C67B2AAB24E2A77B")
     
 protected void _connectAction_() throws IOException
@@ -139,6 +140,7 @@ protected void _connectAction_() throws IOException
      * close them yourself, but rather call disconnect to properly close
      * the connection.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:00.404 -0500", hash_original_method = "A5A902720BBA2BC5C38FC5C51260A9D6", hash_generated_method = "BEF6C75B1C9182A7F94002676040FAA7")
     
 public void disconnect() throws IOException

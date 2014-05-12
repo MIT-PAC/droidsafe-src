@@ -63,6 +63,7 @@ protected void setEnd() {
      * @return the number of available bytes.
      * @throws  IOException
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.715 -0500", hash_original_method = "32329B6D4EFC7F65437C2D09A5400721", hash_generated_method = "7B6C0E97C0EA9A758302804A5C5B251B")
     
 @Override
@@ -148,6 +149,8 @@ public void append(byte[] src) {
         
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.723 -0500", hash_original_method = "50426CF7D6642F19D28119E1D947BED8", hash_generated_method = "6BC2CEF740D0BDFCA8A3015759885D03")
     
 @Override public int read(byte[] b, int off, int len) throws IOException {

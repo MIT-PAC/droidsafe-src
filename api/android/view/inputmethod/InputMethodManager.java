@@ -1203,6 +1203,7 @@ H(Looper looper) {
             super(looper);
         }
         
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.592 -0500", hash_original_method = "D40CD8B0041519F81016D036AC481E26", hash_generated_method = "ACD4E6EB27BF251DA62E0268D613BA11")
         
 @Override

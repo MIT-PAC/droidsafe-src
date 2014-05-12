@@ -198,6 +198,7 @@ public void setEmails(String[] emails) {
         this.emails = emails;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.020 -0500", hash_original_method = "68220200E4F2B5D293B76BDD34BEE487", hash_generated_method = "B5961EECC367908660F81F6106FD4E80")
     

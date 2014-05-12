@@ -54,6 +54,7 @@ public String getType() {
      *            {@code CertPath} to be compared for equality.
      * @return {@code true} if the object are equal, {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.244 -0500", hash_original_method = "8F841F69BEA866198CC0B2087E3E8CE8", hash_generated_method = "2250B7527981C6F3AE3CD0DF2F747DDF")
     
 public boolean equals(Object other) {
@@ -80,6 +81,7 @@ public boolean equals(Object other) {
      *
      * @return the hash code for this instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.247 -0500", hash_original_method = "E8BB667E09C60EB11FBFEAA1F9E519B1", hash_generated_method = "E84BB1278EC2D7E171B60EFD5E631879")
     
 public int hashCode() {
@@ -95,6 +97,7 @@ public int hashCode() {
      *
      * @return a string representation of this instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.249 -0500", hash_original_method = "476AF39C272D39EAE140D33789265072", hash_generated_method = "C5ABBA0D12DFB2C6B5FC45CDFF854B7B")
     

@@ -303,6 +303,7 @@ private void startLoadingIcon(int recordNumber) {
         readId();
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.655 -0500", hash_original_method = "E1BF715B9C953843C5BFB563C24D3B0D", hash_generated_method = "506A2135A8DA90B2FE90922F9E010C6E")
     
 @Override

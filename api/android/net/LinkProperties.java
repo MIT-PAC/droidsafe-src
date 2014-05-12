@@ -191,6 +191,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.488 -0500", hash_original_method = "FDC9878366ECD283FC0D7411AB5ED4B7", hash_generated_method = "CB8B5B3966E651CD6858565AEC15B9EB")
     
 @Override
@@ -281,6 +282,7 @@ public boolean isIdenticalHttpProxy(LinkProperties target) {
                     getHttpProxy().equals(target.getHttpProxy());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.501 -0500", hash_original_method = "E1692DB8F3E9AF5A893AE4BBE4FFDED0", hash_generated_method = "61BC0309E108D787D5C7851F0F1D2231")
     
 @Override
@@ -409,6 +411,7 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.511 -0500", hash_original_method = "28ECE8095E829F4615B9B35514C29B36", hash_generated_method = "1267DE3E5DC0277251D36AC5E4F91E41")
     
 @Override
@@ -440,6 +443,7 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.451 -0500", hash_original_method = "432CBAB98383F022B31745E1B8881CF6", hash_generated_method = "B5502BEE6A700ED88BC2132DC0B2A5D1")
         
 @Override

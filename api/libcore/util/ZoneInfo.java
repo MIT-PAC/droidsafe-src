@@ -250,6 +250,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         return toTaintBoolean(getTaintInt() + other.getTaintInt());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.466 -0500", hash_original_method = "ECC5255AD9E8EF75737AB68867396FFB", hash_generated_method = "E5D81ACFE1B7D26D686272EC1051E97E")
     
 @Override public boolean equals(Object obj) {
@@ -260,6 +261,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         return getID().equals(other.getID()) && hasSameRules(other);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.469 -0500", hash_original_method = "8C2336163065486F5E05E5E7E360E4D3", hash_generated_method = "F618048EAF6247574AC657DC14E00112")
     
 @Override
@@ -277,6 +279,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         return result;*/
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.471 -0500", hash_original_method = "0C13B49DB3B5709653F75D972BEB7E8A", hash_generated_method = "50A1DCBE916F412686F7B0C03CABB98E")
     
 @Override

@@ -538,6 +538,7 @@ public boolean isTargetedToPackage() {
      * objects but whose equals() method identifies them as being the same
      * operation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.454 -0500", hash_original_method = "29E3C1E256E903CF301460F6770B7518", hash_generated_method = "895A26C8494EF0AA13A50A6453B4B20D")
     
 @Override
@@ -614,6 +615,7 @@ public void performReceive(Intent intent, int resultCode,
                 mHandler.post(this);
             }
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.416 -0500", hash_original_method = "323DC1202D6F14888580320FDC435E03", hash_generated_method = "7C574604C2F96F251C7EFB72E931341A")
         
 public void run() {
@@ -631,6 +633,7 @@ public void run() {
                 int resultCode, String resultData, Bundle resultExtras);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.456 -0500", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "E62183137C3FCEB0B112CE7C5C0D4444")
     
 @Override
@@ -638,6 +641,7 @@ public void run() {
         return mTarget.asBinder().hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.458 -0500", hash_original_method = "A24ED44DCFDBAE1CB5B942522723AC1A", hash_generated_method = "587EE0041A3A79CBFBA2B0E90C3817C7")
     
 @Override

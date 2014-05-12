@@ -144,6 +144,7 @@ public String getInfo() {
      *
      * @return a printable representation for this {@code Provider}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.547 -0500", hash_original_method = "58EC0A1A07497E3FA377B5366380E5E3", hash_generated_method = "2E9E37CD5E99D8AC5B8D1686DFC4A9EA")
     
@@ -156,6 +157,7 @@ public String getInfo() {
      * Clears all properties used to look up services implemented by this
      * {@code Provider}.
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.551 -0500", hash_original_method = "53793BFB01C9C5B2BDDE9F63C2E38535", hash_generated_method = "65D366CDE14B87952DF194942174A97A")
     
 @Override
@@ -196,6 +198,7 @@ public String getInfo() {
      * @param t
      *            the mappings to copy to this provider.
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.557 -0500", hash_original_method = "CE4C2613BF29D966F3F961299EB30975", hash_generated_method = "79B75A2D3060FEF6EFCF23774314BE25")
     
 @Override
@@ -234,6 +237,7 @@ private void myPutAll(Map<?,?> t) {
         }
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.562 -0500", hash_original_method = "70D9A28808783B7E2708BCE915ECB209", hash_generated_method = "00AC6EA0A2E9E856DCBCB219E7BA4E7A")
     
@@ -242,6 +246,7 @@ private void myPutAll(Map<?,?> t) {
         return Collections.unmodifiableSet(super.entrySet());
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.565 -0500", hash_original_method = "45BA03BABBCEC97C3CDEDDFAAD34C546", hash_generated_method = "78AAE48FC6E3F7D30B2CB0FBCF935512")
     
@@ -250,6 +255,7 @@ private void myPutAll(Map<?,?> t) {
         return Collections.unmodifiableSet(super.keySet());
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.567 -0500", hash_original_method = "4FF8F6E11AAD8FB860F173913A5840CE", hash_generated_method = "DD2756C9DCC3289C75E65E3EF0924EDF")
     
@@ -269,6 +275,7 @@ private void myPutAll(Map<?,?> t) {
      * @return the value that was previously mapped to the specified {@code key}
      *         ,or {@code null} if it did not have one.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.570 -0500", hash_original_method = "6B0BAE35C6955DE6DEF5897424A78326", hash_generated_method = "AFE5BBFE43147BD33DAB25AA98E7900C")
     
 @Override
@@ -300,6 +307,7 @@ private void myPutAll(Map<?,?> t) {
      * @return the value that was mapped to the specified {@code key} ,or
      *         {@code null} if no mapping was present
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.573 -0500", hash_original_method = "8EA23C4ABA882E49A95AE531F4BFEB20", hash_generated_method = "7E227177B651CE0EF658962A73104F03")
     
 @Override
@@ -1143,6 +1151,7 @@ public boolean supportsParameter(Object parameter) {
          *
          * @return a printable representation for this {@code Service}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.674 -0500", hash_original_method = "CD20F19EDED4066F9FA28FD55133940E", hash_generated_method = "675135E2E35D5FD4AB2F8A57F9F70EB1")
         
 @Override

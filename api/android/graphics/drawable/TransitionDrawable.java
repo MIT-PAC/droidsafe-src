@@ -197,7 +197,7 @@ TransitionState(TransitionState orig, TransitionDrawable owner,
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.047 -0500", hash_original_method = "1FBAB3689755625C733FF3C6D865C65F", hash_generated_method = "FC82F7FA3DEABE0ADAA5A9978DBA3FA6")
     
 @Override

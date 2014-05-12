@@ -111,6 +111,7 @@ public StringBuffer encode(StringBuffer buffer) {
      * @param obj Object to set
      * @return boolean
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.106 -0500", hash_original_method = "9C0AAF91E5C10F0884CC4B99F07D9A3D", hash_generated_method = "EF1D778E7B4E29BECA56E28251938EAF")
     
 public boolean equals(Object obj) {
@@ -293,6 +294,7 @@ private boolean isIPv6Address(String address) {
         return (address != null && address.indexOf(':') != -1);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.140 -0500", hash_original_method = "0C8DED4D9F69E994518D3B4A84463600", hash_generated_method = "B42CD6D823F30CBFC25048C054FB286E")
     
 @Override

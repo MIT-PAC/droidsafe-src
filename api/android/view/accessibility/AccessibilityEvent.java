@@ -419,6 +419,7 @@ public void setPackageName(CharSequence packageName) {
      *
      * @throws IllegalStateException If the event is already recycled.
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.470 -0500", hash_original_method = "74951363C7DF24AC8EB3BEFEC94F56A2", hash_generated_method = "9CA234BE13AFD4B45A70AF1A12C4FC57")
     
 @Override
@@ -579,6 +580,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.489 -0500", hash_original_method = "B03E1856B5738C7353427D3738596016", hash_generated_method = "3F9A44006A65A001136F2CD9A3AE9923")
     
 @Override

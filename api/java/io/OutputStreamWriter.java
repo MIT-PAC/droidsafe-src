@@ -280,7 +280,7 @@ public String getEncoding() {
      *             occurs.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.603 -0500", hash_original_method = "A1014AE81A36DB02C830992F3B254644", hash_generated_method = "A96B07B6EEBAA8EA2F682CB1A720ECE7")
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_OTHERS)
 @Override
     public void write(char[] buffer, int offset, int count) throws IOException {
@@ -303,6 +303,8 @@ public String getEncoding() {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.607 -0500", hash_original_method = "9F78C67C90A8F7A084F2E3084DB157FE", hash_generated_method = "20C055F9C168D000FD8A3145FD191358")
     
 @Override
@@ -334,6 +336,8 @@ public String getEncoding() {
      *             {@code offset + count} is bigger than the length of
      *             {@code str}.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.610 -0500", hash_original_method = "720362548945B36884470AD2C6B99C23", hash_generated_method = "00265FCA2186A6FA0C1C9C2C49A9AE91")
     
 @Override

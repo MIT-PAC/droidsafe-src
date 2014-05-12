@@ -70,6 +70,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return mResolver;
     }
 
+    @DSSpec(DSCat.SERVICE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.926 -0500", hash_original_method = "D151ADEF319006893C279FF639241601", hash_generated_method = "8A89D3272220F379D194F3F66CA073FA")
     
@@ -95,7 +96,7 @@ public List<Intent> getAndClearBroadcastIntents() {
     }
 
     @DSSpec(DSCat.IPC)
-    @DSSink(DSSinkKind.IPC)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.933 -0500", hash_original_method = "8D436BAC12DD3DE12E9B49520E96DCDA", hash_generated_method = "FA0007733AD3841AD82594FBA54658F5")
     
 @Override

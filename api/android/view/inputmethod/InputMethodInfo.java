@@ -378,6 +378,7 @@ public void dump(Printer pw, String prefix) {
         mService.dump(pw, prefix + "  ");
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.878 -0500", hash_original_method = "B1E623174B0D17462D77E01C624BA9A3", hash_generated_method = "0E092B0C4ADC9F686A0086F5A5B939B9")
     
 @Override
@@ -394,6 +395,7 @@ public void dump(Printer pw, String prefix) {
      * @return true if the given parameter object is an
      *         {@link InputMethodInfo} and its Id is the same to this one.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.881 -0500", hash_original_method = "138C64F4407505D90DB7ED842C7A62A7", hash_generated_method = "6A610D9E81F934459216596C533A7934")
     
 @Override
@@ -407,6 +409,7 @@ public void dump(Printer pw, String prefix) {
         return mId.equals(obj.mId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.883 -0500", hash_original_method = "703EF4DB2908CB7D83260BB6EC0F610D", hash_generated_method = "4FCD02FE98D3F92434A96BCBA49D3148")
     
 @Override

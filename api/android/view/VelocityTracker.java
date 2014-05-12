@@ -164,6 +164,7 @@ public void setPooled(boolean isPooled) {
         mIsPooled = isPooled;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.348 -0500", hash_original_method = "388B6019F11DE2E32EE5A9A9056EF526", hash_generated_method = "F73C0E000449CBECE02F50B4A7992F7C")
     
 @Override

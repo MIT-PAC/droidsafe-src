@@ -100,6 +100,7 @@ public void setSubserviceIdentifiers(String subservices) {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.450 -0500", hash_original_method = "698565353F33C32BACB06EBECCB2189D", hash_generated_method = "D4675B044AE17CCD0B469CDC1735AD2E")
     
 public boolean equals(Object other)
@@ -108,6 +109,7 @@ public boolean equals(Object other)
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.453 -0500", hash_original_method = "3CDC6738E06A7AFD0A34818FC063034A", hash_generated_method = "EC849A5DD26DA0B0853E15F6B153DE3D")
     
 public Object clone() {

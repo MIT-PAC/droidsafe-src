@@ -98,6 +98,7 @@ synchronized void releaseIfNotInUse() {
     /**
      * Make sure that the native resource is cleaned up.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.607 -0500", hash_original_method = "043FE176FAAAC79BBB94A20B9880CE43", hash_generated_method = "5AC1A6DFD2D7AED3F5003A1B3C44B240")
     
 @Override
@@ -127,6 +128,7 @@ synchronized void releaseIfNotInUse() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.609 -0500", hash_original_method = "F4C9B6A641BE298F80672A4BBE3F197C", hash_generated_method = "2CB70B5850AA96ED0046D5F3FE57F678")
     
 @Override public String toString() {

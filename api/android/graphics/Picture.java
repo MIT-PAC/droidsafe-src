@@ -202,6 +202,7 @@ public void writeToStream(OutputStream stream) {
        */
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.336 -0500", hash_original_method = "A9ACB715DF1E16C6B20EA656F0034A3C", hash_generated_method = "24872D74DDE1566A22D3FC719A5F95C5")
     
 protected void finalize() throws Throwable {
@@ -220,7 +221,8 @@ public RecordingCanvas(Picture pict, int nativeCanvas) {
             mPicture = pict;
         }
         
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.375 -0500", hash_original_method = "6CF0BDC754DD98C47DAA94E49A23367D", hash_generated_method = "AFB1E851686B7B4C837A7226FC3C7F45")
         
 @Override

@@ -109,6 +109,7 @@ public int findFaces(Bitmap bitmap, Face[] faces)
     }
 
     /* no user serviceable parts here ... */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.568 -0500", hash_original_method = "CCE05B54F33EBA167A725030DCD8853F", hash_generated_method = "A9F122C14E7F1B20D9E36D96CD0C6263")
     
 @Override

@@ -158,6 +158,7 @@ public FrameLayout(Context context, AttributeSet attrs, int defStyle) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.236 -0500", hash_original_method = "10BAAC6631BEDC803E3228221401304B", hash_generated_method = "F61FAD8A9ECAD033A5BDF639AB6EA201")
     
 @Override
@@ -178,6 +179,7 @@ public FrameLayout(Context context, AttributeSet attrs, int defStyle) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.240 -0500", hash_original_method = "D0BDA221075CF616F9E9A9FBE3F4B88A", hash_generated_method = "23CDAF6F76C881F0681B93F68496C590")
     
 @Override
@@ -615,6 +617,7 @@ public boolean getMeasureAllChildren() {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.286 -0500", hash_original_method = "E5E3FCBA546B7CFE2F525BEFE910A396", hash_generated_method = "8E8F0BEBF3E59660E5FA9B2761F7834C")
     
 @Override

@@ -869,6 +869,7 @@ final synchronized void _processAYTResponse()
      * <p>
      * @throws IOException - Exception in I/O.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:58.956 -0500", hash_original_method = "8F401E92E0D1BB2B74D2C1DBF9D3F65E", hash_generated_method = "20F53E70F695FB0DB8855F1E77E63F38")
     
 protected void _connectAction_() throws IOException

@@ -106,6 +106,7 @@ public void setKeyPrefix(String keyPrefix) {
     }
 
     /** @hide */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.338 -0500", hash_original_method = "7380B31B3FE738857D26F18ED18C23C7", hash_generated_method = "C675161230185E2CCCC1C9197E9D6786")
     
 protected void finalize() throws Throwable {

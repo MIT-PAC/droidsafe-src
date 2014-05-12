@@ -375,7 +375,7 @@ public static void clearAllAnimations() {
      * useful.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.670 -0500", hash_original_method = "17A6701FB198CD0BD584AB7A0EFE3839", hash_generated_method = "C2AD058992F5618B1B66186E3920319B")
     
 public ValueAnimator() {
@@ -804,7 +804,7 @@ public void removeAllUpdateListeners() {
     private static class AnimationHandler extends Handler {
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.111 -0400", hash_original_method = "2DEE4CFD7471B34E056063BEAD8FACC4", hash_generated_method = "2DEE4CFD7471B34E056063BEAD8FACC4")
         public AnimationHandler ()
         {
@@ -822,6 +822,7 @@ public void removeAllUpdateListeners() {
          * The FRAME message is the one that is sent over and over while there are any
          * active animations to process.
          */
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.709 -0500", hash_original_method = "52F201F0F7E1BD7680ACD711BB668600", hash_generated_method = "B26944C7523AE102B7428CCD01F883AA")
         
 @Override

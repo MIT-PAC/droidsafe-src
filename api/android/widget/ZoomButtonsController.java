@@ -523,6 +523,7 @@ public Container(Context context) {
          * ViewGroup gives it to the focused View instead of calling the key
          * listener, and so we wouldn't get the events.
          */
+        @DSSpec(DSCat.TO_MODEL)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.889 -0500", hash_original_method = "9ADB1F3C4E22FAC9B13C38DB47141BED", hash_generated_method = "3BD78329324C2B0558959EB39476D20D")
         
 @Override

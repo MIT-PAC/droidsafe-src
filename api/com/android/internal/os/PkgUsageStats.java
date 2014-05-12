@@ -75,6 +75,7 @@ public PkgUsageStats(PkgUsageStats pStats) {
         componentResumeTimes = new HashMap<String, Long>(pStats.componentResumeTimes);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.157 -0500", hash_original_method = "5A8FDC802D15BADB218E7B9A38048A4B", hash_generated_method = "A59216B1FA5FC6E108B22AE23CA9977A")
     
 public String toString() {

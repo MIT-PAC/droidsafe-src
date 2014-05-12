@@ -107,6 +107,8 @@ public byte[] read(int length) throws IOException {
         return res;
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.853 -0500", hash_original_method = "50426CF7D6642F19D28119E1D947BED8", hash_generated_method = "6BC2CEF740D0BDFCA8A3015759885D03")
     
 @Override

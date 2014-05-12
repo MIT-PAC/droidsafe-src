@@ -38,6 +38,7 @@ public WriteAbortedException(String detailMessage, Exception rootCause) {
      *
      * @return the exception message.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.860 -0500", hash_original_method = "F8C8FA3813C752D5C72108208FEF04C6", hash_generated_method = "7934F03FD51A9A133A34E4E968483B9C")
     

@@ -164,7 +164,7 @@ public Dialog(Context context, int theme) {
     }
 
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.052 -0500", hash_original_method = "C6D5E1D2CF37954F320E3261297EC417", hash_generated_method = "C6D5E1D2CF37954F320E3261297EC417")
     
 Dialog(Context context, int theme, boolean createContextWrapper) {
@@ -1444,6 +1444,7 @@ public ListenersHandler(Dialog dialog) {
             mDialog = new WeakReference<DialogInterface>(dialog);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.269 -0500", hash_original_method = "0AC2BA822DE6E333F562D01CFB6CE49A", hash_generated_method = "2DD88F184922AF15640C87AEA2DA6C0A")
         
 @Override

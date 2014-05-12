@@ -872,7 +872,7 @@ private ThreadPolicy(int mask) {
             private int mMask = 0;  // need copy-on-write
 
             @DSComment("Only URI passing around is important")
-            @DSSafe(DSCat.UTIL_FUNCTION)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.046 -0500", hash_original_method = "C72380FC51BF6FFB0D8183E2FF7C5DBE", hash_generated_method = "2DBF625FFD06FDF36909DDC7E5DF2F6A")
             
 public Builder() {
@@ -1082,6 +1082,7 @@ public ThreadPolicy build() {
             
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.961 -0500", hash_original_method = "AE05BE3A66BEE06993F7653F4CB681EB", hash_generated_method = "D0EEABE072A274220FB1724BB3C8E223")
         
 @Override
@@ -1282,6 +1283,7 @@ public VmPolicy build() {
             
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.035 -0500", hash_original_method = "338C4A4B8F91E885EB5A5562BE10EA45", hash_generated_method = "FDEE3D24684D7B163B78F97431CD5C31")
         
 @Override
@@ -1351,6 +1353,7 @@ public AndroidBlockGuardPolicy(final int policyMask) {
             mPolicyMask = policyMask;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.164 -0500", hash_original_method = "EC02A08C2D3910C2DE1DA94FE738CE60", hash_generated_method = "F39C3AADFF2389FE5B47EA4B6A27487B")
         
 @Override
@@ -1631,7 +1634,7 @@ void handleViolation(final ViolationInfo info) {
     private static class AndroidCloseGuardReporter implements CloseGuard.Reporter {
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.763 -0400", hash_original_method = "E7772DF8591E8A95C00A24C3A7BC9385", hash_generated_method = "E7772DF8591E8A95C00A24C3A7BC9385")
         public AndroidCloseGuardReporter ()
         {
@@ -1648,7 +1651,7 @@ public void report (String message, Throwable allocationSite) {
     private static class LogStackTrace extends Exception {
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.764 -0400", hash_original_method = "9318B319D2DE8ECE742465D2C7D8840B", hash_generated_method = "9318B319D2DE8ECE742465D2C7D8840B")
         public LogStackTrace ()
         {
@@ -1755,7 +1758,7 @@ public void finish() {
         public int mFreeListSize;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.765 -0400", hash_original_method = "897FCF469D672A73C45810344D5B48A8", hash_generated_method = "897FCF469D672A73C45810344D5B48A8")
         public ThreadSpanState ()
         {
@@ -1874,6 +1877,7 @@ public ViolationInfo(Parcel in, boolean unsetGatheringBit) {
             tags = in.readStringArray();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.367 -0500", hash_original_method = "C167EFD1AA966CEFAC170AF811F6D4AF", hash_generated_method = "3D60EF1745D00AC01DABE6A6AAB571F8")
         
 @Override
@@ -2005,6 +2009,7 @@ public InstanceTracker(Object instance) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.408 -0500", hash_original_method = "3D9E07641D189E499B7BA8CA77DD9FB9", hash_generated_method = "105486E1C62BBD74132CFE36E86DEC21")
         
 @Override

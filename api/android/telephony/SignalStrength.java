@@ -719,6 +719,7 @@ public boolean isGsm() {
     /**
      * @return hash code
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.687 -0500", hash_original_method = "77932B1FC1CD240B3EE054141A5B543F", hash_generated_method = "F31A78FDF53901CABE2268F0585E0E54")
     
 @Override
@@ -736,6 +737,7 @@ public boolean isGsm() {
     /**
      * @return true if the signal strengths are the same
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.693 -0500", hash_original_method = "42740862A2861DE7D9325894DE272263", hash_generated_method = "300E89C8E73B1FC5E5AD5D1F57AC069C")
     
 @Override
@@ -770,6 +772,7 @@ public boolean isGsm() {
     /**
      * @return string representation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.698 -0500", hash_original_method = "4C867D664E694B283CE0DE88ADFC0BF6", hash_generated_method = "15FEA039970CFFA8D149F77DE1D83B8A")
     

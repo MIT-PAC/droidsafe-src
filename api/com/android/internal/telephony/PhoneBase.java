@@ -364,6 +364,7 @@ public void removeReferences() {
      *
      * @param msg
      */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.402 -0500", hash_original_method = "DB16D19FE7C055C53AF6F04667B938A9", hash_generated_method = "AFE90A228BEE91992CFA75B0112F77B3")
     
 @Override

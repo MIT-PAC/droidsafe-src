@@ -778,6 +778,7 @@ public OpenOverflowRunnable(OverflowPopup popup) {
             mPopup = popup;
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.302 -0500", hash_original_method = "A205A4B8116FA6A00F9203B1BEAEE8C7", hash_generated_method = "666E18EB4FD5778233B2875D55F6E054")
         
 public void run() {

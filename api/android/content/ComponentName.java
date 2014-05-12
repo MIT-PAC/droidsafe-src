@@ -195,7 +195,7 @@ public ComponentName(Parcel in) {
     }
 
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.617 -0500", hash_original_method = "5EFEBE9DDFB777526DBE0E9A79DAA5EE", hash_generated_method = "FD372FFF984FE9C8200778E7FDFB7A0F")
     
 private ComponentName(String pkg, Parcel in) {
@@ -203,6 +203,7 @@ private ComponentName(String pkg, Parcel in) {
         mClass = in.readString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.572 -0500", hash_original_method = "0C586E8D4837845118D5ECAFE1DD23B0", hash_generated_method = "1E1751FEB922C25B1069279909E78522")
     
 public ComponentName clone() {
@@ -300,6 +301,7 @@ public String toShortString() {
         return "{" + mPackage + "/" + mClass + "}";
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.589 -0500", hash_original_method = "54FBA5D02AAB0DA35DA4E57242A769F6", hash_generated_method = "B45A9F5921B47BCB522C8F1942BF77FE")
     
 @Override
@@ -308,7 +310,7 @@ public String toShortString() {
     }
 
     @DSComment("data structure class")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.593 -0500", hash_original_method = "221E549665728B04A91E5C9A58326754", hash_generated_method = "D8F5E18DA105D11037667BE5EBF7E454")
     
 @Override
@@ -327,7 +329,7 @@ public String toShortString() {
     }
 
     @DSComment("data structure class")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.595 -0500", hash_original_method = "0BD278EA5D55E08CD4E56E53F182D0C7", hash_generated_method = "34C328E874FC615A2187ED5A2CE1B584")
     
 @Override

@@ -75,6 +75,7 @@ public StringBuffer encode(StringBuffer buffer) {
      * @return true if the two call identifiers are equals, false
      * otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.793 -0500", hash_original_method = "89691ECA244C4E1A9E04F5B4F61288E7", hash_generated_method = "70447D9B5C38F395E125BC3A0127D68F")
     
 public boolean equals(Object other) {
@@ -97,6 +98,7 @@ public boolean equals(Object other) {
         return true;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.796 -0500", hash_original_method = "CE30DABED6DD49816A955450A93F0F59", hash_generated_method = "DE8A2DF5AC53EDBD6D556ED922685CAF")
     
 @Override

@@ -88,6 +88,7 @@ import com.android.internal.os.SamplingProfilerIntegration;
 import dalvik.system.CloseGuard;
 
 final class SuperNotCalledException extends AndroidRuntimeException {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.220 -0500", hash_original_method = "5E7B9B2805F37099E5240CEF94D75E86", hash_generated_method = "1F29AF520F96DCB843FE454A7E9FE89B")
     
 public SuperNotCalledException(String msg) {
@@ -97,6 +98,7 @@ public SuperNotCalledException(String msg) {
 }
 
 final class RemoteServiceException extends AndroidRuntimeException {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.223 -0500", hash_original_method = "34FE87499D0272DFF74E34D7FF4C8A87", hash_generated_method = "1DEEB7C2C8BCD141939C3A8EBF7F139B")
     
 public RemoteServiceException(String msg) {
@@ -2936,6 +2938,7 @@ public boolean isPreHoneycomb() {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.407 -0500", hash_original_method = "C4594DCD1E896B9BDB54D56E10F2B8EE", hash_generated_method = "C063BDA3A9088C060F96C5DED682B528")
         
 public String toString() {
@@ -2986,12 +2989,13 @@ public void binderDied() {
         IBinder token;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.616 -0400", hash_original_method = "9A9162E54721E56B9804FAED427417E2", hash_generated_method = "9A9162E54721E56B9804FAED427417E2")
         public NewIntentData ()
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.429 -0500", hash_original_method = "E9F4DBEB4C72AFF7F672A47023D2DCCE", hash_generated_method = "90EA49ED8754F00F3EE4D534933D780B")
         
 public String toString() {
@@ -3017,6 +3021,7 @@ public ReceiverData(Intent intent, int resultCode, String resultData, Bundle res
             super(resultCode, resultData, resultExtras, TYPE_COMPONENT, ordered, sticky, token);
             this.intent = intent;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.443 -0500", hash_original_method = "062A80C4BE8CE608AA3884983AB20A02", hash_generated_method = "60230EECBB6D3DF91BAB63F5C9990602")
         
 public String toString() {
@@ -3040,12 +3045,13 @@ public String toString() {
         int backupMode;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.624 -0400", hash_original_method = "7F9A4ECF6FE623DBC230D640707CDFD0", hash_generated_method = "7F9A4ECF6FE623DBC230D640707CDFD0")
         public CreateBackupAgentData ()
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.454 -0500", hash_original_method = "87705B4B5A78FEE0786C01D6E7384189", hash_generated_method = "C0FB4C977C99228990BFFFB27F15FCE8")
         
 public String toString() {
@@ -3071,12 +3077,13 @@ public String toString() {
         Intent intent;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.628 -0400", hash_original_method = "881257217964B643C1B29F21F8324D73", hash_generated_method = "881257217964B643C1B29F21F8324D73")
         public CreateServiceData ()
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.466 -0500", hash_original_method = "DE656B2587EA58A3FB80D8944832AD3A", hash_generated_method = "E832DED7CB7DECD3B5F9301E94409B3C")
         
 public String toString() {
@@ -3099,12 +3106,13 @@ public String toString() {
         boolean rebind;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.635 -0400", hash_original_method = "2B59A1695FBC674B2F74F0571D5E38A2", hash_generated_method = "2B59A1695FBC674B2F74F0571D5E38A2")
         public BindServiceData ()
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.477 -0500", hash_original_method = "788B7BFDCE261467774852FF99962FB6", hash_generated_method = "8AD8F6164F5D0DC4E3EBB12DC32A96D9")
         
 public String toString() {
@@ -3131,12 +3139,13 @@ public String toString() {
         Intent args;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.640 -0400", hash_original_method = "103D015CCE841E84C3050E807488FBE9", hash_generated_method = "103D015CCE841E84C3050E807488FBE9")
         public ServiceArgsData ()
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.493 -0500", hash_original_method = "9123370A477925A90205ABBEEFE44004", hash_generated_method = "49329602825DCD914B70550BC75EE127")
         
 public String toString() {
@@ -3194,13 +3203,14 @@ public String toString() {
         boolean initAutoStopProfiler;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.646 -0400", hash_original_method = "EDE65A505FE77989B4B34B8F22E2D58F", hash_generated_method = "EDE65A505FE77989B4B34B8F22E2D58F")
         public AppBindData ()
         {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.529 -0500", hash_original_method = "2BA8F6DB78683607CF1A79B96A9E1945", hash_generated_method = "013D1B36A42F26935F9FC793D3DD8D63")
         
 public String toString() {
@@ -3227,7 +3237,7 @@ public String toString() {
         boolean handlingProfiling;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.654 -0400", hash_original_method = "7B9BEA1F6EC95E751CD548D4F51680C9", hash_generated_method = "7B9BEA1F6EC95E751CD548D4F51680C9")
         public Profiler ()
         {
@@ -3308,7 +3318,7 @@ public void stopProfiling() {
         String[] args;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.664 -0400", hash_original_method = "705FE87B3B944DB1E7088D167B1442FA", hash_generated_method = "705FE87B3B944DB1E7088D167B1442FA")
         public DumpComponentInfo ()
         {
@@ -3326,12 +3336,13 @@ public void stopProfiling() {
         List<ResultInfo> results;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.665 -0400", hash_original_method = "3466C6D5CF0FEDF7456B3B9BA6367B40", hash_generated_method = "3466C6D5CF0FEDF7456B3B9BA6367B40")
         public ResultData ()
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.570 -0500", hash_original_method = "BA3AA15664E126972C9E79255FFB7B3E", hash_generated_method = "D0EEBA59622A8A916E6C93CE8C9C7D49")
         
 public String toString() {
@@ -3352,7 +3363,7 @@ public String toString() {
         String who;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.667 -0400", hash_original_method = "1364E4E916202312196441F2CD1A38A7", hash_generated_method = "1364E4E916202312196441F2CD1A38A7")
         public ContextCleanupInfo ()
         {
@@ -3370,7 +3381,7 @@ public String toString() {
         ParcelFileDescriptor fd;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.667 -0400", hash_original_method = "D11C2D1935BF651482EE891D2A926235", hash_generated_method = "D11C2D1935BF651482EE891D2A926235")
         public ProfilerControlData ()
         {
@@ -3388,7 +3399,7 @@ public String toString() {
         ParcelFileDescriptor fd;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.669 -0400", hash_original_method = "5B27D5ED8CFA7C0680EB0EE8314BCB6F", hash_generated_method = "5B27D5ED8CFA7C0680EB0EE8314BCB6F")
         public DumpHeapData ()
         {
@@ -3406,7 +3417,7 @@ public String toString() {
         CompatibilityInfo info;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.671 -0400", hash_original_method = "20ABF4B3D5332D1381C869593F335293", hash_generated_method = "20ABF4B3D5332D1381C869593F335293")
         public UpdateCompatibilityData ()
         {
@@ -4281,7 +4292,8 @@ String codeToString(int code) {
             }
             return "(unknown)";
         }
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.IPC_CALLBACK)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.859 -0500", hash_original_method = "DC9C3E5B703CFDFA18C27F800AA1CA40", hash_generated_method = "9160A9FD77CE7966181670D62A44FC6B")
         
 public void handleMessage(Message msg) {
@@ -4543,6 +4555,7 @@ ResourcesKey(String resDir, float scale) {
             mHash = mResDir.hashCode() << 2 + (int) (mScale * 2);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.890 -0500", hash_original_method = "FDD99B6C6105A3F31D8E7DC9390101DA", hash_generated_method = "52ADCB97A75DD9EE7D1911F0EC324C95")
         
 @Override
@@ -4550,6 +4563,7 @@ ResourcesKey(String resDir, float scale) {
             return mHash;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.892 -0500", hash_original_method = "07DFB89699884113D8C2B96163B07C7F", hash_generated_method = "2B2A2B58F0DC0C8CAF315EBCE035393F")
         
 @Override
@@ -4573,7 +4587,7 @@ ResourcesKey(String resDir, float scale) {
         CharSequence description;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.837 -0400", hash_original_method = "59EF1C21B91F2644F32BF61E1E80BB9E", hash_generated_method = "59EF1C21B91F2644F32BF61E1E80BB9E")
         public StopInfo ()
         {

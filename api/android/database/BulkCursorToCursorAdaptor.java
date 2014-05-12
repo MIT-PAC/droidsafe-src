@@ -192,7 +192,7 @@ private void throwIfCursorIsClosed() {
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.698 -0500", hash_original_method = "1A723D6E7321D209C1569AA4BBEA85AD", hash_generated_method = "06750EEE4BAB9F09AD43FB3D07543703")
     
 @Override

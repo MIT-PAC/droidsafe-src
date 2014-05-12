@@ -115,8 +115,8 @@ ReceiverRestrictedContext(Context base) {
         return receiver.__ds__registerIntentFilter(this, filter)[0];
     }
 
-    @DSSpec(DSCat.IPC)
-    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.SERVICE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.008 -0500", hash_original_method = "E81E60407BE1AC3446285185653F6DEC", hash_generated_method = "70CCA2B262847282DDB92A6E7AC7ABF3")   
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
@@ -279,7 +279,7 @@ private static final SharedPreferences sSharedPrefs = new SharedPreferencesImpl(
     private SensorManager sensorManager;
     
 	@DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ContextImpl() {
 		contentResolver = new DroidSafeContentResolver(this);
 		sensorManager = new SensorManager();
@@ -302,20 +302,21 @@ public ContextImpl(ContextImpl context) {
         mOuterContext = this;
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @Override
     public AssetManager getAssets() {
         return AssetManager.getSystem();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSSafe(DSCat.SOURCE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Resources getResources() {
         return Resources.getSystem();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @Override
     public PackageManager getPackageManager() {
         throw new UnsupportedOperationException();
@@ -329,7 +330,8 @@ public ContextImpl(ContextImpl context) {
         return contentResolver;
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @Override
     public Looper getMainLooper() {
     	return Looper.getMainLooper();
@@ -429,7 +431,7 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink(DSSinkKind.FILE)
+    @DSSink({DSSinkKind.FILE})
     @Override
     @DSSpec(DSCat.IO)
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
@@ -615,14 +617,14 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
     public void startActivity(Intent intent) {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
     public void startActivities(Intent[] intents) {
@@ -639,7 +641,7 @@ private File getPreferencesDir() {
     }
     
     @DSSpec(DSCat.IPC)
-    @DSSink(DSSinkKind.IPC)
+    @DSSink({DSSinkKind.IPC})
     @Override
     public void sendBroadcast(Intent intent) {
         
@@ -743,8 +745,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     public void unregisterReceiver(BroadcastReceiver receiver) {
     }
     
-    @DSSink({DSSinkKind.IPC})
-    @DSSpec(DSCat.IPC)
+    @DSSpec(DSCat.SERVICE)
     @Override
     public ComponentName startService(Intent service) {
         return service.getComponent();
@@ -760,8 +761,8 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     ComponentName serviceCompName = null;
 
     @DSVerified("Calling connection callback")
-    @DSSpec(DSCat.IPC)
-    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.SERVICE)
+    
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         //throw new UnsupportedOperationException();

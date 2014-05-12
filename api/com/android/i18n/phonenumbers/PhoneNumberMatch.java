@@ -8,11 +8,6 @@ import java.util.Arrays;
 
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-
-
-
-
-
 public final class PhoneNumberMatch {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.983 -0500", hash_original_field = "A420862623A673AB42FCEC90A616158F", hash_generated_field = "B252D65F8AC1E6F23CF7A89AB309103A")
 
@@ -73,14 +68,16 @@ public String rawString() {
     return rawString;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.001 -0500", hash_original_method = "13786FFFFB16751EA6F3DAD6D70C98CC", hash_generated_method = "8917298BE59ABD6AC07D2881E908FEAF")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.001 -0500", hash_original_method = "13786FFFFB16751EA6F3DAD6D70C98CC", hash_generated_method = "8917298BE59ABD6AC07D2881E908FEAF")
     
 @Override
   public int hashCode() {
     return Arrays.hashCode(new Object[]{start, rawString, number});
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.004 -0500", hash_original_method = "38076D29780FBE1507C47919C30AB86E", hash_generated_method = "CE8956F7DE5C6E74F4830B1F5F710D53")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.004 -0500", hash_original_method = "38076D29780FBE1507C47919C30AB86E", hash_generated_method = "CE8956F7DE5C6E74F4830B1F5F710D53")
     
 @Override
   public boolean equals(Object obj) {
@@ -95,13 +92,13 @@ public String rawString() {
         number.equals(other.number);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.007 -0500", hash_original_method = "9E681ADFB274F0FD80239D8E6C0D9096", hash_generated_method = "66D6108A1D76054128827513A7C03B91")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.007 -0500", hash_original_method = "9E681ADFB274F0FD80239D8E6C0D9096", hash_generated_method = "66D6108A1D76054128827513A7C03B91")
     
 @Override
   public String toString() {
     return "PhoneNumberMatch [" + start() + "," + end() + ") " + rawString;
   }
-
     
 }
 

@@ -59,6 +59,7 @@ private SslErrorHandlerImpl(SslErrorHandler origin, LoadListener listener) {
         mLoadListener = listener;
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:13.100 -0500", hash_original_method = "325914DF32EF22A63CA2688A9A750F18", hash_generated_method = "62D1DC511E386BB2988712BFF66519BE")
     
 @Override

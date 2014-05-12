@@ -123,6 +123,7 @@ public void bind(
         this.open = true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.926 -0500", hash_original_method = "EF7CB084264EC0FC42FD48CA086E7FEB", hash_generated_method = "9782A619B445536B5BB9B37FDDA0CAA0")
     
 @Override

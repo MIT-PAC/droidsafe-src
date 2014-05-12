@@ -490,6 +490,7 @@ public boolean getIsManualSelection() {
         return mIsManualNetworkSelection;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.239 -0500", hash_original_method = "4FC9291B326FDF96318315E16F56658C", hash_generated_method = "F9EFFECF731973F7E348F99BB27D2AC8")
     
 @Override
@@ -505,6 +506,7 @@ public boolean getIsManualSelection() {
                 + (mIsEmergencyOnly ? 1 : 0));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.242 -0500", hash_original_method = "5AB9F404C745D33B000995514C8414B5", hash_generated_method = "A336175F8CFA90A35992C40CC699E5E8")
     
 @Override
@@ -537,6 +539,7 @@ public boolean getIsManualSelection() {
                 && mIsEmergencyOnly == s.mIsEmergencyOnly);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.250 -0500", hash_original_method = "8261C946B0851B9612BB2224B1BDDEEE", hash_generated_method = "5C0308D8B835085CC67933DCD6C0B9DC")
     

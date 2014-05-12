@@ -296,6 +296,7 @@ public void dispose() {
         mPhone.mCM.unregisterForIccStatusChanged(mHandler);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.995 -0500", hash_original_method = "C148A728067D02A221BE75C987C5D733", hash_generated_method = "64BE1B6F3A78A41FF6DFB2C87523D86E")
     
 protected void finalize() {

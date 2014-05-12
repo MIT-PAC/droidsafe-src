@@ -44,11 +44,10 @@ public class BluetoothStressTest extends InstrumentationTestCase {
     private static final long SCO_SLEEP_TIME = 2 * 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.461 -0400", hash_original_field = "E4ED05226F38F4A27003E8BF404E518E", hash_generated_field = "1F986A3D670BBE53C4AFF5EF8F4000A4")
 
-
     private BluetoothTestUtils mTestUtils;
 
     @DSComment("Added for droidsafe")
-    @DSSafe(DSCat.DROIDSAFE_INTERNAL)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public BluetoothStressTest () {
         super();
     }

@@ -209,6 +209,7 @@ private void initImageView() {
         mScaleType  = ScaleType.FIT_CENTER;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.863 -0500", hash_original_method = "D798939B4195D6D5668E5F7C7E8DA2D2", hash_generated_method = "E3284A20BEB69813C85C6FAFDC58D309")
     
 @Override
@@ -269,6 +270,7 @@ private void initImageView() {
         return false;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.874 -0500", hash_original_method = "9770981DD4DB73204B697C6119742B6F", hash_generated_method = "59A05CE79686C7A9B9C91885A0E512AA")
     
 @Override
@@ -931,6 +933,7 @@ private void configureBounds() {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.947 -0500", hash_original_method = "D78E25577A68DABE40154D5E4D97E50D", hash_generated_method = "CFB86CD773D46F6966C7A0C21D7978F2")
     
 @Override

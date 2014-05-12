@@ -375,6 +375,7 @@ public abstract ByteBuffer duplicate();
      * @return {@code true} if this byte buffer is equal to {@code other},
      *         {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.825 -0500", hash_original_method = "D3C1AD6F8182660C2A5A272A59569D9E", hash_generated_method = "F4CEF0482888DC1F94CAD32BB350C4A7")
     
 @Override
@@ -713,6 +714,7 @@ public final boolean hasArray() {
      *
      * @return the hash code calculated from the remaining bytes.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.871 -0500", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "1E25806FB1ABDE5EAE09DE7EAB683BE8")
     
 @Override

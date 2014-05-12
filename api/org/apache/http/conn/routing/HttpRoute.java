@@ -319,6 +319,7 @@ public final boolean isSecure() {
      * @return  <code>true</code> if the argument is the same route,
      *          <code>false</code>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.851 -0500", hash_original_method = "3549831666270A81F0B6433F4C19950E", hash_generated_method = "B688937FF1E04A248504EC0F44AFDA76")
     
 @Override
@@ -359,6 +360,7 @@ public final boolean isSecure() {
      *
      * @return  the hash code
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.854 -0500", hash_original_method = "BE36FC25647C071258E2596D1C885DDC", hash_generated_method = "E7DD5E17E9CF2A6AA642736E4B8EFE55")
     
 @Override
@@ -387,6 +389,7 @@ public final boolean isSecure() {
      *
      * @return  a human-readable representation of this route
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.856 -0500", hash_original_method = "ED2086285AC52BF0F96F27196507174B", hash_generated_method = "9D5086139D65F6BC1FBFA408C4EC6E59")
     
 @Override
@@ -419,6 +422,7 @@ public final boolean isSecure() {
     }
 
     // default implementation of clone() is sufficient
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.858 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
     
 @Override

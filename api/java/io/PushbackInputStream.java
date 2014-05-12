@@ -64,6 +64,7 @@ public PushbackInputStream(InputStream in, int size) {
         pos = size;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.555 -0500", hash_original_method = "446E244C062F8716B384D306C558B705", hash_generated_method = "70B65E77014A2AD13CE7E13AC69CAE3A")
     
 @Override
@@ -219,6 +220,7 @@ private IOException streamClosed() throws IOException  {
      * @throws IOException
      *             if this stream is closed or another I/O error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.570 -0500", hash_original_method = "640B22F7B00DCEA150CE7BE86C25A8AB", hash_generated_method = "5943182388EB20F5DDA697A803583DA5")
     
 @Override

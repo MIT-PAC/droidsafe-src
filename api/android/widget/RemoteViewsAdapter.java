@@ -116,6 +116,7 @@ public RemoteViewsAdapter(Context context, Intent intent, RemoteAdapterConnectio
         requestBindService();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.777 -0500", hash_original_method = "448EC732CCF4B62AEFADFAF844C3E610", hash_generated_method = "B9F27E1AE2C5E521B4D92AFA06DE56D7")
     
 @Override
@@ -1228,6 +1229,7 @@ private void onNotifyDataSetChanged() {
         mNotifyDataSetChangedAfterOnServiceConnected = false;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.833 -0500", hash_original_method = "0764FC8C95C069ED9ED094B35DCC527A", hash_generated_method = "4F91F4E720FAE3D08410193811CAC9C6")
     
 public void notifyDataSetChanged() {

@@ -62,6 +62,7 @@ public String getUri() {
         return this.uri;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.777 -0500", hash_original_method = "DE48B9AC65FB9CF013FEA7278BE0E864", hash_generated_method = "A51B2F4332CB3FF013F07CB238AFB447")
     
 public String toString() {
@@ -70,6 +71,7 @@ public String toString() {
             .formatRequestLine(null, this).toString();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.782 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "587F7AA34F50D42D8C2635621B97F7C1")
     
 public Object clone() throws CloneNotSupportedException {

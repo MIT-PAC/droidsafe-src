@@ -135,6 +135,7 @@ public synchronized byte[] toByteArray() {
      * @return this stream's current contents as a string.
      */
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.350 -0500", hash_original_method = "2951DD657350D2DCE6E576199EA1BCE5", hash_generated_method = "7968FA611011C95228850E21792E4778")
     
 @Override
@@ -225,7 +226,7 @@ public String toString(String enc) throws UnsupportedEncodingException {
      * @param oneByte
      *            the byte to be written.
      */
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.360 -0500", hash_original_method = "0E8EDDE6C6CD9DF7AD28FE0F8F877448", hash_generated_method = "EC4AA14B7223D43B9330AFEFE8B74404")

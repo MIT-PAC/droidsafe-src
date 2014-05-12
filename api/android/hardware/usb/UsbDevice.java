@@ -218,6 +218,7 @@ public UsbInterface getInterface(int index) {
         return (UsbInterface)mInterfaces[index];
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.370 -0500", hash_original_method = "053D020F017F8544B1264C0EDF41C58B", hash_generated_method = "CF243685F1C2203BC85BFA3438511ABD")
     
 @Override
@@ -231,6 +232,7 @@ public UsbInterface getInterface(int index) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.372 -0500", hash_original_method = "17C09B2A154A4C6FF6181DC76A163C25", hash_generated_method = "D08FDA8297B9047E5245AB71990901C9")
     
 @Override
@@ -238,6 +240,7 @@ public UsbInterface getInterface(int index) {
         return mName.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.375 -0500", hash_original_method = "E3858C7D4009824DA04CA335F7246ABC", hash_generated_method = "99C0920EDEB23ADC303333C842F8DB85")
     
 @Override

@@ -34,7 +34,7 @@ public class StateListDrawable extends DrawableContainer {
     private boolean mMutated;
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.106 -0500", hash_original_method = "2C05F8B66F3CA072BC0F3CED1F3E988B", hash_generated_method = "CAC778B770A2571E154C8C827BD90DFE")
     
 public StateListDrawable() {

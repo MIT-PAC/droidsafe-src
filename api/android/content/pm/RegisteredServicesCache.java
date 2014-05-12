@@ -216,6 +216,7 @@ public void close() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.908 -0500", hash_original_method = "675DD0BF255C7F4136F548B1BE5CB74C", hash_generated_method = "1F62B79608478E76EA49831949F5396B")
     
 @Override
@@ -532,6 +533,7 @@ public ServiceInfo(V type, ComponentName componentName, int uid) {
             this.uid = uid;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.899 -0500", hash_original_method = "72B8806B88D8BA2A16DDBB10DB9489CE", hash_generated_method = "05E41F03AEC02226355FA18523610500")
         
 @Override

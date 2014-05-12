@@ -35,6 +35,7 @@ public String getValue()
         return value;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.335 -0500", hash_original_method = "D2F99D4FA1F9F9DCD18FFC2807839B4D", hash_generated_method = "44AE669F9D9EDF2C34C9D2B824BEB573")
     
 public int hashCode()
@@ -42,6 +43,7 @@ public int hashCode()
         return getHashCode(this.name) + 31 * getHashCode(this.value);    
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.337 -0500", hash_original_method = "008350332C23D1093274CD2597D3DC3D", hash_generated_method = "85C5D51D94A7DE75BFA8195ACDA071EC")
     
 public boolean equals(Object o)

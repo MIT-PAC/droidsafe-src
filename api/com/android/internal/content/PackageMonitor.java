@@ -257,6 +257,7 @@ String getPackageName(Intent intent) {
         return pkg;
     }
     
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.631 -0500", hash_original_method = "B895BCFF247B459848C20BC8F667143B", hash_generated_method = "6066F150CB1E54BDC7FF24B442D3234B")
     
 @Override

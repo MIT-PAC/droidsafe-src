@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -27,7 +26,6 @@ import java.lang.reflect.Field;
  */
 public class ProgramPort extends FieldPort {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:04.763 -0400", hash_original_field = "60062C9CB6406B5ABE6C6187173918AE", hash_generated_field = "004BCA2F9FED49D784C4F66ABF1E6784")
-
 
     protected String mVarName;
 
@@ -42,6 +40,7 @@ public ProgramPort(Filter filter,
         mVarName = varName;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:04.767 -0400", hash_original_method = "96FF3D039B0272BA58AE8606D9E0EAE5", hash_generated_method = "7A5A7DFE808598ECE92E9A22BEC67827")
     
 @Override

@@ -107,6 +107,7 @@ public GsmSMSDispatcher(PhoneBase phone, SmsStorageMonitor storageMonitor,
      *
      * @param msg the message to handle
      */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.868 -0500", hash_original_method = "789365F05DDE44536DDE00C9B93C643B", hash_generated_method = "DD4CF33FF66DA8C07C84F60EB9134889")
     
 @Override
@@ -324,6 +325,7 @@ public SmsCbConcatInfo(SmsCbHeader header, String plmn, int lac, int cid) {
             mCid = cid;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.912 -0500", hash_original_method = "EE152888A937A1561BADC909DEBD7300", hash_generated_method = "7A3538499E98BC30600DF44164E5E2EB")
         
 @Override
@@ -331,6 +333,7 @@ public SmsCbConcatInfo(SmsCbHeader header, String plmn, int lac, int cid) {
             return mHeader.messageIdentifier * 31 + mHeader.updateNumber;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.914 -0500", hash_original_method = "A4665EFAF0A95C2E46EAC850D0E6C5D5", hash_generated_method = "F4171D9F067537FB0751EF37F8355EB6")
         
 @Override

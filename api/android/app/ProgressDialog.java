@@ -129,7 +129,7 @@ public static ProgressDialog show(Context context, CharSequence title,
     private Handler mViewUpdateHandler;
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.850 -0500", hash_original_method = "92C5111B01C2F7487094F131EFA7D9CD", hash_generated_method = "AB3F338B4B6D93EA8D10AB9E027B4C64")
     
 public ProgressDialog(Context context) {
@@ -138,7 +138,7 @@ public ProgressDialog(Context context) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.852 -0500", hash_original_method = "2063B34B32B727D3ADD346C69E61541B", hash_generated_method = "6ADB1347E04F2738810E2BEB1859F74D")
     
 public ProgressDialog(Context context, int theme) {
@@ -156,6 +156,7 @@ private void initFormats() {
         mProgressPercentFormat.setMaximumFractionDigits(0);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.871 -0500", hash_original_method = "3C62C073499C0C1AB7CB80CDA6A00701", hash_generated_method = "A98AAFA7F757CF183D33413B3E7E8B2B")
     
 @Override

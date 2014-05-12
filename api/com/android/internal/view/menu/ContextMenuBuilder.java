@@ -61,12 +61,14 @@ public ContextMenu setHeaderIcon(int iconRes) {
         return (ContextMenu) super.setHeaderIconInt(iconRes);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:00.305 -0400", hash_original_method = "86AE1DFFD66E55B341B47437A16E4421", hash_generated_method = "DDB8C5EBD0D8682BAB7E287DBD080263")
     
 public ContextMenu setHeaderTitle(CharSequence title) {
         return (ContextMenu) super.setHeaderTitleInt(title);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:00.312 -0400", hash_original_method = "6128AAB2C2C12BC1DF4BD1A1C09E51AD", hash_generated_method = "C09E4DED4DD5033664E27F0569B6FED9")
     
 public ContextMenu setHeaderTitle(int titleRes) {

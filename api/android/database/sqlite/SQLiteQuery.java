@@ -173,6 +173,7 @@ String columnNameLocked(int columnIndex) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.501 -0500", hash_original_method = "818F0EC4250B389213C92FDEA7A7A5CE", hash_generated_method = "E3988E23A202244D7F0D4727DC92B445")
     
 @Override

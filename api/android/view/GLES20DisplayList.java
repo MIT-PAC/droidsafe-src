@@ -122,6 +122,7 @@ public DisplayListFinalizer(int nativeDisplayList) {
             mNativeDisplayList = nativeDisplayList;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.003 -0500", hash_original_method = "FB7FF5339A61C1A66F37CCF40E62B9AC", hash_generated_method = "49AF9AB9CF1FB4D42D572F6B74BA63B2")
         
 @Override

@@ -80,6 +80,7 @@ private void expand(int i) {
     /**
      * Flushes this writer. The implementation in {@code CharArrayWriter} does nothing.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.963 -0500", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "0687F2D6ADC2467547D72E32B4897227")
     
 @Override
@@ -141,6 +142,7 @@ public char[] toCharArray() {
      *
      * @return this CharArrayWriters contents as a new string.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.973 -0500", hash_original_method = "F9B2EF7C65F2F351A8955F413D7A1883", hash_generated_method = "5CF6BB0100429CC0A5A9B43FB635DFAF")
     
 @Override
@@ -164,7 +166,7 @@ public char[] toCharArray() {
      *             if {@code offset < 0} or {@code len < 0}, or if
      *             {@code offset + len} is bigger than the size of {@code c}.
      */
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.975 -0500", hash_original_method = "17F94D6158075BE971F02096E85AEF33", hash_generated_method = "D05819EC49701A68141E334F53010F6E")
@@ -187,6 +189,7 @@ public char[] toCharArray() {
      * @param oneChar
      *            the character to write.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.978 -0500", hash_original_method = "F6D5648087F216C6BFDCFB078373F01B", hash_generated_method = "BEB90F0F1A4B1BFB1C416DEF88CD5B71")
@@ -210,6 +213,8 @@ public char[] toCharArray() {
      *             {@code offset + count} is bigger than the length of
      *             {@code str}.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.981 -0500", hash_original_method = "9F8082FBB1391041DAA8F1A348E27C2A", hash_generated_method = "76C128EDB2BECC536B898FE91B833CDA")
     
 @Override

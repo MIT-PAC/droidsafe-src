@@ -520,6 +520,7 @@ public final int compareTo(Charset charset) {
      *            the given object to be compared with.
      * @return true if they have the same canonical name, otherwise false.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.342 -0500", hash_original_method = "938368666D1E90E2E2969E1342A5CFE9", hash_generated_method = "D56B522E8E5E3EFAA5FC0B5715399D40")
     
 @Override
@@ -536,6 +537,7 @@ public final int compareTo(Charset charset) {
      *
      * @return the hash code of this charset.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.344 -0500", hash_original_method = "D44320DAEF5566E6C5C975F4AAC84659", hash_generated_method = "0572979258B76DCAF0099246B7D5C06A")
     
 @Override

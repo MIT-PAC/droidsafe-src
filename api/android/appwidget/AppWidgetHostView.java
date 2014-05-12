@@ -274,7 +274,7 @@ public ParcelableSparseArray[] newArray(int size) {
                 };
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.704 -0400", hash_original_method = "545E9F4FFC3CA9F22ED723B298F0D3D0", hash_generated_method = "545E9F4FFC3CA9F22ED723B298F0D3D0")
         public ParcelableSparseArray ()
         {
@@ -491,6 +491,7 @@ private Context getRemoteContext(RemoteViews views) {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.327 -0500", hash_original_method = "5F7FD765CDC0571DEC8D0D27FF96F700", hash_generated_method = "BCCA16B5AB7E99AB5987ACFE5D1B2ECD")
     
 @Override

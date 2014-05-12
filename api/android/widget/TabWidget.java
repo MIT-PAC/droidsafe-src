@@ -440,6 +440,7 @@ public void setCurrentTab(int index) {
         }
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.849 -0500", hash_original_method = "B9A90DC4D5316593C7C6FB4F4261561D", hash_generated_method = "6D31189FDBA1BE15A893CDED416E3A15")
     
 @Override
@@ -455,6 +456,7 @@ public void setCurrentTab(int index) {
         return false;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.851 -0500", hash_original_method = "5B381D25FD53DF8B1C9131304346B258", hash_generated_method = "30B30F9A896683C427093E967B8E29A7")
     
 @Override
@@ -492,6 +494,7 @@ public void focusCurrentTab(int index) {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.856 -0500", hash_original_method = "B57ADC02C2264C78238655AF009610DC", hash_generated_method = "FCD2BCD429D675C6EFB2C291F381F8F8")
     
@@ -506,6 +509,7 @@ public void focusCurrentTab(int index) {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.858 -0500", hash_original_method = "D99503F0B5A4EFC29BAA1C76A3B67627", hash_generated_method = "5110715304003C2086DFCA701223F035")
     
 @Override
@@ -530,6 +534,7 @@ public void focusCurrentTab(int index) {
         child.setOnFocusChangeListener(this);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.861 -0500", hash_original_method = "EB030694D0FDE69DF41070C45192BD7E", hash_generated_method = "8601C5104587FAE2DF248A4A1233B0F3")
     
 @Override

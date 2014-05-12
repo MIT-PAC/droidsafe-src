@@ -502,6 +502,7 @@ private void readFromParcel(Parcel in) {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.450 -0500", hash_original_method = "9F735BD3745C12E449D13E0D45FB54C8", hash_generated_method = "10DE9F01AF1E7DA174A411543A6854B6")
     
 @Override

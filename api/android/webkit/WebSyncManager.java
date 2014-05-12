@@ -57,6 +57,7 @@ protected WebSyncManager(Context context, String name) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.842 -0500", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "6D3F334E8E934FE8B33726A6E75490EE")
     
@@ -64,6 +65,7 @@ protected Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException("doesn't implement Cloneable");
     }
 
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.844 -0500", hash_original_method = "8834F89660AF74637C8D229EF4878BE6", hash_generated_method = "6636B2B637FD691BF33A67337AC8463A")
     
 public void run() {
@@ -121,6 +123,7 @@ public void resetSync() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.836 -0500", hash_original_method = "DDFB485EC354F258C2B8352C9BF41A44", hash_generated_method = "259A297F39D483EB2856D1F18114AB3C")
         
 @Override

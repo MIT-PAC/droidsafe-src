@@ -144,6 +144,7 @@ PinState PinStateFromRILInt(int state) {
         return newPinState;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.198 -0500", hash_original_method = "B7A3E528A56EA330AD359B5362903D13", hash_generated_method = "596343BF45EF1C82CA18BEB071345D76")
     
 @Override

@@ -1203,6 +1203,7 @@ protected void startTransactionTimer() {
         }        
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.187 -0500", hash_original_method = "169DE8D7E50E65E71C46333CC9B26BAF", hash_generated_method = "CA12B20F8D17D68CAEC2B9956BA0E4B6")
     
 public boolean equals(Object other) {

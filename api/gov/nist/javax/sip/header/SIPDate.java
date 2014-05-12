@@ -220,6 +220,7 @@ public SIPDate(long timeMillis) {
      *
      *@return true if the two date fields are equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.967 -0500", hash_original_method = "17EF9A3AE37B7BA0C102396D80392A03", hash_generated_method = "FAE582568400939A0014202099B768BE")
     
 public boolean equals(Object that){
@@ -544,6 +545,7 @@ public int getDeltaSeconds() {
         return (int) (ctime - System.currentTimeMillis()) / 1000;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.029 -0500", hash_original_method = "4BA050DE2121A2990466253CFC8AD778", hash_generated_method = "E79E38E590026C56FD1D0DB753A809E7")
     
 public Object clone() {

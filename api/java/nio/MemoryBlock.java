@@ -232,6 +232,7 @@ public final int toInt() {
         return address;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.722 -0500", hash_original_method = "831AD59EEB851A828F16911921FE25F3", hash_generated_method = "635987D0F5BB37EE5B983D4F8465673A")
     
 public final String toString() {
@@ -269,6 +270,7 @@ private MemoryMappedBlock(int address, long byteCount) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.553 -0500", hash_original_method = "682006AE60B453BFC574D81B7AB338F6", hash_generated_method = "0C02CDB7A5599DFD54C4DD9B1F422FEF")
         
 @Override protected void finalize() throws Throwable {

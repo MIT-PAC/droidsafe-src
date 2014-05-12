@@ -585,6 +585,7 @@ private SyncHandler(Looper looper) {
             }
 
             /** Handle of the reply message */
+            @DSSafe(DSCat.IPC_CALLBACK)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.580 -0500", hash_original_method = "2469457C965E8FC7C139A1D414384428", hash_generated_method = "42C86E9B0B120923F19E3F5FDF13C046")
             
 @Override

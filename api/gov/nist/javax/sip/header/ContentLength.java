@@ -94,6 +94,7 @@ public boolean match(Object other) {
             return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.839 -0500", hash_original_method = "B4957EC40AAAC0570CBC84EE1092BF02", hash_generated_method = "3604017A7DB5E235BC0EF7B28CD6D46D")
     
 public boolean equals(Object other) {

@@ -106,7 +106,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * must call {@link #setRenderer} to register a renderer.
      */
     @DSComment("OpenGL Viewer")
-    @DSSafe(DSCat.GRAPHICS)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.479 -0500", hash_original_method = "2049D028AED77772C0EF08D2BBAE876F", hash_generated_method = "0B9876CB69076368282CCF3E5F778061")
     
 public GLSurfaceView(Context context) {
@@ -119,7 +119,7 @@ public GLSurfaceView(Context context) {
      * must call {@link #setRenderer} to register a renderer.
      */
     @DSComment("OpenGL Viewer")
-    @DSSafe(DSCat.GRAPHICS)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.482 -0500", hash_original_method = "93DD44BF6C3B90D77E42FC0AB73B1708", hash_generated_method = "88C0E6A2ABE0F69B7804229BCC880863")
     
 public GLSurfaceView(Context context, AttributeSet attrs) {
@@ -381,7 +381,7 @@ public void destroyContext(EGL10 egl, EGLDisplay display,
     private static class DefaultWindowSurfaceFactory implements EGLWindowSurfaceFactory {
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.267 -0400", hash_original_method = "6C49886831D2941418C9D5571DBB218F", hash_generated_method = "6C49886831D2941418C9D5571DBB218F")
         public DefaultWindowSurfaceFactory ()
         {
@@ -887,6 +887,7 @@ GLThread(Renderer renderer) {
             mRenderer = renderer;
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.669 -0500", hash_original_method = "4EBF7F6B9BB16BE66D221453F245DA46", hash_generated_method = "1653E32386D466C1F718F4265D118D53")
         
 @Override
@@ -1385,7 +1386,7 @@ public void queueEvent(Runnable r) {
         private StringBuilder mBuilder = new StringBuilder();
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.310 -0400", hash_original_method = "17A1C7BC31C04C9AEB1C6A159FE1E12E", hash_generated_method = "17A1C7BC31C04C9AEB1C6A159FE1E12E")
         public LogWriter ()
         {
@@ -1399,13 +1400,14 @@ public void queueEvent(Runnable r) {
             flushBuilder();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.771 -0500", hash_original_method = "4397D4B6CC585AD9A2FABC1DB1031654", hash_generated_method = "64C92D353792C9C77A9951308C9A0855")
         
 @Override public void flush() {
             flushBuilder();
         }
 
-        @DSSink(DSSinkKind.IO)
+        @DSSink({DSSinkKind.IO})
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.773 -0500", hash_original_method = "87C8CDE1CE20D2763C465BB465CBAFDD", hash_generated_method = "72F623F59FC9F90F70CCD532565A22B3")
         
@@ -1468,7 +1470,7 @@ private void flushBuilder() {
         private GLThread mEglOwner;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.312 -0400", hash_original_method = "5D6BCD582D13070585FC5F161A43B68D", hash_generated_method = "5D6BCD582D13070585FC5F161A43B68D")
         public GLThreadManager ()
         {

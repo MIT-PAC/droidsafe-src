@@ -93,7 +93,8 @@ public boolean isExcluded(String name) {
 		return false;	
 	}
 	
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.624 -0500", hash_original_method = "5A8E1629692D9DC7C7333C92257A2E23", hash_generated_method = "5AE423C45A57E5E2A90181A23E317319")
+	@DSBan(DSCat.REFLECTION)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.624 -0500", hash_original_method = "5A8E1629692D9DC7C7333C92257A2E23", hash_generated_method = "5AE423C45A57E5E2A90181A23E317319")
 	
 public synchronized Class loadClass(String name, boolean resolve)
 		throws ClassNotFoundException {

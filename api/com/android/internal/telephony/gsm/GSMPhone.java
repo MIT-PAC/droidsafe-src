@@ -261,6 +261,7 @@ public void run() {
         mSST = null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.111 -0500", hash_original_method = "B0A9A9B5818DC886F2534146C8893E7F", hash_generated_method = "1179F7324EA010BDF974A36FBF6DC607")
     
 protected void finalize() {
@@ -1437,6 +1438,7 @@ protected  void syncClirSetting() {
         }
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.352 -0500", hash_original_method = "EA4D9CE5B4912647996EC04703971BF3", hash_generated_method = "3A2C0D534C66AFA2B2C8B0441F3E0186")
     

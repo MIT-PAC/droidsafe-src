@@ -252,6 +252,7 @@ public void setItemInvoker(ItemInvoker itemInvoker) {
         return mItemData;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.148 -0400", hash_original_method = "18E20B37C2037D9678EE3D5F626F477A", hash_generated_method = "E6C900E83CDB7B761468A040E831FD07")
     
 @Override
@@ -270,6 +271,7 @@ void setIconMenuView(IconMenuView iconMenuView) {
         mIconMenuView = iconMenuView;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.150 -0400", hash_original_method = "952F4BA8D09FBA47BFF7AA31D6EF11F8", hash_generated_method = "343015883A6EFFEB067405740779F734")
     
 @Override

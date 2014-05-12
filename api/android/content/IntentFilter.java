@@ -327,7 +327,7 @@ public IntentFilter(IntentFilter o) {
     }
 
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.924 -0500", hash_original_method = "0A18E8175DAFA9E0ECB5A7A15F664AD8", hash_generated_method = "6EE529B66EC18E565826F7115C1F962E")
     
 private IntentFilter(Parcel source) {

@@ -50,6 +50,7 @@ protected FilterWriter(Writer out) {
      * @throws IOException
      *             if an error occurs attempting to flush this writer.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.147 -0500", hash_original_method = "6E517A9D20FAB02C8C7ECBD26B835783", hash_generated_method = "C55B90E5292B86C7CB54EE3BBC993E7C")
     
 @Override
@@ -72,7 +73,7 @@ protected FilterWriter(Writer out) {
      * @throws IOException
      *             if an error occurs while writing to this writer.
      */
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.149 -0500", hash_original_method = "8844CE5B6BE403964369DBE67DE17A9B", hash_generated_method = "2E00E4C573A8E41256FB0356A1320F41")
     
@@ -92,6 +93,8 @@ protected FilterWriter(Writer out) {
      * @throws IOException
      *             if an error occurs while writing to this writer.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.153 -0500", hash_original_method = "C0F1D18AD38B0E8F448CFE46E5D9188A", hash_generated_method = "83C4E3F94324FAE20304ACFEED490308")
     
 @Override
@@ -115,6 +118,8 @@ protected FilterWriter(Writer out) {
      * @throws IOException
      *             if an error occurs while writing to this writer.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.155 -0500", hash_original_method = "C7C8D1E997868E998D408F658DA19BDC", hash_generated_method = "7E939F34F6EFB94386E9711D9B6784A2")
     
 @Override

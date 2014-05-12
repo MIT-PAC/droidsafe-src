@@ -107,6 +107,7 @@ ObjectStreamField(String signature, String name) {
      *         fields are equal; 1 if this field is "greater" than field {@code
      *         o}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.893 -0500", hash_original_method = "11ADA6ED2A991966CB49663045730556", hash_generated_method = "8EE1CF0F7DD5C3FC6C7691B1A914AA34")
     
 public int compareTo(Object o) {
@@ -302,6 +303,7 @@ protected void setOffset(int newValue) {
      *
      * @return a printable representation of this descriptor.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.924 -0500", hash_original_method = "ABFAE4540EC552EECBD4679559074925", hash_generated_method = "EC935FFC09D2ED871BD2D5B3E5767FE7")
     
 @Override

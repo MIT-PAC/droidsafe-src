@@ -148,6 +148,7 @@ public final boolean isSecure(Socket sock)
      *
      * @return  iff the argument is this object
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.940 -0500", hash_original_method = "F7B998F5AE180E31090E44B8A03A92F7", hash_generated_method = "08FF0ED30143F58CAB4DEB62E6201927")
     
 @Override
@@ -160,6 +161,7 @@ public final boolean isSecure(Socket sock)
      * All instances of this class have the same hash code.
      * There is only one instance of this class.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.943 -0500", hash_original_method = "EE56C51BBF77F8839109E7F97EF2C650", hash_generated_method = "984A51642E868B1A8453A2229F0FFDDA")
     
 @Override

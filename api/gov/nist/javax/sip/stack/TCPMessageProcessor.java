@@ -80,6 +80,7 @@ public void start() throws IOException {
     /**
      * Run method for the thread that gets created for each accept socket.
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.897 -0500", hash_original_method = "BD1C6A6330D89BF80F1DBE244E3DBF31", hash_generated_method = "2E2352B9AC294EC89AB900FF85D56561")
     
 public void run() {

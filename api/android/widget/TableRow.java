@@ -411,6 +411,7 @@ void setColumnsWidthConstraints(int[] columnWidths) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.246 -0500", hash_original_method = "22EE87D9951BB7D40E63D16DD0B3F806", hash_generated_method = "7E865CB2110627BE082744153CC84E9A")
     
 @Override

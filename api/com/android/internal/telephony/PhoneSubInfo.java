@@ -50,6 +50,7 @@ public PhoneSubInfo(Phone phone) {
 public void dispose() {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.192 -0500", hash_original_method = "0C75AFD9B32739C91AE66AE73680B3EC", hash_generated_method = "7CD2958A8F39159156440AD90062BDCA")
     
 protected void finalize() {

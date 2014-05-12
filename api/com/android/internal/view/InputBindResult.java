@@ -55,6 +55,7 @@ InputBindResult(Parcel source) {
         sequence = source.readInt();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.557 -0500", hash_original_method = "7D3C8FC32444FE9148F633706CA9BDDA", hash_generated_method = "5E43558B9DEBFC2C0E8618A196B25843")
     
 @Override

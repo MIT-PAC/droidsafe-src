@@ -62,6 +62,7 @@ public Timestamp(Date timestamp, CertPath signerCertPath) {
      *         Timestamp}, otherwise {@code false}.
      * @see #hashCode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.476 -0500", hash_original_method = "5EC26C09389FD151E3B15C0B386F0A3D", hash_generated_method = "04806647303882213952ACCB540E827A")
     
 @Override
@@ -110,6 +111,7 @@ public Date getTimestamp() {
      * @see Object#equals(Object)
      * @see Timestamp#equals(Object)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.485 -0500", hash_original_method = "31DF5B7E8A0074E9903AAC481766C16B", hash_generated_method = "788AC10C4AEEBDC9C6213FC47D81982C")
     
 @Override
@@ -126,6 +128,7 @@ public Date getTimestamp() {
      *
      * @return a printable representation for this {@code Timestamp}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.487 -0500", hash_original_method = "515CC78E7249E5726FD47C9B8B62F1A0", hash_generated_method = "60F4998D56F07749F99B2C39530A9A82")
     
 @Override

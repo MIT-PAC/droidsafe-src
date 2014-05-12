@@ -818,6 +818,7 @@ public void dump(String prefix, PrintWriter pw, boolean fullHistory) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.533 -0500", hash_original_method = "BC70BAB3B88F6C51172FD25602AB6B1A", hash_generated_method = "DE5751B3CBE5E1E394ABD172AFFC0463")
     
 @Override

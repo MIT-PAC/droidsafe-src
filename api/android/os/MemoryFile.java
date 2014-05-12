@@ -173,6 +173,7 @@ private boolean isClosed() {
         return !mFD.valid();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.833 -0500", hash_original_method = "41074FB4CF57E698C714BECD1DB74DD1", hash_generated_method = "295A541A2CF4983E207FCD5D84EC7B3F")
     
 @Override
@@ -264,6 +265,7 @@ public OutputStream getOutputStream() {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.865 -0500", hash_original_method = "C946C15ECBD8592757BE5150DF65639B", hash_generated_method = "13740AE0D609A949F73C178A6381BD83")
         
 @Override
@@ -309,6 +311,8 @@ public OutputStream getOutputStream() {
             return mSingleByte[0];
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.877 -0500", hash_original_method = "BFF461741A45AAAD780835BEF712AE09", hash_generated_method = "B070035E9A8D612EF11A6B55D6BF723E")
         
 @Override
@@ -329,6 +333,7 @@ public OutputStream getOutputStream() {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.880 -0500", hash_original_method = "9D84182613F8631FDE5947AEAB012BC6", hash_generated_method = "C47CBA79EBD772F8F3535BE469A40B73")
         
 @Override
@@ -356,7 +361,8 @@ public OutputStream getOutputStream() {
             //Synthesized constructor
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.890 -0500", hash_original_method = "E169D47904A982CBC090A3E5EE81FFA1", hash_generated_method = "DED4AF55CF5E1B977A8F79686FB9F7EE")
         
 @Override
@@ -365,7 +371,7 @@ public OutputStream getOutputStream() {
             mOffset += count;
         }
 
-        @DSSink(DSSinkKind.IO)
+        @DSSink({DSSinkKind.IO})
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.892 -0500", hash_original_method = "873021528A0C471EBDB778DCC5A89FEF", hash_generated_method = "75081660C8BCEE2C6DE095A6F5387D78")
         

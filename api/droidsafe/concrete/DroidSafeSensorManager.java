@@ -14,11 +14,13 @@ public class DroidSafeSensorManager extends SensorManager {
 		super(null);	
 	}
 	
-	public Sensor getDefaultSensor(int i) {
+	@DSSpec(DSCat.ANDROID_MANAGER)
+    public Sensor getDefaultSensor(int i) {
 		return null;
 	}
 	
-	public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
+	@DSSafe(DSCat.ANDROID_CALLBACK)
+    public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
 		SensorEvent se = new SensorEvent();
 		se.sensor = sensor;
 		
@@ -26,7 +28,8 @@ public class DroidSafeSensorManager extends SensorManager {
 		return true;
 	}
 	
-	public void unregisterListener(SensorEventListener sel) {
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public void unregisterListener(SensorEventListener sel) {
 		
 	}
 }

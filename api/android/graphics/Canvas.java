@@ -450,7 +450,7 @@ public Canvas(Bitmap bitmap) {
     }
     
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.070 -0500", hash_original_method = "347D84319548CC8FC9B392FE55B81BD9", hash_generated_method = "347D84319548CC8FC9B392FE55B81BD9")
     
 Canvas(int nativeCanvas) {
@@ -2107,6 +2107,7 @@ public CanvasFinalizer(int nativeCanvas) {
             mNativeCanvas = nativeCanvas;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.061 -0500", hash_original_method = "DC60B53B0AE455E1CAF5A4B9B6F554F2", hash_generated_method = "9EAA59FE8A1AC389853679A4014358DB")
         
 @Override

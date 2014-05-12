@@ -467,6 +467,7 @@ public String encodeMessage() {
     /**
      * ALias for encode above.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.871 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {
@@ -480,6 +481,7 @@ public String toString() {
      * @return a deep copy of this object.
      */
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.873 -0500", hash_original_method = "A6367075CC534F28F93FAF1E0E79C3E5", hash_generated_method = "FA6F6FAFF263F064F6AE83CAFD47C7EB")
     
 public Object clone() {
@@ -498,6 +500,7 @@ public Object clone() {
      * 
      * @param other object to compare ourselves with.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.876 -0500", hash_original_method = "9D04458788C457FA55EEFE59B9790011", hash_generated_method = "F9160B47FE25D2E57A379C9F1C1F8D67")
     
 public boolean equals(Object other) {

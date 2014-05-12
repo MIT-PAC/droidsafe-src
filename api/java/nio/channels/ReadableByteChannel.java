@@ -11,6 +11,6 @@ public interface ReadableByteChannel extends Channel {
     
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     public int read(ByteBuffer buffer) throws IOException;
 }

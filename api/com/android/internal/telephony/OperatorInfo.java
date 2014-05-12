@@ -119,6 +119,7 @@ public State
         return state;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.359 -0500", hash_original_method = "3A69A53B1D569DD83E423933B58E91F0", hash_generated_method = "4BB95C078DA1404522803CF8E4B187E1")
     

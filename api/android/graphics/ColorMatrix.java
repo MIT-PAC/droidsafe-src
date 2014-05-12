@@ -16,7 +16,7 @@ public class ColorMatrix {
      * been called).
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.554 -0500", hash_original_method = "7C280C0D6BD3CA85A908B9065390FD08", hash_generated_method = "DB971D5BC54B5A31AD0846AFF0400420")
     
 public ColorMatrix() {

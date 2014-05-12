@@ -76,6 +76,7 @@ public String getPassword() {
         return password;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.405 -0500", hash_original_method = "5706D3CF5C9B96E72AB79DF75196B0CC", hash_generated_method = "E9415AC900696208422A480BFD414B4D")
     
 @Override
@@ -83,6 +84,7 @@ public String getPassword() {
         return this.principal.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.408 -0500", hash_original_method = "A404630EB6A67A8A7586EF96E1D8B3C7", hash_generated_method = "4443CE4BA3F4B8331E98C5D19A3B91E4")
     
 @Override
@@ -98,6 +100,7 @@ public String getPassword() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.411 -0500", hash_original_method = "55E8D51693AC55264ABFBD18A6F31F91", hash_generated_method = "D39539D32F47AC5C651B46D55227C39D")
     
 @Override

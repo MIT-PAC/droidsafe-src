@@ -96,6 +96,7 @@ public byte[] getSignatureValue() {
         return signatureValue.clone();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.616 -0500", hash_original_method = "AB851A8A0A531CFA5FA89690A5B67B6A", hash_generated_method = "FBDBA8AE9EEF1047F645660D8F347221")
     
 @Override public String toString() {

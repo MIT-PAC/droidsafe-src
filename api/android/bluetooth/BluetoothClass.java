@@ -56,6 +56,7 @@ public BluetoothClass(int classInt) {
         mClass = classInt;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.435 -0500", hash_original_method = "217E4DCE2F47DBEE08566901FB7CC9C3", hash_generated_method = "1710722012A93F08CE4CD1522BAB190B")
     
 @Override
@@ -333,14 +334,14 @@ public BluetoothClass(int classInt) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.437 -0500", hash_original_method = "874CCBA476992320BB2BF01B58BECDFE", hash_generated_method = "69DB1472F2B81EAEEF779A38A9EE8F0C")
     
 @Override
     public int hashCode() {
         return mClass;
     }
-
-    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+    
     @DSComment("Bluetooth subsystem")
     @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.439 -0500", hash_original_method = "E65C8DBAA86595E02DE1992FA15205E3", hash_generated_method = "8D351E82FF3F21D76A924AE1FC9D0F5E")

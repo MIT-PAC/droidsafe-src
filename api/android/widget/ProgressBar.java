@@ -503,6 +503,7 @@ Drawable getCurrentDrawable() {
         return mCurrentDrawable;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.788 -0500", hash_original_method = "56BA1F17FA722E2B64538801F5E2971D", hash_generated_method = "0B02F1DFB62424893F2A6429D2429244")
     
 @Override
@@ -520,6 +521,7 @@ Drawable getCurrentDrawable() {
         if (mIndeterminateDrawable != null) mIndeterminateDrawable.jumpToCurrentState();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.792 -0500", hash_original_method = "9D88EC1BAB8B30E9973F963BD590322C", hash_generated_method = "E638853BDC411A9115DF2C7DD6FAA67E")
     
 @Override
@@ -1045,6 +1047,7 @@ private void updateDrawableBounds(int w, int h) {
                 resolveSizeAndState(dh, heightMeasureSpec, 0));
     }
     
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.872 -0500", hash_original_method = "568F14E497668D52F70AE96AA5EB6F88", hash_generated_method = "4EB57F8B143863A87C550D037C073C6C")
     
 @Override
@@ -1069,6 +1072,7 @@ private void updateDrawableState() {
         }
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.899 -0500", hash_original_method = "875308A47ADC87038CC9E153A4D8FE71", hash_generated_method = "C5A52986289D68811DA77A5BE28BE018")
     
 @Override
@@ -1083,6 +1087,7 @@ private void updateDrawableState() {
         return ss;
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.901 -0500", hash_original_method = "A42CFAF758710477BAC4A7B2A0C98761", hash_generated_method = "36920F3704EEF8E261868AE4CB4E618B")
     
 @Override
@@ -1125,6 +1130,7 @@ RefreshProgressRunnable(int id, int progress, boolean fromUser) {
             mFromUser = fromUser;
         }
         
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.804 -0500", hash_original_method = "336F21C38B52B9E04C9FE91372F32949", hash_generated_method = "83B3C867EB5837D082466162CAA6717E")
         
 public void run() {
@@ -1221,6 +1227,7 @@ private SavedState(Parcel in) {
         {
             //Synthesized constructor
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.913 -0500", hash_original_method = "D171B097136E37DF343D32BCCA8935F6", hash_generated_method = "130DDEE72B6AB9E862C8FF6D8AE65536")
         
 public void run() {
@@ -1249,6 +1256,7 @@ public void run() {
         super.onDetachedFromWindow();
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.908 -0500", hash_original_method = "D1990D7DB1A5D8E4C14ADC3323533C4A", hash_generated_method = "B202A0D1F99F962057E80705738AC863")
     
 @Override

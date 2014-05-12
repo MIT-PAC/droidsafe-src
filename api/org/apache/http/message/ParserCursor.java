@@ -71,6 +71,7 @@ public boolean atEnd() {
         return this.pos >= this.upperBound;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.875 -0500", hash_original_method = "DBE0DD908DEA3CD4A10978C31BD1370E", hash_generated_method = "2E6E0F6E8C01B37DC93B75B47746ED9B")
     
 public String toString() {

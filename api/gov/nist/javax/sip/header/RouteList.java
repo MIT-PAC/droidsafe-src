@@ -23,6 +23,7 @@ public RouteList() {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.635 -0500", hash_original_method = "2F61955E2C85706175B79FB3D2D2F3C0", hash_generated_method = "3AE466ADB4F0E366572AF5C7F6662148")
     
 public Object clone() {
@@ -41,6 +42,7 @@ public String encode() {
     /**
     * Order is important when comparing route lists.
     */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.641 -0500", hash_original_method = "A0122B485E57B455599C6CF601D6C0DF", hash_generated_method = "4D776348804CFA53F1F532DA6E9B2F88")
     
 public boolean equals(Object other) {

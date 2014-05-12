@@ -23,6 +23,7 @@ public final void verify(
         // Allow everything - so never blowup.
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.824 -0500", hash_original_method = "ED955C33EA6685325DA62D50910E36BE", hash_generated_method = "F46E6B9F9900776CDE2FF2BDA277CE4E")
     
 @Override

@@ -270,7 +270,8 @@ void inflate(int nativeFrame) {
     /**
      * Clone the history item for use by clients of WebView.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.468 -0500", hash_original_method = "F79252569D56DBC251BCABE120CFDF67", hash_generated_method = "27F535B0484E36F77F11DB98C117FE82")
     
 protected synchronized WebHistoryItem clone() {

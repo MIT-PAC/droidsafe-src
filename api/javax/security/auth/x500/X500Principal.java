@@ -150,6 +150,7 @@ private synchronized String getCanonicalName() {
         return canonicalName;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.488 -0500", hash_original_method = "16164FE0EFFEA9276C58202163E56457", hash_generated_method = "21976A464F3BC3943AB2078CCE99F2EE")
     
 @Override
@@ -288,6 +289,7 @@ public String getName(String format, Map<String, String> oidMap) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.501 -0500", hash_original_method = "4EF4800FE4F6884E38EE2C97450FA744", hash_generated_method = "3A88B40C0022DC27EB5CA08AAE93161F")
     
 @Override
@@ -295,6 +297,7 @@ public String getName(String format, Map<String, String> oidMap) {
         return getCanonicalName().hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.503 -0500", hash_original_method = "FEC69921702EBFC3E3DC123C0BE46430", hash_generated_method = "14F925DECB3B9A5B93DB0759A2B51321")
     
 @Override

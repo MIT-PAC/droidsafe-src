@@ -232,6 +232,7 @@ public void onGroupExpand(int groupPosition) {
      * 
      *@see Activity#onRestoreInstanceState(Bundle)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-17 12:29:24.922 -0500", hash_original_method = "39D3E8C83EC5D9AA90999E3A2D1BCB07", hash_generated_method = "2DE8AD90C1A42DCA55687530BB5B9E78")
     @DSVerified
     @DSSafe(DSCat.ANDROID_CALLBACK)

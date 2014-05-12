@@ -29,6 +29,7 @@ public Type getGenericComponentType() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.098 -0500", hash_original_method = "4E93C574A33186DE87D5834EAA369B51", hash_generated_method = "406518163465E3F00AFF50CA1CF0EF49")
     
 public String toString() {

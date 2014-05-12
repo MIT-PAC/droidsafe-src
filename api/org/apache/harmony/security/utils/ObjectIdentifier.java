@@ -150,6 +150,7 @@ public Object getGroup() {
      * @return true if object is ObjectIdentifier and it has the same
      *         representation as array of integers, otherwise false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.696 -0500", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "DBC701613AB8121F89BA676B9E7A66A0")
     
 public boolean equals(Object o) {
@@ -181,6 +182,7 @@ public String toOIDString() {
      *
      * @return oid as string
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.701 -0500", hash_original_method = "B22823BCA8FD058C901A741025BA8FB1", hash_generated_method = "92EC2B489D0BE6DE5617D9029E2D7E07")
     
 public String toString() {
@@ -200,6 +202,7 @@ public String toString() {
     /**
      * @see java.lang.Object#hashCode()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.703 -0500", hash_original_method = "F5FB24607FBDCD1263609B3FEECCC6D5", hash_generated_method = "D5B8416537B382FD8670A89654FE3AB2")
     
 public int hashCode() {

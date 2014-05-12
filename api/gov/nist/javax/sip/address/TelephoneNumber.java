@@ -269,6 +269,7 @@ public void setParameter(String name, String value) {
         this.parameters.set(nv);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.056 -0500", hash_original_method = "459B956E59E9D185995D481A4A763AF3", hash_generated_method = "1635BF90DFA255E67007974322FCC816")
     
 public Object clone() {

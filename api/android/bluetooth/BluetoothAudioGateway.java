@@ -41,7 +41,6 @@ public final class BluetoothAudioGateway {
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.533 -0400", hash_original_field = "F82696E593286549B99728E6562ED9D1", hash_generated_field = "3997333156E746C627FA993D76FC6061")
 
-
     public static final int DEFAULT_HF_AG_CHANNEL = 10;
     static { classInitNative(); }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.539 -0400", hash_original_field = "B9EE0F99B0C99A1945576C74AECE857F", hash_generated_field = "38D914319528292CA03FB833542A99CF")
@@ -51,7 +50,6 @@ public final class BluetoothAudioGateway {
 
     private static final int SELECT_WAIT_TIMEOUT = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.623 -0400", hash_original_field = "25FA709D33CF50266D398A435BA7F1AF", hash_generated_field = "144FBEA5405FA41F6D424710247C2530")
-
 
     public static final int MSG_INCOMING_HEADSET_CONNECTION   = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.630 -0400", hash_original_field = "E284A44F47E8682914FB9DB34180E8D9", hash_generated_field = "226BDAFA89117FE4F935E78D1D5CE0F4")
@@ -64,14 +62,12 @@ public final class BluetoothAudioGateway {
     	//Formerly a native method
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.751 -0400", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
     
 private static void log(String msg) {
         Log.d(TAG, msg);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.453 -0400", hash_original_field = "9D85BF891BBAC903760564D2E61B8CF8", hash_generated_field = "3541F10A37794BA2B05C956071806434")
-
 
     private int mNativeData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.460 -0400", hash_original_field = "94B56F4550F8DC1E69A7FCBDD7CD840E", hash_generated_field = "E0CA92EB105687A6E5E806AF300841F1")
@@ -103,10 +99,8 @@ private static void log(String msg) {
     private int mTimeoutRemainingMs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.526 -0400", hash_original_field = "367F0BC6BC216C571A7E906A286477DF", hash_generated_field = "6EAF57CC559AB78B0231BFFF469261B9")
 
-
     private  BluetoothAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.562 -0400", hash_original_field = "53818DB76EF80588E58AA78B4C199830", hash_generated_field = "328A69F8FC9C4AD4192AE28EF8E2CA99")
-
 
     private Thread mConnectThead;
 
@@ -137,7 +131,6 @@ IncomingConnectionInfo(BluetoothAdapter adapter, BluetoothDevice remoteDevice,
 
     private volatile boolean mInterrupted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.578 -0400", hash_original_field = "0DF9D756B3E50DD960F8933929CC3D54", hash_generated_field = "12E01F9018D360A629E14518DC0790A2")
-
 
     private Handler mCallback;
 
@@ -255,6 +248,7 @@ public synchronized void stop() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:53.702 -0400", hash_original_method = "3346AD3DB2B9CFF2099981600AF7874D", hash_generated_method = "6323CD735E0014F5A515F3F6B7F52898")
     
 protected void finalize() throws Throwable {
@@ -276,7 +270,6 @@ protected void finalize() throws Throwable {
     	//Formerly a native method
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:11.873 -0400", hash_original_method = "54D3439963AB50C1617258BB05B55941", hash_generated_method = "384A878AB3507AF5AA7E7710A895C1F3")
     
     private boolean waitForHandsfreeConnectNative(int timeoutMs){
@@ -296,13 +289,10 @@ protected void finalize() throws Throwable {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:21:44.632 -0400", hash_original_method = "AB9B201BDC5272676E7CEA131DBEA3B1", hash_generated_method = "A5FDB50B9764F02C629BF7B764FC7862")
     
     private void tearDownListeningSocketsNative(){
     	//Formerly a native method
     }
-
-
 
 }

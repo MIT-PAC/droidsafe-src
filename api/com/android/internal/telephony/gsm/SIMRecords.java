@@ -268,6 +268,7 @@ public SIMRecords(PhoneBase p) {
         phone.mCM.unregisterForIccRefresh(this);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.383 -0500", hash_original_method = "D676C6F3D2367DC0A4942786FE826692", hash_generated_method = "8FC9E83F78C99852762B9D254E29E4B6")
     
 protected void finalize() {
@@ -610,6 +611,7 @@ public void onRefresh(boolean fileChanged, int[] fileList) {
     }
 
     // ***** Overridden from Handler
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.430 -0500", hash_original_method = "5FA65278BC21B747191DBEA87B814DA9", hash_generated_method = "B529690C6062B0B4AFDF86419451D74A")
     
 public void handleMessage(Message msg) {

@@ -152,6 +152,7 @@ public RemoteViews(Parcel parcel) {
         recalculateMemoryUsage();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.002 -0500", hash_original_method = "67D19BE5CA3BC69F21B2B2516A1FA2D6", hash_generated_method = "8D0A90225DBD95CD017FA44B645E3963")
     
 @Override

@@ -27,6 +27,7 @@ public final class StructPollfd {
         //Synthesized constructor
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.193 -0500", hash_original_method = "A14B5D7144ADE29CBA1A23DAE6B04BC8", hash_generated_method = "C524CB084AA16F2A7514F3446CA9F741")
     
 @Override public String toString() {

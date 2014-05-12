@@ -146,12 +146,14 @@ public String getValue() {
      * This is a pretty simple hashCode but satisfies requirements.
      *
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.640 -0500", hash_original_method = "78242797F449E5EBFB278CC5A6BC56D0", hash_generated_method = "684C0BABDAF236671E858A8C4C737032")
     
 public int hashCode() {
         return this.headerName.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.643 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "EF12A656DE467EE951401443200E525A")
     

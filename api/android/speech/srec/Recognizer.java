@@ -19,7 +19,6 @@
  * ---------------------------------------------------------------------------
  */
 
-
 package android.speech.srec;
 
 import droidsafe.annotations.*;
@@ -111,7 +110,6 @@ public final class Recognizer {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:21.565 -0400", hash_original_field = "5080775A99D45CC6DDFCF03BE6022990", hash_generated_field = "28B7F77EC056AE8A59F8AC3C83B7FC39")
 
-
     private static String TAG = "Recognizer";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:21.575 -0400", hash_original_field = "3488A26F340F9C164A711388BEE3FB0D", hash_generated_field = "A9F59F619A46E1A734F97229DA9AD65C")
 
@@ -190,7 +188,6 @@ public static String getConfigDir(Locale locale) {
     }
     */
 
-
     //
     // PMem native methods
     //
@@ -206,8 +203,6 @@ public static String getConfigDir(Locale locale) {
     	//Formerly a native method
     }
 
-
-
     //
     // SR_Session native methods
     //
@@ -222,7 +217,6 @@ public static String getConfigDir(Locale locale) {
     private static void SR_SessionDestroy(){
     	//Formerly a native method
     }
-
 
     /**
      * Represents a grammar loaded into the Recognizer.
@@ -314,6 +308,7 @@ public void destroy() {
         /**
          * Clean up resources.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:21.698 -0400", hash_original_method = "6716C894A456D859682D2AB42908EF6B", hash_generated_method = "98BB3A25E2A1A577EC358E8063919095")
         
 protected void finalize() {
@@ -670,7 +665,6 @@ public static String eventToString(int event) {
 
     // private static native void SR_Recognizer_Change_Sample_Rate (size_t new_sample_rate);
     
-    
     //
     // SR_AcousticState native methods
     //
@@ -697,8 +691,6 @@ public static String eventToString(int event) {
     	retObj.addTaint(taintDouble);
     	return retObj;
     }
-
-
 
     //
     // SR_Grammar native methods
@@ -799,8 +791,6 @@ public static String eventToString(int event) {
     	//Formerly a native method
     }
 
-
-
     //
     // SR_Vocabulary native methods
     //
@@ -838,8 +828,6 @@ public static String eventToString(int event) {
     	retObj.addTaint(taintDouble);
     	return retObj;
     }
-
-
 
     //
     // SR_RecognizerResult native methods
@@ -1134,6 +1122,7 @@ public void destroy() {
     /**
      * Clean up resources.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:21.802 -0400", hash_original_method = "AAC17ED6F21DB1AA39943BA358CCD6BE", hash_generated_method = "873117076B828C3677075711DA431F87")
     
 protected void finalize() throws Throwable {

@@ -354,6 +354,7 @@ CacheFile(File dir, String name) {
             this.name = name;
         }
 
+        @DSSpec(DSCat.TRIGGER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.713 -0500", hash_original_method = "3C0BB5E42CA61BE7C548B702B5AC04C2", hash_generated_method = "BB642944A143182340C96B18EBC6A665")
         
 @Override
@@ -365,6 +366,7 @@ CacheFile(File dir, String name) {
             return lastModified;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.716 -0500", hash_original_method = "D50DE30B99FDC8E45DF3D781BD6CEC46", hash_generated_method = "3C576BB7C770E964C0DFDBFD5D138C15")
         
 @Override

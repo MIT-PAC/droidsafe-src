@@ -123,6 +123,7 @@ public int compareTo(NetworkPolicy another) {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.700 -0500", hash_original_method = "65DB678FEF7477006B15C098764A0236", hash_generated_method = "C2440A66E1BCCC6935833C6BBD9BA113")
     
 @Override
@@ -130,6 +131,7 @@ public int compareTo(NetworkPolicy another) {
         return Objects.hashCode(template, cycleDay, warningBytes, limitBytes, lastSnooze);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.702 -0500", hash_original_method = "29E54ABFFB72D1CE12A9FC870E79CFC8", hash_generated_method = "FCD6C59FD3468B04C44328784A998130")
     
 @Override
@@ -143,6 +145,7 @@ public int compareTo(NetworkPolicy another) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.704 -0500", hash_original_method = "CB6123FDA6EA84240F335B44F0260DCB", hash_generated_method = "3DDF313AFB2564959CA137EE984A693C")
     
 @Override

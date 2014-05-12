@@ -121,6 +121,7 @@ public void setActiveApnType(String apnType) {
         mActiveApnType = apnType;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.614 -0500", hash_original_method = "E1755C32D3A976D9153A9C990E44F94A", hash_generated_method = "2277A0516A81E66C30686641937D6FA7")
     
 @Override

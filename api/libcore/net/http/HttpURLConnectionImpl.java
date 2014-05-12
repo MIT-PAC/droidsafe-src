@@ -59,6 +59,8 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         this.proxy = proxy;
     }
 
+    @DSSpec(DSCat.INTERNET)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.497 -0500", hash_original_method = "07B4C440A95D9405D35DB78948CBC089", hash_generated_method = "0896A3457DB910274CD957E12A356867")
     
 @Override public final void connect() throws IOException {
@@ -71,6 +73,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         }
     }
 
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.500 -0500", hash_original_method = "4F701A35ACBE562FB824E28633AD60E1", hash_generated_method = "BF9D464DBC2E9802325FA66A8043C490")
     
 @Override public final void disconnect() {
@@ -84,6 +87,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * Returns an input stream from the server in the case of error such as the
      * requested file (txt, htm, html) is not found on the remote server.
      */
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.502 -0500", hash_original_method = "1368F0D99A95C3E16EFCFEF5107A78C1", hash_generated_method = "1B71739BD68938AC170DF5E2779ED614")
     
@@ -164,6 +168,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         return rawRequestHeaders.toMultimap();
     }
 
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.519 -0500", hash_original_method = "45F412B75FA838EAF632FEA7E5AD9CE7", hash_generated_method = "1471DC304138D06A38141012D0B8ABF1")
     
@@ -543,6 +548,7 @@ final void setProxy(Proxy proxy) {
         return (proxy != null && proxy.type() != Proxy.Type.DIRECT);
     }
 
+    @DSSafe(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.571 -0500", hash_original_method = "9D8B4374AC98844408DFFFE370FDA266", hash_generated_method = "0B499DF550BA661FCA1181BB7DFA6E19")
     
@@ -550,12 +556,15 @@ final void setProxy(Proxy proxy) {
         return getResponse().getResponseHeaders().getHeaders().getResponseMessage();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.573 -0500", hash_original_method = "721B81AA4282A5EC0FCB04AA341634A3", hash_generated_method = "60A77DCA9BF2BED0D957882C1E30A07F")
     
 @Override public final int getResponseCode() throws IOException {
         return getResponse().getResponseCode();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.576 -0500", hash_original_method = "7F130ED52470D904C9FF4F495D6529EB", hash_generated_method = "403D82FE89DCF2C5B341CE7EB21CF163")
     

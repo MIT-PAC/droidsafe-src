@@ -54,6 +54,7 @@ public static void remove(Activity activity) {
         //Synthesized constructor
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.392 -0500", hash_original_method = "9E8EF57626D62E2B7C3743DD3C3689D3", hash_generated_method = "578BCD98040E82A839BAC9BE66745CC4")
     
 @Override
@@ -69,6 +70,7 @@ public static void remove(Activity activity) {
         }
     }
 
+    @DSSpec(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.394 -0500", hash_original_method = "94292D3BC9674D261A6EF4BCCF7C8037", hash_generated_method = "83EB981B596EF031ACD1ED4CD85BB59F")
     
 @Override
@@ -79,6 +81,7 @@ public static void remove(Activity activity) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.397 -0500", hash_original_method = "3DB00EC587E995AABF9F1C949970BD43", hash_generated_method = "006AC812CA663BB84799CA8A15F305D3")
     
 @Override
@@ -89,6 +92,7 @@ public static void remove(Activity activity) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.399 -0500", hash_original_method = "CC535C4F2465D6A6983D04B0B890F971", hash_generated_method = "C508A9E7E733198973F07FD56AF9B547")
     
 @Override

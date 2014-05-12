@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class NumberParseException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.364 -0500", hash_original_field = "D71FCBD367473EEEA673A4264EBD1059", hash_generated_field = "84B9E028BBF2DC9E5382F00380C2F272")
-
 
   private ErrorType errorType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.367 -0500", hash_original_field = "C9795C94D34B39950C581203743BD4FC", hash_generated_field = "B2821CE5540C52B19670BB2C4012F012")
@@ -35,13 +30,13 @@ public ErrorType getErrorType() {
     return errorType;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.374 -0500", hash_original_method = "6D8405A96F8D5D279CAA6C0BAAB6D3AE", hash_generated_method = "75826441FB213315B49F8F837251BF10")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.374 -0500", hash_original_method = "6D8405A96F8D5D279CAA6C0BAAB6D3AE", hash_generated_method = "75826441FB213315B49F8F837251BF10")
     
 @Override
   public String toString() {
     return "Error type: " + errorType + ". " + message;
   }
-
     
     public enum ErrorType {
     INVALID_COUNTRY_CODE,
@@ -50,7 +45,6 @@ public ErrorType getErrorType() {
     TOO_SHORT_NSN,
     TOO_LONG,
   }
-
     
 }
 

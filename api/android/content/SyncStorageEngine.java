@@ -346,6 +346,7 @@ private SyncStorageEngine(Context context, File dataDir) {
         writeStatisticsLocked();
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.522 -0500", hash_original_method = "4DFC4B128F767AF6A0DE11433A3D7DB7", hash_generated_method = "05B68495556CEF6C4C4ACEFA660D4A65")
     
 @Override public void handleMessage(Message msg) {

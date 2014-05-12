@@ -652,6 +652,7 @@ public String getPath() {
      * @return this files's hash value.
      * @see #equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.504 -0500", hash_original_method = "9D3CBE29781C2664F4636CCC28F83B76", hash_generated_method = "A10691391C760522DECD477F5CBA372A")
     
 @Override

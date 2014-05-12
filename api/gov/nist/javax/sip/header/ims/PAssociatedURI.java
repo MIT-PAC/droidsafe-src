@@ -99,6 +99,7 @@ public URI getAssociatedURI() {
         return this.address.getURI();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.863 -0500", hash_original_method = "58EA9D2DAC0517F3416AFEEB738C5473", hash_generated_method = "0322E510B605B1362C67E8B7107DDDB0")
     
 public Object clone() {

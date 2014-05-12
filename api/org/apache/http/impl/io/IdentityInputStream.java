@@ -27,6 +27,7 @@ public IdentityInputStream(final SessionInputBuffer in) {
         this.in = in;
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.921 -0500", hash_original_method = "DCB121D8842EB51547DBC31A4230EDC6", hash_generated_method = "5CD863C5AA1EC1E8A1FD76E994C7BF4D")
     
 public int available() throws IOException {
@@ -54,6 +55,8 @@ public int read() throws IOException {
         }
     }
     
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.927 -0500", hash_original_method = "E3ECD120B22D1F545DEC5B2DDE1C9AA2", hash_generated_method = "F96A7B756D9E3C99004DF720461E90B4")
     
 public int read(final byte[] b, int off, int len) throws IOException {

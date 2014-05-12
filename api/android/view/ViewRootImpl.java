@@ -1288,6 +1288,7 @@ void setStopped(boolean stopped) {
         }
     }
     
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.998 -0500", hash_original_method = "DCC308262D5800610A000228CF8970A4", hash_generated_method = "B63E6487D1CD4BEC29A92A9071D59DCB")
     
@@ -2968,6 +2969,7 @@ void updateConfiguration(Configuration config, boolean force) {
         return super.getMessageName(message);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.176 -0500", hash_original_method = "0C83FFF474CF8ADB1C57E65037847991", hash_generated_method = "1C66F19E0251DC0F4C166BC01DD8CB53")
     
 @Override
@@ -4433,6 +4435,7 @@ void executeActions(Handler handler) {
                 //Synthesized constructor
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.582 -0500", hash_original_method = "EC304D8CC82834BC90F0FBE66AB5A5B9", hash_generated_method = "C938ED2AF18512D30AC7B0FC7C115596")
             
 @Override
@@ -4445,6 +4448,7 @@ void executeActions(Handler handler) {
 
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.584 -0500", hash_original_method = "09AD30FBB7C8AE284E2A2DAD39966BF7", hash_generated_method = "4CB5C9186A3BFC50BEF59419A91AF26D")
             
 @Override
@@ -4994,6 +4998,7 @@ private View findViewByAccessibilityId(int accessibilityId) {
             //Synthesized constructor
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.716 -0500", hash_original_method = "3411919DDECDF923DB080425515AE494", hash_generated_method = "284E8A2C924C6821DE0394CBF655FA00")
         
 public void run() {
@@ -5864,6 +5869,7 @@ public void createContextMenu(ContextMenu menu) {
 public void childDrawableStateChanged(View child) {
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.400 -0500", hash_original_method = "975E17A58706A43B9CF06D84428C706E", hash_generated_method = "345829A822BD9A49FC53CC2C92D894F7")
     
 public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event) {
@@ -5885,6 +5891,7 @@ void checkThread() {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.405 -0500", hash_original_method = "F9834E22E1AF22274F19B27CD50E21E5", hash_generated_method = "F75D2CCB2F8E265CC0225DD86A137DA0")
     
 public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {

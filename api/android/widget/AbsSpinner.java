@@ -372,6 +372,7 @@ abstract void layout(int delta, boolean animate);
      * 
      * @see android.view.View#requestLayout()
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.379 -0500", hash_original_method = "7199FF25ED586C3851E847C0919D8CB4", hash_generated_method = "07FC44E84DEB35164CA25A3FE21E0C66")
     
 @Override
@@ -430,6 +431,7 @@ public int pointToPosition(int x, int y) {
         return INVALID_POSITION;
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.413 -0500", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "0F01E07DD73E3F973CD57D0A62D38B74")
     
@@ -446,6 +448,7 @@ public int pointToPosition(int x, int y) {
         return ss;
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.415 -0500", hash_original_method = "41BC9B1A20EF7E956C712A8B84EE3401", hash_generated_method = "7D1B2596D4E45FA48A8841B2C2008EAA")
     
 @Override
@@ -524,6 +527,7 @@ private SavedState(Parcel in) {
             out.writeInt(position);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.399 -0500", hash_original_method = "7A4BA85F6ACBC7FE9656B24BA8A57B9A", hash_generated_method = "9BDE436EE95F0B725ABEA235B286B622")
         
 @Override

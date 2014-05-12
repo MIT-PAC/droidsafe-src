@@ -116,6 +116,7 @@ public void extendSelection(int index) {
         Selection.extendSelection(getText(), index);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.060 -0500", hash_original_method = "6149CD37480D13E19ED1369D0EB1259F", hash_generated_method = "B85F62DC494030C28FDECABCDE97C862")
     
 @Override

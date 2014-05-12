@@ -19,6 +19,7 @@ public SecurityClientList()
         super(SecurityClient.class, SecurityClientHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.424 -0500", hash_original_method = "8CB3EC0B5802F634A5AAC136D83D14DA", hash_generated_method = "E489BFA062A3143B472A4B66C0C0558F")
     
 public Object clone() {

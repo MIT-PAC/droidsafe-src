@@ -119,7 +119,7 @@ public Base64OutputStream(OutputStream out, boolean doEncode, int lineLength, by
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:10.102 -0500", hash_original_method = "D38D28D8C40C92DB1F9D6C2E1B0DC8AA", hash_generated_method = "69B7B62672AB1D4CC5087EE6A83EB249")
     
@@ -146,6 +146,8 @@ public void write(int i) throws IOException {
      * @throws IndexOutOfBoundsException
      *             if offset, len or buffer size are invalid
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:10.117 -0500", hash_original_method = "71297ADEDFB051E21A298196DEA9F7A9", hash_generated_method = "512C8436B08E5E9450DA46964D8395B7")
     
 public void write(byte b[], int offset, int len) throws IOException {
@@ -196,6 +198,7 @@ private void flush(boolean propogate) throws IOException {
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:10.138 -0500", hash_original_method = "12B88D256BE6909244011FA728F05779", hash_generated_method = "A76BC19837CC4CA07F375216D19D2DA4")
     
 public void flush() throws IOException {

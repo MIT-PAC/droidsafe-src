@@ -119,6 +119,7 @@ public void setTransitioning(boolean isTransitioning) {
                 : FOCUS_AFTER_DESCENDANTS);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.368 -0500", hash_original_method = "8E69245395EC81C98ED35F3490421A0A", hash_generated_method = "8AB0F37E57E1B73525ABFAFDCB30E195")
     
 @Override
@@ -126,6 +127,7 @@ public void setTransitioning(boolean isTransitioning) {
         return mIsTransitioning || super.onInterceptTouchEvent(ev);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.371 -0500", hash_original_method = "FA8EB54F33D4C310829625567514278C", hash_generated_method = "361F2E2DF99BACCBC61C78B1A6B505F9")
     
 @Override

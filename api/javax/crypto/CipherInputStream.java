@@ -120,6 +120,8 @@ protected CipherInputStream(InputStream is) {
      * @throws NullPointerException
      *             if the underlying input stream is {@code null}.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.867 -0500", hash_original_method = "B8FB2A7CB3FB3DB7D0751D6D604C7303", hash_generated_method = "32C5EF162C13731AD932D0D8BFB53A3E")
     
 @Override
@@ -141,6 +143,7 @@ protected CipherInputStream(InputStream is) {
         return i;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.869 -0500", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "FA64348A96D1C68BD0600E70DFA81D7E")
     
 @Override
@@ -148,6 +151,7 @@ protected CipherInputStream(InputStream is) {
         return Streams.skipByReading(this, byteCount);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.872 -0500", hash_original_method = "1AA324AC6812BCD54DB71C20D6BA0F20", hash_generated_method = "A7CC27DC0CFA97EFE281A07867F4C6B1")
     
 @Override

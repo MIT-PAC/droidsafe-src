@@ -553,6 +553,7 @@ ClientRange(int startId, int endId, String client) {
             this.client = client;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.639 -0500", hash_original_method = "1032526D9DAEE515FA8C17531DBF15E9", hash_generated_method = "16202EE818EC4DDF9F149B854F56C5E2")
         
 @Override
@@ -567,6 +568,7 @@ ClientRange(int startId, int endId, String client) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.642 -0500", hash_original_method = "0C827ECC35335C49789EB5A12C0D3470", hash_generated_method = "06036D7E4EDE321F05B46CD2CA11EBC2")
         
 @Override

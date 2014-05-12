@@ -18,6 +18,7 @@ public AcceptLanguageList() {
         super(AcceptLanguage.class, AcceptLanguageHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.388 -0500", hash_original_method = "D59E3796661CC485086FCE096143E912", hash_generated_method = "03A83275E60D6404210400900BC142E2")
     
 @Override

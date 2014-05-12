@@ -46,6 +46,7 @@ public byte[] getEncoded() {
         return encoded;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.004 -0500", hash_original_method = "20DEFC617AA5E46ABFC95D3E93C239C4", hash_generated_method = "96DFD8424131B803A4EF93B61EB26A33")
     
 @Override

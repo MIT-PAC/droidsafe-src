@@ -646,6 +646,7 @@ public boolean getValue(int index, TypedValue outValue) {
 		*/
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     public String toString(){
         String str = new String();
         str.addTaint(getTaint());

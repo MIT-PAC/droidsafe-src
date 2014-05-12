@@ -129,6 +129,7 @@ CustomFrameLayout(Context context) {
             return true;
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.299 -0500", hash_original_method = "D87B32C51AD302A4F9341AA86337AE33", hash_generated_method = "E1BFFD5904A19191D2571DCFB08E531F")
         
 @Override

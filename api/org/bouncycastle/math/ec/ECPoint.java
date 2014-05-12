@@ -75,6 +75,7 @@ public boolean isCompressed()
         return withCompression;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.185 -0500", hash_original_method = "8BF915B7848C2883598F0B5C0E5B1EC3", hash_generated_method = "B1CF18F38474C7B1300F51346353AD68")
     
 public boolean equals(
@@ -100,6 +101,7 @@ public boolean equals(
         return x.equals(o.x) && y.equals(o.y);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.187 -0500", hash_original_method = "50EB0D4EE4BADC10EDE9CC4D5C9244FF", hash_generated_method = "2A84500AF5522BA453AA1FD2D5457EB0")
     
 public int hashCode()

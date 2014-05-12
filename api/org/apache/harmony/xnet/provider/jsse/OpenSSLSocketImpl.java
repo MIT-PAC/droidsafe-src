@@ -662,6 +662,7 @@ private void notifyHandshakeCompletedListeners() {
         }
     }
 
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.448 -0500", hash_original_method = "E61C85BF5C63F4E04D0D50BF3BBE2593", hash_generated_method = "9C95B417085D7551D5EC0712704BED9B")
     
@@ -676,6 +677,7 @@ private void notifyHandshakeCompletedListeners() {
         }
     }
 
+    @DSSafe(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.451 -0500", hash_original_method = "5EE71E3DCC35A33F08AD90BC3313950F", hash_generated_method = "6CE39E410CF8CCCF59840355AC2838A9")
     
@@ -909,6 +911,7 @@ public void setHostname(String hostname) {
         throw new SocketException("Methods sendUrgentData, setOOBInline are not supported.");
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.531 -0500", hash_original_method = "E02183BB387F9960402CB70797EE289E", hash_generated_method = "32B36D8D7361BAC8ED0E0F8D32011628")
     
 @Override public void setSoTimeout(int timeoutMilliseconds) throws SocketException {
@@ -916,6 +919,7 @@ public void setHostname(String hostname) {
         this.timeoutMilliseconds = timeoutMilliseconds;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.533 -0500", hash_original_method = "5DC72E2D363A272A051BD7C43DA762A2", hash_generated_method = "D32334B4CD482D6200A332CBDFCB967B")
     
@@ -933,6 +937,7 @@ public void setHandshakeTimeout(int timeoutMilliseconds) throws SocketException 
         this.handshakeTimeoutMilliseconds = timeoutMilliseconds;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.539 -0500", hash_original_method = "B24ED3F34169856B1F2602ADA3894B40", hash_generated_method = "A80605B25B40A3072796A70B81151DC2")
     
 @Override public void close() throws IOException {
@@ -1013,6 +1018,7 @@ private void free() {
         guard.close();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.543 -0500", hash_original_method = "48478F0D5C609BA19837DA284D888FF0", hash_generated_method = "082623D36BB08A27362F90E4DF4CDA8E")
     
 @Override protected void finalize() throws Throwable {
@@ -1083,6 +1089,8 @@ SSLInputStream() throws IOException {
          * Method acts as described in spec for superclass.
          * @see java.io.InputStream#read(byte[],int,int)
          */
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.459 -0500", hash_original_method = "DB2A9854396CBE443BE0852C07C28BD2", hash_generated_method = "ECBC97609AB96B474232BAA571BAA079")
         
 @Override
@@ -1117,7 +1125,7 @@ SSLOutputStream() throws IOException {
          * @see java.io.OutputStream#write(int)
          */
         @DSSafe(DSCat.SAFE_OTHERS)
-        @DSSink(DSSinkKind.IO)
+        @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.466 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
         
 @Override
@@ -1129,6 +1137,8 @@ SSLOutputStream() throws IOException {
          * Method acts as described in spec for superclass.
          * @see java.io.OutputStream#write(byte[],int,int)
          */
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.469 -0500", hash_original_method = "D98A6CBE7C5513FE6A9CDBBB263207DD", hash_generated_method = "3497AA2BACB57E1B8AC8F3075A18C057")
         
 @Override

@@ -636,6 +636,7 @@ private boolean escapedEquals(String first, String second) {
         return first.substring(prevIndex).equals(second.substring(prevIndex));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.865 -0500", hash_original_method = "DB7C53AF9EACD0E0331CDA9F529DED49", hash_generated_method = "94E9D99A301365B092DEF6BEE6C6EFF6")
     
 @Override public boolean equals(Object o) {
@@ -888,6 +889,7 @@ public String getRawFragment() {
         return fragment;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.908 -0500", hash_original_method = "7F32815A976A993D04E3E3C7E39CEF39", hash_generated_method = "3A9B64656A6C71327BB5A2E8309713FA")
     
 @Override public int hashCode() {

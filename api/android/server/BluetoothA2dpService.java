@@ -46,7 +46,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
 public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.105 -0400", hash_original_field = "F7BE345D8432151F393BCADE247CA21B", hash_generated_field = "69040284546242DA4C7DDD43177486F6")
 
@@ -56,10 +55,8 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     private static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.108 -0400", hash_original_field = "27D205A061FECC149542D215DE09D949", hash_generated_field = "67038ABD138EE0782CAB470526F24F8A")
 
-
     public static final String BLUETOOTH_A2DP_SERVICE = "bluetooth_a2dp";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.110 -0400", hash_original_field = "4DF5D31E376F27F1ED153009F2B9E52D", hash_generated_field = "A458E8B2DE444E0F35989DFD935DFB5E")
-
 
     private static final String BLUETOOTH_ADMIN_PERM = android.Manifest.permission.BLUETOOTH_ADMIN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.112 -0400", hash_original_field = "7D77AF0882759DFB1A72C6B4C36DC3FE", hash_generated_field = "E2769F8C31AF358A24555782DE15D8EA")
@@ -67,10 +64,8 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     private static final String BLUETOOTH_PERM = android.Manifest.permission.BLUETOOTH;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.114 -0400", hash_original_field = "DBC1313AABDEA2F27F7ACFEA80E16438", hash_generated_field = "2258CD2ECC199D4A30E45874F6460BE4")
 
-
     private static final String BLUETOOTH_ENABLED = "bluetooth_enabled";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.115 -0400", hash_original_field = "B75E5C2AB63CA7BA825AEF29B7CF7E48", hash_generated_field = "0E95D5287C95216CC78C437C243AAF47")
-
 
     private static final String PROPERTY_STATE = "State";
 
@@ -80,7 +75,6 @@ private static void log(String msg) {
         Log.d(TAG, msg);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.117 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.118 -0400", hash_original_field = "0DB283351EC814B93D52AEB5B24E6EF6", hash_generated_field = "6341ED23E171F7FC731950F1780200DC")
@@ -105,7 +99,6 @@ private static void log(String msg) {
 
     private BluetoothDevice mPlayingA2dpDevice;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.133 -0400", hash_original_field = "0E0C7B980ADD0D434C4E6143AE26C160", hash_generated_field = "2B9DF3DAD1EE53E34A2D51A12C594F7D")
-
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:06:56.986 -0400", hash_original_method = "878FE6B60A52570D7F6B49AD2B0B3F2D", hash_generated_method = "D413CDE19E8443BD63B95B93A2A1364F")
@@ -205,6 +198,7 @@ private boolean isPhoneDocked(BluetoothDevice device) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.140 -0400", hash_original_method = "55245180BFCEB39D7A6E7F3D4E6368A1", hash_generated_method = "FFF3452A468C85DF16976915AA7081FC")
     
 @Override
@@ -708,13 +702,11 @@ private void onConnectSinkResult(String deviceObjectPath, boolean result) {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:22:06.585 -0400", hash_original_method = "0C2EE552DC7F558BD6A4A53E3AFE7F2F", hash_generated_method = "98CBBA9AEDB786D020329F7CBF121502")
     
     private void cleanupNative(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:33.198 -0400", hash_original_method = "45EC4B58B4B524F3D68AA4F5C4E76250", hash_generated_method = "CA847919F0913F00DB3C7B75158B3761")
     
@@ -795,7 +787,5 @@ private void onConnectSinkResult(String deviceObjectPath, boolean result) {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
 
 }

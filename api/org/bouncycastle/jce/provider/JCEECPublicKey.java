@@ -523,6 +523,7 @@ org.bouncycastle.jce.spec.ECParameterSpec engineGetSpec()
         return ProviderUtil.getEcImplicitlyCa();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.566 -0500", hash_original_method = "DA24BA2CA85DFA6FE167BE0F082D0E3F", hash_generated_method = "CB4B65C7D162FEAF0C22BCA6280EC868")
     
 public String toString()
@@ -545,6 +546,7 @@ public void setPointFormat(String style)
        withCompression = !("UNCOMPRESSED".equalsIgnoreCase(style));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.571 -0500", hash_original_method = "D60F50DFADDF83A04F7A401D33CE399D", hash_generated_method = "03935E2D11EA3D091E1B0044C726EAFF")
     
 public boolean equals(Object o)
@@ -559,6 +561,7 @@ public boolean equals(Object o)
         return engineGetQ().equals(other.engineGetQ()) && (engineGetSpec().equals(other.engineGetSpec()));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.573 -0500", hash_original_method = "218BA141B3E48ED89E83DD04DDAC204C", hash_generated_method = "6A1E6B819F1E90D11549359BBF278FE9")
     
 public int hashCode()

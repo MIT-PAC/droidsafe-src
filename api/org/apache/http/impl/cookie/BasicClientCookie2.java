@@ -79,6 +79,7 @@ public void setDiscard(boolean discard) {
         return this.discard || super.isExpired(date);
     }
  
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.998 -0500", hash_original_method = "A1E29AF284BD9497DEE668CED1078224", hash_generated_method = "FB4BC060942698DD2C38881BD794513C")
     
 @Override

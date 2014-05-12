@@ -132,6 +132,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.699 -0500", hash_original_method = "D4457BF5780841D42A453C9EF4E52627", hash_generated_method = "B0DF9AC149F7E6955196F1D99A54FDC8")
     
 public StatusBarNotification clone() {
@@ -139,6 +140,7 @@ public StatusBarNotification clone() {
                 this.uid, this.initialPid, this.notification.clone());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.701 -0500", hash_original_method = "8CD358CFA5A2F08AEF9168AA24337844", hash_generated_method = "E14803EA7B60A6C308199D848F3645DC")
     
 public String toString() {

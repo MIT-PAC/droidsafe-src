@@ -10,9 +10,6 @@ import org.bouncycastle.asn1.ASN1TaggedObject;
 import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERSequence;
 
-
-
-
 public class GeneralNames extends ASN1Encodable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:21.749 -0500", hash_original_method = "AFA92D82B845809211E4A674A6437E54", hash_generated_method = "641D9D1CEA70BD86DA319CB4CEF0729E")
@@ -95,6 +92,7 @@ public DERObject toASN1Object()
         return new DERSequence(names);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:21.765 -0500", hash_original_method = "7DDFA5C3E7762D6D39ED7DFFF0863845", hash_generated_method = "7DF9CFC8C5E0FD58B275A4A168000EA9")
     
 public String toString()
@@ -113,7 +111,6 @@ public String toString()
         }
         return buf.toString();
     }
-
     
 }
 

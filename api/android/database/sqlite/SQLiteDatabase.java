@@ -115,7 +115,7 @@ public static SQLiteDatabase openDatabase(String path, CursorFactory factory, in
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.144 -0500", hash_original_method = "320878150F5912B8D3148CDF6639FAEA", hash_generated_method = "7A60C4CE5D61D8E31F425BBC36F9236C")
     @DSVerified
-    @DSSpec(DSCat.DATABASE)
+    @DSBan(DSCat.PRIVATE_METHOD)
 private static SQLiteDatabase openDatabase(String path, CursorFactory factory, int flags,
             DatabaseErrorHandler errorHandler, short connectionNum) {
         SQLiteDatabase db = new SQLiteDatabase(path, factory, flags, errorHandler, connectionNum);
@@ -2233,6 +2233,7 @@ public void execSQL(String sql, Object[] bindArgs) throws SQLException {
         //}
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.258 -0500", hash_original_method = "2C203F91898576B00C917F0CD42A518A", hash_generated_method = "EB41B0B43B63A7C91338368112E979A1")
     
 @Override

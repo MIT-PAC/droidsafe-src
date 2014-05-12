@@ -498,6 +498,7 @@ public void release() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:15.889 -0400", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "B426276F6755268DFF3429CB984C1F76")
     
 @Override
@@ -1003,6 +1004,7 @@ public NativeEventHandler(AudioEffect ae, Looper looper) {
             mAudioEffect = ae;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:15.971 -0400", hash_original_method = "C289DC395E4E26362FC1998C3447C245", hash_generated_method = "D142DA7ABE6DA323BDA789EE9C977D14")
         
 @Override

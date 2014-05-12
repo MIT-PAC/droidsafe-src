@@ -30,6 +30,7 @@ RuimFileHandler(CDMAPhone phone) {
 public void dispose() {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.376 -0500", hash_original_method = "CF724477DA2C2A9786B4BE9A808F0A43", hash_generated_method = "C2A559F48B57DAFE35BF0FE1D49C9585")
     
 protected void finalize() {
@@ -50,6 +51,7 @@ protected void finalize() {
                 GET_RESPONSE_EF_IMG_SIZE_BYTES, null, null, response);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.381 -0500", hash_original_method = "D06C959A971F705A496791A8170E55B9", hash_generated_method = "DCAA486667275FD4C905CA1844E72CB8")
     
 @Override

@@ -224,6 +224,7 @@ public void setQValue(float qValue) throws InvalidArgumentException {
         this.parameters.set(Q, Float.valueOf(qValue));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.641 -0500", hash_original_method = "286D385E6B16CCC7A8923BBB55E45ED9", hash_generated_method = "FE736C53CFC884347A0B2B8DF85D7263")
     
 public Object clone() {
@@ -253,6 +254,7 @@ public boolean isWildCard() {
         return this.address.isWildcard();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.650 -0500", hash_original_method = "BA2F3C2ED46538A7D01836631FBE38C7", hash_generated_method = "99D5D0C9ED88D72D0120AE5AD100D38A")
     
 public boolean equals(Object other) {

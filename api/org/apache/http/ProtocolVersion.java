@@ -117,6 +117,7 @@ public ProtocolVersion forVersion(int major, int minor) {
      *
      * @return  the hashcode of this protocol version
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.460 -0500", hash_original_method = "A7F4A91DFB541B4D61B848B18DDC1A50", hash_generated_method = "AC0473F27DD69A23C193144C2851A18A")
     
 public final int hashCode() {
@@ -136,6 +137,7 @@ public final int hashCode() {
      * @return  <code>true</code> if the argument is the same protocol version,
      *          <code>false</code> otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.463 -0500", hash_original_method = "316EA3FE02F120244DD49AEBA8B051C7", hash_generated_method = "7D77327781AF9C48E35C6EC2E191C842")
     
 public final boolean equals(Object obj) {
@@ -243,6 +245,7 @@ public final boolean lessEquals(ProtocolVersion version) {
      *
      * @return  a protocol version string, like "HTTP/1.1"
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.475 -0500", hash_original_method = "1AC3EEF7BC77C90C94CB72A8DD95F4D1", hash_generated_method = "4E039E1AE81D078882436CC8AA6BF17D")
     
 public String toString() {
@@ -255,6 +258,7 @@ public String toString() {
         return buffer.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.477 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "587F7AA34F50D42D8C2635621B97F7C1")
     
 public Object clone() throws CloneNotSupportedException {

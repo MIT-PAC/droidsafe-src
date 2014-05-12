@@ -157,6 +157,8 @@ public ByteArrayInputStream(byte[] buf, int offset, int length) {
      * @throws NullPointerException
      *             if {@code b} is {@code null}.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.640 -0500", hash_original_method = "2397610A056026EF1112E9790F6EF360", hash_generated_method = "663B8330086A3871A53D5A7AE9818F19")
     
 @Override
@@ -199,6 +201,7 @@ public ByteArrayInputStream(byte[] buf, int offset, int length) {
      *
      * @return the number of bytes actually skipped.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.645 -0500", hash_original_method = "18E56C09FFA023CF1EF098815CAD3886", hash_generated_method = "6E84A1643042A7F06B393E044B40838F")
     
 @Override

@@ -140,6 +140,7 @@ public void dispose() {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.721 -0500", hash_original_method = "73544050C1854D0258F226F7B919F554", hash_generated_method = "C470172F982ABBA31D01D9E31C6B3D79")
     
 @Override
@@ -1102,6 +1103,7 @@ private void handleCallWaitingInfo (CdmaCallWaitingNotification cw) {
     }
     //****** Overridden from Handler
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.829 -0500", hash_original_method = "D1EB700FB6D9FD1E2DF39441FB36A7DD", hash_generated_method = "46996E77C662E1737BAE7325001DAED7")
     
 public void

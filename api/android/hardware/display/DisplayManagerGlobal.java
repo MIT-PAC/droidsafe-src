@@ -60,7 +60,6 @@ public final class DisplayManagerGlobal {
     private static final boolean USE_CACHE = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.795 -0500", hash_original_field = "74EA4FCC072BFA7BB93368AA3F2BD3C5", hash_generated_field = "2B6F13EBEB2F547B6101E69203D7A154")
 
-
     public static final int EVENT_DISPLAY_ADDED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.797 -0500", hash_original_field = "63C64DE2D70E1D058154728ED5214DCC", hash_generated_field = "BE97FE48F8DD5346E5A69305E60A5E14")
 
@@ -69,7 +68,6 @@ public final class DisplayManagerGlobal {
 
     public static final int EVENT_DISPLAY_REMOVED = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.801 -0500", hash_original_field = "981287867F628CB13A8DE50D782D49FB", hash_generated_field = "9937810F50139C375F005A5D443261EC")
-
 
     private static DisplayManagerGlobal sInstance;
 
@@ -94,14 +92,11 @@ public static DisplayManagerGlobal getInstance() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.803 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
 
-
     private final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.805 -0500", hash_original_field = "9409ADEE56CE8D79A6721E369C1DB7BD", hash_generated_field = "01730059E534D7D39601788492B3D674")
 
-
     private  IDisplayManager mDm;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.806 -0500", hash_original_field = "31EC7A891F0642B692733C03DA33A1D1", hash_generated_field = "8CF5DB6BFB361184B0285E5FDF09B75A")
-
 
     private DisplayManagerCallback mCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.808 -0500", hash_original_field = "F5ECCA389BA40FCD17897E4E1A03E936", hash_generated_field = "700A6D5AD49105AA37D08AAAC0761D95")
@@ -109,7 +104,6 @@ public static DisplayManagerGlobal getInstance() {
     private final ArrayList<DisplayListenerDelegate> mDisplayListeners =
             new ArrayList<DisplayListenerDelegate>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.810 -0500", hash_original_field = "64A3041904684602A14A01EFE3805C58", hash_generated_field = "A20FD6EDDE6483602DE445CF4D1AD565")
-
 
     private final SparseArray<DisplayInfo> mDisplayInfoCache = new SparseArray<DisplayInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.812 -0500", hash_original_field = "68205E3AA3D1446A13014794146ADBF1", hash_generated_field = "C1B49A6936EC8E8FC7035AA2DEE85250")
@@ -427,6 +421,7 @@ public void clearEvents() {
             removeCallbacksAndMessages(null);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.857 -0500", hash_original_method = "40FD96142E58D5B8E6192BAD39A83962", hash_generated_method = "DFDA8C0A2A0D18AAC169836EF5DE13D4")
         
 @Override

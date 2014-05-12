@@ -5,10 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class Pair<F, S> {
-
     
     public static <A, B> Pair <A, B> create(A a, B b) {
         return new Pair<A, B>(a, b);
@@ -38,6 +35,7 @@ public Pair(F first, S second) {
      * @param o the Pair to which this one is to be checked for equality
      * @return true if the underlying objects of the Pair are both considered equals()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.659 -0500", hash_original_method = "A022862730CB324FED346DC42742A154", hash_generated_method = "AA162B5160A8E91B07EBFE324BF6321B")
     
 public boolean equals(Object o) {
@@ -56,6 +54,7 @@ public boolean equals(Object o) {
      * Compute a hash code using the hash codes of the underlying objects
      * @return a hashcode of the Pair
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.661 -0500", hash_original_method = "7E2E6D9DD55E11668C618EBE33FB07A0", hash_generated_method = "CA3FA9F91E6A875A2B5F08D2451BF398")
     
 public int hashCode() {
@@ -64,7 +63,6 @@ public int hashCode() {
         result = 31 * result + second.hashCode();
         return result;
     }
-
     
 }
 

@@ -261,6 +261,7 @@ private ThreadEvent(ThreadEventType type, int threadId) {
             this.parentGroupName = null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.629 -0500", hash_original_method = "FD54D2802DF7D246F84571D313E0773D", hash_generated_method = "F46316606B4ECC5031DC4889DFA2B97D")
         
 @Override public int hashCode() {
@@ -273,6 +274,7 @@ private ThreadEvent(ThreadEventType type, int threadId) {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.633 -0500", hash_original_method = "11A9724AFC12A4881460E902B1AEFFA3", hash_generated_method = "EE11CCD3CC57E7DF758713E3E4B38A33")
         
 @Override public boolean equals(Object o) {
@@ -288,6 +290,7 @@ private ThreadEvent(ThreadEventType type, int threadId) {
                     && equal(this.parentGroupName, event.parentGroupName));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.638 -0500", hash_original_method = "B2760D4380298F8E4BDF009F5947B547", hash_generated_method = "00D33050A805DF122F8DD66BA58B8B75")
         
 @Override public String toString() {
@@ -348,6 +351,7 @@ public StackTraceElement[] getStackFrames() {
             return stackFrames;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.663 -0500", hash_original_method = "E0B79EC3EEC67C907668B24F8C3EF7D1", hash_generated_method = "AFE401C67F6D931BCAAEF0E82CFDAA82")
         
 @Override public int hashCode() {
@@ -357,6 +361,7 @@ public StackTraceElement[] getStackFrames() {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.665 -0500", hash_original_method = "A370788F6EF207DC60ADB1FE1413BF45", hash_generated_method = "4A682E3E47DCF75C1A45CA35D4B2C91C")
         
 @Override public boolean equals(Object o) {
@@ -367,6 +372,7 @@ public StackTraceElement[] getStackFrames() {
             return threadId == s.threadId && Arrays.equals(stackFrames, s.stackFrames);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.668 -0500", hash_original_method = "2C975038FABEA62C51E7521430E68593", hash_generated_method = "8D486D7C7A0831C4B88D3C042858FBFC")
         
 @Override public String toString() {
@@ -410,6 +416,7 @@ private Sample(StackTrace stackTrace, int count) {
             this.count = count;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.683 -0500", hash_original_method = "EB1A3879F5EB62721F94FC1BD32D5C70", hash_generated_method = "2C3496A2A5F7EE7E98BA86BEBEA28FA1")
         
 @Override public int hashCode() {
@@ -419,6 +426,7 @@ private Sample(StackTrace stackTrace, int count) {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.686 -0500", hash_original_method = "9F96433135E9DB2A8F09B7286FEF9854", hash_generated_method = "2B472D21EA9052EA3DFD5383BF7255CA")
         
 @Override public boolean equals(Object o) {
@@ -429,6 +437,7 @@ private Sample(StackTrace stackTrace, int count) {
             return count == s.count && stackTrace.equals(s.stackTrace);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.688 -0500", hash_original_method = "27C27C8BDAE57781C2B46A818775E5B8", hash_generated_method = "91AD06F5748CB950C2424F6F1F5DE469")
         
 @Override public String toString() {

@@ -300,6 +300,7 @@ public Canvas lockCanvas(Rect dirty) throws OutOfResourcesException, IllegalArgu
     	addTaint(canvas.getTaint());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.475 -0500", hash_original_method = "FD610F755B3A8168C37DFBCC26EDD5A5", hash_generated_method = "54AB5DF9C4117B8784EF6101A4996B57")
     
 @Override
@@ -407,6 +408,7 @@ public OutOfResourcesException(String name) {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.576 -0500", hash_original_method = "4436A903F00C274285C5C4A8B9E9A836", hash_generated_method = "7E4FCA6940233D2ACFDD830B11A7EB5E")
         
@@ -419,6 +421,7 @@ public OutOfResourcesException(String name) {
             return w;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.578 -0500", hash_original_method = "F355CB2C14EBD84D4AE7E0F5ECAE6C3D", hash_generated_method = "1F36206BE99414248829BD77B2AE6B44")
         
@@ -583,6 +586,7 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     	addTaint(mask);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.684 -0500", hash_original_method = "1BAE2B05EDDA8E2427743FE96FA46E82", hash_generated_method = "38D56802FE40307751E55D69AFDE7EA9")
     
 @Override

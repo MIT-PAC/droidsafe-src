@@ -111,6 +111,7 @@ protected void removeSipProvider() {
      * started. The transport is set to null.
      * @return cloned listening point.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.730 -0500", hash_original_method = "641C5C66572DBEDEF9FDF97C1A945C27", hash_generated_method = "BB3641FDEB99F8F0DEA7460B697D9064")
     
 public Object clone() {

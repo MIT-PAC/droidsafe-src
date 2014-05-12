@@ -590,6 +590,7 @@ public String getCanonicalHostName() {
      *
      * @return the appropriate hashcode value.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.248 -0500", hash_original_method = "70D58F36ADD2B32D6B4870D6C7A22922", hash_generated_method = "433764DDD4E9EAA1E0D1F44F5A4A6BD2")
     
 @Override

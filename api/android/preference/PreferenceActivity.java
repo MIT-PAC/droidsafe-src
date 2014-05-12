@@ -609,6 +609,7 @@ public void setListFooter(View view) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.611 -0500", hash_original_method = "1A457C81CAD07F8216A55B906C01B0EE", hash_generated_method = "F1397A80A92FDCEF0EACA23B93A28389")
     
 @Override
@@ -635,6 +636,8 @@ public void setListFooter(View view) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.614 -0500", hash_original_method = "3A902C5AADE0A248676EF9D6166BBE53", hash_generated_method = "757342F67D8E14FAD1B0748543E54D0E")
     
 @Override
@@ -658,7 +661,7 @@ public void setListFooter(View view) {
 
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.616 -0500", hash_original_method = "BC5669EA98C9095AD4591AFCBD99CE20", hash_generated_method = "367800A5BDAE41B74EA1B95BD8DBE532")
     
 @Override
@@ -1029,7 +1032,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
             TextView summary;
             
             @DSComment("Private Method")
-            @DSBan(DSCat.PRIVATE_METHOD)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.646 -0400", hash_original_method = "7AAB7B01E6419825274A30D2382564EA", hash_generated_method = "7AAB7B01E6419825274A30D2382564EA")
             public HeaderViewHolder ()
             {
@@ -1519,6 +1522,7 @@ private void requirePreferenceManager() {
         return mPreferenceManager.findPreference(key);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.685 -0500", hash_original_method = "5A6127558FF9D60C52821F59A1A351C3", hash_generated_method = "A3CCA1639D56932850641C74B8B2F3DE")
     
 @Override

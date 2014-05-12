@@ -253,6 +253,7 @@ public boolean getDependencyMet() {
        return mDependencyMet.get();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.665 -0500", hash_original_method = "0156798C320A34D339E0A5D3C1FA955E", hash_generated_method = "D842E461153BAB33A66C7DDEFC823492")
     
 @Override

@@ -246,6 +246,7 @@ public WifiDisplay[] getRememberedDisplays() {
     }
 
     // For debugging purposes only.
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.644 -0500", hash_original_method = "5D3BBF2D48BBB644EA140D257129234C", hash_generated_method = "A18BA4B6AAA621E8F7FB1B1872ECF896")
     
 @Override

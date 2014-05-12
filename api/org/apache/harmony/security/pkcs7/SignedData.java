@@ -120,6 +120,7 @@ public int getVersion() {
         return version;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.857 -0500", hash_original_method = "39B5111592E9C9F7E25B09890D35A8D3", hash_generated_method = "49D08EA134648FEBBFF0C054185A5BA8")
     
 @Override public String toString() {

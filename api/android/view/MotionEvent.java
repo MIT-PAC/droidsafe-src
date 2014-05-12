@@ -1374,6 +1374,7 @@ public MotionEvent[] newArray(int size) {
     
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.752 -0500", hash_original_method = "3F0B5C050D986DD9F1F0F2A742C616C8", hash_generated_method = "9D1B4CBF29CC86076D0E7A276889F27A")
     
 @Override
@@ -2942,6 +2943,7 @@ public final MotionEvent split(int idBits) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.992 -0500", hash_original_method = "69A985781D7A79E036178DEB42E5F1F0", hash_generated_method = "3DA9E049C6F4EDFA08CED09C15031406")
     
 @Override

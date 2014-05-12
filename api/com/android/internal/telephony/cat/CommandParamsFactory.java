@@ -204,6 +204,7 @@ void make(BerTlv berTlv) {
         }
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.928 -0500", hash_original_method = "31E304CCF35AF359465BB09182AC4380", hash_generated_method = "F33575EF43B3079DA096048B23584DF8")
     
 @Override

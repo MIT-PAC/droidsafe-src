@@ -351,6 +351,7 @@ public BigInteger getSerialNumber()
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.830 -0500", hash_original_method = "53037C58AFDDBA87577A0806677CF7E3", hash_generated_method = "82E4EBA62ECBE8670A018DE7BA7CF507")
     
 public Object clone()
@@ -422,6 +423,7 @@ public boolean match(Certificate cert)
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.836 -0500", hash_original_method = "DF0F926A4C6973AE80CA99906EB348D1", hash_generated_method = "C2D4CA41F63C2534B5385FD46D0F086D")
     
 public boolean equals(Object obj)
@@ -441,6 +443,7 @@ public boolean equals(Object obj)
         return this.holder.equals(other.holder);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:40.838 -0500", hash_original_method = "D89AAACD9C01672ED8F506F3741EB875", hash_generated_method = "20DAB20065F43CF84CDD0862E826D4EE")
     
 public int hashCode()

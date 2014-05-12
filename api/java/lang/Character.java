@@ -2169,6 +2169,7 @@ protected Subset(String string) {
          * @return {@code true} if {@code object} is this subset, that is, if
          *         {@code object == this}; {@code false} otherwise.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.657 -0500", hash_original_method = "4C72D63DD7600BBEA68526CF4A3E7570", hash_generated_method = "2B7AF13EA8999A4FA1E97DE1C4501BDE")
         
 @Override
@@ -2182,6 +2183,7 @@ protected Subset(String string) {
          * @return this subset's hash code, which is the hash code computed by
          *         {@link java.lang.Object#hashCode()}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.660 -0500", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "BDAAB55570B432722AF7AB079E5FB145")
         
 @Override
@@ -2194,6 +2196,7 @@ protected Subset(String string) {
          *
          * @return this subset's name.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.664 -0500", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "20F0D49C8E56D36DAC2B956883654BF6")
         
 @Override

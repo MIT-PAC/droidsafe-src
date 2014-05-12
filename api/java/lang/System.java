@@ -667,24 +667,28 @@ public SystemEnvironment(Map<String, String> map) {
             this.map = Collections.unmodifiableMap(map);
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.735 -0500", hash_original_method = "72D95E6A5E33F4212177AA7AB73DA48C", hash_generated_method = "B739A5065DB968A82F089F3C38EDEF87")
         
 @Override public Set<Entry<String, String>> entrySet() {
             return map.entrySet();
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.737 -0500", hash_original_method = "427258176260CD297BEE74A463DA23FE", hash_generated_method = "058B2ACC34010774810D06841FBEC1D8")
         
 @Override public String get(Object key) {
             return map.get(toNonNullString(key));
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.741 -0500", hash_original_method = "5AA47FBF2138F3E35206A54E79436C96", hash_generated_method = "DB430FBFE68FF50D08FFBEA7988F55B5")
         
 @Override public boolean containsKey(Object key) {
             return map.containsKey(toNonNullString(key));
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.744 -0500", hash_original_method = "CC6AE6A57D73BE839427BC40B3BC71D9", hash_generated_method = "4ECFE6D54A52B77DB41E783CC7A58231")
         
 @Override public boolean containsValue(Object value) {

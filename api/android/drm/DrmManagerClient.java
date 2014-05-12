@@ -51,7 +51,6 @@ public class DrmManagerClient {
     public static final int ERROR_UNKNOWN = -2000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.098 -0400", hash_original_field = "E5C2E6664493495959FB2E818B678F74", hash_generated_field = "076B896D316BBB5209298DCE70079CBA")
 
-
     private static final String TAG = "DrmManagerClient";
 
     static {
@@ -104,7 +103,6 @@ public class DrmManagerClient {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.115 -0400", hash_original_field = "90993985FDA992E6963015904D3A842C", hash_generated_field = "495BD96DF55F83A9FEE8C5913EFDE005")
 
-
     private static final int ACTION_REMOVE_ALL_RIGHTS = 1001;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.119 -0400", hash_original_field = "C18BBCAA6C0CEB8C35B229D41F8A2E30", hash_generated_field = "A982B29FF6F9BEA698F8FA003763E4F0")
 
@@ -126,7 +124,6 @@ public static void notify(
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.122 -0400", hash_original_field = "9F92F4106274D2629F33867183512BB7", hash_generated_field = "702EBB63B52AE60657B34C8A34DF32C2")
-
 
     private int mUniqueId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.125 -0400", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
@@ -156,6 +153,7 @@ public EventHandler(Looper looper) {
             super(looper);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.157 -0400", hash_original_method = "EF48130EA40C9E7392CB075E37B1FD0A", hash_generated_method = "6C8F1BC02D74E5C0EACD77533463EE3C")
         
 public void handleMessage(Message msg) {
@@ -217,6 +215,7 @@ public InfoHandler(Looper looper) {
             super(looper);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.180 -0400", hash_original_method = "96826AFABE3485B81254D80D0C112106", hash_generated_method = "55D79A5C38CD5130575E61B0212A0A4F")
         
 public void handleMessage(Message msg) {
@@ -288,6 +287,7 @@ public DrmManagerClient(Context context) {
         mUniqueId = _initialize(new WeakReference<DrmManagerClient>(this));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.191 -0400", hash_original_method = "98AE580F8215C77D1AAB700254F4968B", hash_generated_method = "2AAA97F05B98A88F36D5C1DFB17D6A18")
     
 protected void finalize() {
@@ -906,7 +906,6 @@ private String convertUriToPath(Uri uri) {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.320 -0400", hash_original_method = "82AD145F7F972A9AC764D18C53EF9ECE", hash_generated_method = "42D7ADBA406EEA492DC9C1338C42BB24")
     
     private void _finalize(int uniqueId){
@@ -915,7 +914,6 @@ private String convertUriToPath(Uri uri) {
     	taintDouble += uniqueId;
     	addTaint(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.327 -0400", hash_original_method = "10C3560C76415AE2C2E05D202EB05632", hash_generated_method = "C53CED7C860017EDD6A4E36FC7F22B4E")
     
@@ -926,7 +924,6 @@ private String convertUriToPath(Uri uri) {
     	taintDouble += engineFilepath.getTaintInt();
     	addTaint(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.334 -0400", hash_original_method = "35738F7D5501035318499551A9C8AA04", hash_generated_method = "4F130AD5234069472C73368002C2E776")
     
@@ -943,7 +940,6 @@ private String convertUriToPath(Uri uri) {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.340 -0400", hash_original_method = "41A2CE5D531E356140EF2C3BCB8A8FFA", hash_generated_method = "136173C87630C7323E7C2A775B46E19F")
     
     private ContentValues _getMetadata(int uniqueId, String path){
@@ -958,7 +954,6 @@ private String convertUriToPath(Uri uri) {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.346 -0400", hash_original_method = "133D601F466AB771B97CDE121F5CA0E7", hash_generated_method = "37C732EC676AF6481A1F392C389DB7CC")
     
     private boolean _canHandle(int uniqueId, String path, String mimeType){
@@ -971,7 +966,6 @@ private String convertUriToPath(Uri uri) {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.354 -0400", hash_original_method = "DA4A150A4386AF296514FABE0EE51600", hash_generated_method = "269C060BE37A8F9D110499F0FE7852AE")
     
@@ -987,7 +981,6 @@ private String convertUriToPath(Uri uri) {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.360 -0400", hash_original_method = "8FC5CBFF7578A07313C6E36869586565", hash_generated_method = "0036C2BB486B3C28749850C5F877E279")
     
     private DrmInfo _acquireDrmInfo(int uniqueId, DrmInfoRequest drmInfoRequest){
@@ -1001,7 +994,6 @@ private String convertUriToPath(Uri uri) {
     	retObj.addTaint(taintDouble);
     	return retObj;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.366 -0400", hash_original_method = "76F35664110A45230AA60540BD730594", hash_generated_method = "CEE27D0339B9C6E63ED78AC5F63B52CC")
     
@@ -1018,7 +1010,6 @@ private String convertUriToPath(Uri uri) {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.373 -0400", hash_original_method = "1F08BEA1706E5ACC5826B133E1B794B5", hash_generated_method = "15A605CA6BCDA2628E817EB6164B5013")
     
     private int _getDrmObjectType(int uniqueId, String path, String mimeType){
@@ -1031,7 +1022,6 @@ private String convertUriToPath(Uri uri) {
     
     	return (int)taintDouble;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.379 -0400", hash_original_method = "EB7B36555D6393B523461B14C8FC9677", hash_generated_method = "C012073AC94254F005CA23458E8961E3")
     
@@ -1047,7 +1037,6 @@ private String convertUriToPath(Uri uri) {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.385 -0400", hash_original_method = "444F65C4C941360E75D0D7A65002C285", hash_generated_method = "04BB0C8711854902AF5220EB18BD2EB8")
     
     private int _checkRightsStatus(int uniqueId, String path, int action){
@@ -1061,7 +1050,6 @@ private String convertUriToPath(Uri uri) {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.392 -0400", hash_original_method = "09CE9A0CB1393E45CD9B13F3EFB77A4D", hash_generated_method = "C13177FC590AB049E27407F340F3A9F7")
     
     private int _removeRights(int uniqueId, String path){
@@ -1074,7 +1062,6 @@ private String convertUriToPath(Uri uri) {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.401 -0400", hash_original_method = "04862FC9B26F83280D25E16DB021E3AE", hash_generated_method = "489EF7DF1FB7D3427F3DD390E76A86AC")
     
     private int _removeAllRights(int uniqueId){
@@ -1085,7 +1072,6 @@ private String convertUriToPath(Uri uri) {
     
     	return (int)taintDouble;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.409 -0400", hash_original_method = "35D8D2ADFE595E9700A96EA0BA798ABC", hash_generated_method = "AE777F8E5FCBAC7CC06D57C9B039181F")
     
@@ -1098,7 +1084,6 @@ private String convertUriToPath(Uri uri) {
     
     	return (int)taintDouble;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.416 -0400", hash_original_method = "CBFF4F3D0E2CB8741EC6CF40226A6709", hash_generated_method = "1EA4640EB04CD463B32CD5455052897D")
     
@@ -1116,7 +1101,6 @@ private String convertUriToPath(Uri uri) {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.422 -0400", hash_original_method = "275720A41A16EB24CB948EDAF777FD7E", hash_generated_method = "C64677D2B0FAC24AFA6D34A7D3E2991F")
     
     private DrmConvertedStatus _closeConvertSession(int uniqueId, int convertId){
@@ -1131,7 +1115,6 @@ private String convertUriToPath(Uri uri) {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.429 -0400", hash_original_method = "C4212EDC383E2AB4376B6B0CB3F7509D", hash_generated_method = "B6C783C1204CDDED0A208176B5F1CDCD")
     
     private DrmSupportInfo[] _getAllSupportInfo(int uniqueId){
@@ -1145,9 +1128,6 @@ private String convertUriToPath(Uri uri) {
     	retObj.addTaint(taintDouble);
     	return retObj;
     }
-
-
-
 
 }
 

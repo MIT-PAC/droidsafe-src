@@ -84,6 +84,7 @@ SortedSet<Class<? extends TestCase>> getTestCaseClasses() {
         return testCaseClasses;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.318 -0500", hash_original_method = "6F62F66C41F8017782EE166F70D0516E", hash_generated_method = "14BB8360F989C83B3FED42D1670ACD0F")
     
 public boolean equals(Object o) {
@@ -100,6 +101,7 @@ public boolean equals(Object o) {
         return this.testCaseClasses.comparator().equals(other.testCaseClasses.comparator());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.320 -0500", hash_original_method = "E7359B0E16100AA2FD7539D694C05DFB", hash_generated_method = "D559DEE6286F02565C4C0BA1F7C60FE2")
     
 public int hashCode() {

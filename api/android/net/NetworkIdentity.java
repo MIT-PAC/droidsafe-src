@@ -78,6 +78,7 @@ public NetworkIdentity(int type, int subType, String subscriberId, boolean roami
         this.mRoaming = roaming;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.022 -0500", hash_original_method = "70DBA97D9C7155A4770B35E22D7D5A29", hash_generated_method = "E00E75E8B615CA371DA18D4C16FAF210")
     
 @Override
@@ -85,6 +86,7 @@ public NetworkIdentity(int type, int subType, String subscriberId, boolean roami
         return Objects.hashCode(mType, mSubType, mSubscriberId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.025 -0500", hash_original_method = "A5A3AB07A0E4347DBE654AC710955A89", hash_generated_method = "6534FACE73C9A29038A916D1A0E42084")
     
 @Override
@@ -98,6 +100,7 @@ public NetworkIdentity(int type, int subType, String subscriberId, boolean roami
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.027 -0500", hash_original_method = "750D47FEDF778AEB33FDF257D4CBFC36", hash_generated_method = "EE7CB84F497B89197DA4CCB1CCFA08F8")
     
 @Override

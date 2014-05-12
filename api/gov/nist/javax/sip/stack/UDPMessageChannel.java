@@ -161,6 +161,7 @@ protected UDPMessageChannel(InetAddress targetAddr, int port,
     /**
      * Run method specified by runnnable.
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.433 -0500", hash_original_method = "E6EA1046257028C8ED28AF4C13B7A731", hash_generated_method = "BE404AD3B81220A0192E0E3AEA67BFF9")
     
 public void run() {
@@ -821,6 +822,7 @@ protected InetAddress getPeerInetAddress() {
      * @param other
      *            The other message channel with which to compare oursleves.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.482 -0500", hash_original_method = "3F01B3F60F79E6CB5C3DF3B66FDD88DE", hash_generated_method = "943E61EA1E8D9909869C845CB85685D1")
     
 public boolean equals(Object other) {
@@ -938,12 +940,14 @@ public PingBackTimerTask(String ipAddress, int port) {
             this.port = port;
             pingBackRecord.put(ipAddress + ":" + port, this);
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.413 -0500", hash_original_method = "6BA8F9798D5715ABDAD288256921D45A", hash_generated_method = "EF37FFA55F8CCCD46D3860DFA16198BB")
         
 @Override
         public void run() {
            pingBackRecord.remove(ipAddress + ":" + port);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.416 -0500", hash_original_method = "E214E7BC5755C758A91BCF58AAE3832E", hash_generated_method = "63F2CBC1B172A8153F23BBA3081A9BCD")
         
 @Override

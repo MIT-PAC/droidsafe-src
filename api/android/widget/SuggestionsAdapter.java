@@ -271,6 +271,7 @@ public void close() {
         mClosed = true;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.755 -0500", hash_original_method = "6C6F9D84444AF89C1AA3B4F24466FCA3", hash_generated_method = "933A4ABAEAB3B3E494F888A357A70330")
     
 @Override

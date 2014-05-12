@@ -21,6 +21,7 @@ public ContactList() {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.289 -0500", hash_original_method = "BED68D8C66CBF48DBAF6B0E90A05F961", hash_generated_method = "AF13FD62132D1786E55AA330F1C50A93")
     
 public Object clone() {

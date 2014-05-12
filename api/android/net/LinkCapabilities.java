@@ -298,6 +298,7 @@ public int describeContents() {
     /**
      * Convert to string for debugging
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.882 -0500", hash_original_method = "A28D232247661B92586D4FEECBA4E0AF", hash_generated_method = "A2782BC0D194A83092DA7CBB022AC362")
     
 @Override

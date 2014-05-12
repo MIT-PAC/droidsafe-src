@@ -64,6 +64,7 @@ public WifiP2pInfo(WifiP2pInfo source) {
        }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.372 -0500", hash_original_method = "D5529C8AE8D596D7C37EDA99E72A8446", hash_generated_method = "4462C98277D0907E61D3E2D1AB20C097")
     
 public String toString() {

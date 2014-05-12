@@ -302,6 +302,7 @@ public EriDisplayInformation(int eriIconIndex, int eriIconMode, String eriIconTe
 //            this.mEriIconText = eriIconText;
 //        }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.533 -0500", hash_original_method = "AD3807950D152469EF511B007C55D141", hash_generated_method = "44C2489F0578E6D3A6BB06E28BFAFFDE")
         
 @Override

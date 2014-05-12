@@ -50,6 +50,7 @@ Inet4Address(byte[] ipaddress, String hostName) {
         return ((ipaddress[0] & 0xff) == 169) && ((ipaddress[1] & 0xff) == 254); // 169.254/16
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.697 -0500", hash_original_method = "FB35E1A46B66244783B8471385CB1A76", hash_generated_method = "7D2F186719117274906587AF854766D4")
     
 @Override public boolean isLoopbackAddress() {

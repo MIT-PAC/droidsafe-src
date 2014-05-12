@@ -43,17 +43,14 @@ public final class HeadsetBase {
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.791 -0400", hash_original_field = "4F016E519DA583F9632E65AFF668DDED", hash_generated_field = "DF490F41C0788C644EBC64EF2330219E")
 
-
     public static final int RFCOMM_DISCONNECTED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.797 -0400", hash_original_field = "A53A780D1A955C7EDA644BEF85EB5383", hash_generated_field = "7E53E93F38582DBCCFDA335493C4506D")
-
 
     public static final int DIRECTION_INCOMING = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.801 -0400", hash_original_field = "0DDE0A9CCE43748BAE63CDE06354DC85", hash_generated_field = "BA3DCB5DE43926D8C891E6CA7DF22B39")
 
     public static final int DIRECTION_OUTGOING = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.806 -0400", hash_original_field = "C8E348E112D34303371011918374D275", hash_generated_field = "F0C544E7F4E25FF4D0AC0FD54B92DAE7")
-
 
     private static int sAtInputCount = 0;  // held while processing an AT command
 
@@ -62,7 +59,6 @@ public final class HeadsetBase {
     private static void classInitNative(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:55.009 -0400", hash_original_method = "BC2DB344AB0654D187436761F7F8590A", hash_generated_method = "8999F6C42A30BBD6FB815C2AFF6E478B")
     
@@ -76,7 +72,6 @@ private static void log(String msg) {
         Log.d(TAG, msg);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.811 -0400", hash_original_field = "367F0BC6BC216C571A7E906A286477DF", hash_generated_field = "6EAF57CC559AB78B0231BFFF469261B9")
-
 
     private  BluetoothAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.816 -0400", hash_original_field = "E8B253EE6BB687FE3AC2AE219496010B", hash_generated_field = "F72A584FEA2C6534BC291F8813F50EDF")
@@ -114,10 +109,8 @@ private static void log(String msg) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.861 -0400", hash_original_field = "551AA8D4040AD546B5A1D87E3F9F7CB7", hash_generated_field = "DAF8369FFA3BE26A2A19784B33814D24")
 
-
     protected AtParser mAtParser;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.865 -0400", hash_original_field = "33E56F28B2B8FE4608887A854590880D", hash_generated_field = "183FF6D0B9A970C2C80F7133E4FA9FB1")
-
 
     private WakeLock mWakeLock;
 
@@ -158,6 +151,7 @@ public HeadsetBase(PowerManager pm, BluetoothAdapter adapter,
         initializeNativeDataNative(socketFd);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.875 -0400", hash_original_method = "32A9F385A4D78BC8110E1E4AEAE4F926", hash_generated_method = "1FCEE80E74DD5BC9F2DA351F29B4F4CC")
     
 protected void finalize() throws Throwable {
@@ -175,8 +169,6 @@ protected void finalize() throws Throwable {
     	//Formerly a native method
     }
 
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:13.078 -0400", hash_original_method = "E3D3EE15806D941CAD32D179CBA0C0E0", hash_generated_method = "68ED1622B7A751DBFF0F14CBF877DB40")
     
     private void initializeNativeDataNative(int socketFd){
@@ -185,9 +177,6 @@ protected void finalize() throws Throwable {
     	taintDouble += socketFd;
     	addTaint(taintDouble);
     }
-
-
-
 
     /* Process an incoming AT command line
      */
@@ -291,11 +280,6 @@ public void run() {
     	return (int)taintDouble;
     }
 
-
-
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.935 -0400", hash_original_method = "428A3882BA12FF25272AE7B0C634494C", hash_generated_method = "A319DD6A1C4D1A7923011806D6B440F7")
     
 private void stopEventThread() {
@@ -327,11 +311,6 @@ public boolean connect(Handler handler) {
     	return toTaintBoolean(taintDouble);
     }
 
-
-
-
-
-
     /*
      * Returns true when either the asynchronous connect is in progress, or
      * the connect is complete.  Call waitForAsyncConnect() to find out whether
@@ -352,11 +331,6 @@ public boolean connectAsync() {
     
     	return (int)taintDouble;
     }
-
-
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.957 -0400", hash_original_method = "07D0EF93E690F0834CE2B813D765203C", hash_generated_method = "BF1A62F17DAC77E6D9A582AC3D4BECBD")
     
@@ -389,9 +363,6 @@ public int waitForAsyncConnect(int timeout_ms, Handler handler) {
     	return (int)taintDouble;
     }
 
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:54.969 -0400", hash_original_method = "0FC817DB60A37E0C9EFF6E1E9343709F", hash_generated_method = "0B27397759D0E6D0B77C2C292EAC5657")
     
 public void disconnect() {
@@ -405,10 +376,6 @@ public void disconnect() {
     private void disconnectNative(){
     	//Formerly a native method
     }
-
-
-
-
 
     /*
      * Note that if a remote side disconnects, this method will still return
@@ -462,9 +429,6 @@ public synchronized boolean sendURC(String urc) {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:55.001 -0400", hash_original_method = "6D3C788D0D3D9CDBFD863C3856BB1B63", hash_generated_method = "5D0193EB873CFC9EE38BFA3BEC15892D")
     

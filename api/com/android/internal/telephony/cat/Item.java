@@ -67,6 +67,7 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(icon, flags);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.298 -0500", hash_original_method = "D77DEAB1CC7B5FDE4A537F56E3011951", hash_generated_method = "0C4E5E4CA8D40010711A1BEC5DC08A53")
     
 public String toString() {

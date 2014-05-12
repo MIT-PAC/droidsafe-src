@@ -51,7 +51,7 @@ public final class AnimatorSet extends Animator {
     private long mDuration = -1;
     
     @DSComment("Animation class")
-    @DSSafe(DSCat.ANDROID_ANIMATION)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.245 -0400", hash_original_method = "A9DDD8ED58932E64D4F5BE029FA05ABF", hash_generated_method = "A9DDD8ED58932E64D4F5BE029FA05ABF")
     
     public AnimatorSet ()
@@ -540,6 +540,7 @@ for(int i = 0;i < numListeners;++i)
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.713 -0500", hash_original_method = "7A64C2F75A97591C0B8FCD807815163D", hash_generated_method = "377B01EB02D8964A0ECED92BA5917252")
     
 @Override
@@ -952,6 +953,7 @@ public void addDependency(Dependency dependency) {
             dependencyNode.nodeDependents.add(this);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.794 -0500", hash_original_method = "DEE80C65840F010A2F5E3A56F885F02B", hash_generated_method = "5310A6405CE0EDF9B1EE4BD24617F4C1")
         
 @Override

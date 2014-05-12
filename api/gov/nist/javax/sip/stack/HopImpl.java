@@ -113,6 +113,7 @@ HopImpl(String hop) throws IllegalArgumentException {
     /**
      * Debugging println.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.513 -0500", hash_original_method = "E930BE940ED709A9E92F64EC28520C28", hash_generated_method = "1DACE3572478DC85AF10A7AB44445DA6")
     
 public String toString() {

@@ -307,7 +307,7 @@ void finishAccept() {
     }
 
     @DSSafe(DSCat.IO)
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.594 -0500", hash_original_method = "FDE0A0D9A12F7110643554CD43F8D7B6", hash_generated_method = "29907415F13C00476026BBE5FF1B04D5")
     
 @Override
@@ -321,7 +321,7 @@ void finishAccept() {
     }
 
     @DSSafe(DSCat.IO)
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.597 -0500", hash_original_method = "CFA00AB281069164ECAB790C179DF3F9", hash_generated_method = "FE3857A82DD1EA3A1C4BEAA5C06E7F35")
     
 @Override
@@ -377,7 +377,7 @@ private int readImpl(ByteBuffer dst) throws IOException {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink(DSSinkKind.NETWORK)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.604 -0500", hash_original_method = "DCFA2CB99033209FD40A6F8FA617CF19", hash_generated_method = "BDCC9FD4CADB5B4F70B9ADBCC529354B")
     
 @Override
@@ -393,7 +393,7 @@ private int readImpl(ByteBuffer dst) throws IOException {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink(DSSinkKind.NETWORK)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.607 -0500", hash_original_method = "92D26B18BB75EB8AD284E7DC348B13D6", hash_generated_method = "857E6DC60E4C264C3B91D4A7844C4B63")
     
 @Override
@@ -510,6 +510,7 @@ PlainSocketImpl socketImpl() {
             return channel.isBound;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.648 -0500", hash_original_method = "5CCF8EB454AE33E9E231A2BE45E2629E", hash_generated_method = "6E2404C4A4551201D7B180DBF03EBE40")
         
 @Override
@@ -517,6 +518,7 @@ PlainSocketImpl socketImpl() {
             return channel.isConnected();
         }
 
+        @DSSpec(DSCat.NETWORK)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.651 -0500", hash_original_method = "B0018340FF02F226576061EFB596D2DE", hash_generated_method = "73ECBDB77D7E6EE5FEEFF702462CB2D8")
         
@@ -529,6 +531,7 @@ PlainSocketImpl socketImpl() {
             }
         }
 
+        @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.653 -0500", hash_original_method = "63A88A8D435088D761BDD7938E4125E4", hash_generated_method = "032FE48625B5E3961EB8CF4DAE8F3242")
         
 @Override
@@ -547,6 +550,7 @@ PlainSocketImpl socketImpl() {
             }
         }
 
+        @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.656 -0500", hash_original_method = "B60964A84DDE0034E73C148BED7594EB", hash_generated_method = "56043DB998F837DADD13C1440F901E8D")
         
@@ -563,6 +567,7 @@ PlainSocketImpl socketImpl() {
             channel.isBound = true;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.659 -0500", hash_original_method = "D341E1E6C64813CEE43FACEF8CA53A78", hash_generated_method = "EA084D9A303C00C0378E9318DCAF6DAA")
         
 @Override
@@ -577,6 +582,7 @@ PlainSocketImpl socketImpl() {
             }
         }
 
+        @DSSafe(DSCat.IO)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.662 -0500", hash_original_method = "33C0B42780F1E273103B5BBAE79F7408", hash_generated_method = "F092860FCBE6F007E971FB6662A9E26E")
         
@@ -589,6 +595,7 @@ PlainSocketImpl socketImpl() {
             return new SocketChannelOutputStream(channel);
         }
 
+        @DSSpec(DSCat.IO)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.665 -0500", hash_original_method = "84598A158E9BC4BA9724B2EC04F9ADAB", hash_generated_method = "AA831EBE9B2E8B2D763E53B6D1EC4BC8")
         
@@ -648,6 +655,7 @@ public SocketChannelOutputStream(SocketChannel channel) {
             channel.close();
         }
 
+        @DSSpec(DSCat.IO)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.684 -0500", hash_original_method = "376EE3F97840D4205E91F242BC3F90AA", hash_generated_method = "B7F4008F4C032918D15D490AB4F3EE60")
         
@@ -661,7 +669,7 @@ public SocketChannelOutputStream(SocketChannel channel) {
             channel.write(buf);
         }
 
-        @DSSink(DSSinkKind.IO)
+        @DSSink({DSSinkKind.IO})
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.688 -0500", hash_original_method = "F1C26F791F3FC6DB336B7A388343CAEE", hash_generated_method = "35B19194AC573BBA34EFEC906FAF146D")
         
@@ -711,6 +719,8 @@ public SocketChannelInputStream(SocketChannel channel) {
             return (result == -1) ? result : (buf.get(0) & 0xff);
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.704 -0500", hash_original_method = "EA379AE73CA210BAF79C2B35EBD964D5", hash_generated_method = "C67342CCA18244073E7D92377E55150E")
         
 @Override

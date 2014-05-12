@@ -203,6 +203,7 @@ public int match(final AuthScope that) {
     /**
      * @see java.lang.Object#equals(Object)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.615 -0500", hash_original_method = "DED1E319CFFFF5B0653C6B0D046D4EB9", hash_generated_method = "DC363FAEAD00A731377147419762C4AD")
     
 @Override
@@ -227,6 +228,7 @@ public int match(final AuthScope that) {
     /**
      * @see java.lang.Object#toString()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.618 -0500", hash_original_method = "AA52C08879A8120A7A68C6044F6A755A", hash_generated_method = "30AE26B8763C7672EA6ED3EAF23EED6C")
     
 @Override
@@ -257,6 +259,7 @@ public int match(final AuthScope that) {
     /**
      * @see java.lang.Object#hashCode()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.621 -0500", hash_original_method = "5969A15C4BB29A6E888D795486A04627", hash_generated_method = "38FA94DBD3436012B0D8C65177284D73")
     
 @Override

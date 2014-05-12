@@ -61,12 +61,14 @@ public void close() throws IOException {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.336 -0500", hash_original_method = "A5A452E28D931563D6707491621FFBE7", hash_generated_method = "69E9959092BAC6291CF23078F47E18CD")
     
 public void flush() throws IOException {
         this.out.flush();
     }
 
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.338 -0500", hash_original_method = "C2CCC6E8489DACB9C9AD7F8549C28D94", hash_generated_method = "E50355F5905203E5B300ADD2F7C08070")
     
@@ -84,6 +86,7 @@ public void write(byte[] b, int off, int len) throws IOException {
         }
     }
 
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.340 -0500", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "571732832533DA058E04BC8F76720194")
     
@@ -92,7 +95,7 @@ public void write(byte[] b) throws IOException {
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.343 -0500", hash_original_method = "671E4413F0815DA1A7C3D0AAECD8B1E8", hash_generated_method = "54F2DB86A0AF3DDF4E6101BDDBD1BEE4")
     
 public void write(int b) throws IOException {

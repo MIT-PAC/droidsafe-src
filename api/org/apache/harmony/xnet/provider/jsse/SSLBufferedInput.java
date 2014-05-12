@@ -36,6 +36,7 @@ protected void setSourceBuffer(ByteBuffer in) {
         this.in = in;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.928 -0500", hash_original_method = "BB38BB904E493CEE8626853626B4B1AC", hash_generated_method = "AA73DAF788F8E3B9B23B91AC6E385275")
     
 @Override

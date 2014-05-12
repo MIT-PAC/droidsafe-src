@@ -335,6 +335,7 @@ public BasicHttpProcessor copy() {
         return clone;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.263 -0500", hash_original_method = "5AA72A12635065E25111537F7EBBA8DC", hash_generated_method = "7BEBDC195C53D4F44E60CA2921426284")
     
 public Object clone() throws CloneNotSupportedException {

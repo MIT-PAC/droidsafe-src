@@ -494,6 +494,7 @@ public EventHandler(SoundPool soundPool, Looper looper) {
             mSoundPool = soundPool;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.620 -0500", hash_original_method = "489ADADA267AA176412248D35C25EA36", hash_generated_method = "D4BCFD52F35376B492DC44C76D15FE10")
         
 @Override
@@ -553,6 +554,7 @@ public EventHandler(SoundPool soundPool, Looper looper) {
     	return getTaintInt();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.635 -0500", hash_original_method = "52F53B59AD091F99DC7C4D49031A27E5", hash_generated_method = "9A6AA3EE3AA1630FAE214B52E6DCE99D")
     
 protected void finalize() { release(); }

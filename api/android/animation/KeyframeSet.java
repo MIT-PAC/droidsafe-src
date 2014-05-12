@@ -141,6 +141,7 @@ public void setEvaluator(TypeEvaluator evaluator) {
         mEvaluator = evaluator;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.555 -0500", hash_original_method = "852EEF0AADF480969C7D66EC6180E295", hash_generated_method = "01FC89D48612D6755EBDE4D39B823323")
     
 @Override
@@ -223,6 +224,7 @@ public Object getValue(float fraction) {
         return mLastKeyframe.getValue();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.561 -0500", hash_original_method = "5AFB3B0DBEF799B422062A71D978DCE0", hash_generated_method = "40AA025312C243ECA5B2A3CC090BB5B9")
     
 @Override

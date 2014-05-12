@@ -128,6 +128,7 @@ public int getPid() {
         return mPid;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.581 -0500", hash_original_method = "30B5CA44D3BF64A2B8A74435F40F5258", hash_generated_method = "731A7A43B83D2D6EDCDD291E1468B6DA")
     
 @Override

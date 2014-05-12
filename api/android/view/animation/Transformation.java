@@ -134,6 +134,7 @@ public float getAlpha() {
         return mAlpha;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.933 -0500", hash_original_method = "6F2D8252A709B880F4404B074507697E", hash_generated_method = "783FC16ADCE7A491E5FF35F599778DD7")
     
 @Override

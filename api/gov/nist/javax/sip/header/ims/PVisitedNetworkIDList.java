@@ -20,6 +20,7 @@ public PVisitedNetworkIDList() {
         super(PVisitedNetworkID.class, PVisitedNetworkIDHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.294 -0500", hash_original_method = "7C4CA7398653F51DA5C0E61CD8209B41", hash_generated_method = "5BC4B6E3AC3276B05732BBAEF2D1AA85")
     
 public Object clone() {

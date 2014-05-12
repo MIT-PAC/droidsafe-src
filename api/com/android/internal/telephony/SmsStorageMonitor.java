@@ -114,6 +114,7 @@ public void dispose() {
      * Handles events coming from the phone stack. Overridden from handler.
      * @param msg the message to handle
      */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.497 -0500", hash_original_method = "4ADFD820FBAEE3B9207F7288ABB2B3FA", hash_generated_method = "DBD9934380248D13C69A49A59A76507F")
     
 @Override

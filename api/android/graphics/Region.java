@@ -135,7 +135,7 @@ public Region[] newArray(int size) {
     /** Create an empty region
     */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.193 -0500", hash_original_method = "0D8BB79D644235D834A5B870E7DE5E55", hash_generated_method = "26CF2A3DDBA2B25D750180E7A5D924AA")
     
 public Region() {

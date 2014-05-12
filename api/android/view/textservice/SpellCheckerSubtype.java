@@ -170,6 +170,7 @@ public String getExtraValue() {
         return mSubtypeExtraValue;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.423 -0500", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "59CD8717BAF0B810679FFE0F1F02958C")
     
 @Override
@@ -177,6 +178,7 @@ public String getExtraValue() {
         return mSubtypeHashCode;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.425 -0500", hash_original_method = "214F55EDB23FD4CF8A5A66E21291C440", hash_generated_method = "5F829979AF5B8EC92C3AFE5F8A322D28")
     
 @Override

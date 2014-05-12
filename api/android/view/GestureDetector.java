@@ -353,6 +353,7 @@ GestureHandler(Handler handler) {
             super(handler.getLooper());
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.774 -0500", hash_original_method = "B97857986444DBB6880EA006296E5D03", hash_generated_method = "B97F6FF383B743F8B003FC1DC3D263B5")
         
 @Override

@@ -102,7 +102,7 @@ AlertDialog(Context context, int theme, boolean createContextWrapper) {
     
     @DSVerified
     @DSComment("GUI constructor with callback registration modeled")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.SAFE_OTHERS)
 protected AlertDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
         super(context, resolveDialogTheme(context, 0));
         mWindow.alwaysReadCloseOnTouchAttr();
@@ -1067,6 +1067,7 @@ public void setInverseBackgroundForced(boolean forceInverseBackground) {
         mAlert.setInverseBackgroundForced(forceInverseBackground);
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.046 -0500", hash_original_method = "84106AE7CC1A6E59D6E45CD48A2A2307", hash_generated_method = "EDD922029DB087B0F937A5B2CFDC27A2")
     
 @Override

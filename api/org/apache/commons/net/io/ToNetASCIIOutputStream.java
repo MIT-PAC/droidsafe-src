@@ -70,7 +70,7 @@ public ToNetASCIIOutputStream(OutputStream output)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.134 -0500", hash_original_method = "C10D4A1492D25EED638CC1439313FEB4", hash_generated_method = "1EB1701C520BB6CD6B5B055C3516E7D2")
     @DSVerified
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
 public synchronized void write(int ch)
     throws IOException
     {

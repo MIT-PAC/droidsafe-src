@@ -62,6 +62,7 @@ public Object getContent() {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.message.ContentExt#toString()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.871 -0500", hash_original_method = "F6C29ED2FF7A16DDC103A61DA5684884", hash_generated_method = "63DFFA172D35AC3307AC11CCF0C7B773")
     
 public String toString() {

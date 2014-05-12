@@ -235,7 +235,7 @@ public void dump(Printer pw, String prefix) {
     }
 
     @DSComment("string out of intent resolution, safe")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.608 -0500", hash_original_method = "E9277D5F5F8618A42CE604147E3605E2", hash_generated_method = "0D2A4E70211D71BA8C1449AEED9CBAE2")
     
 public String toString() {

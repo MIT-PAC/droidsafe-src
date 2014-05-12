@@ -120,6 +120,7 @@ public String getInput() {
      * @return a sting containing information about the exception.
      * @see java.lang.Throwable#getMessage()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.644 -0500", hash_original_method = "2C0C7C544BFDCEB0F806A466417CE15E", hash_generated_method = "00B5136E5193B48EC240369BC34C9A9D")
     

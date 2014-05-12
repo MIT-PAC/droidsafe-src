@@ -85,8 +85,7 @@ public DrmInfo(int infoType, String path, String mimeType) {
         }
     }
     
-    
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public DrmInfo() {
     }
     

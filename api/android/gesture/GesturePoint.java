@@ -46,7 +46,6 @@ static GesturePoint deserialize(DataInputStream in) throws IOException {
     public  float y;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.530 -0500", hash_original_field = "145039C09D0281F07AE1DE322AF921C0", hash_generated_field = "37EA591B5E14A037995EF6FFB5E9C3F8")
 
-
     public  long timestamp;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.536 -0500", hash_original_method = "11FA5048BA965D40A3E66C4486655B18", hash_generated_method = "BA3696C6E37954E7FF16D0C556FDDF42")
@@ -57,6 +56,7 @@ public GesturePoint(float x, float y, long t) {
         timestamp = t;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:39.546 -0500", hash_original_method = "B49FDF337BD676F474A63E998ADA3000", hash_generated_method = "1B7EEF493D9696D54B0769B0136EF3B6")
     
 @Override

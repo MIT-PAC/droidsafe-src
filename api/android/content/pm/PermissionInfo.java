@@ -104,6 +104,7 @@ public CharSequence loadDescription(PackageManager pm) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.553 -0500", hash_original_method = "07D30C0CB33D6CDA9C3B1D51B29A13B5", hash_generated_method = "07AAAE41736F4EFAC30084818EA3CE93")
     
 public String toString() {

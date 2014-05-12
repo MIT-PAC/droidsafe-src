@@ -177,7 +177,8 @@ public Animation(Context context, AttributeSet attrs) {
         ensureInterpolator();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.814 -0500", hash_original_method = "7BC58C079EA752AD7803A7DE0B66531B", hash_generated_method = "A46C39E528811DD8F50726DDD0E7B5CA")
     
 @Override

@@ -67,7 +67,8 @@ public final class ContentType implements Serializable {
 		return null;
 	}
 	
-	@Override public String toString(){
+	@DSSafe(DSCat.SAFE_LIST)
+    @Override public String toString(){
 		
 		// Original method
 		/*

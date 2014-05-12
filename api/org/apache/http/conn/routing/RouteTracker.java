@@ -304,6 +304,7 @@ public final HttpRoute toRoute() {
      * @return  <code>true</code> if the argument is the same tracked route,
      *          <code>false</code>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.193 -0500", hash_original_method = "63363EB4B4D28F766A23B83B48599393", hash_generated_method = "83E6B08A153F5D18F61651070F02427A")
     
 @Override
@@ -348,6 +349,7 @@ public final HttpRoute toRoute() {
      *
      * @return  the hash code
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.195 -0500", hash_original_method = "DF8EA32EAB4DFA40B45F048298D9408F", hash_generated_method = "58514B974B1316ABCC1A82491B013001")
     
 @Override
@@ -379,6 +381,7 @@ public final HttpRoute toRoute() {
      *
      * @return  a human-readable representation of the tracked route
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.198 -0500", hash_original_method = "B9AFE31805DA49D5CF66B21B19FA6A72", hash_generated_method = "6BD011116FB54A602164B5846E190397")
     
 @Override
@@ -413,6 +416,7 @@ public final HttpRoute toRoute() {
     }
 
     // default implementation of clone() is sufficient
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.201 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
     
 @Override

@@ -49,13 +49,11 @@ import java.util.Locale;
 public class MtpDatabase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.068 -0400", hash_original_field = "131C56E13EF7F1A4CB99A1E208A20A81", hash_generated_field = "68FD618B03744263304DEBBC6BC84BF6")
 
-
     private static final String TAG = "MtpDatabase";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.091 -0400", hash_original_field = "F1FAFA4108605695CE56CD81A1D3BAFF", hash_generated_field = "A5A9438D83781BEDCC6D653BCD792149")
 
     private static final int DEVICE_PROPERTIES_DATABASE_VERSION = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.093 -0400", hash_original_field = "CC7F74A8BAFE59070A4347A2CFAB8C1D", hash_generated_field = "F7CAB2143BDD5134F67BA1EAB019CA60")
-
 
     private static final String[] ID_PROJECTION = new String[] {
             Files.FileColumns._ID, // 0
@@ -93,7 +91,6 @@ public class MtpDatabase {
     private static final String PATH_WHERE = Files.FileColumns.DATA + "=?";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.103 -0400", hash_original_field = "B4E340E3CC4D9B75805A65BAD336303D", hash_generated_field = "32F8A26AEED12D70AEE5881F2F54B823")
 
-
     private static final String STORAGE_WHERE = Files.FileColumns.STORAGE_ID + "=?";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.105 -0400", hash_original_field = "6458640FE15938C4F92C7895A016F12A", hash_generated_field = "E578AC379C3A65400DE34E9EF682B8DA")
 
@@ -119,7 +116,6 @@ public class MtpDatabase {
                                             + Files.FileColumns.PARENT + "=?";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.145 -0400", hash_original_field = "D575F849664A5E7E41A6AE0C9BF49E1A", hash_generated_field = "1F3DBEA3903B404666D4455A4CD746AE")
 
-
     static final int[] FILE_PROPERTIES = {
             // NOTE must match beginning of AUDIO_PROPERTIES, VIDEO_PROPERTIES
             // and IMAGE_PROPERTIES below
@@ -135,7 +131,6 @@ public class MtpDatabase {
             MtpConstants.PROPERTY_DATE_ADDED,
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.147 -0400", hash_original_field = "15C63D721AE84EFB57F3B25BED57EA39", hash_generated_field = "9F679EB393B98E30A57DAE5E91B06BEF")
-
 
     static final int[] AUDIO_PROPERTIES = {
             // NOTE must match FILE_PROPERTIES above
@@ -163,7 +158,6 @@ public class MtpDatabase {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.149 -0400", hash_original_field = "F0464B68A1F4E670DB76B69EF1BA3576", hash_generated_field = "52D32E71E776C8800E0BFCBFFE71F538")
 
-
     static final int[] VIDEO_PROPERTIES = {
             // NOTE must match FILE_PROPERTIES above
             MtpConstants.PROPERTY_STORAGE_ID,
@@ -186,7 +180,6 @@ public class MtpDatabase {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.151 -0400", hash_original_field = "BF030475C8D32285DF21B15FA873B600", hash_generated_field = "AA6920E26F3373263386E8C18E962E6F")
 
-
     static final int[] IMAGE_PROPERTIES = {
             // NOTE must match FILE_PROPERTIES above
             MtpConstants.PROPERTY_STORAGE_ID,
@@ -205,7 +198,6 @@ public class MtpDatabase {
             MtpConstants.PROPERTY_DESCRIPTION,
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.153 -0400", hash_original_field = "2B1FBA028D479F53F1C0C23C16CFEBCA", hash_generated_field = "DF1C987BF2073D2E408271EB2F460F05")
-
 
     static final int[] ALL_PROPERTIES = {
             // NOTE must match FILE_PROPERTIES above
@@ -245,7 +237,6 @@ public class MtpDatabase {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.069 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.071 -0400", hash_original_field = "F9DB4B38F600632EE10B3816F27F7461", hash_generated_field = "C4EC300190CE5D52202461D7E0557B4F")
 
@@ -270,7 +261,6 @@ public class MtpDatabase {
     private String[] mSubDirectoriesWhereArgs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.082 -0400", hash_original_field = "6283206A78C154542BF89CB5BF05AAA5", hash_generated_field = "9471A85D354B48FE30FA0C94A06C1BDB")
 
-
     private final HashMap<String, MtpStorage> mStorageMap = new HashMap<String, MtpStorage>();
 
     static {
@@ -291,7 +281,6 @@ public class MtpDatabase {
 
     private SharedPreferences mDeviceProperties;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.116 -0400", hash_original_field = "7560A790B29D9A15498F6F9824684DB8", hash_generated_field = "B574A36DE7F22C83270D004F5D7672B1")
-
 
     private  MediaScanner mMediaScanner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.182 -0400", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
@@ -352,6 +341,7 @@ public MtpDatabase(Context context, String volumeName, String storagePath,
         initDeviceProperties(context);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.120 -0400", hash_original_method = "24D5F4C50C2ABC5729410C2F2E889F36", hash_generated_method = "932E17C175F633B7C6ED1D87A1181F69")
     
 @Override
@@ -758,7 +748,6 @@ private int[] getSupportedDeviceProperties() {
         };
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.159 -0400", hash_original_method = "60BE146E8EF847DC4DEAA0DD295CF6EF", hash_generated_method = "25B499659F76E29A73C869191BB5ACE4")
     
 private MtpPropertyList getObjectPropertyList(long handle, int format, long property,
@@ -1116,7 +1105,5 @@ private void sessionEnded() {
     private final void native_finalize(){
     	//Formerly a native method
     }
-
-
 
 }

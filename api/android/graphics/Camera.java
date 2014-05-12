@@ -177,6 +177,7 @@ public void applyToCanvas(Canvas canvas) {
     	return getTaintFloat();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.184 -0500", hash_original_method = "C90BA6E6D8C2FEFD061454BA6E7AF7E1", hash_generated_method = "8A85EA8E6B128F46007DF31045FAB50E")
     
 protected void finalize() throws Throwable {

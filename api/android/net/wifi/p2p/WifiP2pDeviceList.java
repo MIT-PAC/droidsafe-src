@@ -115,6 +115,7 @@ public Collection<WifiP2pDevice> getDeviceList() {
         return Collections.unmodifiableCollection(mDevices);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.246 -0500", hash_original_method = "5A8D6CF28770F332159DA6A027ABEE59", hash_generated_method = "03AB821FD1EB741C1E04964BCF6220CE")
     
 public String toString() {

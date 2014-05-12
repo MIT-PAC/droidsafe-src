@@ -150,6 +150,8 @@ public int read() throws IOException {
      * @throws IndexOutOfBoundsException
      *             if offset, len or buffer size are invalid
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:00.003 -0500", hash_original_method = "32F97B2485E75E3ED9E853F934660C63", hash_generated_method = "1CBDDE678B85257BFA5CC8ECFAB93B99")
     
 public int read(byte b[], int offset, int len) throws IOException {

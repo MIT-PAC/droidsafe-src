@@ -114,6 +114,7 @@ RuimRecords(CDMAPhone p) {
         phone.mCM.unregisterForIccRefresh(this);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.889 -0500", hash_original_method = "F3AC7B1645E4B6C17E75361C82F92F71", hash_generated_method = "BC9F55971AFF3E5F87867A75B04A691E")
     
 @Override
@@ -219,6 +220,7 @@ public String getRUIMOperatorNumeric() {
         return mImsi.substring(0, 3 + MccTable.smallestDigitsMccForMnc(mcc));
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.915 -0500", hash_original_method = "584E0C361321C2DCD1B11D8CE97AF6DF", hash_generated_method = "CAF5DAE398870082803BAF9A29AA061A")
     
 @Override

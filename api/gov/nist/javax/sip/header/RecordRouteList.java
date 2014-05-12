@@ -18,6 +18,7 @@ public class RecordRouteList extends SIPHeaderList<RecordRoute> {
 public RecordRouteList() {
         super(RecordRoute.class, RecordRouteHeader.NAME);
     }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.032 -0500", hash_original_method = "7817AF16B5252B16AA7B12BAE88CFC40", hash_generated_method = "411BE966881C61BB191D691B0EF06140")
     
 public Object clone() {

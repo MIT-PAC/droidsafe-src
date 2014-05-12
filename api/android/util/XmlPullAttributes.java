@@ -31,6 +31,7 @@ public String getAttributeName(int index) {
         return mParser.getAttributeName(index);
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.958 -0500", hash_original_method = "A5436A02B7CB2BE76E834F087F6ECBA1", hash_generated_method = "92C896FB021164F335BD14C8BEECAE4D")
     
@@ -38,6 +39,7 @@ public String getAttributeValue(int index) {
         return mParser.getAttributeValue(index);
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.961 -0500", hash_original_method = "0F6DE45848B198201E8558211308FA90", hash_generated_method = "2513DF4668E27008F10BE75A19CABAA0")
     
@@ -45,6 +47,7 @@ public String getAttributeValue(String namespace, String name) {
         return mParser.getAttributeValue(namespace, name);
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.963 -0500", hash_original_method = "D18F44DE17503E98739B2795B002BD8F", hash_generated_method = "016D6C66B316E6F83720EF4A41A9A943")
     

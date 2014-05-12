@@ -112,7 +112,7 @@ public void onServiceDisconnected(int profile) {
         }
     };
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:11.939 -0400", hash_original_method = "E333130020C6323F086A67DCFD787729", hash_generated_method = "3E84013271C4A314948B37E023E57403")
     
 private BluetoothTetheringDataTracker() {

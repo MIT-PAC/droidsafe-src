@@ -54,6 +54,7 @@ public CodeSigner(CertPath signerCertPath, Timestamp timestamp) {
      * @return {@code true} if the specified object is equal to this {@code
      *         CodeSigner}, otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.227 -0500", hash_original_method = "9391ADEEB71A28BB26D9308D62C031F2", hash_generated_method = "D1C8D217DA8A3328F3F13BD41BE1E495")
     
 @Override
@@ -106,6 +107,7 @@ public Timestamp getTimestamp() {
      * @see Object#equals(Object)
      * @see CodeSigner#equals(Object)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.238 -0500", hash_original_method = "4C01119C48849B3B8C0F3B7EFA427DC4", hash_generated_method = "4F01C03BC42B5DC33901E517641097EE")
     
 @Override
@@ -124,6 +126,7 @@ public Timestamp getTimestamp() {
      *
      * @return a printable representation for this {@code CodeSigner}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.242 -0500", hash_original_method = "9AD37782FDC32A71B028636E3AD750B0", hash_generated_method = "EAF07D91ED239F7396733C880033622C")
     
 @Override

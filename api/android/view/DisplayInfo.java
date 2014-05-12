@@ -157,6 +157,7 @@ private DisplayInfo(Parcel source) {
         readFromParcel(source);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:02:44.062 -0500", hash_original_method = "F9482B41F815001270AA3007F3191ACF", hash_generated_method = "F7BB18D4A2E3F001FB976545DD1000FC")
     
 @Override
@@ -194,6 +195,7 @@ public boolean equals(DisplayInfo other) {
                 && Objects.equal(ownerPackageName, other.ownerPackageName);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:02:44.071 -0500", hash_original_method = "F6E3B6A783333C3A4408872B5A375F65", hash_generated_method = "45D4026AD4A176ACAB5C423377387D4B")
     
 @Override
@@ -367,6 +369,7 @@ private void getMetricsWithSize(DisplayMetrics outMetrics, CompatibilityInfo com
     }
 
     // For debugging purposes
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:02:44.113 -0500", hash_original_method = "51AAC4AB5857ED4DE4B2DB711E0D339C", hash_generated_method = "BBA6A87D15C42FF287428CEFEA10EE51")
     
 @Override

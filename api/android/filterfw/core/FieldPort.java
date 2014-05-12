@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -27,7 +26,6 @@ import java.lang.reflect.Field;
  */
 public class FieldPort extends InputPort {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.067 -0400", hash_original_field = "A36D1E69B2CF857FFEEB155335429AF7", hash_generated_field = "AB76CA4462ACCCB5B08E9DB087EA72D6")
-
 
     protected Field mField;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.070 -0400", hash_original_field = "DEF5D0FF79CE4A5A5264A7B73002A160", hash_generated_field = "7E0A00013DFCAB0285D79669049D27A5")
@@ -118,6 +116,7 @@ public FieldPort(Filter filter, String name, Field field, boolean hasDefault) {
         return !mValueWaiting;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.099 -0400", hash_original_method = "8F5AB1DB6E193ADA622F024DB92EA254", hash_generated_method = "C1494A4CC838EDAB8DCD66A27890C08C")
     
 @Override

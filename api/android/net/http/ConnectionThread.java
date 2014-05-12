@@ -72,6 +72,7 @@ void requestStop() {
      * Loop until app shutdown. Runs connections in priority
      * order.
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.140 -0500", hash_original_method = "CA4464BE27725D08DF2A2ECD7DD50C0A", hash_generated_method = "F47C9B72D0495D1FB90B4A55DD62F1C2")
     
 public void run() {
@@ -137,6 +138,7 @@ public void run() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.142 -0500", hash_original_method = "E5691DA5C4D558B8174DB10F2BE5CF59", hash_generated_method = "A84530E34FD98E5588F55591BE99CCA1")
     
 public synchronized String toString() {

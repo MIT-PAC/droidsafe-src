@@ -61,6 +61,7 @@ public CdmaSignalInfoRec(int isPresent, int signalType, int alertPitch, int sign
             this.signal = signal;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.966 -0500", hash_original_method = "7B06985E180C621ECAFE7B9C193EA068", hash_generated_method = "5C339CA1E8F0EBB79F84F1AB79639F79")
         
 @Override
@@ -90,6 +91,7 @@ public CdmaDisplayInfoRec(int id, String alpha) {
             this.alpha = alpha;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.978 -0500", hash_original_method = "CF7F6486CAA3B052EADF0380EBB958B2", hash_generated_method = "451189ED53A4E395D93D554D05A436D1")
         
 @Override
@@ -133,6 +135,7 @@ public CdmaNumberInfoRec(int id, String number, int numberType, int numberPlan, 
             this.si = (byte)si;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.000 -0500", hash_original_method = "AA45E08965936A74DE899E6F859B6FCB", hash_generated_method = "5E4393BA0A95D6EF08F9C4EE1F671FD7")
         
 @Override
@@ -184,6 +187,7 @@ public CdmaRedirectingNumberInfoRec(String number, int numberType, int numberPla
             redirectingReason = reason;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.029 -0500", hash_original_method = "D87DB983AB005EF9C7C06219E3B89A0C", hash_generated_method = "67D5BAAA3DCBBB45937C4AFCEE8BAB4D")
         
 @Override
@@ -219,6 +223,7 @@ public CdmaLineControlInfoRec(int lineCtrlPolarityIncluded, int lineCtrlToggle,
             this.lineCtrlPowerDenial = (byte)lineCtrlPowerDenial;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.047 -0500", hash_original_method = "31B594EC48675C621293EE1C64F7F9A1", hash_generated_method = "DA5C71EAC058B2D0333678E3B04881B5")
         
 @Override
@@ -244,6 +249,7 @@ public CdmaT53ClirInfoRec(int cause) {
             this.cause = (byte)cause;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.056 -0500", hash_original_method = "74C570B6C9610C7A851D818E47741A96", hash_generated_method = "EB2EFDB3C941DD4C7C940AFBD19CADEB")
         
 @Override
@@ -270,6 +276,7 @@ public CdmaT53AudioControlInfoRec(int uplink, int downlink) {
             this.downlink = (byte) downlink;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.068 -0500", hash_original_method = "2D0051C7D271A045193565807D73F90A", hash_generated_method = "3143D86DD5E33593B7ACD5FC8D7913F3")
         
 @Override

@@ -1066,6 +1066,7 @@ void sendUssd(String ussdMessage) {
     }
 
     /** Called from GSMPhone.handleMessage; not a Handler subclass */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.888 -0500", hash_original_method = "5C6BF8BFD3AA6C53F0FB54F2701C6A7B", hash_generated_method = "88312878C1FA4C538B0BDCFF79C890AD")
     
 public void
@@ -1579,6 +1580,7 @@ private CharSequence
      * SpecialCharSequenceMgr class.
      */
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.924 -0500", hash_original_method = "4616EBEA9D2FF88EEA02D51F5D1F1A7C", hash_generated_method = "F722B0DF9628C717F5A61713FDCA07A3")
     
 @Override

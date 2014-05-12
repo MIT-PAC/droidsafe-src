@@ -303,13 +303,13 @@ protected void finalize() throws Throwable {
     
     public static class OutOfResourcesException extends Exception {
         @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.189 -0500", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "61E15EE14C5CBDE674C8414A5D82F699")
         
 public OutOfResourcesException() {
         }
         @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.191 -0500", hash_original_method = "939C993D5367F7A0F0B43DA6997565C5", hash_generated_method = "8B56E09EC06DA5D20A9DD318E0B09E28")
         
 public OutOfResourcesException(String name) {
@@ -325,6 +325,7 @@ public EventHandler(Looper looper) {
             super(looper);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.219 -0500", hash_original_method = "30D4E35B8AF7291102AD4322AA39CBBD", hash_generated_method = "256536D23D3E1206033725D38B3D6FBA")
         
 @Override

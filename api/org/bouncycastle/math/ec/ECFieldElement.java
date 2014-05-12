@@ -72,6 +72,7 @@ public abstract ECFieldElement invert();
     
 public abstract ECFieldElement sqrt();
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.829 -0500", hash_original_method = "0A600F50B2D3858965A3E5F0EE37FE95", hash_generated_method = "AAF64298068B399683E7AB08A7A9CD52")
     
 public String toString()
@@ -368,6 +369,7 @@ public ECFieldElement sqrt()
 //            return new Fp(q, root);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.872 -0500", hash_original_method = "F275DE81E4C5BCC7A64CB08B0E3C6B94", hash_generated_method = "1F34429F5D6DFE5D5051FFD921BEAC80")
         
 public boolean equals(Object other)
@@ -386,6 +388,7 @@ public boolean equals(Object other)
             return q.equals(o.q) && x.equals(o.x);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.874 -0500", hash_original_method = "61E77154098D5712686019259E83DC28", hash_generated_method = "D3534BB2ACB8A289C0DB7F908018F0E4")
         
 public int hashCode()
@@ -799,6 +802,7 @@ public int getK3()
             return this.k3;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.957 -0500", hash_original_method = "3D5105255A9EFAC151D1697019D15B93", hash_generated_method = "A7EF6F2ED25B2D3AA8D469F9CDBE00F9")
         
 public boolean equals(Object anObject)
@@ -821,6 +825,7 @@ public boolean equals(Object anObject)
                 && (this.x.equals(b.x)));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:38.959 -0500", hash_original_method = "A8D83F5F73395A245F39934AB1D46428", hash_generated_method = "FDF27C5EF3AEE3C3A9BC32AD796AF681")
         
 public int hashCode()

@@ -321,6 +321,7 @@ public int write(OutputStream out) throws IOException {
         return HEADER_LENGTH;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:13:48.172 -0400", hash_original_method = "A0AE6B92EE29351CAE938312CF649E75", hash_generated_method = "7675AFF25CCB82A0B8931697982E02DD")
     
 @Override

@@ -55,6 +55,7 @@ public StringBuffer encode(StringBuffer buffer) {
      * @param other Object to set
      * @return boolean
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.512 -0500", hash_original_method = "86C54BFDD185E9407C74F8F297BEF1D3", hash_generated_method = "D42344E68A0C28B13AFC8777935ED35F")
     
 public boolean equals(Object other) {
@@ -146,6 +147,7 @@ public void merge(Object mergeObject) {
             port = ((HostPort) mergeObject).port;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.534 -0500", hash_original_method = "723102D689B5DB9C81F9B317715D80D3", hash_generated_method = "4D852C4A3F4277324E3CB29753C3FBAF")
     
 public Object clone() {
@@ -155,12 +157,14 @@ public Object clone() {
         return retval;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.537 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {
         return this.encode();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.539 -0500", hash_original_method = "576865B2F50CE751C00A8F417860D16A", hash_generated_method = "7645E3FF5B5484912DD685607842AD47")
     
 @Override

@@ -225,6 +225,7 @@ public Match getMatcher() {
 
     /** Clones this object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.782 -0500", hash_original_method = "2321A1A51988B1008E8A21E8D40DF48D", hash_generated_method = "CC1B934CC7175FE37AA368A3286E9D4F")
     
@@ -461,6 +462,7 @@ protected void dbgPrint(String s) {
      *@param that is the other object to test against.
      *@return true if the objects are euqal and false otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.823 -0500", hash_original_method = "B5B25EA3AF1891601BFD267279427EFB", hash_generated_method = "44AC996741CE1A8293D5C87B547ABF0A")
     
 public boolean equals(Object that) {

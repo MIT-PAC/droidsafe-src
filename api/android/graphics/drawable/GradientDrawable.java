@@ -107,7 +107,7 @@ private static float getFloatOrFraction(TypedArray a, int index, float defaultVa
     private boolean mPathIsDirty = true;
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.600 -0500", hash_original_method = "64287040FBFB7F81692AADB4245B0378", hash_generated_method = "9E6BAE35B9008BC712C2A5F5E71F0CBF")
     
 public GradientDrawable() {
@@ -290,7 +290,7 @@ private int modulateAlpha(int alpha) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.634 -0500", hash_original_method = "ACDDE907D9101C7CDDBBB954BA4F617E", hash_generated_method = "FE341961AD289E1A38BF3FE578DB496D")
     
 @Override
@@ -499,7 +499,7 @@ public void setColor(int argb) {
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.644 -0500", hash_original_method = "5182E1ED546D38ED0370680C356A26EE", hash_generated_method = "E73515240D0ADBE9EB02F05220B12199")
     
 @Override
@@ -535,8 +535,8 @@ public void setColor(int argb) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.651 -0500", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "10DE806C6642B5F0CD513CB0E3A17B5D")
     
 @Override
@@ -1175,7 +1175,7 @@ private boolean ensureValidRect() {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.673 -0500", hash_original_method = "312782D78F9C32949C3B038C307C5C9C", hash_generated_method = "BF3E96399D536081C4FE7FF3F644DEBA")
     
 @Override
@@ -1185,7 +1185,7 @@ private boolean ensureValidRect() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.675 -0500", hash_original_method = "A19A1B01925414A773BB5AE9FBB4894A", hash_generated_method = "414190BA159EB48B9D4905B397A68CAB")
     
 @Override

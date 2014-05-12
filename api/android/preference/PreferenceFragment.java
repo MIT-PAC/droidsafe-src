@@ -107,6 +107,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         mPreferenceManager.setFragment(this);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.195 -0500", hash_original_method = "791E09A6EB15382808CD8A1F8A420342", hash_generated_method = "23BA7AF6850D8829DEFED48779FE36F6")
     
 @Override

@@ -80,6 +80,7 @@ public final int size() {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.614 -0500", hash_original_method = "91D255AEAD2ED7375F2242249D64C3A6", hash_generated_method = "1314E249A0FB0A0967DD391BB94D9A0D")
     
@@ -103,7 +104,7 @@ public final int size() {
      * @see DataInputStream#readByte()
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.616 -0500", hash_original_method = "480870EC6BADBB21CCFBD983315F3126", hash_generated_method = "0DA8DCF8A72CE0A0690961D8DC195CF7")
     
 @Override

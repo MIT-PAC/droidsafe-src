@@ -166,6 +166,7 @@ public class DhcpInfoInternal {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.944 -0500", hash_original_method = "4AA9FBC2D45E1110E54A5D07C5B867F3", hash_generated_method = "3F4A5CA090E96D2F4C531A5FED0F07B2")
     public String toString() {
         String routeString = "";

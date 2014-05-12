@@ -598,6 +598,7 @@ public void destroy() {
      * Handle messages posted to us.
      * @param msg The message to handle.
      */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.123 -0500", hash_original_method = "08B10BC0FD4D849356EF434C4A57C456", hash_generated_method = "6BD96B9529562207CAD6CD6B1C457CE8")
     
 @Override

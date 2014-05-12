@@ -15,6 +15,7 @@ public interface Set<E> extends Collection<E> {
     
     public void clear();
     
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean contains(Object object);
     
     @DSComment("Abstract Method")

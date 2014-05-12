@@ -113,6 +113,7 @@ public QuickContactBadge(Context context, AttributeSet attrs, int defStyle) {
         setOnClickListener(this);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.378 -0500", hash_original_method = "5693D4EF6FAC7E7AFE930BDF5EC8E103", hash_generated_method = "D9F4A3982F3C07E260D6359D1B37C215")
     
 @Override

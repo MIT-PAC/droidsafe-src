@@ -787,6 +787,7 @@ void writeTo(JSONStringer stringer) throws JSONException {
         stringer.endObject();
     }
     // orphaned legacy method
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public boolean equals(Object o) {
             return o == this || o == null; 
         }

@@ -68,7 +68,7 @@ public class DSCursor implements Cursor {
     }
     
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public String getColumnName(int columnIndex) {
         String str = new String("DSUnknown");
         str.addTaint(getTaint());
@@ -76,7 +76,7 @@ public class DSCursor implements Cursor {
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public String[] getColumnNames() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -95,12 +95,12 @@ public class DSCursor implements Cursor {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public int getInt(int columnIndex) {
         return getTaintInt();
     }
 
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("From safe class list")
     @DSSafe(DSCat.DB_CURSOR)
     public long getLong(int columnIndex) {
@@ -120,20 +120,20 @@ public class DSCursor implements Cursor {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public double getDouble(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public byte[] getBlob(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public String getString(int columnIndex) {
         return new String("DSUnknown");
     }
@@ -156,7 +156,7 @@ public class DSCursor implements Cursor {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public boolean isBeforeFirst() {
         return false;
     }
@@ -270,7 +270,7 @@ public class DSCursor implements Cursor {
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public int getType(int columnIndex) {
         return 0;
     }

@@ -447,6 +447,7 @@ public void close() throws IOException {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.100 -0500", hash_original_method = "BA9513A0FEF5B159A730B41F75EA216A", hash_generated_method = "6492143EEC626BDBFC9ECDAA366E42D9")
     
 @Override
@@ -454,6 +455,7 @@ public void close() throws IOException {
         return "{ParcelFileDescriptor: " + mFileDescriptor + "}";
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.102 -0500", hash_original_method = "47AC631E45892E7E44A62B81BC7ACB91", hash_generated_method = "82C8FC9A3F9B6E06400389058559C479")
     
 @Override

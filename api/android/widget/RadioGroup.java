@@ -107,6 +107,7 @@ private void init() {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.176 -0500", hash_original_method = "CB461CEACD94E412C8E6191745000CDB", hash_generated_method = "B97E4410DC386F72E2A2E736E308EE13")
     
 @Override
@@ -240,6 +241,7 @@ public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.193 -0500", hash_original_method = "B6F650811616014198C7164725061E28", hash_generated_method = "F665D68F1DC1CA6C2EA0A47864080DB1")
     
 @Override

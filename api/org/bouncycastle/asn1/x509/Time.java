@@ -16,11 +16,6 @@ import org.bouncycastle.asn1.DERGeneralizedTime;
 import org.bouncycastle.asn1.DERObject;
 import org.bouncycastle.asn1.DERUTCTime;
 
-
-
-
-
-
 public class Time extends ASN1Encodable implements ASN1Choice {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:21.056 -0500", hash_original_method = "B37BC1B36F5E6A9ABA24A45CBD3FE691", hash_generated_method = "ACED46F7E3ACA317DA4C8EE039BBBA8F")
@@ -148,13 +143,13 @@ public DERObject toASN1Object()
         return time;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:21.074 -0500", hash_original_method = "B1D8E302C2A2168C967B1C035989FAE4", hash_generated_method = "30ABA8BCDD0F3EECE8F4AAE300E6F0F1")
     
 public String toString()
     {
         return getTime();
     }
-
     
 }
 

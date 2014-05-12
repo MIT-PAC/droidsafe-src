@@ -332,6 +332,7 @@ private void __processChar(int ch) throws InterruptedException
         }
     }
 
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.953 -0500", hash_original_method = "66329309126CC18AC52080ACFD2A7E15", hash_generated_method = "3CA5BFC1C90FB822B8610B3B9A261C02")
     
 public int read() throws IOException
@@ -456,6 +457,8 @@ public int read() throws IOException
      * @exception IOException If an error occurs in reading the underlying
      *            stream.
      ***/
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.957 -0500", hash_original_method = "1AF05D3B3AC1A0BE6FEC3ED8E4AD92D7", hash_generated_method = "602CBE64B37DDC68026D3CD1EA56EC7D")
     
 public int read(byte buffer[]) throws IOException
@@ -477,6 +480,7 @@ public int read(byte buffer[]) throws IOException
      * @exception IOException If an error occurs while reading the underlying
      *            stream.
      ***/
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.963 -0500", hash_original_method = "F31322C7E374D5C2D1894571A8E044A8", hash_generated_method = "F46F4C7939B3E8BCCBAAAF6C2BF2C47B")
     
 public int read(byte buffer[], int offset, int length) throws IOException
@@ -516,6 +520,7 @@ public boolean markSupported()
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.975 -0500", hash_original_method = "8F0DC78A5AC3269E4DE32507160D3F4F", hash_generated_method = "23059450FF34B3A7D119C6767C621969")
     
 public int available() throws IOException
@@ -556,6 +561,7 @@ public void close() throws IOException
         __threaded = false;
     }
 
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:57.987 -0500", hash_original_method = "BC125B830373AC39F1C2546FCC293E9D", hash_generated_method = "8E7403B94ECFEDD51B5E7A8D415E9A56")
     
 public void run()

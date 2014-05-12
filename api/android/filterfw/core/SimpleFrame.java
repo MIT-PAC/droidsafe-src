@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -44,7 +43,6 @@ static SimpleFrame wrapObject(Object object, FrameManager frameManager) {
         return result;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.488 -0400", hash_original_field = "63EB2904DE14485FE87749A3C0F578EC", hash_generated_field = "6BF312E710A9A51FE4A328DC181764B4")
-
 
     private Object mObject;
 
@@ -191,6 +189,7 @@ private void setFormatObjectClass(Class objectClass) {
         mObject = object;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.520 -0400", hash_original_method = "7AAB1E65A963EEB236959BFD051EB330", hash_generated_method = "BB2AD127E04AF74D13CA1105B7611FDD")
     
 @Override

@@ -73,6 +73,8 @@ public CheckedInputStream(InputStream is, Checksum csum) {
      * @throws IOException
      *             if this stream is closed or some I/O error occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.621 -0500", hash_original_method = "7EEC56472DB745F24C7F951D18194473", hash_generated_method = "822145D2C7EF4E7B86931B5DEF72125A")
     
 @Override
@@ -104,6 +106,7 @@ public Checksum getChecksum() {
      * @throws IOException if this stream is closed or another I/O error occurs.
      * @return the number of bytes skipped.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.626 -0500", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "FA64348A96D1C68BD0600E70DFA81D7E")
     
 @Override

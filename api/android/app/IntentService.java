@@ -83,7 +83,7 @@ public void setIntentRedelivery(boolean enabled) {
     }
 
     @DSVerified
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.841 -0500", hash_original_method = "1A8CCBE4C5A081BBDC2E857325C2F354", hash_generated_method = "44FDF9E70DE06721462D5094339E1AE1")
 @Override
     public void onStart(Intent intent, int startId) {
@@ -101,7 +101,7 @@ public void setIntentRedelivery(boolean enabled) {
      */
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.843 -0500", hash_original_method = "38140402AEC024932D8DF709F80C2AA8", hash_generated_method = "8A862437975BF5D7F532D7E88BD5534F")
     
 @Override
@@ -157,6 +157,7 @@ public ServiceHandler(Looper looper) {
             super(looper);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.830 -0500", hash_original_method = "54FB6BD49FB0E5DF524AEC3E07C0037D", hash_generated_method = "72C7E7960D6CAE09BBA5E612FD9119CF")
         
 @Override

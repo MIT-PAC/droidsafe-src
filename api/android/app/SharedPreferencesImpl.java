@@ -226,6 +226,7 @@ private boolean hasFileChangedUnexpectedly() {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.845 -0500", hash_original_method = "CD8081B759B90CE7833F86EB66B232F5", hash_generated_method = "25137C4588A9B38A2C8984B7C53137C9")
     
 public void registerOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
@@ -235,6 +236,7 @@ public void registerOnSharedPreferenceChangeListener(OnSharedPreferenceChangeLis
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.847 -0500", hash_original_method = "F9E846583CAAA911470841F2FE3AC3FA", hash_generated_method = "065E5C32D3ADC024F466CAE3FC98E632")
     
 public void unregisterOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
@@ -275,7 +277,8 @@ public Map<String, ?> getAll() {
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.853 -0500", hash_original_method = "4363C372EF13513A221D5D74A24EBA33", hash_generated_method = "17A5DE3268095F5141810B524316C349")
     
 public String getString(String key, String defValue) {
@@ -297,6 +300,7 @@ public Set<String> getStringSet(String key, Set<String> defValues) {
         }
     }
 
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.858 -0500", hash_original_method = "ACC29E9B287DA38F520685100499E9BD", hash_generated_method = "793DD6153732330EE594C05370693AC7")
     
@@ -307,6 +311,7 @@ public int getInt(String key, int defValue) {
             return v != null ? v : defValue;
         }
     }
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.860 -0500", hash_original_method = "44BE6AE8D3AB2ABE731A78B854B12E07", hash_generated_method = "16DF23A599684AF0C176C7762E0FC2B2")
     
@@ -327,6 +332,8 @@ public float getFloat(String key, float defValue) {
             return v != null ? v : defValue;
         }
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.864 -0500", hash_original_method = "726255BCC2D6177085677A1712342F0B", hash_generated_method = "A70269ED9C7B03CAF7C4A7C147E793A7")
     
 public boolean getBoolean(String key, boolean defValue) {
@@ -367,7 +374,7 @@ public boolean contains(String key) {
         public volatile boolean writeToDiskResult = false;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.256 -0400", hash_original_method = "1F3E23CA54BAEE886A8B49EA267FA6D4", hash_generated_method = "1F3E23CA54BAEE886A8B49EA267FA6D4")
         public MemoryCommitResult ()
         {
@@ -616,6 +623,7 @@ private void notifyListeners(final MemoryCommitResult mcr) {
         
     }
 
+    @DSSafe(DSCat.SYSTEM_PREFERENCES)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.869 -0500", hash_original_method = "4D22F9B98CC44B257DB4ED7BF7E423CC", hash_generated_method = "4C61589964CC4BF4AD38A4925858E7BC")
     
 public Editor edit() {

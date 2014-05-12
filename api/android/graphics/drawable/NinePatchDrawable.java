@@ -230,7 +230,7 @@ private void computeBitmapSize() {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.460 -0500", hash_original_method = "D590BE7B225C8366E27B182C22714F49", hash_generated_method = "C8AD40ACACCB63A9A23D88384D7CED9B")
     
 @Override
@@ -259,8 +259,8 @@ private void computeBitmapSize() {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.467 -0500", hash_original_method = "DDA2062A293BD75777B2540266427F8E", hash_generated_method = "304F8A5C1600DCBD8E288A0C143EEE23")
     
 @Override
@@ -388,7 +388,7 @@ public Paint getPaint() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.482 -0500", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "21AB0A052F6EA6AC14C0E8AE68C8FF19")
     
 @Override
@@ -401,7 +401,7 @@ public Paint getPaint() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.484 -0500", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "4C6E95AD1C54FB0FB2042DE89349F724")
     
 @Override
@@ -434,8 +434,8 @@ public Paint getPaint() {
      * value of OPAQUE or TRANSLUCENT.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.491 -0500", hash_original_method = "B22FBB09C864D64632C83D9F48FAF25E", hash_generated_method = "26A019198189533DB68C958BCD194B3E")
     
 @Override

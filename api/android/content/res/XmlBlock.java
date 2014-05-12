@@ -331,7 +331,8 @@ public String getNamespace(String prefix) {
 public int getNamespaceCount(int depth) throws XmlPullParserException {
             throw new XmlPullParserException("getNamespaceCount() not supported");
         }
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.DATA_STRUCTURE)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.959 -0500", hash_original_method = "D2403D5573FCC08ECC8A73989B7EFE93", hash_generated_method = "DC3028978D13AB1C35987EABA2FF7582")
         
 public String getPositionDescription() {
@@ -451,7 +452,8 @@ public boolean isEmptyElementTag() throws XmlPullParserException {
 public int getAttributeCount() {
             return mEventType == START_TAG ? nativeGetAttributeCount(mParseState) : -1;
         }
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.DATA_STRUCTURE)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.000 -0500", hash_original_method = "F4E9CDB9F128BA6177C44CACB76DA2CC", hash_generated_method = "CB1D628EAE2020F032BE264A79BEB4FE")
         
 public String getAttributeValue(int index) {
@@ -484,7 +486,8 @@ public boolean isAttributeDefault(int index) {
 public int nextToken() throws XmlPullParserException,IOException {
             return next();
         }
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.DATA_STRUCTURE)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.009 -0500", hash_original_method = "8127D80C9F5EEB177072DC0AE91ACB4C", hash_generated_method = "45702943C347CDA97048E59AECB51ED2")
         
 public String getAttributeValue(String namespace, String name) {
@@ -770,6 +773,7 @@ public void close() {
             }
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.065 -0500", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "0BF8996A0A6FCACED5B5E8AA34F655BA")
         
 protected void finalize() throws Throwable {
@@ -787,6 +791,7 @@ final CharSequence getPooledString(int id) {
         
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.090 -0500", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "0BF8996A0A6FCACED5B5E8AA34F655BA")
     
 protected void finalize() throws Throwable {

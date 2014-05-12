@@ -166,6 +166,7 @@ public boolean match(String str) {
         return matchPattern(mPattern, str, mType);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.363 -0500", hash_original_method = "4D68435646F5279408D2A4F2A408DED4", hash_generated_method = "757F4636B2E1DD790C8287C7BC15C9D2")
     
 public String toString() {

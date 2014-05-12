@@ -192,6 +192,7 @@ public abstract IntBuffer duplicate();
      * @return {@code true} if this int buffer is equal to {@code other},
      *         {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.136 -0500", hash_original_method = "43D7EA8D2B4C608B648102E9AA040456", hash_generated_method = "40D9F64D79A67D8167034E36F27AB9A8")
     
 @Override
@@ -308,6 +309,7 @@ public final boolean hasArray() {
      *
      * @return the hash code calculated from the remaining ints.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.151 -0500", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "1E25806FB1ABDE5EAE09DE7EAB683BE8")
     
 @Override

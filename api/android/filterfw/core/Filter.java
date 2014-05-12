@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -44,7 +43,6 @@ import java.util.Set;
  */
 public abstract class Filter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.442 -0400", hash_original_field = "B793AA425D6640EC3A247AB86B5FEFDC", hash_generated_field = "2B1C162E92BB8ACC4597D974A28EA1E4")
-
 
     static final int STATUS_PREINIT               = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.445 -0400", hash_original_field = "68BA8BEFD786EF0FCD3E90CE26CA6325", hash_generated_field = "F904E8F82277AC25F1D3FF9BEC9573B5")
@@ -96,10 +94,8 @@ public static final boolean isAvailable(String filterName) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.463 -0400", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
 
-
     private String mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.465 -0400", hash_original_field = "0CF0E206DC2344000C67273C8DAA2B6F", hash_generated_field = "2D1303DECB0A3A4C737BBD714FCFC3FE")
-
 
     private int mInputCount = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.467 -0400", hash_original_field = "2941BB41DF85FA32328AD9DEC43CA710", hash_generated_field = "ACD2ECA2249CAACA4D674C7BB2610F57")
@@ -107,20 +103,17 @@ public static final boolean isAvailable(String filterName) {
     private int mOutputCount = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.471 -0400", hash_original_field = "D3A125A0278AA1923563F10E8758F0A9", hash_generated_field = "4D31F175343D69D9A309566E164F1E8B")
 
-
     private HashMap<String, InputPort> mInputPorts;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.474 -0400", hash_original_field = "B72F7AA0529524A6C78984D7035BA743", hash_generated_field = "3425E3DC68AFF52428798A7427156322")
 
     private HashMap<String, OutputPort> mOutputPorts;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.476 -0400", hash_original_field = "DAE6424CC0A8BBCBD9E5B2D64115DA40", hash_generated_field = "961C1EF536CF73F322C0E6AEB757729D")
 
-
     private HashSet<Frame> mFramesToRelease;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.479 -0400", hash_original_field = "58DC4E1A50C12891B9E24A8A7A3D21C2", hash_generated_field = "017FC0E1703380180D3FBBDDA179A849")
 
     private HashMap<String, Frame> mFramesToSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.482 -0400", hash_original_field = "1326AC174664A8C69AACF1A2354DBADD", hash_generated_field = "E430F313D6FF6DBA08AAF7FD77301967")
-
 
     private int mStatus = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.484 -0400", hash_original_field = "AD3CE712C06D04FB7CD8D7BEC912AC9E", hash_generated_field = "01AE6B5BD825BF17AA38794DC308F9A1")
@@ -131,10 +124,8 @@ public static final boolean isAvailable(String filterName) {
     private int mSleepDelay;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.489 -0400", hash_original_field = "29C29C36AD6A6BC3444DC3540D8DE006", hash_generated_field = "7CD577B0AD4FBF594FFE48D5F8BC7689")
 
-
     private long mCurrentTimestamp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.492 -0400", hash_original_field = "CCFB9E24DC58F9E64BC75A559E0C33FC", hash_generated_field = "29542B7EA5B26DA8ADF116C9866AA3F1")
-
 
     private boolean mLogVerbose;
 
@@ -549,6 +540,7 @@ protected void setWaitsOnOutputPort(String portName, boolean waits) {
         getOutputPort(portName).setBlocking(waits);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:59.607 -0400", hash_original_method = "6321C1F6CF93F97F77398A89FAB1CDEC", hash_generated_method = "F968B9921BD006C0E254EA595BF2A1DC")
     
 public String toString() {

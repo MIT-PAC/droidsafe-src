@@ -22,6 +22,7 @@ public PAssociatedURIList()
         super(PAssociatedURI.class, PAssociatedURI.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.341 -0500", hash_original_method = "85D89754B0983A44CEDEEC2CF2B4E2A8", hash_generated_method = "2DBE13DD982E02D8C325965950E49B11")
     
 public Object clone() {

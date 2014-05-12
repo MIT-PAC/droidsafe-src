@@ -157,6 +157,7 @@ private void __getReply() throws IOException
      * Performs connection initialization and sets state to
      * <code> AUTHORIZATION_STATE </code>.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:13.438 -0500", hash_original_method = "B58A648696301FB54C97CC1043045CA2", hash_generated_method = "527ED651A3F1B697DF725283544E2845")
     
 protected void _connectAction_() throws IOException
@@ -250,6 +251,7 @@ public void getAdditionalReply() throws IOException
      * <p>
      * @exception IOException  If there is an error in disconnecting.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:13.472 -0500", hash_original_method = "1474552803FC2685678A4E676E6971C0", hash_generated_method = "004152CB5BF030549BAE435DF9336F43")
     
 public void disconnect() throws IOException

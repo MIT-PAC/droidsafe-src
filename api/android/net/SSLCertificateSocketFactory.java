@@ -284,7 +284,8 @@ public void setKeyManagers(KeyManager[] keyManagers) {
      * <p>This method verifies the peer's certificate hostname after connecting
      * (unless created with {@link #getInsecure(int, SSLSessionCache)}).
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.INTERNET)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.601 -0500", hash_original_method = "4304AB31317AB234B33A24A3097FC48A", hash_generated_method = "F21147BC44780FC319DDC7126B73483E")
     
 @Override
@@ -305,7 +306,8 @@ public void setKeyManagers(KeyManager[] keyManagers) {
      * with this method.  You MUST verify the server's identity after connecting
      * the socket to avoid man-in-the-middle attacks.</p>
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.IO)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.603 -0500", hash_original_method = "A93A66D768B2246423C7BE25AD8A2DA8", hash_generated_method = "00AB5FD6D97267BD86AADDDCDAA57662")
     
 @Override
@@ -322,7 +324,8 @@ public void setKeyManagers(KeyManager[] keyManagers) {
      * with this method.  You MUST verify the server's identity after connecting
      * the socket to avoid man-in-the-middle attacks.</p>
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.INTERNET)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.606 -0500", hash_original_method = "B1DE7D9F10AA772C2BD2AA45E50C7AB6", hash_generated_method = "934210DA7F210392628B1AB507983364")
     
 @Override
@@ -341,7 +344,8 @@ public void setKeyManagers(KeyManager[] keyManagers) {
      * with this method.  You MUST verify the server's identity after connecting
      * the socket to avoid man-in-the-middle attacks.</p>
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.INTERNET)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.608 -0500", hash_original_method = "FFBF9F2950A9BB08EFE61A5F32F42B11", hash_generated_method = "29530CFBB387599E647A2E7AC79647FE")
     
 @Override
@@ -357,7 +361,8 @@ public void setKeyManagers(KeyManager[] keyManagers) {
      * <p>This method verifies the peer's certificate hostname after connecting
      * (unless created with {@link #getInsecure(int, SSLSessionCache)}).
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.INTERNET)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.610 -0500", hash_original_method = "1DBE2FFA1790A1D0791947337B43D86B", hash_generated_method = "73B530554F06FB8B1E5F33347220B487")
     
 @Override
@@ -378,7 +383,8 @@ public void setKeyManagers(KeyManager[] keyManagers) {
      * <p>This method verifies the peer's certificate hostname after connecting
      * (unless created with {@link #getInsecure(int, SSLSessionCache)}).
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.INTERNET)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.613 -0500", hash_original_method = "29FB194599A9B20E43B819582316EFA2", hash_generated_method = "040BF8C9DB457CA2AF485E86F6851AA9")
     
 @Override

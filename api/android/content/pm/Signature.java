@@ -194,6 +194,7 @@ public PublicKey getPublicKey() throws CertificateException {
         return cert.getPublicKey();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.817 -0500", hash_original_method = "F079A32CA15CD362613DEDB149309CFC", hash_generated_method = "D6FD3B0353D1CDA901DCA0F4761C00F6")
     
 @Override
@@ -210,6 +211,7 @@ public PublicKey getPublicKey() throws CertificateException {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.820 -0500", hash_original_method = "372447AEF502550B73E14443F4E70970", hash_generated_method = "E1E055FCA73BA1F4A7886CB254AA07A2")
     
 @Override

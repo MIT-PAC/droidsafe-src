@@ -20,6 +20,7 @@ public UnsupportedList() {
         super(Unsupported.class, UnsupportedHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.921 -0500", hash_original_method = "586FD49C37A8AA9D6CC092649E8819BF", hash_generated_method = "F69B5C0382BBC6ED2C3C331501831857")
     
 public Object clone() {

@@ -121,6 +121,7 @@ public int describeContents() {
     }
 
     /** Returns the hashcode of the type only. */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.113 -0500", hash_original_method = "6BF731200C51E86131E751F42FA1CCF7", hash_generated_method = "8DD507783991967039D39B7AC5CFF07E")
     
 public int hashCode() {
@@ -128,6 +129,7 @@ public int hashCode() {
     }
 
     /** Compares the type only, suitable for key comparisons. */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.116 -0500", hash_original_method = "56302D274B0C35098461E26F41A371FE", hash_generated_method = "8636066B283EEC770CB81C9AD3F3AA54")
     
 public boolean equals(Object o) {
@@ -140,7 +142,8 @@ public boolean equals(Object o) {
         */
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.118 -0500", hash_original_method = "E530FC0646EA4443AB0B477A8261002A", hash_generated_method = "8AF5CC66264B7D020ED61FFB05C5E3BB")
     
 public String toString() {

@@ -516,6 +516,7 @@ public void setOverflowReserved(boolean reserveOverflow) {
         return generateDefaultLayoutParams();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.817 -0500", hash_original_method = "C7A39F9D75FC22971A40D0A54E61424A", hash_generated_method = "7E38BA9E25DA97EDD4FE18FB943B604C")
     
 @Override
@@ -632,6 +633,7 @@ public void initialize(MenuBuilder menu) {
         return result;
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.831 -0500", hash_original_method = "87E5D39D1D82C11AB077A37A8786E27E", hash_generated_method = "0CF47D3AADD137C907CE91EE0D9110E3")
     
 public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {

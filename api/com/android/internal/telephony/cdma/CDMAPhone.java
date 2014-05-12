@@ -444,6 +444,7 @@ protected void init(Context context, PhoneNotifier notifier) {
         mExitEcmRunnable = null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.284 -0500", hash_original_method = "717E537581BE31A7DC523FEE6B0DDE4B", hash_generated_method = "8D92CFDBD1467DC49F55E375F5AC343B")
     
 @Override
@@ -1411,6 +1412,7 @@ public void unregisterForEcmTimerReset(Handler h) {
         mEcmTimerResetRegistrants.remove(h);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.517 -0500", hash_original_method = "69FA59CB460FF0A097B9F7F6B4D5A187", hash_generated_method = "F73F047102641555531D2226D09B55B1")
     
 @Override

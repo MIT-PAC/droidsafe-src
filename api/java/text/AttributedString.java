@@ -527,6 +527,7 @@ AttributedIterator(AttributedString attrString,
          * @return a shallow copy of this attributed iterator.
          * @see java.lang.Cloneable
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.127 -0500", hash_original_method = "CC2190075ADAC44CCBDC93141CA9BE6C", hash_generated_method = "44AE55E213931B931D436A023F145C4E")
         
 @Override

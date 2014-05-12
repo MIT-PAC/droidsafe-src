@@ -79,6 +79,7 @@ public UUID getUuid() {
      *
      * @return a String instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.533 -0500", hash_original_method = "88F1B202F7B60E8AC7861421AE6F35A5", hash_generated_method = "C5FA242F4A359EC31EDD6D0EE8CF7183")
     
 @Override
@@ -86,7 +87,8 @@ public UUID getUuid() {
         return mUuid.toString();
     }
 
-   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.535 -0500", hash_original_method = "3F38019E558A882D8ACF21219C1A6CB1", hash_generated_method = "D482F257FB9D39C233BA23B515F5D841")
+   @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.535 -0500", hash_original_method = "3F38019E558A882D8ACF21219C1A6CB1", hash_generated_method = "D482F257FB9D39C233BA23B515F5D841")
     
 @Override
    public int hashCode() {
@@ -103,7 +105,8 @@ public UUID getUuid() {
     * @return {@code true} if this ParcelUuid is equal to {@code object}
     *         or {@code false} if not.
     */
-   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.537 -0500", hash_original_method = "03E4868AC4B42986ECAD1235C75A1F23", hash_generated_method = "A3CBD1AAE0450E56A46BE79478BEA398")
+   @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.537 -0500", hash_original_method = "03E4868AC4B42986ECAD1235C75A1F23", hash_generated_method = "A3CBD1AAE0450E56A46BE79478BEA398")
     
 @Override
    public boolean equals(Object object) {

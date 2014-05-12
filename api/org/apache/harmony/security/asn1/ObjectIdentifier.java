@@ -223,6 +223,7 @@ public ObjectIdentifier(String strOid) {
         this.soid = strOid;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.408 -0500", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "F480ADA366896864C0C61F4E10A83AF8")
     
 @Override public boolean equals(Object o) {
@@ -235,6 +236,7 @@ public ObjectIdentifier(String strOid) {
         return Arrays.equals(oid, ((ObjectIdentifier) o).oid);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.411 -0500", hash_original_method = "CBAF5DCAABB7CFC3E05C923E938DB148", hash_generated_method = "5BDD1CCAC5970EE7D256D90500423945")
     
 @Override public String toString() {
@@ -244,6 +246,7 @@ public ObjectIdentifier(String strOid) {
         return soid;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.413 -0500", hash_original_method = "8929009F517116C951EAF49377701B44", hash_generated_method = "314217F6C50D1AF8F6781EC648892892")
     
 @Override public int hashCode() {

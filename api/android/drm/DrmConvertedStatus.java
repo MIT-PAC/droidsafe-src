@@ -62,7 +62,7 @@ public DrmConvertedStatus(int _statusCode, byte[] _convertedData, int _offset) {
         offset = _offset;
     }
 
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public DrmConvertedStatus() {
     }
 }

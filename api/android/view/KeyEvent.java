@@ -2957,6 +2957,7 @@ public final boolean dispatch(Callback receiver, DispatcherState state,
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.339 -0500", hash_original_method = "EC719782A5F2654811BE56A8456234B4", hash_generated_method = "F90E826AA8ED616E80B602C6A49E7245")
     
 @Override

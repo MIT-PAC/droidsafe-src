@@ -482,6 +482,7 @@ protected boolean getEnableSessionCreation() {
      * Returns the clone of this object.
      * @return the clone.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.184 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "EBBEEB29C41D0AA39444F5EA24292722")
     
 @Override

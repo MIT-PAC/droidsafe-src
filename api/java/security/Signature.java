@@ -507,6 +507,7 @@ public final void update(ByteBuffer data) throws SignatureException {
      *
      * @return a printable representation for this {@code Signature}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.564 -0500", hash_original_method = "300ADD63628A84B0D8F725B1BA1E9A8E", hash_generated_method = "71DB550FD17BA8B81224C927B01BF247")
     
@@ -619,6 +620,7 @@ public SignatureImpl(SignatureSpi signatureSpi, Provider provider,
         }
 
         // Returns a clone if the spiImpl is cloneable
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.617 -0500", hash_original_method = "E18D3A064C93BFFE53C93A44BEF059CB", hash_generated_method = "BC96F9787D1935B44EA995B57271FA47")
         
 @Override
@@ -704,6 +706,7 @@ public final AlgorithmParameters getParameters() {
         return engineGetParameter(param);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.583 -0500", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "3129F61A1AC4738DC9444626172FE7E6")
     

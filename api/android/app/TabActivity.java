@@ -54,6 +54,7 @@ public void setDefaultTab(int index) {
         mDefaultTabIndex = index;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.679 -0500", hash_original_method = "43FC78560A264DC47797D8670D9C3246", hash_generated_method = "6AC89BFAC49F7EC91737BA5CBAE8C9FA")

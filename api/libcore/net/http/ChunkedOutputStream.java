@@ -59,6 +59,7 @@ private int dataLength(int dataPlusHeaderLength) {
         return dataPlusHeaderLength - headerLength;
     }
 
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.846 -0500", hash_original_method = "B30C627643BAEC8E45C685D7AFD0614D", hash_generated_method = "DF933EA00B9F278BEF508C46A19942B0")
     
@@ -108,6 +109,7 @@ private void writeHex(int i) throws IOException {
         socketOut.write(hex, cursor, hex.length - cursor);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.851 -0500", hash_original_method = "2122C1B33A3B975810DFF4F0E39E0DD1", hash_generated_method = "F7B1D4A9788DDE30F529F00DBE210A74")
     
 @Override public synchronized void flush() throws IOException {

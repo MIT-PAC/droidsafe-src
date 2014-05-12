@@ -117,6 +117,7 @@ public String getFriendlyDisplayName() {
         return mDeviceAlias != null ? mDeviceAlias : mDeviceName;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:08.689 -0500", hash_original_method = "48B1FFAC43E2A3211570BE656A8BCBB2", hash_generated_method = "06DC343B4C7DCDEEA0769ABF3AA4960D")
     
 @Override
@@ -133,6 +134,7 @@ public boolean equals(WifiDisplay other) {
                 && Objects.equal(mDeviceAlias, other.mDeviceAlias);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:08.697 -0500", hash_original_method = "BF375FEAE634C3CE8F7B9C89395C26C2", hash_generated_method = "1F9B47249BDD27F76E694739E6D6DA69")
     
 @Override
@@ -158,6 +160,7 @@ public boolean equals(WifiDisplay other) {
     }
 
     // For debugging purposes only.
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:08.709 -0500", hash_original_method = "BB0785DC6141082208E0D254C2B8D066", hash_generated_method = "3769D69ECD61F6278F59EB6C47B4AC5E")
     
 @Override

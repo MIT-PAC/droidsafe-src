@@ -417,6 +417,7 @@ JarFileInputStream(InputStream is, ZipEntry ze,
             }
         }
 
+        @DSSpec(DSCat.IO)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.813 -0500", hash_original_method = "A2A36F60816A3448608DD8EC3FE6DD7B", hash_generated_method = "CEE01730D9D3AF09D011FF066CC57F74")
         
@@ -449,6 +450,7 @@ JarFileInputStream(InputStream is, ZipEntry ze,
             }
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.816 -0500", hash_original_method = "F5DF26793DC8C27B5E93038A2CA57A87", hash_generated_method = "5CAB3D66EB483457E42A260A8DFD8774")
         
 @Override
@@ -459,6 +461,7 @@ JarFileInputStream(InputStream is, ZipEntry ze,
             return super.available();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.819 -0500", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "FA64348A96D1C68BD0600E70DFA81D7E")
         
 @Override

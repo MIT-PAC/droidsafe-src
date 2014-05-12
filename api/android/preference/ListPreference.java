@@ -194,7 +194,7 @@ public void setValue(String value) {
      * @param summary The summary for the preference.
      */
     @DSComment("Perference UI, only change preference is spec")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.288 -0500", hash_original_method = "4C1B142B1B7C5EA1E6C6981CF6E13968", hash_generated_method = "E5338CAD084404E4E11D1C8474AFBED4")
     @DSVerified
 @Override

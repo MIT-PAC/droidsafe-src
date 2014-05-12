@@ -211,6 +211,7 @@ public final boolean isUnresolved() {
      *
      * @return the address and port number as a textual representation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.655 -0500", hash_original_method = "B37E37F388D00532D9BE005F391E9AE5", hash_generated_method = "783EE48230B34BDEE2030AD8909E7990")
     
 @Override
@@ -228,6 +229,7 @@ public final boolean isUnresolved() {
      * @return {@code true} if this socket and the given socket object {@code
      *         socketAddr} are equal, {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.658 -0500", hash_original_method = "A55E654199D420BD447FD45C56E388DE", hash_generated_method = "04E26C740CBB268443E88B1C4173063B")
     
 @Override
@@ -260,6 +262,7 @@ public final boolean isUnresolved() {
         return addr.equals(iSockAddr.addr);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.661 -0500", hash_original_method = "65AE406344FAC31F9ADA9FAD1BC1AA72", hash_generated_method = "5E6C36BD731406DA9ACC181859B04F7D")
     
 @Override

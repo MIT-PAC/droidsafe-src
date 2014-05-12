@@ -230,6 +230,7 @@ public int getScale()
         return scale;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.035 -0500", hash_original_method = "687FE1E6404530E144AF0CBE5E24BCFF", hash_generated_method = "438634EC5C3409E5F783F2BE8F0699B1")
     
 public String toString()
@@ -274,6 +275,7 @@ public String toString()
         return sb.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.037 -0500", hash_original_method = "31FE8AD014B4F1DD5E50498C47C1658F", hash_generated_method = "114AC49794CFA028086C8D1C325CFA83")
     
 public boolean equals(Object o)
@@ -292,6 +294,7 @@ public boolean equals(Object o)
         return ((bigInt.equals(other.bigInt)) && (scale == other.scale));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:37.039 -0500", hash_original_method = "32368AD05F7F4213F28C81C339A46A5C", hash_generated_method = "9AB25D5AA31E8C9BE223110C9C69105D")
     
 public int hashCode()

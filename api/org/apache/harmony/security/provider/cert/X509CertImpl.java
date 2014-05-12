@@ -461,6 +461,7 @@ private byte[] getEncodedInternal() throws CertificateEncodingException {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.447 -0500", hash_original_method = "3446887E135847ED5405A847AD59261D", hash_generated_method = "512F65A6CFB71990BA9F151259699921")
     
 @Override public String toString() {

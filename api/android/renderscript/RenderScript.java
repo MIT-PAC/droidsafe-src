@@ -2327,6 +2327,7 @@ public void contextDump() {
         {
             //Synthesized constructor
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.682 -0500", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "90F21E94AFD861A0B7D82CACD0D3E70A")
         
 public void run() {
@@ -2348,6 +2349,7 @@ public void run() {
         {
             //Synthesized constructor
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.697 -0500", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "90F21E94AFD861A0B7D82CACD0D3E70A")
         
 public void run() {
@@ -2407,6 +2409,7 @@ MessageThread(RenderScript rs) {
 
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.743 -0500", hash_original_method = "44BE69ACBAD20FBF8ED2712E597F95F7", hash_generated_method = "D1030E413833AC6EA089B2FA95F6EEC0")
         
 public void run() {

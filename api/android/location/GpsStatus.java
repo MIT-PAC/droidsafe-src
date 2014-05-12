@@ -103,6 +103,7 @@ SatelliteIterator(GpsSatellite[] satellites) {
             mSatellites = satellites;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.831 -0500", hash_original_method = "280A0F6C9C24DB057056B6AC4648E027", hash_generated_method = "811B00FC3009841CCEA0A6635DB73856")
         
 public boolean hasNext() {
@@ -114,6 +115,7 @@ public boolean hasNext() {
             return false;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.833 -0500", hash_original_method = "2172205C4F18481DAEA9224F778B255B", hash_generated_method = "2C1DF6EA0F9B5DEC0C764AC4E9064B18")
         
 public GpsSatellite next() {
@@ -126,6 +128,7 @@ public GpsSatellite next() {
             throw new NoSuchElementException();
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.836 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
         
 public void remove() {

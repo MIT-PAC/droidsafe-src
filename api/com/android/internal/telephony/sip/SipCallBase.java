@@ -42,6 +42,7 @@ public boolean isMultiparty() {
         return connections.size() > 1;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.341 -0500", hash_original_method = "7D1F122E9D021AC073DB09CCD6084B65", hash_generated_method = "AE254132F7C591FD635DC3E850C99BF3")
     
 public String toString() {

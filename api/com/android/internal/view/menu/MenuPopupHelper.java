@@ -493,6 +493,7 @@ void findExpandedIndex() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.137 -0500", hash_original_method = "1C37910D450C50461EF8022194A48276", hash_generated_method = "03DDDCD5D2F2E75C2A869506E1006BA0")
         
 @Override

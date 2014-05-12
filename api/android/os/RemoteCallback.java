@@ -62,6 +62,7 @@ public void sendResult(Bundle bundle) throws RemoteException {
     
 protected abstract void onResult(Bundle bundle);
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.344 -0500", hash_original_method = "EF8232A158BD658260B74FAB493C1DB9", hash_generated_method = "1BE7A3362E5A3DC4CF5D0052AA7716EB")
     
 public boolean equals(Object otherObj) {
@@ -76,6 +77,7 @@ public boolean equals(Object otherObj) {
         return false;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.346 -0500", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "D3CD0FF680AAF7AE0414AB6B38BC2F04")
     
 public int hashCode() {
@@ -99,6 +101,7 @@ DeliverResult(Bundle result) {
             mResult = result;
         }
         
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.319 -0500", hash_original_method = "603C18F53B6556C1CA52545158AE7A51", hash_generated_method = "E4A96AD2F241C1E6AFF6E991B848CC36")
         
 public void run() {

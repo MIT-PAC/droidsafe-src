@@ -428,6 +428,7 @@ public void setTextOff(CharSequence textOff) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.985 -0500", hash_original_method = "48254B36708A3254CD52161026ABD6F4", hash_generated_method = "68F9235CF4829EF977755A61FC2CDF9F")
     
 @Override
@@ -475,6 +476,7 @@ private boolean hitThumb(float x, float y) {
         return x > thumbLeft && x < thumbRight && y > thumbTop && y < thumbBottom;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.993 -0500", hash_original_method = "BEA9271A473068780C9D1CF1D0CB8717", hash_generated_method = "3803E2F449F9B58446BF4B2A0AAA0821")
     
 @Override
@@ -736,6 +738,7 @@ private int getThumbScrollRange() {
         return drawableState;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.021 -0500", hash_original_method = "DBFC9AA6074AC9C1F36B3AF225F67863", hash_generated_method = "35B8184BAFAF236CA852885CAF972486")
     
 @Override
@@ -752,6 +755,7 @@ private int getThumbScrollRange() {
         invalidate();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.023 -0500", hash_original_method = "1DDC7918114D3BA198855AEA4718194D", hash_generated_method = "6435E9B4FE47DB85E6037CF0706B949A")
     
 @Override

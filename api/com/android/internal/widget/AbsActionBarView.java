@@ -192,6 +192,7 @@ public void animateToVisibility(int visibility) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.267 -0500", hash_original_method = "E3FDA7CA05E815669691C5C9F461C174", hash_generated_method = "7507F82342AEE21992A70367745836D1")
     

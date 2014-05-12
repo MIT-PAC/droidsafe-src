@@ -227,6 +227,7 @@ private void connect(InetAddress anAddr, int aPort, int timeout) throws IOExcept
         this.fd = IoBridge.socket(streaming);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.960 -0500", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "F0F8D8EC0C5D8FA9E7582C7E60A1D793")
     
 @Override protected void finalize() throws Throwable {
@@ -523,6 +524,7 @@ public PlainSocketInputStream(PlainSocketImpl socketImpl) {
             this.socketImpl = socketImpl;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.973 -0500", hash_original_method = "4F6C4EDBF6F94B4350B82DBC8B61EF44", hash_generated_method = "802CA1465F02E8195BBE40C292899388")
         
 @Override public int available() throws IOException {
@@ -542,6 +544,8 @@ public PlainSocketInputStream(PlainSocketImpl socketImpl) {
             return Streams.readSingleByte(this);
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.981 -0500", hash_original_method = "83571F5C87BAB215B1B7EB80A1B1F5C1", hash_generated_method = "5DFAC29EEC49AAF97DBB02CB60B20F3F")
         
 @Override public int read(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -569,13 +573,15 @@ public PlainSocketOutputStream(PlainSocketImpl socketImpl) {
         }
 
         @DSSafe(DSCat.SAFE_OTHERS)
-        @DSSink(DSSinkKind.IO)
+        @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.999 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
         
 @Override public void write(int oneByte) throws IOException {
             Streams.writeSingleByte(this, oneByte);
         }
 
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.001 -0500", hash_original_method = "92B26271A04D40A7BFB8B8109985B5A0", hash_generated_method = "0D4BAAF7F5F6E7E7943F39A61D2F6DF4")
         
 @Override public void write(byte[] buffer, int offset, int byteCount) throws IOException {

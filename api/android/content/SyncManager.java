@@ -834,6 +834,7 @@ SyncHandlerMessagePayload(ActiveSyncContext syncContext, SyncResult syncResult) 
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.865 -0500", hash_original_method = "B17BCAD698B90432E3978D14A6575096", hash_generated_method = "AC05120E515B5E624DA5B4792F2B76AD")
         
 public void onReceive(Context context, Intent intent) {
@@ -989,6 +990,7 @@ protected void close() {
             mSyncWakeLock.setWorkSource(null);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.928 -0500", hash_original_method = "C99E9A460C6F28DBA730EF38203534A2", hash_generated_method = "3BECD9234F2F7FB11B03C135B5C86054")
         
 @Override
@@ -1197,6 +1199,7 @@ private void waitUntilReadyToRun() {
             }
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.071 -0500", hash_original_method = "AC98BBE28F5005D2D34EEDF919BF395C", hash_generated_method = "D5B3D37F5FF9529134AA97A3439A9C83")
         
 public void handleMessage(Message msg) {
@@ -1910,6 +1913,7 @@ public void toString(StringBuilder sb) {
                 sb.append("isActive ").append(isActive).append(", startTime ").append(startTime);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.062 -0500", hash_original_method = "C99E9A460C6F28DBA730EF38203534A2", hash_generated_method = "3BECD9234F2F7FB11B03C135B5C86054")
             
 @Override

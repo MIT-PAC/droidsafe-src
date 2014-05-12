@@ -46,6 +46,7 @@ public RetryableOutputStream() {
         }
     }
 
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.098 -0500", hash_original_method = "E1F3BEFD89D2B57927FA9AF72B0F2441", hash_generated_method = "1CB3ED1636ECEADDD866DBB78357D3E2")
     

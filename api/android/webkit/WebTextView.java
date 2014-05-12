@@ -271,6 +271,7 @@ public void setAutoFillable(int queryId) {
         mQueryId = queryId;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.216 -0500", hash_original_method = "2A0FFA3F53D08ACDC8DCA45FA27A8D22", hash_generated_method = "F3ED041DD4098EE31940CF4DC8551478")
     
 @Override
@@ -722,6 +723,7 @@ private void lineUpScroll() {
         updateCachedTextfield();
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.268 -0500", hash_original_method = "C8E8CDF4C81BBE6A97ACE8DDCE593DE3", hash_generated_method = "56ECBCE6B983396F7B59F8D557B636FD")
     
 @Override
@@ -946,6 +948,7 @@ public BackgroundDrawable(int width) {
             mBorderWidth = width;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.203 -0500", hash_original_method = "B7807C75F15BA2C587A7A3AFE401787F", hash_generated_method = "C145239FD715E0A4B3F788877C70A998")
         
 @Override
@@ -963,6 +966,7 @@ public BackgroundDrawable(int width) {
             canvas.drawRect(mInsetRect, mPaint);
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.205 -0500", hash_original_method = "5784D116F3F796E4D5324F7E68A41209", hash_generated_method = "8822FC2DF74FC5FF281E781185C4613D")
         
 @Override
@@ -975,6 +979,7 @@ public BackgroundDrawable(int width) {
         public void setColorFilter(ColorFilter cf) {
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.210 -0500", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "92E82009FE448BF0B4121CF0FFF496C7")
         
 @Override

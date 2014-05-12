@@ -1987,6 +1987,7 @@ public void setSelectionAfterHeaderView() {
 
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.336 -0500", hash_original_method = "C6695FE09C5666FBD7C0ECDD7FFCA6CE", hash_generated_method = "8A2AF5AE525D6F36E81DBF2E00B23ADD")
     
 @Override
@@ -3042,6 +3043,7 @@ public boolean getItemsCanFocus() {
         return mItemsCanFocus;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.426 -0500", hash_original_method = "719E5FD40BAA2B7205DD0269FBFE398A", hash_generated_method = "B7208F28CAE315BE373E921B1B938031")
     
 @Override
@@ -3280,6 +3282,7 @@ void drawOverscrollFooter(Canvas canvas, Drawable drawable, Rect bounds) {
         super.dispatchDraw(canvas);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.441 -0500", hash_original_method = "4EC2B6750B1C7732AC3B627095EC138F", hash_generated_method = "36894D8E81BA5DB234AA1E7F9C6A1143")
     
 @Override
@@ -3672,6 +3675,7 @@ public FocusSelector setup(int position, int top) {
             return this;
         }
         
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.274 -0500", hash_original_method = "1C9CFC3992CD17CE1A3B73D68C8C6081", hash_generated_method = "E670ACF73BF7BA03457F170606925817")
         
 public void run() {

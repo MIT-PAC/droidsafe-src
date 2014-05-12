@@ -20,6 +20,7 @@ public SupportedList() {
         super(Supported.class, SupportedHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.329 -0500", hash_original_method = "45CDCD8BD327539AF66457D00250AD24", hash_generated_method = "C3200F0BDF449E1CE6CD60D79D684063")
     
 public Object clone() {

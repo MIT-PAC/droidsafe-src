@@ -182,6 +182,7 @@ public void setLayoutResource(int layoutResource) {
      *
      * @see #inflate() 
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.965 -0500", hash_original_method = "8020455B6FCF7D6831D6E164290A9878", hash_generated_method = "D8DF3125A2A570AD87322216145036E2")
     

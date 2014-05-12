@@ -635,6 +635,7 @@ void setupEndValue(Object target) {
         setupValue(target, mKeyframeSet.mKeyframes.get(mKeyframeSet.mKeyframes.size() - 1));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.751 -0500", hash_original_method = "8E6DC562093F236AE410C563F47F28F2", hash_generated_method = "70FAB153373754018A531B973343BF1F")
     
 @Override
@@ -787,6 +788,7 @@ public IntPropertyValuesHolder(Property property, int... values) {
             return mIntAnimatedValue;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.806 -0500", hash_original_method = "D2AD407C7BF3FF5B871B87BBB92EBDD2", hash_generated_method = "BBFF4065182D0E27F38591ACFAB82A07")
         
 @Override
@@ -962,6 +964,7 @@ public FloatPropertyValuesHolder(Property property, float... values) {
             return mFloatAnimatedValue;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.848 -0500", hash_original_method = "3798C3AECEA696DCFE0B333FF00EF37C", hash_generated_method = "75E0FDAC35B4309FA831B3B2BEAC8741")
         
 @Override
@@ -1148,6 +1151,7 @@ Object getAnimatedValue() {
         return mAnimatedValue;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.771 -0500", hash_original_method = "BD911D365C7FC80DCCAF5DAD046A5B1C", hash_generated_method = "41D933AE1C4CDEA057B6FEEE76A81639")
     
 @Override

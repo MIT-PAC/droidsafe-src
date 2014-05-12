@@ -58,6 +58,7 @@ public Via() {
         sentProtocol = new Protocol();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.076 -0500", hash_original_method = "6B6D36FD3A79EE403682FF6F25A822A5", hash_generated_method = "D50701C5313B523D2AFCDD2A382184CA")
     
 public boolean equals(Object other) {
@@ -575,6 +576,7 @@ public void setBranch(String branch) throws ParseException {
         setParameter(ParameterNames.BRANCH, branch);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.188 -0500", hash_original_method = "252C53006150044E4EBAAC8A002E65B1", hash_generated_method = "D075F094A4B37AF199BF12E2E17F1587")
     
 public Object clone() {

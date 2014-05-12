@@ -118,6 +118,7 @@ public InflaterInputStream(InputStream is, Inflater inflater, int bsize) {
      *
      * @return Number of uncompressed bytes read
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("zip/io")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.043 -0500", hash_original_method = "DE515D2D289FDA03BF01DDF0E0AD6AE1", hash_generated_method = "24C747E38DD44413DDF0B87FFC31A7EB")
@@ -199,6 +200,7 @@ protected void fill() throws IOException {
      * @throws IllegalArgumentException if {@code byteCount < 0}.
      * @throws IOException if an error occurs skipping.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.048 -0500", hash_original_method = "A9123C6756DDC4D0ED42EE705B1E650B", hash_generated_method = "888FD6837E4B31EE74C24517F9D5E38D")
     
 @Override
@@ -224,6 +226,7 @@ protected void fill() throws IOException {
      *         available.
      * @throws IOException if this stream is closed or an error occurs
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.051 -0500", hash_original_method = "CA27A6E1F269DA8120632D3AC729E489", hash_generated_method = "D14CB242DC391688E70046D9149DD6F3")
     
 @Override

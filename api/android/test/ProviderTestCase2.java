@@ -146,6 +146,7 @@ public IsolatedContext getMockContext() {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.156 -0500", hash_original_method = "88D1CAA806B08D33E7F32EE9A221E7DA", hash_generated_method = "4B98C183C69D6FF0559248ACD69DE5F1")
         
 @Override

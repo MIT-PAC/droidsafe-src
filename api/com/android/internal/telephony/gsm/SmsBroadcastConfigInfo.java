@@ -130,6 +130,7 @@ public boolean isSelected() {
         return selected;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.806 -0500", hash_original_method = "7023ED8B006DA79CC4837559B31EDFCC", hash_generated_method = "F8E3453FC5EF80C13752A12C89B0C95D")
     
 @Override

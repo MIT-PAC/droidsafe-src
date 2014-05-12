@@ -55,6 +55,7 @@ public String[] getSupportedCipherSuites() {
         return NativeCrypto.getSupportedCipherSuites();
     }
 
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.878 -0500", hash_original_method = "5837D32923FC621D416DFAB5F2A31CC3", hash_generated_method = "7B1C7226CE81BA953CE437975B268D6F")
     
 public Socket createSocket() throws IOException {
@@ -64,12 +65,14 @@ public Socket createSocket() throws IOException {
         return new OpenSSLSocketImpl((SSLParametersImpl) sslParameters.clone());
     }
 
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.880 -0500", hash_original_method = "1E52BABAD2D1DFFC783D790A770C62CD", hash_generated_method = "93727CD85D6533BAB18FCD21617E57E3")
     
 public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
         return new OpenSSLSocketImpl(host, port, (SSLParametersImpl) sslParameters.clone());
     }
 
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.882 -0500", hash_original_method = "446E800FD94AABE8FA87E3DF006FFD83", hash_generated_method = "533CB9088932A524A3416171EA6F3BD4")
     
 public Socket createSocket(String host, int port, InetAddress localHost, int localPort)
@@ -81,12 +84,14 @@ public Socket createSocket(String host, int port, InetAddress localHost, int loc
                                      (SSLParametersImpl) sslParameters.clone());
     }
 
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.884 -0500", hash_original_method = "8C3F00D4155804449C1F3B4EECD9A781", hash_generated_method = "9C048432C1AD71B955BCA12873552EE8")
     
 public Socket createSocket(InetAddress host, int port) throws IOException {
         return new OpenSSLSocketImpl(host, port, (SSLParametersImpl) sslParameters.clone());
     }
 
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.888 -0500", hash_original_method = "D24DE3B32EF1E2E7C7A21CA7F4DE54C3", hash_generated_method = "259AF6BF85DBFB89A5A83DD9697DFB65")
     
 public Socket createSocket(InetAddress address,
@@ -101,6 +106,7 @@ public Socket createSocket(InetAddress address,
                                      (SSLParametersImpl) sslParameters.clone());
     }
 
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.890 -0500", hash_original_method = "DD495B76995C9C69DA63CB41C5B731D2", hash_generated_method = "FC3466E18A80523D42C102FA35B68F64")
     
 public Socket createSocket(Socket s, String host, int port, boolean autoClose)

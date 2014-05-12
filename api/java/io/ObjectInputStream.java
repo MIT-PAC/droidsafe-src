@@ -216,6 +216,7 @@ public ObjectInputStream(InputStream input) throws StreamCorruptedException, IOE
         primitiveData = emptyStream;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.330 -0500", hash_original_method = "CEC952E1AEB3FC5761C4573EC7C87AAE", hash_generated_method = "CE199C5C58FE7687429E6A57CA1A8BB4")
     
 @Override
@@ -396,6 +397,7 @@ private void pushbackTC() {
      * @throws IOException
      *             if an error occurs while reading from this stream.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.350 -0500", hash_original_method = "87E37984C9E76D351365EC77DA0248F5", hash_generated_method = "628E188E690827B74EB56F54AB76B4A3")
@@ -430,6 +432,8 @@ private void pushbackTC() {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.352 -0500", hash_original_method = "7E3B2630C90BBA61B0E7CD83B04481D2", hash_generated_method = "17C0B89F710648736C76E8163CC98F55")
     
 @Override

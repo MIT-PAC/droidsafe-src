@@ -65,6 +65,7 @@ private InfoAccessSyntax(List<?> accessDescriptions, byte[] encoding) throws IOE
         return encoding;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.078 -0500", hash_original_method = "CB86A2DBB1FE1A1292A1258597C50E5F", hash_generated_method = "8365B884387567A25282273919992E31")
     
 @Override public String toString() {

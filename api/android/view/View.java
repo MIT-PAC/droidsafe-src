@@ -6311,6 +6311,7 @@ public DragShadowBuilder() {
             //Synthesized constructor
         }
         
+        @DSSpec(DSCat.THREADING)
         public void run(){
 			// Original method
 			/*
@@ -6346,6 +6347,7 @@ public DragShadowBuilder() {
             //Synthesized constructor
         }
         
+        @DSSpec(DSCat.THREADING)
         public void run(){
 			// Original method
 			/*
@@ -6369,6 +6371,7 @@ public DragShadowBuilder() {
             //Synthesized constructor
         }
         
+        @DSSpec(DSCat.THREADING)
         public void run(){
 			// Original method
             performClick();
@@ -6384,6 +6387,7 @@ public DragShadowBuilder() {
             //Synthesized constructor
         }
         
+        @DSSpec(DSCat.THREADING)
         public void run(){
 			// Original method
 			/*
@@ -6846,6 +6850,7 @@ AttachInfo(IWindowSession session, IWindow window,
 			//Return nothing
 		}
         
+        @DSSpec(DSCat.THREADING)
         public void run(){
 			// Original method
 			/*
@@ -6878,6 +6883,7 @@ AttachInfo(IWindowSession session, IWindow window,
             //Synthesized constructor
         }
         
+        @DSSpec(DSCat.THREADING)
         public void run(){
 			// Original method
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SCROLLED);

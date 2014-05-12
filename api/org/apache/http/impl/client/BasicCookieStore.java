@@ -121,6 +121,7 @@ public synchronized boolean clearExpired(final Date date) {
         return removed;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.559 -0500", hash_original_method = "3BF0AB240A348C3188E3D51149860C91", hash_generated_method = "DD60D1499FF9AAF6DD237D4EE34C3711")
     
 @Override

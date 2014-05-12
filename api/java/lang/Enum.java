@@ -226,7 +226,7 @@ public final int ordinal() {
      * @see java.lang.Comparable
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.941 -0500", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "50826E44A2062E2FB025D20ED02D5714")
     
 public final int compareTo(E o) {

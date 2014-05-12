@@ -26,7 +26,7 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
     private boolean mMutated;
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.517 -0500", hash_original_method = "35EE0C4966C7CA57865D8E1E9DE06504", hash_generated_method = "C8B7DBD9573CE0FD586F1E926B12EEC4")
     
 public AnimationDrawable() {
@@ -116,7 +116,7 @@ public boolean isRunning() {
      * @see #start()
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.527 -0500", hash_original_method = "B6B243EB70C5F724D188154EAF209167", hash_generated_method = "E05920D5F98D86E1C769E09C9DA16AE9")
     
 public void run() {

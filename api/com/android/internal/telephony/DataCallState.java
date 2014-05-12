@@ -62,6 +62,7 @@ public class DataCallState {
         //Synthesized constructor
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.580 -0500", hash_original_method = "CAAE2D86A06B83EE392B769B8D61B847", hash_generated_method = "4D6FF0647DDF910FB4E7699D22BB705B")
     
@@ -255,6 +256,7 @@ SetupResult() {
             mFailCause = FailCause.fromInt(0);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.576 -0500", hash_original_method = "5F26F82C9A88D8418FA108D7C7A8A2D4", hash_generated_method = "64C3FEA450DED716E1BA34FB24E75F15")
             
 @Override

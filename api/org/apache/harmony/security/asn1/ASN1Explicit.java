@@ -71,6 +71,7 @@ public void setEncodingContent(BerOutputStream out) {
         out.getExplicitLength(this);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.687 -0500", hash_original_method = "8627A6334FE9B6784BD6CB87A9255671", hash_generated_method = "4A13F8FDE2FBA31C6A8C0A1F177EFB49")
     
 @Override public String toString() {

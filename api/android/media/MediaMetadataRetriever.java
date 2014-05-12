@@ -454,6 +454,7 @@ public byte[] getEmbeddedPicture() {
     	//Formerly a native method
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.137 -0500", hash_original_method = "24D5F4C50C2ABC5729410C2F2E889F36", hash_generated_method = "932E17C175F633B7C6ED1D87A1181F69")
     
 @Override

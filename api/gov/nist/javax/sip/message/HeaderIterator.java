@@ -76,6 +76,7 @@ public void add(Object header) {
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.067 -0500", hash_original_method = "BDF8EE173B5DB1D3D9A7674043D7B19F", hash_generated_method = "9C60AD9F7F88C8B53704DB627FA91A9A")
     
 public void remove() throws IllegalStateException {

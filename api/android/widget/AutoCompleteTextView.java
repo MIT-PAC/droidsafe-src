@@ -174,6 +174,7 @@ public AutoCompleteTextView(Context context, AttributeSet attrs, int defStyle) {
         super.setOnClickListener(mPassThroughClickListener);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.038 -0500", hash_original_method = "C1942F3D6CF625065E36951B3C995636", hash_generated_method = "B20AF43F2EEAFF7AD7EDC0F3F3D5C991")
     
 @Override
@@ -1330,6 +1331,7 @@ public void onClick(View v) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.221 -0500", hash_original_method = "E1ADD1CC7F155CD4BE00BE335F96E1E6", hash_generated_method = "4B1CFFEC63A0D414A294C4D8F3EFD687")
         
 @Override

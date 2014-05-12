@@ -255,6 +255,7 @@ private CursorWindow(Parcel source) {
         mCloseGuard.open("close");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.154 -0500", hash_original_method = "896D51A0732498DB684FD2752503707E", hash_generated_method = "DC61EEB9399D0C81EB1A9EBE11C86572")
     
 @Override
@@ -965,6 +966,7 @@ private String printStats() {
         return "# Open Cursors=" + total + s;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.260 -0500", hash_original_method = "2B041B6FC7B2CED29CA29EA62E026B41", hash_generated_method = "AC419103525ACF20E21CA3CE49A01E58")
     
 @Override

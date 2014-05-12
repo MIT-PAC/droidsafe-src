@@ -519,6 +519,7 @@ private void setData(int[] data) {
     }
 
     // TODO: remove this and just have DecimalFormat.hashCode do the right thing itself.
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.042 -0500", hash_original_method = "C197288C8DD3954567266901B60BE5B8", hash_generated_method = "295C67594166BCBC697EFE7B957B662D")
     
 @Override
@@ -535,6 +536,7 @@ public synchronized void close() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.047 -0500", hash_original_method = "D252F6FD4E111780C248C256B2516FF2", hash_generated_method = "D66716E4E733F1F25FC9977DE671987D")
     
 @Override
@@ -552,6 +554,7 @@ public synchronized void close() {
      *
      * TODO: remove this and just have DecimalFormat.equals do the right thing itself.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.050 -0500", hash_original_method = "220130DBC584D5B5D45771D972950D18", hash_generated_method = "9A5787370DD2B664E63383C7AA2A5BCE")
     
 @Override

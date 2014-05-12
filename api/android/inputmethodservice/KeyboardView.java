@@ -1543,6 +1543,7 @@ switch(action){
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.944 -0400", hash_original_method = "4507CAB5EBD3B0A30CFA795E6B0CE2F1", hash_generated_method = "B83D5177D9B513B071BD22ADF0D52F60")
     @Override
     public boolean onTouchEvent(MotionEvent me) {
@@ -1969,7 +1970,7 @@ switch(action){
         float mXVelocity;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.991 -0400", hash_original_method = "B4C366B58C868F9BC83E6F215F55A14E", hash_generated_method = "B4C366B58C868F9BC83E6F215F55A14E")
         public SwipeTracker ()
         {

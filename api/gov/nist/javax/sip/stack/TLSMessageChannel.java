@@ -583,6 +583,7 @@ public void processMessage(SIPMessage sipMessage) throws Exception {
      * loop - reading the tcp connection and processing messages until we are done or the other
      * end has closed.
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.412 -0500", hash_original_method = "F77124F9292782877CB3E3F72C9E9606", hash_generated_method = "F1609395238F2771DE73F4C4A5FE02DB")
     
 public void run() {
@@ -675,6 +676,7 @@ protected void uncache() {
      * @param other is the other object to compare ourselves to for equals
      */
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.418 -0500", hash_original_method = "DA67C78A7E91B7C25B2E6DD841A2A96C", hash_generated_method = "3A2F7DCB6D495BDAC75EAF9113B49DE4")
     
 public boolean equals(Object other) {

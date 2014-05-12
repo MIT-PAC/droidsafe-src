@@ -217,7 +217,7 @@ private synchronized SQLiteQuery getQuery() {
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.047 -0500", hash_original_method = "6996FDAE7F544E3AE18BC0C5BC1EECAC", hash_generated_method = "ED979C997B8D7B0EAFCF8DA1443034CC")
     
 @Override
@@ -346,6 +346,7 @@ public void setSelectionArguments(String[] selectionArgs) {
     /**
      * Release the native resources, if they haven't been released yet.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.064 -0500", hash_original_method = "3B748B9308D21E215FBA6A9497941AC3", hash_generated_method = "25EC51EE2C87AF7A5ECF7D193BCE282F")
     
 @Override

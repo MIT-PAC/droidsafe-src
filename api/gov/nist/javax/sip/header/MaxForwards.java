@@ -92,6 +92,7 @@ public void decrementMaxForwards() throws TooManyHopsException {
         else throw new TooManyHopsException ("has already reached 0!");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.808 -0500", hash_original_method = "272F5F4A3D96880D7AA6FF639321E7AD", hash_generated_method = "D24AA88A20F30BC54F9479F34F32F85A")
     
 public boolean equals(Object other) {

@@ -190,6 +190,7 @@ public abstract LongBuffer duplicate();
      * @return {@code true} if this long buffer is equal to {@code other},
      *         {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.409 -0500", hash_original_method = "D82E6566C9B77850C7E0596D73483706", hash_generated_method = "5306D08342CFA40C8D6A07D919BFFB19")
     
 @Override
@@ -306,6 +307,7 @@ public final boolean hasArray() {
      *
      * @return the hash code calculated from the remaining longs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.424 -0500", hash_original_method = "5C7ADDF6CA5903C3487F2A9B009FDDB4", hash_generated_method = "BCACA7378872C9AF8EB23DB3A327D381")
     
 @Override

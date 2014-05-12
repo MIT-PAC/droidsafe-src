@@ -1099,6 +1099,7 @@ R var79B35EE005A3F2115C55AE7046E4A0E2_113215503 =                 errorResult;
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.961 -0500", hash_original_method = "2BF343FE966C95427B565E993C403E36", hash_generated_method = "61EAFEADD24724A45A6E554E1B0CDB90")
         
 @Override

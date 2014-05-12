@@ -485,6 +485,7 @@ public Object getDefaultValue() {
      *
      * @see #hashCode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.551 -0500", hash_original_method = "AF56E5F5402F800187126545ABE1F97F", hash_generated_method = "2388BFFA3F066B4085F7AD1338EBF7C1")
     
 @Override
@@ -594,6 +595,7 @@ public Class<?> getReturnType() {
      *
      * @see #equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.573 -0500", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "79AB96931D4D2744C8AC02B11E3A7517")
     
 @Override
@@ -644,7 +646,6 @@ public Class<?> getReturnType() {
     @DSComment("Java language reflection")
     @DSSpec(DSCat.REFLECTION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-    @DSSource({DSSourceKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.576 -0500", hash_original_method = "4A7D773CBB2CABEB3FBD24437D2F9CE8", hash_generated_method = "2FD521E61FBF204709DD6167E6F69FD0")
     
 public Object invoke(Object receiver, Object... args)
@@ -696,6 +697,7 @@ public Object invoke(Object receiver, Object... args)
      *
      * @return a printable representation for this method
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.583 -0500", hash_original_method = "20379CC138163D24505D982E1BF3267A", hash_generated_method = "A3209D87A40A94BDDEE3267FFAF5CF50")
     
 @Override

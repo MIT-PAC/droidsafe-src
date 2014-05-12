@@ -95,6 +95,7 @@ public boolean isGuest() {
         //return (flags & FLAG_GUEST) == FLAG_GUEST;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.404 -0500", hash_original_method = "0DF6D7695BB85FE21EB781D1BB3F7789", hash_generated_method = "E1F972FC30105A319609DD9C577EECC2")
     
 @Override

@@ -205,6 +205,7 @@ public StringBuffer encode(StringBuffer buffer) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.443 -0500", hash_original_method = "AFA5C2A13F94EAF8D89E1398D2146232", hash_generated_method = "74A093710988F4AB9BF3E75FF3694D54")
     
 public Object clone() {
@@ -217,6 +218,7 @@ public Object clone() {
     /**
      * Equality comparison predicate.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.446 -0500", hash_original_method = "C7D1B39DFE3B0192F0BEF83FC7C40106", hash_generated_method = "7A1651F101C7D29ABD74AA763DDBF0F7")
     
 public boolean equals(Object other) {
@@ -284,6 +286,7 @@ public String setValue(String value) {
 
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.457 -0500", hash_original_method = "65B8B320E0D14FEF2FD57F3B89A2B17F", hash_generated_method = "A26E595A12BE7FA15D688FE7DB1E8704")
     
 @Override

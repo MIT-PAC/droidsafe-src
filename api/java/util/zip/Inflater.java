@@ -94,6 +94,7 @@ public synchronized void end() {
     	addTaint(handle);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.320 -0500", hash_original_method = "C6D54AF1AC1AC75675A3D536A7405AD5", hash_generated_method = "D608C6F2150995D96F3D1297805B81FD")
     
 @Override protected void finalize() {

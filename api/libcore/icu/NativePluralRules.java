@@ -62,6 +62,7 @@ private NativePluralRules(int address) {
         this.address = address;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.336 -0500", hash_original_method = "FA021A9562CA4E3CEECA6C94C3E7379A", hash_generated_method = "9C4F3FCCFD73A5AA8593259E80FC8A37")
     
 @Override protected void finalize() throws Throwable {

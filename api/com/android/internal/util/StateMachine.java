@@ -552,6 +552,7 @@ public State getOriginalState() {
         /**
          * @return as string
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.269 -0500", hash_original_method = "1BEC9C7E840A94CA1F6D8F0CAE4CCE3D", hash_generated_method = "D73BDD99ECB32E0711BAA77596588488")
         
 @Override
@@ -781,6 +782,7 @@ private SmHandler(Looper looper, StateMachine sm) {
          * the enter/exit calls and placing any deferred messages
          * back onto the queue when transitioning to a new state.
          */
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.375 -0500", hash_original_method = "47FB80A3CFEFEB59EA9B936E333C1DEB", hash_generated_method = "E154ED61341C3A58390581429D12F941")
         
 @Override
@@ -1315,6 +1317,7 @@ private final int getProcessedMessagesCount() {
             /**
              * Convert StateInfo to string
              */
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.348 -0500", hash_original_method = "ABB8BC4D82891CF5369714A62A1A931C", hash_generated_method = "B18D28F302F23880063E3FA5E3607879")
             
 @Override

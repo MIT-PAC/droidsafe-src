@@ -99,6 +99,7 @@ public void setInfo(javax.sip.address.URI info) {
         this.info = (GenericURI) info;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.624 -0500", hash_original_method = "13BFA074DC19025B66849B6C15AC7B30", hash_generated_method = "EB36E89A4C736ABE4913A72866D4A39A")
     
 public Object clone() {

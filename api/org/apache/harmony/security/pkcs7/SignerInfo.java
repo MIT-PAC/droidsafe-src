@@ -196,6 +196,7 @@ public byte[] getEncryptedDigest() {
         return encryptedDigest;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.390 -0500", hash_original_method = "1FB56313E7A9E641FD4CA0515EC1DCD9", hash_generated_method = "B96333FB62EA5E9B9A7FC18EAABD0052")
     
 public String toString() {

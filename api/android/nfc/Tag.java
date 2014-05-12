@@ -325,6 +325,7 @@ public INfcTag getTagService() {
     /**
      * Human-readable description of the tag, for debugging.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.178 -0500", hash_original_method = "DF673271FDC7A52A9E2682FF9A4E5D76", hash_generated_method = "200394C1FB9082BF2C7BD4C762E7152E")
     
 @Override

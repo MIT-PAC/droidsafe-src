@@ -134,6 +134,7 @@ private PackageInfo(Parcel source) {
         installLocation = source.readInt();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.776 -0500", hash_original_method = "F32D243E2D05219891E68C55116B54A4", hash_generated_method = "34DA449058A22C7CC9DE3A01D3016779")
     
 public String toString() {

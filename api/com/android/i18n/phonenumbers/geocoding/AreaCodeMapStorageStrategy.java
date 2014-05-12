@@ -119,7 +119,8 @@ public abstract void readExternal(ObjectInput objectInput) throws IOException;
     
 public abstract void writeExternal(ObjectOutput objectOutput) throws IOException;
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.985 -0500", hash_original_method = "4D596518D97EDAAEB28E920BC89837B3", hash_generated_method = "8A1AAC2535CE3F088536231CA78CCA30")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.985 -0500", hash_original_method = "4D596518D97EDAAEB28E920BC89837B3", hash_generated_method = "8A1AAC2535CE3F088536231CA78CCA30")
     
 @Override
   public String toString() {

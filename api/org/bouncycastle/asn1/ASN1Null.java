@@ -17,6 +17,7 @@ ASN1Null()
     }
     // END android-changed
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.936 -0500", hash_original_method = "8B33772CC706A3F76B2A9FE6D8E11F7C", hash_generated_method = "93D13A02B5288CDAB684DD1656C88C55")
     
 public int hashCode()
@@ -46,6 +47,7 @@ boolean asn1Equals(
 abstract void encode(DEROutputStream out)
         throws IOException;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.943 -0500", hash_original_method = "BBD03FB924B892CEE23A9F439923567F", hash_generated_method = "C0119794FC8A1C45A3C7985F5B42E8C7")
     
 public String toString()

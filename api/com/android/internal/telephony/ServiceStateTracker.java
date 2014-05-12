@@ -358,6 +358,7 @@ public void disableLocationUpdates() {
         }
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.355 -0500", hash_original_method = "85B887C2BDF2CF10C0119B00ACC95929", hash_generated_method = "E38A6677E5F5446B21C6D585D9C43939")
     
 @Override

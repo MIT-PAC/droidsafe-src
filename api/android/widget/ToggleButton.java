@@ -169,6 +169,7 @@ private void updateReferenceToIndicatorDrawable(Drawable backgroundDrawable) {
         }
     }
     
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.785 -0500", hash_original_method = "ABBA16041C04ACF45B62A6F7D1B99CE2", hash_generated_method = "566BD1A0B57272FD8BEE91014D09E5B3")
     
 @Override
@@ -180,6 +181,7 @@ private void updateReferenceToIndicatorDrawable(Drawable backgroundDrawable) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.788 -0500", hash_original_method = "829A7520B55299EB98890ECCFB9822BF", hash_generated_method = "3029A3C9E98BEFAE1577378CB1AB2E75")
     
 @Override

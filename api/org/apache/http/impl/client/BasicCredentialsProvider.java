@@ -98,6 +98,7 @@ public synchronized Credentials getCredentials(final AuthScope authscope) {
         return matchCredentials(this.credMap, authscope);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.486 -0500", hash_original_method = "E402ADC687ADEF99C9686D482448AD0B", hash_generated_method = "2ABECB1CB235C5846122A309DD8851A3")
     
 @Override

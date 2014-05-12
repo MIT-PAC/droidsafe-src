@@ -24,6 +24,7 @@ public abstract class HardwareCanvas extends Canvas {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.735 -0500", hash_original_method = "09BF352B013BE09D7407EC81EDFAD3C9", hash_generated_method = "6B21C1AA6160CD3506F803B9A1DF3D26")
     

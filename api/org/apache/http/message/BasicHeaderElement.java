@@ -148,6 +148,7 @@ public NameValuePair getParameterByName(final String name) {
         return found;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.428 -0500", hash_original_method = "84D34B9B0982E4EBAA99AAAC5467288A", hash_generated_method = "28F87E9F6913D4B62CAF358B96D04F06")
     
 public boolean equals(final Object object) {
@@ -163,6 +164,7 @@ public boolean equals(final Object object) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.430 -0500", hash_original_method = "4C03DB3D3629EDBB8E252CDFFA259653", hash_generated_method = "0AC79E97C45F371739F4D81F67CF5148")
     
 public int hashCode() {
@@ -175,6 +177,7 @@ public int hashCode() {
         return hash;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.433 -0500", hash_original_method = "D1269B43C4D02DE243B0BC051FD8549B", hash_generated_method = "DE1F58D21F632AE1F47CA9F620164127")
     
 public String toString() {
@@ -191,6 +194,7 @@ public String toString() {
         return buffer.toString();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.437 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "CAEEFC6B38E6AA38254BCB526D971A1D")
     
 public Object clone() throws CloneNotSupportedException {

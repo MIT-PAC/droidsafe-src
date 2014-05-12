@@ -7,12 +7,8 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
 public class SSLStreamedInput extends SSLInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.199 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
-
 
     private InputStream in;
 
@@ -22,6 +18,7 @@ public SSLStreamedInput(InputStream in) {
         this.in = in;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.204 -0500", hash_original_method = "0AD8415E97210126520B7235309B4152", hash_generated_method = "8E5606FF0A120193314716C29AE15BAC")
     
 @Override
@@ -47,7 +44,6 @@ public SSLStreamedInput(InputStream in) {
         }
         return res;
     }
-
     
 }
 

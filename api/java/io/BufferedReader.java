@@ -260,7 +260,7 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.810 -0500", hash_original_method = "EFCE29DD70FA840EFC7C884DCFC84327", hash_generated_method = "D9AE1B55A0510DB080BA6CE3B1DC1A90")

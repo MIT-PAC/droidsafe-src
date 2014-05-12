@@ -318,6 +318,7 @@ private void clearNativeLoader() {
      * This message handler is to facilitate communication between the network
      * thread and the browser thread.
      */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.051 -0500", hash_original_method = "77CD0D13F9C2AAAECAF2A5910AFEFD4A", hash_generated_method = "69FEF8C0BD4FCFEF0E7C42376084BC62")
     
 public void handleMessage(Message msg) {

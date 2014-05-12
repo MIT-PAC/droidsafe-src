@@ -259,6 +259,7 @@ public synchronized void setSeed(byte[] seed) {
      * {@code seed}. <a href="#insecure_seed">Seeding {@code SecureRandom} may
      * be insecure</a>.
      */
+    @DSSpec(DSCat.SECURITY_VIOLATION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.258 -0500", hash_original_method = "9FF68F20EA17830E094095398C2F5999", hash_generated_method = "AF8EB673506CC4F044372F33AC110FA0")
     

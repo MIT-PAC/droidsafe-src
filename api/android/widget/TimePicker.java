@@ -239,6 +239,7 @@ public TimePicker(Context context, AttributeSet attrs, int defStyle) {
         setContentDescriptions();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.083 -0500", hash_original_method = "8DB20A38842785B537F33F867250F197", hash_generated_method = "6BEF8DF95D76AC7917B83C3A1BB0FB68")
     
 @Override
@@ -260,6 +261,7 @@ public TimePicker(Context context, AttributeSet attrs, int defStyle) {
         mIsEnabled = enabled;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.086 -0500", hash_original_method = "FE60B57F2ECB259E877433DACC7AAC95", hash_generated_method = "E052E34E14B49938085DD6DF12A76E29")
     
 @Override
@@ -292,6 +294,7 @@ private void setCurrentLocale(Locale locale) {
         mTempCalendar = Calendar.getInstance(locale);
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.120 -0500", hash_original_method = "72123348A3F05C8EE46260DED41E8111", hash_generated_method = "A4A6445FED32D2BB5D65957330EAE4E5")
     
 @Override
@@ -300,6 +303,7 @@ private void setCurrentLocale(Locale locale) {
         return new SavedState(superState, getCurrentHour(), getCurrentMinute());
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.123 -0500", hash_original_method = "B2A487C66396B9A569DF07FC1780728C", hash_generated_method = "BEDE5230168F82A049FAE7CCB16735DB")
     
 @Override
@@ -444,6 +448,7 @@ public void setCurrentMinute(Integer currentMinute) {
         return mHourSpinner.getBaseline();
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.143 -0500", hash_original_method = "CFB95F18A35F8E50D440D10682646E0E", hash_generated_method = "B2DB9880D1A02B35D29BED9E1EE131DA")
     
 @Override
@@ -452,6 +457,7 @@ public void setCurrentMinute(Integer currentMinute) {
         return true;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.145 -0500", hash_original_method = "F102F8EE122BA2E1A10F758465ADC0EB", hash_generated_method = "A629257543AF43015858438429DD52BD")
     
 @Override

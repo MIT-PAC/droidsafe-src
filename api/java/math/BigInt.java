@@ -248,6 +248,7 @@ static BigInt generatePrimeDefault(int bitLength) {
         //Synthesized constructor
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.467 -0500", hash_original_method = "BE6B93B7FDC95635F38722D58894F3B6", hash_generated_method = "A99084A230951F5154A5D35EFCC346C2")
     
 @Override protected void finalize() throws Throwable {
@@ -261,6 +262,7 @@ static BigInt generatePrimeDefault(int bitLength) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.470 -0500", hash_original_method = "AE4D2CED095C616381028CC9DA4809A2", hash_generated_method = "BAE86047FB8DEA778BCC9D0B2869F9E5")
     
 @Override

@@ -218,6 +218,7 @@ public void writeToParcel(Parcel parcel, int flags) {
         stats.writeToParcel(parcel, flags);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.112 -0500", hash_original_method = "7124545C2E1A8AB9232718D7A155D522", hash_generated_method = "0CD8A5C975C3982BC07C8BFF2F9E8045")
     
 @Override

@@ -26,6 +26,7 @@ public AllowList() {
         super(Allow.class, AllowHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.470 -0500", hash_original_method = "0478A1539FEF5A12FA1EE4755C128735", hash_generated_method = "DEDECA4600B8A2FB49B9D4A254B06A32")
     
 public Object clone() {

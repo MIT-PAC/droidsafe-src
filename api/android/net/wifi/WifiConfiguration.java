@@ -461,6 +461,7 @@ public WifiConfiguration(WifiConfiguration source) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.000 -0500", hash_original_method = "97D3C3FCC664C1BBD8134CCAC12AD4F6", hash_generated_method = "604B03D24FF61983A38980528F3D6549")
     
 @Override

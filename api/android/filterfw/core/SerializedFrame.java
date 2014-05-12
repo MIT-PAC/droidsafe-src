@@ -110,6 +110,8 @@ public byte[] getByteArray() {
             return mBuffer;
         }
 
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.005 -0400", hash_original_method = "B228956CEBE6E6F7872DECB70885785F", hash_generated_method = "AF5984771EADB9195837870C94498325")
         
 @Override
@@ -117,6 +119,8 @@ public byte[] getByteArray() {
             write(b, 0, b.length);
         }
 
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.007 -0400", hash_original_method = "1970A77777E486F92FE8F5191DC5F71E", hash_generated_method = "62E11B54C40056E20ABCDEE3FA88733F")
         
 @Override
@@ -126,7 +130,7 @@ public byte[] getByteArray() {
             mOffset += len;
         }
 
-        @DSSink(DSSinkKind.IO)
+        @DSSink({DSSinkKind.IO})
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.009 -0400", hash_original_method = "E8BCE52F682A74DB971811628682A338", hash_generated_method = "2112BD4FB2BB736357E81C1901E22034")
         
@@ -171,6 +175,7 @@ public DirectByteInputStream(byte[] buffer, int size) {
             mSize = size;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.024 -0400", hash_original_method = "C9249F8BCD99085B4D3C5E6C4F37C94B", hash_generated_method = "AF93293A660BBE7E73917919D896EF7A")
         
 @Override
@@ -185,6 +190,8 @@ public DirectByteInputStream(byte[] buffer, int size) {
             return (mPos < mSize) ? (mBuffer[mPos++] & 0xFF) : -1;
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.028 -0400", hash_original_method = "FBF6731E0A4F6CEDD1A0D34FF5D96061", hash_generated_method = "038E22C5EF7FC4D41B6E7E80D911CA5B")
         
 @Override
@@ -200,6 +207,7 @@ public DirectByteInputStream(byte[] buffer, int size) {
             return len;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.030 -0400", hash_original_method = "D623F3DF6ACE30929C5079D9FAB6E06D", hash_generated_method = "48FF210CB9BA14CAB7D6A206A24D8EA8")
         
 @Override
@@ -355,6 +363,7 @@ private final Object deserializeObjectValue() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.065 -0400", hash_original_method = "AD26C151572176ABEC94AF55A0489FC8", hash_generated_method = "0B146BFD345A2D6F82E00D5AF945E82D")
     
 @Override

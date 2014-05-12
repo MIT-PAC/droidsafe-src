@@ -101,6 +101,7 @@ public void setProduct(List product) throws ParseException {
         productTokens = product;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.755 -0500", hash_original_method = "094FF844CCDBF62E3E868D88E09771A9", hash_generated_method = "520A720000C75579FBEBB115919D7403")
     
 public Object clone() {

@@ -129,6 +129,7 @@ public byte[] getEncoded() {
         return encoding;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.334 -0500", hash_original_method = "CF4BFB68A01F84A2E157841F7FC296C6", hash_generated_method = "972723D20C45183383335D563C2CCACD")
     
 @Override public boolean equals(Object ai) {
@@ -142,6 +143,7 @@ public byte[] getEncoded() {
                     : Arrays.equals(parameters, algid.parameters));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.336 -0500", hash_original_method = "E65C54FCC20A7D2FAC5D39EC6758FF2C", hash_generated_method = "D538904D2381C811FF6D8A3B40578794")
     
 @Override public int hashCode() {

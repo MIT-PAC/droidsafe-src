@@ -119,6 +119,7 @@ public BaseDexClassLoader(String dexPath, File optimizedDirectory,
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.513 -0500", hash_original_method = "A4316A3AABC51F9CE057485DF0B501BC", hash_generated_method = "075B5B44C3B2C067E6CF57A89C67B78F")
     
 @Override

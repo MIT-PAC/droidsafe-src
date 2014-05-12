@@ -76,6 +76,7 @@ public boolean isSecure() {
         return this.secure;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.146 -0500", hash_original_method = "04B66E71C7D8EF5D2D79480EE2BA7CE8", hash_generated_method = "8AF37DDDBD5EC73A7F74FFD2CB07087A")
     
 @Override

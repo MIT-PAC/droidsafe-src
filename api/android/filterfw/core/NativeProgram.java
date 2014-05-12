@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -28,7 +27,6 @@ import android.filterfw.core.Program;
  */
 public class NativeProgram extends Program {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:04.387 -0400", hash_original_field = "9E4FD8543244C11F15D39F4BEB5B8903", hash_generated_field = "5FADD543268208F1A2C9263DACDD9C76")
-
 
     private int nativeProgramId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:04.389 -0400", hash_original_field = "86EFEC189881D431D765CE915E4A8D83", hash_generated_field = "D808E5B5C18A4E356F684A7D4FCC63C8")
@@ -112,6 +110,7 @@ public void tearDown() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:04.409 -0400", hash_original_method = "1634EBECADA1FE321270115B4A33248F", hash_generated_method = "089C66A5C5C16B1989FEE832F678C8A4")
     
 @Override
@@ -192,7 +191,6 @@ public void tearDown() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:44.132 -0400", hash_original_method = "9146149D3DCC230E7EA94BBBF3368A15", hash_generated_method = "E7FC21276ACAD27B060DD1829450FA9C")
     
     private boolean deallocate(){
@@ -202,7 +200,6 @@ public void tearDown() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:44.135 -0400", hash_original_method = "2A16798BAAF58E9C0902644312AE4C96", hash_generated_method = "5FEA9AA00CA1A7C2DF8BB94737ABD49F")
     
     private boolean nativeInit(){
@@ -211,9 +208,6 @@ public void tearDown() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.056 -0400", hash_original_method = "EDFBA5170FC1AEB79109BC7DA0CA3F81", hash_generated_method = "D83398C3A44A270598A12E8EBE7EDF55")
     
@@ -225,7 +219,6 @@ public void tearDown() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.060 -0400", hash_original_method = "A18B0CB04C76BEFD8BDA3D587DD6D5ED", hash_generated_method = "4AACCBEC3B2C0693312FF10FF948334C")
     
@@ -302,8 +295,6 @@ public void tearDown() {
     	return toTaintBoolean(taintDouble);
     }
 
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.089 -0400", hash_original_method = "7A0743A8AD090CD973795EC8E9D29080", hash_generated_method = "185BFE27EE6FD57E846940FE4FAC2C3B")
     
     private boolean callNativeSetValue(String key, String value){
@@ -357,9 +348,5 @@ public void tearDown() {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
-
-
 
 }

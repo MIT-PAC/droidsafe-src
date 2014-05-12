@@ -82,6 +82,7 @@ protected SSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.ssl.SSLSocketFactory#createSocket(Socket,String,int,boolean)
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.992 -0500", hash_original_method = "770FADDB251D7948083EF0D02F3938EE", hash_generated_method = "47DB59EFC93728293397F19E50A6A0FF")
     
 @Override
@@ -99,6 +100,7 @@ protected SSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.SocketFactory#createSocket()
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.995 -0500", hash_original_method = "0CDA18BD18854D909AC84115F509C8F0", hash_generated_method = "5B384C3D5BC4EBB4D530E8B127FA82F4")
     
 @Override
@@ -112,6 +114,7 @@ protected SSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.SocketFactory#createSocket(String,int)
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.998 -0500", hash_original_method = "F68AAAAA9B8D61B174802E7029AF7953", hash_generated_method = "70E9C65BF222BBCD3CD112AD5F4E2D1A")
     
 @Override
@@ -127,6 +130,7 @@ protected SSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.SocketFactory#createSocket(String,int,InetAddress,int)
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.000 -0500", hash_original_method = "53A1989EA3FBEE45809A2C11EADE957A", hash_generated_method = "F5843F8C84E8E691449B80BB1D9E4567")
     
 @Override
@@ -143,6 +147,7 @@ protected SSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.SocketFactory#createSocket(InetAddress,int)
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.003 -0500", hash_original_method = "FD8C4D4ADA3C87BB97218603199064D4", hash_generated_method = "1AFE2C8D3EC2179E5203862FF87C2433")
     
 @Override
@@ -158,6 +163,7 @@ protected SSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.SocketFactory#createSocket(InetAddress,int,InetAddress,int)
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.005 -0500", hash_original_method = "3B16D41EDAC8F54354185F57BF630F58", hash_generated_method = "1BD1606CF0A8D09533E3BE2AB84C5D75")
     
 @Override

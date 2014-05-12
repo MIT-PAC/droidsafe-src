@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -32,7 +31,6 @@ public abstract class FilterPort {
 
     private static final String TAG = "FilterPort";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.031 -0400", hash_original_field = "E9FBEB72F5336AFA25831B1B3CB2A4B4", hash_generated_field = "4B4D5574943584EADF61C129493DF037")
-
 
     protected Filter mFilter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.034 -0400", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "2C47F59AC8EFD74311E5DAB89B4171EA")
@@ -162,6 +160,7 @@ public abstract boolean hasFrame();
     
 public abstract void clear();
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:01.100 -0400", hash_original_method = "9805EE473C61C639FB6CD804C5625727", hash_generated_method = "CC3F62EBA3C78446A1CA4F9E385BEA27")
     
 public String toString() {

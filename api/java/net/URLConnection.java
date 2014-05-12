@@ -1147,6 +1147,7 @@ public int getReadTimeout() {
      *
      * @return the string representation of this {@code URLConnection} instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.201 -0500", hash_original_method = "C85D603FFD624A90EAB88172CE67727C", hash_generated_method = "00A4330AEE9AE3EEEA21DC02C53F22B7")
     

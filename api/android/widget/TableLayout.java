@@ -193,6 +193,7 @@ private void requestRowsLayout() {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.456 -0500", hash_original_method = "EAC930A18C6CF1CADFC926F8862188F3", hash_generated_method = "5E5AA0B38035666961A3AE8220EF2442")
     
 @Override
@@ -427,6 +428,7 @@ private void trackCollapsedColumns(View child) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.488 -0500", hash_original_method = "F2FDB0BFA45548A61FACB12C8E83D6F6", hash_generated_method = "16F843354B36A41608DC08F7FB8E3FA8")
     
 @Override
@@ -438,6 +440,7 @@ private void trackCollapsedColumns(View child) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.490 -0500", hash_original_method = "205DAA16DEE6F9CF58403F7DCF1DA0C1", hash_generated_method = "5A274798A4D915F6550AA5CC45D46C6F")
     
 @Override
@@ -699,6 +702,7 @@ private void mutateColumnsWidth(SparseBooleanArray columns,
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.516 -0500", hash_original_method = "447CAFAFE5648615FE51407189D906A6", hash_generated_method = "6381DE11009CA0E2588B3226D7B46C75")
     
 @Override

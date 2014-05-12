@@ -120,6 +120,7 @@ public void setParameters(int range, int offset, int extent, boolean vertical) {
         mVertical = vertical;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.029 -0500", hash_original_method = "1E3ED238DD8B93FF3896611B5226DF40", hash_generated_method = "AFD6E5DA5221848CE680BB3CCA77D9A8")
     
 @Override
@@ -255,6 +256,7 @@ public int getSize(boolean vertical) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.049 -0500", hash_original_method = "B18AEA250E30640B8B376B842AF0FDF6", hash_generated_method = "9C481F467A2EF23FB08CBADDD2BBFB85")
     
@@ -285,6 +287,7 @@ public int getSize(boolean vertical) {
         mHorizontalThumb.setColorFilter(cf);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.055 -0500", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "92E82009FE448BF0B4121CF0FFF496C7")
     
@@ -293,6 +296,7 @@ public int getSize(boolean vertical) {
         return PixelFormat.TRANSLUCENT;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.057 -0500", hash_original_method = "C5352C5923C905107C68A18CC8B889AA", hash_generated_method = "3310EB48D785A16D741899E3B2B65D2C")
     
 @Override

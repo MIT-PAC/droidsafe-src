@@ -259,6 +259,7 @@ void encode(
         out.writeEncoded(BIT_STRING, bytes);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.156 -0500", hash_original_method = "0FA775A3BA483D59A323D752B0FD6DA8", hash_generated_method = "50DA926AE106364A3C95BC47DCB6ADCC")
     
 public int hashCode()
@@ -310,6 +311,7 @@ public String getString()
         return buf.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.163 -0500", hash_original_method = "79F534E26CC8382FAA66B4080878D117", hash_generated_method = "797E25846E0761235375940A5544E1B9")
     
 public String toString()

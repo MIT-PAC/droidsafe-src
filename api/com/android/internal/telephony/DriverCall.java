@@ -139,6 +139,7 @@ public
     DriverCall() {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:35.067 -0500", hash_original_method = "7AA84AC8F947102F8EF05D3C97C1753D", hash_generated_method = "25758D42FA7052B410176A40010A8A87")
     
@@ -168,6 +169,7 @@ public String
     //***** Comparable Implementation
 
     /** For sorting by index */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:35.075 -0500", hash_original_method = "7A57313C9AA4F0F08ECFF99E7B6FC0B1", hash_generated_method = "7FC8F5683070E7BCE8C028220B925CA2")
     
 public int

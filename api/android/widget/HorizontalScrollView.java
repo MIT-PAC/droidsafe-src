@@ -186,6 +186,7 @@ private void initScrollView() {
         mOverflingDistance = configuration.getScaledOverflingDistance();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.294 -0500", hash_original_method = "28BB619967A3B168E514D899D7C1C204", hash_generated_method = "9D1C3B96689DCDF0B1A49A0AB51BF9FF")
     
 @Override
@@ -197,6 +198,7 @@ private void initScrollView() {
         super.addView(child);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.296 -0500", hash_original_method = "D082E00953E9B886F1BBE563E072EA76", hash_generated_method = "78FBFA57B283ACA3C68708D7711A7C54")
     
 @Override
@@ -208,6 +210,7 @@ private void initScrollView() {
         super.addView(child, index);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.299 -0500", hash_original_method = "35F41E1C04BFB475A60C431B3898F857", hash_generated_method = "C7DA6045DF862F88C60FB26E742EB660")
     
 @Override
@@ -219,6 +222,7 @@ private void initScrollView() {
         super.addView(child, params);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.301 -0500", hash_original_method = "D331A2B6162E307FE1F025F2ABEA7C28", hash_generated_method = "87D1BBB9E4B02C31B82837630EAD72AF")
     
 @Override
@@ -333,6 +337,7 @@ public void setSmoothScrollingEnabled(boolean smoothScrollingEnabled) {
         }
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.318 -0500", hash_original_method = "40D3C8E04EF2AEB04EFDF302E05EC516", hash_generated_method = "551369F2F29D29AB7F8957B48A0A5D90")
     
 @Override
@@ -441,6 +446,7 @@ private void recycleVelocityTracker() {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.334 -0500", hash_original_method = "C74400E8950C106883E854683AF24673", hash_generated_method = "380B42A57FDB98874C1102C177E2B33A")
     
 @Override
@@ -451,6 +457,7 @@ private void recycleVelocityTracker() {
         super.requestDisallowInterceptTouchEvent(disallowIntercept);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.338 -0500", hash_original_method = "B8EBEABAF4D085F1DC9FA2F6547DBF28", hash_generated_method = "480BABA95BAAD11F9B504B2A6E96E5FD")
     
 @Override
@@ -556,6 +563,7 @@ private void recycleVelocityTracker() {
         return mIsBeingDragged;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.343 -0500", hash_original_method = "DC232709D0DE420641FAAFB6B744429B", hash_generated_method = "69557E58E5094EC983CF75F19A0A94FA")
     
 @Override
@@ -759,6 +767,7 @@ private void onSecondaryPointerUp(MotionEvent ev) {
         awakenScrollBars();
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.356 -0500", hash_original_method = "AF8EC74B0AD4D69DC5ACACFC8749064F", hash_generated_method = "4C0E56D7630B5BEB3C07FA106058300D")
     
 @Override
@@ -767,6 +776,7 @@ private void onSecondaryPointerUp(MotionEvent ev) {
         info.setScrollable(getScrollRange() > 0);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.358 -0500", hash_original_method = "7DA515169DBC462D06A7F08F561D2E84", hash_generated_method = "9F53DC8307A3F793CB34EC1645F2B207")
     
 @Override
@@ -1415,6 +1425,7 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
         return scrollXDelta;*/
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.412 -0500", hash_original_method = "C2C4A47D49BA76A3A98712461E581564", hash_generated_method = "98DCFF4EDA5A5C8FC7E7F6CD8CED4486")
     
 @Override
@@ -1503,6 +1514,7 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
         scrollTo(mScrollX, mScrollY);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.424 -0500", hash_original_method = "BFC9FDBBB166F0ED568B66B969E998B2", hash_generated_method = "531D88DB50BBC2AC64CC9FAB52AA006E")
     
 @Override
@@ -1594,6 +1606,7 @@ public void fling(int velocityX) {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.434 -0500", hash_original_method = "7D7EAD2993C7155FA8CA9421487AA499", hash_generated_method = "98703A791FF13BE76E446A202C89DD6C")
     
@@ -1612,6 +1625,7 @@ public void fling(int velocityX) {
         super.setOverScrollMode(mode);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.437 -0500", hash_original_method = "63AFEEC895B9671DC479FE83536227D7", hash_generated_method = "036084862698F19C6CD580366D263CE4")
     

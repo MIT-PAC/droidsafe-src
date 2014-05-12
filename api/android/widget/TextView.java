@@ -3547,6 +3547,7 @@ private void updateTextColors() {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.773 -0500", hash_original_method = "3E3CC8861E854C1E6B450E5CB8D8974F", hash_generated_method = "2B51386E2D838BC822FD4852A37E2AE7")
     
 @Override
@@ -5244,6 +5245,7 @@ public boolean onPreDraw() {
                 (int) Math.max(0, mShadowDx + mShadowRadius);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.039 -0500", hash_original_method = "CE928B829998126087759CE89BCD7C50", hash_generated_method = "652AB197A49C37F550BE6DB905011CD6")
     
 @Override
@@ -10287,6 +10289,7 @@ private SavedState(Parcel in) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.791 -0500", hash_original_method = "B2667A033A504E8795AC5B896DD98B5F", hash_generated_method = "9F838FE70206FD2B0A698544466E56AD")
         
 @Override
@@ -10344,6 +10347,7 @@ public char charAt(int off) {
             return mChars[off + mStart];
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.858 -0500", hash_original_method = "16BC7956BCD83D2479A5892A7E5C0E12", hash_generated_method = "68BD2714C01C6FC5CC9CE8FC44EE970C")
         
 @Override
@@ -10715,6 +10719,7 @@ Marquee(TextView v) {
             mView = new WeakReference<TextView>(v);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.426 -0500", hash_original_method = "6484E5DEDF9A6D25913C9D3BAE668871", hash_generated_method = "606EB87738F44092C36959C06D6E86C4")
         
 @Override
@@ -11203,6 +11208,7 @@ public Blink(TextView v) {
             mView = new WeakReference<TextView>(v);
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.629 -0500", hash_original_method = "ACD5284757446306F2E6E1BADED5158A", hash_generated_method = "1120A83631DE6622FBA3DFAE77AC004E")
         
 public void run() {
@@ -12705,6 +12711,7 @@ public void updatePosition(int parentPositionX, int parentPositionY,
             mDrawable.draw(c);
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.149 -0500", hash_original_method = "AFDBACCAFCABC81309AB0079A4EAD49F", hash_generated_method = "9312E0A74C7B7089B5503960EE384788")
         
 @Override
@@ -12868,6 +12875,7 @@ private void removeHiderCallback() {
             return drawable.getIntrinsicWidth() / 2;
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.193 -0500", hash_original_method = "0786A2C72AD62CB255408C178910DEC1", hash_generated_method = "2CBF3B7886B566CDCE7B2A10E9348CC4")
         
 @Override

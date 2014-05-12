@@ -169,6 +169,7 @@ public java.net.Proxy makeProxy() {
         return proxy;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.176 -0500", hash_original_method = "FE9AE719D0C3E87A445C3CEFBF6B38D6", hash_generated_method = "13F84EC863E76509FB5B964AED6DD5E5")
     
 @Override
@@ -188,6 +189,7 @@ public java.net.Proxy makeProxy() {
         return sb.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.178 -0500", hash_original_method = "16EB0AD501F97CC03F0A85B7200F0E73", hash_generated_method = "C077A537133FB7AA320FB0C73C48E363")
     
 @Override
@@ -214,6 +216,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.183 -0500", hash_original_method = "AD2D5515FEDCF9B25A708B71445DFAB4", hash_generated_method = "476FF62E2D90EF00E7AD44AA6164EA37")
     
 @Override

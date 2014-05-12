@@ -86,6 +86,7 @@ public byte[] getDEREncoded()
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.900 -0500", hash_original_method = "E92DD8C6A04F1DEE3C1D21F3A4F15F7B", hash_generated_method = "0E5FF77A20E0BDDD542BB483A03A75B0")
     
 public int hashCode()
@@ -93,6 +94,7 @@ public int hashCode()
         return this.toASN1Object().hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.902 -0500", hash_original_method = "234E7FC050F6E9ED95377E5CED033E83", hash_generated_method = "1665C0E1E74F8C60265D7BE2159EF11F")
     
 public boolean equals(

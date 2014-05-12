@@ -578,6 +578,7 @@ void reset() {
             mTouchableInsets = TOUCHABLE_INSETS_FRAME;
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.728 -0500", hash_original_method = "1A7DC8D0BD4F165A6F4B2FD7EA5CEAEE", hash_generated_method = "C3D9895F1CA1169274955CB5F29FB7CA")
         
 @Override public boolean equals(Object o) {

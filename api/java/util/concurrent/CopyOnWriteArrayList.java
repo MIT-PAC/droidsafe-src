@@ -616,6 +616,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             this.slice = new Slice(expectedElements, from, to);
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.038 -0500", hash_original_method = "50828BB5D9839792ECEF31A7338C6C2F", hash_generated_method = "504DB1A3D6A4F057A48FC6607E3256F4")
         
 @Override public int size() {
@@ -623,6 +624,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             return slice.to - slice.from;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.040 -0500", hash_original_method = "9FA55EF0B71DE676ACDFCDE8D001E08C", hash_generated_method = "CC2A68CF6742DE66405DD2F08EF86A83")
         
 @Override public boolean isEmpty() {
@@ -630,6 +632,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             return slice.from == slice.to;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.044 -0500", hash_original_method = "E9398BCB1605EBC5A566CA332DEC078B", hash_generated_method = "DBC29EA8CCFF76F6BD9D84C497AB8BE7")
         
@@ -642,18 +645,21 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             return (E) snapshot[index + slice.from];
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.046 -0500", hash_original_method = "1D00ECD22B3575A885077212162F97B2", hash_generated_method = "F8A35E883987D86B173CE6E6651B4120")
         
 @Override public Iterator<E> iterator() {
             return listIterator(0);
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.049 -0500", hash_original_method = "DF7BE0B13ABC5A9B1C74313BD06FB64C", hash_generated_method = "BFE08F68D525BB3FE20C89D63996BF59")
         
 @Override public ListIterator<E> listIterator() {
             return listIterator(0);
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.052 -0500", hash_original_method = "2453E5226E92CA007A5F28D50241AFEC", hash_generated_method = "9D2FCD7D917684EBA1D8898953D2D6C5")
         
 @Override public ListIterator<E> listIterator(int index) {
@@ -666,6 +672,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             return result;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.054 -0500", hash_original_method = "3CF9433C05AE07A5EB66F121888070F6", hash_generated_method = "BA1510C786635CE596E4EEDEBBE89B2A")
         
 @Override public int indexOf(Object object) {
@@ -676,6 +683,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             return (result != -1) ? (result - slice.from) : -1;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.057 -0500", hash_original_method = "1CFCD041D8AD8CF1B36536A28BABB7D9", hash_generated_method = "AEE782D630FCCBB7A7BE67471BF7485E")
         
 @Override public int lastIndexOf(Object object) {
@@ -686,12 +694,14 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             return (result != -1) ? (result - slice.from) : -1;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.061 -0500", hash_original_method = "3D9C8519C0BA49AAEEEEE7D259DD1898", hash_generated_method = "5F43988D6D913A9B82AACBDB6A2843D4")
         
 @Override public boolean contains(Object object) {
             return indexOf(object) != -1;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.063 -0500", hash_original_method = "1CE1F4665E7580AB233B83935273A194", hash_generated_method = "724E596103E5CED5748A07EDC5268EBC")
         
 @Override public boolean containsAll(Collection<?> collection) {
@@ -712,6 +722,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             return new CowSubList(slice.expectedElements, slice.from + from, slice.from + to);
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.069 -0500", hash_original_method = "F47D7AB044AE200CBA9EE898533B8FEC", hash_generated_method = "C83C026C1A3BF7CD253A327951590626")
         
 @Override public E remove(int index) {
@@ -724,6 +735,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.072 -0500", hash_original_method = "E7748E0E6765940072A4C93526FE4787", hash_generated_method = "611BD9FCE967231409C31C57D0DB9D61")
         
 @Override public void clear() {
@@ -734,6 +746,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.074 -0500", hash_original_method = "7558F5D9173C65FEAD4E275F1C1E5A80", hash_generated_method = "27BF70741A7A475BC5EE00180DF8341A")
         
 @Override public void add(int index, E object) {
@@ -745,6 +758,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.077 -0500", hash_original_method = "E905080D7BBE0BD2F3F279BF8EF6D6A8", hash_generated_method = "412E8014F05227CB652CFEB14C702C69")
         
 @Override public boolean add(E object) {
@@ -754,6 +768,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.080 -0500", hash_original_method = "1293804DB9B63143F37D5D821EA6A87E", hash_generated_method = "DD7E952FEE7A917CC25769C0A8E36030")
         
 @Override public boolean addAll(int index, Collection<? extends E> collection) {
@@ -767,6 +782,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.083 -0500", hash_original_method = "2FF5E8554EDDACF9F2F627214E3BC10D", hash_generated_method = "9446E355FA8A0E6AD2743254D92175A2")
         
 @Override public boolean addAll(Collection<? extends E> collection) {
@@ -775,6 +791,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.085 -0500", hash_original_method = "E52798445FC11575DB685349896EB8F6", hash_generated_method = "AC3D2814FB6C7232080B438F73BAB72F")
         
@@ -788,6 +805,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.088 -0500", hash_original_method = "924C9E5471F08F30B8E12AD962D48DF2", hash_generated_method = "8EC1A5EB60FF01C4790CE022314C8794")
         
 @Override public boolean remove(Object object) {
@@ -801,6 +819,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.090 -0500", hash_original_method = "6ECA6BCBA1861C546E018F40208C7C7C", hash_generated_method = "0669989DAC34CFE7088458920EA5DD4B")
         
 @Override public boolean removeAll(Collection<?> collection) {
@@ -812,6 +831,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.093 -0500", hash_original_method = "055B3FCFE954B48BD2D5F95BFF90FFFE", hash_generated_method = "3A1ED23174ADFAA4196C923BB99D6BB6")
         
 @Override public boolean retainAll(Collection<?> collection) {
@@ -964,6 +984,7 @@ public int previousIndex() {
             return index - 1;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.153 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
         
 public void remove() {

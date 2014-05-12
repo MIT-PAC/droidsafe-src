@@ -42,6 +42,7 @@ public CallID(String callId) throws IllegalArgumentException {
      *
      * CallIDs are compared case-insensitively
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.854 -0500", hash_original_method = "90F237F3A3B37E6D3BD3A71F3DAA1462", hash_generated_method = "B846D960AFE8184FB667FC98070AC245")
     
 public boolean equals( Object other ) {
@@ -122,6 +123,7 @@ public void setCallIdentifier(CallIdentifier cid) {
         callIdentifier = cid;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.889 -0500", hash_original_method = "6EEF27DF9C05DE559BD56269DDD0A6F4", hash_generated_method = "13F8CA078061623A0A9E1921D4E02B58")
     
 public Object clone() {

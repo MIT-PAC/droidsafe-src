@@ -123,6 +123,7 @@ public InputChannel() {
     	return s;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.383 -0500", hash_original_method = "AAF6A8EEDB66DCFEB1E035B63F14BAD7", hash_generated_method = "8BB93E376E86DC2554CEB4CC1E5FB6B8")
     
 @Override
@@ -203,6 +204,7 @@ public void writeToParcel(Parcel out, int flags) {
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.402 -0500", hash_original_method = "EF513D06BF396F11B9CE8E1C6BA16499", hash_generated_method = "3EA8038E69A7E959224FDB2C00D29148")
     
 @Override

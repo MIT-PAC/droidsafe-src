@@ -208,6 +208,7 @@ public long getMaxFileSize() {
         return mMaxFileSize;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.758 -0500", hash_original_method = "3EBFC06A3F5F08EEF4400F1412AD16A4", hash_generated_method = "E50490DFFECEEB3811D693F1B505CB03")
     
 @Override
@@ -219,6 +220,7 @@ public long getMaxFileSize() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.760 -0500", hash_original_method = "828243B6D2ADC87A48F7C7C656C5F549", hash_generated_method = "3D2EBE5E021F36DCEF2A365F63DCB28F")
     
 @Override
@@ -226,6 +228,7 @@ public long getMaxFileSize() {
         return mPath.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.762 -0500", hash_original_method = "D35752FC760ED96A302E69B1B40DBE8B", hash_generated_method = "300755C46EC0D8C1DC1CF627F784DD41")
     
 @Override

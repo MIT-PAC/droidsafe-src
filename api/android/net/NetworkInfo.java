@@ -392,6 +392,7 @@ public String getExtraInfo() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.949 -0500", hash_original_method = "AD77F99801D246295506D70C39DE289C", hash_generated_method = "3EFFCE1A061D40DC507257F509A32317")
     
 @Override

@@ -357,7 +357,7 @@ public final Activity getParent() {
     
     //TODO: We need to find a way to model parent activity associated
     // with this activity
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSBan(DSCat.DEFAULT_MODIFIER)
     Intent   getParentActivityIntent() {
         if (mParent != null) {
             Intent intent = new Intent();
@@ -2547,7 +2547,7 @@ public LayoutInflater getLayoutInflater() {
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
-    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @Override public void startActivity(Intent intent){
 		onActivityResult(-1, -1, intent);
 		
@@ -2593,7 +2593,7 @@ public LayoutInflater getLayoutInflater() {
      */
     @DSVerified
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
-    @DSSink(DSSinkKind.START_ACTIVITY)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.156 -0500", hash_original_method = "E2A55AFC4750254BD88786F18353EE8B", hash_generated_method = "0DAB0CC521B4AF9EA1AD5FA3E319D475")
     @Override
     public void startActivities(Intent[] intents) {
@@ -3653,7 +3653,7 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
         Bundle mArgs;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.926 -0400", hash_original_method = "9DCA77B5D1234925DAEE8DA8399779D6", hash_generated_method = "9DCA77B5D1234925DAEE8DA8399779D6")
         public ManagedDialog ()
         {
@@ -3677,7 +3677,7 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
         SparseArray<LoaderManagerImpl> loaders;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.926 -0400", hash_original_method = "6ECBAFFBF9F9B3F6A966772230E87049", hash_generated_method = "6ECBAFFBF9F9B3F6A966772230E87049")
         public NonConfigurationInstances ()
         {

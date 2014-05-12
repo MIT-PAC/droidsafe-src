@@ -91,6 +91,7 @@ public void connect(PipedInputStream stream) throws IOException {
      * @throws IOException
      *             if an I/O error occurs while flushing this stream.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.416 -0500", hash_original_method = "4767B865A10590C82F9C2F7878251CCF", hash_generated_method = "19F49905412D13C590146D62FF26E936")
     
 @Override
@@ -133,6 +134,7 @@ public void connect(PipedInputStream stream) throws IOException {
      *             closed or if the thread reading from the target stream is no
      *             longer alive. This case is currently not handled correctly.
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.418 -0500", hash_original_method = "2AED6D37E619AA85421BF0C9628FA8FE", hash_generated_method = "D6706B0027B05DB7EDA828B6EAA50110")
     
@@ -161,7 +163,7 @@ public void connect(PipedInputStream stream) throws IOException {
      *             closed or if the thread reading from the target stream is no
      *             longer alive. This case is currently not handled correctly.
      */
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.421 -0500", hash_original_method = "BFD8A7C0A63758DDB744E4CC4F7CF855", hash_generated_method = "F5F1191513F8689106647CDF8D5965FD")
     

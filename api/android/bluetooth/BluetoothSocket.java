@@ -140,6 +140,7 @@ private BluetoothSocket(int type, int fd, boolean auth, boolean encrypt, String 
     }
 
     /** @hide */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.659 -0500", hash_original_method = "6187FAF262C27B43BD19556B133B66CD", hash_generated_method = "E10B829342B17230830F7B1D41F4DD00")
     
 @Override

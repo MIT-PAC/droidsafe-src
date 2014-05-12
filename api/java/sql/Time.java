@@ -154,6 +154,8 @@ public Time(long theTime) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.412 -0500", hash_original_method = "7CCE4B7904CC8188031B8C2C69560853", hash_generated_method = "2E2EA23BFB4A5BEDFF1D2A7D91FD2C58")
     
 @SuppressWarnings("deprecation")
@@ -217,6 +219,7 @@ public Time(long theTime) {
      *            Negative values are milliseconds before the Epoch. The Epoch
      *            is January 1 1970, 00:00:00.000.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.424 -0500", hash_original_method = "5C30660C9B840F0068D4ACA53BC409AF", hash_generated_method = "2A73D86A0F2B0467E05B2671F95B43C2")
     
 @Override
@@ -231,6 +234,7 @@ public Time(long theTime) {
      * @return A String representing the {@code Time} value in JDBC escape
      *         format: {@code HH:mm:ss}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.426 -0500", hash_original_method = "DF37E49816EA2C75935CB3795350B39F", hash_generated_method = "346AE4E29A4F7882008D887D1F8667F6")
     
 @Override

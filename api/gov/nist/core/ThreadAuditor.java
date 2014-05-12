@@ -138,6 +138,7 @@ public synchronized String auditThreads() {
      *
      * @return a string representation of the object
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.927 -0500", hash_original_method = "6675CF6A116AB121851289F1BA88A8F3", hash_generated_method = "38400F3F6112D3DE73B892A67C6ECDE2")
     
 public synchronized String toString() {
@@ -212,6 +213,7 @@ public long getPingIntervalInMillisecs() {
          *
          * @return a string representation of the object
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.902 -0500", hash_original_method = "433F66024AB5F11DDEF8BAC7248248B0", hash_generated_method = "909BCDEC255E3C10659E5129D1CB9A5B")
         

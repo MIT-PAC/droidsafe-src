@@ -700,6 +700,7 @@ public Thread newThread(final Runnable r) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.887 -0500", hash_original_method = "69B8656E71D4B49ACEB9CE44B20A63F5", hash_generated_method = "69B8656E71D4B49ACEB9CE44B20A63F5")
         
 DelegatedExecutorService(ExecutorService executor) { e = executor; }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.889 -0500", hash_original_method = "680CD1247FE9848C91F828B8B2655AA2", hash_generated_method = "5FF620BA750B9AA4D5060F4389C28B45")
         
 public void execute(Runnable command) { e.execute(command); }
@@ -808,6 +809,7 @@ T varE9E99FB5B2AB72C024FC741DCEE9DEC0_196926114 =             e.invokeAny(tasks,
 FinalizableDelegatedExecutorService(ExecutorService executor) {
             super(executor);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.925 -0500", hash_original_method = "EFBA277C67FEFB15F281D1F7A5118361", hash_generated_method = "EEFE217E73A2E39A61F93BFB37D862D9")
         
 protected void finalize() {

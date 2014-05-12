@@ -85,6 +85,7 @@ BluetoothHealthAppConfiguration(String name, int dataType, int role, int
         mChannelType = channelType;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.802 -0500", hash_original_method = "EA455C93C36CD9B5DA0D1424A19781EC", hash_generated_method = "D9D436DEBBCBECC2C90C142493672C84")
     
 @Override
@@ -106,6 +107,7 @@ BluetoothHealthAppConfiguration(String name, int dataType, int role, int
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.804 -0500", hash_original_method = "720B1AB7A0141F5EC236EB862E5820DB", hash_generated_method = "A58CE241B6A244D1BE503119A6EEFE1E")
     
 @Override
@@ -118,6 +120,7 @@ BluetoothHealthAppConfiguration(String name, int dataType, int role, int
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.806 -0500", hash_original_method = "6A657EF2E4E3E8DD6C55372C14375784", hash_generated_method = "448A14710FB5227DC8D9C4B9A7E86DD8")
     
 @Override

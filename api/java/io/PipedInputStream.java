@@ -103,6 +103,7 @@ public PipedInputStream(PipedOutputStream out, int pipeSize) throws IOException 
      *
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.852 -0500", hash_original_method = "2A98E1CFDF4B9A3EC436EF3BA87395EB", hash_generated_method = "55B947A3E612BD1E29ED2B3E8790B567")
     
 @Override
@@ -258,6 +259,8 @@ synchronized void establishConnection() throws IOException {
      * @throws NullPointerException
      *             if {@code bytes} is {@code null}.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.866 -0500", hash_original_method = "D28D662CAD3AC901637BA85FDFEE5B3E", hash_generated_method = "4EB375BFE4DC1AB0442C4397A7F58490")
     
 @Override

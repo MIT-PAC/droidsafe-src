@@ -328,6 +328,7 @@ public final void recycle() {
      * object.
      * @return A string representation of the DragEvent object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.803 -0500", hash_original_method = "B115D176D9854B47E8C200D036ACDD5B", hash_generated_method = "17C2F2870E5A9D6E9ACE9C99368E106F")
     
 @Override

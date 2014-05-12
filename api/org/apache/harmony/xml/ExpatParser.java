@@ -807,6 +807,7 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             return length;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.330 -0500", hash_original_method = "BE4737CBAA88C90057E40AE694FFCC80", hash_generated_method = "05FA1C2566D62A79E4742E0D82B6BBCF")
         
 @Override protected synchronized void finalize() throws Throwable {
@@ -857,6 +858,7 @@ public int getColumnNumber() {
             return column();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.345 -0500", hash_original_method = "DD8FF3BEAAEB603642876DC8691E0663", hash_generated_method = "3F921D37E9C49AA7FDF9B0B5DB8CD029")
         
 @Override
@@ -983,6 +985,7 @@ private EntityParser(String encoding, ExpatReader xmlReader,
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.383 -0500", hash_original_method = "D7EA50355B500A6304213C79BC9E9E09", hash_generated_method = "94A4DBEA4F6F86977A5D34092AE563E3")
         
 @Override
@@ -997,6 +1000,7 @@ private EntityParser(String encoding, ExpatReader xmlReader,
         
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.277 -0500", hash_original_method = "F20474D747FC599F8D46ABC255AE3ED8", hash_generated_method = "CEBA9F0D7466BCE459F1B33EF55E5ED0")
     
 @Override protected synchronized void finalize() throws Throwable {

@@ -214,7 +214,7 @@ public String getEncoding() {
      *             if this reader is closed or some other I/O error occurs.
      */
     @DSSpec(DSCat.IO)
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.987 -0500", hash_original_method = "610EEC39BC95175186F6D1B73FBDC240", hash_generated_method = "550A9EF91DBCD99AD901345976E441C5")
     
 @Override

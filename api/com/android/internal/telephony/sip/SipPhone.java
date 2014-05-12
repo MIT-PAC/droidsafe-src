@@ -97,6 +97,7 @@ SipPhone (Context context, PhoneNotifier notifier, SipProfile profile) {
         mSipManager = SipManager.newInstance(context);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.276 -0500", hash_original_method = "0022E344F588A86EC51D8DF12CB4CABD", hash_generated_method = "CB5BB21E6B2D536B2839DB62B7013C7D")
     
 @Override

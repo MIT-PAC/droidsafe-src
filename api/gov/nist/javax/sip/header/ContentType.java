@@ -185,6 +185,7 @@ public void setContentSubType(String contentType) throws ParseException {
         mediaRange.setSubtype(contentType);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.440 -0500", hash_original_method = "EAF7A0BAA68C7F455EB82B27B83B3C3F", hash_generated_method = "982966B77FCEAD13C7635BFA2F2890C4")
     
 public Object clone() {
@@ -194,6 +195,7 @@ public Object clone() {
         return retval;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.443 -0500", hash_original_method = "34166B5115AC7B46D5451CCD077A72C8", hash_generated_method = "13BBFB317A22822E8032D14165032626")
     
 public boolean equals(Object other) {

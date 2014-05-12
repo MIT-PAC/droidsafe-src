@@ -39,7 +39,6 @@ import android.util.Log;
 import java.util.HashMap;
 import java.util.List;
 
-
 /**
  * @hide
  */
@@ -52,13 +51,11 @@ class BluetoothEventLoop {
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.735 -0400", hash_original_field = "5171A00CFFD530A9264D0326C10DB67C", hash_generated_field = "7071E0A5239C6A43DE4451C080F33767")
 
-
     private static final int EVENT_PAIRING_CONSENT_DELAYED_ACCEPT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.736 -0400", hash_original_field = "380AFC72E221F3D5071120768D176EEA", hash_generated_field = "6346711E7495EAB79D8ACEA1C3CBA25F")
 
     private static final int EVENT_AGENT_CANCEL = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.738 -0400", hash_original_field = "E676F7865E3D418A6A3A08146F9BBBE9", hash_generated_field = "BDC0C93D6625802B1DE609428D7DE0F4")
-
 
     private static final int CREATE_DEVICE_ALREADY_EXISTS = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.740 -0400", hash_original_field = "343BF4F57DDA02B4B2FA4E706ABD0760", hash_generated_field = "E2190FD30A39A2B8650E5F9B199B4194")
@@ -68,7 +65,6 @@ class BluetoothEventLoop {
 
     private static final int CREATE_DEVICE_FAILED = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.744 -0400", hash_original_field = "4DF5D31E376F27F1ED153009F2B9E52D", hash_generated_field = "A458E8B2DE444E0F35989DFD935DFB5E")
-
 
     private static final String BLUETOOTH_ADMIN_PERM = android.Manifest.permission.BLUETOOTH_ADMIN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.746 -0400", hash_original_field = "7D77AF0882759DFB1A72C6B4C36DC3FE", hash_generated_field = "E2769F8C31AF358A24555782DE15D8EA")
@@ -80,14 +76,12 @@ class BluetoothEventLoop {
     	//Formerly a native method
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.837 -0400", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
     
 private static void log(String msg) {
         Log.d(TAG, msg);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.717 -0400", hash_original_field = "9D85BF891BBAC903760564D2E61B8CF8", hash_generated_field = "3541F10A37794BA2B05C956071806434")
-
 
     private int mNativeData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.719 -0400", hash_original_field = "8CE20653889294789C714060A391C40F", hash_generated_field = "13B7014E5080CDE4F9CB20E28887F909")
@@ -100,7 +94,6 @@ private static void log(String msg) {
 
     private boolean mInterrupted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.723 -0400", hash_original_field = "D49B4692FC08C6B5F3D724DFF1E07710", hash_generated_field = "17E9D67255E235A6437DDFB373AB02B1")
-
 
     private  HashMap<String, Integer> mPasskeyAgentRequestData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.725 -0400", hash_original_field = "2E26A6149C81DDAFE0C397BD99A867C5", hash_generated_field = "B7C5648220BBCDB256CB01EFDAB24689")
@@ -128,7 +121,6 @@ private static void log(String msg) {
     // from remote device when Android is in Suspend state.
     private PowerManager.WakeLock mWakeLock;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.750 -0400", hash_original_field = "EAE3E9EF816D204EE52A0F95F27CD80B", hash_generated_field = "68E185F86B84D9336A20F76054EC74B9")
-
 
     private final Handler mHandler = new Handler() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:06:58.926 -0400", hash_original_method = "CB445434FE3AF3D286489B18A51A294F", hash_generated_method = "DACAC63F2AF46EAEC6F8CF15B11114BA")
@@ -162,7 +154,6 @@ private static void log(String msg) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.760 -0400", hash_original_field = "BF06F512DA875337643C01244CF8612E", hash_generated_field = "AE684F1F021734B7EFAC225BB1037B3D")
-
 
     private BluetoothProfile.ServiceListener mProfileServiceListener =
         new BluetoothProfile.ServiceListener() {
@@ -208,7 +199,7 @@ void getProfileProxy() {
         mAdapter.getProfileProxy(mContext, mProfileServiceListener, BluetoothProfile.INPUT_DEVICE);
     }
 
-
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.762 -0400", hash_original_method = "3346AD3DB2B9CFF2099981600AF7874D", hash_generated_method = "6323CD735E0014F5A515F3F6B7F52898")
     
 protected void finalize() throws Throwable {
@@ -1218,13 +1209,10 @@ private void onHealthDeviceChannelChanged(String devicePath, String channelPath,
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:22:08.336 -0400", hash_original_method = "3B6CA7B24C36B662CB5B1AEC413DB28D", hash_generated_method = "0DAB225627D67322CE3F5E19CB1C0E87")
     
     private void cleanupNativeDataNative(){
     	//Formerly a native method
     }
-
-
 
 }

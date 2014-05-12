@@ -17,6 +17,7 @@ public AcceptEncodingList() {
         super(AcceptEncoding.class, AcceptEncodingHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.435 -0500", hash_original_method = "39DF8810A78ACD57DE26FFD5511EC56E", hash_generated_method = "87537BCF893B3FB01B919BE3358FCE8F")
     
 @Override

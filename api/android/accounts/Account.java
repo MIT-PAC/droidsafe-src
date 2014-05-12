@@ -57,6 +57,7 @@ public Account(Parcel in) {
         this.type = in.readString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.359 -0500", hash_original_method = "8952178E80D6EF68D44FC6803A31AC53", hash_generated_method = "E11F1B2B48F4426422AA38A1FF583D29")
     
 public boolean equals(Object o) {
@@ -69,6 +70,7 @@ public boolean equals(Object o) {
         */
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.362 -0500", hash_original_method = "2D8E3835F41EEE5A0134485B603913A1", hash_generated_method = "FC220BBEAC6B827E0FEF5853192F624B")
     
 public int hashCode() {
@@ -91,7 +93,8 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(type);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.382 -0500", hash_original_method = "E40D22A387A231E7FC5FB70BCBB60906", hash_generated_method = "7190CE6F6B01E485C4D2655A294C13CC")
     
 public String toString() {

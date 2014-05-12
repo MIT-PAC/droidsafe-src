@@ -136,6 +136,7 @@ public UsbEndpoint getEndpoint(int index) {
         return (UsbEndpoint)mEndpoints[index];
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.589 -0500", hash_original_method = "7DE8C5BE07836E58A7BC66D5916A69AB", hash_generated_method = "7C60BD9D81528D3AF7CD6AC0A8A5B7C6")
     
 @Override

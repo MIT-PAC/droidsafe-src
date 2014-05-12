@@ -586,6 +586,7 @@ public void setInputType(int inputType) {
     }
 
     /** @hide */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.763 -0500", hash_original_method = "83E343EB647417E47B475AFEA392BC7D", hash_generated_method = "1761412290BB35D10E0439D748A4962E")
     
 @Override
@@ -1762,6 +1763,7 @@ void setSearchView(SearchView searchView) {
             mSearchView = searchView;
         }
 
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.165 -0500", hash_original_method = "2A2464279ECB52A9D86939A6AE2D6FFF", hash_generated_method = "55F689C5FA26485E2DD14598B9344610")
         
 @Override

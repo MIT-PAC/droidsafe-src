@@ -35,6 +35,7 @@ public CheckBox(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.734 -0500", hash_original_method = "270C42284D505CD6CA182328DD88ED30", hash_generated_method = "0AE7313901D0A224234DCDCF680EB599")
     
 @Override

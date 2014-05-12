@@ -562,6 +562,7 @@ public void applyToConfiguration(Configuration inoutConfig) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.204 -0500", hash_original_method = "CD2E846E95D6DD1EBA23C219F15E8AAF", hash_generated_method = "6C5E82572C3EA72593F6A9928A69E8C6")
     
 @Override
@@ -583,6 +584,7 @@ public void applyToConfiguration(Configuration inoutConfig) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.207 -0500", hash_original_method = "8391774F9F4D17C2A23793FA4442739E", hash_generated_method = "685B7658A0AF5FABA6D96E9C4AE873B4")
     
 @Override
@@ -609,6 +611,7 @@ public void applyToConfiguration(Configuration inoutConfig) {
         return sb.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.209 -0500", hash_original_method = "8473CF5A5DF2B74B5499D26C5398575D", hash_generated_method = "DF1EE684444B3CA8ADE151223057C4D3")
     
 @Override

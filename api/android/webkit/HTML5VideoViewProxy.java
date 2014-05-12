@@ -213,6 +213,7 @@ public void onTimeupdate() {
     }
 
     // Handler for the messages from WebCore or Timer thread to the UI thread.
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.305 -0500", hash_original_method = "A79112D38F42B48A9F0E0FABCCDF1611", hash_generated_method = "16B25690385F2FE90C1EFDAD316B756A")
     
 @Override

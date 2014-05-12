@@ -40,6 +40,7 @@ public Type[] getUpperBounds() throws TypeNotPresentException,
         return extendsBound.getResolvedTypes().clone();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.499 -0500", hash_original_method = "4E6CE2D91E2326D588B30852F56501A7", hash_generated_method = "4A352F930EE47E6476A484BAFAE8648B")
     
 @Override
@@ -52,6 +53,7 @@ public Type[] getUpperBounds() throws TypeNotPresentException,
                 Arrays.equals(getUpperBounds(), that.getUpperBounds());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.501 -0500", hash_original_method = "336948550805F35B42E4F5770BA4CC44", hash_generated_method = "79D9A791951F72E5DCE8CE8F5710A63B")
     
 @Override
@@ -60,6 +62,7 @@ public Type[] getUpperBounds() throws TypeNotPresentException,
                 Arrays.hashCode(getUpperBounds());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.504 -0500", hash_original_method = "93865AC448C11A5C9C4A3B3F15C62698", hash_generated_method = "DB1D4E5C0F8E9CD5943A61F7242A18F1")
     
 @Override

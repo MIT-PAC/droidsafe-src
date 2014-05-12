@@ -157,6 +157,7 @@ public String getPhoneNumber() {
      *
      *@return -- the string encoding.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.583 -0500", hash_original_method = "5EC62A2B879CA2B5D87DB46D668C10E0", hash_generated_method = "1C9505ACA5C0BEEC4B42665E83FAB5E1")
     
 public String toString() {
@@ -181,6 +182,7 @@ public StringBuffer encode(StringBuffer buffer) {
     *
     *@return -- a cloned version of this telephone number.
     */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.591 -0500", hash_original_method = "6B8A416F4757BDF00BB53E081B0C9027", hash_generated_method = "407CEFCA9B87D47157A714D5BD5826AC")
     
 public Object clone() {

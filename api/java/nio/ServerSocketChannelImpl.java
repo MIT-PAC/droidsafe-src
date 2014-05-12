@@ -127,6 +127,7 @@ ServerSocketAdapter(ServerSocketChannelImpl aChannelImpl) throws IOException {
             channelImpl.isBound = true;
         }
 
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.891 -0500", hash_original_method = "FFAB0B1226A929FA42E5D3CF52806643", hash_generated_method = "293F7FEEDA4C3BC2516C104E6D67C9E5")
         
 @Override public Socket accept() throws IOException {
@@ -182,6 +183,7 @@ public Socket implAccept(SocketChannelImpl clientSocketChannel) throws IOExcepti
             channelImpl.isBound = true;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.905 -0500", hash_original_method = "7BB2E5C011080F2650E0866A01912B69", hash_generated_method = "045B461B82495F5B7AF98EFB1528CB1F")
         
 @Override public void close() throws IOException {

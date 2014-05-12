@@ -31,6 +31,7 @@ public String getTokenValue() {
 public int getTokenType() {
         return this.tokenType;
     }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.650 -0500", hash_original_method = "C6D43B0C1DADE24AF5766A64C57BCE8F", hash_generated_method = "2702F52C02A299FAC089A21D2A5235E8")
     
 public String toString() {

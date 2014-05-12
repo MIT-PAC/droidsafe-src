@@ -426,42 +426,49 @@ private MenuItem addInternal(int group, int id, int categoryOrder, CharSequence 
         return item;
     }
     
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.297 -0500", hash_original_method = "A58C4A0DC6DAE82996B3AAD3FC54097A", hash_generated_method = "ECFD1D69981462AED362F22E2C3E516B")
     
 public MenuItem add(CharSequence title) {
         return addInternal(0, 0, 0, title);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.300 -0500", hash_original_method = "B1F9DD2456B991DFBE9905F02D8349D4", hash_generated_method = "F91E08CDFC786BE8489CC2DF9AEB7403")
     
 public MenuItem add(int titleRes) {
         return addInternal(0, 0, 0, mResources.getString(titleRes));
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.302 -0500", hash_original_method = "8928C392F688DC69E32CE7EA0D0F3896", hash_generated_method = "1290E718A08BA3BD68F06588BD892D5A")
     
 public MenuItem add(int group, int id, int categoryOrder, CharSequence title) {
         return addInternal(group, id, categoryOrder, title);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.304 -0500", hash_original_method = "58FC53F709B79AC8AC03457DFC6344A8", hash_generated_method = "1BCE0A389F8E9259A353F1C217B6640D")
     
 public MenuItem add(int group, int id, int categoryOrder, int title) {
         return addInternal(group, id, categoryOrder, mResources.getString(title));
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.307 -0500", hash_original_method = "FF063921CE164DCDB50DAAE1A235B123", hash_generated_method = "B4429DE02C268E799BB2FA8E818963F6")
     
 public SubMenu addSubMenu(CharSequence title) {
         return addSubMenu(0, 0, 0, title);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.310 -0500", hash_original_method = "5AB5B67F58824EF46C9C8C6E184D5FB6", hash_generated_method = "DE807B64A98409BEBF9BD466957EEB52")
     
 public SubMenu addSubMenu(int titleRes) {
         return addSubMenu(0, 0, 0, mResources.getString(titleRes));
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.313 -0500", hash_original_method = "D915559B39DB4724361CCC3B4EDF4118", hash_generated_method = "681ADCB830AC3BBF467B3627BAA4CA65")
     
@@ -473,6 +480,7 @@ public SubMenu addSubMenu(int group, int id, int categoryOrder, CharSequence tit
         return subMenu;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.315 -0500", hash_original_method = "AC03AE2386198E2F1FFF6E4670210A15", hash_generated_method = "951485A825A0323AD5A418BB1BBE391F")
     
 public SubMenu addSubMenu(int group, int id, int categoryOrder, int title) {
@@ -574,6 +582,7 @@ public void clearAll() {
         onItemsChanged(true);
     }
     
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.335 -0500", hash_original_method = "342FF024BFE6EC4187DF36B135809AC5", hash_generated_method = "00DD1BF80D38101BFF904F0C4BEE97AB")
     
 public void clear() {
@@ -669,6 +678,7 @@ public boolean hasVisibleItems() {
         return false;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.352 -0500", hash_original_method = "C4099179C463A7AE36757107136E192F", hash_generated_method = "88389DB40EC73A47C02D024091A10CAE")
     
 public MenuItem findItem(int id) {
@@ -737,6 +747,7 @@ public int size() {
     }
 
     /** {@inheritDoc} */
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.363 -0500", hash_original_method = "95D83605E2F67D61DCAF8140DAB642C1", hash_generated_method = "22137EA46159B80F85AF259824015418")
     

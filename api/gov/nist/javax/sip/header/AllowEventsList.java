@@ -25,6 +25,7 @@ public AllowEventsList() {
         super(AllowEvents.class, AllowEventsHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.819 -0500", hash_original_method = "73FBB2E32770F78B7C4AE500CDD51F25", hash_generated_method = "A0EA21C71E3199A31B7950BE526D14E0")
     
 public Object clone() {

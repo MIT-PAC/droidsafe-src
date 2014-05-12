@@ -195,6 +195,7 @@ public FileOutputStream createOutputStream() throws IOException {
         return new AutoCloseOutputStream(this);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.757 -0500", hash_original_method = "7D4F991E1E50267AE78D06F4481657CB", hash_generated_method = "A927486723CF9B2F42D6177F7933917A")
     
 @Override
@@ -216,6 +217,7 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
             mRemaining = (int)fd.getLength();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.765 -0500", hash_original_method = "7717D4D64B71963D2E03703366A3F767", hash_generated_method = "2FDA3991AC089B6C65564942F9217BA8")
         
 @Override
@@ -228,6 +230,8 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
             return (int)(mRemaining + super.available());
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.768 -0500", hash_original_method = "CAA8FF401C122C408179370071B2636B", hash_generated_method = "133480537539C593AACA5B34163DC7D7")
         
 @Override
@@ -238,6 +242,8 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
             return (result + buffer[0]);
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.771 -0500", hash_original_method = "9675FBC56EDFB22EFDB5A62982BF1091", hash_generated_method = "367348FC8B4441B579089B440A81D12C")
         
 @Override
@@ -253,6 +259,8 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
             return super.read(buffer, offset, count);
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.773 -0500", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "719B70FE11F60F1AC9724DB275BA1BD6")
         
 @Override
@@ -260,6 +268,7 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
             return read(buffer, 0, buffer.length);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.776 -0500", hash_original_method = "A933078BF27D250D6509D415A1A48695", hash_generated_method = "232DE9A9D08AD1450071EA1B00669074")
         
 @Override
@@ -324,7 +333,8 @@ public AutoCloseOutputStream(AssetFileDescriptor fd) throws IOException {
             mRemaining = (int)fd.getLength();
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.794 -0500", hash_original_method = "35A99E3D460555EE5E79B5F1CF4B3E8C", hash_generated_method = "99396FCB85956551DAF75A652F058F75")
         
 @Override
@@ -340,7 +350,8 @@ public AutoCloseOutputStream(AssetFileDescriptor fd) throws IOException {
             super.write(buffer, offset, count);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.796 -0500", hash_original_method = "4A27A012BA515BCAA339C3F9D7D659AA", hash_generated_method = "C9BADE41350B88B7A7E61999E744FB74")
         
 @Override
@@ -358,7 +369,7 @@ public AutoCloseOutputStream(AssetFileDescriptor fd) throws IOException {
         }
 
         @DSSafe(DSCat.SAFE_OTHERS)
-        @DSSink(DSSinkKind.IO)
+        @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.799 -0500", hash_original_method = "1210B34247DB6E03D45CB2428D3624D7", hash_generated_method = "332339B8451EA97A43A552B9C585D46F")
         
 @Override

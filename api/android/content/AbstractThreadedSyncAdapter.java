@@ -90,7 +90,6 @@ public abstract class AbstractThreadedSyncAdapter {
     public static final int LOG_SYNC_DETAILS = 2743;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 11:03:24.930 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 11:03:24.937 -0500", hash_original_field = "B5E26A376DDD6AEE960E73FA0C1CC33B", hash_generated_field = "E469CB20573479E19F7B525A34AEE3F2")
 
@@ -105,7 +104,6 @@ public abstract class AbstractThreadedSyncAdapter {
 
     private final Object mSyncThreadLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 11:03:24.975 -0500", hash_original_field = "7E1C76C6C239F4DED0509B47BB84C766", hash_generated_field = "9FFD2424694212F6CF4E275A6CF0DB9A")
-
 
     private  boolean mAutoInitialize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 11:03:24.980 -0500", hash_original_field = "01C9D2CC407C127F4BD877E2814FF997", hash_generated_field = "118BCFBDD128360CF08E0A9CC5608B42")
@@ -276,6 +274,7 @@ private SyncThread(String name, SyncContext syncContext, String authority,
             mThreadsKey = toSyncKey(account);
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 11:03:25.121 -0500", hash_original_method = "4CA3DD716A0BD73ED7F0FD0D54F60C44", hash_generated_method = "E0C19E641EC755313CC934E5918D600A")
         
 public void run() {

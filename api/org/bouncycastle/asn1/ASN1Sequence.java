@@ -200,6 +200,7 @@ public int size()
         return seq.size();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.375 -0500", hash_original_method = "169312DEA8D054B4F83730CF694439C2", hash_generated_method = "30BCB15E7964E7556EB51535BFA9820D")
     
 public int hashCode()
@@ -291,6 +292,7 @@ protected void addObject(
 abstract void encode(DEROutputStream out)
         throws IOException;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.387 -0500", hash_original_method = "467BC9BFB84385F84F9590AA6DD6E2BE", hash_generated_method = "08E1BFA8F7FD49828A086FB7DFACF8DC")
     
 public String toString() 

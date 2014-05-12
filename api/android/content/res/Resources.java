@@ -255,7 +255,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	}
     
 	@DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Resources() {
 	    mAssets = null;
 	}
@@ -1015,6 +1015,7 @@ public NotFoundException(String name) {
 			//Return nothing
 		}
         
+        @DSSafe(DSCat.SAFE_LIST)
         protected void finalize(){
 			// Original method
 			/*

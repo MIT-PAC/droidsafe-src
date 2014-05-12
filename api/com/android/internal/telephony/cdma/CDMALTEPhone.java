@@ -44,6 +44,7 @@ public CDMALTEPhone(Context context, CommandsInterface ci, PhoneNotifier notifie
         m3gppSMS = new GsmSMSDispatcher(this, mSmsStorageMonitor, mSmsUsageMonitor);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.644 -0500", hash_original_method = "7419DD25F2A8EC5E4F54973E3AF74E7D", hash_generated_method = "A95A5BB9C248FC914A314126C843D57B")
     
 @Override

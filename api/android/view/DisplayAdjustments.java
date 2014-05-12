@@ -101,6 +101,7 @@ public IBinder getActivityToken() {
         return mActivityToken;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:06:10.781 -0500", hash_original_method = "36A62F1D8F9EDF6F78B4B7BFC685B870", hash_generated_method = "E0F0FA719D5C342E53645466B3A262DB")
     
 @Override
@@ -113,6 +114,7 @@ public IBinder getActivityToken() {
         return hash;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:06:10.785 -0500", hash_original_method = "02840D9BBD6693658717720E473FE716", hash_generated_method = "8DFCCDA919D68308C4D3218D5300787E")
     
 @Override

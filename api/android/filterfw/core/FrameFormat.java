@@ -360,6 +360,7 @@ public MutableFrameFormat mutableCopy() {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.214 -0400", hash_original_method = "E298C663AAA583E0B664950A4EE2E090", hash_generated_method = "79373C3B14CEF0EE89B35C9A93357A80")
     
 @Override
@@ -380,6 +381,7 @@ public MutableFrameFormat mutableCopy() {
                 format.mMetaData.equals(mMetaData);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.216 -0400", hash_original_method = "A79002FE25ABBFED3127FC65774BD513", hash_generated_method = "F71D9929D5A124CCA47169C19DC53072")
     
 @Override
@@ -509,6 +511,7 @@ public boolean mayBeCompatibleWith(FrameFormat specification) {
 
     // TODO: FromString
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.241 -0400", hash_original_method = "B6FCC89C3BA055112B291D728ED1D4AF", hash_generated_method = "62E5B13AC5D244ABC6541DF84231D678")
     
 public String toString() {

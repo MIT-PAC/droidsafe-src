@@ -20,6 +20,7 @@ public ErrorInfoList() {
         super(ErrorInfo.class, ErrorInfoHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.199 -0500", hash_original_method = "DEBEF33CFB4944E55BD5A9FB315B228C", hash_generated_method = "FF06FB136A220D2966F87D546FDCCD26")
     
 public Object clone() {

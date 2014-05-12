@@ -320,6 +320,7 @@ public boolean isLayoutSizeAtLeast(int size) {
 	    addTaint(o.getTaint());
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public String toString() {
         String str = new String();
         str.addTaint(getTaint());
@@ -607,6 +608,7 @@ public boolean equals(Configuration that) {
         return toTaintBoolean(this.compareTo(that));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.516 -0500", hash_original_method = "EE31E2EDAF6F402A909910F793361153", hash_generated_method = "57B2634122888BCF4E17A8B21DDBC6B1")
     
 public boolean equals(Object that) {
@@ -617,6 +619,7 @@ public boolean equals(Object that) {
         return false;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.518 -0500", hash_original_method = "046D4D394490FA85ED827B86F99F4B68", hash_generated_method = "DEEA1E3D7B219C47EF3049F7CBC03159")
     
 public int hashCode() {

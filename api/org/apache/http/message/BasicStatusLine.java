@@ -78,6 +78,7 @@ public String getReasonPhrase() {
         return this.reasonPhrase;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.479 -0500", hash_original_method = "B124288BE18B40A8DA205B6ACD4ADD5F", hash_generated_method = "372C8D3644A67E69E738BA086B81962D")
     
 public String toString() {
@@ -86,6 +87,7 @@ public String toString() {
             .formatStatusLine(null, this).toString();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.482 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "587F7AA34F50D42D8C2635621B97F7C1")
     
 public Object clone() throws CloneNotSupportedException {

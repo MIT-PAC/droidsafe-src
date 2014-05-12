@@ -432,7 +432,7 @@ public static SmsMessage[] getMessagesFromIntent(
             @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
             public static final String SMS_REJECTED_ACTION =
                 "android.provider.Telephony.SMS_REJECTED";
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSBan(DSCat.PRIVATE_METHOD)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.035 -0500", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "133FD0D647CE3722D1F195582DF3CC61")
         
 private Intents() {

@@ -270,7 +270,7 @@ public InputStream getErrorStream() {
         }
 
         @DSSpec(DSCat.IO)
-        @DSSource(DSSourceKind.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.586 -0500", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "045B7D54BB0AFFCC2F40B43FACDF9DCC")
         
 public InputStream getInputStream() {
@@ -308,6 +308,7 @@ void setExitValue(int exitValue) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.595 -0500", hash_original_method = "945EE59E08960A318B9D424632962227", hash_generated_method = "DFEEF2A254443AD7F5E65F34BEB0B90B")
         
 @Override

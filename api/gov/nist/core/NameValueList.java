@@ -86,6 +86,7 @@ public StringBuffer encode(StringBuffer buffer) {
         return buffer;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.310 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {
@@ -122,6 +123,7 @@ public void set(String name, Object value) {
      *            is the object to compare to.
      * @return true if the two objects compare for equality.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.318 -0500", hash_original_method = "91A5AF22400C8AC862CBF8DA0CDC612B", hash_generated_method = "44538EA0BBD7886C3EDF088C05158874")
     
 public boolean equals(Object otherObject) {
@@ -206,6 +208,7 @@ public boolean delete(String name) {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.331 -0500", hash_original_method = "6F9503A91BCD71FF680044D2BE3EB547", hash_generated_method = "887FADD658740F0C4FD3468B7649A4E6")
     
 public Object clone() {
@@ -221,6 +224,7 @@ public Object clone() {
     /**
      * Return the size of the embedded map
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.333 -0500", hash_original_method = "3E6F4B689378892245F121C3B2A70863", hash_generated_method = "C0F5598F3E4906D55CD1CB185842DAEC")
     
 public int size() {
@@ -230,6 +234,7 @@ public int size() {
     /**
      * Return true if empty.
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.335 -0500", hash_original_method = "9CD772E1CB5E6BE1ED1982B78A84FA1B", hash_generated_method = "D9D23F1D55E63A0D788DDC2FCF9B1A62")
     
 public boolean isEmpty() {
@@ -283,6 +288,7 @@ public String getParameter(String name) {
      * @see java.util.Map#clear()
      */
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.345 -0500", hash_original_method = "980179408BF501109227F08D5C9216B1", hash_generated_method = "0E94DD7300D59086C659C2DDAF9230FD")
     
 public void clear() {
@@ -293,6 +299,7 @@ public void clear() {
      * (non-Javadoc)
      * @see java.util.Map#containsKey(java.lang.Object)
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.347 -0500", hash_original_method = "2E0F75BA6AFD5C18A55AE3B632F0C375", hash_generated_method = "56F55413D46777830F29E7896EC73DA0")
     
 public boolean containsKey(Object key) {
@@ -303,6 +310,7 @@ public boolean containsKey(Object key) {
      * (non-Javadoc)
      * @see java.util.Map#containsValue(java.lang.Object)
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.349 -0500", hash_original_method = "A6EA0419C0087EA83C0DBCC271DA2735", hash_generated_method = "124EE3C317AA2BDE46A94891A435F5ED")
     
 public boolean containsValue(Object value) {
@@ -313,6 +321,7 @@ public boolean containsValue(Object value) {
      * (non-Javadoc)
      * @see java.util.Map#entrySet()
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.352 -0500", hash_original_method = "B4FF19B42F00873A6D908667D4FF7E33", hash_generated_method = "D1D2EA4E41BAEEC9803E17D3381364B3")
     
 public Set<java.util.Map.Entry<String, NameValue>> entrySet() {
@@ -323,7 +332,8 @@ public Set<java.util.Map.Entry<String, NameValue>> entrySet() {
      * (non-Javadoc)
      * @see java.util.Map#get(java.lang.Object)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.355 -0500", hash_original_method = "EA67EE9A45F5352AADEB9693E72F1050", hash_generated_method = "C5651D9A2CDBEA25F713AF6A1C5B7D9D")
     
 public NameValue get(Object key) {
@@ -334,6 +344,7 @@ public NameValue get(Object key) {
      * (non-Javadoc)
      * @see java.util.Map#keySet()
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.357 -0500", hash_original_method = "EB227B4CB4A434E80044A70A11CCF2F7", hash_generated_method = "F0055EFB425011AF71DCBB79FB5C758F")
     
 public Set<String> keySet() {
@@ -351,6 +362,7 @@ public NameValue put(String name, NameValue nameValue) {
         return this.hmap.put(name, nameValue);
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.362 -0500", hash_original_method = "E36B216223163EA26215959E10A918CA", hash_generated_method = "7775F0474CFBAE4163E2FBBD14B14F7F")
     
 public void putAll(Map<? extends String, ? extends NameValue> map) {
@@ -361,6 +373,7 @@ public void putAll(Map<? extends String, ? extends NameValue> map) {
      * (non-Javadoc)
      * @see java.util.Map#remove(java.lang.Object)
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.364 -0500", hash_original_method = "790110009BF426B36394178253C0659C", hash_generated_method = "3ECFCE028BE9B366085522A857FB2584")
     
 public NameValue remove(Object key) {
@@ -371,12 +384,14 @@ public NameValue remove(Object key) {
      * (non-Javadoc)
      * @see java.util.Map#values()
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.367 -0500", hash_original_method = "979875D580378EC87CDE1564DB1000BC", hash_generated_method = "A3DCECA6A540F9E6D53A6815630DA6D6")
     
 public Collection<NameValue> values() {
         return this.hmap.values();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.369 -0500", hash_original_method = "2A0022C30F51CA39DC1594F13A7B2530", hash_generated_method = "FC7DE45E769CE0527ED071C4CF2B1B62")
     
 @Override

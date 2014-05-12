@@ -319,6 +319,7 @@ public void dump(Printer pw, String prefix) {
         super.dumpBack(pw, prefix);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.568 -0500", hash_original_method = "D921E47CA861D6D48D77FD8F7E62A49D", hash_generated_method = "C53B78FE209B276ED2DA690C8798F7FA")
     
 public String toString() {

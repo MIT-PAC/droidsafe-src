@@ -112,6 +112,7 @@ private static int compareStrings(String... values) {
         */
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Iterator iterator() {
         return this;
     }
@@ -134,6 +135,7 @@ private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
         return columns;
     }
     
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean hasNext() {
         /* 
         if (mCompareResultIsValid) {
@@ -157,6 +159,7 @@ private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
     }
     
     //public Result next() {
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public Result next() {
         /* GITI DSModeled:  For modeling purposes, we probably do not care what the result returned
          * is, so return a valid Result.BOTH.
@@ -172,6 +175,7 @@ private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
         return Result.RIGHT;
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.272 -0500", hash_original_method = "0B82084F50DA03E6D8656F079228A747", hash_generated_method = "CE00AE31FCA2916858ED9702E50EE4BB")
     
 public void remove() {

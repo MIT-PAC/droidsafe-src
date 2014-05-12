@@ -30,6 +30,7 @@ public IccIoResult(int sw1, int sw2, String hexString) {
         this(sw1, sw2, IccUtils.hexStringToBytes(hexString));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.916 -0500", hash_original_method = "C2E2D21A49FBAEB09CAD48E279230B17", hash_generated_method = "5F7907B14DF5087E1E3A698D5E1EBBE7")
     

@@ -199,6 +199,7 @@ public int getKeyProgressIncrement() {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.430 -0500", hash_original_method = "9C2A9BDC8A382BBBC0B52ACD6BB3E808", hash_generated_method = "CD88B145328FDFD5D46FE47A595B26EF")
     
 @Override
@@ -214,6 +215,7 @@ public int getKeyProgressIncrement() {
         if (mThumb != null) mThumb.jumpToCurrentState();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.435 -0500", hash_original_method = "18D3C014C29EEACE1B64A99674108866", hash_generated_method = "FAF6A29E2A27C45E9DC5EF38CDBAFF4C")
     
 @Override
@@ -364,6 +366,7 @@ private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
                 resolveSizeAndState(dh, heightMeasureSpec, 0));
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.453 -0500", hash_original_method = "E10F6AB7670DC24DEEA2309682812EC7", hash_generated_method = "4AB12CB6D519D45D8BF3CCDE9EE80395")
     
 @Override

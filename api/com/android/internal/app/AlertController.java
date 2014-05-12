@@ -801,6 +801,7 @@ public ButtonHandler(DialogInterface dialog) {
             mDialog = new WeakReference<DialogInterface>(dialog);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.500 -0500", hash_original_method = "278B02327B6D097A80A5697E74542815", hash_generated_method = "C1FC77D5A9BD5529F398A0F7FE1EFA8A")
         
 @Override

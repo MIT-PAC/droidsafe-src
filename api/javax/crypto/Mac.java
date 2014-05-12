@@ -439,6 +439,7 @@ public final void reset() {
      * @throws CloneNotSupportedException
      *             if the underlying implementation does not support cloning.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.702 -0500", hash_original_method = "D491B3C29A973D07513DEBD79BD84B18", hash_generated_method = "85156C9FA9461F9D0DB3DC1A0A2A08A2")
     
 @Override

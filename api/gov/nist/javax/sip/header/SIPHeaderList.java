@@ -249,6 +249,7 @@ public Class<HDR> getMyClass() {
      *
      * @return boolean true if list is empty
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.619 -0500", hash_original_method = "FF43F4EB263E123805961D1A87217B48", hash_generated_method = "F540E74265E8FD3B0104DB3691099F57")
     
 public boolean isEmpty() {
@@ -260,6 +261,7 @@ public boolean isEmpty() {
      *
      * @return the generated ListIterator
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.621 -0500", hash_original_method = "36E257E69C92FC5D45CD0DCB007DB07A", hash_generated_method = "765263DBB9F52D22742C0677CC4C7BD4")
     
@@ -287,6 +289,7 @@ public List<HDR> getHeaderList() {
      *            position for the list iterator to return
      * @return the generated list iterator
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.627 -0500", hash_original_method = "EDE82742DF271310D47CFC69F814BF44", hash_generated_method = "E5B689D6ABBE0E3C06D78A5F5688548E")
     
@@ -386,6 +389,7 @@ public String debugDump() {
      *
      * @return SIPHeader []
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.650 -0500", hash_original_method = "7EBA89BCEE46EEC5D25867CF89F8E8B9", hash_generated_method = "AFD4D64ED22ACE50EF1BB1B1A7A48939")
     
@@ -431,6 +435,7 @@ public void add(int index, HDR  sipHeader)
      *            of headers in the target (order of the headers is not
      *            important).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.659 -0500", hash_original_method = "7AF224A0221DFF0013A72A01287D2D95", hash_generated_method = "819F4559335C9CF8A66F92D1D8519B6E")
     
 @SuppressWarnings("unchecked")
@@ -489,6 +494,7 @@ public boolean match(SIPHeaderList<?> template) {
      *
      * @return clone of this Header.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.667 -0500", hash_original_method = "359991759D26E2A3F33ACAEA17758D18", hash_generated_method = "DF397C0487B7030073A58781A19C1EEE")
     
@@ -521,6 +527,7 @@ protected final SIPHeaderList<HDR> clonehlist(List<HDR> hlistToClone) {
     /**
      * Get the number of headers in the list.
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.673 -0500", hash_original_method = "FCBD3ECE23AA666BDE06756DAACE9219", hash_generated_method = "562F7FD4E7CCD444CD48E6FB580E5C32")
     
 public int size() {
@@ -575,12 +582,14 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
         return buffer;
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.686 -0500", hash_original_method = "D5DDE9BDBABBA5EC4E7B0879A10A7D8D", hash_generated_method = "BFBB847B654FE2CC083CE01E67A19D9B")
     
 public boolean addAll(Collection<? extends HDR> collection) {
         return this.hlist.addAll(collection);
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.689 -0500", hash_original_method = "5E3DA6DCBC302D72E9103E3CB1D3527B", hash_generated_method = "E4F69B7A71A96C867BBBAF4E17B7E2A3")
     
 public boolean addAll(int index, Collection<? extends HDR> collection) {
@@ -588,18 +597,21 @@ public boolean addAll(int index, Collection<? extends HDR> collection) {
 
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.692 -0500", hash_original_method = "F1DA48A9A827D74FF9F3AEB298E80E0A", hash_generated_method = "F2C05BF8E74DFEF8E6CC6B3BE48637D3")
     
 public boolean containsAll(Collection<?> collection) {
         return this.hlist.containsAll(collection);
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.695 -0500", hash_original_method = "D791B8D331C82850017A4DF87B2D73FE", hash_generated_method = "DD48FCDD38D43309D1E9BD10583894DA")
     
 public void clear() {
         this.hlist.clear();
     }
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.698 -0500", hash_original_method = "B039DF80CC42319FF93C93DFC4F09CCF", hash_generated_method = "EB644998ED00092BE046641143971738")
     
 public boolean contains(Object header) {
@@ -613,6 +625,7 @@ public boolean contains(Object header) {
      *            location from which to get the object.
      *
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.701 -0500", hash_original_method = "B0FF15B145547E100ED44D45A7137CDE", hash_generated_method = "F46DEB9CDD87E07C4051278902E10473")
     
 public HDR get(int index) {
@@ -625,6 +638,7 @@ public HDR get(int index) {
      * @param obj --
      *            object whose index to compute.
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.705 -0500", hash_original_method = "9C1A1055EA03DFB32FF882EA4FC9149D", hash_generated_method = "59A048735E082051D84A211B25F71E16")
     
@@ -639,6 +653,7 @@ public int indexOf(Object obj) {
      *
      */
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.708 -0500", hash_original_method = "84FF645EE0B76DB0D5B552F9A7A0DC94", hash_generated_method = "2C9F9172277FBCC77F44B8EB9FF01C29")
     
@@ -652,6 +667,7 @@ public java.util.Iterator<HDR> iterator() {
      * @param obj --
      *            object whose index to find.
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.711 -0500", hash_original_method = "05A7D65C6D911E0B1F3261A66888CB52", hash_generated_method = "3AFFFBA2DDE5D54646A6F203B3BBAF40")
     
@@ -668,6 +684,7 @@ public int lastIndexOf(Object obj) {
      *
      */
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.715 -0500", hash_original_method = "FB49499CFAFE2E72F27390E6807CB034", hash_generated_method = "260C3A1E9B90029916A52C1DCC486CE4")
     
 public boolean remove(Object obj) {
@@ -682,6 +699,7 @@ public boolean remove(Object obj) {
      *            index at which to remove the object
      */
 
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.719 -0500", hash_original_method = "2B7049D180B166140C32B8D54A96E238", hash_generated_method = "E3B492E3EA37500381FA59083A1CD08A")
     
 public HDR remove(int index) {
@@ -692,6 +710,7 @@ public HDR remove(int index) {
      * Remove all the elements.
      * @see List#removeAll(java.util.Collection)
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.725 -0500", hash_original_method = "5A03B3005777615BF04A1D43320D1AA1", hash_generated_method = "A568AD10F00EA2CC70306780A6D6D9DD")
     
 public boolean removeAll(java.util.Collection<?> collection) {
@@ -702,6 +721,7 @@ public boolean removeAll(java.util.Collection<?> collection) {
      * @see List#retainAll(java.util.Collection)
      * @param collection
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.731 -0500", hash_original_method = "4FD342E6A050272CE06CEE9969944C1B", hash_generated_method = "8003CE05FE216B9ACB6AE8B5310557B9")
     
 public boolean retainAll(java.util.Collection<?> collection) {
@@ -725,6 +745,7 @@ public java.util.List<HDR> subList(int index1, int index2) {
      * @see Object#hashCode()
      * @return -- the computed hashcode.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.741 -0500", hash_original_method = "78242797F449E5EBFB278CC5A6BC56D0", hash_generated_method = "684C0BABDAF236671E858A8C4C737032")
     
 public int hashCode() {
@@ -745,7 +766,8 @@ public HDR set(int position, HDR sipHeader) {
 
     }
         
-@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+@DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.339 -0400", hash_original_method = "B04CD19C0316B320C5B66A678FB2994B", hash_generated_method = "913F231D737BF10A7AB8B832C5BAA111")
     public <T> T[] toArray(T[] array) {
         addTaint(array[0].getTaint());

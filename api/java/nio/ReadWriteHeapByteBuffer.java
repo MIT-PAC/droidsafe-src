@@ -53,6 +53,7 @@ ReadWriteHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         return ReadOnlyHeapByteBuffer.copy(this, mark);
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.772 -0500", hash_original_method = "E8B47769CA0E36E125D00B7BF0C31D0B", hash_generated_method = "11AD393247FC3531CE051417A856A13F")
     
 @Override
@@ -100,6 +101,7 @@ ReadWriteHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         return true;
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.788 -0500", hash_original_method = "72E0A22D7133932D83149D22C98F13AD", hash_generated_method = "6BDC587B214F88BCF3130A27ADFCBD69")
     
 @Override
@@ -111,6 +113,7 @@ ReadWriteHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         return this;
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.790 -0500", hash_original_method = "78F8125A8164FE61A30FAF2DC4593DB0", hash_generated_method = "62A168A27C70E26C9B512CD645300A78")
     
 @Override
@@ -120,6 +123,7 @@ ReadWriteHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         return this;
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.793 -0500", hash_original_method = "B19EE749C09ADF1A37CE1094243997D4", hash_generated_method = "52FC6093A82B1500734BE774317CD812")
     
 @Override

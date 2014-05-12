@@ -1330,6 +1330,7 @@ public byte[] toBytes() {
     /**
      * Returns cipher suite description
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.271 -0500", hash_original_method = "D4E6F2D9338FE775902AE34CF280ED17", hash_generated_method = "4D4883972AC36241D37B12A13AB18E38")
     
 @Override

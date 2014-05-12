@@ -287,6 +287,7 @@ public HeaderGroup copy() {
         return clone;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.726 -0500", hash_original_method = "A187915CF1AFFDE7143E028BA9E9F5A2", hash_generated_method = "57896E141642EF4108BBA152F7A67F9A")
     
 public Object clone() throws CloneNotSupportedException {

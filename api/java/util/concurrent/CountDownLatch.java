@@ -151,6 +151,7 @@ public long getCount() {
      *
      * @return a string identifying this latch, as well as its state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.194 -0500", hash_original_method = "45A2072B871660339FAF307330C7F60C", hash_generated_method = "41ADB59B8147396DF82915F74BFC5DB7")
     
 public String toString() {

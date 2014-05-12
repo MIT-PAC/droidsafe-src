@@ -283,6 +283,7 @@ public void setValue(String value) throws ParseException {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.674 -0500", hash_original_method = "3C3E67AEA43A987A78987E8A7C9369D7", hash_generated_method = "A711518DD1BAB8F3F40B030EBFCB607A")
     
 public boolean equals(Object other) {
@@ -292,6 +293,7 @@ public boolean equals(Object other) {
     /*
      * Makes a deep clone. (ParametersHeader)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.677 -0500", hash_original_method = "80A80943646C1EE5D35A726D4DDD4538", hash_generated_method = "DD76636312376A9FF23DDB3EF1FAD52D")
     
 public Object clone() {

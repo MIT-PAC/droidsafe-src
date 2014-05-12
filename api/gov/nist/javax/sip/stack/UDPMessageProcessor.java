@@ -120,6 +120,7 @@ public void start() throws IOException {
     /**
      * Thread main routine.
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.823 -0500", hash_original_method = "5BA484CD985BE2E9792A2B4863AB23E2", hash_generated_method = "106D90FA668A6BA44AF7F4BC54AA527C")
     
 public void run() {

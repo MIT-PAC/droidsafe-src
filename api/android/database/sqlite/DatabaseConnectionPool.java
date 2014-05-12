@@ -220,6 +220,7 @@ ArrayList<PoolObj> getPool() {
         return mPool;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.053 -0500", hash_original_method = "9BBFDBA2A96C9EEA2C362B37886D3C5D", hash_generated_method = "F4DBBA6B261C69CD16C34211DC2E1C63")
     
 @Override
@@ -374,6 +375,7 @@ synchronized int getNumHolders() {
             return mNumHolders;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.097 -0500", hash_original_method = "6B148DC19CAC05BE88274109F5158F0D", hash_generated_method = "690D57D629B1A258706DB5BBEBBE1994")
         
 @Override

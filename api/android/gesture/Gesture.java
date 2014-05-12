@@ -126,6 +126,7 @@ public Gesture() {
         mGestureID = GESTURE_ID_BASE + sGestureCount.incrementAndGet();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.337 -0500", hash_original_method = "6E72D283E1810648FD4479A36353F2CA", hash_generated_method = "DF2C9945F497D4458064DA81DA32D2AC")
     
 @Override

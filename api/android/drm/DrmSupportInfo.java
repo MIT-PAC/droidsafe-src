@@ -116,6 +116,7 @@ public String getDescriprition() {
      *
      * @return The hash code value.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:54:54.317 -0400", hash_original_method = "662784F49B60498DA0511864D5DD2D9D", hash_generated_method = "7BE4589A7C66A92924873A2671D863FA")
     
 public int hashCode() {
@@ -128,6 +129,7 @@ public int hashCode() {
      * @param object The object to be compared.
      * @return True if equal; false if not equal.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:54:54.321 -0400", hash_original_method = "1610CA05F41C29253E59D62C2A59995F", hash_generated_method = "7FD8BC39B742BD433F67325F94E96443")
     
 public boolean equals(Object object) {

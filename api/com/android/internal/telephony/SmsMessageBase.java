@@ -406,6 +406,7 @@ protected void parseMessageBody() {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.512 -0500", hash_original_method = "0DAE77F81824922FC906417D2F567A0C", hash_generated_method = "BA24CF6DD454FA51B27C3BD5901CAF3D")
         
 @Override
@@ -437,6 +438,7 @@ protected void parseMessageBody() {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.523 -0500", hash_original_method = "A866707516A0999C629C71FD5B45C6F7", hash_generated_method = "D0C20D3DE0C0706C4141E4BF6E7BAEC9")
         

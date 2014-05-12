@@ -218,7 +218,7 @@ private static void loge(String msg) {
     @SuppressWarnings("unused")
     private int mNativePlayerInJavaObj;
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.614 -0400", hash_original_method = "9447B9206AACDF5876AD405FE8D8E739", hash_generated_method = "FBD9D904E131D53CB6FC8CBDE8F78381")
     
 private JetPlayer() {
@@ -245,6 +245,7 @@ private JetPlayer() {
     /**
      * Cloning a JetPlayer instance is not supported. Calling clone() will generate an exception.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.611 -0400", hash_original_method = "3FF219DE1407B1650498BA4CB70E771E", hash_generated_method = "05FBB24ED3DB076130C8C063B3ADBEA0")
     
 public Object clone() throws CloneNotSupportedException {
@@ -253,6 +254,7 @@ public Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException();    
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.616 -0400", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "0B0876BF1ABAEEEA48DBC201644DDC0B")
     
 protected void finalize() { 
@@ -425,6 +427,7 @@ public NativeEventHandler(JetPlayer jet, Looper looper) {
             mJet = jet;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.648 -0400", hash_original_method = "CF423150F7C4812B4D67B8A2C2A7CD9F", hash_generated_method = "D02B9AEDF3B32BFD273FA851AA826C7E")
         
 @Override

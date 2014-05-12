@@ -288,6 +288,7 @@ void encode(
         out.writeEncoded(OBJECT_IDENTIFIER, bytes);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.644 -0500", hash_original_method = "F84420975A0078554FCD832859033A65", hash_generated_method = "9D581FCEE7A17AA66DF023030951627B")
     
 public int hashCode()
@@ -310,6 +311,7 @@ boolean asn1Equals(
         return identifier.equals(((DERObjectIdentifier)o).identifier);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.648 -0500", hash_original_method = "7A5AF873124B543657B1C40A56842B0C", hash_generated_method = "241A0FB634B7F2AB240F27EA72BC5EEA")
     
 public String toString()

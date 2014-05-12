@@ -450,6 +450,7 @@ public final Buffer rewind() {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.708 -0500", hash_original_method = "E469E128CB7197E7BD730454D1CDC172", hash_generated_method = "FEA4BAD8EA8B5C084A519DD34D080B25")
     

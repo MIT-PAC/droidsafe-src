@@ -81,6 +81,7 @@ public Handler getHandler() {
     /**
      * onCreate
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.446 -0500", hash_original_method = "3B5584E888A7B561A64B27D36B3A98B1", hash_generated_method = "2F0209148425403C4D0AEA4F12E9C065")
     
 @Override
@@ -94,6 +95,7 @@ public Handler getHandler() {
     /**
      * Sends the CMD_ASYNC_SERVICE_ON_START_INTENT message.
      */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.448 -0500", hash_original_method = "1BF64941FDCF96E405385BCB202DC026", hash_generated_method = "5F356562D9B8975212675028653F640C")
     
 @Override
@@ -115,6 +117,7 @@ public Handler getHandler() {
      * service is dead an no more processing should be expected
      * to occur.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.451 -0500", hash_original_method = "A27858FAC62CCDCA7FEFFF51708F3684", hash_generated_method = "4DCB9AA654E9FA02454C3E7C7170D0DD")
     
 @Override

@@ -190,6 +190,7 @@ public void clear() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.299 -0500", hash_original_method = "33021D83EBB0A5B0B0CD9D3745D70974", hash_generated_method = "45D8EB3F8B2095FB7A733B494EF55201")
     
 @Override

@@ -1205,6 +1205,7 @@ public Certificate getCertificate() {
          *
          * @return a printable representation for this {@code PrivateKeyEntry}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.528 -0500", hash_original_method = "D914F0EEEB01F1C9E1AEDB9A7E511AAE", hash_generated_method = "AB75A06FEE33076F0A54F8FF9A2E5754")
         
 @Override
@@ -1264,6 +1265,7 @@ public SecretKey getSecretKey() {
          * @return a printable representation for this {@code
          *         SecretKeyEntry}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.543 -0500", hash_original_method = "55CC87C17B2642C3020CD374CFB01521", hash_generated_method = "226EE2A9DCD9214D922DF654ED8EBF4D")
         
 @Override
@@ -1317,6 +1319,7 @@ public Certificate getTrustedCertificate() {
          * @return a printable representation for this {@code
          *         TrustedCertificateEntry}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.556 -0500", hash_original_method = "706775B4BFB1342C7053CE6A0D4515B7", hash_generated_method = "824361BC2C1987F3B245C9D7C4AFE92C")
         
 @Override

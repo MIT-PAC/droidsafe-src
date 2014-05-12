@@ -248,6 +248,7 @@ public void throwException() throws BufferUnderflowException,
      *
      * @return a text description of this result.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.596 -0500", hash_original_method = "1AD631AC990AF6BF0D5460B8B5F54BE7", hash_generated_method = "EDA28ADE4E57B024E9B8B348558ECB79")
     
 @Override

@@ -508,6 +508,7 @@ public byte[] encodeAsBytes(String transport) {
      * 
      * @return A cloned copy of this object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.183 -0500", hash_original_method = "CAA2D0A800A8BA91CFE25E08D1466992", hash_generated_method = "441794B8EC21652DE9A4976EB05D7714")
     
@@ -930,6 +931,7 @@ public String getTransactionId() {
      * before you assemble a valid request, you will get a constant ( -1 ). Beware of placing any
      * half formed requests in a table.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.218 -0500", hash_original_method = "2D96B4A52CFB118A97F95400511B110F", hash_generated_method = "F18BD120E60C62335D3C70E4A429E621")
     
 public int hashCode() {
@@ -1778,6 +1780,7 @@ public ListIterator<String> getHeaderNames() {
      * 
      * @param other -- the other object to compare with.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.382 -0500", hash_original_method = "19862554CF2CF162312B89332E1831C0", hash_generated_method = "041CE66554807199C6A38DEDA682C188")
     
 public boolean equals(Object other) {

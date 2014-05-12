@@ -66,6 +66,7 @@ public LinkAddress(InterfaceAddress interfaceAddress) {
         this.prefixLength = interfaceAddress.getNetworkPrefixLength();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.544 -0500", hash_original_method = "5FAB79F8CDEEE71CFB15A1270E373FE2", hash_generated_method = "41184820433EEA60DC65BB7B286C78B8")
     
 @Override
@@ -81,6 +82,7 @@ public LinkAddress(InterfaceAddress interfaceAddress) {
      * @param obj the object to be tested for equality.
      * @return {@code true} if both objects are equal, {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.547 -0500", hash_original_method = "22B797A588843480EFDE3E6D1B46B555", hash_generated_method = "9A894EF673B0CEEF38258473CC7F0635")
     
 @Override
@@ -93,6 +95,7 @@ public LinkAddress(InterfaceAddress interfaceAddress) {
             this.prefixLength == linkAddress.prefixLength;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.549 -0500", hash_original_method = "9EA21E5C93FB30EF49C5DDE7580A80C1", hash_generated_method = "B2D785CFEE4549A27C27ED85B91F9CBF")
     
 @Override

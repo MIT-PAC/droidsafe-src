@@ -16,8 +16,6 @@
 
 package android.media;
 
-
-
 /**
  * This class provides methods to play DTMF tones (ITU-T Recommendation Q.23),
  * call supervisory tones (3GPP TS 22.001, CEPT) and proprietary tones (3GPP TS 31.111).
@@ -344,10 +342,8 @@ public class ToneGenerator
     public static final int MIN_VOLUME = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:15.220 -0400", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "4FF8A42CAE4591AC91206314B4192EA4")
 
-
     @SuppressWarnings("unused")
     private int mNativeContext;
-
 
     /**
      * ToneGenerator class contructor specifying output stream type and volume.
@@ -503,7 +499,6 @@ public boolean startTone(int toneType) {
     	//Formerly a native method
     }
 
-
     /**
      * Releases resources associated with this ToneGenerator object. It is good
      * practice to call this method when you're done using the ToneGenerator.
@@ -513,8 +508,6 @@ public boolean startTone(int toneType) {
     public void release(){
     	//Formerly a native method
     }
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:26.078 -0400", hash_original_method = "097066EF57BB064C231D14FA51E98EB9", hash_generated_method = "56EDBB818738D9870662876808D758BD")
     
@@ -532,9 +525,7 @@ public boolean startTone(int toneType) {
     	//Formerly a native method
     }
 
-
-
-
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:15.218 -0400", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "B426276F6755268DFF3429CB984C1F76")
     
 @Override

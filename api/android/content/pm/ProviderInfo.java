@@ -116,6 +116,7 @@ public int describeContents() {
         out.writeInt(isSyncable ? 1 : 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.951 -0500", hash_original_method = "A325E506B6C78D4488CEDF60427F48B5", hash_generated_method = "C3352792F703A3848CD4FF8DC864D24F")
     
 public String toString() {

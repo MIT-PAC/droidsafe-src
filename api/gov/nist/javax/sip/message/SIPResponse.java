@@ -477,6 +477,7 @@ public LinkedList getMessageAsEncodedStrings() {
      *@return a deep copy of this object.
      */
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.579 -0500", hash_original_method = "DB86120AE2172E8F10EBF4BE032C0B65", hash_generated_method = "EC6E53241FB95C4510E2107EBE0789CC")
     
 public Object clone() {
@@ -490,6 +491,7 @@ public Object clone() {
      * Compare for equality.
      *@param other other object to compare with.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.582 -0500", hash_original_method = "8179D62366D10A1706B482955DEA9790", hash_generated_method = "E6D56011159932796927CAADB5E5BE06")
     
 public boolean equals(Object other) {
@@ -688,6 +690,7 @@ public String getSIPVersion() {
         return this.statusLine.getSipVersion();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.607 -0500", hash_original_method = "11E3A7EA0BB166C76EF5663B1C05C1DB", hash_generated_method = "FEDF0922A0CDE1027F0FCBB4054C4E54")
     
 public String toString() {

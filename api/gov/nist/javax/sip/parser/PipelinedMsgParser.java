@@ -124,6 +124,7 @@ public void processInput() {
      *
      * @return A new pipelined parser that reads from the same input stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.975 -0500", hash_original_method = "7B58421AA7682D1CD65CE1288FB2F0E9", hash_generated_method = "F568C8989067E18EBDA66C388D30FDAD")
     
 protected Object clone() {
@@ -189,6 +190,7 @@ private String readLine(InputStream inputStream) throws IOException {
      * listener interface for message processing or error. It cleans up the
      * input - dealing with things like line continuation
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:46.984 -0500", hash_original_method = "4591706E6DAAE4ED54EAE930623099BB", hash_generated_method = "5B31420BBBF7F0CEACC295D11F5F68A9")
     
 public void run() {

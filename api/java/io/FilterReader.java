@@ -95,6 +95,8 @@ protected FilterReader(Reader in) {
      * @throws IOException
      *             if an error occurs while reading from this reader.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.745 -0500", hash_original_method = "25E05A20196B2EF8776FA69AEA6A01AB", hash_generated_method = "9FAED940D6E9DE757EDACE377DD026C4")
     
 @Override
@@ -123,7 +125,7 @@ protected FilterReader(Reader in) {
      *             if an error occurs while reading from this reader.
      */
     @DSSpec(DSCat.IO)
-    @DSSource(DSSourceKind.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.747 -0500", hash_original_method = "1EA26595B36EBCA6FE882CBA9CA8B025", hash_generated_method = "A09318D3ECE09D405808F8418F559DC7")
     
 @Override

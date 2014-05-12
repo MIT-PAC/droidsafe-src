@@ -348,6 +348,7 @@ public void setMaxDate(long maxDate) {
         updateSpinners();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.336 -0500", hash_original_method = "515C7BC224A54DF2006916B644FD1165", hash_generated_method = "A2D4769858836534498A79D70ADC4A25")
     
 @Override
@@ -363,6 +364,7 @@ public void setMaxDate(long maxDate) {
         mIsEnabled = enabled;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.338 -0500", hash_original_method = "FE60B57F2ECB259E877433DACC7AAC95", hash_generated_method = "E052E34E14B49938085DD6DF12A76E29")
     
 @Override
@@ -370,6 +372,7 @@ public void setMaxDate(long maxDate) {
         return mIsEnabled;
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.341 -0500", hash_original_method = "CFB95F18A35F8E50D440D10682646E0E", hash_generated_method = "B2DB9880D1A02B35D29BED9E1EE131DA")
     
 @Override
@@ -378,6 +381,7 @@ public void setMaxDate(long maxDate) {
         return true;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.344 -0500", hash_original_method = "C41A760D3D0D618DC4D1C9DC2EF8ACD9", hash_generated_method = "2A0A19A48961F1A5116B8B0203269EE0")
     
 @Override
@@ -572,6 +576,7 @@ public void updateDate(int year, int month, int dayOfMonth) {
         dispatchThawSelfOnly(container);
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.371 -0500", hash_original_method = "5DB0198ABA6176C6419BBD5D6E2C0EE9", hash_generated_method = "B665ACF49AE54575723CB897CAF8113E")
     
 @Override
@@ -580,6 +585,7 @@ public void updateDate(int year, int month, int dayOfMonth) {
         return new SavedState(superState, getYear(), getMonth(), getDayOfMonth());
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.373 -0500", hash_original_method = "7BB26B54419EB3FE0435D4F561876035", hash_generated_method = "C7BBBEC0B2DBA5005BB6406C41C973D2")
     
 @Override

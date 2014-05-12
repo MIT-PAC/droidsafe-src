@@ -207,6 +207,7 @@ public int getPrimaryError() {
      * Returns a string representation of this object.
      * @return A String representation of this object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.938 -0500", hash_original_method = "18A0C6CD1FD66E60B7FF0A9F205CF54C", hash_generated_method = "B5384DD3FDF574EF210A93042D49C1B6")
     
 public String toString() {

@@ -184,6 +184,7 @@ public void handleEvent(EventObject sipEvent, SIPTransaction transaction) {
      *
      * @see java.lang.Object#clone()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.062 -0500", hash_original_method = "E6B31C0538AF64C15CAF5AB43FC9524E", hash_generated_method = "332BB5A852436D9C61C23F1E55ED55A4")
     
 protected Object clone() throws java.lang.CloneNotSupportedException {

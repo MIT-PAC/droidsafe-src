@@ -453,6 +453,7 @@ public JSONException syntaxError(String message) {
     /**
      * Returns the current position and the entire input string.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.625 -0500", hash_original_method = "D61A5D8B8E38C1530E1AB8F6DB368DAC", hash_generated_method = "4285F17E6EE9ADBD6970C3F9D9BCE520")
     
 @Override public String toString() {

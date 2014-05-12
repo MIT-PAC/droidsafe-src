@@ -241,6 +241,7 @@ Camera(int cameraId) {
         native_setup(new WeakReference<Camera>(this), cameraId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.956 -0500", hash_original_method = "52F53B59AD091F99DC7C4D49031A27E5", hash_generated_method = "9A6AA3EE3AA1630FAE214B52E6DCE99D")
     
 protected void finalize() {
@@ -773,6 +774,7 @@ public EventHandler(Camera c, Looper looper) {
             mCamera = c;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.076 -0500", hash_original_method = "527FC94310988CAD6A04936940B6C036", hash_generated_method = "B8B8CDA90359B11441833BAAA6F39D89")
         
 @Override
@@ -909,6 +911,7 @@ public Size(int w, int h) {
          * @return {@code true} if the width and height of {@code obj} is the
          *         same as those of this size. {@code false} otherwise.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.240 -0500", hash_original_method = "C0E6580734A50AA28FE29C092058ED66", hash_generated_method = "32EB0060E2EC38CDBC32F5433D101D17")
         
 @Override
@@ -919,6 +922,7 @@ public Size(int w, int h) {
             Size s = (Size) obj;
             return toTaintBoolean(width + s.width + height + s.height);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.242 -0500", hash_original_method = "B5BC5866A74569F21D19CEA2ED84BAAB", hash_generated_method = "D607F0AF6A00B331C8962E0BC00D1A6E")
         
 @Override
@@ -954,6 +958,7 @@ public Area(Rect rect, int weight) {
          * @return {@code true} if the rectangle and weight of {@code obj} is
          *         the same as those of this area. {@code false} otherwise.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.257 -0500", hash_original_method = "79D1F56CDDD7107B76CC69CE709FE4A7", hash_generated_method = "FB9029B60062E93FAB58E352D151ED36")
         
 @Override

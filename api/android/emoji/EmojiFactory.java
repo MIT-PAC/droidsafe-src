@@ -51,6 +51,7 @@ private EmojiFactory(int nativeEmojiFactory, String name) {
         mCache = new CustomLinkedHashMap<Integer, WeakReference<Bitmap>>();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.910 -0500", hash_original_method = "32C84A5952A8F243E533AA978C471609", hash_generated_method = "760B0FA72D8CB66FD717B888FC1AF79B")
     
 @Override

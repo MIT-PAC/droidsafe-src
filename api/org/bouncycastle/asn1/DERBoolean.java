@@ -146,6 +146,7 @@ protected boolean asn1Equals(
         return (value == ((DERBoolean)o).value);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.554 -0500", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "E753536894997596C3E77EBC8B110A20")
     
 public int hashCode()
@@ -153,6 +154,7 @@ public int hashCode()
         return value;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.557 -0500", hash_original_method = "9F6A9420185E5E125B8A61B3882EDFBB", hash_generated_method = "6F5ED01EEA806972F85AD45A6EFD5D78")
     
 public String toString()

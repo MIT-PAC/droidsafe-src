@@ -82,6 +82,7 @@ private Type[] resolveTypes(List<Type> unresolved) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.401 -0500", hash_original_method = "E058D2B2430FADEC45CDF66AF212F70E", hash_generated_method = "C48B5FE2503511730C3FE65E0E6BFCB8")
     
 @Override public String toString() {

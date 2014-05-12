@@ -432,6 +432,7 @@ private void handleOnGetSuggestionsMultiple(SuggestionsInfo[] suggestionInfos) {
         mSpellCheckerSessionListener.onGetSuggestions(suggestionInfos);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.762 -0500", hash_original_method = "59AD6E7808D10F8FF29E63144F2BA4F1", hash_generated_method = "E583ED320811052FAB02D57D16D594BF")
     
 @Override

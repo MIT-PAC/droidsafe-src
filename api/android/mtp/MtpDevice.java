@@ -33,10 +33,8 @@ import android.util.Log;
 public final class MtpDevice {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.430 -0400", hash_original_field = "C77B36D2C4420AD6F3DEC49267C035C6", hash_generated_field = "00047F8033BCA338610A18BB362B350D")
 
-
     private static final String TAG = "MtpDevice";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.432 -0400", hash_original_field = "96CF9DCB0700F4F17C2B20B3728B381A", hash_generated_field = "70928665C1B6A300CDA8094BC826C018")
-
 
     private  UsbDevice mDevice;
 
@@ -88,6 +86,7 @@ public void close() {
         native_close();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.439 -0400", hash_original_method = "6E8A804E48C277661FFB4A5BE2408D94", hash_generated_method = "891FA77FB12D216F0324B2EF3DF11386")
     
 @Override
@@ -125,6 +124,7 @@ public int getDeviceId() {
         return mDevice.getDeviceId();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:20.443 -0400", hash_original_method = "F4DD983E12FB02EC6DEE02788BABE0BF", hash_generated_method = "86F0CFCF2F498259BDB3C3874964F44D")
     
 @Override
@@ -320,8 +320,6 @@ public boolean importFile(int objectHandle, String destPath) {
     	return retObj;
     }
 
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:31.367 -0400", hash_original_method = "F46AD5A2EF2BE531C039B2DBE8A02AD0", hash_generated_method = "92A95F6CE6A79944F5EECBD1DF30D71F")
     
     private MtpStorageInfo native_get_storage_info(int storageId){
@@ -434,7 +432,5 @@ public boolean importFile(int objectHandle, String destPath) {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
 
 }

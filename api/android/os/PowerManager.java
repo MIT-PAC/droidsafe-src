@@ -253,6 +253,7 @@ public void setWorkSource(WorkSource ws) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.676 -0500", hash_original_method = "8262D389F7698AE191F8346E629CED2D", hash_generated_method = "A029D042C19F838242CE64C4864BD49C")
         
 public String toString() {
@@ -263,6 +264,7 @@ public String toString() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.679 -0500", hash_original_method = "E802AB356FE449EE74DB3F74C7A8C8D4", hash_generated_method = "87D42B07DBF344965AC5D533CF781837")
         
 @Override
@@ -302,7 +304,7 @@ public String toString() {
     Handler mHandler;
     
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.325 -0400", hash_original_method = "CC3F52E82947675044A40593774B54F6", hash_generated_method = "FBF57EA37BF41DE0AFD68D9E02F27504")
     public PowerManager() {
         // ---------- Original Method ----------

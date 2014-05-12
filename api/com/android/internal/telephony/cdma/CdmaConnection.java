@@ -925,6 +925,7 @@ public void updateParent(CdmaCall oldParent, CdmaCall newParent){
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.687 -0500", hash_original_method = "5655DC41B31D0FB22D5FC53E0B7ADD4A", hash_generated_method = "D87042DE1FFE48AA01A04FF54AA3C113")
     
 @Override
@@ -1046,6 +1047,7 @@ private CdmaCall
         
 MyHandler(Looper l) {super(l);}
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.590 -0500", hash_original_method = "E8F40E6883CDABD6C8E283CE0D2B4E28", hash_generated_method = "9AEB0D6EEF8F90C85341CDE5285B08AA")
         
 public void

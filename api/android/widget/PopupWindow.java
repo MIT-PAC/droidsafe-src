@@ -1696,6 +1696,7 @@ public PopupViewContainer(Context context) {
             }
         }
 
+        @DSSpec(DSCat.TO_MODEL)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.122 -0500", hash_original_method = "A2DD55E78C6B8B19849AEC8708A214E9", hash_generated_method = "664BD3635A69F63DA63D458E4E589915")
         
@@ -1726,6 +1727,7 @@ public PopupViewContainer(Context context) {
             }
         }
 
+        @DSSpec(DSCat.TO_MODEL)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.125 -0500", hash_original_method = "C7733BB60CAB256C1ABFC72965DD2E24", hash_generated_method = "13DD784DBE88B27401F50D8341618267")
         
 @Override
@@ -1736,6 +1738,7 @@ public PopupViewContainer(Context context) {
             return super.dispatchTouchEvent(ev);
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.127 -0500", hash_original_method = "2EFE76B74388A6782646D0ACFFECA21F", hash_generated_method = "DFBA853240CA4E40C497E55531DAFC99")
         
 @Override
@@ -1755,6 +1758,7 @@ public PopupViewContainer(Context context) {
             }
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.129 -0500", hash_original_method = "EB4F4EE30B31AEB9BDFF308A3D2D5CAC", hash_generated_method = "92046F7B9DC15AB1762CE271BC620B7E")
         

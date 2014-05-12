@@ -38,6 +38,7 @@ protected X509CRL() {
      * @return {@code true} if the specified object is equal to this, otherwise
      *         {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.707 -0500", hash_original_method = "B46E0DB2406C7673FA6227AB64C6E804", hash_generated_method = "A372A8D26A60B4BE8EC4244338F3FC47")
     
 public boolean equals(Object other) {
@@ -60,6 +61,7 @@ public boolean equals(Object other) {
      *
      * @return the hashcode.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.709 -0500", hash_original_method = "A943E96C731BD94967EC1AD73CB7A230", hash_generated_method = "3B302EDEF414A062B9EAB71D370690F3")
     
 public int hashCode() {

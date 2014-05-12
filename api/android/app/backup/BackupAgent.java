@@ -48,7 +48,7 @@ public abstract class BackupAgent extends ContextWrapper {
     private final IBinder mBinder = new BackupServiceBinder().asBinder();
 
     @DSComment("Backup subsystem")
-    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.382 -0500", hash_original_method = "B5A8D7758CDB468D197C4191C97B62B7", hash_generated_method = "932AAC6CD3B64AB519D5E4125D4E72AF")
     
 public BackupAgent() {

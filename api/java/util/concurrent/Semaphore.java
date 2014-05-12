@@ -643,6 +643,7 @@ protected int tryAcquireShared(int acquires) {
      *
      * @return a string identifying this semaphore, as well as its state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.536 -0500", hash_original_method = "28E11779691509B84604A2532741810B", hash_generated_method = "C4AD3FA919494B334FA1A01AC988E92C")
     
 public String toString() {

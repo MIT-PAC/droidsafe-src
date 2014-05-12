@@ -344,6 +344,7 @@ public boolean containsAttribute(final String name) {
         return this.attribs.get(name) != null;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.776 -0500", hash_original_method = "7C7353B3FBE3C8967FDD9EF259B3710A", hash_generated_method = "59DE34238412A4B9ACF11DE696F3C228")
     
 @Override
@@ -353,6 +354,7 @@ public boolean containsAttribute(final String name) {
         return clone;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.778 -0500", hash_original_method = "A8332973B56773C2F5F00A4DF3A49927", hash_generated_method = "EB2F86DE168216B60F4BBF66618A85D5")
     
 @Override

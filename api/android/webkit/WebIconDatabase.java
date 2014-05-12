@@ -248,6 +248,7 @@ void dispatch() {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.335 -0500", hash_original_method = "933A9372A0E78DFEA9569EC4FAF2FF2F", hash_generated_method = "81591D9A6F3795AB36738A360B3D8C11")
         
 @Override

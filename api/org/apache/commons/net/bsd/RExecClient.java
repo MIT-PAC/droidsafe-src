@@ -256,6 +256,7 @@ public void rexec(String username, String password,
      * <p>
      * @exception IOException If there an error occurs while disconnecting.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.083 -0500", hash_original_method = "EC3762ABD187734DF955C9D194C2C167", hash_generated_method = "ED6218BA92B2498B7E6ECACC0FCD68CE")
     
 public void disconnect() throws IOException

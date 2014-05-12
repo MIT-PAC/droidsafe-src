@@ -197,6 +197,7 @@ public WorkerHandler(Looper looper) {
             super(looper);
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.902 -0500", hash_original_method = "BC8DD1777F18E8544A1DB9042612AEAB", hash_generated_method = "7FB19CE88A5D2550749BFF4DBD3AC51F")
         
 @Override
@@ -377,6 +378,7 @@ protected void onDeleteComplete(int token, Object cookie, int result) {
         // Empty
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.933 -0500", hash_original_method = "50006A2133D7E0B202945894C4D59186", hash_generated_method = "BE85304DEC489057D9A532DA3D87141D")
     
 @Override

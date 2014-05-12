@@ -17,7 +17,7 @@ public class RectShape extends Shape {
      * RectShape constructor.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.870 -0500", hash_original_method = "86D7394A029CE4FDE438585868C447F4", hash_generated_method = "EC5781DC7AC5EFDE946C3D218DF4DE25")
     
 public RectShape() {}

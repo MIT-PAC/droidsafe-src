@@ -20,6 +20,7 @@ public ViaList() {
         super(Via.class, ViaHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.026 -0500", hash_original_method = "4D93C8A8DA65DDEDB364A162E5648CA9", hash_generated_method = "D13000004744A9F69B1F7560879B664D")
     
 public Object clone() {

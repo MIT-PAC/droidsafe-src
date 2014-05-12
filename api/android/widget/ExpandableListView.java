@@ -499,6 +499,7 @@ public void setChildDivider(Drawable childDivider) {
      * <p>
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.796 -0500", hash_original_method = "A4E4696C244BB97A42B35DBC06E7550F", hash_generated_method = "8F357777D7FDD1DE58862E6356F4C563")
     
 @Override
@@ -1195,6 +1196,7 @@ public void setIndicatorBounds(int left, int right) {
         mIndicatorRight = right;
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.927 -0500", hash_original_method = "D1B709DD85334DB90D0ABC47C1E74159", hash_generated_method = "DF0EE4B90E3C87AD1F1D67C2FE8646E8")
     
 @Override
@@ -1204,6 +1206,7 @@ public void setIndicatorBounds(int left, int right) {
                 mConnector != null ? mConnector.getExpandedGroupMetadataList() : null);
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.929 -0500", hash_original_method = "FA4E85B1CE7B753D6AFB9648E78FCCBA", hash_generated_method = "6B16222A99996667548F647B4F7E930B")
     
 @Override

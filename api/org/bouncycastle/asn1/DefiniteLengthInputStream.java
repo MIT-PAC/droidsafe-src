@@ -79,6 +79,8 @@ public int read()
         return b;
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.869 -0500", hash_original_method = "A08D5ADC8470447FAA8F1F7D6ED59D8F", hash_generated_method = "67EBC3DF45850592C2B8D3FCBC4DB713")
     
 public int read(byte[] buf, int off, int len)

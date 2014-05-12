@@ -39,6 +39,7 @@ public UserInfo() {
      * @param obj Object to set
      * @return true if the two headers are equals, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.771 -0500", hash_original_method = "A09C3D32ACE02300A3630780DF7DA73F", hash_generated_method = "32F0C96A3AE6D3E038F875614DB6300C")
     
 public boolean equals(Object obj) {

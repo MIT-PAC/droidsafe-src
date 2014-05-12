@@ -67,6 +67,7 @@ public String toString() {
         return buffer.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.566 -0500", hash_original_method = "3849D74FE9AE53A80E5FA00389489FFC", hash_generated_method = "7E95BB12D8AE441B52154DB0448B72CF")
     
 public boolean equals(final Object object) {

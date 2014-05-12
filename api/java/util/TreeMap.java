@@ -715,6 +715,7 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
             this.toBound = toBound;
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:46.631 -0500", hash_original_method = "0165FF9BE82C19127CA9F7A8EFBCC5F6", hash_generated_method = "D25BB53F3C30538427F3E85787AC04C4")
         
 @Override public int size() {
@@ -916,6 +917,7 @@ public Comparator<? super K> comparator() {
           }
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:46.707 -0500", hash_original_method = "7F86A739037DCA8312EEE2819E1107F8", hash_generated_method = "EDC4C200EEEB64F5D3A97E07F9DF937C")
         
 @Override public Set<Entry<K, V>> entrySet() {
@@ -923,6 +925,7 @@ public Comparator<? super K> comparator() {
             return result != null ? result : (entrySet = new BoundedEntrySet());
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:46.709 -0500", hash_original_method = "8D1D053C1D8B0756868AB879DB7CB086", hash_generated_method = "AC03ABC7AB52D57C862BA24029964BFE")
         
 @Override public Set<K> keySet() {

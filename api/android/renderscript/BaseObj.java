@@ -113,6 +113,7 @@ public String getName() {
         return mName;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.607 -0500", hash_original_method = "FF2533C9D3CAE2C033B0095CDF311C3A", hash_generated_method = "97E99162245CF60BE105276AB1EEC25D")
     
 protected void finalize() throws Throwable {
@@ -163,6 +164,7 @@ void updateFromNative() {
      *
      * @return int
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.614 -0500", hash_original_method = "399A2DDCEE4C827B87F141BE75C58C17", hash_generated_method = "F7736150B11B3F6FB6A6BC4E4FE9CAB4")
     
 @Override
@@ -177,6 +179,7 @@ void updateFromNative() {
      *
      * @return boolean
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.617 -0500", hash_original_method = "60FC0B8BE57466D21B9D49483A61B23F", hash_generated_method = "F915E46001B4749FC6EB32B77CE142F9")
     
 @Override

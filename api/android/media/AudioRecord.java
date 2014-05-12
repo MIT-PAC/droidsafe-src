@@ -456,6 +456,7 @@ public void release() {
         mState = STATE_UNINITIALIZED;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.766 -0500", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "B426276F6755268DFF3429CB984C1F76")
     
 @Override
@@ -741,6 +742,7 @@ NativeEventHandler(AudioRecord recorder, Looper looper) {
             mAudioRecord = recorder;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.933 -0500", hash_original_method = "A027355AC274B858A19853667EAC27C7", hash_generated_method = "A3326C9B2A55B050AAE1F2CAE174D46D")
         
 @Override

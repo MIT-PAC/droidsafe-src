@@ -30,6 +30,7 @@ public void dispose() {
         super.dispose();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.791 -0500", hash_original_method = "11E9A9A4D579433D0F36A7564F8CD864", hash_generated_method = "3372AA2EAB20936657DDEB3BD0B06EED")
     
 protected void finalize() {

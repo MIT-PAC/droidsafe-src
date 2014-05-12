@@ -63,6 +63,7 @@ public ZoomButton(Context context, AttributeSet attrs, int defStyle) {
         setOnLongClickListener(this);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.860 -0500", hash_original_method = "6BCA096FD56C8C78BA7791883B013378", hash_generated_method = "23EF65D079E88CCF4F556BC5BAF6FF8E")
     
 @Override
@@ -96,6 +97,7 @@ public boolean onLongClick(View v) {
         return super.onKeyUp(keyCode, event);
     }
     
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.869 -0500", hash_original_method = "46BB6036120D403ECAC10DF2C7F6C840", hash_generated_method = "90A762EBF729F2A2FBD688B6994E6F19")
     

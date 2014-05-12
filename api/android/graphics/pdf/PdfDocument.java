@@ -231,6 +231,7 @@ public void close() {
         dispose();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.736 -0500", hash_original_method = "119202677B32B7BE6DE13ADB1FEE3A30", hash_generated_method = "13C8ACE306A6FD58065CAB0709921EDA")
     
 @Override
@@ -317,7 +318,7 @@ public PdfCanvas(int nativeCanvas) {
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.781 -0500", hash_original_method = "09BF352B013BE09D7407EC81EDFAD3C9", hash_generated_method = "6B21C1AA6160CD3506F803B9A1DF3D26")
         @DSVerified
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
 @Override
         public void setBitmap(Bitmap bitmap) {
             throw new UnsupportedOperationException();

@@ -492,6 +492,7 @@ public void setTo(TypedValue other)
         density = other.density;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.707 -0500", hash_original_method = "44CD89AE4BAE0041D5FF2944B149F6B9", hash_generated_method = "7437CEA7D7835947FE4809D27809766F")
     
 public String toString()

@@ -69,6 +69,7 @@ public ContentTypeHeader getContentTypeHeader() {
      * 
      * @see gov.nist.javax.sip.message.MultipartMimeContentExt#toString()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.219 -0500", hash_original_method = "1253C501D0F5CE66AF0270C83E3A62D6", hash_generated_method = "AF26BB27E070B51980579965CE9A5ED0")
     
 @Override

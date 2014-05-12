@@ -72,6 +72,7 @@ public StringBuffer encode(StringBuffer buffer) {
         return buffer;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.645 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {
@@ -107,6 +108,7 @@ public void set(String name, Object value) {
      * @param otherObject is the object to compare to.
      * @return true if the two objects compare for equality.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.653 -0500", hash_original_method = "E566E8F19B44FC1FECCBFF06B810AB67", hash_generated_method = "C7B448223FE99A38ED9326670A6E96CB")
     
 public boolean equals(Object otherObject) {
@@ -185,6 +187,7 @@ public boolean delete(String name) {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.665 -0500", hash_original_method = "19FF4230E4AD609C94D0ED393241A96C", hash_generated_method = "9FC0EEB7F84FC96960E4FC8965822DE9")
     
 public Object clone() {
@@ -277,6 +280,7 @@ public Collection<NameValue> values() {
         return this.nameValueMap.values();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.689 -0500", hash_original_method = "4C24AE5D2C44E17C467B047C84E46484", hash_generated_method = "D65E3551648B92C066D2EC2E5808A452")
     
 public int hashCode() {

@@ -52,6 +52,7 @@ public CSeq(long seqno, String method) {
      * @return true if the two cseq headers are equals, false
      * otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.125 -0500", hash_original_method = "4EDEC57C2297C20220D48BA90CD455C6", hash_generated_method = "2DDEA071AADB70B9000C80626B498058")
     
 public boolean equals(Object other) {

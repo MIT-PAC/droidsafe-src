@@ -39,6 +39,8 @@ public Stream(String name) {
             prefix = name + "["+Thread.currentThread().getName()+"] ";
         }
 
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.169 -0500", hash_original_method = "D4FE33DE2CA80BB3708E6A0E802F0C32", hash_generated_method = "857DBBAAF7E6696751028A99F26E908E")
         
 @Override
@@ -61,6 +63,7 @@ public void endIndent() {
             indent --;
         }
 
+        @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.176 -0500", hash_original_method = "9FCCAC1E0D29D125BE9308EF391306A0", hash_generated_method = "66209703A73C9C9B32D7E53D6814B02B")
         

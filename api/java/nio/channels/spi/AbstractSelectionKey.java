@@ -27,6 +27,7 @@ protected AbstractSelectionKey() {
      * @return {@code true} if this key has not been canceled, {@code false}
      *         otherwise.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.232 -0500", hash_original_method = "1D07A2DB88FBC8505561F98CE95D4D40", hash_generated_method = "5CAB1804A992395EE26A5B382908E240")
     
 @Override
@@ -40,6 +41,7 @@ protected AbstractSelectionKey() {
      * A key that has been canceled is no longer valid. Calling this method on
      * an already canceled key does nothing.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.234 -0500", hash_original_method = "A279029257087CE11FC7A37CBDFB5215", hash_generated_method = "BBF29FCAD5F9A043B65C4DCCD2050B9A")
     
 @Override

@@ -141,7 +141,7 @@ private static void postEventFromNative(Object mediarecorder_ref,
      * Default constructor.
      */
     @DSComment("Media recorder function")
-    @DSSpec(DSCat.MEDIA_RECORDER)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.569 -0500", hash_original_method = "506D5AE1E4700103A96E723E2F623CDF", hash_generated_method = "13BF1EBB65DB4371328F028432A43C99")
     
 public MediaRecorder() {
@@ -774,6 +774,7 @@ public EventHandler(MediaRecorder mr, Looper looper) {
             mMediaRecorder = mr;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.867 -0500", hash_original_method = "86EEE127740FDFEE4F0B3E353E660995", hash_generated_method = "735214346EF0755B5287857357227450")
         
 @Override
@@ -1071,6 +1072,7 @@ public void setOnInfoListener(OnInfoListener listener)
     	addTaint(nameValuePair.getTaint());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.893 -0500", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "B426276F6755268DFF3429CB984C1F76")
     
 @Override

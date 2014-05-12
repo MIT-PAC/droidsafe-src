@@ -58,7 +58,7 @@ protected CipherOutputStream(OutputStream os) {
      *             if an error occurs.
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.319 -0500", hash_original_method = "C558B2B88CBF261C0FBBE5741F96019C", hash_generated_method = "23C1BFB0F79EE3063A60285E2CC71033")
     
 @Override public void write(int b) throws IOException {
@@ -78,6 +78,7 @@ protected CipherOutputStream(OutputStream os) {
      * @throws IOException
      *             if an error occurs.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("IO operations")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.322 -0500", hash_original_method = "5836CE17B48698DBC2254777B1086E69", hash_generated_method = "303B5B5237A2689D22F4C6FFC92947DF")
@@ -98,6 +99,7 @@ protected CipherOutputStream(OutputStream os) {
      * @throws IOException
      *             if an error occurs
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.326 -0500", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "5CE80A6225762CA51E516040755CB8E9")
     
 @Override

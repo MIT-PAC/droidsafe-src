@@ -261,6 +261,7 @@ public void putRecoveryAction(int action) {
         return possible;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.320 -0500", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "6833A2ECD72E43D23E79C9C60B3F654A")
     
 @Override
@@ -2611,6 +2612,7 @@ private ApnSetting getPreferredApn() {
         return null;
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.613 -0500", hash_original_method = "AE6FD47652B0A19C805CE62DFEA0E86E", hash_generated_method = "79300E137E121C247946983526D12410")
     
 @Override

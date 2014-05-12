@@ -247,7 +247,7 @@ public Notification[] newArray(int size)
         public PendingIntent actionIntent;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.828 -0500", hash_original_method = "72CF35B308D5BFA491A169CB4BB41DEF", hash_generated_method = "0DDF405CBD0EF7159B76F1586F3DE10A")
         @DSVerified
-        @DSSafe(DSCat.DATA_STRUCTURE)  
+        @DSSafe(DSCat.SAFE_OTHERS)  
 @SuppressWarnings("unused")
         public Action() { }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.832 -0500", hash_original_method = "712106731DCA508D8A3092C52F1CD0A3", hash_generated_method = "B669851F1C9EF49451A1891F3C427A7A")
@@ -270,7 +270,7 @@ public Action(int icon_, CharSequence title_, PendingIntent intent_) {
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.837 -0500", hash_original_method = "EA3AC4E8FD9A3A2FB1A1E94FC4289126", hash_generated_method = "EC6DBFF17F5772D0AB3711AD419A01D6")
         @DSVerified
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
 @Override
         public Action clone() {
             return new Action(
@@ -422,6 +422,7 @@ public Notification(Parcel parcel)
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.879 -0500", hash_original_method = "33AFE123F36310F2B7C5806919DBFE48", hash_generated_method = "87F7B06FD813B97FDC277A205E6D242E")
     
 @Override
@@ -623,6 +624,7 @@ public void writeToParcel(Parcel parcel, int flags)
         this.contentIntent = contentIntent;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.902 -0500", hash_original_method = "D1F214F35D23C9DE8CCA4D0E93C87742", hash_generated_method = "2CB1D02F29D176E916524AE0EAD76E83")
     
 @Override

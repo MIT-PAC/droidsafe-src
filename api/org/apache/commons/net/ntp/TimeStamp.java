@@ -15,7 +15,6 @@ package org.apache.commons.net.ntp;
  * limitations under the License.
  */
 
-
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -62,7 +61,6 @@ public class TimeStamp implements java.io.Serializable, Comparable
 
     private static SoftReference utcFormatter = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.569 -0500", hash_original_field = "62E36A902B75294BC3BD92777512C431", hash_generated_field = "76F724EFCF3CCC11DA3A4803D321DE3B")
-
 
     private static final long serialVersionUID = 8139806907588338737L;
 
@@ -377,6 +375,7 @@ public Date getDate()
      *
      * @return  a hash code value for this object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.853 -0500", hash_original_method = "CEE737EA9770EEB8C0C4A77F707911F5", hash_generated_method = "A7F81B9D6A28C25355952EB87CD718E0")
     
 public int hashCode()
@@ -394,6 +393,7 @@ public int hashCode()
      * @return  <code>true</code> if the objects are the same;
      *          <code>false</code> otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.858 -0500", hash_original_method = "1E825B982EDCD87AA4529BBFDCDBA2F1", hash_generated_method = "0B022ADB77E9F842F6D3E66104DE289B")
     
 public boolean equals(Object obj)
@@ -413,6 +413,7 @@ public boolean equals(Object obj)
      * @return NTP timestamp 64-bit long value as hex string with seconds
      * separated by fractional seconds.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.863 -0500", hash_original_method = "7FBFA5DF7A2D6014C9CA2F913F0914FC", hash_generated_method = "F39600EBE8DF940850F3163642F0ABA9")
     
 public String toString()
@@ -515,6 +516,7 @@ public int compareTo(TimeStamp anotherTimeStamp)
      *		  <code>TimeStamp</code>.
      * @see     java.lang.Comparable
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.895 -0500", hash_original_method = "C9691A632D85B9C742B4A7081A303F66", hash_generated_method = "63A86E000F5624B8F5BC47110EB2C926")
     
 public int compareTo(Object o)

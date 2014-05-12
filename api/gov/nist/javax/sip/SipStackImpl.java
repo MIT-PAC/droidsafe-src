@@ -896,7 +896,8 @@ public String getStackName() {
 	 * 
 	 * @see java.lang.Object#finalize()
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.652 -0500", hash_original_method = "E5E5510E122401D8059641DFB570004B", hash_generated_method = "3DE78C565F73DA56CFFAB5CDE44EF625")
+	@DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.652 -0500", hash_original_method = "E5E5510E122401D8059641DFB570004B", hash_generated_method = "3DE78C565F73DA56CFFAB5CDE44EF625")
 	
 protected void finalize() {
 		this.stopStack();

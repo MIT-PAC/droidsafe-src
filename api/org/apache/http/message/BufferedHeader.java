@@ -92,12 +92,14 @@ public CharArrayBuffer getBuffer() {
         return this.buffer;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.682 -0500", hash_original_method = "45FB39B4E67563C5A568E25DDBF414D1", hash_generated_method = "78CB532AFE764110A4E51A23C38737C5")
     
 public String toString() {
         return this.buffer.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.685 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "0BDC98250A04BDDF2ACC480AFE3C4193")
     
 public Object clone() throws CloneNotSupportedException {

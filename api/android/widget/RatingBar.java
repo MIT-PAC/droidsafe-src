@@ -326,6 +326,7 @@ void dispatchRatingChange(boolean fromUser) {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.777 -0500", hash_original_method = "0784AE840DC17E48B7292220CB837BFB", hash_generated_method = "07DCFCC4B6FB8C937AF6493A10A9D9CF")
     
 @Override

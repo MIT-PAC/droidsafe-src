@@ -1052,6 +1052,7 @@ public void remove() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.359 -0500", hash_original_method = "AC02B860B54618170BE24E50FF82F167", hash_generated_method = "5CE69281687197D974EFA494331617C2")
         
 public K next()        { return super.nextEntry().key; }
@@ -1069,6 +1070,7 @@ public K nextElement() { return super.nextEntry().key; }
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.366 -0500", hash_original_method = "282B954004CE321F97FD15862590F160", hash_generated_method = "D966FC58251295E5B681672FC4C7796B")
         
 public V next()        { return super.nextEntry().value; }
@@ -1114,6 +1116,7 @@ public V setValue(V value) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.381 -0500", hash_original_method = "DA1DC8695C9406305A6247D7AF5617DE", hash_generated_method = "D5A9F0B3135B4DCBD24EA27C354955E0")
         
 public Map.Entry<K,V> next() {
@@ -1130,21 +1133,25 @@ public Map.Entry<K,V> next() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.386 -0500", hash_original_method = "29CBC31BB957230FC921EA16C45EAF59", hash_generated_method = "61F74EA37A05E8D255712FAA4565C230")
         
 public Iterator<K> iterator() {
             return new KeyIterator();
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.388 -0500", hash_original_method = "84790AE556354018FD5A8D95161C900C", hash_generated_method = "90E9C2DF329E4562BAFE113BBE53FC84")
         
 public int size() {
             return ConcurrentHashMap.this.size();
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.392 -0500", hash_original_method = "BB49B4DE055D4AF23A8AAE749170E176", hash_generated_method = "D0C498395B567F9E0AC1C003E0D96349")
         
 public boolean isEmpty() {
             return ConcurrentHashMap.this.isEmpty();
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.395 -0500", hash_original_method = "37248D467FF06BE0B2F5DDC1489510DF", hash_generated_method = "B25E9D2DC769AF5844BC2035A46F9BB4")
         
 public boolean contains(Object o) {
@@ -1170,6 +1177,7 @@ public void clear() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.405 -0500", hash_original_method = "3C7262C80A3C469695720BFA46AA113C", hash_generated_method = "0A1EC37B3F6C24218487D3A0F0D4F696")
         
 public Iterator<V> iterator() {
@@ -1185,6 +1193,7 @@ public int size() {
 public boolean isEmpty() {
             return ConcurrentHashMap.this.isEmpty();
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.412 -0500", hash_original_method = "6F20D95CF6074119AB0347E3FAAE80A2", hash_generated_method = "1B4240192F6271412D6DDBF2443A864D")
         
 public boolean contains(Object o) {
@@ -1205,11 +1214,13 @@ public void clear() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.420 -0500", hash_original_method = "A1AF959F7C17DD47B4014053BC413A23", hash_generated_method = "ACF0E92DE808C3C201E913BB3DB81ED0")
         
 public Iterator<Map.Entry<K,V>> iterator() {
             return new EntryIterator();
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.422 -0500", hash_original_method = "44CFEB1CC21C67EDDE5E7F2C0FB0C916", hash_generated_method = "945314949C7BBCC6BC20B8234E583793")
         
 public boolean contains(Object o) {
@@ -1227,11 +1238,13 @@ public boolean remove(Object o) {
             Map.Entry<?,?> e = (Map.Entry<?,?>)o;
             return ConcurrentHashMap.this.remove(e.getKey(), e.getValue());
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.428 -0500", hash_original_method = "84790AE556354018FD5A8D95161C900C", hash_generated_method = "90E9C2DF329E4562BAFE113BBE53FC84")
         
 public int size() {
             return ConcurrentHashMap.this.size();
         }
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.430 -0500", hash_original_method = "BB49B4DE055D4AF23A8AAE749170E176", hash_generated_method = "D0C498395B567F9E0AC1C003E0D96349")
         
 public boolean isEmpty() {

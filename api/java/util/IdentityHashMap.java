@@ -47,7 +47,6 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements
         Map<K, V>, Serializable, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 14:42:08.748 -0500", hash_original_field = "A0A78839DFCD243E0A97CB3922652AE0", hash_generated_field = "79E552DDD6CD74A49BFF2F345B8A2229")
 
-
     private static final long serialVersionUID = 8188218128353913216L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 14:42:08.784 -0500", hash_original_field = "FA52DE8B5B17B97C5698B7FC564EBDA0", hash_generated_field = "FB05DAE1C403395EF791F285C9C2DC34")
 
@@ -70,9 +69,6 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 14:42:08.812 -0500", hash_original_field = "7C38AA8724D6D8AD727BB2AB85887DF0", hash_generated_field = "12E79C42739D112FBF146E2A08503782")
 
     transient int modCount = 0;  //$NON-LOCK-1$
-
-
-
 
     /**
      * Creates an IdentityHashMap with default expected maximum size.
@@ -255,6 +251,7 @@ private Object[] newElementArray(int s) {
      * @return the value of the removed mapping, or {@code null} if no mapping
      *         for the specified key was found.
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 14:42:09.206 -0500", hash_original_method = "5D1C6299BDD74A2A432086CB6E5E8EB0", hash_generated_method = "A51643FD1FC88DE197D002FD989BE4CC")
     
 @Override
@@ -291,7 +288,6 @@ private Object[] newElementArray(int s) {
     public Set<K> keySet() {
         return super.keySet();
     }
-    
 
     /**
      * Returns a collection of the values contained in this map. The collection

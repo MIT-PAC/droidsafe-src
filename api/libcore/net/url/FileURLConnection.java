@@ -60,6 +60,8 @@ public FileURLConnection(URL url) {
      * @throws IOException
      *             if an IO error occurs while connecting
      */
+    @DSSpec(DSCat.INTERNET)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.748 -0500", hash_original_method = "9A475DD1FCE4CCB36A5D73E904D3A34C", hash_generated_method = "7D1CD524014605854B17C58503824E09")
     
 @Override
@@ -176,6 +178,7 @@ private InputStream getDirectoryListing(File f) {
      * @throws IOException
      *             if an IO error occurs
      */
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.758 -0500", hash_original_method = "632E8A34CACC91F3F004CEC65E6938CD", hash_generated_method = "ED2775841B5F9FBCF8526B5C47FF6631")
     

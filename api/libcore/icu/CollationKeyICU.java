@@ -65,6 +65,7 @@ CollationKeyICU(String source, byte[] bytes) {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.537 -0500", hash_original_method = "02D4FA820C7658A0385D9CDD7EC5D935", hash_generated_method = "E1AC05A4AEFBDA264B4106B15AC4F3F3")
     
 @Override public boolean equals(Object object) {
@@ -87,6 +88,7 @@ CollationKeyICU(String source, byte[] bytes) {
      * @return hash value of collation key. Hash value is never 0.
      * @stable ICU 2.4
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.541 -0500", hash_original_method = "14EA39361109DCC90111D16D29CE0C8D", hash_generated_method = "227A58A6782E59F194019631AF0DF412")
     
 @Override public int hashCode() {

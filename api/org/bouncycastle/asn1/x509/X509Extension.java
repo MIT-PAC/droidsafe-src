@@ -12,11 +12,6 @@ import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.ASN1OctetString;
 import org.bouncycastle.asn1.DERBoolean;
 
-
-
-
-
-
 public class X509Extension {
 
     /**
@@ -134,7 +129,6 @@ public static ASN1Object convertValueToObject(
 
     public static final ASN1ObjectIdentifier targetInformation = new ASN1ObjectIdentifier("2.5.29.55");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.031 -0500", hash_original_field = "1F76041313F1C10961473CD0339FD9F7", hash_generated_field = "1F76041313F1C10961473CD0339FD9F7")
-
         
     boolean             critical;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.033 -0500", hash_original_field = "5DEA83DCEFEBCFCA3C7CDEF67511142C", hash_generated_field = "5DEA83DCEFEBCFCA3C7CDEF67511142C")
@@ -182,6 +176,7 @@ public ASN1Encodable getParsedValue()
         return convertValueToObject(this);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.047 -0500", hash_original_method = "F51FC5FDE8514BA4D7895E2CA6F69CED", hash_generated_method = "6C1BE34F3476E34C36231E5B793DE21C")
     
 public int hashCode()
@@ -190,11 +185,11 @@ public int hashCode()
         {
             return this.getValue().hashCode();
         }
-
         
         return ~this.getValue().hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:22.049 -0500", hash_original_method = "63E75CEC65A75841B4924B9C6901B009", hash_generated_method = "CADC4917F3BD2C1F186F433235F59E96")
     
 public boolean equals(

@@ -608,6 +608,7 @@ public String join(String separator) throws JSONException {
      * Encodes this array as a compact JSON string, such as:
      * <pre>[94043,90210]</pre>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.211 -0500", hash_original_method = "CC6BE78472EEEAF64E530CA9F9B14BB5", hash_generated_method = "000C0FCE86F8834F70EB7B14EA12E002")
     
 @Override public String toString() {
@@ -653,12 +654,14 @@ void writeTo(JSONStringer stringer) throws JSONException {
         stringer.endArray();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.219 -0500", hash_original_method = "BF4C72A1D6E8FA2592A6106FA9BE5FDF", hash_generated_method = "0AFBB3E3E878906D580B157A22DB75DE")
     
 @Override public boolean equals(Object o) {
         return o instanceof JSONArray && ((JSONArray) o).values.equals(values);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.221 -0500", hash_original_method = "5391F86F0DF47CDF0FABD2AA1BAE9E60", hash_generated_method = "17ED8AC656A97F927F56D6D68F2F762C")
     
 @Override public int hashCode() {

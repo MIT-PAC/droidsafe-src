@@ -48,6 +48,7 @@ public CdmaLteServiceStateTracker(CDMALTEPhone phone) {
         super.dispose();
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.461 -0500", hash_original_method = "D5AC4DEC3B42E743000565D518230B6D", hash_generated_method = "175356D8D372E9D980766052FA5AC179")
     
 @Override

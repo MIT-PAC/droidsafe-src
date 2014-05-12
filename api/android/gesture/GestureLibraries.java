@@ -64,7 +64,7 @@ public static GestureLibrary fromPrivateFile(Context context, String name) {
 public static GestureLibrary fromRawResource(Context context, int resourceId) {
         return new ResourceGestureLibrary(context, resourceId);
     }
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.004 -0500", hash_original_method = "5D35F1C2DD549E898BC93F9B607C5349", hash_generated_method = "625250A16EA789F15A1A86A124DC62B4")
     
 private GestureLibraries() {
@@ -117,6 +117,7 @@ public boolean save() {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.092 -0500", hash_original_method = "E97FC097692D7B4B3BC36E002DC0ED9B", hash_generated_method = "8A99FCA19A30011741D1C256D119A707")
         
 public boolean load() {
@@ -165,6 +166,7 @@ public boolean save() {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:06.150 -0500", hash_original_method = "73AAB88122AD60CA48D1793ECC55A1FF", hash_generated_method = "7027F9A1047F9D25433D9671E0D313CD")
         
 public boolean load() {

@@ -52,6 +52,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
 
     // ------------------- Wrapping method implementations ---------------
 
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.345 -0500", hash_original_method = "00D15638ACD466799C761D85B34B76D1", hash_generated_method = "318B16BF8497A493582ED5394CA2D122")
     
 @Override
@@ -60,6 +61,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         throw new IOException("Underlying socket is already connected.");
     }
 
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.348 -0500", hash_original_method = "EAF5C6F0CD11B02972408C1904067F09", hash_generated_method = "5AB26808CFD3AAFCE9C50BE8E4832631")
     
 @Override
@@ -67,6 +69,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         throw new IOException("Underlying socket is already connected.");
     }
 
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.350 -0500", hash_original_method = "7A09B0BAD685B79E09A501FC300262C5", hash_generated_method = "4641B5E3CF42BCCB903380F0F6DB8DB3")
     
 @Override
@@ -74,6 +77,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         throw new IOException("Underlying socket is already connected.");
     }
 
+    @DSSpec(DSCat.NETWORK)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.353 -0500", hash_original_method = "3943DC2A7B0758DBF52393C8C56EA577", hash_generated_method = "C040EF3FF2D307F2C379CD6A1919BD79")
     
@@ -90,6 +94,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.getLocalSocketAddress();
     }
 
+    @DSSpec(DSCat.NETWORK)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.357 -0500", hash_original_method = "FA66787E9EF6408AFBBAC830990D81DD", hash_generated_method = "0DED15F899B7565F50B31AD8F52F97D2")
     
@@ -98,6 +103,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.getLocalAddress();
     }
 
+    @DSSpec(DSCat.NETWORK)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.360 -0500", hash_original_method = "7C5B0DF8424BA5B1A7E73E96C6697260", hash_generated_method = "4AAC50E14DA9595E4F76424EB06A06AE")
     
@@ -106,6 +112,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.getInetAddress();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.362 -0500", hash_original_method = "20064C2DA65D137C2E5BEE76E0D7F046", hash_generated_method = "415179180B4BE9CF500075793507191E")
     
 @Override
@@ -113,6 +120,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return "SSL socket over " + socket.toString();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.364 -0500", hash_original_method = "BA6A863821CC6E272D69FAD304054330", hash_generated_method = "CF295742065C95EF4C2291A2441BD2F4")
     
@@ -121,6 +129,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         socket.setSoLinger(on, linger);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.367 -0500", hash_original_method = "6AD7B97F2FA9AF7B8D3F27597107B2BF", hash_generated_method = "E38CDAC51F0AE0D04C06CC4C93C73513")
     
@@ -153,6 +162,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         socket.setTrafficClass(tos);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.377 -0500", hash_original_method = "99398BF4E61DD284BEAF3BF1D99561D2", hash_generated_method = "511A0675A607ED286CB69B5686105568")
     
@@ -161,6 +171,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         socket.setSoTimeout(to);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.379 -0500", hash_original_method = "A6ECFC0810DB8197115B82176EC6BB66", hash_generated_method = "354E312C641E673D0E268A306BF64632")
     
@@ -169,6 +180,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         socket.setSendBufferSize(size);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.381 -0500", hash_original_method = "D35B240A928EE0976B61520D6F633EA5", hash_generated_method = "E5A4E7DE32456ABBE48BA105746391DD")
     
@@ -177,6 +189,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         socket.setReceiveBufferSize(size);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.383 -0500", hash_original_method = "39F09AC39D817ADEB5123B039A643360", hash_generated_method = "DE2685EB07F5D5643B3890F295EBB028")
     
@@ -217,6 +230,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.getTrafficClass();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.395 -0500", hash_original_method = "010C724B642A1F7D7909AEF3BDB55CFF", hash_generated_method = "C0B0350003A3FA81B582358EAB00E8F7")
     
@@ -225,6 +239,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.getSoTimeout();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.398 -0500", hash_original_method = "8ECD41C257976189A03EEB5A2F2A2061", hash_generated_method = "FEB351F213C6127D77EC949582DC6B4E")
     
@@ -249,6 +264,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.getReceiveBufferSize();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.405 -0500", hash_original_method = "EC1EF38CAA1E7F260C803E9C132BF1AD", hash_generated_method = "735FCD6800F8A33427A0AEFB6211123E")
     
 @Override
@@ -270,6 +286,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.isBound();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.413 -0500", hash_original_method = "51808AB98F30ED89EC1017AD205567F5", hash_generated_method = "0BC3B4A0728A8C43FC0305D661B1DEEA")
     
 @Override
@@ -277,6 +294,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.isOutputShutdown();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.415 -0500", hash_original_method = "28A9E9140AE8CAAEAFACC4EC7AFA7A9E", hash_generated_method = "8BAC13764309E0ABE21ACE9733537F39")
     
 @Override
@@ -284,6 +302,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.isInputShutdown();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.417 -0500", hash_original_method = "9202DEAEF4A83D1AC2B8E9A1BC72C67F", hash_generated_method = "11F0C724DD23B8BB7B6229DE2ECA83E3")
     
@@ -292,6 +311,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         return socket.getPort();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.420 -0500", hash_original_method = "8F87ED59A6F41F0CC7A13A5B3C7FF765", hash_generated_method = "A845AF79A94301585E8921CDCEB23C13")
     

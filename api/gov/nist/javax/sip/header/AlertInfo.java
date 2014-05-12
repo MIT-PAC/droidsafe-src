@@ -92,6 +92,7 @@ public URI getAlertInfo() {
         return alertInfoUri;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.677 -0500", hash_original_method = "1467211F1910FD2BE16563F269CB9AF0", hash_generated_method = "4EF7F7ED3C3686C4A2C99E6B354F282C")
     
 public Object clone() {

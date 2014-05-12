@@ -77,6 +77,7 @@ private ConfigurationInfo(Parcel source) {
         reqGlEsVersion = source.readInt();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:45.444 -0500", hash_original_method = "DF17C53C5839729CA11877C3DC3AE571", hash_generated_method = "D166D9D7865D5462FC950CACCF7F8007")
     
 public String toString() {

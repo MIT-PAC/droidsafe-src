@@ -81,6 +81,7 @@ private InstrumentationInfo(Parcel source) {
         functionalTest = source.readInt() != 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.718 -0500", hash_original_method = "B5CF3592446C27C5B1615F6776EEEE26", hash_generated_method = "B0AB00AD3796A73D7959BFA53043C91D")
     
 public String toString() {

@@ -199,6 +199,7 @@ public abstract FloatBuffer duplicate();
      * @return {@code true} if this float buffer is equal to {@code other},
      *         {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.907 -0500", hash_original_method = "962C433BA6F78C4BE1DF9C98AF3A7A4D", hash_generated_method = "2980BDA4B6B7ADD49B9A6AF3F520F9BA")
     
 @Override
@@ -318,6 +319,7 @@ public final boolean hasArray() {
      *
      * @return the hash code calculated from the remaining floats.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.921 -0500", hash_original_method = "B144F8C59516E29D7B0EE6B79958F98A", hash_generated_method = "398E5B4217CC179808D12B8E7584D484")
     
 @Override

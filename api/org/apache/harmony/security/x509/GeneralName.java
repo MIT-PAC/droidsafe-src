@@ -435,6 +435,7 @@ public Object getName() {
         return name;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.681 -0500", hash_original_method = "47F6A98481038A57781CC8365511AC09", hash_generated_method = "E8397C6185FF9D1B47659EA083F94AF5")
     
 public boolean equals(Object other) {
@@ -467,6 +468,7 @@ public boolean equals(Object other) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.683 -0500", hash_original_method = "A1EE40CF64275F91ADFBB9AA6974DBAD", hash_generated_method = "CC85413B6B65D9EDB49B1F99A8DCDCD0")
     
 public int hashCode() {
@@ -647,6 +649,7 @@ public List<Object> getAsList() {
         return Collections.unmodifiableList(result);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.693 -0500", hash_original_method = "4137EA74AADFAF54538362634CBBCA7A", hash_generated_method = "AEF6DF182D5802F70C54F9B1BE89897F")
     
 public String toString() {

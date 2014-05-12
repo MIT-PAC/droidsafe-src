@@ -878,6 +878,7 @@ public final int copyFrom(LayoutParams o) {
             return "";
         }
     
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.120 -0500", hash_original_method = "41B9FD0A22A3C1DC6E251DE94C75B18D", hash_generated_method = "009ABCFBDDC67308D2886E20C626E696")
         
 @Override

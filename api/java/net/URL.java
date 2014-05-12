@@ -344,6 +344,7 @@ protected void set(String protocol, String host, int port, String file, String r
      * that release, URLs are only equal if their host names are equal (ignoring
      * case).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.799 -0500", hash_original_method = "90B240523657DD4FC87B9440FE931EC1", hash_generated_method = "E74F9CB753CD3DB5F05CA87211C5ED9B")
     
 @Override public boolean equals(Object o) {
@@ -369,6 +370,7 @@ public boolean sameFile(URL otherURL) {
         return streamHandler.sameFile(this, otherURL);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.804 -0500", hash_original_method = "83584D9C6686BC529C911ABE882D39AB", hash_generated_method = "231C6ADC153005536655917E91567525")
     
 @Override public int hashCode() {

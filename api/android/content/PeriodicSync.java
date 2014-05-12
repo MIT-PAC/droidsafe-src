@@ -68,6 +68,7 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(period);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:28.595 -0500", hash_original_method = "05CC89CFE228C27B7E04895576ABC3FB", hash_generated_method = "7A226861F582A0ADBC3B2587703A02A7")
     
 public boolean equals(Object o) {

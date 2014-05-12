@@ -317,6 +317,7 @@ BluetoothDevice(String address) {
         mAddress = address;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.735 -0500", hash_original_method = "DA80DFD3FFE970A9DEF6CBF59BD17BFE", hash_generated_method = "72DB427A9D6C92E324E11E59ED03FE54")
     
 @Override
@@ -327,6 +328,7 @@ BluetoothDevice(String address) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.737 -0500", hash_original_method = "7AEEB42D289D7509B50F97CB867AEDF2", hash_generated_method = "023B404E9C6EB592569CA62A5425AEF0")
     
 @Override
@@ -342,6 +344,7 @@ BluetoothDevice(String address) {
      * {@link #toString} representation changes in the future.
      * @return string representation of this BluetoothDevice
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.739 -0500", hash_original_method = "4F994B6046AF4A420304240B51CB4CC6", hash_generated_method = "16B0D7E7F85DDCED65B3F6C6B71A2104")
     
 @Override

@@ -117,6 +117,7 @@ MyRunnable(int resultCode, Bundle resultData) {
             mResultData = resultData;
         }
         
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.366 -0500", hash_original_method = "B2EEF2B3DE60D5C6AF2898B6D426B2C7", hash_generated_method = "6E53CBE876D163AADF4FBFF07A5EA5E1")
         
 public void run() {

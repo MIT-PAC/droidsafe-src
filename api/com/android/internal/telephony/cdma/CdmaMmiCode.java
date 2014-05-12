@@ -273,6 +273,7 @@ private void handlePasswordError(int res) {
         phone.onMMIDone(this);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.601 -0500", hash_original_method = "20352E1B7818DCA44840F8C27B44EA84", hash_generated_method = "934B9ACF089C1B3DD14B8E224402EA67")
     
 public void

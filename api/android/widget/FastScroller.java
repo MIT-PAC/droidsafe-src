@@ -399,6 +399,7 @@ int getAlpha() {
             return alpha;
         }
         
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.129 -0500", hash_original_method = "3A2ADC6F19B17BA5C164F36207FFFC0C", hash_generated_method = "C6ECF2234803BACE456F86B71E499E99")
         
 public void run() {

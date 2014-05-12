@@ -23,6 +23,7 @@ public FixedLengthOutputStream(OutputStream socketOut, int bytesRemaining) {
         this.bytesRemaining = bytesRemaining;
     }
 
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.492 -0500", hash_original_method = "954563C6DA4D081D04FBFCB6C3DCBDF3", hash_generated_method = "2800F8B50156B94FD924ED7965570D8B")
     
@@ -36,6 +37,7 @@ public FixedLengthOutputStream(OutputStream socketOut, int bytesRemaining) {
         bytesRemaining -= count;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.495 -0500", hash_original_method = "5CB5A053EE4A231C6D0A0D598E9BEDBB", hash_generated_method = "304DBF513455DAB903E1E5D173E3CB18")
     
 @Override public void flush() throws IOException {

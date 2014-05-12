@@ -113,6 +113,7 @@ public String getErrorMessage() {
         return getParameter("message");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.855 -0500", hash_original_method = "251926555E92C7CD7D27CA2FB451752B", hash_generated_method = "58A93F84D67668D0D8D65F60ACC662F5")
     
 public Object clone() {

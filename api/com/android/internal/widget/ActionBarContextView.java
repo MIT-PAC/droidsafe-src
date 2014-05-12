@@ -591,6 +591,7 @@ private Animator makeOutAnimation() {
         return false;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.190 -0500", hash_original_method = "237F1A60A9E9685B4EADEDCFF21B9A19", hash_generated_method = "9B6A9EEA900E48CEBA0104EC08FB727B")
     
 @Override

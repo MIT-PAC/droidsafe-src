@@ -91,6 +91,7 @@ private ManifestDigest(Parcel source) {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.887 -0500", hash_original_method = "47C1315D4986EA9CB4630AE53F1E05CD", hash_generated_method = "8D612405C449B6069FD64C6752869978")
     
 @Override
@@ -106,6 +107,7 @@ private ManifestDigest(Parcel source) {
         //return this == other || Arrays.equals(mDigest, other.mDigest);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.889 -0500", hash_original_method = "E44F66496A9E1D9F549FC1B26A939089", hash_generated_method = "36DCC4708255E87D514E030B24E7ADCA")
     
 @Override
@@ -113,6 +115,7 @@ private ManifestDigest(Parcel source) {
         return Arrays.hashCode(mDigest);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.892 -0500", hash_original_method = "A781DED7FEB614EC5183E2E44D7D4BA6", hash_generated_method = "125DFBEDF15AC7D6E89EBB9B2051A242")
     
 @Override

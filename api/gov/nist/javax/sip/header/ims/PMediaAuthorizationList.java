@@ -19,6 +19,7 @@ public PMediaAuthorizationList()
         super(PMediaAuthorization.class, PMediaAuthorizationHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.117 -0500", hash_original_method = "535B60F78292A563EBB4CD53A0D5E752", hash_generated_method = "25E2FD42224B9CE87E159FD25A84990F")
     
 public Object clone() {

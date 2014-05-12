@@ -217,6 +217,7 @@ boolean asn1Equals(
             && Arrays.areEqual(octets, other.octets);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.652 -0500", hash_original_method = "CE8CF2E74F2DF6C65F2B809B8ECF710B", hash_generated_method = "DF8DCEE655EA050B508FB581D990EB55")
     
 public int hashCode()

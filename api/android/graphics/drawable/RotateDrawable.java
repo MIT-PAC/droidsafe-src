@@ -33,7 +33,7 @@ public class RotateDrawable extends Drawable implements Drawable.Callback {
      * <p>Create a new rotating drawable with an empty state.</p>
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.476 -0500", hash_original_method = "D68BBF88E63BC402EDEA5DC6DCE17035", hash_generated_method = "71F426AAD031F00583CE184548FEF9CC")
     
 public RotateDrawable() {
@@ -54,8 +54,8 @@ private RotateDrawable(RotateState rotateState, Resources res) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.481 -0500", hash_original_method = "66E42D309847A2E591E14284403E0AD8", hash_generated_method = "BBAFF2BE6C50F34BCF2B8BBCCFBA7E9B")
     
 public void draw(Canvas canvas) {
@@ -103,8 +103,8 @@ public Drawable getDrawable() {
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.488 -0500", hash_original_method = "E07BF10440452C45B5D504184A6B58C8", hash_generated_method = "C0ECD2624D6CA10CD38C92A17BD6B8AC")
     
 public void setAlpha(int alpha) {
@@ -121,8 +121,8 @@ public void setColorFilter(ColorFilter cf) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.492 -0500", hash_original_method = "7CC935EC38A8A9ED900F61C0DE237712", hash_generated_method = "6AEFC5E5119FBE730070031E99C8983B")
     
 public int getOpacity() {
@@ -231,7 +231,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.516 -0500", hash_original_method = "5B4218C80F47B6E11FBBAA9FF9621C9F", hash_generated_method = "E28C2E4A7B9402F89BB9614B8EB9AEEA")
     
 @Override
@@ -241,7 +241,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.518 -0500", hash_original_method = "D5692643A14F3CC0D08138E7C727B99D", hash_generated_method = "7484AD6435F7AE8BD48190BEDCA8E9A4")
     
 @Override

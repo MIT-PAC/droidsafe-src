@@ -43,6 +43,7 @@ public BackupDataInput(FileDescriptor fd) {
     }
 
     /** @hide */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.904 -0500", hash_original_method = "CC531F2C344F6B5BB4BC1EC54E3B5D76", hash_generated_method = "D52E7A0AF44ED50AF850B2C6E2ED8701")
     
 protected void finalize() throws Throwable {
@@ -214,7 +215,7 @@ public void skipEntityData() throws IOException {
         int dataSize;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.173 -0400", hash_original_method = "0CA45CB3FD81751EFF77E1E1D96ACA74", hash_generated_method = "0CA45CB3FD81751EFF77E1E1D96ACA74")
         public EntityHeader ()
         {

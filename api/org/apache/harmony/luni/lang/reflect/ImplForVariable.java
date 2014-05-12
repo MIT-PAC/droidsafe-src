@@ -94,6 +94,7 @@ ImplForVariable(D genericDecl, String name) {
         this.declOfVarUser = genericDecl;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.221 -0500", hash_original_method = "1E5AB95BB29F6C6E7982DF5E5FB9856A", hash_generated_method = "C53D1FC2244C3A4E92457E5A7811D82D")
     
 @Override
@@ -106,6 +107,7 @@ ImplForVariable(D genericDecl, String name) {
                 getGenericDeclaration().equals(that.getGenericDeclaration());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.223 -0500", hash_original_method = "7D0F85484BF18E8882B18922DC61C5E2", hash_generated_method = "23EB5A1B17C6903E249FA43F8F4A367D")
     
 @Override
@@ -156,6 +158,7 @@ public String getName() {
         return name;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.245 -0500", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "0D841C721535905DD0E9F7FAE6757EB9")
     
 @Override

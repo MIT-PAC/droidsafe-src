@@ -620,6 +620,7 @@ void cancelHandleClick() {
         mTouchMode = TOUCH_MODE_NONE;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.522 -0500", hash_original_method = "A2B685172F5BE99872ECD239B8E084E5", hash_generated_method = "085460C7FA75B37C37D31BFC1D91DC8E")
     
 @Override
@@ -792,6 +793,7 @@ void checkForAndHandleDataChanged() {
         }
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.611 -0500", hash_original_method = "C09C373B1A1103A4B30F4932FEFEB18D", hash_generated_method = "8D2EA4ED5957DAAB17AC309D3678E720")
     
@@ -801,6 +803,7 @@ void checkForAndHandleDataChanged() {
         return new SavedState(superState, mWhichChild);
     }
 
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.615 -0500", hash_original_method = "A2807F1883DAD1F14A6CC088A989D676", hash_generated_method = "7BAEC4531DE1888140D8B0523E2D6E73")
     
 @Override
@@ -949,6 +952,7 @@ public void setAnimateFirstView(boolean animate) {
         return (getCurrentView() != null) ? getCurrentView().getBaseline() : super.getBaseline();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.659 -0500", hash_original_method = "4778E83EF7DB01E18145E85F688E24B4", hash_generated_method = "7074E68DF390D755A8C1C993C686683A")
     
@@ -1053,6 +1057,7 @@ ViewAndMetaData(View view, int relativeIndex, int adapterPosition, long itemId) 
         {
             //Synthesized constructor
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.508 -0500", hash_original_method = "0DE0DC1F19EC8E43C86C5443C435E50A", hash_generated_method = "784003EA1EA1EB3B1E7FFD2639983D57")
         
 public void run() {
@@ -1120,6 +1125,7 @@ private SavedState(Parcel in) {
             out.writeInt(this.whichChild);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.590 -0500", hash_original_method = "808D88187ABBC8D595A46EE25C5AC5ED", hash_generated_method = "8010E7371F27313F1C5C64B46C856D2E")
         
 @Override

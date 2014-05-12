@@ -352,6 +352,7 @@ GregorianCalendar(boolean ignored) {
      *
      * @return a shallow copy of this {@code GregorianCalendar}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.366 -0500", hash_original_method = "4451E97BB30CB152B3F7FF3125B7AC95", hash_generated_method = "1D341620BC27492BCFC6A3EA3DD92D1C")
     
 @Override
@@ -929,6 +930,7 @@ private int daysInYear(boolean leapYear, int month) {
      *                from the current field values.
      * @see #hashCode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.403 -0500", hash_original_method = "61C11EDCA3B03978A14421C2440916AB", hash_generated_method = "638BA54CFC73F2DB62C2F1DAB15463EE")
     
 @Override
@@ -1179,6 +1181,7 @@ private int getOffset(long localTime) {
      *
      * @see #equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.427 -0500", hash_original_method = "6907F2ED2DF57E219AB70EADED509565", hash_generated_method = "30C160E12136D4D4A9C2EA4D3CA5489B")
     
 @Override

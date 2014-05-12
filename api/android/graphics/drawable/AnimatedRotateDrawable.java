@@ -68,7 +68,8 @@ private void init() {
         }
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.522 -0500", hash_original_method = "5DFCBA38220408C5DABBFEFD0FA87F8B", hash_generated_method = "D9B5048E192D6A721FAD907C26FD5607")
     
 @Override
@@ -123,6 +124,7 @@ private void nextFrame() {
         scheduleSelf(this, SystemClock.uptimeMillis() + mState.mFrameDuration);
     }
     
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.534 -0500", hash_original_method = "47627FAA36D08729C94EAD6CAAA95F6C", hash_generated_method = "07BAA077FF907E7C89171D76FBDFAEA0")
     
 public void run() {
@@ -174,7 +176,8 @@ public Drawable getDrawable() {
                 | mState.mDrawable.getChangingConfigurations();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.543 -0500", hash_original_method = "E07BF10440452C45B5D504184A6B58C8", hash_generated_method = "771A5B696691C72ECB795BE897A70411")
     
 @Override
@@ -190,7 +193,8 @@ public Drawable getDrawable() {
         mState.mDrawable.setColorFilter(cf);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.547 -0500", hash_original_method = "7CC935EC38A8A9ED900F61C0DE237712", hash_generated_method = "2C6912CB7EFAF5519A5B360EDA63E638")
     
 @Override
@@ -232,6 +236,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mState.mDrawable.getPadding(padding);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.558 -0500", hash_original_method = "6F66CB18BCF39D7C34F81BD35385E69D", hash_generated_method = "8D650BF6AB97FF0BA6CDB1926623C43C")
     
 @Override
@@ -246,7 +251,8 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mState.mDrawable.setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.563 -0500", hash_original_method = "5B4218C80F47B6E11FBBAA9FF9621C9F", hash_generated_method = "E28C2E4A7B9402F89BB9614B8EB9AEEA")
     
 @Override
@@ -254,7 +260,8 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mState.mDrawable.getIntrinsicWidth();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.565 -0500", hash_original_method = "D5692643A14F3CC0D08138E7C727B99D", hash_generated_method = "7484AD6435F7AE8BD48190BEDCA8E9A4")
     
 @Override

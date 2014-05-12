@@ -115,7 +115,7 @@ public void finish() throws IOException {
     }
 
     // -------------------------------------------- OutputStream Methods
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.523 -0500", hash_original_method = "97963AB3B21DB4797CA6C19C718B8A38", hash_generated_method = "CF1E450E6EB239C83DE93F69EFB91E68")
     
@@ -134,6 +134,7 @@ public void write(int b) throws IOException {
      * @param b
      * @throws IOException
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.525 -0500", hash_original_method = "3A39FD94F4678FF92F02222292608085", hash_generated_method = "F6C81F6D58C1DBA8A32360C2D4037BF3")
     
@@ -141,6 +142,8 @@ public void write(byte b[]) throws IOException {
         write(b, 0, b.length);
     }
 
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.527 -0500", hash_original_method = "CCAB33DDE1A6D08280EC0BE0610A6B79", hash_generated_method = "6B6F1E98A57891C1B4D1833806E6B11D")
     
 public void write(byte src[], int off, int len) throws IOException {
@@ -159,6 +162,7 @@ public void write(byte src[], int off, int len) throws IOException {
      * Flushes the content buffer and the underlying stream.
      * @throws IOException
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.530 -0500", hash_original_method = "1D035E07BE479B8A909681E6BF90CFBD", hash_generated_method = "30EC794E829AE5A6C71E9027AA07F44F")
     
 public void flush() throws IOException {

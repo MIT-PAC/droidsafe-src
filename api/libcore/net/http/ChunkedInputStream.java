@@ -34,6 +34,8 @@ ChunkedInputStream(InputStream is, CacheRequest cacheRequest,
         super(is, httpEngine, cacheRequest);
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.189 -0500", hash_original_method = "A69C93E854B37E522584F08EF88E59BD", hash_generated_method = "DBB71B4DE0D29A8F21B556BD955CF36C")
     
 @Override public int read(byte[] buffer, int offset, int count) throws IOException {
@@ -97,6 +99,7 @@ private void readChunkSize() throws IOException {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.195 -0500", hash_original_method = "637FFB0CF7184A6B5BB58296121EFC54", hash_generated_method = "97EA194C9760A426EFA8CDE2FE8F0AAD")
     
 @Override public int available() throws IOException {

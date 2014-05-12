@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -32,7 +31,6 @@ import java.nio.ByteBuffer;
  */
 public class VertexFrame extends Frame {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:06.046 -0400", hash_original_field = "75E5438C7D36DE31EB8E9AB82E55F7C1", hash_generated_field = "B779060CC790BBFAB35B20234BA4912C")
-
 
     private int vertexFrameId = -1;
 
@@ -153,6 +151,7 @@ public int getVboId() {
         return getNativeVboId();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:06.071 -0400", hash_original_method = "B350639441A012A513BBC91904F9439C", hash_generated_method = "976E5EAE7675EA35670E15FAD0B511D4")
     
 @Override
@@ -184,9 +183,6 @@ public int getVboId() {
     	return toTaintBoolean(taintDouble);
     }
 
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.828 -0400", hash_original_method = "B008EA5EAE1D78CF60323223B23112C0", hash_generated_method = "DB9D3915DCF330A7854A0E564C5106A0")
     
     private boolean setNativeData(byte[] data, int offset, int length){
@@ -200,7 +196,6 @@ public int getVboId() {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.831 -0400", hash_original_method = "2047716A79A9E9406699C20C7A268A40", hash_generated_method = "431F2A0CB3A7814C0347AEEA4DA821C1")
     
     private boolean setNativeInts(int[] ints){
@@ -211,7 +206,6 @@ public int getVboId() {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.835 -0400", hash_original_method = "88CBED05920219A258C2F99CB4EDFE1D", hash_generated_method = "C0A8BCC26755F86A54824EBDD91E7B3C")
     
@@ -232,9 +226,5 @@ public int getVboId() {
     
     	return (int)taintDouble;
     }
-
-
-
-
 
 }

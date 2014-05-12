@@ -1342,6 +1342,7 @@ BitmapFinalizer(int nativeBitmap) {
             mNativeBitmap = nativeBitmap;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.896 -0500", hash_original_method = "750E0A25CDE7A09F3C919B08C5243F0D", hash_generated_method = "B8FD1ACC752A8AF5F2315B76E157CA42")
         
 @Override

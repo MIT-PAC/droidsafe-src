@@ -1608,6 +1608,7 @@ public CharSequence subSequence(int start, int end) {
             return new String(s);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.510 -0500", hash_original_method = "8ED281151745D3FC40324C23FDF16D10", hash_generated_method = "16E4C4DB57F114FD51428F1C8FA1F678")
         
 @Override

@@ -1226,6 +1226,7 @@ public void writeToParcel(Parcel dest, int flags) {
             dest.writeString(resourceName);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:08.732 -0500", hash_original_method = "8D66F7367028E1EB1EA87D8477E02D6C", hash_generated_method = "6F90CCE7688941528CC1D08D934509F0")
         
 @Override
@@ -1261,6 +1262,7 @@ public Intent getIntent() {
             return mIntent;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.581 -0500", hash_original_method = "57E0DE3F426C34FAD2C087D7985C733F", hash_generated_method = "F90B90EFBE2EDE43A9416E0B4AB00241")
         
 @Override
@@ -1272,6 +1274,7 @@ public Intent getIntent() {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.584 -0500", hash_original_method = "D7D5E8B622FC6A9CB6E203DCD79B8799", hash_generated_method = "B0837B818531E3C208A8A4F995ED9F70")
         
 @Override
@@ -1740,7 +1743,7 @@ public Intent() {
     }
     
 	@DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.PRIVATE_METHOD)
     private Intent(Intent o, boolean all) {
             this();
 		/*
@@ -1823,6 +1826,7 @@ protected Intent(Parcel in) {
         readFromParcel(in);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.288 -0500", hash_original_method = "0DE1E082CFAE738C657D3967F7BD3FA4", hash_generated_method = "70D87F5C5833337B2F59C8685D6E3D8A")
     
 @Override
@@ -4003,7 +4007,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
     }
 
     @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.593 -0500", hash_original_method = "A07DFF04DF4B6FC888385D304C4BCF4A", hash_generated_method = "3A3B480D0B879B15008E432A8EB67CCD")
     
 @Override

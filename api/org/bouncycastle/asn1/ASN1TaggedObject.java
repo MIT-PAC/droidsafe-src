@@ -131,6 +131,7 @@ boolean asn1Equals(
         return true;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.139 -0500", hash_original_method = "996889D0C05CC309872B8EE7FF5C4369", hash_generated_method = "07979806C0C20ADDDA772A11324248EC")
     
 public int hashCode()
@@ -242,6 +243,7 @@ public DERObject getLoadedObject()
 abstract void encode(DEROutputStream  out)
         throws IOException;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.158 -0500", hash_original_method = "5750585E0FAF2C7F60E10F96F297B6DF", hash_generated_method = "103ACC5A0DA98A573B1996BD5781ECB8")
     
 public String toString()

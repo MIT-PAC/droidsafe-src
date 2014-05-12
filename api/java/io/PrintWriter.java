@@ -708,6 +708,7 @@ protected void setError() {
      * @param buf
      *            the non-null array containing characters to write.
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.594 -0500", hash_original_method = "A3159CA9C79B3AD467B0FCF29995C9CC", hash_generated_method = "332FA8CEBD234C482814A35911B9C13B")
     
@@ -733,7 +734,7 @@ protected void setError() {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the length of {@code buf}.
      */
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.597 -0500", hash_original_method = "F47BE159FF15FE26B09EE65FDEAB6B8C", hash_generated_method = "1B9EBB736966FD3B4151C6D420711072")
     
@@ -752,6 +753,8 @@ protected void setError() {
      * @param oneChar
      *            the character to write to the target.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.599 -0500", hash_original_method = "28E681395D573BD9F19024ECEBC35F4A", hash_generated_method = "F690F85F2F542ED1043C2E683ECEDCFF")
     
 @Override
@@ -810,6 +813,7 @@ private final void doWrite(char[] buf, int offset, int count) {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the length of {@code str}.
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.607 -0500", hash_original_method = "63C99944EF00B97313C46973AD4FFC8C", hash_generated_method = "B2605DFCA974A1A538F9BAD52C8E3544")
     

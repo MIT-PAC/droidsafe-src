@@ -88,13 +88,14 @@ public ContentValues(ContentValues from) {
      * {@hide}
      */
     @DSComment("constructor")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.398 -0500", hash_original_method = "79B820032F5D7F722A5DF12324BC548A", hash_generated_method = "5E252719E39637156C8BAC11C1AC30FD")
     
 private ContentValues(HashMap<String, Object> values) {
         mValues = values;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.401 -0500", hash_original_method = "B119129681FC05E44686163A6A753063", hash_generated_method = "CA9A0B792F9EB3DA75443922B274F1F5")
     
 @Override
@@ -105,6 +106,7 @@ private ContentValues(HashMap<String, Object> values) {
         return mValues.equals(((ContentValues) object).mValues);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.403 -0500", hash_original_method = "61C7B1D258FDF4A8DE4F58009B844658", hash_generated_method = "8D922C89C140B0009A3734D07F3FE687")
     
 @Override
@@ -638,6 +640,7 @@ public int describeContents() {
      * Returns a string containing a concise, human-readable description of this object.
      * @return a printable representation of this object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.483 -0500", hash_original_method = "7B4B42E004B10F53CC96D4FD27076B59", hash_generated_method = "EC8B35621884B7BF7FC98A2548C7EE22")
     
 @Override

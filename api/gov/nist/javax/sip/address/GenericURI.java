@@ -83,6 +83,7 @@ public StringBuffer encode(StringBuffer buffer) {
     /** Encode this URI.
      * @return The encoded URI
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.272 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {
@@ -114,6 +115,7 @@ public boolean isSipURI() {
     }
 
     // @Override
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.279 -0500", hash_original_method = "7E429DD6D2D2C657A6046B8560CB3B06", hash_generated_method = "AFC175F8F03CECA339A5C6F7ED193A3C")
     
 public boolean equals(Object that) {
@@ -128,6 +130,7 @@ public boolean equals(Object that) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.281 -0500", hash_original_method = "52D4A3951B7E10EC34FBEDB345A7DD44", hash_generated_method = "77DCABADCE7CFE67B38F790E4FA97217")
     
 public int hashCode() {

@@ -38,6 +38,7 @@ public static ASN1Object fromByteArray(byte[] data)
         //Synthesized constructor
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.513 -0500", hash_original_method = "DA81A9CF27CE7E2A8EA2EF36D7C19ED4", hash_generated_method = "50FE23521D15EE8C8DA07960EFA62A4B")
     
 public final boolean equals(Object o)

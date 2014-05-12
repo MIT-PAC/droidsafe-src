@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.net.InetAddress;
 
-
-
-
 public final class StructGroupReq {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.829 -0500", hash_original_field = "E1A3F20BD1F9C0C1F09C25E770F5A92A", hash_generated_field = "A455D75F586868F1FEF5A4B336E5E17D")
 
@@ -24,12 +21,12 @@ public StructGroupReq(int gr_interface, InetAddress gr_group) {
         this.gr_group = gr_group;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.837 -0500", hash_original_method = "7C7A6CFDA39E9F15601C4EC14F339026", hash_generated_method = "8AB6BED795E020CEFAD82354C6C46F32")
     
 @Override public String toString() {
         return "StructGroupReq[gr_interface=" + gr_interface + ",gr_group=" + gr_group + "]";
     }
-
     
 }
 

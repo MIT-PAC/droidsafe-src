@@ -3093,6 +3093,7 @@ protected DeviceOrientationService getDeviceOrientationService() {
             //Synthesized constructor
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.185 -0500", hash_original_method = "82DEF5A0DA884DCAB5C26C3D415DCFF4", hash_generated_method = "2E3D0317EE5893C232A5D0C05FB91FEB")
 public void run() {
             Looper.prepare();

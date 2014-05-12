@@ -20,6 +20,7 @@ public InReplyToList() {
         super(InReplyTo.class, InReplyToHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.848 -0500", hash_original_method = "DCD4BD1433043890DC84CD67AE62360B", hash_generated_method = "2BAB5C8EDECEE9EE44AAE05EBACC5F58")
     
 public Object clone() {

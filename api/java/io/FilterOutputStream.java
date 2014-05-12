@@ -67,6 +67,7 @@ public FilterOutputStream(OutputStream out) {
      * @throws IOException
      *             if an error occurs attempting to flush this stream.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.174 -0500", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "5CE80A6225762CA51E516040755CB8E9")
     
 @Override
@@ -91,6 +92,7 @@ public FilterOutputStream(OutputStream out) {
      * @throws IOException
      *             if an I/O error occurs while writing to this stream.
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.177 -0500", hash_original_method = "6F432F0CBACFD3E73C2E675DFA6BA23C", hash_generated_method = "498B074A2C195BA232A7D0D68326D9CB")
     
@@ -115,7 +117,7 @@ public FilterOutputStream(OutputStream out) {
      */
     @DSComment("Activity on IO class")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.179 -0500", hash_original_method = "10EC24027333F66A6325D4B91084AA70", hash_generated_method = "72256F3E593320096EE1351175BB4E9C")
     
 @Override

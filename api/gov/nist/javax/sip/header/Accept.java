@@ -187,6 +187,7 @@ public void setMediaRange(MediaRange m) {
         mediaRange = m;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.396 -0500", hash_original_method = "0EF41097CC41F1F6A85A85E560745DC8", hash_generated_method = "60407AAA15D05A955C811AC1CD5F4FCA")
     
 public Object clone() {

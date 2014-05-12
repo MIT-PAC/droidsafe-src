@@ -217,6 +217,7 @@ private static LocaleData initLocaleData(Locale locale) {
 private LocaleData() {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.463 -0500", hash_original_method = "784F7240396B6696F26C45143188C28A", hash_generated_method = "599E7D1A81C2948E35A3C5FDB8CF35FC")
     
 @Override public String toString() {

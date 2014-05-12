@@ -180,7 +180,7 @@ public void finish() throws IOException {
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink(DSSinkKind.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.827 -0500", hash_original_method = "DD8DF91486AFD685531F1A8944310E80", hash_generated_method = "8F716C7D080C02AB7834C5B17E78CDC1")
     
 @Override public void write(int i) throws IOException {
@@ -193,6 +193,8 @@ public void finish() throws IOException {
      * @throws IOException
      *             If an error occurs during writing.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.830 -0500", hash_original_method = "5BF353787DD4638B35D7C1FA14989FAE", hash_generated_method = "E2034B50C55354120883031999A50019")
     
 @Override public void write(byte[] buffer, int offset, int byteCount) throws IOException {
@@ -216,6 +218,7 @@ public void finish() throws IOException {
      * this first flushes all outstanding data so that it may be immediately
      * read by its recipient. Doing so may degrade compression.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.833 -0500", hash_original_method = "FB4F039ED9744680CB15453045EEE574", hash_generated_method = "609D00CE798BDC5D620E1BF70BEE2FD2")
     
 @Override public void flush() throws IOException {

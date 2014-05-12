@@ -472,6 +472,7 @@ public Object getTarget() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.602 -0500", hash_original_method = "90D327822AEC361513F70606A9AC65F7", hash_generated_method = "561BA5E0647B4EC723EBCA1E17749283")
     
 @Override
@@ -480,6 +481,7 @@ public Object getTarget() {
         return anim;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.604 -0500", hash_original_method = "0AD6D5BD218B220E887BD38666E44260", hash_generated_method = "6F611F0E760AAAA48F3F3EA242509A2C")
     
 @Override

@@ -85,6 +85,7 @@ public void cursorRequeried(Cursor cursor) {
         // Do nothing
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.468 -0500", hash_original_method = "174FEA46244B347E10EF94A484A1C873", hash_generated_method = "A87150336A6BB337665113B4A2D7B81E")
     
 @Override

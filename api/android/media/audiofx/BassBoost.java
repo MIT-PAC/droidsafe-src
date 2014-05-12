@@ -265,6 +265,7 @@ public Settings(String settings) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:16.444 -0400", hash_original_method = "732AFE0BBA09268198C1B830E4C67C0B", hash_generated_method = "BFF0EB4AD610519D03144B7501D53F5B")
         
 @Override

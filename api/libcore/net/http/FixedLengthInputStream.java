@@ -25,6 +25,8 @@ public FixedLengthInputStream(InputStream is, CacheRequest cacheRequest,
         }
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.136 -0500", hash_original_method = "5B284B9FC407E028AC176D716362F3C7", hash_generated_method = "CE6C6291522C34C8FBC42B445E42AA67")
     
 @Override public int read(byte[] buffer, int offset, int count) throws IOException {
@@ -46,6 +48,7 @@ public FixedLengthInputStream(InputStream is, CacheRequest cacheRequest,
         return read;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.139 -0500", hash_original_method = "7AFD793A00CEC972BF0DC212CD2F3F7C", hash_generated_method = "A6DF3D5156AB0C395F5392D7373836BD")
     
 @Override public int available() throws IOException {

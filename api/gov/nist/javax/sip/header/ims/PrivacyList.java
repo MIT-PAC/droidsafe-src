@@ -21,6 +21,7 @@ public PrivacyList() {
         super(Privacy.class, PrivacyHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.780 -0500", hash_original_method = "09C54AFDDBF31F8225613CB28A3AFCA3", hash_generated_method = "2CB46F21CA1EC882462A859CCDB14DC5")
     
 public Object clone() {

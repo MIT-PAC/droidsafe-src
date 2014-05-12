@@ -240,6 +240,7 @@ private void endImpl() {
     	addTaint(handle);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.810 -0500", hash_original_method = "FC32DF56978CE95FA2CC2CA96409152E", hash_generated_method = "09E00EA73277F9B2AD883CD1303F9264")
     
 @Override protected void finalize() {

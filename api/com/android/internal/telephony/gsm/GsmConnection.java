@@ -683,6 +683,7 @@ public String
         return postDialString.substring(nextPostDialChar);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.397 -0500", hash_original_method = "0A00BE85F59605F9BA59170C28959531", hash_generated_method = "4FEB61AEBAF4A4963F4ED85ED374C4D0")
     
 @Override
@@ -777,6 +778,7 @@ private boolean
         
 MyHandler(Looper l) {super(l);}
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.311 -0500", hash_original_method = "E8F40E6883CDABD6C8E283CE0D2B4E28", hash_generated_method = "9AEB0D6EEF8F90C85341CDE5285B08AA")
         
 public void

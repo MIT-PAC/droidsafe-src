@@ -63,6 +63,7 @@ public SequenceInputStream(Enumeration<? extends InputStream> e) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.526 -0500", hash_original_method = "989AE899244AE453B2C16F0363EA8BF3", hash_generated_method = "02B44B8FAFB26FBCA83D48F0525D06EA")
     
 @Override
@@ -176,6 +177,8 @@ private void nextStream() throws IOException {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.536 -0500", hash_original_method = "D0BE57C4BCBFEEAAABF8F255E34909BC", hash_generated_method = "22342A6D5C517E89E4A3F3617B99EA99")
     
 @Override

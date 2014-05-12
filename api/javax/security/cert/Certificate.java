@@ -31,6 +31,7 @@ public Certificate() {}
      *         {@code Certificate}, <code>false</code> otherwise
      * @see #hashCode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.707 -0500", hash_original_method = "7638A14848B991538FCB5E98A2110811", hash_generated_method = "2236536B45A96F8C521CF0A7F03F6670")
     
 public boolean equals(Object obj) {
@@ -56,6 +57,7 @@ public boolean equals(Object obj) {
      * @return the receiver's hash
      * @see #equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.709 -0500", hash_original_method = "694012085EC68335A49724253FE100EC", hash_generated_method = "ABB931EA2622BE63EC57C620C12C47F6")
     
 public int hashCode() {

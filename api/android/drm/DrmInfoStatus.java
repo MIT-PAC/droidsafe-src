@@ -64,9 +64,8 @@ public DrmInfoStatus(int _statusCode, int _infoType, ProcessedData _data, String
         data = _data;
         mimeType = _mimeType;
     }
-    
 
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public DrmInfoStatus() {
 
     }

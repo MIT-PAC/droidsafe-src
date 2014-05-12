@@ -185,6 +185,7 @@ public int getEncodedLength(BerOutputStream out) { //FIXME name
         return len;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.060 -0500", hash_original_method = "54C9519AE58EE8A367BF831B5FC731FF", hash_generated_method = "0944A0978714CD338D7E5A13830E66DA")
     

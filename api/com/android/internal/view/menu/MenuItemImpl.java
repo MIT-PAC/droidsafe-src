@@ -538,6 +538,7 @@ public Drawable getIcon() {
         return null;
     }
     
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.316 -0500", hash_original_method = "BD8BE6A7204F93A97A4B1462396F9006", hash_generated_method = "A0F08C1F6AA9D2103F406BCBC2F83967")
     
 public MenuItem setIcon(Drawable icon) {
@@ -548,6 +549,7 @@ public MenuItem setIcon(Drawable icon) {
         return this;
     }
     
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.318 -0500", hash_original_method = "6CA4716E877DA09BBA89FF884DD9F3E1", hash_generated_method = "024B9E77B053B556C416449FFB529A87")
     
 public MenuItem setIcon(int iconResId) {
@@ -659,6 +661,7 @@ boolean setVisibleInt(boolean shown) {
         return oldFlags != mFlags;
     }
     
+    @DSSafe(DSCat.GUI)
     @DSVerified
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.341 -0500", hash_original_method = "C575291A3325EE507AB9F55E92185E54", hash_generated_method = "6E848C8D6208474679BAEB6A78CEE3A1")
@@ -683,6 +686,7 @@ public MenuItem setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener clic
         return this;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.347 -0500", hash_original_method = "233A3AFEB21203525FBA5B1CF441183E", hash_generated_method = "692A02ACADED5DD1B44A703CD8F1A6B2")
     
 @Override
@@ -696,6 +700,7 @@ void setMenuInfo(ContextMenuInfo menuInfo) {
         mMenuInfo = menuInfo;
     }
     
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.352 -0500", hash_original_method = "A0E326FAE2703231717DF34591A2C639", hash_generated_method = "4673B2B04DD4694F1B572CBC58F1735D")
     
 public ContextMenuInfo getMenuInfo() {
@@ -752,6 +757,7 @@ public boolean showsTextAsAction() {
         return (mShowAsAction & SHOW_AS_ACTION_WITH_TEXT) == SHOW_AS_ACTION_WITH_TEXT;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.369 -0500", hash_original_method = "6034AD3E3F15BF95CED1827A99F9830A", hash_generated_method = "B75CC5C30786C4E83BD58A0650648907")
     
 public void setShowAsAction(int actionEnum) {
@@ -771,6 +777,7 @@ public void setShowAsAction(int actionEnum) {
         mMenu.onItemActionRequestChanged(this);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.372 -0500", hash_original_method = "9511E068798AA5E04A674F02DC2F7567", hash_generated_method = "382D7CCA4FE6DE9C185EA8F484E78EEE")
     
 public MenuItem setActionView(View view) {
@@ -783,6 +790,7 @@ public MenuItem setActionView(View view) {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.374 -0500", hash_original_method = "B057E2C488C14BC05DF25DD2F229F8B2", hash_generated_method = "B0ACBAF1ED33FC02011C5D4E6F02A8ED")
     
@@ -809,6 +817,7 @@ public View getActionView() {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.378 -0500", hash_original_method = "F6993BB94930E20BEF3D6DE6883E2D9B", hash_generated_method = "D1A91587D547510C5AAC64F83226C01D")
     
@@ -816,6 +825,7 @@ public ActionProvider getActionProvider() {
         return mActionProvider;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.380 -0500", hash_original_method = "C59B6F24EC844FBD609E594809339FFA", hash_generated_method = "0135C1CCCBDD38C575EC5B4FCC8F4CE0")
     
 public MenuItem setActionProvider(ActionProvider actionProvider) {
@@ -834,6 +844,7 @@ public MenuItem setActionProvider(ActionProvider actionProvider) {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.385 -0500", hash_original_method = "9242B1434B9CD0ACB88D22E492AB3A81", hash_generated_method = "785DF27EB9DB09B43BE88FA740E40BF8")
     
 @Override
@@ -850,6 +861,7 @@ public MenuItem setActionProvider(ActionProvider actionProvider) {
         return false;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.388 -0500", hash_original_method = "DB0EB37C3626C85F2C23377923AB6063", hash_generated_method = "D3E84239EA5F45561CF06CF4B2CC2EAA")
     
 @Override
@@ -896,6 +908,7 @@ public void setActionViewExpanded(boolean isExpanded) {
         mMenu.onItemsChanged(false);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:33.397 -0500", hash_original_method = "618A94DE2810D1D688B3A7F878D1125A", hash_generated_method = "01EB0B4B0BFD97987FCC46F145106B1B")
     
 public boolean isActionViewExpanded() {

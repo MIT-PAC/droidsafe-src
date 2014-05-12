@@ -38,6 +38,7 @@ import android.view.CompatibilityInfoHolder;
 import com.android.internal.util.ArrayUtils;
 
 final class IntentReceiverLeaked extends AndroidRuntimeException {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.640 -0500", hash_original_method = "2DDF58935C7979F8233E5799714A3344", hash_generated_method = "69F237C15F5180743A61E16A9E689C19")
     
 public IntentReceiverLeaked(String msg) {
@@ -47,6 +48,7 @@ public IntentReceiverLeaked(String msg) {
 }
 
 final class ServiceConnectionLeaked extends AndroidRuntimeException {
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.643 -0500", hash_original_method = "3AC977BF0FF33C844B89CE3E7B08E19C", hash_generated_method = "7480F101B640E4CBA8BD4C5E5C2D21BB")
     
 public ServiceConnectionLeaked(String msg) {
@@ -745,7 +747,7 @@ public final IServiceConnection forgetServiceDispatcher(Context context,
         private static boolean warned = false;
         
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.778 -0400", hash_original_method = "97527CB182747C5C8FA8F44BB3951504", hash_generated_method = "97527CB182747C5C8FA8F44BB3951504")
         public WarningContextClassLoader ()
         {
@@ -794,7 +796,8 @@ private void warn(String methodName) {
             return getParent().getResourceAsStream(resName);
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSBan(DSCat.REFLECTION)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.736 -0500", hash_original_method = "8B4C21AC14EA436FB72A6381E557B850", hash_generated_method = "91FCE81986E2A452AC10D1CF8743BE2C")
         
 @Override public Class<?> loadClass(String className) throws ClassNotFoundException {
@@ -1034,6 +1037,7 @@ public Args(Intent intent, int resultCode, String resultData, Bundle resultExtra
                 mOrdered = ordered;
             }
             
+            @DSSpec(DSCat.THREADING)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.823 -0500", hash_original_method = "55098A9F5CE8E783F44DA889D3A217EF", hash_generated_method = "BBDF4C0C1503961E0426939D642043D3")
             
 public void run() {
@@ -1329,7 +1333,7 @@ public void doDeath(ComponentName name, IBinder service) {
             IBinder.DeathRecipient deathMonitor;
             
             @DSComment("Private Method")
-            @DSBan(DSCat.PRIVATE_METHOD)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.808 -0400", hash_original_method = "1536CD23A1F6D2B518F8B5E1999BC949", hash_generated_method = "1536CD23A1F6D2B518F8B5E1999BC949")
             public ConnectionInfo ()
             {
@@ -1378,6 +1382,7 @@ RunConnection(ComponentName name, IBinder service, int command) {
                 mCommand = command;
             }
 
+            @DSSpec(DSCat.THREADING)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.940 -0500", hash_original_method = "52DC970C8C1C8CA46B980F1341D6E54B", hash_generated_method = "E07D212A989D7BD66C5C2C3829FACD48")
             
 public void run() {

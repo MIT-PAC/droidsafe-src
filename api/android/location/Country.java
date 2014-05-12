@@ -118,6 +118,7 @@ public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeInt(mSource);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.559 -0500", hash_original_method = "A4E8BAE44F340138225E9939A030C872", hash_generated_method = "7951D731103527902A8E33B3D2E36AC9")
     
 @Override
@@ -132,6 +133,7 @@ public void writeToParcel(Parcel parcel, int flags) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.561 -0500", hash_original_method = "B421DD13AECD8D681C930C2BD9632735", hash_generated_method = "BBA12A447AFEF1E2DAC9E9CD2149A577")
     
 @Override

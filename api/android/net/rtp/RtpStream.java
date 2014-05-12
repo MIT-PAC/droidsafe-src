@@ -215,6 +215,7 @@ public void release() {
     	//Formerly a native method
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.483 -0500", hash_original_method = "2E21A04735F7B7DFBA8D51C21EAA3D5C", hash_generated_method = "478223465B2967B81B6B25A7047A7AB5")
     
 @Override

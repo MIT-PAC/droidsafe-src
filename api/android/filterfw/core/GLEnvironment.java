@@ -71,6 +71,7 @@ public synchronized void tearDown() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.647 -0400", hash_original_method = "1634EBECADA1FE321270115B4A33248F", hash_generated_method = "089C66A5C5C16B1989FEE832F678C8A4")
     
 @Override

@@ -360,6 +360,7 @@ UnaddableSet(Set<E> set) {
             this.set = set;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.047 -0500", hash_original_method = "2B5DAD0814D02A1062AA1260B368EAF3", hash_generated_method = "DC5A2F39A9BF6251B1263432FB0E308D")
         
 @Override
@@ -367,6 +368,7 @@ UnaddableSet(Set<E> set) {
             return set.equals(object);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.049 -0500", hash_original_method = "37617F952144E382F24B98396CD1D4D1", hash_generated_method = "12693150B12B1DEEEC1033ECA731A187")
         
 @Override
@@ -374,6 +376,7 @@ UnaddableSet(Set<E> set) {
             return set.hashCode();
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.052 -0500", hash_original_method = "1E7EFCC2BAD401EE702FAECD906F0B57", hash_generated_method = "E25483782CC49F27215F0FDEB89DACF8")
         
 public boolean add(E object) {
@@ -392,24 +395,28 @@ public void clear() {
             set.clear();
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.059 -0500", hash_original_method = "86589639BC226555A84E0620C45B13EB", hash_generated_method = "827E1558500285F252D98C591F425381")
         
 public boolean contains(Object object) {
             return set.contains(object);
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.061 -0500", hash_original_method = "3FEE08DBC0596E43AC262D36678D5ED8", hash_generated_method = "23022D918CFA6513B01B2EDFDC6D5E97")
         
 public boolean containsAll(Collection<?> c) {
             return set.containsAll(c);
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.064 -0500", hash_original_method = "77AAB60D4A31FA879BC76A6A4D9C7743", hash_generated_method = "AF0B83B4B9B9A2F0830A5CCE711032C8")
         
 public boolean isEmpty() {
             return set.isEmpty();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.066 -0500", hash_original_method = "7FB7F4965058B71D097578895F541442", hash_generated_method = "971472AD879713F2C7F3041145B0C2AD")
         
 public Iterator<E> iterator() {
@@ -434,18 +441,21 @@ public boolean retainAll(Collection<?> c) {
             return set.retainAll(c);
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.076 -0500", hash_original_method = "283365B7154686D5E09A8541EE47F429", hash_generated_method = "357C4F7A3AB6F76F7971FD49DE2E828E")
         
 public int size() {
             return set.size();
         }
 
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.079 -0500", hash_original_method = "A39D4D1F48CDD6F8823B658123DCFC27", hash_generated_method = "1EC811B702EA553E91564648267E084B")
         
 public Object[] toArray() {
             return set.toArray();
         }
         
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.903 -0400", hash_original_method = "820308A08287454AD26ACE5A2E12E893", hash_generated_method = "C858378E5DE3F08ADC16EF2E7BFADF34")
         public <T> T[] toArray(T[] a) {
             addTaint(a[0].getTaint());

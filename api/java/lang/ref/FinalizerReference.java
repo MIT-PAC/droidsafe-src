@@ -88,6 +88,7 @@ public FinalizerReference(T r, ReferenceQueue<? super T> q) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.867 -0500", hash_original_method = "0B77E3D00E3E63F9573A7AA23F424DE4", hash_generated_method = "AB9F9E254821C381F9E3DFA75177581B")
         
 @Override protected synchronized void finalize() throws Throwable {

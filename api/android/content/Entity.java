@@ -43,6 +43,7 @@ public void addSubValue(Uri uri, ContentValues values) {
         mSubValues.add(new Entity.NamedContentValues(uri, values));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.369 -0500", hash_original_method = "2AB28DA05FBE72723F9BBB19B5801CC4", hash_generated_method = "56366AF07653F7836849199EFAE2630A")
     
 public String toString() {

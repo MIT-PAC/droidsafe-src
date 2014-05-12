@@ -198,6 +198,7 @@ public void setOffset(int offset) {
      * Close C collator and reclaim memory.
      * @stable ICU 2.4
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.809 -0500", hash_original_method = "286B49C8E8E4DF34140969B2D7F609E6", hash_generated_method = "98D0D7EFB37D3C55FC7668DF867E92C8")
     
 @Override protected void finalize() throws Throwable {

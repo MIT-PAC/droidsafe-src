@@ -70,6 +70,8 @@ private boolean checkForEof()
         return _eofReached;
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.636 -0500", hash_original_method = "5E4C46F83EA6D4798D78ECC8F00428E0", hash_generated_method = "A9CCE6A1BB4F56629983BCB0CADD6D12")
     
 public int read(byte[] b, int off, int len)

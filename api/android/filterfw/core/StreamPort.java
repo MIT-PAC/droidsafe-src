@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 /**
@@ -25,7 +24,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 public class StreamPort extends InputPort {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.791 -0400", hash_original_field = "C19DC9677FE0C896ED0788F993573D91", hash_generated_field = "AFF7D442E0805C50A97A97ACA687AFB9")
-
 
     private Frame mFrame;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.793 -0400", hash_original_field = "E1263BE4F24799A096E4A190AF659E63", hash_generated_field = "1C30FD3100633379B7561B2FFED7CFE9")
@@ -107,6 +105,7 @@ protected synchronized void assignFrame(Frame frame, boolean persistent) {
         return mFrame != null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.810 -0400", hash_original_method = "931CAA6DF472BF7AA71C3B235FCAE4A7", hash_generated_method = "D528DD764EAD8E810C2FBE3F12AAA26B")
     
 @Override

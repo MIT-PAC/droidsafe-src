@@ -250,6 +250,7 @@ private void acknowledgeSmsWithError(int cause) {
      *
      * @param msg the message to handle
      */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.497 -0500", hash_original_method = "3D458ABE064DFE8DA418A778447E394C", hash_generated_method = "A6014E5EB851F86E973CE76A92443A99")
     
 @Override

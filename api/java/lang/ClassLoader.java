@@ -806,12 +806,14 @@ public TwoEnumerationsInOne(Enumeration<URL> first, Enumeration<URL> second) {
         this.second = second;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.793 -0500", hash_original_method = "B34DCB72B1A55025C195F65FCCD0FE9D", hash_generated_method = "A94E2380B6A7F52B0BE684F6107F3B0C")
     
 public boolean hasMoreElements() {
         return first.hasMoreElements() || second.hasMoreElements();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.795 -0500", hash_original_method = "CE040DB5C31CF9231E1B46430147AEAF", hash_generated_method = "F9B4890ADFD1503BAD6CB70E3C91AEFC")
     
 public URL nextElement() {

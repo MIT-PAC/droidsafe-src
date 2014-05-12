@@ -70,6 +70,7 @@ public InterfaceConfiguration() {
         super();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:13.691 -0400", hash_original_method = "B449045062EB1726128DB5FDD6056851", hash_generated_method = "A9C8BAF46537E7AC7B16260A7B552BC1")
     
 public String toString() {

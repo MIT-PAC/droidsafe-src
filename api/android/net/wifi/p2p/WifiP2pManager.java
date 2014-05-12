@@ -132,6 +132,7 @@ P2pHandler(Looper looper) {
                 super(looper);
             }
 
+            @DSSafe(DSCat.IPC_CALLBACK)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.778 -0500", hash_original_method = "2063A6497661251530BCD9012E9E1E5C", hash_generated_method = "96FD0C2A1DA7132FC472B033A142C2C9")
             
 @Override

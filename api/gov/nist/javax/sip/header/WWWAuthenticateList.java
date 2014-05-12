@@ -20,6 +20,7 @@ public WWWAuthenticateList() {
         super(WWWAuthenticate.class, WWWAuthenticateHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.604 -0500", hash_original_method = "CD4D2DBD74BB3BE1B1C2856EF354DA52", hash_generated_method = "40ECC57638E12ABD9C42A703737D2FBF")
     
 public Object clone() {

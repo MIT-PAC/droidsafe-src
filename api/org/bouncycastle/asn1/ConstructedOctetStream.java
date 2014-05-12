@@ -28,6 +28,8 @@ ConstructedOctetStream(
         _parser = parser;
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.258 -0500", hash_original_method = "30D34BC5FF70D0CD39A8963110E96C00", hash_generated_method = "856060C89570C4D8A7405ED013082B72")
     
 public int read(byte[] b, int off, int len) throws IOException

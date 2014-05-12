@@ -32,6 +32,8 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
         return is.droidsafeRead();
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.613 -0500", hash_original_method = "67E478B38D83ABBBB81FEA8967B3C884", hash_generated_method = "2828806F2C8D5A9174A8E6F3C39664CC")
     
 @Override
@@ -69,6 +71,7 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
         IoUtils.closeQuietly(controlSocket);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.625 -0500", hash_original_method = "D9F2C32897BF6671DFA8E2E4EE31F66E", hash_generated_method = "F59823328F606FE8BFD6C352403723BA")
     
 @Override
@@ -76,6 +79,7 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
         return is.droidsafeAvailable();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.627 -0500", hash_original_method = "E4EF9B11E6886DE5F69F77BED2D5F0AB", hash_generated_method = "D049E862079BA20C47481A3C43C5C187")
     
 @Override

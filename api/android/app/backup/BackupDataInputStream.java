@@ -61,6 +61,8 @@ public int read() throws IOException {
      * @return The number of bytes of data read, or zero if all of the entity's
      *   data has already been read.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.245 -0500", hash_original_method = "E5C8D10363AA6A5828998ABAFBD3DBB5", hash_generated_method = "601B02709E778923A0555435FD1DF499")
     
 public int read(byte[] b, int offset, int size) throws IOException {
@@ -76,6 +78,8 @@ public int read(byte[] b, int offset, int size) throws IOException {
      * @return The number of bytes of data read, or zero if all of the entity's
      *   data has already been read.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.248 -0500", hash_original_method = "261A99F04C534DF9C91290D411F9A374", hash_generated_method = "434D5B216ED5B1485E9D7D433C43AFB5")
     
 public int read(byte[] b) throws IOException {

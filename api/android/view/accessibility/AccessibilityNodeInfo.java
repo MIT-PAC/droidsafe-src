@@ -1409,6 +1409,7 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
                 && mSourceNodeId2 != UNDEFINED);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.400 -0500", hash_original_method = "75F2609B8EC69930F0DC5E65EF5711F8", hash_generated_method = "547EDF81AA61F05F1F04339744629523")
     
 @Override
@@ -1432,6 +1433,7 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.403 -0500", hash_original_method = "5729DB4BFFEF2935F7B53D1FC3170C4A", hash_generated_method = "2F767CA7830A519E1F2E22BC73A1E407")
     
 @Override
@@ -1443,6 +1445,7 @@ private boolean canPerformRequestOverConnection(long mSourceNodeId2) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.408 -0500", hash_original_method = "9C50A737351E97FBF1CC9E56A50E9FD3", hash_generated_method = "50579DAE0D98816BD095F00DF2AC90C3")
     
 @Override

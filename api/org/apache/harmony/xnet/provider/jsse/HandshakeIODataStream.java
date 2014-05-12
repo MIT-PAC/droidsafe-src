@@ -50,6 +50,7 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     
 public HandshakeIODataStream() {}
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.393 -0500", hash_original_method = "BF4923D33B65FF9EACCA5F4B8319A955", hash_generated_method = "B343CC093869961D5F2EEA9FC78C3A5F")
     
 @Override
@@ -133,6 +134,8 @@ protected void removeFromMarkedPosition() {
         return res;
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.412 -0500", hash_original_method = "2AC89109B1F5C21FC0020B1393568717", hash_generated_method = "D1A2B2FB771DA6CAF9365495AFF59508")
     
 @Override

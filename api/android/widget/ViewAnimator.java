@@ -198,6 +198,7 @@ void showOnly(int childIndex) {
         showOnly(childIndex, animate);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.376 -0500", hash_original_method = "B6265928EFB656804D99665538BC6B35", hash_generated_method = "21689BF928C4D8AC7D910941AC2D202D")
     
 @Override
@@ -221,6 +222,7 @@ void showOnly(int childIndex) {
         mFirstTime = true;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.381 -0500", hash_original_method = "96F6E7BCEF91AFFF9BCD877C8E22A578", hash_generated_method = "4BCEB94DEB3DC069169CB7D5410262B4")
     
 @Override

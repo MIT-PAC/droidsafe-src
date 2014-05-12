@@ -200,6 +200,7 @@ public byte[] getEncoded() {
         return encoding;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.745 -0500", hash_original_method = "44BD020D05A989BAC123F5B223D6D101", hash_generated_method = "4CAD0568A5417F3827CDCF765C018E7A")
     
 @Override public boolean equals(Object other) {
@@ -224,6 +225,7 @@ public byte[] getEncoded() {
                     : crlExtensions.equals(that.crlExtensions));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.747 -0500", hash_original_method = "78A1F0B8BEA4B34BD8F201B7131E5881", hash_generated_method = "9DF2A765FD498DE607604BC6BA8B7400")
     
 @Override public int hashCode() {
@@ -346,6 +348,7 @@ public byte[] getEncoded() {
             return encoding;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.704 -0500", hash_original_method = "E8EF795929F81DA5391DEE3D693BAF7B", hash_generated_method = "0E1DAB5C94C2AE9FD0379E9D2A0023FB")
         
 public boolean equals(Object rc) {
@@ -361,6 +364,7 @@ public boolean equals(Object rc) {
                     : crlEntryExtensions.equals(rcert.crlEntryExtensions));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.706 -0500", hash_original_method = "524410A369A93135245C5EB9BC27F7C2", hash_generated_method = "99874272C1C1B046B94CF7FF7EF81C81")
         
 public int hashCode() {

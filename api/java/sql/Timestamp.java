@@ -351,6 +351,7 @@ public int compareTo(Timestamp theTimestamp) {
      *         is not a {@code Timestamp} object or if the object is a {@code
      *         Timestamp} but represents a different instant in time.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.612 -0500", hash_original_method = "94CEF17B9A7A2098B0DD6F205E7F606C", hash_generated_method = "E9928B27F2DF539B2F0201B1CD0966F1")
     
 @Override
@@ -400,6 +401,8 @@ public int getNanos() {
      * @return the number of milliseconds that have passed since January 1 1970,
      *         00:00:00.000 GMT.
      */
+    @DSSpec(DSCat.TRIGGER)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.620 -0500", hash_original_method = "66C377BC30C9278F77FB30382314DC3B", hash_generated_method = "500B3D6CEDD1457D33FBA0F9085B83A5")
     
 @Override
@@ -436,6 +439,7 @@ public void setNanos(int n) throws IllegalArgumentException {
      *            number of milliseconds since the Epoch (January 1 1970,
      *            00:00:00.000 GMT).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.625 -0500", hash_original_method = "3EB39E1DE2409F6F629FCF4F69DCED8F", hash_generated_method = "96446DD26B134BD21BA230C177DCDF09")
     
 @Override
@@ -475,6 +479,7 @@ private void setTimeImpl(long theTime) {
      * @return A string representing the instant defined by the {@code
      *         Timestamp}, in JDBC Timestamp escape format.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.630 -0500", hash_original_method = "2B0509572F21FC3F2C9AAE0AC4AFD2F5", hash_generated_method = "1A641F963856371CD431B2C5A921C583")
     
 @SuppressWarnings("deprecation")

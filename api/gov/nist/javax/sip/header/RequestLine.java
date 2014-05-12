@@ -180,6 +180,7 @@ public String getVersionMinor() {
     *@param other object to compare with. We assume that all fields
     * are set.
     */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.386 -0500", hash_original_method = "1239840CE17889EA14CF87055D293638", hash_generated_method = "B6ABF3CF04C7903483B84BB8675BEEB1")
     
 public boolean equals(Object other) {
@@ -199,6 +200,7 @@ public boolean equals(Object other) {
         return retval;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.389 -0500", hash_original_method = "6B13CE61BDAF8DDF9CB0869D09E1BD0F", hash_generated_method = "ED54138F64CE7B2D61E53C7BA7B4C189")
     
 public Object clone() {

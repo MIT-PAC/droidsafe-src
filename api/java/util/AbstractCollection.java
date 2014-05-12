@@ -401,7 +401,7 @@ public abstract Iterator<E> iterator();
         }
 
         @Override
-            @DSSafe()
+            @DSSafe(DSCat.DATA_STRUCTURE)
         public void remove() {
             // TODO Auto-generated method stub
             removeElementAt(current);

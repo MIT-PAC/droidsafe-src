@@ -68,6 +68,7 @@ public void dump(Printer pw, String prefix) {
         pw.println(prefix + "flags=0x" + Integer.toHexString(flags));
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.883 -0500", hash_original_method = "59146AE4B3130A7BADEE9DF4447D4A3B", hash_generated_method = "4F27970B040085460F0C06B7720A2D63")
     
 public String toString() {

@@ -571,6 +571,7 @@ public Paint getGesturePaint() {
         return mGesturePaint;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.915 -0500", hash_original_method = "B1F37402DEDC0F27F2826810362D4757", hash_generated_method = "667D888EFA51D2CF8E0481D774ECEC3C")
     
 @Override
@@ -687,6 +688,7 @@ public void cancelGesture() {
         cancelClearAnimation();
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.940 -0500", hash_original_method = "CFC919DDDE19519F2E04BB144505E830", hash_generated_method = "9E142ACC7A82CA90C9D7DD79050E1B24")
     
 @Override
@@ -949,6 +951,7 @@ private void fireOnGesturePerformed() {
 
         boolean resetMultipleStrokes;
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.980 -0500", hash_original_method = "6C15F19885498187B870CF9A8480A3C6", hash_generated_method = "63DA417F9F211B48327EBC2087108667")
         
 public void run() {

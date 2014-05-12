@@ -88,6 +88,7 @@ public PackageStats(PackageStats pStats) {
         externalObbSize = pStats.externalObbSize;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:45.131 -0500", hash_original_method = "3FE5C26F51751E2E83526086B9D94747", hash_generated_method = "BAA011B7B2529C8B0D4B10A4CDCA5F26")
     
 public String toString() {

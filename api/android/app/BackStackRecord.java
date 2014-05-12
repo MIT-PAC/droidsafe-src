@@ -419,6 +419,7 @@ void addOp(Op op) {
         mNumOp++;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.221 -0500", hash_original_method = "C1E47B5485B0B08AA827320F8BD79938", hash_generated_method = "8BF4FE0935DB7825EB77D79654A1FFE2")
     
 public FragmentTransaction add(Fragment fragment, String tag) {
@@ -426,6 +427,7 @@ public FragmentTransaction add(Fragment fragment, String tag) {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.223 -0500", hash_original_method = "F34A7243D750E416C8B46711401682C6", hash_generated_method = "A6C07E2B35495267F439576F66D13356")
     
 public FragmentTransaction add(int containerViewId, Fragment fragment) {
@@ -433,6 +435,7 @@ public FragmentTransaction add(int containerViewId, Fragment fragment) {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.225 -0500", hash_original_method = "DCEB5E0B408763C7F0E9A3376CBD91C3", hash_generated_method = "C794033F13F952369C7EF9B224F946AA")
     
 public FragmentTransaction add(int containerViewId, Fragment fragment, String tag) {
@@ -471,12 +474,14 @@ private void doAddOp(int containerViewId, Fragment fragment, String tag, int opc
         addOp(op);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.230 -0500", hash_original_method = "095D291C1CAFD923EC9CB9BF06EF4676", hash_generated_method = "637C51932EBB2EB1BF87B9364F24B476")
     
 public FragmentTransaction replace(int containerViewId, Fragment fragment) {
         return replace(containerViewId, fragment, null);
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.232 -0500", hash_original_method = "1C07811E78071E2352BF0C170F6491CA", hash_generated_method = "E1E41EE8A4310B857B42C761ED1BE19C")
     
 public FragmentTransaction replace(int containerViewId, Fragment fragment, String tag) {
@@ -561,6 +566,7 @@ public FragmentTransaction setCustomAnimations(int enter, int exit,
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.250 -0500", hash_original_method = "A455FB052D79EC1710E986C50AD0D972", hash_generated_method = "5F0C4A5DA2DCD4CA7B5C4850AA45A368")
     
 public FragmentTransaction setTransition(int transition) {
@@ -693,7 +699,7 @@ void bumpBackStackNesting(int amt) {
         ArrayList<Fragment> removed;
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:52.102 -0400", hash_original_method = "D7B482A7C55CFA7077AB6D8147480F87", hash_generated_method = "D7B482A7C55CFA7077AB6D8147480F87")
         public Op ()
         {
@@ -702,6 +708,7 @@ void bumpBackStackNesting(int amt) {
 
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.272 -0500", hash_original_method = "FD69B9F14C4FF1755ADA5F3EFF5DDDFB", hash_generated_method = "AE3CCF7269135DEB1B7CB727659CAE46")
     
 public int commit() {
@@ -731,6 +738,7 @@ int commitInternal(boolean allowStateLoss) {
         return mIndex;
     }
     
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.280 -0500", hash_original_method = "BA0CE442AF616D2BBAA3AAFEB295CD0F", hash_generated_method = "51C81669292610193B44AF48058D938E")
     
 public void run() {

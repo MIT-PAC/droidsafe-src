@@ -54,6 +54,7 @@ ReadWriteDirectByteBuffer(MemoryBlock block, int capacity, int offset) {
         return ReadOnlyDirectByteBuffer.copy(this, mark);
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.876 -0500", hash_original_method = "D5E5DB3E7908F6BA902162C22E7A6F05", hash_generated_method = "3379C45A52F10F2B684BA7491F4C3883")
     
 @Override
@@ -79,6 +80,7 @@ ReadWriteDirectByteBuffer(MemoryBlock block, int capacity, int offset) {
         return false;
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.884 -0500", hash_original_method = "395C1E25ABAA7CA19067E1D56A7B6B36", hash_generated_method = "17FA8FF251ACE9AAFF768BC99391EDB1")
     
 @Override
@@ -90,6 +92,7 @@ ReadWriteDirectByteBuffer(MemoryBlock block, int capacity, int offset) {
         return this;
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.886 -0500", hash_original_method = "652949A668C0C42E265D3C7FA8C1BFFC", hash_generated_method = "1524ECF9DF67FBC9F36A540B5CCC181D")
     
 @Override
@@ -99,6 +102,7 @@ ReadWriteDirectByteBuffer(MemoryBlock block, int capacity, int offset) {
         return this;
     }
 
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.889 -0500", hash_original_method = "BDD014EAD3BC316DD5191C68FD62AF55", hash_generated_method = "DABF59484564E649BCEF0837E4366D6D")
     
 @Override

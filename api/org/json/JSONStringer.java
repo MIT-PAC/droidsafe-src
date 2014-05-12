@@ -375,6 +375,7 @@ private void beforeValue() throws JSONException {
      * of {@link Object#toString}, this method returns null if the stringer
      * contains no data.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.929 -0500", hash_original_method = "84F418CD08C16D699E3DC2920B2AB795", hash_generated_method = "320EA7E88D5C5D1897AC412B38C46602")
     
 @Override public String toString() {

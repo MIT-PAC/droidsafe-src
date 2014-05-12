@@ -20,6 +20,7 @@ public ProxyAuthorizationList() {
         super(ProxyAuthorization.class, ProxyAuthorizationHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.061 -0500", hash_original_method = "99D8471E873632F99CA4FA915EADF5BB", hash_generated_method = "C4252516B3859DE547BA3F5AADFA7863")
     
 public Object clone() {

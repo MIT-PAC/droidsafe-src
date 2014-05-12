@@ -1101,6 +1101,7 @@ public void setPackageName(String newName) {
             }
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.721 -0500", hash_original_method = "7DFEBE5DF638D8804915FD110C0E2540", hash_generated_method = "D1144C82B8112237A29A16751CC92459")
         
 public String toString() {
@@ -1290,6 +1291,7 @@ public void setPackageName(String packageName) {
             info.packageName = packageName;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.780 -0500", hash_original_method = "D70298090C91BEA7F3B1C7F9C9416449", hash_generated_method = "3E56225E2F2712FE7981B0CB083160F7")
         
 public String toString() {
@@ -1326,6 +1328,7 @@ public void setPackageName(String packageName) {
             info.packageName = packageName;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.794 -0500", hash_original_method = "5B6E9035FB2F0E9673597108CCAFFCEF", hash_generated_method = "E42B26C25273063D7962DB183E8E8149")
         
 public String toString() {
@@ -1356,6 +1359,7 @@ public void setPackageName(String packageName) {
             info.packageName = packageName;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.821 -0500", hash_original_method = "3ED5BAD5E29B5F8C3FFE202D917D91C6", hash_generated_method = "7CE213452BF93C3CE1C519974BF0AFC8")
         
 public String toString() {
@@ -1387,6 +1391,7 @@ public void setPackageName(String packageName) {
             info.packageName = packageName;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.837 -0500", hash_original_method = "983F0C4312E41963E910123205C22323", hash_generated_method = "20088CC99BD071A59D9E33F497EDFF1F")
         
 public String toString() {
@@ -1429,6 +1434,7 @@ public void setPackageName(String packageName) {
             info.packageName = packageName;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.859 -0500", hash_original_method = "68549008F1EBCA6BA1DE59DAB2FE7E3C", hash_generated_method = "7456EF1BE421AF203ED4C0B86DA93B62")
         
 public String toString() {
@@ -1458,6 +1464,7 @@ public void setPackageName(String packageName) {
             info.packageName = packageName;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.876 -0500", hash_original_method = "CB405027A6A70334D830F0B5C698645E", hash_generated_method = "8AF7C2F06339D5FDF9CD9BEDED5D9B01")
         
 public String toString() {
@@ -1505,6 +1512,7 @@ public ActivityIntentInfo(Activity _activity) {
             activity = _activity;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.901 -0500", hash_original_method = "7C91146E1C4D7077E2D0C55B0D43BF57", hash_generated_method = "A24CD2F8FC6E076CDD69BB140A302B53")
         
 public String toString() {
@@ -1526,6 +1534,7 @@ public ServiceIntentInfo(Service _service) {
             service = _service;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.911 -0500", hash_original_method = "32EA4E8A8FC07DAD01188F341ACB2C51", hash_generated_method = "6DBC2C25F40C263EE60C3F88A91AEA89")
         
 public String toString() {

@@ -487,6 +487,7 @@ public boolean before(Date date) {
      *
      * @see java.lang.Cloneable
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.931 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
     
 @Override
@@ -533,6 +534,7 @@ public int compareTo(Date date) {
      *
      * @see #hashCode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.936 -0500", hash_original_method = "DDDF9262D80550B9DB77ACA0997BD3D6", hash_generated_method = "BF420294DB7A0F905CBE21AC20CBA48F")
     
 @Override
@@ -698,6 +700,7 @@ public long getTime() {
      *
      * @see #equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.961 -0500", hash_original_method = "B128FED5B5AAAF883404F36E34AD6524", hash_generated_method = "AE36E1D47D9FEEEC990D6DD66BA0B71B")
     
 @Override

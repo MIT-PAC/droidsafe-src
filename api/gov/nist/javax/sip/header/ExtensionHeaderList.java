@@ -23,6 +23,7 @@ public ExtensionHeaderList() {
         super(ExtensionHeaderImpl.class,null);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.523 -0500", hash_original_method = "C859D426E02BE595D55C2FAA9CB97225", hash_generated_method = "B7F895EB064386538442B0104026E859")
     
 public Object clone() {

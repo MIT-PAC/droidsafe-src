@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -45,7 +44,6 @@ public class NativeFrame extends Frame {
     	return (int)taintDouble;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:43.881 -0400", hash_original_method = "919C4984F9510C7C48E5DF2B39FB2669", hash_generated_method = "C505B07EF90B1EF2E3B2B6FD7D4550B8")
     
     private static int nativeFloatSize(){
@@ -55,12 +53,7 @@ public class NativeFrame extends Frame {
     	return (int)taintDouble;
     }
 
-
-
-
-
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:04.096 -0400", hash_original_field = "AE5C7359BA8A9D40680DB131D41D087B", hash_generated_field = "2F9F20C4BE03A0465EFAFD737A55BC10")
-
 
     private int nativeFrameId = -1;
 
@@ -282,6 +275,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:04.129 -0400", hash_original_method = "7D259F6ED311AC277649D1831CCCEE81", hash_generated_method = "BF26D0FA97BCC202F01F4485A4626E55")
     
 @Override
@@ -310,7 +304,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:43.875 -0400", hash_original_method = "6E986F427644A4A64ED0D6D91162CD0A", hash_generated_method = "B7282686DF017C5D81B8D25AAFBB9DEA")
     
     private int getNativeCapacity(){
@@ -319,9 +312,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     
     	return (int)taintDouble;
     }
-
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.792 -0400", hash_original_method = "B008EA5EAE1D78CF60323223B23112C0", hash_generated_method = "DB9D3915DCF330A7854A0E564C5106A0")
     
@@ -336,7 +326,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.797 -0400", hash_original_method = "03500FE5AEE71C3399A63C4DE8259AEF", hash_generated_method = "60B3C2D31D78E3E59BB43C3DF26365DA")
     
     private byte[] getNativeData(int byteCount){
@@ -350,7 +339,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.801 -0400", hash_original_method = "F3F264889FDB16D180CEE0E15F75E036", hash_generated_method = "4F865C42B7B55FCB7A3208A21FFDDAB5")
     
     private boolean getNativeBuffer(NativeBuffer buffer){
@@ -361,7 +349,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.805 -0400", hash_original_method = "2047716A79A9E9406699C20C7A268A40", hash_generated_method = "431F2A0CB3A7814C0347AEEA4DA821C1")
     
@@ -374,7 +361,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.809 -0400", hash_original_method = "88CBED05920219A258C2F99CB4EDFE1D", hash_generated_method = "C0A8BCC26755F86A54824EBDD91E7B3C")
     
     private boolean setNativeFloats(float[] floats){
@@ -385,7 +371,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     
     	return toTaintBoolean(taintDouble);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.813 -0400", hash_original_method = "E7AA6156590D219429B51E7417E59CD9", hash_generated_method = "1CECC7BC57C6878D9A1AAB162A5740FB")
     
@@ -400,7 +385,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	return retObj;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.817 -0400", hash_original_method = "BC6503BE10B833615811B8340147E64B", hash_generated_method = "EC76D10E8DA40049D76250D7F7151BED")
     
     private float[] getNativeFloats(int byteCount){
@@ -413,7 +397,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	retObj[0] = (float)taintDouble;
     	return retObj;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.820 -0400", hash_original_method = "444D41F62ECA10E849BCBA44CA008654", hash_generated_method = "B814095AF6B226513FFDB877C213A061")
     
@@ -428,7 +411,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.825 -0400", hash_original_method = "5A3058CD0FF689DA5F7D1CD0293664C5", hash_generated_method = "F215E199D97DA856D1A9E142C6830199")
     
     private boolean getNativeBitmap(Bitmap bitmap, int size, int bytesPerSample){
@@ -442,7 +424,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.829 -0400", hash_original_method = "4AAA1963F74E551C88426B820B381324", hash_generated_method = "D98ADAE63A177915B45128E092AF964A")
     
     private boolean nativeCopyFromNative(NativeFrame frame){
@@ -454,7 +435,6 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	return toTaintBoolean(taintDouble);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.833 -0400", hash_original_method = "8EE5FFA3E1866792DC021D861E52C38E", hash_generated_method = "E181817671F3569D40046BA60CE0103A")
     
     private boolean nativeCopyFromGL(GLFrame frame){
@@ -465,7 +445,5 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     
     	return toTaintBoolean(taintDouble);
     }
-
-
 
 }

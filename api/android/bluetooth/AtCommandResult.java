@@ -46,7 +46,6 @@ public class AtCommandResult {
     public static final int UNSOLICITED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:00.769 -0400", hash_original_field = "247CFCEF9016A799EC82850A78AB69B7", hash_generated_field = "BBE0EFD251553EA6A35912C61D58EA05")
 
-
     private static final String OK_STRING = "OK";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:00.775 -0400", hash_original_field = "D67D42C3428CE72B49351E289A5E8E14", hash_generated_field = "69CD18B35BAB5C84293AE2F554F99E83")
 
@@ -64,7 +63,6 @@ public static void appendWithCrlf(StringBuilder str1, String str2) {
         str1.append(str2);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:00.781 -0400", hash_original_field = "457E6BFD9A88F809DF3F4A88B9B7B893", hash_generated_field = "77069BAE5867220B0011AB47341F29C2")
-
 
     private int mResultCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:00.786 -0400", hash_original_field = "01B3C4998D6877BEE3F4439459EFC534", hash_generated_field = "ADC1F85C044EB0895B134C7CFC5796B6")
@@ -128,6 +126,7 @@ public void addResult(AtCommandResult result) {
     /**
      * Generate the string response ready to send
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:00.823 -0400", hash_original_method = "F45749C038E3DA7A80BFF6F195583EB7", hash_generated_method = "27DF04D1A08681E2AEA2289C7DD9B109")
     
 public String toString() {

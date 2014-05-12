@@ -699,6 +699,7 @@ CursorWrapperInner(Cursor cursor, IContentProvider icp) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.303 -0500", hash_original_method = "C6F30BD2AC97CE59E2F19D89687C7506", hash_generated_method = "3B61F6AE1F83736F44CD6E2B0F93B49E")
         
 @Override
@@ -738,6 +739,7 @@ ParcelFileDescriptorInner(ParcelFileDescriptor pfd, IContentProvider icp) {
             mContentProvider = icp;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.317 -0500", hash_original_method = "88C4FC226DB7C9E08A0225C4D4C037C0", hash_generated_method = "02D4C98809D4FD6525E42B472A32313E")
         
 @Override
@@ -749,6 +751,7 @@ ParcelFileDescriptorInner(ParcelFileDescriptor pfd, IContentProvider icp) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.319 -0500", hash_original_method = "E5C83F24E1B33F16225B47651FBE1E16", hash_generated_method = "11D45D835431FC51E9300998701C1155")
         
 @Override

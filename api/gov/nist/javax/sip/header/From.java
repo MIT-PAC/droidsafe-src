@@ -150,6 +150,7 @@ public String getUserAtHostPort() {
         return address.getUserAtHostPort();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.085 -0500", hash_original_method = "C3BE149D6ECB953ABC4DB66247B816D2", hash_generated_method = "8586D6FF257803C0F8A46ED14DA2DCAC")
     
 public boolean equals(Object other) {

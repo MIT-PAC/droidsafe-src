@@ -40,6 +40,7 @@ public void dispose() {
         super.dispose();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.443 -0500", hash_original_method = "48D1C945A3808FD7B021E909C155155D", hash_generated_method = "D3C172659735198B045DA968A70F9E45")
     
 protected void finalize() {
@@ -48,6 +49,7 @@ protected void finalize() {
 
     //***** Overridden from IccFileHandler
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.445 -0500", hash_original_method = "D06C959A971F705A496791A8170E55B9", hash_generated_method = "DCAA486667275FD4C905CA1844E72CB8")
     
 @Override

@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import java.security.spec.AlgorithmParameterSpec;
 import java.util.Arrays;
 
-
-
-
-
-
 public class RC2ParameterSpec implements AlgorithmParameterSpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.213 -0500", hash_original_field = "28D53E7400C0A531DBB5CFA9D420D399", hash_generated_field = "AC6861D88456BB5E6B8CBF2574EE2E67")
-
 
     private  int effectiveKeyBits;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.215 -0500", hash_original_field = "E884C91B0186461100A61CCE6B0406E0", hash_generated_field = "EF60E6736481A45AB4AEED35775132C4")
@@ -131,6 +125,7 @@ public byte[] getIV() {
      * @return true if the effective key length and the initialization vector of
      *         both objects are equal, otherwise false.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.231 -0500", hash_original_method = "054E5AEB74111DBC68AB791919DED60A", hash_generated_method = "92502B57C99C64E2794D9E013E4AE9B3")
     
 @Override
@@ -151,6 +146,7 @@ public byte[] getIV() {
      *
      * @return the hash code.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.233 -0500", hash_original_method = "006AB7CB427D2D70245D98F537F7CF42", hash_generated_method = "BFD824D09553C899DB5EF18CDC25D772")
     
 @Override
@@ -164,7 +160,6 @@ public byte[] getIV() {
         }
         return result;
     }
-
     
 }
 

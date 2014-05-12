@@ -53,6 +53,7 @@ public InvalidTelnetOptionException(String message, int optcode)
      * <p>
      * @return the error message.
      ***/
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.526 -0500", hash_original_method = "EC945BD8DBF6D007F334F84E157227FF", hash_generated_method = "1C31859E0B69A33E9B2D4801D7209242")
     
 public String getMessage()

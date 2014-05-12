@@ -778,6 +778,7 @@ public TimeZone getTimeZone() {
      *
      * @see #equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.848 -0500", hash_original_method = "2D54AA953826341AD4FD2AC42B53AEBA", hash_generated_method = "3817A1E140F544A07421DB2B641C8EE1")
     
 @Override

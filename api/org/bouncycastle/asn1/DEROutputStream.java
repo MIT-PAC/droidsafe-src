@@ -121,6 +121,8 @@ protected void writeNull()
         write(0x00);
     }
 
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.716 -0500", hash_original_method = "1AF5A1D8916987DB77C7DD8735718172", hash_generated_method = "8255F98DC4BB26AFEBBCA56A5E44F694")
     
 public void write(byte[] buf)
@@ -129,6 +131,8 @@ public void write(byte[] buf)
         out.write(buf, 0, buf.length);
     }
 
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.718 -0500", hash_original_method = "C3C674084F8E21E9786EAC52DFF53A81", hash_generated_method = "E7F15A8100E2CB670DD4790F2585555D")
     
 public void write(byte[] buf, int offSet, int len)

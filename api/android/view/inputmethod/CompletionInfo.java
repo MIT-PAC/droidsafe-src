@@ -122,6 +122,7 @@ public CharSequence getLabel() {
         return mLabel;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.126 -0500", hash_original_method = "3B6D1C61D70E52042FDD9DC9240A1E79", hash_generated_method = "55BB63A6EC3B3C0821629E09253CFB6A")
     
 @Override

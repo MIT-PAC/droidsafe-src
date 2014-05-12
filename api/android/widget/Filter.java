@@ -111,6 +111,7 @@ public RequestHandler(Looper looper) {
          *
          * @param msg the filtering request
          */
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.078 -0500", hash_original_method = "B041560ADE0D1FD357DB3E4E690D9D5B", hash_generated_method = "82C4AAA173D4D7D040728FF5903727CE")
         
 public void handleMessage(Message msg) {
@@ -167,6 +168,7 @@ public void handleMessage(Message msg) {
          *
          * @param msg the filtering results
          */
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.083 -0500", hash_original_method = "1BAD86CE9386A91CEFB9E87EDE15880F", hash_generated_method = "39A55FE0C355D23E3AC94EB74E8D27F6")
         
 @Override

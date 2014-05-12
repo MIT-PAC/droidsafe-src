@@ -221,6 +221,7 @@ CdmaDataConnectionTracker(CDMAPhone p) {
         destroyAllDataConnectionList();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.942 -0500", hash_original_method = "3DB74CB183E0997C0A31C0F47FB531FD", hash_generated_method = "CA561ABD926D4FF921463A06960533AC")
     
 @Override
@@ -1034,6 +1035,7 @@ private void startDelayedRetry(FailCause cause, String reason) {
         reconnectAfterFail(cause, reason);
     }
 
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.064 -0500", hash_original_method = "23AB21BFEE9B8AADED0100AF4BC4730D", hash_generated_method = "EDFADB223652E13C1FA514763F6FA328")
     
 @Override

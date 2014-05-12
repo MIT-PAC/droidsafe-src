@@ -143,6 +143,7 @@ public byte[] getEncoded() {
      *
      * @return the hash code.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.361 -0500", hash_original_method = "561BEB6A8D834A34E4D5A2503144263D", hash_generated_method = "818CA09102D790BE8758F466E76831EF")
     
 @Override
@@ -163,6 +164,7 @@ public byte[] getEncoded() {
      * @return true if the algorithm name and key of both object are equal,
      *         otherwise false.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.363 -0500", hash_original_method = "7E1551F3E39A01E70E4CFF4FAB6C7AC5", hash_generated_method = "0BEA9D56F8E11881D5EAFC0DB244A1CD")
     
 @Override

@@ -282,6 +282,7 @@ public MenuItem setIcon(Drawable icon) {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.584 -0500", hash_original_method = "5010B90C9AB4414DB888D97ADDAE2333", hash_generated_method = "57AE400D2F0B6C6EAF9E302CBF45A861")
     
 public MenuItem setIcon(int iconRes) {
@@ -335,6 +336,7 @@ public MenuItem setShortcut(char numericChar, char alphaChar) {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.598 -0500", hash_original_method = "93E35E6A1799E092E053E5DD222DC093", hash_generated_method = "65DB2B1B966A5B5A9E0477A63230C599")
     
@@ -350,6 +352,7 @@ public MenuItem setTitleCondensed(CharSequence title) {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.603 -0500", hash_original_method = "6A802D7132DF936AE104E3A9B00DB973", hash_generated_method = "F79EF35C7116F4D80FA380FC369FA52D")
     
@@ -373,6 +376,7 @@ public boolean invoke() {
         return false;
     }
     
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.607 -0500", hash_original_method = "7271F034C654DB6347336274A9D03801", hash_generated_method = "EA2228D1739DD7B5887F04EF03C3D127")
     
@@ -380,6 +384,7 @@ public void setShowAsAction(int show) {
         // Do nothing. ActionMenuItems always show as action buttons.
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.609 -0500", hash_original_method = "493F4A0F304908668D2BEC1F7D0E334B", hash_generated_method = "48D9778F556A1BFC0C699BC5BFB3CCC7")
     
@@ -387,6 +392,7 @@ public MenuItem setActionView(View actionView) {
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.612 -0500", hash_original_method = "DDC728D00ABE6AC1AC6555673541B67E", hash_generated_method = "079D331D6B7B4A65C7CAD1B0AC46E07F")
     
@@ -394,6 +400,7 @@ public View getActionView() {
         return null;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.614 -0500", hash_original_method = "38A20BA0D11F10392D85500804B1A43F", hash_generated_method = "44D1643A1680E023254E9B4CBD44B596")
     
@@ -402,6 +409,7 @@ public View getActionView() {
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.616 -0500", hash_original_method = "FE44B196FF60CED75746223A767C8615", hash_generated_method = "97E48161197A5EBA52329872E2A7DE6C")
     
@@ -410,6 +418,7 @@ public View getActionView() {
         return null;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.618 -0500", hash_original_method = "4ABFFD9ECFCE20F6052063E7AA9E942A", hash_generated_method = "1459D882F8B4F02FC73C102E86BC9EE6")
     
@@ -427,6 +436,7 @@ public View getActionView() {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.622 -0500", hash_original_method = "E3EFEFBDC234312A7FEC732911F191DE", hash_generated_method = "30BA6579DC5E4995E9EAA743EA45E6A5")
     
 @Override

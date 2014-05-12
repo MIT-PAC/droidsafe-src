@@ -137,6 +137,7 @@ private boolean noargsConstructor(Class[] params) {
         return params.length == 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.621 -0500", hash_original_method = "41856ADD5C3ABB33F713F0C76937EAB6", hash_generated_method = "7EDFCF309FD9C3CBAA30CC77DDE5FD39")
     
 @Override
@@ -163,6 +164,7 @@ private boolean noargsConstructor(Class[] params) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.624 -0500", hash_original_method = "C5B5AC51B53BC81DCA89EA241A184E78", hash_generated_method = "215CDB28333D897D9FCB0C2C37F97785")
     
 @Override
@@ -173,6 +175,7 @@ private boolean noargsConstructor(Class[] params) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.627 -0500", hash_original_method = "B494E05710D5BDAFDFF94E1B47B79EFE", hash_generated_method = "71B0232F6AEA01F5D4F93336085937DF")
     
 @Override

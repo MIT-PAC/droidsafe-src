@@ -131,6 +131,8 @@ public GZIPInputStream(InputStream is, int size) throws IOException {
      * Reads and decompresses GZIP data from the underlying stream into the
      * given buffer.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.666 -0500", hash_original_method = "FAE53FCD1CA8F33ECA2437ABBFBE85CF", hash_generated_method = "46FBC679AB395A203BA80D20DE3C76DA")
     
 @Override

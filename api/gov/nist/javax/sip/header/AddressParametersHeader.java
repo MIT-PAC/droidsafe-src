@@ -59,6 +59,7 @@ public void setAddress(Address address) {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.AddressParameters#clone()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.445 -0500", hash_original_method = "0CBC2CD54CDD43105BA83DF4459B73A7", hash_generated_method = "FB5CBBFE24B024CC25590AC7DAF685F2")
     
@@ -72,6 +73,7 @@ public Object clone() {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.AddressParameters#equals(java.lang.Object)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.448 -0500", hash_original_method = "432CD1C0278E1FF82C91D27AB1E82A92", hash_generated_method = "D7E1B377E091CB2ECC8B05466F8B75DB")
     
 public boolean equals(Object other) {

@@ -202,6 +202,7 @@ public boolean isHostRoute() {
         return mIsHost;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.058 -0500", hash_original_method = "0AA1B383C324478F235BB186C8938BCB", hash_generated_method = "5985ABF7D6D567CD2FECE2ECFED41D03")
     
 public String toString() {
@@ -236,6 +237,7 @@ public void writeToParcel(Parcel dest, int flags) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.066 -0500", hash_original_method = "5CF3A2DBAE721423A1CBA779912D2779", hash_generated_method = "EFBDB305BB41EFA77361E4C575C44002")
     
 @Override
@@ -258,6 +260,7 @@ public void writeToParcel(Parcel dest, int flags) {
             && mIsDefault == target.mIsDefault;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.068 -0500", hash_original_method = "BB776300BCED21F4485D8738DE0E6814", hash_generated_method = "863F1A86F0621A862C5F03CF0507DBEE")
     
 @Override

@@ -116,6 +116,8 @@ public int read() throws IOException {
      * @see java.io.InputStream#read(byte[], int, int)
      * @throws IOException if an IO problem occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.194 -0500", hash_original_method = "3658228930DC027E604760F33BD6E163", hash_generated_method = "6E895E4791EAA7C54ED5D455FB855F58")
     
 public int read (byte[] b, int off, int len) throws IOException {
@@ -147,6 +149,8 @@ public int read (byte[] b, int off, int len) throws IOException {
      * @see java.io.InputStream#read(byte[])
      * @throws IOException if an IO problem occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.196 -0500", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "E0F9C5B343EA0376178403393DBFABB2")
     
 public int read (byte[] b) throws IOException {

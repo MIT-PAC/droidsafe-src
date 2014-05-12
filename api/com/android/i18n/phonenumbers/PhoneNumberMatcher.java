@@ -150,7 +150,8 @@ PhoneNumberMatcher(PhoneNumberUtil util, CharSequence text, String country, Leni
     this.maxTries = maxTries;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.145 -0500", hash_original_method = "2A2342D3C783955CFC983767F5F149A5", hash_generated_method = "C6DACE382E8C51CBA13CBC8F7B386FEE")
+  @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.145 -0500", hash_original_method = "2A2342D3C783955CFC983767F5F149A5", hash_generated_method = "C6DACE382E8C51CBA13CBC8F7B386FEE")
     
 public boolean hasNext() {
     if (state == State.NOT_READY) {
@@ -169,7 +170,8 @@ public boolean hasNext() {
     NOT_READY, READY, DONE
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.148 -0500", hash_original_method = "41BA4BAFF42817F4E65D9346C9FF2DB0", hash_generated_method = "A8303C9A79DA35E0B1C59721487E2DF7")
+  @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.148 -0500", hash_original_method = "41BA4BAFF42817F4E65D9346C9FF2DB0", hash_generated_method = "A8303C9A79DA35E0B1C59721487E2DF7")
     
 public PhoneNumberMatch next() {
     // Check the state and find the next match as a side-effect if necessary.
@@ -366,7 +368,8 @@ private PhoneNumberMatch parseAndVerify(String candidate, int offset) {
   /**
    * Always throws {@link UnsupportedOperationException} as removal is not supported.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.169 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
+  @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.169 -0500", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "5B2A4852FF2684177E07742561C615C2")
     
 public void remove() {
     throw new UnsupportedOperationException();

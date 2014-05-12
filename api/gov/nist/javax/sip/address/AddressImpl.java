@@ -239,6 +239,7 @@ public void setAddess(javax.sip.address.URI address) {
      * hashCode impelmentation
      *
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.492 -0500", hash_original_method = "3B6DAA204E499460163C13A0179862F4", hash_generated_method = "282C4815616568D494CFF50146B0716A")
     
 public int hashCode() {
@@ -253,6 +254,7 @@ public int hashCode() {
      * @return boolean
      *
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.494 -0500", hash_original_method = "2FE036AE685D31E73E4BA8A8E1238828", hash_generated_method = "D152F181C92FF38DA4914B0E1B0F1C5D")
     
 public boolean equals(Object other) {
@@ -353,6 +355,7 @@ public void setWildCardFlag() {
         ((SipUri)this.address).setUser("*");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.516 -0500", hash_original_method = "0B091F8828B1420FFE66EE8D50F59446", hash_generated_method = "F03C3833613B9827C1B07D6213F1B077")
     
 public Object clone() {

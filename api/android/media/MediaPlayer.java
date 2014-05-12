@@ -1160,6 +1160,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
             mMediaPlayer = mp;
         }
 
+        @DSSafe(DSCat.IPC_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.874 -0500", hash_original_method = "D299385F381B46BF939056A8A39EEDB2", hash_generated_method = "BFDF69607BEB414412E340768387BB1B")
         
 @Override
@@ -1607,6 +1608,7 @@ public boolean disableTimedText() {
         return setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, -1);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.841 -0500", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "B426276F6755268DFF3429CB984C1F76")
     
 @Override

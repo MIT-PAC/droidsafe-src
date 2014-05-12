@@ -565,6 +565,7 @@ abstract AndroidHttpClientConnection openConnection(Request req) throws IOExcept
      * Prints request queue to log, for debugging.
      * returns request count
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.932 -0500", hash_original_method = "AD69CA65EB98EE93EFEEFD66CD2BA041", hash_generated_method = "0F0B9B727B9C02D7CF2D8CB4C4E59E27")
     
 public synchronized String toString() {

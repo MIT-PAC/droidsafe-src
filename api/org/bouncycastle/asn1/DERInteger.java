@@ -112,6 +112,7 @@ void encode(
         out.writeEncoded(INTEGER, bytes);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.781 -0500", hash_original_method = "473F358B008FFCD851D487BD1750243E", hash_generated_method = "E5139E02A1A214A723B907B74A6197FD")
     
 public int hashCode()
@@ -143,6 +144,7 @@ boolean asn1Equals(
         return Arrays.areEqual(bytes, other.bytes);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:15.785 -0500", hash_original_method = "EFB82D2D11830675F5DB319D1D1561C4", hash_generated_method = "2EB7D252DFFB915E0989809C943E864A")
     
 public String toString()

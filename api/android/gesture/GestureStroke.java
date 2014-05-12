@@ -53,17 +53,14 @@ static GestureStroke deserialize(DataInputStream in) throws IOException {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:40.370 -0500", hash_original_field = "3DFCE262ED1412BB6378832E5F6E2D38", hash_generated_field = "6BB4E451B84B179CB428B3F4CE30A730")
 
-
     public  RectF boundingBox;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:40.375 -0500", hash_original_field = "3D5D2818BBCA705ED2071BBFDBE9AF6E", hash_generated_field = "5C25137370EF4F785D5439489EE9EA0E")
-
 
     public  float length;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:40.379 -0500", hash_original_field = "EAEF1290AA6600A5FE9A1A1FB6829F9C", hash_generated_field = "F830548537398F62620CE8066BEC4F57")
 
     public  float[] points;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:40.383 -0500", hash_original_field = "BC63CEFE38721CBECBA3634FE4D1216B", hash_generated_field = "B60A4474091AE7EEF9780E597F52B552")
-
 
     private  long[] timestamps;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:40.387 -0500", hash_original_field = "A4E5CDB743435F42476DBC50C0FA2590", hash_generated_field = "AAC8ED85CAF99DD353936D60A8681828")
@@ -125,6 +122,7 @@ private GestureStroke(RectF bbx, float len, float[] pts, long[] times) {
         timestamps = times.clone();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:40.403 -0500", hash_original_method = "82D51B5ADFF92CF0533EE73928B096E3", hash_generated_method = "F4C4F2A467B0D1B2282A03B80B09F40D")
     
 @Override
@@ -259,7 +257,7 @@ void serialize(DataOutputStream out) throws IOException {
             // Write timestamp
             out.writeLong(times[i / 2]);
         }
-    }    
+    }
 
     /**
      * Invalidates the cached path that is used to render the stroke.

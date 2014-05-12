@@ -237,7 +237,7 @@ public class Path {
     private Direction mLastDirection = null;
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Path() {}
     
     @DSComment("From safe class list")

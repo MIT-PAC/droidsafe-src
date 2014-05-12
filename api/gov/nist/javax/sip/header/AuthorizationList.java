@@ -19,6 +19,7 @@ public AuthorizationList() {
         super(Authorization.class, Authorization.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.383 -0500", hash_original_method = "81792A8EF4604C1C9CC7309BCA2D7523", hash_generated_method = "4BE3C1A579D3044C077E5040F8686124")
     
 public Object clone() {

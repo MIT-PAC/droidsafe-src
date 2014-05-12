@@ -279,6 +279,7 @@ public ActivityInfo() {
 		//Return nothing
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     public String toString(){
         String str = new String();
         str.addTaint(getTaint());

@@ -167,6 +167,7 @@ public void setup() {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.585 -0500", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "A3F584E5571A8A23D51BC2163CD7463A")
     
@@ -343,6 +344,7 @@ public FrameLayout getTabContentView() {
         return mTabContent;
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.617 -0500", hash_original_method = "C8998AD47D2F3EF23C8F7D2AD28B98AB", hash_generated_method = "126FB2C3745DD284626E3F7E345A4D1C")
     
 @Override

@@ -347,6 +347,7 @@ public abstract void dispose();
     
 protected abstract String getFormat();
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.600 -0500", hash_original_method = "FF8B1C8CEEDF99CA4428854C45370A3A", hash_generated_method = "C39D6C3EAB6917823BFF85B7C11F0D6C")
     
 @Override
@@ -359,6 +360,7 @@ protected abstract String getFormat();
      *
      * @param msg the message to handle
      */
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.606 -0500", hash_original_method = "42D9652DD1B0FE51DCC6557D894D344B", hash_generated_method = "612B17E744B951BE582C7DE54D77E0E7")
     
 @Override

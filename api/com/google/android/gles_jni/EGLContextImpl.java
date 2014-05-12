@@ -30,6 +30,7 @@ public EGLContextImpl(int ctx) {
         return mGLContext;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.728 -0500", hash_original_method = "BBF69D7F309BD2893B1B10431DBDEB60", hash_generated_method = "451D87C3A7E4627D0D30A7C5DCEFFB0D")
     
 @Override
@@ -42,6 +43,7 @@ public EGLContextImpl(int ctx) {
         return mEGLContext == that.mEGLContext;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.730 -0500", hash_original_method = "64133BD5554848E690D4A8A4234F010E", hash_generated_method = "BF745D86327796CAAB4A576B9C63877F")
     
 @Override

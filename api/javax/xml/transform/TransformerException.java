@@ -300,6 +300,7 @@ public void printStackTrace() {
      * objects, as well as this object.
      * @param s The stream where the dump will be sent to.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.429 -0500", hash_original_method = "396FE4FDBD72A1A44CDA1D64A960A2B6", hash_generated_method = "E7D49A0DBE7DE3D1C84124DB37885C80")
     
 public void printStackTrace(java.io.PrintStream s) {
@@ -312,6 +313,7 @@ public void printStackTrace(java.io.PrintStream s) {
      * objects, as well as this object.
      * @param s The writer where the dump will be sent to.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.432 -0500", hash_original_method = "A67ED2D6F45381C31C2891A6F92AFBC4", hash_generated_method = "F57BCB0D6CB5F326A2C8616C413C919C")
     
 public void printStackTrace(java.io.PrintWriter s) {

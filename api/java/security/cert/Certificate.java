@@ -60,6 +60,7 @@ public final String getType() {
      *         false} if it is different from this object.
      * @see #hashCode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.480 -0500", hash_original_method = "34CF5F66357C97013C2BECCDE3CD7868", hash_generated_method = "CB7A0637A804C1CA7A3D3549848E7BED")
     
 public boolean equals(Object other) {
@@ -87,6 +88,7 @@ public boolean equals(Object other) {
      * @return the certificate's hash
      * @see #equals
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.482 -0500", hash_original_method = "4607E15AFDECFF486998F7FDB6C49986", hash_generated_method = "5D55046C19366A7C7BE7FE5BAB364BD7")
     
 public int hashCode() {

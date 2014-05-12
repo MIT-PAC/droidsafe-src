@@ -21,6 +21,7 @@ public ContentEncodingList () {
             ContentEncodingHeader.NAME);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.498 -0500", hash_original_method = "1AD27EAA5BBA618A109A28F19AA4BF35", hash_generated_method = "2D81C1D39EBC2B60DA8BD38BCDBB211D")
     
 public Object clone() {

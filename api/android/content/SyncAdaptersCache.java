@@ -27,7 +27,7 @@ class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
     static class MySerializer implements XmlSerializerAndParser<SyncAdapterType> {
         
         @DSComment("Package priviledge")
-        @DSBan(DSCat.DEFAULT_MODIFIER)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.933 -0400", hash_original_method = "6E1FAE6E6E9693B60CA712A8476AA1E6", hash_generated_method = "6E1FAE6E6E9693B60CA712A8476AA1E6")
         public MySerializer ()
         {

@@ -463,6 +463,7 @@ private void initFromParcel(Parcel parcel) {
         mDescription = parcel.readString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.298 -0500", hash_original_method = "854D12839280F599645F8CCCA5C3093D", hash_generated_method = "A434ECC6E020B302AEE5A9D42BFC29B2")
     
 @Override

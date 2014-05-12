@@ -114,6 +114,7 @@ FileBackupHelperBase(Context context) {
         mContext = context;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.038 -0500", hash_original_method = "E8F55F8C7A408972FDF45764F997EF73", hash_generated_method = "512AC6E27F8A455866918D89C96F4571")
     
 protected void finalize() throws Throwable {

@@ -477,6 +477,7 @@ public ChangeObserver() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.961 -0500", hash_original_method = "06FCBC692E549C3C9873F9D5CBAEB7B0", hash_generated_method = "F5BB92C0C1031FB7986568365B0C538E")
         
 @Override
@@ -485,6 +486,7 @@ public ChangeObserver() {
             notifyDataSetChanged();
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.964 -0500", hash_original_method = "EAE7DF88825384424351353A02D60615", hash_generated_method = "9A1B7B95D5725934EBA7C54C4B809ED7")
         
 @Override

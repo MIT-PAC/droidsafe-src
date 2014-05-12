@@ -172,6 +172,7 @@ private void __getReply() throws IOException
      * {@link #_reader_} and {@link #_writer_} to wrap
      * {@link SocketClient#_input_} and {@link SocketClient#_output_}.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:09.084 -0500", hash_original_method = "FEA8121B14E9431F591A5C5AD7E13B49", hash_generated_method = "6286B71C0F9B133B3FD693882FE23823")
     
 protected void _connectAction_() throws IOException
@@ -222,6 +223,7 @@ public void removeProtocolCommandListener(ProtocolCommandListener listener)
      * <p>
      * @exception IOException If an error occurs while disconnecting.
      ***/
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:09.099 -0500", hash_original_method = "A088283C6D3AFB361E7B10D0999AC3A3", hash_generated_method = "7C560D97AD8C6B301BF770F86C880C01")
     
 public void disconnect() throws IOException

@@ -904,6 +904,7 @@ public DropDownListView(Context context, boolean hijackFocus) {
          *
          * @return true always if hijacking focus
          */
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.152 -0500", hash_original_method = "C2BF4E069A702887BC745C139DC71739", hash_generated_method = "AD9FA9DCAB55E98576D3E8A5D1496AF0")
         
 @Override
@@ -931,6 +932,7 @@ public DropDownListView(Context context, boolean hijackFocus) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.159 -0500", hash_original_method = "6E4DA5A5D077D6C0AA24FD2BF6BDF53A", hash_generated_method = "43AD078EA30F732A83D9ACE08BA25F54")
         
 @Override
@@ -941,6 +943,7 @@ public DropDownListView(Context context, boolean hijackFocus) {
             }
         }
         
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.162 -0500", hash_original_method = "BEB5883597D4F7E6EC69D5E4B00F4808", hash_generated_method = "F3E9793446B00E60EB5817FCD52182CB")
         
 @Override
@@ -957,6 +960,7 @@ public DropDownListView(Context context, boolean hijackFocus) {
         {
             //Synthesized constructor
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.167 -0500", hash_original_method = "9AD729468BC88951DC9B447B72E180D0", hash_generated_method = "E9D4DFD4407D27ED24BD11596FAD7F2A")
         
 public void run() {
@@ -972,6 +976,7 @@ public void run() {
         {
             //Synthesized constructor
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.171 -0500", hash_original_method = "A0D6625363C0412112380631C620D963", hash_generated_method = "CB17003C1F1C5E3D173A611277EC7873")
         
 public void run() {
@@ -1178,6 +1183,7 @@ public void run() {
         }
 
         private class DisallowIntercept implements Runnable {
+            @DSSpec(DSCat.THREADING)
             @Override
             public void run() {
                 final ViewParent parent = mSrc.getParent();
@@ -1185,7 +1191,6 @@ public void run() {
             }
         }
     }
-
     
     private class PopupTouchInterceptor implements OnTouchListener {
         

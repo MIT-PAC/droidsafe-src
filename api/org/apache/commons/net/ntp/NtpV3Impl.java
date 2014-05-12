@@ -685,6 +685,7 @@ public void setDatagramPacket(DatagramPacket srcDp)
      *
      * @return details of NTP packet as a string.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:53.495 -0500", hash_original_method = "A02BC8EA24DC526040D0D1A34629C374", hash_generated_method = "96D59C65BFD95080684CFF943D5818A3")
     
 public String toString()

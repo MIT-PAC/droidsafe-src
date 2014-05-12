@@ -149,6 +149,7 @@ private boolean matchesDN(X500Principal subject, GeneralNames targets)
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.025 -0500", hash_original_method = "3AF2A857F3C742FB55D3884093F02C4D", hash_generated_method = "95C1135E2B576437E98ABE50F6386AA5")
     
 public Object clone()
@@ -194,6 +195,7 @@ public boolean match(Certificate cert)
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.030 -0500", hash_original_method = "F6888345D31D77DF02A0F426A3C9D5A0", hash_generated_method = "950E577FCAC1E0C0F13F96E3817B6171")
     
 public boolean equals(Object obj)
@@ -213,6 +215,7 @@ public boolean equals(Object obj)
         return this.form.equals(other.form);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:41.032 -0500", hash_original_method = "0B7A1B2982787E7750666F5D71BB8845", hash_generated_method = "B596598D02F60D16A04AAAD4DE667F48")
     
 public int hashCode()

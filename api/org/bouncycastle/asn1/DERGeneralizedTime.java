@@ -364,6 +364,7 @@ boolean asn1Equals(
         return time.equals(((DERGeneralizedTime)o).time);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:27.580 -0500", hash_original_method = "12943BCCC2961451B97E26F622F40AB3", hash_generated_method = "59D726F128FC0EF1749455952581310D")
     
 public int hashCode()

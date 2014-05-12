@@ -36,6 +36,7 @@ public SelectionKeyImpl(AbstractSelectableChannel channel, int operations,
         attach(attachment);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.285 -0500", hash_original_method = "882667334549B80F71299B2D55BDD68C", hash_generated_method = "17F74C9ED9C7367CD6BCD5E6AA0DABE6")
     
 @Override
@@ -43,6 +44,7 @@ public SelectionKeyImpl(AbstractSelectableChannel channel, int operations,
         return channel;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.287 -0500", hash_original_method = "88C76B7DE6B06DD1BF72DD8504F2EE79", hash_generated_method = "DA0EC1937E65D0D4E1CDE2880C6A7526")
     
 @Override
@@ -63,6 +65,7 @@ int interestOpsNoCheck() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.292 -0500", hash_original_method = "4D6BC0A0A118723D5704E38CA961A8E7", hash_generated_method = "9C16C1AB6088FA2DA2BEBACB660A767C")
     
 @Override

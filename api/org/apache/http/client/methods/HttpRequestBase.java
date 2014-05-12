@@ -161,6 +161,7 @@ public boolean isAborted() {
         return this.aborted;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.167 -0500", hash_original_method = "7E78C92898A9406CD028D56B8CBA9D93", hash_generated_method = "B2B1054171D5044B5D26A3B55A44AA53")
     

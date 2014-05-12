@@ -270,6 +270,7 @@ public int getNetworkType() {
         mRssi = rssi;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.370 -0500", hash_original_method = "8F5318BC3FCF7BF30F83B998176BAD1B", hash_generated_method = "1F44B4C64F2483A0B6483992276D06CA")
     

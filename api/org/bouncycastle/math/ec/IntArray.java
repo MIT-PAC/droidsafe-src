@@ -497,6 +497,7 @@ public IntArray square(int m)
         return c;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.500 -0500", hash_original_method = "B863CB3B654462D1A297BFCA9B6601CD", hash_generated_method = "EFC9F01E650B729DD8A9AED0084DA8BC")
     
 public boolean equals(Object o)
@@ -521,6 +522,7 @@ public boolean equals(Object o)
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.502 -0500", hash_original_method = "651D45029664378C68EF3BB76B2C76E2", hash_generated_method = "9DC8867BA4AECD8A7155ABCBC595DC51")
     
 public int hashCode()
@@ -534,6 +536,7 @@ public int hashCode()
         return hash;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.504 -0500", hash_original_method = "550C6BAEBE6332C41740A28950586A2C", hash_generated_method = "AC48E4C420D14BC1119FE734B0432642")
     
 public Object clone()
@@ -541,6 +544,7 @@ public Object clone()
         return new IntArray(Arrays.clone(m_ints));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:39.507 -0500", hash_original_method = "14E8054A89CE6D677D0451C5FF658D29", hash_generated_method = "81839723FA073F18DD07DE5129A4F35C")
     
 public String toString()

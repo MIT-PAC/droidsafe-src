@@ -58,6 +58,7 @@ public void close() {
         native_close();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.329 -0500", hash_original_method = "7540A3E8E0E84BC6100A5A4AAC882F22", hash_generated_method = "37FF0A01C8FBB622D7037424FE6C4F69")
     
 @Override

@@ -61,7 +61,6 @@ public class BluetoothTestRunner extends InstrumentationTestRunner {
     private static final String TAG = "BluetoothTestRunner";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.690 -0400", hash_original_field = "D2B0DFAACDF6F7E0FFB5DF2A817A1954", hash_generated_field = "9CE60CC943D948091C0DF92B60BF1FC7")
 
-
     public static int sEnableIterations = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.691 -0400", hash_original_field = "7C9EA34F272B6D145312F3256CACBA83", hash_generated_field = "C861F5626B3939F37493BEAE1B55976C")
 
@@ -92,7 +91,6 @@ public class BluetoothTestRunner extends InstrumentationTestRunner {
     public static int sStartStopScoIterations = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.705 -0400", hash_original_field = "D414B4387A58E3149586DBF07CBA2F34", hash_generated_field = "BD59FD23958FD253FF1BE49A1C3DA287")
 
-
     public static String sDeviceAddress = "";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.706 -0400", hash_original_field = "7AC94FC12D19944DE4B9B13EF6AD3C9B", hash_generated_field = "2608B9D6E1287395AA18278423C728CF")
 
@@ -102,7 +100,7 @@ public class BluetoothTestRunner extends InstrumentationTestRunner {
     public static int sDevicePairPasskey = 123456;
 
     @DSComment("Added for droidsafe")
-    @DSSafe(DSCat.DROIDSAFE_INTERNAL)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public BluetoothTestRunner() {
         super();
         // TODO Auto-generated constructor stub

@@ -118,6 +118,7 @@ public AnimationSet(boolean shareInterpolator) {
         init();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.797 -0500", hash_original_method = "17885947D34B4C6D63222266DEE6E0A5", hash_generated_method = "2E96BAC66A376DD357922EA94394DACB")
     
 @Override

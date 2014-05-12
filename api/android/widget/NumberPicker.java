@@ -543,6 +543,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         setMeasuredDimension(widthSize, heightSize);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.139 -0500", hash_original_method = "10C35B0DAD7657DB14B7F950A0414363", hash_generated_method = "CA6D5BF4349F597E394C11DE300C40FA")
     
 @Override
@@ -595,6 +596,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         return false;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.142 -0500", hash_original_method = "235D8E8A92689E68622E8E516F140226", hash_generated_method = "9EFEEFA1427AEB4178A438F4BEFBF68D")
     
 @Override
@@ -652,6 +654,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         return true;
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.144 -0500", hash_original_method = "BF176E11CE8244676F550C2A8C029DBC", hash_generated_method = "E2641455B67DC2C4BB8C9B3F453BB057")
     
 @Override
@@ -672,6 +675,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         return super.dispatchTouchEvent(event);
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.146 -0500", hash_original_method = "5F2124C88DD28BBD925F58E6B4833CD1", hash_generated_method = "3CA5546A195DEAE6B090F013ADF3BC37")
     
 @Override
@@ -722,6 +726,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.154 -0500", hash_original_method = "B6D6495EF8D39EBA8CC69BAAD1076261", hash_generated_method = "779A92564B3688AA0B13025B127F20C5")
     
@@ -1230,6 +1235,7 @@ public void setDisplayedValues(String[] displayedValues) {
         canvas.restoreToCount(restoreCount);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.212 -0500", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "86AF7DE9D8AA4CE0BCD92B937FAAB36A")
     
 @Override
@@ -1562,6 +1568,7 @@ public int getInputType() {
             //Synthesized constructor
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.303 -0500", hash_original_method = "5A9CF76A42C671BAE659DDDD324A19D9", hash_generated_method = "6374F0A5C12322A383EFB0D4502A4F6C")
         
 public void run() {
@@ -1577,6 +1584,7 @@ public void run() {
         {
             //Synthesized constructor
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.307 -0500", hash_original_method = "1728A296542E5FB10F5D2F850E617FE1", hash_generated_method = "E36429D890BD907AF232694419F86473")
         
 public void run() {
@@ -1616,6 +1624,7 @@ private void setIncrement(boolean increment) {
             mIncrement = increment;
         }
 
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.316 -0500", hash_original_method = "1F108533BE53D637572F8F49778F205C", hash_generated_method = "3CD8638FBE78AC2FBC4F0F5EC587B4C0")
         
 public void run() {

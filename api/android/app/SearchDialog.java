@@ -237,6 +237,7 @@ public SearchDialog(Context context, SearchManager searchManager) {
      * Create the search dialog and any resources that are used for the
      * entire lifetime of the dialog.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.718 -0500", hash_original_method = "ADA44CDEEADE302052A002E44C1889B1", hash_generated_method = "25E987B9FCED8843878CDCB6E5ABFF02")
     
 @Override
@@ -449,6 +450,7 @@ public void setWorking(boolean working) {
      * @return A bundle with the state of the dialog, or {@code null} if the search
      *         dialog is not showing.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.756 -0500", hash_original_method = "A93DBE942737D1F537AD057E006AED8C", hash_generated_method = "870783D19F6594D1C034646EFDF474AF")
     
 @Override
@@ -471,6 +473,7 @@ public void setWorking(boolean working) {
      * @param savedInstanceState The state of the dialog previously saved by
      *     {@link #onSaveInstanceState()}.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.760 -0500", hash_original_method = "D7088D676BF54E193C8B7B9D0CD3713D", hash_generated_method = "0B6A4B44261B665077F6F492F3949A3B")
     
 @Override
@@ -645,6 +648,7 @@ private boolean isOutOfBounds(View v, MotionEvent event) {
         return toTaintBoolean(x + y + slop + v.getWidth() + v.getHeight());
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.796 -0500", hash_original_method = "6ED6F897B7566B2172AD538A3B9EBF5C", hash_generated_method = "53ECED5597F031D7F8622916BBFFF475")
     
 @Override

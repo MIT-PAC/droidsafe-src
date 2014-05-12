@@ -498,6 +498,7 @@ void doDestroy() {
         mInactiveLoaders.clear();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.883 -0500", hash_original_method = "A45A0DF363CA3802688DC012A3593E66", hash_generated_method = "2F573BF8CA74DE53BCBA9E5EB402B76D")
     
 @Override
@@ -796,6 +797,7 @@ void callOnLoadFinished(Loader<Object> loader, Object data) {
             }
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.836 -0500", hash_original_method = "6152E6E73795403DAC53E06540200214", hash_generated_method = "FC6A6C7BEB09F74E956A4DE307491705")
         
 @Override
