@@ -191,6 +191,8 @@ public UlawEncoderInputStream(InputStream in, int max) {
         return read(buf, 0, buf.length);
     }
     
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:12:13.878 -0400", hash_original_method = "57F60B9384F00CF314262EEE7416F389", hash_generated_method = "8E7AF22696DB9CD9143CDA142A9E6E1A")
     
 @Override

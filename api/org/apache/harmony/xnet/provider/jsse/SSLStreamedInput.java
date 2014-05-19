@@ -34,6 +34,8 @@ public SSLStreamedInput(InputStream in) {
      * @throws org.apache.harmony.xnet.provider.jsse.EndOfSourceException if the end of the underlying
      * stream has been reached.
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.206 -0500", hash_original_method = "944A08161D308B286B46AD616F2EEC05", hash_generated_method = "A285847CD23F2C7C711C4A57F7E4A09F")
     
 @Override

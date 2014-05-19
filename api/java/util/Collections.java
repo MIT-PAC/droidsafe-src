@@ -4205,6 +4205,7 @@ public CheckedEntry(Map.Entry<K, V> e, Class<V> valueType) {
                 this.valueType = valueType;
             }
 
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.117 -0500", hash_original_method = "10D87C621F2656D3DA7DCE234A4C3FAC", hash_generated_method = "8702435EE7714DABAA0C679E20A72854")
             

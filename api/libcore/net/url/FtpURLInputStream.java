@@ -25,6 +25,8 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
         this.controlSocket = controlSocket;
     }
 
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.610 -0500", hash_original_method = "7CE2C444F0201136E21AAFE741F28564", hash_generated_method = "DF6FA14B93B3D3083AE217F4EE817C64")
     
 @Override

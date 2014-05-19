@@ -118,6 +118,8 @@ public Base64InputStream(InputStream in, boolean doEncode, int lineLength, byte[
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:08:59.983 -0500", hash_original_method = "1EB83165D4FFE21B80D3B0941C45F1A7", hash_generated_method = "12810EE045ABDAD97226FEC44D830099")
     
 public int read() throws IOException {

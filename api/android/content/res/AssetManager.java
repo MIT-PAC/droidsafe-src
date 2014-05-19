@@ -1012,6 +1012,8 @@ private AssetInputStream(int asset)
 public final int getAssetInt() {
             return mAsset;
         }
+        @DSSource({DSSourceKind.IO})
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.949 -0500", hash_original_method = "C81989D37BD2D192408FD3EC31DA3DAD", hash_generated_method = "EECD89DDF02DC68BD8CA9DA9F95437A0")
         
 public final int read() throws IOException {

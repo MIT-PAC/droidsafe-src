@@ -100,7 +100,7 @@ public interface Deque<E> extends Queue<E> {
     boolean remove(Object o);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     boolean contains(Object o);
     
     @DSComment("Abstract Method")
@@ -108,7 +108,7 @@ public interface Deque<E> extends Queue<E> {
     public int size();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     Iterator<E> iterator();
     
     @DSComment("Abstract Method")

@@ -322,7 +322,7 @@ public ContextImpl(ContextImpl context) {
         throw new UnsupportedOperationException();
     }
     
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @Override
     
@@ -337,7 +337,7 @@ public ContextImpl(ContextImpl context) {
     	return Looper.getMainLooper();
     }
     
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @Override
     public Context getApplicationContext() {
@@ -363,14 +363,14 @@ public ContextImpl(ContextImpl context) {
         throw new UnsupportedOperationException();
     }
     
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.CLASS_LOADER)
     
     @Override
     public ClassLoader getClassLoader() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @Override
     public String getPackageName() {
@@ -389,7 +389,7 @@ public ContextImpl(ContextImpl context) {
         return "DSUnknown (Package Resource Path)";
     }
     
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @Override
     public String getPackageCodePath() {
@@ -402,7 +402,8 @@ public ContextImpl(ContextImpl context) {
         return new File("DSUnknown");
     }
     
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.PREFERENCES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @Override
     public SharedPreferences getSharedPreferences(String name, int mode) {        

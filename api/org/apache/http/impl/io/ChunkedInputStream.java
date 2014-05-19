@@ -86,6 +86,8 @@ public ChunkedInputStream(final SessionInputBuffer in) {
      * byte
      * @throws IOException If an IO problem occurs
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.192 -0500", hash_original_method = "5987C40EBD16187447E09174CE17A1D5", hash_generated_method = "11C8E65F36ECC436105906060B9725E9")
     
 public int read() throws IOException {

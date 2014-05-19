@@ -54,6 +54,8 @@ int getRemaining()
         return _remaining;
     }
 
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.864 -0500", hash_original_method = "472AD8364CD714087B8FB4AA07B9D0D1", hash_generated_method = "FACEEB51C917595EE003E5CC52AC793A")
     
 public int read()

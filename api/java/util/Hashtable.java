@@ -427,6 +427,7 @@ HashtableEntry(K key, V value, int hash, HashtableEntry<K, V> next) {
             this.next = next;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.384 -0500", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "9EABD2522EB9D2E4218C9F5D70610D46")
         

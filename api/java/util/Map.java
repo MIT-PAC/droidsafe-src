@@ -12,7 +12,7 @@ public interface Map<K,V> {
         public boolean equals(Object object);
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.SAFE_OTHERS)
         public K getKey();
         
         @DSComment("Abstract Method")

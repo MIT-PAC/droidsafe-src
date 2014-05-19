@@ -351,6 +351,7 @@ public Entry(int hash, E key1, K key2, V value, Entry<E, K, V> next) {
             this.next = next;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.851 -0500", hash_original_method = "43A91F8C54B90BC0F4C951BCB1425B25", hash_generated_method = "B93C43ACFFA4DC54889B9B46FBCDB4DD")
         
 public String getKey() {

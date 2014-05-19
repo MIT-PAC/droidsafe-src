@@ -44,7 +44,7 @@ public interface BlockingQueue<E> extends Queue<E> {
     boolean remove(Object o);
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public boolean contains(Object o);
     
     @DSComment("Abstract Method")

@@ -17,7 +17,7 @@ public abstract class SSLInputStream extends InputStream {
     }
 
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.834 -0500", hash_original_method = "475CB5F8D51E2295C86383D238A46C23", hash_generated_method = "A14CBA2E40F9D346E57F87809CDFD7B6")
     
 @Override
@@ -33,8 +33,9 @@ public abstract class SSLInputStream extends InputStream {
      * @see org.apache.harmony.xnet.provider.jsse.SSLBufferedInput#read()
      * @see org.apache.harmony.xnet.provider.jsse.HandshakeIODataStream#read()
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.836 -0500", hash_original_method = "F11529017A51516EAF2106297C9899F8", hash_generated_method = "7F0F5BB3DEF099052AAEB4B2BD53966C")
     
 @Override

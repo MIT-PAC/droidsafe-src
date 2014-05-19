@@ -8,6 +8,6 @@ import droidsafe.annotations.*;
 public interface RunnableFuture<V> extends Runnable, Future<V> {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.EXEC)
     void run();
 }

@@ -56,7 +56,7 @@ protected AbstractSequentialList() {
     }
 
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.115 -0500", hash_original_method = "8817022DCE1939D78B58CBD817768953", hash_generated_method = "121B63D82A543223901DFF56B53DE100")
     
 @Override

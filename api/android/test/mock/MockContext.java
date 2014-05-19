@@ -67,7 +67,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.222 -0500", hash_original_method = "61790CFAFC8BCC32869A9B01BEB1BF44", hash_generated_method = "2AF50723418B85B89BEE2FB071D8EE6A")
     
 @Override
@@ -83,7 +83,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
     
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.227 -0500", hash_original_method = "7D1710194777282B9AA7CA1905E51B18", hash_generated_method = "EB3EEE126D4E1BF756F5838FCA0FEE71")
     
 @Override
@@ -107,7 +107,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.CLASS_LOADER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.234 -0500", hash_original_method = "C51DF920D125BDAE90130F458F1F9388", hash_generated_method = "0781404294A9A57943F7952BA3ACB860")
     
 @Override
@@ -115,7 +115,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.236 -0500", hash_original_method = "6D0C58F8CBE63957D6DF922F2249B8C5", hash_generated_method = "F3D71F8DCF132B76BDB5C595DBA7F82F")
     
 @Override
@@ -145,7 +145,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.246 -0500", hash_original_method = "92AFBFFE30EEE36D5D46293F4B78E905", hash_generated_method = "1960BFF5D79B490327A9ED9F926F92C9")
     
 @Override
@@ -153,7 +153,8 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.PREFERENCES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.248 -0500", hash_original_method = "7A0D76AB436CE8A39BBA6ED25153EABF", hash_generated_method = "5DBD7F1509E6EA7B5C3116E26BB34EC8")
     
 @Override

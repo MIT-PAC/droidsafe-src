@@ -1078,6 +1078,8 @@ SSLInputStream() throws IOException {
          * @return read value.
          * @throws <code>IOException</code>
          */
+        @DSSource({DSSourceKind.IO})
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.457 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
         
 @Override

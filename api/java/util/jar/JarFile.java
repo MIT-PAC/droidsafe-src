@@ -390,6 +390,8 @@ JarFileInputStream(InputStream is, ZipEntry ze,
             entry = e;
         }
 
+        @DSSource({DSSourceKind.IO})
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.811 -0500", hash_original_method = "89CF4CB391CD9E8B348E579506073CE6", hash_generated_method = "B250FDF4E90C46AD119A8F73DF2C03D4")
         
 @Override

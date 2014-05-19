@@ -52,6 +52,8 @@ public StringBufferInputStream(String str) {
      * @return the byte read or -1 if the end of the source string has been
      *         reached.
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.681 -0500", hash_original_method = "13B1BC43B8C5BB9B164E62DA1A0BBF2A", hash_generated_method = "6F9AB4C50A662290F4B5F8D5EC47BCC8")
     
 @Override

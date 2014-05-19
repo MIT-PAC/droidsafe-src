@@ -111,6 +111,8 @@ public MicrophoneInputStream(int sampleRate, int fifoDepth) throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.749 -0400", hash_original_method = "2E9C6AB3DEFA28751EC7449B68926A5B", hash_generated_method = "FC430BBA4CFEE41B53C3909D7283B40F")
     
 @Override

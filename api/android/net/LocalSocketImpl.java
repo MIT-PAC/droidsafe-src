@@ -598,6 +598,8 @@ public LocalSocketAddress getSockAddress() throws IOException
         }
 
         /** {@inheritDoc} */
+        @DSSource({DSSourceKind.IO})
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.281 -0500", hash_original_method = "395E06403A9BB7E16A5F2E3FCA2C1758", hash_generated_method = "50FEC6D2F5EEB194633B0219A38358AA")
         
 @Override

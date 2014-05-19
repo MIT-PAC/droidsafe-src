@@ -183,6 +183,8 @@ public DirectByteInputStream(byte[] buffer, int size) {
             return mSize - mPos;
         }
 
+        @DSSource({DSSourceKind.IO})
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.026 -0400", hash_original_method = "85AFEDD2D5FA019C7D10275E66B7A151", hash_generated_method = "6F4DA5ED0B942B92D8836C28D2E3B2C6")
         
 @Override

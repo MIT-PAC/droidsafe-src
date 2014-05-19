@@ -9,7 +9,7 @@ import java.util.Iterator;
 public interface HeaderElementIterator extends Iterator {
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     boolean hasNext();
     
     @DSComment("Abstract Method")

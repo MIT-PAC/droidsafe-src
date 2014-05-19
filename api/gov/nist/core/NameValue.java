@@ -254,6 +254,7 @@ public boolean equals(Object other) {
      * (non-Javadoc)
      * @see java.util.Map$Entry#getKey()
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.448 -0500", hash_original_method = "2F0EB2DB361DE1F8D28986094D857BA0", hash_generated_method = "97999F76D4943E2177ECAA7D863A4AE0")
     
 public String getKey() {

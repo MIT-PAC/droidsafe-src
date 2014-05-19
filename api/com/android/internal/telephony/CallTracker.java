@@ -154,7 +154,7 @@ private boolean
 
     //***** Overridden from Handler
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.EXEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.200 -0500", hash_original_method = "DC212188FEA96E721DB2AE6D44B077BD", hash_generated_method = "818083ABEAD9789AFFD0CD112BC340FC")
     
 public abstract void handleMessage (Message msg);

@@ -128,6 +128,8 @@ private void nextStream() throws IOException {
      *             if an error occurs while reading the current source input
      *             stream.
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.533 -0500", hash_original_method = "2AFBD8CC3EA20986AC27924C0AD5D7EE", hash_generated_method = "ABB08D2AC960F1D8DE8C995F725AAEFC")
     
 @Override

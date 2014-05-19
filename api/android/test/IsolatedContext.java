@@ -59,7 +59,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return intents;
     }
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.924 -0500", hash_original_method = "DB3EFD57F21462C44953D7817E2D1D0B", hash_generated_method = "B6347C1215DB4B2D838F5B1C3CDF3164")
     

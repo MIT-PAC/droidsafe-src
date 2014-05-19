@@ -32,7 +32,7 @@ public interface NavigableSet<E> extends SortedSet<E> {
     E pollLast();
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     Iterator<E> iterator();
     
     @DSComment("Abstract Method")

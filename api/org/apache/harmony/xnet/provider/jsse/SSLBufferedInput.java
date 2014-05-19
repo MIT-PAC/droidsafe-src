@@ -58,6 +58,8 @@ protected int consumed() {
      * Reads the following byte value. If there are no bytes in the source
      * buffer, method throws java.nio.BufferUnderflowException.
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.933 -0500", hash_original_method = "575079C176E4EB6FD7A12CD67A6942A7", hash_generated_method = "4A008A76C11FDFEC076499B05D184DCF")
     
 @Override

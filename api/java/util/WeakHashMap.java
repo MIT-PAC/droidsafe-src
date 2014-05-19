@@ -533,6 +533,7 @@ Entry(K key, V object, ReferenceQueue<K> queue) {
             value = object;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.541 -0500", hash_original_method = "1761F5110CA075C2A7975CB6F7D505A7", hash_generated_method = "85DF8CFEA3AA2CD64EE21E6586D0C720")
         

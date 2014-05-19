@@ -104,6 +104,8 @@ protected void removeFromMarkedPosition() {
      * @param   byte:   byte
      * @return
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.407 -0500", hash_original_method = "0824C344C7EF76E18DAFC5A0824644C2", hash_generated_method = "CCA7BFC992325F2BC11A6217EE625B3B")
     
 @Override

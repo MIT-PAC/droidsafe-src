@@ -136,7 +136,7 @@ public Context getBaseContext() {
     }
 
     @DSComment("General android operation, no security concern")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.109 -0500", hash_original_method = "8EDC66E2D77BCDC119853EA41EA3296B", hash_generated_method = "139D612C99B54783A4962502799FFB5A")
     
@@ -156,7 +156,7 @@ public Context getBaseContext() {
     }
     
     @DSComment("delegated to android.content.Context")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.113 -0500", hash_original_method = "78E13438476D4B526B3AB7AB982B9A37", hash_generated_method = "A6D0C1903DCB48BCDDC31B2E575E3D5A")
     
@@ -192,7 +192,7 @@ public Context getBaseContext() {
     }
 
     @DSComment("Refelction/class loader")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.CLASS_LOADER)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.122 -0500", hash_original_method = "325690D530E21A0AB255EE9D69D84488", hash_generated_method = "CD16D25F5FDB5376B6D65A38DAD451DB")
     
@@ -202,7 +202,7 @@ public Context getBaseContext() {
     }
 
     @DSComment("Is there concern about package info harvesting???")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.124 -0500", hash_original_method = "FC1F671DB2DE2D2F1C64463A96604F21", hash_generated_method = "981E8FCA373F2235FD0793073F84BFB1")
     
@@ -229,7 +229,7 @@ public Context getBaseContext() {
         return mBase.getPackageResourcePath();
     }
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.131 -0500", hash_original_method = "90ECA4CEE907B9CC4828D0F1EDEE17EB", hash_generated_method = "C796F4FD1D22BA33BA9F69A37BB8C39E")
     
@@ -247,7 +247,8 @@ public Context getBaseContext() {
         return mBase.getSharedPrefsFile(name);
     }
 
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.PREFERENCES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.136 -0500", hash_original_method = "51168DD8811589A8A44258F7BDA9D1F0", hash_generated_method = "BB704DA8F5AC55B97A278F82E1650118")
     @DSVerified

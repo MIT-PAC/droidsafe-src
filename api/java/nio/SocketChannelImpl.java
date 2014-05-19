@@ -707,6 +707,8 @@ public SocketChannelInputStream(SocketChannel channel) {
             channel.close();
         }
 
+        @DSSource({DSSourceKind.IO})
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.701 -0500", hash_original_method = "9D425CB1AFA4E4568C9C3855468C26CA", hash_generated_method = "C1E725A6D7419E00B7727D54CA88D0EC")
         
 @Override

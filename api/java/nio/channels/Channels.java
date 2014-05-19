@@ -233,6 +233,8 @@ ChannelInputStream(ReadableByteChannel channel) {
             this.channel = channel;
         }
 
+        @DSSource({DSSourceKind.IO})
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.612 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "EDB147B342555EE99C070665ED7CE828")
         
 @Override public synchronized int read() throws IOException {

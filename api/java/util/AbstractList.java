@@ -70,7 +70,7 @@ protected AbstractList() {
      *             if {@code location < 0 || >= size()}
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.985 -0500", hash_original_method = "028843ECC72155B435F1914365BF5067", hash_generated_method = "FA43A5DF06AE806D1B6BA7C7E16F414D")
     
 public abstract E get(int location);

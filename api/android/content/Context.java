@@ -291,7 +291,7 @@ public abstract PackageManager getPackageManager();
 
     /** Return a ContentResolver instance for your application's package. */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.862 -0500", hash_original_method = "1D00732668B8C897D38BE7A141172873", hash_generated_method = "A7D8728F3BE00D5CDB00368E816A20AC")
     
 public abstract ContentResolver getContentResolver();
@@ -334,7 +334,7 @@ public abstract Looper getMainLooper();
      */
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.867 -0500", hash_original_method = "4BFA2CD701CE85242491E38EAA80F5E1", hash_generated_method = "52427EC0AE341980B3A33AF47042782C")
     
 public abstract Context getApplicationContext();
@@ -517,14 +517,14 @@ public final TypedArray obtainStyledAttributes(
      */
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.CLASS_LOADER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.896 -0500", hash_original_method = "8A810E4DE3086C301A9EB2A3F9E45FA2", hash_generated_method = "488BD79C00E2507C7A9C8DB8CE74E57B")
     
 public abstract ClassLoader getClassLoader();
 
     /** Return the name of this application's package. */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.898 -0500", hash_original_method = "0AEBC7BE6AC5D73669D5E786F8C71C2E", hash_generated_method = "D1A5857F6911C9DA4EF7356D04CCA9DB")
     
 public abstract String getPackageName();
@@ -563,7 +563,7 @@ public abstract String getPackageResourcePath();
      * @return String Path to the code and assets.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.904 -0500", hash_original_method = "6883772254278B57804CBB75A8D1016A", hash_generated_method = "192FAF5BA6A5431FBE320A1DFDB8763F")
     
 public abstract String getPackageCodePath();
@@ -607,8 +607,9 @@ public abstract File getSharedPrefsFile(String name);
      * @see #MODE_WORLD_WRITEABLE
      * @see #MODE_MULTI_PROCESS
      */
+    @DSSource({DSSourceKind.PREFERENCES})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.909 -0500", hash_original_method = "0A32AB6B1755B7A435A6F215DDF3C5B4", hash_generated_method = "58E69BCA38F976DBC2163BAC4DCC28FE")
     
 public abstract SharedPreferences getSharedPreferences(String name,

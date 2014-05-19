@@ -45,6 +45,8 @@ public void close() throws IOException {
         this.closed = true;
     }
 
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.925 -0500", hash_original_method = "F6A0760AFCA549A5825114F4EAC4FB8F", hash_generated_method = "9E0DD976E5A0EA9794F891A4D359B15F")
     
 public int read() throws IOException {
