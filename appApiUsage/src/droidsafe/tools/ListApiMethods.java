@@ -193,7 +193,7 @@ public class ListApiMethods extends ApiUsageListing {
                         typeName = tokens[tokens.length - 1];
                     typeName = typeName.replaceAll(";", "");
 
-                    String infoflowAnno = String.format("@%s(%s.%s)", 
+                    String infoflowAnno = String.format("@%s({%s.%s})", 
                             infoflowType, typeName, enumElem.getConstantName());
 
                     logger.info("info annotation {} ", infoflowAnno);
@@ -589,16 +589,26 @@ public class ListApiMethods extends ApiUsageListing {
                         }
                     }
                     
-                    if (!subMethodAnnotHash.containsKey("CLASSIFICATION_KEY")) {
+                    
+                    if (!subMethodAnnotHash.containsKey(CLASSIFICATION_KEY)) {
+                        String myClass = parentAnnotHash.get(CLASSIFICATION_KEY);
+                        if (subMethod.isPrivate()) {
+                            myClass = "@DSBan(DSCat.PRIVATE_METHOD)";
+                        }
+                        else if (!subMethod.isPublic() && !subMethod.isProtected()) {
+                            myClass = "@DSBan(DSCat.DEFAULT_MODIFIER)";
+                        }
                         logger.info("submethod {} got classification ", subMethod);
-                        subMethodAnnotHash.put(CLASSIFICATION_KEY, parentAnnotHash.get(CLASSIFICATION_KEY));
+                        subMethodAnnotHash.put(CLASSIFICATION_KEY, myClass);
                     }
                     
-                    if (!subMethodAnnotHash.containsKey("SINK_KEY"))
+                    if (!subMethodAnnotHash.containsKey(SINK_KEY))
                         subMethodAnnotHash.put(SINK_KEY, parentAnnotHash.get(SINK_KEY));
                     
-                    if (!subMethodAnnotHash.containsKey("SOURCE_KEY"))
+                    if (!subMethodAnnotHash.containsKey(SOURCE_KEY))
                         subMethodAnnotHash.put(SOURCE_KEY, parentAnnotHash.get(SOURCE_KEY));
+                    
+                    
                     
                     List<String> annoList = new LinkedList<String>(subMethodAnnotHash.values());
 
