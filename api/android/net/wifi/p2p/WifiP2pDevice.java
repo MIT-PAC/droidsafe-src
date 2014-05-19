@@ -162,6 +162,7 @@ public WifiP2pDevice() {
      *  Note: The events formats can be looked up in the wpa_supplicant code
      * @hide
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.255 -0500", hash_original_method = "B4DFEB594E50AA2111054B3A3A6DF197", hash_generated_method = "FE0BA10AC47EA8541703F7DA0FF274C1")
     
 public WifiP2pDevice(String string) throws IllegalArgumentException {
@@ -218,6 +219,7 @@ public WifiP2pDevice(String string) throws IllegalArgumentException {
     }
 
     /** copy constructor */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.276 -0500", hash_original_method = "8BE5EC4742BDBC547BA4DA345C8E71E1", hash_generated_method = "793018AD230FBA8C91A1710C1DB2C406")
     
 public WifiP2pDevice(WifiP2pDevice source) {

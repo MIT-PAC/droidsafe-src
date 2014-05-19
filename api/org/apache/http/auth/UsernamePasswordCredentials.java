@@ -22,6 +22,7 @@ public class UsernamePasswordCredentials implements Credentials {
      * @param usernamePassword the username:password formed string
      * @see #toString
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.387 -0500", hash_original_method = "3728C308DDC1875044F9155978A28028", hash_generated_method = "C572CC27D20A5C8C052D2D08A429D4AA")
     
 public UsernamePasswordCredentials(String usernamePassword) {

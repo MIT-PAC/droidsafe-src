@@ -106,6 +106,7 @@ private static TrustManager[] createTrustManagers(final KeyStore keystore)
 
     private X509HostnameVerifier hostnameVerifier = BROWSER_COMPATIBLE_HOSTNAME_VERIFIER;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.644 -0500", hash_original_method = "F80FA0F4889B4450DC2D852F3A3A58DF", hash_generated_method = "2FCEA0070360D64A18E82EE9DDF8BD51")
     
 public SSLSocketFactory(
@@ -135,6 +136,7 @@ public SSLSocketFactory(
         this.nameResolver = nameResolver;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.647 -0500", hash_original_method = "56E365183E16E975E9BA33998913B83F", hash_generated_method = "95B8EF8382CC54005311C44D6340B270")
     
 public SSLSocketFactory(
@@ -146,6 +148,7 @@ public SSLSocketFactory(
         this(TLS, keystore, keystorePassword, truststore, null, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.649 -0500", hash_original_method = "A67823A5DC6C5FF7C43D604E05CE11CB", hash_generated_method = "36DEB92EBCED2815CFB7604925B388A9")
     
 public SSLSocketFactory(final KeyStore keystore, final String keystorePassword) 
@@ -154,6 +157,7 @@ public SSLSocketFactory(final KeyStore keystore, final String keystorePassword)
         this(TLS, keystore, keystorePassword, null, null, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.652 -0500", hash_original_method = "28D877B99CD24F9AB6618A77DF1E85C8", hash_generated_method = "7C024ECAB8D81EDA96B924F92C38B4A2")
     
 public SSLSocketFactory(final KeyStore truststore) 
@@ -168,6 +172,7 @@ public SSLSocketFactory(final KeyStore truststore)
      *
      * @hide
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.656 -0500", hash_original_method = "607044CE64B6D03D5A8C48CB0A47A2B4", hash_generated_method = "7AA0CE63318E300FCF20DD78AB8B805B")
     
 public SSLSocketFactory(javax.net.ssl.SSLSocketFactory socketfactory) {
@@ -318,6 +323,7 @@ public Socket createSocket(
         return sslSocket;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.676 -0500", hash_original_method = "CE9A92F10A15AE99F29896C9A2E4D993", hash_generated_method = "D72C1F86706343C941E0298CE4863A1F")
     
 public void setHostnameVerifier(X509HostnameVerifier hostnameVerifier) {

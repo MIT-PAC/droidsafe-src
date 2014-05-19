@@ -383,6 +383,7 @@ public boolean add(E object) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.054 -0500", hash_original_method = "A5D17047871533A4FE91F018C1332208", hash_generated_method = "7896A435B1DE6491EB39D814970996B0")
         
 public boolean addAll(Collection<? extends E> c) {
@@ -448,14 +449,14 @@ public int size() {
             return set.size();
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.079 -0500", hash_original_method = "A39D4D1F48CDD6F8823B658123DCFC27", hash_generated_method = "1EC811B702EA553E91564648267E084B")
         
 public Object[] toArray() {
             return set.toArray();
         }
         
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.903 -0400", hash_original_method = "820308A08287454AD26ACE5A2E12E893", hash_generated_method = "C858378E5DE3F08ADC16EF2E7BFADF34")
         public <T> T[] toArray(T[] a) {
             addTaint(a[0].getTaint());

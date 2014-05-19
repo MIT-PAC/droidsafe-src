@@ -76,6 +76,7 @@ public void onConfigurationChanged(Configuration newConfig) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.752 -0500", hash_original_method = "32ED3A67A5037221704DD520024E5B9C", hash_generated_method = "16B88362C84C148D000BF9BA526997C6")
     
 public void onLowMemory() {

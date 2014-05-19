@@ -3235,7 +3235,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             return a.length;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.939 -0500", hash_original_method = "4819818080CBECF7C6E758DFD111EA84", hash_generated_method = "041C09F1BF277D3B146122548FB25910")
         
 @Override
@@ -3243,7 +3243,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             return a.clone();
         }
                 
-@DSSafe(DSCat.DATA_STRUCTURE)
+@DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.001 -0400", hash_original_method = "7C6C61B0D92D6FAC6E5A876622A28815", hash_generated_method = "F8735DB7EA6ECCE9326BD99AA6BFFDD0")
         @Override
         @SuppressWarnings({"unchecked", "SuspiciousSystemArraycopy"})

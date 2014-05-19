@@ -679,6 +679,7 @@ public void handleKeyUp(int keyCode, int stream) {
      * @see #adjustVolume(int, int)
      * @see #setStreamVolume(int, int, int)
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.031 -0500", hash_original_method = "C38595EDF7BD63128B5AA309C4B33E8C", hash_generated_method = "F218032D9C73953150E5E16C58158160")
     
 public void adjustStreamVolume(int streamType, int direction, int flags) {

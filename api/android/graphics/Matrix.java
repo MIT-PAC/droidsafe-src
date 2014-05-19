@@ -822,6 +822,7 @@ public class Matrix {
         return getTaintBoolean();
 	}
     
+    @DSSafe(DSCat.GRAPHICS)
     public boolean setRectToRect(RectF src, RectF dst, ScaleToFit stf){
 		// Original method
 		/*

@@ -359,6 +359,7 @@ public abstract boolean isFloating();
      * @see ViewGroup.LayoutParams#height
      * @see ViewGroup.LayoutParams#width
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.706 -0500", hash_original_method = "BDF4A9191EC276CB59743DF4E4B8A744", hash_generated_method = "E2F8F32EF8BFCBF61E5E552E01071180")
     
 public void setLayout(int width, int height) {

@@ -25,6 +25,7 @@ public static XmlPullParserFactory newInstance () throws XmlPullParserException 
         return newInstance(null, null);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.129 -0500", hash_original_method = "2957323A9BBFD5C32789AB8ACDA9401B", hash_generated_method = "E17ECAC088F67E7E851A0EDD655019DD")
     
 public static XmlPullParserFactory newInstance (String classNames, Class context)

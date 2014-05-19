@@ -41,6 +41,7 @@ public GZIPOutputStream(OutputStream os) throws IOException {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.928 -0500", hash_original_method = "982A9C109F13C35696C1D1D71982D2AE", hash_generated_method = "B57F57453763161E8A8F13028AC91462")
     
 public GZIPOutputStream(OutputStream os, int size) throws IOException {

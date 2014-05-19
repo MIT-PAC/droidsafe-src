@@ -61,7 +61,8 @@ public static SecureRandom getInstance(String algorithm) throws NoSuchAlgorithmE
      *             if {@code algorithm} is {@code null}.
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.RANDOM_NUMBER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.244 -0500", hash_original_method = "DE97096A3B9FE3F043FDC55F6D0E2300", hash_generated_method = "6146C77DBE8442048A0AABE34E0AE58D")
     
 public static SecureRandom getInstance(String algorithm, String provider)
@@ -92,7 +93,8 @@ public static SecureRandom getInstance(String algorithm, String provider)
      *             if {@code algorithm} is {@code null}.
      * @throws IllegalArgumentException if {@code provider == null}
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.RANDOM_NUMBER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.247 -0500", hash_original_method = "AC11452CE9958E1D0E60D203EE825B8B", hash_generated_method = "3E3FB0A7C163821919ECD821587E5937")
     
 public static SecureRandom getInstance(String algorithm, Provider provider)
@@ -259,8 +261,8 @@ public synchronized void setSeed(byte[] seed) {
      * {@code seed}. <a href="#insecure_seed">Seeding {@code SecureRandom} may
      * be insecure</a>.
      */
-    @DSSpec(DSCat.SECURITY_VIOLATION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.TRIGGER)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.258 -0500", hash_original_method = "9FF68F20EA17830E094095398C2F5999", hash_generated_method = "AF8EB673506CC4F044372F33AC110FA0")
     
 @Override

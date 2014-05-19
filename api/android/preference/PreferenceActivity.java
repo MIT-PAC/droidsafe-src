@@ -673,6 +673,7 @@ public void setListFooter(View view) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.619 -0500", hash_original_method = "B413EAEA105506529AB09785B80740F7", hash_generated_method = "E7539A179D929E3CE0F45D143EFB7898")
     
 @Override

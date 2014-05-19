@@ -331,6 +331,7 @@ public static final boolean canClearHistory(ContentResolver cr) {
      *  Requires {@link android.Manifest.permission#WRITE_HISTORY_BOOKMARKS}
      *  @param cr   The ContentResolver used to access the database.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.666 -0500", hash_original_method = "388E8C0C4CF414D3FC7BD42E270D6F1B", hash_generated_method = "479F4B4474DB9337B23C07B7FBDD1FB9")
     
 public static final void clearHistory(ContentResolver cr) {
@@ -440,6 +441,7 @@ public static final void addSearchUrl(ContentResolver cr, String search) {
      *  Requires {@link android.Manifest.permission#WRITE_HISTORY_BOOKMARKS}
      * @param cr   The ContentResolver used to access the database.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.680 -0500", hash_original_method = "A074831E238F153F12D3C6C2678D83AE", hash_generated_method = "64A05DCE5B310A2FA0CFA09709FDD153")
     
 public static final void clearSearches(ContentResolver cr) {

@@ -37,7 +37,9 @@ public interface Collection<E> extends Iterable<E> {
     
     public int size();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Object[] toArray();
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public <T> T[] toArray(T[] array);
 }

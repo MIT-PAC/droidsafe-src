@@ -253,6 +253,7 @@ private void addAction(Action a) {
      * @param viewId The id of the parent {@link ViewGroup} to add child into.
      * @param nestedView {@link RemoteViews} that describes the child.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.017 -0500", hash_original_method = "4A1BA0269DB90E506DB0959643DF475B", hash_generated_method = "4886D770A7C3676B878E94B59BBB7E59")
     
 public void addView(int viewId, RemoteViews nestedView) {
@@ -265,6 +266,7 @@ public void addView(int viewId, RemoteViews nestedView) {
      * @param viewId The id of the parent {@link ViewGroup} to remove all
      *            children from.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.020 -0500", hash_original_method = "E70CF2F379D754A9B2BAC52704294677", hash_generated_method = "E327FE5A66D475AA2BFDABFFE1E15FE2")
     
 public void removeAllViews(int viewId) {
@@ -357,7 +359,8 @@ public void setImageViewResource(int viewId, int srcId) {
      * @param viewId The id of the view whose drawable should change
      * @param uri The Uri for the image
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.036 -0500", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "94D346594F571696B4CA207279C9B47E")
     
 public void setImageViewUri(int viewId, Uri uri) {
@@ -666,6 +669,7 @@ public void setShort(int viewId, String methodName, short value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.073 -0500", hash_original_method = "2BA2097F7597ED476DFE96444FF2B47B", hash_generated_method = "F9D14C9D9162D6EA5023E288E9A57F79")
     

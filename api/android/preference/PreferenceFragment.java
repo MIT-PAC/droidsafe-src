@@ -159,6 +159,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         mPreferenceManager.setOnPreferenceTreeClickListener(null);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.205 -0500", hash_original_method = "DD4A0119F9218E9767B3382C8F996136", hash_generated_method = "6664D236A7EEEA8FC9679D0B3032E97D")
     
 @Override
@@ -179,6 +180,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         mPreferenceManager.dispatchActivityDestroy();
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.210 -0500", hash_original_method = "26BF943D86091571AFE724B01D9065B4", hash_generated_method = "63074D9AD816BE063A97CDD3191A0139")
     
 @Override

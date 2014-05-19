@@ -726,12 +726,14 @@ public boolean awaitTermination(long timeout, TimeUnit unit)
             throws InterruptedException {
             return e.awaitTermination(timeout, unit);
         }
+        @DSSpec(DSCat.EXEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.905 -0500", hash_original_method = "70A4BA700942918290F358C98B70C3C4", hash_generated_method = "B1E20F9363F4AD28BDBD861F9CB91AD2")
         
 public Future<?> submit(Runnable task) {
             return e.submit(task);
         }
         
+        @DSSpec(DSCat.EXEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "83E0E20FEE789D6C0B6E1A8BE258D9AC", hash_generated_method = "AA01AE8CA15C63BFFFD6A901646BAC26")
         public <T> Future<T> submit(Callable<T> task) {
             addTaint(task.getTaint());
@@ -742,6 +744,7 @@ Future<T> var3A821B5C48F3C73F2F85580271A54221_1800187115 =             e.submit(
             //return e.submit(task);
         }
         
+        @DSSpec(DSCat.EXEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "7C597CCD4131D2329D010B8EED3AD866", hash_generated_method = "0AA752005320E5BA2422D1327FD79FC5")
         public <T> Future<T> submit(Runnable task, T result) {
             addTaint(result.getTaint());

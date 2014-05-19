@@ -142,6 +142,7 @@ public void show(FragmentManager manager, String tag) {
      * @return Returns the identifier of the committed transaction, as per
      * {@link FragmentTransaction#commit() FragmentTransaction.commit()}.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.489 -0500", hash_original_method = "040104E30D8A876DF591293449491AA6", hash_generated_method = "09CF06890A0238BCB3134F67E4117897")
     
 public int show(FragmentTransaction transaction, String tag) {
@@ -297,6 +298,7 @@ public boolean getShowsDialog() {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.513 -0500", hash_original_method = "2C281285ACC0A61C67E7A68F54E6F98C", hash_generated_method = "F04C9D6168EC15DEF59998ACE39A6657")
     
 @Override
@@ -452,6 +454,7 @@ public void onDismiss(DialogInterface dialog) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.533 -0500", hash_original_method = "36AA220233F5FF78B8725588D009C1D9", hash_generated_method = "E01E9F7B4265B087304DB47188E5C0EA")
     
 @Override
@@ -493,6 +496,7 @@ public void onDismiss(DialogInterface dialog) {
     /**
      * Remove dialog.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.538 -0500", hash_original_method = "A28646D8654C968065CCEE80C360B171", hash_generated_method = "5BDF40E1FD876DCB9A201D9F7020DAE4")
     
 @Override

@@ -750,6 +750,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
         return new Theme();
 	}
     
+    @DSSource({DSSourceKind.RESOURCE})
+    @DSSafe(DSCat.SAFE_OTHERS)
     public TypedArray obtainAttributes(AttributeSet set, int[] attrs){
 		// Original method
         int len = attrs.length;

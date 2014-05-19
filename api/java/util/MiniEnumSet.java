@@ -73,6 +73,7 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.825 -0500", hash_original_method = "CD3919E65A48A028AB158BD4B0E371DE", hash_generated_method = "85CEE80C9550A582F0D473844C41997C")
     
 @Override

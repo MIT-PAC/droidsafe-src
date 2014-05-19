@@ -151,6 +151,7 @@ public SQLiteQueryBuilder() {
      *
      * @param distinct if true the query is DISTINCT, otherwise it isn't
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.113 -0500", hash_original_method = "9A9512BC3B93773BE1B8C3DEAB4EDCF7", hash_generated_method = "44B4C3FC4193EF36C72AAE129AC2D0CC")
     
 public void setDistinct(boolean distinct) {

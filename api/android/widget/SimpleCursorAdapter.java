@@ -282,6 +282,7 @@ public CursorToStringConverter getCursorToStringConverter() {
      * @see #setStringConversionColumn(int)
      * @see android.widget.CursorAdapter#convertToString(android.database.Cursor)
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.915 -0500", hash_original_method = "5D90B32B884A493C1622C9D829A83B10", hash_generated_method = "DFE617ADD8B61894A6CE4B159A12E09D")
     
 public void setCursorToStringConverter(CursorToStringConverter cursorToStringConverter) {

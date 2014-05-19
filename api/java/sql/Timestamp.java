@@ -351,7 +351,7 @@ public int compareTo(Timestamp theTimestamp) {
      *         is not a {@code Timestamp} object or if the object is a {@code
      *         Timestamp} but represents a different instant in time.
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.612 -0500", hash_original_method = "94CEF17B9A7A2098B0DD6F205E7F606C", hash_generated_method = "E9928B27F2DF539B2F0201B1CD0966F1")
     
 @Override

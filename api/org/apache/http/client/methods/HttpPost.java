@@ -56,7 +56,7 @@ public HttpPost(final URI uri) {
         this.theURI = uri;
     }
     
-    @DSSafe()
+    @DSSafe(DSCat.SAFE_OTHERS)
     public URI getURI() {
         return this.theURI;
     }

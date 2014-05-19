@@ -182,6 +182,8 @@ public Context getBaseContext() {
         return mBase.getThemeResId();
     }
 
+    @DSSource({DSSourceKind.RESOURCES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.120 -0500", hash_original_method = "A934E0879ABB06742AB01E1FAB54A9BF", hash_generated_method = "A9363DFE0568A2EA37CF4138C68635A9")
     
 @Override

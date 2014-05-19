@@ -814,6 +814,7 @@ public void onClick(DialogInterface dialog, int which) {
      * Sets the prompt to display when the dialog is shown.
      * @param prompt the prompt to set
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.069 -0500", hash_original_method = "82831FCEC8FF5E5499EA6A36B12A66DA", hash_generated_method = "DA3402CDD5C9B14C14A06E0299D74748")
     
 public void setPrompt(CharSequence prompt) {

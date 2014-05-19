@@ -1530,6 +1530,7 @@ public void onUserInteraction() {
 		//Return nothing
 	}
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.870 -0500", hash_original_method = "32D7339793DCE0D5AEFE6621981EC978", hash_generated_method = "C45B7C15E316FF99AA579496D4660410")
     
 public void onContentChanged() {

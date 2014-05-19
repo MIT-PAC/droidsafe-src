@@ -499,7 +499,7 @@ public void setChildDivider(Drawable childDivider) {
      * <p>
      * {@inheritDoc}
      */
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.796 -0500", hash_original_method = "A4E4696C244BB97A42B35DBC06E7550F", hash_generated_method = "8F357777D7FDD1DE58862E6356F4C563")
     
 @Override
@@ -513,7 +513,7 @@ public void setChildDivider(Drawable childDivider) {
      * This method should not be used, use {@link #getExpandableListAdapter()}.
      */
     @DSComment("CompoundButton, check modeling")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.798 -0500", hash_original_method = "1C0E40F01B81CC446BCB9E503587C60C", hash_generated_method = "AD4EED210FC927083466B4E53D9186CE")
     
 @Override
@@ -774,6 +774,7 @@ public boolean collapseGroup(int groupPos) {
         return retValue;
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.831 -0500", hash_original_method = "A0CC4D2398D57CD6BE21425007A2E39D", hash_generated_method = "ED445B82E40B149D9AB5DB54B69DB345")
     
 public void setOnGroupCollapseListener(
@@ -898,6 +899,7 @@ private SavedState(Parcel in) {
                 int childPosition, long id);
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.837 -0500", hash_original_method = "10BB1A471420C27FBFE382BB84A3E76C", hash_generated_method = "6D3F1E438D19EE23A42692B8178FB021")
     
 public void setOnGroupExpandListener(
@@ -911,6 +913,7 @@ public void setOnGroupClickListener(OnGroupClickListener onGroupClickListener) {
         mOnGroupClickListener = onGroupClickListener;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.851 -0500", hash_original_method = "26EE7772CEF1895E61E52189D15F9720", hash_generated_method = "1D2C0B735E016F90BCC7C248AD89CF02")
     
 public void setOnChildClickListener(OnChildClickListener onChildClickListener) {
@@ -981,6 +984,7 @@ public int getFlatListPosition(long packedPosition) {
      *         child's position and type. #PACKED_POSITION_VALUE_NULL if no selection
      *         or if selection is on a header or a footer item.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.857 -0500", hash_original_method = "249AE284AF367E3E33266910F561E468", hash_generated_method = "8AC1384AD48FD830DFD341409F22EADB")
     
@@ -998,6 +1002,7 @@ public long getSelectedPosition() {
      * @return The ID of the currently selected group or child. -1 if no
      *         selection.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.859 -0500", hash_original_method = "0F549A577DA8ED79E79C3134155D319B", hash_generated_method = "C40FF77BB392610F0DF40101A5BAB794")
     
@@ -1020,6 +1025,7 @@ public long getSelectedId() {
      * Sets the selection to the specified group.
      * @param groupPosition The position of the group that should be selected.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.862 -0500", hash_original_method = "89C81106BDF582AFAD7189203633A87D", hash_generated_method = "C2019975B34CB9F1E35D6455C21A0EBD")
     
@@ -1044,6 +1050,7 @@ public void setSelectedGroup(int groupPosition) {
      *            it is collapsed.
      * @return Whether the selection was successfully set on the child.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.865 -0500", hash_original_method = "1A768FE324BC96140FFAB346485D606B", hash_generated_method = "DDFA679849E732890403E14F67AEE509")
     

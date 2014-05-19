@@ -11,6 +11,7 @@ public interface Set<E> extends Collection<E> {
     @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean add(E object);
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public boolean addAll(Collection<? extends E> collection);
     
     public void clear();

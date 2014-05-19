@@ -24,6 +24,7 @@ public class Location implements Parcelable {
      * @throws IllegalArgumentException if outputType is not one of
      * FORMAT_DEGREES, FORMAT_MINUTES, or FORMAT_SECONDS.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.345 -0500", hash_original_method = "F962E0B98A7E7F83554889920016ABE1", hash_generated_method = "D6B34BDE7EE79CBCAC9F5267E3309682")
     
 public static String convert(double coordinate, int outputType) {
@@ -73,6 +74,7 @@ public static String convert(double coordinate, int outputType) {
      * @throws IllegalArgumentException if the coordinate is not
      * in one of the valid formats.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.349 -0500", hash_original_method = "7B47425A60B4C4C2B99A4113EA8A74F1", hash_generated_method = "BD266226F3E2DF1012A52E6715BD5352")
     
 public static double convert(String coordinate) {
@@ -394,6 +396,7 @@ public Location(String provider) {
      * Constructs a new Location object that is a copy of the given
      * location.
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.336 -0500", hash_original_method = "4853EB704C822ED076EB467B9C8220F5", hash_generated_method = "5C477B01822E6EE3822AEB748CCC49C7")
     
 public Location(Location l) {
@@ -496,6 +499,7 @@ public float distanceTo(Location dest) {
      * @param dest the destination location
      * @return the initial bearing in degrees
      */
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.361 -0500", hash_original_method = "EC026D992E5F4947C061D86521AAB3B6", hash_generated_method = "FDA980A1A1FF4EB83AA2278980428DCA")
     
 public float bearingTo(Location dest) {

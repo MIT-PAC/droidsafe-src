@@ -286,6 +286,7 @@ public MediaController(Context context, AttributeSet attrs) {
         mFromXml = true;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.800 -0500", hash_original_method = "D7A2F0702C06D7B537ED0824ED57856A", hash_generated_method = "931342A4EBF620F037E7ABCA6888E811")
     
 public MediaController(Context context, boolean useFastForward) {
@@ -809,6 +810,7 @@ private void installPrevNextListeners() {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.899 -0500", hash_original_method = "89E197A0FA8E44785E0952D38D1CD31E", hash_generated_method = "47C3CD965EA398C1B63CD39F28F3ADE5")
     
 public void setPrevNextListeners(View.OnClickListener next, View.OnClickListener prev) {

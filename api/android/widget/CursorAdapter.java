@@ -338,7 +338,8 @@ public void changeCursor(Cursor cursor) {
      * If the given new Cursor is the same instance is the previously set
      * Cursor, null is also returned.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.935 -0500", hash_original_method = "3AE932C7E61F472FB82D7B0D8E632CE6", hash_generated_method = "CE2E8D958EB4A03214BB0FCF770CFC17")
     
 public Cursor swapCursor(Cursor newCursor) {

@@ -1119,6 +1119,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SERIALIZATION})
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final void readStringArray(String[] val){
 		val[0] = mValueStringArray[0];
 		// Original method
@@ -1341,6 +1343,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SERIALIZATION})
+    @DSSpec(DSCat.SPEC_OTHERS)
     public final void writeSerializable(Serializable s){
 		mValueSerializable = s;
 		// Original method
@@ -1670,6 +1674,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SERIALIZATION})
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final String[] readStringArray(){
 		return mValueStringArray;
 		// Original method
@@ -2018,6 +2024,7 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final Serializable readSerializable(){
 		return mValueSerializable;

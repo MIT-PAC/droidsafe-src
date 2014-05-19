@@ -57,6 +57,8 @@ public class ContextThemeWrapper extends ContextWrapper {
         return -1;
     }
     
+    @DSSource({DSSourceKind.RESOURCES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Override public Resources.Theme getTheme() {
         if (mTheme != null) {
             return mTheme;

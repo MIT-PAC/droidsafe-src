@@ -353,6 +353,7 @@ public WifiP2pManager(IWifiP2pManager service) {
      * @param listener for callback at loss of framework communication. Can be null.
      * @return Channel instance that is necessary for performing any further p2p operations
      */
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.789 -0500", hash_original_method = "38C14B58266EB34A7D20FC8977BB0D6B", hash_generated_method = "D65DEFF42C3E352DC70A8DE408FA409B")
     
 public Channel initialize(Context srcContext, Looper srcLooper, ChannelListener listener) {
@@ -411,6 +412,7 @@ public void disableP2p(Channel c) {
      * @param c is the channel created at {@link #initialize}
      * @param listener for callbacks on success or failure. Can be null.
      */
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.796 -0500", hash_original_method = "0086A0B598F8296D0733A67938A8010C", hash_generated_method = "DF728AF2A6B811E70B7B00BAAEC08F7C")
     
 public void discoverPeers(Channel c, ActionListener listener) {
@@ -440,6 +442,7 @@ public void discoverPeers(Channel c, ActionListener listener) {
      * @param config options as described in {@link WifiP2pConfig} class
      * @param listener for callbacks on success or failure. Can be null.
      */
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.798 -0500", hash_original_method = "4F415F11CAEDBF627AFEA3E6B5DED300", hash_generated_method = "A3C021B2B3E4C0DCA4D07C724F833947")
     
 public void connect(Channel c, WifiP2pConfig config, ActionListener listener) {
@@ -458,6 +461,7 @@ public void connect(Channel c, WifiP2pConfig config, ActionListener listener) {
      * @param c is the channel created at {@link #initialize}
      * @param listener for callbacks on success or failure. Can be null.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.800 -0500", hash_original_method = "6933E398CD84814D8BC15F50F87022E9", hash_generated_method = "9590A0583AD092D696365AAF72D6F87A")
     
 public void cancelConnect(Channel c, ActionListener listener) {
@@ -484,6 +488,7 @@ public void cancelConnect(Channel c, ActionListener listener) {
      * @param c is the channel created at {@link #initialize}
      * @param listener for callbacks on success or failure. Can be null.
      */
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.802 -0500", hash_original_method = "C4AE7F9F2250AB1A3A1291386F0E0989", hash_generated_method = "EFC504FA00F4FDDF4D5E42E93EF92675")
     
 public void createGroup(Channel c, ActionListener listener) {
@@ -502,6 +507,7 @@ public void createGroup(Channel c, ActionListener listener) {
      * @param c is the channel created at {@link #initialize}
      * @param listener for callbacks on success or failure. Can be null.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.804 -0500", hash_original_method = "34A328438D8586940446A090FD763814", hash_generated_method = "7E34A7ECF37BDD96D387F1DA051693A6")
     
 public void removeGroup(Channel c, ActionListener listener) {
@@ -548,6 +554,8 @@ public void requestConnectionInfo(Channel c, ConnectionInfoListener listener) {
      * @param c is the channel created at {@link #initialize}
      * @param listener for callback when group info is available. Can be null.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.812 -0500", hash_original_method = "7D2D3B8E934838E23E15D5EFD9489887", hash_generated_method = "BE20F831DEBB442923C6C2AB4B220EBD")
     
 public void requestGroupInfo(Channel c, GroupInfoListener listener) {

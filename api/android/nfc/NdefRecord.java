@@ -371,6 +371,7 @@ NdefRecord(short tnf, byte[] type, byte[] id, byte[] payload, byte flags) {
      *
      * @throws FormatException if the data is not a valid NDEF record
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.195 -0500", hash_original_method = "561B574EC53AB1A329985993E495C9F0", hash_generated_method = "1DCBA1D03F3F996ED1B58E40CD13370A")
     
 public NdefRecord(byte[] data) throws FormatException {

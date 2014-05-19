@@ -698,6 +698,7 @@ public int getPort() {
      *
      * @see URLStreamHandler#getDefaultPort
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.851 -0500", hash_original_method = "7E7EF83BCD62492BD0A03823F89518D0", hash_generated_method = "0A09D8AE5151E369189C0C7B0C29D562")
     

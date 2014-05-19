@@ -986,6 +986,7 @@ public String toString() {
             return uriString;
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.075 -0500", hash_original_method = "54B78C0DD1C850213ABB66143A4F5DE7", hash_generated_method = "8FF248167E67BE39247FEB2C6867262F")
         
 public Builder buildUpon() {
@@ -1215,6 +1216,7 @@ public String toString() {
             return cachedString = sb.toString();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.152 -0500", hash_original_method = "9B1777E9DAB1C1ED3319A4EEC33BCB54", hash_generated_method = "5C4462209FE1A43E0C9AE726C6C002B4")
         
 public Builder buildUpon() {
@@ -1707,6 +1709,7 @@ private String makeUriString() {
             return builder.toString();
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.292 -0500", hash_original_method = "6635CD2DD122D7EE5F14A5F21B272B08", hash_generated_method = "6F54BA35F35A446CC22D46803754C9E1")
         
 public Builder buildUpon() {
@@ -1859,6 +1862,7 @@ public Builder encodedPath(String path) {
         /**
          * Encodes the given segment and appends it to the path.
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.337 -0500", hash_original_method = "818DCEC2192004BCFE40E4E49FDA7A4C", hash_generated_method = "B34AC168D54B8003CF0F37D3B13C2499")
         
 public Builder appendPath(String newSegment) {
@@ -1934,6 +1938,7 @@ public Builder encodedFragment(String fragment) {
          * @param key which will be encoded
          * @param value which will be encoded
          */
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.354 -0500", hash_original_method = "F83D70A0FC90543F01AB6385367098CC", hash_generated_method = "A4980B53E56EA71AABF495818D735160")
         
 public Builder appendQueryParameter(String key, String value) {
@@ -2511,7 +2516,8 @@ public String toSafeString() {
         return builder.toString();
     }
     
-	public Builder buildUpon() {
+	@DSSafe(DSCat.SAFE_OTHERS)
+    public Builder buildUpon() {
 		return new Builder();
 	}
 

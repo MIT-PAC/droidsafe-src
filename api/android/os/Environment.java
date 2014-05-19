@@ -37,7 +37,8 @@ private static StorageVolume getPrimaryVolume() {
     /**
      * Gets the Android root directory.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.742 -0500", hash_original_method = "23501762B1C83E6EA646AAE54FEFC03E", hash_generated_method = "E43BC8BEDB5505F06F4FFC2211137866")
     
 public static File getRootDirectory() {

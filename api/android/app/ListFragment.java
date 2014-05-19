@@ -115,6 +115,7 @@ public ListFragment() {
     /**
      * Detach from list view.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.079 -0500", hash_original_method = "4AE67C9B14400A0313E10E10FEB59F4C", hash_generated_method = "FDE84136AAB0B0938E6DA23A8AEBA619")
     
 @Override

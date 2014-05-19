@@ -400,6 +400,7 @@ protected void onCancelled() {
         //return mFuture.cancel(mayInterruptIfRunning);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.603 -0400", hash_original_method = "6419D225056356234AD0A7B8CC3CE063", hash_generated_method = "7274381A5287B7C12182BBC6BC0E6E85")
     public final Result get() throws InterruptedException, ExecutionException {
     	return result;
@@ -407,6 +408,7 @@ protected void onCancelled() {
         //return mFuture.get();
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.604 -0400", hash_original_method = "7D7E6E809B7EB95E206E2FFE71D3D78F", hash_generated_method = "EF206F948FB16BA65C70E85B1721FB56")
     public final Result get(long timeout, TimeUnit unit) throws InterruptedException,
             ExecutionException, TimeoutException {

@@ -202,6 +202,7 @@ public abstract void setLogo(Drawable logo);
      * @param callback An OnNavigationListener that will receive events when the user
      *                 selects a navigation item.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.419 -0500", hash_original_method = "7CD20F9935B068DC4D83EB0E38CE3DB0", hash_generated_method = "73A34B2384C3F7FCF4EDF1C71012973C")
     
 public abstract void setListNavigationCallbacks(SpinnerAdapter adapter,
@@ -544,6 +545,7 @@ public abstract int getDisplayOptions();
      *
      * @see #addTab(Tab)
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.471 -0500", hash_original_method = "51C98EBC6BDC06DC18A9E8866F8861BE", hash_generated_method = "77BC4009C0921A6DD138D75CE9B4F570")
     
 public abstract Tab newTab();
@@ -554,6 +556,7 @@ public abstract Tab newTab();
      *
      * @param tab Tab to add
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.473 -0500", hash_original_method = "F35837BFD462C7A7235BE31AC89CD388", hash_generated_method = "1D41BFDABA8B02F7036FA50765FEE2A8")
     
 public abstract void addTab(Tab tab);
@@ -564,6 +567,7 @@ public abstract void addTab(Tab tab);
      * @param tab Tab to add
      * @param setSelected True if the added tab should become the selected tab.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.475 -0500", hash_original_method = "03FC6188C407C53B36E1AA9A9F9825F2", hash_generated_method = "5FF911FFD1B0D60370BF6E496075568D")
     
 public abstract void addTab(Tab tab, boolean setSelected);
@@ -576,6 +580,7 @@ public abstract void addTab(Tab tab, boolean setSelected);
      * @param tab The tab to add
      * @param position The new position of the tab
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.477 -0500", hash_original_method = "47C47A74736C3C5C240A9F4C3A39B5CE", hash_generated_method = "8EB5E4A4A37440645A9B6B3F04B330D8")
     
 public abstract void addTab(Tab tab, int position);
@@ -588,6 +593,7 @@ public abstract void addTab(Tab tab, int position);
      * @param position The new position of the tab
      * @param setSelected True if the added tab should become the selected tab.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.480 -0500", hash_original_method = "34411259FEC1851A84A2B0BB888392BC", hash_generated_method = "17E2AF636265D00586ABDBCD9E6F1A01")
     
 public abstract void addTab(Tab tab, int position, boolean setSelected);
@@ -716,6 +722,7 @@ public abstract CharSequence getText();
          * @param icon The drawable to use as an icon
          * @return The current instance for call chaining
          */
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.529 -0500", hash_original_method = "E8AFA2038251D9B0B35E245A2565BA76", hash_generated_method = "808BCB88E7B4F2EC6E7C52D3570FADC1")
         
 public abstract Tab setIcon(Drawable icon);
@@ -726,6 +733,7 @@ public abstract Tab setIcon(Drawable icon);
          * @param resId Resource ID referring to the drawable to use as an icon
          * @return The current instance for call chaining
          */
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.532 -0500", hash_original_method = "5FAECBEB3500A66E340DF5C35C1841FA", hash_generated_method = "DB9881E0701266930758E261EB916EEE")
         
 public abstract Tab setIcon(int resId);
@@ -737,6 +745,7 @@ public abstract Tab setIcon(int resId);
          * @param text The text to display
          * @return The current instance for call chaining
          */
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.534 -0500", hash_original_method = "56B880BE557997F448D87FB315E25B61", hash_generated_method = "CFE1BDF79ADD846F99A9701B183E7B39")
         
 public abstract Tab setText(CharSequence text);
@@ -748,6 +757,7 @@ public abstract Tab setText(CharSequence text);
          * @param resId A resource ID referring to the text that should be displayed
          * @return The current instance for call chaining
          */
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.537 -0500", hash_original_method = "6CB07A6D8843581E2F665C6A64E6CCA2", hash_generated_method = "857DA4535C8702C0ACCC1A8A8654B0B4")
         
 public abstract Tab setText(int resId);
@@ -811,6 +821,7 @@ public abstract Object getTag();
          * @param listener Listener to handle tab selection events
          * @return The current instance for call chaining
          */
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.551 -0500", hash_original_method = "5D8F5F34E08D679B9FB0738EDB6A8B4F", hash_generated_method = "6342A7E7790606A2EF9E9DEBFF331B3F")
         
 public abstract Tab setTabListener(TabListener listener);

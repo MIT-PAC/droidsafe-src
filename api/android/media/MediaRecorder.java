@@ -426,6 +426,7 @@ public void setLocation(float latitude, float longitude) {
      * @param max_duration_ms the maximum duration in ms (if zero or negative, disables the duration limit)
      *
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.725 -0500", hash_original_method = "B668CBA366084C55F47F6ED4964FF898", hash_generated_method = "9CBBA649156D4F578728A55D210BCDD3")
     
     public void setMaxDuration(int max_duration_ms) throws IllegalArgumentException{
@@ -834,6 +835,7 @@ public EventHandler(MediaRecorder mr, Looper looper) {
      * @throws IllegalStateException if it is called before
      * setOutputFormat() or after prepare()
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.753 -0500", hash_original_method = "FA1E1C8AC397C2513A8C4BBA9653310E", hash_generated_method = "20129432203CB4522BC7B5624FBDB421")
     
@@ -1000,6 +1002,7 @@ public void reset() {
      *
      * @param l the callback that will be run
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.791 -0500", hash_original_method = "1D9D4DF006E463AA131E1079BD21BB23", hash_generated_method = "D2226C2AEE46E386CEEAE20829BB160C")
     
 public void setOnErrorListener(OnErrorListener l)
@@ -1013,6 +1016,7 @@ public void setOnErrorListener(OnErrorListener l)
      *
      * @param listener the callback that will be run
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.834 -0500", hash_original_method = "4D9753A45AFF6F50F6DD9F2BE501A438", hash_generated_method = "00A764E9A5F73CCD36593277E2A3C417")
     
 public void setOnInfoListener(OnInfoListener listener)

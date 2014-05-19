@@ -36,6 +36,7 @@ public final class Scheme {
      *                  with this scheme
      * @param port      the default port for this scheme
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.787 -0500", hash_original_method = "FC3EBEAFEA712CD3115701A02487AC2E", hash_generated_method = "3D0DBE9192B830DF8F56939BB0FA9EA2")
     
 public Scheme(final String name,

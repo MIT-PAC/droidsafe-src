@@ -1591,6 +1591,7 @@ public void fling(int velocityX) {
      *
      * <p>This version also clamps the scrolling to the bounds of our child.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.432 -0500", hash_original_method = "748C5914370A5F8CDD8109B6F4611B5B", hash_generated_method = "3A1797599400A01D35584D2148E07111")
     
 @Override

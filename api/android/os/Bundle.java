@@ -348,6 +348,7 @@ public Object get(String key) {
      *
      * @param key a String key
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.446 -0500", hash_original_method = "717A16AB4D98DDB60DEBCEA5CDF9B0B2", hash_generated_method = "AD0429969CFF11E49824D5999E82F350")
     
 public void remove(String key) {
@@ -708,6 +709,7 @@ public void putSerializable(String key, Serializable value) {
      * @param key a String, or null
      * @param value a boolean array object, or null
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.496 -0500", hash_original_method = "8E721A4E4DD3EA40820BFACA50BE3D1C", hash_generated_method = "58BD281F5835739A9176EEFBD8CF5219")
     
@@ -787,6 +789,7 @@ public void putIntArray(String key, int[] value) {
      * @param key a String, or null
      * @param value a long array object, or null
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.507 -0500", hash_original_method = "749D6A41C446C63F668941511653896B", hash_generated_method = "55879D13B87CD3A5D8B928E5CF1696FB")
     
@@ -1021,6 +1024,7 @@ public char getChar(String key, char defaultValue) {
      * @param key a String
      * @return a short value
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.540 -0500", hash_original_method = "949AF94B781EE8B084883F15F1BA2BF2", hash_generated_method = "B7E5A4C7DFC4E2524881B79F707A82AF")
     
@@ -1036,6 +1040,7 @@ public short getShort(String key) {
      * @param key a String
      * @return a short value
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.542 -0500", hash_original_method = "CB97516320C4B19AFFFFC9855DAD2391", hash_generated_method = "25C0AAB0DC2B2D54D36CE0993C8D6EA4")
     
@@ -1204,6 +1209,7 @@ public double getDouble(String key) {
      * @param key a String
      * @return a double value
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.561 -0500", hash_original_method = "172C416958EF64BBE0F98CDA39B416EB", hash_generated_method = "131757E610E53BD9778C8E13104DB84B")
     
@@ -1615,6 +1621,7 @@ public ArrayList<CharSequence> getCharSequenceArrayList(String key) {
      * @param key a String, or null
      * @return a boolean[] value, or null
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.593 -0500", hash_original_method = "2242EDC01DC8898E91E207F436901294", hash_generated_method = "C4BC1E97D5F4531CF91DD4A2C1D48C93")
     

@@ -134,6 +134,7 @@ public static boolean interrupted() {
      * @param handler
      *            The handler to set or null.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.641 -0500", hash_original_method = "95384CA17BFB199A9F049656335D2B20", hash_generated_method = "55EC1A754B4B8622CAD4ED907C8F51B6")
     
 public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler handler) {

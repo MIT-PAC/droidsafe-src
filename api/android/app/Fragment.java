@@ -1189,6 +1189,7 @@ public void onResume() {
      *
      * @param outState Bundle in which to place your saved state.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.113 -0500", hash_original_method = "9C4F98F3F5A4FCEFF66E261EDA5693F3", hash_generated_method = "C04385BA6080B306978908B96949C69D")
     
 public void onSaveInstanceState(Bundle outState) {
@@ -1252,6 +1253,7 @@ public void onTrimMemory(int level) {
      * non-null view.  Internally it is called after the view's state has
      * been saved but before it has been removed from its parent.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.125 -0500", hash_original_method = "E54F17C7BAFD082A48D2152349C1815A", hash_generated_method = "EF5D35A4BE966F5779FF7FF52FB51600")
     
 public void onDestroyView() {
@@ -1316,6 +1318,7 @@ void initState() {
      * Called when the fragment is no longer attached to its activity.  This
      * is called after {@link #onDestroy()}.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.132 -0500", hash_original_method = "EF609D2FD1394DFBC19807CB21AD7D10", hash_generated_method = "83E23ABA3A95A944F06C58F7795DEF3A")
     
 public void onDetach() {

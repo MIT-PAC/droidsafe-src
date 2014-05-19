@@ -515,6 +515,7 @@ public void setImageState(int[] state, boolean merge) {
      * 
      * @attr ref android.R.styleable#ImageView_scaleType
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.910 -0500", hash_original_method = "63CC1440F0B24F3C6377C34C34E172F5", hash_generated_method = "9751751983FC74916A33102A2920D3D2")
     
 public void setScaleType(ScaleType scaleType) {
@@ -558,7 +559,8 @@ public Matrix getImageMatrix() {
         return mMatrix;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.916 -0500", hash_original_method = "A32A82AEE544A388BA62C8178AC7E88C", hash_generated_method = "5C00E4DE6909583021DDD7B5864A64A4")
     
 public void setImageMatrix(Matrix matrix) {

@@ -36,6 +36,7 @@ public static PlainSocketFactory getSocketFactory() {
 
     private  HostNameResolver nameResolver;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.926 -0500", hash_original_method = "0E5BF5873ABF9DF43E8A566F0715555C", hash_generated_method = "221ABB32C60F37DF9135EB5A170910A5")
     
 public PlainSocketFactory(final HostNameResolver nameResolver) {

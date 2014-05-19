@@ -230,6 +230,7 @@ public abstract int getBackStackEntryCount();
      * Return the BackStackEntry at index <var>index</var> in the back stack;
      * entries start index 0 being the bottom of the stack.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.312 -0500", hash_original_method = "C6BA46BCDC4C883DD39DC808512584CC", hash_generated_method = "79204E9430B6FA67CEF534DB5F847CAE")
     
 public abstract BackStackEntry getBackStackEntryAt(int index);
@@ -664,6 +665,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         return mBackStack != null ? mBackStack.size() : 0;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.446 -0500", hash_original_method = "898A7E40DF942FAA7422F0070AE7C2C0", hash_generated_method = "936D529282443088BF02B3FA798849A8")
     
 @Override

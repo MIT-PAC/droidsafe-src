@@ -150,7 +150,8 @@ public MediaMetadataRetriever() {
      * @param path The path of the input media file.
      * @throws IllegalArgumentException If the path is invalid.
      */
-    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.079 -0500", hash_original_method = "D47DF3C9D755BEB92AD11CA5A5487AA8", hash_generated_method = "318ADC299ACB0CF5EA529B8905847333")
     
     public void setDataSource(String path) throws IllegalArgumentException{
@@ -167,7 +168,8 @@ public MediaMetadataRetriever() {
      * @param headers the headers to be sent together with the request for the data
      * @throws IllegalArgumentException If the URI is invalid.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.082 -0500", hash_original_method = "75031631EDBDF61877DE8EFD8981A88D", hash_generated_method = "A5C7CBE8EC0A57C100FDAE4D70C4CF29")
     
 public void setDataSource(String uri,  Map<String, String> headers)
@@ -209,6 +211,7 @@ public void setDataSource(String uri,  Map<String, String> headers)
      * non-negative.
      * @throws IllegalArgumentException if the arguments are invalid
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.090 -0500", hash_original_method = "BC4C0D4D9E4315B0C10CA47469C111B0", hash_generated_method = "D85BA1CE07318F11395232A9DB385F44")
     
     public void setDataSource(FileDescriptor fd, long offset, long length)
@@ -228,6 +231,7 @@ public void setDataSource(String uri,  Map<String, String> headers)
      * @param fd the FileDescriptor for the file you want to play
      * @throws IllegalArgumentException if the FileDescriptor is invalid
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.093 -0500", hash_original_method = "EF1A32438BC38F472DA718584B5867D9", hash_generated_method = "4280F20F6A6FA29E01FA62C8646B8359")
     
@@ -247,6 +251,8 @@ public void setDataSource(FileDescriptor fd)
      * @throws SecurityException if the Uri cannot be used due to lack of
      * permission.
      */
+    @DSSink({DSSinkKind.NETWORK})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.096 -0500", hash_original_method = "701A3FA8EE72D63C1258CD78285617D5", hash_generated_method = "F487EBE20D2B1CF2C1444779A0CD30AC")
     
 public void setDataSource(Context context, Uri uri)
@@ -297,6 +303,8 @@ public void setDataSource(Context context, Uri uri)
         setDataSource(uri.toString());
     }
     
+    @DSSource({DSSourceKind.MEDIA})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.169 -0400", hash_original_method = "8FC26B688DF40812E766667E74AA42B9", hash_generated_method = "FE2CB58CC88315CB1A432EFEAAD82A77")
     public String extractMetadata(int keyCode) {
     	String s = new String();

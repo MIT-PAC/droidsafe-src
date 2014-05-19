@@ -98,6 +98,8 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.RESOURCES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.232 -0500", hash_original_method = "D8312749B850F43C5A70B4ED63CC08E3", hash_generated_method = "A5391203951C100DB9FC27DFD9F66662")
     
 @Override

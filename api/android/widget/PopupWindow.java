@@ -192,6 +192,7 @@ public class PopupWindow {
      *
      * <p>The popup does provide a background.</p>
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.945 -0500", hash_original_method = "A7D29AF9F459F2E9972F382B06EBA7BC", hash_generated_method = "BC7439675D95C559B6F05DEB3FB3F6E5")
     
 public PopupWindow(Context context) {
@@ -203,6 +204,7 @@ public PopupWindow(Context context) {
      *
      * <p>The popup does provide a background.</p>
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.947 -0500", hash_original_method = "366007D96D9B418EA2EA6640B7FB7C46", hash_generated_method = "ADF8BD67CC99DCCEC266EC66A9A07380")
     
 public PopupWindow(Context context, AttributeSet attrs) {
@@ -325,6 +327,7 @@ public PopupWindow(View contentView) {
      * @param width the popup's width
      * @param height the popup's height
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.961 -0500", hash_original_method = "52D8423742F4089F7506898A8921688C", hash_generated_method = "7B450D1149C936FFDF9B287C0DDB0171")
     
 public PopupWindow(int width, int height) {
@@ -343,6 +346,7 @@ public PopupWindow(int width, int height) {
      * @param width the popup's width
      * @param height the popup's height
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.964 -0500", hash_original_method = "824FA1289D7F0041B91552EC537ECD03", hash_generated_method = "D730601345BF8D11B375DA06A7185D0F")
     
 public PopupWindow(View contentView, int width, int height) {
@@ -361,6 +365,7 @@ public PopupWindow(View contentView, int width, int height) {
      * @param height the popup's height
      * @param focusable true if the popup can be focused, false otherwise
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.966 -0500", hash_original_method = "45A20F34B738086A724C95615CA38820", hash_generated_method = "2E97AA486D053350CC8C99BC5AE19E2F")
     
 public PopupWindow(View contentView, int width, int height, boolean focusable) {

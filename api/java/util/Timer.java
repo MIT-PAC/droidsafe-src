@@ -51,6 +51,7 @@ public Timer(String name, boolean isDaemon) {
      * @param name the name of the Timer.
      * @throws NullPointerException is {@code name} is {@code null}
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.168 -0500", hash_original_method = "02AE08AD1BF27E917ED31D51A1B3D791", hash_generated_method = "DE017D6B334B8FAA16AEDBC01E009554")
     
 public Timer(String name) {
@@ -62,6 +63,7 @@ public Timer(String name) {
      *
      * @param isDaemon {@code true} if the {@code Timer}'s thread should be a daemon thread.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.171 -0500", hash_original_method = "70CAEF4BF7F4A75D51C26667927F81EF", hash_generated_method = "15B6642BB509B71CA62741487A9CB5D4")
     
 public Timer(boolean isDaemon) {
@@ -122,6 +124,7 @@ public int purge() {
      *                if the {@code Timer} has been canceled, or if the task has been
      *                scheduled or canceled.
      */
+    @DSSpec(DSCat.EXEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.181 -0500", hash_original_method = "11725ACE17CC712A9ECE78E61369355E", hash_generated_method = "E5FBDC3B831A54ED62987E03F41010FB")
     
 public void schedule(TimerTask task, Date when) {
@@ -171,6 +174,7 @@ public void schedule(TimerTask task, long delay) {
      *                if the {@code Timer} has been canceled, or if the task has been
      *                scheduled or canceled.
      */
+    @DSSpec(DSCat.EXEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.187 -0500", hash_original_method = "2638FF3E02C15EB097A85AD3BAF82535", hash_generated_method = "B03E339FC2895DF48CBE79037980BEB1")
     
 public void schedule(TimerTask task, long delay, long period) {
@@ -196,6 +200,7 @@ public void schedule(TimerTask task, long delay, long period) {
      *                if the {@code Timer} has been canceled, or if the task has been
      *                scheduled or canceled.
      */
+    @DSSpec(DSCat.EXEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.189 -0500", hash_original_method = "D1ECD2ED5B40CEEFE097F1521E46D9CD", hash_generated_method = "BC7567E4F469DC71F10170E64C7B8281")
     
 public void schedule(TimerTask task, Date when, long period) {

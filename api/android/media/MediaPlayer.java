@@ -60,6 +60,8 @@ public static MediaPlayer create(Context context, Uri uri) {
      * @param holder the SurfaceHolder to use for displaying the video
      * @return a MediaPlayer object, or null if creation failed
      */
+    @DSSink({DSSinkKind.NETWORK})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.640 -0500", hash_original_method = "F1EC723DE0CD6316DF7D958E77DE1A55", hash_generated_method = "A6620CEC06F6001100387B20DEA57015")
     
 public static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder) {
@@ -738,6 +740,7 @@ public void pause() throws IllegalStateException {
      * @param mode    the power/wake mode to set
      * @see android.os.PowerManager
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.694 -0500", hash_original_method = "2C98FD0B2087D81FFC1D38F1403791EF", hash_generated_method = "F56733D416E412CF850F20FF00920AD5")
     

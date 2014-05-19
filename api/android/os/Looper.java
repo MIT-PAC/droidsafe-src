@@ -48,6 +48,7 @@ public synchronized static Looper getMainLooper() {
     /*
      * TODO: We need to model message passing within looper
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static void loop() {
         
 /*        Looper me = myLooper();

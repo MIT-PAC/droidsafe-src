@@ -153,6 +153,7 @@ public void setNetworkName(String networkName) {
      * Get the network name (SSID) of the group. Legacy Wi-Fi clients will discover
      * the p2p group using the network name.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.752 -0500", hash_original_method = "32FF89F2A0087E1C62BF10B34EF6D932", hash_generated_method = "DC64C8129674BFBBF94D2E6D1D3FC601")
     
@@ -168,6 +169,7 @@ public void setIsGroupOwner(boolean isGo) {
     }
 
     /** Check whether this device is the group owner of the created p2p group */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.758 -0500", hash_original_method = "9599D1040188F59722C5FA5110991675", hash_generated_method = "A081EA0AA099270013DF221F7CC39B44")
     
 public boolean isGroupOwner() {
@@ -182,6 +184,7 @@ public void setOwner(WifiP2pDevice device) {
     }
 
     /** Get the details of the group owner as a {@link WifiP2pDevice} object */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.761 -0500", hash_original_method = "64A8053D0F0646F5E4AC8BED59B588ED", hash_generated_method = "5357633E58BC1D89A5BD0F82B8A9A91C")
     
@@ -228,6 +231,7 @@ public boolean isClientListEmpty() {
     }
 
     /** Get the list of clients currently part of the p2p group */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.774 -0500", hash_original_method = "31A1E7A8626C889DB764B143F0123BF3", hash_generated_method = "9B9852E3DA294D7B9EA8E681DC06519D")
     
@@ -247,6 +251,7 @@ public void setPassphrase(String passphrase) {
      * at the group owner. Legacy Wi-Fi clients will need this passphrase alongside
      * network name obtained from {@link #getNetworkName()} to join the group
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.778 -0500", hash_original_method = "5EB5F9BABC374AD0DE2453D35DFCC36C", hash_generated_method = "082E499D0A06290331D523961E75BF62")
     

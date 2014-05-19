@@ -357,7 +357,7 @@ public boolean removeFooterView(View v) {
     }
     
     @DSComment("ListView")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Override
 	public ListAdapter getAdapter() {
 		// TODO Auto-generated method stub

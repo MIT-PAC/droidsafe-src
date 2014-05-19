@@ -4265,7 +4265,7 @@ public CheckedEntrySet(Set<Map.Entry<K, V>> s, Class<V> valueType) {
                 return new CheckedEntryIterator<K, V>(s.iterator(), valueType);
             }
 
-            @DSSafe(DSCat.DATA_STRUCTURE)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.146 -0500", hash_original_method = "0FB4B292E50A952F877CB518E0A96CF9", hash_generated_method = "E6F7C314E079A996E508CFEE995C7545")
             
 @Override public Object[] toArray() {
@@ -4278,7 +4278,7 @@ public CheckedEntrySet(Set<Map.Entry<K, V>> s, Class<V> valueType) {
                 return array;
             }
                         
-@DSSafe(DSCat.DATA_STRUCTURE)
+@DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.809 -0400", hash_original_method = "C1CA1F6CAFA571422DF3592838D87C35", hash_generated_method = "38B8F3E790B72CD3320F33B7173F6282")
             @SuppressWarnings("unchecked")
             @Override
@@ -4337,6 +4337,7 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
                 return s.containsAll(c);
             }
 
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.160 -0500", hash_original_method = "0D1A7F281A8819D32245C163B79E338D", hash_generated_method = "0CFC992AFFE34F50F1190A1FBD90F1E6")
             
 @Override public boolean addAll(Collection<? extends Map.Entry<K, V>> c) {

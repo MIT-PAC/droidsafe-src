@@ -1986,6 +1986,7 @@ public String resolveType(Context context) {
      * @see #getCategories
      * @see #addCategory
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.342 -0500", hash_original_method = "3612221F73372432993CCD6954A20D1D", hash_generated_method = "7915D278B71B4651DCC24C6686319D9A")
     
 public boolean hasCategory(String category) {
@@ -3721,6 +3722,7 @@ public Intent putExtras(Bundle extras) {
      * @param src The exact extras contained in this Intent are copied
      * into the target intent, replacing any that were previously there.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.525 -0500", hash_original_method = "9273ED8AEDE591E5D2100B41909C8A11", hash_generated_method = "C2F0CCF4A1DAF110F7CBEF1FA7C79D71")
     
 public Intent replaceExtras(Intent src) {
@@ -3735,6 +3737,7 @@ public Intent replaceExtras(Intent src) {
      * @param extras The new set of extras in the Intent, or null to erase
      * all extras.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.527 -0500", hash_original_method = "CBF42E478CC456FFD10D6777F319F0BD", hash_generated_method = "F442059822B057D55A287710A70DCBAE")
     
 public Intent replaceExtras(Bundle extras) {
@@ -3886,6 +3889,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         //}
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.461 -0400", hash_original_method = "E5580C6082A47C0EDDA03A45ABBBF7D7", hash_generated_method = "4B8FA51A496FF6E4B5BA8D2EE3D46DB1")
     public int fillIn(Intent other, int flags) {
         addTaint(flags);

@@ -43,6 +43,7 @@ RunnableFuture<T> varBEF434F9B24D8E8523500F630F54EF1C_34807659 =         new Fut
      * @throws RejectedExecutionException {@inheritDoc}
      * @throws NullPointerException       {@inheritDoc}
      */
+    @DSSpec(DSCat.EXEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.253 -0500", hash_original_method = "049AFBF6C6F134F34D289DFB97D38727", hash_generated_method = "D79DC49478D56E7E26C565781312A0F8")
     
 public Future<?> submit(Runnable task) {
@@ -52,6 +53,7 @@ public Future<?> submit(Runnable task) {
         return ftask;
     }
     
+    @DSSpec(DSCat.EXEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.223 -0400", hash_original_method = "30E9EFFFABD0E5EC417E237355DE18FD", hash_generated_method = "DD6D1EA6860F6B27E5D7F68DCF37D2D8")
     public <T> Future<T> submit(Runnable task, T result) {
         addTaint(result.getTaint());
@@ -74,6 +76,7 @@ Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_603271610 =         ftask;
         //return ftask;
     }
     
+    @DSSpec(DSCat.EXEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.223 -0400", hash_original_method = "F1883381F3EE85BA65E359E467E69859", hash_generated_method = "0A3A2888CF8F0BF76D5EA93D0E113021")
     public <T> Future<T> submit(Callable<T> task) {
         addTaint(task.getTaint());

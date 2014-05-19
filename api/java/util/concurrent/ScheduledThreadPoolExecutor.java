@@ -1231,6 +1231,7 @@ public int drainTo(Collection<? super Runnable> c, int maxElements) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.176 -0500", hash_original_method = "7408B58852530A87736A5AD8CAD9599F", hash_generated_method = "76FFD2DB2227DB664664E22C9C3E0846")
         
 public Object[] toArray() {
@@ -1243,7 +1244,8 @@ public Object[] toArray() {
             }
         }
                 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.783 -0400", hash_original_method = "C537847CD06DB8C82AFD734BEA1D62C4", hash_generated_method = "7CB70BD5E875B7DC6412AAF27CBC5613")
+@DSSafe(DSCat.SAFE_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.783 -0400", hash_original_method = "C537847CD06DB8C82AFD734BEA1D62C4", hash_generated_method = "7CB70BD5E875B7DC6412AAF27CBC5613")
         @SuppressWarnings("unchecked")
         public <T> T[] toArray(T[] a) {
             final ReentrantLock lock = this.lock;

@@ -39,6 +39,7 @@ public static void enableDebugLogging(boolean enabled) {
     public abstract <D> Loader<D> initLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
     
+    @DSSpec(DSCat.TRIGGER)
     public abstract <D> Loader<D> restartLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
 

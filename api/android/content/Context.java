@@ -445,6 +445,8 @@ public int getThemeResId() {
     /**
      * Return the Theme object associated with this Context.
      */
+    @DSSource({DSSourceKind.RESOURCES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.883 -0500", hash_original_method = "7ACE2B655A5B877874BCA55245CA4650", hash_generated_method = "CF306A85F4EDB21EEEBC87F9574CE37E")
     
 public abstract Resources.Theme getTheme();

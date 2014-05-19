@@ -40,6 +40,7 @@ public XmlPullParserException(String s) {
     }
     */
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.948 -0500", hash_original_method = "28FAE29CB2E621B52838DE3161E10D49", hash_generated_method = "225A30E3BA9CB0EA3FC879A52A6B5E1B")
     
 public XmlPullParserException(String msg, XmlPullParser parser, Throwable chain) {

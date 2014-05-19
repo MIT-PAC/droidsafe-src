@@ -185,6 +185,7 @@ public String getTypeName() {
      * Return a human-readable name describing the subtype of the network.
      * @return the name of the network subtype
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.920 -0500", hash_original_method = "0043E0CF1F933E5EC5CD97392CA0E5B0", hash_generated_method = "F6F74B76F3FBAEECF2D7DD5FDACFDAC7")
     
@@ -368,6 +369,7 @@ public void setDetailedState(DetailedState detailedState, String reason, String 
      * if one is available.
      * @return the reason for failure, or null if not available
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.945 -0500", hash_original_method = "788F68C9DAC18237AEDF0C4BED188B0D", hash_generated_method = "B6A9CC282648BE1583E2C5365A01C4FF")
     
@@ -383,6 +385,7 @@ public String getReason() {
      * if one is available.
      * @return the extra information, or null if not available
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.947 -0500", hash_original_method = "74D0311B373A7BB37462D7229B3CD3F9", hash_generated_method = "9CB31D64DF097D60A610ACE07788F4CD")
     

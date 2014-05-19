@@ -108,6 +108,7 @@ protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onDestroy();
     }
     
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.771 -0400", hash_original_method = "955E85868B41B55EC53984762AF65544", hash_generated_method = "30388E3EF3BC0BDECE4758D0963DCC90")
     @Override
     public void onContentChanged() {

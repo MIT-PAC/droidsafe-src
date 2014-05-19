@@ -81,7 +81,7 @@ public final int size() {
      *             if {@code buffer} is {@code null}.
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.614 -0500", hash_original_method = "91D255AEAD2ED7375F2242249D64C3A6", hash_generated_method = "1314E249A0FB0A0967DD391BB94D9A0D")
     
 @Override

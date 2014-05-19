@@ -279,6 +279,7 @@ public long getTime() {
      * @return {@code true} when this {@code ZipEntry} is a directory, {@code
      *         false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.332 -0500", hash_original_method = "4596D564DD1CB7B8029ED574B004E951", hash_generated_method = "6DC5C14B19BFC6BD79DFAFD26F16A37A")
     
 public boolean isDirectory() {

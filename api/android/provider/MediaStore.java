@@ -620,6 +620,7 @@ public static final Cursor queryMiniThumbnails(ContentResolver cr, Uri uri, int 
                 return cr.query(uri, projection, "kind = " + kind, null, DEFAULT_SORT_ORDER);
             }
 
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.544 -0500", hash_original_method = "BE9254821AC284A8AB44D13688ACA7DE", hash_generated_method = "E5ADCA2D02DCA0BD2BD1E6467DD1DEF8")
             

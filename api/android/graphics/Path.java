@@ -787,6 +787,7 @@ public void addArc(RectF oval, float startAngle, float sweepAngle) {
      * @param ry   The y-radius of the rounded corners on the round-rectangle
      * @param dir  The direction to wind the round-rectangle's contour
      */
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.250 -0500", hash_original_method = "3ECD815B6409768DB15813B06CD42DD5", hash_generated_method = "CAD5522B69D979DEA8767B5667599229")
     
 public void addRoundRect(RectF rect, float rx, float ry, Direction dir) {
@@ -807,6 +808,7 @@ public void addRoundRect(RectF rect, float rx, float ry, Direction dir) {
      * @param radii Array of 8 values, 4 pairs of [X,Y] radii
      * @param dir  The direction to wind the round-rectangle's contour
      */
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.252 -0500", hash_original_method = "543113738AC73676270E7FCF210EDB1F", hash_generated_method = "A7851546E4E62DD9E4A187AF2279F6AD")
     
 public void addRoundRect(RectF rect, float[] radii, Direction dir) {

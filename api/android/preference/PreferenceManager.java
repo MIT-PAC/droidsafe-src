@@ -98,7 +98,8 @@ public static void setDefaultValues(Context context, int resId, boolean readAgai
      * @see #setSharedPreferencesName(String)
      * @see #setSharedPreferencesMode(int)
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.PREFERENCES})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.741 -0500", hash_original_method = "9646A9372ECC55871733A680E62A72CA", hash_generated_method = "2F9BBD3261B2D934E006F58101CB7E9C")
     
 public static void setDefaultValues(Context context, String sharedPreferencesName,

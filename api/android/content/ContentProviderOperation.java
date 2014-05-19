@@ -44,6 +44,7 @@ public static Builder newUpdate(Uri uri) {
      * @param uri The {@link Uri} that is the target of the delete.
      * @return a {@link Builder}
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.128 -0500", hash_original_method = "0693BC23F33A94F2A72DA35D1DD7A47F", hash_generated_method = "1A8C4FF33BF0D211678913E79B9F602D")
     
 public static Builder newDelete(Uri uri) {
@@ -338,6 +339,7 @@ public Builder withValueBackReferences(ContentValues backReferences) {
          * This can only be used with builders of type insert, update, or assert.
          * @return this builder, to allow for chaining.
          */
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.196 -0500", hash_original_method = "9B7E0512DF416F22106A40FEC0A8A4AE", hash_generated_method = "653D96A28F937E3E6B4FA8723303C2A2")
         
 public Builder withValueBackReference(String key, int previousResult) {
@@ -445,6 +447,7 @@ public Builder withValue(String key, Object value) {
          * This can only be used with builders of type update, delete, or assert.
          * @return this builder, to allow for chaining.
          */
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.206 -0500", hash_original_method = "26D13871C486DC34FECD72252582D17D", hash_generated_method = "6DD5C939ADB84FC524E396FD7DB9EC38")
         
 public Builder withSelection(String selection, String[] selectionArgs) {

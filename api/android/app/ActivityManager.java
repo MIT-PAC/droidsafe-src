@@ -364,7 +364,8 @@ public List<RecentTaskInfo> getRecentTasks(int maxNum, int flags)
      *
      * @hide
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.OS_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.622 -0500", hash_original_method = "324273237D89470A473FD6EC5C103A40", hash_generated_method = "4CC0E1DB103FC85AF064A4B9351776BF")
     
 public List<RunningTaskInfo> getRunningTasks(int maxNum, int flags, IThumbnailReceiver receiver)
@@ -1447,6 +1448,7 @@ public Debug.MemoryInfo[] getProcessMemoryInfo(int[] pids) {
      * @param packageName The name of the package whose processes are to
      * be killed.
      */
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.935 -0500", hash_original_method = "BAC028425422747AF2B8DB952F37E411", hash_generated_method = "1AAF601EE353DA161CF094E1A45BC193")
     
 public void killBackgroundProcesses(String packageName) {

@@ -32,6 +32,7 @@ public static int getSoTimeout(final HttpParams params) {
      *
      * @param timeout Timeout in milliseconds
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.664 -0500", hash_original_method = "CB4B61C273CDC408983770CE1E9EEDF9", hash_generated_method = "64F4FEB6925839C1613845C4B9312681")
     
 public static void setSoTimeout(final HttpParams params, int timeout) {
@@ -152,6 +153,7 @@ public static int getConnectionTimeout(final HttpParams params) {
      * 
      * @param timeout Timeout in milliseconds.
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.683 -0500", hash_original_method = "51CE67EE0A63F7004F655B49DB0B10B9", hash_generated_method = "5DE9D6C9CF48A352E7092533F5911958")
     
 public static void setConnectionTimeout(final HttpParams params, int timeout) {

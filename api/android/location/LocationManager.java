@@ -917,6 +917,7 @@ public void addProximityAlert(double latitude, double longitude,
      * @param intent the PendingIntent that no longer needs to be notified of
      * proximity alerts
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.106 -0500", hash_original_method = "4A48D6353D1407BC4C3112124D5D3B7A", hash_generated_method = "1DC0478D6B785A0F039D6351F5291594")
     
 public void removeProximityAlert(PendingIntent intent) {

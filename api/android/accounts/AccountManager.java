@@ -907,6 +907,7 @@ public AuthenticatorDescription[] getAuthenticatorTypes() {
      * @return An array of {@link Account}, one for each account.  Empty
      *     (never null) if no accounts have been added.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.984 -0500", hash_original_method = "CBAE32CDB06D92C44980C30430EF1CC0", hash_generated_method = "3C8716EFC8BE771BB2ED9E3800837556")
     
@@ -1094,6 +1095,7 @@ public boolean addAccountExplicitly(Account account, String password, Bundle use
      *     true if the account has been successfully removed,
      *     false if the authenticator forbids deleting this account.
      */
+    @DSSpec(DSCat.ANDROID_ACCOUNT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.016 -0500", hash_original_method = "E8BA698C89E3CF76A294446D4D176FF0", hash_generated_method = "604D26B1D6F9346FDB793FE2F6AF6F35")
     
 public AccountManagerFuture<Boolean> removeAccount(final Account account,

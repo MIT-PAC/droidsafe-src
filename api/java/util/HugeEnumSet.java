@@ -53,6 +53,7 @@ HugeEnumSet(Class<E> elementType, E[] enums) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.284 -0500", hash_original_method = "E12827AAC6F89269FBC667C494374EA1", hash_generated_method = "839EAD08A26A2390D762938F924C986D")
     
 @Override

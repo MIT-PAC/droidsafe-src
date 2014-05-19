@@ -26,6 +26,7 @@ public class DateFormat {
      * @param context the context to use for the content resolver
      * @return true if 24 hour time format is selected, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.144 -0500", hash_original_method = "E5AB6833BD9B82E228B17845C6EA8653", hash_generated_method = "AB0FFB3AEC8ABA85D7943D4EBCB83DC4")
     
 public static boolean is24HourFormat(Context context) {
@@ -295,6 +296,7 @@ public static final CharSequence format(CharSequence inFormat, Date inDate) {
      * @param inDate the date to format
      * @return a {@link CharSequence} containing the requested text
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.179 -0500", hash_original_method = "1E7FCBB9BDAB6241DCC43FD2CDBCAE7C", hash_generated_method = "35A0B093592D9F22C9A064893A06A86F")
     
 public static final CharSequence format(CharSequence inFormat, Calendar inDate) {

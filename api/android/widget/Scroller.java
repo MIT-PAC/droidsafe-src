@@ -216,6 +216,7 @@ public final boolean isFinished() {
      *  
      * @param finished The new finished value.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.157 -0500", hash_original_method = "D2A5F5698F1FC9281D0C68AF0BDE844E", hash_generated_method = "9341FE86DB356DCCE766B8064D35353F")
     
 public final void forceFinished(boolean finished) {

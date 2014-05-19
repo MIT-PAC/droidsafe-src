@@ -106,7 +106,8 @@ public void setPrimaryClip(ClipData clip) {
     /**
      * Returns the current primary clip on the clipboard.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.CLIPBOARD})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.361 -0500", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "7DDDA0056751537DC044752D3DE1A34C")
     
 public ClipData getPrimaryClip() {
@@ -121,7 +122,8 @@ public ClipData getPrimaryClip() {
      * Returns a description of the current primary clip on the clipboard
      * but not a copy of its data.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.CLIPBOARD})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.363 -0500", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "CA11E7B1CBE4EC33585AD3095A9223D3")
     
 public ClipDescription getPrimaryClipDescription() {
@@ -145,6 +147,7 @@ public boolean hasPrimaryClip() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.368 -0500", hash_original_method = "E5044C03AB4AD3DC9569B565F2008B98", hash_generated_method = "F8652FD64D22F64F108BE481EA8913D3")
     
 public void addPrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
@@ -157,6 +160,7 @@ public void addPrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
                 }
             }
             mPrimaryClipChangedListeners.add(what);
+            what.onPrimaryClipChanged();
         }
     }
 

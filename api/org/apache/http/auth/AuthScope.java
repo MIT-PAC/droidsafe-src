@@ -54,6 +54,7 @@ public class AuthScope {
      *   May be set to <tt>null</tt> if credenticals are applicable to
      *   any authentication scheme. 
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.592 -0500", hash_original_method = "DA242C23FF99C9B0BDF7227FEE464070", hash_generated_method = "3CBB7DDB76DB05FA8A66E3DEA0C7FF6C")
     
 public AuthScope(final String host, int port, 
@@ -79,6 +80,7 @@ public AuthScope(final String host, int port,
      *   to <tt>null</tt> if credenticals are applicable to
      *   any realm. 
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.595 -0500", hash_original_method = "C3D4A92B6459D8B60217C4D554CBE13A", hash_generated_method = "1D376316D1205516ABEA16C475D4BC2B")
     
 public AuthScope(final String host, int port, final String realm) {
@@ -96,6 +98,7 @@ public AuthScope(final String host, int port, final String realm) {
      *   to negative value if credenticals are applicable to
      *   any port. 
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.598 -0500", hash_original_method = "00099B5ABB2589DBB04B6BC1AD6C4CF5", hash_generated_method = "75BA9D77046CF6409D4CBE0F95B882A5")
     
 public AuthScope(final String host, int port) {
@@ -105,6 +108,7 @@ public AuthScope(final String host, int port) {
     /** 
      * Creates a copy of the given credentials scope.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.601 -0500", hash_original_method = "20C18D8617332347FA916FFE36E3E911", hash_generated_method = "7E2AC3F4E75A651E0CFEEF3C2B877105")
     
 public AuthScope(final AuthScope authscope) {

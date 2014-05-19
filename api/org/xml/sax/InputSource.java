@@ -60,6 +60,7 @@ public InputSource ()
      * @see #setEncoding
      * @see #setCharacterStream
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.616 -0500", hash_original_method = "7919F547FCB87899F58CF069384E6AAD", hash_generated_method = "D1835C4469F5A6537AB5B42A8D63DDEC")
     
 public InputSource (String systemId)
@@ -171,6 +172,7 @@ public String getPublicId ()
      * @see org.xml.sax.Locator#getSystemId
      * @see org.xml.sax.SAXParseException#getSystemId
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.627 -0500", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "D9FED68AD30F5F5E327902500C39300D")
     
 public void setSystemId (String systemId)
@@ -255,6 +257,7 @@ public InputStream getByteStream ()
      * @see #setByteStream
      * @see #getEncoding
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.637 -0500", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "F16BDC16289B2D2161EBDE6B982650A4")
     
 public void setEncoding (String encoding)

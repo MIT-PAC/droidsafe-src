@@ -345,6 +345,7 @@ public Uri getUri() {
          * @return Returns the item's textual representation.
          */
 //BEGIN_INCLUDE(coerceToText)
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.657 -0500", hash_original_method = "2A1795F61A3E14A1308A3A7CD55951FC", hash_generated_method = "DEFCF0170A8A578D98974249E132B756")
         
 public CharSequence coerceToText(Context context) {
@@ -414,7 +415,8 @@ public CharSequence coerceToText(Context context) {
     /**
      * Return the number of items in the clip data.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.CLIPBOARD})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.683 -0500", hash_original_method = "2908203B9FEFAA3035EA88685E6DC23A", hash_generated_method = "5D1AD865251A7873FAFBCD6D25363BA0")
     
 public int getItemCount() {
@@ -425,6 +427,8 @@ public int getItemCount() {
      * Return a single item inside of the clip data.  The index can range
      * from 0 to {@link #getItemCount()}-1.
      */
+    @DSSource({DSSourceKind.CLIPBOARD})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.684 -0500", hash_original_method = "79B4F12EE34F43C8036D233ADFF72DDF", hash_generated_method = "4F5CD9E17BCB4FF586B31D0FC9D3644C")
     
 public Item getItemAt(int index) {

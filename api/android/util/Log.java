@@ -199,6 +199,8 @@ public static int e(String tag, String msg, Throwable tr) {
      * @param tag Used to identify the source of a log message.
      * @param msg The message you would like logged.
      */
+    @DSSink({DSSinkKind.LOG})
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.115 -0500", hash_original_method = "55ECF3B8141D5A99D3F9726C340DA85F", hash_generated_method = "BABAA912F5D364975590475B974ACC91")
     
 public static int wtf(String tag, String msg) {
@@ -226,6 +228,7 @@ public static int wtf(String tag, Throwable tr) {
      * @param msg The message you would like logged.
      * @param tr An exception to log.  May be null.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.119 -0500", hash_original_method = "181C11BE6032133F9C5410C68DB86F4F", hash_generated_method = "9436003A1F0DDF141A169F89BD484EDA")
     

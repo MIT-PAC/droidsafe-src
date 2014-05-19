@@ -109,7 +109,7 @@ public StringBuilder append(boolean b) {
      * @see String#valueOf(char)
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.190 -0500", hash_original_method = "9D73E236BE501966A93F921E007247A5", hash_generated_method = "573014C053845D973AB8BF2E1141C001")
     
 public StringBuilder append(char c) {
@@ -311,7 +311,7 @@ public StringBuilder append(char[] str, int offset, int len) {
      * @return this builder.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.215 -0500", hash_original_method = "D80365633E36C9036E4897C864A6AF37", hash_generated_method = "FDC02CA5B38F45068CDDBB9202395239")
     
 public StringBuilder append(CharSequence csq) {
@@ -337,7 +337,7 @@ public StringBuilder append(CharSequence csq) {
      *             the length of {@code csq}.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.218 -0500", hash_original_method = "B3407F260091B09D879B57806B9A4E00", hash_generated_method = "794B834A31083CBEDCB6E4DE1626E692")
     
 public StringBuilder append(CharSequence csq, int start, int end) {

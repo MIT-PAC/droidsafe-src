@@ -17,6 +17,7 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 
     private  String value;
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     public BasicNameValuePair(final String name, final String value) {
         super();
         if (name == null) {

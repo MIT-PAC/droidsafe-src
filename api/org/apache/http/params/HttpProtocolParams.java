@@ -136,6 +136,7 @@ public static boolean useExpectContinue(final HttpParams params) {
             (CoreProtocolPNames.USE_EXPECT_CONTINUE, false);
     }
     
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.587 -0500", hash_original_method = "BD8A4B1902B173E8C87CFFD2C5324E32", hash_generated_method = "CCE993304467A7F0FC09E7656896E5A0")
     
 public static void setUseExpectContinue(final HttpParams params, boolean b) {

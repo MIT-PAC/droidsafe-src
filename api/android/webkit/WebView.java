@@ -1363,6 +1363,7 @@ public WebView(Context context, AttributeSet attrs, int defStyle) {
      * @param attrs An AttributeSet passed to our parent.
      * @param defStyle The default style resource ID.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.386 -0500", hash_original_method = "BE11AB5DD0D3637413B429DAD28044B2", hash_generated_method = "472B30A2BCF3E9725DD6B03E7F6660A4")
     
 public WebView(Context context, AttributeSet attrs, int defStyle,
@@ -1382,6 +1383,7 @@ public WebView(Context context, AttributeSet attrs, int defStyle,
      * object implementing those interfaces, as values.
      * @hide pending API council approval.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.389 -0500", hash_original_method = "7ADEC5165C9B887ADF22EE4CFBB5B6F5", hash_generated_method = "5451A5B54663C331B2485EB67A485CC5")
     
 protected WebView(Context context, AttributeSet attrs, int defStyle,

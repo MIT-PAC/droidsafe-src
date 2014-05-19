@@ -389,7 +389,7 @@ public String debugDump() {
      *
      * @return SIPHeader []
      */
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.650 -0500", hash_original_method = "7EBA89BCEE46EEC5D25867CF89F8E8B9", hash_generated_method = "AFD4D64ED22ACE50EF1BB1B1A7A48939")
     
@@ -766,7 +766,7 @@ public HDR set(int position, HDR sipHeader) {
 
     }
         
-@DSSafe(DSCat.DATA_STRUCTURE)
+@DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.339 -0400", hash_original_method = "B04CD19C0316B320C5B66A678FB2994B", hash_generated_method = "913F231D737BF10A7AB8B832C5BAA111")
     public <T> T[] toArray(T[] array) {

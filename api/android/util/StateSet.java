@@ -26,6 +26,7 @@ public static boolean isWildCard(int[] stateSetOrSpec) {
      *        prohibited (if negative) {@link android.view.View} states.
      * @param stateSet an array of {@link android.view.View} states
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.376 -0500", hash_original_method = "5B88EE78CFC8C735E181024E07BA80C7", hash_generated_method = "208C9AE8277836D87A163F35AC278E5D")
     
 public static boolean stateSetMatches(int[] stateSpec, int[] stateSet) {
@@ -88,6 +89,7 @@ public static boolean stateSetMatches(int[] stateSpec, int[] stateSet) {
      *        prohibited (if negative) {@link android.view.View} states.
      * @param state a {@link android.view.View} state
      */
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.379 -0500", hash_original_method = "1E9CEB0E6C412AC753472E7FDFD057DD", hash_generated_method = "4B2365B4FEF06CC32036F5F5B1C16B06")
     
 public static boolean stateSetMatches(int[] stateSpec, int state) {

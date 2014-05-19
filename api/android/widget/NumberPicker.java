@@ -788,6 +788,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
      *
      * @param onValueChangedListener The listener.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.161 -0500", hash_original_method = "B8FD740B950D37D2ACEC32CDC9BBCB3E", hash_generated_method = "4E83B632DDA0759287BED9C3BB74F152")
     
 public void setOnValueChangedListener(OnValueChangeListener onValueChangedListener) {

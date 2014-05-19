@@ -46,6 +46,7 @@ public final class NdefMessage implements Parcelable {
      * and the ID + TYPE + PAYLOAD fields are of the correct size.
      * @throws FormatException
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.056 -0500", hash_original_method = "745916B1AE6188C8022A7E21DA1360C3", hash_generated_method = "0BCFE0C51BC238C65CB386EEA59890A5")
     
 public NdefMessage(byte[] data) throws FormatException {

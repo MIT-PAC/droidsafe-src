@@ -50,7 +50,8 @@ private static void throwNotInitialized() throws KeyStoreException {
      * @throws NullPointerException if {@code type == null}
      * @see #getDefaultType
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SECURITY_INFO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.331 -0500", hash_original_method = "8219108C73AF092A133C70DEA775DA97", hash_generated_method = "FEA2A071F474C729EB28D6AA867BFDC0")
     
 public static KeyStore getInstance(String type) throws KeyStoreException {
@@ -86,7 +87,8 @@ public static KeyStore getInstance(String type) throws KeyStoreException {
      *             NoSuchAlgorithmException) as in 1.4 release
      * @see #getDefaultType
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SECURITY_INFO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.334 -0500", hash_original_method = "E79F87A65CC661E36FF41DA591B3A31D", hash_generated_method = "A2D39DFE38EA02CB2269278A461D92BA")
     
 public static KeyStore getInstance(String type, String provider)
@@ -124,7 +126,8 @@ public static KeyStore getInstance(String type, String provider)
      *             NoSuchAlgorithmException) as in 1.4 release
      * @see #getDefaultType
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SECURITY_INFO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.337 -0500", hash_original_method = "DAE2CFCBAFEE42DE8D4B61EE11C10C65", hash_generated_method = "7B37C796C47FC24BD1C683EC522000C7")
     
 public static KeyStore getInstance(String type, Provider provider) throws KeyStoreException {
@@ -154,7 +157,8 @@ public static KeyStore getInstance(String type, Provider provider) throws KeySto
      *
      * @return the default type for {@code KeyStore} instances
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SECURITY_INFO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.340 -0500", hash_original_method = "57AAB0F03057AE1C147A6E60DF4FEF55", hash_generated_method = "C3FA8A029DE61ED9E58516EBD430AC26")
     
 public static final String getDefaultType() {
@@ -627,6 +631,8 @@ public final void store(LoadStoreParameter param) throws KeyStoreException,
      *             if an exception occurred while loading the certificates of
      *             this {@code KeyStore}.
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.391 -0500", hash_original_method = "E81C77E0001BACB83F4AF42B434C83C2", hash_generated_method = "6DC76D34DD4F91D7DF08A1B6AE70F584")
     
 public final void load(InputStream stream, char[] password)
@@ -1357,6 +1363,8 @@ public Certificate getTrustedCertificate() {
      * @throws IllegalArgumentException
      *             if the given {@link LoadStoreParameter} is not recognized.
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.393 -0500", hash_original_method = "C4F6682CFB8856C5C1A14F5939BD3C2A", hash_generated_method = "BDE33E87F5F2C8001C93D6D865B27DAF")
     
 public final void load(LoadStoreParameter param) throws IOException,

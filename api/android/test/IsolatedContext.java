@@ -164,6 +164,7 @@ public void addOnAccountsUpdatedListener(OnAccountsUpdateListener listener,
             // do nothing
         }
 
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.950 -0500", hash_original_method = "C22581F9BCE56EDC1300FA008A2943C3", hash_generated_method = "0ECA21841551971F4B68C27DD6CEE018")
         

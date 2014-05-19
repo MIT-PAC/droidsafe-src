@@ -356,6 +356,8 @@ public ContextImpl(ContextImpl context) {
         return mThemeResource;
     }
     
+    @DSSource({DSSourceKind.RESOURCES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Override
     public Resources.Theme getTheme() {
         throw new UnsupportedOperationException();

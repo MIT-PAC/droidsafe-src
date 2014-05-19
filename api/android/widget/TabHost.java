@@ -283,6 +283,7 @@ public TabWidget getTabWidget() {
         return mTabWidget;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.604 -0500", hash_original_method = "715443AB3E5984F89EAA89C58AA4B1A0", hash_generated_method = "17F33289529B0E89B7B16D65A713E3E1")
     
