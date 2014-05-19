@@ -22,6 +22,7 @@ public class InputStreamEntity extends AbstractHttpEntity {
 
     private boolean consumed = false;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.495 -0500", hash_original_method = "9ECB63D0474F50482B9F88A6526A3761", hash_generated_method = "C42E460FAD8B2A761A1240B41FBA53CF")
     
 public InputStreamEntity(final InputStream instream, long length) {

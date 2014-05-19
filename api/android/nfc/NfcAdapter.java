@@ -473,6 +473,7 @@ public boolean disable() {
      * @param activities optional additional activities that should also enable NDEF push with
      *                   the provided NDEF message
      */
+    @DSSpec(DSCat.NFC)
     @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.685 -0500", hash_original_method = "A1E6832BF1F30CB75C5E3838CB4EB39F", hash_generated_method = "2801EBC84E285C2B255CCA9C15DB4170")
     

@@ -410,6 +410,7 @@ public static Uri getDefaultUri(int type) {
      * 
      * @param activity The activity used to get a managed cursor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.306 -0500", hash_original_method = "2A8A1FC42FD49A3D281BB8A7356537D2", hash_generated_method = "EC93F794C97F7097FD5424FF3177DD1D")
     
 public RingtoneManager(Activity activity) {
@@ -424,6 +425,7 @@ public RingtoneManager(Activity activity) {
      * 
      * @param context The context to used to get a cursor.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.309 -0500", hash_original_method = "AEFBB2F4D30FA9949534E3B15FD9C787", hash_generated_method = "C7A98A73F6C92819CAC94B8AF371E3EA")
     
 public RingtoneManager(Context context) {
@@ -550,7 +552,8 @@ public void setIncludeDrm(boolean includeDrm) {
      * @see #TITLE_COLUMN_INDEX
      * @see #URI_COLUMN_INDEX
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.MEDIA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.328 -0500", hash_original_method = "890985AD9BCFC1049E02A6DFBECAA43E", hash_generated_method = "01D12EE6863EF1A9F2C9EC5DF6350F08")
     
 public Cursor getCursor() {
@@ -591,6 +594,7 @@ public Ringtone getRingtone(int position) {
      * @param position The position (in the {@link Cursor}) of the ringtone.
      * @return A {@link Uri} pointing to the ringtone.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.333 -0500", hash_original_method = "4D2A1FDA5FCE10764EC2653DD3811CF2", hash_generated_method = "C12BEE11A955513EE74FBA26EC70500E")
     
@@ -610,7 +614,8 @@ public Uri getRingtoneUri(int position) {
      * @param ringtoneUri The {@link Uri} to retreive the position of.
      * @return The position of the {@link Uri}, or -1 if it cannot be found.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.MEDIA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.339 -0500", hash_original_method = "ED1F9D5C280AF9E93D506709043225B3", hash_generated_method = "734274D4215FD5B433A7CE87ECCB5FA2")
     
 public int getRingtonePosition(Uri ringtoneUri) {

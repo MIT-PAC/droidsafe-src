@@ -56,6 +56,7 @@ public void restat(String path) { native_restat(path); }
      * The total number of blocks on the file system.  This corresponds
      * to the Unix statfs.f_blocks field.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.548 -0500", hash_original_method = "AA8CC1613F4A2D3F7308C06B4F7C4105", hash_generated_method = "5AF378737BF63484FB9003BC51DDFC51")
     
@@ -70,6 +71,7 @@ public void restat(String path) { native_restat(path); }
      * corresponds to the Unix statfs.f_bfree field.  Most applications will
      * want to use {@link #getAvailableBlocks()} instead.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.551 -0500", hash_original_method = "F279B1780F1BAD71D18F3CF49F704643", hash_generated_method = "AD228BC1F272084639AC4280257EEE22")
     

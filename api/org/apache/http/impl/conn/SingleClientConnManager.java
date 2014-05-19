@@ -62,6 +62,7 @@ public class SingleClientConnManager implements ClientConnectionManager {
      * @param schreg    the scheme registry, or
      *                  <code>null</code> for the default registry
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.333 -0500", hash_original_method = "3E7F5EDF72EC8A96B4F4BE9344F2EB6F", hash_generated_method = "434DDE99510BF4146083C4E09BC81D24")
     
 public SingleClientConnManager(HttpParams params,

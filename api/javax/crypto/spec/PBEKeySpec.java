@@ -109,6 +109,7 @@ public PBEKeySpec(char[] password, byte[] salt, int iterationCount,
      * @throws IllegalArgumentException
      *             if the salt is empty or iteration count is zero or negative.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.957 -0500", hash_original_method = "55AE5096776E3EC3786EB41522B2BAD8", hash_generated_method = "3552E8AF178ADE40DA7CD04443E650CD")
     
 public PBEKeySpec(char[] password, byte[] salt, int iterationCount) {

@@ -23,6 +23,7 @@ public class PorterDuffXfermode extends Xfermode {
      *
      * @param mode           The porter-duff mode that is applied
      */
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.254 -0500", hash_original_method = "051BEADE6290B35325837FC3FD526210", hash_generated_method = "A560E9C179CDEB0D924A8EF4EB359738")
     
 public PorterDuffXfermode(PorterDuff.Mode mode) {

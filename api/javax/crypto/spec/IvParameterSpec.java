@@ -45,6 +45,7 @@ public IvParameterSpec(byte[] iv) {
      * @throws ArrayIndexOutOfBoundsException
      *             if <code>offset</code> or <code>byteCount</code> are negative.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.171 -0500", hash_original_method = "60CA42675AB74B8A2A3519AD856C2D26", hash_generated_method = "ACA8F4A04230827D73D348D0F6DD0A14")
     
 public IvParameterSpec(byte[] iv, int offset, int byteCount) {

@@ -28,6 +28,8 @@ public class KeyGenerator {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}.
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.569 -0500", hash_original_method = "BD816AE4DD995E718D0C3792E2DEE981", hash_generated_method = "9FDCB6AC7C447C2E6ECDC9987EE6B3C2")
     
 public static final KeyGenerator getInstance(String algorithm)
@@ -58,6 +60,8 @@ public static final KeyGenerator getInstance(String algorithm)
      * @throws NullPointerException
      *             if the specified algorithm name is {@code null}.
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.571 -0500", hash_original_method = "60BC696F85209D3194EC66CFB6C6D37C", hash_generated_method = "69FD95E465632B746ABB88C13A7FFC1F")
     
 public static final KeyGenerator getInstance(String algorithm,
@@ -89,6 +93,8 @@ public static final KeyGenerator getInstance(String algorithm,
      * @throws NullPointerException
      *             if the specified algorithm name is {@code null}.
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.574 -0500", hash_original_method = "7A51885CAA1E3FF01634B7B94D0044CF", hash_generated_method = "95A782347D859F680A496CB921C67A1D")
     
 public static final KeyGenerator getInstance(String algorithm,
@@ -166,6 +172,8 @@ public final Provider getProvider() {
      *
      * @return the generated secret key.
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.576 -0500", hash_original_method = "0D649746A13B62933617343FF6CF66A5", hash_generated_method = "C9900E7F2C4B294CA337B2E78AED3438")
     
 public final SecretKey generateKey() {
@@ -182,6 +190,7 @@ public final SecretKey generateKey() {
      *             if the parameters cannot be used to initialize this key
      *             generator algorithm.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.579 -0500", hash_original_method = "17294700B35C898F2BBCFAFBE5495088", hash_generated_method = "22F17F8B9B11D838E7098469B6639866")
     
 public final void init(AlgorithmParameterSpec params)
@@ -201,6 +210,7 @@ public final void init(AlgorithmParameterSpec params)
      *             if the parameters cannot be uses to initialize this key
      *             generator algorithm.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.581 -0500", hash_original_method = "EA2F3DD217CBA336387110AFDED2F185", hash_generated_method = "BC184BF751405A3AC5726456D0AE1BE6")
     
 public final void init(AlgorithmParameterSpec params, SecureRandom random)
@@ -215,6 +225,7 @@ public final void init(AlgorithmParameterSpec params, SecureRandom random)
      * @param keysize
      *            the size of the key (in bits).
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.584 -0500", hash_original_method = "6A1F56561EFECC925D99D4402BD46267", hash_generated_method = "1DC649CB72FB63644D761193EC6CB48E")
     
 public final void init(int keysize) {
@@ -230,6 +241,7 @@ public final void init(int keysize) {
      * @param random
      *            the randomness source for any random bytes.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.586 -0500", hash_original_method = "CF9BC038E48C7FD5928A7551030B0A46", hash_generated_method = "CBCD5E53E82B92399C96E4C7B8FC625E")
     
 public final void init(int keysize, SecureRandom random) {
@@ -243,6 +255,7 @@ public final void init(int keysize, SecureRandom random) {
      * @param random
      *            the randomness source for any random bytes.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.589 -0500", hash_original_method = "E0B65F149BDE3033A715A5DC9A4C8256", hash_generated_method = "D9779A2987BF40D7E7EE8F748325FA5F")
     
 public final void init(SecureRandom random) {

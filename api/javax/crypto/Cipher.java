@@ -73,6 +73,8 @@ public static final Cipher getInstance(String transformation)
      * @throws IllegalArgumentException
      *             if the specified provider is {@code null}.
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.179 -0500", hash_original_method = "C2D2096568C68F5A71EDB8A2129CC4CE", hash_generated_method = "2AD0AAF98ABD33E1D5EB4B040D89828D")
     
 public static final Cipher getInstance(String transformation,
@@ -108,6 +110,8 @@ public static final Cipher getInstance(String transformation,
      * @throws IllegalArgumentException
      *             if the provider is {@code null}.
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.182 -0500", hash_original_method = "799187ABBBF244571009789D513A15DA", hash_generated_method = "B92DA7B99FB412ECBF1AC0F6121D73FF")
     
 public static final Cipher getInstance(String transformation,
@@ -551,6 +555,7 @@ public final void init(int opmode, Key key) throws InvalidKeyException {
      * @throws InvalidParameterException
      *             if the specified opmode is invalid.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.214 -0500", hash_original_method = "0BCC9283EB770D83968E2D5392900813", hash_generated_method = "F0434CE3494002EC26F18FCC50A2C4CD")
     
 public final void init(int opmode, Key key, SecureRandom random) throws InvalidKeyException {
@@ -653,6 +658,7 @@ public final void init(int opmode, Key key, AlgorithmParameterSpec params)
      * @throws InvalidParameterException
      *             if the specified {@code opmode} is invalid.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.221 -0500", hash_original_method = "8E7DC73E6E4E585B73E6EA7E879FC58B", hash_generated_method = "22D55C9A4FEF462385A1500BE80AA527")
     
 public final void init(int opmode, Key key, AlgorithmParameterSpec params,
@@ -750,6 +756,7 @@ public final void init(int opmode, Key key, AlgorithmParameters params)
      * @throws InvalidParameterException
      *             if the specified {@code opmode} is invalid.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.227 -0500", hash_original_method = "807F390A384AF896657386359C87C81B", hash_generated_method = "C7B3400F29B65C61B9DF9EBACD463B2A")
     
 public final void init(int opmode, Key key, AlgorithmParameters params,
@@ -798,6 +805,7 @@ public final void init(int opmode, Key key, AlgorithmParameters params,
      *             if the public key in the certificate can not be used to
      *             initialize this cipher instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.229 -0500", hash_original_method = "D1B8B02AA4362AEA38C29780F594C5E0", hash_generated_method = "64938EA585612C18F2DBCB88DFBA6A92")
     
 public final void init(int opmode, Certificate certificate)
@@ -843,6 +851,7 @@ public final void init(int opmode, Certificate certificate)
      *             if the public key in the certificate can not be used to
      *             initialize this cipher instance.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.232 -0500", hash_original_method = "CF5B7C36D9EDA90E4E4A39DDF2F721FD", hash_generated_method = "8243EB2A4C12601286260F1106AB882F")
     
 public final void init(int opmode, Certificate certificate,
@@ -1110,9 +1119,9 @@ public final int update(ByteBuffer input, ByteBuffer output)
      *             if this cipher instance is not initialized for encryption or
      *             decryption.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.249 -0500", hash_original_method = "F0FEA4F0F73707A698ECC32C0962F654", hash_generated_method = "3D0FB34E4A2756F232DFAB6041E899F8")
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.249 -0500", hash_original_method = "F0FEA4F0F73707A698ECC32C0962F654", hash_generated_method = "3D0FB34E4A2756F232DFAB6041E899F8")
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public final byte[] doFinal() throws IllegalBlockSizeException,
             BadPaddingException {
         if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
@@ -1146,6 +1155,7 @@ public final byte[] doFinal() throws IllegalBlockSizeException,
      *             decryption.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.251 -0500", hash_original_method = "93AA6B063068AA94349A945C7753479D", hash_generated_method = "2C9A2F3C59A5D43FF6129B05CABF6E77")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     
 public final int doFinal(byte[] output, int outputOffset)
             throws IllegalBlockSizeException, ShortBufferException,
@@ -1178,7 +1188,7 @@ public final int doFinal(byte[] output, int outputOffset)
      *             decryption.
      */
     @DSComment("IO/cryptographic transformation")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.254 -0500", hash_original_method = "ED0F518E6798AF2EE42518F6A3E77904", hash_generated_method = "2B362B7F94558CDBD22CAC4F5C37AC52")
     
@@ -1216,8 +1226,9 @@ public final byte[] doFinal(byte[] input) throws IllegalBlockSizeException,
      *             if {@code inputOffset} and {@code inputLen} do not specify an
      *             valid chunk in the input buffer.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.257 -0500", hash_original_method = "6B1737194DBFF54F3884AE72A596BA42", hash_generated_method = "2CCDDBB8351C7557D1F3B4C0573D273C")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     
 public final byte[] doFinal(byte[] input, int inputOffset, int inputLen)
             throws IllegalBlockSizeException, BadPaddingException {
@@ -1262,6 +1273,7 @@ public final byte[] doFinal(byte[] input, int inputOffset, int inputLen)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.259 -0500", hash_original_method = "A6D208F07F7B0D8A8A4180809C2EF479", hash_generated_method = "8488D6B16DF79546B439605B820C9B3A")
     
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public final int doFinal(byte[] input, int inputOffset, int inputLen,
             byte[] output) throws ShortBufferException,
             IllegalBlockSizeException, BadPaddingException {
@@ -1301,6 +1313,7 @@ public final int doFinal(byte[] input, int inputOffset, int inputLen,
      *             valid chunk in the input buffer.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.262 -0500", hash_original_method = "46F54FF2783CE552AE826C81B354A349", hash_generated_method = "13E829A86E9B515D76C1D3373DDD511E")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     
 public final int doFinal(byte[] input, int inputOffset, int inputLen,
             byte[] output, int outputOffset) throws ShortBufferException,
@@ -1344,6 +1357,7 @@ public final int doFinal(byte[] input, int inputOffset, int inputLen,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.264 -0500", hash_original_method = "90770161074657C0B33458A086574F5B", hash_generated_method = "D5EA3E337FBD7055FD13C143E1CBD026")
     
+    @DSSafe(DSCat.UTIL_FUNCTION)
 public final int doFinal(ByteBuffer input, ByteBuffer output)
             throws ShortBufferException, IllegalBlockSizeException,
             BadPaddingException {

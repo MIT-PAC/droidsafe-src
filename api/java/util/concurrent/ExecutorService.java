@@ -28,22 +28,29 @@ public interface ExecutorService extends Executor {
     boolean awaitTermination(long timeout, TimeUnit unit)
         throws InterruptedException;
     
+    @DSSpec(DSCat.THREADING)
     <T> Future<T> submit(Callable<T> task);
     
+    @DSSpec(DSCat.THREADING)
     <T> Future<T> submit(Runnable task, T result);
     
+    @DSSpec(DSCat.THREADING)
     Future<?> submit(Runnable task);
 
+    @DSSpec(DSCat.THREADING)
     <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks)
         throws InterruptedException;
     
+    @DSSpec(DSCat.THREADING)
     <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks,
                                   long timeout, TimeUnit unit)
         throws InterruptedException;
     
+    @DSSpec(DSCat.THREADING)
     <T> T invokeAny(Collection<? extends Callable<T>> tasks)
         throws InterruptedException, ExecutionException;
     
+    @DSSpec(DSCat.THREADING)
     <T> T invokeAny(Collection<? extends Callable<T>> tasks,
                     long timeout, TimeUnit unit)
         throws InterruptedException, ExecutionException, TimeoutException;
