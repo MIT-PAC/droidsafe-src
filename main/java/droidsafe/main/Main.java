@@ -32,6 +32,7 @@ import droidsafe.android.system.Permissions;
 import droidsafe.reports.ICCEntryPointCallTree;
 import droidsafe.reports.ICCMap;
 import droidsafe.reports.IPCEntryPointCallTree;
+import droidsafe.reports.InformationFlowReport;
 import droidsafe.reports.SensitiveSources;
 import droidsafe.reports.UnresolvedICC;
 import droidsafe.reports.AllEntryPointCallTree;
@@ -481,6 +482,8 @@ public class Main {
             driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
             if (spec != null) {
+                if (Config.v().infoFlow)
+                    InformationFlowReport.create(spec);
                 driverMsg("Creating Eclipse Plugin Serialized Specification...");
                 timer.reset();
                 timer.start();
@@ -488,6 +491,7 @@ public class Main {
                 SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
                 if (Config.v().debug)
                     SecuritySpecModel.printSpecInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
+                
                 timer.stop();
                 driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
             }

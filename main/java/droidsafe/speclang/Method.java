@@ -501,6 +501,10 @@ public class Method implements Comparable<Method> {
         return recFlows;
     }
 
+    public int getNumArgs() {
+        return ptaInfo.getNumArgs();
+    }
+    
     private void cacheArgSourceInfoFlows() {
         for (int i = 0; i < ptaInfo.getNumArgs(); i++) {
             argFlows[i] = new HashMap<InfoKind, Set<Stmt>>();
