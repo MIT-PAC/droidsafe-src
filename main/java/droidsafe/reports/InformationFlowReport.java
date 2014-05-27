@@ -8,11 +8,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import soot.SootMethod;
+import soot.jimple.InvokeStmt;
 import soot.jimple.Stmt;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.InfoKind;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
+import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 
 /**
@@ -65,6 +68,7 @@ public class InformationFlowReport {
                 flowBuilder.append("**").append(separator);
                 flowBuilder.append(eventBlock.getKey().getSignature()).append(separator);
 
+                flowBuilder.append("{");
                 flowBuilder.append(outputEvent.getSignature()).append(slash);
                 flowBuilder.append(outputEvent.getSinkInfoKinds().iterator().next())
                            .append(slash);
@@ -76,6 +80,7 @@ public class InformationFlowReport {
                     flowBuilder.append(tag);
                     firstLine = false;
                 }
+                flowBuilder.append("}");
                 flowBuilder.append(separator);
                 
                 flowBuilder.append("sources").append(separator);
@@ -87,6 +92,7 @@ public class InformationFlowReport {
                     flows.append(String.format("Sink: %s\n", outputEvent.getSignature()));
                     flows.append("Lines: \n");
 
+                    /*
                     StringBuilder tmpBuilder = new StringBuilder();
                     for (SourceLocationTag tag : outputEvent.getLines()) {
                         flows.append("\t" + tag + "\n");
@@ -98,9 +104,10 @@ public class InformationFlowReport {
                     }
 
                     flowBuilder.append(tmpBuilder).append(separator);
+                    */
 
                     flowBuilder.append("receivers").append(separator);
-                    tmpBuilder =  new StringBuilder();
+                    StringBuilder tmpBuilder =  new StringBuilder();
                     
                     flows.append("Receiver Sources: \n");
                     for (Map.Entry<InfoKind, Set<Stmt>> source : outputEvent.getReceiverSourceInfoUnits().entrySet()) {
@@ -110,7 +117,24 @@ public class InformationFlowReport {
                             if (tmpBuilder.length() > 0)
                                 tmpBuilder.append(",");
                             
-                            tmpBuilder.append(String.format("{%s%s%s}", stmt, slash, source.getKey()));
+                            //tmpBuilder.append(String.format("{%s%s%s}", stmt, slash, source.getKey()));
+                            /*
+                            for (SourceLocationTag tag : outputEvent.getLines()) {
+                                if (!firstLine)
+                                    flowBuilder.append(",");
+                                flowBuilder.append(tag);
+                                firstLine = false;
+                            }
+                            */
+                            SourceLocationTag locationTag = SootUtils.getSourceLocation(stmt);
+                            String lineNumber = "";
+                            if (locationTag != null)
+                                lineNumber = locationTag.toString();
+
+                            SootMethod method = stmt.getInvokeExpr().getMethod();
+                            tmpBuilder.append(String.format("{%s%s%s%s%s}", 
+                                    method, slash, source.getKey(), slash, lineNumber));
+                                   
                         }
                     }
 
@@ -129,8 +153,22 @@ public class InformationFlowReport {
                                 flows.append(String.format("\t%s (%s)\n", stmt, source.getKey()));
                                 if (tmpBuilder.length() > 0)
                                     tmpBuilder.append(",");
+                                /*
 
                                 tmpBuilder.append(String.format("{%s%s%s}", stmt, slash, source.getKey()));
+                                */
+                                SourceLocationTag locationTag = SootUtils.getSourceLocation(stmt);
+                                String lineNumber = "";
+                                if (locationTag != null)
+                                        lineNumber = locationTag.toString();
+
+                                SootMethod method = stmt.getInvokeExpr().getMethod();
+                                tmpBuilder.append(String.format("{%s%s%s%s%s}", 
+                                    method, slash, source.getKey(), slash, lineNumber));
+                                /*
+                                tmpBuilder.append(String.format("{%s%s%s%s%s}", 
+                                    stmt, slash, source.getKey(), slash, lineNumber));
+                                */
                             }
                         }
                     }
