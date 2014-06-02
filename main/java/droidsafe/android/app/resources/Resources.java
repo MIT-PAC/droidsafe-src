@@ -244,20 +244,21 @@ public class Resources {
 	    logger.info("consolidate layouts ");
 	    List<Layout> origList = new LinkedList<Layout>();
 	    
+	       
+        // use the map to keep 
+        Map<String, Layout> layoutMap = new HashMap<String, Layout>();
 	    // building the original layout list which is meant to be read only
 	    for(Layout layout: layouts) {
 	        origList.add(layout);
+	        layout.mergeIncludes();
+	        if (!layoutMap.containsKey(layout.name)) {
+                layoutMap.put(layout.name, layout);
+            }
 	    }
 	    
-	    // use the map to keeps 
-	    Map<String, Layout> layoutMap = new HashMap<String, Layout>();
+	    
 	    
 	    for (Layout layout: origList) {
-	        // if layout first appeared, added to the hash
-	        if (!layoutMap.containsKey(layout.name)) {
-	            layoutMap.put(layout.name, layout);
-	            continue;
-	        }
 	        
 	        Layout keptLayout = layoutMap.get(layout.name);
 	        logger.info("will merge layout {} to {} ", layout, keptLayout);
@@ -293,7 +294,6 @@ public class Resources {
 	                keptLayout.view.children.add(childView);
 	            }
 	        }
-	        
 	        
 	        logger.info("Layout {} has been MERGED ", layout.name);
 	        layouts.remove(layout);

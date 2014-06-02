@@ -30,7 +30,7 @@ public class Layout {
   File  source;
 
   /** name of the layout (R.layout.XXX), the terminal file in source path **/
-  String name;
+  public String name;
 
   /** The top level view specified in the layout file **/
   public View view;
@@ -43,6 +43,8 @@ public class Layout {
   
   /** map to keep frequency of ID usage within the layout */
   static Map<String, Integer> idFreqMap = new HashMap<String, Integer>();
+  
+  static Map<String, Layout> layoutNameMap = new HashMap<String, Layout>();
   
   private final String NONAME = "NoName";
 
@@ -61,9 +63,15 @@ public class Layout {
     Element e = doc.getDocumentElement();
  
     view = new View(e);
+    layoutNameMap.put(name,  this);
 
   }
-
+  
+  public void mergeIncludes() {
+      view.expandInclude();
+  }
+  
+ 
   /**
    * normalize an android Id name
    * @param id
@@ -252,12 +260,31 @@ public class Layout {
     String on_click;
     /** Children of this view.  When a view has children, it is a ViewGroup/LinearLayout**/
     List<View> children = new ArrayList<View>();
+    public List<String> includes = new ArrayList<String>();
 
     /**
      * private constructor
      */
     private View() {
         super();
+    }
+    
+    private String includedLayout = null;
+    public View(String layoutToExpand) {
+        includedLayout = layoutToExpand;
+    }
+    
+    public void expandInclude(){
+        logger.info("Exapand view ()");
+        for (View child: children) {
+            if (child.includedLayout != null) {
+                logger.info("expandinclude for view {}, layout {}", child, child.includedLayout);
+                Layout layout = layoutNameMap.get(child.includedLayout);
+                child.copyFrom(layout.view);
+            }
+            else 
+                child.expandInclude();
+        }
     }
     /**
      * constructor
@@ -272,11 +299,26 @@ public class Layout {
       
       on_click = get_attr ("onClick");
       for (Node cnode : gather_children()) {
-        children.add (new View(cnode));
+          if (cnode.getNodeName().equals("include")) {
+              NamedNodeMap map = cnode.getAttributes();
+              Node myNode = map.getNamedItem("layout");
+              logger.info("myNode {}", myNode);
+              String layout = myNode.toString();
+              int index = layout.indexOf("=");
+              if (index > 0)
+                  layout = layout.substring(index+1);
+              layout = layout.replace("@layout/",  "");
+              logger.warn("Detected include layout {} ", layout);
+              includes.add(layout);
+              children.add(new View(layout));
+          }
+          else {
+              children.add (new View(cnode));
+          }
       }
 
     }
-
+    
     /**
      * are we interested in onClick only ???
      */
@@ -318,6 +360,8 @@ public class Layout {
 			logger.warn("cview: " + cview);
 		}
 	}
+
+
 	
 	@Override
 	/**
@@ -330,6 +374,13 @@ public class Layout {
 	    copy.name = this.name;
 	    copy.on_click = this.on_click;
 	    return copy;
+	}
+	
+	public void copyFrom(View v){
+	    v.cloneTo(this);
+	    this.id = v.id;
+	    this.name = v.name;
+	    this.on_click = v.on_click;
 	}
   }
 }
