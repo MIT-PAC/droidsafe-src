@@ -303,7 +303,7 @@ public class BaseElement implements Cloneable {
      * @param copy
      */
     protected void cloneTo(BaseElement copy) {
-        copy.node = node;
+        copy.node = node.cloneNode(true);
         copy.attributes = attributes;
         if (parent != null) {
             copy.parent = (BaseElement)parent.clone();

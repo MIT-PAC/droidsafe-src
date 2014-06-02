@@ -245,12 +245,11 @@ public class Resources {
 	    List<Layout> origList = new LinkedList<Layout>();
 	    
 	       
-        // use the map to keep 
+ /*       // use the map to keep 
         Map<String, Layout> layoutMap = new HashMap<String, Layout>();
 	    // building the original layout list which is meant to be read only
 	    for(Layout layout: layouts) {
 	        origList.add(layout);
-	        layout.mergeIncludes();
 	        if (!layoutMap.containsKey(layout.name)) {
                 layoutMap.put(layout.name, layout);
             }
@@ -261,7 +260,7 @@ public class Resources {
 	    for (Layout layout: origList) {
 	        
 	        Layout keptLayout = layoutMap.get(layout.name);
-	        logger.info("will merge layout {} to {} ", layout, keptLayout);
+	        logger.info("will merge layout {} to {} ", layout.name, keptLayout.name);
 	        logger.info("{} <=> {} ", layout.view, keptLayout.view);
 	        
 	        // going through
@@ -297,7 +296,7 @@ public class Resources {
 	        
 	        logger.info("Layout {} has been MERGED ", layout.name);
 	        layouts.remove(layout);
-	    }
+	    }*/
 	    
 	    for (Layout layout: layouts) {
 	        logger.info("layout.name {}, layout.view.id {} ", layout.name, layout.view.id);
@@ -360,6 +359,11 @@ public class Resources {
 					}
 				}
 			}
+		}
+		
+		logger.debug("*** Consolidating layout ");
+		for (Layout layout: layouts) {
+		    layout.mergeIncludes();
 		}
 
 		// Dealing with res/values, and res/values-v15*******

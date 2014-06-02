@@ -63,6 +63,7 @@ public class Layout {
     Element e = doc.getDocumentElement();
  
     view = new View(e);
+    logger.info("adding layout <{}> to map ", name);
     layoutNameMap.put(name,  this);
 
   }
@@ -275,12 +276,19 @@ public class Layout {
     }
     
     public void expandInclude(){
-        logger.info("Exapand view ()");
+        logger.info("EXPANDING view {}", this);
         for (View child: children) {
             if (child.includedLayout != null) {
-                logger.info("expandinclude for view {}, layout {}", child, child.includedLayout);
                 Layout layout = layoutNameMap.get(child.includedLayout);
-                child.copyFrom(layout.view);
+                logger.info("EXPAND include for view {}, layout name {}, expand {}", 
+                        child, child.includedLayout, layout);
+                if (layout != null && layout.view != null) {
+                    logger.info("copying view from included layout view = {} ", layout.view);
+                    child.copyFrom(layout.view);
+                }
+                else {
+                    logger.info("layout.view is null ");
+                }
             }
             else 
                 child.expandInclude();
@@ -299,16 +307,17 @@ public class Layout {
       
       on_click = get_attr ("onClick");
       for (Node cnode : gather_children()) {
+          // keep a tag in the include view, and will merge the layouts later
           if (cnode.getNodeName().equals("include")) {
               NamedNodeMap map = cnode.getAttributes();
               Node myNode = map.getNamedItem("layout");
               logger.info("myNode {}", myNode);
-              String layout = myNode.toString();
+              String layout = myNode.toString().replaceAll("\"",  "");
               int index = layout.indexOf("=");
               if (index > 0)
                   layout = layout.substring(index+1);
               layout = layout.replace("@layout/",  "");
-              logger.warn("Detected include layout {} ", layout);
+              logger.info("Detected include layout {} ", layout);
               includes.add(layout);
               children.add(new View(layout));
           }
