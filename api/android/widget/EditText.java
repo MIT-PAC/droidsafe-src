@@ -35,6 +35,7 @@ public EditText(Context context, AttributeSet attrs) {
     
 public EditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        setText("");
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})

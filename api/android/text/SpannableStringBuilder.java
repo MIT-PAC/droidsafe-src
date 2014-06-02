@@ -972,10 +972,11 @@ public int nextSpanTransition(int start, int limit, Class kind) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override
-	
-	public String toString() {
-		return new String();
-	}
+    public String toString() {
+        String str = new String();
+        str.addTaint(this.getTaint());
+        return str;
+    }
 
     /**
      * Return a String containing a copy of the chars in this buffer, limited to the
