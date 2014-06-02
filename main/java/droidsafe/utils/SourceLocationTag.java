@@ -2,6 +2,8 @@ package droidsafe.utils;
 
 import java.io.Serializable;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * A location in source code with Class and line.
  * 
@@ -11,6 +13,8 @@ import java.io.Serializable;
 public class SourceLocationTag implements Comparable<SourceLocationTag>, Serializable {
 
   private static final long serialVersionUID = 5400084150916043785L;
+  
+  @SerializedName("class")
   private String clz;
 	private int line;
 	

@@ -1,4 +1,4 @@
-package droidsafe.transforms;
+package droidsafe.analyses.value;
 
 public enum IntentType {
     EXPLICIT,

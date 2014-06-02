@@ -1,7 +1,11 @@
 package droidsafe.transforms;
 
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -41,6 +45,7 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.reports.UnresolvedICC;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.DroidsafeExecutionStatus;
 import droidsafe.utils.SootUtils;
@@ -85,17 +90,31 @@ public class CallBackModeling {
         callFallBackMethods();
         
         //check for components that are not created anywhere
-        findUnallocedComponents();
+        findAndCreateUnallocedComponents();
     }
     
-    private void findUnallocedComponents() {
-        for (SootClass hasFallback : classToCallbackMethod.keySet()) {
-            if (Hierarchy.isAndroidComponentClass(hasFallback) && !calledFallback.contains(hasFallback) &&
-                    !Project.v().isLibClass(hasFallback)) {
+    /**
+     * Find component classes in user code that was not declared in the manifest, and create fields for
+     * them in the harness.
+     */
+    private void findAndCreateUnallocedComponents() {
+        List<SootClass> sortedClasses = new ArrayList<SootClass>(Scene.v().getClasses());
+        
+        Collections.sort(sortedClasses, new Comparator<SootClass>() {
+            @Override
+            public int compare(SootClass o1, SootClass o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+            
+        });
+        
+        for (SootClass clz : sortedClasses) {
+            if (!clz.isInterface() && Hierarchy.isAndroidComponentClass(clz) && !Harness.v().hasCreatedField(clz) &&
+                    Project.v().isSrcClass(clz)) {
                 //found component that is not allocated, should we call is??
                 logger.warn("Found component not in manifest and not created in code: {}. Adding modeling.", 
-                    hasFallback);
-                Harness.v().createComponentsNotInManifest(hasFallback);
+                    clz);
+                Harness.v().createComponentsNotInManifest(clz);
             }
         }
     }
@@ -125,9 +144,11 @@ public class CallBackModeling {
                 //if method is reachable or is not an implemented system method or is itself a system method from 
                 //a parent
                 if (API.v().isSystemMethod(method) || 
-                        PTABridge.v().isReachableMethod(method) || 
-                        !Hierarchy.isImplementedSystemMethod(method))
+                        PTABridge.v().isReachableMethod(method))
                     continue;
+                
+                if (!(Hierarchy.isImplementedSystemMethod(method) || API.v().isIPCCallback(method)))
+                        continue;
 
                 //find system method that is inherited
                 SootMethod closetSystemParent = Hierarchy.closestOverridenSystemMethodNoInterfaces(method);
@@ -140,23 +161,32 @@ public class CallBackModeling {
                     //and make sure all of them are verified, if any of them is unverified, then we need 
                     //to fake (maybe, who knows, that is what we do)...
                     for (SootClass parent : SootUtils.getParents(clz)) {
+                        if (!API.v().isSystemClass(parent))
+                            continue;
+                        
                         if (parent.isInterface() && 
-                                parent.declaresMethod(method.getSubSignature()) &&
-                                !API.v().isDSVerifiedMethod(parent.getMethod(method.getSubSignature()))) {
+                                parent.declaresMethod(method.getSubSignature()) /*&&
+                                !API.v().isDSVerifiedMethod(parent.getMethod(method.getSubSignature()))*/) {
                             shouldFake = true;
                             break;
                         }
                     }
-
+                    
                 } else {
                     //don't add fallback callback modeling the method is verified, but if the class is a 
                     //component, then we cannot rely on the verified tag, so fake anyway
-                    if (!API.v().isDSVerifiedMethod(closetSystemParent) || Hierarchy.isAndroidComponentClass(clz))
-                        shouldFake = true;
+                    //if (!API.v().isDSVerifiedMethod(closetSystemParent) || Hierarchy.isAndroidComponentClass(clz))
+                    
+                    shouldFake = true;
                 }
+                
+                if (API.v().isAIDLCallback(method)) 
+                    shouldFake = true; 
 
                 if (shouldFake) {
                     logger.info("Need to fake method %s in %s\n", method, clz);
+                    if (API.v().isIPCCallback(method))
+                        UnresolvedICC.v().addInfo(method, "AIDL Callback");
                     toFake.add(method);
                 }
             }
@@ -368,10 +398,11 @@ public class CallBackModeling {
         body.getLocals().add(argLocal);
 
         //add the call to the new object
-        body.getUnits().add(Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz))));
+        Stmt assign = Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz)));
+        body.getUnits().add(assign);
 
-        Stmt consCall = TransformsUtils.getConstructorCall(argLocal, RefType.v(clz));
-        if (consCall != null)
+        List<Stmt> consCalls = TransformsUtils.getConstructorCall(body, argLocal, RefType.v(clz));
+        for (Stmt consCall : consCalls)
             body.getUnits().add(consCall);
         
         return argLocal;

@@ -6,6 +6,8 @@ package droidsafe.analyses.value;
  * @author dpetters
  */
 public class UnknownVAModel extends VAModel {
+    /** string to represent sets of unknown values */
+    public static final String UNKNOWN_VALUES = "<ANYTHING>";
     
     @Override
     public String toStringSimple() {
@@ -14,11 +16,11 @@ public class UnknownVAModel extends VAModel {
 
     @Override
     public String toStringDetailed() {
-        return "\"" + ValueAnalysis.UNKNOWN_VALUES_STRING + "\"";
+        return "\"" + UNKNOWN_VALUES + "\"";
     }
 
     @Override
     public String toStringPretty(int level) {
-        return ValueAnalysis.UNKNOWN_VALUES_STRING;
+        return UNKNOWN_VALUES;
     }
 }

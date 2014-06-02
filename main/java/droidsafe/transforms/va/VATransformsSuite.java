@@ -1,6 +1,7 @@
-package droidsafe.transforms;
+package droidsafe.transforms.va;
 
 import droidsafe.analyses.pta.PTABridge;
+import droidsafe.reports.UnresolvedICC;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 
@@ -32,7 +33,12 @@ import soot.SootMethod;
  * @author dpetters
  */
 public class VATransformsSuite  {
-    private List<VATransform> transforms = Arrays.asList((VATransform)new StartActivityTransform());
+    private List<VATransform> transforms = Arrays.asList(
+        new StartActivityTransform(),
+        new ServiceBindTransform(),
+        new StartServiceTransform(),
+        new BroadcastReceiverTransform()
+            );
 
     // enforce singleton pattern
     private VATransformsSuite() {}
@@ -50,7 +56,7 @@ public class VATransformsSuite  {
                     || !containingMthd.isConcrete() 
                     || containingMthd.isPhantom() 
                     || SootUtils.isRuntimeStubMethod(containingMthd))
-                return;
+                continue;
 
             // iterate over the containing method's body statements
             StmtBody stmtBody = (StmtBody)containingMthd.getActiveBody();
@@ -63,38 +69,23 @@ public class VATransformsSuite  {
                     continue;
                 InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
 
-                // optimization: check if the name of the method of the invoke is a possible candidate for any tranformation
-                // to transform. If not, then we don't need to run the resolveInvoke PTA call (which is expensive)
-                if (!isInvokeCandidateForTransform(invokeExpr))
-                    continue;
-
-                try {
-                    for (SootMethod callee : PTABridge.v().resolveInvokeIns(invokeExpr)) {
-                        for (VATransform transform : transforms) {
+                for (VATransform transform : transforms) { 
+                    for (SootMethod callee : PTABridge.v().getTargetsInsNoContext(containingMthd, stmt)) {
+                        if (isInvokeCandidateForTransform(transform, callee)) {
                             transform.tranformsInvoke(containingMthd, callee, invokeExpr, stmt, stmtBody);
                         }
                     } 
-                } catch (CannotFindMethodException e) {
-                    continue;
-                }
+                }     
+                
             }
         }
     }
 
     /**
-     * @return   true if the name of the method of the invoke is a possible candidate for any tranformation
+     * @return   true if the name of the method of the invoke is a possible candidate for the transformation
      *           false otherwise
      */
-    private boolean isInvokeCandidateForTransform(InvokeExpr invokeExpr) {
-        String invokedMethodName = SootUtils.grabName(invokeExpr.getMethodRef().getSignature());
-        for (VATransform transform : transforms) {
-            for (String signature : transform.sigsOfInvokesToTransform()) {
-                String currentName = SootUtils.grabName(signature);
-                if (currentName.equals(invokedMethodName)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+    private boolean isInvokeCandidateForTransform(VATransform transform, SootMethod method) {
+        return transform.sigsOfInvokesToTransform().contains(method.getSignature());
     }
 }

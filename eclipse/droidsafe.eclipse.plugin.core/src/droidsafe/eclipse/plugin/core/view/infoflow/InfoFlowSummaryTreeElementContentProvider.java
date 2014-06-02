@@ -23,7 +23,7 @@ public class InfoFlowSummaryTreeElementContentProvider extends SpecInfoTreeEleme
         if (input instanceof SecuritySpecModel) {
             SecuritySpecModel spec = (SecuritySpecModel) input;
             this.fSpec = spec;
-            return initializeRoots();
+            return getRootElements();
         }
         return NO_CHILDREN;
     }

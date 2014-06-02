@@ -49,20 +49,51 @@ public class Hierarchy {
 	    return methods;
 	}
 	
+		
+	/** 
+     * Returns true if cn is class android/app/Service or is a class
+     * that inherits from android/app/Service
+     */
+    public static boolean inheritsFromAndroidService(final SootClass cn) {
+        if (cn.isInterface())
+            return false;
+        
+        return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
+            Scene.v().getSootClass(Components.SERVICE_CLASS));
+    }
 	
 	/** 
 	 * Returns true if cn is class android/app/Activity or is a class
 	 * that inherits from android/app/Activity
 	 */
 	public static boolean inheritsFromAndroidActivity(final SootClass cn) {
+	    if (cn.isInterface())
+            return false;
+	    
 		return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
 		    Scene.v().getSootClass(Components.ACTIVITY_CLASS));
 	}
+	
+	/** 
+     * Returns true if cn is class android/content/BroadcastReceiver or is a class
+     * that inherits from android/content/BroadcastReceiver
+     */
+    public static boolean inheritsFromAndroidBroadcastReceiver(final SootClass cn) {
+        if (cn.isInterface())
+            return false;
+        
+        return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
+            Scene.v().getSootClass(Components.BROADCASTRECEIVER_CLASS));
+    }
+    
 	
 	/**
 	 * Return true if this class inherits from an android component class.
 	 */
 	public static boolean isAndroidComponentClass(SootClass clz) {
+	    if (clz.isInterface())
+	        return false;
+	    
 		List<SootClass> supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
 		
 		for (SootClass sup : supers) {
@@ -77,6 +108,9 @@ public class Hierarchy {
 	 * Return the closest parent of clz that is an android component
 	 */
 	public static SootClass getComponentParent(SootClass clz) {
+	    if (clz.isInterface())
+            return null;
+	    
 		List<SootClass> supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
 		
 		for (SootClass sup : supers) {

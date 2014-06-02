@@ -69,9 +69,6 @@ public class ValueAnalysis  {
     /** Singleton for analysis */
     private static ValueAnalysis am;
 
-    /** string to represent sets of unknown values */
-    public static final String UNKNOWN_VALUES_STRING = "<ANYTHING>";
-
     /** 
      * keys are the objects that we can and want to model (they are new expressions) 
      * The value is the Model object which simulates that object. 
@@ -304,9 +301,11 @@ public class ValueAnalysis  {
                     
                     Set<? extends IAllocNode> fieldPTSet = PTABridge.v().getPTSet(an, sootField);
                     
-                    if (fieldVAModel instanceof StringVAModel || fieldVAModel instanceof ClassVAModel) {
+                    if (fieldVAModel instanceof StringVAModel) {
+                        handleStringFieldValue((StringVAModel)fieldVAModel, fieldPTSet);
+                    } else if (fieldVAModel instanceof ClassVAModel) {
                        // if (debug) System.out.printf("Found tracked field: %s\n", fieldName);
-                        handleFieldValue((PrimVAModel)fieldVAModel, fieldPTSet);
+                        handleClassFieldValue((ClassVAModel)fieldVAModel, fieldPTSet);
                     }
                 } catch (Exception e) {
                     //used to ignore fields that are not tracked by va
@@ -416,10 +415,35 @@ public class ValueAnalysis  {
             rhsNodes = PTABridge.v().getPTSet(assignStmt.getRightOp(), context);
         }
 
-        handleFieldValue(fieldPrimVAModel, rhsNodes);
+        if (fieldPrimVAModel instanceof ClassVAModel)
+            handleClassFieldValue((ClassVAModel)fieldPrimVAModel, rhsNodes);
+        else if (fieldPrimVAModel instanceof StringVAModel)
+            handleStringFieldValue((StringVAModel)fieldPrimVAModel, rhsNodes);
     }
     
-    private void handleFieldValue(PrimVAModel fieldPrimVAModel, Set<? extends IAllocNode> rhsNodes) {
+    private void handleClassFieldValue(ClassVAModel fieldPrimVAModel, Set<? extends IAllocNode> rhsNodes) {
+        for(IAllocNode rhsNode : rhsNodes) {
+            boolean knownValue = false;
+            
+           if (rhsNode.getNewExpr() instanceof ClassConstant) {
+                fieldPrimVAModel.addValue(SootUtils.getSootClass((ClassConstant)rhsNode.getNewExpr()));
+                //System.out.printf("Found CC: %s\n", SootUtils.getSootClass((ClassConstant)rhsNode.getNewExpr()));
+                knownValue = true;
+            }
+                        
+            if (!knownValue) {
+                //if (debug) System.out.println("Not known: " + rhsNode);
+                // all strings weren't constants, write unknown value
+                ValueAnalysis.logError(fieldPrimVAModel.toString() + 
+                    " the value it is assigned, " + 
+                    rhsNode + " is not a constant. Contained values beforehand: " + 
+                    fieldPrimVAModel.getValues());
+                fieldPrimVAModel.assignUnknown();
+            }
+        }   
+    }
+    
+    private void handleStringFieldValue(StringVAModel fieldPrimVAModel, Set<? extends IAllocNode> rhsNodes) {
         for(IAllocNode rhsNode : rhsNodes) {
             boolean knownValue = false;
             
@@ -436,11 +460,7 @@ public class ValueAnalysis  {
                     fieldPrimVAModel.addValue(value);
                     knownValue = true;
                 }
-            } else if (rhsNode.getNewExpr() instanceof ClassConstant) {
-                fieldPrimVAModel.addValue(SootUtils.getSootClass((ClassConstant)rhsNode.getNewExpr()));
-                //System.out.printf("Found CC: %s\n", SootUtils.getSootClass((ClassConstant)rhsNode.getNewExpr()));
-                knownValue = true;
-            }
+            } 
                         
             if (!knownValue) {
                 //if (debug) System.out.println("Not known: " + rhsNode);
@@ -449,7 +469,7 @@ public class ValueAnalysis  {
                     " the value it is assigned, " + 
                     rhsNode + " is not a constant. Contained values beforehand: " + 
                     fieldPrimVAModel.getValues());
-                fieldPrimVAModel.addValue(UNKNOWN_VALUES_STRING);
+                fieldPrimVAModel.assignUnknown();
             }
         }   
     }

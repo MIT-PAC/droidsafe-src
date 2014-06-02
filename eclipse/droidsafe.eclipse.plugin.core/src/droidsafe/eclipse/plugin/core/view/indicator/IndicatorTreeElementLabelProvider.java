@@ -1,14 +1,18 @@
-package droidsafe.eclipse.plugin.core.view;
+package droidsafe.eclipse.plugin.core.view.indicator;
 
-import org.eclipse.jface.viewers.StyledCellLabelProvider;
-import org.eclipse.jface.viewers.StyledString;
-import org.eclipse.jface.viewers.ViewerCell;
+import java.util.Map;
+
 import org.eclipse.swt.graphics.Image;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
+import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.speclang.model.AllocLocationModel;
-import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.MethodArgumentModel;
 
 /**
@@ -17,12 +21,16 @@ import droidsafe.speclang.model.MethodArgumentModel;
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
-public class MethodInfoTreeElementLabelProvider extends StyledCellLabelProvider {// LabelProvider
-    // {
+public class IndicatorTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
 
-    @Override
-    public String getToolTipText(Object obj) {
-        return null;
+    private IndicatorViewPart viewPart;
+    
+    public IndicatorTreeElementLabelProvider(IndicatorViewPart viewPart) {
+        this.viewPart = viewPart;
+    }
+
+    public Map<String, Boolean> getDisplayMap() {
+        return viewPart.getDisplayMap();
     }
 
     /**
@@ -31,28 +39,48 @@ public class MethodInfoTreeElementLabelProvider extends StyledCellLabelProvider 
      * @param element The element to display in the tree node.
      * @return The text for the node label.
      */
-    protected String getText(Object element) {
+    @Override
+    public String getText(Object element) {
         if (element instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
             Object data = treeElement.getData();
+            if (data instanceof JsonObject) {
+                JsonObject jsonObj = (JsonObject) data;
+                return viewPart.getLabel(jsonObj);
+            }
             return DroidsafePluginUtilities.removeCloneSuffix(data.toString());
         }
         return DroidsafePluginUtilities.removeCloneSuffix(element.toString());
     }
 
     /**
+     * Returns the tool tip for the tree node to display in the tree outline view.
+     * 
+     * @param element The element to display in the tree node.
+     * @return The tool tip text for the node.
+     */
+    public String getToolTipText(Object element) {
+        if (element instanceof TreeElement<?, ?>) {
+            TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
+            Object data = treeElement.getData();
+            return (data instanceof JsonElement) ? Utils.toStringPretty((JsonElement)data) : data.toString();
+        }
+        return null;
+    }
+    /**
      * Returns the icon image for the tree node.
      * 
      * @param element The tree node element to display.
      * @return The icon image to display together with the label in the outline view.
      */
-    protected Image getImage(Object element) {
+    @Override
+    public Image getImage(Object element) {
         if (element instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
             Object data = treeElement.getData();
             if (data instanceof AllocLocationModel) {
                 return DroidsafeImages.ALLOC_NODE_IMAGE;
-            } else if (data instanceof CodeLocationModel) {
+            } else if (data instanceof CallLocationModel) {
                 return DroidsafeImages.CODE_LOC_IMAGE;
             } else if (data instanceof MethodArgumentModel) {
                 MethodArgumentModel methArg = (MethodArgumentModel) data;
@@ -62,21 +90,6 @@ public class MethodInfoTreeElementLabelProvider extends StyledCellLabelProvider 
             }
         }
         return null;
-    }
-
-    /**
-     * The method that provides the desired style for the Tree node label.
-     * 
-     * @see org.eclipse.jface.viewers.StyledCellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
-     */
-    @Override
-    public void update(ViewerCell cell) {
-      Object obj = cell.getElement();
-      StyledString styledString = new StyledString(getText(obj));
-      cell.setText(styledString.toString());
-      cell.setStyleRanges(styledString.getStyleRanges());
-      cell.setImage(getImage(obj));
-      super.update(cell);
     }
 
 }

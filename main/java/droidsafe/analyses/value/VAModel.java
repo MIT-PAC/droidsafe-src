@@ -21,12 +21,25 @@ public abstract class VAModel {
     protected boolean invalidated = false;
 
     /**
+     * Was an unknown value assigned to this VAModel?  Different from invalidated.
+     */
+    private boolean hasUnknown = false;
+    
+    /**
      * Invalidate the model - we couldn't soundly resolve everything.
      */
     public void  invalidate(){
         this.invalidated = true;
     }
 
+    public boolean hasUnknown() {
+        return hasUnknown;
+    }
+    
+    public void assignUnknown() {
+        hasUnknown = true;
+    }
+    
     /**
      * @returns whether this model was fully resolved
      */

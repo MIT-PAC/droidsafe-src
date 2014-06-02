@@ -81,7 +81,7 @@ public abstract class PrimVAModel<T> extends VAModel {
                     buf.append(",");
                     buf.append(indent);
                 }
-                if (val instanceof String && !val.equals(ValueAnalysis.UNKNOWN_VALUES_STRING)) {
+                if (val instanceof String) {
                     buf.append("\"" + val + "\"");
                 } else {
                     buf.append(val);

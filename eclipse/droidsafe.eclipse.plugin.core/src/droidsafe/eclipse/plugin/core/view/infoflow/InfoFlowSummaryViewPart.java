@@ -1,15 +1,23 @@
 package droidsafe.eclipse.plugin.core.view.infoflow;
 
-import org.eclipse.jface.viewers.IBaseLabelProvider;
+import org.eclipse.jface.util.Util;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 
 import droidsafe.eclipse.plugin.core.Activator;
+import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.SpecInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
@@ -34,12 +42,33 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
           + "command from the project context menu.";
     
     @Override
-    protected ITreeContentProvider makeContentProvider() {
+    public void createPartControl(Composite parent) {
+        showOtherDroidsafeViews(VIEW_ID);
+        super.createPartControl(parent);
+        fTreeViewer.getControl().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(final KeyEvent e) {
+                int modifier = (Util.isMac()) ? SWT.COMMAND : SWT.CTRL;
+                if ((e.stateMask & modifier) == modifier) {
+                    if (e.keyCode == 'f') {
+                        if (fContentProvider.getRootElements() != null) {
+                            IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+                            SearchDialog dialog = new SearchDialog(window.getShell(), InfoFlowSummaryViewPart.this);
+                            dialog.open();
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    @Override
+    protected DroidsafeInfoTreeElementContentProvider makeContentProvider() {
         return new InfoFlowSummaryTreeElementContentProvider();
     }
 
     @Override
-    protected IBaseLabelProvider makeLabelProvider() {
+    protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
         return new InfoFlowSummarylTreeElementLabelProvider();
     }
 
@@ -71,7 +100,7 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
 //        activePage.activate(view);
     }
 
-    protected void projectChanged() {
+    protected void projectSelected() {
         // do nothing. Viewer content is changed via calls to openView() from SecuritySpecOutlineViewPart. 
     }
 
@@ -95,6 +124,7 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
                 }
               }
             }
+            fTreeViewer.getControl().setFocus();
         }
     }
     

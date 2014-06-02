@@ -144,6 +144,10 @@ public class Method implements Comparable<Method> {
         }
     }
 
+    public InvokeExpr getInvokeExpr() {
+        return ptaInfo.getInvokeExpr();
+    }
+    
     public SootMethod getSootMethod() {
         return sootMethod;
     }
@@ -293,7 +297,14 @@ public class Method implements Comparable<Method> {
         for (String str : Permissions.v().getPermissions(sootMethod)) 
             ret.append("// Requires permission: " + str + "\n");
 
-
+        if (API.v().isIPCCallback(sootMethod)) {
+            if (API.v().isRemoteIPCCallback(sootMethod))
+                ret.append("// Possible remote IPC callback method\n");
+            else 
+                ret.append("// Possible IPC callback method\n");
+        }
+        
+        
 
         if (!getSourcesInfoKinds().isEmpty()) {
             //print resolved high-level information flows
@@ -490,6 +501,10 @@ public class Method implements Comparable<Method> {
         return recFlows;
     }
 
+    public int getNumArgs() {
+        return ptaInfo.getNumArgs();
+    }
+    
     private void cacheArgSourceInfoFlows() {
         for (int i = 0; i < ptaInfo.getNumArgs(); i++) {
             argFlows[i] = new HashMap<InfoKind, Set<Stmt>>();
@@ -566,19 +581,17 @@ public class Method implements Comparable<Method> {
             InvokeExpr invoke = stmt.getInvokeExpr();
             //for each of the targets see if they have an Info Kind
 
-            try {
-                //TODO: CONTEXT HERE FROM THE INFOVALUE
-                Collection<SootMethod> targets = 
-                        PTABridge.v().resolveInvokeIns(invoke);
 
-                for (SootMethod target : targets) { 
-                    for (InfoKind kind : API.v().getSourceInfoKinds(target)) {
-                        srcKinds.add(kind);
-                    }
+            //TODO: CONTEXT HERE FROM THE INFOVALUE
+            Collection<SootMethod> targets = 
+                    PTABridge.v().getTargetsInsNoContext(stmt);
+
+            for (SootMethod target : targets) { 
+                for (InfoKind kind : API.v().getSourceInfoKinds(target)) {
+                    srcKinds.add(kind);
                 }
-            } catch (CannotFindMethodException e) {
-
             }
+
         } else if (iv instanceof InfoKind) {
             srcKinds.add((InfoKind)iv);
         } else {

@@ -13,6 +13,9 @@ import droidsafe.speclang.model.MethodModel;
  */
 abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineViewPart implements ISelectionChangedListener {
 
+    /** The text displayed on the empty page. */
+    public static String EMPTY_PAGE_LABEL = "Select a spec method from the 'Security Spec Outline', 'Info Flow Summary', or 'Indicator' to show info";
+    
     /** The object on which the droidsafe analysis info is to be displayed. */
     protected Object fInputElement;
 
@@ -20,7 +23,8 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
      * Set the input element for the viewer and update the contents of the view.
      */
     protected void setInputElement(Object inputElement) {
-        if (!inputElement.equals(fInputElement)) {
+        if ((inputElement == null && fInputElement != null) || 
+                (inputElement != null && !inputElement.equals(fInputElement))) {
             fInputElement = inputElement;
             updateView();
         }
@@ -33,10 +37,10 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
         return fInputElement;
     }
 
-    protected void projectChanged() {
+    protected void projectSelected() {
         resetViewer();
-        showPage(PAGE_EMPTY);
-    }
+        setInputElement(null);
+     }
     
     /**
      * Return the method on which the droidsafe analysis info is displayed on this outline.
@@ -47,13 +51,17 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
      * Update the content of the outline view.
      */
     protected void updateView() {
-        if (fInputElement != null && fParentComposite != null) {
-            showPage(PAGE_VIEWER);
-            
-            String sig = DroidsafePluginUtilities.removeCloneSuffix(getMethod().getSignature());
-            setContentDescription("method " + sig);
+        if (fParentComposite != null) {
+            if (fInputElement == null) {
+                showPage(PAGE_EMPTY);
+            } else {
+                showPage(PAGE_VIEWER);
 
-            fTreeViewer.setInput(fInputElement);
+                String sig = DroidsafePluginUtilities.removeCloneSuffix(getMethod().getSignature());
+                setContentDescription("method " + sig);
+
+                fTreeViewer.setInput(fInputElement);
+            }
         }        
     }
 

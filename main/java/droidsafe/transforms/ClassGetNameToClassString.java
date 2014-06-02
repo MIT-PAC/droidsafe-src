@@ -2,11 +2,15 @@ package droidsafe.transforms;
 
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
+import droidsafe.utils.JimpleRelationships;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import soot.Body;
 import soot.BodyTransformer;
@@ -36,6 +40,8 @@ import soot.util.Chain;
 public class ClassGetNameToClassString extends BodyTransformer {
     private static int LOCAL_ID = 0;
     private static final String LOCAL_PREFIX = "CLASSGETNAME_TO_CLASSNAMESTR_LOCAL";
+    /** logger object */
+    private static final Logger logger = LoggerFactory.getLogger(ClassGetNameToClassString.class);
     /**
      * Call this pass on all application classes in the project.
      */
@@ -74,7 +80,7 @@ public class ClassGetNameToClassString extends BodyTransformer {
         AssignStmt assign = (AssignStmt)stmt;
         InvokeExpr invoke = (InvokeExpr)assign.getRightOp();
         try {
-            Collection<SootMethod> targets = PTABridge.v().resolveInvokeIns(invoke);
+            Collection<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(JimpleRelationships.v().getEnclosingMethod(stmt), stmt);
 
             if (targets.size() != 1)
                 return false;
@@ -106,7 +112,7 @@ public class ClassGetNameToClassString extends BodyTransformer {
                 }
             }
         } catch (Exception e) {
-            
+            logger.error("Something wrong, ignoring: ", e);
         }
         
         return false;

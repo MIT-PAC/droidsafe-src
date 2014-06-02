@@ -1,7 +1,8 @@
-package droidsafe.transforms;
+package droidsafe.transforms.va;
 
 import au.com.bytecode.opencsv.CSVWriter;
-
+import droidsafe.analyses.value.IntentType;
+import droidsafe.analyses.value.IntentUtils;
 import droidsafe.analyses.value.RefVAModel;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAModel;
@@ -11,6 +12,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -40,14 +42,19 @@ public class StartActivityTransformStats {
 
     public static void run() {
 
+        if (true) {
+            logger.warn("StartActivityTransformStats is not working and is disabled. Do not run, exiting...");
+           return;
+        }
+        
         // create singleton
         if(v==null) {
             v = new StartActivityTransformStats();
         }
 
         // get allocNodes of Intents used to start activities in the last run of the startActivityTransform
-        intentAllocNodes = StartActivityTransform.getIntentAllocNodes();
-
+        intentAllocNodes = IntentUtils.v().getAllQueriedIntents();
+        
         if(intentAllocNodes==null) {
             logger.error("StartActivityTranform must always run before StartActivityTransformStats");
             System.exit(1);
@@ -79,20 +86,20 @@ public class StartActivityTransformStats {
                 VAModel vaModel = ValueAnalysis.v().getResult(intentAllocNode);
                 if(vaModel != null && vaModel instanceof RefVAModel) {
                     RefVAModel intentRefVAModel = (RefVAModel)vaModel;
-                    IntentType intentType = StartActivityTransform.getIntentType(intentRefVAModel);
+                    IntentType intentType = IntentUtils.v().getIntentType(intentRefVAModel);
                     Set<String> targetClsStrings = null;
                     switch(intentType) {
                         case IMPLICIT:
                             // column #2 - type
                             rowEntries.add("IMPLICIT");
                             // column #3 - # of possible targets
-                            if(StartActivityTransform.isImplicitIntentTargettingAmbiguous(intentRefVAModel, true)) {
+                            if(IntentUtils.v().isImplicitIntentTargettingAmbiguous(intentRefVAModel, true)) {
                                 rowEntries.add("UNKNOWN");
                             } else {
                                 rowEntries.add("n/a");
                             }
                             // column #4 - # of possible targets (without data)
-                            if(StartActivityTransform.isImplicitIntentTargettingAmbiguous(intentRefVAModel, false)) {
+                            if(IntentUtils.v().isImplicitIntentTargettingAmbiguous(intentRefVAModel, false)) {
                                 rowEntries.add("UNKNOWN");
                             } else {
                                 rowEntries.add("n/a");
@@ -102,7 +109,7 @@ public class StartActivityTransformStats {
                             // column #2 - type
                             rowEntries.add("EXPLICIT");
                             // column #3 - # of possible targets
-                            targetClsStrings = StartActivityTransform.getExplicitIntentTargetClsStrings(intentRefVAModel);
+                            targetClsStrings = IntentUtils.v().getExplicitIntentTargetClsStrings(null, intentRefVAModel);
                             if(targetClsStrings == null) {
                                 rowEntries.add("UNKNOWN");
                                 // the without data column is identical for explicit intents
@@ -125,9 +132,9 @@ public class StartActivityTransformStats {
                     }
                     // column #5 - # of possible targets in-app
                     if(intentType == IntentType.IMPLICIT) {
-                         targetClsStrings = StartActivityTransform.getImplicitIntentInAppTargetClsStrings(intentRefVAModel);
+                         targetClsStrings = IntentUtils.v().getImplicitIntentInAppTargetClsStrings(null, intentRefVAModel);
                     }
-                    Set<SootField> targetHarnessFlds = StartActivityTransform.getHarnessFldsForClsStrings(targetClsStrings);
+                    Set<SootField> targetHarnessFlds = IntentUtils.v().getHarnessFldsForClsStrings(targetClsStrings);
                     if(targetHarnessFlds == null) {
                         rowEntries.add("UNKNOWN");
                     } else {

@@ -92,11 +92,6 @@ public class Config {
     /** should we call unreachable callbacks, and insert dummy objects for unmodeled api calls? */
     public boolean addFallbackModeling = true;
 
-    /**
-     * If true, classes loaded from android.jar will be treated as application classes and analysis
-     * may analyze them.
-     */
-    public boolean apiClassesAreApp = false;
     /** if true, write readable jimple output for all app classes */
     public boolean writeJimpleAppClasses = false;
 
@@ -151,10 +146,18 @@ public class Config {
     public boolean onlyannotatedsources = true;
     /** Generate pta result for eclipse plugin */
     public boolean ptaresult = true;
+    /** Run Catch Block Analysis **/
+    public boolean runCatchBlocks = false;
+    /** Run fast Catch Block Analysis **/
+    public boolean runCatchBlocksFast = false;
     /** should a context sensitive pta add context to static inits? */
     public boolean staticinitcontext = true;
     /** if true, use types (instead of alloc sites) for object sensitive context elements > 1 */
     public boolean typesForContext = false;
+    /** in spark limit heap context for strings if we are object sensitive */
+    public boolean limitHeapContextForStrings = false;
+    /** in spark limit heap context for some GUI elements */
+    public boolean limitHeapContextForGUI = false;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -224,7 +227,11 @@ public class Config {
         Option debug =
                 new Option("debug", "Enable debugging: log at ./droidsafe/droidsafe.log");
         options.addOption(debug);
-
+        
+        Option debug_user 
+            = new Option ("debuguser", "Enable debugging with log config file user-logback-debug.xml");
+        options.addOption(debug_user);
+        
         Option jsa = new Option("nojsa", "Do not use JSA");
         options.addOption(jsa);
 
@@ -246,6 +253,14 @@ public class Config {
 
         Option impreciseStrs = new Option("imprecisestrings", "turn off precision for all strings, FAST and IMPRECISE");
         options.addOption(impreciseStrs);
+        
+
+        Option limitHeapContextForStrings = new Option("limitcontextforstrings", "Limit heap context to 1 for Strings in PTA");
+        options.addOption(limitHeapContextForStrings);
+
+        Option limitHeapContextForGUI = new Option("limitcontextforgui", "Limit heap context to 1 for some GUI objects PTA");
+        options.addOption(limitHeapContextForGUI);
+
         
         Option allcontext = new Option("allcontext", "Track context on all objects, not just starting at user code.");
         options.addOption(allcontext);
@@ -323,6 +338,15 @@ public class Config {
                         "Print contexts and local variables that have INFOVALUE")
                         .withLongOpt("infoflow-value").create("x");
         options.addOption(infoFlowValue);
+        
+        Option precisionLevel = 
+                OptionBuilder.withArgName("INT").
+                    hasArg().
+                    withDescription("Run with precision level: 0 - 5").
+                    withLongOpt("precision").
+                    create("p");
+        
+        options.addOption(precisionLevel);
 
         Option infoFlowTrackAll = new Option("trackallflows", 
                 "Track all methods (excluding those in java.lang) during information flow analysis");
@@ -336,6 +360,12 @@ public class Config {
                 .withDescription("The Android application root directory").create("approot");
         options.addOption(approot);
 
+        Option catchBlocks = new Option ("catchblocks", "Run catch block analysis");
+        options.addOption (catchBlocks);
+        
+        Option catchBlocksFast = new Option ("catchblocksfast", "Run fast catch block analysis");
+        options.addOption (catchBlocksFast);
+        
         Option target =
                 OptionBuilder.withArgName("target").hasArg().withDescription("Target pass to run")
                 .create("t");
@@ -362,6 +392,11 @@ public class Config {
             droidsafe.main.Main.exit(0);
         }
 
+        if (cmd.hasOption("precision")) {
+            int level = Integer.parseInt(cmd.getOptionValue("precision"));
+            setPrecisionLevel(level);
+        }
+        
         if (cmd.hasOption("target")) {
             this.target = cmd.getOptionValue("target");
         }
@@ -380,6 +415,12 @@ public class Config {
 
         if (cmd.hasOption("nova"))
             this.runValueAnalysis = false;
+        
+        if (cmd.hasOption ("catchblocks"))
+            this.runCatchBlocks = true;
+        
+        if (cmd.hasOption ("catchblocksfast"))
+        	this.runCatchBlocksFast = true;
 
         if (cmd.hasOption("noclinitcontext"))
             this.staticinitcontext = false;
@@ -423,6 +464,14 @@ public class Config {
         if (cmd.hasOption("imprecisestrings")) {
             this.impreciseStrings = true;
         }
+        
+        if (cmd.hasOption("limitcontextforstrings")) {
+            this.limitHeapContextForStrings = true;
+        }
+        
+        if (cmd.hasOption("limitcontextforgui")) {
+            this.limitHeapContextForGUI = true;
+        }
        
         if (cmd.hasOption("allcontext")) {
             this.allContextForPTA = true;
@@ -442,6 +491,7 @@ public class Config {
 
         if (cmd.hasOption("infoflow-value")) {
             assert this.infoFlow;
+            System.out.println(cmd.getOptionValues("infoflow-value")[0]);
             this.infoFlowValues = cmd.getOptionValues("infoflow-value");
         }
 
@@ -485,6 +535,11 @@ public class Config {
             configureDebugLog();
             this.debug = true;
         }
+        
+        if (cmd.hasOption("debug-user")) {
+            configureUserDebugLog();
+            this.debug = true;
+        }
 
         if (cmd.hasOption("analyzestrings_unfiltered")) {
             this.unfilteredStringAnalysis = true;
@@ -509,6 +564,26 @@ public class Config {
             // configuration. For multi-step configuration, omit calling context.reset().
             context.reset();
             configurator.doConfigure(apacHome + File.separator + "config-files/logback-debug.xml");
+        } catch (JoranException je) {
+            // StatusPrinter will handle this
+        }
+        StatusPrinter.printInCaseOfErrorsOrWarnings(context);
+    }
+    
+    /**
+     * Method to configure the logging infrastructure to use the debug logging configuration file.
+     */
+    public void configureUserDebugLog() {
+        // Load $user-logback.xml from the config files directory
+        // assume SLF4J is bound to logback in the current environment
+        LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+        try {
+            JoranConfigurator configurator = new JoranConfigurator();
+            configurator.setContext(context);
+            // Call context.reset() to clear any previous configuration, e.g. default
+            // configuration. For multi-step configuration, omit calling context.reset().
+            context.reset();
+            configurator.doConfigure(apacHome + File.separator + "config-files/user-logback-debug.xml");
         } catch (JoranException je) {
             // StatusPrinter will handle this
         }
@@ -580,4 +655,75 @@ public class Config {
         }
     }
 
+    private void setPrecisionLevel(int level) {
+                
+        switch (level) {
+            case 0:
+                kobjsens = 1;
+                ignoreNoContextFlows = true;
+                limitHeapContextForGUI = false;
+                limitHeapContextForStrings = false;
+                runStringAnalysis = false;
+                runValueAnalysis = false;
+                cloneStaticCalls = false;
+                staticinitcontext = false;
+                break;
+            case 1: 
+                kobjsens = 2;
+                ignoreNoContextFlows = false;
+                limitHeapContextForGUI = true;
+                limitHeapContextForStrings = true;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = false;
+                staticinitcontext = false;
+                break;
+            case 2: 
+                kobjsens = 2;
+                allContextForPTA = true;
+                ignoreNoContextFlows = false;
+                limitHeapContextForGUI = false;
+                limitHeapContextForStrings = false;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = true;
+                staticinitcontext = false;
+                break;
+            case 3: 
+                kobjsens = 3;
+                ignoreNoContextFlows = true;
+                limitHeapContextForGUI = true;
+                limitHeapContextForStrings = false;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = true;
+                staticinitcontext = false;
+                break;
+            case 4: 
+                kobjsens = 4;
+                ignoreNoContextFlows = true;
+                limitHeapContextForGUI = true;
+                limitHeapContextForStrings = true;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = true;
+                staticinitcontext = false;
+                break;
+            case 5: 
+                kobjsens = 4;
+                ignoreNoContextFlows = true;
+                limitHeapContextForGUI = false;
+                limitHeapContextForStrings = false;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = true;
+                staticinitcontext = true;                
+                break;
+            default:
+                logger.error("Invalid precision level, must be between 0 and 5 inclusive.");
+                droidsafe.main.Main.exit(1);          
+                break;
+        }
+    }
+    
 }

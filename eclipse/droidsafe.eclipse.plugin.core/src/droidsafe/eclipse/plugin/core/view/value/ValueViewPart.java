@@ -18,6 +18,7 @@ import org.eclipse.ui.PartInitException;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoViewPart;
+import droidsafe.eclipse.plugin.core.view.MethodInfoOutlineViewPart;
 import droidsafe.speclang.model.MethodModel;
 
 /**
@@ -32,7 +33,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
     public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.ValueView";
 
     /** The text displayed on the empty page. */
-    protected static String EMPTY_PAGE_LABEL = "To display the value info, first select a method from the 'Security Spec Outline'";
+    protected static String EMPTY_PAGE_LABEL = MethodInfoOutlineViewPart.EMPTY_PAGE_LABEL;
     
     /** The main tree viewer used to display droidsafe analysis info. */
     protected TextViewer fTextViewer;
@@ -55,7 +56,8 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
      * Set the input element for the viewer and update the contents of the view.
      */
     protected void setInputElement(MethodModel inputElement) {
-        if (!inputElement.equals(fInputElement)) {
+        if ((inputElement == null && fInputElement != null) || 
+                (inputElement != null && !inputElement.equals(fInputElement))) {
             fInputElement = inputElement;
             updateView();
         }
@@ -68,9 +70,9 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
         return fInputElement;
     }
 
-    protected void projectChanged() {
+    protected void projectSelected() {
         resetViewer();
-        showPage(PAGE_EMPTY);
+        setInputElement(null);
     }
     
     /**
@@ -100,14 +102,18 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
      * Update the content of the outline view.
      */
     protected void updateView() {
-        if (fInputElement != null && fParentComposite != null) {
-            showPage(PAGE_VIEWER);
-            
-            String sig = DroidsafePluginUtilities.removeCloneSuffix(fInputElement.getSignature());
-            setContentDescription("method " + sig);
-            
-            String valuesText = getValuesText(fInputElement);
-            fTextViewer.getDocument().set(valuesText);
+        if (fParentComposite != null) {
+            if (fInputElement == null) {
+                showPage(PAGE_EMPTY);
+            } else {
+                showPage(PAGE_VIEWER);
+
+                String sig = DroidsafePluginUtilities.removeCloneSuffix(fInputElement.getSignature());
+                setContentDescription("method " + sig);
+
+                String valuesText = getValuesText(fInputElement);
+                fTextViewer.getDocument().set(valuesText);
+            }
         }        
     }
 

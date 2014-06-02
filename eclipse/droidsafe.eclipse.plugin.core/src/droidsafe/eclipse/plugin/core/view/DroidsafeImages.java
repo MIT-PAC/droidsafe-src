@@ -60,4 +60,19 @@ public class DroidsafeImages {
     /** The image for the indicator of the existence of info flow */
     public static final Image INFO_FLOW_IMAGE = DroidsafePluginUtilities.getImage("info-flow.png");
 
+    /** The image for a checked box */
+    public static final Image CHECKED = DroidsafePluginUtilities.getImage("checked.gif");
+
+    /** The image for an unchecked box */
+    public static final Image UNCHECKED = DroidsafePluginUtilities.getImage("unchecked.gif");
+
+    /** The image for a down arrow */
+    public static final Image NEXT_IMAGE = DroidsafePluginUtilities.getImage("next.png");
+
+    /** The image for an up arrow */
+    public static final Image PREV_IMAGE = DroidsafePluginUtilities.getImage("prev.png");
+
+    /** The image for closing a view */
+    public static final Image CLOSE_IMAGE = DroidsafePluginUtilities.getImage("close.png");
+
 }

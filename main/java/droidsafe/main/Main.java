@@ -2,6 +2,7 @@ package droidsafe.main;
 
 import au.com.bytecode.opencsv.CSVWriter;
 import droidsafe.analyses.CheckInvokeSpecials;
+import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
 import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
@@ -12,6 +13,7 @@ import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.CallGraphDumper;
+import droidsafe.analyses.CatchBlocks;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
@@ -27,6 +29,13 @@ import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.system.API;
 import droidsafe.android.system.AutomatedSourceTagging;
 import droidsafe.android.system.Permissions;
+import droidsafe.reports.ICCEntryPointCallTree;
+import droidsafe.reports.ICCMap;
+import droidsafe.reports.IPCEntryPointCallTree;
+import droidsafe.reports.InformationFlowReport;
+import droidsafe.reports.SensitiveSources;
+import droidsafe.reports.UnresolvedICC;
+import droidsafe.reports.AllEntryPointCallTree;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
@@ -38,14 +47,14 @@ import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.ObjectGetClassToClassConstant;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
+import droidsafe.transforms.va.StartActivityTransformStats;
+import droidsafe.transforms.va.VATransformsSuite;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.transforms.ServiceTransforms;
-import droidsafe.transforms.StartActivityTransformStats;
 import droidsafe.transforms.TransformStringBuilderInvokes;
 import droidsafe.transforms.UndoJSAResultInjection;
-import droidsafe.transforms.VATransformsSuite;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
 import droidsafe.utils.DroidsafeExecutionStatus;
 import droidsafe.utils.IDroidsafeProgressMonitor;
@@ -55,10 +64,14 @@ import droidsafe.utils.SootUtils;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -89,26 +102,53 @@ public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     private static IDroidsafeProgressMonitor sMonitor;
+    
+    private static Date startTime;
+    
+    private static final String COMPLETION_FILE_NAME = "completed.log";
+    
+    private static String commandLineArgs = "";
 
     /**
      * Entry point of DroidSafe Tool.
+     * @throws FileNotFoundException 
      * 
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         driverMsg("Starting DroidSafe Run");
+        
+        for (String arg : args) {
+            commandLineArgs += (arg + " ");
+        }
+        
         // grab command line args and set some globals
         Config.v().init(args);
 
         run(new DroidsafeDefaultProgressMonitor());
     }
 
-    public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) {
+    public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) throws FileNotFoundException {
         sMonitor = monitor;
+        
+        //get current date time with Date()
+        startTime = new Date();
+        
         monitor.subTask("Initializing Environment");
         G.reset();
         // initial project directories and lib jar files
         Project.v().init();
         // configure soot and soot classpath
+        
+        //delete completed file if it exist 
+        try {
+            File completedFile = new File(Project.v().getOutputDir() + File.separator + COMPLETION_FILE_NAME);
+            if (completedFile.exists() && !completedFile.isDirectory()) {
+                completedFile.delete();
+            }
+        } catch (Exception e) {
+            logger.error("Could not delete completed file!", e);
+        }
+        
         SootConfig.init();
         // load the api classes and modeling classes
         API.v().init();
@@ -250,10 +290,10 @@ public class Main {
 
         {
             //patch in messages
-            ServiceTransforms.v().run();
-            
+            //ServiceTransforms.v().run();
+
         }
-        
+
         //add fallback object modeling for any value from the api that leaks into user
         //code as null    
         if (Config.v().addFallbackModeling) {
@@ -275,9 +315,25 @@ public class Main {
             if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
+            // Search for catch blocks
+            if (Config.v().runCatchBlocksFast) {
+                driverMsg ("Searching for catch blocks (fast)");
+                StopWatch cbtimer = new StopWatch();
+                cbtimer.start();
+                CatchBlocks cb = new CatchBlocks();
+                cb.run();
+                cbtimer.stop();
+                driverMsg ("Finished Catch Block Analysis: " + cbtimer);
+                System.exit (0);
+            } else {
+                driverMsg ("no catch block run");
+            }
+
+            /*
             if (Config.v().dumpCallGraph) {
                 CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
             }
+            */
 
             //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()
             //replace calls with new expressions, and let the modeling pass taint appropriately
@@ -324,6 +380,11 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
+        //if debugging then write some jimple classes
+        if (Config.v().debug) {
+            writeSrcAndGeneratedJimple();
+        }
+
 
         if (Config.v().writeJimpleAppClasses) {
             driverMsg("Writing Jimple Classes.");
@@ -334,6 +395,8 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+
+        writeJSONReports();
 
         if (Config.v().infoFlow) {
             // ObjectSensitivityCloner.v().runForInfoFlow();
@@ -419,6 +482,8 @@ public class Main {
             driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
             if (spec != null) {
+                if (Config.v().infoFlow)
+                    InformationFlowReport.create(spec);
                 driverMsg("Creating Eclipse Plugin Serialized Specification...");
                 timer.reset();
                 timer.start();
@@ -426,6 +491,7 @@ public class Main {
                 SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
                 if (Config.v().debug)
                     SecuritySpecModel.printSpecInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
+                
                 timer.stop();
                 driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
             }
@@ -441,8 +507,50 @@ public class Main {
         }
 
         monitor.worked(1);
+        writeCompletionFile();
+        
         System.out.println("Finished!");
         return DroidsafeExecutionStatus.OK_STATUS;
+    }
+    
+    private static void writeCompletionFile() {
+        try {
+            Date endTime = new Date();
+            
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + COMPLETION_FILE_NAME);
+            fw.write("Cmd line options = " + commandLineArgs + "\n");            
+            fw.write("Start time = " + dateFormat.format(startTime) + "\n");
+            fw.write("End time = " + dateFormat.format(endTime) + "\n");    
+            
+            long elapsedTime = endTime.getTime() - startTime.getTime();
+            
+            fw.write("Elapsed Minutes: " + ((int) ((elapsedTime / 1000) / 60)) + ":" + 
+                    ((int) ((elapsedTime / 1000) % 60)) + "\n");
+            
+            int GB = 1024*1024*1024;
+            
+            //Getting the runtime reference from system
+            Runtime runtime = Runtime.getRuntime();
+             
+            //Print used memory
+            fw.write("Used Memory: "
+                + (runtime.totalMemory() - runtime.freeMemory()) / GB + " GB\n");
+     
+            //Print free memory
+            fw.write("Free Memory: "
+                + runtime.freeMemory() / GB + " GB\n");
+             
+            //Print total available memory
+                fw.write("Total Memory: " + runtime.totalMemory() / GB + " GB\n");
+     
+            //Print Maximum available memory
+                fw.write("Max Memory: " + runtime.maxMemory() / GB + " GB\n");
+            
+            fw.close();
+        } catch (Exception e) {
+            logger.error("Error writing completed file.", e);
+        }
     }
 
     /**
@@ -478,6 +586,38 @@ public class Main {
         return DroidsafeExecutionStatus.OK_STATUS;
     }
 
+    private static void writeJSONReports() {
+        try {
+            CollaspedCallGraph.v();
+            driverMsg ("Building indicator reports");
+            AllEntryPointCallTree.v().toJson(Project.v().getOutputDir());
+            IPCEntryPointCallTree.v().toJson(Project.v().getOutputDir());
+            ICCEntryPointCallTree.v().toJson(Project.v().getOutputDir());
+            ICCMap.v().toJSON(Project.v().getOutputDir());
+            UnresolvedICC.v().toJSON(Project.v().getOutputDir());
+            SensitiveSources.v().toJSON(Project.v().getOutputDir());
+            driverMsg ("Indicator reports complete");
+        } catch (Exception e) {
+            logger.error("Error writing json indicator, ignoring and moving on...", e);
+        }
+        
+
+        try {
+            driverMsg ("Searching for catch blocks (precise)");
+            StopWatch cbtimer = new StopWatch();
+            cbtimer.start();
+            CatchBlocks cb = new CatchBlocks();
+            cb.run();
+            cbtimer.stop();
+            if (cb.timeout())
+                driverMsg ("Catch Block Analysis timed out: " + cbtimer);
+            else
+                driverMsg ("Finished Catch Block Analysis: " + cbtimer);
+        } catch (Exception e) {
+            logger.error("Error writing json indicator, ignoring and moving on...", e);
+        }
+    }
+
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
         if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -504,7 +644,7 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-               
+
         //need this pta run to account for jsa injection and class / forname
         if (afterTransformPrecise(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -593,7 +733,7 @@ public class Main {
 
         return afterTransform(monitor, recordTime, opts);
     }
-    
+
     public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime) {
         Map<String,String> opts = new HashMap<String,String>();
 
@@ -650,6 +790,15 @@ public class Main {
         entryPoints.add(Harness.v().getMain());
         Scene.v().setEntryPoints(entryPoints);
         // Scene.v().setMainClass(Harness.v().getHarnessClass());
+    }
+
+    private static void writeSrcAndGeneratedJimple() {
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (Project.v().isSrcClass(clz) || Project.v().isDroidSafeGeneratedClass(clz)) {
+                SootUtils.writeByteCodeAndJimple(
+                    Project.v().getOutputDir(), clz);
+            }
+        }
     }
 
     /**

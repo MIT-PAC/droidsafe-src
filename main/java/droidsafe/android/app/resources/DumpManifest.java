@@ -1,7 +1,9 @@
 package droidsafe.android.app.resources;
 
 import java.io.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -76,6 +78,9 @@ public class DumpManifest {
         out.printf("    %s\n", perm.name);
         
     }
+
+    Set<String> activityStartSet = new HashSet<String>();
+    
     out.println("\nActivities: ");
     for (Activity a : am.activities) {
         out.printf("    Name: %s \n", a.name);
@@ -88,6 +93,13 @@ public class DumpManifest {
                     listToString(intentFilter.actions, "|"),
                     listToString(intentFilter.categories, "|"),
                     dataString);
+            
+            if (listToString(intentFilter.actions, "|").contains("MAIN") ||
+                listToString(intentFilter.categories, "|").contains("LAUNCHER")) {
+                String startCmd = String.format("adb shell am start -n %s/%s", am.manifest.package_name,
+                        a.name);
+                activityStartSet.add(startCmd);
+            }
         }
     }
     
@@ -135,6 +147,14 @@ public class DumpManifest {
                     dataString);
 
         }
+    }
+    
+    
+    if (activityStartSet.size()> 0)
+        out.println("\nActivity Starting Commands: \n");
+
+    for (String startCmd: activityStartSet) {
+        out.printf("   %s \n", startCmd);
     }
   }
 }

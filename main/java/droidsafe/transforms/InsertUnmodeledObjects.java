@@ -67,97 +67,114 @@ public class InsertUnmodeledObjects {
      * reference with an empty points to set.
      */
     public void run() {
-        findAPICallsWithNullReturnValues();
-        
-        //find fields of components created in harness main that reference other user components
-        //and that are null in the pta, and force an assignment to the appropriate field in the harness 
-        fixUpUserRefsToComponents();
+        try {
+            findAPICallsWithNullReturnValues();
+            //find fields of components created in harness main that reference other user components
+            //and that are null in the pta, and force an assignment to the appropriate field in the harness 
+            fixUpUserRefsToComponents();
+        } catch (Exception e) {
+            //keep working but report error to console
+            logger.warn("Error during InsertUnmodeledObjects.  Continuing...", e);
+        }
     }
-    
-    private void fixUpUserRefsToComponents() {
+
+    private void fixUpUserRefsToComponents() throws Exception {
         //for each created component in the main
         int localID = 0;
-        
+
         for (SootClass created : Harness.v().getCreatedClasses()) {
-            if (!Hierarchy.isAndroidComponentClass(created))
+            if (created.isInterface() || !Hierarchy.isAndroidComponentClass(created))
                 continue;
-            
+
             //find fields that reference other classes that are user and components
             for (SootField fieldOfComp : created.getFields()) {
                 if (!(fieldOfComp.getType() instanceof RefType))
                     continue;
                 SootClass refClass = ((RefType)fieldOfComp.getType()).getSootClass();
-                
+
                 //System.out.println("Searching " + refClass);
-                
-                
-                if (API.v().isSystemClass(refClass) || !Hierarchy.isAndroidComponentClass(refClass) ||
+
+
+                if (refClass.isInterface() || API.v().isSystemClass(refClass) || 
+                        !Hierarchy.isAndroidComponentClass(refClass) ||
                         !Harness.v().getCreatedClasses().contains(refClass))
                     continue;
-                
+
                 SootField fieldOfMain = Harness.v().getFieldForCreatedClass(created);
                 StaticFieldRef sfr = Jimple.v().newStaticFieldRef(fieldOfMain.makeRef());
-                
+
                 //System.out.println("Field in main: " + fieldOfMain);
                 //System.out.println("Field of comp: " + fieldOfComp);
-                
+
                 //find all allocnodes of created
                 boolean oneEmpty = false;
-                
+
                 for (IAllocNode node : PTABridge.v().getPTSetIns(sfr)) {
-                    if (PTABridge.v().getPTSet(node, fieldOfComp).isEmpty()) {
-                        oneEmpty = true;
-                        break;
+
+                    if (fieldOfComp.isStatic()) {
+                        if (PTABridge.v().getPTSetIns(Jimple.v().newStaticFieldRef(fieldOfComp.makeRef())).isEmpty()) {
+                            oneEmpty = true;
+                            break;
+                        }
+                    } else {
+                        if (PTABridge.v().getPTSet(node, fieldOfComp).isEmpty()) {
+                            oneEmpty = true;
+                            break;
+                        }
                     }
                 }
-                    
+
                 if (!oneEmpty)
                     continue;
-                
+
                 SootField otherFieldOfMain = Harness.v().getFieldForCreatedClass(refClass);   
-                
+
                 //System.out.printf("%s.%s = %s\n", fieldOfMain, fieldOfComp, otherFieldOfMain);
-                
+
                 //if we are here, we found a component field of a component that is possibly null
                 //so add an explicit assignment
-                
+
                 //fieldOfMain.fieldofComp = anotherFieldOfMain
-                
+
                 //l = fieldOfMain
                 localID++;
                 Local l = Jimple.v().newLocal("comp_link_l_" + localID, fieldOfMain.getType());
                 Harness.v().addLocalToMain(l);
                 AssignStmt assign1 = Jimple.v().newAssignStmt(l, sfr);
                 Harness.v().addStmtToEndOfMainLoop(assign1);
-                
+
                 //r = otherfieldofMain
                 Local r = Jimple.v().newLocal("comp_link_r" + localID, fieldOfComp.getType());
                 Harness.v().addLocalToMain(r);
                 AssignStmt assign2 = Jimple.v().newAssignStmt(r, Jimple.v().newStaticFieldRef(otherFieldOfMain.makeRef()));
                 Harness.v().addStmtToEndOfMainLoop(assign2);
-                
-                //l.fieldOfComp = r                
-                AssignStmt assign3 = Jimple.v().newAssignStmt(
-                    Jimple.v().newInstanceFieldRef(l, fieldOfComp.makeRef()), 
-                    r);
+
+                //l.fieldOfComp = r  
+
+                AssignStmt assign3;
+                if (fieldOfComp.isStatic()) {
+                    assign3 = Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(fieldOfComp.makeRef()), r);
+                } else {
+                    assign3 = Jimple.v().newAssignStmt(
+                        Jimple.v().newInstanceFieldRef(l, fieldOfComp.makeRef()), 
+                        r);
+                }
                 Harness.v().addStmtToEndOfMainLoop(assign3);
-                          
+
             }
-            
-                
         }
-        
-        
-        
+
+
+
         //if the field has null pt set, then create explicit assignment at end of main
         //between static ref's field and static ref for class
-        
+
     }
 
     /**
      * Search all reachable methods in user code for api calls that return a value with an empty pt set.
      */
-    private void findAPICallsWithNullReturnValues() {
+    private void findAPICallsWithNullReturnValues() throws Exception {
         List<SootClass> classes = new LinkedList<SootClass>();
         classes.addAll(Scene.v().getClasses());
         for (SootClass clz : classes) {
@@ -191,16 +208,13 @@ public class InsertUnmodeledObjects {
                             if (!(invoke.getMethodRef().returnType() instanceof RefLikeType))
                                 continue;            
 
-                            try {
-                                Collection<SootMethod> targets = PTABridge.v().resolveInvokeIns(invoke);
-                                for (SootMethod target : targets) 
-                                    if (API.v().isSystemMethod(target)) {
-                                        hasAPITarget = true;
-                                        break;
-                                    }
-                            } catch (CannotFindMethodException e) {
 
-                            }
+                            Collection<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(stmt);
+                            for (SootMethod target : targets) 
+                                if (API.v().isSystemMethod(target)) {
+                                    hasAPITarget = true;
+                                    break;
+                                }
 
 
                             if (hasAPITarget) {
@@ -216,7 +230,7 @@ public class InsertUnmodeledObjects {
             }
         }
     }
-    
+
     private Type findCast(SootMethod method, Stmt start, Value v) {
         Body body = method.getActiveBody();
         StmtBody stmtBody = (StmtBody)body;
@@ -225,10 +239,10 @@ public class InsertUnmodeledObjects {
 
         while (stmtIt.hasNext()) {
             Stmt stmt = (Stmt)stmtIt.next();
-            
+
             if (stmt.branches())
                 return null;
-            
+
             for (ValueBox vb : stmt.getUseBoxes()) {
                 if (vb.getValue() instanceof CastExpr) {
                     CastExpr ce = (CastExpr)vb.getValue();
@@ -239,10 +253,10 @@ public class InsertUnmodeledObjects {
                 }
             }
         }
-        
+
         return null;
     }
-    
+
     /**
      * Insert assignment to the dummy object from the dummy class's field that corresponds to 
      * the type of the return value of the rhs of the assignment.
@@ -251,12 +265,12 @@ public class InsertUnmodeledObjects {
         InvokeExpr invoke = stmt.getInvokeExpr();
         SootMethodRef target = invoke.getMethodRef();
         Body body = method.getActiveBody();
-        
+
         //try to find a cast to narrow type
         Type castType = findCast(method, stmt, stmt.getLeftOp());
         Type returnType = target.returnType();
         Type type;
-        
+
         if (castType != null) {
             if (!SootUtils.isSubTypeOfIncluding(castType, returnType)) {
                 logger.info("Could not use cast type because not child of return type {} {}", castType, returnType);
@@ -266,13 +280,13 @@ public class InsertUnmodeledObjects {
             }            
         } else 
             type = returnType;
-            
-        
+
+
         Value newObj = UnmodeledGeneratedClasses.v().getSootFieldForType(type);
-        
+
         if (newObj instanceof StaticFieldRef && stmt.getLeftOp() instanceof Local) {
             StaticFieldRef fr = (StaticFieldRef)newObj;
-            
+
             //insert assignment statement 
             //assign.getLeft() = fr;
             Stmt insertMe = Jimple.v().newAssignStmt(stmt.getLeftOp(), fr);

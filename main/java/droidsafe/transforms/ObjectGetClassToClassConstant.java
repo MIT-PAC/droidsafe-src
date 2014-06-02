@@ -1,6 +1,7 @@
 package droidsafe.transforms;
 
 import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.android.app.Project;
 import droidsafe.transforms.objsensclone.ClassCloner;
 
@@ -8,6 +9,9 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import soot.Body;
 import soot.BodyTransformer;
@@ -20,6 +24,7 @@ import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.toolkits.pta.IClassConstantNode;
+import soot.ArrayType;
 import soot.Local;
 import soot.RefType;
 import soot.Scene;
@@ -35,6 +40,8 @@ import soot.util.Chain;
  */
 
 public class ObjectGetClassToClassConstant extends BodyTransformer {
+    /** logger object */
+    private static final Logger logger = LoggerFactory.getLogger(ObjectGetClassToClassConstant.class);
     private static int LOCAL_ID = 0;
     private static final String LOCAL_PREFIX = "OBJECTGETCLASS_TO_CLASSCONSTANT_LOCAL";
 
@@ -76,7 +83,7 @@ public class ObjectGetClassToClassConstant extends BodyTransformer {
         AssignStmt assign = (AssignStmt)stmt;
         InvokeExpr invoke = (InvokeExpr)assign.getRightOp();
         try {
-            Collection<SootMethod> targets = PTABridge.v().resolveInvokeIns(invoke);
+            Collection<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(assign);
 
             if (targets.size() != 1)
                 return;
@@ -92,7 +99,14 @@ public class ObjectGetClassToClassConstant extends BodyTransformer {
                     stmtBody.getLocals().add(newLocal);
                            
                     for (IAllocNode node : nodes) {
-                        String className = ClassCloner.removeClassCloneSuffix(((RefType)node.getType()).getClassName());
+                        String className = "";
+                        if (node.getType() instanceof ArrayType)
+                            className = "java.lang.Object";
+                        else if (node.getType() instanceof RefType)
+                            className = ClassCloner.removeClassCloneSuffix(((RefType)node.getType()).getClassName());
+                        else
+                            continue;
+                        
                         ClassConstant classConstant = ClassConstant.v(className.replace(".", "/"));
                         AssignStmt localAssign = Jimple.v().newAssignStmt(newLocal, classConstant);
                         units.insertBefore(localAssign, stmt);
@@ -101,7 +115,8 @@ public class ObjectGetClassToClassConstant extends BodyTransformer {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Exception!: " + e);
+            logger.error("Something wrong {}", e);
+            e.printStackTrace();
         }
         
         return;

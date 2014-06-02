@@ -34,6 +34,7 @@ import soot.tagkit.VisibilityAnnotationTag;
 import droidsafe.analyses.SafeAndroidClassesAndMethods;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
+import droidsafe.android.app.resources.Resources;
 import droidsafe.main.Config;
 import droidsafe.utils.SootMethodList;
 import droidsafe.utils.SootUtils;
@@ -85,6 +86,9 @@ public class API {
     public InfoKind SENSITIVE_UNCATEGORIZED;
     public InfoKind UNMODELED;
 
+    private SootMethodList ipcMethods = new SootMethodList();
+    private SootMethodList ipcCallBackMethods = new SootMethodList();
+
     /** Container classes that we have modified to be understood by our analysis. */
     private Set<String> droidSafeContainerClasses = 
             new HashSet<String>(Arrays.asList(
@@ -110,6 +114,17 @@ public class API {
                 "java.util.Dictionary",
                 "java.util.Hashtable"
                     ));
+
+    private String[] GUI_PACKAGE_PREFIXES = 
+        {
+           "android.animation",
+           "com.android.internal.view",
+           "android.widget",
+           "android.graphics",
+           "android.view",
+           "android.opengl",
+           "android.text"
+        };
 
 
 
@@ -464,6 +479,17 @@ public class API {
                 }
             }
 
+            if ("IPC".equals(category)) {
+                ipcMethods.addMethod(method);
+                logger.info("Noting method as ipc: " + method);
+            }
+
+            if ("IPC_CALLBACK".equals(category)) {
+                ipcCallBackMethods.addMethod(method);
+                logger.info("Noting method as ipc callback: " + method);
+            }
+
+
             if (sourceTaintArgs && !source) {
                 logger.error("Method that taints all args but is not a source: {}", method);
             }
@@ -542,9 +568,11 @@ public class API {
 
             String infoKind = ((AnnotationEnumElem)ae).getConstantName();
 
-            //don't add uncategorized if we have an uncategorized source
-            if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind))
-                continue;
+            //get more information for uncategorized
+            if (SENSITIVE_UNCATEGORIZED.toString().equals(infoKind)) {
+                String pkg = sootMethod.getDeclaringClass().getPackageName();
+                infoKind = pkg.substring(pkg.indexOf(".") + 1);
+            } 
 
             if (!srcsMapping.containsKey(sootMethod)) {
                 srcsMapping.put(sootMethod, new HashSet<InfoKind>());
@@ -944,7 +972,109 @@ public class API {
         return kinds;
     }
 
+    /**
+     * Is this method labeled as a safe or spec with the IPC DSCat.
+     */
+    public boolean isIPCMethod(SootMethod method) {
+        return ipcMethods.containsPoly(method);
+    }
 
+    /**
+     * Return true if this method is or overrides a method that is marked as 
+     * an IPC call back, either local to the application or remote to other apps.
+     */
+    public boolean isIPCCallback(SootMethod method) {
+        //any public methods of a service could be called by a another component
+        SootClass dClz = method.getDeclaringClass();
+        if (Hierarchy.inheritsFromAndroidService(dClz) &&  method.isPublic())
+            return true;
+
+        if (isAIDLCallback(method))
+            return true;
+
+        //otherwise, see if it inherits from a method that has the IPC_CALLBACK annotation
+        return ipcCallBackMethods.containsPoly(method);
+    }
+
+    /**
+     * return true if method is a callback target for remote ipc from remote applications,
+     * include the aidl. defined based on the exported attribute in the manifest.
+     */
+    public boolean isRemoteIPCCallback(SootMethod method) {
+        if (!isIPCCallback(method))
+            return false;
+
+        if (isAIDLCallback(method))
+            return true;
+
+        //a callback
+        List<SootClass> classes = new LinkedList<SootClass>();
+        classes.add(method.getDeclaringClass());
+        
+        if (SootUtils.isInnerClass(method.getDeclaringClass())) {
+            SootClass outer = SootUtils.getOuterClass(method.getDeclaringClass());
+            if (outer != null)
+                classes.add(outer);
+        }
+        
+        for (SootClass clz : classes) {
+            if (Hierarchy.isAndroidComponentClass(clz) &&
+                    Resources.v().getManifest().isDefinedInManifest(clz) &&
+                    Resources.v().getManifest().isExported(clz))
+                return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * is this method a sink with the IPC kind?
+     */
+    public boolean isIPCSink(SootMethod method) {
+        Set<InfoKind> infoKinds = getSinkInfoKinds(method);
+
+        for (InfoKind kind : infoKinds) {
+            if ("IPC".equals(kind.toString()))
+                return true;
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Hack for determining if a method is defined in an AIDL interface.  Should work well enough.
+     */
+    public boolean isAIDLCallback(SootMethod method) {
+        SootClass iInterface = Scene.v().getSootClass("android.os.IInterface");
+        SootClass declaringClass = method.getDeclaringClass();
+
+        Set<SootClass> parents = SootUtils.getParents(declaringClass);
+        
+         if (parents.contains(iInterface)) {
+             for (SootClass parent : parents) {
+             
+                if (!parent.isInterface() || !Scene.v().getActiveHierarchy().isInterfaceDirectSubinterfaceOf(parent, iInterface))
+                    continue;
+                
+                if (parent.declaresMethodByName(method.getName()))
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean isGUIClass(SootClass clz) {
+        for (String guiPackagePrefix : GUI_PACKAGE_PREFIXES) {
+            if (clz.getName().startsWith(guiPackagePrefix)) {
+                return true;
+            }           
+        }
+        
+        return false;
+    }
+    
     public enum Classification {
         SAFE, SPEC, BAN, NONE;
     }

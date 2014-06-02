@@ -170,21 +170,16 @@ public class VAStats {
                                         if(vaModel instanceof PrimVAModel) {
                                             PrimVAModel primVAModel = (PrimVAModel)vaModel;
                                             // if the primitive field is invalidated, we can't trust the number of values
-                                            if(primVAModel.invalidated()) {
+                                            if(primVAModel.invalidated() || primVAModel.hasUnknown()) {
                                                 size = -1;
                                                 break;
                                             } else {
                                                 Set<Object> values = primVAModel.getValues();
                                                 // if the set of values could include ANYTHING, leave size as -1
-                                                if(values.contains(ValueAnalysis.UNKNOWN_VALUES_STRING)) {
-                                                    size = -1;
-                                                    break;    
-                                                } else {
-                                                    if (size == -1) {
-                                                        size = 0;
-                                                    }
-                                                    size += values.size(); 
+                                                if (size == -1) {
+                                                    size = 0;
                                                 }
+                                                size += values.size(); 
                                             }
                                         } else {
                                             size = -1;
