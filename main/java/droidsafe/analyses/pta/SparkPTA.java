@@ -54,6 +54,7 @@ import soot.jimple.StaticFieldRef;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.VirtualInvokeExpr;
+import soot.jimple.spark.SparkEvaluator;
 import soot.jimple.spark.SparkTransformer;
 import soot.jimple.spark.geom.dataMgr.Obj_full_extractor;
 import soot.jimple.spark.geom.geomPA.GeomPointsTo;
@@ -100,14 +101,9 @@ public class SparkPTA extends PTABridge {
     private static final Logger logger = LoggerFactory.getLogger(SparkPTA.class);
     /** bimap of new expressions to their alloc node representation */
     private HashBiMap<Object, InsensitiveAllocNode> newToAllocNodeMap;
-    /** all method reachable from the harness main */
-    private Set<SootMethod> reachableMethods;
-    /** add method + contexts that are reachable */
-    private Set<MethodOrMethodContext> reachableMethodContexts;
     /** underlying pta */
     private PAG ptsProvider;
 
-    private HashMap<SootMethod, Set<MethodOrMethodContext>> methodToContexts;
 
     private Set<AllocNode> allAllocNodes;
 
@@ -169,59 +165,6 @@ public class SparkPTA extends PTABridge {
 
         createNewToAllocMap();
 
-        //fill reachable methods map
-        reachableMethods = new LinkedHashSet<SootMethod>();
-        reachableMethodContexts = new LinkedHashSet<MethodOrMethodContext>();
-        methodToContexts = new LinkedHashMap<SootMethod, Set<MethodOrMethodContext>>();
-
-        QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
-
-        long totalIndegree = 0;
-
-        int totalReachableMethodLines = 0;
-        
-        while (qr.hasNext()) {
-            MethodOrMethodContext momc = qr.next();
-
-            if (reachableMethods.add(momc.method())) {
-                totalReachableMethodLines += SootUtils.getNumLines(momc.method());
-            }
-
-            reachableMethodContexts.add(momc);
-
-            /*
-            if (momc.method().getSubSignature().equals("void <clinit>()") ||
-                    momc.method().getDeclaringClass().getName().equals("java.lang.Integer"))
-                System.out.println(momc);
-             */
-            if (!methodToContexts.containsKey(momc.method()))
-                methodToContexts.put(momc.method(), new LinkedHashSet<MethodOrMethodContext>());
-
-            methodToContexts.get(momc.method()).add(momc);
-
-            Iterator<Edge> iterator = callGraph.edgesInto(momc);
-            while (iterator.hasNext()) {
-                totalIndegree++;
-                Edge e = iterator.next();
-
-                // System.out.println("\tEdge: " + e + "\n");
-            }
-        }
-
-        QueueReader<Edge> edges = callGraph.listener();
-        /*
-        while (edges.hasNext()) {
-            System.out.println("SparkPTA cg edge: " + edges.next());
-        }*/
-
-
-        System.out.println("Size of reachable methods: " + reachableMethods.size());
-        System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
-        System.out.println("Average Contexts per Method: " + 
-                (((double)reachableMethodContexts.size()) / ((double)reachableMethods.size())));
-        System.out.println("Number of obj sens nodes: " + ObjectSensitiveAllocNode.numberOfObjSensNodes());
-        System.out.println("Total lines of reachable methods: " + totalReachableMethodLines);
-
         for (SootMethod method : getReachableMethods()) {
             Set<MethodOrMethodContext> mcs = getMethodContexts(method);
             if (mcs.size() > 30)
@@ -242,8 +185,7 @@ public class SparkPTA extends PTABridge {
             dumpTextGraph(Project.v().getOutputDir() + File.separator + fileName);
         }
 
-        if (Config.v().statsRun)
-            new SparkPTAStats().writeStats();
+        System.out.println(SparkEvaluator.v().toString());
     }
 
     private void dumpReachablesAndAllocNodes() {
@@ -351,11 +293,7 @@ public class SparkPTA extends PTABridge {
 
 
     public Set<MethodOrMethodContext> getMethodContexts(SootMethod method) {
-        if (!methodToContexts.containsKey(method)) {
-            return Collections.<MethodOrMethodContext>emptySet();
-        }
-
-        return methodToContexts.get(method);
+        return SparkEvaluator.v().getContexts(method);
     }
 
     public Set<IAllocNode> getAllocNodeIns(Object newExpr) {
@@ -419,17 +357,17 @@ public class SparkPTA extends PTABridge {
 
     @Override
     public Set<MethodOrMethodContext> getReachableMethodContexts() {
-        return reachableMethodContexts;
+        return SparkEvaluator.v().getReachableMethodContexts();
     }
 
     @Override
     public Set<SootMethod> getReachableMethods() {
-        return reachableMethods;
+        return SparkEvaluator.v().getReachableMethods();
     }
 
     @Override
     public boolean isReachableMethod(SootMethod method) {
-        return reachableMethods.contains(method);
+        return getReachableMethods().contains(method);
     }
 
     @Override
