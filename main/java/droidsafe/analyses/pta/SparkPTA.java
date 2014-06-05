@@ -94,19 +94,17 @@ import droidsafe.utils.SourceLocationTag;
  *
  */
 public class SparkPTA extends PTABridge {
-
-    public static final int K = 2;
-
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(SparkPTA.class);
+    /** the value of k for obj sensitivity depth that we were run with */
+    private int k;
     /** bimap of new expressions to their alloc node representation */
     private HashBiMap<Object, InsensitiveAllocNode> newToAllocNodeMap;
     /** underlying pta */
     private PAG ptsProvider;
-
-
+    
     private Set<AllocNode> allAllocNodes;
-
+    /** how many times have we been run? */
     private static int runCount = 1;
 
 
@@ -338,6 +336,10 @@ public class SparkPTA extends PTABridge {
             }
             insens = newToAllocNodeMap.get(newExpr);
         }
+        
+        //handle no context case
+        if (k == 0)
+            return insens;
 
         return insens.context(context);
     }
@@ -497,6 +499,9 @@ public class SparkPTA extends PTABridge {
 
     @Override
     public Set<? extends IAllocNode> getPTSet(Value val, Context context) {
+        //handle case for insensitive run
+        if (k == 0)
+            return getPTSetIns(val);
 
         final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
         PointsToSetInternal pts = null;
@@ -750,7 +755,7 @@ public class SparkPTA extends PTABridge {
         opt.put("merge-stringbuffer", Boolean.toString(Config.v().impreciseStrings));   
         opt.put("string-constants", "true");   
 
-        opt.put("kobjsens", Integer.toString(K));
+        opt.put("kobjsens", Integer.toString(Config.v().kobjsens));
 
         opt.put("kobjsens-context-for-static-inits", Boolean.toString(Config.v().staticinitcontext));
 
@@ -790,6 +795,9 @@ public class SparkPTA extends PTABridge {
         opt.put("traversal", "75000");
          */
 
+        //set k for the run...
+        k = Integer.parseInt(opt.get("kobjsens"));
+        
         SparkTransformer.v().transform("",opt);
 
 

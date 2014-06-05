@@ -158,6 +158,8 @@ public class Config {
     public boolean limitHeapContextForStrings = false;
     /** in spark limit heap context for some GUI elements */
     public boolean limitHeapContextForGUI = false;
+    /** name of benchmark we are running */
+    public String appName = "";
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -239,6 +241,11 @@ public class Config {
                 OptionBuilder.withArgName("value").hasArg()
                 .withDescription("Timeout value for the string analysis (default 120)").create("jsatimeout");
         options.addOption(jsatimeout);
+        
+        Option appNameOpt =
+                OptionBuilder.withArgName("<str>").hasArg()
+                .withDescription("Name of application (used for reporting)").create("appname");
+        options.addOption(appNameOpt);
 
         Option kObjSens = OptionBuilder.withArgName("k").hasArg()
                 .withDescription("Depth for Object Sensitivity for PTA").create("kobjsens");
@@ -445,6 +452,10 @@ public class Config {
             this.runStringAnalysis = false;
         }
 
+        if (cmd.hasOption("appname")) {
+            this.appName = cmd.getOptionValue("appname");
+        }
+        
         if (cmd.hasOption("jsatimeout")) {
             this.stringAnalysisTimeout = Integer.parseInt(cmd.getOptionValue("jsatimeout"));
         }

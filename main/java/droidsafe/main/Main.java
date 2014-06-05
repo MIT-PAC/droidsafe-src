@@ -40,6 +40,7 @@ import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.speclang.SecuritySpecification;
+import droidsafe.stats.PTAPaper;
 import droidsafe.transforms.CallBackModeling;
 import droidsafe.transforms.ClassGetNameToClassString;
 import droidsafe.transforms.InsertUnmodeledObjects;
@@ -506,6 +507,8 @@ public class Main {
             logger.error("Not implemented yet!");
         }
 
+        PTAPaper.writeReport();
+        
         monitor.worked(1);
         writeCompletionFile();
         

@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -67,6 +69,8 @@ public class Method implements Comparable<Method> {
     private Map<InfoKind, Set<Stmt>> recFlows;
     /** argument info kinds set, used to cache the info kinds so we do not query info flow more than once */
     private Map<InfoKind, Set<Stmt>>[] argFlows;
+    /** info flows of memory touched by this method and any methods called, cached here */
+    private Map<InfoKind, Set<Stmt>> methodFlows;
 
     /** if the target method is synthetic, then we try to find the real target through the synthetic method
      *  if this is non-null, then this is the real target of this method in user code     */
@@ -558,6 +562,14 @@ public class Method implements Comparable<Method> {
     public Map<InfoKind, Set<Stmt>> getArgSourceInfoUnits(int i) {
         return argFlows[i];
     }
+    
+    /**
+     * Return map of high level flow to stmt for flows that result from memory accessed reachable code of the 
+     * method.
+     */
+    public Map<InfoKind, Set<Stmt>> getMethodInfoUnits() {
+        return methodFlows;
+    }
 
     /**
      * Given a value from the invoke statement (either receiver or an argument), query the 
@@ -644,14 +656,23 @@ public class Method implements Comparable<Method> {
      * on receiver or arguments (but could include accesses of receiver or arguments).
      */
     public Set<InfoKind> getMethodInfoKinds() {
+        methodFlows = new LinkedHashMap<InfoKind, Set<Stmt>>();
+        
         if (InformationFlowAnalysis.v() == null)
             return Collections.<InfoKind>emptySet();
 
         Set<InfoKind> methodKinds = new HashSet<InfoKind>();
         for (InfoValue iv : InformationFlowAnalysis.v().getTaints(ptaInfo.getEdge().getTgt())) {
             for (InfoKind kind : getInfoKinds(iv)) {
-                if (kind.isSensitive()) 
+                if (kind.isSensitive()) {
+                    if (!methodFlows.containsKey(kind))
+                        methodFlows.put(kind, new LinkedHashSet<Stmt>());
+                    
+                    if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt)
+                        methodFlows.get(kind).add((Stmt)((InfoUnit)iv).getUnit());
+                    
                     methodKinds.add(kind);
+                }
             }
         }
 
