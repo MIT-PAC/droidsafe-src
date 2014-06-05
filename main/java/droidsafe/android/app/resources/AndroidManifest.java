@@ -220,9 +220,13 @@ public class AndroidManifest {
    *
    */
   public abstract class ComponentBaseElement extends BaseElement {
+      public boolean enabled = true;
 	  public ComponentBaseElement (Node n, BaseElement parent) throws 
 	  InvalidPropertiesFormatException {
 		  super(n, parent);
+		  String enabledString = get_attr("enabled");
+		  if (enabledString != null && enabledString.equals("false"))
+		      enabled = false;
 	  }
 	  private SootClass sootClass;
 
@@ -300,7 +304,7 @@ public class AndroidManifest {
       super (n, parent);
       label = get_attr ("label");
       name = get_attr ("name");
-
+      
       for (Node child : gather_children()) {
         String name = child.getNodeName();
         if (name.equalsIgnoreCase ("intent-filter"))
