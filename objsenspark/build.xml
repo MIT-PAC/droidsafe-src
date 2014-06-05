@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="jar" name="Create Runnable Jar for Project BytecodeAnalyzer">
+
+    <property environment="env"/>
+
+	<!-- setup the classpath -->
+	<path id="classpath">
+		<fileset dir="${env.APAC_HOME}/lib">
+			<include name="commons-cli-1.2.jar"/>
+			<include name="commons-io-2.4.jar"/>
+			<include name="logback-classic-1.0.7.jar"/>
+			<include name="logback-core-1.0.7.jar"/>
+			<include name="slf4j-api-1.7.2.jar"/>
+			<include name="soot-trunk.jar"/>
+		</fileset>
+	</path>
+
+    <target name="compile">
+		<mkdir dir="bin"/>
+		<javac srcdir="src" destdir="bin" debug="true" includeantruntime="false">
+			<classpath refid="classpath"/>
+		</javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="objsenspark.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="objsenspark.Main"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="./bin"/>
+        </jar>
+    </target>
+
+	<target name="clean">
+		<delete dir="bin"/>
+	</target>
+
+</project>
