@@ -1014,7 +1014,6 @@ HashMap<String,Object> onRetainNonConfigurationChildInstances() {
      */
     @DSComment("Android Manager retrieved/accessed")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.686 -0500", hash_original_method = "C5EB33D6873EE026D87972F02E8EBD4B", hash_generated_method = "564609F83A847B122B44871EAAC2C081")
     
 public FragmentManager getFragmentManager() {

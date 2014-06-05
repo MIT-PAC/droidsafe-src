@@ -264,7 +264,6 @@ public InputStream getErrorStream() {
      * @see #method
      * @see #setRequestMethod
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.616 -0500", hash_original_method = "0D9C6E3C645DAD49E763E30DD315D3EF", hash_generated_method = "856E62238850A66AFEBF25CCB07FCBB8")
     
 public String getRequestMethod() {
