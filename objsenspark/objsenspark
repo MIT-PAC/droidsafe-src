@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ -z "$APAC_HOME" ]; then
+  echo "Need to set APAC_HOME to the root of your apac repository."
+  exit 1
+fi
+
+LIB=$APAC_HOME/lib
+
+DRIVER=$APAC_HOME/tools/objsenspark
+
+CLASSPATH=$DRIVER/objsenspark.jar
+CLASSPATH=$CLASSPATH:$LIB/commons-cli-1.2.jar
+CLASSPATH=$CLASSPATH:$LIB/commons-io-2.4.jar
+CLASSPATH=$CLASSPATH:$LIB/logback-classic-1.0.7.jar
+CLASSPATH=$CLASSPATH:$LIB/logback-core-1.0.7.jar
+CLASSPATH=$CLASSPATH:$LIB/slf4j-api-1.7.2.jar
+CLASSPATH=$CLASSPATH:$LIB/soot-trunk.jar
+CLASSPATH=$CLASSPATH:$DRIVER/config-files
+
+java -Xms1g -Xmx16g -cp $CLASSPATH objsenspark.Main "$@"
