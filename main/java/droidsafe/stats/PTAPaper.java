@@ -31,13 +31,13 @@ public class PTAPaper {
         try {
             String name = "";
             if ("".equals(Config.v().appName)) {
-                name += "android-app_";
+                name += "android-app";
             } else {
-               name += Config.v().appName + "_";
+                name += Config.v().appName;
             }
-            
-            String fileName = name + getConfiguration().replaceAll(" ", "_") + "_pta-report.txt";
-            
+
+            String fileName = name + "_" + getConfiguration().replaceAll(" ", "_") + "_pta-report.txt";
+
             fw = new FileWriter(Project.v().getOutputDir() + File.separator + fileName);
 
             //write configuration details
@@ -64,7 +64,7 @@ public class PTAPaper {
 
         //count number of flows
         //have to map it down to invoke statement because of context
-                
+
         //key is invoke of sink -> sources
         Map<InvokeExpr, Set<Stmt>> invokeToSources = new HashMap<InvokeExpr, Set<Stmt>>();
 
@@ -77,7 +77,7 @@ public class PTAPaper {
                     if (!invokeToSources.containsKey(ie)) {
                         invokeToSources.put(ie, new HashSet<Stmt>());
                     }
-                    
+
                     //get args
                     for (int i = 0; i < oe.getNumArgs(); i++) {
                         for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getArgSourceInfoUnits(i).entrySet()) {
@@ -98,11 +98,11 @@ public class PTAPaper {
 
         //count number of flows
         int flowsIntoSinks = 0;
-        
+
         for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSources.entrySet()) {
             flowsIntoSinks += sink.getValue().size();
         }
-        
+
         buf.append("Flows into sinks: " + flowsIntoSinks + "\n");
 
         //total infoflow sets for args?
@@ -125,13 +125,15 @@ public class PTAPaper {
     private static String getConfiguration() {
         StringBuffer buf = new StringBuffer();
 
-       
+
         buf.append(Config.v().kobjsens + " ");
 
-        if (Config.v().allContextForPTA) 
-            buf.append("all-context ");
-        else
-            buf.append("decay ");
+        if (Config.v().kobjsens > 0) {
+            if (Config.v().allContextForPTA) 
+                buf.append("all-context ");
+            else
+                buf.append("decay ");
+        }
 
         if (Config.v().ignoreNoContextFlows)
             buf.append("ignore-no-context-flows ");

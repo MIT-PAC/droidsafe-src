@@ -74,6 +74,8 @@ import droidsafe.utils.SootUtils;
  */
 public class InformationFlowAnalysis {
     private static InformationFlowAnalysis v;
+    
+    private static boolean IGNORE_FLOWS_THROUGH_THROWABLE = false;
 
     private State state = new State();
     
@@ -740,7 +742,13 @@ public class InformationFlowAnalysis {
                 if (!(values.isEmpty())) {
                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                     for (IAllocNode allocNode : allocNodes) {
-                        state.instances.putW(allocNode, field, values);
+                        
+                        boolean isThrowable = Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(((RefType)allocNode.getType()).getSootClass(), 
+                            Scene.v().getSootClass("java.lang.Throwable"));
+                        
+                        if (!IGNORE_FLOWS_THROUGH_THROWABLE || !isThrowable) {
+                            state.instances.putW(allocNode, field, values);
+                        }
                     }
                 }
             }
