@@ -183,7 +183,7 @@ public class SparkPTA extends PTABridge {
             dumpTextGraph(Project.v().getOutputDir() + File.separator + fileName);
         }
 
-        System.out.println(SparkEvaluator.v().toString());
+        //System.out.println(SparkEvaluator.v().toString());
     }
 
     private void dumpReachablesAndAllocNodes() {
