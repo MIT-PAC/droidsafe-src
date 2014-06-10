@@ -317,7 +317,7 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
             // Search for catch blocks
-            if (Config.v().runCatchBlocksFast) {
+            if (Config.v().produceReports) {
                 driverMsg ("Searching for catch blocks (fast)");
                 StopWatch cbtimer = new StopWatch();
                 cbtimer.start();
@@ -397,7 +397,8 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        writeJSONReports();
+        if (Config.v().produceReports)
+            writeJSONReports();
 
         if (Config.v().infoFlow) {
             // ObjectSensitivityCloner.v().runForInfoFlow();
