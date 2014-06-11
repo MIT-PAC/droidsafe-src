@@ -316,20 +316,6 @@ public class Main {
             if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
-            // Search for catch blocks
-            if (Config.v().produceReports) {
-                driverMsg ("Searching for catch blocks (fast)");
-                StopWatch cbtimer = new StopWatch();
-                cbtimer.start();
-                CatchBlocks cb = new CatchBlocks();
-                cb.run();
-                cbtimer.stop();
-                driverMsg ("Finished Catch Block Analysis: " + cbtimer);
-                System.exit (0);
-            } else {
-                driverMsg ("no catch block run");
-            }
-
             /*
             if (Config.v().dumpCallGraph) {
                 CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
