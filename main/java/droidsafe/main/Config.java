@@ -48,6 +48,8 @@ public class Config {
     public static final String ANDROID_APP_DIR_REL = "android-apps";
 
     public static final String ANDROID_LIB_DIR_REL = "android-lib";
+    
+    public static final String EXPECT_INFO_FLOW_FILE = "expected-info-flows.txt";
 
     /** location of the GITI api model jar */
     private static String DROIDSAFE_API_MODEL_JAR_PATH = config.getApacHome() + File.separator + ANDROID_LIB_DIR_REL 
@@ -81,6 +83,9 @@ public class Config {
     public boolean noSourceInfo = false;
     /** If true, analyze information flows. */
     public boolean infoFlow = true;
+   
+    public boolean checkInfoFlow = false;
+    
     /** InfoValues that we are concerned with  */
     public String[] infoFlowValues;
     /** If true, track all methods (excluding those in java.lang) regardless of APIInfoKindMapping.hasSourceInfoKind() */
@@ -331,6 +336,11 @@ public class Config {
 
         Option callgraph = new Option("callgraph", "Output .dot callgraph file ");
         options.addOption(callgraph);
+        
+        Option checkInfoFlow =
+                new Option("checkinfoflow", "Perform infoflow result against expected-info-flows.txt");
+
+        options.addOption(allStatsRun);
 
 
         Option noInfoFlow = new Option("noinfoflow", 
@@ -504,6 +514,12 @@ public class Config {
             assert this.infoFlow;
             System.out.println(cmd.getOptionValues("infoflow-value")[0]);
             this.infoFlowValues = cmd.getOptionValues("infoflow-value");
+        }
+
+        if (cmd.hasOption("checkinfoflow")) {
+            this.checkInfoFlow = true;
+            File file = new File(EXPECT_INFO_FLOW_FILE);
+            assert file.exists();
         }
 
         if (cmd.hasOption("native")) {
