@@ -84,7 +84,7 @@ public class Config {
     /** If true, analyze information flows. */
     public boolean infoFlow = true;
    
-    public boolean checkInfoFlow = false;
+    public boolean checkInfoFlow = true;
     
     /** InfoValues that we are concerned with  */
     public String[] infoFlowValues;
@@ -338,7 +338,7 @@ public class Config {
         options.addOption(callgraph);
         
         Option checkInfoFlow =
-                new Option("checkinfoflow", "Perform infoflow result against expected-info-flows.txt");
+                new Option("nocheckinfo", "Disable infoflow check result against expected-info-flows.txt");
 
         options.addOption(allStatsRun);
 
@@ -508,6 +508,7 @@ public class Config {
         
         if (cmd.hasOption("noinfoflow")) {
             this.infoFlow = false;
+            this.checkInfoFlow = false;
         }
 
         if (cmd.hasOption("infoflow-value")) {
@@ -516,10 +517,8 @@ public class Config {
             this.infoFlowValues = cmd.getOptionValues("infoflow-value");
         }
 
-        if (cmd.hasOption("checkinfoflow")) {
+        if (cmd.hasOption("nocheckinfo")) {
             this.checkInfoFlow = true;
-            File file = new File(EXPECT_INFO_FLOW_FILE);
-            assert file.exists();
         }
 
         if (cmd.hasOption("native")) {

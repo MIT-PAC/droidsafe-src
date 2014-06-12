@@ -57,7 +57,6 @@ public class InformationFlowReport {
                 eventBlock.getKey().getSignature(), eventBlock.getKey().getDeclSourceLocation());
 
             StringBuffer flows = new StringBuffer();  //original report
-            StringBuffer formattedFlows = new StringBuffer();  //formatted report used by machine
             
             boolean hasFlow = false;
 
@@ -170,6 +169,7 @@ public class InformationFlowReport {
                                     method, slash, source.getKey(), slash, lineNumber, "ARG"));
 
                                 String flowLine = flowPrefix + tmpBuilder;
+                                flowLine = flowLine.replaceAll("_ds_method_clone_\\d\\+", "");
                                 formattedFlowSet.add(flowLine);
                             }
                         }
@@ -187,20 +187,66 @@ public class InformationFlowReport {
                 sb.append(flows);
                 sb.append("\n");
             }
+        }
 
-            if (Config.v().checkInfoFlow) {
+        boolean infoflowOK = true;
+        File expectedInfoFile  = new File(Config.v().EXPECT_INFO_FLOW_FILE);
+        if (Config.v().checkInfoFlow && expectedInfoFile.exists()) {
+            List<String> expectedFlows = null;
+            StringBuilder checkerResult = new StringBuilder();
+            try {
                 InputStream  expectedFile = null;
-                List<String> expectedFlows = null;
-                try {
-                    expectedFile  = new FileInputStream(Config.v().EXPECT_INFO_FLOW_FILE);
-                    expectedFlows = IOUtils.readLines(expectedFile); 
-                }
-                catch (Exception ex) {
-                    System.exit(-1);
-                }
-                
+                expectedFile  = new FileInputStream(expectedInfoFile);
+                expectedFlows = IOUtils.readLines(expectedFile); 
+            }
+            catch (Exception ex) {
+                System.exit(-1);
+            }
+            // Now we are building set for comparision
+            Set<String> expectedFlowSet = new HashSet<String>();
+            Set<String> resultFlowSet = new HashSet<String>();
+
+            checkerResult.append("\n\n========================================\n");
+            checkerResult.append("Checking infoflow result against expected flows \n");
+            for (String flow: expectedFlows) {
+                flow = flow.replaceAll("\\s", "");
+                flow = flow.replace("FLOW:", ""); 
+                flow = flow.replaceAll("#.*", "");
+                if (flow.length() > 0)
+                    expectedFlowSet.add(flow);
+
             }
 
+            for (String flow: formattedFlowSet){
+                resultFlowSet.add(flow.replaceAll("\\s",  ""));
+            }
+
+            int missing = 0;
+            int found = 0;
+            for (String flow: expectedFlowSet) {
+                if (resultFlowSet.contains(flow))
+                    found++;
+                else {
+                    checkerResult.append("MISSING: ").append(flow).append("\n");
+                    missing++;
+                    infoflowOK = false;
+                }
+            }
+
+            int extra = 0;
+            for (String flow: resultFlowSet) {
+                if (!expectedFlowSet.contains(flow)) {
+                    extra++;
+                    checkerResult.append("EXTRA: ").append(flow).append("\n");
+                }
+            }                
+            sb.append(checkerResult);
+            String status = "PASSED";
+            if (missing > 0)
+                status = "FAILED";
+            
+            sb.append(String.format("STATUS: %s, MATCHED: %d, MISSING: %d, EXTRA: %d \n", 
+                    status, found, missing, extra));
         }
 
         try {
@@ -210,6 +256,9 @@ public class InformationFlowReport {
         } catch(IOException e) {
 
         }
+        
+        if (!infoflowOK)
+            System.exit(-1);
     }
 
 }
