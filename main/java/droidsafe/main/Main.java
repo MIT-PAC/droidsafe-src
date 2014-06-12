@@ -436,6 +436,7 @@ public class Main {
             }
 
             timer.stop();
+            PTAPaper.infoFlowTimeSec = ((double)timer.getTime()) / 1000.0;
             droidsafe.stats.AvgInfoFlowSetSize.run();
             driverMsg("Finished Information Flow Analysis: " + timer);
         }

@@ -26,6 +26,8 @@ import droidsafe.utils.SootUtils;
 
 public class PTAPaper {
 
+    public static double infoFlowTimeSec = 0;
+    
     public static void writeReport() {
         FileWriter fw;
         try {
@@ -103,6 +105,7 @@ public class PTAPaper {
             flowsIntoSinks += sink.getValue().size();
         }
 
+        buf.append("Info Flow Time Sec: " + infoFlowTimeSec + "\n");
         buf.append("Flows into sinks: " + flowsIntoSinks + "\n");
 
         //total infoflow sets for args?

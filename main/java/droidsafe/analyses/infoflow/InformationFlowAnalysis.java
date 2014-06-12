@@ -75,7 +75,7 @@ import droidsafe.utils.SootUtils;
 public class InformationFlowAnalysis {
     private static InformationFlowAnalysis v;
     
-    private static boolean IGNORE_FLOWS_THROUGH_THROWABLE = false;
+    private static boolean IGNORE_FLOWS_THROUGH_THROWABLE = true;
 
     private State state = new State();
     
