@@ -91,7 +91,7 @@ public class InformationFlowReport {
                 tmpBuilder.append("}");
                 tmpBuilder.append("<=");
                 
-                String flowPrefix = tmpBuilder.toString();
+                String flowPrefix = tmpBuilder.toString().replaceAll("_ds_method_clone_\\d+", "");
                 
                 if (hasSources) {
                     hasFlow = true;
@@ -169,25 +169,29 @@ public class InformationFlowReport {
                                     method, slash, source.getKey(), slash, lineNumber, "ARG"));
 
                                 String flowLine = flowPrefix + tmpBuilder;
-                                flowLine = flowLine.replaceAll("_ds_method_clone_\\d\\+", "");
+                                flowLine = flowLine.replaceAll("_ds_method_clone_\\d+", "");
                                 formattedFlowSet.add(flowLine);
                             }
                         }
                     }
                 }
 
-                for (String flow: formattedFlowSet) {
-                    sb.append("FLOW:").append(flow).append("\n");
-                }
-                sb.append("\n\n");
+            
             }
 
+        
             if (hasFlow) {
                 sb.append(entryPoint);
                 sb.append(flows);
                 sb.append("\n");
             }
         }
+
+        sb.append("\n");
+        for (String flow: formattedFlowSet) {
+            sb.append("FLOW:").append(flow).append("\n\n");
+        }
+        sb.append("\n");
 
         boolean infoflowOK = true;
         File expectedInfoFile  = new File(Config.v().EXPECT_INFO_FLOW_FILE);
