@@ -118,7 +118,6 @@ public abstract Set<Map.Entry<K, V>> entrySet();
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.579 -0400", hash_original_method = "80DED5B1493F4175A64A94324F6ABF01", hash_generated_method = "DE4E462DDFAD080821E1F2FDD12CBB2F")
     public V get(Object key) {
         addTaint(key.getTaint());

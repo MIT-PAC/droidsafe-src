@@ -27,6 +27,7 @@ public interface HttpClient {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     HttpResponse execute(HttpUriRequest request)
         throws IOException, ClientProtocolException
         ;
@@ -34,6 +35,7 @@ public interface HttpClient {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     HttpResponse execute(HttpUriRequest request, HttpContext context)
         throws IOException, ClientProtocolException
         ;
@@ -41,6 +43,7 @@ public interface HttpClient {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     HttpResponse execute(HttpHost target, HttpRequest request)
         throws IOException, ClientProtocolException
         ;
@@ -48,6 +51,7 @@ public interface HttpClient {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     HttpResponse execute(HttpHost target, HttpRequest request,
                          HttpContext context)
         throws IOException, ClientProtocolException
@@ -56,6 +60,7 @@ public interface HttpClient {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     <T> T execute(
             HttpUriRequest request, 
             ResponseHandler<? extends T> responseHandler)
@@ -64,6 +69,7 @@ public interface HttpClient {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})   
+    @DSSink({DSSinkKind.NETWORK})
     <T> T execute(
             HttpUriRequest request, 
             ResponseHandler<? extends T> responseHandler,
@@ -74,6 +80,7 @@ public interface HttpClient {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     <T> T execute(
             HttpHost target, 
             HttpRequest request,
@@ -83,6 +90,7 @@ public interface HttpClient {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})   
+    @DSSink({DSSinkKind.NETWORK})
     <T> T execute(
             HttpHost target, 
             HttpRequest request,
