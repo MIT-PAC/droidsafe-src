@@ -645,7 +645,8 @@ public Class<?> getReturnType() {
      */
     @DSComment("Java language reflection")
     @DSSpec(DSCat.REFLECTION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.REFLECTION})
+    @DSSink({DSSinkKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.576 -0500", hash_original_method = "4A7D773CBB2CABEB3FBD24437D2F9CE8", hash_generated_method = "2FD521E61FBF204709DD6167E6F69FD0")
     
 public Object invoke(Object receiver, Object... args)
