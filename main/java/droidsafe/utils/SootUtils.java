@@ -27,7 +27,6 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.android.app.Project;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.CannotFindMethodException;
@@ -1550,15 +1549,15 @@ public class SootUtils {
     }
 
 
-    /** 
-     * Returns a string describing the specified stmt.  
-     * Used for error messages 
-     **/
-    public static String app_location (Stmt stmt, Object msg) {
-        SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
-        SourceLocationTag loc = getSourceLocation(stmt, method.getDeclaringClass());
-        return String.format ("At method: %s, line %d, jimple stmt: %s: %s", method, loc.getLine(), stmt, msg);
-    }
+//    /** 
+//     * Returns a string describing the specified stmt.  
+//     * Used for error messages 
+//     **/
+//    public static String app_location (Stmt stmt, Object msg) {
+//        SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
+//        SourceLocationTag loc = getSourceLocation(stmt, method.getDeclaringClass());
+//        return String.format ("At method: %s, line %d, jimple stmt: %s: %s", method, loc.getLine(), stmt, msg);
+//    }
 
 
     /**

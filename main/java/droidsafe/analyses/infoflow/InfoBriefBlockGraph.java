@@ -9,12 +9,12 @@ import soot.toolkits.graph.BriefBlockGraph;
 import soot.toolkits.graph.BriefUnitGraph;
 import soot.toolkits.graph.UnitGraph;
 
-class MyBriefBlockGraph extends BriefBlockGraph {
-    public MyBriefBlockGraph(Body body) {
+class InfoBriefBlockGraph extends BriefBlockGraph {
+    public InfoBriefBlockGraph(Body body) {
         super(body);
     }
 
-    public MyBriefBlockGraph(BriefUnitGraph unitGraph) {
+    public InfoBriefBlockGraph(BriefUnitGraph unitGraph) {
         super(unitGraph);
     }
 

@@ -25,6 +25,10 @@ import soot.jimple.toolkits.pta.IAllocNode;
 class ContextLocal {
     private static final HashMap<ImmutablePair<Context, Local>, ContextLocal> cache = new HashMap<ImmutablePair<Context, Local>, ContextLocal>();
 
+    static void invalidateCache() {
+        ContextLocal.cache.clear();
+    }
+
     Context context;
     Local local;
 
@@ -142,7 +146,7 @@ class Locals {
                     writer.write("|LOCAL|");
                     ContextLocal contextLocal = contextLocalValues.getKey();
                     Local local = contextLocal.local;
-                    SootMethod method = InterproceduralControlFlowGraph.v().localToMethod.get(local);
+                    SootMethod method = InformationFlowAnalysis.v().superControlFlowGraph.localToMethod.get(local);
                     writer.write(" |METHOD| " + (method != null ? method.toString() : "null"));
                     writer.write(" |LOCAL| " + local);
                     writer.write(" |CONTEXT| " + contextLocal.context);
@@ -196,6 +200,10 @@ class Locals {
 
 class AllocNodeField  {
     private static final HashMap<ImmutablePair<IAllocNode, SootField>, AllocNodeField> cache = new HashMap<ImmutablePair<IAllocNode, SootField>, AllocNodeField>();
+
+    static void invalidateCache() {
+        AllocNodeField.cache.clear();
+    }
 
     IAllocNode allocNode;
     SootField field;

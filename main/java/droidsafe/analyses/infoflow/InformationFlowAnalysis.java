@@ -73,11 +73,9 @@ import droidsafe.utils.SootUtils;
  * Information Flow Analysis
  */
 public class InformationFlowAnalysis {
-    private static InformationFlowAnalysis v;
-    
     private static boolean IGNORE_FLOWS_THROUGH_THROWABLE = true;
 
-    private State state = new State();
+    private static InformationFlowAnalysis v;
     
     /**
      * Returns the singleton InformationFlowAnalysis object.
@@ -92,22 +90,45 @@ public class InformationFlowAnalysis {
      */
     public static void run() {
         InformationFlowAnalysis.v = new InformationFlowAnalysis();
-        AllocNodeFieldsReadAnalysis.run();
-        AllocNodesReadAnalysis.run();
-        FieldsReadAnalysis.run();
-        InjectedValuesAnalysis.run();
+    }
+
+    final ObjectUtils objectUtils;
+    final SuperControlFlowGraph superControlFlowGraph;
+
+    private final AllocNodeFieldsReadAnalysis allocNodeFieldsReadAnalysis;
+    private final AllocNodesReadAnalysis allocNodesReadAnalysis;
+    private final FieldsReadAnalysis fieldsReadAnalysis;
+    private final InjectedValuesAnalysis injectedValuesAnalysis;
+
+    private final AllocNodeUtils allocNodeUtils;
+
+    private InformationFlowAnalysis() {
+        ContextLocal.invalidateCache();
+        AllocNodeField.invalidateCache();
+
+        this.objectUtils = new ObjectUtils();
+        this.superControlFlowGraph = new SuperControlFlowGraph(this.objectUtils);
+
+        this.allocNodeFieldsReadAnalysis = new AllocNodeFieldsReadAnalysis(this.objectUtils, this.superControlFlowGraph);
+        this.allocNodesReadAnalysis = new AllocNodesReadAnalysis(this.objectUtils, this.superControlFlowGraph);
+        this.fieldsReadAnalysis = new FieldsReadAnalysis(this.objectUtils, this.superControlFlowGraph);
+        this.injectedValuesAnalysis = new InjectedValuesAnalysis(this.objectUtils, this.superControlFlowGraph);
+
+        doAnalysis();
+
+        this.allocNodeUtils = new AllocNodeUtils();
     }
 
     public Set<InfoValue> getTaints(IAllocNode rootAllocNode, MethodOrMethodContext methodContext) {
         Set<InfoValue> values = new HashSet<InfoValue>();
 
         // HACK
-        values.addAll(this.state.instances.get(AllocNodeField.v(rootAllocNode, ObjectUtils.v().taint)));
+        values.addAll(this.state.instances.get(AllocNodeField.v(rootAllocNode, this.objectUtils.taint)));
         values.addAll(this.state.arrays.get(rootAllocNode));
 
-        Set<IAllocNode> reachableAllocNodes = AllocNodeUtils.v().reachableAllocNodes(rootAllocNode);
+        Set<IAllocNode> reachableAllocNodes = this.allocNodeUtils.reachableAllocNodes(rootAllocNode);
 
-        Set<AllocNodeField> allocNodeFields = AllocNodeFieldsReadAnalysis.v().getRecursively(methodContext);
+        Set<AllocNodeField> allocNodeFields = this.allocNodeFieldsReadAnalysis.getRecursively(methodContext);
         for (AllocNodeField allocNodeField : allocNodeFields) {
             IAllocNode allocNode = allocNodeField.allocNode;
             if (reachableAllocNodes.contains(allocNode)) {
@@ -116,7 +137,7 @@ public class InformationFlowAnalysis {
             }
         }
 
-        Set<IAllocNode> allocNodes = AllocNodesReadAnalysis.v().getRecursively(methodContext);
+        Set<IAllocNode> allocNodes = this.allocNodesReadAnalysis.getRecursively(methodContext);
         for (IAllocNode allocNode : allocNodes) {
             if (reachableAllocNodes.contains(allocNode)) {
                 ImmutableSet<InfoValue> vs = this.state.arrays.get(allocNode);
@@ -130,25 +151,25 @@ public class InformationFlowAnalysis {
     public Set<InfoValue> getTaints(MethodOrMethodContext methodContext) {
         Set<InfoValue> values = new HashSet<InfoValue>();
 
-        Set<AllocNodeField> allocNodeFields = AllocNodeFieldsReadAnalysis.v().getRecursively(methodContext);
+        Set<AllocNodeField> allocNodeFields = this.allocNodeFieldsReadAnalysis.getRecursively(methodContext);
         for (AllocNodeField allocNodeField : allocNodeFields) {
             ImmutableSet<InfoValue> vs = this.state.instances.get(allocNodeField);
             values.addAll(vs);
         }
 
-        Set<IAllocNode> allocNodes = AllocNodesReadAnalysis.v().getRecursively(methodContext);
+        Set<IAllocNode> allocNodes = this.allocNodesReadAnalysis.getRecursively(methodContext);
         for (IAllocNode allocNode : allocNodes) {
             ImmutableSet<InfoValue> vs = this.state.arrays.get(allocNode);
             values.addAll(vs);
         }
 
-        Set<SootField> fields = FieldsReadAnalysis.v().getRecursively(methodContext);
+        Set<SootField> fields = this.fieldsReadAnalysis.getRecursively(methodContext);
         for (SootField field : fields) {
             ImmutableSet<InfoValue> vs = this.state.statics.get(field);
             values.addAll(vs);
         }
 
-        ImmutableSet<InfoValue> vs = InjectedValuesAnalysis.v().getRecursively(methodContext);
+        ImmutableSet<InfoValue> vs = this.injectedValuesAnalysis.getRecursively(methodContext);
         values.addAll(vs);
 
         return values;
@@ -169,7 +190,7 @@ public class InformationFlowAnalysis {
 
     public Set<InfoValue> getTaints(IAllocNode allocNode) {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
-        Set<IAllocNode> reachableAllocNodes = AllocNodeUtils.v().reachableAllocNodes(allocNode);
+        Set<IAllocNode> reachableAllocNodes = this.allocNodeUtils.reachableAllocNodes(allocNode);
         for (IAllocNode reachableAllocNode : reachableAllocNodes) {
             Type type = reachableAllocNode.getType();
             if (type instanceof RefType) {
@@ -190,7 +211,7 @@ public class InformationFlowAnalysis {
                     }
                 }
             } else if (type instanceof ArrayType) {
-                ImmutableSet<InfoValue> vs = this.state.instances.get(reachableAllocNode, ObjectUtils.v().taint);
+                ImmutableSet<InfoValue> vs = this.state.instances.get(reachableAllocNode, this.objectUtils.taint);
                 values.addAll(vs);
                 vs = this.state.arrays.get(reachableAllocNode);
                 values.addAll(vs);
@@ -199,9 +220,7 @@ public class InformationFlowAnalysis {
         return values;
     }
 
-    private InformationFlowAnalysis() {
-        doAnalysis();
-    }
+    private State state = new State();
 
     private void doAnalysis() {
         boolean hasChanged;
@@ -209,7 +228,7 @@ public class InformationFlowAnalysis {
         do {
             hasChanged = false;
             State state = new State(this.state);
-            for (Block block : InterproceduralControlFlowGraph.v()) {
+            for (Block block : this.superControlFlowGraph) {
                 execute(block, state);
             }
             if (!(this.state.equals(state))) {
@@ -217,9 +236,9 @@ public class InformationFlowAnalysis {
                 hasChanged = true;
             }
             G.v().out.println("locals.size() = " + this.state.locals.size());
-           G.v().out.println("instances.size() = " + this.state.instances.size());
+            G.v().out.println("instances.size() = " + this.state.instances.size());
             G.v().out.println("arrays.size() = " + this.state.arrays.size());
-           G.v().out.println("statics.size() = " + this.state.statics.size());
+            G.v().out.println("statics.size() = " + this.state.statics.size());
         } while (hasChanged);
     }
 
@@ -396,7 +415,7 @@ public class InformationFlowAnalysis {
             assert rLocal.getType() instanceof RefLikeType;
         } else {
             assert !(rLocal.getType() instanceof RefLikeType);
-            Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+            Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
@@ -417,7 +436,7 @@ public class InformationFlowAnalysis {
             assert instanceFieldRef.getType() instanceof RefLikeType;
         } else {
             assert !(instanceFieldRef.getType() instanceof RefLikeType);
-            Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+            Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
             // instance_field_ref = immediate ".[" field_signature "]"
@@ -449,7 +468,7 @@ public class InformationFlowAnalysis {
             assert staticFieldRef.getType() instanceof RefLikeType;
         } else {
             assert !(staticFieldRef.getType() instanceof RefLikeType);
-            Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+            Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
             // static_field_ref = "[" field_signature "]"
@@ -472,7 +491,7 @@ public class InformationFlowAnalysis {
             assert arrayRef.getType() instanceof RefLikeType;
         } else {
             assert !(arrayRef.getType() instanceof RefLikeType);
-            Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+            Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
             // array_ref = immediate "[" immediate "]";
@@ -497,7 +516,7 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" new_array_expr
     private void execute(AssignStmt stmt, Local lLocal, NewArrayExpr newArrayExpr, State state) {
         assert lLocal.getType() instanceof RefLikeType;
-        Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
         // new_array_expr = "new" type "[" immediate "]";
@@ -512,7 +531,7 @@ public class InformationFlowAnalysis {
             if (!(values.isEmpty())) {
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
-                    state.instances.putW(allocNode, ObjectUtils.v().taint, values);
+                    state.instances.putW(allocNode, this.objectUtils.taint, values);
                 }
             }
         }
@@ -521,7 +540,7 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" new_multi_array_expr
     private void execute(AssignStmt stmt, Local lLocal, NewMultiArrayExpr newMultiArrayExpr, State state) {
         assert lLocal.getType() instanceof RefLikeType;
-        Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
         // new_multi_array_expr = "new multiarray " type sized_dims empty_dims;
@@ -543,7 +562,7 @@ public class InformationFlowAnalysis {
             if (!(values.isEmpty())) {
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
-                    state.instances.putW(allocNode, ObjectUtils.v().taint, ImmutableSet.<InfoValue>copyOf(values));
+                    state.instances.putW(allocNode, this.objectUtils.taint, ImmutableSet.<InfoValue>copyOf(values));
                 }
             }
         }
@@ -577,7 +596,7 @@ public class InformationFlowAnalysis {
         } else {
             assert !(castExpr.getType() instanceof RefLikeType);
             assert !(rLocal.getType() instanceof RefLikeType);
-            Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+            Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
             Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
@@ -595,7 +614,7 @@ public class InformationFlowAnalysis {
     // assigin_stmt = local "=" instance_of_expr
     private void execute(AssignStmt stmt, Local lLocal, InstanceOfExpr instanceOfExpr, State state) {
         assert !(lLocal.getType() instanceof RefLikeType);
-        Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
         // instance_of_expr = immediate "instanceof" ref_type
@@ -609,7 +628,7 @@ public class InformationFlowAnalysis {
             HashSet<InfoValue> values = new HashSet<InfoValue>();
             Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(opLocal, context);
             for (IAllocNode allocNode : allocNodes) {
-                ImmutableSet<InfoValue> vs = state.instances.get(allocNode, ObjectUtils.v().taint);
+                ImmutableSet<InfoValue> vs = state.instances.get(allocNode, this.objectUtils.taint);
                 values.addAll(vs);
             }
             state.locals.putW(context, lLocal, values);
@@ -619,7 +638,7 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" unop_expr
     private void execute(final AssignStmt stmt, final Local lLocal, UnopExpr unopExpr, final State state) {
         assert !(lLocal.getType() instanceof RefLikeType);
-        Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
         final SootMethod method = body.getMethod();
         // unop_expr = length_expr | neg_expr;
@@ -651,7 +670,7 @@ public class InformationFlowAnalysis {
                     HashSet<InfoValue> values = new HashSet<InfoValue>();
                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(opImmediate, context);
                     for (IAllocNode allocNode : allocNodes) {
-                        ImmutableSet<InfoValue> vs = state.instances.get(allocNode, ObjectUtils.v().taint);
+                        ImmutableSet<InfoValue> vs = state.instances.get(allocNode, InformationFlowAnalysis.this.objectUtils.taint);
                         values.addAll(vs);
                     }
                     state.locals.putW(context, lLocal, values);
@@ -664,7 +683,7 @@ public class InformationFlowAnalysis {
     // assign_stmt = local "=" binop_expr
     private void execute(AssignStmt stmt, Local lLocal, BinopExpr binopExpr, State state) {
         assert !(lLocal.getType() instanceof RefLikeType);
-        SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
+        SootMethod method = this.superControlFlowGraph.unitToBlock.get(stmt).getBody().getMethod();
         // binop_expr = immediate binop immediate
         Immediate[] immediates = {(Immediate)binopExpr.getOp1(), (Immediate)binopExpr.getOp2()};
         if ((binopExpr instanceof EqExpr || binopExpr instanceof NeExpr) && (immediates[0].getType() instanceof RefLikeType)) {
@@ -680,7 +699,7 @@ public class InformationFlowAnalysis {
                     if (isOpLocal[i]) {
                         Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(immediates[i], context);
                         for (IAllocNode allocNode : allocNodes) {
-                            ImmutableSet<InfoValue> vs = state.instances.get(allocNode, ObjectUtils.v().taint);
+                            ImmutableSet<InfoValue> vs = state.instances.get(allocNode, this.objectUtils.taint);
                             values.addAll(vs);
                         }
                     }
@@ -727,7 +746,7 @@ public class InformationFlowAnalysis {
     // assign_stmt = instance_field_ref "=" local
     private void execute(AssignStmt stmt, InstanceFieldRef instanceFieldRef, Local rLocal, State state) {
         if (!(instanceFieldRef.getType() instanceof RefLikeType)) {
-            Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+            Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
             Local baseLocal = (Local)instanceFieldRef.getBase();
@@ -777,7 +796,7 @@ public class InformationFlowAnalysis {
     // assign_stmt = static_field_ref "=" local
     private void execute(AssignStmt stmt, StaticFieldRef staticFieldRef, Local rLocal, State state) {
         if (!(staticFieldRef.getType() instanceof RefLikeType)) {
-            Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+            Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
             SootField field = staticFieldRef.getField();
@@ -814,7 +833,7 @@ public class InformationFlowAnalysis {
     // assign_stmt = array_ref "=" local
     private void execute(AssignStmt stmt, ArrayRef arrayRef, Local rLocal, State state) {
         if (!(arrayRef.getType() instanceof RefLikeType)) {
-            Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+            Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
             Body body = block.getBody();
             SootMethod method = body.getMethod();
             Local baseLocal = (Local)arrayRef.getBase();
@@ -845,18 +864,18 @@ public class InformationFlowAnalysis {
     // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signamter "]" "(" immediate_list ")"
     private void execute(Stmt stmt, InvokeExpr invokeExpr, State state) {
         SootMethod invokeMethod = invokeExpr.getMethod();
-        if (ObjectUtils.v().isAddTaint(invokeMethod)) {
+        if (this.objectUtils.isAddTaint(invokeMethod)) {
             executeAddTaint(stmt, invokeExpr, state);
             return;
-        } else if (ObjectUtils.v().isGetTaint(invokeMethod)) {
+        } else if (this.objectUtils.isGetTaint(invokeMethod)) {
             executeGetTaint(stmt, invokeExpr, state);
             return;
-        } else if (ObjectUtils.v().isToTaint(invokeMethod)) {
+        } else if (this.objectUtils.isToTaint(invokeMethod)) {
             executeToTaint(stmt, invokeExpr, state);
             return;
         }
 
-        Block callerBlock = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block callerBlock = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body callerBody = callerBlock.getBody();
         SootMethod callerMethod = callerBody.getMethod();
         HashMap<Context, HashSet<InfoValue>[]> contextToArguments = new HashMap<Context, HashSet<InfoValue>[]>();
@@ -926,7 +945,7 @@ public class InformationFlowAnalysis {
     }
 
     private void executeGetTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {
-        Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
         if (stmt instanceof AssignStmt) {
@@ -942,7 +961,7 @@ public class InformationFlowAnalysis {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
-                    ImmutableSet<InfoValue> vs = state.instances.get(allocNode, ObjectUtils.v().taint);
+                    ImmutableSet<InfoValue> vs = state.instances.get(allocNode, this.objectUtils.taint);
                     values.addAll(vs);
                 }
                 state.locals.putW(context, lLocal, values);
@@ -951,7 +970,7 @@ public class InformationFlowAnalysis {
     }
 
     private void executeAddTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {
-        Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
         Local baseLocal = (Local)((InstanceInvokeExpr)invokeExpr).getBase();
@@ -967,14 +986,14 @@ public class InformationFlowAnalysis {
                 ImmutableSet<InfoValue> values = state.locals.get(context, argLocal);
                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
                 for (IAllocNode allocNode : allocNodes) {
-                    state.instances.putW(allocNode, ObjectUtils.v().taint, values);
+                    state.instances.putW(allocNode, this.objectUtils.taint, values);
                 }
             }
         }
     }
 
     private void executeToTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {
-        Block block = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
         if (stmt instanceof AssignStmt) {
@@ -1009,7 +1028,7 @@ public class InformationFlowAnalysis {
 
     // stmt = return_stmt
     private void execute(ReturnStmt stmt, State state) {
-        Block calleeBlock = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block calleeBlock = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body calleeBody = calleeBlock.getBody();
         SootMethod calleeMethod = calleeBody.getMethod();
         Immediate returnImmediate = (Immediate)stmt.getOp();
@@ -1040,7 +1059,7 @@ public class InformationFlowAnalysis {
                                 if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
                                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                     for (IAllocNode allocNode : allocNodes) {
-                                        state.instances.putW(AllocNodeField.v(allocNode, ObjectUtils.v().taint), callValues);
+                                        state.instances.putW(AllocNodeField.v(allocNode, this.objectUtils.taint), callValues);
                                     }
                                 }
                             } else if (argType instanceof ArrayType) {
@@ -1050,16 +1069,16 @@ public class InformationFlowAnalysis {
                                     if (elementType instanceof PrimType) {
                                         Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                         for (IAllocNode arrayAllocNode : arrayAllocNodes) {
-                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, this.objectUtils.taint), callValues);
                                             state.arrays.putW(arrayAllocNode, callValues);
                                         }
                                     } else {
                                         Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                         for (IAllocNode arrayAllocNode : arrayAllocNodes) {
-                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, this.objectUtils.taint), callValues);
                                             Set<IAllocNode> elementAllocNodes = (Set<IAllocNode>) PTABridge.v().getPTSetOfArrayElement(arrayAllocNode);
                                             for (IAllocNode elementAllocNode : elementAllocNodes) {
-                                                state.instances.putW(AllocNodeField.v(elementAllocNode, ObjectUtils.v().taint), callValues);
+                                                state.instances.putW(AllocNodeField.v(elementAllocNode, this.objectUtils.taint), callValues);
                                             }
                                         }
                                     }
@@ -1067,7 +1086,7 @@ public class InformationFlowAnalysis {
                                     if (elementType instanceof PrimType) {
                                         Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                         for (IAllocNode arrayAllocNode : arrayAllocNodes) {
-                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, this.objectUtils.taint), callValues);
                                             state.arrays.putW(arrayAllocNode, callValues);
                                         }
                                     }
@@ -1083,7 +1102,7 @@ public class InformationFlowAnalysis {
                                 Local lLocal = (Local)((AssignStmt)callStmt).getLeftOp();
                                 Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, callerContext);
                                 for (IAllocNode allocNode : allocNodes) {
-                                    state.instances.putW(allocNode, ObjectUtils.v().taint, callValues);
+                                    state.instances.putW(allocNode, this.objectUtils.taint, callValues);
                                 }
                             }
                         }
@@ -1104,7 +1123,7 @@ public class InformationFlowAnalysis {
 
     // stmt = return_void_stmt
     private void execute(ReturnVoidStmt stmt, State state) {
-        Block calleeBlock = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block calleeBlock = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body calleeBody = calleeBlock.getBody();
         SootMethod calleeMethod = calleeBody.getMethod();
         Set<MethodOrMethodContext> calleeMethodContexts = PTABridge.v().getMethodContexts(calleeMethod);
@@ -1129,7 +1148,7 @@ public class InformationFlowAnalysis {
                                 if (API.v().isSourceThatTaintsArgs(calleeMethod)) {
                                     Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                     for (IAllocNode allocNode : allocNodes) {
-                                        state.instances.putW(AllocNodeField.v(allocNode, ObjectUtils.v().taint), callValues);
+                                        state.instances.putW(AllocNodeField.v(allocNode, this.objectUtils.taint), callValues);
                                     }
                                 }
                             } else if (argType instanceof ArrayType) {
@@ -1139,16 +1158,16 @@ public class InformationFlowAnalysis {
                                     if (elementType instanceof PrimType) {
                                         Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                         for (IAllocNode arrayAllocNode : arrayAllocNodes) {
-                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, this.objectUtils.taint), callValues);
                                             state.arrays.putW(arrayAllocNode, callValues);
                                         }
                                     } else {
                                         Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                         for (IAllocNode arrayAllocNode : arrayAllocNodes) {
-                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, this.objectUtils.taint), callValues);
                                             Set<IAllocNode> elementAllocNodes = (Set<IAllocNode>) PTABridge.v().getPTSetOfArrayElement(arrayAllocNode);
                                             for (IAllocNode elementAllocNode : elementAllocNodes) {
-                                                state.instances.putW(AllocNodeField.v(elementAllocNode, ObjectUtils.v().taint), callValues);
+                                                state.instances.putW(AllocNodeField.v(elementAllocNode, this.objectUtils.taint), callValues);
                                             }
                                         }
                                     }
@@ -1156,7 +1175,7 @@ public class InformationFlowAnalysis {
                                     if (elementType instanceof PrimType) {
                                         Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                         for (IAllocNode arrayAllocNode : arrayAllocNodes) {
-                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, ObjectUtils.v().taint), callValues);
+                                            state.instances.putW(AllocNodeField.v(arrayAllocNode, this.objectUtils.taint), callValues);
                                             state.arrays.putW(arrayAllocNode, callValues);
                                         }
                                     }
@@ -1208,23 +1227,17 @@ public class InformationFlowAnalysis {
 }
 
 class AllocNodeFieldsReadAnalysis {
-    private static AllocNodeFieldsReadAnalysis v;
-
-    public static void run() {
-        v = new AllocNodeFieldsReadAnalysis();
-    }
-
-    static AllocNodeFieldsReadAnalysis v() {
-        return v;
-    }
-
+    private ObjectUtils objectUtils;
+    private SuperControlFlowGraph superControlFlowGraph;
     private Map<MethodOrMethodContext, Set<AllocNodeField>> methodContextToAllocNodeFields = new DefaultHashMap<MethodOrMethodContext, Set<AllocNodeField>>(Collections.<AllocNodeField>emptySet());
 
-    private AllocNodeFieldsReadAnalysis() {
+    AllocNodeFieldsReadAnalysis(ObjectUtils objectUtils, SuperControlFlowGraph superControlFlowGraph) {
+        this.objectUtils = objectUtils;
+        this.superControlFlowGraph = superControlFlowGraph;
         doAnalysis();
     }
 
-    static Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, MethodOrMethodContext methodContext) {
+    Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, MethodOrMethodContext methodContext) {
         Set<AllocNodeField> allocNodeFields = null;
         Value rValue = stmt.getRightOp();
         if (rValue instanceof InstanceFieldRef) {
@@ -1237,7 +1250,7 @@ class AllocNodeFieldsReadAnalysis {
         return allocNodeFields;
     }
 
-    static Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, InstanceFieldRef instanceFieldRef, MethodOrMethodContext methodContext) {
+    Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, InstanceFieldRef instanceFieldRef, MethodOrMethodContext methodContext) {
         Set<AllocNodeField> allocNodeFields = null;
         SootField field = instanceFieldRef.getField();
         if (!(field.getType() instanceof RefLikeType)) {
@@ -1252,7 +1265,7 @@ class AllocNodeFieldsReadAnalysis {
         return allocNodeFields;
     }
 
-    static Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, InvokeExpr invokeExpr, MethodOrMethodContext methodContext) {
+    Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, InvokeExpr invokeExpr, MethodOrMethodContext methodContext) {
         Set<AllocNodeField> allocNodeFields = null;
         boolean isGetTaint = false;
         List<Edge> callEdges = PTABridge.v().outgoingEdges(methodContext, stmt);
@@ -1260,7 +1273,7 @@ class AllocNodeFieldsReadAnalysis {
         while (tgtMethodContexts.hasNext()) {
             MethodOrMethodContext tgtMethodContext = tgtMethodContexts.next();
             SootMethod method = tgtMethodContext.method();
-            if (ObjectUtils.v().isGetTaint(method)) {
+            if (this.objectUtils.isGetTaint(method)) {
                 isGetTaint = true;
                 break;
             }
@@ -1271,19 +1284,19 @@ class AllocNodeFieldsReadAnalysis {
             Context context = methodContext.context();
             Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(local, context);
             for (IAllocNode allocNode : allocNodes) {
-                allocNodeFields.add(AllocNodeField.v(allocNode, ObjectUtils.v().taint));
+                allocNodeFields.add(AllocNodeField.v(allocNode, this.objectUtils.taint));
             }
         }
         return allocNodeFields;
     }
 
-    static Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, LengthExpr lengthExpr, MethodOrMethodContext methodContext) {
+    Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, LengthExpr lengthExpr, MethodOrMethodContext methodContext) {
         Set<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>();
         Value opImmediate = lengthExpr.getOp();
         Context context = methodContext.context();
         Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(opImmediate, context);
         for (IAllocNode allocNode : allocNodes) {
-            allocNodeFields.add((AllocNodeField.v(allocNode, ObjectUtils.v().taint)));
+            allocNodeFields.add((AllocNodeField.v(allocNode, this.objectUtils.taint)));
         }
         return allocNodeFields;
     }
@@ -1291,8 +1304,8 @@ class AllocNodeFieldsReadAnalysis {
     private void doAnalysis() {
         Set<SootMethod> methods = PTABridge.v().getReachableMethods();
         for (SootMethod method : methods) {
-            if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(ObjectUtils.v().isAddTaint(method)) && !(ObjectUtils.v().isGetTaint(method))) {
-                List<Block> blocks = InterproceduralControlFlowGraph.v().methodToBlocks.get(method);
+            if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(this.objectUtils.isAddTaint(method)) && !(this.objectUtils.isGetTaint(method))) {
+                List<Block> blocks = this.superControlFlowGraph.methodToBlocks.get(method);
                 Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
                 for (MethodOrMethodContext methodContext : methodContexts) {
                     Context context = methodContext.context();
@@ -1349,19 +1362,13 @@ class AllocNodeFieldsReadAnalysis {
 }
 
 class AllocNodesReadAnalysis {
-    private static AllocNodesReadAnalysis v;
-
-    public static void run() {
-        v = new AllocNodesReadAnalysis();
-    }
-
-    static AllocNodesReadAnalysis v() {
-        return v;
-    }
-
+    private ObjectUtils objectUtils;
+    private SuperControlFlowGraph superControlFlowGraph;
     private Map<MethodOrMethodContext, Set<IAllocNode>> methodContextToAllocNodes = new DefaultHashMap<MethodOrMethodContext, Set<IAllocNode>>(Collections.<IAllocNode>emptySet());
 
-    private AllocNodesReadAnalysis() {
+    AllocNodesReadAnalysis(ObjectUtils objectUtils, SuperControlFlowGraph superControlFlowGraph) {
+        this.objectUtils = objectUtils;
+        this.superControlFlowGraph = superControlFlowGraph;
         doAnalysis();
     }
 
@@ -1390,8 +1397,8 @@ class AllocNodesReadAnalysis {
     private void doAnalysis() {
         Set<SootMethod> methods = PTABridge.v().getReachableMethods();
         for (SootMethod method : methods) {
-            if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(ObjectUtils.v().isAddTaint(method)) && !(ObjectUtils.v().isGetTaint(method))) {
-                List<Block> blocks = InterproceduralControlFlowGraph.v().methodToBlocks.get(method);
+            if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(this.objectUtils.isAddTaint(method)) && !(this.objectUtils.isGetTaint(method))) {
+                List<Block> blocks = this.superControlFlowGraph.methodToBlocks.get(method);
                 Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
                 for (MethodOrMethodContext methodContext : methodContexts) {
                     Context context = methodContext.context();
@@ -1448,19 +1455,13 @@ class AllocNodesReadAnalysis {
 }
 
 class FieldsReadAnalysis {
-    private static FieldsReadAnalysis v;
-
-    public static void run() {
-        v = new FieldsReadAnalysis();
-    }
-
-    static FieldsReadAnalysis v() {
-        return v;
-    }
-
+    private ObjectUtils objectUtils;
+    private SuperControlFlowGraph superControlFlowGraph;
     private Map<SootMethod, Set<SootField>> methodToFields = new DefaultHashMap<SootMethod, Set<SootField>>(Collections.<SootField>emptySet());
 
-    private FieldsReadAnalysis() {
+    FieldsReadAnalysis(ObjectUtils objectUtils, SuperControlFlowGraph superControlFlowGraph) {
+        this.objectUtils = objectUtils;
+        this.superControlFlowGraph = superControlFlowGraph;
         doAnalysis();
     }
 
@@ -1485,8 +1486,8 @@ class FieldsReadAnalysis {
     private void doAnalysis() {
         Set<SootMethod> methods = PTABridge.v().getReachableMethods();
         for (SootMethod method : methods) {
-            if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(ObjectUtils.v().isAddTaint(method)) && !(ObjectUtils.v().isGetTaint(method))) {
-                List<Block> blocks = InterproceduralControlFlowGraph.v().methodToBlocks.get(method);
+            if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(this.objectUtils.isAddTaint(method)) && !(this.objectUtils.isGetTaint(method))) {
+                List<Block> blocks = this.superControlFlowGraph.methodToBlocks.get(method);
                 HashSet<SootField> fields = new HashSet<SootField>();
                 for (Block block : blocks) {
                     Iterator<Unit> units = block.iterator();
@@ -1543,23 +1544,17 @@ class FieldsReadAnalysis {
 }
 
 class InjectedValuesAnalysis {
-    private static InjectedValuesAnalysis v;
-
-    public static void run() {
-        v = new InjectedValuesAnalysis();
-    }
-
-    static InjectedValuesAnalysis v() {
-        return v;
-    }
-
+    private ObjectUtils objectUtils;
+    private SuperControlFlowGraph superControlFlowGraph;
     private Map<MethodOrMethodContext, Set<InfoValue>> methodContextToValues = new DefaultHashMap<MethodOrMethodContext, Set<InfoValue>>(Collections.<InfoValue>emptySet());
 
-    private InjectedValuesAnalysis() {
+    InjectedValuesAnalysis(ObjectUtils objectUtils, SuperControlFlowGraph superControlFlowGraph) {
+        this.objectUtils = objectUtils;
+        this.superControlFlowGraph = superControlFlowGraph;
         doAnalysis();
     }
 
-    static Set<InfoValue> getInjectedValues(AssignStmt stmt, MethodOrMethodContext methodContext) {
+    Set<InfoValue> getInjectedValues(AssignStmt stmt, MethodOrMethodContext methodContext) {
         
         Set<InfoValue> values = null;
         Value rValue = stmt.getRightOp();
@@ -1569,9 +1564,9 @@ class InjectedValuesAnalysis {
         return values;
     }
 
-    static Set<InfoValue> getInjectedValues(AssignStmt stmt, InvokeExpr invokeExpr, MethodOrMethodContext callerMethodContext) {
+    Set<InfoValue> getInjectedValues(AssignStmt stmt, InvokeExpr invokeExpr, MethodOrMethodContext callerMethodContext) {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
-        Block callerBlock = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt);
+        Block callerBlock = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body callerBody = callerBlock.getBody();
         SootMethod callerMethod = callerBody.getMethod();
         for (Edge callEdge : PTABridge.v().outgoingEdges(callerMethodContext, stmt)) {
@@ -1589,8 +1584,8 @@ class InjectedValuesAnalysis {
     private void doAnalysis() {
         Set<SootMethod> methods = PTABridge.v().getReachableMethods();
         for (SootMethod method : methods) {
-            if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(ObjectUtils.v().isAddTaint(method)) && !(ObjectUtils.v().isGetTaint(method))) {
-                List<Block> blocks = InterproceduralControlFlowGraph.v().methodToBlocks.get(method);
+            if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(this.objectUtils.isAddTaint(method)) && !(this.objectUtils.isGetTaint(method))) {
+                List<Block> blocks = this.superControlFlowGraph.methodToBlocks.get(method);
                 Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
                 for (MethodOrMethodContext methodContext : methodContexts) {
                     Context context = methodContext.context();

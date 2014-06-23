@@ -13,17 +13,7 @@ import soot.Type;
 import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.analyses.pta.PTABridge;
 
-public class AllocNodeUtils {
-    private static AllocNodeUtils v;
-
-    public static void run() {
-        v = new AllocNodeUtils();
-    }
-
-    public static AllocNodeUtils v() {
-        return v;
-    }
-
+class AllocNodeUtils {
     HashMap<IAllocNode, Set<IAllocNode>> allocNodeToReachableAllocNodes = new HashMap<IAllocNode, Set<IAllocNode>>();
 
     Set<IAllocNode> reachableAllocNodes(IAllocNode allocNode) {

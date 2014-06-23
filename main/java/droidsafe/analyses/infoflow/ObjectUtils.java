@@ -10,23 +10,13 @@ import soot.SootMethod;
 
 import droidsafe.main.Config;
 
-public class ObjectUtils {
-    private static ObjectUtils v;
-
-    public static void run() {
-        v = new ObjectUtils();
-    }
-
-    public static ObjectUtils v() {
-        return v;
-    }
-
+class ObjectUtils {
     SootField taint;
     Set<SootMethod> addTaints;
     Set<SootMethod> getTaints;
     Set<SootMethod> toTaints;
 
-    private ObjectUtils() {
+    ObjectUtils() {
         SootClass klass = Scene.v().getSootClass("java.lang.Object");
         if (Config.v().strict) {
             assert klass != null;
@@ -49,15 +39,15 @@ public class ObjectUtils {
         }
     }
 
-    public boolean isAddTaint(SootMethod method) {
+    boolean isAddTaint(SootMethod method) {
         return addTaints.contains(method);
     }
 
-    public boolean isGetTaint(SootMethod method) {
+    boolean isGetTaint(SootMethod method) {
         return getTaints.contains(method);
     }
 
-    public boolean isToTaint(SootMethod method) {
+    boolean isToTaint(SootMethod method) {
         return toTaints.contains(method);
     }
 }

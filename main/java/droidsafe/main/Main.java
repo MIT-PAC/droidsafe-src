@@ -3,11 +3,8 @@ package droidsafe.main;
 import au.com.bytecode.opencsv.CSVWriter;
 import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
-import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
-import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
-import droidsafe.analyses.infoflow.ObjectUtils;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.PTABridge;
@@ -397,14 +394,7 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-            monitor.subTask("Information Flow Analysis: Control flow graph");
-            ObjectUtils.run();
-            InterproceduralControlFlowGraph.run();
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
             monitor.subTask("Information Flow Analysis: Information flow");
-            AllocNodeUtils.run();
             InformationFlowAnalysis.run();
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -436,7 +426,7 @@ public class Main {
             }
 
             timer.stop();
-            PTAPaper.infoFlowTimeSec = ((double)timer.getTime()) / 1000.0;
+            PTAPaper.infoFlowTimeSec = timer.getTime() / 1000.0;
             droidsafe.stats.AvgInfoFlowSetSize.run();
             driverMsg("Finished Information Flow Analysis: " + timer);
         }

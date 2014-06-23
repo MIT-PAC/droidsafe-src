@@ -28,7 +28,9 @@ import droidsafe.utils.SootUtils;
  * This class represents a control flow graph for a whole program.
  */
 
-public class InterproceduralControlFlowGraph implements Iterable<Block> {
+class SuperControlFlowGraph implements Iterable<Block> {
+    private final ObjectUtils objectUtils;
+    
     private final List<Block> blocks = new ArrayList<Block>();
 
     public final Map<SootMethod, List<Block>> methodToBlocks = new HashMap<SootMethod, List<Block>>();
@@ -37,26 +39,17 @@ public class InterproceduralControlFlowGraph implements Iterable<Block> {
 
     public final Map<Local, SootMethod> localToMethod = new HashMap<Local, SootMethod>();
     
-    private static InterproceduralControlFlowGraph v;
-
-    public static InterproceduralControlFlowGraph v() {
-        return InterproceduralControlFlowGraph.v;
-    }
-
-    public static void run() {
-        InterproceduralControlFlowGraph.v = new InterproceduralControlFlowGraph();
-    }
-
     @Override
     public Iterator<Block> iterator() {
         return this.blocks.iterator();
     }
 
-    private InterproceduralControlFlowGraph() {
-        collectIntraproceduralControlFlowGraphs();
+    public SuperControlFlowGraph(ObjectUtils objectUtils) {
+        this.objectUtils = objectUtils;
+        collectSuperControlFlowGraphs();
     }
 
-    private void collectIntraproceduralControlFlowGraphs() {
+    private void collectSuperControlFlowGraphs() {
         Set<SootMethod> reachableMethods = PTABridge.v().getReachableMethods();
         CallGraph callGraph = Scene.v().getCallGraph();
         TopologicalOrderer topologicalOrderer = new TopologicalOrderer(callGraph);
@@ -69,9 +62,9 @@ public class InterproceduralControlFlowGraph implements Iterable<Block> {
                 continue;
             }
             if (reachableMethods.contains(method)) {
-                if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(ObjectUtils.v().isAddTaint(method)) && !(ObjectUtils.v().isGetTaint(method))) {
+                if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(this.objectUtils.isAddTaint(method)) && !(this.objectUtils.isGetTaint(method))) {
                     Body body = method.getActiveBody();
-                    BlockGraph blockGraph = new MyBriefBlockGraph(body);
+                    BlockGraph blockGraph = new InfoBriefBlockGraph(body);
                     List<Block> blocks = blockGraph.getBlocks();
                     this.blocks.addAll(blocks);
                     this.methodToBlocks.put(method, blocks);
