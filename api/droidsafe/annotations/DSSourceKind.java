@@ -12,6 +12,7 @@ public enum DSSourceKind {
     DATABASE_INFORMATION,
     DATABASE,
     EMAIL,
+    EXIF_INFO,
     FILE,
     FILE_INFORMATION,
     IMAGE,
