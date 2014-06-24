@@ -74,9 +74,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Executors;
 
 import org.apache.commons.io.IOUtils;
@@ -89,6 +91,8 @@ import soot.G;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.jimple.spark.pag.ObjectSensitiveConfig;
+import soot.jimple.toolkits.pta.IAllocNode;
 
 /**
  * Main entry class for DroidSafe analysis.
@@ -328,7 +332,7 @@ public class Main {
             TransformStringBuilderInvokes.run();
         }
 
-        if (afterTransformPrecise(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         //new TestPTA();
@@ -385,61 +389,41 @@ public class Main {
 
         if (Config.v().produceReports)
             writeJSONReports();
-
-        if (Config.v().infoFlow) {
-            // ObjectSensitivityCloner.v().runForInfoFlow();
-
-            StopWatch timer = new StopWatch();
-            driverMsg("Starting Information Flow Analysis...");
-            monitor.subTask("Information Flow Analysis: Injected source flow");
-            timer.start();
-            InjectedSourceFlows.run();
-            if (monitor.isCanceled()) {
+        
+        if (Config.v().ptaInfoFlowRefinement) {
+            if (afterTransformPrecise(monitor, false, 1) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
-            monitor.subTask("Information Flow Analysis: Control flow graph");
-            ObjectUtils.run();
-            InterproceduralControlFlowGraph.run();
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
-            monitor.subTask("Information Flow Analysis: Information flow");
-            AllocNodeUtils.run();
-            InformationFlowAnalysis.run();
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
+        }
 
-            try {
-                String[] values = Config.v().infoFlowValues;
-                if (values != null) {
-                    for (String value : values) {
-                        String pathName = Project.v().getOutputDir() + File.separator + value + ".txt";
-                        BufferedWriter writer = new BufferedWriter(new FileWriter(pathName));
-                        InformationFlowAnalysis.v().printContextLocals(value, writer);
-                        InformationFlowAnalysis.v().printAllocNodeFields(value, writer);
-                        InformationFlowAnalysis.v().printAllocNodes(value, writer);
-                        InformationFlowAnalysis.v().printFields(value, writer);
-                        writer.close();
+        //run information flow
+        if (runInfoFlow(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        
+        
+        if (Config.v().ptaInfoFlowRefinement) {
+            Set<Object> stringNewExprsNoTaint = new HashSet<Object>();
+            
+            for (IAllocNode node : PTABridge.v().getAllAllocNodes()) {
+                if (SootUtils.isStringOrSimilarType(node.getType())) {
+                            
+                    if (InformationFlowAnalysis.v().getTaints(node).size() > 0) {
+                                stringNewExprsNoTaint.add(node.getNewExpr());
                     }
                 }
-            } catch (IOException exp) {
-                logger.error(exp.toString());
             }
-
-            if (Config.v().infoFlowNative) {
-                try {
-                    CloggedNativeMethods.run();
-                } catch (IOException exp) {
-                    logger.error(exp.toString());
-                }
-            }
-
-            timer.stop();
-            PTAPaper.infoFlowTimeSec = ((double)timer.getTime()) / 1000.0;
-            droidsafe.stats.AvgInfoFlowSetSize.run();
-            driverMsg("Finished Information Flow Analysis: " + timer);
+       
+            ObjectSensitiveConfig.setNewExprsNoContext(stringNewExprsNoTaint);
+        
+            if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            
+            //run information flow
+            if (runInfoFlow(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            
         }
+
+        
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -502,6 +486,64 @@ public class Main {
         
         System.out.println("Finished!");
         return DroidsafeExecutionStatus.OK_STATUS;
+    }
+    
+    private static DroidsafeExecutionStatus runInfoFlow(IDroidsafeProgressMonitor monitor) {
+        if (Config.v().infoFlow) {
+           
+            StopWatch timer = new StopWatch();
+            driverMsg("Starting Information Flow Analysis...");
+            monitor.subTask("Information Flow Analysis: Injected source flow");
+            timer.start();
+            InjectedSourceFlows.run();
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+            monitor.subTask("Information Flow Analysis: Control flow graph");
+            ObjectUtils.run();
+            InterproceduralControlFlowGraph.run();
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+            monitor.subTask("Information Flow Analysis: Information flow");
+            AllocNodeUtils.run();
+            InformationFlowAnalysis.run();
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+
+            try {
+                String[] values = Config.v().infoFlowValues;
+                if (values != null) {
+                    for (String value : values) {
+                        String pathName = Project.v().getOutputDir() + File.separator + value + ".txt";
+                        BufferedWriter writer = new BufferedWriter(new FileWriter(pathName));
+                        InformationFlowAnalysis.v().printContextLocals(value, writer);
+                        InformationFlowAnalysis.v().printAllocNodeFields(value, writer);
+                        InformationFlowAnalysis.v().printAllocNodes(value, writer);
+                        InformationFlowAnalysis.v().printFields(value, writer);
+                        writer.close();
+                    }
+                }
+            } catch (IOException exp) {
+                logger.error(exp.toString());
+            }
+
+            if (Config.v().infoFlowNative) {
+                try {
+                    CloggedNativeMethods.run();
+                } catch (IOException exp) {
+                    logger.error(exp.toString());
+                }
+            }
+
+            timer.stop();
+            PTAPaper.infoFlowTimeSec.add(((double)timer.getTime()) / 1000.0);
+            droidsafe.stats.AvgInfoFlowSetSize.run();
+            driverMsg("Finished Information Flow Analysis: " + timer);
+        }
+        
+        return DroidsafeExecutionStatus.OK_STATUS;        
     }
     
     private static void writeCompletionFile() {
@@ -637,7 +679,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         //need this pta run to account for jsa injection and class / forname
-        if (afterTransformPrecise(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformPrecise(monitor, true, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         monitor.worked(1);
 
@@ -725,7 +767,9 @@ public class Main {
         return afterTransform(monitor, recordTime, opts);
     }
 
-    public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime) {
+    
+    
+    public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime, int k) {
         Map<String,String> opts = new HashMap<String,String>();
 
         if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
@@ -733,7 +777,7 @@ public class Main {
             //build fast options for spark
             opts.put("merge-stringbuffer","false");   
             opts.put("string-constants","true");   
-            opts.put("kobjsens", Integer.toString(Config.v().kobjsens));
+            opts.put("kobjsens", Integer.toString(k));
         } 
 
         return afterTransform(monitor, recordTime, opts);   
