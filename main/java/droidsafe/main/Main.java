@@ -3,11 +3,8 @@ package droidsafe.main;
 import au.com.bytecode.opencsv.CSVWriter;
 import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
-import droidsafe.analyses.infoflow.AllocNodeUtils;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
-import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
-import droidsafe.analyses.infoflow.ObjectUtils;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.PTABridge;
@@ -390,10 +387,12 @@ public class Main {
         if (Config.v().produceReports)
             writeJSONReports();
         
+       
         if (Config.v().ptaInfoFlowRefinement) {
             if (afterTransformPrecise(monitor, false, 1) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+            
 
         //run information flow
         if (runInfoFlow(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
@@ -490,7 +489,7 @@ public class Main {
     
     private static DroidsafeExecutionStatus runInfoFlow(IDroidsafeProgressMonitor monitor) {
         if (Config.v().infoFlow) {
-           
+            
             StopWatch timer = new StopWatch();
             driverMsg("Starting Information Flow Analysis...");
             monitor.subTask("Information Flow Analysis: Injected source flow");
@@ -499,36 +498,12 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-            monitor.subTask("Information Flow Analysis: Control flow graph");
-            ObjectUtils.run();
-            InterproceduralControlFlowGraph.run();
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
             monitor.subTask("Information Flow Analysis: Information flow");
-            AllocNodeUtils.run();
             InformationFlowAnalysis.run();
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-
-            try {
-                String[] values = Config.v().infoFlowValues;
-                if (values != null) {
-                    for (String value : values) {
-                        String pathName = Project.v().getOutputDir() + File.separator + value + ".txt";
-                        BufferedWriter writer = new BufferedWriter(new FileWriter(pathName));
-                        InformationFlowAnalysis.v().printContextLocals(value, writer);
-                        InformationFlowAnalysis.v().printAllocNodeFields(value, writer);
-                        InformationFlowAnalysis.v().printAllocNodes(value, writer);
-                        InformationFlowAnalysis.v().printFields(value, writer);
-                        writer.close();
-                    }
-                }
-            } catch (IOException exp) {
-                logger.error(exp.toString());
-            }
-
+            
             if (Config.v().infoFlowNative) {
                 try {
                     CloggedNativeMethods.run();
@@ -538,9 +513,9 @@ public class Main {
             }
 
             timer.stop();
-            PTAPaper.infoFlowTimeSec.add(((double)timer.getTime()) / 1000.0);
+            PTAPaper.infoFlowTimeSec.add(timer.getTime() / 1000.0);
             droidsafe.stats.AvgInfoFlowSetSize.run();
-            driverMsg("Finished Information Flow Analysis: " + timer);
+            driverMsg("Finished Information Flow Analysis: " + timer);         
         }
         
         return DroidsafeExecutionStatus.OK_STATUS;        

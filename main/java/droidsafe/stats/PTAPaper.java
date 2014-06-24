@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -15,8 +16,12 @@ import soot.SootMethod;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.spark.SparkEvaluator;
+import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.ObjectSensitiveConfig;
+import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.infoflow.InfoValue;
+import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.InfoKind;
@@ -26,7 +31,7 @@ import droidsafe.utils.SootUtils;
 
 public class PTAPaper {
 
-    public static double infoFlowTimeSec = 0;
+    public static List<Double> infoFlowTimeSec = new LinkedList<Double>();
     
     public static void writeReport() {
         FileWriter fw;
@@ -54,11 +59,30 @@ public class PTAPaper {
 
             //write information flow
             fw.write(infoFlowResults());
+            
+            fw.write(stringsWithTaint());
 
             fw.close();
         } catch (IOException e) {
 
         }
+    }
+    
+    private static String stringsWithTaint() {
+        int totalStrings = 0;
+        int stringsWithTaint = 0;
+      
+          for (IAllocNode node : PTABridge.v().getAllAllocNodes()) {
+            if (SootUtils.isStringOrSimilarType(node.getType())) {
+                totalStrings++;
+                
+                if (InformationFlowAnalysis.v().getTaints(node).size() > 0) {
+                    stringsWithTaint++;
+                  }
+            }
+        }
+        
+        return ("Strings with taint / Total Strings: " + stringsWithTaint + " / " + totalStrings + "\n");
     }
 
     private static String infoFlowResults() {
@@ -105,7 +129,11 @@ public class PTAPaper {
             flowsIntoSinks += sink.getValue().size();
         }
 
-        buf.append("Info Flow Time Sec: " + infoFlowTimeSec + "\n");
+        int i = 0;
+        for (Double time : infoFlowTimeSec) {
+            buf.append("Info Flow Time Sec " + (i++) + ":" + infoFlowTimeSec + "\n");
+        }
+        
         buf.append("Flows into sinks: " + flowsIntoSinks + "\n");
 
         //total infoflow sets for args?

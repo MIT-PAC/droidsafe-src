@@ -200,7 +200,7 @@ public class SparkPTA extends PTABridge {
             Iterator<AllocNode> nodes = ptsProvider.getAllocNodeNumberer().iterator(); 
             while (nodes.hasNext()) {
                 AllocNode node = nodes.next();
-                fw.write(node + "\n\n");
+                fw.write(node + "\n\n");                
             }
 
             fw.close();
@@ -756,6 +756,8 @@ public class SparkPTA extends PTABridge {
         opt.put("string-constants", "true");   
 
         opt.put("kobjsens", Integer.toString(Config.v().kobjsens));
+        opt.put("kobjsens-min-k", Integer.toString(Config.v().minK));
+       
 
         opt.put("kobjsens-context-for-static-inits", Boolean.toString(Config.v().staticinitcontext));
 

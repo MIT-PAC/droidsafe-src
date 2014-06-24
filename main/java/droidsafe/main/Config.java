@@ -99,7 +99,7 @@ public class Config {
     public boolean dumpPta = false;
 
     public boolean dumpCallGraph = false;
-
+    
     /**
      * If true, run string analysis on app classes. true by default
      */
@@ -134,6 +134,8 @@ public class Config {
     public boolean strict = false;
     /** depth of obj sens when running pta for precision (with context) */
     public int kobjsens = 2;
+    /** depth of obj sens for non-important allocators if using decay */
+    public int minK = 1;
     /** should we clone static methods to add call site sensitivity for them? */
     public boolean cloneStaticCalls = true;
     /** should we not add any precision for strings and clump them all together */
@@ -158,6 +160,8 @@ public class Config {
     public boolean limitHeapContextForGUI = false;
     /** name of benchmark we are running */
     public String appName = "";
+    
+    public boolean ptaInfoFlowRefinement = false;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -249,6 +253,10 @@ public class Config {
                 .withDescription("Depth for Object Sensitivity for PTA").create("kobjsens");
         options.addOption(kObjSens);
 
+        Option minK = OptionBuilder.withArgName("k").hasArg()
+                .withDescription("For main PTA, when decaying, use this value for K for non-important").create("mink");
+        options.addOption(minK);
+        
 
         Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
         options.addOption(strict);
@@ -259,6 +267,8 @@ public class Config {
         Option impreciseStrs = new Option("imprecisestrings", "turn off precision for all strings, FAST and IMPRECISE");
         options.addOption(impreciseStrs);
         
+        Option refinement = new Option("refinement", "Experimental refinement of pta and information flow");
+        options.addOption(refinement);
 
         Option limitHeapContextForStrings = new Option("limitcontextforstrings", "Limit heap context to 1 for Strings in PTA");
         options.addOption(limitHeapContextForStrings);
@@ -455,6 +465,10 @@ public class Config {
         if (cmd.hasOption("kobjsens")) {
             this.kobjsens = Integer.parseInt(cmd.getOptionValue("kobjsens"));
         }
+        
+        if (cmd.hasOption("mink")) {
+            this.minK = Integer.parseInt(cmd.getOptionValue("mink"));
+        }
 
         if (cmd.hasOption("strict")) {
             this.strict = true;
@@ -471,6 +485,11 @@ public class Config {
         if (cmd.hasOption("limitcontextforstrings")) {
             this.limitHeapContextForStrings = true;
         }
+        
+        if (cmd.hasOption("refinement")) {
+            ptaInfoFlowRefinement = true;
+        }
+            
         
         if (cmd.hasOption("limitcontextforgui")) {
             this.limitHeapContextForGUI = true;
