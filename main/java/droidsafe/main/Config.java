@@ -135,7 +135,7 @@ public class Config {
     /** depth of obj sens when running pta for precision (with context) */
     public int kobjsens = 2;
     /** depth of obj sens for non-important allocators if using decay */
-    public int minK = 1;
+    private int minK = 1;
     /** should we clone static methods to add call site sensitivity for them? */
     public boolean cloneStaticCalls = true;
     /** should we not add any precision for strings and clump them all together */
@@ -180,6 +180,10 @@ public class Config {
 
     public String getApacHome() {
         return this.apacHome;
+    }
+    
+    public int getMinK() {
+        return Math.min(minK, kobjsens);
     }
 
     public void setApacHome(String apacHome) {

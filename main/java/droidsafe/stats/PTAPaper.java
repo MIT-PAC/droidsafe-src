@@ -157,7 +157,9 @@ public class PTAPaper {
         StringBuffer buf = new StringBuffer();
 
 
-        buf.append(Config.v().kobjsens + " ");
+        buf.append(Config.v().kobjsens + "-");
+        
+        buf.append(Config.v().getMinK() + " ");
 
         if (Config.v().kobjsens > 0) {
             if (Config.v().allContextForPTA) 
@@ -173,7 +175,11 @@ public class PTAPaper {
             buf.append("limit-heap-context-for-strings ");
 
         if (Config.v().staticinitcontext)
-            buf.append("static-init-context");
+            buf.append("static-init-context ");
+        
+        if (!Config.v().cloneStaticCalls) {
+            buf.append("noclonestatics ");
+        }
 
         return buf.toString();
     }

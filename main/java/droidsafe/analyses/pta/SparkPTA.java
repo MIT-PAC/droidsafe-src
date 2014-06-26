@@ -756,7 +756,7 @@ public class SparkPTA extends PTABridge {
         opt.put("string-constants", "true");   
 
         opt.put("kobjsens", Integer.toString(Config.v().kobjsens));
-        opt.put("kobjsens-min-k", Integer.toString(Config.v().minK));
+        opt.put("kobjsens-min-k", Integer.toString(Config.v().getMinK()));
        
 
         opt.put("kobjsens-context-for-static-inits", Boolean.toString(Config.v().staticinitcontext));
