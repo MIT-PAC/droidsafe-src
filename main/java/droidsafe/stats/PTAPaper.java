@@ -127,16 +127,18 @@ public class PTAPaper {
         int flowsIntoSinks = 0;
 
         try {
-            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "flows-for-pta-paper.log");
+            //FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "flows-for-pta-paper.log");
             for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSources.entrySet()) {
                 flowsIntoSinks += sink.getValue().size();
+                /*
                 fw.write(sink.getKey() + " in " + JimpleRelationships.v().getEnclosingMethod(sink.getKey()) + "\n");
                 for (Stmt source : sink.getValue()) {
                     fw.write("\t" + source + " in " + JimpleRelationships.v().getEnclosingMethod(source) + "\n");
                 }
                 fw.write("\n");
+                */
             }
-            fw.close();
+            //fw.close();
         } catch (Exception e) {
             
         }
