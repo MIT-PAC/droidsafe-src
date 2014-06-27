@@ -27,12 +27,13 @@ import droidsafe.android.app.Project;
 import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.speclang.Method;
+import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
 public class PTAPaper {
 
     public static List<Double> infoFlowTimeSec = new LinkedList<Double>();
-    
+
     public static void writeReport() {
         FileWriter fw;
         try {
@@ -59,7 +60,7 @@ public class PTAPaper {
 
             //write information flow
             fw.write(infoFlowResults());
-            
+
             fw.write(stringsWithTaint());
 
             fw.close();
@@ -67,21 +68,21 @@ public class PTAPaper {
 
         }
     }
-    
+
     private static String stringsWithTaint() {
         int totalStrings = 0;
         int stringsWithTaint = 0;
-      
-          for (IAllocNode node : PTABridge.v().getAllAllocNodes()) {
+
+        for (IAllocNode node : PTABridge.v().getAllAllocNodes()) {
             if (SootUtils.isStringOrSimilarType(node.getType())) {
                 totalStrings++;
-                
+
                 if (InformationFlowAnalysis.v().getTaints(node).size() > 0) {
                     stringsWithTaint++;
-                  }
+                }
             }
         }
-        
+
         return ("Strings with taint / Total Strings: " + stringsWithTaint + " / " + totalStrings + "\n");
     }
 
@@ -125,15 +126,26 @@ public class PTAPaper {
         //count number of flows
         int flowsIntoSinks = 0;
 
-        for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSources.entrySet()) {
-            flowsIntoSinks += sink.getValue().size();
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "flows-for-pta-paper.log");
+            for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSources.entrySet()) {
+                flowsIntoSinks += sink.getValue().size();
+                fw.write(sink.getKey() + " in " + JimpleRelationships.v().getEnclosingMethod(sink.getKey()) + "\n");
+                for (Stmt source : sink.getValue()) {
+                    fw.write("\t" + source + " in " + JimpleRelationships.v().getEnclosingMethod(source) + "\n");
+                }
+                fw.write("\n");
+            }
+            fw.close();
+        } catch (Exception e) {
+            
         }
 
         int i = 0;
         for (Double time : infoFlowTimeSec) {
             buf.append("Info Flow Time Sec " + (i++) + ":" + infoFlowTimeSec + "\n");
         }
-        
+
         buf.append("Flows into sinks: " + flowsIntoSinks + "\n");
 
         //total infoflow sets for args?
@@ -158,7 +170,7 @@ public class PTAPaper {
 
 
         buf.append(Config.v().kobjsens + "-");
-        
+
         buf.append(Config.v().getMinK() + " ");
 
         if (Config.v().kobjsens > 0) {
@@ -176,7 +188,7 @@ public class PTAPaper {
 
         if (Config.v().staticinitcontext)
             buf.append("static-init-context ");
-        
+
         if (!Config.v().cloneStaticCalls) {
             buf.append("noclonestatics ");
         }
