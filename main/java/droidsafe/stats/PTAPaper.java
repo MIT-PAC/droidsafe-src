@@ -194,6 +194,10 @@ public class PTAPaper {
         if (!Config.v().cloneStaticCalls) {
             buf.append("noclonestatics ");
         }
+        
+        if (Config.v().naiveDecay) {
+            buf.append("naivedecay ");
+        }
 
         return buf.toString();
     }

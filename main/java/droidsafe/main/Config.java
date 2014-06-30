@@ -133,9 +133,9 @@ public class Config {
     /** are we in strict mode and should fail on errors */
     public boolean strict = false;
     /** depth of obj sens when running pta for precision (with context) */
-    public int kobjsens = 2;
+    public int kobjsens = 3;
     /** depth of obj sens for non-important allocators if using decay */
-    private int minK = 1;
+    private int minK = 2;
     /** should we clone static methods to add call site sensitivity for them? */
     public boolean cloneStaticCalls = true;
     /** should we not add any precision for strings and clump them all together */
@@ -158,7 +158,9 @@ public class Config {
     public boolean limitHeapContextForStrings = false;
     /** in spark limit heap context for some GUI elements */
     public boolean limitHeapContextForGUI = false;
-    /** name of benchmark we are running */
+    /** should we use naive decay (just partition context based on if app class or not) */
+    public boolean naiveDecay = false;
+    /** name of benchmark we are running */    
     public String appName = "";
     
     public boolean ptaInfoFlowRefinement = false;
@@ -276,6 +278,9 @@ public class Config {
 
         Option limitHeapContextForStrings = new Option("limitcontextforstrings", "Limit heap context to 1 for Strings in PTA");
         options.addOption(limitHeapContextForStrings);
+        
+        Option naiveDecay = new Option("naivedecay", "Use naive partitioning if decaying context between app and lib");
+        options.addOption(naiveDecay);
 
         Option limitHeapContextForGUI = new Option("limitcontextforgui", "Limit heap context to 1 for some GUI objects PTA");
         options.addOption(limitHeapContextForGUI);
@@ -494,6 +499,9 @@ public class Config {
             ptaInfoFlowRefinement = true;
         }
             
+        if (cmd.hasOption("naivedecay")) {
+            naiveDecay = true;
+        }
         
         if (cmd.hasOption("limitcontextforgui")) {
             this.limitHeapContextForGUI = true;

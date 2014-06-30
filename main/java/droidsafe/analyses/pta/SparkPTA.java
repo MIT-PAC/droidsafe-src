@@ -163,12 +163,14 @@ public class SparkPTA extends PTABridge {
 
         createNewToAllocMap();
 
+        /*
         for (SootMethod method : getReachableMethods()) {
             Set<MethodOrMethodContext> mcs = getMethodContexts(method);
             if (mcs.size() > 30)
                 System.out.println(method + " " + mcs.size());
         }
-
+         */
+        
         //dumpReachablesAndAllocNodes();
         //dumpCallGraphReachablesCSV();
         //dumpOutdegreesCSV();
@@ -753,7 +755,10 @@ public class SparkPTA extends PTABridge {
         opt.put("types-for-sites","false");        
 
         opt.put("merge-stringbuffer", Boolean.toString(Config.v().impreciseStrings));   
-        opt.put("string-constants", "true");   
+        opt.put("string-constants", "true");  
+        
+        if (Config.v().naiveDecay)
+            opt.put("kobjsens-naive-decay", "true");
 
         opt.put("kobjsens", Integer.toString(Config.v().kobjsens));
         opt.put("kobjsens-min-k", Integer.toString(Config.v().getMinK()));
