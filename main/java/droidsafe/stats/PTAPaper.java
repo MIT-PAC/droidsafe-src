@@ -11,6 +11,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import soot.SootMethod;
 import soot.jimple.InvokeExpr;
@@ -32,8 +34,10 @@ import droidsafe.utils.SootUtils;
 
 public class PTAPaper {
 
-    public static List<Double> infoFlowTimeSec = new LinkedList<Double>();
-
+    public static StringBuffer refinementStats = new StringBuffer(); 
+    public static double infoFlowTimeSec;
+    
+    
     public static void writeReport() {
         FileWriter fw;
         try {
@@ -52,6 +56,8 @@ public class PTAPaper {
             fw.write("App Name: " + name + "\n");
             fw.write("Config: " + getConfiguration() + "\n");
 
+            fw.write(refinementStats.toString());
+            
             //write final run of pta
             fw.write(SparkEvaluator.v().toString());
 
@@ -61,29 +67,25 @@ public class PTAPaper {
             //write information flow
             fw.write(infoFlowResults());
 
-            fw.write(stringsWithTaint());
-
             fw.close();
         } catch (IOException e) {
 
         }
     }
-
-    private static String stringsWithTaint() {
-        int totalStrings = 0;
-        int stringsWithTaint = 0;
-
-        for (IAllocNode node : PTABridge.v().getAllAllocNodes()) {
-            if (SootUtils.isStringOrSimilarType(node.getType())) {
-                totalStrings++;
-
-                if (InformationFlowAnalysis.v().getTaints(node).size() > 0) {
-                    stringsWithTaint++;
-                }
-            }
+    
+    public static void appendPTATimeToRefinement() {
+        String ptastats = SparkEvaluator.v().toString();
+        
+        Pattern ptaTimeRegEx = Pattern.compile("Time \\(sec\\): ([0-9.]+)");
+        Matcher m = ptaTimeRegEx.matcher(ptastats);
+        if (m.find()) {
+            refinementStats.append("Refinement Stage PTA Time (sec): " + m.group(1) + "\n");
         }
+        
+        refinementStats.append("Refinement Stage K: " + ObjectSensitiveConfig.v().k() + "\n");
+        
+        refinementStats.append("Refinement Stage K: " + ObjectSensitiveConfig.v().minK() + "\n");
 
-        return ("Strings with taint / Total Strings: " + stringsWithTaint + " / " + totalStrings + "\n");
     }
 
     private static String infoFlowResults() {
@@ -143,10 +145,8 @@ public class PTAPaper {
             
         }
 
-        int i = 0;
-        for (Double time : infoFlowTimeSec) {
-            buf.append("Info Flow Time Sec " + (i++) + ":" + infoFlowTimeSec + "\n");
-        }
+
+        buf.append("Info Flow Time Sec: " + infoFlowTimeSec + "\n");
 
         buf.append("Flows into sinks: " + flowsIntoSinks + "\n");
 
@@ -197,6 +197,10 @@ public class PTAPaper {
         
         if (Config.v().naiveDecay) {
             buf.append("naivedecay ");
+        }
+        
+        if (Config.v().ptaInfoFlowRefinement) {
+            buf.append("refinement ");
         }
 
         return buf.toString();
