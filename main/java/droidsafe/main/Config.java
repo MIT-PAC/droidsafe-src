@@ -134,14 +134,10 @@ public class Config {
     public boolean strict = false;
     /** depth of obj sens when running pta for precision (with context) */
     public int kobjsens = 3;
-    /** depth of obj sens for non-important allocators if using decay */
-    private int minK = 2;
     /** should we clone static methods to add call site sensitivity for them? */
     public boolean cloneStaticCalls = true;
     /** should we not add any precision for strings and clump them all together */
     public boolean impreciseStrings = false;
-    /** if true add context sensitivity for all objects in pta, otherwise start in user code, and lose it based on k*/
-    public boolean allContextForPTA = false;
     /** if true, then in the info flow analysis ignore methods with NoContext */
     public boolean ignoreNoContextFlows = false;
     /** track only annotated source in the source */
@@ -158,8 +154,6 @@ public class Config {
     public boolean limitHeapContextForStrings = false;
     /** in spark limit heap context for some GUI elements */
     public boolean limitHeapContextForGUI = false;
-    /** should we use naive decay (just partition context based on if app class or not) */
-    public boolean naiveDecay = false;
     /** name of benchmark we are running */    
     public String appName = "";
     
@@ -182,10 +176,6 @@ public class Config {
 
     public String getApacHome() {
         return this.apacHome;
-    }
-    
-    public int getMinK() {
-        return Math.min(minK, kobjsens);
     }
 
     public void setApacHome(String apacHome) {
@@ -259,11 +249,6 @@ public class Config {
                 .withDescription("Depth for Object Sensitivity for PTA").create("kobjsens");
         options.addOption(kObjSens);
 
-        Option minK = OptionBuilder.withArgName("k").hasArg()
-                .withDescription("For main PTA, when decaying, use this value for K for non-important").create("mink");
-        options.addOption(minK);
-        
-
         Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
         options.addOption(strict);
 
@@ -279,16 +264,9 @@ public class Config {
         Option limitHeapContextForStrings = new Option("limitcontextforstrings", "Limit heap context to 1 for Strings in PTA");
         options.addOption(limitHeapContextForStrings);
         
-        Option naiveDecay = new Option("naivedecay", "Use naive partitioning if decaying context between app and lib");
-        options.addOption(naiveDecay);
-
         Option limitHeapContextForGUI = new Option("limitcontextforgui", "Limit heap context to 1 for some GUI objects PTA");
         options.addOption(limitHeapContextForGUI);
 
-        
-        Option allcontext = new Option("allcontext", "Track context on all objects, not just starting at user code.");
-        options.addOption(allcontext);
-        
         Option tforC = new Option("typesforcontext", "use types (instead of alloc sites) for object sensitive context elements > 1");
         options.addOption(tforC);
         
@@ -474,11 +452,7 @@ public class Config {
         if (cmd.hasOption("kobjsens")) {
             this.kobjsens = Integer.parseInt(cmd.getOptionValue("kobjsens"));
         }
-        
-        if (cmd.hasOption("mink")) {
-            this.minK = Integer.parseInt(cmd.getOptionValue("mink"));
-        }
-
+      
         if (cmd.hasOption("strict")) {
             this.strict = true;
         }
@@ -498,19 +472,11 @@ public class Config {
         if (cmd.hasOption("refinement")) {
             ptaInfoFlowRefinement = true;
         }
-            
-        if (cmd.hasOption("naivedecay")) {
-            naiveDecay = true;
-        }
         
         if (cmd.hasOption("limitcontextforgui")) {
             this.limitHeapContextForGUI = true;
         }
-       
-        if (cmd.hasOption("allcontext")) {
-            this.allContextForPTA = true;
-        }
-        
+               
         if (cmd.hasOption("typesforcontext")) {
             this.typesForContext = true;
         }
@@ -714,7 +680,6 @@ public class Config {
                 break;
             case 2: 
                 kobjsens = 2;
-                allContextForPTA = true;
                 ignoreNoContextFlows = false;
                 limitHeapContextForGUI = false;
                 limitHeapContextForStrings = false;
@@ -732,26 +697,6 @@ public class Config {
                 runValueAnalysis = true;
                 cloneStaticCalls = true;
                 staticinitcontext = false;
-                break;
-            case 4: 
-                kobjsens = 4;
-                ignoreNoContextFlows = true;
-                limitHeapContextForGUI = true;
-                limitHeapContextForStrings = true;
-                runStringAnalysis = true;
-                runValueAnalysis = true;
-                cloneStaticCalls = true;
-                staticinitcontext = false;
-                break;
-            case 5: 
-                kobjsens = 4;
-                ignoreNoContextFlows = true;
-                limitHeapContextForGUI = false;
-                limitHeapContextForStrings = false;
-                runStringAnalysis = true;
-                runValueAnalysis = true;
-                cloneStaticCalls = true;
-                staticinitcontext = true;                
                 break;
             default:
                 logger.error("Invalid precision level, must be between 0 and 5 inclusive.");

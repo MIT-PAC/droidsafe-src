@@ -333,7 +333,7 @@ public class Main {
             TransformStringBuilderInvokes.run();
         }
 
-        if (afterTransformPrecise(monitor, false, Config.v().kobjsens, Config.v().getMinK()) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         //new TestPTA();
@@ -468,7 +468,7 @@ public class Main {
 
     private static DroidsafeExecutionStatus ptaInfoflowRefinement(IDroidsafeProgressMonitor monitor) {
         //quick pta run to prune
-        if (afterTransformPrecise(monitor, false, 2, 1) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformPrecise(monitor, false, 1) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         PTAPaper.appendPTATimeToRefinement();
@@ -512,7 +512,7 @@ public class Main {
         ObjectSensitiveConfig.setNewExprsNoContext(stringNewExprsNoTaint);
 
         //rerun pta, without pruned strings
-        if (afterTransformPrecise(monitor, false, Config.v().kobjsens, Config.v().getMinK()) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         //run information flow, after pruning
@@ -694,7 +694,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         //need this pta run to account for jsa injection and class / forname
-        if (afterTransformPrecise(monitor, true, Config.v().kobjsens, Config.v().getMinK()) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransformPrecise(monitor, true, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         monitor.worked(1);
 
@@ -778,7 +778,6 @@ public class Main {
             opts.put("merge-stringbuffer","true");   
             opts.put("string-constants","true");   
             opts.put("kobjsens", "1");
-            opts.put("kobjsens-min-k", "1");
         } 
 
         return afterTransform(monitor, recordTime, opts);
@@ -786,7 +785,7 @@ public class Main {
 
 
 
-    public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime, int k, int minK) {
+    public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime, int k) {
         Map<String,String> opts = new HashMap<String,String>();
 
         if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
@@ -794,8 +793,7 @@ public class Main {
             //build fast options for spark
             opts.put("merge-stringbuffer","false");   
             opts.put("string-constants","true");   
-            opts.put("kobjsens", Integer.toString(k));
-            opts.put("kobjsens-min-k", Integer.toString(minK));
+            opts.put("kobjsens", Integer.toString(k));           
         } 
 
         return afterTransform(monitor, recordTime, opts);   

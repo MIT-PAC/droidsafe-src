@@ -173,15 +173,6 @@ public class PTAPaper {
 
         buf.append(Config.v().kobjsens + "-");
 
-        buf.append(Config.v().getMinK() + " ");
-
-        if (Config.v().kobjsens > 0) {
-            if (Config.v().allContextForPTA) 
-                buf.append("all-context ");
-            else
-                buf.append("decay ");
-        }
-
         if (Config.v().ignoreNoContextFlows)
             buf.append("ignore-no-context-flows ");
 
@@ -193,10 +184,6 @@ public class PTAPaper {
 
         if (!Config.v().cloneStaticCalls) {
             buf.append("noclonestatics ");
-        }
-        
-        if (Config.v().naiveDecay) {
-            buf.append("naivedecay ");
         }
         
         if (Config.v().ptaInfoFlowRefinement) {

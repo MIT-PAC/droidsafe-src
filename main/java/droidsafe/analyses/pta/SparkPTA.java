@@ -757,25 +757,17 @@ public class SparkPTA extends PTABridge {
         opt.put("merge-stringbuffer", Boolean.toString(Config.v().impreciseStrings));   
         opt.put("string-constants", "true");  
         
-        if (Config.v().naiveDecay)
-            opt.put("kobjsens-naive-decay", "true");
-
         opt.put("kobjsens", Integer.toString(Config.v().kobjsens));
-        opt.put("kobjsens-min-k", Integer.toString(Config.v().getMinK()));
-       
-
+        
         opt.put("kobjsens-context-for-static-inits", Boolean.toString(Config.v().staticinitcontext));
 
         opt.put("kobjsens-no-context-list", 
             buildNoContextList());
 
         opt.put("kobjsens-types-for-context", Boolean.toString(Config.v().typesForContext));
-
-        if (Config.v().allContextForPTA)
-            opt.put("kobjsens-important-allocators", "");
-        else 
-            opt.put("kobjsens-important-allocators", buildImportantAllocs());
-
+      
+        opt.put("kobjsens-important-allocators", "");
+      
         StringBuffer limitHeapContext = new StringBuffer();
 
         if (Config.v().limitHeapContextForGUI) { 
