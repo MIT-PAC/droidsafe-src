@@ -48,13 +48,20 @@ public class PTAPaper {
                 name += Config.v().appName;
             }
 
-            String fileName = name + "_" + getConfiguration().replaceAll(" ", "_") + "_pta-report.txt";
+            String additionalInfo = Config.v().additionalInfo;
+            if (!"".equals(additionalInfo)) {
+                additionalInfo = "_" + additionalInfo.replaceAll(" ", "_"); 
+            }
+            
+            String fileName = name + "_" + getConfiguration().replaceAll(" ", "_") + 
+                    additionalInfo + "_pta-report.txt";
 
             fw = new FileWriter(Project.v().getOutputDir() + File.separator + fileName);
 
             //write configuration details
             fw.write("App Name: " + name + "\n");
             fw.write("Config: " + getConfiguration() + "\n");
+            fw.write("Cmdline supplied extra info: " + Config.v().additionalInfo + "\n");
 
             fw.write(refinementStats.toString());
             

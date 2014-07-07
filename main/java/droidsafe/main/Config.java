@@ -156,6 +156,8 @@ public class Config {
     public boolean limitHeapContextForGUI = false;
     /** name of benchmark we are running */    
     public String appName = "";
+    /** some additional information about configuration */
+    public String additionalInfo = "";
     
     public boolean ptaInfoFlowRefinement = false;
     
@@ -244,6 +246,11 @@ public class Config {
                 OptionBuilder.withArgName("<str>").hasArg()
                 .withDescription("Name of application (used for reporting)").create("appname");
         options.addOption(appNameOpt);
+        
+        Option addConfigOpt =
+                OptionBuilder.withArgName("<str>").hasArg()
+                .withDescription("Additional Configuration String (used for reporting)").create("configstr");
+        options.addOption(addConfigOpt);
 
         Option kObjSens = OptionBuilder.withArgName("k").hasArg()
                 .withDescription("Depth for Object Sensitivity for PTA").create("kobjsens");
@@ -440,9 +447,13 @@ public class Config {
         if (cmd.hasOption("nojsa")) {
             this.runStringAnalysis = false;
         }
-
+        
         if (cmd.hasOption("appname")) {
             this.appName = cmd.getOptionValue("appname");
+        }
+        
+        if (cmd.hasOption("configstr")) {
+            this.additionalInfo = cmd.getOptionValue("configstr");
         }
         
         if (cmd.hasOption("jsatimeout")) {
