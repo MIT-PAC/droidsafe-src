@@ -182,6 +182,9 @@ public class PTAPaper {
 
         if (Config.v().limitHeapContextForStrings)
             buf.append("limit-heap-context-for-strings ");
+        
+        if (Config.v().limitHeapContextForGUI)
+            buf.append("limit-heap-context-for-gui ");
 
         if (Config.v().staticinitcontext)
             buf.append("static-init-context ");
