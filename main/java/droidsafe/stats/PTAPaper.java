@@ -90,9 +90,6 @@ public class PTAPaper {
         }
         
         refinementStats.append("Refinement Stage K: " + ObjectSensitiveConfig.v().k() + "\n");
-        
-        refinementStats.append("Refinement Stage K: " + ObjectSensitiveConfig.v().minK() + "\n");
-
     }
 
     private static String infoFlowResults() {
