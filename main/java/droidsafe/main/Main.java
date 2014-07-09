@@ -764,7 +764,6 @@ public class Main {
             opts.put("merge-stringbuffer","true");   
             opts.put("string-constants","false");   
             opts.put("kobjsens", "0");
-            opts.put("kobjsens-min-k", "0");
         } 
 
         return afterTransform(monitor, recordTime, opts);
@@ -778,6 +777,7 @@ public class Main {
             opts.put("merge-stringbuffer","true");   
             opts.put("string-constants","true");   
             opts.put("kobjsens", "1");
+           
         } 
 
         return afterTransform(monitor, recordTime, opts);
@@ -793,7 +793,8 @@ public class Main {
             //build fast options for spark
             opts.put("merge-stringbuffer","false");   
             opts.put("string-constants","true");   
-            opts.put("kobjsens", Integer.toString(k));           
+            opts.put("kobjsens", Integer.toString(k));   
+      
         } 
 
         return afterTransform(monitor, recordTime, opts);   

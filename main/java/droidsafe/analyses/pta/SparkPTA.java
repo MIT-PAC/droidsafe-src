@@ -767,14 +767,17 @@ public class SparkPTA extends PTABridge {
         opt.put("kobjsens-types-for-context", Boolean.toString(Config.v().typesForContext));
       
         opt.put("kobjsens-important-allocators", "");
+        
+        if (Config.v().extraArrayContext)
+            opts.put("kobjsens-extra-array-context", "true"); 
       
         StringBuffer limitHeapContext = new StringBuffer();
 
-        if (Config.v().limitHeapContextForGUI) { 
+        if (!Config.v().fullContextForGUI) { 
             addGUIClasses(limitHeapContext);
         }
 
-        if (Config.v().limitHeapContextForStrings) {
+        if (!Config.v().fullContextForStrings) {
             addStringClasses(limitHeapContext);
         } 
 

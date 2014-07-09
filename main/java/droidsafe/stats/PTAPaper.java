@@ -180,11 +180,11 @@ public class PTAPaper {
         if (Config.v().ignoreNoContextFlows)
             buf.append("ignore-no-context-flows ");
 
-        if (Config.v().limitHeapContextForStrings)
-            buf.append("limit-heap-context-for-strings ");
+        if (Config.v().fullContextForStrings)
+            buf.append("full-context-for-strings ");
         
-        if (Config.v().limitHeapContextForGUI)
-            buf.append("limit-heap-context-for-gui ");
+        if (Config.v().fullContextForGUI)
+            buf.append("full-context-for-gui ");
 
         if (Config.v().staticinitcontext)
             buf.append("static-init-context ");
