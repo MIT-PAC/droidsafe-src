@@ -544,6 +544,7 @@ public void removeRequestInterceptorByClass(Class<? extends HttpRequestIntercept
     @DSComment("sends data through network")
     @DSSpec(DSCat.NETWORKING)
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.140 -0500", hash_original_method = "8C5414A352E96D69F8672C617A799B3F", hash_generated_method = "8579099BD17E76C7F736CB1EA0112BCF")
     
 public final HttpResponse execute(HttpUriRequest request)
@@ -563,6 +564,7 @@ public final HttpResponse execute(HttpUriRequest request)
      */
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.143 -0500", hash_original_method = "DFABA59EDA546A2813170916E96DC886", hash_generated_method = "57BC04C174DD1EA3921BF968322BD923")
     
 public final HttpResponse execute(HttpUriRequest request,
@@ -599,6 +601,7 @@ private HttpHost determineTarget(HttpUriRequest request) {
     // non-javadoc, see interface HttpClient
     @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.148 -0500", hash_original_method = "7C51BA6300B6898AA66ADB20A5FEE58B", hash_generated_method = "7FE66F54B6C880ACCAD2A8A6C1C24EB0")
     
 public final HttpResponse execute(HttpHost target, HttpRequest request)
@@ -608,7 +611,8 @@ public final HttpResponse execute(HttpHost target, HttpRequest request)
     }
     
 	@DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     @Override
 	public final HttpResponse execute(HttpHost target, HttpRequest request,
 			HttpContext context) throws IOException, ClientProtocolException {
@@ -763,6 +767,7 @@ protected HttpParams determineParams(HttpRequest req) {
     }
     
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.128 -0400", hash_original_method = "599A71AED7A734F2BBB0329C86D40EA5", hash_generated_method = "BDCAB35088727F7F5E56A15D4B4B2103")
     
@@ -779,6 +784,7 @@ T varED3CB22FA083C9F271E3D2665EE7B341_1684867738 =         execute(request, resp
     }
     
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.130 -0400", hash_original_method = "6E13CCC1CB10D4179E4E7AE1A7FF6054", hash_generated_method = "E1CBD85E8B397E21B196B7DF6218DABF")
     
@@ -800,6 +806,7 @@ T var7F6E56C9A163132ECE3E76F87E689070_1492548815 =         execute(target, reque
     
     @DSSource({DSSourceKind.NETWORK})
     @DSSpec(DSCat.INTERNET)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.132 -0400", hash_original_method = "19C63352B91033068C787AD06D23F86A", hash_generated_method = "C14A0A7F521044146CBC7F6666D75E9E")
     
     public <T> T execute(
@@ -817,6 +824,7 @@ T varA621BC86743DA81920EC9390504093CE_1888191818 =         execute(target, reque
     }
     
     @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.135 -0400", hash_original_method = "99C065FAB199CDE7300B84D2FBAE687C", hash_generated_method = "0A4C2F3A74DB8937E9E4351C24754138")
     

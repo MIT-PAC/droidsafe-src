@@ -40,6 +40,7 @@ public enum DSSourceKind {
     AUDIO,
     USER_INPUT,
     OS_STATE,
+    OS_PROCESS,
     XML,
     RESOURCES
 }

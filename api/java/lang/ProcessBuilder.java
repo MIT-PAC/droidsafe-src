@@ -17,17 +17,24 @@ public final class ProcessBuilder
 
     File dir = new File("ProessBuilder-dir");
     
+    @DSSink({DSSinkKind.OS_COMMAND})
+    @DSSource({DSSourceKind.OS_PROCESS})
     public ProcessBuilder(String[] command)
     {
         command(command);
     }
     
+    @DSSource({DSSourceKind.OS_PROCESS})
+    @DSSink({DSSinkKind.OS_COMMAND})
     public ProcessBuilder(List<String> command) { 
         command(command);
     }
     
+    /* we have to make it a SINK or we will need to do a replacement later */
     @DSComment("No action")
     @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.OS_COMMAND})
+    @DSSource({DSSourceKind.OS_PROCESS})
     
     public List<String> command() { 
         List<String> ret = new LinkedList<String>();
@@ -37,6 +44,8 @@ public final class ProcessBuilder
     
     @DSComment("No action")
     @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.OS_COMMAND})
+    @DSSource({DSSourceKind.OS_PROCESS})
     public ProcessBuilder command(String[] command) { 
         this.commands = "";
 
@@ -48,6 +57,8 @@ public final class ProcessBuilder
     
     @DSComment("No action")
     @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.OS_PROCESS})
+    @DSSink({DSSinkKind.OS_COMMAND})
     public ProcessBuilder command(List<String> command) { 
         this.commands = "";
 
@@ -79,7 +90,9 @@ public final class ProcessBuilder
         return this;
     }
     
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSSink({DSSinkKind.OS_COMMAND})
+    @DSSource({DSSourceKind.OS_PROCESS})
     public Process start() throws IOException { 
         return new DroidSafeProcess();
     }
