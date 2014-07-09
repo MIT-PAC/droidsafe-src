@@ -46,7 +46,7 @@ public static Locale[] getAvailableLocales() {
      */
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.LOCATION})
+    //@DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.122 -0500", hash_original_method = "78E4BA42BD949FF8F2A8F4719503FD6E", hash_generated_method = "5528E88B167B739C2F2D3F547188BFC8")
     
 public static Locale getDefault() {

@@ -3028,7 +3028,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFocusable(boolean focusable){
 		// Original method
 		/*
@@ -3045,7 +3045,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    // @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFocusableInTouchMode(boolean focusableInTouchMode){
 		// Original method
 		/*
@@ -3063,7 +3063,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    // @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSoundEffectsEnabled(boolean soundEffectsEnabled){
 		// Original method
 		/*
@@ -3091,7 +3091,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setHapticFeedbackEnabled(boolean hapticFeedbackEnabled){
 		// Original method
 		/*
@@ -3175,7 +3175,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setWillNotDraw(boolean willNotDraw){
 		// Original method
 		/*
@@ -3202,7 +3202,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setWillNotCacheDrawing(boolean willNotCacheDrawing){
 		// Original method
 		/*
@@ -3242,7 +3242,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setClickable(boolean clickable){
 		// Original method
 		/*
@@ -3268,7 +3268,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setLongClickable(boolean longClickable){
 		// Original method
 		/*
@@ -3282,7 +3282,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setPressed(boolean pressed){
 		// Original method
 		/*
@@ -3339,7 +3339,7 @@ protected void dispatchSetPressed(boolean pressed) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSaveEnabled(boolean enabled){
 		// Original method
 		/*
@@ -3366,7 +3366,7 @@ protected void dispatchSetPressed(boolean pressed) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFilterTouchesWhenObscured(boolean enabled){
 		// Original method
 		/*
@@ -3393,7 +3393,7 @@ protected void dispatchSetPressed(boolean pressed) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSaveFromParentEnabled(boolean enabled){
 		// Original method
 		/*
@@ -4534,7 +4534,7 @@ public boolean onGenericMotionEvent(MotionEvent event) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setHovered(boolean hovered){
 		// Original method
 		/*
@@ -4794,7 +4794,7 @@ protected void dispatchDraw(Canvas canvas) {
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScrollX(int value){
 		// Original method
         scrollTo(value, mScrollY);
@@ -4803,7 +4803,7 @@ protected void dispatchDraw(Canvas canvas) {
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScrollY(int value){
 		// Original method
         scrollTo(mScrollX, value);
@@ -4983,7 +4983,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setCameraDistance(float distance){
 		// Original method
 		/*
@@ -5405,7 +5405,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+   // @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setX(float x){
 		// Original method
         setTranslationX(x - mLeft);
@@ -5414,7 +5414,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getY(){
 		// Original method
 		/*
@@ -5427,7 +5427,7 @@ protected void dispatchDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setY(float y){
 		// Original method
         setTranslationY(y - mTop);
@@ -6907,7 +6907,7 @@ AttachInfo(IWindowSession session, IWindow window,
         @DSVerified
         @DSComment("IO movement methodName")
         @DSSpec(DSCat.IO_ACTION_METHOD)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         public void sendAccessibilityEvent(View host, int eventType){
 			// Original method
 			/*
@@ -7327,7 +7327,7 @@ public void computeScroll() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setHorizontalFadingEdgeEnabled(boolean horizontalFadingEdgeEnabled){
 		// Original method
 		/*
@@ -7364,7 +7364,7 @@ public void computeScroll() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setVerticalFadingEdgeEnabled(boolean verticalFadingEdgeEnabled){
 		// Original method
 		/*
@@ -7440,7 +7440,7 @@ public void computeScroll() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setHorizontalScrollBarEnabled(boolean horizontalScrollBarEnabled){
 		// Original method
 		/*
@@ -7469,7 +7469,7 @@ public void computeScroll() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setVerticalScrollBarEnabled(boolean verticalScrollBarEnabled){
 		// Original method
 		/*
@@ -7527,7 +7527,7 @@ public void computeScroll() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScrollBarStyle(int style){
 		// Original method
 		/*
@@ -7999,7 +7999,7 @@ protected void onDraw(Canvas canvas) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setDuplicateParentStateEnabled(boolean enabled){
 		// Original method
 		/*
@@ -9057,7 +9057,7 @@ protected void dispatchSetSelected(boolean selected) {
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setActivated(boolean activated){
 	    addTaint(activated);
 	}
@@ -9272,7 +9272,7 @@ protected void dispatchSetActivated(boolean activated) {
 		//Return nothing
 	}
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setIsRootNamespace(boolean isRoot){
 		// Original method
 		/*
