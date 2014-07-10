@@ -168,7 +168,9 @@ public class Config {
     public String additionalInfo = "";
     /** should we add extra context for arrays in the pta? */
     public boolean extraArrayContext = true;
-    
+    /** ignore flows through throwable objects */
+    public boolean ignoreThrowableFlows = false;
+        
     public boolean ptaInfoFlowRefinement = false;
     
     /**
@@ -283,6 +285,9 @@ public class Config {
         
         Option fullContextForGUI = new Option("fullcontextforgui", "Do not limit context depth for some GUI objects PTA");
         options.addOption(fullContextForGUI);
+        
+        Option ignoreExceptionFlows = new Option("ignoreexceptionflows", "Ignore flows through throwable objects and their fields.");
+        options.addOption(ignoreExceptionFlows);
 
         Option tforC = new Option("typesforcontext", "use types (instead of alloc sites) for object sensitive context elements > 1");
         options.addOption(tforC);
@@ -448,6 +453,9 @@ public class Config {
         if (cmd.hasOption("noptaresult"))
             this.ptaresult = false;
                
+        if (cmd.hasOption("ignoreexceptionflows")) {
+            this.ignoreThrowableFlows = true;
+        }
         
         if (cmd.hasOption("vastats"))
             this.dumpVAStats = true;

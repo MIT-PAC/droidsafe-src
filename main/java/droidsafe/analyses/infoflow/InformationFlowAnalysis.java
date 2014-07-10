@@ -73,8 +73,7 @@ import droidsafe.utils.SootUtils;
  * Information Flow Analysis
  */
 public class InformationFlowAnalysis {
-    private static boolean IGNORE_FLOWS_THROUGH_THROWABLE = true;
-
+   
     private static InformationFlowAnalysis v;
     
     /**
@@ -765,7 +764,7 @@ public class InformationFlowAnalysis {
                         boolean isThrowable = Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(((RefType)allocNode.getType()).getSootClass(), 
                             Scene.v().getSootClass("java.lang.Throwable"));
                         
-                        if (!IGNORE_FLOWS_THROUGH_THROWABLE || !isThrowable) {
+                        if (!Config.v().ignoreThrowableFlows || !isThrowable) {
                             state.instances.putW(allocNode, field, values);
                         }
                     }
