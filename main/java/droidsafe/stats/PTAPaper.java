@@ -100,21 +100,31 @@ public class PTAPaper {
 
         //key is invoke of sink -> sources
         Map<InvokeExpr, Set<Stmt>> invokeToSources = new HashMap<InvokeExpr, Set<Stmt>>();
+        //only count flows from arguments here, to match flow droid
+        Map<InvokeExpr, Set<Stmt>> invokeToSourcesFlowDroid = new HashMap<InvokeExpr, Set<Stmt>>();
 
         for (Map.Entry<Method, List<Method>> block : RCFGToSSL.v().getSpec().getEventBlocks().entrySet()) {
             for (Method oe : block.getValue()) {
                 if (oe.getSinkInfoKinds().size() > 0 &&
                         oe.getSourcesInfoKinds().size() > 0) {
+                    
                     //we have a sink with connected sources
                     InvokeExpr ie = oe.getInvokeExpr();
                     if (!invokeToSources.containsKey(ie)) {
                         invokeToSources.put(ie, new HashSet<Stmt>());
                     }
 
+                    if (!invokeToSourcesFlowDroid.containsKey(ie)) {
+                        invokeToSourcesFlowDroid.put(ie, new HashSet<Stmt>());
+                    }
+                
+                    
                     //get args
                     for (int i = 0; i < oe.getNumArgs(); i++) {
                         for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getArgSourceInfoUnits(i).entrySet()) {
                             invokeToSources.get(ie).addAll(flows.getValue());
+                            //for flowdroid comparison, just add the flows from the args 
+                            invokeToSourcesFlowDroid.get(ie).addAll(flows.getValue());
                         }
                     }
                     //get receiver
@@ -131,6 +141,7 @@ public class PTAPaper {
 
         //count number of flows
         int flowsIntoSinks = 0;
+        int flowDroidFlowsIntoSinks = 0;
 
         try {
             //FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "flows-for-pta-paper.log");
@@ -145,6 +156,11 @@ public class PTAPaper {
                 */
             }
             //fw.close();
+            
+            for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesFlowDroid.entrySet()) {
+                flowDroidFlowsIntoSinks += sink.getValue().size();
+            }
+            
         } catch (Exception e) {
             
         }
@@ -153,6 +169,7 @@ public class PTAPaper {
         buf.append("Info Flow Time Sec: " + infoFlowTimeSec + "\n");
 
         buf.append("Flows into sinks: " + flowsIntoSinks + "\n");
+        buf.append("Arg flows into Sinks: " + flowDroidFlowsIntoSinks + "\n");
 
         //total infoflow sets for args?
 
