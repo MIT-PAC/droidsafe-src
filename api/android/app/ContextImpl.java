@@ -130,6 +130,17 @@ ReceiverRestrictedContext(Context base) {
 
 public class ContextImpl extends Context {
 
+    private static FileOutputStream OUTPUT_STREAM;
+    private static FileInputStream INPUT_STREAM;
+
+    static {
+        try {
+            OUTPUT_STREAM = new FileOutputStream("DS_UNKNOWN");
+            INPUT_STREAM  = new FileInputStream("DS_UNKNOWN");
+        } catch (Exception e) {
+        }
+    }
+
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
@@ -431,14 +442,14 @@ private File getPreferencesDir() {
     @Override
     @DSSafe(DSCat.FS_INFO)
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
-        throw new UnsupportedOperationException();
+       return INPUT_STREAM;
     }
     
     @DSSink({DSSinkKind.FILE})
     @Override
     @DSSpec(DSCat.IO)
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
-        throw new UnsupportedOperationException();
+       return OUTPUT_STREAM;
     }
     
     @DSVerified
