@@ -53,8 +53,12 @@ public ThreadLocal() {}
     
 @SuppressWarnings("unchecked")
     public T get() {
+        
         // Optimized for the fast path.
+        // make sure we put the first value in in the map
+
         Thread currentThread = Thread.currentThread();
+        droidsafeObjectMap.put(currentThread, initialValue());
         return (T)droidsafeObjectMap.get(currentThread);
 /*
         Values values = values(currentThread);

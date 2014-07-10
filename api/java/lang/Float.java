@@ -92,7 +92,7 @@ public static float parseFloat(String string) throws NumberFormatException {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.304 -0500", hash_original_method = "B7E1BCC1B7A5845C5179DE746CBEEF71", hash_generated_method = "D5F9E6B59E5CA5AC8021B7D7B2DC2734")
     
-public static String toString(float f) {
+public static String toString(float f) {        
         return RealToString.getInstance().floatToString(f);
     }
 

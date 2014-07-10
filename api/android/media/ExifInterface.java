@@ -184,7 +184,7 @@ private static float convertRationalLatLonToFloat(
         loadAttributes();
     }
     
-	@DSComment("getting the ExifInterface is already SPEC")
+    @DSComment("getting the ExifInterface is already SPEC")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.IMAGE})
     public String getAttribute(String tag) {
