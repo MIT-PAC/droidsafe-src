@@ -2544,12 +2544,19 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    String droidsafeTemp = "";
+    
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSSink({DSSinkKind.START_ACTIVITY})
     @Override public void startActivity(Intent intent){
+    	
+    	String result = intent.getAction() + intent.getDataString();
+    	
 		onActivityResult(-1, -1, intent);
+		
+		droidsafeTemp = droidsafeTemp + result;
 		
 		/*
 		  * This is called for activities that set launchMode to "singleTop" in
@@ -4125,11 +4132,13 @@ final void performUserLeaving() {
         //technically we should use the menu from external source
         Menu menu = builder.addSubMenu(DSUtils.FAKE_INT);
         this.onCreateOptionsMenu(menu);
+        menu = builder.addSubMenu(DSUtils.FAKE_INT);
         this.onPrepareOptionsMenu(menu);
         this.onMenuOpened(DSUtils.FAKE_INT, menu);
         this.onContextMenuClosed(menu);
-
+        menu = builder.addSubMenu(DSUtils.FAKE_INT);
         this.onContextItemSelected(menu.add(new String()));
+        menu = builder.addSubMenu(DSUtils.FAKE_INT);
         this.onOptionsItemSelected(menu.add(new String()));
         this.onMenuItemSelected(DSUtils.FAKE_INT, menu.add(new String()));
 

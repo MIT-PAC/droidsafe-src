@@ -998,6 +998,7 @@ public String[] list(FilenameFilter filter) {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.557 -0500", hash_original_method = "9B953D65872590D8ABB7497D4B159A57", hash_generated_method = "02AE2C1C40DB6FEABA09D2EED581A218")
     
 public File[] listFiles() {

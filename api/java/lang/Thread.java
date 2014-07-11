@@ -1135,6 +1135,9 @@ public synchronized void start() {
 
         hasBeenStarted = true;
 
+        // we need to call run so that the callback/handler gets invoked
+        run();
+        
         VMThread.create(this, stackSize);
     }
 

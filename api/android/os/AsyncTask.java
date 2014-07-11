@@ -24,6 +24,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class AsyncTask<Params, Progress, Result> {
 
+    static List<Object> droidsafeAsyncTask = new LinkedList<Object>();
+    
     /** @hide Used to force static handler to be created. */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.236 -0500", hash_original_method = "85B7E9920F04AD03DB055D36153974ED", hash_generated_method = "8717D9EFB6DC73C1619EB6E1EBC30550")
     
@@ -115,6 +117,7 @@ public static void setDefaultExecutor(Executor exec) {
     public  AsyncTask() {
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
+        droidsafeAsyncTask.add(this);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.250 -0500", hash_original_method = "3B97ED7071D46F297921BB0773C1C347", hash_generated_method = "B892F3B62337C7FA8F4DB2B283CECB48")

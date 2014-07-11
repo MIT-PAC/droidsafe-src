@@ -246,6 +246,8 @@ public ArrayList<String> divideMessage(String text) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.955 -0500", hash_original_method = "C9D37AD9E9C3945E93E31952A098B3F5", hash_generated_method = "15EA93085150F19B9B0DD272CF8FDBB5")
     
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SMS_MMS})
 public void sendMultipartTextMessage(
             String destinationAddress, String scAddress, ArrayList<String> parts,
             ArrayList<PendingIntent> sentIntents, ArrayList<PendingIntent> deliveryIntents) {

@@ -173,7 +173,7 @@ public abstract Set<Map.Entry<K, V>> entrySet();
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.240 -0400", hash_original_method = "F40A232B51CF144805B23E3A97CCF7A5", hash_generated_method = "9A0B801A8CE9D5D944144F6F2D5118B9")
     public Set<K> keySet() {
         return keySet;
@@ -340,7 +340,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.293 -0500", hash_original_method = "03506E32B26B17661064F3FFDE4F185F", hash_generated_method = "FE18E3871177E49857452EE0E11F67D8")
     
 @Override public String toString() {
@@ -376,7 +376,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.248 -0400", hash_original_method = "BE68DB72EA44A9864EFB8085A73DD13D", hash_generated_method = "FFF60DD0BB73731BB57AABB5E433364A")
     public Collection<V> values() {
         return valuesCollection;
@@ -384,7 +384,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
         
 @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.589 -0400", hash_original_method = "DEDBEBF1A9DF717B6A61BCEAEE5EB8FF", hash_generated_method = "CF2AA62163C630C7B78B734803415A96")
     @SuppressWarnings("unchecked")
     @Override
@@ -440,7 +440,7 @@ public SimpleImmutableEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.184 -0500", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "70BBB2F2B97930263570BF1F94F8248D")
         
 public K getKey() {
@@ -458,7 +458,7 @@ public V getValue() {
                 
 @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.591 -0400", hash_original_method = "3526712C126765AF36CB8D920CBD3B1B", hash_generated_method = "EB9F930298727FE038FD0E2F1F331E96")
         public V setValue(V object) {
             if (DroidSafeAndroidRuntime.control) {
@@ -555,7 +555,7 @@ public SimpleEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
                 
 @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.593 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "DED2DCB7D9AC2A45C93F999F67F3F5F9")
         public K getKey() {
              key.addTaint(getTaint());
