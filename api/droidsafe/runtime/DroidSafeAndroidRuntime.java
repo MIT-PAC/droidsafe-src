@@ -120,6 +120,8 @@ public class DroidSafeAndroidRuntime {
         if (mApplication != null)
             service.setApplication(mApplication);
 
+        service.droidsafeAttachContext(context);
+
         service.onCreate();
         for (IntentFilter filter : service.__ds__intentFilters) {
             

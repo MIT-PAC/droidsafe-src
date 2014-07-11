@@ -484,5 +484,8 @@ final String getClassName() {
                 this.mApplication = app;
         }
 
+    public void droidsafeAttachContext(Context context) {
+        this.attachBaseContext(context);
+    }
 }
 
