@@ -467,7 +467,10 @@ public final Object getContent() throws IOException {
     /**
      * Equivalent to {@code openConnection().getContent(types)}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.811 -0500", hash_original_method = "D92AC8AC4808B4044341B9D346CCCA3C", hash_generated_method = "2449522D744084AA01B4B412F82BEEE0")
     
 @SuppressWarnings("unchecked") // Param not generic in spec
@@ -480,7 +483,8 @@ public final Object getContent() throws IOException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.814 -0500", hash_original_method = "EA6B256CF4DB87F83CFE1379BEA78831", hash_generated_method = "20204A59BCA9CBCE334EE2309DE1C2D7")
     
 public final InputStream openStream() throws IOException {

@@ -48,6 +48,7 @@ public static final String readUTF(DataInput in) throws IOException {
      */
     @DSComment("Spec is marked when opening raw stream")
     @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.214 -0500", hash_original_method = "AECD3C5985C6EE616C4F48FE6E0C81F1", hash_generated_method = "5EC1B7B98AF57C776C4E6449EBBB1FD9")
     
 public DataInputStream(InputStream in) {
