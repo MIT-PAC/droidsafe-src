@@ -209,8 +209,8 @@ public class DroidSafeAndroidRuntime {
     @DSSource(DSSourceKind.UNMODELED)
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     @DSVerified()
-    public static String getUnmodeledTaintString() {
-        return "DSUnknown";
+    public static String getUnmodeledTaintString(String str) {
+        return str;
     }
 
     @DSSource(DSSourceKind.UNMODELED)
