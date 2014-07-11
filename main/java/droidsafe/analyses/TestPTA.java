@@ -75,10 +75,9 @@ public class TestPTA  {
                 method.retrieveActiveBody();
             }
             
-  
-            if (!"<java.lang.Object: void addTaint(droidsafe.helpers.DSTaintObject)>".equals(method.getSignature()))
+            if (API.v().isSystemMethod(method))
                 continue;
-            
+ 
             System.out.println(momc);
             
             Iterator<Edge> edges = Scene.v().getCallGraph().edgesOutOf(momc);

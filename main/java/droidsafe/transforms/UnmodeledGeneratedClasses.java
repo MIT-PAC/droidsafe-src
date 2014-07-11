@@ -22,6 +22,7 @@ import soot.Body;
 import soot.Local;
 import soot.Modifier;
 import soot.PrimType;
+import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
@@ -95,7 +96,7 @@ public class UnmodeledGeneratedClasses {
         if (node.getType() instanceof RefType) {
             return classesAdded.contains(((RefType)node.getType()).getSootClass());
         }
-        
+
         return false;
     }
 
@@ -133,20 +134,13 @@ public class UnmodeledGeneratedClasses {
         dummyInitBody.getUnits().insertBefore(stmt, addBefore);
     }
 
-    private void addPrimitiveOrString(Type type) {
-        String suffix = "";
-        if (SootUtils.isStringType(type)) {
-            suffix = "String";
-
-        } else if (type instanceof PrimType) {
-            suffix = Character.toUpperCase(type.toString().charAt(0)) + type.toString().substring(1);
-        }
-
+    private SootField addPrimitive(PrimType type) {
+        
+        String suffix = Character.toUpperCase(type.toString().charAt(0)) + type.toString().substring(1);
+        
         SootField field = new SootField(DUMMY_FIELD_PREFIX + suffix, type, Modifier.PUBLIC | Modifier.STATIC);
 
         dummyClass.addField(field);
-
-        typeToAddedField.put(type, field);
 
         //create call in dummy init to initialize value
         SootMethod getTaintMethod = Scene.v().getMethod("<" + Harness.RUNTIME_MODELING_CLASS + ": " + 
@@ -166,6 +160,8 @@ public class UnmodeledGeneratedClasses {
                 ));
 
         addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), local));
+        
+        return field;
     }
 
     private void addArrayType(ArrayType type) {
@@ -219,7 +215,35 @@ public class UnmodeledGeneratedClasses {
 
     }
 
-    private void addRefType(RefType type) {
+    private SootField addStringType(RefType type) {
+        SootClass clz = type.getSootClass();
+      
+        //field and add creation of object
+        if (!clz.declaresMethod(noArgConsSubSig)) {
+            logger.error("Error during fallback modeling. Class {} does not have a no arg constructor.", clz);
+            return null;
+        }
+
+        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.toString().replace(".", "_"), 
+            type, Modifier.PUBLIC | Modifier.STATIC);
+        dummyClass.addField(field);
+
+
+        //add initialization code to dummy init method
+        Local local = Jimple.v().newLocal("UG" + localID++, type);
+        dummyInitBody.getLocals().add(local);
+
+        //local = new Clone()
+        //local.init();
+        //field = local
+        addStmt(Jimple.v().newAssignStmt(local, Jimple.v().newNewExpr(clz.getType())));
+        addStmt(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, clz.getMethod(noArgConsSubSig).makeRef())));
+        addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), local));
+        
+        return field;
+    }
+    
+    private SootField addRefType(RefType type) {
         //see if any current type can replace it
         SootClass clz = type.getSootClass();
         //if an interface, find a direct implementor of and instantiate that...
@@ -232,7 +256,7 @@ public class UnmodeledGeneratedClasses {
             //so just pass null
             logger.warn("Cannot find any known implementors of {} when adding dummy object", 
                 type.getSootClass());
-            return;
+            return null;
         }
 
         //clone clz
@@ -242,7 +266,7 @@ public class UnmodeledGeneratedClasses {
         logger.info("Creating cloned class for fallback modeling: {}", clone);
 
         classesAdded.add(clone);
-        
+
         installNoArgConstructor(clone);
 
         //make all methods of unmodeled type
@@ -253,13 +277,15 @@ public class UnmodeledGeneratedClasses {
         //field and add creation of object
         if (!clone.declaresMethod(noArgConsSubSig)) {
             logger.error("Error during fallback modeling. Class {} does not have a no arg constructor.", clone);
-            return;
+            return null;
         }
 
         SootField field = new SootField(DUMMY_FIELD_PREFIX + type.toString().replace(".", "_"), 
             type, Modifier.PUBLIC | Modifier.STATIC);
         dummyClass.addField(field);
-        typeToAddedField.put(type, field);
+            
+        if (!SootUtils.isStringOrSimilarType(type))
+            typeToAddedField.put(type, field);
 
         //add initialization code to dummy init method
         Local local = Jimple.v().newLocal("UG" + localID++, type);
@@ -271,6 +297,8 @@ public class UnmodeledGeneratedClasses {
         addStmt(Jimple.v().newAssignStmt(local, Jimple.v().newNewExpr(clone.getType())));
         addStmt(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, clone.getMethod(noArgConsSubSig).makeRef())));
         addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), local));
+        
+        return field;
     }
 
     /**
@@ -303,45 +331,49 @@ public class UnmodeledGeneratedClasses {
             //if we have not cloned a method, then just create a no arg constructor...
             SootMethod init = new SootMethod("<init>", Collections.<Type>emptyList(), VoidType.v(), 
                 Modifier.PUBLIC, Collections.<SootClass>emptyList());
-            
+
             clone.addMethod(init);
-            
+
             if (API.v().isSystemClass(clone)) {
                 API.v().addSafeMethod(init);
             }
-            
+
             Body newBody = Jimple.v().newBody(init);
             init.setActiveBody(newBody);
-            
+
             //get this, just return?
             Local thisL = Jimple.v().newLocal("r0", clone.getType());
             newBody.getLocals().add(thisL);
             newBody.getUnits().add(Jimple.v().newIdentityStmt(thisL, Jimple.v().newThisRef(clone.getType())));
-            
+
             newBody.getUnits().add(Jimple.v().newReturnVoidStmt());
         }
     }
 
     public Value getSootFieldForType(Type type) {
-        if (!typeToAddedField.containsKey(type)) {
-            //not a type we have seen before
+        SootField field = null;
+        
+        if (type instanceof PrimType) {
+            field = addPrimitive((PrimType)type);
+        } else if (SootUtils.isStringOrSimilarType(type)) {
+            //handle string separately so we don't keep reusing the same string object
+            //and spreading taint all around!
+            field = addStringType((RefType)type);
+        } else {        
+            if (!typeToAddedField.containsKey(type)) {
+                //not a type we have seen before
 
-            //if a reference, create dummy object
-            if (type instanceof RefType) {
-                //class type
-                if (SootUtils.isStringType(type))
-                    addPrimitiveOrString(type);
-                else
+                //if a reference, create dummy object
+                if (type instanceof RefType) {
+                    //class type
                     addRefType((RefType)type);
-            } else if (type instanceof ArrayType) {
-                //array type
-                addArrayType((ArrayType)type);
-            } else {
-                addPrimitiveOrString(type);
-            } 
+                } else if (type instanceof ArrayType) {
+                    //array type
+                    addArrayType((ArrayType)type);
+                } 
+            }
+            field = typeToAddedField.get(type);
         }
-
-        SootField field = typeToAddedField.get(type);
 
         if (field == null)
             return NullConstant.v();

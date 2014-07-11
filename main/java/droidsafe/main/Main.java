@@ -304,7 +304,7 @@ public class Main {
         //code as null    
         if (Config.v().addFallbackModeling) {
 
-            if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            if (afterTransformPrecise(monitor, false, 2) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
             driverMsg("Inserting Unmodeled Objects...");
@@ -316,6 +316,8 @@ public class Main {
             }
         }
 
+      
+        
         {
             //account for any transformations
             if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
@@ -336,7 +338,7 @@ public class Main {
         if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
-        //new TestPTA();
+        //new TestPTA();     
 
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
@@ -768,6 +770,7 @@ public class Main {
 
         return afterTransform(monitor, recordTime, opts);
     }
+        
 
     public static DroidsafeExecutionStatus afterTransformMedium(IDroidsafeProgressMonitor monitor, boolean recordTime) {
         Map<String,String> opts = new HashMap<String,String>();
