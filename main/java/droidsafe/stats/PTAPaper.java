@@ -14,8 +14,14 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import soot.Hierarchy;
+import soot.RefType;
+import soot.Scene;
+import soot.SootClass;
 import soot.SootMethod;
+import soot.Type;
 import soot.jimple.InvokeExpr;
+import soot.jimple.OrExpr;
 import soot.jimple.Stmt;
 import soot.jimple.spark.SparkEvaluator;
 import soot.jimple.spark.pag.AllocNode;
@@ -26,6 +32,7 @@ import droidsafe.analyses.infoflow.InfoValue;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.speclang.Method;
@@ -93,6 +100,9 @@ public class PTAPaper {
     }
 
     private static String infoFlowResults() {
+        Hierarchy hierarchy = Scene.v().getActiveHierarchy();
+        SootClass throwable = Scene.v().getSootClass("java.lang.Throwable");
+        
         StringBuffer buf = new StringBuffer();
 
         //count number of flows
@@ -104,6 +114,10 @@ public class PTAPaper {
         Map<InvokeExpr, Set<Stmt>> invokeToSourcesFlowDroid = new HashMap<InvokeExpr, Set<Stmt>>();
 
         for (Map.Entry<Method, List<Method>> block : RCFGToSSL.v().getSpec().getEventBlocks().entrySet()) {
+            //only count events in src classes, not in libraries
+            if (!Project.v().isSrcClass(block.getKey().getSootMethod().getDeclaringClass()))
+                continue;
+            
             for (Method oe : block.getValue()) {
                 if (oe.getSinkInfoKinds().size() > 0 &&
                         oe.getSourcesInfoKinds().size() > 0) {
@@ -121,6 +135,14 @@ public class PTAPaper {
                     
                     //get args
                     for (int i = 0; i < oe.getNumArgs(); i++) {
+                        
+                        Type formalArgType = oe.getActualArgType(i);
+                        //ignore method arguments that have a declared type of throwable or a subclass of throwable
+                        if (formalArgType instanceof RefType &&
+                                !((RefType)formalArgType).getSootClass().isInterface() &&
+                                hierarchy.isClassSubclassOfIncluding(((RefType)formalArgType).getSootClass(), throwable))
+                            continue;
+                        
                         for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getArgSourceInfoUnits(i).entrySet()) {
                             invokeToSources.get(ie).addAll(flows.getValue());
                             //for flowdroid comparison, just add the flows from the args 
