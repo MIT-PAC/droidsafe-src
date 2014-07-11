@@ -1778,6 +1778,7 @@ public Intent() {
     public Intent(String action) {
             this();
         mAction = action;
+        this.addTaint(action.getTaint());
     }
     
 	@DSComment("constructor")
@@ -1786,6 +1787,8 @@ public Intent() {
             this();
         mAction = action;
         mData = uri;
+        this.addTaint(action.getTaint());
+        this.addTaint(uri.getTaint());
     }
     
     @DSComment("constructor")
@@ -1795,6 +1798,8 @@ public Intent() {
         this();
         mClsComponent = cls;
         mComponent = new ComponentName(packageContext, cls.getName());
+        this.addTaint(packageContext.getTaint());
+        this.addTaint(cls.getTaint());
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageContext, cls);
     }
@@ -1823,6 +1828,7 @@ public Intent() {
     
 protected Intent(Parcel in) {
         this();
+        addTaint(in.getTaint());
         readFromParcel(in);
     }
 
@@ -1885,7 +1891,7 @@ public Uri getData() {
     
 	@DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getDataString() {
 		return mData.toString();
         //return mData != null ? mData.toString() : null;

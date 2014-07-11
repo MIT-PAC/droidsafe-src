@@ -8,6 +8,7 @@ public enum DSSinkKind {
     CALENDAR_INFORMATION,
     CONTACT_INFORMATION,
     EMAIL,
+    EXIF_INFO,
     FILE,
     LOCATION_INFORMATION,
     LOG,

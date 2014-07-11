@@ -5,6 +5,8 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
 import droidsafe.runtime.*;
+
+import java.util.LinkedList;
 import java.util.concurrent.atomic.*;
 import java.util.concurrent.locks.LockSupport;
 
@@ -121,6 +123,8 @@ private static Object await(Node node, Slot slot) {
 
     private final AtomicInteger max = new AtomicInteger();
 
+	LinkedList<Object> droidsafeData;
+
     /**
      * Creates a new Exchanger.
      */
@@ -129,6 +133,7 @@ private static Object await(Node node, Slot slot) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.309 -0500", hash_original_method = "7EAF111F5AA6799458B5BA4ED6EF193C", hash_generated_method = "F3DE1CB784C5627EDBD69D821D89A075")
     
 public Exchanger() {
+    	droidsafeData = new LinkedList<Object>();
     }
     
     private static final class Node extends AtomicReference<Object> {
@@ -224,6 +229,7 @@ public Node(Object item) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.288 -0500", hash_original_method = "85CC613BF9709593CA039307E2227217", hash_generated_method = "F999AB1DA8ED0568D23A16ABFD90AFE4")
     
 private Object doExchange(Object item, boolean timed, long nanos) {
+    	/*
         Node me = new Node(item);                 // Create in case occupying
         int index = hashIndex();                  // Index of current slot
         int fails = 0;                            // Number of CAS failures
@@ -263,6 +269,11 @@ private Object doExchange(Object item, boolean timed, long nanos) {
                     index = m;                    // Circularly traverse
             }
         }
+        */
+    	droidsafeData.add(item);
+    	
+    	return droidsafeData.getFirst();
+    	
     }
 
     /**
