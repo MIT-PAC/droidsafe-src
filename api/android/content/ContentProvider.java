@@ -740,6 +740,10 @@ public IContentProvider getIContentProvider() {
         return mTransport;
     }
 
+    public void droidsafeAttachContext(Context context) {
+        this.mContext = context;
+    }
+
     /**
      * After being instantiated, this is called to tell the content provider
      * about itself.
