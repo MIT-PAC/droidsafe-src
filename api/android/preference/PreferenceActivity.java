@@ -334,6 +334,7 @@ public boolean hasHeaders() {
     
     @Override
     public void droidsafeSubActivityCallbackHook() {
+        super.droidsafeSubActivityCallbackHook();
         onIsHidingHeaders();
         onIsMultiPane();
         onBuildHeaders(new LinkedList<Header>());

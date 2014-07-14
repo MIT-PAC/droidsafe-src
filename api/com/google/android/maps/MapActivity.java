@@ -40,6 +40,7 @@ public abstract class MapActivity extends Activity
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override
     public void droidsafeSubActivityCallbackHook() {
+        super.droidsafeSubActivityCallbackHook();
         onGetMapDataSource();
     }
 }
