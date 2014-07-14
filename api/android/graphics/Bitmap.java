@@ -261,7 +261,7 @@ public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int he
         canvas.setBitmap(bitmap);
         canvas.drawBitmap(source, srcR, dstR, paint);
         canvas.setBitmap(null);
-
+        bitmap.addTaint(source);
         return bitmap;
     }
 
@@ -898,8 +898,12 @@ public boolean compress(CompressFormat format, int quality, OutputStream stream)
         if (quality < 0 || quality > 100) {
             throw new IllegalArgumentException("quality must be 0..100");
         }
+        
+        stream.addTaint(this.getTaint());
+        byte[] array = new byte[WORKING_COMPRESS_STORAGE];
+        array[0] = (byte)this.getTaintInt();
         return nativeCompress(mNativeBitmap, format.nativeInt, quality,
-                              stream, new byte[WORKING_COMPRESS_STORAGE]);
+                              stream, array);
     }
 
     /**
