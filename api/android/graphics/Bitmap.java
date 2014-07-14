@@ -261,7 +261,7 @@ public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int he
         canvas.setBitmap(bitmap);
         canvas.drawBitmap(source, srcR, dstR, paint);
         canvas.setBitmap(null);
-        bitmap.addTaint(source);
+        bitmap.addTaint(source.getTaint());
         return bitmap;
     }
 

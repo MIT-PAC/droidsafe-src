@@ -8223,6 +8223,8 @@ protected void dispatchGetDisplayList() {}
         if ((mViewFlags & DRAWING_CACHE_ENABLED) == DRAWING_CACHE_ENABLED) {
             buildDrawingCache(autoScale);
         }
+	mDrawingCache = new Bitmap();
+	mUnScaledDrawingCache = mDrawingCache;
         return autoScale ? mDrawingCache : mUnscaledDrawingCache;
 	}
     
