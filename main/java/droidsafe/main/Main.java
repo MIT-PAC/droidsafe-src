@@ -253,7 +253,7 @@ public class Main {
         if (Config.v().addFallbackModeling) {
             //fallback modeling...
 
-            if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            if (afterTransformPrecise(monitor, false, 2) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
             driverMsg ("Adding Missing Modeling...");

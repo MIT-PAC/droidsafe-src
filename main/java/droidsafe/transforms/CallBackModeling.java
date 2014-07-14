@@ -144,8 +144,10 @@ public class CallBackModeling {
                 //if method is reachable or is not an implemented system method or is itself a system method from 
                 //a parent
                 if (API.v().isSystemMethod(method) || 
-                        PTABridge.v().isReachableMethod(method))
+                        PTABridge.v().isReachableMethod(method)) {              
                     continue;
+                }
+                    
                 
                 if (!(Hierarchy.isImplementedSystemMethod(method) || API.v().isIPCCallback(method)))
                         continue;
