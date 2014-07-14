@@ -1327,6 +1327,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
         public char[] toCharArray() {
         char[] buffer = new char[1];
+        buffer[0] = (char)this.getTaintInt();
         buffer.addTaint(this.getTaintInt());
         return buffer;
     }
