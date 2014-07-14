@@ -24,6 +24,7 @@ public enum DSSourceKind {
     NFC,
     PREFERENCES,
     RESOURCE,
+    SCREEN,
     SENSITIVE_UNCATEGORIZED,
     SMS_MMS,
     SECURITY_INFO,

@@ -2795,7 +2795,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDrawingCacheQuality(){
 		// Original method
 		/*
@@ -8204,6 +8204,7 @@ protected void dispatchGetDisplayList() {}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SCREEN})
     
     public Bitmap getDrawingCache(){
 		// Original method
@@ -8212,6 +8213,7 @@ protected void dispatchGetDisplayList() {}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SCREEN})
     
     public Bitmap getDrawingCache(boolean autoScale){
 		// Original method
@@ -8260,7 +8262,7 @@ protected void dispatchGetDisplayList() {}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDrawingCacheBackgroundColor(){
 		return getTaintInt();
 		// Original method
@@ -8292,7 +8294,7 @@ protected void dispatchGetDisplayList() {}
 	}
     
     @DSSpec(DSCat.SPEC_OTHERS)
-    @DSSource({DSSourceKind.IMAGE})
+    @DSSource({DSSourceKind.SCREEN})
     Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
