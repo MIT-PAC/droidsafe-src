@@ -153,6 +153,7 @@ public class DroidSafeAndroidRuntime {
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public static void modelContentProvider(android.content.ContentProvider contentProvider) {
+        contentProvider.droidsafeAttachContext(context);
         contentProvider.onCreate();
         contentProvider.onConfigurationChanged(new Configuration());
         contentProvider.onLowMemory();
