@@ -199,7 +199,8 @@ public String getType() {
      *
      * @return size in bytes
      */
-    @DSSource({DSSourceKind.NFC})
+    //@DSSource({DSSourceKind.NFC})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.603 -0500", hash_original_method = "4EADEE4A8AA14EA957D69BF1EB117D34", hash_generated_method = "8AD1B4AB2226C24E86A76755BED7B340")
     
 public int getMaxSize() {

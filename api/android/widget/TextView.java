@@ -2,6 +2,7 @@ package android.widget;
 
 // Droidsafe Imports
 import droidsafe.annotations.*;
+import java.lang.CharSequence.DroidsafeCharSequence;
 import droidsafe.helpers.*;
 import droidsafe.runtime.*;
 
@@ -582,7 +583,8 @@ private static int extractRangeEndFromLong(long range) {
 
     @ViewDebug.ExportedProperty(category = "text")
     @DSVAModeled
-    protected CharSequence            mText;
+    protected CharSequence            mText = new DroidsafeCharSequence();
+
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.377 -0500", hash_original_field = "42E628F60C958E8C05B8C414894669BE", hash_generated_field = "30221785C9497266E9C8ABBDFDCBE7EC")
 
     private CharSequence            mTransformed;
@@ -784,7 +786,7 @@ public TextView(Context context,
         addTaint(defStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        //mText = "";
+        mText = new DroidsafeCharSequence();
         final Resources res = getResources();
         final CompatibilityInfo compat = res.getCompatibilityInfo();
         mTextPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
