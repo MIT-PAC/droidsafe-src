@@ -24,7 +24,7 @@ public class ByteArrayOutputStream extends OutputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.332 -0500", hash_original_method = "4DC3C0B5ECFA05562A9AFEF7B1CF9D45", hash_generated_method = "FDFBFEB3E3EF5CD81ADCFCD518080293")
     
 public ByteArrayOutputStream() {
-        buf = new byte[32];
+        buf = new byte[32];        
     }
 
     /**

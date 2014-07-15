@@ -8224,7 +8224,7 @@ protected void dispatchGetDisplayList() {}
             buildDrawingCache(autoScale);
         }
 	mDrawingCache = new Bitmap();
-	mUnScaledDrawingCache = mDrawingCache;
+	mUnscaledDrawingCache = mDrawingCache;
         return autoScale ? mDrawingCache : mUnscaledDrawingCache;
 	}
     

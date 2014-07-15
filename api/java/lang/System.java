@@ -76,7 +76,14 @@ public static void setErr(PrintStream newErr) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
+        //need to cast to primitive and object types to handle all possible types and casting in the PTA
         ((Object[])dst)[0] = ((Object[])src)[0];
+        ((int[])dst)[0] = ((int[])src)[0];
+        ((boolean[])dst)[0] = ((boolean[])src)[0];
+        ((long[])dst)[0] = ((long[])src)[0];
+        ((double[])dst)[0] = ((double[])src)[0];
+        ((float[])dst)[0] = ((float[])src)[0]; 
+        ((byte[])dst)[0] = ((byte[])src)[0];
         dst.addTaint(src.getTaint());
         dst.addTaint(srcPos);
         dst.addTaint(dstPos);

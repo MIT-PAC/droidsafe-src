@@ -429,6 +429,13 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
                                             byte[] tempStorage) {
         stream.addTaint(nativeBitmap + format + quality);
         tempStorage.addTaint(nativeBitmap + format + quality);
+        stream.addTaint(tempStorage.getTaint());
+        try {
+            stream.write(tempStorage.getTaintInt());
+            stream.write((int)tempStorage[0]);
+        } catch (Exception e) {
+
+        }
         return stream.getTaintBoolean();
     }
     
@@ -902,6 +909,7 @@ public boolean compress(CompressFormat format, int quality, OutputStream stream)
         stream.addTaint(this.getTaint());
         byte[] array = new byte[WORKING_COMPRESS_STORAGE];
         array[0] = (byte)this.getTaintInt();
+        array.addTaint(this.getTaint());
         return nativeCompress(mNativeBitmap, format.nativeInt, quality,
                               stream, array);
     }
