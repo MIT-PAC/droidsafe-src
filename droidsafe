@@ -14,7 +14,7 @@ JARS = ["droidsafe-core.jar","droidsafe-libs.jar"]
 MAIN_CLASS = "droidsafe.main.Main"
 APAC_HOME = os.environ['APAC_HOME'] + os.sep
 
-SERVER_MEMORY="96"
+SERVER_MEMORY="64"
 DESKTOP_MEMORY="16"
 
 def run_droidsafe(args):
