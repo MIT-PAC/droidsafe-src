@@ -193,13 +193,13 @@ public class ValueAnalysis  {
             am.logResults();
 
         try {
-            am.vaErrorsLog.close();
+            vaErrorsLog.close();
         } catch (IOException e){
             logger.warn("Unable to close the va-errors.log file.", e);
         }
 
         try {
-            am.vaResultsLog.close();
+            vaResultsLog.close();
         } catch (IOException e){
             logger.warn("Unable to close the va-results.log file.", e);
         }
@@ -497,7 +497,7 @@ public class ValueAnalysis  {
         try {
             vaResultsLog.write(logEntry + "\n");
         } catch (IOException ioe) {
-            //logger.warn("Unable to write to the va-results.log file.", ioe);
+            logger.warn("Unable to write to the va-results.log file.", ioe);
         }
     }
 
@@ -505,6 +505,7 @@ public class ValueAnalysis  {
      * Log the results of the modeling
      */
     private void logResults() {
+        logResult("VA Results: \n\n");
         for(Map.Entry<IAllocNode, RefVAModel> entry : allocNodeToVAModelMap.entrySet()) {
             logResult("AllocNode: " + entry.getKey());
             logResult("Model: " + entry.getValue().toStringPretty());
