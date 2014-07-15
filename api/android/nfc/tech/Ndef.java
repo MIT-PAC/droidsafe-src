@@ -286,6 +286,7 @@ public NdefMessage getNdefMessage() throws IOException, FormatException {
      */
     @DSComment("NFC technology implementation")
     @DSSpec(DSCat.NFC)
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.611 -0500", hash_original_method = "A66DE5F0B266681092CD198588C2EDA0", hash_generated_method = "FA8A3743106487F592FE97626C6536EC")
     
 public void writeNdefMessage(NdefMessage msg) throws IOException, FormatException {
