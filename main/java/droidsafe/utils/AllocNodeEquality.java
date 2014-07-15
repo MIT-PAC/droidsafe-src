@@ -29,7 +29,7 @@ public class AllocNodeEquality implements Equality {
                 int result = 1;
                 for (int i = 0; i < n; i++) {
                     ContextElement element = osan.getContextElement(i);
-                    result = 31 * result + (element == null ? 0 : element.hashCode());
+                    result = 31 * result + (element == null ? 0 : hashCode(element));
                 }
                 return result;
             }
