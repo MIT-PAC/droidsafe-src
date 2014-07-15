@@ -9,6 +9,8 @@ import droidsafe.android.system.API;
 import droidsafe.main.Config;
 import droidsafe.speclang.Method;
 import droidsafe.transforms.JSAResultInjection;
+import droidsafe.utils.AllocNodeEquality;
+import droidsafe.utils.ParameterizedLinkedHashMap;
 import droidsafe.utils.SootUtils;
 
 import java.io.File;
@@ -100,7 +102,8 @@ public class ValueAnalysis  {
 
     /** Private constructor to enforce singleton pattern */
     private ValueAnalysis() {
-        this.allocNodeToVAModelMap = new LinkedHashMap<IAllocNode, RefVAModel>();
+        // Use custom map so the results can be queried after additional pta runs
+        this.allocNodeToVAModelMap = new ParameterizedLinkedHashMap<IAllocNode, RefVAModel>(AllocNodeEquality.v()); // new LinkedHashMap<IAllocNode, RefVAModel>();
         this.classesAndFieldsToModel = VAResultContainerClassGenerator.getClassesAndFieldsToModel(true);
         this.vaModeledTypesAndParents = new HashSet<Type>();
     }
