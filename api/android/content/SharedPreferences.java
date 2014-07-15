@@ -22,6 +22,7 @@ public interface SharedPreferences {
         
         @DSVerified("no callback, delegated to implementation")
         @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
         Editor putStringSet(String key, Set<String> values);
         
         @DSVerified("no callback, delegated to implementation")
@@ -66,25 +67,28 @@ public interface SharedPreferences {
 
     @DSVerified("no callback, delegated to implementation")
     @DSSafe(DSCat.SYSTEM_PREFERENCES)
+    @DSSource({DSSourceKind.SHARED_PREFERENCES})
     
     String getString(String key, String defValue);
     
     @DSVerified("no callback, delegated to implementation")
     @DSSafe(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.SHARED_PREFERENCES})
     Set<String> getStringSet(String key, Set<String> defValues);
     
     @DSVerified("no callback, delegated to implementation")
     @DSSafe(DSCat.SYSTEM_PREFERENCES)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.SHARED_PREFERENCES})
     int getInt(String key, int defValue);
     
     @DSVerified("no callback, delegated to implementation")
     @DSSafe(DSCat.SYSTEM_PREFERENCES)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.SHARED_PREFERENCES})
     long getLong(String key, long defValue);
     
     @DSVerified("no callback, delegated to implementation")
     @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSource({DSSourceKind.SHARED_PREFERENCES})
     float getFloat(String key, float defValue);
     
     @DSVerified("no callback, delegated to implementation")

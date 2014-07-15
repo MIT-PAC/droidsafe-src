@@ -412,6 +412,9 @@ public Editor putString(String key, String value) {
                 return this;
             }
         }
+
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.897 -0500", hash_original_method = "799426C68EE59A97CAF3D6E033ED6AED", hash_generated_method = "C08C5E45E5163C9F3F90DC1E87096FB1")
         
 public Editor putStringSet(String key, Set<String> values) {
@@ -440,6 +443,8 @@ public Editor putLong(String key, long value) {
                 return this;
             }
         }
+        @DSSink({DSSinkKind.SHARED_PREFERENCES})
+        @DSSpec(DSCat.SHARED_PREFERENCES)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.904 -0500", hash_original_method = "913478FEA634AAED5778EE46C57EEF5E", hash_generated_method = "03AECB3FD8A8FAF9650462CE132AC966")
         
 public Editor putFloat(String key, float value) {

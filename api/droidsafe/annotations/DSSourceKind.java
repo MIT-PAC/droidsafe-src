@@ -2,6 +2,7 @@ package droidsafe.annotations;
 
 public enum DSSourceKind {
     GUI,
+    GUI_TEXT,
     ACCOUNT_INFORMATION,
     BLUETOOTH_INFORMATION,
     BROWSER_INFORMATION,
@@ -23,6 +24,7 @@ public enum DSSourceKind {
     NETWORK,
     NFC,
     PREFERENCES,
+    SHARED_PREFERENCES,
     RESOURCE,
     SCREEN,
     SENSITIVE_UNCATEGORIZED,
