@@ -6,6 +6,7 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.text.Editable;
+import android.text.SpannableStringBuilder;
 import android.text.Selection;
 import android.text.TextUtils;
 import android.text.method.ArrowKeyMovementMethod;
@@ -13,6 +14,8 @@ import android.text.method.MovementMethod;
 import android.util.AttributeSet;
 
 public class EditText extends TextView {
+    private Editable mText = new SpannableStringBuilder();
+    
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.035 -0500", hash_original_method = "3D8BBCF9E8BFADB5EA8354D28833D1D0", hash_generated_method = "C75AE58EE7E177481EFAC327F009D2AF")
@@ -61,7 +64,11 @@ public EditText(Context context, AttributeSet attrs, int defStyle) {
     
 @Override
     public Editable getText() {
-        return (Editable) super.getText();
+        CharSequence fromSuper = super.getText();
+        if (fromSuper instanceof Editable)
+            return (Editable)fromSuper;
+        
+        return mText;
     }
 
     @DSComment("From safe class list")
