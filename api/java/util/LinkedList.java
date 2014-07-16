@@ -76,7 +76,6 @@ public LinkedList(Collection<? extends E> collection) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.126 -0400", hash_original_method = "0073A2AD94DC363435B793B69AD53800", hash_generated_method = "82AD0E2AD0C962DA96A1294602E8A14B")
     public E getFirst() {
         E var47B6E8AF818F6390E3E49621F01F780F_453290605 =         getElementAt(0);
@@ -88,7 +87,6 @@ public LinkedList(Collection<? extends E> collection) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.126 -0400", hash_original_method = "D36A1824B4AA11A93F9167DC96C3E776", hash_generated_method = "879D570AE8E3EA434CCC92636D7DC4AE")
     public E getLast() {
         if (DroidSafeAndroidRuntime.control) {
