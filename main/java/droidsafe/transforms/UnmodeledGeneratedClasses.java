@@ -218,6 +218,11 @@ public class UnmodeledGeneratedClasses {
     private SootField addStringType(RefType type) {
         SootClass clz = type.getSootClass();
       
+        //if character sequence then replace with String
+        if (Scene.v().getSootClass("java.lang.CharSequence").equals(clz)) {
+            clz = Scene.v().getSootClass("java.lang.String");
+        }
+        
         //field and add creation of object
         if (!clz.declaresMethod(noArgConsSubSig)) {
             logger.error("Error during fallback modeling. Class {} does not have a no arg constructor.", clz);
