@@ -201,10 +201,11 @@ public class InformationFlowReport {
             try {
                 InputStream  expectedFile = null;
                 expectedFile  = new FileInputStream(expectedInfoFile);
-                expectedFlows = IOUtils.readLines(expectedFile); 
+                expectedFlows = IOUtils.readLines(expectedFile);    
             }
             catch (Exception ex) {
-                System.exit(-1);
+                logger.error("Problem checking info flow?", ex);
+                droidsafe.main.Main.exit(1);    
             }
             // Now we are building set for comparision
             Set<String> expectedFlowSet = new HashSet<String>();
