@@ -870,7 +870,7 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
     */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.CONTENT_PROVIDER})
     public final Cursor query(Uri uri, String[] projection,
             String selection, String[] selectionArgs, String sortOrder) {
        Cursor dsCursor = new DSCursor(uri, projection, selection, selectionArgs, sortOrder);
@@ -898,7 +898,6 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.159 -0500", hash_original_method = "741F25E5E9079F60798D64718B03495A", hash_generated_method = "FF40C3A8319AD1636D47F56A713B2AB4")
     
 public final InputStream openInputStream(Uri uri)
@@ -959,7 +958,6 @@ public final OutputStream openOutputStream(Uri uri)
      * @throws FileNotFoundException if the provided URI could not be opened.
      * @see #openAssetFileDescriptor(Uri, String)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.164 -0500", hash_original_method = "99597D87D82436F243497E22352BC980", hash_generated_method = "8F2E08C0EC957DE4DCAAEA83F2EB3AAB")
     
 public final OutputStream openOutputStream(Uri uri, String mode)

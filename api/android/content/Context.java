@@ -292,6 +292,7 @@ public abstract PackageManager getPackageManager();
     /** Return a ContentResolver instance for your application's package. */
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.CONTENT_PROVIDER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.862 -0500", hash_original_method = "1D00732668B8C897D38BE7A141172873", hash_generated_method = "A7D8728F3BE00D5CDB00368E816A20AC")
     
 public abstract ContentResolver getContentResolver();
