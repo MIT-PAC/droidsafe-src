@@ -104,32 +104,20 @@ public TreeSet(SortedSet<E> set) {
     @SuppressWarnings("unchecked")
     @Override
     public Object clone() {
-        if (DroidSafeAndroidRuntime.control)
-        {
-            CloneNotSupportedException e = new CloneNotSupportedException();
-            AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_1900183531 = new AssertionError(e);
-            varA5A331D65C8C3F32D42E49D64BCF4109_1900183531.addTaint(getTaint());
-            throw varA5A331D65C8C3F32D42E49D64BCF4109_1900183531;
-        } //End block
-
-        TreeSet<E> clone = new TreeSet<E>();
-        clone.addAll(this);
-        clone.addTaint(getTaint());
-        return clone;
 
         // ---------- Original Method ----------
-        //try {
-            //TreeSet<E> clone = (TreeSet<E>) super.clone();
-            //if (backingMap instanceof TreeMap) {
-                //clone.backingMap = (NavigableMap<E, Object>) ((TreeMap<E, Object>) backingMap)
-                        //.clone();
-            //} else {
-                //clone.backingMap = new TreeMap<E, Object>(backingMap);
-            //}
-            //return clone;
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        try {
+            TreeSet<E> clone = (TreeSet<E>) super.clone();
+            if (backingMap instanceof TreeMap) {
+                clone.backingMap = (NavigableMap<E, Object>) ((TreeMap<E, Object>) backingMap)
+                        .clone();
+            } else {
+                clone.backingMap = new TreeMap<E, Object>(backingMap);
+            }
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
+        }
     }
 
     /**

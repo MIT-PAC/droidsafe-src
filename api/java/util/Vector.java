@@ -108,27 +108,14 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
     @SuppressWarnings("unchecked")
         public synchronized Object clone() {
 
-            if (DroidSafeAndroidRuntime.control)
-            {
-                AssertionError assertionException = new AssertionError(new CloneNotSupportedException());
-                assertionException.addTaint(getTaint());
-                throw assertionException;
-            } //End block
-
-            Vector<E> vector = new Vector<E>(capacity);
-            vector.addAll(this);
-            vector.addTaint(getTaint());
+        try {
+            Vector<E> vector = (Vector<E>) super.clone();
+            vector.elementData = elementData.clone();
             return vector;
-
-            // ---------- Original Method ----------
-            //try {
-            //Vector<E> vector = (Vector<E>) super.clone();
-            //vector.elementData = elementData.clone();
-            //return vector;
-            //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-            //}
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
         }
+    }
         
 @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
