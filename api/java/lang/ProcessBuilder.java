@@ -94,6 +94,8 @@ public final class ProcessBuilder
     @DSSink({DSSinkKind.OS_COMMAND})
     @DSSource({DSSourceKind.OS_PROCESS})
     public Process start() throws IOException { 
-        return new DroidSafeProcess();
+        DroidSafeProcess process = new DroidSafeProcess();
+        process.addTaint(commands.getTaint());
+        return process;
     }
 }
