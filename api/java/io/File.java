@@ -741,6 +741,7 @@ public boolean isHidden() {
      */
     @DSComment("File Information")
     @DSSpec(DSCat.TRIGGER)
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.517 -0500", hash_original_method = "0921E33485CFCA34C1412D0CC74585F6", hash_generated_method = "D860E5F1DFBA213A0282A688E6D70B62")
     
 public long lastModified() {
