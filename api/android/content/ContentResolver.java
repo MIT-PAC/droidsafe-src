@@ -870,7 +870,7 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
     */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSource({DSSourceKind.CONTENT_PROVIDER})
+    @DSSource({DSSourceKind.CONTENT})
     public final Cursor query(Uri uri, String[] projection,
             String selection, String[] selectionArgs, String sortOrder) {
        Cursor dsCursor = new DSCursor(uri, projection, selection, selectionArgs, sortOrder);
