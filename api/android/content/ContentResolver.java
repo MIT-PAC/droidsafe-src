@@ -1246,6 +1246,7 @@ public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException 
      */
     @DSComment("From safe class list")
     @DSSpec(DSCat.DATABASE)
+    @DSSink({DSSinkKind.CONTENT})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.187 -0500", hash_original_method = "21049B5CF31214AC69662F00A8291DA2", hash_generated_method = "30E6A8AA7791982EDB0C2593C57C1825")
 public final Uri insert(Uri url, ContentValues values)
     {
@@ -1314,6 +1315,7 @@ public ContentProviderResult[] applyBatch(String authority,
      */
     @DSComment("Content model/data manipulation")
     @DSSpec(DSCat.CONTENT)
+    @DSSink({DSSinkKind.CONTENT})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.192 -0500", hash_original_method = "B00B6610FA17409048836C33B1F1B82B", hash_generated_method = "2AD28F6E6FE0929324667278137BC1B1")
     
 public final int bulkInsert(Uri url, ContentValues[] values)
@@ -1387,6 +1389,7 @@ public final int delete(Uri url, String where, String[] selectionArgs)
      */
     @DSComment("Content model/data manipulation")
     @DSSpec(DSCat.DATABASE)
+    @DSSink(DSSinkKind.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.197 -0500", hash_original_method = "93173B163A2993B2278E9CE2CA5F5268", hash_generated_method = "BFDFE97E646A1E83E92C8A9712FB4DAA")
 public final int update(Uri uri, ContentValues values, String where,
             String[] selectionArgs) {
@@ -1423,7 +1426,8 @@ public final int update(Uri uri, ContentValues values, String where,
      * @throws NullPointerException if uri or method is null
      * @throws IllegalArgumentException if uri is not known
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.CONTENT})
+    @DSSink({DSSinkKind.CONTENT})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.201 -0500", hash_original_method = "7B97BF1D704BA5CFE2C56D2F21EF49E5", hash_generated_method = "75489650A20C25CB2C47805C67362FCF")
     
 public final Bundle call(Uri uri, String method, String arg, Bundle extras) {

@@ -7,6 +7,7 @@ public enum DSSinkKind {
     BROWSER_INFORMATION,
     CALENDAR_INFORMATION,
     CONTACT_INFORMATION,
+    CONTENT,  //content provider, resolver
     EMAIL,
     EXIF_INFO,
     FILE,
