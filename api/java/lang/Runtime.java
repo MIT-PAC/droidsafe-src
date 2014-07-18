@@ -126,6 +126,7 @@ private Runtime(){
     @DSSink({DSSinkKind.PROCESS})
     @DSComment("From safe class list")
     @DSSpec(DSCat.EXEC)
+    @DSSource({DSSourceKind.OS_PROCESS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.092 -0500", hash_original_method = "CFCE84E7C9BE3630A08A3A7BB73629F7", hash_generated_method = "EC26FFA88B4CEA2BA30D31207670970A")
     
 public Process exec(String[] progArray) throws java.io.IOException {
@@ -152,6 +153,7 @@ public Process exec(String[] progArray) throws java.io.IOException {
     @DSSink({DSSinkKind.PROCESS})
     @DSComment("From safe class list")
     @DSSpec(DSCat.EXEC)
+    @DSSource({DSSourceKind.OS_PROCESS})    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.095 -0500", hash_original_method = "DBDF96D0DD01BF3A81297C1A77D3788B", hash_generated_method = "012ED451F3EDE6F4898BE91C42133BD1")
     
 public Process exec(String[] progArray, String[] envp) throws java.io.IOException {
@@ -180,6 +182,7 @@ public Process exec(String[] progArray, String[] envp) throws java.io.IOExceptio
     @DSComment("From safe class list")
     @DSSpec(DSCat.EXEC)
     @DSSink({DSSinkKind.PROCESS})
+    @DSSource({DSSourceKind.OS_PROCESS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.097 -0500", hash_original_method = "CA3870F83BC3F7A92215C18375ED76A3", hash_generated_method = "221BC57B8B66088A1C3F3396280CB7B6")
     
 public Process exec(String[] progArray, String[] envp, File directory) throws IOException {
@@ -202,6 +205,7 @@ public Process exec(String[] progArray, String[] envp, File directory) throws IO
     @DSSink({DSSinkKind.PROCESS})
     @DSComment("From safe class list")
     @DSSpec(DSCat.EXEC)
+    @DSSource({DSSourceKind.OS_PROCESS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.100 -0500", hash_original_method = "06266E096A96F3360CE9E0923017372F", hash_generated_method = "69302971750C4DE1739C01F52A54BD9E")
     
 public Process exec(String prog) throws java.io.IOException {
@@ -226,6 +230,7 @@ public Process exec(String prog) throws java.io.IOException {
     @DSSink({DSSinkKind.PROCESS})
     @DSComment("From safe class list")
     @DSSpec(DSCat.EXEC)
+    @DSSource({DSSourceKind.OS_PROCESS})    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.102 -0500", hash_original_method = "7285BF96BB6399D281A4BE01B5D250F8", hash_generated_method = "E3A3C574ABCA0B9301B70808DA5891D3")
     
 public Process exec(String prog, String[] envp) throws java.io.IOException {
@@ -253,6 +258,7 @@ public Process exec(String prog, String[] envp) throws java.io.IOException {
     @DSSink({DSSinkKind.PROCESS})
     @DSComment("From safe class list")
     @DSSpec(DSCat.EXEC)
+    @DSSource({DSSourceKind.OS_PROCESS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.105 -0500", hash_original_method = "D63330F96D8E34D6A893E8125BEC80CB", hash_generated_method = "F14BCCFE800317A310D614C37E2F80A1")
     
 public Process exec(String prog, String[] envp, File directory) throws java.io.IOException {
