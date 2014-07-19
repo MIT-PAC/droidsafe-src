@@ -20,7 +20,6 @@ public class DroidSafeProcess extends Process {
     }
 
     @DSSource({DSSourceKind.OS_PROCESS})
-    @DSSpec(DSCat.OS_PROCESS)
     public int exitValue() {
         return getTaintInt();
     }
@@ -30,7 +29,6 @@ public class DroidSafeProcess extends Process {
     }
     
     @DSSource({DSSourceKind.OS_PROCESS})
-    @DSSpec(DSCat.OS_PROCESS)
     public  InputStream getInputStream() {        
         return new PipedInputStream();
     }

@@ -346,6 +346,7 @@ public Uri getUri() {
          */
 //BEGIN_INCLUDE(coerceToText)
         @DSSafe(DSCat.UTIL_FUNCTION)
+        @DSSource({DSSourceKind.CLIPBOARD})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.657 -0500", hash_original_method = "2A1795F61A3E14A1308A3A7CD55951FC", hash_generated_method = "DEFCF0170A8A578D98974249E132B756")
         
 public CharSequence coerceToText(Context context) {

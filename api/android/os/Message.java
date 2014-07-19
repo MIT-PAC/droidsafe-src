@@ -2,6 +2,7 @@ package android.os;
 
 // Droidsafe Imports
 import droidsafe.runtime.*;
+import droidsafe.concrete.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
@@ -241,6 +242,7 @@ public Message[] newArray(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.362 -0500", hash_original_method = "07161C5E5BFC528DA3FC2F6017B16172", hash_generated_method = "C388122C31305A6494A3C73AA60B75A9")
     
 public Message() {
+        this.replyTo = new Messenger(new DroidSafeBinder(null));
     }
     
     public void recycle(){
