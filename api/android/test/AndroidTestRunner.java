@@ -299,7 +299,6 @@ public void testStarted(String testName) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.197 -0500", hash_original_method = "95F90AC078029D49ABA36F5E39CE4989", hash_generated_method = "6660BBE65D150E7BA3CD4924169AA014")
-    
 public void testEnded(String testName) {
     }
 

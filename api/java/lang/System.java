@@ -417,7 +417,7 @@ public static String getProperty(String prop, String defaultValue) {
      * @return the old value of the property or {@code null} if the property
      *         didn't exist.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.669 -0500", hash_original_method = "68A3BD921E5BE0343D8AB590A3A0C1ED", hash_generated_method = "8A6ABB9FC5C9F153DD0093091F1EAAA5")
     
 public static String setProperty(String prop, String value) {
