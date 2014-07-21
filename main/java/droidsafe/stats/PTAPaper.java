@@ -28,6 +28,8 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ObjectSensitiveConfig;
 import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.analyses.RCFGToSSL;
+import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
+import droidsafe.analyses.collapsedcg.CollaspedCallGraph.CallToTarget;
 import droidsafe.analyses.infoflow.InfoValue;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.pta.PTABridge;
@@ -46,6 +48,9 @@ public class PTAPaper {
     
     
     public static void writeReport() {
+        //make sure collapsed call graph has been run       
+        CollaspedCallGraph.v();
+        
         FileWriter fw;
         try {
             String name = "";
@@ -164,11 +169,14 @@ public class PTAPaper {
         //count number of flows
         int flowsIntoSinks = 0;
         int flowDroidFlowsIntoSinks = 0;
-
+        //all reachable source invoke statements
+        Set<Stmt> sources = new HashSet<Stmt>();
+        
         try {
             //FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "flows-for-pta-paper.log");
             for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSources.entrySet()) {
                 flowsIntoSinks += sink.getValue().size();
+                sources.addAll(sink.getValue());
                 /*
                 fw.write(sink.getKey() + " in " + JimpleRelationships.v().getEnclosingMethod(sink.getKey()) + "\n");
                 for (Stmt source : sink.getValue()) {
@@ -178,7 +186,8 @@ public class PTAPaper {
                 */
             }
             //fw.close();
-            
+              
+            //Just count sources that flow to sinks through args
             for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesFlowDroid.entrySet()) {
                 flowDroidFlowsIntoSinks += sink.getValue().size();
             }
@@ -192,14 +201,35 @@ public class PTAPaper {
 
         buf.append("Flows into sinks: " + flowsIntoSinks + "\n");
         buf.append("Arg flows into Sinks: " + flowDroidFlowsIntoSinks + "\n");
-
-        //total infoflow sets for args?
-
-        //total infoflow set size for args?
-
+        
+        buf.append(reachableSinksSources());
+        
         return buf.toString();
     }
 
+    private static String reachableSinksSources() {
+        StringBuffer buf = new StringBuffer();
+        Set<Stmt> sinks = new HashSet<Stmt>();
+        Set<Stmt> sources = new HashSet<Stmt>();
+        
+        for (SootMethod method : CollaspedCallGraph.v().getAllMethods()) {
+            for (CallToTarget apiCall : CollaspedCallGraph.v().getAPICallTargets(method)) {
+                if (API.v().hasSourceInfoKind(apiCall.getTarget())) {
+                    sources.add(apiCall.getStmt());
+                }
+                
+                if (API.v().hasSinkInfoKind(apiCall.getTarget())) {
+                    sinks.add(apiCall.getStmt());
+                }
+            }
+        }
+        
+        buf.append("Total reachable sink call statments: " + sinks.size() + "\n");
+        buf.append("Total reachable source call statements: " + sources.size() + "\n");
+
+        return buf.toString();
+    }
+    
     private static String getReachableLines() {
         int totalReachableLines = 0;
 
@@ -230,6 +260,10 @@ public class PTAPaper {
 
         if (!Config.v().cloneStaticCalls) {
             buf.append("noclonestatics ");
+        }
+        
+        if (!Config.v().addFallbackModeling) {
+            buf.append("nofallback ");
         }
         
         if (Config.v().ptaInfoFlowRefinement) {
