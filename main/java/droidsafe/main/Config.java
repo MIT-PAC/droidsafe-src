@@ -503,7 +503,7 @@ public class Config {
         }
         
         if (cmd.hasOption("fullcontextforstrings")) {
-            this.fullContextForGUI = true;
+            this.fullContextForStrings = true;
         }
         
         if (cmd.hasOption("refinement")) {
