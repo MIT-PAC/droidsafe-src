@@ -170,7 +170,9 @@ public class Config {
     public boolean extraArrayContext = true;
     /** ignore flows through throwable objects */
     public boolean ignoreThrowableFlows = false;
-        
+    /** if true, use the memory access analysis of the info flow to report sink arg flows */
+    public boolean preciseSinkArgFlows = false;
+    
     public boolean ptaInfoFlowRefinement = false;
     
     /**
@@ -270,6 +272,9 @@ public class Config {
 
         Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
         options.addOption(strict);
+        
+        Option preciseSinkArgs = new Option("precisesinkargflows", "Use memory access analysis to prune flows on args of sinks.");
+        options.addOption(preciseSinkArgs);
 
         Option noCloneStatics = new Option("noclonestatics", "Do not clone static methods to add call site sensitivity");
         options.addOption(noCloneStatics);
@@ -540,6 +545,10 @@ public class Config {
         if (cmd.hasOption("native")) {
             assert this.infoFlow;
             this.infoFlowNative = true;
+        }
+        
+        if (cmd.hasOption("precisesinkargflows")) {
+            this.preciseSinkArgFlows = true;
         }
 
         if (cmd.hasOption("pta")) {

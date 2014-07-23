@@ -521,7 +521,11 @@ public class Method implements Comparable<Method> {
 
             if (ptaInfo.isArgPointer(i)) {
                 for (IAllocNode node : ptaInfo.getArgPTSet(i)) {
-                    infoValues.addAll(InformationFlowAnalysis.v().getTaints(node));
+                    if (Config.v().preciseSinkArgFlows) {
+                        infoValues.addAll(InformationFlowAnalysis.v().getTaints(node, ptaInfo.getEdge().getTgt()));
+                    } else {
+                        infoValues.addAll(InformationFlowAnalysis.v().getTaints(node));
+                    }
                 }
             } else if (ptaInfo.getArgValue(i) instanceof Local && 
                     ptaInfo.getArgValue(i).getType() instanceof PrimType){
