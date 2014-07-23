@@ -40,17 +40,18 @@ import droidsafe.main.Config;
 import droidsafe.speclang.Method;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
+import droidsafe.utils.SourceLocationTag;
 
 public class PTAPaper {
 
     public static StringBuffer refinementStats = new StringBuffer(); 
     public static double infoFlowTimeSec;
-    
-    
+
+
     public static void writeReport() {
         //make sure collapsed call graph has been run       
         CollaspedCallGraph.v();
-        
+
         FileWriter fw;
         try {
             String name = "";
@@ -64,7 +65,7 @@ public class PTAPaper {
             if (!"".equals(additionalInfo)) {
                 additionalInfo = "_" + additionalInfo.replaceAll(" ", "_"); 
             }
-            
+
             String fileName = name + "_" + getConfiguration().replaceAll(" ", "_") + 
                     additionalInfo + "_pta-report.txt";
 
@@ -76,7 +77,7 @@ public class PTAPaper {
             fw.write("Cmdline supplied extra info: " + Config.v().additionalInfo + "\n");
 
             fw.write(refinementStats.toString());
-            
+
             //write final run of pta
             fw.write(SparkEvaluator.v().toString());
 
@@ -91,23 +92,23 @@ public class PTAPaper {
 
         }
     }
-    
+
     public static void appendPTATimeToRefinement() {
         String ptastats = SparkEvaluator.v().toString();
-        
+
         Pattern ptaTimeRegEx = Pattern.compile("Time \\(sec\\): ([0-9.]+)");
         Matcher m = ptaTimeRegEx.matcher(ptastats);
         if (m.find()) {
             refinementStats.append("Refinement Stage PTA Time (sec): " + m.group(1) + "\n");
         }
-        
+
         refinementStats.append("Refinement Stage K: " + ObjectSensitiveConfig.v().k() + "\n");
     }
 
     private static String infoFlowResults() {
         Hierarchy hierarchy = Scene.v().getActiveHierarchy();
         SootClass throwable = Scene.v().getSootClass("java.lang.Throwable");
-        
+
         StringBuffer buf = new StringBuffer();
 
         //count number of flows
@@ -120,12 +121,28 @@ public class PTAPaper {
 
         for (Map.Entry<Method, List<Method>> block : RCFGToSSL.v().getSpec().getEventBlocks().entrySet()) {
             //only count events in src classes, not in libraries
-            if (!Project.v().isSrcClass(block.getKey().getSootMethod().getDeclaringClass()))
+            boolean inSrc = false;
+            for (IAllocNode recNode : block.getKey().getReceiverAllocNodes()) {
+                if (recNode.getType() instanceof RefType) {
+                    SootClass clz = ((RefType)recNode.getType()).getSootClass();
+                    if (Project.v().isSrcClass(clz)) {
+                        inSrc = true;
+                        break;
+                    }                        
+                }
+            }
+
+            if (!inSrc)
                 continue;
-            
+                
             for (Method oe : block.getValue()) {
                 if (oe.getSinkInfoKinds().size() > 0 &&
                         oe.getSourcesInfoKinds().size() > 0) {
+
+                    //only count sensitive sinks
+                    Stmt sinkInvoke = JimpleRelationships.v().getEnclosingStmt(oe.getInvokeExpr());
+                    if (!InfoKind.isSensitiveInfoKind(sinkInvoke))
+                        continue;
                     
                     //we have a sink with connected sources
                     InvokeExpr ie = oe.getInvokeExpr();
@@ -136,31 +153,46 @@ public class PTAPaper {
                     if (!invokeToSourcesFlowDroid.containsKey(ie)) {
                         invokeToSourcesFlowDroid.put(ie, new HashSet<Stmt>());
                     }
-                
-                    
+
+
                     //get args
                     for (int i = 0; i < oe.getNumArgs(); i++) {
-                        
+
                         Type formalArgType = oe.getActualArgType(i);
                         //ignore method arguments that have a declared type of throwable or a subclass of throwable
                         if (formalArgType instanceof RefType &&
                                 !((RefType)formalArgType).getSootClass().isInterface() &&
                                 hierarchy.isClassSubclassOfIncluding(((RefType)formalArgType).getSootClass(), throwable))
                             continue;
-                        
+
                         for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getArgSourceInfoUnits(i).entrySet()) {
-                            invokeToSources.get(ie).addAll(flows.getValue());
-                            //for flowdroid comparison, just add the flows from the args 
-                            invokeToSourcesFlowDroid.get(ie).addAll(flows.getValue());
+                            for (Stmt source : flows.getValue()) {
+                                if (InfoKind.isSensitiveInfoKind(source)) {
+                                    invokeToSources.get(ie).add(source);
+                                    //for flowdroid comparison, just add the flows from the args 
+                                    invokeToSourcesFlowDroid.get(ie).add(source);
+                                }
+                            }
                         }
                     }
                     //get receiver
                     for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getReceiverSourceInfoUnits().entrySet()) {
-                        invokeToSources.get(ie).addAll(flows.getValue());
+                        //ignore all non-critical flows 
+                        for (Stmt source : flows.getValue()) {
+                            if (InfoKind.isSensitiveInfoKind(source)) {
+                                invokeToSources.get(ie).add(source);
+                            }
+                        }
+                        
                     }
                     //get method accesses
                     for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getMethodInfoUnits().entrySet()) {
-                        invokeToSources.get(ie).addAll(flows.getValue());
+                        //ignore all non-critical flows
+                        for (Stmt source : flows.getValue()) {
+                            if (InfoKind.isSensitiveInfoKind(source)) {
+                                invokeToSources.get(ie).add(source);
+                            }
+                        }
                     }
                 }
             }
@@ -171,7 +203,7 @@ public class PTAPaper {
         int flowDroidFlowsIntoSinks = 0;
         //all reachable source invoke statements
         Set<Stmt> sources = new HashSet<Stmt>();
-        
+
         try {
             //FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "flows-for-pta-paper.log");
             for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSources.entrySet()) {
@@ -183,17 +215,17 @@ public class PTAPaper {
                     fw.write("\t" + source + " in " + JimpleRelationships.v().getEnclosingMethod(source) + "\n");
                 }
                 fw.write("\n");
-                */
+                 */
             }
             //fw.close();
-              
+
             //Just count sources that flow to sinks through args
             for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesFlowDroid.entrySet()) {
                 flowDroidFlowsIntoSinks += sink.getValue().size();
             }
-            
+
         } catch (Exception e) {
-            
+
         }
 
 
@@ -201,9 +233,9 @@ public class PTAPaper {
 
         buf.append("Flows into sinks: " + flowsIntoSinks + "\n");
         buf.append("Arg flows into Sinks: " + flowDroidFlowsIntoSinks + "\n");
-        
+
         buf.append(reachableSinksSources());
-        
+
         return buf.toString();
     }
 
@@ -211,25 +243,25 @@ public class PTAPaper {
         StringBuffer buf = new StringBuffer();
         Set<Stmt> sinks = new HashSet<Stmt>();
         Set<Stmt> sources = new HashSet<Stmt>();
-        
+
         for (SootMethod method : CollaspedCallGraph.v().getAllMethods()) {
             for (CallToTarget apiCall : CollaspedCallGraph.v().getAPICallTargets(method)) {
                 if (API.v().hasSourceInfoKind(apiCall.getTarget())) {
                     sources.add(apiCall.getStmt());
                 }
-                
+
                 if (API.v().hasSinkInfoKind(apiCall.getTarget())) {
                     sinks.add(apiCall.getStmt());
                 }
             }
         }
-        
+
         buf.append("Total reachable sink call statments: " + sinks.size() + "\n");
         buf.append("Total reachable source call statements: " + sources.size() + "\n");
 
         return buf.toString();
     }
-    
+
     private static String getReachableLines() {
         int totalReachableLines = 0;
 
@@ -251,7 +283,7 @@ public class PTAPaper {
 
         if (Config.v().fullContextForStrings)
             buf.append("full-context-for-strings ");
-        
+
         if (Config.v().fullContextForGUI)
             buf.append("full-context-for-gui ");
 
@@ -261,15 +293,15 @@ public class PTAPaper {
         if (!Config.v().cloneStaticCalls) {
             buf.append("noclonestatics ");
         }
-        
+
         if (!Config.v().addFallbackModeling) {
             buf.append("nofallback ");
         }
-        
+
         if (Config.v().ptaInfoFlowRefinement) {
             buf.append("refinement ");
         }
-        
+
         if (Config.v().preciseSinkArgFlows) {
             buf.append("precisesinkargflows ");
         }

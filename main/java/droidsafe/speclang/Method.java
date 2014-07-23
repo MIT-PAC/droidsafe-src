@@ -484,7 +484,7 @@ public class Method implements Comparable<Method> {
                 InformationFlowAnalysis.v().getTaints(node, ptaInfo.getEdge().getTgt())) {
 
                 //get high level taint
-                for (InfoKind infoK : getInfoKinds(iv)) {
+                for (InfoKind infoK : InfoKind.getInfoKinds(iv)) {
                     //rememeber we have high-level taint
                     if (!recFlows.containsKey(infoK)) 
                         recFlows.put(infoK, new HashSet<Stmt>());
@@ -547,7 +547,7 @@ public class Method implements Comparable<Method> {
             //at this point we have info values set
             for (InfoValue iv : infoValues) {
                 //get high level taint
-                for (InfoKind infoK : getInfoKinds(iv)) {
+                for (InfoKind infoK : InfoKind.getInfoKinds(iv)) {
                     //rememeber we have high-level taint
                     if (!argFlows[i].containsKey(infoK)) 
                         argFlows[i].put(infoK, new HashSet<Stmt>());
@@ -575,48 +575,7 @@ public class Method implements Comparable<Method> {
         return methodFlows;
     }
 
-    /**
-     * Given a value from the invoke statement (either receiver or an argument), query the 
-     * information flow for the units the flow to it, and then use the PTA to find all the targets
-     * of the source statements to see if any of them have higher level InfoKind associated with them.
-     * Return the set of all InfoKinds for the targets of all sources.
-     * 
-     * if onlySensitive is true, then only add sensitive infokinds (see infokind definition)
-     */
-    private Set<InfoKind> getInfoKinds(InfoValue iv) {
-
-        Set<InfoKind> srcKinds = new HashSet<InfoKind>();
-
-        if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
-
-            Stmt stmt = (Stmt)((InfoUnit)iv).getUnit();
-
-            if (!stmt.containsInvokeExpr())
-                return srcKinds;
-
-            InvokeExpr invoke = stmt.getInvokeExpr();
-            //for each of the targets see if they have an Info Kind
-
-
-            //TODO: CONTEXT HERE FROM THE INFOVALUE
-            Collection<SootMethod> targets = 
-                    PTABridge.v().getTargetsInsNoContext(stmt);
-
-            for (SootMethod target : targets) { 
-                for (InfoKind kind : API.v().getSourceInfoKinds(target)) {
-                    srcKinds.add(kind);
-                }
-            }
-
-        } else if (iv instanceof InfoKind) {
-            srcKinds.add((InfoKind)iv);
-        } else {
-            logger.warn("Strange info value: {} {}", iv, iv.getClass());
-        }
-
-
-        return srcKinds;
-    }
+   
 
     /**
      * For argument at i, return the set of high level information kinds that the argument could possibly 
@@ -667,7 +626,7 @@ public class Method implements Comparable<Method> {
 
         Set<InfoKind> methodKinds = new HashSet<InfoKind>();
         for (InfoValue iv : InformationFlowAnalysis.v().getTaints(ptaInfo.getEdge().getTgt())) {
-            for (InfoKind kind : getInfoKinds(iv)) {
+            for (InfoKind kind : InfoKind.getInfoKinds(iv)) {
                 if (kind.isSensitive()) {
                     if (!methodFlows.containsKey(kind))
                         methodFlows.put(kind, new LinkedHashSet<Stmt>());

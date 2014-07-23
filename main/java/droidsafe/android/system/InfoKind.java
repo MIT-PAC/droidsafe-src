@@ -1,8 +1,20 @@
 package droidsafe.android.system;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import soot.SootMethod;
+import soot.jimple.InvokeExpr;
+import soot.jimple.Stmt;
+import droidsafe.analyses.infoflow.InfoUnit;
 import droidsafe.analyses.infoflow.InfoValue;
+import droidsafe.analyses.pta.PTABridge;
+import droidsafe.android.app.Project;
 
 
 /**
@@ -12,6 +24,8 @@ import droidsafe.analyses.infoflow.InfoValue;
  *
  */
 public  class InfoKind implements InfoValue {
+    /** Logger field */
+    private static final Logger logger = LoggerFactory.getLogger(InfoValue.class);
     /** name of this information kind */
     private String name;
     
@@ -20,6 +34,70 @@ public  class InfoKind implements InfoValue {
     /** map of strings to the info kind that represents them */
     private static HashMap<InfoKind,InfoKind> infoKinds = new HashMap<InfoKind,InfoKind>();
 
+    /**
+     * Return true if any of the infokinds for this infovalue call statement are 
+     * defined as sensitive.
+     */
+    public static boolean isSensitiveInfoKind(Stmt stmt) {
+        for (InfoKind infoK : getInfoKinds(stmt)) {
+            if (infoK.isSensitive())
+                return true;
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Given a value from the invoke statement (either receiver or an argument), query the 
+     * information flow for the units the flow to it, and then use the PTA to find all the targets
+     * of the source statements to see if any of them have higher level InfoKind associated with them.
+     * Return the set of all InfoKinds for the targets of all sources.
+     */
+    public static Set<InfoKind> getInfoKinds(Stmt stmt) {
+        Set<InfoKind> srcKinds = new HashSet<InfoKind>();
+        
+        if (!stmt.containsInvokeExpr())
+            return srcKinds;
+
+        //TODO: CONTEXT HERE FROM THE INFOVALUE
+        Collection<SootMethod> targets = 
+                PTABridge.v().getTargetsInsNoContext(stmt);
+
+        for (SootMethod target : targets) { 
+            for (InfoKind kind : API.v().getSourceInfoKinds(target)) {
+                srcKinds.add(kind);
+            }
+        }
+        
+        return srcKinds;
+    }
+    
+    /**
+     * Given a value from the invoke statement (either receiver or an argument), query the 
+     * information flow for the units the flow to it, and then use the PTA to find all the targets
+     * of the source statements to see if any of them have higher level InfoKind associated with them.
+     * Return the set of all InfoKinds for the targets of all sources.
+     */
+    public static Set<InfoKind> getInfoKinds(InfoValue iv) {
+
+        Set<InfoKind> srcKinds = new HashSet<InfoKind>();
+
+        if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
+
+            Stmt stmt = (Stmt)((InfoUnit)iv).getUnit();
+
+           srcKinds = getInfoKinds(stmt);
+
+        } else if (iv instanceof InfoKind) {
+            srcKinds.add((InfoKind)iv);
+        } else {
+            logger.warn("Strange info value: {} {}", iv, iv.getClass());
+        }
+
+
+        return srcKinds;
+    }
+    
     /** 
      * Given a string return (or create and return) the InfoKind object that
      * represents it.
