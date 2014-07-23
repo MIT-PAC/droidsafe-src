@@ -269,6 +269,10 @@ public class PTAPaper {
         if (Config.v().ptaInfoFlowRefinement) {
             buf.append("refinement ");
         }
+        
+        if (Config.v().preciseSinkArgFlows) {
+            buf.append("precisesinkargflows ");
+        }
 
         return buf.toString();
     }
