@@ -344,13 +344,14 @@ private TelephonyManager() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.840 -0500", hash_original_method = "CBA2DB54A66B89F7737C894703CB092B", hash_generated_method = "4B3F28EB7BBCF026D7BC40CDFD72EF88")
     
 public String getDeviceSoftwareVersion() {
-        try {
-            return getSubscriberInfo().getDeviceSvn();
+            return new String();
+            /*try {
+                return getSubscriberInfo().getDeviceSvn();
         } catch (RemoteException ex) {
             return null;
         } catch (NullPointerException ex) {
             return null;
-        }
+            } */
     }
 
     /**
@@ -366,13 +367,14 @@ public String getDeviceSoftwareVersion() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.846 -0500", hash_original_method = "D15182A782B2311FD9923C2371701B25", hash_generated_method = "EC5736B5E669E36CBA199401F68D88A2")
     
 public String getDeviceId() {
-        try {
-            return getSubscriberInfo().getDeviceId();
+        return new String();
+        /*        try {
+            //return getSubscriberInfo().getDeviceId();
         } catch (RemoteException ex) {
             return null;
         } catch (NullPointerException ex) {
             return null;
-        }
+            }*/
     }
 
     /**
@@ -763,6 +765,8 @@ public String getSimCountryIso() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.166 -0500", hash_original_method = "2017CBA66707D72E2F76A9954FAEDD18", hash_generated_method = "E95EBC17FC14D391B501F19C429D7A92")
     
 public String getSimSerialNumber() {
+        return new String();
+        /*
         try {
             return getSubscriberInfo().getIccSerialNumber();
         } catch (RemoteException ex) {
@@ -770,7 +774,7 @@ public String getSimSerialNumber() {
         } catch (NullPointerException ex) {
             // This could happen before phone restarts due to crashing
             return null;
-        }
+            }*/
     }
 
     /**
@@ -815,6 +819,8 @@ public int getLteOnCdmaMode() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.176 -0500", hash_original_method = "E78B911A34E3B997234FCD2FE0581326", hash_generated_method = "EF06E0A4123D41A5131FC5BAE98F1805")
     
 public String getSubscriberId() {
+        return new String();
+        /*
         try {
             return getSubscriberInfo().getSubscriberId();
         } catch (RemoteException ex) {
@@ -822,7 +828,7 @@ public String getSubscriberId() {
         } catch (NullPointerException ex) {
             // This could happen before phone restarts due to crashing
             return null;
-        }
+            }*/
     }
 
     /**
@@ -838,6 +844,8 @@ public String getSubscriberId() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.181 -0500", hash_original_method = "EE92449D081C56B70CB6173E1BAAB538", hash_generated_method = "614F1ED5FB9AEA69175D3301C79A05B3")
     
 public String getLine1Number() {
+        return new String();
+        /*
         try {
             return getSubscriberInfo().getLine1Number();
         } catch (RemoteException ex) {
@@ -846,6 +854,7 @@ public String getLine1Number() {
             // This could happen before phone restarts due to crashing
             return null;
         }
+        */
     }
 
     /**
@@ -861,6 +870,8 @@ public String getLine1Number() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.187 -0500", hash_original_method = "7B70034F9FC00AD85A334A6B1881279C", hash_generated_method = "3834A5B6D7235DDEF33C1A530C09F387")
     
 public String getLine1AlphaTag() {
+        return new String();
+        /*
         try {
             return getSubscriberInfo().getLine1AlphaTag();
         } catch (RemoteException ex) {
@@ -868,7 +879,7 @@ public String getLine1AlphaTag() {
         } catch (NullPointerException ex) {
             // This could happen before phone restarts due to crashing
             return null;
-        }
+            }*/
     }
 
     /**
@@ -884,6 +895,8 @@ public String getLine1AlphaTag() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.192 -0500", hash_original_method = "FE1089A80F0C63E9B1494FCF93B412E1", hash_generated_method = "B4170A6221EF104C900C9FD31335166A")
     
 public String getMsisdn() {
+        return new String();
+        /*
         try {
             return getSubscriberInfo().getMsisdn();
         } catch (RemoteException ex) {
@@ -891,7 +904,7 @@ public String getMsisdn() {
         } catch (NullPointerException ex) {
             // This could happen before phone restarts due to crashing
             return null;
-        }
+            }*/
     }
 
     /**

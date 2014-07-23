@@ -1549,8 +1549,8 @@ public T newInstance() throws InstantiationException, IllegalAccessException {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.766 -0400", hash_original_method = "15EE5A43120338A96CD2B5DEA980891C", hash_generated_method = "53D1094C8103497B4EEB5236AC886608")
     private T newInstanceImpl() throws IllegalAccessException, InstantiationException {
-    	T ret = (T)new Object();
-    	return ret;
+        //let the fallback modeling handle this by creating the appropriate object based on the cast
+        return null;
     }
 
     @DSComment("Java language reflection")
