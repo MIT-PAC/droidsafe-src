@@ -115,10 +115,14 @@ public class PTAPaper {
         //have to map it down to invoke statement because of context
 
         //key is invoke of sink -> sources
-        Map<InvokeExpr, Set<Stmt>> invokeToSources = new HashMap<InvokeExpr, Set<Stmt>>();
-        //only count flows from arguments here, to match flow droid
-        Map<InvokeExpr, Set<Stmt>> invokeToSourcesFlowDroid = new HashMap<InvokeExpr, Set<Stmt>>();
-
+        Map<InvokeExpr, Set<Stmt>> invokeToSourcesMem = new HashMap<InvokeExpr, Set<Stmt>>();
+        //key is invoke of sink -> sources
+        Map<InvokeExpr, Set<Stmt>> invokeToSourcesRec= new HashMap<InvokeExpr, Set<Stmt>>();
+        //key is invoke of sink -> sources
+        Map<InvokeExpr, Set<Stmt>> invokeToSourcesArgs = new HashMap<InvokeExpr, Set<Stmt>>();
+        //key is invoke of sink -> sources
+        Map<InvokeExpr, Set<Stmt>> invokeToSourcesArgsPrecise = new HashMap<InvokeExpr, Set<Stmt>>();
+        
         for (Map.Entry<Method, List<Method>> block : RCFGToSSL.v().getSpec().getEventBlocks().entrySet()) {
             //only count events in src classes, not in libraries
             boolean inSrc = false;
@@ -141,20 +145,12 @@ public class PTAPaper {
 
                     //only count sensitive sinks
                     Stmt sinkInvoke = JimpleRelationships.v().getEnclosingStmt(oe.getInvokeExpr());
-                    if (!InfoKind.isSensitiveInfoKind(sinkInvoke))
+                    if (!InfoKind.callsSensitiveSink(sinkInvoke))
                         continue;
                     
                     //we have a sink with connected sources
                     InvokeExpr ie = oe.getInvokeExpr();
-                    if (!invokeToSources.containsKey(ie)) {
-                        invokeToSources.put(ie, new HashSet<Stmt>());
-                    }
-
-                    if (!invokeToSourcesFlowDroid.containsKey(ie)) {
-                        invokeToSourcesFlowDroid.put(ie, new HashSet<Stmt>());
-                    }
-
-
+                    
                     //get args
                     for (int i = 0; i < oe.getNumArgs(); i++) {
 
@@ -167,10 +163,22 @@ public class PTAPaper {
 
                         for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getArgSourceInfoUnits(i).entrySet()) {
                             for (Stmt source : flows.getValue()) {
-                                if (InfoKind.isSensitiveInfoKind(source)) {
-                                    invokeToSources.get(ie).add(source);
-                                    //for flowdroid comparison, just add the flows from the args 
-                                    invokeToSourcesFlowDroid.get(ie).add(source);
+                                if (InfoKind.callsSensitiveSource(source)) {
+                                    if (!invokeToSourcesArgs.containsKey(ie)) {
+                                        invokeToSourcesArgs.put(ie, new HashSet<Stmt>());
+                                    }
+                                    invokeToSourcesArgs.get(ie).add(source);                                    
+                                }
+                            }
+                        }
+                        
+                        for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getArgSourceInfoUnitsPrecise(i).entrySet()) {
+                            for (Stmt source : flows.getValue()) {
+                                if (InfoKind.callsSensitiveSource(source)) {
+                                    if (!invokeToSourcesArgsPrecise.containsKey(ie)) {
+                                        invokeToSourcesArgsPrecise.put(ie, new HashSet<Stmt>());
+                                    }
+                                    invokeToSourcesArgsPrecise.get(ie).add(source);                                    
                                 }
                             }
                         }
@@ -179,8 +187,11 @@ public class PTAPaper {
                     for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getReceiverSourceInfoUnits().entrySet()) {
                         //ignore all non-critical flows 
                         for (Stmt source : flows.getValue()) {
-                            if (InfoKind.isSensitiveInfoKind(source)) {
-                                invokeToSources.get(ie).add(source);
+                            if (InfoKind.callsSensitiveSource(source)) {
+                                if (!invokeToSourcesRec.containsKey(ie)) {
+                                    invokeToSourcesRec.put(ie, new HashSet<Stmt>());
+                                }
+                                invokeToSourcesRec.get(ie).add(source);
                             }
                         }
                         
@@ -189,8 +200,12 @@ public class PTAPaper {
                     for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getMethodInfoUnits().entrySet()) {
                         //ignore all non-critical flows
                         for (Stmt source : flows.getValue()) {
-                            if (InfoKind.isSensitiveInfoKind(source)) {
-                                invokeToSources.get(ie).add(source);
+                            if (InfoKind.callsSensitiveSource(source)) {
+                                if (!invokeToSourcesMem.containsKey(ie)) {
+                                    invokeToSourcesMem.put(ie, new HashSet<Stmt>());
+                                }
+                                
+                                invokeToSourcesMem.get(ie).add(source);
                             }
                         }
                     }
@@ -199,41 +214,39 @@ public class PTAPaper {
         }
 
         //count number of flows
-        int flowsIntoSinks = 0;
-        int flowDroidFlowsIntoSinks = 0;
-        //all reachable source invoke statements
-        Set<Stmt> sources = new HashSet<Stmt>();
-
-        try {
-            //FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "flows-for-pta-paper.log");
-            for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSources.entrySet()) {
-                flowsIntoSinks += sink.getValue().size();
-                sources.addAll(sink.getValue());
-                /*
-                fw.write(sink.getKey() + " in " + JimpleRelationships.v().getEnclosingMethod(sink.getKey()) + "\n");
-                for (Stmt source : sink.getValue()) {
-                    fw.write("\t" + source + " in " + JimpleRelationships.v().getEnclosingMethod(source) + "\n");
-                }
-                fw.write("\n");
-                 */
-            }
-            //fw.close();
-
-            //Just count sources that flow to sinks through args
-            for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesFlowDroid.entrySet()) {
-                flowDroidFlowsIntoSinks += sink.getValue().size();
-            }
-
+        int flowsIntoSinksArgs = 0;
+        int flowsIntoSinksArgsPrecise = 0;
+        int flowsIntoSinksMem = 0;
+        int flowsIntoSinksRec = 0;
+              
+        try {           
+            for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesArgs.entrySet()) {
+                flowsIntoSinksArgs += sink.getValue().size();
+            }      
+            
+            for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesArgsPrecise.entrySet()) {
+                flowsIntoSinksArgsPrecise += sink.getValue().size();
+            }                    
+            
+            for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesMem.entrySet()) {
+                flowsIntoSinksMem += sink.getValue().size();
+            }        
+            
+            for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesRec.entrySet()) {
+                flowsIntoSinksRec += sink.getValue().size();
+            }        
+            
         } catch (Exception e) {
 
         }
 
-
         buf.append("Info Flow Time Sec: " + infoFlowTimeSec + "\n");
-
-        buf.append("Flows into sinks: " + flowsIntoSinks + "\n");
-        buf.append("Arg flows into Sinks: " + flowDroidFlowsIntoSinks + "\n");
-
+       
+        buf.append("Flows into sinks (Args): " + flowsIntoSinksArgs + "\n");
+        buf.append("Flows into sinks (Args, Precise): " + flowsIntoSinksArgsPrecise + "\n");
+        buf.append("Flows into sinks (Mem): " + flowsIntoSinksMem + "\n");
+        buf.append("Flows into sinks (Rec): " + flowsIntoSinksRec + "\n");
+        
         buf.append(reachableSinksSources());
 
         return buf.toString();
@@ -246,11 +259,13 @@ public class PTAPaper {
 
         for (SootMethod method : CollaspedCallGraph.v().getAllMethods()) {
             for (CallToTarget apiCall : CollaspedCallGraph.v().getAPICallTargets(method)) {
-                if (API.v().hasSourceInfoKind(apiCall.getTarget())) {
+                if (API.v().hasSourceInfoKind(apiCall.getTarget()) &&
+                        InfoKind.callsSensitiveSource(apiCall.getStmt())) {
                     sources.add(apiCall.getStmt());
                 }
-
-                if (API.v().hasSinkInfoKind(apiCall.getTarget())) {
+               
+                if (API.v().hasSinkInfoKind(apiCall.getTarget()) &&
+                        InfoKind.callsSensitiveSink(apiCall.getStmt())) {
                     sinks.add(apiCall.getStmt());
                 }
             }
@@ -302,10 +317,7 @@ public class PTAPaper {
             buf.append("refinement ");
         }
 
-        if (Config.v().preciseSinkArgFlows) {
-            buf.append("precisesinkargflows ");
-        }
-
+     
         return buf.toString();
     }
 

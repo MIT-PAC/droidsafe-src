@@ -38,8 +38,8 @@ public  class InfoKind implements InfoValue {
      * Return true if any of the infokinds for this infovalue call statement are 
      * defined as sensitive.
      */
-    public static boolean isSensitiveInfoKind(Stmt stmt) {
-        for (InfoKind infoK : getInfoKinds(stmt)) {
+    public static boolean callsSensitiveSource(Stmt stmt) {
+        for (InfoKind infoK : getSourceInfoKinds(stmt)) {
             if (infoK.isSensitive())
                 return true;
         }
@@ -53,7 +53,7 @@ public  class InfoKind implements InfoValue {
      * of the source statements to see if any of them have higher level InfoKind associated with them.
      * Return the set of all InfoKinds for the targets of all sources.
      */
-    public static Set<InfoKind> getInfoKinds(Stmt stmt) {
+    public static Set<InfoKind> getSourceInfoKinds(Stmt stmt) {
         Set<InfoKind> srcKinds = new HashSet<InfoKind>();
         
         if (!stmt.containsInvokeExpr())
@@ -78,7 +78,7 @@ public  class InfoKind implements InfoValue {
      * of the source statements to see if any of them have higher level InfoKind associated with them.
      * Return the set of all InfoKinds for the targets of all sources.
      */
-    public static Set<InfoKind> getInfoKinds(InfoValue iv) {
+    public static Set<InfoKind> getSourceInfoKinds(InfoValue iv) {
 
         Set<InfoKind> srcKinds = new HashSet<InfoKind>();
 
@@ -86,7 +86,7 @@ public  class InfoKind implements InfoValue {
 
             Stmt stmt = (Stmt)((InfoUnit)iv).getUnit();
 
-           srcKinds = getInfoKinds(stmt);
+           srcKinds = getSourceInfoKinds(stmt);
 
         } else if (iv instanceof InfoKind) {
             srcKinds.add((InfoKind)iv);
@@ -97,6 +97,71 @@ public  class InfoKind implements InfoValue {
 
         return srcKinds;
     }
+    
+    /**
+     * Return true if any of the infokinds for this infovalue call statement are 
+     * defined as sensitive sinks.
+     */
+    public static boolean callsSensitiveSink(Stmt stmt) {
+        for (InfoKind infoK : getSinkInfoKinds(stmt)) {
+            if (infoK.isSensitive())
+                return true;
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Given a value from the invoke statement (either receiver or an argument), query the 
+     * information flow for the units the flow to it, and then use the PTA to find all the targets
+     * of the sink statements to see if any of them have higher level sink InfoKind associated with them.
+     * Return the set of all InfoKinds for the targets of all sinks.
+     */
+    public static Set<InfoKind> getSinkInfoKinds(Stmt stmt) {
+        Set<InfoKind> sinkKinds = new HashSet<InfoKind>();
+        
+        if (!stmt.containsInvokeExpr())
+            return sinkKinds;
+
+        //TODO: CONTEXT HERE FROM THE INFOVALUE
+        Collection<SootMethod> targets = 
+                PTABridge.v().getTargetsInsNoContext(stmt);
+
+        for (SootMethod target : targets) { 
+            for (InfoKind kind : API.v().getSinkInfoKinds(target)) {
+                sinkKinds.add(kind);
+            }
+        }
+        
+        return sinkKinds;
+    }
+    
+    /**
+     * Given a value from the invoke statement (either receiver or an argument), query the 
+     * information flow for the units the flow to it, and then use the PTA to find all the targets
+     * of the sink statements to see if any of them have higher level sink InfoKind associated with them.
+     * Return the set of all InfoKinds for the targets of all sinks.
+     */
+    public static Set<InfoKind> getSinkInfoKinds(InfoValue iv) {
+
+        Set<InfoKind> sinkKinds = new HashSet<InfoKind>();
+
+        if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
+
+            Stmt stmt = (Stmt)((InfoUnit)iv).getUnit();
+
+           sinkKinds = getSinkInfoKinds(stmt);
+
+        } else if (iv instanceof InfoKind) {
+            sinkKinds.add((InfoKind)iv);
+        } else {
+            logger.warn("Strange info value: {} {}", iv, iv.getClass());
+        }
+
+
+        return sinkKinds;
+    }
+    
     
     /** 
      * Given a string return (or create and return) the InfoKind object that

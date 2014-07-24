@@ -69,6 +69,9 @@ public class Method implements Comparable<Method> {
     private Map<InfoKind, Set<Stmt>> recFlows;
     /** argument info kinds set, used to cache the info kinds so we do not query info flow more than once */
     private Map<InfoKind, Set<Stmt>>[] argFlows;
+    /** argument info kinds set, used to cache the info kinds so we do not query info flow more than once 
+     * use memory access analysis*/
+    private Map<InfoKind, Set<Stmt>>[] argFlowsPrecise;
     /** info flows of memory touched by this method and any methods called, cached here */
     private Map<InfoKind, Set<Stmt>> methodFlows;
 
@@ -84,6 +87,7 @@ public class Method implements Comparable<Method> {
         logger.info("Creating method: {} with receiever {}", method, receiver);
         this.ptaInfo = ptaInfo;
         argFlows = new Map[ptaInfo.getNumArgs()];
+        argFlowsPrecise = new Map[ptaInfo.getNumArgs()];
         cacheArgSourceInfoFlows();
         cacheRecInfoFlows();
     }
@@ -484,7 +488,7 @@ public class Method implements Comparable<Method> {
                 InformationFlowAnalysis.v().getTaints(node, ptaInfo.getEdge().getTgt())) {
 
                 //get high level taint
-                for (InfoKind infoK : InfoKind.getInfoKinds(iv)) {
+                for (InfoKind infoK : InfoKind.getSourceInfoKinds(iv)) {
                     //rememeber we have high-level taint
                     if (!recFlows.containsKey(infoK)) 
                         recFlows.put(infoK, new HashSet<Stmt>());
@@ -512,31 +516,30 @@ public class Method implements Comparable<Method> {
     private void cacheArgSourceInfoFlows() {
         for (int i = 0; i < ptaInfo.getNumArgs(); i++) {
             argFlows[i] = new HashMap<InfoKind, Set<Stmt>>();
+            argFlowsPrecise[i] = new HashMap<InfoKind, Set<Stmt>>();
 
             //no result
             if (InformationFlowAnalysis.v() == null)
                 continue;
 
             Set<InfoValue> infoValues = new HashSet<InfoValue>();
+            Set<InfoValue> infoValuesPrecise = new HashSet<InfoValue>();
 
             if (ptaInfo.isArgPointer(i)) {
                 for (IAllocNode node : ptaInfo.getArgPTSet(i)) {
-                    if (Config.v().preciseSinkArgFlows) {
-                        infoValues.addAll(InformationFlowAnalysis.v().getTaints(node, ptaInfo.getEdge().getTgt()));
-                    } else {
-                        infoValues.addAll(InformationFlowAnalysis.v().getTaints(node));
-                    }
+                    infoValuesPrecise.addAll(InformationFlowAnalysis.v().getTaints(node, ptaInfo.getEdge().getTgt()));
+                    infoValues.addAll(InformationFlowAnalysis.v().getTaints(node));
                 }
             } else if (ptaInfo.getArgValue(i) instanceof Local && 
                     ptaInfo.getArgValue(i).getType() instanceof PrimType){
                 //System.out.println(ptaInfo.getEdge().getSrc());
                 //System.out.println(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()));                
                 //System.out.println(ptaInfo.getArgValue(i) + "\n");
-
-
                 infoValues = 
                         InformationFlowAnalysis.v().getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
                             ptaInfo.getEdge().getSrc(), (Local)ptaInfo.getArgValue(i));
+                //for primitives, the precise and non-precise are the same since access analysis is not used
+                infoValuesPrecise = infoValues; 
             } else if (ptaInfo.getArgValue(i) instanceof Constant) {
                 //do nothing for constants
             } else {
@@ -547,13 +550,26 @@ public class Method implements Comparable<Method> {
             //at this point we have info values set
             for (InfoValue iv : infoValues) {
                 //get high level taint
-                for (InfoKind infoK : InfoKind.getInfoKinds(iv)) {
+                for (InfoKind infoK : InfoKind.getSourceInfoKinds(iv)) {
                     //rememeber we have high-level taint
                     if (!argFlows[i].containsKey(infoK)) 
                         argFlows[i].put(infoK, new HashSet<Stmt>());
                     //add stmt if we have one
                     if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt)
                         argFlows[i].get(infoK).add((Stmt)((InfoUnit)iv).getUnit());
+                }
+            }
+            
+            //now record precise results using memory access analysis
+            for (InfoValue iv : infoValuesPrecise) {
+                //get high level taint
+                for (InfoKind infoK : InfoKind.getSourceInfoKinds(iv)) {
+                    //rememeber we have high-level taint
+                    if (!argFlowsPrecise[i].containsKey(infoK)) 
+                        argFlowsPrecise[i].put(infoK, new HashSet<Stmt>());
+                    //add stmt if we have one
+                    if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt)
+                        argFlowsPrecise[i].get(infoK).add((Stmt)((InfoUnit)iv).getUnit());
                 }
             }
         }
@@ -565,6 +581,14 @@ public class Method implements Comparable<Method> {
      */
     public Map<InfoKind, Set<Stmt>> getArgSourceInfoUnits(int i) {
         return argFlows[i];
+    }
+    
+    /**
+     * For argument at i return the set of all api calls in user code that could reach the 
+     * argument (or one of its fields), use memory access analysis
+     */
+    public Map<InfoKind, Set<Stmt>> getArgSourceInfoUnitsPrecise(int i) {
+        return argFlowsPrecise[i];
     }
     
     /**
@@ -596,6 +620,24 @@ public class Method implements Comparable<Method> {
     }
 
     /**
+     * For argument at i, return the set of high level information kinds that the argument could possibly 
+     * be tainted with.
+     */
+    public Set<InfoKind> getArgInfoKindsPrecise(int i) {
+        if (InformationFlowAnalysis.v() == null)
+            return Collections.emptySet(); 
+        //info flow result is cached
+        Set<InfoKind> highLevelKinds = new HashSet<InfoKind>();
+
+        for (InfoKind kind : argFlowsPrecise[i].keySet()) {
+            if (kind.isSensitive()) 
+                highLevelKinds.add(kind);
+        }
+
+        return highLevelKinds;
+    }
+    
+    /**
      * For receiver, return the set of high-level information kinds that the receiver could possibly be 
      * tainted with.	 
      */
@@ -626,7 +668,7 @@ public class Method implements Comparable<Method> {
 
         Set<InfoKind> methodKinds = new HashSet<InfoKind>();
         for (InfoValue iv : InformationFlowAnalysis.v().getTaints(ptaInfo.getEdge().getTgt())) {
-            for (InfoKind kind : InfoKind.getInfoKinds(iv)) {
+            for (InfoKind kind : InfoKind.getSourceInfoKinds(iv)) {
                 if (kind.isSensitive()) {
                     if (!methodFlows.containsKey(kind))
                         methodFlows.put(kind, new LinkedHashSet<Stmt>());
