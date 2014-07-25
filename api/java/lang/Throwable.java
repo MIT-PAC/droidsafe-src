@@ -101,7 +101,7 @@ public Throwable() {
     
 public Throwable(String detailMessage) {
         this();
-        this.detailMessage = new String("Exception Message");
+        this.detailMessage = detailMessage;
     }
 
     /**
