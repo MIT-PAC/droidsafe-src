@@ -251,5 +251,19 @@ function is_git ($dir = ".") {
   return ($result == 0);
 }
 
+/**
+ * Returns the string that matches the specified regular expression.
+ *
+ * Returns the characters that matched the pattern or the empty string
+ * if there was no match.
+ */
+function find_first_preg ($preg, $subject) {
+  $result = preg_match ($preg, $subject, $matches);
+  if ($result == 1)
+    return $matches[0];
+  else
+    return "";
+}
+    
 
 ?>
