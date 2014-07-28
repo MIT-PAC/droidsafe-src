@@ -93,22 +93,22 @@ foreach $source(keys %{$rsource2}) {
 
 $sourceRemoved = @sourceRemoved;
 $sinkRemoved = @sinkRemoved;
-print "\n################ Labels removed ############# \n";
+print "\n################ Labels removed from $inName1 ############# \n";
 print "Source $sourceRemoved, Sink: $sinkRemoved \n";
 
 $sourceAdded = @sourceAdded;
 $sinkAdded = @sinkAdded;
-print "\n################ Labels Added ############# \n";
+print "\n################ Labels Added to $inName1 ############# \n";
 print "Source $sourceAdded, Sink: $sinkAdded \n";
 
 $sourceLabeled = @sourceLabeled;
 $sinkLabeled = @sinkLabeled;
-print "\n################ Labels Categorized ############# \n";
+print "\n################ Labels Categorized from $inName1 ############# \n";
 print "Source $sourceLabeled, Sink: $sinkLabeled \n";
 
 $sourceChanged = @sourceChanged;
 $sinkChanged = @sinkChanged;
-print "\n################ Labels changed ############# \n";
+print "\n################ Labels changed from $inName1 to $inName2 ############# \n";
 print "Source $sourceChanged, Sink: $sinkChanged \n";
 
 $sourceIntact = @sourceIntact;
@@ -117,8 +117,11 @@ print "\n################ Labels Kept ############# \n";
 print "Source $sourceIntact, Sink: $sinkIntact \n";
 
 
-print "\n\n#########################################################\n";
-print "#### Sublist of APIs with sink/source labels added ########\n";
+print "\n\n",
+      "###########################################################################\n";
+print "#### Sublist of APIs with sink/source labels added to $inName1 ########\n";
+print "###########################################################################\n";
+
 print "SOURCE:  \n";
 $count = 0;
 foreach my $api(sort @sourceAdded) {
@@ -127,19 +130,20 @@ foreach my $api(sort @sourceAdded) {
     print $api, "-",  $rsource2->{$api}, "\n";
 }
 
-print "SINK:  \n";
+print "\nSINK:  \n";
 $count = 0;
 foreach my $api(sort @sinkAdded) {
     $count++;
     #last if ($count == 30);
-    print $api, "\n";
     print $api, "-",  $rsink2->{$api}, "\n";
 }
 
 
 
-print "\n\n#########################################################\n";
+print "\n\n",
+      "###########################################################################\n";
 print "#### Sublist of APIs with sink/source labels removed ########\n";
+print "###########################################################################\n";
 print "SOURCE:  \n";
 $count = 0;
 foreach my $api(sort @sourceRemoved) {
@@ -148,7 +152,7 @@ foreach my $api(sort @sourceRemoved) {
     print $api, "\n";
 }
 
-print "SINK:  \n";
+print "\nSINK:  \n";
 $count = 0;
 foreach my $api(sort @sinkRemoved) {
     $count++;
@@ -156,8 +160,10 @@ foreach my $api(sort @sinkRemoved) {
     print $api, "\n";
 }
 
-print "\n\n#########################################################\n";
+print "\n\n",
+      "###########################################################################\n";
 print "#### Sublist of APIs with sink/source labels changed ########\n";
+print "###########################################################################\n";
 print "SOURCE:  \n";
 $count = 0;
 foreach my $api(sort @sourceChanged) {
