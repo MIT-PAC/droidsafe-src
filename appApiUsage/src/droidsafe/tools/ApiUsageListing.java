@@ -72,6 +72,8 @@ public class ApiUsageListing {
 
     protected HashMap<SootMethod, Integer> apiAllUsage    = new HashMap<SootMethod, Integer>();
     protected HashMap<SootMethod, Integer> apiAllOverride = new HashMap<SootMethod, Integer>();
+    protected HashMap<SootMethod, Integer> apiAllConcrete    = new HashMap<SootMethod, Integer>();
+
     // method with interface as a parameters
     protected HashSet<SootMethod> apiAllInterfaceParam = new HashSet<SootMethod>();
     protected HashSet<SootMethod> infImplSet = new HashSet<SootMethod>();
@@ -104,6 +106,7 @@ public class ApiUsageListing {
         jarCount++;
         
         HashMap<SootMethod, Integer> apiUsage    = new HashMap<SootMethod, Integer>();
+        HashMap<SootMethod, Integer> apiConcrete = new HashMap<SootMethod, Integer>();
         HashMap<SootMethod, Integer> apiOverride = new HashMap<SootMethod, Integer>();
         
        
@@ -112,6 +115,10 @@ public class ApiUsageListing {
             logger.info("Application classes {} ", sootClass);
         
             Chain<SootClass> infSet = sootClass.getInterfaces(); 
+            
+            // we are skipping android.support in user code
+            if (sootClass.getName().startsWith("android.support"))
+                continue;
 
             for (SootMethod sootMethod: sootClass.getMethods()) {
                 // Check for overriding method
@@ -144,6 +151,19 @@ public class ApiUsageListing {
                     // add the counter
                     apiUsage.put(method, apiUsage.get(method)+1); 
                     
+                    // if abstract and not java class, search subclasses
+                    if (method.isAbstract() && !sootClass.getName().startsWith("java")) {
+                        List<SootMethod> concreteList = SootUtils.findPossibleInheritedMethods(sootClass, method.getSignature());
+                        for (SootMethod concrete: concreteList) {
+                            if (!apiConcrete.containsKey(concrete)) {
+                                apiConcrete.put(method, 0);                        
+                            }
+                            
+                            // add the counter
+                            apiConcrete.put(concrete, apiConcrete.get(concrete)+1); 
+                        }
+                    }
+                    
                     for (Type type: method.getParameterTypes()) {
                         if (type instanceof soot.RefType) {
                             SootClass clazz = ((soot.RefType)type).getSootClass();
@@ -158,7 +178,7 @@ public class ApiUsageListing {
            }            
         }
 
-        printJarReport(jarFile, apiOverride, apiUsage);
+        printJarReport(jarFile, apiOverride, apiUsage, apiConcrete);
         
         for (SootMethod method: apiOverride.keySet()) {
             if (!apiAllOverride.containsKey(method)) {
@@ -175,7 +195,14 @@ public class ApiUsageListing {
             int count = apiUsage.get(method);
             apiAllUsage.put(method,  apiAllUsage.get(method) + count);
         }
-
+        
+        for (SootMethod method: apiConcrete.keySet()) {
+            if (!apiAllConcrete.containsKey(method)) {
+                apiAllConcrete.put(method,  0);
+            }
+            int count = apiConcrete.get(method);
+            apiAllConcrete.put(method,  apiAllConcrete.get(method) + count);
+        }
     }
     
     /**
@@ -194,7 +221,7 @@ public class ApiUsageListing {
     
     public void printSummaryReport(){
        printStream.printf("======== Summary for all (%d) Jars =============\n", jarCount); 
-       printJarReport("All", apiAllOverride, apiAllUsage);
+       printJarReport("All", apiAllOverride, apiAllUsage, apiAllConcrete);
     }
     /**
      * Output report for each section
@@ -203,7 +230,7 @@ public class ApiUsageListing {
      * @param usageMap
      */
     private void printJarReport(String jarFile, Map<SootMethod, Integer> overrideMap, 
-                                Map<SootMethod, Integer> usageMap) {
+                                Map<SootMethod, Integer> usageMap, Map<SootMethod, Integer> concreteMap) {
        
        printStream.printf("========Output Report for jar %s=======\n", jarFile);
        printStream.printf("API overriden methods:\n");
@@ -225,25 +252,8 @@ public class ApiUsageListing {
                logger.warn("exception {}", e);
            }
        }
-       methodList = new ArrayList<String>(usageMap.size());
        
-       for (SootMethod method: usageMap.keySet()) {
-           methodList.add(method.toString());
-       }
-       Collections.sort(methodList);
-       
-       printStream.printf("\nDirect API call methods: \n");
-       printStream.printf("----------------------\n");
-       for (String methodSig: methodList) {
-           try {
-           SootMethod method = Scene.v().getMethod(methodSig);       
-           printStream.printf("%s => %d \n",  method, usageMap.get(method));
-           }
-           catch (Exception e) {
-               logger.warn("exception {}", e);
-           }
-       }
-       
+       // Dealing with API interface paramters
        methodList = new ArrayList<String>(apiAllInterfaceParam.size());
        
        for (SootMethod method: apiAllInterfaceParam) {
@@ -264,8 +274,79 @@ public class ApiUsageListing {
                logger.info("method {} not availalbe ", methodSig);
            }
        }
+
+       methodList = new ArrayList<String>(usageMap.size());
+       for (SootMethod method: usageMap.keySet()) {
+           methodList.add(method.toString());
+       }
+       Collections.sort(methodList);
        
+       printStream.printf("\nDirect API call methods: \n");
+       printStream.printf("----------------------\n");
+       for (String methodSig: methodList) {
+           try {
+           SootMethod method = Scene.v().getMethod(methodSig);       
+           printStream.printf("%s => %d \n",  method, usageMap.get(method));
+           }
+           catch (Exception e) {
+               logger.warn("exception {}", e);
+           }
+       }
        
+       methodList = new ArrayList<String>(usageMap.size());
+       for (SootMethod method: usageMap.keySet()) {
+           methodList.add(method.toString());
+       }
+       Collections.sort(methodList);
+       
+       printStream.printf("\nAdditionl Concrete call methods: \n");
+       printStream.printf("----------------------\n");
+       for (String methodSig: methodList) {
+           try {
+           SootMethod method = Scene.v().getMethod(methodSig);       
+           if (apiAllUsage.containsKey(method))
+               continue;
+           printStream.printf("%s => %d \n",  method, usageMap.get(method));
+           }
+           catch (Exception e) {
+               logger.warn("exception {}", e);
+           }
+       }
+       //// Print out the list of classes
+       Set<SootClass> usageClassSet = new HashSet<SootClass>();
+       Set<SootClass> usageAndConcreteClassSet = new HashSet<SootClass>();
+
+       for (SootMethod method: usageMap.keySet()) {
+           usageClassSet.add(method.getDeclaringClass());
+           usageAndConcreteClassSet.add(method.getDeclaringClass());
+       }
+       
+       for (SootMethod method: concreteMap.keySet()) {
+           usageAndConcreteClassSet.add(method.getDeclaringClass());
+       }
+       
+       List<String> classList = new ArrayList<String>(usageClassSet.size());
+       for (SootClass aclass: usageClassSet) {
+           classList.add(aclass.toString());
+       }
+       Collections.sort(classList);
+       
+       printStream.printf("\n=============== Classes used: %d ==============\n", classList.size());
+       for (String aClass: classList) {
+           printStream.printf("%s \n", aClass);
+       }
+       
+       classList = new ArrayList<String>();
+       for (SootClass aclass: usageAndConcreteClassSet) {
+           if (!usageClassSet.contains(aclass))
+               classList.add(aclass.toString());
+       }
+       Collections.sort(classList);
+       
+       printStream.printf("\n=============== Addition Impl classes: %d==============\n", classList.size());
+       for (String aClass: classList) {
+           printStream.printf("%s \n", aClass);
+       }
     }
     
     /**
@@ -299,8 +380,13 @@ public class ApiUsageListing {
                     if (method.getDeclaringClass().isApplicationClass()) {
                         continue;
                     }
+                    
+                    // we need to crawl subclasses and is not java package
+                    if (method.isAbstract() && !sootClass.getName().startsWith("java")) {
+                        
+                    }
 
-                    // if the callee is application class, we skip
+                    // if already used 
                     if (apiAllUsage.containsKey(method)) {
                         continue;
                     }
