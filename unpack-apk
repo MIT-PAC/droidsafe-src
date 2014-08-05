@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+from subprocess import call
+import sys
+import os
+
+# Gather our code in a main() function
+def main():
+    files = [f for f in os.listdir(".") if f.endswith('.apk')]
+    if (len(files) == 1):
+        call([os.environ['APAC_HOME'] + "/bin/apktool", "d", "-f", files[0], "apktool-gen"])
+        call(["/bin/rm", "-fr", "res"])
+        call(["mv", "apktool-gen/res", "."])
+        call(["mv", "apktool-gen/AndroidManifest.xml", "."])
+    else:
+        print("The current directory must contain one single .apk file.")
+        sys.exit(1)
+
+
+# Standard boilerplate to call the main() function to begin
+# the program.
+if __name__ == '__main__':
+    sys.exit(main())
