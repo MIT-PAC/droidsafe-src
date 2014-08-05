@@ -214,17 +214,17 @@ public class JSAStrings {
         jsa = new JSAStrings();
         soot.options.Options.v().set_allow_phantom_refs(true);
 
-        try {
-            StringAnalysis.loadDirectory(config.APP_ROOT_DIR + "/bin/classes/");
-            String libDir = config.APP_ROOT_DIR + "/libs/";
-            File lib = new File(libDir);
-            if (lib.exists()) {
-                StringAnalysis.addJarsToClassPath(libDir);
-            }
-        } catch (IOException e) {
-            logger.debug("JSA got an exception.");
-            return;
-        }
+        // try {
+        //     StringAnalysis.loadDirectory(config.APP_ROOT_DIR + "/bin/classes/");
+        //     String libDir = config.APP_ROOT_DIR + "/libs/";
+        //     File lib = new File(libDir);
+        //     if (lib.exists()) {
+        //         StringAnalysis.addJarsToClassPath(libDir);
+        //     }
+        // } catch (IOException e) {
+        //     logger.debug("JSA got an exception.");
+        //     return;
+        // }
 
         // SootClass clazz =
         // StringAnalysis.loadClass(Harness.HARNESS_CLASS_NAME);

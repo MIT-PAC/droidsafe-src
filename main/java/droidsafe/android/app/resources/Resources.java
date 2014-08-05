@@ -2,10 +2,10 @@ package droidsafe.android.app.resources;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
-
 import com.sun.org.apache.bcel.internal.classfile.ClassParser;
 import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 
+import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.AndroidManifest.Activity;
 import droidsafe.android.app.resources.AndroidManifest.Provider;
 import droidsafe.android.app.resources.AndroidManifest.Receiver;
@@ -13,14 +13,10 @@ import droidsafe.android.app.resources.AndroidManifest.Service;
 import droidsafe.android.app.resources.Layout.View;
 import droidsafe.android.app.resources.XmlFile;
 import droidsafe.android.system.Components;
-
 import droidsafe.utils.SootUtils;
 
 import java.io.*;
-
 import java.util.*;
-import java.util.HashSet;
-import java.util.InvalidPropertiesFormatException;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
@@ -29,7 +25,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.w3c.dom.*;
 
 import soot.jimple.AbstractStmtSwitch;
@@ -41,18 +36,15 @@ import soot.jimple.Jimple;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.VirtualInvokeExpr;
-
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Modifier;
-
 import soot.tagkit.ConstantValueTag;
 import soot.tagkit.IntegerConstantValueTag;
 import soot.tagkit.Tag;
-
 import soot.util.Chain;
 
 /**
@@ -156,6 +148,9 @@ public class Resources {
 			}
 
 			String package_name = am.manifest.package_name;
+			// if analyzing APK, use the package name to compute generated classes and
+			// adjust source classes accordingly.
+			Project.v().maybeComputeGenClasses(package_name);
 
 			// Process the activities of the application
 			for (Activity a : v.manifest.activities) {

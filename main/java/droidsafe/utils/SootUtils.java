@@ -858,8 +858,10 @@ public class SootUtils {
             Chain<Unit> stmts = ((StmtBody)method.retrieveActiveBody()).getUnits();
             Iterator<Unit> stmtIt = stmts.snapshotIterator();
 
-            if (stmtIt.hasNext()) {
-                return getSourceLocation((Stmt)stmtIt.next(), method.getDeclaringClass());
+            while (stmtIt.hasNext()) {
+              SourceLocationTag loc = getSourceLocation((Stmt)stmtIt.next(), method.getDeclaringClass());
+              if (loc != null)
+                return loc;
             }
         }
 

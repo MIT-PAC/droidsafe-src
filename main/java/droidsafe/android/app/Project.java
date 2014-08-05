@@ -31,6 +31,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootClass;
+import soot.SourceLocator;
 
 /** 
  * Represent an Android project including the source files, resource files,
@@ -109,7 +110,9 @@ public class Project {
     public void init() {
         this.appSrcDir = new File(Config.v().APP_ROOT_DIR + File.separator + SRC_DIR);
 
-        this.appClassesDir = new File(Config.v().APP_ROOT_DIR + File.separator + CLASSES_DIR);
+        this.appClassesDir = (Config.v().apk != null) ?
+                new File(Config.v().apk) :
+                    new File(Config.v().APP_ROOT_DIR + File.separator + CLASSES_DIR);
         logger.info("Setting application class directory to {}.", appClassesDir.toString());
         if (!this.appClassesDir.exists()) {
             logger.error("Project not configured properly. Directory does not exist: " + this.appClassesDir);
@@ -183,10 +186,8 @@ public class Project {
      */
     private void setSrcClasses() {
         srcClasses = new LinkedHashSet<String>();
-        for (File clazz : FileUtils.listFiles(this.appClassesDir, new String[]{"class"}, true)) {
-
-            String clzName = 
-                    Utils.fromFileToClass(clazz.toString().substring(this.appClassesDir.toString().length() + 1));
+        String procDir = appClassesDir.getAbsolutePath();
+        for (String clzName: SourceLocator.v().getClassesUnder(procDir)) {
             logger.info("Application class: {}", clzName);
             srcClasses.add(clzName);
         }
@@ -197,16 +198,36 @@ public class Project {
      */
     private void setGenClasses() {
         genClasses = new LinkedHashSet<String>();
-        for (File clazz : FileUtils.listFiles(this.appGenDir, new String[]{"java"}, true)) {
+        // if analyzing apk, genClasses is updated when manifest is resolved.
+        if (Config.v().apk == null) {
+            for (File clazz : FileUtils.listFiles(this.appGenDir, new String[]{"java"}, true)) {
 
             
-            String closeName = clazz.toString().substring(this.appGenDir.toString().length() + 1);
-            String clzName = closeName.substring(0, closeName.length() - 5).replace(File.separatorChar, '.');
-            logger.info("Generated class: {}", clzName);
-            genClasses.add(clzName);
+                String closeName = clazz.toString().substring(this.appGenDir.toString().length() + 1);
+                String clzName = closeName.substring(0, closeName.length() - 5).replace(File.separatorChar, '.');
+                logger.info("Generated class: {}", clzName);
+                genClasses.add(clzName);
+            }
         }
     }
 
+    /**
+     * Compute names of the generated class from the package name stored in the manifest if analyzing APK.
+     * Also remove the generated class from source classes.
+     */
+    public void maybeComputeGenClasses(String pkgName) {
+        if (Config.v().apk != null) {
+            if (pkgName != null) {
+                String[] clzNames = {"BuildConfig", "R"};
+                for (String clzName: clzNames) {
+                    clzName = pkgName + "." + clzName;
+                    srcClasses.remove(clzName);
+                    genClasses.add(clzName);
+                }
+            }
+        }
+    }
+    
     /**
      * Add all classes from any jar files into the set for library classes.
      */

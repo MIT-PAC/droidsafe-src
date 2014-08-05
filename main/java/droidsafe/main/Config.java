@@ -1,8 +1,10 @@
 package droidsafe.main;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.cli.CommandLine;
@@ -82,6 +84,10 @@ public class Config {
     public File ANDROID_LIB_DIR = new File(System.getenv("APAC_HOME") + File.separator + ANDROID_LIB_DIR_REL);  
 
     public String target = "specdump";
+
+    /** Relative path (w.r.t. APP_ROOT_DIR) for the apk file to be analyzed by droidsafe.  */
+    public String apk;
+
     /** Don't include source location information when outputting spec */
     public boolean noSourceInfo = false;
     /** If true, analyze information flows. */
@@ -404,6 +410,8 @@ public class Config {
                 .create("s");
         options.addOption(spec);
 
+        Option apk = new Option("apk", "Run analysis on apk.");
+        options.addOption(apk);
 
         return options;
     }
@@ -589,6 +597,22 @@ public class Config {
 
         APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
         logger.info("approot: {}", APP_ROOT_DIR);
+        if (cmd.hasOption("apk")) {
+            File appRootDir = new File(APP_ROOT_DIR);
+            List<String> apkFiles = new ArrayList<String>();
+            for (String file: appRootDir.list()) {
+                if (file.endsWith(".apk")) {
+                    apkFiles.add(file);
+                }
+            }
+            if (apkFiles.size() == 1) {
+                this.apk = APP_ROOT_DIR + File.separator + apkFiles.get(0);
+            } else {
+                logger.error("Error finding .apk file in app root directory");
+                droidsafe.main.Main.exit(1);
+            }
+        }
+
     }
 
     /**

@@ -362,73 +362,75 @@ public class Harness {
      */
     private void injectXMLComponent(String compType, SootClass compClass, 
                                     List<IntentFilter> intentFilterList, StmtBody body, Local appLocal) {
-        logger.info("Type {} ", compType);
+        if (compClass != null) {
+            logger.info("Type {} ", compType);
 
-        String initSig = String.format("<%s: void <init>()>", compClass.getName());
+            String initSig = String.format("<%s: void <init>()>", compClass.getName());
         
-        if (!compType.equals(Hierarchy.getComponentParent(compClass).getName())) {
-            logger.error("Malformed manifest: component {} defined in manifest as {} have defined parent {}", 
-                compClass, compType, Hierarchy.getComponentParent(compClass).getName());
-            droidsafe.main.Main.exit(1);
-        }
-
-        //SootMethod compInit = Scene.v().getMethod(initSig);
-        SootMethod compInit = null;
-        SootMethod initMethod = null; 
-
-        if (Scene.v().containsMethod(initSig)) {
-            compInit = Scene.v().getMethod(initSig);
-        }
-        else {
-            logger.info("Class {} does not have <init> function", compClass);
-        }
-
-        if (compInit != null) {
-            try {
-                initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(compClass, compInit); 
-            } 
-            catch (Exception ex) {
-                logger.warn("Cannot resolve constructor {}", compInit);
+            if (!compType.equals(Hierarchy.getComponentParent(compClass).getName())) {
+                logger.error("Malformed manifest: component {} defined in manifest as {} have defined parent {}", 
+                             compClass, compType, Hierarchy.getComponentParent(compClass).getName());
+                droidsafe.main.Main.exit(1);
             }
-        }
 
-        String name = String.format("__ds__%s%03d", 
-            compType.substring(compType.lastIndexOf(".") + 1), LOCAL_COUNTER++);
+            //SootMethod compInit = Scene.v().getMethod(initSig);
+            SootMethod compInit = null;
+            SootMethod initMethod = null; 
 
-        //Local compLocal = Jimple.v().newLocal(name,  RefType.v(compType));
-        Local compLocal = Jimple.v().newLocal(name,  compClass.getType());
-        body.getLocals().add(compLocal);
+            if (Scene.v().containsMethod(initSig)) {
+                compInit = Scene.v().getMethod(initSig);
+            }
+            else {
+                logger.info("Class {} does not have <init> function", compClass);
+            }
+
+            if (compInit != null) {
+                try {
+                    initMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(compClass, compInit); 
+                } 
+                catch (Exception ex) {
+                    logger.warn("Cannot resolve constructor {}", compInit);
+                }
+            }
+
+            String name = String.format("__ds__%s%03d", 
+                                        compType.substring(compType.lastIndexOf(".") + 1), LOCAL_COUNTER++);
+
+            //Local compLocal = Jimple.v().newLocal(name,  RefType.v(compType));
+            Local compLocal = Jimple.v().newLocal(name,  compClass.getType());
+            body.getLocals().add(compLocal);
 
 
-        //Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
-        //        RefType.v(compType)); 
+            //Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
+            //        RefType.v(compType)); 
 
-        Expr newAppExpr = Jimple.v().newNewExpr(compClass.getType());
-        body.getUnits().add(Jimple.v().newAssignStmt(compLocal,  newAppExpr));
+            Expr newAppExpr = Jimple.v().newNewExpr(compClass.getType());
+            body.getUnits().add(Jimple.v().newAssignStmt(compLocal,  newAppExpr));
 
-        if (initMethod != null) {
-            Stmt initStmt = Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(compLocal, initMethod.makeRef()));
+            if (initMethod != null) {
+                Stmt initStmt = Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(compLocal, initMethod.makeRef()));
+                body.getUnits().add(initStmt);
+            }
+
+            //create field for component
+            SootField compField = new SootField(FIELD_PREFIX + localID++ , compClass.getType(), 
+                                                Modifier.PUBLIC | Modifier.STATIC);
+            harnessClass.addField(compField);
+
+            //set local to field
+            body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(compField.makeRef()), compLocal));
+            //add to globals map for querying
+            globalsMap.put(compClass, compField);
+
+            injectIntentFilter(compLocal, intentFilterList, body, appLocal);
+
+            // Call runtime init
+            SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(compType));
+            Stmt initStmt = Jimple.v().newInvokeStmt(
+                                                     Jimple.v().newStaticInvokeExpr(droidsafeInit.makeRef(), compLocal));
+
             body.getUnits().add(initStmt);
         }
-
-        //create field for component
-        SootField compField = new SootField(FIELD_PREFIX + localID++ , compClass.getType(), 
-            Modifier.PUBLIC | Modifier.STATIC);
-        harnessClass.addField(compField);
-
-        //set local to field
-        body.getUnits().add(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(compField.makeRef()), compLocal));
-        //add to globals map for querying
-        globalsMap.put(compClass, compField);
-
-        injectIntentFilter(compLocal, intentFilterList, body, appLocal);
-
-        // Call runtime init
-        SootMethod droidsafeInit = Scene.v().getMethod(componentInitMethod.get(compType));
-        Stmt initStmt = Jimple.v().newInvokeStmt(
-            Jimple.v().newStaticInvokeExpr(droidsafeInit.makeRef(), compLocal));
-
-        body.getUnits().add(initStmt);
 
     }
 

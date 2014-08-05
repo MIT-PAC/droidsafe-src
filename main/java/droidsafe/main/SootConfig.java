@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 import soot.Scene;
 import soot.SootClass;
+import soot.options.Options;
 import droidsafe.android.app.Project;
 
 /**
@@ -62,6 +63,10 @@ public class SootConfig {
 		 soot.options.Options.v().setPhaseOption("cg", "verbose:false");
 		 soot.options.Options.v().setPhaseOption("cg", "trim-clinit:true");
 		 //soot.options.Options.v().setPhaseOption("jb.tr", "ignore-wrong-staticness:true");
+		 		
+		 if (Config.v().apk != null) {
+		   soot.options.Options.v().set_src_prec(Options.src_prec_apk);
+		 }
 		 		
 		 // don't optimize the program 
 		 soot.options.Options.v().setPhaseOption("wjop", "enabled:false");
