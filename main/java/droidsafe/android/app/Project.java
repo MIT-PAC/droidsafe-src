@@ -310,6 +310,12 @@ public class Project {
      * in the libs directory of the application. 
      */
     public boolean isLibClass(String clz) {
+        if (Config.v().apk != null) {
+            for (String libPkgPrefix: Config.v().libraryPackagePrefixes) {
+                if (clz.startsWith(libPkgPrefix))
+                    return true;
+            }
+        }
         return libClasses.contains(clz);
     }
 
@@ -318,7 +324,7 @@ public class Project {
      * in the libs directory of the application. 
      */
     public boolean isLibClass(SootClass clz) {
-        return libClasses.contains(clz.getName());
+        return isLibClass(clz.getName());
     }
 
     /**
@@ -328,6 +334,10 @@ public class Project {
      * @return
      */
     public boolean isSrcClass(String clz) {
+        if (Config.v().apk != null) {
+            if (isLibClass(clz))
+                return false;
+        }
         return srcClasses.contains(clz);
     }
     
@@ -383,7 +393,7 @@ public class Project {
      * @return
      */
     public boolean isSrcClass(SootClass clz) {
-        return srcClasses.contains(clz.getName());
+        return isSrcClass(clz.getName());
     }
 
     /**

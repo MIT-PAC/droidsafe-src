@@ -1,8 +1,12 @@
 package droidsafe.main;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -17,11 +21,14 @@ import org.apache.commons.cli.Options;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Scene;
+import soot.SootClass;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
 import ch.qos.logback.core.joran.spi.JoranException;
 import ch.qos.logback.core.util.StatusPrinter;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
+import droidsafe.utils.SootUtils;
 
 /**
  * Class to store and configure options and variables.
@@ -74,6 +81,9 @@ public class Config {
     public static final String API_MODELING_DIR_REL = "modeling" + File.separator + "api";
 
     public static final String ANDROID_JAR = "android.jar";
+
+    public static final String LIBRARY_PACKAGE_PREFIXES_FILE = "config-files" + File.separator
+            + "library_package_prefixes.txt";
 
     /** Path for the root folder for the Android application under analysis. */
     public String APP_ROOT_DIR;
@@ -189,6 +199,9 @@ public class Config {
      * 
      */
     public boolean callSystemExitOnError = true;
+
+    public String libraryPackagePrefixesFile;
+    public Set<String> libraryPackagePrefixes = new HashSet<String>();
 
     public static Config v() {
         return config;
@@ -413,6 +426,18 @@ public class Config {
         Option apk = new Option("apk", "Run analysis on apk.");
         options.addOption(apk);
 
+        Option apkFile =
+                OptionBuilder.withArgName("file").hasArg()
+                .withDescription("APK file to run the analysis on")
+                .create("apkfile");
+        options.addOption(apkFile);
+
+        Option libPkgPrefixesFile =
+                OptionBuilder.withArgName("file").hasArg()
+                .withDescription("file containing library package prefixes")
+                .create("libpkgfile");
+        options.addOption(libPkgPrefixesFile);
+
         return options;
     }
 
@@ -597,7 +622,10 @@ public class Config {
 
         APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
         logger.info("approot: {}", APP_ROOT_DIR);
-        if (cmd.hasOption("apk")) {
+
+        if (cmd.hasOption("apkfile")) {
+            this.apk = getPathFrom(cmd.getOptionValue("apkfile"), APP_ROOT_DIR);
+        } else if (cmd.hasOption("apk")) {
             File appRootDir = new File(APP_ROOT_DIR);
             List<String> apkFiles = new ArrayList<String>();
             for (String file: appRootDir.list()) {
@@ -612,7 +640,34 @@ public class Config {
                 droidsafe.main.Main.exit(1);
             }
         }
+        
+        if (cmd.hasOption("libpkgfile")) {
+            this.libraryPackagePrefixesFile = getPathFromCWD(cmd.getOptionValue("libpkgfile"));
+        } else {
+            this.libraryPackagePrefixesFile = LIBRARY_PACKAGE_PREFIXES_FILE;
+        }
+        
+        setLibraryPackagePrefixes();
 
+    }
+
+    /** 
+     * Read in all method from all_system_methods, then create a SootMethod for missing api
+     * methods from modeled classes.
+     */
+    private void setLibraryPackagePrefixes() {
+        try {
+            File libPkgPrefixesFile = new File(this.apacHome, this.libraryPackagePrefixesFile);
+            BufferedReader reader = new BufferedReader(new FileReader(libPkgPrefixesFile));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                this.libraryPackagePrefixes.add(line);
+            }
+            reader.close();
+        } catch (Exception e) {
+            logger.error("Error reading library package prefixes file {}: {}", libraryPackagePrefixesFile, e);
+            droidsafe.main.Main.exit(1);
+        }
     }
 
     /**
@@ -661,13 +716,22 @@ public class Config {
      * append to the CWD. If the empty string is given, then return the cwd.
      */
     private static String getPathFromCWD(String path) {
+        String basePath = System.getProperty("user.dir");
+        return getPathFrom(path, basePath);
+    }
+
+    /**
+     * Construct an absolute path from the string argument. If the argument is a relative path, then
+     * append to the CWD. If the empty string is given, then return the cwd.
+     */
+    private static String getPathFrom(String path, String basePath) {
         if (path == null || path.equals("")) path = ".";
         String ret = "";
         File fpath = new File(path);
         if (fpath.isAbsolute())
             ret = path;
         else {
-            ret = System.getProperty("user.dir") + File.separator + path;
+            ret = basePath + File.separator + path;
             fpath = new File(ret);
         }
 
