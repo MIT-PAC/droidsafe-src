@@ -27,7 +27,7 @@ def run_droidsafe(args):
     for jar in JARS:
     	classpath += libs + jar + ":"
     #needed for logback configuration
-    classpath += APAC_HOME + os.sep + "config-files"
+    classpath += APAC_HOME + "config-files"
     classpath += ":."
     java_command.append(classpath)
 

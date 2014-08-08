@@ -4,21 +4,42 @@ from __future__ import print_function
 from subprocess import call
 import sys
 import os
+import getopt
 
 # Gather our code in a main() function
-def main():
-    files = [f for f in os.listdir(".") if f.endswith('.apk')]
-    if (len(files) == 1):
-        call([os.environ['APAC_HOME'] + "/bin/apktool", "d", "-f", files[0], "apktool-gen"])
-        call(["/bin/rm", "-fr", "res"])
-        call(["mv", "apktool-gen/res", "."])
-        call(["mv", "apktool-gen/AndroidManifest.xml", "."])
-    else:
-        print("The current directory must contain one single .apk file.")
-        sys.exit(1)
+def main(argv):
+    file = ''
+    try:
+        opts, args = getopt.getopt(argv,"hf:")
+    except getopt.GetoptError:
+        print("unpack-apk -f <apkfile>")
+        sys.exit(2)
+
+    for opt, arg in opts:
+        if opt == '-h':
+            print("unpack-apk -f <apkfile>")
+            sys.exit()
+        elif opt == '-f':
+            if (os.path.exists(arg)):
+                file = arg
+            else:
+                print('apk file ' + arg + ' does not exist')
+
+    if (file == ''):
+        files = [f for f in os.listdir(".") if f.endswith('.apk')]
+        if (len(files) == 1):
+            file = files[0]
+        else:
+            print("Must either specify an existing apk file or ensure that the current directory contains one single .apk file.")
+            sys.exit(1)
+
+    call([os.environ['APAC_HOME'] + "/bin/apktool", "d", "-f", file, "apktool-gen"])
+    call(["/bin/rm", "-fr", "res"])
+    call(["mv", "apktool-gen/res", "."])
+    call(["mv", "apktool-gen/AndroidManifest.xml", "."])
 
 
 # Standard boilerplate to call the main() function to begin
 # the program.
 if __name__ == '__main__':
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))
