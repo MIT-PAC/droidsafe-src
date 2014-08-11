@@ -661,7 +661,8 @@ public class Config {
             BufferedReader reader = new BufferedReader(new FileReader(libPkgPrefixesFile));
             String line;
             while ((line = reader.readLine()) != null) {
-                this.libraryPackagePrefixes.add(line);
+                if (!line.isEmpty())
+                    this.libraryPackagePrefixes.add(line);
             }
             reader.close();
         } catch (Exception e) {
