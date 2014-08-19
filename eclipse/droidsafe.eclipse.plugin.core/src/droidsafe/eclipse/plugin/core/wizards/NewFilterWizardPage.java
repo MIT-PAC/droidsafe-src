@@ -94,11 +94,11 @@ public class NewFilterWizardPage extends WizardPage {
         RowLayout rowLayout = new RowLayout();
         filterOpContainer.setLayout(rowLayout);
         
-        String[] filterOpStrs = FilterOp.strings;
-        filterOpButtons = new Button[filterOpStrs.length];
-        for (int i = 0; i < filterOpStrs.length; i++) {
+        String[] filterOpLabels = FilterOp.labels;
+        filterOpButtons = new Button[filterOpLabels.length];
+        for (int i = 0; i < filterOpLabels.length; i++) {
             filterOpButtons[i] = new Button(filterOpContainer, SWT.RADIO);
-            filterOpButtons[i].setText(filterOpStrs[i]);
+            filterOpButtons[i].setText(filterOpLabels[i]);
         }
         
         Composite predContainer = new Composite(container, SWT.BORDER);

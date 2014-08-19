@@ -104,4 +104,16 @@
     <delete dir="${builder.dir}"/>
   </target>
 
+  <target name="deploy"
+          description="Headless build (no-ui) and installation of the eclipse plugin. Properties defines in file build.properties."
+          depends="build"
+          if="eclipse.build.available">
+    <delete>
+      <fileset dir="${target.eclipse.platform}/plugins" includes="droidsafe.eclipse.plugin.core_*.jar"/>
+    </delete>
+    <copy todir="${target.eclipse.platform}/plugins">
+      <fileset dir="${path.to.local.update.site}/plugins" includes="droidsafe.eclipse.plugin.core_*.jar"/>
+    </copy>
+  </target>
+
 </project>
