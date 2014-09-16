@@ -59,15 +59,18 @@ import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -877,4 +880,57 @@ public class Main {
             throw new IllegalStateException();
         }
     }
+    
+    /*
+    public static void api19MissingMethods() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("/Users/mgordon/tmp/engagement4/calls_by_name.txt"));
+            String line;
+                        
+            while ((line = br.readLine()) != null) {
+                // process the line.
+                
+                //break up the line
+                String[] splitted = line.split(" ");
+                String clazzName = splitted[0];
+                String methodName = splitted[1];
+                
+                boolean found = false;
+                //now search for method in class and all ancestors
+                SootClass sc = Scene.v().getSootClass(clazzName);
+                
+                Collection<SootClass> classes;
+                
+                if (sc.isInterface()) {
+                    classes = SootUtils.getParents(sc);
+                    classes.add(sc);
+                } else {
+                    classes = Scene.v().getActiveHierarchy().getSuperclassesOfIncluding(sc);
+                }
+                
+                for (SootClass current : classes) {
+                    for (SootMethod sm : current.getMethods()) {
+                        if (sm.getName().equals(methodName)) {
+                            found = true;
+                            break;
+                        }
+                    }
+                    
+                    if (found)
+                        break;
+                }
+
+                if (!found)
+                    System.out.println(clazzName + " " + methodName);
+             }
+            
+             br.close();
+            
+            
+        } catch (Exception e) {
+            
+        }
+    
+    }
+    */
 }
