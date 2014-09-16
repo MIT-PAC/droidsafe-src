@@ -303,13 +303,9 @@ public class Main {
         //add fallback object modeling for any value from the api that leaks into user
         //code as null    
         if (Config.v().addFallbackModeling) {
-
-            if (afterTransformPrecise(monitor, false, 2) == DroidsafeExecutionStatus.CANCEL_STATUS)
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-
             driverMsg("Inserting Unmodeled Objects...");
             monitor.subTask("Inserting Unmodeled Objects...");
-            InsertUnmodeledObjects.v().run();
+            InsertUnmodeledObjects.v().run(monitor);
             monitor.worked(1);
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;

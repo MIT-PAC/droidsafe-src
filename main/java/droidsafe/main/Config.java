@@ -188,6 +188,8 @@ public class Config {
     public boolean ignoreThrowableFlows = false;
         
     public boolean ptaInfoFlowRefinement = false;
+    /** should we run multiple passes of fallback modeling create unmodeled objects from API */
+    public boolean multipassfb = false;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -362,6 +364,10 @@ public class Config {
         Option fallbackMod = new Option("nofallback", "Disable Fallback Modeling");
         options.addOption(fallbackMod);
 
+        Option multipassfb = new Option("multipassfb", "Enable multiple passes of fallback modeling");
+        options.addOption(multipassfb);
+
+        
         Option eventContext = new Option("eventcontext", "Run analysis with Event Context.");
         options.addOption(eventContext);
 
@@ -602,6 +608,9 @@ public class Config {
 
         if (cmd.hasOption("nofallback"))
             this.addFallbackModeling = false;
+        
+        if (cmd.hasOption("multipassfb"))
+            this.multipassfb = true;
 
         if (cmd.hasOption("callgraph")) this.dumpCallGraph = true;
 

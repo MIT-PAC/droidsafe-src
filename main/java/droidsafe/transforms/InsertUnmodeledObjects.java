@@ -34,8 +34,12 @@ import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.system.API;
+import droidsafe.main.Config;
 import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.DroidsafeExecutionStatus;
+import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.SootUtils;
+import droidsafe.main.Main;
 
 /**
  * 
@@ -47,6 +51,7 @@ public class InsertUnmodeledObjects {
     private final static Logger logger = LoggerFactory.getLogger(InsertUnmodeledObjects.class);
     /** Static singleton */
     private static InsertUnmodeledObjects v;
+    private static final int NUM_PASSES = 5;
 
     private InsertUnmodeledObjects() {
         // TODO Auto-generated constructor stub
@@ -66,9 +71,30 @@ public class InsertUnmodeledObjects {
      * Run transformation to insert dummy object with UNKNOWN taint at all api method that return a 
      * reference with an empty points to set.
      */
-    public void run() {
+    public void run(IDroidsafeProgressMonitor monitor) {
         try {
-            findAPICallsWithNullReturnValues();
+            
+            if (Config.v().multipassfb) {
+                for (int i = 0; i < NUM_PASSES; i++) {        
+                    //run pta first
+                    Main.afterTransformPrecise(monitor, false, 2); 
+                    
+                    int numChanges = findAPICallsWithNullReturnValues();
+                    System.out.printf("Ran fallback API object insertion phase %d with %d objects created.\n", 
+                        i, numChanges);    
+                    
+                    if (numChanges == 0)
+                        break;
+                }                
+            } else {
+                //single pass of fallback modeling to insert unmodeled objects
+                
+                //run pta
+                Main.afterTransformPrecise(monitor, false, 2); 
+                
+                findAPICallsWithNullReturnValues();
+            }
+            
             //find fields of components created in harness main that reference other user components
             //and that are null in the pta, and force an assignment to the appropriate field in the harness 
             fixUpUserRefsToComponents();
@@ -174,9 +200,11 @@ public class InsertUnmodeledObjects {
     /**
      * Search all reachable methods in user code for api calls that return a value with an empty pt set.
      */
-    private void findAPICallsWithNullReturnValues() throws Exception {
+    private int findAPICallsWithNullReturnValues() throws Exception {
         List<SootClass> classes = new LinkedList<SootClass>();
         classes.addAll(Scene.v().getClasses());
+        int numChanges = 0;
+        
         for (SootClass clz : classes) {
 
             for (SootMethod method : clz.getMethods()) {
@@ -221,7 +249,9 @@ public class InsertUnmodeledObjects {
                                 //we have a method that could target the api, now see if the return value has 
                                 //anything in its pt set
                                 if (PTABridge.v().getPTSetIns(assign.getLeftOp()).isEmpty()) {
-                                    addUnmodeledObject(assign, method);
+                                    if (addUnmodeledObject(assign, method)) {
+                                        numChanges++;
+                                    }
                                 }
                             }
                         }
@@ -229,6 +259,8 @@ public class InsertUnmodeledObjects {
                 }
             }
         }
+        
+        return numChanges;
     }
 
     private Type findCast(SootMethod method, Stmt start, Value v) {
@@ -261,10 +293,11 @@ public class InsertUnmodeledObjects {
      * Insert assignment to the dummy object from the dummy class's field that corresponds to 
      * the type of the return value of the rhs of the assignment.
      */
-    private void addUnmodeledObject(AssignStmt stmt, SootMethod method) {
+    private boolean addUnmodeledObject(AssignStmt stmt, SootMethod method) {
         InvokeExpr invoke = stmt.getInvokeExpr();
         SootMethodRef target = invoke.getMethodRef();
         Body body = method.getActiveBody();
+        boolean madeChange = false;
 
         //try to find a cast to narrow type
         Type castType = findCast(method, stmt, stmt.getLeftOp());
@@ -292,6 +325,9 @@ public class InsertUnmodeledObjects {
             Stmt insertMe = Jimple.v().newAssignStmt(stmt.getLeftOp(), fr);
             body.getUnits().insertAfter(insertMe, stmt);
             logger.info("Inserting object with {} after {} for {}", insertMe, stmt, method);
+            madeChange = true;
         }
+         
+        return madeChange;
     }
 }
