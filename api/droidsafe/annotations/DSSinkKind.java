@@ -35,5 +35,6 @@ public enum DSSinkKind {
     DATABASE,
     RESOURCES,
     IO,
-    PROCESS
+    PROCESS,
+    CLIPBOARD
 }

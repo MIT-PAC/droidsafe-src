@@ -1070,5 +1070,13 @@ public void setHomeButtonEnabled(boolean enabled) { }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.513 -0500", hash_original_method = "1844047509BF7744FF58A8E07C1F4469", hash_generated_method = "11CB943795DCD9E1EF76C82D67A0983E")
     
 public Context getThemedContext() { return null; }
+    
+    public void setHomeActionContentDescription (int resId) {
+        
+    }   
+
+    public void setHomeActionContentDescription (CharSequence description) {
+        
+    }
 }
 

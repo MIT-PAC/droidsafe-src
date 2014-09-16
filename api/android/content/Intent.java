@@ -1798,8 +1798,8 @@ public Intent() {
         this();
         mClsComponent = cls;
         mComponent = new ComponentName(packageContext, cls.getName());
-        this.addTaint(packageContext.getTaint());
-        this.addTaint(cls.getTaint());
+        //this.addTaint(packageContext.getTaint());
+        //this.addTaint(cls.getTaint());
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageContext, cls);
     }
