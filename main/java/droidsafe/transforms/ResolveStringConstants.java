@@ -107,19 +107,28 @@ public class ResolveStringConstants extends BodyTransformer {
         for (SootClass clz : Scene.v().getClasses()) {
             if (clz.isApplicationClass() & clz.getShortName().startsWith("R$string")) {
                 //System.out.println(clz.getShortName());
-                for (SootField field : clz.getFields()) {
+                for (SootField field : clz.getFields()) {                    
                     Tag tag = field.getTag("IntegerConstantValueTag");
-                    Integer stringId = ((IntegerConstantValueTag)tag).getIntValue();
-                    String stringName = field.getName();
-                    stringIdToStringName.put(stringId, stringName);
+                    if (tag != null) {
+                        Integer stringId = ((IntegerConstantValueTag)tag).getIntValue();
+                        String stringName = field.getName();
+                        stringIdToStringName.put(stringId, stringName);
+                        //System.out.println("Field of R$String with tag: " + field);
+                    } else {
+                        logger.info("Field of R$String without tag: {}", field);
+                    }
                 }
             } else {
                 if(clz.getShortName().startsWith("R$array")) {
                     for (SootField field : clz.getFields()) {
                         Tag tag = field.getTag("IntegerConstantValueTag");
-                        Integer stringId = ((IntegerConstantValueTag)tag).getIntValue();
-                        String stringArrayName = field.getName();
-                        stringIdToStringName.put(stringId, stringArrayName);
+                        if (tag != null) {
+                            Integer stringId = ((IntegerConstantValueTag)tag).getIntValue();
+                            String stringArrayName = field.getName();
+                            stringIdToStringName.put(stringId, stringArrayName);
+                        } else {
+                            logger.info("Field of R$array without tag: {}", field);
+                        }
                     }
                 }
             }
@@ -161,7 +170,7 @@ public class ResolveStringConstants extends BodyTransformer {
             }
 
             InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
-            
+
             // we're at jimple's level so everything should be an AssignStmt      
             AssignStmt assignStmt = null;
             if(stmt instanceof AssignStmt) {
