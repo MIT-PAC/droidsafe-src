@@ -14836,6 +14836,265 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class string {
         @DSSafe(DSCat.SAFE_OTHERS)
         public string() {}
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.131 -0400", hash_original_field = "3BB7E6C09930556E3953A7AE9FDC2994", hash_generated_field = "41C9065BE9AAD29041E4CF13479F636D")
+
+        public static final int mediasize_chinese_om_dai_pa_kai=0x7f0405c4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.132 -0400", hash_original_field = "ACD35CBFFFAE4D43CA9A0CF2F329F440", hash_generated_field = "18C1AD89546C391288B17365B5647D2A")
+
+        public static final int mediasize_chinese_om_jurro_ku_kai=0x7f0405c5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.133 -0400", hash_original_field = "1FA7B0B43C51FFC6D519241E9E29A057", hash_generated_field = "3B213D06E909BA981BF94C6BEFC79443")
+
+        public static final int mediasize_chinese_om_pa_kai=0x7f0405c3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.134 -0400", hash_original_field = "D82CEAB05BF2A28E6C3C3C6972B6811A", hash_generated_field = "54116DE7FE1697F6EF19CF5A5DB746EF")
+
+        public static final int mediasize_chinese_prc_1=0x7f0405b8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.135 -0400", hash_original_field = "6B6327937EC2A0809516DB12DD09816A", hash_generated_field = "9770C739CFD0BE525A669A6FC8316E92")
+
+        public static final int mediasize_chinese_prc_10=0x7f0405c1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.136 -0400", hash_original_field = "880F67B3E91F46B19616FD0CFE4EB42C", hash_generated_field = "BAAC5C8008A080385B831BDE4F94C7EB")
+
+        public static final int mediasize_chinese_prc_16k=0x7f0405c2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.137 -0400", hash_original_field = "4EFF3C91B859C4A1D8C5917207AEB2E3", hash_generated_field = "E003BE3CEC82A64DA706F65DEFC54198")
+
+        public static final int mediasize_chinese_prc_2=0x7f0405b9;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.138 -0400", hash_original_field = "ECD7649B8E983504A393875A282F6021", hash_generated_field = "8F728AE79DC913A2FB071F6772888978")
+
+        public static final int mediasize_chinese_prc_3=0x7f0405ba;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.139 -0400", hash_original_field = "1E6B854F19C68FBE11DA479B214C10A5", hash_generated_field = "1A17DAC051415878870A93D360795E61")
+
+        public static final int mediasize_chinese_prc_4=0x7f0405bb;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.140 -0400", hash_original_field = "DB57C6E2FDE44093C00E11E2F4E20220", hash_generated_field = "B1CF1ECD46CB556CE49F2B393A2ED77C")
+
+        public static final int mediasize_chinese_prc_5=0x7f0405bc;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.141 -0400", hash_original_field = "BFE6B0708FE717139E4B52E189501FF0", hash_generated_field = "FAA982D03BDE44D2F6015C21BE863826")
+
+        public static final int mediasize_chinese_prc_6=0x7f0405bd;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.142 -0400", hash_original_field = "F070C77F22A04AFC20ABCC6A7F3BFAD8", hash_generated_field = "523276DD8FB89D2AED4A3E4F941564C9")
+
+        public static final int mediasize_chinese_prc_7=0x7f0405be;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.143 -0400", hash_original_field = "11B7B64E7FA9A4470A4959659D50256F", hash_generated_field = "389B0DA2E98F7ACA5611092E6F90BAFD")
+
+        public static final int mediasize_chinese_prc_8=0x7f0405bf;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.144 -0400", hash_original_field = "D8D5B2829E9E11A67D02C6F822DD4B32", hash_generated_field = "8DE26D34DA1A9CD51128FA51EE63A25B")
+
+        public static final int mediasize_chinese_prc_9=0x7f0405c0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.145 -0400", hash_original_field = "D491C4A2CD8C548FD5B00619469E75F3", hash_generated_field = "C2726DEE7A992CC981225FB794860BCB")
+
+        public static final int mediasize_chinese_roc_16k=0x7f0405b7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.146 -0400", hash_original_field = "58A35E9FB4FAB8E7443D28E8BF06004D", hash_generated_field = "BB564DFF27A8DF018FD8AE127EFE84C1")
+
+        public static final int mediasize_chinese_roc_8k=0x7f0405b6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.147 -0400", hash_original_field = "361C65ECC85D0BBD839055FE69034476", hash_generated_field = "C3D11C2B37D87E0304EDE6E77AF14B91")
+
+        public static final int mediasize_iso_a0=0x7f040589;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.148 -0400", hash_original_field = "2AA5A6356FCDD3785D2DB3E33C21C01A", hash_generated_field = "390706E4A7B0560D3FB9F153F477C3AB")
+
+        public static final int mediasize_iso_a1=0x7f04058a;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.149 -0400", hash_original_field = "F8E061C3266A5669D85F43ACCCC4EACD", hash_generated_field = "31B1F91563F2CF2438A6E26E2AD60949")
+
+        public static final int mediasize_iso_a10=0x7f040593;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.150 -0400", hash_original_field = "8283607E7CB9B2AD83FFB5F378C733EF", hash_generated_field = "AFCB64CA2FA44896766FD767834513E0")
+
+        public static final int mediasize_iso_a2=0x7f04058b;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.151 -0400", hash_original_field = "E55C70B35890DB48BE1DFEF335D5B964", hash_generated_field = "E24FAAC5B46C33DD5695B9C86332B522")
+
+        public static final int mediasize_iso_a3=0x7f04058c;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.152 -0400", hash_original_field = "8C173E6E20BF36389F7B390A895E2556", hash_generated_field = "C75ED62FCD259505F4716436EEB12CB3")
+
+        public static final int mediasize_iso_a4=0x7f04058d;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.153 -0400", hash_original_field = "C68CED3A782308525B0E77A336E860FA", hash_generated_field = "4D028432110E37830A89A49664294913")
+
+        public static final int mediasize_iso_a5=0x7f04058e;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.154 -0400", hash_original_field = "8C5D4FC83AA2AACE63E47EE01BF0A034", hash_generated_field = "31AE509C062C3EF58923D89E531DC051")
+
+        public static final int mediasize_iso_a6=0x7f04058f;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.155 -0400", hash_original_field = "31323CE0E7E14660F556A06D0FBB6530", hash_generated_field = "ED228191DFD5B743F58E3E4534D31909")
+
+        public static final int mediasize_iso_a7=0x7f040590;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.156 -0400", hash_original_field = "DFA6F93FCF095E9BE179986F3746FAE8", hash_generated_field = "932CA179FFD1E255AC3E9FE4611F9FD5")
+
+        public static final int mediasize_iso_a8=0x7f040591;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.157 -0400", hash_original_field = "7C1B7C972B954E4AE6198417AB2BB00F", hash_generated_field = "4FD75AC469D958EF881F6B0D933A69DE")
+
+        public static final int mediasize_iso_a9=0x7f040592;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.159 -0400", hash_original_field = "4323DAD1FFE5F3A470346D8AFAC0A94D", hash_generated_field = "B2D6EC7D69ECBAEF03DA6498973A1E92")
+
+        public static final int mediasize_iso_b0=0x7f040594;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.160 -0400", hash_original_field = "30218B9B1F0E01F7C9EDC3D594A41D61", hash_generated_field = "4F8648EF3406CFA6AEA304891E728587")
+
+        public static final int mediasize_iso_b1=0x7f040595;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.161 -0400", hash_original_field = "BF1DF3A50A0B9CCB2476651B658A3342", hash_generated_field = "B6703441F495036CDF95D3A031B3CA15")
+
+        public static final int mediasize_iso_b10=0x7f04059e;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.162 -0400", hash_original_field = "CEE766CDE507642C9EFC2CB00DCDB908", hash_generated_field = "0745D151839A58397836D200CBAE147D")
+
+        public static final int mediasize_iso_b2=0x7f040596;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.163 -0400", hash_original_field = "CF273D23C8D016533B3582CB60742B39", hash_generated_field = "4E63E2CA796717F320844F71BEF18A61")
+
+        public static final int mediasize_iso_b3=0x7f040597;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.164 -0400", hash_original_field = "39211CF267591DF13186CF26B46460A5", hash_generated_field = "B53C4870DCDCF522FA85E2500FFAA17F")
+
+        public static final int mediasize_iso_b4=0x7f040598;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.165 -0400", hash_original_field = "39B9B05F54B4378825E1FAD60703E6A9", hash_generated_field = "F825723965ABDB779E5CECE3FC0A203C")
+
+        public static final int mediasize_iso_b5=0x7f040599;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.166 -0400", hash_original_field = "EF88E3F534CCF97117751D962EC72AA0", hash_generated_field = "68057BF774A3D3F436B0E6BC977D6F96")
+
+        public static final int mediasize_iso_b6=0x7f04059a;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.166 -0400", hash_original_field = "FF7F39F5746B5BCAABD83E6773DC67F1", hash_generated_field = "A6949BFF3D74969A7AB518844E54153D")
+
+        public static final int mediasize_iso_b7=0x7f04059b;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.168 -0400", hash_original_field = "8842DA4C859A9682D3A1C5FA3C6B5805", hash_generated_field = "F87C6D974CF1F1559FE9C794C37D6EC0")
+
+        public static final int mediasize_iso_b8=0x7f04059c;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.169 -0400", hash_original_field = "9A0B29F40EB3866C4E0377EC39342C95", hash_generated_field = "873DE58B5D0E26E6B6A58CC097835CB5")
+
+        public static final int mediasize_iso_b9=0x7f04059d;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.170 -0400", hash_original_field = "E3491F4AE5F0FD79AC2C553EE3EB4C4B", hash_generated_field = "0B8774F1B9AC800B1FF47BDFCA8B2A3D")
+
+        public static final int mediasize_iso_c0=0x7f04059f;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.171 -0400", hash_original_field = "739BC1820993E98FD8027F68365C0591", hash_generated_field = "25F7ECA1B1E145CFDAE41247D30B8AA4")
+
+        public static final int mediasize_iso_c1=0x7f0405a0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.172 -0400", hash_original_field = "4A7228557AEB090A4BC163C23EE6A5FF", hash_generated_field = "22DF4DB9185123F393578FB2AA304A04")
+
+        public static final int mediasize_iso_c10=0x7f0405a9;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.173 -0400", hash_original_field = "13068FF450FFB387255A50483B920B82", hash_generated_field = "EF61B3E283D4F2B04D1912A59FAB09CA")
+
+        public static final int mediasize_iso_c2=0x7f0405a1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.174 -0400", hash_original_field = "08C14F13D6DD568B8854FBCD56B0D40E", hash_generated_field = "57A4FDE1468131D539BC6EC697F963E3")
+
+        public static final int mediasize_iso_c3=0x7f0405a2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.175 -0400", hash_original_field = "A4E8927110AEE2FC8FDEDB56F2A3DF1B", hash_generated_field = "D2162E55E9E94A711AFE764CB8904D64")
+
+        public static final int mediasize_iso_c4=0x7f0405a3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.176 -0400", hash_original_field = "12A7A25EF9674495A159BDFCBAAB6506", hash_generated_field = "175E49118E8B1E95ACFC3D87BAA8BDA4")
+
+        public static final int mediasize_iso_c5=0x7f0405a4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.177 -0400", hash_original_field = "78757F719B818DF689535E982DB230AB", hash_generated_field = "685C934518627DC6D2AC072CBED3DC6F")
+
+        public static final int mediasize_iso_c6=0x7f0405a5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.179 -0400", hash_original_field = "2DC2D8C6A2A5C10D8BDC96B6261E524E", hash_generated_field = "17AF215D2CA28013A1E5A0D3445FDCD5")
+
+        public static final int mediasize_iso_c7=0x7f0405a6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.180 -0400", hash_original_field = "6826A2D896FC9459DE78AC2AA954BA66", hash_generated_field = "8D731AA098EF2A735F7DA068DE056AEE")
+
+        public static final int mediasize_iso_c8=0x7f0405a7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.181 -0400", hash_original_field = "C452CA64E8797E6E0CC9B74743930ADA", hash_generated_field = "0DEDEF28C09FE807713B8D8C882632FA")
+
+        public static final int mediasize_iso_c9=0x7f0405a8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.182 -0400", hash_original_field = "D0BC537BB62728CFB4BA3CEE9D8BB2D5", hash_generated_field = "45B44253A8892DD0F8787231591E5919")
+
+        public static final int mediasize_japanese_chou2=0x7f0405d4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.183 -0400", hash_original_field = "4EB80E5430CDE4086BABD0D86A1352E3", hash_generated_field = "9075E5BD7C1F069B08A74F2365C77B30")
+
+        public static final int mediasize_japanese_chou3=0x7f0405d3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.184 -0400", hash_original_field = "C2D8CD8D2562A5BD501DC7D4DE88711E", hash_generated_field = "55CA3EB8AB09499C1052BBC6373E6548")
+
+        public static final int mediasize_japanese_chou4=0x7f0405d2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.185 -0400", hash_original_field = "4B123F051F3461CFF9CABE04A9F7039E", hash_generated_field = "E750D1205044777C9725869FE1556258")
+
+        public static final int mediasize_japanese_hagaki=0x7f0405d5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.186 -0400", hash_original_field = "4E1947C58E4293EEB8B4FAB062A5726C", hash_generated_field = "B92DDC5667CDB33DCB7C315197AF7DE0")
+
+        public static final int mediasize_japanese_jis_b0=0x7f0405d0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.187 -0400", hash_original_field = "D09AE22895394F763C8EBF4E723E1148", hash_generated_field = "C288B4B1CC95710E2AA83AE7C6A342D8")
+
+        public static final int mediasize_japanese_jis_b1=0x7f0405cf;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.188 -0400", hash_original_field = "C7EC8D7F595F4545BDA8FB3AF04D9E35", hash_generated_field = "60E048E1C9AF602715D5B7DCDA51DEED")
+
+        public static final int mediasize_japanese_jis_b10=0x7f0405c6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.189 -0400", hash_original_field = "0EF4578CDA0C3A35787D5E3FAEB675C0", hash_generated_field = "B96B680D97D9FD9D6BAC60D52C398D16")
+
+        public static final int mediasize_japanese_jis_b2=0x7f0405ce;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.190 -0400", hash_original_field = "4DAB3DD40D9FF630CA425274B208014E", hash_generated_field = "CB88B19DA2620A3F21495C366C183840")
+
+        public static final int mediasize_japanese_jis_b3=0x7f0405cd;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.191 -0400", hash_original_field = "576D8F3556A7C07A9667C8B16CA2017D", hash_generated_field = "3C98B5E76F0E5C90A454D4A015E9333A")
+
+        public static final int mediasize_japanese_jis_b4=0x7f0405cc;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.192 -0400", hash_original_field = "A72894257517ECEB25BDA69DAD8FB743", hash_generated_field = "3CB8023B8AE305937FA3A888FE032DE9")
+
+        public static final int mediasize_japanese_jis_b5=0x7f0405cb;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.193 -0400", hash_original_field = "2E192FB5CF8F57A24390FAE6F969ECC5", hash_generated_field = "0BF0A338730F0A092BC12187CD860E73")
+
+        public static final int mediasize_japanese_jis_b6=0x7f0405ca;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.194 -0400", hash_original_field = "FD53A05A270CA783E15E5A3C7D90ABCD", hash_generated_field = "AA759602FAC080C1BA08DDCE5F4E5B10")
+
+        public static final int mediasize_japanese_jis_b7=0x7f0405c9;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.195 -0400", hash_original_field = "BD49FFF520F9DC6F0FB291EBB125B6EA", hash_generated_field = "AA7FB26421832C15585E91BD25D76599")
+
+        public static final int mediasize_japanese_jis_b8=0x7f0405c8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.196 -0400", hash_original_field = "DFAD3882337780C8B2A3A8913E9F4DB5", hash_generated_field = "C2120A0743DBC720D3F17912E8703828")
+
+        public static final int mediasize_japanese_jis_b9=0x7f0405c7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.197 -0400", hash_original_field = "E48CF69DD3CA73924017971FC42C5B13", hash_generated_field = "89437F8A9D6D4F30F101AED52400B21E")
+
+        public static final int mediasize_japanese_jis_exec=0x7f0405d1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.198 -0400", hash_original_field = "2950D5C4F835F8DB8DE40E9713A3C069", hash_generated_field = "D5307BFCAFA73841DC29D4CC7537A1B6")
+
+        public static final int mediasize_japanese_kahu=0x7f0405d7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.199 -0400", hash_original_field = "2ED17CD153339E558E09DFA147C24AD4", hash_generated_field = "CDA8FF8F35E98BACD94A17EBB316A2B0")
+
+        public static final int mediasize_japanese_kaku2=0x7f0405d8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.200 -0400", hash_original_field = "19B2CA1A951DB38C1F09D517322A7FFC", hash_generated_field = "B3C9EB422B45D170D86B3A4EB8019278")
+
+        public static final int mediasize_japanese_oufuku=0x7f0405d6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.201 -0400", hash_original_field = "D9CF19441D279BF90D0AF61437861716", hash_generated_field = "EB8E5C463EE2361668CFE4069A08A69E")
+
+        public static final int mediasize_japanese_you4=0x7f0405d9;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.202 -0400", hash_original_field = "A0C306696FD028910A5D943C26EAF6E7", hash_generated_field = "7D332EC5291E59BDF277B56C86E3BE9A")
+
+        public static final int mediasize_na_foolscap=0x7f0405b5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.203 -0400", hash_original_field = "3CACC57B88679FD1DB24606DB4E363AB", hash_generated_field = "EEFA667609D1ADA9928E77CE543C768A")
+
+        public static final int mediasize_na_gvrnmt_letter=0x7f0405ab;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.204 -0400", hash_original_field = "8825DF5E40E4C6726ABFAEFBFFEE3812", hash_generated_field = "2DF31CD01583D78FE555C3A2B11FEAB7")
+
+        public static final int mediasize_na_index_3x5=0x7f0405b0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.206 -0400", hash_original_field = "9DDA74D5A75B66651B05FA9549C744E7", hash_generated_field = "6837EFE7FB09690E1CAB2C1B1C73EFBB")
+
+        public static final int mediasize_na_index_4x6=0x7f0405b1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.207 -0400", hash_original_field = "D638D7EE586D9A77A6EC0F6362306DD0", hash_generated_field = "894ACA299B791B3E64164F5964EBFD5C")
+
+        public static final int mediasize_na_index_5x8=0x7f0405b2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.208 -0400", hash_original_field = "B64F46E5C9B06F94B758AED0AD189CB8", hash_generated_field = "BC6DC7713042B25066B8D840B0AFAE39")
+
+        public static final int mediasize_na_junior_legal=0x7f0405ad;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.209 -0400", hash_original_field = "320D7A5BB81A0B836D00815C9ED92248", hash_generated_field = "2ACB89D6698D16E39D459D9BFAC89EAE")
+
+        public static final int mediasize_na_ledger=0x7f0405ae;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.210 -0400", hash_original_field = "A66317E20EFE491FF06290B58196C02D", hash_generated_field = "6E65AF3BA69691E882FD5DFAB53F2E45")
+
+        public static final int mediasize_na_legal=0x7f0405ac;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.211 -0400", hash_original_field = "F330F2CD858676C9FF412E223DD34F1D", hash_generated_field = "39C5607FD092375864686842930ABE4A")
+
+        public static final int mediasize_na_letter=0x7f0405aa;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.212 -0400", hash_original_field = "1B184874B824755A48832F4BB464D54C", hash_generated_field = "CECDAFE9B05DC647B55B2F47B72E2A8A")
+
+        public static final int mediasize_na_monarch=0x7f0405b3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.213 -0400", hash_original_field = "CCBCC969162D0307A31951D09BE0801C", hash_generated_field = "EB07684BCE62D40DD2F8A1C27D03E839")
+
+        public static final int mediasize_na_quarto=0x7f0405b4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.214 -0400", hash_original_field = "A92147E257E9F81614D90ED0CE5C7C97", hash_generated_field = "29AB3B3B6378074BB53E4C4AF0625CDA")
+
+        public static final int mediasize_na_tabloid=0x7f0405af;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.215 -0400", hash_original_field = "8E2DAD34BCD9F2A7AC8EEA1FBEDCC519", hash_generated_field = "A6526A7E64552DCAC29D73F2A155A4AB")
+
+        public static final int mediasize_unknown_landscape=0x7f0405db;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.216 -0400", hash_original_field = "CA3A75F94EDAE9ED6D59261E7B337443", hash_generated_field = "22F3D5C92F958AB12250EE0E6D76584A")
+
+        public static final int mediasize_unknown_portrait=0x7f0405da;
+
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.527 -0400", hash_original_field = "185D0AC9D428DBB52D3AB7CE8EEE589C", hash_generated_field = "DD258178EFCB866DE1125DB40606C90B")
+
+        public static final int write_fail_reason_cancelled=0x7f0405dc;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.528 -0400", hash_original_field = "CB2E985A40E76C9EE1FFECB21ACEB6E9", hash_generated_field = "67A094A01C97579FC34B9525C6890C3C")
+
+        public static final int write_fail_reason_cannot_write=0x7f0405dd;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.529 -0400", hash_original_field = "FF556FE08B03A742BDB6D85562ACB628", hash_generated_field = "7B766A0F498468D2860AE78C3CE390C2")
+
+
         /**  Displayed as the title for a success/failure report enabling/disabling call barring. 
          */
         public static final int BaMmi=0x010400d6;
@@ -19631,6 +19890,19 @@ zh-CN
     public static final class styleable {
         @DSSafe(DSCat.SAFE_OTHERS)
         public styleable() {}
+     
+        public static final int[] PrintService = {
+            0x7f010225, 0x7f0103e6, 0x7f0103e7, 0x7f0103f1
+        };
+
+        public static final int PrintService_addPrintersActivity = 1;
+
+        public static final int PrintService_advancedPrintOptionsActivity = 3;
+
+        public static final int PrintService_settingsActivity = 0;
+
+        public static final int PrintService_vendor = 2;
+
         /** Attributes that can be used with a AbsListView.
            <p>Includes the following attributes:</p>
            <table>

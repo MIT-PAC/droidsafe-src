@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.lang.reflect.Field;
 
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
@@ -1324,6 +1325,85 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    /** @hide */    
+    public final void writeParcelableCreator(Parcelable p) {
+        String name = p.getClass().getName();
+        writeString(name);
+    }
+
+
+    
+    /** @hide */
+    public final <T extends Parcelable> T readCreator(Parcelable.Creator<T> creator,
+            ClassLoader loader) {
+        if (creator instanceof Parcelable.ClassLoaderCreator<?>) {
+            return ((Parcelable.ClassLoaderCreator<T>)creator).createFromParcel(this, loader);
+        }
+        return creator.createFromParcel(this);
+    }
+
+
+    /** @hide */
+    public final <T extends Parcelable> Parcelable.Creator<T> readParcelableCreator(
+            ClassLoader loader) {
+        String name = readString();
+        if (name == null) {
+            return null;
+        }
+        Parcelable.Creator<T> creator;
+        synchronized (mCreators) {
+            HashMap<String,Parcelable.Creator> map = mCreators.get(loader);
+            if (map == null) {
+                map = new HashMap<String,Parcelable.Creator>();
+                mCreators.put(loader, map);
+            }
+            creator = map.get(name);
+            if (creator == null) {
+                try {
+                    Class c = loader == null ?
+                        Class.forName(name) : Class.forName(name, true, loader);
+                    Field f = c.getField("CREATOR");
+                    creator = (Parcelable.Creator)f.get(null);
+                }
+                catch (IllegalAccessException e) {
+                    Log.e(TAG, "Illegal access when unmarshalling: "
+                                        + name, e);
+                    throw new BadParcelableException(
+                            "IllegalAccessException when unmarshalling: " + name);
+                }
+                catch (ClassNotFoundException e) {
+                    Log.e(TAG, "Class not found when unmarshalling: "
+                                        + name, e);
+                    throw new BadParcelableException(
+                            "ClassNotFoundException when unmarshalling: " + name);
+                }
+                catch (ClassCastException e) {
+                    throw new BadParcelableException("Parcelable protocol requires a "
+                                        + "Parcelable.Creator object called "
+                                        + " CREATOR on class " + name);
+                }
+                catch (NoSuchFieldException e) {
+                    throw new BadParcelableException("Parcelable protocol requires a "
+                                        + "Parcelable.Creator object called "
+                                        + " CREATOR on class " + name);
+                }
+                catch (NullPointerException e) {
+                    throw new BadParcelableException("Parcelable protocol requires "
+                            + "the CREATOR object to be static on class " + name);
+                }
+                if (creator == null) {
+                    throw new BadParcelableException("Parcelable protocol requires a "
+                                        + "Parcelable.Creator object called "
+                                        + " CREATOR on class " + name);
+                }
+
+                map.put(name, creator);
+            }
+        }
+
+        return creator;
+    }
+
     @DSComment("Data serialization/deserialization")
     @DSSpec(DSCat.SERIALIZATION)
     public final void writeParcelable(Parcelable p, int parcelableFlags){

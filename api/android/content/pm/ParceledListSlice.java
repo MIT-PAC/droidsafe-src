@@ -1,6 +1,11 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.util.Log;
+import java.util.ArrayList;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
@@ -76,11 +81,15 @@ private ParceledListSlice(Parcel p, int numItems, boolean lastSlice) {
         mIsLastSlice = lastSlice;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.741 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.623 -0400", hash_original_method = "F26677879E4C46FCAE19ABCBFB4E24E6", hash_generated_method = "CE2866EEF927AE369C7C8151A1FC6043")
     
 @Override
     public int describeContents() {
-        return 0;
+        int contents = 0;
+        for (int i=0; i<mList.size(); i++) {
+            contents |= mList.get(i).describeContents();
+        }
+        return contents;
     }
 
     /**
@@ -88,22 +97,51 @@ private ParceledListSlice(Parcel p, int numItems, boolean lastSlice) {
      * and should not be used anymore. This is so we can pass this to a Binder
      * where we won't have a chance to call recycle on this.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.743 -0500", hash_original_method = "757A8AA414BA94194408A3738A93F76D", hash_generated_method = "43738AC693422FC0350777966F6D5149")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.626 -0400", hash_original_method = "74A4BECDA9C488959F6AA6625D981FD8", hash_generated_method = "D089205EB00DB7A060AC70284C038F5C")
     
 @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(mNumItems);
-        dest.writeInt(mIsLastSlice ? 1 : 0);
-
-        if (mNumItems > 0) {
-            final int parcelSize = mParcel.dataSize();
-            dest.writeInt(parcelSize);
-            dest.appendFrom(mParcel, 0, parcelSize);
+        final int N = mList.size();
+        final int callFlags = flags;
+        dest.writeInt(N);
+        if (DEBUG) Log.d(TAG, "Writing " + N + " items");
+        if (N > 0) {
+            dest.writeParcelableCreator(mList.get(0));
+            int i = 0;
+            while (i < N && dest.dataSize() < MAX_FIRST_IPC_SIZE) {
+                dest.writeInt(1);
+                mList.get(i).writeToParcel(dest, callFlags);
+                if (DEBUG) Log.d(TAG, "Wrote inline #" + i + ": " + mList.get(i));
+                i++;
+            }
+            if (i < N) {
+                dest.writeInt(0);
+                Binder retriever = new Binder() {
+                    @Override
+                    protected boolean onTransact(int code, Parcel data, Parcel reply, int flags)
+                            throws RemoteException {
+                        if (code != FIRST_CALL_TRANSACTION) {
+                            return super.onTransact(code, data, reply, flags);
+                        }
+                        int i = data.readInt();
+                        if (DEBUG) Log.d(TAG, "Writing more @" + i + " of " + N);
+                        while (i < N && reply.dataSize() < MAX_IPC_SIZE) {
+                            reply.writeInt(1);
+                            mList.get(i).writeToParcel(reply, callFlags);
+                            if (DEBUG) Log.d(TAG, "Wrote extra #" + i + ": " + mList.get(i));
+                            i++;
+                        }
+                        if (i < N) {
+                            if (DEBUG) Log.d(TAG, "Breaking @" + i + " of " + N);
+                            reply.writeInt(0);
+                        }
+                        return true;
+                    }
+                };
+                if (DEBUG) Log.d(TAG, "Breaking @" + i + " of " + N + ": retriever=" + retriever);
+                dest.writeStrongBinder(retriever);
+            }
         }
-
-        mNumItems = 0;
-        mParcel.recycle();
-        mParcel = null;
     }
 
     /**
@@ -201,5 +239,75 @@ public boolean isLastSlice() {
             return new ParceledListSlice[size];
         }
     
-}
+
+
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.619 -0400", hash_original_field = "BD5B489354E05FBBE774FA103ACAFC26", hash_generated_field = "082CE64FD4689039372A2D1255C37CC5")
+
+
+    private  List<T> mList;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.621 -0400", hash_original_method = "F734F687479909C039B4CE55836EDBA8", hash_generated_method = "AE15C647DA7C1BDF3023D909C73BD407")
+    
+private ParceledListSlice(Parcel p, ClassLoader loader) {
+        final int N = p.readInt();
+        mList = new ArrayList<T>(N);
+        if (DEBUG) Log.d(TAG, "Retrieving " + N + " items");
+        if (N <= 0) {
+            return;
+        }
+        Parcelable.Creator<T> creator = p.readParcelableCreator(loader);
+        int i = 0;
+        while (i < N) {
+            if (p.readInt() == 0) {
+                break;
+            }
+            mList.add(p.readCreator(creator, loader));
+            if (DEBUG) Log.d(TAG, "Read inline #" + i + ": " + mList.get(mList.size()-1));
+            i++;
+        }
+        if (i >= N) {
+            return;
+        }
+        final IBinder retriever = p.readStrongBinder();
+        while (i < N) {
+            if (DEBUG) Log.d(TAG, "Reading more @" + i + " of " + N + ": retriever=" + retriever);
+            Parcel data = Parcel.obtain();
+            Parcel reply = Parcel.obtain();
+            data.writeInt(i);
+            try {
+                retriever.transact(IBinder.FIRST_CALL_TRANSACTION, data, reply, 0);
+            } catch (RemoteException e) {
+                Log.w(TAG, "Failure retrieving array; only received " + i + " of " + N, e);
+                return;
+            }
+            while (i < N && reply.readInt() != 0) {
+                mList.add(reply.readCreator(creator, loader));
+                if (DEBUG) Log.d(TAG, "Read extra #" + i + ": " + mList.get(mList.size()-1));
+                i++;
+            }
+            reply.recycle();
+            data.recycle();
+        }
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.618 -0400", hash_original_field = "D557A386B863E26A66A12330F7D63508", hash_generated_field = "5EEEBE5F585908618BB0E77053475C25")
+
+    private static final int MAX_FIRST_IPC_SIZE = MAX_IPC_SIZE / 2;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.620 -0400", hash_original_method = "E8E4B6175D074D54864FA1905D194E54", hash_generated_method = "B8DDC7B32CAD86262A00217FD8250656")
+    
+public ParceledListSlice(List<T> list) {
+        mList = list;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.622 -0400", hash_original_method = "2C745104CD070C50FA15F4595506F1D7", hash_generated_method = "B48DBDB53AE2568AEA1BFED4123B4238")
+    
+public List<T> getList() {
+        return mList;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.615 -0400", hash_original_field = "AE0598547B3757687FA8B49A6E0DD4B2", hash_generated_field = "AEBC786FDA170BC7613EC32BE7E7A774")
+
+    private static String TAG = "ParceledListSlice";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.616 -0400", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+
+    private static boolean DEBUG = false;}
 

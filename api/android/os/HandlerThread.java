@@ -111,6 +111,15 @@ public boolean quit() {
         }
         return false;
     }
+
+
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)   
+    public boolean quitSafely() {
+            return true;
+    }
+
+
     
     /**
      * Returns the identifier of this thread. See Process.myTid().
