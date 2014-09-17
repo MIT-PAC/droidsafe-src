@@ -918,5 +918,31 @@ private float getValue(int propertyConstant) {
         }
         return 0;
     }
+
+    //added by ds for api 19 compat
+    @DSSafe
+    public TimeInterpolator getInterpolator() {
+        return mInterpolator;
+    }
+    
+    @DSSafe
+    @DSVerified
+    public ViewPropertyAnimator withEndAction (Runnable runnable) {
+        runnable.run();
+        return this;
+    }
+    
+    @DSSafe
+    @DSVerified
+    public ViewPropertyAnimator withStartAction(Runnable runnable) {
+        runnable.run();
+        return this;
+    }
+
+    @DSSafe
+    @DSVerified
+    public ViewPropertyAnimator withLayer() { 
+        return this;
+    }
 }
 

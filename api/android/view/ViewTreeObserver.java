@@ -736,6 +736,10 @@ void set(InternalInsetsInfo other) {
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onComputeInternalInsets(InternalInsetsInfo inoutInfo);
     }
-    
+
+    //added for api 19 compat does nothing
+    @DSSafe
+    @DSVerified
+    public void removeOnWindowFocusChangeListener (ViewTreeObserver.OnWindowFocusChangeListener victim) {}
 }
 

@@ -137,6 +137,33 @@ public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
         @DSSpec(DSCat.ABSTRACT_METHOD)
         public void onSubUiVisibilityChanged(boolean isVisible);
     }
+
+    private VisibilityListener mVisibilityListener; 
+
+     /**
+     * Listens to changes in visibility as reported by {@link ActionProvider#refreshVisibility()}.
+     *
+     * @see ActionProvider#overridesItemVisibility()
+     * @see ActionProvider#isVisible()
+     */
+    public interface VisibilityListener {
+        public void onActionProviderVisibilityChanged(boolean isVisible);
+    }
+
+
+    /**
+     * Set a listener to be notified when this ActionProvider's overridden visibility changes.
+     * This should only be used by MenuItem implementations.
+     *
+     * @param listener listener to set
+     */
+    @DSSafe(DSCat.CALLBACK_REG)
+    @DSVerified
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:19:32.574 -0400", hash_original_method = "5D18E0B68934B628D4AFDEA7D97A0327", hash_generated_method = "A731F8CDD46E7C2E87E8ECC9B681217C")
     
+    public void setVisibilityListener(VisibilityListener listener) {
+        mVisibilityListener = listener;
+        listener.onActionProviderVisibilityChanged(true);
+    }
 }
 
