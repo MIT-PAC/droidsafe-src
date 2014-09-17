@@ -16,28 +16,20 @@
 
 package android.support.v4.content;
 
-import java.io.File;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
-/**
- * Implementation of context compatibility that can call Honeycomb APIs.
- */
-class ContextCompatHoneycomb {
+class ContextCompatJellybean {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:33.068 -0500", hash_original_method = "629B555D256106BD45BE0BBC53CBB391", hash_generated_method = "5E3FAE56E2C6DF50D8907A1F0ED80712")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.384 -0400", hash_original_method = "F6FCC0565F4A19B5E5C9443658BA910F", hash_generated_method = "54787197071EEB2F1794447E9C5AC238")
     
-static void startActivities(Context context, Intent[] intents) {
+public static void startActivities(Context context, Intent[] intents, Bundle options) {
+    	intents[0].addTaint(options.getTaint());
         context.startActivities(intents);
     }
 
-
-
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.357 -0400", hash_original_method = "1E32EC37BEBA248EE7951C1566149DD4", hash_generated_method = "9028D49E0C10FE4880B2CB55FA201E53")
-    
-public static File getObbDir(Context context) {
-        return context.getObbDir();
-    }}
+}

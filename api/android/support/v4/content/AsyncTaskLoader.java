@@ -159,19 +159,20 @@ void executePendingTask() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.806 -0500", hash_original_method = "BF74607E5A027725B948953035D3427E", hash_generated_method = "BF74607E5A027725B948953035D3427E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:01:59.744 -0400", hash_original_method = "6F889D2313C3AF179C915052A4D42116", hash_generated_method = "6F889D2313C3AF179C915052A4D42116")
     
 void dispatchOnCancelled(LoadTask task, D data) {
         onCanceled(data);
         if (mCancellingTask == task) {
             if (DEBUG) Log.v(TAG, "Cancelled task is now canceled!");
+            //rollbackContentChanged();
             mLastLoadCompleteTime = SystemClock.uptimeMillis();
             mCancellingTask = null;
             executePendingTask();
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.809 -0500", hash_original_method = "A2F1D76D2090E39A2E66817DE2784754", hash_generated_method = "F14E32C55A6E08F1B9DB7221FD20E610")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:01:59.753 -0400", hash_original_method = "60255F832A19B4AE733DAA83200BB399", hash_generated_method = "09E167AE34BECEDE706ED8B919BE4945")
     
 void dispatchOnLoadComplete(LoadTask task, D data) {
         if (mTask != task) {
@@ -182,6 +183,7 @@ void dispatchOnLoadComplete(LoadTask task, D data) {
                 // This cursor has been abandoned; just cancel the new data.
                 onCanceled(data);
             } else {
+                //commitContentChanged();
                 mLastLoadCompleteTime = SystemClock.uptimeMillis();
                 mTask = null;
                 if (DEBUG) Log.v(TAG, "Delivering result");
