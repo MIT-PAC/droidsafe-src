@@ -19,10 +19,12 @@ package android.support.v4.view.accessibility;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
-import java.util.List;
-
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Helper for accessing {@link android.view.accessibility.AccessibilityNodeProvider}
@@ -35,30 +37,126 @@ public class AccessibilityNodeProviderCompat {
     }
 
     static class AccessibilityNodeProviderStubImpl implements AccessibilityNodeProviderImpl {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.756 -0500", hash_original_method = "CBBBD2C21CAF1A046E49597CB8D9B3E3", hash_generated_method = "1E91848D6231480003DD02A8A2E3D59B")
-        
-@Override
+        @Override
         public Object newAccessibilityNodeProviderBridge(AccessibilityNodeProviderCompat compat) {
             return null;
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.761 -0500", hash_original_field = "48629E1EF59C7AC3C27FEDA4F322ABF0", hash_generated_field = "CE1E18E5EA07069A732C13416453E5C0")
+
+    static class AccessibilityNodeProviderJellyBeanImpl extends AccessibilityNodeProviderStubImpl {
+        @Override
+        public Object newAccessibilityNodeProviderBridge(
+                final AccessibilityNodeProviderCompat compat) {
+            return AccessibilityNodeProviderCompatJellyBean.newAccessibilityNodeProviderBridge(
+                    new AccessibilityNodeProviderCompatJellyBean.AccessibilityNodeInfoBridge() {
+                        @Override
+                        public boolean performAction(int virtualViewId, int action,
+                                Bundle arguments) {
+                            return compat.performAction(virtualViewId, action, arguments);
+                        }
+
+                        @Override
+                        public List<Object> findAccessibilityNodeInfosByText(
+                                            String text, int virtualViewId) {
+                            List<AccessibilityNodeInfoCompat> compatInfos =
+                                compat.findAccessibilityNodeInfosByText(text, virtualViewId);
+                            List<Object> infos = new ArrayList<Object>();
+                            final int infoCount = compatInfos.size();
+                            for (int i = 0; i < infoCount; i++) {
+                                AccessibilityNodeInfoCompat infoCompat = compatInfos.get(i);
+                                infos.add(infoCompat.getInfo());
+                            }
+                            return infos;
+                        }
+
+                        @Override
+                        public Object createAccessibilityNodeInfo(
+                                int virtualViewId) {
+                            final AccessibilityNodeInfoCompat compatInfo = compat
+                                    .createAccessibilityNodeInfo(virtualViewId);
+                            if (compatInfo == null) {
+                                return null;
+                            } else {
+                                return compatInfo.getInfo();
+                            }
+                        }
+                    });
+        }
+    }
+
+    static class AccessibilityNodeProviderKitKatImpl extends AccessibilityNodeProviderStubImpl {
+        @Override
+        public Object newAccessibilityNodeProviderBridge(
+                final AccessibilityNodeProviderCompat compat) {
+            return AccessibilityNodeProviderCompatKitKat.newAccessibilityNodeProviderBridge(
+                    new AccessibilityNodeProviderCompatKitKat.AccessibilityNodeInfoBridge() {
+                        @Override
+                        public boolean performAction(
+                                int virtualViewId, int action, Bundle arguments) {
+                            return compat.performAction(virtualViewId, action, arguments);
+                        }
+
+                        @Override
+                        public List<Object> findAccessibilityNodeInfosByText(
+                                String text, int virtualViewId) {
+                            List<AccessibilityNodeInfoCompat> compatInfos =
+                                    compat.findAccessibilityNodeInfosByText(text, virtualViewId);
+                            List<Object> infos = new ArrayList<Object>();
+                            final int infoCount = compatInfos.size();
+                            for (int i = 0; i < infoCount; i++) {
+                                AccessibilityNodeInfoCompat infoCompat = compatInfos.get(i);
+                                infos.add(infoCompat.getInfo());
+                            }
+                            return infos;
+                        }
+
+                        @Override
+                        public Object createAccessibilityNodeInfo(int virtualViewId) {
+                            final AccessibilityNodeInfoCompat compatInfo =
+                                    compat.createAccessibilityNodeInfo(virtualViewId);
+                            if (compatInfo == null) {
+                                return null;
+                            } else {
+                                return compatInfo.getInfo();
+                            }
+                        }
+
+                        @Override
+                        public Object findFocus(int focus) {
+                            final AccessibilityNodeInfoCompat compatInfo = compat.findFocus(focus);
+                            if (compatInfo == null) {
+                                return null;
+                            } else {
+                                return compatInfo.getInfo();
+                            }
+                        }
+                    });
+        }
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.618 -0400", hash_original_field = "48629E1EF59C7AC3C27FEDA4F322ABF0", hash_generated_field = "CE1E18E5EA07069A732C13416453E5C0")
+
 
     private static  AccessibilityNodeProviderImpl IMPL;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.764 -0500", hash_original_field = "CE4A25A5FCA68A13DF0B738C2E4F0931", hash_generated_field = "97E0C8F5D54B0146976916141F3ABC8E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.620 -0400", hash_original_field = "CE4A25A5FCA68A13DF0B738C2E4F0931", hash_generated_field = "97E0C8F5D54B0146976916141F3ABC8E")
+
 
     private  Object mProvider;
 
     static {
-    	IMPL = new AccessibilityNodeProviderStubImpl();
+        if (Build.VERSION.SDK_INT >= 19) { // KitKat
+            IMPL = new AccessibilityNodeProviderKitKatImpl();
+        } else if (Build.VERSION.SDK_INT >= 16) { // JellyBean
+            IMPL = new AccessibilityNodeProviderJellyBeanImpl();
+        } else {
+            IMPL = new AccessibilityNodeProviderStubImpl();
+        }
     }
 
     /**
      * Creates a new instance.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.769 -0500", hash_original_method = "91BF216ED8536154020FF4A2846E1987", hash_generated_method = "AA9708B2E188F2186761F4411A283FC5")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.624 -0400", hash_original_method = "91BF216ED8536154020FF4A2846E1987", hash_generated_method = "AA9708B2E188F2186761F4411A283FC5")
+        
 public AccessibilityNodeProviderCompat() {
         mProvider = IMPL.newAccessibilityNodeProviderBridge(this);
     }
@@ -69,8 +167,8 @@ public AccessibilityNodeProviderCompat() {
      *
      * @param provider The provider.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.772 -0500", hash_original_method = "F12C0D637A0C2267486A3DB09B5FD1DD", hash_generated_method = "D28D317FCBAD330B88B7F6A42C312AA9")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.627 -0400", hash_original_method = "F12C0D637A0C2267486A3DB09B5FD1DD", hash_generated_method = "D28D317FCBAD330B88B7F6A42C312AA9")
+        
 public AccessibilityNodeProviderCompat(Object provider) {
         mProvider = provider;
     }
@@ -78,9 +176,8 @@ public AccessibilityNodeProviderCompat(Object provider) {
     /**
      * @return The wrapped {@link android.view.accessibility.AccessibilityNodeProvider}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.774 -0500", hash_original_method = "1A780E2925A8445EDC44EDD31624C667", hash_generated_method = "19AF098890749E7BDD93C8A964CD775E")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.629 -0400", hash_original_method = "1A780E2925A8445EDC44EDD31624C667", hash_generated_method = "19AF098890749E7BDD93C8A964CD775E")
+        
 public Object getProvider() {
         return mProvider;
     }
@@ -107,8 +204,8 @@ public Object getProvider() {
      *
      * @see AccessibilityNodeInfoCompat
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.776 -0500", hash_original_method = "DB5C1904AB5A686019BFA23425D0697D", hash_generated_method = "693BE92A77E07C3BB3E8D7299DD58291")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.632 -0400", hash_original_method = "DB5C1904AB5A686019BFA23425D0697D", hash_generated_method = "693BE92A77E07C3BB3E8D7299DD58291")
+        
 public AccessibilityNodeInfoCompat createAccessibilityNodeInfo(int virtualViewId) {
         return null;
     }
@@ -126,8 +223,8 @@ public AccessibilityNodeInfoCompat createAccessibilityNodeInfo(int virtualViewId
      * @see #createAccessibilityNodeInfo(int)
      * @see AccessibilityNodeInfoCompat
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.780 -0500", hash_original_method = "7E74F335A2D5DD213B9A800F16F5C8B8", hash_generated_method = "923DF7BCA2BC291182E703183FAAB2BD")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.635 -0400", hash_original_method = "7E74F335A2D5DD213B9A800F16F5C8B8", hash_generated_method = "923DF7BCA2BC291182E703183FAAB2BD")
+        
 public boolean performAction(int virtualViewId, int action, Bundle arguments) {
         return false;
     }
@@ -146,10 +243,27 @@ public boolean performAction(int virtualViewId, int action, Bundle arguments) {
      * @see #createAccessibilityNodeInfo(int)
      * @see AccessibilityNodeInfoCompat
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.782 -0500", hash_original_method = "CEBBD190AE53E7A0E938AB0B13044DF6", hash_generated_method = "352A8A56066C5A16BCB2AF4DD3D9A95F")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.639 -0400", hash_original_method = "CEBBD190AE53E7A0E938AB0B13044DF6", hash_generated_method = "352A8A56066C5A16BCB2AF4DD3D9A95F")
+        
 public List<AccessibilityNodeInfoCompat> findAccessibilityNodeInfosByText(String text,
             int virtualViewId) {
+        return null;
+    }
+
+    /**
+     * Find the virtual view, i.e. a descendant of the host View, that has the
+     * specified focus type.
+     *
+     * @param focus The focus to find. One of
+     *            {@link AccessibilityNodeInfoCompat#FOCUS_INPUT} or
+     *            {@link AccessibilityNodeInfoCompat#FOCUS_ACCESSIBILITY}.
+     * @return The node info of the focused view or null.
+     * @see AccessibilityNodeInfoCompat#FOCUS_INPUT
+     * @see AccessibilityNodeInfoCompat#FOCUS_ACCESSIBILITY
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.642 -0400", hash_original_method = "F4E72E3F713928304060FBB2F64396EC", hash_generated_method = "714B6A4D92ECF188588E3752E8CE82E3")
+        
+public AccessibilityNodeInfoCompat findFocus(int focus) {
         return null;
     }
 }

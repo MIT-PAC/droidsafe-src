@@ -1988,5 +1988,15 @@ public int getDevicesForStream(int streamType) {
             return 0;
         }
     }
+
+	public void registerMediaButtonEventReceiver(PendingIntent mPendingIntent) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void unregisterMediaButtonEventReceiver(PendingIntent mPendingIntent) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 

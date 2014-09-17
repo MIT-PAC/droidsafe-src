@@ -29,36 +29,81 @@ import android.view.accessibility.AccessibilityEvent;
  * introduced after API level 4 in a backwards compatible fashion.
  */
 public class ViewGroupCompat {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.186 -0400", hash_original_field = "026952D358F010FF3FE12B8CEFBDF571", hash_generated_field = "F6F47B97D3553EE6604958527590C013")
+
+    public static final int LAYOUT_MODE_CLIP_BOUNDS = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.190 -0400", hash_original_field = "75AAB763422DD0FBF8947B023BEAD7A0", hash_generated_field = "BA3C9DCE557976C60024CDD5E2604EE6")
+
+    public static final int LAYOUT_MODE_OPTICAL_BOUNDS = 1;
 
     interface ViewGroupCompatImpl {
         public boolean onRequestSendAccessibilityEvent(ViewGroup group, View child,
                 AccessibilityEvent event);
+
+        public void setMotionEventSplittingEnabled(ViewGroup group, boolean split);
+        public int getLayoutMode(ViewGroup group);
+        public void setLayoutMode(ViewGroup group, int mode);
     }
 
     static class ViewGroupCompatStubImpl implements ViewGroupCompatImpl {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:28.488 -0500", hash_original_method = "63663A61AE72F4EA1BE6069DE9E21D17", hash_generated_method = "84ECA309248A95C3D32158837B86E714")
-        
-public boolean onRequestSendAccessibilityEvent(
+        public boolean onRequestSendAccessibilityEvent(
                 ViewGroup group, View child, AccessibilityEvent event) {
             return true;
         }
+
+        public void setMotionEventSplittingEnabled(ViewGroup group, boolean split) {
+            // no-op, didn't exist.
+        }
+
+        @Override
+        public int getLayoutMode(ViewGroup group) {
+            return LAYOUT_MODE_CLIP_BOUNDS;
+        }
+
+        @Override
+        public void setLayoutMode(ViewGroup group, int mode) {
+            // no-op, didn't exist. Views only support clip bounds.
+        }
     }
 
-    static class ViewGroupCompatIcsImpl extends ViewGroupCompatStubImpl {
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:28.490 -0500", hash_original_method = "4FD501F6AEC18CEA66F6672447D649B5", hash_generated_method = "DC8FBEAA768F826D905ADE2B0D726760")
-        
-@Override
+    static class ViewGroupCompatHCImpl extends ViewGroupCompatStubImpl {
+        @Override
+        public void setMotionEventSplittingEnabled(ViewGroup group, boolean split) {
+            ViewGroupCompatHC.setMotionEventSplittingEnabled(group, split);
+        }
+    }
+
+    static class ViewGroupCompatIcsImpl extends ViewGroupCompatHCImpl {
+        @Override
         public boolean onRequestSendAccessibilityEvent(
                 ViewGroup group, View child, AccessibilityEvent event) {
             return ViewGroupCompatIcs.onRequestSendAccessibilityEvent(group, child, event);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:28.492 -0500", hash_original_field = "B1B66CC23CA7DFB890A608C54A7234A0", hash_generated_field = "E257834CBFA3D612BE0D9147AAF7AA2F")
+
+    static class ViewGroupCompatJellybeanMR2Impl extends ViewGroupCompatIcsImpl {
+        @Override
+        public int getLayoutMode(ViewGroup group) {
+            return ViewGroupCompatJellybeanMR2.getLayoutMode(group);
+        }
+
+        @Override
+        public void setLayoutMode(ViewGroup group, int mode) {
+            ViewGroupCompatJellybeanMR2.setLayoutMode(group, mode);
+        }
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.243 -0400", hash_original_field = "B1B66CC23CA7DFB890A608C54A7234A0", hash_generated_field = "E257834CBFA3D612BE0D9147AAF7AA2F")
+
 
     static  ViewGroupCompatImpl IMPL;
     static {
-        if (Build.VERSION.SDK_INT >= 14) {
+        final int version = Build.VERSION.SDK_INT;
+        if (version >= 18) {
+            IMPL = new ViewGroupCompatJellybeanMR2Impl();
+        } else if (version >= 14) {
             IMPL = new ViewGroupCompatIcsImpl();
+        } else if (version >= 11) {
+            IMPL = new ViewGroupCompatHCImpl();
         } else {
             IMPL = new ViewGroupCompatStubImpl();
         }
@@ -79,19 +124,73 @@ public boolean onRequestSendAccessibilityEvent(
      * @param event The event to be sent.
      * @return True if the event should be sent.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:28.494 -0500", hash_original_method = "1978CC92E32CD8348C5DF7FC73DFB333", hash_generated_method = "F38CF5C9CC229C8624781E234CDEA610")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.253 -0400", hash_original_method = "1978CC92E32CD8348C5DF7FC73DFB333", hash_generated_method = "F38CF5C9CC229C8624781E234CDEA610")
+        
 public static boolean onRequestSendAccessibilityEvent(ViewGroup group, View child,
             AccessibilityEvent event) {
         return IMPL.onRequestSendAccessibilityEvent(group, child, event);
     }
 
+    /**
+     * Enable or disable the splitting of MotionEvents to multiple children during touch event
+     * dispatch. This behavior is enabled by default for applications that target an
+     * SDK version of 11 (Honeycomb) or newer. On earlier platform versions this feature
+     * was not supported and this method is a no-op.
+     *
+     * <p>When this option is enabled MotionEvents may be split and dispatched to different child
+     * views depending on where each pointer initially went down. This allows for user interactions
+     * such as scrolling two panes of content independently, chording of buttons, and performing
+     * independent gestures on different pieces of content.
+     *
+     * @param group ViewGroup to modify
+     * @param split <code>true</code> to allow MotionEvents to be split and dispatched to multiple
+     *              child views. <code>false</code> to only allow one child view to be the target of
+     *              any MotionEvent received by this ViewGroup.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.257 -0400", hash_original_method = "0805EF6A3EE41BF4322D94C8366C27F3", hash_generated_method = "F8B3E58662F54595DB87E5E8F42E8A2F")
+        
+public static void setMotionEventSplittingEnabled(ViewGroup group, boolean split) {
+        IMPL.setMotionEventSplittingEnabled(group, split);
+    }
+
+    /**
+     * Returns the basis of alignment during layout operations on this ViewGroup:
+     * either {@link #LAYOUT_MODE_CLIP_BOUNDS} or {@link #LAYOUT_MODE_OPTICAL_BOUNDS}.
+     * <p>
+     * If no layoutMode was explicitly set, either programmatically or in an XML resource,
+     * the method returns the layoutMode of the view's parent ViewGroup if such a parent exists,
+     * otherwise the method returns a default value of {@link #LAYOUT_MODE_CLIP_BOUNDS}.
+     *
+     * @return the layout mode to use during layout operations
+     *
+     * @see #setLayoutMode(ViewGroup, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.261 -0400", hash_original_method = "6502A1D0C2960DEA9D1111BB6F2B8B1A", hash_generated_method = "6BED9CFC735159626EF83D92DBA4CBB1")
+        
+public static int getLayoutMode(ViewGroup group) {
+        return IMPL.getLayoutMode(group);
+    }
+
+    /**
+     * Sets the basis of alignment during the layout of this ViewGroup.
+     * Valid values are either {@link #LAYOUT_MODE_CLIP_BOUNDS} or
+     * {@link #LAYOUT_MODE_OPTICAL_BOUNDS}.
+     *
+     * @param mode the layout mode to use during layout operations
+     *
+     * @see #getLayoutMode(ViewGroup)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.265 -0400", hash_original_method = "CFA2D375D615B8A6666CDB724BFD3493", hash_generated_method = "79D1CAAC7605B813C53D18DC91E2F48F")
+        
+public static void setLayoutMode(ViewGroup group, int mode) {
+        IMPL.setLayoutMode(group, mode);
+    }
+
     /*
      * Hide the constructor.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:28.493 -0500", hash_original_method = "C9E473FFFB3F968718996597E8C1665E", hash_generated_method = "4204166126FD256F38E2FC1681739B07")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.249 -0400", hash_original_method = "C9E473FFFB3F968718996597E8C1665E", hash_generated_method = "4204166126FD256F38E2FC1681739B07")
+        
 private ViewGroupCompat() {
 
     }

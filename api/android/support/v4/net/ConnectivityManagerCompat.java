@@ -120,4 +120,12 @@ public static NetworkInfo getNetworkInfoFromBroadcast(ConnectivityManager cm, In
         final NetworkInfo info = intent.getParcelableExtra(ConnectivityManager.EXTRA_NETWORK_INFO);
         return cm.getNetworkInfo(info.getType());
     }
-}
+
+
+
+    static class JellyBeanConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
+        @Override
+        public boolean isActiveNetworkMetered(ConnectivityManager cm) {
+            return ConnectivityManagerCompatJellyBean.isActiveNetworkMetered(cm);
+        }
+    }}

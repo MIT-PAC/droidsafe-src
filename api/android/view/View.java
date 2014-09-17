@@ -10513,5 +10513,11 @@ protected void resolveTextDirection() {
             invalidate();
         }
     }
+
+	public void postOnAnimation(Runnable action) {
+		// TODO Auto-generated method stub
+		if (action != null)
+			action.run();
+	}
 }
 

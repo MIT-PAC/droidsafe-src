@@ -918,5 +918,6 @@ private float getValue(int propertyConstant) {
         }
         return 0;
     }
+
 }
 
