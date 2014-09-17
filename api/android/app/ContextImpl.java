@@ -470,6 +470,13 @@ private File getPreferencesDir() {
     public File getExternalFilesDir(String type) {
         return new File("<external-files-dir>");
     }
+
+    @Override
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public File[] getExternalFilesDirs(String type) {
+        return new File[]{new File("<external-files-dir>")};
+    }
+
     
     @Override
     @DSSafe(DSCat.SAFE_OTHERS)

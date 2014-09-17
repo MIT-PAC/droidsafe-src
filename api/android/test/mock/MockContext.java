@@ -210,10 +210,17 @@ public class MockContext extends Context {
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.264 -0500", hash_original_method = "90C15C4E056A492114901C79423D8DCF", hash_generated_method = "8469ABAC51FDFFD8DF813EEC51D8D397")
     
-@Override
+    @Override
     public File getExternalFilesDir(String type) {
         throw new UnsupportedOperationException();
     }
+
+    @Override
+    public File[] getExternalFilesDirs(String type) {
+        throw new UnsupportedOperationException();
+    }
+
+    
 
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.266 -0500", hash_original_method = "702F9A452622032EC8233CE54867C377", hash_generated_method = "733D8115EFA026FDED449E6B8712E502")

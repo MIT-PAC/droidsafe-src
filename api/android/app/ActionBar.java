@@ -1071,11 +1071,22 @@ public void setHomeButtonEnabled(boolean enabled) { }
     
 public Context getThemedContext() { return null; }
     
+    
+    //added to support android 19 calls in engagement 4
+    //don't seem to have any security implications
     public void setHomeActionContentDescription (int resId) {
         
     }   
 
     public void setHomeActionContentDescription (CharSequence description) {
+        
+    }
+
+    public void setHomeAsUpIndicator (int resId) {
+        
+    }
+
+    public void setHomeAsUpIndicator (Drawable indicator) {
         
     }
 }

@@ -877,6 +877,10 @@ public abstract File getExternalCacheDir();
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public abstract File[] getExternalFileDirs();
+
+    @DSComment("Abstract Method")
+    @DSSpec(DSCat.ABSTRACT_METHOD)
+    public abstract File[] getExternalFilesDirs(String type);
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)

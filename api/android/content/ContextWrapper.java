@@ -321,10 +321,16 @@ public Context getBaseContext() {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.152 -0500", hash_original_method = "BC309698CECF9063C5A4ADDF6C6EC7AF", hash_generated_method = "74788A6B35EEC28097DFD9AF92A3AD42")
     
-@Override
+    @Override
     public File getExternalFilesDir(String type) {
         return mBase.getExternalFilesDir(type);
     }
+
+    @Override
+    public File[] getExternalFilesDirs(String type) {
+        return mBase.getExternalFilesDirs(type);
+    }
+
     
     @DSSafe(DSCat.SAFE_OTHERS)
     
