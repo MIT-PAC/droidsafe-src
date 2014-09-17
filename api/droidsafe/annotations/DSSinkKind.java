@@ -36,5 +36,6 @@ public enum DSSinkKind {
     RESOURCES,
     IO,
     PROCESS,
-    CLIPBOARD
+    CLIPBOARD,
+    ANY_MEMORY
 }

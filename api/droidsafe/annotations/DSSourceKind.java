@@ -47,5 +47,6 @@ public enum DSSourceKind {
     OS_STATE,
     OS_PROCESS,
     XML,
-    RESOURCES
+    RESOURCES,
+    ANY_MEMORY
 }
