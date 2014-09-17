@@ -33,6 +33,7 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.content.ClipData;
 
 import com.android.internal.util.XmlUtils;
 
@@ -4369,5 +4370,19 @@ public void readFromParcel(Parcel in) {
         return result;
     }
     
+    //field added by droidsafe for api 19 compatibliity 
+    private ClipData mClipData;
+
+    //methods added by droidsafe for api 19 comp.
+    
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public ClipData getClipData () {
+        return mClipData;
+    }
+    
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public void setClipData (ClipData clip) {
+        mClipData = clip;
+    }
 }
 
