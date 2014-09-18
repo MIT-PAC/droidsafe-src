@@ -27,31 +27,31 @@ import android.view.View;
  */
 class ViewCompatJellybeanMr1 {
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.105 -0400", hash_original_method = "AF353697C9977B1339D960AAE179C615", hash_generated_method = "FFE281A4E013589CE3E687F51FCB846F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:28.342 -0400", hash_original_method = "AF353697C9977B1339D960AAE179C615", hash_generated_method = "FFE281A4E013589CE3E687F51FCB846F")
     
 public static int getLabelFor(View view) {
         return view.getLabelFor();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.109 -0400", hash_original_method = "EF0DCC04D8F64AD4C770E6D1EC277DA3", hash_generated_method = "9C445234EEC7B22C326280011E8B930A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:28.346 -0400", hash_original_method = "EF0DCC04D8F64AD4C770E6D1EC277DA3", hash_generated_method = "9C445234EEC7B22C326280011E8B930A")
     
 public static void setLabelFor(View view, int id) {
         view.setLabelFor(id);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.113 -0400", hash_original_method = "06B7302AA06C34472A71482491C754F5", hash_generated_method = "E90C3F3A61F56980DC571CB857C0F298")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:28.351 -0400", hash_original_method = "06B7302AA06C34472A71482491C754F5", hash_generated_method = "E90C3F3A61F56980DC571CB857C0F298")
     
 public static void setLayerPaint(View view, Paint paint) {
         view.setLayerPaint(paint);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.118 -0400", hash_original_method = "EF908D3693306A34136FC9622B81565D", hash_generated_method = "211AA16DE3EE826F4708C4B2A35A93F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:28.355 -0400", hash_original_method = "EF908D3693306A34136FC9622B81565D", hash_generated_method = "211AA16DE3EE826F4708C4B2A35A93F5")
     
 public static int getLayoutDirection(View view) {
         return view.getLayoutDirection();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.125 -0400", hash_original_method = "F389E42A8F59A57CF89BB3551B88E793", hash_generated_method = "9BBA8471604EBE4702EB76ABC2919B35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:28.360 -0400", hash_original_method = "F389E42A8F59A57CF89BB3551B88E793", hash_generated_method = "9BBA8471604EBE4702EB76ABC2919B35")
     
 public static void setLayoutDirection(View view, int layoutDirection) {
         view.setLayoutDirection(layoutDirection);

@@ -35,71 +35,71 @@ import android.view.accessibility.AccessibilityEvent;
  * level 4 in a backwards compatible fashion.
  */
 public class ViewCompat {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.554 -0400", hash_original_field = "361BC31D07AD9559F194AE7DCEA363BD", hash_generated_field = "8F276B4C86F06142AEDE0C97A7FE2F68")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.394 -0400", hash_original_field = "361BC31D07AD9559F194AE7DCEA363BD", hash_generated_field = "8F276B4C86F06142AEDE0C97A7FE2F68")
 
     public static final int OVER_SCROLL_ALWAYS = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.565 -0400", hash_original_field = "CC647B45C45ACE646CE989AEBDB00745", hash_generated_field = "218BFE0FF46A804B55589DCE0FFD7D0A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.406 -0400", hash_original_field = "CC647B45C45ACE646CE989AEBDB00745", hash_generated_field = "218BFE0FF46A804B55589DCE0FFD7D0A")
 
     public static final int OVER_SCROLL_IF_CONTENT_SCROLLS = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.573 -0400", hash_original_field = "F3053BB78DC68F981F29ECFBD3977D87", hash_generated_field = "009B55485034BF3BF55F8691DA9788F7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.413 -0400", hash_original_field = "F3053BB78DC68F981F29ECFBD3977D87", hash_generated_field = "009B55485034BF3BF55F8691DA9788F7")
 
     public static final int OVER_SCROLL_NEVER = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.581 -0400", hash_original_field = "F01F6026A556A1479651B1673A0D609A", hash_generated_field = "0C12F527669B717C6A0C28E0DC587883")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.423 -0400", hash_original_field = "F01F6026A556A1479651B1673A0D609A", hash_generated_field = "0C12F527669B717C6A0C28E0DC587883")
 
 
     private static final long FAKE_FRAME_TIME = 10;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.589 -0400", hash_original_field = "40D27D84924242906788B073B8D7D43D", hash_generated_field = "9FC88D25425BBFC06487793792B4731F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.431 -0400", hash_original_field = "40D27D84924242906788B073B8D7D43D", hash_generated_field = "9FC88D25425BBFC06487793792B4731F")
 
     public static final int IMPORTANT_FOR_ACCESSIBILITY_AUTO = 0x00000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.609 -0400", hash_original_field = "0F6746356647232A4911D778DEDDD0B9", hash_generated_field = "EBD4EE29D9002764BC19ADEAF158AB51")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.450 -0400", hash_original_field = "0F6746356647232A4911D778DEDDD0B9", hash_generated_field = "EBD4EE29D9002764BC19ADEAF158AB51")
 
     public static final int IMPORTANT_FOR_ACCESSIBILITY_YES = 0x00000001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.617 -0400", hash_original_field = "FEE2CE1E2B9F75F46CF43644D0C15CD1", hash_generated_field = "C46957D899C740323BAF5BFE44374D24")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.457 -0400", hash_original_field = "FEE2CE1E2B9F75F46CF43644D0C15CD1", hash_generated_field = "C46957D899C740323BAF5BFE44374D24")
 
     public static final int IMPORTANT_FOR_ACCESSIBILITY_NO = 0x00000002;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.625 -0400", hash_original_field = "03E180A43B4EF65FB2774FF27512EB3A", hash_generated_field = "36616A048DC5DAE4EC1C0E18A01EF45E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.466 -0400", hash_original_field = "03E180A43B4EF65FB2774FF27512EB3A", hash_generated_field = "36616A048DC5DAE4EC1C0E18A01EF45E")
 
     public static final int IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS = 0x00000004;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.635 -0400", hash_original_field = "97F30E9F24785CCD4F841BE6079552EA", hash_generated_field = "201F8ABA5B877D13B125FCD910A076E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.476 -0400", hash_original_field = "97F30E9F24785CCD4F841BE6079552EA", hash_generated_field = "201F8ABA5B877D13B125FCD910A076E1")
 
     public static final int ACCESSIBILITY_LIVE_REGION_NONE = 0x00000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.643 -0400", hash_original_field = "86204997185E141A01807E1A132FD4C2", hash_generated_field = "F3B60E27A87726FCFCF4C54D897F88BB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.484 -0400", hash_original_field = "86204997185E141A01807E1A132FD4C2", hash_generated_field = "F3B60E27A87726FCFCF4C54D897F88BB")
 
     public static final int ACCESSIBILITY_LIVE_REGION_POLITE = 0x00000001;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.651 -0400", hash_original_field = "CDFCF6C7DB83F70398C0C3EFA3C35138", hash_generated_field = "786DA6FA536B5D1C814D1E7896B413BA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.493 -0400", hash_original_field = "CDFCF6C7DB83F70398C0C3EFA3C35138", hash_generated_field = "786DA6FA536B5D1C814D1E7896B413BA")
 
     public static final int ACCESSIBILITY_LIVE_REGION_ASSERTIVE = 0x00000002;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.660 -0400", hash_original_field = "A7FC7A142388B7E68C811E9F0DE82AAB", hash_generated_field = "4B71A3CAAC0983C5CC19785C41F5E14C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.501 -0400", hash_original_field = "A7FC7A142388B7E68C811E9F0DE82AAB", hash_generated_field = "4B71A3CAAC0983C5CC19785C41F5E14C")
 
     public static final int LAYER_TYPE_NONE = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.669 -0400", hash_original_field = "10F1EBB3EA286BF40E15A7DC5A5C77B1", hash_generated_field = "9362C41130448D1BEC071BA7F3927A19")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.511 -0400", hash_original_field = "10F1EBB3EA286BF40E15A7DC5A5C77B1", hash_generated_field = "9362C41130448D1BEC071BA7F3927A19")
 
     public static final int LAYER_TYPE_SOFTWARE = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.681 -0400", hash_original_field = "A83617A3813259E5F20A2BA621D5CBC5", hash_generated_field = "339CEE307F54C01A3C41187443B4553A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.521 -0400", hash_original_field = "A83617A3813259E5F20A2BA621D5CBC5", hash_generated_field = "339CEE307F54C01A3C41187443B4553A")
 
     public static final int LAYER_TYPE_HARDWARE = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.688 -0400", hash_original_field = "C4524789EA5512E454B44BB4CE2240C5", hash_generated_field = "6CDDA9A4918979CF413E3AD0E2FFF054")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.529 -0400", hash_original_field = "C4524789EA5512E454B44BB4CE2240C5", hash_generated_field = "6CDDA9A4918979CF413E3AD0E2FFF054")
 
     public static final int LAYOUT_DIRECTION_LTR = 0;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.696 -0400", hash_original_field = "EBD0AD1207972A573E13ECB5247DB2FA", hash_generated_field = "C4A46E9EFF07999D4098B78F47274F59")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.536 -0400", hash_original_field = "EBD0AD1207972A573E13ECB5247DB2FA", hash_generated_field = "C4A46E9EFF07999D4098B78F47274F59")
 
     public static final int LAYOUT_DIRECTION_RTL = 1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.704 -0400", hash_original_field = "3D7E4A6568C27BAA049DD7E236B058B8", hash_generated_field = "9C36C06369223000C72A65C54BB4FB62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.546 -0400", hash_original_field = "3D7E4A6568C27BAA049DD7E236B058B8", hash_generated_field = "9C36C06369223000C72A65C54BB4FB62")
 
     public static final int LAYOUT_DIRECTION_INHERIT = 2;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.712 -0400", hash_original_field = "ADD5FE1C7EBA761C48748E00EF713DAE", hash_generated_field = "7B546D9DADAB714BB86A609097540DB3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.555 -0400", hash_original_field = "ADD5FE1C7EBA761C48748E00EF713DAE", hash_generated_field = "7B546D9DADAB714BB86A609097540DB3")
 
     public static final int LAYOUT_DIRECTION_LOCALE = 3;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.721 -0400", hash_original_field = "A41AFB14561C756088DE88EA294BDF02", hash_generated_field = "3584CE2038396D56F00CBCE4E0AF47E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.563 -0400", hash_original_field = "A41AFB14561C756088DE88EA294BDF02", hash_generated_field = "3584CE2038396D56F00CBCE4E0AF47E7")
 
     public static final int MEASURED_SIZE_MASK = 0x00ffffff;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.729 -0400", hash_original_field = "230A433CB35000100586A63BAB0A109F", hash_generated_field = "874FE93B404AA4B2617E7E2F47B091CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.571 -0400", hash_original_field = "230A433CB35000100586A63BAB0A109F", hash_generated_field = "874FE93B404AA4B2617E7E2F47B091CC")
 
     public static final int MEASURED_STATE_MASK = 0xff000000;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.737 -0400", hash_original_field = "8C0B03FFB0098DA8DAB9230B3C51EB0D", hash_generated_field = "859653BE0AACCFF2DA07F4D6CA30948B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.579 -0400", hash_original_field = "8C0B03FFB0098DA8DAB9230B3C51EB0D", hash_generated_field = "859653BE0AACCFF2DA07F4D6CA30948B")
 
     public static final int MEASURED_HEIGHT_STATE_SHIFT = 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:25.746 -0400", hash_original_field = "22A909B4958BA8440BEDEF503B97A322", hash_generated_field = "499640E6C451DA0A8A056EE1F14203E6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:26.588 -0400", hash_original_field = "22A909B4958BA8440BEDEF503B97A322", hash_generated_field = "499640E6C451DA0A8A056EE1F14203E6")
 
     public static final int MEASURED_STATE_TOO_SMALL = 0x01000000;
 
@@ -451,7 +451,7 @@ public class ViewCompat {
             ViewCompatKitKat.setAccessibilityLiveRegion(view, mode);
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.362 -0400", hash_original_field = "8C7B75196624F10657FDCEE6792BBCF8", hash_generated_field = "BBDF66702D3CCA930AA785B97237B8E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.273 -0400", hash_original_field = "8C7B75196624F10657FDCEE6792BBCF8", hash_generated_field = "BBDF66702D3CCA930AA785B97237B8E4")
 
 
     static  ViewCompatImpl IMPL;
@@ -481,7 +481,7 @@ public class ViewCompat {
      * @param direction Negative to check scrolling left, positive to check scrolling right.
      * @return true if this view can be scrolled in the specified direction, false otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.374 -0400", hash_original_method = "857005B1ED2030A6958E9EB0D4C8F4E9", hash_generated_method = "1589EB5E74EE7AEADA18B3309A63800A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.284 -0400", hash_original_method = "857005B1ED2030A6958E9EB0D4C8F4E9", hash_generated_method = "1589EB5E74EE7AEADA18B3309A63800A")
         
 public static boolean canScrollHorizontally(View v, int direction) {
         return IMPL.canScrollHorizontally(v, direction);
@@ -494,7 +494,7 @@ public static boolean canScrollHorizontally(View v, int direction) {
      * @param direction Negative to check scrolling up, positive to check scrolling down.
      * @return true if this view can be scrolled in the specified direction, false otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.382 -0400", hash_original_method = "2DFFD160E11AA00CE94741E99122C12E", hash_generated_method = "50EBFE12C5079C61D137C632B3083850")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.291 -0400", hash_original_method = "2DFFD160E11AA00CE94741E99122C12E", hash_generated_method = "50EBFE12C5079C61D137C632B3083850")
         
 public static boolean canScrollVertically(View v, int direction) {
         return IMPL.canScrollVertically(v, direction);
@@ -509,7 +509,7 @@ public static boolean canScrollVertically(View v, int direction) {
      * @param v The View against which to invoke the method.
      * @return This view's over-scroll mode.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.388 -0400", hash_original_method = "7494BE1D565A64230355951115CC2869", hash_generated_method = "7EEDECBD1D9B7CD261970618A310D03F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.310 -0400", hash_original_method = "7494BE1D565A64230355951115CC2869", hash_generated_method = "7EEDECBD1D9B7CD261970618A310D03F")
         
 public static int getOverScrollMode(View v) {
         return IMPL.getOverScrollMode(v);
@@ -527,7 +527,7 @@ public static int getOverScrollMode(View v) {
      * @param v The View against which to invoke the method.
      * @param overScrollMode The new over-scroll mode for this view.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.395 -0400", hash_original_method = "CFB7431DB4F757CDA816E6FEFF5ADAB6", hash_generated_method = "CF3FF226C5879DDABABCC07C72634DEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.318 -0400", hash_original_method = "CFB7431DB4F757CDA816E6FEFF5ADAB6", hash_generated_method = "CF3FF226C5879DDABABCC07C72634DEA")
         
 public static void setOverScrollMode(View v, int overScrollMode) {
         IMPL.setOverScrollMode(v, overScrollMode);
@@ -566,7 +566,7 @@ public static void setOverScrollMode(View v, int overScrollMode) {
      * @see View#sendAccessibilityEvent(int)
      * @see View#dispatchPopulateAccessibilityEvent(AccessibilityEvent)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.402 -0400", hash_original_method = "F7A6696474DBC18E9559BE63429BF45C", hash_generated_method = "84312CBDA69652B8F39427C8F4ECFAA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.323 -0400", hash_original_method = "F7A6696474DBC18E9559BE63429BF45C", hash_generated_method = "84312CBDA69652B8F39427C8F4ECFAA9")
         
 public static void onPopulateAccessibilityEvent(View v, AccessibilityEvent event) {
         IMPL.onPopulateAccessibilityEvent(v, event);
@@ -601,7 +601,7 @@ public static void onPopulateAccessibilityEvent(View v, AccessibilityEvent event
      * @see View#sendAccessibilityEvent(int)
      * @see View#dispatchPopulateAccessibilityEvent(AccessibilityEvent)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.407 -0400", hash_original_method = "ED19022FEB94C3A5867003FD25E7BFF2", hash_generated_method = "DAA6BC4411CAEFEBE90A13CE6A87A9F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.328 -0400", hash_original_method = "ED19022FEB94C3A5867003FD25E7BFF2", hash_generated_method = "DAA6BC4411CAEFEBE90A13CE6A87A9F3")
         
 public static void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
         IMPL.onInitializeAccessibilityEvent(v, event);
@@ -639,7 +639,7 @@ public static void onInitializeAccessibilityEvent(View v, AccessibilityEvent eve
      * @param v The View against which to invoke the method.
      * @param info The instance to initialize.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.413 -0400", hash_original_method = "73AA4AFD15DD1C9DB48D7754FEBFC0EB", hash_generated_method = "FB6FC5466D59E9C530E92CA40A2B6091")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.334 -0400", hash_original_method = "73AA4AFD15DD1C9DB48D7754FEBFC0EB", hash_generated_method = "FB6FC5466D59E9C530E92CA40A2B6091")
         
 public static void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
         IMPL.onInitializeAccessibilityNodeInfo(v, info);
@@ -656,7 +656,7 @@ public static void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeIn
      *
      * @see android.view.View.AccessibilityDelegate
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.437 -0400", hash_original_method = "4280E8CA0A8375D977DD927F0A6FE108", hash_generated_method = "FDC098EF58DE2FA81B05DBE4DBC3A2B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.339 -0400", hash_original_method = "4280E8CA0A8375D977DD927F0A6FE108", hash_generated_method = "FDC098EF58DE2FA81B05DBE4DBC3A2B4")
         
 public static void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
         IMPL.setAccessibilityDelegate(v, delegate);
@@ -670,7 +670,7 @@ public static void setAccessibilityDelegate(View v, AccessibilityDelegateCompat 
      * @param view View to check for transient state
      * @return true if the view has transient state
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.442 -0400", hash_original_method = "460086EE3CFF8118DE0113851199B782", hash_generated_method = "50B771605AA90F97D058657272FCF7E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.344 -0400", hash_original_method = "460086EE3CFF8118DE0113851199B782", hash_generated_method = "50B771605AA90F97D058657272FCF7E6")
         
 public static boolean hasTransientState(View view) {
         return IMPL.hasTransientState(view);
@@ -683,7 +683,7 @@ public static boolean hasTransientState(View view) {
      * @param view View tracking transient state
      * @param hasTransientState true if this view has transient state
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.448 -0400", hash_original_method = "43518A996658B786A094321F7D499A0B", hash_generated_method = "CE37B08572C28D8A931672A074328E4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.350 -0400", hash_original_method = "43518A996658B786A094321F7D499A0B", hash_generated_method = "CE37B08572C28D8A931672A074328E4E")
         
 public static void setHasTransientState(View view, boolean hasTransientState) {
         IMPL.setHasTransientState(view, hasTransientState);
@@ -698,7 +698,7 @@ public static void setHasTransientState(View view, boolean hasTransientState) {
      *
      * @param view View to invalidate
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.454 -0400", hash_original_method = "13EB7C07EE18A6F4533610314AE46EE4", hash_generated_method = "7AB6431BFACC42EAB466EA6AD2D6CBD7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.355 -0400", hash_original_method = "13EB7C07EE18A6F4533610314AE46EE4", hash_generated_method = "7AB6431BFACC42EAB466EA6AD2D6CBD7")
         
 public static void postInvalidateOnAnimation(View view) {
         IMPL.postInvalidateOnAnimation(view);
@@ -717,7 +717,7 @@ public static void postInvalidateOnAnimation(View view) {
      * @param right The right coordinate of the rectangle to invalidate.
      * @param bottom The bottom coordinate of the rectangle to invalidate.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.461 -0400", hash_original_method = "0C44E4531B46F2C870F02629E599CB97", hash_generated_method = "EB0E706D838EB9668F736FB19FECA1C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.361 -0400", hash_original_method = "0C44E4531B46F2C870F02629E599CB97", hash_generated_method = "EB0E706D838EB9668F736FB19FECA1C0")
         
 public static void postInvalidateOnAnimation(View view, int left, int top,
             int right, int bottom) {
@@ -734,7 +734,7 @@ public static void postInvalidateOnAnimation(View view, int left, int top,
      * @param view View to post this Runnable to
      * @param action The Runnable that will be executed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.466 -0400", hash_original_method = "5F4A37C40BDB0773A33D63BB030FF77C", hash_generated_method = "11E4E49EECB1842AA09416EC4947CD9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.366 -0400", hash_original_method = "5F4A37C40BDB0773A33D63BB030FF77C", hash_generated_method = "11E4E49EECB1842AA09416EC4947CD9C")
         
 public static void postOnAnimation(View view, Runnable action) {
         IMPL.postOnAnimation(view, action);
@@ -753,7 +753,7 @@ public static void postOnAnimation(View view, Runnable action) {
      * @param delayMillis The delay (in milliseconds) until the Runnable
      *        will be executed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.473 -0400", hash_original_method = "0FAD04BB0A0F09D75E4DF96A69CCF3CB", hash_generated_method = "19F4354D19593418FF2F3BF0AA25F648")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.371 -0400", hash_original_method = "0FAD04BB0A0F09D75E4DF96A69CCF3CB", hash_generated_method = "19F4354D19593418FF2F3BF0AA25F648")
         
 public static void postOnAnimationDelayed(View view, Runnable action, long delayMillis) {
         IMPL.postOnAnimationDelayed(view, action, delayMillis);
@@ -772,7 +772,7 @@ public static void postOnAnimationDelayed(View view, Runnable action, long delay
      * @see #IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
      * @see #IMPORTANT_FOR_ACCESSIBILITY_AUTO
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.478 -0400", hash_original_method = "58153325535AF15DDE2E1ECB138BDE5D", hash_generated_method = "6062515F378B11ABFD74FE0C0A5D822C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.376 -0400", hash_original_method = "58153325535AF15DDE2E1ECB138BDE5D", hash_generated_method = "6062515F378B11ABFD74FE0C0A5D822C")
         
 public static int getImportantForAccessibility(View view) {
         return IMPL.getImportantForAccessibility(view);
@@ -791,7 +791,7 @@ public static int getImportantForAccessibility(View view) {
      * @see #IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
      * @see #IMPORTANT_FOR_ACCESSIBILITY_AUTO
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.483 -0400", hash_original_method = "800D6F8FCFD8309F7CCD8A956FED8815", hash_generated_method = "5A0BB2935601D8D0FF5E98CFB79251B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.381 -0400", hash_original_method = "800D6F8FCFD8309F7CCD8A956FED8815", hash_generated_method = "5A0BB2935601D8D0FF5E98CFB79251B2")
         
 public static void setImportantForAccessibility(View view, int mode) {
         IMPL.setImportantForAccessibility(view, mode);
@@ -811,7 +811,7 @@ public static void setImportantForAccessibility(View view, int mode) {
      * @param arguments Optional action arguments.
      * @return Whether the action was performed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.489 -0400", hash_original_method = "9732AC072CD967AA40BB72464A16FDC3", hash_generated_method = "FC54304D599392C03042D2FD00726A1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.387 -0400", hash_original_method = "9732AC072CD967AA40BB72464A16FDC3", hash_generated_method = "FC54304D599392C03042D2FD00726A1C")
         
 public static boolean performAccessibilityAction(View view, int action, Bundle arguments) {
         return IMPL.performAccessibilityAction(view, action, arguments);
@@ -840,7 +840,7 @@ public static boolean performAccessibilityAction(View view, int action, Bundle a
      *
      * @see AccessibilityNodeProviderCompat
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.494 -0400", hash_original_method = "5D39CEEA849CBA7AFA696397B862059E", hash_generated_method = "E895C08DD7BDA397DA74E49282E9B251")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.392 -0400", hash_original_method = "5D39CEEA849CBA7AFA696397B862059E", hash_generated_method = "E895C08DD7BDA397DA74E49282E9B251")
         
 public static AccessibilityNodeProviderCompat getAccessibilityNodeProvider(View view) {
         return IMPL.getAccessibilityNodeProvider(view);
@@ -853,7 +853,7 @@ public static AccessibilityNodeProviderCompat getAccessibilityNodeProvider(View 
      * <p>By default this is 1.0f. Prior to API 11, the returned value is always 1.0f.
      * @return The opacity of the view.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.500 -0400", hash_original_method = "46EAB694106D4AF66F8F41DED7A5B7C4", hash_generated_method = "695C3524C8D4BBE07A13153ED7417D36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.396 -0400", hash_original_method = "46EAB694106D4AF66F8F41DED7A5B7C4", hash_generated_method = "695C3524C8D4BBE07A13153ED7417D36")
         
 public static float getAlpha(View view) {
         return IMPL.getAlpha(view);
@@ -898,7 +898,7 @@ public static float getAlpha(View view) {
      *        and can be null. It is ignored when the layer type is
      *        {@link #LAYER_TYPE_NONE}
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.505 -0400", hash_original_method = "DC214103B793E78BE48A6C7E3773E9E0", hash_generated_method = "1B25A631BB8A093D05E854A54820DD2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.401 -0400", hash_original_method = "DC214103B793E78BE48A6C7E3773E9E0", hash_generated_method = "1B25A631BB8A093D05E854A54820DD2D")
         
 public static void setLayerType(View view, int layerType, Paint paint) {
         IMPL.setLayerType(view, layerType, paint);
@@ -920,7 +920,7 @@ public static void setLayerType(View view, int layerType, Paint paint) {
      * @see #LAYER_TYPE_SOFTWARE
      * @see #LAYER_TYPE_HARDWARE
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.509 -0400", hash_original_method = "052EE158F70370997B34A0226D95F9E6", hash_generated_method = "06471C2CE2F348030DC867F9E3086E01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.406 -0400", hash_original_method = "052EE158F70370997B34A0226D95F9E6", hash_generated_method = "06471C2CE2F348030DC867F9E3086E01")
         
 public static int getLayerType(View view) {
         return IMPL.getLayerType(view);
@@ -933,7 +933,7 @@ public static int getLayerType(View view) {
      * @param view The view on which to invoke the corresponding method.
      * @return The labeled view id.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.514 -0400", hash_original_method = "3F4A7F2C91E0B87B584BB39947937B5A", hash_generated_method = "80899472ABAE1EE8BE952A31098B5B46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.411 -0400", hash_original_method = "3F4A7F2C91E0B87B584BB39947937B5A", hash_generated_method = "80899472ABAE1EE8BE952A31098B5B46")
         
 public static int getLabelFor(View view) {
         return IMPL.getLabelFor(view);
@@ -946,7 +946,7 @@ public static int getLabelFor(View view) {
      * @param view The view on which to invoke the corresponding method.
      * @param labeledId The labeled view id.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.519 -0400", hash_original_method = "4CC61E495BBDB2EA58BFAF981622D475", hash_generated_method = "F936CFBC548F2FE3EE16AF6E77275B9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.416 -0400", hash_original_method = "4CC61E495BBDB2EA58BFAF981622D475", hash_generated_method = "F936CFBC548F2FE3EE16AF6E77275B9B")
         
 public static void setLabelFor(View view, int labeledId) {
         IMPL.setLabelFor(view, labeledId);
@@ -982,7 +982,7 @@ public static void setLabelFor(View view, int labeledId) {
      *
      * @see #setLayerType(View, int, android.graphics.Paint)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.525 -0400", hash_original_method = "47DF25BC91539BCD776DF84DDF9C3F59", hash_generated_method = "998997BD0E82A4D9D62323B5EB028470")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.421 -0400", hash_original_method = "47DF25BC91539BCD776DF84DDF9C3F59", hash_generated_method = "998997BD0E82A4D9D62323B5EB028470")
         
 public static void setLayerPaint(View view, Paint paint) {
         IMPL.setLayerPaint(view, paint);
@@ -998,7 +998,7 @@ public static void setLayerPaint(View view, Paint paint) {
      * For compatibility, this will return {@link #LAYOUT_DIRECTION_LTR} if API version
      * is lower than Jellybean MR1 (API 17)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.530 -0400", hash_original_method = "40594DE735026B6C38028B35D7E018F6", hash_generated_method = "A1A6C9F8F49C1B377149EE8E08246511")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.426 -0400", hash_original_method = "40594DE735026B6C38028B35D7E018F6", hash_generated_method = "A1A6C9F8F49C1B377149EE8E08246511")
         
 public static int getLayoutDirection(View view) {
         return IMPL.getLayoutDirection(view);
@@ -1020,7 +1020,7 @@ public static int getLayoutDirection(View view) {
      * proceeds up the parent chain of the view to get the value. If there is no parent, then it
      * will return the default {@link #LAYOUT_DIRECTION_LTR}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.535 -0400", hash_original_method = "408B783533E7BB2348641B0F775BEC29", hash_generated_method = "DFB8E141A1600BCA43B4CAB52F0DB23D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.432 -0400", hash_original_method = "408B783533E7BB2348641B0F775BEC29", hash_generated_method = "DFB8E141A1600BCA43B4CAB52F0DB23D")
         
 public static void setLayoutDirection(View view, int layoutDirection) {
         IMPL.setLayoutDirection(view, layoutDirection);
@@ -1034,7 +1034,7 @@ public static void setLayoutDirection(View view, int layoutDirection) {
      * @param view View to retrieve parent for
      * @return The parent for use in accessibility inspection
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.540 -0400", hash_original_method = "1F2068DDAD86C0FF15102CEE7DBB6F17", hash_generated_method = "AB0E306B912E7392AE72CC72BCD81D67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.437 -0400", hash_original_method = "1F2068DDAD86C0FF15102CEE7DBB6F17", hash_generated_method = "AB0E306B912E7392AE72CC72BCD81D67")
         
 public static ViewParent getParentForAccessibility(View view) {
         return IMPL.getParentForAccessibility(view);
@@ -1049,7 +1049,7 @@ public static ViewParent getParentForAccessibility(View view) {
      *
      * @return True if this View is guaranteed to be fully opaque, false otherwise.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.545 -0400", hash_original_method = "49E3C4AA6CE54B7C84275FBD581C84E3", hash_generated_method = "BB33EBDE412CBDF8A07C94655A243B6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.441 -0400", hash_original_method = "49E3C4AA6CE54B7C84275FBD581C84E3", hash_generated_method = "BB33EBDE412CBDF8A07C94655A243B6D")
         
 public static boolean isOpaque(View view) {
         return IMPL.isOpaque(view);
@@ -1068,7 +1068,7 @@ public static boolean isOpaque(View view) {
      * @return Size information bit mask as defined by
      * {@link #MEASURED_SIZE_MASK} and {@link #MEASURED_STATE_TOO_SMALL}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.552 -0400", hash_original_method = "F8DD309CCDB4A368448FB42453723E97", hash_generated_method = "4900920526200F5CA7795ED7E852689F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.446 -0400", hash_original_method = "F8DD309CCDB4A368448FB42453723E97", hash_generated_method = "4900920526200F5CA7795ED7E852689F")
         
 public static int resolveSizeAndState(int size, int measureSpec, int childMeasuredState) {
         return IMPL.resolveSizeAndState(size, measureSpec, childMeasuredState);
@@ -1084,7 +1084,7 @@ public static int resolveSizeAndState(int size, int measureSpec, int childMeasur
      *
      * @return The measured width of this view as a bit mask.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.557 -0400", hash_original_method = "D074DA630A442AE0E174C0F96C86287D", hash_generated_method = "4F78C0A43FA8E81C24AC09EFBC340885")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.451 -0400", hash_original_method = "D074DA630A442AE0E174C0F96C86287D", hash_generated_method = "4F78C0A43FA8E81C24AC09EFBC340885")
         
 public static int getMeasuredWidthAndState(View view) {
         return IMPL.getMeasuredWidthAndState(view);
@@ -1100,7 +1100,7 @@ public static int getMeasuredWidthAndState(View view) {
      *
      * @return The measured width of this view as a bit mask.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.562 -0400", hash_original_method = "63876A100B34973DA9146F6B2B106193", hash_generated_method = "C098197D92684EE714942C211619CD16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.456 -0400", hash_original_method = "63876A100B34973DA9146F6B2B106193", hash_generated_method = "C098197D92684EE714942C211619CD16")
         
 public static int getMeasuredHeightAndState(View view) {
         return IMPL.getMeasuredHeightAndState(view);
@@ -1113,7 +1113,7 @@ public static int getMeasuredHeightAndState(View view) {
      * and the height component is at the shifted bits
      * {@link #MEASURED_HEIGHT_STATE_SHIFT}>>{@link #MEASURED_STATE_MASK}.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.567 -0400", hash_original_method = "081B9E2DD3ED1E3A573F6F4943A5CE0C", hash_generated_method = "8E0C21E3B3D81D42AEEB84FB903DF2B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.461 -0400", hash_original_method = "081B9E2DD3ED1E3A573F6F4943A5CE0C", hash_generated_method = "8E0C21E3B3D81D42AEEB84FB903DF2B2")
         
 public static int getMeasuredState(View view) {
         return IMPL.getMeasuredState(view);
@@ -1127,7 +1127,7 @@ public static int getMeasuredState(View view) {
      *
      * @see ViewCompat#setAccessibilityLiveRegion(View, int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.572 -0400", hash_original_method = "46108D1CAAEA00D102CE2D4FE151D97C", hash_generated_method = "098A90350429B09ECC73C30EDF73E645")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.465 -0400", hash_original_method = "46108D1CAAEA00D102CE2D4FE151D97C", hash_generated_method = "098A90350429B09ECC73C30EDF73E645")
         
 public int getAccessibilityLiveRegion(View view) {
         return IMPL.getAccessibilityLiveRegion(view);
@@ -1161,7 +1161,7 @@ public int getAccessibilityLiveRegion(View view) {
      *        <li>{@link #ACCESSIBILITY_LIVE_REGION_ASSERTIVE}
      *        </ul>
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:47:26.576 -0400", hash_original_method = "E43FA423766011D162E5A374679CD4E8", hash_generated_method = "ABC1404C5001EAF19635D7298378F85F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:52:27.471 -0400", hash_original_method = "E43FA423766011D162E5A374679CD4E8", hash_generated_method = "ABC1404C5001EAF19635D7298378F85F")
         
 public void setAccessibilityLiveRegion(View view, int mode) {
         IMPL.setAccessibilityLiveRegion(view, mode);

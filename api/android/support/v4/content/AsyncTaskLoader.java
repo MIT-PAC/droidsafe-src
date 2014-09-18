@@ -89,7 +89,7 @@ public void setUpdateThrottle(long delayMS) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.799 -0500", hash_original_method = "EED9AFD45373FFA0657A2114031AE14C", hash_generated_method = "4A4B3BB952605C872539E5B90B2B2161")
     
 public boolean cancelLoad() {
-        if (DEBUG) Log.v(TAG, "cancelLoad: mTask=" + mTask);
+        /*if (DEBUG) Log.v(TAG, "cancelLoad: mTask=" + mTask);
         if (mTask != null) {
             if (mCancellingTask != null) {
                 // There was a pending task already waiting for a previous
@@ -119,7 +119,7 @@ public boolean cancelLoad() {
                 mTask = null;
                 return cancelled;
             }
-        }
+        }*/
         return false;
     }
 
@@ -183,7 +183,7 @@ void dispatchOnLoadComplete(LoadTask task, D data) {
                 // This cursor has been abandoned; just cancel the new data.
                 onCanceled(data);
             } else {
-                //commitContentChanged();
+                commitContentChanged();
                 mLastLoadCompleteTime = SystemClock.uptimeMillis();
                 mTask = null;
                 if (DEBUG) Log.v(TAG, "Delivering result");
@@ -192,7 +192,15 @@ void dispatchOnLoadComplete(LoadTask task, D data) {
         }
     }
 
-    /**
+    public void commitContentChanged() {
+		// TODO Auto-generated method stub
+		
+	}
+    public void rollbackContentChanged() {
+    	
+    }
+
+	/**
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.811 -0500", hash_original_method = "5399723D11980E7A8470EBBE4A650300", hash_generated_method = "7AFE79446E8B45C68AF3D723F3E91200")
     

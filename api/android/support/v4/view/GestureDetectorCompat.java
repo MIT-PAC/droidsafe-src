@@ -57,10 +57,6 @@ public class GestureDetectorCompat {
     }
 
     static class GestureDetectorCompatImplBase implements GestureDetectorCompatImpl {
-        private int mTouchSlopSquare;
-        private int mDoubleTapSlopSquare;
-        private int mMinimumFlingVelocity;
-        private int mMaximumFlingVelocity;
 
         private static final int LONGPRESS_TIMEOUT = ViewConfiguration.getLongPressTimeout();
         private static final int TAP_TIMEOUT = ViewConfiguration.getTapTimeout();
@@ -70,6 +66,10 @@ public class GestureDetectorCompat {
         private static final int SHOW_PRESS = 1;
         private static final int LONG_PRESS = 2;
         private static final int TAP = 3;
+        private int mTouchSlopSquare;
+        private int mDoubleTapSlopSquare;
+        private int mMinimumFlingVelocity;
+        private int mMaximumFlingVelocity;
 
         private final Handler mHandler;
         private final OnGestureListener mListener;
@@ -464,6 +464,35 @@ public class GestureDetectorCompat {
         private final GestureDetector mDetector;
 
         public GestureDetectorCompatImplJellybeanMr2(Context context, OnGestureListener listener,
+                Handler handler) {
+            mDetector = new GestureDetector(context, listener, handler);
+        }
+
+        @Override
+        public boolean isLongpressEnabled() {
+            return mDetector.isLongpressEnabled();
+        }
+
+        @Override
+        public boolean onTouchEvent(MotionEvent ev) {
+            return mDetector.onTouchEvent(ev);
+        }
+
+        @Override
+        public void setIsLongpressEnabled(boolean enabled) {
+            mDetector.setIsLongpressEnabled(enabled);
+        }
+
+        @Override
+        public void setOnDoubleTapListener(OnDoubleTapListener listener) {
+            mDetector.setOnDoubleTapListener(listener);
+        }
+    }
+    
+    static class GestureDetectorCompatImplJellybeanMr1 implements GestureDetectorCompatImpl {
+        private final GestureDetector mDetector;
+
+        public GestureDetectorCompatImplJellybeanMr1(Context context, OnGestureListener listener,
                 Handler handler) {
             mDetector = new GestureDetector(context, listener, handler);
         }

@@ -16,6 +16,7 @@
 
 package android.support.v4.accessibilityservice;
 
+import android.view.View;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -36,6 +37,7 @@ public class AccessibilityServiceInfoCompat {
         public boolean getCanRetrieveWindowContent(AccessibilityServiceInfo info);
         public String getDescription(AccessibilityServiceInfo info);
         public String getSettingsActivityName(AccessibilityServiceInfo info);
+		public int getCapabilities(AccessibilityServiceInfo info);
     }
 
     static class AccessibilityServiceInfoStubImpl implements AccessibilityServiceInfoVersionImpl {
@@ -69,7 +71,15 @@ public ResolveInfo getResolveInfo(AccessibilityServiceInfo info) {
 public String getSettingsActivityName(AccessibilityServiceInfo info) {
             return null;
         }
-    }
+    
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.225 -0400", hash_original_method = "EC8A1901225B013B0B3A0DC86A1C167F", hash_generated_method = "19EEC60656AC25E8A6E6B94507F43637")
+            
+public int getCapabilities(AccessibilityServiceInfo info) {
+            return (getTaintInt() + info.getTaintInt() + info.eventTypes + 
+            		info.feedbackType + info.flags);
+        }}
 
     static class AccessibilityServiceInfoIcsImpl extends AccessibilityServiceInfoStubImpl {
 
@@ -107,7 +117,20 @@ public String getSettingsActivityName(AccessibilityServiceInfo info) {
         public String getSettingsActivityName(AccessibilityServiceInfo info) {
             return AccessibilityServiceInfoCompatIcs.getSettingsActivityName(info);
         }
-    }
+    
+
+
+        @DSVerified
+        @DSSafe
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.337 -0400", hash_original_method = "ACCBB183B6E642285425334B680DB6A9", hash_generated_method = "20062B3E765C817001A85FF27AF4FD70")
+            
+@Override
+        public int getCapabilities(AccessibilityServiceInfo info) {
+            if (getCanRetrieveWindowContent(info)) {
+                return CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT;
+            }
+            return 0;
+        }}
 
     static {
         if (Build.VERSION.SDK_INT >= 14) { // ICS
@@ -245,12 +268,22 @@ public static String feedbackTypeToString(int feedbackType) {
      * @param flag The flag.
      * @return The string representation.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:55.535 -0500", hash_original_method = "1CDE8576DF4BB8E3F301CC5A589FA52B", hash_generated_method = "9116E56AD4258E842170A835E3C72163")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.618 -0400", hash_original_method = "96B8B553CC88EC0DC0759F644BC937CD", hash_generated_method = "91D3B9453C9D46A024D4ECD4198D83CE")
+        
 public static String flagToString(int flag) {
         switch (flag) {
-            case AccessibilityServiceInfo.DEFAULT:
+            case DEFAULT:
                 return "DEFAULT";
+            case FLAG_INCLUDE_NOT_IMPORTANT_VIEWS:
+                return "FLAG_INCLUDE_NOT_IMPORTANT_VIEWS";
+            case FLAG_REQUEST_TOUCH_EXPLORATION_MODE:
+                return "FLAG_REQUEST_TOUCH_EXPLORATION_MODE";
+            case FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY:
+                return "FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY";
+            case FLAG_REPORT_VIEW_IDS:
+                return "FLAG_REPORT_VIEW_IDS";
+            case FLAG_REQUEST_FILTER_KEY_EVENTS:
+                return "FLAG_REQUEST_FILTER_KEY_EVENTS";
             default:
                 return null;
         }
@@ -265,4 +298,105 @@ public static String flagToString(int flag) {
 private AccessibilityServiceInfoCompat() {
 
     }
-}
+
+
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.450 -0400", hash_original_field = "9D8D4B7DE27E4F9427860421CE4DEB03", hash_generated_field = "FE94292DDD96EE4FAFC2E9E731ACDB22")
+
+    public static final int CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY = 0x00000004;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.428 -0400", hash_original_field = "B259AB48442D40BACED387937394743F", hash_generated_field = "DCE06537B6C8FD31A49E492D27E3374F")
+
+    public static final int CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT = 0x00000001;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.438 -0400", hash_original_field = "21C1DEA63FDC0FCF41D12EAE81BF8AA2", hash_generated_field = "07583BF1B1AA775A3B9D5407EEC3FC66")
+
+    public static final int CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION = 0x00000002;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.556 -0400", hash_original_field = "8D65619BF7E3F3766AD6FC815A4C2053", hash_generated_field = "B34DF4A9762CB815474D6C84E75E3CF5")
+
+    public static final int FLAG_REQUEST_FILTER_KEY_EVENTS = 0x00000020;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.461 -0400", hash_original_field = "5E41DA159A6FB996594CBE4EC61373E8", hash_generated_field = "9F2F72BC7E0C6B19AF1E23D564D6599E")
+
+    public static final int CAPABILITY_CAN_FILTER_KEY_EVENTS = 0x00000008;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.492 -0400", hash_original_field = "97C88284C7FB7A365D3D8A93DB373C8D", hash_generated_field = "4A56EABC83BFE9924F8C0DD07F573D25")
+
+
+    /**
+     * If an {@link AccessibilityService} is the default for a given type.
+     * Default service is invoked only if no package specific one exists. In case of
+     * more than one package specific service only the earlier registered is notified.
+     */
+    public static final int DEFAULT = 0x0000001;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.514 -0400", hash_original_field = "28543D65E80C959C2527EB1C506F60DA", hash_generated_field = "D38C55866ACFE90DBB9FBBE73A92BB80")
+
+    public static final int FLAG_REQUEST_TOUCH_EXPLORATION_MODE = 0x0000004;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.471 -0400", hash_original_field = "E67320D5CB5602481239613A6250DBA5", hash_generated_field = "D422D1B6CE9FAD473E7A0F9D87986A96")
+
+
+    /**
+     * Denotes braille feedback.
+     */
+    public static final int FEEDBACK_BRAILLE = 0x0000020;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.546 -0400", hash_original_field = "114496861BE1718123DE556BA7C1D35E", hash_generated_field = "2A556F59F73D2B1EF7BB02B27022971A")
+
+    public static final int FLAG_REPORT_VIEW_IDS = 0x00000010;
+
+    /**
+     * Returns the string representation of a capability. For example,
+     * {@link #CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT} is represented
+     * by the string CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT.
+     *
+     * @param capability The capability.
+     * @return The string representation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.633 -0400", hash_original_method = "7FA21CC85C48F4B1A53A8E291ECF34E3", hash_generated_method = "05AE92646636384B077C50E81172D4FF")
+        
+public static String capabilityToString(int capability) {
+        switch (capability) {
+            case CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT:
+                return "CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT";
+            case CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION:
+                return "CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION";
+            case CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY:
+                return "CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY";
+            case CAPABILITY_CAN_FILTER_KEY_EVENTS:
+                return "CAPABILITY_CAN_FILTER_KEY_EVENTS";
+            default:
+                return "UNKNOWN";
+        }
+    }
+
+    /**
+     * Returns the bit mask of capabilities this accessibility service has such as
+     * being able to retrieve the active window content, etc.
+     *
+     * @param info The service info whose capabilities to get.
+     * @return The capability bit mask.
+     *
+     * @see #CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT
+     * @see #CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION
+     * @see #CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY
+     * @see #CAPABILITY_CAN_FILTER_KEY_EVENTS
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.624 -0400", hash_original_method = "A04AD5275C99D2EF1FD3813151BA5011", hash_generated_method = "5F0CAE2B4C7250D8FB1E79F0653931C9")
+        
+@DSVerified
+@DSSafe
+public static int getCapabilities(AccessibilityServiceInfo info) {
+        return IMPL.getCapabilities(info);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.503 -0400", hash_original_field = "DCD3F800BE4342F731B4219875BB1E6A", hash_generated_field = "251A50501088BB4DF8F316AF88A200F0")
+
+    public static final int FLAG_INCLUDE_NOT_IMPORTANT_VIEWS = 0x0000002;
+
+    static class AccessibilityServiceInfoJellyBeanMr2 extends AccessibilityServiceInfoIcsImpl {
+    	AccessibilityServiceInfoJellyBeanMr2() {
+    		super();
+    	}
+        @Override
+        @DSVerified
+        @DSSafe
+        public int getCapabilities(AccessibilityServiceInfo info) {
+            return IMPL.getCapabilities(info);
+        }
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 09:35:11.524 -0400", hash_original_field = "25F232DD6E2040B7C77EE1A0AB9D14D0", hash_generated_field = "13EF959FC2CD627C6CA7A8AAA2FAFF4C")
+
+    public static final int FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY = 0x00000008;}
