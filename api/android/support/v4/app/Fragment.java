@@ -1,6 +1,7 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import android.widget.AdapterView;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.util.Log;
@@ -617,17 +618,6 @@ public final CharSequence getText(int resId) {
         return getResources().getText(resId);
     }
 
-    /**
-     * Return a localized string from the application's package's
-     * default string table.
-     *
-     * @param resId Resource id for the string
-     */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.315 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
-    
-public final String getString(int resId) {
-        return getResources().getString(resId);
-    }
 
     /**
      * Return a localized formatted string from the application's package's
@@ -1978,5 +1968,47 @@ void performDestroy() {
                     + " did not call through to super.onDestroy()");
         }
     }
+
+
+
+    /**
+     * Determine if the given fragment name is a support library fragment class.
+     *
+     * @param context Context used to determine the correct ClassLoader to use
+     * @param fname Class name of the fragment to test
+     * @return true if <code>fname</code> is <code>android.support.v4.app.Fragment</code>
+     *         or a subclass, false otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:36.224 -0400", hash_original_method = "15FEE66BB99145EDAB81DC2373AC2E88", hash_generated_method = "E748DB92F5AE2DB357CBF5EA9893CBD3")
+    
+static boolean isSupportFragmentClass(Context context, String fname) {
+        try {
+            Class<?> clazz = sClassMap.get(fname);
+            if (clazz == null) {
+                // Class not found in the cache, see if it's real, and try to add it
+                clazz = context.getClassLoader().loadClass(fname);
+                sClassMap.put(fname, clazz);
+            }
+            return Fragment.class.isAssignableFrom(clazz);
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
+
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:36.370 -0400", hash_original_method = "75F565566001B49845FB2B53711FFC14", hash_generated_method = "9B9EB716EF67A2DB5DBCAC037581A8A9")
+    
+final public boolean isMenuVisible() {
+        return mMenuVisible;
+    }
+
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:36.365 -0400", hash_original_method = "AEB5C06B1A3D09C8C880AEB62AEE2996", hash_generated_method = "B3FB186D256EFD1F23483DE00825B4BF")
+    
+final public boolean hasOptionsMenu() {
+        return mHasMenu;
+    }
+    
 }
+
 

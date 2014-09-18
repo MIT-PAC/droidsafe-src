@@ -1,6 +1,7 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import android.support.v4.content.IntentCompat;
 import android.util.Log;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -29,11 +30,10 @@ public class NavUtils {
      * @return true if navigating up should recreate a new task stack, false if the same task
      *         should be used for the destination
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.415 -0500", hash_original_method = "9DD950E6545A66E64C68C25E21AEF114", hash_generated_method = "A1DE030C7093ADFB6081A9D537D728DE")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.576 -0400", hash_original_method = "8694053549EB0977F153BD2950135821", hash_generated_method = "ACC35A127CCAD31FB685A26849224D6C")
+        
 public static boolean shouldUpRecreateTask(Activity sourceActivity, Intent targetIntent) {
-        String action = sourceActivity.getIntent().getAction();
-        return action != null && !action.equals(Intent.ACTION_MAIN);
+        return IMPL.shouldUpRecreateTask(sourceActivity, targetIntent);
     }
 
     /**
@@ -77,33 +77,31 @@ public static void navigateUpFromSameTask(Activity sourceActivity) {
      * @param sourceActivity The current activity from which the user is attempting to navigate up
      * @param upIntent An intent representing the target destination for up navigation
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.420 -0500", hash_original_method = "83D387966084C04AE269F97601437941", hash_generated_method = "1ED4EEA361FD740D10AB1D07600D651B")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.584 -0400", hash_original_method = "5F631F234D0DC1811CD50FBCF3EE9024", hash_generated_method = "16F3E4D2598A69C35DBC6EA447F013C1")
+        
 public static void navigateUpTo(Activity sourceActivity, Intent upIntent) {
-        upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        sourceActivity.startActivity(upIntent);
-        sourceActivity.finish();
+        IMPL.navigateUpTo(sourceActivity, upIntent);
     }
 
     /**
-     * Obtain an {@link Intent} that will launch {@link Intent#ACTION_MAIN} with an explicit
-     * target activity specified by sourceActivity's {@link #PARENT_ACTIVITY} &lt;meta-data&gt;
-     * element in the application's manifest.
+     * Obtain an {@link Intent} that will launch an explicit target activity
+     * specified by sourceActivity's {@link #PARENT_ACTIVITY} &lt;meta-data&gt;
+     * element in the application's manifest. If the device is running
+     * Jellybean or newer, the android:parentActivityName attribute will be preferred
+     * if it is present.
      *
      * @param sourceActivity Activity to fetch a parent intent for
      * @return a new Intent targeting the defined parent activity of sourceActivity
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.424 -0500", hash_original_method = "F08790C64CD7241E24C17C868EE430F0", hash_generated_method = "52BC7FABF55E99FCC75B96020EDDF046")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.587 -0400", hash_original_method = "06EB2AD9FD252CF1628A5B9CC5130567", hash_generated_method = "42BFFB3678B33D0F42F1152FA83CC384")
+        
 public static Intent getParentActivityIntent(Activity sourceActivity) {
-        String parentActivity = getParentActivityName(sourceActivity);
-        if (parentActivity == null) return null;
-        return new Intent(Intent.ACTION_MAIN).setClassName(sourceActivity, parentActivity);
+        return IMPL.getParentActivityIntent(sourceActivity);
     }
 
     /**
-     * Obtain an {@link Intent} that will launch {@link Intent#ACTION_MAIN} with an explicit
-     * target activity specified by sourceActivityClass's {@link #PARENT_ACTIVITY} &lt;meta-data&gt;
+     * Obtain an {@link Intent} that will launch an explicit target activity
+     * specified by sourceActivityClass's {@link #PARENT_ACTIVITY} &lt;meta-data&gt;
      * element in the application's manifest.
      *
      * @param context Context for looking up the activity component for sourceActivityClass
@@ -111,19 +109,26 @@ public static Intent getParentActivityIntent(Activity sourceActivity) {
      * @return a new Intent targeting the defined parent activity of sourceActivity
      * @throws NameNotFoundException if the ComponentName for sourceActivityClass is invalid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.426 -0500", hash_original_method = "52C3CE258E86B05948F5527711355C4F", hash_generated_method = "6041BF304E5EC828486BFCBB88989F03")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.593 -0400", hash_original_method = "363BB0EC3D6F8A0C5FB7B8E9948ED7D3", hash_generated_method = "81CC0CD64C399E3E407A18C06B57D902")
+        
 public static Intent getParentActivityIntent(Context context, Class<?> sourceActivityClass)
             throws NameNotFoundException {
         String parentActivity = getParentActivityName(context,
                 new ComponentName(context, sourceActivityClass));
         if (parentActivity == null) return null;
-        return new Intent(Intent.ACTION_MAIN).setClassName(context, parentActivity);
+
+        // If the parent itself has no parent, generate a main activity intent.
+        final ComponentName target = new ComponentName(context, parentActivity);
+        final String grandparent = getParentActivityName(context, target);
+        final Intent parentIntent = grandparent == null
+                ? IntentCompat.makeMainActivity(target)
+                : new Intent().setComponent(target);
+        return parentIntent;
     }
 
     /**
-     * Obtain an {@link Intent} that will launch {@link Intent#ACTION_MAIN} with an explicit
-     * target activity specified by sourceActivityClass's {@link #PARENT_ACTIVITY} &lt;meta-data&gt;
+     * Obtain an {@link Intent} that will launch an explicit target activity
+     * specified by sourceActivityClass's {@link #PARENT_ACTIVITY} &lt;meta-data&gt;
      * element in the application's manifest.
      *
      * @param context Context for looking up the activity component for the source activity
@@ -131,16 +136,21 @@ public static Intent getParentActivityIntent(Context context, Class<?> sourceAct
      * @return a new Intent targeting the defined parent activity of sourceActivity
      * @throws NameNotFoundException if the ComponentName for sourceActivityClass is invalid
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.428 -0500", hash_original_method = "8FB8BE110A26F7FD89AC52562F36577B", hash_generated_method = "59EC80D74698B6F5E1E13869ECDB0105")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.598 -0400", hash_original_method = "7F228843C0699E10640C9B9C0AEB579A", hash_generated_method = "CDD29196154ED136502FC109D21D91A1")
+        
 public static Intent getParentActivityIntent(Context context, ComponentName componentName)
             throws NameNotFoundException {
         String parentActivity = getParentActivityName(context, componentName);
         if (parentActivity == null) return null;
-        if (parentActivity.charAt(0) == '.') {
-            parentActivity = context.getPackageName() + parentActivity;
-        }
-        return new Intent(Intent.ACTION_MAIN).setClassName(context, parentActivity);
+
+        // If the parent itself has no parent, generate a main activity intent.
+        final ComponentName target = new ComponentName(
+                componentName.getPackageName(), parentActivity);
+        final String grandparent = getParentActivityName(context, target);
+        final Intent parentIntent = grandparent == null
+                ? IntentCompat.makeMainActivity(target)
+                : new Intent().setComponent(target);
+        return parentIntent;
     }
 
     /**
@@ -172,18 +182,13 @@ public static String getParentActivityName(Activity sourceActivity) {
      * @return The fully qualified class name of sourceActivity's parent activity or null if
      *         it was not specified
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.434 -0500", hash_original_method = "76DADE3956C91CAB284E34A2514FD57C", hash_generated_method = "969B5BE1710647A6176FAFEB11516E6F")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.606 -0400", hash_original_method = "0ABDA37123907F4426EEC94BF151061E", hash_generated_method = "197AD77C6BF572390B3B757F52BB8422")
+        
 public static String getParentActivityName(Context context, ComponentName componentName)
             throws NameNotFoundException {
         PackageManager pm = context.getPackageManager();
         ActivityInfo info = pm.getActivityInfo(componentName, PackageManager.GET_META_DATA);
-        if (info.metaData == null) return null;
-        String parentActivity = info.metaData.getString(PARENT_ACTIVITY);
-        if (parentActivity == null) return null;
-        if (parentActivity.charAt(0) == '.') {
-            parentActivity = context.getPackageName() + parentActivity;
-        }
+        String parentActivity = IMPL.getParentActivityName(context, info);
         return parentActivity;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.410 -0500", hash_original_field = "2B3B53F66B0D832C3C83688F265ED44C", hash_generated_field = "E417B6C891271FCB16EE938B8A1D32B3")
@@ -200,5 +205,101 @@ public static String getParentActivityName(Context context, ComponentName compon
     
 private NavUtils() {
     }
-}
+
+
+
+    static class NavUtilsImplBase implements NavUtilsImpl {
+
+        @Override
+        public Intent getParentActivityIntent(Activity activity) {
+            String parentName = NavUtils.getParentActivityName(activity);
+            if (parentName == null) return null;
+
+            // If the parent itself has no parent, generate a main activity intent.
+            final ComponentName target = new ComponentName(activity, parentName);
+            try {
+                final String grandparent = NavUtils.getParentActivityName(activity, target);
+                final Intent parentIntent = grandparent == null
+                        ? IntentCompat.makeMainActivity(target)
+                        : new Intent().setComponent(target);
+                return parentIntent;
+            } catch (NameNotFoundException e) {
+                Log.e(TAG, "getParentActivityIntent: bad parentActivityName '" + parentName +
+                        "' in manifest");
+                return null;
+            }
+        }
+
+        @Override
+        public boolean shouldUpRecreateTask(Activity activity, Intent targetIntent) {
+            String action = activity.getIntent().getAction();
+            return action != null && !action.equals(Intent.ACTION_MAIN);
+        }
+
+        @Override
+        public void navigateUpTo(Activity activity, Intent upIntent) {
+            upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            activity.startActivity(upIntent);
+            activity.finish();
+        }
+
+        @Override
+        public String getParentActivityName(Context context, ActivityInfo info) {
+            if (info.metaData == null) return null;
+            String parentActivity = info.metaData.getString(PARENT_ACTIVITY);
+            if (parentActivity == null) return null;
+            if (parentActivity.charAt(0) == '.') {
+                parentActivity = context.getPackageName() + parentActivity;
+            }
+            return parentActivity;
+        }
+    }
+
+    static class NavUtilsImplJB extends NavUtilsImplBase {
+
+        @Override
+        public Intent getParentActivityIntent(Activity activity) {
+            // Prefer the "real" JB definition if available,
+            // else fall back to the meta-data element.
+            Intent result = NavUtilsJB.getParentActivityIntent(activity);
+            if (result == null) {
+                result = superGetParentActivityIntent(activity);
+            }
+            return result;
+        }
+
+        Intent superGetParentActivityIntent(Activity activity) {
+            return super.getParentActivityIntent(activity);
+        }
+
+        @Override
+        public boolean shouldUpRecreateTask(Activity activity, Intent targetIntent) {
+            return NavUtilsJB.shouldUpRecreateTask(activity, targetIntent);
+        }
+
+        @Override
+        public void navigateUpTo(Activity activity, Intent upIntent) {
+            NavUtilsJB.navigateUpTo(activity, upIntent);
+        }
+
+        @Override
+        public String getParentActivityName(Context context, ActivityInfo info) {
+            String result = NavUtilsJB.getParentActivityName(info);
+            if (result == null) {
+                result = super.getParentActivityName(context, info);
+            }
+            return result;
+        }
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.571 -0400", hash_original_field = "C6811D4037382D1ADC65F4D3DF5E0CC6", hash_generated_field = "9E77B70C45E2AC10E994AD2C22A6D3C4")
+
+
+    private static  NavUtilsImpl IMPL;
+
+    interface NavUtilsImpl {
+        Intent getParentActivityIntent(Activity activity);
+        boolean shouldUpRecreateTask(Activity activity, Intent targetIntent);
+        void navigateUpTo(Activity activity, Intent upIntent);
+        String getParentActivityName(Context context, ActivityInfo info);
+    }}
 

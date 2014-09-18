@@ -30,33 +30,22 @@ import android.support.v4.app.NavUtils;
 */
 
 class NavUtilsJB {
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:06.873 -0500", hash_original_method = "BFEDDA266C52CC81FA2F1DABC0703AC4", hash_generated_method = "B53AFB187DC25461701B8991E1B4DA16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.681 -0400", hash_original_method = "CB98B27E302D7CC17AB9C2D1275BAB9B", hash_generated_method = "C9AD71EFE7773FE5CC11389F47BD19A0")
     
 public static Intent getParentActivityIntent(Activity activity) {
-        //return activity.getParentActivityIntent();
-        // if (activity.getParent())
-        //     return activity.getParent().getIntent();
-        // return null;
-        return NavUtils.getParentActivityIntent(activity);
+        return activity.getParentActivityIntent();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:06.876 -0500", hash_original_method = "325459876D1B7AB5D6C4710EF08AEF89", hash_generated_method = "E4D944E7302885FB663DF407AEFB8F3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.685 -0400", hash_original_method = "600F3A01F406647A22CFAD43585E8A93", hash_generated_method = "F46ECBD0A4E9645EB3E430F86A83D6E4")
     
 public static boolean shouldUpRecreateTask(Activity activity, Intent targetIntent) {
-        // String action = activity.getIntent().getAction();
-        // return action != null && !action.equals(Intent.ACTION_MAIN);
-
-        return NavUtils.shouldUpRecreateTask(activity, targetIntent);
+        return activity.shouldUpRecreateTask(targetIntent);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:06.878 -0500", hash_original_method = "E25C64227F2491C3FBC8B59DDF495413", hash_generated_method = "2BDCE6BF98026CF9147F04D774614870")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.688 -0400", hash_original_method = "0AEB6BA6380873C2F8737DDBA04A3183", hash_generated_method = "A6824288A65DB84A7A9926C5522CFA03")
     
 public static void navigateUpTo(Activity activity, Intent upIntent) {
-        //activity.navigateUpTo(upIntent);
-        // upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        // activity.startActivity(upIntent);
-        // activity.finish();
-        NavUtils.navigateUpTo(activity, upIntent);
+        activity.navigateUpTo(upIntent);
     }
 
     /*
@@ -66,4 +55,11 @@ public static void navigateUpTo(Activity activity, Intent upIntent) {
     }
 
     */
-}
+
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.691 -0400", hash_original_method = "1B7AF8495952C7746A5ACB9A83810BD2", hash_generated_method = "FD1D364EE353803CDF480E20AA76DC74")
+    
+public static String getParentActivityName(ActivityInfo info) {
+        return info.parentActivityName;
+    }}

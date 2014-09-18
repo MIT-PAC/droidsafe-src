@@ -836,11 +836,11 @@ public CharSequence getText() {
          *
          * @return Styled text provided by the sender as HTML.
          */
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.478 -0500", hash_original_method = "F08F059234BC2D4D3AF37F0CDBF769A8", hash_generated_method = "1A3AD04073CCD8551C76C13646B5C617")
-        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:07.659 -0400", hash_original_method = "8652E338C4A88405737C54A4668CF0A3", hash_generated_method = "213BE65D5163C843D0FBA85791CB83A9")
+            
 public String getHtmlText() {
             String result = mIntent.getStringExtra(IntentCompat.EXTRA_HTML_TEXT);
-            if (mIntent == null) {
+            if (result == null) {
                 CharSequence text = getText();
                 if (text instanceof Spanned) {
                     result = Html.toHtml((Spanned) text);
@@ -1070,4 +1070,16 @@ public CharSequence getCallingApplicationLabel() {
             return null;
         }
     }
-}
+
+
+
+    static class ShareCompatImplJB extends ShareCompatImplICS {
+        public String escapeHtml(CharSequence html) {
+            return ShareCompatJB.escapeHtml(html);
+        }
+
+        @Override
+        boolean shouldAddChooserIntent(MenuItem item) {
+            return false;
+        }
+    }}

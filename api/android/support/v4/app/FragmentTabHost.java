@@ -195,7 +195,7 @@ public FragmentTabHost(Context context, AttributeSet attrs) {
         initFragmentTabHost(context, attrs);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.595 -0500", hash_original_method = "42AAEEAE9FF86FE2BEA81AB882DE4711", hash_generated_method = "19B79AD03627C382766951B27D2ACC47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:59.786 -0400", hash_original_method = "242CE4EA9C30ACBC3221539B58B803C1", hash_generated_method = "0170C3EF83BEA65706F7AFDE64E0BB85")
     
 private void initFragmentTabHost(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs,
@@ -204,32 +204,6 @@ private void initFragmentTabHost(Context context, AttributeSet attrs) {
         a.recycle();
 
         super.setOnTabChangedListener(this);
-
-        // If owner hasn't made its own view hierarchy, then as a convenience
-        // we will construct a standard one here.
-        if (findViewById(android.R.id.tabs) == null) {
-            LinearLayout ll = new LinearLayout(context);
-            ll.setOrientation(LinearLayout.VERTICAL);
-            addView(ll, new FrameLayout.LayoutParams(
-                    ViewGroup.LayoutParams.FILL_PARENT,
-                    ViewGroup.LayoutParams.FILL_PARENT));
-
-            TabWidget tw = new TabWidget(context);
-            tw.setId(android.R.id.tabs);
-            tw.setOrientation(TabWidget.HORIZONTAL);
-            ll.addView(tw, new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.FILL_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT, 0));
-
-            FrameLayout fl = new FrameLayout(context);
-            fl.setId(android.R.id.tabcontent);
-            ll.addView(fl, new LinearLayout.LayoutParams(0, 0, 0));
-
-            mRealTabContent = fl = new FrameLayout(context);
-            mRealTabContent.setId(mContainerId);
-            ll.addView(fl, new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.FILL_PARENT, 0, 1));
-        }
     }
 
     /**
@@ -245,18 +219,20 @@ private void initFragmentTabHost(Context context, AttributeSet attrs) {
                 "Must call setup() that takes a Context and FragmentManager");
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.599 -0500", hash_original_method = "BEA87448A8F620CF25486462EAD40656", hash_generated_method = "ABEB5865C3DCE1D0BB87413C3D7D6E0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:59.802 -0400", hash_original_method = "81FE6D6769B739C559094EA484A06D90", hash_generated_method = "610B5F32383ADC8D108D62E8A4FB077A")
     
 public void setup(Context context, FragmentManager manager) {
+        ensureHierarchy(context);  // Ensure views required by super.setup()
         super.setup();
         mContext = context;
         mFragmentManager = manager;
         ensureContent();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.601 -0500", hash_original_method = "8C2E5B314060B3DAC2CC3B33FD147996", hash_generated_method = "D8E2FB5A77788A3A3C126714F81A46A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:59.810 -0400", hash_original_method = "758E245805C4A0BE959EEEA763458119", hash_generated_method = "D82144A51E618EDA341B1E84264E296F")
     
 public void setup(Context context, FragmentManager manager, int containerId) {
+        ensureHierarchy(context);  // Ensure views required by super.setup()
         super.setup();
         mContext = context;
         mFragmentManager = manager;
@@ -439,4 +415,35 @@ private FragmentTransaction doTabChanged(String tabId, FragmentTransaction ft) {
         }
         return ft;
     }
-}
+
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:59.794 -0400", hash_original_method = "C4F0733BBEF37CFAC4D5F85831503571", hash_generated_method = "D8606A52E3FE9B6C40B1EFCD16633A6B")
+    
+private void ensureHierarchy(Context context) {
+        // If owner hasn't made its own view hierarchy, then as a convenience
+        // we will construct a standard one here.
+        if (findViewById(android.R.id.tabs) == null) {
+            LinearLayout ll = new LinearLayout(context);
+            ll.setOrientation(LinearLayout.VERTICAL);
+            addView(ll, new FrameLayout.LayoutParams(
+                    ViewGroup.LayoutParams.FILL_PARENT,
+                    ViewGroup.LayoutParams.FILL_PARENT));
+
+            TabWidget tw = new TabWidget(context);
+            tw.setId(android.R.id.tabs);
+            tw.setOrientation(TabWidget.HORIZONTAL);
+            ll.addView(tw, new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.FILL_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT, 0));
+
+            FrameLayout fl = new FrameLayout(context);
+            fl.setId(android.R.id.tabcontent);
+            ll.addView(fl, new LinearLayout.LayoutParams(0, 0, 0));
+
+            mRealTabContent = fl = new FrameLayout(context);
+            mRealTabContent.setId(mContainerId);
+            ll.addView(fl, new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.FILL_PARENT, 0, 1));
+        }
+    }}

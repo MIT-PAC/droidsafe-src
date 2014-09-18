@@ -1,6 +1,8 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
@@ -93,5 +95,80 @@ public static boolean startActivities(Activity activity, Intent[] intents) {
         //Synthesized constructor
     }
     
-}
+
+
+
+    /**
+     * Start an activity with additional launch information, if able.
+     *
+     * <p>In Android 4.1+ additional options were introduced to allow for more
+     * control on activity launch animations. Applications can use this method
+     * along with {@link ActivityOptionsCompat} to use these animations when
+     * available. When run on versions of the platform where this feature does
+     * not exist the activity will be launched normally.</p>
+     *
+     * @param activity Context to launch activity from.
+     * @param intent The description of the activity to start.
+     * @param options Additional options for how the Activity should be started.
+     *                May be null if there are no options. See
+     *                {@link ActivityOptionsCompat} for how to build the Bundle
+     *                supplied here; there are no supported definitions for
+     *                building it manually.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.426 -0400", hash_original_method = "297168F50FF1BF8F7F501852B9986780", hash_generated_method = "9863ACB2503459A6B1526C61A26C2CEF")
+    
+public static void startActivity(Activity activity, Intent intent, Bundle options) {
+        if (Build.VERSION.SDK_INT >= 16) {
+            ActivityCompatJB.startActivity(activity, intent, options);
+        } else {
+            activity.startActivity(intent);
+        }
+    }
+
+    /**
+     * Start new activity with options, if able, for which you would like a
+     * result when it finished.
+     *
+     * <p>In Android 4.1+ additional options were introduced to allow for more
+     * control on activity launch animations. Applications can use this method
+     * along with {@link ActivityOptionsCompat} to use these animations when
+     * available. When run on versions of the platform where this feature does
+     * not exist the activity will be launched normally.</p>
+     *
+     * @param activity Origin activity to launch from.
+     * @param intent The description of the activity to start.
+     * @param requestCode If >= 0, this code will be returned in
+     *                   onActivityResult() when the activity exits.
+     * @param options Additional options for how the Activity should be started.
+     *                May be null if there are no options. See
+     *                {@link ActivityOptionsCompat} for how to build the Bundle
+     *                supplied here; there are no supported definitions for
+     *                building it manually.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.432 -0400", hash_original_method = "1BB329783E1FCF6E80FB0DB154F51045", hash_generated_method = "16FDFB6E0F4C118FDAC80DB5AB8E3E6A")
+    
+public static void startActivityForResult(Activity activity, Intent intent, int requestCode, Bundle options) {
+        if (Build.VERSION.SDK_INT >= 16) {
+            ActivityCompatJB.startActivityForResult(activity, intent, requestCode, options);
+        } else {
+            activity.startActivityForResult(intent, requestCode);
+        }
+    }
+
+    /**
+     * Finish this activity, and tries to finish all activities immediately below it
+     * in the current task that have the same affinity.
+     *
+     * <p>On Android 4.1+ calling this method will call through to the native version of this
+     * method. For other platforms {@link Activity#finish()} will be called instead.</p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.436 -0400", hash_original_method = "52B53D972317D121FBBAC098C4A03574", hash_generated_method = "7EC59511B332B8C2C414302C0531E947")
+    
+public static void finishAffinity(Activity activity) {
+        if (Build.VERSION.SDK_INT >= 16) {
+            ActivityCompatJB.finishAffinity(activity);
+        } else {
+            activity.finish();
+        }
+    }}
 

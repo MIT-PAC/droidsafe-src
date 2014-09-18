@@ -358,13 +358,15 @@ public final Activity getParent() {
     //TODO: We need to find a way to model parent activity associated
     // with this activity
     @DSBan(DSCat.DEFAULT_MODIFIER)
+    public 
     Intent   getParentActivityIntent() {
         if (mParent != null) {
-            Intent intent = new Intent();
-            return intent;
-        }
         
-        return new Intent();
+        }
+        Intent intent = new Intent();
+        intent.addTaint(getTaint());
+        return intent;
+        
     }
     
     /** Retrieve the window manager for showing custom windows. */

@@ -43,10 +43,14 @@ public class ActivityOptionsCompat {
      * @return Returns a new ActivityOptions object that you can use to supply
      * these options as the options Bundle when starting an activity.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:12.122 -0500", hash_original_method = "126500B3BCBAFE14F80814062E944918", hash_generated_method = "FE2E3D9DFD13F762063CBBC1EFABB2A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.606 -0400", hash_original_method = "FD2BA800170C8DC42E379DABFFB5EFE5", hash_generated_method = "B239975B85A9B21DC60FCDFB76323183")
     
 public static ActivityOptionsCompat makeCustomAnimation(Context context,
             int enterResId, int exitResId) {
+        if (Build.VERSION.SDK_INT >= 16) {
+            return new ActivityOptionsImplJB(
+                ActivityOptionsCompatJB.makeCustomAnimation(context, enterResId, exitResId));
+        }
         return new ActivityOptionsCompat();
     }
 
@@ -70,10 +74,15 @@ public static ActivityOptionsCompat makeCustomAnimation(Context context,
      * @return Returns a new ActivityOptions object that you can use to supply
      * these options as the options Bundle when starting an activity.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:12.124 -0500", hash_original_method = "C49E2A3A02D39727F6B5745A10D79828", hash_generated_method = "14887FD7FB68767366363B82675374F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.613 -0400", hash_original_method = "1D4A610DE4F5181569866CF445B26750", hash_generated_method = "9B01E4EE18D9AA5C116ACE37BA61AD55")
     
 public static ActivityOptionsCompat makeScaleUpAnimation(View source,
             int startX, int startY, int startWidth, int startHeight) {
+        if (Build.VERSION.SDK_INT >= 16) {
+            return new ActivityOptionsImplJB(
+                ActivityOptionsCompatJB.makeScaleUpAnimation(source, startX, startY,
+                        startWidth, startHeight));
+        }
         return new ActivityOptionsCompat();
     }
 
@@ -96,10 +105,15 @@ public static ActivityOptionsCompat makeScaleUpAnimation(View source,
      * @return Returns a new ActivityOptions object that you can use to supply
      * these options as the options Bundle when starting an activity.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:12.126 -0500", hash_original_method = "368C876A35CEEE2CCC6880AFD75BE99C", hash_generated_method = "77CA4EDF9B7D8EEDB69CAB079AFD0DF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.620 -0400", hash_original_method = "FDC9AB05A831D56F23C43A2483DBEA1B", hash_generated_method = "2E45DA36707CDB57838F7C3B363EAC20")
     
 public static ActivityOptionsCompat makeThumbnailScaleUpAnimation(View source,
             Bitmap thumbnail, int startX, int startY) {
+        if (Build.VERSION.SDK_INT >= 16) {
+            return new ActivityOptionsImplJB(
+                ActivityOptionsCompatJB.makeThumbnailScaleUpAnimation(source, thumbnail,
+                        startX, startY));
+        }
         return new ActivityOptionsCompat();
     }
 
@@ -132,4 +146,27 @@ public Bundle toBundle() {
 public void update(ActivityOptionsCompat otherOptions) {
         // Do nothing.
     }
-}
+
+
+
+
+    private static class ActivityOptionsImplJB extends ActivityOptionsCompat {
+        private final ActivityOptionsCompatJB mImpl;
+
+        ActivityOptionsImplJB(ActivityOptionsCompatJB impl) {
+            mImpl = impl;
+        }
+
+        @Override
+        public Bundle toBundle() {
+            return mImpl.toBundle();
+        }
+
+        @Override
+        public void update(ActivityOptionsCompat otherOptions) {
+            if (otherOptions instanceof ActivityOptionsImplJB) {
+                ActivityOptionsImplJB otherImpl = (ActivityOptionsImplJB)otherOptions;
+                mImpl.update(otherImpl.mImpl);
+            }
+        }
+    }}

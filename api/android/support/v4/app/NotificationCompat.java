@@ -27,6 +27,7 @@ import android.graphics.Bitmap;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.widget.RemoteViews;
 import java.util.ArrayList;
 
@@ -938,4 +939,52 @@ public Action(int icon_, CharSequence title_, PendingIntent intent_) {
             this.actionIntent = intent_;
         }
     }
-}
+
+
+
+    static class NotificationCompatImplJellybean implements NotificationCompatImpl {
+        public Notification build(Builder b) {
+            NotificationCompatJellybean jbBuilder = new NotificationCompatJellybean(
+                    b.mContext, b.mNotification, b.mContentTitle, b.mContentText, b.mContentInfo,
+                    b.mTickerView, b.mNumber, b.mContentIntent, b.mFullScreenIntent, b.mLargeIcon,
+                    b.mProgressMax, b.mProgress, b.mProgressIndeterminate,
+                    b.mUseChronometer, b.mPriority, b.mSubText);
+            for (Action action: b.mActions) {
+                jbBuilder.addAction(action.icon, action.title, action.actionIntent);
+            }
+            if (b.mStyle != null) {
+                if (b.mStyle instanceof BigTextStyle) {
+                    BigTextStyle style = (BigTextStyle) b.mStyle;
+                    jbBuilder.addBigTextStyle(style.mBigContentTitle,
+                            style.mSummaryTextSet,
+                            style.mSummaryText,
+                            style.mBigText);
+                } else if (b.mStyle instanceof InboxStyle) {
+                    InboxStyle style = (InboxStyle) b.mStyle;
+                    jbBuilder.addInboxStyle(style.mBigContentTitle,
+                            style.mSummaryTextSet,
+                            style.mSummaryText,
+                            style.mTexts);
+                } else if (b.mStyle instanceof BigPictureStyle) {
+                    BigPictureStyle style = (BigPictureStyle) b.mStyle;
+                    jbBuilder.addBigPictureStyle(style.mBigContentTitle,
+                            style.mSummaryTextSet,
+                            style.mSummaryText,
+                            style.mPicture,
+                            style.mBigLargeIcon,
+                            style.mBigLargeIconSet);
+                }
+            }
+            return(jbBuilder.build());
+        }
+    }
+
+
+
+    @DSSafe
+	public static Bundle getExtras(Notification notification) {
+		// TODO Auto-generated method stub
+		Bundle b = new Bundle();
+		b.addTaint(notification.getTaint());
+		return b;
+	}}

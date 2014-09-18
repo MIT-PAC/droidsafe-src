@@ -223,7 +223,7 @@ public Notification[] newArray(int size)
      * Structure to encapsulate an "action", including title and icon, that can be attached to a Notification.
      * @hide
      */
-    private static class Action implements Parcelable {
+    public static class Action implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.851 -0500", hash_original_field = "C2D1EA0ED2BDB865CA7AAF2EDD085BB3", hash_generated_field = "7D00235E1576E72D5EBB779ACEAE2E6A")
 
         public static final Parcelable.Creator<Action> CREATOR
@@ -303,10 +303,10 @@ public Action(int icon_, CharSequence title_, PendingIntent intent_) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.818 -0500", hash_original_field = "6F80A5414A80FF69E92A0BD3C0E073DC", hash_generated_field = "66AEDCB15A5D6889C65226678BC8C2E1")
 
-    private Bundle extras;
+    public Bundle extras;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.858 -0500", hash_original_field = "EBB91CA3E65CD7BAE0822FB31E602796", hash_generated_field = "96F510E9758A5FC0525EDDB2F0F52D96")
 
-    private Action[] actions;
+    public Action[] actions;
 
     /**
      * Constructs a Notification object with default values.
@@ -320,7 +320,7 @@ public Notification()
         this.when = System.currentTimeMillis();
         this.priority = PRIORITY_DEFAULT;
     }
-
+    
     /**
      * @hide
      */

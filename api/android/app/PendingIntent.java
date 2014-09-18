@@ -288,7 +288,11 @@ PendingIntent(IBinder target) {
         mTarget = IIntentSender.Stub.asInterface(target);
     }
 
-    /**
+    public PendingIntent(DSOnlyType dontcare) {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
      * Retrieve a IntentSender object that wraps the existing sender of the PendingIntent
      *
      * @return Returns a IntentSender object that wraps the sender of PendingIntent
