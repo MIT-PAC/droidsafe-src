@@ -43,6 +43,24 @@ public void setTag(Object tag) {
         mTag = tag;
     }
 
+    //added by droidsafe for api 19 compat.
+    private boolean mTitleOptionalHint = false;
+
+    @DSSafe
+    public boolean getTitleOptionalHint () {
+        return mTitleOptionalHint;
+    }
+
+    @DSSafe
+    public void setTitleOptionalHint (boolean titleOptional) {
+        mTitleOptionalHint = titleOptional;
+    }
+
+    @DSSafe
+    public boolean isTitleOptional () {
+        return true;
+    }
+
     /**
      * Retrieve the tag object associated with this ActionMode.
      *

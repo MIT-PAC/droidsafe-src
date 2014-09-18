@@ -9576,6 +9576,18 @@ public void requestLayout() {
 		return 0;
 	}
     
+    @DSSafe(DSCat.GUI)
+    public int getMinimumHeight() { 
+        return this.getTaintInt();
+    }
+
+
+    @DSSafe(DSCat.GUI)
+    public int getMinimumWidth() { 
+        return this.getTaintInt();
+    }
+
+
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setMinimumHeight(int minHeight){
@@ -10448,6 +10460,21 @@ protected void resolveTextDirection() {
     }
     
     /**
+     * <p>Causes the Runnable to execute on the next animation time step.
+     * The runnable will be run on the user interface thread.</p>
+     *
+     * @param action The Runnable that will be executed.
+     *
+     * @see #postOnAnimationDelayed
+     * @see #removeCallbacks
+     */
+    @DSSafe
+    @DSVerified
+    public void postOnAnimation(Runnable action) {        
+        action.run();
+    }
+
+    /**
      * <p>Causes the Runnable to execute on the next animation time step,
      * after the specified amount of time elapses.
      * The runnable will be run on the user interface thread.</p>
@@ -10513,11 +10540,5 @@ protected void resolveTextDirection() {
             invalidate();
         }
     }
-
-	public void postOnAnimation(Runnable action) {
-		// TODO Auto-generated method stub
-		if (action != null)
-			action.run();
-	}
 }
 
