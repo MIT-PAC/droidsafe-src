@@ -78,6 +78,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.Vibrator;
 import android.os.storage.StorageManager;
+import android.print.PrintManager;
 import android.provider.AlarmClock;
 import android.telephony.TelephonyManager;
 import android.view.CompatibilityInfoHolder;
@@ -259,6 +260,8 @@ public abstract class Context {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.136 -0500", hash_original_field = "70FCA06F476C88210D13457871671AF1", hash_generated_field = "F3D4B86861C416E9BCDD00F4D43AA6B2")
 
     public static final int CONTEXT_RESTRICTED = 0x00000004;
+
+	public static final String PRINT_SERVICE = "print-service";
     
 	// Hook to match with value analsysis
 	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
@@ -877,10 +880,6 @@ public abstract File getExternalCacheDir();
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     public abstract File[] getExternalFileDirs();
-
-    @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
-    public abstract File[] getExternalFilesDirs(String type);
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
@@ -1713,6 +1712,10 @@ public abstract boolean startInstrumentation(ComponentName className,
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
     public Object getSystemService(String name) {
+    	return droidsafeGetSystemService(name);
+    }
+
+    protected Object droidsafeGetSystemService(String name) {
         switch (name) {
            
             case ACCOUNT_SERVICE: {
@@ -1900,6 +1903,12 @@ public abstract boolean startInstrumentation(ComponentName className,
             }
             case WINDOW_SERVICE: {
                 WindowManager manager = WindowManagerImpl.getDefault();
+                manager.addTaint(getTaint());
+                return manager;
+            }
+            
+            case PRINT_SERVICE: {
+            	PrintManager manager = new PrintManager(this, null, DSUtils.FAKE_INT, DSUtils.FAKE_INT);
                 manager.addTaint(getTaint());
                 return manager;
             }
@@ -2392,6 +2401,13 @@ public boolean isRestricted() {
         holder.addTaint(displayId);
         return holder;
     }
+
+	public File[] getExternalFilesDirs(String type) {
+		// TODO Auto-generated method stub
+		File[] files = getExternalFileDirs();
+		files[0].addTaint(type.getTaint());
+		return files;
+	}
     
 }
 

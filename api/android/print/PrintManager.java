@@ -45,6 +45,7 @@ import libcore.io.IoUtils;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -168,6 +169,13 @@ public final class PrintManager {
          */
         public void onPrintJobStateChanged(PrintJobId printJobId);
     }
+    
+    private Map<PrintJobId, PrintJob> jobMap;
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public PrintManager(DSOnlyType dontcare, Context context) {
+    	   mContext = context;
+    	   jobMap = new HashMap<PrintJobId, PrintJob>();
+    }
 
     /**
      * Creates a new instance.
@@ -245,12 +253,15 @@ public void addPrintJobStateChangeListener(PrintJobStateChangeListener listener)
         }
         PrintJobStateChangeListenerWrapper wrappedListener =
                 new PrintJobStateChangeListenerWrapper(listener, mHandler);
-        try {
-            mService.addPrintJobStateChangeListener(wrappedListener, mAppId, mUserId);
-            mPrintJobStateChangeListeners.put(listener, wrappedListener);
+
+    mPrintJobStateChangeListeners.put(listener, wrappedListener);
+    listener.onPrintJobStateChanged(new PrintJobId());
+/*        try {
+        //    mService.addPrintJobStateChangeListener(wrappedListener, mAppId, mUserId);
         } catch (RemoteException re) {
             Log.e(LOG_TAG, "Error adding print job state change listener", re);
         }
+ */       
     }
 
     /**
@@ -291,7 +302,7 @@ public void removePrintJobStateChangeListener(PrintJobStateChangeListener listen
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.108 -0400", hash_original_method = "DEBC1003EE8077DC81CC275B7161ACDE", hash_generated_method = "CEBFE515A17B218BBC263E19E4FD337A")
     
 public PrintJob getPrintJob(PrintJobId printJobId) {
-        try {
+       /* try {
             PrintJobInfo printJob = mService.getPrintJobInfo(printJobId, mAppId, mUserId);
             if (printJob != null) {
                 return new PrintJob(printJob, this);
@@ -299,7 +310,9 @@ public PrintJob getPrintJob(PrintJobId printJobId) {
         } catch (RemoteException re) {
             Log.e(LOG_TAG, "Error getting print job", re);
         }
-        return null;
+        return null;*/
+    	
+    	return jobMap.get(printJobId);
     }
 
     /**
@@ -311,7 +324,7 @@ public PrintJob getPrintJob(PrintJobId printJobId) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.111 -0400", hash_original_method = "32DF55789FF29E71209B7874501CE386", hash_generated_method = "DA46B00A2A0FE39B5C00584A3841BA06")
     
 public List<PrintJob> getPrintJobs() {
-        try {
+       /* try {
             List<PrintJobInfo> printJobInfos = mService.getPrintJobInfos(mAppId, mUserId);
             if (printJobInfos == null) {
                 return Collections.emptyList();
@@ -325,27 +338,34 @@ public List<PrintJob> getPrintJobs() {
         } catch (RemoteException re) {
             Log.e(LOG_TAG, "Error getting print jobs", re);
         }
-        return Collections.emptyList();
+        return Collections.emptyList();*/
+    	
+    	List<PrintJob> jobs = new LinkedList<PrintJob>();
+    	jobs.addAll(jobMap.values());
+    	return jobs;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.113 -0400", hash_original_method = "C33185D1CD712232A43737606E7ABC0C", hash_generated_method = "C33185D1CD712232A43737606E7ABC0C")
     
 void cancelPrintJob(PrintJobId printJobId) {
-        try {
+       /* try {
             mService.cancelPrintJob(printJobId, mAppId, mUserId);
         } catch (RemoteException re) {
             Log.e(LOG_TAG, "Error cancleing a print job: " + printJobId, re);
-        }
+        }*/
+    	this.mPrintJobStateChangeListeners.get(printJobId).onPrintJobStateChanged(printJobId);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.114 -0400", hash_original_method = "A0F0AAA777D75F08680DA7D2E6A71237", hash_generated_method = "A0F0AAA777D75F08680DA7D2E6A71237")
     
 void restartPrintJob(PrintJobId printJobId) {
-        try {
+     /*   try {
             mService.restartPrintJob(printJobId, mAppId, mUserId);
         } catch (RemoteException re) {
             Log.e(LOG_TAG, "Error restarting a print job: " + printJobId, re);
-        }
+        }*/
+
+    	this.mPrintJobStateChangeListeners.get(printJobId).onPrintJobStateChanged(printJobId);
     }
 
     /**
@@ -399,28 +419,17 @@ public PrintJob print(String printJobName, PrintDocumentAdapter documentAdapter,
         if (documentAdapter == null) {
             throw new IllegalArgumentException("documentAdapter cannot be null");
         }
-        PrintDocumentAdapterDelegate delegate = new PrintDocumentAdapterDelegate(
-                (Activity) mContext, documentAdapter);
-        try {
-            Bundle result = mService.print(printJobName, delegate,
-                    attributes, mContext.getPackageName(), mAppId, mUserId);
-            if (result != null) {
-                PrintJobInfo printJob = result.getParcelable(EXTRA_PRINT_JOB);
-                IntentSender intent = result.getParcelable(EXTRA_PRINT_DIALOG_INTENT);
-                if (printJob == null || intent == null) {
-                    return null;
-                }
-                try {
-                    mContext.startIntentSender(intent, null, 0, 0, 0);
-                    return new PrintJob(printJob, this);
-                } catch (SendIntentException sie) {
-                    Log.e(LOG_TAG, "Couldn't start print job config activity.", sie);
-                }
-            }
-        } catch (RemoteException re) {
-            Log.e(LOG_TAG, "Error creating a print job", re);
-        }
-        return null;
+       
+        PrintJobInfo jobInfo = new PrintJobInfo();
+        PrintJob job = new PrintJob(DSOnlyType.DONTCARE, jobInfo);
+        
+        jobMap.put(jobInfo.getId(), job);
+        
+        PrintJobId printJobId = jobInfo.getId();
+        
+    	this.mPrintJobStateChangeListeners.get(printJobId).onPrintJobStateChanged(printJobId);
+        return job;
+        
     }
 
     /**
@@ -742,26 +751,6 @@ public PrintDocumentAdapterDelegate(Activity activity,
             // Note the the spooler has a death recipient that observes if
             // this process gets killed so we cover the case of onDestroy not
             // being called due to this process being killed to reclaim memory.
-            final IPrintDocumentAdapterObserver observer;
-            synchronized (mLock) {
-                if (activity == mActivity) {
-                    mDestroyed = true;
-                    observer = mObserver;
-                    clearLocked();
-                } else {
-                    observer = null;
-                    activity = null;
-                }
-            }
-            if (observer != null) {
-                activity.getApplication().unregisterActivityLifecycleCallbacks(
-                        PrintDocumentAdapterDelegate.this);
-                try {
-                    observer.onDestroy();
-                } catch (RemoteException re) {
-                    Log.e(LOG_TAG, "Error announcing destroyed state", re);
-                }
-            }
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.176 -0400", hash_original_method = "9CAEFFF5114D012A90719CBB032054C2", hash_generated_method = "52484FA6CBC73201E85BD35CE61EED63")

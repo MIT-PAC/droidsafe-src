@@ -45,7 +45,13 @@ PrintJob(PrintJobInfo info, PrintManager printManager) {
         mPrintManager = printManager;
     }
 
-    /**
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public PrintJob(DSOnlyType dontcare, PrintJobInfo info) {
+		// TODO Auto-generated constructor stub
+        mCachedInfo = info;
+	}
+
+	/**
      * Gets the unique print job id.
      *
      * @return The id.
