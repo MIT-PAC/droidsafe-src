@@ -178,7 +178,11 @@ function human_number ($num) {
   for ($exponent = 1000000000000.0; $exponent > 0.1; $exponent /= 1000) {
     if ($num > $exponent) {
       $num = round($num/$exponent);
-      return $num . $exps[0];
+      if (count ($exps) > 0) {
+        return $num . $exps[0];
+      } else {
+        return $num;
+      }
     }
     array_shift ($exps);
   }
