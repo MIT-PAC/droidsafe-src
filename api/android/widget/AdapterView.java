@@ -686,8 +686,7 @@ public long getItemIdAtPosition(int position) {
 
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.069 -0500", hash_original_method = "1A557FA8FE05A519D86B900EB24DF4D7", hash_generated_method = "E814A4CAF870B2A3DB77B13C6B0B42E8")
-    
-@Override
+        @Override
     public void setOnClickListener(OnClickListener l) {
         throw new RuntimeException("Don't call setOnClickListener for an AdapterView. "
                 + "You probably want setOnItemClickListener instead");

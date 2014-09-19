@@ -504,10 +504,11 @@ public Builder setIconAttribute(int attrId) {
          * @return This Builder object to allow for chaining of calls to set methods
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.084 -0500", hash_original_method = "1908B917B7F2E57ADC23D5E48F4386F2", hash_generated_method = "2F5BAAC067B9ADA408583697C46D7274")
+        @DSVerified
         @DSSafe(DSCat.GUI)
 public Builder setPositiveButton(int textId, final OnClickListener listener) {
             P.mPositiveButtonText = P.mContext.getText(textId);
-            P.mPositiveButtonListener = listener;
+            P.mPositiveButtonListener = listener;            
             return this;
         }
         
@@ -520,6 +521,7 @@ public Builder setPositiveButton(int textId, final OnClickListener listener) {
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.087 -0500", hash_original_method = "1500328C36AB679D672A26C184A5FC31", hash_generated_method = "1B725E35B3DB53C9480DA42C86D26A92")
         @DSSafe(DSCat.GUI)
+        @DSVerified
 public Builder setPositiveButton(CharSequence text, final OnClickListener listener) {
             P.mPositiveButtonText = text;
             P.mPositiveButtonListener = listener;
@@ -618,6 +620,7 @@ public Builder setOnCancelListener(OnCancelListener onCancelListener) {
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.103 -0500", hash_original_method = "6E5FB56A362A817B52A235DFACC25DAE", hash_generated_method = "E1F90638C4DF6B880D4A71B27B9AB750")
         @DSSafe(DSCat.GUI)
+        @DSVerified
 public Builder setOnKeyListener(OnKeyListener onKeyListener) {
             P.mOnKeyListener = onKeyListener;
             return this;

@@ -44,6 +44,7 @@ public Application() {
      */
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.746 -0500", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "9687CB6D9F1B2A9EE9EE5E6EB201E78C")
     
 public void onCreate() {

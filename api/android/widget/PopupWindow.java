@@ -1511,6 +1511,7 @@ public void dismiss() {
     
 public void setOnDismissListener(OnDismissListener onDismissListener) {
         mOnDismissListener = onDismissListener;
+        onDismissListener.onDismiss();
     }
     
     /**

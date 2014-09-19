@@ -1,4 +1,3 @@
-
 package android.app;
 
 // Droidsafe Imports
@@ -248,8 +247,16 @@ public ActionBar getActionBar() {
         onAttachedToWindow();
         onStart();
         onStop();
-        
+            
+            dispatchTouchEvent(new MotionEvent());
+            dispatchGenericMotionEvent(new MotionEvent());
+            dispatchKeyEvent(new KeyEvent());
+            dispatchKeyShortcutEvent(new KeyEvent());
+            dispatchTrackballEvent(new MotionEvent());
+            dispatchPopulateAccessibilityEvent(new AccessibilityEvent(DSUtils.FAKE_INT));
+                    
     }
+
     /**
      * Sets the Activity that owns this dialog. An example use: This Dialog will
      * use the suggested volume control stream of the Activity.
@@ -873,7 +880,8 @@ public void onDetachedFromWindow() {
      * @return boolean Return true if this event was consumed.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.153 -0500", hash_original_method = "1435B67C8334D2AC8987004B54F10264", hash_generated_method = "04F91395206B54F10C8CEF6DB25CA04D")
-    
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
 public boolean dispatchKeyEvent(KeyEvent event) {
         if ((mOnKeyListener != null) && (mOnKeyListener.onKey(this, event.getKeyCode(), event))) {
             return true;
@@ -895,7 +903,8 @@ public boolean dispatchKeyEvent(KeyEvent event) {
      * @return True if this event was consumed.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.156 -0500", hash_original_method = "BA9D4031BD488C1D379B1950A362F8D4", hash_generated_method = "4894634EDDCA3FC9A62B97AC03EE312F")
-    
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
 public boolean dispatchKeyShortcutEvent(KeyEvent event) {
         if (mWindow.superDispatchKeyShortcutEvent(event)) {
             return true;
@@ -914,7 +923,8 @@ public boolean dispatchKeyShortcutEvent(KeyEvent event) {
      * @return boolean Return true if this event was consumed.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.158 -0500", hash_original_method = "D3052CDDAC0630315E0F5E7AF5478D0E", hash_generated_method = "1AC90B09F693C4241E7446E01951470C")
-    
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
 public boolean dispatchTouchEvent(MotionEvent ev) {
         if (mWindow.superDispatchTouchEvent(ev)) {
             return true;
@@ -933,7 +943,8 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
      * @return boolean Return true if this event was consumed.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.160 -0500", hash_original_method = "2B935C89EDDE71F28E7C978B3C9DCAB0", hash_generated_method = "C578ECCB44A8A96163A33635B24D9E97")
-    
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
 public boolean dispatchTrackballEvent(MotionEvent ev) {
         if (mWindow.superDispatchTrackballEvent(ev)) {
             return true;
@@ -952,7 +963,8 @@ public boolean dispatchTrackballEvent(MotionEvent ev) {
      * @return boolean Return true if this event was consumed.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.162 -0500", hash_original_method = "B6AB9C2BD67E148832650E309163688C", hash_generated_method = "B848B6DC63319F80C3C05AEAF05408E5")
-    
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
 public boolean dispatchGenericMotionEvent(MotionEvent ev) {
         if (mWindow.superDispatchGenericMotionEvent(ev)) {
             return true;
@@ -961,7 +973,8 @@ public boolean dispatchGenericMotionEvent(MotionEvent ev) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.165 -0500", hash_original_method = "3CC377981D86463D050A06CF1F7ED782", hash_generated_method = "D9F3EAF53DD83388CEFB9D1088708A1A")
-    
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
 public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         event.setClassName(getClass().getName());
         event.setPackageName(mContext.getPackageName());

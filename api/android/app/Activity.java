@@ -1617,7 +1617,8 @@ public void onDetachedFromWindow() {
 	}
     
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe
+    @DSVerified
     public boolean dispatchKeyEvent(KeyEvent event){
 		onUserInteraction();
 		Window win = getWindow();
@@ -1639,7 +1640,9 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-    
+
+    @DSSafe
+    @DSVerified
     public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		onUserInteraction();
 		return (getWindow().superDispatchKeyShortcutEvent(event) || onKeyShortcut(event.getKeyCode(), event));
@@ -1657,6 +1660,7 @@ public void onDetachedFromWindow() {
     
     @DSComment("potential callback called inside method")
     @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSVerified
     public boolean dispatchTouchEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev));
@@ -1674,6 +1678,8 @@ public void onDetachedFromWindow() {
 		*/
 	}
     
+    @DSSafe
+    @DSVerified
     public boolean dispatchTrackballEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTrackballEvent(ev) || onTrackballEvent(ev));
@@ -1690,7 +1696,7 @@ public void onDetachedFromWindow() {
 	}
     
     public boolean dispatchGenericMotionEvent(MotionEvent ev){
-		onUserInteraction();
+        onUserInteraction();
 		return (getWindow().superDispatchGenericMotionEvent(ev) || onGenericMotionEvent(ev));
 		// Original method
 		/*
@@ -1703,7 +1709,9 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-    
+
+    @DSSafe
+    @DSVerified
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event){
 		event.setClassName(getClass().getName());
         event.setPackageName(getPackageName());

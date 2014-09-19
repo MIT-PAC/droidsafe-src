@@ -1557,7 +1557,8 @@ public final ContentProviderClient acquireContentProviderClient(String name) {
      */
     
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe
+    @DSVerified
     public final void registerContentObserver(Uri uri, boolean notifyForDescendents,
             ContentObserver observer)
     {

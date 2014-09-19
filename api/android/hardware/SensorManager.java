@@ -1785,6 +1785,10 @@ public List<Sensor> getSensorList(int type) {
         if (listener == null) {
             return false;
         }
+        
+        listener.onSensorChanged(0, new float[]{0.0f});
+        listener.onAccuracyChanged(0, 0);
+
         boolean result = false;
         result = registerLegacyListener(SENSOR_ACCELEROMETER, Sensor.TYPE_ACCELEROMETER,
                 listener, sensors, rate) || result;

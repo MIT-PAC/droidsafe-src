@@ -228,7 +228,7 @@ private boolean hasFileChangedUnexpectedly() {
 
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.845 -0500", hash_original_method = "CD8081B759B90CE7833F86EB66B232F5", hash_generated_method = "25137C4588A9B38A2C8984B7C53137C9")
-    
+    @DSVerified
 public void registerOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
         synchronized(this) {
             listener.onSharedPreferenceChanged((SharedPreferences)this, "<ONSHAREDPREFERENCECHANGE>");

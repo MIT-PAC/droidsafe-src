@@ -754,8 +754,14 @@ static RunQueue getRunQueue() {
             
         }
         
+        @DSSafe
+        @DSVerified
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.017 -0400", hash_original_method = "1534EBA7EE38BC120F6309F5A1B3FF9E", hash_generated_method = "1D39A8EC720482719F771CC26E2A5136")
         public void addCallback(Callback callback) {
+            callback.surfaceCreated(mHolder);
+                callback.surfaceChanged(mHolder, 0, 0, 0);
+                callback.surfaceDestroyed(mHolder);
+                
             addTaint(callback.getTaint());
             
         }

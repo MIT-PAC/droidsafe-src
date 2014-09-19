@@ -147,7 +147,8 @@ public void removeOnGlobalFocusChangeListener(OnGlobalFocusChangeListener victim
      * @throws IllegalStateException If {@link #isAlive()} returns false
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.749 -0500", hash_original_method = "14BEFF226C3B053CD01922ACD8EBA6F7", hash_generated_method = "21D32B1A4A7F03865063E5D1186EA3C1")
-    
+    @DSSafe
+    @DSVerified
 public void addOnGlobalLayoutListener(OnGlobalLayoutListener listener) {
         checkIsAlive();
 
@@ -156,6 +157,7 @@ public void addOnGlobalLayoutListener(OnGlobalLayoutListener listener) {
         }
 
         mOnGlobalLayoutListeners.add(listener);
+        dispatchOnGlobalLayout();
     }
 
     /**
