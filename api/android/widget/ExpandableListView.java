@@ -908,14 +908,16 @@ public void setOnGroupExpandListener(
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.844 -0500", hash_original_method = "C8C3684AA79EC58EA45C462FF87BD202", hash_generated_method = "0B608BCFF019FA1A2D56B8512679B266")
-    
+    @DSVerified
+    @DSSafe
 public void setOnGroupClickListener(OnGroupClickListener onGroupClickListener) {
         mOnGroupClickListener = onGroupClickListener;
+        onGroupClickListener.onGroupClick(this, null, 0, 0);
     }
 
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.851 -0500", hash_original_method = "26EE7772CEF1895E61E52189D15F9720", hash_generated_method = "1D2C0B735E016F90BCC7C248AD89CF02")
-    
+    @DSVerified
 public void setOnChildClickListener(OnChildClickListener onChildClickListener) {
         mOnChildClickListener = onChildClickListener;
         if (onChildClickListener != null) {

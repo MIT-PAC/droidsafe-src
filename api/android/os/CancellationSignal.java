@@ -17,6 +17,7 @@
 package android.os;
 
 import android.os.ICancellationSignal;
+import droidsafe.annotations.*;
 
 /**
  * Provides the ability to cancel an operation in progress.
@@ -106,6 +107,8 @@ public final class CancellationSignal {
      *
      * @param listener The cancellation listener, or null to remove the current listener.
      */
+    @DSVerified
+    @DSSafe
     public void setOnCancelListener(OnCancelListener listener) {
         synchronized (this) {
             waitForCancelFinishedLocked();

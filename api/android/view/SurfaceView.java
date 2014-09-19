@@ -224,9 +224,15 @@ public class SurfaceView extends View {
             
         }
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.956 -0400", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "B2CAB5E929433EA6D0C0BB2DEC01017A")
+            @DSSafe
+            @DSVerified
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.956 -0400", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "B2CAB5E929433EA6D0C0BB2DEC01017A")
         public void addCallback(Callback callback) {
             {
+                callback.surfaceCreated(mSurfaceHolder);
+                callback.surfaceChanged(mSurfaceHolder, 0, 0, 0);
+                callback.surfaceDestroyed(mSurfaceHolder);
+
                 {
                     boolean var1B2EEED5E498982D843BE645C828D6CD_462515332 = (mCallbacks.contains(callback) == false);
                     {

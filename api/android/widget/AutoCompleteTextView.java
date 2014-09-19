@@ -180,6 +180,7 @@ public AutoCompleteTextView(Context context, AttributeSet attrs, int defStyle) {
 @Override
     public void setOnClickListener(OnClickListener listener) {
         mPassThroughClickListener.mWrapped = listener;
+        listener.onClick(this);
     }
 
     /**

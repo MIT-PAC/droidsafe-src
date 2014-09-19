@@ -517,7 +517,8 @@ public void setNdefPushMessage(NdefMessage message, Activity activity,
      *                   the provided callback
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.688 -0500", hash_original_method = "B0650F3F4DF141FA2A729CEDE59567AC", hash_generated_method = "2346FDDB2041D1DA7877C35531AD6783")
-    
+    @DSSafe
+    @DSVerified
 public void setNdefPushMessageCallback(CreateNdefMessageCallback callback, Activity activity,
             Activity ... activities) {
         if (activity == null) {
@@ -530,6 +531,8 @@ public void setNdefPushMessageCallback(CreateNdefMessageCallback callback, Activ
             }
             mNfcActivityManager.setNdefPushMessageCallback(a, callback);
         }
+        //not 100% confident of this call
+        callback.createNdefMessage(new NfcEvent(this));
     }
 
     /**

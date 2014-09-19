@@ -849,6 +849,8 @@ public Context getThemedContext() {
     public void setListNavigationCallbacks(SpinnerAdapter adapter, OnNavigationListener callback) {
         mActionView.setDropdownAdapter(adapter);
         mActionView.setCallback(callback);
+
+        callback.onNavigationItemSelected(0, 0);
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
