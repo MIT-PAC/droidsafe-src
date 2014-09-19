@@ -23,11 +23,13 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.RemoteViews;
 import java.util.ArrayList;
 
@@ -60,6 +62,15 @@ public class NotificationCompat {
 
     interface NotificationCompatImpl {
         public Notification build(Builder b);
+        public Bundle getExtras(Notification n);
+        public int getActionCount(Notification n);
+        public Action getAction(Notification n, int actionIndex);
+        public Action[] getActionsFromParcelableArrayList(ArrayList<Parcelable> parcelables);
+        public ArrayList<Parcelable> getParcelableArrayListForActions(Action[] actions);
+        public boolean getLocalOnly(Notification n);
+        public String getGroup(Notification n);
+        public boolean isGroupSummary(Notification n);
+        public String getSortKey(Notification n);
     }
 
     static class NotificationCompatImplBase implements NotificationCompatImpl {
@@ -75,9 +86,80 @@ public Notification build(Builder b) {
             }
             return result;
         }
+
+		@Override
+		public Bundle getExtras(Notification n) {
+			// TODO Auto-generated method stub
+			Bundle b = new Bundle();
+			b.addTaint(n.sound.getTaint());
+			b.addTaint(n.tickerText.getTaint());
+			return b;
+		}
+
+		@Override
+		public int getActionCount(Notification n) {
+			// TODO Auto-generated method stub
+			return (getTaintInt() + n.getTaintInt() + n.sound.getTaintInt() +
+					n.tickerText.getTaintInt());
+		}
+
+		@Override
+		public Action getAction(Notification n, int actionIndex) {
+			// TODO Auto-generated method stub
+			Action a = new Action(DSOnlyType.DONTCARE);
+			a.addTaint(getActionCount(n) + actionIndex);
+			return a;
+		}
+
+		@Override
+		public Action[] getActionsFromParcelableArrayList(
+				ArrayList<Parcelable> parcelables) {
+			// TODO Auto-generated method stub
+			Action[] actions = new Action[1];
+			actions[0] = (Action)parcelables.get(0);
+
+			actions[0].addTaint(getTaintInt());
+					
+			return actions;
+		}
+
+		@Override
+		public ArrayList<Parcelable> getParcelableArrayListForActions(
+				Action[] actions) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public boolean getLocalOnly(Notification n) {
+			// TODO Auto-generated method stub
+			return DSUtils.toTaintBoolean(getActionCount(n));
+		}
+
+		@Override
+		public String getGroup(Notification n) {
+			// TODO Auto-generated method stub
+			String s = new String();
+			s.addTaint(getActionCount(n));
+			return s;
+        }
+
+		@Override
+		public boolean isGroupSummary(Notification n) {
+			// TODO Auto-generated method stub
+			return DSUtils.toTaintBoolean(getActionCount(n));
+		}
+
+		@Override
+		public String getSortKey(Notification n) {
+			// TODO Auto-generated method stub
+			String s = new String();
+			s.addTaint(getActionCount(n));
+			return s;
+		}
     }
 
-    static class NotificationCompatImplHoneycomb implements NotificationCompatImpl {
+    static class NotificationCompatImplHoneycomb extends NotificationCompatImplBase {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.036 -0500", hash_original_method = "67C04373CE66FA99B8198774A5156A6F", hash_generated_method = "FE32B9CD306B441DF5F253E294365B6E")
         
 public Notification build(Builder b) {
@@ -87,7 +169,7 @@ public Notification build(Builder b) {
         }
     }
 
-    static class NotificationCompatImplIceCreamSandwich implements NotificationCompatImpl {
+    static class NotificationCompatImplIceCreamSandwich extends NotificationCompatImplBase {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.041 -0500", hash_original_method = "DFC79958C39351F890FF4E250FFE701D", hash_generated_method = "10A783334C83A5CD0767ED3C64B63D08")
         
 public Notification build(Builder b) {
@@ -938,11 +1020,17 @@ public Action(int icon_, CharSequence title_, PendingIntent intent_) {
             this.title = title_;
             this.actionIntent = intent_;
         }
+        
+        public Action(DSOnlyType dontcare) {
+        	 this.icon = DSUtils.FAKE_INT;
+             this.title = DSUtils.FAKE_STRING;
+             this.actionIntent = new PendingIntent(DSOnlyType.DONTCARE);
+        }
     }
 
 
 
-    static class NotificationCompatImplJellybean implements NotificationCompatImpl {
+    static class NotificationCompatImplJellybean extends NotificationCompatImplBase {
         public Notification build(Builder b) {
             NotificationCompatJellybean jbBuilder = new NotificationCompatJellybean(
                     b.mContext, b.mNotification, b.mContentTitle, b.mContentText, b.mContentInfo,

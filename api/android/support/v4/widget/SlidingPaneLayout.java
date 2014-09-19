@@ -89,28 +89,28 @@ import java.util.ArrayList;
  * that the user may use to grab the slideable view and pull it back over into a closed state.</p>
  */
 public class SlidingPaneLayout extends ViewGroup {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.295 -0400", hash_original_field = "4D6F85FE02A69D47A5C743D647F0D4DE", hash_generated_field = "741FE9532C5890A9D2F60E80138E8199")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:02.952 -0400", hash_original_field = "4D6F85FE02A69D47A5C743D647F0D4DE", hash_generated_field = "741FE9532C5890A9D2F60E80138E8199")
 
     private static final String TAG = "SlidingPaneLayout";
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.299 -0400", hash_original_field = "183E84F0734B6B0FF1DF981F8E03DA44", hash_generated_field = "855519846DD4A55E63058F454EC5902A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:02.963 -0400", hash_original_field = "183E84F0734B6B0FF1DF981F8E03DA44", hash_generated_field = "855519846DD4A55E63058F454EC5902A")
 
     private static final int DEFAULT_OVERHANG_SIZE = 32;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.302 -0400", hash_original_field = "36F9E9109E71DBF6919A343A9DA0F0A1", hash_generated_field = "7310E12DAC19292C90ABE5CC6EF24CE4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:02.970 -0400", hash_original_field = "36F9E9109E71DBF6919A343A9DA0F0A1", hash_generated_field = "7310E12DAC19292C90ABE5CC6EF24CE4")
 
 
     /**
      * If no fade color is given by default it will fade to 80% gray.
      */
     private static final int DEFAULT_FADE_COLOR = 0xcccccccc;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.309 -0400", hash_original_field = "C54670DE93B24E059BE5F717E4D09C60", hash_generated_field = "74F3A27C683DAC629ED059F99D65D7A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:02.985 -0400", hash_original_field = "C54670DE93B24E059BE5F717E4D09C60", hash_generated_field = "74F3A27C683DAC629ED059F99D65D7A5")
 
     private static final int MIN_FLING_VELOCITY = 400;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.371 -0400", hash_original_field = "52859FCA75BD49E8AC7C068AE731111F", hash_generated_field = "BF99EE8524AA8EA1B1FE25ED85A1862D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.121 -0400", hash_original_field = "52859FCA75BD49E8AC7C068AE731111F", hash_generated_field = "BF99EE8524AA8EA1B1FE25ED85A1862D")
 
 
     static  SlidingPanelLayoutImpl IMPL;
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.447 -0400", hash_original_method = "04387A56EDB04CA0797ADF4462030ED2", hash_generated_method = "6AA330704FA4C19DC1FEC22864C1163A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.280 -0400", hash_original_method = "04387A56EDB04CA0797ADF4462030ED2", hash_generated_method = "6AA330704FA4C19DC1FEC22864C1163A")
         
 private static boolean viewIsOpaque(View v) {
         if (ViewCompat.isOpaque(v)) return true;
@@ -126,65 +126,65 @@ private static boolean viewIsOpaque(View v) {
         }
         return false;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.306 -0400", hash_original_field = "B924D79773174012BDD4B54888D2ACE4", hash_generated_field = "08706B33710B63B1AA3A7A769B4822FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:02.977 -0400", hash_original_field = "B924D79773174012BDD4B54888D2ACE4", hash_generated_field = "08706B33710B63B1AA3A7A769B4822FB")
 
     private int mSliderFadeColor = DEFAULT_FADE_COLOR;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.312 -0400", hash_original_field = "96E4764DF15631DC91F7CB8F79B98E3F", hash_generated_field = "CF055F8401F0FB5C7559C5065F8EFCA9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.002 -0400", hash_original_field = "96E4764DF15631DC91F7CB8F79B98E3F", hash_generated_field = "CF055F8401F0FB5C7559C5065F8EFCA9")
 
 
     /**
      * The fade color used for the panel covered by the slider. 0 = no fading.
      */
     private int mCoveredFadeColor;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.316 -0400", hash_original_field = "5D558A60F9B2BC4A26BD2126B7BC65D7", hash_generated_field = "B4ACE9AC9CEA8D6FEA7B1C1CA76E5B62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.010 -0400", hash_original_field = "5D558A60F9B2BC4A26BD2126B7BC65D7", hash_generated_field = "B4ACE9AC9CEA8D6FEA7B1C1CA76E5B62")
 
     private Drawable mShadowDrawable;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.319 -0400", hash_original_field = "D756C27674C2E7A97E4D7E89F7DD6DEF", hash_generated_field = "E60BF05A99BBB644348AC48E07DC0E8E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.017 -0400", hash_original_field = "D756C27674C2E7A97E4D7E89F7DD6DEF", hash_generated_field = "E60BF05A99BBB644348AC48E07DC0E8E")
 
     private  int mOverhangSize;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.322 -0400", hash_original_field = "66E1D6E5D151BC6BF72C1B687D5ECC26", hash_generated_field = "C0196945463EB148975B2A6EF76E5C9B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.023 -0400", hash_original_field = "66E1D6E5D151BC6BF72C1B687D5ECC26", hash_generated_field = "C0196945463EB148975B2A6EF76E5C9B")
 
     private boolean mCanSlide;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.325 -0400", hash_original_field = "0834E5B19DC1517FC99577D06BFC39CA", hash_generated_field = "4E3DCF5A8123FA89B35419BAEAE33A5C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.029 -0400", hash_original_field = "0834E5B19DC1517FC99577D06BFC39CA", hash_generated_field = "4E3DCF5A8123FA89B35419BAEAE33A5C")
 
     private View mSlideableView;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.329 -0400", hash_original_field = "3E53FC266440DF62BC622A1C30055EBF", hash_generated_field = "D21E420EE44919130C0AABD34BD35545")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.035 -0400", hash_original_field = "3E53FC266440DF62BC622A1C30055EBF", hash_generated_field = "D21E420EE44919130C0AABD34BD35545")
 
     private float mSlideOffset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.332 -0400", hash_original_field = "82176C895BAEC7B367E2904284EA6D8B", hash_generated_field = "CB31CDC2954B390A5EFF7B95DFD626A7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.042 -0400", hash_original_field = "82176C895BAEC7B367E2904284EA6D8B", hash_generated_field = "CB31CDC2954B390A5EFF7B95DFD626A7")
 
     private float mParallaxOffset;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.335 -0400", hash_original_field = "2545B790BE8DE36DFB5F5CB6AF28174E", hash_generated_field = "A20505456895E295D222B423CE0ACF2F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.048 -0400", hash_original_field = "2545B790BE8DE36DFB5F5CB6AF28174E", hash_generated_field = "A20505456895E295D222B423CE0ACF2F")
 
     private int mSlideRange;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.338 -0400", hash_original_field = "573DD8A411955AA9EB56A5C801B41308", hash_generated_field = "748889273C84B9C9E218E6BFA97C24D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.055 -0400", hash_original_field = "573DD8A411955AA9EB56A5C801B41308", hash_generated_field = "748889273C84B9C9E218E6BFA97C24D2")
 
     private boolean mIsUnableToDrag;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.342 -0400", hash_original_field = "AB06640FDC0D9E56635F61DEC57C69D0", hash_generated_field = "A10DE469AA59BF2A6EF8E4AC3686897F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.061 -0400", hash_original_field = "AB06640FDC0D9E56635F61DEC57C69D0", hash_generated_field = "A10DE469AA59BF2A6EF8E4AC3686897F")
 
     private int mParallaxBy;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.345 -0400", hash_original_field = "25CFDFB463A965BC44C22C5B603E6082", hash_generated_field = "E8D995D721D911B655A8BA1B8E85A671")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.068 -0400", hash_original_field = "25CFDFB463A965BC44C22C5B603E6082", hash_generated_field = "E8D995D721D911B655A8BA1B8E85A671")
 
 
     private float mInitialMotionX;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.348 -0400", hash_original_field = "8405CC958EF7FF178B766BCBE27E1F2F", hash_generated_field = "123A2D63D23BC6C888D43FC39BEED8A4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.074 -0400", hash_original_field = "8405CC958EF7FF178B766BCBE27E1F2F", hash_generated_field = "123A2D63D23BC6C888D43FC39BEED8A4")
 
     private float mInitialMotionY;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.351 -0400", hash_original_field = "72724023BAF20CDEBFA86994ED3AACB2", hash_generated_field = "01FD9159E0FA57133A90065425E7D01B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.080 -0400", hash_original_field = "72724023BAF20CDEBFA86994ED3AACB2", hash_generated_field = "01FD9159E0FA57133A90065425E7D01B")
 
 
     private PanelSlideListener mPanelSlideListener;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.354 -0400", hash_original_field = "1E4804ED97308FF97C0F5A92E503A9A3", hash_generated_field = "EE832BE4A2C091132455F74997DADC89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.086 -0400", hash_original_field = "1E4804ED97308FF97C0F5A92E503A9A3", hash_generated_field = "EE832BE4A2C091132455F74997DADC89")
 
 
     private  ViewDragHelper mDragHelper;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.358 -0400", hash_original_field = "2057981BE251F8D56CF4F1591CEB6B92", hash_generated_field = "74A2888C56C2B1A209FB88DF30439ACD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.093 -0400", hash_original_field = "2057981BE251F8D56CF4F1591CEB6B92", hash_generated_field = "74A2888C56C2B1A209FB88DF30439ACD")
 
     private boolean mPreservedOpenState;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.361 -0400", hash_original_field = "E8FBC0675E7594A5CB40D0BCA74175A7", hash_generated_field = "D2103C384BE0AB58542D96A0CD23C256")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.099 -0400", hash_original_field = "E8FBC0675E7594A5CB40D0BCA74175A7", hash_generated_field = "D2103C384BE0AB58542D96A0CD23C256")
 
     private boolean mFirstLayout = true;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.364 -0400", hash_original_field = "C53D3ED3F7CBB30122A6D714A9203A7D", hash_generated_field = "570061BA9CB059462550E9BCCD2A0735")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.107 -0400", hash_original_field = "C53D3ED3F7CBB30122A6D714A9203A7D", hash_generated_field = "570061BA9CB059462550E9BCCD2A0735")
 
 
     private final Rect mTmpRect = new Rect();
@@ -240,25 +240,25 @@ private static boolean viewIsOpaque(View v) {
         public void onPanelClosed(View panel) {
         }
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.367 -0400", hash_original_field = "B36620936413E2FDAB6E8EE9592F4A2D", hash_generated_field = "6D5A04C20BB307F6E1F0B44D4B940AAB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.114 -0400", hash_original_field = "B36620936413E2FDAB6E8EE9592F4A2D", hash_generated_field = "6D5A04C20BB307F6E1F0B44D4B940AAB")
 
 
     private final ArrayList<DisableLayerRunnable> mPostedRunnables =
             new ArrayList<DisableLayerRunnable>();
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.395 -0400", hash_original_method = "6BFD85CDE2236D519D5357D7D719E08B", hash_generated_method = "00E8427D95D339722D844A93E5AF4148")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.171 -0400", hash_original_method = "6BFD85CDE2236D519D5357D7D719E08B", hash_generated_method = "00E8427D95D339722D844A93E5AF4148")
         
 public SlidingPaneLayout(Context context) {
         this(context, null);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.398 -0400", hash_original_method = "FB02FB224A6AADBEE1833BC4CE8D1751", hash_generated_method = "845B0C8E60ED45921A7F13535E2FA709")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.177 -0400", hash_original_method = "FB02FB224A6AADBEE1833BC4CE8D1751", hash_generated_method = "845B0C8E60ED45921A7F13535E2FA709")
         
 public SlidingPaneLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.404 -0400", hash_original_method = "E6F61E8CF0E280BA731A64C77F51CB1D", hash_generated_method = "C3466A71FD554F99AA6555DEDFD541EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.015 -0400", hash_original_method = "41390F5FA64CAF41ADE8AE47BE43C4EE", hash_generated_method = "8BEA28334813EA7C26CB567CB35B30E8")
         
 public SlidingPaneLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -274,7 +274,6 @@ public SlidingPaneLayout(Context context, AttributeSet attrs, int defStyle) {
         ViewCompat.setImportantForAccessibility(this, ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_YES);
 
         mDragHelper = ViewDragHelper.create(this, 0.5f, new DragHelperCallback());
-        mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_LEFT);
         mDragHelper.setMinVelocity(MIN_FLING_VELOCITY * density);
     }
 
@@ -285,7 +284,7 @@ public SlidingPaneLayout(Context context, AttributeSet attrs, int defStyle) {
      *
      * @param parallaxBy Distance to parallax by in pixels
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.407 -0400", hash_original_method = "0688B841940779E22167E66014E33F8D", hash_generated_method = "F5BE2E9D070F7E64ECC993379A1152D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.197 -0400", hash_original_method = "0688B841940779E22167E66014E33F8D", hash_generated_method = "F5BE2E9D070F7E64ECC993379A1152D4")
         
 public void setParallaxDistance(int parallaxBy) {
         mParallaxBy = parallaxBy;
@@ -297,7 +296,7 @@ public void setParallaxDistance(int parallaxBy) {
      *
      * @see #setParallaxDistance(int)
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.410 -0400", hash_original_method = "903D3AD5A26FA591521C42F3A612DA7F", hash_generated_method = "68E4081B1188450A8CDC0E02E8A4E349")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.204 -0400", hash_original_method = "903D3AD5A26FA591521C42F3A612DA7F", hash_generated_method = "68E4081B1188450A8CDC0E02E8A4E349")
         
 public int getParallaxDistance() {
         return mParallaxBy;
@@ -308,7 +307,7 @@ public int getParallaxDistance() {
      *
      * @param color An ARGB-packed color value
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.413 -0400", hash_original_method = "730D9E8F5AC2F386CC8E4D8E8FEAF6B9", hash_generated_method = "5CB7F318A50A2C2DEDCCDDB53DE89A94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.210 -0400", hash_original_method = "730D9E8F5AC2F386CC8E4D8E8FEAF6B9", hash_generated_method = "5CB7F318A50A2C2DEDCCDDB53DE89A94")
         
 public void setSliderFadeColor(int color) {
         mSliderFadeColor = color;
@@ -317,7 +316,7 @@ public void setSliderFadeColor(int color) {
     /**
      * @return The ARGB-packed color value used to fade the sliding pane
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.416 -0400", hash_original_method = "C8E412C258577BB71D9872E9FD485133", hash_generated_method = "1E68281AE88A5D5A3F6F8A46AE65C807")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.216 -0400", hash_original_method = "C8E412C258577BB71D9872E9FD485133", hash_generated_method = "1E68281AE88A5D5A3F6F8A46AE65C807")
         
 public int getSliderFadeColor() {
         return mSliderFadeColor;
@@ -329,7 +328,7 @@ public int getSliderFadeColor() {
      *
      * @param color An ARGB-packed color value
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.419 -0400", hash_original_method = "4F552C4B26D9AFD044BC9DF8810A3021", hash_generated_method = "1F4C4D15247FB297B8919DD3BF4134BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.222 -0400", hash_original_method = "4F552C4B26D9AFD044BC9DF8810A3021", hash_generated_method = "1F4C4D15247FB297B8919DD3BF4134BC")
         
 public void setCoveredFadeColor(int color) {
         mCoveredFadeColor = color;
@@ -338,19 +337,19 @@ public void setCoveredFadeColor(int color) {
     /**
      * @return The ARGB-packed color value used to fade the fixed pane
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.423 -0400", hash_original_method = "D436B799F18765AD390F79002492178F", hash_generated_method = "5105BB5FFFD255DB3013353E3A67C34C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.228 -0400", hash_original_method = "D436B799F18765AD390F79002492178F", hash_generated_method = "5105BB5FFFD255DB3013353E3A67C34C")
         
 public int getCoveredFadeColor() {
         return mCoveredFadeColor;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.426 -0400", hash_original_method = "FFAAA25CC37BFE33631B5C4649D1D1EA", hash_generated_method = "0DF74CC9F4608BABB88688372711FE1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.233 -0400", hash_original_method = "FFAAA25CC37BFE33631B5C4649D1D1EA", hash_generated_method = "0DF74CC9F4608BABB88688372711FE1A")
         
 public void setPanelSlideListener(PanelSlideListener listener) {
         mPanelSlideListener = listener;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.429 -0400", hash_original_method = "9200384BFC8C572C67BB35F0E383B940", hash_generated_method = "9200384BFC8C572C67BB35F0E383B940")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.239 -0400", hash_original_method = "9200384BFC8C572C67BB35F0E383B940", hash_generated_method = "9200384BFC8C572C67BB35F0E383B940")
         
 void dispatchOnPanelSlide(View panel) {
         if (mPanelSlideListener != null) {
@@ -358,7 +357,7 @@ void dispatchOnPanelSlide(View panel) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.432 -0400", hash_original_method = "076B596B953AAB890ED85CFE265CED71", hash_generated_method = "076B596B953AAB890ED85CFE265CED71")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.246 -0400", hash_original_method = "076B596B953AAB890ED85CFE265CED71", hash_generated_method = "076B596B953AAB890ED85CFE265CED71")
         
 void dispatchOnPanelOpened(View panel) {
         if (mPanelSlideListener != null) {
@@ -367,7 +366,7 @@ void dispatchOnPanelOpened(View panel) {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.435 -0400", hash_original_method = "206FA8CECF0D7215420AE12C4F2D65AB", hash_generated_method = "206FA8CECF0D7215420AE12C4F2D65AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.252 -0400", hash_original_method = "206FA8CECF0D7215420AE12C4F2D65AB", hash_generated_method = "206FA8CECF0D7215420AE12C4F2D65AB")
         
 void dispatchOnPanelClosed(View panel) {
         if (mPanelSlideListener != null) {
@@ -376,11 +375,14 @@ void dispatchOnPanelClosed(View panel) {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.440 -0400", hash_original_method = "B6BFB3538CE84C7958F7544514096F69", hash_generated_method = "815BD73FD8C2D171FD0607B9FC2ED919")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.087 -0400", hash_original_method = "03B83C7D6245A99096FE1BE44F2A07C1", hash_generated_method = "A72AFF2A0EDFC8D37C3AF2331CEEA49C")
         
 void updateObscuredViewsVisibility(View panel) {
-        final int leftBound = getPaddingLeft();
-        final int rightBound = getWidth() - getPaddingRight();
+        final boolean isLayoutRtl = isLayoutRtlSupport();
+        final int startBound = isLayoutRtl ? (getWidth() - getPaddingRight()) :
+            getPaddingLeft();
+        final int endBound = isLayoutRtl ? getPaddingLeft() :
+            (getWidth() - getPaddingRight());
         final int topBound = getPaddingTop();
         final int bottomBound = getHeight() - getPaddingBottom();
         final int left;
@@ -404,9 +406,11 @@ void updateObscuredViewsVisibility(View panel) {
                 break;
             }
 
-            final int clampedChildLeft = Math.max(leftBound, child.getLeft());
+            final int clampedChildLeft = Math.max((isLayoutRtl ? endBound :
+                startBound), child.getLeft());
             final int clampedChildTop = Math.max(topBound, child.getTop());
-            final int clampedChildRight = Math.min(rightBound, child.getRight());
+            final int clampedChildRight = Math.min((isLayoutRtl ? startBound :
+                endBound), child.getRight());
             final int clampedChildBottom = Math.min(bottomBound, child.getBottom());
             final int vis;
             if (clampedChildLeft >= left && clampedChildTop >= top &&
@@ -419,7 +423,7 @@ void updateObscuredViewsVisibility(View panel) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.443 -0400", hash_original_method = "5CE7A5A3A8529E998FC7D6BAD2B14C28", hash_generated_method = "5CE7A5A3A8529E998FC7D6BAD2B14C28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.272 -0400", hash_original_method = "5CE7A5A3A8529E998FC7D6BAD2B14C28", hash_generated_method = "5CE7A5A3A8529E998FC7D6BAD2B14C28")
         
 void setAllChildrenVisible() {
         for (int i = 0, childCount = getChildCount(); i < childCount; i++) {
@@ -430,7 +434,7 @@ void setAllChildrenVisible() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.450 -0400", hash_original_method = "55E78F1E2A11C365755D77C284D387A2", hash_generated_method = "F4968E15513E07145315A993A80462B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.287 -0400", hash_original_method = "55E78F1E2A11C365755D77C284D387A2", hash_generated_method = "F4968E15513E07145315A993A80462B8")
         
 @Override
     protected void onAttachedToWindow() {
@@ -438,7 +442,7 @@ void setAllChildrenVisible() {
         mFirstLayout = true;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.453 -0400", hash_original_method = "143C49C748950B77D7E86D3ED9117732", hash_generated_method = "70FBA4A7DB291334FE6267E809C36680")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.295 -0400", hash_original_method = "143C49C748950B77D7E86D3ED9117732", hash_generated_method = "70FBA4A7DB291334FE6267E809C36680")
         
 @Override
     protected void onDetachedFromWindow() {
@@ -452,7 +456,7 @@ void setAllChildrenVisible() {
         mPostedRunnables.clear();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.465 -0400", hash_original_method = "AF96665205E3DFE8DD2012628CB875AA", hash_generated_method = "8FCA10B9FE625D1972B0168F1352A6B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.152 -0400", hash_original_method = "F66E9104C9A982CD59596EB5D6567401", hash_generated_method = "C71DDB1A6192AD39610110B37944AD09")
         
 @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -503,7 +507,8 @@ void setAllChildrenVisible() {
 
         float weightSum = 0;
         boolean canSlide = false;
-        int widthRemaining = widthSize - getPaddingLeft() - getPaddingRight();
+        final int widthAvailable = widthSize - getPaddingLeft() - getPaddingRight();
+        int widthRemaining = widthAvailable;
         final int childCount = getChildCount();
 
         if (childCount > 2) {
@@ -535,10 +540,10 @@ void setAllChildrenVisible() {
             int childWidthSpec;
             final int horizontalMargin = lp.leftMargin + lp.rightMargin;
             if (lp.width == LayoutParams.WRAP_CONTENT) {
-                childWidthSpec = MeasureSpec.makeMeasureSpec(widthSize - horizontalMargin,
+                childWidthSpec = MeasureSpec.makeMeasureSpec(widthAvailable - horizontalMargin,
                         MeasureSpec.AT_MOST);
             } else if (lp.width == LayoutParams.FILL_PARENT) {
-                childWidthSpec = MeasureSpec.makeMeasureSpec(widthSize - horizontalMargin,
+                childWidthSpec = MeasureSpec.makeMeasureSpec(widthAvailable - horizontalMargin,
                         MeasureSpec.EXACTLY);
             } else {
                 childWidthSpec = MeasureSpec.makeMeasureSpec(lp.width, MeasureSpec.EXACTLY);
@@ -570,7 +575,7 @@ void setAllChildrenVisible() {
 
         // Resolve weight and make sure non-sliding panels are smaller than the full screen.
         if (canSlide || weightSum > 0) {
-            final int fixedPanelWidthLimit = widthSize - mOverhangSize;
+            final int fixedPanelWidthLimit = widthAvailable - mOverhangSize;
 
             for (int i = 0; i < childCount; i++) {
                 final View child = getChildAt(i);
@@ -635,7 +640,7 @@ void setAllChildrenVisible() {
                     if (canSlide) {
                         // Consume available space
                         final int horizontalMargin = lp.leftMargin + lp.rightMargin;
-                        final int newWidth = widthSize - horizontalMargin;
+                        final int newWidth = widthAvailable - horizontalMargin;
                         final int childWidthSpec = MeasureSpec.makeMeasureSpec(
                                 newWidth, MeasureSpec.EXACTLY);
                         if (measuredWidth != newWidth) {
@@ -653,26 +658,35 @@ void setAllChildrenVisible() {
             }
         }
 
-        setMeasuredDimension(widthSize, layoutHeight);
+        final int measuredWidth = widthSize;
+        final int measuredHeight = layoutHeight + getPaddingTop() + getPaddingBottom();
+
+        setMeasuredDimension(measuredWidth, measuredHeight);
         mCanSlide = canSlide;
+
         if (mDragHelper.getViewDragState() != ViewDragHelper.STATE_IDLE && !canSlide) {
             // Cancel scrolling in progress, it's no longer relevant.
             mDragHelper.abort();
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.471 -0400", hash_original_method = "8095C7CC36CBE5C3F860A050AB8EC71A", hash_generated_method = "E750F0834B4E061C77AFF8EFF5C7E8D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.164 -0400", hash_original_method = "BC4176244D1FD823CEDF5A254A64B9D6", hash_generated_method = "0D3B83DD82AB6702BA2AB3C3DC942935")
         
 @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-
+        final boolean isLayoutRtl = isLayoutRtlSupport();
+        if (isLayoutRtl) {
+            mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_RIGHT);
+        } else {
+            mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_LEFT);
+        }
         final int width = r - l;
-        final int paddingLeft = getPaddingLeft();
-        final int paddingRight = getPaddingRight();
+        final int paddingStart = isLayoutRtl ? getPaddingRight() : getPaddingLeft();
+        final int paddingEnd = isLayoutRtl ? getPaddingLeft() : getPaddingRight();
         final int paddingTop = getPaddingTop();
 
         final int childCount = getChildCount();
-        int xStart = paddingLeft;
+        int xStart = paddingStart;
         int nextXStart = xStart;
 
         if (mFirstLayout) {
@@ -694,11 +708,14 @@ void setAllChildrenVisible() {
             if (lp.slideable) {
                 final int margin = lp.leftMargin + lp.rightMargin;
                 final int range = Math.min(nextXStart,
-                        width - paddingRight - mOverhangSize) - xStart - margin;
+                        width - paddingEnd - mOverhangSize) - xStart - margin;
                 mSlideRange = range;
-                lp.dimWhenOffset = xStart + lp.leftMargin + range + childWidth / 2 >
-                        width - paddingRight;
-                xStart += (int) (range * mSlideOffset) + lp.leftMargin;
+                final int lpMargin = isLayoutRtl ? lp.rightMargin : lp.leftMargin;
+                lp.dimWhenOffset = xStart + lpMargin + range + childWidth / 2 >
+                        width - paddingEnd;
+                final int pos = (int) (range * mSlideOffset);
+                xStart += pos + lpMargin;
+                mSlideOffset = (float) pos / mSlideRange;
             } else if (mCanSlide && mParallaxBy != 0) {
                 offset = (int) ((1 - mSlideOffset) * mParallaxBy);
                 xStart = nextXStart;
@@ -706,8 +723,16 @@ void setAllChildrenVisible() {
                 xStart = nextXStart;
             }
 
-            final int childLeft = xStart - offset;
-            final int childRight = childLeft + childWidth;
+            final int childRight;
+            final int childLeft;
+            if (isLayoutRtl) {
+                childRight = width - xStart + offset;
+                childLeft = childRight - childWidth;
+            } else {
+                childLeft = xStart - offset;
+                childRight = childLeft + childWidth;
+            }
+
             final int childTop = paddingTop;
             final int childBottom = childTop + child.getMeasuredHeight();
             child.layout(childLeft, paddingTop, childRight, childBottom);
@@ -735,7 +760,7 @@ void setAllChildrenVisible() {
         mFirstLayout = false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.475 -0400", hash_original_method = "998978B3234112C2871B01B8E73690D8", hash_generated_method = "F927584D2A0FC78816AD05A8FCBCDFC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.355 -0400", hash_original_method = "998978B3234112C2871B01B8E73690D8", hash_generated_method = "F927584D2A0FC78816AD05A8FCBCDFC0")
         
 @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -746,7 +771,7 @@ void setAllChildrenVisible() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.479 -0400", hash_original_method = "5C0C88ADB443D8DE5D818D8420ADDE7E", hash_generated_method = "256305A2C2765F02CCDF0A61932D04A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.360 -0400", hash_original_method = "5C0C88ADB443D8DE5D818D8420ADDE7E", hash_generated_method = "256305A2C2765F02CCDF0A61932D04A1")
         
 @Override
     public void requestChildFocus(View child, View focused) {
@@ -756,7 +781,7 @@ void setAllChildrenVisible() {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.485 -0400", hash_original_method = "BE9C13098F2B2FCCE0CEAC62B099B589", hash_generated_method = "EE37562D4DDCB903FBE0E8B9621E3A57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.369 -0400", hash_original_method = "BE9C13098F2B2FCCE0CEAC62B099B589", hash_generated_method = "EE37562D4DDCB903FBE0E8B9621E3A57")
         
 @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
@@ -818,7 +843,7 @@ void setAllChildrenVisible() {
         return interceptForDrag || interceptTap;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.490 -0400", hash_original_method = "3E80C51FCC9628B71F5BEEE836BA61EE", hash_generated_method = "24FFD9E892DA4506547F1177A7DE3173")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.375 -0400", hash_original_method = "3E80C51FCC9628B71F5BEEE836BA61EE", hash_generated_method = "24FFD9E892DA4506547F1177A7DE3173")
         
 @Override
     public boolean onTouchEvent(MotionEvent ev) {
@@ -861,7 +886,7 @@ void setAllChildrenVisible() {
         return wantTouchEvents;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.493 -0400", hash_original_method = "F136A81A04E7B2D21EBF2FF80CD7385C", hash_generated_method = "42D65E121A8CC492DE11BFFB97DE5902")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.382 -0400", hash_original_method = "F136A81A04E7B2D21EBF2FF80CD7385C", hash_generated_method = "42D65E121A8CC492DE11BFFB97DE5902")
         
 private boolean closePane(View pane, int initialVelocity) {
         if (mFirstLayout || smoothSlideTo(0.f, initialVelocity)) {
@@ -871,7 +896,7 @@ private boolean closePane(View pane, int initialVelocity) {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.497 -0400", hash_original_method = "8A9BBA94E1FACEA0CE51E7A63CDD39D1", hash_generated_method = "9F3BC672FE5F9DC7ABFC3F61A4CBFCC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.388 -0400", hash_original_method = "8A9BBA94E1FACEA0CE51E7A63CDD39D1", hash_generated_method = "9F3BC672FE5F9DC7ABFC3F61A4CBFCC9")
         
 private boolean openPane(View pane, int initialVelocity) {
         if (mFirstLayout || smoothSlideTo(1.f, initialVelocity)) {
@@ -884,7 +909,7 @@ private boolean openPane(View pane, int initialVelocity) {
     /**
      * @deprecated Renamed to {@link #openPane()} - this method is going away soon!
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.500 -0400", hash_original_method = "1DCC19EDCB58EE3C10676B1BB7AFFBBA", hash_generated_method = "08597D6096D76A9EB47C7A657D46EA3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.393 -0400", hash_original_method = "1DCC19EDCB58EE3C10676B1BB7AFFBBA", hash_generated_method = "08597D6096D76A9EB47C7A657D46EA3D")
         
 @Deprecated
     public void smoothSlideOpen() {
@@ -897,7 +922,7 @@ private boolean openPane(View pane, int initialVelocity) {
      *
      * @return true if the pane was slideable and is now open/in the process of opening
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.502 -0400", hash_original_method = "A42F5DC1E44356EC0C5F79607264EF8B", hash_generated_method = "B0C4D7DE38D452009CA68C00585EEB53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.398 -0400", hash_original_method = "A42F5DC1E44356EC0C5F79607264EF8B", hash_generated_method = "B0C4D7DE38D452009CA68C00585EEB53")
         
 public boolean openPane() {
         return openPane(mSlideableView, 0);
@@ -906,7 +931,7 @@ public boolean openPane() {
     /**
      * @deprecated Renamed to {@link #closePane()} - this method is going away soon!
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.506 -0400", hash_original_method = "331C9C72D98A11D0A03E4CC922B83611", hash_generated_method = "EE84822C7B2867A870651D85FD5674FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.403 -0400", hash_original_method = "331C9C72D98A11D0A03E4CC922B83611", hash_generated_method = "EE84822C7B2867A870651D85FD5674FC")
         
 @Deprecated
     public void smoothSlideClosed() {
@@ -919,7 +944,7 @@ public boolean openPane() {
      *
      * @return true if the pane was slideable and is now closed/in the process of closing
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.509 -0400", hash_original_method = "62B85591A7B3309A9CD85088CEB124AC", hash_generated_method = "C1AE630AC2868613EC7BA435F4134C5B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.408 -0400", hash_original_method = "62B85591A7B3309A9CD85088CEB124AC", hash_generated_method = "C1AE630AC2868613EC7BA435F4134C5B")
         
 public boolean closePane() {
         return closePane(mSlideableView, 0);
@@ -931,7 +956,7 @@ public boolean closePane() {
      *
      * @return true if sliding panels are completely open
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.513 -0400", hash_original_method = "847FE5B05BC94AAC0D4FED725CFC85F0", hash_generated_method = "411B7724FEC90EAC3AC80C1EA40FC524")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.413 -0400", hash_original_method = "847FE5B05BC94AAC0D4FED725CFC85F0", hash_generated_method = "411B7724FEC90EAC3AC80C1EA40FC524")
         
 public boolean isOpen() {
         return !mCanSlide || mSlideOffset == 1;
@@ -941,7 +966,7 @@ public boolean isOpen() {
      * @return true if content in this layout can be slid open and closed
      * @deprecated Renamed to {@link #isSlideable()} - this method is going away soon!
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.516 -0400", hash_original_method = "078F9D5252611EDF2720D903410386B6", hash_generated_method = "9050082274F8DF7195F83CFD194F54B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.417 -0400", hash_original_method = "078F9D5252611EDF2720D903410386B6", hash_generated_method = "9050082274F8DF7195F83CFD194F54B0")
         
 @Deprecated
     public boolean canSlide() {
@@ -954,19 +979,31 @@ public boolean isOpen() {
      *
      * @return true if content in this layout can be slid open and closed
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.519 -0400", hash_original_method = "52CB6F0E07109B0C7A4E78DE1CE0C813", hash_generated_method = "B472B0BEEAC92000D5C4E06B83F4F1AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.422 -0400", hash_original_method = "52CB6F0E07109B0C7A4E78DE1CE0C813", hash_generated_method = "B472B0BEEAC92000D5C4E06B83F4F1AD")
         
 public boolean isSlideable() {
         return mCanSlide;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.523 -0400", hash_original_method = "D1C3D664E27A8D379C90F53155B4A34A", hash_generated_method = "419FC51D91EF90C95812B711C9B354C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.246 -0400", hash_original_method = "3BC9EDE7A074F5F60ADC077E7EC44EAD", hash_generated_method = "6CF43280D212D2F6CD0D96E2437B0483")
         
 private void onPanelDragged(int newLeft) {
+        if (mSlideableView == null) {
+            // This can happen if we're aborting motion during layout because everything now fits.
+            mSlideOffset = 0;
+            return;
+        }
+        final boolean isLayoutRtl = isLayoutRtlSupport();
         final LayoutParams lp = (LayoutParams) mSlideableView.getLayoutParams();
-        final int leftBound = getPaddingLeft() + lp.leftMargin;
 
-        mSlideOffset = (float) (newLeft - leftBound) / mSlideRange;
+        int childWidth = mSlideableView.getWidth();
+        final int newStart = isLayoutRtl ? getWidth() - newLeft - childWidth : newLeft;
+
+        final int paddingStart = isLayoutRtl ? getPaddingRight() : getPaddingLeft();
+        final int lpMargin = isLayoutRtl ? lp.rightMargin : lp.leftMargin;
+        final int startBound = paddingStart + lpMargin;
+
+        mSlideOffset = (float) (newStart - startBound) / mSlideRange;
 
         if (mParallaxBy != 0) {
             parallaxOtherViews(mSlideOffset);
@@ -978,7 +1015,7 @@ private void onPanelDragged(int newLeft) {
         dispatchOnPanelSlide(mSlideableView);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.529 -0400", hash_original_method = "ED528DA2E74DBEE272DB6BCEC84A259A", hash_generated_method = "432AED40A82B4C0358EC193006786AD9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.438 -0400", hash_original_method = "ED528DA2E74DBEE272DB6BCEC84A259A", hash_generated_method = "432AED40A82B4C0358EC193006786AD9")
         
 private void dimChildView(View v, float mag, int fadeColor) {
         final LayoutParams lp = (LayoutParams) v.getLayoutParams();
@@ -1005,7 +1042,7 @@ private void dimChildView(View v, float mag, int fadeColor) {
         }
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.534 -0400", hash_original_method = "1BBF6C5F8A798B69F30905F34A2AC7C3", hash_generated_method = "8E7DF186151F9E9BE6438BCE95B43916")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.263 -0400", hash_original_method = "2B9DB0E61867EF5CFB34622E01EAAE07", hash_generated_method = "6A448FFCF0DCD786BD08B1F8D98EEC4A")
         
 @Override
     protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
@@ -1016,7 +1053,11 @@ private void dimChildView(View v, float mag, int fadeColor) {
         if (mCanSlide && !lp.slideable && mSlideableView != null) {
             // Clip against the slider; no sense drawing what will immediately be covered.
             canvas.getClipBounds(mTmpRect);
-            mTmpRect.right = Math.min(mTmpRect.right, mSlideableView.getLeft());
+            if (isLayoutRtlSupport()) {
+                mTmpRect.left = Math.max(mTmpRect.left, mSlideableView.getRight());
+            } else {
+                mTmpRect.right = Math.min(mTmpRect.right, mSlideableView.getLeft());
+            }
             canvas.clipRect(mTmpRect);
         }
 
@@ -1048,7 +1089,7 @@ private void dimChildView(View v, float mag, int fadeColor) {
         return result;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.539 -0400", hash_original_method = "4B5342F4AA278236A87AA8C27A4B1283", hash_generated_method = "905D3D8CFF7E1B8CAE8753EE8A1C3620")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.451 -0400", hash_original_method = "4B5342F4AA278236A87AA8C27A4B1283", hash_generated_method = "905D3D8CFF7E1B8CAE8753EE8A1C3620")
         
 private void invalidateChildRegion(View v) {
         IMPL.invalidateChildRegion(this, v);
@@ -1060,7 +1101,7 @@ private void invalidateChildRegion(View v) {
      * @param slideOffset position to animate to
      * @param velocity initial velocity in case of fling, or 0.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.545 -0400", hash_original_method = "44E2A9913A2BACAEAA08EBE2C71AF4BC", hash_generated_method = "CD6C0BD729824E64B622A05447525DF1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.275 -0400", hash_original_method = "163EDC5D069EC6088E356FC7F8A55688", hash_generated_method = "4A155CCF6C86C02F3661264C45E30ABF")
         
 boolean smoothSlideTo(float slideOffset, int velocity) {
         if (!mCanSlide) {
@@ -1068,10 +1109,18 @@ boolean smoothSlideTo(float slideOffset, int velocity) {
             return false;
         }
 
+        final boolean isLayoutRtl = isLayoutRtlSupport();
         final LayoutParams lp = (LayoutParams) mSlideableView.getLayoutParams();
 
-        final int leftBound = getPaddingLeft() + lp.leftMargin;
-        int x = (int) (leftBound + slideOffset * mSlideRange);
+        int x;
+        if (isLayoutRtl) {
+            int startBound = getPaddingRight() + lp.rightMargin;
+            int childWidth = mSlideableView.getWidth();
+            x = (int) (getWidth() - (startBound + slideOffset * mSlideRange + childWidth));
+        } else {
+            int startBound = getPaddingLeft() + lp.leftMargin;
+            x = (int) (startBound + slideOffset * mSlideRange);
+        }
 
         if (mDragHelper.smoothSlideViewTo(mSlideableView, x, mSlideableView.getTop())) {
             setAllChildrenVisible();
@@ -1081,7 +1130,7 @@ boolean smoothSlideTo(float slideOffset, int velocity) {
         return false;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.551 -0400", hash_original_method = "F0DF4F5402F448D483A72AE19100FEC2", hash_generated_method = "AFA88ACA4C0E0440AFCB32F86150F4F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.463 -0400", hash_original_method = "F0DF4F5402F448D483A72AE19100FEC2", hash_generated_method = "AFA88ACA4C0E0440AFCB32F86150F4F8")
         
 @Override
     public void computeScroll() {
@@ -1096,15 +1145,17 @@ boolean smoothSlideTo(float slideOffset, int velocity) {
     }
 
     /**
-     * Set a drawable to use as a shadow cast by the right pane onto the left pane
-     * during opening/closing.
+     * @deprecated Renamed to {@link #setShadowDrawableLeft(Drawable d)} to support LTR (left to
+     * right language) and {@link #setShadowDrawableRight(Drawable d)} to support RTL (right to left
+     * language) during opening/closing.
      *
      * @param d drawable to use as a shadow
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.554 -0400", hash_original_method = "93AF20964234E929C1A947751F517666", hash_generated_method = "98A5EA2203943D266BE38B1BC286286D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.286 -0400", hash_original_method = "D456004BC6B64C61E0C2D4C192C0A2BD", hash_generated_method = "2278A2DECDFA2B83E54623BF269E5409")
         
-public void setShadowDrawable(Drawable d) {
-        mShadowDrawable = d;
+@Deprecated
+    public void setShadowDrawable(Drawable d) {
+        setShadowDrawableLeft(d);
     }
 
     /**
@@ -1113,38 +1164,58 @@ public void setShadowDrawable(Drawable d) {
      *
      * @param resId Resource ID of a drawable to use
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.558 -0400", hash_original_method = "4E54198F4B39ED177C0F3669476EB464", hash_generated_method = "F6783F3F6BD40BBBA1398145F1362E85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.303 -0400", hash_original_method = "60C89E8094D1A46DA7BA37B41E057A4C", hash_generated_method = "17FDA018126E3202C86508C3EFBD5822")
         
-public void setShadowResource(int resId) {
+@Deprecated
+    public void setShadowResource(int resId) {
         setShadowDrawable(getResources().getDrawable(resId));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.562 -0400", hash_original_method = "5FBE5652F562D783C5443B69519FEA7E", hash_generated_method = "D9B13601BAAD96DACC800F1E2090D83F")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.320 -0400", hash_original_method = "B43C376F194B0AA51D5226815101461A", hash_generated_method = "288F9012DCC4FDF9AE7E9DDC63F30A2D")
         
 @Override
     public void draw(Canvas c) {
         super.draw(c);
+        final boolean isLayoutRtl = isLayoutRtlSupport();
+        Drawable shadowDrawable;
+        if (isLayoutRtl) {
+            shadowDrawable = mShadowDrawableRight;
+        } else {
+            shadowDrawable = mShadowDrawableLeft;
+        }
 
         final View shadowView = getChildCount() > 1 ? getChildAt(1) : null;
-        if (shadowView == null || mShadowDrawable == null) {
+        if (shadowView == null || shadowDrawable == null) {
             // No need to draw a shadow if we don't have one.
             return;
         }
 
-        final int shadowWidth = mShadowDrawable.getIntrinsicWidth();
-        final int right = shadowView.getLeft();
         final int top = shadowView.getTop();
         final int bottom = shadowView.getBottom();
-        final int left = right - shadowWidth;
-        mShadowDrawable.setBounds(left, top, right, bottom);
-        mShadowDrawable.draw(c);
+
+        final int shadowWidth = shadowDrawable.getIntrinsicWidth();
+        final int left;
+        final int right;
+        if (isLayoutRtlSupport()) {
+            left = shadowView.getRight();
+            right = left + shadowWidth;
+        } else {
+            right = shadowView.getLeft();
+            left = right - shadowWidth;
+        }
+
+        shadowDrawable.setBounds(left, top, right, bottom);
+        shadowDrawable.draw(c);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.566 -0400", hash_original_method = "442B146784A7E9561B390B48D54C0208", hash_generated_method = "40D5D102B9AF0C0E204A8E3796CF9E5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.326 -0400", hash_original_method = "F06380959A4CF712885BA2D2A3C742C2", hash_generated_method = "90FA20CD11A41F8F609CAADA2F1F96FB")
         
 private void parallaxOtherViews(float slideOffset) {
+        final boolean isLayoutRtl = isLayoutRtlSupport();
         final LayoutParams slideLp = (LayoutParams) mSlideableView.getLayoutParams();
-        final boolean dimViews = slideLp.dimWhenOffset && slideLp.leftMargin <= 0;
+        final boolean dimViews = slideLp.dimWhenOffset &&
+                (isLayoutRtl ? slideLp.rightMargin : slideLp.leftMargin) <= 0;
         final int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             final View v = getChildAt(i);
@@ -1155,10 +1226,11 @@ private void parallaxOtherViews(float slideOffset) {
             final int newOffset = (int) ((1 - slideOffset) * mParallaxBy);
             final int dx = oldOffset - newOffset;
 
-            v.offsetLeftAndRight(dx);
+            v.offsetLeftAndRight(isLayoutRtl ? -dx : dx);
 
             if (dimViews) {
-                dimChildView(v, 1 - mParallaxOffset, mCoveredFadeColor);
+                dimChildView(v, isLayoutRtl ? mParallaxOffset - 1 :
+                    1 - mParallaxOffset, mCoveredFadeColor);
             }
         }
     }
@@ -1174,7 +1246,7 @@ private void parallaxOtherViews(float slideOffset) {
      * @param y Y coordinate of the active touch point
      * @return true if child views of v can be scrolled by delta of dx.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.572 -0400", hash_original_method = "72E1851DC28067296F340B8A32532AE8", hash_generated_method = "906532A68332F21C2D8E068A5AFD9492")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.334 -0400", hash_original_method = "4D282B996E33AD9CD5D598AFA276F406", hash_generated_method = "50A28E8AAC4A32129260B92C659B56C0")
         
 protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
         if (v instanceof ViewGroup) {
@@ -1196,10 +1268,10 @@ protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
             }
         }
 
-        return checkV && ViewCompat.canScrollHorizontally(v, -dx);
+        return checkV && ViewCompat.canScrollHorizontally(v, (isLayoutRtlSupport() ? dx : -dx));
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.575 -0400", hash_original_method = "56ED602BC0E5F7530318A3CD57B3DF74", hash_generated_method = "56ED602BC0E5F7530318A3CD57B3DF74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.499 -0400", hash_original_method = "56ED602BC0E5F7530318A3CD57B3DF74", hash_generated_method = "56ED602BC0E5F7530318A3CD57B3DF74")
         
 boolean isDimmed(View child) {
         if (child == null) {
@@ -1209,14 +1281,14 @@ boolean isDimmed(View child) {
         return mCanSlide && lp.dimWhenOffset && mSlideOffset > 0;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.579 -0400", hash_original_method = "763708F2B4B4E396A96E9D3340F0B010", hash_generated_method = "DA1288B08801ADDE6F9C8699A1A5E871")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.505 -0400", hash_original_method = "763708F2B4B4E396A96E9D3340F0B010", hash_generated_method = "DA1288B08801ADDE6F9C8699A1A5E871")
         
 @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams();
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.584 -0400", hash_original_method = "B55A47AEBE45609D692FB6AAFFE1D182", hash_generated_method = "A626AC0F6D2F5CB34574C3E154731C07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.512 -0400", hash_original_method = "B55A47AEBE45609D692FB6AAFFE1D182", hash_generated_method = "A626AC0F6D2F5CB34574C3E154731C07")
         
 @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
@@ -1225,21 +1297,21 @@ boolean isDimmed(View child) {
                 : new LayoutParams(p);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.587 -0400", hash_original_method = "0820242DFB1833A79D3A037A247A735A", hash_generated_method = "0FAAF748BA4C1D95221E65EBFCBC4B0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.516 -0400", hash_original_method = "0820242DFB1833A79D3A037A247A735A", hash_generated_method = "0FAAF748BA4C1D95221E65EBFCBC4B0B")
         
 @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
         return p instanceof LayoutParams && super.checkLayoutParams(p);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.590 -0400", hash_original_method = "1C9B9BBEC46A39865FCD3A7288415ECD", hash_generated_method = "C4E1D1D633134DBA474501AB48EC2962")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.522 -0400", hash_original_method = "1C9B9BBEC46A39865FCD3A7288415ECD", hash_generated_method = "C4E1D1D633134DBA474501AB48EC2962")
         
 @Override
     public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new LayoutParams(getContext(), attrs);
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.595 -0400", hash_original_method = "4C9BEE57B9A73D3561EF9076AD0181AD", hash_generated_method = "212F826707988E19BFE3F5E03A02E622")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.528 -0400", hash_original_method = "4C9BEE57B9A73D3561EF9076AD0181AD", hash_generated_method = "212F826707988E19BFE3F5E03A02E622")
         
 @Override
     protected Parcelable onSaveInstanceState() {
@@ -1251,7 +1323,7 @@ boolean isDimmed(View child) {
         return ss;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:10.598 -0400", hash_original_method = "381A8609D52DF7016BBA3939473A8D12", hash_generated_method = "20FD930B0F102BDC4B3AB51AB5AE1CFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.533 -0400", hash_original_method = "381A8609D52DF7016BBA3939473A8D12", hash_generated_method = "20FD930B0F102BDC4B3AB51AB5AE1CFE")
         
 @Override
     protected void onRestoreInstanceState(Parcelable state) {
@@ -1334,7 +1406,17 @@ boolean isDimmed(View child) {
         public void onEdgeDragStarted(int edgeFlags, int pointerId) {
             mDragHelper.captureChildView(mSlideableView, pointerId);
         }
-    }
+    
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.422 -0400", hash_original_method = "F82BAC20401988C1E724711CE338C27B", hash_generated_method = "7A2698997AEDE196F2F58AF0529D5C93")
+            
+@Override
+        public int clampViewPositionVertical(View child, int top, int dy) {
+            // Make sure we never move views vertically.
+            // This could happen if the child has less height than its parent.
+            return child.getTop();
+        }}
 
     public static class LayoutParams extends ViewGroup.MarginLayoutParams {
         private static final int[] ATTRS = new int[] {
@@ -1392,6 +1474,17 @@ boolean isDimmed(View child) {
     }
 
     static class SavedState extends BaseSavedState {
+
+        public static final Parcelable.Creator<SavedState> CREATOR =
+                new Parcelable.Creator<SavedState>() {
+            public SavedState createFromParcel(Parcel in) {
+                return new SavedState(in);
+            }
+
+            public SavedState[] newArray(int size) {
+                return new SavedState[size];
+            }
+        };
         boolean isOpen;
 
         SavedState(Parcelable superState) {
@@ -1408,17 +1501,6 @@ boolean isDimmed(View child) {
             super.writeToParcel(out, flags);
             out.writeInt(isOpen ? 1 : 0);
         }
-
-        public static final Parcelable.Creator<SavedState> CREATOR =
-                new Parcelable.Creator<SavedState>() {
-            public SavedState createFromParcel(Parcel in) {
-                return new SavedState(in);
-            }
-
-            public SavedState[] newArray(int size) {
-                return new SavedState[size];
-            }
-        };
     }
 
     interface SlidingPanelLayoutImpl {
@@ -1585,4 +1667,65 @@ boolean isDimmed(View child) {
             mPostedRunnables.remove(this);
         }
     }
-}
+
+
+
+    /**
+     * Set a drawable to use as a shadow cast by the left pane onto the right pane
+     * during opening/closing to support right to left language.
+     *
+     * @param d drawable to use as a shadow
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.297 -0400", hash_original_method = "D4CAE6D3200E06DBB37AA00E17AB84FC", hash_generated_method = "FEF97D2B2E5FEA2E54C583B8E30A3B5C")
+        
+public void setShadowDrawableRight(Drawable d) {
+        mShadowDrawableRight = d;
+    }
+
+    /**
+     * Set a drawable to use as a shadow cast by the right pane onto the left pane
+     * during opening/closing.
+     *
+     * @param resId Resource ID of a drawable to use
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.308 -0400", hash_original_method = "9DEE745324A494FBE465C89D12C27890", hash_generated_method = "0D888FD0EDAC9663E3D470055376F604")
+        
+public void setShadowResourceLeft(int resId) {
+        setShadowDrawableLeft(getResources().getDrawable(resId));
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:04.820 -0400", hash_original_field = "DC66D65BD573B5375E59A83CECFDFDF6", hash_generated_field = "B8CC33EB6FC4122C07D3E904016F8C50")
+
+    private Drawable mShadowDrawableLeft;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.657 -0400", hash_original_method = "A54B147584955D06E420F90BEDB19470", hash_generated_method = "463406EACA32FD2D8126DA5174025851")
+            
+private boolean isLayoutRtlSupport() {
+        return ViewCompat.getLayoutDirection(this) == ViewCompat.LAYOUT_DIRECTION_RTL;
+    }
+
+    /**
+     * Set a drawable to use as a shadow cast by the left pane onto the right pane
+     * during opening/closing to support right to left language.
+     *
+     * @param resId Resource ID of a drawable to use
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.314 -0400", hash_original_method = "C65738CBCDC9C9D4735B3EEABE5356BC", hash_generated_method = "77F096B66DF48E9C4346F25E45A43A2C")
+        
+public void setShadowResourceRight(int resId) {
+        setShadowDrawableRight(getResources().getDrawable(resId));
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:04.828 -0400", hash_original_field = "635D19781AE747333F986A22082A23B6", hash_generated_field = "9BA680880AFA3F9EBCB0B863237F371E")
+
+    private Drawable mShadowDrawableRight;
+
+    /**
+     * Set a drawable to use as a shadow cast by the right pane onto the left pane
+     * during opening/closing.
+     *
+     * @param d drawable to use as a shadow
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.291 -0400", hash_original_method = "4D13455D83DCC855DC616F929F4D5E40", hash_generated_method = "6D552621362E8129440D54476180378C")
+        
+public void setShadowDrawableLeft(Drawable d) {
+        mShadowDrawableLeft = d;
+    }}
