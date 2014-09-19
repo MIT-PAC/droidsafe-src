@@ -29,7 +29,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
-import android.support.v4.util.SimpleArrayMap;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -42,6 +41,7 @@ import android.view.Window;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Base class for activities that want to use the support-based
@@ -223,14 +223,14 @@ private static String viewToString(View view) {
     boolean mLoadersStarted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.938 -0400", hash_original_field = "2D0CD0A16ADD5E9C3F3AC0483AC37718", hash_generated_field = "2D0CD0A16ADD5E9C3F3AC0483AC37718")
 
-    SimpleArrayMap<String, LoaderManagerImpl> mAllLoaderManagers;
+    HashMap<String, LoaderManagerImpl> mAllLoaderManagers;
 
     static final class NonConfigurationInstances {
         Object activity;
         Object custom;
-        SimpleArrayMap<String, Object> children;
+        HashMap<String, Object> children;
         ArrayList<Fragment> fragments;
-        SimpleArrayMap<String, LoaderManagerImpl> loaders;
+        HashMap<String, LoaderManagerImpl> loaders;
     }
     
     static class FragmentTag {
@@ -655,7 +655,7 @@ protected boolean onPrepareOptionsPanel(View view, Menu menu) {
             final int N = mAllLoaderManagers.size();
             LoaderManagerImpl loaders[] = new LoaderManagerImpl[N];
             for (int i=N-1; i>=0; i--) {
-                loaders[i] = mAllLoaderManagers.valueAt(i);
+                loaders[i] = mAllLoaderManagers.get(i);
             }
             for (int i=0; i<N; i++) {
                 LoaderManagerImpl lm = loaders[i];
@@ -736,7 +736,7 @@ protected boolean onPrepareOptionsPanel(View view, Menu menu) {
             final int N = mAllLoaderManagers.size();
             LoaderManagerImpl loaders[] = new LoaderManagerImpl[N];
             for (int i=N-1; i>=0; i--) {
-                loaders[i] = mAllLoaderManagers.valueAt(i);
+                loaders[i] = mAllLoaderManagers.get(i);
             }
             for (int i=0; i<N; i++) {
                 LoaderManagerImpl lm = loaders[i];
@@ -994,7 +994,7 @@ public LoaderManager getSupportLoaderManager() {
     
 LoaderManagerImpl getLoaderManager(String who, boolean started, boolean create) {
         if (mAllLoaderManagers == null) {
-            mAllLoaderManagers = new SimpleArrayMap<String, LoaderManagerImpl>();
+            mAllLoaderManagers = new HashMap<String, LoaderManagerImpl>();
         }
         LoaderManagerImpl lm = mAllLoaderManagers.get(who);
         if (lm == null) {

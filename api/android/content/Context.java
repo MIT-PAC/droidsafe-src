@@ -2402,11 +2402,27 @@ public boolean isRestricted() {
         return holder;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
 	public File[] getExternalFilesDirs(String type) {
 		// TODO Auto-generated method stub
 		File[] files = getExternalFileDirs();
 		files[0].addTaint(type.getTaint());
 		return files;
+	}
+
+    @DSSafe(DSCat.SAFE_OTHERS)
+	public TypedArray obtainStyledAttributes(int theme) {
+		// TODO Auto-generated method stub
+		int[] attrs = new int[] {theme};
+		return obtainStyledAttributes(attrs);
+	}
+
+    @DSSafe(DSCat.SAFE_OTHERS)
+	public TypedArray obtainStyledAttributes(AttributeSet attrs,
+			int actionbarlayout) {
+		// TODO Auto-generated method stub
+		int[] attrArray = new int[] {actionbarlayout + attrs.getTaintInt()} ;
+		return obtainStyledAttributes(attrArray);
 	}
     
 }

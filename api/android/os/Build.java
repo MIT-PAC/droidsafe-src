@@ -122,6 +122,7 @@ private static long getLong(String property) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.586 -0500", hash_original_field = "23643A88208C9FE23BA6707A9F022D33", hash_generated_field = "D1849482125E5D16B4D655BFA9F6B3EC")
 
         public static final int ICE_CREAM_SANDWICH_MR1 = 15;
+        public static final int JELLY_BEAN = 18;
         
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.724 -0400", hash_original_method = "0B6BCBBF45E050C1684E109EABF935A3", hash_generated_method = "0B6BCBBF45E050C1684E109EABF935A3")
