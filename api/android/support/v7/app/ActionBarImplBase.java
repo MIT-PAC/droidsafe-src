@@ -191,10 +191,17 @@ private static boolean checkShowingFlags(boolean hiddenByApp, boolean hiddenBySy
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:32.483 -0400", hash_original_method = "BA184EACCA7F936A666A0A7DBAA929EF", hash_generated_method = "C58695332178A4BFE2921873FCB64739")
     
-public ActionBarImplBase(ActionBarActivity activity, Callback callback) {
+    public ActionBarImplBase(ActionBarActivity activity, Callback callback) {
         mActivity = activity;
         mContext = activity;
         mCallback = callback;
+        init(mActivity);
+    }
+    
+    public ActionBarImplBase(ActionBarActivity activity, DSOnlyType dsonly) {
+        mActivity = activity;
+        mContext = activity;
+        mCallback = null;
         init(mActivity);
     }
 
@@ -913,7 +920,8 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
         }
     }
 
-    class ActionModeImpl extends ActionMode implements MenuBuilder.Callback {
+    class ActionModeImpl extends ActionMode //implements android.support.v7.internal.view.menu.MenuBuilder.Callback 
+    {
 
         private ActionMode.Callback mCallback;
         private MenuBuilder mMenu;
@@ -923,7 +931,7 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
             mCallback = callback;
             mMenu = new MenuBuilder(getThemedContext())
                     .setDefaultShowAsAction(SupportMenuItem.SHOW_AS_ACTION_IF_ROOM);
-            mMenu.setCallback(this);
+            //mMenu.setCallback(callback);
         }
 
         @Override
@@ -933,7 +941,7 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 
         @Override
         public Menu getMenu() {
-            return mMenu;
+            return (Menu) mMenu;
         }
 
         @Override
@@ -1044,7 +1052,6 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
             }
         }
 
-        @Override
         public void onMenuModeChange(MenuBuilder menu) {
             if (mCallback == null) {
                 return;

@@ -2424,6 +2424,13 @@ public boolean isRestricted() {
 		int[] attrArray = new int[] {actionbarlayout + attrs.getTaintInt()} ;
 		return obtainStyledAttributes(attrArray);
 	}
+
+	public TypedArray obtainStyledAttributes(AttributeSet attrs,
+			int activitychooserview, int defStyle, int defStyleRes) {
+		// TODO Auto-generated method stub
+		int[] attrArray = new int[] {activitychooserview + defStyle + defStyleRes};
+		return obtainStyledAttributes(attrArray);
+	}
     
 }
 

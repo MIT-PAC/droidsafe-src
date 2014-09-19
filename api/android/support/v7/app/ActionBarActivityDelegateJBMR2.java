@@ -31,6 +31,7 @@ ActionBarActivityDelegateJBMR2(ActionBarActivity activity) {
     
 @Override
     public ActionBar createSupportActionBar() {
-        return new ActionBarImplJBMR2(mActivity, mActivity);
+        //return new ActionBarImplJBMR2(mActivity, mActivity);
+        return new ActionBarImplBase(mActivity, DSOnlyType.DONTCARE);
     }
 }

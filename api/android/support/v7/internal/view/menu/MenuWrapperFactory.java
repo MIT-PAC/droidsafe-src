@@ -43,9 +43,9 @@ public static Menu createMenuWrapper(android.view.Menu frameworkMenu) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.795 -0400", hash_original_method = "1486C69AD9CF92997B6FD39F62B7C24F", hash_generated_method = "30497D7840D7443D90E1B3BC0374B7E9")
     
 public static MenuItem createMenuItemWrapper(android.view.MenuItem frameworkMenuItem) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+       /* if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             return new MenuItemWrapperJB(frameworkMenuItem);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+        } else*/ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             return new MenuItemWrapperICS(frameworkMenuItem);
         }
         return frameworkMenuItem;
@@ -74,9 +74,9 @@ public static SupportSubMenu createSupportSubMenuWrapper(
     
 public static SupportMenuItem createSupportMenuItemWrapper(
             android.view.MenuItem frameworkMenuItem) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+   /*     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             return new MenuItemWrapperJB(frameworkMenuItem);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+        } else*/ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             return new MenuItemWrapperICS(frameworkMenuItem);
         }
         throw new UnsupportedOperationException();

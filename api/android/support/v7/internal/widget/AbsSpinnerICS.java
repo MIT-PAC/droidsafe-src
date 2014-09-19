@@ -409,6 +409,17 @@ public int pointToPosition(int x, int y) {
     }
 
     static class SavedState extends BaseSavedState {
+
+        public static final Parcelable.Creator<SavedState> CREATOR
+                = new Parcelable.Creator<SavedState>() {
+            public SavedState createFromParcel(Parcel in) {
+                return new SavedState(in);
+            }
+
+            public SavedState[] newArray(int size) {
+                return new SavedState[size];
+            }
+        };
         long selectedId;
         int position;
 
@@ -442,17 +453,6 @@ public int pointToPosition(int x, int y) {
                     + " selectedId=" + selectedId
                     + " position=" + position + "}";
         }
-
-        public static final Parcelable.Creator<SavedState> CREATOR
-                = new Parcelable.Creator<SavedState>() {
-            public SavedState createFromParcel(Parcel in) {
-                return new SavedState(in);
-            }
-
-            public SavedState[] newArray(int size) {
-                return new SavedState[size];
-            }
-        };
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.313 -0400", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "0F01E07DD73E3F973CD57D0A62D38B74")

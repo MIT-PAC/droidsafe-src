@@ -37,6 +37,7 @@ public final class R {
         public static final int abc_config_showMenuShortcutsWhenKeyboardPresent = 0;
         public static final int abc_split_action_bar_is_narrow = 0;
         public static final int abc_action_bar_expanded_action_views_exclusive = 0;
+        public static final int abc_config_allowActionMenuItemTextWithIcon = 0;
     }
 
     public final class dimen {
@@ -210,6 +211,7 @@ public final class R {
         public static final int Spinner_android_dropDownVerticalOffset = 0;
         public static final int Theme_panelMenuListTheme = 0;
         public static final int View = 0;
+        public static final int ActionMenuItemView = 0;
     }
 
     public final class style {

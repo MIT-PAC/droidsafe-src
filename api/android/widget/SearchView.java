@@ -1118,6 +1118,7 @@ private void setImeVisibility(final boolean visible) {
     /* package */@DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.836 -0500", hash_original_method = "364D10214479FA13BFF6BDB192F3E0CD", hash_generated_method = "364D10214479FA13BFF6BDB192F3E0CD")
+	public
     
 void onQueryRefine(CharSequence queryText) {
         setQuery(queryText);

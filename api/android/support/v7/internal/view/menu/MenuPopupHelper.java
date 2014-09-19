@@ -39,6 +39,7 @@ import android.widget.PopupWindow;
 
 import java.util.ArrayList;
 
+
 /**
  * Presents a menu as a small, simple popup anchored to another view.
  *
@@ -419,9 +420,9 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
             }
 
             MenuView.ItemView itemView = (MenuView.ItemView) convertView;
-            if (mForceShowIcon) {
+          /*  if (mForceShowIcon) {
                 ((ListMenuItemView) convertView).setForceShowIcon(true);
-            }
+            }*/
             itemView.initialize(getItem(position), 0);
             return convertView;
         }

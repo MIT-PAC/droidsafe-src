@@ -42,7 +42,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.FrameLayout;
 
-class ActionBarActivityDelegateBase extends ActionBarActivityDelegate implements
+class ActionBarActivityDelegateBase extends ActionBarActivityDelegate  implements
         MenuPresenter.Callback, MenuBuilder.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.823 -0400", hash_original_field = "1294C1DD2060AFB07B06D6331190FEF2", hash_generated_field = "0637BCC5F28D9A527DB3959ED0D98358")
 
@@ -520,9 +520,9 @@ private void setMenu(MenuBuilder menu) {
             // Only update list menu if there isn't an action mode menu
             menu.addMenuPresenter(mListMenuPresenter);
         }
-        if (mActionBarView != null) {
+        /*if (mActionBarView != null) {
             mActionBarView.setMenu(menu, this);
-        }
+        }*/
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.008 -0400", hash_original_method = "ADE8C54E67965A162EEB2F00E326D3CE", hash_generated_method = "A532F91AD8FCF0A0A93FF22569A1F970")

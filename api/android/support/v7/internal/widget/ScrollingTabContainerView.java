@@ -477,13 +477,14 @@ public void removeAllTabs() {
 
                 if (text != null) {
                     if (mTextView == null) {
-                        TextView textView = new CompatTextView(getContext(), null,
+                        /*TextView textView = new CompatTextView(getContext(), null,
                                 R.attr.actionBarTabTextStyle);
                         textView.setEllipsize(TruncateAt.END);
                         LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT,
                                 LayoutParams.WRAP_CONTENT);
                         lp.gravity = Gravity.CENTER_VERTICAL;
-                        textView.setLayoutParams(lp);
+                        textView.setLayoutParams(lp);*/
+                    	TextView textView = new TextView(getContext());
                         addView(textView);
                         mTextView = textView;
                     }

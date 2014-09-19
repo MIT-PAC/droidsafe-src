@@ -29,6 +29,7 @@ import android.support.v7.appcompat.R;
 import android.support.v7.internal.view.ActionBarPolicy;
 import android.support.v4.view.ActionProvider;
 import android.support.v7.internal.view.menu.ActionMenuView.ActionMenuChildView;
+import android.support.v7.internal.view.menu.MenuBuilder.ItemInvoker;
 import android.util.SparseBooleanArray;
 import android.view.MenuItem;
 import android.view.SoundEffectConstants;
@@ -38,6 +39,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+
 
 /**
  * MenuPresenter for building action menus as seen in the action bar and action modes.
@@ -214,18 +216,18 @@ public void setExpandedActionViewsExclusive(boolean isExclusive) {
     public View getItemView(MenuItemImpl item, View convertView, ViewGroup parent) {
         View actionView = item.getActionView();
         if (actionView == null || item.hasCollapsibleActionView()) {
-            if (!(convertView instanceof ActionMenuItemView)) {
+            /*if (!(convertView instanceof ActionMenuItemView)) {
                 convertView = null;
-            }
+            }*/
             actionView = super.getItemView(item, convertView, parent);
         }
         actionView.setVisibility(item.isActionViewExpanded() ? View.GONE : View.VISIBLE);
 
         final ActionMenuView menuParent = (ActionMenuView) parent;
         final ViewGroup.LayoutParams lp = actionView.getLayoutParams();
-        if (!menuParent.checkLayoutParams(lp)) {
+       /* if (!menuParent.checkLayoutParams(lp)) {
             actionView.setLayoutParams(menuParent.generateLayoutParams(lp));
-        }
+        }*/
         return actionView;
     }
 
@@ -237,7 +239,7 @@ public void setExpandedActionViewsExclusive(boolean isExclusive) {
 
         final ActionMenuView menuView = (ActionMenuView) mMenuView;
         ActionMenuItemView actionItemView = (ActionMenuItemView) itemView;
-        actionItemView.setItemInvoker(menuView);
+        actionItemView.setItemInvoker((ItemInvoker) menuView);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:35.893 -0400", hash_original_method = "CF6FF79E1183E432FB7F279F6A955298", hash_generated_method = "379E338C9673BE2A3C50AC064BF35C99")
