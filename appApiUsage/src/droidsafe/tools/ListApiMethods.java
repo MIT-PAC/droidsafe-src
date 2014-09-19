@@ -62,9 +62,22 @@ public class ListApiMethods extends ApiUsageListing {
             List<String> list = IOUtils.readLines(listFile);
             
             for (String entry: list) {
-                entry = entry.trim();
-                entry = entry.replaceAll("^\\s*\\d+\\s+",  "");
-                entry = entry.replaceAll("\\s+",  ".");
+                if (entry.startsWith("<")) {
+                    entry = entry.replaceAll("^<", "");
+                    entry = entry.replaceAll("\\(.*", "");
+                    entry = entry.replaceAll(":\\s+.*\\s+", ".");
+
+/*                    <java.net.InetSocketAddress: void <init>(int)>
+                    <java.net.InetSocketAddress: void <init>(java.net.InetAddress,int)>
+                    <java.net.InetSocketAddress: void <init>(java.lang.String,int)>
+                    <java.net.InetSocketAddress: java.net.InetSocketAddress createUnresolved(java.lang.String,int)>
+*/
+                }
+                else {
+                    entry = entry.trim();
+                    entry = entry.replaceAll("^\\s*\\d+\\s+",  "");
+                    entry = entry.replaceAll("\\s+",  ".");
+                }
                 logger.debug("adding {}", entry);
                 interestList.add(entry);
             }
