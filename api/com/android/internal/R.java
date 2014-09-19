@@ -9305,6 +9305,32 @@ public final class R {
         public static final int lockscreen_too_many_failed_pin_attempts_dialog_message = 0;
         public static final int lockscreen_unlock_label = 0;
         public static final int sms_control_default_app_name = 0;
+		public static final int switch_on  = 0;
+		public static final int switch_off = 0;
+        public static final int twenty_four_hour_time_format = 0;
+        public static final int twelve_hour_time_format = 0;
+        public static final int time_picker_separator = 0;
+        public static final int abbrev_month = 0;
+        public static final int abbrev_month_day = 0;
+        public static final int abbrev_month_day_year = 0;
+        public static final int abbrev_month_year = 0;
+        public static final int date1_date2 = 0;
+        public static final int date1_time1_date2_time2 = 0;
+        public static final int hour_minute_24 = 0;
+        public static final int hour_minute_ampm = 0;
+        public static final int hour_minute_cap_ampm = 0;
+        public static final int short_format_month = 0;
+        public static final int time1_time2 = 0;
+        public static final int time_date = 0;
+        public static final int time_wday = 0;
+        public static final int time_wday_date = 0;
+        public static final int today = 0;
+        public static final int tomorrow = 0;
+        public static final int wday1_date1_time1_wday2_date2_time2 = 0;
+        public static final int wday1_date1_wday2_date2 = 0;
+        public static final int wday_date = 0;
+        public static final int yesterday = 0;
+
     }
     public static final class style {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:55.541 -0400", hash_original_field = "FC6E41E1911A5DD0D4958F013EB3C7CA", hash_generated_field = "3B53C4199F2895CFA35885A4CF8F1E6F")
@@ -17055,9 +17081,13 @@ public final class R {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 13:57:58.030 -0400", hash_original_field = "4BD79DF4C1082D0771AB1AFAAC48A15D", hash_generated_field = "6B02193D5EEDF5342A264A8F85D958E3")
 
         public static final int WindowAnimation_windowShowAnimation = 2;
-
-
-    
+		public static final int DatePicker_layout = 0;
+		public static final int NumberPicker_flingable = 0;
+		public static final int NumberPicker_minHeight = 0;
+		public static final int NumberPicker_maxHeight = 0;
+		public static final int NumberPicker_minWidth = 0;
+		public static final int NumberPicker_maxWidth = 0;
+        public static final int TimePicker_layout = 0;
 
     };
 }

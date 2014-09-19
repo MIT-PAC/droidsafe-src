@@ -8573,6 +8573,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int zoomMagnify=0x010201ec;
         public static final int zoomOut=0x010201ea;
         public static final int zoom_page_overview=0x010201e8;
+
+        public static final int action_bar = 0;
+        public static final int action_context_bar = 0;
     }
     public static final class integer {
         @DSSafe(DSCat.SAFE_OTHERS)
