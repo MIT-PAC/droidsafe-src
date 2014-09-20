@@ -292,5 +292,30 @@ public final void free() {
         return protectedArray() != null;
     }
     
+    //Droidsafe: We added here to resolve compiler error, not sure when it was changed
+    public ByteBuffer put(Object src, int srcOffset, int byteCount) {
+        byte[] byteArray = new byte[1];
+        if (src instanceof byte[]) {
+            byte[] srcArray = (byte[]) src;
+            byteArray[0] = (byte)srcArray[0];
+        }
+        if (src instanceof char[]) {
+            char[] srcArray = (char[]) src;
+            byteArray[0] = (byte)srcArray[0];
+        }
+        if (src instanceof short[]) {
+            short[] srcArray = (short[]) src;
+            byteArray[0] = (byte)srcArray[0];
+        }
+        if (src instanceof int[]) {
+            int[] srcArray = (int[]) src;
+            byteArray[0] = (byte)srcArray[0];
+        }
+        if (src instanceof float[]) {
+            float[] srcArray = (float[]) src;
+            byteArray[0] = (byte)srcArray[0];
+        }
+        return put(byteArray, srcOffset, byteCount);
+    }
 }
 

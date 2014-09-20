@@ -85,29 +85,45 @@ public void update(byte[] buf, int offset, int byteCount) {
         crc = updateImpl(buf, offset, byteCount, crc);
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.177 -0500", hash_original_method = "680551833B0F700FD9FEA4D72A9561BF", hash_generated_method = "15F291A5104183040493E4679B402CE7")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.299 -0400", hash_original_method = "680551833B0F700FD9FEA4D72A9561BF", hash_generated_method = "02BF51FF0157008B19FE71F6EF1EFF51")
     
     private long updateImpl(byte[] buf, int offset, int byteCount, long crc1){
     	//Formerly a native method
-    	addTaint(buf[0]);
-    	addTaint(offset);
-    	addTaint(byteCount);
-    	addTaint(crc1);
-    	return getTaintLong();
+    	double taintDouble = 0;
+    	taintDouble += buf[0];
+    	taintDouble += offset;
+    	taintDouble += byteCount;
+    	taintDouble += crc1;
+    	addTaint(taintDouble);
+    
+    	return (long)taintDouble;
     }
 
-    @DSComment("Private Method")
+
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.181 -0500", hash_original_method = "90348FBF3DF8B04612B506AE017DBA82", hash_generated_method = "B0C80CE3385CE04CE8B102059C4983AE")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.300 -0400", hash_original_method = "90348FBF3DF8B04612B506AE017DBA82", hash_generated_method = "51D012D216C1F1216E230AE20D15D676")
     
     private long updateByteImpl(byte val, long crc1){
     	//Formerly a native method
-    	addTaint(val);
-    	addTaint(crc1);
-    	return getTaintLong();
+    	double taintDouble = 0;
+    	taintDouble += val;
+    	taintDouble += crc1;
+    	addTaint(taintDouble);
+    
+    	return (long)taintDouble;
     }
+
     
 }
 

@@ -22,9 +22,9 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.292 -0500", hash_original_field = "2D217B4B12AF34AB9631225A2E26D407", hash_generated_field = "BBA980D7D7B7F08CF4B42F041B343B13")
 
     private final AtomicInteger count = new AtomicInteger(0);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.294 -0500", hash_original_field = "AF17874DDDE4597EF645F8BFBDDE5272", hash_generated_field = "48C6F3CDEAC5EAEAC23BFB1092B4D3A3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:13.925 -0400", hash_original_field = "AF17874DDDE4597EF645F8BFBDDE5272", hash_generated_field = "66B1026743E306FB528D3554A2A99F71")
 
-    private transient Node<E> head;
+    transient Node<E> head;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.296 -0500", hash_original_field = "5BD668C51B6C07553DEA981067DC22EE", hash_generated_field = "9882BA72234087D024BDEB5C6D765CDA")
 
     private transient Node<E> last;

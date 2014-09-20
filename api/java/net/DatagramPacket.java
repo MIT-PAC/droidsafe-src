@@ -6,24 +6,28 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public final class DatagramPacket {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.334 -0500", hash_original_field = "B330DF564CD90A5498A9E4F0AB344BB9", hash_generated_field = "B330DF564CD90A5498A9E4F0AB344BB9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:50.571 -0400", hash_original_field = "B330DF564CD90A5498A9E4F0AB344BB9", hash_generated_field = "BCB00A81B11593F3A75239028B6E65B9")
 
-    byte[] data;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.336 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "136C4DD872F8065EECD33F6CD4E7556E")
 
-    int length;
+    public byte[] data;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:50.571 -0400", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "C7D2E1B1F4403418CA216FC250689056")
+
+    private int length;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.338 -0500", hash_original_field = "0B1D26332B4020647655E70C20DE6D8D", hash_generated_field = "0B1D26332B4020647655E70C20DE6D8D")
 
     int capacity;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.340 -0500", hash_original_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4", hash_generated_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:50.572 -0400", hash_original_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4", hash_generated_field = "220CE3F94E98B4B531A4938FAFF932C0")
 
-    InetAddress address;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.342 -0500", hash_original_field = "BAF684EECB20D799A434AFCF1B13F01D", hash_generated_field = "BAF684EECB20D799A434AFCF1B13F01D")
 
-    int port = -1;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.344 -0500", hash_original_field = "B57AAF7BF5F2E3B125D28448999D0D18", hash_generated_field = "B57AAF7BF5F2E3B125D28448999D0D18")
+    private InetAddress address;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:50.572 -0400", hash_original_field = "BAF684EECB20D799A434AFCF1B13F01D", hash_generated_field = "F51DF048A4B5B6B4A61A3652544F4757")
 
-    int offset = 0;
+
+    private int port = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:50.573 -0400", hash_original_field = "B57AAF7BF5F2E3B125D28448999D0D18", hash_generated_field = "724EB7AA080C9DB92A724877C069F566")
+
+
+    private int offset = 0;
 
     /**
      * Constructs a new {@code DatagramPacket} object to receive data up to
@@ -377,6 +381,11 @@ public synchronized void setSocketAddress(SocketAddress sockAddr) {
         }
         port = inetAddr.getPort();
         address = inetAddr.getAddress();
+    }
+
+    public void setReceivedLength(int byteCount) {
+        // TODO Auto-generated method stub
+        
     }
     
 }

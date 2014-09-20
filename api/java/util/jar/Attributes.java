@@ -402,9 +402,9 @@ public String putValue(String name, String val) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.728 -0500", hash_original_field = "83DB95D818F69B498ADD16FCD718E1CC", hash_generated_field = "BAFF34A6F6A91D8E54DEE7BBC19A4C8F")
 
         public static final Name IMPLEMENTATION_URL = new Name("Implementation-URL");
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.730 -0500", hash_original_field = "2C150A477129783670E6A315424F8AFC", hash_generated_field = "8391009D03BD383CE126AB69E7C8D390")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:56.908 -0400", hash_original_field = "2C150A477129783670E6A315424F8AFC", hash_generated_field = "3F950F074055DB2C13DD5EAF9C34C889")
 
-        static final Name NAME = new Name("Name");
+        public static final Name NAME = new Name("Name");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.680 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
         private  String name;

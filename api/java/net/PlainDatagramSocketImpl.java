@@ -256,7 +256,7 @@ public void setOption(int option, Object value) throws SocketException {
             Libcore.os.connect(fd, InetAddress.UNSPECIFIED, 0);
         } catch (ErrnoException errnoException) {
             throw new AssertionError(errnoException);
-        }
+        } 
         connectedPort = -1;
         connectedAddress = null;
         isNativeConnected = false;

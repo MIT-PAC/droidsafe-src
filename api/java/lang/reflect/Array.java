@@ -807,16 +807,13 @@ public static void setShort(Object array, int index, short value)
             setInt(array, index, value);
         }
     }
-
-    /**
-     * Prevent this class from being instantiated.
-     */
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.890 -0500", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "A5B775E55BAEC7F200D31C4FEF7D82EB")
+
+    @DSComment("Private Method")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:39.984 -0400", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "6D2788CE118EA61713C3B72F25526FFC")
     
-private Array(){
-        //do nothing
+private Array() {
     }
     
 }

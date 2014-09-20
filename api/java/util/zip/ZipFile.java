@@ -298,12 +298,12 @@ public RAFStream(RandomAccessFile raf, long pos) throws IOException {
     }
     
     static class ZipInflaterInputStream extends InflaterInputStream {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.392 -0500", hash_original_field = "6ABF0A573F6A71AB8AAE237EF7DCBFD4", hash_generated_field = "6ABF0A573F6A71AB8AAE237EF7DCBFD4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.621 -0400", hash_original_field = "6ABF0A573F6A71AB8AAE237EF7DCBFD4", hash_generated_field = "D8CE0373911BCC8005A9FA787764EC5C")
 
-        ZipEntry entry;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.394 -0500", hash_original_field = "B454E81C25A392A63976B59EF20BFDA7", hash_generated_field = "B454E81C25A392A63976B59EF20BFDA7")
+        private  ZipEntry entry;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.621 -0400", hash_original_field = "B454E81C25A392A63976B59EF20BFDA7", hash_generated_field = "F88868FA55945EAB81ACD7B26C3CE44D")
 
-        long bytesRead = 0;
+        private long bytesRead = 0;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.397 -0500", hash_original_method = "7042D9D65A5773117A52B7582FC64EEF", hash_generated_method = "BD88FAF2D943047DBA2947877E90587A")
         

@@ -134,6 +134,10 @@ private Field(Class<?> declaringClass, Class<?> type, String name, int slot) {
     	
     }
 
+   /* public Field(ArtField f) {
+        // TODO Auto-generated constructor stub
+    }*/
+
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.254 -0500", hash_original_method = "5029B4C059F978BE158986B034FE3005", hash_generated_method = "63D5F4635328AC6DD49A3A6379D3C306")

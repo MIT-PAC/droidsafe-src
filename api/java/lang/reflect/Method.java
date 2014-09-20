@@ -192,6 +192,10 @@ private Method(Class<?> declaring, Class<?>[] paramTypes, Class<?>[] exceptTypes
     public Method() {
 
 	}
+    
+  /*  public Method(ArtMethod m) {
+        
+    }*/
 
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -771,6 +775,11 @@ public Object invoke(Object receiver, Object... args)
 
 		return a.getReturnType().getName().compareTo(b.getReturnType().getName());
 	}
+
+    public int getAccessFlags() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
     
 }
 

@@ -11,28 +11,21 @@ import org.apache.harmony.kernel.vm.StringUtils;
 
 public class AccessibleObject implements AnnotatedElement {
 
-    /**
-     * Attempts to set the value of the accessible flag for all the objects in
-     * the array provided. Setting this
-     * flag to {@code false} will enable access checks, setting to {@code true}
-     * will disable them.
-     *
-     * @param objects
-     *            the accessible objects
-     * @param flag
-     *            the new value for the accessible flag
-     *
-     * @see #setAccessible(boolean)
-     */
-    @DSComment("Java language reflection")
     @DSBan(DSCat.REFLECTION)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.336 -0500", hash_original_method = "670F990BF0D6A92A8F1AA8AC7F02D156", hash_generated_method = "68DE20ABD356D6F8D1ADEEEC1DD849F0")
+
+
+    @DSComment("Java language reflection")
+
+
+    /**
+     * Attempts to set the accessible flag for all objects in {@code objects}.
+     * Setting this to true prevents {@code IllegalAccessExceptions}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.494 -0400", hash_original_method = "986E0AEABE79531D4CEF9192F310BD8A", hash_generated_method = "1DF5E8147BD1E50E88045DC772FE8D22")
     
 public static void setAccessible(AccessibleObject[] objects, boolean flag) {
-        synchronized(AccessibleObject.class) {
-            for (AccessibleObject object : objects) {
-                object.flag = flag;
-            }
+        for (AccessibleObject object : objects) {
+            object.flag = flag;
         }
     }
 
@@ -66,69 +59,74 @@ static String getClassSignatureAttribute(Class clazz) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.332 -0500", hash_original_field = "73EA6AEBBE448C5C33ED9F0E5E3F055A", hash_generated_field = "F7E345322C5DA8049D7465C5406D9B9D")
 
     static Hashtable<String, String> trans;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.330 -0500", hash_original_field = "D3CD6765000979577B5DA559E9F23C55", hash_generated_field = "D3CD6765000979577B5DA559E9F23C55")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:40.098 -0400", hash_original_field = "D3CD6765000979577B5DA559E9F23C55", hash_generated_field = "1A2D47197AF65ECB2BA4A26AB02401AE")
 
     boolean flag = false;
-
-    /**
-     * Constructs a new {@code AccessibleObject} instance. {@code
-     * AccessibleObject} instances can only be constructed by the virtual
-     * machine.
-     */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.339 -0500", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "07D69BA5ABE497283D1B6DE52B581BA9")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.480 -0400", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "07D69BA5ABE497283D1B6DE52B581BA9")
     
 protected AccessibleObject() {
     }
 
-    /**
-     * Indicates whether this object is accessible without access checks being
-     * performed. Returns the accessible flag.
-     *
-     * @return {@code true} if this object is accessible without access
-     *         checks, {@code false} otherwise
-     */
-    @DSComment("Java language reflection")
+  /*  protected ArtMethod artMethod;
+    public AccessibleObject(ArtMethod artMethod) {
+        this.artMethod  = artMethod;
+        // TODO Auto-generated constructor stub
+    }*/
+
     @DSBan(DSCat.REFLECTION)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.341 -0500", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "F758FA2BFE5D48F8DCF99731C758F154")
+
+
+    @DSComment("Java language reflection")
+
+
+    /**
+     * Returns true if this object is accessible without access checks.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.487 -0400", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "F758FA2BFE5D48F8DCF99731C758F154")
     
 public boolean isAccessible() {
         return flag;
     }
 
-    /**
-     * Attempts to set the value of the accessible flag. Setting this flag to
-     * {@code false} will enable access checks, setting to {@code true} will
-     * disable them.
-     *
-     * @param flag
-     *            the new value for the accessible flag
-     */
-    @DSComment("Java language reflection")
     @DSBan(DSCat.REFLECTION)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.344 -0500", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "BB58AE5FEDFFFA08CEBC07B09269E4D5")
+
+
+    @DSComment("Java language reflection")
+
+
+    /**
+     * Attempts to set the accessible flag. Setting this to true prevents {@code
+     * IllegalAccessExceptions}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.491 -0400", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "BB58AE5FEDFFFA08CEBC07B09269E4D5")
     
 public void setAccessible(boolean flag) {
         this.flag = flag;
-    }
+     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.346 -0500", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "A0EBDBBF334272F87ED8B448C40859E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.498 -0400", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "43B9C3B1D7E884AD2A7C713875A9E867")
     
-public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
+@Override public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
         throw new UnsupportedOperationException();
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.348 -0500", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "3681CD33362442788F51F5CB97E8F924")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.501 -0400", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "25FEC77CF75F53EC70921EE8A193CB69")
     
-public Annotation[] getDeclaredAnnotations() {
+@Override public Annotation[] getDeclaredAnnotations() {
         throw new UnsupportedOperationException();
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.351 -0500", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "2BE97EAB30C93D24E30DEBAEA5394C7F")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.508 -0400", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "0E992320369165946CB376284766369A")
     
-public Annotation[] getAnnotations() {
+@Override public Annotation[] getAnnotations() {
         // for all but Class, getAnnotations == getDeclaredAnnotations
         return getDeclaredAnnotations();
     }
@@ -335,6 +333,44 @@ void appendGenericType(StringBuilder sb, Type obj) {
         trans.put("double", "D");
         trans.put("void", "V");
         trans.put("boolean", "Z");
+    }
+
+    String toGenericString() {
+        // TODO Auto-generated method stub
+        return "<genericString>";
+    }
+
+    Type[] getGenericParameterTypes() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    Class<?> getDeclaringClass() {
+        // TODO Auto-generated method stub
+        try {
+            return (Class<?>)new Class();
+        }
+        catch (Exception ex) {
+            return null;
+        }
+    }
+
+    int getModifiers() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    public Class<?>[] getParameterTypes() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
+    public int getDexMethodIndex() {
+        return getTaintInt();
+    }
+
+    public int getDexFieldIndex() {
+        return getTaintInt();
     }
     
 }

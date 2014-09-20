@@ -465,5 +465,66 @@ public final Buffer rewind() {
         buf.append(limit);
         return buf.toString();
     }
+    
+    public static class DroidSafeNioBuffer extends Buffer {
+
+        byte[] buffer;
+        
+        DroidSafeNioBuffer(int elementSizeShift, int capacity, MemoryBlock block) {
+            super(elementSizeShift, capacity, block);
+        }
+        
+        public DroidSafeNioBuffer(DSOnlyType dontcare) {
+            this(0, 0, null);
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.646 -0500", hash_original_method = "09741C8E85E025E968AD6F26D3687DF1", hash_generated_method = "84B70AC4A107B559ECC2A7E3978C672F")
+        public Object array() {
+            // TODO Auto-generated method stub
+            return buffer;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.649 -0500", hash_original_method = "6116DB2B49159CA0E0F5A4E8FDD85562", hash_generated_method = "E71FB9D0772673BC9C1AFEAE483451D3")
+        public int arrayOffset() {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.670 -0500", hash_original_method = "5D0B8C70464A251811F6E29D47898FAC", hash_generated_method = "F51D3E74A2EA9BEA06AE46602087F65C")
+        public boolean hasArray() {
+            // TODO Auto-generated method stub
+            return true;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.676 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
+        public boolean isDirect() {
+            // TODO Auto-generated method stub
+            return true;
+        }
+
+        @Override
+        @DSComment("Abstract Method")
+        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.678 -0500", hash_original_method = "A8AEFD64A4190D55AF4312903F115146", hash_generated_method = "CD3E3A8E7CDFBBFF1BC7E86A37D41E49")
+        public boolean isReadOnly() {
+            // TODO Auto-generated method stub
+            return false;
+        }
+
+    }
 }
+
+
 

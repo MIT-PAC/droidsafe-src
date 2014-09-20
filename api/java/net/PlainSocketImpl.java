@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import static libcore.io.OsConstants.EAGAIN;
-import static libcore.io.OsConstants.EWOULDBLOCK;
 import static libcore.io.OsConstants.MSG_OOB;
 import static libcore.io.OsConstants.SHUT_RD;
 import static libcore.io.OsConstants.SHUT_WR;
@@ -101,7 +100,7 @@ public PlainSocketImpl(FileDescriptor fd, int localport, InetAddress addr, int p
             newImpl.address = peerAddress.getAddress();
             newImpl.port = peerAddress.getPort();
         } catch (ErrnoException errnoException) {
-            if (errnoException.errno == EAGAIN || errnoException.errno == EWOULDBLOCK) {
+            if (errnoException.errno == EAGAIN) {
                 throw new SocketTimeoutException(errnoException);
             }
             throw errnoException.rethrowAsSocketException();

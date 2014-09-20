@@ -191,19 +191,27 @@ private synchronized int deflateImpl(byte[] buf, int offset, int byteCount, int 
         return deflateImpl(buf, offset, byteCount, streamHandle, flush);
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.798 -0500", hash_original_method = "54CA80994C94CBB2D32C9857F1640D60", hash_generated_method = "792987498202E9827C539CECE80336AC")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.524 -0400", hash_original_method = "54CA80994C94CBB2D32C9857F1640D60", hash_generated_method = "1E6ADEC5F486A5F0536DA89705CD1920")
     
     private int deflateImpl(byte[] buf, int offset, int byteCount, long handle, int flushParm){
     	//Formerly a native method
-    	addTaint(buf[0]);
-    	addTaint(offset);
-    	addTaint(byteCount);
-    	addTaint(handle);
-    	addTaint(flushParm);
-    	return getTaintInt();
+    	double taintDouble = 0;
+    	taintDouble += buf[0];
+    	taintDouble += offset;
+    	taintDouble += byteCount;
+    	taintDouble += handle;
+    	taintDouble += flushParm;
+    	addTaint(taintDouble);
+    
+    	return (int)taintDouble;
     }
+
 
     /**
      * Frees all resources held onto by this deflating algorithm. Any unused
@@ -231,14 +239,21 @@ private void endImpl() {
         }
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.807 -0500", hash_original_method = "3E089BB1F2369FD5C4FB6F32377D1DAC", hash_generated_method = "CAAF219716E180D754E9468CEF90D237")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.525 -0400", hash_original_method = "3E089BB1F2369FD5C4FB6F32377D1DAC", hash_generated_method = "D37840FF1F65E54A18F1909F3D74BED2")
     
     private void endImpl(long handle){
     	//Formerly a native method
-    	addTaint(handle);
+    	double taintDouble = 0;
+    	taintDouble += handle;
+    	addTaint(taintDouble);
     }
+
 
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.810 -0500", hash_original_method = "FC32DF56978CE95FA2CC2CA96409152E", hash_generated_method = "09E00EA73277F9B2AD883CD1303F9264")
@@ -297,15 +312,23 @@ public synchronized int getAdler() {
         return getAdlerImpl(streamHandle);
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.822 -0500", hash_original_method = "B92F3D2B64C580905B1CBAEAEEC7E950", hash_generated_method = "6AD9A385B53DB2BA75AFBBE825FE107D")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.528 -0400", hash_original_method = "B92F3D2B64C580905B1CBAEAEEC7E950", hash_generated_method = "61AA5FDACEC6651845F52881D1AA45E1")
     
     private int getAdlerImpl(long handle){
     	//Formerly a native method
-    	addTaint(handle);
-    	return getTaintInt();
+    	double taintDouble = 0;
+    	taintDouble += handle;
+    	addTaint(taintDouble);
+    
+    	return (int)taintDouble;
     }
+
 
     /**
      * Returns the total number of bytes of input read by this {@code Deflater}. This
@@ -319,15 +342,23 @@ public synchronized int getTotalIn() {
         return (int) getTotalInImpl(streamHandle);
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.829 -0500", hash_original_method = "BB22F222483240F64BF20392C09B432F", hash_generated_method = "27A34AED5DC88EA02352AF5C411EC373")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.529 -0400", hash_original_method = "BB22F222483240F64BF20392C09B432F", hash_generated_method = "FB76E0894AEC3C0AE237576E4437CBE2")
     
     private long getTotalInImpl(long handle){
     	//Formerly a native method
-    	addTaint(handle);
-    	return getTaintLong();
+    	double taintDouble = 0;
+    	taintDouble += handle;
+    	addTaint(taintDouble);
+    
+    	return (long)taintDouble;
     }
+
 
     /**
      * Returns the total number of bytes written to the output buffer by this {@code
@@ -341,15 +372,23 @@ public synchronized int getTotalOut() {
         return (int) getTotalOutImpl(streamHandle);
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.835 -0500", hash_original_method = "2C5C1800FBCC7A9569101FDF1B411571", hash_generated_method = "55A13EEEFE112FFF013CCCC774DCBDDC")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.530 -0400", hash_original_method = "2C5C1800FBCC7A9569101FDF1B411571", hash_generated_method = "5AF6B3DE8DAA8B45ECC40138EB65121D")
     
     private long getTotalOutImpl(long handle){
     	//Formerly a native method
-    	addTaint(handle);
-    	return getTaintLong();
+    	double taintDouble = 0;
+    	taintDouble += handle;
+    	addTaint(taintDouble);
+    
+    	return (long)taintDouble;
     }
+
 
     /**
      * Returns true if {@link #setInput setInput} must be called before deflation can continue.
@@ -381,14 +420,21 @@ public synchronized void reset() {
         inputBuffer = null;
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.845 -0500", hash_original_method = "D92307F0039AB335BB1BCA1E70FBBC75", hash_generated_method = "F242A02CC5CDF0DDF24D50E919BDE63F")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.531 -0400", hash_original_method = "D92307F0039AB335BB1BCA1E70FBBC75", hash_generated_method = "E5AD6996270CB0317F4EFC6A63FC0EF4")
     
     private void resetImpl(long handle){
     	//Formerly a native method
-    	addTaint(handle);
+    	double taintDouble = 0;
+    	taintDouble += handle;
+    	addTaint(taintDouble);
     }
+
 
     /**
      * Sets the dictionary to be used for compression by this {@code Deflater}.
@@ -418,17 +464,24 @@ public synchronized void setDictionary(byte[] buf, int offset, int byteCount) {
         setDictionaryImpl(buf, offset, byteCount, streamHandle);
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.855 -0500", hash_original_method = "7E435812B66ABED0B356693E1B3AC0D7", hash_generated_method = "7C22CBFC5AD4E53C75D413E15606F340")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.533 -0400", hash_original_method = "7E435812B66ABED0B356693E1B3AC0D7", hash_generated_method = "410D1701A2AFAF799D79F1813807FE5A")
     
     private void setDictionaryImpl(byte[] buf, int offset, int byteCount, long handle){
     	//Formerly a native method
-    	addTaint(buf[0]);
-    	addTaint(offset);
-    	addTaint(byteCount);
-    	addTaint(handle);
+    	double taintDouble = 0;
+    	taintDouble += buf[0];
+    	taintDouble += offset;
+    	taintDouble += byteCount;
+    	taintDouble += handle;
+    	addTaint(taintDouble);
     }
+
 
     /**
      * Sets the input buffer the {@code Deflater} will use to extract uncompressed bytes
@@ -461,28 +514,42 @@ public synchronized void setInput(byte[] buf, int offset, int byteCount) {
         setInputImpl(buf, offset, byteCount, streamHandle);
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.863 -0500", hash_original_method = "6366C8E331223E53339096A4FF906729", hash_generated_method = "091743318BC2459801E13DFE9BEBAB27")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.535 -0400", hash_original_method = "6366C8E331223E53339096A4FF906729", hash_generated_method = "F498BBC9F5D71014544CEBA66B82D21E")
     
     private void setLevelsImpl(int level, int strategy, long handle){
     	//Formerly a native method
-    	addTaint(level);
-    	addTaint(strategy);
-    	addTaint(handle);
+    	double taintDouble = 0;
+    	taintDouble += level;
+    	taintDouble += strategy;
+    	taintDouble += handle;
+    	addTaint(taintDouble);
     }
 
-    @DSComment("Private Method")
+
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.868 -0500", hash_original_method = "CFB5087A7D9EFE706B98C4EB08838FDC", hash_generated_method = "1FA97F53D7ABD85282CFAE0F1076CEA3")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.536 -0400", hash_original_method = "CFB5087A7D9EFE706B98C4EB08838FDC", hash_generated_method = "D0CB44C44F11094BAD5A989A17A93627")
     
     private void setInputImpl(byte[] buf, int offset, int byteCount, long handle){
     	//Formerly a native method
-    	addTaint(buf[0]);
-    	addTaint(offset);
-    	addTaint(byteCount);
-    	addTaint(handle);
+    	double taintDouble = 0;
+    	taintDouble += buf[0];
+    	taintDouble += offset;
+    	taintDouble += byteCount;
+    	taintDouble += handle;
+    	addTaint(taintDouble);
     }
+
 
     /**
      * Sets the compression level to be used when compressing data. The
@@ -550,17 +617,25 @@ public synchronized long getBytesWritten() {
         return getTotalOutImpl(streamHandle);
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.883 -0500", hash_original_method = "C56CB62EAF4356747257EC4F43A6E2A6", hash_generated_method = "BA18EAA4C722B3C46DE390CC9DED13E1")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.538 -0400", hash_original_method = "C56CB62EAF4356747257EC4F43A6E2A6", hash_generated_method = "BEDDA6B061A376260BA66ADFD27ACE2B")
     
     private long createStream(int level, int strategy1, boolean noHeader1){
     	//Formerly a native method
-    	addTaint(level);
-    	addTaint(strategy1);
-    	addTaint(noHeader1);
-    	return getTaintLong();
+    	double taintDouble = 0;
+    	taintDouble += level;
+    	taintDouble += strategy1;
+    	taintDouble += toTaintInt(noHeader1);
+    	addTaint(taintDouble);
+    
+    	return (long)taintDouble;
     }
+
 
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)

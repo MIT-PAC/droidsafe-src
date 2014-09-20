@@ -53,14 +53,18 @@ private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
         return false;
     }
 
+    @DSBan(DSCat.PRIVATE_METHOD)
+
+
+    @DSComment("Private Method")
+
+
     /**
      * Convenience method to interrupt current thread.
      */
-    @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.146 -0500", hash_original_method = "A017FE2B347BB8E3F328A9771EBB4299", hash_generated_method = "8DC8129982A7D3B365DA079876162962")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.882 -0400", hash_original_method = "A017FE2B347BB8E3F328A9771EBB4299", hash_generated_method = "BA18849D8B581A05A92174E06829E60B")
     
-private static void selfInterrupt() {
+static void selfInterrupt() {
         Thread.currentThread().interrupt();
     }
 

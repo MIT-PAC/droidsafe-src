@@ -23,28 +23,31 @@ public class ZipEntry implements ZipConstants, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.307 -0500", hash_original_field = "5C7A58E94B0366CCD8319D0DE1E9C38C", hash_generated_field = "C303454481B8041CEF37C1E89A2E0D63")
 
     public static final int STORED = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.743 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.856 -0400", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
 
     String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.743 -0400", hash_original_field = "06D4CD63BDE972FC66A0AED41D2F5C51", hash_generated_field = "6C9FE4127C88B2FD28EFE861CA65A713")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.857 -0400", hash_original_field = "6C9FE4127C88B2FD28EFE861CA65A713", hash_generated_field = "6C9FE4127C88B2FD28EFE861CA65A713")
 
     String comment;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.743 -0400", hash_original_field = "C5E5A955FA15B20B3341DBBE88FC7A86", hash_generated_field = "478CA1ABD1000352F0D3B41DF1BC279C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.857 -0400", hash_original_field = "478CA1ABD1000352F0D3B41DF1BC279C", hash_generated_field = "478CA1ABD1000352F0D3B41DF1BC279C")
+
 
     long compressedSize = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.743 -0400", hash_original_field = "5C56311F54A7F40FAE6AFE3628ADC545", hash_generated_field = "FD3FB5730AEB4A6C989707CB73029195")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.857 -0400", hash_original_field = "FD3FB5730AEB4A6C989707CB73029195", hash_generated_field = "FD3FB5730AEB4A6C989707CB73029195")
+
 
     long crc = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.743 -0400", hash_original_field = "304D03889695AEE9913D341019E1E376", hash_generated_field = "A9A882B5A3A733E9894435C866426B82")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.858 -0400", hash_original_field = "A9A882B5A3A733E9894435C866426B82", hash_generated_field = "A9A882B5A3A733E9894435C866426B82")
 
     long size = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.743 -0400", hash_original_field = "BF4C950D8399B9737456D4D33896D59B", hash_generated_field = "42BA978FE70CA4813B7E014BB946F0B0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.858 -0400", hash_original_field = "42BA978FE70CA4813B7E014BB946F0B0", hash_generated_field = "42BA978FE70CA4813B7E014BB946F0B0")
+
 
     int compressionMethod = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.743 -0400", hash_original_field = "F4B056B63B98600F9120FEB1C129B502", hash_generated_field = "83E94A8F4FE01AB901FF6388E2A539CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.858 -0400", hash_original_field = "83E94A8F4FE01AB901FF6388E2A539CB", hash_generated_field = "83E94A8F4FE01AB901FF6388E2A539CB")
 
     int time = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.743 -0400", hash_original_field = "50DFF0173F283C416C0F84DE329BEAB6", hash_generated_field = "7F3B557606C1E0A605131CB47C9B3638")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.859 -0400", hash_original_field = "7F3B557606C1E0A605131CB47C9B3638", hash_generated_field = "7F3B557606C1E0A605131CB47C9B3638")
 
     int modDate = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.297 -0500", hash_original_field = "4DB50909B6C3CA3BD728DB05D0FA3D9B", hash_generated_field = "4DB50909B6C3CA3BD728DB05D0FA3D9B")

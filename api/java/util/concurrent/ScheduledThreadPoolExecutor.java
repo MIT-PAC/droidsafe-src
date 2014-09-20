@@ -557,6 +557,12 @@ public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
         return executeExistingDelayedTasksAfterShutdown;
     }
 
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+
+
+    @DSComment("Package priviledge")
+
+
     /**
      * Sets the policy on whether cancelled tasks should be immediately
      * removed from the work queue at time of cancellation.  This value is
@@ -565,14 +571,22 @@ public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
      * @param value if {@code true}, remove on cancellation, else don't
      * @see #getRemoveOnCancelPolicy
      * @since 1.7
+     * @hide
      */
-    /*public*/ @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.084 -0500", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "E2D3F1695A01B0F9F9B0921F1BAF9960")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:19.437 -0400", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "3A518F01DE5EE2F6633BDDADE0FF3F15")
     
-void setRemoveOnCancelPolicy(boolean value) { // android-changed
+public void setRemoveOnCancelPolicy(boolean value) {
         removeOnCancel = value;
     }
+
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+
+
+    @DSBan(DSCat.DEFAULT_MODIFIER)
+
+
+    @DSComment("Package priviledge")
+
 
     /**
      * Gets the policy on whether cancelled tasks should be immediately
@@ -583,13 +597,11 @@ void setRemoveOnCancelPolicy(boolean value) { // android-changed
      *         from the queue
      * @see #setRemoveOnCancelPolicy
      * @since 1.7
+     * @hide
      */
-    /*public*/ @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.086 -0500", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "5620BD1526ADD0251D340D253A9E0017")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:19.437 -0400", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "BA78167107D435AB3A13ED1BBF415AFE")
     
-boolean getRemoveOnCancelPolicy() { // android-changed
+public boolean getRemoveOnCancelPolicy() {
         return removeOnCancel;
     }
 

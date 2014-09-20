@@ -18,7 +18,7 @@ import libcore.io.Libcore;
 import libcore.io.Memory;
 import dalvik.system.VMRuntime;
 
-class MemoryBlock {
+public class MemoryBlock {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.581 -0500", hash_original_method = "BBFC8D551652AD3EEF096B28F6078288", hash_generated_method = "53AC51F00CCC1D4BC33D48CC3566EB3D")
     

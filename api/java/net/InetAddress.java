@@ -499,6 +499,10 @@ InetAddress(int family, byte[] ipaddress, String hostName) {
         this.hostName = hostName;
     }
 
+    public InetAddress() {
+        // TODO Auto-generated constructor stub
+    }
+
     /**
      * Compares this {@code InetAddress} instance against the specified address
      * in {@code obj}. Two addresses are equal if their address byte arrays have
