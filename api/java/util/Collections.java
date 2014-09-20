@@ -1475,9 +1475,13 @@ Iterator<Map.Entry<K, V>> var72555FFA480563A744615CB3042A10C3_693483736 =       
 
                             hasNext = false;
                             return new MapEntry<K, V>(k, v) {
+                                @DSSafe(DSCat.SAFE_LIST)
+
                                 @DSComment("From safe class list")
-                    @DSSafe(DSCat.SAFE_LIST)
-                    @Override public V setValue(V value) {
+
+                                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:03.812 -0400", hash_original_method = "C8286CC3DDAAC404E3663F831F2B1F6D", hash_generated_method = "67CC89EA6195CAAD8DE6F4C5137FCD2B")
+                                
+@Override public V setValue(V value) {
                                     throw new UnsupportedOperationException();
                                 }
                             };

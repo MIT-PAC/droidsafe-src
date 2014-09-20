@@ -90,9 +90,9 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.917 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
     private  String name;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.919 -0500", hash_original_field = "9B9D896414A0E67CE9221B96A63BE0CD", hash_generated_field = "9B9D896414A0E67CE9221B96A63BE0CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:39.052 -0400", hash_original_field = "9B9D896414A0E67CE9221B96A63BE0CD", hash_generated_field = "74B649C89104B1CDA428B866276116C1")
 
-     int ordinal;
+    protected  int ordinal;
 
     /**
      * Constructor for constants of enum subtypes.

@@ -70,9 +70,9 @@ private static int countDuplicates(StackTraceElement[] currentStack,
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.574 -0500", hash_original_field = "12111AFEC1C12C586D2414996DDDCB07", hash_generated_field = "DE9A96CD1773A127DE8B75F7745CAF86")
 
     private List<Throwable> suppressedExceptions = new ArrayList<Throwable>();
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.576 -0500", hash_original_field = "29D6C384A26BFC93BEB43799CE532E88", hash_generated_field = "5F29D314996BC5D7FD0952BE7C7301C2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:36.061 -0400", hash_original_field = "29D6C384A26BFC93BEB43799CE532E88", hash_generated_field = "0A221D2B1DAEEA326387B5D961D47E1E")
 
-    private volatile Object stackState;
+    private transient volatile Object stackState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.578 -0500", hash_original_field = "838375D63C180940C2E3D85652A5D29D", hash_generated_field = "3998EFB68B1CCA38FEA7032A25D26EC5")
 
     private StackTraceElement[] stackTrace;
@@ -518,25 +518,33 @@ public final Throwable[] getSuppressed() {
                 : EmptyArray.THROWABLE;
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.640 -0500", hash_original_method = "9B67B0A60488A3B6BF6B1F8E333B2B37", hash_generated_method = "EF567936BD808503CF3D5DFEB1398DFA")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:36.071 -0400", hash_original_method = "9B67B0A60488A3B6BF6B1F8E333B2B37", hash_generated_method = "58F138263C90A735EA5A2D2A1F2D33EA")
     
 private void writeObject(ObjectOutputStream out) throws IOException {
-        // ensure the stackTrace field is initialized
+        // Ensure the stackTrace field is initialized.
         getInternalStackTrace();
         out.defaultWriteObject();
     }
 
-    @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.642 -0500", hash_original_method = "D9E2A8DEA9D5CE3A923EF2188BD1E0E9", hash_generated_method = "21D81ED8A3D00D34802B128905499369")
+
+
+    @DSComment("Private Method")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:36.072 -0400", hash_original_method = "D9E2A8DEA9D5CE3A923EF2188BD1E0E9", hash_generated_method = "12BD48433068849A8343C0A49B879274")
     
 private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
 
         if (suppressedExceptions != null) {
-            // the deserialized list may be unmodifiable, so just create a mutable copy
+            // The deserialized list may be unmodifiable, so just create a mutable copy.
             suppressedExceptions = new ArrayList<Throwable>(suppressedExceptions);
         }
     }

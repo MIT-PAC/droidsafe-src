@@ -987,16 +987,24 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
     }
 
+    @DSBan(DSCat.PRIVATE_METHOD)
+
+
     @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.904 -0500", hash_original_method = "158E0BDE7178D291CA067E7481407A6C", hash_generated_method = "50A62FB275EDAD928891334122C78843")
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:37.602 -0400", hash_original_method = "158E0BDE7178D291CA067E7481407A6C", hash_generated_method = "F4072995971E5F2D08B958782006EB17")
     
-        private int fastIndexOf(int c, int start){
+    private int fastIndexOf(int c, int start){
     	//Formerly a native method
-    	addTaint(c);
-    	addTaint(start);
-    	return getTaintInt();
+    	double taintDouble = 0;
+    	taintDouble += c;
+    	taintDouble += start;
+    	addTaint(taintDouble);
+    
+    	return (int)taintDouble;
     }
+
 
     @DSComment("Private Method")
         @DSBan(DSCat.PRIVATE_METHOD)

@@ -1351,12 +1351,7 @@ private void readObject(ObjectInputStream stream) throws IOException, ClassNotFo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.598 -0500", hash_original_method = "585308EC98C018F35D8810C372CB8328", hash_generated_method = "885E67B6330987DB56125FD6BBFE1E2D")
     
 public long getTotalSpace() {
-        try {
-            StructStatFs sb = Libcore.os.statfs(path);
-            return sb.f_blocks * sb.f_bsize; // total block count * block size in bytes.
-        } catch (ErrnoException errnoException) {
-            return 0;
-        }
+    	return (path.getTaintInt());
     }
 
     /**
@@ -1376,12 +1371,7 @@ public long getTotalSpace() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.601 -0500", hash_original_method = "14D64E7B25BCE5C0F5FB20D43EB644E7", hash_generated_method = "6CD8F121B9E4CDF5CEAEFF89549D249C")
     
 public long getUsableSpace() {
-        try {
-            StructStatFs sb = Libcore.os.statfs(path);
-            return sb.f_bavail * sb.f_bsize; // non-root free block count * block size in bytes.
-        } catch (ErrnoException errnoException) {
-            return 0;
-        }
+    	return this.path.getTaintInt();
     }
 
     /**
@@ -1397,12 +1387,7 @@ public long getUsableSpace() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.603 -0500", hash_original_method = "23B4E27185BC412B65C1DC7422116A5E", hash_generated_method = "F52E291AFDE778BA59DB069A0EF655E5")
     
 public long getFreeSpace() {
-        try {
-            StructStatFs sb = Libcore.os.statfs(path);
-            return sb.f_bfree * sb.f_bsize; // free block count * block size in bytes.
-        } catch (ErrnoException errnoException) {
-            return 0;
-        }
+    	return path.getTaintInt();
     }
     static {
         separatorChar = '/';     //System.getProperty("file.separator", "/").charAt(0);

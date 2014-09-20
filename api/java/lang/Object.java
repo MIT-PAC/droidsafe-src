@@ -11,6 +11,19 @@ public class Object {
     
     private class DSTaintObject {
     }
+    
+    public static final int toTaintInt(boolean intValue) {
+        return 0;
+    }
+    
+    
+    public static final double toTaintFloat(boolean intValue) {
+        return 0;
+    }
+            
+    public static final boolean toTaintBoolean(double intValue) {
+        return false;
+    }
 
     private DSTaintObject taint = null;
 
@@ -328,6 +341,12 @@ public final void wait(long millis) throws InterruptedException {
         wait(millis, 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+
+
+    @DSComment("From safe class list")
+
+
     /**
      * Causes the calling thread to wait until another thread calls the {@code
      * notify()} or {@code notifyAll()} method of this object or until the
@@ -365,14 +384,16 @@ public final void wait(long millis) throws InterruptedException {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.170 -0500", hash_original_method = "2C3F1320C25E20DEBA9A5B7EE716C215", hash_generated_method = "94504481D3D619737083E8726B8C7754")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:35.700 -0400", hash_original_method = "2C3F1320C25E20DEBA9A5B7EE716C215", hash_generated_method = "BDD867D88BD06B71B79CE47DD9204289")
+    
     public final void wait(long millis, int nanos) throws InterruptedException{
     	//Formerly a native method
-    	addTaint(millis);
-    	addTaint(nanos);
+    	double taintDouble = 0;
+    	taintDouble += millis;
+    	taintDouble += nanos;
+    	addTaint(taintDouble);
     }
+
     
     // orphaned legacy method
     
@@ -463,19 +484,6 @@ public final void wait(long millis) throws InterruptedException {
     public final void addTaint(double taint) {
         //need to access the taint field for pta to create field
         this.taint = getTaint();
-    }
-    
-    public static final int toTaintInt(boolean intValue) {
-        return 0;
-    }
-    
-    
-    public static final double toTaintFloat(boolean intValue) {
-        return 0;
-    }
-            
-    public static final boolean toTaintBoolean(double intValue) {
-        return false;
     }
     
 
