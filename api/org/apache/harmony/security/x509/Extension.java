@@ -170,9 +170,9 @@ public final class Extension {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.734 -0500", hash_original_field = "FF7F2EE1817516F9CA0C379229211577", hash_generated_field = "438348B11B927145AC75EBC3AE4EBA57")
 
     protected ExtensionValue extnValueObject;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.736 -0500", hash_original_field = "71B2C7E7D3BF98A9BD6CD9C08E690876", hash_generated_field = "49181044EA66271CEFB24754874F9828")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:01.565 -0400", hash_original_field = "71B2C7E7D3BF98A9BD6CD9C08E690876", hash_generated_field = "759BF529163DF1A7C1098758F4F3453A")
 
-    private boolean valueDecoded = false;
+    private volatile boolean valueDecoded = false;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.739 -0500", hash_original_method = "772675EFC6AAA2D937AD864985824958", hash_generated_method = "F4F42043836B7126B91AE64276E8C74B")
     

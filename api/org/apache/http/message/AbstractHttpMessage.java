@@ -64,13 +64,22 @@ public Header getFirstHeader(final String name) {
 public Header getLastHeader(final String name) {
         return this.headergroup.getLastHeader(name);
     }
-    @DSVerified
-    @DSSafe(DSCat.DATA_STRUCTURE)
+
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @Override
-	public Header[] getAllHeaders() {
+
+
+    @DSSafe(DSCat.DATA_STRUCTURE)
+
+
+    @DSVerified
+
+
+    // non-javadoc, see interface HttpMessage
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:36.190 -0400", hash_original_method = "89AD2C028927AB3E8715A79204D69C99", hash_generated_method = "63C533063E49D4C17E422E4EB5F66B97")
+    
+public Header[] getAllHeaders() {
         return this.headergroup.getAllHeaders();
-	}
+    }
     
     // non-javadoc, see interface HttpMessage
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.242 -0500", hash_original_method = "1DE731CFF4ECF4DBA0EF3FE32BB726E4", hash_generated_method = "353991C9C556FF2420F3A5952CCD0B0F")

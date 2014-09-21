@@ -46,12 +46,15 @@ public final class Extensions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.365 -0500", hash_original_field = "B51FC5B46C76A90B3145AC2796502191", hash_generated_field = "F93AA8349A2FA92AE6135244F491401E")
 
     private List<Extension> extensions;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.367 -0500", hash_original_field = "AE3FFA204ACBD5822AEDD7ECEFE2C617", hash_generated_field = "8AE6968FB7018EBEDA25C054995E291B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:59.584 -0400", hash_original_field = "AE3FFA204ACBD5822AEDD7ECEFE2C617", hash_generated_field = "8CC68CF570EB46026DADE729970001F7")
 
-    private Set<String> critical;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.370 -0500", hash_original_field = "28AB45C296623368EED00FE18BED7065", hash_generated_field = "6827F144A18995AA402D9FA96B7DCC8C")
+    // from the extensions field, initialized using the "single-check
+    // idiom".
 
-    private Set<String> noncritical;
+    private volatile Set<String> critical;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:59.585 -0400", hash_original_field = "28AB45C296623368EED00FE18BED7065", hash_generated_field = "CF9614A586D7678E7E6AB1AC482977DE")
+
+    private volatile Set<String> noncritical;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.372 -0500", hash_original_field = "D57E5EBA9F24C62627B68CC3E1B75531", hash_generated_field = "0D8541320F975D3461EC52A0319B459E")
 
     // in the list of extensions or not.

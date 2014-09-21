@@ -31,6 +31,16 @@ public static Type getType(Type type) {
     {
         //Synthesized constructor
     }
+
+    public static Object getSignature(Class<?> parameterType) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    public static Object toString(Object obj) {
+        // TODO Auto-generated method stub
+        return null;
+    }
     
 }
 

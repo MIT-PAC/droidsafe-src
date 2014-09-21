@@ -49,8 +49,10 @@ public final class X509CertImpl extends X509Certificate {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.336 -0500", hash_original_field = "11D23A9D67ECEDEBAFCBDADBAE6E0FA1", hash_generated_field = "85FCB044EB3BC544E06DEC3DDF20CB7B")
 
     private  Extensions extensions;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.338 -0500", hash_original_field = "4947207FD34032EC0E9887166E067AE9", hash_generated_field = "2EC765BED2BDF716AF9EC97A75A23436")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:03.342 -0400", hash_original_field = "4947207FD34032EC0E9887166E067AE9", hash_generated_field = "702C2FD14B829CF07BF78C8B3EB2849C")
 
+    // cache values retrieved from the certificate object,
+    // initialized using the "single-check idiom".
     private volatile long notBefore = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.341 -0500", hash_original_field = "60B013C243B90585D6DBD6D88B906DAA", hash_generated_field = "39CE9AE64002FC7D7824A24107B28BE1")
 

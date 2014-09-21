@@ -112,9 +112,9 @@ private static int hashIntArray(int[] oid) {
 
     private static final ObjectIdentifier CN
             = new ObjectIdentifier(new int[] { 2, 5, 4, 3 }, "CN", RFC1779_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.241 -0500", hash_original_field = "26CB62F2F1A5E0415989EDB20E68045A", hash_generated_field = "E89A0D43336082D6B88BB1634AA2C65A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:05.713 -0400", hash_original_field = "26CB62F2F1A5E0415989EDB20E68045A", hash_generated_field = "1E5C05AD4CFAF623474BDA58E5580D15")
 
-    private static final ObjectIdentifier DC = new ObjectIdentifier(
+    public static final ObjectIdentifier DC = new ObjectIdentifier(
             new int[] { 0, 9, 2342, 19200300, 100, 1, 25 }, "DC", RFC2253_NAMES);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.245 -0500", hash_original_field = "2450F51303494C0D530A73B8E9C21A9A", hash_generated_field = "4206325E209BCC75E8D09F6566439C1E")
 
@@ -124,9 +124,9 @@ private static int hashIntArray(int[] oid) {
 
     private static final ObjectIdentifier DNQUALIFIER
             = new ObjectIdentifier(new int[] { 2, 5, 4, 46 }, "DNQUALIFIER", RFC2459_NAMES);
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.253 -0500", hash_original_field = "0ECACBDF3ED551EA32197932D01392D7", hash_generated_field = "ECF87076C29754CD3A47D1F600E03D36")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:05.715 -0400", hash_original_field = "0ECACBDF3ED551EA32197932D01392D7", hash_generated_field = "3B21AE0E99A45E1C65BBB29CCBF3E789")
 
-    private static final ObjectIdentifier EMAILADDRESS = new ObjectIdentifier(
+    public static final ObjectIdentifier EMAILADDRESS = new ObjectIdentifier(
             new int[] { 1, 2, 840, 113549, 1, 9, 1}, "EMAILADDRESS", RFC2459_NAMES);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.257 -0500", hash_original_field = "CEDBF57C6F2EEB472958013EC124CA20", hash_generated_field = "89E386C4E13C2710860B9E2B4D58F012")
 

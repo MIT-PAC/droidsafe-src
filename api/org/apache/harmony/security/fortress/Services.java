@@ -42,40 +42,39 @@ private static void loadProviders() {
         Engine.door.renumProviders();
     }
 
-    /**
-     * Returns registered providers
-     *
-     * @return
-     */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.262 -0500", hash_original_method = "316A561AC6A6B1BE39036A1BA836B78A", hash_generated_method = "AB42ED3D2A856B9D6A3D21F7F01825F6")
+
+
+    /**
+     * Returns a copy of the registered providers as an array.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.146 -0400", hash_original_method = "316A561AC6A6B1BE39036A1BA836B78A", hash_generated_method = "1B1030DDB367FFFA81C378CEE8DBB8E8")
     
-public static Provider[] getProviders() {
+public static synchronized Provider[] getProviders() {
         return providers.toArray(new Provider[providers.size()]);
     }
 
-    /**
-     * Returns registered providers as List
-     *
-     * @return
-     */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.265 -0500", hash_original_method = "E9F15408456B4B906E1451AF6A460DE1", hash_generated_method = "43FB744537E358777386D316C4A40FAB")
+
+
+    /**
+     * Returns a copy of the registered providers as a list.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.147 -0400", hash_original_method = "E9F15408456B4B906E1451AF6A460DE1", hash_generated_method = "348CCC022FF7BA7669B7018C02570D6C")
     
-public static List<Provider> getProvidersList() {
+public static synchronized List<Provider> getProvidersList() {
         return new ArrayList<Provider>(providers);
     }
 
-    /**
-     * Returns the provider with the specified name
-     *
-     * @param name
-     * @return
-     */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.267 -0500", hash_original_method = "3B239853BF5B7759ACB9C53292AFCEB4", hash_generated_method = "59DF82634FC8DCAA263D93F71F68ED7A")
+
+
+    /**
+     * Returns the provider with the specified name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.147 -0400", hash_original_method = "3B239853BF5B7759ACB9C53292AFCEB4", hash_generated_method = "C44AB7F2AF2F513AD30D1375CD6891D2")
     
-public static Provider getProvider(String name) {
+public static synchronized Provider getProvider(String name) {
         if (name == null) {
             return null;
         }
@@ -83,15 +82,11 @@ public static Provider getProvider(String name) {
     }
 
     /**
-     * Inserts a provider at a specified position
-     *
-     * @param provider
-     * @param position
-     * @return
+     * Inserts a provider at a specified 1-based position.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.270 -0500", hash_original_method = "C8AEE2334DE35BDFE5D79AEDA5278F3C", hash_generated_method = "BDF4F0688E667E5C086C2E6206CF07DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.148 -0400", hash_original_method = "C8AEE2334DE35BDFE5D79AEDA5278F3C", hash_generated_method = "BDB2785D6763AFBD54AB81AD10712999")
     
-public static int insertProviderAt(Provider provider, int position) {
+public static synchronized int insertProviderAt(Provider provider, int position) {
         int size = providers.size();
         if ((position < 1) || (position > size)) {
             position = size + 1;
@@ -103,13 +98,11 @@ public static int insertProviderAt(Provider provider, int position) {
     }
 
     /**
-     * Removes the provider
-     *
-     * @param providerNumber
+     * Removes the provider at the specified 1-based position.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.273 -0500", hash_original_method = "9DC9E7F19092F975814277CEE7D0B356", hash_generated_method = "47D90D1B1F0565973BF670BC40A86F0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.148 -0400", hash_original_method = "9DC9E7F19092F975814277CEE7D0B356", hash_generated_method = "EC6A30792CB9078E6ABCEE5767F254CB")
     
-public static void removeProvider(int providerNumber) {
+public static synchronized void removeProvider(int providerNumber) {
         Provider p = providers.remove(providerNumber - 1);
         providersNames.remove(p.getName());
         setNeedRefresh();
@@ -160,25 +153,27 @@ public static void updateServiceInfo() {
     }
 
     /**
-     * Returns true if services contain any provider information
-     * @return
+     * Returns true if services contain any provider information.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.280 -0500", hash_original_method = "E0918E1CCE46EAB77CA0EFD0695D4743", hash_generated_method = "92548A7D12DC9B0114D1C1689B9DEA99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.150 -0400", hash_original_method = "E0918E1CCE46EAB77CA0EFD0695D4743", hash_generated_method = "DD259BB433CA809763A75F6CE6AA7DAD")
     
-public static boolean isEmpty() {
+public static synchronized boolean isEmpty() {
         return services.isEmpty();
     }
 
     /**
-     * Returns service description.
-     * Call refresh() before.
+     * Looks up the requested service by type and algorithm. The
+     * service key should be provided in the same format used when
+     * registering a service with a provider, for example,
+     * "KeyFactory.RSA".
      *
-     * @param key in the format TYPE.ALGORITHM
-     * @return
+     * Callers can cache the returned service information but such
+     * caches should be validated against the result of
+     * Service.getCacheVersion() before use.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.282 -0500", hash_original_method = "A3BAA81CA1B47488F96363BDB013EB16", hash_generated_method = "CB0DB0CD40693FF69E548751890D6072")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.150 -0400", hash_original_method = "A3BAA81CA1B47488F96363BDB013EB16", hash_generated_method = "299BA2E3EDDF2E14EF79FD64D73910A6")
     
-public static Provider.Service getService(String key) {
+public static synchronized Provider.Service getService(String key) {
         return services.get(key);
     }
 
@@ -193,12 +188,14 @@ public static Provider.Service getSecureRandomService() {
     }
 
     /**
-     * Set flag needRefresh
-     *
+     * In addition to being used here when the list of providers
+     * changes, this method is also used by the Provider
+     * implementation to indicate that a provides list of services has
+     * changed.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.287 -0500", hash_original_method = "73DA647E607F22F0677A1E09C083B188", hash_generated_method = "53E595C591FCA2EC75B25BF83AB90207")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.151 -0400", hash_original_method = "73DA647E607F22F0677A1E09C083B188", hash_generated_method = "D523E43A6CE8D25BEB8D5C90789ED03B")
     
-public static void setNeedRefresh() {
+public static synchronized void setNeedRefresh() {
         needRefresh = true;
     }
 

@@ -200,12 +200,16 @@ private String hexAV() throws IOException {
         return new String(chars, beg, hexLen);
     }
 
+    @DSBan(DSCat.PRIVATE_METHOD)
+
+
+    @DSComment("Private Method")
+
+
     /**
      * Returns a string attribute value: *( stringchar / pair ).
      */
-    @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.085 -0500", hash_original_method = "FC33535E1A62E80F93C12FF4F8D2E290", hash_generated_method = "91DA17AAED4411BDAFC72B3BC9DDFF89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:59.243 -0400", hash_original_method = "FC33535E1A62E80F93C12FF4F8D2E290", hash_generated_method = "83F20E732740C39609CC82C042322FFB")
     
 private String escapedAV() throws IOException {
         beg = pos;
@@ -220,7 +224,7 @@ private String escapedAV() throws IOException {
             case '+':
             case ',':
             case ';':
-                // separator char has beed found
+                // separator char has been found
                 return new String(chars, beg, end - beg);
             case '\\':
                 // escaped char
@@ -240,7 +244,7 @@ private String escapedAV() throws IOException {
                 }
                 if (pos == chars.length || chars[pos] == ',' || chars[pos] == '+'
                         || chars[pos] == ';') {
-                    // separator char or the end of DN has beed found
+                    // separator char or the end of DN has been found
                     return new String(chars, beg, cur - beg);
                 }
                 break;

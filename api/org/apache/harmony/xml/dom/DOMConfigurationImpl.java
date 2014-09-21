@@ -104,13 +104,19 @@ public Object getParameter(String name) throws DOMException {
 public DOMStringList getParameterNames() {
         final String[] result = PARAMETERS.keySet().toArray(new String[PARAMETERS.size()]);
         return new DOMStringList() {
-            public String item(int index) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:11.683 -0400", hash_original_method = "89D990F7DE98879C5B89FDF545A404DB", hash_generated_method = "7C97BC36F496EA1225541BC0BF3D682E")
+            
+public String item(int index) {
                 return index < result.length ? result[index] : null;
             }
-            public int getLength() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:11.684 -0400", hash_original_method = "06707F305D31A2CABCFF2283107B42B1", hash_generated_method = "DBB5EAD1BC51DC98E536261B593C1FF9")
+            
+public int getLength() {
                 return result.length;
             }
-            public boolean contains(String str) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:11.684 -0400", hash_original_method = "03E28D9EA8E8F482AC5FF26FBE062BE8", hash_generated_method = "3692A1B06D43ED54BB0C52FF51E99B94")
+            
+public boolean contains(String str) {
                 return PARAMETERS.containsKey(str); // case-insensitive.
             }
         };
