@@ -41,10 +41,12 @@ import droidsafe.annotations.*;
 
 public final class Unsafe {
 
-    private static native void registerNatives();
+    private static void registerNatives() {
+        
+    }
+
     static {
-        registerNatives();
-        //sun.reflect.Reflection.registerMethodsToFilter(Unsafe.class, "getUnsafe");
+        
     }
 
     private Unsafe() {}
@@ -807,7 +809,11 @@ public final class Unsafe {
      * @see #getInt(Object, long)
      * @see #putInt(Object, long, int)
      */
-    public native int arrayBaseOffset(Class arrayClass);
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSource(DSSourceKind.ANY_MEMORY)
+    public int arrayBaseOffset(Class arrayClass) {
+        return 0;
+    }
 
     /** The value of {@code arrayBaseOffset(boolean[].class)} */
     public static final int ARRAY_BOOLEAN_BASE_OFFSET
@@ -856,7 +862,11 @@ public final class Unsafe {
      * @see #getInt(Object, long)
      * @see #putInt(Object, long, int)
      */
-    public native int arrayIndexScale(Class arrayClass);
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSource(DSSourceKind.ANY_MEMORY)
+    public int arrayIndexScale(Class arrayClass) {
+        return 0;
+    }
 
     /** The value of {@code arrayIndexScale(boolean[].class)} */
     public static final int ARRAY_BOOLEAN_INDEX_SCALE
@@ -900,7 +910,11 @@ public final class Unsafe {
      * other primitive types (as stored in native memory blocks) is determined
      * fully by their information content.
      */
-    public native int addressSize();
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSource(DSSourceKind.ANY_MEMORY)
+    public  int addressSize() {
+        return 0;
+    }
 
     /** The value of {@code addressSize()} */
     public static final int ADDRESS_SIZE = theUnsafe.addressSize();

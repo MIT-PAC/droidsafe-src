@@ -23,7 +23,12 @@ public class URLEncoder {
     
 @Deprecated
     public static String encode(String s) {
-        return ENCODER.encode(s, Charsets.UTF_8);
+        //simplifying for DS
+        String ret = new String("DECODED-URL");
+        ret.addTaint(s.getTaint());
+        return ret;
+
+        //return ENCODER.encode(s, Charsets.UTF_8);
     }
 
     /**
@@ -34,7 +39,12 @@ public class URLEncoder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.249 -0500", hash_original_method = "D7709200003A991BD062A99EB5CFA293", hash_generated_method = "3CD8462111730A87D2D8B52FAAF90629")
     
 public static String encode(String s, String charsetName) throws UnsupportedEncodingException {
-        return ENCODER.encode(s, Charset.forName(charsetName));
+        //simplifying for DS
+        String ret = new String("DECODED-URL");
+        ret.addTaint(s.getTaint());
+        return ret;
+
+        //return ENCODER.encode(s, Charset.forName(charsetName));
     }
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:54.616 -0400", hash_original_field = "BF744055ED759113AEBE28A0C00A3E54", hash_generated_field = "04F0CC19FD1C184FAF8112872B3FF045")
