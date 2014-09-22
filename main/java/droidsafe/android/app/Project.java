@@ -263,7 +263,6 @@ public class Project {
      * Returns a collection of files, one for each of the jar files in the app's lib folder
      */
     public Collection<File> getAppLibJars() {
-        System.out.println("Here");
         Collection<File> appLibJars = new ArrayList<File>();
         if (this.appLibDir.exists())
             appLibJars = FileUtils.listFiles(this.appLibDir, new String[]{"jar"}, true);
