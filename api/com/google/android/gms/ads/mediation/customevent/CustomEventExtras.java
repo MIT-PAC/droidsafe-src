@@ -6,7 +6,7 @@ import droidsafe.helpers.*;
 import com.google.ads.mediation.NetworkExtras;
 import java.util.HashMap;
 
-public final class CustomEventExtras implements com.google.ads.mediation.NetworkExtras
+public final class CustomEventExtras implements NetworkExtras
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.299 -0400", hash_original_field = "35D2015798608054C61A736DED3D8786", hash_generated_field = "F563A70041F72557EAA2106A374D4F30")
 
@@ -33,8 +33,6 @@ public Object getExtra(String  r1)
     
 public void setExtra(String  r1, Object  r2)
     {
-
-
         ta.put(r1, r2);
     }
 }

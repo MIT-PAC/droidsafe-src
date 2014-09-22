@@ -6,14 +6,13 @@ import droidsafe.helpers.*;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import android.app.PendingIntent;
 import android.app.Activity;
-import android.content.IntentSender$SendIntentException;
+import android.content.IntentSender.SendIntentException;
 import com.google.android.gms.internal.hk;
-import com.google.android.gms.internal.hk$a;
+import com.google.android.gms.internal.hk.a;
 import com.google.android.gms.common.ConnectionResult;
 import android.os.Parcel;
 
-public final class Status implements com.google.android.gms.common.api.Result, com.google.android.gms.common.internal.safeparcel.SafeParcelable
-{
+public final class Status implements Result {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.907 -0400", hash_original_field = "D7D76730A3D8AD32BB2CD0DA1D089479", hash_generated_field = "BFBD5E2758AFB385D5C3F9454E87DE65")
 
     public static  Status En;
@@ -29,9 +28,7 @@ public final class Status implements com.google.android.gms.common.api.Result, c
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.931 -0400", hash_original_field = "F7F25E0EA9E29CFEDE0E666B3382ABFF", hash_generated_field = "6D9AC6CB6A7BAC6B9D1D9027A6B14E1C")
 
     public static  Status Er;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.938 -0400", hash_original_field = "976A31A76FE76FF59FD3B3B277C97175", hash_generated_field = "FD35BEDBF3595F9C2C36E71C7221FABE")
 
-    public static  StatusCreator CREATOR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.945 -0400", hash_original_field = "1895632691E3D0ACD93635E7B4E629BC", hash_generated_field = "D85A02ED437AD53A72DD6BC8931F0E7E")
 
     private  int xM;
@@ -82,7 +79,7 @@ public Status(int  i0, String  r1, PendingIntent  r2)
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.983 -0400", hash_original_method = "D3584B1F7CDC9C1305D4E2A5E4362AE2", hash_generated_method = "6BD1440C39D31E00486984843266E6C5")
     
-public void startResolutionForResult(Activity  r1, int  i0) throws android.content.IntentSender$SendIntentException
+public void startResolutionForResult(Activity  r1, int  i0) throws android.content.IntentSender.SendIntentException
     {
 
 
@@ -124,72 +121,29 @@ int getVersionCode()
     
 public boolean hasResolution()
     {
-
-        boolean $z0;
-        if (mPendingIntent == null)
-        {
-            $z0 = false;
-        }
-        else
-        {
-            $z0 = true;
-        }
-
-        return $z0;
+    	return getTaintBoolean();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.006 -0400", hash_original_method = "5C8C1404976646390107527FEACE73EB", hash_generated_method = "287214D70E372F51BA469A6B67AA66D6")
     
 public boolean isSuccess()
     {
-
-        boolean $z0;
-        if (CT > 0)
-        {
-            $z0 = false;
-        }
-        else
-        {
-            $z0 = true;
-        }
-
-        return $z0;
+    	return getTaintBoolean();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.011 -0400", hash_original_method = "8C95844E58F568BAA3441BA24EE96E18", hash_generated_method = "6FF1CD67E2D668072C211E2E4A0BEE4D")
     
 public boolean isCanceled()
     {
+    	return getTaintBoolean();
 
-        boolean $z0;
-        if (CT != 16)
-        {
-            $z0 = false;
-        }
-        else
-        {
-            $z0 = true;
-        }
-
-        return $z0;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.016 -0400", hash_original_method = "98FDF5193732D0E5F6DB05064D6A2A1E", hash_generated_method = "D6EFF74B7B930EB4734C8EC60AFAB025")
     
 public boolean isInterrupted()
     {
-
-        boolean $z0;
-        if (CT != 14)
-        {
-            $z0 = false;
-        }
-        else
-        {
-            $z0 = true;
-        }
-
-        return $z0;
+    	return getTaintBoolean();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.020 -0400", hash_original_method = "5B07D5545FF0C5C69D93A85752CDB8CE", hash_generated_method = "B30252E719DD3E4CAEA8F105E7F752E0")
@@ -214,51 +168,13 @@ public PendingIntent getResolution()
     
 public int hashCode()
     {
-
-        Object[] $r1 = {Integer.valueOf(xM) , Integer.valueOf(CT) , Es , mPendingIntent};
-        return hk.hashCode($r1);
-    }
-
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.034 -0400", hash_original_method = "3BECC44461C89C1466428522AD39AF23", hash_generated_method = "169AA6168961E788BFA23E79B38FA4CF")
-    
-public boolean equals(Object  r1)
-    {
-
-        Status r2;
-        boolean $z3;
-        if (r1 instanceof Status)
-        {
-            r2 = (Status) r1;
-
-            label_0:
-            {
-                if (xM == r2.xM &&  (CT == r2.CT &&  (hk.equal(Es, r2.Es) && hk.equal(mPendingIntent, r2.mPendingIntent)) ) )
-                {
-                    $z3 = true;
-                    break label_0;
-                }
-
-                $z3 = false;
-            } //end label_0:
-
-
-            return $z3;
-        }
-
-        return false;
+    	return getTaintInt();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.039 -0400", hash_original_method = "FBFBA897C529A80F4EA5CF7762FEA227", hash_generated_method = "2E207CEECBE6994B4A17C5C64A20D0CA")
     
 private String ex()
     {
-
-
-        if (Es == null)
-        {
-            return CommonStatusCodes.getStatusCodeString(CT);
-        }
-
         return Es;
     }
 
@@ -266,17 +182,13 @@ private String ex()
     
 public String toString()
     {
-
-
-        return hk.e(this).a("statusCode", this.ex()).a("resolution", mPendingIntent).toString();
+    	return Es;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.047 -0400", hash_original_method = "9E52255DBA170973F04B73ACB35BED4D", hash_generated_method = "7987C7F886BCEF6E02A6D8205804B6F2")
     
 public ConnectionResult eR()
     {
-
-
         return new ConnectionResult(CT, mPendingIntent);
     }
 
@@ -285,7 +197,6 @@ public ConnectionResult eR()
 public int describeContents()
     {
 
-
         return 0;
     }
 
@@ -293,29 +204,22 @@ public int describeContents()
     
 public void writeToParcel(Parcel  r1, int  i0)
     {
-
-
-        StatusCreator.a(this, r1, i0);
+    	r1.writeInt(i0 + getTaintInt());
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.061 -0400", hash_original_method = "5CEBF82EDEE05C8E496DA2B4EC1E0ECC", hash_generated_method = "102FD6D3751D110EC9B1924292874AF1")
     
 public Status getStatus()
     {
-
-
         return this;
     }
 
     static
     {
-
-
         En = new Status(0);
         Eo = new Status(14);
         Ep = new Status(8);
         Eq = new Status(15);
         Er = new Status(16);
-        CREATOR = new StatusCreator();
     }
 }
