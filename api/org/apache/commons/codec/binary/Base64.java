@@ -244,6 +244,16 @@ static byte[] discardNonBase64(byte[] data) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.940 -0500", hash_original_field = "3DD9B58A8F71D585F98AD00789EAA8EC", hash_generated_field = "5F6F4EBEDC3FFA3D977AF8A987ABD629")
 
     private static byte[] lookUpBase64Alphabet = new byte[LOOKUPLENGTH];
+
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    public static byte[] encode(byte[] b, int offset, int len) {
+        // TODO Auto-generated method stub
+        byte[] ret = new byte[len];
+        ret.addTaint(b.getTaint());
+        ret.addTaint(offset);
+        ret.addTaint(len);
+        return ret;
+    }
     
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.644 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
@@ -323,21 +333,6 @@ public Object encode(Object pObject) throws EncoderException {
         }
         return encode((byte[]) pObject);
     }
-
-    /**
-     * Encodes a byte[] containing binary data, into a byte[] containing
-     * characters in the Base64 alphabet.
-     *
-     * @param pArray a byte array containing binary data
-     * @return A byte array containing only Base64 character data
-     */
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.972 -0500", hash_original_method = "D3EC39ECED0CD0D362D80F2CDBB3BB21", hash_generated_method = "067C5861BBE1F6A7C3E18A7150299C2B")
-    @DSVerified
-    @DSSafe(DSCat.UTIL_FUNCTION)
-public byte[] encode(byte[] pArray) {
-        return encodeBase64(pArray, false);
-    }
     static {
         for (int i = 0; i < BASELENGTH; i++) {
             base64Alphabet[i] = (byte) -1;
@@ -366,6 +361,21 @@ public byte[] encode(byte[] pArray) {
         lookUpBase64Alphabet[63] = (byte) '/';
     }
 
+    /**
+     * Encodes a byte[] containing binary data, into a byte[] containing
+     * characters in the Base64 alphabet.
+     *
+     * @param pArray a byte array containing binary data
+     * @return A byte array containing only Base64 character data
+     */
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.972 -0500", hash_original_method = "D3EC39ECED0CD0D362D80F2CDBB3BB21", hash_generated_method = "067C5861BBE1F6A7C3E18A7150299C2B")
+    @DSVerified
+    @DSSafe(DSCat.UTIL_FUNCTION)
+public byte[] encode(byte[] pArray) {
+        return encodeBase64(pArray, false);
+    }
+
     @DSSafe(DSCat.UTIL_FUNCTION)
     public void setInitialBuffer(byte[] b, int offset, int len) {
         // TODO Auto-generated method stub
@@ -381,16 +391,6 @@ public byte[] encode(byte[] pArray) {
         b.addTaint(offset);
         b.addTaint(len);
         return b.getTaintInt();
-    }
-
-    @DSSafe(DSCat.UTIL_FUNCTION)
-    public static byte[] encode(byte[] b, int offset, int len) {
-        // TODO Auto-generated method stub
-        byte[] ret = new byte[len];
-        ret.addTaint(b.getTaint());
-        ret.addTaint(offset);
-        ret.addTaint(len);
-        return ret;
     }
 
     @DSSafe(DSCat.UTIL_FUNCTION)

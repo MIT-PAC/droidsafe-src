@@ -193,7 +193,9 @@ public int getConnectionsInPool(HttpRoute route) {
         
         return new PoolEntryRequest() {
         
-            public void abortRequest() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:40.290 -0400", hash_original_method = "C0659DE6DBCF2DF5649EE53105FC269A", hash_generated_method = "0EC0EE3A8E8D627B951EB50366A41DEB")
+            
+public void abortRequest() {
                 poolLock.lock();
                 try {
                     aborter.abort();
@@ -202,7 +204,9 @@ public int getConnectionsInPool(HttpRoute route) {
                 }
             }
             
-            public BasicPoolEntry getPoolEntry(
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:40.290 -0400", hash_original_method = "5C56F9CAB1134243DEE9B4B085AFA43E", hash_generated_method = "04C9BEA744C60B7A28E4C0FABAA810F7")
+            
+public BasicPoolEntry getPoolEntry(
                     long timeout,
                     TimeUnit tunit)
                         throws InterruptedException, ConnectionPoolTimeoutException {

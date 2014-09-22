@@ -1,6 +1,7 @@
 package org.apache.harmony.security.utils;
 
 // Droidsafe Imports
+import org.apache.harmony.security.fortress.Services;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
@@ -22,11 +23,24 @@ public class AlgNameMapper {
      * @param algName algorithm name to be mapped
      * @return OID as String
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.848 -0500", hash_original_method = "4FADD03796EC8C0335BA0848BFDF836F", hash_generated_method = "83F952FCD8DC66405127C8E1FD5A6ED1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-11 21:37:26.600 -0400", hash_original_method = "3370E980AAB6E4E649622372CE4EAFC0", hash_generated_method = "C20F9F452AA11FD3D8AF2A2F51A8CC90")
     
 public static String map2OID(String algName) {
+        checkCacheVersion();
+
         // alg2OidMap map contains upper case keys
-        return alg2OidMap.get(algName.toUpperCase(Locale.US));
+        String result = alg2OidMap.get(algName.toUpperCase(Locale.US));
+        if (result != null) {
+            return result;
+        }
+
+        // Check our external source.
+        AlgNameMapperSource s = source;
+        if (s != null) {
+            return s.mapNameToOid(algName);
+        }
+
+        return null;
     }
 
     /**
@@ -35,13 +49,25 @@ public static String map2OID(String algName) {
      * @param oid OID to be mapped
      * @return algorithm name
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.850 -0500", hash_original_method = "38EED3F0C044D08DA485A0576B49F3F8", hash_generated_method = "FAE9143618C665620E69EFA1D5B1E722")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-11 21:37:26.603 -0400", hash_original_method = "12FD084122C392644EAA7C909D156327", hash_generated_method = "4EB4C311019F0153C3C09A78A6BE5232")
     
 public static String map2AlgName(String oid) {
+        checkCacheVersion();
+
         // oid2AlgMap map contains upper case values
         String algUC = oid2AlgMap.get(oid);
         // if not null there is always map UC->Orig
-        return algUC == null ? null : algAliasesMap.get(algUC);
+        if (algUC != null) {
+            return algAliasesMap.get(algUC);
+        }
+
+        // Check our external source.
+        AlgNameMapperSource s = source;
+        if (s != null) {
+            return s.mapOidToName(oid);
+        }
+
+        return null;
     }
 
     /**
@@ -194,5 +220,39 @@ private AlgNameMapper() {
         }
     }
     
-}
+
+
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-11 21:37:26.561 -0400", hash_original_field = "631335A5CBA5ECBE50C6EB951EFE1BB0", hash_generated_field = "8DE4E5B81C6B533144699B2138742129")
+
+
+    private static volatile int cacheVersion = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-11 21:37:26.555 -0400", hash_original_field = "2B4A9D6A7F71E7B99146174E28EF5706", hash_generated_field = "35B2259E60EB64A561F096537700D14F")
+
+    private static AlgNameMapperSource source = null;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-11 21:37:26.596 -0400", hash_original_method = "4758E35A4F128393DD4F56B7C55A67FB", hash_generated_method = "C4DB3862A9ECBEF035DF91DE3ACA8C9F")
+    
+private static synchronized void checkCacheVersion() {
+        //int newCacheVersion = Services.getCacheVersion();
+        int newCacheVersion = DSUtils.FAKE_INT;
+        if (newCacheVersion != cacheVersion) {
+            //
+            // Now search providers for mappings like
+            // Alg.Alias.<service>.<OID-INTS-DOT-SEPARATED>=<alg-name>
+            //  or
+            // Alg.Alias.<service>.OID.<OID-INTS-DOT-SEPARATED>=<alg-name>
+            //
+            Provider[] pl = Security.getProviders();
+            for (Provider element : pl) {
+                selectEntries(element);
+            }
+            cacheVersion = newCacheVersion;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-11 21:37:26.622 -0400", hash_original_method = "CB8361E1DB72E1B1372027C53DEDF427", hash_generated_method = "D43DB8938349557A9726A8414BB3EDE1")
+    
+public static void setSource(AlgNameMapperSource source) {
+        AlgNameMapper.source = source;
+    }}
 

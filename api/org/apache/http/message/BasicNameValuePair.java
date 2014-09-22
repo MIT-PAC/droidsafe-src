@@ -16,9 +16,19 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.551 -0500", hash_original_field = "EE6B270D979EDA88DA18EA680B9EE570", hash_generated_field = "424F4435B9052E77589D30873B9A7D2B")
 
     private  String value;
-    
+
     @DSSafe(DSCat.SAFE_OTHERS)
-    public BasicNameValuePair(final String name, final String value) {
+
+
+    /**
+     * Default Constructor taking a name and a value. The value may be null.
+     * 
+     * @param name The name.
+     * @param value The value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:36.771 -0400", hash_original_method = "9B16B3F0FD8B0C655E61EA7019E7F0C5", hash_generated_method = "5F60BD6C93DB5FF9AFAC8F1F09A456CA")
+    
+public BasicNameValuePair(final String name, final String value) {
         super();
         if (name == null) {
             throw new IllegalArgumentException("Name may not be null");
@@ -26,20 +36,44 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
         this.name = name;
         this.value = value;
     }
-    
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @Override
-    public String getName() {
+
+
+    @DSSafe(DSCat.SAFE_LIST)
+
+
+    @DSComment("From safe class list")
+
+
+    /**
+     * Returns the name.
+     *
+     * @return String name The name
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:36.771 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
+    
+public String getName() {
         return this.name;
     }
-    
-    @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @Override
-    public String getValue() {
+
+
+    @DSSafe(DSCat.SAFE_LIST)
+
+
+    @DSComment("From safe class list")
+
+
+    /**
+     * Returns the value.
+     *
+     * @return String value The current value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:36.772 -0400", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "FC2353DBE9194DE53203DA3AB851288B")
+    
+public String getValue() {
         return this.value;
     }
     

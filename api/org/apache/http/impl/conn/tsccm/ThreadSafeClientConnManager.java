@@ -125,12 +125,18 @@ public ClientConnectionRequest requestConnection(
         
         return new ClientConnectionRequest() {
             
-            public void abortRequest() {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:39.881 -0400", hash_original_method = "F05670E2223BB88FEEE004D958D804B8", hash_generated_method = "C015E39A59E87F5CCED4C0BEA6A35F4F")
+            
+public void abortRequest() {
                 poolRequest.abortRequest();
             }
             
             @DSSource({DSSourceKind.NETWORK_INFORMATION})
-        public ManagedClientConnection getConnection(
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:39.882 -0400", hash_original_method = "6069BCC0A12724F289E46465DF3930EB", hash_generated_method = "D6BE21BEFC25F7F837BCD631BB872C2F")
+            
+public ManagedClientConnection getConnection(
                     long timeout, TimeUnit tunit) throws InterruptedException,
                     ConnectionPoolTimeoutException {
                 if (route == null) {

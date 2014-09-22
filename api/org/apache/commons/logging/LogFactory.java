@@ -508,7 +508,9 @@ protected static ClassLoader getContextClassLoader()
 
         return (ClassLoader)AccessController.doPrivileged(
             new PrivilegedAction() {
-                public Object run() {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:46.817 -0400", hash_original_method = "CC8D432FB8D4020AEB8C8338ACBC2698", hash_generated_method = "09495409ACE85CF005FE4A9BD919B2A8")
+            
+public Object run() {
                     return directGetContextClassLoader();
                 }
             });
@@ -724,7 +726,10 @@ protected static LogFactory newFactory(final String factoryClass,
         Object result = AccessController.doPrivileged(
             new PrivilegedAction() {
                 @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-        public Object run() {
+
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:46.820 -0400", hash_original_method = "60109351B608528E3600C5258D32BD0A", hash_generated_method = "884631075227E4A903BB0567EAA61524")
+            
+public Object run() {
                     return createFactory(factoryClass, classLoader);
                 }
             });
@@ -1027,7 +1032,9 @@ private static InputStream getResourceAsStream(final ClassLoader loader,
     {
         return (InputStream)AccessController.doPrivileged(
             new PrivilegedAction() {
-                public Object run() {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:46.827 -0400", hash_original_method = "6C33A3D7269BB0697C16109AACE184F6", hash_generated_method = "EE829866F2C383A7D811E4FD79905994")
+            
+public Object run() {
                     if (loader != null) {
                         return loader.getResourceAsStream(name);
                     } else {
@@ -1057,7 +1064,9 @@ private static Enumeration getResources(final ClassLoader loader,
     {
         PrivilegedAction action = 
             new PrivilegedAction() {
-                public Object run() {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:46.829 -0400", hash_original_method = "183FF88C7AC96FD1E9A2F611522B9A25", hash_generated_method = "6E55A156071C0861638E5ABDE594FF12")
+            
+public Object run() {
                     try {
                         if (loader != null) {
                             return loader.getResources(name);
@@ -1096,7 +1105,9 @@ private static Enumeration getResources(final ClassLoader loader,
 private static Properties getProperties(final URL url) {
         PrivilegedAction action = 
             new PrivilegedAction() {
-                public Object run() {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:46.831 -0400", hash_original_method = "0B5CD98DC6A7F99271D20C530D7C6283", hash_generated_method = "837EEF7D5476EE8D72900B7AA608D0F4")
+            
+public Object run() {
                     try {
                         InputStream stream = url.openStream();
                         if (stream != null) {
