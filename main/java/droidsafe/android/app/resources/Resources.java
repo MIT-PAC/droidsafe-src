@@ -577,7 +577,12 @@ public class Resources {
 								String.format("%08X", value));
 
 						String resource_value = component + "." + field.getName();
-						if (resource_info.get(value) != null) {
+						if (value.intValue() == 0) {
+						    //probably means that R.java was not built with android build and constant value
+						    //is not assigned, so ignore
+						    logger.info("resource_info.put({}, {}) has zero valued constant", 
+                                String.format("%08x", value), resource_value);
+						} else if (resource_info.get(value) != null) {
 							logger.warn("resource_info.put({}, {}) ALREADY existed ", 
 							            String.format("%08x", value), resource_value); 
 						}
