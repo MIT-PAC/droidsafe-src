@@ -1,9 +1,9 @@
 package com.google.android.gms.drive;
 
 import droidsafe.annotations.*;
+import droidsafe.concrete.DroidSafeBinder;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
-import com.google.android.gms.internal.hm;
 import com.google.android.gms.common.api.GoogleApiClient;
 import android.os.RemoteException;
 import android.content.IntentSender;
@@ -18,18 +18,13 @@ public class OpenFileActivityBuilder
     private String HY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 14:52:38.993 -0400", hash_original_field = "E081D0C93FEAE3D3D4329923243F01B9", hash_generated_field = "28F019A6AB5F20196314E461186C8F5A")
 
-    private String[] HZ;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 14:52:39.001 -0400", hash_original_field = "9234E2ADDC3BB96C9FC04352FB1EECD9", hash_generated_field = "ADAC901D67EC9E74B7A282ECF84CE2E7")
-
-    private DriveId Ia;
-
+	private String title;
+	private String[] mimeType;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 14:52:39.010 -0400", hash_original_method = "D951E1847347F043B4C8CD7C7A1A7BE6", hash_generated_method = "D46DCECD5A58B0050801A1719B349AC5")
     
 public OpenFileActivityBuilder setActivityTitle(String  r1)
     {
-
-
-        HY = (String) hm.f(r1);
+    	title = r1;
         return this;
     }
 
@@ -37,29 +32,16 @@ public OpenFileActivityBuilder setActivityTitle(String  r1)
     
 public OpenFileActivityBuilder setMimeType(String[]  r1)
     {
-
-        boolean $z0;
-        if (r1 == null)
-        {
-            $z0 = false;
-        }
-        else
-        {
-            $z0 = true;
-        }
-
-        hm.b($z0, "mimeTypes may not be null");
-        HZ = r1;
-        return this;
+    	mimeType = r1;
+    	return this;
     }
 
+    DriveId driveId;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 14:52:39.040 -0400", hash_original_method = "F952C8DE13D82115BAD9539842F9CBFE", hash_generated_method = "2D66166F92F9E0503F92B37902EBAE3F")
     
 public OpenFileActivityBuilder setActivityStartFolder(DriveId  r1)
     {
-
-
-        Ia = (DriveId) hm.f(r1);
+    	driveId = r1;
         return this;
     }
 
@@ -67,8 +49,15 @@ public OpenFileActivityBuilder setActivityStartFolder(DriveId  r1)
     
 public IntentSender build(GoogleApiClient  r1)
     {
-
-        aa r2;
+    	IntentSender sender = new IntentSender(new DroidSafeBinder(DSOnlyType.DONTCARE));
+    	sender.addTaint(r1.getTaint());
+    	sender.addTaint(driveId.getTaint());
+    	sender.addTaint(HY.getTaint());
+    	sender.addTaint(mimeType.getTaint());
+    	sender.addTaint(title.getTaint());
+    	return sender;
+    	
+      /*  aa r2;
         IntentSender $r13;
         OpenFileIntentSenderRequest r16;
         RuntimeException r17;
@@ -94,6 +83,6 @@ public IntentSender build(GoogleApiClient  r1)
             throw r18;
         }
 
-        return $r13;
+        return $r13;*/
     }
 }

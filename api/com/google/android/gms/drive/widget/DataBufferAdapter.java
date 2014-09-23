@@ -96,7 +96,7 @@ public DataBufferAdapter(Context  r1, int  i0)
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.550 -0400", hash_original_method = "B8355918EAD5E10F47C4CFD264DE8431", hash_generated_method = "1E40D745CE3CA7A7F4F8D559B9AD244E")
     
-public transient DataBufferAdapter(Context  r1, int  i0, int  i1, DataBuffer[]  r2)
+public DataBufferAdapter(Context  r1, int  i0, int  i1, DataBuffer[]  r2)
     {
         this(r1, i0, i1, Arrays.asList(r2));
 
@@ -109,7 +109,7 @@ public transient DataBufferAdapter(Context  r1, int  i0, int  i1, DataBuffer[]  
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.554 -0400", hash_original_method = "F582E6520CE25D99669A361F6333B865", hash_generated_method = "BE873B4032EDCB588111F8293A60E2E4")
     
-public transient DataBufferAdapter(Context  r1, int  i0, DataBuffer[]  r2)
+public DataBufferAdapter(Context  r1, int  i0, DataBuffer[]  r2)
     {
         this(r1, i0, 0, Arrays.asList(r2));
 

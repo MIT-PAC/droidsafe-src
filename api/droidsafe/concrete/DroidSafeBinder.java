@@ -11,6 +11,13 @@ public class DroidSafeBinder implements IBinder {
 
     private Messenger mMessenger;
 
+    @DSBan
+    public DroidSafeBinder(DSOnlyType dontcare) {
+    	Parcel p = new Parcel(DSOnlyType.DONTCARE);
+    	this.mMessenger = Messenger.CREATOR.createFromParcel(p);
+    }
+
+    @DSBan
     public DroidSafeBinder(Messenger messenger) {
         this.mMessenger = messenger;
     }

@@ -16,9 +16,6 @@ import android.os.Parcelable.Creator;
 
 public class Contents implements com.google.android.gms.common.internal.safeparcel.SafeParcelable
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.916 -0400", hash_original_field = "A95DAB4B50DA80556CF8612CBDFC6D64", hash_generated_field = "3393397D97232E554CB81FB8E18AA567")
-
-    public static  Parcelable.Creator CREATOR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.920 -0400", hash_original_field = "1895632691E3D0ACD93635E7B4E629BC", hash_generated_field = "1895632691E3D0ACD93635E7B4E629BC")
 
      int xM;
@@ -70,7 +67,7 @@ Contents(int  i0, ParcelFileDescriptor  r1, int  i1, int  i2, DriveId  r2, Strin
         HA = r3;
         HB = z0;
     }
-
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.963 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
 public int describeContents()
@@ -84,15 +81,23 @@ public int describeContents()
     
 public void writeToParcel(Parcel  r1, int  i0)
     {
-    	r1.writeInt(i0 + getTaintInt());
+    	r1.writeInt(i0);
+    	r1.writeInt(ra);
+    	r1.writeInt(xM);
+    	r1.writeString(HA); 
+    	r1.writeInt(toTaintInt(HB));
+    	r1.writeInt(toTaintInt(HC));
+    	r1.writeInt(toTaintInt(HD));
+    	r1.writeInt(toTaintInt(mClosed));
+    	r1.writeInt(Hy);
+    	r1.writeInt(Hz.getTaintInt());
+
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.978 -0400", hash_original_method = "8DE7F84DECAFF425BF82654097A23DD9", hash_generated_method = "3796AA904121B66F83AA77AB72A729C9")
     
 public ParcelFileDescriptor getParcelFileDescriptor()
     {
-
-
         if ( ! (mClosed))
         {
             return Fj;
@@ -194,27 +199,41 @@ public void close()
 
         mClosed = true;
     }
+    
+    public static final Creator<Contents> CREATOR = new Creator<Contents>() {
 
-    static
-    {
-        Parcelable.Creator r2 = new Parcelable.Creator<T>() {
+		@Override
+		@DSVerified
+		@DSSafe(DSCat.SAFE_OTHERS)
+		public Contents createFromParcel(Parcel source) {
+			// TODO Auto-generated method stub
+			source.readString();
+			DriveId id = new DriveId(source.readString(), source.readLong(), 0);
+			return new Contents(source.readInt(), 
+								source.readFileDescriptor(),
+								source.readInt(),
+								source.readInt(),
+								id, 
+								source.readString(),
+								false);
+		}
 
-			@Override
-			@DSVerified
-			@DSSafe(DSCat.SAFE_OTHERS)
-			public T createFromParcel(Parcel source) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			@DSVerified
-			@DSSpec(DSCat.ABSTRACT_METHOD)
-			public T[] newArray(int size) {
-				// TODO Auto-generated method stub
-				return new T[1];
-			}
-		};
-        CREATOR = r2;
-    }
+		@Override
+		@DSVerified
+		@DSSpec(DSCat.ABSTRACT_METHOD)
+		public Contents[] newArray(int size) {
+			// TODO Auto-generated method stub
+			Contents[] contents = new Contents[1];
+			contents[0] = new Contents(DSUtils.FAKE_INT,
+								(ParcelFileDescriptor)null,
+								DSUtils.FAKE_INT,
+								DSUtils.FAKE_INT,
+								null,
+								DSUtils.FAKE_STRING,
+								DSUtils.UNKNOWN_BOOLEAN);
+			return contents;
+		}
+    	
+    };
+    
 }

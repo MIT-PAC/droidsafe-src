@@ -343,6 +343,11 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public Parcel(DSOnlyType dontcare) {
+    	init(0);
+    }
+    
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final void recycle(){

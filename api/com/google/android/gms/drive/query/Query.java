@@ -5,13 +5,9 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import android.os.Parcel;
-import android.os.Parcelable$Creator;
 
 public class Query implements com.google.android.gms.common.internal.safeparcel.SafeParcelable
 {
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.349 -0400", hash_original_field = "A95DAB4B50DA80556CF8612CBDFC6D64", hash_generated_field = "3393397D97232E554CB81FB8E18AA567")
-
-    public static  Parcelable$Creator CREATOR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.353 -0400", hash_original_field = "038E53B698C14AE028B9C6D89683FE22", hash_generated_field = "038E53B698C14AE028B9C6D89683FE22")
 
      LogicalFilter KE;
@@ -30,11 +26,6 @@ public class Query implements com.google.android.gms.common.internal.safeparcel.
 Query(LogicalFilter  r1, String  r2, SortOrder  r3)
     {
         this(1, r1, r2, r3);
-
-        this.KE = null;
-        this.KF = null;
-        this.KG = null;
-        this.xM = 0;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.379 -0400", hash_original_method = "E5F931B0B8B471F6A7AFEBD1F3FDFD62", hash_generated_method = "E5F931B0B8B471F6A7AFEBD1F3FDFD62")
@@ -52,8 +43,6 @@ Query(int  i0, LogicalFilter  r1, String  r2, SortOrder  r3)
     
 public Filter getFilter()
     {
-
-
         return KE;
     }
 
@@ -88,18 +77,11 @@ public int describeContents()
     
 public void writeToParcel(Parcel  r1, int  i0)
     {
-
-
-        a.a(this, r1, i0);
+    	r1.writeInt(i0);
+    	r1.writeInt(getTaintInt());
     }
 
     static
     {
-
-        a r1;
-        Parcelable$Creator r2;
-        r1 = new a();
-        r2 = (Parcelable$Creator) r1;
-        CREATOR = r2;
     }
 }
