@@ -37,5 +37,7 @@ public enum DSSinkKind {
     IO,
     PROCESS,
     CLIPBOARD,
-    ANY_MEMORY
+    ANY_MEMORY,
+    AD,
+    GOOGLE_SERVICES
 }
