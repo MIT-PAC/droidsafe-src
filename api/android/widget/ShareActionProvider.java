@@ -252,6 +252,46 @@ public void setShareHistoryFileName(String shareHistoryFile) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.267 -0500", hash_original_method = "0DAF31F3B630D54C36D98C14F5BC8D8F", hash_generated_method = "CC784081647578CB91B85D7C5DF7179C")
     
 public void setShareIntent(Intent shareIntent) {
+        shareIntent.getAction();
+        shareIntent.getBooleanArrayExtra("");
+        shareIntent.getBooleanExtra("", false);
+        shareIntent.getBundleExtra("");
+
+        shareIntent.getFloatArrayExtra("");
+        shareIntent.getFloatExtra("", 0.0f);
+
+        shareIntent.getIntArrayExtra("");
+        shareIntent.getIntExtra("", 0);
+
+        shareIntent.getIntegerArrayListExtra("");
+        shareIntent.getExtras();
+
+        shareIntent.getLongArrayExtra("");
+        shareIntent.getLongExtra("", 0);
+
+        shareIntent.getParcelableArrayListExtra("");
+        shareIntent.getParcelableArrayExtra("");
+        shareIntent.getParcelableExtra("");
+
+        shareIntent.getShortArrayExtra("");
+        shareIntent.getShortExtra("", (short)0);
+
+        shareIntent.getStringExtra("");
+        shareIntent.getStringArrayExtra("");
+        shareIntent.getStringArrayListExtra("");      
+
+        shareIntent.getCharExtra("", 'a');
+        shareIntent.getCharArrayExtra("");
+        
+        shareIntent.getCharSequenceArrayExtra("");
+        shareIntent.getCharSequenceArrayListExtra("");
+        shareIntent.getCharSequenceExtra("");              
+
+        shareIntent.getData();
+        shareIntent.getFlags();
+        shareIntent.getType();
+        shareIntent.getScheme();
+
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
             mShareHistoryFileName);
         dataModel.setIntent(shareIntent);

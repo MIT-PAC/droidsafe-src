@@ -936,6 +936,46 @@ public FragmentManager getSupportFragmentManager() {
     
 @Override
     public void startActivityForResult(Intent intent, int requestCode) {
+          intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
+
         if (requestCode != -1 && (requestCode&0xffff0000) != 0) {
             throw new IllegalArgumentException("Can only use lower 16 bits for requestCode");
         }

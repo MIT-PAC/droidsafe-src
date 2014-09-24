@@ -2487,7 +2487,48 @@ public LayoutInflater getLayoutInflater() {
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     public void startActivityForResult(Intent intent, int requestCode){
+        intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
+
 		/*
+                  
         The modeling required here will create the call to onActivityResult that 
         could be called as an effect of this call.  onActivityResult will have
         a new Intent.  We are modeling this Intent as a copy of the intent 
