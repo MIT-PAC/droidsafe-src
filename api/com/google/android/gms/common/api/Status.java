@@ -7,8 +7,6 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import android.app.PendingIntent;
 import android.app.Activity;
 import android.content.IntentSender.SendIntentException;
-import com.google.android.gms.internal.hk;
-import com.google.android.gms.internal.hk.a;
 import com.google.android.gms.common.ConnectionResult;
 import android.os.Parcel;
 
