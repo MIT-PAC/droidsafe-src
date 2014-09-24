@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.view.ViewGroup;
 import android.content.Context;
-import com.google.android.gms.internal.au;
 import android.util.AttributeSet;
 import android.view.View;
 

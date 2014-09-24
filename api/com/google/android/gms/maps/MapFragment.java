@@ -1,5 +1,8 @@
 package com.google.android.gms.maps;
 
+import com.google.android.gms.maps.internal.IGoogleMapDelegate;
+import com.google.android.gms.maps.model.RuntimeRemoteException;
+
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -40,9 +43,6 @@ public static MapFragment newInstance(GoogleMapOptions  r0)
         r5.setArguments(r6);
         return r5;
     }
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.703 -0400", hash_original_field = "AB9ADBBFE4767A0E65FCF1782E76D7BB", hash_generated_field = "CEA0E89E17F93C00958FB3F2CFF18745")
-
-    private  MapFragment$b ZC;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.706 -0400", hash_original_field = "16473B2F56949AF6A49BB0FF31CE05A1", hash_generated_field = "2A243FBA6C87A6254B4FB4601B0DBF32")
 
     private GoogleMap ZD;
@@ -52,7 +52,6 @@ public static MapFragment newInstance(GoogleMapOptions  r0)
 public MapFragment()
     {
 
-        ZC = new MapFragment$b(this);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.720 -0400", hash_original_method = "16D3C4B072E7E43928E7ADC13182C174", hash_generated_method = "7A67C5B61903B9F5A9E535AA4120C9CD")
@@ -81,7 +80,7 @@ public final GoogleMap getMap()
         RuntimeRemoteException r13;
         GoogleMap r14;
         Throwable r15;
-        r1 = this.jy();
+        r1 = super.jy();
 
         if (r1 != null)
         {
@@ -123,27 +122,21 @@ public final GoogleMap getMap()
     
 public void onAttach(Activity  r1)
     {
-
-
-        this.onAttach(r1);
-        MapFragment$b.a(ZC, r1);
+        super.onAttach(r1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.737 -0400", hash_original_method = "7DAEF8F35C2FE3E2047D5802E0967BF6", hash_generated_method = "079466DC2281CA58655CA32E5183C3F8")
     
 public void onInflate(Activity  r1, AttributeSet  r2, Bundle  r3)
     {
-
+        super.onInflate(r1, r2, r3);
         GoogleMapOptions r4;
         Bundle r9;
         Parcelable r10;
-        this.onInflate(r1, r2, r3);
-        MapFragment$b.a(ZC, r1);
         r4 = GoogleMapOptions.createFromAttributes(r1, r2);
         r9 = new Bundle();
         r10 = (Parcelable) r4;
         r9.putParcelable("MapOptions", r10);
-        ZC.onInflate(r1, r9, r3);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.743 -0400", hash_original_method = "F0C1DD10C068EF145E655CC853186BDA", hash_generated_method = "EA66CA934D06B2B652D8C0D5F46F5118")
@@ -152,8 +145,7 @@ public void onCreate(Bundle  r1)
     {
 
 
-        this.onCreate(r1);
-        ZC.onCreate(r1);
+        super.onCreate(r1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.750 -0400", hash_original_method = "621F5CFCEF36307A2F667B7B746DD466", hash_generated_method = "2DEB2523251D25731148FBD76198B768")
@@ -162,27 +154,19 @@ public View onCreateView(LayoutInflater  r1, ViewGroup  r2, Bundle  r3)
     {
 
 
-        return ZC.onCreateView(r1, r2, r3);
+        return super.onCreateView(r1, r2, r3);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.753 -0400", hash_original_method = "8A5943792A631AC0907EC67FD2B96764", hash_generated_method = "4F13E4CDAECEE57914B2BBE6F4CBD411")
     
 public void onResume()
     {
-
-
-        this.onResume();
-        ZC.onResume();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.756 -0400", hash_original_method = "369EAE0B495D0B5CB3640443718195A9", hash_generated_method = "6CD8E07DA238124587A962813BD2D300")
     
 public void onPause()
     {
-
-
-        ZC.onPause();
-        this.onPause();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.759 -0400", hash_original_method = "EE80E6B1D8591BAADC50FD48D448A5F7", hash_generated_method = "006362B995E4FC2F29B0716087D64EF0")
@@ -190,58 +174,34 @@ public void onPause()
 public void onDestroyView()
     {
 
-
-        ZC.onDestroyView();
-        this.onDestroyView();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.762 -0400", hash_original_method = "D84D039E674097BACFAD7A90E1B9D844", hash_generated_method = "1AF113E79F115B783EAD7202A10F71B2")
     
 public void onDestroy()
     {
-
-
-        ZC.onDestroy();
-        this.onDestroy();
+    	super.onDestroy();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.767 -0400", hash_original_method = "563476AFB33B67BEF38DEAFEF12700DA", hash_generated_method = "CEC2B894D6BFB45F22B85594CD342C90")
     
 public void onLowMemory()
     {
-
-
-        ZC.onLowMemory();
-        this.onLowMemory();
+        super.onLowMemory();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.772 -0400", hash_original_method = "8233618D96C0B024A8BB307DA746C158", hash_generated_method = "2E8B0C97330021961F269FD7D7738C45")
     
 public void onActivityCreated(Bundle  r1)
     {
-
-
-        if (r1 != null)
-        {
-            r1.setClassLoader(MapFragment.getClassLoader());
-        }
-
-        this.onActivityCreated(r1);
+        super.onActivityCreated(r1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.776 -0400", hash_original_method = "B12752C9171E8E9B24E21C580AC1A171", hash_generated_method = "3E6E0997681B398FBE69713F74A50EB9")
     
 public void onSaveInstanceState(Bundle  r1)
     {
-
-
-        if (r1 != null)
-        {
-            r1.setClassLoader(MapFragment.getClassLoader());
-        }
-
-        this.onSaveInstanceState(r1);
-        ZC.onSaveInstanceState(r1);
+        super.onSaveInstanceState(r1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.779 -0400", hash_original_method = "D76282C62A93CE875451E21488810DB0", hash_generated_method = "F50CCF7F38312349B17D5842B9F8249E")
@@ -250,6 +210,6 @@ public void setArguments(Bundle  r1)
     {
 
 
-        this.setArguments(r1);
+        super.setArguments(r1);
     }
 }

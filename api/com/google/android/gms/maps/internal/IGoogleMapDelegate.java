@@ -5,6 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.os.IInterface;
 import android.os.RemoteException;
+
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 import android.location.Location;
@@ -44,10 +46,13 @@ public abstract interface IGoogleMapDelegate extends android.os.IInterface
     public abstract void setMyLocationEnabled(boolean  z0) throws android.os.RemoteException;
     public abstract android.location.Location getMyLocation() throws android.os.RemoteException;
 
+    public abstract com.google.android.gms.maps.model.CameraPosition getCameraPosition() throws android.os.RemoteException;
+
+    public abstract com.google.android.gms.maps.internal.IUiSettingsDelegate getUiSettings() throws android.os.RemoteException;
+
     /*
     public abstract void setLocationSource(com.google.android.gms.maps.internal.ILocationSourceDelegate  r0) throws android.os.RemoteException;
 
-    public abstract com.google.android.gms.maps.internal.IUiSettingsDelegate getUiSettings() throws android.os.RemoteException;
 
     public abstract com.google.android.gms.maps.internal.IProjectionDelegate getProjection() throws android.os.RemoteException;
 
@@ -77,7 +82,6 @@ public abstract interface IGoogleMapDelegate extends android.os.IInterface
 
     
     public abstract void setOnIndoorStateChangeListener(com.google.android.gms.maps.internal.f  r0) throws android.os.RemoteException;
-    public abstract com.google.android.gms.maps.model.CameraPosition getCameraPosition() throws android.os.RemoteException;
     public abstract void setOnMapLoadedCallback(com.google.android.gms.maps.internal.j  r0) throws android.os.RemoteException;
 
     public abstract com.google.android.gms.maps.model.internal.d getFocusedBuilding() throws android.os.RemoteException;
