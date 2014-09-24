@@ -43,8 +43,8 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
     
     @Override
     public void createPartControl(Composite parent) {
-        showOtherDroidsafeViews(VIEW_ID);
         super.createPartControl(parent);
+        showOtherDroidsafeViews(VIEW_ID);
         fTreeViewer.getControl().addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(final KeyEvent e) {
