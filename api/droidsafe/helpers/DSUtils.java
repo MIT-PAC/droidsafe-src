@@ -20,6 +20,7 @@ public class DSUtils {
 	
 	public static final int FAKE_INT = -1;
 	public static final String FAKE_STRING = "Unknown";
+	public static final int[] FAKE_INT_ARRAY = new int[] {0};
 	
 	/** This utility method should be used to create Intents from IntentFilters.  This
 	 * was originally developed to exercise {@link BroadcastReceiver} with all of the possible
