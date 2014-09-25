@@ -25,10 +25,14 @@ public class URLDecoder {
      * @deprecated use {@link #decode(String, String)} instead.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.559 -0500", hash_original_method = "B615A2BC4F9E0B242EB3A9536009FA28", hash_generated_method = "22C6E19760682FCDD3324068D65B539B")
-    
-@Deprecated
+    @DSSafe
+    @Deprecated
     public static String decode(String s) {
-        return UriCodec.decode(s, true, Charset.defaultCharset());
+        //simplifying for DS
+        String ret = new String("DECODED-URL");
+        ret.addTaint(s.getTaint());
+        return ret;
+        //return UriCodec.decode(s, true, Charset.defaultCharset());
     }
 
     /**
@@ -53,8 +57,13 @@ public class URLDecoder {
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.561 -0500", hash_original_method = "08FCF3E03A800113A7194CB72BB59DA9", hash_generated_method = "E0C46DB131A739C4A90A1AC029D9124F")
     
-public static String decode(String s, String encoding) throws UnsupportedEncodingException {
-        return UriCodec.decode(s, true, Charset.forName(encoding));
+    public static String decode(String s, String encoding) throws UnsupportedEncodingException {
+        //simplifying for DS
+        String ret = new String("DECODED-URL");
+        ret.addTaint(s.getTaint());
+        return ret;
+
+        //return UriCodec.decode(s, true, Charset.forName(encoding));
     }
     
     @DSSafe(DSCat.SAFE_OTHERS)

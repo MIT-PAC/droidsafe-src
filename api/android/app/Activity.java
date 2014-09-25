@@ -239,7 +239,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     private int mTitleColor = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.315 -0500", hash_original_field = "770A646DB3FFD5D268F1207A9B6648B8", hash_generated_field = "694874072698409F6608B46B5D5A3DE1")
 
-    final FragmentManagerImpl mFragments = new FragmentManagerImpl();
+    final FragmentManagerImpl mFragments = new FragmentManagerImpl(this);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.321 -0500", hash_original_field = "207A321ED3571899F1F73399691FB216", hash_generated_field = "207A321ED3571899F1F73399691FB216")
     
     SparseArray<LoaderManagerImpl> mAllLoaderManagers;
@@ -2487,7 +2487,48 @@ public LayoutInflater getLayoutInflater() {
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     public void startActivityForResult(Intent intent, int requestCode){
+        intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
+
 		/*
+                  
         The modeling required here will create the call to onActivityResult that 
         could be called as an effect of this call.  onActivityResult will have
         a new Intent.  We are modeling this Intent as a copy of the intent 

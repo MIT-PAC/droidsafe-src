@@ -477,7 +477,47 @@ public void send(Context context, int code, Intent intent,
     
 public void send(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler, String requiredPermission)
-            throws CanceledException {
+        throws CanceledException {
+          intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
+
         try {
             String resolvedType = intent != null ?
                     intent.resolveTypeIfNeeded(context.getContentResolver())

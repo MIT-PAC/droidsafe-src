@@ -436,6 +436,11 @@ public void writeToParcel(Parcel dest, int flags) {
 
 final class FragmentManagerImpl extends FragmentManager {
 
+    public FragmentManagerImpl(Activity activity) {
+        super();
+        this.mActivity = activity;
+    }
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.613 -0500", hash_original_method = "EF9B1EDACB3DF8AEB2756354C0AEFEDD", hash_generated_method = "2C6BD9C0C59EEBA564136501810F7E77")
     
 public static int reverseTransit(int transit) {
@@ -2103,7 +2108,7 @@ public void attachActivity(Activity activity) {
         if (mActivity != null) throw new IllegalStateException();
         mActivity = activity;
         for (Fragment f: mAdded) {
-            f.droidsafeSetActivity(activity);
+            f.droidsafeSetContext(activity);
             //calling all subfragment callbacks
             f.droidsafeSubFragmentHook();
         }

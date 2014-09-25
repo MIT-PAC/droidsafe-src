@@ -120,6 +120,46 @@ ReceiverRestrictedContext(Context base) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.008 -0500", hash_original_method = "E81E60407BE1AC3446285185653F6DEC", hash_generated_method = "70CCA2B262847282DDB92A6E7AC7ABF3")   
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
+        service.getAction();
+        service.getBooleanArrayExtra("");
+        service.getBooleanExtra("", false);
+        service.getBundleExtra("");
+
+        service.getFloatArrayExtra("");
+        service.getFloatExtra("", 0.0f);
+
+        service.getIntArrayExtra("");
+        service.getIntExtra("", 0);
+
+        service.getIntegerArrayListExtra("");
+        service.getExtras();
+
+        service.getLongArrayExtra("");
+        service.getLongExtra("", 0);
+
+        service.getParcelableArrayListExtra("");
+        service.getParcelableArrayExtra("");
+        service.getParcelableExtra("");
+
+        service.getShortArrayExtra("");
+        service.getShortExtra("", (short)0);
+
+        service.getStringExtra("");
+        service.getStringArrayExtra("");
+        service.getStringArrayListExtra("");      
+
+        service.getCharExtra("", 'a');
+        service.getCharArrayExtra("");
+        
+        service.getCharSequenceArrayExtra("");
+        service.getCharSequenceArrayListExtra("");
+        service.getCharSequenceExtra("");              
+
+        service.getData();
+        service.getFlags();
+        service.getType();
+        service.getScheme();
+
         return true;
         //ex.fillInStackTrace();
         //Log.e("IntentReceiver", ex.getMessage(), ex);
@@ -642,14 +682,54 @@ private File getPreferencesDir() {
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
     public void startActivity(Intent intent) {
-        throw new UnsupportedOperationException();
+        intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
     }
     
     @DSSink({DSSinkKind.START_ACTIVITY})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
     public void startActivities(Intent[] intents) {
-        throw new UnsupportedOperationException();
+        for (Intent intent : intents) {
+            startActivity(intent);
+        }
     }
    
     @DSSink({DSSinkKind.IPC})
@@ -658,21 +738,135 @@ private File getPreferencesDir() {
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
             throws IntentSender.SendIntentException {
-        throw new UnsupportedOperationException();
+  fillInIntent.getAction();
+        fillInIntent.getBooleanArrayExtra("");
+        fillInIntent.getBooleanExtra("", false);
+        fillInIntent.getBundleExtra("");
+
+        fillInIntent.getFloatArrayExtra("");
+        fillInIntent.getFloatExtra("", 0.0f);
+
+        fillInIntent.getIntArrayExtra("");
+        fillInIntent.getIntExtra("", 0);
+
+        fillInIntent.getIntegerArrayListExtra("");
+        fillInIntent.getExtras();
+
+        fillInIntent.getLongArrayExtra("");
+        fillInIntent.getLongExtra("", 0);
+
+        fillInIntent.getParcelableArrayListExtra("");
+        fillInIntent.getParcelableArrayExtra("");
+        fillInIntent.getParcelableExtra("");
+
+        fillInIntent.getShortArrayExtra("");
+        fillInIntent.getShortExtra("", (short)0);
+
+        fillInIntent.getStringExtra("");
+        fillInIntent.getStringArrayExtra("");
+        fillInIntent.getStringArrayListExtra("");      
+
+        fillInIntent.getCharExtra("", 'a');
+        fillInIntent.getCharArrayExtra("");
+        
+        fillInIntent.getCharSequenceArrayExtra("");
+        fillInIntent.getCharSequenceArrayListExtra("");
+        fillInIntent.getCharSequenceExtra("");              
+
+        fillInIntent.getData();
+        fillInIntent.getFlags();
+        fillInIntent.getType();
+        fillInIntent.getScheme();
     }
     
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @Override
     public void sendBroadcast(Intent intent) {
+            intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
         
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
     }
     
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
+            intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
         
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
     }
     
     @DSSpec(DSCat.IPC)
@@ -680,7 +874,45 @@ private File getPreferencesDir() {
     @Override
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
+            intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
 
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
     }
     
     @DSSpec(DSCat.IPC)
@@ -689,14 +921,90 @@ private File getPreferencesDir() {
     public void sendOrderedBroadcast(Intent intent, String receiverPermission,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
            Bundle initialExtras) {
-        throw new UnsupportedOperationException();
+            intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
     }
     
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
     @Override
     public void sendStickyBroadcast(Intent intent) {
-        throw new UnsupportedOperationException();
+     intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
     }
     
     @DSSink({DSSinkKind.IPC})
@@ -705,12 +1013,88 @@ private File getPreferencesDir() {
     public void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
            Bundle initialExtras) {
-        throw new UnsupportedOperationException();
+          intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
     }
     
     @Override
     public void removeStickyBroadcast(Intent intent) {
-        throw new UnsupportedOperationException();
+          intent.getAction();
+        intent.getBooleanArrayExtra("");
+        intent.getBooleanExtra("", false);
+        intent.getBundleExtra("");
+
+        intent.getFloatArrayExtra("");
+        intent.getFloatExtra("", 0.0f);
+
+        intent.getIntArrayExtra("");
+        intent.getIntExtra("", 0);
+
+        intent.getIntegerArrayListExtra("");
+        intent.getExtras();
+
+        intent.getLongArrayExtra("");
+        intent.getLongExtra("", 0);
+
+        intent.getParcelableArrayListExtra("");
+        intent.getParcelableArrayExtra("");
+        intent.getParcelableExtra("");
+
+        intent.getShortArrayExtra("");
+        intent.getShortExtra("", (short)0);
+
+        intent.getStringExtra("");
+        intent.getStringArrayExtra("");
+        intent.getStringArrayListExtra("");      
+
+        intent.getCharExtra("", 'a');
+        intent.getCharArrayExtra("");
+        
+        intent.getCharSequenceArrayExtra("");
+        intent.getCharSequenceArrayListExtra("");
+        intent.getCharSequenceExtra("");              
+
+        intent.getData();
+        intent.getFlags();
+        intent.getType();
+        intent.getScheme();
     }
     
     @DSSafe(DSCat.ANDROID_CALLBACK)
@@ -769,6 +1153,45 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     @DSSpec(DSCat.SERVICE)
     @Override
     public ComponentName startService(Intent service) {
+          service.getAction();
+        service.getBooleanArrayExtra("");
+        service.getBooleanExtra("", false);
+        service.getBundleExtra("");
+
+        service.getFloatArrayExtra("");
+        service.getFloatExtra("", 0.0f);
+
+        service.getIntArrayExtra("");
+        service.getIntExtra("", 0);
+
+        service.getIntegerArrayListExtra("");
+        service.getExtras();
+
+        service.getLongArrayExtra("");
+        service.getLongExtra("", 0);
+
+        service.getParcelableArrayListExtra("");
+        service.getParcelableArrayExtra("");
+        service.getParcelableExtra("");
+
+        service.getShortArrayExtra("");
+        service.getShortExtra("", (short)0);
+
+        service.getStringExtra("");
+        service.getStringArrayExtra("");
+        service.getStringArrayListExtra("");      
+
+        service.getCharExtra("", 'a');
+        service.getCharArrayExtra("");
+        
+        service.getCharSequenceArrayExtra("");
+        service.getCharSequenceArrayListExtra("");
+        service.getCharSequenceExtra("");              
+
+        service.getData();
+        service.getFlags();
+        service.getType();
+        service.getScheme();
         return service.getComponent();
     }
     
@@ -776,6 +1199,45 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     
     @DSSafe(DSCat.SAFE_OTHERS)
     public boolean stopService(Intent service) {
+    service.getAction();
+        service.getBooleanArrayExtra("");
+        service.getBooleanExtra("", false);
+        service.getBundleExtra("");
+
+        service.getFloatArrayExtra("");
+        service.getFloatExtra("", 0.0f);
+
+        service.getIntArrayExtra("");
+        service.getIntExtra("", 0);
+
+        service.getIntegerArrayListExtra("");
+        service.getExtras();
+
+        service.getLongArrayExtra("");
+        service.getLongExtra("", 0);
+
+        service.getParcelableArrayListExtra("");
+        service.getParcelableArrayExtra("");
+        service.getParcelableExtra("");
+
+        service.getShortArrayExtra("");
+        service.getShortExtra("", (short)0);
+
+        service.getStringExtra("");
+        service.getStringArrayExtra("");
+        service.getStringArrayListExtra("");      
+
+        service.getCharExtra("", 'a');
+        service.getCharArrayExtra("");
+        
+        service.getCharSequenceArrayExtra("");
+        service.getCharSequenceArrayListExtra("");
+        service.getCharSequenceExtra("");              
+
+        service.getData();
+        service.getFlags();
+        service.getType();
+        service.getScheme();
         return true;
     }
     
@@ -787,6 +1249,8 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         //throw new UnsupportedOperationException();
+        
+        
         if (serviceCompName == null) {
             serviceCompName = new ComponentName(new String(), new String());
         }
@@ -795,10 +1259,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
             conn.onServiceConnected(serviceCompName, mActivityToken);
             conn.onServiceDisconnected(serviceCompName);
         }
-        addTaint(service.getTaint());
-        addTaint(conn.getTaint());
-        addTaint(flags);
-        return getTaintBoolean();
+        return true;
     }
 
     @DSVerified

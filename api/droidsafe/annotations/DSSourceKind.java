@@ -48,5 +48,9 @@ public enum DSSourceKind {
     OS_PROCESS,
     XML,
     RESOURCES,
-    ANY_MEMORY
+    ANY_MEMORY,
+    REMOTE_APP,
+    CAMERA,
+    DATE_TIME,
+    GOOGLE_SERVICES
 }

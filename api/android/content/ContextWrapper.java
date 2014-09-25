@@ -680,6 +680,46 @@ public Context getBaseContext() {
 @Override
     public boolean bindService(Intent service, ServiceConnection conn,
             int flags) {
+        service.getAction();
+        service.getBooleanArrayExtra("");
+        service.getBooleanExtra("", false);
+        service.getBundleExtra("");
+
+        service.getFloatArrayExtra("");
+        service.getFloatExtra("", 0.0f);
+
+        service.getIntArrayExtra("");
+        service.getIntExtra("", 0);
+
+        service.getIntegerArrayListExtra("");
+        service.getExtras();
+
+        service.getLongArrayExtra("");
+        service.getLongExtra("", 0);
+
+        service.getParcelableArrayListExtra("");
+        service.getParcelableArrayExtra("");
+        service.getParcelableExtra("");
+
+        service.getShortArrayExtra("");
+        service.getShortExtra("", (short)0);
+
+        service.getStringExtra("");
+        service.getStringArrayExtra("");
+        service.getStringArrayListExtra("");      
+
+        service.getCharExtra("", 'a');
+        service.getCharArrayExtra("");
+        
+        service.getCharSequenceArrayExtra("");
+        service.getCharSequenceArrayListExtra("");
+        service.getCharSequenceExtra("");              
+
+        service.getData();
+        service.getFlags();
+        service.getType();
+        service.getScheme();
+
         return true; //mBase.bindService(service, conn, flags);
     }
 

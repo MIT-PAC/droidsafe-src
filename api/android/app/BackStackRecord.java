@@ -449,6 +449,8 @@ public FragmentTransaction add(int containerViewId, Fragment fragment, String ta
     
 private void doAddOp(int containerViewId, Fragment fragment, String tag, int opcmd) {
         fragment.mFragmentManager = mManager;
+        //added by droidsafe
+        fragment.onAttach(mManager.mActivity);
 
         if (tag != null) {
             if (fragment.mTag != null && !tag.equals(fragment.mTag)) {
