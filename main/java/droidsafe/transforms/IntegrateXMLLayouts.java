@@ -799,7 +799,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
             for (SootMethod method: findFragmentByIdList) {
                 if (method.equals(resolved)) {
-                    logger.warn(String.format("Found findFragmentById(): %s - %s\n", 
+                    logger.info(String.format("Found findFragmentById(): %s - %s\n", 
                         stmt, b.getMethod()));
                     replaceFindFragmentById(stmtBody, stmt);
                     break;
