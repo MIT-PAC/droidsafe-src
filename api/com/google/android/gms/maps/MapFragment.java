@@ -1,9 +1,12 @@
 package com.google.android.gms.maps;
 
+import com.google.android.gms.maps.internal.DroidsafeGoogleMapDelegate;
 import com.google.android.gms.maps.internal.IGoogleMapDelegate;
+import com.google.android.gms.maps.internal.IMapFragmentDelegate;
 import com.google.android.gms.maps.model.RuntimeRemoteException;
 
 import droidsafe.annotations.*;
+import droidsafe.concrete.DroidSafeBinder;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.app.Fragment;
@@ -23,8 +26,6 @@ public class MapFragment extends Fragment
     
 public static MapFragment newInstance()
     {
-
-
         return new MapFragment();
     }
 
@@ -51,71 +52,23 @@ public static MapFragment newInstance(GoogleMapOptions  r0)
     
 public MapFragment()
     {
-
+    	DroidSafeBinder binder = new DroidSafeBinder(DSOnlyType.DONTCARE);
+    	googleMap = new GoogleMap(new DroidsafeGoogleMapDelegate(binder));
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.720 -0400", hash_original_method = "16D3C4B072E7E43928E7ADC13182C174", hash_generated_method = "7A67C5B61903B9F5A9E535AA4120C9CD")
     
-protected IMapFragmentDelegate jy()
+protected IMapFragmentDelegate fragementDelegate()
     {
-
-
-        ZC.jz();
-
-        if (ZC.gH() != null)
-        {
-            return ((MapFragment$a) ZC.gH()).jy();
-        }
-
         return null;
     }
 
+    GoogleMap googleMap;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.725 -0400", hash_original_method = "40D16AF3AD525A505DCF522054434A6E", hash_generated_method = "553FBC2F1B7E69328D7336D81FCFF3C0")
     
 public final GoogleMap getMap()
     {
-
-        IMapFragmentDelegate r1;
-        IGoogleMapDelegate r2;
-        RuntimeRemoteException r13;
-        GoogleMap r14;
-        Throwable r15;
-        r1 = super.jy();
-
-        if (r1 != null)
-        {
-            try
-            {
-                r2 = r1.getMap();
-            }
-            catch (RemoteException $r4)
-            {
-                r13 = new RuntimeRemoteException($r4);
-                r15 = (Throwable) r13;
-                throw r15;
-            }
-
-            if (r2 != null)
-            {
-                label_0:
-                {
-                    if (ZD != null && ZD.jp().asBinder() == r2.asBinder())
-                    {
-                        break label_0;
-                    }
-
-                    r14 = new GoogleMap(r2);
-                    ZD = r14;
-                } //end label_0:
-
-
-                return ZD;
-            }
-
-            return null;
-        }
-
-        return null;
+    	return googleMap;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.730 -0400", hash_original_method = "5F2C3381706F5A7C85E1E0E652EA6D95", hash_generated_method = "7F3037BC47BCD5E1BCE13DA4A1470892")
@@ -143,8 +96,6 @@ public void onInflate(Activity  r1, AttributeSet  r2, Bundle  r3)
     
 public void onCreate(Bundle  r1)
     {
-
-
         super.onCreate(r1);
     }
 
@@ -161,18 +112,21 @@ public View onCreateView(LayoutInflater  r1, ViewGroup  r2, Bundle  r3)
     
 public void onResume()
     {
+    	super.onResume();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.756 -0400", hash_original_method = "369EAE0B495D0B5CB3640443718195A9", hash_generated_method = "6CD8E07DA238124587A962813BD2D300")
     
 public void onPause()
     {
+    	super.onPause();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.759 -0400", hash_original_method = "EE80E6B1D8591BAADC50FD48D448A5F7", hash_generated_method = "006362B995E4FC2F29B0716087D64EF0")
     
 public void onDestroyView()
     {
+    	super.onDestroyView();
 
     }
 
