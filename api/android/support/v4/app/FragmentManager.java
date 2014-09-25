@@ -358,6 +358,7 @@ public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, 
 
 final class FragmentManagerState implements Parcelable {
     
+
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_field = "D29AA2723BAE7915447DC2F30F3AAA56", hash_generated_field = "EE9672AF4023C35BB0D72B0356E5DA5C")
 
     public static final Parcelable.Creator<FragmentManagerState> CREATOR
@@ -414,6 +415,11 @@ public void writeToParcel(Parcel dest, int flags) {
 }
 final class FragmentManagerImpl extends FragmentManager {
     
+    public FragmentManagerImpl(FragmentActivity activity) {
+        super();
+        this.mActivity = activity;
+    }
+
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.353 -0500", hash_original_method = "4341065D769972007048C06B6A820CF6", hash_generated_method = "AAEB003EE5CA3BDFC2234E2D6D00CFBC")
@@ -1422,6 +1428,8 @@ void makeInactive(Fragment f) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.396 -0500", hash_original_method = "A7004D7E770917F1698CC4D8DC4A636A", hash_generated_method = "5D45CD6D3E99FF60725B0A5E5430390F")
     
 public void addFragment(Fragment fragment, boolean moveToStateNow) {
+        fragment.onAttach(mActivity);
+
         if (mAdded == null) {
             mAdded = new ArrayList<Fragment>();
         }
@@ -1486,6 +1494,7 @@ public void hideFragment(Fragment fragment, int transition, int transitionStyle)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.403 -0500", hash_original_method = "5884A689188772E4B067D85FA0FE2485", hash_generated_method = "A4C8B7377C9F34FB70B82BC0F478C522")
     
 public void showFragment(Fragment fragment, int transition, int transitionStyle) {
+ 
         if (DEBUG) Log.v(TAG, "show: " + fragment);
         if (fragment.mHidden) {
             fragment.mHidden = false;
@@ -1528,6 +1537,7 @@ public void detachFragment(Fragment fragment, int transition, int transitionStyl
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.408 -0500", hash_original_method = "C689EB45F7FDDB493496798809CCC982", hash_generated_method = "241454DBAFC49A612A7BCF6A616F6F81")
     
 public void attachFragment(Fragment fragment, int transition, int transitionStyle) {
+         fragment.onAttach(mActivity);
         if (DEBUG) Log.v(TAG, "attach: " + fragment);
         if (fragment.mDetached) {
             fragment.mDetached = false;

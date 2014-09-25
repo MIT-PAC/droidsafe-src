@@ -405,8 +405,31 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.266 -0500", hash_original_method = "450DCF9C44ABD4359E904BF858920888", hash_generated_method = "CF5FF4F149C6CF2D53AA15104CFBDB03")
     
 public Fragment() {
+        mArguments = new Bundle();
+        onPause();
+        onDestroyView();
+        onStop();
+        onDestroy();
+        onDetach();
+        
+        onCreate(mArguments);
+        onActivityCreated(mArguments);
+        onViewStateRestored(mArguments);
+        onStart();
+        onResume();
     }
-    
+
+      /**
+     * We need to pass in the activity to associate the fragment with an activity.
+     * There is no legal way of doing it through API, easier to make of type context
+     * for generated soot code
+     * @param activity
+     */
+    public void droidsafeSetContext(Context activity) {
+        mActivity = (FragmentActivity)activity;
+        onAttach(mActivity);
+    }
+           
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.274 -0500", hash_original_method = "245153A377A25A4032F77A4E144CB5DC", hash_generated_method = "2C1E9B61679D6DC87423EDB754F46D51")

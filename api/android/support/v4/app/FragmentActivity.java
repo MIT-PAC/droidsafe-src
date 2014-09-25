@@ -185,7 +185,7 @@ private static String viewToString(View view) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.852 -0400", hash_original_field = "770A646DB3FFD5D268F1207A9B6648B8", hash_generated_field = "694874072698409F6608B46B5D5A3DE1")
 
-    final FragmentManagerImpl mFragments = new FragmentManagerImpl();
+    final FragmentManagerImpl mFragments = new FragmentManagerImpl(this);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.873 -0400", hash_original_field = "5FCD3FCB0C48EC9F428EAE9789E56596", hash_generated_field = "19B31D6A5D2DDF3AAD759FDDD8EE70CE")
 
     final FragmentContainer mContainer = new FragmentContainer() {
@@ -936,46 +936,6 @@ public FragmentManager getSupportFragmentManager() {
     
 @Override
     public void startActivityForResult(Intent intent, int requestCode) {
-          intent.getAction();
-        intent.getBooleanArrayExtra("");
-        intent.getBooleanExtra("", false);
-        intent.getBundleExtra("");
-
-        intent.getFloatArrayExtra("");
-        intent.getFloatExtra("", 0.0f);
-
-        intent.getIntArrayExtra("");
-        intent.getIntExtra("", 0);
-
-        intent.getIntegerArrayListExtra("");
-        intent.getExtras();
-
-        intent.getLongArrayExtra("");
-        intent.getLongExtra("", 0);
-
-        intent.getParcelableArrayListExtra("");
-        intent.getParcelableArrayExtra("");
-        intent.getParcelableExtra("");
-
-        intent.getShortArrayExtra("");
-        intent.getShortExtra("", (short)0);
-
-        intent.getStringExtra("");
-        intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
-
-        intent.getCharExtra("", 'a');
-        intent.getCharArrayExtra("");
-        
-        intent.getCharSequenceArrayExtra("");
-        intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
-
-        intent.getData();
-        intent.getFlags();
-        intent.getType();
-        intent.getScheme();
-
         if (requestCode != -1 && (requestCode&0xffff0000) != 0) {
             throw new IllegalArgumentException("Can only use lower 16 bits for requestCode");
         }

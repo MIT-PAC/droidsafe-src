@@ -405,11 +405,22 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
 public Fragment() {
         droidsafeModelFragment();
     }
+
     
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     private void droidsafeModelFragment() {
+        mArguments = new Bundle();
+        onPause();
+        onDestroyView();
+        onStop();
+        onDestroy();
+        onDetach();
         
+        onCreate(mArguments);
+        onActivityCreated(mArguments);        
+        onStart();
+        onResume();
     }
     
     @DSComment("Package priviledge")
@@ -930,6 +941,7 @@ public void startActivityForResult(Intent intent, int requestCode) {
             throw new IllegalStateException("Fragment " + this + " not attached to Activity");
         }
         mActivity.startActivityFromFragment(this, intent, requestCode);
+        onActivityResult(requestCode, 0, intent);
     }
     
     /**
@@ -1031,7 +1043,7 @@ public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanc
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.093 -0500", hash_original_method = "7FCB8118913FF635CB1CDE717E61023E", hash_generated_method = "B80B37A37F384FB495394FF2DE913216")
-    @DSVerified("called by FragmentManagerImpl")
+    @DSVerified("Called by FragmentTransaction")
 public void onAttach(Activity activity) {
         mCalled = true;
     }
@@ -1327,11 +1339,13 @@ public void onDetach() {
     
     /**
      * We need to pass in the activity to associate the fragment with an activity.
-     * There is no legal way of doing it through API 
+     * There is no legal way of doing it through API, easier to make of type context
+     * for generated soot code
      * @param activity
      */
-    public void droidsafeSetActivity(Activity activity) {
-        mActivity = activity;
+    public void droidsafeSetContext(Context activity) {
+        mActivity = (Activity)activity;
+        onAttach(mActivity);
     }
     
     /**
