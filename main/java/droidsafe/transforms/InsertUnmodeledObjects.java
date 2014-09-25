@@ -164,13 +164,13 @@ public class InsertUnmodeledObjects {
 
                 //l = fieldOfMain
                 localID++;
-                Local l = Jimple.v().newLocal("comp_link_l_" + localID, fieldOfMain.getType());
+                Local l = Jimple.v().newLocal("_$comp_link_l_" + localID, fieldOfMain.getType());
                 Harness.v().addLocalToMain(l);
                 AssignStmt assign1 = Jimple.v().newAssignStmt(l, sfr);
                 Harness.v().addStmtToEndOfMainLoop(assign1);
 
                 //r = otherfieldofMain
-                Local r = Jimple.v().newLocal("comp_link_r" + localID, fieldOfComp.getType());
+                Local r = Jimple.v().newLocal("_$comp_link_r" + localID, fieldOfComp.getType());
                 Harness.v().addLocalToMain(r);
                 AssignStmt assign2 = Jimple.v().newAssignStmt(r, Jimple.v().newStaticFieldRef(otherFieldOfMain.makeRef()));
                 Harness.v().addStmtToEndOfMainLoop(assign2);

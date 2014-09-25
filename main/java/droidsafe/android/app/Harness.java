@@ -254,7 +254,7 @@ public class Harness {
         SootMethod registerReceiver =  Scene.v().getMethod(methodSig);
 
         for (IntentFilter intentFilter: intentFilters) {
-            String intentLocalName = String.format("__dsIntentFilter%s", intentFilterCount++);
+            String intentLocalName = String.format("_$dsIntentFilter%s", intentFilterCount++);
 
             // add local
             Local intentFilterLocal = Jimple.v().newLocal(intentLocalName, intentFilterType);
@@ -271,7 +271,7 @@ public class Harness {
             body.getUnits().add(initStmt);
 
             for (String action: intentFilter.actions) {
-                Local stringLocal = Jimple.v().newLocal(String.format("__dsActionString%03d", LOCAL_COUNTER++),  
+                Local stringLocal = Jimple.v().newLocal(String.format("_$dsActionString%03d", LOCAL_COUNTER++),  
                     RefType.v("java.lang.String"));
                 body.getLocals().add(stringLocal);
 
@@ -287,7 +287,7 @@ public class Harness {
             }
 
             for (String category: intentFilter.categories) {
-                Local stringLocal = Jimple.v().newLocal(String.format("__dsCategoryString%03d", LOCAL_COUNTER++),  
+                Local stringLocal = Jimple.v().newLocal(String.format("_$dsCategoryString%03d", LOCAL_COUNTER++),  
                     RefType.v("java.lang.String"));
                 body.getLocals().add(stringLocal);
 
@@ -304,7 +304,7 @@ public class Harness {
             
             if (intentFilter.dataUri != null) {
                 logger.debug("Found intent filter uri  {} ", intentFilter.dataUri);
-                Local stringLocal = Jimple.v().newLocal(String.format("__dsUriString%03d", LOCAL_COUNTER++),  
+                Local stringLocal = Jimple.v().newLocal(String.format("_$dsUriString%03d", LOCAL_COUNTER++),  
                     RefType.v("java.lang.String"));
                 body.getLocals().add(stringLocal);
 
@@ -393,7 +393,7 @@ public class Harness {
                 }
             }
 
-            String name = String.format("__ds__%s%03d", 
+            String name = String.format("_$ds__%s%03d", 
                                         compType.substring(compType.lastIndexOf(".") + 1), LOCAL_COUNTER++);
 
             //Local compLocal = Jimple.v().newLocal(name,  RefType.v(compType));
@@ -401,7 +401,7 @@ public class Harness {
             body.getLocals().add(compLocal);
 
 
-            //Local stringLocal = Jimple.v().newLocal(String.format("__dsString%03d", counter++),  
+            //Local stringLocal = Jimple.v().newLocal(String.format("_$dsString%03d", counter++),  
             //        RefType.v(compType)); 
 
             Expr newAppExpr = Jimple.v().newNewExpr(compClass.getType());
@@ -481,7 +481,7 @@ public class Harness {
         // inject Application __dsApp__
         RefType appType = appClass.getType();
 
-        Local appLocal = Jimple.v().newLocal("__dsApp__",  appClass.getType());
+        Local appLocal = Jimple.v().newLocal("_$dsApp__",  appClass.getType());
         body.getLocals().add(appLocal);
 
         // __dsApp__ = new Application
@@ -553,7 +553,7 @@ public class Harness {
      */
     private Stmt mainMethodHeader(StmtBody body) {
         //add access to the arg
-        Local arg = Jimple.v().newLocal("l" + localID++, ArrayType.v(RefType.v("java.lang.String"), 1));
+        Local arg = Jimple.v().newLocal("_$l" + localID++, ArrayType.v(RefType.v("java.lang.String"), 1));
         body.getLocals().add(arg);
 
         body.getUnits().add(Jimple.v().newIdentityStmt(arg, 
@@ -579,7 +579,7 @@ public class Harness {
             RefType type = RefType.v(clazz);
             logger.info("Creating component class not in manifest: {}", clazz);
 
-            Local receiver = Jimple.v().newLocal("l" + localID++, type);
+            Local receiver = Jimple.v().newLocal("_$l" + localID++, type);
             body.getLocals().add(receiver);
 
             //add the call to the new object

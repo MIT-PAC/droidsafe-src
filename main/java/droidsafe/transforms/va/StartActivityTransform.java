@@ -101,7 +101,7 @@ class StartActivityTransform implements VATransform {
             //call set intent on these activities with local   
 
             //create local and add to body
-            Local local = Jimple.v().newLocal("_setIntent_local_" + localID++, activityField.getType());
+            Local local = Jimple.v().newLocal("_$setIntent_local_" + localID++, activityField.getType());
             body.getLocals().add(local);
 
             //set field of activity to local [local = harness.activityfield]

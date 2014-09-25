@@ -148,7 +148,7 @@ public class BroadcastReceiverTransform implements VATransform {
                 //call set intent on these activities with local   
 
                 //create local and add to body
-                Local local = Jimple.v().newLocal("_broadcastreceiver_local_" + localID++, brField.getType());
+                Local local = Jimple.v().newLocal("_$broadcastreceiver_local_" + localID++, brField.getType());
                 body.getLocals().add(local);
 
                 //set field of component to local [local = harness.activityfield]

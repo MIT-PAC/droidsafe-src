@@ -79,7 +79,7 @@ public class ServiceBindTransform implements VATransform {
             logger.info("Adding call to droidSafeOnBind() with target {}", serviceClz);
             
             //local = field from harness 
-            Local fieldLocal = Jimple.v().newLocal("SERVICE_LOCAL" + uniqueID++, serviceFld.getType());
+            Local fieldLocal = Jimple.v().newLocal("_$SERVICE_LOCAL" + uniqueID++, serviceFld.getType());
             body.getLocals().add(fieldLocal);
             AssignStmt localAssign = Jimple.v().newAssignStmt(
                 fieldLocal, 

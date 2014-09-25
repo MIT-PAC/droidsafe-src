@@ -213,7 +213,7 @@ public class CallBackModeling {
             toAdd.setActiveBody(body);
             Chain<Unit> units = body.getUnits();
 
-            Local thisLocal = Jimple.v().newLocal("thisLocal", RefType.v(clz));
+            Local thisLocal = Jimple.v().newLocal("_$thisLocal", RefType.v(clz));
             body.getLocals().add(thisLocal);
             units.add(Jimple.v().newIdentityStmt(thisLocal, Jimple.v().newThisRef(RefType.v(clz)))); 
 
@@ -234,7 +234,7 @@ public class CallBackModeling {
 
                 units.add(Jimple.v().newInvokeStmt(invoke));
             } else {
-                Local returnLocal = Jimple.v().newLocal("returnLocal" + LOCAL_ID++, callMe.getReturnType());
+                Local returnLocal = Jimple.v().newLocal("_$returnLocal" + LOCAL_ID++, callMe.getReturnType());
                 body.getLocals().add(returnLocal);
 
                 AssignStmt assign = Jimple.v().newAssignStmt(returnLocal, invoke);
@@ -306,7 +306,7 @@ public class CallBackModeling {
         List<Value> args = new LinkedList<Value>();
         for (Type argType : method.getParameterTypes()) {
             Value fieldRef = UnmodeledGeneratedClasses.v().getSootFieldForType(argType); 
-            Local argLocal = Jimple.v().newLocal("TU" + LOCAL_ID++, fieldRef.getType());
+            Local argLocal = Jimple.v().newLocal("_$TU" + LOCAL_ID++, fieldRef.getType());
             body.getLocals().add((Local)argLocal);
             body.getUnits().add(Jimple.v().newAssignStmt(argLocal, fieldRef));
             args.add(argLocal);
@@ -318,7 +318,7 @@ public class CallBackModeling {
         Local trueReceiver = null;
         if (receiver instanceof SootField) {
 
-            trueReceiver = Jimple.v().newLocal("TU" + LOCAL_ID++, ((SootField)receiver).getType());
+            trueReceiver = Jimple.v().newLocal("_$TU" + LOCAL_ID++, ((SootField)receiver).getType());
             body.getLocals().add((Local)trueReceiver);
             body.getUnits().add(Jimple.v().newAssignStmt(trueReceiver, Jimple.v().newStaticFieldRef(((SootField)receiver).makeRef())));
         } else if (receiver instanceof Local) {
@@ -335,7 +335,7 @@ public class CallBackModeling {
         Type baseType = type.getArrayElementType();
 
         //create new array to local     
-        Local arrayLocal = Jimple.v().newLocal("TU" + LOCAL_ID++, type);
+        Local arrayLocal = Jimple.v().newLocal("_$TU" + LOCAL_ID++, type);
         body.getLocals().add(arrayLocal);
 
         if (type.numDimensions > 1) {
@@ -355,7 +355,7 @@ public class CallBackModeling {
         //get down to an element through the dimensions
         Local elementPtr = arrayLocal;
         while (((ArrayType)elementPtr.getType()).getElementType() instanceof ArrayType) {
-            Local currentLocal = Jimple.v().newLocal("TU" + LOCAL_ID++, ((ArrayType)elementPtr).getElementType());
+            Local currentLocal = Jimple.v().newLocal("_$TU" + LOCAL_ID++, ((ArrayType)elementPtr).getElementType());
             body.getUnits().add(Jimple.v().newAssignStmt(
                 currentLocal, 
                 Jimple.v().newArrayRef(elementPtr, IntConstant.v(0))));
@@ -396,7 +396,7 @@ public class CallBackModeling {
         }
 
         //if we got here, we found a class to instantiate, either the org or an implementor
-        Local argLocal = Jimple.v().newLocal("TU" + LOCAL_ID++, type);
+        Local argLocal = Jimple.v().newLocal("_$TU" + LOCAL_ID++, type);
         body.getLocals().add(argLocal);
 
         //add the call to the new object

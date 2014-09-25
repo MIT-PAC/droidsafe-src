@@ -46,7 +46,7 @@ import soot.ValueBox;
 public class JSAResultInjection extends BodyTransformer {
     private final static Logger logger = LoggerFactory.getLogger(JSAResultInjection.class);
     private static int LOCALID = 0;
-    public static final String LOCAL_PREFIX = "JSA_INJ_STRING_ARG";
+    public static final String LOCAL_PREFIX = "_$JSA_INJ_STRING_ARG";
     public static Map<InvokeExpr, Map<Integer, Value>> changesMade = new HashMap<InvokeExpr, Map<Integer, Value>>();
     /** Set of string constants that VA will track */
     public static Set<StringConstant> trackedStringConstants = new HashSet<StringConstant>();

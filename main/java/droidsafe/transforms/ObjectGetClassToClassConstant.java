@@ -43,7 +43,7 @@ public class ObjectGetClassToClassConstant extends BodyTransformer {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(ObjectGetClassToClassConstant.class);
     private static int LOCAL_ID = 0;
-    private static final String LOCAL_PREFIX = "OBJECTGETCLASS_TO_CLASSCONSTANT_LOCAL";
+    private static final String LOCAL_PREFIX = "_$OBJECTGETCLASS_TO_CLASSCONSTANT_LOCAL";
 
     /**
      * Call this pass on all modeld app classes in the project.

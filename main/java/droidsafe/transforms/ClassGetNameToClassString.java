@@ -39,7 +39,7 @@ import soot.util.Chain;
 
 public class ClassGetNameToClassString extends BodyTransformer {
     private static int LOCAL_ID = 0;
-    private static final String LOCAL_PREFIX = "CLASSGETNAME_TO_CLASSNAMESTR_LOCAL";
+    private static final String LOCAL_PREFIX = "_$CLASSGETNAME_TO_CLASSNAMESTR_LOCAL";
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(ClassGetNameToClassString.class);
     /**

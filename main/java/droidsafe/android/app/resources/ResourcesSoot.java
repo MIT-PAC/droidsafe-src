@@ -437,8 +437,8 @@ public class ResourcesSoot {
 
         // extract parameter
         mArgContext = 
-                //Jimple.v().newLocal("paramContext",  RefType.v("android.app.Activity"));
-                Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
+                //Jimple.v().newLocal("_$paramContext",  RefType.v("android.app.Activity"));
+                Jimple.v().newLocal("_$paramContext",  RefType.v("android.content.Context"));
         
         // android.content.Context paramActivity;
         mInitLayoutBody.getLocals().add(mArgContext);
@@ -604,7 +604,7 @@ public class ResourcesSoot {
         Chain<Unit> units = mInitLayoutBody.getUnits();
         
 
-        String viewLocalName = "viewLocal" + UNIQUE_ID;
+        String viewLocalName = "_$viewLocal" + UNIQUE_ID;
         Local viewLocal = Jimple.v().newLocal(viewLocalName, RefType.v("android.view.View"));
         mInitLayoutBody.getLocals().add(viewLocal);
 
@@ -619,7 +619,7 @@ public class ResourcesSoot {
         //need cast argument of init layout to type of the receiver of the onclick method...
         //add a local for the cast
         SootClass listenerClass = method.getDeclaringClass();
-        Local castLocal = Jimple.v().newLocal("castLocal" + UNIQUE_ID++ ,  RefType.v(listenerClass));
+        Local castLocal = Jimple.v().newLocal("_$castLocal" + UNIQUE_ID++ ,  RefType.v(listenerClass));
         mInitLayoutBody.getLocals().add(castLocal);
         
         Stmt castStmt = 
@@ -772,13 +772,13 @@ public class ResourcesSoot {
 
         // extract parameter
         Local argContext = 
-                Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
+                Jimple.v().newLocal("_$paramContext",  RefType.v("android.content.Context"));
 
         // android.content.Context paramActivity;
         body.getLocals().add(argContext);
 
         // local Argument for view
-        Local localView = Jimple.v().newLocal("localView",  returnType);
+        Local localView = Jimple.v().newLocal("_$localView",  returnType);
         body.getLocals().add(localView);
 
         // paramActivity = @paramter0
@@ -966,13 +966,13 @@ public class ResourcesSoot {
 
     	// extract parameter
     	Local argContext = 
-    			Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
+    			Jimple.v().newLocal("_$paramContext",  RefType.v("android.content.Context"));
 
     	// android.content.Context paramActivity;
     	body.getLocals().add(argContext);
 
     	// local Argument for view
-    	Local localFragment = Jimple.v().newLocal("localFragment",  returnType);
+    	Local localFragment = Jimple.v().newLocal("_$localFragment",  returnType);
     	body.getLocals().add(localFragment);
 
     	// paramActivity = @paramter0
@@ -1120,7 +1120,7 @@ public class ResourcesSoot {
     	Chain<Unit> units = body.getUnits();
 
     	// local Argument for view
-    	Local localString = Jimple.v().newLocal("localString",  returnType);
+    	Local localString = Jimple.v().newLocal("_$localString",  returnType);
     	body.getLocals().add(localString);
 
     	FieldRef  fieldRef = Jimple.v().newStaticFieldRef(sootField.makeRef());

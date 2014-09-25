@@ -34,7 +34,7 @@ import soot.util.Chain;
 public class LocalForStringConstantArguments extends BodyTransformer {
 	
 	private static int LOCALID = 0;
-	public static final String LOCAL_PREFIX = "DS_STRING_ARG";
+	public static final String LOCAL_PREFIX = "_$DS_STRING_ARG";
 
 	/**
 	 * Call this pass on all application classes in the project.

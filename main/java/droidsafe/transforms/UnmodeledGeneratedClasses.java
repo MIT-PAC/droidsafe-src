@@ -148,7 +148,7 @@ public class UnmodeledGeneratedClasses {
                 UNKNOWN_TAINT_METHOD_PREFIX + suffix + "()>");
 
         //add initialization code to dummy init method
-        Local local = Jimple.v().newLocal("UG" + localID++, type);
+        Local local = Jimple.v().newLocal("_$UG" + localID++, type);
         dummyInitBody.getLocals().add(local);
 
         //local = getTaint()
@@ -174,11 +174,11 @@ public class UnmodeledGeneratedClasses {
             return;
 
         //create a local for the field reference
-        Local dummyLocal = Jimple.v().newLocal("TU" + localID++, baseValue.getType());
+        Local dummyLocal = Jimple.v().newLocal("_$TU" + localID++, baseValue.getType());
         body.getLocals().add(dummyLocal);
 
         //create new array to local     
-        Local arrayLocal = Jimple.v().newLocal("TU" + localID++, type);
+        Local arrayLocal = Jimple.v().newLocal("_$TU" + localID++, type);
         body.getLocals().add(arrayLocal);
 
         if (type.numDimensions > 1) {
@@ -198,7 +198,7 @@ public class UnmodeledGeneratedClasses {
         //get down to an element through the dimensions
         Local elementPtr = arrayLocal;
         while (((ArrayType)elementPtr.getType()).getElementType() instanceof ArrayType) {
-            Local currentLocal = Jimple.v().newLocal("MULTIARRAY" + localID++, ((ArrayType)elementPtr).getElementType());
+            Local currentLocal = Jimple.v().newLocal("_$MULTIARRAY" + localID++, ((ArrayType)elementPtr).getElementType());
             addStmt(Jimple.v().newAssignStmt(
                 currentLocal, 
                 Jimple.v().newArrayRef(elementPtr, IntConstant.v(0))));
@@ -235,7 +235,7 @@ public class UnmodeledGeneratedClasses {
 
 
         //add initialization code to dummy init method
-        Local local = Jimple.v().newLocal("UG" + localID++, type);
+        Local local = Jimple.v().newLocal("_$UG" + localID++, type);
         dummyInitBody.getLocals().add(local);
 
         //local = new Clone()
@@ -293,7 +293,7 @@ public class UnmodeledGeneratedClasses {
             typeToAddedField.put(type, field);
 
         //add initialization code to dummy init method
-        Local local = Jimple.v().newLocal("UG" + localID++, type);
+        Local local = Jimple.v().newLocal("_$UG" + localID++, type);
         dummyInitBody.getLocals().add(local);
 
         //local = new Clone()
@@ -347,7 +347,7 @@ public class UnmodeledGeneratedClasses {
             init.setActiveBody(newBody);
 
             //get this, just return?
-            Local thisL = Jimple.v().newLocal("r0", clone.getType());
+            Local thisL = Jimple.v().newLocal("_$r0", clone.getType());
             newBody.getLocals().add(thisL);
             newBody.getUnits().add(Jimple.v().newIdentityStmt(thisL, Jimple.v().newThisRef(clone.getType())));
 

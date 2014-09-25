@@ -149,7 +149,7 @@ public class TransformsUtils {
             //for inner classes of components, we can use the field in the harness if it is of the right type
             //for the argument
             if (argType instanceof RefType && Harness.v().hasCreatedField(((RefType)argType).getSootClass())) {
-                Local tempLocal = Jimple.v().newLocal("inner_local" + uniqueID++, argType);
+                Local tempLocal = Jimple.v().newLocal("_$inner_local" + uniqueID++, argType);
                 body.getLocals().add(tempLocal);
                 stmts.add(Jimple.v().newAssignStmt(
                     tempLocal, 

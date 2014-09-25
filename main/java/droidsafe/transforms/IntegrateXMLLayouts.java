@@ -539,12 +539,12 @@ public class IntegrateXMLLayouts extends BodyTransformer {
         if (paramList == null)
             return;
 
-        String localStringName = String.format("%s%03d", "localString", localStringIndex++);
+        String localStringName = String.format("_$%s%03d", "localString", localStringIndex++);
 
         Local localString = Jimple.v().newLocal(localStringName,  RefType.v("java.lang.String"));
         stmtBody.getLocals().add(localString);
 
-        Local localCond = Jimple.v().newLocal("localCond",  BooleanType.v());
+        Local localCond = Jimple.v().newLocal("_$localCond",  BooleanType.v());
         stmtBody.getLocals().add(localCond);
 
         FieldRef fieldRef =  Jimple.v().newStaticFieldRef(
