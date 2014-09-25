@@ -18,16 +18,6 @@ import droidsafe.speclang.model.SecuritySpecModel;
  */
 public class InfoFlowSummaryTreeElementContentProvider extends SpecInfoTreeElementContentProvider {
 
-    @Override
-    public Object[] getElements(Object input) {
-        if (input instanceof SecuritySpecModel) {
-            SecuritySpecModel spec = (SecuritySpecModel) input;
-            this.fSpec = spec;
-            return getRootElements();
-        }
-        return NO_CHILDREN;
-    }
-
     /**
      * Populate the tree elements of the info flow outline view. Return the root elements.
      */
@@ -52,13 +42,6 @@ public class InfoFlowSummaryTreeElementContentProvider extends SpecInfoTreeEleme
             }
         }
         return roots.toArray();
-    }
-
-    /**
-     * Reset the content of this content provider.
-     */
-    @Override
-    protected void reset() {
     }
 
 }

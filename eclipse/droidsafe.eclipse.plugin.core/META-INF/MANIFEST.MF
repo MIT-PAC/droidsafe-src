@@ -1,4 +1,4 @@
-Manifest-Version: 1.0
+xManifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Core
 Bundle-SymbolicName: droidsafe.eclipse.plugin.core; singleton:=true
@@ -227,19 +227,6 @@ Export-Package: .,
  org.apache.commons.lang3.text.translate,
  org.apache.commons.lang3.time,
  org.apache.commons.lang3.tuple,
- org.jf.baksmali,
- org.jf.baksmali.Adaptors,
- org.jf.baksmali.Adaptors.EncodedValue,
- org.jf.baksmali.Adaptors.Format,
- org.jf.baksmali.Renderers,
- org.jf.dexlib,
- org.jf.dexlib.Code,
- org.jf.dexlib.Code.Analysis,
- org.jf.dexlib.Code.Format,
- org.jf.dexlib.Debug,
- org.jf.dexlib.EncodedValue,
- org.jf.dexlib.Util,
- org.jf.util,
  org.jgrapht,
  org.jgrapht.alg,
  org.jgrapht.alg.util,
@@ -427,5 +414,5 @@ Export-Package: .,
  soot.util.cfgcmd,
  soot.util.dot,
  soot.util.queue,
- soot.xml,
- test
+ soot.xml
+
