@@ -11,15 +11,15 @@ import java.util.concurrent.TimeUnit;
 public abstract interface GoogleApiClient
 {
 
-	public interface ConnectionCallbacks {
-		public static final int CAUSE_NETWORK_LOST = 2;
-		public static final int CAUSE_SERVICE_DISCONNECTED = 1;
-		public abstract void onConnected (Bundle connectionHint);
-		public abstract void onConnectionSuspended (int cause);
-	}
-	public interface OnConnectionFailedListener {
-		public abstract void onConnectionFailed (ConnectionResult result);
-	}
+    public interface ConnectionCallbacks {
+        public static final int CAUSE_NETWORK_LOST = 2;
+        public static final int CAUSE_SERVICE_DISCONNECTED = 1;
+        public abstract void onConnected (Bundle connectionHint);
+        public abstract void onConnectionSuspended (int cause);
+    }
+    public interface OnConnectionFailedListener {
+        public abstract void onConnectionFailed (ConnectionResult result);
+    }
 
     public abstract android.os.Looper getLooper();
 
@@ -50,4 +50,10 @@ public abstract interface GoogleApiClient
     public abstract boolean isConnectionFailedListenerRegistered(OnConnectionFailedListener  r0);
 
     public abstract void unregisterConnectionFailedListener(OnConnectionFailedListener  r0);
+
+    public class Builder {
+        public GoogleApiClient build() {
+            return new GoogleApiClientImpl();
+        }
+    }
 }

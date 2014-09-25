@@ -108,7 +108,7 @@ public static CameraPosition createFromAttributes(Context  r0, AttributeSet  r1)
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 12:12:25.532 -0400", hash_original_method = "256EF3E4C749D3A933929F700E1470A4", hash_generated_method = "DBB746D3407BE3A70F74167EE93872C6")
     
-CameraPosition(int  i0, LatLng  r1, float  f0, float  f1, float  f2)
+public CameraPosition(int  i0, LatLng  r1, float  f0, float  f1, float  f2)
     {
         this.xM = i0;
         this.target = r1;

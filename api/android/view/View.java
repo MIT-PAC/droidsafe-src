@@ -2112,7 +2112,7 @@ public View(Context context, AttributeSet attrs) {
     @DSVerified
     @DSSafe(DSCat.ANDROID_CALLBACK)
 	public void setOnClickListener(OnClickListener l){
-		l.onClick(this);
+        l.onClick(this);
         getListenerInfo().mOnClickListener = l;
 		// Original method
 		/*
@@ -2192,10 +2192,7 @@ public View(Context context, AttributeSet attrs) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    public boolean callOnClick(){
-		// Original method
-		/*
-		{
+    public boolean callOnClick() {        
         ListenerInfo li = mListenerInfo;
         if (li != null && li.mOnClickListener != null) {
             li.mOnClickListener.onClick(this);
@@ -2203,9 +2200,6 @@ public View(Context context, AttributeSet attrs) {
         }
         return false;
     }
-		*/
-		return false;
-	}
     
     @DSVerified
     @DSComment("Normal GUI")
