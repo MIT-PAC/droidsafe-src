@@ -5,10 +5,20 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Result;
 
 public abstract interface DriveApi
 {
-
+	public interface ContentsResult  extends Result{
+		abstract Contents	getContents();
+	}
+	public interface DriveIdResult extends Result{
+		abstract DriveId	getDriveId();
+	}
+	public interface MetadataBufferResult extends Result{
+		abstract MetadataBuffer	getMetadataBuffer();
+	}
+	
     public abstract com.google.android.gms.common.api.PendingResult query(com.google.android.gms.common.api.GoogleApiClient  r0, com.google.android.gms.drive.query.Query  r1);
 
     public abstract com.google.android.gms.common.api.PendingResult newContents(com.google.android.gms.common.api.GoogleApiClient  r0);

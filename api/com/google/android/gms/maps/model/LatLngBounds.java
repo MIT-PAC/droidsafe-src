@@ -6,15 +6,32 @@ import droidsafe.helpers.*;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import android.os.Parcel;
 
-public final class LatLngBounds implements com.google.android.gms.common.internal.safeparcel.SafeParcelable
+public class LatLngBounds implements com.google.android.gms.common.internal.safeparcel.SafeParcelable
 {
-/*	private class Builder() {
-		public Builder() {}
+	public static class Builder {
+
+		@DSSafe
+		public Builder() {
+			
+		}
+		@DSSafe
+		public LatLngBounds build () {
+			LatLng point = new LatLng(getTaintDouble(), getTaintDouble());
+			LatLngBounds bounds = new LatLngBounds(getTaintInt(), point, point);
+			return bounds;
+		}
+		
+		@DSSafe
+		public LatLngBounds.Builder include (LatLng point) {
+			addTaint(point.hashCode());
+			return this;
+		}
 	}
 
+    @DSSafe
     public static Builder builder() {
         return new Builder();
-    }*/
+    }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.309 -0400", hash_original_method = "0A4EF71171EB5932175D450A061F04A0", hash_generated_method = "5EDF17CAF6BC367F87FFD624799FFAF5")
     
