@@ -314,7 +314,7 @@ public String[] newArray(int size) {
     private Parcelable mValueParcelable;
     
     // orphaned legacy field
-    private Object mValueObject;
+    private static Object mValueObject;
     
     // orphaned legacy field
     private SparseBooleanArray mValueSparseBooleanArray;
@@ -428,13 +428,18 @@ public String[] newArray(int size) {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final byte[] marshall(){
 		//Formerly a native function
-		return mData;
-	}
+        byte[] ret = new byte[1];
+        ret[0] = (byte)this.getTaintInt();
+        ret.addTaint(this.getTaint());
+        return ret;
+    }
     
     public final void unmarshall(byte[] data, int offest, int length){
 		//Formerly a native function
 		//Return nothing
 		mData = data;
+                this.addTaint(data.getTaint());
+                this.addTaint(data[0]);
 	}
     
     public final void appendFrom(Parcel parcel, int offset, int length){
@@ -468,9 +473,10 @@ public String[] newArray(int size) {
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeByteArray(byte[] b){
-		mValueByteArray = b;
-		// Original method
-		/*
+        mValueByteArray = b;
+        this.addTaint(b.getTaint());
+        // Original method
+        /*
 		{
         writeByteArray(b, 0, (b != null) ? b.length : 0);
     }
@@ -479,10 +485,11 @@ public String[] newArray(int size) {
 	}
     
     public final void writeByteArray(byte[] b, int offset, int len){
-		mValueByteArray = b;
-		// Original method
-		/*
-		{
+        mValueByteArray = b;
+        this.addTaint(b.getTaint());
+        // Original method
+        /*
+          {
         if (b == null) {
             writeInt(-1);
             return;
@@ -497,8 +504,9 @@ public String[] newArray(int size) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private void writeNative(byte[] b, int offset, int len){
-		mValueByteArray = b;
-		//Formerly a native function
+        mValueByteArray = b;
+        this.addTaint(b.getTaint());
+        //Formerly a native function
 		//Return nothing
 	}
     
@@ -543,12 +551,13 @@ public String[] newArray(int size) {
 	}
     
     public final void writeCharSequence(CharSequence val){
-		mValueCharSequence = val;
-		// Original method
+        mValueCharSequence = val;
+        this.addTaint(val.getTaint());
+        // Original method
 		/*
-		{
-        TextUtils.writeToParcel(val, this, 0);
-    }
+                  {
+                  TextUtils.writeToParcel(val, this, 0);
+                  }
 		*/
 		//Return nothing
 	}
@@ -1321,14 +1330,15 @@ public String[] newArray(int size) {
 	}
     
     @DSComment("check any serialization")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    
+    @DSSafe(DSCat.DATA_STRUCTURE)    
     public final void writeValue(Object v){
-		mValueObject = v;
-		// Original method
-		/* Original Method Too Long, Refer to Original Implementation */
-		//Return nothing
-	}
+        mValueObject = v;
+        this.addTaint(v.getTaint());
+        ((Parcelable)v).writeToParcel(this, 0);
+        // Original method
+        /* Original Method Too Long, Refer to Original Implementation */
+        //Return nothing
+    }
     
     /** @hide */    
     public final void writeParcelableCreator(Parcelable p) {
@@ -2079,10 +2089,10 @@ public String[] newArray(int size) {
     @DSSpec(DSCat.REFLECTION)
     
     public final Object readValue(ClassLoader loader){
-		return mValueObject;
-		// Original method
-		/* Original Method Too Long, Refer to Original Implementation */
-	}
+        return mValueObject;
+        // Original method
+        /* Original Method Too Long, Refer to Original Implementation */
+    }
     
     @DSSpec(DSCat.REFLECTION)
     public final <T extends Parcelable> T readParcelable(ClassLoader loader) {

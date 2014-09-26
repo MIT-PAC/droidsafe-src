@@ -11,6 +11,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.RuntimeRemoteException;
+import com.google.android.gms.maps.model.LatLng;
 
 import android.os.RemoteException;
 import android.location.Location;
@@ -55,12 +56,12 @@ public interface OnMapLongClickListener {
 	}
 
 public interface OnMapClickListener {
-
+    public void onMapClick(LatLng point);
 	}
 
 public interface OnCameraChangeListener {
-
-	}
+    public void onCameraChange(CameraPosition position);
+}
 
 public interface CancelableCallback {
 
@@ -400,9 +401,9 @@ public final UiSettings getUiSettings() throws Throwable
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.394 -0400", hash_original_method = "6B1136EE4A01B1EBBA16144825A1F2C7", hash_generated_method = "93F585E27B515B557E4A581DA8FB3DB4")
     
-public final void setOnCameraChangeListener(GoogleMap.OnCameraChangeListener  r1)
+    public final void setOnCameraChangeListener(GoogleMap.OnCameraChangeListener  r1)
     {
-
+        r1.onCameraChange(new CameraPosition(0, new LatLng(0.0, 0.0), 0.0f, 0.0f, 0.0f));
        
     }
 
@@ -410,7 +411,7 @@ public final void setOnCameraChangeListener(GoogleMap.OnCameraChangeListener  r1
     
 public final void setOnMapClickListener(GoogleMap.OnMapClickListener  r1)
     {
-
+        r1.onMapClick(new LatLng(0.0, 0.0));
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.405 -0400", hash_original_method = "70141355058134C44B95A2B67BFE005F", hash_generated_method = "574B4B3F2B1B9886C7C7117BAF232ACF")

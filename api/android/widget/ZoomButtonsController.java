@@ -251,9 +251,11 @@ private FrameLayout createContainer() {
      * @param listener The listener that will be told to zoom.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.838 -0500", hash_original_method = "B44D483F6F47563C2A0666A9C41723E6", hash_generated_method = "4A7C2A82299214746000C268A032BAD4")
-    
-public void setOnZoomListener(OnZoomListener listener) {
+    @DSSafe
+    public void setOnZoomListener(OnZoomListener listener) {
         mCallback = listener;
+        listener.onVisibilityChanged(false);
+        listener.onZoom(false);
     }
 
     /**
@@ -536,11 +538,11 @@ public Container(Context context) {
     public interface OnZoomListener {
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified
         void onVisibilityChanged(boolean visible);
         
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSVerified        
         void onZoom(boolean zoomIn);
     }
 

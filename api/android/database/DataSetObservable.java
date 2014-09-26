@@ -52,8 +52,8 @@ public void notifyInvalidated() {
     // orphaned legacy method
     @Override
 	public void registerObserver(DataSetObserver observer) {
-		observer.onChanged();
-		observer.onInvalidated();
+        observer.onChanged();
+        observer.onInvalidated();
         mObservers.add(0, observer);
     }
     
