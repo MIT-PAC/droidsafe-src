@@ -81,6 +81,12 @@ public ConnectionResult(int  i0, PendingIntent  r1)
         CT = i0;
         mPendingIntent = r1;
     }
+    
+
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)
+    public ConnectionResult(DSOnlyType type) {
+    	
+    }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.418 -0400", hash_original_method = "028B8274BBC2718BC829EDDECF21C0E6", hash_generated_method = "BBFB693008C0E47BF79059FAF63F7BEA")
     

@@ -4,7 +4,11 @@ import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+
 import com.google.android.gms.common.ConnectionResult;
 import java.util.concurrent.TimeUnit;
 
@@ -50,4 +54,66 @@ public abstract interface GoogleApiClient
     public abstract boolean isConnectionFailedListenerRegistered(OnConnectionFailedListener  r0);
 
     public abstract void unregisterConnectionFailedListener(OnConnectionFailedListener  r0);
+    
+    public class Builder {
+    	
+    	GoogleApiClient client;
+    	public Builder() {
+    		client = new DroidsafeGoogleApiClient();
+    	}
+    	
+    	public GoogleApiClient build()  {
+    		return client;
+    	}
+
+    	
+   /* 	Builder addApi(Api<O> api, O options) {
+    	    return this;
+    	}*/
+
+    	public Builder addApi(Object api) {
+    		client.addTaint(api.getTaint());
+    	    return this;
+    	}
+
+    	public Builder addConnectionCallbacks(GoogleApiClient.ConnectionCallbacks listener) {
+    		client.registerConnectionCallbacks(listener);
+    	    return this;
+    	}
+
+    	public Builder addOnConnectionFailedListener(GoogleApiClient.OnConnectionFailedListener listener) {
+    		client.registerConnectionFailedListener(listener);
+    	    return this;
+    	}
+
+    	public Builder addScope(Scope scope) {
+    		client.addTaint(scope.eP().length());
+    	    return this;
+    	}
+
+    	public Builder enableAutoManage(FragmentActivity fragmentActivity, GoogleApiClient.OnConnectionFailedListener unresolvedConnectionFailedListener) {
+    		client.registerConnectionFailedListener(unresolvedConnectionFailedListener);
+    	    return this;
+    	}
+    	public Builder setAccountName(String accountName) {
+    		client.addTaint(accountName.getTaint());
+    	    return this;
+    	}
+    	public Builder setGravityForPopups(int gravityForPopups) {
+    		client.addTaint(gravityForPopups);
+    	    return this;
+    	}
+
+    	public Builder setHandler(Handler handler) {
+    	    return this;
+    	}
+
+    	public Builder setViewForPopups(View viewForPopups) {
+    	    return this;
+    	}
+
+    	public Builder useDefaultAccount() {
+    	    return this;
+    	}
+    }
 }
