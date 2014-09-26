@@ -110,14 +110,11 @@ import org.apache.commons.io.IOUtils;
 public class Tailer implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.542 -0400", hash_original_field = "725226EF0E8701AA984C45A48F6E7744", hash_generated_field = "25A43ED8FCAD6FC6197CB411C25B79C3")
 
-
     private static final int DEFAULT_DELAY_MILLIS = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.542 -0400", hash_original_field = "7A837E6F702D57E688BDB1C746400802", hash_generated_field = "1F30A13CE739B7AF28D6138EBA46FC76")
 
-
     private static final String RAF_MODE = "r";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.543 -0400", hash_original_field = "578731048DAF50D19374D7BF701F5369", hash_generated_field = "31C29F459B60D87A94E429FA9A8599CD")
-
 
     private static final int DEFAULT_BUFSIZE = 4096;
     
@@ -356,6 +353,7 @@ public long getDelay() {
     /**
      * Follows changes in the file, calling the TailerListener's handle method for each new line.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.557 -0400", hash_original_method = "FBA32DA5B44CA2DA8EFD603946A54B03", hash_generated_method = "0909D638497257790797F5B7F015DB0A")
     
 public void run() {

@@ -16,7 +16,7 @@ public class PkgUsageStats implements Parcelable {
 
     public static final Parcelable.Creator<PkgUsageStats> CREATOR
     = new Parcelable.Creator<PkgUsageStats>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.151 -0500", hash_original_method = "9DA264EB5F24BD17A24D60210BE6F57D", hash_generated_method = "9365278431C65FB576B7576BBF93445D")
         
 public PkgUsageStats createFromParcel(Parcel in) {

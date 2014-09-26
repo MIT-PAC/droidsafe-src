@@ -29,7 +29,8 @@ public final class Inet6Address extends InetAddress {
      * @throws UnknownHostException
      *             if the address is null or has an invalid length.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.041 -0500", hash_original_method = "3EBBCEDEC56E7AB88FDFBBA10A7277EC", hash_generated_method = "2738A3A2DB880FE1666B91390E102972")
     
 public static Inet6Address getByAddress(String host, byte[] addr, int scope_id)
@@ -62,7 +63,8 @@ public static Inet6Address getByAddress(String host, byte[] addr, int scope_id)
      *             the interface doesn't have a numeric scope id for the given
      *             address type.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.044 -0500", hash_original_method = "A49AD0F17226A2518E05AA9E7B3D7401", hash_generated_method = "67B4E32FD9EB6997BB0F70F75774D53B")
     
 public static Inet6Address getByAddress(String host, byte[] addr,

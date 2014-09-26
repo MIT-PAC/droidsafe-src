@@ -48,7 +48,6 @@ public class ScrollingTabContainerView extends HorizontalScrollView
         implements AdapterViewICS.OnItemClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.737 -0400", hash_original_field = "6C8728AD27930156AB8B4DB6BE524CA6", hash_generated_field = "8198E33AEA6A4E67CF498CFCEDA7ACFC")
 
-
     private static final String TAG = "ScrollingTabContainerView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.739 -0400", hash_original_field = "E682310941753B94BE1FECAC9286C6E9", hash_generated_field = "E682310941753B94BE1FECAC9286C6E9")
 
@@ -57,7 +56,6 @@ public class ScrollingTabContainerView extends HorizontalScrollView
 
     private TabClickListener mTabClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.743 -0400", hash_original_field = "117D0428E613CA4EEA398DB816A811C9", hash_generated_field = "E5144854D9186C0CFBAD4E1FE3ACCBAF")
-
 
     private LinearLayout mTabLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.745 -0400", hash_original_field = "ABA35B8DEAF6F6F3E525E90C0C888748", hash_generated_field = "27919755099CABF8038B2DC3252B547C")
@@ -68,10 +66,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView
     private boolean mAllowCollapse;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.749 -0400", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
 
-
     private  LayoutInflater mInflater;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.751 -0400", hash_original_field = "2536FBAA8D2459579C241F8EA3302AA1", hash_generated_field = "2536FBAA8D2459579C241F8EA3302AA1")
-
 
     int mMaxTabWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.753 -0400", hash_original_field = "F6922599AF8F8C01D9657DDBC0BBE90F", hash_generated_field = "F6922599AF8F8C01D9657DDBC0BBE90F")
@@ -101,6 +97,7 @@ public ScrollingTabContainerView(Context context) {
                 ViewGroup.LayoutParams.FILL_PARENT));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.764 -0400", hash_original_method = "D8A2A7EE17DA5B352BCD2933C7BEF96B", hash_generated_method = "7026A2EC3054AFDCA3747F830C7C11EA")
     
 @Override
@@ -238,6 +235,7 @@ private SpinnerICS createSpinner() {
         return spinner;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.785 -0400", hash_original_method = "A26981EA8AD814980954A4CEE1D4E712", hash_generated_method = "18A922A28641D403F4314435286B81BA")
     
 protected void onConfigurationChanged(Configuration newConfig) {
@@ -256,7 +254,8 @@ public void animateToTab(final int position) {
             removeCallbacks(mTabSelector);
         }
         mTabSelector = new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 final int scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
                 smoothScrollTo(scrollPos, 0);
                 mTabSelector = null;
@@ -265,6 +264,7 @@ public void animateToTab(final int position) {
         post(mTabSelector);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.794 -0400", hash_original_method = "887CFA274A392DE8385671362C9964CB", hash_generated_method = "076F7E6432360CBE28CEA2E9E2C26749")
     
 @Override
@@ -276,6 +276,7 @@ public void animateToTab(final int position) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.797 -0400", hash_original_method = "18C292ABA374873141A21AD02D4712CF", hash_generated_method = "6DAB4E72961212723D7393FA0190E981")
     
 @Override
@@ -417,6 +418,7 @@ public void removeAllTabs() {
             update();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -508,21 +510,28 @@ public void removeAllTabs() {
 
     private class TabAdapter extends BaseAdapter {
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getCount() {
             return mTabLayout.getChildCount();
         }
 
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getItem(int position) {
             return ((TabView) mTabLayout.getChildAt(position)).getTab();
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public long getItemId(int position) {
             return position;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
@@ -536,6 +545,7 @@ public void removeAllTabs() {
 
     private class TabClickListener implements OnClickListener {
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void onClick(View view) {
             TabView tabView = (TabView) view;
             tabView.getTab().select();

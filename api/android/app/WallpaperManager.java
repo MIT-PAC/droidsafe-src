@@ -476,7 +476,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.102 -0500", hash_original_method = "6EF98891DC00D446E5280E44B83BE80B", hash_generated_method = "A65311E361BA6DB95DA06BF61E62EE59")
         
 @Override
@@ -484,7 +485,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.104 -0500", hash_original_method = "BBAE54C669BC97BDF73F051E3161B7DC", hash_generated_method = "FB07992368D4A2B40B2DFAA6C014E0E3")
         
 @Override
@@ -492,7 +494,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.106 -0500", hash_original_method = "072B9683A9FDD22E6BC18017D9B8BE50", hash_generated_method = "DD3B2DE6389CE1500BF931787345BEFA")
         
 @Override
@@ -518,7 +521,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return mHeight;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.113 -0500", hash_original_method = "6C36D8FD6C4DA506CC2056E38D29BDE3", hash_generated_method = "47EC8A0025261E6AF82A087E108CE991")
         
 @Override
@@ -526,7 +530,8 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return mWidth;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.116 -0500", hash_original_method = "F7F1B37FEC841079758C9B817D6DD4F6", hash_generated_method = "8343B0F17FD22297CF3F42DBD8628A43")
         
 @Override
@@ -561,7 +566,8 @@ Globals(Looper looper) {
             IBinder b = ServiceManager.getService(Context.WALLPAPER_SERVICE);
             mService = IWallpaperManager.Stub.asInterface(b);
             mHandler = new Handler(looper) {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void handleMessage(Message msg) {
                     switch (msg.what) {
                         case MSG_CLEAR_WALLPAPER:
@@ -799,7 +805,8 @@ public void setWallpaperOffsets(IBinder windowToken, float xOffset, float yOffse
         final float fXOffset = xOffset;
         final float fYOffset = yOffset;
         sGlobals.getHandler().post(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 try {
                     //Log.v(TAG, "Sending new wallpaper offsets from app...");
                     ViewRootImpl.getWindowSession(mContext.getMainLooper()).setWallpaperPosition(

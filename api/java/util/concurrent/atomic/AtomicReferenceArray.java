@@ -28,7 +28,6 @@ public class AtomicReferenceArray<E> implements java.io.Serializable {
     private static final long serialVersionUID = -6209656149925076980L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.154 -0400", hash_original_field = "91F4A6B1206F96A8BDFE7DC44D2205A8", hash_generated_field = "961DD659829096B383EAE5A26558643E")
 
-
     private static  Unsafe unsafe;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.155 -0400", hash_original_field = "E557BC1AC704FEEC83B0EF5D1FA054AB", hash_generated_field = "0477195552D30BC41410E5A72A139DE5")
 
@@ -218,6 +217,7 @@ public final boolean weakCompareAndSet(int i, E expect, E update) {
      * Returns the String representation of the current values of array.
      * @return the String representation of the current values of array
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.163 -0400", hash_original_method = "3492963B9799FA768D7650AC10A0F976", hash_generated_method = "05FA181A353EB1D2A8C6F63EB83AD424")
     
 public String toString() {

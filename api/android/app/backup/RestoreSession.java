@@ -187,7 +187,8 @@ public int restorePackage(String packageName, RestoreObserver observer) {
         
 RestoreObserverWrapper(Context context, RestoreObserver appObserver) {
             mHandler = new Handler(context.getMainLooper()) {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void handleMessage(Message msg) {
                     switch (msg.what) {
                     case MSG_RESTORE_STARTING:

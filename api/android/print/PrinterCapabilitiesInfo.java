@@ -45,7 +45,6 @@ public final class PrinterCapabilitiesInfo implements Parcelable {
     public static final int DEFAULT_UNDEFINED = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.663 -0400", hash_original_field = "D3BB328B79546F00CAA7B7B172799950", hash_generated_field = "C35DCEE9A703EA15037E1493174739D6")
 
-
     private static final int PROPERTY_MEDIA_SIZE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.664 -0400", hash_original_field = "331F9C961E06F15DF4F7CE892CFD8278", hash_generated_field = "06AC2CF275E0A5FA1D206F37F0EABB8B")
 
@@ -58,13 +57,12 @@ public final class PrinterCapabilitiesInfo implements Parcelable {
     private static final int PROPERTY_COUNT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.667 -0400", hash_original_field = "136AA0BD562114C86FDDCBE567EED048", hash_generated_field = "8F5AA93191EF40D19F781D0FC42918E3")
 
-
     private static final Margins DEFAULT_MARGINS = new Margins(0,  0,  0,  0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.709 -0400", hash_original_field = "649B01D06AC443C7C21AE584A8AEE182", hash_generated_field = "281B277F0AE2D24C19B75B84622ED63A")
 
-
     public static final Parcelable.Creator<PrinterCapabilitiesInfo> CREATOR =
             new Parcelable.Creator<PrinterCapabilitiesInfo>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public PrinterCapabilitiesInfo createFromParcel(Parcel parcel) {
             return new PrinterCapabilitiesInfo(parcel);
@@ -77,7 +75,6 @@ public final class PrinterCapabilitiesInfo implements Parcelable {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.668 -0400", hash_original_field = "50DC960BA53A486C445B2CE30CB30B1F", hash_generated_field = "F8A2F5706C56FEE25DCBA3C51B1F2285")
 
-
     private Margins mMinMargins = DEFAULT_MARGINS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.668 -0400", hash_original_field = "63D61E1A91D71FEAE4EA788A6AC4B01B", hash_generated_field = "17DCFB7B9C8EE0AE2398B57EC4578544")
 
@@ -87,10 +84,8 @@ public final class PrinterCapabilitiesInfo implements Parcelable {
     private List<Resolution> mResolutions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.670 -0400", hash_original_field = "F2B4942F18C9C52AFD18681D816170E3", hash_generated_field = "218529E0A1A5714B4B3704D3CA749B93")
 
-
     private int mColorModes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.671 -0400", hash_original_field = "E2F9A7EF349300BD2E23FFF1A8CB6275", hash_generated_field = "C440BB2FAC897E2AAD750875FC59A383")
-
 
     private final int[] mDefaults = new int[PROPERTY_COUNT];
 
@@ -264,6 +259,7 @@ public PrintAttributes getDefaults() {
         writeDefaults(parcel);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.683 -0400", hash_original_method = "E0FE5288294E6EEB587DA5B669808851", hash_generated_method = "0847A631963B7906A1A45162E62512E5")
     
 @Override
@@ -322,6 +318,7 @@ public PrintAttributes getDefaults() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.685 -0400", hash_original_method = "68D75E252DA482DD6C9F15FEE10994B3", hash_generated_method = "D69C0CCBA87944DA8C9D5855080283B8")
     
 @Override

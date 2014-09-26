@@ -168,7 +168,7 @@ public void addRow(Iterable<?> columnValues) {
     /** Optimization for {@link ArrayList}. */
     @DSSink({DSSinkKind.DATABASE})
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.753 -0500", hash_original_method = "F5D0F3FA334A37A2680A290D6DEEBDBE", hash_generated_method = "4542ED27461748289DDD7AF553420831")
     
 private void addRow(ArrayList<?> columnValues, int start) {
@@ -204,6 +204,7 @@ private void ensureCapacity(int size) {
 
     // AbstractCursor implementation.
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSSafe(DSCat.DB_CURSOR)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.771 -0500", hash_original_method = "3C738FD66B9E4F046395F2884F1D431C", hash_generated_method = "BD4A1874539187257611830A3697A34B")
@@ -279,6 +280,7 @@ private void ensureCapacity(int size) {
         return Float.parseFloat(value.toString());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.789 -0500", hash_original_method = "C2298AFC87949D13E5DEC28EBEE5D1A6", hash_generated_method = "FFFC7AAB2B4B38FEADFBD27BD10D8573")
     

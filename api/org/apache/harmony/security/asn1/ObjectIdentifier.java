@@ -49,6 +49,7 @@ public static void validate(int[] oid) {
      * @param oid oid as array of integers
      * @return oid string representation
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.418 -0500", hash_original_method = "537E0E62A536665037DE9BF93DCC6BC4", hash_generated_method = "18FE2AF03DA7E415BB218E6E82E80DAF")
     
 public static String toString(int[] oid) {

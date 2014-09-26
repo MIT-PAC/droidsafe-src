@@ -489,7 +489,7 @@ public void setColor(int argb) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.642 -0500", hash_original_method = "3865DA4989774EEF9AAAD48E0098B1D2", hash_generated_method = "5B7992AAC4E5AF1260016B3CFFEBE3C4")
     
 @Override
@@ -721,6 +721,7 @@ public GradientState(GradientState state) {
             mUseLevelForShape = state.mUseLevelForShape;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.755 -0500", hash_original_method = "995801C56CB4C9E6715A12BAA40CCB03", hash_generated_method = "A97C7C74298F43EFE33F7369581FC02E")
         
 @Override
@@ -728,6 +729,7 @@ public GradientState(GradientState state) {
             return new GradientDrawable(this);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.757 -0500", hash_original_method = "C54DA0CD853A4A5864DFD734D15AF82F", hash_generated_method = "68E4CB023758AD54FB8AD42A05F8FE26")
         
 @Override

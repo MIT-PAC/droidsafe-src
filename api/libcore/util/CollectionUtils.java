@@ -16,6 +16,7 @@ public final class CollectionUtils {
             final Iterable<? extends Reference<T>> iterable, final boolean trim) {
         return new Iterable<T>() {
             
+        @DSSafe(DSCat.SAFE_LIST)
         public Iterator<T> iterator() {
                 return new Iterator<T>() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.088 -0500", hash_original_field = "FC1841E2B61E0112C65F1A7B40112CCF", hash_generated_field = "BA3AF217822442F4EBB0D4F80E08231E")
@@ -42,14 +43,16 @@ private void computeNext() {
                         }
                     }
 
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.101 -0500", hash_original_method = "F98C6B6D707EE7EA3A5FD2D39F4A0387", hash_generated_method = "549F51A1F66C51FA06F9B2518887C403")
+                    @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.101 -0500", hash_original_method = "F98C6B6D707EE7EA3A5FD2D39F4A0387", hash_generated_method = "549F51A1F66C51FA06F9B2518887C403")
                     
 @Override public boolean hasNext() {
                         computeNext();
                         return next != null;
                     }
 
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.105 -0500", hash_original_method = "F120D99BE5EA300D8BF38607156FC87D", hash_generated_method = "C18C10D62F3F060AD23759D819CE225C")
+                    @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.105 -0500", hash_original_method = "F120D99BE5EA300D8BF38607156FC87D", hash_generated_method = "C18C10D62F3F060AD23759D819CE225C")
                     
 @Override public T next() {
                         if (!hasNext()) {
@@ -61,7 +64,8 @@ private void computeNext() {
                         return result;
                     }
 
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.108 -0500", hash_original_method = "8B1109B1635017616160F426171DA3AB", hash_generated_method = "146A4B3FE5B45281653375C39EBC7B3B")
+                    @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.108 -0500", hash_original_method = "8B1109B1635017616160F426171DA3AB", hash_generated_method = "146A4B3FE5B45281653375C39EBC7B3B")
                     
 public void remove() {
                         if (!removeIsOkay) {

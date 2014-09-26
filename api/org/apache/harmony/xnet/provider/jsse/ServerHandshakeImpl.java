@@ -98,7 +98,8 @@ public ServerHandshakeImpl(Object owner) {
                     clientHello = new ClientHello(io_stream, length);
                     if (nonBlocking) {
                         delegatedTasks.add(new DelegatedTask(new Runnable() {
-                            public void run() {
+                            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                                 processClientHello();
                             }
                         }, this));
@@ -280,7 +281,8 @@ public ServerHandshakeImpl(Object owner) {
         }
         if (nonBlocking) {
             delegatedTasks.add(new DelegatedTask(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     processClientHello();
                 }
             }, this));

@@ -51,6 +51,7 @@ ReadWriteCharArrayBuffer(int capacity, char[] backingArray, int arrayOffset) {
         return ReadOnlyCharArrayBuffer.copy(this, mark);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.347 -0500", hash_original_method = "2217DC8E6F603B0A8DFB635A1BB06CA2", hash_generated_method = "A384CF902E4B326ED56400E801949F58")
     
 @Override
@@ -97,6 +98,7 @@ ReadWriteCharArrayBuffer(int capacity, char[] backingArray, int arrayOffset) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.363 -0500", hash_original_method = "BCF668C88F0582882A83FAE19696C98E", hash_generated_method = "7841DFE415A6552F6BA4458198795D74")
     
 @Override
@@ -108,6 +110,7 @@ ReadWriteCharArrayBuffer(int capacity, char[] backingArray, int arrayOffset) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.366 -0500", hash_original_method = "F160357793F9CF9C4361A956C61F810C", hash_generated_method = "D4B29BD55D7A81312740471590A7A500")
     
 @Override
@@ -117,6 +120,7 @@ ReadWriteCharArrayBuffer(int capacity, char[] backingArray, int arrayOffset) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.368 -0500", hash_original_method = "F185C844C40257FD948EFFAB7DA8DE68", hash_generated_method = "2ACAF97679BA1AC3D367345879FBD016")
     
 @Override

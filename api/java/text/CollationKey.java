@@ -26,7 +26,7 @@ protected CollationKey(String source) {
      *         0 if they are equal, and a positive value if this key is greater.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.375 -0500", hash_original_method = "5A8B3826F27E8A10E70456EFF51F7B67", hash_generated_method = "34BE21858DBE7BB60BBE664DFC1749FC")
     
 public abstract int compareTo(CollationKey value);

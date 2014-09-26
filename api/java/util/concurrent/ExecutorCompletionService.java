@@ -126,7 +126,7 @@ public Future<V> poll() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.906 -0500", hash_original_method = "68AEBC19C67278ADE553BA09F2BB4BEF", hash_generated_method = "4655BA2D85B4680614476EFDFD4C736E")
     
 public Future<V> poll(long timeout, TimeUnit unit)

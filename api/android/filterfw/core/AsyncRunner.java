@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -41,7 +40,6 @@ public class AsyncRunner extends GraphRunner{
     private static final String TAG = "AsyncRunner";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.633 -0400", hash_original_field = "CC7C0C73B928C6CD62A5EF51B03D8C6A", hash_generated_field = "FD56A1A6211A7C5652D79B0AAAA88DB8")
 
-
     private Class mSchedulerClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.635 -0400", hash_original_field = "BF989F77FF090E43D1DD90910FE127A1", hash_generated_field = "4343DE4F1BCA89FA7B80F45EBBAF4443")
 
@@ -50,7 +48,6 @@ public class AsyncRunner extends GraphRunner{
 
     private AsyncRunnerTask mRunTask;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.640 -0400", hash_original_field = "5B97082E651D81471A94CB54B84B394E", hash_generated_field = "CDF2536C86261609BFE83C9B86A879BD")
-
 
     private OnRunnerDoneListener mDoneListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.642 -0400", hash_original_field = "52F2522BA59091C98823784EDD890AB3", hash_generated_field = "34776D80EC9C43CCF24E6A848BB10793")
@@ -68,7 +65,6 @@ public class AsyncRunner extends GraphRunner{
 
     private class AsyncRunnerTask extends AsyncTask<SyncRunner, Void, RunnerResult> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.658 -0400", hash_original_field = "7CAA8BFA98595C34EDAC140C36D468A0", hash_generated_field = "1A82A68E23324092FF0198CD8362236E")
-
 
         private static final String TAG = "AsyncRunnerTask";
 
@@ -133,6 +129,7 @@ public class AsyncRunner extends GraphRunner{
             onPostExecute(result);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.667 -0400", hash_original_method = "1CEBB715383E1C3C897096B710CEC649", hash_generated_method = "EE56C2E3221CCEA63062B47122AEEB8D")
         
 @Override
@@ -163,10 +160,8 @@ public class AsyncRunner extends GraphRunner{
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.645 -0400", hash_original_field = "83551CA4879D7FA8FF1D696543D03AD9", hash_generated_field = "F0738F68529E2EE5F73E9EE1D09D9DE1")
 
-
     private Exception mException;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:58.674 -0400", hash_original_field = "CCFB9E24DC58F9E64BC75A559E0C33FC", hash_generated_field = "29542B7EA5B26DA8ADF116C9866AA3F1")
-
 
     private boolean mLogVerbose;
 

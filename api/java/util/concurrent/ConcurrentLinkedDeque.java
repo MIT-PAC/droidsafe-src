@@ -71,14 +71,11 @@ public class ConcurrentLinkedDeque<E>
     implements Deque<E>, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:24.984 -0400", hash_original_field = "D4754C466E323241A04755DA938EB9AF", hash_generated_field = "5F23BECC14072AFC76D2F21910086550")
 
-
     private static final long serialVersionUID = 876323262645176354L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:24.986 -0400", hash_original_field = "8D7FC8569190133A5B78DA5CA08B0A86", hash_generated_field = "A3CDEE7D4EFB61C1D7E5ACE1E53951AA")
 
-
     private static  Node<Object> PREV_TERMINATOR, NEXT_TERMINATOR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:24.995 -0400", hash_original_field = "387B9E0FE8FF78244918DB1453F12C82", hash_generated_field = "CD9F62AAEF9CDAE92791F9B9FF131299")
-
 
     private static final int HOPS = 2;
 
@@ -97,7 +94,6 @@ private static void checkNotNull(Object v) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.028 -0400", hash_original_field = "8D6DE690AED35F26F78C7E63CD3F73E7", hash_generated_field = "E7ED6ED2850DA758D244111BA43A3B2F")
 
-
     private static  sun.misc.Unsafe UNSAFE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.029 -0400", hash_original_field = "3706253715619D88D23853C13B9CE0EE", hash_generated_field = "97CE09A29DB2EB713A48E047121081EE")
 
@@ -105,7 +101,6 @@ private static void checkNotNull(Object v) {
 
     static final class Node<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:24.991 -0400", hash_original_field = "8D6DE690AED35F26F78C7E63CD3F73E7", hash_generated_field = "E7ED6ED2850DA758D244111BA43A3B2F")
-
 
         private static  sun.misc.Unsafe UNSAFE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:24.991 -0400", hash_original_field = "06C8F0D8DBE6F0658533D6562E958514", hash_generated_field = "5E317D3F462324E05850BA092BD3C721")
@@ -773,6 +768,7 @@ private void initHeadTail(Node<E> h, Node<E> t) {
      *
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.006 -0400", hash_original_method = "4AD19758DF6B2A3AC237465E3E2B86CE", hash_generated_method = "F83A247B6E9683C0B4E713E421EDE334")
     
 public void addFirst(E e) {
@@ -788,6 +784,7 @@ public void addFirst(E e) {
      *
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.007 -0400", hash_original_method = "DEF460A3CCF8B7639D9808700B3189CB", hash_generated_method = "2C0C1B35A3E69E2FBA1D173DF21358E3")
     
 public void addLast(E e) {
@@ -801,6 +798,7 @@ public void addLast(E e) {
      * @return {@code true} (as specified by {@link Deque#offerFirst})
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.007 -0400", hash_original_method = "A4FDEF891EFA8A72A61F4298E3B5A244", hash_generated_method = "C21F983696C3B21BD9D0CA9E97E45E50")
     
 public boolean offerFirst(E e) {
@@ -817,6 +815,7 @@ public boolean offerFirst(E e) {
      * @return {@code true} (as specified by {@link Deque#offerLast})
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.007 -0400", hash_original_method = "CC1242A3FA0B11229838DFFD334BF8FF", hash_generated_method = "EF9DB2AB801F8091A06AA6892071188F")
     
 public boolean offerLast(E e) {
@@ -824,6 +823,7 @@ public boolean offerLast(E e) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.008 -0400", hash_original_method = "0B90CFDA0514766B0EF025B49FC521F5", hash_generated_method = "8A1B9FB1A3A9F6D028EE82E372DE5FE5")
     
 public E peekFirst() {
@@ -835,6 +835,7 @@ public E peekFirst() {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.008 -0400", hash_original_method = "2D056939FE0588456FC2FCFF59292124", hash_generated_method = "379F601FB009AD2A30B37F73A85042A9")
     
 public E peekLast() {
@@ -849,6 +850,7 @@ public E peekLast() {
     /**
      * @throws NoSuchElementException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.009 -0400", hash_original_method = "8C1F9F3F56ECE202FFD32A8051093FAC", hash_generated_method = "E93DB8E2FB3A0F07AB3A0BCA254232AB")
     
 public E getFirst() {
@@ -858,12 +860,14 @@ public E getFirst() {
     /**
      * @throws NoSuchElementException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.009 -0400", hash_original_method = "0E51C7B53A1640045B8ADBD5402D314B", hash_generated_method = "75A8BFDA3208109C6FDAB237DD906E1E")
     
 public E getLast() {
         return screenNullResult(peekLast());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.010 -0400", hash_original_method = "9D090BA47BD4FEA6EA2B2E7B2149FB7B", hash_generated_method = "2E0835C907308A36BE5B0E185C521D7B")
     
 public E pollFirst() {
@@ -877,6 +881,7 @@ public E pollFirst() {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.010 -0400", hash_original_method = "DA9066D6D7BF4AC9DEFC80DC4CD497C3", hash_generated_method = "9BD75066A28B5A04FA01988B0142558A")
     
 public E pollLast() {
@@ -893,6 +898,7 @@ public E pollLast() {
     /**
      * @throws NoSuchElementException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.010 -0400", hash_original_method = "CEC762D7230FDAEB46B53BF38148B624", hash_generated_method = "8D37796ABFD95DA23C27C16E0DBC2394")
     
 public E removeFirst() {
@@ -902,6 +908,7 @@ public E removeFirst() {
     /**
      * @throws NoSuchElementException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.011 -0400", hash_original_method = "6ACF88777D39C6D51F6155BE71F73C1B", hash_generated_method = "185FDF06D2ECA91BA67D5AC29635848C")
     
 public E removeLast() {
@@ -917,6 +924,7 @@ public E removeLast() {
      * @return {@code true} (as specified by {@link Queue#offer})
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.011 -0400", hash_original_method = "90158A89D183AFC9420F99CD4C19A119", hash_generated_method = "326965DBCAC0F913D90C3A41623502D9")
     
 public boolean offer(E e) {
@@ -931,27 +939,34 @@ public boolean offer(E e) {
      * @return {@code true} (as specified by {@link Collection#add})
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.011 -0400", hash_original_method = "E35EE9CFE1BDA07918F74C272B25B9BD", hash_generated_method = "FBF3026FC74B2067E81E344BA69DD10B")
     
 public boolean add(E e) {
         return offerLast(e);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.012 -0400", hash_original_method = "D6F4991F5239518842015971CA437CF0", hash_generated_method = "D92F2CAF590F842165119B6D24004B40")
     
 public E poll()           { return pollFirst(); }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.012 -0400", hash_original_method = "5200E72EC4A7AF0A97DAC56CA915551B", hash_generated_method = "E7EA57F8F5A1DC7F659D2407501F5651")
     
 public E remove()         { return removeFirst(); }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.012 -0400", hash_original_method = "A003E27ECA2FE3193555598EEC98E09D", hash_generated_method = "C49BD63C2CFF13F7E18F5863A21DF3DB")
     
 public E peek()           { return peekFirst(); }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.013 -0400", hash_original_method = "C3B5A6F3A12E32CB352921DD8911C7F3", hash_generated_method = "BC6239B4A9B6D00FE072E062B112C82B")
     
 public E element()        { return getFirst(); }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.013 -0400", hash_original_method = "848DD27BB905F5A807C52ED75E19F6C3", hash_generated_method = "57FDC65A59ACBA2985AC790990989FF0")
     
 public void push(E e)     { addFirst(e); }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.013 -0400", hash_original_method = "158DA4E81D3B40D802055686181E6101", hash_generated_method = "58A444C456B794DA9A4C54CC4CC88A2E")
     
 public E pop()            { return removeFirst(); }
@@ -965,6 +980,7 @@ public E pop()            { return removeFirst(); }
      * @return {@code true} if the deque contained the specified element
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.014 -0400", hash_original_method = "444EB81A4F2503FCBB7C579E34553CBB", hash_generated_method = "BC2D5E978C7EAE0B2C32C6BF29B2A4B0")
     
 public boolean removeFirstOccurrence(Object o) {
@@ -988,6 +1004,7 @@ public boolean removeFirstOccurrence(Object o) {
      * @return {@code true} if the deque contained the specified element
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.014 -0400", hash_original_method = "C342F47BF3C0488111C07445849F0CFB", hash_generated_method = "899A2D2923F0344289A214D3176AA327")
     
 public boolean removeLastOccurrence(Object o) {
@@ -1009,6 +1026,7 @@ public boolean removeLastOccurrence(Object o) {
      * @param o element whose presence in this deque is to be tested
      * @return {@code true} if this deque contains the specified element
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.015 -0400", hash_original_method = "D3CFD955C2206E78AC2D6D0AA96542FF", hash_generated_method = "A8666B247011B410F30626CB4D5504E0")
     
 public boolean contains(Object o) {
@@ -1026,6 +1044,7 @@ public boolean contains(Object o) {
      *
      * @return {@code true} if this collection contains no elements
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.015 -0400", hash_original_method = "ACCC40E4FBCB32455415F81D0DCE4796", hash_generated_method = "56AA37296C327B7EF10B78651FCD4F69")
     
 public boolean isEmpty() {
@@ -1048,6 +1067,7 @@ public boolean isEmpty() {
      *
      * @return the number of elements in this deque
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.016 -0400", hash_original_method = "8378A4BA724609F4EE8D701FE95A4146", hash_generated_method = "B3986D8D35FCEA705CE19E049D534B6B")
     
 public int size() {
@@ -1069,6 +1089,7 @@ public int size() {
      * @return {@code true} if the deque contained the specified element
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.016 -0400", hash_original_method = "953726349F424E37042C19BD0C0A52B8", hash_generated_method = "67436633CF4F0B184E774FE8B1646BF7")
     
 public boolean remove(Object o) {
@@ -1087,6 +1108,7 @@ public boolean remove(Object o) {
      *         of its elements are null
      * @throws IllegalArgumentException if the collection is this deque
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.017 -0400", hash_original_method = "A2F8B4D3DAADBF23E2A6305783505AF2", hash_generated_method = "70123E3DD4C07DE87E99BA2FB987C89D")
     
 public boolean addAll(Collection<? extends E> c) {
@@ -1144,6 +1166,7 @@ public boolean addAll(Collection<? extends E> c) {
     /**
      * Removes all of the elements from this deque.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.018 -0400", hash_original_method = "8EE94FDA63B4083FC2600AD6758E669F", hash_generated_method = "AF2B4F810AF86F02C00AE95FEC8D0BF9")
     
 public void clear() {
@@ -1164,6 +1187,7 @@ public void clear() {
      *
      * @return an array containing all of the elements in this deque
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.018 -0400", hash_original_method = "99EB967DBE69EBFC4522C9287A4F72BD", hash_generated_method = "4B70183C58BB1935749D0D5AC0DFFE66")
     
 public Object[] toArray() {
@@ -1220,12 +1244,14 @@ private void advance() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.022 -0400", hash_original_method = "C7E0F4F8C5C8A8D55EBC0AC6D94C35A4", hash_generated_method = "6C435BA16F6A89C535895253E46AB965")
         
 public boolean hasNext() {
             return nextItem != null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.023 -0400", hash_original_method = "6A4EB79162CB5BAD609CBFF8A90DB7AD", hash_generated_method = "297BA7321C28397AB485143754EF45E2")
         
 public E next() {
@@ -1235,6 +1261,7 @@ public E next() {
             return item;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.023 -0400", hash_original_method = "9B0791C66CE76C3D1F244FB1435DE96B", hash_generated_method = "36555A0431D4ECA6893B0E0C69D2E299")
         
 public void remove() {
@@ -1303,6 +1330,7 @@ Node<E> nextNode(Node<E> p) { return pred(p); }
      *         this deque
      * @throws NullPointerException if the specified array is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public <T> T[] toArray(T[] a) {
         return toArrayList().toArray(a);
     }
@@ -1320,6 +1348,7 @@ Node<E> nextNode(Node<E> p) { return pred(p); }
      *
      * @return an iterator over the elements in this deque in proper sequence
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.019 -0400", hash_original_method = "756A0449DBEE27B15290EF9912B6D98E", hash_generated_method = "B0FB44010E28764F5FA2B4AB0E8E15C1")
     
 public Iterator<E> iterator() {
@@ -1340,6 +1369,7 @@ public Iterator<E> iterator() {
      *
      * @return an iterator over the elements in this deque in reverse order
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:25.019 -0400", hash_original_method = "E2FFEA86BDF1CF0D788CD9C05CB28749", hash_generated_method = "D7F10C1829A3BC2581C201228B7412A7")
     
 public Iterator<E> descendingIterator() {

@@ -772,7 +772,8 @@ private void warn(String methodName) {
                   "Thread.setContextClassLoader(getClass().getClassLoader());");
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSpec(DSCat.SPEC_OTHERS)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.727 -0500", hash_original_method = "55A2C8B568742F6DD554B2AE8E06F675", hash_generated_method = "8BDA593388D375AFBD51C9221A43EB03")
         
 @Override public URL getResource(String resName) {
@@ -788,7 +789,8 @@ private void warn(String methodName) {
             return getParent().getResources(resName);
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSpec(DSCat.SPEC_OTHERS)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.732 -0500", hash_original_method = "43C39FB9AB0F69E37F9176951B93B129", hash_generated_method = "1288CA50B3EDCE616E702D0DA3B2CBB0")
         
 @Override public InputStream getResourceAsStream(String resName) {
@@ -1037,7 +1039,7 @@ public Args(Intent intent, int resultCode, String resultData, Bundle resultExtra
                 mOrdered = ordered;
             }
             
-            @DSSpec(DSCat.THREADING)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.823 -0500", hash_original_method = "55098A9F5CE8E783F44DA889D3A217EF", hash_generated_method = "BBDF4C0C1503961E0426939D642043D3")
             
 public void run() {
@@ -1382,7 +1384,7 @@ RunConnection(ComponentName name, IBinder service, int command) {
                 mCommand = command;
             }
 
-            @DSSpec(DSCat.THREADING)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.940 -0500", hash_original_method = "52DC970C8C1C8CA46B980F1341D6E54B", hash_generated_method = "E07D212A989D7BD66C5C2C3829FACD48")
             
 public void run() {

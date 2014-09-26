@@ -107,6 +107,7 @@ public void onObbResult(String filename, int nonce, int status)
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.811 -0500", hash_original_method = "9539FE731056E0FF2462D4372775357D", hash_generated_method = "C03C803BEF78164EE0C2E0815119446A")
         
 @Override

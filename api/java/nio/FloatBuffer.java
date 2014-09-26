@@ -140,6 +140,7 @@ public abstract FloatBuffer compact();
      * @exception ClassCastException
      *                if {@code otherBuffer} is not a float buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.901 -0500", hash_original_method = "255AC25FE0773812484072E75724705E", hash_generated_method = "C1CC1091457C3214DAF5CA5AF7A7D860")
     
 public int compareTo(FloatBuffer otherBuffer) {

@@ -30,7 +30,7 @@ public abstract class ResourceBundle {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.230 -0500", hash_original_method = "255590496454807E7D85BE3C53A0967E", hash_generated_method = "61CA38109D3BF90DCB66AE6B7CA98079")
     
 public static ResourceBundle getBundle(String bundleName) throws MissingResourceException {
@@ -55,7 +55,7 @@ public static ResourceBundle getBundle(String bundleName) throws MissingResource
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.233 -0500", hash_original_method = "04CC2E12096D8B439249FDE366F3564E", hash_generated_method = "462C3465B2894C59D0D7298104991FD4")
     
 public static ResourceBundle getBundle(String bundleName, Locale locale) {
@@ -117,7 +117,7 @@ public static ResourceBundle getBundle(String bundleName, Locale locale) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.237 -0500", hash_original_method = "707AE527CA40E5BB5EF1C5E52774D069", hash_generated_method = "24872AF2D206003D769F00C7DF80C5E7")
     
 public static ResourceBundle getBundle(String bundleName, Locale locale,
@@ -163,6 +163,7 @@ private static MissingResourceException missingResourceException(String classNam
      *
      * @since 1.6
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.242 -0500", hash_original_method = "4F66A59C0DE7297F0E81661806EEDC63", hash_generated_method = "0710F52CB84499C459DDDB6E567DE685")
     
 public static ResourceBundle getBundle(String baseName, ResourceBundle.Control control) {
@@ -182,6 +183,7 @@ public static ResourceBundle getBundle(String baseName, ResourceBundle.Control c
      *
      * @since 1.6
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.244 -0500", hash_original_method = "1FCE3FD40C519D29C92F5693C1FE7B55", hash_generated_method = "7B7BD0AB9D2D836A35ACEB0593687B78")
     
 public static ResourceBundle getBundle(String baseName,
@@ -216,6 +218,7 @@ private static ClassLoader getLoader() {
      *
      * @since 1.6
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.250 -0500", hash_original_method = "B5838CF1B848BBFBD1752201D45957B3", hash_generated_method = "7819C1FCC2823D5FC29D21C2AC4B0078")
     
 public static ResourceBundle getBundle(String baseName,

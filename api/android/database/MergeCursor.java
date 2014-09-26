@@ -10,6 +10,7 @@ public class MergeCursor extends AbstractCursor {
 
     private DataSetObserver mObserver = new DataSetObserver() {
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.429 -0500", hash_original_method = "F00E20B7880C90825F84FA73002A8738", hash_generated_method = "AE1F091769F4914FA814B6CB3FCBC73F")
         
 @Override
@@ -19,6 +20,7 @@ public class MergeCursor extends AbstractCursor {
             mPos = -1;
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.431 -0500", hash_original_method = "4CD83AD480AFA6CEDD96BF4385EF1A22", hash_generated_method = "64D28911E57466DBCD10697DB3A6E99B")
         
 @Override
@@ -48,6 +50,7 @@ public MergeCursor(Cursor[] cursors)
         }
     }
     
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSSafe(DSCat.DB_CURSOR)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.439 -0500", hash_original_method = "C94247264BA1143A8EFEBC4EA367BD4C", hash_generated_method = "E2DA0373B706ED60B98BB7FB33055AE0")
@@ -143,6 +146,7 @@ public MergeCursor(Cursor[] cursors)
         return mCursor.getFloat(column);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.457 -0500", hash_original_method = "977D6BDEB2B1108A87BD2446DF855014", hash_generated_method = "9FE0CB8D8CA2F42105E397AC4001F939")
     
@@ -271,7 +275,7 @@ public MergeCursor(Cursor[] cursors)
         }
     }
 
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.489 -0500", hash_original_method = "9EE537B6DD7ADECF245A94C8CF7C44F2", hash_generated_method = "69AC42D770C580628E218E85029919CE")
     
 @Override

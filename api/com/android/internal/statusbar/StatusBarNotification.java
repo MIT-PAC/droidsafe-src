@@ -26,7 +26,7 @@ public class StatusBarNotification implements Parcelable {
     public static final Parcelable.Creator<StatusBarNotification> CREATOR
             = new Parcelable.Creator<StatusBarNotification>()
     {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.692 -0500", hash_original_method = "53E43DF374E573E5EFF47676B4DCAB1C", hash_generated_method = "9FA85F6034B931415E39BA0BAC4049D7")
         
 public StatusBarNotification createFromParcel(Parcel parcel)

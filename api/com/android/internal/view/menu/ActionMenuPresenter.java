@@ -580,7 +580,7 @@ public boolean flagActionItems() {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.250 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
@@ -649,6 +649,7 @@ public OverflowMenuButton(Context context) {
             setEnabled(true);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.263 -0500", hash_original_method = "133A6BF2CD1B819427A8C49FA8B8E865", hash_generated_method = "6743C1E8CB3F9B4E3F7C6883745F5CBC")
         
 @Override
@@ -685,6 +686,7 @@ public OverflowPopup(Context context, MenuBuilder menu, View anchorView,
             setCallback(mPopupPresenterCallback);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.274 -0500", hash_original_method = "F12BAE7D751DC96E6D1F67F68EBC9919", hash_generated_method = "1DE680E8854A7E0EF4B0C6880535ABDA")
         
 @Override
@@ -727,6 +729,7 @@ public ActionButtonSubmenu(Context context, SubMenuBuilder subMenu) {
             setForceShowIcon(preserveIconSpacing);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.284 -0500", hash_original_method = "69C0D5A7A155D8F50134B9E617767128", hash_generated_method = "3A0B0C423896B781BFA2BBA0112C7310")
         
 @Override
@@ -778,7 +781,7 @@ public OpenOverflowRunnable(OverflowPopup popup) {
             mPopup = popup;
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.302 -0500", hash_original_method = "A205A4B8116FA6A00F9203B1BEAEE8C7", hash_generated_method = "666E18EB4FD5778233B2875D55F6E054")
         
 public void run() {

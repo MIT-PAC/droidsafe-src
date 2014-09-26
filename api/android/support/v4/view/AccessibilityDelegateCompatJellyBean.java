@@ -51,48 +51,57 @@ public static Object newAccessibilityDelegateBridge(
             final AccessibilityDelegateBridgeJellyBean bridge) {
         return new AccessibilityDelegate() {
 
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
                 return bridge.dispatchPopulateAccessibilityEvent(host, event);
             }
 
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
                 bridge.onInitializeAccessibilityEvent(host, event);
             }
 
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfo info) {
                 bridge.onInitializeAccessibilityNodeInfo(host, info);
             }
 
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
                 bridge.onPopulateAccessibilityEvent(host, event);
             }
 
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                     AccessibilityEvent event) {
                 return bridge.onRequestSendAccessibilityEvent(host, child, event);
             }
 
-            @Override
+            @DSSpec(DSCat.IO_ACTION_METHOD)
+        @Override
             public void sendAccessibilityEvent(View host, int eventType) {
                 bridge.sendAccessibilityEvent(host, eventType);
             }
 
-            @Override
+            @DSSpec(DSCat.IO_ACTION_METHOD)
+        @Override
             public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event) {
                 bridge.sendAccessibilityEventUnchecked(host, event);
             }
 
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public AccessibilityNodeProvider getAccessibilityNodeProvider(View host) {
                 return (AccessibilityNodeProvider) bridge.getAccessibilityNodeProvider(host);
             }
 
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public boolean performAccessibilityAction(View host, int action, Bundle args) {
                 return bridge.performAccessibilityAction(host, action, args);
             }

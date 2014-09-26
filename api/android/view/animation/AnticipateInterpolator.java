@@ -43,7 +43,8 @@ public AnticipateInterpolator(Context context, AttributeSet attrs) {
         a.recycle();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.257 -0500", hash_original_method = "708C87963D95E01AE56D23D7408FFDE5", hash_generated_method = "AFF8D259EE2AC025B68E37A702DB5284")
     
 public float getInterpolation(float t) {

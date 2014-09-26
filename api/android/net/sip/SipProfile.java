@@ -37,7 +37,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
 
     public static final Parcelable.Creator<SipProfile> CREATOR =
             new Parcelable.Creator<SipProfile>() {
-                @DSSafe(DSCat.SAFE_OTHERS)
+                @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.296 -0500", hash_original_method = "346C5D5BBFC524BD8B0628E99AFE02A3", hash_generated_method = "D5A88E9F58A6ADA2DD90A2D6DBFA06D7")
         
 public SipProfile createFromParcel(Parcel in) {

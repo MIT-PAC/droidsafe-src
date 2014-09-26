@@ -79,6 +79,8 @@ public void bind(
         super.bind(socket, params);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:39.450 -0400", hash_original_method = "8E856CE2480A81D75AF9B1ECEB0E4F6A", hash_generated_method = "438D7224E35B0AACCB56E59B850BF9C0")
     
 public String toString() {

@@ -54,6 +54,7 @@ public final class SmsStorageMonitor extends Handler {
 
     private final BroadcastReceiver mResultReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.003 -0400", hash_original_method = "5F38BA022ACD3718858B6FAF49C82F2C", hash_generated_method = "433F6D8B0AF631BD6BC6DCF023E72652")
         @Override
         public void onReceive(Context context, Intent intent) {

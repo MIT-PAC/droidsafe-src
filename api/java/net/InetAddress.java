@@ -358,6 +358,7 @@ public static InetAddress getLoopbackAddress() {
      * Equivalent to {@code getByAddress(null, ipAddress)}. Handy for addresses with
      * no associated hostname.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -383,6 +384,7 @@ public static InetAddress getByAddress(byte[] ipAddress) throws UnknownHostExcep
      *
      * @throws UnknownHostException if {@code ipAddress} is null or the wrong length.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -392,8 +394,9 @@ public static InetAddress getByAddress(String hostName, byte[] ipAddress) throws
         return getByAddress(hostName, ipAddress, 0);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.312 -0500", hash_original_method = "92BD61B54A32FD10D3456FBE907A2602", hash_generated_method = "7DF91EF802DBF81C0EFB976DEC45B6D1")
     
 private static InetAddress getByAddress(String hostName, byte[] ipAddress, int scopeId) throws UnknownHostException {
@@ -610,7 +613,7 @@ public String getCanonicalHostName() {
      */
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Data structure only")
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.259 -0500", hash_original_method = "0306D8C3E43590D820E89D43080D7C82", hash_generated_method = "BB4B7DC306DE02D48C444870FADF73B1")
     
 @Override
@@ -827,7 +830,8 @@ public boolean isReachable(int timeout) throws IOException {
 for(final InetAddress sourceAddress : sourceAddresses)
         {
             new Thread() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.299 -0500", hash_original_method = "B701C9C990A30C345CD440F261C9D387", hash_generated_method = "D70307131641C58A9098C363244976E7")
+                @DSSpec(DSCat.SPEC_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.299 -0500", hash_original_method = "B701C9C990A30C345CD440F261C9D387", hash_generated_method = "D70307131641C58A9098C363244976E7")
                 
 @Override public void run() {
                     try {

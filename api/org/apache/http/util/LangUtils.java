@@ -7,18 +7,21 @@ import droidsafe.annotations.*;
 
 public final class LangUtils {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.023 -0500", hash_original_method = "4BAA05D6FB6EFA3A6E3E32018F906181", hash_generated_method = "9A9656373F7774B0B5757C699BADA23E")
     
 public static int hashCode(final int seed, final int hashcode) {
         return seed * HASH_OFFSET + hashcode;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.025 -0500", hash_original_method = "ABECF8129381FA6304C48F58C00AA3D3", hash_generated_method = "2E89EFEF01F821987D596B929EE8C401")
     
 public static int hashCode(final int seed, final boolean b) {
         return hashCode(seed, b ? 1 : 0);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.027 -0500", hash_original_method = "4A4BDE44A209776107FD46A2C36E522F", hash_generated_method = "59A52AD98ADCD6D24BD41157A2FCE4C9")
     
 public static int hashCode(final int seed, final Object obj) {

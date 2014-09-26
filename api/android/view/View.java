@@ -5914,7 +5914,7 @@ public void invalidate() {
     }
     
 	@DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     void invalidate(boolean invalidateCache){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -6249,6 +6249,7 @@ public DragShadowBuilder() {
 			return 0;
 		}
         
+        @DSSafe(DSCat.SAFE_LIST)
         public static String toString(int measureSpec){
 			// Original method
 			/*
@@ -6305,7 +6306,7 @@ public DragShadowBuilder() {
             //Synthesized constructor
         }
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/*
@@ -6341,7 +6342,7 @@ public DragShadowBuilder() {
             //Synthesized constructor
         }
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/*
@@ -6365,7 +6366,7 @@ public DragShadowBuilder() {
             //Synthesized constructor
         }
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
             performClick();
@@ -6381,7 +6382,7 @@ public DragShadowBuilder() {
             //Synthesized constructor
         }
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/*
@@ -6398,7 +6399,7 @@ public DragShadowBuilder() {
         
         public static final Parcelable.Creator<BaseSavedState> CREATOR =
                 new Parcelable.Creator<BaseSavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.195 -0500", hash_original_method = "35821D2EA4DFAF558F55A1E0F95556F9", hash_generated_method = "AFA49BD28A79891DE45104F67F4CD08E")
             
 public BaseSavedState createFromParcel(Parcel in) {
@@ -6844,7 +6845,7 @@ AttachInfo(IWindowSession session, IWindow window,
 			//Return nothing
 		}
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/*
@@ -6877,7 +6878,7 @@ AttachInfo(IWindowSession session, IWindow window,
             //Synthesized constructor
         }
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SCROLLED);
@@ -6915,7 +6916,7 @@ AttachInfo(IWindowSession session, IWindow window,
         @DSVerified
         @DSComment("IO movement methodName")
         @DSSpec(DSCat.IO_ACTION_METHOD)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event){
 			// Original method
             host.sendAccessibilityEventUncheckedInternal(event);
@@ -7920,7 +7921,7 @@ protected void onDraw(Canvas canvas) {
     
     @DSVerified
     @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     protected Parcelable onSaveInstanceState(){
 		// Original method
 		/*
@@ -7960,7 +7961,7 @@ protected void onDraw(Canvas canvas) {
     
     @DSVerified
     @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     protected void onRestoreInstanceState(Parcelable state){
 		// Original method
 		/*
@@ -8458,7 +8459,7 @@ protected int getBottomPaddingOffset() {
     @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void draw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -8744,7 +8745,7 @@ public final int[] getDrawableState() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @RemotableViewMethod 
 	public void setBackgroundResource(int resid){
 		addTaint(resid);
@@ -9011,7 +9012,7 @@ public Drawable getBackground() {
     
 	@DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void setSelected(boolean selected){
 	    addTaintLocal(selected); 
 		// Original method
@@ -9439,7 +9440,7 @@ public void setTag(final Object tag) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.ExportedProperty(category="layout") 
 	public int getBaseline(){
 		// Original method
@@ -9503,6 +9504,7 @@ public void requestLayout() {
 		//Return nothing
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
 		// Original method
 		/*
@@ -9575,12 +9577,10 @@ public void requestLayout() {
         return this.getTaintInt();
     }
 
-
     @DSSafe(DSCat.GUI)
     public int getMinimumWidth() { 
         return this.getTaintInt();
     }
-
 
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)

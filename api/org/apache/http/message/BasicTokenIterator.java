@@ -46,7 +46,7 @@ public BasicTokenIterator(final HeaderIterator headerIterator) {
         this.searchPos = findNext(-1);
     }
     
-	@DSSafe(DSCat.DATA_STRUCTURE)
+	@DSSafe(DSCat.SAFE_LIST)
     @Override
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
@@ -58,7 +58,7 @@ public BasicTokenIterator(final HeaderIterator headerIterator) {
         return this.headerIt.nextHeader().getValue();
 	}
     
-	@DSSafe(DSCat.DATA_STRUCTURE)
+	@DSSafe(DSCat.SAFE_LIST)
     @Override
 	public Object next() {
             return  this.headerIt.nextHeader().getValue();

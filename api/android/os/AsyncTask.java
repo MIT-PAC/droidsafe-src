@@ -203,12 +203,13 @@ protected void onPreExecute() {
             //Synthesized constructor
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.227 -0500", hash_original_method = "7659AD0BA1D4D745C5BB94FD1DAE3D8A", hash_generated_method = "ED70B71C467DD2C88A554AF70E9E2EFE")
         
 public synchronized void execute(final Runnable r) {
             mTasks.offer(new Runnable() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:46:09.328 -0400", hash_original_method = "97925E5CC02778827B83E8E0CDA5AF7A", hash_generated_method = "25C12F77650AF9A00834776A199C7DC4")
+                @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:46:09.328 -0400", hash_original_method = "97925E5CC02778827B83E8E0CDA5AF7A", hash_generated_method = "25C12F77650AF9A00834776A199C7DC4")
                 
 public void run() {
                     try {

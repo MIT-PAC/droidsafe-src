@@ -106,6 +106,7 @@ public PathFileComparator(IOCase caseSensitivity) {
      * is greater than the second file.
      * 
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.599 -0400", hash_original_method = "E52DB31DD4CEA24D40EB558E5E7FE49E", hash_generated_method = "805BE676780F942EC24517F079CC8FC8")
     
 public int compare(File file1, File file2) {
@@ -117,6 +118,7 @@ public int compare(File file1, File file2) {
      *
      * @return String representation of this file comparator
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.600 -0400", hash_original_method = "2C8858F1FEF258A79F4059C0A1CB8058", hash_generated_method = "73DBD95B0639383FC78436A99232C748")
     
 @Override

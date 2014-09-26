@@ -404,7 +404,6 @@ public abstract Uri insert(Uri uri, ContentValues values);
      * @param values An array of sets of column_name/value pairs to add to the database.
      * @return The number of values that were inserted.
      */
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.744 -0500", hash_original_method = "C678349FF8875CB9D22305FF9A5474DD", hash_generated_method = "DB10E22D5FFB11F9E085FB4F782D17D3")
     @DSSafe(DSCat.IPC_CALLBACK)
@@ -751,7 +750,7 @@ public IContentProvider getIContentProvider() {
      * @param context The context this provider is running in
      * @param info Registered information about this content provider
      */
-    @DSSpec(DSCat.CONTENT)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.775 -0500", hash_original_method = "0A143494E98F1D73DE768E656190D91A", hash_generated_method = "9FAD0985A1BE43AFFAAC4D530C393AE6")
     
 public void attachInfo(Context context, ProviderInfo info) {

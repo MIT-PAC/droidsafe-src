@@ -46,26 +46,20 @@ public class XmlStreamWriter extends Writer {
     private static final int BUFFER_SIZE = 4096;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.920 -0400", hash_original_field = "80F5A9B26E7EF9888CA395F4BDA59FE5", hash_generated_field = "478C9F2A44B2C1DA6B3E4CE1EE47FEAB")
 
-
     static final Pattern ENCODING_PATTERN = XmlStreamReader.ENCODING_PATTERN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.911 -0400", hash_original_field = "045D3F20D319391451B40CE63253C516", hash_generated_field = "FAC7CE5410064D378AF9E7B2309C5BE9")
-
 
     private  OutputStream out;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.911 -0400", hash_original_field = "17CBCAF681BCBD1F3719DE3FA392874D", hash_generated_field = "7380F104304B5118624DAE9AD6B460C4")
 
-
     private  String defaultEncoding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.911 -0400", hash_original_field = "1D4494F6BB155270CD9061EE9E31C50B", hash_generated_field = "3B0F841FF7E21C2FBFE8FB4592CC4284")
-
 
     private StringWriter xmlPrologWriter = new StringWriter(BUFFER_SIZE);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.912 -0400", hash_original_field = "2893095D821727F8868345026D6906A1", hash_generated_field = "DB075F4140D7FA00980C54A40F997F59")
 
-
     private Writer writer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.912 -0400", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
-
 
     private String encoding;
 
@@ -151,6 +145,7 @@ public String getDefaultEncoding() {
      *
      * @throws IOException if an error occurs closing the underlying writer
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.917 -0400", hash_original_method = "FA1D85D28CEAB4A4964615D0CD6BE099", hash_generated_method = "9A62DA35FF42BC4BB25038177C97FF8C")
     
 @Override
@@ -168,6 +163,7 @@ public String getDefaultEncoding() {
      *
      * @throws IOException if an error occurs flushing the underlying writer
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.917 -0400", hash_original_method = "1CF6DC5DA7BB65AAE6632CB394BB4ED7", hash_generated_method = "AAB7FB16372FD91C75BD3F54F1BFA948")
     
 @Override
@@ -244,6 +240,8 @@ private void detectEncoding(char[] cbuf, int off, int len)
      * @param len The number of characters to write
      * @throws IOException if an error occurs detecting the encoding
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.919 -0400", hash_original_method = "C7BCA488F553457389C8980637630468", hash_generated_method = "BD9165060D8477FEE4401F2563C4F2FB")
     
 @Override

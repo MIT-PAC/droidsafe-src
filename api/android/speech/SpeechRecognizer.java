@@ -216,6 +216,7 @@ public void onServiceDisconnected(final ComponentName name) {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.231 -0400", hash_original_field = "3E97CA0845357386ACA7B60ED6A59B83", hash_generated_field = "975920C3BABDF4247819CC8A88C87909")
 
         private final Handler mInternalHandler = new Handler() {
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.767 -0500", hash_original_method = "719D3C46325B87A1A9440CA0A4F7745E", hash_generated_method = "0297B88C17A45A8B5DEBBF61EEBF851E")
             
 @Override
@@ -326,6 +327,7 @@ public void onEvent(final int eventType, final Bundle params) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.217 -0400", hash_original_field = "A27565A3284A0242865B513D7E4CBC2D", hash_generated_field = "B96380BDD6B3164FA8AF53BEBA06B375")
 
     private Handler mHandler = new Handler() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.686 -0500", hash_original_method = "4777936EA1BA55C44F90D09557AD57D4", hash_generated_method = "276058466110B4DCB6EE912E97266BAD")
         
 @Override

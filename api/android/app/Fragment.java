@@ -39,7 +39,7 @@ final class FragmentState implements Parcelable {
 
     public static final Parcelable.Creator<FragmentState> CREATOR
             = new Parcelable.Creator<FragmentState>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.863 -0500", hash_original_method = "EC1ACE39B0D42EA269A848888E85A00F", hash_generated_method = "A5A88BD3A75C773BD237E8D2C9040999")
         
 public FragmentState createFromParcel(Parcel in) {
@@ -197,7 +197,7 @@ public static Fragment instantiate(Context context, String fname) {
      */
     @DSComment("GUI, Fragment")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.999 -0500", hash_original_method = "DD532F08670F8F66F3144923B381A393", hash_generated_method = "502B97B751650EA555BDAFC8D8187866")
     
 public static Fragment instantiate(Context context, String fname, Bundle args) {
@@ -405,7 +405,6 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
 public Fragment() {
         droidsafeModelFragment();
     }
-
     
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
@@ -1175,7 +1174,7 @@ public void onStart() {
      * Activity's lifecycle.
      */
     @DSComment("normal android callback")
-    @DSSpec(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.111 -0500", hash_original_method = "3B8608ED59C2663D271D57F8D8F534C0", hash_generated_method = "4D7A6260998C4FCE09C9F7547BB0088D")
     
 public void onResume() {
@@ -1440,13 +1439,14 @@ public void onOptionsMenuClosed(Menu menu) {
 
         public static final Parcelable.ClassLoaderCreator<SavedState> CREATOR
                 = new Parcelable.ClassLoaderCreator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.977 -0500", hash_original_method = "F6A52F04C4D14500D0C1089F687B7F14", hash_generated_method = "FE85131981ECBA63EB19FB4392208C42")
             
 public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in, null);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.980 -0500", hash_original_method = "827740B54B4D2FB6132FF4A14CAC20AA", hash_generated_method = "83D4D634ED07A42446AB99785AFA5E39")
             
 public SavedState createFromParcel(Parcel in, ClassLoader loader) {

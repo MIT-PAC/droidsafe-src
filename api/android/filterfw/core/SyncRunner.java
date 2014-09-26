@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.filterfw.core;
 
 import droidsafe.annotations.*;
@@ -37,10 +36,8 @@ public class SyncRunner extends GraphRunner {
     private final static String TAG = "SyncRunner";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.915 -0400", hash_original_field = "5992056C9267592B33B804B090D8E40B", hash_generated_field = "30894F15A8E5B0FB682C1090C80CBEA1")
 
-
     private Scheduler mScheduler = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.917 -0400", hash_original_field = "CEF28BCE55888AAEC7BB510C9702F1BA", hash_generated_field = "4BD384BFA563352526DE5E456192E0BE")
-
 
     private OnRunnerDoneListener mDoneListener = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.919 -0400", hash_original_field = "7099FF148FBA9573A9F46B036391606C", hash_generated_field = "590DF364C87CCF1DBD166B12FB362356")
@@ -51,10 +48,8 @@ public class SyncRunner extends GraphRunner {
     private ConditionVariable mWakeCondition = new ConditionVariable();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.923 -0400", hash_original_field = "9B00ED9622D774FE98BBA25FBA3C718F", hash_generated_field = "F65B4040D4A62DDAA67369124ECCF33C")
 
-
     private StopWatchMap mTimer = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.925 -0400", hash_original_field = "CCFB9E24DC58F9E64BC75A559E0C33FC", hash_generated_field = "29542B7EA5B26DA8ADF116C9866AA3F1")
-
 
     private  boolean mLogVerbose;
 
@@ -222,7 +217,8 @@ protected void scheduleFilterWake(Filter filter, int delay) {
         final ConditionVariable conditionToWake = mWakeCondition;
 
         mWakeExecutor.schedule(new Runnable() {
-          @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:12.218 -0400", hash_original_method = "13E75D52956FA158BC64E98457594B1E", hash_generated_method = "ABD9F224C479AEF5F293E13D9D557AA8")
+          @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:12.218 -0400", hash_original_method = "13E75D52956FA158BC64E98457594B1E", hash_generated_method = "ABD9F224C479AEF5F293E13D9D557AA8")
             
 @Override
           public void run() {

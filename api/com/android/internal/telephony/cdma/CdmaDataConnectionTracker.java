@@ -91,6 +91,7 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
 
     private Runnable mPollNetStat = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.687 -0400", hash_original_method = "2461514E52B21E636B4BA6EEA10AC2AC", hash_generated_method = "123F17F6A359605D3CB3DF7D7D153FFC")
         public void run() {
             long sent;

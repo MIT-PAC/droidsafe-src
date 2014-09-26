@@ -90,7 +90,7 @@ public Object getTag() {
      * @see #setCustomView(View)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.149 -0500", hash_original_method = "410835EEA321510B785087E900780AFB", hash_generated_method = "F61FA778C52CF90209781407DFEFC387")
     
 public abstract void setTitle(CharSequence title);
@@ -105,7 +105,7 @@ public abstract void setTitle(CharSequence title);
      * @see #setCustomView(View)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.152 -0500", hash_original_method = "516EEAF41A54C2F23324189E2ED4731D", hash_generated_method = "D271218F7CA96C8DBB89D368B635F8B6")
     
 public abstract void setTitle(int resId);
@@ -120,7 +120,7 @@ public abstract void setTitle(int resId);
      * @see #setCustomView(View)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.154 -0500", hash_original_method = "D00074A941BED700B112E60CA2B4BBFA", hash_generated_method = "0BA816A36095386377AF796A7E9F4E55")
     
 public abstract void setSubtitle(CharSequence subtitle);
@@ -135,7 +135,7 @@ public abstract void setSubtitle(CharSequence subtitle);
      * @see #setCustomView(View)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.156 -0500", hash_original_method = "08B7103B21D83BEA0EC09BF9CF437884", hash_generated_method = "8D1000593E31D74C218814097C6E4287")
     
 public abstract void setSubtitle(int resId);
@@ -150,7 +150,7 @@ public abstract void setSubtitle(int resId);
      * @see #setSubtitle(CharSequence)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.159 -0500", hash_original_method = "75E78D59B0AC673EC9AC299DFF89779E", hash_generated_method = "3F5163B75632712B25ECCBFB0D907DF2")
     
 public abstract void setCustomView(View view);
@@ -163,7 +163,7 @@ public abstract void setCustomView(View view);
      * will be reflected to the user.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.161 -0500", hash_original_method = "70F593FC630C0533FD7D3758F8C5CFA1", hash_generated_method = "1747FC730FFA208D064087D81614198D")
     
 public abstract void invalidate();
@@ -173,7 +173,7 @@ public abstract void invalidate();
      * have its {@link Callback#onDestroyActionMode(ActionMode)} method called.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.164 -0500", hash_original_method = "813B1E67A5651AE12B7ADAA81DD30965", hash_generated_method = "EA335D0833EB6960285108A346A4AFC1")
     
 public abstract void finish();
@@ -183,7 +183,7 @@ public abstract void finish();
      * @return The action mode's menu.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.166 -0500", hash_original_method = "DCB61573D17CF52C77788C074BA8AC8B", hash_generated_method = "F0C4744A37BE92FD577BF28B66ABAB46")
     
 public abstract Menu getMenu();
@@ -193,7 +193,7 @@ public abstract Menu getMenu();
      * @return Title text
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.168 -0500", hash_original_method = "2A829968551EA225833AD910559E3639", hash_generated_method = "9F704A6DC6184A7C8579171531B62A23")
     
 public abstract CharSequence getTitle();
@@ -203,7 +203,7 @@ public abstract CharSequence getTitle();
      * @return Subtitle text
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.171 -0500", hash_original_method = "FEEA0E87B97F8601D44AFB1E29DE7E64", hash_generated_method = "19C700D07F867A34AFE71438482B9BA4")
     
 public abstract CharSequence getSubtitle();
@@ -213,7 +213,7 @@ public abstract CharSequence getSubtitle();
      * @return The current custom view
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.173 -0500", hash_original_method = "9FFDC35B3B54894B02C81A484E99C0EB", hash_generated_method = "E95F0DF95C54D06CFADD71C2C35C4CFF")
     
 public abstract View getCustomView();
@@ -222,7 +222,7 @@ public abstract View getCustomView();
      * Returns a {@link MenuInflater} with the ActionMode's context.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.176 -0500", hash_original_method = "232216C9B01BF51DC3B19AC833B1F44A", hash_generated_method = "E76EC25552FE301AA15012E8BEC12C50")
     
 public abstract MenuInflater getMenuInflater();
@@ -282,6 +282,7 @@ public boolean isUiFocusable() {
             // TODO Auto-generated method stub
             mTitle = title;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         
         public void setTitle(int resId) {
@@ -289,6 +290,7 @@ public boolean isUiFocusable() {
             mTitle = mView.getContext().getText(resId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         
         public void setSubtitle(CharSequence subtitle) {
@@ -310,6 +312,7 @@ public boolean isUiFocusable() {
             mView = view;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         
         public void invalidate() {
@@ -317,6 +320,7 @@ public boolean isUiFocusable() {
             
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         
         public void finish() {
@@ -324,6 +328,7 @@ public boolean isUiFocusable() {
             
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         
         public Menu getMenu() {
@@ -332,6 +337,7 @@ public boolean isUiFocusable() {
             return new ContextMenuBuilder(mView.getContext());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         
         public CharSequence getTitle() {
@@ -339,6 +345,7 @@ public boolean isUiFocusable() {
             return mTitle;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         
         public CharSequence getSubtitle() {
@@ -346,6 +353,7 @@ public boolean isUiFocusable() {
             return mSubtitle;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         
         public View getCustomView() {
@@ -353,6 +361,7 @@ public boolean isUiFocusable() {
             return mView;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         
         public MenuInflater getMenuInflater() {

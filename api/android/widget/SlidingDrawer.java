@@ -247,6 +247,7 @@ public SlidingDrawer(Context context, AttributeSet attrs, int defStyle) {
         mContent.setVisibility(View.GONE);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.698 -0500", hash_original_method = "45D03353ADB6FD3256F7B7DABD84ED03", hash_generated_method = "F3AB18BB99F7F478D3AC76E915ED9CF0")
     
 @Override
@@ -277,6 +278,7 @@ public SlidingDrawer(Context context, AttributeSet attrs, int defStyle) {
         setMeasuredDimension(widthSpecSize, heightSpecSize);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.700 -0500", hash_original_method = "A279E67FA1A6901C21F6D4D49CA58425", hash_generated_method = "ACB17EAD87AD361A1E24DED8F5595B71")
     
 @Override
@@ -849,6 +851,7 @@ public void animateClose() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:02.777 -0500", hash_original_method = "D5ABF7EB3B9C4ED77CCCF3551465E2CF", hash_generated_method = "727B91C4898CD276506D68BE399B823F")
         
 public void onClick(View v) {

@@ -193,7 +193,7 @@ private static SearchableInfo getActivityMetaData(Context context, XmlPullParser
 
     public static final Parcelable.Creator<SearchableInfo> CREATOR
     = new Parcelable.Creator<SearchableInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.747 -0500", hash_original_method = "C51AD4A0A61C2936B4CD4648DD0FC0FA", hash_generated_method = "78A1C36C4F1DBC9F0398C35E1EE2C239")
         
 public SearchableInfo createFromParcel(Parcel in) {

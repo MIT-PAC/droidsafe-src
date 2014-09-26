@@ -98,7 +98,6 @@ public final class NumericShaper implements Serializable {
     public static final int ALL_RANGES = 524287;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.038 -0400", hash_original_field = "2B31D271B2C1F67B3CBADE6094F15EA0", hash_generated_field = "89AF884A6BD4796272D7522EC82895FF")
 
-
     // Index of the EUROPEAN range
     /** The Constant INDEX_EUROPEAN. */
     private static final int INDEX_EUROPEAN = 0;
@@ -179,7 +178,6 @@ public final class NumericShaper implements Serializable {
     /** The Constant MAX_INDEX. */
     private static final int MAX_INDEX = 19;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.083 -0400", hash_original_field = "DF30F2984BA0A5919C91B9DEC6ADFE4E", hash_generated_field = "B67ED0B809EAFBDE56105C5162448D3C")
-
 
     /** The Constant STRONG_TEXT_FLAGS. */
     private static final int[] STRONG_TEXT_FLAGS = { 0, 0, 134217726, 134217726,
@@ -525,6 +523,7 @@ private int getRangeFromIndex(int index){
         return 1 << index;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.099 -0400", hash_original_method = "901EBF5281D18A1F2D08C150935DC6CF", hash_generated_method = "41F0D688A8175F0FB250FC1E30E7E82F")
     
 @Override
@@ -559,6 +558,7 @@ private int getRangeFromIndex(int index){
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.103 -0400", hash_original_method = "E1008406AD28195875610EB05258F007", hash_generated_method = "410027CCAB34D517804B58086B96B216")
     
 @Override

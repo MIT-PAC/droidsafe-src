@@ -101,6 +101,7 @@ private static void log(String msg) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:22.133 -0400", hash_original_field = "0E0C7B980ADD0D434C4E6143AE26C160", hash_generated_field = "2B9DF3DAD1EE53E34A2D51A12C594F7D")
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:06:56.986 -0400", hash_original_method = "878FE6B60A52570D7F6B49AD2B0B3F2D", hash_generated_method = "D413CDE19E8443BD63B95B93A2A1364F")
         
 @Override

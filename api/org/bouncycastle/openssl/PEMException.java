@@ -37,6 +37,7 @@ public Exception getUnderlyingException()
         return underlying;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.862 -0500", hash_original_method = "F2813220852B09056C9C149C0538BE80", hash_generated_method = "8657704834A58ECB84D4FA51B844934B")
     
 public Throwable getCause()

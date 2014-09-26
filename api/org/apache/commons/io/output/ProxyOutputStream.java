@@ -53,6 +53,8 @@ public ProxyOutputStream(OutputStream proxy) {
      * @param idx the byte to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.264 -0400", hash_original_method = "C10E35B15C5C34D2F11AD8F56A8AFBE7", hash_generated_method = "8538DC9FDF04C178771F287DC9084D00")
     
 @Override
@@ -71,6 +73,8 @@ public ProxyOutputStream(OutputStream proxy) {
      * @param bts the bytes to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.266 -0400", hash_original_method = "E4B5E15EBD1DC0F51B6909882AA2B9D3", hash_generated_method = "F2EA6D6D1EB28486AFF7B8C18D6CD1F3")
     
 @Override
@@ -92,6 +96,8 @@ public ProxyOutputStream(OutputStream proxy) {
      * @param end The number of bytes to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.266 -0400", hash_original_method = "6659C26B9D2F6D845755120D9E3C542C", hash_generated_method = "1D85046399E8D016E013E1B1E96055F2")
     
 @Override
@@ -109,6 +115,7 @@ public ProxyOutputStream(OutputStream proxy) {
      * Invokes the delegate's <code>flush()</code> method.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.267 -0400", hash_original_method = "EEECDB779BCD3F1C16C4BB7414585E36", hash_generated_method = "A55EC4CDFFAE64F1B331AEE9E72C7A09")
     
 @Override
@@ -124,6 +131,7 @@ public ProxyOutputStream(OutputStream proxy) {
      * Invokes the delegate's <code>close()</code> method.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.268 -0400", hash_original_method = "EA1F98341C1FEBB76DE541E0DAA4DDD0", hash_generated_method = "2908ECB022F338E34CD3F0E8541D8B63")
     
 @Override

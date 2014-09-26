@@ -43,6 +43,7 @@ public ExtractEditLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.022 -0500", hash_original_method = "3AB740C640E719B54F03586FCEB648DB", hash_generated_method = "9A56200277F45BB67552B7B9BFB49B07")
     
 @Override
@@ -79,6 +80,7 @@ public void finishActionMode() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.032 -0500", hash_original_method = "F4E3F3E884E506D9FE93C33AFB725466", hash_generated_method = "F57748A137F4898F67CC2F0B65ACBBF6")
     
 @Override
@@ -87,7 +89,8 @@ public void finishActionMode() {
         mExtractActionButton = (Button) findViewById(com.android.internal.R.id.inputExtractAction);
         mEditButton = (Button) findViewById(com.android.internal.R.id.inputExtractEditButton);
         mEditButton.setOnClickListener(new OnClickListener() {
-            public void onClick(View clicked) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View clicked) {
                 if (mActionMode != null) {
                     new MenuPopupHelper(getContext(), mActionMode.mMenu, clicked).show();
                 }
@@ -111,6 +114,7 @@ public ExtractActionMode(Callback cb) {
             mCallback = cb;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.043 -0500", hash_original_method = "F1AD782B0CD2259E0BE9FDDD0EC2ADD5", hash_generated_method = "3C407A74DF668365A0C3F1F37D355D39")
         
 @Override
@@ -118,7 +122,8 @@ public ExtractActionMode(Callback cb) {
             // Title will not be shown.
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.046 -0500", hash_original_method = "B30C6763E9E5F305FC4AC0CFECBEE869", hash_generated_method = "71ED5D641D68012971096394B0729D5E")
         
 @Override
@@ -126,6 +131,7 @@ public ExtractActionMode(Callback cb) {
             // Title will not be shown.
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.048 -0500", hash_original_method = "EB006AC48BB7A6AA8B2958DC91304E5C", hash_generated_method = "52625096A6110B6E46AAC07A39455545")
         
 @Override
@@ -133,7 +139,8 @@ public ExtractActionMode(Callback cb) {
             // Subtitle will not be shown.
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.050 -0500", hash_original_method = "1F86E8EB25240C47EC24308D126D97B9", hash_generated_method = "E1F78E11DA67FB56A35C9961A0795BA1")
         
 @Override
@@ -141,7 +148,8 @@ public ExtractActionMode(Callback cb) {
             // Subtitle will not be shown.
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.053 -0500", hash_original_method = "3E94F533B6F67EA66D83CADA4353AF33", hash_generated_method = "2E318619E408B8AB7D6A959A732BA147")
         
 @Override
@@ -149,6 +157,7 @@ public ExtractActionMode(Callback cb) {
             // Custom view is not supported here.
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.055 -0500", hash_original_method = "AE3782F4A9FD5538AF0C8FC979CD15B1", hash_generated_method = "C7B93D882D43833903DA2C39ACBD8C5D")
         
 @Override
@@ -172,6 +181,7 @@ public boolean dispatchOnCreate() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.060 -0500", hash_original_method = "2B69AFBC6E24AF84D26A0EF2F0EF4896", hash_generated_method = "24173C2D47628DB5A30B4E9C60662222")
         
 @Override
@@ -192,7 +202,8 @@ public boolean dispatchOnCreate() {
             mActionMode = null;
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.063 -0500", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "7AE22C739145027C00A176505D582411")
         
 @Override
@@ -200,7 +211,8 @@ public boolean dispatchOnCreate() {
             return mMenu;
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.065 -0500", hash_original_method = "CD9B990298CF856E49A643E530553914", hash_generated_method = "CDCEE9683F3E38FE42C9823826F1C1DE")
         
 @Override
@@ -208,7 +220,8 @@ public boolean dispatchOnCreate() {
             return null;
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.067 -0500", hash_original_method = "F475DA391A1931FE20FFD2579FFFF5AF", hash_generated_method = "C976D9440453D00E334CDABF0EC76D42")
         
 @Override
@@ -216,7 +229,8 @@ public boolean dispatchOnCreate() {
             return null;
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.069 -0500", hash_original_method = "7A49E6A1A0BF55D8D926541A71E4907E", hash_generated_method = "6F301B3473369A299AB6637D3DF3F9B8")
         
 @Override
@@ -224,7 +238,8 @@ public boolean dispatchOnCreate() {
             return null;
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.072 -0500", hash_original_method = "DECFD94D9899EA20C3E59178999FB9F7", hash_generated_method = "DC6F839317893A37089C9D33ED9980A8")
         
 @Override

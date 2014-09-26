@@ -404,7 +404,7 @@ public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
 
     public static final Parcelable.Creator<Uri> CREATOR
             = new Parcelable.Creator<Uri>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.385 -0500", hash_original_method = "1CCA462AB4D0EF409DF9173916BA5FD8", hash_generated_method = "E7D8D1AE887DF3EC27BA286F1F6632FA")
         
 public Uri createFromParcel(Parcel in) {
@@ -474,8 +474,9 @@ private Uri() {}
         return getTaintBoolean();
     }
     
-	@DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+	@DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSComment("Abstract Method")
+    @DSSafe(DSCat.SAFE_LIST)
     public String getScheme() {
 		// TODO Auto-generated method stub
 		return uriString;
@@ -494,7 +495,7 @@ private Uri() {}
 	}
     
 	@DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     public String getAuthority() {
 		return uriString;
 	}
@@ -763,6 +764,7 @@ public boolean isRelative() {
             return findSchemeSeparator() == NOT_FOUND;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.005 -0500", hash_original_method = "96667B7E38635C26F17AC80DC91F9ADB", hash_generated_method = "ABEBD18496B29AF5F92CABFFDDA0861E")
         
@@ -834,6 +836,7 @@ public String getEncodedAuthority() {
             return getAuthorityPart().getEncoded();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.028 -0500", hash_original_method = "F4404025FB90C68980598D2895AF9578", hash_generated_method = "B8ED49E3BBA5B95DA1FECE1AB8908166")
         
@@ -1071,6 +1074,7 @@ public boolean isRelative() {
             return scheme == null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.109 -0500", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "8C187E31064D5FC7E4CBD4735C1E35F0")
         
@@ -1092,6 +1096,7 @@ public String getSchemeSpecificPart() {
             return ssp.getDecoded();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.115 -0500", hash_original_method = "31E41E1CB0338F9BAA50A0AC05D7D02D", hash_generated_method = "9A0C58B5BBE1FCEC366B081238823F0A")
         
@@ -1247,7 +1252,7 @@ PathSegments(String[] segments, int size) {
             this.size = size;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.166 -0500", hash_original_method = "043CF25E38E9D3A71BE4CC7B6371568E", hash_generated_method = "5BCFD94D9679CD4A7A9B991B3AFB878D")
         
 public String get(int index) {
@@ -1538,6 +1543,7 @@ public boolean isRelative() {
             return scheme == null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.244 -0500", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "9D11AD0B611F352DC84C8E1A6B825617")
         
@@ -1612,6 +1618,7 @@ private String makeSchemeSpecificPart() {
             //}
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.264 -0500", hash_original_method = "4FC7F3346B5C0FC1519928E52B2843FB", hash_generated_method = "6DAFF03A5E15B07027CC73E6C6D6AD17")
         
@@ -1793,7 +1800,7 @@ public Builder encodedOpaquePart(String opaquePart) {
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.323 -0500", hash_original_method = "CE12FA6D2315F74B1A3B79C027FFFA6D", hash_generated_method = "98DCEE1FFE85A89C0BEF38663C36C6FC")
-       @DSBan(DSCat.DEFAULT_MODIFIER) 
+       @DSSafe(DSCat.SAFE_LIST) 
 Builder authority(Part authority) {
             // This URI will be hierarchical.
             this.opaquePart = null;
@@ -2719,7 +2726,8 @@ public boolean getBooleanQueryParameter(String key, boolean defaultValue) {
     
     // orphaned legacy method
     
-	public int compareTo(Uri arg0) {
+	@DSSafe(DSCat.SAFE_LIST)
+    public int compareTo(Uri arg0) {
 		// TODO Auto-generated method stub
 		return getTaintInt();
 	}

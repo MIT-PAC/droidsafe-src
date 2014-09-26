@@ -556,8 +556,9 @@ public NameNotFoundException(String name) {
      * @see #GET_UNINSTALLED_PACKAGES
      */
     
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.582 -0500", hash_original_method = "464828FC1398C3C4C0BF897023D8D8AE", hash_generated_method = "C85FB643A0DD80923535E9820CD8A70B")
     
 public abstract PackageInfo getPackageInfo(String packageName, int flags)
@@ -888,8 +889,9 @@ public abstract ProviderInfo getProviderInfo(ComponentName component,
      * @see #GET_UNINSTALLED_PACKAGES
      *
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.616 -0500", hash_original_method = "FA1B431E409D0CEBDA67D49CD96B6226", hash_generated_method = "FF5C1A475B9D4AB3AE6455D48622DBCA")
     
 public abstract List<PackageInfo> getInstalledPackages(int flags);
@@ -1049,8 +1051,9 @@ public abstract int checkSignatures(int uid1, int uid2);
      * @return Returns an array of one or more packages assigned to the user
      * id, or null if there are no known packages with the given id.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.631 -0500", hash_original_method = "FBF5DCDA76A13D456CBE8F7D4CE9606E", hash_generated_method = "EE782B19013D9795425A64880C5DC15D")
     
 public abstract String[] getPackagesForUid(int uid);
@@ -1112,8 +1115,9 @@ public abstract int getUidForSharedUser(String sharedUserName)
      * @see #GET_SHARED_LIBRARY_FILES
      * @see #GET_UNINSTALLED_PACKAGES
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.639 -0500", hash_original_method = "0EF671D59959154E932606B082795085", hash_generated_method = "AB25EF080EDD746CC72BE67538DB52F0")
     
 public abstract List<ApplicationInfo> getInstalledApplications(int flags);
@@ -1210,9 +1214,9 @@ public abstract ResolveInfo resolveActivity(Intent intent, int flags);
      * @see #GET_INTENT_FILTERS
      * @see #GET_RESOLVED_FILTER
      */
-    @DSSource({DSSourceKind.IPC})
+    
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.651 -0500", hash_original_method = "AC20BF243DC1E97601026E9C98F03F62", hash_generated_method = "C4F29DC65152E729E3C95F54803E2EAD")
     
 public abstract List<ResolveInfo> queryIntentActivities(Intent intent,
@@ -1248,7 +1252,7 @@ public abstract List<ResolveInfo> queryIntentActivities(Intent intent,
      * @see #GET_RESOLVED_FILTER
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.653 -0500", hash_original_method = "099B8C4BBE89493F7A2B2E31EEAEAC98", hash_generated_method = "19A8CF45393648CDF25A2ECB49123DD1")
     
 public abstract List<ResolveInfo> queryIntentActivityOptions(
@@ -1311,7 +1315,7 @@ public abstract ResolveInfo resolveService(Intent intent, int flags);
      * @see #GET_RESOLVED_FILTER
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.660 -0500", hash_original_method = "6046BD374D0552ADD26D23F3BAFC67FA", hash_generated_method = "9793BAA82160C6E08F5D0DE99F42FDC0")
     
 public abstract List<ResolveInfo> queryIntentServices(Intent intent,
@@ -1420,7 +1424,7 @@ public abstract List<InstrumentationInfo> queryInstrumentation(
      * an image could not be found for any reason.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.672 -0500", hash_original_method = "6C074435B2C70261B1D6C3BAAF3582B2", hash_generated_method = "ED8415D8AFFBB032C35CE22DBFD13ECB")
     
 public abstract Drawable getDrawable(String packageName, int resid,
@@ -1481,7 +1485,7 @@ public abstract Drawable getActivityIcon(Intent intent)
      * @return Drawable Image of the icon.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.678 -0500", hash_original_method = "BE5EF8DB4CA27EC3DDD7AD05114C9B4A", hash_generated_method = "F8A4DAE03232D4BD6F12834B52841613")
     
 public abstract Drawable getDefaultActivityIcon();
@@ -1545,7 +1549,7 @@ public abstract Drawable getApplicationIcon(String packageName)
      * @see #getActivityLogo(Intent)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.685 -0500", hash_original_method = "72D3EAA688209A6C3C5E937519CB7B0F", hash_generated_method = "9382884CF2E513573715BE86B21B024F")
     
 public abstract Drawable getActivityLogo(ComponentName activityName)
@@ -1570,7 +1574,7 @@ public abstract Drawable getActivityLogo(ComponentName activityName)
      * @see #getActivityLogo(ComponentName)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.688 -0500", hash_original_method = "B7D8101E24D24E0DE8225D266C3A23D4", hash_generated_method = "60F30CDA35B11C73FA1DBCC225C486CB")
     
 public abstract Drawable getActivityLogo(Intent intent)
@@ -1711,7 +1715,7 @@ public abstract Resources getResourcesForActivity(ComponentName activityName)
      * application could not be loaded (most likely because it was uninstalled).
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.704 -0500", hash_original_method = "93B4F6A2202CAD660BD1E4C6E0AA08F5", hash_generated_method = "C8F2769D83C3197F160C64AE27A03E3B")
     
 public abstract Resources getResourcesForApplication(ApplicationInfo app)
@@ -1733,7 +1737,7 @@ public abstract Resources getResourcesForApplication(ApplicationInfo app)
      * @see #getResourcesForApplication(ApplicationInfo)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.706 -0500", hash_original_method = "5F950A6C45FA4057F16F5D92101FE41D", hash_generated_method = "DFB1B9C9D3AC3D7C36DAADB67654C692")
     
 public abstract Resources getResourcesForApplication(String appPackageName)
@@ -1915,7 +1919,7 @@ public abstract void deletePackage(
      * @param packageName The name of the package to query
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.723 -0500", hash_original_method = "D13E43B26F3F2B0FE2A1C295646D8E7D", hash_generated_method = "BD3CD52B65ADA33A4C3E661768696693")
     
 public abstract String getInstallerPackageName(String packageName);
@@ -2214,7 +2218,7 @@ public abstract int getPreferredActivities(List<IntentFilter> outFilters,
      * @param flags Optional behavior flags: {@link #DONT_KILL_APP} or 0.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.PACKAGE_MANAGER)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.754 -0500", hash_original_method = "66AA009103186E72165D0D729D621664", hash_generated_method = "DCE099311250D0226A7819B73DA59F90")
     
 public abstract void setComponentEnabledSetting(ComponentName componentName,
@@ -2235,8 +2239,9 @@ public abstract void setComponentEnabledSetting(ComponentName componentName,
      * component's enabled state is based on the original information in
      * the manifest as found in {@link ComponentInfo}.
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.757 -0500", hash_original_method = "3762197D2621EC32C809039570FBAAF6", hash_generated_method = "EC95D4D7CBDCAEB7C1637EC583EBF611")
     
 public abstract int getComponentEnabledSetting(ComponentName componentName);

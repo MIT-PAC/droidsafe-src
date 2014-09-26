@@ -12,7 +12,7 @@ public class Duration implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.245 -0400", hash_original_field = "A45E48454A5718B4D58B745F8A75DBD7", hash_generated_field = "3313211CC65C61401C6638CF5336E71F")
 
     public static final Parcelable.Creator<Duration> CREATOR = new Parcelable.Creator<Duration>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.582 -0500", hash_original_method = "68D9516041C92E7EB281A6DDCC1708DE", hash_generated_method = "5144F18F3E73DCB13D888D29E8A3E2DC")
         
 public Duration createFromParcel(Parcel in) {

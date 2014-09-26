@@ -280,7 +280,8 @@ public void onTimeupdate() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.389 -0400", hash_original_method = "1A016E6492F3E166AEDA862A5517C526", hash_generated_method = "33018A9ACDFEDC13B4E98D7147E35B5E")
     private void createWebCoreHandler() {
         mWebCoreHandler = new Handler() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.373 -0500", hash_original_method = "B10F0183A0FABB1F34A9FD1B81A4AF54", hash_generated_method = "9F8C2EA302CAC5662012999657AF4032")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.373 -0500", hash_original_method = "B10F0183A0FABB1F34A9FD1B81A4AF54", hash_generated_method = "9F8C2EA302CAC5662012999657AF4032")
             
 @Override
             public void handleMessage(Message msg) {
@@ -703,7 +704,8 @@ public void endData() {
                 }
                 if (mUrl != null) {
                     mHandler.post(new Runnable() {
-                       public void run() {
+                       @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                            if (mRequestHandle != null) {
                                mRequestHandle.setupRedirect(mUrl.toString(), mStatusCode,
                                        new HashMap<String, String>());

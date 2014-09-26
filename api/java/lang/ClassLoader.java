@@ -388,7 +388,8 @@ public final ClassLoader getParent() {
      *         if the resource can not be found
      * @see Class#getResource
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.741 -0500", hash_original_method = "51B198FC24245E471F59AEE285D4917F", hash_generated_method = "ED3E9B74C8F3F28021F3B2BF37C09FDD")
     
 public URL getResource(String resName) {
@@ -436,7 +437,7 @@ public URL getResource(String resName) {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.747 -0500", hash_original_method = "D8955CCF86190424763C439F9FDF42B6", hash_generated_method = "23CB9B395B84F49B6BEEC8C70F6D582B")
     
 public InputStream getResourceAsStream(String resName) {
@@ -813,7 +814,7 @@ public boolean hasMoreElements() {
         return first.hasMoreElements() || second.hasMoreElements();
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.795 -0500", hash_original_method = "CE040DB5C31CF9231E1B46430147AEAF", hash_generated_method = "F9B4890ADFD1503BAD6CB70E3C91AEFC")
     
 public URL nextElement() {

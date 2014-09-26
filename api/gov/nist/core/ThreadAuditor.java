@@ -214,7 +214,7 @@ public long getPingIntervalInMillisecs() {
          * @return a string representation of the object
          */
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.902 -0500", hash_original_method = "433F66024AB5F11DDEF8BAC7248248B0", hash_generated_method = "909BCDEC255E3C10659E5129D1CB9A5B")
         
 public String toString() {

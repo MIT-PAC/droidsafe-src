@@ -60,6 +60,7 @@ public class DecimalFormat extends NumberFormat {
 
     private final Object finalizerGuardian = new Object() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.076 -0400", hash_original_method = "1A366D9719473F2399B539B354BB787B", hash_generated_method = "ABC3A607675036C5172AEFC1575529C6")
         @Override
         protected void finalize() throws Throwable {
@@ -673,7 +674,7 @@ public void setGroupingSize(int value) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.887 -0500", hash_original_method = "ABE655961F79B3C1FE3443634AA21C37", hash_generated_method = "91004DDDF771A6CC7CFB13627495F367")
     
 @Override
@@ -704,7 +705,7 @@ public void setGroupingSize(int value) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.892 -0500", hash_original_method = "D0C418C01DBD33DD29A18941B68BCBF7", hash_generated_method = "1C7EB6C8394959EECD4657CE2A97FE38")
     
 @Override
@@ -760,7 +761,7 @@ public void setGroupingSize(int value) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.901 -0500", hash_original_method = "6EFC03984672E7D89A36C9F22F2AAB3B", hash_generated_method = "F01D9D9066CB5833B173FA2BD15528ED")
     
 @Override

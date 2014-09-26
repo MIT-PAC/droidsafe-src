@@ -48,7 +48,7 @@ public abstract Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteE
      * @return {@code true} if there are more elements, {@code false} otherwise.
      * @see EntityIterator#next()
      */
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.279 -0500", hash_original_method = "EFC615883F392C5E7B7F6E9EF3393B85", hash_generated_method = "0924C60238EDA5C3606627270C16F625")
     
 public final boolean hasNext() {
@@ -68,7 +68,7 @@ public final boolean hasNext() {
      *             if there are no more elements.
      * @see EntityIterator#hasNext()
      */
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.282 -0500", hash_original_method = "D761CE40C9BF5BACB311C894FE3131D0", hash_generated_method = "CEC4763A0AD1E76D825251378A952EB1")
     

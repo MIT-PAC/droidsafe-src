@@ -56,6 +56,8 @@ public ProxyInputStream(InputStream proxy) {
      * @return the byte read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.473 -0400", hash_original_method = "54B5A34E53A0B96BE3D94E0D4A7D572A", hash_generated_method = "3D6BB7F1FA6BA070C87313FFEA7AFD38")
     
 @Override
@@ -77,6 +79,8 @@ public ProxyInputStream(InputStream proxy) {
      * @return the number of bytes read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.474 -0400", hash_original_method = "ACF1A17E0D23809C356E177971499CFB", hash_generated_method = "C084603B1E8F1EDF53DB37D1B859A462")
     
 @Override
@@ -100,6 +104,8 @@ public ProxyInputStream(InputStream proxy) {
      * @return the number of bytes read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.474 -0400", hash_original_method = "2C3D85339C2DDA831F01519845123B39", hash_generated_method = "AA79F4B08C140AB947EEDF78E949FA4F")
     
 @Override
@@ -121,6 +127,7 @@ public ProxyInputStream(InputStream proxy) {
      * @return the actual number of bytes skipped
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.475 -0400", hash_original_method = "FA9F888D4C4D27A705AD6E4249FF9A0F", hash_generated_method = "C8F649F07984A40C7FEFB1C94172B5AD")
     
 @Override
@@ -138,6 +145,7 @@ public ProxyInputStream(InputStream proxy) {
      * @return the number of available bytes
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.475 -0400", hash_original_method = "7BBD2FE125A14B4336F98A66912C9079", hash_generated_method = "6B291B7CF066ACAB4A37FF3BC6B00BEE")
     
 @Override
@@ -154,6 +162,7 @@ public ProxyInputStream(InputStream proxy) {
      * Invokes the delegate's <code>close()</code> method.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.476 -0400", hash_original_method = "B82B927E9AF02AC9DAC77E074F6BBD30", hash_generated_method = "8DF4356E8F366D7D46C891448336116D")
     
 @Override
@@ -169,6 +178,7 @@ public ProxyInputStream(InputStream proxy) {
      * Invokes the delegate's <code>mark(int)</code> method.
      * @param readlimit read ahead limit
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.476 -0400", hash_original_method = "FFAC7C303832D87EA3757F73ECC9CF0F", hash_generated_method = "97D4206E523BA3252F44669193A79E5B")
     
 @Override
@@ -180,6 +190,7 @@ public ProxyInputStream(InputStream proxy) {
      * Invokes the delegate's <code>reset()</code> method.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.478 -0400", hash_original_method = "C1647ABF099BDE2A705C358E5A628D51", hash_generated_method = "8DA51924A1B4238BF8D93028A7202CD0")
     
 @Override
@@ -195,6 +206,7 @@ public ProxyInputStream(InputStream proxy) {
      * Invokes the delegate's <code>markSupported()</code> method.
      * @return true if mark is supported, otherwise false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.478 -0400", hash_original_method = "41BA5D3E6CD82551F6C2FAFF3850B986", hash_generated_method = "AAA0E9FA70DCC42A6EF6C686E3CCDC7E")
     
 @Override

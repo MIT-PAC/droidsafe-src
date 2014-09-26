@@ -30,9 +30,9 @@ import android.text.TextUtils;
 public final class PrinterId implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.285 -0400", hash_original_field = "81D4D8C35ABE745F54E95E00043DA64C", hash_generated_field = "571F59E8A16B4C0145B8EF5686357A4A")
 
-
     public static final Parcelable.Creator<PrinterId> CREATOR =
             new Creator<PrinterId>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public PrinterId createFromParcel(Parcel parcel) {
             return new PrinterId(parcel);
@@ -45,10 +45,8 @@ public final class PrinterId implements Parcelable {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.263 -0400", hash_original_field = "32F872234804B44EE8CD8DA963EAF97C", hash_generated_field = "A427BBA67BB83D5D53B7231F4F2CB87A")
 
-
     private  ComponentName mServiceName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.264 -0400", hash_original_field = "C45ADAE9E016EB39E6FE83F74AE9F96F", hash_generated_field = "F75485050A5C28B43276DC5D122C77FF")
-
 
     private  String mLocalId;
 
@@ -141,6 +139,7 @@ public String getLocalId() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.276 -0400", hash_original_method = "F034D4FF3DB0CDBC9F14D5214FE5A565", hash_generated_method = "44C1F65DF08B4F84CB4EE112FFE361AF")
     
 @Override
@@ -153,6 +152,7 @@ public String getLocalId() {
         return hashCode;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.278 -0400", hash_original_method = "1604933C7C47AEB9DF5B7238CA0DA895", hash_generated_method = "74F21BD61EE69934DAED098F8940AB16")
     
 @Override

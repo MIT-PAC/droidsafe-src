@@ -20,8 +20,8 @@ abstract class AbstractHttpOutputStream extends OutputStream {
         //Synthesized constructor
     }
 
-    @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.494 -0500", hash_original_method = "BEB37A4CC4B7ECAA5E509CB7A19DC490", hash_generated_method = "B3DF0522007999A58192C1F1F8F64747")
     
 @Override public final void write(int data) throws IOException {

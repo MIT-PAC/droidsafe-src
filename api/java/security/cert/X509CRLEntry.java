@@ -69,6 +69,7 @@ public boolean equals(Object other) {
      *
      * @return the hashcode of this instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.037 -0400", hash_original_method = "3F434D0C038C42D08B69CA2BE1345E37", hash_generated_method = "1BEABD95BAB5FDF6787F70CCAF09F7E3")
     
 public int hashCode() {
@@ -139,6 +140,7 @@ public abstract boolean hasExtensions();
      *
      * @return a string representation of this instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.046 -0400", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "7EA90E50E51652C3FF11C3BD32031D10")
     
 public abstract String toString();

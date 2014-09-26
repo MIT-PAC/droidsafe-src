@@ -331,6 +331,8 @@ public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException
      *             if this file is closed or another I/O error occurs.
      * @see #writeBoolean(boolean)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.211 -0500", hash_original_method = "50A11AE3C5EDA3B4603E1C2204F22ED8", hash_generated_method = "F9A31F84ADBCA19B6043EA35A5DF9513")
     
 public final boolean readBoolean() throws IOException {
@@ -353,6 +355,8 @@ public final boolean readBoolean() throws IOException {
      *             if this file is closed or another I/O error occurs.
      * @see #writeBoolean(boolean)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.214 -0500", hash_original_method = "2659119ED4E9182341F4E2CF2510ACC4", hash_generated_method = "60488882DC013DC02E5B18F972072683")
     
 public final byte readByte() throws IOException {
@@ -375,6 +379,8 @@ public final byte readByte() throws IOException {
      *             if this file is closed or another I/O error occurs.
      * @see #writeChar(int)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.217 -0500", hash_original_method = "A44D11CC3BE0C88F3640C82011E315A3", hash_generated_method = "B0732E37E958B55BB10FAA52B3D5674C")
     
 public final char readChar() throws IOException {
@@ -393,6 +399,8 @@ public final char readChar() throws IOException {
      *             if this file is closed or another I/O error occurs.
      * @see #writeDouble(double)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.219 -0500", hash_original_method = "D7A510C090532D6542CA33ECD805653E", hash_generated_method = "D338B640779B17CB7260528C9150884A")
     
 public final double readDouble() throws IOException {
@@ -411,6 +419,8 @@ public final double readDouble() throws IOException {
      *             if this file is closed or another I/O error occurs.
      * @see #writeFloat(float)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.222 -0500", hash_original_method = "C7FD0C2698771DF8CC60A785DCC40BB4", hash_generated_method = "80593170191F13BFD0E1C07AC7E4AFC0")
     
 public final float readFloat() throws IOException {
@@ -420,6 +430,8 @@ public final float readFloat() throws IOException {
     /**
      * Equivalent to {@code readFully(dst, 0, dst.length);}.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.224 -0500", hash_original_method = "FD74F944C9A8F422C55042589648B5E4", hash_generated_method = "A7F355DBB7B4EAE4A328A9A9E3910E20")
     
 public final void readFully(byte[] dst) throws IOException {
@@ -452,6 +464,8 @@ public final void readFully(byte[] dst) throws IOException {
      * @throws NullPointerException
      *             if {@code dst} is null.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.227 -0500", hash_original_method = "35386938706C6610A66A6C02D11FE342", hash_generated_method = "D5B8143676F49C157F3B2AD3E184A597")
     
 public final void readFully(byte[] dst, int offset, int byteCount) throws IOException {
@@ -478,6 +492,8 @@ public final void readFully(byte[] dst, int offset, int byteCount) throws IOExce
      *             if this file is closed or another I/O error occurs.
      * @see #writeInt(int)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.230 -0500", hash_original_method = "623A6326FEE6BEAC4C71D9EAB23D5BE9", hash_generated_method = "5D6C62E5010CBE21FE3E33B342C82583")
     
 public final int readInt() throws IOException {
@@ -499,6 +515,8 @@ public final int readInt() throws IOException {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.233 -0500", hash_original_method = "A3561FB7999FC54AB0AB272B825D1BA9", hash_generated_method = "BEAFAA89A57C515E05B4E556EACE92EE")
     
 public final String readLine() throws IOException {
@@ -543,6 +561,8 @@ public final String readLine() throws IOException {
      *             if this file is closed or another I/O error occurs.
      * @see #writeLong(long)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.235 -0500", hash_original_method = "469514DB0DA90571D02A531A0FA63D6F", hash_generated_method = "A9605FE51958909BD225DA582AF5352D")
     
 public final long readLong() throws IOException {
@@ -562,6 +582,8 @@ public final long readLong() throws IOException {
      *             if this file is closed or another I/O error occurs.
      * @see #writeShort(int)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.238 -0500", hash_original_method = "C93410329A523BCD2A1636A4AEB3409A", hash_generated_method = "8C1BC44A51E102FD4811ACD830EA9366")
     
 public final short readShort() throws IOException {
@@ -581,6 +603,8 @@ public final short readShort() throws IOException {
      *             if this file is closed or another I/O error occurs.
      * @see #writeByte(int)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.240 -0500", hash_original_method = "AF5E7921B4B2187E0041EFA801E04DA5", hash_generated_method = "E10289AF1D5496D17669A60BBBE2F9E9")
     
 public final int readUnsignedByte() throws IOException {
@@ -603,6 +627,8 @@ public final int readUnsignedByte() throws IOException {
      *             if this file is closed or another I/O error occurs.
      * @see #writeShort(int)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.243 -0500", hash_original_method = "856B18E0C9E8549741083F490D54C8D8", hash_generated_method = "D61B634BAB1210C26ADCEAB5B21DE464")
     
 public final int readUnsignedShort() throws IOException {
@@ -626,6 +652,8 @@ public final int readUnsignedShort() throws IOException {
      *             if the bytes read cannot be decoded into a character string.
      * @see #writeUTF(String)
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.246 -0500", hash_original_method = "1E6F905958EDDE8569C0995497961028", hash_generated_method = "9185F536AED2E9334E1588BCE6D15B49")
     
 public final String readUTF() throws IOException {
@@ -718,6 +746,7 @@ public void setLength(long newLength) throws IOException {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.254 -0500", hash_original_method = "FB9C2E97D200EE03574ADD76D56D23DD", hash_generated_method = "F28BDDC6AFDD6D20810D78F064E232CF")
     
 public int skipBytes(int count) throws IOException {
@@ -741,7 +770,7 @@ public int skipBytes(int count) throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.257 -0500", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "227B669FDA8AD574341B08A5DD95557F")
     
 public void write(byte[] buffer) throws IOException {
@@ -759,7 +788,8 @@ public void write(byte[] buffer) throws IOException {
      * @throws IOException
      *             if an I/O error occurs while writing to this file.
      */
-    @DSSink({DSSinkKind.FILE})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.259 -0500", hash_original_method = "35FA4EEB101513E91F640D0BB99E182F", hash_generated_method = "408D805D9F4B74A29DDEBF53541D0A55")
     
 public void write(byte[] buffer, int byteOffset, int byteCount) throws IOException {
@@ -799,6 +829,8 @@ public void write(int oneByte) throws IOException {
      *             if this file is closed or another I/O error occurs.
      * @see #readBoolean()
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.264 -0500", hash_original_method = "9F118A4D5206A4234B8C15F22340D26C", hash_generated_method = "BC3F06DA4ACE3228AF29A037952DAF6A")
     
 public final void writeBoolean(boolean val) throws IOException {
@@ -816,6 +848,8 @@ public final void writeBoolean(boolean val) throws IOException {
      * @see #readByte()
      * @see #readUnsignedByte()
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.267 -0500", hash_original_method = "B252FC199353C3326913DC87EC8ACD0F", hash_generated_method = "B8250C3250A38DA6C7D198731C269ADA")
     
 public final void writeByte(int val) throws IOException {
@@ -831,6 +865,8 @@ public final void writeByte(int val) throws IOException {
      * @throws IOException
      *             if an I/O error occurs while writing to this file.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.269 -0500", hash_original_method = "EECBC8862767167AF0CABDC3594E6347", hash_generated_method = "39275A257DB50D61A6E49D9313454A28")
     
 public final void writeBytes(String str) throws IOException {
@@ -887,7 +923,8 @@ public final void writeChars(String str) throws IOException {
      *             if an I/O error occurs while writing to this file.
      * @see #readDouble()
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.277 -0500", hash_original_method = "F72176A2741A4B219C2AAE16A0D68BA2", hash_generated_method = "F3BF6663D138ED0E1DFEA62B1C80FA3F")
     
 public final void writeDouble(double val) throws IOException {
@@ -905,7 +942,8 @@ public final void writeDouble(double val) throws IOException {
      *             if an I/O error occurs while writing to this file.
      * @see #readFloat()
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.279 -0500", hash_original_method = "D8994DA56D4741462EE1F41757FFAE01", hash_generated_method = "1792C72D5DB8A7188EE6A15A300D3124")
     
 public final void writeFloat(float val) throws IOException {
@@ -922,6 +960,8 @@ public final void writeFloat(float val) throws IOException {
      *             if an I/O error occurs while writing to this file.
      * @see #readInt()
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.282 -0500", hash_original_method = "37CBB7B1E5121DA5847923CB75DB4FD7", hash_generated_method = "614D95C47B63C83EC304F76F5EA63F78")
     
 public final void writeInt(int val) throws IOException {
@@ -939,6 +979,8 @@ public final void writeInt(int val) throws IOException {
      *             if an I/O error occurs while writing to this file.
      * @see #readLong()
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.285 -0500", hash_original_method = "7B3E247666A6F3E05280E703124B5A4E", hash_generated_method = "EC58106DBA84FF2516FCC382DA22D5AA")
     
 public final void writeLong(long val) throws IOException {
@@ -958,6 +1000,8 @@ public final void writeLong(long val) throws IOException {
      * @see #readShort()
      * @see DataInput#readUnsignedShort()
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.287 -0500", hash_original_method = "64B98C2F1C9F8A49F0516D9D78465522", hash_generated_method = "BD718C7C8DCE79BD36DF8E1657B26DBA")
     
 public final void writeShort(int val) throws IOException {
@@ -978,7 +1022,8 @@ public final void writeShort(int val) throws IOException {
      *             if the encoded string is longer than 65535 bytes.
      * @see #readUTF()
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.290 -0500", hash_original_method = "9D44E024EEA016D3EAD697517CA83CDC", hash_generated_method = "58B20B8780C4182A44E8248160366D2A")
     
 public final void writeUTF(String str) throws IOException {

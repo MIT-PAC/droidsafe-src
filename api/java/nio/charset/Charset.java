@@ -313,7 +313,7 @@ public abstract boolean contains(Charset charset);
      * @return a new instance of an encoder for this charset.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.311 -0500", hash_original_method = "6CE48151599625E957ABC6EC54C683E1", hash_generated_method = "F7342451161EBEDD0F2A5E305B52C07E")
     
 public abstract CharsetEncoder newEncoder();
@@ -324,7 +324,7 @@ public abstract CharsetEncoder newEncoder();
      * @return a new instance of a decoder for this charset.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.314 -0500", hash_original_method = "87399EF201DA00E186FBDB0ABC0F624F", hash_generated_method = "2CC99218A52107AA79DA0D19E105B263")
     
 public abstract CharsetDecoder newDecoder();
@@ -500,6 +500,7 @@ public final CharBuffer decode(ByteBuffer buffer) {
      * @return a negative integer if less than the given object, a positive
      *         integer if larger than it, or 0 if equal to it.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.339 -0500", hash_original_method = "F361CD14D12B60D2CF0F30DB9C5F0195", hash_generated_method = "970DF60F13EB2016958F3F4160211221")
     
 public final int compareTo(Charset charset) {

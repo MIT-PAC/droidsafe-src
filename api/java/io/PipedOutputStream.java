@@ -135,7 +135,7 @@ public void connect(PipedInputStream stream) throws IOException {
      *             longer alive. This case is currently not handled correctly.
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.418 -0500", hash_original_method = "2AED6D37E619AA85421BF0C9628FA8FE", hash_generated_method = "D6706B0027B05DB7EDA828B6EAA50110")
     
 @Override

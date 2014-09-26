@@ -137,7 +137,7 @@ public class Notification implements Parcelable
     public static final Parcelable.Creator<Notification> CREATOR
             = new Parcelable.Creator<Notification>()
     {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:16.269 -0400", hash_original_method = "640E6F5E88B10B67950DC22B82259969", hash_generated_method = "DBA7908684BF656EA8BA45DF5B36E06D")
         
 public Notification createFromParcel(Parcel parcel)
@@ -228,7 +228,7 @@ public Notification[] newArray(int size)
 
         public static final Parcelable.Creator<Action> CREATOR
         = new Parcelable.Creator<Action>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             public Action createFromParcel(Parcel in) {
                 return new Action(in);
             }

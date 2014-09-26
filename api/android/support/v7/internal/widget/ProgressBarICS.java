@@ -16,7 +16,6 @@ package android.support.v7.internal.widget;
  * limitations under the License.
  */
 
-
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -55,7 +54,6 @@ import android.view.animation.Transformation;
 public class ProgressBarICS extends View {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.209 -0400", hash_original_field = "1496E1C556157C5FD3FDE79598CDF532", hash_generated_field = "CC7511334507B624E41735D194F6E4E0")
 
-
     private static final int MAX_LEVEL = 10000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.211 -0400", hash_original_field = "DE20DBD72E84B094A00D03E5F4058886", hash_generated_field = "39EF70D35A29D206C019E7A12A698D6D")
 
@@ -80,7 +78,6 @@ public class ProgressBarICS extends View {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.215 -0400", hash_original_field = "B5D566AA92521F570066E8773A24B0C0", hash_generated_field = "B5D566AA92521F570066E8773A24B0C0")
 
-
     int mMinWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.217 -0400", hash_original_field = "DE6F7D0025A7518849324A9E1601224A", hash_generated_field = "DE6F7D0025A7518849324A9E1601224A")
 
@@ -93,7 +90,6 @@ public class ProgressBarICS extends View {
     int mMaxHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.224 -0400", hash_original_field = "7CDF5A45863735DC45D655DB7E365343", hash_generated_field = "1CA7BE0C4831604F244183A43ACB7282")
 
-
     private int mProgress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.226 -0400", hash_original_field = "58F48CA09A1DEC274EE2E349256BF813", hash_generated_field = "015CFC0D453C8DA6A402F32079F8A6A4")
 
@@ -102,7 +98,6 @@ public class ProgressBarICS extends View {
 
     private int mMax;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.230 -0400", hash_original_field = "C0FAA889F27EDA16D523267D3E01AF97", hash_generated_field = "7AB98B3DA8DC606CB1698898E1D5910B")
-
 
     private int mBehavior;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.232 -0400", hash_original_field = "BC345057CF9CBE8611DA24E477E3EC27", hash_generated_field = "A658ABE5235D82E385D992CF2A9ACD3B")
@@ -151,7 +146,6 @@ public class ProgressBarICS extends View {
 
     private long mLastDrawTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.261 -0400", hash_original_field = "46DA55E63CE38C818116D2946753B27E", hash_generated_field = "9E34047AEA414B2399121C937D10E14B")
-
 
     private boolean mInDrawing;
 
@@ -449,6 +443,7 @@ public void setProgressDrawable(Drawable d) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.296 -0400", hash_original_method = "56BA1F17FA722E2B64538801F5E2971D", hash_generated_method = "0B02F1DFB62424893F2A6429D2429244")
     
 @Override
@@ -457,6 +452,7 @@ public void setProgressDrawable(Drawable d) {
                 || super.verifyDrawable(who);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.298 -0400", hash_original_method = "9D88EC1BAB8B30E9973F963BD590322C", hash_generated_method = "E638853BDC411A9115DF2C7DD6FAA67E")
     
 @Override
@@ -478,6 +474,7 @@ public void setProgressDrawable(Drawable d) {
             mFromUser = fromUser;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void run() {
             doRefreshProgress(mId, mProgress, mFromUser, true);
             // Put ourselves back in the cache when we are done
@@ -710,6 +707,7 @@ public synchronized final void incrementSecondaryProgressBy(int diff) {
     /**
      * <p>Start the indeterminate progress animation.</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.343 -0400", hash_original_method = "F5167F20A872A63C36DAF85A2B000FB5", hash_generated_method = "F5167F20A872A63C36DAF85A2B000FB5")
     
 void startAnimation() {
@@ -787,6 +785,7 @@ public Interpolator getInterpolator() {
         return mInterpolator;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.355 -0400", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "73E2D60221E84DFF666BD917E74B15F5")
     
 @Override
@@ -805,6 +804,7 @@ public Interpolator getInterpolator() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.357 -0400", hash_original_method = "E937F441086D9A40C4DA651781180A92", hash_generated_method = "1ED71813CAE5A0C16DA256492B8D334A")
     
 @Override
@@ -821,6 +821,7 @@ public Interpolator getInterpolator() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.360 -0400", hash_original_method = "EAD52858E54831CE0C8FE00F12F2051C", hash_generated_method = "9B0DCD8C0A17B2F6A4A8C6C3AF4DADA6")
     
 @Override
@@ -839,6 +840,7 @@ public Interpolator getInterpolator() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.362 -0400", hash_original_method = "69EE8DE1AB95A9498391F63C2C373DBD", hash_generated_method = "5CA0B0F09A03F7EA0410163A47798DB8")
     
 @Override
@@ -886,6 +888,7 @@ private void updateDrawableBounds(int w, int h) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.368 -0400", hash_original_method = "0EFB7C1793578989C1A5DF9791806651", hash_generated_method = "B11E5EDA72F7ED41A7E79AB876D22B86")
     
 @Override
@@ -942,6 +945,7 @@ private void updateDrawableBounds(int w, int h) {
                 resolveSize(dh, heightMeasureSpec));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.373 -0400", hash_original_method = "568F14E497668D52F70AE96AA5EB6F88", hash_generated_method = "4EB57F8B143863A87C550D037C073C6C")
     
 @Override
@@ -984,6 +988,7 @@ private void updateDrawableState() {
             secondaryProgress = in.readInt();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void writeToParcel(Parcel out, int flags) {
             super.writeToParcel(out, flags);
@@ -993,6 +998,7 @@ private void updateDrawableState() {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -1003,6 +1009,7 @@ private void updateDrawableState() {
         };
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.401 -0400", hash_original_method = "875308A47ADC87038CC9E153A4D8FE71", hash_generated_method = "C5A52986289D68811DA77A5BE28BE018")
     
 @Override
@@ -1017,6 +1024,7 @@ private void updateDrawableState() {
         return ss;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.403 -0400", hash_original_method = "A42CFAF758710477BAC4A7B2A0C98761", hash_generated_method = "36920F3704EEF8E261868AE4CB4E618B")
     
 @Override
@@ -1028,6 +1036,7 @@ private void updateDrawableState() {
         setSecondaryProgress(ss.secondaryProgress);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.406 -0400", hash_original_method = "608AE3D8DA74959AA8F2204845C7317D", hash_generated_method = "7F5751066C42C755413048DCB414803C")
     
 @Override
@@ -1038,6 +1047,7 @@ private void updateDrawableState() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.408 -0400", hash_original_method = "849BEAABD731843766EB22798F922874", hash_generated_method = "CC75F266D8C34451BE27A2C0474B486D")
     
 @Override

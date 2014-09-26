@@ -24,7 +24,6 @@ public class GeoPoint
         return 0;
     }
     
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSSafe(DSCat.LOCATION)
     public String toString() {
         

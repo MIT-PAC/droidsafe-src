@@ -340,7 +340,7 @@ public int size() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.278 -0500", hash_original_method = "332CB84E85FBD8A2CB62BBB184B280CA", hash_generated_method = "7EE66C4B254D275ACADB7E36512FEADD")
     
 public V get(Object key) {
@@ -469,7 +469,7 @@ public boolean contains(Object value) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.289 -0500", hash_original_method = "7B5FF6221D53537744EF141B1F8CB9FD", hash_generated_method = "7BFA11D2C887423F4364FA64BC7ED080")
     
 public V put(K key, V value) {
@@ -488,7 +488,7 @@ public V put(K key, V value) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.291 -0500", hash_original_method = "667464B5C7B8632F9930C4BABEB48EA8", hash_generated_method = "D7D1028C77FC31ED718B783FE3D514BB")
     
 public V putIfAbsent(K key, V value) {
@@ -989,6 +989,7 @@ HashIterator() {
             advance();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.342 -0500", hash_original_method = "00AF58B06A8865C0E6725656CE1DF6CF", hash_generated_method = "0FBD33F84C00D7A0EEE928122149D189")
         
 public boolean hasMoreElements() { return hasNext(); }
@@ -1020,6 +1021,7 @@ final void advance() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.348 -0500", hash_original_method = "F0F1A7352709A4A442C7E6635A47CE9D", hash_generated_method = "939A74F092F379608CA61048568D1336")
         
 public boolean hasNext() { return nextEntry != null; }
@@ -1034,6 +1036,7 @@ HashEntry<K,V> nextEntry() {
             return lastReturned;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.353 -0500", hash_original_method = "EB8010C2D5EA80D446C3485BFC85793F", hash_generated_method = "953125EFA17C988EC50B1E7778F2EB20")
         
 public void remove() {
@@ -1052,7 +1055,7 @@ public void remove() {
         {
             //Synthesized constructor
         }
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.359 -0500", hash_original_method = "AC02B860B54618170BE24E50FF82F167", hash_generated_method = "5CE69281687197D974EFA494331617C2")
         
 public K next()        { return super.nextEntry().key; }
@@ -1070,7 +1073,7 @@ public K nextElement() { return super.nextEntry().key; }
         {
             //Synthesized constructor
         }
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.366 -0500", hash_original_method = "282B954004CE321F97FD15862590F160", hash_generated_method = "D966FC58251295E5B681672FC4C7796B")
         
 public V next()        { return super.nextEntry().value; }
@@ -1097,7 +1100,8 @@ WriteThroughEntry(K k, V v) {
          * removed in which case the put will re-establish). We do not
          * and cannot guarantee more.
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.376 -0500", hash_original_method = "38F302BB69197C5906EE6F553583F6F9", hash_generated_method = "00CFA85539CBE187D0B73C47ABC5E9F3")
         
 public V setValue(V value) {
@@ -1116,7 +1120,7 @@ public V setValue(V value) {
         {
             //Synthesized constructor
         }
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.381 -0500", hash_original_method = "DA1DC8695C9406305A6247D7AF5617DE", hash_generated_method = "D5A9F0B3135B4DCBD24EA27C354955E0")
         
 public Map.Entry<K,V> next() {
@@ -1157,11 +1161,13 @@ public boolean isEmpty() {
 public boolean contains(Object o) {
             return ConcurrentHashMap.this.containsKey(o);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.397 -0500", hash_original_method = "5AA31A160A27D834D20E2EBCA8B4999F", hash_generated_method = "9E87AC0396E0C02764446ADECBECAE14")
         
 public boolean remove(Object o) {
             return ConcurrentHashMap.this.remove(o) != null;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.400 -0500", hash_original_method = "1F05FD987B33CE5DB834C627215292DB", hash_generated_method = "01EC209366AEF3AEDA030D10B50125F3")
         
 public void clear() {
@@ -1183,11 +1189,13 @@ public void clear() {
 public Iterator<V> iterator() {
             return new ValueIterator();
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.407 -0500", hash_original_method = "84790AE556354018FD5A8D95161C900C", hash_generated_method = "90E9C2DF329E4562BAFE113BBE53FC84")
         
 public int size() {
             return ConcurrentHashMap.this.size();
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.410 -0500", hash_original_method = "BB49B4DE055D4AF23A8AAE749170E176", hash_generated_method = "D0C498395B567F9E0AC1C003E0D96349")
         
 public boolean isEmpty() {
@@ -1199,6 +1207,7 @@ public boolean isEmpty() {
 public boolean contains(Object o) {
             return ConcurrentHashMap.this.containsValue(o);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.415 -0500", hash_original_method = "1F05FD987B33CE5DB834C627215292DB", hash_generated_method = "01EC209366AEF3AEDA030D10B50125F3")
         
 public void clear() {
@@ -1230,6 +1239,7 @@ public boolean contains(Object o) {
             V v = ConcurrentHashMap.this.get(e.getKey());
             return v != null && v.equals(e.getValue());
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.425 -0500", hash_original_method = "8F57FBEE664B771D5FDC7BC47FB0BA8F", hash_generated_method = "F1C6B537623D38F7759F27242F74D900")
         
 public boolean remove(Object o) {
@@ -1250,6 +1260,7 @@ public int size() {
 public boolean isEmpty() {
             return ConcurrentHashMap.this.isEmpty();
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.432 -0500", hash_original_method = "1F05FD987B33CE5DB834C627215292DB", hash_generated_method = "01EC209366AEF3AEDA030D10B50125F3")
         
 public void clear() {

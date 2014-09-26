@@ -284,6 +284,7 @@ public BigInteger getReductionPolynomial() {
      *
      * @return the hashcode value for this finite field.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:17.028 -0400", hash_original_method = "0BA5737D802F499B64A85853275E3368", hash_generated_method = "B9078954865C695972CAFFD384122A35")
     
 public int hashCode() {

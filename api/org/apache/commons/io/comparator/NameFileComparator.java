@@ -105,6 +105,7 @@ public NameFileComparator(IOCase caseSensitivity) {
      * same and a positive value if the first files name
      * is greater than the second file.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.680 -0400", hash_original_method = "63DEB46C163A106B104143300A10799E", hash_generated_method = "367148E440281F644754D7BE5E4FB411")
     
 public int compare(File file1, File file2) {
@@ -116,6 +117,7 @@ public int compare(File file1, File file2) {
      *
      * @return String representation of this file comparator
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.680 -0400", hash_original_method = "2C8858F1FEF258A79F4059C0A1CB8058", hash_generated_method = "73DBD95B0639383FC78436A99232C748")
     
 @Override

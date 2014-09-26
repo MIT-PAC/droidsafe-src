@@ -52,7 +52,7 @@ public abstract Object blockingLock();
      *             if an I/O error occurs.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.063 -0500", hash_original_method = "21DB17E6C51E37682F8EA397C436E96E", hash_generated_method = "BA37478B634729C2D7E0A5B08FB466F0")
     
 public abstract SelectableChannel configureBlocking(boolean block)
@@ -141,7 +141,7 @@ public abstract SelectorProvider provider();
      * @throws IllegalArgumentException
      *             if the operation given is not supported by this channel.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.075 -0500", hash_original_method = "9EF0D8B0DC0E3104C0F2D3C59F2DDC24", hash_generated_method = "1C9A11BE9729A3914363B7EB05FAC26C")
     @DSSafe(DSCat.SAFE_OTHERS)
 public final SelectionKey register(Selector selector, int operations)
@@ -183,7 +183,7 @@ public final SelectionKey register(Selector selector, int operations)
      *             if this channel is registered but its key has been canceled.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.078 -0500", hash_original_method = "779FC9C1152041835F6C6467E1F8DA69", hash_generated_method = "80731282758076702486D2DCEAF1F1C8")
     
 public abstract SelectionKey register(Selector sel, int ops, Object att)

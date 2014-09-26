@@ -24,7 +24,7 @@ UnknownLengthHttpInputStream(InputStream is, CacheRequest cacheRequest,
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.962 -0500", hash_original_method = "E2336783F7D37948479E1E76BEFE0EF2", hash_generated_method = "60867053817CC2934DD47C29AA0D185D")
     
 @Override public int read(byte[] buffer, int offset, int count) throws IOException {

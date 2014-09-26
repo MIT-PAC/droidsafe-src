@@ -37,13 +37,11 @@ public class InflaterOutputStream extends FilterOutputStream {
     private static final int DEFAULT_BUFFER_SIZE = 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.257 -0400", hash_original_field = "91462E289D2F6E91C1C1F707980A1ADD", hash_generated_field = "1E4B81450D564B8A8EB02BC28E6E6C0F")
 
-
     protected  Inflater inf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.257 -0400", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
     protected  byte[] buf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.258 -0400", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
-
 
     private boolean closed = false;
 
@@ -103,6 +101,7 @@ public InflaterOutputStream(OutputStream out, Inflater inf, int bufferSize) {
      * Writes remaining data into the output stream and closes the underlying
      * output stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.260 -0400", hash_original_method = "C7E69C7E232B119CCA1DF33F2834B53C", hash_generated_method = "DCA3E77BCB2EE59B79BA8CD42C5F63B8")
     
 @Override
@@ -115,6 +114,7 @@ public InflaterOutputStream(OutputStream out, Inflater inf, int bufferSize) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.260 -0400", hash_original_method = "A01F9A7571A64991C67A6E67AB0C4D1D", hash_generated_method = "FF990421DDA3ED9EE23E72D38BE7841F")
     
 @Override
@@ -145,6 +145,8 @@ public void finish() throws IOException {
      * @throws IOException if an I/O error occurs, or the stream has been closed
      * @throws ZipException if a zip exception occurs.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.261 -0400", hash_original_method = "02F43A8986C37DB67EC951D0B7203DBE", hash_generated_method = "D371D23855741083C6D7CC2B6737E6F1")
     
 @Override
@@ -162,6 +164,8 @@ public void finish() throws IOException {
      * @throws NullPointerException if {@code b == null}.
      * @throws IndexOutOfBoundsException if {@code off < 0 || len < 0 || off + len > b.length}
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.262 -0400", hash_original_method = "0CE43216A5278CC11C8B1E01A32D0746", hash_generated_method = "49DF10605D64A4FCDEB963F6DD99CE4C")
     
 @Override
@@ -172,6 +176,8 @@ public void finish() throws IOException {
         write();
     }
 
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.262 -0400", hash_original_method = "6D1E70DC7726D5752814BADEF47EB41F", hash_generated_method = "8989445EAFA24375DEE7968E3FAC2C2A")
     
 private void write() throws IOException, ZipException {

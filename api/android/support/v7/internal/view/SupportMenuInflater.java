@@ -72,27 +72,21 @@ public class SupportMenuInflater extends MenuInflater {
     private static final String XML_ITEM = "item";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.470 -0400", hash_original_field = "7268E03A5340DB38AA6685B8AA605B67", hash_generated_field = "E013106922B0138DD6AA1961763950FB")
 
-
     private static final int NO_ID = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.473 -0400", hash_original_field = "D4148E18C49BEF6E1A417002BD55A8B1", hash_generated_field = "106DC72A08073671C77A7D24FBF7A3A9")
 
-
     private static final Class<?>[] ACTION_VIEW_CONSTRUCTOR_SIGNATURE = new Class[] {Context.class};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.476 -0400", hash_original_field = "4F684130B0122F446A598AD4585A3D11", hash_generated_field = "C7B470A3C7B9F2492DB764AD9D747D63")
-
 
     private static final Class<?>[] ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE =
             ACTION_VIEW_CONSTRUCTOR_SIGNATURE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.478 -0400", hash_original_field = "B67C5B388E9FA2DA18ED6D2A1AEFE8AC", hash_generated_field = "2E5F86E900916EB9BA1688830F2A5AD2")
 
-
     private  Object[] mActionViewConstructorArguments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.481 -0400", hash_original_field = "9A27EFFBDE324A6C3E883862F710B33A", hash_generated_field = "EF0AF7D7071FC85FAD372A0098884F5B")
 
-
     private  Object[] mActionProviderConstructorArguments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.483 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.485 -0400", hash_original_field = "E61DF532B5FBB551C9DB8D0C7D03A4B8", hash_generated_field = "05A81FB385E86344EC955B331EC753C2")
@@ -123,6 +117,7 @@ public SupportMenuInflater(Context context) {
      * @param menu The Menu to inflate into. The items and submenus will be
      *            added to this Menu.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.493 -0400", hash_original_method = "C6C7F976DB99189CDA4BAC668484C52B", hash_generated_method = "2935D9CFF0E938B9AF1CA443976A9AE4")
     
 @Override

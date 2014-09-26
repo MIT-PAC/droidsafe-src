@@ -44,6 +44,8 @@ public class ClosedOutputStream extends OutputStream {
      * @param b ignored
      * @throws IOException always thrown
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.282 -0400", hash_original_method = "E42F4A3BC6073DDBB791DEFDBE00CF19", hash_generated_method = "EDCF2CDCD8BA67F98AEC7FCBDEA8704E")
     
 @Override

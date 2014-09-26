@@ -32,6 +32,7 @@ class InstanceLearner extends Learner {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:41.745 -0500", hash_original_field = "DC32B45211124CAA5FA726248F32C8C0", hash_generated_field = "98E155612385280F98D6C7DF53461FF9")
 
     private static final Comparator<Prediction> sComparator = new Comparator<Prediction>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:23.947 -0400", hash_original_method = "495639D6E51F2F01CB4373EEB2E59774", hash_generated_method = "2B004B74A0350F0975EE7846FEE78642")
         
 public int compare(Prediction object1, Prediction object2) {

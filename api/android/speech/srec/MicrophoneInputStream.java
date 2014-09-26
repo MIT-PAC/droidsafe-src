@@ -111,8 +111,8 @@ public MicrophoneInputStream(int sampleRate, int fifoDepth) throws IOException {
         }
     }
 
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.AUDIO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.749 -0400", hash_original_method = "2E9C6AB3DEFA28751EC7449B68926A5B", hash_generated_method = "FC430BBA4CFEE41B53C3909D7283B40F")
     
 @Override
@@ -123,7 +123,7 @@ public MicrophoneInputStream(int sampleRate, int fifoDepth) throws IOException {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.751 -0400", hash_original_method = "A8886AC01A191BF4705E453AB0A94419", hash_generated_method = "BBF4A16FCF291496CC21964BA29A9727")
     
 @Override
@@ -133,7 +133,7 @@ public MicrophoneInputStream(int sampleRate, int fifoDepth) throws IOException {
     }
     
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.752 -0400", hash_original_method = "850DD0E1BDA65448E15AC4D5E89D1DA2", hash_generated_method = "D8B38537DA45EB038B1D8CE9EB619F46")
     
 @Override

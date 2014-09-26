@@ -32,7 +32,7 @@ public String getAttributeName(int index) {
     }
 
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.958 -0500", hash_original_method = "A5436A02B7CB2BE76E834F087F6ECBA1", hash_generated_method = "92C896FB021164F335BD14C8BEECAE4D")
     
 public String getAttributeValue(int index) {
@@ -40,7 +40,7 @@ public String getAttributeValue(int index) {
     }
 
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.961 -0500", hash_original_method = "0F6DE45848B198201E8558211308FA90", hash_generated_method = "2513DF4668E27008F10BE75A19CABAA0")
     
 public String getAttributeValue(String namespace, String name) {
@@ -48,7 +48,7 @@ public String getAttributeValue(String namespace, String name) {
     }
 
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.963 -0500", hash_original_method = "D18F44DE17503E98739B2795B002BD8F", hash_generated_method = "016D6C66B316E6F83720EF4A41A9A943")
     
 public String getPositionDescription() {
@@ -70,6 +70,7 @@ public int getAttributeListValue(String namespace, String attribute,
             getAttributeValue(namespace, attribute), options, defaultValue);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.969 -0500", hash_original_method = "CB59BE8B074EA88200C6D038DF92BCD2", hash_generated_method = "BFDBFA717285BF4BDEEE396CCFE04A4F")
     
 public boolean getAttributeBooleanValue(String namespace, String attribute,
@@ -78,6 +79,7 @@ public boolean getAttributeBooleanValue(String namespace, String attribute,
             getAttributeValue(namespace, attribute), defaultValue);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.972 -0500", hash_original_method = "B72C52627D560B7B2B8F954C65A581EF", hash_generated_method = "E1F19C0E927FD2690F3276E3737E092E")
     
 public int getAttributeResourceValue(String namespace, String attribute,
@@ -122,6 +124,7 @@ public int getAttributeListValue(int index,
             getAttributeValue(index), options, defaultValue);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.991 -0500", hash_original_method = "5307D0D140F223DF06C748E39BFCF6F9", hash_generated_method = "BF6C4A67CE705BC8CE4F71A4A92E5640")
     
 public boolean getAttributeBooleanValue(int index, boolean defaultValue) {
@@ -129,6 +132,7 @@ public boolean getAttributeBooleanValue(int index, boolean defaultValue) {
             getAttributeValue(index), defaultValue);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.995 -0500", hash_original_method = "13E9FD87B957377B70C3AD0477E922F3", hash_generated_method = "7D8CAC6604CBCA057C7CDA5FC88F9BFB")
     
 public int getAttributeResourceValue(int index, int defaultValue) {

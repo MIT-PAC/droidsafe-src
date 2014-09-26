@@ -94,7 +94,8 @@ public static int hash(Object... values) {
   /**
    * Returns 0 for null or {@code o.hashCode()}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:00.118 -0400", hash_original_method = "970ADDE5DABB38D7F42BDDA2D6B8B600", hash_generated_method = "07A63DF93C922328842C8FA9A58D6EAB")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:00.118 -0400", hash_original_method = "970ADDE5DABB38D7F42BDDA2D6B8B600", hash_generated_method = "07A63DF93C922328842C8FA9A58D6EAB")
     
 public static int hashCode(Object o) {
     return (o == null) ? 0 : o.hashCode();
@@ -124,7 +125,8 @@ public static int hashCode(Object o) {
   /**
    * Returns "null" for null or {@code o.toString()}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:00.119 -0400", hash_original_method = "6CF5F70923940BBFA7AB52E855FE4494", hash_generated_method = "DB83EEC92CCCE70FCFCCAEA8D9A8C8D0")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:00.119 -0400", hash_original_method = "6CF5F70923940BBFA7AB52E855FE4494", hash_generated_method = "DB83EEC92CCCE70FCFCCAEA8D9A8C8D0")
     
 public static String toString(Object o) {
     return (o == null) ? "null" : o.toString();
@@ -133,7 +135,8 @@ public static String toString(Object o) {
   /**
    * Returns {@code nullString} for null or {@code o.toString()}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:00.120 -0400", hash_original_method = "C61C21E9B53133DA8B6C86E6B0D25F17", hash_generated_method = "F89520872CDD0CD7839A8F458034CBB5")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:00.120 -0400", hash_original_method = "C61C21E9B53133DA8B6C86E6B0D25F17", hash_generated_method = "F89520872CDD0CD7839A8F458034CBB5")
     
 public static String toString(Object o, String nullString) {
     return (o == null) ? nullString : o.toString();

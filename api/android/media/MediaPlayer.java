@@ -41,7 +41,7 @@ public class MediaPlayer {
      */
     @DSComment("Media source is remote")
     @DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.637 -0500", hash_original_method = "88A45C64C97A87F55B3C35AEDBC4AEE9", hash_generated_method = "54928E1D9B77BF22D6A2D9FC63E0FB4A")
     
 public static MediaPlayer create(Context context, Uri uri) {
@@ -60,8 +60,8 @@ public static MediaPlayer create(Context context, Uri uri) {
      * @param holder the SurfaceHolder to use for displaying the video
      * @return a MediaPlayer object, or null if creation failed
      */
-    @DSSink({DSSinkKind.NETWORK})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.640 -0500", hash_original_method = "F1EC723DE0CD6316DF7D958E77DE1A55", hash_generated_method = "A6620CEC06F6001100387B20DEA57015")
     
 public static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder) {
@@ -457,7 +457,7 @@ public void setSurface(Surface surface) {
      * @throws IllegalStateException if it is called in an invalid state
      */
     @DSSink({DSSinkKind.NETWORK})
-    @DSSpec(DSCat.URI_EXCHANGE)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.645 -0500", hash_original_method = "40ED5E4D3E36120D5E7C77AB85EB12F0", hash_generated_method = "49BBD7F1F5C7FC9EFF80CE77FB20CBF6")
     
 public void setDataSource(Context context, Uri uri)
@@ -474,7 +474,7 @@ public void setDataSource(Context context, Uri uri)
      * @throws IllegalStateException if it is called in an invalid state
      */
     @DSSink({DSSinkKind.NETWORK})
-    @DSSpec(DSCat.URI_EXCHANGE)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.648 -0500", hash_original_method = "0C532A10BBEED73B371000A59C797624", hash_generated_method = "B5589E8A03EB9B6B5348414CBA69A953")
     
 public void setDataSource(Context context, Uri uri, Map<String, String> headers)
@@ -523,7 +523,7 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      */
     @DSSink({DSSinkKind.NETWORK})
     @DSComment("Reaching to files/URI")
-    @DSSpec(DSCat.IO)
+    @DSSpec(DSCat.INTERNET)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.652 -0500", hash_original_method = "70B5385C7A556D37595F97E42F2F2DFE", hash_generated_method = "6626A2BDF4397DFEA415ACCA7CB59089")
     
@@ -542,7 +542,7 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      * @hide pending API council
      */
     @DSSink({DSSinkKind.NETWORK})
-    @DSSpec(DSCat.IO)
+    @DSSpec(DSCat.INTERNET)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.655 -0500", hash_original_method = "21A95B4BC3854510C509CF1B7B37D46D", hash_generated_method = "77957DCFCCF9D67F2710FFEB1E1A6307")
     
@@ -587,8 +587,8 @@ public void setDataSource(String path, Map<String, String> headers)
      * @throws IllegalStateException if it is called in an invalid state
      */
     @DSComment("Reaching to files/URI")
-    @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.662 -0500", hash_original_method = "67ED0EB071685F0AFDAFB2EFB1BC8776", hash_generated_method = "E3CC19B9EAB5FBB628ECA65729102A6F")
     
 public void setDataSource(FileDescriptor fd)
@@ -608,7 +608,7 @@ public void setDataSource(FileDescriptor fd)
      * @throws IllegalStateException if it is called in an invalid state
      */
     @DSComment("Reaching to files/URI")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.666 -0500", hash_original_method = "CF807E4C5554BB2848F7651782391DCD", hash_generated_method = "ABE27D0C9FE0AA103EA081E4FA884B12")
     
     public void setDataSource(FileDescriptor fd, long offset, long length)

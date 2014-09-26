@@ -41,6 +41,7 @@ public Object next() throws NoSuchElementException {
         return (Object) sipHeader;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.055 -0500", hash_original_method = "5CEE41DECD9DF8843F0A3C73CCBAAFDA", hash_generated_method = "0825DA7BA34946EDD4256F5B3A45AAE6")
     
 public Object previous() throws NoSuchElementException {
@@ -51,25 +52,29 @@ public Object previous() throws NoSuchElementException {
         return (Object) sipHeader;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.057 -0500", hash_original_method = "0B45A065656087279C8F30222D1F6A91", hash_generated_method = "7EB6864BAFA0113F01B3B33A28CD242F")
     
 public int nextIndex() {
         return 1;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.060 -0500", hash_original_method = "A86688C47AAA2CAB26A2462BDF3B71EF", hash_generated_method = "9A450C524EF3508D3D63D74565377335")
     
 public int previousIndex() {
         return index == 0 ? -1 : 0;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.062 -0500", hash_original_method = "560AF6CD6614E15175ADEE44F5D56698", hash_generated_method = "19B69DB3617938FB59CD656369AEAE99")
     
 public void set(Object header) {
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.065 -0500", hash_original_method = "37FBFD4C74D96ADCBBD0EC003E0F1550", hash_generated_method = "03D954965B5B1EBC0CCD7D9DB9596DBA")
     
 public void add(Object header) {
@@ -97,6 +102,7 @@ public boolean hasNext() {
         return index == 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.072 -0500", hash_original_method = "F16A855901EB074320480EE478FDC075", hash_generated_method = "E8398FF7E2BBB56190B82CB0A85304F0")
     
 public boolean hasPrevious() {

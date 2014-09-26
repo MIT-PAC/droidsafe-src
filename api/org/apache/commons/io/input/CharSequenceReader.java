@@ -34,7 +34,6 @@ import java.io.Serializable;
 public class CharSequenceReader extends Reader implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.335 -0400", hash_original_field = "C9E55D7B01085E843F2DBF64FC9544D5", hash_generated_field = "628CA2327BAF8770AC77399355FDC52D")
 
-
     private  CharSequence charSequence;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.336 -0400", hash_original_field = "56CB30AE4D1FDFD14E6ECC30D8B6AAD0", hash_generated_field = "89AA0A275323729DA7EFED27B4506FAF")
 
@@ -57,6 +56,7 @@ public CharSequenceReader(CharSequence charSequence) {
     /**
      * Close resets the file back to the start and removes any marked position.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.337 -0400", hash_original_method = "40FE3D25511A62018FC369BF8427CEB7", hash_generated_method = "E555F44876A2103FC7372A2E8BF3597A")
     
 @Override
@@ -70,6 +70,7 @@ public CharSequenceReader(CharSequence charSequence) {
      *
      * @param readAheadLimit ignored
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.338 -0400", hash_original_method = "AE312126AF817511B6AC9FA9A8EAB6F5", hash_generated_method = "5C0FD56F27A38F18958A78AD40CC95DD")
     
 @Override
@@ -82,6 +83,7 @@ public CharSequenceReader(CharSequence charSequence) {
      *
      * @return {@code true}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.338 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
     
 @Override
@@ -95,6 +97,8 @@ public CharSequenceReader(CharSequence charSequence) {
      * @return the next character from the character sequence
      * or -1 if the end has been reached.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.339 -0400", hash_original_method = "9ACE53EBE9E224BA089484C6AABDF5C3", hash_generated_method = "0139704B104F196A88422C5465D86838")
     
 @Override
@@ -115,6 +119,8 @@ public CharSequenceReader(CharSequence charSequence) {
      * @return The number of characters read or -1 if there are
      * no more
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.340 -0400", hash_original_method = "9EABECFB34552C6029ED722DF84F07FF", hash_generated_method = "A1E714C7101539F653873C5BAA608E48")
     
 @Override
@@ -145,6 +151,7 @@ public CharSequenceReader(CharSequence charSequence) {
      * Reset the reader to the last marked position (or the beginning if
      * mark has not been called).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.340 -0400", hash_original_method = "854753638CC0197CC47838DCD9FB66E4", hash_generated_method = "A0088BD4733B7FC8F6BFA14F91107A67")
     
 @Override
@@ -158,6 +165,7 @@ public CharSequenceReader(CharSequence charSequence) {
      * @param n The number of characters to skip
      * @return The actual number of characters skipped
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.341 -0400", hash_original_method = "75F54BDE1C47E9678EFB232794384C6F", hash_generated_method = "862BEA436CADF88DE9A7A340F87E1725")
     
 @Override
@@ -181,6 +189,7 @@ public CharSequenceReader(CharSequence charSequence) {
      *
      * @return The contents of the character sequence
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.342 -0400", hash_original_method = "610F60ED6DB50185F33A85945665EF11", hash_generated_method = "57A04B03533AEBB95DA85C73B06358AD")
     
 @Override

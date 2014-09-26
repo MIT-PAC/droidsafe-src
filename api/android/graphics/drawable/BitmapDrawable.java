@@ -351,7 +351,7 @@ public void setAntiAlias(boolean aa) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.066 -0500", hash_original_method = "79F41E9E1F5486CC4586236A9EB22FE0", hash_generated_method = "323E6A41A493DA85844E9CE29CA92993")
     
 @Override
@@ -362,7 +362,7 @@ public void setAntiAlias(boolean aa) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.068 -0500", hash_original_method = "FC203784F21362ACF19CD453633052FE", hash_generated_method = "806D4B5BA618F1FCAB8C981B9E7424E0")
     
 @Override
@@ -455,7 +455,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.082 -0500", hash_original_method = "10D38B42FB036E8B57E4A209AB7F4ADC", hash_generated_method = "B88743EDE3AAAF7E3863625464132403")
     
 @Override
@@ -532,7 +532,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.092 -0500", hash_original_method = "F79C881D02962F781494A97AA0D9D98A", hash_generated_method = "F25AF7EAB97D9AB76CF1F5AD34B99A1A")
     
 @Override
@@ -697,6 +697,7 @@ BitmapState(BitmapState bitmapState) {
             mRebuildShader = bitmapState.mRebuildShader;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.133 -0500", hash_original_method = "7A0D3C52124D4E31E0F3E052BCC0F262", hash_generated_method = "6ACC4AD0AFA34A69D8C6E65EB8A2215B")
         
 @Override
@@ -704,6 +705,7 @@ BitmapState(BitmapState bitmapState) {
             return new BitmapDrawable(this, null);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.135 -0500", hash_original_method = "E262501023FDB9346524FFA189B84EDB", hash_generated_method = "67D91EFCA3497E562D10A6F7F27A39E7")
         
 @Override

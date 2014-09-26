@@ -1078,8 +1078,8 @@ SSLInputStream() throws IOException {
          * @return read value.
          * @throws <code>IOException</code>
          */
-        @DSSource({DSSourceKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSource({DSSourceKind.NETWORK})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.457 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
         
 @Override
@@ -1126,8 +1126,8 @@ SSLOutputStream() throws IOException {
          * Method acts as described in spec for superclass.
          * @see java.io.OutputStream#write(int)
          */
-        @DSSafe(DSCat.SAFE_OTHERS)
-        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.466 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
         
 @Override
@@ -1139,7 +1139,7 @@ SSLOutputStream() throws IOException {
          * Method acts as described in spec for superclass.
          * @see java.io.OutputStream#write(byte[],int,int)
          */
-        @DSSink({DSSinkKind.IO})
+        @DSSink({DSSinkKind.NETWORK})
         @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.469 -0500", hash_original_method = "D98A6CBE7C5513FE6A9CDBBB263207DD", hash_generated_method = "3497AA2BACB57E1B8AC8F3075A18C057")
         

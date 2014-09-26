@@ -381,7 +381,7 @@ public boolean equals(Object other)
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.108 -0500", hash_original_method = "027A143FB16239A6EF6573784EA7EAA2", hash_generated_method = "9CDB4A26E1662D64A7562B06E580DD62")
     
 public Object clone() {

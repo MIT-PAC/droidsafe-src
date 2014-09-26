@@ -242,7 +242,7 @@ ChannelInputStream(ReadableByteChannel channel) {
         }
 
         @DSSpec(DSCat.IO)
-        @DSSource({DSSourceKind.IO})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.614 -0500", hash_original_method = "1AE7B72C96392B3D0D4F989CF18659AC", hash_generated_method = "14D88A8B061C1022E14CA983FBCF856E")
         
 @Override public synchronized int read(byte[] target, int offset, int length) throws IOException {
@@ -301,7 +301,7 @@ ChannelOutputStream(WritableByteChannel channel) {
         }
 
         @DSSpec(DSCat.IO)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.637 -0500", hash_original_method = "BF3010B4A99B9EE523BF774883EC19AF", hash_generated_method = "4D16EB7F001ED787EAEAEADF10DB0A28")
         
 @Override
@@ -341,7 +341,7 @@ InputStreamChannel(InputStream inputStream) {
         }
 
         @DSSpec(DSCat.IO)
-        @DSSource({DSSourceKind.IO})
+        @DSSource({DSSourceKind.FILE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.653 -0500", hash_original_method = "34EE1F263C45AAE8882B54B20392574C", hash_generated_method = "00C5CF0C247E8A6B8E801896DB58BCCF")
         
 public synchronized int read(ByteBuffer target) throws IOException {

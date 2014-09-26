@@ -50,7 +50,6 @@ public final static BakedBezierInterpolator getInstance() {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.712 -0400", hash_original_field = "9A60CF42D0B4EF040B9EE8D55E3975B1", hash_generated_field = "08E9507BDD3C51357DEEE89E22B5E033")
 
-
     private static final float STEP_SIZE = 1.0f / (VALUES.length - 1);
 
     /**
@@ -62,6 +61,7 @@ private BakedBezierInterpolator() {
         super();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.717 -0400", hash_original_method = "A4AA90E01004BA86361D7AF6C5A94ED5", hash_generated_method = "6C9397E1078A8480F41FFF399BDB0243")
     
 @Override

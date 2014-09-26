@@ -21,7 +21,7 @@ private static void putAddress(StringBuffer buf, int addr) {
 
     public static final Creator<DhcpInfo> CREATOR =
         new Creator<DhcpInfo>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.833 -0500", hash_original_method = "F44837DFDE4E00511933DFB4D7F0040E", hash_generated_method = "85828B4F335D384AAB760CCC0E316227")
         
 public DhcpInfo createFromParcel(Parcel in) {

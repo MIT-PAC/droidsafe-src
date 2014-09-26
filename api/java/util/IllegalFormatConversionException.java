@@ -68,7 +68,7 @@ public char getConversion() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.433 -0500", hash_original_method = "F4CE0F8EC3805161966118C119A25B11", hash_generated_method = "A115DD607857A62D4CFD586C57126BA6")
     
 @Override

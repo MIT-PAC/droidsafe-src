@@ -75,7 +75,7 @@ IdleCache() {
             //Synthesized constructor
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.041 -0500", hash_original_method = "251C8B975B1D281BC736CAA8083B5C8E", hash_generated_method = "BB0F0F94ADAC2E85899BAFAA68AB3C32")
         
 public void run() {

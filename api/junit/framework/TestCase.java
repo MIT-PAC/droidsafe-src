@@ -161,7 +161,7 @@ protected void tearDown() throws Exception {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.844 -0500", hash_original_method = "25D47A11917433AAC827E07C052136CF", hash_generated_method = "F70E6BECEBE68D29D42E13A82E32E01C")
     
 public String toString() {

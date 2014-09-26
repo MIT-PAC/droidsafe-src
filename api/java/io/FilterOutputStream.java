@@ -93,7 +93,7 @@ public FilterOutputStream(OutputStream out) {
      *             if an I/O error occurs while writing to this stream.
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.177 -0500", hash_original_method = "6F432F0CBACFD3E73C2E675DFA6BA23C", hash_generated_method = "498B074A2C195BA232A7D0D68326D9CB")
     
 @Override

@@ -18,7 +18,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         public MyCreator() {
 
         }
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         public Configuration createFromParcel(Parcel source) {
             return new Configuration(source);
         }
@@ -548,6 +548,7 @@ public void readFromParcel(Parcel source) {
         seq = source.readInt();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.511 -0500", hash_original_method = "A5C14F26D7300C5E96037FF80E52AAB2", hash_generated_method = "64596BC59B6F386A70FF15732D4AE4FC")
     
 public int compareTo(Configuration that) {

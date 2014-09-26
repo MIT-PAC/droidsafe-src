@@ -573,15 +573,15 @@ public PlainSocketOutputStream(PlainSocketImpl socketImpl) {
             socketImpl.close();
         }
 
-        @DSSafe(DSCat.SAFE_OTHERS)
-        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.999 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
         
 @Override public void write(int oneByte) throws IOException {
             Streams.writeSingleByte(this, oneByte);
         }
 
-        @DSSink({DSSinkKind.IO})
+        @DSSink({DSSinkKind.NETWORK})
         @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.001 -0500", hash_original_method = "92B26271A04D40A7BFB8B8109985B5A0", hash_generated_method = "0D4BAAF7F5F6E7E7943F39A61D2F6DF4")
         

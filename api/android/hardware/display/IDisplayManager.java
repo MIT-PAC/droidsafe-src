@@ -279,7 +279,8 @@ this.attachInterface(this, DESCRIPTOR);
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.065 -0500", hash_original_method = "16AE1D587301AF8618CF5CE1408675F4", hash_generated_method = "BA8520E6F367629B95EE27E769010FB7")
+@DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.065 -0500", hash_original_method = "16AE1D587301AF8618CF5CE1408675F4", hash_generated_method = "BA8520E6F367629B95EE27E769010FB7")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

@@ -86,6 +86,7 @@ CharArrayBuffer(int capacity, char[] backingArray, int offset) {
         return ByteOrder.nativeOrder();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.746 -0500", hash_original_method = "4B1929E0A98D3F3896D7290A74598BEB", hash_generated_method = "5892B368D51E60F64B12571ED04F0CAF")
     
 @Override

@@ -268,6 +268,7 @@ MccEntry(int mnc, String iso, int smallestDigitsMCC, String language) {
             this.language = language;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:35.324 -0500", hash_original_method = "A9AC63D31BDD3C9311D3D9491FFA185B", hash_generated_method = "66B34818D328F071CCA7D3D498D51517")
         
 public int compareTo(MccEntry o)

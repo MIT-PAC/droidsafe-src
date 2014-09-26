@@ -275,6 +275,7 @@ public DisplayNameComparator(PackageManager pm) {
             mPM = pm;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.352 -0500", hash_original_method = "2595E40DD10804FAA28D70201572BA0B", hash_generated_method = "EC1D9AC66743F7F0831EDFDF3E7DDE60")
         
 public final int compare(PackageItemInfo aa, PackageItemInfo ab) {

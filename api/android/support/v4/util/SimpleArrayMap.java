@@ -92,7 +92,6 @@ private static void freeArrays(final int[] hashes, final Object[] array, final i
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.514 -0400", hash_original_field = "DB058C63BA7F65396899317129B01509", hash_generated_field = "DB058C63BA7F65396899317129B01509")
 
-
     int[] mHashes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.517 -0400", hash_original_field = "DBD5B7CFEC3506603E12B2C560617C01", hash_generated_field = "DBD5B7CFEC3506603E12B2C560617C01")
 
@@ -260,6 +259,7 @@ private void allocArrays(final int size) {
     /**
      * Make the array map empty.  All storage is released.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.557 -0400", hash_original_method = "B75081E678B9EDAB87E52EF21686F3B2", hash_generated_method = "BFF60BFDCC4DB93E6D36092F69D1D31B")
     
 public void clear() {
@@ -296,6 +296,7 @@ public void ensureCapacity(int minimumCapacity) {
      * @param key The key to search for.
      * @return Returns true if the key exists, else false.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.565 -0400", hash_original_method = "FE50170C6E9B5F6E23D039E9F1C0F9A6", hash_generated_method = "E5F2AB62762346A4AF55168101F6229C")
     
 public boolean containsKey(Object key) {
@@ -330,6 +331,7 @@ int indexOfValue(Object value) {
      * @param value The value to search for.
      * @return Returns true if the value exists, else false.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.573 -0400", hash_original_method = "865E5C3BA09922B2D2CC59AD7D677871", hash_generated_method = "EA423ECBD3F35350F55C578F5F215162")
     
 public boolean containsValue(Object value) {
@@ -342,6 +344,7 @@ public boolean containsValue(Object value) {
      * @return Returns the value associated with the given key,
      * or null if there is no such key.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.577 -0400", hash_original_method = "F4147250FFB8E0057FC4F7B21039E29E", hash_generated_method = "D280C7EE974ECE378AA11D733CF2002B")
     
 public V get(Object key) {
@@ -389,6 +392,7 @@ public V setValueAt(int index, V value) {
     /**
      * Return true if the array map contains no items.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.596 -0400", hash_original_method = "119D5908F9AFB28EF70EEC655725E14A", hash_generated_method = "90FC14C3CF6E4C64E9D1E4746566671A")
     
 public boolean isEmpty() {
@@ -403,6 +407,7 @@ public boolean isEmpty() {
      * @return Returns the old value that was stored for the given key, or null if there
      * was no such key.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.602 -0400", hash_original_method = "B38C6295CAE53BA65E4DF4CF73E69F95", hash_generated_method = "70138DD998A7B872A142DD51EF913EA7")
     
 public V put(K key, V value) {
@@ -460,6 +465,7 @@ public V put(K key, V value) {
      * Perform a {@link #put(Object, Object)} of all key/value pairs in <var>array</var>
      * @param array The array whose contents are to be retrieved.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.606 -0400", hash_original_method = "AAAE48FCAFBB59B6194134EC5A32BF70", hash_generated_method = "837970D3A2951748EA32AE8DB8945A9D")
     
 public void putAll(SimpleArrayMap<? extends K, ? extends V> array) {
@@ -484,6 +490,7 @@ public void putAll(SimpleArrayMap<? extends K, ? extends V> array) {
      * @return Returns the value that was stored under the key, or null if there
      * was no such key.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.610 -0400", hash_original_method = "676C0A638DA8EF39748E2163ADEF98DA", hash_generated_method = "C632400BF56BB1F2E34FC2D1096C579B")
     
 public V remove(Object key) {
@@ -556,6 +563,7 @@ public V removeAt(int index) {
     /**
      * Return the number of items in this array map.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.619 -0400", hash_original_method = "9550C69BAA91C5298BA75D226127D5FF", hash_generated_method = "D1146B99C52208B28E4F9EC1242180A7")
     
 public int size() {
@@ -609,6 +617,7 @@ public int size() {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.629 -0400", hash_original_method = "D146F98A429A5E1B4E0EF53309D53AB3", hash_generated_method = "0CD220004109FECD3257B85DA9394C82")
     
 @Override
@@ -630,6 +639,7 @@ public int size() {
      * this map contains itself as a key or a value, the string "(this Map)"
      * will appear in its place.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.633 -0400", hash_original_method = "91DC7E539B05087C0C28289F68FAF563", hash_generated_method = "B572EFA506622D92D1E321EE2E3E26CB")
     
 @Override

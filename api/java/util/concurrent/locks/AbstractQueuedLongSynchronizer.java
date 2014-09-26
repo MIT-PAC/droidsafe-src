@@ -36,10 +36,8 @@ public abstract class AbstractQueuedLongSynchronizer
     implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.177 -0400", hash_original_field = "151E6A40112BDA65427298A3A5491E21", hash_generated_field = "66F375904FFC974A020B12D022FA60CB")
 
-
     private static final long serialVersionUID = 7373984972572414692L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.188 -0400", hash_original_field = "31EF0FD32B41579996230BE158DB7639", hash_generated_field = "F44F319CC44F92ACA1B0BF97F5A1CABF")
-
 
     /**
      * The number of nanoseconds for which it is faster to spin
@@ -1329,7 +1327,6 @@ public final boolean hasQueuedPredecessors() {
             ((s = h.next) == null || s.thread != Thread.currentThread());
     }
 
-
     // Instrumentation and monitoring methods
 
     /**
@@ -1429,6 +1426,7 @@ public final Collection<Thread> getSharedQueuedThreads() {
      *
      * @return a string identifying this synchronizer, as well as its state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.211 -0400", hash_original_method = "659FCE8B95FD967D9AF39A9878BA590C", hash_generated_method = "033AE9762B817C1143789E841065015D")
     
 public String toString() {
@@ -1437,7 +1435,6 @@ public String toString() {
         return super.toString() +
             "[State = " + s + ", " + q + "empty queue]";
     }
-
 
     // Internal support methods for Conditions
 
@@ -1487,7 +1484,6 @@ final boolean isOnSyncQueue(Node node) {
 
         private static final long serialVersionUID = 1173984872572414699L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.221 -0400", hash_original_field = "414569B187DE1D67BA14F47AB7057734", hash_generated_field = "B4CDE7AA239B26824DEACE77FCD9303B")
-
 
         /** Mode meaning to reinterrupt on exit from wait */
         private static final int REINTERRUPT =  1;
@@ -1611,6 +1607,7 @@ private void unlinkCancelledWaiters() {
          * @throws IllegalMonitorStateException if {@link #isHeldExclusively}
          *         returns {@code false}
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.219 -0400", hash_original_method = "217DDC96D1B25C0D1457937D523A3AA4", hash_generated_method = "8D3841501153DC8DC4D44C4E93EC71D1")
         
 public final void signal() {
@@ -1628,6 +1625,7 @@ public final void signal() {
          * @throws IllegalMonitorStateException if {@link #isHeldExclusively}
          *         returns {@code false}
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.220 -0400", hash_original_method = "8098E0901B1513A38FF0251B40A20DA9", hash_generated_method = "24338BAE20FEB9E05BE3A946C2F5EAB7")
         
 public final void signalAll() {
@@ -1649,6 +1647,7 @@ public final void signalAll() {
          *      {@link #acquire} with saved state as argument.
          * </ol>
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.220 -0400", hash_original_method = "D8D48CC94AF482BB39207ADE07724A27", hash_generated_method = "F2519E63AECC9FFD64BAE3CC48AF0E44")
         
 public final void awaitUninterruptibly() {
@@ -1704,6 +1703,7 @@ private void reportInterruptAfterWait(int interruptMode)
          * <li> If interrupted while blocked in step 4, throw InterruptedException.
          * </ol>
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.223 -0400", hash_original_method = "7FB7FD86DD73FB2CF877AB02383CA9C6", hash_generated_method = "6FEC6B0BA17D82F12FF1ADF22190F392")
         
 public final void await() throws InterruptedException {
@@ -1738,6 +1738,7 @@ public final void await() throws InterruptedException {
          * <li> If interrupted while blocked in step 4, throw InterruptedException.
          * </ol>
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.224 -0400", hash_original_method = "C303498FB4526BAC216282D3EF327B51", hash_generated_method = "B62048702A1E471C08E6B848BEA0EE5B")
         
 public final long awaitNanos(long nanosTimeout)
@@ -1825,6 +1826,7 @@ public final boolean awaitUntil(Date deadline)
          * <li> If timed out while blocked in step 4, return false, else true.
          * </ol>
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:15.226 -0400", hash_original_method = "477ADD946E774094EBD1899609DDBD0E", hash_generated_method = "DB457C68964B9FB5225B816740D543AE")
         
 public final boolean await(long time, TimeUnit unit)

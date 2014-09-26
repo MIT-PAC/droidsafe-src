@@ -95,18 +95,14 @@ static OpenSSLKey getInstance(RSAPrivateKey rsaPrivateKey) throws InvalidKeyExce
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.770 -0400", hash_original_field = "2BBE151CD18F6BE43F2D71C92EFFD1B2", hash_generated_field = "DFD3BD9B1577440A925A39226A8408EA")
 
-
     private  OpenSSLKey key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.770 -0400", hash_original_field = "25CEE6432AEBE2A91CEA7F02499BDFB9", hash_generated_field = "CE8B534A4E4ACE7D3E4DABDBB639F277")
-
 
     private boolean fetchedParams;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.770 -0400", hash_original_field = "D547DBA0A38067ABD647006ED77692E3", hash_generated_field = "3E4E39310D57F50C3E323DC3AEC4D41E")
 
-
     private BigInteger modulus;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.771 -0400", hash_original_field = "9D6B5BA90FEDFF37C5B6F5CC23882550", hash_generated_field = "C40656991088519C04EB55EF0874A837")
-
 
     private BigInteger privateExponent;
 
@@ -254,6 +250,7 @@ public int getPkeyContext() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.779 -0400", hash_original_method = "008BC99FEAE20A26FC52BEB373EA49D0", hash_generated_method = "B94BED972B99701FED32A9385AA11515")
     
 @Override
@@ -269,6 +266,7 @@ public int getPkeyContext() {
         return hash;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.780 -0400", hash_original_method = "2CD3C744C2985CC40BF751A42FE6CA48", hash_generated_method = "5BD20014A880AEE2F0597AF9871659C8")
     
 @Override

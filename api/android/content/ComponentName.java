@@ -84,7 +84,7 @@ public static ComponentName readFromParcel(Parcel in) {
 
     public static final Parcelable.Creator<ComponentName> CREATOR
             = new Parcelable.Creator<ComponentName>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.608 -0500", hash_original_method = "B8B6FA6877F2BC7297214F94718448AF", hash_generated_method = "3AD55BA83A24855DAF688CEA2E3B818C")
         
 public ComponentName createFromParcel(Parcel in) {
@@ -337,6 +337,7 @@ public String toShortString() {
         return mPackage.hashCode() + mClass.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.597 -0500", hash_original_method = "DB0D439501C0EAB456A0FFDB0A59DF6E", hash_generated_method = "75E7AEFE936AA2B0DB1CC1423936B3E9")
     
 public int compareTo(ComponentName that) {

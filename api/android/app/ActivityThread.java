@@ -5384,7 +5384,8 @@ private IContentProvider installProvider(Context context,
         if(!system)        
         {
             ViewRootImpl.addFirstDrawHandler(new Runnable() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.198 -0500", hash_original_method = "47807A5814B5D681B360E1F6CDD604E7", hash_generated_method = "B77EB048BA043BB00322E0199679CB06")
+                @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.198 -0500", hash_original_method = "47807A5814B5D681B360E1F6CDD604E7", hash_generated_method = "B77EB048BA043BB00322E0199679CB06")
                 
 public void run() {
                     ensureJitEnabled();

@@ -140,6 +140,7 @@ public abstract IntBuffer compact();
      * @exception ClassCastException
      *                if {@code other} is not an int buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.130 -0500", hash_original_method = "E9F1AE5FDD3CB99604FBE90C4DDAAAAA", hash_generated_method = "FB7CC9CE9AA426F3D8AF8E054906B8DA")
     
 public int compareTo(IntBuffer otherBuffer) {

@@ -374,7 +374,8 @@ public Resources getResources() {
 		*/
 	}
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     public int getLayoutDimension(int index, String name){
 		return getTaintInt();
 		// Original method
@@ -398,7 +399,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getLayoutDimension(int index, int defValue){
 		return getTaintInt();
 		// Original method

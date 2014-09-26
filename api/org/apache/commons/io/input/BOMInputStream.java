@@ -92,6 +92,7 @@ public class BOMInputStream extends ProxyInputStream {
 
     private static final Comparator<ByteOrderMark> ByteOrderMarkLengthComparator = new Comparator<ByteOrderMark>() {
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int compare(ByteOrderMark bom1, ByteOrderMark bom2) {
             int len1 = bom1.length();
             int len2 = bom2.length();
@@ -344,6 +345,8 @@ private boolean matches(ByteOrderMark bom) {
      * @throws IOException
      *             if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.901 -0400", hash_original_method = "F5B14E56E9F55893C6E73E7F84E5B216", hash_generated_method = "DDDED9E8EB076EC7E62CE11BE57C9D18")
     
 @Override
@@ -365,6 +368,8 @@ private boolean matches(ByteOrderMark bom) {
      * @throws IOException
      *             if an I/O error occurs
      */
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.902 -0400", hash_original_method = "98E223E86C4C3137EA234A101C3EBA8B", hash_generated_method = "79BB4DED901112DADFA16BD14893D1B8")
     
 @Override
@@ -392,6 +397,8 @@ private boolean matches(ByteOrderMark bom) {
      * @throws IOException
      *             if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.902 -0400", hash_original_method = "2F668D010292F41F8534D9B42F402EB1", hash_generated_method = "E92D53D06BA9BE55F7FB3173E2C57885")
     
 @Override
@@ -405,6 +412,7 @@ private boolean matches(ByteOrderMark bom) {
      * @param readlimit
      *            read ahead limit
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.903 -0400", hash_original_method = "6F22E04E6B2233AB267E29E6FFA8C482", hash_generated_method = "240936CBCDAFBFE729A39816CE834244")
     
 @Override
@@ -420,6 +428,7 @@ private boolean matches(ByteOrderMark bom) {
      * @throws IOException
      *             if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.904 -0400", hash_original_method = "707E3CF4FCF7B50ABDC5BD8089A4C948", hash_generated_method = "B3C695434B3A659E73AEB9F3AFC5AAFF")
     
 @Override
@@ -441,6 +450,7 @@ private boolean matches(ByteOrderMark bom) {
      * @throws IOException
      *             if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.904 -0400", hash_original_method = "56B6CF5404852C2E1FA523B4DDC1E2FF", hash_generated_method = "209C604B5C1640CFBD3CF7995BBB2E9A")
     
 @Override

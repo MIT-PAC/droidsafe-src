@@ -44,10 +44,8 @@ public class ActionMenuItemView extends CompatTextView
         ActionMenuView.ActionMenuChildView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.399 -0400", hash_original_field = "5E900415DC83EB4A21128A5F009D6AD3", hash_generated_field = "59FAE62321B2FBA7C3D29B6855696300")
 
-
     private static final String TAG = "ActionMenuItemView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.410 -0400", hash_original_field = "DBB703567F4F0AD8C976E510ACED07CC", hash_generated_field = "B32E7CB0DF6786FBC4DDA7C50169A79B")
-
 
     private MenuItemImpl mItemData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.416 -0400", hash_original_field = "8C445459F9A68BF8713F87AC9D695E47", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
@@ -60,7 +58,6 @@ public class ActionMenuItemView extends CompatTextView
 
     private MenuBuilder.ItemInvoker mItemInvoker;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.446 -0400", hash_original_field = "0702D0132C7EEE9027A2928CF259A952", hash_generated_field = "026998B37BE3694ADAD845A945E977A5")
-
 
     private boolean mAllowTextWithIcon;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.454 -0400", hash_original_field = "D4382F3ED434DC2AD3ED58497C2CF171", hash_generated_field = "8BCC0CCB20D7838DC0FF6BF986026A67")
@@ -106,6 +103,7 @@ public ActionMenuItemView(Context context, AttributeSet attrs, int defStyle) {
         mSavedPaddingLeft = -1;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.512 -0400", hash_original_method = "F35454F1D92A4775A94051EBE6A6FC2F", hash_generated_method = "31A77FFD010DD1F271989E0936196595")
     
 @Override
@@ -133,6 +131,7 @@ public void initialize(MenuItemImpl itemData, int menuType) {
         setEnabled(itemData.isEnabled());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.566 -0400", hash_original_method = "B665A21C15F294A662D29A2BA3A7A359", hash_generated_method = "65B53CE5C8BCAADCAFE5306720FD4967")
     
 public void onClick(View v) {
@@ -267,6 +266,7 @@ public boolean needsDividerAfter() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.699 -0400", hash_original_method = "A017C47B0C51DF5D158A72400C12A1B8", hash_generated_method = "2CA251D1B6A8E2536BCD9277C25E8A2E")
     
 @Override

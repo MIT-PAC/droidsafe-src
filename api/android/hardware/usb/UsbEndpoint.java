@@ -13,7 +13,7 @@ public class UsbEndpoint implements Parcelable {
 
     public static final Parcelable.Creator<UsbEndpoint> CREATOR =
         new Parcelable.Creator<UsbEndpoint>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.605 -0500", hash_original_method = "323905F66B13C283569D71986A498D60", hash_generated_method = "107124ED8732EDCEF79068D66A9C5BD8")
         
 public UsbEndpoint createFromParcel(Parcel in) {

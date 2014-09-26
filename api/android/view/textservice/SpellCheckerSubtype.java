@@ -83,7 +83,7 @@ public static List<SpellCheckerSubtype> sort(Context context, int flags, SpellCh
 
     public static final Parcelable.Creator<SpellCheckerSubtype> CREATOR
             = new Parcelable.Creator<SpellCheckerSubtype>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.439 -0500", hash_original_method = "0AEF6B6A73DAA67659A967ED2D4E69A6", hash_generated_method = "9610D3FC972D8307808FFBC0303AE5BD")
         
 @Override

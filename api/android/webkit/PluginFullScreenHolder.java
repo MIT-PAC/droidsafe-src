@@ -105,6 +105,7 @@ CustomFrameLayout(Context context) {
             super(context);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.294 -0500", hash_original_method = "2FA80045A66041D881611423B2D72BE2", hash_generated_method = "DFF72945AD48259D9CD1212E29C36C3A")
         
 @Override
@@ -117,6 +118,7 @@ CustomFrameLayout(Context context) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.296 -0500", hash_original_method = "5F021E74A22E2DE8FA3FAB6B663A24D2", hash_generated_method = "B6428797A4DFB0C132F965E73176FDFB")
         
 @Override
@@ -138,6 +140,7 @@ CustomFrameLayout(Context context) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.301 -0500", hash_original_method = "B00867DA6E98462A97CBDDC40208DF51", hash_generated_method = "158F7A5B4C8838CB1AA0C7F2B1BCDB5E")
         
 @Override

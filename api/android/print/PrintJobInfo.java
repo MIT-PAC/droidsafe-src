@@ -99,9 +99,9 @@ public static String stateToString(int state) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:59.221 -0400", hash_original_field = "9B31C921390B7BA641729ADE21832582", hash_generated_field = "4D587533ED6DC3214C0A6B46BEA10274")
 
-
     public static final Parcelable.Creator<PrintJobInfo> CREATOR =
             new Creator<PrintJobInfo>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public PrintJobInfo createFromParcel(Parcel parcel) {
             return new PrintJobInfo(parcel);
@@ -776,6 +776,7 @@ public PrintJobInfo build() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:59.196 -0400", hash_original_method = "B3F42A840AA54CBF9391610A93644C5C", hash_generated_method = "1834A1CF4C40B31F937E48C19965D8B3")
     
 @Override

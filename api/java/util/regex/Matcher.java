@@ -44,7 +44,6 @@ public static String quoteReplacement(String s) {
     private static boolean findImpl(int addr, String s, int startIndex, int[] offsets) {
         return toTaintBoolean((addr + s.getTaintInt() + startIndex + offsets[0] + offsets.getTaintInt()));
     }
-
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -274,7 +273,7 @@ public Matcher reset(CharSequence input) {
      * @return the matcher itself.
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.295 -0500", hash_original_method = "1E13D8D8B85E56AF9BB58282CB9C7392", hash_generated_method = "0FE0075551BE07BF37B703967428CA6E")
     
 private Matcher reset(CharSequence input, int start, int end) {

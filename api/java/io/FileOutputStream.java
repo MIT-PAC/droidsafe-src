@@ -198,7 +198,7 @@ public final FileDescriptor getFD() throws IOException {
 
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.FILE})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.276 -0500", hash_original_method = "F915AF116DBABF662C85674FE9C75DD1", hash_generated_method = "3276381B087865C1654194DB26559861")
     
 @Override

@@ -284,7 +284,8 @@ public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.786 -0500", hash_original_method = "7A23721B5E073FBA7FD49FF2A748467D", hash_generated_method = "2184CC6A6CF032182D4C188E0AA9342E")
     
 @Override
@@ -513,7 +514,7 @@ public void setChildDivider(Drawable childDivider) {
      * This method should not be used, use {@link #getExpandableListAdapter()}.
      */
     @DSComment("CompoundButton, check modeling")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.798 -0500", hash_original_method = "1C0E40F01B81CC446BCB9E503587C60C", hash_generated_method = "AD4EED210FC927083466B4E53D9186CE")
     
 @Override
@@ -808,7 +809,7 @@ public ExpandableListContextMenuInfo(View targetView, long packedPosition, long 
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -848,7 +849,8 @@ private SavedState(Parcel in) {
             in.readList(expandedGroupMetadataList, ExpandableListConnector.class.getClassLoader());
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.915 -0500", hash_original_method = "AB17BDA53DFB838896B21BA39777EED2", hash_generated_method = "9B67C97A4F3D4255F986F4E888AD0782")
         
 @Override
@@ -1205,7 +1207,7 @@ public void setIndicatorBounds(int left, int right) {
         mIndicatorRight = right;
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.927 -0500", hash_original_method = "D1B709DD85334DB90D0ABC47C1E74159", hash_generated_method = "DF0EE4B90E3C87AD1F1D67C2FE8646E8")
     
 @Override
@@ -1215,7 +1217,7 @@ public void setIndicatorBounds(int left, int right) {
                 mConnector != null ? mConnector.getExpandedGroupMetadataList() : null);
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.929 -0500", hash_original_method = "FA4E85B1CE7B753D6AFB9648E78FCCBA", hash_generated_method = "6B16222A99996667548F647B4F7E930B")
     
 @Override

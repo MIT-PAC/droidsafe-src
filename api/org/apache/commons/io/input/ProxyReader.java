@@ -54,6 +54,8 @@ public ProxyReader(Reader proxy) {
      * @return the character read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.679 -0400", hash_original_method = "F5A2FF58A48B2EE55066C0DB2B9AC980", hash_generated_method = "65B7E972E19D306244BB98798323AA70")
     
 @Override
@@ -75,6 +77,8 @@ public ProxyReader(Reader proxy) {
      * @return the number of characters read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.679 -0400", hash_original_method = "994E9DF4336B3658B3591197F683F468", hash_generated_method = "00985BC2762F24350F95CBBE864007B0")
     
 @Override
@@ -98,6 +102,8 @@ public ProxyReader(Reader proxy) {
      * @return the number of characters read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.680 -0400", hash_original_method = "819423AAC8700E3137A36825F0D63A1E", hash_generated_method = "E9C6596C20B426756B32B95C67633D8E")
     
 @Override
@@ -120,6 +126,8 @@ public ProxyReader(Reader proxy) {
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.681 -0400", hash_original_method = "6C91D7D5FFA64861FDFA028E5549C4E1", hash_generated_method = "FEE8C0895D2AC408B30877F3904607C6")
     
 @Override
@@ -141,6 +149,7 @@ public ProxyReader(Reader proxy) {
      * @return the number of bytes to skipped or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.681 -0400", hash_original_method = "FA9F888D4C4D27A705AD6E4249FF9A0F", hash_generated_method = "C8F649F07984A40C7FEFB1C94172B5AD")
     
 @Override
@@ -158,6 +167,7 @@ public ProxyReader(Reader proxy) {
      * @return true if the stream is ready to be read
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.682 -0400", hash_original_method = "898ED87B3E2D635579A550CF0CA7DA33", hash_generated_method = "CB065DAF4E5CD1B91067DE099E902E01")
     
 @Override
@@ -174,6 +184,7 @@ public ProxyReader(Reader proxy) {
      * Invokes the delegate's <code>close()</code> method.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.683 -0400", hash_original_method = "B82B927E9AF02AC9DAC77E074F6BBD30", hash_generated_method = "8DF4356E8F366D7D46C891448336116D")
     
 @Override
@@ -190,6 +201,7 @@ public ProxyReader(Reader proxy) {
      * @param idx read ahead limit
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.683 -0400", hash_original_method = "C433C94D03198733235CDD6598A695B3", hash_generated_method = "19B8D51D9B29969F86A9BA7E99FD18C5")
     
 @Override
@@ -205,6 +217,7 @@ public ProxyReader(Reader proxy) {
      * Invokes the delegate's <code>reset()</code> method.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.684 -0400", hash_original_method = "C1647ABF099BDE2A705C358E5A628D51", hash_generated_method = "8DA51924A1B4238BF8D93028A7202CD0")
     
 @Override
@@ -220,6 +233,7 @@ public ProxyReader(Reader proxy) {
      * Invokes the delegate's <code>markSupported()</code> method.
      * @return true if mark is supported, otherwise false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.684 -0400", hash_original_method = "41BA5D3E6CD82551F6C2FAFF3850B986", hash_generated_method = "AAA0E9FA70DCC42A6EF6C686E3CCDC7E")
     
 @Override

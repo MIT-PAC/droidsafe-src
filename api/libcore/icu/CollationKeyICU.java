@@ -23,6 +23,7 @@ CollationKeyICU(String source, byte[] bytes) {
         this.bytes = bytes;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.535 -0500", hash_original_method = "2BC5B1EAC391DF0E7068AFC895CE7148", hash_generated_method = "8701510548B0E35ED5569A1072A0266D")
     
 @Override public int compareTo(CollationKey other) {

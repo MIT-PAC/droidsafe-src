@@ -40,7 +40,7 @@ public static SAXParserFactory newInstance() {
      * @since 1.6
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.646 -0500", hash_original_method = "4635D9FD80382B0050D4F08EB297A814", hash_generated_method = "E5CC350DF6C6B2A5E3DB57C453569107")
     
 public static SAXParserFactory newInstance(String factoryClassName,

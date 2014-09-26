@@ -73,11 +73,13 @@ abstract class MapCollections<K, V> {
             mSize = colGetSize();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean hasNext() {
             return mIndex < mSize;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public T next() {
             Object res = colGetEntry(mIndex, mOffset);
@@ -86,6 +88,7 @@ abstract class MapCollections<K, V> {
             return (T)res;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void remove() {
             if (!mCanRemove) {
@@ -108,11 +111,13 @@ abstract class MapCollections<K, V> {
             mIndex = -1;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean hasNext() {
             return mIndex < mEnd;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Map.Entry<K, V> next() {
             mIndex++;
@@ -120,6 +125,7 @@ abstract class MapCollections<K, V> {
             return this;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void remove() {
             if (!mEntryValid) {
@@ -131,6 +137,7 @@ abstract class MapCollections<K, V> {
             mEntryValid = false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public K getKey() {
             if (!mEntryValid) {
@@ -140,6 +147,7 @@ abstract class MapCollections<K, V> {
             return (K)colGetEntry(mIndex, 0);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public V getValue() {
             if (!mEntryValid) {
@@ -149,6 +157,7 @@ abstract class MapCollections<K, V> {
             return (V)colGetEntry(mIndex, 1);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public V setValue(V object) {
             if (!mEntryValid) {
@@ -172,6 +181,7 @@ abstract class MapCollections<K, V> {
                     && ContainerHelpers.equal(e.getValue(), colGetEntry(mIndex, 1));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public final int hashCode() {
             if (!mEntryValid) {
@@ -184,6 +194,7 @@ abstract class MapCollections<K, V> {
                     (value == null ? 0 : value.hashCode());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public final String toString() {
             return getKey() + "=" + getValue();
@@ -191,11 +202,13 @@ abstract class MapCollections<K, V> {
     }
 
     final class EntrySet implements Set<Map.Entry<K, V>> {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean add(Map.Entry<K, V> object) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean addAll(Collection<? extends Map.Entry<K, V>> collection) {
             int oldSize = colGetSize();
@@ -205,11 +218,13 @@ abstract class MapCollections<K, V> {
             return oldSize != colGetSize();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void clear() {
             colClear();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean contains(Object o) {
             if (!(o instanceof Map.Entry))
@@ -223,6 +238,7 @@ abstract class MapCollections<K, V> {
             return ContainerHelpers.equal(foundVal, e.getValue());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean containsAll(Collection<?> collection) {
             Iterator<?> it = collection.iterator();
@@ -234,41 +250,49 @@ abstract class MapCollections<K, V> {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isEmpty() {
             return colGetSize() == 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Iterator<Map.Entry<K, V>> iterator() {
             return new MapIterator();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean remove(Object object) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean removeAll(Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean retainAll(Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int size() {
             return colGetSize();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object[] toArray() {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public <T> T[] toArray(T[] array) {
             throw new UnsupportedOperationException();
@@ -279,6 +303,7 @@ abstract class MapCollections<K, V> {
             return equalsSetHelper(this, object);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int hashCode() {
             int result = 0;
@@ -294,41 +319,49 @@ abstract class MapCollections<K, V> {
 
     final class KeySet implements Set<K> {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean add(K object) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean addAll(Collection<? extends K> collection) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void clear() {
             colClear();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean contains(Object object) {
             return colIndexOfKey(object) >= 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean containsAll(Collection<?> collection) {
             return containsAllHelper(colGetMap(), collection);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isEmpty() {
             return colGetSize() == 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Iterator<K> iterator() {
             return new ArrayIterator<K>(0);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean remove(Object object) {
             int index = colIndexOfKey(object);
@@ -339,26 +372,31 @@ abstract class MapCollections<K, V> {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean removeAll(Collection<?> collection) {
             return removeAllHelper(colGetMap(), collection);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean retainAll(Collection<?> collection) {
             return retainAllHelper(colGetMap(), collection);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int size() {
             return colGetSize();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object[] toArray() {
             return toArrayHelper(0);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public <T> T[] toArray(T[] array) {
             return toArrayHelper(array, 0);
@@ -369,6 +407,7 @@ abstract class MapCollections<K, V> {
             return equalsSetHelper(this, object);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int hashCode() {
             int result = 0;
@@ -382,26 +421,31 @@ abstract class MapCollections<K, V> {
 
     final class ValuesCollection implements Collection<V> {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean add(V object) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean addAll(Collection<? extends V> collection) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void clear() {
             colClear();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean contains(Object object) {
             return colIndexOfValue(object) >= 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean containsAll(Collection<?> collection) {
             Iterator<?> it = collection.iterator();
@@ -413,16 +457,19 @@ abstract class MapCollections<K, V> {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isEmpty() {
             return colGetSize() == 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Iterator<V> iterator() {
             return new ArrayIterator<V>(1);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean remove(Object object) {
             int index = colIndexOfValue(object);
@@ -433,6 +480,7 @@ abstract class MapCollections<K, V> {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean removeAll(Collection<?> collection) {
             int N = colGetSize();
@@ -449,6 +497,7 @@ abstract class MapCollections<K, V> {
             return changed;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean retainAll(Collection<?> collection) {
             int N = colGetSize();
@@ -465,16 +514,19 @@ abstract class MapCollections<K, V> {
             return changed;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int size() {
             return colGetSize();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object[] toArray() {
             return toArrayHelper(1);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public <T> T[] toArray(T[] array) {
             return toArrayHelper(array, 1);
@@ -507,7 +559,6 @@ abstract class MapCollections<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.018 -0400", hash_original_field = "8F1FF5CBDB61E4F124C097C3B92B34E8", hash_generated_field = "8F1FF5CBDB61E4F124C097C3B92B34E8")
 
     ValuesCollection mValues;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.465 -0400", hash_original_method = "CFCF1388094A07DB40C16FF95D6724A1", hash_generated_method = "0AC2212A1632995E3DF6BE063DBB29C4")
     

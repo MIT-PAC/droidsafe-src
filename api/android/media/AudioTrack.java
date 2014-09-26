@@ -26,7 +26,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
-
 /**
  * The AudioTrack class manages and plays a single audio resource for Java applications.
  * It allows streaming of PCM audio buffers to the audio sink for playback. This is
@@ -91,7 +90,6 @@ public class AudioTrack
     public static final int PLAYSTATE_PLAYING = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:48.874 -0400", hash_original_field = "B1E3897703D5B668F4C0CB85695C3A15", hash_generated_field = "B7FE3FD8493EA9AE772433355AC3EA3E")
 
-
     // keep these values in sync with android_media_AudioTrack.cpp
     /**
      * Creation mode where audio data is transferred from Java to the native layer
@@ -128,7 +126,6 @@ public class AudioTrack
     public  static final int ERROR_INVALID_OPERATION               = -3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:48.941 -0400", hash_original_field = "D1611737F7BB73B113FD3BAD589F38C8", hash_generated_field = "EF8F3204AEAB15FB20E045B2CB108D6B")
 
-
     private static final int ERROR_NATIVESETUP_AUDIOSYSTEM         = -16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:48.948 -0400", hash_original_field = "71C28C8BD1AA03D9F209776A366499CA", hash_generated_field = "684292468E1E7FEA4C2142B000A03CCC")
 
@@ -153,7 +150,6 @@ public class AudioTrack
 
     private static final int NATIVE_EVENT_NEW_POS = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:48.999 -0400", hash_original_field = "E5CEC44E9F8972BC146B7A1AD3ECC52A", hash_generated_field = "4C5D30ACB5F26E8DD41C912073D18ACD")
-
 
     private final static String TAG = "android.media.AudioTrack";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.147 -0400", hash_original_field = "9D21E493CB69F912C8913F48EAA9C8DE", hash_generated_field = "AF4FBCF37437710B83BE85C4A77E96A5")
@@ -298,7 +294,6 @@ static public int getMinBufferSize(int sampleRateInHz, int channelConfig, int au
         }
     }
 
-
     //---------------------------------------------------------
     // Java methods called from the native side
     //--------------------
@@ -346,7 +341,6 @@ static public int getMinBufferSize(int sampleRateInHz, int channelConfig, int au
         
         	return (int)taintDouble;
         }
-
 
     //---------------------------------------------------------
     // Utility methods
@@ -429,7 +423,6 @@ private static void loge(String msg) {
 
     @SuppressWarnings("unused")
     private int mJniData;
-
 
     //--------------------------------------------------------------------------
     // Constructor, Finalize
@@ -627,7 +620,6 @@ private void audioParamCheck(int streamType, int sampleRateInHz,
         mDataLoadMode = mode;
     }
 
-
     // Convenience method for the constructor's audio buffer size check.
     // preconditions:
     //    mChannelCount is valid
@@ -649,7 +641,6 @@ private void audioBuffSizeCheck(int audioBufferSize) {
         mNativeBufferSizeInFrames = audioBufferSize / frameSizeInBytes;
     }
 
-
     /**
      * Releases the native AudioTrack resources.
      */
@@ -667,6 +658,7 @@ public void release() {
         mState = STATE_UNINITIALIZED;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.211 -0400", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "B426276F6755268DFF3429CB984C1F76")
     
 @Override
@@ -882,7 +874,6 @@ public boolean getTimestamp(AudioTimestamp timestamp)
         return true;
     }
 
-
     //--------------------------------------------------------------------------
     // Initialization / configuration
     //--------------------
@@ -917,8 +908,6 @@ public void setPlaybackPositionUpdateListener(OnPlaybackPositionUpdateListener l
             mEventHandlerDelegate = null;
         }
     }
-
-
 
      /**
      * Sets the specified left/right output volume values on the AudioTrack. Values are clamped
@@ -955,7 +944,6 @@ public int setStereoVolume(float leftVolume, float rightVolume) {
         return SUCCESS;
     }
 
-
     /**
      * Similar, except set volume of all channels to same value.
      * @hide
@@ -965,7 +953,6 @@ public int setStereoVolume(float leftVolume, float rightVolume) {
 public int setVolume(float volume) {
         return setStereoVolume(volume, volume);
     }
-
 
     /**
      * Sets the playback sample rate for this track. This sets the sampling rate at which
@@ -993,7 +980,6 @@ public int setPlaybackRate(int sampleRateInHz) {
         return native_set_playback_rate(sampleRateInHz);
     }
 
-
     /**
      * Sets the position of the notification marker.  At most one marker can be active.
      * @param markerInFrames marker position in wrapping frame units similar to
@@ -1012,7 +998,6 @@ public int setNotificationMarkerPosition(int markerInFrames) {
         return native_set_marker_pos(markerInFrames);
     }
 
-
     /**
      * Sets the period for the periodic notification event.
      * @param periodInFrames update period expressed in frames
@@ -1026,7 +1011,6 @@ public int setPositionNotificationPeriod(int periodInFrames) {
         }
         return native_set_pos_update_period(periodInFrames);
     }
-
 
     /**
      * Sets the playback head position.
@@ -1100,7 +1084,6 @@ public int setLoopPoints(int startInFrames, int endInFrames, int loopCount) {
         mState = state;
     }
 
-
     //---------------------------------------------------------
     // Transport control methods
     //--------------------
@@ -1170,7 +1153,6 @@ public void pause()
         }
     }
 
-
     //---------------------------------------------------------
     // Audio data supply
     //--------------------
@@ -1211,7 +1193,6 @@ public void flush() {
         void onPeriodicNotification(AudioTrack track);
     }
 
-
     //---------------------------------------------------------
     // Inner classes
     //--------------------
@@ -1238,7 +1219,8 @@ public void flush() {
             if (looper != null) {
                 // implement the event handler delegate
                 mHandler = new Handler(looper) {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     public void handleMessage(Message msg) {
                         if (track == null) {
                             return;
@@ -1314,7 +1296,6 @@ public int write(byte[] audioData, int offsetInBytes, int sizeInBytes) {
         return ret;
     }
 
-
     /**
      * Writes the audio data to the audio sink for playback (streaming mode),
      * or copies audio data for later playback (static buffer mode).
@@ -1358,7 +1339,6 @@ public int write(short[] audioData, int offsetInShorts, int sizeInShorts) {
 
         return ret;
     }
-
 
     /**
      * Notifies the native resource to reuse the audio data already loaded in the native
@@ -1439,7 +1419,6 @@ public int setAuxEffectSendLevel(float level) {
         return SUCCESS;
     }
 
-
     //---------------------------------------------------------
     // Native methods called from the Java side
     //--------------------
@@ -1464,13 +1443,11 @@ public int setAuxEffectSendLevel(float level) {
         	return (int)taintDouble;
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.502 -0400", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "F4F0ABEE314221212592CD2BBD7D2805")
         
         private final void native_finalize(){
         	//Formerly a native method
         }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.508 -0400", hash_original_method = "29EBD7A2FE8EDC8D2C10EA00B5293031", hash_generated_method = "8E05B7AB4B85F0BA21E048043C2032E1")
         
@@ -1478,13 +1455,11 @@ public int setAuxEffectSendLevel(float level) {
         	//Formerly a native method
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.514 -0400", hash_original_method = "FE287DC093068CDFD422E77973344726", hash_generated_method = "2A33473761D740B1148AF505C51C47C3")
         
         private final void native_start(){
         	//Formerly a native method
         }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.521 -0400", hash_original_method = "7AE7BD386DE7186B97622AE5A757DF71", hash_generated_method = "2C001E290E4F435149A59F53766E71EF")
         
@@ -1492,20 +1467,17 @@ public int setAuxEffectSendLevel(float level) {
         	//Formerly a native method
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.528 -0400", hash_original_method = "A98E8C6ADEAC42F42E6DC838DC0BDA10", hash_generated_method = "D3C20D8D321A573B28219A456EEEC30D")
         
         private final void native_pause(){
         	//Formerly a native method
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.535 -0400", hash_original_method = "58FCC57770A746317BCD678DF765D11A", hash_generated_method = "71D107C5B6DDE1ED70F809DC7A0F9803")
         
         private final void native_flush(){
         	//Formerly a native method
         }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.543 -0400", hash_original_method = "7772F16F949869F701337FF74EC58123", hash_generated_method = "788CA5D2610BB5AD6380EB5F845898E5")
         
@@ -1522,7 +1494,6 @@ public int setAuxEffectSendLevel(float level) {
         	return (int)taintDouble;
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.552 -0400", hash_original_method = "F53EDB047EE09ADA3FC90CE1417EF2AF", hash_generated_method = "E50BAB81515E2AD3569D0A42239DA3F5")
         
         private final int native_write_short(short[] audioData,
@@ -1538,7 +1509,6 @@ public int setAuxEffectSendLevel(float level) {
         	return (int)taintDouble;
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.557 -0400", hash_original_method = "7E7F5A8C796FD35DDE72AFEEA9729295", hash_generated_method = "9B4F0E353F0E2FE2498AFF7DF69676C5")
         
         private final int native_reload_static(){
@@ -1547,7 +1517,6 @@ public int setAuxEffectSendLevel(float level) {
         
         	return (int)taintDouble;
         }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.564 -0400", hash_original_method = "14D5874126982FBA8C0211E602E8913B", hash_generated_method = "3A9C06B9B14E2015AF7AA07E1B2DF35E")
         
@@ -1558,7 +1527,6 @@ public int setAuxEffectSendLevel(float level) {
         	return (int)taintDouble;
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.571 -0400", hash_original_method = "FBF09C03E89480BC4A3E4322CD0C7BE9", hash_generated_method = "0FFED305828D11E3C47F3A008106FB29")
         
         private final void native_setVolume(float leftVolume, float rightVolume){
@@ -1568,7 +1536,6 @@ public int setAuxEffectSendLevel(float level) {
         	taintDouble += rightVolume;
         	addTaint(taintDouble);
         }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.578 -0400", hash_original_method = "DE95EEDA726FD19B9E994AB625954674", hash_generated_method = "DF17576D5D22105C6026600FDE9E7A20")
         
@@ -1590,7 +1557,6 @@ public int setAuxEffectSendLevel(float level) {
         	return (int)taintDouble;
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.591 -0400", hash_original_method = "F88EF7916D562385F7AC5D5313AEC7D2", hash_generated_method = "5CFFC29010694905C1A82AD8368F580B")
         
         private final int native_set_marker_pos(int marker){
@@ -1610,7 +1576,6 @@ public int setAuxEffectSendLevel(float level) {
         
         	return (int)taintDouble;
         }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.604 -0400", hash_original_method = "076BD1361A73CF54CF958B5360137DB5", hash_generated_method = "67E2E6141AC5B03D4EB9F43EFF48C971")
         
@@ -1632,7 +1597,6 @@ public int setAuxEffectSendLevel(float level) {
         	return (int)taintDouble;
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.618 -0400", hash_original_method = "830248836BF70797A7CB3FA2D895D11D", hash_generated_method = "07AF689FFAF4E1773083C1360B142467")
         
         private final int native_set_position(int position){
@@ -1653,7 +1617,6 @@ public int setAuxEffectSendLevel(float level) {
         	return (int)taintDouble;
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.629 -0400", hash_original_method = "7283545FA55AD45A9EDF0B64789F2A02", hash_generated_method = "61D93B834458A869DE3A71680A577917")
         
         private final int native_get_latency(){
@@ -1662,7 +1625,6 @@ public int setAuxEffectSendLevel(float level) {
         
         	return (int)taintDouble;
         }
-
 
     // longArray must be a non-null array of length >= 2
     // [0] is assigned the frame position
@@ -1678,7 +1640,6 @@ public int setAuxEffectSendLevel(float level) {
         	return (int)taintDouble;
         }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.645 -0400", hash_original_method = "590B00378CA8E2C052FAB5759AEB2D13", hash_generated_method = "08B898D97765B8AF6511A75392498A19")
         
         private final int native_set_loop(int start, int end, int loopCount){
@@ -1691,7 +1652,6 @@ public int setAuxEffectSendLevel(float level) {
         
         	return (int)taintDouble;
         }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:37:49.671 -0400", hash_original_method = "E21157C395E2D7E2071F7E02030D3ED5", hash_generated_method = "8D8B604B131D7E4AFEFC82602D1868D0")
         
@@ -1712,6 +1672,5 @@ public int setAuxEffectSendLevel(float level) {
         	taintDouble += level;
         	addTaint(taintDouble);
         }
-
 
 }

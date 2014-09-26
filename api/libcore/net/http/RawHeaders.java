@@ -40,6 +40,7 @@ public static RawHeaders fromMultimap(Map<String, List<String>> map) {
 
     private static final Comparator<String> FIELD_NAME_COMPARATOR = new Comparator<String>() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.375 -0400", hash_original_method = "97A4263BD250C85D737E56C91BCF9DB2", hash_generated_method = "87FDB9F6A8C83D84768E8CB65F606488")
         @FindBugsSuppressWarnings("ES_COMPARING_PARAMETER_STRING_WITH_EQ")
         @Override

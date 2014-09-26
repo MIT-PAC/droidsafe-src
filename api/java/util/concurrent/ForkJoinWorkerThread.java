@@ -27,7 +27,6 @@ import droidsafe.helpers.*;
 public class ForkJoinWorkerThread extends Thread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:13.677 -0400", hash_original_field = "6D1EBEC5292A0D06AAA30D30D556DA9B", hash_generated_field = "6D1EBEC5292A0D06AAA30D30D556DA9B")
 
-
      ForkJoinPool pool;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:13.677 -0400", hash_original_field = "5D3FD1F23DF2E53E5A79A179DA3209AD", hash_generated_field = "5D3FD1F23DF2E53E5A79A179DA3209AD")
 
@@ -106,6 +105,7 @@ protected void onTermination(Throwable exception) {
      * called explicitly. It performs the main run loop to execute
      * {@link ForkJoinTask}s.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:13.680 -0400", hash_original_method = "9102B033159023A4D18F988913DF1D22", hash_generated_method = "D9090057C8E8F0023EE43FF5B8A69EE3")
     
 public void run() {

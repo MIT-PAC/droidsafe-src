@@ -35,7 +35,7 @@ public final class WallpaperInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.379 -0400", hash_original_field = "84A4B5F5E39D6F71F6BCEDFA677A58DF", hash_generated_field = "3E4220CC5B52A5C0AED6D687E5CC83E9")
 
     public static final Parcelable.Creator<WallpaperInfo> CREATOR = new Parcelable.Creator<WallpaperInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.152 -0500", hash_original_method = "E0CA03F91A5FF6E3DEA1E1ECC308F7EB", hash_generated_method = "64724678AC7189A0458687F49B340F3D")
         
 public WallpaperInfo createFromParcel(Parcel source) {

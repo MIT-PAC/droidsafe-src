@@ -123,7 +123,7 @@ public GridView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.418 -0500", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "5911CDE294032BE1D85FC272F0A8BA9B")
     
 @Override
@@ -1076,6 +1076,7 @@ private boolean determineColumns(int availableSpace) {
         return didNotInitiallyFit;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.545 -0500", hash_original_method = "DE2B2122B3B8477B4CE53B0961FAB462", hash_generated_method = "050517F766584F8B04D6031409D0D1C2")
     
 @Override
@@ -1592,6 +1593,7 @@ private void setupChild(View child, int position, int y, boolean flow, int child
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.566 -0500", hash_original_method = "82498D99AFEB0700B1F959E9E9927B59", hash_generated_method = "6AF9706850820C4FEB302E37B50B2BED")
     
 @Override
@@ -1606,6 +1608,7 @@ private void setupChild(View child, int position, int y, boolean flow, int child
         return commonKey(keyCode, repeatCount, event);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.570 -0500", hash_original_method = "FFB4A1626C41573790F9B17FF23F8A09", hash_generated_method = "A27D10E92D871F3F89D05FD06501971F")
     
 @Override

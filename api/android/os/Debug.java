@@ -1135,7 +1135,7 @@ public static String getOtherLabel(int which) {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.999 -0400", hash_original_field = "7B937244499DDD6DE8E8DD078A54CA42", hash_generated_field = "8D5A5BE61EBADDE649E9CD81EA9451BA")
 
         public static final Creator<MemoryInfo> CREATOR = new Creator<MemoryInfo>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.795 -0500", hash_original_method = "83921F47BB880779DC0FD4AB57F3B1E1", hash_generated_method = "495A301237E8C89DBCB599934CDB78DC")
             
 public MemoryInfo createFromParcel(Parcel source) {

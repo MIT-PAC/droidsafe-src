@@ -82,6 +82,7 @@ public TabWidget(Context context, AttributeSet attrs, int defStyle) {
         initTabWidget();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.807 -0500", hash_original_method = "D47B983401A0131B570217343158B99A", hash_generated_method = "10B54AD18FE5A8EBFA33C8D12BA288E0")
     
 @Override
@@ -354,6 +355,7 @@ public boolean isStripEnabled() {
         super.childDrawableStateChanged(child);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.845 -0500", hash_original_method = "9B055E7A37DD3E5EB33B478B68D4F173", hash_generated_method = "99D4EEC0364E0F6F83A1AECD6ACB3070")
     
 @Override
@@ -495,7 +497,7 @@ public void focusCurrentTab(int index) {
     }
 
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.856 -0500", hash_original_method = "B57ADC02C2264C78238655AF009610DC", hash_generated_method = "FCD2BCD429D675C6EFB2C291F381F8F8")
     
 @Override
@@ -603,6 +605,7 @@ private TabClickListener(int tabIndex) {
             mTabIndex = tabIndex;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.875 -0500", hash_original_method = "28066710625DA4D2083757F8679E5933", hash_generated_method = "7A271955D8BDABC8C65F69FE4086A9D9")
         
 public void onClick(View v) {

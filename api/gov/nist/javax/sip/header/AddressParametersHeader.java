@@ -60,7 +60,7 @@ public void setAddress(Address address) {
      * @see gov.nist.javax.sip.header.AddressParameters#clone()
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.445 -0500", hash_original_method = "0CBC2CD54CDD43105BA83DF4459B73A7", hash_generated_method = "FB5CBBFE24B024CC25590AC7DAF685F2")
     
 public Object clone() {

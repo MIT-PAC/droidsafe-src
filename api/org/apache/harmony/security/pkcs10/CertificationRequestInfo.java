@@ -46,7 +46,6 @@ import org.apache.harmony.security.x509.SubjectPublicKeyInfo;
 public final class CertificationRequestInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:07.866 -0400", hash_original_field = "D57C21E33284CB74D7A81C435FB7BC9B", hash_generated_field = "5575EB445B1E76509F0CA4CA9B935A87")
 
-
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             ASN1Integer.getInstance(),              // version
             Name.ASN1,                              // subject
@@ -125,6 +124,7 @@ public byte[] getEncoded() {
         return encoding;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:07.863 -0400", hash_original_method = "D28709CA99B97B72BA9F98E7200568E8", hash_generated_method = "74D3A79044A0CDCF2408CE4C7C2EB90B")
     
 @Override public String toString() {

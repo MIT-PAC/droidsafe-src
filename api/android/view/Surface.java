@@ -126,7 +126,7 @@ public static void setOrientation(int display, int orientation) {
     public static final Parcelable.Creator<Surface> CREATOR
             = new Parcelable.Creator<Surface>()
     {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.677 -0500", hash_original_method = "B8797068538D7B2F1963613F92E62B32", hash_generated_method = "A1A216CB81EED147F47FB283741B3A02")
         
 public Surface createFromParcel(Parcel source) {
@@ -409,7 +409,7 @@ public OutOfResourcesException(String name) {
         }
 
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.576 -0500", hash_original_method = "4436A903F00C274285C5C4A8B9E9A836", hash_generated_method = "7E4FCA6940233D2ACFDD830B11A7EB5E")
         
 @Override
@@ -422,7 +422,7 @@ public OutOfResourcesException(String name) {
         }
 
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.578 -0500", hash_original_method = "F355CB2C14EBD84D4AE7E0F5ECAE6C3D", hash_generated_method = "1F36206BE99414248829BD77B2AE6B44")
         
 @Override
@@ -434,7 +434,8 @@ public OutOfResourcesException(String name) {
             return h;
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.582 -0500", hash_original_method = "50EBC9F34A364763AC7C9602053D9FF8", hash_generated_method = "E13F6E0B43D4925111FCC2FA8313E7C6")
         
 @Override
@@ -450,6 +451,7 @@ public OutOfResourcesException(String name) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.585 -0500", hash_original_method = "8FC81697AA41EC8DD4975B897D7BBDC3", hash_generated_method = "15EF46FE97BFF34531F2CBDF0368D300")
         
 @Override

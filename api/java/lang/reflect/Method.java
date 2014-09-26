@@ -28,7 +28,7 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 	}
     
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     static Annotation[] getDeclaredAnnotations(Class<?> declaringClass, int slot) {
 		Annotation[] ret = new Annotation[0];
 		ret[0].addTaint(declaringClass.getTaint());
@@ -68,7 +68,7 @@ static Annotation[][] noAnnotations(int size) {
     }
     
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     static Annotation[][] getParameterAnnotations(Class declaringClass, int slot) {
 		Annotation[][] ret = new Annotation[0][0];
 		ret[0][0].addTaint(declaringClass.getTaint());
@@ -89,6 +89,7 @@ static Annotation[][] noAnnotations(int size) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.128 -0400", hash_original_field = "6D5C49EE7CEF5783A42FC1C7653D6955", hash_generated_field = "3465881694FBE3BA7144100AF6865EE1")
 
     public static final Comparator<Method> ORDER_BY_SIGNATURE = new Comparator<Method>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.441 -0500", hash_original_method = "BE88CC170A38DCD3E91DA840E3F7F4E0", hash_generated_method = "718F91E2E34FEFE101F1370F38B5FFE9")
         
 public int compare(Method a, Method b) {
@@ -356,7 +357,8 @@ public Type getGenericReturnType() {
         return Types.getType(genericReturnType);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.504 -0500", hash_original_method = "4122EC91CDDE6FFD9DA08F5ADAF8DB5D", hash_generated_method = "29F60940673BD8877EB2DF97898FD3EA")
     
 @Override
@@ -401,7 +403,8 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_629409244 =         getAnnotation(declarin
      *
      * @return an array of arrays of {@code Annotation} instances
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.530 -0500", hash_original_method = "72FC508AEB582DBA9794440813C3A8B1", hash_generated_method = "4F085A2B43CC3DCF944C4B690441A4C1")
     
 public Annotation[][] getParameterAnnotations() {
@@ -503,8 +506,8 @@ public Object getDefaultValue() {
      * @return the declaring class
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.553 -0500", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "574997FEB7F01E0808800855819F513A")
     
 public Class<?> getDeclaringClass() {
@@ -536,8 +539,8 @@ public Class<?>[] getExceptionTypes() {
      * @see Modifier
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.559 -0500", hash_original_method = "D61CFE217686483C8FB69E9FFDF592A9", hash_generated_method = "48830EE19AB9C2BBC366A2463FB5A641")
     
 public int getModifiers() {

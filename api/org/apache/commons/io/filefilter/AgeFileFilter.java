@@ -167,6 +167,7 @@ public AgeFileFilter(File cutoffReference, boolean acceptOlder) {
      *
      * @return a String representaion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.635 -0400", hash_original_method = "99B5BE3867B40B3085E3122FEC15BA27", hash_generated_method = "B3E6CCF07FE265E91C2AB6D3E799467C")
     
 @Override

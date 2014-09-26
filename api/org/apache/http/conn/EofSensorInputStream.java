@@ -62,8 +62,8 @@ protected boolean isReadAllowed() throws IOException {
     }
 
     // non-javadoc, see base class InputStream
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.224 -0500", hash_original_method = "EEFED13FF9B8A7AEEF5F21DDE66222B5", hash_generated_method = "F6963B5AC1FF9608BE1556EF67FD5BEC")
     
 @Override
@@ -85,7 +85,7 @@ protected boolean isReadAllowed() throws IOException {
 
     // non-javadoc, see base class InputStream
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.227 -0500", hash_original_method = "140106DCDF4EB864C1587DEC2B46B903", hash_generated_method = "1569190AC85DA6991387237440E7D269")
     
 @Override
@@ -107,7 +107,7 @@ protected boolean isReadAllowed() throws IOException {
 
     // non-javadoc, see base class InputStream
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.230 -0500", hash_original_method = "4F7157F64E168AA9C8D7643824C693E0", hash_generated_method = "26CB21DE6DFA075040FA5A38E66D16CE")
     
 @Override

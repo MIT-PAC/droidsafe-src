@@ -16,7 +16,7 @@ import droidsafe.helpers.DSUtils;
 public final class Field extends AccessibleObject implements Member {
     
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     private static Annotation[] getDeclaredAnnotations(Class declaringClass, int slot) {
     	Annotation[] ret = new Annotation[0];
     	ret[0].addTaint(declaringClass.getTaint());
@@ -47,6 +47,7 @@ public final class Field extends AccessibleObject implements Member {
 
     public static final Comparator<Field> ORDER_BY_NAME_AND_DECLARING_CLASS
             = new Comparator<Field>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.209 -0500", hash_original_method = "5733993CE756EF2C84207962A0640F37", hash_generated_method = "58E07DB8D9CA9A37815FB7EB15AD1B47")
         
 @Override public int compare(Field a, Field b) {
@@ -250,7 +251,8 @@ public Type getGenericType() {
         return Types.getType(genericType);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.273 -0500", hash_original_method = "4122EC91CDDE6FFD9DA08F5ADAF8DB5D", hash_generated_method = "29F60940673BD8877EB2DF97898FD3EA")
     
 @Override public Annotation[] getDeclaredAnnotations() {
@@ -435,7 +437,8 @@ public char getChar(Object object) throws IllegalAccessException, IllegalArgumen
      *
      * @return the declaring class
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.305 -0500", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "574997FEB7F01E0808800855819F513A")
     
 public Class<?> getDeclaringClass() {
@@ -572,8 +575,8 @@ public long getLong(Object object) throws IllegalAccessException, IllegalArgumen
      * @see Modifier
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.317 -0500", hash_original_method = "5A676A538E8952F6729F0D8423178A33", hash_generated_method = "1327A747177D4EE276A0F6E14A311D56")
     
 public int getModifiers() {
@@ -597,8 +600,8 @@ public int getModifiers() {
      * @return the name of this field
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.322 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {

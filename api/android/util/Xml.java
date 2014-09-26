@@ -26,6 +26,7 @@ public class Xml {
     /**
      * Parses the given xml string and fires events on the given SAX handler.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.329 -0500", hash_original_method = "743B7F44AE6EDBA9CE3D53907777320F", hash_generated_method = "8F6E83335C00A917FA8553D78AA1F253")
     
 public static void parse(String xml, ContentHandler contentHandler)
@@ -58,6 +59,7 @@ public static void parse(Reader in, ContentHandler contentHandler)
      * Parses xml from the given input stream and fires events on the given SAX
      * handler.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.334 -0500", hash_original_method = "1D6F662958C1BDF1FC8B33D262C45E26", hash_generated_method = "06E099A51E41BDFBEEA6871660A43A37")
     
 public static void parse(InputStream in, Encoding encoding,

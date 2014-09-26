@@ -131,6 +131,7 @@ public void setMaxPathLength(int maxPathLength) {
      * @return a string representation of this {@code PKIXBuilderParameters}
      *         instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.528 -0400", hash_original_method = "E701AF787F5B39B1A149F5C1C0147E38", hash_generated_method = "6643CAF824B6FA80E87CCE7B58B18A2A")
     
 public String toString() {

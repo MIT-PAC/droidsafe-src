@@ -171,7 +171,8 @@ private void initFormats() {
              * must be updated on the same thread that created them.
              */
             mViewUpdateHandler = new Handler() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 public void handleMessage(Message msg) {
                     super.handleMessage(msg);
                     

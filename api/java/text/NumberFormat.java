@@ -109,7 +109,7 @@ public static NumberFormat getIntegerInstance(Locale locale) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.853 -0500", hash_original_method = "F7516F92C087ACF7ECF1F822BA0199BE", hash_generated_method = "D6CE1F57C2D3FCF6C95F069F1B260153")
     
 public static final NumberFormat getInstance() {
@@ -126,7 +126,7 @@ public static final NumberFormat getInstance() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.855 -0500", hash_original_method = "3A87CF816CFDA0980D70AEF11A7290C6", hash_generated_method = "BD0D464261E3C1D0AE15045C4C98DD9C")
     
 public static NumberFormat getInstance(Locale locale) {
@@ -134,7 +134,7 @@ public static NumberFormat getInstance(Locale locale) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.858 -0500", hash_original_method = "EB5EC89C6842F0D79CF1138BE0031817", hash_generated_method = "B58E08D62E82FABF334079070BB54D27")
     
 private static NumberFormat getInstance(String pattern, Locale locale) {
@@ -272,7 +272,7 @@ protected NumberFormat() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.819 -0500", hash_original_method = "323EA29B58059AEF6BA9ED0328A60A9B", hash_generated_method = "9755366EB9AD150D07F6C03C61EF8047")
     
 @Override
@@ -321,7 +321,7 @@ protected NumberFormat() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.825 -0500", hash_original_method = "D30D6926B1574E72997696CC4AACA867", hash_generated_method = "95F58325036F2C69E171344EDB82232C")
     
 public final String format(double value) {
@@ -349,7 +349,7 @@ public final String format(double value) {
      * @return the string buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.827 -0500", hash_original_method = "7CB6A6462126622DA2A88B0C24A5844A", hash_generated_method = "176E2433BC3E773098D4B0E8FDCC0386")
     
 public abstract StringBuffer format(double value, StringBuffer buffer, FieldPosition field);
@@ -363,7 +363,7 @@ public abstract StringBuffer format(double value, StringBuffer buffer, FieldPosi
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.830 -0500", hash_original_method = "D84155C6B50E9BFD8F05A957DEB6EF42", hash_generated_method = "0E7E8B70DFDDBFB1953B7F5E9BBC5BCE")
     
 public final String format(long value) {
@@ -391,7 +391,7 @@ public final String format(long value) {
      * @return the string buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.832 -0500", hash_original_method = "73E96E0E79F54A6C81E2C7F3DD907666", hash_generated_method = "4F8C5CBF5FC65EDB5D161D8E988A3E77")
     
 public abstract StringBuffer format(long value, StringBuffer buffer, FieldPosition field);
@@ -422,7 +422,7 @@ public abstract StringBuffer format(long value, StringBuffer buffer, FieldPositi
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.835 -0500", hash_original_method = "294F85583D2E74BD6D7B73B5CBA517EA", hash_generated_method = "5012202613E05145340A6B817FC3F6D1")
     
 @Override

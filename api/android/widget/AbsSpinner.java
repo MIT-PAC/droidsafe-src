@@ -180,6 +180,7 @@ void resetList() {
      * UNSPECIFIED. The height is based on the height of the selected item
      * plus padding. 
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.357 -0500", hash_original_method = "29BB60D69D80C0C6339E2E86482D98C0", hash_generated_method = "73A567AF61A15B00BBAA2CBD15A6F18F")
     
 @Override
@@ -349,7 +350,7 @@ void setSelectionInt(int position, boolean animate) {
     }
 
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.374 -0500", hash_original_method = "E89B31DFCF88A65148B589897F629BD3", hash_generated_method = "DE3E4C3DF383C543F0AF8E96C0CE29EF")
     
 abstract void layout(int delta, boolean animate);
@@ -383,7 +384,7 @@ abstract void layout(int delta, boolean animate);
     }
 
     @DSComment("Spinner")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.381 -0500", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "B2AD20E240F1F5A7AD66020C9F08265C")
     
 @Override
@@ -431,8 +432,8 @@ public int pointToPosition(int x, int y) {
         return INVALID_POSITION;
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.413 -0500", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "0F01E07DD73E3F973CD57D0A62D38B74")
     
 @Override
@@ -448,7 +449,7 @@ public int pointToPosition(int x, int y) {
         return ss;
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.415 -0500", hash_original_method = "41BC9B1A20EF7E956C712A8B84EE3401", hash_generated_method = "7D1B2596D4E45FA48A8841B2C2008EAA")
     
 @Override
@@ -473,7 +474,7 @@ public int pointToPosition(int x, int y) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.404 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
@@ -517,7 +518,8 @@ private SavedState(Parcel in) {
             position = in.readInt();
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.397 -0500", hash_original_method = "0007C2F01F0ACF691918256360E82965", hash_generated_method = "C9F57015B00A965BDAEC37BE602A9B2C")
         
 @Override

@@ -348,26 +348,20 @@ public static boolean requiresBidi(char[] text, int start, int limit) {
 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:19.193 -0400", hash_original_field = "2FF690F21BCD38E3483C44DE4CBE0B39", hash_generated_field = "DF288BFEDA889C538A422567CA9C9D64")
 
-
     private int baseLevel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:19.195 -0400", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "C7D2E1B1F4403418CA216FC250689056")
-
 
     private int length;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:19.196 -0400", hash_original_field = "809B7C4661D036928E68D5E904F6DD92", hash_generated_field = "F7CA1961F13BFDE1DE4164E4ACEC9759")
 
-
     private byte[] offsetLevel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:19.197 -0400", hash_original_field = "F31D7FBE1A5A441B095A23FF3CB1CC7D", hash_generated_field = "0847083DA9E7E7F6141100FBBE80B452")
-
 
     private Run[] runs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:19.198 -0400", hash_original_field = "ADC17F105EA1AD923B501924B108B3D8", hash_generated_field = "A4A7AF3FC9749BFCB6C841A3FD768E56")
 
-
     private int direction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:19.200 -0400", hash_original_field = "7DB823303E9ACDA0941A177CFC66150C", hash_generated_field = "AE935D0D650E3AFBE13476DAA9ED6D62")
-
 
     private boolean unidirectional;
 
@@ -784,6 +778,7 @@ public boolean isRightToLeft() {
         return direction == UBiDiDirection_UBIDI_RTL;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:19.222 -0400", hash_original_method = "063D967061B6BDAE28DFCBF4E0BAE7D2", hash_generated_method = "A54E05B3983DC17F5D1AA630148C1909")
     
 @Override

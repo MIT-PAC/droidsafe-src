@@ -40,7 +40,7 @@ public Stream(String name) {
         }
 
         @DSSink({DSSinkKind.IO})
-        @DSSpec(DSCat.IO_ACTION_METHOD)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.169 -0500", hash_original_method = "D4FE33DE2CA80BB3708E6A0E802F0C32", hash_generated_method = "857DBBAAF7E6696751028A99F26E908E")
         
 @Override
@@ -63,8 +63,8 @@ public void endIndent() {
             indent --;
         }
 
-        @DSSpec(DSCat.IO_ACTION_METHOD)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.176 -0500", hash_original_method = "9FCCAC1E0D29D125BE9308EF391306A0", hash_generated_method = "66209703A73C9C9B32D7E53D6814B02B")
         
 @Override
@@ -73,12 +73,16 @@ public void endIndent() {
             super.println(msg);
         }
 
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.179 -0500", hash_original_method = "8FD37FA4B52BC22F9117E57A4C975FCE", hash_generated_method = "B120231928A524A0791E32CFA6701F46")
         
 public void print(byte[] data) {
             printAsHex(16, " ", "", data, 0, data.length);
         }
 
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.181 -0500", hash_original_method = "97F4A1EEA64A5AE021D275219F0FBD08", hash_generated_method = "1ED33B0A8BDB500B341EEF394C8E5882")
         
 public void print(byte[] data, int offset, int len) {

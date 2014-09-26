@@ -97,7 +97,8 @@ _data.recycle();
 }
 }
 }
-@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+@DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.496 -0500", hash_original_method = "7DA6D42A7F216D94D717DBC3B120FF6A", hash_generated_method = "FD32F0FC6931D92F5C46C37C59E35051")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException

@@ -443,6 +443,7 @@ public void onDismiss(DialogInterface dialog) {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.531 -0500", hash_original_method = "CFA39F554612E24A4614D286AB70C801", hash_generated_method = "F4CC27144B9864F5A13121D556F3D501")
     
 @Override

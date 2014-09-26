@@ -879,6 +879,7 @@ public DropDownListView(Context context, boolean hijackFocus) {
             return view;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.147 -0500", hash_original_method = "4691130934AB8C0281F78748C377FD01", hash_generated_method = "5635BEFC456639E758A346DB28420B77")
         
 @Override
@@ -892,6 +893,7 @@ public DropDownListView(Context context, boolean hijackFocus) {
          *
          * @return true always if hijacking focus
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.150 -0500", hash_original_method = "561EA8BFAB26A78C0A50D34CA2B435FA", hash_generated_method = "468FFE45110A504986317139157A6B4F")
         
 @Override
@@ -917,6 +919,7 @@ public DropDownListView(Context context, boolean hijackFocus) {
          *
          * @return true always if hijacking focus
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.154 -0500", hash_original_method = "1102992DDCFDFABDAA31FDFA580154D8", hash_generated_method = "41F703DC5FE9C3F800A12C7C5F5E495F")
         
 @Override
@@ -960,7 +963,7 @@ public DropDownListView(Context context, boolean hijackFocus) {
         {
             //Synthesized constructor
         }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.167 -0500", hash_original_method = "9AD729468BC88951DC9B447B72E180D0", hash_generated_method = "E9D4DFD4407D27ED24BD11596FAD7F2A")
         
 public void run() {
@@ -976,7 +979,7 @@ public void run() {
         {
             //Synthesized constructor
         }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.171 -0500", hash_original_method = "A0D6625363C0412112380631C620D963", hash_generated_method = "CB17003C1F1C5E3D173A611277EC7873")
         
 public void run() {
@@ -1183,7 +1186,7 @@ public void run() {
         }
 
         private class DisallowIntercept implements Runnable {
-            @DSSpec(DSCat.THREADING)
+            @DSSafe(DSCat.SAFE_LIST)
             @Override
             public void run() {
                 final ViewParent parent = mSrc.getParent();
@@ -1507,7 +1510,8 @@ public boolean onKeyPreIme(int keyCode, KeyEvent event) {
         {
             Context context = mContext;
             mShowDropDownRunnable = new Runnable() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.121 -0500", hash_original_method = "CEA8CEF9AA7B34E441550DF384140083", hash_generated_method = "EED7FFBA9AD29D9AA69601D426B89EA5")
+                @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.121 -0500", hash_original_method = "CEA8CEF9AA7B34E441550DF384140083", hash_generated_method = "EED7FFBA9AD29D9AA69601D426B89EA5")
                 
 public void run() {
                     // View layout should be all done before displaying the drop down.

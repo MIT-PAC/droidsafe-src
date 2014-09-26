@@ -754,7 +754,7 @@ static RunQueue getRunQueue() {
             
         }
         
-        @DSSafe
+        @DSSafe(DSCat.SAFE_LIST)
         @DSVerified
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.017 -0400", hash_original_method = "1534EBA7EE38BC120F6309F5A1B3FF9E", hash_generated_method = "1D39A8EC720482719F771CC26E2A5136")
         public void addCallback(Callback callback) {
@@ -790,6 +790,7 @@ static RunQueue getRunQueue() {
             
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.018 -0400", hash_original_method = "B37A48D0CAD6F4AF8C78DA1B2A495A29", hash_generated_method = "F16672983FBE594CFFF27796E8300DE9")
         public void setType(int type) {
             addTaint(type);
@@ -1295,7 +1296,7 @@ void setStopped(boolean stopped) {
     }
     
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.998 -0500", hash_original_method = "DCC308262D5800610A000228CF8970A4", hash_generated_method = "B63E6487D1CD4BEC29A92A9071D59DCB")
     
 public ViewParent getParent() {
@@ -2343,12 +2344,14 @@ private void profileRendering(boolean enabled) {
             mRenderProfilingEnabled = enabled;
             if (mRenderProfiler == null) {
                 mRenderProfiler = new Thread(new Runnable() {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+        @Override
                     public void run() {
                         Log.d(TAG, "Starting profiling thread");
                         while (mRenderProfilingEnabled) {
                             mAttachInfo.mHandler.post(new Runnable() {
-                                @Override
+                                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                                 public void run() {
                                     mDirty.set(0, 0, mWidth, mHeight);
                                     scheduleTraversals();
@@ -3933,7 +3936,8 @@ public void setFormat(int format) {
             ((RootViewSurfaceTaker)mView).setSurfaceFormat(format);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.417 -0500", hash_original_method = "EE34E0B82BE2B114D60991753727E9A6", hash_generated_method = "5D83BAA8B38B494ACB639C1B18C6C59C")
         
 public void setType(int type) {
@@ -5004,7 +5008,7 @@ private View findViewByAccessibilityId(int accessibilityId) {
             //Synthesized constructor
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.716 -0500", hash_original_method = "3411919DDECDF923DB080425515AE494", hash_generated_method = "284E8A2C924C6821DE0394CBF655FA00")
         
 public void run() {

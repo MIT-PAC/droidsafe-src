@@ -113,7 +113,7 @@ public abstract FragmentTransaction replace(int containerViewId, Fragment fragme
      * @return Returns the same FragmentTransaction instance.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.773 -0500", hash_original_method = "254F73E9B1E6669A2F02CC36D0752913", hash_generated_method = "7F25DE9881546538B6AAFCFFB188C78C")
     
 public abstract FragmentTransaction remove(Fragment fragment);
@@ -160,7 +160,7 @@ public abstract FragmentTransaction show(Fragment fragment);
      * @return Returns the same FragmentTransaction instance.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.780 -0500", hash_original_method = "1CDB7BE0A739957C26CB1A4DAEA0A3C8", hash_generated_method = "C732A98003F16B452F40FD8EF863BA48")
     
 public abstract FragmentTransaction detach(Fragment fragment);
@@ -176,7 +176,7 @@ public abstract FragmentTransaction detach(Fragment fragment);
      * @return Returns the same FragmentTransaction instance.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.782 -0500", hash_original_method = "D0BA812C953A880D97F8C9ED57649F69", hash_generated_method = "F46E264924C9175DF0004364A9369E77")
     
 public abstract FragmentTransaction attach(Fragment fragment);

@@ -18,7 +18,7 @@ public class ExtractedText implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.496 -0400", hash_original_field = "44C9A9B8D068505B70A3CBF636C42424", hash_generated_field = "D4D8686744A23F17CF49DABA688B4F58")
 
     public static final Parcelable.Creator<ExtractedText> CREATOR = new Parcelable.Creator<ExtractedText>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.293 -0500", hash_original_method = "18101586B08022B99EB45311C1C523FD", hash_generated_method = "AB02832255F8A327D782CE0206CC612C")
         
 public ExtractedText createFromParcel(Parcel source) {

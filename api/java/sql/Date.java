@@ -233,7 +233,8 @@ public Date(long theDate) {
      *
      * @return a string representation of the date in SQL format - {@code "yyyy-MM-dd"}.
      */
-    @DSSafe(DSCat.UTIL_FUNCTION)
+    @DSSource({DSSourceKind.DATE_TIME})
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.277 -0500", hash_original_method = "F7971D7A9962AA78000A8292B336C43C", hash_generated_method = "C4F82B04518E944139744F728FE1B9E7")
     
 @Override

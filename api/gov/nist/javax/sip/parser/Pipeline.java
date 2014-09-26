@@ -106,8 +106,8 @@ public void close() throws IOException {
         this.pipe.close();
     }
 
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.797 -0500", hash_original_method = "F2F79F1D43766E909F353C0CFC9043D6", hash_generated_method = "4E747B06890E58DC4665FE9F81AEC4E1")
     
 public int read() throws IOException {

@@ -187,7 +187,8 @@ public byte[] getEncoded() {
      *
      * @return the string representation
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.493 -0500", hash_original_method = "2BCB4CFF6EEF485C6E2E6569B64BAD8B", hash_generated_method = "116942470DF5577D36E8CF2EA652C6BB")
     
 public String getName() {
@@ -213,7 +214,8 @@ public String getName() {
      *             if the {@code format} argument is not one of the three
      *             mentioned above
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.495 -0500", hash_original_method = "DC6B95F939C1817F13ECF66B400795F1", hash_generated_method = "E5CA5985425CFE5E803F2C51ECF2A19A")
     
 public String getName(String format) {
@@ -224,7 +226,8 @@ public String getName(String format) {
         return dn.getName(format);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.499 -0500", hash_original_method = "F26EAC27584EEA69A397CAF64D802897", hash_generated_method = "94B75119BBA3F618CC044E59DBDD08DE")
     
 public String getName(String format, Map<String, String> oidMap) {

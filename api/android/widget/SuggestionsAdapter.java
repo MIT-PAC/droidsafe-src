@@ -218,6 +218,7 @@ public int getQueryRefinement() {
      * Overridden to always return <code>false</code>, since we cannot be sure that
      * suggestion sources return stable IDs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.748 -0500", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "BF2ED6D8AA7E3F26499C1DEA76CA3447")
     
 @Override
@@ -415,6 +416,7 @@ private void updateSpinnerState(Cursor cursor) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.788 -0500", hash_original_method = "21562F430356DF0ADAE2AB54659D8C55", hash_generated_method = "5D8A5AF0DF375611FC111AC52F452F73")
     
 public void onClick(View v) {
@@ -587,7 +589,8 @@ public ChildViewCache(View v) {
      *
      * @see android.widget.ListAdapter#getView(int, View, ViewGroup)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.805 -0500", hash_original_method = "EC9A6ABF4CBFA211B4EDA728AA0B1D68", hash_generated_method = "6F756B9030C9DE6578298DBB4587359F")
     
 @Override

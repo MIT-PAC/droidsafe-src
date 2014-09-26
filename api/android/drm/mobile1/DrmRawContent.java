@@ -182,6 +182,7 @@ public int read(byte[] b, int off, int len) throws IOException {
         /* Non-javadoc
          * @see java.io.InputStream#markSupported()
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.375 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "68CB0655189E46325916378CAE21EACC")
         
 public boolean markSupported() {
@@ -191,6 +192,7 @@ public boolean markSupported() {
         /* Non-javadoc
          * @see java.io.InputStream#mark(int)
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.378 -0500", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "561B12231EF8492BA6CD36D053E70C35")
         
 public void mark(int readlimit) {
@@ -199,6 +201,7 @@ public void mark(int readlimit) {
         /* Non-javadoc
          * @see java.io.InputStream#reset()
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.380 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "905AD4216897ED858D0A370D64D237D3")
         
 public void reset() throws IOException {

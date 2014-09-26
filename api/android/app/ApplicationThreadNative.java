@@ -55,7 +55,8 @@ public ApplicationThreadNative() {
         attachInterface(this, descriptor);
     }
     
-    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.942 -0500", hash_original_method = "B17DF3ED953946DC6FB6C3E82DF1C3B7", hash_generated_method = "6DCB879D2EBBA74EF430AE5BD6A63908")
     
 @Override

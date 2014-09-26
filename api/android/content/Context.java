@@ -295,7 +295,7 @@ public abstract PackageManager getPackageManager();
     /** Return a ContentResolver instance for your application's package. */
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.CONTENT})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.862 -0500", hash_original_method = "1D00732668B8C897D38BE7A141172873", hash_generated_method = "A7D8728F3BE00D5CDB00368E816A20AC")
     
 public abstract ContentResolver getContentResolver();
@@ -535,7 +535,7 @@ public abstract String getPackageName();
 
     /** Return the full application info for this context's package. */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.900 -0500", hash_original_method = "0853F0BFD0AB024B1B62857AD01DAF33", hash_generated_method = "219D0318B08C94A31B6C8672DAC137FD")
     
 public abstract ApplicationInfo getApplicationInfo();
@@ -634,7 +634,7 @@ public abstract SharedPreferences getSharedPreferences(String name,
      * @see java.io.FileInputStream#FileInputStream(String)
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.911 -0500", hash_original_method = "EBAD68309D7C43CA53D7A0B7FB063D1D", hash_generated_method = "7CE8EA82F68F3012E1BE2EA8D2202B3E")
     
 public abstract FileInputStream openFileInput(String name)
@@ -705,7 +705,7 @@ public abstract boolean deleteFile(String name);
      * @see #getDir
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.FS_INFO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.918 -0500", hash_original_method = "9A353D6569C6BEC86434D076A37F5A65", hash_generated_method = "434EA32C2C62DB5DD54141843080A7D3")
     
 public abstract File getFileStreamPath(String name);
@@ -2369,6 +2369,7 @@ public abstract Context createPackageContext(String packageName,
      *
      * @see #CONTEXT_RESTRICTED
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:30.141 -0500", hash_original_method = "83D5E01B4EA95EAE9203A12A4E27AA18", hash_generated_method = "5F09F86AB7736674ADD7B4B91DD7FE80")
     
     @DSVerified
@@ -2425,7 +2426,8 @@ public boolean isRestricted() {
 		return obtainStyledAttributes(attrArray);
 	}
 
-	public TypedArray obtainStyledAttributes(AttributeSet attrs,
+	@DSSafe(DSCat.SAFE_LIST)
+    public TypedArray obtainStyledAttributes(AttributeSet attrs,
 			int activitychooserview, int defStyle, int defStyleRes) {
 		// TODO Auto-generated method stub
 		int[] attrArray = new int[] {activitychooserview + defStyle + defStyleRes};

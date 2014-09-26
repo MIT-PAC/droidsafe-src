@@ -89,6 +89,7 @@ public ListMenuItemView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.299 -0500", hash_original_method = "85E45C4D26BDFDA8B8A891EEA2149544", hash_generated_method = "B0D368C29975B8C8263B722A259774C8")
     
 @Override
@@ -256,6 +257,7 @@ public void setIcon(Drawable icon) {
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.323 -0500", hash_original_method = "EB04FE2393D8303D2CC7459EB64C837F", hash_generated_method = "77AF6BC34B8BB654C8BD14BCCE5C8515")
     
 @Override

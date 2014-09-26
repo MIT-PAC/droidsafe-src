@@ -76,7 +76,7 @@ public GZIPOutputStream(OutputStream os, int size) throws IOException {
      */
     @DSComment("IO/Stream accessing")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.933 -0500", hash_original_method = "3845FBBF6C0965A8BD527CE35C72F9CE", hash_generated_method = "FBEDB0427C9F5135E9A7874A797C5A41")
     
 @Override

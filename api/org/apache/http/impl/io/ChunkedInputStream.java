@@ -86,8 +86,8 @@ public ChunkedInputStream(final SessionInputBuffer in) {
      * byte
      * @throws IOException If an IO problem occurs
      */
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.192 -0500", hash_original_method = "5987C40EBD16187447E09174CE17A1D5", hash_generated_method = "11C8E65F36ECC436105906060B9725E9")
     
 public int read() throws IOException {
@@ -119,7 +119,7 @@ public int read() throws IOException {
      * @throws IOException if an IO problem occurs.
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.194 -0500", hash_original_method = "3658228930DC027E604760F33BD6E163", hash_generated_method = "6E895E4791EAA7C54ED5D455FB855F58")
     
 public int read (byte[] b, int off, int len) throws IOException {
@@ -152,7 +152,7 @@ public int read (byte[] b, int off, int len) throws IOException {
      * @throws IOException if an IO problem occurs.
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.196 -0500", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "E0F9C5B343EA0376178403393DBFABB2")
     
 public int read (byte[] b) throws IOException {

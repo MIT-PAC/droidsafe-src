@@ -81,6 +81,7 @@ class TransportMediatorJellybeanMR2
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.743 -0400", hash_original_field = "5E8F8231312845798C114DE2C93AAF90", hash_generated_field = "F6C4131C857E48651734E232F0BC3DBF")
 
     final BroadcastReceiver mMediaButtonReceiver = new BroadcastReceiver() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onReceive(Context context, Intent intent) {
             try {
@@ -101,7 +102,6 @@ class TransportMediatorJellybeanMR2
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.758 -0400", hash_original_field = "7B47F6D668EAC8B29A4C2C64F0EA44AC", hash_generated_field = "7B47F6D668EAC8B29A4C2C64F0EA44AC")
-
 
     PendingIntent mPendingIntent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.763 -0400", hash_original_field = "70B2B6E08660750F625703F0205886F0", hash_generated_field = "70B2B6E08660750F625703F0205886F0")

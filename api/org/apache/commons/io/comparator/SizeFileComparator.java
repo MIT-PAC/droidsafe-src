@@ -106,6 +106,7 @@ public SizeFileComparator(boolean sumDirectoryContents) {
      * is greater than the second file.
      * 
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.550 -0400", hash_original_method = "ABA0E5A2C93CAE7FB231C0521EE3670F", hash_generated_method = "BA0BC47B135E42DFD56AF5B19141022D")
     
 public int compare(File file1, File file2) {
@@ -136,6 +137,7 @@ public int compare(File file1, File file2) {
      *
      * @return String representation of this file comparator
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.551 -0400", hash_original_method = "0C8A6A12A09534244BFD4B982DA5238A", hash_generated_method = "55385276BD3EFAA7B4E98CCBFBB71931")
     
 @Override

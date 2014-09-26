@@ -667,7 +667,7 @@ private void _requestLocationUpdates(String provider, Criteria criteria,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.089 -0500", hash_original_method = "E82A66C4B675428C8689D564FEFE46C0", hash_generated_method = "46845E4FCC97AC801B52F850B754D27D")
     @DSVerified
-    @DSSpec(DSCat.LOCATION)
+    @DSSafe(DSCat.SAFE_LIST)
 public void requestSingleUpdate(String provider, LocationListener listener, Looper looper) {
         if (provider == null) {
             throw new IllegalArgumentException("provider==null");
@@ -1102,14 +1102,16 @@ ListenerTransport(LocationListener listener, Looper looper) {
 
             if (looper == null) {
                 mListenerHandler = new Handler() {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     public void handleMessage(Message msg) {
                         _handleMessage(msg);
                     }
                 };
             } else {
                 mListenerHandler = new Handler(looper) {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     public void handleMessage(Message msg) {
                         _handleMessage(msg);
                     }
@@ -1208,6 +1210,7 @@ private void _handleMessage(Message msg) {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.008 -0400", hash_original_field = "1388D92E53A0B03AA5E995A7DC696BD0", hash_generated_field = "4720EC15678BF4030E408554AC619E18")
 
         private final Handler mGpsHandler = new Handler() {
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.173 -0500", hash_original_method = "3A4C26C18C998E8AD28D793D2B4D73AC", hash_generated_method = "F70616BE6ED23F0BAD01968F7A779F16")
             
 @Override

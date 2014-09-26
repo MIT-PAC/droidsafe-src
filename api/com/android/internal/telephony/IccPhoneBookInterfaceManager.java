@@ -51,6 +51,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.989 -0400", hash_original_field = "F240289ECF5C81105F1EF992E6E2ADFE", hash_generated_field = "1DB8578536D5CE25805244FDBD843A4E")
 
     protected Handler mBaseHandler = new Handler() {        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.989 -0400", hash_original_method = "F8C0BA183015902A4341C34058945BDE", hash_generated_method = "941FD1090CAF73E06F07DEB3BDEE7189")
         @Override
         public void handleMessage(Message msg) {

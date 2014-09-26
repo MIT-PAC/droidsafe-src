@@ -1243,7 +1243,8 @@ public Gl20RendererEglContext(EGLContext context) {
                 // Make sure we do this on the correct thread.
                 if (mHandler.getLooper() != Looper.myLooper()) {
                     mHandler.post(new Runnable() {
-                        @Override public void run() {
+                        @DSSafe(DSCat.SAFE_LIST)
+                @Override public void run() {
                             onTerminate(eglContext);
                         }
                     });

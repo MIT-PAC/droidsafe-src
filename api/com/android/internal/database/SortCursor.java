@@ -41,6 +41,7 @@ public class SortCursor extends AbstractCursor {
 
     private DataSetObserver mObserver = new DataSetObserver() {
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.149 -0500", hash_original_method = "F00E20B7880C90825F84FA73002A8738", hash_generated_method = "AE1F091769F4914FA814B6CB3FCBC73F")
         
 @Override
@@ -50,6 +51,7 @@ public class SortCursor extends AbstractCursor {
             mPos = -1;
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.152 -0500", hash_original_method = "4CD83AD480AFA6CEDD96BF4385EF1A22", hash_generated_method = "64D28911E57466DBCD10697DB3A6E99B")
         
 @Override
@@ -96,6 +98,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         mCurRowNumCache = new int[ROWCACHESIZE][length];
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSSafe(DSCat.DB_CURSOR)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.161 -0500", hash_original_method = "C94247264BA1143A8EFEBC4EA367BD4C", hash_generated_method = "E2DA0373B706ED60B98BB7FB33055AE0")
@@ -244,7 +247,8 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         return mCursor.getFloat(column);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.178 -0500", hash_original_method = "977D6BDEB2B1108A87BD2446DF855014", hash_generated_method = "9FE0CB8D8CA2F42105E397AC4001F939")
     
 @Override
@@ -352,7 +356,7 @@ public SortCursor(Cursor[] cursors, String sortcolumn)
         }
     }
     
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:28.201 -0500", hash_original_method = "3BA588146C61870E37BC59410D39661D", hash_generated_method = "86AA6A890F714127B29E4F8CED4FED83")
     
 @Override

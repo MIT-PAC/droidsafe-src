@@ -44,7 +44,7 @@ public int getPrecision() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.537 -0500", hash_original_method = "5619344DED486463EA63A3A2966EBEEE", hash_generated_method = "76BE4486EF1E837DE116691174C5479C")
     
 @Override

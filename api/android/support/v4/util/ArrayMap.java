@@ -149,6 +149,7 @@ public boolean containsAll(Collection<?> collection) {
      * Perform a {@link #put(Object, Object)} of all key/value pairs in <var>map</var>
      * @param map The map whose contents are to be retrieved.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.152 -0400", hash_original_method = "2C4D4B00FF54802FEAB4AFA7EF2A48C6", hash_generated_method = "A96BF73B6D4472A450B96DD156F4CF89")
     
 @Override
@@ -195,6 +196,7 @@ public boolean retainAll(Collection<?> collection) {
      * object that exists for the entire iterator, so you can <b>not</b> hold on to it
      * after calling {@link java.util.Iterator#next() Iterator.next}.</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.165 -0400", hash_original_method = "A427D615D591B7E5D3629D4DD8D1932A", hash_generated_method = "1286D68978A16DEC0C1EE4AE0DE24953")
     
 @Override
@@ -209,6 +211,7 @@ public boolean retainAll(Collection<?> collection) {
      * <p><b>Note:</b> this is a fairly inefficient way to access the array contents, it
      * requires generating a number of temporary objects.</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.169 -0400", hash_original_method = "B357E55034E4D406BD96CAA828907FAA", hash_generated_method = "392CD3F52635868EED10B8E7B29B9950")
     
 @Override
@@ -223,6 +226,7 @@ public boolean retainAll(Collection<?> collection) {
      * <p><b>Note:</b> this is a fairly inefficient way to access the array contents, it
      * requires generating a number of temporary objects.</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.173 -0400", hash_original_method = "CB75CC20D831538868CB2246F6C3A390", hash_generated_method = "6DEDDF296C9E9AC2B63F5504D2832F29")
     
 @Override

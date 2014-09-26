@@ -81,7 +81,7 @@ public int describeContents() {
         return 0;
     }
     public static final Parcelable.Creator<Tone> CREATOR = new Parcelable.Creator<Tone>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.130 -0500", hash_original_method = "5C679EE782E7016A2A81EBD327549C98", hash_generated_method = "3BD7D2BD490A2DF77A538D482E32F6D6")
             
 public Tone createFromParcel(Parcel in) {

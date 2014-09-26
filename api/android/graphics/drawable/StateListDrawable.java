@@ -263,6 +263,7 @@ private int indexOfStateSet(int[] stateSet) {
             return -1;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.143 -0500", hash_original_method = "56C51D0FF73BF2A3F52E87DDE967AFF6", hash_generated_method = "7BA121C3C79045A5A9E794AF881AD1A4")
         
 @Override
@@ -270,6 +271,7 @@ private int indexOfStateSet(int[] stateSet) {
             return new StateListDrawable(this, null);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.146 -0500", hash_original_method = "DF4CF834DF74C8FC36C20E482CEB7672", hash_generated_method = "6167AB90CFC44C91224149FFF4F6EA61")
         
 @Override

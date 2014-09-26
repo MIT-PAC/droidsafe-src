@@ -60,10 +60,8 @@ public class ConcurrentSkipListSet<E>
     implements NavigableSet<E>, Cloneable, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.511 -0400", hash_original_field = "227CB222B26308336F72E5CEE874DBAB", hash_generated_field = "7381407C50BEAC7DF41E14CF3A10E102")
 
-
     private static final long serialVersionUID = -2479143111061671589L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.526 -0400", hash_original_field = "8D6DE690AED35F26F78C7E63CD3F73E7", hash_generated_field = "E7ED6ED2850DA758D244111BA43A3B2F")
-
 
     private static  sun.misc.Unsafe UNSAFE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.527 -0400", hash_original_field = "106366ADA5B07C073CE922CE3F382D34", hash_generated_field = "50722348F52364D6E15050AD3663E214")
@@ -145,6 +143,7 @@ ConcurrentSkipListSet(ConcurrentNavigableMap<E,Object> m) {
      *
      * @return a shallow copy of this set
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.514 -0400", hash_original_method = "4E2D77CA0A7AED8150CFDE8A40970703", hash_generated_method = "6F64CA2F2078C9BD8F96D3917F4280D4")
     
 public ConcurrentSkipListSet<E> clone() {
@@ -177,6 +176,7 @@ public ConcurrentSkipListSet<E> clone() {
      *
      * @return the number of elements in this set
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.515 -0400", hash_original_method = "A04EE09DEB6F21FAA6A7E10DF6401CD1", hash_generated_method = "B6A481AB385BBDAEA9A99BEF48697907")
     
 public int size() {
@@ -187,6 +187,7 @@ public int size() {
      * Returns {@code true} if this set contains no elements.
      * @return {@code true} if this set contains no elements
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.515 -0400", hash_original_method = "B9E63D3C52241E7E917CB1416ABA36E5", hash_generated_method = "34A044B85338F80AC374E61345D72801")
     
 public boolean isEmpty() {
@@ -204,6 +205,7 @@ public boolean isEmpty() {
      *         compared with the elements currently in this set
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.516 -0400", hash_original_method = "93D27F83E886B31790810958F2BFC989", hash_generated_method = "B5A050C42D8B6E4A1BCB73C685ADB7FC")
     
 public boolean contains(Object o) {
@@ -224,6 +226,7 @@ public boolean contains(Object o) {
      *         with the elements currently in this set
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.516 -0400", hash_original_method = "7053BB540B23AA007CAB16D68CED10A9", hash_generated_method = "D71B721DEE5A9263CE631D391755A82F")
     
 public boolean add(E e) {
@@ -244,6 +247,7 @@ public boolean add(E e) {
      *         with the elements currently in this set
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.516 -0400", hash_original_method = "4C7571A8157A33D092CC5E3D15E28866", hash_generated_method = "EFED1E1AE3FFB3EE331ED3151DA7ED37")
     
 public boolean remove(Object o) {
@@ -253,6 +257,7 @@ public boolean remove(Object o) {
     /**
      * Removes all of the elements from this set.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.517 -0400", hash_original_method = "5163CA2ED3AD9C66F2BDAFB902590115", hash_generated_method = "2176D445272406688DBDA5C0282AE3E2")
     
 public void clear() {
@@ -264,6 +269,7 @@ public void clear() {
      *
      * @return an iterator over the elements in this set in ascending order
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.517 -0400", hash_original_method = "5F71C7E0A5593F392A0806A3CE200AF9", hash_generated_method = "3D876F5F04348BCFF0BE874605FB00BE")
     
 public Iterator<E> iterator() {
@@ -275,12 +281,12 @@ public Iterator<E> iterator() {
      *
      * @return an iterator over the elements in this set in descending order
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.517 -0400", hash_original_method = "96729D330B50C97FB26BF1BC1C614850", hash_generated_method = "032464C45B3CAA034D193D61203514F6")
     
 public Iterator<E> descendingIterator() {
         return m.descendingKeySet().iterator();
     }
-
 
     /* ---------------- AbstractSet Overrides -------------- */
 
@@ -327,6 +333,7 @@ public boolean equals(Object o) {
      * @throws NullPointerException if the specified collection or any
      *         of its elements are null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.518 -0400", hash_original_method = "8ECA317C2A378F8F7993EF4F47C37092", hash_generated_method = "AC5113B7E13A02E185A7C44CDFF0597D")
     
 public boolean removeAll(Collection<?> c) {
@@ -344,6 +351,7 @@ public boolean removeAll(Collection<?> c) {
      * @throws ClassCastException {@inheritDoc}
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.519 -0400", hash_original_method = "10F5AE4F9BF066ED54975005050E0A23", hash_generated_method = "D32FEA92767C3F39B1D28E106F859C25")
     
 public E lower(E e) {
@@ -354,6 +362,7 @@ public E lower(E e) {
      * @throws ClassCastException {@inheritDoc}
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.520 -0400", hash_original_method = "2C2553165E35C727802F311B361A1F6C", hash_generated_method = "07B1A5896D91EAC9ADADDF8A6E5E462D")
     
 public E floor(E e) {
@@ -364,6 +373,7 @@ public E floor(E e) {
      * @throws ClassCastException {@inheritDoc}
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.520 -0400", hash_original_method = "772A3530FF9574E83AE3BF5219D76116", hash_generated_method = "860BE16303AEA4625B9BFF80822A414C")
     
 public E ceiling(E e) {
@@ -374,12 +384,14 @@ public E ceiling(E e) {
      * @throws ClassCastException {@inheritDoc}
      * @throws NullPointerException if the specified element is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.520 -0400", hash_original_method = "DB19F68E3F0204E010448E0B14609A4A", hash_generated_method = "DC75F8BD2213EAF1F10ED1C10B480C5A")
     
 public E higher(E e) {
         return m.higherKey(e);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.521 -0400", hash_original_method = "1A080A19D2FCD5FE83F759422097D29B", hash_generated_method = "5EE850936620D6981DF9BAB075F0C2EF")
     
 public E pollFirst() {
@@ -387,6 +399,7 @@ public E pollFirst() {
         return (e == null) ? null : e.getKey();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.521 -0400", hash_original_method = "51F0C8E500BF24296D238A01B696E348", hash_generated_method = "06B70687A43991198738688272E22606")
     
 public E pollLast() {
@@ -394,10 +407,9 @@ public E pollLast() {
         return (e == null) ? null : e.getKey();
     }
 
-
     /* ---------------- SortedSet operations -------------- */
 
-
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.522 -0400", hash_original_method = "820C6AEF3954D2EE59DA490481F0B7A1", hash_generated_method = "4B36A3158C155E201AC90E71446E8FDF")
     
 public Comparator<? super E> comparator() {
@@ -407,6 +419,7 @@ public Comparator<? super E> comparator() {
     /**
      * @throws NoSuchElementException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.522 -0400", hash_original_method = "5D8C9DE6ABA3C57BE67F77FBFD9DC6D8", hash_generated_method = "8618BF77DA48B7C5ACF4105D185DC131")
     
 public E first() {
@@ -416,6 +429,7 @@ public E first() {
     /**
      * @throws NoSuchElementException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.522 -0400", hash_original_method = "D0E174621F7616B481FD7AB7D93D10A3", hash_generated_method = "D18FF8A99CFBC6921AD15151C6B94B9E")
     
 public E last() {
@@ -428,6 +442,7 @@ public E last() {
      *         {@code toElement} is null
      * @throws IllegalArgumentException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.523 -0400", hash_original_method = "A87E3BB574A0B39363205DE18EFC2A4E", hash_generated_method = "127F5FE969B85526FD817570C7D3D9FF")
     
 public NavigableSet<E> subSet(E fromElement,
@@ -444,6 +459,7 @@ public NavigableSet<E> subSet(E fromElement,
      * @throws NullPointerException if {@code toElement} is null
      * @throws IllegalArgumentException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.523 -0400", hash_original_method = "3B7E920F9D3734EA367AD02EF2477A39", hash_generated_method = "B65C06ED071B3007A3069F09D4AC735D")
     
 public NavigableSet<E> headSet(E toElement, boolean inclusive) {
@@ -455,6 +471,7 @@ public NavigableSet<E> headSet(E toElement, boolean inclusive) {
      * @throws NullPointerException if {@code fromElement} is null
      * @throws IllegalArgumentException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.523 -0400", hash_original_method = "B1EE3D53365C483650DEFA2A8C83A05F", hash_generated_method = "56DCD1E2DFE3E67B5F9957CAB5F9157E")
     
 public NavigableSet<E> tailSet(E fromElement, boolean inclusive) {
@@ -467,6 +484,7 @@ public NavigableSet<E> tailSet(E fromElement, boolean inclusive) {
      *         {@code toElement} is null
      * @throws IllegalArgumentException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.524 -0400", hash_original_method = "BA767B7DA98792FEF815295972E2FEB5", hash_generated_method = "68608E59C890095F14A3380248DB46DA")
     
 public NavigableSet<E> subSet(E fromElement, E toElement) {
@@ -478,6 +496,7 @@ public NavigableSet<E> subSet(E fromElement, E toElement) {
      * @throws NullPointerException if {@code toElement} is null
      * @throws IllegalArgumentException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.525 -0400", hash_original_method = "46ABB76D7FEEBB9F7E3797A8C60354C5", hash_generated_method = "D61B6C1A1BFD365C1936C8DCE2AC410A")
     
 public NavigableSet<E> headSet(E toElement) {
@@ -489,6 +508,7 @@ public NavigableSet<E> headSet(E toElement) {
      * @throws NullPointerException if {@code fromElement} is null
      * @throws IllegalArgumentException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.525 -0400", hash_original_method = "33B2FADE88BACD2AE867FBAD0F2395D8", hash_generated_method = "7BFF6469941869BFE6B08369B59A6B2E")
     
 public NavigableSet<E> tailSet(E fromElement) {
@@ -507,6 +527,7 @@ public NavigableSet<E> tailSet(E fromElement) {
      *
      * @return a reverse order view of this set
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.526 -0400", hash_original_method = "EF3AC8EB34C0A4F44BEE725007ACCD08", hash_generated_method = "EBEF81432EC4BC3C9A564317A5D62EEA")
     
 public NavigableSet<E> descendingSet() {

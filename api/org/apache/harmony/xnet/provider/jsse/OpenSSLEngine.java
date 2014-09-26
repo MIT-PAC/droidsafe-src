@@ -85,6 +85,7 @@ int getEngineContext() {
         return ctx;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 09:30:59.176 -0400", hash_original_method = "5C7547596E72A5FF3E9521F6AF3D3B12", hash_generated_method = "A19FFCE416992CD34D1E3A4A779424D7")
     
 @Override
@@ -114,6 +115,7 @@ int getEngineContext() {
         return other.getEngineContext() == ctx;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 09:30:59.188 -0400", hash_original_method = "89F66D92F3B199777B411A7716B061A8", hash_generated_method = "8E37BC3CA2E7F1AC054B54A2DEB2E115")
     
 @Override

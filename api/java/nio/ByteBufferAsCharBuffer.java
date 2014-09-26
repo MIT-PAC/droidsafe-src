@@ -45,7 +45,6 @@ static CharBuffer asCharBuffer(ByteBuffer byteBuffer) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:42.654 -0400", hash_original_field = "1550DCB87D4D50D3727BEA306C5BDDD3", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
 
-
     private  ByteBuffer byteBuffer;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:42.654 -0400", hash_original_method = "DFF17BDD3436991D6670BD10233B6852", hash_generated_method = "66C4B73BCBD26331620C601FC5087FCA")
@@ -69,6 +68,7 @@ private ByteBufferAsCharBuffer(ByteBuffer byteBuffer) {
         return buf;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:42.655 -0400", hash_original_method = "2B216932B774F9FB3B903B024B1F44DD", hash_generated_method = "F14AAE8FCBE23930C4615524B071B64B")
     
 @Override
@@ -170,6 +170,7 @@ private ByteBufferAsCharBuffer(ByteBuffer byteBuffer) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:42.660 -0400", hash_original_method = "A46BC55FC455B05EF747C70552AAC069", hash_generated_method = "61ABEA2ADBAFAAE509189A5135E81F35")
     
 @Override
@@ -181,6 +182,7 @@ private ByteBufferAsCharBuffer(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:42.661 -0400", hash_original_method = "3E41BE4D2E49CC352D854BBBF4557ADA", hash_generated_method = "B7F140A54ADA2C555F037218CEC98DBB")
     
 @Override
@@ -190,6 +192,7 @@ private ByteBufferAsCharBuffer(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:42.661 -0400", hash_original_method = "9E9E26DE8F0FB1C7C1DCDB0ECE07501F", hash_generated_method = "263E9C909BC909B04D04C32A1738A950")
     
 @Override
@@ -217,6 +220,7 @@ private ByteBufferAsCharBuffer(ByteBuffer byteBuffer) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:42.662 -0400", hash_original_method = "33B5F8BE8E188219F2F5547567745B18", hash_generated_method = "4AA4A19460A45419EF3F4C54D1B81B31")
     
 @Override public CharBuffer subSequence(int start, int end) {

@@ -103,7 +103,6 @@ public static NotificationManagerCompat from(Context context) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:47.009 -0400", hash_original_field = "DC1A5D74583665DC62A1881BB90D1EF8", hash_generated_field = "755362C593EC4302394ABAC90C69DA8C")
 
-
     private static  Impl IMPL;
 
     /**
@@ -144,7 +143,6 @@ private static boolean useSideChannelForNotification(Notification notification) 
         return extras != null && extras.getBoolean(EXTRA_USE_SIDE_CHANNEL);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:46.986 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 
@@ -256,6 +254,7 @@ public void cancelAll() {
      * @param id the ID of the notification
      * @param notification the notification to post to the system
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:47.064 -0400", hash_original_method = "8A4CA4E7E43847BF1836AE50422D1EC2", hash_generated_method = "11BB02842F74EFA0B750E0E2DC061F0E")
         
 public void notify(int id, Notification notification) {
@@ -268,6 +267,7 @@ public void notify(int id, Notification notification) {
      * @param id the ID of the notification. The pair (tag, id) must be unique within your app.
      * @param notification the notification to post to the system
     */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:47.068 -0400", hash_original_method = "F807917222EF5728719EE520E156F9C4", hash_generated_method = "FCC28191678B6305D90A1C10400A5051")
         
 public void notify(String tag, int id, Notification notification) {
@@ -596,6 +596,7 @@ private void pushSideChannelQueue(Task task) {
             service.notify(packageName, id, tag, notif);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public String toString() {
             StringBuilder sb = new StringBuilder("NotifyTask[");
             sb.append("packageName:").append(packageName);
@@ -635,6 +636,7 @@ private void pushSideChannelQueue(Task task) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public String toString() {
             StringBuilder sb = new StringBuilder("CancelTask[");
             sb.append("packageName:").append(packageName);

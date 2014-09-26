@@ -39,10 +39,8 @@ public class ActionMenuView extends LinearLayoutICS // implements MenuBuilder.It
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.556 -0400", hash_original_field = "320C79E83D057AE06FA097EB825F7D18", hash_generated_field = "1CEFC30E74C2ED26E1D7A5895C1A6938")
 
-
     private static final String TAG = "ActionMenuView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.565 -0400", hash_original_field = "CBB9A87CCC818C67802089C94E9F7462", hash_generated_field = "C82EA13B7AFB56A9509B0706C650CC26")
-
 
     static final int MIN_CELL_SIZE = 56;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.573 -0400", hash_original_field = "B69ED2BFE64FDEE415EEACA8AA14E856", hash_generated_field = "7918CEA6EF4CC9E7E97331DC428C97AE")
@@ -108,10 +106,8 @@ static int measureChildForCells(View child, int cellSize, int cellsRemaining,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.579 -0400", hash_original_field = "E0FA7D9C40725579D8730D3DABE74643", hash_generated_field = "D444FB62DCB4C4F94C883BDD2D0F7012")
 
-
     private MenuBuilder mMenu;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.587 -0400", hash_original_field = "E5A9CB2F2F54CC6E136BCFE6856F2EC9", hash_generated_field = "3619C222EA285420CD3DE70ECE0D1D48")
-
 
     private boolean mReserveOverflow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.604 -0400", hash_original_field = "56BE51BB984E57DB0E28F12A92854E0A", hash_generated_field = "BC36FBD9CCAFE590BF9A0B51503C858E")
@@ -169,6 +165,7 @@ public boolean isExpandedFormat() {
         return mFormatItems;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.710 -0400", hash_original_method = "9D96824DEF3098B6D8D76D3681180EEB", hash_generated_method = "174A4AFA5B5E989351B5623BCF8E657E")
     
 @Override
@@ -185,6 +182,7 @@ public boolean isExpandedFormat() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.727 -0400", hash_original_method = "AC3CCE6585939BC7F05ED16F63493D1E", hash_generated_method = "9CB6352E82CA856894739E6B464F81C4")
     
 @Override
@@ -541,6 +539,7 @@ private void onMeasureExactFormat(int widthMeasureSpec, int heightMeasureSpec) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.857 -0400", hash_original_method = "BCFF92F724E40A93547AD27810B374B7", hash_generated_method = "A84D72B361AE36102DA6C6534829A3F9")
     
 @Override
@@ -592,6 +591,7 @@ public void setOverflowReserved(boolean reserveOverflow) {
         return generateDefaultLayoutParams();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.899 -0400", hash_original_method = "C7A39F9D75FC22971A40D0A54E61424A", hash_generated_method = "7E38BA9E25DA97EDD4FE18FB943B604C")
     
 @Override
@@ -640,6 +640,7 @@ protected boolean hasSupportDividerBeforeChildAt(int childIndex) {
         return result;
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.934 -0400", hash_original_method = "87E5D39D1D82C11AB077A37A8786E27E", hash_generated_method = "0CF47D3AADD137C907CE91EE0D9110E3")
     
 public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {

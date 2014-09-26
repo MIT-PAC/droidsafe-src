@@ -32,6 +32,7 @@ public class ListActivity extends Activity {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.757 -0400", hash_original_field = "F487762B42FCD79D908F11802425F9AE", hash_generated_field = "B11DF01C886CC15D12A595382174A0C1")
 
     private Runnable mRequestFocus = new Runnable() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.795 -0500", hash_original_method = "4F290F2508C3F0B44E09591C5B0749BC", hash_generated_method = "6E91A76828706A9FC9B939DB082B9EB4")
         
 public void run() {

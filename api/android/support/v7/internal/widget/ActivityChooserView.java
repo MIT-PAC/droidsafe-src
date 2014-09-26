@@ -102,11 +102,13 @@ public class ActivityChooserView extends ViewGroup implements
 
     private final DataSetObserver mModelDataSetOberver = new DataSetObserver() {
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @Override
         public void onChanged() {
             super.onChanged();
             mAdapter.notifyDataSetChanged();
         }
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @Override
         public void onInvalidated() {
             super.onInvalidated();
@@ -114,7 +116,6 @@ public class ActivityChooserView extends ViewGroup implements
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.026 -0400", hash_original_field = "D6FE6EA2CF5DEBD2D9A3C74AECA0D735", hash_generated_field = "9E7F8DDC611EBE09DFB04DB1A5EFB590")
-
 
     private final OnGlobalLayoutListener mOnGlobalLayoutListener = new OnGlobalLayoutListener() {
         @Override
@@ -218,7 +219,8 @@ public ActivityChooserView(Context context, AttributeSet attrs, int defStyle) {
 
         mAdapter = new ActivityChooserViewAdapter();
         mAdapter.registerDataSetObserver(new DataSetObserver() {
-            @Override
+            @DSSafe(DSCat.ANDROID_CALLBACK)
+        @Override
             public void onChanged() {
                 super.onChanged();
                 updateAppearance();
@@ -378,6 +380,7 @@ public boolean isShowingPopup() {
         return getListPopupWindow().isShowing();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.187 -0400", hash_original_method = "F599B3D6D046BF4212D64A5D6A7F3811", hash_generated_method = "1BDC73DC6EFA2005BFFC48DBE183556D")
     
 @Override
@@ -390,6 +393,7 @@ public boolean isShowingPopup() {
         mIsAttachedToWindow = true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.195 -0400", hash_original_method = "7E71CDA0F3C2B578254DD70E83EDE25B", hash_generated_method = "04802FD12C01A71E9635A75F6A9852D2")
     
 @Override
@@ -409,6 +413,7 @@ public boolean isShowingPopup() {
         mIsAttachedToWindow = false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.204 -0400", hash_original_method = "77C33EEC897BED8B2A12DF2072C37646", hash_generated_method = "9D1D1B5FDBCAA73E25941C2C046FB3E1")
     
 @Override
@@ -576,6 +581,7 @@ private void updateAppearance() {
         }
 
         // View.OnClickListener
+        @DSSafe(DSCat.SAFE_LIST)
         public void onClick(View view) {
             if (view == mDefaultActivityButton) {
                 dismissPopup();
@@ -609,6 +615,7 @@ private void updateAppearance() {
         }
 
         // PopUpWindow.OnDismissListener#onDismiss
+        @DSSafe(DSCat.SAFE_LIST)
         public void onDismiss() {
             notifyOnDismissListener();
             if (mProvider != null) {
@@ -660,6 +667,7 @@ private void updateAppearance() {
             notifyDataSetChanged();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getItemViewType(int position) {
             if (mShowFooterView && position == getCount() - 1) {
@@ -674,6 +682,8 @@ private void updateAppearance() {
             return ITEM_VIEW_TYPE_COUNT;
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         public int getCount() {
             int count = 0;
             int activityCount = mDataModel.getActivityCount();
@@ -687,6 +697,8 @@ private void updateAppearance() {
             return count;
         }
 
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
         public Object getItem(int position) {
             final int itemViewType = getItemViewType(position);
             switch (itemViewType) {
@@ -702,10 +714,13 @@ private void updateAppearance() {
             }
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         public long getItemId(int position) {
             return position;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public View getView(int position, View convertView, ViewGroup parent) {
             final int itemViewType = getItemViewType(position);
             switch (itemViewType) {

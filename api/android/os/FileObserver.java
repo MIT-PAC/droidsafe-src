@@ -54,7 +54,7 @@ public ObserverThread() {
             m_fd = init();
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.722 -0500", hash_original_method = "1D431AF3E47E4C831FAF412598272832", hash_generated_method = "1C18F73B691854C851AA61D2F3BFB8BE")
         
 public void run() {

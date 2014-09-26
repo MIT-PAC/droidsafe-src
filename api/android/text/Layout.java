@@ -1600,6 +1600,7 @@ public int length() {
             return mText.length();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.507 -0500", hash_original_method = "019151395F1B77A008AA178A5A5CA402", hash_generated_method = "E0382AAAC4AD6900C61843D9F3FC3F59")
         
 public CharSequence subSequence(int start, int end) {
@@ -1672,6 +1673,7 @@ public int nextSpanTransition(int start, int limit, Class type) {
             return mSpanned.nextSpanTransition(start, limit, type);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.534 -0500", hash_original_method = "16B37527DFF576A9EB476E4EC2A69F5D", hash_generated_method = "871FD8E52BD4A31A435C938C76D0A330")
         
 @Override

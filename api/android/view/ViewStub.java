@@ -161,6 +161,7 @@ public void setLayoutResource(int layoutResource) {
         setMeasuredDimension(0, 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.960 -0500", hash_original_method = "D063B9229A7B99E7AD0A562CA5051177", hash_generated_method = "B69B8EA5ED9C6C7D68A2994B2D5AAEBF")
     
 @Override
@@ -183,7 +184,7 @@ public void setLayoutResource(int layoutResource) {
      * @see #inflate() 
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.965 -0500", hash_original_method = "8020455B6FCF7D6831D6E164290A9878", hash_generated_method = "D8DF3125A2A570AD87322216145036E2")
     
 @Override

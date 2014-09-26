@@ -39,8 +39,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 
-
-
 /**
  * The central class of the {@code javax.security.auth} package representing an
  * authenticated user or entity (both referred to as "subject"). IT defines also
@@ -58,39 +56,31 @@ import java.util.Set;
 public final class Subject implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.924 -0400", hash_original_field = "83E371B3CF06F1A3C983E6EF2991F115", hash_generated_field = "650BA7E5223938D071200D497FC1E3E2")
 
-
     private static final long serialVersionUID = -8308522755600156056L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.925 -0400", hash_original_field = "A8C0155CF084CA57000A40DC9B149C7B", hash_generated_field = "01CD37D90C524137EC8683DFA0694DBC")
-
     
     private static final AuthPermission _AS = new AuthPermission("doAs");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.925 -0400", hash_original_field = "40177A21A7BF1D61D8C8691BA989BAD7", hash_generated_field = "D229E77B878BA9A8B1F3E569CEF16492")
-
 
     private static final AuthPermission _AS_PRIVILEGED = new AuthPermission(
             "doAsPrivileged");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.926 -0400", hash_original_field = "B66E57B36153EB9E9C85012942600AB6", hash_generated_field = "594216FA5B9A9FDF38AA198AFB793EAD")
 
-
     private static final AuthPermission _SUBJECT = new AuthPermission(
             "getSubject");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.926 -0400", hash_original_field = "D8094C5A08F5E14C3C9705A8F7876249", hash_generated_field = "82CD78EBD801039E393CCDD11C8E2B4A")
-
 
     private static final AuthPermission _PRINCIPALS = new AuthPermission(
             "modifyPrincipals");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.927 -0400", hash_original_field = "B7BA802B414D4B087C2B724EAA02361D", hash_generated_field = "2074F746249BD32D9577DB6DA43384F7")
 
-
     private static final AuthPermission _PRIVATE_CREDENTIALS = new AuthPermission(
             "modifyPrivateCredentials");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.927 -0400", hash_original_field = "5457F85750E21D74E2940A3F86761298", hash_generated_field = "30FC878E270F20A927F42A31C898B862")
 
-
     private static final AuthPermission _PUBLIC_CREDENTIALS = new AuthPermission(
             "modifyPublicCredentials");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.928 -0400", hash_original_field = "A50923205C60544E9EA2A2CB0B8D73EA", hash_generated_field = "57FD217E7CA002929BDAFE9652DE07D5")
-
 
     private static final AuthPermission _READ_ONLY = new AuthPermission(
             "setReadOnly");
@@ -302,10 +292,8 @@ private static void checkPermission(Permission p) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.929 -0400", hash_original_field = "80589A7BCC8195FA980CFCE751166045", hash_generated_field = "8C7B57842A763E27D5B61EC91EAB4DF6")
 
-
     private  Set<Principal> principals;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.930 -0400", hash_original_field = "33D60A783111741336ACFEFD5BC43578", hash_generated_field = "3DD6BC0BB0ADB1E11D53E8F1129974CA")
-
 
     private boolean readOnly;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.930 -0400", hash_original_field = "4104854C933417FC9DB716A30F856641", hash_generated_field = "9B795B2C6AA5F4DBB2C4993E584276EA")
@@ -408,7 +396,6 @@ public Set<Principal> getPrincipals() {
         return principals;
     }
 
-
     /**
      * Returns this {@code Subject}'s {@link Principal} which is a subclass of
      * the {@code Class} provided.
@@ -461,7 +448,6 @@ public Set<Object> getPublicCredentials() {
         return publicCredentials;
     }
 
-
     /**
      * Returns this {@code Subject}'s public credentials which are a subclass of
      * the {@code Class} provided.
@@ -482,6 +468,7 @@ public Set<Object> getPublicCredentials() {
      *
      * @return a hash code of this {@code Subject}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.941 -0400", hash_original_method = "922E575B91166261BAF01CDEC921B8F1", hash_generated_method = "38819E9D07A47BF07A14D8BAD2F72E9D")
     
 @Override
@@ -520,6 +507,7 @@ public boolean isReadOnly() {
      *
      * @return a {@code String} representation of this {@code Subject}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.943 -0400", hash_original_method = "61A39B7E74AC3892A6C28B08F4766525", hash_generated_method = "4EB9490FA1452B301782FA47B2D3416E")
     
 @Override
@@ -597,7 +585,6 @@ private void checkState() {
         private static final int SET_PubCred = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.949 -0400", hash_original_field = "E8762E035920E788359E150072E9A897", hash_generated_field = "D7EDF8FC2DC520C207C8069EB07493B1")
 
-
         private LinkedList<SST> elements;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.949 -0400", hash_original_field = "17E9ADD77F09749BEB9ACC0286F5F067", hash_generated_field = "CDF7539C055F429AE15FF4CAB97B4D40")
 
@@ -622,7 +609,7 @@ protected SecureSet(AuthPermission perm, Collection<? extends SST> s) {
 
             // Subject's constructor receives a Set, we can trusts if a set is from bootclasspath,
             // and not to check whether it contains duplicates or not
-            boolean trust = s.getClass().getClassLoader() == null; 
+            boolean trust = s.getClass().getClassLoader() == null;
             
             Iterator<? extends SST> it = s.iterator();
             while (it.hasNext()) {
@@ -669,6 +656,7 @@ private void verifyElement(Object o) {
         }
 
         // returns an instance of SecureIterator
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.956 -0400", hash_original_method = "85CACC2FAB77B932D0F1585C2FCCE0B9", hash_generated_method = "CD2A6561532B3081A494FF8526795238")
         
 @Override
@@ -684,7 +672,8 @@ private void verifyElement(Object o) {
                      * checks permission to access next private credential moves
                      * to the next element even SecurityException was thrown
                      */
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     public SST next() {
                         SST obj = iterator.next();
                         checkPermission(new PrivateCredentialPermission(obj
@@ -696,7 +685,8 @@ private void verifyElement(Object o) {
             return new SecureIterator(elements.iterator());
         }
 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.959 -0400", hash_original_method = "0BCAD680E42DBFF24B0504284FCEF539", hash_generated_method = "3B2A1D5E0234ACA76AD0C4EAA743A0BC")
+                @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.959 -0400", hash_original_method = "0BCAD680E42DBFF24B0504284FCEF539", hash_generated_method = "3B2A1D5E0234ACA76AD0C4EAA743A0BC")
                 
 @Override
                 public boolean retainAll(Collection<?> c) {
@@ -707,7 +697,8 @@ private void verifyElement(Object o) {
                     return super.retainAll(c);
                 }
 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.960 -0400", hash_original_method = "9CEEF1FB7FE0E92F89E50428A2A0794E", hash_generated_method = "6CA49245EE51DC3B47072B5BD0A5EDFC")
+                @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.960 -0400", hash_original_method = "9CEEF1FB7FE0E92F89E50428A2A0794E", hash_generated_method = "6CA49245EE51DC3B47072B5BD0A5EDFC")
                 
 @Override
                 public int size() {
@@ -729,7 +720,8 @@ private void verifyElement(Object o) {
 
                 private LinkedList<E> elements = new LinkedList<E>();
 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.958 -0400", hash_original_method = "F1FE8DDD28EE8B7E23237285E4648ECC", hash_generated_method = "BF992DB2331349E1B9F70D4640135616")
+                @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.958 -0400", hash_original_method = "F1FE8DDD28EE8B7E23237285E4648ECC", hash_generated_method = "BF992DB2331349E1B9F70D4640135616")
                 
 @Override
                 public boolean add(E o) {
@@ -746,14 +738,16 @@ private void verifyElement(Object o) {
                     return true;
                 }
 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.959 -0400", hash_original_method = "F74DAED678A58B80055D86B41CE5385A", hash_generated_method = "562D4607421BFB2E8B42A18B0D83061B")
+                @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.959 -0400", hash_original_method = "F74DAED678A58B80055D86B41CE5385A", hash_generated_method = "562D4607421BFB2E8B42A18B0D83061B")
                 
 @Override
                 public Iterator<E> iterator() {
                     return elements.iterator();
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public boolean retainAll(Collection<?> c) {
 
                     if (c == null) {
@@ -762,7 +756,8 @@ private void verifyElement(Object o) {
                     return super.retainAll(c);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public int size() {
                     return elements.size();
                 }
@@ -837,12 +832,14 @@ protected SecureIterator(Iterator<SST> iterator) {
                 this.iterator = iterator;
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.964 -0400", hash_original_method = "AA3B17E619A4DDCE5FFF27C1294FF431", hash_generated_method = "C980563D1FCC5FC801457BF9C1053824")
             
 public boolean hasNext() {
                 return iterator.hasNext();
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.964 -0400", hash_original_method = "8FDE5D25AC393B3FFD9D30C415E45749", hash_generated_method = "C5421228DDE8DA5C571D03A025039E5F")
             
 public SST next() {
@@ -853,6 +850,7 @@ public SST next() {
              * checks set state, and security permission to modify set before
              * removing current element
              */
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.965 -0400", hash_original_method = "98E24A6845BBF25040BEC171675E83AB", hash_generated_method = "1FE2BBDF8C727F155D7F6FB9C0D304DF")
             
 public void remove() {

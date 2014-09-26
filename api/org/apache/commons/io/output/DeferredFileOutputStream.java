@@ -27,7 +27,6 @@ import java.io.OutputStream;
 
 import org.apache.commons.io.IOUtils;
 
-
 /**
  * An output stream which will retain data in memory until a specified
  * threshold is reached, and only then commit it to disk. If the stream is
@@ -45,8 +44,6 @@ public class DeferredFileOutputStream
     extends ThresholdingOutputStream
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.093 -0400", hash_original_field = "EA0D38896AA5736EE728D81536C1574B", hash_generated_field = "B6D69B2A8FDF5F6E6AA5F5500BE8FBBD")
-
-
 
     /**
      * The output stream to which data will be written prior to the theshold
@@ -74,7 +71,6 @@ public class DeferredFileOutputStream
 
     // ----------------------------------------------------------- Constructors
 
-
     /**
      * Constructs an instance of this class which will trigger an event at the
      * specified threshold, and save data to a file beyond that point.
@@ -88,7 +84,6 @@ public DeferredFileOutputStream(int threshold, File outputFile)
     {
         this(threshold,  outputFile, null, null, null);
     }
-
 
     /**
      * Constructs an instance of this class which will trigger an event at the
@@ -134,9 +129,7 @@ private DeferredFileOutputStream(int threshold, File outputFile, String prefix, 
         this.directory = directory;
     }
 
-
     // --------------------------------------- ThresholdingOutputStream methods
-
 
     /**
      * Returns the current output stream. This may be memory based or disk
@@ -153,7 +146,6 @@ private DeferredFileOutputStream(int threshold, File outputFile, String prefix, 
     {
         return currentOutputStream;
     }
-
 
     /**
      * Switches the underlying output stream from a memory based stream to one
@@ -177,9 +169,7 @@ private DeferredFileOutputStream(int threshold, File outputFile, String prefix, 
         memoryOutputStream = null;
     }
 
-
     // --------------------------------------------------------- Public methods
-
 
     /**
      * Determines whether or not the data for this output stream has been
@@ -194,7 +184,6 @@ public boolean isInMemory()
     {
         return !isThresholdExceeded();
     }
-
 
     /**
      * Returns the data for this output stream as an array of bytes, assuming
@@ -214,7 +203,6 @@ public byte[] getData()
         }
         return null;
     }
-
 
     /**
      * Returns either the output file specified in the constructor or
@@ -236,13 +224,13 @@ public File getFile()
     {
         return outputFile;
     }
-    
         
     /**
      * Closes underlying output stream, and mark this as closed
      *
      * @exception IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.101 -0400", hash_original_method = "C7FCBD344022D72FF18766A4DFEA8EE1", hash_generated_method = "7035C7CC0EC06D72F1A3D6EF6B3FE4EA")
     
 @Override
@@ -251,7 +239,6 @@ public File getFile()
         super.close();
         closed = true;
     }
-    
     
     /**
      * Writes the data from this output stream to the specified output stream,

@@ -24,7 +24,7 @@ private static boolean compare(String s1, String s2) {
 
     public static final Parcelable.Creator<UsbAccessory> CREATOR =
         new Parcelable.Creator<UsbAccessory>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.629 -0500", hash_original_method = "6F67C421F05E1058937DFFE9EA4CB05C", hash_generated_method = "C10BB6B8EBC3AECC52AD543516F712C3")
         
 public UsbAccessory createFromParcel(Parcel in) {

@@ -35,7 +35,6 @@ import android.view.View;
 public class SubMenuBuilder extends MenuBuilder implements SubMenu {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.029 -0400", hash_original_field = "A1B556EFE7B4A9C39F3C01959441E825", hash_generated_field = "4E1BCCB50336F81563C7D93F9E630BE3")
 
-
     private MenuBuilder mParentMenu;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.032 -0400", hash_original_field = "68EA12243619336B32A13EB7EA400114", hash_generated_field = "C38EAFECFFC50960A865217D34B85EF5")
 
@@ -50,6 +49,7 @@ public SubMenuBuilder(Context context, MenuBuilder parentMenu, MenuItemImpl item
         mItem = item;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.038 -0400", hash_original_method = "CFA2D90FFED13BED8AFF4C56CD396197", hash_generated_method = "214A4A0BEECAA855BF8893A7BC43AA5F")
     
 @Override
@@ -84,6 +84,7 @@ public Menu getParentMenu() {
         return mParentMenu;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.054 -0400", hash_original_method = "B68A5ADECB21212250B72B1DD0399FE9", hash_generated_method = "43CA31BE056BF0396EECC4F3C98EA30D")
     
 public MenuItem getItem() {
@@ -111,6 +112,7 @@ public MenuBuilder getRootMenu() {
                 mParentMenu.dispatchMenuItemSelected(menu, item);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.064 -0400", hash_original_method = "0AF009FB156FDD26BF7D5688EA94EA96", hash_generated_method = "D7322054920069DFF5993DABFEBA6752")
     
 public SubMenu setIcon(Drawable icon) {
@@ -118,6 +120,7 @@ public SubMenu setIcon(Drawable icon) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.066 -0400", hash_original_method = "8258AA953D162B52749278DD498F9224", hash_generated_method = "5FFC0CDB5513BAD85BDE95858B206E03")
     
 public SubMenu setIcon(int iconRes) {
@@ -125,6 +128,7 @@ public SubMenu setIcon(int iconRes) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.069 -0400", hash_original_method = "7BB67FCFD16CD0BDDBF9E365C564A541", hash_generated_method = "A3DA43534AE6203C7167724ADFBC6279")
     
 public SubMenu setHeaderIcon(Drawable icon) {
@@ -132,6 +136,7 @@ public SubMenu setHeaderIcon(Drawable icon) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.072 -0400", hash_original_method = "2AB10CAF23EA2F0AC6B8149D4F194F84", hash_generated_method = "F1634DB815185F1462150F0EFADBD2C6")
     
 public SubMenu setHeaderIcon(int iconRes) {
@@ -139,6 +144,7 @@ public SubMenu setHeaderIcon(int iconRes) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.075 -0400", hash_original_method = "779B318D9B04DDB71F7F933A46268C9A", hash_generated_method = "0D82A884AB26AF2ADD4D8CDFEBFB59A8")
     
 public SubMenu setHeaderTitle(CharSequence title) {
@@ -146,6 +152,7 @@ public SubMenu setHeaderTitle(CharSequence title) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.077 -0400", hash_original_method = "9DF7D5AF2892DCE72E372C602232AF8A", hash_generated_method = "181BCB3CC9559E50C7746BFDD5230378")
     
 public SubMenu setHeaderTitle(int titleRes) {
@@ -153,6 +160,7 @@ public SubMenu setHeaderTitle(int titleRes) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.080 -0400", hash_original_method = "77F0B87E24C3A478ACC05E4EA3637871", hash_generated_method = "31B161ABE8063BE7DCFB684B3FE46739")
     
 public SubMenu setHeaderView(View view) {

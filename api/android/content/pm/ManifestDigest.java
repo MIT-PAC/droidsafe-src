@@ -51,7 +51,7 @@ static ManifestDigest fromAttributes(Attributes attributes) {
 
     public static final Parcelable.Creator<ManifestDigest> CREATOR
             = new Parcelable.Creator<ManifestDigest>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.897 -0500", hash_original_method = "D9604F3A5F3129EA7C1BE800F775B005", hash_generated_method = "3911ABB39F4DEDE1FEA0377664D68996")
         
 public ManifestDigest createFromParcel(Parcel source) {

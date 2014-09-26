@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.app;
 
 import droidsafe.annotations.*;
@@ -141,7 +140,6 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.011 -0400", hash_original_field = "B1E05DA9C0B3267881234761F35BD45F", hash_generated_field = "1947D028D473DD83F77FF25317C6AC36")
 
-
     private static  ActionBarDrawerToggleImpl IMPL;
 
     static {
@@ -160,7 +158,6 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
     private static final int ID_HOME = 0x0102002c;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.047 -0400", hash_original_field = "3895D7E6DB5042DA7856DC78E391C7B9", hash_generated_field = "B0D69375984D6EE7DC93AC12DB4DFC55")
 
-
     private  Activity mActivity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.056 -0400", hash_original_field = "07AA41DDB06792E11D2F341513D1A63D", hash_generated_field = "0DF99808E094AF85B200A9B5C5B07AE4")
 
@@ -172,7 +169,6 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
 
     private boolean mDrawerIndicatorEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.091 -0400", hash_original_field = "C3248EDB6CDCDC3E6E2E80772639C1FE", hash_generated_field = "FBF530CA62FFC67F072CA02CB0CD2A98")
-
 
     private Drawable mThemeImage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.101 -0400", hash_original_field = "786E4E213392CA199F578746A541D47C", hash_generated_field = "3DDBFDF1A727ED49E22E59E412581D69")
@@ -191,7 +187,6 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
 
     private  int mCloseDrawerContentDescRes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.149 -0400", hash_original_field = "B10CB30F27EFAE2B851C46D7201A9C5F", hash_generated_field = "5C56AE7305E210DA44B07FC3B9C6EEA2")
-
 
     private Object mSetIndicatorInfo;
 
@@ -471,6 +466,7 @@ void setActionBarDescription(int contentDescRes) {
             invalidateSelf();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void draw(Canvas canvas) {
             copyBounds(mTmpRect);

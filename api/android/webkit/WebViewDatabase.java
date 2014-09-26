@@ -424,7 +424,8 @@ private static void bootstrapCacheDatabase() {
     
 private WebViewDatabase(final Context context) {
         new Thread() {
-            @Override
+            @DSSpec(DSCat.SPEC_OTHERS)
+        @Override
             public void run() {
                 init(context);
             }

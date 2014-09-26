@@ -23,8 +23,6 @@ import droidsafe.helpers.*;
 import java.util.Collections;
 import java.util.Map;
 
-
-
 public class AppConfigurationEntry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.345 -0400", hash_original_field = "24849849B401C8B6EE91CAB2C21A5870", hash_generated_field = "5AF39E9D6C816711FA036D1799D64C4B")
 
@@ -79,21 +77,17 @@ public Map<java.lang.String, ?> getOptions() {
     public static class LoginModuleControlFlag {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.350 -0400", hash_original_field = "67350378BDE079511404FFBF69D82752", hash_generated_field = "CBEFCC707DD58A47071A2003D241EDCF")
 
-
         public static final LoginModuleControlFlag REQUIRED = new LoginModuleControlFlag(
                 "LoginModuleControlFlag: required");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.350 -0400", hash_original_field = "7B9F532DFA12E36CFCA88104F7D74CC5", hash_generated_field = "EB5ABFB3DC64ADD0B68E80B0CDD498D5")
-
 
         public static final LoginModuleControlFlag REQUISITE = new LoginModuleControlFlag(
                 "LoginModuleControlFlag: requisite");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.351 -0400", hash_original_field = "6FC6E60BFF7240637557E985B4FB9061", hash_generated_field = "0BF2A25B2B60AB90093BC041BFD8A5A7")
 
-
         public static final LoginModuleControlFlag OPTIONAL = new LoginModuleControlFlag(
                 "LoginModuleControlFlag: optional");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.351 -0400", hash_original_field = "D99C7790749850CFF60FCB887502D1CB", hash_generated_field = "7FB6578CD90B1CB78C393132C1712669")
-
 
         public static final LoginModuleControlFlag SUFFICIENT = new LoginModuleControlFlag(
                 "LoginModuleControlFlag: sufficient");
@@ -108,6 +102,7 @@ private LoginModuleControlFlag(String flag) {
             this.flag = flag;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.352 -0400", hash_original_method = "EA80489DF602A6637C55E1A6A72F527F", hash_generated_method = "53ADA7CA315EA5FD4C8C666FD89B1793")
         
 @Override

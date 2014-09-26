@@ -252,7 +252,7 @@ protected abstract void listen(int backlog) throws IOException;
      * @return the textual representation of this socket.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.319 -0500", hash_original_method = "2E2A133215115434551D3BB5177B3CB7", hash_generated_method = "F27A04F4DEA11ED1EBC3CB8C865D5A4C")
     
 @Override

@@ -103,6 +103,7 @@ public PushbackInputStream(InputStream in, int size) {
      * @see #mark(int)
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.560 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "98834879561C7504F012DD22F86DCE30")
     
 @Override
@@ -290,6 +291,7 @@ public void unread(byte[] buffer) throws IOException {
      *             if the free space in the internal pushback buffer is not
      *             sufficient to store the selected contents of {@code buffer}.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.575 -0500", hash_original_method = "DF65BDEADDE37C8EC8A6D2405E9B2E68", hash_generated_method = "9CAD033DFC15BA84921E61D8ED94391D")
     
 public void unread(byte[] buffer, int offset, int length) throws IOException {
@@ -342,6 +344,7 @@ public void unread(int oneByte) throws IOException {
      *            the number of bytes that can be read from this stream before
      *            the mark is invalidated; this parameter is ignored.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.580 -0500", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "3661B9E6F99225CA9976B419D6E2DE03")
     
 @Override public void mark(int readlimit) {
@@ -355,6 +358,7 @@ public void unread(int oneByte) throws IOException {
      * @throws IOException
      *             if this method is called.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.583 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "982040414CDBED77657D44B5E5A8ACAA")
     
 @Override

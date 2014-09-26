@@ -105,6 +105,7 @@ public LongSparseArray(int initialCapacity) {
         mSize = 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.352 -0500", hash_original_method = "BABF4C30E15FB15D68E2A1BD6E5F56F5", hash_generated_method = "9A75D1F05BA6340C82FBD3F7FACBF332")
     
 @Override

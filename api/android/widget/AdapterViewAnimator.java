@@ -655,10 +655,12 @@ void cancelHandleClick() {
                             }
                             showTapFeedback(v);
                             postDelayed(new Runnable() {
-                                public void run() {
+                                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                                     hideTapFeedback(v);
                                     post(new Runnable() {
-                                        public void run() {
+                                        @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                                             if (viewData != null) {
                                                 performItemClick(v, viewData.adapterPosition,
                                                         viewData.itemId);
@@ -703,6 +705,7 @@ private void measureChildren() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.528 -0500", hash_original_method = "B8DC8FCB5714B92F7D9B397FCC5E6B1D", hash_generated_method = "90548D64DF3FC37F12CF3824A6DE1091")
     
 @Override
@@ -757,7 +760,8 @@ void checkForAndHandleDataChanged() {
         boolean dataChanged = mDataChanged;
         if (dataChanged) {
             post(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     handleDataChanged();
                     // if the data changes, mWhichChild might be out of the bounds of the adapter
                     // in this case, we reset mWhichChild to the beginning
@@ -793,8 +797,8 @@ void checkForAndHandleDataChanged() {
         }
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.611 -0500", hash_original_method = "C09C373B1A1103A4B30F4932FEFEB18D", hash_generated_method = "8D2EA4ED5957DAAB17AC309D3678E720")
     
 @Override
@@ -803,7 +807,7 @@ void checkForAndHandleDataChanged() {
         return new SavedState(superState, mWhichChild);
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.615 -0500", hash_original_method = "A2807F1883DAD1F14A6CC088A989D676", hash_generated_method = "7BAEC4531DE1888140D8B0523E2D6E73")
     
 @Override
@@ -944,7 +948,8 @@ public void setAnimateFirstView(boolean animate) {
         mAnimateFirstTime = animate;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.656 -0500", hash_original_method = "0B91CAAE76789C8A4B2B18C9D0AAF852", hash_generated_method = "BC44695AA42F588274CA96129EE3350B")
     
 @Override
@@ -953,7 +958,7 @@ public void setAnimateFirstView(boolean animate) {
     }
 
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.659 -0500", hash_original_method = "4778E83EF7DB01E18145E85F688E24B4", hash_generated_method = "7074E68DF390D755A8C1C993C686683A")
     
 @Override
@@ -1057,7 +1062,7 @@ ViewAndMetaData(View view, int relativeIndex, int adapterPosition, long itemId) 
         {
             //Synthesized constructor
         }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.508 -0500", hash_original_method = "0DE0DC1F19EC8E43C86C5443C435E50A", hash_generated_method = "784003EA1EA1EB3B1E7FFD2639983D57")
         
 public void run() {
@@ -1075,7 +1080,7 @@ public void run() {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.596 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
@@ -1116,7 +1121,8 @@ private SavedState(Parcel in) {
             this.whichChild = in.readInt();
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.586 -0500", hash_original_method = "DA40422C10B10105F9CB19E8091B3EEC", hash_generated_method = "BCFB9E62A4D01FE68F1307AE2618AC5F")
         
 @Override

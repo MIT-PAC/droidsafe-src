@@ -46,7 +46,7 @@ private AnimationDrawable(AnimationState state, Resources res) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.519 -0500", hash_original_method = "F207A8C7EE9B62CDAD2CDEF6C9E1E05A", hash_generated_method = "8C07124F4B80241F4930CA719BD65812")
     
 @Override
@@ -116,7 +116,7 @@ public boolean isRunning() {
      * @see #start()
      */
     @DSComment("From safe class list")
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.527 -0500", hash_original_method = "B6B243EB70C5F724D188154EAF209167", hash_generated_method = "E05920D5F98D86E1C769E09C9DA16AE9")
     
 public void run() {
@@ -352,6 +352,7 @@ AnimationState(AnimationState orig, AnimationDrawable owner,
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.563 -0500", hash_original_method = "8444C7122CB16D5313EA6D9A8D591DCE", hash_generated_method = "14F4F30128664C948D0F5F11A5F773A9")
         
 @Override
@@ -359,6 +360,7 @@ AnimationState(AnimationState orig, AnimationDrawable owner,
             return new AnimationDrawable(this, null);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.565 -0500", hash_original_method = "C298E1FF6FE04F3BBF8263AF38ED7861", hash_generated_method = "3C42F60E01D8C401794021029D2487FC")
         
 @Override

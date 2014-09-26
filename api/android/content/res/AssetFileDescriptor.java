@@ -21,7 +21,7 @@ public class AssetFileDescriptor implements Parcelable {
 
     public static final Parcelable.Creator<AssetFileDescriptor> CREATOR
             = new Parcelable.Creator<AssetFileDescriptor>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.812 -0500", hash_original_method = "1A4F03E8300F0259C61020522681AA45", hash_generated_method = "1A68C4DFC8269B9003C31D1062EC747A")
         
 public AssetFileDescriptor createFromParcel(Parcel in) {
@@ -284,6 +284,7 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
             return super.skip(count);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.779 -0500", hash_original_method = "002645BE6DC8A0ABDC3AC933CA6AFCE2", hash_generated_method = "8DF92F7793A770886964C55CA059E5B1")
         
 @Override
@@ -295,6 +296,7 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
             super.mark(readlimit);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.781 -0500", hash_original_method = "2AE31565D7E15B3ED03E3797DC0147F2", hash_generated_method = "5402FA5AEB79545236C776B57B1DA108")
         
 @Override
@@ -305,6 +307,7 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
             return super.markSupported();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.784 -0500", hash_original_method = "579C70BE1F6B8B8FD4382F7193B33D00", hash_generated_method = "7DC303A7EF18C20A3EDEE1150CD0ED69")
         
 @Override

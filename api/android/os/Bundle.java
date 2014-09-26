@@ -40,7 +40,7 @@ public static Bundle forPair(String key, String value) {
 
     public static final Parcelable.Creator<Bundle> CREATOR =
         new Parcelable.Creator<Bundle>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.619 -0500", hash_original_method = "4187614240FC5282A7CB86A3FCAECB06", hash_generated_method = "2886D3B3EE607F31AE6ADF0F5552BE50")
         
 public Bundle createFromParcel(Parcel in) {
@@ -1153,7 +1153,7 @@ public long getLong(String key, long defaultValue) {
      */
     @DSComment("OS Bundle data structure")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.555 -0500", hash_original_method = "0D69D7EB25C8E886B27D28B7A30E217C", hash_generated_method = "5DA71DD50FB35EB08C4A643AD592C4BA")
     
 public float getFloat(String key) {
@@ -1168,7 +1168,8 @@ public float getFloat(String key) {
      * @param key a String
      * @return a float value
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.557 -0500", hash_original_method = "8162EC4F2AE30557D489C5C6263EB256", hash_generated_method = "F13375F497615D6D9855025B2EA4E90E")
     
 public float getFloat(String key, float defaultValue) {
@@ -1194,7 +1195,7 @@ public float getFloat(String key, float defaultValue) {
      */
     @DSComment("OS Bundle data structure")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.559 -0500", hash_original_method = "F5086ED2941BC7C3CB9930D22842FA44", hash_generated_method = "6B14D80610B6A994D1F454669DF16088")
     
 public double getDouble(String key) {
@@ -1210,7 +1211,7 @@ public double getDouble(String key) {
      * @return a double value
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.561 -0500", hash_original_method = "172C416958EF64BBE0F98CDA39B416EB", hash_generated_method = "131757E610E53BD9778C8E13104DB84B")
     
 public double getDouble(String key, double defaultValue) {
@@ -1291,7 +1292,7 @@ public String getString(String key, String defaultValue) {
      */
     @DSComment("OS Bundle data structure")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.568 -0500", hash_original_method = "4D51A99620432005EDE9794C44D49E24", hash_generated_method = "C749D871CDC137BBDCB4798223006DD3")
     
 public CharSequence getCharSequence(String key) {
@@ -1316,7 +1317,8 @@ public CharSequence getCharSequence(String key) {
      * @param defaultValue Value to return if key does not exist
      * @return a CharSequence value, or null
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.570 -0500", hash_original_method = "C5E593A01F019636F8A087C171F20745", hash_generated_method = "40CE78F334294202BE659BFDFA1F54A4")
     
 public CharSequence getCharSequence(String key, CharSequence defaultValue) {

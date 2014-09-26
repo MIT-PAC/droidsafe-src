@@ -31,10 +31,8 @@ import droidsafe.helpers.*;
 public final class PrintJob {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:58.279 -0400", hash_original_field = "31A7E416091F89E0B947D542B8488C99", hash_generated_field = "AF77FF1C642F25A9EECECBEC67704F14")
 
-
     private  PrintManager mPrintManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:58.280 -0400", hash_original_field = "9A7556BFCCDF66660C9DC5385D5C4CF5", hash_generated_field = "93917749A38A402C6FF2A16D50AACDAC")
-
 
     private PrintJobInfo mCachedInfo;
 
@@ -232,6 +230,7 @@ private boolean isInImmutableState() {
         return mCachedInfo.getId().equals(other.mCachedInfo.getId());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:58.293 -0400", hash_original_method = "F8138E925779B447F857FF6B6AABBBC0", hash_generated_method = "14442763C7CFA1A1ACBBEE3A43387F6A")
     
 @Override

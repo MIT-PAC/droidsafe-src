@@ -67,7 +67,6 @@ public static ThreadLocalRandom current() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:20.140 -0400", hash_original_field = "69C0FF7A18B285945A9C2A9CBC507E3D", hash_generated_field = "1BE793533417FE4217C3112B19621A96")
 
-
     private static final long serialVersionUID = -5851777807851030925L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:20.134 -0400", hash_original_field = "2E10D215A3536F129AA1EECC56C1D3B6", hash_generated_field = "997D85AD8E3EEFE20E532831FE48F646")
 
@@ -80,7 +79,6 @@ public static ThreadLocalRandom current() {
     // different TLRs in the common case that they are located near
     // each other.
     private long pad0, pad1, pad2, pad3, pad4, pad5, pad6, pad7;
-
 
     /**
      * Constructor called only by localRandom.initialValue.
@@ -123,6 +121,7 @@ protected int next(int bits) {
      * to bound
      * @return the next value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:20.138 -0400", hash_original_method = "5CC57CD7C5B9408E54C315A9BE16050C", hash_generated_method = "E0C143C4A578FB33A41B66D46278449D")
     
 public int nextInt(int least, int bound) {
@@ -140,6 +139,7 @@ public int nextInt(int least, int bound) {
      * @return the next value
      * @throws IllegalArgumentException if n is not positive
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:20.139 -0400", hash_original_method = "A039A94973265D95AF9C2DFD00E2C3B5", hash_generated_method = "6C9EE81C7AF2B1F55666053A7C3BDC7D")
     
 public long nextLong(long n) {
@@ -172,6 +172,7 @@ public long nextLong(long n) {
      * @throws IllegalArgumentException if least greater than or equal
      * to bound
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:20.139 -0400", hash_original_method = "22D629DDEBB48B37E092B39B773F8203", hash_generated_method = "1CC2AFDFE85EF85E31B7370C537CF09C")
     
 public long nextLong(long least, long bound) {
@@ -189,6 +190,7 @@ public long nextLong(long least, long bound) {
      * @return the next value
      * @throws IllegalArgumentException if n is not positive
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:20.140 -0400", hash_original_method = "318657712C1B4E0634FC01830F2E251D", hash_generated_method = "E6223E3B2987D52C0F1878D4AC03D6D3")
     
 public double nextDouble(double n) {
@@ -207,6 +209,7 @@ public double nextDouble(double n) {
      * @throws IllegalArgumentException if least greater than or equal
      * to bound
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:20.140 -0400", hash_original_method = "FABE38E7FF870272BD571F7FA7AA9964", hash_generated_method = "F5FB2BAE343044A31DBE45EFCCEF0172")
     
 public double nextDouble(double least, double bound) {

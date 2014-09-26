@@ -106,6 +106,7 @@ public TrustAnchor getTrustAnchor() {
      *
      * @return the cloned instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.606 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "41C79547FB941C1E5EE1054506CEE879")
     
 public Object clone() {
@@ -123,6 +124,7 @@ public Object clone() {
      * @return a string representation for this {@code
      *         PKIXCertPathValidatorResult} instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.607 -0400", hash_original_method = "78C98486B5FE58C8BE8EFB699D0B14C0", hash_generated_method = "52CA5847918CCA070375401EB7519FEC")
     
 public String toString() {

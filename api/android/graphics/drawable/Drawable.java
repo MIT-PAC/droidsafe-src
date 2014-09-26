@@ -373,7 +373,7 @@ public final void copyBounds(Rect bounds) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.909 -0500", hash_original_method = "A623AF26CC98262C126F58F99B918C3F", hash_generated_method = "8398153568D8B0C1C8AE601AF1652DDD")
     @DSVerified
     
@@ -443,7 +443,7 @@ public void setChangingConfigurations(int configs) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.917 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "1EFD981CB6D64D2240E5805425A8136B")
     @DSVerified
     
@@ -609,7 +609,7 @@ public abstract void setAlpha(int alpha);
      * any filters.
     */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.944 -0500", hash_original_method = "BDC70B2F57B8B4271211A6F4E36828D5", hash_generated_method = "4C4D56B62B5030A0B2B533B25B3B132E")
     @DSVerified
     
@@ -955,7 +955,7 @@ public int getIntrinsicHeight() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.987 -0500", hash_original_method = "5035EEEA88B512A7AC30F75048C2F85A", hash_generated_method = "183DCB9F3F0F8DF0D0212348E7E9BD2A")
     
 public int getMinimumWidth() {
@@ -974,7 +974,7 @@ public int getMinimumWidth() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.990 -0500", hash_original_method = "FB4CD88D7DE1F0713A1472841A364838", hash_generated_method = "5B123336F6C1DD1678925B456108326F")
     
 public int getMinimumHeight() {
@@ -991,7 +991,7 @@ public int getMinimumHeight() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.992 -0500", hash_original_method = "3EEC3E25F33F4D98A0E1482CE3BAC48C", hash_generated_method = "E4E30BC5A2B586C28356FBCCF2EDD2FC")
     
 public boolean getPadding(Rect padding) {
@@ -1071,7 +1071,7 @@ void inflateWithAttributes(Resources r, XmlPullParser parser,
          * instead to provide a resource.
          */
         @DSComment("Abstract Method")
-        @DSSpec(DSCat.ABSTRACT_METHOD)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.017 -0500", hash_original_method = "8AAC9AC676CAA292B513ED599D29AE60", hash_generated_method = "B86729DCAC25EA47F6FEDC3DE3D49986")
         
 public abstract Drawable newDrawable();

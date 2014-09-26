@@ -70,7 +70,8 @@ public LogConfigurationException(String message, Throwable cause) {
     /**
      * Return the underlying cause of this exception (if any).
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.656 -0500", hash_original_method = "9EB82C3F9FB6AE0D2962237AF0B1061E", hash_generated_method = "D8E404B2144DA9DC918822CCACE81477")
     
 public Throwable getCause() {

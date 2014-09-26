@@ -368,7 +368,7 @@ protected Calendar(TimeZone timezone, Locale locale) {
      *                ZONE_OFFSET}.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.779 -0500", hash_original_method = "1B9CB183169BC098F5BE7A4F2BEC8165", hash_generated_method = "6DCB531333EC528588018EC7E90A2656")
     
 public abstract void add(int field, int value);
@@ -441,6 +441,7 @@ public final void clear() {
      * @param field
      *            the field to clear.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.789 -0500", hash_original_method = "045ED04F1C7B7EFD467C2025674AC1C4", hash_generated_method = "394639ACC8586FF2373B339CD62BD0A9")
     
 public final void clear(int field) {
@@ -458,7 +459,7 @@ public final void clear(int field) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.792 -0500", hash_original_method = "84D98F75151E4961D0916EA8CB3E0C38", hash_generated_method = "9F925B1A9D8B19359C917CFA9357F831")
     
 @Override
@@ -1069,7 +1070,7 @@ public void setTimeZone(TimeZone timezone) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.889 -0500", hash_original_method = "FE2881479678F103D2A9794655ED1F87", hash_generated_method = "A659789D7AE8DD5BFBBF07EE83CBBA9B")
     
 @Override

@@ -191,7 +191,7 @@ public void write(String str, int offset, int count) throws IOException {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.003 -0500", hash_original_method = "9D99658000F160BDAECAED91EC9BFB5D", hash_generated_method = "022A80F08D04342A5DF811349E2DCDBA")
     
 public Writer append(char c) throws IOException {
@@ -211,6 +211,7 @@ public Writer append(char c) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.006 -0500", hash_original_method = "D993D81DE6953743EFA25FF281FB0E15", hash_generated_method = "67EEA4752C6409E1426DEAE33FD9BE03")
@@ -248,7 +249,7 @@ public Writer append(CharSequence csq) throws IOException {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.008 -0500", hash_original_method = "44B7413EC481F793F1919C886AE2AD0E", hash_generated_method = "A43CF055AB530ECD1E514ED408FF5339")
     
 public Writer append(CharSequence csq, int start, int end) throws IOException {

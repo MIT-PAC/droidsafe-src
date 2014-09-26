@@ -46,10 +46,8 @@ public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClick
     private static final String TAG = "ListMenuPresenter";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.753 -0400", hash_original_field = "CE5F39C1E0AB5F760958B607370926F1", hash_generated_field = "1DC12F3A8197BE0E527127C9DFF8EC62")
 
-
     public static final String VIEWS_TAG = "android:menu:list";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.728 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
-
 
     Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.731 -0400", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "B03B4DAE3F576B7166425BEE37B96C5E")
@@ -60,10 +58,8 @@ public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClick
     MenuBuilder mMenu;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.735 -0400", hash_original_field = "B73614E12B984F9819EE1358997EAA4E", hash_generated_field = "B73614E12B984F9819EE1358997EAA4E")
 
-
     ExpandedMenuView mMenuView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.738 -0400", hash_original_field = "3244934A1DA054EDA8D434D3E5715CE4", hash_generated_field = "1847A8F34C35735278587A63D3DF790A")
-
 
     private int mItemIndexOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.740 -0400", hash_original_field = "3CCC257450CEEDF9DF4A1B3B44C1CD16", hash_generated_field = "3CCC257450CEEDF9DF4A1B3B44C1CD16")
@@ -74,13 +70,11 @@ public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClick
     int mItemLayoutRes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.745 -0400", hash_original_field = "1A99E72B6409E38FBCC780D1BAB4898D", hash_generated_field = "B05DD02C49016AA70EF55EB624CC40D3")
 
-
     private Callback mCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.748 -0400", hash_original_field = "85BD8C2F470603886C61D670BD662E5D", hash_generated_field = "85BD8C2F470603886C61D670BD662E5D")
 
     MenuAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.750 -0400", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
-
 
     private int mId;
 
@@ -304,6 +298,8 @@ public void setId(int id) {
             findExpandedIndex();
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         public int getCount() {
             ArrayList<MenuItemImpl> items = mMenu.getNonActionItems();
             int count = items.size() - mItemIndexOffset;
@@ -313,6 +309,8 @@ public void setId(int id) {
             return count - 1;
         }
 
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
         public MenuItemImpl getItem(int position) {
             ArrayList<MenuItemImpl> items = mMenu.getNonActionItems();
             position += mItemIndexOffset;
@@ -322,12 +320,15 @@ public void setId(int id) {
             return items.get(position);
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         public long getItemId(int position) {
             // Since a menu item's ID is optional, we'll use the position as an
             // ID for the item in the AdapterView
             return position;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
                 convertView = mInflater.inflate(mItemLayoutRes, parent, false);
@@ -354,6 +355,7 @@ public void setId(int id) {
             mExpandedIndex = -1;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void notifyDataSetChanged() {
             findExpandedIndex();

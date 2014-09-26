@@ -78,6 +78,7 @@ public ActionMenuItemView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.162 -0500", hash_original_method = "97E99CBFA7DAC670C6AD27C0843F8326", hash_generated_method = "BE8676670C19750D6AFF885681045E64")
     
 @Override
@@ -121,6 +122,7 @@ public void initialize(MenuItemImpl itemData, int menuType) {
         mTextButton.setEnabled(enabled);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.171 -0500", hash_original_method = "B665A21C15F294A662D29A2BA3A7A359", hash_generated_method = "65B53CE5C8BCAADCAFE5306720FD4967")
     
 public void onClick(View v) {
@@ -295,6 +297,7 @@ public boolean needsDividerAfter() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.212 -0500", hash_original_method = "0390CA0D2B05A2CB99D4521DDD33A8D8", hash_generated_method = "2C13AD4CD17121165A34BC2452178F87")
     
 @Override

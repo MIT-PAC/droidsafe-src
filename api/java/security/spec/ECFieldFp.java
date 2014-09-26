@@ -101,6 +101,7 @@ public boolean equals(Object obj) {
      *
      * @return the hashcode value for this finite field.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:17.085 -0400", hash_original_method = "DBFAB43DC10C305AAA2F5A4ED4232E05", hash_generated_method = "97D7592B797FF65F95E75C69432B963A")
     
 public int hashCode() {

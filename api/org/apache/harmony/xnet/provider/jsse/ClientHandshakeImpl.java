@@ -267,7 +267,8 @@ private void startSession() {
                     serverHelloDone = new ServerHelloDone(io_stream, length);
                     if (this.nonBlocking) {
                         delegatedTasks.add(new DelegatedTask(new Runnable() {
-                            public void run() {
+                            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                                 processServerHelloDone();
                             }
                         }, this));

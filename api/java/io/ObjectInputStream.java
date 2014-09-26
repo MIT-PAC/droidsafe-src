@@ -514,6 +514,8 @@ public boolean readBoolean() throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.362 -0500", hash_original_method = "F1C938A529B536DE0EA7C0848AC19388", hash_generated_method = "8AF10F987D87488CD22BBBC1A94EBAB2")
     
 public byte readByte() throws IOException {
@@ -530,6 +532,8 @@ public byte readByte() throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.365 -0500", hash_original_method = "08C7569945A67E2D251F3B449209E666", hash_generated_method = "26188AAC2A9765FB27045F28907DF948")
     
 public char readChar() throws IOException {
@@ -1087,6 +1091,8 @@ private void readFieldValues(Object obj, ObjectStreamClass classDesc) throws Opt
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.405 -0500", hash_original_method = "E7BFAC98C28E1C1B49BD33FC0E76EA53", hash_generated_method = "5793794E9B8046275BA3A984375CF554")
     
 public float readFloat() throws IOException {
@@ -1105,6 +1111,8 @@ public float readFloat() throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.407 -0500", hash_original_method = "917418BB5C848A4690F4E96972002BAD", hash_generated_method = "6BE355C156BB46B842CB65F73AE99956")
     
 public void readFully(byte[] dst) throws IOException {
@@ -1127,6 +1135,8 @@ public void readFully(byte[] dst) throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.409 -0500", hash_original_method = "046EB506BDA13B9ED79306898615169A", hash_generated_method = "AD228AC0C6066AA186ED24483B5C1CB9")
     
 public void readFully(byte[] dst, int offset, int byteCount) throws IOException {
@@ -1346,6 +1356,8 @@ public int readInt() throws IOException {
      *             if an error occurs while reading from the source stream.
      * @deprecated Use {@link BufferedReader}
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.431 -0500", hash_original_method = "90EA71A98921C4D093F2F0BA4DDBE95D", hash_generated_method = "973CF80D9439F595F0579FC1679C8BF0")
     
 @Deprecated
@@ -1363,6 +1375,8 @@ public int readInt() throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.433 -0500", hash_original_method = "70C9FFE9F08A2EBCF32FC4C20D730AD7", hash_generated_method = "B01CFE6D9156E407A7419A8C068B709D")
     
 public long readLong() throws IOException {
@@ -1982,8 +1996,9 @@ public Object readUnshared() throws IOException, ClassNotFoundException {
         return readObject(true);
     }
 
+    @DSSource({DSSourceKind.SERIALIZATION})
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.482 -0500", hash_original_method = "E655B580AAC2F65ED2F044289942F1C0", hash_generated_method = "2B8CE588E975D6E5F56A39CA136191B0")
     
 private Object readObject(boolean unshared) throws OptionalDataException,
@@ -2082,6 +2097,8 @@ protected Object readObjectOverride() throws OptionalDataException,
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.494 -0500", hash_original_method = "E1F1666A9CC2BCC43C42662EA935D779", hash_generated_method = "EB0585B1D3FEE5ED16B364C5496B7E86")
     
 public short readShort() throws IOException {
@@ -2119,6 +2136,8 @@ protected void readStreamHeader() throws IOException,
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.499 -0500", hash_original_method = "50996F70792020DA658FB7FFCF1EF910", hash_generated_method = "BAF7F2B2ABD5AC131E4AF0C9AEC88B22")
     
 public int readUnsignedByte() throws IOException {
@@ -2136,6 +2155,8 @@ public int readUnsignedByte() throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.501 -0500", hash_original_method = "ABA376385639B6CB8F725C68F1CED979", hash_generated_method = "AF49784520D9CEEEF364EC34713765A6")
     
 public int readUnsignedShort() throws IOException {
@@ -2659,6 +2680,7 @@ protected Object resolveObject(Object object) throws IOException {
      * @throws NullPointerException
      *             if the source stream is {@code null}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.526 -0500", hash_original_method = "C18A3B861F9E4DC00DB6D8F86113E96E", hash_generated_method = "558D11649F99682EFB8F3D92D5333857")
     
 public int skipBytes(int length) throws IOException {

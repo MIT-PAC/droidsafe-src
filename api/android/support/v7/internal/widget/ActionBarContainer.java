@@ -41,7 +41,6 @@ import android.widget.FrameLayout;
 public class ActionBarContainer extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.597 -0400", hash_original_field = "1B51005004680B9C24C44A86A45D5340", hash_generated_field = "527C228A5C97714BAF48C0C499097913")
 
-
     private boolean mIsTransitioning;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.599 -0400", hash_original_field = "AECD1DC215B8C8E1D18642191AAB741A", hash_generated_field = "9D4880558BE8637E2C9BE9C42BC7DB01")
 
@@ -50,7 +49,6 @@ public class ActionBarContainer extends FrameLayout {
 
     private ActionBarView mActionBarView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.605 -0400", hash_original_field = "1414D97CE5ED674A74A05A07F83AE3BF", hash_generated_field = "0925F2C91F8CBA797C183309FA7634C5")
-
 
     private Drawable mBackground;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.607 -0400", hash_original_field = "01D1EECBDE92194373C425872A155AF7", hash_generated_field = "BE3C8909DD0F859198FF64AA78C3183B")
@@ -96,6 +94,7 @@ public ActionBarContainer(Context context, AttributeSet attrs) {
                 mBackground == null && mStackedBackground == null);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.622 -0400", hash_original_method = "928DF19F16C54A70A78300638B744F8C", hash_generated_method = "EEC045FE01B122DE92085C05BA0CA95C")
     
 @Override
@@ -152,6 +151,7 @@ public void setSplitBackground(Drawable bg) {
         invalidate();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.632 -0400", hash_original_method = "B9F34175E0ABCF8AABA22F6F59E2062A", hash_generated_method = "0C9088265450A9C033E6D10A7A922535")
     
 @Override
@@ -163,6 +163,7 @@ public void setSplitBackground(Drawable bg) {
         if (mSplitBackground != null) mSplitBackground.setVisible(isVisible, false);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.634 -0400", hash_original_method = "696C81F4818C26727428F2C272AAD841", hash_generated_method = "689CC5D50AB0798F7E1A91C8F7DDC1B4")
     
 @Override
@@ -171,6 +172,7 @@ public void setSplitBackground(Drawable bg) {
                 (who == mSplitBackground && mIsSplit) || super.verifyDrawable(who);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.636 -0400", hash_original_method = "86EFD0A1BDC75696AB94459E20F5AB95", hash_generated_method = "8898D199FB7EBE1C56DA57487AD0CDE5")
     
 @Override
@@ -202,6 +204,7 @@ public void setTransitioning(boolean isTransitioning) {
                 : FOCUS_AFTER_DESCENDANTS);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.642 -0400", hash_original_method = "8E69245395EC81C98ED35F3490421A0A", hash_generated_method = "8AB0F37E57E1B73525ABFAFDCB30E195")
     
 @Override
@@ -209,6 +212,7 @@ public void setTransitioning(boolean isTransitioning) {
         return mIsTransitioning || super.onInterceptTouchEvent(ev);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.644 -0400", hash_original_method = "FA8EB54F33D4C310829625567514278C", hash_generated_method = "361F2E2DF99BACCBC61C78B1A6B505F9")
     
 @Override
@@ -251,6 +255,7 @@ public View getTabContainer() {
         return mTabContainer;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.654 -0400", hash_original_method = "0AAAEED7C8EA3D08CF197AD4F3223B18", hash_generated_method = "CED19F05FF9107949682360295337A74")
     
 @Override
@@ -281,6 +286,7 @@ public ActionMode startActionModeForChild(View child, ActionMode.Callback callba
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.659 -0400", hash_original_method = "6DDCDDC1CF10AAD7AC558AA0C33B8A1E", hash_generated_method = "0DD92311C559EB2B7056A2C685997190")
     
 @Override

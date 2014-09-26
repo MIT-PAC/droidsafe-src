@@ -158,10 +158,8 @@ import java.util.List;
 public abstract class PrintService extends Service {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.730 -0400", hash_original_field = "02B3A1B00C3C0F84C6631C04CD069A07", hash_generated_field = "BECF8FB2B58B5555715EF87CC21783A6")
 
-
     private static final String LOG_TAG = "PrintService";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.731 -0400", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
-
 
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.732 -0400", hash_original_field = "A6E719FB3997B00F7CB900FF7D8DBE23", hash_generated_field = "845A697B560C08EDBF89F9514E969683")
@@ -183,18 +181,14 @@ static void throwIfNotCalledOnMainThread() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.735 -0400", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
-
     private Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.736 -0400", hash_original_field = "69932042C08770C3881A9471DF429404", hash_generated_field = "9BB5BCFD34FCF2138AD29E5DE47513C9")
-
 
     private IPrintServiceClient mClient;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.737 -0400", hash_original_field = "A4878B3E8ED4DF6C16A4C7C92ED4FD9A", hash_generated_field = "8D7C5519FC4267570B42DA614ED2B0D1")
 
-
     private int mLastSessionId = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.738 -0400", hash_original_field = "F351C1A278735123E9C746C53D70A15F", hash_generated_field = "E57FBB71172B1C63850F3F7B32C1C674")
-
 
     private PrinterDiscoverySession mDiscoverySession;
 
@@ -412,6 +406,7 @@ public ServiceHandler(Looper looper) {
             super(looper, null);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.778 -0400", hash_original_method = "809D083D68C0F88B930D5EECBC0C6DF3", hash_generated_method = "0B2AE5114BC79C19871C60DE9C8E8F86")
         
 @Override

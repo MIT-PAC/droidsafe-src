@@ -200,6 +200,7 @@ private String renamedFileName(String name) {
         return mDatabaseNames.toArray(new String[]{});
     }
 
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.608 -0500", hash_original_method = "22834974648353EE4B305B5F791B6612", hash_generated_method = "ADA9CC229E008B0376003841590912BC")
     
 @Override
@@ -224,6 +225,7 @@ private String renamedFileName(String name) {
         return mFileContext.openFileOutput(renamedFileName(name), mode);
     }
 
+    @DSSafe(DSCat.FS_INFO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.614 -0500", hash_original_method = "46FF4FEA40FAAA40585EE8088997DFB9", hash_generated_method = "39CCB79239D930B50514FF5C82DB9426")
     
 @Override

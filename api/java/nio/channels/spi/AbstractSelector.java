@@ -25,6 +25,7 @@ public abstract class AbstractSelector extends Selector {
 
     private final Runnable wakeupRunnable = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.780 -0400", hash_original_method = "7C4207C049033B8A840024AF7D6007E1", hash_generated_method = "DE46A52DF305552AEC6BF62783C2EE19")
         @Override
         public void run() {

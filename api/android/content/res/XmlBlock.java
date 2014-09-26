@@ -255,7 +255,8 @@ Parser(int parseState, XmlBlock block) {
             block.mOpenCount++;
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.934 -0500", hash_original_method = "C272D7923F75EBE1BE9678831233D06B", hash_generated_method = "347E0F4AC94E8FB49862343388323565")
         
 public void setFeature(String name, boolean state) throws XmlPullParserException {
@@ -290,13 +291,15 @@ public void setProperty(String name, Object value) throws XmlPullParserException
 public Object getProperty(String name) {
             return null;
         }
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.944 -0500", hash_original_method = "C407C4DE5B4382B09BED3CBFBB5B2FE9", hash_generated_method = "BE9B98117489DC0B0FC94AF87CC96769")
         
 public void setInput(Reader in) throws XmlPullParserException {
             throw new XmlPullParserException("setInput() not supported");
         }
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.946 -0500", hash_original_method = "2056A33FA2E1F0F175E1EBF8A8F56238", hash_generated_method = "7892456EC600809972DBF35FD32BB3C6")
         
 public void setInput(InputStream inputStream, String inputEncoding) throws XmlPullParserException {
@@ -503,6 +506,7 @@ public String getAttributeValue(String namespace, String name) {
             }
             return null;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.011 -0500", hash_original_method = "2DA88A175068BC957038D4798DAD0AF9", hash_generated_method = "D05BE2DE080ACFE1DDC32F95C03DD077")
         
 public int next() throws XmlPullParserException,IOException {
@@ -602,6 +606,7 @@ public int getAttributeListValue(String namespace, String attribute,
             }
             return defaultValue;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.027 -0500", hash_original_method = "B01E2E5CC96F6EF51E59D8D07AB9873A", hash_generated_method = "EB939D155B0B767864BA24259ABD7AEC")
         
 public boolean getAttributeBooleanValue(String namespace, String attribute,
@@ -612,6 +617,7 @@ public boolean getAttributeBooleanValue(String namespace, String attribute,
             }
             return defaultValue;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.030 -0500", hash_original_method = "CB3F64435C40C20F84A081F8E49D1C0C", hash_generated_method = "49C4A69555EBC9D45B1C099130A90D5F")
         
 public int getAttributeResourceValue(String namespace, String attribute,
@@ -667,6 +673,7 @@ public int getAttributeListValue(int idx,
             }
             return v;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.041 -0500", hash_original_method = "9FDDF9436ABA275F049CE63B7297D004", hash_generated_method = "1BFAFA406D7FCC6E67F42CD1692368BA")
         
 public boolean getAttributeBooleanValue(int idx,
@@ -680,7 +687,8 @@ public boolean getAttributeBooleanValue(int idx,
             }
             return defaultValue;
         }
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.044 -0500", hash_original_method = "0D4A13949891098942D2BD0FE4681BA9", hash_generated_method = "E2F8847557B20C6541A2F449601D1D01")
         
 public int getAttributeResourceValue(int idx, int defaultValue) {

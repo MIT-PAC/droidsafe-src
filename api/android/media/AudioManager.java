@@ -353,7 +353,8 @@ FocusEventHandlerDelegate() {
             if (looper != null) {
                 // implement the event handler delegate to receive audio focus events
                 mHandler = new Handler(looper) {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     public void handleMessage(Message msg) {
                         OnAudioFocusChangeListener listener = null;
                         synchronized(mFocusListenerLock) {
@@ -1712,7 +1713,7 @@ public int abandonAudioFocus(OnAudioFocusChangeListener l) {
      *      the context you're registering from.
      */
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.330 -0500", hash_original_method = "50EC2C592ADEFE7D217B837E9C2D3748", hash_generated_method = "FF871B2A83C34CECCD452A175FD29C2D")
     
 public void registerMediaButtonEventReceiver(ComponentName eventReceiver) {
@@ -1989,12 +1990,14 @@ public int getDevicesForStream(int streamType) {
         }
     }
 
-	public void registerMediaButtonEventReceiver(PendingIntent mPendingIntent) {
+	@DSSafe(DSCat.SAFE_LIST)
+    public void registerMediaButtonEventReceiver(PendingIntent mPendingIntent) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void unregisterMediaButtonEventReceiver(PendingIntent mPendingIntent) {
+	@DSSafe(DSCat.SAFE_LIST)
+    public void unregisterMediaButtonEventReceiver(PendingIntent mPendingIntent) {
 		// TODO Auto-generated method stub
 		
 	}

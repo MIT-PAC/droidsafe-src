@@ -47,7 +47,7 @@ public static InputChannel[] openInputChannelPair(String name) {
 
     public static final Parcelable.Creator<InputChannel> CREATOR
             = new Parcelable.Creator<InputChannel>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.346 -0500", hash_original_method = "3BB57A0678E2E259E4D4569B18871435", hash_generated_method = "3C33716C68BC83EBB699B9D2A0C469DA")
         
 public InputChannel createFromParcel(Parcel source) {

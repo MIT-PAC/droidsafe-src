@@ -57,6 +57,8 @@ public SwappedDataInputStream( InputStream input )
      * @throws IOException if an I/O error occurs
      * @throws EOFException if an end of file is reached unexpectedly
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.762 -0400", hash_original_method = "C6E52C66D7D123E3533290F6D5AFC7C2", hash_generated_method = "D26AD4B4F430F5DC30B30408E607E55C")
     
 public boolean readBoolean()
@@ -71,6 +73,8 @@ public boolean readBoolean()
      * @throws IOException if an I/O error occurs
      * @throws EOFException if an end of file is reached unexpectedly
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.763 -0400", hash_original_method = "29D7601B80549C4B9C567F426A16BACB", hash_generated_method = "419F4D0159CC5D65D0B2C8B1333318F8")
     
 public byte readByte()
@@ -85,6 +89,8 @@ public byte readByte()
      * @throws IOException if an I/O error occurs
      * @throws EOFException if an end of file is reached unexpectedly
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.763 -0400", hash_original_method = "8E7A427A98E0CBF45D66268DB7B1B5CD", hash_generated_method = "FAB186C986DFF960961A3A57D92BBE52")
     
 public char readChar()
@@ -99,6 +105,8 @@ public char readChar()
      * @throws IOException if an I/O error occurs
      * @throws EOFException if an end of file is reached unexpectedly
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.764 -0400", hash_original_method = "E0B187CE0A555FF37672F5C84109272C", hash_generated_method = "D648F86C5E26362A2EE167A799F9D4C8")
     
 public double readDouble()
@@ -113,6 +121,8 @@ public double readDouble()
      * @throws IOException if an I/O error occurs
      * @throws EOFException if an end of file is reached unexpectedly
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.764 -0400", hash_original_method = "2E4D15B0B4A0FBF0E7EA1877C828CDC6", hash_generated_method = "D4F4ECFE901EA7F02BE51F8343502990")
     
 public float readFloat()
@@ -128,6 +138,8 @@ public float readFloat()
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.765 -0400", hash_original_method = "BDF1FFA031B8E898D91BB8F353BF6070", hash_generated_method = "128B50D0F631BE8F91C72911C314314F")
     
 public void readFully( byte[] data )
@@ -135,7 +147,6 @@ public void readFully( byte[] data )
     {
         readFully( data, 0, data.length );
     }
-
 
     /**
      * Invokes the delegate's <code>read(byte[] data, int, int)</code> method.
@@ -146,6 +157,8 @@ public void readFully( byte[] data )
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.765 -0400", hash_original_method = "C68A979C97C9773BF4E1D97780D466BC", hash_generated_method = "ABED2FB5692629886742AFEF5BC17E85")
     
 public void readFully( byte[] data, int offset, int length )
@@ -173,6 +186,8 @@ public void readFully( byte[] data, int offset, int length )
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.766 -0400", hash_original_method = "924D53EB92B2DC5D270610CAC14BB6FD", hash_generated_method = "4277ED708E86189BF2FEB5268789BDAF")
     
 public int readInt()
@@ -187,6 +202,8 @@ public int readInt()
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.766 -0400", hash_original_method = "6DEA886173F95E4A3BBF989737ED1DB7", hash_generated_method = "A7E838FF9731D224516E86B79C09E7FA")
     
 public String readLine()
@@ -202,6 +219,8 @@ public String readLine()
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.767 -0400", hash_original_method = "CC507B2A57FF0027D07E24F5AD4CD5D0", hash_generated_method = "8D17396B790650D5CEF04C6769626224")
     
 public long readLong()
@@ -216,6 +235,8 @@ public long readLong()
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.767 -0400", hash_original_method = "147194CFB85434C80763957452B45FC6", hash_generated_method = "0EDAC77C37F768262C2CA4024B50C9E2")
     
 public short readShort()
@@ -230,6 +251,8 @@ public short readShort()
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.768 -0400", hash_original_method = "712AFF9E606E487D08D6F6FFCD673798", hash_generated_method = "DBA31CEC7B2083D3AF3DB5830C33BE25")
     
 public int readUnsignedByte()
@@ -244,6 +267,8 @@ public int readUnsignedByte()
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.768 -0400", hash_original_method = "447E5EB8854335FBF10C9BDB3B1A51D4", hash_generated_method = "FDFEB6C3E21CB15D05AB843366CC911E")
     
 public int readUnsignedShort()
@@ -258,6 +283,8 @@ public int readUnsignedShort()
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.769 -0400", hash_original_method = "DF617DE965D7ED4B9960FC14A4BE0BB9", hash_generated_method = "61396E41E6BCB81B41A8595CA0CAA00D")
     
 public String readUTF()
@@ -274,6 +301,7 @@ public String readUTF()
      * @throws EOFException if an end of file is reached unexpectedly
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.770 -0400", hash_original_method = "F2ACC4611C0738057C364BC3F2D0ADCF", hash_generated_method = "AA4E251D5D22BF2E993C6021EB795949")
     
 public int skipBytes( int count )

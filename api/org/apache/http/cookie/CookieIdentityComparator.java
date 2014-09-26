@@ -19,6 +19,7 @@ public class CookieIdentityComparator implements Serializable, Comparator<Cookie
         //Synthesized constructor
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.250 -0500", hash_original_method = "74E51A596EC4BD1E3C9EC5F43F5A06D0", hash_generated_method = "CA5FBB7B3879E9736CF1F1254D32F1AA")
     
 public int compare(final Cookie c1, final Cookie c2) {

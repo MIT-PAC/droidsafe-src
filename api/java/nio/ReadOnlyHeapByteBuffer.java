@@ -103,6 +103,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.716 -0500", hash_original_method = "A805DD85D5AD0B04A08295FCAF525294", hash_generated_method = "500142933DBF90738A4C8B8E723B3FD8")
     
 @Override
@@ -110,6 +111,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.718 -0500", hash_original_method = "B21C449764944752357064F64E16A04C", hash_generated_method = "25D87BF619D9A032E4C6E37081D3BE62")
     
 @Override
@@ -117,6 +119,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.721 -0500", hash_original_method = "0936EB19B88AD6A1540E67EF21842269", hash_generated_method = "42A0CD0CCFB6AC96CE2EFD7E58C675DB")
     
 @Override
@@ -124,6 +127,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.723 -0500", hash_original_method = "6EDCFEA9CE18908F355474CE24EE73F3", hash_generated_method = "565D0D9F5C7022BFF1A842A5DE683C81")
     
 @Override
@@ -131,6 +135,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.726 -0500", hash_original_method = "6D4DC7AF194DC54CDF161D65F1FDDEA8", hash_generated_method = "14CCA7A20DA7D5549659417F7415D506")
     
 @Override
@@ -138,6 +143,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.728 -0500", hash_original_method = "596A6D4589A1478BD0E76A52D09F2DF6", hash_generated_method = "B007FD7EF205E7C38B39788290D7C31B")
     
 @Override
@@ -145,6 +151,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.731 -0500", hash_original_method = "6CDC02834F940A2320A4AB5E7F512207", hash_generated_method = "F9756E5053DFED99410C20BD46BC79DE")
     
 @Override
@@ -152,6 +159,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.733 -0500", hash_original_method = "4935387395F1528D3182F7E3202284B4", hash_generated_method = "2054D951AA79E2D2781A2ADE108069E1")
     
 @Override
@@ -159,6 +167,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.736 -0500", hash_original_method = "3FFCBC2284BD734FFA5002B7F6F7C258", hash_generated_method = "11BAA8664AAE5B9374F256E78204A00A")
     
 @Override
@@ -166,6 +175,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         throw new ReadOnlyBufferException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.738 -0500", hash_original_method = "1212B9E4C2EAD5C33D73EC873813CB4B", hash_generated_method = "879817F88E6064FC080E2F8BDD54F069")
     
 @Override

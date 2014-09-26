@@ -98,6 +98,7 @@ public final class NativeConverter {
     public static Charset charsetForName(String charsetName) {
     	return new Charset(charsetName, null) {
 			
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
 			public CharsetEncoder newEncoder() {
 				return new CharsetEncoder(this, 0, 0) {
@@ -131,6 +132,7 @@ public final class NativeConverter {
 				};
 			}
 			
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
 			public CharsetDecoder newDecoder() {
 				return new CharsetDecoder(this, 0, 0) {

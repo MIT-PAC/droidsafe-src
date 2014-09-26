@@ -6,7 +6,6 @@ import droidsafe.annotations.*;
 import android.os.*;
 import java.io.FileDescriptor;
 
-
 public class DroidSafeBinder implements IBinder {
 
     private Messenger mMessenger;
@@ -26,22 +25,17 @@ public class DroidSafeBinder implements IBinder {
         return mMessenger;
     }
 
-
     public String getInterfaceDescriptor() throws RemoteException {
         return new String("<DroidSafeBinder.getInterfaceDescription>");
     }
-
     
     public boolean pingBinder() {
         return true;
     }
     
-
-    
     public boolean isBinderAlive() {
         return true;
     }
-    
     
     public IInterface queryLocalInterface(String descriptor) {
         //something with AIDL?
@@ -50,17 +44,15 @@ public class DroidSafeBinder implements IBinder {
         return null;
     }
     
-    
     public void dump(FileDescriptor fd, String[] args) throws RemoteException {
         fd.addTaint(args[0].getTaint());
     }
     
-    
     public void dumpAsync(FileDescriptor fd, String[] args) throws RemoteException {
         fd.addTaint(args[0].getTaint());
     }
-
     
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean transact(int code, Parcel data, Parcel reply, int flags)
         throws RemoteException {
         //don't know what calls this???
@@ -68,14 +60,11 @@ public class DroidSafeBinder implements IBinder {
         reply.addTaint(data.getTaint());
         return true;
     }
-
-    
     
     public void linkToDeath(DeathRecipient recipient, int flags)
         throws RemoteException {
         //don't know what to do
     }
-
     
     public boolean unlinkToDeath(DeathRecipient recipient, int flags) {
         return true;

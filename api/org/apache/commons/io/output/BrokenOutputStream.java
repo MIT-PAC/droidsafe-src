@@ -62,6 +62,8 @@ public BrokenOutputStream() {
      * @param b ignored
      * @throws IOException always thrown
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.072 -0400", hash_original_method = "AF68FB9108929D9CC8AF2DAD857DF91D", hash_generated_method = "03F18DCDF3636CF439F76D81DC2B5009")
     
 @Override
@@ -74,6 +76,7 @@ public BrokenOutputStream() {
      *
      * @throws IOException always thrown
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.073 -0400", hash_original_method = "2F30F2D964E96D4253E7019EBAE48140", hash_generated_method = "CB61CA2DDDC7A56278D519175D793B1A")
     
 @Override
@@ -86,6 +89,7 @@ public BrokenOutputStream() {
      *
      * @throws IOException always thrown
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.073 -0400", hash_original_method = "CEF9D34BF3086FDA40BC370A70DF5AD2", hash_generated_method = "D60384CEF658CF51488D146FB7DCDC10")
     
 @Override

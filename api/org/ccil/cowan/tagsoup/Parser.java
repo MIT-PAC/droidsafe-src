@@ -505,7 +505,8 @@ public DTDHandler getDTDHandler () {
 		return (theDTDHandler == this) ? null : theDTDHandler;
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.390 -0500", hash_original_method = "F2917252F8D6F02CF50CD455848B7CDD", hash_generated_method = "77232A9B4C222200D3DBD7D1FD7654CA")
+	@DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.390 -0500", hash_original_method = "F2917252F8D6F02CF50CD455848B7CDD", hash_generated_method = "77232A9B4C222200D3DBD7D1FD7654CA")
 	
 public void setContentHandler (ContentHandler handler) {
 		theContentHandler = (handler == null) ? this : handler;
@@ -531,7 +532,8 @@ public ErrorHandler getErrorHandler () {
 		return (theErrorHandler == this) ? null : theErrorHandler;
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.399 -0500", hash_original_method = "5995949AA97E47EEEF7CCC54B7A2CDFD", hash_generated_method = "8CE2CEF32F97502EA67DD142013B9FFF")
+	@DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.399 -0500", hash_original_method = "5995949AA97E47EEEF7CCC54B7A2CDFD", hash_generated_method = "8CE2CEF32F97502EA67DD142013B9FFF")
 	
 public void parse (InputSource input) throws IOException, SAXException {
 		setup();
@@ -547,7 +549,8 @@ public void parse (InputSource input) throws IOException, SAXException {
 		theScanner.scan(r, this);
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.402 -0500", hash_original_method = "84CD70DF516C08D97CF2D35EEDEEB169", hash_generated_method = "E808A0522D046274BC6B48D12E4D3F0D")
+	@DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.402 -0500", hash_original_method = "84CD70DF516C08D97CF2D35EEDEEB169", hash_generated_method = "E808A0522D046274BC6B48D12E4D3F0D")
 	
 public void parse (String systemid) throws IOException, SAXException {
 		parse(new InputSource(systemid));

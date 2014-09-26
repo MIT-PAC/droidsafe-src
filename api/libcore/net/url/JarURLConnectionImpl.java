@@ -271,7 +271,8 @@ private void findJarEntry() throws IOException {
      *
      * @return the content type
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.497 -0500", hash_original_method = "626D247225A5C5A729C002EF0C988C29", hash_generated_method = "2758DF82E46CF926A8F810BCC9635F2D")
     
 @Override

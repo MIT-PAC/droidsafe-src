@@ -55,6 +55,7 @@ public class PowerManager {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.988 -0400", hash_original_field = "8C000F972038F01199BE709ADEA69D32", hash_generated_field = "F7462AACBEE42AD8546E251CB93CC06F")
 
         Runnable mReleaser = new Runnable() {            
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.988 -0400", hash_original_method = "EE8EB6B44C1ECA6F34C46D68F05D7353", hash_generated_method = "4FB3659F1E09722C30041C679A6091C0")
             public void run() {
                 release();

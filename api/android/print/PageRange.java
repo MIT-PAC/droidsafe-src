@@ -32,9 +32,9 @@ public final class PageRange implements Parcelable {
     public static final PageRange ALL_PAGES = new PageRange(0, Integer.MAX_VALUE);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.142 -0400", hash_original_field = "BC0463E52D51BBF51ABCB05F5A24D7F1", hash_generated_field = "11DD40E2D9F7F053786213483A5BBDB8")
 
-
     public static final Parcelable.Creator<PageRange> CREATOR =
             new Creator<PageRange>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public PageRange createFromParcel(Parcel parcel) {
             return new PageRange(parcel);
@@ -46,7 +46,6 @@ public final class PageRange implements Parcelable {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.126 -0400", hash_original_field = "83A19D93B82C07A79F54E265C2077EC6", hash_generated_field = "D233E3389CE5D79EE6040D6A855ED4FF")
-
 
     private  int mStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.128 -0400", hash_original_field = "6FAA56F5628A0F1DAAFED98EBDB1C99E", hash_generated_field = "EA295975CAF8E42F4C28A87EADB358DF")
@@ -121,6 +120,7 @@ public int getEnd() {
         parcel.writeInt(mEnd);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.135 -0400", hash_original_method = "C8F086F6D05439D5EB8D567E91FF7BB2", hash_generated_method = "81F41E70303077E7B8DDDF8C749913C7")
     
 @Override
@@ -155,6 +155,7 @@ public int getEnd() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.137 -0400", hash_original_method = "49458D88F683CFC562519CCC6028F4B9", hash_generated_method = "4B5E547FB6FFD5603EAB17A33A903C56")
     
 @Override

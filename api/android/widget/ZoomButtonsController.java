@@ -108,6 +108,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
 
     private final BroadcastReceiver mConfigurationChangedReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_method = "CBA4474B6B69D8EAAD5A5C11EB839616", hash_generated_method = "F83C34B85F2FCA1335A3AC869BD1F32D")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -124,6 +125,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
 
     private final Handler mHandler = new Handler() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_method = "08D68F0747526F6C2171A582DECDF849", hash_generated_method = "CFC43127320AFEBB55812F13C5DF794D")
         @Override
         public void handleMessage(Message msg) {
@@ -230,13 +232,15 @@ private FrameLayout createContainer() {
 
         mControls = (ZoomControls) container.findViewById(com.android.internal.R.id.zoomControls);
         mControls.setOnZoomInClickListener(new OnClickListener() {
-            public void onClick(View v) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                 dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
                 if (mCallback != null) mCallback.onZoom(true);
             }
         });
         mControls.setOnZoomOutClickListener(new OnClickListener() {
-            public void onClick(View v) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                 dismissControlsDelayed(ZOOM_CONTROLS_TIMEOUT);
                 if (mCallback != null) mCallback.onZoom(false);
             }
@@ -355,7 +359,8 @@ public void setVisible(boolean visible) {
 
             if (mPostedVisibleInitializer == null) {
                 mPostedVisibleInitializer = new Runnable() {
-                    public void run() {
+                    @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                         refreshPositioningVariables();
 
                         if (mCallback != null) {

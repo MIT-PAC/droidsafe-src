@@ -517,7 +517,8 @@ static boolean removeAllCacheFiles() {
 
         // delete cache files in a separate thread to not block UI.
         final Runnable clearCache = new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 // delete all cache files
                 try {
                     String[] files = mBaseDir.list();

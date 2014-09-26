@@ -115,6 +115,7 @@ synchronized void awaitFinalization() throws InterruptedException {
         return zombie;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.853 -0500", hash_original_method = "B5E36D5C5E2E18FD73C503842BC207C6", hash_generated_method = "DFD8A987C8D1EC1496BF858C8F01453B")
     
 @Override

@@ -15,7 +15,6 @@
  *  limitations under the License.
  */
 
-
 package java.security.cert;
 
 import droidsafe.annotations.*;
@@ -79,6 +78,7 @@ public CertPath getCertPath() {
      * @return a string representation of this {@code PKIXCertPathBuilderResult}
      *         instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.551 -0400", hash_original_method = "A0C62BFA0E7CD9759D161D976CDDFB18", hash_generated_method = "8DB579BF292786F6108345D9CA430AE0")
     
 public String toString() {

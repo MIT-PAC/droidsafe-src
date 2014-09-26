@@ -77,7 +77,7 @@ public boolean isDone() {
     }
 
     @DSComment("No action/impact")
-    @DSSpec(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.320 -0500", hash_original_method = "88A87863EC7E1056D8FE46146EF894BC", hash_generated_method = "2B9A6D8E962965597198EE7EF5CC30EB")
     
 public boolean cancel(boolean mayInterruptIfRunning) {
@@ -158,7 +158,7 @@ protected void setException(Throwable t) {
      * Sets this Future to the result of its computation
      * unless it has been cancelled.
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.334 -0500", hash_original_method = "C774B2E8DA9F32069C4712123B43B6CD", hash_generated_method = "D3AE039B798452ECC87270B249B0B99C")
     
 public void run() {

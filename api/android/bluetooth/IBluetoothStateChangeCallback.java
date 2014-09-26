@@ -92,7 +92,8 @@ _data.recycle();
 }
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.564 -0500", hash_original_method = "C0D24C1186FD70C9D28FB43260A9DCBE", hash_generated_method = "EBEB493C1077BE08F446BE046718D9C7")
+@DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.564 -0500", hash_original_method = "C0D24C1186FD70C9D28FB43260A9DCBE", hash_generated_method = "EBEB493C1077BE08F446BE046718D9C7")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

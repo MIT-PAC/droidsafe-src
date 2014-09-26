@@ -135,7 +135,7 @@ ReadWriteHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.795 -0500", hash_original_method = "45B8F2F72971D070F593434F2D8E9160", hash_generated_method = "B728EF84672A1F87CFEAB5DD156AB32A")
     
 final void put(char[] src, int srcOffset, int charCount) {
@@ -145,7 +145,7 @@ final void put(char[] src, int srcOffset, int charCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.798 -0500", hash_original_method = "9ABCB25C494E5D0A0EE76A30D8E8B283", hash_generated_method = "EEFA3396E68322D10D967E2C2DDB62CD")
     
 final void put(double[] src, int srcOffset, int doubleCount) {
@@ -155,7 +155,7 @@ final void put(double[] src, int srcOffset, int doubleCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.800 -0500", hash_original_method = "0A59724EAC29A22512857FADB561826F", hash_generated_method = "D94DD572A2E3768D31331D653DEBC17D")
     
 final void put(float[] src, int srcOffset, int floatCount) {
@@ -165,7 +165,7 @@ final void put(float[] src, int srcOffset, int floatCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.803 -0500", hash_original_method = "5866478CCFA9AC7EB5AD084734CBE2FD", hash_generated_method = "35CA77A17ECFFA52A1468D2042041933")
     
 final void put(int[] src, int srcOffset, int intCount) {
@@ -175,7 +175,7 @@ final void put(int[] src, int srcOffset, int intCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.805 -0500", hash_original_method = "4DE3C17BC2F6A0E6284BCBDEFF4353E5", hash_generated_method = "FA8062DF8FD184C70F4277909EFB7727")
     
 final void put(long[] src, int srcOffset, int longCount) {
@@ -185,7 +185,7 @@ final void put(long[] src, int srcOffset, int longCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.807 -0500", hash_original_method = "77593A6CF9C8DAF6764F897CF6EC2842", hash_generated_method = "EAE8B1216F3E97B7C64C6665F01067EF")
     
 final void put(short[] src, int srcOffset, int shortCount) {
@@ -194,6 +194,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         position += byteCount;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.811 -0500", hash_original_method = "82EE1C0866E5BEF2C6330A6E38277E0B", hash_generated_method = "0D3429B39E7B949CCF4A7A722F9B4323")
     
 @Override
@@ -203,6 +204,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.814 -0500", hash_original_method = "15F32C27634A3E86C7051E2D179448EE", hash_generated_method = "CB7011749562DA4E93666385682B6869")
     
 @Override
@@ -216,7 +218,8 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return this;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.816 -0500", hash_original_method = "D3D66F8ECD97953078E15D88E3210D7C", hash_generated_method = "B546CF7347862E08E05F010EC04F4DCF")
     
 @Override
@@ -224,7 +227,8 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return putLong(Double.doubleToRawLongBits(value));
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.818 -0500", hash_original_method = "FE6D03BC4C20DB28CF1BCC78BA5DBE78", hash_generated_method = "1159482AC67B4C74363BFB04CC935053")
     
 @Override
@@ -232,7 +236,8 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return putLong(index, Double.doubleToRawLongBits(value));
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.821 -0500", hash_original_method = "E45ECD1B48C76B33C550D1D3ABE8CF24", hash_generated_method = "F1B009E253B6AAF4F7087360900EF848")
     
 @Override
@@ -240,7 +245,8 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return putInt(Float.floatToRawIntBits(value));
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.823 -0500", hash_original_method = "9AFB8F5FE765C8CDC0ED3C930ED840C0", hash_generated_method = "3212C4B007946BAB3A94AF1E4C3C3334")
     
 @Override
@@ -248,6 +254,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return putInt(index, Float.floatToRawIntBits(value));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.826 -0500", hash_original_method = "5F1F62F303EDB135D2A78931AEAB6972", hash_generated_method = "FF0F546D203E4CA8CCD44E4A3CEA5A0E")
     
 @Override
@@ -261,6 +268,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.829 -0500", hash_original_method = "D1A78DDD0C9ED6E4483E1AE7C4872A32", hash_generated_method = "2CE23C0AF61F75D4F6AF42180534F6D0")
     
 @Override
@@ -270,6 +278,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.831 -0500", hash_original_method = "1EDA1D6C4FBFEC9DA3CAFFF9583F4A7A", hash_generated_method = "5797FAF80DEE87FD2E17F85A370BB932")
     
 @Override
@@ -279,6 +288,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.834 -0500", hash_original_method = "9648BBCB2FCB23C0FEFFC646460FB4AC", hash_generated_method = "F5C3D9020FDCDCC7A796CDC59EEE10D1")
     
 @Override
@@ -292,6 +302,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.837 -0500", hash_original_method = "8DD945BCFB457C15F47AA89E5C45F024", hash_generated_method = "28BB5DE8C5A9F14D3EDB367604B2F817")
     
 @Override
@@ -301,6 +312,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.839 -0500", hash_original_method = "D29A208D139CC962C11C8258F595C612", hash_generated_method = "605E67BD4A37C23CA8FA2BDBCCEA8B5A")
     
 @Override

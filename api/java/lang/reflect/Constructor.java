@@ -200,7 +200,8 @@ public Type[] getGenericExceptionTypes() {
         return Types.getClonedTypeArray(genericExceptionTypes);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.882 -0500", hash_original_method = "4F7DC07C64174CDAA43175ECC599103D", hash_generated_method = "07AEBC12CA2EC299F6E5FE6DB937C323")
     
 @Override
@@ -314,8 +315,8 @@ public boolean isSynthetic() {
      * @return the declaring class
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.899 -0500", hash_original_method = "CE10C7360422171346CFCFE4390D0CD4", hash_generated_method = "90E9BF83F1779E241EBB0A05FEA9321D")
     
 public Class<T> getDeclaringClass() {
@@ -347,7 +348,8 @@ public Class<?>[] getExceptionTypes() {
      *
      * @see Modifier
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.904 -0500", hash_original_method = "75F84F634C025C373FC5DFC6F2FEAE7E", hash_generated_method = "C18C1BAA23A876F5E5A67D46CB05C716")
     
 public int getModifiers() {
@@ -359,7 +361,8 @@ public int getModifiers() {
      *
      * @return the name of this constructor
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.906 -0500", hash_original_method = "64DF6B8C865C11FF9D8C98657107C7C5", hash_generated_method = "CB3A20844DD676DBCB831F281B3D93F7")
     
 public String getName() {

@@ -71,7 +71,7 @@ public void reset() {
 
     @DSComment("input is io InputStream")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.097 -0500", hash_original_method = "95E59CF6F0A1DFE242840282B735E195", hash_generated_method = "D801F974BA0202307AC902C635182E61")
     
 public Document parse(InputStream is)
@@ -98,7 +98,8 @@ public Document parse(InputStream is)
      * @see org.xml.sax.DocumentHandler
      */
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.100 -0500", hash_original_method = "EA811CE95A08B04D15381504F667910C", hash_generated_method = "70C97B542BC1EB5B9903552A3D2ED761")
     
 public Document parse(InputStream is, String systemId)
@@ -125,7 +126,8 @@ public Document parse(InputStream is, String systemId)
      * @see org.xml.sax.DocumentHandler
      */
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.103 -0500", hash_original_method = "595BF8AC63AB584AD723E5F0FBAE035E", hash_generated_method = "70E399953BEC569388820A7375896695")
     
 public Document parse(String uri)
@@ -153,7 +155,7 @@ public Document parse(String uri)
 
     @DSComment("input is io file object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.105 -0500", hash_original_method = "F95298F4448DE156B1C85F49780E514D", hash_generated_method = "BD38C4001589DF85E06DF2B6CFF70AAF")
     
 public Document parse(File f) throws SAXException, IOException {
@@ -185,7 +187,7 @@ public Document parse(File f) throws SAXException, IOException {
      */
 
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.107 -0500", hash_original_method = "34848998765D4A28285495E765F5578C", hash_generated_method = "3378BF159BC7F100B945A22A43DFCD5F")
     
 public abstract Document parse(InputSource is)

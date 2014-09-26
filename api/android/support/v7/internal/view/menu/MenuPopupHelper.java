@@ -39,7 +39,6 @@ import android.widget.PopupWindow;
 
 import java.util.ArrayList;
 
-
 /**
  * Presents a menu as a small, simple popup anchored to another view.
  *
@@ -50,14 +49,11 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
         MenuPresenter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.477 -0400", hash_original_field = "894DDED20B32A4ACE82E85BB7611CAA8", hash_generated_field = "6C9DFC256D4283331236FE5061F62A3A")
 
-
     private static final String TAG = "MenuPopupHelper";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.479 -0400", hash_original_field = "401850321CA962CF464E361813C80735", hash_generated_field = "8DE2D326DF490BAEDD37A4A5E3137641")
 
-
     static final int ITEM_LAYOUT = R.layout.abc_popup_menu_item_layout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.482 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.484 -0400", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
@@ -83,18 +79,14 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     private ViewTreeObserver mTreeObserver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.499 -0400", hash_original_field = "85BD8C2F470603886C61D670BD662E5D", hash_generated_field = "70EF1FC230E0951E3D83E696BE279410")
 
-
     private MenuAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.501 -0400", hash_original_field = "8A90713BA1A114069E13ED2F7302D2FE", hash_generated_field = "1CD6F63E5806E04B51B62E75FCD724F8")
-
 
     private Callback mPresenterCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.503 -0400", hash_original_field = "346196818A9B2A3ADB36739C20BD24C8", hash_generated_field = "346196818A9B2A3ADB36739C20BD24C8")
 
-
     boolean mForceShowIcon;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.505 -0400", hash_original_field = "0940732891F2298DD930EF9EFFE42842", hash_generated_field = "E84D2043C556E9480A2C4C979E61DFD1")
-
 
     private ViewGroup mMeasureParent;
 
@@ -186,6 +178,7 @@ public void dismiss() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.530 -0400", hash_original_method = "B93CE3C0C4211BEA3D7E49AA0DFABD42", hash_generated_method = "BA608D19E81EDD3C5883CBAA5D3BFCE4")
     
 public void onDismiss() {
@@ -390,6 +383,8 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
             findExpandedIndex();
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         public int getCount() {
             ArrayList<MenuItemImpl> items = mOverflowOnly ?
                     mAdapterMenu.getNonActionItems() : mAdapterMenu.getVisibleItems();
@@ -399,6 +394,8 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
             return items.size() - 1;
         }
 
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
         public MenuItemImpl getItem(int position) {
             ArrayList<MenuItemImpl> items = mOverflowOnly ?
                     mAdapterMenu.getNonActionItems() : mAdapterMenu.getVisibleItems();
@@ -408,12 +405,15 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
             return items.get(position);
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         public long getItemId(int position) {
             // Since a menu item's ID is optional, we'll use the position as an
             // ID for the item in the AdapterView
             return position;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
                 convertView = mInflater.inflate(ITEM_LAYOUT, parent, false);
@@ -443,6 +443,7 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
             mExpandedIndex = -1;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void notifyDataSetChanged() {
             findExpandedIndex();

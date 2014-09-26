@@ -359,7 +359,8 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         inflater.inflate(R.layout.number_picker, this, true);
 
         OnClickListener onClickListener = new OnClickListener() {
-            public void onClick(View v) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                 InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
                 if (inputMethodManager != null && inputMethodManager.isActive(mInputText)) {
                     inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
@@ -527,6 +528,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.135 -0500", hash_original_method = "048719DA53F07F7F498A46C4561541BF", hash_generated_method = "7AAA45A8190866768CAEA3A7F88E5BC9")
     
 @Override
@@ -727,7 +729,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
     }
 
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.154 -0500", hash_original_method = "B6D6495EF8D39EBA8CC69BAAD1076261", hash_generated_method = "779A92564B3688AA0B13025B127F20C5")
     
 @Override
@@ -1127,6 +1129,7 @@ public void setDisplayedValues(String[] displayedValues) {
         return TOP_AND_BOTTOM_FADING_EDGE_STRENGTH;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.200 -0500", hash_original_method = "D8635D04A384ABA875A77249BA87A3E4", hash_generated_method = "C61528B0F4AAE616365FEFA487C8F7E2")
     
 @Override
@@ -1140,6 +1143,7 @@ public void setDisplayedValues(String[] displayedValues) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.202 -0500", hash_original_method = "1AF381BAEFDBA706A0AAFFFCBFBE7386", hash_generated_method = "AA4E0DA545A5B13C11282CBBD898C43A")
     
 @Override
@@ -1147,6 +1151,7 @@ public void setDisplayedValues(String[] displayedValues) {
         removeAllCallbacks();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.204 -0500", hash_original_method = "0296ECFD4FBB578ABFB3DEE9D2F54084", hash_generated_method = "C5140F4F7F46A13ACBF6C5E2F71E1EFD")
     
 @Override
@@ -1154,6 +1159,7 @@ public void setDisplayedValues(String[] displayedValues) {
         // There is a good reason for doing this. See comments in draw().
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.207 -0500", hash_original_method = "592CCD8540DAA22101D858B8673CA0A4", hash_generated_method = "705B68FCFD935CE7E333E2E13FFA2F85")
     
 @Override
@@ -1183,6 +1189,7 @@ public void setDisplayedValues(String[] displayedValues) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.210 -0500", hash_original_method = "73B10A324A4034D5CD70F03023B591F2", hash_generated_method = "2D131641DAB9F940D830B6D4414F155A")
     
 @Override
@@ -1569,7 +1576,7 @@ public int getInputType() {
             //Synthesized constructor
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.303 -0500", hash_original_method = "5A9CF76A42C671BAE659DDDD324A19D9", hash_generated_method = "6374F0A5C12322A383EFB0D4502A4F6C")
         
 public void run() {
@@ -1585,7 +1592,7 @@ public void run() {
         {
             //Synthesized constructor
         }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.307 -0500", hash_original_method = "1728A296542E5FB10F5D2F850E617FE1", hash_generated_method = "E36429D890BD907AF232694419F86473")
         
 public void run() {
@@ -1625,7 +1632,7 @@ private void setIncrement(boolean increment) {
             mIncrement = increment;
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.316 -0500", hash_original_method = "1F108533BE53D637572F8F49778F205C", hash_generated_method = "3CD8638FBE78AC2FBC4F0F5EC587B4C0")
         
 public void run() {

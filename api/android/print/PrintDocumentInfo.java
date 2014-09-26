@@ -85,9 +85,9 @@ public final class PrintDocumentInfo implements Parcelable {
     public static final int CONTENT_TYPE_PHOTO = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.921 -0400", hash_original_field = "5FBE82D5641893C78653284F81F83F0F", hash_generated_field = "E8A7F6BDA0E27853AB4A8EA5934DA551")
 
-
     public static final Parcelable.Creator<PrintDocumentInfo> CREATOR =
             new Creator<PrintDocumentInfo>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public PrintDocumentInfo createFromParcel(Parcel parcel) {
             return new PrintDocumentInfo(parcel);
@@ -99,7 +99,6 @@ public final class PrintDocumentInfo implements Parcelable {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.876 -0400", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
-
 
     private String mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.877 -0400", hash_original_field = "29BBF728986FEA8949B12DDB2B4B7DAC", hash_generated_field = "7CA3A56A94442FB263747600355C917F")
@@ -230,6 +229,7 @@ public void setDataSize(long dataSize) {
         parcel.writeLong(mDataSize);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.899 -0400", hash_original_method = "00190B41CE4E23871465A912F94CED12", hash_generated_method = "B66C3F9141D3E25A84D52FA20A7AD214")
     
 @Override
@@ -273,6 +273,7 @@ public void setDataSize(long dataSize) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.903 -0400", hash_original_method = "023FB5F5763A4CCF80FB078859C7A979", hash_generated_method = "5B8BC3F121B4055DF09768DE315BD450")
     
 @Override

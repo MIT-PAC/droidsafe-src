@@ -58,6 +58,7 @@ public CountingInputStream(InputStream in) {
      * @throws IOException if an I/O error occurs
      * @see java.io.InputStream#skip(long)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.736 -0400", hash_original_method = "132500B6DBD3ECFEDBE720096796962F", hash_generated_method = "BD0A7FA2DE3D20C4B8C67471E576A5F6")
     
 @Override

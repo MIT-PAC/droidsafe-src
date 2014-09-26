@@ -63,6 +63,7 @@ public static ObjectAnimator ofFloat(Object target, String propertyName, float..
         return anim;
     }
     
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     public static <T> ObjectAnimator ofFloat(T target, Property<T, Float> property,
             float... values) {
         ObjectAnimator anim = new ObjectAnimator(target, property);
@@ -328,6 +329,7 @@ public String getPropertyName() {
         }
     }
 
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.583 -0500", hash_original_method = "56CCF5D2849A2C2A18C16A03F4D35824", hash_generated_method = "3730F65F1A571CD9F3FA8EEC1A85EB3A")
     
 @Override

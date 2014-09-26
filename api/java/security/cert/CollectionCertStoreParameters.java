@@ -79,6 +79,7 @@ public CollectionCertStoreParameters(Collection<?> collection) {
      *
      * @return the cloned instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.456 -0400", hash_original_method = "54040598955C6E8BA382734C61174608", hash_generated_method = "0239CEC56D53D9115DB8BFABFCC35553")
     
 public Object clone() {
@@ -107,6 +108,7 @@ public Collection<?> getCollection() {
      *
      * @return the string representation of this instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.458 -0400", hash_original_method = "701121F800C200039146171FD9858B49", hash_generated_method = "773A0187530C4A2A8CBE79187C5CDFD7")
     
 public String toString() {

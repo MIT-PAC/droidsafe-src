@@ -171,7 +171,7 @@ protected String getIndentation() {
      * Makes a deep clone of this list.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.260 -0500", hash_original_method = "6368B146C50DA8D7E84E7623E4D72233", hash_generated_method = "B7D1CA39FA0521F03A0F238F949058BF")
     
 public Object clone() {
@@ -336,6 +336,7 @@ public String debugDump(int indent) {
         return retval;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.296 -0500", hash_original_method = "8D0C02EDD4F71C5F926965BFB69DF22C", hash_generated_method = "46F773468751215CA4E460621B9F4670")
     
 public void addFirst(GenericObject objToAdd) {
@@ -412,7 +413,7 @@ public String encode() {
      * Alias for the encode function above.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.304 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {

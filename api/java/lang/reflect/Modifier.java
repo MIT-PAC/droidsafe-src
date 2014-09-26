@@ -266,6 +266,7 @@ public static boolean isVolatile(int modifiers) {
      * present in the specified modifiers. Modifiers appear in the order
      * specified by the Java Language Specification.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 00:22:07.215 -0400", hash_original_method = "86B8B01EEA81FA63F3947FFBD2326404", hash_generated_method = "E7DBA0DB8CF57DD44BBBDDD71B32A7BA")
     
 public static java.lang.String toString(int modifiers) {
@@ -353,22 +354,18 @@ public static java.lang.String toString(int modifiers) {
     static final int BRIDGE = 0x40;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 00:22:07.138 -0400", hash_original_field = "9B810AD6F12FF86CC24642D5BDEDE96E", hash_generated_field = "6D6FEFEBFBA3A07606D9A0FE2D3164F4")
 
-
     static final int VARARGS = 0x80;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 00:22:07.141 -0400", hash_original_field = "F1FF292D2C8E0F83E85874578AF0CB71", hash_generated_field = "88EB2D313761E0B6F8380DC919291DB7")
 
     public static final int SYNTHETIC = 0x1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 00:22:07.144 -0400", hash_original_field = "D76A26FE61302C8C86A0C69E0C2CB435", hash_generated_field = "20555738D31EC19F3DFAE3E6C8C1F355")
 
-
     static final int ANNOTATION = 0x2000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 00:22:07.146 -0400", hash_original_field = "0864BD8018E11B4EB27219D562A94ECF", hash_generated_field = "BB2F637D890B852567DDEF14CF0D700C")
-
 
     static final int ENUM = 0x4000;
 
     @DSSafe(DSCat.SAFE_OTHERS)
-
 
     /**
      * Constructs a new {@code Modifier} instance.

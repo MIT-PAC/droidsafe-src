@@ -259,7 +259,7 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.755 -0500", hash_original_method = "2A0D7EAD7D2D4BD57D90237963E14123", hash_generated_method = "764E77A2466C2EEB909234927FC9E4A0")
     
 static private MotionEvent obtain() {
@@ -400,6 +400,7 @@ static public MotionEvent obtain(long downTime, long eventTime,
      * @param edgeFlags A bitfield indicating which edges, if any, were touched by this
      * MotionEvent.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.765 -0500", hash_original_method = "1E17DF4D2E642F9316AB5D83170D1374", hash_generated_method = "781E6B54E01322E06173924A59BC3BEB")
     
 static public MotionEvent obtain(long downTime, long eventTime, int action,
@@ -461,6 +462,7 @@ static public MotionEvent obtain(long downTime, long eventTime, int action,
      * @deprecated Use {@link #obtain(long, long, int, float, float, float, float, int, float, float, int, int)}
      * instead.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.767 -0500", hash_original_method = "5621B9ADE3B8EF50DDDF7D0ECB510E6B", hash_generated_method = "A59CF82C458A58C478465FFC39AB754F")
     
 @Deprecated
@@ -1339,7 +1341,7 @@ public void copyFrom(PointerProperties other) {
 
     public static final Parcelable.Creator<MotionEvent> CREATOR
             = new Parcelable.Creator<MotionEvent>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:11.009 -0500", hash_original_method = "E988C06BFCE97E62AC2813BD29B32BEE", hash_generated_method = "EA7995B37BF37B0A751844672E9AEE92")
         
 public MotionEvent createFromParcel(Parcel in) {
@@ -2194,7 +2196,7 @@ public final long getHistoricalEventTime(int pos) {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.904 -0500", hash_original_method = "52641DCD8C1505610834B8CDD1492B06", hash_generated_method = "19AAD43E5A94488E256744F678A25D41")
     
 public final float getHistoricalX(int pos) {
@@ -2214,7 +2216,7 @@ public final float getHistoricalX(int pos) {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.906 -0500", hash_original_method = "456D8725235AB4DBC45E47B4ADD23013", hash_generated_method = "D1C5BB213D8A282F9C2588371E83EE1E")
     
 public final float getHistoricalY(int pos) {
@@ -2381,7 +2383,8 @@ public final float getHistoricalAxisValue(int axis, int pos) {
      * @see #getX(int)
      * @see #AXIS_X
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.928 -0500", hash_original_method = "8BFA09569623FF1F941D2134C3D47F02", hash_generated_method = "BCA1A9401C71FD53E79AA19C35D77354")
     
 public final float getHistoricalX(int pointerIndex, int pos) {
@@ -2402,7 +2405,8 @@ public final float getHistoricalX(int pointerIndex, int pos) {
      * @see #getY(int)
      * @see #AXIS_Y
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.930 -0500", hash_original_method = "9787FE8A43AC5153EC8D7EC463FC985B", hash_generated_method = "93E1612CB6D311B03E5FD0703ACC49DD")
     
 public final float getHistoricalY(int pointerIndex, int pos) {

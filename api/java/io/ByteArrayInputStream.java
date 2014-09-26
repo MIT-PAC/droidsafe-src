@@ -99,6 +99,7 @@ public ByteArrayInputStream(byte[] buf, int offset, int length) {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.632 -0500", hash_original_method = "78F90254D622F331873962595002D35F", hash_generated_method = "09535714B85650F57DC3794E013DEC58")
     
 @Override
@@ -115,6 +116,7 @@ public ByteArrayInputStream(byte[] buf, int offset, int length) {
      * @see #mark(int)
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.635 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
     
 @Override
@@ -188,6 +190,7 @@ public ByteArrayInputStream(byte[] buf, int offset, int length) {
      *
      * @see #mark(int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.642 -0500", hash_original_method = "C62CA45FA6D33EC45CB5D1463505B2CA", hash_generated_method = "8B157EA1F935A471AB47D800D0AC4AF3")
     
 @Override

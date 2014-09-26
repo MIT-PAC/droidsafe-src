@@ -162,6 +162,7 @@ public void clear() {
         mItems.clear();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.867 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "388BFD43642BF851D61AF8A45943A910")
     
 public void close() {
@@ -235,6 +236,7 @@ public boolean isShortcutKey(int keyCode, KeyEvent event) {
         return findItemWithShortcut(keyCode, event) != null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.875 -0400", hash_original_method = "C28F0D7407E4A3D2A74FBCBAE3E3C9E6", hash_generated_method = "692FD7B636FCA67F942BB29F5F41090E")
     
 public boolean performIdentifierAction(int id, int flags) {
@@ -279,6 +281,7 @@ public void removeItem(int id) {
         mItems.remove(findItemIndex(id));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.880 -0400", hash_original_method = "EB8DED36DAA11F9A5F2CAA342B594CD6", hash_generated_method = "A88692FA058675F42A288F03E8BDE3AE")
     
 public void setGroupCheckable(int group, boolean checkable,
@@ -295,6 +298,7 @@ public void setGroupCheckable(int group, boolean checkable,
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.882 -0400", hash_original_method = "225C226398ED6F40932EAEEF6389807F", hash_generated_method = "FBA87841830B7AC2AEBE911A37280BC7")
     
 public void setGroupEnabled(int group, boolean enabled) {
@@ -309,6 +313,7 @@ public void setGroupEnabled(int group, boolean enabled) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.883 -0400", hash_original_method = "04B04D177657819ACFC3A3F04945B150", hash_generated_method = "0E2E4706F210A62D886EF1556D1271A3")
     
 public void setGroupVisible(int group, boolean visible) {
@@ -323,6 +328,7 @@ public void setGroupVisible(int group, boolean visible) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.884 -0400", hash_original_method = "D3BA279DF33FA75A305F365952FB2811", hash_generated_method = "3E9663DFC738DB27387886603B7A48E3")
     
 public void setQwertyMode(boolean isQwerty) {

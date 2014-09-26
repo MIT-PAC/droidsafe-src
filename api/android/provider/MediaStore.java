@@ -517,6 +517,8 @@ private static final Bitmap StoreThumbnail(
              * @return The URL to the newly created image, or <code>null</code> if the image failed to be stored
              *              for any reason.
              */
+            @DSSpec(DSCat.IO)
+            @DSSink({DSSinkKind.CONTENT})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.517 -0500", hash_original_method = "69A0DD4660ADD7C5594E4FDC51D65483", hash_generated_method = "A734C04153E78B8243BB6411677AF49A")
             
 public static final String insertImage(ContentResolver cr, Bitmap source,

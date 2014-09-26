@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.widget;
 
 import android.view.ViewGroup.LayoutParams;
@@ -99,10 +98,8 @@ public class DrawerLayout extends ViewGroup {
     public static final int LOCK_MODE_LOCKED_OPEN = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.913 -0400", hash_original_field = "C4525F63C33119DE8815FD035945D8A8", hash_generated_field = "EFA579D956F9E54E3804DD9FABCBA10B")
 
-
     private static final int MIN_DRAWER_MARGIN = 64;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.921 -0400", hash_original_field = "1383E2E9A7590617142B3276BD6C384C", hash_generated_field = "65694A7A49CD35227C67BA4B9664E585")
-
 
     private static final int DEFAULT_SCRIM_COLOR = 0x99000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.927 -0400", hash_original_field = "F08E061B904B7BE493D4DEF19958B026", hash_generated_field = "99BAA164352FBB897491DFD5AB9C67F1")
@@ -110,13 +107,11 @@ public class DrawerLayout extends ViewGroup {
     private static final int PEEK_DELAY = 160;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.935 -0400", hash_original_field = "C54670DE93B24E059BE5F717E4D09C60", hash_generated_field = "798848595FEDCE7CE015C8667D81E2AC")
 
-
     /**
      * Minimum velocity that will be detected as a fling
      */
     private static final int MIN_FLING_VELOCITY = 400;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.943 -0400", hash_original_field = "03EE9A61673E037863AF40E830F8E8FD", hash_generated_field = "B8E89A343B7E2A1C58C80DEFBAC5F8D7")
-
 
     /**
      * Experimental feature.
@@ -124,14 +119,11 @@ public class DrawerLayout extends ViewGroup {
     private static final boolean ALLOW_EDGE_LOCK = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.949 -0400", hash_original_field = "B5A16B66A7CB847748A1C45918AD5C32", hash_generated_field = "6872CBDEB439EC8E7E57030805F9525B")
 
-
     private static final boolean CHILDREN_DISALLOW_INTERCEPT = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.957 -0400", hash_original_field = "49A5886B0317422461E17F536A7F26C0", hash_generated_field = "269ACF60B358B7EF3AB19C568D168FF5")
 
-
     private static final float TOUCH_SLOP_SENSITIVITY = 1.f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.966 -0400", hash_original_field = "6DBF438C7FAC0EBB2AFE33EF164ECAF2", hash_generated_field = "5ADDA5389845FF3454B51DCFE6C8CFF0")
-
 
     private static final int[] LAYOUT_ATTRS = new int[] {
             android.R.attr.layout_gravity
@@ -180,10 +172,8 @@ private static boolean includeChildForAccessibilitiy(View child) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.971 -0400", hash_original_field = "3FF5CAD773906785D5D0A8AE26E1021A", hash_generated_field = "4BA3728C37BDE948C0CA9B9419DBA8C6")
 
-
     private int mMinDrawerMargin;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.977 -0400", hash_original_field = "A190AA484522E7E835A12BC57FBE82A0", hash_generated_field = "DF66647C7B76C7FD7C950A61F76AC024")
-
 
     private int mScrimColor = DEFAULT_SCRIM_COLOR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:51.984 -0400", hash_original_field = "52642FB6B15E5604DF4912156CEDDEEE", hash_generated_field = "BF635F4EBD5C65CD2D21D1520A8135BB")
@@ -193,7 +183,6 @@ private static boolean includeChildForAccessibilitiy(View child) {
 
     private Paint mScrimPaint = new Paint();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.005 -0400", hash_original_field = "4E52AF123E8E3FAB90F30BB9969914B3", hash_generated_field = "7F990524113E3CDE4648A8AB98B25D73")
-
 
     private  ViewDragHelper mLeftDragger;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.011 -0400", hash_original_field = "DA39D5DF468EE3091842B42400F84113", hash_generated_field = "9F54163BFA766D57408811203B94BA7E")
@@ -228,10 +217,8 @@ private static boolean includeChildForAccessibilitiy(View child) {
     private boolean mChildrenCanceledTouch;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.072 -0400", hash_original_field = "6045260F58BF0F04D7107F057203CA42", hash_generated_field = "748505D0C30305A2F9879DE9738D9BF7")
 
-
     private DrawerListener mListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.078 -0400", hash_original_field = "25CFDFB463A965BC44C22C5B603E6082", hash_generated_field = "E8D995D721D911B655A8BA1B8E85A671")
-
 
     private float mInitialMotionX;
 
@@ -296,7 +283,6 @@ private static boolean includeChildForAccessibilitiy(View child) {
     private float mInitialMotionY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.090 -0400", hash_original_field = "982376DECD91626980B09C9014399020", hash_generated_field = "C6A3FFA52473D5C96365E57A517D57B8")
 
-
     private Drawable mShadowLeft;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.095 -0400", hash_original_field = "D8AA775126BBC79AA5D16DAB49C4DE98", hash_generated_field = "58285E82F6A6F525C0A20338457FE90B")
 
@@ -306,10 +292,8 @@ private static boolean includeChildForAccessibilitiy(View child) {
     private CharSequence mTitleRight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.770 -0400", hash_original_field = "18D6D82A5182BC38F3F0C4363DCD4A26", hash_generated_field = "33042855B157A6DC102D9BD76B853043")
 
-
     private CharSequence mTitleLeft;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.635 -0400", hash_original_field = "C0FC9929241AD62CBC01F8435BC779C6", hash_generated_field = "BE93247AA10D563209847937B9C9A46F")
-
 
     private final ChildAccessibilityDelegate mChildAccessibilityDelegate =
             new ChildAccessibilityDelegate();
@@ -749,6 +733,7 @@ View findDrawerWithGravity(int gravity) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.322 -0400", hash_original_method = "FF6C646BC7EB39EC914F2B8FB0B795B6", hash_generated_method = "8F25DB40F9F3610D849FD225B38F4A0F")
         
 @Override
@@ -757,6 +742,7 @@ View findDrawerWithGravity(int gravity) {
         mFirstLayout = true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.330 -0400", hash_original_method = "55E78F1E2A11C365755D77C284D387A2", hash_generated_method = "F4968E15513E07145315A993A80462B8")
         
 @Override
@@ -765,6 +751,7 @@ View findDrawerWithGravity(int gravity) {
         mFirstLayout = true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.342 -0400", hash_original_method = "EC0B4B8DEDBA907E373A9D556B6C3D52", hash_generated_method = "F829599756E7045A4DC663FE20937F40")
         
 @Override
@@ -929,6 +916,7 @@ View findDrawerWithGravity(int gravity) {
         mFirstLayout = false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.360 -0400", hash_original_method = "389DCFD3441732608176FB26FF97B055", hash_generated_method = "656A427FEB23A1178788DF33DC2C5D5C")
         
 @Override
@@ -956,6 +944,7 @@ View findDrawerWithGravity(int gravity) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.386 -0400", hash_original_method = "B7775A37F7446EF76A38F9728D89A12C", hash_generated_method = "73A5EC339692F60D32169EAD8BDC6C49")
         
 @Override
@@ -1035,6 +1024,7 @@ boolean isDrawerView(View child) {
         return (absGravity & (Gravity.LEFT | Gravity.RIGHT)) != 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.405 -0400", hash_original_method = "27FCB7A5562688681CC0E7E61262B6BD", hash_generated_method = "425FE6C1D451EBC7D6C4C5EBB6A60553")
         
 @Override
@@ -1082,6 +1072,7 @@ boolean isDrawerView(View child) {
         return interceptForDrag || interceptForTap || hasPeekingDrawer() || mChildrenCanceledTouch;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.412 -0400", hash_original_method = "5E542DFBD5A074F7BC6EF06D97DB02D1", hash_generated_method = "051BD85932CE144799AB44A79963BFFC")
         
 @Override
@@ -1136,6 +1127,7 @@ boolean isDrawerView(View child) {
         return wantTouchEvents;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.419 -0400", hash_original_method = "1C3D0D34A620532B0F76575B3905180A", hash_generated_method = "251D116DF88D41372B6EC24AC1AB37A2")
         
 public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
@@ -1386,6 +1378,7 @@ private boolean hasPeekingDrawer() {
                 : new LayoutParams(p);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.503 -0400", hash_original_method = "0820242DFB1833A79D3A037A247A735A", hash_generated_method = "0FAAF748BA4C1D95221E65EBFCBC4B0B")
         
 @Override
@@ -1443,6 +1436,7 @@ void cancelChildViewTouch() {
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
+            @DSSafe(DSCat.SAFE_LIST)
             @Override
             public SavedState createFromParcel(Parcel source) {
                 return new SavedState(source);
@@ -1466,6 +1460,7 @@ void cancelChildViewTouch() {
             super(superState);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void writeToParcel(Parcel dest, int flags) {
             super.writeToParcel(dest, flags);
@@ -1478,6 +1473,7 @@ void cancelChildViewTouch() {
         private ViewDragHelper mDragger;
 
         private final Runnable mPeekRunnable = new Runnable() {
+            @DSSafe(DSCat.SAFE_LIST)
             @Override public void run() {
                 peekDrawer();
             }
@@ -1774,8 +1770,6 @@ void cancelChildViewTouch() {
 
             dest.addAction(src.getActions());
         }
-    
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.512 -0400", hash_original_method = "3136D41FD5802BFCA8E16EA5B3F8477F", hash_generated_method = "C2BBBEC8913DC421C9137F8DDC736DAB")
             
@@ -1812,8 +1806,6 @@ void cancelChildViewTouch() {
             event.setClassName(DrawerLayout.class.getName());
         }}
 
-
-
     final class ChildAccessibilityDelegate extends AccessibilityDelegateCompat {
         @Override
         public void onInitializeAccessibilityNodeInfo(View child,
@@ -1828,6 +1820,7 @@ void cancelChildViewTouch() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.531 -0400", hash_original_method = "9C735EFAE611B02E6FE7E8FE572C18CA", hash_generated_method = "D49F023E6D07BAE13420852EFC04D85A")
         
 @Override
@@ -1839,6 +1832,7 @@ void cancelChildViewTouch() {
         return super.onKeyDown(keyCode, event);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.537 -0400", hash_original_method = "6C5E55BB3B41C7999126FE4083A38DFC", hash_generated_method = "079C7063CEACAFC97238A50DD317A07F")
         
 @Override
@@ -1853,6 +1847,7 @@ void cancelChildViewTouch() {
         return super.onKeyUp(keyCode, event);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.543 -0400", hash_original_method = "38FD2AC8B8A875D6E7BA37CF18A03606", hash_generated_method = "3415B26881D0CB76734FE0E616C134E3")
         
 @Override
@@ -1871,6 +1866,7 @@ void cancelChildViewTouch() {
         setDrawerLockMode(ss.lockModeRight, Gravity.RIGHT);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.550 -0400", hash_original_method = "DAA73C4A05B6D7789889CC806B03060D", hash_generated_method = "B800D872120CE97D1F07EDD59C463EA6")
         
 @Override
@@ -1921,6 +1917,7 @@ void cancelChildViewTouch() {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.239 -0400", hash_original_method = "3A9C9462CF5CA53968299647F729674C", hash_generated_method = "8C1704DA5FDA78E9ACDB8BB4B2277E12")
         
 @Override

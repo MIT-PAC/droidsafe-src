@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */ 
+ */
 
 package org.apache.commons.codec;
 
@@ -70,6 +70,7 @@ public StringEncoderComparator(StringEncoder stringEncoder) {
      * @return the Comparable.compareTo() return code or 0 if an encoding error was caught.
      * @see Comparable
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.259 -0400", hash_original_method = "0BDE0194AD597745E92B3CDBBB2A4527", hash_generated_method = "4D58B047AA42BB5EFBA0DD8773C94DF4")
     
 public int compare(Object o1, Object o2) {

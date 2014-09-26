@@ -166,7 +166,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     public static final int UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW = 1;
     public static final Parcelable.Creator<ActivityInfo> CREATOR
             = new Parcelable.Creator<ActivityInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.303 -0500", hash_original_method = "7881E2AE5504281E1113E4204713DBE5", hash_generated_method = "59E2D7F3641921FBF670094B2FEECFB8")
         
 public ActivityInfo createFromParcel(Parcel source) {

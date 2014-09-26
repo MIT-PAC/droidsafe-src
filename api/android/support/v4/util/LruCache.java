@@ -349,6 +349,7 @@ public synchronized final Map<K, V> snapshot() {
         return new LinkedHashMap<K, V>(map);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.932 -0500", hash_original_method = "D511C7B644032E2A9485769132851C89", hash_generated_method = "95BF13012A117056FE5CFCE2E7234EC1")
     
 @Override public synchronized final String toString() {

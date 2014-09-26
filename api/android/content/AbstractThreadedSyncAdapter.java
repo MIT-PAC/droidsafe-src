@@ -274,7 +274,7 @@ private SyncThread(String name, SyncContext syncContext, String authority,
             mThreadsKey = toSyncKey(account);
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 11:03:25.121 -0500", hash_original_method = "4CA3DD716A0BD73ED7F0FD0D54F60C44", hash_generated_method = "E0C19E641EC755313CC934E5918D600A")
         
 public void run() {

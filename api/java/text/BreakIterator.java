@@ -367,7 +367,7 @@ public abstract void setText(CharacterIterator newText);
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.515 -0500", hash_original_method = "29575A5512234CDD5AA778EC4509422E", hash_generated_method = "730672366B2427216F76C389D81D10B3")
     
 @Override

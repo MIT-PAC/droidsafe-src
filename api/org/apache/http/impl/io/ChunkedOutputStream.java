@@ -135,14 +135,14 @@ public void write(int b) throws IOException {
      * @throws IOException
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.525 -0500", hash_original_method = "3A39FD94F4678FF92F02222292608085", hash_generated_method = "F6C81F6D58C1DBA8A32360C2D4037BF3")
     
 public void write(byte b[]) throws IOException {
         write(b, 0, b.length);
     }
 
-    @DSSink({DSSinkKind.IO})
+    @DSSink({DSSinkKind.NETWORK})
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.527 -0500", hash_original_method = "CCAB33DDE1A6D08280EC0BE0610A6B79", hash_generated_method = "6B6F1E98A57891C1B4D1833806E6B11D")
     

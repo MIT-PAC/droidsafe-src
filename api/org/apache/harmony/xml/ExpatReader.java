@@ -185,6 +185,7 @@ public DTDHandler getDTDHandler() {
         return dtdHandler;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.951 -0500", hash_original_method = "2FAFDB8E70CAAF64BA45E64983BDD69F", hash_generated_method = "FF972C81393A2CCCD97F73AC07A0613C")
     
 public void setContentHandler(ContentHandler handler) {
@@ -272,6 +273,7 @@ public void setNamespaceProcessingEnabled(boolean processNamespaces) {
         this.processNamespaces = processNamespaces;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.971 -0500", hash_original_method = "685D8DAF72E9C67A08F397F1EDD26DDB", hash_generated_method = "03562878558690996037D6B36E02000B")
     
 public void parse(InputSource input) throws IOException, SAXException {
@@ -326,7 +328,7 @@ public void parse(InputSource input) throws IOException, SAXException {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.973 -0500", hash_original_method = "B98792032D9978680A85667A6250DD52", hash_generated_method = "DD60885E010FCC54219AB3188B57FFCC")
     
 private void parse(Reader in, String publicId, String systemId)
@@ -342,7 +344,7 @@ private void parse(Reader in, String publicId, String systemId)
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.975 -0500", hash_original_method = "9D71B5A1B65775D1A1A09DC689E8FD0F", hash_generated_method = "8A306DE9A3ADC13651C9F1F971A3C8EC")
     
 private void parse(InputStream in, String encoding, String publicId,
@@ -391,6 +393,7 @@ private void parse(InputStream in, String encoding, String publicId,
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.978 -0500", hash_original_method = "8AE6DA2951569D3F1B1B45FDE2C61B3C", hash_generated_method = "10CE462B07C3B7D01E1AC1F092312A2E")
     
 public void parse(String systemId) throws IOException, SAXException {

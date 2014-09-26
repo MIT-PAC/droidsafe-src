@@ -115,7 +115,7 @@ public static SQLiteDatabase openDatabase(String path, CursorFactory factory, in
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.144 -0500", hash_original_method = "320878150F5912B8D3148CDF6639FAEA", hash_generated_method = "7A60C4CE5D61D8E31F425BBC36F9236C")
     @DSVerified
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSpec(DSCat.DATABASE)
 private static SQLiteDatabase openDatabase(String path, CursorFactory factory, int flags,
             DatabaseErrorHandler errorHandler, short connectionNum) {
         SQLiteDatabase db = new SQLiteDatabase(path, factory, flags, errorHandler, connectionNum);
@@ -827,6 +827,7 @@ private void checkLockHoldTime() {
      *   }
      * </pre>
      */
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Database access")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.089 -0500", hash_original_method = "36B8D50340D02900F098E44F066CFF12", hash_generated_method = "A6184A05F618D1808B44159CDC4ECD60")
@@ -923,8 +924,9 @@ public void beginTransactionWithListenerNonExclusive(
         beginTransaction(transactionListener, false);
     }
     
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.556 -0400", hash_original_method = "65C15EF02A1263C4153105EBF58851D9", hash_generated_method = "5AE1A42D6C38D809C10759CABD7323C5")
     private void beginTransaction(SQLiteTransactionListener transactionListener,
             boolean exclusive) {

@@ -934,6 +934,7 @@ public abstract void sync() throws BackingStoreException;
      *
      * @return the string representation of this node.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:10.554 -0400", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "756F2EF371660D429BB5FEF72144B300")
     
 @Override

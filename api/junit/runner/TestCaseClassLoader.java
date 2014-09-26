@@ -70,13 +70,15 @@ private void scanPath(String classPath) {
 		}
 	}
 	
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.617 -0500", hash_original_method = "AD2D4B295C951CB6F23A0FC95F789D06", hash_generated_method = "CCA7043CDD381E05A1A692A0E46F6708")
+	@DSSpec(DSCat.SPEC_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.617 -0500", hash_original_method = "AD2D4B295C951CB6F23A0FC95F789D06", hash_generated_method = "CCA7043CDD381E05A1A692A0E46F6708")
 	
 public URL getResource(String name) {
 		return ClassLoader.getSystemResource(name);
 	}
 	
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.619 -0500", hash_original_method = "E25FB0A342865210AC2893507B1969D9", hash_generated_method = "08EA080A9B3C0B9CB163ED25E1A23C6E")
+	@DSSpec(DSCat.SPEC_OTHERS)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.619 -0500", hash_original_method = "E25FB0A342865210AC2893507B1969D9", hash_generated_method = "08EA080A9B3C0B9CB163ED25E1A23C6E")
 	
 public InputStream getResourceAsStream(String name) {
 		return ClassLoader.getSystemResourceAsStream(name);

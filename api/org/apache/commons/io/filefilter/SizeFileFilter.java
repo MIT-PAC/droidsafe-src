@@ -108,6 +108,7 @@ public SizeFileFilter(long size, boolean acceptLarger) {
      *
      * @return a String representaion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.823 -0400", hash_original_method = "9CC552A05DC39BBA2C336B2A0E87E39E", hash_generated_method = "4429D936EF256217F3103D9C077ECE75")
     
 @Override

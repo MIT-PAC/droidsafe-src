@@ -16,7 +16,6 @@ public class Object {
         return 0;
     }
     
-    
     public static final double toTaintFloat(boolean intValue) {
         return 0;
     }
@@ -253,6 +252,7 @@ public boolean equals(Object o) {
      *
      * @return a printable representation of this object.
      */
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.161 -0500", hash_original_method = "7905F5E0624643BB59BB03B2872919E1", hash_generated_method = "2078E1806981FD5222134E2086EC67E9")
@@ -343,9 +343,7 @@ public final void wait(long millis) throws InterruptedException {
 
     @DSSafe(DSCat.SAFE_LIST)
 
-
     @DSComment("From safe class list")
-
 
     /**
      * Causes the calling thread to wait until another thread calls the {@code
@@ -393,7 +391,6 @@ public final void wait(long millis) throws InterruptedException {
     	taintDouble += nanos;
     	addTaint(taintDouble);
     }
-
     
     // orphaned legacy method
     
@@ -485,8 +482,6 @@ public final void wait(long millis) throws InterruptedException {
         //need to access the taint field for pta to create field
         this.taint = getTaint();
     }
-    
-
     
 }
 

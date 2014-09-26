@@ -272,7 +272,7 @@ protected D onLoadInBackground() {
             }
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.493 -0500", hash_original_method = "65A4E8609F3A198276A58E99188CF50D", hash_generated_method = "531BF8F868D2E01906A06FD22AC2753F")
         
 @Override

@@ -29,18 +29,14 @@ import droidsafe.helpers.*;
 public class LineNumberReader extends BufferedReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.580 -0400", hash_original_field = "330B2760AA91CE77EFBAED3976D7655C", hash_generated_field = "09A4698FFE38FA7794A20A1F94A6867E")
 
-
     private int lineNumber;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.582 -0400", hash_original_field = "DBC81950E23E00CD1D8CBF4B88EAECD0", hash_generated_field = "1C916C4658DC40807EB1430C1DBE7CA4")
-
 
     private int markedLineNumber = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.583 -0400", hash_original_field = "E2E2FBCCD5790249C12592969A1D3B9E", hash_generated_field = "A7E171056A69CD25A43C14AA77C5FAE0")
 
-
     private boolean lastWasCR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.584 -0400", hash_original_field = "02CADD283B743740142DBF0425B094F7", hash_generated_field = "3D8255297E22E58585C9CAFB47895B72")
-
 
     private boolean markedLastWasCR;
 
@@ -103,6 +99,7 @@ public int getLineNumber() {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.590 -0400", hash_original_method = "61DB0949DFDA870236B101B4DC594793", hash_generated_method = "747DB9CF27F3672AB4C703CB24C594DD")
     
 @Override
@@ -129,6 +126,8 @@ public int getLineNumber() {
      * @throws IOException
      *             if the reader is closed or another IOException occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.592 -0400", hash_original_method = "BF2DC28E0D85E461273B7FDD43155D52", hash_generated_method = "5933B2440A3A8CD1E077EF37546F71ED")
     
 @SuppressWarnings("fallthrough")
@@ -174,6 +173,8 @@ public int getLineNumber() {
      * @throws IOException
      *             if this reader is closed or another IOException occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.594 -0400", hash_original_method = "FDA77893270A91A814AF5E2C6C2EF118", hash_generated_method = "F844C6E8242F0AF2714CCB69C3E4E85E")
     
 @Override
@@ -212,6 +213,8 @@ public int getLineNumber() {
      * @throws IOException
      *             if this reader is closed or another IOException occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.595 -0400", hash_original_method = "723DEA0966AE094423D220BA4AE4E984", hash_generated_method = "A19854D59D4890C4663C2300BC245912")
     
 @Override
@@ -241,6 +244,7 @@ public int getLineNumber() {
      * @see #mark(int)
      * @see #markSupported()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.597 -0400", hash_original_method = "B59F3780435E1D82A9BC71252DB81041", hash_generated_method = "A33E77749A78F60ECA6DC727ABB6C535")
     
 @Override
@@ -286,6 +290,7 @@ public void setLineNumber(int lineNumber) {
      * @see #read()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.599 -0400", hash_original_method = "7DBB09E24CB2DDA5770D4340DA752505", hash_generated_method = "3BABF2C1E59DC946E4F20C0118F48094")
     
 @Override

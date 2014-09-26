@@ -32,7 +32,6 @@ import java.util.Arrays;
 public class PipedWriter extends Writer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.825 -0400", hash_original_field = "F4667C1A5C3A34CDE0FC1CFCE84A421A", hash_generated_field = "6106E4D838ADECE7E0CE07C6C6BDA9C6")
 
-
     private PipedReader destination;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.826 -0400", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
 
@@ -74,6 +73,7 @@ public PipedWriter(PipedReader destination) throws IOException {
      * @throws IOException
      *             if an error occurs while closing this writer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.830 -0400", hash_original_method = "EA9FB10088BB3AE60C92B6639C401766", hash_generated_method = "F4BE8A4B2C9F3FF766131D16A0B24C86")
     
 @Override
@@ -119,6 +119,7 @@ public void connect(PipedReader reader) throws IOException {
      * @throws IOException
      *             if an I/O error occurs while flushing this writer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.833 -0400", hash_original_method = "B1EF10C5BF228CD46C095797CFF94D68", hash_generated_method = "C37B4B786003030C7830A0338AC55E09")
     
 @Override
@@ -167,6 +168,8 @@ public void connect(PipedReader reader) throws IOException {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.834 -0400", hash_original_method = "65D0C1FB85C32C2C64DB52F42F1CAC1F", hash_generated_method = "717EF9FD56283C2BB087C167DA0A5024")
     
 @Override
@@ -198,6 +201,8 @@ public void connect(PipedReader reader) throws IOException {
      *             reader is no longer alive. This case is currently not handled
      *             correctly.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.837 -0400", hash_original_method = "8A6D899560577A82609A2E072438CED2", hash_generated_method = "C47589E396BFEFD568FD26B37C4CFF74")
     
 @Override

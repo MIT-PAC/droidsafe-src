@@ -34,7 +34,6 @@ import android.widget.LinearLayout;
 public class LinearLayoutICS extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.806 -0400", hash_original_field = "21A2B4E635B02DE3A8DFECE4AA9F6A02", hash_generated_field = "001A474F66D5883929C126962A9BC4F7")
 
-
     private static final int SHOW_DIVIDER_NONE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.808 -0400", hash_original_field = "83900B28DFF569B2150EC91C47B4702D", hash_generated_field = "9B141D2F4D77BCBAE93F2F8C47CC7206")
 
@@ -46,7 +45,6 @@ public class LinearLayoutICS extends LinearLayout {
 
     private static final int SHOW_DIVIDER_END = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.815 -0400", hash_original_field = "3837E71D24376BABDBC6EE7CD182AABB", hash_generated_field = "D73292FD603C307DCBB538076F31C80F")
-
 
     private  Drawable mDivider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.818 -0400", hash_original_field = "597BC3499B057C8706FE3F8982F46EF2", hash_generated_field = "5BCE586F78F70C393B0BFF3471A83208")
@@ -88,6 +86,7 @@ public int getSupportDividerWidth() {
         return mDividerWidth;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.831 -0400", hash_original_method = "42F4973FEEAA63E467AEC6AF3F58C9D1", hash_generated_method = "4BD4D143F356B15B9808336977402B25")
     
 @Override

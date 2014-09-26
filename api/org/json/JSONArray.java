@@ -633,7 +633,8 @@ public String join(String separator) throws JSONException {
      * @param indentSpaces the number of spaces to indent for each level of
      *     nesting.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.JSON})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.213 -0500", hash_original_method = "161CBAA0F7E505CC65BF62A9F4C8490E", hash_generated_method = "89736320EFA9E85B06F0454670E154AA")
     
 public String toString(int indentSpaces) throws JSONException {

@@ -1097,6 +1097,7 @@ private void appendValue(
      * @param reverse if true start at the end of the sequence and work back.
      * @param oidSymbols look up table strings for oids.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.975 -0500", hash_original_method = "656BABE23C68D82FE6D3AB319F560E81", hash_generated_method = "AD96BCE3B23DB4C0476167B5645576D5")
     
 public String toString(

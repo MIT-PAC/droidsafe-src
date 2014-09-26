@@ -96,6 +96,7 @@ public interface IMessenger extends android.os.IInterface
                 }
             }
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.176 -0500", hash_original_method = "59DE1A9210D9695DF72D5AC771ACC7B0", hash_generated_method = "9F628AD840C4E373B79B08F385B9259C")
         
         @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException

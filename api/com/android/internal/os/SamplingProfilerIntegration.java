@@ -78,7 +78,8 @@ public static void writeSnapshot(final String processName, final PackageInfo pac
          */
         if (pending.compareAndSet(false, true)) {
             snapshotWriter.execute(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     try {
                         writeSnapshotFile(processName, packageInfo);
                     } finally {

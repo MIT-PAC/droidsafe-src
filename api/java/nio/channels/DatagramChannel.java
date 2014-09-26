@@ -64,7 +64,7 @@ protected DatagramChannel(SelectorProvider selectorProvider) {
      * @return the related DatagramSocket instance.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.929 -0500", hash_original_method = "2C680381B2A0B364EA275FD0233249E2", hash_generated_method = "7C0A48313FA8CEA7B17B7E452A98F7DE")
     
 public abstract DatagramSocket socket();
@@ -168,8 +168,9 @@ public abstract DatagramChannel disconnect() throws IOException;
      * @throws IOException
      *             some other I/O error occurs.
      */
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.939 -0500", hash_original_method = "B41EF45D98E15F133EA4E8FF99F0E4E8", hash_generated_method = "BAEA6C7BCEB17A7C3D9E4EBF76E62D5D")
     
 public abstract SocketAddress receive(ByteBuffer target) throws IOException;
@@ -210,8 +211,9 @@ public abstract SocketAddress receive(ByteBuffer target) throws IOException;
      * @throws IOException
      *             some other I/O error occurs.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.941 -0500", hash_original_method = "E3E32B28E031752D65B6134794224EFD", hash_generated_method = "918195DEDBE3EE1A477A192CDBF1BF97")
     
 public abstract int send(ByteBuffer source, SocketAddress address) throws IOException;
@@ -245,7 +247,7 @@ public abstract int send(ByteBuffer source, SocketAddress address) throws IOExce
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.943 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
@@ -290,8 +292,9 @@ public abstract int read(ByteBuffer target) throws IOException;
      * @throws IOException
      *             some other I/O error occurs.
      */
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.946 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
     
 public abstract long read(ByteBuffer[] targets, int offset, int length)
@@ -326,7 +329,8 @@ public abstract long read(ByteBuffer[] targets, int offset, int length)
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.949 -0500", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "ED00F097F990FA72EFB9F785613CC911")
     
 public synchronized final long read(ByteBuffer[] targets)
@@ -360,9 +364,9 @@ public synchronized final long read(ByteBuffer[] targets)
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSink({DSSinkKind.IO})
+    @DSSink({DSSinkKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.IO)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.951 -0500", hash_original_method = "1C9E91C0F072B678D6E4CA1EF7282EDC", hash_generated_method = "CBB72B52B431F1EA5E7EE6413675146F")
     
 public abstract int write(ByteBuffer source) throws IOException;
@@ -405,8 +409,9 @@ public abstract int write(ByteBuffer source) throws IOException;
      * @throws IOException
      *             some other I/O error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.954 -0500", hash_original_method = "0318A187146637F0F5913A32559EC3D8", hash_generated_method = "57D37CA3F87B9F42073B88D7CA95CEF6")
     
 public abstract long write(ByteBuffer[] sources, int offset, int length)
@@ -441,7 +446,8 @@ public abstract long write(ByteBuffer[] sources, int offset, int length)
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.956 -0500", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "80AEBA66643B1ECF4D7AF6ADCD7A806E")
     
 public synchronized final long write(ByteBuffer[] sources)

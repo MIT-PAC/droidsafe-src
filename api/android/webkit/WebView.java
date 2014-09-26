@@ -1474,7 +1474,8 @@ private void setupPackageListener(Context context) {
             }
 
             // Executes on the UI thread
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             protected void onPostExecute(Set<String> installedPackages) {
                 if (mWebViewCore != null) {
                     mWebViewCore.sendMessage(EventHub.ADD_PACKAGE_NAMES, installedPackages);
@@ -1615,7 +1616,7 @@ private boolean isScrollableForAccessibility() {
     }
 
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.446 -0500", hash_original_method = "54B3F9F93CD715ABE05B0EE7E2D97801", hash_generated_method = "A9A3F5834D6532D7E3329353C7A555B3")
     
 @Override
@@ -2164,7 +2165,8 @@ public WebBackForwardList saveState(Bundle outState) {
         // contains valid data.
         final File temp = new File(dest.getPath() + ".writing");
         new Thread(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 FileOutputStream out = null;
                 try {
                     out = new FileOutputStream(temp);
@@ -2240,14 +2242,16 @@ private void restoreHistoryPictureFields(Picture p, Bundle b) {
             final FileInputStream in = new FileInputStream(src);
             final Bundle copy = new Bundle(b);
             new Thread(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     try {
                         final Picture p = Picture.createFromStream(in);
                         if (p != null) {
                             // Post a runnable on the main thread to update the
                             // history picture fields.
                             mPrivateHandler.post(new Runnable() {
-                                public void run() {
+                                @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                                     restoreHistoryPictureFields(p, copy);
                                 }
                             });
@@ -4784,7 +4788,8 @@ public WebSettings getSettings() {
         try {
             if (mNativeClass != 0) {
                 mPrivateHandler.post(new Runnable() {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+        @Override
                     public void run() {
                         destroy();
                     }
@@ -4863,6 +4868,7 @@ private void drawOverScrollBackground(Canvas canvas) {
         canvas.clipRect(0, top, right, bottom);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.956 -0500", hash_original_method = "2571802D3B47DE5AF167AF15E2038D31", hash_generated_method = "F8B8E04E5963F305767F2FAC231B3231")
     
 @Override
@@ -5068,6 +5074,7 @@ boolean selectText(int x, int y) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.972 -0500", hash_original_method = "279BA211E48B838241155C78A3D48F21", hash_generated_method = "F15DF8D8A1DAE432E57D2C2558C85553")
     
 @Override
@@ -5806,6 +5813,7 @@ private boolean isEnterActionKey(int keyCode) {
                 || keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.108 -0500", hash_original_method = "C4CB11A0D6E4EE15235D7023465A85CF", hash_generated_method = "C2DDDDFFB4F8C77D4EB072F25282AE65")
     
 @Override
@@ -6332,6 +6340,7 @@ String getSelection() {
         return nativeGetSelection();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.133 -0500", hash_original_method = "0F7A2D956AFF32B8C983C9EE90417286", hash_generated_method = "5F8FF49238949244D6972B9F61BEF82D")
     
 @Override
@@ -6353,6 +6362,7 @@ String getSelection() {
         mTouchEventQueue.reset();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.135 -0500", hash_original_method = "6AF9BAC713EAF420417C9DD3E95BAD84", hash_generated_method = "8CB4B504026DA5C0D66E79B844E6B39F")
     
 @Override
@@ -6376,6 +6386,7 @@ String getSelection() {
         super.onDetachedFromWindow();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.138 -0500", hash_original_method = "371011809B792FC8D4394C397E7E010A", hash_generated_method = "643A3BCC50BD9448DC4DD2DC2C928374")
     
 @Override
@@ -6585,6 +6596,7 @@ void setGLRectViewport() {
         return changed;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.162 -0500", hash_original_method = "CF3FF8B5BD5D2F01947052917B339811", hash_generated_method = "0D8D40D76437DD89C41CE59164FFF87B")
     
 @Override
@@ -6885,7 +6897,8 @@ private boolean handleTouchEventCommon(MotionEvent ev, int action, int x, int y)
                                 mTouchHighlightX = (int) x + mScrollX;
                                 mTouchHighlightY = (int) y + mScrollY;
                                 mPrivateHandler.postDelayed(new Runnable() {
-                                    public void run() {
+                                    @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                                         mTouchHighlightX = mTouchHighlightY = 0;
                                         invalidate();
                                     }
@@ -7654,6 +7667,7 @@ void resetTrackballTime() {
         mTrackballLastTime = 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.324 -0500", hash_original_method = "09EA1A78F8275AF35981C9BD94B08432", hash_generated_method = "409B199A4C56A037843D6EB7A9DC4555")
     
 @Override
@@ -8845,7 +8859,7 @@ public RequestFormData(String name, String url, Message msg,
             mWebSettings = getSettings();
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.081 -0500", hash_original_method = "DC6B246047C951370A98CE14CBC8CC44", hash_generated_method = "283587215503832F5607F81DAF7B5DA0")
         
 public void run() {
@@ -9953,7 +9967,7 @@ private InvokeListBox(String[] array, int[] enabled, int selection) {
             }
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.626 -0500", hash_original_method = "CCFADA0468DA91B20D0D6A2BBC10B3D9", hash_generated_method = "81640B52256D38FF136FE224AACC2881")
         
 public void run() {
@@ -10071,6 +10085,7 @@ public MyArrayListAdapter() {
                         mContainers);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.574 -0500", hash_original_method = "118F3A9AABBB86291F17A77CAC96C3E2", hash_generated_method = "078E31C6FF9D729395668829E7CDBF90")
             
 @Override
@@ -10120,6 +10135,7 @@ public MyArrayListAdapter() {
                 return convertView;
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.576 -0500", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "EC7B3A567763A10159361DA50951B936")
             
 @Override
@@ -10139,6 +10155,8 @@ private Container item(int position) {
                 return (Container) getItem(position);
             }
 
+            @DSSource({DSSourceKind.DATABASE})
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.582 -0500", hash_original_method = "71138EED54E53D23C3276CE2823C27F9", hash_generated_method = "0B8B70CAFDD17C90A567DAF0D4FB0AA8")
             
 @Override
@@ -10842,7 +10860,7 @@ private boolean accessibilityScriptInjected() {
      */
     @DSComment("not sensitive")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.664 -0500", hash_original_method = "7544C03241648A3354186187AA9F4EF5", hash_generated_method = "C525087A89B637AE8141ADDBFDBC0EDC")
     
 @Override

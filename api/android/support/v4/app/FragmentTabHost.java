@@ -127,7 +127,7 @@ public DummyTabFactory(Context context) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:27.311 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
@@ -159,6 +159,7 @@ private SavedState(Parcel in) {
             curTab = in.readString();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.578 -0500", hash_original_method = "176F8DA37A35989F2146E2AD430FEF82", hash_generated_method = "1D5CC3A112040C968DC44BE970951CBD")
         
 @Override
@@ -167,6 +168,7 @@ private SavedState(Parcel in) {
             out.writeString(curTab);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.579 -0500", hash_original_method = "60AEE9C632C71CE84A075D97F6C8EE8D", hash_generated_method = "46B0017B0C01F79E4DF35180BDE70C47")
         
 @Override
@@ -211,6 +213,7 @@ private void initFragmentTabHost(Context context, AttributeSet attrs) {
      * call {@link #setup(Context, FragmentManager)} or
      * {@link #setup(Context, FragmentManager, int)}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.597 -0500", hash_original_method = "05C9957A4DCEFF7C41A9BE35BEB9A8D6", hash_generated_method = "47F51515FB37C21137DDBEA7BAA305DA")
     
 @Override @Deprecated
@@ -219,6 +222,7 @@ private void initFragmentTabHost(Context context, AttributeSet attrs) {
                 "Must call setup() that takes a Context and FragmentManager");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:59.802 -0400", hash_original_method = "81FE6D6769B739C559094EA484A06D90", hash_generated_method = "610B5F32383ADC8D108D62E8A4FB077A")
     
 public void setup(Context context, FragmentManager manager) {
@@ -229,6 +233,7 @@ public void setup(Context context, FragmentManager manager) {
         ensureContent();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:59.810 -0400", hash_original_method = "758E245805C4A0BE959EEEA763458119", hash_generated_method = "D82144A51E618EDA341B1E84264E296F")
     
 public void setup(Context context, FragmentManager manager, int containerId) {
@@ -271,6 +276,7 @@ private void ensureContent() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.608 -0500", hash_original_method = "B272F2CD0D376DB45BFCD5A09F6A3201", hash_generated_method = "E66CEE54B1F0C4E663440E99701D8473")
     
 public void addTab(TabHost.TabSpec tabSpec, Class<?> clss, Bundle args) {
@@ -295,6 +301,7 @@ public void addTab(TabHost.TabSpec tabSpec, Class<?> clss, Bundle args) {
         addTab(tabSpec);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.611 -0500", hash_original_method = "BB44C588C184374268714C6329B57A58", hash_generated_method = "81E8F6D9EBE28C65A965AC65DC6CBB29")
     
 @Override
@@ -336,6 +343,7 @@ public void addTab(TabHost.TabSpec tabSpec, Class<?> clss, Bundle args) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.613 -0500", hash_original_method = "BB933237265996C32F40DAFA02CC0974", hash_generated_method = "3B9B1A6033CAEB32D2469255F165433C")
     
 @Override
@@ -344,6 +352,7 @@ public void addTab(TabHost.TabSpec tabSpec, Class<?> clss, Bundle args) {
         mAttached = false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.614 -0500", hash_original_method = "BC9DBC504CA8982190C3F187F9B9C6DC", hash_generated_method = "EE8C298E76C3579F41F8211E36B92A81")
     
 @Override
@@ -354,6 +363,7 @@ public void addTab(TabHost.TabSpec tabSpec, Class<?> clss, Bundle args) {
         return ss;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.616 -0500", hash_original_method = "B613B42AC24307866CE220AE6075D90A", hash_generated_method = "399DDC6E8789E47F174B69AC4F753D9E")
     
 @Override
@@ -415,8 +425,6 @@ private FragmentTransaction doTabChanged(String tabId, FragmentTransaction ft) {
         }
         return ft;
     }
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:59.794 -0400", hash_original_method = "C4F0733BBEF37CFAC4D5F85831503571", hash_generated_method = "D8606A52E3FE9B6C40B1EFCD16633A6B")
     

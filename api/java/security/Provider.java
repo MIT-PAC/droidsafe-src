@@ -145,7 +145,7 @@ public String getInfo() {
      * @return a printable representation for this {@code Provider}.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.547 -0500", hash_original_method = "58EC0A1A07497E3FA377B5366380E5E3", hash_generated_method = "2E9E37CD5E99D8AC5B8D1686DFC4A9EA")
     
 @Override
@@ -184,6 +184,7 @@ public String getInfo() {
         servicesChanged();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.554 -0500", hash_original_method = "EB6BD048CAF9E12CFD99EC1891725291", hash_generated_method = "8F1CFFC62F53EFB7244D82A848DDDBDF")
     
 @Override
@@ -238,7 +239,7 @@ private void myPutAll(Map<?,?> t) {
     }
 
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.562 -0500", hash_original_method = "70D9A28808783B7E2708BCE915ECB209", hash_generated_method = "00AC6EA0A2E9E856DCBCB219E7BA4E7A")
     
 @Override
@@ -247,7 +248,7 @@ private void myPutAll(Map<?,?> t) {
     }
 
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.565 -0500", hash_original_method = "45BA03BABBCEC97C3CDEDDFAAD34C546", hash_generated_method = "78AAE48FC6E3F7D30B2CB0FBCF935512")
     
 @Override
@@ -256,7 +257,7 @@ private void myPutAll(Map<?,?> t) {
     }
 
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.567 -0500", hash_original_method = "4FF8F6E11AAD8FB860F173913A5840CE", hash_generated_method = "DD2756C9DCC3289C75E65E3EF0924EDF")
     
 @Override

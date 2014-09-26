@@ -162,7 +162,7 @@ public void write(char[] buffer) throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            output.
      ***/
-    @DSSink({DSSinkKind.IO})
+    @DSSink({DSSinkKind.NETWORK})
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.963 -0500", hash_original_method = "222E87E258845BFD571D8B5E946AF980", hash_generated_method = "ECA3BB9D25CCF5656E5278F6B4A24661")
     

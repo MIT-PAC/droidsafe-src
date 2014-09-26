@@ -572,7 +572,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSSink({DSSinkKind.NFC})
+@DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.654 -0500", hash_original_method = "08DD9852BED4609CDF9A0EDAFEDBBB9E", hash_generated_method = "DF4751ABD70A7BDF2A8434109062D4AD")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException

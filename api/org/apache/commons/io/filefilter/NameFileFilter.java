@@ -192,6 +192,7 @@ public NameFileFilter(List<String> names, IOCase caseSensitivity) {
      *
      * @return a String representaion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.606 -0400", hash_original_method = "2C08B488ADA93371BD5A437FB37025E7", hash_generated_method = "001056193AB0073F4DF26C03227633D7")
     
 @Override

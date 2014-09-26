@@ -330,7 +330,8 @@ public boolean isMeasureWithLargestChildEnabled() {
         mUseLargestChild = enabled;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.913 -0500", hash_original_method = "8677A7AE77B37457B2CE24BC40A0B2AA", hash_generated_method = "5FF2804CC39F25A1046DE4EB2474B683")
     
 @Override

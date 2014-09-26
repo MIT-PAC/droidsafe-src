@@ -37,18 +37,14 @@ import android.util.Log;
 public final class PrintJob {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.506 -0400", hash_original_field = "5A4C70994AD2EBD0F20C6C2643EFEB80", hash_generated_field = "D12106B4BE189AEBA340A4E0D1BAAC64")
 
-
     private static final String LOG_TAG = "PrintJob";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.507 -0400", hash_original_field = "A52A98A1947BB78D504A417FBBA83B44", hash_generated_field = "909B435CFC9A1FF432407D21F910719A")
-
 
     private  IPrintServiceClient mPrintServiceClient;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.508 -0400", hash_original_field = "BDC75889B9B9181E985C3967DEB379EA", hash_generated_field = "23F05551BAF21978C310E0F95B3E949F")
 
-
     private  PrintDocument mDocument;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.509 -0400", hash_original_field = "9A7556BFCCDF66660C9DC5385D5C4CF5", hash_generated_field = "93917749A38A402C6FF2A16D50AACDAC")
-
 
     private PrintJobInfo mCachedInfo;
 
@@ -415,6 +411,7 @@ public int getAdvancedIntOption(String key) {
         return (mCachedInfo.getId().equals(other.mCachedInfo.getId()));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.530 -0400", hash_original_method = "F8138E925779B447F857FF6B6AABBBC0", hash_generated_method = "14442763C7CFA1A1ACBBEE3A43387F6A")
     
 @Override

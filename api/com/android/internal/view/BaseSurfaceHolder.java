@@ -197,6 +197,7 @@ public void setFormat(int format) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.924 -0500", hash_original_method = "EAFF612A3F1F2919ED355687F3DB192A", hash_generated_method = "CE5FF7DDCEF30980A1FD3B2BBC98DF5F")
     
 public void setType(int type) {

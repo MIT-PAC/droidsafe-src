@@ -35,7 +35,7 @@ public GaiException(String functionName, int error, Throwable cause) {
      * this if they need it.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.505 -0500", hash_original_method = "6B923BF9D17AE00E606BE15037C1D30D", hash_generated_method = "A242F936DA6CF917011C6A1A869A0BDF")
     
 @Override public String getMessage() {

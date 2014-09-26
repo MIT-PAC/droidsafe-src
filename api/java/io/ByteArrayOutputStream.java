@@ -157,6 +157,7 @@ public synchronized byte[] toByteArray() {
      *         to {@code hibyte}.
      * @deprecated Use {@link #toString()}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.353 -0500", hash_original_method = "3E105C3C1F43529FE32D861B80701B8D", hash_generated_method = "C6CFEEA61A0DCD6BB1F2236DA0668836")
     
 @Deprecated

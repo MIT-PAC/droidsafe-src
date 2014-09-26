@@ -918,6 +918,7 @@ public static boolean disjoint(Collection<?> c1, Collection<?> c2) {
 
     private static final Iterator<?> EMPTY_ITERATOR = new Iterator<Object>() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.457 -0400", hash_original_method = "28E75D14A5D2234D3702D9638A8D3094", hash_generated_method = "B2F402CD4B1F330E1194A5FAF66FE3C9")
         @Override
         public boolean hasNext() {
@@ -926,6 +927,7 @@ public static boolean disjoint(Collection<?> c1, Collection<?> c2) {
             
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "243C3D15209D9BF28572CB29FC9F3DF7", hash_generated_method = "3613EA17897DB540D203CDF04CC84004")
         @Override
         public Object next() {
@@ -933,6 +935,7 @@ public static boolean disjoint(Collection<?> c1, Collection<?> c2) {
             
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "45CE80048748F3BC523226127E4746F5", hash_generated_method = "FC031BE6A6E094CAC267938D912798A0")
         @Override
         public void remove() {
@@ -983,7 +986,7 @@ CopiesList(int length, E object) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.806 -0500", hash_original_method = "857A70B35DA7146CF7ADC484EC4AABC8", hash_generated_method = "479F877B0ABD29E428BD444AFA701F75")
         
 @Override public E get(int location) {
@@ -1023,7 +1026,7 @@ CopiesList(int length, E object) {
         }
 
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.819 -0500", hash_original_method = "F59F44D1664BC2EE59D5A9B30D144285", hash_generated_method = "6E068D6033E2420F6FF38CC2D9FCD252")
         
 @Override public Object get(int location) {
@@ -1119,7 +1122,7 @@ private Object readResolve() {
         }
 
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.855 -0500", hash_original_method = "59A1188DDD48CFFB749850DC2DA09C1D", hash_generated_method = "570E7ABE6D948578647E0FFAB87A1F36")
         
 @Override public Object get(Object key) {
@@ -1343,7 +1346,7 @@ SingletonList(E object) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.952 -0500", hash_original_method = "1C6E7D1EB082158D5E00EA29E883A612", hash_generated_method = "265E1E0AA2C90FA02DBC1C66E1F2328A")
         
 @Override public E get(int location) {
@@ -1400,7 +1403,7 @@ SingletonMap(K key, V value) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.977 -0500", hash_original_method = "8C587096F5E6029DBB187C58CF22D158", hash_generated_method = "29AFCEA63D7956479E67380AE46882D5")
         
 @Override public V get(Object key) {
@@ -1466,7 +1469,8 @@ Iterator<Map.Entry<K, V>> var72555FFA480563A744615CB3042A10C3_693483736 =       
                             return hasNext;
                         }
 
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.002 -0500", hash_original_method = "E80284659713283C8723ACEF8D2E3A9E", hash_generated_method = "76FE30C60F409FCDA460F5CF84EA4675")
+                        @DSSafe(DSCat.SAFE_LIST)
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.002 -0500", hash_original_method = "E80284659713283C8723ACEF8D2E3A9E", hash_generated_method = "76FE30C60F409FCDA460F5CF84EA4675")
                         
 @Override public Map.Entry<K, V> next() {
                             if (!hasNext) {
@@ -1805,7 +1809,7 @@ SynchronizedList(List<E> l, Object mutex) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.111 -0500", hash_original_method = "5B64BB89A58DED71DBA9907C06BC2CBB", hash_generated_method = "58A747A9DBAF35C7C2B775792AB429D5")
         
 @Override public E get(int location) {
@@ -1912,7 +1916,7 @@ SynchronizedList(List<E> l, Object mutex) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.131 -0500", hash_original_method = "D9730991663FB8C206D80781B7E02750", hash_generated_method = "F8D877BF206629AEF738AF4CD20A042F")
         
 @Override public E set(int location, E object) {
@@ -2048,7 +2052,7 @@ SynchronizedMap(Map<K, V> map, Object mutex) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.172 -0500", hash_original_method = "80DF7D6FED6980DF61457325CD64503D", hash_generated_method = "50815093A04A580D31E8858D3FC6BAC6")
         
 @Override public V get(Object key) {
@@ -2089,7 +2093,7 @@ SynchronizedMap(Map<K, V> map, Object mutex) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.183 -0500", hash_original_method = "4BBBC2EF3E646AB7C0C1BFCAE8571FAF", hash_generated_method = "2834B9F60F50527FDA0558DE796BF617")
         
 @Override public V put(K key, V value) {
@@ -2670,7 +2674,7 @@ UnmodifiableList(List<E> l) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.383 -0500", hash_original_method = "DFB24286AA0C5C6BF58031CA4ED7CDCB", hash_generated_method = "1C2B1EC2CEC6DEB1BF019184469848C5")
         
 @Override public E get(int location) {
@@ -2807,7 +2811,7 @@ ListIterator<E> var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926 =             new L
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.433 -0500", hash_original_method = "8830E2F07CC294339D5D496574BCFA5E", hash_generated_method = "8291D01CC6A59A73201902EAF8AA4D02")
         
 @Override public E set(int location, E object) {
@@ -2907,7 +2911,7 @@ UnmodifiableMap(Map<K, V> map) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.537 -0500", hash_original_method = "B8FE254B61C57EC3A6DCE539976DA268", hash_generated_method = "AE77720B4866A0DA3BC89EC52150A652")
         
 @Override public V get(Object key) {
@@ -3009,7 +3013,8 @@ Iterator<Map.Entry<K, V>> var95D309287220EAC9AA0261E09FAD4D41_1872266644 =      
                         return iterator.hasNext();
                     }
 
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.503 -0500", hash_original_method = "EEF2AC3DD179F17AE4AC144ABD5D488C", hash_generated_method = "65DB66ADC95262344EB384FF8E0E470B")
+                    @DSSafe(DSCat.SAFE_LIST)
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.503 -0500", hash_original_method = "EEF2AC3DD179F17AE4AC144ABD5D488C", hash_generated_method = "65DB66ADC95262344EB384FF8E0E470B")
                     
 @Override public Map.Entry<K, V> next() {
                         return new UnmodifiableMapEntry<K, V>(iterator.next());
@@ -3075,7 +3080,7 @@ UnmodifiableMapEntry(Map.Entry<K, V> entry) {
 
                 @DSComment("From safe class list")
                 @DSSafe(DSCat.SAFE_LIST)
-                @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.475 -0500", hash_original_method = "4DDB57034C15C2636BC5A8AFB2B3C75A", hash_generated_method = "225457706CF0CB433F1F801AF96865CE")
                 
 @Override public K getKey() {
@@ -3101,7 +3106,7 @@ UnmodifiableMapEntry(Map.Entry<K, V> entry) {
 
                 @DSComment("From safe class list")
                 @DSSafe(DSCat.SAFE_LIST)
-                @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.486 -0500", hash_original_method = "3526712C126765AF36CB8D920CBD3B1B", hash_generated_method = "1A70B5EC05C2DF7DBCDADBB5D8559CD6")
                 
 @Override public V setValue(V object) {
@@ -3369,7 +3374,7 @@ SetFromMap(final Map<E, Boolean> map) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.803 -0500", hash_original_method = "FC84A6CABB16433CF1488E03DF7636C8", hash_generated_method = "8DDDA451C4CCCFEA8D0F2746F31A2BBB")
         
 @Override public boolean add(E object) {
@@ -3874,7 +3879,7 @@ public CheckedListIterator(ListIterator<E> i, Class<E> type) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.979 -0500", hash_original_method = "F06067E5C50A33BA33028ACBB7E94E5C", hash_generated_method = "43CADCC7D4B2D49DCBA57BFB83FA1235")
         
 @Override public void set(E obj) {
@@ -3921,7 +3926,7 @@ public CheckedList(List<E> l, Class<E> type) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.999 -0500", hash_original_method = "12BB9FAB0B921E0E98205977740A217D", hash_generated_method = "0020BDB86965DE10A3879CEF40A14187")
         
 @Override public E get(int index) {
@@ -3930,7 +3935,7 @@ public CheckedList(List<E> l, Class<E> type) {
 
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.002 -0500", hash_original_method = "B15A1B3ABEAB19644273A7FDAFDFF4C3", hash_generated_method = "1D3F1C6A064289EB39E10C16A4F32349")
         
 @Override public E set(int index, E obj) {
@@ -4104,7 +4109,7 @@ private CheckedMap(Map<K, V> m, Class<K> keyType, Class<V> valueType) {
         }
 
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.077 -0500", hash_original_method = "B8FE254B61C57EC3A6DCE539976DA268", hash_generated_method = "AE77720B4866A0DA3BC89EC52150A652")
         
 @Override public V get(Object key) {
@@ -4112,7 +4117,7 @@ private CheckedMap(Map<K, V> m, Class<K> keyType, Class<V> valueType) {
         }
 
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.080 -0500", hash_original_method = "98010DFF1DD51631676FCAC604C1B694", hash_generated_method = "3041DFD14364761680A5739E13C9123D")
         
 @Override public V put(K key, V value) {
@@ -4210,7 +4215,7 @@ public CheckedEntry(Map.Entry<K, V> e, Class<V> valueType) {
             }
 
             @DSSafe(DSCat.SAFE_OTHERS)
-            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.117 -0500", hash_original_method = "10D87C621F2656D3DA7DCE234A4C3FAC", hash_generated_method = "8702435EE7714DABAA0C679E20A72854")
             
 @Override public K getKey() {
@@ -4225,7 +4230,8 @@ public CheckedEntry(Map.Entry<K, V> e, Class<V> valueType) {
                 return e.getValue();
             }
 
-            @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSSafe(DSCat.SAFE_LIST)
+            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.123 -0500", hash_original_method = "22C63BC622BE9DF4D2BED624BDB5B6B5", hash_generated_method = "12D804BAA825C981C93D02C83F7B5DE8")
             
 @Override public V setValue(V obj) {
@@ -4323,12 +4329,14 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
                 //return array;
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.151 -0500", hash_original_method = "C32F0C36534158E273107417143214BD", hash_generated_method = "F024F38C510D709739F000524BA92626")
             
 @Override public boolean retainAll(Collection<?> c) {
                 return s.retainAll(c);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.154 -0500", hash_original_method = "B2624C46EA911C8D7CBCD3DB1975A601", hash_generated_method = "BF73FF5DE3F2961064ABB957264B1B87")
             
 @Override public boolean removeAll(Collection<?> c) {
@@ -4349,6 +4357,7 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
                 throw new UnsupportedOperationException();
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.163 -0500", hash_original_method = "46F35AD7CAD80E45E374449F130E7D0D", hash_generated_method = "27C8B33A4C31BEED55B710CF0DE62760")
             
 @Override public boolean remove(Object o) {
@@ -4362,6 +4371,7 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
                 return s.contains(o);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.168 -0500", hash_original_method = "8704A9C8AC3AA02909B00E4E211C4D3E", hash_generated_method = "042E6CCFDC02E8C4B9412565833D805F")
             
 @Override public boolean add(Map.Entry<K, V> o) {
@@ -4375,6 +4385,7 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
                 return s.isEmpty();
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.175 -0500", hash_original_method = "3294D1F2516BD356F42ED84BE178EFCB", hash_generated_method = "07801EF9BEB82B5F0B6E413AB3671AAE")
             
 @Override public void clear() {
@@ -4418,7 +4429,7 @@ public CheckedEntryIterator(Iterator<Map.Entry<K, V>> i,
                     this.valueType = valueType;
                 }
 
-                @DSSafe(DSCat.DATA_STRUCTURE)
+                @DSSafe(DSCat.SAFE_LIST)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.196 -0500", hash_original_method = "59CA86A80410B66286C92523CF35EC7B", hash_generated_method = "82213A18EE2FEB4524B4369446BD59ED")
                 
 @Override public boolean hasNext() {
@@ -4432,7 +4443,7 @@ public CheckedEntryIterator(Iterator<Map.Entry<K, V>> i,
                     i.remove();
                 }
 
-                @DSSafe(DSCat.DATA_STRUCTURE)
+                @DSSafe(DSCat.SAFE_LIST)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.202 -0500", hash_original_method = "4D16E0BB01C90351B8312D1A4B7DB5F2", hash_generated_method = "145EAC9B4DF96BF0FB4455F1399D27BE")
                 
 @Override public Map.Entry<K, V> next() {
@@ -4466,12 +4477,14 @@ public CheckedSortedSet(SortedSet<E> s, Class<E> type) {
             this.ss = s;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.223 -0500", hash_original_method = "8514D9255D678B041F55D03BA11DCA3B", hash_generated_method = "7AE608335008C8F0AE22D2C4E87EC483")
         
 @Override public Comparator<? super E> comparator() {
             return ss.comparator();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.225 -0500", hash_original_method = "82539AB1166DFBB28D0E3DC3D0A43121", hash_generated_method = "88772ED78B42DC2704716B1FDDC31CAB")
         
 @Override public SortedSet<E> subSet(E fromElement, E toElement) {
@@ -4479,24 +4492,28 @@ public CheckedSortedSet(SortedSet<E> s, Class<E> type) {
                     type);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.228 -0500", hash_original_method = "68D546866615C37E07B8E968E3813E84", hash_generated_method = "BAA4CA5391B8D36810397B0B53E1F75B")
         
 @Override public SortedSet<E> headSet(E toElement) {
             return new CheckedSortedSet<E>(ss.headSet(toElement), type);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.231 -0500", hash_original_method = "B0B4B667BF95B9D9A3CD3F7FE8BEFA1B", hash_generated_method = "2C0D1A5CD674299C31BDD9F209F83805")
         
 @Override public SortedSet<E> tailSet(E fromElement) {
             return new CheckedSortedSet<E>(ss.tailSet(fromElement), type);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.234 -0500", hash_original_method = "6BB6C51843B41CC0DCB5509A79DBA008", hash_generated_method = "39E359A6FD46DB625C903A0B5CF6E58D")
         
 @Override public E first() {
             return ss.first();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.237 -0500", hash_original_method = "AAC5DDE787ACA85752B94AAB77F6B0F8", hash_generated_method = "0D012D3DE517FECBD05E17E6247BD674")
         
 @Override public E last() {
@@ -4519,36 +4536,42 @@ CheckedSortedMap(SortedMap<K, V> m, Class<K> keyType, Class<V> valueType) {
             this.sm = m;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.250 -0500", hash_original_method = "E5FDBCC6560BE7E99B2D2F850BD84149", hash_generated_method = "000D4A42069E78E62B5823AD0E3661B0")
         
 @Override public Comparator<? super K> comparator() {
             return sm.comparator();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.252 -0500", hash_original_method = "65DE11E398BB209CD2689071C041161A", hash_generated_method = "EB77A757D8766D8F2E756EAC2C8D7A1F")
         
 @Override public SortedMap<K, V> subMap(K fromKey, K toKey) {
             return new CheckedSortedMap<K, V>(sm.subMap(fromKey, toKey), keyType, valueType);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.255 -0500", hash_original_method = "2C5724B582D2FAB5716323DB894A671D", hash_generated_method = "B88DC75C9573AB388CF4523BF761B76C")
         
 @Override public SortedMap<K, V> headMap(K toKey) {
             return new CheckedSortedMap<K, V>(sm.headMap(toKey), keyType, valueType);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.258 -0500", hash_original_method = "2879524DD09B17D2FCB7AD1626D24618", hash_generated_method = "F755BE6426F6F75947E0F3F3EF709DDC")
         
 @Override public SortedMap<K, V> tailMap(K fromKey) {
             return new CheckedSortedMap<K, V>(sm.tailMap(fromKey), keyType, valueType);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.261 -0500", hash_original_method = "B25E8C7440C76FBF812FF7AC9CA9D776", hash_generated_method = "661536959F07726359CED263D11FD225")
         
 @Override public K firstKey() {
             return sm.firstKey();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.263 -0500", hash_original_method = "00E9126A84DE8B71214859A17DA6BD2E", hash_generated_method = "7935F5EBB8B85115D160546E1C167BCF")
         
 @Override public K lastKey() {

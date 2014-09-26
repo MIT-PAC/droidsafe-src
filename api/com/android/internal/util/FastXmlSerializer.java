@@ -358,7 +358,8 @@ public void processingInstruction(String text) throws IOException, IllegalArgume
         //throw new UnsupportedOperationException();
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.982 -0500", hash_original_method = "13E00C790126A70B4466C6B565B1D4E5", hash_generated_method = "106EF766B12A18B9F13C17D752E71FE4")
     
 public void setOutput(OutputStream os, String encoding) throws IOException,
@@ -384,6 +385,7 @@ public void setOutput(OutputStream os, String encoding) throws IOException,
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.984 -0500", hash_original_method = "66C59149F26C5606D1058F17E91C2E36", hash_generated_method = "DA2D40C157C1CE916EE811964C7BFFC0")
     
 public void setOutput(Writer writer) throws IOException, IllegalArgumentException,

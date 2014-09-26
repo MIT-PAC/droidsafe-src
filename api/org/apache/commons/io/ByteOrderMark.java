@@ -34,7 +34,6 @@ import java.io.Serializable;
 public class ByteOrderMark implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.340 -0400", hash_original_field = "7D07EDF60BE7D52BF87500AC6D8FE154", hash_generated_field = "712212474A80BD328114C4C1DC66CBA3")
 
-
     private static final long serialVersionUID = 1L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.341 -0400", hash_original_field = "361BD621F8B38984C52DEB702F68B909", hash_generated_field = "0EE4AB34DF3A7FE0C980C2CEA09B7D92")
 
@@ -52,7 +51,6 @@ public class ByteOrderMark implements Serializable {
 
     public static final ByteOrderMark UTF_32LE = new ByteOrderMark("UTF-32LE", 0xFF, 0xFE, 0x00, 0x00);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.343 -0400", hash_original_field = "5E24356DE8A42080D6D8EE74FC7DBA00", hash_generated_field = "294F0480F54B014FA8831418027DC6AA")
-
     
     private  String charsetName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.344 -0400", hash_original_field = "A3AB97F2F3BEC6A125773562CC36361E", hash_generated_field = "0C5E046695D7217A9F5EC920641D817A")
@@ -164,6 +162,7 @@ public byte[] getBytes() {
      * @return the hashcode for this BOM.
      * @see java.lang.Object#hashCode()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.348 -0400", hash_original_method = "16009F7E89FC8CC2A15B27C66C701DE5", hash_generated_method = "3DD76A0217B2D72589AB0D1EEAB20583")
     
 @Override
@@ -180,6 +179,7 @@ public byte[] getBytes() {
      *
      * @return the length of the BOM's bytes
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.349 -0400", hash_original_method = "C1269ADA454FD9CDC780161D09FCDB9A", hash_generated_method = "AC30A26E48F08317DEBC958B804C2453")
     
 @Override

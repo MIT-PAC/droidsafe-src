@@ -312,7 +312,7 @@ public CalendarView(Context context, AttributeSet attrs, int defStyle) {
     }
 
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.024 -0500", hash_original_method = "1D9E2CC40134FA188645AC8C7A8FADC7", hash_generated_method = "61E305833BB432899A9B803A8835CCD1")
     
 @Override
@@ -328,6 +328,7 @@ public CalendarView(Context context, AttributeSet attrs, int defStyle) {
         return mListView.isEnabled();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.028 -0500", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "6328851CBC85DA1645204E969B0A309A")
     
 @Override
@@ -467,7 +468,7 @@ public void doScrollStateChange(AbsListView view, int scrollState) {
             postDelayed(this, SCROLL_CHANGE_DELAY);
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.105 -0500", hash_original_method = "62729E70BB0456A375600477CC5D2643", hash_generated_method = "9A5A45E1160235FD96591591BD17E761")
         
 public void run() {
@@ -564,7 +565,8 @@ public Calendar getSelectedDay() {
             return mSelectedDate;
         }
 
-        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.130 -0500", hash_original_method = "F04F5B9FBE7B2AAA41BE9F0558597E2D", hash_generated_method = "438C76CA078274D90EF9AA238DA13862")
         
 @Override
@@ -572,7 +574,7 @@ public Calendar getSelectedDay() {
             return mTotalWeekCount;
         }
 
-        @DSSpec(DSCat.DB_CURSOR)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.132 -0500", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "5E5284BEBB44E47AB169D2002D85C125")
         
@@ -581,7 +583,8 @@ public Calendar getSelectedDay() {
             return null;
         }
 
-        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.135 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "82702E9A3501EE6841B2C5A334199C16")
         
 @Override
@@ -589,7 +592,8 @@ public Calendar getSelectedDay() {
             return position;
         }
 
-        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.137 -0500", hash_original_method = "381E4A6A7165FC308D77C676467DC158", hash_generated_method = "93B5972012CD113CFA78BF5FC05A9452")
         
 @Override
@@ -887,6 +891,7 @@ public boolean getDayFromLocation(float x, Calendar outCalendar) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.211 -0500", hash_original_method = "2CF8C160EAF6EF1682AC691B4F4CBC56", hash_generated_method = "4481A9629F2534BDE4C02B481494B78B")
         
 @Override
@@ -1003,6 +1008,7 @@ private void drawSelectedDateVerticalBars(Canvas canvas) {
             mSelectedDateVerticalBar.draw(canvas);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.223 -0500", hash_original_method = "07B6C7DD90A0E1B5FAECCFBA1208B086", hash_generated_method = "8F83DBE840FA326FA5534D182C083B2B")
         
 @Override
@@ -1265,7 +1271,8 @@ private void setUpAdapter() {
         if (mAdapter == null) {
             mAdapter = new WeeksAdapter(getContext());
             mAdapter.registerDataSetObserver(new DataSetObserver() {
-                @Override
+                @DSSafe(DSCat.ANDROID_CALLBACK)
+        @Override
                 public void onChanged() {
                     if (mOnDateChangeListener != null) {
                         Calendar selectedDay = mAdapter.getSelectedDay();

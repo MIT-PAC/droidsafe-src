@@ -78,6 +78,7 @@ private Console(InputStream in, OutputStream out) throws IOException {
         this.writer = new ConsoleWriter(out);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.434 -0500", hash_original_method = "F7724246D188F0DD4BA6BF2BF289AD37", hash_generated_method = "5CB497A23E3D98725A07724A313B13FD")
     
 public void flush() {

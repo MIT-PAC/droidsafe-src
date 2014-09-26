@@ -15,7 +15,6 @@
  *  limitations under the License.
  */
 
-
 package java.security.cert;
 
 import droidsafe.annotations.*;
@@ -402,6 +401,7 @@ public X509Certificate getCertificateChecking() {
      *
      * @return a string representation of this {@code X509CRLSelector} instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.174 -0400", hash_original_method = "14EDB7C389AFAE56AF92F1107F34B5E5", hash_generated_method = "6E77A180C1811F6BF58BE8540B8CF4A6")
     
 public String toString() {
@@ -492,6 +492,7 @@ public boolean match(CRL crl) {
      *
      * @return the cloned instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.178 -0400", hash_original_method = "24B0A90CEBB0E9C5967CF85BEA658F64", hash_generated_method = "E2C9D2CBBE0E1313C3B85C54356C24FA")
     
 public Object clone() {

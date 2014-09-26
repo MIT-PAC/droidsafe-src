@@ -375,7 +375,7 @@ private static void parsePropertyAssignments(Properties p, String[] assignments)
      *         property doesn't exist.
      */
     @DSComment("JVM/DVM parameters")
-    @DSSpec(DSCat.JAVA_SECURITY)
+    @DSSpec(DSCat.SYSTEM)
     @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.664 -0500", hash_original_method = "06C945E6AB6193665AD35FBCA9AFCB6D", hash_generated_method = "766C443FD74124DA91FB9FB0825E934E")
     
@@ -681,7 +681,7 @@ public SystemEnvironment(Map<String, String> map) {
             return map.entrySet();
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.737 -0500", hash_original_method = "427258176260CD297BEE74A463DA23FE", hash_generated_method = "058B2ACC34010774810D06841FBEC1D8")
         
 @Override public String get(Object key) {

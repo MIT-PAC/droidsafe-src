@@ -371,7 +371,7 @@ private void sendResult(Message response, Object result, Throwable ex) {
     //***** Overridden from Handler
 
     @DSSafe(DSCat.IPC_CALLBACK)
-    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.056 -0500", hash_original_method = "7545CD0BE0B692221088F308787036AD", hash_generated_method = "68022EB240E6BA96F678CCE680BC607D")
     
 public void handleMessage(Message msg) {

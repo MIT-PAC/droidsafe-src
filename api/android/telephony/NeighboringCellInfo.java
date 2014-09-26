@@ -25,7 +25,7 @@ public class NeighboringCellInfo implements Parcelable {
 
     public static final Parcelable.Creator<NeighboringCellInfo> CREATOR
     = new Parcelable.Creator<NeighboringCellInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.383 -0500", hash_original_method = "4C52218844DBE15F12DBE2E4C66F708D", hash_generated_method = "D01A9E1C8AB9F70815173D49984FFCD7")
         
 public NeighboringCellInfo createFromParcel(Parcel in) {

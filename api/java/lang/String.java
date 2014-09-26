@@ -989,9 +989,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:37.602 -0400", hash_original_method = "158E0BDE7178D291CA067E7481407A6C", hash_generated_method = "F4072995971E5F2D08B958782006EB17")
     
@@ -1004,7 +1002,6 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     
     	return (int)taintDouble;
     }
-
 
     @DSComment("Private Method")
         @DSBan(DSCat.PRIVATE_METHOD)
@@ -1666,6 +1663,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
          * @exception ClassCastException
          *                if objects are not the correct type
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.763 -0500", hash_original_method = "10AFFFE45F62C15CA0052EB0BB14A8D3", hash_generated_method = "3D313DA5441FEBF36B8C87503DF1A73A")
         
 public int compare(String o1, String o2) {

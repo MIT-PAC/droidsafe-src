@@ -250,7 +250,7 @@ public static ActivityOptions makeDelayedThumbnailScaleUpAnimation(View source,
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 15:55:43.427 -0500", hash_original_method = "A04E8A694EF6E677608BABF7B29F457F", hash_generated_method = "5D4278489A49B5F407A2715824F8FB64")
     @DSVerified
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
 private static ActivityOptions makeThumbnailScaleUpAnimation(View source,
             Bitmap thumbnail, int startX, int startY, OnAnimationStartedListener listener,
             boolean delayed) {
@@ -358,7 +358,8 @@ private void setListener(Handler handler, OnAnimationStartedListener listener) {
             mAnimationStartedListener = new IRemoteCallback.Stub() {
                 @Override public void sendResult(Bundle data) throws RemoteException {
                     h.post(new Runnable() {
-                        @Override public void run() {
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override public void run() {
                             finalListener.onAnimationStarted();
                         }
                     });

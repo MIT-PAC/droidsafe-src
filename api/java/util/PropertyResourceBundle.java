@@ -124,7 +124,7 @@ public boolean hasMoreElements() {
                 return findNext();
             }
 
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.756 -0500", hash_original_method = "BE1AA467D8342A7EF3FB49068D3D4458", hash_generated_method = "1C519444C9B1D12270F3414AC60E3B19")
             
 public String nextElement() {

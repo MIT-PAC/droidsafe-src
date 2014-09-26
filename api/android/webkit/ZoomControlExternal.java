@@ -81,7 +81,8 @@ public ExtendedZoomControls getControls() {
              */
             mZoomControls.setVisibility(View.VISIBLE);
             mZoomControlRunnable = new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     /* Don't dismiss the controls if the user has
                      * focus on them. Wait and check again later.
                      */
@@ -141,6 +142,7 @@ private void fade(int visibility, float startAlpha, float endAlpha) {
             setVisibility(visibility);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:46.346 -0500", hash_original_method = "686B76CDD5825DB5445B0AA599284809", hash_generated_method = "5B65549ACDC8DC878C4C088798043BC2")
         
 public boolean hasFocus() {
@@ -166,7 +168,8 @@ public void setOnZoomOutClickListener(OnClickListener listener) {
 private ExtendedZoomControls createZoomControls() {
         ExtendedZoomControls zoomControls = new ExtendedZoomControls(mWebView.getContext());
         zoomControls.setOnZoomInClickListener(new OnClickListener() {
-            public void onClick(View v) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                 // reset time out
                 mPrivateHandler.removeCallbacks(mZoomControlRunnable);
                 mPrivateHandler.postDelayed(mZoomControlRunnable, ZOOM_CONTROLS_TIMEOUT);
@@ -174,7 +177,8 @@ private ExtendedZoomControls createZoomControls() {
             }
         });
         zoomControls.setOnZoomOutClickListener(new OnClickListener() {
-            public void onClick(View v) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                 // reset time out
                 mPrivateHandler.removeCallbacks(mZoomControlRunnable);
                 mPrivateHandler.postDelayed(mZoomControlRunnable, ZOOM_CONTROLS_TIMEOUT);

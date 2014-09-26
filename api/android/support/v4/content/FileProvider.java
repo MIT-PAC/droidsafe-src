@@ -309,11 +309,9 @@ public class FileProvider extends ContentProvider {
             OpenableColumns.DISPLAY_NAME, OpenableColumns.SIZE };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.022 -0400", hash_original_field = "0116929C5814FB1E0B47F5548BDE7D21", hash_generated_field = "170C76706C314268EEAFB3B9DD36D4D0")
 
-
     private static final String
             META_DATA_FILE_PROVIDER_PATHS = "android.support.FILE_PROVIDER_PATHS";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.027 -0400", hash_original_field = "2F57A0AF69CEADC869F024A4C146E9AB", hash_generated_field = "EBC5E279A648C7A6B417DA9B866682A4")
-
 
     private static final String TAG_ROOT_PATH = "root-path";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.034 -0400", hash_original_field = "3F7F9E0C72E1176F3FF770B13C20B881", hash_generated_field = "9F4F559B24E2AEEBD4EEF14AA650A741")
@@ -327,13 +325,11 @@ public class FileProvider extends ContentProvider {
     private static final String TAG_EXTERNAL = "external-path";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.049 -0400", hash_original_field = "29B01E5FC96A58FD10160B3783820F59", hash_generated_field = "5CD90E78E1999F3AB97455FF1D072CD9")
 
-
     private static final String ATTR_NAME = "name";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.055 -0400", hash_original_field = "A1207067E4B72DC10CD12374075BE1A4", hash_generated_field = "EC992B256DDE945E431A1BC23FEC2714")
 
     private static final String ATTR_PATH = "path";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.060 -0400", hash_original_field = "34588D83683B6EFE4F961FD3A4649893", hash_generated_field = "547886825B1E2A8601840091A69EE41C")
-
 
     private static final File DEVICE_ROOT = new File("/");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.066 -0400", hash_original_field = "856147CC6CB1951E131101B1E90ADCC7", hash_generated_field = "AEB4E9F35905E6F995149E41676224D9")
@@ -501,7 +497,6 @@ private static Object[] copyOf(Object[] original, int newLength) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.071 -0400", hash_original_field = "BF5135A45411E739B0F4821AF6B1B297", hash_generated_field = "D5E90F74B0B0780B89C2052A487DA244")
 
-
     private PathStrategy mStrategy;
 
     /**
@@ -522,6 +517,7 @@ private static Object[] copyOf(Object[] original, int newLength) {
      * @param context A {@link Context} for the current component.
      * @param info A {@link ProviderInfo} for the new provider.
      */
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.082 -0400", hash_original_method = "EBDBD72A102F5C825AF5058C5F345C27", hash_generated_method = "BEE50A16190D4BD2D252C0A604272725")
     
 @Override

@@ -48,7 +48,6 @@ public final class PrintAttributes implements Parcelable {
     public static final int COLOR_MODE_COLOR = 1 << 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:09.961 -0400", hash_original_field = "020733994C172E06268CD54104AA14E2", hash_generated_field = "6FBA2E9E899826583290AD232F15A8A9")
 
-
     private static final int VALID_COLOR_MODES =
             COLOR_MODE_MONOCHROME | COLOR_MODE_COLOR;
 
@@ -76,9 +75,9 @@ static void enforceValidColorMode(int colorMode) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.396 -0400", hash_original_field = "6A9B10F26D12E4C55FA4107BC5DC6330", hash_generated_field = "ED3A86D42748AF19D1430D80810C7758")
 
-
     public static final Parcelable.Creator<PrintAttributes> CREATOR =
             new Creator<PrintAttributes>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public PrintAttributes createFromParcel(Parcel parcel) {
             return new PrintAttributes(parcel);
@@ -91,7 +90,6 @@ static void enforceValidColorMode(int colorMode) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:09.963 -0400", hash_original_field = "8BF484702E2D3461C7D2B38FDD2DD887", hash_generated_field = "A50116D8EFE8D61893A4FB9B1723B5DD")
 
-
     private MediaSize mMediaSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:09.966 -0400", hash_original_field = "CA74262ED44761F78DA2933CDD202859", hash_generated_field = "7826E50CB5343C095D071D04E7D1F288")
 
@@ -100,7 +98,6 @@ static void enforceValidColorMode(int colorMode) {
 
     private Margins mMinMargins;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:09.971 -0400", hash_original_field = "093091989534ED4D7253A5BB2841A4A2", hash_generated_field = "DFF1F8BB6230BEB93A26CDC12D777AFA")
-
 
     private int mColorMode;
 
@@ -256,6 +253,7 @@ public void setColorMode(int colorMode) {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.001 -0400", hash_original_method = "85B4FA9FB2AF66CF71386CFACF9CDD00", hash_generated_method = "CB1A131B0D6B5E412F3B2F06A1C34D6F")
     
 @Override
@@ -322,7 +320,6 @@ public void setColorMode(int colorMode) {
         private static final String LOG_TAG = "MediaSize";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.019 -0400", hash_original_field = "00CA22D7868B54687925CE009BE16159", hash_generated_field = "BC0F269C48FDB05B579DAEFD7251D102")
 
-
         private static final Map<String, MediaSize> sIdToMediaSizeMap =
                 new HashMap<String, MediaSize>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.027 -0400", hash_original_field = "926F783369B8B1390736B1CE3718BAA8", hash_generated_field = "DF65CD1BFFB8CE56499C0A58B6A1D93D")
@@ -336,7 +333,6 @@ public void setColorMode(int colorMode) {
                 new MediaSize("UNKNOWN_LANDSCAPE", "android",
                         R.string.mediasize_unknown_landscape, Integer.MAX_VALUE, 1);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.034 -0400", hash_original_field = "EF4EA1AB2318D29B0517276CBEA011BB", hash_generated_field = "92815A03C01B499AA9EF35B077E2ADC1")
-
 
         /** ISO A0 media size: 841mm x 1189mm (33.11" x 46.81") */
         public static final MediaSize ISO_A0 =
@@ -471,7 +467,6 @@ public void setColorMode(int colorMode) {
                 new MediaSize("ISO_C10", "android", R.string.mediasize_iso_c10, 1100, 1570);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.119 -0400", hash_original_field = "CCEA5FE2BB1BA87B09DEB4413B7FA764", hash_generated_field = "1CEB16DF36F8C499348DFF33BBBF8C3D")
 
-
         /** North America Letter media size: 8.5" x 11" (279mm x 216mm) */
         public static final MediaSize NA_LETTER =
                 new MediaSize("NA_LETTER", "android", R.string.mediasize_na_letter, 8500, 11000);
@@ -529,7 +524,6 @@ public void setColorMode(int colorMode) {
                 new MediaSize("NA_FOOLSCAP", "android",
                         R.string.mediasize_na_foolscap, 8000, 13000);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.147 -0400", hash_original_field = "E9845053A59FAE7C0D99CCB7BBC2215B", hash_generated_field = "B6B426DB276168838E9B0BD21C35E5EF")
-
 
         /** Chinese ROC 8K media size: 270mm x 390mm (10.629" x 15.3543") */
         public static final MediaSize ROC_8K =
@@ -611,7 +605,6 @@ public void setColorMode(int colorMode) {
                 new MediaSize("OM_JUURO_KU_KAI", "android",
                         R.string.mediasize_chinese_om_jurro_ku_kai, 7796, 10827);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.186 -0400", hash_original_field = "A8564DD3A7007B2D2718EECDFBD6E147", hash_generated_field = "71EC20BFD8AA51094A7D28ADEF055418")
-
 
         /** Japanese JIS B10 media size: 32mm x 45mm (1.259" x 1.772") */
         public static final MediaSize JIS_B10 =
@@ -739,7 +732,6 @@ public static MediaSize getStandardMediaSizeById(String id) {
             return sIdToMediaSizeMap.get(id);
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.246 -0400", hash_original_field = "5AB31FF91690EC0315884BA04F6C543E", hash_generated_field = "34D624C7CD290D72B15AB814BF1BA854")
-
 
         private  String mId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.248 -0400", hash_original_field = "5D623CBCF86992E0D7786DE12566196C", hash_generated_field = "7652D99469DF3C047DFF79EA17D51D4F")
@@ -980,6 +972,7 @@ void writeToParcel(Parcel parcel) {
             parcel.writeInt(mLabelResId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.287 -0400", hash_original_method = "7531984B00547FD3991B9CB62AD08F3E", hash_generated_method = "506A1CCF795B5383BF62D4C5E2854A79")
         
 @Override
@@ -1014,6 +1007,7 @@ void writeToParcel(Parcel parcel) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.292 -0400", hash_original_method = "49741E838D0B14A6AF9325B9D185FB93", hash_generated_method = "63FC56CBD1981D901E2AA25804EFA1F7")
         
 @Override
@@ -1156,6 +1150,7 @@ void writeToParcel(Parcel parcel) {
             parcel.writeInt(mVerticalDpi);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.331 -0400", hash_original_method = "DB1592A93195C1BD59772D6EF9B01E2B", hash_generated_method = "D29C25ECF5304704E319D1E02ADE6092")
         
 @Override
@@ -1190,6 +1185,7 @@ void writeToParcel(Parcel parcel) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.336 -0400", hash_original_method = "CFCE5F40738ECE6A34C7BA4293905F9E", hash_generated_method = "2D032B24BA8EC19CDA58B8AB386DB77C")
         
 @Override
@@ -1225,7 +1221,6 @@ static Margins createFromParcel(Parcel parcel) {
                     parcel.readInt());
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.343 -0400", hash_original_field = "DD8CCE654CE927B232BDBEC2F40C4C2F", hash_generated_field = "7A699D4D3400442235CB1FA67AADAC41")
-
 
         private  int mLeftMils;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.345 -0400", hash_original_field = "899CE36BED98E0DB67E534B58F330AE6", hash_generated_field = "6A607DD8D891066A04F075825B1C0FA8")
@@ -1308,6 +1303,7 @@ void writeToParcel(Parcel parcel) {
             parcel.writeInt(mBottomMils);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.364 -0400", hash_original_method = "4A789B7BAA0784FB93ACA2738F83408C", hash_generated_method = "FDDB7C0075EFC3E69DB7523C6D7327AD")
         
 @Override
@@ -1350,6 +1346,7 @@ void writeToParcel(Parcel parcel) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.369 -0400", hash_original_method = "408D385BED488693019463AF396AB966", hash_generated_method = "DD24E2E617FE15491B35B2C44C399970")
         
 @Override
@@ -1365,6 +1362,7 @@ void writeToParcel(Parcel parcel) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.008 -0400", hash_original_method = "4E7C4CD856EE63829D72B62A3F0A77D7", hash_generated_method = "389CEBC8EF22D9758A2712C552731816")
     
 @Override

@@ -235,6 +235,7 @@ public void setButtonDrawable(Drawable d) {
         info.setChecked(mChecked);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.527 -0500", hash_original_method = "B5E74BEF46452CACB638287F10D23674", hash_generated_method = "DCE37863D022A43FE950C1923111FD02")
     
 @Override
@@ -307,8 +308,8 @@ public void setButtonDrawable(Drawable d) {
         if (mButtonDrawable != null) mButtonDrawable.jumpToCurrentState();
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.563 -0500", hash_original_method = "C906A6F68E532E790B1685DD63ECE7DE", hash_generated_method = "46FED10CEEBE0245DEE3DC6ADC684074")
     
 @Override
@@ -328,7 +329,7 @@ public void setButtonDrawable(Drawable d) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -364,7 +365,8 @@ private SavedState(Parcel in) {
             checked = (Boolean)in.readValue(null);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.548 -0500", hash_original_method = "42336FB9BEBA29D5024EB2A7DFCC6545", hash_generated_method = "32FB3B94878A334A33C984AE7E9B31D2")
         
 @Override
@@ -402,7 +404,7 @@ private SavedState(Parcel in) {
         void onCheckedChanged(CompoundButton buttonView, boolean isChecked);
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.566 -0500", hash_original_method = "82857D3CD54F7EB52721411B0B0DD538", hash_generated_method = "F662563F5F7128AD9A4ABAE598C094A3")
     
 @Override

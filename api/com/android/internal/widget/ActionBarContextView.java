@@ -117,6 +117,7 @@ public ActionBarContextView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.118 -0500", hash_original_method = "B72CC99F1AE7F170915B2F32514E502E", hash_generated_method = "85E4C34DF224DF00676DC6184CD8DB89")
     
 @Override
@@ -259,7 +260,8 @@ public void initForMode(final ActionMode mode) {
 
         View closeButton = mClose.findViewById(R.id.action_mode_close_button);
         closeButton.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                 mode.finish();
             }
         });
@@ -385,6 +387,7 @@ public void killMode() {
         return new MarginLayoutParams(getContext(), attrs);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.168 -0500", hash_original_method = "ADE259D11B02655AAFB5EBCEC641AC5E", hash_generated_method = "384A75FBEC4DA6149CCE41556CE66768")
     
 @Override

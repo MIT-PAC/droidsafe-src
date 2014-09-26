@@ -115,7 +115,8 @@ protected AbstractSelectableChannel(SelectorProvider selectorProvider) {
      *             if this channel does not have the same provider as the given
      *             selector.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.108 -0500", hash_original_method = "CA2D38B16FDF21D8F80456FE85BBCC03", hash_generated_method = "6F7C657E2C264E9D3768D58F08A9ECA4")
     
 @Override
@@ -237,7 +238,8 @@ protected abstract void implCloseSelectableChannel() throws IOException;
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.122 -0500", hash_original_method = "C1D21D3B957CE63BA941CEBC7A89647F", hash_generated_method = "21B65639256F1F8CA1123E5574C8AC64")
     
 @Override

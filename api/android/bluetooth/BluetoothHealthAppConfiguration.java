@@ -13,7 +13,7 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
 
     public static final Parcelable.Creator<BluetoothHealthAppConfiguration> CREATOR =
         new Parcelable.Creator<BluetoothHealthAppConfiguration>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.822 -0500", hash_original_method = "ADCA440083271F3F65207F00968B56D8", hash_generated_method = "228AF7FE5372E4BC793301AF8C2B8183")
         
 @Override

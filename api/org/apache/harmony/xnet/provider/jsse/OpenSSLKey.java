@@ -25,7 +25,6 @@ public class OpenSSLKey {
     private  int ctx;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:12.865 -0400", hash_original_field = "5C56B4DF27E735403D16136885A130AA", hash_generated_field = "460F175189633448A068F46912EFB997")
 
-
     private  OpenSSLEngine engine;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:12.866 -0400", hash_original_method = "D5DEAE17F0F5966ABEFE2F4901C4EB55", hash_generated_method = "D5DEAE17F0F5966ABEFE2F4901C4EB55")
@@ -60,6 +59,7 @@ boolean isEngineBased() {
         return engine != null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:12.868 -0400", hash_original_method = "42D5E551C4D40B684C14BAB7EDBF5755", hash_generated_method = "28EEC349C576A02458BC50C15E46787A")
     
 @Override
@@ -97,6 +97,7 @@ boolean isEngineBased() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:12.870 -0400", hash_original_method = "82D3407659631340B524C2B40C9AB98E", hash_generated_method = "2091F971A436BD62384F890E73E06B25")
     
 @Override

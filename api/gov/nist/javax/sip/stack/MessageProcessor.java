@@ -363,7 +363,7 @@ public abstract boolean inUse();
      * Run method.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.EXEC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.334 -0500", hash_original_method = "2C6A443C83148E86AAD705D9EE784F75", hash_generated_method = "5BBE1BCB74D1FAFBB58FE7F038D48F66")
     
 public abstract void run();

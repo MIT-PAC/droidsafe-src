@@ -436,6 +436,7 @@ public void setVideoURI(Uri uri) {
     /**
      * @hide
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.729 -0500", hash_original_method = "B0B8C66B3B0796135E0E0BD2E6D5E306", hash_generated_method = "C446C689B6D788FA2FD5E81CA16E0770")
     
 public void setVideoURI(Uri uri, Map<String, String> headers) {

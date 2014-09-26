@@ -501,7 +501,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 	}
     
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override public void setOverScrollMode(int mode){
 		// Original method
 		/*
@@ -898,8 +898,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
-    @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    
     @Override public void sendAccessibilityEvent(int eventType){
 		// Original method
 		/*
@@ -1040,15 +1040,15 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
-    @DSSpec(DSCat.SERIALIZATION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @Override public Parcelable onSaveInstanceState(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return super.onSaveInstanceState();
 	}
     
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public void onRestoreInstanceState(Parcelable state){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1259,6 +1259,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return 0;
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1417,7 +1418,8 @@ protected void layoutChildren() {
 		//Return nothing
 	}
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @Override protected void dispatchDraw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1478,6 +1480,7 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override protected void onSizeChanged(int w, int h, int oldw, int oldh){
 		// Original method
 		/*
@@ -1554,7 +1557,8 @@ protected void layoutChildren() {
 		//Return nothing
 	}
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     public void setSelector(int resID){
 		// Original method
 		/*
@@ -1697,6 +1701,7 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override protected void onAttachedToWindow(){
 		// Original method
 		/*
@@ -1786,6 +1791,7 @@ public void setScrollIndicators(View up, View down) {
 		return false;
 	}
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.358 -0500", hash_original_method = "9B8E7EBB8FE64DE94387A936F5D592CB", hash_generated_method = "53E16ECA8EACEE71C299F59125A5A5CD")
     
 @Override
@@ -1793,6 +1799,7 @@ public void setScrollIndicators(View up, View down) {
         return false;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public boolean onKeyUp(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -1895,7 +1902,7 @@ public void setScrollIndicators(View up, View down) {
     
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override public boolean onTouchEvent(MotionEvent ev){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1942,6 +1949,7 @@ public void setScrollIndicators(View up, View down) {
 		return false;
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public void draw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2470,7 +2478,7 @@ abstract void setSelectionInt(int position);
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -2547,7 +2555,8 @@ SavedState(Parcelable superState) {
 			*/
 		}
         
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @Override public void writeToParcel(Parcel out, int flags){
 			// Original method
 			/*
@@ -2637,7 +2646,7 @@ SavedState(Parcelable superState) {
             //Synthesized constructor
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/*
@@ -2668,7 +2677,7 @@ SavedState(Parcelable superState) {
             //Synthesized constructor
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/*
@@ -2705,7 +2714,7 @@ SavedState(Parcelable superState) {
             //Synthesized constructor
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/*
@@ -2742,7 +2751,7 @@ SavedState(Parcelable superState) {
             //Synthesized constructor
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
@@ -2764,6 +2773,7 @@ SavedState(Parcelable superState) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.440 -0500", hash_original_field = "FA53AA3752A220542656F6683D649C3A", hash_generated_field = "F27C63A86D38808CFF0850988FFA3D30")
 
         private final Runnable mCheckFlywheel = new Runnable() {
+            @DSSafe(DSCat.SAFE_LIST)
             public void run() {
                 final int activeId = mActivePointerId;
                 final VelocityTracker vt = mVelocityTracker;
@@ -2911,7 +2921,7 @@ FlingRunnable() {
 			//Return nothing
 		}
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
@@ -3026,7 +3036,7 @@ PositionScroller() {
 			//Return nothing
 		}
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         public void run(){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */

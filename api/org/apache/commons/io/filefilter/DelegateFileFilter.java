@@ -111,6 +111,7 @@ public DelegateFileFilter(FileFilter filter) {
      *
      * @return a String representaion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.943 -0400", hash_original_method = "91D8A9301108FBA1FFC97CB499D3FAE9", hash_generated_method = "4D57C0D45B1B57478E35779613AE539B")
     
 @Override

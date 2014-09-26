@@ -195,7 +195,8 @@ public class WindowImpl extends Window {
 
 	}
 
-	@Override
+	@DSSafe(DSCat.SAFE_LIST)
+    @Override
 	public void setFeatureInt(int featureId, int value) {
 		// TODO Auto-generated method stub
 

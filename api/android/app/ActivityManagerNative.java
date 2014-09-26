@@ -125,7 +125,8 @@ public ActivityManagerNative() {
         attachInterface(this, descriptor);
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.117 -0500", hash_original_method = "796B52B1E8846F7CCEC22CD4B5B906A8", hash_generated_method = "3488280CD2BFAF139E54B711B498D7DC")
     
 public boolean onTransact(int code, Parcel data, Parcel reply, int flags)

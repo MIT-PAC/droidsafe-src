@@ -98,6 +98,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
 
     private Runnable mPollNetStat = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:28.843 -0400", hash_original_method = "12521CBB0E1762BFCDF7B49EB5CC9977", hash_generated_method = "EEDFDA3636D0462EB4B15FD97B22B6E4")
         @Override
         public void run() {

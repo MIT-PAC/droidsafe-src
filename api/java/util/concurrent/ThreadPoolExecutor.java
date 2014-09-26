@@ -911,7 +911,7 @@ final void runWorker(Worker w) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.881 -0500", hash_original_method = "D2720E6C2ABD70ABBFB850D5E1C9152E", hash_generated_method = "AF11F840864428AD43826C563AB6247D")
     @DSVerified
-    @DSSpec(DSCat.OS_GENERAL)
+    @DSSafe(DSCat.SAFE_LIST)
 public void execute(Runnable command) {
         if (command == null)
             throw new NullPointerException();
@@ -966,7 +966,7 @@ public void execute(Runnable command) {
      *
      * @throws SecurityException {@inheritDoc}
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.884 -0500", hash_original_method = "B2E77DE3594C1CCAEA14C26F5B572C39", hash_generated_method = "A6FA5A4736D01AF06261A4017AE2C456")
     
 public void shutdown() {
@@ -1000,7 +1000,7 @@ public void shutdown() {
      *
      * @throws SecurityException {@inheritDoc}
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.886 -0500", hash_original_method = "D65CB76EC87687B7E50B9EEFFDD4C298", hash_generated_method = "0B105F0D7B3C003781CFF00F947B8982")
     
@@ -1416,7 +1416,7 @@ Worker(Runnable firstTask) {
         }
 
         /** Delegates main run loop to outer runWorker  */
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.805 -0500", hash_original_method = "776DC8B2F80D9EC817EF7446A13B40B9", hash_generated_method = "4413017770EF1F180329D38AA6620E55")
         
 public void run() {

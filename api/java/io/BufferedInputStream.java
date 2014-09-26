@@ -173,6 +173,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
      *            invalidated.
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.168 -0500", hash_original_method = "DF417F804FB76ED4D7DE805338DD287E", hash_generated_method = "6C8AA12DBDC90F730C598DE59714D576")
     
 @Override
@@ -190,6 +191,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
      * @see #mark(int)
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.170 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
     
 @Override
@@ -208,6 +210,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
      * @throws IOException
      *             if this stream is closed or another IOException occurs.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.173 -0500", hash_original_method = "44D2E1EC0EF3B53AC5594D464D2C83B9", hash_generated_method = "6A4474C98316806C704D1FF867C7D064")
@@ -263,6 +266,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
      *             if the stream is already closed or another IOException
      *             occurs.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.177 -0500", hash_original_method = "61DEF23C4EC5BF0BA1725AB1A56B4C17", hash_generated_method = "0D02395DDFF6896AF352C79259C47479")
@@ -347,6 +351,7 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
      *             have been read since setting the mark.
      * @see #mark(int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.180 -0500", hash_original_method = "0EB3739ECCD523AAEBB3A3F64D0A35BC", hash_generated_method = "CE8767DA2D459643F76527EFC21F6D25")
     
 @Override

@@ -66,7 +66,6 @@ import java.io.InputStream;
 public class NullInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.806 -0400", hash_original_field = "298A39EB1E059FD1DCE8DF5205BAB3E6", hash_generated_field = "CB917F06730B11F4BAAAFECA2C1D90A2")
 
-
     private  long size;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.806 -0400", hash_original_field = "52DF2E6914C34BE1E271C4366CA6267D", hash_generated_field = "8E29B08B4FE682944F05067766AFABCB")
 
@@ -145,6 +144,7 @@ public long getSize() {
      *
      * @return The number of bytes that can be read.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.811 -0400", hash_original_method = "7F3FA848D774B0E8E97D2C379EE0C684", hash_generated_method = "224DD502B8D64AE54B9B850DB5F4777F")
     
 @Override
@@ -165,6 +165,7 @@ public long getSize() {
      *
      * @throws IOException If an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.812 -0400", hash_original_method = "EEFDACC2C301B42650B1064C3D4059CC", hash_generated_method = "E96997EF41B5EE4DD2D315BC127B1E7A")
     
 @Override
@@ -181,6 +182,7 @@ public long getSize() {
      * is invalid.
      * @throws UnsupportedOperationException if mark is not supported.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.813 -0400", hash_original_method = "7AEF2C3B62C677DC9FD1211BE4D4F4EB", hash_generated_method = "112EB2C413E4179B843715E34640BB86")
     
 @Override
@@ -197,6 +199,7 @@ public long getSize() {
      *
      * @return Whether <i>mark</i> is supported or not.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.813 -0400", hash_original_method = "0829B6DA23F89F75CF76B7CF84C00C9F", hash_generated_method = "E8E4BDB926E9E2747B073CF25256C0EE")
     
 @Override
@@ -214,6 +217,8 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.814 -0400", hash_original_method = "58A7A50486EDC9346A5D459542A5BDB7", hash_generated_method = "56B74626BE81A12F04EB89EA486FC9FD")
     
 @Override
@@ -239,6 +244,8 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.814 -0400", hash_original_method = "1E949846598722C79E2F0E8E4DF0AE25", hash_generated_method = "DBD45AE7C79C3D96484923938B09E477")
     
 @Override
@@ -259,6 +266,8 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.815 -0400", hash_original_method = "05A90D0FB660BAF10AD4D61031A72FD9", hash_generated_method = "4BBF2732884EE85DD846B0E6BB60AB12")
     
 @Override
@@ -287,6 +296,7 @@ public long getSize() {
      * or the read limit has been exceed since the last position was
      * marked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.816 -0400", hash_original_method = "DA70D8E8EFCF4CE896E4E17AB2D27792", hash_generated_method = "808C5618E8DCBABF47C90F606652224D")
     
 @Override
@@ -317,6 +327,7 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.817 -0400", hash_original_method = "9210FB6C78C901008C5A67E434CB9A0B", hash_generated_method = "786E77D872575F47B0AF55657DA8A37D")
     
 @Override

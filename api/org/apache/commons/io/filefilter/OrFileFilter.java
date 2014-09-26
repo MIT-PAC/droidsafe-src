@@ -161,6 +161,7 @@ public void setFileFilters(final List<IOFileFilter> fileFilters) {
      *
      * @return a String representaion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.560 -0400", hash_original_method = "1E761CCD4DDE3C2CB8242721D590B88B", hash_generated_method = "2F7B8A982A5FF60A8EC05A3E25C5A5B9")
     
 @Override

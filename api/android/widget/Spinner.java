@@ -196,7 +196,7 @@ public Spinner(Context context, AttributeSet attrs, int defStyle, int mode) {
 
     @DSComment("Spinner")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.037 -0500", hash_original_method = "E89DC933CAA3948ECC7191CDEBCA4F7F", hash_generated_method = "F0FBAB05DA6BEA4CE4204261FC3F4E56")
     
 @Override
@@ -245,7 +245,8 @@ public void setGravity(int gravity) {
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.044 -0500", hash_original_method = "50D7CC7A93B993E2A6FF522D575BAEB5", hash_generated_method = "611E2DA9775E0C612F4D5EF38FAF5956")
     
 @Override
@@ -268,6 +269,7 @@ public void setGravity(int gravity) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.046 -0500", hash_original_method = "B6F13EE08FDC85FB02DBBB6CA125C601", hash_generated_method = "D6B0999677F0279AF30F74D5F6760851")
     
 @Override
@@ -293,6 +295,7 @@ public void setGravity(int gravity) {
         throw new RuntimeException("setOnItemClickListener cannot be used with a spinner.");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.051 -0500", hash_original_method = "EC8AF316641014792672178145DBD315", hash_generated_method = "C942D9FF9C76DDC01EC6017A7AFA16C3")
     
 @Override
@@ -330,7 +333,7 @@ public void setGravity(int gravity) {
      * so views are scrolling to the left. -1 means selection is moving to the left.
      */
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.057 -0500", hash_original_method = "26F25590D97768D2F385154C131B8E76", hash_generated_method = "FACBA9BBE286204464A611CECC467DDC")
     
 @Override
@@ -510,14 +513,15 @@ public DropDownAdapter(SpinnerAdapter adapter) {
             }
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.086 -0500", hash_original_method = "7176E9532C0349D7016ABE3301806E2C", hash_generated_method = "ABAE663C8AC8F01A715ED84AE922B778")
         
 public int getCount() {
             return mAdapter == null ? 0 : mAdapter.getCount();
         }
 
-        @DSSpec(DSCat.DB_CURSOR)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.088 -0500", hash_original_method = "E5529375AE985E64AC9FCAEB196D1278", hash_generated_method = "F7E6CB401961A1E291BC7ABB39C301C3")
         
@@ -525,22 +529,21 @@ public Object getItem(int position) {
             return mAdapter == null ? null : mAdapter.getItem(position);
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.090 -0500", hash_original_method = "516B3E26F5C00C4BD8BAF28DFF38500C", hash_generated_method = "B8F4839BD8D550183657C800480C87BD")
         
 public long getItemId(int position) {
             return mAdapter == null ? -1 : mAdapter.getItemId(position);
         }
-
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.092 -0500", hash_original_method = "A9F8983A232A0A246637701F010ACE34", hash_generated_method = "03AFF81851DA0BC76885ED27D0C5048D")
         @DSVerified
         @DSSafe(DSCat.GUI)
 public View getView(int position, View convertView, ViewGroup parent) {
             return getDropDownView(position, convertView, parent);
         }
-
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.095 -0500", hash_original_method = "F097CA4C24B6E5261C3C9C12681A60CA", hash_generated_method = "913C5CA37528A27E8EF4206A364B885C")
         @DSVerified
         @DSSafe(DSCat.GUI)   
@@ -608,7 +611,8 @@ public boolean isEnabled(int position) {
             }
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.110 -0500", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "3610CA007643502BCB5C59065F70D2D6")
         
 public int getItemViewType(int position) {

@@ -2556,7 +2556,8 @@ public Iterable<PhoneNumberMatch> findNumbers(
       final long maxTries) {
 
     return new Iterable<PhoneNumberMatch>() {
-      @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:46:38.376 -0400", hash_original_method = "56A258F03FBDE6DC55F7DBEB97F457DD", hash_generated_method = "68319CC6EDC18C585FB0A57E7A49314D")
+      @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:46:38.376 -0400", hash_original_method = "56A258F03FBDE6DC55F7DBEB97F457DD", hash_generated_method = "68319CC6EDC18C585FB0A57E7A49314D")
             
 public Iterator<PhoneNumberMatch> iterator() {
         return new PhoneNumberMatcher(

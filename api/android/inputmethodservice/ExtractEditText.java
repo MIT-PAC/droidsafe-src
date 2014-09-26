@@ -163,6 +163,7 @@ public boolean hasVerticalScrollBar() {
      * Pretend like this view always has focus, so its
      * highlight and cursor will be displayed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:40.866 -0500", hash_original_method = "C5038B1CABC8B8B00C688F0FD76B923F", hash_generated_method = "EA410BB510FFBBB53A8F600AEE5AEF65")
     
 @Override public boolean hasFocus() {

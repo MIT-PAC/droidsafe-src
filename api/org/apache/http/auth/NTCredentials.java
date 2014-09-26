@@ -161,6 +161,7 @@ public String getWorkstation() {
         return this.workstation;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:21.713 -0400", hash_original_method = "CF7E1A4AAA9B9D03F5C13126C7F00890", hash_generated_method = "496CE9593EB2FB939910F0885D49DA47")
     
 @Override
@@ -187,6 +188,7 @@ public String getWorkstation() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:21.716 -0400", hash_original_method = "4A07E0A2942A85105EC73452BBD0D184", hash_generated_method = "1545E990B649D5D016F977926CCEF2E9")
     
 @Override

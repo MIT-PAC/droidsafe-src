@@ -21,7 +21,8 @@ public LinearInterpolator() {
 public LinearInterpolator(Context context, AttributeSet attrs) {
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.551 -0500", hash_original_method = "6F32AC5E234DC575638821E35BB1A952", hash_generated_method = "03715D1D8B6E767BEEADF23FA216761B")
     
 public float getInterpolation(float input) {

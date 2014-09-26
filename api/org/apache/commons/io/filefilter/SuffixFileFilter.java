@@ -198,6 +198,7 @@ public SuffixFileFilter(List<String> suffixes, IOCase caseSensitivity) {
      *
      * @return a String representaion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.698 -0400", hash_original_method = "A7E4D946C38615EB73B14A44B4632E34", hash_generated_method = "23DE0A2C3212613CB254CB3434C23358")
     
 @Override

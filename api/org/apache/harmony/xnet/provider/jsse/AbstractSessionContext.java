@@ -113,7 +113,7 @@ public final Enumeration getIds() {
                 next = null;
                 return false;
             }
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         public byte[] nextElement() {
                 if (hasMoreElements()) {
                     byte[] id = next.getId();

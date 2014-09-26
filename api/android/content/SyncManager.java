@@ -178,6 +178,7 @@ static String formatTime(long time) {
 
     private BroadcastReceiver mStorageIntentReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.955 -0400", hash_original_method = "BC3DE36BD414D1E0AC1A290F3F999B72", hash_generated_method = "616D5C14DDD1CB50F92E18BD4160FC5A")
         public void onReceive(Context context, Intent intent) {
             
@@ -212,6 +213,7 @@ static String formatTime(long time) {
 
     private BroadcastReceiver mBootCompletedReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.955 -0400", hash_original_method = "48002FD0F3001594E3DAE34911FFCE18", hash_generated_method = "4B23DC7E7458A7DE52CE4CB804B826DF")
         public void onReceive(Context context, Intent intent) {
             
@@ -226,6 +228,7 @@ static String formatTime(long time) {
 
     private BroadcastReceiver mBackgroundDataSettingChanged = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.956 -0400", hash_original_method = "8D0265854014D0DAAECDD8BFDBAC7B99", hash_generated_method = "91E3B3E5AC55482EA87CB637D007CF4E")
         public void onReceive(Context context, Intent intent) {
             
@@ -249,6 +252,7 @@ static String formatTime(long time) {
 
     private BroadcastReceiver mConnectivityIntentReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.957 -0400", hash_original_method = "252074B4EB0924016B2ADBE10E34C1F3", hash_generated_method = "5BF35A17A472123D83FE2028E7EC7098")
         public void onReceive(Context context, Intent intent) {
             
@@ -273,6 +277,7 @@ static String formatTime(long time) {
 
     private BroadcastReceiver mShutdownIntentReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:24.958 -0400", hash_original_method = "C2982D871DFCE85BA68BED52BCB115FD", hash_generated_method = "4E850BAD6B340846E6D2CD9FCE56EC3A")
         public void onReceive(Context context, Intent intent) {
             
@@ -789,7 +794,8 @@ public void onServiceConnected(ComponentName name, IBinder service) {
                 // give the sync adapter time to initialize before unbinding from it
                 // TODO: change this API to not rely on this timing, http://b/2500805
                 mHandler.postDelayed(new Runnable() {
-                    public void run() {
+                    @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                         if (mContext != null) {
                             mContext.unbindService(InitializerServiceConnection.this);
                             mContext = null;
@@ -920,7 +926,8 @@ public void onFinished(SyncResult result) {
             sendSyncFinishedOrCanceledMessage(this, result);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.916 -0500", hash_original_method = "EB9B131EDBEF0858B3038B79ABC0948E", hash_generated_method = "65BC9C6CBDCC89E2ACB2A1A5A760883B")
         
 public void toString(StringBuilder sb) {
@@ -1907,6 +1914,7 @@ private void manageSyncNotificationLocked() {
                 //Synthesized constructor
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:34.060 -0500", hash_original_method = "4796BE9F4C6BFE28E8FE17808C5D7635", hash_generated_method = "654787112CD4506BF0CBA4DC96EF8199")
             
 public void toString(StringBuilder sb) {
@@ -2635,7 +2643,8 @@ private void dumpRecentHistory(PrintWriter pw) {
             final List<AuthoritySyncStats> sortedAuthorities =
                     new ArrayList<AuthoritySyncStats>(authorityMap.values());
             Collections.sort(sortedAuthorities, new Comparator<AuthoritySyncStats>() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 public int compare(AuthoritySyncStats lhs, AuthoritySyncStats rhs) {
                     // reverse order
                     int compare = Integer.compare(rhs.times, lhs.times);
@@ -2677,7 +2686,8 @@ private void dumpRecentHistory(PrintWriter pw) {
                         new ArrayList<AccountSyncStats>(
                                 authoritySyncStats.accountMap.values());
                 Collections.sort(sortedAccounts, new Comparator<AccountSyncStats>() {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+        @Override
                     public int compare(AccountSyncStats lhs, AccountSyncStats rhs) {
                         // reverse order
                         int compare = Integer.compare(rhs.times, lhs.times);

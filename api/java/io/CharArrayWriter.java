@@ -260,7 +260,8 @@ public void writeTo(Writer out) throws IOException {
      *            the character appended to the CharArrayWriter.
      * @return this CharArrayWriter.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.986 -0500", hash_original_method = "98F1E9A8C1E20678242580E2421D983C", hash_generated_method = "DBB08E576F65CCCD5C3E9BE56838F079")
     
 @Override
@@ -279,6 +280,7 @@ public void writeTo(Writer out) throws IOException {
      *            CharArrayWriter}, may be {@code null}.
      * @return this CharArrayWriter.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.988 -0500", hash_original_method = "B584B42D7A9874698AA3457A3A1D3154", hash_generated_method = "B0D9F55CEB5EB64DE6B6451E971F9863")
     
 @Override
@@ -313,6 +315,7 @@ public void writeTo(Writer out) throws IOException {
      *             if {@code start < 0}, {@code end < 0}, {@code start > end},
      *             or if {@code end} is greater than the length of {@code csq}.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.991 -0500", hash_original_method = "A1054C6BA24908274B5EEDCC4DAC29F7", hash_generated_method = "E128318E3EFD4C4F858E05627685254F")
     
 @Override

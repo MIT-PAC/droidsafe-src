@@ -176,6 +176,7 @@ public void write(byte b[], int offset, int len) throws IOException {
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:10.130 -0500", hash_original_method = "9CF355A1080B1C5188ACDD31B59B3C7A", hash_generated_method = "DF56149423846E6235D8003E1808F06E")
     
 private void flush(boolean propogate) throws IOException {

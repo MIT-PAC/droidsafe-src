@@ -47,7 +47,6 @@ import org.apache.http.util.LangUtils;
 public final class BasicUserPrincipal implements Principal {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:34.911 -0400", hash_original_field = "B2F4FF4B7C64B804BB17E343923252BC", hash_generated_field = "E7582A281BF492F7D35360548F0218CD")
 
-
     private  String username;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:34.911 -0400", hash_original_method = "E9F4A83469279A4A12C48F4EEC0817B3", hash_generated_method = "C4D8E2A563C92DCEC84F7D71DD260122")
@@ -60,12 +59,14 @@ public BasicUserPrincipal(final String username) {
         this.username = username;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:34.912 -0400", hash_original_method = "C98891613636EF2965B8BFD539D89D43", hash_generated_method = "0A53A95F7E1F4EF5E4CF696D70F9BA7E")
     
 public String getName() {
         return this.username;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:34.912 -0400", hash_original_method = "00146F6E979B31F3ADD0C335BB09FECD", hash_generated_method = "616DC7C81FE8BC24EE036C4FF39F1AD4")
     
 @Override
@@ -90,6 +91,7 @@ public String getName() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:34.914 -0400", hash_original_method = "7E163E1A4FB07693AC35A1158CCAD841", hash_generated_method = "3752CAEFAC828A98E2316E2EE35BB5EC")
     
 @Override

@@ -122,7 +122,8 @@ _data.recycle();
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.577 -0400", hash_original_method = "3AEC0AD9D359955238DA08C01B15A254", hash_generated_method = "4989CF64281B1B7F3ABBF07F7D57C8B9")
+@DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.577 -0400", hash_original_method = "3AEC0AD9D359955238DA08C01B15A254", hash_generated_method = "4989CF64281B1B7F3ABBF07F7D57C8B9")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

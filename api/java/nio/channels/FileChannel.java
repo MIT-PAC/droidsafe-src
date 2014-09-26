@@ -259,7 +259,7 @@ public abstract FileChannel position(long offset) throws IOException;
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.375 -0500", hash_original_method = "DE356E2CF3D3B7BE8C5411B6AE364543", hash_generated_method = "E4614D8711BA6249DDF8157E192C267E")
@@ -301,8 +301,9 @@ public abstract int read(ByteBuffer buffer) throws IOException;
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.378 -0500", hash_original_method = "19A1A80A2A8297FB8F1FB19A576CD97B", hash_generated_method = "5D6844A43D3ECFC11747B3DA9689C100")
     
 public abstract int read(ByteBuffer buffer, long position)
@@ -338,7 +339,8 @@ public abstract int read(ByteBuffer buffer, long position)
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.381 -0500", hash_original_method = "4118483D5739F1F8B1E72DACCDF365C6", hash_generated_method = "5E3DE9B53B261351875D534317A11FE9")
     
 public final long read(ByteBuffer[] buffers) throws IOException {
@@ -380,8 +382,9 @@ public final long read(ByteBuffer[] buffers) throws IOException {
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.384 -0500", hash_original_method = "7B96FC6FAB2F090D69C3DCBFF89C815B", hash_generated_method = "B0149C348230C332CE6BEFBA3208C156")
     
 public abstract long read(ByteBuffer[] buffers, int start, int number)
@@ -641,8 +644,9 @@ public abstract int write(ByteBuffer src) throws IOException;
      * @throws IOException
      *             if another I/O error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.404 -0500", hash_original_method = "FE44E4912270B085CA3AFC2E6840559E", hash_generated_method = "10862CCEADBBE800DF252131F9DE485B")
     
 public abstract int write(ByteBuffer buffer, long position)
@@ -676,7 +680,8 @@ public abstract int write(ByteBuffer buffer, long position)
      * @throws NonWritableChannelException
      *             if this channel was not opened for writing.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.407 -0500", hash_original_method = "50EBF858502260FDC2F74EB3C865D254", hash_generated_method = "7AA1B97F418BF33310818DAF604E2235")
     
 public final long write(ByteBuffer[] buffers) throws IOException {
@@ -719,8 +724,9 @@ public final long write(ByteBuffer[] buffers) throws IOException {
      * @throws NonWritableChannelException
      *             if this channel was not opened for writing.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.409 -0500", hash_original_method = "AC372293C8ABAB0E308F0F7E86460068", hash_generated_method = "5194FA121EAA05CA674317B28600EE9B")
     
 public abstract long write(ByteBuffer[] buffers, int offset, int length)

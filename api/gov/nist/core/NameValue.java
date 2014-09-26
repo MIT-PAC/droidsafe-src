@@ -254,7 +254,7 @@ public boolean equals(Object other) {
      * (non-Javadoc)
      * @see java.util.Map$Entry#getKey()
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.448 -0500", hash_original_method = "2F0EB2DB361DE1F8D28986094D857BA0", hash_generated_method = "97999F76D4943E2177ECAA7D863A4AE0")
     
 public String getKey() {
@@ -266,7 +266,7 @@ public String getKey() {
      * (non-Javadoc)
      * @see java.util.Map$Entry#getValue()
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.452 -0500", hash_original_method = "4618674F7CF871F15A32C0791ACD2466", hash_generated_method = "1934EA858DA05DEBA4327E847B52AB3D")
     
 public String getValue() {
@@ -278,6 +278,7 @@ public String getValue() {
      * (non-Javadoc)
      * @see java.util.Map$Entry#setValue(java.lang.Object)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.454 -0500", hash_original_method = "34CFBA77959CE5FB40B94FB25C9241AB", hash_generated_method = "66829753DDE2A772799FECB5E5C062CE")
     
 public String setValue(String value) {

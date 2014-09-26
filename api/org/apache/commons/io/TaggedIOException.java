@@ -134,6 +134,7 @@ public Serializable getTag() {
      *
      * @return wrapped exception
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.696 -0400", hash_original_method = "5CB5049271906C3DE2CF2601187D937A", hash_generated_method = "FF4BB6D04BD41BD41FBE055CC403C939")
     
 @Override

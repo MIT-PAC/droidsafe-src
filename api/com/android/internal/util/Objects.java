@@ -42,6 +42,7 @@ public static boolean equal(Object a, Object b) {
      * <b>Warning</b>: When a single object is supplied, the returned hash code
      * does not equal the hash code of that object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.288 -0500", hash_original_method = "5906F045128166A9E56FF6FDE6E49CCD", hash_generated_method = "88A9EA0CDDBC5F37AABAE9F35B6F717C")
     
 public static int hashCode(Object... objects) {

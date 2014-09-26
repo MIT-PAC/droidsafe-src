@@ -310,7 +310,7 @@ public byte[] digest(byte[] input) {
      * @return a printable representation for this {@code MessageDigest}
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.413 -0500", hash_original_method = "67B827C914C444116C889B9B936D23D1", hash_generated_method = "CB63A8F85874C335D55E50A42A6C113B")
     
 @Override
@@ -369,7 +369,7 @@ public final int getDigestLength() {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.426 -0500", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "3129F61A1AC4738DC9444626172FE7E6")
     
 @Override

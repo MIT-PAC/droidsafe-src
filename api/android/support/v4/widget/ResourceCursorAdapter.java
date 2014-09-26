@@ -10,20 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public abstract class ResourceCursorAdapter extends CursorAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.585 -0500", hash_original_field = "F80FE138111E8F75E38A0C3EDBD52F31", hash_generated_field = "5CC2A1296B93C3BD6A25D936449BB206")
 
     private int mLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.587 -0500", hash_original_field = "918E0C68C84C673BCCCB4F85D3B04922", hash_generated_field = "987A6AA6040898D3C8BF11B145CB7E2D")
 
-
     private int mDropDownLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.589 -0500", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
-
     
     private LayoutInflater mInflater;
     
@@ -98,6 +92,7 @@ public ResourceCursorAdapter(Context context, int layout, Cursor c, int flags) {
      * @see android.widget.CursorAdapter#newView(android.content.Context,
      *      android.database.Cursor, ViewGroup)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.604 -0500", hash_original_method = "E86C9DC4408CF260B8E6AACF31CF8025", hash_generated_method = "CF872DAE47252191A5AA057CAEF11C5C")
     
 @Override
@@ -133,7 +128,6 @@ public void setViewResource(int layout) {
 public void setDropDownViewResource(int dropDownLayout) {
         mDropDownLayout = dropDownLayout;
     }
-
     
 }
 

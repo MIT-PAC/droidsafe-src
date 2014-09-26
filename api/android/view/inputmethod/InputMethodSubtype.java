@@ -101,7 +101,7 @@ public static List<InputMethodSubtype> sort(Context context, int flags, InputMet
 
     public static final Parcelable.Creator<InputMethodSubtype> CREATOR
             = new Parcelable.Creator<InputMethodSubtype>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.004 -0500", hash_original_method = "B6933BA3396E8ADA7C6D5A78A0591156", hash_generated_method = "9F2DD4F025FBBB072F5052734A2C8779")
         
 @Override

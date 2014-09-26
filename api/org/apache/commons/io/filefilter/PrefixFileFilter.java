@@ -197,6 +197,7 @@ public PrefixFileFilter(List<String> prefixes, IOCase caseSensitivity) {
      *
      * @return a String representaion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.768 -0400", hash_original_method = "93C8E32B6EE68EAE0C3BFC84A4183EBE", hash_generated_method = "5502648BD3DA58FEBB997504A380D974")
     
 @Override

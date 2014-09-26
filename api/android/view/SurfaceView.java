@@ -95,6 +95,7 @@ public class SurfaceView extends View {
 
     final Handler mHandler = new Handler() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.953 -0400", hash_original_method = "82BE8897E23B3ED9422918649CBA5FAB", hash_generated_method = "6BEB6804DB838516BA4CFA4771D978CB")
         @Override
         public void handleMessage(Message msg) {
@@ -224,7 +225,7 @@ public class SurfaceView extends View {
             
         }
         
-            @DSSafe
+            @DSSafe(DSCat.SAFE_LIST)
             @DSVerified
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.956 -0400", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "B2CAB5E929433EA6D0C0BB2DEC01017A")
         public void addCallback(Callback callback) {
@@ -285,6 +286,7 @@ public class SurfaceView extends View {
             
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.958 -0400", hash_original_method = "B37A48D0CAD6F4AF8C78DA1B2A495A29", hash_generated_method = "6068068249DD588BA4B94775BE4C5DEA")
         @Deprecated
         public void setType(int type) {
@@ -457,6 +459,7 @@ public SurfaceHolder getHolder() {
         return mSurfaceHolder;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.328 -0500", hash_original_method = "D0F196EB2D52CF89A074E8F883CCEE9A", hash_generated_method = "704795F2F7A3F9BC3517311919405778")
     
 @Override
@@ -488,7 +491,7 @@ public SurfaceHolder getHolder() {
 
     @DSComment("Dedicated drawing surface")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.333 -0500", hash_original_method = "644621127059D6B23356D81576DC6A8B", hash_generated_method = "62E82B7696931E2AE444CFAC3B347A50")
     
 @Override
@@ -499,6 +502,7 @@ public SurfaceHolder getHolder() {
         updateWindow(false, false);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.337 -0500", hash_original_method = "4BCDE7E4A5F0F207B0BFA481971C6B8A", hash_generated_method = "477A7AB82862631629C2AAE68886FAE0")
     
 @Override

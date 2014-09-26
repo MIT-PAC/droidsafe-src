@@ -212,8 +212,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("Harvesting information")
-    @DSSpec(DSCat.SECURITY)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.126 -0500", hash_original_method = "12EA4F448AA17744DA817E2FDC985059", hash_generated_method = "FE296D16B1CFFEEEDB18114E3BAD0956")
     
 @Override
@@ -259,7 +259,7 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.FILE_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.139 -0500", hash_original_method = "744F22B41784C38DFA56BA635287A3F7", hash_generated_method = "4E892866A57704AD43DCD1822DAC1B41")
     
 @Override
@@ -290,8 +290,8 @@ public Context getBaseContext() {
     }
 
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.FS_INFO)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.145 -0500", hash_original_method = "41C51E2648C5FE16B28D046D5B54DAAA", hash_generated_method = "DD85A67E109B3B87717E895779708082")
     
 @Override
@@ -326,11 +326,11 @@ public Context getBaseContext() {
         return mBase.getExternalFilesDir(type);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
     public File[] getExternalFilesDirs(String type) {
         return mBase.getExternalFilesDirs(type);
     }
-
     
     @DSSafe(DSCat.SAFE_OTHERS)
     
@@ -706,14 +706,14 @@ public Context getBaseContext() {
 
         service.getStringExtra("");
         service.getStringArrayExtra("");
-        service.getStringArrayListExtra("");      
+        service.getStringArrayListExtra("");
 
         service.getCharExtra("", 'a');
         service.getCharArrayExtra("");
         
         service.getCharSequenceArrayExtra("");
         service.getCharSequenceArrayListExtra("");
-        service.getCharSequenceExtra("");              
+        service.getCharSequenceExtra("");
 
         service.getData();
         service.getFlags();

@@ -138,6 +138,7 @@ private void checkClosed() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.011 -0500", hash_original_method = "0F4ACBA61BED328D03506D362DC34EE4", hash_generated_method = "FAE8ABB4E549225250D24D24E9BDFDFC")
     
 @Override public int select() throws IOException {
@@ -145,6 +146,7 @@ private void checkClosed() {
         return selectInternal(-1);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.014 -0500", hash_original_method = "38CB8C7854E3817F0A25B22A5C37D9C3", hash_generated_method = "54B30DFFB09C6AF6E620D23D97BE0087")
     
 @Override public int select(long timeout) throws IOException {
@@ -155,6 +157,7 @@ private void checkClosed() {
         return selectInternal((timeout == 0) ? -1 : timeout);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.016 -0500", hash_original_method = "06C4B09F10BB426C607790AD420FF9C5", hash_generated_method = "6CA5D0B7ABB41D178CF5BA122681A45F")
     
 @Override public int selectNow() throws IOException {
@@ -390,6 +393,7 @@ public boolean addAll(Collection<? extends E> c) {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.057 -0500", hash_original_method = "3FA453B9F7C92A0D7DD94260C67D9514", hash_generated_method = "902EFA9A8DDA5FE4D8BD2B02A4325D89")
         
 public void clear() {
@@ -424,18 +428,21 @@ public Iterator<E> iterator() {
             return set.iterator();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.069 -0500", hash_original_method = "2486ACD2DD23466CE4FFA1B67E298992", hash_generated_method = "E99F7A299EECFFB0F247AB8E717C382F")
         
 public boolean remove(Object object) {
             return set.remove(object);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.071 -0500", hash_original_method = "BBEFDF942C9288158521A1B78A605140", hash_generated_method = "DB440D0030148FA35DB5BED89557F461")
         
 public boolean removeAll(Collection<?> c) {
             return set.removeAll(c);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.074 -0500", hash_original_method = "06DB016CCB1303D382A7D35EBEF3182D", hash_generated_method = "D76350C67CEEE0248B3E9DB6C4A732D1")
         
 public boolean retainAll(Collection<?> c) {

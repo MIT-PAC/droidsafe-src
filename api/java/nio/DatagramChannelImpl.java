@@ -84,6 +84,7 @@ protected DatagramChannelImpl(SelectorProvider selectorProvider) throws IOExcept
      * Getting the internal DatagramSocket If we have not the socket, we create
      * a new one.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.513 -0500", hash_original_method = "CB0BD0AB90ECCAF1B55A641E507A7D41", hash_generated_method = "008FFEF970FAF743C315976DF03926BF")
     
 @Override
@@ -119,6 +120,7 @@ InetAddress getLocalAddress() {
     /**
      * @see java.nio.channels.DatagramChannel#connect(java.net.SocketAddress)
      */
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.520 -0500", hash_original_method = "AF75F16707868C3AF8C2693CEE337F7E", hash_generated_method = "0FA282A422E6669B4050AF433D888A56")
     
 @Override
@@ -171,6 +173,8 @@ InetAddress getLocalAddress() {
         return this;
     }
 
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.526 -0500", hash_original_method = "0C3D128AF11DA9AEAEB5EC56CF1536D1", hash_generated_method = "47F4384BD26EFFE868A102FCCEBAEDC2")
     
 @Override
@@ -260,7 +264,8 @@ private SocketAddress receiveDirectImpl(ByteBuffer target, boolean loop) throws 
         return retAddr;
     }
 
-    @DSSink({DSSinkKind.FILE})
+    @DSSpec(DSCat.INTERNET)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.535 -0500", hash_original_method = "959B6E7D8D0C8B7E48B65559E90B586F", hash_generated_method = "0698714E8739C34F3F49DCE805AB41E7")
     
 @Override
@@ -294,7 +299,7 @@ private SocketAddress receiveDirectImpl(ByteBuffer target, boolean loop) throws 
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.538 -0500", hash_original_method = "76528871489F953D405DA27A93276CC2", hash_generated_method = "8944BF1CAF80B301B6D671641BFA6636")
     
 @Override
@@ -324,7 +329,8 @@ private SocketAddress receiveDirectImpl(ByteBuffer target, boolean loop) throws 
         return readCount;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.541 -0500", hash_original_method = "73BDAA1D4D5FBBB4136E79D8CC3B2003", hash_generated_method = "999D1F138A042E2F5F7BCDD7EBB6FF60")
     
 @Override
@@ -379,8 +385,8 @@ private int readImpl(ByteBuffer dst) throws IOException {
         }
     }
 
-    @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.INTERNET)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.546 -0500", hash_original_method = "EACC5F2E46984D93B58057650609FEF7", hash_generated_method = "13B34C302794F051EED7C644F69CDFAD")
     
 @Override public int write(ByteBuffer src) throws IOException {
@@ -401,6 +407,7 @@ private int readImpl(ByteBuffer dst) throws IOException {
      * @see java.nio.channels.DatagramChannel#write(java.nio.ByteBuffer[], int,
      *      int)
      */
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.549 -0500", hash_original_method = "92D26B18BB75EB8AD284E7DC348B13D6", hash_generated_method = "82ADAABDFF0443F748D9B6B5469FC3A9")
     
@@ -644,8 +651,8 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /**
          * @see java.net.DatagramSocket#send(java.net.DatagramPacket)
          */
-        @DSSpec(DSCat.IO_ACTION_METHOD)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.599 -0500", hash_original_method = "B8D9E7A66BAFFB4AAB90A90FE956BDD4", hash_generated_method = "172F7F7608E5B0C383F7277D8B5EDF7A")
         
 @Override

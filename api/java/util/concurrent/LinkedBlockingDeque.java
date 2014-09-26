@@ -1236,14 +1236,14 @@ void advance() {
             }
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.197 -0500", hash_original_method = "5C1B7B0DA20667590A4D5C5559468A28", hash_generated_method = "D9921E6F8BA4DD3AB60D42D0725CBAC4")
         
 public boolean hasNext() {
             return next != null;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.199 -0500", hash_original_method = "A893921D404CCDA66FADBF0BB5913A0B", hash_generated_method = "19288D8FBFED98522523829809ED1040")
         
 public E next() {

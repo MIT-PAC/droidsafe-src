@@ -98,22 +98,17 @@ import libcore.io.IoUtils;
 public class FileHandler extends StreamHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.530 -0400", hash_original_field = "C70B2F61FFA74C97B2BAC90C03C09059", hash_generated_field = "90167AEA0F6AA22DA2C9F5537BD71D95")
 
-
     private static final String LCK_EXT = ".lck";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.530 -0400", hash_original_field = "1E07C36389BC5A9DF3277432786FA962", hash_generated_field = "33CF1878FE1E3E5FCFBC98EEB006D485")
-
 
     private static final int DEFAULT_COUNT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.531 -0400", hash_original_field = "485A487D23BA191833B869DD6D8F51FD", hash_generated_field = "59AE414CF1E30B3D0FD34078576C1195")
 
-
     private static final int DEFAULT_LIMIT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.531 -0400", hash_original_field = "8090F4C30D6DD4C258553187E92F1792", hash_generated_field = "3910190C2E1DDD82CB43C83244896DBC")
 
-
     private static final boolean DEFAULT_APPEND = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.532 -0400", hash_original_field = "FB3778E960802BDC884985661ECA5E69", hash_generated_field = "054357C5DAF796DCB17DAD1EDD7DFE62")
-
 
     private static final String DEFAULT_PATTERN = "%h/java%u.log";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.532 -0400", hash_original_field = "932839339173780110F7230D7C500ACD", hash_generated_field = "CA3AADD13EE142D278BA8FC6F14EB9B4")
@@ -567,10 +562,8 @@ private int getIntProperty(String key, int defaultValue) {
     static class MeasureOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.546 -0400", hash_original_field = "4ACAF6B8D1F9DC6B861B3D66064F9380", hash_generated_field = "4ACAF6B8D1F9DC6B861B3D66064F9380")
 
-
         OutputStream wrapped;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.546 -0400", hash_original_field = "D634AAE75ADF86F4EAAC1CC85A8379F4", hash_generated_field = "D634AAE75ADF86F4EAAC1CC85A8379F4")
-
 
         long length;
 
@@ -587,6 +580,8 @@ public MeasureOutputStream(OutputStream stream) {
             this(stream, 0);
         }
 
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.547 -0400", hash_original_method = "96A9E08AC9369D97FD07610C2CBA5829", hash_generated_method = "C2EA42A3A3A2C373B2148EE4342FBD45")
         
 @Override
@@ -595,6 +590,8 @@ public MeasureOutputStream(OutputStream stream) {
             length++;
         }
 
+        @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.547 -0400", hash_original_method = "EEE16229FD9924AD47850E595E1B7BC0", hash_generated_method = "E4C518D067DDACF11142E86AB8E9FDD9")
         
 @Override
@@ -603,6 +600,7 @@ public MeasureOutputStream(OutputStream stream) {
             length += len;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.548 -0400", hash_original_method = "512E2435995017FA2343204BAC2A6AAD", hash_generated_method = "7086E2D9CF20F6FE895C0BD4E79DEBBF")
         
 @Override
@@ -610,6 +608,7 @@ public MeasureOutputStream(OutputStream stream) {
             wrapped.close();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:08.549 -0400", hash_original_method = "FD99943920BFF9B7648F1F0C038F55A8", hash_generated_method = "711A40FB9AE01028CB8DAF7ACB40DE17")
         
 @Override

@@ -523,6 +523,7 @@ public void updateTxRxSum() {
 
     protected BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.972 -0400", hash_original_method = "1961A46761D2A74B4BBC61E9BCC43068", hash_generated_method = "0252BFECBC373E4A0BFABE33F7D5DC8C")
         @Override
         public void onReceive(Context context, Intent intent) {

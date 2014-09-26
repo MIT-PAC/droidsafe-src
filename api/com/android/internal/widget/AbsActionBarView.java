@@ -73,6 +73,7 @@ public AbsActionBarView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.248 -0500", hash_original_method = "A484FDB326818C55D115F236B23DD701", hash_generated_method = "4F30AF12109A412482EFF81C971F0798")
     
 @Override
@@ -193,7 +194,7 @@ public void animateToVisibility(int visibility) {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.267 -0500", hash_original_method = "E3FDA7CA05E815669691C5C9F461C174", hash_generated_method = "7507F82342AEE21992A70367745836D1")
     
 @Override
@@ -217,7 +218,8 @@ public boolean showOverflowMenu() {
     
 public void postShowOverflowMenu() {
         post(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 showOverflowMenu();
             }
         });

@@ -201,6 +201,7 @@ public QueryHandler(ContentResolver cr) {
     public void setMode(int size) {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.383 -0500", hash_original_method = "23D2E4F314D26FFBC9D75F31C49B7153", hash_generated_method = "1D455346E497046E21B5D8556C4DFFFF")
     
 @Override
@@ -328,6 +329,7 @@ private void onContactUriChanged() {
         setEnabled(isAssigned());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.399 -0500", hash_original_method = "58382461F76E5F0CD49350469EC07976", hash_generated_method = "A5ABAA9F0A344073317EB255684B5814")
     
 @Override

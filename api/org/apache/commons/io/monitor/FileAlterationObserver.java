@@ -125,7 +125,6 @@ import org.apache.commons.io.comparator.NameFileComparator;
 public class FileAlterationObserver implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.971 -0400", hash_original_field = "D89371632A594E9868CE5734F8BA23A5", hash_generated_field = "436A14A63A25ADE4D46FD57CDC506FA0")
 
-
     private final List<FileAlterationListener> listeners = new CopyOnWriteArrayList<FileAlterationListener>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.971 -0400", hash_original_field = "0830D15C0C1C91A3ACC9A4A564151BE2", hash_generated_field = "D4E9B8247C7F7B78EC9C2DA270FD3257")
 
@@ -497,6 +496,7 @@ private File[] listFiles(File file) {
      *
      * @return a String representation of this observer
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.986 -0400", hash_original_method = "B829940FDDA83108C12ADCFE12967B77", hash_generated_method = "D5922C7B6EFBC5FF2512DF05DCDEF26B")
     
 @Override

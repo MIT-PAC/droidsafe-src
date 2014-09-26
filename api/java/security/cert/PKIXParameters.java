@@ -592,6 +592,7 @@ public void setTargetCertConstraints(CertSelector targetCertConstraints) {
      *
      * @return the cloned instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.778 -0400", hash_original_method = "85D8432A891D0E2C2230EA01D5B002E2", hash_generated_method = "CFEEACD5CD1BA84BEFF059F7725138D4")
     
 public Object clone() {
@@ -616,6 +617,7 @@ public Object clone() {
      *
      * @return a string representation of this {@code PKIXParameters} instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.780 -0400", hash_original_method = "825D9864B961C064BE999896EC76C33C", hash_generated_method = "EC328CA4CFFDC6ABE4EBC2500072AC50")
     
 public String toString() {

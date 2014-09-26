@@ -48,8 +48,8 @@ public void close() throws IOException {
      *             if the stream is closed or another IOException occurs.
      * @since Android 1.5
      */
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.BLUETOOTH})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.447 -0500", hash_original_method = "2059D974D6DFEDC9A8B8553096188222", hash_generated_method = "6E79AC07ED988EFBA15A6F1994AEF577")
     
 public int read() throws IOException {
@@ -80,7 +80,7 @@ public int read() throws IOException {
      * @since Android 1.5
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.449 -0500", hash_original_method = "20F62B1F3CA63F6FE3BCEE9660F3F09F", hash_generated_method = "0DF6D203DCBC3F1E01A85090A3B0A6A7")
     
 public int read(byte[] b, int offset, int length) throws IOException {

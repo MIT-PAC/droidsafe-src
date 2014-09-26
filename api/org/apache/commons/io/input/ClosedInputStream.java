@@ -42,6 +42,8 @@ public class ClosedInputStream extends InputStream {
      *
      * @return always -1
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.706 -0400", hash_original_method = "7FDC5668BF104D2F1DB6279D6F3A1179", hash_generated_method = "CC33DED15C24FA1F452C35E7A89F47AC")
     
 @Override

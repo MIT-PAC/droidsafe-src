@@ -61,7 +61,6 @@ import java.util.WeakHashMap;
 class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.488 -0400", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
-
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.491 -0400", hash_original_field = "13F3B2DF0FCA764230D27EDCE01E4B44", hash_generated_field = "10677C9028A9E03475AECA5E3EA8B569")
 
@@ -71,7 +70,6 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
     private static final int QUERY_LIMIT = 50;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.495 -0400", hash_original_field = "AE137D8B61EF1E6708FA70587481FB25", hash_generated_field = "98E9087104FBAF95AD5B62C304A0CCFF")
 
-
     static final int REFINE_NONE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.497 -0400", hash_original_field = "49FA411F6050649582B6B5F150971B04", hash_generated_field = "837D31B49612E7145EBEC07CF04BC9EF")
 
@@ -80,7 +78,6 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
 
     static final int REFINE_ALL = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.537 -0400", hash_original_field = "79922DB043510C9A19B5CA2602F88574", hash_generated_field = "5DFAE43769080A8126AF66611D827CF3")
-
 
     static final int INVALID_INDEX = -1;
 
@@ -115,7 +112,6 @@ private static String getStringOrNull(Cursor cursor, int col) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.502 -0400", hash_original_field = "8470BADEE289DF0AB053E4469CD24A3C", hash_generated_field = "EC37B561700692089320F9D5E535EAC6")
-
 
     private SearchManager mSearchManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.504 -0400", hash_original_field = "60229949E2319A4FB0EE2E6EFEBE4F16", hash_generated_field = "1366187FE3CF01EF5FC13B6B4154C3DB")
@@ -207,6 +203,7 @@ public int getQueryRefinement() {
      * Overridden to always return <code>false</code>, since we cannot be sure that
      * suggestion sources return stable IDs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.559 -0400", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "BF2ED6D8AA7E3F26499C1DEA76CA3447")
     
 @Override
@@ -219,6 +216,7 @@ public int getQueryRefinement() {
      * in a worker thread, so it's OK if the query is slow (e.g. round trip for suggestions).
      * The results will be processed in the UI thread and changeCursor() will be called.
      */
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.561 -0400", hash_original_method = "751D905881D500785FB6386F5B08F863", hash_generated_method = "5D3AE3B6F9B4A4BADCE160BAD2076E7C")
     
 @Override
@@ -258,6 +256,7 @@ public void close() {
         mClosed = true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.565 -0400", hash_original_method = "6C6F9D84444AF89C1AA3B4F24466FCA3", hash_generated_method = "8114E027C251957471CAB0AA4D5386E6")
     
 @Override
@@ -268,6 +267,7 @@ public void close() {
         updateSpinnerState(getCursor());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.569 -0400", hash_original_method = "C9146AC3C36F793606A0389850806FAD", hash_generated_method = "FE6CF0A454D78923538D15273EA24206")
     
 @Override
@@ -350,6 +350,7 @@ private void updateSpinnerState(Cursor cursor) {
     /**
      * Tags the view with cached child view look-ups.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.577 -0400", hash_original_method = "FF2C15D5C77CB986FFC483C5693D319F", hash_generated_method = "8FC17E37CE7826FC731CFDA2E6F6822A")
     
 @Override
@@ -359,6 +360,7 @@ private void updateSpinnerState(Cursor cursor) {
         return v;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.598 -0400", hash_original_method = "9ABFACDD3FE80D43883DC10EAA51920C", hash_generated_method = "BFA92484CCFF61190E75E1EF10D3492B")
     
 @Override
@@ -415,6 +417,7 @@ private void updateSpinnerState(Cursor cursor) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.600 -0400", hash_original_method = "21562F430356DF0ADAE2AB54659D8C55", hash_generated_method = "5D8A5AF0DF375611FC111AC52F452F73")
     
 public void onClick(View v) {
@@ -548,6 +551,7 @@ private void setViewDrawable(ImageView v, Drawable drawable, int nullVisibility)
      *
      * @see android.widget.ListAdapter#getView(int, View, ViewGroup)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.620 -0400", hash_original_method = "EC9A6ABF4CBFA211B4EDA728AA0B1D68", hash_generated_method = "6F756B9030C9DE6578298DBB4587359F")
     
 @Override
@@ -663,8 +667,6 @@ private Drawable getDrawable(Uri uri) {
             return null;
         }
     }
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.629 -0400", hash_original_method = "9553535B4A93F8E44A1EFE31D535ED8E", hash_generated_method = "535FC01315FAC95DA4A22A433C2BB95A")
     

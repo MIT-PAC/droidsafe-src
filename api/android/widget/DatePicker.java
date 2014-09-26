@@ -394,6 +394,7 @@ public void setMaxDate(long maxDate) {
         event.getText().add(selectedDateUtterance);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.346 -0500", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "6328851CBC85DA1645204E969B0A309A")
     
 @Override
@@ -576,7 +577,7 @@ public void updateDate(int year, int month, int dayOfMonth) {
         dispatchThawSelfOnly(container);
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.371 -0500", hash_original_method = "5DB0198ABA6176C6419BBD5D6E2C0EE9", hash_generated_method = "B665ACF49AE54575723CB897CAF8113E")
     
 @Override
@@ -585,7 +586,7 @@ public void updateDate(int year, int month, int dayOfMonth) {
         return new SavedState(superState, getYear(), getMonth(), getDayOfMonth());
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.373 -0500", hash_original_method = "7BB26B54419EB3FE0435D4F561876035", hash_generated_method = "C7BBBEC0B2DBA5005BB6406C41C973D2")
     
 @Override
@@ -727,7 +728,7 @@ private void updateCalendarView() {
         // suppress unused and hiding
         public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
 
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -774,7 +775,8 @@ private SavedState(Parcel in) {
             mDay = in.readInt();
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.420 -0500", hash_original_method = "AFDD7CDA63529FFA8C3C3C99BF58C7E4", hash_generated_method = "4BF429ADDEA05A36328475A0268C9ED7")
         
 @Override

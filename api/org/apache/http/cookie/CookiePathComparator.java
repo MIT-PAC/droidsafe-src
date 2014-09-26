@@ -32,6 +32,7 @@ private String normalizePath(final Cookie cookie) {
         return path;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.290 -0500", hash_original_method = "38114A956CA6EEFF2831D01642E4D39A", hash_generated_method = "8FEACE0E0CF31016BAF0C982B6E3D548")
     
 public int compare(final Cookie c1, final Cookie c2) {

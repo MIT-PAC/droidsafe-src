@@ -44,8 +44,6 @@ import org.apache.harmony.security.x509.PolicyInformation;
 import org.apache.harmony.security.x509.PrivateKeyUsagePeriod;
 import org.apache.harmony.security.x509.SubjectPublicKeyInfo;
 
-
-
 /**
  * A certificate selector ({@code CertSelector} for selecting {@code
  * X509Certificate}s that match the specified criteria.
@@ -1134,6 +1132,7 @@ public Collection<List<?>> getPathToNames() {
      * @return a string representation of this {@code X509CertSelector}
      *         instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.681 -0400", hash_original_method = "41DE0776B6BB494AF0EA496108712ABC", hash_generated_method = "D705FDCE6EE4FDFC46EAC2F1848FA6F5")
     
 public String toString() {
@@ -1480,6 +1479,7 @@ public boolean match(Certificate certificate) {
      *
      * @return the cloned instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.692 -0400", hash_original_method = "B0D99509D385623E172CAB9B08956BC2", hash_generated_method = "DF2FB1CD94DA891A138C379B2DFAD93A")
     
 public Object clone() {

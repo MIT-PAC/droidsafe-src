@@ -36,18 +36,14 @@ import libcore.io.Streams;
 public class LineNumberInputStream extends FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.515 -0400", hash_original_field = "330B2760AA91CE77EFBAED3976D7655C", hash_generated_field = "09A4698FFE38FA7794A20A1F94A6867E")
 
-
     private int lineNumber;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.516 -0400", hash_original_field = "DBC81950E23E00CD1D8CBF4B88EAECD0", hash_generated_field = "1C916C4658DC40807EB1430C1DBE7CA4")
-
 
     private int markedLineNumber = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.517 -0400", hash_original_field = "98C08A237D42C5FB2A83529B1F1E52FB", hash_generated_field = "EA630226E6A8C14200174F39623A2DEA")
 
-
     private int lastChar = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.519 -0400", hash_original_field = "945E005DF69CCD63B42D5AD932BD72EB", hash_generated_field = "2213796FBCE93855E6DF953D61640FFB")
-
 
     private int markedLastChar;
 
@@ -75,6 +71,7 @@ public LineNumberInputStream(InputStream in) {
      * {@code available} returns only {@code in.available() / 2} bytes as
      * result.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.529 -0400", hash_original_method = "9656C3365F203F315A3500AFB9043F07", hash_generated_method = "78F62E915B13C69CC156406F51AC0917")
     
 @Override
@@ -109,6 +106,7 @@ public int getLineNumber() {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.532 -0400", hash_original_method = "B96EC2539DB250F8E95A33A3A09EEE3D", hash_generated_method = "ED1FC67D8A0D05DC55B055F239975CD4")
     
 @Override
@@ -133,6 +131,8 @@ public int getLineNumber() {
      * @throws IOException
      *             if the stream is closed or another IOException occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.533 -0400", hash_original_method = "881233CAFAEB30A182B61CB7440FD1DB", hash_generated_method = "547A2033ADE3CA3ACDC544D8D1CA6901")
     
 @SuppressWarnings("fallthrough")
@@ -187,6 +187,8 @@ public int getLineNumber() {
      * @throws NullPointerException
      *             if {@code buffer} is {@code null}.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.535 -0400", hash_original_method = "7B3082DF4DFF3271DA5B12250C3600A9", hash_generated_method = "0988799D89BDC4690F48B77D24CC5611")
     
 @Override
@@ -221,6 +223,7 @@ public int getLineNumber() {
      * @see #mark(int)
      * @see #markSupported()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.536 -0400", hash_original_method = "5CFC5B6B1EB8619DEC60F6B82F3081E9", hash_generated_method = "170A64221F00215B2CD270A529F3E477")
     
 @Override
@@ -262,6 +265,7 @@ public void setLineNumber(int lineNumber) {
      * @see #read()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.539 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "FA64348A96D1C68BD0600E70DFA81D7E")
     
 @Override

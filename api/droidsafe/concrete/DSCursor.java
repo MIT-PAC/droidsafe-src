@@ -68,7 +68,7 @@ public class DSCursor implements Cursor {
     }
     
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    
     public String getColumnName(int columnIndex) {
         String str = new String("DSUnknown");
         str.addTaint(getTaint());
@@ -81,6 +81,7 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("From safe class list")
     @DSSafe(DSCat.DB_CURSOR)
     
@@ -138,6 +139,8 @@ public class DSCursor implements Cursor {
         return new String("DSUnknown");
     }
     
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
     public Bundle getExtras() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
@@ -156,7 +159,7 @@ public class DSCursor implements Cursor {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    
     public boolean isBeforeFirst() {
         return false;
     }
@@ -168,7 +171,7 @@ public class DSCursor implements Cursor {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    
     public boolean isLast() {
         return false;
     }
@@ -226,7 +229,7 @@ public class DSCursor implements Cursor {
         return false;
     }
 
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean requery() {
         return false;
     }

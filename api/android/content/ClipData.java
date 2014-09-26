@@ -128,7 +128,7 @@ static public ClipData newRawUri(CharSequence label, Uri uri) {
     public static final Parcelable.Creator<ClipData> CREATOR =
         new Parcelable.Creator<ClipData>() {
 
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.696 -0500", hash_original_method = "E9B77AA38C2D4F67ACBCF421C777825E", hash_generated_method = "3DC0675F011A5E949860AC49DFD80659")
         
 public ClipData createFromParcel(Parcel source) {

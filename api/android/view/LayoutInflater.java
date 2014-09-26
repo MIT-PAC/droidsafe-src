@@ -631,6 +631,7 @@ private void makeBlink() {
             mHandler.sendMessageDelayed(message, BLINK_DELAY);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.853 -0500", hash_original_method = "F84801EA6DE017B4DF3D928CA8059755", hash_generated_method = "6284B5BDAB2DDB221E2E9EE595018DF0")
         
 @Override
@@ -643,6 +644,7 @@ private void makeBlink() {
             makeBlink();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.856 -0500", hash_original_method = "68779D94DBD6ED32D8C444331B18EB29", hash_generated_method = "6A0685E58F3EC3A3DCAE39465F581AFA")
         
 @Override
@@ -655,6 +657,7 @@ private void makeBlink() {
             mHandler.removeMessages(MESSAGE_BLINK);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.858 -0500", hash_original_method = "B2A7E99D93A7E570FADBB759CB038122", hash_generated_method = "16A89DEF744A3BBDE7BBA6D9F8C2EC56")
         
 @Override

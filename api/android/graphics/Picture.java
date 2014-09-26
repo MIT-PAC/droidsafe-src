@@ -231,6 +231,7 @@ public RecordingCanvas(Picture pict, int nativeCanvas) {
                                 "Cannot call setBitmap on a picture canvas");
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.377 -0500", hash_original_method = "37BF59928A286475E8AAF8FA82084BAA", hash_generated_method = "F45267C78DC72D5C72A76F4F1FFC4004")
         
 @Override

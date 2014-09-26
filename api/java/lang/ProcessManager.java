@@ -79,7 +79,8 @@ public static ProcessManager getInstance() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.453 -0400", hash_original_method = "65B627E41D9F392064B029711B809D6A", hash_generated_method = "8F2C2A3FD38ED80D61DE63C94471BF94")
     private  ProcessManager() {
         Thread reaperThread = new Thread(ProcessManager.class.getName()) {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.536 -0500", hash_original_method = "5EDA8A1888B05474B51AEC07008E0508", hash_generated_method = "95A1875BC116738308AC99181C6ADE9D")
+            @DSSpec(DSCat.SPEC_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.536 -0500", hash_original_method = "5EDA8A1888B05474B51AEC07008E0508", hash_generated_method = "95A1875BC116738308AC99181C6ADE9D")
             
 @Override public void run() {
                 watchChildren();
@@ -236,6 +237,7 @@ ProcessImpl(int pid, FileDescriptor in, FileDescriptor out, FileDescriptor err) 
             this.outputStream = new ProcessOutputStream(out);
         }
 
+        @DSSpec(DSCat.SPEC_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.578 -0500", hash_original_method = "C1B009BFBA55AC97BB6BF3192F492760", hash_generated_method = "8D0E7A5C1AD07B52B2004C7B56E63A6B")
         
 public void destroy() {
@@ -249,6 +251,8 @@ public void destroy() {
             IoUtils.closeQuietly(outputStream);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.OS_PROCESS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.581 -0500", hash_original_method = "72D26C729273916A38DD81F020E1EC4C", hash_generated_method = "B657200AFE52939BF41791395FB037B6")
         
 public int exitValue() {
@@ -262,7 +266,8 @@ public int exitValue() {
             }
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.583 -0500", hash_original_method = "DCE7BF5109CA162BD54D93588001BD51", hash_generated_method = "35E01D63A5F5E2CB917B76EB06BCC5C1")
         
 public InputStream getErrorStream() {
@@ -277,13 +282,15 @@ public InputStream getInputStream() {
             return this.inputStream;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.OS_PROCESS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.588 -0500", hash_original_method = "94C3B255D73CD61583B0AC248BC392B9", hash_generated_method = "5B8B07E552425D28CAC88F79CCC9D958")
         
 public OutputStream getOutputStream() {
             return this.outputStream;
         }
 
+        @DSSource({DSSourceKind.OS_PROCESS})
         @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.591 -0500", hash_original_method = "BE1794A2A2D4EC2F61628D9639894105", hash_generated_method = "CD203357F948B827B4C6BF231EF7FD14")
         
@@ -342,6 +349,7 @@ public ProcessReference(ProcessImpl referent, ProcessReferenceQueue referenceQue
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.609 -0500", hash_original_method = "A8419736BED4DA94F6EABC777190260F", hash_generated_method = "E1F71BD84F819DF7A541D8F28359513B")
         
 @Override

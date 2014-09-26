@@ -140,6 +140,7 @@ public Intent getIntent(int index) {
         return editIntentAt(index);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.024 -0500", hash_original_method = "B488DB0CFE3181CA27664FEB9997F729", hash_generated_method = "5B2219A8B58FC839EDD4448194BA2428")
     
 public Iterator<Intent> iterator() {
@@ -162,8 +163,6 @@ public PendingIntent getPendingIntent(Context context, Intent[] intents, int req
             topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             return PendingIntent.getActivity(context, requestCode, topIntent, flags);
         }
-        
-    
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.655 -0400", hash_original_method = "0EC693EAD418FAD5DC7EF9CC9A04B4F6", hash_generated_method = "59C0A1B84391067A7AAE5AE105E72B52")
                 
@@ -191,8 +190,6 @@ public PendingIntent getPendingIntent(Context context, Intent[] intents, int req
             return TaskStackBuilderHoneycomb.getActivitiesPendingIntent(context, requestCode,
                     intents, flags);
         }
-        
-    
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.664 -0400", hash_original_method = "23456E97DF18402395D2229CC661A415", hash_generated_method = "4408097C3532810D90883C9691D88BC3")
                 
@@ -226,8 +223,7 @@ public void startActivities() {
         startActivities(null);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-
+    @DSSafe(DSCat.SAFE_LIST)
 
     /**
      * Obtain a {@link PendingIntent} for launching the task constructed by this builder so far.
@@ -252,9 +248,6 @@ public PendingIntent getPendingIntent(int requestCode, int flags) {
             IMPL = new TaskStackBuilderImplBase();
         }
     }
-    
-
-
 
     /**
      * Obtain a {@link PendingIntent} for launching the task constructed by this builder so far.
@@ -269,6 +262,7 @@ public PendingIntent getPendingIntent(int requestCode, int flags) {
      * See {@link android.content.Context#startActivity(Intent, Bundle)
      * @return The obtained PendingIntent
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.748 -0400", hash_original_method = "0E80A803E7C1AEC8F916FAEA93A5B1EC", hash_generated_method = "6333BBA6D29A2AFEC8E1885C605F593E")
             
 public PendingIntent getPendingIntent(int requestCode, int flags, Bundle options) {

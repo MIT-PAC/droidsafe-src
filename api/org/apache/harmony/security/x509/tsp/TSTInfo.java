@@ -106,7 +106,6 @@ public class TSTInfo {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.354 -0400", hash_original_field = "31EA7F0E03A7795B758D9C13E0904283", hash_generated_field = "4D3134E1BA71B6EF55EA8A4DA3769FB3")
 
-
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             ASN1Integer.getInstance(),              // version
             ASN1Oid.getInstance(),                  // policy
@@ -162,42 +161,32 @@ public class TSTInfo {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.337 -0400", hash_original_field = "971D53A5DDB5A515B8A18CE48C276387", hash_generated_field = "605FE2D9A0C9E94D1E2D3DAEDB658980")
 
-
     private  int version;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.338 -0400", hash_original_field = "1B09A70F5EC2CFD723BCA4AF6E3A1649", hash_generated_field = "A10D4BBCA0F477D86E7B537B46FFE89E")
-
 
     private  String policy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.338 -0400", hash_original_field = "F31921A0A5D0631E718887C96E89AF46", hash_generated_field = "49C20C38279D6EB96121ADC1E18E3831")
 
-
     private  MessageImprint messageImprint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.339 -0400", hash_original_field = "357D34BE4D3F218CD8ADF717DBF7DD40", hash_generated_field = "8556E85255DE7EB3D2D59484E44C2BAC")
-
 
     private  BigInteger serialNumber;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.339 -0400", hash_original_field = "71261B185663E6FC694A0BFC717A7102", hash_generated_field = "A61C407C6F176EF92539CC88912D121F")
 
-
     private  Date genTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.339 -0400", hash_original_field = "5AC8FA15D9784805B8FF0C4AA2E3D558", hash_generated_field = "7F620060B53AB5F6E4FEDF4018644187")
-
 
     private  int [] accuracy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.340 -0400", hash_original_field = "A2AAF9DB8B239EBAA5E91AD1EDD1AEA7", hash_generated_field = "371F78781F3851FBAA3C212A1E817B48")
 
-
     private  Boolean ordering;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.340 -0400", hash_original_field = "13ECC8C436811ED0415BD7546AA2A777", hash_generated_field = "757A20AA999EACA0F78635F2872B1EB4")
-
 
     private  BigInteger nonce;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.341 -0400", hash_original_field = "23C9AB2F073E847B29BCA507797E7F55", hash_generated_field = "3AA19A75430F93B1C147E93D480AD7C9")
 
-
     private  GeneralName tsa;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.341 -0400", hash_original_field = "11D23A9D67ECEDEBAFCBDADBAE6E0FA1", hash_generated_field = "85FCB044EB3BC544E06DEC3DDF20CB7B")
-
 
     private  Extensions extensions;
 
@@ -219,6 +208,7 @@ public TSTInfo(int version, String policy, MessageImprint messageImprint,
         this.extensions = extensions;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.343 -0400", hash_original_method = "49C94B13780CC851759F211DAA34706C", hash_generated_method = "043F3AC2389E30D3C1693AA50B4F96C2")
     
 public String toString() {

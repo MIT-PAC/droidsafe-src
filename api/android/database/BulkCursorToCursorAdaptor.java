@@ -88,6 +88,7 @@ private void throwIfCursorIsClosed() {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSSafe(DSCat.DB_CURSOR)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.684 -0500", hash_original_method = "0E6B64C20F6304D897F9214656E1B9B2", hash_generated_method = "D697043E99580945CEDED89CB5B67AFF")
@@ -162,7 +163,7 @@ private void throwIfCursorIsClosed() {
         }
     }
 
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.696 -0500", hash_original_method = "2BB8C0DB5A3CE31D75C859DF8A5992AB", hash_generated_method = "6AE83350538398CFDDEDC3B303DB78A3")
     
 @Override
@@ -210,6 +211,7 @@ private void throwIfCursorIsClosed() {
         return mColumns;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.701 -0500", hash_original_method = "5109D579D87DF77312539D6DDC351AB2", hash_generated_method = "3BC2D21BA5951A433D2AF7F4C9FC0409")
     

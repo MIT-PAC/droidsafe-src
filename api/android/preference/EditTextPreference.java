@@ -101,6 +101,7 @@ public String getText() {
         return mText;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.701 -0500", hash_original_method = "D07B0890C399F21AD31B9014C9722593", hash_generated_method = "4BF2E8F6B1A0E651BB9C758014DA42D0")
     
 @Override
@@ -135,6 +136,7 @@ protected void onAddEditTextToDialogView(View dialogView, EditText editText) {
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.705 -0500", hash_original_method = "72D88295ED5747003A75C3EC7A0816A7", hash_generated_method = "672C4E9ABE56C73C368FA7637B485EF8")
     
 @Override
@@ -193,6 +195,7 @@ public EditText getEditText() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.719 -0500", hash_original_method = "D74BC4DC00378E9BF3AD83FB4C28C295", hash_generated_method = "3891E3C211252A2F460A670B835B6188")
     
 @Override
@@ -208,6 +211,7 @@ public EditText getEditText() {
         return myState;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.722 -0500", hash_original_method = "FDF67462F1789AF80412C105807187A6", hash_generated_method = "E02B0C4D3919AFA95EC4AD6A390902C7")
     
 @Override
@@ -229,7 +233,7 @@ public EditText getEditText() {
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.735 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
@@ -259,7 +263,8 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.729 -0500", hash_original_method = "A36EF7056AEE816C6C1E1134145BD2DB", hash_generated_method = "EFD6D0E27E147449B122E38ED1F2DF1C")
         
 @Override

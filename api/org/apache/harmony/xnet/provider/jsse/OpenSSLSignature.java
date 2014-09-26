@@ -28,6 +28,7 @@ public class OpenSSLSignature extends Signature {
      *
      * @throws RuntimeException In case of problems.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.722 -0500", hash_original_method = "DDA7EDEE93457C94E7DD861968C9B300", hash_generated_method = "2507FDE2B79C162E4758BCD5DB9E7B7E")
     
 public static OpenSSLSignature getInstance(String algorithm) throws NoSuchAlgorithmException {

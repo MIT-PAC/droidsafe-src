@@ -228,7 +228,8 @@ public long getUsage() {
 public void createUIHandler() {
         if (mUIHandler == null) {
             mUIHandler = new Handler() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 public void handleMessage(Message msg) {
                     switch (msg.what) {
                         case RETURN_ORIGINS: {
@@ -264,7 +265,8 @@ public void createUIHandler() {
 public synchronized void createHandler() {
         if (mHandler == null) {
             mHandler = new Handler() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 public void handleMessage(Message msg) {
                     switch (msg.what) {
                         case SET_QUOTA_ORIGIN: {

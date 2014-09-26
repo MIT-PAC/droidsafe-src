@@ -93,7 +93,8 @@ public RequestQueue(Context context, int connectionCount) {
         {
             mProxyChangeReceiver =
                     new BroadcastReceiver() {
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.280 -0500", hash_original_method = "3CB2B7FAEA507C11972A385D868E1E52", hash_generated_method = "C33F7949724EF2C6F408910899572C6C")
+                        @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.280 -0500", hash_original_method = "3CB2B7FAEA507C11972A385D868E1E52", hash_generated_method = "C33F7949724EF2C6F408910899572C6C")
                 
 @Override
                         public void onReceive(Context ctx, Intent intent) {

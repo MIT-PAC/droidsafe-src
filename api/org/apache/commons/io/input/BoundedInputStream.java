@@ -88,6 +88,8 @@ public BoundedInputStream(InputStream in) {
      * the limit has been reached.
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.381 -0400", hash_original_method = "3B17BBAD3F2EB7B5AD570704422B04DF", hash_generated_method = "E4595D1150620DB6A28E6C23D90EB3DE")
     
 @Override
@@ -107,6 +109,8 @@ public BoundedInputStream(InputStream in) {
      * the limit has been reached.
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.381 -0400", hash_original_method = "19F9C1719138FA897C10FCE8AB2E8039", hash_generated_method = "49FD28DF421FEF8CD1F21A9ACDBF2702")
     
 @Override
@@ -123,6 +127,8 @@ public BoundedInputStream(InputStream in) {
      * the limit has been reached.
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.382 -0400", hash_original_method = "6E26F3926C5C4BE64BEC3614C2578ECF", hash_generated_method = "DCA5893E95EBCAA6A167DCC40A92D6C6")
     
 @Override
@@ -147,6 +153,7 @@ public BoundedInputStream(InputStream in) {
      * @return the actual number of bytes skipped
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.382 -0400", hash_original_method = "3E60C451BC527FA5E0EE5111E14B91C6", hash_generated_method = "FA9A227518DD8FAF55840E8CD6E333C4")
     
 @Override
@@ -160,6 +167,7 @@ public BoundedInputStream(InputStream in) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.383 -0400", hash_original_method = "E5B4C78CEEFEAE7860E3B26DF4558532", hash_generated_method = "3F909D66FB3F4E3E53579A0162D1D953")
     
 @Override
@@ -174,6 +182,7 @@ public BoundedInputStream(InputStream in) {
      * Invokes the delegate's <code>toString()</code> method.
      * @return the delegate's <code>toString()</code>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.383 -0400", hash_original_method = "470E22CC32FA86C99C3D62D15B859950", hash_generated_method = "87D6EDE96859AF961B8D65DCD93E3C60")
     
 @Override
@@ -186,6 +195,7 @@ public BoundedInputStream(InputStream in) {
      * if {@link #isPropagateClose()} is {@code true}.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.384 -0400", hash_original_method = "1FFBF77FC0F2EDDE2606808C3D8F55E3", hash_generated_method = "36934EA4C8357F3785F502AC2601F406")
     
 @Override
@@ -199,6 +209,7 @@ public BoundedInputStream(InputStream in) {
      * Invokes the delegate's <code>reset()</code> method.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.384 -0400", hash_original_method = "BD0421AF6C1AA9CFCF6C9B3AE10A8647", hash_generated_method = "5C3178ECC6D08BE1B7069E4CE30C9620")
     
 @Override
@@ -211,6 +222,7 @@ public BoundedInputStream(InputStream in) {
      * Invokes the delegate's <code>mark(int)</code> method.
      * @param readlimit read ahead limit
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.385 -0400", hash_original_method = "AEC932ABAD6BD3D26DA661A0D3655827", hash_generated_method = "38152F1A8F437FC89A8BF7703DAB79E9")
     
 @Override
@@ -223,6 +235,7 @@ public BoundedInputStream(InputStream in) {
      * Invokes the delegate's <code>markSupported()</code> method.
      * @return true if mark is supported, otherwise false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.386 -0400", hash_original_method = "41BA5D3E6CD82551F6C2FAFF3850B986", hash_generated_method = "AAA0E9FA70DCC42A6EF6C686E3CCDC7E")
     
 @Override

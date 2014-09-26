@@ -313,7 +313,6 @@ public SpannableStringBuilder delete(int start, int end) {
 		// TODO Auto-generated method stub
 	}
     
-    @DSSink({DSSinkKind.SCREEN})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override
@@ -323,7 +322,6 @@ public SpannableStringBuilder delete(int start, int end) {
     	return replace(length, length, text, 0, text.length());
 	}
     
-    @DSSink({DSSinkKind.SCREEN})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override
@@ -333,7 +331,6 @@ public SpannableStringBuilder delete(int start, int end) {
     	return replace(length, length, text, start, end);
 	}
     
-    @DSSink({DSSinkKind.SCREEN})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @Override
@@ -482,7 +479,7 @@ private int change(boolean notify, int start, int end,
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.820 -0500", hash_original_method = "5F40E5580DD9B6C8070DDBE86036D0A0", hash_generated_method = "9364AC549E7A123E8F1376E1430245A0")
     
 private void removeSpan(int i) {
@@ -517,6 +514,7 @@ public SpannableStringBuilder replace(int start, int end, CharSequence tb) {
     }
 
     // Documentation from interface
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.827 -0500", hash_original_method = "653147CE10EC22F15BE8C423BD65FA32", hash_generated_method = "3DABA23248A3CE7C0F1874570C59E1FA")
     
 public SpannableStringBuilder replace(final int start, final int end,
@@ -611,14 +609,14 @@ public SpannableStringBuilder replace(final int start, final int end,
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override
 	public void setSpan(Object what, int start, int end, int flags) {
 		// TODO Auto-generated method stub
 	}
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.833 -0500", hash_original_method = "2D459893E2DC729F5693ABCD511FCC18", hash_generated_method = "B925D0EE1F9FF7EC27B80C692B7D7AF1")
     
 private void setSpan(boolean send, Object what, int start, int end, int flags) {

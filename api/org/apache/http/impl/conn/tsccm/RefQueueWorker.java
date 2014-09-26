@@ -50,7 +50,7 @@ public RefQueueWorker(ReferenceQueue<?> queue, RefQueueHandler handler) {
      * after {@link #shutdown shutdown()}. Only one thread can
      * execute the main loop at any time.
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.635 -0500", hash_original_method = "068901515EDCF67E719CCEED21C02CEA", hash_generated_method = "3D8D6E0C0D5DD7B4890A87101CA0C31F")
     
 public void run() {

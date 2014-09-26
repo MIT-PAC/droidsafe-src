@@ -50,22 +50,17 @@ import java.io.OutputStream;
 public class PrintFileDocumentAdapter extends PrintDocumentAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.612 -0400", hash_original_field = "5AB41584045BCE8716DF1431B1F42BE8", hash_generated_field = "B97272540E47C98A85FED9F7A5E16CB1")
 
-
     private static final String LOG_TAG = "PrintedFileDocumentAdapter";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.613 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.614 -0400", hash_original_field = "03021E7FD9BC2DCB6A1E411C8B6DAF4A", hash_generated_field = "183611C0D8A74A7CE3F1C64EE45173DC")
 
-
     private  File mFile;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.615 -0400", hash_original_field = "6E88F63EE3F087A2B39FCA39D8A4C3AE", hash_generated_field = "B7A9A6BCBCFCDF28805320DA60BD3623")
 
-
     private  PrintDocumentInfo mDocumentInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.616 -0400", hash_original_field = "14B92F6C097C84C6E032733D018208A7", hash_generated_field = "CFB77CBECCB1E720E617E71B43B00468")
-
 
     private WriteFileAsyncTask mWriteFileAsyncTask;
 
@@ -113,14 +108,11 @@ public PrintFileDocumentAdapter(Context context, File file,
     private final class WriteFileAsyncTask extends AsyncTask<Void, Void, Void> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.620 -0400", hash_original_field = "53062890D34A1B6E8BB0B52A9E463BCC", hash_generated_field = "BE20BABC762A72A5013F9C740C18EA67")
 
-
         private  ParcelFileDescriptor mDestination;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.621 -0400", hash_original_field = "D46C22944F0B87D0CEA112A9070BB61D", hash_generated_field = "D551F1AFAC2EABF7862A276D69DDA8C2")
 
-
         private  WriteResultCallback mResultCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.622 -0400", hash_original_field = "91B6D9BBFB750A3AFD2BA5D1D90A241A", hash_generated_field = "970CADA0BCDB23F45B08DEDA5C93F3D9")
-
 
         private  CancellationSignal mCancellationSignal;
 
@@ -169,6 +161,7 @@ public WriteFileAsyncTask(ParcelFileDescriptor destination,
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.627 -0400", hash_original_method = "9B54D06F5BCF00C6331DD0264B111609", hash_generated_method = "8DFCDDECF2C943370582C53A1D95E580")
         
 @Override

@@ -18,7 +18,7 @@ public class WifiP2pGroup implements Parcelable {
 
     public static final Creator<WifiP2pGroup> CREATOR =
         new Creator<WifiP2pGroup>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.796 -0500", hash_original_method = "6F43542D9464653EF7252A408A904124", hash_generated_method = "0AAFC31AEF32EE74BA32C1723C5B55A3")
         
 public WifiP2pGroup createFromParcel(Parcel in) {

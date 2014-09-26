@@ -276,6 +276,7 @@ public OutputStream getOutputStream() {
             return mLength - mOffset;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.867 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
         
 @Override
@@ -283,6 +284,7 @@ public OutputStream getOutputStream() {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.870 -0500", hash_original_method = "D9C9FB514524CC537FCE6FACAF9A295C", hash_generated_method = "87458722CEEC10F3A4173D417E3EF803")
         
 @Override
@@ -290,6 +292,7 @@ public OutputStream getOutputStream() {
             mMark = mOffset;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.872 -0500", hash_original_method = "35916CEFACB2EEB27C627D30B06B91CE", hash_generated_method = "904D6292AB138E31268DC055F573A295")
         
 @Override

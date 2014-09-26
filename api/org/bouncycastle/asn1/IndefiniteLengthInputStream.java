@@ -111,8 +111,8 @@ public int read(byte[] b, int off, int len)
         return numRead + 2;
     }
 
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.638 -0500", hash_original_method = "2ACBDCB4D97DF4112755C3E9E6B4B6A1", hash_generated_method = "1DAFA9B84AE28F0440025C14E1CACA7F")
     
 public int read()

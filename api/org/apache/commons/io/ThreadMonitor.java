@@ -93,7 +93,6 @@ public static void stop(Thread thread) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.584 -0400", hash_original_field = "AB87C4F6E5547EBD7483F34732EA576D", hash_generated_field = "3B3F78C77D023C4AC9933B933AD9AFEC")
 
-
     private  Thread thread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.585 -0400", hash_original_field = "13BEC42AF8DBEFB8594075D5454CC50F", hash_generated_field = "83CDA9988365E91179262582D25947DB")
 
@@ -118,6 +117,7 @@ private ThreadMonitor(Thread thread, long timeout) {
      *
      * @see Runnable#run()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.588 -0400", hash_original_method = "D59462ADF236F9BB2B2797E094BBD843", hash_generated_method = "917B382B3C67AEF69FC9055FD2505276")
     
 public void run() {

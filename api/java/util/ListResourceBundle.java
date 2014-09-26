@@ -80,14 +80,16 @@ protected abstract Object[][] getContents();
                     return false;
                 }
 
-                public boolean hasMoreElements() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public boolean hasMoreElements() {
                     if (local.hasNext()) {
                         return true;
                     }
                     return findNext();
                 }
 
-                public String nextElement() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public String nextElement() {
                     if (local.hasNext()) {
                         return local.next();
                     }
@@ -104,11 +106,13 @@ protected abstract Object[][] getContents();
             return new Enumeration<String>() {
                 Iterator<String> it = table.keySet().iterator();
 
-                public boolean hasMoreElements() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public boolean hasMoreElements() {
                     return it.hasNext();
                 }
 
-                public String nextElement() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public String nextElement() {
                     return it.next();
                 }
             };

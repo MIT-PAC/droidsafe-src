@@ -38,30 +38,23 @@ import java.io.Serializable;
 public class PriorityQueue<E> extends AbstractQueue<E> implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.256 -0400", hash_original_field = "C0505051CB4AF87D4D0B5E3B5D00F481", hash_generated_field = "6ED9460F7E864D123E91629C31FC972F")
 
-
     private static final long serialVersionUID = -7720805057305804111L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.256 -0400", hash_original_field = "0AA68DF9541775CC38D5BA0045D2CD51", hash_generated_field = "BCEA1D95B9B50E0A58555DB49184C7B7")
-
 
     private static final int DEFAULT_CAPACITY = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.257 -0400", hash_original_field = "2ED392F7E0CACAFE2E295C909D1C2D83", hash_generated_field = "B4498717B3B173B14E1D93EC7A27ECD2")
 
-
     private static final double DEFAULT_INIT_CAPACITY_RATIO = 1.1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.257 -0400", hash_original_field = "29809995778CB7C1598602D1BECE6D34", hash_generated_field = "406B4BAD8512687AA764242F2E961671")
-
 
     private static final int DEFAULT_CAPACITY_RATIO = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.258 -0400", hash_original_field = "673BDAEBF4FBC900963E210E042549D6", hash_generated_field = "F06612A05C836674433E69C513561353")
 
-
     private int size;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.258 -0400", hash_original_field = "8A6D4A83EE849067F115B399ECC3CAB1", hash_generated_field = "0E313AD6D66C4F0B00F12D6B16E96047")
 
-
     private Comparator<? super E> comparator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.258 -0400", hash_original_field = "FB10D604B5E15C042369D34E470EFDCF", hash_generated_field = "777D1E33E50D4CDEA795A5FBEBE9B75E")
-
 
     private transient E[] elements;
 
@@ -176,6 +169,7 @@ public PriorityQueue(SortedSet<? extends E> c) {
      *
      * @return the iterator of the priority queue.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.261 -0400", hash_original_method = "29E42406182AF866EF1235165AD5E16B", hash_generated_method = "76BEFB22B5B643507DF59704E807DC6D")
     
 @Override
@@ -189,6 +183,7 @@ public PriorityQueue(SortedSet<? extends E> c) {
      *
      * @return the size of the priority queue.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.262 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "1B1551AD543164CCE8ABE887F4733D99")
     
 @Override
@@ -199,6 +194,7 @@ public PriorityQueue(SortedSet<? extends E> c) {
     /**
      * Removes all the elements of the priority queue.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.262 -0400", hash_original_method = "B6F04CCC5A967411777D1204AE8409FD", hash_generated_method = "B0D015CB3EFF6E3C666C56C09DE25494")
     
 @Override
@@ -219,6 +215,7 @@ public PriorityQueue(SortedSet<? extends E> c) {
      * @throws NullPointerException
      *             if {@code o} is {@code null}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.263 -0400", hash_original_method = "69BCB75C298B3958E4BBBB9CEEF789D4", hash_generated_method = "82CD08FCC775B8E80097AADB10CADF7B")
     
 public boolean offer(E o) {
@@ -236,6 +233,7 @@ public boolean offer(E o) {
      *
      * @return the head of the queue or null if the queue is empty.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.264 -0400", hash_original_method = "A38C03A45CA3873EDA3CC27F4EA1E154", hash_generated_method = "5550CB025B19BB6CAE3B6DEDECB45746")
     
 public E poll() {
@@ -252,6 +250,7 @@ public E poll() {
      *
      * @return the head of the queue or null if the queue is empty.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.264 -0400", hash_original_method = "E20ADCFD9D589330A90956929B5E43AA", hash_generated_method = "85EAB1802F1E02890842596320011877")
     
 public E peek() {
@@ -281,6 +280,7 @@ public Comparator<? super E> comparator() {
      * @return true if the object was in the priority queue, false if the object
      *         was not in the priority queue.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.266 -0400", hash_original_method = "688475050D9EB13B173156735A8487EC", hash_generated_method = "F90EC3649C5AC8A1A6F2B99AB83215CB")
     
 @Override
@@ -310,6 +310,7 @@ public Comparator<? super E> comparator() {
      * @throws NullPointerException
      *             if {@code o} is {@code null}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.266 -0400", hash_original_method = "B47D74753BC2900138E758F55799A6CE", hash_generated_method = "6AFB3137308F7AC6F6478F4022BD5090")
     
 @Override
@@ -320,19 +321,19 @@ public Comparator<? super E> comparator() {
     private class PriorityIterator implements Iterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.267 -0400", hash_original_field = "144936C3916E6D215B5611AC9E06D054", hash_generated_field = "930A7091E390C9A7E80CCAF83CF059FC")
 
-
         private int currentIndex = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.267 -0400", hash_original_field = "6818254E023E7C64BE3DD521F7CD71AA", hash_generated_field = "46337D80FA4CAC78540F7C8D494816D7")
 
-
         private boolean allowRemove = false;
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.267 -0400", hash_original_method = "0FB46E9366D1118FDBE303EE479D4896", hash_generated_method = "1CF7CC7E962EEB3BFD463E0009EF5D8C")
         
 public boolean hasNext() {
             return currentIndex < size - 1;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.268 -0400", hash_original_method = "23667DB5E37E55798D44E0D3057B4835", hash_generated_method = "7BBE240170C623E54ECE4879EA46535D")
         
 public E next() {
@@ -343,6 +344,7 @@ public E next() {
             return elements[++currentIndex];
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:26.268 -0400", hash_original_method = "DB2903D95C50C28D70F9F205A7F7C8FE", hash_generated_method = "357EC057B9E5CB9E89A91130ABD6ECC8")
         
 public void remove() {

@@ -12,10 +12,6 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.support.v4.util.DebugUtils;
 
-
-
-
-
 public class Loader<D> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.059 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9F66E723E60E4F10157FDA7C23C67293")
 
@@ -346,6 +342,7 @@ public String dataToString(D data) {
         return sb.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.147 -0500", hash_original_method = "7AA2EFEA4BBA4CB5078AB2979053EAD3", hash_generated_method = "35579B681AC67154C4322D5C32537DDC")
     
 @Override
@@ -376,7 +373,6 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
                 writer.print(" mAbandoned="); writer.print(mAbandoned);
                 writer.print(" mReset="); writer.println(mReset);
     }
-
     
     public final class ForceLoadContentObserver extends ContentObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.086 -0500", hash_original_method = "B9E73A5B4B60A8E0702AD317D1848844", hash_generated_method = "D97E27512932796789D4DE052DC12583")
@@ -398,11 +394,8 @@ public ForceLoadContentObserver() {
         public void onChange(boolean selfChange) {
             onContentChanged();
         }
-
         
     }
-
-
     
     public interface OnLoadCompleteListener<D> {
         

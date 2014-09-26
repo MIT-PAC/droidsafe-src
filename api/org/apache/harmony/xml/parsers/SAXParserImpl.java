@@ -88,6 +88,7 @@ private void resetInternal()
         return reader.getProperty(name);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.945 -0500", hash_original_method = "2EF684CE098290C07222DD88BA41AEFB", hash_generated_method = "51BB6E535D74ABE10E8E21FFF8AD9491")
     
 @Override

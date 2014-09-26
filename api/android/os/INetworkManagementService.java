@@ -1461,7 +1461,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:10.903 -0400", hash_original_method = "05FC83AC7766403A40272B33B5EDC5D9", hash_generated_method = "B6C709FC8A4204C68510EB528B0BE22F")
+@DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:10.903 -0400", hash_original_method = "05FC83AC7766403A40272B33B5EDC5D9", hash_generated_method = "B6C709FC8A4204C68510EB528B0BE22F")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

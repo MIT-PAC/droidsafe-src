@@ -52,8 +52,8 @@ AbstractHttpInputStream(InputStream in, HttpEngine httpEngine,
      * read() is implemented using read(byte[], int, int) so subclasses only
      * need to override the latter.
      */
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.959 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "00E9997F4FCA840224038EEE0C17C5AD")
     
 @Override public final int read() throws IOException {

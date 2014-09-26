@@ -12,7 +12,7 @@ public class CatCmdMessage implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.713 -0400", hash_original_field = "813EE9C3EA954A2ED8EA1B649296F1E1", hash_generated_field = "8249415CCA348F6779E9FD531D50B60E")
 
     public static final Parcelable.Creator<CatCmdMessage> CREATOR = new Parcelable.Creator<CatCmdMessage>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.388 -0500", hash_original_method = "4595398167E4395A49E9546F147C5CF0", hash_generated_method = "939296841E86D98BF60F3DC2F8FA32CD")
         
 public CatCmdMessage createFromParcel(Parcel in) {

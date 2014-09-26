@@ -130,7 +130,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.367 -0500", hash_original_method = "6AD7B97F2FA9AF7B8D3F27597107B2BF", hash_generated_method = "E38CDAC51F0AE0D04C06CC4C93C73513")
     
 @Override
@@ -162,8 +162,8 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         socket.setTrafficClass(tos);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.INTERNET)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.377 -0500", hash_original_method = "99398BF4E61DD284BEAF3BF1D99561D2", hash_generated_method = "511A0675A607ED286CB69B5686105568")
     
 @Override

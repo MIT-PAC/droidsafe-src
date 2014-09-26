@@ -345,6 +345,7 @@ private int getValueIndex() {
         setValue(restoreValue ? getPersistedString(mValue) : (String) defaultValue);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.313 -0500", hash_original_method = "D580D34207BE421621E2D4F2F9CC874F", hash_generated_method = "9709F4193FF45E48BD2CD73EDB974E4C")
     
 @Override
@@ -360,6 +361,7 @@ private int getValueIndex() {
         return myState;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.317 -0500", hash_original_method = "2C7D4FC1A8B86A2A9B820B68195C8000", hash_generated_method = "36DB5FB42370477AEC46CBB0D80A489D")
     
 @Override
@@ -380,7 +382,7 @@ private int getValueIndex() {
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -406,7 +408,8 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.325 -0500", hash_original_method = "8DFCA3C36BA7A53489D20A0BA4FD0CC0", hash_generated_method = "C1C6F47B2086812F826D2D3D1657D081")
         
 @Override

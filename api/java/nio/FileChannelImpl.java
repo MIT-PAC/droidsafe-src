@@ -75,6 +75,7 @@ static int calculateTotalRemaining(ByteBuffer[] buffers, int offset, int length,
 
     private static final Comparator<FileLock> LOCK_COMPARATOR = new Comparator<FileLock>() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.298 -0400", hash_original_method = "BAD31C1963B2F965BA94839291F4C17C", hash_generated_method = "09544778190497FCE22242F527472A85")
         public int compare(FileLock lock1, FileLock lock2) {
             long position1 = lock1.position();
@@ -316,6 +317,8 @@ public FileChannel position(long newPosition) throws IOException {
         return this;
     }
 
+    @DSSource({DSSourceKind.FILE})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.546 -0500", hash_original_method = "CBC403D41CEC137F7E33592DD6647C43", hash_generated_method = "3FADB3ED7EBD78A3F57915DFA9C3A0E0")
     
 public int read(ByteBuffer buffer, long position) throws IOException {
@@ -326,7 +329,7 @@ public int read(ByteBuffer buffer, long position) throws IOException {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.548 -0500", hash_original_method = "5BE7BADF8838BD61276F9CD3980F7CA7", hash_generated_method = "54A47B7BA1FF3C8CDFA763B26A6EAB46")
     
 public int read(ByteBuffer buffer) throws IOException {
@@ -396,6 +399,8 @@ private int transferIoVec(IoVec ioVec) throws IOException {
         return bytesTransferred;
     }
 
+    @DSSource({DSSourceKind.FILE})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.557 -0500", hash_original_method = "C19453CFF2AA37841406A95ED2CF0809", hash_generated_method = "C7CD3E7850A60244C4542120CF24B952")
     
 public long read(ByteBuffer[] buffers, int offset, int length) throws IOException {
@@ -530,6 +535,7 @@ public FileChannel truncate(long size) throws IOException {
         return this;
     }
 
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.577 -0500", hash_original_method = "D694A533B6DF57B5FA961A08FD2C2C8C", hash_generated_method = "F62991CF6F6B47FAB30CBB4D6EEB8317")
     
@@ -584,6 +590,8 @@ private int writeImpl(ByteBuffer buffer, long position) throws IOException {
         return bytesWritten;
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.585 -0500", hash_original_method = "066AEC24C5D5FCB3A90F301EFD66C198", hash_generated_method = "170D957CAA2B032796384D62B267941B")
     
 public long write(ByteBuffer[] buffers, int offset, int length) throws IOException {

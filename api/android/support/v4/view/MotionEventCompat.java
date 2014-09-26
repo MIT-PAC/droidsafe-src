@@ -111,7 +111,8 @@ public static int getPointerCount(MotionEvent event) {
             }
             return -1;
         }
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.077 -0500", hash_original_method = "9E7B122BF9BB453BF7E85C1115C02518", hash_generated_method = "F152F02751C2E7D7863B3B04B3FDBE31")
         
 @Override
@@ -142,7 +143,8 @@ public static int getPointerCount(MotionEvent event) {
             }
             throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
         }
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.084 -0500", hash_original_method = "F1B2637001FBFFCBD7AA64840D270091", hash_generated_method = "A877E8BC25517DB8FF994556EB2F4D41")
         
 @Override
@@ -166,6 +168,7 @@ public static int getPointerCount(MotionEvent event) {
         public int findPointerIndex(MotionEvent event, int pointerId) {
             return MotionEventCompatEclair.findPointerIndex(event, pointerId);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.092 -0500", hash_original_method = "CB6B0C0269880E57D0AAF045A3B12252", hash_generated_method = "B6BE71A9C417A78A5A6EFAE265396E48")
         
 @Override
@@ -186,6 +189,7 @@ public static int getPointerCount(MotionEvent event) {
         public float getY(MotionEvent event, int pointerIndex) {
             return MotionEventCompatEclair.getY(event, pointerIndex);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.099 -0500", hash_original_method = "9E092C63409B479B27716D0F10009856", hash_generated_method = "A78D3EC0ED2D1F7D0A0D72B24D8309AD")
         
 @Override

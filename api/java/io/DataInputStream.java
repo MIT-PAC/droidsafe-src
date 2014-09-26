@@ -23,6 +23,8 @@ private static String decodeUTF(int utfSize, DataInput in) throws IOException {
         return ModifiedUtf8.decode(buf, new char[utfSize], 0, utfSize);
     }
 
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.264 -0500", hash_original_method = "48D45EEAED3352F596D800D5190ACC41", hash_generated_method = "9EA8D8A168036339E307513D7F2AD7AD")
     
 public static final String readUTF(DataInput in) throws IOException {

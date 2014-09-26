@@ -477,7 +477,7 @@ protected DateFormat() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.035 -0500", hash_original_method = "6214BE37793C3124BC718667B7E0632D", hash_generated_method = "FB7C835B38BFFC419A3B0A3A2A027A83")
     
 @Override
@@ -686,7 +686,7 @@ public boolean isLenient() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.097 -0500", hash_original_method = "CB060FB8FCF7D6D5A12D02C797F79FD4", hash_generated_method = "AB750F8D4A9AEF735FB2E2BFCAC75CE4")
     
 public Date parse(String string) throws ParseException {
@@ -723,7 +723,7 @@ public Date parse(String string) throws ParseException {
      *         error.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.099 -0500", hash_original_method = "96A53C3E9008520EC39833233AB03108", hash_generated_method = "87630C55D49CD1AADF581DDA7D25A18E")
     
 public abstract Date parse(String string, ParsePosition position);

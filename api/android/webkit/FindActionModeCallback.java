@@ -215,6 +215,7 @@ private void updateMatchesString() {
 
     // OnClickListener implementation
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.283 -0500", hash_original_method = "BC3DE2C393D342A1AF9020DC35D5D78A", hash_generated_method = "A004290575AD073A7D4D1213A122E755")
     
 @Override

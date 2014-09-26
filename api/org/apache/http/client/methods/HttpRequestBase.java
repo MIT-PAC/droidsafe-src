@@ -56,7 +56,8 @@ public ProtocolVersion getProtocolVersion() {
         return HttpProtocolParams.getVersion(getParams());
     }
 
-    @DSSource({DSSourceKind.FILE_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.150 -0500", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "FE9C67AB573105BAB4263EEFA9A78DCB")
     
 public URI getURI() {
@@ -162,7 +163,7 @@ public boolean isAborted() {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.167 -0500", hash_original_method = "7E78C92898A9406CD028D56B8CBA9D93", hash_generated_method = "B2B1054171D5044B5D26A3B55A44AA53")
     
 @Override

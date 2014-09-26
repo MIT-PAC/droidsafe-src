@@ -48,6 +48,8 @@ public NullWriter() {
      * @return this writer
      * @since 2.0
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.242 -0400", hash_original_method = "9925E1DC093C6BADDE8464868171339B", hash_generated_method = "AEE3041B3F1AA0AE8E9154005C96D456")
     
 @Override
@@ -64,6 +66,8 @@ public NullWriter() {
      * @return this writer
      * @since 2.0
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.242 -0400", hash_original_method = "CD2829CDE96B6ED8A5F4CBF7F6F67CA5", hash_generated_method = "1AD03001AC524799F2E5DDE5E1DA5EF9")
     
 @Override
@@ -78,6 +82,8 @@ public NullWriter() {
      * @return this writer
      * @since 2.0
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.243 -0400", hash_original_method = "FE294A17C0469E68DE350D9B87B2A84C", hash_generated_method = "C337B5C193C54642D937100F617F21D7")
     
 @Override
@@ -90,6 +96,8 @@ public NullWriter() {
      * Does nothing - output to <code>/dev/null</code>.
      * @param idx The character to write
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.244 -0400", hash_original_method = "CB9AED790CD954117728F46FA7B99DE8", hash_generated_method = "1CAD9F4FE78AF83D20A13E25CDD749E0")
     
 @Override
@@ -101,6 +109,8 @@ public NullWriter() {
      * Does nothing - output to <code>/dev/null</code>.
      * @param chr The characters to write
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.244 -0400", hash_original_method = "223F529506D3BF44A149C901A5D55A6B", hash_generated_method = "3426744C62A1AFB93B06E3E44C1DDB13")
     
 @Override
@@ -114,6 +124,8 @@ public NullWriter() {
      * @param st The start offset
      * @param end The number of characters to write
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.245 -0400", hash_original_method = "1256300F7D5F2E3F918226B727F42637", hash_generated_method = "051CDF96773B7FF35F11CE6F2403199C")
     
 @Override
@@ -125,6 +137,8 @@ public NullWriter() {
      * Does nothing - output to <code>/dev/null</code>.
      * @param str The string to write
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.245 -0400", hash_original_method = "44D5CA24014EE7A19866ABFBD1E3495E", hash_generated_method = "6E79CA034362D8596520798E17C51E5E")
     
 @Override
@@ -138,6 +152,8 @@ public NullWriter() {
      * @param st The start offset
      * @param end The number of characters to write
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.246 -0400", hash_original_method = "24E1254AF0599ABF4B37852E6EA59286", hash_generated_method = "0933108527968DB340F07BAB59466C01")
     
 @Override
@@ -146,6 +162,7 @@ public NullWriter() {
     }
 
     /** @see java.io.Writer#flush() */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.246 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "EA3016CC08DF8AEAE3A0AF31E6D4BFC8")
     
 @Override
@@ -154,6 +171,7 @@ public NullWriter() {
     }
 
     /** @see java.io.Writer#close() */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.247 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "2C28E8C9BD92CC4643932192BBF95A64")
     
 @Override

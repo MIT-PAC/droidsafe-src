@@ -116,7 +116,7 @@ private static String getMatchRuleName(int matchRule) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.014 -0400", hash_original_field = "88BA2DACBA38DAF918A0D3C1F5E00E22", hash_generated_field = "6C4E6CCCA93A0F55B381916949674798")
 
     public static final Creator<NetworkTemplate> CREATOR = new Creator<NetworkTemplate>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.288 -0500", hash_original_method = "38251DACB68583A45907072FCF0CAE23", hash_generated_method = "C9F3E3BC10A7876F5B5B128018549657")
         
 public NetworkTemplate createFromParcel(Parcel in) {

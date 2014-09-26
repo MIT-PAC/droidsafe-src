@@ -804,6 +804,7 @@ public RestoringInputStream(InputStream inStream) {
             this.inStream = inStream;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:03.727 -0400", hash_original_method = "B71DEEEAD399BB0DCF13B0C2AE5A2B98", hash_generated_method = "1F5BB34F0557B17CFCF88CD1C1A2DC1D")
         
 @Override
@@ -811,6 +812,7 @@ public RestoringInputStream(InputStream inStream) {
             return (bar - pos) + inStream.available();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:03.728 -0400", hash_original_method = "85817177915E65173443212CF18FCB04", hash_generated_method = "6A2CEBC2FD0C7B8D31BF0A64C59FC177")
         
 @Override
@@ -818,6 +820,7 @@ public RestoringInputStream(InputStream inStream) {
             inStream.close();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:03.728 -0400", hash_original_method = "1C96C4B088FAA99912B4F35EEBC601A1", hash_generated_method = "0786F2EF1FC644652B8803329FE64409")
         
 @Override
@@ -831,6 +834,7 @@ public RestoringInputStream(InputStream inStream) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:03.729 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
         
 @Override
@@ -851,6 +855,8 @@ public RestoringInputStream(InputStream inStream) {
          * @see java.io.InputStream#read()
          * method documentation for more info
          */
+        @DSSource({DSSourceKind.NETWORK})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:03.729 -0400", hash_original_method = "317FFD5E22779163B9A9FF8F68A90F78", hash_generated_method = "2A98E4C470D4F7C5996C6947A05619B6")
         
 public int read() throws IOException {
@@ -883,6 +889,8 @@ public int read() throws IOException {
             return inStream.read();
         }
 
+        @DSSpec(DSCat.IO)
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:03.730 -0400", hash_original_method = "2602231C2859D265322E57134E41FCCE", hash_generated_method = "A764B2C20607AC8E0152613D5CA02F67")
         
 @Override
@@ -898,6 +906,7 @@ public int read() throws IOException {
             return i;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:03.731 -0400", hash_original_method = "786D58C28A20490DD577C7A5F50D32DC", hash_generated_method = "A298AC900E9A0ED809932B5CD8BC1440")
         
 @Override

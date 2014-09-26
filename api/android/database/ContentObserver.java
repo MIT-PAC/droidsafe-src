@@ -110,7 +110,7 @@ public NotificationRunnable(boolean self) {
             mSelf = self;
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.921 -0500", hash_original_method = "ADCF046F07EA9B09E2364857C3DDF0F7", hash_generated_method = "9D3D13AFC776254022AF1D069D2B61FB")
         
 public void run() {

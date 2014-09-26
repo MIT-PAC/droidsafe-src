@@ -155,7 +155,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     }
     
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     private static ClassLoader getClassLoader(Class<?> clazz) {
     	return clazz.getClassLoader();
     }
@@ -170,7 +170,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     }
     
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     private static <T> Constructor<T>[] getDeclaredConstructors(
             Class<T> clazz, boolean publicOnly) {
     	Constructor[] ret = new Constructor[0];
@@ -180,7 +180,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     }
     
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
     	Field[] ret = new Field[0];
     	ret.addTaint(clazz.getTaint());
@@ -198,7 +198,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     }
     
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
     	Method[] ret = new Method[0];
     	ret[0].addTaint(clazz.getTaint());
@@ -698,8 +698,8 @@ private Class<?>[] getFullListOfClasses(boolean publicOnly) {
      * @see #getConstructors()
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.939 -0500", hash_original_method = "689106DC2122D9CD807ABDF15BAA670D", hash_generated_method = "A5160AEFF05AA595A8F6FC2468B59CF6")
     
 public Constructor<?>[] getDeclaredConstructors() {
@@ -742,8 +742,8 @@ public Field getDeclaredField(String name) throws NoSuchFieldException {
      * @see #getFields()
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.948 -0500", hash_original_method = "AA99B76B619CDC6E346F586A8911140C", hash_generated_method = "28B58F0009A6BCAB227105536EC99296")
     
 public Field[] getDeclaredFields() {
@@ -792,8 +792,8 @@ public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
      * @see #getMethods()
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.961 -0500", hash_original_method = "76B8AECB3C8722E0C9050BEEFD88DA1C", hash_generated_method = "C0886B96300C43CFB5185B9FE17032D3")
     
 public Method[] getDeclaredMethods() {

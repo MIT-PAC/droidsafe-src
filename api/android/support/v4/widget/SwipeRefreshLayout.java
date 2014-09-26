@@ -39,7 +39,6 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Transformation;
 import android.widget.AbsListView;
 
-
 /**
  * The SwipeRefreshLayout should be used whenever the user can refresh the
  * contents of a view via a vertical swipe gesture. The activity that
@@ -66,7 +65,6 @@ public class SwipeRefreshLayout extends ViewGroup {
     private static final String LOG_TAG = SwipeRefreshLayout.class.getSimpleName();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.768 -0400", hash_original_field = "A016E9E38F81665D20E41BF5778925F3", hash_generated_field = "245A91EFE3774DECD5C39030EACE9593")
 
-
     private static final long RETURN_TO_ORIGINAL_POSITION_TIMEOUT = 300;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.771 -0400", hash_original_field = "B6D869065A167142D6D4F665566DCA57", hash_generated_field = "8DFFCAA4DAACE30D95D08733D5D74A8A")
 
@@ -92,7 +90,6 @@ public class SwipeRefreshLayout extends ViewGroup {
         android.R.attr.enabled
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.790 -0400", hash_original_field = "4B313302002420EBD4325A6E7AB440FA", hash_generated_field = "7772C98829B73BEA50250B98BD908BA1")
-
 
     private SwipeProgressBar mProgressBar;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.793 -0400", hash_original_field = "852A5F36228F419DA7A4F36BB5C9B7E4", hash_generated_field = "C895A302A5EAB442D8936D160230E131")
@@ -133,7 +130,6 @@ public class SwipeRefreshLayout extends ViewGroup {
     private int mCurrentTargetOffsetTop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.827 -0400", hash_original_field = "8405CC958EF7FF178B766BCBE27E1F2F", hash_generated_field = "123A2D63D23BC6C888D43FC39BEED8A4")
 
-
     private float mInitialMotionY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.830 -0400", hash_original_field = "3611C70C88BA02D959402D97DECB16F3", hash_generated_field = "2D88D85D441545A6227529A03C0B4E71")
 
@@ -156,7 +152,6 @@ public class SwipeRefreshLayout extends ViewGroup {
     private  AccelerateInterpolator mAccelerateInterpolator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.856 -0400", hash_original_field = "8DA0CA6BED5C38779291D6365E97FE1D", hash_generated_field = "D1A174982F879D58831F731F413547EB")
 
-
     private final Animation mAnimateToStartPosition = new Animation() {
         @Override
         public void applyTransformation(float interpolatedTime, Transformation t) {
@@ -174,7 +169,6 @@ public class SwipeRefreshLayout extends ViewGroup {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.864 -0400", hash_original_field = "2857EEBDC53EDD94FFBFF727CE58D2F7", hash_generated_field = "46EAA0EB51F9D3F354E30186AE5366B0")
 
-
     private Animation mShrinkTrigger = new Animation() {
         @Override
         public void applyTransformation(float interpolatedTime, Transformation t) {
@@ -183,7 +177,6 @@ public class SwipeRefreshLayout extends ViewGroup {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.872 -0400", hash_original_field = "C3944EDDA133817864D74534602864F4", hash_generated_field = "84A5699F2AE3E3B4AF7D0C5B8C460903")
-
 
     private final AnimationListener mReturnToStartPositionListener = new BaseAnimationListener() {
         @Override
@@ -195,7 +188,6 @@ public class SwipeRefreshLayout extends ViewGroup {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.879 -0400", hash_original_field = "184F107040865BD0A3C5CFCDDF203CE7", hash_generated_field = "6E83D3C8264E3A51E1BAD580B7A925FF")
 
-
     private final AnimationListener mShrinkAnimationListener = new BaseAnimationListener() {
         @Override
         public void onAnimationEnd(Animation animation) {
@@ -204,9 +196,9 @@ public class SwipeRefreshLayout extends ViewGroup {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.886 -0400", hash_original_field = "CA35472D8A7E7BDE7A7E40DC67D291F9", hash_generated_field = "CF8A92EE20C6EC0C186707AA6AB2F6AF")
 
-
     private final Runnable mReturnToStartPosition = new Runnable() {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void run() {
             mReturningToStart = true;
@@ -219,6 +211,7 @@ public class SwipeRefreshLayout extends ViewGroup {
 
     private final Runnable mCancel = new Runnable() {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void run() {
             mReturningToStart = true;
@@ -275,6 +268,7 @@ public SwipeRefreshLayout(Context context, AttributeSet attrs) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.906 -0400", hash_original_method = "3D165BFECE779D7D42F1138DD9BB10A1", hash_generated_method = "ECC326EFC7D2D1C435D30A0D15E6EEAC")
     
 @Override
@@ -284,6 +278,7 @@ public SwipeRefreshLayout(Context context, AttributeSet attrs) {
         removeCallbacks(mReturnToStartPosition);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.909 -0400", hash_original_method = "6525E8CB9656F080FA503EFF86B8D2E1", hash_generated_method = "6189EA735F44EB4899A9C579FE66A12D")
     
 @Override
@@ -416,6 +411,7 @@ private void ensureTarget() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.943 -0400", hash_original_method = "608544966ADBCB919CBD1D90B1E5B743", hash_generated_method = "3C351ABB343FC6FB4C2CBEF225BC5B75")
     
 @Override
@@ -442,6 +438,7 @@ private void ensureTarget() {
         child.layout(childLeft, childTop, childLeft + childWidth, childTop + childHeight);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.951 -0400", hash_original_method = "234F5C6C02FB48DC53A76582F231DA29", hash_generated_method = "955DB59FE3B555BDFAB1A69CAE173402")
     
 @Override
@@ -482,6 +479,7 @@ public boolean canChildScrollUp() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.962 -0400", hash_original_method = "544531D5715382C4CABFA2FF4301668C", hash_generated_method = "01568DA76E26064AE3DDC954930D2F94")
     
 @Override
@@ -542,6 +540,7 @@ public boolean canChildScrollUp() {
         return mIsBeingDragged;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.966 -0400", hash_original_method = "004563EBE063034C310708E57B03CED4", hash_generated_method = "219A1730F25E577FA6FDC5714683C14E")
     
 @Override
@@ -549,6 +548,7 @@ public boolean canChildScrollUp() {
         // Nope.
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.971 -0400", hash_original_method = "15832DCC41E32B0FED35CAB187051833", hash_generated_method = "9CA32240278485B1F0FF75718116B68A")
     
 @Override

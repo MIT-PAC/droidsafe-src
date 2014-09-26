@@ -70,6 +70,7 @@ private static int compateOids(ObjectIdentifier oid1, ObjectIdentifier oid2) {
      * @return -1 of first AttributeTypeAndValue "less" than second
      *         AttributeTypeAndValue 1 otherwise, 0 if they are equal
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.270 -0500", hash_original_method = "3F7D901C5D2A92F81B8BE7A716DA67AE", hash_generated_method = "FED4FBCEA05778094376463F7BBF91F1")
     
 public int compare(Object obj1, Object obj2) {

@@ -197,7 +197,8 @@ public TimePicker(Context context, AttributeSet attrs, int defStyle) {
             mAmPmSpinnerInput = null;
             mAmPmButton = (Button) amPmView;
             mAmPmButton.setOnClickListener(new OnClickListener() {
-                public void onClick(View button) {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View button) {
                     button.requestFocus();
                     mIsAm = !mIsAm;
                     updateAmPmControl();
@@ -269,6 +270,7 @@ public TimePicker(Context context, AttributeSet attrs, int defStyle) {
         return mIsEnabled;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.088 -0500", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "6328851CBC85DA1645204E969B0A309A")
     
 @Override
@@ -294,7 +296,7 @@ private void setCurrentLocale(Locale locale) {
         mTempCalendar = Calendar.getInstance(locale);
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.120 -0500", hash_original_method = "72123348A3F05C8EE46260DED41E8111", hash_generated_method = "A4A6445FED32D2BB5D65957330EAE4E5")
     
 @Override
@@ -303,7 +305,7 @@ private void setCurrentLocale(Locale locale) {
         return new SavedState(superState, getCurrentHour(), getCurrentMinute());
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.123 -0500", hash_original_method = "B2A487C66396B9A569DF07FC1780728C", hash_generated_method = "BEDE5230168F82A049FAE7CCB16735DB")
     
 @Override
@@ -440,7 +442,8 @@ public void setCurrentMinute(Integer currentMinute) {
         onTimeChanged();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.141 -0500", hash_original_method = "6E8B0AA5C49A67CA109B25D465668749", hash_generated_method = "00EAD357991374866B7CA67A42364C44")
     
 @Override
@@ -522,7 +525,7 @@ private void updateAmPmControl() {
 
         @SuppressWarnings({"unused", "hiding"})
         public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -572,7 +575,8 @@ public int getMinute() {
             return mMinute;
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.108 -0500", hash_original_method = "3D8FA0B7CDDD47E4194304B24B1FFDDB", hash_generated_method = "8C1022A79C10BEED0E8CD0093ACAE570")
         
 @Override

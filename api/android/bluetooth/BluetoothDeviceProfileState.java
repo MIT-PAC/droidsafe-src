@@ -89,7 +89,6 @@ public final class BluetoothDeviceProfileState extends StateMachine {
     public static final int CONNECT_HID_INCOMING = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.212 -0400", hash_original_field = "77AFD9249CDC3E77EA514955DCC0C0E1", hash_generated_field = "10F2613A09F34CB4AF417CFE30C2BA5C")
 
-
     public static final int DISCONNECT_HFP_OUTGOING = 50;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.215 -0400", hash_original_field = "649DFBE6A7412FC63783AE2D9DDB16CA", hash_generated_field = "731993E63A95D40FAA1E1AC8FF32D9A8")
 
@@ -111,7 +110,6 @@ public final class BluetoothDeviceProfileState extends StateMachine {
     public static final int DISCONNECT_PBAP_OUTGOING = 56;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.235 -0400", hash_original_field = "210B3F1DB356B4F48006EBB5E1F2BFED", hash_generated_field = "F5FC3340F935DFAEFF588895DEE97D0F")
 
-
     public static final int UNPAIR = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.239 -0400", hash_original_field = "0D211D77297EB694C009ADD2B6FE1E71", hash_generated_field = "09E0D578719FB7E4C0E02411549B6B90")
 
@@ -130,7 +128,6 @@ public final class BluetoothDeviceProfileState extends StateMachine {
     private static final int CONNECTION_ACCESS_REQUEST_EXPIRY = 105;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.256 -0400", hash_original_field = "9E4A63EAFECE8974E78D34CA43AD3707", hash_generated_field = "8BFEBF0452D88AAAD1C89AF43EE55B4C")
 
-
     public static final int CONNECT_OTHER_PROFILES_DELAY = 4000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.259 -0400", hash_original_field = "B605CAC5DF3F082C7D4234CFFD97B36D", hash_generated_field = "C66C269C9B9C85660913253331AD536A")
 
@@ -146,7 +143,6 @@ public final class BluetoothDeviceProfileState extends StateMachine {
     private static final long MAX_INCOMING_REJECT_TIMER = 3600 * 1000 * 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.273 -0400", hash_original_field = "B0573C9FFAC5920B3F70D357C265520F", hash_generated_field = "A0F098EDD1001670315162D339E3D702")
 
-
     private static final String ACCESS_AUTHORITY_PACKAGE = "com.android.settings";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.276 -0400", hash_original_field = "4A04F613287255A28195D5C46D84B0D3", hash_generated_field = "A6967B6666D02BD7992DC90A06C28391")
 
@@ -156,7 +152,6 @@ public final class BluetoothDeviceProfileState extends StateMachine {
 
     private static final String BLUETOOTH_ADMIN_PERM = android.Manifest.permission.BLUETOOTH_ADMIN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.279 -0400", hash_original_field = "76A711C1D6E10D897DBF89DCCC4F22EA", hash_generated_field = "F95EB0CD58FF772FD7C2302889E33FB5")
-
 
     private BondedDevice mBondedDevice = new BondedDevice();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.281 -0400", hash_original_field = "B879780AF2A21177781FEBF5E13B2C85", hash_generated_field = "6C9219221E5AEE1FA83A71796D9BE408")
@@ -178,7 +173,6 @@ public final class BluetoothDeviceProfileState extends StateMachine {
 
     private IncomingHid mIncomingHid = new IncomingHid();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.299 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.302 -0400", hash_original_field = "F41AE71D622FDCA6BB622192685F5E5F", hash_generated_field = "595579B9977CA2238E14150EEB2A2C75")
@@ -207,7 +201,6 @@ public final class BluetoothDeviceProfileState extends StateMachine {
     private boolean mAutoConnectionPending;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.329 -0400", hash_original_field = "793253818BA6C7B0BA0EE44002B9EC24", hash_generated_field = "E4571726F4118D3C8C7A8AF1D003C1BF")
 
-
     private BluetoothDevice mDevice;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.331 -0400", hash_original_field = "51B2A75250C391DB4F23E9B102133C08", hash_generated_field = "04607C6F7F56BE935F2BF060E49E7458")
 
@@ -235,8 +228,8 @@ public final class BluetoothDeviceProfileState extends StateMachine {
     private boolean mPairingRequestRcvd = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.362 -0400", hash_original_field = "D34D5C82B07BF3635A0932C5C5412256", hash_generated_field = "0B0C487DE2F9DF00ADD779CD888DCC1A")
 
-
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:14.246 -0400", hash_original_method = "68502EFA9DC722C0870F4958CDF61986", hash_generated_method = "D60BBAABDA4DB7790270A9890FAB305C")
         
 @Override
@@ -319,7 +312,6 @@ public final class BluetoothDeviceProfileState extends StateMachine {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.379 -0400", hash_original_field = "CFC11DA48D71FF5891CD95ECDBC9993F", hash_generated_field = "019AD8F116682EA36D010B17F5792A83")
-
 
     private BluetoothProfile.ServiceListener mBluetoothProfileServiceListener =
         new BluetoothProfile.ServiceListener() {
@@ -1025,7 +1017,6 @@ public void onServiceDisconnected() {
         }
     }
 
-
     private class OutgoingHid extends State {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.475 -0400", hash_original_field = "3FAE308DA947D3D413A8D279D3D753BF", hash_generated_field = "3A218CE6B4AD3ADBEE0C2B1F8DC6D76B")
 
@@ -1195,7 +1186,6 @@ public void onServiceDisconnected() {
       }
   }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.511 -0400", hash_original_method = "CE9B9EE9E9C6D29C9C3B8009F1D8AA7D", hash_generated_method = "D49F49930293F05AC868A1E4CAC4F097")
     
 synchronized void cancelCommand(int command) {
@@ -1311,7 +1301,6 @@ private int getTrust() {
         if (mIncomingConnections != null) return mIncomingConnections.first;
         return CONNECTION_ACCESS_UNDEFINED;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:06.533 -0400", hash_original_method = "CEC6A6DC2B482A10B09FF61C4AE23F1F", hash_generated_method = "7C64951DF8CBBE748E3720E05F248719")
     

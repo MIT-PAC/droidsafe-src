@@ -142,7 +142,8 @@ public final void writeBoolean(boolean val) throws IOException {
      * @see DataInputStream#readByte()
      * @see DataInputStream#readUnsignedByte()
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.621 -0500", hash_original_method = "3FF3B06C0E9CF4CECAE3125D160806A3", hash_generated_method = "467CC22D59F0D574A1647E1C1FF806FE")
     
 public final void writeByte(int val) throws IOException {
@@ -182,7 +183,8 @@ public final void writeChars(String str) throws IOException {
         written += bytes.length;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.632 -0500", hash_original_method = "F72176A2741A4B219C2AAE16A0D68BA2", hash_generated_method = "F3BF6663D138ED0E1DFEA62B1C80FA3F")
     
 public final void writeDouble(double val) throws IOException {
@@ -191,7 +193,7 @@ public final void writeDouble(double val) throws IOException {
 
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.634 -0500", hash_original_method = "D8994DA56D4741462EE1F41757FFAE01", hash_generated_method = "1792C72D5DB8A7188EE6A15A300D3124")
     
 public final void writeFloat(float val) throws IOException {
@@ -230,7 +232,7 @@ public final void writeShort(int val) throws IOException {
 
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.644 -0500", hash_original_method = "9D44E024EEA016D3EAD697517CA83CDC", hash_generated_method = "58B20B8780C4182A44E8248160366D2A")
     
 public final void writeUTF(String str) throws IOException {

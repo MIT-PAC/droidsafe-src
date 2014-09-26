@@ -55,10 +55,8 @@ final class BluetoothHealthProfileHandler {
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.271 -0400", hash_original_field = "77A64EF05672E85C9BF4DD5A92263D35", hash_generated_field = "42C894564DCF1DEC05C2588CB43357DC")
 
-
     private static BluetoothHealthProfileHandler sInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.280 -0400", hash_original_field = "37F621BD29861DBCA72170EEA914246E", hash_generated_field = "DCF17F05BECB15A4E5085574BCD9F303")
-
 
     private static final int MESSAGE_REGISTER_APPLICATION = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.281 -0400", hash_original_field = "DA7114A6061308F68234B5DE4E9C57A8", hash_generated_field = "D146356426479593E830F6F9CAEB696C")
@@ -147,8 +145,8 @@ HealthChannel(BluetoothDevice device, BluetoothHealthAppConfiguration config,
     private HashMap <BluetoothHealthAppConfiguration, IBluetoothHealthCallback> mCallbacks;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.305 -0400", hash_original_field = "439FB6CED9FCC554BC8897DF5E641856", hash_generated_field = "517291015B59CFDA4E91634F59FF1A00")
 
-
     private final Handler mHandler = new Handler() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:06:59.545 -0400", hash_original_method = "9078A7CBF43ACFB289A1B5E9E900296C", hash_generated_method = "2E4A2F1C970BA44D69B545E26D91D753")
         
 @Override

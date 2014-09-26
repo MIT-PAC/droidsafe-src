@@ -127,6 +127,7 @@ protected boolean doDelete(File fileToDelete) throws IOException {
      *
      * @return a string describing the delete strategy
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.671 -0400", hash_original_method = "0D94F3DF71E8C7CC6D64706F8523FAA4", hash_generated_method = "6ACDB602BAFE9AA1288324277FD88CA1")
     
 @Override

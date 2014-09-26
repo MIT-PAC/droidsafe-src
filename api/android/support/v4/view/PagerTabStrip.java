@@ -150,7 +150,8 @@ public PagerTabStrip(Context context, AttributeSet attrs) {
 
         mPrevText.setFocusable(true);
         mPrevText.setOnClickListener(new OnClickListener() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:35.033 -0500", hash_original_method = "91A02AD3B25B1F5EE15DA116FF083943", hash_generated_method = "6A31A0B5EC25976A0D08C4B4705305C7")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:35.033 -0500", hash_original_method = "91A02AD3B25B1F5EE15DA116FF083943", hash_generated_method = "6A31A0B5EC25976A0D08C4B4705305C7")
             
 @Override
             public void onClick(View v) {
@@ -160,7 +161,8 @@ public PagerTabStrip(Context context, AttributeSet attrs) {
 
         mNextText.setFocusable(true);
         mNextText.setOnClickListener(new OnClickListener() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:35.035 -0500", hash_original_method = "1076F28AA463C7302B98279A7C9CC4FD", hash_generated_method = "9E87C1AE87E1F0B4C02C7BFF07B0B81A")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:35.035 -0500", hash_original_method = "1076F28AA463C7302B98279A7C9CC4FD", hash_generated_method = "9E87C1AE87E1F0B4C02C7BFF07B0B81A")
             
 @Override
             public void onClick(View v) {
@@ -206,6 +208,7 @@ public int getTabIndicatorColor() {
         return mIndicatorColor;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.069 -0500", hash_original_method = "476E6AAD455240BE6ECAEEC8CCE45F2E", hash_generated_method = "678E9CE0511ADA822A21E3091D2BD86E")
     
 @Override
@@ -226,6 +229,7 @@ public int getTabIndicatorColor() {
         super.setTextSpacing(textSpacing);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.072 -0500", hash_original_method = "3092862974FBD462F013027A320B043F", hash_generated_method = "E0F41005789A6204C22172B2AF4419C3")
     
 @Override
@@ -236,6 +240,7 @@ public int getTabIndicatorColor() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.074 -0500", hash_original_method = "4DB107C989DD8831950A5E6FC781B7EA", hash_generated_method = "8FA7F2F5EE69B341201263CB8FFA759D")
     
 @Override
@@ -246,6 +251,7 @@ public int getTabIndicatorColor() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.076 -0500", hash_original_method = "3C72ECA005B1B81D90186B2BF9D062C7", hash_generated_method = "874251E1F00E935118495ABCE41BE38B")
     
 @Override
@@ -290,6 +296,7 @@ public boolean getDrawFullUnderline() {
         return Math.max(super.getMinHeight(), mMinStripHeight);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.085 -0500", hash_original_method = "111ACB958C21102733D4E9303B8F60D8", hash_generated_method = "572CBDECBA9BF004FCC5A1CA52BD19E5")
     
 @Override
@@ -329,6 +336,7 @@ public boolean getDrawFullUnderline() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.089 -0500", hash_original_method = "1ECCB5A2A13672387CA93C5777A80514", hash_generated_method = "43577484297429182C64B20E0C2B64FE")
     
 @Override

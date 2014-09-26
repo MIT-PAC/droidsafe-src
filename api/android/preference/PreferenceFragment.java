@@ -42,6 +42,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
 
     private Handler mHandler = new Handler() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.410 -0400", hash_original_method = "6660B1C576139733BCAB4BF0F3860110", hash_generated_method = "B07FCFBE4D4B06D86DB2594E0181910C")
         @Override
         public void handleMessage(Message msg) {
@@ -57,6 +58,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
 
     final private Runnable mRequestFocus = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.410 -0400", hash_original_method = "4F290F2508C3F0B44E09591C5B0749BC", hash_generated_method = "203642A5324F5F18B21A0D020E65FD5C")
         public void run() {
             mList.focusableViewAvailable(mList);
@@ -142,6 +144,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         }
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.200 -0500", hash_original_method = "43649DF11F13E2637210DBACA4CC8D33", hash_generated_method = "8EC9029056F8334340E572F603A5A78F")
     
 @Override

@@ -164,8 +164,8 @@ public Cursor getCursor() {
      * @see android.widget.ListAdapter#getCount()
      */
     @DSComment("Database cursor wrapper")
-    @DSSpec(DSCat.DATABASE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.911 -0500", hash_original_method = "F232C8AA0135C20BD5AF7ACB0020E9DD", hash_generated_method = "C69E75834B9D32F830A7C80BCB4D4998")
     
 public int getCount() {
@@ -179,7 +179,7 @@ public int getCount() {
     /**
      * @see android.widget.ListAdapter#getItem(int)
      */
-    @DSSpec(DSCat.DB_CURSOR)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.914 -0500", hash_original_method = "0491DE82927D7739F3937D1F88D16ECE", hash_generated_method = "2B83690C2B24F7C2A5847C0FD57AC51D")
     
@@ -196,8 +196,8 @@ public Object getItem(int position) {
      * @see android.widget.ListAdapter#getItemId(int)
      */
     @DSComment("Database cursor wrapper")
-    @DSSpec(DSCat.DATABASE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.916 -0500", hash_original_method = "34FC88027666F3EEA6FC8DBB36C510AF", hash_generated_method = "D7B5335648F010B9AF2FEB739B203066")
     
 public long getItemId(int position) {
@@ -212,6 +212,7 @@ public long getItemId(int position) {
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.918 -0500", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "393A59784E726D5BE49F0B29F763EDD7")
     
 @Override
@@ -223,9 +224,9 @@ public long getItemId(int position) {
      * @see android.widget.ListAdapter#getView(int, View, ViewGroup)
      */
     @DSComment("Database cursor wrapper")
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.921 -0500", hash_original_method = "04641394EE9B89BDCE0805D3C5BEBDA5", hash_generated_method = "DE47E3A9E8938A879091E0DCD9DCBB47")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -245,7 +246,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return v;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.923 -0500", hash_original_method = "8987F0888A94923BAC3C282546957FFA", hash_generated_method = "AA71827E42827321A45A0050ADDEB24F")
     
 @Override

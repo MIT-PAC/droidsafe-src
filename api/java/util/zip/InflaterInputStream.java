@@ -120,7 +120,7 @@ public InflaterInputStream(InputStream is, Inflater inflater, int bsize) {
      *
      * @return Number of uncompressed bytes read
      */
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.FILE})
     @DSComment("zip/io")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.043 -0500", hash_original_method = "DE515D2D289FDA03BF01DDF0E0AD6AE1", hash_generated_method = "24C747E38DD44413DDF0B87FFC31A7EB")
@@ -267,6 +267,7 @@ protected void fill() throws IOException {
      * @param readlimit
      *            of no use.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.056 -0500", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "B192DF6DAE9C0FAF199088F4F2FAAE45")
     
 @Override
@@ -282,6 +283,7 @@ protected void fill() throws IOException {
      * @throws IOException
      *             if the method is called
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.059 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "982040414CDBED77657D44B5E5A8ACAA")
     
 @Override
@@ -295,6 +297,7 @@ protected void fill() throws IOException {
      *
      * @return false, always
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.061 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "98834879561C7504F012DD22F86DCE30")
     
 @Override

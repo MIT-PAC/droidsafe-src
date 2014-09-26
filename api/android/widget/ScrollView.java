@@ -317,6 +317,7 @@ public void setSmoothScrollingEnabled(boolean smoothScrollingEnabled) {
         mSmoothScrollingEnabled = smoothScrollingEnabled;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.538 -0500", hash_original_method = "1504CEEE6604563B648201D50795D68C", hash_generated_method = "68C6899775ABC10725857FA59198CDFD")
     
 @Override
@@ -1509,6 +1510,7 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
         super.requestLayout();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.639 -0500", hash_original_method = "E0B1FFFA746AE76ECF17449388BCEBCA", hash_generated_method = "47594912D7865F575129BFF81993444A")
     
 @Override
@@ -1649,7 +1651,7 @@ private void endDrag() {
     }
 
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.656 -0500", hash_original_method = "3BD104A12D7CF3E01CAF1DA422C489F3", hash_generated_method = "D4408673955EDD70B8EB81E03039D730")
     
 @Override
@@ -1668,7 +1670,7 @@ private void endDrag() {
     }
 
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.659 -0500", hash_original_method = "50FAD524FA6B782881C70ABEF15C4DDF", hash_generated_method = "7D0ACC1B57C66D1DE7B0C8A395103AD8")
     
 @Override

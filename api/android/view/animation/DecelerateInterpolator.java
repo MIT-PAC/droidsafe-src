@@ -47,7 +47,8 @@ public DecelerateInterpolator(Context context, AttributeSet attrs) {
         a.recycle();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.506 -0500", hash_original_method = "53C85C7631357B3680FF88D2085C3BF7", hash_generated_method = "291FA6CC116E313A867FFB864B5E8E2D")
     
 public float getInterpolation(float input) {

@@ -77,7 +77,7 @@ public CallbackRunnable(FilterContext.OnFrameReceivedListener listener, Filter f
             mUserData = userData;
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:57.329 -0400", hash_original_method = "5A83EF49B6B92DC977E0343EF5C3F232", hash_generated_method = "C59DE47CD8ACB181772B2E58E045F6ED")
         
 public void run() {

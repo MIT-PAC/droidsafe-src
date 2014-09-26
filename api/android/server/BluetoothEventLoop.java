@@ -123,6 +123,7 @@ private static void log(String msg) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.750 -0400", hash_original_field = "EAE3E9EF816D204EE52A0F95F27CD80B", hash_generated_field = "68E185F86B84D9336A20F76054EC74B9")
 
     private final Handler mHandler = new Handler() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:06:58.926 -0400", hash_original_method = "CB445434FE3AF3D286489B18A51A294F", hash_generated_method = "DACAC63F2AF46EAEC6F8CF15B11114BA")
         
 @Override

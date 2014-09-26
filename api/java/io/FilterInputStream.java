@@ -67,6 +67,7 @@ protected FilterInputStream(InputStream in) {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.045 -0500", hash_original_method = "FFAC7C303832D87EA3757F73ECC9CF0F", hash_generated_method = "97D4206E523BA3252F44669193A79E5B")
     
 @Override
@@ -85,6 +86,7 @@ protected FilterInputStream(InputStream in) {
      * @see #reset()
      * @see #skip(long)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.048 -0500", hash_original_method = "41BA5D3E6CD82551F6C2FAFF3850B986", hash_generated_method = "AAA0E9FA70DCC42A6EF6C686E3CCDC7E")
     
 @Override
@@ -152,6 +154,7 @@ protected FilterInputStream(InputStream in) {
      * @see #mark(int)
      * @see #markSupported()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.056 -0500", hash_original_method = "61478AA9F56747991020142C67580FB8", hash_generated_method = "F44C74B35137AEFCC17E0B0D490721CE")
     
 @Override

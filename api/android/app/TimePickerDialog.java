@@ -26,6 +26,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TimePicker;
 import android.widget.TimePicker.OnTimeChangedListener;
+import droidsafe.annotations.*;
 
 /**
  * A dialog that prompts the user for the time of day using a {@link TimePicker}.
@@ -139,6 +140,7 @@ public class TimePickerDialog extends AlertDialog
         super.onStop();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
     public Bundle onSaveInstanceState() {
         Bundle state = super.onSaveInstanceState();
@@ -148,6 +150,7 @@ public class TimePickerDialog extends AlertDialog
         return state;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);

@@ -245,6 +245,7 @@ private static void sloge(String s) {
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_method = "7D33A0984FFB123C6674B46896DDEB1E", hash_generated_method = "CF369C8FCB5C79AAA993EA2D6A6CBEC9")
         @Override
         public void onReceive(Context context, Intent intent) {

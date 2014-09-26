@@ -363,7 +363,7 @@ public void printStackTrace(PrintWriter err) {
      *     null if this stack trace has no parent.
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.620 -0500", hash_original_method = "9161BE82060982591CF587E371FF5EC1", hash_generated_method = "E41462E11C26A6D1B3DA6F23FE79D53C")
     
 private void printStackTrace(Appendable err, String indent, StackTraceElement[] parentStack)
@@ -466,7 +466,7 @@ public Throwable initCause(Throwable throwable) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.628 -0500", hash_original_method = "22464C579A8BDBBA630699F5CFE21CE6", hash_generated_method = "EC6E1F32E2206A3C3ED13D06EC6500B3")
     
 public Throwable getCause() {
@@ -520,9 +520,7 @@ public final Throwable[] getSuppressed() {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:36.071 -0400", hash_original_method = "9B67B0A60488A3B6BF6B1F8E333B2B37", hash_generated_method = "58F138263C90A735EA5A2D2A1F2D33EA")
     
@@ -534,9 +532,7 @@ private void writeObject(ObjectOutputStream out) throws IOException {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:36.072 -0400", hash_original_method = "D9E2A8DEA9D5CE3A923EF2188BD1E0E9", hash_generated_method = "12BD48433068849A8343C0A49B879274")
     

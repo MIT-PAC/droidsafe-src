@@ -234,6 +234,7 @@ protected static String getAppNameByIntent(PendingIntent intent) {
 
     private final BroadcastReceiver mResultReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.796 -0400", hash_original_method = "DB25CB42F24A1F0004F16056EEBCBE73", hash_generated_method = "2EB066921744C6644579A933780E2AC4")
         @Override
         public void onReceive(Context context, Intent intent) {

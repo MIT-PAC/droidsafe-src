@@ -34,7 +34,8 @@ public ServiceManagerNative()
         attachInterface(this, descriptor);
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.146 -0500", hash_original_method = "77391B19BF1D318FBD43A52170DD3D86", hash_generated_method = "1BDAB90CF42E81C0C6659F856F69AB0F")
     
 public boolean onTransact(int code, Parcel data, Parcel reply, int flags)

@@ -83,7 +83,7 @@ public PhoneProxy(Phone phone) {
     }
 
     @DSSafe(DSCat.IPC_CALLBACK)
-    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.223 -0500", hash_original_method = "E195EC1A1EABBEB6AA309412029DC755", hash_generated_method = "CD08DD6C0E587B0395672024A23CBE67")
     
 @Override

@@ -223,7 +223,8 @@ private void init() {
      * @param durationMillis the duration of the animation, in milliseconds, for
      *        every child in this set
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.817 -0500", hash_original_method = "638E0400F0B782F58F566825CD0FEEA0", hash_generated_method = "B62706F06C31766D5E9CB6CCD160509F")
     
 @Override

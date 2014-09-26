@@ -78,6 +78,7 @@ private boolean isClosed() {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.772 -0500", hash_original_method = "F8F979F8EBA759C2F6A839AF0D90FFA4", hash_generated_method = "CAEFA9F9FC72532B2549A04756D90732")
     
 @Override
@@ -108,6 +109,7 @@ private void checkNotClosed() throws IOException {
      *
      * @return always {@code true}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.777 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
     
 @Override
@@ -194,6 +196,7 @@ private void checkNotClosed() throws IOException {
      * @see #read()
      * @see #read(char[], int, int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.785 -0500", hash_original_method = "3162F271739E7EAF4DA155264EC5FC94", hash_generated_method = "82422747FE057A76BDD75E84FA12D054")
     
 @Override
@@ -215,6 +218,7 @@ private void checkNotClosed() throws IOException {
      * @see #mark(int)
      * @see #markSupported()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.787 -0500", hash_original_method = "038BDF0065CA5B8ADE3B96C7C6A96C49", hash_generated_method = "41EADE0FC52598FB47990BB2C6983730")
     
 @Override
@@ -245,6 +249,7 @@ private void checkNotClosed() throws IOException {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.791 -0500", hash_original_method = "62CF7546C0F2369A3238D86713E4D3AD", hash_generated_method = "AEDA2BADC8C7353D3C34B57D9C758E02")
     
 @Override

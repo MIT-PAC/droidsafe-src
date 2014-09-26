@@ -825,7 +825,7 @@ public DateFormatSymbols getDateFormatSymbols() {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.134 -0500", hash_original_method = "308621012329CC130ED3BC1A1EBA54C1", hash_generated_method = "4FD0ABFE3C0CD8E96E29712CBC74E1E8")
     
 private int parse(String string, int offset, char format, int count) {

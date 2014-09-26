@@ -22,7 +22,6 @@ import droidsafe.helpers.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
 /**
  * An output stream which triggers an event when a specified number of bytes of
  * data have been written to it. The event can be used, for example, to throw
@@ -44,8 +43,6 @@ public abstract class ThresholdingOutputStream
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.804 -0400", hash_original_field = "B212DD967AF5750AEF1DDA2E6D14352F", hash_generated_field = "AA1C7D5F19989762847FF2B738612846")
 
-
-
     /**
      * The threshold at which the event will be triggered.
      */
@@ -57,9 +54,7 @@ public abstract class ThresholdingOutputStream
 
     private boolean thresholdExceeded;
 
-
     // ----------------------------------------------------------- Constructors
-
 
     /**
      * Constructs an instance of this class which will trigger an event at the
@@ -74,9 +69,7 @@ public ThresholdingOutputStream(int threshold)
         this.threshold = threshold;
     }
 
-
     // --------------------------------------------------- OutputStream methods
-
 
     /**
      * Writes the specified byte to this output stream.
@@ -85,6 +78,8 @@ public ThresholdingOutputStream(int threshold)
      *
      * @exception IOException if an error occurs.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.806 -0400", hash_original_method = "A749941175ED4946E5E13C756C47A3BF", hash_generated_method = "1EAB21479D2DC67F93E2DB6C81109C12")
     
 @Override
@@ -95,7 +90,6 @@ public ThresholdingOutputStream(int threshold)
         written++;
     }
 
-
     /**
      * Writes <code>b.length</code> bytes from the specified byte array to this
      * output stream.
@@ -104,6 +98,8 @@ public ThresholdingOutputStream(int threshold)
      *
      * @exception IOException if an error occurs.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.807 -0400", hash_original_method = "BDE8F5646F213B56F0E18C72C563121D", hash_generated_method = "F7D978458863BCF0A330E62C2E1F0BED")
     
 @Override
@@ -113,7 +109,6 @@ public ThresholdingOutputStream(int threshold)
         getStream().write(b);
         written += b.length;
     }
-
 
     /**
      * Writes <code>len</code> bytes from the specified byte array starting at
@@ -125,6 +120,8 @@ public ThresholdingOutputStream(int threshold)
      *
      * @exception IOException if an error occurs.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.807 -0400", hash_original_method = "63B0905E0F7F5A890F09CED6998445D1", hash_generated_method = "F7476009FB88CC0D3EB7BCEF3585DC37")
     
 @Override
@@ -135,13 +132,13 @@ public ThresholdingOutputStream(int threshold)
         written += len;
     }
 
-
     /**
      * Flushes this output stream and forces any buffered output bytes to be
      * written out.
      *
      * @exception IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.808 -0400", hash_original_method = "7DA4C958A096834DFED555D27E028982", hash_generated_method = "FA6941C953BD1823B8C61ADAEEEA050E")
     
 @Override
@@ -150,13 +147,13 @@ public ThresholdingOutputStream(int threshold)
         getStream().flush();
     }
 
-
     /**
      * Closes this output stream and releases any system resources associated
      * with this stream.
      *
      * @exception IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.808 -0400", hash_original_method = "D4B771243EF7B4BDA5F26E7A828E3C67", hash_generated_method = "370A89EED5A64731546DEF8BD1097C47")
     
 @Override
@@ -173,9 +170,7 @@ public ThresholdingOutputStream(int threshold)
         getStream().close();
     }
 
-
     // --------------------------------------------------------- Public methods
-
 
     /**
      * Returns the threshold, in bytes, at which an event will be triggered.
@@ -189,7 +184,6 @@ public int getThreshold()
         return threshold;
     }
 
-
     /**
      * Returns the number of bytes that have been written to this output stream.
      *
@@ -201,7 +195,6 @@ public long getByteCount()
     {
         return written;
     }
-
 
     /**
      * Determines whether or not the configured threshold has been exceeded for
@@ -217,9 +210,7 @@ public boolean isThresholdExceeded()
         return written > threshold;
     }
 
-
     // ------------------------------------------------------ Protected methods
-
 
     /**
      * Checks to see if writing the specified number of bytes would cause the
@@ -256,7 +247,6 @@ protected void resetByteCount()
 
     // ------------------------------------------------------- Abstract methods
 
-
     /**
      * Returns the underlying output stream, to which the corresponding
      * <code>OutputStream</code> methods in this class will ultimately delegate.
@@ -268,7 +258,6 @@ protected void resetByteCount()
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.812 -0400", hash_original_method = "1258B7401FFA9985EC84EF3503294AC3", hash_generated_method = "D0E9A4B6C860A23274BE26AC4DFCD022")
     
 protected abstract OutputStream getStream() throws IOException;
-
 
     /**
      * Indicates that the configured threshold has been reached, and that a

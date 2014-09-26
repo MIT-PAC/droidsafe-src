@@ -152,7 +152,7 @@ public final int ordinal() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.930 -0500", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "0D841C721535905DD0E9F7FAE6757EB9")
     
 @Override
@@ -203,7 +203,7 @@ public final int ordinal() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.938 -0500", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "720A1100071FDC468D6438DAE71A3A05")
     
 @Override
@@ -226,7 +226,7 @@ public final int ordinal() {
      * @see java.lang.Comparable
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.941 -0500", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "50826E44A2062E2FB025D20ED02D5714")
     
 public final int compareTo(E o) {

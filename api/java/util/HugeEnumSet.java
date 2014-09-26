@@ -34,7 +34,7 @@ HugeEnumSet(Class<E> elementType, E[] enums) {
         bits = new long[(enums.length + BIT_IN_LONG - 1) / BIT_IN_LONG];
     }
 
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.280 -0500", hash_original_method = "AA8C9EBB2E9808034C94DE14598C355D", hash_generated_method = "29356F7A17B0291D52D8ACAC8DB55AEC")
     
 @Override
@@ -90,6 +90,7 @@ HugeEnumSet(Class<E> elementType, E[] enums) {
         return size;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.289 -0500", hash_original_method = "DCEAB8467BE76F2C68D656B465986296", hash_generated_method = "FE40F512E63B7837A52434DFCF20FA58")
     
 @Override
@@ -187,6 +188,7 @@ HugeEnumSet(Class<E> elementType, E[] enums) {
         return new HugeEnumSetIterator();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.307 -0500", hash_original_method = "0CEE396056E1D776D537706DDC043702", hash_generated_method = "E327D43EA8F8984E2DB4DAD700B2E21F")
     
 @Override
@@ -209,6 +211,7 @@ HugeEnumSet(Class<E> elementType, E[] enums) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.310 -0500", hash_original_method = "3A1F4E4B375F17905B34B03F15B39BEF", hash_generated_method = "D9014480812A9CD91D222805570E3A6C")
     
 @Override
@@ -239,6 +242,7 @@ HugeEnumSet(Class<E> elementType, E[] enums) {
         return super.removeAll(collection);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.313 -0500", hash_original_method = "60F21531B5154FAF39DCC5FD8D5C4219", hash_generated_method = "91263B20693886F9E54ECF96893AFC29")
     
 @Override
@@ -311,14 +315,14 @@ void computeNextElement() {
             }
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.270 -0500", hash_original_method = "04AD09EE87D1D0FB4F163A9180F152BA", hash_generated_method = "2289B7B444211E2D3E80C2AF73D47A18")
         
 public boolean hasNext() {
             return mask != 0;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.273 -0500", hash_original_method = "B99B4F6D513EFDAF8AFCA1BFB6A725C7", hash_generated_method = "0C75D49CB7AE57E6698537A3C259442D")
         
 public E next() {

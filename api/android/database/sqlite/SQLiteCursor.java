@@ -144,6 +144,7 @@ public SQLiteDatabase getDatabase() {
         return true;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSSafe(DSCat.DB_CURSOR)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.036 -0500", hash_original_method = "D7810D185EEBB48990AE6D5077F6CEAD", hash_generated_method = "E2C9ABE586EE9B6644157D6DF551AE43")
@@ -245,7 +246,7 @@ private synchronized SQLiteQuery getQuery() {
         }
     }
 
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.056 -0500", hash_original_method = "EB44A3C249AFFC8E58A7028D8F44463C", hash_generated_method = "ADF553E4CFBF16ADF294ED6961EB539C")
     
 @Override

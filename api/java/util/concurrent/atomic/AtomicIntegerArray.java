@@ -24,7 +24,6 @@ public class AtomicIntegerArray implements java.io.Serializable {
     private static final long serialVersionUID = 2862133569453604235L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:24.381 -0400", hash_original_field = "45AA3EADCAC9C9E31A558AD2E7D920BC", hash_generated_field = "225667B44D983DC733D3AAE856B0466F")
 
-
     private static final Unsafe unsafe = Unsafe.getUnsafe();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:24.382 -0400", hash_original_field = "7AE2EC4C7CE8C768097B19AB2C2A693C", hash_generated_field = "5EA6FC671EF34E60C45A8492EB63175B")
 
@@ -287,6 +286,7 @@ public final int addAndGet(int i, int delta) {
      * Returns the String representation of the current values of array.
      * @return the String representation of the current values of array
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:24.391 -0400", hash_original_method = "3492963B9799FA768D7650AC10A0F976", hash_generated_method = "05FA181A353EB1D2A8C6F63EB83AD424")
     
 public String toString() {

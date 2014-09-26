@@ -281,6 +281,7 @@ public Builder play(Animator anim) {
      * <p>Note that ending a <code>AnimatorSet</code> also ends all of the animations that it is
      * responsible for.</p>
      */
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.678 -0500", hash_original_method = "B4B8C3285FA05F4223F7D939EA476CBE", hash_generated_method = "2105C97AD37997EB864971AE97A9FDC3")
     
 @Override

@@ -427,7 +427,6 @@ void checkSynchronousHint() {
         e.fillInStackTrace();
         Log.e("BroadcastReceiver", e.getMessage(), e);
     }
-    
 
     public Intent[] __ds__registerIntentFilter(IntentFilter intentFilter) {
         return __ds__registerIntentFilter(DroidSafeAndroidRuntime.context, intentFilter);
@@ -437,7 +436,7 @@ void checkSynchronousHint() {
     // broadcast the receiver of application
     // We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
 
-    public Intent[] __ds__registerIntentFilter(Context context, IntentFilter intentFilter) {    
+    public Intent[] __ds__registerIntentFilter(Context context, IntentFilter intentFilter) {
 
         int actionCount = intentFilter.countActions();
         int catCount = intentFilter.countCategories();
@@ -677,7 +676,8 @@ public final void finish() {
                     // runnable, since we know the AM is waiting for us until the
                     // executor gets to it.
                     QueuedWork.singleThreadExecutor().execute( new Runnable() {
-                        @Override public void run() {
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override public void run() {
                             if (ActivityThread.DEBUG_BROADCAST) Slog.i(ActivityThread.TAG,
                                     "Finishing broadcast after work to component " + mToken);
                             sendFinished(mgr);

@@ -3,6 +3,7 @@
  * Original file: frameworks/base/core/java/android/os/ICancellationSignal.aidl
  */
 package android.os;
+import droidsafe.annotations.*;
 /**
  * @hide
  */
@@ -36,6 +37,7 @@ public interface ICancellationSignal extends android.os.IInterface
         {
             return this;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
         {
             switch (code)

@@ -112,6 +112,7 @@ public static Bitmap decodeResourceStream(Resources res, TypedValue value,
      *         decoded, or, if opts is non-null, if opts requested only the
      *         size be returned (in opts.outWidth and opts.outHeight)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.757 -0500", hash_original_method = "76C8F8FC59676D6D85C52F32696DF274", hash_generated_method = "04739EFAEB39DB05CF860FAE161E7407")
     
 public static Bitmap decodeResource(Resources res, int id, Options opts) {

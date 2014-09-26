@@ -202,7 +202,7 @@ public static ThreadEvent end(int threadId) {
         }
 
         @DSComment("Private Method")
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.631 -0500", hash_original_method = "970ADDE5DABB38D7F42BDDA2D6B8B600", hash_generated_method = "19D9FC52574E06EFA4712248DEA04B2B")
         
 private static int hashCode(Object o) {

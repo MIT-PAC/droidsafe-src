@@ -25,7 +25,7 @@ public class PermissionInfo extends PackageItemInfo implements Parcelable {
 
     public static final Creator<PermissionInfo> CREATOR =
         new Creator<PermissionInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.560 -0500", hash_original_method = "CE272AA0F393607C7BD51E233995C9B9", hash_generated_method = "2C119AF1DA4D21CAC1AE2F73BF2D7D26")
         
 public PermissionInfo createFromParcel(Parcel source) {

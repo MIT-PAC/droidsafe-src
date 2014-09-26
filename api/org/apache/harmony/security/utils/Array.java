@@ -27,6 +27,7 @@ public static String getBytesAsString(byte[] data) {
      *
      * @return <code>String</code> representation of the <code>array</code>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.953 -0500", hash_original_method = "A9B6ED6B9ACE659EADD4FA05AC05EB96", hash_generated_method = "BB852DBF9E1E9E06A227AF0903B04500")
     
 public static String toString(byte[] array, String prefix) {

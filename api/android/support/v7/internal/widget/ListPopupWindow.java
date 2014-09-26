@@ -58,7 +58,6 @@ import java.util.Locale;
 public class ListPopupWindow {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.327 -0400", hash_original_field = "9B22868DBB778B77630F608FF41CCE95", hash_generated_field = "0887B70F50539FED12873EB1C34B6CEE")
 
-
     private static final String TAG = "ListPopupWindow";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.329 -0400", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
@@ -89,7 +88,6 @@ public class ListPopupWindow {
     public static final int INPUT_METHOD_NOT_NEEDED = PopupWindow.INPUT_METHOD_NOT_NEEDED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.335 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.337 -0400", hash_original_field = "7E4C7D8A72122A6640DF0AA884C2245D", hash_generated_field = "DD5B28EB4059D1AC7E72BAEDE50FACDF")
 
@@ -101,7 +99,6 @@ public class ListPopupWindow {
 
     private DropDownListView mDropDownList;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.342 -0400", hash_original_field = "47629D9301A11E5A90DB7FD16C630178", hash_generated_field = "95C5FD2B2227A2419A547D55212619CB")
-
 
     private int mDropDownHeight = ViewGroup.LayoutParams.WRAP_CONTENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.344 -0400", hash_original_field = "1FBF54D200826BE24A98634613FB66C2", hash_generated_field = "DE8B8CD76D1AB415FF96E39AF3C5D34E")
@@ -118,7 +115,6 @@ public class ListPopupWindow {
     private boolean mDropDownVerticalOffsetSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.353 -0400", hash_original_field = "E408A4A94243B7CFBFDDDE18659D6637", hash_generated_field = "A2A88CD1765159B88DD7DB6DD2826AA7")
 
-
     private boolean mDropDownAlwaysVisible = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.355 -0400", hash_original_field = "38CCFB5B729C0D1016E8CD1FEEC6A290", hash_generated_field = "D1BD29312DE39A83C4D6D5BDC2010A61")
 
@@ -128,32 +124,26 @@ public class ListPopupWindow {
     int mListItemExpandMaximum = Integer.MAX_VALUE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.359 -0400", hash_original_field = "5449FEC726829211DD8244A31A4FD026", hash_generated_field = "5F49A121459BF7DF82F93F51F66D9AFA")
 
-
     private View mPromptView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.361 -0400", hash_original_field = "CC2799DFE9A02CE4FAA05B620FA5203C", hash_generated_field = "D0EDBCF4B24F722A68C83DBD4FA7D38D")
 
     private int mPromptPosition = POSITION_PROMPT_ABOVE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.363 -0400", hash_original_field = "7F4E88E932CA04F746195B78340FAF19", hash_generated_field = "3BA4BCC5F225A10F755FE4D117871D40")
 
-
     private DataSetObserver mObserver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.364 -0400", hash_original_field = "9E0D6B2D2C41BFB970F7F40314CA67CA", hash_generated_field = "0AD13AB5208CE821A0A2BF31AEC73CB4")
-
 
     private View mDropDownAnchorView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.366 -0400", hash_original_field = "CF26749AC69E503F0E6CEE9E8D3F679D", hash_generated_field = "D7FBC36DD90F3884476AF7A145F7D085")
 
-
     private Drawable mDropDownListHighlight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.369 -0400", hash_original_field = "C3BCFE8177AEF338D4004A6DD4D2D8EF", hash_generated_field = "91F251C39E992AB6E9A1F97E1DB2D65A")
-
 
     private AdapterView.OnItemClickListener mItemClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.371 -0400", hash_original_field = "95D49B221C26B1A3334D3BD6A6E6E61A", hash_generated_field = "B20A14E839638431419A27C6FA2EB183")
 
     private AdapterView.OnItemSelectedListener mItemSelectedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.374 -0400", hash_original_field = "870EB41A3AD8AF770D57D2B2C2386419", hash_generated_field = "821F70C70BBBE64322F054DCBDCBD65D")
-
 
     private final ResizePopupRunnable mResizePopupRunnable = new ResizePopupRunnable();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.376 -0400", hash_original_field = "9EC385C13CED9DB47D8864C0559278A1", hash_generated_field = "C2DF6DA91E71FE1B73AF2F99DA491C65")
@@ -170,18 +160,14 @@ public class ListPopupWindow {
     private Runnable mShowDropDownRunnable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.386 -0400", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2E60E17486AAEB1A4E1F1878A0354061")
 
-
     private Handler mHandler = new Handler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.388 -0400", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
-
 
     private Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.390 -0400", hash_original_field = "35472579238A24390A4D232395567A7B", hash_generated_field = "2CBF8E91F49F039C5D23189C3E7CE590")
 
-
     private boolean mModal;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.391 -0400", hash_original_field = "25224C4BC0BA1B889B916743A9183796", hash_generated_field = "1F66B12F4B6F8226A24764A3172D159B")
-
 
     private int mLayoutDirection;
 
@@ -1054,7 +1040,8 @@ private int buildDropDown() {
              * waiting for the normal UI pipeline to do it's job which is slower than this method.
              */
             mShowDropDownRunnable = new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     // View layout should be all done before displaying the drop down.
                     View view = getAnchorView();
                     if (view != null && view.getWindowToken() != null) {
@@ -1286,11 +1273,9 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
         */
         private boolean mListSelectionHidden;
 
-
         public static final int INVALID_POSITION = -1;
 
         static final int NO_POSITION = -1;
-
 
         /**
          * True if this wrapper should fake focus.
@@ -1348,6 +1333,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isInTouchMode() {
             // WARNING: Please read the comment where mListSelectionHidden is declared
@@ -1359,6 +1345,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
          *
          * @return true always if hijacking focus
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean hasWindowFocus() {
             return mHijackFocus || super.hasWindowFocus();
@@ -1369,6 +1356,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
          *
          * @return true always if hijacking focus
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isFocused() {
             return mHijackFocus || super.isFocused();
@@ -1379,6 +1367,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
          *
          * @return true always if hijacking focus
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean hasFocus() {
             return mHijackFocus || super.hasFocus();
@@ -1491,6 +1480,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
 
     private class PopupDataSetObserver extends DataSetObserver {
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @Override
         public void onChanged() {
             if (isShowing()) {
@@ -1499,6 +1489,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
             }
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @Override
         public void onInvalidated() {
             dismiss();
@@ -1507,6 +1498,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
 
     private class ListSelectorHider implements Runnable {
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void run() {
             clearListSelection();
         }
@@ -1514,6 +1506,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
 
     private class ResizePopupRunnable implements Runnable {
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void run() {
             if (mDropDownList != null && mDropDownList.getCount() > mDropDownList.getChildCount() &&
                     mDropDownList.getChildCount() <= mListItemExpandMaximum) {

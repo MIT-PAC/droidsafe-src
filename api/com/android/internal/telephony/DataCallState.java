@@ -63,7 +63,7 @@ public class DataCallState {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.580 -0500", hash_original_method = "CAAE2D86A06B83EE392B769B8D61B847", hash_generated_method = "4D6FF0647DDF910FB4E7699D22BB705B")
     
 @Override

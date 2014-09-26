@@ -20,7 +20,7 @@ public class ResolveInfo implements Parcelable {
 
     public static final Creator<ResolveInfo> CREATOR
             = new Creator<ResolveInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.616 -0500", hash_original_method = "2EFE85D4E7AF81E923B1CAE80AA7FDC7", hash_generated_method = "F224919CC590333341253A2679D1F1C0")
         
 public ResolveInfo createFromParcel(Parcel source) {
@@ -267,6 +267,7 @@ public DisplayNameComparator(PackageManager pm) {
             mPM = pm;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.629 -0500", hash_original_method = "75BF6E8997D323222280B816426CA9D8", hash_generated_method = "F07A48D24789F9CB4DFB3ABD988D9595")
         
 public final int compare(ResolveInfo a, ResolveInfo b) {

@@ -887,7 +887,7 @@ GLThread(Renderer renderer) {
             mRenderer = renderer;
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.669 -0500", hash_original_method = "4EBF7F6B9BB16BE66D221453F245DA46", hash_generated_method = "1653E32386D466C1F718F4265D118D53")
         
 @Override
@@ -1826,6 +1826,7 @@ public void queueEvent(Runnable r) {
      * This method is used as part of the View class and is not normally
      * called or subclassed by clients of GLSurfaceView.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.538 -0500", hash_original_method = "B3264BCF0DBD2F88E8CFEB8E1785CF85", hash_generated_method = "24B5B91E7E9F71B7C9FF6AC694BFEB5F")
     
 @Override
@@ -1853,6 +1854,7 @@ public void queueEvent(Runnable r) {
      * called or subclassed by clients of GLSurfaceView.
      * Must not be called before a renderer has been set.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.541 -0500", hash_original_method = "783D43AC66E879A98C2CBDD1B113996E", hash_generated_method = "E952790FDFDFFFD1534A80BB986A0716")
     
 @Override

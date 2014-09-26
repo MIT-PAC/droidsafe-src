@@ -73,7 +73,7 @@ private static void log(String s) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.854 -0400", hash_original_field = "17161E0D5F664640DD3B27CBEFA72BA0", hash_generated_field = "9C95D36DB334C11AD4000563454AA3FC")
 
     public static final Parcelable.Creator<SignalStrength> CREATOR = new Parcelable.Creator() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.571 -0500", hash_original_method = "FD487B8B32AF513C14420FE03C44E804", hash_generated_method = "FBB55F9C50025DD4CE74BA243C7973DE")
         
 public SignalStrength createFromParcel(Parcel in) {

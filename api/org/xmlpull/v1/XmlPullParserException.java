@@ -81,7 +81,7 @@ public int getColumnNumber() { return column; }
 
     //NOTE: code that prints this and detail is difficult in J2ME
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.959 -0500", hash_original_method = "5154476310B69FA819C717F88BC0BDF0", hash_generated_method = "66964249575538104583078C803F14FE")
     
 public void printStackTrace() {

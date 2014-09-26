@@ -514,6 +514,7 @@ public boolean isRevoked(Certificate cert) {
      * @see java.security.cert.CRL#toString()
      * method documentation for more info
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:03.117 -0400", hash_original_method = "2CB91A9E1696B88F4EC13EF2C323F12E", hash_generated_method = "C4E08F59AA994F3DA262336A4F913D4D")
     
 public String toString() {

@@ -129,6 +129,7 @@ private boolean isClosed() {
      * @throws IOException
      *             if this reader is closed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.631 -0500", hash_original_method = "364865576D00D1903D5FAEF3F67610B8", hash_generated_method = "36EE61A1D02AB8888D1A40A074AC6758")
     
 @Override
@@ -157,6 +158,7 @@ private void checkNotClosed() throws IOException {
      * @see #mark(int)
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.636 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
     
 @Override
@@ -242,6 +244,7 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.644 -0500", hash_original_method = "ACF01B5A9581EC6A7FB489059F8F6839", hash_generated_method = "40837C4522132137E81E153F73F4205C")
     
 @Override
@@ -261,6 +264,7 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.646 -0500", hash_original_method = "8831F819121D6F1C65C36C6F61A61062", hash_generated_method = "6E38B5E8CAEA1723A8800C22D79464C7")
     
 @Override
@@ -280,6 +284,7 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this reader is closed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.649 -0500", hash_original_method = "204384BC4BAAF8636F71AE068D63C20F", hash_generated_method = "2E80CFDB190C80238DA2DBA0445B572E")
     
 @Override

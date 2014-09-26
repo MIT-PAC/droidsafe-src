@@ -21,6 +21,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
 
     private final Runnable interruptAndCloseRunnable = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.733 -0400", hash_original_method = "AE7E9C29A12236996DA74E23561B6760", hash_generated_method = "A82EC148D3A353CBA856B48EDD1EC897")
         @Override
         public void run() {

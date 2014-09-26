@@ -72,6 +72,7 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
 
     Handler mHandler = new Handler() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.437 -0400", hash_original_method = "2B211BBD733007234A9B9085CE23F724", hash_generated_method = "791EB521B43B73C3BF37FF78C68699C9")
         @Override
         public void handleMessage(Message msg) {

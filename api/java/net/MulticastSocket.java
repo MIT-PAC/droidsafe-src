@@ -256,7 +256,8 @@ private void checkJoinOrLeave(InetAddress groupAddr) throws IOException {
      * @throws IOException if an error occurs.
      * @deprecated use {@link #setTimeToLive}.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.623 -0500", hash_original_method = "B2C00FA361C879157E99EDF94577EB31", hash_generated_method = "D399416A40635AF894745C2EFC98E153")
     
 @Deprecated

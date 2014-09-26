@@ -474,7 +474,8 @@ private static void requestLayout(View root, String parameter) {
         final View view = findView(root, parameter);
         if (view != null) {
             root.post(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     //view.requestLayout();
                 }
             });
@@ -630,7 +631,8 @@ public void post(Object... data) {
         final CountDownLatch latch = new CountDownLatch(1);
         final long[] duration = new long[1];
         view.post(new Runnable() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.782 -0500", hash_original_method = "288ADD315909186063EB07E77583ADE2", hash_generated_method = "74764E748370F80D838A7371BF5A1AD7")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.782 -0500", hash_original_method = "288ADD315909186063EB07E77583ADE2", hash_generated_method = "74764E748370F80D838A7371BF5A1AD7")
             
 public void run() {
                 try {
@@ -777,7 +779,8 @@ private static Bitmap performViewCapture(final View captureView, final boolean s
             final Bitmap[] cache = new Bitmap[1];
 
             captureView.post(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     /*try {
                         cache[0] = captureView.createSnapshot(
                                 Bitmap.Config.ARGB_8888, 0, skpiChildren);
@@ -1792,7 +1795,8 @@ private int getTraceId(Message message) {
 void save() {
             // Don't block the UI thread
             new Thread(new Runnable() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void run() {
                     //saveTraces();
                 }

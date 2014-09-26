@@ -137,8 +137,7 @@ public void onClick(View v) {
 public OptionsAdapter(Context context) {
             super();
         }
-
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.235 -0500", hash_original_method = "2F3D5346969689C1B0E524EA0F83CDB3", hash_generated_method = "3D5D618B2C4A90AC83411EF5C6ACE585")
         @DSVerified("onClick Called inside button")
         @DSSafe(DSCat.SAFE_OTHERS)
@@ -150,14 +149,15 @@ public View getView(int position, View convertView, ViewGroup parent) {
             return b;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.238 -0500", hash_original_method = "DE59A8E1295F8E334D75F62942CFDC7D", hash_generated_method = "068ECB1C09DB1EEA27AC6685EFD58AE6")
         
 public final int getCount() {
             return mOptions.length();
         }
 
-        @DSSpec(DSCat.DB_CURSOR)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.241 -0500", hash_original_method = "8B0C0E62DBC532F544A3C62A19BF4060", hash_generated_method = "80F71820F60B1DF2BFF86DB8B119223E")
         
@@ -165,7 +165,8 @@ public final Object getItem(int position) {
             return String.valueOf(mOptions.charAt(position));
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.244 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "EACE94B0A96EDF0E9405B246169ACAA0")
         
 public final long getItemId(int position) {

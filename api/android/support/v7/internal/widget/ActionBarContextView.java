@@ -40,17 +40,14 @@ import android.widget.TextView;
 public class ActionBarContextView extends AbsActionBarView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.435 -0400", hash_original_field = "4903F05D59AFFD00260A63A4EC905F53", hash_generated_field = "C45604C41252B81A800ABE94C507699D")
 
-
     private static final String TAG = "ActionBarContextView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.444 -0400", hash_original_field = "8C445459F9A68BF8713F87AC9D695E47", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
-
 
     private CharSequence mTitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.450 -0400", hash_original_field = "AB153FEBC9BAB866EB9D9BD858F863D7", hash_generated_field = "775125B4EBC8ED0F3E5FBA051277E18D")
 
     private CharSequence mSubtitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.457 -0400", hash_original_field = "9E5ABA39447839CB8750D1879400036C", hash_generated_field = "24F281CC402C90EA9D9EB00DDCF618F4")
-
 
     private View mClose;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.464 -0400", hash_original_field = "ADD711F109703E2EAF61E2AD917F3FB6", hash_generated_field = "58BF9FCCDFB47B7346A31DF060279244")
@@ -112,6 +109,7 @@ public ActionBarContextView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.566 -0400", hash_original_method = "B72CC99F1AE7F170915B2F32514E502E", hash_generated_method = "85E4C34DF224DF00676DC6184CD8DB89")
     
 @Override
@@ -254,7 +252,8 @@ public void initForMode(final ActionMode mode) {
 
         View closeButton = mClose.findViewById(R.id.action_mode_close_button);
         closeButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                 mode.finish();
             }
         });
@@ -357,6 +356,7 @@ public void killMode() {
         return new ViewGroup.MarginLayoutParams(getContext(), attrs);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.754 -0400", hash_original_method = "9A1A76A2A395E3414C3E1FDE7CC6CC9F", hash_generated_method = "74260B12F4C8C2DC1F8A692BEC55C80C")
     
 @Override

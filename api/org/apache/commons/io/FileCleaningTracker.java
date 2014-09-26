@@ -230,6 +230,7 @@ Reaper() {
          * Run the reaper thread that will delete files as their associated
          * marker objects are reclaimed by the garbage collector.
          */
+        @DSSpec(DSCat.SPEC_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.330 -0400", hash_original_method = "63BD1C8F3C17781753BA16C837ECEC6F", hash_generated_method = "E5468C1E2BA5EAE22EA27D6A25B3384C")
         
 @Override

@@ -63,6 +63,7 @@ public AutoCloseInputStream(InputStream in) {
      *
      * @throws IOException if the underlying input stream can not be closed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.950 -0400", hash_original_method = "E9909FB3F008581898CAEA5C0FAA4CC7", hash_generated_method = "AD27A0E1490B7AAE63FA12653B6C2C3E")
     
 @Override
@@ -93,6 +94,7 @@ public AutoCloseInputStream(InputStream in) {
      * already been closed.
      * @throws Throwable if an error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.951 -0400", hash_original_method = "2E21A04735F7B7DFBA8D51C21EAA3D5C", hash_generated_method = "478223465B2967B81B6B25A7047A7AB5")
     
 @Override

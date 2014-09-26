@@ -66,7 +66,6 @@ public static void closeQuietly(LineIterator iterator) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.469 -0400", hash_original_field = "1569BA07ED3ADCB5C5B305753BE84005", hash_generated_field = "FD4BBFE83DB910675F421AFA4B796587")
-
     
     /** The reader that is being read. */
     private  BufferedReader bufferedReader;
@@ -105,6 +104,7 @@ public LineIterator(final Reader reader) throws IllegalArgumentException {
      * @return {@code true} if the Reader has more lines
      * @throws IllegalStateException if an IO exception occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.471 -0400", hash_original_method = "67C6321C4A560250E895F968089F5E07", hash_generated_method = "E8F71E97A7E43855D813D390E6EEDA2B")
     
 public boolean hasNext() {
@@ -149,6 +149,7 @@ protected boolean isValidLine(String line) {
      * @return the next line from the input
      * @throws NoSuchElementException if there is no line to return
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.472 -0400", hash_original_method = "5E316A44D1D2B85B5A94898151BCE074", hash_generated_method = "D7EA21AECB525C7025CA280400CBE298")
     
 public String next() {
@@ -192,6 +193,7 @@ public void close() {
      *
      * @throws UnsupportedOperationException always
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.474 -0400", hash_original_method = "AC01E9FFBEF40935A0A093C32EF1F4B2", hash_generated_method = "780CB83F9E67492FDA3EE32565AD09C5")
     
 public void remove() {

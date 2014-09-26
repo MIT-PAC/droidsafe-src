@@ -258,6 +258,7 @@ public boolean checkRegionMatches(String str, int strStartIndex, String search) 
      * 
      * @return a string describing the sensitivity
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.398 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "0D841C721535905DD0E9F7FAE6757EB9")
     
 @Override

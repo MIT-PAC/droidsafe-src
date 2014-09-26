@@ -924,7 +924,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSSink({DSSinkKind.AUDIO})
+@DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.578 -0500", hash_original_method = "3318C9C193BF9E3BDBFD446631A96457", hash_generated_method = "07E4F8B6DB06AB462AE98FE0C005B9A7")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException

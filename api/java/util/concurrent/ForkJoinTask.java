@@ -205,7 +205,6 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     static final int SMASK       = 0x0000ffff;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.957 -0400", hash_original_field = "3AE4ACCF763B92D2E443B1DD3C9C38AA", hash_generated_field = "C7BDE20637C6596F3D36CB6B9BE2C741")
 
-
     /**
      * Table of exceptions thrown by tasks, to enable reporting by
      * callers. Because exceptions are rare, we don't directly keep
@@ -662,7 +661,6 @@ public static ForkJoinTask<?> adapt(Runnable runnable) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.999 -0400", hash_original_field = "8A999C2B6C1E353D8BBBE70F270C889C", hash_generated_field = "C78CDE4A9B2BA35F7E2E7C42BDBB7E01")
 
-
     private static final long serialVersionUID = -7721805057305804111L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:19.000 -0400", hash_original_field = "71C0AF9A8855A18D8CEED7E5A0A347BB", hash_generated_field = "E1D673985FF3F8FAC5355C138B0EC615")
 
@@ -671,7 +669,6 @@ public static ForkJoinTask<?> adapt(Runnable runnable) {
 
     private static  long STATUS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.950 -0400", hash_original_field = "72D62D1933050B7AC2D9DFC43782C64E", hash_generated_field = "EFA0C478934201BDF4B89E187356FAD2")
-
 
     /*
      * The status field holds run control status bits packed into a
@@ -808,7 +805,6 @@ private int externalInterruptibleAwaitDone() throws InterruptedException {
         }
         return s;
     }
-
 
     /**
      * Implementation for join, get, quietlyJoin. Directly handles
@@ -1095,6 +1091,7 @@ public final V invoke() {
      *
      * @return {@code true} if this task is now cancelled
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.973 -0400", hash_original_method = "9571ACD38494F0A33B32B1368AC6AFF0", hash_generated_method = "ED230A2E98E5A92EBB2141AD3D76AD1F")
     
 public boolean cancel(boolean mayInterruptIfRunning) {
@@ -1107,6 +1104,7 @@ public final boolean isDone() {
         return status < 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.975 -0400", hash_original_method = "E61C112762E4C75C4159D697C2E7D6C5", hash_generated_method = "4AA5ADAEC12FF88E105965DA930F652B")
     
 public final boolean isCancelled() {
@@ -1226,6 +1224,7 @@ public final void quietlyComplete() {
      * @throws InterruptedException if the current thread is not a
      * member of a ForkJoinPool and was interrupted while waiting
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.978 -0400", hash_original_method = "00D952B3ACE6B039BC98B31B44D9796C", hash_generated_method = "39CBC14E149C302FB6E211FC37D1AF67")
     
 public final V get() throws InterruptedException, ExecutionException {
@@ -1253,6 +1252,7 @@ public final V get() throws InterruptedException, ExecutionException {
      * member of a ForkJoinPool and was interrupted while waiting
      * @throws TimeoutException if the wait timed out
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.979 -0400", hash_original_method = "6D8A147E2AA6D126583CA17D42160A97", hash_generated_method = "7E2FCEC4661804231A635633C2CDB5BD")
     
 public final V get(long timeout, TimeUnit unit)
@@ -1424,6 +1424,7 @@ public final void setRawResult(T v) { result = v; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.989 -0400", hash_original_method = "289A5CFDA72934865A52E399F9C60D22", hash_generated_method = "D8C5948E09C39FE557D82784D2707D6B")
         
 public final boolean exec() { runnable.run(); return true; }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.989 -0400", hash_original_method = "D190CF0A5358D62BF7A95C7D675551E8", hash_generated_method = "8B592C61A703DD1A610CFFAD9C49A547")
         
 public final void run() { invoke(); }
@@ -1455,6 +1456,7 @@ public final void setRawResult(Void v) { }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.992 -0400", hash_original_method = "289A5CFDA72934865A52E399F9C60D22", hash_generated_method = "D8C5948E09C39FE557D82784D2707D6B")
         
 public final boolean exec() { runnable.run(); return true; }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.993 -0400", hash_original_method = "D190CF0A5358D62BF7A95C7D675551E8", hash_generated_method = "8B592C61A703DD1A610CFFAD9C49A547")
         
 public final void run() { invoke(); }
@@ -1500,6 +1502,7 @@ public final boolean exec() {
                 throw new RuntimeException(ex);
             }
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.996 -0400", hash_original_method = "D190CF0A5358D62BF7A95C7D675551E8", hash_generated_method = "8B592C61A703DD1A610CFFAD9C49A547")
         
 public final void run() { invoke(); }

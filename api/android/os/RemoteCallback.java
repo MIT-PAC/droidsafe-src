@@ -11,7 +11,7 @@ public abstract class RemoteCallback implements Parcelable {
 
     public static final Parcelable.Creator<RemoteCallback> CREATOR
             = new Parcelable.Creator<RemoteCallback>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.354 -0500", hash_original_method = "D7C71538FF6AF5BB1E831523DD5751DF", hash_generated_method = "8AF557AB7FDF4F12DA5130C605057CC2")
         
 public RemoteCallback createFromParcel(Parcel in) {
@@ -101,7 +101,7 @@ DeliverResult(Bundle result) {
             mResult = result;
         }
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.319 -0500", hash_original_method = "603C18F53B6556C1CA52545158AE7A51", hash_generated_method = "E4A96AD2F241C1E6AFF6E991B848CC36")
         
 public void run() {

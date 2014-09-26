@@ -955,7 +955,7 @@ public final void join(long millis, int nanos) throws InterruptedException {
      *
      * @see Thread#start
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.633 -0500", hash_original_method = "74F6289977938D08C5FBC2624A0DC216", hash_generated_method = "699B0F71A4A21C34025432D7A8734079")
     
 public void run() {

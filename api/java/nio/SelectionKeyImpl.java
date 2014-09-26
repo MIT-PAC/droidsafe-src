@@ -88,6 +88,7 @@ int interestOpsNoCheck() {
         return readyOps;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.297 -0500", hash_original_method = "4899CDE2873B162644661E5D73296ACA", hash_generated_method = "9D075E5D6FB12CC57E0FD2447C218E20")
     
 @Override

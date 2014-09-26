@@ -668,11 +668,9 @@ public final boolean exec() { return true; }
         private static  int ASHIFT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.884 -0400", hash_original_field = "486EDA6F14076C8F4882BBF512C34711", hash_generated_field = "6D3620C2C6758B9F8EDB68BA2BB57951")
 
-
         // Heuristic padding to ameliorate unfortunate memory placements
         volatile long pad00, pad01, pad02, pad03, pad04, pad05, pad06;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.885 -0400", hash_original_field = "CFBFD2C5E2E26F8CE5AEE6B20558FC7E", hash_generated_field = "CFBFD2C5E2E26F8CE5AEE6B20558FC7E")
-
 
         int seed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.885 -0400", hash_original_field = "86A6BEB1EA994119F2A123DB11474A5A", hash_generated_field = "6E32761F938EB8228609999731A1F885")
@@ -721,7 +719,6 @@ public final boolean exec() { return true; }
 
         ForkJoinTask<?> currentSteal;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.890 -0400", hash_original_field = "DA09CDCE49A78C4AC01C65A3624B5DB3", hash_generated_field = "A9AF993CF3BAB463EDD07523A8F5766D")
-
 
         volatile Object pad10, pad11, pad12, pad13, pad14, pad15, pad16, pad17;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.890 -0400", hash_original_field = "6E1A1E5A823656777FB6784512D7EF0D", hash_generated_field = "CCB249FF3CAE73559D57B8C89DC58EC8")
@@ -1137,7 +1134,6 @@ final boolean isApparentlyUnblocked() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.909 -0400", hash_original_field = "763064307044A7200F6EB21FEE15CB59", hash_generated_field = "67D3B0866C3BECCE3104323581EF0E70")
 
-
     /**
      * Creates a new ForkJoinWorkerThread. This factory is used unless
      * overridden in ForkJoinPool constructors.
@@ -1171,7 +1167,6 @@ private static final synchronized int nextPoolId() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.912 -0400", hash_original_field = "D61183B6AB37F2D1E49F613C82BE4048", hash_generated_field = "501535C299BBF14B2852D72CC3FFAF0A")
 
-
     /**
      * Initial timeout value (in nanoseconds) for the thread
      * triggering quiescence to park waiting for new work. On timeout,
@@ -1183,7 +1178,6 @@ private static final synchronized int nextPoolId() {
     private static final long IDLE_TIMEOUT      = 2000L * 1000L * 1000L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.912 -0400", hash_original_field = "AE615F760A16E0F4A5A6F85CFD6C77C4", hash_generated_field = "253E4355BFA7F6AE6F26F5E0A230E79A")
 
-
     /**
      * Timeout value when there are more threads than parallelism level
      */
@@ -1192,7 +1186,6 @@ private static final synchronized int nextPoolId() {
 
     private static final long TIMEOUT_SLOP = 2000000L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.913 -0400", hash_original_field = "25D8F4061B10FC1868CDC76152194C44", hash_generated_field = "CF14348137ED4A64307777C2C45534F1")
-
 
     /**
      * The maximum stolen->joining link depth allowed in method
@@ -1207,7 +1200,6 @@ private static final synchronized int nextPoolId() {
 
     private static final int SEED_INCREMENT = 0x61c88647;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.914 -0400", hash_original_field = "8855A60D60F1E2C2DEF71F3C8F8C14D3", hash_generated_field = "B64D32205E33C6E5632EE7A727B66C87")
-
 
     // bit positions/shifts for fields
     private static final int  AC_SHIFT   = 48;
@@ -1584,7 +1576,6 @@ public static void managedBlock(ManagedBlocker blocker)
     private static  long QLOCK;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.926 -0400", hash_original_field = "486EDA6F14076C8F4882BBF512C34711", hash_generated_field = "83A57DBD186EAC159D18D96EEDC8005E")
 
-
     // Instance fields
 
     /*
@@ -1597,7 +1588,6 @@ public static void managedBlock(ManagedBlocker blocker)
     // Heuristic padding to ameliorate unfortunate memory placements
     volatile long pad00, pad01, pad02, pad03, pad04, pad05, pad06;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.927 -0400", hash_original_field = "1AC72445B7EDB69BF3B170891DC34129", hash_generated_field = "5580A2711623D982506A13FEFF4768DB")
-
 
     volatile long stealCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.927 -0400", hash_original_field = "80711E2281D7B4FC1922AE30BF7FBDB9", hash_generated_field = "3C842F1DC0BFD02458240EE2B701C638")
@@ -1625,7 +1615,6 @@ public static void managedBlock(ManagedBlocker blocker)
 
      String workerNamePrefix;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.930 -0400", hash_original_field = "DA09CDCE49A78C4AC01C65A3624B5DB3", hash_generated_field = "A9AF993CF3BAB463EDD07523A8F5766D")
-
 
     volatile Object pad10, pad11, pad12, pad13, pad14, pad15, pad16, pad17;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.930 -0400", hash_original_field = "E2E3FD7D277B40A24F93879E591E8389", hash_generated_field = "DC82C42DC19EEC16B823A65AE70C6B05")
@@ -2882,6 +2871,7 @@ private void externalHelpComplete(WorkQueue q, ForkJoinTask<?> root) {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.966 -0400", hash_original_method = "FCD0471AE3D6BA8280EE0A9C2A42AADB", hash_generated_method = "3BA3B11880CCB6BF48996A45DDDF5E36")
     
 public void execute(ForkJoinTask<?> task) {
@@ -2897,6 +2887,7 @@ public void execute(ForkJoinTask<?> task) {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.966 -0400", hash_original_method = "698926B422931FDEA21840143F195B4F", hash_generated_method = "370D82990C064CD4B2F3382F282B515D")
     
 public void execute(Runnable task) {
@@ -2919,6 +2910,7 @@ public void execute(Runnable task) {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
+    @DSSpec(DSCat.THREADING)
     public <T> ForkJoinTask<T> submit(ForkJoinTask<T> task) {
         if (task == null)
             throw new NullPointerException();
@@ -2931,6 +2923,7 @@ public void execute(Runnable task) {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
+    @DSSpec(DSCat.THREADING)
     public <T> ForkJoinTask<T> submit(Callable<T> task) {
         ForkJoinTask<T> job = new ForkJoinTask.AdaptedCallable<T>(task);
         externalPush(job);
@@ -2942,6 +2935,7 @@ public void execute(Runnable task) {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
+    @DSSpec(DSCat.THREADING)
     public <T> ForkJoinTask<T> submit(Runnable task, T result) {
         ForkJoinTask<T> job = new ForkJoinTask.AdaptedRunnable<T>(task, result);
         externalPush(job);
@@ -2953,6 +2947,7 @@ public void execute(Runnable task) {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.968 -0400", hash_original_method = "5B40D2F541E3E41BD944A78F5DBE79C0", hash_generated_method = "AF7BC3439C9AEDDB7444FB0BCEE77B76")
     
 public ForkJoinTask<?> submit(Runnable task) {
@@ -2971,6 +2966,7 @@ public ForkJoinTask<?> submit(Runnable task) {
      * @throws NullPointerException       {@inheritDoc}
      * @throws RejectedExecutionException {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) {
         // In previous versions of this class, this method constructed
         // a task to run ForkJoinTask.invokeAll, but now external
@@ -3332,6 +3328,7 @@ protected int drainTasksTo(Collection<? super ForkJoinTask<?>> c) {
      *
      * @return a string identifying this pool, as well as its state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.977 -0400", hash_original_method = "0DA1B408C6755F1ABED27ED61B694061", hash_generated_method = "FC10265F076A394781E8505F58261B8D")
     
 public String toString() {
@@ -3391,6 +3388,7 @@ public String toString() {
      *         because it does not hold {@link
      *         java.lang.RuntimePermission}{@code ("modifyThread")}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.977 -0400", hash_original_method = "DC97D4DB34E30B9530DE4466BFC812AC", hash_generated_method = "7E3D47A777E6E6B461470DAC733755DF")
     
 public void shutdown() {
@@ -3412,6 +3410,7 @@ public void shutdown() {
      *
      * @return an empty list
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.978 -0400", hash_original_method = "3E8FDF9988BAB8B7A4DF16BF7ABEFEB0", hash_generated_method = "F320037D266CDC2CAFA9A728C49B6ACC")
     
 public List<Runnable> shutdownNow() {
@@ -3459,6 +3458,7 @@ public boolean isTerminating() {
      *
      * @return {@code true} if this pool has been shut down
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.979 -0400", hash_original_method = "879E82102F85FC41808D0846EB302932", hash_generated_method = "B82AB54A26F4DA7CBE7CA009B561B4EB")
     
 public boolean isShutdown() {
@@ -3478,6 +3478,7 @@ public boolean isShutdown() {
      *         {@code false} if the timeout elapsed before termination
      * @throws InterruptedException if interrupted while waiting
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.979 -0400", hash_original_method = "146413C981D1BADFB1D8203194C1AD61", hash_generated_method = "C95F1CB5809A8AFB9A7C913DE28DCD43")
     
 public boolean awaitTermination(long timeout, TimeUnit unit)

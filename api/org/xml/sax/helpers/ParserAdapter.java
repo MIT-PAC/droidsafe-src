@@ -354,6 +354,7 @@ public DTDHandler getDTDHandler ()
      * @param handler the new content handler
      * @see org.xml.sax.XMLReader#setEntityResolver
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.300 -0500", hash_original_method = "D8A0D6D3310208C2BEAFD8789BB430C2", hash_generated_method = "1AE1242D9F3749D44BECA443064942F5")
     
 public void setContentHandler (ContentHandler handler)
@@ -413,6 +414,7 @@ public ErrorHandler getErrorHandler ()
      * @see #parse(org.xml.sax.InputSource)
      * @see org.xml.sax.Parser#parse(java.lang.String)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.310 -0500", hash_original_method = "8AE6DA2951569D3F1B1B45FDE2C61B3C", hash_generated_method = "10CE462B07C3B7D01E1AC1F092312A2E")
     
 public void parse (String systemId)
@@ -432,6 +434,7 @@ public void parse (String systemId)
      * @see #parse(java.lang.String)
      * @see org.xml.sax.Parser#parse(org.xml.sax.InputSource)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.312 -0500", hash_original_method = "8D1EDF001F7865BC335C47DEAA91DF87", hash_generated_method = "E14DDB94C15002F5A3CE15B1428EB074")
     
 public void parse (InputSource input)
@@ -882,7 +885,7 @@ public String getType (int i)
      * @return The attribute's value.
      */
     @DSSafe(DSCat.XML)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.394 -0500", hash_original_method = "F0679796EDFA7C65CB4AD5C7F9CBE1FC", hash_generated_method = "59CFC8024232ED8BA11D0FF2A002F6A6")
         
 public String getValue (int i)
@@ -962,7 +965,7 @@ public String getType (String qName)
      * @return The attribute's value.
      */
     @DSSafe(DSCat.XML)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.406 -0500", hash_original_method = "A923F17E07DEE910B88DBEE5B2421501", hash_generated_method = "F23C4745139D5FB53F0FBCBD0566CDFA")
         
 public String getValue (String uri, String localName)
@@ -977,7 +980,7 @@ public String getValue (String uri, String localName)
      * @return The attribute's value.
      */
     @DSSafe(DSCat.XML)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.408 -0500", hash_original_method = "E305D94D7DAD816250B349D4183FD8D8", hash_generated_method = "D9A2660789A3C908966C2DA35937C9E0")
         
 public String getValue (String qName)

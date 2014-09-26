@@ -207,6 +207,7 @@ public class ActionBarView extends AbsActionBarView {
 
     private final OnClickListener mExpandedActionViewUpListener = new OnClickListener() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_method = "71D7F82DC843779588A8591EEB5DDE73", hash_generated_method = "A5749FE279B69BB32FF6085A90DA41DC")
         @Override
         public void onClick(View v) {
@@ -224,6 +225,7 @@ public class ActionBarView extends AbsActionBarView {
 
     private final OnClickListener mUpClickListener = new OnClickListener() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_method = "19F57545305850BD0BBBD46104CC0B01", hash_generated_method = "7301E7CA22EE1FF39CCAA39323935474")
         public void onClick(View v) {
             
@@ -319,6 +321,7 @@ public class ActionBarView extends AbsActionBarView {
         // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.468 -0500", hash_original_method = "2EBE795462E90C610435C294048EA12C", hash_generated_method = "6B905B322231EDACA82D1172A0EDA5D2")
     
 @Override
@@ -356,6 +359,7 @@ public void setWindowCallback(Window.Callback cb) {
         mWindowCallback = cb;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.473 -0500", hash_original_method = "B71E506A9F91C1AD992AA849BAEDAF37", hash_generated_method = "11564454258926541E467EF7D156E0E2")
     
 @Override
@@ -945,6 +949,7 @@ public boolean isCollapsed() {
         return mIsCollapsed;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.579 -0500", hash_original_method = "EDE59536C59F48F9C9A7E58A0D736A35", hash_generated_method = "01C1BFB3DAA97F06096E038D435E2AFB")
     
 @Override
@@ -1290,7 +1295,7 @@ public boolean isCollapsed() {
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -1324,7 +1329,8 @@ private SavedState(Parcel in) {
             isOverflowOpen = in.readInt() != 0;
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.608 -0500", hash_original_method = "515851E7BACA5483746DDD359AD42324", hash_generated_method = "5187780AA67DF6AE317AFBE536A67AD7")
         
 @Override
@@ -1403,6 +1409,7 @@ public void setIcon(Drawable icon) {
             return onHoverEvent(event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.647 -0500", hash_original_method = "2B32BD9128787E0840E1C599EF5CB94E", hash_generated_method = "10FD87B39DCD61216653C9A1E54C95DF")
         
 @Override
@@ -1417,6 +1424,7 @@ public int getLeftOffset() {
             return mUpView.getVisibility() == GONE ? mUpWidth : 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.653 -0500", hash_original_method = "1194BB929AE595B65CC6F2F618759EC2", hash_generated_method = "7651764E45F16A46823CB1094CFC0391")
         
 @Override
@@ -1683,7 +1691,7 @@ public int getLeftOffset() {
         return lp;
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.591 -0500", hash_original_method = "F7EC1EBD6989B5AFA75F6EFE3D4C9302", hash_generated_method = "C8427547B2C211AB3A999A7FEC15F01A")
     
 @Override
@@ -1700,7 +1708,7 @@ public int getLeftOffset() {
         return state;
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.594 -0500", hash_original_method = "2EB5982AB19EADE49A68C3033BC69293", hash_generated_method = "1CA8E45B8A71D1D6D2B7A8D06B45E277")
     
 @Override

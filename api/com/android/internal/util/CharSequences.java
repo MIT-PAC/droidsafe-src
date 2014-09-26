@@ -23,13 +23,15 @@ public int length() {
                 return bytes.length;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.173 -0500", hash_original_method = "5254A93D454BF96918F4C2721EC9AA9A", hash_generated_method = "67702ACD6F445D2A54DA6DFEC6E23CD9")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.173 -0500", hash_original_method = "5254A93D454BF96918F4C2721EC9AA9A", hash_generated_method = "67702ACD6F445D2A54DA6DFEC6E23CD9")
             
 public CharSequence subSequence(int start, int end) {
                 return forAsciiBytes(bytes, start, end);
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.176 -0500", hash_original_method = "7C2C56FB3732C224B091B5BD6DEEAA83", hash_generated_method = "ACF017E3363BD9800A5BCCE862131C11")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.176 -0500", hash_original_method = "7C2C56FB3732C224B091B5BD6DEEAA83", hash_generated_method = "ACF017E3363BD9800A5BCCE862131C11")
             
 public String toString() {
                 return new String(bytes);
@@ -55,7 +57,8 @@ public int length() {
                 return end - start;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.186 -0500", hash_original_method = "2B0597C3C53D66FD7E304CE961910884", hash_generated_method = "43F65E7790117A8AAB2EADB45FB6CC89")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.186 -0500", hash_original_method = "2B0597C3C53D66FD7E304CE961910884", hash_generated_method = "43F65E7790117A8AAB2EADB45FB6CC89")
             
 public CharSequence subSequence(int newStart, int newEnd) {
                 newStart -= start;
@@ -64,7 +67,8 @@ public CharSequence subSequence(int newStart, int newEnd) {
                 return forAsciiBytes(bytes, newStart, newEnd);
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.189 -0500", hash_original_method = "975DC91CAFA5FB6A1461F2497562D7C6", hash_generated_method = "BEF38995409F0E04B2C12111AA6A7EE6")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.189 -0500", hash_original_method = "975DC91CAFA5FB6A1461F2497562D7C6", hash_generated_method = "BEF38995409F0E04B2C12111AA6A7EE6")
             
 public String toString() {
                 return new String(bytes, start, length());

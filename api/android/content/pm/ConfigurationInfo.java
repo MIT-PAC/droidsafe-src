@@ -21,7 +21,7 @@ public class ConfigurationInfo implements Parcelable {
 
     public static final Creator<ConfigurationInfo> CREATOR =
         new Creator<ConfigurationInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:45.451 -0500", hash_original_method = "55BBC101BB2A26593D4442BBB1A17284", hash_generated_method = "E39D66EFDDD196D056209DCBCE6FBA80")
         
 public ConfigurationInfo createFromParcel(Parcel source) {

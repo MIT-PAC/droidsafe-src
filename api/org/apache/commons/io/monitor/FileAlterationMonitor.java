@@ -34,7 +34,6 @@ import java.util.concurrent.ThreadFactory;
 public final class FileAlterationMonitor implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.049 -0400", hash_original_field = "848F9DFF1502BD12C449CA1D6F930427", hash_generated_field = "A187678ED22D20A3185A905AC22BB781")
 
-
     private  long interval;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.050 -0400", hash_original_field = "C560C5243470AE65617A70DF2EF8555B", hash_generated_field = "F3F34EF7C4EBDAADEFCB2334220A3BDA")
 
@@ -211,6 +210,7 @@ public synchronized void stop(long stopInterval) throws Exception {
     /**
      * Run.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.058 -0400", hash_original_method = "24024F5BBB220303415536AF43C72777", hash_generated_method = "C9C14AF8B45AE808D2F5B91FC17F05C9")
     
 public void run() {

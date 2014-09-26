@@ -83,7 +83,6 @@ public class ReaderInputStream extends InputStream {
     private static final int DEFAULT_BUFFER_SIZE = 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.632 -0400", hash_original_field = "359C2477A0D4C46A46237360E9D6E3E1", hash_generated_field = "506A19594AC0AF91386404965612888E")
 
-
     private  Reader reader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.633 -0400", hash_original_field = "35DE68BB49761C7459EF0234F6EAB1B7", hash_generated_field = "A07B3C678B690A0A298B0184B628874A")
 
@@ -95,7 +94,6 @@ public class ReaderInputStream extends InputStream {
 
     private  ByteBuffer encoderOut;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.634 -0400", hash_original_field = "C03510FFC4FD1485E1CD8D9E9EBAAFB0", hash_generated_field = "027A16390EC7AF19AFCD69BC85AAE931")
-
 
     private CoderResult lastCoderResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.635 -0400", hash_original_field = "14C5302C44DEF4A7613BA0A6E0BAD709", hash_generated_field = "759737216E42E53DB8195D44DC15B09C")
@@ -240,6 +238,8 @@ private void fillBuffer() throws IOException {
      *         if the end of the stream has been reached
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.641 -0400", hash_original_method = "9AA2BEF9DA8AFF8D251BF2FC6F763561", hash_generated_method = "298EFBAA7A51F11C69F08AF0C7F43929")
     
 @Override
@@ -280,6 +280,8 @@ private void fillBuffer() throws IOException {
      *         if the end of the stream has been reached
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.641 -0400", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "CFD5B18414297C5D63F6DE9EDDF7232C")
     
 @Override
@@ -294,6 +296,8 @@ private void fillBuffer() throws IOException {
      *         has been reached
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.642 -0400", hash_original_method = "DE40F403B4AA3B3194A9FBF22582153E", hash_generated_method = "797BA1D0D041A26281B5AB9F4D6EDF41")
     
 @Override
@@ -315,6 +319,7 @@ private void fillBuffer() throws IOException {
      * to be closed.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.642 -0400", hash_original_method = "A1FFC9B80BA56A6C1B0EFB45497D16D1", hash_generated_method = "41BF0F39484A92E2DE0C5158288ACAC3")
     
 @Override

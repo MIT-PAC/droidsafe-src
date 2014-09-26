@@ -309,7 +309,8 @@ protected boolean isOnSameScreenAsChildren() {
         mAttachedToActivity = false;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.010 -0500", hash_original_method = "10614F6B57E80AB6C964E551AE06AF94", hash_generated_method = "C311D30DF36A23FA5C6362FA5BAC7096")
     
 @Override

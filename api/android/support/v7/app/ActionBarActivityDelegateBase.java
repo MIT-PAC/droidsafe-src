@@ -49,12 +49,10 @@ class ActionBarActivityDelegateBase extends ActionBarActivityDelegate  implement
     private static final String TAG = "ActionBarActivityDelegateBase";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.828 -0400", hash_original_field = "393CFE891C8C400D2701704963B1D431", hash_generated_field = "F2C1E3FD6750F800842814C7F03138E6")
 
-
     private static final int[] ACTION_BAR_DRAWABLE_TOGGLE_ATTRS = new int[] {
             R.attr.homeAsUpIndicator
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.833 -0400", hash_original_field = "28B10220967DD5BDA404C6D29C1B3C6E", hash_generated_field = "6CC22F47D8F7AAE7532A872F09B0E534")
-
 
     private ActionBarView mActionBarView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.837 -0400", hash_original_field = "1695BEB5E7C9DE969EBD1616C1FC842D", hash_generated_field = "611F0E63548303C4F8ADA27B4E34D680")
@@ -65,13 +63,11 @@ class ActionBarActivityDelegateBase extends ActionBarActivityDelegate  implement
     private MenuBuilder mMenu;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.845 -0400", hash_original_field = "B7BD8B12490FD42C33E24469AF6B48C1", hash_generated_field = "941205D807AC4DF9704A65BDAF4756EC")
 
-
     private ActionMode mActionMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.850 -0400", hash_original_field = "CE057B06400B24E3687CA685FF43F693", hash_generated_field = "BD434F385CC26941808008BFDFB3BD46")
 
     private boolean mSubDecorInstalled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.854 -0400", hash_original_field = "7A1FEF6FEC13BEB91DEF3A009F2A7ABE", hash_generated_field = "AC80BC9708D1C4D6EE731547E0D9F272")
-
 
     private CharSequence mTitleToSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.858 -0400", hash_original_field = "EF1A08BE4B468AFD3925595116440239", hash_generated_field = "42BCB566ECECE0D04E65BB095C81D67E")
@@ -79,11 +75,11 @@ class ActionBarActivityDelegateBase extends ActionBarActivityDelegate  implement
     private boolean mFeatureProgress, mFeatureIndeterminateProgress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.862 -0400", hash_original_field = "052647D6675EB5D78D27F036B1581179", hash_generated_field = "C50C1573E39F1F091A461D6840A3B874")
 
-
     private boolean mInvalidateMenuPosted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.876 -0400", hash_original_field = "DF170F48A4A1C6FB11F5644452DC65EE", hash_generated_field = "A69C6B583C5C89A03008577BB6FC6912")
 
     private final Runnable mInvalidateMenuRunnable = new Runnable() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void run() {
             final MenuBuilder menu = createMenu();

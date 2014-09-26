@@ -225,6 +225,7 @@ private void initImageView() {
         if (mDrawable != null) mDrawable.jumpToCurrentState();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.867 -0500", hash_original_method = "EB3EC256D00C5FC794745B960350792B", hash_generated_method = "CD6421F6254EAC50863B194D8EE65B2A")
     
 @Override
@@ -481,7 +482,8 @@ public void setImageState(int[] state, boolean merge) {
         }
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.897 -0500", hash_original_method = "44CE6C01D324B2DC91AFD69B5F1BB742", hash_generated_method = "598BD5D57A4E32C3151CA42FAA846E12")
     
 @Override
@@ -995,7 +997,8 @@ private void configureBounds() {
      * @return the offset of the baseline within the widget's bounds or -1
      *         if baseline alignment is not supported.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.952 -0500", hash_original_method = "697E0DCA3A40ADA0E60547E8AD02CB08", hash_generated_method = "6EB491C14EA109A0AB1664B84B756DAF")
     
 @Override
@@ -1109,7 +1112,8 @@ public void setColorFilter(ColorFilter cf) {
         }
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.970 -0500", hash_original_method = "F29539FC5DE82D33A1732D8CBDF1B3F0", hash_generated_method = "FA4FC55525E8C03A0249EAF7F7D3F5DA")
     
 @RemotableViewMethod

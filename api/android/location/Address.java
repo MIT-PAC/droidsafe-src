@@ -19,7 +19,7 @@ public class Address implements Parcelable {
 
     public static final Parcelable.Creator<Address> CREATOR =
         new Parcelable.Creator<Address>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.040 -0500", hash_original_method = "9DD3D24D0AAD4627E69FB2E9DF778B8A", hash_generated_method = "9D04A4E818D392AFC2DFE4BD73D09C8E")
         

@@ -95,6 +95,7 @@ public LDAPCertStoreParameters(String serverName) {
      *
      * @return the cloned instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.492 -0400", hash_original_method = "54040598955C6E8BA382734C61174608", hash_generated_method = "0239CEC56D53D9115DB8BFABFCC35553")
     
 public Object clone() {
@@ -134,6 +135,7 @@ public String getServerName() {
      * @return the string representation of this {@code LDAPCertStoreParameters}
      *         instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.496 -0400", hash_original_method = "F31E920D445757BE6DC5480CCE7003E7", hash_generated_method = "688E769EA1135123328F091096F9D3B9")
     
 public String toString() {

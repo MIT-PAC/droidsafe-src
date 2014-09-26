@@ -45,7 +45,7 @@ public class RemoteViews implements Parcelable, Filter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.797 -0400", hash_original_field = "3C81D1A6471DBF098FBC5010948AFD3D", hash_generated_field = "BD08AD711A0271B27E85FFB2A2737195")
 
     public static final Parcelable.Creator<RemoteViews> CREATOR = new Parcelable.Creator<RemoteViews>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.117 -0500", hash_original_method = "FC3F962DDEC04FB3CB8064B237D4AD2E", hash_generated_method = "6E797158973DFFCE7F4F903A273D2687")
         
 public RemoteViews createFromParcel(Parcel parcel) {
@@ -1082,7 +1082,8 @@ public void writeToParcel(Parcel dest, int flags) {
                 target.setTagInternal(com.android.internal.R.id.fillInIntent, fillInIntent);
             } else if (target != null && fillInIntent != null) {
                 OnClickListener listener = new OnClickListener() {
-                    public void onClick(View v) {
+                    @DSSafe(DSCat.SAFE_LIST)
+            public void onClick(View v) {
                         // Insure that this view is a child of an AdapterView
                         View parent = (View) v.getParent();
                         while (!(parent instanceof AdapterView<?>)
@@ -1412,7 +1413,8 @@ public void writeToParcel(Parcel dest, int flags) {
 
             if (target != null && pendingIntent != null) {
                 OnClickListener listener = new OnClickListener() {
-                    public void onClick(View v) {
+                    @DSSafe(DSCat.SAFE_LIST)
+            public void onClick(View v) {
                         // Find target view location in screen coordinates and
                         // fill into PendingIntent before sending.
                         final float appScale = v.getContext().getResources()

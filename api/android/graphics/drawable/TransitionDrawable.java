@@ -172,6 +172,7 @@ TransitionState(TransitionState orig, TransitionDrawable owner,
             super(orig, owner, res);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.057 -0500", hash_original_method = "74F5798AEA04A77B6E31B76C53519B4C", hash_generated_method = "68DED141956BBFCC7DB396CF672EAE1A")
         
 @Override
@@ -179,6 +180,7 @@ TransitionState(TransitionState orig, TransitionDrawable owner,
             return new TransitionDrawable(this, (Resources)null);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.060 -0500", hash_original_method = "2864DA5070788F66F2135B6D59FADE5D", hash_generated_method = "9FC7C6FFA92003CA8B436189770C5389")
         
 @Override

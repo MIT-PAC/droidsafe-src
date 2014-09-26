@@ -190,6 +190,7 @@ public int indexOfLevel(int level) {
             return -1;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.755 -0500", hash_original_method = "578EA11BFBDE2C74EEB0B28EA6FDC468", hash_generated_method = "4D63526913BD1C0D7C22B3363501C756")
         
 @Override
@@ -197,6 +198,7 @@ public int indexOfLevel(int level) {
             return new LevelListDrawable(this, null);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.758 -0500", hash_original_method = "940707433A1F7319278E4F2386D7D30E", hash_generated_method = "721B4B0C126370469D75E324DE636FF9")
         
 @Override

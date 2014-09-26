@@ -246,7 +246,8 @@ private void initFromAttributes(Context context, AttributeSet attrs) {
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.842 -0500", hash_original_method = "73585EFBB2973430E05667E2654BAD3F", hash_generated_method = "1B31E1BC181531E4C927179CADD06337")
     
 @Override
@@ -310,6 +311,7 @@ private void sortChildren() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.908 -0500", hash_original_method = "A3AAE4860228E849F39A667518F04B9E", hash_generated_method = "0050142F3FBC23713D5F9DA65F5E8DAE")
         
 public int compare(View first, View second) {
@@ -1211,7 +1213,7 @@ private void measureChildHorizontal(View child, LayoutParams params, int myWidth
      * @return MeasureSpec for the child
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.865 -0500", hash_original_method = "78354A3A0D2C9A2AC648B99E7333EDDC", hash_generated_method = "16282200745A58B93E2CA5E9F000A4C6")
     
 private int getChildMeasureSpec(int childStart, int childEnd,

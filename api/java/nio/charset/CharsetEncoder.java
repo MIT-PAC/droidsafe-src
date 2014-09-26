@@ -250,6 +250,7 @@ public final Charset charset() {
      * @throws CharacterCodingException
      *             if other exception happened during the encode operation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.292 -0500", hash_original_method = "6617ED92398FABBB6F1186A03F59422C", hash_generated_method = "8A3458D855F96B73420B80FFD95A2DAE")
     
 public final ByteBuffer encode(CharBuffer in) throws CharacterCodingException {
@@ -390,7 +391,7 @@ private ByteBuffer allocateMore(ByteBuffer output) {
      */
     @DSComment("Character encoder/decoder")
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.300 -0500", hash_original_method = "F53B4856D46D71BB987D9EC6F2ED08EE", hash_generated_method = "708ABAF1F51A81A7CA9ECE00BF14A3A2")
     
 public final CoderResult encode(CharBuffer in, ByteBuffer out, boolean endOfInput) {

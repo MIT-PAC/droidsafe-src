@@ -119,7 +119,7 @@ ByteBuffer(int capacity, MemoryBlock block) {
      *                if this buffer is not based on an array.
      */
     @DSComment("memory buffer only")
-    @DSSafe(DSCat.MEM_BUFFER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.792 -0500", hash_original_method = "7344C3769A78C71213763E627C382A16", hash_generated_method = "537451EEC285CE457427409DDF7B387C")
     
 public final byte[] array() {
@@ -323,6 +323,7 @@ public abstract ByteBuffer compact();
      * @exception ClassCastException
      *                if {@code other} is not a byte buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.818 -0500", hash_original_method = "278C7A58B0643B88C9704D6A9846EFB3", hash_generated_method = "04A2DE4C768895E88EE700C8F703E7E5")
     
 public int compareTo(ByteBuffer otherBuffer) {
@@ -407,7 +408,7 @@ public abstract ByteBuffer duplicate();
      *                if the position is equal or greater than limit.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.827 -0500", hash_original_method = "8963DC023C1EE4FC88DF506D11BD6D89", hash_generated_method = "4826D1D4015CEF7EAC4BBB6F5E4D04A7")
     
 public abstract byte get();
@@ -427,7 +428,7 @@ public abstract byte get();
      */
     @DSComment("memory buffer only")
     @DSSafe(DSCat.MEM_BUFFER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.830 -0500", hash_original_method = "9A475FF9B92E938C1B69F2A1BC2AE724", hash_generated_method = "988551F2BBB206BBDE3A8BA08F16DFB3")
     
 public ByteBuffer get(byte[] dst) {
@@ -453,7 +454,7 @@ public ByteBuffer get(byte[] dst) {
      */
     @DSComment("memory buffer only")
     @DSSafe(DSCat.MEM_BUFFER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.833 -0500", hash_original_method = "1D8E1FFC265A4E71218B8D81ECBD99D1", hash_generated_method = "A112D08E1771E5017BE9406DD1561DC0")
     
 public ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
@@ -477,7 +478,7 @@ public ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
      *                if index is invalid.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.836 -0500", hash_original_method = "2CD4CBAECCFACEACBCB0799ADF430E79", hash_generated_method = "04371A8BE0FD7B83C93A247F9BD768E0")
     
 public abstract byte get(int index);
@@ -530,7 +531,7 @@ public abstract char getChar(int index);
      *                if the position is greater than {@code limit - 8}.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.843 -0500", hash_original_method = "3C21225CB5A14BBA76C08E337861A597", hash_generated_method = "7CFD03C650BDE5FD1CDA5B92CA191BD1")
     
 public abstract double getDouble();
@@ -550,7 +551,7 @@ public abstract double getDouble();
      *                if {@code index} is invalid.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.846 -0500", hash_original_method = "D016736880E0DE3B307395736952CC42", hash_generated_method = "E66A2D55395F15EA8DF9F515DF7AD0E2")
     
 public abstract double getDouble(int index);
@@ -567,7 +568,7 @@ public abstract double getDouble(int index);
      *                if the position is greater than {@code limit - 4}.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.848 -0500", hash_original_method = "0E0CE91FC681068A2048B34C16969734", hash_generated_method = "852F943CE5DB25471DC47532EF66A231")
     
 public abstract float getFloat();
@@ -587,7 +588,7 @@ public abstract float getFloat();
      *                if {@code index} is invalid.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.851 -0500", hash_original_method = "3CC89B327C16506F6ED5E5C5CD9C5C13", hash_generated_method = "0EECD807016D04D3C9FB8E8892839540")
     
 public abstract float getFloat(int index);
@@ -603,7 +604,7 @@ public abstract float getFloat(int index);
      *                if the position is greater than {@code limit - 4}.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.853 -0500", hash_original_method = "CA56528FA2D7DF3324FC3C7FC98167DB", hash_generated_method = "528E6A2DBEC13A16DD24EBF48B2F49F3")
     
 public abstract int getInt();
@@ -623,7 +624,7 @@ public abstract int getInt();
      *                if {@code index} is invalid.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.856 -0500", hash_original_method = "38C74DC091B9771D568CFC46A07CD694", hash_generated_method = "9F01653E4B5791462ACF08B426146241")
     
 public abstract int getInt(int index);
@@ -639,7 +640,7 @@ public abstract int getInt(int index);
      *                if the position is greater than {@code limit - 8}.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.858 -0500", hash_original_method = "155CD3780672071A89F37893ECD385B6", hash_generated_method = "4E649AEF63AFFB884EED780D00AE51D9")
     
 public abstract long getLong();
@@ -659,7 +660,7 @@ public abstract long getLong();
      *                if {@code index} is invalid.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.861 -0500", hash_original_method = "5DE1667376B16E4FCF4E293F2B444300", hash_generated_method = "D3A52FC2D00AE65C9BDF44DCA666F90E")
     
 public abstract long getLong(int index);
@@ -675,7 +676,7 @@ public abstract long getLong(int index);
      *                if the position is greater than {@code limit - 2}.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.863 -0500", hash_original_method = "B04961994EADA034A3C810FFB4132367", hash_generated_method = "73784FCE5375F5D233BCBC5A4BF7CD8C")
     
 public abstract short getShort();
@@ -695,7 +696,7 @@ public abstract short getShort();
      *                if {@code index} is invalid.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.866 -0500", hash_original_method = "94161056D9B25788FAC95FC2611DDB43", hash_generated_method = "E4046EA33BB11E2336E53290781CCFDE")
     
 public abstract short getShort(int index);
@@ -748,7 +749,8 @@ public abstract boolean isDirect();
      * @return the byte order used by this buffer when converting bytes from/to
      *         other primitive types.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.876 -0500", hash_original_method = "65B1A3EBEA253AF86057FAE15F6D4DB5", hash_generated_method = "EE2ABE1DAA1B6458AFBD3971ED955F67")
     
 public final ByteOrder order() {
@@ -982,7 +984,7 @@ public abstract ByteBuffer put(int index, byte b);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.905 -0500", hash_original_method = "7014ECB331FFA1BE919279AD15B4B026", hash_generated_method = "901DE9758CD0A4FDF0CF53C9575F89AF")
     
 public abstract ByteBuffer putChar(char value);
@@ -1005,7 +1007,7 @@ public abstract ByteBuffer putChar(char value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.907 -0500", hash_original_method = "506E8BCF465B00C6E4E1C4D0644B0486", hash_generated_method = "7D46C3052F16633374110792928ADA3A")
     
 public abstract ByteBuffer putChar(int index, char value);
@@ -1025,7 +1027,7 @@ public abstract ByteBuffer putChar(int index, char value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.909 -0500", hash_original_method = "E64D988A1CE5EC8B40BAA589E7DE49FB", hash_generated_method = "A690E6FFE2F44F90D42BA99E9C6431E0")
     
 public abstract ByteBuffer putDouble(double value);
@@ -1048,7 +1050,7 @@ public abstract ByteBuffer putDouble(double value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.912 -0500", hash_original_method = "D953E19DBF5372CBBCCFAC31998BE0FE", hash_generated_method = "8343D7702B93A1EC5FA16E377831A1AF")
     
 public abstract ByteBuffer putDouble(int index, double value);
@@ -1068,7 +1070,7 @@ public abstract ByteBuffer putDouble(int index, double value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.914 -0500", hash_original_method = "CAD20A12FC39C156414E05D321098216", hash_generated_method = "2969CB3CF774700206AF11CCD204054A")
     
 public abstract ByteBuffer putFloat(float value);
@@ -1091,7 +1093,7 @@ public abstract ByteBuffer putFloat(float value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.917 -0500", hash_original_method = "554A94658153D6D242E4F80493021AA5", hash_generated_method = "601BB92FC2C607615C134FC39EA8B907")
     
 public abstract ByteBuffer putFloat(int index, float value);
@@ -1111,7 +1113,7 @@ public abstract ByteBuffer putFloat(int index, float value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.919 -0500", hash_original_method = "75EC8C47F9703D9624CB50AF2DF2107C", hash_generated_method = "D017F8503453EA22D1777AB0BA3C4B54")
     
 public abstract ByteBuffer putInt(int value);
@@ -1134,7 +1136,7 @@ public abstract ByteBuffer putInt(int value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.922 -0500", hash_original_method = "BAA5B108DB4DFB337C242B4B0C63505D", hash_generated_method = "C233F5397E70E5FD99DD79E363B9A340")
     
 public abstract ByteBuffer putInt(int index, int value);
@@ -1154,7 +1156,7 @@ public abstract ByteBuffer putInt(int index, int value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.924 -0500", hash_original_method = "15B65CCEB3F08CF32631B7873950672F", hash_generated_method = "551FBAB580A07516F4E71F7D4F22B53B")
     
 public abstract ByteBuffer putLong(long value);
@@ -1177,7 +1179,7 @@ public abstract ByteBuffer putLong(long value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.927 -0500", hash_original_method = "F1915EA214B2E29925E9F7A3B8593A2B", hash_generated_method = "93E9DF63E453C4C873800E936100C1CD")
     
 public abstract ByteBuffer putLong(int index, long value);
@@ -1197,7 +1199,7 @@ public abstract ByteBuffer putLong(int index, long value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.929 -0500", hash_original_method = "D52374AE84C378EC795E94F54C620976", hash_generated_method = "BEA8FC1140694CED3060B7B5F6313531")
     
 public abstract ByteBuffer putShort(short value);
@@ -1220,7 +1222,7 @@ public abstract ByteBuffer putShort(short value);
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.931 -0500", hash_original_method = "3BAEB9FDE443890D21DF52C9B257B084", hash_generated_method = "EB4251EF9AB7B99B5982F70F15363874")
     
 public abstract ByteBuffer putShort(int index, short value);

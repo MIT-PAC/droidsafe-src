@@ -517,7 +517,8 @@ private void spellCheck() {
 private void scheduleNewSpellCheck() {
         if (mSpellRunnable == null) {
             mSpellRunnable = new Runnable() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 public void run() {
                     final int length = mSpellParsers.length;
                     for (int i = 0; i < length; i++) {

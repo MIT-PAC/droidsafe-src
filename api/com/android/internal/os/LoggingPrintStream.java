@@ -72,7 +72,7 @@ protected abstract void log(String line);
      *  even though they don't end in a line break
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.909 -0500", hash_original_method = "4ED1A827BC075458493301694F5FB1B1", hash_generated_method = "451AF770FEA5BA6E78B5FE7594E476E5")
     
 private void flush(boolean completely) {
@@ -109,7 +109,7 @@ public void write(int oneByte) {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.914 -0500", hash_original_method = "DD74A1A5E8F3C8FBA0F2CF6C71691621", hash_generated_method = "323A36545569C28FBC957EC749B4FCA5")
     
 @Override
@@ -118,7 +118,7 @@ public void write(int oneByte) {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.917 -0500", hash_original_method = "3A82678B6E3902D5ED4B1D00D7245300", hash_generated_method = "7FEA4F5F33498E356C4F3504F428EE3E")
     
 @Override
@@ -212,7 +212,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.939 -0500", hash_original_method = "34D92369FB78C59105446434E08E5A35", hash_generated_method = "13A54EBF460BC7EE4578C5120888BF86")
     
 @Override
@@ -222,7 +222,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.942 -0500", hash_original_method = "9A1F4F8E7B087A358A5E2FCB594FC1F1", hash_generated_method = "FD821B0D212A11B10997658E816B0956")
     
 @Override
@@ -234,7 +234,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.944 -0500", hash_original_method = "820BD1560BF89A8CCF87FDD4C009E434", hash_generated_method = "28B32CBEEF8EDAFB7B822C344EB01960")
     
 @Override
@@ -243,7 +243,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.947 -0500", hash_original_method = "BF192CAA8CC79321D5E28D82D881B0DE", hash_generated_method = "034FF427606E04499FF3C9F9FAE0A27C")
     
 @Override
@@ -252,7 +252,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.949 -0500", hash_original_method = "EA729F5E50977D112911F5C250343E89", hash_generated_method = "36A0F0FC4C0F703FC6E34123BBDBCDCA")
     
 @Override
@@ -261,7 +261,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.952 -0500", hash_original_method = "2F9DD3DF69B1439CAC48F255A2B06D16", hash_generated_method = "E69C67C5C0E229BB1885C8A437EC9DD8")
     
 @Override
@@ -270,7 +270,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.954 -0500", hash_original_method = "0154750185D34191234B4807E3679F12", hash_generated_method = "EFB637BA351BCA2D2A35628DEF7E3B07")
     
 @Override
@@ -280,7 +280,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.957 -0500", hash_original_method = "F2C90C1214AEAFC8178C26840ED36663", hash_generated_method = "9F4E2DBB1BD882340C297D18DDCF40DA")
     
 @Override
@@ -290,7 +290,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.959 -0500", hash_original_method = "5ECA1B577D18215F52A8C9A6333D9CFC", hash_generated_method = "C6EAD88B1F8B2083ADBBB8AD0A1F0197")
     
 @Override
@@ -299,7 +299,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.962 -0500", hash_original_method = "7A4D58C37164C3E851ED3ACE479C647B", hash_generated_method = "D6CA1AB1BE09EFCA7247F47F4086897C")
     
 @Override
@@ -308,7 +308,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.964 -0500", hash_original_method = "9D1363302FBD4F1058D52926AD245DD3", hash_generated_method = "1C7CA6D977F3BF445A3EDC3C37CD5216")
     
 @Override
@@ -318,7 +318,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.968 -0500", hash_original_method = "01C278022DBB5824908D391A202B4A36", hash_generated_method = "C2D5D1A3E5E14CFC36062D087BB0FBFA")
     
 @Override
@@ -328,7 +328,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.970 -0500", hash_original_method = "CE32681476B37833026295BF14F82F86", hash_generated_method = "C38FF0F9F289652AFFE567EDD8057225")
     
 @Override
@@ -338,7 +338,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.973 -0500", hash_original_method = "DD6ED147F9391D413B16E144DA317870", hash_generated_method = "78125CD86B4D93108D39C66FEC0A094F")
     
 @Override
@@ -348,7 +348,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.975 -0500", hash_original_method = "AF6787AC8EF2FEBAAFAF97782B2D9A73", hash_generated_method = "FB272A9A44606D7B035445FF24866B24")
     
 @Override
@@ -358,7 +358,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.977 -0500", hash_original_method = "460CB99F3847A5BE06D2BF7094246043", hash_generated_method = "5292D5D93059810F191EB4DA1D221B67")
     
 @Override
@@ -368,7 +368,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.980 -0500", hash_original_method = "790D5F04D5F763A67F6384A1DADD6007", hash_generated_method = "B9C7E81F183609F62EE534C79CCFD299")
     
 @Override
@@ -378,7 +378,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.982 -0500", hash_original_method = "EBB6B619FF9A797B3350DC2D212BCB5E", hash_generated_method = "43CF4AC7AE707F2E7420578D46F300BF")
     
 @Override
@@ -407,7 +407,7 @@ public void write(int oneByte) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.985 -0500", hash_original_method = "09E0763383C859949559D7053E0AFD5D", hash_generated_method = "88734376F2E3EF0C0CB27C01A87275B7")
     
 @Override
@@ -415,7 +415,8 @@ public void write(int oneByte) {
         builder.append(bool);
         flush(true);
     }
-
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.988 -0500", hash_original_method = "C72D2A095158FF2DF7FBE0880B8BD63F", hash_generated_method = "F9CCD213825640F4DF80310DA8E78580")
     
 @Override
@@ -424,6 +425,8 @@ public void write(int oneByte) {
         return this;
     }
 
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.990 -0500", hash_original_method = "C203B04FBC05591B3DF1483A3F91F520", hash_generated_method = "E1DEDD2B6A0191E2EFF05528C8876987")
     
 @Override
@@ -433,6 +436,8 @@ public void write(int oneByte) {
         return this;
     }
 
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.993 -0500", hash_original_method = "6ED0867725346C7DB431FFF2CFBE5CE7", hash_generated_method = "4FFC6D1195E657BE41535EAD26FA4F09")
     
 @Override

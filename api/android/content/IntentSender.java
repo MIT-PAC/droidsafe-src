@@ -53,7 +53,7 @@ public static IntentSender readIntentSenderOrNullFromParcel(Parcel in) {
 
     public static final Parcelable.Creator<IntentSender> CREATOR
             = new Parcelable.Creator<IntentSender>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.935 -0500", hash_original_method = "9EBED1E4C9B1116F65CFE56A6D80D60B", hash_generated_method = "88ABDB7AAC9BACBFD6A52657F0A6A102")
         
 public IntentSender createFromParcel(Parcel in) {
@@ -299,7 +299,7 @@ public void performReceive(Intent intent, int resultCode,
                 mHandler.post(this);
             }
         }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.912 -0500", hash_original_method = "81E3A612882F37B7E9D205FA2DF9669A", hash_generated_method = "153E5A398429A1B9066DEDCBADE789D0")
         
 public void run() {

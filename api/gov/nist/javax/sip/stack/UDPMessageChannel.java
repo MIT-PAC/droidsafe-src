@@ -161,7 +161,7 @@ protected UDPMessageChannel(InetAddress targetAddr, int port,
     /**
      * Run method specified by runnnable.
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.433 -0500", hash_original_method = "E6EA1046257028C8ED28AF4C13B7A731", hash_generated_method = "BE404AD3B81220A0192E0E3AEA67BFF9")
     
 public void run() {
@@ -940,7 +940,7 @@ public PingBackTimerTask(String ipAddress, int port) {
             this.port = port;
             pingBackRecord.put(ipAddress + ":" + port, this);
         }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.413 -0500", hash_original_method = "6BA8F9798D5715ABDAD288256921D45A", hash_generated_method = "EF37FFA55F8CCCD46D3860DFA16198BB")
         
 @Override

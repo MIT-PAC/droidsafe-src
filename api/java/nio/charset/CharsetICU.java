@@ -26,12 +26,14 @@ protected CharsetICU(String canonicalName, String icuCanonName, String[] aliases
          icuCanonicalName = icuCanonName;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:42.621 -0400", hash_original_method = "E821BF5CAC3B1B3B28BA69CD2EC5EEAB", hash_generated_method = "BC1D6EC20D7EB5175EB2745FD0B288A3")
     
 public CharsetDecoder newDecoder() {
         return CharsetDecoderICU.newInstance(this, icuCanonicalName);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:42.622 -0400", hash_original_method = "E98E9CAA5D46E5AB825E624857A1AD8D", hash_generated_method = "6FFCB73943ACFB439BF454A3BC672951")
     
 public CharsetEncoder newEncoder() {

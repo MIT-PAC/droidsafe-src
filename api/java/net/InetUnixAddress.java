@@ -49,7 +49,9 @@ public InetUnixAddress(byte[] path) {
   /**
    * Returns a string form of this InetAddress.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:45.987 -0400", hash_original_method = "B7A1DD9D7C4B5BB01E3117D671176C5F", hash_generated_method = "B3757691A12CBC0618277262E74206BA")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:45.987 -0400", hash_original_method = "B7A1DD9D7C4B5BB01E3117D671176C5F", hash_generated_method = "B3757691A12CBC0618277262E74206BA")
     
 @Override public String toString() {
     return "InetUnixAddress[" + new String(ipaddress, StandardCharsets.UTF_8) + "]";

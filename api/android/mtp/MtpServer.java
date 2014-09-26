@@ -45,7 +45,7 @@ public void start() {
         thread.start();
     }
 
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:21.233 -0400", hash_original_method = "47A2D6674D1EEAC8AA96E1344486E702", hash_generated_method = "3F993A79C0313074FABF5C95414A3729")
     
 @Override

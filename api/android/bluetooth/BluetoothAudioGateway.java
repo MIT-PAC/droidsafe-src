@@ -157,7 +157,8 @@ public synchronized boolean start(Handler callback) {
         if (mConnectThead == null) {
             mCallback = callback;
             mConnectThead = new Thread(TAG) {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:00.071 -0400", hash_original_method = "8F342C708F1BF21ED0361427BC2F8BD2", hash_generated_method = "0266F55C4DDD19C9860C8FF377DC2256")
+                    @DSSpec(DSCat.SPEC_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:00.071 -0400", hash_original_method = "8F342C708F1BF21ED0361427BC2F8BD2", hash_generated_method = "0266F55C4DDD19C9860C8FF377DC2256")
                 
 public void run() {
                         if (DBG) log("Connect Thread starting");

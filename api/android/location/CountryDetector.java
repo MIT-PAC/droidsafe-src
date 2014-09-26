@@ -108,7 +108,8 @@ public ListenerTransport(CountryListener listener, Looper looper) {
         
 public void onCountryDetected(final Country country) {
             mHandler.post(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                     mListener.onCountryDetected(country);
                 }
             });

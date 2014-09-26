@@ -107,7 +107,8 @@ class DocumentBuilderImpl extends DocumentBuilder {
         return dom.createDocument(null, null, null);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.IO)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.560 -0500", hash_original_method = "3B90C04D8401BDC844BD72B6E8D6BA23", hash_generated_method = "F316879D365ECE09EF888752D05DFA3F")
     
 @Override
@@ -198,7 +199,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
      * @throws IOException If a general IO error occurs.
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.565 -0500", hash_original_method = "608502985E1CF48EAA100E44A7EF5256", hash_generated_method = "284C2C48A2187BEAE0F200C9428307C6")
     
 private void parse(KXmlParser parser, DocumentImpl document, Node node,

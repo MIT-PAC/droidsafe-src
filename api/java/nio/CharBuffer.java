@@ -137,7 +137,7 @@ CharBuffer(int capacity) {
     }
 
     @DSComment("memory buffer only")
-    @DSSafe(DSCat.MEM_BUFFER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.739 -0500", hash_original_method = "B8788BC8872EF40BE08078E90206AB2A", hash_generated_method = "F7EF93A89420C122FCC187990CCE4477")
     
 public final char[] array() {
@@ -204,7 +204,7 @@ public final char charAt(int index) {
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.749 -0500", hash_original_method = "4734CE8977AF20831B683F622B556E41", hash_generated_method = "132D1383C510B50C25E6DF2A3CA8EF13")
     
 public abstract CharBuffer compact();
@@ -221,6 +221,7 @@ public abstract CharBuffer compact();
      * @exception ClassCastException
      *                if {@code otherBuffer} is not a char buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.752 -0500", hash_original_method = "726E488C44BA42D1E85B63DB9E089EB1", hash_generated_method = "8467A4596428B2A439EFBB856C3EE3D9")
     
 public int compareTo(CharBuffer otherBuffer) {
@@ -496,7 +497,7 @@ abstract boolean protectedHasArray();
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.789 -0500", hash_original_method = "F19EB97E90F9577C945FC2A86DA468D8", hash_generated_method = "85AFD595D3F36EA1A3437288DCA79CB7")
     
 public abstract CharBuffer put(char c);
@@ -516,6 +517,7 @@ public abstract CharBuffer put(char c);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.791 -0500", hash_original_method = "470B54D034ECB079323054E5FA7FB003", hash_generated_method = "43651BE45F5D8F0AFEEB782FAE4BFA77")
     
 public final CharBuffer put(char[] src) {
@@ -543,7 +545,8 @@ public final CharBuffer put(char[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.794 -0500", hash_original_method = "022BE284F152CDC3C1FB1410D39A7C9D", hash_generated_method = "02D3786322E03C26806C036B38D25D9E")
     
 public CharBuffer put(char[] src, int srcOffset, int charCount) {
@@ -573,6 +576,7 @@ public CharBuffer put(char[] src, int srcOffset, int charCount) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.796 -0500", hash_original_method = "37C3423DFAF6E5EC51AB38006AB488BA", hash_generated_method = "81937F4E7EC54F35925FFCA752194CC2")
     
 public CharBuffer put(CharBuffer src) {
@@ -604,7 +608,7 @@ public CharBuffer put(CharBuffer src) {
      *                if no changes may be made to the contents of this buffer.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.799 -0500", hash_original_method = "B4FC48477262D11801112BB7E12149CE", hash_generated_method = "D715DB6A762D536206BD0E9BF8B1E04B")
     
 public abstract CharBuffer put(int index, char c);
@@ -624,7 +628,8 @@ public abstract CharBuffer put(int index, char c);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.802 -0500", hash_original_method = "E7006B831E6768B620311924466DB7A4", hash_generated_method = "4B9B6ED275EF14DF7F13CE8DBE9C44E1")
     
 public final CharBuffer put(String str) {
@@ -651,7 +656,8 @@ public final CharBuffer put(String str) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.804 -0500", hash_original_method = "D2CD34EAF4E6074C289823E8F75291E2", hash_generated_method = "BEBCA007E3E0477D10B11131B9FB7D27")
     
 public CharBuffer put(String str, int start, int end) {
@@ -718,7 +724,7 @@ public abstract CharBuffer slice();
      *                if either {@code start} or {@code end} is invalid.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.809 -0500", hash_original_method = "CC1A918E751879C0CACBEAD0F53D48ED", hash_generated_method = "460F5702CFF0539D37C9D86BAB80AFE3")
     
 public abstract CharSequence subSequence(int start, int end);
@@ -728,7 +734,7 @@ public abstract CharSequence subSequence(int start, int end);
      */
     @DSComment("memory buffer only")
     @DSSafe(DSCat.MEM_BUFFER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.812 -0500", hash_original_method = "7C6B898DBE310393A5687B676A637050", hash_generated_method = "00B4A448AFB77E5525AA5B006C3CEB6D")
     
 @Override
@@ -752,6 +758,7 @@ public abstract CharSequence subSequence(int start, int end);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.814 -0500", hash_original_method = "B2B921133AE3BAD544E239EA4D0BB16C", hash_generated_method = "9E7DD5F3797D5B52007932CF09EB8FBB")
     
 public CharBuffer append(char c) {
@@ -775,6 +782,7 @@ public CharBuffer append(char c) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.816 -0500", hash_original_method = "832DE990D6C4F53D8F1E55F3872916C2", hash_generated_method = "2E9F81D0A0AB63E64D2C92C0A73F4023")
     
 public CharBuffer append(CharSequence csq) {
@@ -804,6 +812,7 @@ public CharBuffer append(CharSequence csq) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.818 -0500", hash_original_method = "006D95454A8B407A6CE6A3881397CD6E", hash_generated_method = "2D33A52979140EEEDD22B43246DAD055")
     
 public CharBuffer append(CharSequence csq, int start, int end) {
@@ -834,6 +843,8 @@ public CharBuffer append(CharSequence csq, int start, int end) {
      * @return the number of chars copied or -1 if there are no chars left to be
      *         read from this buffer.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.821 -0500", hash_original_method = "412283507A99EDD12D2C7BFEC4EFD5FB", hash_generated_method = "68C4C9B2FB6A1D49B82F37C0DD39E65D")
     
 public int read(CharBuffer target) throws IOException {

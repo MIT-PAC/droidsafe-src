@@ -354,6 +354,7 @@ private EngineInfoComparator() { }
          * than those that are not. Within system engines / non system engines
          * the engines are sorted in order of their declared priority.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.349 -0500", hash_original_method = "E919388D461770C5E68C050C2BB6D626", hash_generated_method = "EC5B8CE311535EBE2BDBBE66475CBE8D")
         
 @Override

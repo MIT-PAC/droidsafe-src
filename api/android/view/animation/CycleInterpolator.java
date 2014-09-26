@@ -29,7 +29,8 @@ public CycleInterpolator(Context context, AttributeSet attrs) {
         a.recycle();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.042 -0500", hash_original_method = "C854E7122C234C45B08A1B645C47BE34", hash_generated_method = "0A1DAC5C284DAAFDA01827EDA9C33BCE")
     
 public float getInterpolation(float input) {

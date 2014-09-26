@@ -29,7 +29,7 @@ protected SSLSocketOutputStream(SSLSocketImpl owner) {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.937 -0500", hash_original_method = "A06DCDC39D6B1A9C644C2D57A083C16C", hash_generated_method = "899EF57D5285130E25B1B9F4EB64F8B2")
     
 @Override

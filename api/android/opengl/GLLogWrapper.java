@@ -266,7 +266,7 @@ private void formattedAppend(StringBuilder buf, int value, int format) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:06.620 -0500", hash_original_method = "A1072478259B736CFCA97CBC9F12C979", hash_generated_method = "827CE44D7D96E6803BDB89ECA8B9F7D9")
     
 private String toString(int n, int format, int[] arr, int offset) {
@@ -288,7 +288,7 @@ private String toString(int n, int format, int[] arr, int offset) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:06.622 -0500", hash_original_method = "58E007C12B329BF9B88C8DD081E4D73F", hash_generated_method = "9A1C7A03D205F8023075CE3BF17F17BB")
     
 private String toString(int n, short[] arr, int offset) {
@@ -310,7 +310,7 @@ private String toString(int n, short[] arr, int offset) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:06.625 -0500", hash_original_method = "E0279213DB25FBCD6B1A1BF467A23599", hash_generated_method = "81CDFDD2619C3A33174F741FF9FBDA3A")
     
 private String toString(int n, float[] arr, int offset) {
@@ -332,7 +332,7 @@ private String toString(int n, float[] arr, int offset) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:06.627 -0500", hash_original_method = "BA7BACBB919EFD700D9FF40233C8DEDF", hash_generated_method = "604FF38A91DB8EF442C9E04085FB6674")
     
 private String toString(int n, FloatBuffer buf) {
@@ -346,7 +346,7 @@ private String toString(int n, FloatBuffer buf) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:06.629 -0500", hash_original_method = "27E69164B5E7975B2DEDE9414DD97982", hash_generated_method = "97BD7D81DD3FE7C95A712AC41EC8586D")
     
 private String toString(int n, int format, IntBuffer buf) {
@@ -362,7 +362,7 @@ private String toString(int n, int format, IntBuffer buf) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:06.632 -0500", hash_original_method = "AB9E3C5D494B64EE75923B2568F2C9EC", hash_generated_method = "45BE7830C72BBD68D706B8766A7F0B27")
     
 private String toString(int n, ShortBuffer buf) {

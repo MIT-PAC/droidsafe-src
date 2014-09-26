@@ -117,9 +117,9 @@ public StringBuffer getBuffer() {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the size of {@code buf}.
      */
-    @DSSink({DSSinkKind.IO})
+    
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.106 -0500", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "9CDF0FF8BCA96E90FC2C10775DCA5372")
     
 @Override
@@ -195,7 +195,8 @@ public StringBuffer getBuffer() {
      *            the character to append to the target stream.
      * @return this writer.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.116 -0500", hash_original_method = "15F384D8A1FFEEB0786C49990EC18DEC", hash_generated_method = "245948B56E5876E69D845B1347DB8EB8")
     
 @Override
@@ -214,6 +215,8 @@ public StringBuffer getBuffer() {
      *            the character sequence appended to the target.
      * @return this writer.
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.119 -0500", hash_original_method = "4F8B551F847F79C820191D7A1919C8D2", hash_generated_method = "B284D98AD1C78CD17BCF774DB4E26F37")
     
 @Override
@@ -246,6 +249,7 @@ public StringBuffer getBuffer() {
      *             either {@code start} or {@code end} are greater or equal than
      *             the length of {@code csq}.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.121 -0500", hash_original_method = "D18F40A53A7260972FC6506FD741C13E", hash_generated_method = "A23470303E65CCE10FA1B68E37099E96")
     
 @Override

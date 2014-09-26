@@ -40,7 +40,6 @@ import org.apache.harmony.security.pkcs7.ContentInfo;
 public class TimeStampResp {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.584 -0400", hash_original_field = "8293E5367943A55668888B4ECE6A377A", hash_generated_field = "4D133DA8AD71845556D36F741B3BF5B5")
 
-
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             PKIStatusInfo.ASN1,     // status
             ContentInfo.ASN1}) {    // timeStampToken
@@ -65,10 +64,8 @@ public class TimeStampResp {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.579 -0400", hash_original_field = "46D81AA163FACCDDACBAC5910FF81F34", hash_generated_field = "CF106481194A83C6697EEAF91D779B64")
 
-
     private  PKIStatusInfo status;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.579 -0400", hash_original_field = "A5C079C243D1E481A410E305F89122AD", hash_generated_field = "078C69BED3F108C1499D13E92501E3AB")
-
 
     private  ContentInfo timeStampToken;
 
@@ -79,6 +76,7 @@ public TimeStampResp(PKIStatusInfo status, ContentInfo timeStampToken) {
         this.timeStampToken = timeStampToken;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.580 -0400", hash_original_method = "BFC7E920FC2E3699AD3FB0A4A1246D04", hash_generated_method = "480D253617B1577E0A5749D24F85932D")
     
 public String toString(){

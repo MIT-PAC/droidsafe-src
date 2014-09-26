@@ -37,7 +37,7 @@ public ComparisonFailure (String message, String expected, String actual) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.982 -0500", hash_original_method = "1EFB8D5295B5347F7A8CE202919A7B5C", hash_generated_method = "2CB3B48A443EC9374104A447461A8683")
     
 public String getMessage() {

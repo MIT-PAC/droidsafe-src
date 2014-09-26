@@ -39,7 +39,7 @@ final class FragmentState implements Parcelable {
 
     public static final Parcelable.Creator<FragmentState> CREATOR
             = new Parcelable.Creator<FragmentState>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.125 -0500", hash_original_method = "EC1ACE39B0D42EA269A848888E85A00F", hash_generated_method = "A5A88BD3A75C773BD237E8D2C9040999")
         
 public FragmentState createFromParcel(Parcel in) {
@@ -480,12 +480,14 @@ final boolean isInBackStack() {
     /**
      * Subclasses can not override hashCode().
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.283 -0500", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "235D538D470CAF18D465A30A0FFDA613")
     
 @Override final public int hashCode() {
         return super.hashCode();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.285 -0500", hash_original_method = "5350708001683FB5244A4F612B80A27C", hash_generated_method = "9DFAD998174B68D70A89826D6E15905E")
     
 @Override
@@ -640,7 +642,6 @@ final public Resources getResources() {
 public final CharSequence getText(int resId) {
         return getResources().getText(resId);
     }
-
 
     /**
      * Return a localized formatted string from the application's package's
@@ -1812,7 +1813,7 @@ boolean performContextItemSelected(MenuItem item) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:55:56.313 -0500", hash_original_method = "F6A52F04C4D14500D0C1089F687B7F14", hash_generated_method = "FE85131981ECBA63EB19FB4392208C42")
             
 public SavedState createFromParcel(Parcel in) {
@@ -1991,8 +1992,6 @@ void performDestroy() {
                     + " did not call through to super.onDestroy()");
         }
     }
-
-
 
     /**
      * Determine if the given fragment name is a support library fragment class.

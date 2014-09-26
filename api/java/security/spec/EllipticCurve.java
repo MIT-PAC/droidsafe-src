@@ -202,6 +202,7 @@ public boolean equals(Object other) {
      *
      * @return the hashcode of this elliptic curve.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:17.356 -0400", hash_original_method = "8D22C024576C73F0E98A887CEA3397A0", hash_generated_method = "DE1F7BF161A1D9CBBDF3DB1F51D1C6A1")
     
 public int hashCode() {

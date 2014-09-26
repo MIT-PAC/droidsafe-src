@@ -62,6 +62,8 @@ public BrokenInputStream() {
      * @return nothing
      * @throws IOException always thrown
      */
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.410 -0400", hash_original_method = "28F9C38B3FDDDB64FC933645C8F9DFA7", hash_generated_method = "95FB0FA2E255263777CDDE8CFD8D14B4")
     
 @Override
@@ -75,6 +77,7 @@ public BrokenInputStream() {
      * @return nothing
      * @throws IOException always thrown
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.410 -0400", hash_original_method = "F031365D6E829A45B7583B6D22A26F0A", hash_generated_method = "28DDBA1338EE51F6D648E2EE894551B2")
     
 @Override
@@ -89,6 +92,7 @@ public BrokenInputStream() {
      * @return nothing
      * @throws IOException always thrown
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.411 -0400", hash_original_method = "CAAF4DC59EF8C31987E09418AE767741", hash_generated_method = "783EC516262EA72A86DBF4C974A1E3E1")
     
 @Override
@@ -101,6 +105,7 @@ public BrokenInputStream() {
      *
      * @throws IOException always thrown
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.411 -0400", hash_original_method = "0FA8319FDCFD8207BDB70BAA26E790B7", hash_generated_method = "2CBCE6CB58AC78636EEDF9153F9EFD5A")
     
 @Override
@@ -113,6 +118,7 @@ public BrokenInputStream() {
      *
      * @throws IOException always thrown
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.412 -0400", hash_original_method = "CEF9D34BF3086FDA40BC370A70DF5AD2", hash_generated_method = "D60384CEF658CF51488D146FB7DCDC10")
     
 @Override

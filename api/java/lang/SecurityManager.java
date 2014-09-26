@@ -221,6 +221,7 @@ public Object getSecurityContext() { return null; }
     
 public void checkPermission(Permission permission) { }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.887 -0500", hash_original_method = "9F219EE7931C25AFA3551D0D45001223", hash_generated_method = "7789DD97CAD92F94AB9F6E5930AD892C")
     
 public void checkPermission(Permission permission, Object context) { }

@@ -14,7 +14,7 @@ public class ResultInfo implements Parcelable {
 
     public static final Parcelable.Creator<ResultInfo> CREATOR
             = new Parcelable.Creator<ResultInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.236 -0500", hash_original_method = "826AEDDD26AEE1AF600D5589DF2DC45E", hash_generated_method = "3F26F88D8C10E39B8C7B5A6C03489489")
         
 public ResultInfo createFromParcel(Parcel in) {

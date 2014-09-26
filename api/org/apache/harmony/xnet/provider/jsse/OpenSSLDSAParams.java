@@ -26,30 +26,23 @@ import java.security.spec.AlgorithmParameterSpec;
 public class OpenSSLDSAParams implements DSAParams, AlgorithmParameterSpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.836 -0400", hash_original_field = "2BBE151CD18F6BE43F2D71C92EFFD1B2", hash_generated_field = "DFD3BD9B1577440A925A39226A8408EA")
 
-
     private OpenSSLKey key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.837 -0400", hash_original_field = "25CEE6432AEBE2A91CEA7F02499BDFB9", hash_generated_field = "CE8B534A4E4ACE7D3E4DABDBB639F277")
-
 
     private boolean fetchedParams;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.837 -0400", hash_original_field = "12F45ECD0F75F4702B861E1DEFDA99B3", hash_generated_field = "5E2139CE4CF026F837A4AD7B2D5946CD")
 
-
     private BigInteger g;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.837 -0400", hash_original_field = "36A2346422FAB1A0484079E02615C501", hash_generated_field = "0E1745DDBCB8E3192EFA76F952746D75")
-
 
     private BigInteger p;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.838 -0400", hash_original_field = "F819999E3B2036A19089F4FD0B5D94F4", hash_generated_field = "7F0CB7A9968EC0E34C6D35217A4E048F")
 
-
     private BigInteger q;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.838 -0400", hash_original_field = "7C667BA619B926582BFC8401F882439D", hash_generated_field = "E87E2F8BC9A92B0C676B9ECF48E707BE")
 
-
     private BigInteger y;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.838 -0400", hash_original_field = "8A69D3B9CF67CA1128DF293842071E77", hash_generated_field = "3D78E4B6D398CF86CC9666CFD1AA5B41")
-
 
     private BigInteger x;
 
@@ -154,6 +147,7 @@ BigInteger getX() {
         return g.equals(other.getG()) && p.equals(other.getP()) && q.equals(other.getQ());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.843 -0400", hash_original_method = "C2F947D042953ED951D25BD1E240F908", hash_generated_method = "00E74E54A21F45EEA3F38CD90431DE05")
     
 @Override
@@ -163,6 +157,7 @@ BigInteger getX() {
         return g.hashCode() ^ p.hashCode() ^ q.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.844 -0400", hash_original_method = "5A8E2061D3D4FAFE7CF506FC8345D5E9", hash_generated_method = "6038F80391F497E73843CC9BEF1F75E7")
     
 @Override

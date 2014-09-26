@@ -741,7 +741,7 @@ public boolean isHidden() {
      */
     @DSComment("File Information")
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.FILE_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.517 -0500", hash_original_method = "0921E33485CFCA34C1412D0CC74585F6", hash_generated_method = "D860E5F1DFBA213A0282A688E6D70B62")
     
 public long lastModified() {
@@ -998,7 +998,7 @@ public String[] list(FilenameFilter filter) {
      * @return an array of files or {@code null}.
      */
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.557 -0500", hash_original_method = "9B953D65872590D8ABB7497D4B159A57", hash_generated_method = "02AE2C1C40DB6FEABA09D2EED581A218")
     
@@ -1020,8 +1020,9 @@ public File[] listFiles() {
      *            the filter to match names against, may be {@code null}.
      * @return an array of files or {@code null}.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.559 -0500", hash_original_method = "94A37D22B56FB881F333055CF5969013", hash_generated_method = "915FAD761344385A2BCFAA4982F4BEE2")
     
 public File[] listFiles(FilenameFilter filter) {
@@ -1041,8 +1042,9 @@ public File[] listFiles(FilenameFilter filter) {
      *            the filter to match names against, may be {@code null}.
      * @return an array of files or {@code null}.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.562 -0500", hash_original_method = "1FB8ED2C60AA91150D4C3211C8CB2AD8", hash_generated_method = "1F599671FB5A99CF35C65B016AE3135C")
     
 public File[] listFiles(FileFilter filter) {

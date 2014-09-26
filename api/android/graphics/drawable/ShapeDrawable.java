@@ -278,7 +278,7 @@ protected void onDraw(Shape shape, Canvas canvas, Paint paint) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.671 -0500", hash_original_method = "DB1A6AE8DEB59FB8C1923E504575EFF9", hash_generated_method = "4C165A424E276EF94F8AA9A3E81C903F")
     
 @Override
@@ -306,7 +306,7 @@ protected void onDraw(Shape shape, Canvas canvas, Paint paint) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.675 -0500", hash_original_method = "DD3A0AA7864766F7FA9D12D24B53719B", hash_generated_method = "7C9304B642C9456EC60FCF7238F96B88")
     
 @Override
@@ -340,7 +340,7 @@ protected void onDraw(Shape shape, Canvas canvas, Paint paint) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.680 -0500", hash_original_method = "3955BCB5252FAD61A7FDF156B0C32957", hash_generated_method = "9B1560AF942AE9072A6473BDBCEFDE3B")
     
 @Override
@@ -518,6 +518,7 @@ ShapeState(ShapeState orig) {
             }
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.718 -0500", hash_original_method = "712D1F78574D9DF109190A3CBF508567", hash_generated_method = "D8DCF2361BEA40070800C3ACFFC66541")
         
 @Override
@@ -525,6 +526,7 @@ ShapeState(ShapeState orig) {
             return new ShapeDrawable(this);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.720 -0500", hash_original_method = "7ABD019570C442758FC9C41DDD5AE24E", hash_generated_method = "D9506BB771184D41749D90BE37A1FF4C")
         
 @Override

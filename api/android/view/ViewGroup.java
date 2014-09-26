@@ -56,7 +56,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		return false;
 	}
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     public static int getChildMeasureSpec(int spec, int padding, int childDimension){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1233,7 +1234,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
     
     @DSComment("potential callback called inside method")
     @DSSpec(DSCat.TO_MODEL)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override public boolean dispatchTouchEvent(MotionEvent ev){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1787,8 +1788,8 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
     
     @DSVerified
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @Override protected void dispatchDraw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */

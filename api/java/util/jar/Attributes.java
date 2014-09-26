@@ -122,7 +122,7 @@ public Set<Map.Entry<Object, Object>> entrySet() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.770 -0500", hash_original_method = "C22494F044E1A5B9985D58D15AE531DA", hash_generated_method = "1CB4B722B2B786F4E05559507197B818")
     
 public Object get(Object key) {
@@ -170,7 +170,7 @@ public Set<Object> keySet() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.777 -0500", hash_original_method = "3E157C761E601D752826F2BACE4084FB", hash_generated_method = "18233502FC7D0004AD99DF81EB4C3139")
     
 @SuppressWarnings("cast")
@@ -308,6 +308,8 @@ public Collection<Object> values() {
      * @return the {@code String} associated with name, or {@code null} if name
      *         is not a valid key.
      */
+    @DSSource({DSSourceKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.797 -0500", hash_original_method = "738755F264DB023D14F89BE9B353A481", hash_generated_method = "0E45C64ADD2F3209027CD2662FF23327")
     
 public String getValue(Attributes.Name name) {
@@ -324,7 +326,7 @@ public String getValue(Attributes.Name name) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.799 -0500", hash_original_method = "3C8D5071480DE8B5CA7E078D035D576F", hash_generated_method = "F9FC07771AE8D4BF487E5ACF93B0F2AB")
     
 public String getValue(String name) {

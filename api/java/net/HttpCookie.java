@@ -66,7 +66,6 @@ import libcore.util.Objects;
 public final class HttpCookie implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:13.963 -0400", hash_original_field = "448B2E092B0FE23DEAF2A192598B4536", hash_generated_field = "ABF15EA817BE289AF666DD8B88FC13FE")
 
-
     private static final Set<String> RESERVED_NAMES = new HashSet<String>();
 
     static {
@@ -464,7 +463,6 @@ private void skipWhitespace() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.006 -0400", hash_original_field = "6C9FE4127C88B2FD28EFE861CA65A713", hash_generated_field = "3ED42D4B537F5FDB36FDF1EA0D6B44D6")
 
-
     private String comment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.008 -0400", hash_original_field = "3BBF3F64A34794B64FB53E371BD4F422", hash_generated_field = "6A2B50CEA40AC67F646E005F8BAEDBCB")
 
@@ -517,7 +515,6 @@ public HttpCookie(String name, String value) {
         this.name = ntrim;
         this.value = value;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.023 -0400", hash_original_method = "8669D3908E84239A9A662EEF41DB36C5", hash_generated_method = "DD3E7A1B1F6D6E61ABE354E2763AEF6B")
     
@@ -771,6 +768,7 @@ public void setVersion(int v) {
         version = v;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.055 -0400", hash_original_method = "8CF95CA28B578C998335BB5077A2FD41", hash_generated_method = "D24BA659AA7D0E532593D4A64FAB7FBB")
     
 @Override public Object clone() {
@@ -808,6 +806,7 @@ public void setVersion(int v) {
      *       + (path == null ? 0 : path.hashCode())
      * }</pre>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.058 -0400", hash_original_method = "EA65C222B8E6846E4F4EA864678DF561", hash_generated_method = "5F1946E4124643572C427BBCEC045EB5")
     
 @Override public int hashCode() {
@@ -820,6 +819,8 @@ public void setVersion(int v) {
      * Returns a string representing this cookie in the format used by the
      * {@code Cookie} header line in an HTTP request.
      */
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.059 -0400", hash_original_method = "A6BA199B9FBC744F2FAD7704A47DCC59", hash_generated_method = "AD09D263DED54A4D9A75CF64F68A1CE9")
     
 @Override public String toString() {

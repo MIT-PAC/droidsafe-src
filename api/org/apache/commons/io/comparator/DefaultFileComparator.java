@@ -63,6 +63,7 @@ public class DefaultFileComparator extends AbstractFileComparator implements Ser
      * @return the result of calling file1's
      * {@link File#compareTo(File)} with file2 as the parameter.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.614 -0400", hash_original_method = "66E95E24BE0C08C51B59821FA4A7134C", hash_generated_method = "E7614E31C0996941EF37E3D9277E3BCD")
     
 public int compare(File file1, File file2) {

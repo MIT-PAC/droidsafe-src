@@ -23,7 +23,7 @@ protected abstract void runTask();
 
     // / The run() method is final to ensure that all subclasses inherit the
     // exception handling.
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.639 -0500", hash_original_method = "83C0265BCA7923E7BED6DC913E28AE42", hash_generated_method = "375D4E0374AEC4D1F88E5FBFD6B7396D")
     
 public final void run() {

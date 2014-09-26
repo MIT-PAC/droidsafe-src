@@ -630,7 +630,7 @@ private void returns(Object result) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.376 -0500", hash_original_method = "122D09D33E3C14E13BA1263367B842FD", hash_generated_method = "364630407A11F9DC78D532C5CBA9554A")
     
 private String toString(Object obj) {
@@ -666,7 +666,7 @@ private void arg(String name, Object[] arr) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.384 -0500", hash_original_method = "83D3FA96B1354405A93359C25E36746A", hash_generated_method = "FF6A3602DFF20DDF44FBDFA213412638")
     
 private String toString(int n, int[] arr, int offset) {
@@ -688,7 +688,7 @@ private String toString(int n, int[] arr, int offset) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:15.387 -0500", hash_original_method = "76307B205B17F18B9623C7717F9DB208", hash_generated_method = "84F1356B017386F3D652CD82E379F1BA")
     
 private String toString(int n, Object[] arr, int offset) {

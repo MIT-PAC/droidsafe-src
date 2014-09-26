@@ -38,7 +38,7 @@ public abstract class FragmentTransaction {
      * Calls {@link #add(int, Fragment, String)} with a 0 containerViewId.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.533 -0500", hash_original_method = "F7AC4CA1DFDC81755F39F5A0D9A684FC", hash_generated_method = "70C2E79CF010D20F8CA2B3D5F7F2F820")
     
 public abstract FragmentTransaction add(Fragment fragment, String tag);
@@ -47,7 +47,7 @@ public abstract FragmentTransaction add(Fragment fragment, String tag);
      * Calls {@link #add(int, Fragment, String)} with a null tag.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.535 -0500", hash_original_method = "CE157581551FA29527EBF8BD8B8E7951", hash_generated_method = "9AE875A561816D375662C13376216FDD")
     
 public abstract FragmentTransaction add(int containerViewId, Fragment fragment);
@@ -68,7 +68,7 @@ public abstract FragmentTransaction add(int containerViewId, Fragment fragment);
      * @return Returns the same FragmentTransaction instance.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.537 -0500", hash_original_method = "23C69331AB94570E0A0B731AF3EDB6F3", hash_generated_method = "C6D7859F8D62F0F6C91C14EC3A92087B")
     
 public abstract FragmentTransaction add(int containerViewId, Fragment fragment, String tag);
@@ -113,7 +113,7 @@ public abstract FragmentTransaction replace(int containerViewId, Fragment fragme
      * @return Returns the same FragmentTransaction instance.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.544 -0500", hash_original_method = "254F73E9B1E6669A2F02CC36D0752913", hash_generated_method = "7F25DE9881546538B6AAFCFFB188C78C")
     
 public abstract FragmentTransaction remove(Fragment fragment);
@@ -160,7 +160,7 @@ public abstract FragmentTransaction show(Fragment fragment);
      * @return Returns the same FragmentTransaction instance.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.551 -0500", hash_original_method = "1CDB7BE0A739957C26CB1A4DAEA0A3C8", hash_generated_method = "C732A98003F16B452F40FD8EF863BA48")
     
 public abstract FragmentTransaction detach(Fragment fragment);
@@ -176,7 +176,7 @@ public abstract FragmentTransaction detach(Fragment fragment);
      * @return Returns the same FragmentTransaction instance.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.553 -0500", hash_original_method = "D0BA812C953A880D97F8C9ED57649F69", hash_generated_method = "F46E264924C9175DF0004364A9369E77")
     
 public abstract FragmentTransaction attach(Fragment fragment);
@@ -186,7 +186,7 @@ public abstract FragmentTransaction attach(Fragment fragment);
      * <code>false</code> otherwise.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.555 -0500", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "047840219A293BF58358C9060BC573A9")
     
 public abstract boolean isEmpty();
@@ -268,7 +268,7 @@ public abstract boolean isAddToBackStackAllowed();
      * has already been called, this method will throw IllegalStateException.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.589 -0500", hash_original_method = "719557C73F8AF07FEFCC2B2CA736E2AA", hash_generated_method = "296D755E0BE5EAA9947D8C03A995B386")
     
 public abstract FragmentTransaction disallowAddToBackStack();
@@ -336,7 +336,7 @@ public abstract FragmentTransaction setBreadCrumbShortTitle(CharSequence text);
      * a negative number.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.600 -0500", hash_original_method = "F74CF41C2E077D1DE3C217B0A3E8C495", hash_generated_method = "7E7995E558FCB03CB4321E10147E3CDF")
     
 public abstract int commit();
@@ -349,7 +349,7 @@ public abstract int commit();
      * to change unexpectedly on the user.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.602 -0500", hash_original_method = "41F66AB3A45C3BC381255DEDB6DBA940", hash_generated_method = "3B5A72423F8BE1FE8EBE8871B3036BB6")
     
 public abstract int commitAllowingStateLoss();

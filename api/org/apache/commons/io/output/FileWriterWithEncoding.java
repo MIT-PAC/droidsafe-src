@@ -292,7 +292,9 @@ public FileWriterWithEncoding(File file, CharsetEncoder encoding, boolean append
      * @param idx the character to write
      * @throws IOException if an I/O error occurs
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.728 -0400", hash_original_method = "EE30809419C042C9133DA321A16F7DFD", hash_generated_method = "108A0CC68AF0F1C128B1F7C2EFE7950F")
+     @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.728 -0400", hash_original_method = "EE30809419C042C9133DA321A16F7DFD", hash_generated_method = "108A0CC68AF0F1C128B1F7C2EFE7950F")
     
 @Override
     public void write(int idx) throws IOException {
@@ -304,7 +306,9 @@ public FileWriterWithEncoding(File file, CharsetEncoder encoding, boolean append
      * @param chr the characters to write
      * @throws IOException if an I/O error occurs
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.729 -0400", hash_original_method = "46EC5EF747261262EAD8ED1BD4879967", hash_generated_method = "2CB0A7EEA30A4F8FDF3B216777E92993")
+     @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.729 -0400", hash_original_method = "46EC5EF747261262EAD8ED1BD4879967", hash_generated_method = "2CB0A7EEA30A4F8FDF3B216777E92993")
     
 @Override
     public void write(char[] chr) throws IOException {
@@ -318,7 +322,9 @@ public FileWriterWithEncoding(File file, CharsetEncoder encoding, boolean append
      * @param end The number of characters to write
      * @throws IOException if an I/O error occurs
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.729 -0400", hash_original_method = "4007BD37B56F652F2DD863D7816336D0", hash_generated_method = "2024B0D60D55840B17528B87EB493ED5")
+     @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.729 -0400", hash_original_method = "4007BD37B56F652F2DD863D7816336D0", hash_generated_method = "2024B0D60D55840B17528B87EB493ED5")
     
 @Override
     public void write(char[] chr, int st, int end) throws IOException {
@@ -330,7 +336,9 @@ public FileWriterWithEncoding(File file, CharsetEncoder encoding, boolean append
      * @param str the string to write
      * @throws IOException if an I/O error occurs
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.730 -0400", hash_original_method = "570C1378326063600110CB3D156C7691", hash_generated_method = "11531F2C7D6991750845B0705120981E")
+     @DSSink({DSSinkKind.FILE})
+    @DSSpec(DSCat.IO)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.730 -0400", hash_original_method = "570C1378326063600110CB3D156C7691", hash_generated_method = "11531F2C7D6991750845B0705120981E")
     
 @Override
     public void write(String str) throws IOException {
@@ -344,7 +352,9 @@ public FileWriterWithEncoding(File file, CharsetEncoder encoding, boolean append
      * @param end The number of characters to write
      * @throws IOException if an I/O error occurs
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.730 -0400", hash_original_method = "694B238FF5AB1AB4441171CB6DC98A7A", hash_generated_method = "BD1C54C575DC051B66557980241D013D")
+     @DSSink({DSSinkKind.FILE})
+    @DSSpec(DSCat.IO)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.730 -0400", hash_original_method = "694B238FF5AB1AB4441171CB6DC98A7A", hash_generated_method = "BD1C54C575DC051B66557980241D013D")
     
 @Override
     public void write(String str, int st, int end) throws IOException {
@@ -355,7 +365,8 @@ public FileWriterWithEncoding(File file, CharsetEncoder encoding, boolean append
      * Flush the stream.
      * @throws IOException if an I/O error occurs
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.731 -0400", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "5CE80A6225762CA51E516040755CB8E9")
+     @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.731 -0400", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "5CE80A6225762CA51E516040755CB8E9")
     
 @Override
     public void flush() throws IOException {
@@ -366,7 +377,8 @@ public FileWriterWithEncoding(File file, CharsetEncoder encoding, boolean append
      * Close the stream.
      * @throws IOException if an I/O error occurs
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.731 -0400", hash_original_method = "607673C7F0C479BD29B5457E75015964", hash_generated_method = "46BBFE1C9011ABBEAFC2BEDE735CE8AA")
+     @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.731 -0400", hash_original_method = "607673C7F0C479BD29B5457E75015964", hash_generated_method = "46BBFE1C9011ABBEAFC2BEDE735CE8AA")
     
 @Override
     public void close() throws IOException {

@@ -81,7 +81,6 @@ private MultihomePlainSocketFactory() {
         super();
     }
 
-
     // non-javadoc, see interface org.apache.http.conn.SocketFactory
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:22.047 -0400", hash_original_method = "A3A12F6A184479CE87309C0199F9FB19", hash_generated_method = "8E688C07A4933D6FE3996C076C14AB17")
     
@@ -159,7 +158,6 @@ public Socket connectSocket(Socket sock, String host, int port,
         return sock;
     } // connectSocket
 
-
     /**
      * Checks whether a socket connection is secure.
      * This factory creates plain socket connections
@@ -196,7 +194,6 @@ public final boolean isSecure(Socket sock)
 
     } // isSecure
 
-
     /**
      * Compares this factory with an object.
      * There is only one instance of this class.
@@ -217,6 +214,7 @@ public final boolean isSecure(Socket sock)
      * All instances of this class have the same hash code.
      * There is only one instance of this class.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:22.052 -0400", hash_original_method = "EE56C51BBF77F8839109E7F97EF2C650", hash_generated_method = "984A51642E868B1A8453A2229F0FFDDA")
     
 @Override

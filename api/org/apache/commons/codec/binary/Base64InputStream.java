@@ -179,6 +179,7 @@ public int read(byte b[], int offset, int len) throws IOException {
      * 
      * @return false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:00.011 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "01AB9505C3A542F12AECBB818A8A5D7C")
     
 public boolean markSupported() {

@@ -65,7 +65,7 @@ NotificationManager(Context context, Handler handler)
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SCREEN})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.194 -0500", hash_original_method = "8A4CA4E7E43847BF1836AE50422D1EC2", hash_generated_method = "11BB02842F74EFA0B750E0E2DC061F0E")
     
 public void notify(int id, Notification notification)
@@ -86,7 +86,7 @@ public void notify(int id, Notification notification)
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SCREEN})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.196 -0500", hash_original_method = "825D6C1D97F576BD7D887B295C793809", hash_generated_method = "285DCA988B4614C883FFF0F662B28DF3")
     
 public void notify(String tag, int id, Notification notification)

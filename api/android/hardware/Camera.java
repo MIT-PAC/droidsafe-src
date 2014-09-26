@@ -377,7 +377,7 @@ public final void release() {
      *     is unavailable or unsuitable).
      */
     @DSComment("Camera control")
-    @DSSpec(DSCat.DEVICE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.989 -0500", hash_original_method = "438AEF66D8FD926A08ECF42411561F99", hash_generated_method = "D34D61B29C27EC88E84C8C6AE22E0094")
     
 public final void setPreviewDisplay(SurfaceHolder holder) throws IOException {
@@ -389,7 +389,7 @@ public final void setPreviewDisplay(SurfaceHolder holder) throws IOException {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.997 -0500", hash_original_method = "0997F7F636D30A698007C9D53ABFEAA8", hash_generated_method = "9ABCF32B86C6BEE0917FCE8FE808440A")
     
     private final void setPreviewDisplay(Surface surface) throws IOException{
@@ -3503,6 +3503,7 @@ public final void cancelAutoFocus()
      *
      * @see #takePicture(ShutterCallback, PictureCallback, PictureCallback, PictureCallback)
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.123 -0500", hash_original_method = "C601C1FA969C1E17CA36D3767A4885D3", hash_generated_method = "EA36C589A809EACEC2FC187BEE5DD428")
     
 public final void takePicture(ShutterCallback shutter, PictureCallback raw,
@@ -3549,7 +3550,7 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.135 -0500", hash_original_method = "A653181D2B77C1AA9A58A11AAAA145B5", hash_generated_method = "6F225A00AB5ED66CF435DD59A9A26BCE")
     @DSVerified("Calling callbacks ")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSpec(DSCat.SPEC_OTHERS)
 public final void takePicture(ShutterCallback shutter, PictureCallback raw,
             PictureCallback postview, PictureCallback jpeg) {
         mShutterCallback = shutter;

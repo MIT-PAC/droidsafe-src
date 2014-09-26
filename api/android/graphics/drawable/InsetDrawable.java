@@ -176,7 +176,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.929 -0500", hash_original_method = "5E6B5E9F59EDAB724B1161E1868DCBF2", hash_generated_method = "A5E94C52FBA1EA9E7C6C96F0844AC16A")
     
 @Override
@@ -207,7 +207,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.934 -0500", hash_original_method = "EFF30D1C1A84058D8C292EB91F9472BE", hash_generated_method = "9ED10647082E06E9753799E94D347860")
     
 @Override
@@ -228,7 +228,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.938 -0500", hash_original_method = "06DFACBA6F5F88BE2848B90C2DE93101", hash_generated_method = "403ED5464F72B5720F66D941673BEB49")
     
 @Override
@@ -368,6 +368,7 @@ InsetState(InsetState orig, InsetDrawable owner, Resources res) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.978 -0500", hash_original_method = "6B31FDACEACBBE413B6F897E56BE7FF9", hash_generated_method = "7F21A3103CB5BD9EA3F7F91AB31E9105")
         
 @Override
@@ -375,6 +376,7 @@ InsetState(InsetState orig, InsetDrawable owner, Resources res) {
             return new InsetDrawable(this, null);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.981 -0500", hash_original_method = "51EF496D1F925226C92A50925EFC08B6", hash_generated_method = "1D193FC808D3FE37932C648E720496ED")
         
 @Override

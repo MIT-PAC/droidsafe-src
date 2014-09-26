@@ -37,6 +37,7 @@ public static Type getType(Type type) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public static Object toString(Object obj) {
         // TODO Auto-generated method stub
         return null;

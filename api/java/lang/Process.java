@@ -33,8 +33,9 @@ public abstract void destroy();
      * @throws IllegalThreadStateException
      *             if this process has not terminated.
      */
+    @DSSource({DSSourceKind.OS_PROCESS})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.953 -0500", hash_original_method = "1EAA7B24F2B50944782A0CE60B3B8E75", hash_generated_method = "647CE9E2E70D98F5A5572B4451C53331")
     
 public abstract int exitValue();
@@ -47,7 +48,7 @@ public abstract int exitValue();
      *         the native process.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.955 -0500", hash_original_method = "FB318E2B3F5B4555B4080C28AE106FDF", hash_generated_method = "DFAA796C158DC4EA4430C868D9AB59F0")
     
 public abstract InputStream getErrorStream();
@@ -74,8 +75,9 @@ public abstract InputStream getInputStream();
      * @return the output stream to write to the input stream associated with
      *         the native process.
      */
+    @DSSource({DSSourceKind.OS_PROCESS})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.960 -0500", hash_original_method = "4331060E74BEB71DFC1779059CAED65C", hash_generated_method = "EB193755F22F39A086883299C85DF0E2")
     
 public abstract OutputStream getOutputStream();
@@ -88,6 +90,7 @@ public abstract OutputStream getOutputStream();
      * @throws InterruptedException
      *             if the calling thread is interrupted.
      */
+    @DSSource({DSSourceKind.OS_PROCESS})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.962 -0500", hash_original_method = "1FBBA10249C9A6533D34170DE8056745", hash_generated_method = "691F1C6425EB7CF64F1CD4B894D399D7")

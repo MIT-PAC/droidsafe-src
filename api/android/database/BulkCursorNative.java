@@ -39,7 +39,8 @@ public BulkCursorNative()
         attachInterface(this, descriptor);
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.541 -0500", hash_original_method = "974E69C0AD1811D8FB0AF6277EF80D39", hash_generated_method = "44B1EE5FABD9FB2B1CCC833898555361")
     
 @Override

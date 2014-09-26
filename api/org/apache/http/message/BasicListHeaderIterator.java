@@ -89,7 +89,7 @@ protected boolean filterHeader(int index) {
         return this.headerName.equalsIgnoreCase(name);
     }
     
-	@DSSafe(DSCat.DATA_STRUCTURE)
+	@DSSafe(DSCat.SAFE_LIST)
     @Override
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
@@ -111,7 +111,7 @@ protected boolean filterHeader(int index) {
         return (Header) this.allHeaders.get(current);
 	}
     
-	@DSSafe(DSCat.DATA_STRUCTURE)
+	@DSSafe(DSCat.SAFE_LIST)
     @Override
 	public Object next() {
 		// TODO Auto-generated method stub

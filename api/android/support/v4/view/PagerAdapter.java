@@ -81,7 +81,6 @@ import android.view.ViewGroup;
 public abstract class PagerAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.667 -0400", hash_original_field = "1EA0BEAFF9F7078ED69A70F9ED831835", hash_generated_field = "1095B2C860AD558A4F53332EBAEFA10E")
 
-
     public static final int POSITION_UNCHANGED = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.671 -0400", hash_original_field = "34756FE893A708186B4DB42146240D49", hash_generated_field = "A46559075D518D4933C3AFA6B991A88C")
 
@@ -119,6 +118,7 @@ public void startUpdate(ViewGroup container) {
      * @return Returns an Object representing the new page.  This does not
      * need to be a View, but can be some other container of the page.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.682 -0400", hash_original_method = "118A1191E1E4E1B1DC4CA223C52ECD6D", hash_generated_method = "E0A1796F249814B17AEF02BE6A78CC6B")
     
 public Object instantiateItem(ViewGroup container, int position) {
@@ -150,6 +150,7 @@ public void destroyItem(ViewGroup container, int position, Object object) {
      * @param object The same object that was returned by
      * {@link #instantiateItem(View, int)}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.690 -0400", hash_original_method = "C728F6B9404F59904D353F9FF4128613", hash_generated_method = "0A9C3454FFC508F4A61064B56139A4CD")
     
 public void setPrimaryItem(ViewGroup container, int position, Object object) {
@@ -194,6 +195,7 @@ public void startUpdate(View container) {
      *
      * @deprecated Use {@link #instantiateItem(ViewGroup, int)}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.701 -0400", hash_original_method = "30C4B19C489FA29440838961A72E4BC8", hash_generated_method = "2586F89636F81C98715925A123B6DF28")
     
 public Object instantiateItem(View container, int position) {
@@ -230,6 +232,7 @@ public void destroyItem(View container, int position, Object object) {
      *
      * @deprecated Use {@link #setPrimaryItem(ViewGroup, int, Object)}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.709 -0400", hash_original_method = "BBAFE0B2C7FC305268C2EE6C04F35275", hash_generated_method = "FE60A5E3D3F273237677B3C0FB3A8DB5")
     
 public void setPrimaryItem(View container, int position, Object object) {
@@ -268,6 +271,7 @@ public abstract boolean isViewFromObject(View view, Object object);
      *
      * @return Saved state for this adapter
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.720 -0400", hash_original_method = "9C10790C9B509FF6855ECD7BB4443BBC", hash_generated_method = "91C2053613060471C9409FE37D8C4973")
     
 public Parcelable saveState() {

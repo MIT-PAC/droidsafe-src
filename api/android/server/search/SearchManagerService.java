@@ -94,7 +94,8 @@ private synchronized Searchables getSearchables() {
 @Override
         public void onReceive(Context context, Intent intent) {
             new Thread() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:03.406 -0400", hash_original_method = "A6B285513DBDE31BA65BADB3DAF15E48", hash_generated_method = "A0E2DCDCC284A493779E80D421A9B7EC")
+                @DSSpec(DSCat.SPEC_OTHERS)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:03.406 -0400", hash_original_method = "A6B285513DBDE31BA65BADB3DAF15E48", hash_generated_method = "A0E2DCDCC284A493779E80D421A9B7EC")
                 
 @Override
                 public void run() {

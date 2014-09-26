@@ -13,9 +13,7 @@ public class AccessibleObject implements AnnotatedElement {
 
     @DSBan(DSCat.REFLECTION)
 
-
     @DSComment("Java language reflection")
-
 
     /**
      * Attempts to set the accessible flag for all objects in {@code objects}.
@@ -77,9 +75,7 @@ protected AccessibleObject() {
 
     @DSBan(DSCat.REFLECTION)
 
-
     @DSComment("Java language reflection")
-
 
     /**
      * Returns true if this object is accessible without access checks.
@@ -92,9 +88,7 @@ public boolean isAccessible() {
 
     @DSBan(DSCat.REFLECTION)
 
-
     @DSComment("Java language reflection")
-
 
     /**
      * Attempts to set the accessible flag. Setting this to true prevents {@code
@@ -112,8 +106,7 @@ public void setAccessible(boolean flag) {
         throw new UnsupportedOperationException();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-
+    @DSSafe(DSCat.SAFE_LIST)
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.501 -0400", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "25FEC77CF75F53EC70921EE8A193CB69")
     
@@ -122,7 +115,6 @@ public void setAccessible(boolean flag) {
     }
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.508 -0400", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "0E992320369165946CB376284766369A")
     
@@ -184,7 +176,7 @@ String getSignature(Class<?> clazz) {
      * @return The String of names
      */
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.358 -0500", hash_original_method = "538B7B8EC3794D6F6E22215297E953DA", hash_generated_method = "538B7B8EC3794D6F6E22215297E953DA")
     
 String toString(Class<?>[] types) {

@@ -153,7 +153,8 @@ private void requestLayout(ChildView v) {
                     // to VISIBLE now, it will use the old dimension to set the
                     // size. Post a message to ensure that it shows the new size.
                     mWebView.mPrivateHandler.post(new Runnable() {
-                        public void run() {
+                        @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                             sView.setVisibility(View.VISIBLE);
                         }
                     });
@@ -230,7 +231,8 @@ void showAll() {
     
 void postResetStateAll() {
         mWebView.mPrivateHandler.post(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 mReadyToDraw = false;
             }
         });
@@ -242,7 +244,8 @@ void postResetStateAll() {
     
 void postReadyToDrawAll() {
         mWebView.mPrivateHandler.post(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 mReadyToDraw = true;
                 for (ChildView v : mChildren) {
                     v.mView.setVisibility(View.VISIBLE);
@@ -295,7 +298,8 @@ void attachView(int x, int y, int width, int height) {
             setBounds(x, y, width, height);
 
             mWebView.mPrivateHandler.post(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                     // This method may be called multiple times. If the view is
                     // already attached, just set the new LayoutParams,
                     // otherwise attach the view and add it to the list of
@@ -330,7 +334,8 @@ void removeView() {
                 return;
             }
             mWebView.mPrivateHandler.post(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                     removeViewOnUIThread();
                 }
             });

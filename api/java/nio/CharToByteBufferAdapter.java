@@ -44,6 +44,7 @@ private CharToByteBufferAdapter(ByteBuffer byteBuffer) {
         return buf;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.522 -0500", hash_original_method = "2B216932B774F9FB3B903B024B1F44DD", hash_generated_method = "F14AAE8FCBE23930C4615524B071B64B")
     
 @Override
@@ -151,7 +152,8 @@ private CharToByteBufferAdapter(ByteBuffer byteBuffer) {
         return false;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.551 -0500", hash_original_method = "A46BC55FC455B05EF747C70552AAC069", hash_generated_method = "61ABEA2ADBAFAAE509189A5135E81F35")
     
 @Override
@@ -163,7 +165,8 @@ private CharToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.553 -0500", hash_original_method = "3E41BE4D2E49CC352D854BBBF4557ADA", hash_generated_method = "B7F140A54ADA2C555F037218CEC98DBB")
     
 @Override
@@ -173,7 +176,8 @@ private CharToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.556 -0500", hash_original_method = "25F0118CCA8CBA4D22EEA9D027B39A5B", hash_generated_method = "CB93FE1B612B8A613A36157C7308B38A")
     
 @Override
@@ -201,6 +205,7 @@ private CharToByteBufferAdapter(ByteBuffer byteBuffer) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.561 -0500", hash_original_method = "4B1929E0A98D3F3896D7290A74598BEB", hash_generated_method = "507C558B5C25C4F63DFF63A7E6F61806")
     
 @Override

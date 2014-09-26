@@ -130,6 +130,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.368 -0400", hash_original_field = "92EE827C36817A69E1CF224FB382CB43", hash_generated_field = "17A435BCB512B12289624DA1E2A26680")
 
     private Handler mHandler = new Handler() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.473 -0500", hash_original_method = "DC47A807DF4ECAC4EAC562CA0F303D11", hash_generated_method = "3EBED8433021141911C1A0823B7D62FA")
         
 @Override
@@ -277,21 +278,24 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
 
             Button backButton = (Button)findViewById(com.android.internal.R.id.back_button);
             backButton.setOnClickListener(new OnClickListener() {
-                public void onClick(View v) {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                     setResult(RESULT_CANCELED);
                     finish();
                 }
             });
             Button skipButton = (Button)findViewById(com.android.internal.R.id.skip_button);
             skipButton.setOnClickListener(new OnClickListener() {
-                public void onClick(View v) {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                     setResult(RESULT_OK);
                     finish();
                 }
             });
             mNextButton = (Button)findViewById(com.android.internal.R.id.next_button);
             mNextButton.setOnClickListener(new OnClickListener() {
-                public void onClick(View v) {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                     setResult(RESULT_OK);
                     finish();
                 }
@@ -978,7 +982,8 @@ public HeaderAdapter(Context context, List<Header> objects) {
             mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.639 -0400", hash_original_method = "BD15B4EB453F2C74F6031A45FD2B76C2", hash_generated_method = "26757578C3FCD43F8FF32C3523B6A317")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -1050,7 +1055,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.717 -0400", hash_original_field = "80358CCA6C151B1C75C8F6D01427BC96", hash_generated_field = "0285FC5896D2C8A81AC7F6CCCD215EAF")
 
         public static final Creator<Header> CREATOR = new Creator<Header>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.556 -0500", hash_original_method = "C7AEFD10D7C167524F7EC8EE7485F83D", hash_generated_method = "5EF80A858BCAD7DE9466608611F9FE8E")
             
 public Header createFromParcel(Parcel source) {

@@ -38,13 +38,11 @@ public class DeflaterInputStream extends FilterInputStream {
     private static final int DEFAULT_BUFFER_SIZE = 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.500 -0400", hash_original_field = "1BB4DFAD44B3741493C144A3265C33E5", hash_generated_field = "BB50A00575DEBF8BAC8ED22DB8D1D289")
 
-
     protected  Deflater def;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.501 -0400", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
     protected  byte[] buf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.501 -0400", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
-
 
     private boolean closed = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.502 -0400", hash_original_field = "B05F79CE37372FE8A0F84265ED8F86DB", hash_generated_field = "4202BD86292CB1C0097A265D15F2CE06")
@@ -107,6 +105,7 @@ public DeflaterInputStream(InputStream in, Deflater deflater, int bufferSize) {
      * Closes the underlying input stream and discards any remaining uncompressed
      * data.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.503 -0400", hash_original_method = "C359156F5B1EAAF19EFF7CED9FA6C214", hash_generated_method = "C2264BE40DBB5954D615FAFA5D21BBB2")
     
 @Override
@@ -122,6 +121,8 @@ public DeflaterInputStream(InputStream in, Deflater deflater, int bufferSize) {
      *
      * @return the byte or -1 if the end of the stream has been reached.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.504 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
     
 @Override public int read() throws IOException {
@@ -134,6 +135,8 @@ public DeflaterInputStream(InputStream in, Deflater deflater, int bufferSize) {
      * Returns the number of bytes read or -1 if the end of the compressed input
      * stream has been reached.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.505 -0400", hash_original_method = "19164904BE928B554AFCB99D8B5A601C", hash_generated_method = "E474E12617424C40301F243E30D64A97")
     
 @Override public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
@@ -177,6 +180,7 @@ public DeflaterInputStream(InputStream in, Deflater deflater, int bufferSize) {
      * <p>Note: if {@code n > Integer.MAX_VALUE}, this stream will only attempt to
      * skip {@code Integer.MAX_VALUE} bytes.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.505 -0400", hash_original_method = "565E152BEC5BFE2BBB7113B2C9AAD9E9", hash_generated_method = "E15FFEE4D819AAC0CCD9363A53B6EFE3")
     
 @Override
@@ -200,6 +204,7 @@ public DeflaterInputStream(InputStream in, Deflater deflater, int bufferSize) {
      *         available.
      * @throws IOException if this stream is closed or an error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.506 -0400", hash_original_method = "012D19A90EC960D9A12BF7D37FCA19A5", hash_generated_method = "AF147BCE6F473C746D086F9C7603E587")
     
 @Override
@@ -212,6 +217,7 @@ public DeflaterInputStream(InputStream in, Deflater deflater, int bufferSize) {
      * Returns false because {@code DeflaterInputStream} does not support
      * {@code mark}/{@code reset}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.506 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "98834879561C7504F012DD22F86DCE30")
     
 @Override
@@ -222,6 +228,7 @@ public DeflaterInputStream(InputStream in, Deflater deflater, int bufferSize) {
     /**
      * This operation is not supported and does nothing.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.506 -0400", hash_original_method = "24F28C58F333FD0DCB61CF11D4AE344F", hash_generated_method = "A59C0843EF9A250368BB5C040FD4AFDA")
     
 @Override
@@ -231,6 +238,7 @@ public DeflaterInputStream(InputStream in, Deflater deflater, int bufferSize) {
     /**
      * This operation is not supported and throws {@code IOException}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.507 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "982040414CDBED77657D44B5E5A8ACAA")
     
 @Override

@@ -44,7 +44,7 @@ public int getWidth() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.251 -0500", hash_original_method = "DC0A01255F859E7DE489CAE4D4B39EB6", hash_generated_method = "51CAA030EF1AD911E3450AE2654EE45E")
     
 @Override

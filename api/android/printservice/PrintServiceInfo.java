@@ -52,10 +52,8 @@ import java.io.IOException;
 public final class PrintServiceInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.428 -0400", hash_original_field = "65C12B47A4A9F5F276084FA8762D3BCE", hash_generated_field = "6D0A7B717E1E64C3C8B456CE01C58717")
 
-
     private static final String LOG_TAG = PrintServiceInfo.class.getSimpleName();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.429 -0400", hash_original_field = "7EC862BA8E6EE5E7CFD466AC46B869E8", hash_generated_field = "5DDAF0D3F385B5C5F779BF9CFDD89DCD")
-
 
     private static final String TAG_PRINT_SERVICE = "print-service";
 
@@ -126,9 +124,9 @@ public static PrintServiceInfo create(ResolveInfo resolveInfo, Context context) 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.451 -0400", hash_original_field = "2A40D2822EDE7D6F78CF5ED47AC394EC", hash_generated_field = "CFE2FF218F21A03FFDF0A0963CD46562")
 
-
     public static final Parcelable.Creator<PrintServiceInfo> CREATOR =
             new Parcelable.Creator<PrintServiceInfo>() {
+        @DSSafe(DSCat.SAFE_LIST)
         public PrintServiceInfo createFromParcel(Parcel parcel) {
             return new PrintServiceInfo(parcel);
         }
@@ -139,22 +137,17 @@ public static PrintServiceInfo create(ResolveInfo resolveInfo, Context context) 
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.430 -0400", hash_original_field = "5AB31FF91690EC0315884BA04F6C543E", hash_generated_field = "34D624C7CD290D72B15AB814BF1BA854")
 
-
     private  String mId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.431 -0400", hash_original_field = "FE81B4A254792E0F53E0C9AF36C8B686", hash_generated_field = "6B33B1DC79BC09883016E8729764237B")
-
 
     private  ResolveInfo mResolveInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.432 -0400", hash_original_field = "1E356AACEE2D50E0C905EA0627229FF1", hash_generated_field = "3227A556BB8D91CC368DE162089FC968")
 
-
     private  String mSettingsActivityName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.433 -0400", hash_original_field = "9818E196B5F999EDE237CBAD2D5DCE36", hash_generated_field = "0276D1DE43ADD6012D5E8E81C08F1F0D")
 
-
     private  String mAddPrintersActivityName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.434 -0400", hash_original_field = "C27AC3DCA7AB9CA7AC870959C3112C8B", hash_generated_field = "2B673D6C304871E1C9855EEB39DF75BA")
-
 
     private  String mAdvancedPrintOptionsActivityName;
 
@@ -282,6 +275,7 @@ public void writeToParcel(Parcel parcel, int flagz) {
         parcel.writeString(mAdvancedPrintOptionsActivityName);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.444 -0400", hash_original_method = "E135425950FF107F7B7125D84F0457E8", hash_generated_method = "A46C5793BF9FE3D3B3B16D14744B9A42")
     
 @Override
@@ -313,6 +307,7 @@ public void writeToParcel(Parcel parcel, int flagz) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.447 -0400", hash_original_method = "BDC863D9269FF01D0114F899DBCAFFA7", hash_generated_method = "E3EAF1237AA8BF7D37696606E301F825")
     
 @Override

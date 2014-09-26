@@ -48,7 +48,7 @@ protected abstract char[] getReplacement();
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.405 -0500", hash_original_method = "194DC730C60A1F45F368AD90A104F0FE", hash_generated_method = "95203B0678B88F2740A8A7DD052AC2B5")
     @DSVerified
 public CharSequence getTransformation(CharSequence source, View v) {
@@ -154,6 +154,7 @@ public char charAt(int i) {
             return c;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.424 -0500", hash_original_method = "16B48B66F40BC5C2F3D95D2C2FC575C8", hash_generated_method = "C074C0F9E2C4C1C60C36F762D841D7C3")
         
 public CharSequence subSequence(int start, int end) {
@@ -205,6 +206,7 @@ public SpannedReplacementCharSequence(Spanned source, char[] original,
             mSpanned = source;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.444 -0500", hash_original_method = "C46F3FF4F9C2D4E0959AE37E95AA6C52", hash_generated_method = "C38C55CAF930AA5A31F2FE68B8DF9E0C")
         
 public CharSequence subSequence(int start, int end) {

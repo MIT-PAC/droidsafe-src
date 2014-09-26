@@ -39,7 +39,6 @@ public static void setSingleLineAllCaps(TextView text) {
         private static final String TAG = "SingleLineAllCapsTransform";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:29.762 -0500", hash_original_field = "D959780368C6CA232CF8C3906CDDEDF3", hash_generated_field = "1A21143DB168F6FB0629A178DF0F089E")
 
-
         private Locale mLocale;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:29.763 -0500", hash_original_method = "4C2D06E04273338AC4EC5853A2EDD665", hash_generated_method = "2BCB3B97FB66BF641827993DA68FDB10")
@@ -48,6 +47,7 @@ public SingleLineAllCapsTransform(Context context) {
             mLocale = context.getResources().getConfiguration().locale;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:29.764 -0500", hash_original_method = "D86D9A1AA103AB45F13A7134C7371BA5", hash_generated_method = "5C5D42822347EC8BEA9F3936287FFE89")
         
 @Override

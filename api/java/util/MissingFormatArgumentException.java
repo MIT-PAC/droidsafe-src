@@ -47,7 +47,7 @@ public String getFormatSpecifier() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.580 -0500", hash_original_method = "D7277B29886D06334EB30606D08F78F5", hash_generated_method = "E831B99CF205FF7F407FD6E605C4B920")
     
 @Override

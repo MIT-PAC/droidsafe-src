@@ -81,6 +81,7 @@ public NotFileFilter(IOFileFilter filter) {
      *
      * @return a String representaion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.658 -0400", hash_original_method = "0F98CEE5769F2D254ED7C2ED79018DD6", hash_generated_method = "2BE1FE74C79C5C68C6CD84831DB7FE3F")
     
 @Override

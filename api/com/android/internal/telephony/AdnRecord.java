@@ -78,7 +78,7 @@ private static boolean stringCompareNullEqualsEmpty(String s1, String s2) {
 
     public static final Parcelable.Creator<AdnRecord> CREATOR
             = new Parcelable.Creator<AdnRecord>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.985 -0500", hash_original_method = "6D3E00478735263B7A5F1362FAEF6B0C", hash_generated_method = "5D0078611BAC042CC69D70D42DA51986")
         
 public AdnRecord createFromParcel(Parcel source) {

@@ -49,6 +49,7 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
         return size;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.820 -0500", hash_original_method = "025226B2883D32895649213F93C1A199", hash_generated_method = "52CA1DB48C522C368B9CFFBA0FA5C009")
     
 @Override
@@ -57,7 +58,7 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
         size = 0;
     }
 
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.822 -0500", hash_original_method = "0E09B1B284FABC8D1B6052C567B95409", hash_generated_method = "CAEB023972844612C68C31115E5F86A2")
     
 @Override
@@ -126,6 +127,7 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
         return !(collection instanceof EnumSet) && super.containsAll(collection);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.833 -0500", hash_original_method = "0FAF468D35EFC7156A8E4C7EB1F47E75", hash_generated_method = "5B5CAF49A772BABDC75417528C5252D5")
     
 @Override
@@ -152,6 +154,7 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
         return super.removeAll(collection);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.836 -0500", hash_original_method = "017E11B07B37D92215BE552EFD39EA89", hash_generated_method = "C645B83F44D29884C706B67F9EA76F32")
     
 @Override
@@ -180,6 +183,7 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
         return super.retainAll(collection);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.839 -0500", hash_original_method = "07B13756E56A1DF188CDC5BDB0B18ECF", hash_generated_method = "7BEE23F0951531A2896B3F64D506C3BB")
     
 @Override
@@ -249,14 +253,14 @@ MiniEnumSet(Class<E> elementType, E[] enums) {
             //Synthesized constructor
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.804 -0500", hash_original_method = "04AD09EE87D1D0FB4F163A9180F152BA", hash_generated_method = "2289B7B444211E2D3E80C2AF73D47A18")
         
 public boolean hasNext() {
             return mask != 0;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.807 -0500", hash_original_method = "B8BEA11D538861DDC29BFADEA29DB32E", hash_generated_method = "3E062BF6FBB64FBB4A38D7E384A1E97A")
         
 public E next() {

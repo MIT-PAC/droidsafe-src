@@ -210,7 +210,7 @@ public View findNextFocusFromRect(ViewGroup root, Rect focusedRect, int directio
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.098 -0500", hash_original_method = "FE75104CAE6E392867319A5D2E1ED869", hash_generated_method = "5BDBEC81898759143FCA102B1921FA63")
     
 private View findNextFocus(ViewGroup root, View focused, Rect focusedRect, int direction) {
@@ -601,6 +601,7 @@ public void setRoot(ViewGroup root) {
             mRoot = root;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.149 -0500", hash_original_method = "088E9436455361AF149A244BD433F4AF", hash_generated_method = "A15C8F6DF0D5DDF654E998AFAE0BA3A9")
         
 public int compare(View first, View second) {

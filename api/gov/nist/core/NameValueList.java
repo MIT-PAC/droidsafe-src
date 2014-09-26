@@ -332,7 +332,7 @@ public Set<java.util.Map.Entry<String, NameValue>> entrySet() {
      * (non-Javadoc)
      * @see java.util.Map#get(java.lang.Object)
      */
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.355 -0500", hash_original_method = "EA67EE9A45F5352AADEB9693E72F1050", hash_generated_method = "C5651D9A2CDBEA25F713AF6A1C5B7D9D")
     
@@ -355,7 +355,8 @@ public Set<String> keySet() {
      * (non-Javadoc)
      * @see java.util.Map#put(java.lang.Object, java.lang.Object)
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.360 -0500", hash_original_method = "35750F73219F56C1FC4F989AFDC72835", hash_generated_method = "347D6641225127CA586CA01208C62349")
     
 public NameValue put(String name, NameValue nameValue) {
@@ -373,7 +374,7 @@ public void putAll(Map<? extends String, ? extends NameValue> map) {
      * (non-Javadoc)
      * @see java.util.Map#remove(java.lang.Object)
      */
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.364 -0500", hash_original_method = "790110009BF426B36394178253C0659C", hash_generated_method = "3ECFCE028BE9B366085522A857FB2584")
     
 public NameValue remove(Object key) {

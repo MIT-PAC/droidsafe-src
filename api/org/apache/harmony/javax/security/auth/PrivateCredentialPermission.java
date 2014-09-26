@@ -28,8 +28,6 @@ import java.security.PermissionCollection;
 import java.security.Principal;
 import java.util.Set;
 
-
-
 /**
  * Protects private credential objects belonging to a {@code Subject}. It has
  * only one action which is "read". The target name of this permission has a
@@ -55,13 +53,11 @@ import java.util.Set;
 public final class PrivateCredentialPermission extends Permission {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.210 -0400", hash_original_field = "43361E2A1C28813A722BD9DD150412DB", hash_generated_field = "7114C054D5F447F0A1E97C088FF3E205")
 
-
     private static final long serialVersionUID = 5284372143517237068L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.211 -0400", hash_original_field = "02CA0F815C9046A41BB7F65F33E27346", hash_generated_field = "BF1293380551AD7E940FECCAFCDC0160")
 
     private static final String READ = "read";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.211 -0400", hash_original_field = "D13AEF3FEA1F86F8ABF27FA7C7A87354", hash_generated_field = "90E0555C227B90007F21EDA38F47D45F")
-
 
     private String credentialClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.211 -0400", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "5AFCF1F4E0687291CC7CA4D3055A48FA")
@@ -252,6 +248,7 @@ public String getCredentialClass() {
         return credentialClass;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.218 -0400", hash_original_method = "F0E6B2B42C825A02B0E1D6534B0F62F0", hash_generated_method = "D0B0454FC174E5DC7B0049AA834D9733")
     
 @Override
@@ -357,14 +354,11 @@ private boolean sameMembers(Object[] ar1, Object[] ar2, int length) {
     private static final class CredOwner implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.221 -0400", hash_original_field = "575B7DDFFAB8E9583B2F445B42A0AB64", hash_generated_field = "26BE30F45BEBE3D27035897CBEA7310C")
 
-
         private static final long serialVersionUID = -5607449830436408266L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.221 -0400", hash_original_field = "1570946915C8504A39DAB3B85BCBC553", hash_generated_field = "1570946915C8504A39DAB3B85BCBC553")
 
-
         String principalClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.222 -0400", hash_original_field = "9D5B4F034B59281BD3070F47F745E7CF", hash_generated_field = "9D5B4F034B59281BD3070F47F745E7CF")
-
 
         String principalName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.222 -0400", hash_original_field = "D34B5D0F055F4DB0FF5563D109DCCF5B", hash_generated_field = "A9B5A235C3CB596AC78FCC61E0F64085")
@@ -430,6 +424,7 @@ boolean implies(Object obj) {
         }
 
         // Returns the hash code value for this object.
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.226 -0400", hash_original_method = "2DABB14DB78F341F713ED031333CD30C", hash_generated_method = "FB3525764277FED541110154673D1E19")
         
 @Override

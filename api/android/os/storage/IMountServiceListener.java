@@ -133,6 +133,7 @@ public IBinder asBinder() {
             return this;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.682 -0500", hash_original_method = "4B5CB1439FE22B8015736A798B59DE9B", hash_generated_method = "3ECC4B67388844E26088744A22D40A0B")
         
 @Override

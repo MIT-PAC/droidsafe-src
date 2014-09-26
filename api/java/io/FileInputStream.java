@@ -184,7 +184,7 @@ public final FileDescriptor getFD() throws IOException {
         return fd;
     }
 
-    @DSSource({DSSourceKind.FILE})
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.132 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
@@ -194,7 +194,7 @@ public final FileDescriptor getFD() throws IOException {
         return droidsafeRead();
     }
 
-    @DSSource({DSSourceKind.FILE})
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.135 -0500", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "E85E2815A9A684302F2788213CC7C71B")

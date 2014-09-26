@@ -167,8 +167,8 @@ public void setup() {
         }
     }
 
-    @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.585 -0500", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "A3F584E5571A8A23D51BC2163CD7463A")
     
 @Override
@@ -558,14 +558,14 @@ public TabSpec setContent(TabContentFactory contentFactory) {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();

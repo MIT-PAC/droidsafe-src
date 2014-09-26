@@ -84,6 +84,8 @@ public void setMessageDigest(MessageDigest digest) {
      * @throws IOException
      *             if writing to the stream causes a {@code IOException}
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.494 -0400", hash_original_method = "1DC42AADF909EF36A66F7452F9B5F17D", hash_generated_method = "E9C1138607C630499EC31CC2BB8DBBA8")
     
 @Override
@@ -109,6 +111,8 @@ public void setMessageDigest(MessageDigest digest) {
      * @throws IOException
      *             if writing to the stream causes an {@code IOException}.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.496 -0400", hash_original_method = "78D0CB148C68F9A200832EB116A08570", hash_generated_method = "8E3437987AD1131016FB71D1F4F69E98")
     
 @Override
@@ -141,6 +145,7 @@ public void on(boolean on) {
      *
      * @return a printable representation for this {@code DigestOutputStream}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.498 -0400", hash_original_method = "4B13C7C889B2A909FFC668347DF457C3", hash_generated_method = "B8E996CE2552E95167EBDB1291062299")
     
 @Override

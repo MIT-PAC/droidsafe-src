@@ -130,7 +130,8 @@ T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
 public void runTestOnUiThread(final Runnable r) throws Throwable {
         final Throwable[] exceptions = new Throwable[1];
         getInstrumentation().runOnMainSync(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 try {
                     r.run();
                 } catch (Throwable throwable) {
@@ -183,7 +184,8 @@ public void runTestOnUiThread(final Runnable r) throws Throwable {
             final Method testMethod = method;
             final Throwable[] exceptions = new Throwable[1];
             getInstrumentation().runOnMainSync(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     try {
                         runMethod(testMethod, tolerance, repetitive);
                     } catch (Throwable throwable) {

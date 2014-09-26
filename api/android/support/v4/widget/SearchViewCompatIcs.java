@@ -38,6 +38,7 @@ public MySearchView(Context context) {
 
         // The normal SearchView doesn't clear its search text when
         // collapsed, so we will do this for it.
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:34.248 -0500", hash_original_method = "E5687251D1F88E61D23992BF3CD9FD01", hash_generated_method = "1359B0846B97D32A5C84EBAC79A6F9E0")
         
 @Override

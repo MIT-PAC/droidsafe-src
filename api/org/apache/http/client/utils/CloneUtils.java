@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
 
 public class CloneUtils {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.380 -0500", hash_original_method = "D97FF914EA0564CAAF2DA90241703E98", hash_generated_method = "98413B0CF331DEDC3E120360EC4322F3")
     
 public static Object clone(final Object obj) throws CloneNotSupportedException {

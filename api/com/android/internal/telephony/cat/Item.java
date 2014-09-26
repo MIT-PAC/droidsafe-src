@@ -13,7 +13,7 @@ public class Item implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.389 -0400", hash_original_field = "222EFCE28F204A0D4C7EF9490F5602EB", hash_generated_field = "D69DEFD9515459FCA84CC8CDF18F4564")
 
     public static final Parcelable.Creator<Item> CREATOR = new Parcelable.Creator<Item>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.290 -0500", hash_original_method = "337005C89E3476E5BF20BF6FC939368A", hash_generated_method = "9C6FED5FE9E897D6717B821DCC47FF55")
         
 public Item createFromParcel(Parcel in) {

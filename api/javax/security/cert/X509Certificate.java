@@ -79,7 +79,8 @@ public void verify(PublicKey key, String sigProvider)
                 }
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.839 -0500", hash_original_method = "41549717A9C4B1F409796BF6EB2A013F", hash_generated_method = "0FA0AFDFCE11223840EA50B776D9C9B9")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.839 -0500", hash_original_method = "41549717A9C4B1F409796BF6EB2A013F", hash_generated_method = "0FA0AFDFCE11223840EA50B776D9C9B9")
             
 public String toString() {
                 return cert.toString();

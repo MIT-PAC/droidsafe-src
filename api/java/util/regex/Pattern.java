@@ -239,7 +239,7 @@ public int flags() {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.889 -0500", hash_original_method = "7197179B856EBAB7792F85CCE5015D4A", hash_generated_method = "AA7F043DF2DC9A09E537E20ED58F78E6")
     
 private void compile() throws PatternSyntaxException {

@@ -72,42 +72,32 @@ public class XmlStreamReader extends Reader {
     private static final int BUFFER_SIZE = 4096;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.167 -0400", hash_original_field = "4C869B13BEF7E7EB87393F929DAAEF08", hash_generated_field = "C8915AECAD93B0288C9E401509C4DC97")
 
-
     private static final String UTF_8 = "UTF-8";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.168 -0400", hash_original_field = "4BA4D73EFE3E4386F492E6E345E19D10", hash_generated_field = "A01FFAD120BAFBCC19A6B7C5143F201D")
-
 
     private static final String US_ASCII = "US-ASCII";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.168 -0400", hash_original_field = "7A664CEB53B0C4FA8E002B6DB4DF105A", hash_generated_field = "E701533E6B02B7C236C9FAEDE9A2150C")
 
-
     private static final String UTF_16BE = "UTF-16BE";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.169 -0400", hash_original_field = "6CC197384106D30E9A24D6D1F6B0E309", hash_generated_field = "4205932278CFED46C32ECDD6D3406976")
-
 
     private static final String UTF_16LE = "UTF-16LE";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.169 -0400", hash_original_field = "8D9C34BEC241E30E165D0B9284EC951D", hash_generated_field = "8A030FA5B47049C6296A6C0C9C516C34")
 
-
     private static final String UTF_32BE = "UTF-32BE";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.170 -0400", hash_original_field = "FC279F73E929C6F3F95928AA765C89F9", hash_generated_field = "49D8B86B8D54FAE3DA944F6508FA19B2")
-
 
     private static final String UTF_32LE = "UTF-32LE";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.171 -0400", hash_original_field = "F937D08544423510C929202A06C5E40C", hash_generated_field = "7051634EA32B327445B8E2BB4F066F7D")
 
-
     private static final String UTF_16 = "UTF-16";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.171 -0400", hash_original_field = "98CE4CE367125AB8DAED843B93080AD5", hash_generated_field = "5437F39279BDC878DC8ACAFCAF96A46F")
-
 
     private static final String UTF_32 = "UTF-32";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.172 -0400", hash_original_field = "9909E9E688E85F867883A2D972DE4A73", hash_generated_field = "5516F8607A7F101B59189B0A59ABC227")
 
-
     private static final String EBCDIC = "CP1047";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.172 -0400", hash_original_field = "33129A8E03FB201698A3DA7B2B1B7220", hash_generated_field = "FE04BF8F1F477166F38E2C68EF521413")
-
 
     private static final ByteOrderMark[] BOMS = new ByteOrderMark[] {
         ByteOrderMark.UTF_8,
@@ -152,7 +142,6 @@ static String getContentTypeMime(String httpContentType) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.190 -0400", hash_original_field = "309C8FB8D383C708C974CA908CA2DE4B", hash_generated_field = "0705AF6236794B3774BD3D3DF175B9BB")
 
-
     private static final Pattern CHARSET_PATTERN = Pattern
             .compile("charset=[\"']?([.[^; \"']]*)[\"']?");
 
@@ -179,7 +168,6 @@ static String getContentTypeEncoding(String httpContentType) {
         return encoding;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.192 -0400", hash_original_field = "C6683D5AF370E9F5C011C76B145EAD8F", hash_generated_field = "DEFAFF066C62F1F078270AB77D86A366")
-
 
     public static final Pattern ENCODING_PATTERN = Pattern.compile(
             "<\\?xml.*encoding[\\s]*=[\\s]*((?:\".[^\"]*\")|(?:'.[^']*'))",
@@ -277,39 +265,31 @@ static boolean isTextXml(String mime) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.195 -0400", hash_original_field = "131C79AAA0681F08D2A5306EA98B3A72", hash_generated_field = "35EBF43677D1D8478ABBAFCB40A12E69")
 
-
     private static final String RAW_EX_1 =
         "Invalid encoding, BOM [{0}] XML guess [{1}] XML prolog [{2}] encoding mismatch";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.195 -0400", hash_original_field = "C9F79A058283196078767C417421379C", hash_generated_field = "24C2E2082AE939075F2AE9E126F5324F")
-
 
     private static final String RAW_EX_2 =
         "Invalid encoding, BOM [{0}] XML guess [{1}] XML prolog [{2}] unknown BOM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.196 -0400", hash_original_field = "820BF62D6E742DEB82E6563C94FCD36B", hash_generated_field = "6E61DB8F27F7F53C3DDE60B2F26D297C")
 
-
     private static final String HTTP_EX_1 =
         "Invalid encoding, CT-MIME [{0}] CT-Enc [{1}] BOM [{2}] XML guess [{3}] XML prolog [{4}], BOM must be NULL";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.196 -0400", hash_original_field = "57FB5799CEA248CB2CB1FBD23F14E5B3", hash_generated_field = "AA7C5E28C91FEB5082829DEA29E4E014")
-
 
     private static final String HTTP_EX_2 =
         "Invalid encoding, CT-MIME [{0}] CT-Enc [{1}] BOM [{2}] XML guess [{3}] XML prolog [{4}], encoding mismatch";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.198 -0400", hash_original_field = "2026AA539337DD74E319FD0814E7144B", hash_generated_field = "61A10800F6134B0D772DFD5EAE17C60E")
 
-
     private static final String HTTP_EX_3 =
         "Invalid encoding, CT-MIME [{0}] CT-Enc [{1}] BOM [{2}] XML guess [{3}] XML prolog [{4}], Invalid MIME";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.174 -0400", hash_original_field = "359C2477A0D4C46A46237360E9D6E3E1", hash_generated_field = "506A19594AC0AF91386404965612888E")
 
-
     private  Reader reader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.174 -0400", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
 
-
     private  String encoding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.175 -0400", hash_original_field = "17CBCAF681BCBD1F3719DE3FA392874D", hash_generated_field = "7380F104304B5118624DAE9AD6B460C4")
-
 
     private  String defaultEncoding;
 
@@ -620,6 +600,8 @@ public String getEncoding() {
      * @return the number of characters read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.182 -0400", hash_original_method = "36C1E95AD8A6DF443D7A292EAE48D897", hash_generated_method = "F4146742345D588F8015AA41AB33CF4A")
     
 @Override
@@ -632,6 +614,7 @@ public String getEncoding() {
      *
      * @throws IOException thrown if there was a problem closing the stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.183 -0400", hash_original_method = "A1FFC9B80BA56A6C1B0EFB45497D16D1", hash_generated_method = "41BF0F39484A92E2DE0C5158288ACAC3")
     
 @Override
@@ -799,7 +782,6 @@ String calculateRawEncoding(String bomEnc, String xmlGuessEnc,
         String msg = MessageFormat.format(RAW_EX_2, new Object[] { bomEnc, xmlGuessEnc, xmlEnc });
         throw new XmlStreamReaderException(msg, bomEnc, xmlGuessEnc, xmlEnc);
     }
-
 
     /**
      * Calculate the HTTP encoding.

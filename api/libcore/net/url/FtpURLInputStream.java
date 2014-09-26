@@ -25,8 +25,8 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
         this.controlSocket = controlSocket;
     }
 
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.610 -0500", hash_original_method = "7CE2C444F0201136E21AAFE741F28564", hash_generated_method = "DF6FA14B93B3D3083AE217F4EE817C64")
     
 @Override
@@ -35,7 +35,7 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.613 -0500", hash_original_method = "67E478B38D83ABBBB81FEA8967B3C884", hash_generated_method = "2828806F2C8D5A9174A8E6F3C39664CC")
     
 @Override
@@ -43,6 +43,7 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
         return is.read(buf, off, nbytes);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.615 -0500", hash_original_method = "89E5476D453B2D196750B37DB629C073", hash_generated_method = "59100886A8908EF2F15B01CDAD294215")
     
 @Override
@@ -50,6 +51,7 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
         is.reset();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.618 -0500", hash_original_method = "637EB2252F3D6A06954BF23A791270C0", hash_generated_method = "199F39716B884A38CCE81A3E4684788C")
     
 @Override
@@ -57,6 +59,7 @@ public FtpURLInputStream(InputStream is, Socket controlSocket) {
         is.mark(limit);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.621 -0500", hash_original_method = "ACFDCFE3673D14E8936992CE0181818A", hash_generated_method = "6FE649BBAA3604BC015565C732B4541C")
     
 @Override

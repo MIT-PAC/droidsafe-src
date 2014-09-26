@@ -54,6 +54,8 @@ public ProxyWriter(Writer proxy) {
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.769 -0400", hash_original_method = "94E64203D23ECC11F0966710C23548F3", hash_generated_method = "A06CCE7300A2A2536C74343D00CD989D")
     
 @Override
@@ -77,6 +79,8 @@ public ProxyWriter(Writer proxy) {
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.770 -0400", hash_original_method = "391E9756F83F23FF347EF2129E3A0E99", hash_generated_method = "D1659AD21EAF8B4DE464BAC0141C052C")
     
 @Override
@@ -98,6 +102,8 @@ public ProxyWriter(Writer proxy) {
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.770 -0400", hash_original_method = "AF511130F35AA3E3B287C842560F9DCE", hash_generated_method = "31E7EB75C8368215C547C5CD1DE26F7C")
     
 @Override
@@ -122,6 +128,8 @@ public ProxyWriter(Writer proxy) {
      * @param idx the character to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.771 -0400", hash_original_method = "C10E35B15C5C34D2F11AD8F56A8AFBE7", hash_generated_method = "8538DC9FDF04C178771F287DC9084D00")
     
 @Override
@@ -140,6 +148,8 @@ public ProxyWriter(Writer proxy) {
      * @param chr the characters to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.771 -0400", hash_original_method = "579B5F1267C3E5A23AE0501F4C0FD567", hash_generated_method = "4B3C8F41C253C09EE53C6F475AC7F7C1")
     
 @Override
@@ -165,6 +175,8 @@ public ProxyWriter(Writer proxy) {
      * @param len The number of characters to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.772 -0400", hash_original_method = "4BD1C735F7EB97F1200118825DBDCCC5", hash_generated_method = "669CC50EA5B2EF86DA42CB28ADA7155A")
     
 @Override
@@ -183,6 +195,8 @@ public ProxyWriter(Writer proxy) {
      * @param str the string to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.773 -0400", hash_original_method = "6B60D7F6AE629840306B83B2B10FEDBF", hash_generated_method = "C386FD922E0961B57B289A4051F2A0E6")
     
 @Override
@@ -208,6 +222,8 @@ public ProxyWriter(Writer proxy) {
      * @param len The number of characters to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.773 -0400", hash_original_method = "E5A50F6C55F59DD4142D90322431FA35", hash_generated_method = "739960DEFBE1047F365B92CD8C757715")
     
 @Override
@@ -225,6 +241,7 @@ public ProxyWriter(Writer proxy) {
      * Invokes the delegate's <code>flush()</code> method.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.774 -0400", hash_original_method = "EEECDB779BCD3F1C16C4BB7414585E36", hash_generated_method = "A55EC4CDFFAE64F1B331AEE9E72C7A09")
     
 @Override
@@ -240,6 +257,7 @@ public ProxyWriter(Writer proxy) {
      * Invokes the delegate's <code>close()</code> method.
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.774 -0400", hash_original_method = "EA1F98341C1FEBB76DE541E0DAA4DDD0", hash_generated_method = "2908ECB022F338E34CD3F0E8541D8B63")
     
 @Override

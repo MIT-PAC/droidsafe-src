@@ -16,7 +16,7 @@ public abstract class AbsSavedState implements Parcelable {
     public static final Parcelable.Creator<AbsSavedState> CREATOR 
         = new Parcelable.Creator<AbsSavedState>() {
         
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.426 -0500", hash_original_method = "332B0C76686B55CA74FEB51D34AF75F4", hash_generated_method = "1D98158E68DE928EE5E3060CEA2B8762")
         
 public AbsSavedState createFromParcel(Parcel in) {
@@ -92,8 +92,8 @@ public int describeContents() {
     }
 
     @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.423 -0500", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "59DEDCCB266A692EC97DC26A98166A87")
     @DSVerified
      

@@ -106,6 +106,7 @@ public StringBufferInputStream(String str) {
     /**
      * Resets this stream to the beginning of the source string.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.687 -0500", hash_original_method = "4A8566B6C9E948D021F9A160FC69F9F0", hash_generated_method = "B203292C024EC0BD68E507B4BF96ACB1")
     
 @Override

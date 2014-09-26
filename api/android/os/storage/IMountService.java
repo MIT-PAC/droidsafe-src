@@ -929,7 +929,8 @@ public IBinder asBinder() {
             return this;
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.507 -0500", hash_original_method = "95AA17A698F30BB2942B919588F5BED1", hash_generated_method = "0D962984399DA13D30B612C3593E4153")
         
 @Override

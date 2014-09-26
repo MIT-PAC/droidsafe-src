@@ -30,7 +30,6 @@ import java.util.Arrays;
 public class Adler32 implements Checksum {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.761 -0400", hash_original_field = "64BED7BE8B3F40D64C8A966B22B7A16E", hash_generated_field = "340637C3F9F3E2C0581BDB7710DDE74A")
 
-
     private long adler = 1;
 
     /**
@@ -38,6 +37,7 @@ public class Adler32 implements Checksum {
      *
      * @return The checksum for this instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.761 -0400", hash_original_method = "7548992455680731B7C95F9AA9AA74C4", hash_generated_method = "38539E9CA9BE676F300F39CE51E836C1")
     
 public long getValue() {
@@ -60,6 +60,7 @@ public void reset() {
      * @param i
      *            the byte to update checksum with.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.762 -0400", hash_original_method = "031B66345AD9B4CB1EA8EFF22DB8DC3B", hash_generated_method = "278E9EAA73CD0042DDB2C4FC4CFB79A8")
     
 public void update(int i) {
@@ -72,6 +73,7 @@ public void update(int i) {
      * @param buf
      *            bytes to update checksum with.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.762 -0400", hash_original_method = "CE6B29801A6FECCB312673EE525F73B5", hash_generated_method = "C7A3A99D53983972F56F1121073E3E00")
     
 public void update(byte[] buf) {
@@ -82,6 +84,7 @@ public void update(byte[] buf) {
      * Update this {@code Adler32} checksum with the contents of {@code buf},
      * starting from {@code offset} and reading {@code byteCount} bytes of data.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.763 -0400", hash_original_method = "33C110C69CF248DAE45848AD232AAEEC", hash_generated_method = "78829C3641D774D94C8DBA7566AB3E27")
     
 public void update(byte[] buf, int offset, int byteCount) {
@@ -102,7 +105,6 @@ public void update(byte[] buf, int offset, int byteCount) {
     
     	return (long)taintDouble;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.765 -0400", hash_original_method = "259D32F9E4CE523F9078FA0D9CF43194", hash_generated_method = "46042B55694A968DB3C8E05404756EA7")
     

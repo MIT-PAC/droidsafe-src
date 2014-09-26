@@ -79,7 +79,6 @@ public class WriterOutputStream extends OutputStream {
     private static final int DEFAULT_BUFFER_SIZE = 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.847 -0400", hash_original_field = "2893095D821727F8868345026D6906A1", hash_generated_field = "DB075F4140D7FA00980C54A40F997F59")
 
-
     private  Writer writer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.848 -0400", hash_original_field = "EB8B81788E764E7EC09C99438B975CD8", hash_generated_field = "E190C0DE068854E0E786DAC309DED1B8")
 
@@ -222,6 +221,8 @@ public WriterOutputStream(Writer writer) {
      * @param len the number of bytes to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.854 -0400", hash_original_method = "C0D49EB08A267ED3491A74132BB97C44", hash_generated_method = "90A500B68C5B9D736374CBF484F83215")
     
 @Override
@@ -244,6 +245,8 @@ public WriterOutputStream(Writer writer) {
      * @param b the byte array containing the bytes to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.855 -0400", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "7D09861B37E141F39BE351A56688C45A")
     
 @Override
@@ -257,6 +260,8 @@ public WriterOutputStream(Writer writer) {
      * @param b the byte to write
      * @throws IOException if an I/O error occurs
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.855 -0400", hash_original_method = "72E9EA9CB4D496A22134A9DE55B8B91A", hash_generated_method = "C5CFE166C9FCDBCC793D313229493905")
     
 @Override
@@ -270,6 +275,7 @@ public WriterOutputStream(Writer writer) {
      * {@link Writer#flush()} will be called. 
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.856 -0400", hash_original_method = "AC63B2DA15A83F7213D18D8342590F5B", hash_generated_method = "9E3755C851694214765A39D1531FAFBD")
     
 @Override
@@ -284,6 +290,7 @@ public WriterOutputStream(Writer writer) {
      * {@link Writer#close()} will be called. 
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.856 -0400", hash_original_method = "420EB211773CB08496419ABA1A7EC597", hash_generated_method = "EC293B6F2FC98C106C0D6026E701A5BE")
     
 @Override

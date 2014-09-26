@@ -67,6 +67,7 @@ public class LastModifiedFileComparator extends AbstractFileComparator implement
      * is greater than the second file.
      * 
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.626 -0400", hash_original_method = "2A7F9A9DA1FD0DBF21511D990BEE362C", hash_generated_method = "FE1132ACCFCDFD691364FDB357310B1A")
     
 public int compare(File file1, File file2) {

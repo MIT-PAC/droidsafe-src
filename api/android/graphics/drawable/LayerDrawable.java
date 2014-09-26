@@ -403,7 +403,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.173 -0500", hash_original_method = "DA9EE8A6D973B1FAC6E24B2DB8F8E9C8", hash_generated_method = "AB968D1D931439AC785AFD120BEC45F2")
     
 @Override
@@ -434,7 +434,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.178 -0500", hash_original_method = "DD7D852A8B2359532D654CFF5E5A109F", hash_generated_method = "EF98C94492141DB8F0E1AA82D29618F2")
     
 @Override
@@ -450,7 +450,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.180 -0500", hash_original_method = "8B5179F0E6CCC56A1CD26C355EB4BEE6", hash_generated_method = "D71EE13E8525C4D8EBCE0262ED861040")
     
 @Override
@@ -478,7 +478,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.185 -0500", hash_original_method = "6285AEA72EA88CCBF849BD62BDD654E0", hash_generated_method = "45EDCCBE76A45D8343D86DD3B2A6885E")
     
 @Override
@@ -812,6 +812,7 @@ LayerState(LayerState orig, LayerDrawable owner, Resources res) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.252 -0500", hash_original_method = "4F2E1E1D85BE3BBCABDE93BB1C6F5E02", hash_generated_method = "D1A9960FBBEFFD55F5C974C4CCAD850B")
         
 @Override
@@ -819,6 +820,7 @@ LayerState(LayerState orig, LayerDrawable owner, Resources res) {
             return new LayerDrawable(this, null);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.255 -0500", hash_original_method = "40E045186798A3567910482DC0B43DC7", hash_generated_method = "117FD3BC1FFA15306504A22188383889")
         
 @Override

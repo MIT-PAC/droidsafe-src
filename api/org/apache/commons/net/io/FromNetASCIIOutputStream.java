@@ -105,8 +105,8 @@ private void __write(int ch) throws IOException
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.430 -0500", hash_original_method = "E0D4643D13B7CCDA3167C7EA96CF1000", hash_generated_method = "5CF591D4ECBF29A40680A9E022503132")
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.NETWORK})
 public synchronized void write(int ch)
     throws IOException
     {
@@ -149,7 +149,7 @@ public synchronized void write(byte buffer[])
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.437 -0500", hash_original_method = "4A2C80599CF241166B5A206B5D8B6870", hash_generated_method = "A8A4BD75DF015A1A0C79560CED73EED3")
     @DSVerified
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSink({DSSinkKind.IO})
 public synchronized void write(byte buffer[], int offset, int length)
     throws IOException
     {

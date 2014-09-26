@@ -22,14 +22,14 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.478 -0500", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "A0DC4E380222F91FCE535191E64A1824")
     @DSVerified
-    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
 public boolean hasStableIds() {
         return false;
     }
 
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSVerified
-    @DSSpec(DSCat.DB_CURSOR)
+    @DSSafe(DSCat.SAFE_LIST)
     public abstract Object getItem(int pos);
 
     @DSVerified
@@ -83,8 +83,7 @@ public boolean areAllItemsEnabled() {
 public boolean isEnabled(int position) {
         return true;
     }
-
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.493 -0500", hash_original_method = "CB37ABFEFF70AAB623ABE3C5C5654EBA", hash_generated_method = "C130B06C5541CF8B289B8F49334D09CE")
     @DSVerified
     @DSSafe(DSCat.SAFE_OTHERS)
@@ -92,7 +91,8 @@ public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return getView(position, convertView, parent);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.495 -0500", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "3610CA007643502BCB5C59065F70D2D6")
     
 public int getItemViewType(int position) {

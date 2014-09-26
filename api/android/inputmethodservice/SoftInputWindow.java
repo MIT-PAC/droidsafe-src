@@ -50,6 +50,7 @@ public void setToken(IBinder token) {
         getWindow().setAttributes(lp);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.301 -0500", hash_original_method = "948733408C213A09362904F3B801CDB6", hash_generated_method = "C694054C01189B209F9485319EE96FDD")
     
 @Override
@@ -61,7 +62,7 @@ public void setToken(IBinder token) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.303 -0500", hash_original_method = "6F026F4BC5B101183B4B9B4DF989B709", hash_generated_method = "6144BFD87538941E1F92436B10165D0F")
     
 @Override
-@DSSafe
+@DSSafe(DSCat.SAFE_LIST)
 @DSVerified
     public boolean dispatchTouchEvent(MotionEvent ev) {
         getWindow().getDecorView().getHitRect(mBounds);

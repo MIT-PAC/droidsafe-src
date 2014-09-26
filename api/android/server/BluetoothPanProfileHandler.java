@@ -56,7 +56,6 @@ final class BluetoothPanProfileHandler {
     private static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.875 -0400", hash_original_field = "6254B103ED7B73E3EE50A192BD073235", hash_generated_field = "2C57441CB5A2AB4959CA44D5F0097A38")
 
-
     private static final String BLUETOOTH_IFACE_ADDR_START= "192.168.44.1";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.877 -0400", hash_original_field = "A6E33D06E79FB290E30A018926FFD260", hash_generated_field = "0E312BF9D0FAD7ACDAC654AB99AEA7F8")
 
@@ -68,7 +67,6 @@ final class BluetoothPanProfileHandler {
 
     public static BluetoothPanProfileHandler sInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.887 -0400", hash_original_field = "1201EA0A5C26E294772A8D8031088160", hash_generated_field = "97FF8B816D0735447ECA0C6E20BE1B61")
-
 
     static final String NAP_ROLE = "nap";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.889 -0400", hash_original_field = "6DB7BB034579DCA1702B7EFB53EAFC8B", hash_generated_field = "226A49F431EB09A7FE8C6BC716F8AD83")
@@ -96,7 +94,6 @@ private static void errorLog(String msg) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.872 -0400", hash_original_field = "A4C3E646C2A6FECF2202E07E8213857B", hash_generated_field = "E52F21351C7EA38030898B7756B1D70D")
 
-
     private ArrayList<String> mBluetoothIfaceAddresses;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.874 -0400", hash_original_field = "729E2F24228B5EEC82A58EE37B03DD21", hash_generated_field = "3C1DA11C12EAA1DE852CCDBE7C7484D9")
 
@@ -114,7 +111,6 @@ private static void errorLog(String msg) {
 
     private BluetoothService mBluetoothService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:24.897 -0400", hash_original_field = "0E05EB023B6F85CF3D55DD13272E5254", hash_generated_field = "D5237360F9560F660B8794F23E978DD5")
-
 
     private BroadcastReceiver mTetheringReceiver = null;
 
@@ -159,7 +155,8 @@ void setBluetoothTethering(boolean value) {
             IntentFilter filter = new IntentFilter();
             filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
             mTetheringReceiver = new BroadcastReceiver() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:00.227 -0400", hash_original_method = "C0881F92DF0EF2C3C920F90206EB3D5F", hash_generated_method = "FCAE48DDAD7D37768C77C5BADD83BECD")
+                @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:00.227 -0400", hash_original_method = "C0881F92DF0EF2C3C920F90206EB3D5F", hash_generated_method = "FCAE48DDAD7D37768C77C5BADD83BECD")
                 
 @Override
                 public void onReceive(Context context, Intent intent) {

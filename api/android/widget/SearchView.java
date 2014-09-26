@@ -190,6 +190,7 @@ static boolean isLandscapeMode(Context context) {
 
     private Runnable mShowImeRunnable = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.771 -0400", hash_original_method = "0C9F4768975D596BB26A07FA95497352", hash_generated_method = "EC092D8AB01C27482EC5C32D694A46BC")
         public void run() {
             InputMethodManager imm = (InputMethodManager)
@@ -205,6 +206,7 @@ static boolean isLandscapeMode(Context context) {
 
     private Runnable mUpdateDrawableStateRunnable = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.772 -0400", hash_original_method = "E7E2D783E1837F9E8B1A28FF4E183514", hash_generated_method = "B3EAFD427E9292CB229208955575A412")
         public void run() {
             updateFocusedState();
@@ -216,6 +218,7 @@ static boolean isLandscapeMode(Context context) {
 
     private Runnable mReleaseCursorRunnable = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.772 -0400", hash_original_method = "EDF4C3DBCA8CFDCCDE7923F1B773494D", hash_generated_method = "5D09A5A32E2149C6D8DDAB1034633D73")
         public void run() {
             {
@@ -239,6 +242,7 @@ static boolean isLandscapeMode(Context context) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.773 -0400", hash_original_field = "E56B6AE5C5C1EC6D8C4214BFA55B7404", hash_generated_field = "812B45A6385CB2DDD472ED087ABAB372")
 
     private final OnClickListener mOnClickListener = new OnClickListener() {        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:14.773 -0400", hash_original_method = "7A1C93089C02ACFF37CDB0A860AADCE9", hash_generated_method = "857C3F42BD32BE6A104B549FBE8CE91E")
         public void onClick(View v) {
             
@@ -608,6 +612,7 @@ public void setInputType(int inputType) {
     }
 
     /** @hide */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.765 -0500", hash_original_method = "65B369A9FAEBC12EA58ACD6F427C9883", hash_generated_method = "63FBD5DD240AAA1F7E25DA4F6E31636B")
     
 @Override
@@ -934,6 +939,7 @@ public void setMaxWidth(int maxpixels) {
         requestLayout();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.809 -0500", hash_original_method = "455591DBA8980F8F128C9C99FA0F791A", hash_generated_method = "C04B9D8722CAA0D6B8C17D9F254771AE")
     
 @Override
@@ -1086,6 +1092,7 @@ private void updateFocusedState() {
         invalidate();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.832 -0500", hash_original_method = "466B44C18A399269336D5B13075B3DD5", hash_generated_method = "E87FADC23B2C7E10E4785C8106E6563D")
     
 @Override
@@ -1133,6 +1140,7 @@ void onQueryRefine(CharSequence queryText) {
      *
      * @return true if the event was handled here, or false if not.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.845 -0500", hash_original_method = "E2E8A56E8AA279DA8CFFA9FDDF535879", hash_generated_method = "51513EA142B5C76183978F57567264ED")
     
 @Override
@@ -1453,6 +1461,7 @@ void onTextFocusChanged() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.899 -0500", hash_original_method = "6BC34AF35099192BA7E60BCC11E3C756", hash_generated_method = "F7D1510C3205597107CC3CA86E133104")
     
 @Override

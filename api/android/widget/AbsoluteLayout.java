@@ -33,6 +33,7 @@ public AbsoluteLayout(Context context, AttributeSet attrs,
         super(context, attrs, defStyle);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.357 -0500", hash_original_method = "54761EA789A74CBDB221271FE56469B7", hash_generated_method = "E7611AB8CAE9AE8E995ADFFA7F36EF69")
     
 @Override

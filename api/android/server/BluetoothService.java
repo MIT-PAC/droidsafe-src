@@ -401,6 +401,7 @@ public RemoteService(String address, ParcelUuid uuid) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.110 -0400", hash_original_field = "6F42406E65E28F95F83EAE6AAE743547", hash_generated_field = "05B3B5F92AD20EE29B9B3795CA71B377")
 
     private final Handler mHandler = new Handler() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:01.918 -0400", hash_original_method = "610D21BB0AF8FF2363485B937DB6A1F2", hash_generated_method = "CA74FAC5A0D078262F10D1CEE3D97F05")
         
 @Override
@@ -439,6 +440,7 @@ public RemoteService(String address, ParcelUuid uuid) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:26.243 -0400", hash_original_field = "D47F02B595692E31C8116EC930D18C35", hash_generated_field = "F6E15F975F68F85484979D898028A0DE")
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:02.060 -0400", hash_original_method = "8E36B9F665E2C24B0AD717C8B37C0E0E", hash_generated_method = "DC246FA7012B58132759B3BB185B2842")
         
 @Override

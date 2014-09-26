@@ -40,10 +40,8 @@ import java.util.List;
 public final class PrinterDiscoverySession {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.256 -0400", hash_original_field = "F213E9B0B15A7F94EB368683ED8C77B1", hash_generated_field = "5582551CC79C4BE561ADB324D3853026")
 
-
     private static final String LOG_TAG ="PrinterDiscoverySession";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.257 -0400", hash_original_field = "C93425EC302435009514C2F5B3714403", hash_generated_field = "A50BBBECE3947A00837DB9E56B57EC33")
-
 
     private static final int MSG_PRINTERS_ADDED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.258 -0400", hash_original_field = "1D9EE46D79362198A7E1997953B3399E", hash_generated_field = "AE3C75226E2AA21547158C77AE4CAB99")
@@ -59,27 +57,21 @@ private static void throwIfNotCalledOnMainThread() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.259 -0400", hash_original_field = "79C1496B5817E07FB8C4972846B6412D", hash_generated_field = "F0C143CD3E903D6DD14F0379BED36E72")
 
-
     private final LinkedHashMap<PrinterId, PrinterInfo> mPrinters =
             new LinkedHashMap<PrinterId, PrinterInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.260 -0400", hash_original_field = "3E0022675B1FC4D16A302D6AB65630C0", hash_generated_field = "03F844E9A67F320205659153BAC1054D")
 
-
     private  IPrintManager mPrintManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.260 -0400", hash_original_field = "C1E985FEB03E95A460CF3F00CA1AC469", hash_generated_field = "92E61CD52E3EFA00E014EC0C6AF61282")
-
 
     private  int mUserId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.261 -0400", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
-
     private  Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.262 -0400", hash_original_field = "943FACF1193851215AB517CCEF11C68A", hash_generated_field = "75C0E28AA239ED722A4AB2324ED0D598")
 
-
     private IPrinterDiscoveryObserver mObserver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.263 -0400", hash_original_field = "DC23B31AE293A84E82CCB2EAE7A13F52", hash_generated_field = "9C0B5ED7B4C18F2A5CFECEA7A8FF6349")
-
 
     private OnPrintersChangeListener mListener;
 
@@ -87,7 +79,6 @@ private static void throwIfNotCalledOnMainThread() {
         public void onPrintersChanged();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.264 -0400", hash_original_field = "E4A5433C2277CE89BFC06D05DBDF48A8", hash_generated_field = "CFCE5E3086EFB2C8EE3C3D2D51D844CE")
-
 
     private boolean mIsPrinterDiscoveryStarted;
 
@@ -221,6 +212,7 @@ public final void setOnPrintersChangeListener(OnPrintersChangeListener listener)
         mListener = listener;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.277 -0400", hash_original_method = "20B4C52C0388CA3F0A33A206A644475C", hash_generated_method = "FCF4C62479F83F8556FC5B56C49BF421")
     
 @Override
@@ -329,6 +321,7 @@ public SessionHandler(Looper looper) {
             super(looper, null);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.285 -0400", hash_original_method = "E1E5188532CD7B08ACC400506C200269", hash_generated_method = "EA133E80848252E88314CA7C4CF600A9")
         
 @Override
@@ -350,7 +343,6 @@ public SessionHandler(Looper looper) {
 
     private static final class PrinterDiscoveryObserver extends IPrinterDiscoveryObserver.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.287 -0400", hash_original_field = "A332E5064EC48C61148C5FDA811C9877", hash_generated_field = "E5187D53E0F3582A238F300140E43CDF")
-
 
         private  WeakReference<PrinterDiscoverySession> mWeakSession;
 

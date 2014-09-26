@@ -58,6 +58,7 @@ public HandshakeIODataStream() {}
         return read_pos_end - read_pos;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.395 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
     
 @Override
@@ -65,6 +66,7 @@ public HandshakeIODataStream() {}
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.397 -0500", hash_original_method = "AA335ECE90F2C0243759B4C2341DEAEB", hash_generated_method = "D50D2E497F16B89E92554C77B69BBD94")
     
 @Override
@@ -72,12 +74,14 @@ public HandshakeIODataStream() {}
         marked_pos = read_pos;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.399 -0500", hash_original_method = "B5D6E2F2B60CF54FA8B6A301921FACA9", hash_generated_method = "D5F72E0C2D6C9DA0206DE3356BD370FC")
     
 public void mark() {
         marked_pos = read_pos;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.402 -0500", hash_original_method = "A27E7E8C3D531E39801BBCF5B4CC5B78", hash_generated_method = "F3F1DA2C198F045C183C24D5908BA5F8")
     
 @Override
@@ -104,8 +108,8 @@ protected void removeFromMarkedPosition() {
      * @param   byte:   byte
      * @return
      */
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.407 -0500", hash_original_method = "0824C344C7EF76E18DAFC5A0824644C2", hash_generated_method = "CCA7BFC992325F2BC11A6217EE625B3B")
     
 @Override
@@ -122,7 +126,8 @@ protected void removeFromMarkedPosition() {
      * @param   new:    long
      * @return
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.410 -0500", hash_original_method = "91CEDBDE7A81F4DCE85242430A46DCF1", hash_generated_method = "E43FE0F770A94438D408F0C9100BE8BD")
     
 @Override
@@ -137,7 +142,7 @@ protected void removeFromMarkedPosition() {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.412 -0500", hash_original_method = "2AC89109B1F5C21FC0020B1393568717", hash_generated_method = "D1A2B2FB771DA6CAF9365495AFF59508")
     
 @Override

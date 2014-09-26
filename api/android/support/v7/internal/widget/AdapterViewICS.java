@@ -36,7 +36,6 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-
 /**
  * An AdapterView is a view whose children are determined by an {@link android.widget.Adapter}.
  *
@@ -149,7 +148,6 @@ abstract class AdapterViewICS<T extends Adapter> extends ViewGroup {
 
     private boolean mDesiredFocusableInTouchModeState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.232 -0400", hash_original_field = "1A8DDBBE6E4DA967F5DEACBEFA2C0D29", hash_generated_field = "D942A048D23A80D010658FB1C8D03182")
-
 
     private SelectionNotifier mSelectionNotifier;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.234 -0400", hash_original_field = "9EF8ED98BBEB87000E69C25673FFDD81", hash_generated_field = "9EF8ED98BBEB87000E69C25673FFDD81")
@@ -278,7 +276,6 @@ public boolean performItemClick(View view, int position, long id) {
         boolean onItemLongClick(AdapterViewICS<?> parent, View view, int position, long id);
     }
 
-
     /**
      * Register a callback to be invoked when an item in this AdapterView has
      * been clicked and held
@@ -334,7 +331,6 @@ public final OnItemLongClickListener getOnItemLongClickListener() {
          */
         void onNothingSelected(AdapterViewICS<?> parent);
     }
-
 
     /**
      * Register a callback to be invoked when an item in this AdapterView has
@@ -412,6 +408,7 @@ public abstract void setAdapter(T adapter);
      *
      * @throws UnsupportedOperationException Every time this method is invoked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.294 -0400", hash_original_method = "F16CCCAA9B27A0794F506D96FD601909", hash_generated_method = "3D1FAD0B295761D9C71A2816BE4EB040")
                 
 @Override
@@ -427,6 +424,7 @@ public abstract void setAdapter(T adapter);
      *
      * @throws UnsupportedOperationException Every time this method is invoked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.296 -0400", hash_original_method = "A0B74413A848464618EA89DE3FE41FDC", hash_generated_method = "57C457453C84B5086E72C23356148C52")
                 
 @Override
@@ -442,6 +440,7 @@ public abstract void setAdapter(T adapter);
      *
      * @throws UnsupportedOperationException Every time this method is invoked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.299 -0400", hash_original_method = "18B2907968F7312EE2BBDDA25EF143B2", hash_generated_method = "AA4E9BBF34D49C681131DBD1DB9C56BD")
                 
 @Override
@@ -459,6 +458,7 @@ public abstract void setAdapter(T adapter);
      *
      * @throws UnsupportedOperationException Every time this method is invoked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.302 -0400", hash_original_method = "ECB319B81CB6A3F46E583210A29BAF16", hash_generated_method = "250809DAB3D7EE155F5C5E6E1A8EA10F")
                 
 @Override
@@ -474,6 +474,7 @@ public abstract void setAdapter(T adapter);
      *
      * @throws UnsupportedOperationException Every time this method is invoked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.305 -0400", hash_original_method = "886BA97B45AC28A61B534339E77983B5", hash_generated_method = "73656E482CBE0A6512F4E5D91729E477")
                 
 @Override
@@ -488,6 +489,7 @@ public abstract void setAdapter(T adapter);
      *
      * @throws UnsupportedOperationException Every time this method is invoked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.307 -0400", hash_original_method = "EB15614617786EFEBA3A034D912AA71E", hash_generated_method = "F5ED2A291BF9C1A632D6A76E7C88CB61")
                 
 @Override
@@ -500,6 +502,7 @@ public abstract void setAdapter(T adapter);
      *
      * @throws UnsupportedOperationException Every time this method is invoked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.310 -0400", hash_original_method = "F33294BE6C28FDF867EC6161A7E416F0", hash_generated_method = "8B82C4C9F1C6AE23A7015AD8F775937F")
                 
 @Override
@@ -680,6 +683,7 @@ boolean isInFilterMode() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.341 -0400", hash_original_method = "2405FD914E83FFA9F0D8BC78F36E017E", hash_generated_method = "490362F415B1C2C93A8801C8323B85A7")
                 
 @Override
@@ -695,6 +699,7 @@ boolean isInFilterMode() {
         super.setFocusable(focusable && (!empty || isInFilterMode()));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.344 -0400", hash_original_method = "510CB97D998AEB67CD24BEC214B467D4", hash_generated_method = "A4EDA43245915A38F48ADFB763FED2DC")
                 
 @Override
@@ -779,6 +784,7 @@ public long getItemIdAtPosition(int position) {
         return (adapter == null || position < 0) ? INVALID_ROW_ID : adapter.getItemId(position);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.357 -0400", hash_original_method = "1A557FA8FE05A519D86B900EB24DF4D7", hash_generated_method = "E814A4CAF870B2A3DB77B13C6B0B42E8")
                 
 @Override
@@ -811,6 +817,7 @@ public long getItemIdAtPosition(int position) {
 
         private Parcelable mInstanceState = null;
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @Override
         public void onChanged() {
             mDataChanged = true;
@@ -830,6 +837,7 @@ public long getItemIdAtPosition(int position) {
             requestLayout();
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @Override
         public void onInvalidated() {
             mDataChanged = true;
@@ -858,6 +866,7 @@ public long getItemIdAtPosition(int position) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.375 -0400", hash_original_method = "8130EF0B42BA515F653DEDC83DE0BC01", hash_generated_method = "17D25D35340055C0BFBBE435ADE26095")
                 
 @Override
@@ -867,6 +876,7 @@ public long getItemIdAtPosition(int position) {
     }
 
     private class SelectionNotifier implements Runnable {
+        @DSSafe(DSCat.SAFE_LIST)
         public void run() {
             if (mDataChanged) {
                 // Data has changed between when this SelectionNotifier
@@ -921,6 +931,7 @@ private void fireOnSelected() {
         }
     }
 
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.386 -0400", hash_original_method = "2ECE900C628E5D932F56A2139561AD87", hash_generated_method = "A9280A59230C3D17314504BF4C302325")
                 
 @Override
@@ -933,6 +944,7 @@ private void fireOnSelected() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.389 -0400", hash_original_method = "F40AC428F4D570BD34339564A5B5BB04", hash_generated_method = "CC1AEAD8AD1B4127904290637F03EBAB")
                 
 @Override

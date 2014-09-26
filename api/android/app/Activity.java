@@ -396,7 +396,8 @@ public Window getWindow() {
         return mWindow;
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     public LoaderManager getLoaderManager(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, true);
 		return mLoaderManager;
@@ -414,7 +415,7 @@ public Window getWindow() {
 	}
     
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     LoaderManagerImpl getLoaderManager(int index, boolean started, boolean create){
 		mAllLoaderManagers = new SparseArray<LoaderManagerImpl>();
 		LoaderManagerImpl lm = mAllLoaderManagers.get(index);
@@ -1199,7 +1200,7 @@ public ActionBar getActionBar() {
      * @see #setContentView(android.view.View)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+	
     @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
@@ -1226,7 +1227,7 @@ public void setContentView(int layoutResID) {
      * @see #setContentView(int)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+	
     @DSVerified
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
@@ -1617,7 +1618,7 @@ public void onDetachedFromWindow() {
 	}
     
     @DSComment("potential callback called inside method")
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     public boolean dispatchKeyEvent(KeyEvent event){
 		onUserInteraction();
@@ -1641,7 +1642,7 @@ public void onDetachedFromWindow() {
 		*/
 	}
 
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		onUserInteraction();
@@ -1678,7 +1679,7 @@ public void onDetachedFromWindow() {
 		*/
 	}
     
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     public boolean dispatchTrackballEvent(MotionEvent ev){
 		onUserInteraction();
@@ -1695,6 +1696,7 @@ public void onDetachedFromWindow() {
 		*/
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean dispatchGenericMotionEvent(MotionEvent ev){
         onUserInteraction();
 		return (getWindow().superDispatchGenericMotionEvent(ev) || onGenericMotionEvent(ev));
@@ -1710,7 +1712,7 @@ public void onDetachedFromWindow() {
 		*/
 	}
 
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event){
 		event.setClassName(getClass().getName());
@@ -2204,8 +2206,9 @@ public void closeContextMenu() {
         showDialog(id, null);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @Deprecated public final boolean showDialog(int id, Bundle args){
 		mManagedDialogs = new SparseArray<ManagedDialog>();
 		ManagedDialog md = mManagedDialogs.get(id);
@@ -2438,7 +2441,7 @@ public LayoutInflater getLayoutInflater() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public MenuInflater getMenuInflater(){
 		initActionBar();
 		mMenuInflater = new MenuInflater(mActionBar.getThemedContext()); //DSFIXME:  Look at underlying method to determine if this can be colapsed.
@@ -2484,8 +2487,8 @@ public LayoutInflater getLayoutInflater() {
     
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.IPC)
-    @DSSink({DSSinkKind.IPC})
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startActivityForResult(Intent intent, int requestCode){
         intent.getAction();
         intent.getBooleanArrayExtra("");
@@ -2513,14 +2516,14 @@ public LayoutInflater getLayoutInflater() {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();
@@ -2743,7 +2746,7 @@ public LayoutInflater getLayoutInflater() {
 	}
 
     @DSVerified
-    @DSSink({DSSinkKind.IPC})
+    
     @DSSpec(DSCat.IPC)
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
@@ -3627,7 +3630,7 @@ public final int getVolumeControlStream() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.FILE})
+    
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */

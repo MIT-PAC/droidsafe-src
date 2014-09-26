@@ -840,7 +840,7 @@ Itr() {
             }*/
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.394 -0500", hash_original_method = "930D47D628EF4F4226A6936FD0C40F3E", hash_generated_method = "C1DDC93408DCC4B7E836794905136C6C")
         
 public boolean hasNext() {
@@ -867,7 +867,7 @@ private Node<E> nextNode(Node<E> p) {
             }
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.400 -0500", hash_original_method = "B1551F09E1CC1CE37F95082545A7F15D", hash_generated_method = "7AEBEC9717DCD1EB170AC0539E8EE440")
         
 public E next() {

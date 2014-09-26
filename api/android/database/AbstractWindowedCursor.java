@@ -83,6 +83,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return mWindow.getFloat(mPos, columnIndex);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.429 -0500", hash_original_method = "5EA94253BE97AB01CBE30DAF30AB624B", hash_generated_method = "C772109F3B2AEBA8C88E7AC2EB6A2C1B")
     

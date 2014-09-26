@@ -60,7 +60,7 @@ public static final SecretKeyFactory getInstance(String algorithm)
      * @throws IllegalArgumentException
      *             if the specified provider name is {@code null} or empty.
      */
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.803 -0500", hash_original_method = "BD88C9F954E8F02EEE2FFD90BA21223E", hash_generated_method = "B374E7357E43E2821C9416AA7A7016B4")
     
@@ -95,7 +95,7 @@ public static final SecretKeyFactory getInstance(String algorithm,
      * @throws NullPointerException
      *             is the specified algorithm name is {@code null}.
      */
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.807 -0500", hash_original_method = "203282E1287962AD001C6CC2CF356E7C", hash_generated_method = "8511625231A556A5B2AD5918D566CFF0")
     

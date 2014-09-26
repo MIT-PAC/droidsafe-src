@@ -339,6 +339,7 @@ public String getResponseMessage() throws IOException {
      * @see #getRequestMethod()
      * @see #method
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSComment("no suspicious activity, just gets string")
     @DSSafe(DSCat.SAFE_OTHERS)
     
@@ -409,6 +410,7 @@ public boolean getInstanceFollowRedirects() {
      *            {@code true} if this connection will follows redirects, false
      *            otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.637 -0500", hash_original_method = "BB71B8E9C2D3F0EF20C7720F9E44016D", hash_generated_method = "703BEB9D82C667D729F218BA55F744AA")
     
 public void setInstanceFollowRedirects(boolean followRedirects) {

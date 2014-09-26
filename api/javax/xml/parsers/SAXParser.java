@@ -404,7 +404,7 @@ public abstract org.xml.sax.Parser getParser() throws SAXException;
      */
 
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.704 -0500", hash_original_method = "B62E96B0118EEB0E23EC3778F736AAE1", hash_generated_method = "388CF7B5AAE047FFAF40E11D2B1A57CC")
     
 public abstract org.xml.sax.XMLReader getXMLReader() throws SAXException;

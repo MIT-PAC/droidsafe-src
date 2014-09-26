@@ -33,7 +33,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-
 public class UsernameHashedPasswordCallbackHandler implements CallbackHandler
 {
     
@@ -99,7 +98,6 @@ public void handle(Callback[] callbacks) throws IOException, UnsupportedCallback
             }
         }
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.284 -0400", hash_original_method = "1879E0720E927299ACBF67C302ED951A", hash_generated_method = "D906ED2B482080374848C8818107B9E4")
     
@@ -115,6 +113,7 @@ private void clearPassword()
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.284 -0400", hash_original_method = "F42E225388304E92333E79B9269CB397", hash_generated_method = "3317C6C84829BE897BEC68EC75053F37")
     
 protected void finalize()

@@ -43,9 +43,9 @@ public final class PrinterInfo implements Parcelable {
     public static final int STATUS_UNAVAILABLE = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.937 -0400", hash_original_field = "AA11EF2C51E607F520D02EA96015E5AD", hash_generated_field = "1DD1D7305ADBD70E5EA7B9DD82058EF1")
 
-
     public static final Parcelable.Creator<PrinterInfo> CREATOR =
             new Parcelable.Creator<PrinterInfo>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public PrinterInfo createFromParcel(Parcel parcel) {
             return new PrinterInfo(parcel);
@@ -58,22 +58,17 @@ public final class PrinterInfo implements Parcelable {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.907 -0400", hash_original_field = "F4D3A8423B8CAD9C28735AC09E3E8BA9", hash_generated_field = "D192F9F7FAB0E66597CA6A6530AA5534")
 
-
     private PrinterId mId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.907 -0400", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
-
 
     private String mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.908 -0400", hash_original_field = "6E71E23BE02FA84765B242F31AE918F7", hash_generated_field = "FEDEA1F9A1711C8ECD406AE0575049A4")
 
-
     private int mStatus;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.909 -0400", hash_original_field = "6FC53B81BF2A7EC21138D42F363D7B9A", hash_generated_field = "D58E2E2E369193E8B6C54168B334B477")
 
-
     private String mDescription;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.910 -0400", hash_original_field = "7D7B0885C439D54D39E5CDEC23AD7264", hash_generated_field = "58B2C92A9785FB9DB53E7AC166626CA7")
-
 
     private PrinterCapabilitiesInfo mCapabilities;
 
@@ -200,6 +195,7 @@ public PrinterCapabilitiesInfo getCapabilities() {
         parcel.writeParcelable(mCapabilities, flags);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.920 -0400", hash_original_method = "4E0BB6AF7268854CC2073DC5246CCE4D", hash_generated_method = "3CF30CD2FC58F603B349C073297703A8")
     
 @Override
@@ -379,6 +375,7 @@ private boolean isValidStatus(int status) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.923 -0400", hash_original_method = "E979038ED72A0009E40A1D28CCB39A3A", hash_generated_method = "CFEEF2E54E0C3790D9BDF1659C3A940F")
     
 @Override

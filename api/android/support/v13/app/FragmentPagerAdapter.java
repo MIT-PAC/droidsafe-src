@@ -107,7 +107,8 @@ public abstract Fragment getItem(int position);
     public void startUpdate(ViewGroup container) {
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:54.717 -0500", hash_original_method = "C5BEC84FC44A083F94D2A2057A09146B", hash_generated_method = "7B310DBF09726B34DC0C59368E19B45C")
     
 @Override
@@ -148,7 +149,8 @@ public abstract Fragment getItem(int position);
         mCurTransaction.detach((Fragment)object);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:54.732 -0500", hash_original_method = "93AE6CC274420470809FED9A227E2A87", hash_generated_method = "FD2E1D525231FF98AEB0140CD4A36D7A")
     
 @Override
@@ -185,7 +187,8 @@ public abstract Fragment getItem(int position);
         return ((Fragment)object).getView() == view;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:54.754 -0500", hash_original_method = "9C10790C9B509FF6855ECD7BB4443BBC", hash_generated_method = "C0F3FD7EB0D4B4DDD2361F02930CFABF")
     
 @Override

@@ -33,6 +33,7 @@ public static DocumentBuilderFactory newInstance() {
      *     instantiated.
      * @since 1.6
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.036 -0500", hash_original_method = "6649CD9FBDB8C0B42278B6629FF5EE88", hash_generated_method = "32793FC0050A658B1F408EF343F4BD71")
     
 public static DocumentBuilderFactory newInstance(String factoryClassName,
@@ -91,7 +92,7 @@ protected DocumentBuilderFactory () {
      */
 
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.039 -0500", hash_original_method = "C92B2605725A3C79039D87554B8487A2", hash_generated_method = "2510D54080F06623198E1BC44C9B9D87")
     
 public abstract DocumentBuilder newDocumentBuilder()

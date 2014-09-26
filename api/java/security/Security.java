@@ -152,7 +152,8 @@ public static synchronized void removeProvider(String name) {
      *
      * @return an array containing all installed providers.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.371 -0500", hash_original_method = "EAE9285B08BB32BE2AF6653E79C9F615", hash_generated_method = "ED0B530D59AB27614637C6D2551CDFE9")
     
 public static synchronized Provider[] getProviders() {
@@ -198,7 +199,8 @@ public static synchronized Provider getProvider(String name) {
      * @throws NullPointerException
      *             if {@code filter} is {@code null}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.376 -0500", hash_original_method = "F6138CDF14D8D5962F697D1DAE8ACD56", hash_generated_method = "55A03477641E49547C5C0296E5D3979B")
     
 public static Provider[] getProviders(String filter) {
@@ -245,6 +247,7 @@ public static Provider[] getProviders(String filter) {
      * @throws NullPointerException
      *             if {@code filter} is {@code null}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.381 -0500", hash_original_method = "68DDE2F39160A5938C8ECA7BA32376CA", hash_generated_method = "7CF44E4609D8AE84EA35153F03FEF320")
     
 public static synchronized Provider[] getProviders(Map<String,String> filter) {

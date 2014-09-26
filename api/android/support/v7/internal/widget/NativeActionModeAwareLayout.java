@@ -31,7 +31,6 @@ import android.widget.LinearLayout;
 public class NativeActionModeAwareLayout extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.962 -0400", hash_original_field = "23407C7CCB56BE7EE1980FFA24D7588B", hash_generated_field = "C37B0104FBC5F715CC484B81D1A39110")
 
-
     private OnActionModeForChildListener mActionModeForChildListener;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.965 -0400", hash_original_method = "442556088DE8017C4A804C66DB5E4027", hash_generated_method = "4C35E1E12307F009579FC05DFB72AE6C")
@@ -46,6 +45,7 @@ public void setActionModeForChildListener(OnActionModeForChildListener listener)
         mActionModeForChildListener = listener;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.970 -0400", hash_original_method = "ED7176CB249EE63B6F19D5A22FAC367D", hash_generated_method = "760B0846C93D83FC54E5BD8C78BE7F08")
     
 @Override

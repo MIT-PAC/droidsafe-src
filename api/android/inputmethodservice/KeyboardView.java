@@ -276,6 +276,7 @@ public class KeyboardView extends View implements View.OnClickListener {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.778 -0400", hash_original_field = "C3A21393E2E72FD28BCC59705980175D", hash_generated_field = "2DB2EAF070E3115EF7E5D1CB841D6176")
 
     Handler mHandler = new Handler() {        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.777 -0400", hash_original_method = "83770C9714E93038DDD3FEA1D740F753", hash_generated_method = "101C0E22731C5B3814A8469486033275")
         @Override
         public void handleMessage(Message msg) {
@@ -707,6 +708,7 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         //return mProximityCorrectOn;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.837 -0400", hash_original_method = "517EB00C96BF10223527FB74EBBA7FDF", hash_generated_method = "9059545EF5777B113E36EB07F7C216AC")
     public void onClick(View v) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -804,6 +806,7 @@ for(int i = 0;i < length;i++)
         //mProximityThreshold *= mProximityThreshold;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.847 -0400", hash_original_method = "4D975CF749492A65803F979B31DB3531", hash_generated_method = "51251E47A0AA514CFCB3EC6F2431052C")
     @Override
     public void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -826,6 +829,7 @@ for(int i = 0;i < length;i++)
         //mBuffer = null;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.849 -0400", hash_original_method = "5BAC2E0CA78C3668D6E66F6C464B766C", hash_generated_method = "90C2037A062ABADDE0B0CE54F8A99DE1")
     @Override
     public void onDraw(Canvas canvas) {
@@ -1841,6 +1845,7 @@ switch(action){
         //mHandler.removeMessages(MSG_SHOW_PREVIEW);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.978 -0400", hash_original_method = "A62DD8F04C5EF3B1149CE1914F7FCC79", hash_generated_method = "C5BAEFCB862F1D47F9D253C194640647")
     @Override
     public void onDetachedFromWindow() {

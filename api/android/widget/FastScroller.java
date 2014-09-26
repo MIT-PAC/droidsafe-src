@@ -197,6 +197,7 @@ class FastScroller {
 
     private final Runnable mDeferStartDrag = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.853 -0400", hash_original_method = "8A3021930710B16F81DE57976EDC3D0F", hash_generated_method = "121B411EE501440C0B88B56E21D1E2FA")
         public void run() {
             {
@@ -399,7 +400,7 @@ int getAlpha() {
             return alpha;
         }
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.129 -0500", hash_original_method = "3A2ADC6F19B17BA5C164F36207FFFC0C", hash_generated_method = "C6ECF2234803BACE456F86B71E499E99")
         
 public void run() {

@@ -195,6 +195,7 @@ static boolean canTextInput(View v) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.870 -0400", hash_original_field = "64F9D11F1E11AE4CE243EDB97198552B", hash_generated_field = "A4A348A11ABF8F43A17AFAE144216A4B")
 
     View.OnClickListener mButtonHandler = new View.OnClickListener() {        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.870 -0400", hash_original_method = "23692F5F6532A376A1C310E4C1F7AE36", hash_generated_method = "C93E9241920A99CF968E82D80BD17750")
         public void onClick(View v) {
             
@@ -1044,7 +1045,8 @@ private void createListView(final AlertController dialog) {
                 if (mCursor == null) {
                     adapter = new ArrayAdapter<CharSequence>(
                             mContext, dialog.mMultiChoiceItemLayout, R.id.text1, mItems) {
-                        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+                        @DSSafe(DSCat.SAFE_LIST)
+            
             @Override
                         public View getView(int position, View convertView, ViewGroup parent) {
                             View view = super.getView(position, convertView, parent);

@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */ 
-
+ */
 
 package org.apache.commons.logging.impl;
 
@@ -132,10 +131,10 @@ public final class WeakHashtable extends Hashtable {
     
 public WeakHashtable() {}
     
-    
     /**
      *@see Hashtable
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.635 -0400", hash_original_method = "09811560F9C75DCDF79A321FD91DFA89", hash_generated_method = "5C16B5D6767DEA51BCC5D833F29BBFB9")
     
 public boolean containsKey(Object key) {
@@ -157,6 +156,7 @@ public Enumeration elements() {
     /**
      *@see Hashtable
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.636 -0400", hash_original_method = "430EC1D03DDE99E6BF26E59E4863FC54", hash_generated_method = "5B2764EDF41BD1FEC9EC57104474605F")
     
 public Set entrySet() {
@@ -179,6 +179,7 @@ public Set entrySet() {
     /**
      *@see Hashtable
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.637 -0400", hash_original_method = "9F5FC06C56A6055250205BD8B04ABBB0", hash_generated_method = "6AE9900107D2120A0747CE2BE2ECF778")
     
 public Object get(Object key) {
@@ -190,26 +191,29 @@ public Object get(Object key) {
     /**
      *@see Hashtable
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.639 -0400", hash_original_method = "CA110102E6F1D2C3DDDF2AE738408FAB", hash_generated_method = "B5E9A4BA7AECA47E28590F562DE6C1A1")
     
 public Enumeration keys() {
         purge();
         final Enumeration enumer = super.keys();
         return new Enumeration() {
-            public boolean hasMoreElements() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public boolean hasMoreElements() {
                 return enumer.hasMoreElements();
             }
-            public Object nextElement() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public Object nextElement() {
                  Referenced nextReference = (Referenced) enumer.nextElement();
                  return nextReference.getValue();
             }
         };
     }
-    
         
     /**
      *@see Hashtable
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.640 -0400", hash_original_method = "DE2069F003160F0BCBC7E64E96DDA4C0", hash_generated_method = "3C5BB9E9A2689D35D0462024E6808485")
     
 public Set keySet() {
@@ -229,6 +233,7 @@ public Set keySet() {
     /**
      *@see Hashtable
      */    
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.641 -0400", hash_original_method = "8B867E98CE1FAAA660D56DAEE542C57D", hash_generated_method = "B64B35594FB0877A5AF071D0E6C5CC1A")
     
 public Object put(Object key, Object value) {
@@ -259,6 +264,7 @@ public Object put(Object key, Object value) {
     /**
      *@see Hashtable
      */    
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.642 -0400", hash_original_method = "E40797E446F09CAA9F108D8065CE8423", hash_generated_method = "11FA7EBBD1F8C538DFEADE3DC49E80A2")
     
 public void putAll(Map t) {
@@ -274,6 +280,7 @@ public void putAll(Map t) {
     /**
      *@see Hashtable
      */      
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.642 -0400", hash_original_method = "3DE4307A53CD10A418C1CEF6B9A191DC", hash_generated_method = "5CA4740D6C870BDF9CC8A0D8C36DFAFD")
     
 public Collection values() {
@@ -284,6 +291,7 @@ public Collection values() {
     /**
      *@see Hashtable
      */     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.643 -0400", hash_original_method = "3799724B79C2F221D4EA17D05FB18E0B", hash_generated_method = "83846065A396CF228AFE20FB543FBD55")
     
 public Object remove(Object key) {
@@ -303,6 +311,7 @@ public Object remove(Object key) {
     /**
      *@see Hashtable
      */    
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.643 -0400", hash_original_method = "FD4FE4E64C891E9632BF675C397F5B4B", hash_generated_method = "308365B0A0ED340B2DF33D41046E490C")
     
 public boolean isEmpty() {
@@ -313,6 +322,7 @@ public boolean isEmpty() {
     /**
      *@see Hashtable
      */    
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.644 -0400", hash_original_method = "40B0A01A5E49FB1B2F713FB0E3DC2327", hash_generated_method = "EDFF417FEBACCBBABBBACE7FAF2643C6")
     
 public int size() {
@@ -323,6 +333,7 @@ public int size() {
     /**
      *@see Hashtable
      */        
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.644 -0400", hash_original_method = "445A868828BAC5F0478089A3E1CC19B7", hash_generated_method = "73C7849DB2C26CAD14D4EDC348817F57")
     
 public String toString() {
@@ -375,7 +386,6 @@ private void purgeOne() {
     /** Entry implementation */
     private final static class Entry implements Map.Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.646 -0400", hash_original_field = "1BF3787529F85519119096A6E55F756E", hash_generated_field = "61465DAF5E23066387FADBB5DEA64CC8")
-
     
         private  Object key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.647 -0400", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "D3245881F91753AD0C508E1E9B72D31F")
@@ -404,8 +414,9 @@ public boolean equals(Object o) {
                                             getValue().equals(entry.getValue()));
             }
             return result;
-        } 
+        }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.648 -0400", hash_original_method = "E4EEDAD4762B78241799D43402645998", hash_generated_method = "A93C462116A0B8F9310AFD0E38B2FBED")
         
 public int hashCode() {
@@ -414,18 +425,21 @@ public int hashCode() {
                 (getValue()==null ? 0 : getValue().hashCode());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.649 -0400", hash_original_method = "DFE2CE7F6A7735CFA5F9BFAD2E3A7F88", hash_generated_method = "CE4B9EEE8A6D6A9099395C8D4AD1C76E")
         
 public Object setValue(Object value) {
             throw new UnsupportedOperationException("Entry.setValue is not supported.");
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.650 -0400", hash_original_method = "B4F085CF9776332A868AEA05C2B06886", hash_generated_method = "8F1C34090E292F1C2F621B605A6DF10D")
         
 public Object getValue() {
             return value;
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.650 -0400", hash_original_method = "F9893E453620413D700BE3F8D3AD5BCD", hash_generated_method = "38A4577B5543A154F7283FB9DB333AE0")
         
 public Object getKey() {
@@ -433,11 +447,9 @@ public Object getKey() {
         }
     }
     
-    
     /** Wrapper giving correct symantics for equals and hashcode */
     private final static class Referenced {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.651 -0400", hash_original_field = "1F8033CDC4198A8069F6303A620AB297", hash_generated_field = "467D05D2627336CA4D5D7ACDE6AE96C6")
-
         
         private  WeakReference reference;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.652 -0400", hash_original_field = "5A19588B577A4926772CAE314F19FADE", hash_generated_field = "38607001336EF9DE010EF92F750652A2")
@@ -471,6 +483,7 @@ private Referenced(Object key, ReferenceQueue queue) {
 
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.653 -0400", hash_original_method = "8BA9483852C95CF52834EFFEFBE67C86", hash_generated_method = "D0F3A8177610A3EF652F64918BF6799D")
         
 public int hashCode() {
@@ -524,7 +537,6 @@ public boolean equals(Object o) {
      */
     private final static class WeakKey extends WeakReference {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.656 -0400", hash_original_field = "63A22C42B063B3F2D153853A42BEC2C9", hash_generated_field = "A4AAA925204E418193E0FB1A138D182F")
-
 
         private  Referenced referenced;
         

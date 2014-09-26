@@ -49,7 +49,6 @@ import org.apache.http.params.HttpParams;
 public final class DefaultedHttpParams extends AbstractHttpParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.613 -0400", hash_original_field = "F71F590777BB7F52824FA17E1F88A6DC", hash_generated_field = "78E273B282AB8F0682098EAACED6A31D")
 
-
     private  HttpParams local;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.614 -0400", hash_original_field = "DF1AA6D8F2146835AF13AFA8B2F0E908", hash_generated_field = "7C7B9E8ECC62BA9C3B22B14F971ED885")
 
@@ -105,6 +104,8 @@ public boolean removeParameter(final String name) {
      * Sets the parameter in the local collection. This method <i>does not</i> 
      * modify the default collection.
      */
+    @DSSink({DSSinkKind.NETWORK})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.617 -0400", hash_original_method = "254E14EDBFCE7951A0A2B2DC45614C67", hash_generated_method = "B67C3B2821EFF0E4EDA0F8BEA9BE8137")
     
 public HttpParams setParameter(final String name, final Object value) {

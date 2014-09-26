@@ -31,7 +31,7 @@ public class SecureRandom extends Random {
      */
     @DSComment("no suspicious activity, just creates object")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.241 -0500", hash_original_method = "4857474807562CBFBD7813A9B58F56F0", hash_generated_method = "FDEBE827545D7E04D2A1C0D6CBDBD07B")
     
 public static SecureRandom getInstance(String algorithm) throws NoSuchAlgorithmException {
@@ -62,7 +62,7 @@ public static SecureRandom getInstance(String algorithm) throws NoSuchAlgorithmE
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.RANDOM_NUMBER})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.244 -0500", hash_original_method = "DE97096A3B9FE3F043FDC55F6D0E2300", hash_generated_method = "6146C77DBE8442048A0AABE34E0AE58D")
     
 public static SecureRandom getInstance(String algorithm, String provider)
@@ -94,7 +94,7 @@ public static SecureRandom getInstance(String algorithm, String provider)
      * @throws IllegalArgumentException if {@code provider == null}
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.RANDOM_NUMBER})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.247 -0500", hash_original_method = "AC11452CE9958E1D0E60D203EE825B8B", hash_generated_method = "3E3FB0A7C163821919ECD821587E5937")
     
 public static SecureRandom getInstance(String algorithm, Provider provider)
@@ -248,8 +248,8 @@ public String getAlgorithm() {
      * insecure</a>.
      */
     @DSComment("no suspicious activity")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.TRIGGER)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.255 -0500", hash_original_method = "8CEEFEAA85939144164B3CD7D68FA666", hash_generated_method = "6FF2926EB5B9780E8AC4BC4B5C744C2E")
     
 public synchronized void setSeed(byte[] seed) {

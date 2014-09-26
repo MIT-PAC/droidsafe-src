@@ -518,7 +518,6 @@ public class AccessibilityRecordCompat {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.187 -0400", hash_original_field = "D9929383C763B2C21DE54D8C7FC3D20D", hash_generated_field = "D1D1E99F4AC4499526A983B23845B236")
 
-
     private static  AccessibilityRecordImpl IMPL;
 
     /**
@@ -546,7 +545,6 @@ public static AccessibilityRecordCompat obtain() {
         return new AccessibilityRecordCompat(IMPL.obtain());
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.190 -0400", hash_original_field = "F224D45AFF2A604E7CE25719AC85C9AA", hash_generated_field = "A784208C03B426DBD21A9F3B1C9C44D6")
-
 
     private  Object mRecord;
 
@@ -1117,13 +1115,13 @@ public void recycle() {
         IMPL.recycle(mRecord);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.324 -0400", hash_original_method = "25EC1341BA7AB69E33A1507EBB2B1096", hash_generated_method = "A1C5551C739B3736B4A6A18BA02FCE0E")
         
 @Override
     public int hashCode() {
         return (mRecord == null) ? 0 : mRecord.hashCode();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.327 -0400", hash_original_method = "23C3AD1F1A4F2DE3EE1527927DE9E6EE", hash_generated_method = "0EB6254746C0D84971139AFEEA52BAE8")
         

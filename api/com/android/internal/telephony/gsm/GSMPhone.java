@@ -1439,7 +1439,7 @@ protected  void syncClirSetting() {
     }
 
     @DSSafe(DSCat.IPC_CALLBACK)
-    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.352 -0500", hash_original_method = "EA4D9CE5B4912647996EC04703971BF3", hash_generated_method = "3A2C0D534C66AFA2B2C8B0441F3E0186")
     
 @Override

@@ -310,7 +310,8 @@ IconMenuItemView createMoreItemView() {
         // Set up a click listener on the view since there will be no invocation sequence
         // due to the lack of a MenuItemData this view
         itemView.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onClick(View v) {
                 // Switches the menu to expanded mode. Requires support from
                 // the menu's active callback.
                 mMenu.changeMenuMode();
@@ -414,6 +415,7 @@ private void positionChildren(int menuWidth, int menuHeight) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.612 -0400", hash_original_method = "EDB3F8162AECACC833E5C2CFE32AF75C", hash_generated_method = "025A13EDC7F3553846261FF2D23F3C6E")
     
 @Override
@@ -456,6 +458,7 @@ private void positionChildren(int menuWidth, int menuHeight) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.615 -0400", hash_original_method = "D3B7E8035E214B05048CDEAC905E068A", hash_generated_method = "35E074AD6B336A6DF61DE48CFD78C780")
     
 @Override
@@ -597,6 +600,7 @@ public int getLayoutNumRows() {
         return super.dispatchKeyEvent(event);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.627 -0400", hash_original_method = "AC8CADB4985D382072198F95CA72CEBB", hash_generated_method = "A9AE56247EA887B3F356AE8704190EF8")
     
 @Override
@@ -606,6 +610,7 @@ public int getLayoutNumRows() {
         requestFocus();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.628 -0400", hash_original_method = "4FCF3D1FDA8CE4D7D0697CE02F867DA9", hash_generated_method = "EEE8741DCDAD6C19FF9F666067B5B8FE")
     
 @Override
@@ -660,7 +665,7 @@ private void setCycleShortcutCaptionMode(boolean cycleShortcutAndNormal) {
      * longpress flag, and start cycling). If it is being longpressed, we cycle
      * to the next mode.
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.632 -0400", hash_original_method = "89F2C35600300C50A3DBB522D6A4DDE2", hash_generated_method = "5146E8B818C8357BD9CA478C2FE8526E")
     
 public void run() {
@@ -727,7 +732,7 @@ private void calculateItemFittingMetadata(int width) {
         }
     }
     
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.636 -0400", hash_original_method = "2D6F044112ADAA2591CF3D217EC1849B", hash_generated_method = "EEAB008C979522F1A2612F4D0FF1D4EB")
     
 @Override
@@ -745,7 +750,7 @@ private void calculateItemFittingMetadata(int width) {
         return new SavedState(superState, -1);
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.637 -0400", hash_original_method = "49AFBE27B9E568F013D030667BB6BE48", hash_generated_method = "EA7A0BF17596655FABFC8CDE09374B8F")
     
 @Override
@@ -767,7 +772,7 @@ private void calculateItemFittingMetadata(int width) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.645 -0400", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
         
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -801,6 +806,7 @@ private SavedState(Parcel in) {
             focusedPosition = in.readInt();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.641 -0400", hash_original_method = "57263806AFC4195E4D76796955F0C7D6", hash_generated_method = "6ECFBC4F908133CE3398C0B037F9EFEF")
         
 @Override

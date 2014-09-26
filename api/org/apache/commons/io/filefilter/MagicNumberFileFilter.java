@@ -268,6 +268,7 @@ public MagicNumberFileFilter(byte[] magicNumber, long offset) {
      * 
      * @return a String representation of the file filter.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.987 -0400", hash_original_method = "CB513BDE86C193A798DC85AC9115E8A4", hash_generated_method = "7FFE9169098715172BAEA6D91F058509")
     
 @Override

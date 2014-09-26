@@ -189,6 +189,7 @@ private void recordShaderBitmap(Paint paint) {
         // Shaders in the Paint are ignored when drawing a Bitmap
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.418 -0500", hash_original_method = "4DF4209CA819AE22A2A14AA60ACB3697", hash_generated_method = "FC57016B4E7CD98488260D4510533ADB")
     
 @Override
@@ -246,6 +247,7 @@ private void recordShaderBitmap(Paint paint) {
         recordShaderBitmap(paint);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.436 -0500", hash_original_method = "412A4CCC07E20298CEA55E5ECEB83C32", hash_generated_method = "497D8FD605E05B11EA1124E783C845D3")
     
 @Override
@@ -286,6 +288,7 @@ private void recordShaderBitmap(Paint paint) {
         recordShaderBitmap(paint);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.448 -0500", hash_original_method = "D641E5ABFD7437F3EDFED3D71E56C934", hash_generated_method = "5F0F9B8A668DB61E48E41EA9A49D531B")
     
 @Override
@@ -294,6 +297,7 @@ private void recordShaderBitmap(Paint paint) {
         recordShaderBitmap(paint);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.451 -0500", hash_original_method = "F96FFCB74ADCDDC7497B805FFF815A67", hash_generated_method = "C86AB36CD389B0E03502A136BE0234EE")
     
 @Override
@@ -302,6 +306,7 @@ private void recordShaderBitmap(Paint paint) {
         recordShaderBitmap(paint);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.453 -0500", hash_original_method = "F0BA570E177EFC714FE45C2E3865CC67", hash_generated_method = "8FD20A56B9FEFA610ADD1B8F841C00A4")
     
 @Override

@@ -28,7 +28,8 @@ public BounceInterpolator() {
     public BounceInterpolator(Context context, AttributeSet attrs) {
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.087 -0500", hash_original_method = "41D2E1F4122985CE507D75E33078C1B7", hash_generated_method = "90ED175F687447FA6DACA97109F45F44")
     
 public float getInterpolation(float t) {

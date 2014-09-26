@@ -360,6 +360,7 @@ public String toString() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.560 -0500", hash_original_method = "2F959C67E8DDB6BD10BD3460D506EDBA", hash_generated_method = "2E07D6C1DA3B791E7C764D88671094B7")
         
 public int compare(Cookie cookie1, Cookie cookie2) {
@@ -403,7 +404,7 @@ private CookieManager() {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.567 -0500", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "6D3F334E8E934FE8B33726A6E75490EE")
     
 protected Object clone() throws CloneNotSupportedException {
@@ -447,7 +448,8 @@ public synchronized boolean acceptCookie() {
      * @param url The url which cookie is set for
      * @param value The value for set-cookie: in http response header
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.577 -0500", hash_original_method = "3C733C3F28B1C91BBFDBB065F4DCBFE1", hash_generated_method = "FE8729DC115F9EBD9D55754063D2EA3A")
     
 public void setCookie(String url, String value) {
@@ -476,6 +478,7 @@ public void setCookie(String url, String value) {
      * @param privateBrowsing cookie jar to use
      * @hide hiding private browsing
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.579 -0500", hash_original_method = "FD6DC9D8EE462ADB809067B2E36820B1", hash_generated_method = "FDEB59589056420D1A8219C370655CD0")
     
 public void setCookie(String url, String value, boolean privateBrowsing) {
@@ -504,6 +507,7 @@ public void setCookie(String url, String value, boolean privateBrowsing) {
      * @hide - hide this because it takes in a parameter of type WebAddress,
      * a system private class.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.583 -0500", hash_original_method = "8AF5CC468B90A5A42A5116E5B0AA2987", hash_generated_method = "68A5F5C13A312CF02575B2A8F28C0224")
     
 public synchronized void setCookie(WebAddress uri, String value) {
@@ -803,7 +807,8 @@ public void removeSessionCookie() {
         }
 
         final Runnable clearCache = new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 synchronized(CookieManager.this) {
                     Collection<ArrayList<Cookie>> cookieList = mCookieMap.values();
                     Iterator<ArrayList<Cookie>> listIter = cookieList.iterator();
@@ -837,7 +842,8 @@ public void removeAllCookie() {
         }
 
         final Runnable clearCache = new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 synchronized(CookieManager.this) {
                     mCookieMap = new LinkedHashMap<String, ArrayList<Cookie>>(
                             MAX_DOMAIN_COUNT, 0.75f, true);
@@ -888,7 +894,8 @@ public void removeExpiredCookie() {
         }
 
         final Runnable clearCache = new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 synchronized(CookieManager.this) {
                     long now = System.currentTimeMillis();
                     Collection<ArrayList<Cookie>> cookieList = mCookieMap.values();

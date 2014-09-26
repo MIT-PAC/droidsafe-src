@@ -151,6 +151,7 @@ public Throwable getException() {
      * cause is nonexistent or unknown.  (The cause is the throwable that
      * caused this throwable to get thrown.)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.403 -0500", hash_original_method = "CFB99AF15EF81FE883309E381BCDFD32", hash_generated_method = "4B82F41B424CEBFFB7BCA3B411E82EA0")
     
 public Throwable getCause() {
@@ -184,6 +185,7 @@ public Throwable getCause() {
      *         {@link #TransformerException(String,Throwable)}, or this method has already
      *         been called on this throwable.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.406 -0500", hash_original_method = "480EED18E1765067FE991AF0B4A8D2D9", hash_generated_method = "D92B47C8AABBD243B75CE59F6692A560")
     
 public synchronized Throwable initCause(Throwable cause) {
@@ -287,7 +289,7 @@ public String getLocationAsString() {
      * objects, as well as this object.
      */
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.427 -0500", hash_original_method = "BFEE5D773C8C1A637BA8549A5548CE5E", hash_generated_method = "E341FECD54C25953BA09A90E6F690069")
     
 public void printStackTrace() {

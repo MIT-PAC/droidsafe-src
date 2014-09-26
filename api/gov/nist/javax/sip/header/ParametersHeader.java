@@ -499,7 +499,7 @@ public NameValue getNameValue(String parameterName) {
     }
  
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.752 -0500", hash_original_method = "F88B366B00368248D268BF74B5E64B34", hash_generated_method = "47E75B2A211C27917A050BCF7BCF4612")
     
 public Object clone() {

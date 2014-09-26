@@ -103,6 +103,7 @@ void setColumnCollapsed(int columnIndex, boolean collapsed) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.212 -0500", hash_original_method = "F6BA9F18146785AE4528780F68777354", hash_generated_method = "563FF59DC2E31838CA4A3E5363A34682")
     
 @Override

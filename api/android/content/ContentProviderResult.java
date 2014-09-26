@@ -14,7 +14,7 @@ public class ContentProviderResult implements Parcelable {
 
     public static final Creator<ContentProviderResult> CREATOR =
             new Creator<ContentProviderResult>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.026 -0500", hash_original_method = "0C8258457979985FA0D5E299A051E461", hash_generated_method = "1F82CDEB48A42374AD4E4DED63387DEB")
         
 public ContentProviderResult createFromParcel(Parcel source) {

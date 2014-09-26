@@ -111,6 +111,7 @@ public class GestureDetectorCompat {
                 super(handler.getLooper());
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @Override
             public void handleMessage(Message msg) {
                 switch (msg.what) {
@@ -518,7 +519,6 @@ public class GestureDetectorCompat {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:59.783 -0400", hash_original_field = "11DC96F100E61547958771FC9A6C92A8", hash_generated_field = "036BBE30701EEA23262187CD19803D9D")
-
 
     private  GestureDetectorCompatImpl mImpl;
 

@@ -130,6 +130,7 @@ public boolean isExpandedFormat() {
         return mFormatItems;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.785 -0500", hash_original_method = "8C9F73227D09E5C25F24B8EE1F20BF37", hash_generated_method = "527D610DE6C30D40E9BD8832382E920B")
     
 @Override
@@ -143,6 +144,7 @@ public boolean isExpandedFormat() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.787 -0500", hash_original_method = "7A0AC3F9A12B78835921801D3FB6DAA4", hash_generated_method = "C1C3D6ADF8BE2C75373C1966C533F1D8")
     
 @Override
@@ -467,6 +469,7 @@ private void onMeasureExactFormat(int widthMeasureSpec, int heightMeasureSpec) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.803 -0500", hash_original_method = "BCFF92F724E40A93547AD27810B374B7", hash_generated_method = "A84D72B361AE36102DA6C6534829A3F9")
     
 @Override

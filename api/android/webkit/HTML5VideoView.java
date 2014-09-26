@@ -363,7 +363,7 @@ public TimeupdateTask(HTML5VideoViewProxy proxy) {
             mProxy = proxy;
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.054 -0500", hash_original_method = "BCE01212467B54ADF40E3CF16EDCE71A", hash_generated_method = "9BDB3CECC549A3D525B96DC09C640576")
         
 @Override

@@ -63,7 +63,6 @@ class BluetoothBondState {
     private static final boolean DBG =  true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.126 -0400", hash_original_field = "6D7D7F010631056E83C11288FE41502F", hash_generated_field = "0D8CC88DEE9EF87BCB35F225727D2627")
 
-
     private static final String AUTO_PAIRING_BLACKLIST =
         "/etc/bluetooth/auto_pairing.conf";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.128 -0400", hash_original_field = "B28E588B3175EF0409A346EC51315D4E", hash_generated_field = "FD2CD899104E423ACFB071886EB4D26C")
@@ -71,7 +70,6 @@ class BluetoothBondState {
     private static final String DYNAMIC_AUTO_PAIRING_BLACKLIST =
         "/data/misc/bluetooth/dynamic_auto_pairing.conf";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.122 -0400", hash_original_field = "21235DECD7F9A92C205DD8DCA9F877C4", hash_generated_field = "73644BB726E52AA697268FC7CEC0BF85")
-
 
     private final HashMap<String, Integer> mState = new HashMap<String, Integer>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.124 -0400", hash_original_field = "D2EBE71A67020D1D3140B1C017712995", hash_generated_field = "FCBB4281F8D1DACBFF4827A777E703BB")
@@ -98,7 +96,6 @@ class BluetoothBondState {
     private String mPendingOutgoingBonding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.138 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.140 -0400", hash_original_field = "F41AE71D622FDCA6BB622192685F5E5F", hash_generated_field = "595579B9977CA2238E14150EEB2A2C75")
 
@@ -114,10 +111,8 @@ class BluetoothBondState {
     private BluetoothHeadset mHeadsetProxy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.146 -0400", hash_original_field = "D52EF7A4CBCE49886058F9895D27C71A", hash_generated_field = "E90139B29AAC268687A6AEABB80DD0D5")
 
-
     private ArrayList<String> mPairingRequestRcvd = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.182 -0400", hash_original_field = "021CBF4F2D237B2EEEA6A42F846BC6E6", hash_generated_field = "A4167D8242753F5B784AFBAB84117075")
-
 
     private BluetoothProfile.ServiceListener mProfileServiceListener =
         new BluetoothProfile.ServiceListener() {
@@ -144,8 +139,8 @@ public void onServiceDisconnected(int profile) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:23.195 -0400", hash_original_field = "FF9A4390D5625A0008601F53F381725C", hash_generated_field = "F04B1EE2070DD146C4BB5FC6DB5D040A")
 
-
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:06:58.364 -0400", hash_original_method = "6969750B14C95448E32F6DB2A6E5405F", hash_generated_method = "BF693971777EE15E594D835F502E1B4A")
         
 @Override

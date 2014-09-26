@@ -1103,6 +1103,7 @@ private void updateDropDownForFilter(int count) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.171 -0500", hash_original_method = "7A2D6EDAA0E5981DC60C5747420510C2", hash_generated_method = "E61F893A31C359A7EC7EDA9DECB2160C")
     
 @Override
@@ -1110,6 +1111,7 @@ private void updateDropDownForFilter(int count) {
         super.onAttachedToWindow();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.173 -0500", hash_original_method = "DD8C719D50846B220D8C588E856246EC", hash_generated_method = "C4BD8833BCFE27BF0CA905246A5BC211")
     
 @Override
@@ -1315,6 +1317,7 @@ public void onItemClick(AdapterView parent, View v, int position, long id) {
         }
 
         /** {@inheritDoc} */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.213 -0500", hash_original_method = "E3F762E6FD76D99B402BD097AF1F93E6", hash_generated_method = "2075C3C205332D6D432C7633D1C59C3D")
         
 public void onClick(View v) {
@@ -1343,7 +1346,8 @@ public void onClick(View v) {
                 // change. We can't do it from here, because we are in the middle
                 // of iterating through the list of observers.
                 post(new Runnable() {
-                    public void run() {
+                    @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                         final ListAdapter adapter = mAdapter;
                         if (adapter != null) {
                             // This will re-layout, thus resetting mDataChanged, so that the

@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.widget;
 
 import droidsafe.annotations.*;
@@ -80,10 +79,8 @@ public class ViewDragHelper {
     public static final int DIRECTION_ALL = DIRECTION_HORIZONTAL | DIRECTION_VERTICAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.589 -0400", hash_original_field = "A1646E8E74FB749E3F4D7EE39B142FB8", hash_generated_field = "2D9DEE84C09FF944FAAECA53476690E1")
 
-
     private static final int EDGE_SIZE = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.595 -0400", hash_original_field = "1F9B40FA4EA9600D0712B19615D6A305", hash_generated_field = "76BFA39BE634AE9441EF5C834D53B1F4")
-
 
     private static final int BASE_SETTLE_DURATION = 256;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.598 -0400", hash_original_field = "FD9103375029EF0DC7A8FDCD1D959B5C", hash_generated_field = "17654B746B84D905348C1100B6FE7760")
@@ -92,6 +89,7 @@ public class ViewDragHelper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.721 -0400", hash_original_field = "75923CE1D8B122884D075B6E2A0FEA78", hash_generated_field = "75F5B478F7E09B4BFDBE89CA1735B7D8")
 
     private static final Interpolator sInterpolator = new Interpolator() {
+        @DSSafe(DSCat.SAFE_LIST)
         public float getInterpolation(float t) {
             t -= 1.0f;
             return t * t * t * t * t + 1.0f;
@@ -129,7 +127,6 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.601 -0400", hash_original_field = "C7E9E13FC4C98E8DEB45723DE23CAB31", hash_generated_field = "351A9828D8BB52D6437C5F92C76C3ADF")
 
-
     // Current drag state; idle, dragging or settling
     private int mDragState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.604 -0400", hash_original_field = "D11C33EFD56B37B918E01A200C446C59", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
@@ -164,7 +161,6 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
     private int mPointersDown;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.639 -0400", hash_original_field = "507D8F8387EDC230B54D84A5AD8E5830", hash_generated_field = "5BEE30D4541C1ECA385873E799FC4104")
 
-
     private VelocityTracker mVelocityTracker;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.642 -0400", hash_original_field = "1F8FD58859AB263E0B6AE7DCB61C2EDE", hash_generated_field = "29DF0C40E6B66ADC0FCAC047F858C487")
 
@@ -174,17 +170,14 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
     private float mMinVelocity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.647 -0400", hash_original_field = "336EAA0E1083A9BD8C09C68B85CD2EFE", hash_generated_field = "E3C4CB718F661C66117C49A470FC6C65")
 
-
     private int mEdgeSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.649 -0400", hash_original_field = "2E7B9F8D441B71D4C324C41367B358B2", hash_generated_field = "45CD457B1A84220D829A3F34E8419A05")
 
     private int mTrackingEdges;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.651 -0400", hash_original_field = "5D0F952B201283814D28AC3DE964F3CB", hash_generated_field = "DC7CF8B2E3C8F05523227D0ADA7B02CD")
 
-
     private ScrollerCompat mScroller;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.654 -0400", hash_original_field = "1A99E72B6409E38FBCC780D1BAB4898D", hash_generated_field = "B05DD02C49016AA70EF55EB624CC40D3")
-
 
     private  Callback mCallback;
 
@@ -371,19 +364,17 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.656 -0400", hash_original_field = "7DB94206E75E9A3FA5CA8D0A9F68B628", hash_generated_field = "4E306D4DACF3751737C4323163D313C7")
 
-
     private View mCapturedView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.659 -0400", hash_original_field = "DDEFB0459D9834FF2602B6F70C45A12C", hash_generated_field = "A3DC9EB6E1D41E850BB5557FCF568BED")
 
     private boolean mReleaseInProgress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.661 -0400", hash_original_field = "618A7D91F61CEDE70750F5B4524346D4", hash_generated_field = "356254C396806FFBAD2D203D7E235D36")
 
-
     private  ViewGroup mParentView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.727 -0400", hash_original_field = "030DA41242414ED2CC13FF9EDB4386BA", hash_generated_field = "3F223B98A6B0FA32E393D739C4557FEC")
 
-
     private final Runnable mSetIdleRunnable = new Runnable() {
+        @DSSafe(DSCat.SAFE_LIST)
         public void run() {
             setDragState(STATE_IDLE);
         }

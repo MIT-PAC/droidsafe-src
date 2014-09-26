@@ -90,8 +90,8 @@ protected void setEnd() {
      * @return read value.
      * @throws  IOException
      */
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.720 -0500", hash_original_method = "92F5EAFF00040EF543528D1059933772", hash_generated_method = "7FD93B48818FA167E312FB737B2A4BEA")
     
 @Override

@@ -56,6 +56,7 @@ public abstract Fragment getItem(int position);
     public void startUpdate(ViewGroup container) {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.630 -0500", hash_original_method = "0570BF37939320089381A7FFC8719F89", hash_generated_method = "1369904EB0FCDDD99FA8EBF2BC8A2733")
     
 @Override
@@ -98,6 +99,7 @@ public abstract Fragment getItem(int position);
         mCurTransaction.detach((Fragment)object);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.635 -0500", hash_original_method = "C523B4C098494E2FCA3311FDB475454B", hash_generated_method = "C8DEAABE46D0926222ABF1BD53906953")
     
 @Override
@@ -134,6 +136,7 @@ public abstract Fragment getItem(int position);
         return ((Fragment)object).getView() == view;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.643 -0500", hash_original_method = "9C10790C9B509FF6855ECD7BB4443BBC", hash_generated_method = "C0F3FD7EB0D4B4DDD2361F02930CFABF")
     
 @Override

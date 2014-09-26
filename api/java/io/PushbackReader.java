@@ -85,6 +85,7 @@ public PushbackReader(Reader in, int size) {
      * @throws IOException
      *             if this method is called.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.241 -0500", hash_original_method = "4DEDB50585DFE7302612A8E4FFBB0FA9", hash_generated_method = "33F66E413F98C371EB73FBC11B0EDB6A")
     
 @Override
@@ -101,6 +102,7 @@ public PushbackReader(Reader in, int size) {
      * @see #mark(int)
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.243 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "98834879561C7504F012DD22F86DCE30")
     
 @Override
@@ -252,6 +254,7 @@ private void checkNotClosed() throws IOException {
      * @throws IOException
      *             if this method is called.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.257 -0500", hash_original_method = "6BB6003CEE550FAD13C0147210CF490A", hash_generated_method = "C567D957B336E39E1D1EF2680B7BEF0C")
     
 @Override
@@ -367,6 +370,7 @@ public void unread(int oneChar) throws IOException {
      * @throws IOException
      *             if this reader is closed or another I/O error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.267 -0500", hash_original_method = "7C49E5AFA8C1711AAA62DBD76CA3EFA0", hash_generated_method = "CC49269608829A6B594C6D398CC46A8E")
     
 @Override

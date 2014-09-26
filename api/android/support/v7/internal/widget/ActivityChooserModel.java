@@ -793,6 +793,7 @@ private void pruneExcessiveHistoricalRecordsIfNeeded() {
             this.weight = weight;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int hashCode() {
             final int prime = 31;
@@ -831,6 +832,7 @@ private void pruneExcessiveHistoricalRecordsIfNeeded() {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String toString() {
             StringBuilder builder = new StringBuilder();
@@ -867,6 +869,7 @@ private void pruneExcessiveHistoricalRecordsIfNeeded() {
             this.resolveInfo = resolveInfo;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int hashCode() {
             return 31 + Float.floatToIntBits(weight);
@@ -890,10 +893,12 @@ private void pruneExcessiveHistoricalRecordsIfNeeded() {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int compareTo(ActivityResolveInfo another) {
             return  Float.floatToIntBits(another.weight) - Float.floatToIntBits(weight);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String toString() {
             StringBuilder builder = new StringBuilder();

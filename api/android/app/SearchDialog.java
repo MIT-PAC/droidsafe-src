@@ -137,6 +137,7 @@ static boolean isLandscapeMode(Context context) {
 
     private BroadcastReceiver mConfChangeListener = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.068 -0400", hash_original_method = "61FB59FECA93F3EDF27E6A33F699149F", hash_generated_method = "98EAE8A6AA366027995AA3D63178677D")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -282,7 +283,8 @@ private void createContentView() {
 
         mCloseSearch = findViewById(com.android.internal.R.id.closeButton);
         mCloseSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void onClick(View v) {
                 dismiss();
             }
@@ -313,6 +315,7 @@ private void createContentView() {
      * 
      * @return true if search dialog launched, false if not
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.732 -0500", hash_original_method = "08D03C59DE669D3068C0B765E743FE8E", hash_generated_method = "508A411C3534EE152489F1C3E4C79E3A")
     
 public boolean show(String initialQuery, boolean selectInitialQuery,
@@ -358,7 +361,7 @@ private boolean doShow(String initialQuery, boolean selectInitialQuery,
      * @return <code>true</code> if search dialog launched
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.741 -0500", hash_original_method = "705B52B556BB75FCC3E8159D4BF0A627", hash_generated_method = "76440539B87D735A9490277AF70C6969")
     
 private boolean show(ComponentName componentName, Bundle appSearchData) {
@@ -721,6 +724,7 @@ public void setSearchDialog(SearchDialog searchDialog) {
         /**
          * Don't allow action modes in a SearchBar, it looks silly.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.835 -0500", hash_original_method = "195483BC208A3A4410E3220FCA03E982", hash_generated_method = "7FF36BEFF752FC78BA0E798F3C85A766")
         
 @Override

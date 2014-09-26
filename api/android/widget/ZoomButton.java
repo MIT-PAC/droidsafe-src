@@ -20,6 +20,7 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
 
     private final Runnable mRunnable = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.262 -0400", hash_original_method = "93C4F1AB03EDEC29398EF344D9566441", hash_generated_method = "5D14CBEFC651639CA9AA3FDE1107D5B8")
         public void run() {
             {
@@ -98,7 +99,7 @@ public boolean onLongClick(View v) {
     }
     
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.869 -0500", hash_original_method = "46BB6036120D403ECAC10DF2C7F6C840", hash_generated_method = "90A762EBF729F2A2FBD688B6994E6F19")
     
 @Override

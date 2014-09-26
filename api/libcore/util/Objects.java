@@ -16,6 +16,7 @@ public static boolean equal(Object a, Object b) {
         return a == b || (a != null && a.equals(b));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.009 -0500", hash_original_method = "970ADDE5DABB38D7F42BDDA2D6B8B600", hash_generated_method = "07A63DF93C922328842C8FA9A58D6EAB")
     
 public static int hashCode(Object o) {

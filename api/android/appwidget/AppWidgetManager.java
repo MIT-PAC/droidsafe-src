@@ -129,7 +129,7 @@ private AppWidgetManager(Context context) {
      */
     @DSComment("Request update on remote view")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.IPC})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.842 -0500", hash_original_method = "C145E9C7D3CA673896555FC1E9B6614C", hash_generated_method = "CF3C48A2B5433CB1B9F054F36DD33C3C")
     
 public void updateAppWidget(int[] appWidgetIds, RemoteViews views) {
@@ -156,8 +156,8 @@ public void updateAppWidget(int[] appWidgetIds, RemoteViews views) {
      * @param appWidgetId      The AppWidget instance for which to set the RemoteViews.
      * @param views         The RemoteViews object to show.
      */
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSink({DSSinkKind.IPC})
+    @DSSafe(DSCat.GUI)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.845 -0500", hash_original_method = "779A0F382601F89CF93810A3753ED0EE", hash_generated_method = "D5BA8051AFB8D90F24D576EC7BAF20E1")
     
 public void updateAppWidget(int appWidgetId, RemoteViews views) {
@@ -234,7 +234,7 @@ public void partiallyUpdateAppWidget(int appWidgetId, RemoteViews views) {
      *                      for your AppWidget.
      * @param views         The RemoteViews object to show.
      */
-    @DSSink({DSSinkKind.IPC})
+    
     @DSComment("Request update on remote view")
     @DSSafe(DSCat.GUI)
     

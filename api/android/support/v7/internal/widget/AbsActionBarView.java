@@ -34,30 +34,23 @@ import android.view.animation.AnimationUtils;
 abstract class AbsActionBarView extends ViewGroup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.604 -0400", hash_original_field = "0217F77CCFC1C8AF37A39627A6C46858", hash_generated_field = "2297CD97C5AD861EDC516998785F45D4")
 
-
     private static final int FADE_DURATION = 200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.578 -0400", hash_original_field = "C5D24CAE9D499645E662279CCDBCBFED", hash_generated_field = "7B14B552DB0C79CBA209909A2B52BF74")
-
 
     protected ActionMenuView mMenuView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.582 -0400", hash_original_field = "83149C518D179EC10AC8E811139579F8", hash_generated_field = "B42779F216CC4528173E085A9F4DAD48")
 
-
     protected ActionMenuPresenter mActionMenuPresenter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.587 -0400", hash_original_field = "697914BCC588648A228AE86640E2671D", hash_generated_field = "339FAE9C579EB8FD1618BEDA3B70551C")
-
 
     protected ActionBarContainer mSplitView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.591 -0400", hash_original_field = "E9BF37F76DC250F2CA829FFF57793375", hash_generated_field = "8F069B86042E1A0FB43FF36675E8AEC3")
 
-
     protected boolean mSplitActionBar;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.595 -0400", hash_original_field = "1024CDB3A263DF3959DEC11D52CF91B0", hash_generated_field = "F626921AECC66B10EB0684795A9C5AA3")
 
-
     protected boolean mSplitWhenNarrow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.599 -0400", hash_original_field = "6909FC61CEAFC4290968B35F30281B2B", hash_generated_field = "6227F76581B18D5818B4E51B94662C6C")
-
 
     protected int mContentHeight;
 
@@ -79,6 +72,7 @@ AbsActionBarView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.623 -0400", hash_original_method = "1A1BBCCA059A99CBC66249D9DA235B79", hash_generated_method = "7CEE7AF1652FB016E09F81F9A59DDFC8")
     
 @Override
@@ -171,6 +165,7 @@ public void animateToVisibility(int visibility) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.658 -0400", hash_original_method = "18C5CF9B467563351141F1A59DD43E2B", hash_generated_method = "1C0B4C3A62E55CFE077D7893575C4585")
     
 @Override
@@ -193,7 +188,8 @@ public boolean showOverflowMenu() {
     
 public void postShowOverflowMenu() {
         post(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 showOverflowMenu();
             }
         });

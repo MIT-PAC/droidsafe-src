@@ -27,8 +27,9 @@ public abstract CharSequence getText();
     /**
      * Sets the contents of the clipboard to the specified text.
      */
+    @DSSink({DSSinkKind.CLIPBOARD})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.649 -0500", hash_original_method = "7694500E873F3B5A010FB45AB92E588E", hash_generated_method = "1B0356A0E99BE3853E335A9D1544F6DC")
     
 public abstract void setText(CharSequence text);

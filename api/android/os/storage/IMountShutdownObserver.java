@@ -102,6 +102,7 @@ public void onShutDownComplete(int statusCode) throws RemoteException {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.035 -0500", hash_original_method = "5DA3CCD9795611414F9D41B6C38F3E8B", hash_generated_method = "81F0A3182DDAE3DC041EF91BDCF73E06")
         
 @Override

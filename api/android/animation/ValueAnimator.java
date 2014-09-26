@@ -561,7 +561,7 @@ void initAnimation() {
      * duration, as in <code>ValueAnimator.ofInt(0, 10).setDuration(500).start()</code>.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.697 -0500", hash_original_method = "622DE942E3334D786E7FE8DBF49B30DE", hash_generated_method = "9EC59BDE2593345D1917C02F04463445")
     
 public ValueAnimator setDuration(long duration) {
@@ -1031,7 +1031,7 @@ public void setEvaluator(TypeEvaluator value) {
      * @param playBackwards Whether the ValueAnimator should start playing in reverse.
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.750 -0500", hash_original_method = "4B39A931455D340382CCAC7898FAB8D3", hash_generated_method = "929A096D047FD5FDB889CB3C8CD17D8E")
     
 private void start(boolean playBackwards) {

@@ -451,6 +451,7 @@ private boolean isValidDomainName(String host) {
      *            the URI this instance has to compare with.
      * @return the value representing the order of the two instances.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.851 -0500", hash_original_method = "5881C9F5255DAD71BFE55D2C48CC4082", hash_generated_method = "08258B28A3BC2E919D01C10494EE2CEA")
     
 public int compareTo(URI uri) {
@@ -927,7 +928,7 @@ public boolean isOpaque() {
      * Returns the normalized path.
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.916 -0500", hash_original_method = "E5D7EFF0C51BEFD641F2F6FB80CD17F5", hash_generated_method = "F96D3A2403620B571D209F169558FE70")
     
 private String normalize(String path, boolean discardRelativePrefix) {

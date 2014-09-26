@@ -64,6 +64,7 @@ public void initialize(MenuBuilder menu) {
         mMenu = menu;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.022 -0400", hash_original_method = "16FE2D47FED77BBFC2DAF1EAFCBDD67E", hash_generated_method = "A6EE6C079726EBB08F6C0A6F948B6DC5")
     
 @Override

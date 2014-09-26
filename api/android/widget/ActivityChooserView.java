@@ -58,6 +58,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
 
     private final DataSetObserver mModelDataSetOberver = new DataSetObserver() {
         
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.555 -0400", hash_original_method = "D32F752C027D2B93516AB0AF431CE07C", hash_generated_method = "D9FEC22D26AFC73436AFDEEE1426D33F")
         @Override
         public void onChanged() {
@@ -67,6 +68,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
             
         }
         
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:09.555 -0400", hash_original_method = "0D3B938F42D9BBAAA5442D3FB85ABED0", hash_generated_method = "339192657B2FC07CDF5B74397DFBCE1B")
         @Override
         public void onInvalidated() {
@@ -196,7 +198,8 @@ public ActivityChooserView(Context context, AttributeSet attrs, int defStyle) {
 
         mAdapter = new ActivityChooserViewAdapter();
         mAdapter.registerDataSetObserver(new DataSetObserver() {
-            @Override
+            @DSSafe(DSCat.ANDROID_CALLBACK)
+        @Override
             public void onChanged() {
                 super.onChanged();
                 updateAppearance();
@@ -361,6 +364,7 @@ public boolean isShowingPopup() {
         return getListPopupWindow().isShowing();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.889 -0500", hash_original_method = "F599B3D6D046BF4212D64A5D6A7F3811", hash_generated_method = "1BDC73DC6EFA2005BFFC48DBE183556D")
     
 @Override
@@ -373,6 +377,7 @@ public boolean isShowingPopup() {
         mIsAttachedToWindow = true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.891 -0500", hash_original_method = "589218240FC22193C94953AC6574E4EA", hash_generated_method = "12472C786CFBC9BBDD4C98E2C97ECEB9")
     
 @Override
@@ -389,6 +394,7 @@ public boolean isShowingPopup() {
         mIsAttachedToWindow = false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.893 -0500", hash_original_method = "77C33EEC897BED8B2A12DF2072C37646", hash_generated_method = "9D1D1B5FDBCAA73E25941C2C046FB3E1")
     
 @Override
@@ -566,6 +572,7 @@ public void onItemClick(AdapterView<?> parent, View view, int position, long id)
         }
 
         // View.OnClickListener
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.915 -0500", hash_original_method = "B05554F780928527AD52A76E48C9B5FF", hash_generated_method = "E4483F53EB2A9A71231215BC72C66341")
         
 public void onClick(View view) {
@@ -602,6 +609,7 @@ public void onClick(View view) {
         }
 
         // PopUpWindow.OnDismissListener#onDismiss
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.921 -0500", hash_original_method = "D25064A646F02B95A775BA0461A79BFD", hash_generated_method = "9C935B337FDC78BE000FA77E6CF4F0F1")
         
 public void onDismiss() {
@@ -675,7 +683,8 @@ public void setDataModel(ActivityChooserModel dataModel) {
             notifyDataSetChanged();
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.955 -0500", hash_original_method = "39EE4EFF86EDF87DA80E694DA09810EF", hash_generated_method = "AFFE9FD217FBC5DC418B59F0EDC2003B")
         
 @Override
@@ -695,7 +704,8 @@ public void setDataModel(ActivityChooserModel dataModel) {
             return ITEM_VIEW_TYPE_COUNT;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.959 -0500", hash_original_method = "1BE11BD9F55247D049566CF39D6E3C60", hash_generated_method = "3F1664B2F078CC0C835E0AA6CD11DA20")
         
 public int getCount() {
@@ -711,7 +721,7 @@ public int getCount() {
             return count;
         }
 
-        @DSSpec(DSCat.DB_CURSOR)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.962 -0500", hash_original_method = "F3D4BDC985376DF5677372C13824236A", hash_generated_method = "BB8CF48BFC2A326C1F085E177B2C4AC4")
         
@@ -730,14 +740,16 @@ public Object getItem(int position) {
             }
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.964 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "86EF76D6295D66F6DBBE39DCDBA9A1C9")
         
 public long getItemId(int position) {
             return position;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.968 -0500", hash_original_method = "6D38E6A963432D636038206F8FE6305D", hash_generated_method = "72FAC188CB494C428DA4BE64066D15F1")
         
 public View getView(int position, View convertView, ViewGroup parent) {

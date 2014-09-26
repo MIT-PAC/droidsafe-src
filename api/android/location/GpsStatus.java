@@ -33,6 +33,7 @@ public final class GpsStatus {
 
     private Iterable<GpsSatellite> mSatelliteList = new Iterable<GpsSatellite>() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.273 -0400", hash_original_method = "9983CD5442E4C518DD699220FBA30311", hash_generated_method = "D802BB52D632FD31E6502E4338BAE5D2")
         public Iterator<GpsSatellite> iterator() {
             Iterator<GpsSatellite> varB4EAC82CA7396A68D541C85D26508E83_399552892 = null; 
@@ -103,7 +104,7 @@ SatelliteIterator(GpsSatellite[] satellites) {
             mSatellites = satellites;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.831 -0500", hash_original_method = "280A0F6C9C24DB057056B6AC4648E027", hash_generated_method = "811B00FC3009841CCEA0A6635DB73856")
         
 public boolean hasNext() {
@@ -115,7 +116,7 @@ public boolean hasNext() {
             return false;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.833 -0500", hash_original_method = "2172205C4F18481DAEA9224F778B255B", hash_generated_method = "2C1DF6EA0F9B5DEC0C764AC4E9064B18")
         
 public GpsSatellite next() {

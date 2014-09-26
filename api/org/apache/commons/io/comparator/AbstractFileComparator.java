@@ -76,6 +76,7 @@ public List<File> sort(List<File> files) {
      *
      * @return String representation of this file comparator
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.646 -0400", hash_original_method = "CC6A2D61A01777F134B61F210B4582B4", hash_generated_method = "DC4F53437482264D89559E059DC0E69A")
     
 @Override

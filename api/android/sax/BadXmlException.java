@@ -18,6 +18,7 @@ package android.sax;
 
 import org.xml.sax.SAXParseException;
 import org.xml.sax.Locator;
+import droidsafe.annotations.*;
 
 /**
  * An XML parse exception which includes the line number in the message.
@@ -28,6 +29,7 @@ class BadXmlException extends SAXParseException {
         super(message, locator);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public String getMessage() {
         return "Line " + getLineNumber() + ": " + super.getMessage();
     }

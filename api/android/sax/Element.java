@@ -22,6 +22,7 @@ import org.xml.sax.SAXParseException;
 import java.util.ArrayList;
 
 import android.util.Log;
+import droidsafe.annotations.*;
 
 /**
  * An XML element. Provides access to child elements and hooks to listen
@@ -163,11 +164,14 @@ public class Element {
         this.endTextElementListener = endTextElementListener;
     }
 
+    @DSSource({DSSourceKind.XML})
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
     public String toString() {
         return toString(uri, localName);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     static String toString(String uri, String localName) {
         return "'" + (uri.equals("") ? localName : uri + ":" + localName) + "'";
     }

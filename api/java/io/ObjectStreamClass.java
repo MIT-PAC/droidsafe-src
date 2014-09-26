@@ -175,7 +175,8 @@ public int compare(Class<?> itf1, Class<?> itf2) {
             }
             if (fields.length > 1) {
                 Comparator<Field> fieldComparator = new Comparator<Field>() {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.264 -0500", hash_original_method = "AFBDAD85BF1614275D9D6A609C54DB23", hash_generated_method = "462A7954A85764F00B1CECD09B2457DF")
+                    @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.264 -0500", hash_original_method = "AFBDAD85BF1614275D9D6A609C54DB23", hash_generated_method = "462A7954A85764F00B1CECD09B2457DF")
                     
 public int compare(Field field1, Field field2) {
                         return field1.getName().compareTo(field2.getName());
@@ -231,7 +232,8 @@ public int compare(Constructor<?> ctr1, Constructor<?> ctr2) {
             Method[] methods = cl.getDeclaredMethods();
             if (methods.length > 1) {
                 Comparator<Method> methodComparator = new Comparator<Method>() {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.271 -0500", hash_original_method = "47D61E2A0009DDA953F7DBCF813448D1", hash_generated_method = "799ECE919A479EDD5A113F27DE521F95")
+                    @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.271 -0500", hash_original_method = "47D61E2A0009DDA953F7DBCF813448D1", hash_generated_method = "799ECE919A479EDD5A113F27DE521F95")
                     
 public int compare(Method m1, Method m2) {
                         int result = m1.getName().compareTo(m2.getName());

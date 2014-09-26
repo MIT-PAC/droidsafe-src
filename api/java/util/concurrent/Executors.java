@@ -385,6 +385,7 @@ public static Callable<Object> callable(Runnable task) {
      * @return a callable object
      * @throws NullPointerException if action null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.783 -0500", hash_original_method = "F6FC70FD2057C587C6268022A75CFBC6", hash_generated_method = "0069F1EAA731D9CB4AE019BB10DF004D")
     
 public static Callable<Object> callable(final PrivilegedAction<?> action) {
@@ -402,6 +403,7 @@ public static Callable<Object> callable(final PrivilegedAction<?> action) {
      * @return a callable object
      * @throws NullPointerException if action null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.788 -0500", hash_original_method = "359460025258D9D5DCCDA9E43BB1EDE6", hash_generated_method = "E46C05FBDBDD6F6AACF28A3DBB02B0C1")
     
 public static Callable<Object> callable(final PrivilegedExceptionAction<?> action) {
@@ -677,7 +679,8 @@ PrivilegedThreadFactory() {
         
 public Thread newThread(final Runnable r) {
             return super.newThread(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                     AccessController.doPrivileged(new PrivilegedAction<Void>() {
                         public Void run() {
                             Thread.currentThread().setContextClassLoader(ccl);
@@ -700,15 +703,15 @@ public Thread newThread(final Runnable r) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.887 -0500", hash_original_method = "69B8656E71D4B49ACEB9CE44B20A63F5", hash_generated_method = "69B8656E71D4B49ACEB9CE44B20A63F5")
         
 DelegatedExecutorService(ExecutorService executor) { e = executor; }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.889 -0500", hash_original_method = "680CD1247FE9848C91F828B8B2655AA2", hash_generated_method = "5FF620BA750B9AA4D5060F4389C28B45")
         
 public void execute(Runnable command) { e.execute(command); }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.892 -0500", hash_original_method = "AC5ABD61901BFC6045B0080105C55DDA", hash_generated_method = "47459E05F3A9A2C970C5C1FE50023241")
         
 public void shutdown() { e.shutdown(); }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.894 -0500", hash_original_method = "96CCD300667A8693DD62C1833316B3E7", hash_generated_method = "A990C9CB1A96368BDFAA077334BA9CB2")
         
 public List<Runnable> shutdownNow() { return e.shutdownNow(); }
@@ -756,6 +759,7 @@ Future<T> varEAF64FBE2776E66AA7D7A86DC0368144_678840174 =             e.submit(t
             //return e.submit(task, result);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "F48A0D0A4C3710017B7673C8DB7925EC", hash_generated_method = "763A8BDAED7E7F87F7780CC06FF23828")
         public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException {
             addTaint(tasks.getTaint());
@@ -766,6 +770,7 @@ List<Future<T>> var501DF73082C68D7843A2F94A5A9D39DE_125190879 =             e.in
             //return e.invokeAll(tasks);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "5F911CE685489301A15E24D766797016", hash_generated_method = "F4AC9DAD7CAA5186CA2E4402CBC77145")
         public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks,
                                              long timeout, TimeUnit unit) throws InterruptedException {
@@ -833,12 +838,14 @@ DelegatedScheduledExecutorService(ScheduledExecutorService executor) {
             super(executor);
             e = executor;
         }
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.935 -0500", hash_original_method = "D790041C21C164D4B5FF50718A4BC1E6", hash_generated_method = "800F163B0A4827257227764561C1138C")
         
 public ScheduledFuture<?> schedule(Runnable command, long delay,  TimeUnit unit) {
             return e.schedule(command, delay, unit);
         }
         
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.438 -0400", hash_original_method = "21B2A7EFB4EC4FCA85726955706F3411", hash_generated_method = "10925EFC86BE3C187277C3C9203C26A9")
         public <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit) {
             addTaint(unit.getTaint());

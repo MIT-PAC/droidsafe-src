@@ -1019,6 +1019,7 @@ public final int getAssetInt() {
 public final int read() throws IOException {
             return readAssetChar(mAsset);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.951 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "ECE1D6ECA75A8A8ED8EB2B04120D5135")
         
 public final boolean markSupported() {
@@ -1043,11 +1044,13 @@ public final void close() throws IOException {
                 }
             }
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.958 -0500", hash_original_method = "7D579BCE4EC4312918D553C49FF13AB2", hash_generated_method = "977D6F31208D48FB57BDC64B6E37A6A5")
         
 public final void mark(int readlimit) {
             mMarkPos = seekAsset(mAsset, 0, 0);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.961 -0500", hash_original_method = "659AE57C7CC5071324BF80AF83D49F86", hash_generated_method = "3A811A990EBB42A09F40A22D83164D1C")
         
 public final void reset() throws IOException {

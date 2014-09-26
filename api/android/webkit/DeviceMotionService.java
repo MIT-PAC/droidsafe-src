@@ -95,7 +95,8 @@ private void sendErrorEvent() {
         mHaveSentErrorEvent = true;
         createHandler();
         mHandler.post(new Runnable() {
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void run() {
                 assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
                 if (mIsRunning) {
@@ -117,7 +118,8 @@ private void createHandler() {
 
         mHandler = new Handler();
         mUpdateRunnable = new Runnable() {
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void run() {
                 assert mIsRunning;
                 mManager.onMotionChange(new Double(mLastAcceleration[0]),

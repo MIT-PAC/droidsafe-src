@@ -28,7 +28,8 @@ public abstract class Signature extends SignatureSpi {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.515 -0500", hash_original_method = "4B1132236EA3658AFDF6AAF777F4DB3E", hash_generated_method = "0BC0646CA979D25936278C85621B3FDE")
     
 public static Signature getInstance(String algorithm)
@@ -66,7 +67,8 @@ public static Signature getInstance(String algorithm)
      *             if {@code algorithm} is {@code null}.
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.517 -0500", hash_original_method = "38CF846AD141DABFC78B3F3A9BECF440", hash_generated_method = "84FE1D613CEABBA801933A3986010912")
     
 public static Signature getInstance(String algorithm, String provider)
@@ -100,7 +102,8 @@ public static Signature getInstance(String algorithm, String provider)
      *             if {@code algorithm} is {@code null}.
      * @throws IllegalArgumentException if {@code provider == null}
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.521 -0500", hash_original_method = "BCEC0D04DA2EAAA5A150C425DE98380C", hash_generated_method = "C0DADB9B24DDAB04166766EA961722A3")
     
 public static Signature getInstance(String algorithm, Provider provider)
@@ -307,7 +310,8 @@ public final void initSign(PrivateKey privateKey, SecureRandom random)
      *             if this {@code Signature} instance is not initialized
      *             properly.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.541 -0500", hash_original_method = "1CBD4CB00E49A2B9C590273D2FD8D112", hash_generated_method = "F648DBF6812B9BBA3F208A1D567B6006")
     
 public final byte[] sign() throws SignatureException {
@@ -339,6 +343,7 @@ public final byte[] sign() throws SignatureException {
      *             if {@code offset} or {@code len} are not valid in respect to
      *             {@code outbuf}.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.544 -0500", hash_original_method = "82A870C6C8965CC8E79085F7D8A960EB", hash_generated_method = "0CF31797DBD70D9DCC65BF115CC93754")
     
 public final int sign(byte[] outbuf, int offset, int len)
@@ -508,7 +513,7 @@ public final void update(ByteBuffer data) throws SignatureException {
      * @return a printable representation for this {@code Signature}.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.564 -0500", hash_original_method = "300ADD63628A84B0D8F725B1BA1E9A8E", hash_generated_method = "71DB550FD17BA8B81224C927B01BF247")
     
 @Override
@@ -707,7 +712,7 @@ public final AlgorithmParameters getParameters() {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.583 -0500", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "3129F61A1AC4738DC9444626172FE7E6")
     
 @Override

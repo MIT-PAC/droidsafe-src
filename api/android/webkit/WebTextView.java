@@ -246,7 +246,8 @@ WebTextView(Context context, WebView webView, int autoFillQueryId) {
         setIncludeFontPadding(false);
 
         mHandler = new Handler() {
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                 case AUTOFILL_FORM:
@@ -812,6 +813,7 @@ private void lineUpScroll() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.270 -0500", hash_original_method = "39A98F4B040DD226E88FA29A15911D83", hash_generated_method = "DA9AE56B8BB4FFD858D0586D3517FFFF")
     
 @Override
@@ -973,6 +975,7 @@ public BackgroundDrawable(int width) {
         public void setAlpha(int alpha) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.208 -0500", hash_original_method = "77240A7357C6E5E7293BFF14ACDD79D8", hash_generated_method = "56040A1AD41AD2B6F2B268D1523EBD1A")
         
 @Override
@@ -1043,6 +1046,7 @@ public AutoCompleteAdapter(Context context, ArrayList<String> entries) {
         /**
          * {@inheritDoc}
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.290 -0500", hash_original_method = "C6FC0517987C8200BB760FE857B81ECC", hash_generated_method = "AB8BBDB6105054F60B08743B51D4B3B1")
         
 @Override
@@ -1099,6 +1103,7 @@ void setDefaultSelection() {
         if (mWebView != null) mWebView.incrementTextGeneration();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.298 -0500", hash_original_method = "5F3F3B089AD7E0D8B5861A9F4DCE5D55", hash_generated_method = "0B9FA14057E7819AE176154088D1509A")
     
 @Override

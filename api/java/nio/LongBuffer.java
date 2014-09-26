@@ -138,6 +138,7 @@ public abstract LongBuffer compact();
      * @exception ClassCastException
      *                if {@code otherBuffer} is not a long buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.404 -0500", hash_original_method = "FEA629F677F50B81610B0F350A8DD419", hash_generated_method = "6362DD160C15E6F35EEC5A1808917F88")
     
 public int compareTo(LongBuffer otherBuffer) {

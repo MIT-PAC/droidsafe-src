@@ -80,14 +80,12 @@ public class FragmentActivity extends Activity {
 
     private static final String TAG = "FragmentActivity";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.777 -0400", hash_original_field = "2AF235EEED0492E0CB0E7DE85B56C523", hash_generated_field = "1476D3F2166208C74AB619F6216B021B")
-
     
     static final String FRAGMENTS_TAG = "android:support:fragments";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.786 -0400", hash_original_field = "96C0E1C589D3827CD74FAEAD9361F1E8", hash_generated_field = "9B5590C251929187BF81DBAD4FF353CC")
 
     private static final int HONEYCOMB = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.794 -0400", hash_original_field = "EAAFB98425DBE846CB8FBA82BAAF6325", hash_generated_field = "3858BC703C64AB39E77D6A854C205B10")
-
 
     static final int MSG_REALLY_STOPPED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.802 -0400", hash_original_field = "28C9C9C3A034C36DDBDED7A2C6A353CA", hash_generated_field = "85BC97DB38BAD7BD3198C330C85F8A73")
@@ -163,8 +161,8 @@ private static String viewToString(View view) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.843 -0400", hash_original_field = "B6CF24EA10173E0BC85E43BB41A9FCDE", hash_generated_field = "BECA490C14B3A85E8F6656B501E4FB1A")
 
-
     final Handler mHandler = new Handler() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -195,7 +193,6 @@ private static String viewToString(View view) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.880 -0400", hash_original_field = "271824B07358893C73D20BA1540862F9", hash_generated_field = "271824B07358893C73D20BA1540862F9")
-
     
     boolean mCreated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.886 -0400", hash_original_field = "23D2434AD22548E124B62AB7739838E9", hash_generated_field = "23D2434AD22548E124B62AB7739838E9")
@@ -212,10 +209,8 @@ private static String viewToString(View view) {
     boolean mRetaining;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.915 -0400", hash_original_field = "DB8D4CEB8A7AAD8A9737A3EEEA202045", hash_generated_field = "DB8D4CEB8A7AAD8A9737A3EEEA202045")
 
-
     boolean mOptionsMenuInvalidated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.922 -0400", hash_original_field = "93A369593E1CC22C7DE8D4D5C675B065", hash_generated_field = "93A369593E1CC22C7DE8D4D5C675B065")
-
 
     boolean mCheckedForLoaderManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.930 -0400", hash_original_field = "D357ECA56BF47F1751443279339D50DF", hash_generated_field = "D357ECA56BF47F1751443279339D50DF")
@@ -252,6 +247,7 @@ private static String viewToString(View view) {
     /**
      * Dispatch incoming result to the correct fragment.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.054 -0400", hash_original_method = "AE8D2F77597464B24506681CBB435A18", hash_generated_method = "F96AA07650E84FF2DD96427AE369120F")
     
 @Override
@@ -282,6 +278,7 @@ private static String viewToString(View view) {
      * Take care of popping the fragment back stack or finishing the activity
      * as appropriate.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.063 -0400", hash_original_method = "6AE13C43A807A8F581EF7E482513BDAF", hash_generated_method = "CF5708D46158611B2F85B74F95385050")
     
 public void onBackPressed() {
@@ -293,6 +290,7 @@ public void onBackPressed() {
     /**
      * Dispatch configuration change to all fragments.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.071 -0400", hash_original_method = "55FDC064636609C07EA6D352B59B7C90", hash_generated_method = "76BDF28D6E929F021A1122FAA7735C20")
     
 @Override
@@ -304,6 +302,7 @@ public void onBackPressed() {
     /**
      * Perform initialization of all fragments and loaders.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.083 -0400", hash_original_method = "C455F2D927ADC92D1A4791D782C4857A", hash_generated_method = "37BBEA285A8084C4915C89DE4C0CCC39")
     
 @Override
@@ -331,6 +330,7 @@ public void onBackPressed() {
     /**
      * Dispatch to Fragment.onCreateOptionsMenu().
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.094 -0400", hash_original_method = "7F7FAA4BD379FD5B7B024567C1869B85", hash_generated_method = "13CF782AFB733F50D45620274C50E190")
     
 @Override
@@ -352,6 +352,7 @@ public void onBackPressed() {
     /**
      * Add support for inflating the &lt;fragment> tag.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.125 -0400", hash_original_method = "17F38949B7A4A56647BD97EEE6C9AAD8", hash_generated_method = "CC32EABA9B6FF3719BCE49104F003BF5")
     
 @Override
@@ -443,6 +444,7 @@ public void onBackPressed() {
     /**
      * Destroy all fragments and loaders.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.134 -0400", hash_original_method = "81DE240BA78D06EF3CA4E4150F572C81", hash_generated_method = "808CF2626AF6DCC1C8634FF7BB4FDEE1")
     
 @Override
@@ -460,6 +462,7 @@ public void onBackPressed() {
     /**
      * Take care of calling onBackPressed() for pre-Eclair platforms.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.146 -0400", hash_original_method = "9885A8D8E166C211280B71A198245DDA", hash_generated_method = "E8C178F9BC4F744C815BC004DC198F2A")
     
 @Override
@@ -479,6 +482,7 @@ public void onBackPressed() {
     /**
      * Dispatch onLowMemory() to all fragments.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.154 -0400", hash_original_method = "5060399A61D97F30C880AACCBE3D1906", hash_generated_method = "DBB8A84F8043B0C98655B4E0475841C9")
     
 @Override
@@ -490,6 +494,7 @@ public void onBackPressed() {
     /**
      * Dispatch context and options menu to fragments.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.163 -0400", hash_original_method = "07B1A6CC471050623DC993725853B976", hash_generated_method = "530F671A3A990FD3917307868BC0297B")
     
 @Override
@@ -513,6 +518,7 @@ public void onBackPressed() {
     /**
      * Call onOptionsMenuClosed() on fragments.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.171 -0400", hash_original_method = "B1F57A749E35030E5CB8EAB506D19441", hash_generated_method = "620193A6AA3E0D720E2B0FB228FA1084")
     
 @Override
@@ -528,6 +534,7 @@ public void onBackPressed() {
     /**
      * Dispatch onPause() to fragments.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.180 -0400", hash_original_method = "EBBC480BA94BD3D79D683AB555C9F857", hash_generated_method = "CBF7C94BC9CFD995420B236C0E481D7C")
     
 @Override
@@ -551,6 +558,7 @@ public void onBackPressed() {
      * perform fragment operations at that point will throw IllegalStateException
      * because the fragment manager thinks the state is still saved.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.187 -0400", hash_original_method = "22DD6D11219C23D125AE29FC1331896B", hash_generated_method = "53E5B217C7BAF31B412612C6A27C6C3C")
     
 @Override
@@ -568,6 +576,7 @@ public void onBackPressed() {
      * with fragments in their proper state, you should instead override
      * {@link #onResumeFragments()}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.195 -0400", hash_original_method = "3FCB5D73B297020DDBEAF38F4A9C2458", hash_generated_method = "EBD9DE655F7E270E45122113F3A44AEA")
     
 @Override
@@ -581,6 +590,7 @@ public void onBackPressed() {
     /**
      * Dispatch onResume() to fragments.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.202 -0400", hash_original_method = "6B2BC88BC45E8448086501D1DCC5CA8F", hash_generated_method = "68332A465763AA2B520D839C0EAB3025")
     
 @Override
@@ -606,6 +616,7 @@ protected void onResumeFragments() {
     /**
      * Dispatch onPrepareOptionsMenu() to fragments.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.217 -0400", hash_original_method = "8752F68D48E0E30171A3505F074FD7CA", hash_generated_method = "DF020307F5580C93864A55F8DCFB6283")
     
 @Override
@@ -683,6 +694,7 @@ protected boolean onPrepareOptionsPanel(View view, Menu menu) {
     /**
      * Save all appropriate fragment state.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.244 -0400", hash_original_method = "C79CD565EF7D4DAA3E1BC7711F48F8E1", hash_generated_method = "2E6E2F5F57A21F8DEC19DF3B846B8726")
     
 @Override
@@ -698,6 +710,7 @@ protected boolean onPrepareOptionsPanel(View view, Menu menu) {
      * Dispatch onStart() to all fragments.  Ensure any created loaders are
      * now started.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.254 -0400", hash_original_method = "37CE581611F46DA12123359EFF80059E", hash_generated_method = "DE6BE77CB4B024DF69719EA7CFFDFE7E")
     
 @Override
@@ -749,6 +762,7 @@ protected boolean onPrepareOptionsPanel(View view, Menu menu) {
     /**
      * Dispatch onStop() to all fragments.  Ensure all loaders are stopped.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.262 -0400", hash_original_method = "F60F215A385D287752751758F3F3D1D2", hash_generated_method = "FDEC7156FC09FAF744D2194CB181DF6D")
     
 @Override
@@ -819,6 +833,7 @@ public void supportInvalidateOptionsMenu() {
      * closed for you after you return.
      * @param args additional arguments to the dump request.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.293 -0400", hash_original_method = "793A438044EEB54318015A62231AC042", hash_generated_method = "7DE5CD94519222AFEEE75BA864A79CC0")
     
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
@@ -932,6 +947,8 @@ public FragmentManager getSupportFragmentManager() {
      * Modifies the standard behavior to allow results to be delivered to fragments.
      * This imposes a restriction that requestCode be <= 0xffff.
      */
+    @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.349 -0400", hash_original_method = "5BE63D387764C79BADD7265D6253130D", hash_generated_method = "228971E4038BBD75957201B044AA9C5F")
     
 @Override
@@ -945,6 +962,7 @@ public FragmentManager getSupportFragmentManager() {
     /**
      * Called by Fragment.startActivityForResult() to implement its behavior.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.359 -0400", hash_original_method = "62E7172DD8437600599EFB859FBECAC1", hash_generated_method = "F18A99B335F562AFDA4B0537816312B8")
     
 public void startActivityFromFragment(Fragment fragment, Intent intent, 
@@ -990,6 +1008,7 @@ public LoaderManager getSupportLoaderManager() {
         return mLoaderManager;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.382 -0400", hash_original_method = "8A15810F89181824BB2AE7768363BB1E", hash_generated_method = "8A15810F89181824BB2AE7768363BB1E")
     
 LoaderManagerImpl getLoaderManager(String who, boolean started, boolean create) {

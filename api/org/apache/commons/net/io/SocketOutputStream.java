@@ -59,7 +59,6 @@ public SocketOutputStream(Socket socket, OutputStream stream)
         __socket = socket;
     }
 
-
     /***
      * Writes a number of bytes from a byte array to the stream starting from
      * a given offset.  This method bypasses the equivalent method in
@@ -74,13 +73,12 @@ public SocketOutputStream(Socket socket, OutputStream stream)
      ***/
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:06.084 -0500", hash_original_method = "2025D8159C2E55719645FF1B84712B94", hash_generated_method = "AF8A52B23E466A1E85C0396FA63F30D8")
     @DSVerified
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.NETWORK})
 public void write(byte buffer[], int offset, int length) throws IOException
     {
         out.write(buffer, offset, length);
     }
-
 
     /***
      * Closes the stream and immediately afterward closes the referenced

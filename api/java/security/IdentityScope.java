@@ -22,7 +22,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import java.util.Enumeration;
 
-
 /**
  * {@code IdentityScope} represents a scope for {@link Identity} objects.
  *
@@ -33,7 +32,6 @@ import java.util.Enumeration;
 @Deprecated
 public abstract class IdentityScope extends Identity {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.697 -0400", hash_original_field = "08A0F27CD0562B7CD7AA92BE24CD0E4F", hash_generated_field = "34216120030945EDA63A23E7691520EE")
-
 
     private static final long serialVersionUID = -2337346281189773310L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.698 -0400", hash_original_field = "6A3034E5FE10947D39746BC34158A299", hash_generated_field = "90C51CD9A0315A6B29F7769C04740F7D")
@@ -214,6 +212,7 @@ public abstract Enumeration<Identity> identities();
      *
      * @return a printable representation for this {@code IdentityScope}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.718 -0400", hash_original_method = "CDC23327B4FD60E22B509260E7012F1C", hash_generated_method = "0748E3B19E2379312F3AEB28D15877E9")
     
 @Override

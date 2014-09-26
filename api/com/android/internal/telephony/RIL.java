@@ -545,6 +545,7 @@ static String
 
     BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.295 -0400", hash_original_method = "2E7815AD99D182A9CFAEBA30A64F6122", hash_generated_method = "553AEA2DBD1EADB4B4CC318E4F64ACC6")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -3853,7 +3854,7 @@ public RILSender(Looper looper) {
         }
 
         //***** Runnable implementation
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.122 -0500", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "AB7009E9147A46711C31F9E68A9A4C54")
         
 public void
@@ -3863,7 +3864,7 @@ public void
 
         //***** Handler implementation
         @DSSafe(DSCat.IPC_CALLBACK)
-        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.127 -0500", hash_original_method = "D25DB5A43D9B976C2A2C198EC34CFB08", hash_generated_method = "31FD0E667E5596F74C850B900AEA6238")
         
 @Override public void
@@ -4022,7 +4023,7 @@ RILReceiver() {
             buffer = new byte[RIL_MAX_COMMAND_BYTES];
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.142 -0500", hash_original_method = "3E25FFC0D00CEB4B0CF0C518A51DB777", hash_generated_method = "CB2E9E1461282E6FAEAB0D17308BF755")
         
 public void

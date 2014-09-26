@@ -7,6 +7,7 @@ import droidsafe.annotations.*;
 
 public class SipErrorCode {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.960 -0500", hash_original_method = "4F9BFA28170DB7CB0E6F645850B92FEE", hash_generated_method = "58EB78A50ECE703708D7F8B99BE4EC5E")
     
 public static String toString(int errorCode) {

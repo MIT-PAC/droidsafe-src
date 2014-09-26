@@ -38,7 +38,7 @@ public static boolean intersects(RectF a, RectF b) {
         /**
          * Return a new rectangle from the data in the specified parcel.
          */
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.947 -0500", hash_original_method = "A6A0C6EE524221145489C3D66C6A94BD", hash_generated_method = "C45F9601A0A982039FA7B7D5119617E1")
         
 public RectF createFromParcel(Parcel in) {
@@ -179,14 +179,14 @@ public RectF() {}
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void set(RectF src) {
     	addTaintLocal(src.getTaintInt());
     }
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void set(Rect src) {
         addTaintLocal(src.getTaintInt());
     }

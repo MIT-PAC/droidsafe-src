@@ -146,14 +146,14 @@ ReceiverRestrictedContext(Context base) {
 
         service.getStringExtra("");
         service.getStringArrayExtra("");
-        service.getStringArrayListExtra("");      
+        service.getStringArrayListExtra("");
 
         service.getCharExtra("", 'a');
         service.getCharArrayExtra("");
         
         service.getCharSequenceArrayExtra("");
         service.getCharSequenceArrayListExtra("");
-        service.getCharSequenceExtra("");              
+        service.getCharSequenceExtra("");
 
         service.getData();
         service.getFlags();
@@ -428,7 +428,8 @@ public ContextImpl(ContextImpl context) {
         return new String("DSUnknown (Package Name)");
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @Override
     public ApplicationInfo getApplicationInfo() {
         throw new UnsupportedOperationException();
@@ -516,7 +517,6 @@ private File getPreferencesDir() {
     public File[] getExternalFilesDirs(String type) {
         return new File[]{new File("<external-files-dir>")};
     }
-
     
     @Override
     @DSSafe(DSCat.SAFE_OTHERS)
@@ -536,7 +536,6 @@ private File getPreferencesDir() {
         return new File("<external-cache-dir>");
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSSafe(DSCat.FS_INFO)
     public File[] getExternalCacheDirs(String type) {
         File file = new File("<external-cache-dirs>/{type=" + type + "}");
@@ -550,14 +549,12 @@ private File getPreferencesDir() {
         return new File[] {file};
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSSafe(DSCat.FS_INFO)
     public File[] getObbDirs(String type) {
         File file = new File("<obb-dir>");
         return new File[] {file};
     }
-
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override
     @DSSafe(DSCat.FS_INFO)
     public File getFileStreamPath(String name) {
@@ -708,14 +705,14 @@ private File getPreferencesDir() {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();
@@ -764,14 +761,14 @@ private File getPreferencesDir() {
 
         fillInIntent.getStringExtra("");
         fillInIntent.getStringArrayExtra("");
-        fillInIntent.getStringArrayListExtra("");      
+        fillInIntent.getStringArrayListExtra("");
 
         fillInIntent.getCharExtra("", 'a');
         fillInIntent.getCharArrayExtra("");
         
         fillInIntent.getCharSequenceArrayExtra("");
         fillInIntent.getCharSequenceArrayListExtra("");
-        fillInIntent.getCharSequenceExtra("");              
+        fillInIntent.getCharSequenceExtra("");
 
         fillInIntent.getData();
         fillInIntent.getFlags();
@@ -809,14 +806,14 @@ private File getPreferencesDir() {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();
@@ -854,14 +851,14 @@ private File getPreferencesDir() {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();
@@ -900,14 +897,14 @@ private File getPreferencesDir() {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();
@@ -947,14 +944,14 @@ private File getPreferencesDir() {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();
@@ -992,14 +989,14 @@ private File getPreferencesDir() {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();
@@ -1039,14 +1036,14 @@ private File getPreferencesDir() {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();
@@ -1082,14 +1079,14 @@ private File getPreferencesDir() {
 
         intent.getStringExtra("");
         intent.getStringArrayExtra("");
-        intent.getStringArrayListExtra("");      
+        intent.getStringArrayListExtra("");
 
         intent.getCharExtra("", 'a');
         intent.getCharArrayExtra("");
         
         intent.getCharSequenceArrayExtra("");
         intent.getCharSequenceArrayListExtra("");
-        intent.getCharSequenceExtra("");              
+        intent.getCharSequenceExtra("");
 
         intent.getData();
         intent.getFlags();
@@ -1179,14 +1176,14 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
 
         service.getStringExtra("");
         service.getStringArrayExtra("");
-        service.getStringArrayListExtra("");      
+        service.getStringArrayListExtra("");
 
         service.getCharExtra("", 'a');
         service.getCharArrayExtra("");
         
         service.getCharSequenceArrayExtra("");
         service.getCharSequenceArrayListExtra("");
-        service.getCharSequenceExtra("");              
+        service.getCharSequenceExtra("");
 
         service.getData();
         service.getFlags();
@@ -1225,14 +1222,14 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
 
         service.getStringExtra("");
         service.getStringArrayExtra("");
-        service.getStringArrayListExtra("");      
+        service.getStringArrayListExtra("");
 
         service.getCharExtra("", 'a');
         service.getCharArrayExtra("");
         
         service.getCharSequenceArrayExtra("");
         service.getCharSequenceArrayListExtra("");
-        service.getCharSequenceExtra("");              
+        service.getCharSequenceExtra("");
 
         service.getData();
         service.getFlags();
@@ -1249,7 +1246,6 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         //throw new UnsupportedOperationException();
-        
         
         if (serviceCompName == null) {
             serviceCompName = new ComponentName(new String(), new String());
@@ -1435,6 +1431,7 @@ private void enforceForUri(
         return this;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
     public boolean isRestricted() {
         return true;

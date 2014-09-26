@@ -37,7 +37,7 @@ public final class InputMethodInfo implements Parcelable {
 
     public static final Parcelable.Creator<InputMethodInfo> CREATOR
             = new Parcelable.Creator<InputMethodInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.892 -0500", hash_original_method = "34C1AEE140730DF166077C8E73F0BE76", hash_generated_method = "C27F28F17D48C099A99B45AE9B5CC4F1")
         
 @Override

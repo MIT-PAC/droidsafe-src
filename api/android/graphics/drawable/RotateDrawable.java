@@ -92,7 +92,7 @@ public Drawable getDrawable() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.485 -0500", hash_original_method = "1BF1269A7F11A078222AE5900C6EC170", hash_generated_method = "F4C80938C81C1C6892334A7C3046F63C")
     
 @Override
@@ -113,7 +113,7 @@ public void setAlpha(int alpha) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.490 -0500", hash_original_method = "6C570D1758B788EA390E83E99A76EB36", hash_generated_method = "57E12D7F67277B3DA8CEB2F6EEEB7C12")
     
 public void setColorFilter(ColorFilter cf) {
@@ -173,7 +173,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.504 -0500", hash_original_method = "BD39509C4CE6111239623166AC9A09DC", hash_generated_method = "E4769A7F6CE43D19F0D91F896E2EF83B")
     
 @Override
@@ -397,6 +397,7 @@ public RotateState(RotateState source, RotateDrawable owner, Resources res) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.557 -0500", hash_original_method = "9DE14D671D62BC2F01E2871493505073", hash_generated_method = "3FDDAEFAEEA27DF3505DB824B048376A")
         
 @Override
@@ -404,6 +405,7 @@ public RotateState(RotateState source, RotateDrawable owner, Resources res) {
             return new RotateDrawable(this, null);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.559 -0500", hash_original_method = "3300EE781F91D7B956F1DECE09B43C56", hash_generated_method = "CB58A5BF2826784B7A1D8EDCEBDC058F")
         
 @Override

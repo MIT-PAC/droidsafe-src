@@ -26,8 +26,6 @@ import javax.security.auth.x500.X500Principal;
 import org.apache.harmony.security.utils.Array;
 import org.apache.harmony.security.x509.NameConstraints;
 
-
-
 /**
  * This class represents a trust anchor for validation of X.509 certification
  * path.
@@ -258,6 +256,7 @@ public final PublicKey getCAPublicKey() {
      *
      * @return a string representation of this {@code TrustAnchor} instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.990 -0400", hash_original_method = "343584D33601870512655CC46D6EE2A0", hash_generated_method = "BE1706A18A5646F9D9A9045F25291A91")
     
 public String toString() {

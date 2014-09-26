@@ -101,7 +101,8 @@ private void sendErrorEvent() {
             return;
         mHaveSentErrorEvent = true;
         mHandler.post(new Runnable() {
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void run() {
                 assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
                 if (mIsRunning) {

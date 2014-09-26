@@ -104,7 +104,8 @@ private void rebindWapPushManager() {
 
             final ServiceConnection wapPushConnection = this;
             new Thread() {
-                public void run() {
+                @DSSpec(DSCat.SPEC_OTHERS)
+            public void run() {
                     while (mWapPushMan == null) {
                         mOwner.bindService(new Intent(IWapPushManager.class.getName()),
                                 wapPushConnection, Context.BIND_AUTO_CREATE);

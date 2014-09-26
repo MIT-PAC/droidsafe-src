@@ -18,7 +18,7 @@ public final class NdefMessage implements Parcelable {
 
     public static final Parcelable.Creator<NdefMessage> CREATOR =
             new Parcelable.Creator<NdefMessage>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.071 -0500", hash_original_method = "2309D164C76EDDEB5F889CEC6615477A", hash_generated_method = "EAE0E4E842B5024260917892E89EB81B")
         
 @Override

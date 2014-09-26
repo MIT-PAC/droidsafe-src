@@ -104,7 +104,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.947 -0500", hash_original_method = "6AD7B97F2FA9AF7B8D3F27597107B2BF", hash_generated_method = "E38CDAC51F0AE0D04C06CC4C93C73513")
     
 @Override
@@ -136,8 +136,8 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         socket.setTrafficClass(tos);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.INTERNET)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.956 -0500", hash_original_method = "C6CB523E9BEBBF3CF2CBCDA94ED50C2A", hash_generated_method = "6BA461BD87F4524E979F9BB5555D0B75")
     
 @Override

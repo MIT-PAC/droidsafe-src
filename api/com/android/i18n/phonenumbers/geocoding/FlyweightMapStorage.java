@@ -202,7 +202,8 @@ public FlyweightMapStorage() {}
       String description = sortedAreaCodeMap.get(prefix);
       int positionInDescriptionPool =
           Arrays.binarySearch(descriptionPool, description, new Comparator<String>() {
-            public int compare(String o1, String o2) { return o1.compareTo(o2); }
+            @DSSafe(DSCat.SAFE_LIST)
+        public int compare(String o1, String o2) { return o1.compareTo(o2); }
           });
       storeWordInBuffer(descriptionIndexes, descIndexSizeInBytes, index++,
                         positionInDescriptionPool);

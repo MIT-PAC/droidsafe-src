@@ -28,10 +28,8 @@ import droidsafe.helpers.*;
 public class UnknownFormatFlagsException extends IllegalFormatException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:01.589 -0400", hash_original_field = "A224D6FD062053780FB877F166AA84BC", hash_generated_field = "673917F14258B85D75E7450B8DB8C1B7")
 
-
     private static final long serialVersionUID = 19370506L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:01.590 -0400", hash_original_field = "806B57DB0428E85D2726FB0E46248D66", hash_generated_field = "656D592B6CD40AFAB0AF81166CB40D7D")
-
 
     private  String flags;
 
@@ -62,6 +60,7 @@ public String getFlags() {
         return flags;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:01.591 -0400", hash_original_method = "58A1FE0D4A5171FD802A92BA519741E7", hash_generated_method = "CF9AA932853A2CB8E9687DDB85C3EFD9")
     
 @Override

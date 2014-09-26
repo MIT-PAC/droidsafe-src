@@ -470,7 +470,8 @@ ObbListenerDelegate(OnObbStateChangeListener listener) {
             nonce = getNextNonce();
             mObbEventListenerRef = new WeakReference<OnObbStateChangeListener>(listener);
             mHandler = new Handler(mTgtLooper) {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void handleMessage(Message msg) {
                     final OnObbStateChangeListener changeListener = getListener();
                     if (changeListener == null) {
@@ -610,7 +611,8 @@ public StorageStateChangedStorageEvent(String p, String oldS, String newS) {
 ListenerDelegate(StorageEventListener listener) {
             mStorageEventListener = listener;
             mHandler = new Handler(mTgtLooper) {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void handleMessage(Message msg) {
                     StorageEvent e = (StorageEvent) msg.obj;
 

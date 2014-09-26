@@ -108,6 +108,8 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * Returns the value of the field at {@code position}. Returns null if there
      * are fewer than {@code position} headers.
      */
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.505 -0500", hash_original_method = "2FDBF8E663ECDF1396771B3FB2E938AE", hash_generated_method = "06437FA6B22B1A855ACD6C65696EC4F8")
     
 @Override public final String getHeaderField(int position) {
@@ -123,6 +125,8 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * null if there is no such field. If the field has multiple values, the
      * last value is returned.
      */
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.507 -0500", hash_original_method = "8E358A78EB7A8F16DBAC360C5AE52593", hash_generated_method = "E975B3413BF7B4CBEA3B72CCBD80757D")
     
 @Override public final String getHeaderField(String fieldName) {
@@ -196,7 +200,8 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         return result;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.521 -0500", hash_original_method = "37EC8C214191B016BC801CEDA20A2C80", hash_generated_method = "90A3BD13B64C0D5D9A78F0CA7D768269")
     
 @Override public final OutputStream getOutputStream() throws IOException {
@@ -578,6 +583,7 @@ final void setProxy(Proxy proxy) {
         rawRequestHeaders.set(field, newValue);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.579 -0500", hash_original_method = "7F83225C975C5F17C1596781844ADD1B", hash_generated_method = "3055422F5B2C0F0ECA56E6824CDB085A")
     
 @Override public final void addRequestProperty(String field, String value) {

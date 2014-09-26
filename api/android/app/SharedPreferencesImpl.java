@@ -136,7 +136,8 @@ private void startLoadFromDisk() {
             mLoaded = false;
         }
         new Thread("SharedPreferencesImpl-load") {
-            public void run() {
+            @DSSpec(DSCat.SPEC_OTHERS)
+        public void run() {
                 synchronized (SharedPreferencesImpl.this) {
                     loadFromDiskLocked();
                 }
@@ -489,7 +490,8 @@ public Editor clear() {
 public void apply() {
             final MemoryCommitResult mcr = commitToMemory();
             final Runnable awaitCommit = new Runnable() {
-                    public void run() {
+                    @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                         try {
                             mcr.writtenToDiskLatch.await();
                         } catch (InterruptedException ignored) {
@@ -500,7 +502,8 @@ public void apply() {
             QueuedWork.add(awaitCommit);
 
             Runnable postWriteRunnable = new Runnable() {
-                    public void run() {
+                    @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                         awaitCommit.run();
                         QueuedWork.remove(awaitCommit);
                     }
@@ -619,7 +622,8 @@ private void notifyListeners(final MemoryCommitResult mcr) {
             } else {
                 // Run this function on the main thread.
                 ActivityThread.sMainThreadHandler.post(new Runnable() {
-                        public void run() {
+                        @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                             notifyListeners(mcr);
                         }
                     });

@@ -117,6 +117,7 @@ public void setIsZoomOutEnabled(boolean isEnabled) {
         mZoomOut.setEnabled(isEnabled);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.803 -0500", hash_original_method = "627B89961C8BD752C151F14A1A83054C", hash_generated_method = "1DE89AEF970F6AE725F523A10C9602CC")
     
 @Override

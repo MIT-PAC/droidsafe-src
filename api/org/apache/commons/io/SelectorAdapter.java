@@ -60,6 +60,7 @@ public class SelectorAdapter extends Selector {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.263 -0400", hash_original_method = "43213C532846F18B5179BE18C808B75D", hash_generated_method = "EB4CCE094181A5282252A8361FA42C02")
     
 @Override
@@ -67,6 +68,7 @@ public class SelectorAdapter extends Selector {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.263 -0400", hash_original_method = "38DC30CDF866E22F2FBB173A84AB2027", hash_generated_method = "2668848C3A2DC514D1D8FF54326E966C")
     
 @Override
@@ -74,6 +76,7 @@ public class SelectorAdapter extends Selector {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.264 -0400", hash_original_method = "DC824D21A3405E7C0A67E8892448DD45", hash_generated_method = "E15F2B3299B09BE06053A756D444E0F0")
     
 @Override
@@ -88,6 +91,7 @@ public class SelectorAdapter extends Selector {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.264 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "A02E08A88CC8B9595BC3CD08A1523FE3")
     
 @Override

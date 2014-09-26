@@ -349,6 +349,7 @@ public abstract void setAdapter(T adapter);
      *
      * @throws UnsupportedOperationException Every time this method is invoked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.021 -0500", hash_original_method = "EB15614617786EFEBA3A034D912AA71E", hash_generated_method = "F5ED2A291BF9C1A632D6A76E7C88CB61")
     
 @Override
@@ -712,6 +713,7 @@ public long getItemIdAtPosition(int position) {
         dispatchThawSelfOnly(container);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.088 -0500", hash_original_method = "8130EF0B42BA515F653DEDC83DE0BC01", hash_generated_method = "17D25D35340055C0BFBBE435ADE26095")
     
 @Override
@@ -838,6 +840,7 @@ private boolean isScrollableForAccessibility() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.112 -0500", hash_original_method = "F40AC428F4D570BD34339564A5B5BB04", hash_generated_method = "CC1AEAD8AD1B4127904290637F03EBAB")
     
 @Override
@@ -940,7 +943,7 @@ public void clearSavedState() {
         {
             //Synthesized constructor
         }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.091 -0500", hash_original_method = "D0BC3F1278F7B077D905A46BC661B1BD", hash_generated_method = "B26F0B51B83AF5C0B11A636BE5247FD9")
         
 public void run() {

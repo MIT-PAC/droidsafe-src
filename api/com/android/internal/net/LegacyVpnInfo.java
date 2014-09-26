@@ -31,7 +31,7 @@ public class LegacyVpnInfo implements Parcelable {
 
     public static final Parcelable.Creator<LegacyVpnInfo> CREATOR =
             new Parcelable.Creator<LegacyVpnInfo>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:58.930 -0500", hash_original_method = "A46B4E61A6786E2EC5A02BFF9297FE09", hash_generated_method = "87A9E08394118D8E716C2510A919BB7E")
         
 @Override

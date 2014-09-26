@@ -75,7 +75,8 @@ public AnticipateOvershootInterpolator(Context context, AttributeSet attrs) {
         a.recycle();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.631 -0500", hash_original_method = "2255DD32EB6AB62491E070729AD8FA55", hash_generated_method = "6AC09E7923C11621C591AE16BBAB1E35")
     
 public float getInterpolation(float t) {

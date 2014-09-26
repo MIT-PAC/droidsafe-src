@@ -77,6 +77,7 @@ private static int getCenterOfView(View view) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.960 -0400", hash_original_field = "CA72A41BFA85D123FCEBDA446C142B0D", hash_generated_field = "7D17FC7B784C4DFE85940485A53D6A7C")
 
     private Runnable mDisableSuppressSelectionChangedRunnable = new Runnable() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.604 -0500", hash_original_method = "6390BF84CDDE59DC47728D8159023DBB", hash_generated_method = "EC53DAA1910EBD75CF282B72F9F30C01")
         
 @Override
@@ -609,7 +610,7 @@ private void setSelectionToCenterChild() {
      *            means the selection is moving to the left.
      */
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.694 -0500", hash_original_method = "D35D4AE43FE4EA4BE64F388903B9B437", hash_generated_method = "EF47E26112783A6DCAC5E205AD308B9F")
     
 @Override
@@ -1284,6 +1285,7 @@ private boolean dispatchLongPress(View view, int position, long id) {
      * Handles left, right, and clicking
      * @see android.view.View#onKeyDown
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.762 -0500", hash_original_method = "869521EFCB7C5245B063DFB17EC10284", hash_generated_method = "C1528D544A2327E9216257B325B00EE3")
     
 @Override
@@ -1311,6 +1313,7 @@ private boolean dispatchLongPress(View view, int position, long id) {
         return super.onKeyDown(keyCode, event);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.768 -0500", hash_original_method = "35A1E5E2696C4EED13BCBB9C99C03D0D", hash_generated_method = "71C6D66516CD89A5505DC5591A94C23E")
     
 @Override
@@ -1324,7 +1327,8 @@ private boolean dispatchLongPress(View view, int position, long id) {
     
                     dispatchPress(mSelectedChild);
                     postDelayed(new Runnable() {
-                        @Override
+                        @DSSafe(DSCat.SAFE_LIST)
+        @Override
                         public void run() {
                             dispatchUnpress();
                         }
@@ -1505,7 +1509,7 @@ private void endFling(boolean scrollIntoSlots) {
             if (scrollIntoSlots) scrollIntoSlots();
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.810 -0500", hash_original_method = "201C15A7F851961F5BCBCACEEAE4B252", hash_generated_method = "B66377B3D3DA3C00F95C7EB3E42BD424")
         
 @Override

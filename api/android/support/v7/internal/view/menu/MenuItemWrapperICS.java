@@ -43,7 +43,6 @@ public class MenuItemWrapperICS extends BaseMenuWrapper<android.view.MenuItem> i
     static final String LOG_TAG = "MenuItemWrapper";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.874 -0400", hash_original_field = "67D9A707D42013246D5F575A188F1FED", hash_generated_field = "FD5296B3715A1F5C47C0E2EB23158778")
 
-
     private  boolean mEmulateProviderVisibilityOverride;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.876 -0400", hash_original_field = "9F3E9C50359B26276D21DC0ECBC47052", hash_generated_field = "1F23495C802B4434629A95DB851C3F84")
 
@@ -66,6 +65,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         this(object, true);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.884 -0400", hash_original_method = "D7FD468112C6CDB45907471968ED6DDE", hash_generated_method = "A3715838890FD76C308A371E289B2F56")
     
 @Override
@@ -73,6 +73,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getItemId();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.886 -0400", hash_original_method = "259403D85C6B513FA3BC323BDB01657F", hash_generated_method = "53302933341E0B08F1422D59B79622FC")
     
 @Override
@@ -80,6 +81,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getGroupId();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.890 -0400", hash_original_method = "EA05504952D99F97F346179191A0FA1D", hash_generated_method = "DF33BE1E7ED919AFDD50CF850D179F0D")
     
 @Override
@@ -87,6 +89,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getOrder();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.892 -0400", hash_original_method = "36221A506C4318BAE4A45BF1C70A65E7", hash_generated_method = "D7566B8A0AB3DB3311CD3CCA211FE8B3")
     
 @Override
@@ -95,6 +98,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.895 -0400", hash_original_method = "9186FE02CA2CE8E590B41D624B78A4C6", hash_generated_method = "D1F23393C8A55B7A8E2C7A5DB865B80F")
     
 @Override
@@ -103,6 +107,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.897 -0400", hash_original_method = "9EE6D2DDA3272B8060633454B2464840", hash_generated_method = "8BB2563A2B07C0D3BCAC1558BFFD5FC0")
     
 @Override
@@ -110,6 +115,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getTitle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.899 -0400", hash_original_method = "18688A7C7E6DD00BB9927049CBDBC592", hash_generated_method = "99CA33821A31EB8474B5B597D4FC3B89")
     
 @Override
@@ -118,6 +124,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.902 -0400", hash_original_method = "1C389E80873C9610B59555218E09C345", hash_generated_method = "B026002A98EC29B73DE4661EC8F728EF")
     
 @Override
@@ -125,6 +132,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getTitleCondensed();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.904 -0400", hash_original_method = "E2302E338A4875A813026ABE62186D17", hash_generated_method = "C5D3EBC354F78650DF2233C408BED5CE")
     
 @Override
@@ -133,6 +141,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.906 -0400", hash_original_method = "45B137DF67E66713CCAF4DEFB0CFE6D1", hash_generated_method = "490E21A8C6072388497D3B82496B9824")
     
 @Override
@@ -141,6 +150,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.908 -0400", hash_original_method = "4719C6903C03EC872B5FD4595188F02D", hash_generated_method = "189495E1566A3CEA8F056FEF4F390257")
     
 @Override
@@ -148,6 +158,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getIcon();
     }
 
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.911 -0400", hash_original_method = "BC9153903FB590EE23335EF428AC3A63", hash_generated_method = "4FA2550AC9E671C58AEF62C10733F0FE")
     
 @Override
@@ -156,6 +167,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.913 -0400", hash_original_method = "CA71F58F3DDF532BF7D440E8AE05D786", hash_generated_method = "5A21B0F60B842789D8A8CBA48B84A163")
     
 @Override
@@ -163,6 +175,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getIntent();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.916 -0400", hash_original_method = "5F716842B81C1A62397607089B15451C", hash_generated_method = "03848808203BA27F9AFEC0A6AD484DEE")
     
 @Override
@@ -171,6 +184,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.918 -0400", hash_original_method = "04580B87FEA1171BB15A8475D1FE332E", hash_generated_method = "B9097A9595FDB160A24E3FC58D4B839A")
     
 @Override
@@ -179,6 +193,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.921 -0400", hash_original_method = "9D90DBAD54A0BBB38360722714DEDA8E", hash_generated_method = "F7BE166F0D05AA4437F685F4C44AAB64")
     
 @Override
@@ -186,6 +201,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getNumericShortcut();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.923 -0400", hash_original_method = "7AC46414D8A1EB2FE9743003F8B04A3E", hash_generated_method = "61CD4E2F795D8E8867D47E61B761C7A1")
     
 @Override
@@ -194,6 +210,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.925 -0400", hash_original_method = "5896604105F6724778ECAD3907349C79", hash_generated_method = "54761CEF393A7886EE426E767A49FCC9")
     
 @Override
@@ -201,6 +218,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getAlphabeticShortcut();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.927 -0400", hash_original_method = "B47D4ACB9C0DB16F83E3C9A7A5007EA5", hash_generated_method = "8E66481048DA8129B80E17341DB1EE7B")
     
 @Override
@@ -209,6 +227,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.929 -0400", hash_original_method = "7449E9F77DCE67DB0A29C1BEDB6DE390", hash_generated_method = "919106B4DAFD6E3FA7DF231544FDC6C2")
     
 @Override
@@ -216,6 +235,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.isCheckable();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.931 -0400", hash_original_method = "8974DF4933D4B16E9D20C74A536FA2FD", hash_generated_method = "442525C3DB9E3236C2EDD74514261F07")
     
 @Override
@@ -224,6 +244,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.935 -0400", hash_original_method = "907DCEBA15549665EA672F916E7F7FA1", hash_generated_method = "368A34D6427D95348B5EBF77DED5784C")
     
 @Override
@@ -231,6 +252,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.isChecked();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.938 -0400", hash_original_method = "7294EB0F702AFBEA4B2D672BAEA2E1D4", hash_generated_method = "2E201EF2A0DAE6C72A433AE4EF66B9C0")
     
 @Override
@@ -245,6 +267,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return wrappedSetVisible(visible);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.940 -0400", hash_original_method = "92D8A63E9DDF627A069FB5728D7CA07C", hash_generated_method = "BF378AAD0F3D973575B667ACC81348A7")
     
 @Override
@@ -252,6 +275,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.isVisible();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.943 -0400", hash_original_method = "8B612C081D85C719035DF8F863331C19", hash_generated_method = "D7ED2BF24C341B9CAA5FD1AF6B706181")
     
 @Override
@@ -260,6 +284,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.945 -0400", hash_original_method = "C52A642F74F4ED444D5C6B5F5E1C1D6B", hash_generated_method = "5835DBE415B8CE2CC254C5C1B301010D")
     
 @Override
@@ -267,6 +292,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.isEnabled();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.948 -0400", hash_original_method = "B458F3D3453FC14899D04C7CC74AB585", hash_generated_method = "C45AA10B8BEEC19972837F81763EA7B0")
     
 @Override
@@ -274,6 +300,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.hasSubMenu();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.950 -0400", hash_original_method = "0FD1C439FD89EA8DC4B29C46338C90DB", hash_generated_method = "6A461C428372EEC0113662E4D4510839")
     
 @Override
@@ -281,6 +308,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return getSubMenuWrapper(mWrappedObject.getSubMenu());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.953 -0400", hash_original_method = "1673AA676766F2C4FADE5F85802808B2", hash_generated_method = "F745207A0DAD194A114960B9BE4C8D51")
     
 @Override
@@ -290,6 +318,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.956 -0400", hash_original_method = "10BB317C7DD33A9C28F953AF2922BBD4", hash_generated_method = "2D49FDEB66E12425C023850343530010")
     
 @Override
@@ -297,6 +326,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getMenuInfo();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.958 -0400", hash_original_method = "2954F05E74ACD652FF5E9A3BBCE6EADE", hash_generated_method = "1F14C842C45B355FF780160173097BA8")
     
 @Override
@@ -304,6 +334,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         mWrappedObject.setShowAsAction(actionEnum);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.961 -0400", hash_original_method = "56E1E9130E0B0D8A25FCAF2EE4408F26", hash_generated_method = "7411E34E8E1BF3DA98B3BD7AE7CA810C")
     
 @Override
@@ -312,6 +343,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.964 -0400", hash_original_method = "C604C64DEEA9AD4C8F11BA0938A4FEB3", hash_generated_method = "C079DF15B4BC4EA4C6C216BA455A918A")
     
 @Override
@@ -323,6 +355,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.967 -0400", hash_original_method = "07A15372F4248C872810B24E593D951C", hash_generated_method = "C88AFEE2757302A1E2BF20C0694AEBA8")
     
 @Override
@@ -338,6 +371,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.969 -0400", hash_original_method = "0B0476AAE67E3ACD3A521B8FBDEFF050", hash_generated_method = "0F7150871FFF5F083437A311EDE39090")
     
 @Override
@@ -349,6 +383,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return actionView;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.972 -0400", hash_original_method = "8F041A8F89673408251EC75F2E4DECC4", hash_generated_method = "2547809C42DC19198ED6504CC9EB8E67")
     
 @Override
@@ -360,6 +395,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.975 -0400", hash_original_method = "CE77781B974FC68F8BF601E3F62C43FF", hash_generated_method = "2AEEB45805BF2D0FA966FEFA0439DF3F")
     
 @Override
@@ -367,6 +403,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.getActionProvider();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.978 -0400", hash_original_method = "89D881B6F3AB8D5F210CC2255AC59F7B", hash_generated_method = "DEF40126B4DAA8C406B4A1298049DD2D")
     
 @Override
@@ -374,6 +411,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.expandActionView();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.980 -0400", hash_original_method = "C5F9D4F717ACDCA8466296AB88C0DEDE", hash_generated_method = "4EC324A16704276426EDFE569403B4A4")
     
 @Override
@@ -381,6 +419,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.collapseActionView();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.983 -0400", hash_original_method = "E8176D455FEBE9C9677E10D379B9938A", hash_generated_method = "DA6D46903BF1B2E66ACF55668CB138AF")
     
 @Override
@@ -388,6 +427,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return mWrappedObject.isActionViewExpanded();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.986 -0400", hash_original_method = "812F53AD7F341A1186A2C52329057CEC", hash_generated_method = "E8CE7C23703803E111CAD09CFF4B333C")
     
 @Override

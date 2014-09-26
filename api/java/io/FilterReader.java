@@ -57,6 +57,7 @@ protected FilterReader(Reader in) {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.740 -0500", hash_original_method = "CF9F5D7515858833C08423EA9B6FCE6A", hash_generated_method = "7C667CAEB3C9BCA0FC2EE590F2869EE8")
     
 @Override
@@ -76,6 +77,7 @@ protected FilterReader(Reader in) {
      * @see #reset()
      * @see #skip(long)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.743 -0500", hash_original_method = "2ED4924508737903A79CF3129A066F71", hash_generated_method = "46CCBDD5DA43A5F260E60DA236758383")
     
 @Override
@@ -146,6 +148,7 @@ protected FilterReader(Reader in) {
      * @throws IOException
      *             if the reader is closed or some other I/O error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.750 -0500", hash_original_method = "3B619AD38F7F67E79C5355301607CFA3", hash_generated_method = "1FC48FAB01187FFABEB19B2DF5FE943E")
     
 @Override
@@ -168,6 +171,7 @@ protected FilterReader(Reader in) {
      * @see #mark(int)
      * @see #markSupported()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.752 -0500", hash_original_method = "14FB3B3EA5640BFE7D124E930BE279E7", hash_generated_method = "374C33C0BB50CAEE0408CCB15057E524")
     
 @Override
@@ -190,6 +194,7 @@ protected FilterReader(Reader in) {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.756 -0500", hash_original_method = "1B3BA6A4C9DAFF7D8DBE3635EB5F6FB9", hash_generated_method = "6DCC3DD56F1BD540D7D1363F0EF114FD")
     
 @Override

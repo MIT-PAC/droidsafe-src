@@ -108,6 +108,7 @@ public CursorAdapter(Context context, Cursor c, int flags) {
      * @deprecated Don't use this, use the normal constructor.  This will
      * be removed in the future.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.202 -0500", hash_original_method = "8A3F140CB585945159B363BD7170B858", hash_generated_method = "94F4075EB549C26DF4BA3A48DD40B5B4")
     
 @Deprecated
@@ -116,7 +117,7 @@ public CursorAdapter(Context context, Cursor c, int flags) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.204 -0500", hash_original_method = "E90B8606F5AC4DC9C7FA36F3DBF50072", hash_generated_method = "E90B8606F5AC4DC9C7FA36F3DBF50072")
     
 void init(Context context, Cursor c, int flags) {
@@ -158,6 +159,8 @@ public Cursor getCursor() {
     /**
      * @see android.widget.ListAdapter#getCount()
      */
+    @DSSource({DSSourceKind.DATABASE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.208 -0500", hash_original_method = "F232C8AA0135C20BD5AF7ACB0020E9DD", hash_generated_method = "C69E75834B9D32F830A7C80BCB4D4998")
     
 public int getCount() {
@@ -172,7 +175,7 @@ public int getCount() {
      * @see android.widget.ListAdapter#getItem(int)
      */
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
-    @DSSpec(DSCat.DB_CURSOR)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.211 -0500", hash_original_method = "0491DE82927D7739F3937D1F88D16ECE", hash_generated_method = "2B83690C2B24F7C2A5847C0FD57AC51D")
     
 public Object getItem(int position) {
@@ -187,6 +190,8 @@ public Object getItem(int position) {
     /**
      * @see android.widget.ListAdapter#getItemId(int)
      */
+    @DSSource({DSSourceKind.DATABASE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.213 -0500", hash_original_method = "34FC88027666F3EEA6FC8DBB36C510AF", hash_generated_method = "D7B5335648F010B9AF2FEB739B203066")
     
 public long getItemId(int position) {
@@ -201,6 +206,7 @@ public long getItemId(int position) {
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.215 -0500", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "393A59784E726D5BE49F0B29F763EDD7")
     
 @Override
@@ -211,6 +217,7 @@ public long getItemId(int position) {
     /**
      * @see android.widget.ListAdapter#getView(int, View, ViewGroup)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.219 -0500", hash_original_method = "04641394EE9B89BDCE0805D3C5BEBDA5", hash_generated_method = "DE47E3A9E8938A879091E0DCD9DCBB47")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -230,6 +237,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return v;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.221 -0500", hash_original_method = "8987F0888A94923BAC3C282546957FFA", hash_generated_method = "AA71827E42827321A45A0050ADDEB24F")
     
 @Override
@@ -258,7 +266,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
      * @return the newly created view.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.223 -0500", hash_original_method = "EE6A21FD9B62596982E99001153626A6", hash_generated_method = "CF45D1D614F206164A24A59CD2225216")
     
 public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
@@ -285,7 +293,7 @@ public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
      * moved to the correct position.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.228 -0500", hash_original_method = "862EB494F53DC650925859B90E73BA8D", hash_generated_method = "B890DE80D4A3B58521CB62A64CF3811E")
     
 public abstract void bindView(View view, Context context, Cursor cursor);
@@ -448,6 +456,7 @@ public ChangeObserver() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.259 -0500", hash_original_method = "06FCBC692E549C3C9873F9D5CBAEB7B0", hash_generated_method = "F5BB92C0C1031FB7986568365B0C538E")
         
 @Override
@@ -456,6 +465,7 @@ public ChangeObserver() {
             notifyDataSetChanged();
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.261 -0500", hash_original_method = "EAE7DF88825384424351353A02D60615", hash_generated_method = "9A1B7B95D5725934EBA7C54C4B809ED7")
         
 @Override

@@ -290,7 +290,7 @@ public E pollLast() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.438 -0500", hash_original_method = "969C370DEEB1254D835EA60A850D9474", hash_generated_method = "BAE6C0F205BAEF2617D0EA50ACC9C5B1")
     
 public E getFirst() {
@@ -305,7 +305,7 @@ public E getFirst() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.440 -0500", hash_original_method = "609D7D9752B1EA7B409577881D715ECB", hash_generated_method = "7736EF3A646AF2E7EFE23EC6AD7231AB")
     
 public E getLast() {
@@ -813,14 +813,14 @@ public ArrayDeque<E> clone() {
             //Synthesized constructor
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.496 -0500", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "14F395F1FB532AA100EDE22B37B73640")
         
 public boolean hasNext() {
             return cursor != fence;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.498 -0500", hash_original_method = "9CABF9BA27B0EE6B683FFA8F5EC2BB0E", hash_generated_method = "9478BC2439BF4281FF464F7B91049C65")
         
 public E next() {
@@ -868,14 +868,14 @@ public void remove() {
             //Synthesized constructor
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.515 -0500", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "14F395F1FB532AA100EDE22B37B73640")
         
 public boolean hasNext() {
             return cursor != fence;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.518 -0500", hash_original_method = "5248F2967157124DAD3A5B8F2BA1B9D6", hash_generated_method = "BB66E305793B464C8437CE6ADB8BA16A")
         
 public E next() {

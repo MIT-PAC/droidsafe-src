@@ -48,7 +48,6 @@ import java.util.List;
 public class CompositeFileComparator extends AbstractFileComparator implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.733 -0400", hash_original_field = "FF9CE7795EF2BD95A145D2C38FAE0471", hash_generated_field = "7EC266BDB84DEDF52EDA39CAC5771972")
 
-
     private static final Comparator<?>[] NO_COMPARATORS = {};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.733 -0400", hash_original_field = "4E65A3C14639ABFBCA9B90DD868514BA", hash_generated_field = "577A5DF0D229ECB4715636D7E1830F2D")
 
@@ -99,6 +98,7 @@ public class CompositeFileComparator extends AbstractFileComparator implements S
      * @return the first non-zero result returned from
      * the delegate comparators or zero.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.735 -0400", hash_original_method = "6BA921DFE406E4FB2E3ADDA69967D7F7", hash_generated_method = "9D705E36618CB1F12130B41CDFC2CAA7")
     
 public int compare(File file1, File file2) {
@@ -117,6 +117,7 @@ public int compare(File file1, File file2) {
      *
      * @return String representation of this file comparator
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.736 -0400", hash_original_method = "47C1793FC370107B09B70CFDB1B2DA4E", hash_generated_method = "BC3D1E61DAFDAE554A0EA697D826A9A7")
     
 @Override

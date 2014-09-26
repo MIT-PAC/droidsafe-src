@@ -55,6 +55,7 @@ public class SpellCheckerSession {
 
     private final Handler mHandler = new Handler() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.370 -0400", hash_original_method = "D344BABB0D35462B4470990692E141D9", hash_generated_method = "68AF14A458510A80CC95B3C4EF0AAC31")
         @Override
         public void handleMessage(Message msg) {
@@ -270,7 +271,8 @@ public synchronized void onServiceConnected(ISpellCheckerSession session) {
                             Process.THREAD_PRIORITY_BACKGROUND);
                     mThread.start();
                     mAsyncHandler = new Handler(mThread.getLooper()) {
-                        @Override public void handleMessage(Message msg) {
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override public void handleMessage(Message msg) {
                             SpellCheckerParams scp = (SpellCheckerParams)msg.obj;
                             processTask(scp.mSession, scp, true);
                         }

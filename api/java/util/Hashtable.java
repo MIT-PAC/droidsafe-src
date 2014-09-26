@@ -428,7 +428,7 @@ HashtableEntry(K key, V value, int hash, HashtableEntry<K, V> next) {
         }
 
         @DSSafe(DSCat.SAFE_OTHERS)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.384 -0500", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "9EABD2522EB9D2E4218C9F5D70610D46")
         
 public final K getKey() {
@@ -443,6 +443,7 @@ public final V getValue() {
             return value;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.390 -0500", hash_original_method = "09EE506DF55191FF6B72960EEA25D181", hash_generated_method = "CE8BA28B53D9C36EF199302D5DBCDDC7")
         
 public final V setValue(V value) {

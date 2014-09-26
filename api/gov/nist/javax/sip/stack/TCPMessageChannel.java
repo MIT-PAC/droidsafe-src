@@ -344,7 +344,8 @@ public void sendMessage(byte message[], InetAddress receiverAddress, int receive
                         return true;
                     }
 
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+        @Override
                     public void run() {
                         try {
                             mySock.close();
@@ -610,7 +611,7 @@ public void processMessage(SIPMessage sipMessage) throws Exception {
      * loop - reading the tcp connection and processing messages until we are done or the other
      * end has closed.
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.136 -0500", hash_original_method = "D4E0A0BC15B98D38AEFE5154BA5871D0", hash_generated_method = "84159D385806E06AB908E13801177E1F")
     
 public void run() {

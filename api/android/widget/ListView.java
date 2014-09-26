@@ -284,6 +284,7 @@ private void removeFixedViewInfo(View v, ArrayList<FixedViewInfo> where) {
      * @param data Data to associate with this view
      * @param isSelectable true if the footer view can be selected
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.204 -0500", hash_original_method = "854663FFCE0B2EEEA12F571F4E080752", hash_generated_method = "12CB9C16CBE240104F270BEBAAE219EE")
     
 public void addFooterView(View v, Object data, boolean isSelectable) {
@@ -357,7 +358,7 @@ public boolean removeFooterView(View v) {
     }
     
     @DSComment("ListView")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	public ListAdapter getAdapter() {
 		// TODO Auto-generated method stub
@@ -1062,11 +1063,13 @@ private View moveSelection(View oldSel, View newSel, int delta, int childrenTop,
         return sel;
     }
     
-	@Override
+	@DSSafe(DSCat.SAFE_LIST)
+    @Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		super.onSizeChanged(w, h, oldw, oldh);
 	}
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.281 -0500", hash_original_method = "593EBCA8FD80357C209889704061F804", hash_generated_method = "9881BC3D5B36212FEA51F4DAB3C855DD")
     
 @Override
@@ -1857,6 +1860,7 @@ private void setupChild(View child, int position, int y, boolean flowDown, int c
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.321 -0500", hash_original_method = "F40AC428F4D570BD34339564A5B5BB04", hash_generated_method = "CC1AEAD8AD1B4127904290637F03EBAB")
     
 @Override
@@ -2006,6 +2010,7 @@ public void setSelectionAfterHeaderView() {
         return handled;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.338 -0500", hash_original_method = "82498D99AFEB0700B1F959E9E9927B59", hash_generated_method = "6AF9706850820C4FEB302E37B50B2BED")
     
 @Override
@@ -2020,6 +2025,7 @@ public void setSelectionAfterHeaderView() {
         return commonKey(keyCode, repeatCount, event);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.343 -0500", hash_original_method = "FFB4A1626C41573790F9B17FF23F8A09", hash_generated_method = "A27D10E92D871F3F89D05FD06501971F")
     
 @Override
@@ -3127,6 +3133,7 @@ void drawOverscrollFooter(Canvas canvas, Drawable drawable, Rect bounds) {
         canvas.restore();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.438 -0500", hash_original_method = "2FA3D064F2DBB643D61459E2FE6AA64C", hash_generated_method = "A7FE68D1CA9D5475F3979ED980705797")
     
 @Override
@@ -3675,7 +3682,7 @@ public FocusSelector setup(int position, int top) {
             return this;
         }
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.274 -0500", hash_original_method = "1C9CFC3992CD17CE1A3B73D68C8C6081", hash_generated_method = "E670ACF73BF7BA03457F170606925817")
         
 public void run() {

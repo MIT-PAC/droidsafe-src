@@ -51,6 +51,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.853 -0500", hash_original_method = "02EA7BC2BA423DC2D4E19D42E2725988", hash_generated_method = "F5DD0D2B4B9A17D9FF85169B2B025C14")
     
 @Override

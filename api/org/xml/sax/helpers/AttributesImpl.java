@@ -154,7 +154,7 @@ public String getType (int index)
      * @see org.xml.sax.Attributes#getValue(int)
      */
     @DSSafe(DSCat.XML)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.924 -0500", hash_original_method = "7BC4C2655702EDFE2361F9F97C33BDBD", hash_generated_method = "5E1A71BD421981F5C4A3E55A52E5CBDB")
     
 public String getValue (int index)
@@ -271,7 +271,7 @@ public String getType (String qName)
      * @see org.xml.sax.Attributes#getValue(java.lang.String,java.lang.String)
      */
     @DSSafe(DSCat.XML)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.936 -0500", hash_original_method = "522BBD1273EB28D82A0CFFAB0B22501D", hash_generated_method = "5D3230EED6E41B8C7028094FAB1539DB")
     
 public String getValue (String uri, String localName)
@@ -294,7 +294,7 @@ public String getValue (String uri, String localName)
      * @see org.xml.sax.Attributes#getValue(java.lang.String)
      */
     @DSSafe(DSCat.XML)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.938 -0500", hash_original_method = "4282B0A2744D6B6FFA141D6FBFC4111A", hash_generated_method = "26C05066D63A3AF96C038D1448FD8999")
     
 public String getValue (String qName)

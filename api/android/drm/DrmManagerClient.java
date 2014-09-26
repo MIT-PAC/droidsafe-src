@@ -111,6 +111,7 @@ public class DrmManagerClient {
     /**
      * {@hide}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:56.165 -0400", hash_original_method = "92BEB645D50445DA7DD9FF769CAB8425", hash_generated_method = "1A7A66D957F752BB40BB602A9E9291C0")
     
 public static void notify(

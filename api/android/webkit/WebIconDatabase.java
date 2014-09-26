@@ -269,7 +269,8 @@ void dispatch() {
 private synchronized void createHandler() {
             if (mHandler == null) {
                 mHandler = new Handler() {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     public void handleMessage(Message msg) {
                         // Note: This is the message handler for the WebCore
                         // thread.

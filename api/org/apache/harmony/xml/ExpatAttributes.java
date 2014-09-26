@@ -62,7 +62,7 @@ abstract class ExpatAttributes implements Attributes {
     }
     
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     private static String getValue(int attributePointer, String uri, String localName) {
     	String ret = new String();
     	ret.addTaint(attributePointer);
@@ -156,7 +156,7 @@ public String getType(int index) {
     }
 
     @DSSafe(DSCat.XML)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.275 -0500", hash_original_method = "3269AF76DE45F61A692FCC87354CAB72", hash_generated_method = "94F8F53587BB02C73C96AE6A5ACEE7B6")
     
 public String getValue(int index) {
@@ -217,7 +217,7 @@ public String getType(String qName) {
     }
 
     @DSSafe(DSCat.XML)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.286 -0500", hash_original_method = "C565081F95CF8700320081FA5DB3FD15", hash_generated_method = "4375BAEA40259069AF0CAB860AC70B4E")
     
 public String getValue(String uri, String localName) {
@@ -235,7 +235,7 @@ public String getValue(String uri, String localName) {
     }
 
     @DSSafe(DSCat.XML)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.288 -0500", hash_original_method = "11A6BF5F6E86FB8B88CA0053A4EF72DA", hash_generated_method = "4C7E227D33C828CB6FCE6EDA782F385C")
     
 public String getValue(String qName) {

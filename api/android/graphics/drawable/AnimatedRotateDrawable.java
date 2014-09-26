@@ -93,6 +93,7 @@ private void init() {
         canvas.restoreToCount(saveCount);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.525 -0500", hash_original_method = "1FA1E7775B3C135CAFD58A0739A38376", hash_generated_method = "FFB8BF2CEBA838C4F757E65C503F3316")
     
 public void start() {
@@ -102,6 +103,7 @@ public void start() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.527 -0500", hash_original_method = "9B01F7CABB2406558D1BC0A57268160A", hash_generated_method = "46EA80257F49FB5300903CEBFB6E3246")
     
 public void stop() {
@@ -124,7 +126,7 @@ private void nextFrame() {
         scheduleSelf(this, SystemClock.uptimeMillis() + mState.mFrameDuration);
     }
     
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.534 -0500", hash_original_method = "47627FAA36D08729C94EAD6CAAA95F6C", hash_generated_method = "07BAA077FF907E7C89171D76FBDFAEA0")
     
 public void run() {
@@ -138,7 +140,8 @@ public void run() {
         nextFrame();
     }
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.536 -0500", hash_original_method = "183F775A408D23F991FB2833203EEE63", hash_generated_method = "03EF580F34B523F3F86B03A2584BFB35")
     
 @Override
@@ -166,7 +169,8 @@ public Drawable getDrawable() {
         return mState.mDrawable;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.540 -0500", hash_original_method = "1BF1269A7F11A078222AE5900C6EC170", hash_generated_method = "F4C80938C81C1C6892334A7C3046F63C")
     
 @Override
@@ -185,7 +189,8 @@ public Drawable getDrawable() {
         mState.mDrawable.setAlpha(alpha);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.545 -0500", hash_original_method = "6C570D1758B788EA390E83E99A76EB36", hash_generated_method = "D515DA309DA73F6E9E81CB00A60B86B6")
     
 @Override
@@ -229,6 +234,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.556 -0500", hash_original_method = "02BC41BDC3ED3CF2C30379FA10185DFA", hash_generated_method = "EF37E14ABAA41BD949B44B96BCA98DD1")
     
 @Override
@@ -244,6 +250,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mState.mDrawable.isStateful();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.560 -0500", hash_original_method = "EF65F96F81169D8EC042745FACAE10FF", hash_generated_method = "6B53241A301D10E115CDC4FD994DABEE")
     
 @Override
@@ -419,6 +426,7 @@ public AnimatedRotateState(AnimatedRotateState source, AnimatedRotateDrawable ow
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.608 -0500", hash_original_method = "90513075AAF61DC02051F8AF573AA026", hash_generated_method = "ADE057D47096800C99221883F0F623BA")
         
 @Override
@@ -426,6 +434,7 @@ public AnimatedRotateState(AnimatedRotateState source, AnimatedRotateDrawable ow
             return new AnimatedRotateDrawable(this, null);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.611 -0500", hash_original_method = "8E62ECEB973FF3825859D252B23F201A", hash_generated_method = "7CB9BF17EB6791D4C70DC5F0594E8B16")
         
 @Override

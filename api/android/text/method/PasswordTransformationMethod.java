@@ -189,6 +189,7 @@ public char charAt(int i) {
             return DOT;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.863 -0500", hash_original_method = "D736D7B90470DFC8C923D4B5D62B4D1D", hash_generated_method = "AD56006EF135C03737EF8A0AA3AFFC1A")
         
 public CharSequence subSequence(int start, int end) {
@@ -268,7 +269,7 @@ public Visible(Spannable sp, PasswordTransformationMethod ptm) {
             postAtTime(this, SystemClock.uptimeMillis() + 1500);
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.882 -0500", hash_original_method = "C8775617BEE64680D27DACE05ECB8A14", hash_generated_method = "A92442E8F9C1AF5B3A11D2EFF5D4C7E3")
         
 public void run() {

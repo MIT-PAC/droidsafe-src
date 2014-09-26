@@ -185,7 +185,7 @@ public int getKeyProgressIncrement() {
     
     @DSComment("Abstract SeekBar")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.428 -0500", hash_original_method = "B86F9FD250EB4E355A6234A6154554E5", hash_generated_method = "CA2AA6C75D79CE639A6D579C54BBA41C")
     
 @Override
@@ -252,6 +252,7 @@ public int getKeyProgressIncrement() {
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.439 -0500", hash_original_method = "A1D4A37B8CF40CBB929E8D311A74C166", hash_generated_method = "12D73892C6F9EC6E45F16411E16C2432")
     
 @Override
@@ -330,6 +331,7 @@ private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
         thumb.setBounds(thumbPos, topBound, thumbPos + thumbWidth, bottomBound);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.448 -0500", hash_original_method = "317EB63F41EF20BCBD26EC2C5FF1A8E2", hash_generated_method = "16DB17B8D7608C5FF448B8EA63343F43")
     
 @Override

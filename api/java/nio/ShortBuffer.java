@@ -140,6 +140,7 @@ public abstract ShortBuffer compact();
      * @exception ClassCastException
      *                if {@code otherBuffer} is not a short buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.386 -0500", hash_original_method = "F5228E310614FF7F70EC616A5A8F6CEB", hash_generated_method = "59642D28CC7C07C7C3A2E8DC8FB6BD15")
     
 public int compareTo(ShortBuffer otherBuffer) {

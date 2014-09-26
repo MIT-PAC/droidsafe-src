@@ -37,7 +37,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SpinnerAdapter;
 
-
 /**
  * A view that displays one child at a time and lets the user pick among them.
  * The items in the Spinner come from the {@link android.widget.Adapter} associated with
@@ -66,7 +65,6 @@ class SpinnerICS extends AbsSpinnerICS implements OnClickListener {
     private static final int MODE_THEME = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.450 -0400", hash_original_field = "FC14FC3442A2E6593D55C850EF3DFBFB", hash_generated_field = "2B2C8DD5949DF96120E12CE686443E54")
 
-
     private SpinnerPopup mPopup;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.456 -0400", hash_original_field = "1F5BCC6FC4C6935B9E8358A75684BF85", hash_generated_field = "C1900A4CF75F2ED95144B24FDA148887")
 
@@ -76,10 +74,8 @@ class SpinnerICS extends AbsSpinnerICS implements OnClickListener {
     int mDropDownWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.471 -0400", hash_original_field = "E8D24DE70DE8CB945622B4CE486A90EA", hash_generated_field = "ACF14A395FB2702990553CD0EFA1BDCC")
 
-
     private int mGravity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.479 -0400", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
-
 
     private Rect mTempRect = new Rect();
 
@@ -252,6 +248,7 @@ public void setGravity(int gravity) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.576 -0400", hash_original_method = "50D7CC7A93B993E2A6FF522D575BAEB5", hash_generated_method = "611E2DA9775E0C612F4D5EF38FAF5956")
     
 @Override
@@ -274,6 +271,7 @@ public void setGravity(int gravity) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.585 -0400", hash_original_method = "B6F13EE08FDC85FB02DBBB6CA125C601", hash_generated_method = "D6B0999677F0279AF30F74D5F6760851")
     
 @Override
@@ -304,6 +302,7 @@ void setOnItemClickListenerInt(OnItemClickListener l) {
         super.setOnItemClickListener(l);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.614 -0400", hash_original_method = "EC8AF316641014792672178145DBD315", hash_generated_method = "C942D9FF9C76DDC01EC6017A7AFA16C3")
     
 @Override
@@ -340,6 +339,7 @@ void setOnItemClickListenerInt(OnItemClickListener l) {
      * @param delta Change in the selected position. +1 moves selection is moving to the right,
      * so views are scrolling to the left. -1 means selection is moving to the left.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.646 -0400", hash_original_method = "0F1AB15FAF6E813E4CB44CFB5741FFDC", hash_generated_method = "DC73610D91E528C1265E125DBF4ACA1F")
     
 @Override
@@ -473,6 +473,7 @@ private void setUpChild(View child) {
         child.layout(childLeft, childTop, childRight, childBottom);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.674 -0400", hash_original_method = "DE0583C7611D1F2BE10915793A501A4C", hash_generated_method = "BED26375FFB74C4D31CC868D7993F631")
     
 @Override
@@ -592,37 +593,48 @@ int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
             }
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         public int getCount() {
             return mAdapter == null ? 0 : mAdapter.getCount();
         }
 
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
         public Object getItem(int position) {
             return mAdapter == null ? null : mAdapter.getItem(position);
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         public long getItemId(int position) {
             return mAdapter == null ? -1 : mAdapter.getItemId(position);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public View getView(int position, View convertView, ViewGroup parent) {
             return getDropDownView(position, convertView, parent);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public View getDropDownView(int position, View convertView, ViewGroup parent) {
             return mAdapter == null ? null :
                     mAdapter.getDropDownView(position, convertView, parent);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean hasStableIds() {
             return mAdapter != null && mAdapter.hasStableIds();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void registerDataSetObserver(DataSetObserver observer) {
             if (mAdapter != null) {
                 mAdapter.registerDataSetObserver(observer);
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void unregisterDataSetObserver(DataSetObserver observer) {
             if (mAdapter != null) {
                 mAdapter.unregisterDataSetObserver(observer);
@@ -655,6 +667,7 @@ int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getItemViewType(int position) {
             return 0;
         }

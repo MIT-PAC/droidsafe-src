@@ -345,7 +345,8 @@ public synchronized void startReverseTether(String iface, BluetoothDevice device
         mIface = iface;
         mDevice = device;
         Thread dhcpThread = new Thread(new Runnable() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:17.235 -0400", hash_original_method = "FB9174C1B530D0751959C1927D66B916", hash_generated_method = "A090132B26E855C3B521526C20C665B8")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:17.235 -0400", hash_original_method = "FB9174C1B530D0751959C1927D66B916", hash_generated_method = "A090132B26E855C3B521526C20C665B8")
             
 public void run() {
                 //TODO(): Add callbacks for failure and success case.

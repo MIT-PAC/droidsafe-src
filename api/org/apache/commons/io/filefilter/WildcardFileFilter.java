@@ -199,6 +199,7 @@ public WildcardFileFilter(List<String> wildcards, IOCase caseSensitivity) {
      *
      * @return a String representaion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.452 -0400", hash_original_method = "54924678DCA60F174F0C38EC41ACEED7", hash_generated_method = "52A5FA9A3306C4FBBAFEAED1F34859F7")
     
 @Override

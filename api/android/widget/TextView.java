@@ -1560,7 +1560,7 @@ protected MovementMethod getDefaultMovementMethod() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.GUI_TEXT})
+    @DSSource({DSSourceKind.USER_INPUT})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.559 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "07E497F06FCA3C4F8CABDACFD16853C1")
 @ViewDebug.CapturedViewProperty
     public CharSequence getText() {
@@ -3584,7 +3584,7 @@ private void updateTextColors() {
     }
 
     @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.808 -0500", hash_original_method = "AF2C3EA4891B79A54157B80D9A5CB454", hash_generated_method = "ED1315019FB24AA6DDAC1BA41A154249")
     
 @Override
@@ -3663,7 +3663,7 @@ void removeMisspelledSpans(Spannable spannable) {
     }
     
     @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.529 -0400", hash_original_method = "F50E2D5CE86BF5E6A61BC8360971F12F", hash_generated_method = "A34771C5481C8B20DDC170D4768E54D2")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -3708,7 +3708,8 @@ void removeMisspelledSpans(Spannable spannable) {
         {
             final CharSequence error = ss.error;
             post(new Runnable() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.813 -0500", hash_original_method = "6D4719BAECED3DD83F9692F93AFBC954", hash_generated_method = "ECFDA33AAC392651DB41463C65C4CF3B")
+                @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.813 -0500", hash_original_method = "6D4719BAECED3DD83F9692F93AFBC954", hash_generated_method = "ECFDA33AAC392651DB41463C65C4CF3B")
                 
 public void run() {
                     setError(error);
@@ -4091,7 +4092,7 @@ public final void setText(int resid, BufferType type) {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.895 -0500", hash_original_method = "38FC4DBAEFB265C97233FE4F28F668E7", hash_generated_method = "C1B1E4FC4A9A8576B3FF0CC12072DD46")
     
 @android.view.RemotableViewMethod
@@ -4132,7 +4133,7 @@ public final void setText(int resid, BufferType type) {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.903 -0500", hash_original_method = "49514C27E12484581D1021562BB6B56C", hash_generated_method = "CA49E890B8FA1C48882750F052EE89CC")
     
 public void setInputType(int type) {
@@ -4211,7 +4212,7 @@ public void setRawInputType(int type) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.915 -0500", hash_original_method = "95BF8AE0F4607DDA852256E0031089E3", hash_generated_method = "0B7E5FF59BD48A921190514207AAB77F")
     
 private void setInputType(int type, boolean direct) {
@@ -4820,7 +4821,7 @@ public void setFilters(InputFilter[] filters) {
      * and includes mInput in the list if it is an InputFilter.
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.996 -0500", hash_original_method = "48C3B4A6108D00EDE1CFE79059C5E0E2", hash_generated_method = "C4C28B3C485DBB99D926FBB41EF7AE09")
     
 private void setFilters(Editable e, InputFilter[] filters) {
@@ -5135,6 +5136,7 @@ public boolean onPreDraw() {
         return !changed;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.023 -0500", hash_original_method = "37A00D47E5792B2A68D22343089CAC73", hash_generated_method = "461C16F8528763DFA5C0435B340811DF")
     
 @Override
@@ -5164,6 +5166,7 @@ public boolean onPreDraw() {
         updateSpellCheckSpans(0, mText.length(), true /* create the spell checker if needed */);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.026 -0500", hash_original_method = "16099E9CBA4D38D7973AB46B58716911", hash_generated_method = "26901B1F437DD59B22BC6DEBEFFA6DEF")
     
 @Override
@@ -5965,7 +5968,7 @@ public int getLineBounds(int line, Rect bounds) {
 
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.085 -0500", hash_original_method = "3C56831CF91C4818C48A7DCC6043867F", hash_generated_method = "11AACCCD0BFDE6D0A18DC36C2E564BFA")
     
 @Override
@@ -7188,7 +7191,8 @@ private Layout makeSingleLayout(int wantWidth, BoringLayout.Metrics boring, int 
             {
                 mTextPaint.setTextScaleX(1.0f - overflow - 0.005f);
                 post(new Runnable() {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.222 -0500", hash_original_method = "13996B392673F4526875359F0F526DB3", hash_generated_method = "25FB43B3CDEBAA9B64CBC4DD89B24EF5")
+                    @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.222 -0500", hash_original_method = "13996B392673F4526875359F0F526DB3", hash_generated_method = "25FB43B3CDEBAA9B64CBC4DD89B24EF5")
                     
 public void run() {
                         requestLayout();
@@ -8868,6 +8872,7 @@ private int getLastTapPosition() {
         startStopMarquee(hasWindowFocus);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.583 -0500", hash_original_method = "CACE22E1BEC14AEE1A4D35946DA3AF11", hash_generated_method = "26E55A35FEB25F9A879B86322E285814")
     
 @Override
@@ -8895,7 +8900,7 @@ public void clearComposingText() {
     
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.588 -0500", hash_original_method = "D9A75FFCA0200824B6C25D7D7E778114", hash_generated_method = "C40C539386AB87890ED322944C97A618")
     
 @Override
@@ -9452,7 +9457,7 @@ private boolean canPaste() {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.685 -0500", hash_original_method = "493FC66F8A7ACF6A75CECBBBC666AB3C", hash_generated_method = "FAE51C80D3C22F72E9E45A371C71535D")
     
 private boolean selectAll() {
@@ -9669,7 +9674,7 @@ private long getLastTouchOffsets() {
 
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.711 -0500", hash_original_method = "69E83CE4CD48DE4ECD21620922EFCC1A", hash_generated_method = "88A1CAE2B46ADFC63A0B34C8A7607E31")
     
 @Override
@@ -10221,7 +10226,7 @@ CharSequence removeSuggestionSpans(CharSequence text) {
         @SuppressWarnings("hiding")
         public static final Parcelable.Creator<SavedState> CREATOR
         = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.794 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
@@ -10274,7 +10279,8 @@ private SavedState(Parcel in) {
             }
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.789 -0500", hash_original_method = "0917C7384BCC053D7DFEC5346FB5EF0D", hash_generated_method = "0B3837D9E0CF04BF562262CFBE4CBCAE")
         
 @Override
@@ -10359,6 +10365,7 @@ public char charAt(int off) {
             return new String(mChars, mStart, mLength);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.860 -0500", hash_original_method = "BA853CED33F98EDEC6E428BC258874A3", hash_generated_method = "C002A332E18C3351F8B6966053E529D3")
         
 public CharSequence subSequence(int start, int end) {
@@ -10936,7 +10943,8 @@ private void hide() {
                     {
                         mPopupWindow = new EasyEditPopupWindow();
                         mHidePopup = new Runnable() {
-                            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.494 -0500", hash_original_method = "21815FA27ABEB649DED6A46E4F97905B", hash_generated_method = "3B7C51A201D248C5C174CE9CC51C0ACD")
+                            @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.494 -0500", hash_original_method = "21815FA27ABEB649DED6A46E4F97905B", hash_generated_method = "3B7C51A201D248C5C174CE9CC51C0ACD")
                             
 @Override
                             public void run() {
@@ -11066,6 +11074,7 @@ public void show(EasyEditSpan easyEditSpan) {
             super.show();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.527 -0500", hash_original_method = "C063208218D3B6E27F261A5578D5D2B9", hash_generated_method = "4CC057609709A9A0F381A0751CEA826C")
         
 @Override
@@ -11212,7 +11221,7 @@ public Blink(TextView v) {
             mView = new WeakReference<TextView>(v);
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.629 -0500", hash_original_method = "ACD5284757446306F2E6E1BADED5158A", hash_generated_method = "1120A83631DE6622FBA3DFAE77AC004E")
         
 public void run() {
@@ -11749,6 +11758,7 @@ public CustomPopupWindow(Context context, int defStyle) {
                 super(context, null, defStyle);
             }
             
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.758 -0400", hash_original_method = "3CF42E745499FBF7012823B6BEAA6E8B", hash_generated_method = "C8CBE2AFBCB4FE72843F29026D4AB90D")
             @Override
             public void dismiss() {
@@ -11813,6 +11823,8 @@ public CustomPopupWindow(Context context, int defStyle) {
                 //Synthesized constructor
             }
 
+            @DSSource({DSSourceKind.DATABASE})
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.911 -0500", hash_original_method = "02B536C5901CCC3DE9A3084712F44E45", hash_generated_method = "1655477EC64B6013C786FCC7D7D72FC9")
             
 @Override
@@ -11821,7 +11833,7 @@ public CustomPopupWindow(Context context, int defStyle) {
             }
 
             @DSSource({DSSourceKind.DATABASE_INFORMATION})
-            @DSSpec(DSCat.DB_CURSOR)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.914 -0500", hash_original_method = "AB9B090A0CFC1C7403BFB1F3A94BDE2B", hash_generated_method = "CC534956B1360142C79C8647A2F4F1B9")
             
 @Override
@@ -11829,6 +11841,8 @@ public CustomPopupWindow(Context context, int defStyle) {
                 return mSuggestionInfos[position];
             }
 
+            @DSSource({DSSourceKind.DATABASE})
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.916 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "82702E9A3501EE6841B2C5A334199C16")
             
 @Override
@@ -11836,6 +11850,7 @@ public CustomPopupWindow(Context context, int defStyle) {
                 return position;
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.919 -0500", hash_original_method = "EB7381461F4FDD3A1934D144B2D8DE50", hash_generated_method = "2AF2AC9ABAEAF87EAFC6DE0E58B9E561")
             
 @Override
@@ -11872,6 +11887,7 @@ public CustomPopupWindow(Context context, int defStyle) {
             {
                 //Synthesized constructor
             }
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.925 -0500", hash_original_method = "D4A09F0FD84AABB3F69B7BD15CCD92DF", hash_generated_method = "2F068B0BFE431952F7EBF091DFEBD6F1")
             
 public int compare(SuggestionSpan span1, SuggestionSpan span2) {
@@ -12307,6 +12323,7 @@ private void highlightTextDifferences(SuggestionInfo suggestionInfo, int unionSt
             super.show();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.027 -0500", hash_original_method = "35B6F06783189901121FFF5DA40FB852", hash_generated_method = "7300FD216DCBB1A7F01EED3DA5E222B8")
         
 @Override
@@ -12563,7 +12580,8 @@ public void hide() {
             if(mActionPopupShower == null)            
             {
                 mActionPopupShower = new Runnable() {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.121 -0500", hash_original_method = "3DEF90E085B5D89C941B0ED88F0DC7FD", hash_generated_method = "BCEE768D2B06C731F82F8504A0316B5C")
+                    @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.121 -0500", hash_original_method = "3DEF90E085B5D89C941B0ED88F0DC7FD", hash_generated_method = "BCEE768D2B06C731F82F8504A0316B5C")
                     
 public void run() {
                         mActionPopupWindow.show();
@@ -12707,6 +12725,7 @@ public void updatePosition(int parentPositionX, int parentPositionY,
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.146 -0500", hash_original_method = "F8254677C35EEC48CDE0AC0DA5BFAEC5", hash_generated_method = "9322B89253EF09AAB17F50613F5368BC")
         
 @Override
@@ -12842,7 +12861,8 @@ public void showWithActionPopup() {
             if(mHider == null)            
             {
                 mHider = new Runnable() {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.183 -0500", hash_original_method = "21815FA27ABEB649DED6A46E4F97905B", hash_generated_method = "9139AD50522A4FA227B3E2A4D707A8E7")
+                    @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.183 -0500", hash_original_method = "21815FA27ABEB649DED6A46E4F97905B", hash_generated_method = "9139AD50522A4FA227B3E2A4D707A8E7")
                     
 public void run() {
                         hide();

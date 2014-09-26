@@ -33,7 +33,6 @@ import java.util.Comparator;
 class ReverseComparator extends AbstractFileComparator implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.657 -0400", hash_original_field = "98FDD37E653F1D11623337EE2E250E7B", hash_generated_field = "8E91842B65FD0EE8A0384B6BD2C7B49A")
 
-
     private  Comparator<File> delegate;
 
     /**
@@ -58,6 +57,7 @@ public ReverseComparator(Comparator<File> delegate) {
      * @return the result from the delegate {@link Comparator#compare(Object, Object)}
      * reversing the value (i.e. positive becomes negative and vice versa)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.658 -0400", hash_original_method = "F10F7743D97AD6B571D16076EE2F8E5C", hash_generated_method = "0C33154D1312DBECC87EC7963D675B50")
     
 public int compare(File file1, File file2) {
@@ -69,6 +69,7 @@ public int compare(File file1, File file2) {
      *
      * @return String representation of this file comparator
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.659 -0400", hash_original_method = "A7C889B68BCBEC308734FF9FD7CA04D8", hash_generated_method = "9221E3913CCB4313E4D963FF23F564F8")
     
 @Override

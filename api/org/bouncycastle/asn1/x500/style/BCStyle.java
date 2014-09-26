@@ -395,6 +395,7 @@ private int calcHashCode(ASN1Encodable enc)
         return value.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.329 -0500", hash_original_method = "C53C9B056BF6D42B40010FA6E5F8B1BD", hash_generated_method = "4DBAD7455486DC987C476499ED3B1473")
     
 public String toString(X500Name name)

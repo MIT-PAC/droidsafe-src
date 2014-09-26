@@ -72,6 +72,7 @@ public void write(int b) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.464 -0500", hash_original_method = "EBA6423CDD36F9469C412144E3270E61", hash_generated_method = "1ED3A0AB62778D7C396CBC9D276874E0")
     
 public String toString(Charset cs) {

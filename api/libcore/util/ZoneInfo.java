@@ -145,7 +145,8 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         mEarliestRawOffset = earliestRawOffset * 1000;*/
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.448 -0500", hash_original_method = "F24BAF6EEBE3E0E7B99D03D590A46295", hash_generated_method = "31D5D32B9F1208D7E5F4AB696CE56957")
     
 @Override
@@ -178,7 +179,8 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         return getOffset(calc);*/
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.450 -0500", hash_original_method = "1DD2E67C6E4C7148C355A1BA56BEEEAB", hash_generated_method = "3CD43BB900A7738114584B5B55E3F658")
     
 @Override
@@ -218,7 +220,8 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         return mIsDsts[mTypes[transition] & 0xff] == 1;*/
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.455 -0500", hash_original_method = "87352764C6114566CFCD3A7F913CA653", hash_generated_method = "0BE2EC6C07866D6560B4FEC30DFB59A8")
     
 @Override public int getRawOffset() {

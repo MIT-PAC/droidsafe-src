@@ -293,6 +293,7 @@ ISipSession getRealSession() {
         /**
          * Converts the state to string.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.498 -0500", hash_original_method = "568E659DC654AF7F82B3FE327FE2A97B", hash_generated_method = "F153B60BE1575A843B5EC2EC8D1A33BE")
         
 public static String toString(int state) {

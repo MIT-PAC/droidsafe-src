@@ -38,9 +38,6 @@ public abstract class Identity implements Principal, Serializable {
 
     private static final long serialVersionUID = 3609922007826600659L;
 
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.609 -0400", hash_original_method = "A7F954CB46F413424643C7740B97FB5F", hash_generated_method = "C0A226B026402D480128430F6FED80E7")
     
 private static boolean checkKeysEqual(PublicKey pk1, PublicKey pk2) {
@@ -62,22 +59,17 @@ private static boolean checkKeysEqual(PublicKey pk1, PublicKey pk2) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.595 -0400", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-
     private String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.597 -0400", hash_original_field = "B73719A7AAE8E737607C294F86B7D620", hash_generated_field = "597E676F0E34E7523D486C2FEA821479")
-
 
     private PublicKey publicKey;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.598 -0400", hash_original_field = "87C33EF884FDE9521F60810C2FE15099", hash_generated_field = "90D0AEADD30C88032A037E70A0C8661F")
 
-
     private String info = "no additional info";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.600 -0400", hash_original_field = "0E992AB0315E9C305D6F564C9151C1AC", hash_generated_field = "10F836343A6E51420CBD354BDB02B198")
 
-
     private IdentityScope scope;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.601 -0400", hash_original_field = "6385EC815594AAFE2429349D3CF59D2C", hash_generated_field = "0CAAE4A2364060511805E2AEDE7AE5E7")
-
 
     private Vector<Certificate> certificates;
 
@@ -149,9 +141,6 @@ public void addCertificate(Certificate certificate) throws KeyManagementExceptio
         certificates.add(certificate);
     }
 
-
-
-
     /**
      * Removes the specified {@code Certificate} from this {@code Identity}.
      *
@@ -171,9 +160,6 @@ public void removeCertificate(Certificate certificate) throws KeyManagementExcep
         }
     }
 
-
-
-
     /**
      * Returns the certificates for this {@code Identity}. External
      * modifications of the returned array has no impact on this {@code
@@ -191,9 +177,6 @@ public Certificate[] certificates() {
         certificates.copyInto(ret);
         return ret;
     }
-
-
-
 
     /**
      * Compares the specified {@code Identity} with this {@code Identity} for
@@ -222,9 +205,6 @@ protected boolean identityEquals(Identity identity) {
         return checkKeysEqual(publicKey, identity.publicKey);
     }
 
-
-
-
     /**
      * Returns a string containing a concise, human-readable description of the
      * this {@code Identity}.
@@ -233,6 +213,7 @@ protected boolean identityEquals(Identity identity) {
      *            whether or not this method should return detailed information.
      * @return a printable representation for this {@code Permission}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.615 -0400", hash_original_method = "32CCAF145BA814644094D517611ECCBD", hash_generated_method = "3DA3492FEB2C578A9D39A00EA0D25793")
     
 public String toString(boolean detailed) {
@@ -242,9 +223,6 @@ public String toString(boolean detailed) {
         }
         return s;
     }
-
-
-
 
     /**
      * Returns the {@code IdentityScope} of this {@code Identity}.
@@ -256,9 +234,6 @@ public String toString(boolean detailed) {
 public final IdentityScope getScope() {
         return scope;
     }
-
-
-
 
     /**
      * Sets the specified {@code PublicKey} to this {@code Identity}.
@@ -284,9 +259,6 @@ public void setPublicKey(PublicKey key) throws KeyManagementException {
         certificates = null;
     }
 
-
-
-
     /**
      * Returns the {@code PublicKey} associated with this {@code Identity}.
      *
@@ -297,9 +269,6 @@ public void setPublicKey(PublicKey key) throws KeyManagementException {
 public PublicKey getPublicKey() {
         return publicKey;
     }
-
-
-
 
     /**
      * Sets an information string for this {@code Identity}.
@@ -357,6 +326,7 @@ public String getInfo() {
      *
      * @return the name of this {@code Identity}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.625 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "CEAA3BC43A9BFF97F5638C3D9028D82D")
     
 public final String getName() {
@@ -372,6 +342,7 @@ public final String getName() {
      * @see Object#equals(Object)
      * @see Identity#equals(Object)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.626 -0400", hash_original_method = "13B260E109E0D57E7588A8E3E585468A", hash_generated_method = "3648D7BD57CF7BA370B057BF0FBE68F6")
     
 @Override
@@ -392,6 +363,7 @@ public final String getName() {
      *
      * @return a printable representation for this {@code Identity}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.628 -0400", hash_original_method = "8DD06C79BE55073D14DB567FC2A10727", hash_generated_method = "5907867FDB3372C3804123E180797D7A")
     
 @Override

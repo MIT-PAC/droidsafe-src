@@ -56,7 +56,8 @@ public AccelerateInterpolator(Context context, AttributeSet attrs) {
         a.recycle();
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.319 -0500", hash_original_method = "8D8C7C748A85E1C7007F595C7B08B241", hash_generated_method = "1BDFF9C8001694F05039E1E7865FAAFB")
     
 public float getInterpolation(float input) {

@@ -19,7 +19,7 @@ public class NetworkInfo implements Parcelable {
 
     public static final Creator<NetworkInfo> CREATOR =
         new Creator<NetworkInfo>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.957 -0500", hash_original_method = "0B6AA9EC9A683520A8AF839D35CAC874", hash_generated_method = "B51726411CE650B90D80BB590E1E30AF")
         
 public NetworkInfo createFromParcel(Parcel in) {

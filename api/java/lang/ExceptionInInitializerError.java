@@ -79,7 +79,7 @@ public Throwable getException() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.968 -0500", hash_original_method = "28A8EFFB85C5CFA84BB4445EFA004CE6", hash_generated_method = "2841951C2FDE7E37DE442D29F3E6D125")
     
 @Override

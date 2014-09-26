@@ -135,7 +135,7 @@ private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
         return columns;
     }
     
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean hasNext() {
         /* 
         if (mCompareResultIsValid) {
@@ -159,7 +159,7 @@ private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
     }
     
     //public Result next() {
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     public Result next() {
         /* GITI DSModeled:  For modeling purposes, we probably do not care what the result returned
          * is, so return a valid Result.BOTH.

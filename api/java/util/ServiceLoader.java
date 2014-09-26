@@ -92,7 +92,7 @@ public void reload() {
      * <p>The returned iterator does not support {@code remove}.
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.403 -0500", hash_original_method = "347C14FB6BD1E7714C96867577CC330D", hash_generated_method = "903E79232BB492D8486688E535217E3B")
     
 public Iterator<S> iterator() {
@@ -146,7 +146,7 @@ public ServiceIterator(ServiceLoader<S> sl) {
             this.services = sl.services;
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.435 -0500", hash_original_method = "DC8C57213B773C0EB2B0D98440591DD2", hash_generated_method = "93761BE42B0E7B4396883B779BF64698")
         
 public boolean hasNext() {
@@ -156,7 +156,7 @@ public boolean hasNext() {
             return (queue != null && !queue.isEmpty());
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.438 -0500", hash_original_method = "B99394086046EF47562A5B63911931C2", hash_generated_method = "03938AB1B532DD7680A49FA14D21523A")
         
 @SuppressWarnings("unchecked")

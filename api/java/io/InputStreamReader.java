@@ -312,6 +312,7 @@ private boolean isOpen() {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.993 -0500", hash_original_method = "281B3CA6768822BAE894DB2D1EB23921", hash_generated_method = "2498DC1D1B71629ADBB2B0126A321243")
     
 @Override

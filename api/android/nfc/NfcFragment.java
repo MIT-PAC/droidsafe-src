@@ -70,7 +70,7 @@ public static void remove(Activity activity) {
         }
     }
 
-    @DSSpec(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.394 -0500", hash_original_method = "94292D3BC9674D261A6EF4BCCF7C8037", hash_generated_method = "83EB981B596EF031ACD1ED4CD85BB59F")
     
 @Override

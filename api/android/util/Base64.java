@@ -175,6 +175,7 @@ public static byte[] encode(byte[] input, int flags) {
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.894 -0500", hash_original_method = "E1555B173FAD4BF288A7EC4FC77FC937", hash_generated_method = "40D1FF3B844E6AB8871233CF1984FB22")
     
 public static byte[] encode(byte[] input, int offset, int len, int flags) {

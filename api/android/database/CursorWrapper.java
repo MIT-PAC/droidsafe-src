@@ -49,6 +49,7 @@ public boolean isClosed() {
         return mCursor.isClosed();
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSSafe(DSCat.DB_CURSOR)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.635 -0500", hash_original_method = "4FB48481E85DFE4DF2798ECB6EF0EBA3", hash_generated_method = "46272F6E8792008A185D594A6B6D2780")
@@ -96,7 +97,7 @@ public int getColumnIndexOrThrow(String columnName)
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.648 -0500", hash_original_method = "44F4FED765CC72811EDC0508C80F64F0", hash_generated_method = "E0505428F90727E47FADD31A422193BB")
     
 public String getColumnName(int columnIndex) {
@@ -111,6 +112,7 @@ public String[] getColumnNames() {
         return mCursor.getColumnNames();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.654 -0500", hash_original_method = "9F7F0A57CF5F3A48DAAE9F30716DB422", hash_generated_method = "0E7C32B1B23D26DA56B6F4387793574E")
     
@@ -118,6 +120,7 @@ public double getDouble(int columnIndex) {
         return mCursor.getDouble(columnIndex);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.656 -0500", hash_original_method = "E184C1E71949207A685F28F7AC8C3646", hash_generated_method = "35E6293B68750FE14E1C5CEDD88BB425")
     
@@ -191,6 +194,7 @@ public boolean isAfterLast() {
         return mCursor.isAfterLast();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.680 -0500", hash_original_method = "9724A911B02F8EEE299930C41A938B35", hash_generated_method = "33111A942E00DC67C6B0B3604B27BDC2")
     
 public boolean isBeforeFirst() {
@@ -203,6 +207,7 @@ public boolean isFirst() {
         return mCursor.isFirst();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.685 -0500", hash_original_method = "85178A9F90BC671A8327CD0DCBCFC22F", hash_generated_method = "97865968C9BA321FC4248000D38719BB")
     
 public boolean isLast() {
@@ -259,6 +264,7 @@ public int getPosition() {
         return mCursor.getPosition();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.704 -0500", hash_original_method = "9DCA0D28086B67B8460553C230FFD999", hash_generated_method = "CE022ED10D6D246D3D0A138D6CE4AFB7")
     
 public boolean moveToPrevious() {
@@ -279,7 +285,7 @@ public void registerDataSetObserver(DataSetObserver observer) {
         mCursor.registerDataSetObserver(observer);   
     }
 
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.711 -0500", hash_original_method = "913F5AF57DF0A93E7786005DA9809F4B", hash_generated_method = "0FA5253426D86A2EF20B579620E97E04")
     
 public boolean requery() {

@@ -72,7 +72,8 @@ private LocalBroadcastManager(Context context) {
         mAppContext = context;
         mHandler = new Handler(context.getMainLooper()) {
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:31.175 -0500", hash_original_method = "83DCC689423DD34BA48280EAD0078C8B", hash_generated_method = "9EF740E24F28E1B88201FF8077F270D2")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:31.175 -0500", hash_original_method = "83DCC689423DD34BA48280EAD0078C8B", hash_generated_method = "9EF740E24F28E1B88201FF8077F270D2")
             
 @Override
             public void handleMessage(Message msg) {
@@ -107,6 +108,7 @@ ReceiverRecord(IntentFilter _filter, BroadcastReceiver _receiver) {
             receiver = _receiver;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.470 -0500", hash_original_method = "5F4A257948A58F0B78B34620CDA69880", hash_generated_method = "9783CB893F434FB4C630D5B56CC5188B")
         
 @Override

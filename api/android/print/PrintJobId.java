@@ -45,9 +45,9 @@ public static PrintJobId unflattenFromString(String string) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.326 -0400", hash_original_field = "161E974FF011DCC33619CED882FCFBEB", hash_generated_field = "BE2E37B98029B240EB6E2491F25C097B")
 
-
     public static final Parcelable.Creator<PrintJobId> CREATOR =
             new Parcelable.Creator<PrintJobId>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public PrintJobId createFromParcel(Parcel parcel) {
             return new PrintJobId(parcel.readString());
@@ -86,6 +86,7 @@ public PrintJobId(String value) {
         mValue = value;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.317 -0400", hash_original_method = "0D1BCE5EF5FB8A155399DB132D10D4C6", hash_generated_method = "36E1FFC43650120096BD4E5F9110B455")
     
 @Override

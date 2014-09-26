@@ -99,7 +99,8 @@ public abstract class RegisteredServicesCache<V> {
         mPersistentServicesFile = new AtomicFile(new File(syncDir, interfaceName + ".xml"));
         generateServicesMap();
         final BroadcastReceiver receiver = new BroadcastReceiver() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.871 -0500", hash_original_method = "45D1595BD3BE881ACC04F9CBD9CBE57E", hash_generated_method = "A66C0B39FBC65772E7FDF805DF3CE268")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.871 -0500", hash_original_method = "45D1595BD3BE881ACC04F9CBD9CBE57E", hash_generated_method = "A66C0B39FBC65772E7FDF805DF3CE268")
             
 @Override
             public void onReceive(Context context1, Intent intent) {
@@ -173,7 +174,8 @@ private void notifyListener(final V type, final boolean removed) {
         
         final RegisteredServicesCacheListener<V> listener2 = listener;
         handler.post(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 listener2.onServiceChanged(type, removed);
             }
         });

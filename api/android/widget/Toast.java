@@ -213,6 +213,7 @@ public int getDuration() {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.956 -0400", hash_original_field = "61DCBB3696F6FA4BE5725088AFF4EB28", hash_generated_field = "6AF3C3B4B49A59D6013EE9E0CE06975A")
 
         final Runnable mShow = new Runnable() {
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.711 -0500", hash_original_method = "44EABCAA91D08F4C06482A1ED1EE7668", hash_generated_method = "121907DB5C04B31E2BB55AB36D30C2D9")
             
 public void run() {
@@ -223,6 +224,7 @@ public void run() {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.956 -0400", hash_original_field = "4A991A7F26DC9B6186AFC4C4EB669FA3", hash_generated_field = "4A646C9F9E760360BE93A3CC889065DC")
 
         final Runnable mHide = new Runnable() {
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.716 -0500", hash_original_method = "E71A75E071185259CF3C7ACA95EB5B7E", hash_generated_method = "9E0890BCF1D46FD8EBD941351D9F7BE5")
             
 public void run() {

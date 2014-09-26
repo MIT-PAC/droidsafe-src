@@ -303,7 +303,7 @@ private long overflowFree(long delay) {
      * @throws NullPointerException       {@inheritDoc}
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.054 -0500", hash_original_method = "E8C91BC5CFBE81CC8958800A4E70C4DA", hash_generated_method = "70153009D30555822A21DF4C467D0B90")
     
 public ScheduledFuture<?> schedule(Runnable command,
@@ -319,7 +319,7 @@ public ScheduledFuture<?> schedule(Runnable command,
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.765 -0400", hash_original_method = "3CA816B6292CC3DABD4A8E9E190B6332", hash_generated_method = "378062D887D87CBDB8AFDA6DE196F7A4")
     public <V> ScheduledFuture<V> schedule(Callable<V> callable,
                                            long delay,
@@ -427,7 +427,7 @@ public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command,
      * @throws NullPointerException {@inheritDoc}
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.065 -0500", hash_original_method = "106B54169234F208DA4A1738F707D69C", hash_generated_method = "E3A52ADE61F54682CF44ABE8A3326258")
     
 public void execute(Runnable command) {
@@ -441,7 +441,7 @@ public void execute(Runnable command) {
      * @throws NullPointerException       {@inheritDoc}
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.067 -0500", hash_original_method = "71AB87E2E6647A80EF75456B59FD870B", hash_generated_method = "3800342DFE8696C11E2AE454E3078C85")
     
 public Future<?> submit(Runnable task) {
@@ -449,7 +449,7 @@ public Future<?> submit(Runnable task) {
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.767 -0400", hash_original_method = "A2BAF492547813A1B4B6DC556E74F888", hash_generated_method = "CAC525EA0E485EE36D0C77239CB125EE")
     public <T> Future<T> submit(Runnable task, T result) {
         addTaint(result.getTaint());
@@ -464,7 +464,7 @@ Future<T> var5F143B3617D15E425694BCB00707B794_1636405938 =         schedule(Exec
     }
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.768 -0400", hash_original_method = "7532879CEC1557BEB821686E164CE854", hash_generated_method = "1F446E1DBA15F7EB3F5AB789BFCC5574")
     public <T> Future<T> submit(Callable<T> task) {
         addTaint(task.getTaint());
@@ -559,9 +559,7 @@ public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
 
     @DSBan(DSCat.DEFAULT_MODIFIER)
 
-
     @DSComment("Package priviledge")
-
 
     /**
      * Sets the policy on whether cancelled tasks should be immediately
@@ -581,12 +579,9 @@ public void setRemoveOnCancelPolicy(boolean value) {
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
 
-
     @DSBan(DSCat.DEFAULT_MODIFIER)
 
-
     @DSComment("Package priviledge")
-
 
     /**
      * Gets the policy on whether cancelled tasks should be immediately
@@ -624,7 +619,7 @@ public boolean getRemoveOnCancelPolicy() {
      * @throws SecurityException {@inheritDoc}
      */
     @DSComment("From safe class list")
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.089 -0500", hash_original_method = "06AE3A71ACDF5D94BFF2BA3486ECC61C", hash_generated_method = "EECA67464F24515745E21751DF906EFD")
     
 public void shutdown() {
@@ -653,7 +648,7 @@ public void shutdown() {
      * @throws SecurityException {@inheritDoc}
      */
     @DSComment("From safe class list")
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.091 -0500", hash_original_method = "58CAE4CD18062B6710EA14E24E67D3BE", hash_generated_method = "4310F6E0C68CEDEE4A0BB22C75A7B842")
     
@@ -721,6 +716,7 @@ public long getDelay(TimeUnit unit) {
             return unit.convert(time - now(), TimeUnit.NANOSECONDS);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.005 -0500", hash_original_method = "3DDFB5C452DB9F58801DAD45AC132180", hash_generated_method = "06CD2249C487800DED7B1BE8D3707E6E")
         
 public int compareTo(Delayed other) {
@@ -769,7 +765,7 @@ private void setNextRunTime() {
                 time = triggerTime(-p);
         }
 
-        @DSSpec(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.013 -0500", hash_original_method = "A46BB14AFBF2EAB15C2BA654B07B241E", hash_generated_method = "C04EF1B521A1B72CD11AF6E937E1C11E")
         
 public boolean cancel(boolean mayInterruptIfRunning) {
@@ -782,7 +778,7 @@ public boolean cancel(boolean mayInterruptIfRunning) {
         /**
          * Overrides FutureTask version so as to reset/requeue if periodic.
          */
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.016 -0500", hash_original_method = "A673F57B6994AD18C8F1F59AB6BC8846", hash_generated_method = "E25D2BC752A0A896AEF831675748C4CA")
         
 public void run() {
@@ -940,6 +936,7 @@ public boolean contains(Object x) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.129 -0500", hash_original_method = "BE80A65233BEEC20C44EE13577B8F6B3", hash_generated_method = "081C631E4CD8E775DAE7DFF253834F3F")
         
 public boolean remove(Object x) {
@@ -965,6 +962,7 @@ public boolean remove(Object x) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.133 -0500", hash_original_method = "FB53A461CD3B1BACC3DB27D415F5CC64", hash_generated_method = "B56E45E790072F25BF00ED5C82A3937D")
         
 public int size() {
@@ -977,18 +975,21 @@ public int size() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.135 -0500", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "256A93293017E0D3462837D06A518E42")
         
 public boolean isEmpty() {
             return size() == 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.138 -0500", hash_original_method = "E7CDD1D543D1F61B1D969765A4629893", hash_generated_method = "33BD29B45C0B302F31D1F275110E0FF5")
         
 public int remainingCapacity() {
             return Integer.MAX_VALUE;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.140 -0500", hash_original_method = "71D771244E4BD1C0173C42068DB81D51", hash_generated_method = "4A3670E928D2014D2B82EDD165E0BA3E")
         
 public RunnableScheduledFuture peek() {
@@ -1001,6 +1002,7 @@ public RunnableScheduledFuture peek() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.143 -0500", hash_original_method = "A5863DDF2D55F0A792F5570CB9552D10", hash_generated_method = "C57E67538FFFE9DF9BACEF49FAF500DE")
         
 public boolean offer(Runnable x) {
@@ -1030,18 +1032,21 @@ public boolean offer(Runnable x) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.146 -0500", hash_original_method = "4080BF206CA14D39406126FB9F6C27D2", hash_generated_method = "A69DA435D04D9547DAD0E800C49751A1")
         
 public void put(Runnable e) {
             offer(e);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.148 -0500", hash_original_method = "AD0F5DE8A091A43B7107BCF4BE0853B5", hash_generated_method = "3911745853F8759B8217277BA7FB95FB")
         
 public boolean add(Runnable e) {
             return offer(e);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.151 -0500", hash_original_method = "C6567B4A0AA1C7B283CF9843CADA74F7", hash_generated_method = "C992739CC8D27680B9B33505533DE685")
         
 public boolean offer(Runnable e, long timeout, TimeUnit unit) {
@@ -1068,6 +1073,7 @@ private RunnableScheduledFuture finishPoll(RunnableScheduledFuture f) {
             return f;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.156 -0500", hash_original_method = "8EBCD245EA652A524E679A63C787A99C", hash_generated_method = "0C6444231D8803864F44A89D449E3521")
         
 public RunnableScheduledFuture poll() {
@@ -1084,7 +1090,7 @@ public RunnableScheduledFuture poll() {
             }
         }
 
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.160 -0500", hash_original_method = "C35B04B198E2C5886DA81FEFBA3F2D77", hash_generated_method = "EAD227B6DEC0BF18B08A7940F1BAA829")
         
 public RunnableScheduledFuture take() throws InterruptedException {
@@ -1120,6 +1126,7 @@ public RunnableScheduledFuture take() throws InterruptedException {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.163 -0500", hash_original_method = "72DE523456D313A78DBDBA042B83CE23", hash_generated_method = "6E04C9D6A79DC43E11C8384AD88A31CF")
         
 public RunnableScheduledFuture poll(long timeout, TimeUnit unit)
@@ -1163,6 +1170,7 @@ public RunnableScheduledFuture poll(long timeout, TimeUnit unit)
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.165 -0500", hash_original_method = "B7A92D7F07FC88CC462E2031E3EC4D97", hash_generated_method = "A5013E936BFCBC1CCBA88FD69D609D33")
         
 public void clear() {
@@ -1197,6 +1205,7 @@ private RunnableScheduledFuture pollExpired() {
             return finishPoll(first);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.170 -0500", hash_original_method = "A0CF55F6497A110CDDFF356DE0AE8664", hash_generated_method = "CC1EECF0CA9F5BE88A87C537E0EE218E")
         
 public int drainTo(Collection<? super Runnable> c) {
@@ -1219,6 +1228,7 @@ public int drainTo(Collection<? super Runnable> c) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.173 -0500", hash_original_method = "0279366BCBF84614051CBA5B08204A0A", hash_generated_method = "A1D4E25C904A65FFBC36870A29413B77")
         
 public int drainTo(Collection<? super Runnable> c, int maxElements) {
@@ -1313,14 +1323,14 @@ Itr(RunnableScheduledFuture[] array) {
                 this.array = array;
             }
 
-            @DSSafe(DSCat.DATA_STRUCTURE)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.195 -0500", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "CDE3CA7472C460360713EEDFAECC9D23")
             
 public boolean hasNext() {
                 return cursor < array.length;
             }
 
-            @DSSafe(DSCat.DATA_STRUCTURE)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.198 -0500", hash_original_method = "3D0866C62F631AE1F3281A9951BE6C06", hash_generated_method = "4B6DACAD5F05336E081AADDDA2E83D77")
             
 public Runnable next() {

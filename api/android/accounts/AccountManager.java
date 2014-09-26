@@ -250,6 +250,7 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.275 -0400", hash_original_field = "5B9AAF8C7934EB6B84189463FFEE1757", hash_generated_field = "9131D7F68152C610E64880FB5BD3872C")
 
     private final BroadcastReceiver mAccountsChangedBroadcastReceiver = new BroadcastReceiver() {        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:10.275 -0400", hash_original_method = "06776CFD48438B35B07B048BEACBE4B9", hash_generated_method = "36F56EEE450A855D1F32BF53B0FC45A6")
         public void onReceive(final Context context, final Intent intent) {
             
@@ -573,7 +574,8 @@ public Future2Task(Handler handler, AccountManagerCallback<T> callback) {
 protected void done() {
             if (mCallback != null) {
                 postRunnableToHandler(new Runnable() {
-                    public void run() {
+                    @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                         mCallback.run(Future2Task.this);
                     }
                 });
@@ -781,6 +783,7 @@ public void doWork() throws RemoteException {
                         }}, mHandler);
         }
 
+        @DSSpec(DSCat.SPEC_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.247 -0500", hash_original_method = "770A26A7F965A1883CF21DF75B7155CF", hash_generated_method = "789EE338FABA28369118D635F320E85B")
         
 public void run(AccountManagerFuture<Bundle> future) {
@@ -1852,7 +1855,8 @@ private void postToHandler(Handler handler, final AccountManagerCallback<Bundle>
             final AccountManagerFuture<Bundle> future) {
         handler = handler == null ? mMainHandler : handler;
         handler.post(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 callback.run(future);
             }
         });
@@ -1868,7 +1872,8 @@ private void postToHandler(Handler handler, final OnAccountsUpdateListener liste
         System.arraycopy(accounts, 0, accountsCopy, 0, accountsCopy.length);
         handler = (handler == null) ? mMainHandler : handler;
         handler.post(new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 try {
                     listener.onAccountsUpdated(accountsCopy);
                 } catch (SQLException e) {

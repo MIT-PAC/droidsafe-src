@@ -33,7 +33,6 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BitString;
 
-
 /**
  * As defined in Time-Stamp Protocol (TSP)
  * (http://www.ietf.org/rfc/rfc3161.txt)
@@ -47,7 +46,6 @@ import org.apache.harmony.security.asn1.BitString;
  */
 public class PKIStatusInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.448 -0400", hash_original_field = "A56D68DC99625024E94797FDAFCC57E5", hash_generated_field = "D09306F5ED5D2096CBBD89AE2CD121CE")
-
 
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
         ASN1Integer.getInstance(),                      // status
@@ -95,14 +93,11 @@ public class PKIStatusInfo {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.440 -0400", hash_original_field = "BD0BBAD4FB64788ED0D0F5E6D9D91C85", hash_generated_field = "6BB563F292CF64B00E8B26BFA1602C8D")
 
-
     private  PKIStatus status;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.441 -0400", hash_original_field = "17DB11D6175E29F7F1D9EC572C44A359", hash_generated_field = "40C0DC815B3C092349CBF32DF33DA0D4")
 
-
     private  List statusString;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.441 -0400", hash_original_field = "A5CAE78FEDE532831EE13EE7820D27AA", hash_generated_field = "1010DC049DEFAF2D1F3EC876AE24661E")
-
 
     private  PKIFailureInfo failInfo;
 
@@ -115,6 +110,7 @@ public PKIStatusInfo(PKIStatus pKIStatus, List statusString,
         this.failInfo = failInfo;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.443 -0400", hash_original_method = "87519E6CC0B0976A9EBB1FEB9A8EFB9B", hash_generated_method = "EF072626C91E3DB11F62042351ED47BA")
     
 public String toString(){

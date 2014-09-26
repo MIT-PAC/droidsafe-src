@@ -15,7 +15,7 @@ public final class SyncResult implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.726 -0400", hash_original_field = "78B42CBC7BB00AEC88D972EE0CA8E716", hash_generated_field = "0BFBE4FA78FD3B51E53BE26F718EB099")
 
     public static final Creator<SyncResult> CREATOR = new Creator<SyncResult>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.099 -0500", hash_original_method = "4C8D61D924E0543F15189C7113C38388", hash_generated_method = "D8D14ED9A11EAD32BB2AB0B3A2186A07")
         
 public SyncResult createFromParcel(Parcel in) {

@@ -173,6 +173,8 @@ private void needNewBuffer(int newcount) {
      * @param off The start offset
      * @param len The number of bytes to write
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.021 -0400", hash_original_method = "A4829AD80420573041015F28AD207DA9", hash_generated_method = "7067DCBCADD401AE5B74A15D12B58AC3")
     
 @Override
@@ -207,6 +209,8 @@ private void needNewBuffer(int newcount) {
      * Write a byte to byte array.
      * @param b the byte to write
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.022 -0400", hash_original_method = "8B0B5349E68519FC453F35485E73C8A6", hash_generated_method = "B57003303872FB846AEA14219A2AA955")
     
 @Override
@@ -231,6 +235,8 @@ private void needNewBuffer(int newcount) {
      * @throws IOException if an I/O error occurs while reading the input stream
      * @since 1.4
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.023 -0400", hash_original_method = "BAEC3D3F780421802E8DF98D1AC17676", hash_generated_method = "FAF7E4B208F36343E29E7C8C6E878353")
     
 public synchronized int write(InputStream in) throws IOException {
@@ -268,6 +274,7 @@ public synchronized int size() {
      * @throws IOException never (this method should not declare this exception
      * but it has to now due to backwards compatability)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.024 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "8AF044EB170B4AA30A7F584E0271C50C")
     
 @Override
@@ -371,6 +378,7 @@ public synchronized byte[] toByteArray() {
      * @return the contents of the byte array as a String
      * @see java.io.ByteArrayOutputStream#toString()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.028 -0400", hash_original_method = "95976D81CB90569BB8CC4A3AB0B84125", hash_generated_method = "24F0FD499D929F2BE98900B33186C3D7")
     
 @Override
@@ -387,6 +395,7 @@ public synchronized byte[] toByteArray() {
      * @throws UnsupportedEncodingException if the encoding is not supported
      * @see java.io.ByteArrayOutputStream#toString(String)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.028 -0400", hash_original_method = "7182DDAFB743FF4AA8D7A019E67A4496", hash_generated_method = "B2643D56CC4E628723FA32C9E36D4D42")
     
 public String toString(String enc) throws UnsupportedEncodingException {

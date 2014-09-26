@@ -30,7 +30,7 @@ public static Interpolator getInterpolator(View view) {
 			
 			@Override
 			@DSComment("Abstract Method")
-			@DSSpec(DSCat.ABSTRACT_METHOD)
+			@DSSafe(DSCat.SAFE_LIST)
 			public
 			float getInterpolation(float input) {
 				// TODO Auto-generated method stub

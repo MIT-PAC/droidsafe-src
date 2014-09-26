@@ -1005,7 +1005,8 @@ private BluetoothServerSocket createNewRfcommSocketAndRecord(String name, UUID u
 
         if (mServiceRecordHandler == null) {
             mServiceRecordHandler = new Handler(Looper.getMainLooper()) {
-                    public void handleMessage(Message msg) {
+                    @DSSafe(DSCat.SAFE_LIST)
+        public void handleMessage(Message msg) {
                         /* handle socket closing */
                         int handle = msg.what;
                         try {

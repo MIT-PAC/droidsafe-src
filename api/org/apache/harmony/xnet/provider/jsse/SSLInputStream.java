@@ -33,9 +33,9 @@ public abstract class SSLInputStream extends InputStream {
      * @see org.apache.harmony.xnet.provider.jsse.SSLBufferedInput#read()
      * @see org.apache.harmony.xnet.provider.jsse.HandshakeIODataStream#read()
      */
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.836 -0500", hash_original_method = "F11529017A51516EAF2106297C9899F8", hash_generated_method = "7F0F5BB3DEF099052AAEB4B2BD53966C")
     
 @Override
@@ -97,7 +97,8 @@ public long readUint64() throws IOException {
      * @return the read data
      * @throws IOException if read operation could not be finished.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.850 -0500", hash_original_method = "22A07573F54A4BDDEECBBE8A8D080BB9", hash_generated_method = "4E7CF5D85F0893BC29378DE35D5500BC")
     
 public byte[] read(int length) throws IOException {

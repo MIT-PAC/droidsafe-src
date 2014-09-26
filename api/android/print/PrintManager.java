@@ -106,14 +106,11 @@ import java.util.Map;
 public final class PrintManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.064 -0400", hash_original_field = "3303122DD7957FD9BE0C49FE43EFA2A5", hash_generated_field = "81FD1B4F22EDAB7A4FB3B2654C162F97")
 
-
     private static final String LOG_TAG = "PrintManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.067 -0400", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
-
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.070 -0400", hash_original_field = "CA31226F77FC8A38B26C6F8CB4CDB7A5", hash_generated_field = "498E6223AF9A4CD17B2CE3CB1B518D68")
-
 
     private static final int MSG_NOTIFY_PRINT_JOB_STATE_CHANGED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.072 -0400", hash_original_field = "18F3FAE9CB7859B974FA75C614D3A44F", hash_generated_field = "344FC53BEB92BFED1F2F09FBBB6339EE")
@@ -136,26 +133,20 @@ public final class PrintManager {
     public static final int APP_ID_ANY = -2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.083 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.084 -0400", hash_original_field = "B045D51745A204FFFD58FF53707F7F3D", hash_generated_field = "BBDD50582E4AF66F4A10FC3DAC3E8CD6")
-
 
     private  IPrintManager mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.087 -0400", hash_original_field = "C1E985FEB03E95A460CF3F00CA1AC469", hash_generated_field = "92E61CD52E3EFA00E014EC0C6AF61282")
 
-
     private  int mUserId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.089 -0400", hash_original_field = "54EC6B556ED06A7EEB6FB30D691B2735", hash_generated_field = "8154A56A721671AC1D9ADFD992BBEE15")
-
 
     private  int mAppId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.090 -0400", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
-
     private  Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.092 -0400", hash_original_field = "09AC7ACE030E4DC2D4791301C7851DD9", hash_generated_field = "568099E4E2A2569CDB4F9453AD628912")
-
 
     private Map<PrintJobStateChangeListener, PrintJobStateChangeListenerWrapper> mPrintJobStateChangeListeners;
 
@@ -192,7 +183,8 @@ public PrintManager(Context context, IPrintManager service, int userId, int appI
         mUserId = userId;
         mAppId = appId;
         mHandler = new Handler(context.getMainLooper(), null) {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:19:15.645 -0400", hash_original_method = "F3238728FBD12A1652F6EE4EAFFDBE2F", hash_generated_method = "17E696E43501D41BB35B24A4DB8B7855")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:19:15.645 -0400", hash_original_method = "F3238728FBD12A1652F6EE4EAFFDBE2F", hash_generated_method = "17E696E43501D41BB35B24A4DB8B7855")
                 
 @Override
             public void handleMessage(Message message) {
@@ -485,38 +477,29 @@ public PrinterDiscoverySession createPrinterDiscoverySession() {
             implements ActivityLifecycleCallbacks {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.125 -0400", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
 
-
         private final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.128 -0400", hash_original_field = "A571C2E1AEEC583FD21439E692148F28", hash_generated_field = "CA4F1A1556FB513286530B03BF33D8EF")
-
 
         private CancellationSignal mLayoutOrWriteCancellation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.129 -0400", hash_original_field = "3895D7E6DB5042DA7856DC78E391C7B9", hash_generated_field = "B0D69375984D6EE7DC93AC12DB4DFC55")
 
-
         private Activity mActivity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.131 -0400", hash_original_field = "77002021D46C9D14F7560D58BBEF0059", hash_generated_field = "F5DF6849C2363B0F8B7D0B643F78710B")
-
 
         private PrintDocumentAdapter mDocumentAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.133 -0400", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
-
         private Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.134 -0400", hash_original_field = "56608A6692CF6070507BFBA2244E5A39", hash_generated_field = "C672C5AC573628EABA3BF75459453214")
-
 
         private IPrintDocumentAdapterObserver mObserver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.136 -0400", hash_original_field = "8FA0491EE0740AA86A41D047A5A17545", hash_generated_field = "DCA09E2392B88E6048206313AF8893B9")
 
-
         private LayoutSpec mLastLayoutSpec;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.138 -0400", hash_original_field = "52BF92F0930567EB456B61A58B382E4B", hash_generated_field = "0F3C2AAF280E2D19B05A4FAEAAA455CD")
 
-
         private WriteSpec mLastWriteSpec;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.139 -0400", hash_original_field = "E6E1E3A3EA30E3276AA1B68A54FA1EA3", hash_generated_field = "90FDCFEED11CBBADD23279DDEE83C57C")
-
 
         private boolean mStartReqeusted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.141 -0400", hash_original_field = "8C92DC16A5D2F989C0A1D4375841DEF1", hash_generated_field = "651C1B44F0CFBC9CE67518504FC6F4C2")
@@ -524,13 +507,11 @@ public PrinterDiscoverySession createPrinterDiscoverySession() {
         private boolean mStarted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.143 -0400", hash_original_field = "B809149A70CACFFC53EE50EA6E8A9BD0", hash_generated_field = "29BD6DB8A6FEA2056FF7B6E1487EA777")
 
-
         private boolean mFinishRequested;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.145 -0400", hash_original_field = "10598AB9B4F301B505526794EAE9EAF0", hash_generated_field = "0B1DE3EEB5BF08E36FD9B568D72D59CC")
 
         private boolean mFinished;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.146 -0400", hash_original_field = "708F9D94DA99CD83DBB18AAAFBA8C49F", hash_generated_field = "1C64CB399BFF718CD14799195853AA6E")
-
 
         private boolean mDestroyed;
 
@@ -855,6 +836,7 @@ private void doPendingWorkLocked() {
                 super(looper, null);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.219 -0400", hash_original_method = "A7ADAA8820AEF634994EA253B9773BC7", hash_generated_method = "2BDA6550ABA1187F39C9C36FF81C62B0")
             
 @Override

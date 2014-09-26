@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import droidsafe.annotations.*;
+
 public class JSONObject {
 
     /**
@@ -74,6 +76,7 @@ public static String quote(String data) {
 @Override public boolean equals(Object o) {
             return o == this || o == null; // API specifies this broken equals implementation
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.348 -0500", hash_original_method = "2607A8359DD6B43A393B68FD7BAE6C5B", hash_generated_method = "27D7C70B62D116AE1958CB86717C0D66")
         
 @Override public String toString() {
@@ -766,7 +769,8 @@ public JSONArray names() {
      * @param indentSpaces the number of spaces to indent for each level of
      *     nesting.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.JSON})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.465 -0500", hash_original_method = "161CBAA0F7E505CC65BF62A9F4C8490E", hash_generated_method = "89736320EFA9E85B06F0454670E154AA")
     
 public String toString(int indentSpaces) throws JSONException {

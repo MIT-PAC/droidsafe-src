@@ -35,7 +35,7 @@ ChunkedInputStream(InputStream is, CacheRequest cacheRequest,
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.189 -0500", hash_original_method = "A69C93E854B37E522584F08EF88E59BD", hash_generated_method = "DBB71B4DE0D29A8F21B556BD955CF36C")
     
 @Override public int read(byte[] buffer, int offset, int count) throws IOException {

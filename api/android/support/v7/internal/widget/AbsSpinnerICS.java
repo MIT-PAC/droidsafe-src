@@ -40,7 +40,6 @@ abstract class AbsSpinnerICS extends AdapterViewICS<SpinnerAdapter> {
     SpinnerAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.207 -0400", hash_original_field = "D04E3D07D063C4D19518074C3829A73C", hash_generated_field = "D04E3D07D063C4D19518074C3829A73C")
 
-
     int mHeightMeasureSpec;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.209 -0400", hash_original_field = "955DE0D4DCC8871A233CEA8D2F0A0C8A", hash_generated_field = "955DE0D4DCC8871A233CEA8D2F0A0C8A")
 
@@ -49,7 +48,6 @@ abstract class AbsSpinnerICS extends AdapterViewICS<SpinnerAdapter> {
 
     boolean mBlockLayoutRequests;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.213 -0400", hash_original_field = "753C8FC0C4D631C54FF77F2B10210084", hash_generated_field = "753C8FC0C4D631C54FF77F2B10210084")
-
 
     int mSelectionLeftPadding = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.215 -0400", hash_original_field = "50BDF542563848097B98D0F9CA864924", hash_generated_field = "50BDF542563848097B98D0F9CA864924")
@@ -65,7 +63,6 @@ abstract class AbsSpinnerICS extends AdapterViewICS<SpinnerAdapter> {
 
     final Rect mSpinnerPadding = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.224 -0400", hash_original_field = "707525CCDB9513E977E0C2123AF49590", hash_generated_field = "9569056224CF4BB7FAE062DA5103E35A")
-
 
     final RecycleBin mRecycler = new RecycleBin();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.227 -0400", hash_original_field = "CA23E511E6F9771CC47A35D664CF38CE", hash_generated_field = "F16E8B0F167DE3008550015271235F93")
@@ -179,6 +176,7 @@ void resetList() {
      * UNSPECIFIED. The height is based on the height of the selected item
      * plus padding.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.249 -0400", hash_original_method = "573DFCA3A6D45723DEFE4120CF8D651E", hash_generated_method = "3351E8E0A05A901D4AF73B1EC380150A")
     
 @Override
@@ -314,7 +312,6 @@ public void setSelection(int position, boolean animate) {
         invalidate();
     }
 
-
     /**
      * Makes the item at the supplied position selected.
      *
@@ -334,6 +331,7 @@ void setSelectionInt(int position, boolean animate) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.269 -0400", hash_original_method = "E89B31DFCF88A65148B589897F629BD3", hash_generated_method = "DE3E4C3DF383C543F0AF8E96C0CE29EF")
     
 abstract void layout(int delta, boolean animate);
@@ -355,6 +353,7 @@ abstract void layout(int delta, boolean animate);
      *
      * @see android.view.View#requestLayout()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.274 -0400", hash_original_method = "7199FF25ED586C3851E847C0919D8CB4", hash_generated_method = "07FC44E84DEB35164CA25A3FE21E0C66")
     
 @Override
@@ -412,6 +411,7 @@ public int pointToPosition(int x, int y) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -439,6 +439,7 @@ public int pointToPosition(int x, int y) {
             position = in.readInt();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void writeToParcel(Parcel out, int flags) {
             super.writeToParcel(out, flags);
@@ -446,6 +447,7 @@ public int pointToPosition(int x, int y) {
             out.writeInt(position);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String toString() {
             return "AbsSpinner.SavedState{"
@@ -455,6 +457,7 @@ public int pointToPosition(int x, int y) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.313 -0400", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "0F01E07DD73E3F973CD57D0A62D38B74")
     
 @Override
@@ -470,6 +473,7 @@ public int pointToPosition(int x, int y) {
         return ss;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.315 -0400", hash_original_method = "41BC9B1A20EF7E956C712A8B84EE3401", hash_generated_method = "7D1B2596D4E45FA48A8841B2C2008EAA")
     
 @Override

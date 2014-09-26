@@ -53,7 +53,7 @@ public static Messenger readMessengerOrNullFromParcel(Parcel in) {
 
     public static final Parcelable.Creator<Messenger> CREATOR
             = new Parcelable.Creator<Messenger>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.419 -0500", hash_original_method = "9CB182A89C6CC0D581283770DD971374", hash_generated_method = "91BD7DF507EE4BBC8B6197B69AFA5AF8")
         
 public Messenger createFromParcel(Parcel in) {

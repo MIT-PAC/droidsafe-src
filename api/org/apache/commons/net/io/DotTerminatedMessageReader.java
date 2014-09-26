@@ -220,7 +220,7 @@ public int read(char[] buffer) throws IOException
      * @exception IOException If an error occurs in reading the underlying
      *            stream.
      */
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.663 -0500", hash_original_method = "297F7CC520BE2F901AA36D11D965CF70", hash_generated_method = "F2D860805EDA4A832B634194E89F311B")
     @DSVerified
     @DSSpec(DSCat.IO)

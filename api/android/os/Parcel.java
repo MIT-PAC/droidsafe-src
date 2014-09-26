@@ -212,7 +212,7 @@ public final class Parcel {
     private static final int EX_HAS_REPLY_HEADER = -128;
     public final static Parcelable.Creator<String> STRING_CREATOR
              = new Parcelable.Creator<String>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.084 -0500", hash_original_method = "CF5066ADB23AB15A8F47A7B0F4466503", hash_generated_method = "00F386650A051887ED9112C5F2C23E06")
         
 public String createFromParcel(Parcel source) {
@@ -471,7 +471,7 @@ public String[] newArray(int size) {
     
     @DSComment("check any serialization")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public final void writeByteArray(byte[] b){
         mValueByteArray = b;
         this.addTaint(b.getTaint());
@@ -484,6 +484,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     public final void writeByteArray(byte[] b, int offset, int len){
         mValueByteArray = b;
         this.addTaint(b.getTaint());
@@ -1345,8 +1346,6 @@ public String[] newArray(int size) {
         String name = p.getClass().getName();
         writeString(name);
     }
-
-
     
     /** @hide */
     public final <T extends Parcelable> T readCreator(Parcelable.Creator<T> creator,
@@ -1356,7 +1355,6 @@ public String[] newArray(int size) {
         }
         return creator.createFromParcel(this);
     }
-
 
     /** @hide */
     public final <T extends Parcelable> Parcelable.Creator<T> readParcelableCreator(

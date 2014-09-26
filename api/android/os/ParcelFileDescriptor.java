@@ -223,7 +223,7 @@ public static ParcelFileDescriptor[] createPipe() throws IOException {
 
     public static final Parcelable.Creator<ParcelFileDescriptor> CREATOR
             = new Parcelable.Creator<ParcelFileDescriptor>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.114 -0500", hash_original_method = "621772CCC7C69481AB7D1DD9C7D31515", hash_generated_method = "C75A0CCB573FDF26B2F51326F4C00124")
         
 public ParcelFileDescriptor createFromParcel(Parcel in) {

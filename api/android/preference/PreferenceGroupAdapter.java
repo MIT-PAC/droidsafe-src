@@ -43,6 +43,7 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.482 -0400", hash_original_field = "A759A4E7184E3E83FC4B81BC91EB49E4", hash_generated_field = "6F8F5735F15B9F1306F9CF88A1481F4F")
 
     private Runnable mSyncRunnable = new Runnable() {        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.482 -0400", hash_original_method = "64E55F1CB25012944C9000EFC5F6389C", hash_generated_method = "098280FA3EF6FEBB87417E5331607D15")
         public void run() {
             syncMyPreferences();
@@ -149,14 +150,15 @@ private void addPreferenceClassName(Preference preference) {
         }
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.977 -0500", hash_original_method = "146D9A3F8F2485F6100744DF28993915", hash_generated_method = "AD8CAB718C0FC746435AF32937C54F39")
     
 public int getCount() {
         return mPreferenceList.size();
     }
 
-    @DSSpec(DSCat.DB_CURSOR)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.980 -0500", hash_original_method = "B1551AF468D615637FECD6277399376D", hash_generated_method = "62EAC07E967E95133E6C020078002A17")
     
@@ -165,7 +167,8 @@ public Preference getItem(int position) {
         return mPreferenceList.get(position);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.982 -0500", hash_original_method = "C2BB649F8AE8B2BA22DD6170BF8090F3", hash_generated_method = "B317745E077FD87242E11208AD60B283")
     
 public long getItemId(int position) {
@@ -173,7 +176,8 @@ public long getItemId(int position) {
         return this.getItem(position).getId();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.984 -0500", hash_original_method = "0A6038B272F94F277CAFD95B96B15A1A", hash_generated_method = "00420607D26EA9F45F57848A403F038D")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -220,6 +224,7 @@ public void onPreferenceHierarchyChange(Preference preference) {
         mHandler.post(mSyncRunnable);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.995 -0500", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "393A59784E726D5BE49F0B29F763EDD7")
     
 @Override
@@ -227,7 +232,8 @@ public void onPreferenceHierarchyChange(Preference preference) {
         return true;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.998 -0500", hash_original_method = "95969FB891958AA0335CF8E62A1ABF37", hash_generated_method = "5744C1606356E29F6DA1DD97DE5D24FC")
     
 @Override
@@ -272,6 +278,7 @@ public void onPreferenceHierarchyChange(Preference preference) {
             //Synthesized constructor
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.960 -0500", hash_original_method = "0A98309F64E867E673B1B3CFC2DB79CE", hash_generated_method = "84AACF873005B030D9A068AE6475BB5D")
         
 public int compareTo(PreferenceLayout other) {

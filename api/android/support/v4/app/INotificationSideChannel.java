@@ -64,7 +64,8 @@ return DESCRIPTOR;
 /**
      * Send an ambient notification to the service.
      */
-@Override public void notify(java.lang.String packageName, int id, java.lang.String tag, android.app.Notification notification) throws android.os.RemoteException
+@DSSafe(DSCat.SAFE_LIST)
+            @Override public void notify(java.lang.String packageName, int id, java.lang.String tag, android.app.Notification notification) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -131,7 +132,8 @@ this.attachInterface(this, DESCRIPTOR);
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.267 -0400", hash_original_method = "76C63006A066906C0D90A3D937EA36BD", hash_generated_method = "E4DC296E0E2C4392E875E5F6F453D6AF")
+@DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.267 -0400", hash_original_method = "76C63006A066906C0D90A3D937EA36BD", hash_generated_method = "E4DC296E0E2C4392E875E5F6F453D6AF")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

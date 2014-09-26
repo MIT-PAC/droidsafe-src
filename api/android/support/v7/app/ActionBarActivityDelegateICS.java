@@ -306,31 +306,37 @@ public void onActionModeFinished(android.view.ActionMode mode) {
             mWrapped = wrapped;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatchKeyEvent(KeyEvent event) {
             return mWrapped.dispatchKeyEvent(event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatchKeyShortcutEvent(KeyEvent event) {
             return mWrapped.dispatchKeyShortcutEvent(event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatchTouchEvent(MotionEvent event) {
             return mWrapped.dispatchTouchEvent(event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatchTrackballEvent(MotionEvent event) {
             return mWrapped.dispatchTrackballEvent(event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatchGenericMotionEvent(MotionEvent event) {
             return mWrapped.dispatchGenericMotionEvent(event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
             return mWrapped.dispatchPopulateAccessibilityEvent(event);
@@ -341,21 +347,25 @@ public void onActionModeFinished(android.view.ActionMode mode) {
             return mWrapped.onCreatePanelView(featureId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onCreatePanelMenu(int featureId, Menu menu) {
             return mWrapped.onCreatePanelMenu(featureId, menu);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onPreparePanel(int featureId, View view, Menu menu) {
             return mWrapped.onPreparePanel(featureId, view, menu);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onMenuOpened(int featureId, Menu menu) {
             return mWrapped.onMenuOpened(featureId, menu);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onMenuItemSelected(int featureId, MenuItem item) {
             return mWrapped.onMenuItemSelected(featureId, item);
@@ -366,11 +376,13 @@ public void onActionModeFinished(android.view.ActionMode mode) {
             mWrapped.onWindowAttributesChanged(attrs);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onContentChanged() {
             mWrapped.onContentChanged();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onWindowFocusChanged(boolean hasFocus) {
             mWrapped.onWindowFocusChanged(hasFocus);
@@ -381,16 +393,19 @@ public void onActionModeFinished(android.view.ActionMode mode) {
             mWrapped.onAttachedToWindow();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onDetachedFromWindow() {
             mWrapped.onDetachedFromWindow();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPanelClosed(int featureId, Menu menu) {
             mWrapped.onPanelClosed(featureId, menu);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onSearchRequested() {
             return mWrapped.onSearchRequested();
@@ -406,6 +421,7 @@ public void onActionModeFinished(android.view.ActionMode mode) {
          * And here are the money methods, the reason why this wrapper exists:
          */
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onActionModeStarted(android.view.ActionMode mode) {
             mWrapped.onActionModeStarted(mode);

@@ -28,7 +28,7 @@ public Number() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.886 -0500", hash_original_method = "CE1931476457BE311793F2D350973D7B", hash_generated_method = "CB98D0F615F6DB83A9C991B104749D4A")
     
 public byte byteValue() {
@@ -52,7 +52,7 @@ public abstract double doubleValue();
      * @return the primitive float value of this object.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.891 -0500", hash_original_method = "28E8B58AB2C6301549A92ED9F41DD2A2", hash_generated_method = "D6B00E764949C7A1379BB92339FD15E8")
     
 public abstract float floatValue();
@@ -89,7 +89,7 @@ public abstract long longValue();
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.898 -0500", hash_original_method = "C1E7C69DF6DC74A923544E16C9C68CB8", hash_generated_method = "E060B506A3D8C38BFF0347DB2D1D55DB")
     
 public short shortValue() {

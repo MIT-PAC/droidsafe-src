@@ -59,7 +59,8 @@ public Type getOwnerType() {
         return ownerTypeRes;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.015 -0500", hash_original_method = "8C14A8DC9EE4FE0D18F10F9D13D7DE4A", hash_generated_method = "6F5E6EB400A4167EA3B6C46FC56C5A64")
     
 public Class getRawType() {

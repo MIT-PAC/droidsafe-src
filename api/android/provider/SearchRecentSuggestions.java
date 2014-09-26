@@ -154,7 +154,8 @@ public void saveRecentQuery(final String queryString, final String line2) {
         }
 
         new Thread("saveRecentQuery") {
-            @Override
+            @DSSpec(DSCat.SPEC_OTHERS)
+        @Override
             public void run() {
                 saveRecentQueryBlocking(queryString, line2);
                 sWritesInProgress.release();

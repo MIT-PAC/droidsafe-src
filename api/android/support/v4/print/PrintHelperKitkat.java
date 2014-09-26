@@ -82,14 +82,11 @@ class PrintHelperKitkat {
     private final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.635 -0400", hash_original_field = "557194F2CD36A9B5304668663A716C82", hash_generated_field = "557194F2CD36A9B5304668663A716C82")
 
-
     int mScaleMode = SCALE_MODE_FILL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.642 -0400", hash_original_field = "E84C2151704D3121085830BCF1B69798", hash_generated_field = "E84C2151704D3121085830BCF1B69798")
 
-
     int mColorMode = COLOR_MODE_COLOR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.652 -0400", hash_original_field = "6850062C1FBEC9EFAB4E65B09592C25B", hash_generated_field = "6850062C1FBEC9EFAB4E65B09592C25B")
-
 
     int mOrientation = ORIENTATION_LANDSCAPE;
 
@@ -344,7 +341,8 @@ public void printBitmap(final String jobName, final Uri imageFile)
 
                 loadBitmap = new AsyncTask<Uri, Boolean, Bitmap>() {
 
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     protected void onPreExecute() {
                         // First register for cancellation requests.
                         cancellationSignal.setOnCancelListener(
@@ -367,7 +365,8 @@ public void printBitmap(final String jobName, final Uri imageFile)
                         return null;
                     }
 
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     protected void onPostExecute(Bitmap bitmap) {
                         super.onPostExecute(bitmap);
                         mBitmap = bitmap;
@@ -385,7 +384,8 @@ public void printBitmap(final String jobName, final Uri imageFile)
                         }
                     }
 
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     protected void onCancelled(Bitmap result) {
                         // Task was cancelled, report that.
                         layoutResultCallback.onLayoutCancelled();

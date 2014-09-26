@@ -267,7 +267,7 @@ public float getFuzz() {
 
     public static final Parcelable.Creator<InputDevice> CREATOR
             = new Parcelable.Creator<InputDevice>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.433 -0500", hash_original_method = "A4482F32448D2C09B30B76D771E4FD04", hash_generated_method = "1C9A7A7AE65CEF2F049CE5ABFC1416CA")
         
 public InputDevice createFromParcel(Parcel in) {

@@ -102,7 +102,8 @@ public void setProtocolVersion(final ProtocolVersion version) {
         this.version = version;
     }
 
-    @DSSource({DSSourceKind.FILE_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.985 -0500", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "FE9C67AB573105BAB4263EEFA9A78DCB")
     
 public URI getURI() {

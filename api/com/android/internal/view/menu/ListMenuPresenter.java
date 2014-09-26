@@ -291,6 +291,8 @@ public MenuAdapter() {
             findExpandedIndex();
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.927 -0400", hash_original_method = "B075C2C9F817A6815A344733B4AD8984", hash_generated_method = "96013AFE965FFA9318D08CC5ABAC40B9")
         
 public int getCount() {
@@ -303,7 +305,7 @@ public int getCount() {
         }
 
         @DSSource({DSSourceKind.DATABASE_INFORMATION})
-        @DSSpec(DSCat.DB_CURSOR)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.928 -0400", hash_original_method = "73E2A4B1E49DC28C05ECD9BBA4CB2D70", hash_generated_method = "5EB7275EFDB5148D4A8658694B6545B8")
         
 public MenuItemImpl getItem(int position) {
@@ -315,6 +317,8 @@ public MenuItemImpl getItem(int position) {
             return items.get(position);
         }
 
+        @DSSource({DSSourceKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.929 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "8CA03C062FFB619062E87AB7922D9645")
         
 public long getItemId(int position) {
@@ -323,6 +327,7 @@ public long getItemId(int position) {
             return position;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.930 -0400", hash_original_method = "C1F4941101A1C702C14329F2D59B1A57", hash_generated_method = "2FC6379C887290ED4CD90E26BC1D2347")
         
 public View getView(int position, View convertView, ViewGroup parent) {

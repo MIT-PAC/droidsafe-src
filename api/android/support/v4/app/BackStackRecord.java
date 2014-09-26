@@ -20,6 +20,7 @@ final class BackStackState implements Parcelable {
 
     public static final Parcelable.Creator<BackStackState> CREATOR
             = new Parcelable.Creator<BackStackState>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.633 -0500", hash_original_method = "446F3F0B27039EA3D28E6A300050AF77", hash_generated_method = "5332A2FD526926A85C57F88A29667898")
         
 public BackStackState createFromParcel(Parcel in) {
@@ -280,6 +281,7 @@ public BackStackRecord(FragmentManagerImpl manager) {
         mManager = manager;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.728 -0500", hash_original_method = "0F20E0B479CF0E65111306B7DA0E9ECF", hash_generated_method = "D75BDEE397D249FF52FDF9BEE6D5965F")
     
 @Override
@@ -453,6 +455,7 @@ void addOp(Op op) {
         mNumOp++;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.755 -0500", hash_original_method = "C1E47B5485B0B08AA827320F8BD79938", hash_generated_method = "8BF4FE0935DB7825EB77D79654A1FFE2")
     
 public FragmentTransaction add(Fragment fragment, String tag) {
@@ -460,6 +463,7 @@ public FragmentTransaction add(Fragment fragment, String tag) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.758 -0500", hash_original_method = "F34A7243D750E416C8B46711401682C6", hash_generated_method = "A6C07E2B35495267F439576F66D13356")
     
 public FragmentTransaction add(int containerViewId, Fragment fragment) {
@@ -467,6 +471,7 @@ public FragmentTransaction add(int containerViewId, Fragment fragment) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.760 -0500", hash_original_method = "DCEB5E0B408763C7F0E9A3376CBD91C3", hash_generated_method = "C794033F13F952369C7EF9B224F946AA")
     
 public FragmentTransaction add(int containerViewId, Fragment fragment, String tag) {
@@ -523,6 +528,7 @@ public FragmentTransaction replace(int containerViewId, Fragment fragment, Strin
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.770 -0500", hash_original_method = "33682B1B727BD924F48FE7F483A5C004", hash_generated_method = "432290EF18CD72AFB8E02597304B0D1F")
     
 public FragmentTransaction remove(Fragment fragment) {
@@ -556,6 +562,7 @@ public FragmentTransaction show(Fragment fragment) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.776 -0500", hash_original_method = "60B4979E5A31C92DF6F58D0AB0599A51", hash_generated_method = "30F1941E10E79A9786D486824E899005")
     
 public FragmentTransaction detach(Fragment fragment) {
@@ -567,6 +574,7 @@ public FragmentTransaction detach(Fragment fragment) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.778 -0500", hash_original_method = "71B1C0469F9D1680729415A070BB9988", hash_generated_method = "35F5AC6EDAB37194CB73964757E05777")
     
 public FragmentTransaction attach(Fragment fragment) {
@@ -627,6 +635,7 @@ public boolean isAddToBackStackAllowed() {
         return mAllowAddToBackStack;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.795 -0500", hash_original_method = "FA98892FC811CB8446B86919ACA0FBBA", hash_generated_method = "FD704B45B6CBA9872E1BDB9E98AFFBB6")
     
 public FragmentTransaction disallowAddToBackStack() {
@@ -738,12 +747,14 @@ void bumpBackStackNesting(int amt) {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.809 -0500", hash_original_method = "FD69B9F14C4FF1755ADA5F3EFF5DDDFB", hash_generated_method = "AE3CCF7269135DEB1B7CB727659CAE46")
     
 public int commit() {
         return commitInternal(false);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.811 -0500", hash_original_method = "034B152615D8FC6D1FD7AD2899313AE6", hash_generated_method = "17EE5D1F85B308AF1AACAFB955676640")
     
 public int commitAllowingStateLoss() {
@@ -772,6 +783,7 @@ int commitInternal(boolean allowStateLoss) {
         return mIndex;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.818 -0500", hash_original_method = "F2F4246724AFA2458C4148B16BF6293A", hash_generated_method = "D24FB22D0BE1773E5C9331E01FDD8702")
     
 public void run() {
@@ -969,6 +981,7 @@ public int getTransitionStyle() {
         return mTransitionStyle;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.831 -0500", hash_original_method = "98C448D4C76D2FE85810E0C03648865C", hash_generated_method = "4C3597D03BC4A9BBC6133022DEEAE7F4")
     
 public boolean isEmpty() {

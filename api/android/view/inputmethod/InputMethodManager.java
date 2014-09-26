@@ -611,7 +611,7 @@ public void updateExtractedText(View view, int token, ExtractedText text) {
      * 0 or have the {@link #SHOW_IMPLICIT} bit set.
      */
     @DSComment("System settings/policy")
-    @DSSpec(DSCat.SYSTEM)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.697 -0500", hash_original_method = "8D2F613F92BFA1616CD527BE18090765", hash_generated_method = "8B69D752E6300569DF8BE9839965005B")
     
@@ -837,7 +837,8 @@ void startInputInner() {
             // we need to reschedule our work for over there.
             if (DEBUG) Log.v(TAG, "Starting input: reschedule to view thread");
             vh.post(new Runnable() {
-                public void run() {
+                @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                     startInputInner();
                 }
             });

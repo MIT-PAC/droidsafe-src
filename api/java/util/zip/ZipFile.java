@@ -177,7 +177,7 @@ public boolean hasMoreElements() {
                 return iterator.hasNext();
             }
 
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.349 -0500", hash_original_method = "0AFF9A2DED00798BA27B7711FA7E95F7", hash_generated_method = "D79A666F419DCD9B04F294A5770B2CDB")
             
 public ZipEntry nextElement() {
@@ -213,7 +213,7 @@ public ZipEntry nextElement() {
      */
     @DSComment("zip/io")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.354 -0500", hash_original_method = "D382D29E599C910662BB0F89A97F218A", hash_generated_method = "955202DE1AF533EEDFC3BBFC49E0D4E8")
     
 public ZipEntry getEntry(String entryName) {

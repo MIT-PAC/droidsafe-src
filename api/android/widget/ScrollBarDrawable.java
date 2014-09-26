@@ -164,6 +164,7 @@ public void setParameters(int range, int offset, int extent, boolean vertical) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.032 -0500", hash_original_method = "44DF7C7CE3C6FB97927067DC59DBEDA2", hash_generated_method = "C6CDEDDC33BB525445D0868139831646")
     
 @Override
@@ -257,7 +258,7 @@ public int getSize(boolean vertical) {
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.049 -0500", hash_original_method = "B18AEA250E30640B8B376B842AF0FDF6", hash_generated_method = "9C481F467A2EF23FB08CBADDD2BBFB85")
     
 @Override
@@ -272,7 +273,8 @@ public int getSize(boolean vertical) {
         mHorizontalThumb.setAlpha(alpha);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.053 -0500", hash_original_method = "CBF97912C9C8F01704D565D3AA800300", hash_generated_method = "45BC8FD7D0A6109AB30554FD8DB0B0B3")
     
 @Override
@@ -288,7 +290,7 @@ public int getSize(boolean vertical) {
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.055 -0500", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "92E82009FE448BF0B4121CF0FFF496C7")
     
 @Override

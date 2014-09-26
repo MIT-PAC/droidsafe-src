@@ -112,22 +112,17 @@ static OpenSSLKey getInstance(RSAPrivateCrtKey rsaPrivateKey) throws InvalidKeyE
     private BigInteger publicExponent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.579 -0400", hash_original_field = "7A3E1BB8B91AABDAC8096A6AF946B79F", hash_generated_field = "9A9C713E9D8E7513F2417C506E73722A")
 
-
     private BigInteger primeP;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.579 -0400", hash_original_field = "1C81CE9A16FD4AC10BD085B1B94422AB", hash_generated_field = "9F91AA93693120FB89947F1BE699F0CA")
-
 
     private BigInteger primeQ;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.580 -0400", hash_original_field = "40B3FB6881B01131E42A79EC00848D20", hash_generated_field = "D5FB562D58D86204E98F2195C5586E56")
 
-
     private BigInteger primeExponentP;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.580 -0400", hash_original_field = "6467AFAE24BDCED779196424DCB2176F", hash_generated_field = "1ACB6AF17AD2472C87AB927F2F837C22")
 
-
     private BigInteger primeExponentQ;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.581 -0400", hash_original_field = "A68F5C4250913ADDC701F6FCEA9C0282", hash_generated_field = "222659EB722B867F4069225DE0B214AA")
-
 
     private BigInteger crtCoefficient;
 
@@ -260,6 +255,7 @@ public OpenSSLRSAPrivateCrtKey(RSAPrivateCrtKeySpec rsaKeySpec) throws InvalidKe
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.589 -0400", hash_original_method = "82905360E2B008EEC8F4E3DE971DAE8F", hash_generated_method = "3CA9BD30EE489FAF604598AE69057AEF")
     
 @Override
@@ -271,6 +267,7 @@ public OpenSSLRSAPrivateCrtKey(RSAPrivateCrtKeySpec rsaKeySpec) throws InvalidKe
         return hashCode;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.590 -0400", hash_original_method = "AD48F225387AC59133F875DB7CA49790", hash_generated_method = "E16F807D698E8319ED3A5C86A1D0C041")
     
 @Override

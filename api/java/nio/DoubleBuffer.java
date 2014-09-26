@@ -138,6 +138,7 @@ public abstract DoubleBuffer compact();
      * @exception ClassCastException
      *                if {@code other} is not a double buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.497 -0500", hash_original_method = "A9C47546143A1E2A817B74D1052E5DC9", hash_generated_method = "9E80DB9DA9386DCD90EA39CFF14B66EC")
     
 public int compareTo(DoubleBuffer otherBuffer) {

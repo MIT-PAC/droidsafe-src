@@ -182,6 +182,7 @@ public abstract int read(char[] buf, int offset, int count) throws IOException;
      * @see #read(char[])
      * @see #read(char[], int, int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSComment("Activity on IO class")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.848 -0500", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "94CE574D8F9043761F4405DCC097C872")
     
@@ -226,7 +227,7 @@ public void reset() throws IOException {
      */
     @DSComment("no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.853 -0500", hash_original_method = "7E8A2F73FB8EAE936D216E90BE91676B", hash_generated_method = "7AD957B0F0168F7BE1674D0299966610")
     
 public long skip(long charCount) throws IOException {
@@ -270,7 +271,7 @@ public long skip(long charCount) throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.856 -0500", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "C5940F6106B7BDD695AB535DD92FD3DC")
     
 public int read(CharBuffer target) throws IOException {

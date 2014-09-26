@@ -29,7 +29,6 @@ import java.security.*;
 import java.lang.reflect.*;
 import droidsafe.annotations.*;
 
-
 /**
  * A collection of methods for performing low-level, unsafe operations.
  * Although the class and all methods are public, use of this class is
@@ -200,73 +199,72 @@ public final class Unsafe {
     }
     
     /** @see #putInt(Object, int, int) */
-    @DSSpec(DSCat.REFLECTION)
-    @DSSink(DSSinkKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSink({DSSinkKind.REFLECTION})
     public  void    putBoolean(Object o, long offset, boolean x) {
         
     }
 
     /** @see #getInt(Object, long) */
 
-    @DSSpec(DSCat.REFLECTION)
-    @DSSource(DSSourceKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSource({DSSourceKind.REFLECTION})
     public byte getByte(Object o, long offset) {
         return (byte)o.getTaintInt();
     }
 
     /** @see #putInt(Object, int, int) */
-    @DSSpec(DSCat.REFLECTION)
-    @DSSink(DSSinkKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSink({DSSinkKind.REFLECTION})
     public void    putByte(Object o, long offset, byte x) {}
 
     /** @see #getInt(Object, long) */
-    @DSSpec(DSCat.REFLECTION)
-    @DSSource(DSSourceKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSource({DSSourceKind.REFLECTION})
     public short getShort(Object o, long offset) {
         return (short)o.getTaintInt();
     }
 
-
     /** @see #putInt(Object, int, int) */
-    @DSSpec(DSCat.REFLECTION)
-    @DSSink(DSSinkKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSink({DSSinkKind.REFLECTION})
     public void    putShort(Object o, long offset, short x) {
         o.addTaint(x);
     }
 
     /** @see #getInt(Object, long) */
 
-    @DSSpec(DSCat.REFLECTION)
-    @DSSource(DSSourceKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSource({DSSourceKind.REFLECTION})
     public char    getChar(Object o, long offset) {
          return (char)o.getTaintInt();
     }
 
     /** @see #putInt(Object, int, int) */
-    @DSSpec(DSCat.REFLECTION)
-    @DSSink(DSSinkKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSink({DSSinkKind.REFLECTION})
     public void    putChar(Object o, long offset, char x) {}
     /** @see #getInt(Object, long) */
     public native long    getLong(Object o, long offset);
     /** @see #putInt(Object, int, int) */
     public native void    putLong(Object o, long offset, long x);
 
-    @DSSpec(DSCat.REFLECTION)
-    @DSSource(DSSourceKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSource({DSSourceKind.REFLECTION})
     public float   getFloat(Object o, long offset) {
         return (float)o.getTaintDouble();
     }
     /** @see #putInt(Object, int, int) */
-    @DSSpec(DSCat.REFLECTION)
-    @DSSink(DSSinkKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSink({DSSinkKind.REFLECTION})
     public void    putFloat(Object o, long offset, float x) {
         o.addTaint(x);
     }
 
     /** @see #getInt(Object, long) */
 
-    @DSSpec(DSCat.REFLECTION)
-    @DSSource(DSSourceKind.REFLECTION)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSource({DSSourceKind.REFLECTION})
     public double  getDouble(Object o, long offset) {
         return o.getTaintDouble();
     }
@@ -326,6 +324,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSink({DSSinkKind.REFLECTION})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public void putBoolean(Object o, int offset, boolean x) {
         putBoolean(o, (long)offset, x);
@@ -335,6 +335,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSource({DSSourceKind.REFLECTION})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public byte getByte(Object o, int offset) {
         return getByte(o, (long)offset);
@@ -344,6 +346,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSink({DSSinkKind.REFLECTION})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public void putByte(Object o, int offset, byte x) {
         putByte(o, (long)offset, x);
@@ -353,6 +357,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSource({DSSourceKind.REFLECTION})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public short getShort(Object o, int offset) {
         return getShort(o, (long)offset);
@@ -362,6 +368,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSink({DSSinkKind.ANY_MEMORY})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public void putShort(Object o, int offset, short x) {
         putShort(o, (long)offset, x);
@@ -371,6 +379,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSource({DSSourceKind.REFLECTION})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public char getChar(Object o, int offset) {
         return getChar(o, (long)offset);
@@ -380,6 +390,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSink({DSSinkKind.REFLECTION})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public void putChar(Object o, int offset, char x) {
         putChar(o, (long)offset, x);
@@ -407,6 +419,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSource({DSSourceKind.REFLECTION})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public float getFloat(Object o, int offset) {
         return getFloat(o, (long)offset);
@@ -416,6 +430,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSink({DSSinkKind.REFLECTION})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public void putFloat(Object o, int offset, float x) {
         putFloat(o, (long)offset, x);
@@ -425,6 +441,8 @@ public final class Unsafe {
      * @deprecated As of 1.4.1, cast the 32-bit offset argument to a long.
      * See {@link #staticFieldOffset}.
      */
+    @DSSource({DSSourceKind.REFLECTION})
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @Deprecated
     public double getDouble(Object o, int offset) {
         return getDouble(o, (long)offset);
@@ -925,7 +943,6 @@ public final class Unsafe {
      */
     public native int pageSize();
 
-
     /// random trusted operations from JNI:
 
     /**
@@ -961,7 +978,6 @@ public final class Unsafe {
      */
     public native Class defineAnonymousClass(Class hostClass, byte[] data, Object[] cpPatches);
 
-
     /** Allocate an instance but do not run any constructor.
         Initializes the class if it has not yet been. */
     public native Object allocateInstance(Class cls)
@@ -985,7 +1001,6 @@ public final class Unsafe {
 
     /** Throw the exception without telling the verifier. */
     public native void throwException(Throwable ee);
-
 
     /**
      * Atomically update Java variable to <tt>x</tt> if it is currently

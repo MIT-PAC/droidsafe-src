@@ -34,7 +34,7 @@ public class InterfaceConfiguration implements Parcelable {
 
     public static final Creator<InterfaceConfiguration> CREATOR =
         new Creator<InterfaceConfiguration>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:20.731 -0400", hash_original_method = "76C6CBF6FE2D5EB36C73B2620657A1AC", hash_generated_method = "4D05993755407010E5072F2053E009C7")
         
 public InterfaceConfiguration createFromParcel(Parcel in) {

@@ -61,7 +61,8 @@ public abstract class AbstractPreferences extends Preferences {
         dispatcher.setDaemon(true);
         dispatcher.start();
         Runtime.getRuntime().addShutdownHook(new Thread() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:10.189 -0400", hash_original_method = "0713070578C1A485FA650FCE93E6C361", hash_generated_method = "7B8886BDBCDCC644EEE3F1C382DA590F")
+            @DSSpec(DSCat.SPEC_OTHERS)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:10.189 -0400", hash_original_method = "0713070578C1A485FA650FCE93E6C361", hash_generated_method = "7B8886BDBCDCC644EEE3F1C382DA590F")
             
 @Override
             public void run() {
@@ -264,7 +265,6 @@ protected abstract String[] childrenNamesSpi() throws BackingStoreException;
     
 protected abstract AbstractPreferences childSpi(String name);
 
-
     /**
      * Puts the given key-value pair into this node. Caller of this method
      * should ensure that both of the given values are valid and that this
@@ -293,7 +293,6 @@ protected abstract void putSpi(String name, String value);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:10.197 -0400", hash_original_method = "F4D6722F80B021FA3B2E4A59E55E99EF", hash_generated_method = "6FA292109189A2C9A83756EA5221B92B")
     
 protected abstract String getSpi(String key);
-
 
     /**
      * Returns an array of all preference keys of this node or an empty array if
@@ -880,6 +879,7 @@ private void removeNodeImpl() throws BackingStoreException {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:10.218 -0400", hash_original_method = "DC2DEE4C60A3DE38C649D2B8F6B4E410", hash_generated_method = "146762C7A78D708FEE4EA3C2C5C5C4F7")
     
 @Override
@@ -924,6 +924,7 @@ EventDispatcher(String name){
             super(name);
         }
 
+        @DSSpec(DSCat.SPEC_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:10.220 -0400", hash_original_method = "536021F1E13E81D3927E4466D90AFCE8", hash_generated_method = "2D719AA03C22873F47BDE6D26556479F")
         
 @Override

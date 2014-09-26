@@ -140,6 +140,7 @@ public boolean hasExtensions() {
      * @see java.security.cert.X509CRLEntry#toString()
      * method documentation for more info
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:02.839 -0400", hash_original_method = "D3FD067573A7F3A676156DBC33431C92", hash_generated_method = "1F7595A73EBAD505ECD6745950B7BD44")
     
 public String toString() {

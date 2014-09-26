@@ -123,6 +123,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.239 -0500", hash_original_method = "6E8F7F76B2482C387134CAE0922B8764", hash_generated_method = "54D33EED58B055965257537B0468F26F")
     
 @Override
@@ -162,6 +163,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.250 -0500", hash_original_method = "6F9D455A12BE93D87BC450FB84CABAF4", hash_generated_method = "75FDCC350B3C70C607BB00DA986CB167")
     
 @Override
@@ -185,6 +187,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.FS_INFO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.257 -0500", hash_original_method = "466D6BF0E43B95D4B6EB41E58C265707", hash_generated_method = "715B8BFFB59D2D22C3D92020B279FB21")
     
 @Override
@@ -215,12 +218,11 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
     public File[] getExternalFilesDirs(String type) {
         throw new UnsupportedOperationException();
     }
-
-    
 
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.266 -0500", hash_original_method = "702F9A452622032EC8233CE54867C377", hash_generated_method = "733D8115EFA026FDED449E6B8712E502")
@@ -623,6 +625,7 @@ public void enforceUriPermission(
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.386 -0500", hash_original_method = "B79081A4CFC106615A2ECE230BC1B163", hash_generated_method = "1E51E7AC5158A6CE91DC532A8E791A2B")
     
 @Override

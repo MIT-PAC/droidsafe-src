@@ -211,7 +211,8 @@ public void setView(View view, int viewSpacingLeft, int viewSpacingTop, int view
      * @param text The text to display in positive button.
      * @param msg The {@link Message} to be sent when clicked.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.019 -0500", hash_original_method = "CFE09EBA63F60A6BEEDA0ECE4DBD2BBE", hash_generated_method = "0046613B36C60BA64ACC9976D324A9E9")
     
 public void setButton(int whichButton, CharSequence text, Message msg) {
@@ -228,6 +229,7 @@ public void setButton(int whichButton, CharSequence text, Message msg) {
      * @param text The text to display in positive button.
      * @param listener The {@link DialogInterface.OnClickListener} to use.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.021 -0500", hash_original_method = "FD92C01692F456341A0525E9D1CD5A83", hash_generated_method = "D3DE8E23F2B038E81D912168B20BA86B")
     
 public void setButton(int whichButton, CharSequence text, OnClickListener listener) {
@@ -238,6 +240,7 @@ public void setButton(int whichButton, CharSequence text, OnClickListener listen
      * @deprecated Use {@link #setButton(int, CharSequence, Message)} with
      *             {@link DialogInterface#BUTTON_POSITIVE}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.024 -0500", hash_original_method = "2930D21A7389B776726F7D14477E22A5", hash_generated_method = "3783B1507BFE8068752A0D0B164EE313")
     
 @Deprecated
@@ -276,6 +279,7 @@ public void setButton(int whichButton, CharSequence text, OnClickListener listen
      *             {@link #setButton(int, CharSequence, android.content.DialogInterface.OnClickListener)}
      *             with {@link DialogInterface#BUTTON_POSITIVE}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.031 -0500", hash_original_method = "14303CDDA201782BB4EE72003EBE4B25", hash_generated_method = "B658EED7CF0009AA347A5F14DAD846DB")
     
 @Deprecated

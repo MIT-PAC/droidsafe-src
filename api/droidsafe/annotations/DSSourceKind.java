@@ -4,6 +4,7 @@ public enum DSSourceKind {
     GUI,
     GUI_TEXT,
     ACCOUNT_INFORMATION,
+    BLUETOOTH,
     BLUETOOTH_INFORMATION,
     BROWSER_INFORMATION,
     CALENDAR_INFORMATION,
@@ -52,6 +53,7 @@ public enum DSSourceKind {
     REMOTE_APP,
     CAMERA,
     DATE_TIME,
-    GOOGLE_SERVICES,
-    GOOGLE_DRIVE
+    GOOGLE_SERVICES, /*a bit too generic */
+    GOOGLE_DRIVE,
+    JSON
 }

@@ -22,6 +22,7 @@ public MockView(Context context, AttributeSet attrs, int defStyle) {
         setGravity(Gravity.CENTER);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.272 -0500", hash_original_method = "B0CB306F2707837E390C5BAE5CE6A873", hash_generated_method = "CCA795E47FD5F2944969273254CEE3BC")
     
 @Override

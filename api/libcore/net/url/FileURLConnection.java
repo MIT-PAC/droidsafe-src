@@ -107,7 +107,8 @@ public FileURLConnection(URL url) {
      *
      * @return the content type
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.753 -0500", hash_original_method = "72F889733CD7FE79958D9F6D8BD5D3FB", hash_generated_method = "F09D5D637327E65D0812C66AE5A178F1")
     
 @Override

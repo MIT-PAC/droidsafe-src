@@ -53,7 +53,6 @@ import org.apache.harmony.security.x509.Extensions;
 public class TimeStampReq {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.538 -0400", hash_original_field = "195DEF8DA0DC357B52D9A81D10B469DB", hash_generated_field = "240CDB1590A86ADEE0AB913FBB2E0B5D")
 
-
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             ASN1Integer.getInstance(),              // version
             MessageImprint.ASN1,                    // messageImprint
@@ -116,26 +115,20 @@ public class TimeStampReq {
     private  int version;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.527 -0400", hash_original_field = "F31921A0A5D0631E718887C96E89AF46", hash_generated_field = "49C20C38279D6EB96121ADC1E18E3831")
 
-
     private  MessageImprint messageImprint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.527 -0400", hash_original_field = "0B83796B0F4DFFA0B602C1048E189731", hash_generated_field = "EB9ADD321BC84A5A297B60CB461D5D7A")
-
 
     private  String reqPolicy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.528 -0400", hash_original_field = "13ECC8C436811ED0415BD7546AA2A777", hash_generated_field = "757A20AA999EACA0F78635F2872B1EB4")
 
-
     private  BigInteger nonce;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.528 -0400", hash_original_field = "118DBFBD42D14D580C68A8D47031BFBA", hash_generated_field = "980FD6DB708CE6AD9B7F35081A20BEE3")
-
 
     private  Boolean certReq;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.529 -0400", hash_original_field = "11D23A9D67ECEDEBAFCBDADBAE6E0FA1", hash_generated_field = "85FCB044EB3BC544E06DEC3DDF20CB7B")
 
-
     private  Extensions extensions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.529 -0400", hash_original_field = "B36A946B5145D992E53209BC6743765D", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
-
 
     private byte [] encoding;
 
@@ -161,6 +154,7 @@ private TimeStampReq(int version, MessageImprint messageImprint,
         this.encoding = encoding;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.531 -0400", hash_original_method = "C990FF7DCD43A163EFDB707B017F87DB", hash_generated_method = "C0447E21CCCE90BF049F547722F3988B")
     
 public String toString() {

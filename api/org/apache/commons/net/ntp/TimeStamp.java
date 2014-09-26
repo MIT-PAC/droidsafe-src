@@ -233,6 +233,8 @@ private static void appendHexString(StringBuffer buf, long l)
      * @return NTP timestamp 64-bit long value as hex string with seconds
      * separated by fractional seconds.
      */
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.874 -0500", hash_original_method = "8D01996EB7B68AD896BC3623C3BCF2F5", hash_generated_method = "E3B8323B4E1DE71A252FFB148966DCBC")
     
 public static String toString(long ntpTime)
@@ -490,6 +492,7 @@ public String toUTCString()
      *          numerically greater than the TimeStamp argument
      *		(signed comparison).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.890 -0500", hash_original_method = "6C9BE2FDA6A6DE8BDC29D06750EF7E58", hash_generated_method = "9B240D65625C603E270174F90B22BFA3")
     
 public int compareTo(TimeStamp anotherTimeStamp)

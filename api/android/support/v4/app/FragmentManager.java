@@ -72,7 +72,7 @@ public static void enableDebugLogging(boolean enabled) {
      * will be lost.</p>
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.144 -0500", hash_original_method = "BE048CD13A2D9177864E9AE5CA89385C", hash_generated_method = "179BF9392A437EED545CF6A3F093EC20")
     
 public abstract FragmentTransaction beginTransaction();
@@ -98,7 +98,7 @@ public abstract FragmentTransaction beginTransaction();
      * executed.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.148 -0500", hash_original_method = "5B9A3D87E7345C957FA5717C0C10C635", hash_generated_method = "66BAE45C691B1AB5E9BB1A84AE41D8A2")
     
 public abstract boolean executePendingTransactions();
@@ -126,7 +126,7 @@ public abstract Fragment findFragmentById(int id);
      * @return The fragment if found or null otherwise.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.153 -0500", hash_original_method = "06F2C60B02B6436122252A9A18FF6B5B", hash_generated_method = "8A748374863BCFCFE22454ABCA2FE261")
     
 public abstract Fragment findFragmentByTag(String tag);
@@ -138,7 +138,7 @@ public abstract Fragment findFragmentByTag(String tag);
      * returns to its event loop.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.157 -0500", hash_original_method = "8DD8850C5659D39934906ED127571123", hash_generated_method = "06152C82F0BE43992BE41413F4D5A3F1")
     
 public abstract void popBackStack();
@@ -169,7 +169,7 @@ public abstract boolean popBackStackImmediate();
      * @param flags Either 0 or {@link #POP_BACK_STACK_INCLUSIVE}.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.162 -0500", hash_original_method = "7371282EB954218CB5BB647DBEFB9C4D", hash_generated_method = "DA4FB7A38FD1A9723E0C9FB977608D32")
     
 public abstract void popBackStack(String name, int flags);
@@ -201,7 +201,7 @@ public abstract boolean popBackStackImmediate(String name, int flags);
      * @param flags Either 0 or {@link #POP_BACK_STACK_INCLUSIVE}.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.167 -0500", hash_original_method = "5DFB5C2F3CB06A536CC67665FD5A1850", hash_generated_method = "AFB34329D29F80428B05B6ACD88A1183")
     
 public abstract void popBackStack(int id, int flags);
@@ -261,7 +261,7 @@ public abstract void removeOnBackStackChangedListener(OnBackStackChangedListener
      * @param fragment The Fragment whose reference is to be stored.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.180 -0500", hash_original_method = "8451101D4DDA3AE9BA2F091778F6ACC9", hash_generated_method = "C529CCC132EFEB14EBA38652ABAFD702")
     
 public abstract void putFragment(Bundle bundle, String key, Fragment fragment);
@@ -276,7 +276,7 @@ public abstract void putFragment(Bundle bundle, String key, Fragment fragment);
      * the given reference.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.183 -0500", hash_original_method = "1FBEC41A2754AD4627511B440BD8CDF6", hash_generated_method = "0F634E6958A473C8D2E8404CF8C8DB24")
     
 public abstract Fragment getFragment(Bundle bundle, String key);
@@ -357,12 +357,12 @@ public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, 
 }
 
 final class FragmentManagerState implements Parcelable {
-    
 
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.353 -0400", hash_original_field = "D29AA2723BAE7915447DC2F30F3AAA56", hash_generated_field = "EE9672AF4023C35BB0D72B0356E5DA5C")
 
     public static final Parcelable.Creator<FragmentManagerState> CREATOR
             = new Parcelable.Creator<FragmentManagerState>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.209 -0500", hash_original_method = "ECDC6A4E7C91D1C5B65C994C4484624F", hash_generated_method = "C02CF7F6521D674473A0622E67866AE4")
         
 public FragmentManagerState createFromParcel(Parcel in) {
@@ -611,6 +611,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.884 -0400", hash_original_field = "BB4C35BD7F2BC82D3F4C38422B568E9B", hash_generated_field = "9126D3C716AC852A46D1963380A0CE0E")
 
     Runnable mExecCommit = new Runnable() {        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.884 -0400", hash_original_method = "C2BA1C69EB0B4CCFF1A319535DB79508", hash_generated_method = "FEDC918E58215E12D8175F59CA2BA6B4")
         @Override
         public void run() {
@@ -652,6 +653,7 @@ private void throwException(RuntimeException ex) {
         throw ex;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.288 -0500", hash_original_method = "FD4DF6D1DA8CD9545895F43FA5CF7B0B", hash_generated_method = "901C9AD0A2A75ECA10E98E593A7AB045")
     
 @Override
@@ -659,6 +661,7 @@ private void throwException(RuntimeException ex) {
         return new BackStackRecord(this);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.290 -0500", hash_original_method = "082964FFA3913D960E19EEB76BD9505B", hash_generated_method = "1711C57317FEF53BD66DBCDCF1F50005")
     
 @Override
@@ -666,12 +669,14 @@ private void throwException(RuntimeException ex) {
         return execPendingActions();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.296 -0500", hash_original_method = "5CB88371A39240A7C2FB2F2041C5DD0D", hash_generated_method = "045B9A2FE36B9056EDAE06521EEDFC5E")
     
 @Override
     public void popBackStack() {
         enqueueAction(new Runnable() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:05.495 -0500", hash_original_method = "C15C9D80C4BF4FB6B2AF0B93A4449441", hash_generated_method = "1E775B2913B07D2EF0E46F6FF2B9DCB4")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:05.495 -0500", hash_original_method = "C15C9D80C4BF4FB6B2AF0B93A4449441", hash_generated_method = "1E775B2913B07D2EF0E46F6FF2B9DCB4")
             
 @Override public void run() {
                 popBackStackState(mActivity.mHandler, null, -1, 0);
@@ -688,12 +693,14 @@ private void throwException(RuntimeException ex) {
         return popBackStackState(mActivity.mHandler, null, -1, 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.304 -0500", hash_original_method = "9E86D2BA46D98A91B2D43097CFA7F639", hash_generated_method = "25AC695BADCB95EC6033649501BF1614")
     
 @Override
     public void popBackStack(final String name, final int flags) {
         enqueueAction(new Runnable() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:05.500 -0500", hash_original_method = "22FC8A6DB6B4AB9E651D01E64BEED72A", hash_generated_method = "D4F166516CD2906CC8BDAB23FF969A06")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:05.500 -0500", hash_original_method = "22FC8A6DB6B4AB9E651D01E64BEED72A", hash_generated_method = "D4F166516CD2906CC8BDAB23FF969A06")
             
 @Override public void run() {
                 popBackStackState(mActivity.mHandler, name, -1, flags);
@@ -710,6 +717,7 @@ private void throwException(RuntimeException ex) {
         return popBackStackState(mActivity.mHandler, name, -1, flags);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.312 -0500", hash_original_method = "DA57C1B5DA7DBD65A6FF7556F6C0B827", hash_generated_method = "645643CDB361BBE23BA78834F510A0DB")
     
 @Override
@@ -718,7 +726,8 @@ private void throwException(RuntimeException ex) {
             throw new IllegalArgumentException("Bad id: " + id);
         }
         enqueueAction(new Runnable() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:05.507 -0500", hash_original_method = "DBCE7037D51EB5153CDA373E6D392F0E", hash_generated_method = "44E0DD65D7D6454CB2701D75E88FE657")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:05.507 -0500", hash_original_method = "DBCE7037D51EB5153CDA373E6D392F0E", hash_generated_method = "44E0DD65D7D6454CB2701D75E88FE657")
             
 @Override public void run() {
                 popBackStackState(mActivity.mHandler, null, id, flags);
@@ -771,6 +780,7 @@ private void throwException(RuntimeException ex) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.326 -0500", hash_original_method = "3F35630659DD6C09B78E73F7BD07330C", hash_generated_method = "F8877F0026C40E0DE0A6BF307016E509")
     
 @Override
@@ -782,6 +792,7 @@ private void throwException(RuntimeException ex) {
         bundle.putInt(key, fragment.mIndex);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.329 -0500", hash_original_method = "4CDB8119120F20E16B511E77159C27B3", hash_generated_method = "E17E6A66A2A49A4D03E0EAB5BC904E20")
     
 @Override
@@ -817,6 +828,7 @@ private void throwException(RuntimeException ex) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.334 -0500", hash_original_method = "809378480DC9ABFE56F2FAE2E163A583", hash_generated_method = "DA521A7DEB85214D3168FC663436EB63")
     
 @Override
@@ -1583,6 +1595,7 @@ public Fragment findFragmentById(int id) {
         return null;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:34.414 -0500", hash_original_method = "A116F7F22C8FEEEBB3418EA3417C69EB", hash_generated_method = "1A1DDE994C81088F0B8A437B3EB43E78")
     
 public Fragment findFragmentByTag(String tag) {

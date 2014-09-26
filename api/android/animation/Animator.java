@@ -59,6 +59,7 @@ public void cancel() {
      *
      * <p>This method must be called on the thread that is running the animation.</p>
      */
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.275 -0500", hash_original_method = "4F105473DD7236D24F8992C8503B57B1", hash_generated_method = "FE6D8DF71959D6F4FDE5F0F03D32C242")
     
 public void end() {

@@ -45,7 +45,6 @@ import java.util.List;
 public class Searchables {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.584 -0400", hash_original_field = "A4C27AE69C6BA44C6EA956DAF68BEC63", hash_generated_field = "8F50C782791B023E7B600BB6A8E6CC9B")
 
-
     private static final String LOG_TAG = "Searchables";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.586 -0400", hash_original_field = "C5E3DF0222AC5D17E252D4F9F395AFF8", hash_generated_field = "8DB2EFD96704F13F9FFCFF6BA531F17F")
 
@@ -57,7 +56,6 @@ public class Searchables {
     private static final String MD_SEARCHABLE_SYSTEM_SEARCH = "*";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.599 -0400", hash_original_field = "1E5D0BEEE3311EB0C6C6C1AC5DD96EEF", hash_generated_field = "89FEC8B05FFD18F66084ECEBC2E1833F")
 
-
     public static String GOOGLE_SEARCH_COMPONENT_NAME =
             "com.android.googlesearch/.GoogleSearch";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.601 -0400", hash_original_field = "F2E6E2E595CC0C27AF569945F1455433", hash_generated_field = "205C7BBEFDC7183EB111D867987F7795")
@@ -66,9 +64,9 @@ public class Searchables {
             "com.google.android.providers.enhancedgooglesearch/.Launcher";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.618 -0400", hash_original_field = "7299A541AAC0FB2C2EB20A22B20454F5", hash_generated_field = "2A4DEC6F0C5C8A2103C2D59692BDE837")
 
-
     private static final Comparator<ResolveInfo> GLOBAL_SEARCH_RANKER =
             new Comparator<ResolveInfo>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 13:07:03.655 -0400", hash_original_method = "26D20733A8DE4D481F25CE3E94815CA5", hash_generated_method = "C332F7794F47016C7764BFB8553B1F50")
         
 @Override
@@ -104,10 +102,8 @@ private static final boolean isSystemApp(ResolveInfo res) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.589 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.591 -0400", hash_original_field = "544398133346FF8E11A46A31117F8507", hash_generated_field = "C1528430A953FA2F034BED242DDCC204")
-
 
     private HashMap<ComponentName, SearchableInfo> mSearchablesMap = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:27.592 -0400", hash_original_field = "D14430D57FCE619074172AE088B102D0", hash_generated_field = "243894196228599EB558AECB3DD9ECD5")

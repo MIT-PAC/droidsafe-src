@@ -354,6 +354,7 @@ public long node() {
      * @return a value of -1, 0 or 1 if this UUID is less than, equal to or
      *         greater than {@code uuid}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.067 -0500", hash_original_method = "BF37BBD9CA2A2DE01ED617F2C2EA69AA", hash_generated_method = "3B0CFEE9CA9904EF17EDFCD35393AA9C")
     
 public int compareTo(UUID uuid) {

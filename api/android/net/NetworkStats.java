@@ -70,7 +70,7 @@ public static String tagToString(int tag) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.747 -0400", hash_original_field = "3469CD7C405D7C574C3592A9EE21FD10", hash_generated_field = "C59D2B9A15468765CA55EEA88C603BE5")
 
     public static final Creator<NetworkStats> CREATOR = new Creator<NetworkStats>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.692 -0500", hash_original_method = "76D9386453B9839BC68D96B3471291B7", hash_generated_method = "D3DCBA29DA323F34F5817304F63B47E7")
         
 public NetworkStats createFromParcel(Parcel in) {

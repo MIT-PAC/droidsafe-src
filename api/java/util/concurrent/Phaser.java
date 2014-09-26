@@ -236,7 +236,6 @@ import java.util.concurrent.locks.LockSupport;
 public class Phaser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:22.944 -0400", hash_original_field = "A0889131F1B89C3B305FAF8AC7FB0D40", hash_generated_field = "4578CD0840E752884DCF0DA9220344A4")
 
-
     private static final int  MAX_PARTIES     = 0xffff;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:22.945 -0400", hash_original_field = "DE49D0BFA45E5B2A5B164DAD79B6FFFF", hash_generated_field = "5511843B64CD257D228CF3E628973122")
 
@@ -308,13 +307,11 @@ private static int arrivedOf(long s) {
     static final int SPINS_PER_ARRIVAL = (NCPU < 2) ? 1 : 1 << 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:22.978 -0400", hash_original_field = "8D6DE690AED35F26F78C7E63CD3F73E7", hash_generated_field = "E7ED6ED2850DA758D244111BA43A3B2F")
 
-
     private static  sun.misc.Unsafe UNSAFE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:22.979 -0400", hash_original_field = "B5D820F28C091A00D3EC28A15A2D716E", hash_generated_field = "162353053FFA573C2A47BACEC7C77131")
 
     private static  long stateOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:22.944 -0400", hash_original_field = "A408FF7A0722B52330732DC0BB31F0BA", hash_generated_field = "E9DEF6E020451D815ED65E9D065EADA0")
-
 
     /**
      * Primary state representation, holding four bit-fields:
@@ -1013,6 +1010,7 @@ protected boolean onAdvance(int phase, int registeredParties) {
      *
      * @return a string identifying this phaser, as well as its state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:22.967 -0400", hash_original_method = "228B868C2F3B65EA625E4A6829A2D2AC", hash_generated_method = "FE9BAE5BE16837B3A28B1CD3317F99D8")
     
 public String toString() {

@@ -24,7 +24,7 @@ public FixedLengthOutputStream(OutputStream socketOut, int bytesRemaining) {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.492 -0500", hash_original_method = "954563C6DA4D081D04FBFCB6C3DCBDF3", hash_generated_method = "2800F8B50156B94FD924ED7965570D8B")
     
 @Override public void write(byte[] buffer, int offset, int count) throws IOException {

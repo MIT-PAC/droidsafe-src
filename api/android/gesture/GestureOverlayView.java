@@ -951,7 +951,7 @@ private void fireOnGesturePerformed() {
 
         boolean resetMultipleStrokes;
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 12:50:07.980 -0500", hash_original_method = "6C15F19885498187B870CF9A8480A3C6", hash_generated_method = "63DA417F9F211B48327EBC2087108667")
         
 public void run() {

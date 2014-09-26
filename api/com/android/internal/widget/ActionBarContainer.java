@@ -74,6 +74,7 @@ public ActionBarContainer(Context context, AttributeSet attrs) {
                 mBackground == null && mStackedBackground == null);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.357 -0500", hash_original_method = "69B88AD6BEB0BE6EF5F88037F33C1F3D", hash_generated_method = "F89B1CC731054EA867FD89E05E091B10")
     
 @Override
@@ -171,6 +172,7 @@ public View getTabContainer() {
         return mTabContainer;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.381 -0500", hash_original_method = "643CD56BC30DF4A83018A79008BF6616", hash_generated_method = "157A57E9FC6F7334C65656F9EBF499FE")
     
 @Override
@@ -199,6 +201,7 @@ public View getTabContainer() {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.387 -0500", hash_original_method = "8D0F26C3446558D3092AD9D990B93994", hash_generated_method = "D18874826F455EE0C3A5248E8EE2BFEA")
     
 @Override

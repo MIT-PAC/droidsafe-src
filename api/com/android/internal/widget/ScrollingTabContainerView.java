@@ -87,6 +87,7 @@ public ScrollingTabContainerView(Context context) {
                 ViewGroup.LayoutParams.MATCH_PARENT));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.704 -0500", hash_original_method = "3098621744ABB84E77F43010FB80D748", hash_generated_method = "36F513F07BEA02199A282BD56FF52C69")
     
 @Override
@@ -237,6 +238,7 @@ private Spinner createSpinner() {
         return spinner;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.725 -0500", hash_original_method = "DD246DFC5FD99F8FA7C3003D550B61F7", hash_generated_method = "15DF7AB3B90A39E5BEA9C9B7312B00FB")
     
 @Override
@@ -285,7 +287,8 @@ public void animateToTab(final int position) {
             removeCallbacks(mTabSelector);
         }
         mTabSelector = new Runnable() {
-            public void run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void run() {
                 final int scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
                 smoothScrollTo(scrollPos, 0);
                 mTabSelector = null;
@@ -294,6 +297,7 @@ public void animateToTab(final int position) {
         post(mTabSelector);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.736 -0500", hash_original_method = "887CFA274A392DE8385671362C9964CB", hash_generated_method = "076F7E6432360CBE28CEA2E9E2C26749")
     
 @Override
@@ -305,6 +309,7 @@ public void animateToTab(final int position) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.738 -0500", hash_original_method = "18C292ABA374873141A21AD02D4712CF", hash_generated_method = "6DAB4E72961212723D7393FA0190E981")
     
 @Override
@@ -426,6 +431,7 @@ public void bindTab(ActionBar.Tab tab) {
             update();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.776 -0500", hash_original_method = "FFA211085DE297C0E0EC5011B4DE8B57", hash_generated_method = "3E323008B81095CD22F305E78A877C9A")
         
 @Override
@@ -522,7 +528,8 @@ public ActionBar.Tab getTab() {
         {
             //Synthesized constructor
         }
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.788 -0500", hash_original_method = "8A8A2A6470BE340ED0660B0DF0493034", hash_generated_method = "6D18E00BFA47F61562A68013AC1E4863")
         
 @Override
@@ -531,7 +538,7 @@ public ActionBar.Tab getTab() {
         }
 
         @DSSource({DSSourceKind.DATABASE_INFORMATION})
-        @DSSpec(DSCat.DB_CURSOR)
+        @DSSafe(DSCat.SAFE_LIST)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.791 -0500", hash_original_method = "A98679EF5D46D1EF9814D015704A8113", hash_generated_method = "8A104B02EFEC88B3B0789A63A0438694")
         
@@ -540,7 +547,8 @@ public ActionBar.Tab getTab() {
             return ((TabView) mTabLayout.getChildAt(position)).getTab();
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.793 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "82702E9A3501EE6841B2C5A334199C16")
         
 @Override
@@ -548,7 +556,8 @@ public ActionBar.Tab getTab() {
             return position;
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.796 -0500", hash_original_method = "C541E21433CF0B8E7E2EE0D1C892D4E4", hash_generated_method = "2C99808A42375E74B25A4F3F6A493DEE")
         
 @Override
@@ -570,6 +579,7 @@ public ActionBar.Tab getTab() {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.801 -0500", hash_original_method = "024B6ED45DE6B4C8643F8BD12AD99CDA", hash_generated_method = "52641B658A520BDEB20BAAE85850478F")
         
 public void onClick(View view) {

@@ -93,7 +93,7 @@ static Long toLong(Object value) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.756 -0500", hash_original_method = "9BEC766C13A121BBE28CDFD990BC25A8", hash_generated_method = "C486809F4B66EAB2F0A489AAE58C4E64")
     
 static String toString(Object value) {

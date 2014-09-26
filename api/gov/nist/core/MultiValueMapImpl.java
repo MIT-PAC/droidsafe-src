@@ -28,7 +28,8 @@ public MultiValueMapImpl() {
 
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.021 -0500", hash_original_method = "015B36338D34B6EBF400464F225017F7", hash_generated_method = "A0EF9E4F18A993D8B1918CB90B56E3DE")
     
 public List<V> put(String key, V value) {
@@ -139,6 +140,7 @@ public Set<String> keySet() {
         return this.map.keySet();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.048 -0500", hash_original_method = "7F32EDF5FAFC7BC56577B23C28284BD1", hash_generated_method = "9BEF0E8DB7FDD590B04185ED92F77C24")
     
 public Object remove(String key, V item) {
@@ -150,21 +152,22 @@ public Object remove(String key, V item) {
         }
     }
 
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.051 -0500", hash_original_method = "08F032B341F8C34A7104B10254E1B693", hash_generated_method = "50D00F6756BC4700D7C0AD4E12C562D1")
     
 public List<V> get(Object key) {
         return map.get(key);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.053 -0500", hash_original_method = "23A91A040F7CE5CCEDDB4E75AB426F56", hash_generated_method = "A2C99B25153A12E1942A45EA141F9896")
     
 public List<V> put(String key, List<V> value) {
         return this.map.put(key,(ArrayList<V>) value);
     }
 
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.225 -0500", hash_original_method = "7B07E9B7FC8B36A67A63DC78734F6C09", hash_generated_method = "6A7958B0A3022682292CF76F808DF8BB")
     
 public List<V> remove(Object key) {

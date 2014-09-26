@@ -991,7 +991,7 @@ private boolean open() {
                 return true;
             }
 
-            @DSSpec(DSCat.THREADING)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.925 -0500", hash_original_method = "22D645F37E8BABB44C20A553228E0A5C", hash_generated_method = "22F4AAED4CF9ABF792C121D35EEB6DB4")
             
 public void run() {
@@ -1083,7 +1083,8 @@ ListenerDelegate(SensorEventListener listener, Sensor sensor, Handler handler) {
             // have one per looper (we'd need to pass the ListenerDelegate
             // instance to handleMessage and keep track of them separately).
             mHandler = new Handler(looper) {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void handleMessage(Message msg) {
                     final SensorEvent t = (SensorEvent)msg.obj;
                     final int handle = t.sensor.getHandle();
@@ -1988,6 +1989,7 @@ public void unregisterListener(SensorEventListener listener) {
 		SensorEvent se = new SensorEvent(0);
 		se.sensor = sensor;
 		listener.onSensorChanged(se);
+		listener.onAccuracyChanged(sensor, se.accuracy);
 		return true;
     }
 
@@ -2135,7 +2137,7 @@ public boolean registerListener(SensorEventListener listener, Sensor sensor, int
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.030 -0500", hash_original_method = "1441CD23D4F492BD7877A59C29F56827", hash_generated_method = "75D63A57BC3A695659B04E7BB1EA9D4F")
     @DSVerified
 private void unregisterListener(Object listener, Sensor sensor) {
@@ -2161,7 +2163,7 @@ private void unregisterListener(Object listener, Sensor sensor) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.033 -0500", hash_original_method = "63ADCF337C7E30C1A2DEC34D1892CFB3", hash_generated_method = "F2F57CDE3878B1AC334E0670F73C4E99")
     @DSVerified    
 private void unregisterListener(Object listener) {

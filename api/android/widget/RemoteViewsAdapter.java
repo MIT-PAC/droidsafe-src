@@ -136,7 +136,8 @@ public RemoteViewsAdapter(Context context, Intent intent, RemoteAdapterConnectio
     
 private void loadNextIndexInBackground() {
         mWorkerQueue.post(new Runnable() {
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void run() {
                 if (mServiceConnection.isConnected()) {
                     // Get the next index to load
@@ -179,7 +180,8 @@ private void processException(String method, Exception e) {
             mCache.reset();
         }
         mMainQueue.post(new Runnable() {
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void run() {
                 superNotifyDataSetChanged();
             }
@@ -259,7 +261,8 @@ private void updateRemoteViews(final int position, boolean isRequested) {
             final RemoteViews rv = remoteViews;
             final int typeId = mCache.getMetaDataAt(position).typeId;
             mMainQueue.post(new Runnable() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 public void run() {
                     mRequestedViews.notifyOnRemoteViewsLoaded(position, rv, typeId);
                 }
@@ -274,7 +277,8 @@ public Intent getRemoteViewsServiceIntent() {
         return mIntent;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.802 -0500", hash_original_method = "BD4FA508848CEC346AF576100841FA5B", hash_generated_method = "7B01FFC912B8670E72D0F21E92BF70CA")
     
 public int getCount() {
@@ -284,7 +288,7 @@ public int getCount() {
         }
     }
 
-    @DSSpec(DSCat.DB_CURSOR)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.804 -0500", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "E569AB7B5B0CDAA6E5C890C7128913B7")
     
@@ -293,7 +297,8 @@ public Object getItem(int position) {
         return null;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.806 -0500", hash_original_method = "03B3187C996D144F3BCFDF9DFF16615D", hash_generated_method = "B4206B0E296ADAA37479C22D619BA053")
     
 public long getItemId(int position) {
@@ -305,7 +310,8 @@ public long getItemId(int position) {
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.808 -0500", hash_original_method = "BDCE0C462966DEB126F7FB99CEF6A82A", hash_generated_method = "7FB499C9BFF1F83EAFC225BD8BE8672A")
     
 public int getItemViewType(int position) {
@@ -343,7 +349,8 @@ private int getConvertViewTypeId(View convertView) {
         return typeId;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.815 -0500", hash_original_method = "6C789CA1A76BB0C76EA62E1C57E6DD64", hash_generated_method = "009CF9883B23FFD201E9ADDF0D31D177")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -444,6 +451,7 @@ public int getViewTypeCount() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.820 -0500", hash_original_method = "30FBD60CD0291FCC8DBBE0ACB800AAAA", hash_generated_method = "F47140C23AB1A19D5E828B9AB67576C0")
     
 public boolean hasStableIds() {
@@ -521,7 +529,8 @@ public synchronized void onServiceConnected(IBinder service) {
 
             // Queue up work that we need to do for the callback to run
             adapter.mWorkerQueue.post(new Runnable() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void run() {
                     if (adapter.mNotifyDataSetChangedAfterOnServiceConnected) {
                         // Handle queued notifyDataSetChanged() if necessary
@@ -553,7 +562,8 @@ public synchronized void onServiceConnected(IBinder service) {
 
                         // Notify the host that we've connected
                         adapter.mMainQueue.post(new Runnable() {
-                            @Override
+                            @DSSafe(DSCat.SAFE_LIST)
+                @Override
                             public void run() {
                                 synchronized (adapter.mCache) {
                                     adapter.mCache.commitTemporaryMetaData();
@@ -588,7 +598,8 @@ public synchronized void onServiceDisconnected() {
             if (adapter == null) return;
             
             adapter.mMainQueue.post(new Runnable() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void run() {
                     // Dequeue any unbind messages
                     adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
@@ -1214,7 +1225,8 @@ private void onNotifyDataSetChanged() {
 
         // Propagate the notification back to the base adapter
         mMainQueue.post(new Runnable() {
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void run() {
                 synchronized (mCache) {
                     mCache.commitTemporaryMetaData();
@@ -1249,7 +1261,8 @@ public void notifyDataSetChanged() {
         }
 
         mWorkerQueue.post(new Runnable() {
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void run() {
                 onNotifyDataSetChanged();
             }

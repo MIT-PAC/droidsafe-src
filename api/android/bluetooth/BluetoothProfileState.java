@@ -51,7 +51,6 @@ public class BluetoothProfileState extends StateMachine {
     private static final String TAG = "BluetoothProfileState";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:08.620 -0400", hash_original_field = "F817599DA54B8B0654A9A5DD08DD6A8A", hash_generated_field = "14762174F850B89AAC739E0609F6A93D")
 
-
     public static final int HFP = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:08.623 -0400", hash_original_field = "1573653F07A63C22864FFD302D3B725C", hash_generated_field = "E97123E4A07910C586B37C573B12EEE5")
 
@@ -61,10 +60,8 @@ public class BluetoothProfileState extends StateMachine {
     public static final int HID = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:08.628 -0400", hash_original_field = "657BACC5434AD77EC0383C7CF3EF190A", hash_generated_field = "5E55276BFE220EA3370CD8EDF121AC45")
 
-
     static final int TRANSITION_TO_STABLE = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:08.630 -0400", hash_original_field = "6466AB47A4E8DAAE93C96826CBF42A86", hash_generated_field = "8016B178818EBB90ECC104CA00C7510B")
-
 
     private int mProfile;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:08.632 -0400", hash_original_field = "1CEDC7236F47139A40226C4959FF9A09", hash_generated_field = "20BD63EF10A50D9E387F91479DFBD5E3")
@@ -78,8 +75,8 @@ public class BluetoothProfileState extends StateMachine {
     private StableState mStableState = new StableState();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:32:08.645 -0400", hash_original_field = "B187F0B147329EB13293668F1A42E43F", hash_generated_field = "BA17BB6E682CB1349951C3018672794B")
 
-
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:15.237 -0400", hash_original_method = "A5B907A2BE55D1826A6FCD8EFEF64977", hash_generated_method = "7153FC8A2555480B9A73BBAE70C5BAE7")
         
 @Override

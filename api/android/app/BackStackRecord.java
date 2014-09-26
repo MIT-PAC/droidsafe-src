@@ -19,6 +19,7 @@ final class BackStackState implements Parcelable {
 
     public static final Parcelable.Creator<BackStackState> CREATOR
             = new Parcelable.Creator<BackStackState>() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.114 -0500", hash_original_method = "446F3F0B27039EA3D28E6A300050AF77", hash_generated_method = "5332A2FD526926A85C57F88A29667898")
         
 public BackStackState createFromParcel(Parcel in) {
@@ -495,6 +496,7 @@ public FragmentTransaction replace(int containerViewId, Fragment fragment, Strin
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.235 -0500", hash_original_method = "33682B1B727BD924F48FE7F483A5C004", hash_generated_method = "432290EF18CD72AFB8E02597304B0D1F")
     
 public FragmentTransaction remove(Fragment fragment) {
@@ -528,6 +530,7 @@ public FragmentTransaction show(Fragment fragment) {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.241 -0500", hash_original_method = "60B4979E5A31C92DF6F58D0AB0599A51", hash_generated_method = "30F1941E10E79A9786D486824E899005")
     
 public FragmentTransaction detach(Fragment fragment) {
@@ -539,6 +542,7 @@ public FragmentTransaction detach(Fragment fragment) {
         return this;
     }
 
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.243 -0500", hash_original_method = "71B1C0469F9D1680729415A070BB9988", hash_generated_method = "35F5AC6EDAB37194CB73964757E05777")
     
 public FragmentTransaction attach(Fragment fragment) {
@@ -740,7 +744,7 @@ int commitInternal(boolean allowStateLoss) {
         return mIndex;
     }
     
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.280 -0500", hash_original_method = "BA0CE442AF616D2BBAA3AAFEB295CD0F", hash_generated_method = "51C81669292610193B44AF48058D938E")
     
 public void run() {

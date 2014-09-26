@@ -37,30 +37,23 @@ import java.util.zip.ZipInputStream;
 public class JarInputStream extends ZipInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.310 -0400", hash_original_field = "03D210293484A458EB6D74D44F54E99C", hash_generated_field = "261709621967406C2758961F4730EA20")
 
-
     private Manifest manifest;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.311 -0400", hash_original_field = "542D70E5D5A3290907DA75B37B0954FD", hash_generated_field = "5CC6878338707D51F8B0333379CFA92C")
-
 
     private boolean eos = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.311 -0400", hash_original_field = "5331E6FEE4B5044231137D1E672CD2C7", hash_generated_field = "DD9A6E05A2A7AEB76B4202439E0E33FC")
 
-
     private JarEntry mEntry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.311 -0400", hash_original_field = "243A80CC36D36456031E60F78531B9C5", hash_generated_field = "AC8BC8520BF86140D134B22CF6FB9C16")
-
 
     private JarEntry jarEntry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.312 -0400", hash_original_field = "697C1BA932E57713DDA42831C668EB15", hash_generated_field = "C561A558EDBDC4549FE9E3D8634A1322")
 
-
     private boolean isMeta;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.312 -0400", hash_original_field = "15838C298A89AE0514754B108BF02A73", hash_generated_field = "5A6E602E6A4879953D21B5670B282CB9")
 
-
     private JarVerifier verifier;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.312 -0400", hash_original_field = "1523629A13DB95122E99EDD04197FDAC", hash_generated_field = "CE0EED03A1B8C68A8550E70F11ED281D")
-
 
     private OutputStream verStream;
 
@@ -161,6 +154,8 @@ public JarEntry getNextJarEntry() throws IOException {
      * @throws IOException
      *             if an IOException occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.315 -0400", hash_original_method = "E92616C965F72196BCD3B01F79A94A0A", hash_generated_method = "5C845B3E1FCAA242B57813F9256D0ED4")
     
 @Override

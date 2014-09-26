@@ -756,7 +756,8 @@ this.attachInterface(this, DESCRIPTOR);
 {
 return this;
 }
-@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+@DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:50.588 -0500", hash_original_method = "6B5BD5C5810D2EC9F260ABCD1C16141C", hash_generated_method = "333EA55466C4ABB2F8307B9C62E9BC6A")
         @Override
 public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException

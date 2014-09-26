@@ -23,7 +23,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     @SuppressWarnings("unchecked")
     public static final Parcelable.Creator<ParceledListSlice> CREATOR =
             new Parcelable.Creator<ParceledListSlice>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.755 -0500", hash_original_method = "8E491D44C01D53B45589AFC0F51C5901", hash_generated_method = "F2CB1E3ED7E70E38911746D19D4C2C4E")
         
 public ParceledListSlice createFromParcel(Parcel in) {
@@ -117,7 +117,8 @@ private ParceledListSlice(Parcel p, int numItems, boolean lastSlice) {
             if (i < N) {
                 dest.writeInt(0);
                 Binder retriever = new Binder() {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+        @Override
                     protected boolean onTransact(int code, Parcel data, Parcel reply, int flags)
                             throws RemoteException {
                         if (code != FIRST_CALL_TRANSACTION) {
@@ -238,11 +239,8 @@ public boolean isLastSlice() {
     public ParceledListSlice[] newArray(int size) {
             return new ParceledListSlice[size];
         }
-    
-
 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-07 03:18:43.619 -0400", hash_original_field = "BD5B489354E05FBBE774FA103ACAFC26", hash_generated_field = "082CE64FD4689039372A2D1255C37CC5")
-
 
     private  List<T> mList;
 

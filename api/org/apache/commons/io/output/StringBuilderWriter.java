@@ -37,7 +37,6 @@ import java.io.Writer;
 public class StringBuilderWriter extends Writer implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.952 -0400", hash_original_field = "BE1FD3777D8E9D378A235133A8D55AD7", hash_generated_field = "D91EA2DC02C3EC2AB5BA639FC5E59C31")
 
-
     private  StringBuilder builder;
 
     /**
@@ -77,6 +76,8 @@ public StringBuilderWriter(StringBuilder builder) {
      * @param value The character to append
      * @return This writer instance
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.954 -0400", hash_original_method = "1288124DBF43C46402FB70C838950E72", hash_generated_method = "AF1DB86BCA89272EBF3D0D2068FF9ECA")
     
 @Override
@@ -91,6 +92,8 @@ public StringBuilderWriter(StringBuilder builder) {
      * @param value The character to append
      * @return This writer instance
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.954 -0400", hash_original_method = "E2F995DD283D6A0A833AF2D339D19742", hash_generated_method = "B9427F392DE55B9967A3D3DF4534BDBC")
     
 @Override
@@ -107,6 +110,8 @@ public StringBuilderWriter(StringBuilder builder) {
      * @param end The index of the last character + 1
      * @return This writer instance
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.955 -0400", hash_original_method = "FBCD01EFCECB3326031D766445C3DB2F", hash_generated_method = "DC5692522586DB5F5BE483B326F0FCF7")
     
 @Override
@@ -118,6 +123,7 @@ public StringBuilderWriter(StringBuilder builder) {
     /**
      * Closing this writer has no effect. 
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.955 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "4D83B8C1063FF7FA74D9E723C4611DA4")
     
 @Override
@@ -127,18 +133,20 @@ public StringBuilderWriter(StringBuilder builder) {
     /**
      * Flushing this writer has no effect. 
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.956 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "21B764AD8B1C1E09B98A34736C8736B1")
     
 @Override
     public void flush() {
     }
 
-
     /**
      * Write a String to the {@link StringBuilder}.
      * 
      * @param value The value to write
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.956 -0400", hash_original_method = "57CA96DC87E6760D66D655253DABAA82", hash_generated_method = "1E1AEEACBDAE821656E17A3D342272E3")
     
 @Override
@@ -155,6 +163,8 @@ public StringBuilderWriter(StringBuilder builder) {
      * @param offset The index of the first character
      * @param length The number of characters to write
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.957 -0400", hash_original_method = "F2F4EE164E03551E9A5ECDB103942BDC", hash_generated_method = "1693FCC13D24C01A5D1CEE6CB0A4CC1D")
     
 @Override
@@ -180,6 +190,7 @@ public StringBuilder getBuilder() {
      *
      * @return The contents of the String builder.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.958 -0400", hash_original_method = "E91A134CF2A6965AC8B4CE2DD48C1D34", hash_generated_method = "D7F9E85DEC15BAB3E09D168F01E1AEF5")
     
 @Override

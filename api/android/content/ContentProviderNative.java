@@ -68,7 +68,8 @@ public ContentProviderNative()
     
 public abstract String getProviderName();
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.819 -0500", hash_original_method = "0A95D8923EFA335F625BF0735B390C42", hash_generated_method = "AFED6A10C7E4440D70A159C82A5CF166")
     
 @Override

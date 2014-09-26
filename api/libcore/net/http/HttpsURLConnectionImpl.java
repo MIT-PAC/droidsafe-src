@@ -174,7 +174,7 @@ HttpEngine getHttpEngine() {
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.555 -0500", hash_original_method = "2C6B382BE152760ADFD195450C987C4D", hash_generated_method = "1C8E0CE2806EAFA8671686A0CF087378")
     
 @Override
@@ -196,7 +196,8 @@ HttpEngine getHttpEngine() {
         return delegate.getInstanceFollowRedirects();
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.562 -0500", hash_original_method = "1CE78FDDD0E27462FCE8A63F52D5A42C", hash_generated_method = "58353FEFB488BB9DA9F2D124C4361924")
     
 @Override
@@ -254,7 +255,8 @@ HttpEngine getHttpEngine() {
         return delegate.getContentLength();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.580 -0500", hash_original_method = "81BB131A6A631BF5E1A864757443FB7D", hash_generated_method = "6261C1D2058E376C9505E8926CD577AC")
     
 @Override
@@ -299,7 +301,8 @@ HttpEngine getHttpEngine() {
         return delegate.getExpiration();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.594 -0500", hash_original_method = "DAE76134F84E2121B4429AAD80303201", hash_generated_method = "2A6C5FD4248C798B12EC2730001CAF7A")
     
 @Override
@@ -323,6 +326,7 @@ HttpEngine getHttpEngine() {
         return delegate.getRequestProperties();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.601 -0500", hash_original_method = "BA9A614E0D58CD60F498CC567B2500F2", hash_generated_method = "A2ED2231F33E6EB3E180AC9F242F8B3A")
     
 @Override
@@ -330,7 +334,8 @@ HttpEngine getHttpEngine() {
         delegate.addRequestProperty(field, newValue);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.603 -0500", hash_original_method = "26A5E0D486707FEDEA1C6EC7C371F3C4", hash_generated_method = "829AA6789A98DC6FBCC6C196019D2500")
     
 @Override
@@ -386,7 +391,8 @@ HttpEngine getHttpEngine() {
         return delegate.getLastModified();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.621 -0500", hash_original_method = "71AA63E6E74D761830B069C27085564C", hash_generated_method = "B5F71F5879375ECA4D36D73ED1DB7D06")
     
 @Override
@@ -441,7 +447,8 @@ HttpEngine getHttpEngine() {
         delegate.setDefaultUseCaches(newValue);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.637 -0500", hash_original_method = "DBFBE38519C2ED2CAD57B85CDCF157A7", hash_generated_method = "AB87BFF1E5BFAF22713BCBA9B12F5B88")
     
 @Override
@@ -449,7 +456,8 @@ HttpEngine getHttpEngine() {
         delegate.setDoInput(newValue);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.640 -0500", hash_original_method = "4C7DD3E9EB706BD0B590423DABADE520", hash_generated_method = "4EAF2E07A664EEE323C2E95C02C2991C")
     
 @Override
@@ -466,7 +474,7 @@ HttpEngine getHttpEngine() {
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.644 -0500", hash_original_method = "06E81C177B17FA690704B9F52C2E2188", hash_generated_method = "7FBB952A275C52A301F21B145BE9CAFC")
     
 @Override
@@ -474,7 +482,8 @@ HttpEngine getHttpEngine() {
         delegate.setRequestProperty(field, newValue);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.647 -0500", hash_original_method = "9DD3A94ED9DC7E27933AACD0BEB1B2CF", hash_generated_method = "6B9262F5B068BA91CB3BD7EC8D1A3C13")
     
 @Override
@@ -483,7 +492,7 @@ HttpEngine getHttpEngine() {
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.649 -0500", hash_original_method = "EF4CCDEC725CA0081AEF3F1DD3AA2FF3", hash_generated_method = "56CB950FC3643D30D2BE16BCF1F7DF3D")
     
 @Override
@@ -500,7 +509,7 @@ HttpEngine getHttpEngine() {
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.655 -0500", hash_original_method = "602DF27834E77E85211B3744966AE6ED", hash_generated_method = "2827585D0D84DAB384140211F070E2C1")
     
 @Override

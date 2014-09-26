@@ -223,7 +223,7 @@ public TimeZone() {}
      * savings time rules as this time zone.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.865 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
     
 @Override public Object clone() {
@@ -394,8 +394,9 @@ public int getOffset(long time) {
      * field. Refer to {@link Calendar} for specific definitions of this
      * method's parameters.
      */
+    @DSSource({DSSourceKind.LOCATION})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.896 -0500", hash_original_method = "BBA8171A17B46E40060127D831CE1275", hash_generated_method = "5574580ABFD637024A653FB08AC4DC87")
     
 public abstract int getOffset(int era, int year, int month, int day,
@@ -405,8 +406,9 @@ public abstract int getOffset(int era, int year, int month, int day,
      * Returns the offset in milliseconds from UTC of this time zone's standard
      * time.
      */
+    @DSSource({DSSourceKind.LOCATION})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.898 -0500", hash_original_method = "7DDA4500473EBF8DF6FE8E7FD3845289", hash_generated_method = "7A8EA9C6D36624E37953A4D1FC93F79C")
     
 public abstract int getRawOffset();

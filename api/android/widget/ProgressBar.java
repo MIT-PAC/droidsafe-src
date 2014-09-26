@@ -603,7 +603,7 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      */
     @DSComment("ProgressBar")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.817 -0500", hash_original_method = "E60A634EF77869D698E2255CD3404933", hash_generated_method = "B35794BD35CFE2DAE884F434C5E52CD1")
     
 @android.view.RemotableViewMethod
@@ -612,7 +612,7 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
     }
     
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.821 -0500", hash_original_method = "65EDABD4A3EBF7E0899598C1A747DEC8", hash_generated_method = "A3704F7A1508E702EEC8F03B978F393E")
     
 @android.view.RemotableViewMethod
@@ -793,7 +793,7 @@ public synchronized final void incrementSecondaryProgressBy(int diff) {
      * <p>Start the indeterminate progress animation.</p>
      */
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.840 -0500", hash_original_method = "F5167F20A872A63C36DAF85A2B000FB5", hash_generated_method = "F5167F20A872A63C36DAF85A2B000FB5")
     
 void startAnimation() {
@@ -877,7 +877,7 @@ public Interpolator getInterpolator() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.852 -0500", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "39E0006847B6ED0F90C17C5E24442D20")
     
 @Override
@@ -897,6 +897,7 @@ public Interpolator getInterpolator() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.854 -0500", hash_original_method = "E937F441086D9A40C4DA651781180A92", hash_generated_method = "1ED71813CAE5A0C16DA256492B8D334A")
     
 @Override
@@ -913,6 +914,7 @@ public Interpolator getInterpolator() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.856 -0500", hash_original_method = "51F010448C03C2EA1E2B7053B0DCB7DE", hash_generated_method = "A8F117221FFD11320EFD837F3BB6AAAA")
     
 @Override
@@ -942,6 +944,7 @@ public Interpolator getInterpolator() {
             getResolvedLayoutDirection() : super.getResolvedLayoutDirection(who);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.861 -0500", hash_original_method = "69EE8DE1AB95A9498391F63C2C373DBD", hash_generated_method = "5CA0B0F09A03F7EA0410163A47798DB8")
     
 @Override
@@ -991,6 +994,7 @@ private void updateDrawableBounds(int w, int h) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.867 -0500", hash_original_method = "16CD7BB578E96B322FC9201A377B65CC", hash_generated_method = "5590632EA0B2148C381E50563857A5F0")
     
 @Override
@@ -1072,7 +1076,7 @@ private void updateDrawableState() {
         }
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.899 -0500", hash_original_method = "875308A47ADC87038CC9E153A4D8FE71", hash_generated_method = "C5A52986289D68811DA77A5BE28BE018")
     
 @Override
@@ -1087,7 +1091,7 @@ private void updateDrawableState() {
         return ss;
     }
 
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.901 -0500", hash_original_method = "A42CFAF758710477BAC4A7B2A0C98761", hash_generated_method = "36920F3704EEF8E261868AE4CB4E618B")
     
 @Override
@@ -1130,7 +1134,7 @@ RefreshProgressRunnable(int id, int progress, boolean fromUser) {
             mFromUser = fromUser;
         }
         
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.804 -0500", hash_original_method = "336F21C38B52B9E04C9FE91372F32949", hash_generated_method = "83B3C867EB5837D082466162CAA6717E")
         
 public void run() {
@@ -1155,7 +1159,7 @@ public void setup(int id, int progress, boolean fromUser) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.890 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
@@ -1199,7 +1203,8 @@ private SavedState(Parcel in) {
             secondaryProgress = in.readInt();
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.886 -0500", hash_original_method = "47949C0C27B3FB6F61C4F76D6E851E0A", hash_generated_method = "9A232E27C99C90AF353AD363FA55D1D0")
         
 @Override
@@ -1227,7 +1232,7 @@ private SavedState(Parcel in) {
         {
             //Synthesized constructor
         }
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.913 -0500", hash_original_method = "D171B097136E37DF343D32BCCA8935F6", hash_generated_method = "130DDEE72B6AB9E862C8FF6D8AE65536")
         
 public void run() {

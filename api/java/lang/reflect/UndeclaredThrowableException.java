@@ -65,7 +65,8 @@ public Throwable getUndeclaredThrowable() {
      *
      * @return the undeclared, checked exception that occurred
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.154 -0500", hash_original_method = "1E11CE865934C875382AA6A691DB2EF1", hash_generated_method = "493C3D310278EA30F486DA9AAD65DAC5")
     
 @Override

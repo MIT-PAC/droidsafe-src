@@ -118,6 +118,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
 
     private final Runnable mDismissAction = new Runnable() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.380 -0400", hash_original_method = "BEE19A9C5B7D04B78955A3FD8170F1CA", hash_generated_method = "4B98EED19700DEC05BCE304A452DAE0F")
         public void run() {
             dismissDialog();
@@ -670,7 +671,7 @@ public void setTitle(CharSequence title) {
      */
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.121 -0500", hash_original_method = "0D914ED2883864B655DBF2629252A595", hash_generated_method = "7E20A4D7759EB3A7DD02C09CD2AF955C")
     
 public void setTitle(int titleId) {
@@ -850,11 +851,13 @@ public void onWindowAttributesChanged(WindowManager.LayoutParams params) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.145 -0500", hash_original_method = "32D7339793DCE0D5AEFE6621981EC978", hash_generated_method = "C45B7C15E316FF99AA579496D4660410")
     
 public void onContentChanged() {
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.147 -0500", hash_original_method = "C7622FC561A602386C2112BC0445F7C6", hash_generated_method = "A78A7C6B763B8F194C5AA376EFC516AD")
     
 public void onWindowFocusChanged(boolean hasFocus) {
@@ -865,6 +868,7 @@ public void onWindowFocusChanged(boolean hasFocus) {
 public void onAttachedToWindow() {
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.151 -0500", hash_original_method = "E592299EBB4DE1D6696EB8C4009A9EF4", hash_generated_method = "2C686A74CA98AB92B59E2086FB62185D")
     
 public void onDetachedFromWindow() {
@@ -999,6 +1003,7 @@ public View onCreatePanelView(int featureId) {
     /**
      * @see Activity#onCreatePanelMenu(int, Menu)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.169 -0500", hash_original_method = "1B30E4AD9FCCEF2C81163B46B66D301C", hash_generated_method = "E03553A532F29A4B47F37E31A8D9FA27")
     
 public boolean onCreatePanelMenu(int featureId, Menu menu) {
@@ -1012,6 +1017,7 @@ public boolean onCreatePanelMenu(int featureId, Menu menu) {
     /**
      * @see Activity#onPreparePanel(int, View, Menu)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.171 -0500", hash_original_method = "A95440A37102593BE255304F4188998E", hash_generated_method = "D875CC67F0458609CF6A973F23B89175")
     
 public boolean onPreparePanel(int featureId, View view, Menu menu) {
@@ -1025,6 +1031,7 @@ public boolean onPreparePanel(int featureId, View view, Menu menu) {
     /**
      * @see Activity#onMenuOpened(int, Menu)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.173 -0500", hash_original_method = "F5A72D2A4A42C0CE2781798802611276", hash_generated_method = "011043E93B40870F0BDA52D358B46C16")
     
 public boolean onMenuOpened(int featureId, Menu menu) {
@@ -1037,6 +1044,7 @@ public boolean onMenuOpened(int featureId, Menu menu) {
     /**
      * @see Activity#onMenuItemSelected(int, MenuItem)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.175 -0500", hash_original_method = "CDCEA93B87CB4399825B767626A61473", hash_generated_method = "234B6579A2BA704FF322BE2796BEDB2B")
     
 public boolean onMenuItemSelected(int featureId, MenuItem item) {
@@ -1046,6 +1054,7 @@ public boolean onMenuItemSelected(int featureId, MenuItem item) {
     /**
      * @see Activity#onPanelClosed(int, Menu)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.177 -0500", hash_original_method = "20C3110FD341FFE95CFF6A6C95609D00", hash_generated_method = "29C7BCF17E32E00DA290EB413F2AE599")
     
 public void onPanelClosed(int featureId, Menu menu) {
@@ -1181,6 +1190,7 @@ public void onContextMenuClosed(Menu menu) {
     /**
      * This hook is called when the user signals the desire to start a search.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.208 -0500", hash_original_method = "38790ED2FB6D0EF1B7954716C7615F0D", hash_generated_method = "8F4CC75C5322703DE6168A66DB4A0AED")
     
 public boolean onSearchRequested() {
@@ -1213,6 +1223,7 @@ public ActionMode onWindowStartingActionMode(ActionMode.Callback callback) {
      * Note that if you override this method you should always call through
      * to the superclass implementation by calling super.onActionModeStarted(mode).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.213 -0500", hash_original_method = "00C0B67E273850713F0D88B8DE976F73", hash_generated_method = "50B78CCCCC03921D5397A78F91B9B2DA")
     
 public void onActionModeStarted(ActionMode mode) {

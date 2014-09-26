@@ -39,25 +39,21 @@ public class ContentLoadingProgressBar extends ProgressBar {
     private static final int MIN_DELAY = 500;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.802 -0400", hash_original_field = "81105A88481A5B0AE717E10F26F868BC", hash_generated_field = "970AC890D67E1C272DF3C10F230D5582")
 
-
     private long mStartTime = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.807 -0400", hash_original_field = "5E7613B38EFEBB47552A29F8E71FE257", hash_generated_field = "4212A47838A37BBCAAF9B76B25E028CF")
-
 
     private boolean mPostedHide = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.811 -0400", hash_original_field = "6F81CA6EE3D78F8B5044427CDC459927", hash_generated_field = "DB7D8559EE5DA03DA6274A12FA54583A")
 
-
     private boolean mPostedShow = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.816 -0400", hash_original_field = "D84AA843E49022C0E9B230872C5207F8", hash_generated_field = "A227EE2BA99DCE691AA725EEF77E8617")
-
 
     private boolean mDismissed = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.827 -0400", hash_original_field = "4F57D219B21F683CEC29B094213DB200", hash_generated_field = "707A15CAFF0FCB14D243A5F09F5C4AA0")
 
-
     private final Runnable mDelayedHide = new Runnable() {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void run() {
             mPostedHide = false;
@@ -67,9 +63,9 @@ public class ContentLoadingProgressBar extends ProgressBar {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.839 -0400", hash_original_field = "36884D4DB8B62CD9AF72AFDA3FBF3265", hash_generated_field = "4CBE6A06F8939BEDC0E177F08BCFE4BA")
 
-
     private final Runnable mDelayedShow = new Runnable() {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void run() {
             mPostedShow = false;
@@ -92,6 +88,7 @@ public ContentLoadingProgressBar(Context context, AttributeSet attrs) {
         super(context, attrs, 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.853 -0400", hash_original_method = "BFA37626495F213AB51599ADC140C8A0", hash_generated_method = "F971A20C10EB62E4A2437F56D124AF57")
     
 @Override
@@ -100,6 +97,7 @@ public ContentLoadingProgressBar(Context context, AttributeSet attrs) {
         removeCallbacks();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.858 -0400", hash_original_method = "4D4F7A98F5C749CC5985026A9C640937", hash_generated_method = "1176B3787C91B38A7859D751B705CCFF")
     
 @Override
@@ -108,6 +106,7 @@ public ContentLoadingProgressBar(Context context, AttributeSet attrs) {
         removeCallbacks();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.862 -0400", hash_original_method = "AA45B58F5CAB43E559C6EFEE60BD4E7B", hash_generated_method = "D3D02CD49CAACEDFF42B45AD3CE911E3")
     
 private void removeCallbacks() {

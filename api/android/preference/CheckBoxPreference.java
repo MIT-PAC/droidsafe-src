@@ -44,6 +44,7 @@ public CheckBoxPreference(Context context) {
         this(context, null);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.888 -0500", hash_original_method = "BFAE06CFE69D4939F40B9B050EA1DB64", hash_generated_method = "95E4B1642A869B2C34E4AC55781D9110")
     
 @Override

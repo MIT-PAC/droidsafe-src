@@ -124,7 +124,7 @@ public TimeoutTask(String userName, String proxyDomain) {
             this.userName = userName;
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.114 -0500", hash_original_method = "55798103F4DC731E25C4381B99CDD4EB", hash_generated_method = "EC9286E029470E763265287DA444C807")
         
 @Override

@@ -20,7 +20,7 @@ public DelegatedTask(Runnable action, HandshakeProtocol handshaker) {
         this.handshaker = handshaker;
     }
 
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.011 -0500", hash_original_method = "BC92620C95DC261FCD2ED821B8965098", hash_generated_method = "DDB79F5778145D07CB17CA4544EE8544")
     
 public void run() {

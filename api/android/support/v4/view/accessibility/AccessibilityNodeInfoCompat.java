@@ -771,10 +771,8 @@ public class AccessibilityNodeInfoCompat {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.622 -0400", hash_original_field = "B1D8AB103F046CFEA3FC9CDC8BCBC3C0", hash_generated_field = "97BD12C859C1DA2B5849DD1AFA547C72")
 
-
     private static  AccessibilityNodeInfoImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.626 -0400", hash_original_field = "617EB5A49831D4E42CC1FEF3965E4033", hash_generated_field = "F78F9523CB351E82CADC0E3370F65663")
-
 
     /**
      * Action that focuses the node.
@@ -796,7 +794,6 @@ public class AccessibilityNodeInfoCompat {
 
     public static final int ACTION_LONG_CLICK = 0x00000020;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.644 -0400", hash_original_field = "6F7D403C052B22D61A58C6093F6E7418", hash_generated_field = "23E39B8AD98E524986F046CC64E6F646")
-
 
     /**
      * Action that gives accessibility focus to the node.
@@ -825,7 +822,6 @@ public class AccessibilityNodeInfoCompat {
     public static final int ACTION_SCROLL_BACKWARD = 0x00002000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.666 -0400", hash_original_field = "852405331E4F6E978DA8D196B7C4BEC7", hash_generated_field = "3352BD4C1629D5BCCA8E2D089F467DCA")
 
-
     /**
      * Action to copy the current selection to the clipboard.
      */
@@ -840,7 +836,6 @@ public class AccessibilityNodeInfoCompat {
 
     public static final int ACTION_SET_SELECTION = 0x00020000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.676 -0400", hash_original_field = "560D05D7E01CA3D98CB8BB322CB5C932", hash_generated_field = "A258FCB8910863B6D6343AE915B4E37B")
-
 
     /**
      * Argument for which movement granularity to be used when traversing the node text.
@@ -870,7 +865,6 @@ public class AccessibilityNodeInfoCompat {
             "ACTION_ARGUMENT_SELECTION_END_INT";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.691 -0400", hash_original_field = "B063FBC735A168CBAF679026C6C13BA7", hash_generated_field = "28A4BA2020997AB8AC9457E4ACC3A64A")
 
-
     /**
      * The input focus.
      */
@@ -879,7 +873,6 @@ public class AccessibilityNodeInfoCompat {
 
     public static final int FOCUS_ACCESSIBILITY = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.696 -0400", hash_original_field = "C0D9A00404EAC3BF54407E09B497D1DA", hash_generated_field = "E007B47EC43205E02B73C370346A4E45")
-
 
     /**
      * Movement granularity bit for traversing the text of a node by character.
@@ -1012,7 +1005,6 @@ private static String getActionSymbolicName(int action) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.624 -0400", hash_original_field = "6DDA95A03CB574AE472C66BB1085F01C", hash_generated_field = "EA545B797CAE6A5B712CE13E995894C9")
-
 
     private  Object mInfo;
 
@@ -1966,6 +1958,7 @@ public void setLiveRegion(int mode) {
         IMPL.setLiveRegion(mInfo, mode);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.887 -0400", hash_original_method = "3D44C3AC54A391BB7EEFE6DCE99834D5", hash_generated_method = "1820D3808537E877B4E310BAB0EC6052")
         
 @Override
@@ -1997,6 +1990,7 @@ public void setLiveRegion(int mode) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.895 -0400", hash_original_method = "512238791ADF615E9D587E6727E9DA69", hash_generated_method = "D20583F4A042D1ED83B486AE0FA0DD19")
         
 @Override

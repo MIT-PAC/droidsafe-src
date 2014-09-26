@@ -45,6 +45,7 @@ public class ViewFlipper extends ViewAnimator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.242 -0400", hash_original_field = "222E91439CEAD2DB1901D5AA0C5663AF", hash_generated_field = "8570C3C2B40A1C3E01F5D2029A49DFD5")
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.688 -0500", hash_original_method = "42FB9B1799748BE0453D66D785C793D7", hash_generated_method = "23D1606681C6D12B93F6FE5A1B1DE135")
         
 @Override
@@ -66,6 +67,7 @@ public class ViewFlipper extends ViewAnimator {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.243 -0400", hash_original_field = "02869CDAF60D7BAD10F76E3EF9313FAC", hash_generated_field = "1FE43EAD86528C4571343BC4A0A3488D")
 
     private final Handler mHandler = new Handler() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.721 -0500", hash_original_method = "9F9F367503C2FAC32268BB267EBDCEAD", hash_generated_method = "CD26E5BE6357ABE9D2346B7AF9741B36")
         
 @Override
@@ -103,6 +105,7 @@ public ViewFlipper(Context context, AttributeSet attrs) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.693 -0500", hash_original_method = "3C103BE4B999027DCB77DEB70D76599C", hash_generated_method = "FCE5AF733C5043F7461CE249BD2606AB")
     
 @Override
@@ -121,6 +124,7 @@ public ViewFlipper(Context context, AttributeSet attrs) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.696 -0500", hash_original_method = "5655570C437E83231F73A4B16A590D9C", hash_generated_method = "D0F3975A24544A8640CD91BD25CE7B13")
     
 @Override

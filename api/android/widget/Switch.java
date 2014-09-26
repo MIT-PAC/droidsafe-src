@@ -655,6 +655,7 @@ private boolean getTargetCheckedState() {
         mSwitchRight = switchRight;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.011 -0500", hash_original_method = "8EF5F4DDEE2B0F2714B687B8F02D0637", hash_generated_method = "D18DB1F7E35D8E5BEC5243BB7662DDA0")
     
 @Override

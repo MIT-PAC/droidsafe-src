@@ -54,7 +54,7 @@ public InvalidClassException(String className, String detailMessage) {
      *         class that caused the problem.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.106 -0500", hash_original_method = "F4D165DC6F6D9B89EF49B0E2E4445877", hash_generated_method = "C3EFF5E4545BA4F4FBD2F58729C9703A")
     
 @Override

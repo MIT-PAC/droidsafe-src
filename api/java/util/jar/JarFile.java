@@ -307,7 +307,8 @@ private void readMetaEntries() throws IOException {
      * @throws IOException
      *             if an error occurred while creating the input stream.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.865 -0500", hash_original_method = "53CBE19CD54AC9FA27355C4D3916E5DE", hash_generated_method = "1E6B8FB4461758A643AFA1262535B726")
     
 @Override
@@ -352,7 +353,8 @@ private void readMetaEntries() throws IOException {
      *            the name of the entry in the JAR file.
      * @return the ZIP entry extracted.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.868 -0500", hash_original_method = "B825DECF198E8D2309850EFFE99C9789", hash_generated_method = "A5294FCC7223B631CD447911468CFD91")
     
 @Override
@@ -420,7 +422,7 @@ JarFileInputStream(InputStream is, ZipEntry ze,
         }
 
         @DSSpec(DSCat.IO)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSource({DSSourceKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.813 -0500", hash_original_method = "A2A36F60816A3448608DD8EC3FE6DD7B", hash_generated_method = "CEE01730D9D3AF09D011FF066CC57F74")
         
 @Override

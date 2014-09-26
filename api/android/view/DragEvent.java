@@ -88,7 +88,7 @@ public static DragEvent obtain(DragEvent source) {
 
     public static final Parcelable.Creator<DragEvent> CREATOR =
         new Parcelable.Creator<DragEvent>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.812 -0500", hash_original_method = "16F96EE110AA9094A0A395FCCEA0D299", hash_generated_method = "5AD0296D6AF7AEE36A3ED2D2B155A456")
         
 public DragEvent createFromParcel(Parcel in) {

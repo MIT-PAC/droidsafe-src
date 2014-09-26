@@ -373,6 +373,7 @@ protected InetAddress getHostAddress(URL url) {
     /**
      * Returns the hash code of {@code url}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.504 -0500", hash_original_method = "1FF09FFC26156931BD17C23B3B706502", hash_generated_method = "3D67A5380D5954AFF1BAB48395A5ADB1")
     
 protected int hashCode(URL url) {

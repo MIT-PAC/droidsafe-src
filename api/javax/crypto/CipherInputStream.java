@@ -190,6 +190,7 @@ protected CipherInputStream(InputStream is) {
      * @return false, since this input stream does not support {@code mark} and
      *         {@code reset}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.877 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "98834879561C7504F012DD22F86DCE30")
     
 @Override

@@ -495,7 +495,7 @@ public int getContentLength() {
      */
     @DSComment("no suspicious activity")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.093 -0500", hash_original_method = "7440B54E7BE94AE7F9BB4349A25246D4", hash_generated_method = "C174C05C0D4687BFF9AF1A822C8B8A7E")
     
 public String getContentType() {
@@ -585,7 +585,8 @@ public long getExpiration() {
      *            the field position of the response header.
      * @return the value of the field at position {@code pos}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.115 -0500", hash_original_method = "4AACA905FA1278AAB35ED38439896081", hash_generated_method = "C41CD50CE2AC5FE72F79E6188B82872F")
     
 public String getHeaderField(int pos) {
@@ -677,7 +678,8 @@ public void addRequestProperty(String field, String newValue) {
      *            the name of the header field.
      * @return the value of the header field.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.127 -0500", hash_original_method = "565CBD8C4BDCB5C201FDE1F2CB76B55D", hash_generated_method = "C805EF3131A22E118686C0E6E02FD1F4")
     
 public String getHeaderField(String key) {
@@ -814,7 +816,7 @@ public long getLastModified() {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.143 -0500", hash_original_method = "F613A2AA87619B352A0F7C7CAB39D3F5", hash_generated_method = "2FA7EE7D9906A5BB0CDD13F5908662C8")
     
 public OutputStream getOutputStream() throws IOException {
@@ -1117,6 +1119,7 @@ public int getConnectTimeout() {
      * @throws IllegalArgumentException
      *             if the parameter {@code timeout} is less than zero.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSComment("no suspicious activity")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.196 -0500", hash_original_method = "AFADA452D3B07139A9E1C4690AAC11B3", hash_generated_method = "FE4D686C5AA5BFEF2289E9D40CE9435F")
@@ -1148,7 +1151,7 @@ public int getReadTimeout() {
      * @return the string representation of this {@code URLConnection} instance.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.201 -0500", hash_original_method = "C85D603FFD624A90EAB88172CE67727C", hash_generated_method = "00A4330AEE9AE3EEEA21DC02C53F22B7")
     
 @Override

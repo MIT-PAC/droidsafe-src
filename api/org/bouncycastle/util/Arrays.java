@@ -210,6 +210,7 @@ public static void fill(
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.202 -0500", hash_original_method = "41ED5BDF732370E7DAEC26CE0F888CDF", hash_generated_method = "6F4A8B7D24A95E6A3925C8E871A87F81")
     
 public static int hashCode(byte[] data)
@@ -231,6 +232,7 @@ public static int hashCode(byte[] data)
         return hc;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.205 -0500", hash_original_method = "026AC3542A4584C5DCDB37498D68098A", hash_generated_method = "D08B8A223E6B804F20A45133E236DA0D")
     
 public static byte[] clone(byte[] data)
@@ -246,6 +248,7 @@ public static byte[] clone(byte[] data)
         return copy;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:42.207 -0500", hash_original_method = "E3F88A3A23C0DED049A1D137C995F15F", hash_generated_method = "50F610FC6964A220853F3FD0C7421428")
     
 public static int[] clone(int[] data)

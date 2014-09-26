@@ -454,7 +454,7 @@ public void deliverEvent(EventWrapper eventWrapper) {
      * calls the deliverEvent method above.
      */
 
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.234 -0500", hash_original_method = "5CCAE779A521C5AA39F7D74A098F474A", hash_generated_method = "C673673F7FA2F5C78C4D05886458027F")
     
 public void run() {

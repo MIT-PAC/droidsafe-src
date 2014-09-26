@@ -55,9 +55,7 @@ private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     /**
      * Convenience method to interrupt current thread.
@@ -1350,7 +1348,7 @@ public final Collection<Thread> getSharedQueuedThreads() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.233 -0500", hash_original_method = "2C49C090DBE6788B4A91D995132AEECA", hash_generated_method = "83A51AA04AFC157B403BDF3D76B84E44")
     
 public String toString() {

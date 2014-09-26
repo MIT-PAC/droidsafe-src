@@ -360,7 +360,8 @@ PositionMetadata getFlattenedPos(final ExpandableListPosition pos) {
         return retValue;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.782 -0500", hash_original_method = "E43CB6EF7F0706DB8CAE1E4EB2A6AE3E", hash_generated_method = "47DB55305C8A6796D86224A1FE93B0AA")
     
 public int getCount() {
@@ -372,7 +373,7 @@ public int getCount() {
         return mExpandableListAdapter.getGroupCount() + mTotalExpChildrenCount;
     }
 
-    @DSSpec(DSCat.DB_CURSOR)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.784 -0500", hash_original_method = "06B72D417088BC3B17164CA741049075", hash_generated_method = "AB9F9881D27F80592D3E7BA9E009E48F")
     
@@ -396,7 +397,8 @@ public Object getItem(int flatListPos) {
         return retValue;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.787 -0500", hash_original_method = "4AC16A8A6C46491D50BE7E30F75A3576", hash_generated_method = "9C1FA81FA45FB4F67BB0BA95A8E37A70")
     
 public long getItemId(int flatListPos) {
@@ -420,7 +422,8 @@ public long getItemId(int flatListPos) {
         return retValue;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.790 -0500", hash_original_method = "E8F063B04C087445609A9E5E66DA0C8E", hash_generated_method = "278DAC0FDBB3963CE3BC73B3B7D74A5B")
     
 public View getView(int flatListPos, View convertView, ViewGroup parent) {
@@ -445,7 +448,8 @@ public View getView(int flatListPos, View convertView, ViewGroup parent) {
         return retValue;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.792 -0500", hash_original_method = "99547DA2855DBC2792C3AF02654A4FE0", hash_generated_method = "C3666CABD146D7E0B72B8235EAFF3D01")
     
 @Override
@@ -489,6 +493,7 @@ public View getView(int flatListPos, View convertView, ViewGroup parent) {
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.796 -0500", hash_original_method = "4910256FB1EE08A13057FF7D9F357251", hash_generated_method = "2A0DFAE132E3C5C2CA6E69107DE71084")
     
 @Override
@@ -931,7 +936,7 @@ static GroupMetadata obtain(int flPos, int lastChildFlPos, int gPos, long gId) {
         public static final Parcelable.Creator<GroupMetadata> CREATOR =
                 new Parcelable.Creator<GroupMetadata>() {
             
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.862 -0500", hash_original_method = "7666142641B123E4C50AF29F73470D4C", hash_generated_method = "EC2ECA427037B9F9CB737317DAE26498")
             
 public GroupMetadata createFromParcel(Parcel in) {
@@ -973,6 +978,7 @@ public GroupMetadata[] newArray(int size) {
 private GroupMetadata() {
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.855 -0500", hash_original_method = "ECBFFC8C0ED7A961DBF56C4EE305170D", hash_generated_method = "F866B1A80686D809602404CC871A528E")
         
 public int compareTo(GroupMetadata another) {

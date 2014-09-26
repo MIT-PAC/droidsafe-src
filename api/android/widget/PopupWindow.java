@@ -1012,6 +1012,7 @@ public void showAtLocation(View parent, int gravity, int x, int y) {
      * @hide Internal use only. Applications should use
      *       {@link #showAtLocation(View, int, int, int)} instead.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.049 -0500", hash_original_method = "B99D3AF8D05FDFEAE8059FF95B29B82E", hash_generated_method = "7CDCC7435C5DF0C3ADF03798689849D9")
     
 public void showAtLocation(IBinder token, int gravity, int x, int y) {
@@ -1050,6 +1051,7 @@ public void showAtLocation(IBinder token, int gravity, int x, int y) {
      *
      * @see #dismiss()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.051 -0500", hash_original_method = "C9F3BB2940AB236715592F07C984C554", hash_generated_method = "20E9C3A6ABB1BE050EB9AC5925ED0954")
     
 public void showAsDropDown(View anchor) {
@@ -1703,7 +1705,7 @@ public PopupViewContainer(Context context) {
         }
 
         @DSSpec(DSCat.TO_MODEL)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.122 -0500", hash_original_method = "A2DD55E78C6B8B19849AEC8708A214E9", hash_generated_method = "664BD3635A69F63DA63D458E4E589915")
         
 @Override
@@ -1764,8 +1766,8 @@ public PopupViewContainer(Context context) {
             }
         }
 
-        @DSSafe(DSCat.ANDROID_CALLBACK)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSpec(DSCat.IO_ACTION_METHOD)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.129 -0500", hash_original_method = "EB4F4EE30B31AEB9BDFF308A3D2D5CAC", hash_generated_method = "92046F7B9DC15AB1762CE271BC620B7E")
         
 @Override

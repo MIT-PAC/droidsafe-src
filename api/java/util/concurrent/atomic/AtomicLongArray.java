@@ -23,7 +23,6 @@ public class AtomicLongArray implements java.io.Serializable {
     private static final long serialVersionUID = -2308431214976778248L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.264 -0400", hash_original_field = "45AA3EADCAC9C9E31A558AD2E7D920BC", hash_generated_field = "225667B44D983DC733D3AAE856B0466F")
 
-
     private static final Unsafe unsafe = Unsafe.getUnsafe();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.265 -0400", hash_original_field = "9242FD11B547A088AA38E1D5D7710874", hash_generated_field = "E840612BC13BA3439D2963C9AE6D7EF3")
 
@@ -286,6 +285,7 @@ public long addAndGet(int i, long delta) {
      * Returns the String representation of the current values of array.
      * @return the String representation of the current values of array
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.274 -0400", hash_original_method = "3492963B9799FA768D7650AC10A0F976", hash_generated_method = "05FA181A353EB1D2A8C6F63EB83AD424")
     
 public String toString() {

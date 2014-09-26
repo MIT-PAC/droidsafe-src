@@ -24,7 +24,6 @@ import java.io.IOException;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.Array;
 
-
 /**
  * This class implements a policy qualifier as defined by the ASN.1
  * {@code PolicyQualifierInfo} structure.
@@ -119,6 +118,7 @@ public final byte[] getPolicyQualifier() {
      * @return a string representation of this {@code PolicyQualifierInfo}
      *         instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.919 -0400", hash_original_method = "2F3DFC9CAA3972F022EB5AA11F0288FE", hash_generated_method = "CF4E9A37660086CB7B1AE27EB3C80111")
     
 public String toString() {

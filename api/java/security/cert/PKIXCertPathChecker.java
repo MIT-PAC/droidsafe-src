@@ -56,6 +56,7 @@ protected PKIXCertPathChecker() {}
      *
      * @return the cloned instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:15.568 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "41C79547FB941C1E5EE1054506CEE879")
     
 public Object clone() {

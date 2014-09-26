@@ -25,7 +25,6 @@ import java.io.IOException;
 public class SaslException extends IOException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.511 -0400", hash_original_field = "30490F73DFADE6AEB53395131824CAA4", hash_generated_field = "B39ACC585E2CBEC7A1B0162484EE77F9")
 
-
     private static final long serialVersionUID = 4579784287983423626L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.512 -0400", hash_original_field = "52E1E584294508FDB71F615F0BEB3BE7", hash_generated_field = "97483D4C29D21110D083F26AC06184F0")
 
@@ -53,6 +52,7 @@ public SaslException(String detail, Throwable ex) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.514 -0400", hash_original_method = "8791F3A96B34116A71DD0AC47CE5537E", hash_generated_method = "2BA2E1F20BE93F1A2866C75EF8F8D4A9")
     
 @Override
@@ -60,6 +60,7 @@ public SaslException(String detail, Throwable ex) {
         return _exception;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.515 -0400", hash_original_method = "25ED5481D554C123C565A2DD8666653E", hash_generated_method = "79CA2BCC7DA7A4DDF09F87F8F3E1A2A0")
     
 @Override
@@ -69,6 +70,7 @@ public SaslException(String detail, Throwable ex) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.515 -0400", hash_original_method = "CB49F38B4FDB9C47BF93A3F24EBF7010", hash_generated_method = "AA81E03E736EE200A181E270839FCB84")
     
 @Override

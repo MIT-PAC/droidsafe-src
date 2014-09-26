@@ -32,7 +32,6 @@ import java.io.OutputStream;
 public class CheckedOutputStream extends java.io.FilterOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.171 -0400", hash_original_field = "4AE29764ABB14C73F8209F7640A7CC1D", hash_generated_field = "17891C0CAF0BD7DDA9A721E3165E41B4")
 
-
     private  Checksum check;
 
     /**
@@ -72,6 +71,8 @@ public Checksum getChecksum() {
      * @throws IOException
      *             if an IO error has occurred.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.172 -0400", hash_original_method = "2DF83CFEF9E6036227219DB8EF0DD76F", hash_generated_method = "93BEF2EF8387275EBA02ADEBCAE1FB6B")
     
 @Override
@@ -94,6 +95,8 @@ public Checksum getChecksum() {
      * @throws IOException
      *             if an IO error has occurred.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.173 -0400", hash_original_method = "AB520801C576DAA6BCE159FF29C6C3E4", hash_generated_method = "05EAC1A8146DA2C29616A364C44780DE")
     
 @Override

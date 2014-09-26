@@ -150,7 +150,7 @@ PhoneNumberMatcher(PhoneNumberUtil util, CharSequence text, String country, Leni
     this.maxTries = maxTries;
   }
 
-  @DSSafe(DSCat.DATA_STRUCTURE)
+  @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.145 -0500", hash_original_method = "2A2342D3C783955CFC983767F5F149A5", hash_generated_method = "C6DACE382E8C51CBA13CBC8F7B386FEE")
     
 public boolean hasNext() {
@@ -170,7 +170,7 @@ public boolean hasNext() {
     NOT_READY, READY, DONE
   }
 
-  @DSSafe(DSCat.DATA_STRUCTURE)
+  @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.148 -0500", hash_original_method = "41BA4BAFF42817F4E65D9346C9FF2DB0", hash_generated_method = "A8303C9A79DA35E0B1C59721487E2DF7")
     
 public PhoneNumberMatch next() {

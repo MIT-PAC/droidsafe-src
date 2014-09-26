@@ -105,7 +105,6 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
     public static final int EDGE_TYPE_OUTSIDE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.543 -0400", hash_original_field = "FBA6C9C5213832E18F5A01E0F1543E85", hash_generated_field = "FB2AF03A0D0E19237A68DC6CAC3EDFEF")
 
-
     private static final int HORIZONTAL = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.552 -0400", hash_original_field = "E82176956A4DF716613C200537EEC301", hash_generated_field = "FE13C9507EB3E0B2777A8026EAF21CFC")
 
@@ -730,6 +729,7 @@ private void cancelTargetTouch() {
     }
 
     private class ScrollAnimationRunnable implements Runnable {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void run() {
             if (!mAnimating) {

@@ -164,6 +164,7 @@ public class MediaController extends FrameLayout {
 
     private Handler mHandler = new Handler() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.959 -0400", hash_original_method = "8F0BA1F98715C95935AC2F391AEFF8BC", hash_generated_method = "AAD2F5C855014B3F65805A54CE92C144")
         @Override
         public void handleMessage(Message msg) {
@@ -190,6 +191,7 @@ public class MediaController extends FrameLayout {
 
     private View.OnClickListener mPauseListener = new View.OnClickListener() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.960 -0400", hash_original_method = "F90DC617061E164BAEBDBFB1EA5D02BB", hash_generated_method = "811C9C24B7A4723801F0D8BF2718901B")
         public void onClick(View v) {
             
@@ -244,6 +246,7 @@ public class MediaController extends FrameLayout {
 
     private View.OnClickListener mRewListener = new View.OnClickListener() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.962 -0400", hash_original_method = "B5D53DC8A12E02793B3EF0C8511F70D5", hash_generated_method = "0956446804574FD1FF0574BB3CAF295E")
         public void onClick(View v) {
             
@@ -261,6 +264,7 @@ public class MediaController extends FrameLayout {
 
     private View.OnClickListener mFfwdListener = new View.OnClickListener() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.963 -0400", hash_original_method = "BF054D35499B7B032734EBAD3598DA2F", hash_generated_method = "43AF20A0E570119EBA30B6224936073D")
         public void onClick(View v) {
             
@@ -767,7 +771,7 @@ private void doPauseResume() {
 
     @DSComment("No action.  Check callbacks modeling")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.885 -0500", hash_original_method = "E14B391343AAAAC9B9A5DC8FE6A0AD92", hash_generated_method = "0B071800A736A98EA4E171A302438D8B")
     
 @Override

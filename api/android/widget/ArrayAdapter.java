@@ -353,7 +353,7 @@ public Context getContext() {
     
     @DSComment("Binding data, need modeling to be safe")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.DATABASE})
     @Override
 	public int getCount() {
 		return 0;
@@ -362,7 +362,7 @@ public Context getContext() {
     
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Binding data, need modeling to be safe")
-    @DSSpec(DSCat.DB_CURSOR)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @Override
 	public Object getItem(int position) {
@@ -389,7 +389,8 @@ public int getPosition(T item) {
     /**
      * {@inheritDoc}
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.003 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "86EF76D6295D66F6DBBE39DCDBA9A1C9")
     
 public long getItemId(int position) {
@@ -401,7 +402,7 @@ public long getItemId(int position) {
      */
     @DSComment("Binding data, need modeling to be safe")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.005 -0500", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "A5B1D9C00E70EDAFF5DE72AD387583B6")
     @DSVerified
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -459,7 +460,7 @@ public void setDropDownViewResource(int resource) {
     /**
      * {@inheritDoc}
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.013 -0500", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "354A608CAB67E58C0C02915FF74A2A17")
     
 @Override

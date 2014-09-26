@@ -32,10 +32,8 @@ import droidsafe.helpers.*;
 public abstract class Signer extends Identity {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.969 -0400", hash_original_field = "53464C55A6A5739555CD227DC8D06068", hash_generated_field = "F2B3E66AA7C5D1FF1DD85B70BC3246E1")
 
-
     private static final long serialVersionUID = -1763464102261361480L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.971 -0400", hash_original_field = "E343478F4FCDDE86054B291B9794F31B", hash_generated_field = "0BDA09A35A184B3500330A0D915760C1")
-
 
     private PrivateKey privateKey;
 
@@ -116,6 +114,7 @@ public final void setKeyPair(KeyPair pair) throws InvalidParameterException, Key
      *
      * @return a printable representation for this {@code Signer}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.979 -0400", hash_original_method = "9C760CA5169F00FD53FF6DD39F166B45", hash_generated_method = "5017F1E9EEBBA91BB03F7D0B76FAD44B")
     
 @Override

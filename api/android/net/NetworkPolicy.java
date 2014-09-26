@@ -26,7 +26,7 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.457 -0400", hash_original_field = "C2409146E6E4B9061F56D86265B2F3B2", hash_generated_field = "180EDC3370D1E5C9B6946B64927B3249")
 
     public static final Creator<NetworkPolicy> CREATOR = new Creator<NetworkPolicy>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.708 -0500", hash_original_method = "36B6FBCF5E8EB4247DB4769E0E257CA0", hash_generated_method = "183F9A4303A8A2E7CF83C914919AD39B")
         
 public NetworkPolicy createFromParcel(Parcel in) {
@@ -109,6 +109,7 @@ public boolean isOverLimit(long totalBytes) {
     }
 
     /** {@inheritDoc} */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.697 -0500", hash_original_method = "94D3DEEA59ED3BCE504BE8B2D91F1F02", hash_generated_method = "63A5CDBD96E0A7B504C7DE406AEDB281")
     
 public int compareTo(NetworkPolicy another) {

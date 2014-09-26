@@ -294,6 +294,7 @@ public void setGravity(int gravity) {
         requestLayout();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.143 -0500", hash_original_method = "848B9DD252B5642B635212FB2317B5E7", hash_generated_method = "CD3BD792D50FDA5CB5F1596D5E8DC210")
     
 @Override
@@ -315,6 +316,7 @@ public void setGravity(int gravity) {
         updateAdapter(mWatchingAdapter != null ? mWatchingAdapter.get() : null, adapter);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.145 -0500", hash_original_method = "226181D55AB267E2F315638FEE6EF6D6", hash_generated_method = "58A5D82F2712610C002F7E525FCE11AC")
     
 @Override
@@ -368,6 +370,7 @@ void updateText(int currentItem, PagerAdapter adapter) {
         mUpdatingText = false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.151 -0500", hash_original_method = "BD66F47535DA80AFA969E7F2E28868A2", hash_generated_method = "8BDC48041CBAA6A35580577819C8B411")
     
 @Override
@@ -486,6 +489,7 @@ void updateTextPositions(int position, float positionOffset, boolean force) {
         mUpdatingPositions = false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.163 -0500", hash_original_method = "51FB66892937CB37A2CA53CCF8BF865D", hash_generated_method = "80D12B3C49755A24E9117D738B990825")
     
 @Override
@@ -586,6 +590,7 @@ int getMinHeight() {
             updateAdapter(oldAdapter, newAdapter);
         }
 
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.178 -0500", hash_original_method = "14F4D00F7C7AD3110DA52FF41E59ABFF", hash_generated_method = "93899DC0A75C9846A7DD4E64A31CFEC2")
         
 @Override

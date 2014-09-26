@@ -295,7 +295,7 @@ TimerImpl(String name, boolean isDaemon) {
          * This method will be launched on separate thread for each Timer
          * object.
          */
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.129 -0500", hash_original_method = "F5D6E902D7971393BC779DF27078ED52", hash_generated_method = "62FF54BB817CCC7842C56839A52B4CB8")
         
 @Override

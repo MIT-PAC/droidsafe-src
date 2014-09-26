@@ -155,6 +155,7 @@ private synchronized void internStrings(String[][] result) {
 
     private static final Comparator<String[]> ZONE_STRINGS_COMPARATOR = new Comparator<String[]>() {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.765 -0400", hash_original_method = "78D6A50B25B700B049CBB3B10CFB6A69", hash_generated_method = "BB7DD2368C24C50BAD92DE238733B79C")
         public int compare(String[] lhs, String[] rhs) {
             int var42A7CE75D9634A77D0F9C98CADB948CE_1083735524 = (lhs[OLSON_NAME].compareTo(rhs[OLSON_NAME]));

@@ -1608,7 +1608,7 @@ public void fling(int velocityX) {
     }
 
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.434 -0500", hash_original_method = "7D7EAD2993C7155FA8CA9421487AA499", hash_generated_method = "98703A791FF13BE76E446A202C89DD6C")
     
 @Override
@@ -1627,7 +1627,7 @@ public void fling(int velocityX) {
     }
 
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.437 -0500", hash_original_method = "63AFEEC895B9671DC479FE83536227D7", hash_generated_method = "036084862698F19C6CD580366D263CE4")
     
 @SuppressWarnings({"SuspiciousNameCombination"})

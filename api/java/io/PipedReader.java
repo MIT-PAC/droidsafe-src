@@ -35,14 +35,11 @@ public class PipedReader extends Reader {
     private static final int PIPE_SIZE = 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.727 -0400", hash_original_field = "0C274599D1E182E9646E850B1F54838C", hash_generated_field = "F5A62F451E05D22096D6EE6BA212D601")
 
-
     private Thread lastReader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.728 -0400", hash_original_field = "11B82934C1097E36AA09E79AB8952C5D", hash_generated_field = "276A7969C85F5DE4B1F84464F2E355FA")
 
-
     private Thread lastWriter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.729 -0400", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
-
 
     private boolean isClosed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.731 -0400", hash_original_field = "AF37951EAE101F357ACAF48FB7E85D88", hash_generated_field = "C5FBB54C5ACD68A27601FA9626F9BD71")
@@ -126,6 +123,7 @@ public PipedReader(PipedWriter out, int pipeSize) throws IOException {
      * @throws IOException
      *             if an error occurs while closing this reader.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.742 -0400", hash_original_method = "5DC76D27E31809647AFF6A6935906F66", hash_generated_method = "63D6F39248A22F97220BB9163EFEE7DE")
     
 @Override
@@ -188,6 +186,8 @@ synchronized void establishConnection() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.747 -0400", hash_original_method = "3089A342CB577DB16E4C20E9D5F36203", hash_generated_method = "5BD3538831C37B4750C2FC5CAFF9845A")
     
 @Override
@@ -227,6 +227,8 @@ synchronized void establishConnection() throws IOException {
      *             the thread writing to the connected writer is no longer
      *             alive.
      */
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.749 -0400", hash_original_method = "88E857352F305CC5B26FDAB2F16230FB", hash_generated_method = "F5C4C741FD5385AE848E2F6375B336D4")
     
 @Override
@@ -317,6 +319,7 @@ synchronized void establishConnection() throws IOException {
      * @see #read()
      * @see #read(char[], int, int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.751 -0400", hash_original_method = "97F3598D4AF720280352B5FB455E6AAF", hash_generated_method = "7F273DF1C43E9D89D63B738277FD676B")
     
 @Override

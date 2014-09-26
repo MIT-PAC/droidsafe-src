@@ -71,7 +71,7 @@ public List<Intent> getAndClearBroadcastIntents() {
     }
 
     @DSSpec(DSCat.SERVICE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.926 -0500", hash_original_method = "D151ADEF319006893C279FF639241601", hash_generated_method = "8A89D3272220F379D194F3F66CA073FA")
     
 @Override

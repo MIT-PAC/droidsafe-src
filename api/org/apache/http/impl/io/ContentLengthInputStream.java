@@ -77,8 +77,8 @@ public void close() throws IOException {
      * @throws IOException If an IO problem occurs
      * @see java.io.InputStream#read()
      */
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.068 -0500", hash_original_method = "829D665E9575B14A2545A678B846DF03", hash_generated_method = "3D2C22A6B1859C1BF80A90876F79B416")
     
 public int read() throws IOException {
@@ -106,7 +106,7 @@ public int read() throws IOException {
      * @throws java.io.IOException Should an error occur on the wrapped stream.
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.071 -0500", hash_original_method = "7953751167B17924FE4F5EE632E22C6C", hash_generated_method = "87F145D42A3BB632F9457934C2B1F5C7")
     
 public int read (byte[] b, int off, int len) throws java.io.IOException {

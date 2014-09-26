@@ -26,7 +26,8 @@ protected DirectByteBuffer(MemoryBlock block, int capacity, int offset) {
         this.effectiveDirectAddress = block.toInt() + offset;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.513 -0500", hash_original_method = "05EA367CE37FB792328EB9B5E5178E53", hash_generated_method = "1D32C90866A795DFAFDBD28F424891F4")
     
 @Override
@@ -38,7 +39,7 @@ protected DirectByteBuffer(MemoryBlock block, int capacity, int offset) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.516 -0500", hash_original_method = "5166EE5E9707A9E6D584C615F445133C", hash_generated_method = "B30EDA1977F77CE49FA9B1426D58DEB6")
     
 final void get(char[] dst, int dstOffset, int charCount) {
@@ -48,7 +49,7 @@ final void get(char[] dst, int dstOffset, int charCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.518 -0500", hash_original_method = "ADD0EB5B665BFADA07EEB34F0C07C866", hash_generated_method = "6C4F3C32A19700751A31E8D634D20A72")
     
 final void get(double[] dst, int dstOffset, int doubleCount) {
@@ -58,7 +59,7 @@ final void get(double[] dst, int dstOffset, int doubleCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.521 -0500", hash_original_method = "6E512C073258D3379E68BD1EE70E834D", hash_generated_method = "DC8D55351A0E9BD27426AEFE42D5721F")
     
 final void get(float[] dst, int dstOffset, int floatCount) {
@@ -68,7 +69,7 @@ final void get(float[] dst, int dstOffset, int floatCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.523 -0500", hash_original_method = "C51D1E84C7192049016360AA331FDA28", hash_generated_method = "FBD02CAAB60A94D18E05AF8FE4113F19")
     
 final void get(int[] dst, int dstOffset, int intCount) {
@@ -78,7 +79,7 @@ final void get(int[] dst, int dstOffset, int intCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.525 -0500", hash_original_method = "3F36E5287836D62D1612D85220FCD9CD", hash_generated_method = "1F265C990180FD1AD92AED4E7CEDA728")
     
 final void get(long[] dst, int dstOffset, int longCount) {
@@ -88,7 +89,7 @@ final void get(long[] dst, int dstOffset, int longCount) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.528 -0500", hash_original_method = "95F33E34C92C83F601EF4DD99BC92C04", hash_generated_method = "1EF395AB09CA9076C226A9E143E4EF79")
     
 final void get(short[] dst, int dstOffset, int shortCount) {
@@ -97,7 +98,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         position += byteCount;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.531 -0500", hash_original_method = "FD6E107A3BCF0EDBECB1B5D0CCC3DC10", hash_generated_method = "528B498BEE1239A022F8366E285AF715")
     
 @Override
@@ -108,7 +110,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return this.block.peekByte(offset + position++);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.533 -0500", hash_original_method = "4EC80D94823705ACCC824037AEC83986", hash_generated_method = "9D786281E8C8FB7C9514EB5E35320A10")
     
 @Override
@@ -140,7 +143,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return (char) this.block.peekShort(offset + index, order);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.542 -0500", hash_original_method = "5EFA43D409368A8372AA180C23146E16", hash_generated_method = "F394C04020918682B54E6CA88F6EE740")
     
 @Override
@@ -154,7 +158,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return result;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.544 -0500", hash_original_method = "96FC6E541F1994B391122E02AC73326B", hash_generated_method = "06A6DD8D022DA9AC180BFC290EC56364")
     
 @Override
@@ -163,7 +168,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return Double.longBitsToDouble(this.block.peekLong(offset + index, order));
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.547 -0500", hash_original_method = "2EE285AEEA4FEACBF45EAADB7A9A5368", hash_generated_method = "D835509F3B91FD748E85609CF704CC1D")
     
 @Override
@@ -177,7 +183,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return result;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.549 -0500", hash_original_method = "050B7A76EC6791ECC7468C2E0B06A7E7", hash_generated_method = "28F9BFF2F04D2F266E87D47495586D9E")
     
 @Override
@@ -186,7 +193,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return Float.intBitsToFloat(this.block.peekInt(offset + index, order));
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.552 -0500", hash_original_method = "D5783EC3520BA4180543335F9AE942E7", hash_generated_method = "DC0F46CA0D2CC97F1AB23A141BC34BB6")
     
 @Override
@@ -200,7 +208,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return result;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.556 -0500", hash_original_method = "A56F512613C67F8975E594518A590248", hash_generated_method = "9FAE58A05CDDFB599F885BCF5E7EDA24")
     
 @Override
@@ -209,7 +218,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return this.block.peekInt(offset + index, order);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.559 -0500", hash_original_method = "8F4B5A1B3C9B20E6E7648EDEC4DC7AE6", hash_generated_method = "4518D29348E62C3929845A94B11CF644")
     
 @Override
@@ -223,7 +233,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return result;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.561 -0500", hash_original_method = "94B0F156AE4944E60A0908AA30F792C3", hash_generated_method = "77DB8FB08C8A12EBAF489A8BF1984634")
     
 @Override
@@ -232,7 +243,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return this.block.peekLong(offset + index, order);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.564 -0500", hash_original_method = "A23C234E65EF1DC26A40AB6396A2664F", hash_generated_method = "B3A1525A11457A28E01BB87912873355")
     
 @Override
@@ -246,7 +258,8 @@ final void get(short[] dst, int dstOffset, int shortCount) {
         return result;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.567 -0500", hash_original_method = "3D46A49BA7FE751296135E85F30A2B25", hash_generated_method = "E71B4C8821E686B370DCC87E29B57BB8")
     
 @Override
@@ -293,6 +306,7 @@ public final void free() {
     }
     
     //Droidsafe: We added here to resolve compiler error, not sure when it was changed
+    @DSSafe(DSCat.SAFE_LIST)
     public ByteBuffer put(Object src, int srcOffset, int byteCount) {
         byte[] byteArray = new byte[1];
         if (src instanceof byte[]) {

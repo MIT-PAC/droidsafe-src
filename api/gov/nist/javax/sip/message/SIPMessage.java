@@ -509,7 +509,7 @@ public byte[] encodeAsBytes(String transport) {
      * @return A cloned copy of this object.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.183 -0500", hash_original_method = "CAA2D0A800A8BA91CFE25E08D1466992", hash_generated_method = "441794B8EC21652DE9A4976EB05D7714")
     
 public Object clone() {

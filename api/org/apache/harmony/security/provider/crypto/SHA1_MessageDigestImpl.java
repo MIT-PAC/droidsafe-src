@@ -15,7 +15,6 @@
  *  limitations under the License.
  */
 
-
 package org.apache.harmony.security.provider.crypto;
 
 import droidsafe.annotations.*;
@@ -51,7 +50,6 @@ public class SHA1_MessageDigestImpl extends MessageDigestSpi implements Cloneabl
 
     private long messageLength;   // total length of bytes supplied by user
 
-
     /**
      *  The constructor creates needed buffers and sets the engine at initial state
      */
@@ -66,7 +64,6 @@ public SHA1_MessageDigestImpl() {
 
         engineReset();
     }
-
 
     /**
      * The method performs final actions and invokes the "computeHash(int[])" method.
@@ -152,6 +149,7 @@ private void processDigest(byte[] digest, int offset) {
      * @return
      *       a clone of this object
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:04.125 -0400", hash_original_method = "6E9FF04EDBC10C1681EBB7B80AAD70DA", hash_generated_method = "6B2F8573B12D5EEA4E1F115F0BDFF2D3")
     
 public Object clone() throws CloneNotSupportedException {
@@ -160,7 +158,6 @@ public Object clone() throws CloneNotSupportedException {
         cloneObj.oneByte = oneByte.clone();
         return cloneObj;
     }
-
 
     /**
      * Computes a message digest value. <BR>
@@ -179,7 +176,6 @@ protected byte[] engineDigest() {
         processDigest(hash, 0);
         return hash;
     }
-
 
     /**
      * Computes message digest value.
@@ -233,7 +229,6 @@ protected int engineDigest(byte[] buf, int offset, int len) throws DigestExcepti
         return DIGEST_LENGTH;
     }
 
-
     /**
      * Returns a message digest length. <BR>
      *
@@ -247,7 +242,6 @@ protected int engineDigest(byte[] buf, int offset, int len) throws DigestExcepti
 protected int engineGetDigestLength() {
         return DIGEST_LENGTH;
     }
-
 
     /**
      * Resets the engine. <BR>
@@ -268,7 +262,6 @@ protected void engineReset() {
         buffer[HASH_OFFSET +4] = H4;
     }
 
-
     /**
      * Supplements a byte to current message. <BR>
      *
@@ -285,7 +278,6 @@ protected void engineUpdate(byte input) {
         SHA1Impl.updateHash( buffer, oneByte, 0, 0 );
         messageLength++;
     }
-
 
     /**
      * Updates current message. <BR>

@@ -709,7 +709,7 @@ protected void setError() {
      *            the non-null array containing characters to write.
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.594 -0500", hash_original_method = "A3159CA9C79B3AD467B0FCF29995C9CC", hash_generated_method = "332FA8CEBD234C482814A35911B9C13B")
     
 @Override
@@ -791,7 +791,7 @@ private final void doWrite(char[] buf, int offset, int count) {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.604 -0500", hash_original_method = "CF32CDDE2940A658D82FD10746BC6D29", hash_generated_method = "FFEB530BBD04B1626761EF212111F721")
     
 @Override
@@ -814,7 +814,7 @@ private final void doWrite(char[] buf, int offset, int count) {
      *             offset + count} is greater than the length of {@code str}.
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.607 -0500", hash_original_method = "63C99944EF00B97313C46973AD4FFC8C", hash_generated_method = "B2605DFCA974A1A538F9BAD52C8E3544")
     
 @Override
@@ -829,7 +829,8 @@ private final void doWrite(char[] buf, int offset, int count) {
      *            the character to append to the target.
      * @return this writer.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.609 -0500", hash_original_method = "4FD83DFE8717316B104D560444A12EF3", hash_generated_method = "C3F32695E29C5D8F69A4DC79938AD393")
     
 @Override
@@ -848,6 +849,8 @@ private final void doWrite(char[] buf, int offset, int count) {
      *            the character sequence appended to the target.
      * @return this writer.
      */
+    
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.612 -0500", hash_original_method = "EC867D10B212AD9763F84A42EB42848B", hash_generated_method = "4D8F3ACDD5BAE69F7B73FFEABACE5366")
     
 @Override
@@ -880,6 +883,8 @@ private final void doWrite(char[] buf, int offset, int count) {
      *             either {@code start} or {@code end} are greater or equal than
      *             the length of {@code csq}.
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.615 -0500", hash_original_method = "3313C31A52AD9501A690D6955A7EC57D", hash_generated_method = "0136AE3FC0D886253B0CCF22F93AB902")
     
 @Override

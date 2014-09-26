@@ -17,6 +17,7 @@ public abstract class HardwareCanvas extends Canvas {
     {
         //Synthesized constructor
     }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.733 -0500", hash_original_method = "BD882F06CCC6AC9974E10A9883BC45CA", hash_generated_method = "D5EC6C0B703014653E7A2F1A2C6287F1")
     
 @Override

@@ -56,8 +56,8 @@ TelnetOutputStream(TelnetClient client)
      * @exception IOException If an error occurs while writing to the underlying
      *            stream.
      ***/
-    @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.716 -0500", hash_original_method = "7CB4C89F951B084D5A9568880FECD763", hash_generated_method = "FD10B01E03D296994182FBFE110A5ED1")
     
 public void write(int ch) throws IOException
@@ -137,7 +137,7 @@ public void write(byte buffer[]) throws IOException
      * @exception IOException If an error occurs while writing to the underlying
      *            stream.
      ***/
-    @DSSink({DSSinkKind.IO})
+    @DSSink({DSSinkKind.NETWORK})
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:59.727 -0500", hash_original_method = "4D9812CB7B4C707FB9C13C6326E2C974", hash_generated_method = "A70E7E76449691363F4039939B60F329")
     

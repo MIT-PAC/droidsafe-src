@@ -1329,7 +1329,7 @@ public PostScale(boolean updateTextWrap,
             mInPortraitMode = inPortraitMode;
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.196 -0500", hash_original_method = "713D19A11600F821B2CA1C17235BF1BC", hash_generated_method = "A47388E94181A5862D3C23D305875B64")
         
 public void run() {

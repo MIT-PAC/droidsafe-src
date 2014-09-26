@@ -72,6 +72,7 @@ public ActionBar getSupportActionBar() {
         return mImpl.getSupportActionBar();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.401 -0400", hash_original_method = "A63D0DCB5A2DED6E06C62C21596D4A13", hash_generated_method = "5FDF959980D4E28EC10013A4B769B4C0")
     
 @Override
@@ -79,6 +80,7 @@ public ActionBar getSupportActionBar() {
         return mImpl.getMenuInflater();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.410 -0400", hash_original_method = "3BBF515DB23893EBC86A36061B416492", hash_generated_method = "EBFEA5FACC1536715F2CE879FD22327B")
     
 @Override
@@ -86,6 +88,7 @@ public ActionBar getSupportActionBar() {
         mImpl.setContentView(layoutResID);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.417 -0400", hash_original_method = "4901B88EB9F59F9DB5585DE5CEA4FD0C", hash_generated_method = "D8E0919774CFE890AD0D0C211C26DEC6")
     
 @Override
@@ -93,6 +96,7 @@ public ActionBar getSupportActionBar() {
         mImpl.setContentView(view);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.425 -0400", hash_original_method = "4D7A9816A3E5EC5F29B67247D57D5FA7", hash_generated_method = "45046D555E5040F8B6942B2901C8E7A6")
     
 @Override
@@ -100,6 +104,7 @@ public ActionBar getSupportActionBar() {
         mImpl.setContentView(view, params);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.431 -0400", hash_original_method = "0688A93BC2A40B448E3269FD3A0515C0", hash_generated_method = "228A62329F4323BFC40EA20DA817FF54")
     
 @Override
@@ -107,6 +112,7 @@ public ActionBar getSupportActionBar() {
         mImpl.addContentView(view, params);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.441 -0400", hash_original_method = "A8DA43CDD49BD7FF25CD847525AB0225", hash_generated_method = "0BA8EB8DF2DA5BD29302E04175525DC2")
     
 @Override
@@ -116,6 +122,7 @@ public ActionBar getSupportActionBar() {
         mImpl.onCreate(savedInstanceState);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.447 -0400", hash_original_method = "85DCDA3F9CF63242611E1028630CCFF9", hash_generated_method = "F2192EFB2EB4F141517EB5B0A6239BBE")
     
 @Override
@@ -124,6 +131,7 @@ public ActionBar getSupportActionBar() {
         mImpl.onConfigurationChanged(newConfig);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.455 -0400", hash_original_method = "7AD5756B4170E486F94FEF09D45C2C90", hash_generated_method = "4A729DF356311CE3CEE189EBB3BEEFB4")
     
 @Override
@@ -132,6 +140,7 @@ public ActionBar getSupportActionBar() {
         mImpl.onStop();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.463 -0400", hash_original_method = "199C0B437D139113CC2D1AB11EB85AEA", hash_generated_method = "ED363C54A6B4DC9EED320CF5D6AEB97F")
     
 @Override
@@ -151,6 +160,7 @@ public ActionBar getSupportActionBar() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.480 -0400", hash_original_method = "122BCE66CC764BDB8F60593B63935516", hash_generated_method = "37B77A88CB577420FDDE046E94D5AF5F")
     
 @Override
@@ -167,6 +177,7 @@ public ActionBar getSupportActionBar() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.487 -0400", hash_original_method = "00F3F382694E73791BD613BA78197DEF", hash_generated_method = "A026E05CF92585335D8B12D8DC309D47")
     
 @Override
@@ -234,6 +245,7 @@ public ActionMode startSupportActionMode(ActionMode.Callback callback) {
         return mImpl.startSupportActionMode(callback);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.537 -0400", hash_original_method = "2206032A619B7F05586D2E666AAE984E", hash_generated_method = "1CF9F5613E37387FAA1311C3353D1E08")
     
 @Override
@@ -241,6 +253,7 @@ public ActionMode startSupportActionMode(ActionMode.Callback callback) {
         return mImpl.onCreatePanelMenu(featureId, menu);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.543 -0400", hash_original_method = "B80CF4495F4ED5FCE8010C55E2B38EC6", hash_generated_method = "934E662622E87FD09DE5D200A93AC1ED")
     
 @Override
@@ -306,6 +319,7 @@ boolean superOnMenuItemSelected(int featureId, MenuItem menuItem) {
         return super.onMenuItemSelected(featureId, menuItem);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.596 -0400", hash_original_method = "FF1F69702D71E15272679CCE7F75189B", hash_generated_method = "167B94A438A8BEB7A7B3294DA84F8181")
     
 @Override
@@ -545,6 +559,7 @@ public void supportNavigateUpTo(Intent upIntent) {
     /**
      * Use {@link #onSupportContentChanged()} instead.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.660 -0400", hash_original_method = "78CE9B486785A622BDAA4E18162BD6BB", hash_generated_method = "2336414F471D037E997F3213A642BC42")
     
 public final void onContentChanged() {

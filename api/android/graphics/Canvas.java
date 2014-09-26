@@ -893,7 +893,7 @@ public final void rotate(float degrees, float px, float py) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.166 -0500", hash_original_method = "ABA89A91C9E394A5196A87FF36F2A069", hash_generated_method = "2D41CB2D2ED1123789F114F9CE5C1F8F")
     
 public void setMatrix(Matrix matrix) {
@@ -919,7 +919,7 @@ public void getMatrix(Matrix ctm) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.171 -0500", hash_original_method = "677F0589CC9DCD49ED4AD9753284FD1D", hash_generated_method = "0EFEA3854D4D1A1427D490C733F4434D")
     
 public final Matrix getMatrix() {
@@ -1329,6 +1329,7 @@ public void drawColor(int color) {
      * @param color the color to draw with
      * @param mode  the porter-duff mode to apply to the color
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.231 -0500", hash_original_method = "4AB8965ACD48B286E6BCF28D614F6B00", hash_generated_method = "BC575776DFB584ABEB1578CB4B01E8B5")
     
 public void drawColor(int color, PorterDuff.Mode mode) {

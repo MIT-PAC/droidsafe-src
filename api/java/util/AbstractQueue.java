@@ -61,7 +61,7 @@ public boolean add(E e) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.072 -0500", hash_original_method = "9DCDFDCD4BD0DA1BA6AE29C07F6D5161", hash_generated_method = "51202F7E3A2AD9476298446EFBB72638")
     
 public E remove() {
@@ -85,7 +85,7 @@ public E remove() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.074 -0500", hash_original_method = "25B2B6020E0E758714C2C5A3E37A85D5", hash_generated_method = "F95746A63D42A09181D76B9F8FFB9607")
     
 public E element() {

@@ -2199,7 +2199,8 @@ private synchronized void createHandler() {
 
             // create a new handler
             mHandler = new Handler() {
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:46:24.418 -0400", hash_original_method = "98DDA7B8BD7D5D00B914EDDF76F7BBE2", hash_generated_method = "6C32F1F9B82B880AED01ABF079A6B2AC")
+                @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:46:24.418 -0400", hash_original_method = "98DDA7B8BD7D5D00B914EDDF76F7BBE2", hash_generated_method = "6C32F1F9B82B880AED01ABF079A6B2AC")
                 
 @Override
                 public void handleMessage(Message msg) {
@@ -2431,9 +2432,7 @@ private synchronized void postSync() {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     // Synchronize the native and java settings.
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:46:24.636 -0400", hash_original_method = "B9A4DA2D5B0DA0061612E5CC599DFA25", hash_generated_method = "2D7591EDC787BB510A9C75C255004F83")
@@ -2444,7 +2443,6 @@ private synchronized void postSync() {
     	taintDouble += nativeFrame;
     	addTaint(taintDouble);
     }
-
 
 }
 

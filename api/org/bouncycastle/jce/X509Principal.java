@@ -144,6 +144,7 @@ public X509Principal(
         super(reverse, lookUp, dirName);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.929 -0500", hash_original_method = "73EC4210941682DD4DF1478421683765", hash_generated_method = "BF6AC6A6C5815BB61FD26F74E679ED31")
     
 public String getName()

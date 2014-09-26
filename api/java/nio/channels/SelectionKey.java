@@ -229,7 +229,7 @@ public abstract int readyOps();
      * @return the related selector.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.213 -0500", hash_original_method = "4643185428A8E030AC9F19E1ADCCCBAB", hash_generated_method = "04BCA10CE76B374DE12BB83FBF9321FC")
     
 public abstract Selector selector();

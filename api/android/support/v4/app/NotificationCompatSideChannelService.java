@@ -67,6 +67,7 @@ public abstract class NotificationCompatSideChannelService extends Service {
     /**
      * Handle a side-channeled notification being posted.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:05.756 -0400", hash_original_method = "B0435BE0D609CA0D1FCA41B8E4C0D8EA", hash_generated_method = "625A200D6E3C6EC58D051D00D027CCED")
     
 public abstract void notify(String packageName, int id, String tag, Notification notification);
@@ -86,6 +87,7 @@ public abstract void cancel(String packageName, int id, String tag);
 public abstract void cancelAll(String packageName);
 
     private class NotificationSideChannelStub extends INotificationSideChannel.Stub {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void notify(String packageName, int id, String tag, Notification notification)
                 throws RemoteException {
@@ -121,6 +123,7 @@ public abstract void cancelAll(String packageName);
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:05.790 -0400", hash_original_method = "4D92E5835C399BAF3643C689E7C16577", hash_generated_method = "B3F78F7D87D5FB4E74E324896C6C821B")
     
 private void checkPermission(int callingUid, String packageName) {

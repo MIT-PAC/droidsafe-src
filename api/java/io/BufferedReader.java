@@ -198,6 +198,7 @@ private void checkNotClosed() throws IOException {
      * @see #mark(int)
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.804 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
     
 @Override
@@ -440,6 +441,7 @@ public String readLine() throws IOException {
      * @see #read(char[], int, int)
      * @see #readLine()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.818 -0500", hash_original_method = "8DBFD5F046457CCDE72CB0FF01FB7E1A", hash_generated_method = "3EBE27587D105331186151656D37C486")
     
 @Override
@@ -493,6 +495,7 @@ public String readLine() throws IOException {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.825 -0500", hash_original_method = "6635225943CAECFE84E5456D76E9313A", hash_generated_method = "D469B8C92A4DD0CAC2335E1C956715AA")
     
 @Override

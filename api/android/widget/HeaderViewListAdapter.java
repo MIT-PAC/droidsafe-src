@@ -132,7 +132,8 @@ public boolean removeFooter(View v) {
         return false;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.812 -0500", hash_original_method = "5EA4C802749955ACC8971AB13A15905C", hash_generated_method = "57CBC94C41FE3169911F7A0E0BD707AD")
     
 public int getCount() {
@@ -176,7 +177,7 @@ public boolean isEnabled(int position) {
         return mFooterViewInfos.get(adjPosition - adapterCount).isSelectable;
     }
 
-    @DSSpec(DSCat.DB_CURSOR)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.819 -0500", hash_original_method = "5FB1DDE7849FB7B1EE35000192AE1125", hash_generated_method = "8918F8CAD06FC669E29BCDAAF4D39293")
     
@@ -201,7 +202,8 @@ public Object getItem(int position) {
         return mFooterViewInfos.get(adjPosition - adapterCount).data;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.822 -0500", hash_original_method = "0EFF2641ED72ED5C174A1DFD9DE35423", hash_generated_method = "E63E5B93CC2923AAA40B574637AC8D43")
     
 public long getItemId(int position) {
@@ -216,6 +218,7 @@ public long getItemId(int position) {
         return -1;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.824 -0500", hash_original_method = "5C897DB1697E65CD415A86C35E25516F", hash_generated_method = "1C90C10F66C374B135420E1D1B8B8025")
     
 public boolean hasStableIds() {
@@ -225,7 +228,8 @@ public boolean hasStableIds() {
         return false;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.826 -0500", hash_original_method = "B94999E1741825084E6BE4B30684EEAE", hash_generated_method = "1EFB409B82444E045D3208D61B0334FB")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -249,7 +253,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return mFooterViewInfos.get(adjPosition - adapterCount).view;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.829 -0500", hash_original_method = "18109841CF71190B9879A21F432A9D28", hash_generated_method = "294400AE5B0954E97BC6CBAE52859F08")
     
 public int getItemViewType(int position) {
@@ -275,6 +280,7 @@ public int getViewTypeCount() {
         return 1;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.833 -0500", hash_original_method = "809D44C02719E33F590103DE7F6576A1", hash_generated_method = "B74E824CE2534F171C068A593B2FABFD")
     
 public void registerDataSetObserver(DataSetObserver observer) {
@@ -283,6 +289,7 @@ public void registerDataSetObserver(DataSetObserver observer) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.835 -0500", hash_original_method = "3A9A7C936FBCE4451B499589F8C4C5C5", hash_generated_method = "1A40DA71628EA2969005B726C48A6DC9")
     
 public void unregisterDataSetObserver(DataSetObserver observer) {

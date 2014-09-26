@@ -98,8 +98,8 @@ private static INfcAdapter getServiceInterface() {
      * @return the default NFC adapter, or null if no NFC adapter exists
      */
     @DSComment("NFC adapter manipulation")
-    @DSSpec(DSCat.NFC)
-    @DSSource({DSSourceKind.NFC})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.659 -0500", hash_original_method = "BBAF054E3A572AA64409457A2C6BC138", hash_generated_method = "5115AE9CECB46ACBA915434EDC27859F")
     
 public static NfcAdapter getDefaultAdapter(Context context) {
@@ -124,7 +124,8 @@ public static NfcAdapter getDefaultAdapter(Context context) {
      * object created from this method.<p>
      * @deprecated use {@link #getDefaultAdapter(Context)}
      */
-    @DSSource({DSSourceKind.NFC})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.662 -0500", hash_original_method = "48A7691839F3163BD41DEB5028DF54C7", hash_generated_method = "00D355938CBC4A736CD55F3604C3ECCB")
     
 @Deprecated

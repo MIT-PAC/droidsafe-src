@@ -79,7 +79,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.129 -0500", hash_original_method = "91A12202891A2BC9DA6AA80DC6DB676A", hash_generated_method = "4566B9A48CC006709F4BC578A29D61F9")
     
 @Override
@@ -289,7 +289,7 @@ public void setExitFadeDuration(int ms) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.162 -0500", hash_original_method = "758162C9EFC5A9F0A72A174E63E68436", hash_generated_method = "2324F511816189E9A57F602972DCFA6C")
     
 @Override
@@ -302,7 +302,7 @@ public void setExitFadeDuration(int ms) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.165 -0500", hash_original_method = "4272F469B4A869660F9BDAF1177E3127", hash_generated_method = "947E790C315A4B6E575DBB6F9FBD61C8")
     
 @Override
@@ -345,7 +345,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.173 -0500", hash_original_method = "29A0A86F8B666C86609CA80FF461C32C", hash_generated_method = "F1CE08502485BF393003F5059D093A39")
     
 @Override
@@ -426,7 +426,8 @@ public boolean selectDrawable(int idx) {
         if (mEnterAnimationEnd != 0 || mExitAnimationEnd != 0) {
             if (mAnimationRunnable == null) {
                 mAnimationRunnable = new Runnable() {
-                    @Override public void run() {
+                    @DSSafe(DSCat.SAFE_LIST)
+        @Override public void run() {
                         animate(true);
                         invalidateSelf();
                     }

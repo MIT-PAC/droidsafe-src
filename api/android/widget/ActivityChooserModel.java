@@ -469,6 +469,7 @@ public ActivityResolveInfo(ResolveInfo resolveInfo) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.166 -0500", hash_original_method = "05EB01A51A0727988F01FD1C25038E23", hash_generated_method = "D7A9D7785F9F6C86346A0B0F5FE3E9EF")
         
 public int compareTo(ActivityResolveInfo another) {
@@ -551,7 +552,7 @@ public void sort(Intent intent, List<ActivityResolveInfo> activities,
             //Synthesized constructor
         }
 
-       @DSSpec(DSCat.THREADING)
+       @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.189 -0500", hash_original_method = "C7992FBC3712621E8BB422FE384E294B", hash_generated_method = "F36BC393F0C978E8C08BA80782762A25")
         
 public void run() {
@@ -641,7 +642,8 @@ public void run() {
                     // thread, wait for data changes which happen during sorting, and
                     // perform UI modification based on the data change.
                     mHandler.post(new Runnable() {
-                        public void run() {
+                        @DSSafe(DSCat.SAFE_LIST)
+            public void run() {
                             pruneExcessiveHistoricalRecordsLocked();
                             sortActivities();
                         }
@@ -672,7 +674,7 @@ public void run() {
             //Synthesized constructor
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.197 -0500", hash_original_method = "56491CDA5DB122242C8DDE4A7A87359C", hash_generated_method = "0E634B72781F99144EF2F4B3330B50E6")
         
 public void run() {

@@ -217,6 +217,7 @@ public Timestamp(long theTime) {
      * @return {@code true} if this {@code Timestamp} object is later than the
      *         supplied timestamp, {@code false} otherwise.
      */
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.602 -0500", hash_original_method = "BA6D499959EBEE9331B456EE3E086445", hash_generated_method = "9A3B7D7B1F8A38BBAA9C6E5669C5024C")
     
 public boolean after(Timestamp theTimestamp) {
@@ -299,6 +300,7 @@ public boolean before(Timestamp theTimestamp) {
      * @throws ClassCastException
      *             if the supplied object is not a {@code Timestamp} object.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.607 -0500", hash_original_method = "05A91DEA116C3E2F5603F3F0D29353F9", hash_generated_method = "6913C2CAA66A64CC02A4479F7027889D")
     
 @Override
@@ -323,6 +325,7 @@ public boolean before(Timestamp theTimestamp) {
      *         supplied {@code Timestamp}</li>
      *         </ul>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.609 -0500", hash_original_method = "5F716ED3C44AF0E8E5B469B5E8E10C8F", hash_generated_method = "4BF9FAA4B4AB3AC55D9B8EB82863EA44")
     
 public int compareTo(Timestamp theTimestamp) {
@@ -479,7 +482,8 @@ private void setTimeImpl(long theTime) {
      * @return A string representing the instant defined by the {@code
      *         Timestamp}, in JDBC Timestamp escape format.
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.DATE_TIME})
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.630 -0500", hash_original_method = "2B0509572F21FC3F2C9AAE0AC4AFD2F5", hash_generated_method = "1A641F963856371CD431B2C5A921C583")
     
 @SuppressWarnings("deprecation")

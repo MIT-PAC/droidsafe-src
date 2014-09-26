@@ -3149,7 +3149,7 @@ ArrayList(E[] storage) {
         }
         
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.518 -0400", hash_original_method = "2292A4CE789907EDD632B4A1EB11E4D2", hash_generated_method = "B2FEE0C150F1B0531794BB26ED0C3A5A")
         @Override
         public E get(int location) {
@@ -3217,7 +3217,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
         }
 
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.934 -0500", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "041DFDF040EDA958588DB53691C01A94")
         
 @Override

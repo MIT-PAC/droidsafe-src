@@ -53,7 +53,7 @@ public static boolean compareMimeTypes(String concreteType, String desiredType) 
     public static final Parcelable.Creator<ClipDescription> CREATOR =
         new Parcelable.Creator<ClipDescription>() {
 
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.213 -0500", hash_original_method = "85E642226A89613A0CF91353EFBEB228", hash_generated_method = "727085DD534D5DB4FF214F8174187B0E")
         
 public ClipDescription createFromParcel(Parcel source) {

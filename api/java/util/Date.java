@@ -871,7 +871,7 @@ public void setTime(long milliseconds) {
      * locale are used. If you need control over the time zone or locale,
      * use {@code SimpleDateFormat} instead.
      */
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.996 -0500", hash_original_method = "6C5F0B4EE91530ACACAA7ACB374F6D90", hash_generated_method = "F709BAEEF90A917275EA136C85EF5182")

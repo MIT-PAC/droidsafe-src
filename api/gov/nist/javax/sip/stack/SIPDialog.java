@@ -3396,7 +3396,7 @@ public void terminate() {
             }
         }
 
-        @DSSpec(DSCat.THREADING)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:24.345 -0500", hash_original_method = "DA8B28F4804F3F25626961946D2074C4", hash_generated_method = "D043F10192D8BCAB569D2E9F3CB4286F")
         
 public void run() {

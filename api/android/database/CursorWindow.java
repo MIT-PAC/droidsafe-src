@@ -168,7 +168,7 @@ public static CursorWindow newFromParcel(Parcel p) {
 
     public static final Parcelable.Creator<CursorWindow> CREATOR
             = new Parcelable.Creator<CursorWindow>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.231 -0500", hash_original_method = "102321E705544E214630A229EBF0AAEA", hash_generated_method = "4EF24EDFF7228ACE6A321698F5E75C1C")
         
 public CursorWindow createFromParcel(Parcel source) {
