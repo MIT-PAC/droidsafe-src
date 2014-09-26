@@ -17,17 +17,19 @@ public abstract interface DriveApi
 
     public abstract com.google.android.gms.common.api.PendingResult fetchDriveId(com.google.android.gms.common.api.GoogleApiClient  r0, java.lang.String  r1);
 
-    public abstract com.google.android.gms.drive.DriveFolder getRootFolder(com.google.android.gms.common.api.GoogleApiClient  r0);
-
-    public abstract com.google.android.gms.drive.DriveFolder getAppFolder(com.google.android.gms.common.api.GoogleApiClient  r0);
-
     public abstract com.google.android.gms.drive.DriveFile getFile(com.google.android.gms.common.api.GoogleApiClient  r0, com.google.android.gms.drive.DriveId  r1);
-
-    public abstract com.google.android.gms.drive.DriveFolder getFolder(com.google.android.gms.common.api.GoogleApiClient  r0, com.google.android.gms.drive.DriveId  r1);
 
     public abstract com.google.android.gms.drive.OpenFileActivityBuilder newOpenFileActivityBuilder();
 
     public abstract com.google.android.gms.drive.CreateFileActivityBuilder newCreateFileActivityBuilder();
+    
+   /* public abstract com.google.android.gms.common.api.PendingResult requestSync(com.google.android.gms.common.api.GoogleApiClient  r0);
 
-    public abstract com.google.android.gms.common.api.PendingResult requestSync(com.google.android.gms.common.api.GoogleApiClient  r0);
+    public abstract com.google.android.gms.drive.DriveFolder getRootFolder(com.google.android.gms.common.api.GoogleApiClient  r0);
+
+    public abstract com.google.android.gms.drive.DriveFolder getAppFolder(com.google.android.gms.common.api.GoogleApiClient  r0);
+
+    public abstract com.google.android.gms.drive.DriveFolder getFolder(com.google.android.gms.common.api.GoogleApiClient  r0, com.google.android.gms.drive.DriveId  r1);
+*/
+
 }

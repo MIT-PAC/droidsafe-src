@@ -56,11 +56,6 @@ Status(int  i0, int  i1, String  r1, PendingIntent  r2)
 public Status(int  i0)
     {
         this(1, i0, null, null);
-
-        this.xM = 0;
-        this.CT = 0;
-        this.Es = null;
-        this.mPendingIntent = null;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.978 -0400", hash_original_method = "38BAEE9EC71E10F4EE7B7F3557B34A54", hash_generated_method = "DC3455601882B358B6B09BFC7695C3AF")
@@ -68,11 +63,6 @@ public Status(int  i0)
 public Status(int  i0, String  r1, PendingIntent  r2)
     {
         this(1, i0, r1, r2);
-
-        this.xM = 0;
-        this.CT = 0;
-        this.Es = null;
-        this.mPendingIntent = null;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.983 -0400", hash_original_method = "D3584B1F7CDC9C1305D4E2A5E4362AE2", hash_generated_method = "6BD1440C39D31E00486984843266E6C5")
