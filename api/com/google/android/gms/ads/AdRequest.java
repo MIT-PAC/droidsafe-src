@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.google.android.gms.ads.mediation.MediationAdapter;
+import com.google.android.gms.ads.mediation.MediationInterstitialAdapter;
 
 import android.location.Location;
 import android.os.Bundle;
@@ -141,6 +142,8 @@ public boolean isTestDevice(Context  r1)
     	int gender;
     	boolean tag;
     	String contentUrl;
+        Class<? extends MediationAdapter> adapterClass;
+        Bundle networkExtras;
     	
     	
     	public Builder() {
@@ -158,6 +161,8 @@ public boolean isTestDevice(Context  r1)
     	}
 
     	public Builder addNetworkExtrasBundle(Class<? extends MediationAdapter> adapterClass, Bundle networkExtras) {
+    		this.adapterClass = adapterClass;
+    		this.networkExtras = networkExtras;
     		return this;
     	}
 
@@ -168,6 +173,19 @@ public boolean isTestDevice(Context  r1)
 
     	public AdRequest build() {
     		AdRequest request = new AdRequest(this);
+    		if (adapterClass != null) {
+    			try {
+					MediationAdapter adapter = (MediationAdapter)adapterClass.newInstance();
+					
+					if (adapter instanceof MediationInterstitialAdapter) {
+						MediationInterstitialAdapter mAdapter = (MediationInterstitialAdapter) adapter;
+						// How do we provide the callback???
+						//mAdapter.requestInterstitialAd(context, listener, serverParameters, this, networkExtras);
+					}
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+				} 
+    		}
     		return request;
     	}
 
