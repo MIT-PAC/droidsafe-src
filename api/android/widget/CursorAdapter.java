@@ -5,6 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
+import droidsafe.concrete.DroidsafeFilterQueryProvider;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
@@ -447,6 +448,8 @@ public Filter getFilter() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.943 -0500", hash_original_method = "67EA54121BE0FFEF70F7156625E7E3CE", hash_generated_method = "5E9D53977A28C53BC6F0A075B9601152")
     
 public FilterQueryProvider getFilterQueryProvider() {
+    	if (mFilterQueryProvider == null)
+    		mFilterQueryProvider = new DroidsafeFilterQueryProvider();
         return mFilterQueryProvider;
     }
     

@@ -17,6 +17,7 @@
 package droidsafe.concrete;
 //Droidsafe Imports
 import droidsafe.annotations.*;
+import droidsafe.helpers.DSOnlyType;
 import android.content.ContentResolver;
 import android.database.CharArrayBuffer;
 import android.database.ContentObserver;
@@ -38,12 +39,19 @@ import android.os.Bundle;
 public class DSCursor implements Cursor {
 	/**/
 	
+	@DSSafe(DSCat.SAFE_OTHERS)
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
 		addTaint(uri.getTaint());
 		addTaint(projection.toString().getTaint());
 		addTaint(selection.getTaint());
 		addTaint(selectionArgs.toString().getTaint());
 		addTaint(sortOrder.getTaint());
+	}
+	
+
+	@DSBan(DSCat.DROIDSAFE_INTERNAL)
+	public DSCursor(DSOnlyType dontcare) {
+		
 	}
 
     @DSComment("From safe class list")

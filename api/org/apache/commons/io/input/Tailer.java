@@ -325,7 +325,12 @@ public Tailer(File file, TailerListener listener, long delayMillis, boolean end,
         // Save and prepare the listener
         this.listener = listener;
         listener.init(this);
+        listener.fileNotFound();
+        listener.fileRotated();
+        listener.handle(new Exception());
+        listener.handle(DSUtils.FAKE_STRING);
         this.reOpen = reOpen;
+        
     }
 
     /**

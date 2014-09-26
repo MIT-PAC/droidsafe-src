@@ -461,6 +461,7 @@ void setActionBarDescription(int contentDescRes) {
          *            positive to shift left or negative to shift right.
          * @see #setPosition(float)
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void setOffset(float offset) {
             mOffset = offset;
             invalidateSelf();
