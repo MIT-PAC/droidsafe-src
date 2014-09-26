@@ -4,6 +4,7 @@ package android.graphics.drawable;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
@@ -1132,7 +1133,26 @@ public abstract int getChangingConfigurations();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.025 -0500", hash_original_method = "4B02BBF3CC1230B6CEECD73EA01A2039", hash_generated_method = "B467CDA2D00CB54D1C36B84658B0C7F5")
     
 public ConstantState getConstantState() {
-        return null;
+        return new ConstantState() {
+			
+			@Override
+			@DSComment("Abstract Method")
+			@DSSafe(DSCat.SAFE_LIST)
+			@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.017 -0500", hash_original_method = "8AAC9AC676CAA292B513ED599D29AE60", hash_generated_method = "B86729DCAC25EA47F6FEDC3DE3D49986")
+			public Drawable newDrawable() {
+				// TODO Auto-generated method stub
+				return new PaintDrawable();
+			}
+			
+			@Override
+			@DSComment("Abstract Method")
+			@DSSpec(DSCat.ABSTRACT_METHOD)
+			@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.022 -0500", hash_original_method = "45D95E7A5F5F7D451E51E9095BE8F693", hash_generated_method = "8A4BA37C2E536863D0CAC6B3C245CFD2")
+			public int getChangingConfigurations() {
+				// TODO Auto-generated method stub
+				return getTaintInt();
+			}
+		};
     }
 }
 
