@@ -383,7 +383,7 @@ public SimpleTimeZone(int offset, String name, int startMonth,
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.993 -0500", hash_original_method = "8DB3C09D8D79030897991A8AF2C3603A", hash_generated_method = "C6F92D3B6C143A636AE0517E2D0B92C8")
     
 @Override
@@ -518,7 +518,7 @@ public SimpleTimeZone(int offset, String name, int startMonth,
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.996 -0500", hash_original_method = "6DBE603182E450BA9A410285A6D6CE41", hash_generated_method = "70BEBAA8B2BA13FF2EADDA2F08EF85CA")
     
 @Override
@@ -534,7 +534,7 @@ public SimpleTimeZone(int offset, String name, int startMonth,
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.999 -0500", hash_original_method = "D90129E49D21D0E2F7EA4F6539F9D2CB", hash_generated_method = "C17505E26981E9F2733690B104177769")
     
 @Override

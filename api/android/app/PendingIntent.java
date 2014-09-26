@@ -328,7 +328,7 @@ public void cancel() {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.435 -0500", hash_original_method = "27B2516FC620720BFD785BFD1E716C8B", hash_generated_method = "46DA51288025E80A0E3EF352BC1B6A2C")
     
@@ -348,7 +348,7 @@ public void send() throws CanceledException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.437 -0500", hash_original_method = "46F134C18EE926B408E7E9C21011E590", hash_generated_method = "CB8910838B2370E2E3A768D7BF8F1FFE")
     
 public void send(int code) throws CanceledException {
@@ -371,7 +371,7 @@ public void send(int code) throws CanceledException {
      * is no longer allowing more intents to be sent through it.
      */
     @DSSpec(DSCat.SPEC_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.439 -0500", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "6A32A838B0D449ABCB7226D14EC8E406")
     
 public void send(Context context, int code, Intent intent)
@@ -395,7 +395,7 @@ public void send(Context context, int code, Intent intent)
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.442 -0500", hash_original_method = "10F50483791A59D1BF380CE4A4A7460C", hash_generated_method = "278DD9C1F502BADEE4F34865B60B6AF5")
     
@@ -435,7 +435,7 @@ public void send(int code, OnFinished onFinished, Handler handler)
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.445 -0500", hash_original_method = "CFAA4D7DA67BDF756999EA8ECE28296B", hash_generated_method = "4AD6AEF1F974525EC4F626AD8217232F")
     
@@ -480,7 +480,7 @@ public void send(Context context, int code, Intent intent,
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.447 -0500", hash_original_method = "A238DB61CDFFE1A49966C7738AE7C6E1", hash_generated_method = "0D9CDB0D98A6C7707455612FFEB794D7")
     

@@ -644,7 +644,7 @@ public abstract int write(ByteBuffer src) throws IOException;
      * @throws IOException
      *             if another I/O error occurs.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.404 -0500", hash_original_method = "FE44E4912270B085CA3AFC2E6840559E", hash_generated_method = "10862CCEADBBE800DF252131F9DE485B")
@@ -681,7 +681,7 @@ public abstract int write(ByteBuffer buffer, long position)
      *             if this channel was not opened for writing.
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.407 -0500", hash_original_method = "50EBF858502260FDC2F74EB3C865D254", hash_generated_method = "7AA1B97F418BF33310818DAF604E2235")
     
 public final long write(ByteBuffer[] buffers) throws IOException {
@@ -724,7 +724,7 @@ public final long write(ByteBuffer[] buffers) throws IOException {
      * @throws NonWritableChannelException
      *             if this channel was not opened for writing.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.409 -0500", hash_original_method = "AC372293C8ABAB0E308F0F7E86460068", hash_generated_method = "5194FA121EAA05CA674317B28600EE9B")

@@ -409,7 +409,7 @@ public abstract int write(ByteBuffer source) throws IOException;
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.954 -0500", hash_original_method = "0318A187146637F0F5913A32559EC3D8", hash_generated_method = "57D37CA3F87B9F42073B88D7CA95CEF6")
@@ -447,7 +447,7 @@ public abstract long write(ByteBuffer[] sources, int offset, int length)
      *             some other I/O error occurs.
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.956 -0500", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "80AEBA66643B1ECF4D7AF6ADCD7A806E")
     
 public synchronized final long write(ByteBuffer[] sources)

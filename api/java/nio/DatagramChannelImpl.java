@@ -408,7 +408,7 @@ private int readImpl(ByteBuffer dst) throws IOException {
      *      int)
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.549 -0500", hash_original_method = "92D26B18BB75EB8AD284E7DC348B13D6", hash_generated_method = "82ADAABDFF0443F748D9B6B5469FC3A9")
     
 @Override
