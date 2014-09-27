@@ -57,6 +57,7 @@ public final class MarkerOptions implements com.google.android.gms.common.intern
 
     private float mAlpha;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.747 -0400", hash_original_method = "0007B450FE3F7EC0567D1F5DB28C1371", hash_generated_method = "210CEC04505D5CAA51F732984858123B")
     
 public MarkerOptions()
@@ -73,6 +74,7 @@ public MarkerOptions()
         xM = 1;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.753 -0400", hash_original_method = "2E4D0F126265F1BFAB13236C9DF255B6", hash_generated_method = "2E4D0F126265F1BFAB13236C9DF255B6")
     
 MarkerOptions(int  i0, LatLng  r1, String  r2, String  r3, IBinder  r4, float  f0, float  f1, boolean  z0, boolean  z1, boolean  z2, float  f2, float  f3, float  f4, float  f5)
@@ -133,7 +135,6 @@ public int describeContents()
 int getVersionCode()
     {
 
-
         return xM;
     }
 /*
@@ -155,21 +156,21 @@ IBinder jO()
         return $r2;
     }
 */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.771 -0400", hash_original_method = "787473D886233214E6C1460F60C72FB8", hash_generated_method = "BAA3C20E8226856C339F891FBF55437A")
     
 public MarkerOptions position(LatLng  r1)
     {
 
-
         ZX = r1;
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.774 -0400", hash_original_method = "75816E698B1BA3B9131865E2B1F751F2", hash_generated_method = "6DA32A2E32A29CD985FB7D726F0B6CB2")
     
 public MarkerOptions icon(BitmapDescriptor  r1)
     {
-
 
         aaQ = r1;
         return this;
@@ -179,7 +180,6 @@ public MarkerOptions icon(BitmapDescriptor  r1)
     
 public MarkerOptions anchor(float  f0, float  f1)
     {
-
 
         aaG = f0;
         aaH = f1;
@@ -191,27 +191,26 @@ public MarkerOptions anchor(float  f0, float  f1)
 public MarkerOptions infoWindowAnchor(float  f0, float  f1)
     {
 
-
         aaU = f0;
         aaV = f1;
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.784 -0400", hash_original_method = "64129FC055965C7612AF6D4D8998EFBA", hash_generated_method = "75238C35BCD25F4D96D9BF0741600137")
     
 public MarkerOptions title(String  r1)
     {
 
-
         HY = r1;
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.786 -0400", hash_original_method = "6FB1DB0B9C4A9AA37015D7384CD9B73C", hash_generated_method = "DB8597D9D0BFCC7C3D5642B64F9A67AD")
     
 public MarkerOptions snippet(String  r1)
     {
-
 
         aaP = r1;
         return this;
@@ -222,7 +221,6 @@ public MarkerOptions snippet(String  r1)
 public MarkerOptions draggable(boolean  z0)
     {
 
-
         aaR = z0;
         return this;
     }
@@ -231,7 +229,6 @@ public MarkerOptions draggable(boolean  z0)
     
 public MarkerOptions visible(boolean  z0)
     {
-
 
         aay = z0;
         return this;
@@ -242,7 +239,6 @@ public MarkerOptions visible(boolean  z0)
 public MarkerOptions flat(boolean  z0)
     {
 
-
         aaS = z0;
         return this;
     }
@@ -251,7 +247,6 @@ public MarkerOptions flat(boolean  z0)
     
 public MarkerOptions rotation(float  f0)
     {
-
 
         aaT = f0;
         return this;
@@ -262,7 +257,6 @@ public MarkerOptions rotation(float  f0)
 public MarkerOptions alpha(float  f0)
     {
 
-
         mAlpha = f0;
         return this;
     }
@@ -272,7 +266,6 @@ public MarkerOptions alpha(float  f0)
 public LatLng getPosition()
     {
 
-
         return ZX;
     }
 
@@ -280,7 +273,6 @@ public LatLng getPosition()
     
 public String getTitle()
     {
-
 
         return HY;
     }
@@ -290,7 +282,6 @@ public String getTitle()
 public String getSnippet()
     {
 
-
         return aaP;
     }
 
@@ -298,7 +289,6 @@ public String getSnippet()
     
 public BitmapDescriptor getIcon()
     {
-
 
         return aaQ;
     }
@@ -308,7 +298,6 @@ public BitmapDescriptor getIcon()
 public float getAnchorU()
     {
 
-
         return aaG;
     }
 
@@ -316,7 +305,6 @@ public float getAnchorU()
     
 public float getAnchorV()
     {
-
 
         return aaH;
     }
@@ -326,7 +314,6 @@ public float getAnchorV()
 public boolean isDraggable()
     {
 
-
         return aaR;
     }
 
@@ -334,7 +321,6 @@ public boolean isDraggable()
     
 public boolean isVisible()
     {
-
 
         return aay;
     }
@@ -344,7 +330,6 @@ public boolean isVisible()
 public boolean isFlat()
     {
 
-
         return aaS;
     }
 
@@ -352,7 +337,6 @@ public boolean isFlat()
     
 public float getRotation()
     {
-
 
         return aaT;
     }
@@ -362,7 +346,6 @@ public float getRotation()
 public float getInfoWindowAnchorU()
     {
 
-
         return aaU;
     }
 
@@ -371,7 +354,6 @@ public float getInfoWindowAnchorU()
 public float getInfoWindowAnchorV()
     {
 
-
         return aaV;
     }
 
@@ -379,7 +361,6 @@ public float getInfoWindowAnchorV()
     
 public float getAlpha()
     {
-
 
         return mAlpha;
     }

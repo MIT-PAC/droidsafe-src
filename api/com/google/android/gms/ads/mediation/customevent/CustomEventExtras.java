@@ -20,11 +20,11 @@ public CustomEventExtras()
         ta = new HashMap();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.309 -0400", hash_original_method = "0C2F4C7F2F3E8903E5F10450488CE430", hash_generated_method = "760AFF234B7CC1AD9AADA367EAEB1856")
     
 public Object getExtra(String  r1)
     {
-
 
         return ta.get(r1);
     }

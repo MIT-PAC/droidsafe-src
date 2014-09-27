@@ -13,7 +13,9 @@ public abstract interface DriveResource
 
     public abstract com.google.android.gms.common.api.PendingResult updateMetadata(com.google.android.gms.common.api.GoogleApiClient  r0, com.google.android.gms.drive.MetadataChangeSet  r1);
 
-    public abstract com.google.android.gms.drive.DriveId getDriveId();
+    public abstract @DSSource({DSSourceKind.GOOGLE_DRIVE})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    com.google.android.gms.drive.DriveId getDriveId();
 
 //    public abstract com.google.android.gms.common.api.PendingResult listParents(com.google.android.gms.common.api.GoogleApiClient  r0);
 //

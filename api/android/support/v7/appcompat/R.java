@@ -212,6 +212,7 @@ public final class R {
         public static final int Theme_panelMenuListTheme = 0;
         public static final int View = 0;
         public static final int ActionMenuItemView = 0;
+		public static final int MenuView_android_itemTextAppearance = 0;
     }
 
     public final class style {

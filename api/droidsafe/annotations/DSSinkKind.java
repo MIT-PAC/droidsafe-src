@@ -39,5 +39,6 @@ public enum DSSinkKind {
     CLIPBOARD,
     ANY_MEMORY,
     AD,
-    GOOGLE_SERVICES
+    GOOGLE_SERVICES,
+    GOOGLE_DRIVE,
 }

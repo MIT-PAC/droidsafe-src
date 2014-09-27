@@ -79,7 +79,6 @@ public DriveId(String  r1, long  l0, long  l1)
 public String getResourceId()
     {
 
-
         return HN;
     }
 
@@ -87,7 +86,6 @@ public String getResourceId()
     
 public int describeContents()
     {
-
 
         return 0;
     }
@@ -104,7 +102,6 @@ public void writeToParcel(Parcel  r1, int  i0)
     
 public int hashCode()
     {
-
 
         if (HO - -1L != 0)
         {
@@ -151,6 +148,7 @@ public boolean equals(Object  r1)
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.353 -0400", hash_original_method = "6126417C99D0C14CE2DEB12376B1B164", hash_generated_method = "61BDF6C93A494CC870CC4838A284DACD")
     
 public final String encodeToString()
@@ -175,9 +173,7 @@ public final String encodeToString()
 public String toString()
     {
 
-
         return this.encodeToString();
     }
-
 
 }

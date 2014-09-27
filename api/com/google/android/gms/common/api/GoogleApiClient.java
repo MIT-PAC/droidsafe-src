@@ -33,23 +33,27 @@ public abstract interface GoogleApiClient
 
     public abstract ConnectionResult blockingConnect(long  l0, java.util.concurrent.TimeUnit  r1);
 
-    public abstract void disconnect();
+    public abstract @DSSafe(DSCat.SAFE_OTHERS)
+    void disconnect();
 
     public abstract void reconnect();
 
     public abstract void stopAutoManage();
 
-    public abstract boolean isConnected();
+    public abstract @DSSafe(DSCat.SAFE_OTHERS)
+    boolean isConnected();
 
     public abstract boolean isConnecting();
 
-    public abstract void registerConnectionCallbacks(ConnectionCallbacks  r0);
+    public abstract @DSSafe(DSCat.SAFE_OTHERS)
+    void registerConnectionCallbacks(ConnectionCallbacks  r0);
 
     public abstract boolean isConnectionCallbacksRegistered(ConnectionCallbacks  r0);
 
     public abstract void unregisterConnectionCallbacks(ConnectionCallbacks  r0);
 
-    public abstract void registerConnectionFailedListener(OnConnectionFailedListener  r0);
+    public abstract @DSSafe(DSCat.SAFE_OTHERS)
+    void registerConnectionFailedListener(OnConnectionFailedListener  r0);
 
     public abstract boolean isConnectionFailedListenerRegistered(OnConnectionFailedListener  r0);
 
@@ -58,37 +62,43 @@ public abstract interface GoogleApiClient
     public class Builder {
     	
     	GoogleApiClient client;
-    	public Builder() {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder() {
     		client = new DroidsafeGoogleApiClient();
     	}
     	
-    	public GoogleApiClient build()  {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public GoogleApiClient build()  {
     		return client;
     	}
-
     	
-    	public Builder addApi(Object api, Object options) {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder addApi(Object api, Object options) {
     		client.addTaint(api.getTaint());
     		client.addTaint(options.getTaint());
     	    return this;
     	}
 
-    	public Builder addApi(Object api) {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder addApi(Object api) {
     		client.addTaint(api.getTaint());
     	    return this;
     	}
 
-    	public Builder addConnectionCallbacks(GoogleApiClient.ConnectionCallbacks listener) {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder addConnectionCallbacks(GoogleApiClient.ConnectionCallbacks listener) {
     		client.registerConnectionCallbacks(listener);
     	    return this;
     	}
 
-    	public Builder addOnConnectionFailedListener(GoogleApiClient.OnConnectionFailedListener listener) {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder addOnConnectionFailedListener(GoogleApiClient.OnConnectionFailedListener listener) {
     		client.registerConnectionFailedListener(listener);
     	    return this;
     	}
 
-    	public Builder addScope(Scope scope) {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder addScope(Scope scope) {
     		client.addTaint(scope.eP().length());
     	    return this;
     	}

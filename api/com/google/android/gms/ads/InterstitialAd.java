@@ -10,6 +10,7 @@ public final class InterstitialAd
 	AdListener adListener;
 	String adUnitId;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.138 -0400", hash_original_method = "6D519A44E0533E4F94247FEF0CAA8F6F", hash_generated_method = "072A7307B44600C81BB6893FD1A025FB")
     
 public InterstitialAd(Context  r1)
@@ -40,7 +41,6 @@ public String getAdUnitId()
 public InAppPurchaseListener getInAppPurchaseListener()
     {
 
-
         return ky.getInAppPurchaseListener();
     }
 */
@@ -52,6 +52,7 @@ public boolean isLoaded()
         //return ky.isLoaded();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.165 -0400", hash_original_method = "A024AF37F16114A4D59341F9EE6389EF", hash_generated_method = "9E65B26237AB451A4D0B0983A9F9FF4C")
     
 public void loadAd(AdRequest  r1)
@@ -59,6 +60,7 @@ public void loadAd(AdRequest  r1)
         //ky.a(r1.T());
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.171 -0400", hash_original_method = "03FE424D1432AA991654B0DE1742660D", hash_generated_method = "CC406837AB22081E9D94A1EFDB729C3C")
     
 public void setAdListener(AdListener  r1)
@@ -77,15 +79,15 @@ public void setAdListener(AdListener  r1)
         //ky.setAdListener(r1);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.176 -0400", hash_original_method = "8A7CBCAEFE11E4EFE7C4A06388BFDBD8", hash_generated_method = "AE6A9619C950E914A9E579166DB8DC23")
     
 public void setAdUnitId(String  r1)
     {
     	adUnitId = r1;
     }
-
     
-    
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:45.193 -0400", hash_original_method = "1D9FD0BE3AAFCF88DF6EF667307F97DD", hash_generated_method = "AD125C47164700A5A8F4AE95B58FEDE2")
     
 public void show()

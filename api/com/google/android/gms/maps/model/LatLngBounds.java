@@ -10,18 +10,18 @@ public class LatLngBounds implements com.google.android.gms.common.internal.safe
 {
 	public static class Builder {
 
-		@DSSafe
+		@DSSafe(DSCat.SAFE_OTHERS)
 		public Builder() {
 			
 		}
-		@DSSafe
+		@DSSafe(DSCat.SAFE_OTHERS)
 		public LatLngBounds build () {
 			LatLng point = new LatLng(getTaintDouble(), getTaintDouble());
 			LatLngBounds bounds = new LatLngBounds(getTaintInt(), point, point);
 			return bounds;
 		}
 		
-		@DSSafe
+		@DSSafe(DSCat.SAFE_OTHERS)
 		public LatLngBounds.Builder include (LatLng point) {
 			addTaint(point.hashCode());
 			return this;
@@ -38,7 +38,6 @@ public class LatLngBounds implements com.google.android.gms.common.internal.safe
 private static double b(double  d0, double  d1)
     {
 
-
         return (d0 - d1 + 360.0) % 360.0;
     }
 
@@ -46,7 +45,6 @@ private static double b(double  d0, double  d1)
     
 private static double c(double  d0, double  d1)
     {
-
 
         return (d1 - d0 + 360.0) % 360.0;
     }
@@ -56,7 +54,6 @@ private static double c(double  d0, double  d1)
 static double d(double  d0, double  d1)
     {
 
-
         return LatLngBounds.b(d0, d1);
     }
 
@@ -64,7 +61,6 @@ static double d(double  d0, double  d1)
     
 static double e(double  d0, double  d1)
     {
-
 
         return LatLngBounds.c(d0, d1);
     }
@@ -99,7 +95,6 @@ public LatLngBounds(LatLng  r1, LatLng  r2)
 int getVersionCode()
     {
 
-
         return xM;
     }
 
@@ -115,7 +110,6 @@ public void writeToParcel(Parcel  r1, int  i0)
     
 public int describeContents()
     {
-
 
         return 0;
     }
@@ -137,7 +131,6 @@ public boolean contains(LatLng  r1)
 
             $z2 = false;
         } //end label_0:
-
 
         return $z2;
     }
@@ -208,7 +201,6 @@ private boolean c(double  d0)
             $z0 = false;
         } //end label_1:
 
-
         return $z0;
     }
 
@@ -231,7 +223,6 @@ private boolean d(double  d0)
                 $z1 = true;
             } //end label_2:
 
-
             return $z1;
         }
 
@@ -245,7 +236,6 @@ private boolean d(double  d0)
 
             $z0 = false;
         } //end label_3:
-
 
         return $z0;
     }
@@ -280,7 +270,6 @@ public boolean equals(Object  r1)
 
                     $z3 = false;
                 } //end label_4:
-
 
                 return $z3;
             }

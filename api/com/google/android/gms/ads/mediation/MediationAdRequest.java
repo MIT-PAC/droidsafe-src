@@ -5,6 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import java.util.Date;
 import java.util.Set;
+import droidsafe.annotations.*;
 
 public abstract interface MediationAdRequest
 {
@@ -12,13 +13,19 @@ public abstract interface MediationAdRequest
     public static final int TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE = 0;
     public static final int TAG_FOR_CHILD_DIRECTED_TREATMENT_UNSPECIFIED = -1;
 
-    public abstract java.util.Date getBirthday();
+    public abstract @DSSource({DSSourceKind.AD})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    java.util.Date getBirthday();
 
-    public abstract int getGender();
+    public abstract @DSSource({DSSourceKind.AD})
+    @DSSafe(DSCat.SAFE_OTHERS)
+    int getGender();
 
-    public abstract java.util.Set getKeywords();
+    public abstract @DSSafe(DSCat.SAFE_OTHERS)
+    java.util.Set getKeywords();
 
     public abstract int taggedForChildDirectedTreatment();
 
-    public abstract boolean isTesting();
+    public abstract @DSSafe(DSCat.SAFE_OTHERS)
+    boolean isTesting();
 }

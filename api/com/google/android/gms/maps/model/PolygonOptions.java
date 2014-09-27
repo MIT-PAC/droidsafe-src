@@ -44,6 +44,7 @@ public final class PolygonOptions implements com.google.android.gms.common.inter
 
     private boolean aaZ;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.196 -0400", hash_original_method = "8C790BAB021E9B6C9615AB42081089AB", hash_generated_method = "7C6DB58D6A28A27BB45E545BC7238D8D")
     
 public PolygonOptions()
@@ -60,6 +61,7 @@ public PolygonOptions()
         aaY = new ArrayList();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.200 -0400", hash_original_method = "61219631F29515E0231C327DA8AB796A", hash_generated_method = "61219631F29515E0231C327DA8AB796A")
     
 PolygonOptions(int  i0, List  r1, List  r2, float  f0, int  i1, int  i2, float  f1, boolean  z0, boolean  z1)
@@ -87,7 +89,6 @@ PolygonOptions(int  i0, List  r1, List  r2, float  f0, int  i1, int  i2, float  
 int getVersionCode()
     {
 
-
         return xM;
     }
 
@@ -95,7 +96,6 @@ int getVersionCode()
     
 List jP()
     {
-
 
         return aaY;
     }
@@ -114,7 +114,6 @@ public void writeToParcel(Parcel  r1, int  i0)
     
 public int describeContents()
     {
-    	
 
         return 0;
     }
@@ -123,7 +122,6 @@ public int describeContents()
     
 public PolygonOptions add(LatLng  r1)
     {
-
 
         aaX.add(r1);
         return this;
@@ -134,11 +132,11 @@ public PolygonOptions add(LatLng  r1)
 public PolygonOptions add(LatLng[]  r1)
     {
 
-
         aaX.addAll(Arrays.asList(r1));
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.221 -0400", hash_original_method = "C22FD3528A9F032A145FEFCF168739E6", hash_generated_method = "2E076E4062EBD3B222FB23C0CB85C697")
     
 public PolygonOptions addAll(Iterable  r1)
@@ -178,11 +176,11 @@ public PolygonOptions addHole(Iterable  r1)
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.227 -0400", hash_original_method = "C760C07D51A23F099BE25073F346F149", hash_generated_method = "6F983768E68E5929C6EFE310B6A55ED1")
     
 public PolygonOptions strokeWidth(float  f0)
     {
-
 
         aau = f0;
         return this;
@@ -193,16 +191,15 @@ public PolygonOptions strokeWidth(float  f0)
 public PolygonOptions strokeColor(int  i0)
     {
 
-
         aav = i0;
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.233 -0400", hash_original_method = "D255E86BD3D35673710E0C572CA40374", hash_generated_method = "B43D758FB0052485B281DE743FD2F096")
     
 public PolygonOptions fillColor(int  i0)
     {
-
 
         aaw = i0;
         return this;
@@ -213,7 +210,6 @@ public PolygonOptions fillColor(int  i0)
 public PolygonOptions zIndex(float  f0)
     {
 
-
         aax = f0;
         return this;
     }
@@ -223,16 +219,15 @@ public PolygonOptions zIndex(float  f0)
 public PolygonOptions visible(boolean  z0)
     {
 
-
         aay = z0;
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.241 -0400", hash_original_method = "3BA1604699C98FDF8652B6A785CF97E8", hash_generated_method = "6090E100E8CDEC1B4515E83F104231C7")
     
 public PolygonOptions geodesic(boolean  z0)
     {
-
 
         aaZ = z0;
         return this;
@@ -243,7 +238,6 @@ public PolygonOptions geodesic(boolean  z0)
 public List getPoints()
     {
 
-
         return aaX;
     }
 
@@ -251,7 +245,6 @@ public List getPoints()
     
 public List getHoles()
     {
-
 
         return aaY;
     }
@@ -261,7 +254,6 @@ public List getHoles()
 public float getStrokeWidth()
     {
 
-
         return aau;
     }
 
@@ -269,7 +261,6 @@ public float getStrokeWidth()
     
 public int getStrokeColor()
     {
-
 
         return aav;
     }
@@ -279,7 +270,6 @@ public int getStrokeColor()
 public int getFillColor()
     {
 
-
         return aaw;
     }
 
@@ -287,7 +277,6 @@ public int getFillColor()
     
 public float getZIndex()
     {
-
 
         return aax;
     }
@@ -297,7 +286,6 @@ public float getZIndex()
 public boolean isVisible()
     {
 
-
         return aay;
     }
 
@@ -305,7 +293,6 @@ public boolean isVisible()
     
 public boolean isGeodesic()
     {
-
 
         return aaZ;
     }

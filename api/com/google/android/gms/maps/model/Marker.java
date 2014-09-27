@@ -15,6 +15,7 @@ public Marker(DSOnlyType dontcare)
 
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.481 -0400", hash_original_method = "231BF356D5958220FFB804538066F712", hash_generated_method = "DA93DD4DA31E7CD1208BF90EE2F8137E")
     
 public void remove()

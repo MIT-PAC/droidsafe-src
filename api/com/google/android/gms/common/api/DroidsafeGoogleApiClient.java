@@ -18,8 +18,9 @@ public class DroidsafeGoogleApiClient implements GoogleApiClient {
 		return Looper.myLooper();
 	}
 
-	@Override
-	@DSSink({DSSinkKind.NETWORK})
+	@DSSpec(DSCat.SPEC_OTHERS)
+    @Override
+	@DSSink({DSSinkKind.GOOGLE_SERVICES})
 	public void connect() {
 		// TODO Auto-generated method stub
 		

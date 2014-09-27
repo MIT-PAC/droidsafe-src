@@ -53,6 +53,7 @@ public enum DSSourceKind {
     REMOTE_APP,
     CAMERA,
     DATE_TIME,
+    AD,
     GOOGLE_SERVICES, /*a bit too generic */
     GOOGLE_DRIVE,
     JSON

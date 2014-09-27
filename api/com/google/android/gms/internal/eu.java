@@ -8,11 +8,11 @@ import android.util.Log;
 public final class eu
 {
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.847 -0400", hash_original_method = "0EDCCB167192AFF5C2D02D386B8A761D", hash_generated_method = "57246BD4383C5FB9CC8C28B1F590CCEC")
     
 public static void z(String  r0)
     {
-
 
         if (eu.p(3))
         {
@@ -25,7 +25,6 @@ public static void z(String  r0)
 public static void a(String  r0, Throwable  r1)
     {
 
-
         if (eu.p(3))
         {
             Log.d("Ads", r0, r1);
@@ -36,7 +35,6 @@ public static void a(String  r0, Throwable  r1)
     
 public static void A(String  r0)
     {
-
 
         if (eu.p(6))
         {
@@ -49,7 +47,6 @@ public static void A(String  r0)
 public static void b(String  r0, Throwable  r1)
     {
 
-
         if (eu.p(6))
         {
             Log.e("Ads", r0, r1);
@@ -60,7 +57,6 @@ public static void b(String  r0, Throwable  r1)
     
 public static void B(String  r0)
     {
-
 
         if (eu.p(4))
         {
@@ -73,18 +69,17 @@ public static void B(String  r0)
 public static void C(String  r0)
     {
 
-
         if (eu.p(2))
         {
             Log.v("Ads", r0);
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.877 -0400", hash_original_method = "B43F2D32A660E0FC9A17E7FD4FE6F5C9", hash_generated_method = "3252C29E0E785293597259D40A131E21")
     
 public static void D(String  r0)
     {
-
 
         if (eu.p(5))
         {
@@ -96,7 +91,6 @@ public static void D(String  r0)
     
 public static void c(String  r0, Throwable  r1)
     {
-
 
         if (eu.p(5))
         {
@@ -126,10 +120,8 @@ public static boolean p(int  i0)
                 }
             } //end label_0:
 
-
             $z1 = false;
         } //end label_1:
-
 
         return $z1;
     }

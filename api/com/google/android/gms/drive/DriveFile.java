@@ -14,9 +14,12 @@ public abstract interface DriveFile extends com.google.android.gms.drive.DriveRe
 
     //public abstract com.google.android.gms.common.api.PendingResult openContents(com.google.android.gms.common.api.GoogleApiClient  r0, int  i1, com.google.android.gms.drive.DriveFile$DownloadProgressListener  r2);
 
+    @DSSpec(DSCat.SPEC_OTHERS)
     public abstract com.google.android.gms.common.api.PendingResult commitAndCloseContents(com.google.android.gms.common.api.GoogleApiClient  r0, com.google.android.gms.drive.Contents  r1);
 
+    @DSSpec(DSCat.SPEC_OTHERS)
     public abstract com.google.android.gms.common.api.PendingResult commitAndCloseContents(com.google.android.gms.common.api.GoogleApiClient  r0, com.google.android.gms.drive.Contents  r1, com.google.android.gms.drive.MetadataChangeSet  r2);
 
+    @DSSafe(DSCat.SAFE_LIST)
     public abstract com.google.android.gms.common.api.PendingResult discardContents(com.google.android.gms.common.api.GoogleApiClient  r0, com.google.android.gms.drive.Contents  r1);
 }

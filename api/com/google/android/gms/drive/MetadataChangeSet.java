@@ -17,8 +17,7 @@ public final class MetadataChangeSet
         String  text;
         Date viewDate;
 
-
-		@DSSafe
+		@DSSafe(DSCat.SAFE_OTHERS)
 		public Builder() {
 			
 		}
@@ -28,13 +27,13 @@ public final class MetadataChangeSet
 			this.description = description;
 			return this;
 		}
-		@DSSafe
+		@DSSafe(DSCat.SAFE_OTHERS)
 		public MetadataChangeSet.Builder setMimeType (String mimeType) {
 			this.mimeType = mimeType;
 			return this;
 		}
 		
-		@DSSafe
+		@DSSafe(DSCat.SAFE_OTHERS)
 		public MetadataChangeSet.Builder setTitle (String title) {
 			this.title = title;
 			return this;
@@ -51,7 +50,6 @@ public final class MetadataChangeSet
             this.viewDate = date;
             return this;
         }
-
 
 		@DSSafe
         Builder setPinned(boolean pinned) {
@@ -70,7 +68,8 @@ public final class MetadataChangeSet
             return this;
         }
 
-		public MetadataChangeSet build() {
+		@DSSafe(DSCat.SAFE_OTHERS)
+        public MetadataChangeSet build() {
 			MetadataChangeSet set = new MetadataChangeSet(this);
 			return set;
 		}
@@ -83,7 +82,6 @@ public final class MetadataChangeSet
     private MetadataChangeSet(Builder builder) {
     	this.builder = builder;
     }
-
 
 /*    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.120 -0400", hash_original_method = "7FC1DEB925798A0FCF84E305E327906F", hash_generated_method = "9006D8BDDD4C9DF17F84AD6E97A19BAA")
     
@@ -150,6 +148,5 @@ public Boolean isViewed()
 
     	return builder.viewed;
     }
-
     
 }

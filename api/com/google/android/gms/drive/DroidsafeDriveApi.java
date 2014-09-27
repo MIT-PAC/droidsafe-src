@@ -14,7 +14,9 @@ public class DroidsafeDriveApi implements DriveApi {
 		
 	}
 	
-	@Override
+	@DSSink({DSSinkKind.GOOGLE_SERVICES})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @Override
 	public PendingResult query(GoogleApiClient r0, Query r1) {
 		// TODO Auto-generated method stub
 		PendingResult res = new DroidsafePendingResult(DSOnlyType.DONTCARE);
@@ -23,7 +25,8 @@ public class DroidsafeDriveApi implements DriveApi {
 		return res;
 	}
 
-	@Override
+	@DSSpec(DSCat.SPEC_OTHERS)
+    @Override
 	public PendingResult newContents(GoogleApiClient r0) {
 		// TODO Auto-generated method stub
 
@@ -58,7 +61,8 @@ public class DroidsafeDriveApi implements DriveApi {
 		return driveFile;
 	}
 
-	@Override
+	@DSSafe(DSCat.SAFE_OTHERS)
+    @Override
 	public CreateFileActivityBuilder newCreateFileActivityBuilder() {
 		// TODO Auto-generated method stub
 		CreateFileActivityBuilder builder = new CreateFileActivityBuilder();
@@ -77,7 +81,6 @@ public class DroidsafeDriveApi implements DriveApi {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	
 	@DSSource({DSSourceKind.GOOGLE_DRIVE})
 	public DriveFolder getFolder(GoogleApiClient r0, DriveId r1) {
@@ -90,7 +93,6 @@ public class DroidsafeDriveApi implements DriveApi {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 
 	public PendingResult requestSync(GoogleApiClient r0) {
 		// TODO Auto-generated method stub

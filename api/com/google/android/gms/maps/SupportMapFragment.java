@@ -25,7 +25,6 @@ public class SupportMapFragment extends Fragment
 public static SupportMapFragment newInstance()
     {
 
-
         return new SupportMapFragment();
     }
 
@@ -49,6 +48,7 @@ public static SupportMapFragment newInstance(GoogleMapOptions  r0)
 
     GoogleMap googleMap;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.416 -0400", hash_original_method = "12100C0FBB9DD81EC74A1C8DBDD528D9", hash_generated_method = "5CBE54A07E7AFD7F7B0164CBF71D5015")
     
 public SupportMapFragment()
@@ -56,8 +56,8 @@ public SupportMapFragment()
     	DroidSafeBinder binder = new DroidSafeBinder(DSOnlyType.DONTCARE);
     	googleMap = new GoogleMap(new DroidsafeGoogleMapDelegate(binder));
     }
-    
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.423 -0400", hash_original_method = "40D16AF3AD525A505DCF522054434A6E", hash_generated_method = "553FBC2F1B7E69328D7336D81FCFF3C0")
     
 public final GoogleMap getMap()
@@ -150,6 +150,7 @@ public void onSaveInstanceState(Bundle  r1)
         super.onSaveInstanceState(r1);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.459 -0400", hash_original_method = "D76282C62A93CE875451E21488810DB0", hash_generated_method = "F50CCF7F38312349B17D5842B9F8249E")
     
 public void setArguments(Bundle  r1)

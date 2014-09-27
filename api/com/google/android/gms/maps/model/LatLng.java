@@ -19,6 +19,7 @@ public final class LatLng implements com.google.android.gms.common.internal.safe
 
     public  double longitude;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.119 -0400", hash_original_method = "E98817C1CC1CA6A57ACE02E90274E49A", hash_generated_method = "C861BA6E4661C805CA73B258D874E65D")
     
 LatLng(int  i0, double  d0, double  d1)
@@ -37,10 +38,10 @@ LatLng(int  i0, double  d0, double  d1)
             longitude = ((d1 - 180.0) % 360.0 + 360.0) % 360.0 - 180.0;
         } //end label_0:
 
-
         latitude = Math.max(-90.0, Math.min(90.0, d0));
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.123 -0400", hash_original_method = "E154E90AAB9F0EE5663295A88D557CE3", hash_generated_method = "92AA5E7B7D590279427F0A3137B8DCFC")
     
 public LatLng(double  d0, double  d1)
@@ -111,7 +112,6 @@ public boolean equals(Object  r1)
 
                     $z1 = false;
                 } //end label_1:
-
 
                 return $z1;
             }

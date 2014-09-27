@@ -104,7 +104,6 @@ public Location getLocation()
 public NetworkExtras getNetworkExtras(Class  r1)
     {
 
-
         //return ks.getNetworkExtras(r1);
     }
 
@@ -112,7 +111,6 @@ public NetworkExtras getNetworkExtras(Class  r1)
     
 public Bundle getNetworkExtrasBundle(Class  r1)
     {
-
 
         //return ks.getNetworkExtrasBundle(r1);
     }
@@ -122,7 +120,6 @@ public Bundle getNetworkExtrasBundle(Class  r1)
 public Bundle getCustomEventExtrasBundle(Class  r1)
     {
 
-
         //return ks.getCustomEventExtrasBundle(r1);
     }
 
@@ -130,7 +127,6 @@ public Bundle getCustomEventExtrasBundle(Class  r1)
     
 public boolean isTestDevice(Context  r1)
     {
-
 
         //return ks.isTestDevice(r1);
     }
@@ -145,8 +141,8 @@ public boolean isTestDevice(Context  r1)
         Class<? extends MediationAdapter> adapterClass;
         Bundle networkExtras;
     	
-    	
-    	public Builder() {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder() {
     		
     	}
 
@@ -155,23 +151,28 @@ public boolean isTestDevice(Context  r1)
     		return this;
     	}
 
-    	public Builder addKeyword(String keyword) {
+    	@DSSink({DSSinkKind.AD})
+        @DSSafe(DSCat.SAFE_OTHERS)
+        public Builder addKeyword(String keyword) {
     		keywords.add(keyword);
     		return this;
     	}
 
-    	public Builder addNetworkExtrasBundle(Class<? extends MediationAdapter> adapterClass, Bundle networkExtras) {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder addNetworkExtrasBundle(Class<? extends MediationAdapter> adapterClass, Bundle networkExtras) {
     		this.adapterClass = adapterClass;
     		this.networkExtras = networkExtras;
     		return this;
     	}
 
-    	public Builder addTestDevice(String device){
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder addTestDevice(String device){
     		devices.add(device);
     		return this;
     	}
 
-    	public AdRequest build() {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public AdRequest build() {
     		AdRequest request = new AdRequest(this);
     		if (adapterClass != null) {
     			try {
@@ -189,15 +190,20 @@ public boolean isTestDevice(Context  r1)
     		return request;
     	}
 
-    	public Builder setBirthday(Date birthday) {
+    	@DSSink({DSSinkKind.AD})
+        @DSSpec(DSCat.SPEC_OTHERS)
+        public Builder setBirthday(Date birthday) {
     		this.birthday = birthday;
     		return this;
     	}
-    	public Builder setGender(int gender){
+    	@DSSink({DSSinkKind.AD})
+        @DSSpec(DSCat.SPEC_OTHERS)
+        public Builder setGender(int gender){
     		this.gender = gender;
     		return this;
     	}
-    	public Builder tagForChildDirectedTreatment(boolean tagForChildDirectedTreatment) {
+    	@DSSafe(DSCat.SAFE_OTHERS)
+        public Builder tagForChildDirectedTreatment(boolean tagForChildDirectedTreatment) {
     		this.tag = tagForChildDirectedTreatment;
     		return this;
     	}
@@ -207,7 +213,6 @@ public boolean isTestDevice(Context  r1)
     		this.location = loc;
     		return this;
     	}
-
 
     }
     

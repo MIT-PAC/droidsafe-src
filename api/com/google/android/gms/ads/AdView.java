@@ -18,6 +18,7 @@ public final class AdView extends ViewGroup
 
     //private  au kx;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.785 -0400", hash_original_method = "E386C48C970741838B45620D33A35906", hash_generated_method = "6ED1957F6BBF51C9308F6F6E4554DB59")
     
 public AdView(Context  r1)
@@ -27,6 +28,7 @@ public AdView(Context  r1)
         //kx = new au(this);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.797 -0400", hash_original_method = "EFE8AAC202F463CB12FF8FAC054360E4", hash_generated_method = "FEFF8988BFFDC779A67121DA721A08C4")
     
 public AdView(Context  r1, AttributeSet  r2)
@@ -36,6 +38,7 @@ public AdView(Context  r1, AttributeSet  r2)
         //kx = new au(this, r2, false);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.809 -0400", hash_original_method = "B70713324E98293CFB7FDD0E0044BEB3", hash_generated_method = "D6D3FD2990426DA1A8CF2343D6FADF9E")
     
 public AdView(Context  r1, AttributeSet  r2, int  i0)
@@ -45,11 +48,11 @@ public AdView(Context  r1, AttributeSet  r2, int  i0)
         //kx = new au(this, r2, false);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.815 -0400", hash_original_method = "8515908A075CB738827CDE99AF1DFBCC", hash_generated_method = "CC7CEA69F42A96A63184D04C0DA9A491")
     
 public void destroy()
     {
-
 
         //kx.destroy();
     }
@@ -59,7 +62,6 @@ public void destroy()
 public AdListener getAdListener()
     {
     	return adListener;
-
 
         //return kx.getAdListener();
     }
@@ -91,33 +93,32 @@ public String getAdUnitId()
 public InAppPurchaseListener getInAppPurchaseListener()
     {
 
-
         //return kx.getInAppPurchaseListener();
     }*/
 
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.847 -0400", hash_original_method = "14A834E47475EB6C71688AB8AE14F494", hash_generated_method = "971B79A373C8FB8F477DADAACD42838F")
     
 public void loadAd(AdRequest  r1)
     {
 
-
         //kx.a(r1.T());
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.853 -0400", hash_original_method = "16B8EBEF08F6A0DD1AB1FF78593FC92F", hash_generated_method = "21D77C1D935D513F25DD5EE5BBFA968E")
     
 public void pause()
     {
 
-
         //kx.pause();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.859 -0400", hash_original_method = "A2ABFA756BC51342FC1EE11A4C6C81AD", hash_generated_method = "4E418D477787BD275C05AA8FCCBD705F")
     
 public void resume()
     {
-
 
         //kx.resume();
     }
@@ -137,10 +138,10 @@ public void setAdListener(AdListener  r1)
     	adListener.onAdLeftApplication();
     	adListener.onAdClosed();
 
-
         //kx.setAdListener(r1);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.872 -0400", hash_original_method = "4F2C2DA30E6C97AA0575917A5FF72310", hash_generated_method = "3EC09901CB86248DD39514561A6E2972")
     
 public void setAdSize(AdSize  r1)
@@ -150,6 +151,7 @@ public void setAdSize(AdSize  r1)
         //kx.setAdSizes($r3);
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.879 -0400", hash_original_method = "E86533FDA8CE9B764C42BE8B3FE7C919", hash_generated_method = "3A4689349F9A08AA662375A39ACFEF7A")
     
 public void setAdUnitId(String  r1)
@@ -164,7 +166,6 @@ public void setAdUnitId(String  r1)
 public void setInAppPurchaseListener(InAppPurchaseListener  r1)
     {
 
-
         //kx.setInAppPurchaseListener(r1);
     }
 
@@ -172,7 +173,6 @@ public void setInAppPurchaseListener(InAppPurchaseListener  r1)
     
 public void setPlayStorePurchaseParams(PlayStorePurchaseListener  r1, String  r2)
     {
-
 
         kx.setPlayStorePurchaseParams(r1, r2);
     }*/
@@ -227,7 +227,6 @@ protected void onMeasure(int  i0, int  i1)
                 i3 = r2.getHeightInPixels(r3);
             }
         } //end label_0:
-
 
         i6 = Math.max(i2, this.getSuggestedMinimumWidth());
         i8 = Math.max(i3, this.getSuggestedMinimumHeight());

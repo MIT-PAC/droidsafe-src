@@ -45,7 +45,6 @@ public Filter getFilter()
 public String getPageToken()
     {
 
-
         return KF;
     }
 
@@ -55,7 +54,6 @@ public String getPageToken()
 public SortOrder getSortOrder()
     {
 
-
         return KG;
     }
 
@@ -64,7 +62,6 @@ public SortOrder getSortOrder()
     	@DSSafe
 public int describeContents()
     {
-
 
         return 0;
     }
@@ -87,13 +84,13 @@ public void writeToParcel(Parcel  r1, int  i0)
     	String token;
     	SortOrder sortOrder;
     	
-    	@DSSafe
+    	@DSSafe(DSCat.SAFE_OTHERS)
     	public Query.Builder addFilter (Filter filter) {
     		this.filter = new LogicalFilter();
     		this.filter.addTaint(filter.getTaint());
     		return this;
     	}
-    	@DSSafe
+    	@DSSafe(DSCat.SAFE_OTHERS)
     	public Query.Builder setPageToken (String token) {
     		this.token = token;
     		return this;
@@ -104,7 +101,7 @@ public void writeToParcel(Parcel  r1, int  i0)
     		return this;
     	}
 
-    	@DSSafe
+    	@DSSafe(DSCat.SAFE_OTHERS)
     	public Query build () {
     		return new Query(0, filter, token, sortOrder);
     		

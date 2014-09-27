@@ -41,6 +41,7 @@ public class DataBufferAdapter extends BaseAdapter
 
     private boolean LW;
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.530 -0400", hash_original_method = "B05791820C0F2D2A52F1C20A1D621FE2", hash_generated_method = "DBBA3BF3D4172FC22B6865AA3232C610")
     
 public DataBufferAdapter(Context  r1, int  i0, int  i1, List  r2)
@@ -55,6 +56,7 @@ public DataBufferAdapter(Context  r1, int  i0, int  i1, List  r2)
         LV = (LayoutInflater) r1.getSystemService("layout_inflater");
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.535 -0400", hash_original_method = "F55FA2383A3E40E4459A4629E6952A18", hash_generated_method = "AADA380188B8D2419BF0009BFDBB77CB")
     
 public DataBufferAdapter(Context  r1, int  i0, int  i1)
@@ -68,6 +70,7 @@ public DataBufferAdapter(Context  r1, int  i0, int  i1)
         this.LV = null;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.539 -0400", hash_original_method = "ED46DE6DE1587F192A92C530B6B97DB2", hash_generated_method = "D8505903D40AAD8723638DAEACB91ACE")
     
 public DataBufferAdapter(Context  r1, int  i0, List  r2)
@@ -81,6 +84,7 @@ public DataBufferAdapter(Context  r1, int  i0, List  r2)
         this.LV = null;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.545 -0400", hash_original_method = "10CF3668BA1397468C9BE12AF6669FB9", hash_generated_method = "CC8365A023674B14836290508FDB3D62")
     
 public DataBufferAdapter(Context  r1, int  i0)
@@ -94,6 +98,7 @@ public DataBufferAdapter(Context  r1, int  i0)
         this.LV = null;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.550 -0400", hash_original_method = "B8355918EAD5E10F47C4CFD264DE8431", hash_generated_method = "1E40D745CE3CA7A7F4F8D559B9AD244E")
     
 public DataBufferAdapter(Context  r1, int  i0, int  i1, DataBuffer[]  r2)
@@ -107,6 +112,7 @@ public DataBufferAdapter(Context  r1, int  i0, int  i1, DataBuffer[]  r2)
         this.LV = null;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.554 -0400", hash_original_method = "F582E6520CE25D99669A361F6333B865", hash_generated_method = "BE873B4032EDCB588111F8293A60E2E4")
     
 public DataBufferAdapter(Context  r1, int  i0, DataBuffer[]  r2)
@@ -120,11 +126,11 @@ public DataBufferAdapter(Context  r1, int  i0, DataBuffer[]  r2)
         this.LV = null;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.557 -0400", hash_original_method = "AD4DF83DE92D9CD449F4F0B0A8006189", hash_generated_method = "04675B154620A48FFCB9420D9C59F84C")
     
 public void append(DataBuffer  r1)
     {
-
 
         LU.add(r1);
 
@@ -134,6 +140,7 @@ public void append(DataBuffer  r1)
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.562 -0400", hash_original_method = "3E4801BA7E37546C296353C9FD28009C", hash_generated_method = "2224F52B9031D621DEC16E59441543AB")
     
 public void clear()
@@ -162,7 +169,6 @@ public void clear()
 public void notifyDataSetChanged()
     {
 
-
         this.notifyDataSetChanged();
         LW = true;
     }
@@ -172,7 +178,6 @@ public void notifyDataSetChanged()
 public void setNotifyOnChange(boolean  z0)
     {
 
-
         LW = z0;
     }
 
@@ -180,7 +185,6 @@ public void setNotifyOnChange(boolean  z0)
     
 public Context getContext()
     {
-
 
         return mContext;
     }
@@ -232,7 +236,6 @@ public Object getItem(int  i0) throws android.database.CursorIndexOutOfBoundsExc
 public long getItemId(int  i0)
     {
 
-
         return (long) i0;
     }
 
@@ -281,7 +284,6 @@ private View a(int  i0, View  r1, ViewGroup  r2, int  i1)
 public View getView(int  i0, View  r1, ViewGroup  r2)
     {
 
-
         return this.a(i0, r1, r2, LR);
     }
 
@@ -290,7 +292,6 @@ public View getView(int  i0, View  r1, ViewGroup  r2)
 public View getDropDownView(int  i0, View  r1, ViewGroup  r2)
     {
 
-
         return this.a(i0, r1, r2, LS);
     }
 
@@ -298,7 +299,6 @@ public View getDropDownView(int  i0, View  r1, ViewGroup  r2)
     
 public void setDropDownViewResource(int  i0)
     {
-
 
         LS = i0;
     }

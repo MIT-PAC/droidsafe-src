@@ -22,6 +22,7 @@ UiSettings(IUiSettingsDelegate  r1)
         aai = r1;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.566 -0400", hash_original_method = "61122D5B2E36A38D25688B9DD4C55E15", hash_generated_method = "9E93001B56CECA6F2258DFA65F672E86")
     
 public void setZoomControlsEnabled(boolean  z0) throws Throwable
@@ -174,6 +175,7 @@ public void setRotateGesturesEnabled(boolean  z0) throws Throwable
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.591 -0400", hash_original_method = "1FE424884862D38BD6D6EFCF7D5B8615", hash_generated_method = "72202A1C5CF9D1B3BAE746CE477D17C3")
     
 public void setAllGesturesEnabled(boolean  z0) throws Throwable

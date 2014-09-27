@@ -1,47 +1,47 @@
 package com.google.android.gms.ads;
-
 import droidsafe.annotations.DSSafe;
 import android.content.Context;
 
+import droidsafe.annotations.*;
 public class AdSize {
 
 	private int width;
 	private int height;
 
-	@DSSafe
+	@DSSafe(DSCat.SAFE_OTHERS)
 	public int getWidthInPixels(Context r3) {
 		// TODO Auto-generated method stub
 		return width;
 	}
 	
-	@DSSafe
+	@DSSafe(DSCat.SAFE_OTHERS)
 	public int getWidth() {
 		return width;
 	}
 
-	@DSSafe
+	@DSSafe(DSCat.SAFE_OTHERS)
 	public int getHeightInPixels(Context r3) {
 		// TODO Auto-generated method stub
 		return height;
 	}
 	
-	@DSSafe
+	@DSSafe(DSCat.SAFE_OTHERS)
 	public int getHeight() {
 		return height;
 	}
 	
-	@DSSafe
+	@DSSafe(DSCat.SAFE_OTHERS)
 	public AdSize(int w, int h) {
 		width = w;
 		height = h;
 	}
 
-	@DSSafe
+	@DSSafe(DSCat.SAFE_OTHERS)
 	public boolean isAutoHeight() {
 		return toTaintBoolean(width + height);
 	}
 
-	@DSSafe
+	@DSSafe(DSCat.SAFE_OTHERS)
 	public boolean isFullWidth() {
 		return toTaintBoolean(width + height);
 		

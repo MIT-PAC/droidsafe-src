@@ -70,7 +70,6 @@ public Status(int  i0, String  r1, PendingIntent  r2)
 public void startResolutionForResult(Activity  r1, int  i0) throws android.content.IntentSender.SendIntentException
     {
 
-
         if (this.hasResolution())
         {
             r1.startIntentSenderForResult(mPendingIntent.getIntentSender(), i0, null, 0, 0, 0);
@@ -83,7 +82,6 @@ public void startResolutionForResult(Activity  r1, int  i0) throws android.conte
 PendingIntent eQ()
     {
 
-
         return mPendingIntent;
     }
 
@@ -92,7 +90,6 @@ PendingIntent eQ()
 public String getStatusMessage()
     {
 
-
         return Es;
     }
 
@@ -100,7 +97,6 @@ public String getStatusMessage()
     
 int getVersionCode()
     {
-
 
         return xM;
     }
@@ -112,6 +108,7 @@ public boolean hasResolution()
     	return getTaintBoolean();
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.006 -0400", hash_original_method = "5C8C1404976646390107527FEACE73EB", hash_generated_method = "287214D70E372F51BA469A6B67AA66D6")
     
 public boolean isSuccess()
@@ -139,7 +136,6 @@ public boolean isInterrupted()
 public int getStatusCode()
     {
 
-
         return CT;
     }
 
@@ -147,7 +143,6 @@ public int getStatusCode()
     
 public PendingIntent getResolution()
     {
-
 
         return mPendingIntent;
     }

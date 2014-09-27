@@ -81,18 +81,18 @@ public ConnectionResult(int  i0, PendingIntent  r1)
         CT = i0;
         mPendingIntent = r1;
     }
-    
 
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public ConnectionResult(DSOnlyType type) {
     	
     }
 
+    @DSSink({DSSinkKind.GOOGLE_SERVICES})
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.418 -0400", hash_original_method = "028B8274BBC2718BC829EDDECF21C0E6", hash_generated_method = "BBFB693008C0E47BF79059FAF63F7BEA")
     
 public void startResolutionForResult(Activity  r1, int  i0) throws SendIntentException
     {
-
 
         if (this.hasResolution())
         {
@@ -101,6 +101,7 @@ public void startResolutionForResult(Activity  r1, int  i0) throws SendIntentExc
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.423 -0400", hash_original_method = "D872AF8F90B549081F5E206766F7A552", hash_generated_method = "3D05E793BEFA92EBFFA5345471603245")
     
 public boolean hasResolution()
@@ -117,7 +118,6 @@ public boolean hasResolution()
 
             $z0 = false;
         } //end label_0:
-
 
         return $z0;
     }
@@ -140,11 +140,11 @@ public boolean isSuccess()
         return $z0;
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.432 -0400", hash_original_method = "3B2E75A568883E051F3AA54B3AF20855", hash_generated_method = "3AD23A285090A69864D5105798732ACE")
     
 public int getErrorCode()
     {
-
 
         return CT;
     }
@@ -154,7 +154,6 @@ public int getErrorCode()
 public PendingIntent getResolution()
     {
 
-
         return mPendingIntent;
     }
 
@@ -162,7 +161,6 @@ public PendingIntent getResolution()
     
 private String ex()
     {
-
 
         switch (CT)
         {
@@ -228,7 +226,6 @@ public String toString()
 
     static
     {
-
 
         CS = new ConnectionResult(SUCCESS, null);
     }

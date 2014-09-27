@@ -64,6 +64,7 @@ protected IMapFragmentDelegate fragementDelegate()
     }
 
     GoogleMap googleMap;
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.725 -0400", hash_original_method = "40D16AF3AD525A505DCF522054434A6E", hash_generated_method = "553FBC2F1B7E69328D7336D81FCFF3C0")
     
 public final GoogleMap getMap()
@@ -103,7 +104,6 @@ public void onCreate(Bundle  r1)
     
 public View onCreateView(LayoutInflater  r1, ViewGroup  r2, Bundle  r3)
     {
-
 
         return super.onCreateView(r1, r2, r3);
     }
@@ -162,7 +162,6 @@ public void onSaveInstanceState(Bundle  r1)
     
 public void setArguments(Bundle  r1)
     {
-
 
         super.setArguments(r1);
     }

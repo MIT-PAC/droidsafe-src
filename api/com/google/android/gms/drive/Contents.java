@@ -73,7 +73,6 @@ Contents(int  i0, ParcelFileDescriptor  r1, int  i1, int  i2, DriveId  r2, Strin
 public int describeContents()
     {
 
-
         return 0;
     }
 
@@ -111,15 +110,15 @@ public ParcelFileDescriptor getParcelFileDescriptor()
 public DriveId getDriveId()
     {
 
-
         return Hz;
     }
 
+    @DSSource({DSSourceKind.GOOGLE_SERVICES})
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.989 -0400", hash_original_method = "D8B6F24D6CE84AA5B472A5A054CBF9C5", hash_generated_method = "AF2BDE2213F5B0AC04144304F8ED91D9")
     
 public InputStream getInputStream()
     {
-
 
         if ( ! (mClosed))
         {
@@ -144,11 +143,11 @@ public InputStream getInputStream()
         }
     }
 
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.995 -0400", hash_original_method = "EEAF894971DD204B63F1B170A7894732", hash_generated_method = "B552507038AAEA6B7B7E74F58D426C6F")
     
 public OutputStream getOutputStream()
     {
-
 
         if ( ! (mClosed))
         {
@@ -178,7 +177,6 @@ public OutputStream getOutputStream()
 public int getMode()
     {
 
-
         return Hy;
     }
 
@@ -187,7 +185,6 @@ public int getMode()
 public int getRequestId()
     {
 
-
         return ra;
     }
 
@@ -195,7 +192,6 @@ public int getRequestId()
     
 public void close()
     {
-
 
         mClosed = true;
     }
