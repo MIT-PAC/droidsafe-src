@@ -173,13 +173,19 @@ public final class Unsafe {
      * @throws RuntimeException No defined exceptions are thrown, not even
      *         {@link NullPointerException}
      */
-    public native void putInt(Object o, long offset, int x);
+    public void putInt(Object o, long offset, int x) {
+        //best we can do
+        o.addTaint(x);
+    }
 
     /**
      * Fetches a reference value from a given Java variable.
      * @see #getInt(Object, long)
      */
-    public native Object getObject(Object o, long offset);
+    public Object getObject(Object o, long offset) {
+        //returning null is the best strategy here because of fallback modeling
+        return null;
+    }
 
     /**
      * Stores a reference value into a given Java variable.
@@ -191,7 +197,10 @@ public final class Unsafe {
      * are updated.
      * @see #putInt(Object, int, int)
      */
-    public native void putObject(Object o, long offset, Object x);
+    public void putObject(Object o, long offset, Object x) {
+        //best droidsafe can do
+        o.addTaint(x.getTaint());
+    }
 
     /** @see #getInt(Object, long) */
     public boolean getBoolean(Object o, long offset) {
@@ -245,7 +254,10 @@ public final class Unsafe {
     @DSSink({DSSinkKind.REFLECTION})
     public void    putChar(Object o, long offset, char x) {}
     /** @see #getInt(Object, long) */
-    public native long    getLong(Object o, long offset);
+    
+    public  long    getLong(Object o, long offset) {
+        return o.getTaintInt();
+    }
     /** @see #putInt(Object, int, int) */
     public native void    putLong(Object o, long offset, long x);
 
@@ -507,11 +519,20 @@ public final class Unsafe {
     public void    putChar(long address, char x) {}
 
     /** @see #getByte(long) */
-    public native int     getInt(long address);
+    public int     getInt(long address) {
+        return 0;
+    }
+
     /** @see #putByte(long, byte) */
-    public native void    putInt(long address, int x);
+    public  void    putInt(long address, int x) {
+        
+    }
+
     /** @see #getByte(long) */
-    public native long    getLong(long address);
+    public long    getLong(long address) {
+        return 0;
+    }
+
     /** @see #putByte(long, byte) */
     public native void    putLong(long address, long x);
     
