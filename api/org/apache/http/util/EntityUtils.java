@@ -68,7 +68,6 @@ public static String getContentCharSet(final HttpEntity entity)
         return charset;
     }
     
-    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.697 -0500", hash_original_method = "4B671A2056DCAFA419AD0B6A2518D2B7", hash_generated_method = "F704420CD0989FC9C0C4A0ED6DD568ED")
     
@@ -109,7 +108,7 @@ public static String toString(
         return buffer.toString();
     }
 
-    @DSSource({DSSourceKind.NETWORK})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.700 -0500", hash_original_method = "18E1FD8C759BC52F17E10CB5464A552C", hash_generated_method = "39E83DFB0DA3AA8BED21A3D9EE4975C6")
     

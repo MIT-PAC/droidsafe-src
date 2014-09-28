@@ -53,7 +53,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
     // ------------------- Wrapping method implementations ---------------
 
     @DSSpec(DSCat.INTERNET)
-    @DSSink({DSSinkKind.NETWORK})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.345 -0500", hash_original_method = "00D15638ACD466799C761D85B34B76D1", hash_generated_method = "318B16BF8497A493582ED5394CA2D122")
     
 @Override
@@ -61,8 +61,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
         throws IOException {
         throw new IOException("Underlying socket is already connected.");
     }
-
-    @DSSink({DSSinkKind.NETWORK})
+    
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.348 -0500", hash_original_method = "EAF5C6F0CD11B02972408C1904067F09", hash_generated_method = "5AB26808CFD3AAFCE9C50BE8E4832631")
     
@@ -73,7 +72,7 @@ protected SSLSocketWrapper(Socket socket, boolean autoClose, SSLParametersImpl s
 
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.350 -0500", hash_original_method = "7A09B0BAD685B79E09A501FC300262C5", hash_generated_method = "4641B5E3CF42BCCB903380F0F6DB8DB3")
-    @DSSink({DSSinkKind.NETWORK}) 
+     
 @Override
     public void bind(SocketAddress sockaddr) throws IOException {
         throw new IOException("Underlying socket is already connected.");

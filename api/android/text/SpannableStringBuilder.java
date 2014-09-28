@@ -314,7 +314,7 @@ public SpannableStringBuilder delete(int start, int end) {
 	}
     
     @DSComment("From safe class list")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	public Editable append(CharSequence text) {
 		// TODO Auto-generated method stub
@@ -323,7 +323,7 @@ public SpannableStringBuilder delete(int start, int end) {
 	}
     
     @DSComment("From safe class list")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	public Editable append(CharSequence text, int start, int end) {
 		// TODO Auto-generated method stub
@@ -332,7 +332,7 @@ public SpannableStringBuilder delete(int start, int end) {
 	}
     
     @DSComment("From safe class list")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	public Editable append(char text) {
 		// TODO Auto-generated method stub

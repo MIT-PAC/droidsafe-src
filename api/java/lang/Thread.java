@@ -958,7 +958,7 @@ public final void join(long millis, int nanos) throws InterruptedException {
      *
      * @see Thread#start
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.633 -0500", hash_original_method = "74F6289977938D08C5FBC2624A0DC216", hash_generated_method = "699B0F71A4A21C34025432D7A8734079")
     
 public void run() {
@@ -1129,7 +1129,7 @@ public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
      * @see Thread#run
      */
     @DSComment("Thread starting")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.661 -0500", hash_original_method = "389CF6E0D3A08F228CF4E4A156CC86D9", hash_generated_method = "4B5E86BEBB59EC254CCB9739B41E550A")
     
 public synchronized void start() {

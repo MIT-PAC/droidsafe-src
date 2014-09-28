@@ -306,7 +306,7 @@ void finishAccept() {
         initLocalAddressAndPort();
     }
 
-    @DSSafe(DSCat.IO)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.594 -0500", hash_original_method = "FDE0A0D9A12F7110643554CD43F8D7B6", hash_generated_method = "29907415F13C00476026BBE5FF1B04D5")
     
@@ -320,7 +320,7 @@ void finishAccept() {
         return readImpl(dst);
     }
 
-    @DSSafe(DSCat.IO)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.597 -0500", hash_original_method = "CFA00AB281069164ECAB790C179DF3F9", hash_generated_method = "FE3857A82DD1EA3A1C4BEAA5C06E7F35")
     

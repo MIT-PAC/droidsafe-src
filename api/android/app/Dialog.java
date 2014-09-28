@@ -655,7 +655,7 @@ public void addContentView(View view, ViewGroup.LayoutParams params) {
      * @param title The new text to display in the title.
      */
     @DSComment("GUI, no security concern")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.118 -0500", hash_original_method = "A94A4616451E43B03E2FA5DD3DFB9ED3", hash_generated_method = "B2573109B4DF5AAEEABA79F58E13CFC1")
     
 public void setTitle(CharSequence title) {

@@ -59,7 +59,7 @@ public EditText(Context context, AttributeSet attrs, int defStyle) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.USER_INPUT})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.047 -0500", hash_original_method = "7E84A3A8580CD7F3BD2A1E596441D1C1", hash_generated_method = "8266E1AA5ACD94F6F88AA30EBD01D147")
     
 @Override
@@ -84,7 +84,7 @@ public EditText(Context context, AttributeSet attrs, int defStyle) {
      * Convenience for {@link Selection#setSelection(Spannable, int, int)}.
      */
     @DSComment("GUI/EditText, check callbacks")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.051 -0500", hash_original_method = "F43056F38C29E5CA5FEFE1CD9DA04514", hash_generated_method = "9C182A29414CB267A68687703D8459E4")
     
 public void setSelection(int start, int stop) {
@@ -95,7 +95,7 @@ public void setSelection(int start, int stop) {
      * Convenience for {@link Selection#setSelection(Spannable, int)}.
      */
     @DSComment("GUI/EditText, check callbacks")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.053 -0500", hash_original_method = "A198D78C33BD7BD56EF74E8B7D53E824", hash_generated_method = "3A18037E551DA3E220EF61A1C619D38D")
     
 public void setSelection(int index) {

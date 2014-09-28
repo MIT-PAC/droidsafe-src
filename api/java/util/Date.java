@@ -509,7 +509,7 @@ public boolean before(Date date) {
      *         they are equal, and an {@code int > 0} if this {@code Date} is greater.
      */
     @DSComment("From safe class list")
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.933 -0500", hash_original_method = "7C9742DC24BA8DF560999557E5DD5087", hash_generated_method = "F59E4670EF4BD5DDEFA3B1166341ED83")
     
 public int compareTo(Date date) {

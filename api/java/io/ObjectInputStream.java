@@ -769,7 +769,7 @@ private Object readCyclicReference() throws InvalidObjectException, IOException 
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.SERIALIZATION})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.383 -0500", hash_original_method = "7C91F28BD77A4ED641420E614D9FCB15", hash_generated_method = "7756E71F951822D28642A19BC06AC8CF")
@@ -1379,7 +1379,7 @@ public int readInt() throws IOException {
      *             if an error occurs while reading from the source stream.
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SERIALIZATION})
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.433 -0500", hash_original_method = "70C9FFE9F08A2EBCF32FC4C20D730AD7", hash_generated_method = "B01CFE6D9156E407A7419A8C068B709D")
     
 public long readLong() throws IOException {

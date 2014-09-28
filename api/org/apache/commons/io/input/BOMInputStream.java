@@ -350,7 +350,7 @@ private boolean matches(ByteOrderMark bom) {
      * @throws IOException
      *             if an I/O error occurs
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.901 -0400", hash_original_method = "F5B14E56E9F55893C6E73E7F84E5B216", hash_generated_method = "DDDED9E8EB076EC7E62CE11BE57C9D18")
     
@@ -373,8 +373,8 @@ private boolean matches(ByteOrderMark bom) {
      * @throws IOException
      *             if an I/O error occurs
      */
-    @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.902 -0400", hash_original_method = "98E223E86C4C3137EA234A101C3EBA8B", hash_generated_method = "79BB4DED901112DADFA16BD14893D1B8")
     
 @Override
@@ -402,7 +402,7 @@ private boolean matches(ByteOrderMark bom) {
      * @throws IOException
      *             if an I/O error occurs
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.902 -0400", hash_original_method = "2F668D010292F41F8534D9B42F402EB1", hash_generated_method = "E92D53D06BA9BE55F7FB3173E2C57885")
     

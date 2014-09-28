@@ -252,7 +252,7 @@ public boolean equals(Object o) {
      *
      * @return a printable representation of this object.
      */
-    @DSSource({DSSourceKind.NFC})
+    
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.161 -0500", hash_original_method = "7905F5E0624643BB59BB03B2872919E1", hash_generated_method = "2078E1806981FD5222134E2086EC67E9")

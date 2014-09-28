@@ -80,7 +80,7 @@ public void write(byte[] buffer) throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.IO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.832 -0500", hash_original_method = "F6CDEA64748F80FE862CBAFFE4725DDE", hash_generated_method = "CDD044E99B9A9B3DC054F6D500C9D2DA")
     
 public void write(byte[] buffer, int offset, int count) throws IOException {
@@ -99,7 +99,7 @@ public void write(byte[] buffer, int offset, int count) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to this stream.
      */
-    @DSSink({DSSinkKind.IO})
+    
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.835 -0500", hash_original_method = "6F952A0997C9C7FC75CA00C51592E230", hash_generated_method = "EFF3C84F96B0F410A6246A434AA1C3DB")

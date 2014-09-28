@@ -317,7 +317,7 @@ private void readObject(ObjectInputStream stream) throws IOException, ClassNotFo
         scope_ifname_set = fields.get("scope_ifname_set", false);
     }
 
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.090 -0500", hash_original_method = "3CCDE4F93DD898D7C7483D8BBE2EDADA", hash_generated_method = "3AF9A5A7C6181A2E1E6D977A7BEEF253")
     

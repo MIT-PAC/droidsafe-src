@@ -198,7 +198,6 @@ public Throwable fillInStackTrace() {
      * @return this {@code Throwable}'s detail message.
      */
     
-    @DSSource({DSSourceKind.NETWORK})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.597 -0500", hash_original_method = "DB11282615D634E343F956A1D91DEDE9", hash_generated_method = "DFAFD5BFED23A5DC115EDF0B4FB19888")

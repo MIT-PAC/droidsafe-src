@@ -60,7 +60,7 @@ public InputStream() {
      * @throws IOException if this stream is closed or an error occurs
      */
     @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.129 -0500", hash_original_method = "1AA324AC6812BCD54DB71C20D6BA0F20", hash_generated_method = "535A5456B7E25E9CEFB3AEC7B0E3E811")
     
 public int available() throws IOException {
@@ -98,7 +98,7 @@ public void close() throws IOException {
      * @see #reset()
      */
     @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.133 -0500", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "E9F32110B83BB9B2385CC635953159DA")
     
 public void mark(int readlimit) {
@@ -224,7 +224,7 @@ public int read(byte[] buffer, int offset, int length) throws IOException {
      *             if this stream is closed or another IOException occurs.
      */
     @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.146 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "14F37672E3E44D0271E8544379E8C805")
     
 public synchronized void reset() throws IOException {

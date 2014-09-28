@@ -56,7 +56,7 @@ public ProxyInputStream(InputStream proxy) {
      * @return the byte read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.473 -0400", hash_original_method = "54B5A34E53A0B96BE3D94E0D4A7D572A", hash_generated_method = "3D6BB7F1FA6BA070C87313FFEA7AFD38")
     
@@ -79,7 +79,7 @@ public ProxyInputStream(InputStream proxy) {
      * @return the number of bytes read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.474 -0400", hash_original_method = "ACF1A17E0D23809C356E177971499CFB", hash_generated_method = "C084603B1E8F1EDF53DB37D1B859A462")
     
@@ -104,7 +104,7 @@ public ProxyInputStream(InputStream proxy) {
      * @return the number of bytes read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.474 -0400", hash_original_method = "2C3D85339C2DDA831F01519845123B39", hash_generated_method = "AA79F4B08C140AB947EEDF78E949FA4F")
     

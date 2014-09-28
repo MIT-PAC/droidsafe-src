@@ -107,7 +107,7 @@ public TeeInputStream(
      * @return next byte from the stream, or -1 if the stream has ended
      * @throws IOException if the stream could not be read (or written) 
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.295 -0400", hash_original_method = "CF82A12C742F079DEF5ED86F8D9B664D", hash_generated_method = "58CCA48C853B9EC1EB3F4E21DCA79EEB")
     
@@ -130,7 +130,7 @@ public TeeInputStream(
      * @return number of bytes read, or -1 if the stream has ended
      * @throws IOException if the stream could not be read (or written) 
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.296 -0400", hash_original_method = "BF6CBA9653E90970E99199ACD6FE8DC4", hash_generated_method = "9BC968F9B86D1828A5DF1E63F8C520FC")
     
@@ -151,7 +151,7 @@ public TeeInputStream(
      * @return number of bytes read, or -1 if the stream has ended
      * @throws IOException if the stream could not be read (or written) 
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.296 -0400", hash_original_method = "C8E3227EF2C47EB9F6C9D577624742C0", hash_generated_method = "2E0E9BB3CA72F5B6E3CF252481EBC1CA")
     

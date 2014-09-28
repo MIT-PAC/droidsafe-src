@@ -351,6 +351,7 @@ public Context getContext() {
         return mContext;
     }
     
+    @DSSource({DSSourceKind.DATABASE})
     @DSComment("Binding data, need modeling to be safe")
     @DSSafe(DSCat.GUI)
     
@@ -360,7 +361,7 @@ public Context getContext() {
         //return mObjects.size();
     }
     
-    @DSSource({DSSourceKind.DATABASE})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Binding data, need modeling to be safe")
     @DSSafe(DSCat.SAFE_LIST)
     

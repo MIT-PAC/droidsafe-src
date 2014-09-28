@@ -1858,7 +1858,7 @@ public int getOrientation() {
     }
 
     @DSVerified
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     // Override to allow type-checking of LayoutParams.
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.997 -0500", hash_original_method = "1F2E8350C10FBDB8051DCF8E5479411B", hash_generated_method = "28AB7436F710E069C2BB270F65908AD1")
     

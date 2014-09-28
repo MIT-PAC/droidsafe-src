@@ -25,7 +25,7 @@ import com.android.internal.R;
 public class ProgressDialog extends AlertDialog {
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.857 -0500", hash_original_method = "735A07E8EA3FECB061EA4EDEB18A0EB9", hash_generated_method = "F5477D72941826039516E31C68F358E3")
     
 public static ProgressDialog show(Context context, CharSequence title,
@@ -34,7 +34,7 @@ public static ProgressDialog show(Context context, CharSequence title,
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.859 -0500", hash_original_method = "82C9FB373B0183F4E1F162584F9FBDE1", hash_generated_method = "2ED142F3AE45F2F88589B5AB5E2AE110")
     
 public static ProgressDialog show(Context context, CharSequence title,
@@ -43,7 +43,7 @@ public static ProgressDialog show(Context context, CharSequence title,
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.861 -0500", hash_original_method = "D9B389952ED9A81378FC79549F38BFBD", hash_generated_method = "20653E99A704CEEC6391592E99401A0E")
     
 public static ProgressDialog show(Context context, CharSequence title,
@@ -52,7 +52,7 @@ public static ProgressDialog show(Context context, CharSequence title,
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.864 -0500", hash_original_method = "03DAB0D982360E51140E9719BAAFE26F", hash_generated_method = "E3DCC1D2DE2531289BDB206E026F7182")
     
 public static ProgressDialog show(Context context, CharSequence title,

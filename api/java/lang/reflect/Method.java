@@ -566,7 +566,7 @@ public int getModifiers() {
      * @return the name of this method
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.566 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     

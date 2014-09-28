@@ -911,7 +911,7 @@ final void runWorker(Worker w) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.881 -0500", hash_original_method = "D2720E6C2ABD70ABBFB850D5E1C9152E", hash_generated_method = "AF11F840864428AD43826C563AB6247D")
     @DSVerified
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
 public void execute(Runnable command) {
         if (command == null)
             throw new NullPointerException();

@@ -298,7 +298,7 @@ private SocketAddress receiveDirectImpl(ByteBuffer target, boolean loop) throws 
         }
     }
 
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.538 -0500", hash_original_method = "76528871489F953D405DA27A93276CC2", hash_generated_method = "8944BF1CAF80B301B6D671641BFA6636")
     
@@ -329,7 +329,7 @@ private SocketAddress receiveDirectImpl(ByteBuffer target, boolean loop) throws 
         return readCount;
     }
 
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.541 -0500", hash_original_method = "73BDAA1D4D5FBBB4136E79D8CC3B2003", hash_generated_method = "999D1F138A042E2F5F7BCDD7EBB6FF60")
     
@@ -385,8 +385,8 @@ private int readImpl(ByteBuffer dst) throws IOException {
         }
     }
 
-    @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.INTERNET)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.546 -0500", hash_original_method = "EACC5F2E46984D93B58057650609FEF7", hash_generated_method = "13B34C302794F051EED7C644F69CDFAD")
     
 @Override public int write(ByteBuffer src) throws IOException {
@@ -407,8 +407,8 @@ private int readImpl(ByteBuffer dst) throws IOException {
      * @see java.nio.channels.DatagramChannel#write(java.nio.ByteBuffer[], int,
      *      int)
      */
-    @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.INTERNET)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.549 -0500", hash_original_method = "92D26B18BB75EB8AD284E7DC348B13D6", hash_generated_method = "82ADAABDFF0443F748D9B6B5469FC3A9")
     
 @Override

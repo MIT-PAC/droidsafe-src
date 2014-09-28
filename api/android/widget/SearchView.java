@@ -730,7 +730,7 @@ public CharSequence getQuery() {
      * @param submit whether to submit the query right now or only update the contents of
      * text field.
      */
-    @DSSink({DSSinkKind.IPC})
+    
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.781 -0500", hash_original_method = "5407FC5F92134D6A89C79A4C1515F538", hash_generated_method = "3AD312454081B2E3ED1E6DDDAB1FEE3D")
@@ -1654,7 +1654,7 @@ private void launchIntent(Intent intent) {
     /**
      * Sets the text in the query box, without updating the suggestions.
      */
-    @DSSink({DSSinkKind.IPC})
+    
     @DSComment("Private Method")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.117 -0500", hash_original_method = "39B31EC96E94C2151059B7594679485C", hash_generated_method = "0271B3329C99C1677684038522E73CAF")

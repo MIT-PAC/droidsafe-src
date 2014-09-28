@@ -108,6 +108,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * Returns the value of the field at {@code position}. Returns null if there
      * are fewer than {@code position} headers.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.505 -0500", hash_original_method = "2FDBF8E663ECDF1396771B3FB2E938AE", hash_generated_method = "06437FA6B22B1A855ACD6C65696EC4F8")
@@ -125,6 +126,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * null if there is no such field. If the field has multiple values, the
      * last value is returned.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.507 -0500", hash_original_method = "8E358A78EB7A8F16DBAC360C5AE52593", hash_generated_method = "E975B3413BF7B4CBEA3B72CCBD80757D")

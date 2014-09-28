@@ -300,7 +300,7 @@ public boolean before(Timestamp theTimestamp) {
      * @throws ClassCastException
      *             if the supplied object is not a {@code Timestamp} object.
      */
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.607 -0500", hash_original_method = "05A91DEA116C3E2F5603F3F0D29353F9", hash_generated_method = "6913C2CAA66A64CC02A4479F7027889D")
     
 @Override
@@ -325,7 +325,7 @@ public boolean before(Timestamp theTimestamp) {
      *         supplied {@code Timestamp}</li>
      *         </ul>
      */
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.609 -0500", hash_original_method = "5F716ED3C44AF0E8E5B469B5E8E10C8F", hash_generated_method = "4BF9FAA4B4AB3AC55D9B8EB82863EA44")
     
 public int compareTo(Timestamp theTimestamp) {

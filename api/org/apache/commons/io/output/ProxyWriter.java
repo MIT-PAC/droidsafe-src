@@ -56,7 +56,7 @@ public ProxyWriter(Writer proxy) {
      */
     
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.769 -0400", hash_original_method = "94E64203D23ECC11F0966710C23548F3", hash_generated_method = "A06CCE7300A2A2536C74343D00CD989D")
     
 @Override
@@ -82,7 +82,7 @@ public ProxyWriter(Writer proxy) {
      */
     
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.770 -0400", hash_original_method = "391E9756F83F23FF347EF2129E3A0E99", hash_generated_method = "D1659AD21EAF8B4DE464BAC0141C052C")
     
 @Override
@@ -106,7 +106,7 @@ public ProxyWriter(Writer proxy) {
      */
     
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.770 -0400", hash_original_method = "AF511130F35AA3E3B287C842560F9DCE", hash_generated_method = "31E7EB75C8368215C547C5CD1DE26F7C")
     
 @Override

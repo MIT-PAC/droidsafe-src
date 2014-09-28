@@ -1560,7 +1560,7 @@ protected MovementMethod getDefaultMovementMethod() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.GUI_TEXT})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.559 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "07E497F06FCA3C4F8CABDACFD16853C1")
 @ViewDebug.CapturedViewProperty
     public CharSequence getText() {
@@ -1571,7 +1571,7 @@ protected MovementMethod getDefaultMovementMethod() {
      * Returns the length, in characters, of the text managed by this TextView
      */
     @DSComment("TextView, check callbacks modeled")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.561 -0500", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "8958BA6171CC7F46E64433775F1B4CBA")
     
 public int length() {
@@ -4076,7 +4076,7 @@ public final void setText(int resid, BufferType type) {
      * @attr ref android.R.styleable#TextView_hint
      */
     @DSComment("TextView, check callbacks modeled")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.892 -0500", hash_original_method = "E428F8CA5E03E5225CDDDB51AA0FFAC9", hash_generated_method = "EF1B5E2F6E1144B674B014236F2CBA7E")
     
 @android.view.RemotableViewMethod
@@ -4091,7 +4091,7 @@ public final void setText(int resid, BufferType type) {
      * @attr ref android.R.styleable#TextView_hint
      */
     @DSComment("TextView, check callbacks modeled")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.895 -0500", hash_original_method = "38FC4DBAEFB265C97233FE4F28F668E7", hash_generated_method = "C1B1E4FC4A9A8576B3FF0CC12072DD46")
     
@@ -4132,7 +4132,7 @@ public final void setText(int resid, BufferType type) {
      * @attr ref android.R.styleable#TextView_inputType
      */
     @DSComment("TextView, check callbacks modeled")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.903 -0500", hash_original_method = "49514C27E12484581D1021562BB6B56C", hash_generated_method = "CA49E890B8FA1C48882750F052EE89CC")
     

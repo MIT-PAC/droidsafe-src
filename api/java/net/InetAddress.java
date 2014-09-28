@@ -613,7 +613,7 @@ public String getCanonicalHostName() {
      */
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Data structure only")
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.259 -0500", hash_original_method = "0306D8C3E43590D820E89D43080D7C82", hash_generated_method = "BB4B7DC306DE02D48C444870FADF73B1")
     
 @Override

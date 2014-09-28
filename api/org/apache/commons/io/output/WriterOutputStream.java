@@ -221,8 +221,8 @@ public WriterOutputStream(Writer writer) {
      * @param len the number of bytes to write
      * @throws IOException if an I/O error occurs
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.854 -0400", hash_original_method = "C0D49EB08A267ED3491A74132BB97C44", hash_generated_method = "90A500B68C5B9D736374CBF484F83215")
     
 @Override
@@ -245,8 +245,8 @@ public WriterOutputStream(Writer writer) {
      * @param b the byte array containing the bytes to write
      * @throws IOException if an I/O error occurs
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.855 -0400", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "7D09861B37E141F39BE351A56688C45A")
     
 @Override
@@ -260,8 +260,8 @@ public WriterOutputStream(Writer writer) {
      * @param b the byte to write
      * @throws IOException if an I/O error occurs
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.855 -0400", hash_original_method = "72E9EA9CB4D496A22134A9DE55B8B91A", hash_generated_method = "C5CFE166C9FCDBCC793D313229493905")
     
 @Override

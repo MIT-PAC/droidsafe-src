@@ -11,7 +11,7 @@ import org.apache.harmony.kernel.vm.StringUtils;
 
 public class AccessibleObject implements AnnotatedElement {
 
-    @DSSpec(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
 
     @DSComment("Java language reflection")
 
@@ -86,7 +86,7 @@ public boolean isAccessible() {
         return flag;
     }
 
-    @DSSpec(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
 
     @DSComment("Java language reflection")
 

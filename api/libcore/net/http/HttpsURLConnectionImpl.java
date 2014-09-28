@@ -302,6 +302,7 @@ HttpEngine getHttpEngine() {
         return delegate.getExpiration();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.594 -0500", hash_original_method = "DAE76134F84E2121B4429AAD80303201", hash_generated_method = "2A6C5FD4248C798B12EC2730001CAF7A")
@@ -335,6 +336,7 @@ HttpEngine getHttpEngine() {
         delegate.addRequestProperty(field, newValue);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.603 -0500", hash_original_method = "26A5E0D486707FEDEA1C6EC7C371F3C4", hash_generated_method = "829AA6789A98DC6FBCC6C196019D2500")
@@ -392,6 +394,7 @@ HttpEngine getHttpEngine() {
         return delegate.getLastModified();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSpec(DSCat.IO)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.621 -0500", hash_original_method = "71AA63E6E74D761830B069C27085564C", hash_generated_method = "B5F71F5879375ECA4D36D73ED1DB7D06")
@@ -491,8 +494,7 @@ HttpEngine getHttpEngine() {
     public void setUseCaches(boolean newValue) {
         delegate.setUseCaches(newValue);
     }
-
-    @DSSink({DSSinkKind.NETWORK})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.649 -0500", hash_original_method = "EF4CCDEC725CA0081AEF3F1DD3AA2FF3", hash_generated_method = "56CB950FC3643D30D2BE16BCF1F7DF3D")

@@ -70,7 +70,7 @@ public BroadcastReceiver() {
      */
     @DSVerified
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.IPC_CALLBACK)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.698 -0500", hash_original_method = "938B84A43002091BA0754FF3EF2C5C0E", hash_generated_method = "694CB25ED6D3FBC56A56AD38523219EB")
     
 public abstract void onReceive(Context context, Intent intent);

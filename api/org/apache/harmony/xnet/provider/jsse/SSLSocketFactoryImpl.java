@@ -100,7 +100,7 @@ protected SSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.SocketFactory#createSocket()
      */
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.995 -0500", hash_original_method = "0CDA18BD18854D909AC84115F509C8F0", hash_generated_method = "5B384C3D5BC4EBB4D530E8B127FA82F4")
     
 @Override

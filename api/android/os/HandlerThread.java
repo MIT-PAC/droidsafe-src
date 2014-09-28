@@ -49,7 +49,7 @@ public HandlerThread(String name, int priority) {
 protected void onLooperPrepared() {
     }
 
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.212 -0500", hash_original_method = "9E0B8BC0299FD7F24B369B7431C1A009", hash_generated_method = "10FDEB337D9B6B5924296A208F963B2B")
     
 public void run() {

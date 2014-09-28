@@ -55,7 +55,7 @@ public String[] getSupportedCipherSuites() {
         return NativeCrypto.getSupportedCipherSuites();
     }
 
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.878 -0500", hash_original_method = "5837D32923FC621D416DFAB5F2A31CC3", hash_generated_method = "7B1C7226CE81BA953CE437975B268D6F")
     
 public Socket createSocket() throws IOException {

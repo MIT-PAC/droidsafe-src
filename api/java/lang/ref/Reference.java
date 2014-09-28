@@ -45,7 +45,7 @@ Reference(T r, ReferenceQueue q) {
      * object to be enqueued.
      */
     @DSComment("From safe class list")
-    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.739 -0500", hash_original_method = "0AFD16A0602732B7092274BEFFE68A69", hash_generated_method = "D22A9D70012ADAB162F6F2808D9E0BAF")
     
 public void clear() {

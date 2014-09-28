@@ -396,7 +396,7 @@ private boolean doAccess(int mode) {
      * @see Comparable
      */
     @DSComment("no security concern")
-    @DSSpec(DSCat.FILE_SYSTEM)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.464 -0500", hash_original_method = "B9E553F90A7CDA44D1E185A0919015AC", hash_generated_method = "9246B5974DFCA41CBC6E6EB8589B0456")
     
 public int compareTo(File another) {

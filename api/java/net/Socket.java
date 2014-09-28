@@ -913,8 +913,7 @@ public boolean isClosed() {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.NETWORK}) 
-    @DSSink({DSSinkKind.NETWORK}) 
+    @DSSource({DSSourceKind.NETWORK})
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.839 -0500", hash_original_method = "9E3C378994EF9A4091E39D0FA34770F8", hash_generated_method = "D0C31E3A84FEA3EC846026D0B18E8F69")
     
@@ -964,7 +963,7 @@ public void bind(SocketAddress localAddr) throws IOException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.NETWORK})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.841 -0500", hash_original_method = "B2F3815725658D73C0532A54E6C164BA", hash_generated_method = "AE3DC0528EB0E6538EC2417B0369366A")
     
 public void connect(SocketAddress remoteAddr) throws IOException {
@@ -991,7 +990,7 @@ public void connect(SocketAddress remoteAddr) throws IOException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.NETWORK})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.844 -0500", hash_original_method = "45EED4DE787227F7BEC68E335C7AA6E7", hash_generated_method = "7616BDB1DAEC13E9767FAD09B4C3E893")
     
 public void connect(SocketAddress remoteAddr, int timeout) throws IOException {

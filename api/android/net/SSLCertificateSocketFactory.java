@@ -306,7 +306,7 @@ public void setKeyManagers(KeyManager[] keyManagers) {
      * with this method.  You MUST verify the server's identity after connecting
      * the socket to avoid man-in-the-middle attacks.</p>
      */
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.IO)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.603 -0500", hash_original_method = "A93A66D768B2246423C7BE25AD8A2DA8", hash_generated_method = "00AB5FD6D97267BD86AADDDCDAA57662")
     

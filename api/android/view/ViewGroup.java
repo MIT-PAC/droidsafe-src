@@ -599,7 +599,7 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public void clearFocus(){
 		// Original method
 		/*
@@ -648,7 +648,7 @@ public View getFocusedChild() {
     }
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @Override public boolean hasFocus(){
 		// Original method
 		/*
@@ -1635,7 +1635,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public void setPadding(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -2042,7 +2042,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public void addView(View child){
 		// Original method
         addView(child, -1);
@@ -2051,7 +2051,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public void addView(View child, int index){
 		// Original method
         LayoutParams params = child.getLayoutParams();
@@ -2066,7 +2066,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public void addView(View child, int width, int height){
 		// Original method
         final LayoutParams params = generateDefaultLayoutParams();
@@ -2077,7 +2077,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public void addView(View child, LayoutParams params){
 		// Original method
         addView(child, -1, params);
@@ -2086,7 +2086,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public void addView(View child, int index, LayoutParams params){
 		// Original method
 		/*
@@ -2117,7 +2117,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		//Return nothing
 	}
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS) 
+    @DSSafe(DSCat.SAFE_LIST) 
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
 		/*

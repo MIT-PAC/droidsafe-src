@@ -50,7 +50,7 @@ public NullWriter() {
      */
     
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.242 -0400", hash_original_method = "9925E1DC093C6BADDE8464868171339B", hash_generated_method = "AEE3041B3F1AA0AE8E9154005C96D456")
     
 @Override
@@ -69,7 +69,7 @@ public NullWriter() {
      */
     
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.242 -0400", hash_original_method = "CD2829CDE96B6ED8A5F4CBF7F6F67CA5", hash_generated_method = "1AD03001AC524799F2E5DDE5E1DA5EF9")
     
 @Override
@@ -86,7 +86,7 @@ public NullWriter() {
      */
     
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.243 -0400", hash_original_method = "FE294A17C0469E68DE350D9B87B2A84C", hash_generated_method = "C337B5C193C54642D937100F617F21D7")
     
 @Override

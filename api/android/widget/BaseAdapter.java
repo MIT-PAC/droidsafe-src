@@ -26,8 +26,7 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
 public boolean hasStableIds() {
         return false;
     }
-
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    
     @DSVerified
     @DSSafe(DSCat.SAFE_LIST)
     public abstract Object getItem(int pos);

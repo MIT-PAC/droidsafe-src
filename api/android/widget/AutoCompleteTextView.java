@@ -538,7 +538,7 @@ public int getThreshold() {
      * @attr ref android.R.styleable#AutoCompleteTextView_completionThreshold
      */
     @DSComment("Autocomplete")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.087 -0500", hash_original_method = "E80EC39EC531963E159919926C4979B9", hash_generated_method = "19334D7DFA7EE4A6663FB4F88E3C4D9D")
     
 public void setThreshold(int threshold) {
@@ -557,7 +557,7 @@ public void setThreshold(int threshold) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.090 -0500", hash_original_method = "B69DF6D8B348285F7F509DAAD23C3372", hash_generated_method = "7842F66D843EA6654D84B924FD053A47")
     @DSVerified
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
 public void setOnItemClickListener(AdapterView.OnItemClickListener l) {
         mItemClickListener = l;
         if (l != null) {
@@ -1008,7 +1008,7 @@ public boolean isPerformingCompletion() {
      * @hide Pending API council approval.
      */
     @DSComment("Autocomplete")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.155 -0500", hash_original_method = "3F95D8A8308B140C895762391C3A32C6", hash_generated_method = "24DAE7F22FFD61C7AE872D912B41AF03")
     
 public void setText(CharSequence text, boolean filter) {

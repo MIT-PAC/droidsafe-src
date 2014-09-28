@@ -2110,7 +2110,7 @@ public View(Context context, AttributeSet attrs) {
         return li != null ? li.mOnFocusChangeListener : null;
 	}
     @DSVerified
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.SAFE_LIST)
 	public void setOnClickListener(OnClickListener l){
         l.onClick(this);
         getListenerInfo().mOnClickListener = l;
@@ -2269,7 +2269,7 @@ public View(Context context, AttributeSet attrs) {
 	}
 
     @DSVerified("Calling callbacks/dispatching function")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void setOnKeyListener(OnKeyListener l){
 		// Original method
 		/*
@@ -2439,7 +2439,7 @@ public View(Context context, AttributeSet attrs) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @ViewDebug.ExportedProperty(category="focus") public boolean hasFocus(){
 		// Original method
 		/*
@@ -2470,7 +2470,7 @@ public View(Context context, AttributeSet attrs) {
 	}
     
     @DSVerified
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     
     public void sendAccessibilityEvent(int eventType){
 		// Original method
@@ -2979,7 +2979,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 	}
     
 	@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     
     @RemotableViewMethod 
 	public void setVisibility(int visibility){
@@ -3004,7 +3004,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @RemotableViewMethod 
 	public void setEnabled(boolean enabled){
 		// Original method
@@ -3021,7 +3021,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFocusable(boolean focusable){
 		// Original method
@@ -3400,7 +3400,7 @@ protected void dispatchSetPressed(boolean pressed) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @ViewDebug.ExportedProperty(category="focus") 
 	public final boolean isFocusable(){
 		// Original method
@@ -3578,7 +3578,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public final boolean requestFocus(){
 		// Original method
 		/*
@@ -3590,7 +3590,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public final boolean requestFocus(int direction){
 		// Original method
 		/*
@@ -3603,7 +3603,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public boolean requestFocus(int direction, Rect previouslyFocusedRect){
 		// Original method
         if ((mViewFlags & FOCUSABLE_MASK) != FOCUSABLE ||
@@ -3709,7 +3709,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 public void onFinishTemporaryDetach() {
     }
     
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public KeyEvent.DispatcherState getKeyDispatcherState(){
 		// Original method
         return mAttachInfo != null ? mAttachInfo.mKeyDispatchState : null;
@@ -3914,7 +3914,7 @@ protected boolean dispatchGenericFocusedEvent(MotionEvent event) {
 	}
     
     @DSComment("normal android callback")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.SAFE_LIST)
     public void onWindowFocusChanged(boolean hasWindowFocus){
 		// Original method
 		/*
@@ -4026,7 +4026,7 @@ protected void onDisplayHint(int hint) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     
     public int getWindowVisibility(){
 		// Original method
@@ -4084,7 +4084,7 @@ protected void onDisplayHint(int hint) {
      * @param newConfig The new resource configuration.
      */
     @DSComment("normal android callback")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.125 -0500", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "5104AFB7AFD1C999549D7EB994254EF0")
     @DSVerified
 protected void onConfigurationChanged(Configuration newConfig) {
@@ -4142,7 +4142,7 @@ protected void onConfigurationChanged(Configuration newConfig) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @ViewDebug.ExportedProperty 
 	public boolean isInTouchMode(){
 		// Original method
@@ -4195,7 +4195,7 @@ public boolean onKeyPreIme(int keyCode, KeyEvent event) {
     }
     
     @DSComment("normal android callback")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method
 		/*
@@ -4239,7 +4239,7 @@ public boolean onKeyLongPress(int keyCode, KeyEvent event) {
     
     @DSVerified
     @DSComment("normal android callback")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean onKeyUp(int keyCode, KeyEvent event){
 		// Original method
         boolean result = false;
@@ -4572,7 +4572,7 @@ public void onHoverChanged(boolean hovered) {
     }
     
     @DSComment("normal android callback")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean onTouchEvent(MotionEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5766,7 +5766,7 @@ protected void dispatchDraw(Canvas canvas) {
      * @return The LayoutParams associated with this view, or null if no
      *         parameters have been set yet
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.404 -0500", hash_original_method = "5EB740A9A129A62709C940CDC3C1FA90", hash_generated_method = "0E7022E2AA69DD9440A61ABEEAEDDFD9")
     
 @ViewDebug.ExportedProperty(deepExport = true, prefix = "layout_")
@@ -5882,7 +5882,7 @@ protected void dispatchDraw(Canvas canvas) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public void invalidate(Rect dirty){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5891,7 +5891,7 @@ protected void dispatchDraw(Canvas canvas) {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public void invalidate(int l, int t, int r, int b){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5906,7 +5906,7 @@ protected void dispatchDraw(Canvas canvas) {
      * call {@link #postInvalidate()}.
      */
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.432 -0500", hash_original_method = "DD9880156AB041E4BB31F756D1AB2189", hash_generated_method = "1C46FCE896A7CC57B15BC9136261EA83")
     
 public void invalidate() {
@@ -7103,7 +7103,7 @@ AttachInfo(IWindowSession session, IWindow window,
     }
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public boolean post(Runnable action){
 		// Original method
 		/*
@@ -7179,7 +7179,7 @@ AttachInfo(IWindowSession session, IWindow window,
 	}
     
     @DSComment("no action when removing callback")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     public boolean removeCallbacks(Runnable action){
 		// Original method
 		/*
@@ -7210,7 +7210,7 @@ AttachInfo(IWindowSession session, IWindow window,
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     public void postInvalidate(){
 		// Original method
 		/*
@@ -7521,7 +7521,7 @@ public void computeScroll() {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScrollBarStyle(int style){
 		// Original method
@@ -7613,7 +7613,7 @@ public void computeScroll() {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean canScrollHorizontally(int direction){
 		// Original method
 		/*
@@ -8500,7 +8500,7 @@ protected int getBottomPaddingOffset() {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings({"unchecked"}) public void layout(int l, int t, int r, int b){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -8551,7 +8551,7 @@ protected void onFinishInflate() {
      * @return Resources object.
      */
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.712 -0500", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "05B1D2D3E0E7E913183B96A460337403")
     
@@ -8640,7 +8640,7 @@ public Resources getResources() {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     protected boolean verifyDrawable(Drawable who){
 		// Original method
 		/*
@@ -8767,7 +8767,7 @@ public final int[] getDrawableState() {
 	}
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     public void setBackgroundDrawable(Drawable d){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -8892,7 +8892,7 @@ public Drawable getBackground() {
     }
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     public void setPadding(int left, int top, int right, int bottom){
 		addTaint(left);
 		addTaint(right);
@@ -9461,7 +9461,7 @@ public void setTag(final Object tag) {
      * tree.
      */
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.881 -0500", hash_original_method = "B7CE3104FF9ED0677BFFACD05F948960", hash_generated_method = "345A2F414C44CB96C8C1996F7916E049")
     
 public void requestLayout() {

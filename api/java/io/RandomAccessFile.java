@@ -360,7 +360,7 @@ public final boolean readBoolean() throws IOException {
      * @see #writeBoolean(boolean)
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.FILE})
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.214 -0500", hash_original_method = "2659119ED4E9182341F4E2CF2510ACC4", hash_generated_method = "60488882DC013DC02E5B18F972072683")
     
 public final byte readByte() throws IOException {
@@ -497,7 +497,7 @@ public final void readFully(byte[] dst, int offset, int byteCount) throws IOExce
      * @see #writeInt(int)
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.FILE})
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.230 -0500", hash_original_method = "623A6326FEE6BEAC4C71D9EAB23D5BE9", hash_generated_method = "5D6C62E5010CBE21FE3E33B342C82583")
     
 public final int readInt() throws IOException {
@@ -520,7 +520,7 @@ public final int readInt() throws IOException {
      *             if this file is closed or another I/O error occurs.
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.FILE})
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.233 -0500", hash_original_method = "A3561FB7999FC54AB0AB272B825D1BA9", hash_generated_method = "BEAFAA89A57C515E05B4E556EACE92EE")
     
 public final String readLine() throws IOException {
@@ -566,7 +566,7 @@ public final String readLine() throws IOException {
      * @see #writeLong(long)
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.FILE})
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.235 -0500", hash_original_method = "469514DB0DA90571D02A531A0FA63D6F", hash_generated_method = "A9605FE51958909BD225DA582AF5352D")
     
 public final long readLong() throws IOException {
@@ -657,7 +657,7 @@ public final int readUnsignedShort() throws IOException {
      * @see #writeUTF(String)
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.FILE})
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.246 -0500", hash_original_method = "1E6F905958EDDE8569C0995497961028", hash_generated_method = "9185F536AED2E9334E1588BCE6D15B49")
     
 public final String readUTF() throws IOException {

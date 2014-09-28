@@ -166,7 +166,7 @@ public synchronized double nextGaussian() {
     /**
      * Returns a pseudo-random uniformly distributed {@code int}.
      */
-    @DSSource({DSSourceKind.RANDOM_NUMBER})
+    
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.557 -0500", hash_original_method = "82F6347EB6C4A01CB76B611DAE5AF092", hash_generated_method = "7AD0ED41A8CDF10FE07383EE86DBA893")
@@ -179,7 +179,7 @@ public int nextInt() {
      * Returns a pseudo-random uniformly distributed {@code int}
      * in the half-open range [0, n).
      */
-    @DSSource({DSSourceKind.RANDOM_NUMBER})
+    
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.560 -0500", hash_original_method = "173DEE1A34208F3BEEC0CED47E74657B", hash_generated_method = "60545AE716FFD98B148A918FF295A2FC")

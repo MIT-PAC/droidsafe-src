@@ -93,7 +93,7 @@ protected AbstractMap() {
     }
 
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.244 -0500", hash_original_method = "7CBA802DA52C526436F00BC470BF1937", hash_generated_method = "53D33ED4D71E7E913FBCA82803B17B2C")
     
 public abstract Set<Map.Entry<K, V>> entrySet();

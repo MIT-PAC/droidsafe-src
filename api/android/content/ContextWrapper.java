@@ -638,7 +638,7 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("No action for callback unregistration")
-    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.220 -0500", hash_original_method = "D3936D1C8F9D43BCF113D4D92126FE25", hash_generated_method = "A589371689D3516AE882F7EC4F1BDC2E")
     
 @Override
