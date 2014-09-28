@@ -820,7 +820,6 @@ public static char[] toCharArray(Reader input) throws IOException {
      * @throws IOException if an I/O error occurs
      */
     
-    @DSSource({DSSourceKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.182 -0400", hash_original_method = "19B914B7C824D02A5C6108E11D6A0460", hash_generated_method = "9EF4DE76442F72EC59DA5F3E6F972B88")
     
@@ -926,7 +925,6 @@ public static String toString(URI uri) throws IOException {
      * @since 2.3.
      */
     
-    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.185 -0400", hash_original_method = "592E1D49822A2E8EC5684EEFD3300800", hash_generated_method = "3BD1521DDDC437D54AE7B819B7EC8CDC")
     
@@ -949,7 +947,6 @@ public static String toString(URI uri, Charset encoding) throws IOException {
      * @since 2.1
      */
     
-    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.185 -0400", hash_original_method = "00D81E8E10F2D946A5DDFFF7E3A69119", hash_generated_method = "A78AED6B3BF2923F24872E48708F87FB")
     
@@ -967,7 +964,6 @@ public static String toString(URI uri, String encoding) throws IOException {
      * @since 2.1
      */
     
-    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.186 -0400", hash_original_method = "2C67C3BCE4EC0DE1CC84D2039D0893CF", hash_generated_method = "6B8D61C2DEB4C1798A3E84FEF3115BEE")
     
@@ -987,7 +983,6 @@ public static String toString(URL url) throws IOException {
      * @since 2.3
      */
     
-    @DSSource({DSSourceKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.186 -0400", hash_original_method = "DDA974D994A98517522781E48387F448", hash_generated_method = "1686848766FE1B692A209C4625EB1817")
     
@@ -1015,7 +1010,6 @@ public static String toString(URL url, Charset encoding) throws IOException {
      * @since 2.1
      */
     
-    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.187 -0400", hash_original_method = "9D5EF91D4BF7AC959A9D204440546D9E", hash_generated_method = "ABF3DFD480E33AA8B43340EB22AD5BB0")
     
@@ -1034,7 +1028,6 @@ public static String toString(URL url, String encoding) throws IOException {
      * @deprecated Use {@link String#String(byte[])}
      */
     
-    @DSSource({DSSourceKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.187 -0400", hash_original_method = "20839E86366C5233239C10AF83778159", hash_generated_method = "618FECFBF3501EDC582AAA04082CCB35")
     
@@ -1057,7 +1050,6 @@ public static String toString(URL url, String encoding) throws IOException {
      * @throws IOException if an I/O error occurs (never occurs)
      */
     
-    @DSSource({DSSourceKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.188 -0400", hash_original_method = "7C391538556A6293A427C1DC577EC6A3", hash_generated_method = "ACF5C7254CAD9AC0659F72588706415F")
     
