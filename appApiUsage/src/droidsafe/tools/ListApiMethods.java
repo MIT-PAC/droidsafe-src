@@ -419,9 +419,13 @@ public class ListApiMethods extends ApiUsageListing {
         for(SootClass cls: Scene.v().getClasses()) {
             for (SootMethod method: cls.getMethods()) {
                 
+            	if (cls.getName().equals("java.lang.Boolean")) {
+            		logger.info("Boolean method {} ", method);
+            	}
 
                 String name = getMethodFullName(method);
                 //match list only when used with classification
+
                 if (!methodOfInterest(name) && withinList)
                     continue;
                 
@@ -482,13 +486,22 @@ public class ListApiMethods extends ApiUsageListing {
                         className = className + "." + tokens[i];
                 }
 
-                logger.info("{} => {}/{}", api, className, methodName);
+                logger.info("Trying to resolve {} => {}/{}", api, className, methodName);
 
                 SootClass sootClass = Scene.v().getSootClass(className);
+                if (sootClass == null) {
+                	logger.info("No class \n");
+                	continue;
+                }
+
                 List<SootMethod> potentials = SootUtils.findPossibleInheritedMethods(sootClass, methodName);
                 Set<SootMethod> potentialSet = new HashSet<SootMethod>(potentials);
                 
-                boolean hasSuperMethod = false;
+               /* if (potentialSet.isEmpty()) {
+                	logger.info("No potential Set ");
+                	potentialSet = SootUtils.matchSootMethodIncludeSupers(sootClass, methodName);
+                }*/
+                
                 for (SootMethod method: potentialSet) {
                     //remove duplicate
 
@@ -496,13 +509,21 @@ public class ListApiMethods extends ApiUsageListing {
                     logger.info("api {}, potential {} => name {} ", api, method, name);
                     
                     if (matchedSet.contains(name)) {
-                        matchedSet.add(api);
+                    	logger.info("adding matched {} => {} ", api, name);
+                        //matchedSet.add(api);
+                    	List<String> annoList = extractDSAnnotations(method);
+                        String reportLine = getModelReportLine(method.getSignature(), annoList);
+                        outStream.printf("%s <- SUBCLASS %s\n", reportLine, api);
+
+                    	matchedSet.add(name);
+                    	matchedSet.add(api);
                         continue;
                     }
 
                     List<String> annoList = extractDSAnnotations(method);
-                    String reportLine = getModelReportLine(name, annoList);
-                    outStream.printf("%s - ENG3 %s\n", reportLine, api);
+                    String reportLine = getModelReportLine(method.getSignature(), annoList);
+                    outStream.printf("%s <- SUPER %s\n", reportLine, api);
+
                     matchedSet.add(name);
                     matchedSet.add(api);
                     break;
