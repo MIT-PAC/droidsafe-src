@@ -221,6 +221,7 @@ protected abstract HttpRoutePlanner createHttpRoutePlanner();
     
 protected abstract UserTokenHandler createUserTokenHandler();
     
+    @DSSource({DSSourceKind.NETWORK})
     @DSSpec(DSCat.INTERNET)
     
     @Override

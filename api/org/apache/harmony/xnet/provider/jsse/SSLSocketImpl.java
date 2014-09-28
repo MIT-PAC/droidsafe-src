@@ -4,6 +4,7 @@ package org.apache.harmony.xnet.provider.jsse;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -552,7 +553,7 @@ protected void closeTransportLayer() throws IOException {
      */
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.619 -0500", hash_original_method = "9C6F28F8DBD161E857A3A3894EC60A85", hash_generated_method = "D7D8C3012B2E8229BBDDE272C9BE3C3D")
-    
+    @DSSink({DSSinkKind.NETWORK})    
 @Override
     public void connect(SocketAddress endpoint) throws IOException {
         super.connect(endpoint);
@@ -566,7 +567,7 @@ protected void closeTransportLayer() throws IOException {
      */
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.622 -0500", hash_original_method = "E1471735BF64AF2EDFAE20D8138E7876", hash_generated_method = "FDB570B2CBC178F03F604F889C186F51")
-    
+    @DSSink({DSSinkKind.NETWORK}) 
 @Override
     public void connect(SocketAddress endpoint, int timeout)
             throws IOException {

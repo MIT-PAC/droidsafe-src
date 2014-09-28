@@ -77,6 +77,7 @@ public StringBuilderWriter(StringBuilder builder) {
      * @return This writer instance
      */
     
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.954 -0400", hash_original_method = "1288124DBF43C46402FB70C838950E72", hash_generated_method = "AF1DB86BCA89272EBF3D0D2068FF9ECA")
     
@@ -93,6 +94,7 @@ public StringBuilderWriter(StringBuilder builder) {
      * @return This writer instance
      */
     
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.954 -0400", hash_original_method = "E2F995DD283D6A0A833AF2D339D19742", hash_generated_method = "B9427F392DE55B9967A3D3DF4534BDBC")
     
@@ -111,6 +113,7 @@ public StringBuilderWriter(StringBuilder builder) {
      * @return This writer instance
      */
     
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.955 -0400", hash_original_method = "FBCD01EFCECB3326031D766445C3DB2F", hash_generated_method = "DC5692522586DB5F5BE483B326F0FCF7")
     
