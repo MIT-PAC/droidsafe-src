@@ -269,6 +269,7 @@ public long skip(long charCount) throws IOException {
      * @throws ReadOnlyBufferException
      *             if {@code target} is read-only.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     

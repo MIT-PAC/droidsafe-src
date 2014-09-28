@@ -29,7 +29,6 @@ class ActionBarImplHC extends ActionBarImplBase
         implements NativeActionModeAwareLayout.OnActionModeForChildListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:33.533 -0400", hash_original_field = "CF97E3B53DD703B3CE9D939F5386EF1A", hash_generated_field = "CF97E3B53DD703B3CE9D939F5386EF1A")
 
-
      NativeActionModeAwareLayout mNativeActionModeAwareLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:33.536 -0400", hash_original_field = "48ABAD2021433D1A75BA1588C2366122", hash_generated_field = "3026006E0EAADB8BACC56464391EC291")
 
@@ -51,6 +50,7 @@ public ActionBarImplHC(ActionBarActivity activity, Callback callback) {
     }
 
     // From NativeActionModeAwareLayout.OnActionModeForChildListener
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:33.544 -0400", hash_original_method = "5C1FF5F038F738689804F013E648BD98", hash_generated_method = "AAD11A6FA1975330DD29802978B12FD1")
     
 @Override
@@ -58,6 +58,7 @@ public ActionBarImplHC(ActionBarActivity activity, Callback callback) {
         return new CallbackWrapper(callback);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:33.547 -0400", hash_original_method = "399FF41AD5D1CC997F989351CB2FC081", hash_generated_method = "C98E42464C66A5F1C9B168C5848CA755")
     
 @Override
@@ -68,6 +69,7 @@ public ActionBarImplHC(ActionBarActivity activity, Callback callback) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:33.551 -0400", hash_original_method = "2535E52C4E223E897D6EABC095CF72D5", hash_generated_method = "727D0B78C814A4A352EF325EA3D5797B")
     
 @Override
@@ -78,6 +80,7 @@ public ActionBarImplHC(ActionBarActivity activity, Callback callback) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:33.554 -0400", hash_original_method = "8EC3F05E3CA7C597730A8D8B12B6C564", hash_generated_method = "BDE5FAD4F6BE477EDB97A0FCFE0C99E7")
     
 @Override
@@ -93,6 +96,7 @@ public ActionBarImplHC(ActionBarActivity activity, Callback callback) {
             mWrappedCallback = callback;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
             final boolean wrappedResult = mWrappedCallback.onCreateActionMode(mode, menu);
@@ -105,16 +109,19 @@ public ActionBarImplHC(ActionBarActivity activity, Callback callback) {
             return wrappedResult;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
             return mWrappedCallback.onPrepareActionMode(mode, menu);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             return mWrappedCallback.onActionItemClicked(mode, item);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onDestroyActionMode(ActionMode mode) {
             mWrappedCallback.onDestroyActionMode(mode);

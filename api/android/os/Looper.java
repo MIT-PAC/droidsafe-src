@@ -38,7 +38,7 @@ private synchronized static void setMainLooper(Looper looper) {
      */
     @DSComment("General android operation, no security concern")
     @DSSafe(DSCat.OS_GENERAL)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.966 -0500", hash_original_method = "B301D14AF486D9D7134940A0F1BF13CF", hash_generated_method = "7397F1AB5AB47E75F37A7B7BE4B27DD9")
     
 public synchronized static Looper getMainLooper() {
@@ -138,6 +138,7 @@ public void setMessageLogging(Printer printer) {
         mLogging = printer;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public void quit(){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Message msg = Message.obtain();

@@ -560,7 +560,8 @@ static void trimCacheIfNeeded() {
             final List<String> fileList = mDataBase.getAllCacheFileNames();
             if (fileList == null) return;
             String[] toDelete = mBaseDir.list(new FilenameFilter() {
-                public boolean accept(File dir, String filename) {
+                @DSSafe(DSCat.SAFE_LIST)
+        public boolean accept(File dir, String filename) {
                     if (fileList.contains(filename)) {
                         return false;
                     } else {

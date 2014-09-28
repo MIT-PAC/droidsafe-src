@@ -71,12 +71,14 @@ public NotificationCompatJellybean(Context context, Notification n,
             .setProgress(mProgressMax, mProgress, mProgressIndeterminate);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:04.117 -0400", hash_original_method = "4C17E7823F728145E0568D1CDB29A948", hash_generated_method = "059C61CE13EA34854C1F6A272DB66EF7")
     
 public void addAction(int icon, CharSequence title, PendingIntent intent) {
         b.addAction(icon, title, intent);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:04.121 -0400", hash_original_method = "E87D93B533BFC89A38CD8510C2309D41", hash_generated_method = "A724F49A18426174A48E24CA352489BE")
     
 public void addBigTextStyle(CharSequence bigContentTitle, boolean useSummary,
@@ -89,6 +91,7 @@ public void addBigTextStyle(CharSequence bigContentTitle, boolean useSummary,
          }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:04.125 -0400", hash_original_method = "5CE24191D1516E926C11E8E2F7A5E791", hash_generated_method = "6B6E3031FA1E246E6F98BAD2E96FFB38")
     
 public void addBigPictureStyle(CharSequence bigContentTitle, boolean useSummary,
@@ -105,6 +108,7 @@ public void addBigPictureStyle(CharSequence bigContentTitle, boolean useSummary,
          }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:04.130 -0400", hash_original_method = "88414C4DAD292B1522CDAC981BD7CF13", hash_generated_method = "80999561E84D9203F20EBF31D6661D0E")
     
 public void addInboxStyle(CharSequence bigContentTitle, boolean useSummary,
@@ -119,17 +123,18 @@ public void addInboxStyle(CharSequence bigContentTitle, boolean useSummary,
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:04.132 -0400", hash_original_method = "22F07EE68ECB4916640A17A865D428D6", hash_generated_method = "7071822E23950265C2AC829C8484F133")
     
 public Notification build() {
         return b.build();
     }
 
-
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:45.705 -0400", hash_original_field = "3BD1CAB2DC761C785D68CA819637F73F", hash_generated_field = "EFDA2FA0B7FC0BAC3863B35A6AF8D49E")
 
     private static final String KEY_ACTION_INTENT = "actionIntent";
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.205 -0400", hash_original_method = "44A2E460CECF97CFEF161CE5AE582A37", hash_generated_method = "BE8D22238C3A8179DBB55F06F8A2EE03")
     
 public static NotificationCompatBase.Action getAction(Notification notif, int actionIndex,
@@ -160,6 +165,7 @@ public static NotificationCompatBase.Action getAction(Notification notif, int ac
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.298 -0400", hash_original_method = "AC905B63183A8E9B6CBA47567C09F8BD", hash_generated_method = "DACF2CC1694BAD2E4C54D4CB24BAE493")
     
 public static boolean isGroupSummary(Notification n) {
@@ -169,6 +175,7 @@ public static boolean isGroupSummary(Notification n) {
 
     private static Field sActionTitleField;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.183 -0400", hash_original_method = "AB7BCDE6271FB8DF6B7331CFBBF3EC0D", hash_generated_method = "EBB587B4CEC0841FEDB668E4ADD3E065")
     
 public static int getActionCount(Notification notif) {
@@ -185,7 +192,6 @@ public static int getActionCount(Notification notif) {
     static final String EXTRA_USE_SIDE_CHANNEL = "android.support.useSideChannel";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:45.760 -0400", hash_original_field = "2B97EED9841F9EB6C77783E10B1426F9", hash_generated_field = "9535F4DA1414341134E79985F43F8831")
 
-
     private static final Object sActionsLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:45.695 -0400", hash_original_field = "410CF668052940B709102EA21109C732", hash_generated_field = "BD847CBC6BB92993490AA40E882B0719")
 
@@ -197,6 +203,7 @@ public static int getActionCount(Notification notif) {
 
     private static final String KEY_ICON = "icon";
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.250 -0400", hash_original_method = "A72C48E630DB549A97975A3F5EFA9195", hash_generated_method = "185CEB719AC7A5F9D7304D1B10B30BA1")
     
 private static NotificationCompatBase.Action getActionFromBundle(Bundle bundle,
@@ -219,6 +226,7 @@ private static NotificationCompatBase.Action getActionFromBundle(Bundle bundle,
      * Get the extras Bundle from a notification using reflection. Extras were present in
      * Jellybean notifications, but the field was private until KitKat.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.146 -0400", hash_original_method = "A2F60EA0D4C8FD07F735098614FDD565", hash_generated_method = "42528D3711F763FD180F8E398E593ACA")
     
 public static Bundle getExtras(Notification notif) {
@@ -253,6 +261,7 @@ public static Bundle getExtras(Notification notif) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.239 -0400", hash_original_method = "261485DE7D74A10E83227A8D5ECB478A", hash_generated_method = "EC256D80F03A7B5916DC0B2725A8ABCA")
     
 public static NotificationCompatBase.Action[] getActionsFromParcelableArrayList(
@@ -270,6 +279,7 @@ public static NotificationCompatBase.Action[] getActionsFromParcelableArrayList(
         return actions;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.292 -0400", hash_original_method = "390296A93E8D98307E04E44DAE1BE209", hash_generated_method = "26928F1C50682963002CA5EC9286E037")
     
 public static String getGroup(Notification n) {
@@ -277,12 +287,12 @@ public static String getGroup(Notification n) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:45.733 -0400", hash_original_field = "832107AAE14DE9AA04E2E6562427671B", hash_generated_field = "5F458D4613E3DB418751213DE2B70751")
 
-
     private static final Object sExtrasLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:45.769 -0400", hash_original_field = "25971A8B6EA764EEB002E2DE42769444", hash_generated_field = "3401ADAA0EBD667D442E418571C477C4")
 
     private static Class<?> sActionClass;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.098 -0400", hash_original_method = "C5E602F1D3BE8ADC996D5391233EEC50", hash_generated_method = "43E9DA2AA405253A2FF6646B931467B3")
     
 public static void addBigPictureStyle(NotificationBuilderWithBuilderAccessor b,
@@ -358,16 +368,19 @@ public static void addBigPictureStyle(NotificationBuilderWithBuilderAccessor b,
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void addAction(NotificationCompatBase.Action action) {
             mActionExtrasList.add(writeActionAndGetExtras(b, action));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Notification.Builder getBuilder() {
             return b;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public Notification build() {
             Notification notif = b.build();
             // Merge in developer provided extras, but let the values already set
@@ -392,6 +405,7 @@ public static void addBigPictureStyle(NotificationBuilderWithBuilderAccessor b,
 
     static final String EXTRA_LOCAL_ONLY = "android.support.localOnly";
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.276 -0400", hash_original_method = "1442CF7E51F5897352BF3C9DEA4654D0", hash_generated_method = "4C7FA016913AF0C3CC7B3873E49D33A1")
     
 private static Bundle getBundleForAction(NotificationCompatBase.Action action) {
@@ -405,6 +419,7 @@ private static Bundle getBundleForAction(NotificationCompatBase.Action action) {
         return bundle;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.228 -0400", hash_original_method = "91B6564DC29214497C27B2EC44551D6E", hash_generated_method = "E326AF3E36977BA044F5592766B8988D")
     
 private static boolean ensureActionReflectionReadyLocked() {
@@ -447,6 +462,7 @@ public static ArrayList<Parcelable> getParcelableArrayListForActions(
         return parcelables;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.115 -0400", hash_original_method = "DC3E6123501FA77A3DCF0B1D09D4994D", hash_generated_method = "9B90D7CF8807E34EA7664B7315E83269")
     
 public static void addInboxStyle(NotificationBuilderWithBuilderAccessor b,
@@ -462,12 +478,14 @@ public static void addInboxStyle(NotificationBuilderWithBuilderAccessor b,
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.306 -0400", hash_original_method = "070DFD51371A926562DA1461340A16B6", hash_generated_method = "31AEB8399E1FB4045219FB4937B1DEC9")
     
 public static String getSortKey(Notification n) {
         return getExtras(n).getString(EXTRA_SORT_KEY);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.216 -0400", hash_original_method = "B18FEE410310D887E7186BBE669BDADD", hash_generated_method = "0B1AFF2CF25F78ADC2E47159A4B07813")
     
 private static Object[] getActionObjectsLocked(Notification notif) {
@@ -489,6 +507,7 @@ private static Object[] getActionObjectsLocked(Notification notif) {
     static final String EXTRA_ACTION_EXTRAS = "android.support.actionExtras";
 
     /** Return an SparseArray for action extras or null if none was needed. */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.129 -0400", hash_original_method = "D0B01D5997B64F410F6DB437DA16E0A9", hash_generated_method = "02AEE9EC41D576D596F5FD26993DF478")
     
 public static SparseArray<Bundle> buildActionExtrasMap(List<Bundle> actionExtrasList) {
@@ -505,6 +524,7 @@ public static SparseArray<Bundle> buildActionExtrasMap(List<Bundle> actionExtras
         return actionExtrasMap;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.285 -0400", hash_original_method = "33DD0FF7A2F19381E1BBF125A832E960", hash_generated_method = "73F4A6B710B7FB24CA075C221F2F6B92")
     
 public static boolean getLocalOnly(Notification notif) {
@@ -547,6 +567,7 @@ public static NotificationCompatBase.Action readAction(
 
     static final String EXTRA_GROUP_KEY = "android.support.groupKey";
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.173 -0400", hash_original_method = "1F946ABCBB73FA07566B1C20F2C04B08", hash_generated_method = "9B5297AE79ABB97367E27B6D9FC96218")
     
 public static Bundle writeActionAndGetExtras(
@@ -563,6 +584,7 @@ public static Bundle writeActionAndGetExtras(
 
     private static boolean sExtrasFieldAccessFailed;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.077 -0400", hash_original_method = "DAEA3448DD96537F837E7F732D56D054", hash_generated_method = "BF2D571572EA72DC9D4B99597CDED675")
     
 public static void addBigTextStyle(NotificationBuilderWithBuilderAccessor b,

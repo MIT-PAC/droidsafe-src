@@ -751,6 +751,7 @@ public DERObject toASN1Object()
      * @param inOrder if true the order of both X509 names must be the same,
      * as well as the values associated with each element.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.952 -0500", hash_original_method = "280DBAE44A81315C42DC75BD60909480", hash_generated_method = "9521315A265A3D7B1BDAA93659BA6D02")
     
 public boolean equals(Object obj, boolean inOrder)

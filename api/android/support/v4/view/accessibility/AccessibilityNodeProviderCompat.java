@@ -37,6 +37,7 @@ public class AccessibilityNodeProviderCompat {
     }
 
     static class AccessibilityNodeProviderStubImpl implements AccessibilityNodeProviderImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object newAccessibilityNodeProviderBridge(AccessibilityNodeProviderCompat compat) {
             return null;
@@ -44,18 +45,21 @@ public class AccessibilityNodeProviderCompat {
     }
 
     static class AccessibilityNodeProviderJellyBeanImpl extends AccessibilityNodeProviderStubImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object newAccessibilityNodeProviderBridge(
                 final AccessibilityNodeProviderCompat compat) {
             return AccessibilityNodeProviderCompatJellyBean.newAccessibilityNodeProviderBridge(
                     new AccessibilityNodeProviderCompatJellyBean.AccessibilityNodeInfoBridge() {
-                        @Override
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override
                         public boolean performAction(int virtualViewId, int action,
                                 Bundle arguments) {
                             return compat.performAction(virtualViewId, action, arguments);
                         }
 
-                        @Override
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override
                         public List<Object> findAccessibilityNodeInfosByText(
                                             String text, int virtualViewId) {
                             List<AccessibilityNodeInfoCompat> compatInfos =
@@ -69,7 +73,8 @@ public class AccessibilityNodeProviderCompat {
                             return infos;
                         }
 
-                        @Override
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override
                         public Object createAccessibilityNodeInfo(
                                 int virtualViewId) {
                             final AccessibilityNodeInfoCompat compatInfo = compat
@@ -85,18 +90,21 @@ public class AccessibilityNodeProviderCompat {
     }
 
     static class AccessibilityNodeProviderKitKatImpl extends AccessibilityNodeProviderStubImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object newAccessibilityNodeProviderBridge(
                 final AccessibilityNodeProviderCompat compat) {
             return AccessibilityNodeProviderCompatKitKat.newAccessibilityNodeProviderBridge(
                     new AccessibilityNodeProviderCompatKitKat.AccessibilityNodeInfoBridge() {
-                        @Override
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override
                         public boolean performAction(
                                 int virtualViewId, int action, Bundle arguments) {
                             return compat.performAction(virtualViewId, action, arguments);
                         }
 
-                        @Override
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override
                         public List<Object> findAccessibilityNodeInfosByText(
                                 String text, int virtualViewId) {
                             List<AccessibilityNodeInfoCompat> compatInfos =
@@ -110,7 +118,8 @@ public class AccessibilityNodeProviderCompat {
                             return infos;
                         }
 
-                        @Override
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override
                         public Object createAccessibilityNodeInfo(int virtualViewId) {
                             final AccessibilityNodeInfoCompat compatInfo =
                                     compat.createAccessibilityNodeInfo(virtualViewId);
@@ -121,7 +130,8 @@ public class AccessibilityNodeProviderCompat {
                             }
                         }
 
-                        @Override
+                        @DSSafe(DSCat.SAFE_LIST)
+            @Override
                         public Object findFocus(int focus) {
                             final AccessibilityNodeInfoCompat compatInfo = compat.findFocus(focus);
                             if (compatInfo == null) {
@@ -135,10 +145,8 @@ public class AccessibilityNodeProviderCompat {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.618 -0400", hash_original_field = "48629E1EF59C7AC3C27FEDA4F322ABF0", hash_generated_field = "CE1E18E5EA07069A732C13416453E5C0")
 
-
     private static  AccessibilityNodeProviderImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.620 -0400", hash_original_field = "CE4A25A5FCA68A13DF0B738C2E4F0931", hash_generated_field = "97E0C8F5D54B0146976916141F3ABC8E")
-
 
     private  Object mProvider;
 
@@ -176,6 +184,7 @@ public AccessibilityNodeProviderCompat(Object provider) {
     /**
      * @return The wrapped {@link android.view.accessibility.AccessibilityNodeProvider}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.629 -0400", hash_original_method = "1A780E2925A8445EDC44EDD31624C667", hash_generated_method = "19AF098890749E7BDD93C8A964CD775E")
         
 public Object getProvider() {
@@ -204,6 +213,7 @@ public Object getProvider() {
      *
      * @see AccessibilityNodeInfoCompat
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.632 -0400", hash_original_method = "DB5C1904AB5A686019BFA23425D0697D", hash_generated_method = "693BE92A77E07C3BB3E8D7299DD58291")
         
 public AccessibilityNodeInfoCompat createAccessibilityNodeInfo(int virtualViewId) {
@@ -223,6 +233,7 @@ public AccessibilityNodeInfoCompat createAccessibilityNodeInfo(int virtualViewId
      * @see #createAccessibilityNodeInfo(int)
      * @see AccessibilityNodeInfoCompat
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.635 -0400", hash_original_method = "7E74F335A2D5DD213B9A800F16F5C8B8", hash_generated_method = "923DF7BCA2BC291182E703183FAAB2BD")
         
 public boolean performAction(int virtualViewId, int action, Bundle arguments) {
@@ -243,6 +254,7 @@ public boolean performAction(int virtualViewId, int action, Bundle arguments) {
      * @see #createAccessibilityNodeInfo(int)
      * @see AccessibilityNodeInfoCompat
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.639 -0400", hash_original_method = "CEBBD190AE53E7A0E938AB0B13044DF6", hash_generated_method = "352A8A56066C5A16BCB2AF4DD3D9A95F")
         
 public List<AccessibilityNodeInfoCompat> findAccessibilityNodeInfosByText(String text,
@@ -261,6 +273,7 @@ public List<AccessibilityNodeInfoCompat> findAccessibilityNodeInfosByText(String
      * @see AccessibilityNodeInfoCompat#FOCUS_INPUT
      * @see AccessibilityNodeInfoCompat#FOCUS_ACCESSIBILITY
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.642 -0400", hash_original_method = "F4E72E3F713928304060FBB2F64396EC", hash_generated_method = "714B6A4D92ECF188588E3752E8CE82E3")
         
 public AccessibilityNodeInfoCompat findFocus(int focus) {

@@ -334,6 +334,7 @@ PositionMetadata getFlattenedPos(final ExpandableListPosition pos) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.777 -0500", hash_original_method = "DAE4954D9EDE366A718556293A5AA5D3", hash_generated_method = "DE28B911F155222C0193C0AD581248C1")
     
 @Override
@@ -341,6 +342,7 @@ PositionMetadata getFlattenedPos(final ExpandableListPosition pos) {
         return mExpandableListAdapter.areAllItemsEnabled();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.780 -0500", hash_original_method = "0084AC4844BFD434CBA804E2DF22BA27", hash_generated_method = "7432A7A6BA74BE172448AF50DF9AFE19")
     
 @Override
@@ -788,6 +790,7 @@ void setExpandedGroupMetadataList(ArrayList<GroupMetadata> expandedGroupMetadata
         refreshExpGroupMetadataList(true, false);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.825 -0500", hash_original_method = "DF256FE26F67ED917C946C2E9410F027", hash_generated_method = "9D851244A11EC8F22F920F089137062E")
     
 @Override
@@ -936,7 +939,7 @@ static GroupMetadata obtain(int flPos, int lastChildFlPos, int gPos, long gId) {
         public static final Parcelable.Creator<GroupMetadata> CREATOR =
                 new Parcelable.Creator<GroupMetadata>() {
             
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.862 -0500", hash_original_method = "7666142641B123E4C50AF29F73470D4C", hash_generated_method = "EC2ECA427037B9F9CB737317DAE26498")
             
 public GroupMetadata createFromParcel(Parcel in) {

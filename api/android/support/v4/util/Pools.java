@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.util;
-
 
 /**
  * Helper class for crating pools of objects. An example use looks like this:
@@ -99,6 +97,7 @@ private Pools() {
             mPool = new Object[maxPoolSize];
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         @SuppressWarnings("unchecked")
         public T acquire() {
@@ -112,6 +111,7 @@ private Pools() {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean release(T instance) {
             if (isInPool(instance)) {
@@ -125,6 +125,7 @@ private Pools() {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private boolean isInPool(T instance) {
             for (int i = 0; i < mPoolSize; i++) {
                 if (mPool[i] == instance) {
@@ -154,6 +155,7 @@ private Pools() {
             super(maxPoolSize);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public T acquire() {
             synchronized (mLock) {
@@ -161,6 +163,7 @@ private Pools() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean release(T element) {
             synchronized (mLock) {

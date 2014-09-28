@@ -31,17 +31,14 @@ public class ZipEntry implements ZipConstants, Cloneable {
     String comment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.857 -0400", hash_original_field = "478CA1ABD1000352F0D3B41DF1BC279C", hash_generated_field = "478CA1ABD1000352F0D3B41DF1BC279C")
 
-
     long compressedSize = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.857 -0400", hash_original_field = "FD3FB5730AEB4A6C989707CB73029195", hash_generated_field = "FD3FB5730AEB4A6C989707CB73029195")
-
 
     long crc = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.858 -0400", hash_original_field = "A9A882B5A3A733E9894435C866426B82", hash_generated_field = "A9A882B5A3A733E9894435C866426B82")
 
     long size = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.858 -0400", hash_original_field = "42BA978FE70CA4813B7E014BB946F0B0", hash_generated_field = "42BA978FE70CA4813B7E014BB946F0B0")
-
 
     int compressionMethod = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:57.858 -0400", hash_original_field = "83E94A8F4FE01AB901FF6388E2A539CB", hash_generated_field = "83E94A8F4FE01AB901FF6388E2A539CB")
@@ -234,6 +231,7 @@ public int getMethod() {
      *
      * @return the entry name.
      */
+    @DSSource({DSSourceKind.FILE})
     @DSSafe(DSCat.UTIL_FUNCTION)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.325 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")

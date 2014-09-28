@@ -301,7 +301,7 @@ public OutputStream getOutputStream() {
         }
 
         @DSSource({DSSourceKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.875 -0500", hash_original_method = "A1D8D948EA118F9A15401118B0635D27", hash_generated_method = "7190EA32ECAA3028792F674EC9A78DCA")
         
 @Override
@@ -377,7 +377,7 @@ public OutputStream getOutputStream() {
         }
 
         @DSSink({DSSinkKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.892 -0500", hash_original_method = "873021528A0C471EBDB778DCC5A89FEF", hash_generated_method = "75081660C8BCEE2C6DE095A6F5387D78")
         
 @Override

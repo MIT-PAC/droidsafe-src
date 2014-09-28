@@ -25,12 +25,14 @@ import android.view.View;
  * KitKat-specific View API implementation.
  */
 public class ViewCompatKitKat {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.150 -0400", hash_original_method = "13570B28555DF0A05A3B0BC6070F61D4", hash_generated_method = "4C4E67A2A4C855D54806ED43FE2C4405")
     
 public static int getAccessibilityLiveRegion(View view) {
         return view.getAccessibilityLiveRegion();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.155 -0400", hash_original_method = "A41B94F81A7AAE6E5AE7D8C6B1D03DBA", hash_generated_method = "8B3CC1337C2FC576FAC7446EF3EDDDE2")
     
 public static void setAccessibilityLiveRegion(View view, int mode) {

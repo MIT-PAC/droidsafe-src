@@ -461,6 +461,7 @@ public boolean hasStableIds() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.822 -0500", hash_original_method = "53D7DB97161C41CC976317DC7E27F456", hash_generated_method = "B5A996F6CAD1AF368697CFFC7FD81B30")
     
 public boolean isEmpty() {

@@ -83,7 +83,7 @@ public int read(byte[] b, int off, int len) throws IOException
     }
 
     @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.261 -0500", hash_original_method = "07E101CE9B272EF565A5C01515093572", hash_generated_method = "EAB34531997E05CBD874F4E2A14601F2")
     
 public int read()

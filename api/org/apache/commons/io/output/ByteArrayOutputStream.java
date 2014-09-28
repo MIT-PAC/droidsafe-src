@@ -80,6 +80,7 @@ public class ByteArrayOutputStream extends OutputStream {
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.026 -0400", hash_original_method = "1EFBD86CE1A9FBA805C7B5FAEF89262F", hash_generated_method = "563B43F3A288F998596DEA7DE50FFF93")
     
 public static InputStream toBufferedInputStream(InputStream input)
@@ -139,6 +140,7 @@ public ByteArrayOutputStream(int size) {
      *
      * @param newcount  the size of the buffer if one is created
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.020 -0400", hash_original_method = "50E20DF9BFC1ED04B1C83DE63D7D9AAA", hash_generated_method = "1D9F488776202C64DD0494047971780E")
     
 private void needNewBuffer(int newcount) {
@@ -302,6 +304,8 @@ public synchronized void reset() {
      * @throws IOException if an I/O error occurs, such as if the stream is closed
      * @see java.io.ByteArrayOutputStream#writeTo(OutputStream)
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.025 -0400", hash_original_method = "2C0F3D6FFED876F2881377B8BBDD2213", hash_generated_method = "5DEAFCD23726202EB27453ED04333FE7")
     
 public synchronized void writeTo(OutputStream out) throws IOException {
@@ -326,6 +330,7 @@ public synchronized void writeTo(OutputStream out) throws IOException {
      * @see #reset()
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.026 -0400", hash_original_method = "09C3ED78BB694DA1C6BDA9FC224ED162", hash_generated_method = "389FC7B1F98DCDA2BCABEA23073620DF")
     
 private InputStream toBufferedInputStream() {
@@ -352,6 +357,7 @@ private InputStream toBufferedInputStream() {
      * @return the current contents of this output stream, as a byte array
      * @see java.io.ByteArrayOutputStream#toByteArray()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.027 -0400", hash_original_method = "CFE8F4A52457DD3D62650244F80C911C", hash_generated_method = "35ED4C0B3756A6BCA894AB80F611F4BE")
     
 public synchronized byte[] toByteArray() {

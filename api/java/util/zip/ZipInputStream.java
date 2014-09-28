@@ -318,6 +318,7 @@ public ZipEntry getNextEntry() throws IOException {
      *
      * @return the number of bytes read
      */
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 15:07:29.150 -0500", hash_original_method = "08559147F9D27369068888CD58E1DEEA", hash_generated_method = "0D4ED54206A2427810FBE423FEB86F58")
     @DSSpec(DSCat.IO)
 @Override

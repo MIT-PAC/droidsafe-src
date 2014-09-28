@@ -89,6 +89,7 @@ public void
         owner.hangup(this);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.006 -0500", hash_original_method = "A7B99D81B12619E0B5BB79286D622078", hash_generated_method = "4A7059719275EFBA493EA97F0FA75C18")
     

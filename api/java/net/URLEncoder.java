@@ -17,6 +17,7 @@ public class URLEncoder {
      *
      * @deprecated use {@link #encode(String, String)} instead.
      */
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("Utility function")
     @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.246 -0500", hash_original_method = "F3C1C4CFF9BE8725C4E7F6E8F952E701", hash_generated_method = "1A209DE22072754E840116F302F6A63F")
@@ -34,6 +35,7 @@ public class URLEncoder {
     /**
      * Encodes {@code s} using the {@link Charset} named by {@code charsetName}.
      */
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("Utility function")
     @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.249 -0500", hash_original_method = "D7709200003A991BD062A99EB5CFA293", hash_generated_method = "3CD8462111730A87D2D8B52FAAF90629")

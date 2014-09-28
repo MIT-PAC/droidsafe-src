@@ -113,7 +113,7 @@ WakeLock(int flags, String tag)
          * @param value true for ref counted, false for not ref counted.
          */
         @DSComment("Power management")
-        @DSSpec(DSCat.DEVICE)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.657 -0500", hash_original_method = "C9C09C089F97F5128A15BBE86111A3BF", hash_generated_method = "6748BB7750DA0EB9305F3FBD73636CFB")
         
 public void setReferenceCounted(boolean value)

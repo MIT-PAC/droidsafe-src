@@ -38,6 +38,7 @@ public class MenuCompat {
      * Interface implementation that doesn't use anything about v4 APIs.
      */
     static class BaseMenuVersionImpl implements MenuVersionImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:30.547 -0500", hash_original_method = "7F014EF22317C05910A706092D499BCA", hash_generated_method = "89BB310A989C6FF93C741B0EF53FBAE6")
         
 @Override
@@ -50,6 +51,7 @@ public class MenuCompat {
      * Interface implementation for devices with at least v11 APIs.
      */
     static class HoneycombMenuVersionImpl implements MenuVersionImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:30.549 -0500", hash_original_method = "F1D99359C312DFE7F282494BE8BB96CD", hash_generated_method = "EA0914BF60B1334207BB9253E2344C05")
         
 @Override

@@ -56,8 +56,8 @@ private static ClassLoader createSystemClassLoader() {
      * start the application.
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.701 -0500", hash_original_method = "FA9BEFC0F6AFD8951E8DF1C896E1649A", hash_generated_method = "8DD818B5EED80F9656CDF38361BE49F8")
     
 public static ClassLoader getSystemClassLoader() {
@@ -93,7 +93,8 @@ public static URL getSystemResource(String resName) {
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.706 -0500", hash_original_method = "E1E9E39B1CF0FA83BA6E8BECA300CA49", hash_generated_method = "577320E4BD146E09A173164C148C8FEB")
     
 public static Enumeration<URL> getSystemResources(String resName) throws IOException {
@@ -369,7 +370,8 @@ protected final Class<?> findSystemClass(String className) throws ClassNotFoundE
      *
      * @return this class loader's parent or {@code null}.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.739 -0500", hash_original_method = "C41AD9124585D3AEE85EC6C2F13127B8", hash_generated_method = "ED57FFEBF397EEE0D2DCFDFD8C2655BA")
     
 public final ClassLoader getParent() {
@@ -413,7 +415,8 @@ public URL getResource(String resName) {
      * @throws IOException
      *             if an I/O error occurs.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.744 -0500", hash_original_method = "A1AC2BF370A36ABB9B1EEF5C25CA87C9", hash_generated_method = "7CDD0CBB2F959FF3262CA4A39BA2D2D4")
     
 @SuppressWarnings("unchecked")
@@ -480,7 +483,7 @@ public InputStream getResourceAsStream(String resName) {
      *             if the class can not be found.
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.SPEC_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.750 -0500", hash_original_method = "B81E0F32DC432F0B3276D4B4E41F12D0", hash_generated_method = "2C14505DFAF9AA253FE895FDE3C6A4AA")
     
@@ -515,7 +518,7 @@ public Class<?> loadClass(String className) throws ClassNotFoundException {
      *             if the class can not be found.
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.SPEC_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.752 -0500", hash_original_method = "733CC3AC678FE7D7ABDA5F1E7A258EB2", hash_generated_method = "7E554DAE64821C187FBA4D370660E9DF")
     
@@ -814,7 +817,7 @@ public boolean hasMoreElements() {
         return first.hasMoreElements() || second.hasMoreElements();
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.795 -0500", hash_original_method = "CE040DB5C31CF9231E1B46430147AEAF", hash_generated_method = "F9B4890ADFD1503BAD6CB70E3C91AEFC")
     
 public URL nextElement() {

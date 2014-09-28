@@ -177,6 +177,7 @@ public static void close(URLConnection conn) {
      * 
      * @param input  the Reader to close, may be null or already closed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.168 -0400", hash_original_method = "232680B5301C8158270ADA92E04C39C4", hash_generated_method = "5A8C5D1E82B8691A319B245817FF6BFD")
     
 public static void closeQuietly(Reader input) {
@@ -205,6 +206,7 @@ public static void closeQuietly(Reader input) {
      *
      * @param output  the Writer to close, may be null or already closed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.169 -0400", hash_original_method = "C5F8171BF1EE5B2554C3CC64733A6844", hash_generated_method = "FEDE4B3AD2594F868D6B099A50206689")
     
 public static void closeQuietly(Writer output) {
@@ -234,6 +236,7 @@ public static void closeQuietly(Writer output) {
      *
      * @param input  the InputStream to close, may be null or already closed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.169 -0400", hash_original_method = "4161DA1572D3FF683FDF559F015AB4CB", hash_generated_method = "F835192EEC6F29608BB8D8D69577815A")
     
 public static void closeQuietly(InputStream input) {
@@ -264,6 +267,7 @@ public static void closeQuietly(InputStream input) {
      *
      * @param output  the OutputStream to close, may be null or already closed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.170 -0400", hash_original_method = "8F2C3A4AA890757A95A365FF6CBC1E6D", hash_generated_method = "AF5191F984291A6D7E5261EAEFF98695")
     
 public static void closeQuietly(OutputStream output) {
@@ -293,6 +297,7 @@ public static void closeQuietly(OutputStream output) {
      * @param closeable the object to close, may be null or already closed
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.170 -0400", hash_original_method = "73BBADD6123B2C37CA1BCFDE147E24F3", hash_generated_method = "C228FDA028D86F88E81C98518E609E52")
     
 public static void closeQuietly(Closeable closeable) {
@@ -328,6 +333,7 @@ public static void closeQuietly(Closeable closeable) {
      * @param sock the Socket to close, may be null or already closed
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.171 -0400", hash_original_method = "E704151133D6EE8F3E003849CB5C764B", hash_generated_method = "61535B6923E69AEA674E9A6B18CF9FF1")
     
 public static void closeQuietly(Socket sock){
@@ -363,6 +369,7 @@ public static void closeQuietly(Socket sock){
      * @param selector the Selector to close, may be null or already closed
      * @since 2.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.171 -0400", hash_original_method = "B11DB8AD300BE24FEFBE348AAB9ECF4A", hash_generated_method = "AFCE4BD8493E285C62E3D6E31166EB0A")
     
 public static void closeQuietly(Selector selector){
@@ -398,6 +405,7 @@ public static void closeQuietly(Selector selector){
      * @param sock the ServerSocket to close, may be null or already closed
      * @since 2.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.172 -0400", hash_original_method = "9CB5901A5DC93B5D194C42C2404EBA72", hash_generated_method = "A504027CD9E8468231CD4B1996E945D2")
     
 public static void closeQuietly(ServerSocket sock){
@@ -465,6 +473,8 @@ public static BufferedReader toBufferedReader(Reader reader) {
      * @throws NullPointerException if the input is null
      * @throws IOException if an I/O error occurs
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.174 -0400", hash_original_method = "A945BA78507B2858D4067FE8A778400D", hash_generated_method = "C1E5EEA7D61B02119B90AA417B51ABB8")
     
 public static byte[] toByteArray(InputStream input) throws IOException {
@@ -489,6 +499,8 @@ public static byte[] toByteArray(InputStream input) throws IOException {
      * @see IOUtils#toByteArray(java.io.InputStream, int)
      * @since 2.1
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.174 -0400", hash_original_method = "F0F3B0B50363444C0C188F5DFEB2049C", hash_generated_method = "98F74C58B3DAC0F539896E983C339317")
     
 public static byte[] toByteArray(InputStream input, long size) throws IOException {
@@ -511,6 +523,8 @@ public static byte[] toByteArray(InputStream input, long size) throws IOExceptio
      * @throws IllegalArgumentException if size is less than zero
      * @since 2.1
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.175 -0400", hash_original_method = "6344429FD9A8D1E16E99E70D8423C5F0", hash_generated_method = "B98E53D07D79272D48F505D59B9782B6")
     
 public static byte[] toByteArray(InputStream input, int size) throws IOException {
@@ -550,6 +564,8 @@ public static byte[] toByteArray(InputStream input, int size) throws IOException
      * @throws NullPointerException if the input is null
      * @throws IOException if an I/O error occurs
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.175 -0400", hash_original_method = "CE23EAC8D9C52BC01B585ADBA21C19FD", hash_generated_method = "F9EE0D3E1ECCCD31DB5B99B5C0CE8D24")
     
 public static byte[] toByteArray(Reader input) throws IOException {
@@ -570,6 +586,8 @@ public static byte[] toByteArray(Reader input) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 2.3
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.176 -0400", hash_original_method = "1A624863B23DBA94507E174DAA65467A", hash_generated_method = "D2511D121D084D09327B37849266F3A2")
     
 public static byte[] toByteArray(Reader input, Charset encoding) throws IOException {
@@ -598,6 +616,8 @@ public static byte[] toByteArray(Reader input, Charset encoding) throws IOExcept
      *             supported.
      * @since 1.1
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.176 -0400", hash_original_method = "D1E5A8A2D81359B888D828F7C77A46F0", hash_generated_method = "63F4257BD84ACD900B5E7ACB4A1EDF6F")
     
 public static byte[] toByteArray(Reader input, String encoding) throws IOException {
@@ -616,6 +636,8 @@ public static byte[] toByteArray(Reader input, String encoding) throws IOExcepti
      * @throws IOException if an I/O error occurs (never occurs)
      * @deprecated Use {@link String#getBytes()}
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.177 -0400", hash_original_method = "8C4090DBE54452BFE73E0845CBB322C3", hash_generated_method = "388726B4C26A7177D86E54BFF6409A5A")
     
 @Deprecated
@@ -635,6 +657,8 @@ public static byte[] toByteArray(Reader input, String encoding) throws IOExcepti
      *             if an I/O exception occurs
      * @since 2.4
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.177 -0400", hash_original_method = "FC7B978EE0A26C67A4BDA439F3CC27AC", hash_generated_method = "4C11E730871E3160CA9C54C34573C65F")
     
 public static byte[] toByteArray(URI uri) throws IOException {
@@ -653,6 +677,8 @@ public static byte[] toByteArray(URI uri) throws IOException {
      *             if an I/O exception occurs
      * @since 2.4
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.179 -0400", hash_original_method = "70E4F3C3FEAB5D0D9C0E284738BF962F", hash_generated_method = "074D0A761D757E520937CCF7F4BE2EC6")
     
 public static byte[] toByteArray(URL url) throws IOException {
@@ -676,6 +702,8 @@ public static byte[] toByteArray(URL url) throws IOException {
      *             if an I/O exception occurs
      * @since 2.4
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.179 -0400", hash_original_method = "38F0ADDE91764DCA3D134850D3845596", hash_generated_method = "A9C24215319B1904B9CD5B211E7C512D")
     
 public static byte[] toByteArray(URLConnection urlConn) throws IOException {
@@ -792,6 +820,7 @@ public static char[] toCharArray(Reader input) throws IOException {
      * @throws IOException if an I/O error occurs
      */
     
+    @DSSource({DSSourceKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.182 -0400", hash_original_method = "19B914B7C824D02A5C6108E11D6A0460", hash_generated_method = "9EF4DE76442F72EC59DA5F3E6F972B88")
     
@@ -897,6 +926,7 @@ public static String toString(URI uri) throws IOException {
      * @since 2.3.
      */
     
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.185 -0400", hash_original_method = "592E1D49822A2E8EC5684EEFD3300800", hash_generated_method = "3BD1521DDDC437D54AE7B819B7EC8CDC")
     
@@ -919,6 +949,7 @@ public static String toString(URI uri, Charset encoding) throws IOException {
      * @since 2.1
      */
     
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.185 -0400", hash_original_method = "00D81E8E10F2D946A5DDFFF7E3A69119", hash_generated_method = "A78AED6B3BF2923F24872E48708F87FB")
     
@@ -936,6 +967,7 @@ public static String toString(URI uri, String encoding) throws IOException {
      * @since 2.1
      */
     
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.186 -0400", hash_original_method = "2C67C3BCE4EC0DE1CC84D2039D0893CF", hash_generated_method = "6B8D61C2DEB4C1798A3E84FEF3115BEE")
     
@@ -955,6 +987,7 @@ public static String toString(URL url) throws IOException {
      * @since 2.3
      */
     
+    @DSSource({DSSourceKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.186 -0400", hash_original_method = "DDA974D994A98517522781E48387F448", hash_generated_method = "1686848766FE1B692A209C4625EB1817")
     
@@ -982,6 +1015,7 @@ public static String toString(URL url, Charset encoding) throws IOException {
      * @since 2.1
      */
     
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.187 -0400", hash_original_method = "9D5EF91D4BF7AC959A9D204440546D9E", hash_generated_method = "ABF3DFD480E33AA8B43340EB22AD5BB0")
     
@@ -1000,6 +1034,7 @@ public static String toString(URL url, String encoding) throws IOException {
      * @deprecated Use {@link String#String(byte[])}
      */
     
+    @DSSource({DSSourceKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.187 -0400", hash_original_method = "20839E86366C5233239C10AF83778159", hash_generated_method = "618FECFBF3501EDC582AAA04082CCB35")
     
@@ -1022,6 +1057,7 @@ public static String toString(URL url, String encoding) throws IOException {
      * @throws IOException if an I/O error occurs (never occurs)
      */
     
+    @DSSource({DSSourceKind.IO})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.188 -0400", hash_original_method = "7C391538556A6293A427C1DC577EC6A3", hash_generated_method = "ACF5C7254CAD9AC0659F72588706415F")
     
@@ -1044,6 +1080,8 @@ public static String toString(byte[] input, String encoding) throws IOException 
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.189 -0400", hash_original_method = "996B698723280386FF0BD2EC46551473", hash_generated_method = "2F25CF4B5E25E2F18EA070F4452DFA7B")
     
 public static List<String> readLines(InputStream input) throws IOException {
@@ -1064,6 +1102,8 @@ public static List<String> readLines(InputStream input) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 2.3
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.190 -0400", hash_original_method = "6D3CCC8EF89648AC9918DF80EBAAB674", hash_generated_method = "D2000B2588B4CDB225602F52EA7D25D8")
     
 public static List<String> readLines(InputStream input, Charset encoding) throws IOException {
@@ -1091,6 +1131,8 @@ public static List<String> readLines(InputStream input, Charset encoding) throws
      *             supported.
      * @since 1.1
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.191 -0400", hash_original_method = "37E18D6091DD86C4F55F7BB9AFCA20CB", hash_generated_method = "FAA93137DFB5245C7236F92D10A3457C")
     
 public static List<String> readLines(InputStream input, String encoding) throws IOException {
@@ -1110,6 +1152,8 @@ public static List<String> readLines(InputStream input, String encoding) throws 
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.191 -0400", hash_original_method = "63733D16D58DC994FE5AB34EB7F225B6", hash_generated_method = "9B1007311635D1B0D1CFC965C4A091B9")
     
 public static List<String> readLines(Reader input) throws IOException {
@@ -1152,6 +1196,7 @@ public static List<String> readLines(Reader input) throws IOException {
      * @throws IllegalArgumentException if the reader is null
      * @since 1.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.192 -0400", hash_original_method = "EBF44143E201F99F5CB192E50731B938", hash_generated_method = "5B0564DBAF66AFB95C332CD99C82976A")
     
 public static LineIterator lineIterator(Reader reader) {
@@ -1188,6 +1233,7 @@ public static LineIterator lineIterator(Reader reader) {
      * @throws IOException if an I/O error occurs, such as if the encoding is invalid
      * @since 2.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.193 -0400", hash_original_method = "B3B9E368796F1C40D050D8510A4BABD4", hash_generated_method = "8CF3528CA8617CE3E046BA20EDC96477")
     
 public static LineIterator lineIterator(InputStream input, Charset encoding) throws IOException {
@@ -1227,6 +1273,7 @@ public static LineIterator lineIterator(InputStream input, Charset encoding) thr
      *             supported.
      * @since 1.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.193 -0400", hash_original_method = "DBD1479BFE319919DFB52E91DBB023CE", hash_generated_method = "E7C1C0210BCF16642B7D482929096920")
     
 public static LineIterator lineIterator(InputStream input, String encoding) throws IOException {
@@ -1242,6 +1289,7 @@ public static LineIterator lineIterator(InputStream input, String encoding) thro
      * @return an input stream
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.194 -0400", hash_original_method = "8A5824D7D5A6A500513F1327DF553C3E", hash_generated_method = "D7286EF119EBFCC6BD22A16C8DC05097")
     
 public static InputStream toInputStream(CharSequence input) {
@@ -1257,6 +1305,7 @@ public static InputStream toInputStream(CharSequence input) {
      * @return an input stream
      * @since 2.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.194 -0400", hash_original_method = "73C7C4A2506CC28540996448D8A5BAD2", hash_generated_method = "EB433027E8636A4ABB63A7CE36545B4C")
     
 public static InputStream toInputStream(CharSequence input, Charset encoding) {
@@ -1279,6 +1328,7 @@ public static InputStream toInputStream(CharSequence input, Charset encoding) {
      *             supported.
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.195 -0400", hash_original_method = "FEE2CCE71110550EEC666328AF98244C", hash_generated_method = "25DF40C18132C33F38EC42BB976CAD7A")
     
 public static InputStream toInputStream(CharSequence input, String encoding) throws IOException {
@@ -1294,6 +1344,7 @@ public static InputStream toInputStream(CharSequence input, String encoding) thr
      * @return an input stream
      * @since 1.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.195 -0400", hash_original_method = "567AA28F7AE17CFA4EFEB7E99161964B", hash_generated_method = "51A905D1F70C25F8EFE59F9DDFF4FB91")
     
 public static InputStream toInputStream(String input) {
@@ -1309,6 +1360,7 @@ public static InputStream toInputStream(String input) {
      * @return an input stream
      * @since 2.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.196 -0400", hash_original_method = "F4C23A3AFAC9597BE94C0EF987E25145", hash_generated_method = "88B7967C47844A303B16F918A2BA120D")
     
 public static InputStream toInputStream(String input, Charset encoding) {
@@ -1331,6 +1383,7 @@ public static InputStream toInputStream(String input, Charset encoding) {
      *             supported.
      * @since 1.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.196 -0400", hash_original_method = "95E1997ED876C3EFBCA8CFB5348AD2D8", hash_generated_method = "239D91317D1BB114819FD0921C6687B1")
     
 public static InputStream toInputStream(String input, String encoding) throws IOException {
@@ -1350,6 +1403,8 @@ public static InputStream toInputStream(String input, String encoding) throws IO
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.197 -0400", hash_original_method = "01F55DE86873F7A8E331D7C2CFA100DA", hash_generated_method = "7D4C125741012AFAF97B05D2896C73D2")
     
 public static void write(byte[] data, OutputStream output)
@@ -1372,6 +1427,8 @@ public static void write(byte[] data, OutputStream output)
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.198 -0400", hash_original_method = "05C436BB542B289F3D2F0A3222C24FA1", hash_generated_method = "2C1D9B8913CA9E0BA226AD5743C3CFA6")
     
 public static void write(byte[] data, Writer output) throws IOException {
@@ -1392,6 +1449,8 @@ public static void write(byte[] data, Writer output) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 2.3
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.198 -0400", hash_original_method = "98533FA56F614FFD453B271EA267D04F", hash_generated_method = "2A9A6D814EAC4D8B34DB4E2013AF4535")
     
 public static void write(byte[] data, Writer output, Charset encoding) throws IOException {
@@ -1420,6 +1479,8 @@ public static void write(byte[] data, Writer output, Charset encoding) throws IO
      *             supported.
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.199 -0400", hash_original_method = "D79FF7AC014914E300A820EDBE93FD6B", hash_generated_method = "A813C4F64C215F262D3B5AF69B75C669")
     
 public static void write(byte[] data, Writer output, String encoding) throws IOException {
@@ -1439,6 +1500,8 @@ public static void write(byte[] data, Writer output, String encoding) throws IOE
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.199 -0400", hash_original_method = "3B9DBC9F4DEAB29046F607A2948952BF", hash_generated_method = "FF581AA731BCF697929EE517E6C3BE7C")
     
 public static void write(char[] data, Writer output) throws IOException {
@@ -1461,6 +1524,8 @@ public static void write(char[] data, Writer output) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.200 -0400", hash_original_method = "EAF9DECE809C5CC758C605698BD48294", hash_generated_method = "E4146B41C40A315963EEBE94B6976FAF")
     
 public static void write(char[] data, OutputStream output)
@@ -1483,6 +1548,8 @@ public static void write(char[] data, OutputStream output)
      * @throws IOException if an I/O error occurs
      * @since 2.3
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.200 -0400", hash_original_method = "264288EC2BB981063CA5F24C878D15FF", hash_generated_method = "5B58975E1A68EAEF38F61EC9B1C0C5F7")
     
 public static void write(char[] data, OutputStream output, Charset encoding) throws IOException {
@@ -1512,6 +1579,8 @@ public static void write(char[] data, OutputStream output, Charset encoding) thr
      *             supported.
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.201 -0400", hash_original_method = "F1930F8DEEE9C6B058F417C92705E64D", hash_generated_method = "8A75AADFD2AD314DDB09352FB91782AB")
     
 public static void write(char[] data, OutputStream output, String encoding)
@@ -1530,6 +1599,8 @@ public static void write(char[] data, OutputStream output, String encoding)
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.202 -0400", hash_original_method = "50FB2164D94CD612AB121714AF75AB19", hash_generated_method = "27DC2076F8C40F83A84E857BDC6603B7")
     
 public static void write(CharSequence data, Writer output) throws IOException {
@@ -1551,6 +1622,8 @@ public static void write(CharSequence data, Writer output) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.202 -0400", hash_original_method = "B1F0438BD54B581897224BE8716B9505", hash_generated_method = "163A46FDA44147812F2638B22F9F27CD")
     
 public static void write(CharSequence data, OutputStream output)
@@ -1571,6 +1644,8 @@ public static void write(CharSequence data, OutputStream output)
      * @throws IOException if an I/O error occurs
      * @since 2.3
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.203 -0400", hash_original_method = "F5A4404A69D4EAED59607B7439DA8548", hash_generated_method = "4976AE6FC10FED084C10A5B1E95EFFD1")
     
 public static void write(CharSequence data, OutputStream output, Charset encoding) throws IOException {
@@ -1598,6 +1673,8 @@ public static void write(CharSequence data, OutputStream output, Charset encodin
      *             supported.
      * @since 2.0
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.203 -0400", hash_original_method = "B0B61C371F0E971C8A88FC67B6DD5D66", hash_generated_method = "446232F14170B7FDBF2012E530E34A62")
     
 public static void write(CharSequence data, OutputStream output, String encoding) throws IOException {
@@ -1615,6 +1692,8 @@ public static void write(CharSequence data, OutputStream output, String encoding
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.204 -0400", hash_original_method = "6867A77D41A886802B42591DA48B7361", hash_generated_method = "3011AA7FB8F99A2498D90DF45E84B3A1")
     
 public static void write(String data, Writer output) throws IOException {
@@ -1636,6 +1715,8 @@ public static void write(String data, Writer output) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.204 -0400", hash_original_method = "0DF43A3EA77672EA2DC20BB634C14CB3", hash_generated_method = "B14D5FA9692C1C648B2468EF136902E2")
     
 public static void write(String data, OutputStream output)
@@ -1656,6 +1737,8 @@ public static void write(String data, OutputStream output)
      * @throws IOException if an I/O error occurs
      * @since 2.3
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.205 -0400", hash_original_method = "66CE2A3503660DD2C5D8680CABD5A38A", hash_generated_method = "08632DB0F0D130B4A520FE814530CAA2")
     
 public static void write(String data, OutputStream output, Charset encoding) throws IOException {
@@ -1683,6 +1766,8 @@ public static void write(String data, OutputStream output, Charset encoding) thr
      *             supported.
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.206 -0400", hash_original_method = "04E624A4C95896616025E68729F499BB", hash_generated_method = "AF3BD0E70DFEE748BB2CE7CF1EBB7A00")
     
 public static void write(String data, OutputStream output, String encoding)
@@ -1702,6 +1787,8 @@ public static void write(String data, OutputStream output, String encoding)
      * @since 1.1
      * @deprecated replaced by write(CharSequence, Writer)
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.206 -0400", hash_original_method = "7D1BEF9DACBBFB1337ED15541908C9EE", hash_generated_method = "C7E2057BD82A81E836E06B912DC68985")
     
 @Deprecated
@@ -1726,6 +1813,8 @@ public static void write(String data, OutputStream output, String encoding)
      * @since 1.1
      * @deprecated replaced by write(CharSequence, OutputStream)
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.207 -0400", hash_original_method = "8FE46726CB2FA0B29F773595160DCBA7", hash_generated_method = "6168978C5728417381A43530A0E1E316")
     
 @Deprecated
@@ -1754,6 +1843,8 @@ public static void write(String data, OutputStream output, String encoding)
      * @since 1.1
      * @deprecated replaced by write(CharSequence, OutputStream, String)
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.207 -0400", hash_original_method = "292BA11E1205DFEE92CA8E2406CE7840", hash_generated_method = "03E377A2E3B0C1CC2D4B48E57467D0E8")
     
 @Deprecated
@@ -1777,6 +1868,8 @@ public static void write(String data, OutputStream output, String encoding)
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.208 -0400", hash_original_method = "D1B0FD158ADFC92BBFD1BB0730BB198D", hash_generated_method = "E7B33B2FD022D8D318A01B2F8DFC1302")
     
 public static void writeLines(Collection<?> lines, String lineEnding,
@@ -1797,6 +1890,8 @@ public static void writeLines(Collection<?> lines, String lineEnding,
      * @throws IOException if an I/O error occurs
      * @since 2.3
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.209 -0400", hash_original_method = "DCBEE465DD3926071830F127744C5E49", hash_generated_method = "1C63B0B77DDC92AC97F47BC440ED9AC2")
     
 public static void writeLines(Collection<?> lines, String lineEnding, OutputStream output, Charset encoding)
@@ -1835,6 +1930,8 @@ public static void writeLines(Collection<?> lines, String lineEnding, OutputStre
      *             supported.
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.210 -0400", hash_original_method = "6FB0E6644E3E04B695B0C3D04EAFF7F6", hash_generated_method = "A31392A721E1E9DFE675D1960891A7E0")
     
 public static void writeLines(Collection<?> lines, String lineEnding,
@@ -1853,6 +1950,8 @@ public static void writeLines(Collection<?> lines, String lineEnding,
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.210 -0400", hash_original_method = "DDF70BA66008B66322E842B36D738270", hash_generated_method = "F390DFE8187C6D74B2BDC1F6273E2B10")
     
 public static void writeLines(Collection<?> lines, String lineEnding,
@@ -1892,6 +1991,7 @@ public static void writeLines(Collection<?> lines, String lineEnding,
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.211 -0400", hash_original_method = "7BE0FA92DD0CA68C870F3D19CEFD5D01", hash_generated_method = "AC43D648618F74D9245DE59CAED6C3EB")
     
 public static int copy(InputStream input, OutputStream output) throws IOException {
@@ -1918,6 +2018,7 @@ public static int copy(InputStream input, OutputStream output) throws IOExceptio
      * @throws IOException if an I/O error occurs
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.211 -0400", hash_original_method = "FFDA0658F38B93992347AA24F8CF54EB", hash_generated_method = "AB17B9290F2DBA750E17A40F1A23604A")
     
 public static long copyLarge(InputStream input, OutputStream output)
@@ -1941,6 +2042,7 @@ public static long copyLarge(InputStream input, OutputStream output)
      * @throws IOException if an I/O error occurs
      * @since 2.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.212 -0400", hash_original_method = "066F7EF0ED4C419E80BC64545B6A36C8", hash_generated_method = "434A6F336832B2A3901763B95116DFE7")
     
 public static long copyLarge(InputStream input, OutputStream output, byte[] buffer)
@@ -1973,6 +2075,7 @@ public static long copyLarge(InputStream input, OutputStream output, byte[] buff
      * @throws IOException if an I/O error occurs
      * @since 2.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.213 -0400", hash_original_method = "1AC02B5058B98909A6BDCA9065269370", hash_generated_method = "D41EE6BA2147B3C4926A1BFEC55DCF8F")
     
 public static long copyLarge(InputStream input, OutputStream output, long inputOffset, long length)
@@ -2000,6 +2103,7 @@ public static long copyLarge(InputStream input, OutputStream output, long inputO
      * @throws IOException if an I/O error occurs
      * @since 2.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.214 -0400", hash_original_method = "76F733626E55C37068A2041F429F0883", hash_generated_method = "7D242DF86685E2C7BC5DE097D7A8F9D8")
     
 public static long copyLarge(InputStream input, OutputStream output, 
@@ -2043,6 +2147,7 @@ public static long copyLarge(InputStream input, OutputStream output,
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.214 -0400", hash_original_method = "1923505F5331D7F2B193CF6ABE386543", hash_generated_method = "B24B2D3342FF99FF7848F3BE9162D3FD")
     
 public static void copy(InputStream input, Writer output)
@@ -2066,6 +2171,7 @@ public static void copy(InputStream input, Writer output)
      * @throws IOException if an I/O error occurs
      * @since 2.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.215 -0400", hash_original_method = "811C108C442CBA0CB09885B4F5878652", hash_generated_method = "3656CA93C961719B3EEF6E1C2E2964E0")
     
 public static void copy(InputStream input, Writer output, Charset encoding) throws IOException {
@@ -2095,6 +2201,7 @@ public static void copy(InputStream input, Writer output, Charset encoding) thro
      *             supported.
      * @since 1.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.215 -0400", hash_original_method = "9B2F474285DC99AF067464CE9F9B8977", hash_generated_method = "682D2435037A99C5E33FAB24274D9C14")
     
 public static void copy(InputStream input, Writer output, String encoding) throws IOException {
@@ -2121,6 +2228,7 @@ public static void copy(InputStream input, Writer output, String encoding) throw
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.216 -0400", hash_original_method = "9ED24C0A05D85F1F882765B3B0EF83C8", hash_generated_method = "6B70A6B1D71FBD9E35A9361A614DA870")
     
 public static int copy(Reader input, Writer output) throws IOException {
@@ -2146,6 +2254,7 @@ public static int copy(Reader input, Writer output) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.216 -0400", hash_original_method = "6DE25D24D583A893AB36A7DC5A502D6B", hash_generated_method = "8C5152CA44EA98B3ACD939128FB06E83")
     
 public static long copyLarge(Reader input, Writer output) throws IOException {
@@ -2167,6 +2276,7 @@ public static long copyLarge(Reader input, Writer output) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 2.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.217 -0400", hash_original_method = "E4779B97B7B6580D9606A600914DFEFD", hash_generated_method = "1E534746B10F4070E1DE8FE6469F054B")
     
 public static long copyLarge(Reader input, Writer output, char [] buffer) throws IOException {
@@ -2198,6 +2308,7 @@ public static long copyLarge(Reader input, Writer output, char [] buffer) throws
      * @throws IOException if an I/O error occurs
      * @since 2.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.218 -0400", hash_original_method = "141414E6AF7ADA689CC9FE46C3123A5F", hash_generated_method = "4310790A02ED8C15A0185C4F9B61BA94")
     
 public static long copyLarge(Reader input, Writer output, final long inputOffset, final long length)
@@ -2224,6 +2335,7 @@ public static long copyLarge(Reader input, Writer output, final long inputOffset
      * @throws IOException if an I/O error occurs
      * @since 2.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.218 -0400", hash_original_method = "8B8A830F7C70BB7BFDEF3AFD01FB8C27", hash_generated_method = "0DC04B8B7AB8E6E5E3D3252E6E10AEA4")
     
 public static long copyLarge(Reader input, Writer output, final long inputOffset, final long length, char [] buffer)
@@ -2270,6 +2382,7 @@ public static long copyLarge(Reader input, Writer output, final long inputOffset
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.219 -0400", hash_original_method = "D701174B4184512552C4BD9665F4A439", hash_generated_method = "6A69B26651C4726628FE5EF37C60AD07")
     
 public static void copy(Reader input, OutputStream output)
@@ -2300,6 +2413,7 @@ public static void copy(Reader input, OutputStream output)
      * @throws IOException if an I/O error occurs
      * @since 2.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.220 -0400", hash_original_method = "B0A7AF714E119782DBD121DDCED1E291", hash_generated_method = "13EE653DD88DBBC8701C05929BA29B7A")
     
 public static void copy(Reader input, OutputStream output, Charset encoding) throws IOException {
@@ -2336,6 +2450,7 @@ public static void copy(Reader input, OutputStream output, Charset encoding) thr
      *             supported.
      * @since 1.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.220 -0400", hash_original_method = "D19C9233D17ACE32162A211DADCF029A", hash_generated_method = "82288B893595D67A9FD0CD69DA2342AF")
     
 public static void copy(Reader input, OutputStream output, String encoding) throws IOException {
@@ -2358,6 +2473,7 @@ public static void copy(Reader input, OutputStream output, String encoding) thro
      * @throws NullPointerException if either input is null
      * @throws IOException if an I/O error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.221 -0400", hash_original_method = "4A800992C7207640FD66622294F7F61C", hash_generated_method = "7F9D886B9FFC59B6FABB98A7972F3809")
     
 public static boolean contentEquals(InputStream input1, InputStream input2)
@@ -2397,6 +2513,7 @@ public static boolean contentEquals(InputStream input1, InputStream input2)
      * @throws IOException if an I/O error occurs
      * @since 1.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.222 -0400", hash_original_method = "0850C4F50DF9074FD1264564BB99F7E9", hash_generated_method = "A520A96F7749BBC59CBB734AA3915CEC")
     
 public static boolean contentEquals(Reader input1, Reader input2)
@@ -2464,6 +2581,7 @@ public static boolean contentEqualsIgnoreEOL(Reader input1, Reader input2)
      * @throws IllegalArgumentException if toSkip is negative
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.223 -0400", hash_original_method = "8B74FFD9F23C06E38DE4334749DD787C", hash_generated_method = "E56A4A4640B407D79C4336EBC1CB6112")
     
 public static long skip(InputStream input, long toSkip) throws IOException {
@@ -2505,6 +2623,7 @@ public static long skip(InputStream input, long toSkip) throws IOException {
      * @throws IllegalArgumentException if toSkip is negative
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.225 -0400", hash_original_method = "70F5367B71D65157B02E11591C7A718F", hash_generated_method = "ACF6FCBA5338008F4B6EE425B7ABDC64")
     
 public static long skip(Reader input, long toSkip) throws IOException {

@@ -274,6 +274,7 @@ public PrintAttributes getDefaults() {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.684 -0400", hash_original_method = "5626FD0A0CD0E848382824F6DD00EBD6", hash_generated_method = "786E9A08A3D3F76EBE265250927668A6")
     
 @Override

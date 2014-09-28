@@ -14,6 +14,7 @@ public class GoogleMapOptionsCreator implements android.os.Parcelable.Creator
 
     public static final int CONTENT_DESCRIPTION = 0;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 13:46:33.521 -0400", hash_original_method = "30366B87AFEC637BAA5E05D3B236D25E", hash_generated_method = "BC5EA8986C0360590F8351CDBD17229D")
     
 public Object createFromParcel(Parcel  r1)

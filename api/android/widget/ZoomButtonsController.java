@@ -172,7 +172,8 @@ public ZoomButtonsController(View ownerView) {
      *
      * @param enabled Whether to enable the zoom in control.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.823 -0500", hash_original_method = "3742E544F3AFD5F94AD689FCD74B6DD5", hash_generated_method = "C310AF3AC3298A18E1908AF4FE069C24")
     
 public void setZoomInEnabled(boolean enabled) {
@@ -184,7 +185,8 @@ public void setZoomInEnabled(boolean enabled) {
      *
      * @param enabled Whether to enable the zoom out control.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.825 -0500", hash_original_method = "1CF0D208E223466BFE0254465182BFD8", hash_generated_method = "8C424E3E9379072103AC380843E123F5")
     
 public void setZoomOutEnabled(boolean enabled) {
@@ -255,7 +257,7 @@ private FrameLayout createContainer() {
      * @param listener The listener that will be told to zoom.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.838 -0500", hash_original_method = "B44D483F6F47563C2A0666A9C41723E6", hash_generated_method = "4A7C2A82299214746000C268A032BAD4")
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     public void setOnZoomListener(OnZoomListener listener) {
         mCallback = listener;
         listener.onVisibilityChanged(false);
@@ -314,6 +316,7 @@ public void setAutoDismissed(boolean autoDismiss) {
      *
      * @return Whether the zoom controls are visible to the user.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.847 -0500", hash_original_method = "74E1901CABAC1FE9F1005B36E67FD276", hash_generated_method = "1697AECC8916166453022FDC56BF0C19")
     
 public boolean isVisible() {
@@ -325,6 +328,7 @@ public boolean isVisible() {
      *
      * @param visible Whether the zoom controls should be visible to the user.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.853 -0500", hash_original_method = "E965560D7B92B1F08EBD9F8DCDBB0D54", hash_generated_method = "802AD5B01F3A0D49D3E1567DFFBCD182")
     
 public void setVisible(boolean visible) {
@@ -592,6 +596,7 @@ private ViewRootImpl getOwnerViewRootImpl() {
      * @hide The ZoomButtonsController implements the OnTouchListener, but this
      *       does not need to be shown in its public API.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.873 -0500", hash_original_method = "AC268A3687D4D0CE3C71C1BC69224E9B", hash_generated_method = "5D20DD5DCC986CDDF57CB3E65D694CE3")
     
 public boolean onTouch(View v, MotionEvent event) {

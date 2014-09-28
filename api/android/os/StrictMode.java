@@ -350,7 +350,7 @@ private static void executeDeathPenalty(ViolationInfo info) {
         }
         if (LOG_V) Log.d(TAG, "Dropboxing async; in-flight=" + outstanding);
         new Thread("callActivityManagerForStrictModeDropbox") {
-            @DSSpec(DSCat.SPEC_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.208 -0500", hash_original_method = "A4F5F0C630DDC56879B6C50BF9886A5C", hash_generated_method = "BEB9A55813FA8C46E1F0C1241E1028D2")
             
 public void run() {

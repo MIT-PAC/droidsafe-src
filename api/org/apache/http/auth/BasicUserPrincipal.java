@@ -76,6 +76,7 @@ public String getName() {
         return hash;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:34.913 -0400", hash_original_method = "0828205FE5941175F133283554EC0DB0", hash_generated_method = "92D518BED54FF750C48AB3F442D33980")
     
 @Override

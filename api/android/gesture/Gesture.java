@@ -78,7 +78,7 @@ static Gesture deserialize(DataInputStream in) throws IOException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:24.506 -0500", hash_original_field = "A7061D7E636EC2E39C59A88912C2604F", hash_generated_field = "62E1536C57E8701BFD2818B7105E7D29")
 
     public static final Parcelable.Creator<Gesture> CREATOR = new Parcelable.Creator<Gesture>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:04:36.305 -0500", hash_original_method = "EB993F665DB343ED1E9AF0775BEE74CA", hash_generated_method = "B4CE95667D377DB3029586150EA96CF7")
         
 public Gesture createFromParcel(Parcel in) {

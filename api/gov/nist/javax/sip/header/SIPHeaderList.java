@@ -626,7 +626,7 @@ public boolean contains(Object header) {
      *            location from which to get the object.
      *
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.701 -0500", hash_original_method = "B0FF15B145547E100ED44D45A7137CDE", hash_generated_method = "F46DEB9CDD87E07C4051278902E10473")
     
 public HDR get(int index) {
@@ -700,7 +700,7 @@ public boolean remove(Object obj) {
      *            index at which to remove the object
      */
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.719 -0500", hash_original_method = "2B7049D180B166140C32B8D54A96E238", hash_generated_method = "E3B492E3EA37500381FA59083A1CD08A")
     
 public HDR remove(int index) {

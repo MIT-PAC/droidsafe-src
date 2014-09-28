@@ -64,6 +64,7 @@ private TaskStackBuilder(Context a) {
      * @param nextIntent Intent for the next Activity in the synthesized task stack
      * @return This TaskStackBuilder for method chaining
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.013 -0500", hash_original_method = "511DF8C4B67F5D7A80704A12F82C5852", hash_generated_method = "7EFB3181C895615DF3364C75B837554F")
     
 public TaskStackBuilder addNextIntent(Intent nextIntent) {
@@ -78,6 +79,7 @@ public TaskStackBuilder addNextIntent(Intent nextIntent) {
      * @param sourceActivity All parents of this activity will be added
      * @return This TaskStackBuilder for method chaining
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.710 -0400", hash_original_method = "2EB34731B15849E8B9C5BBB17613EC66", hash_generated_method = "A19C38F6122A3B34AEC1EE91784747BB")
             
 public TaskStackBuilder addParentStack(Activity sourceActivity) {
@@ -109,6 +111,7 @@ public TaskStackBuilder addParentStack(Activity sourceActivity) {
      * @param sourceActivityClass All parents of this activity will be added
      * @return This TaskStackBuilder for method chaining
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.714 -0400", hash_original_method = "24789189026035DB86CDD288A0DC1914", hash_generated_method = "F3E77F34C82FE5453C29711624AE4893")
             
 public TaskStackBuilder addParentStack(Class<?> sourceActivityClass) {
@@ -217,6 +220,7 @@ public PendingIntent getPendingIntent(Context context, Intent[] intents, int req
      * will be started as a new task. On devices that do support API level 11 or higher
      * the new task stack will be created in its entirety.</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.734 -0400", hash_original_method = "06A574342CCF39D1F49A10455C86E5DE", hash_generated_method = "127B19B1AD93D1C9A18860E3D6FC7B67")
             
 public void startActivities() {
@@ -309,6 +313,7 @@ public Intent[] getIntents() {
      * @param index Index from 0-getIntentCount()
      * @return the intent at position index
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.727 -0400", hash_original_method = "D8C1B8A201F5DF3584F78E1905328A4C", hash_generated_method = "11912DF99E5CC9DAF292DC6CDAE56C4A")
             
 public Intent editIntentAt(int index) {
@@ -356,6 +361,7 @@ public TaskStackBuilder addNextIntentWithParentStack(Intent nextIntent) {
      * @param options Additional options for how the Activity should be started.
      * See {@link android.content.Context#startActivity(Intent, Bundle)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.739 -0400", hash_original_method = "7165C9589E28314A1EBFB6EE9E7FEB29", hash_generated_method = "756BF9B1EC59A746D0EA0AF3325D4D2F")
             
 public void startActivities(Bundle options) {
@@ -409,6 +415,7 @@ public void startActivities(Bundle options) {
      * @param context The context that will launch the new task stack or generate a PendingIntent
      * @return A new TaskStackBuilder
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.694 -0400", hash_original_method = "2281F09D881D66F33F75EC0F8221EA7A", hash_generated_method = "4A3521B80F8F9313E3AC7808BC76BB19")
             
 public static TaskStackBuilder create(Context context) {
@@ -423,6 +430,7 @@ public static TaskStackBuilder create(Context context) {
      *                           this activity will be added
      * @return This TaskStackBuilder for method chaining
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:49.717 -0400", hash_original_method = "D9F2A468A63D7BB696B6B7F7857CF5CC", hash_generated_method = "FA3ACB1680C4B44111D91EB7A7473414")
             
 public TaskStackBuilder addParentStack(ComponentName sourceActivityName) {

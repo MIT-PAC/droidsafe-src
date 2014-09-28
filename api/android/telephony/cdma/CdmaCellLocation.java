@@ -196,6 +196,7 @@ public void setCellLocationData(int baseStationId, int baseStationLatitude,
         );
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.387 -0500", hash_original_method = "3AD4832D3A3F9EB2D9CB5CAE1051FD90", hash_generated_method = "F3A266AAE5B33F24D312A4D2BC366BCB")
     

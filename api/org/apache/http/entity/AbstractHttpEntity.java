@@ -77,6 +77,7 @@ public boolean isChunked() {
      * @param contentType       the new Content-Encoding header, or
      *                          <code>null</code> to unset
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.925 -0500", hash_original_method = "2A50843ADF5A0160EFC9E5758FE12891", hash_generated_method = "1874C3317F3410204EFC04FD9299595D")
     @DSVerified
     @DSSafe(DSCat.DATA_STRUCTURE)
@@ -92,6 +93,7 @@ public void setContentType(final Header contentType) {
      * @param ctString     the new Content-Type header, or
      *                     <code>null</code> to unset
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.927 -0500", hash_original_method = "E88DF46252A0D3C2D0E67C1F492FFB2C", hash_generated_method = "3DFC5FA202A5B7D3D2C51A0040367FD0")
     @DSVerified
     @DSSafe(DSCat.DATA_STRUCTURE)

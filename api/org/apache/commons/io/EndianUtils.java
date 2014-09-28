@@ -60,6 +60,7 @@ public static short swapShort(short value) {
      * @param value value to convert
      * @return the converted value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.403 -0400", hash_original_method = "6E266F7886D6B5A2425ED73C34F43FE1", hash_generated_method = "96052107A34B7CD5A389B5F1DF090657")
     
 public static int swapInteger(int value) {
@@ -75,6 +76,7 @@ public static int swapInteger(int value) {
      * @param value value to convert
      * @return the converted value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.404 -0400", hash_original_method = "62386991685EFA23920441655B819944", hash_generated_method = "5BBB9FC117A95CDC8E04F751688B781F")
     
 public static long swapLong(long value) {
@@ -134,6 +136,7 @@ public static void writeSwappedShort(byte[] data, int offset, short value) {
      * @param offset starting offset in the byte array
      * @return the value read
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.407 -0400", hash_original_method = "43BF27BC739D1713ADFA799FFFBC5AF3", hash_generated_method = "C32EF07222AD72865E861229065BF230")
     
 public static short readSwappedShort(byte[] data, int offset) {
@@ -149,6 +152,7 @@ public static short readSwappedShort(byte[] data, int offset) {
      * @param offset starting offset in the byte array
      * @return the value read
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.408 -0400", hash_original_method = "B1BA8670604DCF1D4886449B3C294726", hash_generated_method = "E04D922422F30AD07F42B2235C4CFBCA")
     
 public static int readSwappedUnsignedShort(byte[] data, int offset) {
@@ -163,6 +167,7 @@ public static int readSwappedUnsignedShort(byte[] data, int offset) {
      * @param offset starting offset in the byte array
      * @param value value to write
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.408 -0400", hash_original_method = "3F3AC95312B5654C0814A8467CCF30BD", hash_generated_method = "D4FF79C88CCE8D165C3E5C57E5D65683")
     
 public static void writeSwappedInteger(byte[] data, int offset, int value) {
@@ -179,6 +184,7 @@ public static void writeSwappedInteger(byte[] data, int offset, int value) {
      * @param offset starting offset in the byte array
      * @return the value read
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.409 -0400", hash_original_method = "D5771A4493620FED5A8C5A9531CB0933", hash_generated_method = "3D45C8864AD6079E5AF3C14F66077866")
     
 public static int readSwappedInteger(byte[] data, int offset) {
@@ -215,6 +221,7 @@ public static long readSwappedUnsignedInteger(byte[] data, int offset) {
      * @param offset starting offset in the byte array
      * @param value value to write
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.411 -0400", hash_original_method = "7B78B92713305FD45D6A88A896E4A765", hash_generated_method = "8837BF786557AE42A48C911BA674FCC4")
     
 public static void writeSwappedLong(byte[] data, int offset, long value) {
@@ -235,6 +242,7 @@ public static void writeSwappedLong(byte[] data, int offset, long value) {
      * @param offset starting offset in the byte array
      * @return the value read
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.412 -0400", hash_original_method = "3B768B07815D1E82B9DA9F72D26C51EF", hash_generated_method = "81FC492D08B09F484F4EBFF8AC21C02E")
     
 public static long readSwappedLong(byte[] data, int offset) {
@@ -271,6 +279,7 @@ public static void writeSwappedFloat(byte[] data, int offset, float value) {
      * @param offset starting offset in the byte array
      * @return the value read
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.413 -0400", hash_original_method = "6FE2119F7B8AFCCC639C0C89F4C2E725", hash_generated_method = "F20B5F67B150930B74BEA51952901832")
     
 public static float readSwappedFloat(byte[] data, int offset) {
@@ -297,6 +306,7 @@ public static void writeSwappedDouble(byte[] data, int offset, double value) {
      * @param offset starting offset in the byte array
      * @return the value read
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.414 -0400", hash_original_method = "E6497FA27977EC00587BFBAE76B9237E", hash_generated_method = "4C99B6D22E2FA056CE1CF6A787BB67FC")
     
 public static double readSwappedDouble(byte[] data, int offset) {
@@ -326,6 +336,7 @@ public static void writeSwappedShort(OutputStream output, short value)
      * @return the value just read
      * @throws IOException in case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.415 -0400", hash_original_method = "70816BBE88934E80A9FA9B28D3E71A31", hash_generated_method = "434A6A3A5B1D27FDF9235E0D88DA2EF7")
     
 public static short readSwappedShort(InputStream input)
@@ -342,6 +353,7 @@ public static short readSwappedShort(InputStream input)
      * @return the value just read
      * @throws IOException in case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.416 -0400", hash_original_method = "82AABA56BCAF4EA117FD967EA0C801E1", hash_generated_method = "45823FC2302E3887DFCEFEED7BEB9398")
     
 public static int readSwappedUnsignedShort(InputStream input)
@@ -361,6 +373,7 @@ public static int readSwappedUnsignedShort(InputStream input)
      * @param value value to write
      * @throws IOException in case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.417 -0400", hash_original_method = "585F53C650C5C9F5A62C5141A6DD9F48", hash_generated_method = "C07F213AFCA9E908CF85DDFB8E610724")
     
 public static void writeSwappedInteger(OutputStream output, int value)
@@ -379,6 +392,7 @@ public static void writeSwappedInteger(OutputStream output, int value)
      * @return the value just read
      * @throws IOException in case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.417 -0400", hash_original_method = "399FD48625B469905478587F05C86457", hash_generated_method = "F966BFD96A459D6C96FDF4FB8616DC0C")
     
 public static int readSwappedInteger(InputStream input)
@@ -428,6 +442,7 @@ public static long readSwappedUnsignedInteger(InputStream input)
      * @param value value to write
      * @throws IOException in case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.419 -0400", hash_original_method = "7EB6640C142FD363FDD2396F8FB791BB", hash_generated_method = "E0B5ADE15D1426EC62B5FC3B9C060AB2")
     
 public static void writeSwappedLong(OutputStream output, long value)
@@ -450,6 +465,7 @@ public static void writeSwappedLong(OutputStream output, long value)
      * @return the value just read
      * @throws IOException in case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.419 -0400", hash_original_method = "579088CE1A9EFB8794C68173F5B284BE", hash_generated_method = "1198FBA4330043A6BECAF73039B77310")
     
 public static long readSwappedLong(InputStream input)
@@ -484,6 +500,7 @@ public static void writeSwappedFloat(OutputStream output, float value)
      * @return the value just read
      * @throws IOException in case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.420 -0400", hash_original_method = "7C45A482387B2B2D8B9E8C359B519B1D", hash_generated_method = "712972C9606AAB3F46E99D327614741D")
     
 public static float readSwappedFloat(InputStream input)
@@ -514,6 +531,7 @@ public static void writeSwappedDouble(OutputStream output, double value)
      * @return the value just read
      * @throws IOException in case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.421 -0400", hash_original_method = "D21560F654817031C7E92ABFF69D8B08", hash_generated_method = "8FF32A06A9E656804B8A2BD50378219C")
     
 public static double readSwappedDouble(InputStream input)
@@ -528,6 +546,7 @@ public static double readSwappedDouble(InputStream input)
      * @return the byte
      * @throws IOException if the end of file is reached
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.422 -0400", hash_original_method = "CBA24EA576157137E32DA1145EF01444", hash_generated_method = "82753090EFFFF124CE51E97E6B51903C")
     
 private static int read(InputStream input)

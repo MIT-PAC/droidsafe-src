@@ -101,6 +101,7 @@ AbsActionBarView(Context context, AttributeSet attrs, int defStyle) {
      *
      * @param split true if the bar should split
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.627 -0400", hash_original_method = "D4ADA7B8094B8C24856ACB21A2F3F966", hash_generated_method = "4BA69C6EE77FE9FC0D1D5536DF5BAF8C")
     
 public void setSplitActionBar(boolean split) {
@@ -112,12 +113,14 @@ public void setSplitActionBar(boolean split) {
      *
      * @param splitWhenNarrow true if the bar should check to split after a config change
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.631 -0400", hash_original_method = "68FCF08F15ACE8E4E864370710ECF8B3", hash_generated_method = "AF771BA8D31DBD339E36F25DAF8F147D")
     
 public void setSplitWhenNarrow(boolean splitWhenNarrow) {
         mSplitWhenNarrow = splitWhenNarrow;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.636 -0400", hash_original_method = "156B54BA6D77F8AE13369D564149F7A2", hash_generated_method = "E9094B3C011966F113F287066F202892")
     
 public void setContentHeight(int height) {
@@ -125,12 +128,14 @@ public void setContentHeight(int height) {
         requestLayout();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.640 -0400", hash_original_method = "AB5D9AC478BBA1C6AA700AA7486698D8", hash_generated_method = "ACB213AC2A4D5DA4279E6F97171C16BE")
     
 public int getContentHeight() {
         return mContentHeight;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.643 -0400", hash_original_method = "3A09CE20A6543F8D9E8109683BD6E731", hash_generated_method = "BA5262CB7EA2CA9638A747DED1B59B29")
     
 public void setSplitView(ActionBarContainer splitView) {
@@ -140,12 +145,14 @@ public void setSplitView(ActionBarContainer splitView) {
     /**
      * @return Current visibility or if animating, the visibility being animated to.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.647 -0400", hash_original_method = "A8CA78C6ABB7B5A3D6C0FBCA5E336AA5", hash_generated_method = "3389D78C03C1B737548806066D1C8490")
     
 public int getAnimatedVisibility() {
         return getVisibility();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.653 -0400", hash_original_method = "17D776E73D87655ED57B92C2D1D0CE5F", hash_generated_method = "0C76B6F9AE0D03FAF083B95112C9C325")
     
 public void animateToVisibility(int visibility) {
@@ -175,6 +182,7 @@ public void animateToVisibility(int visibility) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.663 -0400", hash_original_method = "6ECDD9C0917165AAFEF87E5E5EC8B474", hash_generated_method = "9DC48792B6C46D132A9B94061617D16B")
     
 public boolean showOverflowMenu() {
@@ -184,6 +192,7 @@ public boolean showOverflowMenu() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.672 -0400", hash_original_method = "5B398819B085BB8DF5162E4F323954D1", hash_generated_method = "0C68F83D49777FE3D90EBF89CED1A4BA")
     
 public void postShowOverflowMenu() {
@@ -195,6 +204,7 @@ public void postShowOverflowMenu() {
         });
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.676 -0400", hash_original_method = "5D05982F33AF24415676BD0317DE2206", hash_generated_method = "CEE194F262DB6BBBE36DFE61AF2E5A04")
     
 public boolean hideOverflowMenu() {
@@ -204,6 +214,7 @@ public boolean hideOverflowMenu() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.680 -0400", hash_original_method = "2F838D8CBDDC91E04D7A8F0F52ABF2C8", hash_generated_method = "54E5E33F107A17CC64613D9753739950")
     
 public boolean isOverflowMenuShowing() {
@@ -213,12 +224,14 @@ public boolean isOverflowMenuShowing() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.684 -0400", hash_original_method = "2716B287AFF500B52D105CE9F72467AF", hash_generated_method = "0EEDB35B60AD080D5517260D839948B2")
     
 public boolean isOverflowReserved() {
         return mActionMenuPresenter != null && mActionMenuPresenter.isOverflowReserved();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.689 -0400", hash_original_method = "E263C11D43E740E059E17F24B3046AB1", hash_generated_method = "172A0960A66C36409D2DEED435273569")
     
 public void dismissPopupMenus() {
@@ -227,6 +240,7 @@ public void dismissPopupMenus() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.693 -0400", hash_original_method = "A00B85663064A0063707CD21F6F98F93", hash_generated_method = "B02F190771DB45F974B15E7379A2A70C")
     
 protected int measureChildView(View child, int availableWidth, int childSpecHeight,
@@ -240,6 +254,7 @@ protected int measureChildView(View child, int availableWidth, int childSpecHeig
         return Math.max(0, availableWidth);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.698 -0400", hash_original_method = "231762BB3E313BE1E16BACBDFDC62788", hash_generated_method = "D8FF977D463F276AF981A8E1C35C5585")
     
 protected int positionChild(View child, int x, int y, int contentHeight) {
@@ -252,6 +267,7 @@ protected int positionChild(View child, int x, int y, int contentHeight) {
         return childWidth;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 11:46:03.703 -0400", hash_original_method = "59F436BC9157B56F2D013CC5AD850863", hash_generated_method = "67C029CB2EFB280035BB61D1A790378F")
     
 protected int positionChildInverse(View child, int x, int y, int contentHeight) {

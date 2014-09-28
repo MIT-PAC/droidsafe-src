@@ -170,6 +170,7 @@ static int count(Iterator<?> iterator) {
         //return entry == null ? null : new SimpleImmutableEntry<K, V>(entry);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.384 -0400", hash_original_method = "9F2AE61C584701540103A59451B8FA45", hash_generated_method = "9609CA310A4F3C97BB9D2732B3DF52A3")
     public Entry<K, V> firstEntry() {
         return getFirstEntry();
@@ -177,6 +178,7 @@ static int count(Iterator<?> iterator) {
         //return immutableCopy(root == null ? null : root.first());
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public Entry<K, V> pollFirstEntry() {
         return removeFirstEntry();
         // ---------- Original Method ----------
@@ -201,6 +203,7 @@ static int count(Iterator<?> iterator) {
         //return root.first().getKey();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.385 -0400", hash_original_method = "9DDE470F0E6425136CCDC59F74FCDED6", hash_generated_method = "FBFF331DFF9FD7C7DCA0277A9F4B1F56")
     public Entry<K, V> lastEntry() {
         return super.getLastEntry();
@@ -208,6 +211,7 @@ static int count(Iterator<?> iterator) {
         //return immutableCopy(root == null ? null : root.last());
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.385 -0400", hash_original_method = "5064879999AB9A13D0821F605568F112", hash_generated_method = "291B59401FC6112C81277C32A0627EF4")
     public Entry<K, V> pollLastEntry() {
         return super.removeLastEntry();
@@ -233,6 +237,7 @@ static int count(Iterator<?> iterator) {
         //return root.last().getKey();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.385 -0400", hash_original_method = "9D71F38DCAD7DBC2AA9FACCDA9CF4866", hash_generated_method = "CE49465CD0F5C880DD3A31B61D48C0EE")
     public Entry<K, V> lowerEntry(K key) {
         addTaint(key.getTaint());
@@ -251,6 +256,7 @@ static int count(Iterator<?> iterator) {
         //return entry != null ? entry.getKey() : null;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.386 -0400", hash_original_method = "5D12D4D534218428856149792C7C973A", hash_generated_method = "C7817021B619213D3EE27C4AA91BDD1F")
     public Entry<K, V> floorEntry(K key) {
         addTaint(key.getTaint());
@@ -270,6 +276,7 @@ static int count(Iterator<?> iterator) {
         //return entry != null ? entry.getKey() : null;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.386 -0400", hash_original_method = "14BBCA12BBBC651385215255CDF3836D", hash_generated_method = "80B3DF47CCA9DFA0A0B061B97C037B4B")
     public Entry<K, V> ceilingEntry(K key) {
         addTaint(key.getTaint());
@@ -289,6 +296,7 @@ static int count(Iterator<?> iterator) {
         //return entry != null ? entry.getKey() : null;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.386 -0400", hash_original_method = "AC2414FDDF42A1318F8CC45C80E09BC1", hash_generated_method = "565EA84C7F7A45C75F9C561C93A2697C")
     public Entry<K, V> higherEntry(K key) {
         addTaint(key.getTaint());
@@ -780,14 +788,16 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
              //return true;
          }
          
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.406 -0400", hash_original_method = "692355E3656C196457301F91A19D5157", hash_generated_method = "A2241F9BE30C170EC93B019D26CF6CEA")
+         @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.406 -0400", hash_original_method = "692355E3656C196457301F91A19D5157", hash_generated_method = "A2241F9BE30C170EC93B019D26CF6CEA")
          public Entry<K, V> firstEntry() {
              return getFirstEntry();
              // ---------- Original Method ----------
              //return immutableCopy(endpoint(true));
          }
          
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.406 -0400", hash_original_method = "3800FF04B85DB50D775ADF76A89AF0FD", hash_generated_method = "E6184055E5DF063F213F3B704CAB5DD8")
+         @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.406 -0400", hash_original_method = "3800FF04B85DB50D775ADF76A89AF0FD", hash_generated_method = "E6184055E5DF063F213F3B704CAB5DD8")
          public Entry<K, V> pollFirstEntry() {
              return removeFirstEntry();
              // ---------- Original Method ----------
@@ -818,7 +828,8 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
              //return entry.getKey();
          }
          
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.406 -0400", hash_original_method = "3349B358C55B472B88F39549996E074C", hash_generated_method = "A78AA2AEE5BBE2BAA15204452435ACB1")
+         @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.406 -0400", hash_original_method = "3349B358C55B472B88F39549996E074C", hash_generated_method = "A78AA2AEE5BBE2BAA15204452435ACB1")
          public Entry<K, V> lastEntry() {
              Entry<K, V> varDB864FBFECFDD7EF32688DE10742D92E_84084912 =  getLastEntry();
              varDB864FBFECFDD7EF32688DE10742D92E_84084912.addTaint(getTaint());
@@ -827,7 +838,8 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
              //return immutableCopy(endpoint(false));
          }
          
-         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.407 -0400", hash_original_method = "4E391E55891B2D72162CA8FBBFDB8088", hash_generated_method = "CDA95D4A9FCD45FFE54B9FF98BF0CCAE")
+         @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.407 -0400", hash_original_method = "4E391E55891B2D72162CA8FBBFDB8088", hash_generated_method = "CDA95D4A9FCD45FFE54B9FF98BF0CCAE")
          public Entry<K, V> pollLastEntry() {
              Entry<K, V> var6B63F11358115BF1F4CDE6AD6F400177_1564928535 =  removeLastEntry();
              var6B63F11358115BF1F4CDE6AD6F400177_1564928535.addTaint(getTaint());
@@ -875,6 +887,7 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
              // Original Method Too Long, Refer to Original Implementation
          }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:46.678 -0500", hash_original_method = "BD9CF59DC295A4AE3510934F298E27E6", hash_generated_method = "D98E0B6F52EF21ACF480B85C1FE57FC1")
         
 public Entry<K, V> lowerEntry(K key) {
@@ -889,6 +902,7 @@ public K lowerKey(K key) {
             return entry != null ? entry.getKey() : null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:46.683 -0500", hash_original_method = "581C54D570AF4193E6400C576ED95C35", hash_generated_method = "FECC7D1DBD517AFC10175EDDBFB56439")
         
 public Entry<K, V> floorEntry(K key) {
@@ -903,6 +917,7 @@ public K floorKey(K key) {
             return entry != null ? entry.getKey() : null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:46.689 -0500", hash_original_method = "C11821BD096982DAE03E94867B2C92BE", hash_generated_method = "009A970FDBE141CE28B00C2CA0C24213")
         
 public Entry<K, V> ceilingEntry(K key) {
@@ -917,6 +932,7 @@ public K ceilingKey(K key) {
             return entry != null ? entry.getKey() : null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:46.694 -0500", hash_original_method = "4DE66AB7FA66EBE29F4E4509967D65D0", hash_generated_method = "33217078426E0C97E4C9A21711301460")
         
 public Entry<K, V> higherEntry(K key) {

@@ -223,7 +223,8 @@ private SecureRandom(SecureRandomSpi secureRandomSpi,
      *
      * @return the provider associated with this {@code SecureRandom}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.250 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -282,6 +283,7 @@ public synchronized void setSeed(byte[] seed) {
      * @param bytes
      *            the {@code byte[]} to be filled with random bytes.
      */
+    @DSSource({DSSourceKind.RANDOM_NUMBER})
     @DSComment("no suspicious activity")
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.260 -0500", hash_original_method = "AD0BFB52D4FF32A1ADE4FBCCEAA68479", hash_generated_method = "4DBBCF564FF0BC95B21F356DF0A5EC03")

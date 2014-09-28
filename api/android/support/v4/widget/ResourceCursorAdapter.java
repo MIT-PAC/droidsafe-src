@@ -100,6 +100,7 @@ public ResourceCursorAdapter(Context context, int layout, Cursor c, int flags) {
         return mInflater.inflate(mLayout, parent, false);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.608 -0500", hash_original_method = "C82CC5D78027B48163EBCC94CFA263B9", hash_generated_method = "4CD3623D685FE4D87739977587B9495D")
     
 @Override

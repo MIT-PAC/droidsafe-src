@@ -75,7 +75,6 @@ public class PrintedPdfDocument extends PdfDocument {
     private static final int POINTS_IN_INCH = 72;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 14:41:22.122 -0400", hash_original_field = "1E6A38F000E176C3AE939CF36993E522", hash_generated_field = "706D776DB0FB52838EC801127EE72830")
 
-
     private  int mPageWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 14:41:22.124 -0400", hash_original_field = "516CFECBAAC5E52A4E4BBA237867A62B", hash_generated_field = "7A6C9CDCA43C354B0B986513B348E2AC")
 
@@ -141,6 +140,7 @@ public PrintedPdfDocument(Context context, PrintAttributes attributes) {
      *
      * @see #finishPage(Page)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 14:41:22.129 -0400", hash_original_method = "6005132A71196F8739F77CF11425889C", hash_generated_method = "15F3DD39A64FC1F2C3A91C2BF2E71360")
     
 public Page startPage(int pageNumber) {

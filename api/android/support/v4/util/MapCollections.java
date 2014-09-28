@@ -167,6 +167,7 @@ abstract class MapCollections<K, V> {
             return colSetValue(mIndex, object);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public final boolean equals(Object o) {
             if (!mEntryValid) {
@@ -298,6 +299,7 @@ abstract class MapCollections<K, V> {
             throw new UnsupportedOperationException();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean equals(Object object) {
             return equalsSetHelper(this, object);
@@ -402,6 +404,7 @@ abstract class MapCollections<K, V> {
             return toArrayHelper(array, 0);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean equals(Object object) {
             return equalsSetHelper(this, object);
@@ -533,6 +536,7 @@ abstract class MapCollections<K, V> {
         }
     };
 
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> boolean equalsSetHelper(Set<T> set, Object object) {
         if (set == object) {
             return true;
@@ -560,6 +564,7 @@ abstract class MapCollections<K, V> {
 
     ValuesCollection mValues;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.465 -0400", hash_original_method = "CFCF1388094A07DB40C16FF95D6724A1", hash_generated_method = "0AC2212A1632995E3DF6BE063DBB29C4")
     
 public Object[] toArrayHelper(int offset) {
@@ -571,6 +576,7 @@ public Object[] toArrayHelper(int offset) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public <T> T[] toArrayHelper(T[] array, int offset) {
         final int N  = colGetSize();
         if (array.length < N) {
@@ -587,6 +593,7 @@ public Object[] toArrayHelper(int offset) {
         return array;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.484 -0400", hash_original_method = "1B5608DE2EE60AD644A5D36EAB15D5C1", hash_generated_method = "C952575AED4CBB4C33E8A7AFBF348E14")
     
 public Set<Map.Entry<K, V>> getEntrySet() {
@@ -596,6 +603,7 @@ public Set<Map.Entry<K, V>> getEntrySet() {
         return mEntrySet;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.489 -0400", hash_original_method = "13B8FCBE3CAB01DD6C3D953426701C51", hash_generated_method = "0676C64FA0E158C6F532E5EA207C9BC9")
     
 public Set<K> getKeySet() {
@@ -605,6 +613,7 @@ public Set<K> getKeySet() {
         return mKeySet;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.494 -0400", hash_original_method = "AB3104883397160F633AACF1247C9B75", hash_generated_method = "311DDB82FDAE8F6F988604DD5CAD9262")
     
 public Collection<V> getValues() {
@@ -614,30 +623,39 @@ public Collection<V> getValues() {
         return mValues;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.497 -0400", hash_original_method = "2616226927DFEF2E2FC635D51637A22F", hash_generated_method = "8265C01B42DABA13ECDC6838583C618B")
     
 protected abstract int colGetSize();
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.502 -0400", hash_original_method = "B2D65FEBE53BB17F1C87897127957291", hash_generated_method = "2A4B9C83EB44EF167C5423FA8E27DEA0")
     
 protected abstract Object colGetEntry(int index, int offset);
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.506 -0400", hash_original_method = "C686F42C1C641CE7B16BC69EED89F2C5", hash_generated_method = "706F4FDFE6646565EB057F68D8B42273")
     
 protected abstract int colIndexOfKey(Object key);
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.510 -0400", hash_original_method = "C38AF8C5346C484F4FA84F03766B3748", hash_generated_method = "2688B24B7912B2E99EBBE38607E52C15")
     
 protected abstract int colIndexOfValue(Object key);
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.513 -0400", hash_original_method = "6C10172A3A758AAB2FECB652D03F9409", hash_generated_method = "6B88AA66715DAF167BA93A81C29AB4AB")
     
 protected abstract Map<K, V> colGetMap();
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.521 -0400", hash_original_method = "CCAD254939DC82C4F42B837FB13CBAE5", hash_generated_method = "B912CC7BD630B6E4A4D333985595C2BE")
     
 protected abstract void colPut(K key, V value);
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.527 -0400", hash_original_method = "003A77DF57620CA053AEE35BDB69E21B", hash_generated_method = "A611B2077CCE20D456A3D8B1D0850AD3")
     
 protected abstract V colSetValue(int index, V value);
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.534 -0400", hash_original_method = "A1AC558748839D4A08657B19B8564795", hash_generated_method = "ABDAE1362331A4453990090E24ACE423")
     
 protected abstract void colRemoveAt(int index);
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:22.540 -0400", hash_original_method = "97C26526E7FAC5419E503CD4ABB865D7", hash_generated_method = "973A2DB0D39764E626CF9425D43CDDF8")
     
 protected abstract void colClear();

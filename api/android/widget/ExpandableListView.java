@@ -514,7 +514,7 @@ public void setChildDivider(Drawable childDivider) {
      * This method should not be used, use {@link #getExpandableListAdapter()}.
      */
     @DSComment("CompoundButton, check modeling")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.798 -0500", hash_original_method = "1C0E40F01B81CC446BCB9E503587C60C", hash_generated_method = "AD4EED210FC927083466B4E53D9186CE")
     
 @Override
@@ -763,6 +763,7 @@ public boolean expandGroup(int groupPos, boolean animate) {
      * @return True if the group was collapsed, false otherwise (if the group
      *         was already collapsed, this will return false)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.825 -0500", hash_original_method = "32E02BBD4C2448429B8A9BB97BA3197B", hash_generated_method = "FA91F14805BF29783111F44ACD78B457")
     
 public boolean collapseGroup(int groupPos) {
@@ -809,7 +810,7 @@ public ExpandableListContextMenuInfo(View targetView, long packedPosition, long 
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -911,7 +912,7 @@ public void setOnGroupExpandListener(
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.844 -0500", hash_original_method = "C8C3684AA79EC58EA45C462FF87BD202", hash_generated_method = "0B608BCFF019FA1A2D56B8512679B266")
     @DSVerified
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
 public void setOnGroupClickListener(OnGroupClickListener onGroupClickListener) {
         mOnGroupClickListener = onGroupClickListener;
         onGroupClickListener.onGroupClick(this, null, 0, 0);

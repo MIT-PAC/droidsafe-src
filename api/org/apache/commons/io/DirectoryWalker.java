@@ -332,6 +332,7 @@ protected DirectoryWalker(IOFileFilter directoryFilter, IOFileFilter fileFilter,
      * @throws NullPointerException if the start directory is null
      * @throws IOException if an I/O Error occurs
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.170 -0400", hash_original_method = "F784C612153192C56AC61297D2700D20", hash_generated_method = "6637C72F1563C08282BF95D890B43FFF")
     
 protected final void walk(File startDirectory, Collection<T> results) throws IOException {
@@ -355,6 +356,7 @@ protected final void walk(File startDirectory, Collection<T> results) throws IOE
      * @param results  the collection of result objects, may be updated
      * @throws IOException if an I/O Error occurs
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.171 -0400", hash_original_method = "25CA2BBAEF47FC63779AD366F2A04877", hash_generated_method = "31969416E31E775B745662D6F0A13C00")
     
 private void walk(File directory, int depth, Collection<T> results) throws IOException {
@@ -400,6 +402,7 @@ private void walk(File directory, int depth, Collection<T> results) throws IOExc
      * @param results  the collection of result objects, may be updated
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.171 -0400", hash_original_method = "23FD1F1CF1FEA3D76F80B75877CCE06C", hash_generated_method = "39D7039EB9E3AD8C56D8EFE1B2828878")
     
 protected final void checkIfCancelled(File file, int depth, Collection<T> results) throws IOException {
@@ -443,6 +446,7 @@ protected final void checkIfCancelled(File file, int depth, Collection<T> result
      * @return true if the walk has been cancelled
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.172 -0400", hash_original_method = "65843051E5485209D2DEE1AE215FA6E7", hash_generated_method = "B36F3AE9DFA07C544912BA78B4461B47")
     
 protected boolean handleIsCancelled(
@@ -464,6 +468,7 @@ protected boolean handleIsCancelled(
      * containing details at the point of cancellation. 
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.172 -0400", hash_original_method = "5C3DB0DDE704B8C64C60715CDC6A77C7", hash_generated_method = "5E0739CDB4D4BD642E6F5B4982385F0B")
     
 protected void handleCancelled(File startDirectory, Collection<T> results,
@@ -482,6 +487,7 @@ protected void handleCancelled(File startDirectory, Collection<T> results,
      * @param results  the collection of result objects, may be updated
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.173 -0400", hash_original_method = "537A66F5B0B2BE829DDB6F4F77A4F783", hash_generated_method = "4AF6261EC892F92D1D56E9CACA92D091")
     
 protected void handleStart(File startDirectory, Collection<T> results) throws IOException {
@@ -503,6 +509,7 @@ protected void handleStart(File startDirectory, Collection<T> results) throws IO
      * @return true to process this directory, false to skip this directory
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.173 -0400", hash_original_method = "4574F00D09202C3C6CB0980878ED0B22", hash_generated_method = "41414794ED252B6DFA22D235D221EAEE")
     
 protected boolean handleDirectory(File directory, int depth, Collection<T> results) throws IOException {
@@ -520,6 +527,7 @@ protected boolean handleDirectory(File directory, int depth, Collection<T> resul
      * @param results  the collection of result objects, may be updated
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.174 -0400", hash_original_method = "20DCFBDA8ADF6765BDFDC314C97D8395", hash_generated_method = "8E5276AC48C684B1D5288CD603CE5930")
     
 protected void handleDirectoryStart(File directory, int depth, Collection<T> results) throws IOException {
@@ -538,6 +546,7 @@ protected void handleDirectoryStart(File directory, int depth, Collection<T> res
      * @throws IOException if an I/O Error occurs
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.174 -0400", hash_original_method = "5A37259F0EF0B23F2917794B45619826", hash_generated_method = "75DEA827C7EB00AC33348C52A8F99A33")
     
 protected File[] filterDirectoryContents(File directory, int depth, File[] files) throws IOException {
@@ -554,6 +563,7 @@ protected File[] filterDirectoryContents(File directory, int depth, File[] files
      * @param results  the collection of result objects, may be updated
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.175 -0400", hash_original_method = "487F0A93B3380B56B2E4D4D610050EF1", hash_generated_method = "A100AF3146D7EACC0C143C5EE61330E1")
     
 protected void handleFile(File file, int depth, Collection<T> results) throws IOException {
@@ -570,6 +580,7 @@ protected void handleFile(File file, int depth, Collection<T> results) throws IO
      * @param results  the collection of result objects, may be updated
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.175 -0400", hash_original_method = "2285F4C7A21413E552915C4BCF96FB35", hash_generated_method = "E7D4CD810FFE749270829D8F9B1CBC70")
     
 protected void handleRestricted(File directory, int depth, Collection<T> results) throws IOException  {
@@ -586,6 +597,7 @@ protected void handleRestricted(File directory, int depth, Collection<T> results
      * @param results  the collection of result objects, may be updated
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.176 -0400", hash_original_method = "754F09391C9F58E67CB8193278068D67", hash_generated_method = "1362B898D3AA3C428EE7562F5674E6C8")
     
 protected void handleDirectoryEnd(File directory, int depth, Collection<T> results) throws IOException {
@@ -600,6 +612,7 @@ protected void handleDirectoryEnd(File directory, int depth, Collection<T> resul
      * @param results  the collection of result objects, may be updated
      * @throws IOException if an I/O Error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.176 -0400", hash_original_method = "EB432720F1C4A1499C3914FA0FDC8415", hash_generated_method = "6F28D00E2A0FB0CA84C20828718F5CF9")
     
 protected void handleEnd(Collection<T> results) throws IOException {

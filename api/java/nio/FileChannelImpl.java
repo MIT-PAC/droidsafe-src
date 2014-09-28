@@ -536,7 +536,7 @@ public FileChannel truncate(long size) throws IOException {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.IO})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.577 -0500", hash_original_method = "D694A533B6DF57B5FA961A08FD2C2C8C", hash_generated_method = "F62991CF6F6B47FAB30CBB4D6EEB8317")
     
 public int write(ByteBuffer buffer, long position) throws IOException {
@@ -591,7 +591,7 @@ private int writeImpl(ByteBuffer buffer, long position) throws IOException {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.IO})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.585 -0500", hash_original_method = "066AEC24C5D5FCB3A90F301EFD66C198", hash_generated_method = "170D957CAA2B032796384D62B267941B")
     
 public long write(ByteBuffer[] buffers, int offset, int length) throws IOException {

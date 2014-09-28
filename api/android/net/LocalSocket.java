@@ -54,6 +54,7 @@ LocalSocket(LocalSocketImpl impl) {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.191 -0500", hash_original_method = "A3B0926C7F2CA904DDE9677BB08BC75D", hash_generated_method = "11030F7C80EE3FD8B8BDA6B693B1BDC1")
     

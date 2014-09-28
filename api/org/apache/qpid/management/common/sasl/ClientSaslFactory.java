@@ -50,6 +50,7 @@ public SaslClient createSaslClient(String[] mechs, String authorizationId, Strin
     /**
      * Simple-minded implementation that ignores props
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.260 -0400", hash_original_method = "9D916B475685D0FFCC4A5DD4F0B8A4F1", hash_generated_method = "3281EB15A9A938DB7D34513091CDD6AA")
     
 public String[] getMechanismNames(Map props)

@@ -1104,6 +1104,7 @@ public void performedLongPress(KeyEvent event) {
          * <p>This is only needed if you are directly dispatching events, rather
          * than handling them in {@link Callback#onKeyUp}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.334 -0500", hash_original_method = "4EC5A9A4246B9BB19D03F0E0F2DEA552", hash_generated_method = "822AE88FAF3B978CB7DB6D8D57F8465C")
         
 public void handleUpEvent(KeyEvent event) {
@@ -1789,7 +1790,7 @@ public void handleUpEvent(KeyEvent event) {
     public static final Parcelable.Creator<KeyEvent> CREATOR
             = new Parcelable.Creator<KeyEvent>() {
     	
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         public KeyEvent createFromParcel(Parcel in) {
     		addTaint(in.getTaint());
             in.readInt(); 
@@ -2794,6 +2795,7 @@ public int getUnicodeChar(int metaState) {
      * @deprecated instead use {@link #getDisplayLabel()},
      * {@link #getNumber()} or {@link #getUnicodeChar(int)}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.294 -0500", hash_original_method = "81320F663D2FF6F236DC3275D51EA69E", hash_generated_method = "D7345B209749D15645A4A435083714E9")
     
 @Deprecated

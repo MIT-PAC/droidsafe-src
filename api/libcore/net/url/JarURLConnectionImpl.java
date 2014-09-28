@@ -244,7 +244,7 @@ private void findJarEntry() throws IOException {
      *             if an IO error occurs while connecting to the resource.
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.494 -0500", hash_original_method = "96C498B69E21157D37D76B9902545F24", hash_generated_method = "C56B586BDAB524E470136EBBC5C9B019")
     
 @Override

@@ -172,6 +172,7 @@ public String getWorkstation() {
         return hash;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:21.714 -0400", hash_original_method = "51436E4149B840F18A9CD829BA6445C0", hash_generated_method = "AC967CBFF39CCC29DBA0C91A4ADF1778")
     
 @Override

@@ -137,6 +137,7 @@ public boolean hasNext() {
      * @param line  the line that is to be validated
      * @return true if valid, false to remove from the iterator
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.472 -0400", hash_original_method = "D521A7CE64679A779C6680051467F6C8", hash_generated_method = "50F30F812F18CCF52365DD659E124B74")
     
 protected boolean isValidLine(String line) {
@@ -162,6 +163,7 @@ public String next() {
      * @return the next line from the input
      * @throws NoSuchElementException if there is no line to return
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.473 -0400", hash_original_method = "34C5F6253FCD1E23723623334462E67F", hash_generated_method = "0BEA4FA5CF6B6D343C3C9851467F6E9B")
     
 public String nextLine() {
@@ -180,6 +182,7 @@ public String nextLine() {
      * then the <code>Reader</code> remains open.
      * This method can safely be called multiple times.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.473 -0400", hash_original_method = "D603D6A8B937767723C974F30C64091E", hash_generated_method = "6748068435EBC03C7FF026C219C94338")
     
 public void close() {

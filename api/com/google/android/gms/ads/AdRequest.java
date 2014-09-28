@@ -150,28 +150,28 @@ public boolean isTestDevice(Context  r1)
     		this.contentUrl = contentUrl;
     		return this;
     	}
-
-    	@DSSink({DSSinkKind.AD})
-        @DSSafe(DSCat.SAFE_OTHERS)
+    	
+        @DSSafe(DSCat.SAFE_LIST)
         public Builder addKeyword(String keyword) {
     		keywords.add(keyword);
     		return this;
     	}
 
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSink({DSSinkKind.AD})
+        @DSSafe(DSCat.SAFE_LIST)
         public Builder addNetworkExtrasBundle(Class<? extends MediationAdapter> adapterClass, Bundle networkExtras) {
     		this.adapterClass = adapterClass;
     		this.networkExtras = networkExtras;
     		return this;
     	}
 
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
         public Builder addTestDevice(String device){
     		devices.add(device);
     		return this;
     	}
 
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
         public AdRequest build() {
     		AdRequest request = new AdRequest(this);
     		if (adapterClass != null) {
@@ -202,7 +202,7 @@ public boolean isTestDevice(Context  r1)
     		this.gender = gender;
     		return this;
     	}
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
         public Builder tagForChildDirectedTreatment(boolean tagForChildDirectedTreatment) {
     		this.tag = tagForChildDirectedTreatment;
     		return this;

@@ -20,7 +20,7 @@ public class LinkProperties implements Parcelable {
 
     public static final Creator<LinkProperties> CREATOR =
         new Creator<LinkProperties>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.518 -0500", hash_original_method = "0C82553AE9182D627E9FE9D3BDCCC2D2", hash_generated_method = "73ADAD9054D4C55BEF76FD0090C4909B")
         
@@ -191,6 +191,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.488 -0500", hash_original_method = "FDC9878366ECD283FC0D7411AB5ED4B7", hash_generated_method = "CB8B5B3966E651CD6858565AEC15B9EB")
     

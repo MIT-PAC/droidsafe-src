@@ -455,7 +455,8 @@ public SearchView(Context context, AttributeSet attrs) {
         // Inform any listener of focus changes
         mQueryTextView.setOnFocusChangeListener(new OnFocusChangeListener() {
 
-            public void onFocusChange(View v, boolean hasFocus) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onFocusChange(View v, boolean hasFocus) {
                 if (mOnQueryTextFocusChangeListener != null) {
                     mOnQueryTextFocusChangeListener.onFocusChange(SearchView.this, hasFocus);
                 }
@@ -523,6 +524,7 @@ public SearchView(Context context, AttributeSet attrs) {
      * @param searchable a SearchableInfo can be retrieved from the SearchManager, for a specific
      * activity or a global search provider.
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.753 -0500", hash_original_method = "D9A30BFA849ECE06409E134B6DE5C1F0", hash_generated_method = "645DBFC6428E88C8ECB5E97434D6A9CB")
@@ -710,7 +712,7 @@ public void setOnSearchClickListener(OnClickListener listener) {
      *
      * @return the query string
      */
-    @DSSource({DSSourceKind.GUI})
+    @DSSource({DSSourceKind.IPC})
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
     
@@ -728,6 +730,7 @@ public CharSequence getQuery() {
      * @param submit whether to submit the query right now or only update the contents of
      * text field.
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.781 -0500", hash_original_method = "5407FC5F92134D6A89C79A4C1515F538", hash_generated_method = "3AD312454081B2E3ED1E6DDDAB1FEE3D")
@@ -753,6 +756,7 @@ public void setQuery(CharSequence query, boolean submit) {
      *
      * @attr ref android.R.styleable#SearchView_queryHint
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("SearchView, check callback")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.783 -0500", hash_original_method = "E72A59E6C313C94D91D305DFD6AC06A2", hash_generated_method = "A6C99F300FD2422A675F2D7AC022816F")
@@ -1650,6 +1654,7 @@ private void launchIntent(Intent intent) {
     /**
      * Sets the text in the query box, without updating the suggestions.
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("Private Method")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.117 -0500", hash_original_method = "39B31EC96E94C2151059B7594679485C", hash_generated_method = "0271B3329C99C1677684038522E73CAF")
@@ -1819,6 +1824,7 @@ private boolean isEmpty() {
          * We override this method to be sure and show the soft keyboard if
          * appropriate when the TextView has focus.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.177 -0500", hash_original_method = "3777C1088ADE560024EE2C32D034B492", hash_generated_method = "9D2DE97DC61401A187EC2F26D4692789")
         
 @Override
@@ -1837,6 +1843,7 @@ private boolean isEmpty() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.179 -0500", hash_original_method = "5F63BE621D8AAF87B5CC12EFB3AE40CE", hash_generated_method = "15772F622A5A0C77E5CE2868D46783C2")
         
 @Override
@@ -1849,6 +1856,7 @@ private boolean isEmpty() {
          * We override this method so that we can allow a threshold of zero,
          * which ACTV does not.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.182 -0500", hash_original_method = "E5C7430DC03439C4054C8D137460F5A5", hash_generated_method = "220AEA784EC11AB446FD6BFD9091A425")
         
 @Override
@@ -1856,6 +1864,7 @@ private boolean isEmpty() {
             return mThreshold <= 0 || super.enoughToFilter();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:28.185 -0500", hash_original_method = "AB0021D21F9078098334FA1D38399275", hash_generated_method = "598157581E22B6F3B738B2E0913CC8E1")
         
 @Override

@@ -29,10 +29,8 @@ import java.util.Iterator;
 abstract class BaseMenuWrapper<T> extends BaseWrapper<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.164 -0400", hash_original_field = "4E9A38ADDCA7C688C2240E9397F4BC67", hash_generated_field = "098A10632CBF1758751A8B44C2122C5E")
 
-
     private HashMap<MenuItem, SupportMenuItem> mMenuItems;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.167 -0400", hash_original_field = "C7A493738C6DD4A2EC7EC6A9D228BBEE", hash_generated_field = "8291566C9E072580634A5B218403990E")
-
 
     private HashMap<SubMenu, SubMenu> mSubMenus;
 
@@ -42,6 +40,7 @@ BaseMenuWrapper(T object) {
         super(object);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.173 -0400", hash_original_method = "A6D8BC8B70287AEB2AC72C0DFCFF7C42", hash_generated_method = "995B359119DF4A1DC0E7B1695AED5603")
     
 final SupportMenuItem getMenuItemWrapper(android.view.MenuItem frameworkItem) {
@@ -63,6 +62,7 @@ final SupportMenuItem getMenuItemWrapper(android.view.MenuItem frameworkItem) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.177 -0400", hash_original_method = "8FBBC91EC999734690BF004A9EFD6627", hash_generated_method = "596F91010163DF4AA954BE739E541041")
     
 final SubMenu getSubMenuWrapper(android.view.SubMenu frameworkSubMenu) {
@@ -83,7 +83,7 @@ final SubMenu getSubMenuWrapper(android.view.SubMenu frameworkSubMenu) {
         return null;
     }
 
-
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.181 -0400", hash_original_method = "E549614518765980654D955A3A4AAEAD", hash_generated_method = "32246BD159BB6BD6D4DA490538283A8F")
     
 final void internalClear() {
@@ -95,6 +95,7 @@ final void internalClear() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.184 -0400", hash_original_method = "645C0050BD2DD88EB3A23A012B738566", hash_generated_method = "0433E0130532C4F46E6A01E3449B214C")
     
 final void internalRemoveGroup(final int groupId) {
@@ -113,6 +114,7 @@ final void internalRemoveGroup(final int groupId) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.187 -0400", hash_original_method = "D302BEEAB3BEEB8612C6C303FB1EC35D", hash_generated_method = "A5E8CB74922D975F2DEFE0955080700B")
     
 final void internalRemoveItem(final int id) {

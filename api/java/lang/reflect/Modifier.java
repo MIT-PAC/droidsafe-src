@@ -83,7 +83,7 @@ public static int methodModifiers() {
      *         abstract} modifier, {@code false} otherwise
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.596 -0500", hash_original_method = "4393F5C84F1A6C20484EB804711F0AF9", hash_generated_method = "3CF1C591AE7F3113A85B2A4E0D9D09C9")
     
 public static boolean isAbstract(int modifiers) {
@@ -99,6 +99,7 @@ public static boolean isAbstract(int modifiers) {
      * @return {@code true} if the specified modifiers contain the {@code
      *         final} modifier, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.598 -0500", hash_original_method = "CBF7AC275E896CAF05907BF83162C1F9", hash_generated_method = "2F28EE34F8D175F67B3F0E2B79741BE8")
     
 public static boolean isFinal(int modifiers) {
@@ -129,6 +130,7 @@ public static boolean isInterface(int modifiers) {
      * @return {@code true} if the specified modifiers contain the {@code
      *         native} modifier, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.603 -0500", hash_original_method = "DA6BEE0F153DB8F35550AFD9CB07FE76", hash_generated_method = "B21F0FD66FA20515D3A05AAD7CB0A45C")
     
 public static boolean isNative(int modifiers) {
@@ -144,6 +146,7 @@ public static boolean isNative(int modifiers) {
      * @return {@code true} if the specified modifiers contain the {@code
      *         private} modifier, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.606 -0500", hash_original_method = "C23CD0C026CEBAE83AF0F37DEB3B9BE7", hash_generated_method = "66C3354DF6123C83C6A6B80B6AFD7803")
     
 public static boolean isPrivate(int modifiers) {
@@ -159,6 +162,7 @@ public static boolean isPrivate(int modifiers) {
      * @return {@code true} if the specified modifiers contain the {@code
      *         protected} modifier, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.608 -0500", hash_original_method = "34F3755D4F3C080FEB39C242B465057F", hash_generated_method = "4AD66D8FB2A0CB5DE3FB088B823E1A30")
     
 public static boolean isProtected(int modifiers) {
@@ -175,7 +179,7 @@ public static boolean isProtected(int modifiers) {
      *         public} modifier, {@code false} otherwise
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.611 -0500", hash_original_method = "F32A5C6A60F6D3AE4E2798FB3C917182", hash_generated_method = "17A09D042FE469EEA8A7D832BFCD0E80")
     
 public static boolean isPublic(int modifiers) {
@@ -223,6 +227,7 @@ public static boolean isStrict(int modifiers) {
      * @return {@code true} if the specified modifiers contain the {@code
      *         synchronized} modifier, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.619 -0500", hash_original_method = "49E2E5B1428F9F4298859885B6785735", hash_generated_method = "4D461F8AB64D65327C584ABB44CC0B52")
     
 public static boolean isSynchronized(int modifiers) {
@@ -239,7 +244,7 @@ public static boolean isSynchronized(int modifiers) {
      *         transient} modifier, {@code false} otherwise
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.621 -0500", hash_original_method = "57209F613683B2F4AD04C6D317C5C05F", hash_generated_method = "43B1846810DDC077F366CAA38168D506")
     
 public static boolean isTransient(int modifiers) {
@@ -255,6 +260,7 @@ public static boolean isTransient(int modifiers) {
      * @return {@code true} if the specified modifiers contain the {@code
      *         volatile} modifier, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.624 -0500", hash_original_method = "B0E5F2B6D36D4B1865726F3E3779D240", hash_generated_method = "7A46AE2CCC9985861E307F94713AFCE5")
     
 public static boolean isVolatile(int modifiers) {

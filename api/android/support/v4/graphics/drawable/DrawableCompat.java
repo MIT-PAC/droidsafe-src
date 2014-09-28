@@ -39,14 +39,17 @@ public class DrawableCompat {
      * Interface implementation that doesn't use anything about v4 APIs.
      */
     static class BaseDrawableImpl implements DrawableImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void jumpToCurrentState(Drawable drawable) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAutoMirrored(Drawable drawable, boolean mirrored) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isAutoMirrored(Drawable drawable) {
             return false;
@@ -57,6 +60,7 @@ public class DrawableCompat {
      * Interface implementation for devices with at least v11 APIs.
      */
     static class HoneycombDrawableImpl extends BaseDrawableImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void jumpToCurrentState(Drawable drawable) {
             DrawableCompatHoneycomb.jumpToCurrentState(drawable);
@@ -67,11 +71,13 @@ public class DrawableCompat {
      * Interface implementation for devices with at least v11 APIs.
      */
     static class KitKatDrawableImpl extends HoneycombDrawableImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAutoMirrored(Drawable drawable, boolean mirrored) {
             DrawableCompatKitKat.setAutoMirrored(drawable, mirrored);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isAutoMirrored(Drawable drawable) {
             return DrawableCompatKitKat.isAutoMirrored(drawable);
@@ -117,6 +123,7 @@ public static void jumpToCurrentState(Drawable drawable) {
      * @param mirrored Set to true if the Drawable should be mirrored, false if
      *            not.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:57.042 -0400", hash_original_method = "BA5D0A0688EC5EC72583904FE94086D4", hash_generated_method = "3F67E439DFF352E0E751A4C8CDA36200")
         
 public static void setAutoMirrored(Drawable drawable, boolean mirrored) {
@@ -134,6 +141,7 @@ public static void setAutoMirrored(Drawable drawable, boolean mirrored) {
      * @return boolean Returns true if this Drawable will be automatically
      *         mirrored.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:57.051 -0400", hash_original_method = "62271D2BB189BE6E4919DFFA0CB435A1", hash_generated_method = "ED5D95CB7C82CBED126EDB8449A0DF98")
         
 public static boolean isAutoMirrored(Drawable drawable) {

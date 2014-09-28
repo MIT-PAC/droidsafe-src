@@ -772,7 +772,7 @@ private void calculateItemFittingMetadata(int width) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:23.645 -0400", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
         
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }

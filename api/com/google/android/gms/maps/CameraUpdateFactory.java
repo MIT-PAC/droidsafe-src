@@ -190,7 +190,7 @@ public static CameraUpdate newLatLng(LatLng  r0) throws Throwable
         return r7;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.015 -0400", hash_original_method = "2233E29C76C22C8D19761B33B2B194CB", hash_generated_method = "0D01CAA3B5442667C4E1E1A24B6B22AF")
     
 public static CameraUpdate newLatLngZoom(LatLng  r0, float  f0) throws Throwable
@@ -213,7 +213,7 @@ public static CameraUpdate newLatLngZoom(LatLng  r0, float  f0) throws Throwable
         return r7;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.021 -0400", hash_original_method = "572FBA5CF3B8608ADA812354B253FC38", hash_generated_method = "0B3C02E6783DA5FC2690FFCB16ABEA30")
     
 public static CameraUpdate newLatLngBounds(LatLngBounds  r0, int  i0) throws Throwable
@@ -236,7 +236,7 @@ public static CameraUpdate newLatLngBounds(LatLngBounds  r0, int  i0) throws Thr
         return r7;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.027 -0400", hash_original_method = "6041EB07D67055899AA16B5BD2B91DF0", hash_generated_method = "BEC57287B4769FB60E92B00DC3580D43")
     
 public static CameraUpdate newLatLngBounds(LatLngBounds  r0, int  i0, int  i1, int  i2) throws Throwable

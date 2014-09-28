@@ -193,6 +193,7 @@ private boolean compareLocalType(Inet6Address ia) {
      * An IPv4-compatible address has the prefix {@code ::/96} and is a deprecated
      * and no-longer used equivalent of the modern IPv4-mapped IPv6 addresses.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.052 -0500", hash_original_method = "0048D9C1E27FFD1D482DB9672EA3AE03", hash_generated_method = "94E548496A9D7FE8D1DC255D156D6886")
     
 public boolean isIPv4CompatibleAddress() {
@@ -316,7 +317,7 @@ private void readObject(ObjectInputStream stream) throws IOException, ClassNotFo
         scope_ifname_set = fields.get("scope_ifname_set", false);
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.090 -0500", hash_original_method = "3CCDE4F93DD898D7C7483D8BBE2EDADA", hash_generated_method = "3AF9A5A7C6181A2E1E6D977A7BEEF253")
     

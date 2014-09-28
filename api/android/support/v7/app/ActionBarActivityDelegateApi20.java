@@ -29,6 +29,7 @@ ActionBarActivityDelegateApi20(ActionBarActivity activity) {
         super(activity);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.466 -0400", hash_original_method = "0F83E1508FE19A135FDAF8FA01435633", hash_generated_method = "BC7FD2580D5DB3382D4C9CF178E67DA3")
     
 @Override

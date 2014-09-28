@@ -293,7 +293,7 @@ public int getCurrentTab() {
 
     @DSComment("TabHost, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.606 -0500", hash_original_method = "4BF4FAE03E9E8C0B1DA1E933710D00F0", hash_generated_method = "A6FB86ECEB48E046478F1C51BFB94634")
     
 public String getCurrentTabTag() {
@@ -338,7 +338,8 @@ public void setCurrentTabByTag(String tag) {
     /**
      * Get the FrameLayout which holds tab content
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.614 -0500", hash_original_method = "14B19444D2789515B31F45C4D21A2D48", hash_generated_method = "C37F4FCE614239D54240897980162ECE")
     
 public FrameLayout getTabContentView() {
@@ -505,6 +506,7 @@ public TabSpec setIndicator(View view) {
          * Specify the id of the view that should be used as the content
          * of the tab.
          */
+        @DSSink({DSSinkKind.IPC})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.650 -0500", hash_original_method = "4C505DBFF1019A4E7D7D5286BB033694", hash_generated_method = "F96BD8467684D4725655647FCC103BB4")
        @DSSafe(DSCat.SAFE_OTHERS) 
 public TabSpec setContent(int viewId) {
@@ -516,6 +518,7 @@ public TabSpec setContent(int viewId) {
          * Specify a {@link android.widget.TabHost.TabContentFactory} to use to
          * create the content of the tab.
          */
+        @DSSink({DSSinkKind.IPC})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.653 -0500", hash_original_method = "B29A01466A3B1FB70EA06E4B795F088E", hash_generated_method = "5F5B4524584E3E59556DF4CA8532948B")
         
        @DSSafe(DSCat.SAFE_OTHERS) 
@@ -527,6 +530,7 @@ public TabSpec setContent(TabContentFactory contentFactory) {
         /**
          * Specify an intent to use to launch an activity as the tab content.
          */
+        @DSSink({DSSinkKind.IPC})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.655 -0500", hash_original_method = "0D57BE6053E1E40100589C46AD4E8491", hash_generated_method = "3826885F899FE1A7F3E300B46A249FD8")
        @DSSafe(DSCat.SAFE_OTHERS)
         
@@ -576,7 +580,7 @@ public TabSpec setContent(TabContentFactory contentFactory) {
 
         @DSComment("not sensitive/not an action")
         @DSSafe(DSCat.SAFE_OTHERS)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.657 -0500", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "0B538D6B7E10340EACEB66882A3752E4")
         
 public String getTag() {

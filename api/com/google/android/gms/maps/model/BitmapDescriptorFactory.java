@@ -39,7 +39,7 @@ public final class BitmapDescriptorFactory
 
     public static final float HUE_ROSE = 330.0f;
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.919 -0400", hash_original_method = "34C8904662AF6CED033FBA7DF5A64AA5", hash_generated_method = "9244C9F05CF221BB150A14B201E82E39")
     
 public static BitmapDescriptor fromResource(int  i0)
@@ -68,7 +68,7 @@ public static BitmapDescriptor fromPath(String  r0)
         return new BitmapDescriptor(DSOnlyType.DONTCARE, r0.length());
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.935 -0400", hash_original_method = "80C38EE9AE082C14857009286386EAD1", hash_generated_method = "53E973361CA9E86AFED7C3B05D04B660")
     
 public static BitmapDescriptor defaultMarker()
@@ -76,7 +76,7 @@ public static BitmapDescriptor defaultMarker()
         return new BitmapDescriptor(DSOnlyType.DONTCARE, 0);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.940 -0400", hash_original_method = "E860CDC83BC4CAB223150EAC469DDECE", hash_generated_method = "F4B7F1B66BFC53CB8154B435C6E7DB89")
     
 public static BitmapDescriptor defaultMarker(float  f0)

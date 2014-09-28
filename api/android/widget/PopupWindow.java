@@ -386,7 +386,7 @@ public PopupWindow(View contentView, int width, int height, boolean focusable) {
      */
     @DSComment("Popup Window, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.969 -0500", hash_original_method = "63340AE07D2726BC056EFE5BE3E2FF29", hash_generated_method = "9FB8C8C54E4BA0866CDF1D4CECF45471")
     
 public Drawable getBackground() {
@@ -412,7 +412,8 @@ public void setBackgroundDrawable(Drawable background) {
      *
      * @return the animation style to use the popup appears and disappears
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.973 -0500", hash_original_method = "41CA7DA63F7D92402D2B673FD03355D6", hash_generated_method = "CB1996CA776F9ADD4773CB78ECAEDAB9")
     
 public int getAnimationStyle() {
@@ -449,6 +450,7 @@ public void setIgnoreCheekPress() {
      *      
      * @see #update()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.977 -0500", hash_original_method = "46489C40917944BA93E8F6D8658EE802", hash_generated_method = "F33B41417B853BC111FC277E3CFAF9C9")
     
 public void setAnimationStyle(int animationStyle) {
@@ -464,7 +466,7 @@ public void setAnimationStyle(int animationStyle) {
      */
     @DSComment("Popup Window, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.980 -0500", hash_original_method = "1FBDC8A7B1B2CCF1CAFCE9F94E1B072D", hash_generated_method = "0FD10DCF7ED5F1F6B15F07AF1CED9A3A")
     
 public View getContentView() {
@@ -506,6 +508,7 @@ public void setContentView(View contentView) {
      * Set a callback for all touch events being dispatched to the popup
      * window.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.984 -0500", hash_original_method = "DE25D00870282EA3EAE9EBB02519A2CA", hash_generated_method = "AAA0C8A346D367B28D45AC9671953120")
     
 public void setTouchInterceptor(OnTouchListener l) {
@@ -556,7 +559,7 @@ public void setFocusable(boolean focusable) {
      */
     @DSComment("Popup Window, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.991 -0500", hash_original_method = "01F2BFCF39394BA4008813FFB1127C10", hash_generated_method = "EFBEC74DA9D23332CBF484E30669D202")
     
 public int getInputMethodMode() {
@@ -594,6 +597,7 @@ public void setInputMethodMode(int mode) {
      * @see android.view.WindowManager.LayoutParams#softInputMode
      * @see #getSoftInputMode()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.995 -0500", hash_original_method = "4B11C5E74D17332CC7C67B3F22EF8E33", hash_generated_method = "4C88C8FADB5F13F1F4C154A97EE1BAAB")
     
 public void setSoftInputMode(int mode) {
@@ -606,7 +610,8 @@ public void setSoftInputMode(int mode) {
      * @see #setSoftInputMode(int)
      * @see android.view.WindowManager.LayoutParams#softInputMode
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.997 -0500", hash_original_method = "76888AB414E08DF2E7D12678F406D7A5", hash_generated_method = "988402AC1498A99620921C5855E6C891")
     
 public int getSoftInputMode() {
@@ -905,7 +910,7 @@ public void setWindowLayoutMode(int widthSpec, int heightSpec) {
      */
     @DSComment("Popup Window, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.035 -0500", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "7B60B7C518DA05BF980E6A0812F1B814")
     
 public int getHeight() {
@@ -940,7 +945,7 @@ public void setHeight(int height) {
      */
     @DSComment("Popup Window, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.039 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "76288D230877FA0A2BAF233CBE4CB19E")
     
 public int getWidth() {
@@ -1135,6 +1140,7 @@ private void updateAboveAnchor(boolean aboveAnchor) {
      *
      * @return True if this popup is showing above the anchor view, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.058 -0500", hash_original_method = "3CCA39FA6959E2A6CCCA2648E4E5EA51", hash_generated_method = "D3C7C64D5C41E93DD3D223668E1B64AE")
     
 public boolean isAboveAnchor() {
@@ -1509,6 +1515,7 @@ public void dismiss() {
      * 
      * @param onDismissListener The listener.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.086 -0500", hash_original_method = "93E9EBCE36575249CB74D4FBEF26A1CF", hash_generated_method = "1C8C837118CFC7539F8885F9B9866EF5")
     
 public void setOnDismissListener(OnDismissListener onDismissListener) {

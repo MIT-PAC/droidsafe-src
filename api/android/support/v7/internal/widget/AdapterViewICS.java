@@ -214,6 +214,7 @@ AdapterViewICS(Context context, AttributeSet attrs, int defStyle) {
      *
      * @param listener The callback that will be invoked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.256 -0400", hash_original_method = "3AA164DD2030E1BF06F3CA1CD9427DA1", hash_generated_method = "55073E17A9ADE671366AA0FD0433A2EF")
         
 public void setOnItemClickListener(OnItemClickListener listener) {
@@ -239,6 +240,7 @@ public final OnItemClickListener getOnItemClickListener() {
      * @return True if there was an assigned OnItemClickListener that was
      *         called, false otherwise is returned.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.261 -0400", hash_original_method = "60B3F62567C83CF5181D16CCAFD621F4", hash_generated_method = "8AC53BB706E2BA988C71512AA9F19962")
         
 public boolean performItemClick(View view, int position, long id) {
@@ -338,6 +340,7 @@ public final OnItemLongClickListener getOnItemLongClickListener() {
      *
      * @param listener The callback that will run
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.273 -0400", hash_original_method = "9092AD2A5F83CE601E3913D803C386F2", hash_generated_method = "2D3BB4E9340D49E8E59E0B4D10064887")
                 
 public void setOnItemSelectedListener(OnItemSelectedListener listener) {
@@ -387,6 +390,7 @@ public final OnItemSelectedListener getOnItemSelectedListener() {
      *
      * @return The adapter used to provide this view's content.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.289 -0400", hash_original_method = "A0D14CFDF948E28FE8D8741A033FF666", hash_generated_method = "6F799C158744ABEEA3E3237B64E67AE4")
                 
 public abstract T getAdapter();
@@ -522,6 +526,7 @@ public abstract void setAdapter(T adapter);
      *
      * @return int Position (starting at 0), or {@link #INVALID_POSITION} if there is nothing selected.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.315 -0400", hash_original_method = "40CA9E4E71293F3BC1D33E874AD305A1", hash_generated_method = "EC81B80CFE8ACA8738EA07C9D9C967BD")
                 
 @ViewDebug.CapturedViewProperty
@@ -533,6 +538,7 @@ public abstract void setAdapter(T adapter);
      * @return The id corresponding to the currently selected item, or {@link #INVALID_ROW_ID}
      * if nothing is selected.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.317 -0400", hash_original_method = "52C80BDBAB2E8D6D945028E83F843260", hash_generated_method = "820C39987DD95F59D5D3BE333149B927")
                 
 @ViewDebug.CapturedViewProperty
@@ -544,6 +550,7 @@ public abstract void setAdapter(T adapter);
      * @return The view corresponding to the currently selected item, or null
      * if nothing is selected
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.319 -0400", hash_original_method = "85052E8B82875B0400B20534D23148A4", hash_generated_method = "BDD96676A259437E2C7F81CBFCEBE8EA")
                 
 public abstract View getSelectedView();
@@ -677,6 +684,7 @@ public View getEmptyView() {
      *
      * @return True if the view is in filter mode, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.339 -0400", hash_original_method = "FD285526E2677013E6DDAFB01C953F85", hash_generated_method = "FD285526E2677013E6DDAFB01C953F85")
                 
 boolean isInFilterMode() {
@@ -715,6 +723,7 @@ boolean isInFilterMode() {
         super.setFocusableInTouchMode(focusable && (!empty || isInFilterMode()));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.346 -0400", hash_original_method = "247C1C860FE83D8C6969E8D7AD161A84", hash_generated_method = "7C038D34CD2E1914CE6CE0793E0CC63A")
                 
 void checkFocus() {
@@ -736,6 +745,7 @@ void checkFocus() {
      * we have an empty view, display it.  In all the other cases, make sure that the listview
      * is VISIBLE and that the empty view is GONE (if it's not null).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.349 -0400", hash_original_method = "621A0CC8ACC29C73BC5E156B3A1CCE3C", hash_generated_method = "D06E60EE0A7735F1C8BDCEFFA366F218")
                 
 private void updateEmptyStatus(boolean empty) {
@@ -777,6 +787,7 @@ public Object getItemAtPosition(int position) {
         return (adapter == null || position < 0) ? null : adapter.getItem(position);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.354 -0400", hash_original_method = "1B8B19ED8D728A74BB7DD4694FA31397", hash_generated_method = "A9E50CF165C723153601F5212FDC6C34")
                 
 public long getItemIdAtPosition(int position) {
@@ -891,6 +902,7 @@ public long getItemIdAtPosition(int position) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.382 -0400", hash_original_method = "BC6042705725732210E15D64CD41C7D9", hash_generated_method = "BEC930CC4FF34A76E63FC98A3BCF7D4D")
                 
 void selectionChanged() {
@@ -915,6 +927,7 @@ void selectionChanged() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.384 -0400", hash_original_method = "02337B5D029912B3F89D3F5D70F11AFE", hash_generated_method = "E7C6C970F38B605CA994418F5D67F019")
                 
 private void fireOnSelected() {
@@ -952,6 +965,7 @@ private void fireOnSelected() {
         return super.canAnimate() && mItemCount > 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.392 -0400", hash_original_method = "E1C2247A84AC5366AD699C7DB3F92349", hash_generated_method = "1A0A39C25C9EB90D1D3C527FB7F6826A")
                 
 void handleDataChanged() {
@@ -1017,6 +1031,7 @@ void handleDataChanged() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.394 -0400", hash_original_method = "25705A5902194616A467B0383F1D3CBC", hash_generated_method = "25705A5902194616A467B0383F1D3CBC")
                 
 void checkSelectionChanged() {
@@ -1035,6 +1050,7 @@ void checkSelectionChanged() {
      * @return Position of the row that matches mSyncRowId, or {@link #INVALID_POSITION} if it can't
      *         be found
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.397 -0400", hash_original_method = "40C5EABEA31AF953B54DF3485AA93D4F", hash_generated_method = "FBD6735F4FC1D38FFA80A976DCD06E28")
                 
 int findSyncPosition() {
@@ -1124,6 +1140,7 @@ int findSyncPosition() {
      * @return The next selectable position starting at position and then searching either up or
      *         down. Returns {@link #INVALID_POSITION} if nothing can be found.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.399 -0400", hash_original_method = "63DA3BDCCF3458E05F2C2D5853C22A6D", hash_generated_method = "63DA3BDCCF3458E05F2C2D5853C22A6D")
                 
 int lookForSelectablePosition(int position, boolean lookDown) {
@@ -1134,6 +1151,7 @@ int lookForSelectablePosition(int position, boolean lookDown) {
      * Utility to keep mSelectedPosition and mSelectedRowId in sync
      * @param position Our current position
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.401 -0400", hash_original_method = "DDA5E37B089AD4C213077E832500B341", hash_generated_method = "DDA5E37B089AD4C213077E832500B341")
                 
 void setSelectedPositionInt(int position) {
@@ -1146,6 +1164,7 @@ void setSelectedPositionInt(int position) {
      * @param position Intended value for mSelectedPosition the next time we go
      * through layout
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.403 -0400", hash_original_method = "8F63B2D5F340C4F249BDEC055C5E8E67", hash_generated_method = "503BF1A120DAA6329C552ADFE86EB02B")
                 
 void setNextSelectedPositionInt(int position) {
@@ -1163,6 +1182,7 @@ void setNextSelectedPositionInt(int position) {
      * changed.
      *
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.406 -0400", hash_original_method = "1A0C0740A6F6610404D57CE1BAD32EA0", hash_generated_method = "50DC9847521FA546F01EF679EC303C9D")
                 
 void rememberSyncState() {

@@ -427,7 +427,7 @@ public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command,
      * @throws NullPointerException {@inheritDoc}
      */
     @DSComment("From safe class list")
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.065 -0500", hash_original_method = "106B54169234F208DA4A1738F707D69C", hash_generated_method = "E3A52ADE61F54682CF44ABE8A3326258")
     
 public void execute(Runnable command) {
@@ -709,7 +709,8 @@ ScheduledFutureTask(Callable<V> callable, long ns) {
             this.sequenceNumber = sequencer.getAndIncrement();
         }
 
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.002 -0500", hash_original_method = "EA844DF3AD76AAE2032057524EEDD497", hash_generated_method = "47A643D671F395286C05C1E1DFD7C686")
         
 public long getDelay(TimeUnit unit) {
@@ -778,7 +779,7 @@ public boolean cancel(boolean mayInterruptIfRunning) {
         /**
          * Overrides FutureTask version so as to reset/requeue if periodic.
          */
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.016 -0500", hash_original_method = "A673F57B6994AD18C8F1F59AB6BC8846", hash_generated_method = "E25D2BC752A0A896AEF831675748C4CA")
         
 public void run() {
@@ -1090,7 +1091,7 @@ public RunnableScheduledFuture poll() {
             }
         }
 
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.160 -0500", hash_original_method = "C35B04B198E2C5886DA81FEFBA3F2D77", hash_generated_method = "EAD227B6DEC0BF18B08A7940F1BAA829")
         
 public RunnableScheduledFuture take() throws InterruptedException {

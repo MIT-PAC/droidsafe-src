@@ -45,7 +45,7 @@ public static PendingIntent getIntentForStatusPanel(Context context, VpnConfig c
 
     public static final Parcelable.Creator<VpnConfig> CREATOR =
             new Parcelable.Creator<VpnConfig>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.718 -0500", hash_original_method = "AA8C9FD320C0310F391F554F5F034C68", hash_generated_method = "A8DE41ED76390B1F742A6E5AF75D6CFB")
         
 @Override

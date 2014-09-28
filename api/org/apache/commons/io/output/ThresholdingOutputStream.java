@@ -203,6 +203,7 @@ public long getByteCount()
      * @return {@code true} if the threshold has been reached;
      *         {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.810 -0400", hash_original_method = "1EA9299850929B3D5FCE42AA4C38FE08", hash_generated_method = "7BACF9D7DB8D3EE4AC91EAC842CF0FA8")
     
 public boolean isThresholdExceeded()
@@ -222,6 +223,7 @@ public boolean isThresholdExceeded()
      *
      * @exception IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.811 -0400", hash_original_method = "16D96BE3274D83A99EFD52BEDEDB0485", hash_generated_method = "CD90E839FCB0BADE3ED09030DB5ED8BB")
     
 protected void checkThreshold(int count) throws IOException
@@ -255,6 +257,7 @@ protected void resetByteCount()
      *
      * @exception IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.812 -0400", hash_original_method = "1258B7401FFA9985EC84EF3503294AC3", hash_generated_method = "D0E9A4B6C860A23274BE26AC4DFCD022")
     
 protected abstract OutputStream getStream() throws IOException;
@@ -266,6 +269,7 @@ protected abstract OutputStream getStream() throws IOException;
      *
      * @exception IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.812 -0400", hash_original_method = "B6A927CF971A77DB4F648C6E61D31E35", hash_generated_method = "541193D2150FC932731022C0C19BE96B")
     
 protected abstract void thresholdReached() throws IOException;

@@ -93,7 +93,8 @@ Sensor() {
     	addTaint(type);
     }
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     public String getName() {
         String str = new String();
         str.addTaint(getTaint());
@@ -110,8 +111,8 @@ Sensor() {
     }
     
     @DSComment("Harvesting information")
-    @DSSpec(DSCat.SECURITY)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     public int getType() {
     	return getTaintInt();
         //return mType;

@@ -50,6 +50,7 @@ void finish() {
 
     // ActionMode.Callback implementation
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.178 -0500", hash_original_method = "EEC72C77A82E33054EA06A487B276F43", hash_generated_method = "AF754D748711D481813985DE90BC2147")
     
 @Override
@@ -77,6 +78,7 @@ void finish() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.181 -0500", hash_original_method = "E3574021502A1E90BCF4C46DB1841054", hash_generated_method = "084A3D8BB1217CF825528FA834954073")
     
 @Override
@@ -84,6 +86,7 @@ void finish() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.184 -0500", hash_original_method = "D632FC0DC2F573BE68AD858FDE491D0B", hash_generated_method = "1CF49B9308BED87EFB310233BE40AB41")
     
 @Override
@@ -123,6 +126,7 @@ void finish() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.187 -0500", hash_original_method = "E29E2B7D27E4F7A85592500EAD3A4CE6", hash_generated_method = "D8E4B01526975F85C955D25C8585AC34")
     
 @Override

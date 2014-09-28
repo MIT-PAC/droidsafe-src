@@ -741,7 +741,7 @@ public abstract List<PermissionGroupInfo> getAllPermissionGroups(int flags);
      */
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.604 -0500", hash_original_method = "BC9AFAA827FACCD234420D43BFB9185C", hash_generated_method = "DD1EE427C72C068D4C9362CB17337762")
     
 public abstract ApplicationInfo getApplicationInfo(String packageName,
@@ -769,7 +769,7 @@ public abstract ApplicationInfo getApplicationInfo(String packageName,
      */
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.606 -0500", hash_original_method = "A7A64DAF504027462A462281F2A57199", hash_generated_method = "5D6C6A69E2318B84E7D342B9CA736A86")
     
 public abstract ActivityInfo getActivityInfo(ComponentName component,
@@ -1191,7 +1191,7 @@ public abstract boolean hasSystemFeature(String name);
      * @see #GET_RESOLVED_FILTER
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.648 -0500", hash_original_method = "F6A86927E121727A272A21E3DCB3FFA7", hash_generated_method = "24F8D6ED87140E52CAC24061BD991ACF")
     
 public abstract ResolveInfo resolveActivity(Intent intent, int flags);
@@ -1332,7 +1332,7 @@ public abstract List<ResolveInfo> queryIntentServices(Intent intent,
      */
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.662 -0500", hash_original_method = "CFE5D064AFA538A646FC7253CD52DEB8", hash_generated_method = "2213BA79A107BB9936D3476AEF3743A0")
     
 public abstract ProviderInfo resolveContentProvider(String name,
@@ -1447,7 +1447,7 @@ public abstract Drawable getDrawable(String packageName, int resid,
      */
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.674 -0500", hash_original_method = "EA2EDB5C6BA981BD61C45ACED3124C72", hash_generated_method = "8CCFA0CD700316E0128637C662938FB1")
     
 public abstract Drawable getActivityIcon(ComponentName activityName)
@@ -1472,7 +1472,7 @@ public abstract Drawable getActivityIcon(ComponentName activityName)
      */
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.676 -0500", hash_original_method = "E1E7DF7C8539E8DF9184DF5DB8C2CD90", hash_generated_method = "D17E962D94EAC8BBB20FBDAA903C3D48")
     
 public abstract Drawable getActivityIcon(Intent intent)
@@ -1503,7 +1503,7 @@ public abstract Drawable getDefaultActivityIcon();
      */
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.681 -0500", hash_original_method = "FE6B9FADCBE1C0A097A550756025ECA1", hash_generated_method = "A0A8CD23D402AE385224882A18EDD4A2")
     
 public abstract Drawable getApplicationIcon(ApplicationInfo info);
@@ -1526,7 +1526,7 @@ public abstract Drawable getApplicationIcon(ApplicationInfo info);
      */
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.683 -0500", hash_original_method = "EE5F31B7588978F62B92A22FA544772B", hash_generated_method = "3924CFBDD036383EE621CCED3E85ACEE")
     
 public abstract Drawable getApplicationIcon(String packageName)
@@ -1677,7 +1677,7 @@ public abstract XmlResourceParser getXml(String packageName, int resid,
      */
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.700 -0500", hash_original_method = "9CBEA3BF0AE7CFAA4440ABBDDD974B55", hash_generated_method = "5E9D06E583A54C2826BDD24E952441E9")
     
 public abstract CharSequence getApplicationLabel(ApplicationInfo info);
@@ -1884,7 +1884,7 @@ public abstract void verifyPendingInstall(int id, int verificationCode);
      * null to clear the association.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.718 -0500", hash_original_method = "2102DDB8238163D944D0FE67C0534BAE", hash_generated_method = "2D86404888E4BE25F3D6C6164A5686D2")
     
 public abstract void setInstallerPackageName(String targetPackage,

@@ -303,7 +303,7 @@ public boolean hasMoreElements() {
             return (mIndex < mNameList.length);
         }
 
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.745 -0500", hash_original_method = "EDE97A24B23321A2938B638C5AA975A1", hash_generated_method = "8E0C899CEA38D57C1F891DBDE1E083E0")
         
 public String nextElement() {

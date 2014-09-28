@@ -12,12 +12,14 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 class AccessibilityDelegateCompatIcs {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.520 -0500", hash_original_method = "0BF56F5CCF17BE32C048833B45062308", hash_generated_method = "1A92348F7C81313FDF77DB294C42542D")
     
 public static Object newAccessibilityDelegateDefaultImpl() {
         return new AccessibilityDelegate();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.552 -0500", hash_original_method = "49528E628E09F0ACBC9F2F1441CA40F4", hash_generated_method = "AAAC385529BA13E3AED9FAE186D52F49")
     
 public static Object newAccessibilityDelegateBridge(final AccessibilityDelegateBridge bridge) {
@@ -90,6 +92,7 @@ public static boolean dispatchPopulateAccessibilityEvent(Object delegate, View h
         return ((AccessibilityDelegate) delegate).dispatchPopulateAccessibilityEvent(host, event);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.560 -0500", hash_original_method = "85CA2CA899B97332E007EA6F9B53E710", hash_generated_method = "D65589C31F3EC7021C4E10325B12E146")
     
 public static void onInitializeAccessibilityEvent(Object delegate, View host,
@@ -113,6 +116,7 @@ public static void onPopulateAccessibilityEvent(Object delegate, View host,
         ((AccessibilityDelegate) delegate).onPopulateAccessibilityEvent(host, event);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.573 -0500", hash_original_method = "7204DA13B3C3F023142E8E66ADA65AF6", hash_generated_method = "C4F68DFBC6BA459161E80F8BE8C9AFD4")
     
 public static boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host,
@@ -121,14 +125,16 @@ public static boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup
                 event);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.577 -0500", hash_original_method = "0E2E4FD873FADD6CC8321BEC0F0E2131", hash_generated_method = "E288C785080EFFAE26BA9A31A63AAA5D")
     
 public static void sendAccessibilityEvent(Object delegate, View host, int eventType) {
         ((AccessibilityDelegate) delegate).sendAccessibilityEvent(host, eventType);
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.580 -0500", hash_original_method = "E3BFE62BC8A651C1280DE3E362953B84", hash_generated_method = "1FB6409CB33356FA4859B470C498B48B")
     
 public static void sendAccessibilityEventUnchecked(Object delegate, View host,

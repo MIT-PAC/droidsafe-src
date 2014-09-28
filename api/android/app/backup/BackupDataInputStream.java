@@ -38,7 +38,7 @@ BackupDataInputStream(BackupDataInput data) {
      * @return The byte read, or undefined if the end of the stream has been reached.
      */
     @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.243 -0500", hash_original_method = "F4751627195ADC12549C9A18CF48A412", hash_generated_method = "26DF838EDF126DC5FE4F1559454DD1D0")
     
 public int read() throws IOException {

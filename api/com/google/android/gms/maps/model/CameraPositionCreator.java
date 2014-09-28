@@ -16,6 +16,7 @@ public class CameraPositionCreator implements android.os.Parcelable.Creator
 		
 	}
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 12:18:07.727 -0400", hash_original_method = "30366B87AFEC637BAA5E05D3B236D25E", hash_generated_method = "BC5EA8986C0360590F8351CDBD17229D")
     
     public Object createFromParcel(Parcel  r1)

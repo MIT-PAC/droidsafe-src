@@ -103,6 +103,7 @@ public synchronized void reset() {
      *
      * @return the number of bytes written to this stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.345 -0500", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "CF994FCC7B87BF04A6C8FECB8C53A973")
     
 public int size() {
@@ -205,8 +206,9 @@ public String toString(String enc) throws UnsupportedEncodingException {
      *             {@code offset + len} is greater than the length of
      *             {@code buffer}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.358 -0500", hash_original_method = "6803EEF19C65AA8F03D81EBEC2EC6C85", hash_generated_method = "E48309311986BABB80FA0DD25BCC37B3")
     
 @Override
@@ -229,7 +231,7 @@ public String toString(String enc) throws UnsupportedEncodingException {
      */
     @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.360 -0500", hash_original_method = "0E8EDDE6C6CD9DF7AD28FE0F8F877448", hash_generated_method = "EC4AA14B7223D43B9330AFEFE8B74404")
     
 @Override

@@ -280,7 +280,7 @@ public MenuItem setIcon(int iconRes) {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.586 -0500", hash_original_method = "17F59D8B490C99308235DB62C5632C43", hash_generated_method = "FC870B7BE66B774D28C4327475BB97C9")
     @DSVerified
-    @DSSafe(DSCat.GUI)
+    @DSSpec(DSCat.INTENT_EXCHANGE)
 public MenuItem setIntent(Intent intent) {
         mIntent = intent;
         return this;

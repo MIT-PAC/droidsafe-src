@@ -243,6 +243,7 @@ protected FileAlterationObserver(FileEntry rootEntry, FileFilter fileFilter, IOC
      *
      * @return the directory being observed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.977 -0400", hash_original_method = "F73AEFE1AB5323ED9772F8703FAEA777", hash_generated_method = "CE31151AB46D0FB824EE6B711428C7EA")
     
 public File getDirectory() {
@@ -304,6 +305,7 @@ public Iterable<FileAlterationListener> getListeners() {
      *
      * @throws Exception if an error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.980 -0400", hash_original_method = "65389FBCC8B0D4443CC183F594B0559D", hash_generated_method = "87DA10DB5FCA1C7EADC80C693A617DDA")
     
 public void initialize() throws Exception {
@@ -321,6 +323,7 @@ public void initialize() throws Exception {
      *
      * @throws Exception if an error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.980 -0400", hash_original_method = "19B94458987093A18E35F94275820DB1", hash_generated_method = "09175B3ECFF2547DB2C90323773BEC19")
     
 public void destroy() throws Exception {
@@ -329,6 +332,7 @@ public void destroy() throws Exception {
     /**
      * Check whether the file and its chlidren have been created, modified or deleted.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.981 -0400", hash_original_method = "28C4BDB6A5F83B4A2D726F32ED4863B2", hash_generated_method = "E32BFE1A45F547A449DD6FA2E38BCE1D")
     
 public void checkAndNotify() {
@@ -361,6 +365,7 @@ public void checkAndNotify() {
      * @param previous The original list of files
      * @param files  The current list of files
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.982 -0400", hash_original_method = "14229043FF7E6DA90FB3DBFED2A622C0", hash_generated_method = "C79FA1001550868C2AE9DDDD308C961F")
     
 private void checkAndNotify(FileEntry parent, FileEntry[] previous, File[] files) {
@@ -396,6 +401,7 @@ private void checkAndNotify(FileEntry parent, FileEntry[] previous, File[] files
      * @param file The file to create an entry for
      * @return A new file entry
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.983 -0400", hash_original_method = "9FB34A64AFD23F37DE49FF2A86984A48", hash_generated_method = "3D95C44EB6A9227F514528AC80794E40")
     
 private FileEntry createFileEntry(FileEntry parent, File file) {
@@ -415,6 +421,7 @@ private FileEntry createFileEntry(FileEntry parent, File file) {
      *
      * @param entry The file entry
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.983 -0400", hash_original_method = "C0CBB028B302FA13274EDDF227B1F519", hash_generated_method = "35C9FC921E493168D2F7BA1612BAA8DC")
     
 private void doCreate(FileEntry entry) {
@@ -437,6 +444,7 @@ private void doCreate(FileEntry entry) {
      * @param entry The previous file system entry
      * @param file The current file
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.984 -0400", hash_original_method = "D3512EAF0EBFD0769AB6296F9B118176", hash_generated_method = "D98A5D385C30A54F80AAD2ECE392572E")
     
 private void doMatch(FileEntry entry, File file) {
@@ -456,6 +464,7 @@ private void doMatch(FileEntry entry, File file) {
      *
      * @param entry The file entry
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.985 -0400", hash_original_method = "DDAF62E14AD15FA9537A3140BB7EB191", hash_generated_method = "7D38428E89D3D1CE85DCE6C9EC3906E3")
     
 private void doDelete(FileEntry entry) {
@@ -475,6 +484,7 @@ private void doDelete(FileEntry entry) {
      * @return the directory contents or a zero length array if
      * the empty or the file is not a directory
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.985 -0400", hash_original_method = "0F27C92B37DFB10D975FFB8810CF21BD", hash_generated_method = "633FD3877549CAE012C10A750FE665EF")
     
 private File[] listFiles(File file) {

@@ -67,37 +67,37 @@ public abstract interface GoogleApiClient
     		client = new DroidsafeGoogleApiClient();
     	}
     	
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
         public GoogleApiClient build()  {
     		return client;
     	}
     	
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
         public Builder addApi(Object api, Object options) {
     		client.addTaint(api.getTaint());
     		client.addTaint(options.getTaint());
     	    return this;
     	}
 
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
         public Builder addApi(Object api) {
     		client.addTaint(api.getTaint());
     	    return this;
     	}
 
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
         public Builder addConnectionCallbacks(GoogleApiClient.ConnectionCallbacks listener) {
     		client.registerConnectionCallbacks(listener);
     	    return this;
     	}
 
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
         public Builder addOnConnectionFailedListener(GoogleApiClient.OnConnectionFailedListener listener) {
     		client.registerConnectionFailedListener(listener);
     	    return this;
     	}
 
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
         public Builder addScope(Scope scope) {
     		client.addTaint(scope.eP().length());
     	    return this;

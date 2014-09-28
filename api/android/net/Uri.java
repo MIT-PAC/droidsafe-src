@@ -404,7 +404,7 @@ public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
 
     public static final Parcelable.Creator<Uri> CREATOR
             = new Parcelable.Creator<Uri>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.385 -0500", hash_original_method = "1CCA462AB4D0EF409DF9173916BA5FD8", hash_generated_method = "E7D8D1AE887DF3EC27BA286F1F6632FA")
         
 public Uri createFromParcel(Parcel in) {
@@ -533,13 +533,15 @@ private Uri() {}
 		return getTaintInt();
 	}
     
-	@DSComment("Abstract Method")
+	@DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
     public String getPath() {
 		return uriString;
 	}
     
-	@DSComment("Abstract Method")
+	@DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
     public String getEncodedPath() {
 		return uriString;
@@ -852,6 +854,7 @@ private PathPart getPathPart() {
                     : path;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.035 -0500", hash_original_method = "E8759FDECF433DBBFF0BA03CF3576CC0", hash_generated_method = "2D7DF043E810551E77B13D1BF994FB35")
@@ -860,6 +863,7 @@ public String getPath() {
             return getPathPart().getDecoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.037 -0500", hash_original_method = "D26AFC1B9D9DFA82513D9A4C50DD2F0F", hash_generated_method = "D76DEE69566845892394F838DEF42423")
@@ -868,6 +872,7 @@ public String getEncodedPath() {
             return getPathPart().getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.039 -0500", hash_original_method = "A1BA2B8DCFFB301EABC725C63F487DC2", hash_generated_method = "6360CFBA859A8146986F6908DA370ACD")
@@ -1111,6 +1116,7 @@ public String getEncodedAuthority() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.120 -0500", hash_original_method = "F489014FCD27D67260CBEC8AC84559A2", hash_generated_method = "EE57F7E9DBD1DFFCFE37F1B53C90B593")
@@ -1119,6 +1125,7 @@ public String getPath() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.122 -0500", hash_original_method = "F167E35F53D1A5A8B17A8A72FE8359AE", hash_generated_method = "9A03D197F6F1FF001396774924A4EA10")
@@ -1155,6 +1162,7 @@ public String getEncodedFragment() {
             return fragment.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.134 -0500", hash_original_method = "08B329AF4FAA2768183F76EC45288C10", hash_generated_method = "C308D1FFE23155846734C76076DE029B")
@@ -1163,6 +1171,7 @@ public List<String> getPathSegments() {
             return Collections.emptyList();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.136 -0500", hash_original_method = "AE7FF2A9DFCB643CF70873B2C08CD5A8", hash_generated_method = "19B1F7448E2299233816958124B540A5")
@@ -1252,7 +1261,7 @@ PathSegments(String[] segments, int size) {
             this.size = size;
         }
 
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.166 -0500", hash_original_method = "043CF25E38E9D3A71BE4CC7B6371568E", hash_generated_method = "5BCFD94D9679CD4A7A9B991B3AFB878D")
         
 public String get(int index) {
@@ -1341,6 +1350,7 @@ PathSegments build() {
             //Synthesized constructor
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.184 -0500", hash_original_method = "D5E71CFA6EED35AEB9B5F4AEC5287C3B", hash_generated_method = "1F2BC9F5EC821DBA8B733164E9A9E9B7")
@@ -1633,6 +1643,7 @@ public String getEncodedAuthority() {
             return this.authority.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.269 -0500", hash_original_method = "C2F72FED192DF0C1254C49B5EAFF6B37", hash_generated_method = "B5E9BADA276CBA0DAA9FC1B55A587E66")
@@ -1641,6 +1652,7 @@ public String getEncodedPath() {
             return this.path.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.271 -0500", hash_original_method = "6081DF09BF7A0319CE8B8794EF03DD3D", hash_generated_method = "09DC704FF3D2BD0779FFD97841A9109F")
@@ -1677,6 +1689,7 @@ public String getEncodedFragment() {
             return this.fragment.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.283 -0500", hash_original_method = "6A1F2A59685BCA2552F3B76D88CB5845", hash_generated_method = "216A1EB87BA78F1931DF87DD6F07CD8B")
@@ -1879,12 +1892,14 @@ public Builder appendPath(String newSegment) {
         /**
          * Appends the given segment to the path.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.339 -0500", hash_original_method = "04B6E07373B5BCB6E5F5541B11BC55A7", hash_generated_method = "155909857C199EE42D2F0076DA9C9BAD")
         
 public Builder appendEncodedPath(String newSegment) {
             return path(PathPart.appendEncodedSegment(path, newSegment));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.341 -0500", hash_original_method = "526B00AFFC674BC410AFF0DB5058AD68", hash_generated_method = "3188366FD00FB87C5285CCF82A6B56B8")
         
 Builder query(Part query) {
@@ -1898,6 +1913,7 @@ Builder query(Part query) {
         /**
          * Encodes and sets the query.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.343 -0500", hash_original_method = "915051404F16544BAB27A534573CC34D", hash_generated_method = "D61CA135A10609047E44413EF6F2655C")
         
 public Builder query(String query) {
@@ -1913,6 +1929,7 @@ public Builder encodedQuery(String query) {
             return query(Part.fromEncoded(query));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.347 -0500", hash_original_method = "AAD8E80453C4B46D11B41869FDCBA00D", hash_generated_method = "AAD8E80453C4B46D11B41869FDCBA00D")
         
 Builder fragment(Part fragment) {
@@ -1923,6 +1940,7 @@ Builder fragment(Part fragment) {
         /**
          * Encodes and sets the fragment.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.350 -0500", hash_original_method = "016C309F39EF5D90CF32B95F6FDB27F8", hash_generated_method = "44CE4AECBBD06EEDB74A930FDEAA0DD6")
         
 public Builder fragment(String fragment) {
@@ -2439,7 +2457,8 @@ PathSegments getPathSegments() {
 		return uriString;
 	}
     
-	@DSComment("Abstract Method")
+	@DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
     public List<String> getPathSegments() {
 		// TODO Auto-generated method stub
@@ -2448,7 +2467,8 @@ PathSegments getPathSegments() {
 		return list;
 	}
     
-	@DSComment("Abstract Method")
+	@DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
     public String getLastPathSegment() {
 		return uriString;
@@ -2579,6 +2599,7 @@ public Set<String> getQueryParameterNames() {
      * @throws NullPointerException if key is null
      * @return a list of decoded values
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.373 -0500", hash_original_method = "9E05603A6F44EBCC73536B2584976016", hash_generated_method = "3145FC174D8CD639CAD7A13104A0C7E4")
     

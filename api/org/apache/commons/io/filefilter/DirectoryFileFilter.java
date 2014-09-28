@@ -63,6 +63,7 @@ protected DirectoryFileFilter() {
      * @param file  the File to check
      * @return true if the file is a directory
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.958 -0400", hash_original_method = "39BD0BE636DBD4121253CD6DED7A982C", hash_generated_method = "38E65DCA80F99797FB8222FC438693DD")
     
 @Override

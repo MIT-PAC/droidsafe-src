@@ -55,7 +55,6 @@ public ScrollerCompatImplIcs(Context context) {
         public float getCurrVelocity() {
             return ScrollerCompatIcs.getCurrVelocity(mScroller);
         }
-    
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.495 -0400", hash_original_method = "0764E8F4B67CA9D0E2FB09B48BECB8C6", hash_generated_method = "83DF987F8679674E57BC6669B9A5F4BC")
             
@@ -77,6 +76,7 @@ ScrollerCompat(Context context) {
      *
      * @return True if the scroller has finished scrolling, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.524 -0400", hash_original_method = "11CABA54472F263992F2940138C1CB0C", hash_generated_method = "9A52536CC723D2F88CF8A51F7D073A1D")
         
 public boolean isFinished() {
@@ -99,6 +99,7 @@ public int getDuration() {
      *
      * @return The new X offset as an absolute distance from the origin.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.527 -0400", hash_original_method = "B815160F376EBB11C2A18AA4D2E8FC95", hash_generated_method = "9FE4C83B830EB71BC6727845DD7E42D9")
         
 public int getCurrX() {
@@ -110,6 +111,7 @@ public int getCurrX() {
      *
      * @return The new Y offset as an absolute distance from the origin.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.530 -0400", hash_original_method = "A19A402C35D861B6A946F669639762CF", hash_generated_method = "24CBDBABF4C8DFCDC3BC57294B0B530C")
         
 public int getCurrY() {
@@ -137,6 +139,7 @@ public float getCurrVelocity() {
      * the animation is not yet finished.  loc will be altered to provide the
      * new location.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.543 -0400", hash_original_method = "ECC72998C7D88FADC4D1D87DC14F5F46", hash_generated_method = "207F8C6420F9420683865CEC96A3810B")
         
 public boolean computeScrollOffset() {
@@ -212,15 +215,14 @@ public void fling(int startX, int startY, int velocityX, int velocityY,
      * Stops the animation. Aborting the animation causes the scroller to move to the final x and y
      * position.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.571 -0400", hash_original_method = "E005DA6439155CCFD4499447A0C361E5", hash_generated_method = "7C65BD8AEDAEB6F75CDA63ACC45B17DC")
         
 public void abortAnimation() {
         IMPL.abortAnimation(mScroller);
     }
 
-
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.506 -0400", hash_original_field = "6C0E1CE3AF31A13B0F9072B46668518D", hash_generated_field = "E4FF87B37D3C54043BCFA3A333E80A77")
-
 
     static  ScrollerCompatImpl IMPL;
 
@@ -289,7 +291,6 @@ public void notifyVerticalEdgeReached(int startY, int finalY, int overY) {
         IMPL.notifyVerticalEdgeReached(mScroller, startY, finalY, overY);
     }
 
-
     /**
      * Notify the scroller that we've reached a horizontal boundary.
      * Normally the information to handle this will already be known
@@ -310,32 +311,38 @@ public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
     }
 
     static class ScrollerCompatImplBase implements ScrollerCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object createScroller(Context context, Interpolator interpolator) {
             return interpolator != null ?
                     new Scroller(context, interpolator) : new Scroller(context);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isFinished(Object scroller) {
             return ((Scroller) scroller).isFinished();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getCurrX(Object scroller) {
             return ((Scroller) scroller).getCurrX();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getCurrY(Object scroller) {
             return ((Scroller) scroller).getCurrY();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getCurrVelocity(Object scroller) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean computeScrollOffset(Object scroller) {
             return ((Scroller) scroller).computeScrollOffset();
@@ -364,6 +371,7 @@ public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
             ((Scroller) scroller).fling(startX, startY, velX, velY, minX, maxX, minY, maxY);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void abortAnimation(Object scroller) {
             ((Scroller) scroller).abortAnimation();
@@ -380,23 +388,27 @@ public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
             // No-op
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isOverScrolled(Object scroller) {
             // Always false
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getFinalX(Object scroller) {
             return ((Scroller) scroller).getFinalX();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getFinalY(Object scroller) {
             return ((Scroller) scroller).getFinalY();
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.512 -0400", hash_original_method = "6675C157AAA92FCDCADBDC0DF5C2A33B", hash_generated_method = "6FF1BE024EB83439B843D693BB27ED55")
         
 public static ScrollerCompat create(Context context) {
@@ -404,31 +416,37 @@ public static ScrollerCompat create(Context context) {
     }
 
     static class ScrollerCompatImplGingerbread implements ScrollerCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object createScroller(Context context, Interpolator interpolator) {
             return ScrollerCompatGingerbread.createScroller(context, interpolator);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isFinished(Object scroller) {
             return ScrollerCompatGingerbread.isFinished(scroller);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getCurrX(Object scroller) {
             return ScrollerCompatGingerbread.getCurrX(scroller);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getCurrY(Object scroller) {
             return ScrollerCompatGingerbread.getCurrY(scroller);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getCurrVelocity(Object scroller) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean computeScrollOffset(Object scroller) {
             return ScrollerCompatGingerbread.computeScrollOffset(scroller);
@@ -459,6 +477,7 @@ public static ScrollerCompat create(Context context) {
                     minX, maxX, minY, maxY, overX, overY);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void abortAnimation(Object scroller) {
             ScrollerCompatGingerbread.abortAnimation(scroller);
@@ -475,22 +494,26 @@ public static ScrollerCompat create(Context context) {
             ScrollerCompatGingerbread.notifyVerticalEdgeReached(scroller, startY, finalY, overY);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isOverScrolled(Object scroller) {
             return ScrollerCompatGingerbread.isOverScrolled(scroller);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getFinalX(Object scroller) {
             return ScrollerCompatGingerbread.getFinalX(scroller);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getFinalY(Object scroller) {
             return ScrollerCompatGingerbread.getFinalY(scroller);
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.516 -0400", hash_original_method = "EF0DA108440114D747965FBB756462D0", hash_generated_method = "3AB1B6FB0180957FA6CF5DEA3627A240")
         
 public static ScrollerCompat create(Context context, Interpolator interpolator) {
@@ -531,6 +554,7 @@ public void fling(int startX, int startY, int velocityX, int velocityY,
     /**
      * @return The final Y position for the scroll in progress, if known.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.536 -0400", hash_original_method = "9261256690A4BD04EE31F493375BFA46", hash_generated_method = "60917930334D4B064D58B2A4281422EE")
         
 public int getFinalY() {
@@ -540,6 +564,7 @@ public int getFinalY() {
     /**
      * @return The final X position for the scroll in progress, if known.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:40.533 -0400", hash_original_method = "69A8D29CBC3A4B7AF16781633F54C850", hash_generated_method = "A777EF428E1503AE17668E2F72533FEA")
         
 public int getFinalX() {

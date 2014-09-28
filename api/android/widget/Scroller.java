@@ -273,7 +273,7 @@ public final int getCurrY() {
      */
     @DSComment("Scroller")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.166 -0500", hash_original_method = "B027DED22A5B5763CA61B11517344C6D", hash_generated_method = "FBD30219A263B76C72919EC369B7C1FE")
     
 public float getCurrVelocity() {

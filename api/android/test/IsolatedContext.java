@@ -87,7 +87,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return null;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.931 -0500", hash_original_method = "5B78FE35E60043EEBC860B3845D6E056", hash_generated_method = "A88662890337D37F90176F4205A80740")
     
 @Override

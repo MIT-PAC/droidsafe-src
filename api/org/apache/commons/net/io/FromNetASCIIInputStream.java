@@ -69,7 +69,6 @@ public static final boolean isConversionRequired()
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.898 -0500", hash_original_field = "225815D0B568E571D54FF0CD87478B66", hash_generated_field = "C07F77B1E7197C6CE7DE2C4F199BE463")
 
-
     private int __length = 0;
 
     /***
@@ -83,7 +82,6 @@ public FromNetASCIIInputStream(InputStream input)
     {
         super(input, _lineSeparatorBytes.length + 1);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.910 -0500", hash_original_method = "77980A358154D9038CFECBC54542DD49", hash_generated_method = "8E9BB545BA3E9B629B4ECC63266C8715")
     @DSVerified
@@ -115,7 +113,6 @@ private int __read() throws IOException
         return ch;
     }
 
-
     /***
      * Reads and returns the next byte in the stream.  If the end of the
      * message has been reached, returns -1.  Note that a call to this method
@@ -129,6 +126,7 @@ private int __read() throws IOException
      * @exception IOException If an error occurs while reading the underlying
      *            stream.
      ***/
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.913 -0500", hash_original_method = "FDD307626797CF03D3088020E6279DC1", hash_generated_method = "EC28F09966AA2D56B5EA24D3CC58965D")
     @DSVerified
     @DSSpec(DSCat.IO)
@@ -139,7 +137,6 @@ public int read() throws IOException
 
         return __read();
     }
-
 
     /***
      * Reads the next number of bytes from the stream into an array and
@@ -152,6 +149,7 @@ public int read() throws IOException
      * @exception IOException If an error occurs in reading the underlying
      *            stream.
      ***/
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.916 -0500", hash_original_method = "1AF05D3B3AC1A0BE6FEC3ED8E4AD92D7", hash_generated_method = "602CBE64B37DDC68026D3CD1EA56EC7D")
     @DSVerified
     @DSSpec(DSCat.IO)
@@ -159,7 +157,6 @@ public int read(byte buffer[]) throws IOException
     {
         return read(buffer, 0, buffer.length);
     }
-
 
     /***
      * Reads the next number of bytes from the stream into an array and returns
@@ -175,6 +172,7 @@ public int read(byte buffer[]) throws IOException
      * @exception IOException If an error occurs while reading the underlying
      *            stream.
      ***/
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:04.920 -0500", hash_original_method = "D5CA87DB17742A9AF9BD65F49DD2ECBD", hash_generated_method = "E675C261CE18EE23F3E1B538CF4CA707")
     @DSVerified
     @DSSpec(DSCat.IO)
@@ -207,10 +205,8 @@ public int read(byte buffer[], int offset, int length) throws IOException
         }
         while (--__length > 0 && (ch = __read()) != -1);
 
-
         return (offset - off);
     }
-
 
     // PushbackInputStream in JDK 1.1.3 returns the wrong thing
     /***

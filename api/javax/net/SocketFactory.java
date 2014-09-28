@@ -52,7 +52,7 @@ protected SocketFactory() {
      *             if an error occurs while creating a new socket.
      */
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSpec(DSCat.INTERNET)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.810 -0500", hash_original_method = "237BDA73790E5091959E59275734231E", hash_generated_method = "3223CC07973034D16BC112F67CE7D73F")
     

@@ -8,24 +8,24 @@ public class AdSize {
 	private int width;
 	private int height;
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	public int getWidthInPixels(Context r3) {
 		// TODO Auto-generated method stub
 		return width;
 	}
 	
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	public int getWidth() {
 		return width;
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	public int getHeightInPixels(Context r3) {
 		// TODO Auto-generated method stub
 		return height;
 	}
 	
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	public int getHeight() {
 		return height;
 	}
@@ -36,12 +36,12 @@ public class AdSize {
 		height = h;
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	public boolean isAutoHeight() {
 		return toTaintBoolean(width + height);
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	public boolean isFullWidth() {
 		return toTaintBoolean(width + height);
 		

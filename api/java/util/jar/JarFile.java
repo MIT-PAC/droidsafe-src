@@ -137,6 +137,7 @@ public JarFile(String filename, boolean verify) throws IOException {
         readMetaEntries();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.894 -0400", hash_original_method = "DDF115034FADFE53A1FD9BC36D36CE25", hash_generated_method = "28390275337A046A4F073DB9C9A54D85")
     @Override
     public Enumeration<JarEntry> entries() {
@@ -218,7 +219,8 @@ public JarEntry getJarEntry(String name) {
      *             if the jar file is closed.
      * @see Manifest
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.857 -0500", hash_original_method = "E67D102DBF269AEACB3865BB39A89C99", hash_generated_method = "FCEBD4860DC6B0A79CDC7C64D2944AFA")
     
 public Manifest getManifest() throws IOException {
@@ -393,7 +395,7 @@ JarFileInputStream(InputStream is, ZipEntry ze,
         }
 
         @DSSource({DSSourceKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.811 -0500", hash_original_method = "89CF4CB391CD9E8B348E579506073CE6", hash_generated_method = "B250FDF4E90C46AD119A8F73DF2C03D4")
         
 @Override
@@ -509,6 +511,7 @@ private ZipEntry[] getMetaEntriesImpl() {
      * @throws IOException
      *             if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.873 -0500", hash_original_method = "C7FCBD344022D72FF18766A4DFEA8EE1", hash_generated_method = "7035C7CC0EC06D72F1A3D6EF6B3FE4EA")
     
 @Override

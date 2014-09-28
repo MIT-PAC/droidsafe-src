@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.app;
 
 import droidsafe.annotations.*;
@@ -45,12 +44,12 @@ class ActionBarDrawerToggleHoneycomb {
     private static final String TAG = "ActionBarDrawerToggleHoneycomb";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:34.349 -0400", hash_original_field = "5C7C7C807D4667E8DFE167233BAF6A11", hash_generated_field = "431C79031997EF2D7CAA06096E8A2CAF")
 
-
     private static final int[] THEME_ATTRS = new int[] {
             DSUtils.FAKE_INT
             
     };
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:34.357 -0400", hash_original_method = "D61429DC2EBFC8D5ACD1834CC83888F8", hash_generated_method = "501720C9F2C1EF2C9219F3B1C8D1E1D7")
     
 public static Object setActionBarUpIndicator(Object info, Activity activity,
@@ -75,6 +74,7 @@ public static Object setActionBarUpIndicator(Object info, Activity activity,
         return info;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:34.363 -0400", hash_original_method = "8D750A5CEB4519FF209DAA4FC963E665", hash_generated_method = "F1E18CFD535E48D2F76F82E8F0E1226D")
     
 public static Object setActionBarDescription(Object info, Activity activity,
@@ -94,6 +94,7 @@ public static Object setActionBarDescription(Object info, Activity activity,
         return info;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:34.369 -0400", hash_original_method = "8A5AE9AC9313119D692C1ED43667FE3F", hash_generated_method = "FBAE5216BBEB963ACC00EB29E8E63280")
     
 public static Drawable getThemeUpIndicator(Activity activity) {

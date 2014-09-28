@@ -53,7 +53,7 @@ public static Messenger readMessengerOrNullFromParcel(Parcel in) {
 
     public static final Parcelable.Creator<Messenger> CREATOR
             = new Parcelable.Creator<Messenger>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.419 -0500", hash_original_method = "9CB182A89C6CC0D581283770DD971374", hash_generated_method = "91BD7DF507EE4BBC8B6197B69AFA5AF8")
         
 public Messenger createFromParcel(Parcel in) {
@@ -111,7 +111,7 @@ public Messenger(IBinder target) {
      * Handler no longer exists.
      */
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.405 -0500", hash_original_method = "87BB77B45562A993DA127AF8A28A35EF", hash_generated_method = "14BEC707A4A52F5122FCA56614674178")
 public void send(Message message) throws RemoteException {
@@ -128,7 +128,7 @@ public void send(Message message) throws RemoteException {
      * @return Returns the IBinder backing this Messenger.
      */
     @DSComment("Binder is vague, need modeling")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.407 -0500", hash_original_method = "4371CC0F380F9E28159928FBC65693A0", hash_generated_method = "CF424504EFFD31AD8ED006BBB939C76F")
 public IBinder getBinder() {
         return mIBinder;

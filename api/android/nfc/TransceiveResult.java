@@ -26,7 +26,7 @@ public final class TransceiveResult implements Parcelable {
 
     public static final Parcelable.Creator<TransceiveResult> CREATOR =
             new Parcelable.Creator<TransceiveResult>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.809 -0500", hash_original_method = "BFC8A39F82125AA8B2493EE990788449", hash_generated_method = "F89AB33BD05BD3B26A9FD1785AC1E901")
         
 @Override

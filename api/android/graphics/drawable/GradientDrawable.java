@@ -1195,6 +1195,7 @@ private boolean ensureValidRect() {
         return mGradientState.mHeight;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.677 -0500", hash_original_method = "DD96D81CE576A9B12867099611327831", hash_generated_method = "3D4690C3650C7ADE0B09533643749479")
     
 @Override

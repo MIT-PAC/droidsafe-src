@@ -79,6 +79,7 @@ public AutoCloseInputStream(InputStream in) {
      * @throws IOException if the stream could not be closed
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.950 -0400", hash_original_method = "1A943425CA4F660D14F7D119D0C80385", hash_generated_method = "C892A85E8A4B335D66BDBCBB39D56DF6")
     
 @Override

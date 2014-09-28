@@ -15,7 +15,7 @@ public class VerifierInfo implements Parcelable {
 
     public static final Parcelable.Creator<VerifierInfo> CREATOR
             = new Parcelable.Creator<VerifierInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.627 -0500", hash_original_method = "189C78EFC045E49FDE942E42CD914197", hash_generated_method = "E8A2FB1FB20D2D9475BC39B3F538965B")
         
 public VerifierInfo createFromParcel(Parcel source) {

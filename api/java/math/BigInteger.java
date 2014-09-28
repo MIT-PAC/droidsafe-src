@@ -478,7 +478,7 @@ void prepareJavaRepresentation() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.054 -0500", hash_original_method = "F45D943577A758DE4A75A5CD2DF6D206", hash_generated_method = "892F82226DA47F44D2E09C61D62E2B3B")
     
 public byte[] toByteArray() {
@@ -725,7 +725,7 @@ public boolean testBit(int n) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.082 -0500", hash_original_method = "0A60006224C30F0C8DC4E0C8D16895AE", hash_generated_method = "ACAC396F94B806A4371B9CBF03A7E39C")
     
 public BigInteger setBit(int n) {
@@ -794,7 +794,7 @@ public BigInteger flipBit(int n) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.089 -0500", hash_original_method = "8383F139074E92B6BF621C4AC408CB05", hash_generated_method = "0240D4D544EB0AB147B86F0291658CBB")
     
 public int getLowestSetBit() {

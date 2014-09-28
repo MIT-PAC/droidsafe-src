@@ -111,6 +111,7 @@ public String getUsername() {
         return hash;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:21.792 -0400", hash_original_method = "5EB6161BABF2A9FB23BAFC3B59108B85", hash_generated_method = "25B2387EA883315F3CF41AA5C50EFE5D")
     
 @Override

@@ -175,7 +175,8 @@ public final Provider getProvider() {
      *
      * @return the length of this MAC (in bytes).
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.673 -0500", hash_original_method = "02AEE303A4D099BA107FB2CB7C60A1E3", hash_generated_method = "656E9EB0E4DD43379A7E6E6A9ECA9FA5")
     
 public final int getMacLength() {
@@ -245,6 +246,7 @@ public final void init(Key key) throws InvalidKeyException {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.681 -0500", hash_original_method = "CE2C32417AC34B9F04F350B6B83BA3FB", hash_generated_method = "C7EFEC23D4621DF0A643E6D009872FA4")
     
 public final void update(byte input) throws IllegalStateException {
@@ -270,6 +272,7 @@ public final void update(byte input) throws IllegalStateException {
      *             if {@code offset} and {@code len} do not specified a valid
      *             chunk in {@code input} buffer.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.684 -0500", hash_original_method = "715302E1C20F57A2A8D63A54A99663FC", hash_generated_method = "F3D72487E7A5A494D889A8EDFD1CF1E6")
     
 public final void update(byte[] input, int offset, int len) throws IllegalStateException {
@@ -293,6 +296,7 @@ public final void update(byte[] input, int offset, int len) throws IllegalStateE
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.687 -0500", hash_original_method = "3D6841DD3321DF543EE186C2C08CA7E2", hash_generated_method = "F8C03B01875AE3EA2298F5B7496851FE")
     
 public final void update(byte[] input) throws IllegalStateException {
@@ -314,6 +318,7 @@ public final void update(byte[] input) throws IllegalStateException {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.689 -0500", hash_original_method = "A1BB43A6E7623A403344D1C2F2A132EB", hash_generated_method = "ADC74FDD8ACFD2F4407DF33AE46D9F42")
     
 public final void update(ByteBuffer input) {

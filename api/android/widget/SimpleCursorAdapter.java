@@ -339,7 +339,7 @@ private void findColumns(String[] from) {
     }
 
     @DSComment("returned DB object")
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.923 -0500", hash_original_method = "4582D229162590CE1749F675A6BA90D6", hash_generated_method = "DCAFF21CFF90CAE27D942A9EA9291B7A")
     
 @Override
@@ -367,6 +367,7 @@ private void findColumns(String[] from) {
      *            are given the values of the first N columns in the from
      *            parameter.  Can be null if the cursor is not available yet.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.925 -0500", hash_original_method = "6EF93FFBB8E610946B54D3F2EC498321", hash_generated_method = "EDD54B4A4DEF333250C82AA09EE72669")
     
 public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {

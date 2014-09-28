@@ -781,7 +781,8 @@ private void warn(String methodName) {
             return getParent().getResource(resName);
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSpec(DSCat.SPEC_OTHERS)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.730 -0500", hash_original_method = "7DF26E5478EB621EA7136B5331588545", hash_generated_method = "53EAE112CC13812D1E1211C5DE531D2B")
         
 @Override public Enumeration<URL> getResources(String resName) throws IOException {
@@ -798,7 +799,7 @@ private void warn(String methodName) {
             return getParent().getResourceAsStream(resName);
         }
 
-        @DSBan(DSCat.REFLECTION)
+        @DSSpec(DSCat.SPEC_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.736 -0500", hash_original_method = "8B4C21AC14EA436FB72A6381E557B850", hash_generated_method = "91FCE81986E2A452AC10D1CF8743BE2C")
         

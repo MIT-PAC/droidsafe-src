@@ -87,6 +87,7 @@ private long checkedByteOffset(int i) {
      *
      * @return the length of the array
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.268 -0400", hash_original_method = "27E0D57FF2AEBC70EE6BF760C51E525C", hash_generated_method = "70C186BF3C020F97975A93D7ABF97EE3")
     
 public final int length() {
@@ -99,6 +100,7 @@ public final int length() {
      * @param i the index
      * @return the current value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.268 -0400", hash_original_method = "8463D5A45B1A17BDF7D82E5555D69CD7", hash_generated_method = "DAF1ED99AF71309D57A2B8716F8D305C")
     
 public final long get(int i) {
@@ -117,6 +119,7 @@ private long getRaw(long offset) {
      * @param i the index
      * @param newValue the new value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.269 -0400", hash_original_method = "4DA52F35ED4F588D120AC15F4A7F5E05", hash_generated_method = "84F1507F7B3A87BF1EC6806B18640218")
     
 public final void set(int i, long newValue) {
@@ -144,6 +147,7 @@ public final void lazySet(int i, long newValue) {
      * @param newValue the new value
      * @return the previous value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.270 -0400", hash_original_method = "2B52BF2B27B28F94D4532D1FCB739678", hash_generated_method = "FF46EF5F001A50E6E8C593975E69B8C1")
     
 public final long getAndSet(int i, long newValue) {

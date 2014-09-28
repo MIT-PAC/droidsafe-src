@@ -363,7 +363,7 @@ public static boolean mayUseInputMethod(int flags) {
         
         public static final Parcelable.Creator<LayoutParams> CREATOR
                     = new Parcelable.Creator<LayoutParams>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.046 -0500", hash_original_method = "AB2D39A2B696161CF2CD764489EDE57E", hash_generated_method = "1B698383EC2C452A3EBCFCE202C96D2D")
             
 public LayoutParams createFromParcel(Parcel in) {
@@ -691,6 +691,7 @@ public LayoutParams(Parcel in) {
             inputFeatures = in.readInt();
         }
     
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.034 -0500", hash_original_method = "6F9B8B9DC4DDD39983F318552B913051", hash_generated_method = "2B5104083580B3816E7BA54E25FE5D58")
         
 public final void setTitle(CharSequence title) {

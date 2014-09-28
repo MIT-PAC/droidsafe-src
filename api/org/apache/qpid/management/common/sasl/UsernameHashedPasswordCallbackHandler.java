@@ -36,6 +36,7 @@ import java.security.NoSuchAlgorithmException;
 public class UsernameHashedPasswordCallbackHandler implements CallbackHandler
 {
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.286 -0400", hash_original_method = "5FF2B42B47087D6EDEB23E2883C374D0", hash_generated_method = "066166D1BC8DDA63A672E8DC88BFEF6C")
     
 public static char[] getHash(String text) throws NoSuchAlgorithmException, UnsupportedEncodingException
@@ -76,6 +77,7 @@ public UsernameHashedPasswordCallbackHandler(String user, String password) throw
         this.pwchars = getHash(password);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.283 -0400", hash_original_method = "728E5FD592B588D0BD967FD67C6AE746", hash_generated_method = "85AC69400D3C0EF80ACD573BACE91298")
     
 public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException
@@ -99,6 +101,7 @@ public void handle(Callback[] callbacks) throws IOException, UnsupportedCallback
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.284 -0400", hash_original_method = "1879E0720E927299ACBF67C302ED951A", hash_generated_method = "D906ED2B482080374848C8818107B9E4")
     
 private void clearPassword()

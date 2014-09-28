@@ -114,6 +114,7 @@ public ExploreByTouchHelper(View forView) {
      * @param host View whose logical children are exposed by this helper.
      * @return The accessibility node provider for this helper.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.388 -0400", hash_original_method = "3A7154DD0098C6940A4C85A82BE34446", hash_generated_method = "457F2F722DDA8C643FAA750BC4CA08A2")
     
 @Override
@@ -185,6 +186,7 @@ public boolean dispatchHoverEvent(MotionEvent event) {
      * @param eventType The type of event to send.
      * @return true if the event was sent successfully.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.398 -0400", hash_original_method = "96D110182B0704010077DB7FDA2616F5", hash_generated_method = "048D3F10F127EFEF8ECD6CCAFBC22F0E")
     
 public boolean sendEventForVirtualView(int virtualViewId, int eventType) {
@@ -223,6 +225,7 @@ public void invalidateRoot() {
      *
      * @param virtualViewId The virtual view id to invalidate.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.406 -0400", hash_original_method = "17EE4F93EE5401D70D975BE6F352A6D7", hash_generated_method = "1710C544718E4FD6EB9DD97F09EF4279")
     
 public void invalidateVirtualView(int virtualViewId) {
@@ -250,6 +253,7 @@ public int getFocusedVirtualView() {
      *            hovered, or {@link #INVALID_ID} if no item is hovered within
      *            the parent view.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.413 -0400", hash_original_method = "438FC3EE468C2481A68882B250CBAFD4", hash_generated_method = "66B477549E6D91D8114EF828949EFD7E")
     
 private void updateHoveredVirtualView(int virtualViewId) {
@@ -277,6 +281,7 @@ private void updateHoveredVirtualView(int virtualViewId) {
      * @return An {@link AccessibilityEvent} populated with information about
      *         the specified item.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.417 -0400", hash_original_method = "DC2F06AD2459123BE3EE0DB6360F5DDB", hash_generated_method = "528A921E95A3249C0290CE2A637A949C")
     
 private AccessibilityEvent createEvent(int virtualViewId, int eventType) {
@@ -295,6 +300,7 @@ private AccessibilityEvent createEvent(int virtualViewId, int eventType) {
      * @return An {@link AccessibilityEvent} populated with information about
      *         the specified item.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.422 -0400", hash_original_method = "F6176DE05E5EEDE2729CEDA2461C82B8", hash_generated_method = "428B5BEDA468B40E0EA20311F46185FB")
     
 private AccessibilityEvent createEventForHost(int eventType) {
@@ -313,6 +319,7 @@ private AccessibilityEvent createEventForHost(int eventType) {
      * @return An {@link AccessibilityEvent} populated with information about
      *         the specified item.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.427 -0400", hash_original_method = "B5387EAE5ECDAA2232667A6155115C6F", hash_generated_method = "DD8A336121EE1260E0EE0E054BBA42A1")
     
 private AccessibilityEvent createEventForChild(int virtualViewId, int eventType) {
@@ -348,6 +355,7 @@ private AccessibilityEvent createEventForChild(int virtualViewId, int eventType)
      * @return An {@link AccessibilityNodeInfoCompat} populated with information
      *         about the specified item.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.430 -0400", hash_original_method = "EBE0710EEEB344DA7EE2AED22575E2DA", hash_generated_method = "9FF00C64D55869543A3B73F758C3DBB0")
     
 private AccessibilityNodeInfoCompat createNode(int virtualViewId) {
@@ -365,6 +373,7 @@ private AccessibilityNodeInfoCompat createNode(int virtualViewId) {
      *
      * @return An {@link AccessibilityNodeInfoCompat} for the parent node.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.435 -0400", hash_original_method = "1F4D425D0B761A2CF9DAF84D210E8C06", hash_generated_method = "611A11E020E72A907B0EF493D5FD56E6")
     
 private AccessibilityNodeInfoCompat createNodeForHost() {
@@ -410,6 +419,7 @@ private AccessibilityNodeInfoCompat createNodeForHost() {
      *            a node.
      * @return An {@link AccessibilityNodeInfoCompat} for the specified item.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.442 -0400", hash_original_method = "06BB9C41C92493E56EB052472C0E6CAD", hash_generated_method = "F8D3790A88D9C725AD2EFB67F0A00102")
     
 private AccessibilityNodeInfoCompat createNodeForChild(int virtualViewId) {
@@ -475,6 +485,7 @@ private AccessibilityNodeInfoCompat createNodeForChild(int virtualViewId) {
         return node;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.447 -0400", hash_original_method = "4865729248C15A3BDB4AF7F4CD3C0582", hash_generated_method = "4781350769968312C99D68A9236452AF")
     
 private boolean performAction(int virtualViewId, int action, Bundle arguments) {
@@ -486,12 +497,14 @@ private boolean performAction(int virtualViewId, int action, Bundle arguments) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.451 -0400", hash_original_method = "7AB3307663C8B9E8A60C43E776F0F48C", hash_generated_method = "9D4863B543BF26E95B595B4F889DCFB1")
     
 private boolean performActionForHost(int action, Bundle arguments) {
         return ViewCompat.performAccessibilityAction(mView, action, arguments);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.455 -0400", hash_original_method = "C4B4581ABB41EAD20E436B3D07A04F79", hash_generated_method = "FF5AAB479AB785F505A5BB3D4A5BD156")
     
 private boolean performActionForChild(int virtualViewId, int action, Bundle arguments) {
@@ -504,6 +517,7 @@ private boolean performActionForChild(int virtualViewId, int action, Bundle argu
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.460 -0400", hash_original_method = "EB3B7851E0A9AE9507BD94312ED2E0A5", hash_generated_method = "BBDC04FF7D10F1EA7138EE472553FC9C")
     
 private boolean manageFocusForChild(int virtualViewId, int action, Bundle arguments) {
@@ -525,6 +539,7 @@ private boolean manageFocusForChild(int virtualViewId, int action, Bundle argume
      * @param localRect A rectangle in local (parent) coordinates.
      * @return Whether the specified {@link Rect} is visible on the screen.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.465 -0400", hash_original_method = "C741EA9E01AD56ACA1CAE75445D93E59", hash_generated_method = "59E5BFEE256BAB0048C4EF36203D9474")
     
 private boolean intersectVisibleToUser(Rect localRect) {
@@ -567,6 +582,7 @@ private boolean intersectVisibleToUser(Rect localRect) {
      *
      * @return True if the view is accessibility focused.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.468 -0400", hash_original_method = "E8BD9512DA48718E84726C044C56025C", hash_generated_method = "33A3A8D7C9BDBC3ED100CA30AAD87945")
     
 private boolean isAccessibilityFocused(int virtualViewId) {
@@ -585,6 +601,7 @@ private boolean isAccessibilityFocused(int virtualViewId) {
      *            accessibility focus.
      * @return Whether this virtual view actually took accessibility focus.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.472 -0400", hash_original_method = "9221D7E230633C01EE0D4401DD9EDF4F", hash_generated_method = "8D289384FC46C15507C4061828706FD1")
     
 private boolean requestAccessibilityFocus(int virtualViewId) {
@@ -611,6 +628,7 @@ private boolean requestAccessibilityFocus(int virtualViewId) {
      *            accessibility focus.
      * @return Whether this virtual view actually cleared accessibility focus.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.476 -0400", hash_original_method = "7A51DC02724A98B596F2ECF37D3805B1", hash_generated_method = "C93B43EE7E6C75FFF0A0A18E99CB8B59")
     
 private boolean clearAccessibilityFocus(int virtualViewId) {
@@ -633,6 +651,7 @@ private boolean clearAccessibilityFocus(int virtualViewId) {
      * @return virtual view identifier for the logical item under
      *         coordinates (x,y)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.480 -0400", hash_original_method = "60BB1E84FCA474B200ED13202641C1BB", hash_generated_method = "2B85F8D44FB370EF937C50C06E08E3DE")
     
 protected abstract int getVirtualViewAt(float x, float y);
@@ -644,6 +663,7 @@ protected abstract int getVirtualViewAt(float x, float y);
      *
      * @param virtualViewIds The list to populate with visible items
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.483 -0400", hash_original_method = "F1691EE0366624B0B3D2D77A90A8E893", hash_generated_method = "CD88857B817695162064E7831E8A1EB9")
     
 protected abstract void getVisibleVirtualViews(List<Integer> virtualViewIds);
@@ -678,6 +698,7 @@ protected abstract void getVisibleVirtualViews(List<Integer> virtualViewIds);
      *            populate the event
      * @param event The event to populate
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.488 -0400", hash_original_method = "B2E49BDDBC18C066A863F629479B0A8F", hash_generated_method = "C0DA5337D12B5C0F4B396E0B884CD4A4")
     
 protected abstract void onPopulateEventForVirtualView(
@@ -738,6 +759,7 @@ protected abstract void onPopulateEventForVirtualView(
      *            which to populate the node
      * @param node The node to populate
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.492 -0400", hash_original_method = "2BFD04B45BC24BA9601ECB515166B93C", hash_generated_method = "618F7E23D8A4D7EF822614D4DDAE516A")
     
 protected abstract void onPopulateNodeForVirtualView(
@@ -765,6 +787,7 @@ protected abstract void onPopulateNodeForVirtualView(
      *            null
      * @return true if the action was performed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.497 -0400", hash_original_method = "0C33342135985E48955C28913B6F3F0B", hash_generated_method = "F16A4C17D2B8E69D8B5B1580B9A5F94F")
     
 protected abstract boolean onPerformActionForVirtualView(
@@ -775,11 +798,13 @@ protected abstract boolean onPerformActionForVirtualView(
      * used in API 16+.
      */
     private class ExploreByTouchNodeProvider extends AccessibilityNodeProviderCompat {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public AccessibilityNodeInfoCompat createAccessibilityNodeInfo(int virtualViewId) {
             return ExploreByTouchHelper.this.createNode(virtualViewId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean performAction(int virtualViewId, int action, Bundle arguments) {
             return ExploreByTouchHelper.this.performAction(virtualViewId, action, arguments);

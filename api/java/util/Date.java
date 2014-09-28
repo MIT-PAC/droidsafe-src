@@ -509,7 +509,7 @@ public boolean before(Date date) {
      *         they are equal, and an {@code int > 0} if this {@code Date} is greater.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.933 -0500", hash_original_method = "7C9742DC24BA8DF560999557E5DD5087", hash_generated_method = "F59E4670EF4BD5DDEFA3B1166341ED83")
     
 public int compareTo(Date date) {
@@ -534,7 +534,7 @@ public int compareTo(Date date) {
      *
      * @see #hashCode
      */
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.936 -0500", hash_original_method = "DDDF9262D80550B9DB77ACA0997BD3D6", hash_generated_method = "BF420294DB7A0F905CBE21AC20CBA48F")
     
 @Override
@@ -584,7 +584,7 @@ public int compareTo(Date date) {
      */
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.943 -0500", hash_original_method = "E9FAB79941832FB5BB28A56A75132611", hash_generated_method = "C7916E717A7AB29533C2BB1C1C15BB2D")
     
 @Deprecated
@@ -601,7 +601,7 @@ public int compareTo(Date date) {
      */
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.946 -0500", hash_original_method = "905F61D3BDD6A004D6695A8C4C0A588F", hash_generated_method = "EF947D8DA80AAE9230D7A14A9CE6DA79")
     
 @Deprecated
@@ -651,7 +651,7 @@ public int compareTo(Date date) {
      */
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.953 -0500", hash_original_method = "6634404A1A66BE1A7302C8A8E427A289", hash_generated_method = "7F40D28ACFD573A56785C7EF4B951249")
     
 public long getTime() {

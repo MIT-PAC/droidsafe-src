@@ -262,7 +262,7 @@ private static byte[] concat(byte[]... arrays) {
 
     public static final Parcelable.Creator<NdefRecord> CREATOR =
             new Parcelable.Creator<NdefRecord>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.227 -0500", hash_original_method = "61F0FE49184683E1DD0D669A65FA9F65", hash_generated_method = "E825ACFCA65124C3B19A053A814992A0")
         
 public NdefRecord createFromParcel(Parcel in) {
@@ -430,7 +430,7 @@ public byte[] getId() {
      * Returns the variable length payload.
      */
     @DSComment("data structure")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.204 -0500", hash_original_method = "1327F8BA6EFB58D178B7F3819A329700", hash_generated_method = "3209572B1428FC77D1ED81F46732F85B")
     

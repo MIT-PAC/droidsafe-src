@@ -274,6 +274,7 @@ public String substringTrimmed(int beginIndex, int endIndex) {
         return new String(this.buffer, beginIndex, endIndex - beginIndex);
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.538 -0500", hash_original_method = "37A881D5A8D6182DF31C9932D86CB3D7", hash_generated_method = "A3F48E3767849BC3384241499FC5DC53")
     

@@ -599,7 +599,7 @@ public LocalSocketAddress getSockAddress() throws IOException
 
         /** {@inheritDoc} */
         @DSSource({DSSourceKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.281 -0500", hash_original_method = "395E06403A9BB7E16A5F2E3FCA2C1758", hash_generated_method = "50FEC6D2F5EEB194633B0219A38358AA")
         
 @Override
@@ -693,7 +693,7 @@ public LocalSocketAddress getSockAddress() throws IOException
 
         /** {@inheritDoc} */
         @DSSink({DSSinkKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.299 -0500", hash_original_method = "0B4435377A393210C076C48249BA83BB", hash_generated_method = "024C608DDBDDDB6ABBACDC1BA4A0D8E2")
         
 @Override

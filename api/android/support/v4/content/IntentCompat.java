@@ -32,6 +32,7 @@ public class IntentCompat {
      * @see Intent#setClass
      * @see Intent#setComponent
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.542 -0500", hash_original_method = "528748BF23D0899AD4CB079D5A067295", hash_generated_method = "31F798B67D7EBEBB8FE2A3413DF24E66")
     
 public static Intent makeMainActivity(ComponentName mainActivity) {
@@ -97,6 +98,7 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.497 -0500", hash_original_method = "4B98301A7E59A155B150C46D4BE1C0A7", hash_generated_method = "762E7B13AB746A9C1A635A5EFE32DA0F")
         
 @Override
@@ -107,6 +109,7 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
             return intent;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.500 -0500", hash_original_method = "C2ED66B58A361F10BA817EED5E34E61E", hash_generated_method = "EFCA63ED1212FDC11B765F42F7AE1B45")
         
 @Override
@@ -120,6 +123,7 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
             return intent;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.503 -0500", hash_original_method = "F82489D0D61AED6A92FA7B650E973F8B", hash_generated_method = "412868DEB2B7318C8CC4DB0D52893C25")
         
 @Override
@@ -140,12 +144,14 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.507 -0500", hash_original_method = "7AEF38C337C1A4B268D6BF228A89F2D2", hash_generated_method = "BB3C58AA692CFC57291C1DAB6F1AD969")
         
 @Override
         public Intent makeMainActivity(ComponentName componentName) {
             return IntentCompatHoneycomb.makeMainActivity(componentName);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.510 -0500", hash_original_method = "9C5B324D72EEDCECCD1591039BA9002E", hash_generated_method = "0ADAEBBC0F683A3166F5FAB5C45B68FD")
         
 @Override
@@ -163,6 +169,7 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.515 -0500", hash_original_method = "273E6CE96758BF678EE6C7070C39071C", hash_generated_method = "EE1C3D1BCB81ABA4D9D7F211C02FC25D")
         
 @Override

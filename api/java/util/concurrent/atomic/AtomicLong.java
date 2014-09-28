@@ -64,7 +64,7 @@ public AtomicLong() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.526 -0500", hash_original_method = "558225EAA1BF82052D6B969C16747B7A", hash_generated_method = "0DA3986B795EBED7D70FCF24B2FF399B")
     
 public final long get() {
@@ -162,7 +162,7 @@ public final boolean weakCompareAndSet(long expect, long update) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.542 -0500", hash_original_method = "0FB09453B9C7F7E3674DED4A168E8FE2", hash_generated_method = "3E6BAA9B4DE447110E896CD61AC2ACE1")
     
 public final long getAndIncrement() {

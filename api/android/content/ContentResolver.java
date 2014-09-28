@@ -1245,7 +1245,7 @@ public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException 
      * @return the URL of the newly created row.
      */
     @DSComment("From safe class list")
-    @DSSpec(DSCat.DATABASE)
+    @DSSpec(DSCat.CONTENT)
     @DSSink({DSSinkKind.CONTENT})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.187 -0500", hash_original_method = "21049B5CF31214AC69662F00A8291DA2", hash_generated_method = "30E6A8AA7791982EDB0C2593C57C1825")
 public final Uri insert(Uri url, ContentValues values)
@@ -1285,6 +1285,7 @@ public final Uri insert(Uri url, ContentValues values)
      * @throws RemoteException thrown if a RemoteException is encountered while attempting
      *   to communicate with a remote provider.
      */
+    @DSSink({DSSinkKind.CONTENT})
     @DSComment("Content model/data manipulation")
     @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.189 -0500", hash_original_method = "35DA1841C97E840C3B5123B65D72A2FC", hash_generated_method = "74C8F16C7BE8369387E13E410A7C819D")
@@ -1388,8 +1389,8 @@ public final int delete(Uri url, String where, String[] selectionArgs)
      * @throws NullPointerException if uri or values are null
      */
     @DSComment("Content model/data manipulation")
-    @DSSpec(DSCat.DATABASE)
-    @DSSink(DSSinkKind.CONTENT)
+    @DSSpec(DSCat.CONTENT)
+    @DSSink({DSSinkKind.CONTENT})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.197 -0500", hash_original_method = "93173B163A2993B2278E9CE2CA5F5268", hash_generated_method = "BFDFE97E646A1E83E92C8A9712FB4DAA")
 public final int update(Uri uri, ContentValues values, String where,
             String[] selectionArgs) {
@@ -1557,7 +1558,7 @@ public final ContentProviderClient acquireContentProviderClient(String name) {
      */
     
     @DSComment("potential callback called inside method")
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     public final void registerContentObserver(Uri uri, boolean notifyForDescendents,
             ContentObserver observer)
@@ -1580,7 +1581,7 @@ public final ContentProviderClient acquireContentProviderClient(String name) {
      * @see #registerContentObserver
      */
     @DSComment("Content model/data manipulation")
-    @DSSpec(DSCat.CONTENT)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.217 -0500", hash_original_method = "A19276E2B38D6FC8E7769343C0EFAA57", hash_generated_method = "5D9FB3944E47D05E123BB023EFCB7F6C")
     
 public final void unregisterContentObserver(ContentObserver observer) {
@@ -1603,7 +1604,7 @@ public final void unregisterContentObserver(ContentObserver observer) {
      * @param observer The observer that originated the change, may be <code>null</null>
      */
     @DSComment("Content model/data manipulation")
-    @DSSpec(DSCat.CONTENT)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.219 -0500", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "3A5872C192B574229FFFA2AFF9004DE8")
     
@@ -1621,7 +1622,7 @@ public void notifyChange(Uri uri, ContentObserver observer) {
      * @param syncToNetwork If true, attempt to sync the change to the network.
      */
     @DSComment("Content model/data manipulation")
-    @DSSpec(DSCat.CONTENT)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.222 -0500", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "D4B7A5BA283E58792D86DBEA8A8D8DD8")
     

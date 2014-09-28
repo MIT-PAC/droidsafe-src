@@ -42,7 +42,7 @@ public final class PendingIntent implements Parcelable {
      * supplied.
      */
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.420 -0500", hash_original_method = "69D22A82CA352429278AB66C9EC4D269", hash_generated_method = "95BB43864FAB78706EBCD8B6F60963D4")
 public static PendingIntent getActivity(Context context, int requestCode,
             Intent intent, int flags) {
@@ -104,7 +104,7 @@ public static PendingIntent getActivity(Context context, int requestCode,
      * supplied.
      */
     @DSComment("IPC activity")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.423 -0500", hash_original_method = "54CC706903E6C235969DAB2CC8228B77", hash_generated_method = "BE46BD134F3641199D92CC24DA371D50")
 public static PendingIntent getActivities(Context context, int requestCode,
             Intent[] intents, int flags) {
@@ -145,7 +145,7 @@ public static PendingIntent getActivities(Context context, int requestCode,
      * supplied.
      */
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.426 -0500", hash_original_method = "7ECBF28DE75BC4F2B5047057DCC1075B", hash_generated_method = "41701B886985ED16AB2AB3DED8138C7A") 
     public static PendingIntent getBroadcast(Context context, int requestCode,
             Intent intent, int flags) {
@@ -186,7 +186,7 @@ public static PendingIntent getActivities(Context context, int requestCode,
      * supplied.
      */
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.428 -0500", hash_original_method = "ABFD2E080CD8663BF6E26BE6876274AD", hash_generated_method = "D979B054426B7D588BDD63C2E93DE780")
 public static PendingIntent getService(Context context, int requestCode,
             Intent intent, int flags) {
@@ -254,7 +254,7 @@ public static PendingIntent readPendingIntentOrNullFromParcel(Parcel in) {
 
     public static final Parcelable.Creator<PendingIntent> CREATOR
             = new Parcelable.Creator<PendingIntent>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.466 -0500", hash_original_method = "002B3842CB6C032442901D240F958E6F", hash_generated_method = "03E91BD6FC2A0D19BD7193F9F9DCD27E")
         
 public PendingIntent createFromParcel(Parcel in) {
@@ -328,7 +328,7 @@ public void cancel() {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSSink({DSSinkKind.IPC})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.435 -0500", hash_original_method = "27B2516FC620720BFD785BFD1E716C8B", hash_generated_method = "46DA51288025E80A0E3EF352BC1B6A2C")
     
@@ -348,7 +348,7 @@ public void send() throws CanceledException {
      */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
-    @DSSink({DSSinkKind.IPC})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.437 -0500", hash_original_method = "46F134C18EE926B408E7E9C21011E590", hash_generated_method = "CB8910838B2370E2E3A768D7BF8F1FFE")
     
 public void send(int code) throws CanceledException {
@@ -371,7 +371,7 @@ public void send(int code) throws CanceledException {
      * is no longer allowing more intents to be sent through it.
      */
     @DSSpec(DSCat.SPEC_OTHERS)
-    @DSSink({DSSinkKind.IPC})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.439 -0500", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "6A32A838B0D449ABCB7226D14EC8E406")
     
 public void send(Context context, int code, Intent intent)
@@ -395,7 +395,7 @@ public void send(Context context, int code, Intent intent)
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSSink({DSSinkKind.IPC})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.442 -0500", hash_original_method = "10F50483791A59D1BF380CE4A4A7460C", hash_generated_method = "278DD9C1F502BADEE4F34865B60B6AF5")
     
@@ -435,7 +435,7 @@ public void send(int code, OnFinished onFinished, Handler handler)
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSSink({DSSinkKind.IPC})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.445 -0500", hash_original_method = "CFAA4D7DA67BDF756999EA8ECE28296B", hash_generated_method = "4AD6AEF1F974525EC4F626AD8217232F")
     
@@ -480,7 +480,7 @@ public void send(Context context, int code, Intent intent,
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
-    @DSSink({DSSinkKind.IPC})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.447 -0500", hash_original_method = "A238DB61CDFFE1A49966C7738AE7C6E1", hash_generated_method = "0D9CDB0D98A6C7707455612FFEB794D7")
     

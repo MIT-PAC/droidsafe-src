@@ -23,7 +23,8 @@ public class TrustManagerFactory {
      *
      * @return the default algorithm name.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.786 -0500", hash_original_method = "5F5D549BD7868B08A395443DE4B6DFCC", hash_generated_method = "406F76C43B4C94BE46DE98CB0AFCD063")
     
 public static final String getDefaultAlgorithm() {
@@ -43,6 +44,7 @@ public static final String getDefaultAlgorithm() {
      *             if {@code algorithm} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.788 -0500", hash_original_method = "76ACD885B5FBDCE3E02DFAFDEBB1EED8", hash_generated_method = "D3D52D144D09C460DBB9E0EF659275D1")
     
 public static final TrustManagerFactory getInstance(String algorithm)
@@ -73,6 +75,7 @@ public static final TrustManagerFactory getInstance(String algorithm)
      *             if {@code algorithm} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.792 -0500", hash_original_method = "CA8CE730029FFF207B383EF3D0E045FB", hash_generated_method = "A635E6593D764E408387CF138EF61216")
     
 public static final TrustManagerFactory getInstance(String algorithm, String provider)
@@ -103,6 +106,7 @@ public static final TrustManagerFactory getInstance(String algorithm, String pro
      *             if {@code algorithm} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.794 -0500", hash_original_method = "949C075854D4042CB83122B74716FE40", hash_generated_method = "81DBBEE5CE37AFF2A5227CEB448DE6A8")
     
 public static final TrustManagerFactory getInstance(String algorithm, Provider provider)
@@ -189,6 +193,7 @@ public final Provider getProvider() {
      * @throws KeyStoreException
      *             if the initialization fails.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.811 -0500", hash_original_method = "1CCCB741740FE2D73909FD97A8BDB662", hash_generated_method = "FDF998D8D13F7B931F0040281BA3C263")
     
 public final void init(KeyStore ks) throws KeyStoreException {
@@ -204,6 +209,7 @@ public final void init(KeyStore ks) throws KeyStoreException {
      * @throws InvalidAlgorithmParameterException
      *             if the initialization fails.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.813 -0500", hash_original_method = "968F65DD7A0A827F06FAF23F78E04C48", hash_generated_method = "CD3068A149CCD5B39C06926A2722E3EE")
     
 public final void init(ManagerFactoryParameters spec)
@@ -217,7 +223,8 @@ public final void init(ManagerFactoryParameters spec)
      *
      * @return the list of {@code TrustManager}s
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.816 -0500", hash_original_method = "9A37AD00FB926A5C41BF7A3778BB3A49", hash_generated_method = "70BBD1A6BDB47F34912027230F26DDDE")
     
 public final TrustManager[] getTrustManagers() {

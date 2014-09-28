@@ -25,12 +25,14 @@ import android.view.accessibility.AccessibilityNodeInfo;
  * KitKat-specific AccessibilityNodeInfo API implementation.
  */
 class AccessibilityNodeInfoCompatKitKat {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.522 -0400", hash_original_method = "79AD14635A7684796DFE37760ACA73DE", hash_generated_method = "716C190E5F0B85C519B104A67999B386")
     
 public static int getLiveRegion(Object info) {
         return ((AccessibilityNodeInfo) info).getLiveRegion();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.525 -0400", hash_original_method = "94E53B40182320E9977C79884270800E", hash_generated_method = "E7239FC6480D725DD13DD0612C39F584")
     
 public static void setLiveRegion(Object info, int mode) {

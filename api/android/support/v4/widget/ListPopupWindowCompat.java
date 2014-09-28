@@ -38,6 +38,7 @@ public class ListPopupWindowCompat {
      * Interface implementation that doesn't use anything above v4 APIs.
      */
     static class BaseListPopupWindowImpl implements ListPopupWindowImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public OnTouchListener createDragToOpenListener(Object listPopupWindow, View src) {
             return null;
@@ -48,6 +49,7 @@ public class ListPopupWindowCompat {
      * Interface implementation for devices with at least KitKat APIs.
      */
     static class KitKatListPopupWindowImpl extends BaseListPopupWindowImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public OnTouchListener createDragToOpenListener(Object listPopupWindow, View src) {
             return ListPopupWindowCompatKitKat.createDragToOpenListener(listPopupWindow, src);

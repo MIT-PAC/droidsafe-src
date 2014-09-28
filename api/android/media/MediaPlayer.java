@@ -405,6 +405,7 @@ public int invoke(Parcel request, Parcel reply) {
      *
      * @param sh the SurfaceHolder to use for video display
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.632 -0500", hash_original_method = "936E4BA5EFE5EFD7E502D57ADB83F5AB", hash_generated_method = "FEB9A09EB87D773C0D41C0E53C6A34C7")
     
 public void setDisplay(SurfaceHolder sh) {
@@ -646,6 +647,7 @@ public void setDataSource(FileDescriptor fd)
      *
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.673 -0500", hash_original_method = "9BEAA7388253BD2C3E319E2E43B2453F", hash_generated_method = "399F44ABCE1AAD6D227544722231E141")
     
     public void prepareAsync() throws IllegalStateException{
@@ -819,6 +821,7 @@ private void updateSurfaceScreenOn() {
      * {@link #setOnVideoSizeChangedListener(OnVideoSizeChangedListener)}
      * to provide a notification when the width is available.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.705 -0500", hash_original_method = "33D5C83ED46D1CA5E488AF592A477814", hash_generated_method = "21D98AB9D7986307EEDFA924C7FB2E1A")
     
     public int getVideoWidth(){
@@ -1692,6 +1695,7 @@ public void setOnSeekCompleteListener(OnSeekCompleteListener listener)
      *
      * @param listener the callback that will be run
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.913 -0500", hash_original_method = "8379FC1073131EA9347F12938BFC14C4", hash_generated_method = "585B5722D9D3FAEBE0BE1317C7E26203")
     
 public void setOnVideoSizeChangedListener(OnVideoSizeChangedListener listener)

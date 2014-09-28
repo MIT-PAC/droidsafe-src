@@ -116,6 +116,7 @@ public class FilenameUtils {
      * 
      * @return true if the system is Windows
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.521 -0400", hash_original_method = "9D08FE397D927D1C41AD2F0CB4BBD410", hash_generated_method = "F940C353051FA951E590FBC54830A9CA")
     
 static boolean isSystemWindows() {
@@ -129,6 +130,7 @@ static boolean isSystemWindows() {
      * @param ch  the character to check
      * @return true if it is a separator character
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.521 -0400", hash_original_method = "9017606445C39E6E789668F0FD93EBB4", hash_generated_method = "7F949D70DE8890E2486953302F54E3C4")
     
 private static boolean isSeparator(char ch) {
@@ -176,6 +178,7 @@ private static boolean isSeparator(char ch) {
      * @param filename  the filename to normalize, null returns null
      * @return the normalized filename, or null if invalid
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.522 -0400", hash_original_method = "E1065BA148B4FBD4F72F1AEC290D173B", hash_generated_method = "5EEFF1C672172D66A531473668209E8E")
     
 public static String normalize(String filename) {
@@ -225,6 +228,7 @@ public static String normalize(String filename) {
      * @return the normalized filename, or null if invalid
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.522 -0400", hash_original_method = "C1D80C08C5680CF76B5FB21F88C2C306", hash_generated_method = "ACF367331FF40E03CD8BDFD5103F7C61")
     
 public static String normalize(String filename, boolean unixSeparator) {
@@ -338,6 +342,7 @@ public static String normalizeNoEndSeparator(String filename, boolean unixSepara
      * @param keepSeparator  true to keep the final separator
      * @return the normalized filename
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.526 -0400", hash_original_method = "3E67047CBB938EA0EAADDA0B6F2EC0F8", hash_generated_method = "7F920EBD553873C5DD32A7B0C56D47C9")
     
 private static String doNormalize(String filename, char separator, boolean keepSeparator) {
@@ -550,6 +555,7 @@ public static boolean directoryContains(final String canonicalParent, final Stri
      * @param path  the path to be changed, null ignored
      * @return the updated path
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.529 -0400", hash_original_method = "CBD79E787706545FAE689509F9416DE8", hash_generated_method = "19850840D646CCBB1B96E6D8E37DA470")
     
 public static String separatorsToUnix(String path) {
@@ -565,6 +571,7 @@ public static String separatorsToUnix(String path) {
      * @param path  the path to be changed, null ignored
      * @return the updated path
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.529 -0400", hash_original_method = "DAF76BB129F2DF1AEBFCF7AF03B53BD1", hash_generated_method = "8EAA6A21405527077C09CC32684C9130")
     
 public static String separatorsToWindows(String path) {
@@ -625,6 +632,7 @@ public static String separatorsToSystem(String path) {
      * @param filename  the filename to find the prefix in, null returns -1
      * @return the length of the prefix, -1 if invalid or null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.531 -0400", hash_original_method = "EE4544A80DF9F23E264F43D4348B1ED7", hash_generated_method = "2938A8FEE93E4C6816028AB5D150FEFC")
     
 public static int getPrefixLength(String filename) {
@@ -693,6 +701,7 @@ public static int getPrefixLength(String filename) {
      * @return the index of the last separator character, or -1 if there
      * is no such character
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.532 -0400", hash_original_method = "9C19363AC6FE6F140001E7099F182CB6", hash_generated_method = "38087F6C7E7EAE7939E45753FC558FDC")
     
 public static int indexOfLastSeparator(String filename) {
@@ -717,6 +726,7 @@ public static int indexOfLastSeparator(String filename) {
      * @return the index of the last separator character, or -1 if there
      * is no such character
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.533 -0400", hash_original_method = "FEA6D516E47A6AB8CA6BBEF75A5B3C76", hash_generated_method = "F07225A7D766EF051A4B0E2CAC87FD4D")
     
 public static int indexOfExtension(String filename) {
@@ -758,6 +768,7 @@ public static int indexOfExtension(String filename) {
      * @param filename  the filename to query, null returns null
      * @return the prefix of the file, null if invalid
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.534 -0400", hash_original_method = "0EFF990BFA1BB5558866C3BBADC89332", hash_generated_method = "DDD6EBFBF541179D3AE275234888F382")
     
 public static String getPrefix(String filename) {
@@ -838,6 +849,7 @@ public static String getPathNoEndSeparator(String filename) {
      * @param separatorAdd  0 to omit the end separator, 1 to return it
      * @return the path
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.535 -0400", hash_original_method = "49AC27A7F28BB7CC4CAE7796BC890A9C", hash_generated_method = "D136B65B9337192EAEC3B1931FB40244")
     
 private static String doGetPath(String filename, int separatorAdd) {
@@ -926,6 +938,7 @@ public static String getFullPathNoEndSeparator(String filename) {
      * @param includeSeparator  true to include the end separator
      * @return the path
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.537 -0400", hash_original_method = "AC09C8134D834FA86ED67D635D6FA486", hash_generated_method = "CE60FFE61A3AA6BBF034F5CFB3541E1E")
     
 private static String doGetFullPath(String filename, boolean includeSeparator) {
@@ -971,6 +984,7 @@ private static String doGetFullPath(String filename, boolean includeSeparator) {
      * @param filename  the filename to query, null returns null
      * @return the name of the file without the path, or an empty string if none exists
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.538 -0400", hash_original_method = "1F09B51F502F0A70097E25FD3AE49459", hash_generated_method = "223A86FA6EFA6C5F5212CA6F47AE2714")
     
 public static String getName(String filename) {
@@ -1022,6 +1036,7 @@ public static String getBaseName(String filename) {
      * @return the extension of the file or an empty string if none exists or {@code null}
      * if the filename is {@code null}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.539 -0400", hash_original_method = "AA1DE53E394A8A22A5814DD49D0F3369", hash_generated_method = "07E166A4B6D58940C75680E090046BE5")
     
 public static String getExtension(String filename) {
@@ -1054,6 +1069,7 @@ public static String getExtension(String filename) {
      * @param filename  the filename to query, null returns null
      * @return the filename minus the extension
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.539 -0400", hash_original_method = "987F34DE4B73465A03E1FECB94DF5C83", hash_generated_method = "2C91304C65F9F691E1E4E5C7C4B3A399")
     
 public static String removeExtension(String filename) {
@@ -1080,6 +1096,7 @@ public static String removeExtension(String filename) {
      * @return true if the filenames are equal, null equals null
      * @see IOCase#SENSITIVE
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.540 -0400", hash_original_method = "3FFD29AD715D9C39F6ED957689008AA1", hash_generated_method = "78FF9BF70A37451F69D511DD8ED1A7F0")
     
 public static boolean equals(String filename1, String filename2) {
@@ -1151,6 +1168,7 @@ public static boolean equalsNormalizedOnSystem(String filename1, String filename
      * @return true if the filenames are equal, null equals null
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.542 -0400", hash_original_method = "D4A1A32C2474C5102E834E4F9C261B55", hash_generated_method = "CEE0CBA00AE2848CA8B8D03623973A61")
     
 public static boolean equals(
@@ -1280,6 +1298,7 @@ public static boolean isExtension(String filename, Collection<String> extensions
      * @return true if the filename matches the wilcard string
      * @see IOCase#SENSITIVE
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.545 -0400", hash_original_method = "A7EBA8428D8FCCE6D2BA61C4E0F30A8A", hash_generated_method = "9D49673A325C2B98C4CAB92D2ADDCD76")
     
 public static boolean wildcardMatch(String filename, String wildcardMatcher) {
@@ -1328,6 +1347,7 @@ public static boolean wildcardMatchOnSystem(String filename, String wildcardMatc
      * @return true if the filename matches the wilcard string
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.547 -0400", hash_original_method = "91E45CED25486B1014FA96D2D1068DED", hash_generated_method = "0EE6818C2A3063927FAF52717401A186")
     
 public static boolean wildcardMatch(String filename, String wildcardMatcher, IOCase caseSensitivity) {
@@ -1420,6 +1440,7 @@ public static boolean wildcardMatch(String filename, String wildcardMatcher, IOC
      * @param text  the text to split
      * @return the array of tokens, never null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.548 -0400", hash_original_method = "A7C32C8B7F02F225AD2FE68B7C502D15", hash_generated_method = "98FCE23429E36B7972A95CC94C7B26D2")
     
 static String[] splitOnTokens(String text) {

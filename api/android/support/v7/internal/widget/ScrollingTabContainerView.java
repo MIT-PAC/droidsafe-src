@@ -150,18 +150,21 @@ public ScrollingTabContainerView(Context context) {
      *
      * @return true if showing as a spinner
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.766 -0400", hash_original_method = "0C44DD211AEDE4F8875A759BF8E8E48B", hash_generated_method = "BC517FA24EACE7A695FB011A5D82F875")
     
 private boolean isCollapsed() {
         return mTabSpinner != null && mTabSpinner.getParent() == this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.769 -0400", hash_original_method = "E654067D8A391E646F927D11468DA221", hash_generated_method = "39D180B8DA3868E9B3117926128CBE51")
     
 public void setAllowCollapse(boolean allowCollapse) {
         mAllowCollapse = allowCollapse;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.771 -0400", hash_original_method = "E4A6441B355758E123E93C462AAB600B", hash_generated_method = "43B054F47B426CCB7303C472D451B979")
     
 private void performCollapse() {
@@ -185,6 +188,7 @@ private void performCollapse() {
         mTabSpinner.setSelection(mSelectedTabIndex);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.775 -0400", hash_original_method = "CF6AA315EED7F54B95F1D63E370DEAB9", hash_generated_method = "61753EF7F8E422AC0687C13441E5B851")
     
 private boolean performExpand() {
@@ -199,6 +203,7 @@ private boolean performExpand() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.778 -0400", hash_original_method = "5B085F5082C3C5C03A931B942AF8A3B6", hash_generated_method = "112BCF492B27698FE21828886138A967")
     
 public void setTabSelected(int position) {
@@ -217,6 +222,7 @@ public void setTabSelected(int position) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.780 -0400", hash_original_method = "2D264BA3FDE4BFC89C0D29CEF35AB5AF", hash_generated_method = "BA14FA1A5C9AF572E4D240F3CC7F6A66")
     
 public void setContentHeight(int contentHeight) {
@@ -224,6 +230,7 @@ public void setContentHeight(int contentHeight) {
         requestLayout();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.782 -0400", hash_original_method = "B4E812F40FC3A49365E1CB3188DE3779", hash_generated_method = "64EF974C0D2F495707A3F0DE7A620CE9")
     
 private SpinnerICS createSpinner() {
@@ -246,6 +253,7 @@ protected void onConfigurationChanged(Configuration newConfig) {
         mStackedTabMaxWidth = abp.getStackedTabMaxWidth();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.792 -0400", hash_original_method = "798975849EC8D4C022ED8EB3C4439FA8", hash_generated_method = "A4A568A7A57E71BBFDC61457E7EF9115")
     
 public void animateToTab(final int position) {
@@ -287,6 +295,7 @@ public void animateToTab(final int position) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.800 -0400", hash_original_method = "E3617A09ED94AE8466F09C3E16179C32", hash_generated_method = "5FC4D0B4C14AB0B25786A17AE0BB3980")
     
 private TabView createTabView(ActionBar.Tab tab, boolean forAdapter) {
@@ -309,6 +318,7 @@ private TabView createTabView(ActionBar.Tab tab, boolean forAdapter) {
         return tabView;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.803 -0400", hash_original_method = "5879B9B1BDE3F93014BC7C2D490E546E", hash_generated_method = "F26863D81298F0804DCADB66430ED7A9")
     
 public void addTab(ActionBar.Tab tab, boolean setSelected) {
@@ -326,6 +336,7 @@ public void addTab(ActionBar.Tab tab, boolean setSelected) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.806 -0400", hash_original_method = "CD9A593B089931F7795774F7AB284F41", hash_generated_method = "8D7C3A5CC3C9D85D00C6C6CB6C411AF3")
     
 public void addTab(ActionBar.Tab tab, int position, boolean setSelected) {
@@ -343,6 +354,7 @@ public void addTab(ActionBar.Tab tab, int position, boolean setSelected) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.808 -0400", hash_original_method = "AB4E22DBFABD54435D3DD6BE48A7A755", hash_generated_method = "A5986D8AE63246102446BD7AE4D30F38")
     
 public void updateTab(int position) {
@@ -355,6 +367,7 @@ public void updateTab(int position) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.810 -0400", hash_original_method = "F55D08535CE5AE8E892CFC88E40F0277", hash_generated_method = "538626902C18D997FAA00ECEFD6F65ED")
     
 public void removeTabAt(int position) {
@@ -367,6 +380,7 @@ public void removeTabAt(int position) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.812 -0400", hash_original_method = "505192EE2E755E624302670BB829212B", hash_generated_method = "C99ABC999ADB8D2BB225EA22C0506257")
     
 public void removeAllTabs() {
@@ -402,6 +416,7 @@ public void removeAllTabs() {
             super(context, attrs);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         void attach(ScrollingTabContainerView parent, ActionBar.Tab tab, boolean forList) {
             mParent = parent;
             mTab = tab;
@@ -413,6 +428,7 @@ public void removeAllTabs() {
             update();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void bindTab(ActionBar.Tab tab) {
             mTab = tab;
             update();
@@ -432,6 +448,7 @@ public void removeAllTabs() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void update() {
             final ActionBar.Tab tab = mTab;
             final View custom = tab.getCustomView();
@@ -503,6 +520,7 @@ public void removeAllTabs() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public ActionBar.Tab getTab() {
             return mTab;
         }
@@ -516,8 +534,7 @@ public void removeAllTabs() {
         public int getCount() {
             return mTabLayout.getChildCount();
         }
-
-        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        
         @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getItem(int position) {

@@ -29,11 +29,13 @@ public class ICUCompat {
     }
 
     static class ICUCompatImplBase implements ICUCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String getScript(String locale) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String addLikelySubtags(String locale) {
             return locale;
@@ -41,18 +43,19 @@ public class ICUCompat {
     }
 
     static class ICUCompatImplIcs implements ICUCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String getScript(String locale) {
             return ICUCompatIcs.getScript(locale);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String addLikelySubtags(String locale) {
             return ICUCompatIcs.addLikelySubtags(locale);
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.276 -0400", hash_original_field = "D8F66A71DFF19ED9C921EA1024EFBA82", hash_generated_field = "C4714C1B1F4F7583F1F09424A179AA75")
-
 
     private static  ICUCompatImpl IMPL;
 
@@ -71,6 +74,7 @@ public class ICUCompat {
      * @param locale The locale.
      * @return a String representing the script (language code) of the locale.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.282 -0400", hash_original_method = "46F4BF8D5BCCCCEA44904CA6B81E7330", hash_generated_method = "5EA175ACE68504C5B2475919106AE87B")
         
 public static String getScript(String locale) {
@@ -99,6 +103,7 @@ public static String getScript(String locale) {
      *
      * @return the maximized locale
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.286 -0400", hash_original_method = "18828E5E0085D9075692CDFDCCEB6F1B", hash_generated_method = "D5142BD2C9E0622B55AA6D1FFA350BE4")
         
 public static String addLikelySubtags(String locale) {

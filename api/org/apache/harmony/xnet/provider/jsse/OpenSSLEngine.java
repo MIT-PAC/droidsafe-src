@@ -98,6 +98,7 @@ int getEngineContext() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 09:30:59.180 -0400", hash_original_method = "6B4F3C29FCDC2A85938601ECC31EE1A5", hash_generated_method = "721C5A37F949F002F7AD0EE96D1C06C0")
     
 @Override

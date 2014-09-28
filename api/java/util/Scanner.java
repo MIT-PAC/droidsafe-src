@@ -1079,7 +1079,7 @@ public MatchResult match() {
      *             if input has been exhausted.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.588 -0500", hash_original_method = "A473F9C9E320CD6CEDCE3CE271E08C07", hash_generated_method = "5AD096FC9C61E6884323F08CF48B6FE0")
     
 public String next() {

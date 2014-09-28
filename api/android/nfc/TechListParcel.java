@@ -12,7 +12,7 @@ public class TechListParcel implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.415 -0400", hash_original_field = "3EF1D37F275B16491C644A6C6C17DFAE", hash_generated_field = "26E56EC2A9AB9ADBEAAD9C9C0A9E8ECF")
 
     public static final Creator<TechListParcel> CREATOR = new Creator<TechListParcel>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.003 -0500", hash_original_method = "24B5B0F43AE1F40832E0294086D57B0A", hash_generated_method = "278E58E108F778B4DE1B623A83A60D65")
         
 @Override

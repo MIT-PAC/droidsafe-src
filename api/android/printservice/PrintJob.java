@@ -394,6 +394,7 @@ public int getAdvancedIntOption(String key) {
         return getInfo().getAdvancedIntOption(key);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.529 -0400", hash_original_method = "0845B3CD81D06054DACA46550C94AE95", hash_generated_method = "D13A1D3F468ACB7601BD39C459E642EA")
     
 @Override

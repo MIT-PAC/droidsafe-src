@@ -724,7 +724,8 @@ private boolean escapedEquals(String first, String second) {
      * Returns the scheme of this URI, or null if this URI has no scheme. This
      * is also known as the protocol.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.868 -0500", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "9D11AD0B611F352DC84C8E1A6B825617")
     
 public String getScheme() {
@@ -735,7 +736,8 @@ public String getScheme() {
      * Returns the decoded scheme-specific part of this URI, or null if this URI
      * has no scheme-specific part.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.870 -0500", hash_original_method = "38320513FEDFF9F58DEA1E075C778208", hash_generated_method = "38815444E27955D92D1ECC864169EFFB")
     
 public String getSchemeSpecificPart() {
@@ -801,7 +803,7 @@ public String getRawUserInfo() {
      * Returns the host of this URI, or null if this URI has no host.
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.884 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
     
 public String getHost() {
@@ -906,6 +908,7 @@ public String getRawFragment() {
      * Returns true if this URI is absolute, which means that a scheme is
      * defined.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.910 -0500", hash_original_method = "D85A39136D4004ABB79E6EE2109136C5", hash_generated_method = "D7805EB8A2CDCEA2528384E89880D303")
     
 public boolean isAbsolute() {
@@ -1180,6 +1183,7 @@ private String decode(String s) {
      *
      * @return the US-ASCII string representation of this URI.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.936 -0500", hash_original_method = "5974D900C8CF23409F32E47268086AF9", hash_generated_method = "217ABE8AEB5449B572546775659A5A95")
     
 public String toASCIIString() {

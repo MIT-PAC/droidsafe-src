@@ -279,7 +279,7 @@ private void connectInternal() throws IOException {
      * Returns the content type of the resource. Just takes a guess based on the
      * name.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.281 -0500", hash_original_method = "EC8528293B0BAB1F2E4332771D0B26FB", hash_generated_method = "B8FC79F078AF180D749C0E69A131C9F9")
@@ -325,7 +325,7 @@ private void getFile() throws IOException {
      *
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.286 -0500", hash_original_method = "71DB7CA360B0ED6E855C6F8E83FB7FD7", hash_generated_method = "4C37CF1AFC0137215B4753FA4EA259CA")
     
 @Override

@@ -48,6 +48,7 @@ public class AccessibilityManagerCompat {
     }
 
     static class AccessibilityManagerStubImpl implements AccessibilityManagerVersionImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.732 -0500", hash_original_method = "7D59B8882263E438CB4361275EA728A2", hash_generated_method = "5BE5C5B37C8535D1E43838A444F7AAC9")
         
 public Object newAccessiblityStateChangeListener(
@@ -55,6 +56,7 @@ public Object newAccessiblityStateChangeListener(
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.734 -0500", hash_original_method = "33A1F684547BED5D3B48AAD04779CA50", hash_generated_method = "E86C8C67EFCF91393C4D8B024DEC279D")
         
 public boolean addAccessibilityStateChangeListener(AccessibilityManager manager,
@@ -62,6 +64,7 @@ public boolean addAccessibilityStateChangeListener(AccessibilityManager manager,
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.735 -0500", hash_original_method = "3EC1834EAD9521199DD8CC1AEEEE93EE", hash_generated_method = "CDD35DD8173F3CBB4397B64559E0A34F")
         
 public boolean removeAccessibilityStateChangeListener(AccessibilityManager manager,
@@ -69,6 +72,7 @@ public boolean removeAccessibilityStateChangeListener(AccessibilityManager manag
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.736 -0500", hash_original_method = "0B155E7439E18F95389B186D3A0B1547", hash_generated_method = "EFAAB99040A105AA6026A7BB2FBA2141")
         
 public List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(
@@ -76,6 +80,7 @@ public List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(
             return Collections.emptyList();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.737 -0500", hash_original_method = "1B9F4BA5149600AFD41B481B12F75C04", hash_generated_method = "A6FB6AE9C32F6C4C218DE60F99CFCCBC")
         
 public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList(
@@ -83,6 +88,7 @@ public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList(
             return Collections.emptyList();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.738 -0500", hash_original_method = "D41A4A15681F6206C5A89225952F89E0", hash_generated_method = "E3E790F946DAB4A915FF178C43B77FA3")
         
 public boolean isTouchExplorationEnabled(AccessibilityManager manager) {
@@ -92,6 +98,7 @@ public boolean isTouchExplorationEnabled(AccessibilityManager manager) {
 
     static class AccessibilityManagerIcsImpl extends AccessibilityManagerStubImpl {
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.743 -0500", hash_original_method = "9605D56F845E05772D756797E8C103EB", hash_generated_method = "10832E3213B6323E21E6084561AA9C6B")
         
 @Override
@@ -99,7 +106,8 @@ public boolean isTouchExplorationEnabled(AccessibilityManager manager) {
                 final AccessibilityStateChangeListenerCompat listener) {
             return AccessibilityManagerCompatIcs.newAccessibilityStateChangeListener(
                 new AccessibilityStateChangeListenerBridge() {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:36.601 -0500", hash_original_method = "706B1DB534372D0F01F68C0278EBDA59", hash_generated_method = "9331EEE62D2F77566EE62384C10B1567")
+                    @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:36.601 -0500", hash_original_method = "706B1DB534372D0F01F68C0278EBDA59", hash_generated_method = "9331EEE62D2F77566EE62384C10B1567")
                 
 public void onAccessibilityStateChanged(boolean enabled) {
                         listener.onAccessibilityStateChanged(enabled);
@@ -107,6 +115,7 @@ public void onAccessibilityStateChanged(boolean enabled) {
                 });
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.745 -0500", hash_original_method = "DDED9713E60FF2ACC487AE68FB5B1EF0", hash_generated_method = "5D0285AD964A874B0722C317AC598079")
         
 @Override
@@ -116,6 +125,7 @@ public void onAccessibilityStateChanged(boolean enabled) {
                     listener.mListener);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.747 -0500", hash_original_method = "7219CB250AC0A0DE22055706F7853760", hash_generated_method = "C365E9F4FE5909B2ED27FE73F1BA14F3")
         
 @Override
@@ -125,6 +135,7 @@ public void onAccessibilityStateChanged(boolean enabled) {
                     listener.mListener);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.749 -0500", hash_original_method = "45A7C83CCFEDDE0EAF6164AEE534859C", hash_generated_method = "FF1A0BC9FD950CB8652AD6647FF5103F")
         
 @Override
@@ -134,6 +145,7 @@ public void onAccessibilityStateChanged(boolean enabled) {
                     feedbackTypeFlags);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.751 -0500", hash_original_method = "024643C1E057DD1DCC44ABD9C44E9BD0", hash_generated_method = "F5D17976DD550833087CD08C261DE174")
         
 @Override
@@ -142,6 +154,7 @@ public void onAccessibilityStateChanged(boolean enabled) {
             return AccessibilityManagerCompatIcs.getInstalledAccessibilityServiceList(manager);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.752 -0500", hash_original_method = "BFE7EE6F020C3B9F8FFE4E032E4A4E03", hash_generated_method = "C679F5D0F0906EF8A60CFAD540C962F3")
         
 @Override
@@ -230,6 +243,7 @@ public static List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(
      * @param manager The accessibility manager.
      * @return True if touch exploration is enabled, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.763 -0500", hash_original_method = "081A6C993311DD0069AD71C21860A0A0", hash_generated_method = "E83D58A36641645BA5F51FDC97DF960D")
     
 public static boolean isTouchExplorationEnabled(AccessibilityManager manager) {
@@ -256,6 +270,7 @@ public AccessibilityStateChangeListenerCompat() {
          *
          * @param enabled Whether accessibility is enabled.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:22.767 -0500", hash_original_method = "6804C344279CBDCCA29C6F05BBCCE672", hash_generated_method = "2D31C1D817B2CF3EE1D7D8C79CD3A20D")
         
 public abstract void onAccessibilityStateChanged(boolean enabled);

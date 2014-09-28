@@ -436,6 +436,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.990 -0400", hash_original_method = "E2F112D6E275A8A2254AC975B93844B0", hash_generated_method = "E118AC054651130A351FC94FE3AFA84C")
     
 @Override
@@ -446,6 +447,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.992 -0400", hash_original_method = "AB380BC985C8B484BB0C20BFA5515E69", hash_generated_method = "1030544DA70D84F06BD336CD093E9605")
     
 @Override
@@ -455,6 +457,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.995 -0400", hash_original_method = "212E0915AA92F8E469974C594E2A86DC", hash_generated_method = "B5C376BEF3B8CCAFBC920394C66CB4EC")
     
 @Override
@@ -464,6 +467,7 @@ MenuItemWrapperICS(android.view.MenuItem object) {
         return providerWrapper != null ? providerWrapper.mInner : null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.998 -0400", hash_original_method = "D822D820FB7A2CE2CB5C78D76B9FE372", hash_generated_method = "260C8E11D0ACA84B4CDBA5ED27A29ABB")
     
 public void setExclusiveCheckable(boolean checkable) {
@@ -478,6 +482,7 @@ public void setExclusiveCheckable(boolean checkable) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.001 -0400", hash_original_method = "62F414370120652C6528EABFB6D5022A", hash_generated_method = "62F414370120652C6528EABFB6D5022A")
     
 ActionProviderWrapper createActionProviderWrapper(ActionProvider provider) {
@@ -487,6 +492,7 @@ ActionProviderWrapper createActionProviderWrapper(ActionProvider provider) {
     /**
      * @return true if the ActionProvider has overriden the visibility
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.004 -0400", hash_original_method = "6681F0186FE1FCA6C550954954A6B716", hash_generated_method = "25668D3B9B2602686705441E08F2D263")
     
 final boolean checkActionProviderOverrideVisibility() {
@@ -500,6 +506,7 @@ final boolean checkActionProviderOverrideVisibility() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.006 -0400", hash_original_method = "3CBD805F91237DD53C3626BB73493E7A", hash_generated_method = "D0335F68798F71011E9E001D73832277")
     
 final MenuItem wrappedSetVisible(boolean visible) {
@@ -513,6 +520,7 @@ final MenuItem wrappedSetVisible(boolean visible) {
             super(object);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onMenuItemClick(android.view.MenuItem item) {
             return mWrappedObject.onMenuItemClick(getMenuItemWrapper(item));
@@ -546,7 +554,8 @@ final MenuItem wrappedSetVisible(boolean visible) {
 
             if (mEmulateProviderVisibilityOverride) {
                 mInner.setVisibilityListener(new ActionProvider.VisibilityListener() {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     public void onActionProviderVisibilityChanged(boolean isVisible) {
                         if (mInner.overridesItemVisibility() && mLastRequestVisible) {
                             wrappedSetVisible(isVisible);
@@ -602,6 +611,7 @@ final MenuItem wrappedSetVisible(boolean visible) {
             mWrappedView.onActionViewCollapsed();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         View getWrappedView() {
             return (View) mWrappedView;
         }

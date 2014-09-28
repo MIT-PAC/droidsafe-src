@@ -232,7 +232,7 @@ public AtParser getAtParser() {
 public void startEventThread() {
         mEventThread =
             new Thread("HeadsetBase Event Thread") {
-                @DSSpec(DSCat.SPEC_OTHERS)
+                @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:01.924 -0400", hash_original_method = "2016B6A8D51A4D430D41FDA65E9B5166", hash_generated_method = "0CB1F2F7D15E26ED0E8EE4C8CDD455D8")
             
 public void run() {

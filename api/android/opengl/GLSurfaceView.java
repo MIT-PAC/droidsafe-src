@@ -887,7 +887,7 @@ GLThread(Renderer renderer) {
             mRenderer = renderer;
         }
 
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.669 -0500", hash_original_method = "4EBF7F6B9BB16BE66D221453F245DA46", hash_generated_method = "1653E32386D466C1F718F4265D118D53")
         
 @Override
@@ -1408,7 +1408,7 @@ public void queueEvent(Runnable r) {
         }
 
         @DSSink({DSSinkKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.773 -0500", hash_original_method = "87C8CDE1CE20D2763C465BB465CBAFDD", hash_generated_method = "72F623F59FC9F90F70CCD532565A22B3")
         
 @Override public void write(char[] buf, int offset, int count) {

@@ -30,18 +30,21 @@ class ContainerHelpers {
 
     static final Object[] EMPTY_OBJECTS = new Object[0];
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.601 -0400", hash_original_method = "C5D38D95B60B446AE8BAAF7982426E2B", hash_generated_method = "89087E12BD5927700561885B368C654D")
     
 public static int idealIntArraySize(int need) {
         return idealByteArraySize(need * 4) / 4;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.605 -0400", hash_original_method = "81E7FAA327416436814745B8BDC163E2", hash_generated_method = "7A7A55B2D3E16E87C86D175661E4F019")
     
 public static int idealLongArraySize(int need) {
         return idealByteArraySize(need * 8) / 8;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.609 -0400", hash_original_method = "78F4782A9945BD922AE4F703F6706A7E", hash_generated_method = "476E3135F747B27C638A7747394DD781")
     
 public static int idealByteArraySize(int need) {
@@ -52,6 +55,7 @@ public static int idealByteArraySize(int need) {
         return need;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.613 -0400", hash_original_method = "F296275000E1AA53C7B464F5FDA7A4B5", hash_generated_method = "F1FE59F254185FB0421C417ADE74E86C")
     
 public static boolean equal(Object a, Object b) {
@@ -59,6 +63,7 @@ public static boolean equal(Object a, Object b) {
     }
 
     // This is Arrays.binarySearch(), but doesn't do any argument validation.
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.617 -0400", hash_original_method = "AAF6C34952922D0E5AACA07FEBEB0788", hash_generated_method = "F00CB0A9A26DBE91E4E6BCA56BD2CAD6")
     
 static int binarySearch(int[] array, int size, int value) {
@@ -80,6 +85,7 @@ static int binarySearch(int[] array, int size, int value) {
         return ~lo;  // value not present
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.622 -0400", hash_original_method = "3B32571B267BB6099FA8B2E6DC17D75C", hash_generated_method = "7B0E688FF4372ADE23665A8AE40297AE")
     
 static int binarySearch(long[] array, int size, long value) {

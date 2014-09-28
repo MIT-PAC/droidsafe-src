@@ -24,12 +24,14 @@ import android.content.Context;
 import java.io.File;
 
 class ContextCompatFroyo {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.316 -0400", hash_original_method = "829D266D3097B64611E6B410B500B7A0", hash_generated_method = "B9515FEA486117A1AF4B28FCAD3A9842")
     
 public static File getExternalCacheDir(Context context) {
         return context.getExternalCacheDir();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.323 -0400", hash_original_method = "4E87EE22D7D6997F84FE9665941D9624", hash_generated_method = "678B25824087ECCFB538A73FD0E72922")
     
 public static File getExternalFilesDir(Context context, String type) {

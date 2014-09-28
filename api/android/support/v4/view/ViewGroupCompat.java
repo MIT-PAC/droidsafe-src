@@ -46,20 +46,24 @@ public class ViewGroupCompat {
     }
 
     static class ViewGroupCompatStubImpl implements ViewGroupCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onRequestSendAccessibilityEvent(
                 ViewGroup group, View child, AccessibilityEvent event) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setMotionEventSplittingEnabled(ViewGroup group, boolean split) {
             // no-op, didn't exist.
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLayoutMode(ViewGroup group) {
             return LAYOUT_MODE_CLIP_BOUNDS;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLayoutMode(ViewGroup group, int mode) {
             // no-op, didn't exist. Views only support clip bounds.
@@ -67,6 +71,7 @@ public class ViewGroupCompat {
     }
 
     static class ViewGroupCompatHCImpl extends ViewGroupCompatStubImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setMotionEventSplittingEnabled(ViewGroup group, boolean split) {
             ViewGroupCompatHC.setMotionEventSplittingEnabled(group, split);
@@ -74,6 +79,7 @@ public class ViewGroupCompat {
     }
 
     static class ViewGroupCompatIcsImpl extends ViewGroupCompatHCImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onRequestSendAccessibilityEvent(
                 ViewGroup group, View child, AccessibilityEvent event) {
@@ -82,18 +88,19 @@ public class ViewGroupCompat {
     }
 
     static class ViewGroupCompatJellybeanMR2Impl extends ViewGroupCompatIcsImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLayoutMode(ViewGroup group) {
             return ViewGroupCompatJellybeanMR2.getLayoutMode(group);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLayoutMode(ViewGroup group, int mode) {
             ViewGroupCompatJellybeanMR2.setLayoutMode(group, mode);
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.243 -0400", hash_original_field = "B1B66CC23CA7DFB890A608C54A7234A0", hash_generated_field = "E257834CBFA3D612BE0D9147AAF7AA2F")
-
 
     static  ViewGroupCompatImpl IMPL;
     static {
@@ -147,6 +154,7 @@ public static boolean onRequestSendAccessibilityEvent(ViewGroup group, View chil
      *              child views. <code>false</code> to only allow one child view to be the target of
      *              any MotionEvent received by this ViewGroup.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.257 -0400", hash_original_method = "0805EF6A3EE41BF4322D94C8366C27F3", hash_generated_method = "F8B3E58662F54595DB87E5E8F42E8A2F")
         
 public static void setMotionEventSplittingEnabled(ViewGroup group, boolean split) {

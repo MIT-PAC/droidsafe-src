@@ -65,6 +65,7 @@ public static String getContentCharset(final HttpParams params) {
      * when no charset explicitly specified.
      * @param charset The charset
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.573 -0500", hash_original_method = "D15B42373326BA435E97AD021D6AFFC0", hash_generated_method = "81EDDCB38C08637D7DFFB2CABC104FB5")
     
 public static void setContentCharset(final HttpParams params, final String charset) {
@@ -99,6 +100,7 @@ public static ProtocolVersion getVersion(final HttpParams params) {
      *
      * @param version the {@link ProtocolVersion protocol version}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.577 -0500", hash_original_method = "F828B0212A5A6C65405D444D09E56997", hash_generated_method = "2E2E6C23A798222B6C81B82B50F28CE6")
     
 public static void setVersion(final HttpParams params, final ProtocolVersion version) {

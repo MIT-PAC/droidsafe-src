@@ -39,6 +39,7 @@ public final class CancellationSignal {
      *
      * @return True if the operation has been canceled.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean isCanceled() {
         synchronized (this) {
             return mIsCanceled;
@@ -108,7 +109,7 @@ public final class CancellationSignal {
      * @param listener The cancellation listener, or null to remove the current listener.
      */
     @DSVerified
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     public void setOnCancelListener(OnCancelListener listener) {
         synchronized (this) {
             waitForCancelFinishedLocked();

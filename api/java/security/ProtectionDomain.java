@@ -32,14 +32,17 @@ public ProtectionDomain(CodeSource cs, PermissionCollection permissions) { }
     
 public ProtectionDomain(CodeSource cs, PermissionCollection permissions, ClassLoader cl, Principal[] principals) { }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:22.481 -0400", hash_original_method = "36D40DB51CE149D4D173272547E45D89", hash_generated_method = "70F20CE8BCE745598B2DC86A45BFB223")
     
 public final ClassLoader getClassLoader() { return null; }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:22.481 -0400", hash_original_method = "65FBCDB1EF6730AA4782FE733CA5126A", hash_generated_method = "19B037FE5853EFBB77A0BF8E2F0601D2")
     
 public final CodeSource getCodeSource() { return null; }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:22.482 -0400", hash_original_method = "CFFE4D5B0E68CF921A8B9CFC68B153D5", hash_generated_method = "0B37283FDD7953EDEB83CB5D5D2EF1E5")
     
 public final PermissionCollection getPermissions() { return null; }

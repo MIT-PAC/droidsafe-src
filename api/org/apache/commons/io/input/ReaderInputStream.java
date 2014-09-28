@@ -238,7 +238,7 @@ private void fillBuffer() throws IOException {
      *         if the end of the stream has been reached
      * @throws IOException if an I/O error occurs
      */
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.641 -0400", hash_original_method = "9AA2BEF9DA8AFF8D251BF2FC6F763561", hash_generated_method = "298EFBAA7A51F11C69F08AF0C7F43929")
     
@@ -280,7 +280,7 @@ private void fillBuffer() throws IOException {
      *         if the end of the stream has been reached
      * @throws IOException if an I/O error occurs
      */
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.641 -0400", hash_original_method = "03121A7AC3B4E7519E88953F37DA485C", hash_generated_method = "CFD5B18414297C5D63F6DE9EDDF7232C")
     
@@ -296,7 +296,7 @@ private void fillBuffer() throws IOException {
      *         has been reached
      * @throws IOException if an I/O error occurs
      */
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.642 -0400", hash_original_method = "DE40F403B4AA3B3194A9FBF22582153E", hash_generated_method = "797BA1D0D041A26281B5AB9F4D6EDF41")
     

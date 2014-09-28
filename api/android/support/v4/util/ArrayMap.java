@@ -79,52 +79,62 @@ public ArrayMap(SimpleArrayMap map) {
         super(map);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.144 -0400", hash_original_method = "253EF9E2C94604F3B36A2A7D788080CE", hash_generated_method = "48A457611827B33D6AB9E1DCD0C06592")
     
 private MapCollections<K, V> getCollection() {
         if (mCollections == null) {
             mCollections = new MapCollections<K, V>() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 protected int colGetSize() {
                     return mSize;
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 protected Object colGetEntry(int index, int offset) {
                     return mArray[(index<<1) + offset];
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 protected int colIndexOfKey(Object key) {
                     return key == null ? indexOfNull() : indexOf(key, key.hashCode());
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 protected int colIndexOfValue(Object value) {
                     return indexOfValue(value);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 protected Map<K, V> colGetMap() {
                     return ArrayMap.this;
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 protected void colPut(K key, V value) {
                     put(key, value);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 protected V colSetValue(int index, V value) {
                     return setValueAt(index, value);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 protected void colRemoveAt(int index) {
                     removeAt(index);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+        @Override
                 protected void colClear() {
                     clear();
                 }

@@ -60,6 +60,8 @@ public class ContextCompat {
      *                length-1 will correspond to the top activity on the resulting task stack.
      * @return true if the underlying API was available and the call was successful, false otherwise
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:33.583 -0500", hash_original_method = "8D45E71D432CDD40BD281029502FF1F3", hash_generated_method = "A282D89E7B4612096D1395CC8DDD2706")
     
 public static boolean startActivities(Context context, Intent[] intents) {
@@ -93,6 +95,8 @@ public static boolean startActivities(Context context, Intent[] intents) {
      * See {@link android.content.Context#startActivity(Intent, Bundle)
      * @return true if the underlying API was available and the call was successful, false otherwise
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.239 -0400", hash_original_method = "2CC55E2F385232BCD097C19E9A10379E", hash_generated_method = "FA8CEC8DA0E9EBF40DD9D327F34E15F2")
     
 public static boolean startActivities(Context context, Intent[] intents,
@@ -108,8 +112,7 @@ public static boolean startActivities(Context context, Intent[] intents,
         return false;
     }
 
-
-
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.271 -0400", hash_original_method = "3ADE214E3239194E3DF15454E5A49DEB", hash_generated_method = "6FE0BA99257D31C7AAC4CAC47ECE1CFA")
     
 private static File buildPath(File base, String... segments) {
@@ -195,7 +198,6 @@ public static File[] getExternalFilesDirs(Context context, String type) {
 
     private static final String DIR_CACHE = "cache";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.200 -0400", hash_original_field = "3E5613E3DD3CC5CE35AE391AC6D0F1F0", hash_generated_field = "14A89A0CAB70891CD03C85B8A3D6A8AD")
-
 
     private static final String DIR_ANDROID = "Android";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.219 -0400", hash_original_field = "2CC1B6DFC460D235D147E2C23782F235", hash_generated_field = "7A13482C0C036C5D2EAA9096120D54C6")

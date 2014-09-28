@@ -1767,6 +1767,7 @@ public NavigableSet<K> descendingKeySet() {
      * @param o object to be compared for equality with this map
      * @return {@code true} if the specified object is equal to this map
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.285 -0400", hash_original_method = "B6E2B22FAFB6B16A3B3D16BEDFE019AB", hash_generated_method = "CABF3D3D733DA47FC6FB38D669B99A74")
     
 public boolean equals(Object o) {
@@ -2017,6 +2018,7 @@ public ConcurrentNavigableMap<K,V> tailMap(K fromKey) {
      * @throws ClassCastException {@inheritDoc}
      * @throws NullPointerException if the specified key is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.291 -0400", hash_original_method = "5B266C0986D42F429B11236FF18CCAF8", hash_generated_method = "D1BAE2585C3E117AC2F098DB40765344")
     
 public Map.Entry<K,V> lowerEntry(K key) {
@@ -2045,6 +2047,7 @@ public K lowerKey(K key) {
      * @throws ClassCastException {@inheritDoc}
      * @throws NullPointerException if the specified key is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.292 -0400", hash_original_method = "5941F7764588D6CCBECEEF8A78C667E8", hash_generated_method = "DED869E56C69F2DED5D01E42103A7647")
     
 public Map.Entry<K,V> floorEntry(K key) {
@@ -2073,6 +2076,7 @@ public K floorKey(K key) {
      * @throws ClassCastException {@inheritDoc}
      * @throws NullPointerException if the specified key is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.293 -0400", hash_original_method = "31960ED48CA366694A6258C4DECE1B78", hash_generated_method = "008102E7B276EBB58E5D5EAB1C58975C")
     
 public Map.Entry<K,V> ceilingEntry(K key) {
@@ -2101,6 +2105,7 @@ public K ceilingKey(K key) {
      * @throws ClassCastException {@inheritDoc}
      * @throws NullPointerException if the specified key is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.294 -0400", hash_original_method = "19411F2EE0CF54FB31E2A203A052BEA6", hash_generated_method = "D59BD36C72CCD426F3DB5C54CC7B89F3")
     
 public Map.Entry<K,V> higherEntry(K key) {
@@ -2126,6 +2131,7 @@ public K higherKey(K key) {
      * The returned entry does <em>not</em> support
      * the {@code Entry.setValue} method.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.295 -0400", hash_original_method = "884AD13FFBF6D547351EDBDC8347D70F", hash_generated_method = "B2C88DDCF1FA0ADCD70A81BBD012FA29")
     
 public Map.Entry<K,V> firstEntry() {
@@ -2252,6 +2258,7 @@ public Map.Entry<K,V> next() {
      * The returned entry does <em>not</em> support
      * the {@code Entry.setValue} method.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.295 -0400", hash_original_method = "8B2F0FFA802D17611A4395C2AC8FB574", hash_generated_method = "9823404D25942D7B6C24D558ED47EDF1")
     
 public Map.Entry<K,V> lastEntry() {
@@ -2271,6 +2278,7 @@ public Map.Entry<K,V> lastEntry() {
      * The returned entry does <em>not</em> support
      * the {@code Entry.setValue} method.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.295 -0400", hash_original_method = "8742E1F0759B337AF13BCCA1D7B4426A", hash_generated_method = "3DFF46C004E242A6615C62706B2DEE32")
     
 public Map.Entry<K,V> pollFirstEntry() {
@@ -2283,6 +2291,7 @@ public Map.Entry<K,V> pollFirstEntry() {
      * The returned entry does <em>not</em> support
      * the {@code Entry.setValue} method.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.296 -0400", hash_original_method = "730CB01F5653582082CD9EFD4889D727", hash_generated_method = "CC5C9EF9F81DD24060A26E266167D4E3")
     
 public Map.Entry<K,V> pollLastEntry() {
@@ -2376,6 +2385,7 @@ public Iterator<E> iterator() {
             else
                 return ((ConcurrentSkipListMap.SubMap<E,Object>)m).keyIterator();
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.310 -0400", hash_original_method = "6A0DE4C77139F252A7F681C504B1BD64", hash_generated_method = "EF316C654A3B2A87F306E467B2EDEAE0")
         
 public boolean equals(Object o) {
@@ -2560,6 +2570,7 @@ public int size() {
 public void clear() {
             m.clear();
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.324 -0400", hash_original_method = "6A0DE4C77139F252A7F681C504B1BD64", hash_generated_method = "EF316C654A3B2A87F306E467B2EDEAE0")
         
 public boolean equals(Object o) {
@@ -3130,6 +3141,7 @@ public SubMap<K,V> descendingMap() {
 
         /* ----------------  Relational methods -------------- */
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.348 -0400", hash_original_method = "FA55E4A4707F29DB1381D841282F9E90", hash_generated_method = "A554E1674B57BA79CDE733F73424620F")
         
 public Map.Entry<K,V> ceilingEntry(K key) {
@@ -3143,6 +3155,7 @@ public K ceilingKey(K key) {
             return getNearKey(key, GT|EQ);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.349 -0400", hash_original_method = "9645C6E719DAD3ED9D8671E35C727FE0", hash_generated_method = "E94784DECBC01A4D2B2FDF00AC1EFCE5")
         
 public Map.Entry<K,V> lowerEntry(K key) {
@@ -3156,6 +3169,7 @@ public K lowerKey(K key) {
             return getNearKey(key, LT);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.350 -0400", hash_original_method = "6587D1B6455DB5348527169BB1059F92", hash_generated_method = "B76468F06834AE8AD3FE6D312E32A6EC")
         
 public Map.Entry<K,V> floorEntry(K key) {
@@ -3169,6 +3183,7 @@ public K floorKey(K key) {
             return getNearKey(key, LT|EQ);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.350 -0400", hash_original_method = "2E8E9AECE4F9AE2D363CAE2A1F56F493", hash_generated_method = "CC2F25DDD07B74F330E5C93D302CCEAC")
         
 public Map.Entry<K,V> higherEntry(K key) {
@@ -3196,24 +3211,28 @@ public K lastKey() {
             return isDescending ? lowestKey() : highestKey();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.352 -0400", hash_original_method = "8FC2D1E35C03976B98EA087895C99260", hash_generated_method = "238D6F51350F38FA07D71804AB868618")
         
 public Map.Entry<K,V> firstEntry() {
             return isDescending ? highestEntry() : lowestEntry();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.352 -0400", hash_original_method = "057F426260737D33082D900C1705C3CD", hash_generated_method = "ED7FBE2350350A9C0C4A08D8EC083388")
         
 public Map.Entry<K,V> lastEntry() {
             return isDescending ? lowestEntry() : highestEntry();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.352 -0400", hash_original_method = "0CD2A70C1A41E282469785650C0B9DB0", hash_generated_method = "B2B919168CCD24A0BFE0BF19A2BEA672")
         
 public Map.Entry<K,V> pollFirstEntry() {
             return isDescending ? removeHighest() : removeLowest();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:21.353 -0400", hash_original_method = "C511DFBA6387EEFEDB83FC77CB2E6C42", hash_generated_method = "C7E5A04BFD66DAF3364CE1EFE3AA9801")
         
 public Map.Entry<K,V> pollLastEntry() {

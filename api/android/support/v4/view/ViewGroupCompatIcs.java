@@ -27,6 +27,7 @@ import android.view.accessibility.AccessibilityEvent;
  * ICS specific ViewGroup API implementation.
  */
 class ViewGroupCompatIcs {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:28.989 -0500", hash_original_method = "33E36D1DFBA0BBF224A4BFF2CB6EC880", hash_generated_method = "79BB2D0F1E6018D65B1386DB5ED08C8F")
     
 public static boolean onRequestSendAccessibilityEvent(ViewGroup group, View child,

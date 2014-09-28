@@ -29,6 +29,7 @@ final class BakedBezierInterpolator implements Interpolator {
 
     private static final BakedBezierInterpolator INSTANCE = new BakedBezierInterpolator();
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:05.692 -0400", hash_original_method = "762145928147B9491C7596516977BE29", hash_generated_method = "A39591234631ABF2D0EF75BB2422BA42")
     
 public final static BakedBezierInterpolator getInstance() {

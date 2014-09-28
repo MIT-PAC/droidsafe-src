@@ -407,14 +407,13 @@ public ContextImpl(ContextImpl context) {
         return mThemeResource;
     }
     
-    @DSSource({DSSourceKind.RESOURCES})
     @DSSafe(DSCat.SAFE_OTHERS)
     @Override
     public Resources.Theme getTheme() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSpec(DSCat.CLASS_LOADER)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @Override
     public ClassLoader getClassLoader() {
@@ -454,7 +453,6 @@ public ContextImpl(ContextImpl context) {
         return new File("DSUnknown");
     }
     
-    @DSSource({DSSourceKind.PREFERENCES})
     @DSSafe(DSCat.SAFE_OTHERS)
     
     @Override
@@ -481,12 +479,11 @@ private File getPreferencesDir() {
     }
 
     @Override
-    @DSSafe(DSCat.FS_INFO)
+    @DSSpec(DSCat.IO)
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
        return INPUT_STREAM;
     }
     
-    @DSSink({DSSinkKind.FILE})
     @Override
     @DSSpec(DSCat.IO)
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
@@ -1142,11 +1139,12 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         }
     }
     
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @Override
     public void unregisterReceiver(BroadcastReceiver receiver) {
     }
     
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.SERVICE)
     @Override
     public ComponentName startService(Intent service) {
@@ -1194,7 +1192,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     
     @Override
     
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SERVICE)
     public boolean stopService(Intent service) {
     service.getAction();
         service.getBooleanArrayExtra("");
@@ -1258,8 +1256,9 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         return true;
     }
 
+    @DSSink({DSSinkKind.IPC})
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS) 
+    @DSSpec(DSCat.SERVICE) 
     @Override
     public void unbindService(ServiceConnection conn) {
         if (conn != null) {

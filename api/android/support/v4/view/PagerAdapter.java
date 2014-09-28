@@ -92,6 +92,7 @@ public abstract class PagerAdapter {
     /**
      * Return the number of views available.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.674 -0400", hash_original_method = "8A22A1FE2F5B57814AD6F31483E8A082", hash_generated_method = "4A7C62328463406AEE3D11A837EF3867")
     
 public abstract int getCount();
@@ -101,6 +102,7 @@ public abstract int getCount();
      * @param container The containing View which is displaying this adapter's
      * page views.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.678 -0400", hash_original_method = "DCAE5C6F617B7B7CD0D6B0A4179A4B48", hash_generated_method = "B8BC9AC1396C809BA11C5CCA8C517F60")
     
 public void startUpdate(ViewGroup container) {
@@ -135,6 +137,7 @@ public Object instantiateItem(ViewGroup container, int position) {
      * @param object The same object that was returned by
      * {@link #instantiateItem(View, int)}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.685 -0400", hash_original_method = "81B6B479C89D1904C5A685A128836D6A", hash_generated_method = "F114DE55F7DC7836AF2B5B1FA6EF3009")
     
 public void destroyItem(ViewGroup container, int position, Object object) {
@@ -164,6 +167,7 @@ public void setPrimaryItem(ViewGroup container, int position, Object object) {
      * @param container The containing View which is displaying this adapter's
      * page views.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.693 -0400", hash_original_method = "D14DC4EE203F14C8F1345C8D2F18FF46", hash_generated_method = "6E7C525ADF3B0D6ABC6003DDAB9CC2E2")
     
 public void finishUpdate(ViewGroup container) {
@@ -177,6 +181,7 @@ public void finishUpdate(ViewGroup container) {
      *
      * @deprecated Use {@link #startUpdate(ViewGroup)}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.697 -0400", hash_original_method = "FA1E5F7C2B2EB1EE6744E074AA1F10AB", hash_generated_method = "A06B43F4CD23E238EE09245FF88DEAA6")
     
 public void startUpdate(View container) {
@@ -215,6 +220,7 @@ public Object instantiateItem(View container, int position) {
      *
      * @deprecated Use {@link #destroyItem(ViewGroup, int, Object)}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.706 -0400", hash_original_method = "0E7A719DFB33F3F65D1661AAD48E8CDE", hash_generated_method = "23A2966650893BDAF2FF72298F5A9B1A")
     
 public void destroyItem(View container, int position, Object object) {
@@ -247,6 +253,7 @@ public void setPrimaryItem(View container, int position, Object object) {
      *
      * @deprecated Use {@link #finishUpdate(ViewGroup)}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.713 -0400", hash_original_method = "140CF544DAB4E9753AD13C5C6F7AF228", hash_generated_method = "308372D6C1DED60A11945E3E60F9BEB7")
     
 public void finishUpdate(View container) {
@@ -261,6 +268,7 @@ public void finishUpdate(View container) {
      * @param object Object to check for association with <code>view</code>
      * @return true if <code>view</code> is associated with the key object <code>object</code>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.717 -0400", hash_original_method = "DAA6FA5171544E03AFB8179636AFB377", hash_generated_method = "5C6A67F058B407F9CA962AC1DC62EE22")
     
 public abstract boolean isViewFromObject(View view, Object object);
@@ -285,6 +293,7 @@ public Parcelable saveState() {
      * @param state State previously saved by a call to {@link #saveState()}
      * @param loader A ClassLoader that should be used to instantiate any restored objects
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.724 -0400", hash_original_method = "17638DDA6DE27E971DE60A544D06348C", hash_generated_method = "30D01C6D420DFBDFF4FA00D98C8B4AF6")
     
 public void restoreState(Parcelable state, ClassLoader loader) {
@@ -305,6 +314,7 @@ public void restoreState(Parcelable state, ClassLoader loader) {
      *         {@link #POSITION_UNCHANGED} if the object's position has not changed,
      *         or {@link #POSITION_NONE} if the item is no longer present.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.727 -0400", hash_original_method = "A005A760A98AF47FB8E2DAD0B5F81664", hash_generated_method = "01A7DA51C41C27400438FC1069B22549")
     
 public int getItemPosition(Object object) {
@@ -326,6 +336,7 @@ public void notifyDataSetChanged() {
      *
      * @param observer The {@link android.database.DataSetObserver} which will receive callbacks.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.734 -0400", hash_original_method = "F0925616C6F47A4BCFCB9E7C14C25F57", hash_generated_method = "ED53D07D14C010A3795D1986C4E94E69")
     
 public void registerDataSetObserver(DataSetObserver observer) {
@@ -337,6 +348,7 @@ public void registerDataSetObserver(DataSetObserver observer) {
      *
      * @param observer The {@link android.database.DataSetObserver} which will be unregistered.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.737 -0400", hash_original_method = "F847CF5B5DF735E7D60F86704B1D73CD", hash_generated_method = "C57A6AEE370CA4E86D7E3631610F1BBF")
     
 public void unregisterDataSetObserver(DataSetObserver observer) {
@@ -352,6 +364,7 @@ public void unregisterDataSetObserver(DataSetObserver observer) {
      * @param position The position of the title requested
      * @return A title for the requested page
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.741 -0400", hash_original_method = "D33F5CC8812E682744289E753AD4C997", hash_generated_method = "479873DFF9A60410744CFFB89F78C5F6")
     
 public CharSequence getPageTitle(int position) {
@@ -365,6 +378,7 @@ public CharSequence getPageTitle(int position) {
      * @param position The position of the page requested
      * @return Proportional width for the given page position
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.745 -0400", hash_original_method = "321C1C552BE4B49CDE18355BF7083B2B", hash_generated_method = "8B6985830BDA9EE5A9AC452E03971627")
     
 public float getPageWidth(int position) {

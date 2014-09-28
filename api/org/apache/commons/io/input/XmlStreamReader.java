@@ -125,6 +125,7 @@ public class XmlStreamReader extends Reader {
      * @param httpContentType the HTTP content type
      * @return The mime content type
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.190 -0400", hash_original_method = "FCFDB24E9875B2E0BCA7546B4A10A817", hash_generated_method = "13C7D930946957B0508B6B855A709960")
     
 static String getContentTypeMime(String httpContentType) {
@@ -152,6 +153,7 @@ static String getContentTypeMime(String httpContentType) {
      * @param httpContentType the HTTP content type
      * @return The content type encoding (upcased)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.191 -0400", hash_original_method = "A79F497669D1A1ECD65A8F0904EE0023", hash_generated_method = "37994C94818231AC5D30FA12FD3C804B")
     
 static String getContentTypeEncoding(String httpContentType) {
@@ -181,6 +183,7 @@ static String getContentTypeEncoding(String httpContentType) {
      * @return the encoding declared in the <?xml encoding=...?>
      * @throws IOException thrown if there is a problem reading the stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.193 -0400", hash_original_method = "162732F0A7E49671436861D5CE08ADF6", hash_generated_method = "4945F71186FE25E05438F92FF29D4797")
     
 private static String getXmlProlog(InputStream is, String guessedEnc)
@@ -238,6 +241,7 @@ private static String getXmlProlog(InputStream is, String guessedEnc)
      * @return true if the mime type belongs to the APPLICATION XML family,
      * otherwise false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.194 -0400", hash_original_method = "5460C1BF4694AF8E70CA165118B96A98", hash_generated_method = "70B24E9524D2610955AE19CBC0B320C2")
     
 static boolean isAppXml(String mime) {
@@ -255,6 +259,7 @@ static boolean isAppXml(String mime) {
      * @return true if the mime type belongs to the TEXT XML family,
      * otherwise false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.194 -0400", hash_original_method = "C0219AF1D095DA295F318D03FEFBBE5C", hash_generated_method = "392D25654FB092B347D6206C9962370A")
     
 static boolean isTextXml(String mime) {
@@ -632,6 +637,7 @@ public String getEncoding() {
      * @return the encoding to be used
      * @throws IOException thrown if there is a problem reading the stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.183 -0400", hash_original_method = "2A9E440FCF0AAE6B2EF64361426B6DDA", hash_generated_method = "738BEB3568983C73A7474ABE3EBE6D75")
     
 private String doRawStream(BOMInputStream bom, BOMInputStream pis, boolean lenient)
@@ -661,6 +667,7 @@ private String doRawStream(BOMInputStream bom, BOMInputStream pis, boolean lenie
      * @return the encoding to be used
      * @throws IOException thrown if there is a problem reading the stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.184 -0400", hash_original_method = "58151B4DA62D82E62869FF632AE48FF5", hash_generated_method = "299A3DFDE9481F7798F49A556FF9A854")
     
 private String doHttpStream(BOMInputStream bom, BOMInputStream pis, String httpContentType,
@@ -689,6 +696,7 @@ private String doHttpStream(BOMInputStream bom, BOMInputStream pis, String httpC
      * @return the encoding
      * @throws IOException thrown if there is a problem reading the stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.185 -0400", hash_original_method = "68E74736656E5A93054BE7DF7FDFC9F5", hash_generated_method = "308B7815A245DDDD6C83FEC3772FB15D")
     
 private String doLenientDetection(String httpContentType,
@@ -722,6 +730,7 @@ private String doLenientDetection(String httpContentType,
      * @return the raw encoding
      * @throws IOException thrown if there is a problem reading the stream.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.187 -0400", hash_original_method = "598A080C11FF68E733FEC8702F091B2A", hash_generated_method = "9B274B45B50C031E497E39349038391A")
     
 String calculateRawEncoding(String bomEnc, String xmlGuessEnc,

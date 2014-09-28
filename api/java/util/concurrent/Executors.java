@@ -392,7 +392,8 @@ public static Callable<Object> callable(final PrivilegedAction<?> action) {
         if (action == null)
             throw new NullPointerException();
         return new Callable<Object>() {
-            public Object call() { return action.run(); }};
+            @DSSafe(DSCat.SAFE_LIST)
+        public Object call() { return action.run(); }};
     }
 
     /**
@@ -410,7 +411,8 @@ public static Callable<Object> callable(final PrivilegedExceptionAction<?> actio
         if (action == null)
             throw new NullPointerException();
         return new Callable<Object>() {
-            public Object call() throws Exception { return action.run(); }};
+            @DSSafe(DSCat.SAFE_LIST)
+        public Object call() throws Exception { return action.run(); }};
     }
     
     @DSComment("From safe class list")
@@ -451,6 +453,7 @@ RunnableAdapter(Runnable task, T result) {
             this.task = task;
             this.result = result;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.804 -0500", hash_original_method = "0255C7C18478A7E06F3D7DE61652A41C", hash_generated_method = "1ED27E33BE4D8610214F7F251DDF57E0")
         
 public T call() {
@@ -477,6 +480,7 @@ PrivilegedCallable(Callable<T> task) {
             this.acc = AccessController.getContext();
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.949 -0400", hash_original_method = "9B84B0D9F1F9FF2095D253EA33535221", hash_generated_method = "E14DBC5527319FD92CE738D97A5FE7C1")
         public T call() throws Exception {
             try 
@@ -550,6 +554,7 @@ PrivilegedCallableUsingCurrentClassLoader(Callable<T> task) {
             this.ccl = Thread.currentThread().getContextClassLoader();
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.953 -0400", hash_original_method = "083E1FD40613168D34C9FEEE9DFC0EBD", hash_generated_method = "A36CDEF7A248443757048A585C2D137C")
         public T call() throws Exception {
             try 
@@ -633,6 +638,7 @@ DefaultThreadFactory() {
                          "-thread-";
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.860 -0500", hash_original_method = "FA504429181C673B0F1001408D56C877", hash_generated_method = "CA56EC83A1C3C9C968761B032ADA6C4A")
         
 public Thread newThread(Runnable r) {
@@ -675,6 +681,7 @@ PrivilegedThreadFactory() {
             this.ccl = Thread.currentThread().getContextClassLoader();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.879 -0500", hash_original_method = "0BB5C6FA3ECC4446695A9AB19E82A9A9", hash_generated_method = "F4714F7F7A9925E5C69E3F074A70A72A")
         
 public Thread newThread(final Runnable r) {
@@ -703,7 +710,7 @@ public Thread newThread(final Runnable r) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.887 -0500", hash_original_method = "69B8656E71D4B49ACEB9CE44B20A63F5", hash_generated_method = "69B8656E71D4B49ACEB9CE44B20A63F5")
         
 DelegatedExecutorService(ExecutorService executor) { e = executor; }
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.889 -0500", hash_original_method = "680CD1247FE9848C91F828B8B2655AA2", hash_generated_method = "5FF620BA750B9AA4D5060F4389C28B45")
         
 public void execute(Runnable command) { e.execute(command); }
@@ -719,6 +726,7 @@ public List<Runnable> shutdownNow() { return e.shutdownNow(); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.896 -0500", hash_original_method = "6953493B1D30A903FCCDB4081BC753C6", hash_generated_method = "3ED36EAA0FDD5A7DA2E3DB880E4255AC")
         
 public boolean isShutdown() { return e.isShutdown(); }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.898 -0500", hash_original_method = "BA72422211BC216152EB93C851C6051E", hash_generated_method = "431E04F8EFA8337811BFB175053A048A")
         
 public boolean isTerminated() { return e.isTerminated(); }
@@ -729,14 +737,14 @@ public boolean awaitTermination(long timeout, TimeUnit unit)
             throws InterruptedException {
             return e.awaitTermination(timeout, unit);
         }
-        @DSSpec(DSCat.EXEC)
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.905 -0500", hash_original_method = "70A4BA700942918290F358C98B70C3C4", hash_generated_method = "B1E20F9363F4AD28BDBD861F9CB91AD2")
         
 public Future<?> submit(Runnable task) {
             return e.submit(task);
         }
         
-        @DSSpec(DSCat.EXEC)
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "83E0E20FEE789D6C0B6E1A8BE258D9AC", hash_generated_method = "AA01AE8CA15C63BFFFD6A901646BAC26")
         public <T> Future<T> submit(Callable<T> task) {
             addTaint(task.getTaint());
@@ -747,7 +755,7 @@ Future<T> var3A821B5C48F3C73F2F85580271A54221_1800187115 =             e.submit(
             //return e.submit(task);
         }
         
-        @DSSpec(DSCat.EXEC)
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "7C597CCD4131D2329D010B8EED3AD866", hash_generated_method = "0AA752005320E5BA2422D1327FD79FC5")
         public <T> Future<T> submit(Runnable task, T result) {
             addTaint(result.getTaint());
@@ -784,6 +792,7 @@ List<Future<T>> var87E281F68E17B3CFFAEC895C8A8BFC68_708146293 =             e.in
             //return e.invokeAll(tasks, timeout, unit);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "4C0A5FF3374B9876DAD3CF3A7DB4F9BC", hash_generated_method = "8B5EE102BC34D4E24BA7EFBB0665BD75")
         public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException {
             addTaint(tasks.getTaint());
@@ -794,6 +803,7 @@ T var7ECF5F9BD3788A61679614FEA5EAB1C2_271945437 =             e.invokeAny(tasks)
             //return e.invokeAny(tasks);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "D15E2648AE9554DE3EDB2502DC3264EF", hash_generated_method = "C9B006B0B01AB1143ACEE71469CEF48F")
         public <T> T invokeAny(Collection<? extends Callable<T>> tasks,
                                long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {

@@ -28,14 +28,15 @@ import android.content.Intent;
  */
 class ContextCompatHoneycomb {
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:33.068 -0500", hash_original_method = "629B555D256106BD45BE0BBC53CBB391", hash_generated_method = "5E3FAE56E2C6DF50D8907A1F0ED80712")
     
 static void startActivities(Context context, Intent[] intents) {
         context.startActivities(intents);
     }
 
-
-
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.357 -0400", hash_original_method = "1E32EC37BEBA248EE7951C1566149DD4", hash_generated_method = "9028D49E0C10FE4880B2CB55FA201E53")
     
 public static File getObbDir(Context context) {

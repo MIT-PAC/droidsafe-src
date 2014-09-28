@@ -401,6 +401,7 @@ public View getActionView() {
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:35.009 -0400", hash_original_method = "255783F2B7AB6FE993F93043DA905125", hash_generated_method = "4023F4C021E6E75EC4DE7834C7CFBCCD")
     
 @Override
@@ -408,6 +409,7 @@ public View getActionView() {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:35.012 -0400", hash_original_method = "352ADC875992AE87D93DAEF16322430A", hash_generated_method = "02186585BF735AB05A5F7B8703C19D9A")
     
 @Override
@@ -456,6 +458,7 @@ public View getActionView() {
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:35.030 -0400", hash_original_method = "5D0C6AC6A426D800B6114059F3C7B7B0", hash_generated_method = "AE89A987A2B9E3669D5709FD1CE6A745")
     
 @Override

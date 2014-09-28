@@ -323,7 +323,7 @@ public void unread(byte[] buffer, int offset, int length) throws IOException {
      *             full.
      */
     @DSComment("not sensitive")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.578 -0500", hash_original_method = "98848F28DD25FD585D8212E035CA9267", hash_generated_method = "BA3E56535EE8E6396EAC1C1F27A9326F")
     
 public void unread(int oneByte) throws IOException {

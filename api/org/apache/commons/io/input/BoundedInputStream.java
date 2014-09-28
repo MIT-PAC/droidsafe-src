@@ -88,8 +88,8 @@ public BoundedInputStream(InputStream in) {
      * the limit has been reached.
      * @throws IOException if an I/O error occurs
      */
-    @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.381 -0400", hash_original_method = "3B17BBAD3F2EB7B5AD570704422B04DF", hash_generated_method = "E4595D1150620DB6A28E6C23D90EB3DE")
     
 @Override
@@ -109,8 +109,8 @@ public BoundedInputStream(InputStream in) {
      * the limit has been reached.
      * @throws IOException if an I/O error occurs
      */
-    @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.381 -0400", hash_original_method = "19F9C1719138FA897C10FCE8AB2E8039", hash_generated_method = "49FD28DF421FEF8CD1F21A9ACDBF2702")
     
 @Override
@@ -127,8 +127,8 @@ public BoundedInputStream(InputStream in) {
      * the limit has been reached.
      * @throws IOException if an I/O error occurs
      */
-    @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.382 -0400", hash_original_method = "6E26F3926C5C4BE64BEC3614C2578ECF", hash_generated_method = "DCA5893E95EBCAA6A167DCC40A92D6C6")
     
 @Override

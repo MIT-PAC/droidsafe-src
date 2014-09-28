@@ -30,8 +30,7 @@ public class GeoPoint
         return "";
     }
     
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
-    @DSSafe(DSCat.LOCATION)
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean equals(Object paramObject) { 
         return this == paramObject;
     }

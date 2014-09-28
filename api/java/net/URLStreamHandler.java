@@ -333,6 +333,7 @@ String varE65B3A02759122992CB82C0E651AD408_1238751379 =         result.toString(
      * Returns true if {@code a} and {@code b} have the same protocol, host,
      * port, file, and reference.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.496 -0500", hash_original_method = "5273434A62CED7D2FFF6F02112157609", hash_generated_method = "5CE74B9F6208391846C455088544C7EA")
     
 protected boolean equals(URL a, URL b) {

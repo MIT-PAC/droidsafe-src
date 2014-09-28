@@ -415,6 +415,7 @@ public boolean equals(Object obj)
      * @return NTP timestamp 64-bit long value as hex string with seconds
      * separated by fractional seconds.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.863 -0500", hash_original_method = "7FBFA5DF7A2D6014C9CA2F913F0914FC", hash_generated_method = "F39600EBE8DF940850F3163642F0ABA9")
     

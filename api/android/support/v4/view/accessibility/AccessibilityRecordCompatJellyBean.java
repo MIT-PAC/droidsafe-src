@@ -27,6 +27,7 @@ import android.view.accessibility.AccessibilityRecord;
  */
 class AccessibilityRecordCompatJellyBean {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.705 -0400", hash_original_method = "F55C97957FECBE4DDC5FCF56EF7F8C3D", hash_generated_method = "38EF5C0F64D34A4B7A0EDD709379E30D")
     
 public static void setSource(Object record, View root, int virtualDescendantId) {

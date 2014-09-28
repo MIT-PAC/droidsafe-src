@@ -101,6 +101,7 @@ public FragmentPagerAdapter(FragmentManager fm) {
     
 public abstract Fragment getItem(int position);
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:54.696 -0500", hash_original_method = "40E78EFA38F0994EA71F26DADE781C52", hash_generated_method = "C451CD9BEC048C5D65EB3785ED5E5CC8")
     
 @Override
@@ -137,6 +138,7 @@ public abstract Fragment getItem(int position);
         return fragment;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:54.726 -0500", hash_original_method = "D2CA36ECE3C50A13099231C6B31A7BDC", hash_generated_method = "1268423803CAF7AD7B23C066AB18B42B")
     
 @Override
@@ -169,6 +171,7 @@ public abstract Fragment getItem(int position);
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:54.739 -0500", hash_original_method = "82B7432FA4441721C4132291867EEFCE", hash_generated_method = "CE61AFE2F603793B40738C76BEDE2639")
     
 @Override
@@ -180,6 +183,7 @@ public abstract Fragment getItem(int position);
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:54.744 -0500", hash_original_method = "326A6E6DDD52502D387B1D32B8739E1F", hash_generated_method = "AF3559343D13818878146CEE853F63B6")
     
 @Override
@@ -196,6 +200,7 @@ public abstract Fragment getItem(int position);
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:54.761 -0500", hash_original_method = "17638DDA6DE27E971DE60A544D06348C", hash_generated_method = "CA86982BBD297ECE9BC8A03BE9E0BFBA")
     
 @Override

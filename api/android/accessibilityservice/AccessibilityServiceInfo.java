@@ -184,7 +184,7 @@ public static String flagToString(int flag) {
 
     public static final Parcelable.Creator<AccessibilityServiceInfo> CREATOR =
             new Parcelable.Creator<AccessibilityServiceInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.318 -0500", hash_original_method = "04114293203BBEAA7C56518D0943E789", hash_generated_method = "D59A4749F55DD13BC19219836FB14EB5")
         
 public AccessibilityServiceInfo createFromParcel(Parcel parcel) {
@@ -360,7 +360,7 @@ public String getId() {
      */
     @DSComment("Describes Acessibility Service")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.280 -0500", hash_original_method = "CD70F9B024F94168959F7F67ECCC2D46", hash_generated_method = "C9D0D45F7969AB2459018B24DB336946")
     
 public ResolveInfo getResolveInfo() {
@@ -401,7 +401,7 @@ public boolean getCanRetrieveWindowContent() {
         return mCanRetrieveWindowContent;
     }
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public int getCapabilities () {
         return getTaintInt();
     }

@@ -39,13 +39,14 @@ final class FragmentState implements Parcelable {
 
     public static final Parcelable.Creator<FragmentState> CREATOR
             = new Parcelable.Creator<FragmentState>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.125 -0500", hash_original_method = "EC1ACE39B0D42EA269A848888E85A00F", hash_generated_method = "A5A88BD3A75C773BD237E8D2C9040999")
         
 public FragmentState createFromParcel(Parcel in) {
             return new FragmentState(in);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.127 -0500", hash_original_method = "DC4AEAFBDB4D71B532904C285EBC6967", hash_generated_method = "19DDBB5FA0E131DAFC47ACF67B190A1C")
         
 public FragmentState[] newArray(int size) {
@@ -115,6 +116,7 @@ public FragmentState(Parcel in) {
         mSavedFragmentState = in.readBundle();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.116 -0500", hash_original_method = "929295C14EE92A06097EEC5737CFE8E9", hash_generated_method = "2A05A2E8082D10240FD4E6A87CE6D902")
     
 public Fragment instantiate(FragmentActivity activity, Fragment parent) {
@@ -176,6 +178,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
      * Like {@link #instantiate(Context, String, Bundle)} but with a null
      * argument Bundle.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.268 -0500", hash_original_method = "0190F1BB85D8CE10E66B5514A394ABC5", hash_generated_method = "70A477C537313AA7A65AA778A77FFE25")
     
 public static Fragment instantiate(Context context, String fname) {
@@ -196,6 +199,7 @@ public static Fragment instantiate(Context context, String fname) {
      * the given fragment class.  This is a runtime exception; it is not
      * normally expected to happen.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.271 -0500", hash_original_method = "DD532F08670F8F66F3144923B381A393", hash_generated_method = "502B97B751650EA555BDAFC8D8187866")
     
 public static Fragment instantiate(Context context, String fname, Bundle args) {
@@ -431,7 +435,7 @@ public Fragment() {
     }
            
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.274 -0500", hash_original_method = "245153A377A25A4032F77A4E144CB5DC", hash_generated_method = "2C1E9B61679D6DC87423EDB754F46D51")
     
 final void restoreViewState(Bundle savedInstanceState) {
@@ -448,7 +452,7 @@ final void restoreViewState(Bundle savedInstanceState) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.276 -0500", hash_original_method = "57A747EE3041ECA2E14E3727F10963D8", hash_generated_method = "DBEE0A236F799F661C5C8C7E710A8F39")
     
 final void setIndex(int index, Fragment parent) {
@@ -461,7 +465,7 @@ final void setIndex(int index, Fragment parent) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.278 -0500", hash_original_method = "B0D28796550366EF842F99A3D9D59C11", hash_generated_method = "D60291057198FF92ECFB3CAF33EB7BBB")
     
 final boolean isInBackStack() {
@@ -471,6 +475,7 @@ final boolean isInBackStack() {
     /**
      * Subclasses can not override equals().
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.280 -0500", hash_original_method = "055C1CABEC6B90DB231CF8138F07B9C1", hash_generated_method = "3B58C883A45626CCAC1720C76B088B94")
     
 @Override final public boolean equals(Object o) {
@@ -564,6 +569,7 @@ final public Bundle getArguments() {
      *
      * @param state The state the fragment should be restored from.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.299 -0500", hash_original_method = "D968C46759760C7406AC68A668D9806D", hash_generated_method = "CBAFDD2DA35863419A96B7EE7F5050E1")
     
 public void setInitialSavedState(SavedState state) {
@@ -613,6 +619,7 @@ final public int getTargetRequestCode() {
     /**
      * Return the Activity this fragment is currently associated with.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.309 -0500", hash_original_method = "A48A2A81AB5F981679BE8C3496B55E59", hash_generated_method = "34C9F813979CDED0956817E054BA1E03")
     
 final public FragmentActivity getActivity() {
@@ -622,6 +629,7 @@ final public FragmentActivity getActivity() {
     /**
      * Return <code>getActivity().getResources()</code>.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.311 -0500", hash_original_method = "A8E18DB36BC334E1CF5901C727187C18", hash_generated_method = "E4C0928E700635ED038F7599AF52D3F4")
     
 final public Resources getResources() {
@@ -668,6 +676,7 @@ public final String getString(int resId, Object... formatArgs) {
      * <p>If this Fragment is a child of another Fragment, the FragmentManager
      * returned here will be the parent's {@link #getChildFragmentManager()}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.320 -0500", hash_original_method = "ED1BD18F392C2062694622C1FF4A3A44", hash_generated_method = "9FB618358C5CDB15EFE3334E40CE4E04")
     
 final public FragmentManager getFragmentManager() {
@@ -709,6 +718,7 @@ final public Fragment getParentFragment() {
     /**
      * Return true if the fragment is currently added to its activity.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.328 -0500", hash_original_method = "C0D74F5DDFD9A01C19E54F3379BA7652", hash_generated_method = "618EE3A321C4FFDE67749913AA58ADE8")
     
 final public boolean isAdded() {
@@ -720,6 +730,7 @@ final public boolean isAdded() {
      * That is, {@link FragmentTransaction#detach(Fragment)
      * FragmentTransaction.detach(Fragment)} has been used on it.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.330 -0500", hash_original_method = "2F8509F8C4A8638224A8FC9748BC6275", hash_generated_method = "A3DAB4791D78BFADFFEB813492AD2568")
     
 final public boolean isDetached() {
@@ -779,6 +790,7 @@ final public boolean isVisible() {
      * to other states -- that is, to be visible to the user, a fragment
      * must be both started and not hidden.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.341 -0500", hash_original_method = "E04FD968639295CCE5F791161EDE4496", hash_generated_method = "95435B2E5A3E660232E391B2CA517F03")
     
 final public boolean isHidden() {
@@ -792,6 +804,7 @@ final public boolean isHidden() {
      * @param hidden True if the fragment is now hidden, false if it is not
      * visible.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.343 -0500", hash_original_method = "FE8A5DF015D2662392185902D9D0AEDD", hash_generated_method = "6171B40743610647ED2639EEA99C32FF")
     
 public void onHiddenChanged(boolean hidden) {
@@ -811,6 +824,7 @@ public void onHiddenChanged(boolean hidden) {
      * still be called.
      * </ul>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.346 -0500", hash_original_method = "DD8E6A20AB766DE2DFF904C4C63DFDE5", hash_generated_method = "90D40B1752599F83A7A7BD6D9CC4A2BD")
     
 public void setRetainInstance(boolean retain) {
@@ -959,6 +973,7 @@ public void startActivityForResult(Intent intent, int requestCode) {
      * @param data An Intent, which can return result data to the caller
      *               (various data can be attached to Intent "extras").
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.367 -0500", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "C260DB77EAE28D217FB04A25644FEF88")
     
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -969,6 +984,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
      * its views, and the view construction can use the dialog's context for
      * inflation.  Maybe this should become a public API. Note sure.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.369 -0500", hash_original_method = "8FF008E86C71DF2CF57F1B9E3E9D8CD9", hash_generated_method = "215582C096358607BAA8172CADB219C2")
     
 public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
@@ -1017,6 +1033,7 @@ public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
      * @param savedInstanceState If the fragment is being re-created from
      * a previous saved state, this is the state.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.372 -0500", hash_original_method = "6B431F4170E83AA9D07B8C377544B225", hash_generated_method = "BDDEA872564B428E247630AE19A72D33")
     
 public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
@@ -1027,6 +1044,7 @@ public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanc
      * Called when a fragment is first attached to its activity.
      * {@link #onCreate(Bundle)} will be called after this.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.374 -0500", hash_original_method = "7FCB8118913FF635CB1CDE717E61023E", hash_generated_method = "B80B37A37F384FB495394FF2DE913216")
     
 public void onAttach(Activity activity) {
@@ -1036,6 +1054,7 @@ public void onAttach(Activity activity) {
     /**
      * Called when a fragment loads an animation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.376 -0500", hash_original_method = "273C1CEA731372543F92C5C1B99E7FBF", hash_generated_method = "6C78362920496EB9988128A339D51861")
     
 public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
@@ -1056,6 +1075,7 @@ public Animation onCreateAnimation(int transit, boolean enter, int nextAnim) {
      * @param savedInstanceState If the fragment is being re-created from
      * a previous saved state, this is the state.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.378 -0500", hash_original_method = "00494AECA41C1730DF6E82548FC2C3D5", hash_generated_method = "16BC96174FF1001ACAD87A7C411E6383")
     
 public void onCreate(Bundle savedInstanceState) {
@@ -1081,6 +1101,7 @@ public void onCreate(Bundle savedInstanceState) {
      * 
      * @return Return the View for the fragment's UI, or null.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.380 -0500", hash_original_method = "57C338AB393ED440CE12C76B2627A085", hash_generated_method = "AD55BEC45E51C01CE5E1ECDFD84D386F")
     
 public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -1098,6 +1119,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
      * @param savedInstanceState If non-null, this fragment is being re-constructed
      * from a previous saved state as given here.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.383 -0500", hash_original_method = "F4318A499F9B06ABC9CCF0644AE6DC10", hash_generated_method = "7A9779D0E96BCB81E2F9B1D4F8B9E908")
     
 public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -1109,6 +1131,7 @@ public void onViewCreated(View view, Bundle savedInstanceState) {
      * 
      * @return The fragment's root view, or null if it has no layout.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.385 -0500", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "08E70AA8D2F1647EC2EEAF8AC8218386")
     
 public View getView() {
@@ -1128,6 +1151,7 @@ public View getView() {
      * @param savedInstanceState If the fragment is being re-created from
      * a previous saved state, this is the state.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.387 -0500", hash_original_method = "C52625884C98429BE8DE42F4FBFE7367", hash_generated_method = "98A4E1BEF43B96D6CA75F281B713F100")
     
 public void onActivityCreated(Bundle savedInstanceState) {
@@ -1145,6 +1169,7 @@ public void onActivityCreated(Bundle savedInstanceState) {
      * @param savedInstanceState If the fragment is being re-created from
      * a previous saved state, this is the state.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.389 -0500", hash_original_method = "01C4E5BCA343F9B21B52342AACDB7055", hash_generated_method = "328EF3DE17065127D72A3457FDA0BBF3")
     
 public void onViewStateRestored(Bundle savedInstanceState) {
@@ -1156,6 +1181,7 @@ public void onViewStateRestored(Bundle savedInstanceState) {
      * tied to {@link Activity#onStart() Activity.onStart} of the containing
      * Activity's lifecycle.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.392 -0500", hash_original_method = "EDAB2E7FCE4E0A13012A045AB5CD29D5", hash_generated_method = "1DBBEBD1CED1245E55F4F787514A786E")
     
 public void onStart() {
@@ -1179,6 +1205,7 @@ public void onStart() {
      * tied to {@link Activity#onResume() Activity.onResume} of the containing
      * Activity's lifecycle.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.394 -0500", hash_original_method = "3B8608ED59C2663D271D57F8D8F534C0", hash_generated_method = "4D7A6260998C4FCE09C9F7547BB0088D")
     
 public void onResume() {
@@ -1204,11 +1231,13 @@ public void onResume() {
      *
      * @param outState Bundle in which to place your saved state.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.396 -0500", hash_original_method = "9C4F98F3F5A4FCEFF66E261EDA5693F3", hash_generated_method = "C04385BA6080B306978908B96949C69D")
     
 public void onSaveInstanceState(Bundle outState) {
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.399 -0500", hash_original_method = "16A05561D5415124B893EA7E2AFB953D", hash_generated_method = "6329F4570B711AA91B0B56ED1E69203C")
     
 public void onConfigurationChanged(Configuration newConfig) {
@@ -1220,6 +1249,7 @@ public void onConfigurationChanged(Configuration newConfig) {
      * tied to {@link Activity#onPause() Activity.onPause} of the containing
      * Activity's lifecycle.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.401 -0500", hash_original_method = "CEF2FF1DA31E7EE9D761807A037B37B2", hash_generated_method = "51C6B5EC7B1D9F940C577FFB2B442418")
     
 public void onPause() {
@@ -1231,12 +1261,14 @@ public void onPause() {
      * tied to {@link Activity#onStop() Activity.onStop} of the containing
      * Activity's lifecycle.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.403 -0500", hash_original_method = "FC062A9ECA017F6E5D455E8C973942F9", hash_generated_method = "74B942254A2EEF5C3A13F16A340184BC")
     
 public void onStop() {
         mCalled = true;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.405 -0500", hash_original_method = "28328842E1AEC7ECF313405184622A29", hash_generated_method = "496D22D8DD3B8B99E52EDECCB6845DFD")
     
 public void onLowMemory() {
@@ -1252,6 +1284,7 @@ public void onLowMemory() {
      * non-null view.  Internally it is called after the view's state has
      * been saved but before it has been removed from its parent.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.407 -0500", hash_original_method = "E54F17C7BAFD082A48D2152349C1815A", hash_generated_method = "EF5D35A4BE966F5779FF7FF52FB51600")
     
 public void onDestroyView() {
@@ -1262,6 +1295,7 @@ public void onDestroyView() {
      * Called when the fragment is no longer in use.  This is called
      * after {@link #onStop()} and before {@link #onDetach()}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.409 -0500", hash_original_method = "FBD8F2B4105FF1952BBC9E4FBE11F6B2", hash_generated_method = "C7B554A9C5CFABAC30AF443E7DB0D7FF")
     
 public void onDestroy() {
@@ -1284,7 +1318,7 @@ public void onDestroy() {
      * internally manages, not things the application sets.
      */
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.412 -0500", hash_original_method = "04633BF5293F80973E1AA355DB2C35EF", hash_generated_method = "04633BF5293F80973E1AA355DB2C35EF")
     
 void initState() {
@@ -1314,6 +1348,7 @@ void initState() {
      * Called when the fragment is no longer attached to its activity.  This
      * is called after {@link #onDestroy()}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.414 -0500", hash_original_method = "EF609D2FD1394DFBC19807CB21AD7D10", hash_generated_method = "83E23ABA3A95A944F06C58F7795DEF3A")
     
 public void onDetach() {
@@ -1333,6 +1368,7 @@ public void onDetach() {
      * @see #onPrepareOptionsMenu
      * @see #onOptionsItemSelected
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.416 -0500", hash_original_method = "B3C5F3D019B47C47E6111F1C7C38CA5D", hash_generated_method = "029924445C1AFDCE87D15E2774C1B76B")
     
 public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -1352,6 +1388,7 @@ public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
      * @see #setHasOptionsMenu
      * @see #onCreateOptionsMenu
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.418 -0500", hash_original_method = "4CE703F4C1FA6FC474411DFE6A3F5275", hash_generated_method = "9325340E8223ABF193B102C1ED7D29C6")
     
 public void onPrepareOptionsMenu(Menu menu) {
@@ -1364,6 +1401,7 @@ public void onPrepareOptionsMenu(Menu menu) {
      * included in the newly built menu (its {@link #onCreateOptionsMenu(Menu, MenuInflater)}
      * was not called).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.420 -0500", hash_original_method = "0E8C037F224061747BFFD0611606AAB6", hash_generated_method = "3608219F0AAFE36F66E308DE0FF9732B")
     
 public void onDestroyOptionsMenu() {
@@ -1387,6 +1425,7 @@ public void onDestroyOptionsMenu() {
      * 
      * @see #onCreateOptionsMenu
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.423 -0500", hash_original_method = "8EF9A1828892EFEBF4B93362A866125C", hash_generated_method = "69E9D8B4009D997BC9EE261646EC81E4")
     
 public boolean onOptionsItemSelected(MenuItem item) {
@@ -1400,6 +1439,7 @@ public boolean onOptionsItemSelected(MenuItem item) {
      * @param menu The options menu as last shown or first initialized by
      *             onCreateOptionsMenu().
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.425 -0500", hash_original_method = "D53E4189B6E7F0EC0F9883E9844F2140", hash_generated_method = "105C77F54F2D3DE304E191D655D9615E")
     
 public void onOptionsMenuClosed(Menu menu) {
@@ -1474,6 +1514,7 @@ public void unregisterForContextMenu(View view) {
      * @return boolean Return false to allow normal context menu processing to
      *         proceed, true to consume it here.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.434 -0500", hash_original_method = "801D77DFDCCE5570587CA592634E3D3B", hash_generated_method = "8B3B439BA7ABB6AA146B4A585B36ACCC")
     
 public boolean onContextItemSelected(MenuItem item) {
@@ -1489,6 +1530,7 @@ public boolean onContextItemSelected(MenuItem item) {
      * closed for you after you return.
      * @param args additional arguments to the dump request.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.439 -0500", hash_original_method = "4506E0F094FC2CBE2D517E6D81344EC6", hash_generated_method = "204345F38C7966B6C07174090C44C8B9")
     
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
@@ -1569,7 +1611,7 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.441 -0500", hash_original_method = "61D88876092ADD5F15473E2AB4FA77D3", hash_generated_method = "61D88876092ADD5F15473E2AB4FA77D3")
     
 Fragment findFragmentByWho(String who) {
@@ -1583,13 +1625,14 @@ Fragment findFragmentByWho(String who) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.446 -0500", hash_original_method = "EDAB121E0E9B6E6FAA5680C6215916BF", hash_generated_method = "EDAB121E0E9B6E6FAA5680C6215916BF")
     
 void instantiateChildFragmentManager() {
         mChildFragmentManager = new FragmentManagerImpl();
         mChildFragmentManager.attachActivity(mActivity, new FragmentContainer() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:55:56.702 -0500", hash_original_method = "5BED041A00050D47AD1342402B9985BC", hash_generated_method = "7F8C7F0A17A9F13AF5FBB14D7677E1E2")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:55:56.702 -0500", hash_original_method = "5BED041A00050D47AD1342402B9985BC", hash_generated_method = "7F8C7F0A17A9F13AF5FBB14D7677E1E2")
             
 @Override
             public View findViewById(int id) {
@@ -1602,7 +1645,7 @@ void instantiateChildFragmentManager() {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.448 -0500", hash_original_method = "3EE407E16277E3B3A8635005B5A0DEC4", hash_generated_method = "3EE407E16277E3B3A8635005B5A0DEC4")
     
 void performCreate(Bundle savedInstanceState) {
@@ -1629,7 +1672,7 @@ void performCreate(Bundle savedInstanceState) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.450 -0500", hash_original_method = "C9098E0ABE3DD99AEB89FC060D15CE33", hash_generated_method = "C9098E0ABE3DD99AEB89FC060D15CE33")
     
 View performCreateView(LayoutInflater inflater, ViewGroup container,
@@ -1641,7 +1684,7 @@ View performCreateView(LayoutInflater inflater, ViewGroup container,
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.453 -0500", hash_original_method = "6B9A0B76E81212CD14FFC5CCF383D5D3", hash_generated_method = "6B9A0B76E81212CD14FFC5CCF383D5D3")
     
 void performActivityCreated(Bundle savedInstanceState) {
@@ -1660,7 +1703,7 @@ void performActivityCreated(Bundle savedInstanceState) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.456 -0500", hash_original_method = "FAC6959B7963C55ED04FD140D265CD92", hash_generated_method = "FAC6959B7963C55ED04FD140D265CD92")
     
 void performStart() {
@@ -1683,7 +1726,7 @@ void performStart() {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.459 -0500", hash_original_method = "225800A7AAA9ACBE89033DE187291152", hash_generated_method = "225800A7AAA9ACBE89033DE187291152")
     
 void performResume() {
@@ -1704,7 +1747,7 @@ void performResume() {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.461 -0500", hash_original_method = "4CF76F87E5378DAC79600BD4B0530AEF", hash_generated_method = "4CF76F87E5378DAC79600BD4B0530AEF")
     
 void performConfigurationChanged(Configuration newConfig) {
@@ -1715,7 +1758,7 @@ void performConfigurationChanged(Configuration newConfig) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.463 -0500", hash_original_method = "F077F2C753E805161BC608B27E561A9B", hash_generated_method = "F077F2C753E805161BC608B27E561A9B")
     
 void performLowMemory() {
@@ -1735,7 +1778,7 @@ void performLowMemory() {
     */
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.465 -0500", hash_original_method = "EDE9801703CADFBAB935432E700FE9D4", hash_generated_method = "EDE9801703CADFBAB935432E700FE9D4")
     
 boolean performCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -1753,7 +1796,7 @@ boolean performCreateOptionsMenu(Menu menu, MenuInflater inflater) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.467 -0500", hash_original_method = "27D1E8CFF71284C61956522356EF62A1", hash_generated_method = "27D1E8CFF71284C61956522356EF62A1")
     
 boolean performPrepareOptionsMenu(Menu menu) {
@@ -1771,7 +1814,7 @@ boolean performPrepareOptionsMenu(Menu menu) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.470 -0500", hash_original_method = "AB066317960C5B7A87CEEFD90F19CB53", hash_generated_method = "AB066317960C5B7A87CEEFD90F19CB53")
     
 boolean performOptionsItemSelected(MenuItem item) {
@@ -1791,7 +1834,7 @@ boolean performOptionsItemSelected(MenuItem item) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.472 -0500", hash_original_method = "78AAFDAC6C7C01B066E741BD144002F2", hash_generated_method = "78AAFDAC6C7C01B066E741BD144002F2")
     
 boolean performContextItemSelected(MenuItem item) {
@@ -1813,13 +1856,14 @@ boolean performContextItemSelected(MenuItem item) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:55:56.313 -0500", hash_original_method = "F6A52F04C4D14500D0C1089F687B7F14", hash_generated_method = "FE85131981ECBA63EB19FB4392208C42")
             
 public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in, null);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:55:56.319 -0500", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "020465B62F970B98C266AF229149E391")
             
 public SavedState[] newArray(int size) {
@@ -1874,7 +1918,7 @@ public InstantiationException(String msg, Exception cause) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.474 -0500", hash_original_method = "4DDEE08146B46D76D3DC17885A5DDDC2", hash_generated_method = "4DDEE08146B46D76D3DC17885A5DDDC2")
     
 void performOptionsMenuClosed(Menu menu) {
@@ -1889,7 +1933,7 @@ void performOptionsMenuClosed(Menu menu) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.476 -0500", hash_original_method = "229F45787776B9C5A3449A8AF116842B", hash_generated_method = "229F45787776B9C5A3449A8AF116842B")
     
 void performSaveInstanceState(Bundle outState) {
@@ -1903,7 +1947,7 @@ void performSaveInstanceState(Bundle outState) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.478 -0500", hash_original_method = "E981410A628A778E5EC5758D81394A36", hash_generated_method = "E981410A628A778E5EC5758D81394A36")
     
 void performPause() {
@@ -1919,7 +1963,7 @@ void performPause() {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.481 -0500", hash_original_method = "A54D340AC4C554E09C318AFC86BC07BD", hash_generated_method = "A54D340AC4C554E09C318AFC86BC07BD")
     
 void performStop() {
@@ -1935,7 +1979,7 @@ void performStop() {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.483 -0500", hash_original_method = "E7DDF1CA54A3F6D13CAA1A65082611F8", hash_generated_method = "E7DDF1CA54A3F6D13CAA1A65082611F8")
     
 void performReallyStop() {
@@ -1959,7 +2003,7 @@ void performReallyStop() {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.485 -0500", hash_original_method = "A7577DB153B8A046DC326874EE7B0A4B", hash_generated_method = "A7577DB153B8A046DC326874EE7B0A4B")
     
 void performDestroyView() {
@@ -1978,7 +2022,7 @@ void performDestroyView() {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.487 -0500", hash_original_method = "6BD30978B327739DC7CB2841A03C0980", hash_generated_method = "6BD30978B327739DC7CB2841A03C0980")
     
 void performDestroy() {
@@ -2001,6 +2045,7 @@ void performDestroy() {
      * @return true if <code>fname</code> is <code>android.support.v4.app.Fragment</code>
      *         or a subclass, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:36.224 -0400", hash_original_method = "15FEE66BB99145EDAB81DC2373AC2E88", hash_generated_method = "E748DB92F5AE2DB357CBF5EA9893CBD3")
     
 static boolean isSupportFragmentClass(Context context, String fname) {

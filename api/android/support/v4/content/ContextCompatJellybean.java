@@ -25,6 +25,8 @@ import android.os.Bundle;
 
 class ContextCompatJellybean {
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:00.384 -0400", hash_original_method = "F6FCC0565F4A19B5E5C9443658BA910F", hash_generated_method = "54787197071EEB2F1794447E9C5AC238")
     
 public static void startActivities(Context context, Intent[] intents, Bundle options) {

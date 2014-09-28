@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.view;
 
 import droidsafe.annotations.*;
@@ -24,6 +23,7 @@ import android.view.ViewGroup;
 
 class ViewGroupCompatHC {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.339 -0400", hash_original_method = "5F9D7AC59E68604FBEF1CA05FD62B0FB", hash_generated_method = "708F404127E3B2AE105F4B3A60161CD8")
     
 public static void setMotionEventSplittingEnabled(ViewGroup group, boolean split) {

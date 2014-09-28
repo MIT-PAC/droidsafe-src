@@ -529,6 +529,7 @@ public void initializeInvalidateRegion(int left, int top, int right, int bottom)
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.848 -0500", hash_original_method = "2E3A361BE20A8D002834672DDB7CD636", hash_generated_method = "13687E2B179AC932D6BE382305D2673C")
     
 @Override

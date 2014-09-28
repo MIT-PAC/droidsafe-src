@@ -55,7 +55,8 @@ public ProxyWriter(Writer proxy) {
      * @since 2.0
      */
     
-    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.769 -0400", hash_original_method = "94E64203D23ECC11F0966710C23548F3", hash_generated_method = "A06CCE7300A2A2536C74343D00CD989D")
     
 @Override
@@ -80,7 +81,8 @@ public ProxyWriter(Writer proxy) {
      * @since 2.0
      */
     
-    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.770 -0400", hash_original_method = "391E9756F83F23FF347EF2129E3A0E99", hash_generated_method = "D1659AD21EAF8B4DE464BAC0141C052C")
     
 @Override
@@ -103,7 +105,8 @@ public ProxyWriter(Writer proxy) {
      * @since 2.0
      */
     
-    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.770 -0400", hash_original_method = "AF511130F35AA3E3B287C842560F9DCE", hash_generated_method = "31E7EB75C8368215C547C5CD1DE26F7C")
     
 @Override
@@ -282,6 +285,7 @@ public ProxyWriter(Writer proxy) {
      * @param n number of chars to be written
      * @throws IOException if the pre-processing fails
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.775 -0400", hash_original_method = "961C14EE073174624B2AA02C565F3907", hash_generated_method = "52BDA559670D4FF766CC677735730AEA")
     
 protected void beforeWrite(int n) throws IOException {
@@ -301,6 +305,7 @@ protected void beforeWrite(int n) throws IOException {
      * @param n number of chars written
      * @throws IOException if the post-processing fails
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.775 -0400", hash_original_method = "634EDAC0BBD2C7E1FA3D5BDE9765B3F8", hash_generated_method = "E22D951CDC0C6538752306DA0A369FDB")
     
 protected void afterWrite(int n) throws IOException {
@@ -315,6 +320,7 @@ protected void afterWrite(int n) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.776 -0400", hash_original_method = "A242DFA5F52516C95D0F167B92B745B6", hash_generated_method = "1891156C8FEFAA68CD85CC13506CC1D3")
     
 protected void handleIOException(IOException e) throws IOException {

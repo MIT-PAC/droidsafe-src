@@ -353,14 +353,14 @@ public Context getContext() {
     
     @DSComment("Binding data, need modeling to be safe")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.DATABASE})
+    
     @Override
 	public int getCount() {
 		return 0;
         //return mObjects.size();
     }
     
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE})
     @DSComment("Binding data, need modeling to be safe")
     @DSSafe(DSCat.SAFE_LIST)
     

@@ -98,6 +98,7 @@ public void writeToParcel(Parcel  r1, int  i0)
     	r1.writeLong(HO + HP);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.340 -0400", hash_original_method = "622F38CEE2269043287612FA683DA7F9", hash_generated_method = "8583B872A8F7450705C1FE45E6777B81")
     
 public int hashCode()
@@ -111,6 +112,7 @@ public int hashCode()
         return HN.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.347 -0400", hash_original_method = "FF35E405AB86AA59A5E4CBDCB82F3969", hash_generated_method = "0C3D28E6E7F124AC79E69892ABE7569A")
     
 public boolean equals(Object  r1)
@@ -148,7 +150,8 @@ public boolean equals(Object  r1)
         return false;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.GOOGLE_SERVICES})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.353 -0400", hash_original_method = "6126417C99D0C14CE2DEB12376B1B164", hash_generated_method = "61BDF6C93A494CC870CC4838A284DACD")
     
 public final String encodeToString()
@@ -168,6 +171,7 @@ public final String encodeToString()
         return HQ;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.362 -0400", hash_original_method = "689336018D20FC3632DC4C874358E039", hash_generated_method = "3162C3698C73416E47352835A7A681D4")
     
 public String toString()

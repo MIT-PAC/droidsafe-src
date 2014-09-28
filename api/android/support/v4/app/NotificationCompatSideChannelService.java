@@ -75,6 +75,7 @@ public abstract void notify(String packageName, int id, String tag, Notification
     /**
      * Handle a side-channelled notification being cancelled.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:05.759 -0400", hash_original_method = "A967718393CE3E50ABEEE5FF29065FA0", hash_generated_method = "C0C9E78AA4578EF08D0E1FE32AB9161E")
     
 public abstract void cancel(String packageName, int id, String tag);
@@ -82,6 +83,7 @@ public abstract void cancel(String packageName, int id, String tag);
     /**
      * Handle the side-channelled cancelling of all notifications for a package.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:05.762 -0400", hash_original_method = "8A34D2AED4D5E6FB780FB102A64F2A6B", hash_generated_method = "146B112961C39D62F039276FD42DCAAE")
     
 public abstract void cancelAll(String packageName);
@@ -100,6 +102,7 @@ public abstract void cancelAll(String packageName);
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void cancel(String packageName, int id, String tag) throws RemoteException {
             checkPermission(getCallingUid(), packageName);
@@ -111,6 +114,7 @@ public abstract void cancelAll(String packageName);
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void cancelAll(String packageName) {
             checkPermission(getCallingUid(), packageName);

@@ -203,7 +203,7 @@ public final Message obtainMessage()
 	}
     
     @DSComment("General android operation, no security concern")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     public final boolean post(Runnable r){
 		// Original method
@@ -218,7 +218,7 @@ public final Message obtainMessage()
 	}
     
     @DSComment("General android operation, no security concern")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     public final boolean postAtTime(Runnable r, long uptimeMillis){
 		// Original method
 		/*
@@ -230,7 +230,7 @@ public final Message obtainMessage()
     	return post(r);
 	}
     @DSComment("General android operation, no security concern")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     public final boolean postAtTime(Runnable r, Object token, long uptimeMillis){
 		// Original method
 		/*
@@ -248,7 +248,7 @@ public final Message obtainMessage()
 	}
     
     @DSComment("General android operation, no security concern")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     public final boolean postDelayed(Runnable r, long delayMillis){
 		// Original method
 		/*
@@ -302,7 +302,7 @@ public final Message obtainMessage()
 	}
     
 	@DSComment("IO movement methodName")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.IPC})
     public final boolean sendMessage(Message msg){
 		// Original method
@@ -317,7 +317,7 @@ public final Message obtainMessage()
 	}
     
 	@DSComment("IO movement methodName")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.IPC})
     public final boolean sendEmptyMessage(int what){
 		// Original method
@@ -331,7 +331,7 @@ public final Message obtainMessage()
 	}
     
 	@DSComment("IO movement methodName")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.IPC})
     public final boolean sendEmptyMessageDelayed(int what, long delayMillis){
 		// Original method
@@ -370,7 +370,7 @@ public final Message obtainMessage()
 	}
     
 	@DSComment("IO movement methodName")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.IPC})
     @DSVerified
     public final boolean sendMessageDelayed(Message msg, long delayMillis){

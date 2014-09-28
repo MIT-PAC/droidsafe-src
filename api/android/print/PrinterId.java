@@ -112,6 +112,7 @@ public String getLocalId() {
         parcel.writeString(mLocalId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.274 -0400", hash_original_method = "C865D1EA86F33166CBA3BB3A9AE7613D", hash_generated_method = "5C2000294A810153C270E00DF46A76D5")
     
 @Override

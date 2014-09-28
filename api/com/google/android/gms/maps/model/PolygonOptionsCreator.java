@@ -4,11 +4,13 @@ import android.os.Parcelable;
 import android.os.Parcelable.Creator;
 import android.os.Parcel;
 import java.util.ArrayList;
+import droidsafe.annotations.*;
 
 public class PolygonOptionsCreator implements android.os.Parcelable.Creator
 {
     public static final int CONTENT_DESCRIPTION = 0;
 
+    @DSSafe(DSCat.SAFE_LIST)
     public PolygonOptions createFromParcel(Parcel  r1)
     {
     	PolygonOptions o = new PolygonOptions();
@@ -37,6 +39,5 @@ public class PolygonOptionsCreator implements android.os.Parcelable.Creator
         b.a(r1, 9, r0.isGeodesic());
         b.G(r1, i1);*/
     }
-    
     
 }

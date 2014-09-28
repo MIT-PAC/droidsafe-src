@@ -89,6 +89,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
      * @return The value of the given column, or <code>null</null>
      *         if the cursor does not contain the given column.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.643 -0400", hash_original_method = "1DF3663A5B3A428C1CADE4AE8EEC8EDE", hash_generated_method = "B318FA4151B5A29D427C1B2BE29C2145")
     
 public static String getColumnString(Cursor cursor, String columnName) {
@@ -96,6 +97,7 @@ public static String getColumnString(Cursor cursor, String columnName) {
         return getStringOrNull(cursor, col);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.645 -0400", hash_original_method = "6E518F16AD3C7946ABDBA44CD98ACB5C", hash_generated_method = "25CD0B399C84A3E56E6B09E8E2824AD9")
     
 private static String getStringOrNull(Cursor cursor, int col) {
@@ -183,6 +185,7 @@ public SuggestionsAdapter(Context context, SearchView searchView,
      * @param refineWhat which queries to refine. Possible values are {@link #REFINE_NONE},
      * {@link #REFINE_BY_ENTRY}, and {@link #REFINE_ALL}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.554 -0400", hash_original_method = "7E34E1FAECF41C65A10194A4E061AD6D", hash_generated_method = "D15ED0FB71828B2C6CFB1A8A0693DFDB")
     
 public void setQueryRefinement(int refineWhat) {
@@ -278,6 +281,7 @@ public void close() {
         updateSpinnerState(getCursor());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.572 -0400", hash_original_method = "1E3B20B61BE1D7016BA8A5BF351CC500", hash_generated_method = "75128AEEA184A16354158836160AA137")
     
 private void updateSpinnerState(Cursor cursor) {
@@ -319,6 +323,7 @@ private void updateSpinnerState(Cursor cursor) {
     /**
      * Cache columns.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.574 -0400", hash_original_method = "148392FC8CA03B9EFECB202A68AE28AE", hash_generated_method = "CE0EE09920B5212A4945C1129DC818D5")
     
 @Override
@@ -427,6 +432,7 @@ public void onClick(View v) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.603 -0400", hash_original_method = "9779DF5ADEE23E8777317BAD132048A5", hash_generated_method = "82E7BBC70B8DE1DEC8EA6F2641AEE768")
     
 private CharSequence formatUrl(CharSequence url) {
@@ -444,6 +450,7 @@ private CharSequence formatUrl(CharSequence url) {
         return text;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.606 -0400", hash_original_method = "8F61D57F1A865E44B5C7D5D6842EB2D0", hash_generated_method = "85FC7203F9DB42EE6A227B5F2991653F")
     
 private void setViewText(TextView v, CharSequence text) {
@@ -457,6 +464,7 @@ private void setViewText(TextView v, CharSequence text) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.609 -0400", hash_original_method = "11EBBD91023FF77979C98F4482283D5C", hash_generated_method = "84F96B932E02F25F65A07FFC546AC21C")
     
 private Drawable getIcon1(Cursor cursor) {
@@ -471,6 +479,7 @@ private Drawable getIcon1(Cursor cursor) {
         return getDefaultIcon1(cursor);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.612 -0400", hash_original_method = "E54FBD6C00322E8129D2706226F8DB3F", hash_generated_method = "8B681026B02719AD651FEBC592E0A4A5")
     
 private Drawable getIcon2(Cursor cursor) {
@@ -485,6 +494,7 @@ private Drawable getIcon2(Cursor cursor) {
      * Sets the drawable in an image view, makes sure the view is only visible if there
      * is a drawable.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.614 -0400", hash_original_method = "DC13C6A1012A85758DE954F51DF05728", hash_generated_method = "35FCB15D203F3076388F2C3CD53C3644")
     
 private void setViewDrawable(ImageView v, Drawable drawable, int nullVisibility) {
@@ -515,6 +525,7 @@ private void setViewDrawable(ImageView v, Drawable drawable, int nullVisibility)
      * @return The text to show, or <code>null</code> if the query should not be
      *         changed when selecting this suggestion.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.617 -0400", hash_original_method = "EEAFA1105ED04DD7E614744D210BB1BA", hash_generated_method = "B81DD5AB449E12F988064BBF1FA0C514")
     
 @Override
@@ -590,6 +601,7 @@ private void setViewDrawable(ImageView v, Drawable drawable, int nullVisibility)
      *        or "content://contacts/photos/253".
      * @return a Drawable, or null if none found
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.623 -0400", hash_original_method = "ECCFFE0E1CBB9F4B996BB7824AA88154", hash_generated_method = "F143C829BCED0CD0E23C248E07D799B0")
     
 private Drawable getDrawableFromResourceValue(String drawableId) {
@@ -634,6 +646,7 @@ private Drawable getDrawableFromResourceValue(String drawableId) {
      *
      * @return A drawable, or {@code null} if the drawable could not be loaded.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.627 -0400", hash_original_method = "EF7649F83B1A402082B7C652F676EB63", hash_generated_method = "4B802A827725C03AF2A2C6FEDB99257E")
     
 private Drawable getDrawable(Uri uri) {
@@ -668,6 +681,7 @@ private Drawable getDrawable(Uri uri) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.629 -0400", hash_original_method = "9553535B4A93F8E44A1EFE31D535ED8E", hash_generated_method = "535FC01315FAC95DA4A22A433C2BB95A")
     
 private Drawable checkIconCache(String resourceUri) {
@@ -679,6 +693,7 @@ private Drawable checkIconCache(String resourceUri) {
         return cached.newDrawable();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.632 -0400", hash_original_method = "7BF5C76588E6E73B227833C6CD1AD962", hash_generated_method = "F2790FE892428FEA44ED738A696811B5")
     
 private void storeInIconCache(String resourceUri, Drawable drawable) {
@@ -694,6 +709,7 @@ private void storeInIconCache(String resourceUri, Drawable drawable) {
      * @param cursor A cursor positioned at the current suggestion.
      * @return A non-null drawable.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.634 -0400", hash_original_method = "24C6C5F14DA2AC5DBA34633E0C5BC43B", hash_generated_method = "600C5EABD197F315812F68BD7A0F364A")
     
 private Drawable getDefaultIcon1(Cursor cursor) {
@@ -715,6 +731,7 @@ private Drawable getDefaultIcon1(Cursor cursor) {
      * @return A drawable, or {@code null} if neither the activity nor the application
      *         has an icon set.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.636 -0400", hash_original_method = "1ABDDD143C3A87EFB8B7D38CA2C4068F", hash_generated_method = "9470B1CB2A297DF303A94DB2B6FC4035")
     
 private Drawable getActivityIconWithCache(ComponentName component) {
@@ -740,6 +757,7 @@ private Drawable getActivityIconWithCache(ComponentName component) {
      * @return A drawable, or {@code null} if neither the acitivy or the application
      *         have an icon set.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.639 -0400", hash_original_method = "62EED478ECA0AB495E91A21A2EB22E87", hash_generated_method = "F92B2945ABEDD05BB5FAD9853AAEFA5E")
     
 private Drawable getActivityIcon(ComponentName component) {
@@ -767,6 +785,7 @@ private Drawable getActivityIcon(ComponentName component) {
      * Import of hidden method: ContentResolver.getResourceId(Uri).
      * Modified to return a drawable, rather than a hidden type.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.650 -0400", hash_original_method = "9E384FEA5815EA48E2B02C69F0EA4F52", hash_generated_method = "9E384FEA5815EA48E2B02C69F0EA4F52")
     
 Drawable getDrawableFromResourceUri(Uri uri) throws FileNotFoundException {
@@ -807,6 +826,7 @@ Drawable getDrawableFromResourceUri(Uri uri) throws FileNotFoundException {
     /**
      * Import of hidden method: SearchManager.getSuggestions(SearchableInfo, String, int).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.654 -0400", hash_original_method = "E86AE55FA0C102FD3EAB1828DDDB5CD0", hash_generated_method = "5142028732664A4575BEBDA5D19E079E")
     
 Cursor getSearchManagerSuggestions(SearchableInfo searchable, String query, int limit) {

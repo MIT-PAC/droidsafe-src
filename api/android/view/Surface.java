@@ -126,7 +126,7 @@ public static void setOrientation(int display, int orientation) {
     public static final Parcelable.Creator<Surface> CREATOR
             = new Parcelable.Creator<Surface>()
     {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.677 -0500", hash_original_method = "B8797068538D7B2F1963613F92E62B32", hash_generated_method = "A1A216CB81EED147F47FB283741B3A02")
         
 public Surface createFromParcel(Parcel source) {
@@ -252,6 +252,7 @@ private Surface(Parcel source) throws OutOfResourcesException {
      * a physical surface, so lockCanvas() will succeed.  Otherwise
      * returns false.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.458 -0500", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "F25A5C2CD89FC9EEA36613EED4E803A6")
     
     public boolean isValid(){

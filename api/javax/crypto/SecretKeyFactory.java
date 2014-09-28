@@ -177,7 +177,7 @@ public final Provider getProvider() {
      *             a secret key.
      */
     @DSComment("not data related")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.811 -0500", hash_original_method = "F35C5482AA0FDE82A0C15F5E475C73A0", hash_generated_method = "7124C9FED05E541D0F774F22C9866D10")
     
 public final SecretKey generateSecret(KeySpec keySpec)

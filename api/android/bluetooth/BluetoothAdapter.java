@@ -701,7 +701,7 @@ public boolean startDiscovery() {
      * @return true on success, false on error
      */
     @DSComment("Bluetooth subsystem")
-    @DSSpec(DSCat.BLUETOOTH)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.774 -0500", hash_original_method = "63E67EB5C61EED8D2B51A1BF56472E25", hash_generated_method = "F7942577CAE00601FEFDA72DBAA0ACA7")
     
 public boolean cancelDiscovery() {

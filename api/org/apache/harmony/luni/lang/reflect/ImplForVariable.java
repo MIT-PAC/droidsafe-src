@@ -136,7 +136,8 @@ void resolve() {
         this.bounds = formalVar.bounds;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.238 -0500", hash_original_method = "234813F4553928C427D0DF90A4217999", hash_generated_method = "C56F23EB4401D7687760D536E5D5C3A8")
     
 public Type[] getBounds() {
@@ -144,6 +145,7 @@ public Type[] getBounds() {
         return bounds.getResolvedTypes().clone();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.241 -0500", hash_original_method = "DFDCD7E6E682AFE4AA9958AFD14EDF45", hash_generated_method = "1AFC71142008203AC2E64A1DDC7843F6")
     
 public D getGenericDeclaration() {
@@ -151,7 +153,8 @@ public D getGenericDeclaration() {
         return genericDeclaration;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.243 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {

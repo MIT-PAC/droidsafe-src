@@ -95,7 +95,7 @@ static Object getInstanceByClass(final String className) {
         props = new Properties();
         listeners = new PropertyChangeSupport(this);
         Runtime.getRuntime().addShutdownHook(new Thread() {
-            @DSSpec(DSCat.SPEC_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.313 -0500", hash_original_method = "1836317CB8E0A5E5B172790642D1742E", hash_generated_method = "30E88919FA9218D5953BCBD0F9CAD1EA")
             
 @Override public void run() {

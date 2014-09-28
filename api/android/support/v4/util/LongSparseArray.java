@@ -30,6 +30,7 @@ public class LongSparseArray<E> implements Cloneable {
 
     private static final Object DELETED = new Object();
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.376 -0500", hash_original_method = "5D31A3D7A0E67E45752AFCF3D2F00D3F", hash_generated_method = "5EFDA50F3246D2A60070817B5CA38C18")
     
 private static int binarySearch(long[] a, int start, int len, long key) {
@@ -52,6 +53,7 @@ private static int binarySearch(long[] a, int start, int len, long key) {
             return ~high;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.377 -0500", hash_original_method = "78F4782A9945BD922AE4F703F6706A7E", hash_generated_method = "476E3135F747B27C638A7747394DD781")
     
 public static int idealByteArraySize(int need) {
@@ -62,6 +64,7 @@ public static int idealByteArraySize(int need) {
         return need;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.379 -0500", hash_original_method = "81E7FAA327416436814745B8BDC163E2", hash_generated_method = "7A7A55B2D3E16E87C86D175661E4F019")
     
 public static int idealLongArraySize(int need) {
@@ -126,6 +129,7 @@ public LongSparseArray(int initialCapacity) {
      * Gets the Object mapped from the specified key, or <code>null</code>
      * if no such mapping has been made.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.353 -0500", hash_original_method = "4371A69A3700205284573EEAA3E6B17F", hash_generated_method = "32538B9F100C37D1DA2550D390ED9059")
     
 public E get(long key) {
@@ -136,6 +140,7 @@ public E get(long key) {
      * Gets the Object mapped from the specified key, or the specified Object
      * if no such mapping has been made.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.355 -0500", hash_original_method = "E2D85B672251F3A6432F3D64B14D09C9", hash_generated_method = "D8D203FBF66AB3483D8033296DCAA26C")
     
 @SuppressWarnings("unchecked")
@@ -152,6 +157,7 @@ public E get(long key) {
     /**
      * Removes the mapping from the specified key, if there was any.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.356 -0500", hash_original_method = "D6F064C21D8F72C9BE34FD8563F8D233", hash_generated_method = "C03CE451C689F3424295E47270350D88")
     
 public void delete(long key) {
@@ -186,6 +192,7 @@ public void removeAt(int index) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.360 -0500", hash_original_method = "DEC4F7080CE57358296ADF6582B59DD8", hash_generated_method = "7806AAC0088B5C739FB850F524F950C1")
     
 private void gc() {
@@ -221,6 +228,7 @@ private void gc() {
      * replacing the previous mapping from the specified key if there
      * was one.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.362 -0500", hash_original_method = "8BF7664EE3AA81913FF5A6B556936B07", hash_generated_method = "318A49A0E5FDA97B4DA702E8D551630F")
     
 public void put(long key, E value) {
@@ -274,6 +282,7 @@ public void put(long key, E value) {
      * Returns the number of key-value mappings that this LongSparseArray
      * currently stores.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.364 -0500", hash_original_method = "F891E9E45688B24DB77EAA9DE670091B", hash_generated_method = "DE82729ACB015F73FA05A44E77A4C535")
     
 public int size() {
@@ -289,6 +298,7 @@ public int size() {
      * the key from the <code>index</code>th key-value mapping that this
      * LongSparseArray stores.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.366 -0500", hash_original_method = "B1F6BB5033A022FAFBEA87494F8412EB", hash_generated_method = "F555FC379CC33F661BA067D214FC3E04")
     
 public long keyAt(int index) {
@@ -304,6 +314,7 @@ public long keyAt(int index) {
      * the value from the <code>index</code>th key-value mapping that this
      * LongSparseArray stores.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.367 -0500", hash_original_method = "23592451CB50AFA841274AC3732C91A0", hash_generated_method = "C93A647BB0F30DB0291E96149968A997")
     
 @SuppressWarnings("unchecked")

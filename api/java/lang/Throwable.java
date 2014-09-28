@@ -198,6 +198,7 @@ public Throwable fillInStackTrace() {
      * @return this {@code Throwable}'s detail message.
      */
     
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.597 -0500", hash_original_method = "DB11282615D634E343F956A1D91DEDE9", hash_generated_method = "DFAFD5BFED23A5DC115EDF0B4FB19888")
@@ -213,7 +214,7 @@ public String getMessage() {
      *
      * @return this {@code Throwable}'s localized detail message.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.600 -0500", hash_original_method = "A2EE7B7852887DFBE3A27B61B4F72974", hash_generated_method = "9A2C4BFFE86AF7C1B43429C9DF39A332")
@@ -235,7 +236,7 @@ public String getLocalizedMessage() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.602 -0500", hash_original_method = "45FE0FF583AFF2392C672B8C003FC38F", hash_generated_method = "335BD883E150835B2792DDB4AA7898D9")
     
 public StackTraceElement[] getStackTrace() {
@@ -259,7 +260,7 @@ public StackTraceElement[] getStackTrace() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.604 -0500", hash_original_method = "5E6079B0EA3605E8298E1D15C30F6678", hash_generated_method = "4D79DCEB4761ABFCF09895C59AE81452")
     
 public void setStackTrace(StackTraceElement[] trace) {

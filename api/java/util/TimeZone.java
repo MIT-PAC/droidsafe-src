@@ -222,7 +222,7 @@ public TimeZone() {}
      * Returns a new time zone with the same ID, raw offset, and daylight
      * savings time rules as this time zone.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.865 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
@@ -336,7 +336,7 @@ private void appendNumber(StringBuilder builder, int count, int value) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.888 -0500", hash_original_method = "6351E64C485F9179F5E10C6B44486847", hash_generated_method = "EB1B7670C3C3A36B39FD469014CCC913")
     
 public String getID() {

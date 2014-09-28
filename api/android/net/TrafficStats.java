@@ -32,8 +32,8 @@ public class TrafficStats {
      * performing traffic on behalf of an application.
      */
     @DSComment("Traffic statistics")
-    @DSSpec(DSCat.NETWORK_STATS)
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.258 -0500", hash_original_method = "8A6683AC46C482376EDB137406895EA4", hash_generated_method = "82DCC980DC0931619D28A669069BC53B")
     
 public static void setThreadStatsTag(int tag) {
@@ -99,7 +99,7 @@ public static void clearThreadStatsUid() {
      * @see #setThreadStatsUid(int)
      */
     @DSComment("Traffic statistics")
-    @DSSpec(DSCat.NETWORK_STATS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.270 -0500", hash_original_method = "821AB37695B594727ABEEFF11698960F", hash_generated_method = "DB98BE8A084ABCF5B145BA68E9905BB0")
     
 public static void tagSocket(Socket socket) throws SocketException {
@@ -110,7 +110,7 @@ public static void tagSocket(Socket socket) throws SocketException {
      * Remove any statistics parameters from the given {@link Socket}.
      */
     @DSComment("Traffic statistics")
-    @DSSpec(DSCat.NETWORK_STATS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.273 -0500", hash_original_method = "554BE569F7BDC3C8D27CCE859115D1B1", hash_generated_method = "A68AAA62167732901D231CB17AB81680")
     
 public static void untagSocket(Socket socket) throws SocketException {
@@ -171,7 +171,7 @@ public static NetworkStats stopDataProfiling(Context context) {
      * @param operationCount Number of operations to increment count by.
      */
     @DSComment("Traffic statistics")
-    @DSSpec(DSCat.NETWORK_STATS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.280 -0500", hash_original_method = "DBD8969F9F8A15C1B81C767022D4A852", hash_generated_method = "5221A9A6564F97816880393CB890BC0A")
     
 public static void incrementOperationCount(int operationCount) {
@@ -187,7 +187,7 @@ public static void incrementOperationCount(int operationCount) {
      * @param operationCount Number of operations to increment count by.
      */
     @DSComment("Traffic statistics")
-    @DSSpec(DSCat.NETWORK_STATS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.282 -0500", hash_original_method = "171C5D5D16A1A39BAF8B5EAF02935E25", hash_generated_method = "9D87F629693BDA83CCD42A680700F21C")
     
 public static void incrementOperationCount(int tag, int operationCount) {

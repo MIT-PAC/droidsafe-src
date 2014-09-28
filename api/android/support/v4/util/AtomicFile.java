@@ -45,6 +45,7 @@ import java.io.IOException;
  */
 public class AtomicFile {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.233 -0500", hash_original_method = "3729C161BCA0FC1AAAEBF21C0BD668CD", hash_generated_method = "8626E396F4886A4C45DD4A1EA2BA2EDD")
     
 static boolean sync(FileOutputStream stream) {
@@ -192,6 +193,7 @@ public void failWrite(FileOutputStream str) {
      * be dropped.  You must do your own threading protection for access to
      * AtomicFile.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:40.230 -0500", hash_original_method = "1A78B3BB099030EABAF4D8DEC5E5F129", hash_generated_method = "F1099AF04C67A26CC31E5F75C97D05A4")
     
 public FileInputStream openRead() throws FileNotFoundException {

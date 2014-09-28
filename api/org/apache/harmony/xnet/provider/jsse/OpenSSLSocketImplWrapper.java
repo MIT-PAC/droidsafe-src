@@ -26,7 +26,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         this.socket = socket;
     }
 
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.926 -0500", hash_original_method = "00D15638ACD466799C761D85B34B76D1", hash_generated_method = "318B16BF8497A493582ED5394CA2D122")
     
 @Override
@@ -35,7 +35,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         throw new IOException("Underlying socket is already connected.");
     }
 
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.928 -0500", hash_original_method = "EAF5C6F0CD11B02972408C1904067F09", hash_generated_method = "5AB26808CFD3AAFCE9C50BE8E4832631")
     
 @Override
@@ -43,7 +43,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         throw new IOException("Underlying socket is already connected.");
     }
 
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.930 -0500", hash_original_method = "7A09B0BAD685B79E09A501FC300262C5", hash_generated_method = "4641B5E3CF42BCCB903380F0F6DB8DB3")
     
 @Override
@@ -136,6 +136,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         socket.setTrafficClass(tos);
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSSpec(DSCat.INTERNET)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.956 -0500", hash_original_method = "C6CB523E9BEBBF3CF2CBCDA94ED50C2A", hash_generated_method = "6BA461BD87F4524E979F9BB5555D0B75")

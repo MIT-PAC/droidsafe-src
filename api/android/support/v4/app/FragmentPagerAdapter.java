@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 public abstract class FragmentPagerAdapter extends PagerAdapter {
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.650 -0500", hash_original_method = "AC2C72A04607F3A9AA867C30F63B471C", hash_generated_method = "3586D9B72C71532D4919EBB53FEDDE2D")
     
 private static String makeFragmentName(int viewId, long id) {
@@ -45,11 +45,12 @@ public FragmentPagerAdapter(FragmentManager fm) {
      * Return the Fragment associated with a specified position.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.625 -0500", hash_original_method = "0C9300C8E0F0C0E8B44008DC047CEFF9", hash_generated_method = "918C6D014DB9AA643E9330669120C48C")
     
 public abstract Fragment getItem(int position);
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.627 -0500", hash_original_method = "40E78EFA38F0994EA71F26DADE781C52", hash_generated_method = "C451CD9BEC048C5D65EB3785ED5E5CC8")
     
 @Override
@@ -87,6 +88,7 @@ public abstract Fragment getItem(int position);
         return fragment;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.633 -0500", hash_original_method = "721682626C0409D5023CB58AAAA50BDD", hash_generated_method = "0AD87F386A59B71A6CF6FFB8D51F419A")
     
 @Override
@@ -118,6 +120,7 @@ public abstract Fragment getItem(int position);
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.638 -0500", hash_original_method = "82B7432FA4441721C4132291867EEFCE", hash_generated_method = "CE61AFE2F603793B40738C76BEDE2639")
     
 @Override
@@ -129,6 +132,7 @@ public abstract Fragment getItem(int position);
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.641 -0500", hash_original_method = "326A6E6DDD52502D387B1D32B8739E1F", hash_generated_method = "AF3559343D13818878146CEE853F63B6")
     
 @Override
@@ -144,6 +148,7 @@ public abstract Fragment getItem(int position);
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.645 -0500", hash_original_method = "17638DDA6DE27E971DE60A544D06348C", hash_generated_method = "CA86982BBD297ECE9BC8A03BE9E0BFBA")
     
 @Override
@@ -159,6 +164,7 @@ public abstract Fragment getItem(int position);
      * @param position Position within this adapter
      * @return Unique identifier for the item at position
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:32.648 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "86EF76D6295D66F6DBBE39DCDBA9A1C9")
     
 public long getItemId(int position) {

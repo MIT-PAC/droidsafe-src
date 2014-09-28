@@ -185,7 +185,7 @@ void checkStartEndRemaining(int start, int end) {
      * @return this buffer.
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.665 -0500", hash_original_method = "7210DA7B6C2A4BE4693F950CE68DF306", hash_generated_method = "B5A12F365A72B6206D219915F6919D8D")
     
 public final Buffer clear() {
@@ -207,7 +207,7 @@ public final Buffer clear() {
      */
     @DSComment("memory buffer only")
     @DSSafe(DSCat.MEM_BUFFER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.668 -0500", hash_original_method = "A8519E3C9C4A5F3DEEC9F7CACEDF020E", hash_generated_method = "3784C4CB883262D841A3EF3660F3F0E4")
     
 public final Buffer flip() {
@@ -441,7 +441,7 @@ public final Buffer reset() {
      */
     @DSComment("memory buffer only")
     @DSSafe(DSCat.MEM_BUFFER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.705 -0500", hash_original_method = "533909B48B402AC142AA1672CC89D5CC", hash_generated_method = "87393F25F4D0CCA65B5273B24AF8B1D0")
     
 public final Buffer rewind() {

@@ -11,7 +11,7 @@ import com.google.android.gms.drive.query.ComparisonFilter.Operator;
 public class Filters
 {
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.231 -0400", hash_original_method = "F3C83DBC4B34C4AE694997F27063CE47", hash_generated_method = "6E0585FBB5D44D594FA3B3121AAC8503")
     
 public static Filter eq(SearchableMetadataField  r0, Object  r1)

@@ -64,7 +64,8 @@ public class FileWriterWithEncoding extends Writer {
      * @throws NullPointerException if the file or encoding is null
      * @throws IOException if an error occurs
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.728 -0400", hash_original_method = "058065C74CFCB0AFFAB499776A561505", hash_generated_method = "F3F11C285D3F2B6795073B4C62CE9A1E")
+     @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.728 -0400", hash_original_method = "058065C74CFCB0AFFAB499776A561505", hash_generated_method = "F3F11C285D3F2B6795073B4C62CE9A1E")
     
 private static Writer initWriter(File file, Object encoding, boolean append) throws IOException {
         if (file == null) {

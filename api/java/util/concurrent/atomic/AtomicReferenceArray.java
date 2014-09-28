@@ -103,6 +103,7 @@ private long checkedByteOffset(int i) {
      *
      * @return the length of the array
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.158 -0400", hash_original_method = "27E0D57FF2AEBC70EE6BF760C51E525C", hash_generated_method = "70C186BF3C020F97975A93D7ABF97EE3")
     
 public final int length() {
@@ -115,6 +116,7 @@ public final int length() {
      * @param i the index
      * @return the current value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.158 -0400", hash_original_method = "1A08AAB0F92ABC3159CC4A0EF89B33D7", hash_generated_method = "3CF90D7CCCF35B3D861F1A300401B7BC")
     
 public final E get(int i) {
@@ -134,6 +136,7 @@ public final E get(int i) {
      * @param i the index
      * @param newValue the new value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.160 -0400", hash_original_method = "2871A98FC9C1130D313120CFEF808AF1", hash_generated_method = "650E4B55613FDE6FC80BD4E02330E6D9")
     
 public final void set(int i, E newValue) {

@@ -254,6 +254,7 @@ public LockableFileWriter(File file, String encoding, boolean append,
      * @throws IOException if we cannot write to the lock directory
      * @throws IOException if we cannot find the lock file
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.206 -0400", hash_original_method = "8D77B36F2D36A74D4D1D738F1EFBDA2C", hash_generated_method = "4620A2CDFB3A98C06BE97E0FD7C340C9")
     
 private void testLockDir(File lockDir) throws IOException {
@@ -272,6 +273,7 @@ private void testLockDir(File lockDir) throws IOException {
      *
      * @throws IOException if we cannot create the file
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.206 -0400", hash_original_method = "17CDBB829EF4B0C5B4419966B6F98CAD", hash_generated_method = "B2C0A16B9210CECCBFAD8AF862BFDD23")
     
 private void createLock() throws IOException {
@@ -294,6 +296,7 @@ private void createLock() throws IOException {
      * @return The initialised writer
      * @throws IOException if an error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.207 -0400", hash_original_method = "9026BE33E3D40906CA316E83E271B1B8", hash_generated_method = "CFB1D0EEE0FAD6485D92FB638ECDBAE6")
     
 private Writer initWriter(File file, Charset encoding, boolean append) throws IOException {

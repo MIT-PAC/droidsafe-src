@@ -27,6 +27,7 @@ public BackStackState createFromParcel(Parcel in) {
             return new BackStackState(in);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.636 -0500", hash_original_method = "52EF176F83EE27DC9AB1AED05CDF3579", hash_generated_method = "AA2C2B4C369E63D7557FFA20CBD80867")
         
 public BackStackState[] newArray(int size) {
@@ -120,6 +121,7 @@ public BackStackState(Parcel in) {
         mBreadCrumbShortTitleText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.626 -0500", hash_original_method = "3011E3887D3FBBD9FDB38984C5139A67", hash_generated_method = "701B0788EA1088DA6862022357396D98")
     
 public BackStackRecord instantiate(FragmentManagerImpl fm) {
@@ -301,12 +303,14 @@ public BackStackRecord(FragmentManagerImpl manager) {
         return sb.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.731 -0500", hash_original_method = "A173D988738B1BED0F12DBDA60D665B4", hash_generated_method = "F5252452D0ADC730355A81DAC2BA86E0")
     
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
         dump(prefix, writer, true);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.736 -0500", hash_original_method = "856C187C4078543C316E968949741777", hash_generated_method = "2F01DFD0B104B91A45725067729792ED")
     
 public void dump(String prefix, PrintWriter writer, boolean full) {
@@ -438,6 +442,7 @@ public CharSequence getBreadCrumbShortTitle() {
         return mBreadCrumbShortTitleText;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.753 -0500", hash_original_method = "32D26C73BB31A0FE5D5A21F02980CDDD", hash_generated_method = "32D26C73BB31A0FE5D5A21F02980CDDD")
     
 void addOp(Op op) {
@@ -480,7 +485,7 @@ public FragmentTransaction add(int containerViewId, Fragment fragment, String ta
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.763 -0500", hash_original_method = "F2F897C7BFD0AE6B1B051FF1D3DE8AB7", hash_generated_method = "C95777A5F19475DA08C0B2117C0BAD16")
     
 private void doAddOp(int containerViewId, Fragment fragment, String tag, int opcmd) {
@@ -511,12 +516,14 @@ private void doAddOp(int containerViewId, Fragment fragment, String tag, int opc
         addOp(op);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.765 -0500", hash_original_method = "095D291C1CAFD923EC9CB9BF06EF4676", hash_generated_method = "637C51932EBB2EB1BF87B9364F24B476")
     
 public FragmentTransaction replace(int containerViewId, Fragment fragment) {
         return replace(containerViewId, fragment, null);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.767 -0500", hash_original_method = "1C07811E78071E2352BF0C170F6491CA", hash_generated_method = "E1E41EE8A4310B857B42C761ED1BE19C")
     
 public FragmentTransaction replace(int containerViewId, Fragment fragment, String tag) {
@@ -586,12 +593,14 @@ public FragmentTransaction attach(Fragment fragment) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.781 -0500", hash_original_method = "E8FBC41447C7F5B20E8F08F3A2F7FD58", hash_generated_method = "1AB90CDE86714F166EBB833F0518E7AA")
     
 public FragmentTransaction setCustomAnimations(int enter, int exit) {
         return setCustomAnimations(enter, exit, 0, 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.783 -0500", hash_original_method = "A0614C8D91A2CFFC3B2827B585934661", hash_generated_method = "C7A01A96D5FB74D813B64608F53C8D33")
     
 public FragmentTransaction setCustomAnimations(int enter, int exit,
@@ -680,7 +689,7 @@ public FragmentTransaction setBreadCrumbShortTitle(CharSequence text) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.807 -0500", hash_original_method = "F09A90C496A148F600E3D02A9731BC19", hash_generated_method = "F09A90C496A148F600E3D02A9731BC19")
     
 void bumpBackStackNesting(int amt) {
@@ -762,7 +771,7 @@ public int commitAllowingStateLoss() {
     }
     
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.814 -0500", hash_original_method = "01D779364E83C28A30DD99CF6E54EB38", hash_generated_method = "01D779364E83C28A30DD99CF6E54EB38")
     
 int commitInternal(boolean allowStateLoss) {
@@ -877,6 +886,7 @@ public void run() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.821 -0500", hash_original_method = "137917E20FC9A3B18E2DEEE98195320E", hash_generated_method = "6702DA72E20B03931E96D48D82115E7E")
     
 public void popFromBackStack(boolean doStateMove) {
@@ -963,6 +973,7 @@ public void popFromBackStack(boolean doStateMove) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:31.825 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
     
 public String getName() {

@@ -33,7 +33,8 @@ public static synchronized CookieSyncManager getInstance() {
      * @param context
      * @return CookieSyncManager
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.505 -0500", hash_original_method = "FECD0925F77067421139B3F6378E5A1A", hash_generated_method = "D91D0794826C7B69CEA64EF6210C0BA0")
     
 public static synchronized CookieSyncManager createInstance(

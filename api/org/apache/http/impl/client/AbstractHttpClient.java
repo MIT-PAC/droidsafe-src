@@ -222,7 +222,7 @@ protected abstract HttpRoutePlanner createHttpRoutePlanner();
 protected abstract UserTokenHandler createUserTokenHandler();
     
     @DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override
 	public HttpParams getParams() {
 		// TODO Auto-generated method stub
@@ -241,7 +241,8 @@ public synchronized void setParams(HttpParams params) {
         defaultParams = params;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @Override
 	public ClientConnectionManager getConnectionManager() {
 		// TODO Auto-generated method stub
@@ -316,6 +317,7 @@ public synchronized final ConnectionKeepAliveStrategy getConnectionKeepAliveStra
         return keepAliveStrategy;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.070 -0500", hash_original_method = "D20C58629EEB51CAE85A715149CC7D7C", hash_generated_method = "44177EBBF11727B8030383B31ADB7CA6")
     
 public synchronized void setKeepAliveStrategy(final ConnectionKeepAliveStrategy keepAliveStrategy) {
@@ -388,7 +390,8 @@ public synchronized void setProxyAuthenticationHandler(
         this.proxyAuthHandler = proxyAuthHandler;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.091 -0500", hash_original_method = "CED19DC63F5DFF3B80D2B1F10482E892", hash_generated_method = "A0C40B75230CB05B51D0EA80B4D8BB46")
     
 public synchronized final CookieStore getCookieStore() {

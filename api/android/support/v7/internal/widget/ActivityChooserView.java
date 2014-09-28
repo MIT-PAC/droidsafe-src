@@ -235,6 +235,7 @@ public ActivityChooserView(Context context, AttributeSet attrs, int defStyle) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.124 -0400", hash_original_method = "200277448D26D5459B7D9186C5FC6866", hash_generated_method = "7CA8C25435FCB0A49E836568E8AAB8C5")
     
 public void setActivityChooserModel(ActivityChooserModel dataModel) {
@@ -256,6 +257,7 @@ public void setActivityChooserModel(ActivityChooserModel dataModel) {
      *
      * @param drawable The drawable.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.130 -0400", hash_original_method = "40C8CFBBBEC7CE8C6DC800BBA1A8260F", hash_generated_method = "7E55EEEF5F724AD763B80D49887231E9")
     
 public void setExpandActivityOverflowButtonDrawable(Drawable drawable) {
@@ -272,6 +274,7 @@ public void setExpandActivityOverflowButtonDrawable(Drawable drawable) {
      *
      * @param resourceId The content description resource id.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.138 -0400", hash_original_method = "95620C68F93300AE0B72DB3EFBB12F8B", hash_generated_method = "244BF47F9E96CBBE6A993B50E71697B0")
     
 public void setExpandActivityOverflowButtonContentDescription(int resourceId) {
@@ -283,6 +286,7 @@ public void setExpandActivityOverflowButtonContentDescription(int resourceId) {
      * Set the provider hosting this view, if applicable.
      * @hide Internal use only
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.146 -0400", hash_original_method = "4EB99ACA5BA34A284707803087697EF8", hash_generated_method = "E583E02C257A95EA5D22D959FF7F2B78")
     
 public void setProvider(ActionProvider provider) {
@@ -294,6 +298,7 @@ public void setProvider(ActionProvider provider) {
      *
      * @return True if the popup was shown, false if already showing.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.152 -0400", hash_original_method = "D9F80F56BE7AEC83902DD1E82500AB90", hash_generated_method = "D00C2CF8DC2D9DAFE18E478CD85DD206")
     
 public boolean showPopup() {
@@ -310,6 +315,7 @@ public boolean showPopup() {
      *
      * @param maxActivityCount The max number of activities to display.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.166 -0400", hash_original_method = "9CE94D17A12EDE30B7CAE8D136113E99", hash_generated_method = "650813DD8E487A5BC9B795C4E00B486D")
     
 private void showPopupUnchecked(int maxActivityCount) {
@@ -356,6 +362,7 @@ private void showPopupUnchecked(int maxActivityCount) {
      *
      * @return True if dismissed, false if already dismissed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.173 -0400", hash_original_method = "D685C2FA386E3559D94DAB46E30EF0B9", hash_generated_method = "C2DDB97E7C57BEF40BF526EA65D8CE24")
     
 public boolean dismissPopup() {
@@ -374,6 +381,7 @@ public boolean dismissPopup() {
      *
      * @return True if the popup is shown.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.179 -0400", hash_original_method = "E45D6D96430861522854D560F5CA6F0B", hash_generated_method = "1DD86CA2457166B3F593DEB15897F714")
     
 public boolean isShowingPopup() {
@@ -481,6 +489,7 @@ public void setInitialActivityCount(int itemCount) {
      *
      * @param resourceId The resource id.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.235 -0400", hash_original_method = "A16FFC5DB1EC302B931A83E3D5524FB1", hash_generated_method = "C629AA06D356B9FEAB0CA181CB732ECF")
     
 public void setDefaultActionButtonContentDescription(int resourceId) {
@@ -492,6 +501,7 @@ public void setDefaultActionButtonContentDescription(int resourceId) {
      *
      * @return The popup.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.241 -0400", hash_original_method = "A13663EF62899FD593D247A6177CE71D", hash_generated_method = "560AF4251C87CB0E76394EEC66EDDE2F")
     
 private ListPopupWindow getListPopupWindow() {
@@ -509,6 +519,7 @@ private ListPopupWindow getListPopupWindow() {
     /**
      * Updates the buttons state.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:30:38.250 -0400", hash_original_method = "27AB5F2A5A8B2AC4357EE65702D51A87", hash_generated_method = "5F18116A5451AEF5520523E56814353B")
     
 private void updateAppearance() {
@@ -623,6 +634,7 @@ private void updateAppearance() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void notifyOnDismissListener() {
             if (mOnDismissListener != null) {
                 mOnDismissListener.onDismiss();
@@ -655,6 +667,7 @@ private void updateAppearance() {
 
         private boolean mShowFooterView;
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setDataModel(ActivityChooserModel dataModel) {
             ActivityChooserModel oldDataModel = mAdapter.getDataModel();
             if (oldDataModel != null && isShown()) {
@@ -681,8 +694,7 @@ private void updateAppearance() {
         public int getViewTypeCount() {
             return ITEM_VIEW_TYPE_COUNT;
         }
-
-        @DSSource({DSSourceKind.DATABASE})
+        
         @DSSafe(DSCat.SAFE_LIST)
         public int getCount() {
             int count = 0;
@@ -696,8 +708,7 @@ private void updateAppearance() {
             }
             return count;
         }
-
-        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        
         @DSSafe(DSCat.SAFE_LIST)
         public Object getItem(int position) {
             final int itemViewType = getItemViewType(position);
@@ -759,6 +770,7 @@ private void updateAppearance() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int measureContentWidth() {
             // The user may have specified some of the target not to be shown but we
             // want to measure all of them since after expansion they should fit.
@@ -783,6 +795,7 @@ private void updateAppearance() {
             return contentWidth;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setMaxActivityCount(int maxActivityCount) {
             if (mMaxActivityCount != maxActivityCount) {
                 mMaxActivityCount = maxActivityCount;
@@ -790,10 +803,12 @@ private void updateAppearance() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public ResolveInfo getDefaultActivity() {
             return mDataModel.getDefaultActivity();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setShowFooterView(boolean showFooterView) {
             if (mShowFooterView != showFooterView) {
                 mShowFooterView = showFooterView;
@@ -801,10 +816,12 @@ private void updateAppearance() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getActivityCount() {
             return mDataModel.getActivityCount();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getHistorySize() {
             return mDataModel.getHistorySize();
         }
@@ -813,10 +830,12 @@ private void updateAppearance() {
             return mMaxActivityCount;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public ActivityChooserModel getDataModel() {
             return mDataModel;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setShowDefaultActivity(boolean showDefaultActivity,
                 boolean highlightDefaultActivity) {
             if (mShowDefaultActivity != showDefaultActivity
@@ -827,6 +846,7 @@ private void updateAppearance() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean getShowDefaultActivity() {
             return mShowDefaultActivity;
         }

@@ -149,6 +149,7 @@ public int getPkeyContext() {
         return key.getPkeyContext();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.710 -0400", hash_original_method = "A96CFD8B51A526612FB301412BB544A6", hash_generated_method = "6CF7A1D18375C03B8AED135A2E160487")
     
 @Override

@@ -8,6 +8,7 @@ import android.content.Intent;
 
 class IntentCompatIcsMr1 {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.357 -0500", hash_original_method = "BFE8C485C24D7664D69E5C668096D9EE", hash_generated_method = "8B50C4D75DCC83FF57FE4B3282A50497")
     
 public static Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {

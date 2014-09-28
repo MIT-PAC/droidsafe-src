@@ -392,7 +392,7 @@ public ViewGroup(Context context) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @ViewDebug.ExportedProperty(category="focus",mapping={@ViewDebug.IntToString(from=FOCUS_BEFORE_DESCENDANTS,to="FOCUS_BEFORE_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_AFTER_DESCENDANTS,to="FOCUS_AFTER_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_BLOCK_DESCENDANTS,to="FOCUS_BLOCK_DESCENDANTS")}) public int getDescendantFocusability(){
 		// Original method
 		/*
@@ -405,7 +405,7 @@ public ViewGroup(Context context) {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void setDescendantFocusability(int focusability){
 		// Original method
 		/*
@@ -648,7 +648,7 @@ public View getFocusedChild() {
     }
     
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @Override public boolean hasFocus(){
 		// Original method
 		/*
@@ -661,7 +661,7 @@ public View getFocusedChild() {
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @Override public View findFocus(){
 		// Original method
 		/*
@@ -1705,7 +1705,8 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     protected void setChildrenDrawingCacheEnabled(boolean enabled){
 		// Original method
 		/*
@@ -2041,7 +2042,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     public void addView(View child){
 		// Original method
         addView(child, -1);
@@ -2050,7 +2051,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     public void addView(View child, int index){
 		// Original method
         LayoutParams params = child.getLayoutParams();
@@ -2065,7 +2066,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     public void addView(View child, int width, int height){
 		// Original method
         final LayoutParams params = generateDefaultLayoutParams();
@@ -2076,7 +2077,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     public void addView(View child, LayoutParams params){
 		// Original method
         addView(child, -1, params);
@@ -2085,7 +2086,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
     
     @DSVerified
     @DSComment("Normal GUI")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     public void addView(View child, int index, LayoutParams params){
 		// Original method
 		/*
@@ -3090,7 +3091,7 @@ public MarginLayoutParams(LayoutParams source) {
 		}
         
         @DSSafe(DSCat.SAFE_OTHERS)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         public int getMarginStart(){
 			return getTaintInt();
 			// Original method
@@ -3102,7 +3103,7 @@ public MarginLayoutParams(LayoutParams source) {
 		}
         
         @DSSafe(DSCat.SAFE_OTHERS)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         public int getMarginEnd(){
 			return getTaintInt();
 			// Original method

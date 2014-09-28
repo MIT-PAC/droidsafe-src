@@ -142,6 +142,7 @@ public final V put(K key, V value) {
      * @param maxSize the maximum size of the cache before returning. May be -1
      *            to evict even 0-sized elements.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.896 -0500", hash_original_method = "82D005458BB4BC837252CC0C6863637E", hash_generated_method = "942993DF09911BEC0014E8497D1A7891")
     
 public void trimToSize(int maxSize) {
@@ -212,6 +213,7 @@ public final V remove(K key) {
      *     this removal was caused by a {@link #put}. Otherwise it was caused by
      *     an eviction or a {@link #remove}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.901 -0500", hash_original_method = "9AD1617B914C1EE986412183164D996B", hash_generated_method = "5B6A09477D1BDADD16F8B3F7C5F48AC9")
     
 protected void entryRemoved(boolean evicted, K key, V oldValue, V newValue) {}
@@ -231,6 +233,7 @@ protected void entryRemoved(boolean evicted, K key, V oldValue, V newValue) {}
      * thread calls {@link #put} while another is creating a value for the same
      * key.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.903 -0500", hash_original_method = "56F7B4D0824C7980B3CF91C05C1DA172", hash_generated_method = "FD8F5FB3995F1C5733A5EBC7107F06D5")
     
 protected V create(K key) {
@@ -238,7 +241,7 @@ protected V create(K key) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.905 -0500", hash_original_method = "971860883D94FE365FE71BDE260829D3", hash_generated_method = "C15F98F8088B2F6FFC9871ACE2669840")
     
 private int safeSizeOf(K key, V value) {
@@ -256,6 +259,7 @@ private int safeSizeOf(K key, V value) {
      *
      * <p>An entry's size must not change while it is in the cache.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.908 -0500", hash_original_method = "6F73EAFB28729CDC0BB32AECE7CD1246", hash_generated_method = "26549C27E3B12BABE3CC5B53132BA4E4")
     
 protected int sizeOf(K key, V value) {

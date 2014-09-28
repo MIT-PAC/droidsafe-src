@@ -127,6 +127,7 @@ public class CopyUtils {
      * @param output the <code>OutputStream</code> to write to
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.229 -0400", hash_original_method = "F0BA6BD7A97A3BE1D734FEB4A734FBAE", hash_generated_method = "21C0C1C9E5DDB851177A346608BA8979")
     
 public static void copy(byte[] input, OutputStream output)
@@ -146,6 +147,7 @@ public static void copy(byte[] input, OutputStream output)
      * @param output the <code>Writer</code> to write to
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.229 -0400", hash_original_method = "23536108F435071EFDBDD1BB2093DF63", hash_generated_method = "9288C44D791B96442C881C2550D06EB5")
     
 public static void copy(byte[] input, Writer output)
@@ -153,7 +155,6 @@ public static void copy(byte[] input, Writer output)
         ByteArrayInputStream in = new ByteArrayInputStream(input);
         copy(in, output);
     }
-
 
     /**
      * Copy and convert bytes from a <code>byte[]</code> to chars on a
@@ -165,6 +166,7 @@ public static void copy(byte[] input, Writer output)
      * Charset Registry</a> for a list of valid encoding types.
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.230 -0400", hash_original_method = "975F2644D328BA1CCE74489B7E6C4E93", hash_generated_method = "6B57D2B7E6C1586A46189B258B115386")
     
 public static void copy(
@@ -175,7 +177,6 @@ public static void copy(
         ByteArrayInputStream in = new ByteArrayInputStream(input);
         copy(in, output, encoding);
     }
-
 
     // ----------------------------------------------------------------
     // Core copy methods
@@ -189,6 +190,7 @@ public static void copy(
      * @return the number of bytes copied
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.231 -0400", hash_original_method = "593EF196512A9E50D807AC65E1BB79E6", hash_generated_method = "FE8F1334BAB370E78F5B50C9D6F496ED")
     
 public static int copy(
@@ -216,6 +218,7 @@ public static int copy(
      * @return the number of characters copied
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.231 -0400", hash_original_method = "6960AEC98B2B3DE56B5CF65D073FAA4F", hash_generated_method = "22D7F578167645A1CA74B71D4DCC15DA")
     
 public static int copy(
@@ -244,6 +247,7 @@ public static int copy(
      * @param output the <code>Writer</code> to write to
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.232 -0400", hash_original_method = "0B73E6030E0DCCE4A59142FE847725E7", hash_generated_method = "997E22269BD848FB3E4B34F9D6C89E9C")
     
 public static void copy(
@@ -264,6 +268,7 @@ public static void copy(
      * Charset Registry</a> for a list of valid encoding types.
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.233 -0400", hash_original_method = "BAF4B95A6524226CE08A8B2424D408F3", hash_generated_method = "BA3619B7F6642E30999D150F7DFA521C")
     
 public static void copy(
@@ -274,7 +279,6 @@ public static void copy(
         InputStreamReader in = new InputStreamReader(input, encoding);
         copy(in, output);
     }
-
 
     // ----------------------------------------------------------------
     // Reader -> OutputStream
@@ -287,6 +291,7 @@ public static void copy(
      * @param output the <code>OutputStream</code> to write to
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.233 -0400", hash_original_method = "4A30515545AEE268D8CDF2F6145346D7", hash_generated_method = "D825AA06680C4B1ED6AE74514326B1BE")
     
 public static void copy(
@@ -312,6 +317,7 @@ public static void copy(
      * @param output the <code>OutputStream</code> to write to
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.234 -0400", hash_original_method = "71BA56061CC566FAF4CE116FA431BE61", hash_generated_method = "D32F87BC18FB23A6AE09E9767CC4DFCD")
     
 public static void copy(
@@ -336,6 +342,7 @@ public static void copy(
      * @param output the <code>Writer</code> to write to
      * @throws IOException In case of an I/O problem
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.235 -0400", hash_original_method = "968990997123B88042733533DFA918C0", hash_generated_method = "D3A24179BA1184DD41975C58D8D0D573")
     
 public static void copy(String input, Writer output)

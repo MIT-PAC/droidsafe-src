@@ -18,7 +18,7 @@ public abstract class InputEvent implements Parcelable {
 
     public static final Parcelable.Creator<InputEvent> CREATOR
             = new Parcelable.Creator<InputEvent>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.747 -0500", hash_original_method = "1E6CF60294C8C01670FD09697A2C8F1E", hash_generated_method = "87540945CBD4744CD14608731AB18576")
         
 public InputEvent createFromParcel(Parcel in) {

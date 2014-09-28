@@ -32,6 +32,7 @@ public static long getTimeout(final HttpParams params) {
      * 
      * @param timeout the timeout in milliseconds
      */ 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.489 -0500", hash_original_method = "7D98989200DAF0BA98D6FFB7AC81BAD6", hash_generated_method = "8A302D9C85D171E68FBD072098ACDA21")
     
 public static void setTimeout(final HttpParams params, long timeout) {

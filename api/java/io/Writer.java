@@ -103,7 +103,7 @@ public void write(char[] buf) throws IOException {
      */
     @DSSink({DSSinkKind.IO})
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.993 -0500", hash_original_method = "FA39B0B4ACD833F007B6A5EFA706DF90", hash_generated_method = "1F14AD35BDAC531FAF76D6C9A1E9B3E0")
     
 public abstract void write(char[] buf, int offset, int count) throws IOException;
@@ -189,6 +189,7 @@ public void write(String str, int offset, int count) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     
@@ -212,6 +213,7 @@ public Writer append(char c) throws IOException {
      *             if this writer is closed or another I/O error occurs.
      */
     
+    @DSSink({DSSinkKind.IO})
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.006 -0500", hash_original_method = "D993D81DE6953743EFA25FF281FB0E15", hash_generated_method = "67EEA4752C6409E1426DEAE33FD9BE03")
@@ -247,6 +249,7 @@ public Writer append(CharSequence csq) throws IOException {
      *             either {@code start} or {@code end} are greater or equal than
      *             the length of {@code csq}.
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     

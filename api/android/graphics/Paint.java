@@ -874,7 +874,7 @@ public void setStyle(Style style) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.666 -0500", hash_original_method = "61ED3E8FA79427F4AF66F905BEAE9870", hash_generated_method = "261B1F3BA320330F3FD63DDED79EF8EF")
     
 public void setARGB(int a, int r, int g, int b) {
@@ -967,6 +967,7 @@ public Cap getStrokeCap() {
      * @param cap set the paint's line cap style, used whenever the paint's
      *            style is Stroke or StrokeAndFill.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.685 -0500", hash_original_method = "D26EF05E574A5A1AE605A2030639B3B0", hash_generated_method = "7627F41181F0CE5EFD6B0B6B4000C5D2")
     
 public void setStrokeCap(Cap cap) {
@@ -990,6 +991,7 @@ public Join getStrokeJoin() {
      * @param join set the paint's Join, used whenever the paint's style is
      *             Stroke or StrokeAndFill.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.689 -0500", hash_original_method = "08533C600DCDC9F9AEA810B7ADA01DF0", hash_generated_method = "2AA8C9C43E339827F9CDEE71B30262F9")
     
 public void setStrokeJoin(Join join) {
@@ -1999,7 +2001,7 @@ public int breakText(String text, boolean measureForwards,
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.848 -0500", hash_original_method = "83C574DC73479463FE44C1F2988A5F29", hash_generated_method = "50516D8BBE96DB9F908C6DE143BC79A9")
     
 public int getTextWidths(char[] text, int index, int count,
@@ -2041,7 +2043,7 @@ public int getTextWidths(char[] text, int index, int count,
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.851 -0500", hash_original_method = "F14F0812F33DADA5D35A1216285E517E", hash_generated_method = "246C897DE6D5D577D1D20E9AF6330553")
     
 public int getTextWidths(CharSequence text, int start, int end,
@@ -2090,7 +2092,7 @@ public int getTextWidths(CharSequence text, int start, int end,
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.854 -0500", hash_original_method = "FC7E920984BEE100F69A523319264731", hash_generated_method = "1B49049F244B032D77853D87FA3EC6AF")
     
 public int getTextWidths(String text, int start, int end, float[] widths) {
@@ -2131,7 +2133,7 @@ public int getTextWidths(String text, int start, int end, float[] widths) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.856 -0500", hash_original_method = "2A3DC3984F2D039C4252250086EEE48E", hash_generated_method = "794598FE398532B0C077C928931E3786")
     
 public int getTextWidths(String text, float[] widths) {

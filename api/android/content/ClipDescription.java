@@ -53,7 +53,7 @@ public static boolean compareMimeTypes(String concreteType, String desiredType) 
     public static final Parcelable.Creator<ClipDescription> CREATOR =
         new Parcelable.Creator<ClipDescription>() {
 
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.213 -0500", hash_original_method = "85E642226A89613A0CF91353EFBEB228", hash_generated_method = "727085DD534D5DB4FF214F8174187B0E")
         
 public ClipDescription createFromParcel(Parcel source) {
@@ -111,6 +111,7 @@ ClipDescription(Parcel in) {
     /**
      * Return the label for this clip.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.192 -0500", hash_original_method = "4A1E1E1996A16BAAC783C4D4608DA412", hash_generated_method = "BF2D8CE2895BA065BC033E2D2EA0072E")
     
@@ -125,6 +126,7 @@ public CharSequence getLabel() {
      * @return Returns true if one of the MIME types in the clip description
      * matches the desired MIME type, else false.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.194 -0500", hash_original_method = "C012E24E08CF652349C6D573E660029C", hash_generated_method = "8DF0AA288D0153FB277CC9AFFA6D62D9")
     
 public boolean hasMimeType(String mimeType) {

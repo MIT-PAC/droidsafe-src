@@ -45,10 +45,8 @@ import java.io.Serializable;
 public class FileEntry implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.740 -0400", hash_original_field = "99B9D06D5538CD5BCDF31A80D6C881EA", hash_generated_field = "F21C6AADF59E9D671ACBE5D672216EEC")
 
-
     static final FileEntry[] EMPTY_ENTRIES = new FileEntry[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.741 -0400", hash_original_field = "EA64329E46CA63B27AA8C974D8E0AB30", hash_generated_field = "AB8F542161143C49D5F1CBC35DA2FB78")
-
 
     private  FileEntry parent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.742 -0400", hash_original_field = "F20C4BEB5C7A135252632E9F8E5EB1CC", hash_generated_field = "61D578E413FC2348E3E1154CB71E41C8")
@@ -115,6 +113,7 @@ public FileEntry(FileEntry parent, File file) {
      * @param file the file instance to compare to
      * @return {@code true} if the file has changed, otherwise {@code false}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.746 -0400", hash_original_method = "0DE464E0982739533C2F4153E8EF2E0E", hash_generated_method = "CC3ABC6F2912E3B4F81CBE886A2C0459")
     
 public boolean refresh(File file) {
@@ -148,6 +147,7 @@ public boolean refresh(File file) {
      * @param file The child file
      * @return a new child instance
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.747 -0400", hash_original_method = "C3CF0DDAA6E3B0E070C32CB96AD599A3", hash_generated_method = "68AE37DE768F793EE88EDB4E916798EC")
     
 public FileEntry newChildInstance(File file) {
@@ -170,6 +170,7 @@ public FileEntry getParent() {
      *
      * @return the level
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.748 -0400", hash_original_method = "413C128DCD3997E04683C45E9C65F6CD", hash_generated_method = "4ACFECCCCB28E6AC8F690792B6DBD90D")
     
 public int getLevel() {
@@ -183,6 +184,7 @@ public int getLevel() {
      * array if the file is not a directory or the
      * directory is empty
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.748 -0400", hash_original_method = "ACDB7EF7822C47BD2D0D3497DD2FEBDF", hash_generated_method = "A79DA402818C74475B5430AC88E274F2")
     
 public FileEntry[] getChildren() {
@@ -194,6 +196,7 @@ public FileEntry[] getChildren() {
      *
      * @param children This directory's files, may be null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.749 -0400", hash_original_method = "587FA5041C73C3087DE3CB88D2A7F1CB", hash_generated_method = "20676D761FD13D5929EF684D4EF1DBB2")
     
 public void setChildren(FileEntry[] children) {
@@ -205,6 +208,7 @@ public void setChildren(FileEntry[] children) {
      *
      * @return the file being monitored
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.749 -0400", hash_original_method = "254E9EB55B544E07E2A606FED2225F70", hash_generated_method = "6388AE15EA030E1BF94C33E0A56E1C22")
     
 public File getFile() {
@@ -285,6 +289,7 @@ public void setLength(long length) {
      *
      * @return whether the file existed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.752 -0400", hash_original_method = "6F66D971E54163B78A2414F4E7CCFEB2", hash_generated_method = "011ADAE59111CF5825D22375957FD7F1")
     
 public boolean isExists() {
@@ -308,6 +313,7 @@ public void setExists(boolean exists) {
      *
      * @return whether the file is a directory or not
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.753 -0400", hash_original_method = "D7E00245883AF8971102F357EED1C8FA", hash_generated_method = "496630CDD93B4DF59D5DA17D1C21876F")
     
 public boolean isDirectory() {

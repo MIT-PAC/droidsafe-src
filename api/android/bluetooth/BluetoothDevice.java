@@ -279,7 +279,7 @@ public static byte[] convertPinToBytes(String pin) {
 
     public static final Parcelable.Creator<BluetoothDevice> CREATOR =
             new Parcelable.Creator<BluetoothDevice>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.745 -0500", hash_original_method = "D012F0D6259F922F17728A0868DC817A", hash_generated_method = "E009A7829B0C84C12ADE75D532E2482E")
         
 public BluetoothDevice createFromParcel(Parcel in) {
@@ -344,6 +344,7 @@ BluetoothDevice(String address) {
      * {@link #toString} representation changes in the future.
      * @return string representation of this BluetoothDevice
      */
+    @DSSource({DSSourceKind.BLUETOOTH})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.739 -0500", hash_original_method = "4F994B6046AF4A420304240B51CB4CC6", hash_generated_method = "16B0D7E7F85DDCED65B3F6C6B71A2104")
     

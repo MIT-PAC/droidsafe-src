@@ -132,6 +132,7 @@ public final int resolvePort(int port) {
      *
      * @return  a human-readable string description of this scheme
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.803 -0500", hash_original_method = "DC9B71D58EF4666028CCB60CC7379DF5", hash_generated_method = "E00F298668F65E9C2A06FCA512B9F74F")
     

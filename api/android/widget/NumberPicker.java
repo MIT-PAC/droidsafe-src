@@ -399,7 +399,8 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         // input text
         mInputText = (EditText) findViewById(R.id.numberpicker_input);
         mInputText.setOnFocusChangeListener(new OnFocusChangeListener() {
-            public void onFocusChange(View v, boolean hasFocus) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
                     mInputText.selectAll();
                     InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
@@ -451,7 +452,8 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         mShowInputControlsAnimator.addListener(new AnimatorListenerAdapter() {
             private boolean mCanceled = false;
 
-            @Override
+            @DSSafe(DSCat.ANDROID_ANIMATION)
+        @Override
             public void onAnimationEnd(Animator animation) {
                 if (!mCanceled) {
                     // if canceled => we still want the wheel drawn
@@ -1243,7 +1245,7 @@ public void setDisplayedValues(String[] displayedValues) {
         canvas.restoreToCount(restoreCount);
     }
 
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.212 -0500", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "86AF7DE9D8AA4CE0BCD92B937FAAB36A")
     
 @Override

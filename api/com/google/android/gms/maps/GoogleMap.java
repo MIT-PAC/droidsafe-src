@@ -152,7 +152,7 @@ public final void stopAnimation()
     {
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.293 -0400", hash_original_method = "C335EF489BBBAC97393468FE1079678B", hash_generated_method = "398C1F47B6414E6148F0215F89D5293A")
     
 public final Polygon addPolygon(PolygonOptions  r1)
@@ -169,7 +169,7 @@ public final Polygon addPolygon(PolygonOptions  r1)
     	return poly;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.304 -0400", hash_original_method = "BAEBD3E64FF6C8B2F7743E1C33F41BAF", hash_generated_method = "C3FF9F3416485CE62296309FB907D46C")
     
 public Marker addMarker(MarkerOptions  r1)
@@ -371,7 +371,7 @@ public final Location getMyLocation() throws Throwable
         return r3;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.385 -0400", hash_original_method = "4C1AFEB4E643F4F1EF95BFB11F7E2E4C", hash_generated_method = "C186E95176CDD5D82A2506ABF0C91D08")
     
 public final UiSettings getUiSettings() throws Throwable
@@ -400,7 +400,7 @@ public final UiSettings getUiSettings() throws Throwable
         return r6;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.394 -0400", hash_original_method = "6B1136EE4A01B1EBBA16144825A1F2C7", hash_generated_method = "93F585E27B515B557E4A581DA8FB3DB4")
     
     public final void setOnCameraChangeListener(GoogleMap.OnCameraChangeListener  r1)
@@ -409,7 +409,7 @@ public final UiSettings getUiSettings() throws Throwable
        
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.399 -0400", hash_original_method = "5DA00B075C2AB1FC9A50A38D4F7DE47B", hash_generated_method = "76C820620716D84DEA1E1E8017C9658F")
     
 public final void setOnMapClickListener(GoogleMap.OnMapClickListener  r1)

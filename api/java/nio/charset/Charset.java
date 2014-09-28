@@ -336,7 +336,7 @@ public abstract CharsetDecoder newDecoder();
      */
     @DSComment("no suspicious activity")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.316 -0500", hash_original_method = "C591AF6945C669FCF4033528E86B2077", hash_generated_method = "F1A503D43EE7081C90FA96704A313AB1")
     
 public final String name() {
@@ -554,7 +554,7 @@ public final int compareTo(Charset charset) {
      * @return a string representation of this charset.
      */
     @DSComment("no suspicious activity")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.346 -0500", hash_original_method = "D15E03733F40849FC8BB6457075A7CA1", hash_generated_method = "9E43C2B288DD8DD507CF994805407C45")
     
 @Override

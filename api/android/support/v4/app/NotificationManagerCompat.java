@@ -108,6 +108,7 @@ public static NotificationManagerCompat from(Context context) {
     /**
      * Get the set of packages that have an enabled notification listener component within them.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:47.073 -0400", hash_original_method = "45DB7DBDF2A05EC028D50CB51B820256", hash_generated_method = "13790203ECE193A296CAB0EA198F77F1")
         
 public static Set<String> getEnabledListenerPackages(Context context) {
@@ -136,6 +137,7 @@ public static Set<String> getEnabledListenerPackages(Context context) {
     /**
      * Returns true if this notification should use the side channel for delivery.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:47.076 -0400", hash_original_method = "197650DC8E6335EE8245088FF5A63760", hash_generated_method = "C126D1B8A5EA545F717AB5908A31637B")
         
 private static boolean useSideChannelForNotification(Notification notification) {
@@ -156,18 +158,21 @@ private static boolean useSideChannelForNotification(Notification notification) 
     }
 
     static class ImplBase implements Impl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void cancelNotification(NotificationManager notificationManager, String tag,
                 int id) {
             notificationManager.cancel(id);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void postNotification(NotificationManager notificationManager, String tag, int id,
                 Notification notification) {
             notificationManager.notify(id, notification);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getSideChannelBindFlags() {
             return Service.BIND_AUTO_CREATE;
@@ -175,12 +180,14 @@ private static boolean useSideChannelForNotification(Notification notification) 
     }
 
     static class ImplEclair extends ImplBase {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void cancelNotification(NotificationManager notificationManager, String tag,
                 int id) {
             NotificationManagerCompatEclair.cancelNotification(notificationManager, tag, id);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void postNotification(NotificationManager notificationManager, String tag, int id,
                 Notification notification) {
@@ -190,6 +197,7 @@ private static boolean useSideChannelForNotification(Notification notification) 
     }
 
     static class ImplIceCreamSandwich extends ImplEclair {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getSideChannelBindFlags() {
             //return NotificationManagerCompatIceCreamSandwich.SIDE_CHANNEL_BIND_FLAGS;
@@ -223,6 +231,7 @@ private NotificationManagerCompat(Context context) {
      * Cancel a previously shown notification.
      * @param id the ID of the notification
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:47.053 -0400", hash_original_method = "C3E2CA3977B6A0DFE40EA0B5D969CEEE", hash_generated_method = "90EF31815973B3B19C436849AC0958EC")
         
 public void cancel(int id) {
@@ -234,6 +243,7 @@ public void cancel(int id) {
      * @param tag the string identifier of the notification.
      * @param id the ID of the notification
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:47.057 -0400", hash_original_method = "4AF00848EDFC1C3635F203BE01DB98DF", hash_generated_method = "B63F8779E296785CD652DADD25569DF1")
         
 public void cancel(String tag, int id) {
@@ -281,6 +291,7 @@ public void notify(String tag, int id, Notification notification) {
     /**
      * Push a notification task for distribution to notification side channels.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 10:59:47.080 -0400", hash_original_method = "B0DAD8AFD38CB377D0B22A22CF6DB97D", hash_generated_method = "C11D3E77B2E7130F5CEDF7D989A525A2")
         
 private void pushSideChannelQueue(Task task) {
@@ -322,6 +333,7 @@ private void pushSideChannelQueue(Task task) {
          * Queue a new task to be sent to all listeners. This function can be called
          * from any thread.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void queueTask(Task task) {
             mHandler.obtainMessage(MSG_QUEUE_TASK, task).sendToTarget();
         }
@@ -346,6 +358,7 @@ private void pushSideChannelQueue(Task task) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void handleQueueTask(Task task) {
             updateListenerMap();
             for (ListenerRecord record : mRecordMap.values()) {
@@ -354,6 +367,7 @@ private void pushSideChannelQueue(Task task) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void handleServiceConnected(ComponentName componentName, IBinder iBinder) {
             ListenerRecord record = mRecordMap.get(componentName);
             if (record != null) {
@@ -363,6 +377,7 @@ private void pushSideChannelQueue(Task task) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void handleServiceDisconnected(ComponentName componentName) {
             ListenerRecord record = mRecordMap.get(componentName);
             if (record != null) {
@@ -370,6 +385,7 @@ private void pushSideChannelQueue(Task task) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void handleRetryListenerQueue(ComponentName componentName) {
             ListenerRecord record = mRecordMap.get(componentName);
             if (record != null) {
@@ -399,6 +415,7 @@ private void pushSideChannelQueue(Task task) {
          * Check the current list of enabled listener packages and update the records map
          * accordingly.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private void updateListenerMap() {
             Set<String> enabledPackages = getEnabledListenerPackages(mContext);
             if (enabledPackages.equals(mCachedEnabledPackages)) {
@@ -450,6 +467,7 @@ private void pushSideChannelQueue(Task task) {
          * Ensure we are already attempting to bind to a service, or start a new binding if not.
          * @return Whether the service bind attempt was successful.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private boolean ensureServiceBound(ListenerRecord record) {
             if (record.bound) {
                 return true;
@@ -468,6 +486,7 @@ private void pushSideChannelQueue(Task task) {
         /**
          * Ensure we have unbound from a service.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private void ensureServiceUnbound(ListenerRecord record) {
             if (record.bound) {
                 mContext.unbindService(this);
@@ -481,6 +500,7 @@ private void pushSideChannelQueue(Task task) {
          * After a maximum number of attempts (with exponential back-off), start
          * dropping pending tasks for this listener.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private void scheduleListenerRetry(ListenerRecord record) {
             if (mHandler.hasMessages(MSG_RETRY_LISTENER_QUEUE, record.componentName)) {
                 return;
@@ -504,6 +524,7 @@ private void pushSideChannelQueue(Task task) {
          * Perform a processing step for a listener. First check the bind state, then attempt
          * to flush the task queue, and if an error is encountered, schedule a retry.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private void processListenerQueue(ListenerRecord record) {
             if (Log.isLoggable(TAG, Log.DEBUG)) {
                 Log.d(TAG, "Processing component " + record.componentName + ", "
@@ -591,6 +612,7 @@ private void pushSideChannelQueue(Task task) {
             this.notif = notif;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void send(INotificationSideChannel service) throws RemoteException {
             service.notify(packageName, id, tag, notif);
@@ -627,6 +649,7 @@ private void pushSideChannelQueue(Task task) {
             this.all = false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void send(INotificationSideChannel service) throws RemoteException {
             if (all) {

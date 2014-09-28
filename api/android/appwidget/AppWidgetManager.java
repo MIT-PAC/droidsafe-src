@@ -27,8 +27,8 @@ public class AppWidgetManager {
      * Context} object.
      */
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.836 -0500", hash_original_method = "B3DF940F92A954D76F9893B692CC4E1A", hash_generated_method = "FBD8819BDCBC06F139EF4AD791BDB899")
     
 public static AppWidgetManager getInstance(Context context) {
@@ -316,8 +316,8 @@ public List<AppWidgetProviderInfo> getInstalledProviders() {
      * you don't have access to that appWidgetId, null is returned.
      */
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.867 -0500", hash_original_method = "57B0FB21059F64A76489662CF361FBD9", hash_generated_method = "187662D62236692025123F6003B36470")
     
 public AppWidgetProviderInfo getAppWidgetInfo(int appWidgetId) {
@@ -416,8 +416,8 @@ public void unbindRemoteViewsService(int appWidgetId, Intent intent) {
      *            AppWidget provider to find appWidgetIds for.
      */
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.879 -0500", hash_original_method = "A8A608804967C37EB91DAF26AED4E71B", hash_generated_method = "EBB6C66BAE2A4CCABAEDA2DBEF6D8A88")
     
 public int[] getAppWidgetIds(ComponentName provider) {

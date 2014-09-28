@@ -129,7 +129,7 @@ public void writeToParcel(Parcel dest, int flags) {
     }
     public static final Creator<SupplicantState> CREATOR =
         new Creator<SupplicantState>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.332 -0500", hash_original_method = "AB789E2EA8C8DEE56C8B15C9CBCC7999", hash_generated_method = "5A76E63EE55157824634B36973DA6411")
             
 public SupplicantState createFromParcel(Parcel in) {

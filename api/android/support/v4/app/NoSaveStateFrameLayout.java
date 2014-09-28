@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 
 class NoSaveStateFrameLayout extends FrameLayout {
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.041 -0500", hash_original_method = "45D681996876077CE8F6D1AB53B953F4", hash_generated_method = "BDD516827EA173934CE50CA60ABABD79")
     
 static ViewGroup wrap(View child) {

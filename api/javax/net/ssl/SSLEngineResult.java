@@ -102,6 +102,7 @@ public final int bytesProduced() {
         return bytesProduced;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.433 -0500", hash_original_method = "FF10D49A46BF312B9918894EBDEF7098", hash_generated_method = "2AE8A0263080A5FEF60E2F9EDD7084F5")
     

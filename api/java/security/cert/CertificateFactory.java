@@ -29,6 +29,7 @@ public class CertificateFactory {
      *             installed provider.
      * @throws NullPointerException if {@code type == null}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.891 -0500", hash_original_method = "4AD7FAA844427F176B8B65D577E52F93", hash_generated_method = "87D3B2169C00645004EE6002962939F6")
     
 public static final CertificateFactory getInstance(String type)
@@ -63,6 +64,7 @@ public static final CertificateFactory getInstance(String type)
      * @throws NullPointerException
      *             it {@code type} is {@code null}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.894 -0500", hash_original_method = "8516850578A03892E88112705C313FAD", hash_generated_method = "7918DBFDD3E629F72077CF0ECDDBD807")
     
 public static final CertificateFactory getInstance(String type,
@@ -96,6 +98,7 @@ public static final CertificateFactory getInstance(String type,
      * @throws NullPointerException if {@code type == null}
      * @throws IllegalArgumentException if {@code provider == null}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.897 -0500", hash_original_method = "5A73DDBD4164B592F1D7657222558E65", hash_generated_method = "148B2F0E6CCE90FEBAF4EBBBA3C5CA46")
     
 public static final CertificateFactory getInstance(String type,
@@ -184,6 +187,7 @@ public final String getType() {
      * @throws CertificateException
      *             if parsing problems are detected.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.906 -0500", hash_original_method = "056686B78E96E8E09F6472D6283D322E", hash_generated_method = "0444684966816F1C38BE82369A0C5646")
     
 public final Certificate generateCertificate(InputStream inStream)

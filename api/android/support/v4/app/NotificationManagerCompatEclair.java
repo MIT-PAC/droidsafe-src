@@ -23,6 +23,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 
 class NotificationManagerCompatEclair {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:06.579 -0400", hash_original_method = "74FF0DDA2E79BFBF230DBB58F231F75E", hash_generated_method = "1E2FE2DC9D4D4045BAEED653D66F22E8")
     
 static void cancelNotification(NotificationManager notificationManager, String tag,
@@ -30,6 +31,7 @@ static void cancelNotification(NotificationManager notificationManager, String t
         notificationManager.cancel(tag, id);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:06.582 -0400", hash_original_method = "5F64BEC44C12D87BC3F53167FF59C7E0", hash_generated_method = "809F6F95CBC96967938BE2812C3500DB")
     
 public static void postNotification(NotificationManager notificationManager, String tag, int id,

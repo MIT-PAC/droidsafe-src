@@ -427,7 +427,7 @@ public class Matrix {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void set(Matrix src){
 		// Original method
 		/*
@@ -471,7 +471,7 @@ public class Matrix {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void setTranslate(float dx, float dy){
 		// Original method
 		/*
@@ -513,7 +513,7 @@ public class Matrix {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void setRotate(float degrees, float px, float py){
 		// Original method
 		/*
@@ -527,7 +527,7 @@ public class Matrix {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void setRotate(float degrees){
 		// Original method
 		/*

@@ -134,6 +134,7 @@ public int getSupportDividerWidth() {
                 parentHeightMeasureSpec, heightUsed);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.837 -0400", hash_original_method = "EDE8FB80E830B12698730C9DB4611F11", hash_generated_method = "EDE8FB80E830B12698730C9DB4611F11")
     
 void drawSupportDividersVertical(Canvas canvas) {
@@ -159,6 +160,7 @@ void drawSupportDividersVertical(Canvas canvas) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.839 -0400", hash_original_method = "210F617D0E8448517AEE54F27B30D75D", hash_generated_method = "210F617D0E8448517AEE54F27B30D75D")
     
 void drawSupportDividersHorizontal(Canvas canvas) {
@@ -184,6 +186,7 @@ void drawSupportDividersHorizontal(Canvas canvas) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.842 -0400", hash_original_method = "3121C4E5C42C6D14E3DCC662B7CB6D59", hash_generated_method = "3121C4E5C42C6D14E3DCC662B7CB6D59")
     
 void drawSupportHorizontalDivider(Canvas canvas, int top) {
@@ -192,6 +195,7 @@ void drawSupportHorizontalDivider(Canvas canvas, int top) {
         mDivider.draw(canvas);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.844 -0400", hash_original_method = "D47715CC902B99CA03ABB3CEF0124B21", hash_generated_method = "D47715CC902B99CA03ABB3CEF0124B21")
     
 void drawSupportVerticalDivider(Canvas canvas, int left) {
@@ -206,6 +210,7 @@ void drawSupportVerticalDivider(Canvas canvas, int left) {
      * @param childIndex Index of child to check for preceding divider
      * @return true if there should be a divider before the child at childIndex
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:47.847 -0400", hash_original_method = "B68F83839432088DEBC23D7BB0EB72B3", hash_generated_method = "EBBA55875E8D704BFD90E4E01B3377FC")
     
 protected boolean hasSupportDividerBeforeChildAt(int childIndex) {

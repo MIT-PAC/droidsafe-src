@@ -19,7 +19,8 @@ public AccessControlContext(ProtectionDomain[] context) { }
     
 public void checkPermission(Permission perm) throws AccessControlException { }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.902 -0500", hash_original_method = "9A971105212191ED79C64AFC11FE52C6", hash_generated_method = "7E2816248A48E4F46D6769D56B1CA5BF")
     
 public DomainCombiner getDomainCombiner() { return null; }

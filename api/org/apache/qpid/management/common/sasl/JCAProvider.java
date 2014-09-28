@@ -52,6 +52,7 @@ public JCAProvider(Map<String, Class<? extends SaslClientFactory>> providerMap)
      *
      * @param providerMap The map from SASL mechanims to implementing factory classes.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.241 -0400", hash_original_method = "2EF87AD3412C8E9EB3D4F13BE6685C5B", hash_generated_method = "FDD416E4802C9DADCD6D4A621EAD160E")
     
 private void register(Map<String, Class<? extends SaslClientFactory>> providerMap)

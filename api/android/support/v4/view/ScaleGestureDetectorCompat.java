@@ -36,11 +36,13 @@ public class ScaleGestureDetectorCompat {
     }
 
     private static class BaseScaleGestureDetectorImpl implements ScaleGestureDetectorImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setQuickScaleEnabled(Object o, boolean enabled) {
             // Intentionally blank
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isQuickScaleEnabled(Object o) {
             return false;
@@ -48,11 +50,13 @@ public class ScaleGestureDetectorCompat {
     }
 
     private static class ScaleGestureDetectorCompatKitKatImpl implements ScaleGestureDetectorImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setQuickScaleEnabled(Object o, boolean enabled) {
             ScaleGestureDetectorCompatKitKat.setQuickScaleEnabled(o, enabled);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isQuickScaleEnabled(Object o) {
             return ScaleGestureDetectorCompatKitKat.isQuickScaleEnabled(o);

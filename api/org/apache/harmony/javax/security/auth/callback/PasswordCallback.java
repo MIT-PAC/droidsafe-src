@@ -23,8 +23,6 @@ import droidsafe.helpers.*;
 import java.io.Serializable;
 import java.util.Arrays;
 
-
-
 /**
  * Is used in conjunction with a {@link CallbackHandler} to retrieve a password
  * when needed.
@@ -32,18 +30,14 @@ import java.util.Arrays;
 public class PasswordCallback implements Callback, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.928 -0400", hash_original_field = "30EA3D53279820373EB2F3A169D6AF84", hash_generated_field = "D3C30598DA322C32BB3F1988E72B00C5")
 
-
     private static final long serialVersionUID = 2267422647454909926L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.929 -0400", hash_original_field = "E39008C8C5530C4D0AB35F720027C03F", hash_generated_field = "73A8FB617E5E6FEE69E01BC210863E4D")
-
 
     private String prompt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.931 -0400", hash_original_field = "085E002B7F9684AE04B61B19556E3A7A", hash_generated_field = "085E002B7F9684AE04B61B19556E3A7A")
 
-
     boolean echoOn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.932 -0400", hash_original_field = "7E289BD19E05568A632B0E32D8978F5C", hash_generated_field = "F66C98CBF0A43E25F25A4C8C5C084787")
-
 
     private char[] inputPassword;
 
@@ -63,6 +57,7 @@ public PasswordCallback(String prompt, boolean echoOn) {
         this.echoOn = echoOn;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.932 -0400", hash_original_method = "9EFCCD34B045F08496157FF2D5B3E79B", hash_generated_method = "E651FD936DA3C8F1DDC627DEB735645F")
     
 private void setPrompt(String prompt) throws IllegalArgumentException {
@@ -105,6 +100,7 @@ public boolean isEchoOn() {
      *            the password. A copy of this is stored, so subsequent changes
      *            to the input array do not affect the {@code PasswordCallback}.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.935 -0400", hash_original_method = "A602CEA65D3FCE1A9999A6860447F09F", hash_generated_method = "33F79571242EF0FC930743511AE8953B")
     
 public void setPassword(char[] password) {
@@ -125,6 +121,8 @@ public void setPassword(char[] password) {
      *         returned, so subsequent changes to the internal password do not
      *         affect the result.
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.935 -0400", hash_original_method = "5EC08C3E76624CC9F22EE28EB19509D9", hash_generated_method = "F6811A75D4964F0A309EF047CF257E79")
     
 public char[] getPassword() {
@@ -139,6 +137,7 @@ public char[] getPassword() {
     /**
      * Clears the password stored in this {@code PasswordCallback}.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.936 -0400", hash_original_method = "C115B79B56D59F71CAFFFA3A677E976D", hash_generated_method = "D23C14AD6009C33B2F88D2A2A55790C6")
     
 public void clearPassword() {

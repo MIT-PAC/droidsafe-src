@@ -334,7 +334,7 @@ public Condition newCondition() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.143 -0500", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "23450A0B964DC4287A7BC5121FF3D992")
     
 public int getHoldCount() {
@@ -493,7 +493,7 @@ public final boolean hasQueuedThread(Thread thread) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.160 -0500", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "EA91B63888B7C015D6A36669988D4E4A")
     
 public final int getQueueLength() {

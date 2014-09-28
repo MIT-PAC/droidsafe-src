@@ -171,7 +171,7 @@ public final String getAlgorithm() {
      *             if the specified {@code keySpec} is invalid
      */
     @DSComment("no suspicious activity, just creates object")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.733 -0500", hash_original_method = "D16F4EDBCE8E03F680EB7C937E0DCCC9", hash_generated_method = "102444EC2B52369C13232B3079E12538")
     
 public final PublicKey generatePublic(KeySpec keySpec)

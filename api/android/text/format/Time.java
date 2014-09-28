@@ -665,7 +665,7 @@ public boolean parse3339(String s) {
      * Sets the time of the given Time object to the current time.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.809 -0500", hash_original_method = "6CDA1CA0525F04C652EDF79AA26F0E90", hash_generated_method = "15AB5FFDBF444B39AECF6C7B3D1436D7")
     
     public void setToNow(){
@@ -720,6 +720,7 @@ public boolean parse3339(String s) {
      * to read back the same milliseconds that you set with {@link #set(long)}
      * or {@link #set(Time)} or after parsing a date string.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.813 -0500", hash_original_method = "C1956449864825DE1FCC969EAC519409", hash_generated_method = "D0531688B3741002E0E1F71977D0DF65")

@@ -32,8 +32,8 @@ public class ParcelFileDescriptor implements Parcelable {
      * file does not exist or can not be opened with the requested mode.
      */
     @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
-    @DSSource({DSSourceKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.028 -0500", hash_original_method = "6C139DF2C99367764164B889BB05F5C6", hash_generated_method = "A4FC67A1E0EC81E84D832D0DE58F7F12")
     
 public static ParcelFileDescriptor open(File file, int mode)
@@ -223,7 +223,7 @@ public static ParcelFileDescriptor[] createPipe() throws IOException {
 
     public static final Parcelable.Creator<ParcelFileDescriptor> CREATOR
             = new Parcelable.Creator<ParcelFileDescriptor>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.114 -0500", hash_original_method = "621772CCC7C69481AB7D1DD9C7D31515", hash_generated_method = "C75A0CCB573FDF26B2F51326F4C00124")
         
 public ParcelFileDescriptor createFromParcel(Parcel in) {
@@ -291,9 +291,9 @@ public ParcelFileDescriptor dup() throws IOException {
      *
      * @return Returns the FileDescriptor associated with this object.
      */
-    @DSSource({DSSourceKind.FILE})
+    
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.061 -0500", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "E5BF1F22A9EE48D78F7BADE5BB998512")
     

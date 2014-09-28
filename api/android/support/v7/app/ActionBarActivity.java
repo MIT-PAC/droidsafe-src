@@ -66,6 +66,7 @@ public class ActionBarActivity extends FragmentActivity implements ActionBar.Cal
      *
      * @return The Activity's ActionBar, or null if it does not have one.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.393 -0400", hash_original_method = "A7EEAB292CD7D39E94A27DFF134AA8C8", hash_generated_method = "2B2B7A1DE88BC371EAF8A5C058B3A3CE")
     
 public ActionBar getSupportActionBar() {
@@ -149,6 +150,7 @@ public ActionBar getSupportActionBar() {
         mImpl.onPostResume();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.471 -0400", hash_original_method = "FBF41060A4407ADC1A907BCF46CAEA7E", hash_generated_method = "3AF4C91567D16E9E88528F23A58054C1")
     
 @Override
@@ -206,6 +208,7 @@ public boolean supportRequestWindowFeature(int featureId) {
         return mImpl.supportRequestWindowFeature(featureId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.506 -0400", hash_original_method = "A14B8C8ED62F41B7F00E71FA28F98E50", hash_generated_method = "D32D03C7657C517E5530A501E97B6C87")
     
 @Override
@@ -223,6 +226,7 @@ public boolean supportRequestWindowFeature(int featureId) {
      *
      * @param mode The new action mode.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.513 -0400", hash_original_method = "A04B79009CE228312B38627AAADD475C", hash_generated_method = "D2A32CDCE886B3B6C4A424B9451ACCA7")
     
 public void onSupportActionModeStarted(ActionMode mode) {
@@ -234,6 +238,7 @@ public void onSupportActionModeStarted(ActionMode mode) {
      *
      * @param mode The action mode that just finished.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.521 -0400", hash_original_method = "D8B68FB20189DFD1BF1EB7309BFA69B0", hash_generated_method = "58611AAB3481BA235847201B2247A5D5")
     
 public void onSupportActionModeFinished(ActionMode mode) {
@@ -264,6 +269,7 @@ public ActionMode startSupportActionMode(ActionMode.Callback callback) {
     /**
      * @hide
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.548 -0400", hash_original_method = "06C525CBDEA9BF8398C6276535DF3B17", hash_generated_method = "8A61671CD7CF6F414E6DA928505191E8")
     
 @Override
@@ -271,48 +277,56 @@ public ActionMode startSupportActionMode(ActionMode.Callback callback) {
         return mImpl.onPrepareOptionsPanel(view, menu);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.553 -0400", hash_original_method = "77C3BCD8F446C1201EB8C854BCFEA35E", hash_generated_method = "77C3BCD8F446C1201EB8C854BCFEA35E")
     
 void superSetContentView(int resId) {
         super.setContentView(resId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.558 -0400", hash_original_method = "3658A5197B85EC285F9D5D16A667E587", hash_generated_method = "3658A5197B85EC285F9D5D16A667E587")
     
 void superSetContentView(View v) {
         super.setContentView(v);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.565 -0400", hash_original_method = "50DC2D989CB129E9712D4A54FCB3C3B7", hash_generated_method = "50DC2D989CB129E9712D4A54FCB3C3B7")
     
 void superSetContentView(View v, ViewGroup.LayoutParams lp) {
         super.setContentView(v, lp);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.571 -0400", hash_original_method = "2C7DAAEFF3D02EBA8470C1BDEF7069D1", hash_generated_method = "2C7DAAEFF3D02EBA8470C1BDEF7069D1")
     
 void superAddContentView(View v, ViewGroup.LayoutParams lp) {
         super.addContentView(v, lp);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.575 -0400", hash_original_method = "7AA13DE4A18FBB6F633A8BC885690E08", hash_generated_method = "7AA13DE4A18FBB6F633A8BC885690E08")
     
 boolean superOnCreatePanelMenu(int featureId, android.view.Menu frameworkMenu) {
         return super.onCreatePanelMenu(featureId, frameworkMenu);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.581 -0400", hash_original_method = "77DD8DEC743C1393902BAB8A9BF30785", hash_generated_method = "77DD8DEC743C1393902BAB8A9BF30785")
     
 boolean superOnPreparePanel(int featureId, View view, android.view.Menu menu) {
         return super.onPreparePanel(featureId, view, menu);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.586 -0400", hash_original_method = "195A97FCC9CA574AA72E4BAA813DC438", hash_generated_method = "195A97FCC9CA574AA72E4BAA813DC438")
     
 boolean superOnPrepareOptionsPanel(View view, Menu menu) {
         return super.onPrepareOptionsPanel(view, menu);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.591 -0400", hash_original_method = "2D2DDC7C730DE0A179351287B77B801D", hash_generated_method = "2D2DDC7C730DE0A179351287B77B801D")
     
 boolean superOnMenuItemSelected(int featureId, MenuItem menuItem) {
@@ -419,6 +433,7 @@ public void setSupportProgress(int progress) {
      * @param builder An empty TaskStackBuilder - the application should add intents representing
      *                the desired task stack
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.622 -0400", hash_original_method = "8C95C6CCFF61BB92C67C24D1C44B8BBF", hash_generated_method = "0D0A5EDBFB1CF25DE533D44AB1253B55")
     
 public void onCreateSupportNavigateUpTaskStack(TaskStackBuilder builder) {
@@ -440,6 +455,7 @@ public void onCreateSupportNavigateUpTaskStack(TaskStackBuilder builder) {
      * @param builder A TaskStackBuilder that has been populated with Intents by
      *                onCreateNavigateUpTaskStack.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.628 -0400", hash_original_method = "8C51F939561320E9CFFD6852FBDF0A45", hash_generated_method = "15139F10D4202F74D7BF67F7B4CBA4B1")
     
 public void onPrepareSupportNavigateUpTaskStack(TaskStackBuilder builder) {
@@ -468,6 +484,7 @@ public void onPrepareSupportNavigateUpTaskStack(TaskStackBuilder builder) {
      * @return true if Up navigation completed successfully and this Activity was finished,
      *         false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.634 -0400", hash_original_method = "EC83D49F04104AC8C7AA1871463F9588", hash_generated_method = "C2885D9B937E26BAD6C07877EAD8BE6E")
     
 public boolean onSupportNavigateUp() {
@@ -506,6 +523,7 @@ public boolean onSupportNavigateUp() {
      *
      * @return a new Intent targeting the defined parent activity of sourceActivity
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.640 -0400", hash_original_method = "C29CF7F5D04C484841AFBFE4194EBD60", hash_generated_method = "4B35CAECCA38ED679B7EE399B262BD4E")
     
 public Intent getSupportParentActivityIntent() {
@@ -525,6 +543,7 @@ public Intent getSupportParentActivityIntent() {
      * @return true if navigating up should recreate a new task stack, false if the same task
      *         should be used for the destination
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.645 -0400", hash_original_method = "EE8B48E28B0260D6F4321C1BDE9EC342", hash_generated_method = "A2158B89EDAAD542B662A3479F93FFA2")
     
 public boolean supportShouldUpRecreateTask(Intent targetIntent) {
@@ -543,12 +562,14 @@ public boolean supportShouldUpRecreateTask(Intent targetIntent) {
      *
      * @param upIntent An intent representing the target destination for up navigation
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.649 -0400", hash_original_method = "00086B55975687817AF2DD0048FA0334", hash_generated_method = "945B5303AE50F0926FACEDDB238DDD24")
     
 public void supportNavigateUpTo(Intent upIntent) {
         NavUtils.navigateUpTo(this, upIntent);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.654 -0400", hash_original_method = "5EA5EC62A087ADF79D8CA8D7C9446A6D", hash_generated_method = "7F2A0467DCFE1E73D9CAB4B35896D843")
     
 @Override
@@ -570,6 +591,7 @@ public final void onContentChanged() {
      * This hook is called whenever the content view of the screen changes.
      * @see android.app.Activity#onContentChanged()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:29.664 -0400", hash_original_method = "F56B7C8CA328FB1ED7ED79921B024825", hash_generated_method = "860C1816E42A5EB18B9FDE5948E4A5A8")
     
 public void onSupportContentChanged() {

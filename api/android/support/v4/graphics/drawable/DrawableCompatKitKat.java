@@ -25,12 +25,14 @@ import android.graphics.drawable.Drawable;
  * Implementation of drawable compatibility that can call KitKat APIs.
  */
 class DrawableCompatKitKat {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:57.378 -0400", hash_original_method = "E205005DC380054AB24338FFDCEBE7D6", hash_generated_method = "65F8009068D642425535F4F0C7658819")
     
 public static void setAutoMirrored(Drawable drawable, boolean mirrored) {
         drawable.setAutoMirrored(mirrored);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:57.387 -0400", hash_original_method = "9999C5BE66159918E57304A5E62272CA", hash_generated_method = "3FCC490ADEB72633A5C186B8F7BCC634")
     
 public static boolean isAutoMirrored(Drawable drawable) {

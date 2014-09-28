@@ -104,6 +104,7 @@ public ListMenuPresenter(int itemLayoutRes, int themeRes) {
         mThemeRes = themeRes;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.762 -0400", hash_original_method = "B06876D268F5C42133E0430317BB8CBD", hash_generated_method = "204354E8A96FC3336C52D3A7623F0334")
     
 @Override
@@ -123,6 +124,7 @@ public ListMenuPresenter(int itemLayoutRes, int themeRes) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.766 -0400", hash_original_method = "0C5FC172E40DC5B2165333A64D406B09", hash_generated_method = "827347CCF65995F39B76ED15BE434A84")
     
 @Override
@@ -152,6 +154,7 @@ public ListMenuPresenter(int itemLayoutRes, int themeRes) {
      *
      * @return A ListAdapter containing the items in the menu.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.769 -0400", hash_original_method = "0BC897630B7168BFB6657AF356C42C40", hash_generated_method = "B4E5B75BF7091EBDFCCF01FFF7B9AB1A")
     
 public ListAdapter getAdapter() {
@@ -161,6 +164,7 @@ public ListAdapter getAdapter() {
         return mAdapter;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.773 -0400", hash_original_method = "B269BCE0FCD16A3C9FF695C128351C90", hash_generated_method = "A036D0BC4ABD4D3959577205F0CFFCB5")
     
 @Override
@@ -168,6 +172,7 @@ public ListAdapter getAdapter() {
         if (mAdapter != null) mAdapter.notifyDataSetChanged();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.775 -0400", hash_original_method = "80E7AE02A73BB486D54AC38F406B92BB", hash_generated_method = "134C4ECD69F6A8E80406A6DEB25A8FB6")
     
 @Override
@@ -175,6 +180,7 @@ public ListAdapter getAdapter() {
         mCallback = cb;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.778 -0400", hash_original_method = "A83D74A7B8E34BCB39AA6BC5FD37D18B", hash_generated_method = "D23A503D4380391CFAA054E7CBC2D8E0")
     
 @Override
@@ -189,6 +195,7 @@ public ListAdapter getAdapter() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.781 -0400", hash_original_method = "722067599CD4502E441718E90CBC0EB7", hash_generated_method = "FAC3A559CFAC6E70555799B58C4E2B3C")
     
 @Override
@@ -220,6 +227,7 @@ public void setItemIndexOffset(int offset) {
         mMenu.performItemAction(mAdapter.getItem(position), 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.791 -0400", hash_original_method = "4C665EA7F97447510193964EEFD645AE", hash_generated_method = "53EA63F11892B6B76B90A02A4F7BB199")
     
 @Override
@@ -227,18 +235,21 @@ public void setItemIndexOffset(int offset) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.794 -0400", hash_original_method = "5F1249279FE45B816C21E97DA3013708", hash_generated_method = "1AC0563B74EC3CB7F8AA75918408F79E")
     
 public boolean expandItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.797 -0400", hash_original_method = "06DF13061AFE044B0D38F9C19B18A57A", hash_generated_method = "7FACC901E2C2CF1ADC66B0D53290352D")
     
 public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.800 -0400", hash_original_method = "0B368829F15D6906C64A9F7093B6493E", hash_generated_method = "E2D182ABBF8575D0C08F2BC9BB5AED96")
     
 public void saveHierarchyState(Bundle outState) {
@@ -249,6 +260,7 @@ public void saveHierarchyState(Bundle outState) {
         outState.putSparseParcelableArray(VIEWS_TAG, viewStates);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.803 -0400", hash_original_method = "E2F747E0F2ADA663434186ED511D575C", hash_generated_method = "6EF6D2B19884659420CC23ADA7EC2F0B")
     
 public void restoreHierarchyState(Bundle inState) {
@@ -264,6 +276,7 @@ public void setId(int id) {
         mId = id;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.808 -0400", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "BC4C27E4438CAC23C8715847D5623BF8")
     
 @Override
@@ -271,6 +284,7 @@ public void setId(int id) {
         return mId;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.811 -0400", hash_original_method = "C6EC2F945334B683C122C10C6725C92E", hash_generated_method = "F55B563C9EADDCBF46B7CC2E23275808")
     
 @Override
@@ -284,6 +298,7 @@ public void setId(int id) {
         return state;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.814 -0400", hash_original_method = "4E57F37A0749F365E081EFA3C3A26D3A", hash_generated_method = "4B003FD3C48144E4D83B6FD446FFEF9F")
     
 @Override
@@ -308,8 +323,7 @@ public void setId(int id) {
             }
             return count - 1;
         }
-
-        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        
         @DSSafe(DSCat.SAFE_LIST)
         public MenuItemImpl getItem(int position) {
             ArrayList<MenuItemImpl> items = mMenu.getNonActionItems();
@@ -339,6 +353,7 @@ public void setId(int id) {
             return convertView;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         void findExpandedIndex() {
             final MenuItemImpl expandedItem = mMenu.getExpandedItem();
             if (expandedItem != null) {

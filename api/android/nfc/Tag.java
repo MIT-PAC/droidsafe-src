@@ -73,7 +73,7 @@ static void writeBytesWithNull(Parcel out, byte[] b) {
 
     public static final Parcelable.Creator<Tag> CREATOR =
             new Parcelable.Creator<Tag>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.193 -0500", hash_original_method = "C00F8D9D166881C90A27311ADAB142C9", hash_generated_method = "EAC3D445FD95375F7D2FBC6BE96C1F95")
         
 @Override

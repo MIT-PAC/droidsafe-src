@@ -21,7 +21,6 @@ public final class CameraPosition implements com.google.android.gms.common.inter
 public static final CameraPosition fromLatLngZoom(LatLng  r0, float  f0)
     {
 
-
         return new CameraPosition(r0, f0, 0.0F, 0.0F);
     }
 
@@ -29,7 +28,6 @@ public static final CameraPosition fromLatLngZoom(LatLng  r0, float  f0)
     
 public static CameraPosition.Builder builder()
     {
-
 
         return new CameraPosition.Builder();
     }
@@ -136,10 +134,10 @@ public void writeToParcel(Parcel  r1, int  i0)
 public int describeContents()
     {
 
-
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 12:12:25.569 -0400", hash_original_method = "D3DB49F02EFCE01530531C1081DFF9FF", hash_generated_method = "B76AB81E74AB82C13DE8281FC98BCC3D")
     
 public int hashCode()
@@ -154,6 +152,7 @@ int getVersionCode()
         return xM;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 12:12:25.613 -0400", hash_original_method = "98D7EFCEB2F065459601698299791F05", hash_generated_method = "FABF3A0A18B633447ADF351B30D26468")
     
 public boolean equals(Object  r1)
@@ -161,6 +160,7 @@ public boolean equals(Object  r1)
     	return DSUtils.toTaintBoolean(hashCode() + r1.hashCode());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 12:12:25.621 -0400", hash_original_method = "8D2817BB5CC33FE15796743BB64CFB64", hash_generated_method = "193FEC672B46B6A4590A68AE6072BDDF")
     
 public String toString()
@@ -174,7 +174,6 @@ public String toString()
     {
         CREATOR = new CameraPositionCreator(DSOnlyType.DONTCARE);
     }
-    
     
     private static class Builder {
 

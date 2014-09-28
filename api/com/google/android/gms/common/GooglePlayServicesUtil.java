@@ -160,7 +160,7 @@ public static int isGooglePlayServicesAvailable(Context  r0)
     	return r0.getTaintInt();
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.466 -0400", hash_original_method = "A045109A6FDD6FF2CC8F4A56EA4CC95B", hash_generated_method = "73A68097DEDC5FE74F062277B023738C")
     
 public static Dialog getErrorDialog(int  i0, Activity  r0, int  i1)
@@ -168,7 +168,7 @@ public static Dialog getErrorDialog(int  i0, Activity  r0, int  i1)
         return GooglePlayServicesUtil.getErrorDialog(i0, r0, i1, null);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.471 -0400", hash_original_method = "A98D111154C8DBD93DAAFC02FC4D15B1", hash_generated_method = "1AF04B4D46569BFF07E3D7AF0FEF4A93")
     
 public static Dialog getErrorDialog(int  i0, Activity  r0, int  i1, DialogInterface.OnCancelListener  r1)

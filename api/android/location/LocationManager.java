@@ -139,7 +139,7 @@ public List<String> getAllProviders() {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.060 -0500", hash_original_method = "229C505A2DE7B350090013A910A6BB48", hash_generated_method = "6058E4EB9E5B3F4B8E8A47C61C812AB9")
     
 public List<String> getProviders(boolean enabledOnly) {
@@ -193,7 +193,7 @@ public LocationProvider getProvider(String name) {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.065 -0500", hash_original_method = "03CC9524D6FEF78A1BD79E07965ADEF5", hash_generated_method = "DFE1C66868BC9C2BD5DC8900BED2442F")
     
 public List<String> getProviders(Criteria criteria, boolean enabledOnly) {
@@ -961,7 +961,7 @@ public boolean isProviderEnabled(String provider) {
     
     @DSComment("Location/GPS access")
     @DSSpec(DSCat.LOCATION)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.993 -0400", hash_original_method = "C11453A15D8C96574C829BE27A4B0DFD", hash_generated_method = "7B70CBDE081B95E75A69268514229255")
     
     public Location getLastKnownLocation(String provider) {

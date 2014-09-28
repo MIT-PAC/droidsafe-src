@@ -440,7 +440,8 @@ public abstract void setBackgroundDrawable(Drawable d);
      *
      * @param d Background drawable for the stacked row
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.GUI)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.454 -0500", hash_original_method = "1C087D5A46FF67AB400586D7FD9EC5DB", hash_generated_method = "FD8BDE63083DE44785779942FF8E47A4")
     
 public void setStackedBackgroundDrawable(Drawable d) { }
@@ -453,7 +454,8 @@ public void setStackedBackgroundDrawable(Drawable d) { }
      *
      * @param d Background drawable for the split bar
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.GUI)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.456 -0500", hash_original_method = "195D6A86B8711735C7C3591D31E1AD73", hash_generated_method = "B27F4574AF521C2990817845AE4C0044")
     
 public void setSplitBackgroundDrawable(Drawable d) { }
@@ -546,7 +548,7 @@ public abstract int getDisplayOptions();
      *
      * @see #addTab(Tab)
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.471 -0500", hash_original_method = "51C98EBC6BDC06DC18A9E8866F8861BE", hash_generated_method = "77BC4009C0921A6DD138D75CE9B4F570")
     
 public abstract Tab newTab();
@@ -557,7 +559,7 @@ public abstract Tab newTab();
      *
      * @param tab Tab to add
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.473 -0500", hash_original_method = "F35837BFD462C7A7235BE31AC89CD388", hash_generated_method = "1D41BFDABA8B02F7036FA50765FEE2A8")
     
 public abstract void addTab(Tab tab);
@@ -568,7 +570,7 @@ public abstract void addTab(Tab tab);
      * @param tab Tab to add
      * @param setSelected True if the added tab should become the selected tab.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.475 -0500", hash_original_method = "03FC6188C407C53B36E1AA9A9F9825F2", hash_generated_method = "5FF911FFD1B0D60370BF6E496075568D")
     
 public abstract void addTab(Tab tab, boolean setSelected);
@@ -581,7 +583,7 @@ public abstract void addTab(Tab tab, boolean setSelected);
      * @param tab The tab to add
      * @param position The new position of the tab
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.477 -0500", hash_original_method = "47C47A74736C3C5C240A9F4C3A39B5CE", hash_generated_method = "8EB5E4A4A37440645A9B6B3F04B330D8")
     
 public abstract void addTab(Tab tab, int position);
@@ -594,7 +596,7 @@ public abstract void addTab(Tab tab, int position);
      * @param position The new position of the tab
      * @param setSelected True if the added tab should become the selected tab.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.480 -0500", hash_original_method = "34411259FEC1851A84A2B0BB888392BC", hash_generated_method = "17E2AF636265D00586ABDBCD9E6F1A01")
     
 public abstract void addTab(Tab tab, int position, boolean setSelected);
@@ -605,6 +607,7 @@ public abstract void addTab(Tab tab, int position, boolean setSelected);
      *
      * @param tab The tab to remove
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.482 -0500", hash_original_method = "78DFB6C71B097A76354778D904DE23B5", hash_generated_method = "A3040C95E8ECCD8BC9626485201FCB55")
     
 public abstract void removeTab(Tab tab);
@@ -637,6 +640,7 @@ public abstract void removeAllTabs();
      *
      * @param tab Tab to select
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.488 -0500", hash_original_method = "8E1718C184C4AE74F7681BC46810D8A1", hash_generated_method = "864B0E6D1BA47570A4BDD6DB476B1A5E")
     
 public abstract void selectTab(Tab tab);
@@ -647,6 +651,7 @@ public abstract void selectTab(Tab tab);
      *
      * @return The currently selected tab or null
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.491 -0500", hash_original_method = "A19EA3EC6CDD4397ADA691B5AA1BE15C", hash_generated_method = "EA91820B23E8955D5FCC6D32B0F38CA0")
     
 public abstract Tab getSelectedTab();
@@ -657,6 +662,7 @@ public abstract Tab getSelectedTab();
      * @param index Index value in the range 0-get
      * @return
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.493 -0500", hash_original_method = "BA61A5523E54D07D2733C87EE6788833", hash_generated_method = "A56D134BE99160073AFB06CA543C4F9D")
     
 public abstract Tab getTabAt(int index);
@@ -770,6 +776,7 @@ public abstract Tab setText(int resId);
          * @param view Custom view to be used as a tab.
          * @return The current instance for call chaining
          */
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.539 -0500", hash_original_method = "39AE317657E7B98AB293621E792021E1", hash_generated_method = "BFEBB834525D1EBAFFEBFB81DFA3AC40")
         
 public abstract Tab setCustomView(View view);
@@ -781,6 +788,7 @@ public abstract Tab setCustomView(View view);
          * @param layoutResId A layout resource to inflate and use as a custom tab view
          * @return The current instance for call chaining
          */
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.541 -0500", hash_original_method = "8AEB326D541CDE96271BCA7915A2107E", hash_generated_method = "1E7C132462316B3FE2FB8E8F6929818A")
         
 public abstract Tab setCustomView(int layoutResId);
@@ -802,6 +810,7 @@ public abstract View getCustomView();
          * @param obj Object to store
          * @return The current instance for call chaining
          */
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.547 -0500", hash_original_method = "9035833ACE14324EA71AA8A2BC268CBA", hash_generated_method = "48A9E60BD69D02A3D5AF8D2A2EAFA813")
         
 public abstract Tab setTag(Object obj);
@@ -1025,6 +1034,7 @@ public abstract boolean isShowing();
      *
      * @param listener The new listener to add
      */
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.506 -0500", hash_original_method = "A0EB2307D2177DB0E375516C4E84E1C6", hash_generated_method = "D3A3CFD9A6434CECAC6147D58A8092FB")
     
 public abstract void addOnMenuVisibilityListener(OnMenuVisibilityListener listener);
@@ -1035,6 +1045,7 @@ public abstract void addOnMenuVisibilityListener(OnMenuVisibilityListener listen
      *
      * @param listener A listener to remove that was previously added
      */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.508 -0500", hash_original_method = "FDBC01A5C6DC51A4F9497DFD457C5294", hash_generated_method = "B0AE552A748D3952BEE93437941C9F36")
     
 public abstract void removeOnMenuVisibilityListener(OnMenuVisibilityListener listener);
@@ -1053,7 +1064,8 @@ public abstract void removeOnMenuVisibilityListener(OnMenuVisibilityListener lis
      *
      * @param enabled true to enable the home button, false to disable the home button.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.GUI)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.511 -0500", hash_original_method = "B663ADC8583DEAC97152A4FAD7E4AA4D", hash_generated_method = "624E1920DC02D43F6969E9B91FAA838A")
     
 public void setHomeButtonEnabled(boolean enabled) { }
@@ -1067,25 +1079,30 @@ public void setHomeButtonEnabled(boolean enabled) { }
      *
      * @return A themed Context for creating views
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.GUI)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.513 -0500", hash_original_method = "1844047509BF7744FF58A8E07C1F4469", hash_generated_method = "11CB943795DCD9E1EF76C82D67A0983E")
     
 public Context getThemedContext() { return null; }
     
     //added to support android 19 calls in engagement 4
     //don't seem to have any security implications
+    @DSSafe(DSCat.GUI)
     public void setHomeActionContentDescription (int resId) {
         
     }
 
+    @DSSafe(DSCat.GUI)
     public void setHomeActionContentDescription (CharSequence description) {
         
     }
 
+    @DSSafe(DSCat.GUI)
     public void setHomeAsUpIndicator (int resId) {
         
     }
 
+    @DSSafe(DSCat.GUI)
     public void setHomeAsUpIndicator (Drawable indicator) {
         
     }

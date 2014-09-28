@@ -128,6 +128,7 @@ public Date getTimestamp() {
      *
      * @return a printable representation for this {@code Timestamp}.
      */
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.487 -0500", hash_original_method = "515CC78E7249E5726FD47C9B8B62F1A0", hash_generated_method = "60F4998D56F07749F99B2C39530A9A82")
     

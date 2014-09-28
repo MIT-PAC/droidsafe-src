@@ -121,6 +121,7 @@ ViewPropertyAnimator(View view) {
      * cannot be negative.
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.879 -0500", hash_original_method = "AB53F93DCFA553673F10278B2219DEEA", hash_generated_method = "7DBAE6117C6111F148FBBB4241F58108")
     
 public ViewPropertyAnimator setDuration(long duration) {
@@ -141,7 +142,8 @@ public ViewPropertyAnimator setDuration(long duration) {
      * @see #setDuration(long)
      * @return The duration of animations, in milliseconds.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.881 -0500", hash_original_method = "BFD4BDEC4492EF4D0AE1BFA285B3702C", hash_generated_method = "61ADAD11A07D7EE009448328FC58F753")
     
 public long getDuration() {
@@ -162,7 +164,8 @@ public long getDuration() {
      * @see #setStartDelay(long)
      * @return The startDelay of animations, in milliseconds.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.884 -0500", hash_original_method = "137A1F44FEDEF7DBAEA1EE8251F82E1F", hash_generated_method = "86DE1BBA23FB944616559989A9C60C16")
     
 public long getStartDelay() {
@@ -183,6 +186,7 @@ public long getStartDelay() {
      * cannot be negative.
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.886 -0500", hash_original_method = "55E567100D84151F5304C84C830F2C1B", hash_generated_method = "C859EB205504805BE57D3E4A82E9724F")
     
 public ViewPropertyAnimator setStartDelay(long startDelay) {
@@ -203,6 +207,7 @@ public ViewPropertyAnimator setStartDelay(long startDelay) {
      * @param interpolator The TimeInterpolator to be used for ensuing property animations.
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.888 -0500", hash_original_method = "995017692E981832E150BE79F0CB8507", hash_generated_method = "9B8BC1A182443290DC992248B4394F1F")
     
 public ViewPropertyAnimator setInterpolator(TimeInterpolator interpolator) {
@@ -218,6 +223,7 @@ public ViewPropertyAnimator setInterpolator(TimeInterpolator interpolator) {
      * @param listener The listener to be called with AnimatorListener events.
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.891 -0500", hash_original_method = "D3B983C6B8AF317CF4B7893570C39145", hash_generated_method = "7101A83DA2C3C646CFDF7C01A4888E97")
     
 public ViewPropertyAnimator setListener(Animator.AnimatorListener listener) {
@@ -232,6 +238,7 @@ public ViewPropertyAnimator setListener(Animator.AnimatorListener listener) {
      * the next event is processed by the hierarchy, which is when the animations would begin
      * otherwise), then this method can be used.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.893 -0500", hash_original_method = "8C3C0DB6E3E572D598F887EBD1169042", hash_generated_method = "CF84313E0A656F6B37009570B4E262F7")
     
 public void start() {
@@ -241,6 +248,7 @@ public void start() {
     /**
      * Cancels all property animations that are currently running or pending.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.896 -0500", hash_original_method = "504B77AB05B1FC68628CE89848555449", hash_generated_method = "E2D795A20D1D1525950EBC006B172A7F")
     
 public void cancel() {
@@ -264,6 +272,7 @@ public void cancel() {
      * @see View#setX(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.899 -0500", hash_original_method = "8D670697E365032294CEEA6593A27CE4", hash_generated_method = "8803EAAB3918614F1470ED57F6BA48A4")
     
 public ViewPropertyAnimator x(float value) {
@@ -279,6 +288,7 @@ public ViewPropertyAnimator x(float value) {
      * @see View#setX(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.901 -0500", hash_original_method = "2E3B808D4A6B84F6D09D6182416A5594", hash_generated_method = "B6ABE100F1B770B81F87112251BB7552")
     
 public ViewPropertyAnimator xBy(float value) {
@@ -294,6 +304,7 @@ public ViewPropertyAnimator xBy(float value) {
      * @see View#setY(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.903 -0500", hash_original_method = "6AC23ECE2D15FE0B2F16B84D01FE289F", hash_generated_method = "7D5E0FFC8DC0D0D6A5025A88A960BF73")
     
 public ViewPropertyAnimator y(float value) {
@@ -309,6 +320,7 @@ public ViewPropertyAnimator y(float value) {
      * @see View#setY(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.906 -0500", hash_original_method = "00E84702996DAE91A9CE0634285E6E21", hash_generated_method = "AC914F9D11C14A36E16BA7574B42A713")
     
 public ViewPropertyAnimator yBy(float value) {
@@ -324,6 +336,7 @@ public ViewPropertyAnimator yBy(float value) {
      * @see View#setRotation(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.908 -0500", hash_original_method = "F233DBDEC9778D70C84673F609341CB5", hash_generated_method = "9CB329AE3EF025790988ABFC3D113BCB")
     
 public ViewPropertyAnimator rotation(float value) {
@@ -339,6 +352,7 @@ public ViewPropertyAnimator rotation(float value) {
      * @see View#setRotation(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.910 -0500", hash_original_method = "64AA9FBA8001BF9E52DBF885273C96E3", hash_generated_method = "D7E16058E00B282DC4DB20DDA6EE65E9")
     
 public ViewPropertyAnimator rotationBy(float value) {
@@ -354,6 +368,7 @@ public ViewPropertyAnimator rotationBy(float value) {
      * @see View#setRotationX(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.917 -0500", hash_original_method = "6C5ABF33E117D9BB891BADA4C861CBC2", hash_generated_method = "E6ECDA0BAA469C811EFFB29E67203A65")
     
 public ViewPropertyAnimator rotationX(float value) {
@@ -369,6 +384,7 @@ public ViewPropertyAnimator rotationX(float value) {
      * @see View#setRotationX(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.921 -0500", hash_original_method = "107BE4D9D2AC7B45B56F8331D6FF6E98", hash_generated_method = "78A65A6D3B3DFC71A2A8B778EAFA4C4B")
     
 public ViewPropertyAnimator rotationXBy(float value) {
@@ -384,6 +400,7 @@ public ViewPropertyAnimator rotationXBy(float value) {
      * @see View#setRotationY(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.924 -0500", hash_original_method = "C4C456A89DC44934AFAAB7646D99F320", hash_generated_method = "392043351EF12A33B3D68429B30BAC5F")
     
 public ViewPropertyAnimator rotationY(float value) {
@@ -399,6 +416,7 @@ public ViewPropertyAnimator rotationY(float value) {
      * @see View#setRotationY(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.926 -0500", hash_original_method = "50D1D865E8418E3E5575CE85EA5530DD", hash_generated_method = "C19551BC9F6E3816DC99167E25922AE8")
     
 public ViewPropertyAnimator rotationYBy(float value) {
@@ -414,6 +432,7 @@ public ViewPropertyAnimator rotationYBy(float value) {
      * @see View#setTranslationX(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.928 -0500", hash_original_method = "6A79DB871F5C4E97C4452F0A1C04756A", hash_generated_method = "F8C3AE05EF7B3B150E7A2CC92E85E9EF")
     
 public ViewPropertyAnimator translationX(float value) {
@@ -429,6 +448,7 @@ public ViewPropertyAnimator translationX(float value) {
      * @see View#setTranslationX(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.931 -0500", hash_original_method = "92BE44E9F6280B7AE0D2A8904499350A", hash_generated_method = "5A68C897F2049F6754C8DA6E4CBD57CE")
     
 public ViewPropertyAnimator translationXBy(float value) {
@@ -444,6 +464,7 @@ public ViewPropertyAnimator translationXBy(float value) {
      * @see View#setTranslationY(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.933 -0500", hash_original_method = "B250150142DA03B7AD8AE045EB4F7730", hash_generated_method = "5491A0EA98C716E5394E1F17693AAE39")
     
 public ViewPropertyAnimator translationY(float value) {
@@ -459,6 +480,7 @@ public ViewPropertyAnimator translationY(float value) {
      * @see View#setTranslationY(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.935 -0500", hash_original_method = "5605726C555918AA2A627C8B848E7FA1", hash_generated_method = "E02E4656A8BF8A5819A18FD75D369E76")
     
 public ViewPropertyAnimator translationYBy(float value) {
@@ -637,6 +659,7 @@ NameValuesHolder(int nameConstant, float fromValue, float deltaValue) {
      * @see View#setScaleX(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.937 -0500", hash_original_method = "D5A33D637AF4590F069926DA61E58388", hash_generated_method = "B8E3AAA6B6FB824F0E8EB9AAF658A379")
     
 public ViewPropertyAnimator scaleX(float value) {
@@ -652,6 +675,7 @@ public ViewPropertyAnimator scaleX(float value) {
      * @see View#setScaleX(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.940 -0500", hash_original_method = "631FDEF7985B082E37297CEE1F6072F7", hash_generated_method = "282FA41582C10E3AE571FFC257BAB5FB")
     
 public ViewPropertyAnimator scaleXBy(float value) {
@@ -667,6 +691,7 @@ public ViewPropertyAnimator scaleXBy(float value) {
      * @see View#setScaleY(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.942 -0500", hash_original_method = "4F8C4B940AF7AE45F87D198B1B467EBE", hash_generated_method = "1F8B361ECFDD8AC5A25EB4FFFB7BD686")
     
 public ViewPropertyAnimator scaleY(float value) {
@@ -682,6 +707,7 @@ public ViewPropertyAnimator scaleY(float value) {
      * @see View#setScaleY(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.944 -0500", hash_original_method = "966CE83C4778D118E9F221736109C3B2", hash_generated_method = "CCFF9C8F64E2E93D46D30C8FC4C6B355")
     
 public ViewPropertyAnimator scaleYBy(float value) {
@@ -697,6 +723,7 @@ public ViewPropertyAnimator scaleYBy(float value) {
      * @see View#setAlpha(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.947 -0500", hash_original_method = "0CB6E06CAEEE818FC3721A3BD57FF4EB", hash_generated_method = "7313943BB1C6B61885A855F50AD7A371")
     
 public ViewPropertyAnimator alpha(float value) {
@@ -712,6 +739,7 @@ public ViewPropertyAnimator alpha(float value) {
      * @see View#setAlpha(float)
      * @return This object, allowing calls to methods in this class to be chained.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.949 -0500", hash_original_method = "ECBF15CE25304962FC64383EBA52129F", hash_generated_method = "E2C8F6C46C537B5339E1E5CD392CDBEB")
     
 public ViewPropertyAnimator alphaBy(float value) {
@@ -921,26 +949,26 @@ private float getValue(int propertyConstant) {
     }
 
     //added by ds for api 19 compat
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     public TimeInterpolator getInterpolator() {
         return mInterpolator;
     }
     
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     public ViewPropertyAnimator withEndAction (Runnable runnable) {
         runnable.run();
         return this;
     }
     
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     public ViewPropertyAnimator withStartAction(Runnable runnable) {
         runnable.run();
         return this;
     }
 
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     @DSVerified
     public ViewPropertyAnimator withLayer() { 
         return this;

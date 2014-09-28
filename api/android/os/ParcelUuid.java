@@ -29,7 +29,7 @@ public static ParcelUuid fromString(String uuid) {
 
     public static final Parcelable.Creator<ParcelUuid> CREATOR =
                new Parcelable.Creator<ParcelUuid>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.541 -0500", hash_original_method = "BE0C39B58500BBF13D262DF9616543A0", hash_generated_method = "B27DC4A4AF2601AAD28EE687E1A31292")
         
 public ParcelUuid createFromParcel(Parcel source) {

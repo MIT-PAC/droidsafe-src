@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 public class TimeUtils {
     
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.424 -0500", hash_original_method = "3FC6E7A781E4B58A630369339A3D0BEC", hash_generated_method = "EECD5E318F2EA565268D88054CAB5761")
     
 static private int accumField(int amt, int suffix, boolean always, int zeropad) {
@@ -54,7 +54,7 @@ static private int printField(char[] formatStr, int amt, char suffix, int pos,
     }
     
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.431 -0500", hash_original_method = "826438819CB717CC8A3FB2457A65894D", hash_generated_method = "EF538B9BD0004222912AD3282380374C")
     
 private static int formatDurationLocked(long duration, int fieldLen) {
@@ -129,6 +129,7 @@ private static int formatDurationLocked(long duration, int fieldLen) {
     }
     
     /** @hide Just for debugging; not internationalized. */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.433 -0500", hash_original_method = "1366E789E8CAAE7D93C89843FCE6813C", hash_generated_method = "E6F8E30BB5EB4EE5C89A332DA649D340")
     
 public static void formatDuration(long duration, StringBuilder builder) {
@@ -139,6 +140,7 @@ public static void formatDuration(long duration, StringBuilder builder) {
     }
 
     /** @hide Just for debugging; not internationalized. */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.436 -0500", hash_original_method = "DBDFBA5038D80AC5162259AFC65B8D4F", hash_generated_method = "E6DF4AD700BBBE4613CA341D1572CE70")
     
 public static void formatDuration(long duration, PrintWriter pw, int fieldLen) {
@@ -149,6 +151,7 @@ public static void formatDuration(long duration, PrintWriter pw, int fieldLen) {
     }
 
     /** @hide Just for debugging; not internationalized. */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.438 -0500", hash_original_method = "47E75E59C6A2D5D19177425D09DE2E1A", hash_generated_method = "F77CBB27F677652FA95219D81770895A")
     
 public static void formatDuration(long duration, PrintWriter pw) {
@@ -156,6 +159,7 @@ public static void formatDuration(long duration, PrintWriter pw) {
     }
     
     /** @hide Just for debugging; not internationalized. */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.441 -0500", hash_original_method = "3AF68F24D91F7F9985830C67404B19FC", hash_generated_method = "AA8801589BF409B1AC30FEF25C089C46")
     
 public static void formatDuration(long time, long now, PrintWriter pw) {

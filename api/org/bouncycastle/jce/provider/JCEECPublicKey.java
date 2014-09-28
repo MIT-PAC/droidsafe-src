@@ -476,6 +476,8 @@ public org.bouncycastle.jce.spec.ECParameterSpec getParameters()
         return EC5Util.convertSpec(ecSpec, withCompression);
     }
 
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:35.556 -0500", hash_original_method = "FA9E01D5B24E77318273BFF81F13FFEE", hash_generated_method = "5B834286FC65FFB477093C7DF4D63638")
     
 public ECPoint getW()

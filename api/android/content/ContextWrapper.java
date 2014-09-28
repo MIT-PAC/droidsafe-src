@@ -97,7 +97,7 @@ public ContextWrapper(Context base) {
      */
     @DSComment("delegated to android.content.Context")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.099 -0500", hash_original_method = "348D9A1AC27363C49C4D9EF878F36A33", hash_generated_method = "DA754C99DA3B20091EE22A3809569BE4")
     
 public Context getBaseContext() {
@@ -181,8 +181,7 @@ public Context getBaseContext() {
     public int getThemeResId() {
         return mBase.getThemeResId();
     }
-
-    @DSSource({DSSourceKind.RESOURCES})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.120 -0500", hash_original_method = "A934E0879ABB06742AB01E1FAB54A9BF", hash_generated_method = "A9363DFE0568A2EA37CF4138C68635A9")
     
@@ -192,7 +191,7 @@ public Context getBaseContext() {
     }
 
     @DSComment("Refelction/class loader")
-    @DSSpec(DSCat.CLASS_LOADER)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.122 -0500", hash_original_method = "325690D530E21A0AB255EE9D69D84488", hash_generated_method = "CD16D25F5FDB5376B6D65A38DAD451DB")
     
@@ -246,8 +245,7 @@ public Context getBaseContext() {
     public File getSharedPrefsFile(String name) {
         return mBase.getSharedPrefsFile(name);
     }
-
-    @DSSource({DSSourceKind.PREFERENCES})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.136 -0500", hash_original_method = "51168DD8811589A8A44258F7BDA9D1F0", hash_generated_method = "BB704DA8F5AC55B97A278F82E1650118")
@@ -271,7 +269,7 @@ public Context getBaseContext() {
     @DSVerified
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.FILE})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.141 -0500", hash_original_method = "1B551CEA36C6304276D435BC90F14FD3", hash_generated_method = "01EA4CF88D4454D02E59AE01582F31BB")
     
 @Override
@@ -610,7 +608,7 @@ public Context getBaseContext() {
     
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSpec(DSCat.IPC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
         return receiver.__ds__registerIntentFilter(this, filter)[0];
@@ -624,7 +622,7 @@ public Context getBaseContext() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.217 -0500", hash_original_method = "C498ADCED351E80E96A53362B4745838", hash_generated_method = "33D6C6769721FBE99429C7A0DC3317BE")
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSpec(DSCat.IPC)
 @Override
     public Intent registerReceiver(
         BroadcastReceiver receiver, IntentFilter filter,
@@ -640,7 +638,7 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("No action for callback unregistration")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.220 -0500", hash_original_method = "D3936D1C8F9D43BCF113D4D92126FE25", hash_generated_method = "A589371689D3516AE882F7EC4F1BDC2E")
     
 @Override
@@ -648,6 +646,7 @@ public Context getBaseContext() {
         mBase.unregisterReceiver(receiver);
     }
 
+    @DSSink({DSSinkKind.IPC})
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.SERVICE)
@@ -663,7 +662,7 @@ public Context getBaseContext() {
 
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.225 -0500", hash_original_method = "2538E8D6E7BE6E9AB177EECCCE1CB620", hash_generated_method = "DA0A6458C647468F8B3105A4F87E6EDB")
     
 @Override
@@ -723,8 +722,9 @@ public Context getBaseContext() {
         return true; //mBase.bindService(service, conn, flags);
     }
 
+    @DSSink({DSSinkKind.IPC})
     @DSComment("No action for callback unregistration")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.229 -0500", hash_original_method = "78D7D650BB4D5279C2DB8316AB02503B", hash_generated_method = "9D13666F99397A76F4A8C5FD5E183D4C")
     @DSVerified
     

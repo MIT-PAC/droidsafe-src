@@ -37,6 +37,7 @@ class AccessibilityNodeProviderCompatKitKat {
         public Object findFocus(int focus);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.792 -0400", hash_original_method = "026475B55EC1D12B5CC5C6C6E4D451FF", hash_generated_method = "392E79F3649C31305F256FC713265246")
         
 public static Object newAccessibilityNodeProviderBridge(

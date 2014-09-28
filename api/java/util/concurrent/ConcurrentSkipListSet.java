@@ -302,6 +302,7 @@ public Iterator<E> descendingIterator() {
      * @param o the object to be compared for equality with this set
      * @return {@code true} if the specified object is equal to this set
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:14.518 -0400", hash_original_method = "6A0DE4C77139F252A7F681C504B1BD64", hash_generated_method = "4974694F8B03380E373BDBC2F21688C4")
     
 public boolean equals(Object o) {

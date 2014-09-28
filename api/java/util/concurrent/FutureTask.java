@@ -70,6 +70,7 @@ public boolean isCancelled() {
         return sync.innerIsCancelled();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.317 -0500", hash_original_method = "2C3AC011A196BCCAC0E9F76136242F15", hash_generated_method = "1F4DEE056801950293E35EAEE5791B9F")
     
 public boolean isDone() {
@@ -158,7 +159,7 @@ protected void setException(Throwable t) {
      * Sets this Future to the result of its computation
      * unless it has been cancelled.
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.334 -0500", hash_original_method = "C774B2E8DA9F32069C4712123B43B6CD", hash_generated_method = "D3AE039B798452ECC87270B249B0B99C")
     
 public void run() {

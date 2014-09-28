@@ -57,7 +57,7 @@ public AtomicInteger() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.330 -0500", hash_original_method = "2C5A1089E8025181868581E48D922F38", hash_generated_method = "703E0755BD925C4D70E557B53D2BF771")
     
 public final int get() {
@@ -212,7 +212,7 @@ public final int getAndDecrement() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.351 -0500", hash_original_method = "4B803B85C89B0C062A735FA86D4518AE", hash_generated_method = "95C75EF25F3A5B40B217926C833417D1")
     
 public final int getAndAdd(int delta) {

@@ -105,6 +105,7 @@ public ListFragment() {
      * behavior of ListFragment.  In particular, this is currently the only
      * way to have the built-in indeterminant progress state be shown.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.843 -0500", hash_original_method = "92DD87AA93E8A92E60115765257469F5", hash_generated_method = "47141526668F3B3DB08DC3C1A892C7DC")
     
 @Override
@@ -161,6 +162,7 @@ public ListFragment() {
     /**
      * Attach to list view once the view hierarchy has been created.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.846 -0500", hash_original_method = "3AF156F2799514C47B044D45A77C4F43", hash_generated_method = "87FA002C4A38DB8B9913B90D43B60586")
     
 @Override
@@ -172,6 +174,7 @@ public ListFragment() {
     /**
      * Detach from list view.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.849 -0500", hash_original_method = "4AE67C9B14400A0313E10E10FEB59F4C", hash_generated_method = "FDE84136AAB0B0938E6DA23A8AEBA619")
     
 @Override
@@ -203,6 +206,7 @@ public void onListItemClick(ListView l, View v, int position, long id) {
     /**
      * Provide the cursor for the list view.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.853 -0500", hash_original_method = "B9F859547BD6410EA28F34027A6366BE", hash_generated_method = "24360340D52FA8A6C6E50D86154E3782")
     
 public void setListAdapter(ListAdapter adapter) {
@@ -371,7 +375,7 @@ public ListAdapter getListAdapter() {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.877 -0500", hash_original_method = "2BE3F41178D2C0D0A071A3B313BD8473", hash_generated_method = "1FFE7B332BA9EB9A2B1166C6C1C7F751")
     
 private void ensureList() {

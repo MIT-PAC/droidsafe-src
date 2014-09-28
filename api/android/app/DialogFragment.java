@@ -142,7 +142,7 @@ public void show(FragmentManager manager, String tag) {
      * @return Returns the identifier of the committed transaction, as per
      * {@link FragmentTransaction#commit() FragmentTransaction.commit()}.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.489 -0500", hash_original_method = "040104E30D8A876DF591293449491AA6", hash_generated_method = "09CF06890A0238BCB3134F67E4117897")
     
 public int show(FragmentTransaction transaction, String tag) {

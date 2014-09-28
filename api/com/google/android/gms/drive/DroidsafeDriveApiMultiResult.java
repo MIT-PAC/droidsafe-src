@@ -25,8 +25,8 @@ public class DroidsafeDriveApiMultiResult implements Result, DriveIdResult,
 		addTaint(taint);
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
-	@DSSource({DSSourceKind.GOOGLE_DRIVE})
+	@DSSafe(DSCat.SAFE_LIST)
+	@DSSource({DSSourceKind. GOOGLE_SERVICES})
 	@Override
 	public Contents getContents() {
 		// TODO Auto-generated method stub
@@ -35,8 +35,8 @@ public class DroidsafeDriveApiMultiResult implements Result, DriveIdResult,
 		return contents;
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
-	@DSSource({DSSourceKind.GOOGLE_DRIVE})
+	@DSSafe(DSCat.SAFE_LIST)
+	
 	@Override
 	public MetadataBuffer getMetadataBuffer() {
 		// TODO Auto-generated method stub
@@ -54,7 +54,7 @@ public class DroidsafeDriveApiMultiResult implements Result, DriveIdResult,
 		return id;
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	@Override
 	public Status getStatus() {
 		// TODO Auto-generated method stub

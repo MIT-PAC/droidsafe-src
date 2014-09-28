@@ -56,10 +56,8 @@ public class DSAPublicKeyImpl extends PublicKeyImpl implements DSAPublicKey {
     private static final long serialVersionUID = -2279672131310978336L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:04.307 -0400", hash_original_field = "5066445BC4A74C0C3E5F74CB9398ADD2", hash_generated_field = "56D169B0629E43F286E089C0EF358E41")
 
-
     private BigInteger y, g, p, q;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:04.308 -0400", hash_original_field = "8D522B4B65693839F4E2E5FAE1E0C771", hash_generated_field = "709C246A6619A82DE0494FAF1667DC5F")
-
 
     private transient DSAParams params;
 
@@ -160,6 +158,8 @@ public DSAPublicKeyImpl(X509EncodedKeySpec keySpec)
      * @return
      *      a value of a public key (y).
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:04.310 -0400", hash_original_method = "E902D6151D4FD6CFB5C854DFA08B0568", hash_generated_method = "DFB59F5A3C2E9D3EBF4F764FC762B9D4")
     
 public BigInteger getY() {
@@ -170,6 +170,8 @@ public BigInteger getY() {
      * @return
      *     DSA key parameters (p, q, g).
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:04.311 -0400", hash_original_method = "2D817E93DBDD33B47843C3A6DE30BAA8", hash_generated_method = "4B5BF1196D64639F92126200B0F20348")
     
 public DSAParams getParams() {

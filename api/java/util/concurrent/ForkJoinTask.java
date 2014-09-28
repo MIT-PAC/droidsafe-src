@@ -1098,6 +1098,7 @@ public boolean cancel(boolean mayInterruptIfRunning) {
         return (setCompletion(CANCELLED) & DONE_MASK) == CANCELLED;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:18.974 -0400", hash_original_method = "D86D1628DDB7005DE62E8914ED8025FD", hash_generated_method = "1280750305EBAE832030F993D5F85279")
     
 public final boolean isDone() {

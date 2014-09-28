@@ -1788,7 +1788,8 @@ public synchronized String getDefaultTextEncodingName() {
      * Set the WebView's user-agent string. If the string "ua" is null or empty,
      * it will use the system default user-agent string.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.539 -0500", hash_original_method = "EF76B53D37FAD17B99E355E5158D3AE3", hash_generated_method = "38208C7490CB56FF7A84B2C77C991B39")
     
 public synchronized void setUserAgentString(String ua) {

@@ -56,62 +56,73 @@ public class AccessibilityDelegateCompat {
     }
 
     static class AccessibilityDelegateStubImpl implements AccessibilityDelegateImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         public Object newAccessiblityDelegateDefaultImpl() {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object newAccessiblityDelegateBridge(AccessibilityDelegateCompat listener) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityNodeInfo(Object delegate, View host,
                 AccessibilityNodeInfoCompat info) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, View child,
                 AccessibilityEvent event) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void sendAccessibilityEvent(Object delegate, View host, int eventType) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void sendAccessibilityEventUnchecked(Object delegate, View host,
                 AccessibilityEvent event) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public AccessibilityNodeProviderCompat getAccessibilityNodeProvider(Object delegate,
                 View host) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean performAccessibilityAction(Object delegate, View host, int action,
                 Bundle args) {
@@ -120,55 +131,65 @@ public class AccessibilityDelegateCompat {
     }
 
     static class AccessibilityDelegateIcsImpl extends AccessibilityDelegateStubImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object newAccessiblityDelegateDefaultImpl() {
             return AccessibilityDelegateCompatIcs.newAccessibilityDelegateDefaultImpl();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object newAccessiblityDelegateBridge(final AccessibilityDelegateCompat compat) {
             return AccessibilityDelegateCompatIcs.newAccessibilityDelegateBridge(
                     new AccessibilityDelegateCompatIcs.AccessibilityDelegateBridge() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public boolean dispatchPopulateAccessibilityEvent(View host,
                         AccessibilityEvent event) {
                     return compat.dispatchPopulateAccessibilityEvent(host, event);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
                     compat.onInitializeAccessibilityEvent(host, event);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onInitializeAccessibilityNodeInfo(View host, Object info) {
                     compat.onInitializeAccessibilityNodeInfo(host,
                             new AccessibilityNodeInfoCompat(info));
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
                     compat.onPopulateAccessibilityEvent(host, event);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                         AccessibilityEvent event) {
                     return compat.onRequestSendAccessibilityEvent(host, child, event);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void sendAccessibilityEvent(View host, int eventType) {
                     compat.sendAccessibilityEvent(host, eventType);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event) {
                     compat.sendAccessibilityEventUnchecked(host, event);
                 }
             });
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
@@ -176,12 +197,14 @@ public class AccessibilityDelegateCompat {
                     host, event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
             AccessibilityDelegateCompatIcs.onInitializeAccessibilityEvent(delegate, host, event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityNodeInfo(Object delegate, View host,
                 AccessibilityNodeInfoCompat info) {
@@ -189,12 +212,14 @@ public class AccessibilityDelegateCompat {
                     info.getInfo());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
             AccessibilityDelegateCompatIcs.onPopulateAccessibilityEvent(delegate, host, event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, View child,
                 AccessibilityEvent event) {
@@ -202,11 +227,13 @@ public class AccessibilityDelegateCompat {
                     child, event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void sendAccessibilityEvent(Object delegate, View host, int eventType) {
             AccessibilityDelegateCompatIcs.sendAccessibilityEvent(delegate, host, eventType);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void sendAccessibilityEventUnchecked(Object delegate, View host,
                 AccessibilityEvent event) {
@@ -215,63 +242,74 @@ public class AccessibilityDelegateCompat {
     }
 
     static class AccessibilityDelegateJellyBeanImpl extends AccessibilityDelegateIcsImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object newAccessiblityDelegateBridge(final AccessibilityDelegateCompat compat) {
             return AccessibilityDelegateCompatJellyBean.newAccessibilityDelegateBridge(
                     new AccessibilityDelegateCompatJellyBean
                             .AccessibilityDelegateBridgeJellyBean() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public boolean dispatchPopulateAccessibilityEvent(View host,
                         AccessibilityEvent event) {
                     return compat.dispatchPopulateAccessibilityEvent(host, event);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
                     compat.onInitializeAccessibilityEvent(host, event);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onInitializeAccessibilityNodeInfo(View host, Object info) {
                     compat.onInitializeAccessibilityNodeInfo(host,
                             new AccessibilityNodeInfoCompat(info));
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
                     compat.onPopulateAccessibilityEvent(host, event);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                         AccessibilityEvent event) {
                     return compat.onRequestSendAccessibilityEvent(host, child, event);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void sendAccessibilityEvent(View host, int eventType) {
                     compat.sendAccessibilityEvent(host, eventType);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event) {
                     compat.sendAccessibilityEventUnchecked(host, event);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public Object getAccessibilityNodeProvider(View host) {
                     AccessibilityNodeProviderCompat provider =
                         compat.getAccessibilityNodeProvider(host);
                     return (provider != null) ? provider.getProvider() : null;
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public boolean performAccessibilityAction(View host, int action, Bundle args) {
                     return compat.performAccessibilityAction(host, action, args);
                 }
             });
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public AccessibilityNodeProviderCompat getAccessibilityNodeProvider(Object delegate,
                 View host) {
@@ -283,6 +321,7 @@ public class AccessibilityDelegateCompat {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean performAccessibilityAction(Object delegate, View host, int action,
                 Bundle args) {
@@ -291,7 +330,6 @@ public class AccessibilityDelegateCompat {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:57.986 -0400", hash_original_field = "13943D57EDEED9A173F5F68E5210D679", hash_generated_field = "69637AEE9A0A7BCD1114720A430081E5")
-
 
     private static  AccessibilityDelegateImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:57.992 -0400", hash_original_field = "40AEF38903E1CAF710B76F2110800697", hash_generated_field = "2FAA9D9F17162833D2EDFD9409B491F8")
@@ -310,7 +348,6 @@ public class AccessibilityDelegateCompat {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.002 -0400", hash_original_field = "FB4910AEBDA35C6A7EDDEEAAF16AFC5E", hash_generated_field = "FB4910AEBDA35C6A7EDDEEAAF16AFC5E")
 
-
      Object mBridge;
 
     /**
@@ -325,6 +362,7 @@ public AccessibilityDelegateCompat() {
     /**
      * @return The wrapped bridge implementation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.013 -0400", hash_original_method = "29194344028099349300BA7E9C8229CD", hash_generated_method = "29194344028099349300BA7E9C8229CD")
         
 Object getBridge() {
@@ -345,6 +383,7 @@ Object getBridge() {
      *
      * @see View#sendAccessibilityEvent(int) View#sendAccessibilityEvent(int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.019 -0400", hash_original_method = "AF292CC2C422FC35BC5B564D13D2EFD0", hash_generated_method = "F4DE4730815B36F8B2C48D1F87C14F30")
         
 public void sendAccessibilityEvent(View host, int eventType) {
@@ -369,6 +408,7 @@ public void sendAccessibilityEvent(View host, int eventType) {
      * @see View#sendAccessibilityEventUnchecked(AccessibilityEvent)
      *      View#sendAccessibilityEventUnchecked(AccessibilityEvent)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.025 -0400", hash_original_method = "B8A02114F1FBE7409787CB3469B3FB8D", hash_generated_method = "80CA7DA1CBEE9E99E743A4DFFB64F5AC")
         
 public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event) {
@@ -392,6 +432,7 @@ public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event)
      * @see View#dispatchPopulateAccessibilityEvent(AccessibilityEvent)
      *      View#dispatchPopulateAccessibilityEvent(AccessibilityEvent)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.031 -0400", hash_original_method = "1C87274B198DB8C027DD7E3DED431EEE", hash_generated_method = "DC6576B317F1DAD9FA11B73B76E6AA25")
         
 public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
@@ -414,6 +455,7 @@ public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent 
      * @see ViewCompat#onPopulateAccessibilityEvent(View ,AccessibilityEvent)
      *      ViewCompat#onPopulateAccessibilityEvent(View, AccessibilityEvent)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.037 -0400", hash_original_method = "DE3AA9FE26B29E02F70EE9289C022DB2", hash_generated_method = "7B20261B2577FFD44A0969E1F105163A")
         
 public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
@@ -436,6 +478,7 @@ public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
      * @see ViewCompat#onInitializeAccessibilityEvent(View, AccessibilityEvent)
      *      ViewCompat#onInitializeAccessibilityEvent(View, AccessibilityEvent)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.042 -0400", hash_original_method = "6FCF19A166005C43B6A9E9FED7E7775A", hash_generated_method = "29477B5D539E075056775EB8413ED6E0")
         
 public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
@@ -457,6 +500,7 @@ public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) 
      * @see ViewCompat#onInitializeAccessibilityNodeInfo(View, AccessibilityNodeInfoCompat)
      *      ViewCompat#onInitializeAccessibilityNodeInfo(View, AccessibilityNodeInfoCompat)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.049 -0400", hash_original_method = "702CF486436EF7CB7E261126510CB2C4", hash_generated_method = "8A751126F33F4AB41626A74C610FF20D")
         
 public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCompat info) {
@@ -482,6 +526,7 @@ public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCo
      * @see ViewGroupCompat#onRequestSendAccessibilityEvent(ViewGroup, View, AccessibilityEvent)
      *      ViewGroupCompat#onRequestSendAccessibilityEvent(ViewGroup, View, AccessibilityEvent)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.056 -0400", hash_original_method = "73CE2F858DC24998E108FD42EF6CF922", hash_generated_method = "4B55B951CD3EA25FD617AE927A09E82E")
         
 public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
@@ -503,6 +548,7 @@ public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
      *
      * @see AccessibilityNodeProviderCompat
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.061 -0400", hash_original_method = "0B1F1AAFD51E2E935DE00B12D3D28739", hash_generated_method = "53A99BBD6F8F8586E2C002EB261711D9")
         
 public AccessibilityNodeProviderCompat getAccessibilityNodeProvider(View host) {
@@ -525,6 +571,7 @@ public AccessibilityNodeProviderCompat getAccessibilityNodeProvider(View host) {
      * @see View#performAccessibilityAction(int, Bundle)
      *      View#performAccessibilityAction(int, Bundle)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.067 -0400", hash_original_method = "3966E0F943BB84ABC0EC28FC4C31B47B", hash_generated_method = "6D8BAAF556CFDDFEC98D87AAD9CD29A5")
         
 public boolean performAccessibilityAction(View host, int action, Bundle args) {

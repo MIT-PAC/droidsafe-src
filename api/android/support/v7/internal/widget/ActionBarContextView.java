@@ -121,6 +121,7 @@ public ActionBarContextView(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.587 -0400", hash_original_method = "9228B7FC13E5F5D46E19A8808940F624", hash_generated_method = "ADD6F3153E06C7CF79FD7115FA21EAC3")
     
 @Override
@@ -161,12 +162,14 @@ public ActionBarContextView(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.595 -0400", hash_original_method = "2AF53FC77EF46E1AB46FFEE70D9B4BD3", hash_generated_method = "73099CFA6347D7279481242D53B55ACD")
     
 public void setContentHeight(int height) {
         mContentHeight = height;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.604 -0400", hash_original_method = "BF35621F736CEABB1B31AE57D0749737", hash_generated_method = "253AA444B71B925E0AF3E202A9F00B36")
     
 public void setCustomView(View view) {
@@ -184,6 +187,7 @@ public void setCustomView(View view) {
         requestLayout();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.614 -0400", hash_original_method = "211EB79F55FBE601162C52B7DDCEAE29", hash_generated_method = "ABDADF55037DFFFE045D7206C2E121F1")
     
 public void setTitle(CharSequence title) {
@@ -191,6 +195,7 @@ public void setTitle(CharSequence title) {
         initTitle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.623 -0400", hash_original_method = "7D9357B6D11390EB60D28E00C6F28FA8", hash_generated_method = "9A059E21C7BE314F1FFA7934207C4071")
     
 public void setSubtitle(CharSequence subtitle) {
@@ -198,18 +203,21 @@ public void setSubtitle(CharSequence subtitle) {
         initTitle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.629 -0400", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "E948C46F1704FC1F24545ED5A725BEE6")
     
 public CharSequence getTitle() {
         return mTitle;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.636 -0400", hash_original_method = "8334E54E49A430BB5E2CB9D01857CDC7", hash_generated_method = "3773E52DB2B3822F51D6A3F2CB66D7C2")
     
 public CharSequence getSubtitle() {
         return mSubtitle;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.650 -0400", hash_original_method = "856402E3C8B8B19BF8375BB35A80D78C", hash_generated_method = "06164B6C305CE7E4586BDFA394BAEAED")
     
 private void initTitle() {
@@ -239,6 +247,7 @@ private void initTitle() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.678 -0400", hash_original_method = "1E79714AAFC3514FB03FC49B8EFD68A4", hash_generated_method = "4104248550B50B64CB36324A05AFC502")
     
 public void initForMode(final ActionMode mode) {
@@ -289,6 +298,7 @@ public void initForMode(final ActionMode mode) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.686 -0400", hash_original_method = "5BFE38CAE677BE0C1C701368344881C8", hash_generated_method = "B60320CFD1729E74B9D8E7B420677C9A")
     
 public void closeMode() {
@@ -298,6 +308,7 @@ public void closeMode() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.694 -0400", hash_original_method = "602896C4206AEA21B6C7689639C6A506", hash_generated_method = "CAA13721761B6282B2005D504913F12E")
     
 public void killMode() {
@@ -309,6 +320,7 @@ public void killMode() {
         mMenuView = null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.701 -0400", hash_original_method = "6ECDD9C0917165AAFEF87E5E5EC8B474", hash_generated_method = "DB1A2AF65655622E1B55F35B09A3551A")
     
 @Override
@@ -319,6 +331,7 @@ public void killMode() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.710 -0400", hash_original_method = "5D05982F33AF24415676BD0317DE2206", hash_generated_method = "467E80F972452C0C6AFEA47847C03B8F")
     
 @Override
@@ -329,6 +342,7 @@ public void killMode() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.718 -0400", hash_original_method = "2F838D8CBDDC91E04D7A8F0F52ABF2C8", hash_generated_method = "DE5567A716B3EC74155227BDC35F2E18")
     
 @Override
@@ -474,6 +488,7 @@ public void killMode() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.771 -0400", hash_original_method = "1C3FA98CB13F3251D9BD9AC234F80D87", hash_generated_method = "5EC3BB920B121655189EFA2CD736D318")
     
 public void setTitleOptional(boolean titleOptional) {
@@ -483,6 +498,7 @@ public void setTitleOptional(boolean titleOptional) {
         mTitleOptional = titleOptional;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 10:54:14.775 -0400", hash_original_method = "374D01271DE8D67C559342233B486510", hash_generated_method = "FA85A4575CE0561F73AC70D2EB3DBBF3")
     
 public boolean isTitleOptional() {

@@ -213,8 +213,7 @@ private String renamedFileName(String name) {
             throw new FileNotFoundException(internalName);
         }
     }
-
-    @DSSink({DSSinkKind.FILE})
+    
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.612 -0500", hash_original_method = "BAFF09712F6A622B6FB90CC40B6EB538", hash_generated_method = "35066B5940DAC2748FDA30C1232F6747")
     

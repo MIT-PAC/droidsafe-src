@@ -99,40 +99,48 @@ public class MenuItemCompat {
      * Interface implementation that doesn't use anything about v4 APIs.
      */
     static class BaseMenuVersionImpl implements MenuVersionImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setShowAsAction(MenuItem item, int actionEnum) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public MenuItem setActionView(MenuItem item, View view) {
             return item;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public MenuItem setActionView(MenuItem item, int resId) {
             return item;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public View getActionView(MenuItem item) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean expandActionView(MenuItem item) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean collapseActionView(MenuItem item) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isActionViewExpanded(MenuItem item) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public MenuItem setOnActionExpandListener(MenuItem item, OnActionExpandListener listener) {
             return item;
@@ -143,41 +151,49 @@ public class MenuItemCompat {
      * Interface implementation for devices with at least v11 APIs.
      */
     static class HoneycombMenuVersionImpl implements MenuVersionImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setShowAsAction(MenuItem item, int actionEnum) {
             MenuItemCompatHoneycomb.setShowAsAction(item, actionEnum);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public MenuItem setActionView(MenuItem item, View view) {
             return MenuItemCompatHoneycomb.setActionView(item, view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public MenuItem setActionView(MenuItem item, int resId) {
             return MenuItemCompatHoneycomb.setActionView(item, resId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public View getActionView(MenuItem item) {
             return MenuItemCompatHoneycomb.getActionView(item);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean expandActionView(MenuItem item) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean collapseActionView(MenuItem item) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isActionViewExpanded(MenuItem item) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public MenuItem setOnActionExpandListener(MenuItem item, OnActionExpandListener listener) {
             return item;
@@ -185,21 +201,25 @@ public class MenuItemCompat {
     }
 
     static class IcsMenuVersionImpl extends HoneycombMenuVersionImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean expandActionView(MenuItem item) {
             return MenuItemCompatIcs.expandActionView(item);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean collapseActionView(MenuItem item) {
             return MenuItemCompatIcs.collapseActionView(item);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isActionViewExpanded(MenuItem item) {
             return MenuItemCompatIcs.isActionViewExpanded(item);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public MenuItem setOnActionExpandListener(MenuItem item,
                 final OnActionExpandListener listener) {
@@ -213,12 +233,14 @@ public class MenuItemCompat {
              */
             return MenuItemCompatIcs.setOnActionExpandListener(item,
                     new MenuItemCompatIcs.SupportActionExpandProxy() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public boolean onMenuItemActionExpand(MenuItem item) {
                     return listener.onMenuItemActionExpand(item);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public boolean onMenuItemActionCollapse(MenuItem item) {
                     return listener.onMenuItemActionCollapse(item);
                 }
@@ -249,6 +271,7 @@ public class MenuItemCompat {
      * @param item - the item to change
      * @param actionEnum - How the item should display.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.311 -0400", hash_original_method = "8F841F057C0A60394A7A6D3B06E21642", hash_generated_method = "E4986EFA4F2942B1EC0DE7BD481A12D7")
             
 public static void setShowAsAction(MenuItem item, int actionEnum) {
@@ -270,6 +293,7 @@ public static void setShowAsAction(MenuItem item, int actionEnum) {
      *
      * @see #setShowAsAction(MenuItem, int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.316 -0400", hash_original_method = "C1DF577F3A30C050B5E2ED31699D6BB2", hash_generated_method = "E01F9AD1539D5B60955F5D4F920FB610")
             
 public static MenuItem setActionView(MenuItem item, View view) {
@@ -294,6 +318,7 @@ public static MenuItem setActionView(MenuItem item, View view) {
      *
      * @see #setShowAsAction(MenuItem, int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.321 -0400", hash_original_method = "7B166626F5FAA3F5FE15407C12F37815", hash_generated_method = "3C7877B9BA457FCA8604836DB6DD2F81")
             
 public static MenuItem setActionView(MenuItem item, int resId) {
@@ -309,6 +334,7 @@ public static MenuItem setActionView(MenuItem item, int resId) {
      * @param item the item to query
      * @return This item's action view
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.325 -0400", hash_original_method = "6C4BDB99371C4C08FD24EC9768420DB9", hash_generated_method = "FACE0889DA080CD745E544EE598EB248")
             
 public static View getActionView(MenuItem item) {
@@ -333,6 +359,7 @@ public static View getActionView(MenuItem item) {
      *
      * @see ActionProvider
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.330 -0400", hash_original_method = "E21F159404A4BFAEF28E6FCC5721403A", hash_generated_method = "575D35A034A6CE4240D0E52E0F68FC07")
             
 public static MenuItem setActionProvider(MenuItem item, ActionProvider provider) {
@@ -376,6 +403,7 @@ public static ActionProvider getActionProvider(MenuItem item) {
      *
      * @return true if the action view was expanded, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.338 -0400", hash_original_method = "6875B886DDFC4C2D29D5E342F2B9427C", hash_generated_method = "075E4C1F8E87F7BCF472C049B3FB3AB8")
             
 public static boolean expandActionView(MenuItem item) {
@@ -415,6 +443,7 @@ public static boolean collapseActionView(MenuItem item) {
      * @see #SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
      * @see android.support.v4.view.MenuItemCompat.OnActionExpandListener
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.346 -0400", hash_original_method = "6B725D4EB4453644A71A1671F65709B0", hash_generated_method = "6B71DD51B8828E2F2DD47DF4B1278C08")
             
 public static boolean isActionViewExpanded(MenuItem item) {

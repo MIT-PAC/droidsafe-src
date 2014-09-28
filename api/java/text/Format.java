@@ -109,6 +109,7 @@ protected Format() {
      * @throws IllegalArgumentException
      *         if the object cannot be formatted by this format.
      */
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     

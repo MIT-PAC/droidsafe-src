@@ -114,6 +114,7 @@ public WebAddress(String address) throws ParseException {
         if (mScheme.equals("")) mScheme = "http";
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.678 -0400", hash_original_method = "1D4EF43F2688F01255D5CEBFE17AB398", hash_generated_method = "0FF9D7E37A3F9F648312ADE43AF69DA6")
     @Override

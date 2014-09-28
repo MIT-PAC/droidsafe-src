@@ -373,6 +373,7 @@ boolean canConstantState() {
         return mClipState.mDrawable.getIntrinsicHeight();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.881 -0500", hash_original_method = "80C96E88400AA50FF8906D46C3CD5A6C", hash_generated_method = "ABE84AC4D5556ED2F043678472BBDC3E")
     
 @Override

@@ -13,7 +13,7 @@ public class Input implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.376 -0400", hash_original_field = "C55BBAE9BA652C2BEDEB4F6E28BCA10E", hash_generated_field = "449B79E7C316C34FDDF2E2D2B21F2438")
 
     public static final Parcelable.Creator<Input> CREATOR = new Parcelable.Creator<Input>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.395 -0500", hash_original_method = "A3060A4F3D5664F92DE2DC8B971AB968", hash_generated_method = "5E43F3E1FFE6B7ACCFD3135E6F83943B")
         
 public Input createFromParcel(Parcel in) {

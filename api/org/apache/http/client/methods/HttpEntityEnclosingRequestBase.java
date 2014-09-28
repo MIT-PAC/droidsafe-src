@@ -36,6 +36,7 @@ public HttpEntity getEntity() {
         return this.entity;
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.276 -0500", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "79AAFF6E92B5322E414271D0A9826A70")
     @DSVerified
     @DSSafe(DSCat.DATA_STRUCTURE)

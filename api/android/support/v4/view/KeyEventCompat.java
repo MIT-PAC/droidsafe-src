@@ -53,6 +53,7 @@ public class KeyEventCompat {
         // Mask of all lock key meta states.
         private static final int META_ALL_MASK = META_MODIFIER_MASK;
 
+        @DSSafe(DSCat.SAFE_LIST)
         private static int metaStateFilterDirectionalModifiers(int metaState,
                 int modifiers, int basic, int left, int right) {
             final boolean wantBasic = (modifiers & basic) != 0;
@@ -71,6 +72,7 @@ public class KeyEventCompat {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int normalizeMetaState(int metaState) {
             if ((metaState & (KeyEvent.META_SHIFT_LEFT_ON | KeyEvent.META_SHIFT_RIGHT_ON)) != 0) {
@@ -82,6 +84,7 @@ public class KeyEventCompat {
             return metaState & META_ALL_MASK;
         }
  
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean metaStateHasModifiers(int metaState, int modifiers) {
             metaState = normalizeMetaState(metaState) & META_MODIFIER_MASK;
@@ -92,25 +95,30 @@ public class KeyEventCompat {
             return metaState == modifiers;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean metaStateHasNoModifiers(int metaState) {
             return (normalizeMetaState(metaState) & META_MODIFIER_MASK) == 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void startTracking(KeyEvent event) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isTracking(KeyEvent event) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getKeyDispatcherState(View view) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatch(KeyEvent event, KeyEvent.Callback receiver, Object state,
                     Object target) {
@@ -119,21 +127,25 @@ public class KeyEventCompat {
     }
 
     static class EclairKeyEventVersionImpl extends BaseKeyEventVersionImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void startTracking(KeyEvent event) {
             KeyEventCompatEclair.startTracking(event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isTracking(KeyEvent event) {
             return KeyEventCompatEclair.isTracking(event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getKeyDispatcherState(View view) {
             return KeyEventCompatEclair.getKeyDispatcherState(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean dispatch(KeyEvent event, KeyEvent.Callback receiver, Object state,
                     Object target) {
@@ -145,16 +157,19 @@ public class KeyEventCompat {
      * Interface implementation for devices with at least v11 APIs.
      */
     static class HoneycombKeyEventVersionImpl extends EclairKeyEventVersionImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int normalizeMetaState(int metaState) {
             return KeyEventCompatHoneycomb.normalizeMetaState(metaState);
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean metaStateHasModifiers(int metaState, int modifiers) {
             return KeyEventCompatHoneycomb.metaStateHasModifiers(metaState, modifiers);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean metaStateHasNoModifiers(int metaState) {
             return KeyEventCompatHoneycomb.metaStateHasNoModifiers(metaState);
@@ -191,18 +206,21 @@ public static boolean metaStateHasNoModifiers(int metaState) {
         return IMPL.metaStateHasNoModifiers(metaState);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.585 -0400", hash_original_method = "3459CD70A7471F910F70EFC30C291EC4", hash_generated_method = "E98B8C680069F3DBBF1CE6913C768C7D")
         
 public static boolean hasModifiers(KeyEvent event, int modifiers) {
         return IMPL.metaStateHasModifiers(event.getMetaState(), modifiers);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.589 -0400", hash_original_method = "53CEAEB414B0F10FB842AFA317D8BBA2", hash_generated_method = "AEF3647D1E5748BCE037970C04A9E6AB")
         
 public static boolean hasNoModifiers(KeyEvent event) {
         return IMPL.metaStateHasNoModifiers(event.getMetaState());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.594 -0400", hash_original_method = "150D3F3A2D88B85D95E14A5F3CCB7DBB", hash_generated_method = "AFF0231763CDAB8820474AC9C1AADFDA")
         
 public static void startTracking(KeyEvent event) {
@@ -215,12 +233,14 @@ public static boolean isTracking(KeyEvent event) {
         return IMPL.isTracking(event);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.602 -0400", hash_original_method = "8051F30CD8FA23D1EB4FA2ED2D510E92", hash_generated_method = "0DA5F111CD1FC0BFD32D12331D2247B2")
         
 public static Object getKeyDispatcherState(View view) {
         return IMPL.getKeyDispatcherState(view);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.606 -0400", hash_original_method = "BDA4303712F8F48EECAD505574D2CF95", hash_generated_method = "44C4A5E4422A4A403D295F13B5965909")
         
 public static boolean dispatch(KeyEvent event, KeyEvent.Callback receiver, Object state,

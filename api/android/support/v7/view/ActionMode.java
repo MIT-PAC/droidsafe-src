@@ -47,7 +47,6 @@ import android.view.View;
 public abstract class ActionMode {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.536 -0400", hash_original_field = "87CC02BABEBC2A0BC6D4C7D0ADFF58E9", hash_generated_field = "EE550655758D5D3DEE98B11CF176B67D")
 
-
     private Object mTag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.538 -0400", hash_original_field = "86AEF5FEAC52676783690A5AE8D86D69", hash_generated_field = "BDA1BD10AD1CF9534B51825444097561")
 
@@ -144,6 +143,7 @@ public abstract void setSubtitle(int resId);
      *
      * @param titleOptional true if the title only presents optional information.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.555 -0400", hash_original_method = "DD1D4A9532F512B88C2D38B6FA8A70AF", hash_generated_method = "D42338CE27B053FF8B019CDFA8433B4C")
     
 public void setTitleOptionalHint(boolean titleOptional) {
@@ -198,6 +198,7 @@ public abstract void invalidate();
      * Finish and close this action mode. The action mode's {@link ActionMode.Callback} will have
      * its {@link Callback#onDestroyActionMode(ActionMode)} method called.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.565 -0400", hash_original_method = "813B1E67A5651AE12B7ADAA81DD30965", hash_generated_method = "EA335D0833EB6960285108A346A4AFC1")
     
 public abstract void finish();
@@ -207,6 +208,7 @@ public abstract void finish();
      *
      * @return The action mode's menu.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.567 -0400", hash_original_method = "DCB61573D17CF52C77788C074BA8AC8B", hash_generated_method = "F0C4744A37BE92FD577BF28B66ABAB46")
     
 public abstract Menu getMenu();

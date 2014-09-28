@@ -23,12 +23,14 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 class AccessibilityNodeInfoCompatJellybeanMr2 {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.506 -0400", hash_original_method = "1A4B91EF1799AB9B656A4901B02E809F", hash_generated_method = "3491E82ECAA0A1331869E7D1202B8DDA")
     
 public static void setViewIdResourceName(Object info, String viewId) {
         ((AccessibilityNodeInfo) info).setViewIdResourceName(viewId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.509 -0400", hash_original_method = "8BC72748D492E60677B6F2591E0D8C46", hash_generated_method = "8B1A820B580E6365A7E508AB3D98C90D")
     
 public static String getViewIdResourceName(Object info) {

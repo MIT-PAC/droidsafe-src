@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.view;
 
 import droidsafe.annotations.*;
@@ -23,12 +22,14 @@ import droidsafe.helpers.*;
 import android.view.ViewGroup;
 
 class ViewGroupCompatJellybeanMR2 {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.354 -0400", hash_original_method = "D24C39B6E733D57ECAD980375D191673", hash_generated_method = "FEFDAD47F60FFBB8A4BAADD2D78C4BE1")
     
 public static int getLayoutMode(ViewGroup group) {
         return group.getLayoutMode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:02.358 -0400", hash_original_method = "D9A089729232A2023421668EA04EE6E1", hash_generated_method = "18B806F622BD113788855800B7B75553")
     
 public static void setLayoutMode(ViewGroup group, int mode) {

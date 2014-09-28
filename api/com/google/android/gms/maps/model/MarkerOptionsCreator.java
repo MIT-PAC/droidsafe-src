@@ -12,9 +12,8 @@ public class MarkerOptionsCreator implements android.os.Parcelable.Creator
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 10:04:18.119 -0400", hash_original_field = "BE7571FEE68510C5B2ABCBF2C7161CA5", hash_generated_field = "A4CA75FA70F636AD154C8D958F52817C")
 
     public static final int CONTENT_DESCRIPTION = 0;
-
     
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 10:04:18.206 -0400", hash_original_method = "30366B87AFEC637BAA5E05D3B236D25E", hash_generated_method = "BC5EA8986C0360590F8351CDBD17229D")
     
     public  Object createFromParcel(Parcel  r1)

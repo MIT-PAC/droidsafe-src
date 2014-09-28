@@ -74,7 +74,7 @@ protected FilterWriter(Writer out) {
      *             if an error occurs while writing to this writer.
      */
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.149 -0500", hash_original_method = "8844CE5B6BE403964369DBE67DE17A9B", hash_generated_method = "2E00E4C573A8E41256FB0356A1320F41")
     
 @Override

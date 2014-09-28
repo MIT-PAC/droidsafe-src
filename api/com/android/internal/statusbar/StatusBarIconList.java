@@ -16,7 +16,7 @@ public class StatusBarIconList implements Parcelable {
     public static final Parcelable.Creator<StatusBarIconList> CREATOR
             = new Parcelable.Creator<StatusBarIconList>()
     {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.347 -0500", hash_original_method = "354247A1AB69D42F488E328F6D061A81", hash_generated_method = "EDC3BABD4CACD72FBDF34205B19397E4")
         
 public StatusBarIconList createFromParcel(Parcel parcel)

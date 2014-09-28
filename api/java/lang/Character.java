@@ -2266,6 +2266,7 @@ public static UnicodeBlock forName(String blockName) {
          *         {@code c}, or {@code null} if {@code c} does not belong to
          *         any defined block.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.047 -0500", hash_original_method = "392D71CF093044293F2B368B3C851863", hash_generated_method = "37315607D83E4BDAF9961621E8257316")
         
 public static UnicodeBlock of(char c) {
@@ -2285,6 +2286,7 @@ public static UnicodeBlock of(char c) {
          * @throws IllegalArgumentException if {@code codePoint} is not a valid code point.
          * @since 1.5
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.050 -0500", hash_original_method = "C353B574FF2B3DDFEDDE0862E878329F", hash_generated_method = "B33A211A12366700A0DC5DADFEC12A20")
         
 public static UnicodeBlock of(int codePoint) {

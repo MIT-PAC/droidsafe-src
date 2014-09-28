@@ -149,6 +149,7 @@ public void setPsc(int psc) {
             && equalsHandlesNulls(mPsc, s.mPsc);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:43.697 -0500", hash_original_method = "ECC0B1700594AB1E58D4785492DA1471", hash_generated_method = "FDEE863DDC078BD27B817D7A6E7D672F")
     

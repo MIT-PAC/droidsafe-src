@@ -53,6 +53,7 @@ public abstract class TransportPerformer {
      * Request to start playback on the media, resuming from whatever current state
      * (position etc) it is in.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.138 -0400", hash_original_method = "FEC44E6D1791554E43062F6BCFB340F5", hash_generated_method = "870184E7F8F66051862AC1D316A75639")
     
 public abstract void onStart();
@@ -61,6 +62,7 @@ public abstract void onStart();
      * Request to pause playback of the media, staying at the current playback position
      * and other state so a later call to {@link #onStart()} will resume at the same place.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.143 -0400", hash_original_method = "93D75B4880B81945CD5B8AD194FEF306", hash_generated_method = "E88B3E2A943DC0C17AF3E3B2BBD2B169")
     
 public abstract void onPause();
@@ -69,6 +71,7 @@ public abstract void onPause();
      * Request to completely stop playback of the media, clearing whatever state the
      * player thinks is appropriate.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.148 -0400", hash_original_method = "21B71D5BA1BEE107197F9887737DACA6", hash_generated_method = "256844E3585575AA39D94F5B2218A88B")
     
 public abstract void onStop();
@@ -76,6 +79,7 @@ public abstract void onStop();
     /**
      * Request to return the duration of the current media, in milliseconds.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.152 -0400", hash_original_method = "D0D2C599EBE03B1A123C4B17F2F6854C", hash_generated_method = "B0FC04F8233DF4FC40161FE21629ACF8")
     
 public abstract long onGetDuration();
@@ -83,6 +87,7 @@ public abstract long onGetDuration();
     /**
      * Request to return the current playback position, in milliseconds.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.156 -0400", hash_original_method = "728891FF0040F26821F2D819D52DD8B5", hash_generated_method = "E836C06BC561395E46BF643C0B90C9C3")
     
 public abstract long onGetCurrentPosition();
@@ -91,6 +96,7 @@ public abstract long onGetCurrentPosition();
      * Request to move the current playback position.
      * @param pos New position to move to, in milliseconds.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.162 -0400", hash_original_method = "75F22500398F5C218D1BAEFECA5C8BB8", hash_generated_method = "941FF25340BB91D27014C3DA45710BC5")
     
 public abstract void onSeekTo(long pos);
@@ -98,6 +104,7 @@ public abstract void onSeekTo(long pos);
     /**
      * Request to find out whether the player is currently playing its media.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.167 -0400", hash_original_method = "8182EF85E2AE30CFA2C2EBBC0825365D", hash_generated_method = "D96B9CD3D491D4833DEB559324483098")
     
 public abstract boolean onIsPlaying();
@@ -108,6 +115,7 @@ public abstract boolean onIsPlaying();
      * has been buffered.  The default implementation returns 100, meaning the content
      * is always on the local device.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.171 -0400", hash_original_method = "D25CBA0C37F66E90C4CC1ED3F6471534", hash_generated_method = "C0333C63A2A06569DA6C50D7B0B32674")
     
 public int onGetBufferPercentage() {
@@ -132,6 +140,7 @@ public int onGetBufferPercentage() {
      *      {@link TransportMediator#FLAG_KEY_MEDIA_PAUSE}, and
      *      {@link TransportMediator#FLAG_KEY_MEDIA_STOP}</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.176 -0400", hash_original_method = "A45EF0906B13788173BF6A9A15A7A835", hash_generated_method = "6D006AC62A66DDB21A84AD1F2E08C919")
     
 public int onGetTransportControlFlags() {
@@ -163,6 +172,7 @@ public int onGetTransportControlFlags() {
      * being delivered to the current media remote control, which should
      * be us).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.181 -0400", hash_original_method = "84610781F7CC32F78EBD23816A149F47", hash_generated_method = "6DE8F0793D6D010919CF4788F48822AB")
     
 public boolean onMediaButtonDown(int keyCode, KeyEvent event) {
@@ -202,6 +212,7 @@ public boolean onMediaButtonDown(int keyCode, KeyEvent event) {
      * being delivered to the current media remote control, which should
      * be us).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.187 -0400", hash_original_method = "D686C77908272516DD83F6CBBB18FC98", hash_generated_method = "F821659BBE06B7981D45DFF8754A4830")
     
 public boolean onMediaButtonUp(int keyCode, KeyEvent event) {
@@ -219,6 +230,7 @@ public boolean onMediaButtonUp(int keyCode, KeyEvent event) {
      * deliver a {@link KeyEvent#KEYCODE_MEDIA_STOP}
      * when receiving {@link android.media.AudioManager#AUDIOFOCUS_LOSS}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.225 -0400", hash_original_method = "C0641D64987776FEBDA306BB7BBBD8C1", hash_generated_method = "1FF783996D263A647B27C62E69BFC583")
     
 public void onAudioFocusChange(int focusChange) {

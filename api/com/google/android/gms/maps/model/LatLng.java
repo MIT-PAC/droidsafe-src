@@ -72,6 +72,7 @@ public int describeContents()
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.136 -0400", hash_original_method = "924D566E2610DEB903A0D704763612AB", hash_generated_method = "6489EB560641CE0B3ED9577F3CE811FD")
     
 public int hashCode()
@@ -89,6 +90,7 @@ public int hashCode()
         return i13;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.139 -0400", hash_original_method = "2A79FB6B998BE5CB4C03180A324B1C02", hash_generated_method = "9D59168594521823948404AE4C106675")
     
 public boolean equals(Object  r1)
@@ -122,6 +124,7 @@ public boolean equals(Object  r1)
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.143 -0400", hash_original_method = "42AB49A97A2BBFC62018BC5FF630D158", hash_generated_method = "2E2925DF89DB72D60EB294EB52D939F8")
 public String toString()
     {

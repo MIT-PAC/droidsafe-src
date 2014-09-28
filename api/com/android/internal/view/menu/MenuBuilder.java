@@ -519,12 +519,14 @@ public int addIntentOptions(int group, int id, int categoryOrder, ComponentName 
         return N;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.321 -0500", hash_original_method = "CD40CB8D7701B558D158DB4B227DBE9C", hash_generated_method = "B5477A25C64755562A7A96C9A1AD5B39")
     
 public void removeItem(int id) {
         removeItemAtInt(findItemIndex(id), true);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.324 -0500", hash_original_method = "CB73A0EC2BA8A6DB548593D621DAEDFE", hash_generated_method = "CC492E12F387DA815E7E75F9A777D7F7")
     
 public void removeGroup(int group) {
@@ -666,6 +668,7 @@ public void setGroupEnabled(int group, boolean enabled) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.349 -0500", hash_original_method = "3B72BBA33C08D8899AD542CA53217B07", hash_generated_method = "B179728AD063FFBE23EBEE59141867A2")
     
 public boolean hasVisibleItems() {
@@ -743,6 +746,7 @@ public int findGroupIndex(int group, int start) {
         return -1;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.361 -0500", hash_original_method = "5327FF82295AE99159722BB0995F8072", hash_generated_method = "B001909A1E3FF23FBA9BDC7968BCB51C")
     
 public int size() {
@@ -758,6 +762,7 @@ public MenuItem getItem(int index) {
         return mItems.get(index);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.367 -0500", hash_original_method = "ECF8DA19BC86F4769F2B307E72CF73B2", hash_generated_method = "38D546BB6324323D246898A2CCF490AD")
     
 public boolean isShortcutKey(int keyCode, KeyEvent event) {
@@ -857,6 +862,7 @@ public void changeMenuMode() {
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.396 -0500", hash_original_method = "9861F924DD1EB593B44131240E8058F2", hash_generated_method = "3E58984DE7EFFA8FA7C73309E998FBD1")
     
 public boolean performShortcut(int keyCode, KeyEvent event, int flags) {
@@ -1237,6 +1243,7 @@ ArrayList<MenuItemImpl> getNonActionItems() {
         return mNonActionItems;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.436 -0500", hash_original_method = "50068C9782E9BFC0D29147CAEDC5BEC3", hash_generated_method = "1E8846ADB7D3682B77181A0DD3F79587")
     
 public void clearHeader() {

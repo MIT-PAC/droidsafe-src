@@ -531,8 +531,8 @@ public void setOnCancelListener(OnCancelListener listener) {
      *         exist, or is not searchable.
      */
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.IPC})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.576 -0500", hash_original_method = "BECD96EDDDF4DA2CCA14D2ABA4ED0EE3", hash_generated_method = "0A2930B9F3A3D87660C73C288FF26183")
     
 public SearchableInfo getSearchableInfo(ComponentName componentName) {

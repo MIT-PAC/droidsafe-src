@@ -369,6 +369,7 @@ public abstract void setDisplayShowHomeEnabled(boolean showHome);
      * @see #setDisplayOptions(int)
      * @see #setDisplayOptions(int, int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:27.830 -0400", hash_original_method = "7FAA9B7D5A3C48CB59C455373282F80B", hash_generated_method = "D8C2F66495A46EB792CD4E99FF78D108")
     
 public abstract void setDisplayHomeAsUpEnabled(boolean showHomeAsUp);
@@ -417,6 +418,7 @@ public abstract void setBackgroundDrawable(Drawable d);
      *
      * @param d Background drawable for the stacked row
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:27.857 -0400", hash_original_method = "1C087D5A46FF67AB400586D7FD9EC5DB", hash_generated_method = "FD8BDE63083DE44785779942FF8E47A4")
     
 public void setStackedBackgroundDrawable(Drawable d) {
@@ -430,6 +432,7 @@ public void setStackedBackgroundDrawable(Drawable d) {
      *
      * @param d Background drawable for the split bar
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:27.864 -0400", hash_original_method = "195D6A86B8711735C7C3591D31E1AD73", hash_generated_method = "B27F4574AF521C2990817845AE4C0044")
     
 public void setSplitBackgroundDrawable(Drawable d) {
@@ -493,6 +496,7 @@ public abstract void setNavigationMode(int mode);
     /**
      * @return The current set of display options.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:27.902 -0400", hash_original_method = "DC42952D4250534A529685F0B3612EF4", hash_generated_method = "09C94D136A7B8F34CEC7158FF11FBFB9")
     
 public abstract int getDisplayOptions();
@@ -711,6 +715,7 @@ public void setHomeButtonEnabled(boolean enabled) {
      *
      * @return A themed Context for creating views
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:28.048 -0400", hash_original_method = "1844047509BF7744FF58A8E07C1F4469", hash_generated_method = "11CB943795DCD9E1EF76C82D67A0983E")
     
 public Context getThemedContext() {
@@ -792,6 +797,7 @@ public Context getThemedContext() {
          * @return Current position, or {@link #INVALID_POSITION} if this tab is not currently in
          *         the action bar.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public abstract int getPosition();
 
         /**
@@ -799,6 +805,7 @@ public Context getThemedContext() {
          *
          * @return The tab's icon
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public abstract Drawable getIcon();
 
         /**
@@ -806,6 +813,7 @@ public Context getThemedContext() {
          *
          * @return The tab's text
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public abstract CharSequence getText();
 
         /**
@@ -865,6 +873,7 @@ public Context getThemedContext() {
          *
          * @return The custom view set by {@link #setCustomView(View)}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public abstract View getCustomView();
 
         /**
@@ -892,6 +901,7 @@ public Context getThemedContext() {
         /**
          * Select this tab. Only valid if the tab has been added to the action bar.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public abstract void select();
 
         /**
@@ -923,6 +933,7 @@ public Context getThemedContext() {
          * @see #setContentDescription(CharSequence)
          * @see #setContentDescription(int)
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public abstract CharSequence getContentDescription();
     }
 

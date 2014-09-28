@@ -535,6 +535,7 @@ private int getRangeFromIndex(int index){
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:12.101 -0400", hash_original_method = "D8B6DCD3AB2AFAD3FB48F56778B03FF9", hash_generated_method = "6D9BD3CC21FF82F2E265BE0BBF844E9B")
     
 @Override

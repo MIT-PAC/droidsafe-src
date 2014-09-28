@@ -64,7 +64,7 @@ public final class WifiDisplayStatus implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.623 -0500", hash_original_field = "C539E0051879D95CBDADC52D1399D651", hash_generated_field = "75AD64CDC97AF06206F1EC18BB0C1FDE")
 
     public static final Creator<WifiDisplayStatus> CREATOR = new Creator<WifiDisplayStatus>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         public WifiDisplayStatus createFromParcel(Parcel in) {
             int featureState = in.readInt();
             int scanState = in.readInt();
@@ -246,6 +246,7 @@ public WifiDisplay[] getRememberedDisplays() {
     }
 
     // For debugging purposes only.
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:09.644 -0500", hash_original_method = "5D3BBF2D48BBB644EA140D257129234C", hash_generated_method = "A18BA4B6AAA621E8F7FB1B1872ECF896")
     

@@ -384,7 +384,7 @@ public abstract void setAdapter(T adapter);
      */
     @DSComment("GUI, AdapterView")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.027 -0500", hash_original_method = "40CA9E4E71293F3BC1D33E874AD305A1", hash_generated_method = "EC81B80CFE8ACA8738EA07C9D9C967BD")
     
 @ViewDebug.CapturedViewProperty
@@ -398,7 +398,7 @@ public abstract void setAdapter(T adapter);
      */
     @DSComment("GUI, AdapterView")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.029 -0500", hash_original_method = "52C80BDBAB2E8D6D945028E83F843260", hash_generated_method = "820C39987DD95F59D5D3BE333149B927")
     
 @ViewDebug.CapturedViewProperty
@@ -422,7 +422,7 @@ public abstract View getSelectedView();
      */
     @DSComment("GUI, AdapterView")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.034 -0500", hash_original_method = "F45E40D646583F63F7A00B28C1D0B4AE", hash_generated_method = "D019C759994956F18259D1889D97E428")
     
 public Object getSelectedItem() {
@@ -442,7 +442,7 @@ public Object getSelectedItem() {
      */
     @DSComment("GUI, AdapterView")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.036 -0500", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "97987607FBFB8B0BEEB59451C0C41C97")
     
 @ViewDebug.CapturedViewProperty
@@ -459,7 +459,8 @@ public Object getSelectedItem() {
      * @return the position within the adapter's data set of the view, or {@link #INVALID_POSITION}
      *         if the view does not correspond to a list item (or it is not currently visible).
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.038 -0500", hash_original_method = "7F8A3609232C6E4C7447DF803294CB0C", hash_generated_method = "59055F050B01ED29E469F7608FF65FCC")
     
 public int getPositionForView(View view) {
@@ -494,7 +495,7 @@ public int getPositionForView(View view) {
      */
     @DSComment("GUI, AdapterView")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.041 -0500", hash_original_method = "3F582E36FEB434C42F8F2A7A83CA506D", hash_generated_method = "4C661882740384910ED3AFB6B02BB431")
     
 public int getFirstVisiblePosition() {
@@ -665,6 +666,7 @@ private void updateEmptyStatus(boolean empty) {
      * @param position Which data to get
      * @return The data associated with the specified position in the list
      */
+    @DSSource({DSSourceKind.DATABASE})
     @DSComment("GUI, AdapterView")
     @DSSafe(DSCat.GUI)
     

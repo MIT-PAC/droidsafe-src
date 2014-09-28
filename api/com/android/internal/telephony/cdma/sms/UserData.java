@@ -139,6 +139,7 @@ public static byte[] stringToAscii(String str) {
         //Synthesized constructor
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.170 -0500", hash_original_method = "F1C0D00F51384BB453814F967BB3AF69", hash_generated_method = "30332BD0F2A6129C141C1D7BD5FDB3B6")
     

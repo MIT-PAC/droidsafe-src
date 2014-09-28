@@ -43,6 +43,7 @@ class RemoteInputCompatJellybean {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:07.182 -0400", hash_original_field = "6E6A07D209C9E9928AC39D4A3091225D", hash_generated_field = "1F93A2120CCA045422063006ABD5F6B9")
 
     private static final String KEY_EXTRAS = "extras";
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:07.184 -0400", hash_original_method = "3D7176AE1D776EA92F93DF4F849B2902", hash_generated_method = "C60DF04A80FAA7D260BE7C48D0FF25CA")
     
 static RemoteInputCompatBase.RemoteInput fromBundle(Bundle data,
@@ -53,6 +54,7 @@ static RemoteInputCompatBase.RemoteInput fromBundle(Bundle data,
                 data.getBoolean(KEY_ALLOW_FREE_FORM_INPUT),
                 data.getBundle(KEY_EXTRAS));
     }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:07.187 -0400", hash_original_method = "F439A271FD39B781C1F95A9E05EF39CA", hash_generated_method = "2398E4CDA525775E886A3EFACA39BF4F")
     
 static Bundle toBundle(RemoteInputCompatBase.RemoteInput remoteInput) {
@@ -64,6 +66,7 @@ static Bundle toBundle(RemoteInputCompatBase.RemoteInput remoteInput) {
         data.putBundle(KEY_EXTRAS, remoteInput.getExtras());
         return data;
     }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:07.191 -0400", hash_original_method = "ECD4633176C7409A676170252E1FB9A1", hash_generated_method = "13DBEA8E35790D31A716CCFD4A591EFA")
     
 static RemoteInputCompatBase.RemoteInput[] fromBundleArray(Bundle[] bundles,
@@ -89,6 +92,7 @@ static Bundle[] toBundleArray(RemoteInputCompatBase.RemoteInput[] remoteInputs) 
         }
         return bundles;
     }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:07.198 -0400", hash_original_method = "27FD281319C870E7B783E9680ECDCBFE", hash_generated_method = "522F8D1B55C627023AB4835160AB0F1B")
     
 static Bundle getResultsFromIntent(Intent intent) {

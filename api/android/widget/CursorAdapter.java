@@ -153,8 +153,8 @@ void init(Context context, Cursor c, int flags) {
      * @return the cursor.
      */
     @DSComment("returned DB object")
-    @DSSpec(DSCat.DATABASE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.909 -0500", hash_original_method = "ED4C67C6B1C11ED6A644F86CCA800916", hash_generated_method = "C2683DC62F0FF2A1098E741198B98052")
     
 public Cursor getCursor() {
@@ -321,7 +321,7 @@ public abstract void bindView(View view, Context context, Cursor cursor);
      * @param cursor The new cursor to be used
      */
     @DSComment("Database cursor wrapper")
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.933 -0500", hash_original_method = "A3DB89FF308CDDA8076F4DD4182DC99B", hash_generated_method = "D6E23DB93BD6815A1322DD8DDE2D2D57")
     
 public void changeCursor(Cursor cursor) {
@@ -516,7 +516,7 @@ public ChangeObserver() {
      * @see #runQueryOnBackgroundThread(CharSequence)
      */
     @DSComment("Database cursor wrapper")
-    @DSSpec(DSCat.DATABASE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.945 -0500", hash_original_method = "DB32599181A301EC3439063743E0023E", hash_generated_method = "6EE317667BB9ED8B884FEF999EC255FF")
     
 public void setFilterQueryProvider(FilterQueryProvider filterQueryProvider) {

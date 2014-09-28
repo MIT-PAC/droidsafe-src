@@ -156,7 +156,7 @@ IBinder jO()
         return $r2;
     }
 */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.771 -0400", hash_original_method = "787473D886233214E6C1460F60C72FB8", hash_generated_method = "BAA3C20E8226856C339F891FBF55437A")
     
 public MarkerOptions position(LatLng  r1)
@@ -166,7 +166,7 @@ public MarkerOptions position(LatLng  r1)
         return this;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.774 -0400", hash_original_method = "75816E698B1BA3B9131865E2B1F751F2", hash_generated_method = "6DA32A2E32A29CD985FB7D726F0B6CB2")
     
 public MarkerOptions icon(BitmapDescriptor  r1)
@@ -196,7 +196,7 @@ public MarkerOptions infoWindowAnchor(float  f0, float  f1)
         return this;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.784 -0400", hash_original_method = "64129FC055965C7612AF6D4D8998EFBA", hash_generated_method = "75238C35BCD25F4D96D9BF0741600137")
     
 public MarkerOptions title(String  r1)
@@ -206,7 +206,7 @@ public MarkerOptions title(String  r1)
         return this;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.786 -0400", hash_original_method = "6FB1DB0B9C4A9AA37015D7384CD9B73C", hash_generated_method = "DB8597D9D0BFCC7C3D5642B64F9A67AD")
     
 public MarkerOptions snippet(String  r1)

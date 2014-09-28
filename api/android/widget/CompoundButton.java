@@ -79,6 +79,7 @@ public CompoundButton(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.502 -0500", hash_original_method = "E1B1AD330E2148117F43C315FF6D1DED", hash_generated_method = "A3C4A23427194F6EB8A02F7BC58C147C")
     
 public void toggle() {
@@ -329,7 +330,7 @@ public void setButtonDrawable(Drawable d) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }

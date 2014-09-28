@@ -26,6 +26,7 @@ import android.os.Bundle;
 
 class TaskStackBuilderJellybean {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:08.325 -0400", hash_original_method = "255A62452327ABCB9177B6E227777225", hash_generated_method = "EB56AB1048947AC4AC8FD023E4A29817")
     
 public static PendingIntent getActivitiesPendingIntent(Context context, int requestCode,

@@ -67,6 +67,7 @@ public InflatedOnMenuItemClickListener(Context context, String methodName) {
             }
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.666 -0500", hash_original_method = "73DDD6FE1A9FD43CC9793E596C7A60B9", hash_generated_method = "B3FF1FC79AE9949CFEC0CD4E6EF6FF65")
         
 public boolean onMenuItemClick(MenuItem item) {

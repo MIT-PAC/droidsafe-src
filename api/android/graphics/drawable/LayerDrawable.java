@@ -259,7 +259,7 @@ public void setId(int index, int id) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.152 -0500", hash_original_method = "A86CD78FFBAB297497BF089506C91B59", hash_generated_method = "6075AA902777F095317F3A14EA5716F3")
     
 public int getNumberOfLayers() {
@@ -275,7 +275,7 @@ public int getNumberOfLayers() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.154 -0500", hash_original_method = "34EED4495029B4FCBDB042C377184EB5", hash_generated_method = "63F0399A05DCC998434F64635EAB029F")
     
 public Drawable getDrawable(int index) {
@@ -291,7 +291,7 @@ public Drawable getDrawable(int index) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.157 -0500", hash_original_method = "AA527FDBA3D8F60360C6FC80FEEC74D7", hash_generated_method = "AB61A0021DDDEA00578315114A44755B")
     
 public int getId(int index) {
@@ -682,6 +682,7 @@ private void ensurePadding() {
         mPaddingB = new int[N];
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.212 -0500", hash_original_method = "42E9B0CF062F666EDFF40D08B19E7027", hash_generated_method = "C22E6453005E30083BA552D85EBB08B8")
     
 @Override

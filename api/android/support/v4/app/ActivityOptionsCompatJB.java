@@ -27,6 +27,7 @@ import android.view.View;
 
 class ActivityOptionsCompatJB {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.747 -0400", hash_original_method = "8C2B5B0E653131C7FE29B8F4DEF92DAB", hash_generated_method = "F3209A1F4D924B8ACF94D290A02F1E07")
     
 public static ActivityOptionsCompatJB makeCustomAnimation(Context context,
@@ -35,6 +36,7 @@ public static ActivityOptionsCompatJB makeCustomAnimation(Context context,
             ActivityOptions.makeCustomAnimation(context, enterResId, exitResId));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.754 -0400", hash_original_method = "BC32BF2FDA6BA5634CADA56FE4D5FC74", hash_generated_method = "A1650C87EF7CDE50451C4D646334ABDB")
     
 public static ActivityOptionsCompatJB makeScaleUpAnimation(View source,
@@ -43,6 +45,7 @@ public static ActivityOptionsCompatJB makeScaleUpAnimation(View source,
             ActivityOptions.makeScaleUpAnimation(source, startX, startY, startWidth, startHeight));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.762 -0400", hash_original_method = "EE3E76A0193832B3C4EDDFCAA15660A2", hash_generated_method = "BFCCFE3A8EE14B70F8A116C6204B3C6D")
     
 public static ActivityOptionsCompatJB makeThumbnailScaleUpAnimation(View source,
@@ -52,7 +55,6 @@ public static ActivityOptionsCompatJB makeThumbnailScaleUpAnimation(View source,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.768 -0400", hash_original_field = "FFAEF3F006D0EBB48F9FD1C68E6D08BD", hash_generated_field = "05631F4CD6557D70E151BAD9309B752C")
 
-
     private  ActivityOptions mActivityOptions;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.773 -0400", hash_original_method = "B9CC2F3C64E31F3A7CDD57365D1E4BFA", hash_generated_method = "1C8C50EBA6E58C67DDD216BF0DB26E3E")
@@ -61,12 +63,14 @@ private ActivityOptionsCompatJB(ActivityOptions activityOptions) {
         mActivityOptions = activityOptions;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.778 -0400", hash_original_method = "83F874A86B7C872C0375E1C46CC5E819", hash_generated_method = "CBC6DDC6A7A26D6366C3DF1482AF32F6")
     
 public Bundle toBundle() {
         return mActivityOptions.toBundle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.784 -0400", hash_original_method = "02009E93BA3C57E3055A7F85B817ABAA", hash_generated_method = "291D86381B7E6B55A2AA4D1305B43345")
     
 public void update(ActivityOptionsCompatJB otherOptions) {

@@ -784,6 +784,7 @@ public void setVersion(int v) {
      * path. Domain and name use case-insensitive comparison; path uses a
      * case-sensitive comparison.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.056 -0400", hash_original_method = "98767A4F6B6A8166A8FB90501C38F844", hash_generated_method = "2CF974D80532F26BB0EA1E280E8EDB8C")
     
 @Override public boolean equals(Object object) {

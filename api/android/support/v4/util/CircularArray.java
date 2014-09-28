@@ -65,6 +65,7 @@ public CircularArray(int minCapacity) {
         mElements = (E[]) new Object[arrayCapacity];
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.336 -0400", hash_original_method = "40E5CCDE120C577646DC94DF8326BBF7", hash_generated_method = "CB60441459B98E168A803481549D3409")
     
 private void doubleCapacity() {
@@ -146,6 +147,7 @@ public final E get(int i) {
         return mElements[p];
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:21.383 -0400", hash_original_method = "3F239FCF0F7FF153AF61F8C83E1E7F5A", hash_generated_method = "0E73468ED21CF22D7AF0E3FE06796BBD")
     
 public final int size() {

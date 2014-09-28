@@ -355,7 +355,8 @@ void setSelectionInt(int position, boolean animate) {
     
 abstract void layout(int delta, boolean animate);
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.376 -0500", hash_original_method = "B9D708BD110913DD38C752A46A05BBB4", hash_generated_method = "513703D89AB4B12AE4736D2F5E964FD5")
     
 @Override
@@ -384,7 +385,7 @@ abstract void layout(int delta, boolean animate);
     }
 
     @DSComment("Spinner")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.381 -0500", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "B2AD20E240F1F5A7AD66020C9F08265C")
     
 @Override
@@ -474,7 +475,7 @@ public int pointToPosition(int x, int y) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.404 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {

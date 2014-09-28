@@ -51,6 +51,7 @@ class ThreadMonitor implements Runnable {
      * @return The monitor thread or {@code null}
      * if the timout amount is not greater than zero
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.586 -0400", hash_original_method = "7C6E04592353FCD39AE43BAC80FC89F3", hash_generated_method = "FBC2392DE9BFB96CFE30E428C34214D9")
     
 public static Thread start(long timeout) {
@@ -66,6 +67,7 @@ public static Thread start(long timeout) {
      * @return The monitor thread or {@code null}
      * if the timout amount is not greater than zero
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.587 -0400", hash_original_method = "D44D3BD1C996D71F3A5411E7F03049D1", hash_generated_method = "44C2A17845AF6CAAB64453C0D8C21AEE")
     
 public static Thread start(Thread thread, long timeout) {
@@ -84,6 +86,7 @@ public static Thread start(Thread thread, long timeout) {
      *
      * @param thread The monitor thread, may be {@code null}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.587 -0400", hash_original_method = "5CB320D98B5CDF9E326E7FB31FA59258", hash_generated_method = "57CCD40328DCF1B5FA521799A47F88E6")
     
 public static void stop(Thread thread) {

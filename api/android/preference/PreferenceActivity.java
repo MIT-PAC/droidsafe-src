@@ -1055,7 +1055,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.717 -0400", hash_original_field = "80358CCA6C151B1C75C8F6D01427BC96", hash_generated_field = "0285FC5896D2C8A81AC7F6CCCD215EAF")
 
         public static final Creator<Header> CREATOR = new Creator<Header>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.556 -0500", hash_original_method = "C7AEFD10D7C167524F7EC8EE7485F83D", hash_generated_method = "5EF80A858BCAD7DE9466608611F9FE8E")
             
 public Header createFromParcel(Parcel source) {

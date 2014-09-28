@@ -207,6 +207,7 @@ public ProgressBarICS(Context context, AttributeSet attrs, int defStyle, int sty
      * Converts a drawable to a tiled version of itself. It will recursively
      * traverse layer and state list drawables.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.270 -0400", hash_original_method = "38BEBCC73AF98F5C4AF8ECDEA5782184", hash_generated_method = "BEBE03EEC78D240CBF2536E36E4AFA69")
     
 private Drawable tileify(Drawable drawable, boolean clip) {
@@ -249,6 +250,7 @@ private Drawable tileify(Drawable drawable, boolean clip) {
         return drawable;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.273 -0400", hash_original_method = "066FEFD8810FD39B2288696E8912725B", hash_generated_method = "066FEFD8810FD39B2288696E8912725B")
     
 Shape getDrawableShape() {
@@ -261,6 +263,7 @@ Shape getDrawableShape() {
      * Each frame of the animation is wrapped in a ClipDrawable and
      * given a tiling BitmapShader.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.276 -0400", hash_original_method = "9EE7DD01E1AB6B0D269DB58A7544C17D", hash_generated_method = "BFBDCEA5D01AFD36373F651333FF5A41")
     
 private Drawable tileifyIndeterminate(Drawable drawable) {
@@ -293,6 +296,7 @@ private Drawable tileifyIndeterminate(Drawable drawable) {
      * <li>behavior = repeat</li>
      * </ul>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.278 -0400", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "78375C615A16504B3FCA36BE4D985473")
     
 private void initProgressBar() {
@@ -314,6 +318,7 @@ private void initProgressBar() {
      *
      * @return true if the progress bar is in indeterminate mode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.281 -0400", hash_original_method = "3387FD7633AB5B9FD9EC30B2946E89DA", hash_generated_method = "C90CFEE0B41FF3D2E106BCB49C7AB059")
     
 public synchronized boolean isIndeterminate() {
@@ -330,6 +335,7 @@ public synchronized boolean isIndeterminate() {
      *
      * @param indeterminate true to enable the indeterminate mode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.284 -0400", hash_original_method = "9BFD2BF2FBC3833B7107C0E363644A89", hash_generated_method = "83EAE0FD544D3B25F05B63870011241F")
     
 public synchronized void setIndeterminate(boolean indeterminate) {
@@ -371,6 +377,7 @@ public Drawable getIndeterminateDrawable() {
      * @see #getIndeterminateDrawable()
      * @see #setIndeterminate(boolean)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.288 -0400", hash_original_method = "4CAABA82B88C397ED0E927A2E15C90A0", hash_generated_method = "C9C5FF69EB2FE939BF7A67171571DBF0")
     
 public void setIndeterminateDrawable(Drawable d) {
@@ -408,6 +415,7 @@ public Drawable getProgressDrawable() {
      * @see #getProgressDrawable()
      * @see #setIndeterminate(boolean)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.293 -0400", hash_original_method = "545791F74335FEE41877E83003E39275", hash_generated_method = "73055FD7C38813C6DC8578E354C7AEEC")
     
 public void setProgressDrawable(Drawable d) {
@@ -481,6 +489,7 @@ public void setProgressDrawable(Drawable d) {
             mRefreshProgressRunnable = this;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setup(int id, int progress, boolean fromUser) {
             mId = id;
             mProgress = progress;
@@ -489,6 +498,7 @@ public void setProgressDrawable(Drawable d) {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.317 -0400", hash_original_method = "F382A8584D637A3004BF31C3394ABAEB", hash_generated_method = "F29C2928F71F70DF14A62B85E0C652E7")
     
 private synchronized void doRefreshProgress(int id, int progress, boolean fromUser,
@@ -509,6 +519,7 @@ private synchronized void doRefreshProgress(int id, int progress, boolean fromUs
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.320 -0400", hash_original_method = "6344B397C965EAD8A2329C40E25F1FFC", hash_generated_method = "F10BD9D23747680E1837588EDF8BD40B")
     
 private synchronized void refreshProgress(int id, int progress, boolean fromUser) {
@@ -541,12 +552,14 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #getProgress()
      * @see #incrementProgressBy(int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.322 -0400", hash_original_method = "E60A634EF77869D698E2255CD3404933", hash_generated_method = "AD82D0D84FC0A04DF8280A1338FC7191")
     
 public synchronized void setProgress(int progress) {
         setProgress(progress, false);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.324 -0400", hash_original_method = "C2E2CCED53BCB6699A7BC8E2215E473D", hash_generated_method = "55F58A1C033E89AC6D71C5759B18667C")
     
 synchronized void setProgress(int progress, boolean fromUser) {
@@ -580,6 +593,7 @@ synchronized void setProgress(int progress, boolean fromUser) {
      * @see #getSecondaryProgress()
      * @see #incrementSecondaryProgressBy(int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.327 -0400", hash_original_method = "A0ECE8D17F88A97A829C3110A7FE71C7", hash_generated_method = "1F4D26896216F700CDDA68B2AFCB2E75")
     
 public synchronized void setSecondaryProgress(int secondaryProgress) {
@@ -613,6 +627,7 @@ public synchronized void setSecondaryProgress(int secondaryProgress) {
      * @see #setMax(int)
      * @see #getMax()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.329 -0400", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "B42929C38FD3EE0C676F8B566418E2D7")
     
 public synchronized int getProgress() {
@@ -661,6 +676,7 @@ public synchronized int getMax() {
      * @see #setProgress(int)
      * @see #setSecondaryProgress(int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.335 -0400", hash_original_method = "53D03C35133C3000C507CFF61AE29775", hash_generated_method = "E5BD534F7BC1849CAE27D681AB2D174C")
     
 public synchronized void setMax(int max) {
@@ -737,6 +753,7 @@ void startAnimation() {
     /**
      * <p>Stop the indeterminate progress animation.</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.346 -0400", hash_original_method = "3AFE1BBA347326120AD78BEE94F7B2A6", hash_generated_method = "3AFE1BBA347326120AD78BEE94F7B2A6")
     
 void stopAnimation() {
@@ -756,6 +773,7 @@ void stopAnimation() {
      * @param context The application environment
      * @param resID The resource identifier of the interpolator to load
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.348 -0400", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "BE3242216311F89FBBEC5A97D66A30C9")
     
 public void setInterpolator(Context context, int resID) {
@@ -768,6 +786,7 @@ public void setInterpolator(Context context, int resID) {
      *
      * @param interpolator The interpolator which defines the acceleration curve
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.350 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "DF8FD2546DF08BADAB224E60C1A6C2B9")
     
 public void setInterpolator(Interpolator interpolator) {
@@ -848,6 +867,7 @@ public Interpolator getInterpolator() {
         updateDrawableBounds(w, h);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.365 -0400", hash_original_method = "CE825990E0CD951F03F92043F3FCC1BC", hash_generated_method = "D5935F3D8E4CC045F4270ACD955461A4")
     
 private void updateDrawableBounds(int w, int h) {
@@ -954,6 +974,7 @@ private void updateDrawableBounds(int w, int h) {
         updateDrawableState();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:49.375 -0400", hash_original_method = "952B851172F804A1D432AC87BADE94E9", hash_generated_method = "539E58DB3A2F5D873F38DF27B1746999")
     
 private void updateDrawableState() {
@@ -1003,6 +1024,7 @@ private void updateDrawableState() {
                 return new SavedState(in);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

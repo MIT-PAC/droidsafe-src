@@ -283,6 +283,7 @@ public void writeToParcel(Parcel parcel, int flagz) {
         return 31 + ((mId == null) ? 0 : mId.hashCode());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:10.446 -0400", hash_original_method = "A79EA19CD1269F63FA3E06483C64C58E", hash_generated_method = "206D5E0A50EB17A92EDF05F210DBC2BB")
     
 @Override

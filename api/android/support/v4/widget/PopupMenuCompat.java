@@ -37,6 +37,7 @@ public class PopupMenuCompat {
      * Interface implementation that doesn't use anything above v4 APIs.
      */
     static class BasePopupMenuImpl implements PopupMenuImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public OnTouchListener getDragToOpenListener(Object popupMenu) {
             return null;
@@ -47,6 +48,7 @@ public class PopupMenuCompat {
      * Interface implementation for devices with at least KitKat APIs.
      */
     static class KitKatPopupMenuImpl extends BasePopupMenuImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public OnTouchListener getDragToOpenListener(Object popupMenu) {
             return PopupMenuCompatKitKat.getDragToOpenListener(popupMenu);

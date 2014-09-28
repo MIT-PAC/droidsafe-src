@@ -20,10 +20,15 @@ import droidsafe.helpers.*;
 import android.os.Bundle;
 class RemoteInputCompatBase {
     public static abstract class RemoteInput {
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract String getResultKey();
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract CharSequence getLabel();
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract CharSequence[] getChoices();
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract boolean getAllowFreeFormInput();
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract Bundle getExtras();
         public interface Factory {
             public RemoteInput build(String resultKey, CharSequence label,

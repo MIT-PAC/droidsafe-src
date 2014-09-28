@@ -135,7 +135,7 @@ public boolean markSupported() {
      */
     @DSSource({DSSourceKind.IO})
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.138 -0500", hash_original_method = "F11529017A51516EAF2106297C9899F8", hash_generated_method = "BB7CD99365BF090BE44CD77DA108B2A5")
     
 public abstract int read() throws IOException;

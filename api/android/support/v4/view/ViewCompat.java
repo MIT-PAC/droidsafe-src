@@ -59,7 +59,6 @@ public class ViewCompat {
     public static final int OVER_SCROLL_NEVER = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:17.784 -0400", hash_original_field = "F01F6026A556A1479651B1673A0D609A", hash_generated_field = "0C12F527669B717C6A0C28E0DC587883")
 
-
     private static final long FAKE_FRAME_TIME = 10;
 
     @Retention(RetentionPolicy.SOURCE)
@@ -209,99 +208,127 @@ public class ViewCompat {
         private boolean mTempDetachBound;
         WeakHashMap<View, ViewPropertyAnimatorCompat> mViewPropertyAnimatorCompatMap = null;
 
-
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean canScrollHorizontally(View v, int direction) {
             return false;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean canScrollVertically(View v, int direction) {
             return false;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public int getOverScrollMode(View v) {
             return OVER_SCROLL_NEVER;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void setOverScrollMode(View v, int mode) {
             // Do nothing; API doesn't exist
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
             // Do nothing; API doesn't exist
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void onPopulateAccessibilityEvent(View v, AccessibilityEvent event) {
             // Do nothing; API doesn't exist
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
          // Do nothing; API doesn't exist
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
             // Do nothing; API doesn't exist
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean hasTransientState(View view) {
             // A view can't have transient state if transient state wasn't supported.
             return false;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void setHasTransientState(View view, boolean hasTransientState) {
             // Do nothing; API doesn't exist
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void postInvalidateOnAnimation(View view) {
             view.invalidate();
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void postInvalidateOnAnimation(View view, int left, int top, int right, int bottom) {
             view.invalidate(left, top, right, bottom);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void postOnAnimation(View view, Runnable action) {
             view.postDelayed(action, getFrameTime());
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void postOnAnimationDelayed(View view, Runnable action, long delayMillis) {
             view.postDelayed(action, getFrameTime() + delayMillis);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         long getFrameTime() {
             return FAKE_FRAME_TIME;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public int getImportantForAccessibility(View view) {
             return 0;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void setImportantForAccessibility(View view, int mode) {
 
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean performAccessibilityAction(View view, int action, Bundle arguments) {
             return false;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public AccessibilityNodeProviderCompat getAccessibilityNodeProvider(View view) {
             return null;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public float getAlpha(View view) {
             return 1.0f;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void setLayerType(View view, int layerType, Paint paint) {
             // No-op until layers became available (HC)
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public int getLayerType(View view) {
             return LAYER_TYPE_NONE;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public int getLabelFor(View view) {
             return 0;
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void setLabelFor(View view, int id) {
 
         }
+        @DSSafe(DSCat.SAFE_LIST)
         public void setLayerPaint(View view, Paint p) {
             // No-op until layers became available (HC)
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLayoutDirection(View view) {
             return LAYOUT_DIRECTION_LTR;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLayoutDirection(View view, int layoutDirection) {
             // No-op
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public ViewParent getParentForAccessibility(View view) {
             return view.getParent();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isOpaque(View view) {
             final Drawable bg = view.getBackground();
@@ -311,40 +338,48 @@ public class ViewCompat {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int resolveSizeAndState(int size, int measureSpec, int childMeasuredState) {
             return View.resolveSize(size, measureSpec);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMeasuredWidthAndState(View view) {
             return view.getMeasuredWidth();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMeasuredHeightAndState(View view) {
             return view.getMeasuredHeight();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMeasuredState(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getAccessibilityLiveRegion(View view) {
             return ACCESSIBILITY_LIVE_REGION_NONE;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAccessibilityLiveRegion(View view, int mode) {
             // No-op
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getPaddingStart(View view) {
             return view.getPaddingLeft();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getPaddingEnd(View view) {
             return view.getPaddingRight();
@@ -355,6 +390,7 @@ public class ViewCompat {
             view.setPadding(start, top, end, bottom);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void dispatchStartTemporaryDetach(View view) {
             if (!mTempDetachBound) {
@@ -372,6 +408,7 @@ public class ViewCompat {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void dispatchFinishTemporaryDetach(View view) {
             if (!mTempDetachBound) {
@@ -389,6 +426,7 @@ public class ViewCompat {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void bindTempDetach() {
             try {
                 mDispatchStartTemporaryDetach = View.class.getDeclaredMethod(
@@ -401,116 +439,139 @@ public class ViewCompat {
             mTempDetachBound = true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getTranslationX(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getTranslationY(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getX(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getY(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getRotation(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getRotationX(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getRotationY(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getScaleX(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getScaleY(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMinimumWidth(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMinimumHeight(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public ViewPropertyAnimatorCompat animate(View view) {
             return new ViewPropertyAnimatorCompat(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setRotation(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setTranslationX(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setTranslationY(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAlpha(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setRotationX(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setRotationY(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScaleX(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScaleY(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setX(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setY(View view, float value) {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setPivotX(View view, float value) {
             // noop
@@ -521,11 +582,13 @@ public class ViewCompat {
             // noop
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getPivotX(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getPivotY(View view) {
             return 0;
@@ -533,6 +596,7 @@ public class ViewCompat {
     }
 
     static class EclairMr1ViewCompatImpl extends BaseViewCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isOpaque(View view) {
             return ViewCompatEclairMr1.isOpaque(view);
@@ -540,10 +604,12 @@ public class ViewCompat {
     }
 
     static class GBViewCompatImpl extends EclairMr1ViewCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getOverScrollMode(View v) {
             return ViewCompatGingerbread.getOverScrollMode(v);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setOverScrollMode(View v, int mode) {
             ViewCompatGingerbread.setOverScrollMode(v, mode);
@@ -551,22 +617,27 @@ public class ViewCompat {
     }
 
     static class HCViewCompatImpl extends GBViewCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         long getFrameTime() {
             return ViewCompatHC.getFrameTime();
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getAlpha(View view) {
             return ViewCompatHC.getAlpha(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLayerType(View view, int layerType, Paint paint) {
             ViewCompatHC.setLayerType(view, layerType, paint);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLayerType(View view)  {
             return ViewCompatHC.getLayerType(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLayerPaint(View view, Paint paint) {
             // Make sure the paint is correct; this will be cheap if it's the same
@@ -575,70 +646,87 @@ public class ViewCompat {
             // This is expensive, but the only way to accomplish this before JB-MR1.
             view.invalidate();
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int resolveSizeAndState(int size, int measureSpec, int childMeasuredState) {
             return ViewCompatHC.resolveSizeAndState(size, measureSpec, childMeasuredState);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMeasuredWidthAndState(View view) {
             return ViewCompatHC.getMeasuredWidthAndState(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMeasuredHeightAndState(View view) {
             return ViewCompatHC.getMeasuredHeightAndState(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMeasuredState(View view) {
             return ViewCompatHC.getMeasuredState(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getTranslationX(View view) {
             return ViewCompatHC.getTranslationX(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getTranslationY(View view) {
             return ViewCompatHC.getTranslationY(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setTranslationX(View view, float value) {
             ViewCompatHC.setTranslationX(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setTranslationY(View view, float value) {
             ViewCompatHC.setTranslationY(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAlpha(View view, float value) {
             ViewCompatHC.setAlpha(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setX(View view, float value) {
             ViewCompatHC.setX(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setY(View view, float value) {
             ViewCompatHC.setY(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setRotation(View view, float value) {
             ViewCompatHC.setRotation(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setRotationX(View view, float value) {
             ViewCompatHC.setRotationX(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setRotationY(View view, float value) {
             ViewCompatHC.setRotationY(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScaleX(View view, float value) {
             ViewCompatHC.setScaleX(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScaleY(View view, float value) {
             ViewCompatHC.setScaleY(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setPivotX(View view, float value) {
             ViewCompatHC.setPivotX(view, value);
@@ -647,45 +735,54 @@ public class ViewCompat {
         public void setPivotY(View view, float value) {
             ViewCompatHC.setPivotY(view, value);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getX(View view) {
             return ViewCompatHC.getX(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getY(View view) {
             return ViewCompatHC.getY(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getRotation(View view) {
             return ViewCompatHC.getRotation(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getRotationX(View view) {
             return ViewCompatHC.getRotationX(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getRotationY(View view) {
             return ViewCompatHC.getRotationY(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getScaleX(View view) {
             return ViewCompatHC.getScaleX(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getScaleY(View view) {
             return ViewCompatHC.getScaleY(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getPivotX(View view) {
             return ViewCompatHC.getPivotX(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public float getPivotY(View view) {
             return ViewCompatHC.getPivotY(view);
@@ -693,30 +790,37 @@ public class ViewCompat {
     }
 
     static class ICSViewCompatImpl extends HCViewCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean canScrollHorizontally(View v, int direction) {
             return ViewCompatICS.canScrollHorizontally(v, direction);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean canScrollVertically(View v, int direction) {
             return ViewCompatICS.canScrollVertically(v, direction);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPopulateAccessibilityEvent(View v, AccessibilityEvent event) {
             ViewCompatICS.onPopulateAccessibilityEvent(v, event);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
             ViewCompatICS.onInitializeAccessibilityEvent(v, event);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
             ViewCompatICS.onInitializeAccessibilityNodeInfo(v, info.getInfo());
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
             ViewCompatICS.setAccessibilityDelegate(v, delegate.getBridge());
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public ViewPropertyAnimatorCompat animate(View view) {
             if (mViewPropertyAnimatorCompatMap == null) {
@@ -733,34 +837,42 @@ public class ViewCompat {
     }
 
     static class JBViewCompatImpl extends ICSViewCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean hasTransientState(View view) {
             return ViewCompatJB.hasTransientState(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setHasTransientState(View view, boolean hasTransientState) {
             ViewCompatJB.setHasTransientState(view, hasTransientState);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void postInvalidateOnAnimation(View view) {
             ViewCompatJB.postInvalidateOnAnimation(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void postInvalidateOnAnimation(View view, int left, int top, int right, int bottom) {
             ViewCompatJB.postInvalidateOnAnimation(view, left, top, right, bottom);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void postOnAnimation(View view, Runnable action) {
             ViewCompatJB.postOnAnimation(view, action);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void postOnAnimationDelayed(View view, Runnable action, long delayMillis) {
             ViewCompatJB.postOnAnimationDelayed(view, action, delayMillis);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getImportantForAccessibility(View view) {
             return ViewCompatJB.getImportantForAccessibility(view);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setImportantForAccessibility(View view, int mode) {
             // IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS is not available
@@ -771,10 +883,12 @@ public class ViewCompat {
             }
             ViewCompatJB.setImportantForAccessibility(view, mode);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean performAccessibilityAction(View view, int action, Bundle arguments) {
             return ViewCompatJB.performAccessibilityAction(view, action, arguments);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public AccessibilityNodeProviderCompat getAccessibilityNodeProvider(View view) {
             Object compat = ViewCompatJB.getAccessibilityNodeProvider(view);
@@ -784,16 +898,19 @@ public class ViewCompat {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public ViewParent getParentForAccessibility(View view) {
             return ViewCompatJB.getParentForAccessibility(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMinimumWidth(View view) {
             return ViewCompatJB.getMinimumWidth(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMinimumHeight(View view) {
             return ViewCompatJB.getMinimumHeight(view);
@@ -802,36 +919,43 @@ public class ViewCompat {
 
     static class JbMr1ViewCompatImpl extends JBViewCompatImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLabelFor(View view) {
             return ViewCompatJellybeanMr1.getLabelFor(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLabelFor(View view, int id) {
             ViewCompatJellybeanMr1.setLabelFor(view, id);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLayerPaint(View view, Paint paint) {
             ViewCompatJellybeanMr1.setLayerPaint(view, paint);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLayoutDirection(View view) {
             return ViewCompatJellybeanMr1.getLayoutDirection(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLayoutDirection(View view, int layoutDirection) {
             ViewCompatJellybeanMr1.setLayoutDirection(view, layoutDirection);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getPaddingStart(View view) {
             return ViewCompatJellybeanMr1.getPaddingStart(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getPaddingEnd(View view) {
             return ViewCompatJellybeanMr1.getPaddingEnd(view);
@@ -844,23 +968,25 @@ public class ViewCompat {
     }
 
     static class KitKatViewCompatImpl extends JbMr1ViewCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getAccessibilityLiveRegion(View view) {
             return ViewCompatKitKat.getAccessibilityLiveRegion(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAccessibilityLiveRegion(View view, int mode) {
             ViewCompatKitKat.setAccessibilityLiveRegion(view, mode);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setImportantForAccessibility(View view, int mode) {
             ViewCompatJB.setImportantForAccessibility(view, mode);
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:18.943 -0400", hash_original_field = "8C7B75196624F10657FDCEE6792BBCF8", hash_generated_field = "BBDF66702D3CCA930AA785B97237B8E4")
-
 
     static  ViewCompatImpl IMPL;
     static {
@@ -889,6 +1015,7 @@ public class ViewCompat {
      * @param direction Negative to check scrolling left, positive to check scrolling right.
      * @return true if this view can be scrolled in the specified direction, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:18.955 -0400", hash_original_method = "857005B1ED2030A6958E9EB0D4C8F4E9", hash_generated_method = "1589EB5E74EE7AEADA18B3309A63800A")
         
 public static boolean canScrollHorizontally(View v, int direction) {
@@ -902,6 +1029,7 @@ public static boolean canScrollHorizontally(View v, int direction) {
      * @param direction Negative to check scrolling up, positive to check scrolling down.
      * @return true if this view can be scrolled in the specified direction, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:18.959 -0400", hash_original_method = "2DFFD160E11AA00CE94741E99122C12E", hash_generated_method = "50EBFE12C5079C61D137C632B3083850")
         
 public static boolean canScrollVertically(View v, int direction) {
@@ -917,6 +1045,7 @@ public static boolean canScrollVertically(View v, int direction) {
      * @param v The View against which to invoke the method.
      * @return This view's over-scroll mode.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:18.964 -0400", hash_original_method = "7494BE1D565A64230355951115CC2869", hash_generated_method = "AE83B4D709C13B26DA732E689B1CF153")
         
     public static int getOverScrollMode(View v) {
@@ -1009,6 +1138,7 @@ public static void onPopulateAccessibilityEvent(View v, AccessibilityEvent event
      * @see View#sendAccessibilityEvent(int)
      * @see View#dispatchPopulateAccessibilityEvent(AccessibilityEvent)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:18.979 -0400", hash_original_method = "ED19022FEB94C3A5867003FD25E7BFF2", hash_generated_method = "DAA6BC4411CAEFEBE90A13CE6A87A9F3")
         
 public static void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
@@ -1047,6 +1177,7 @@ public static void onInitializeAccessibilityEvent(View v, AccessibilityEvent eve
      * @param v The View against which to invoke the method.
      * @param info The instance to initialize.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:18.984 -0400", hash_original_method = "73AA4AFD15DD1C9DB48D7754FEBFC0EB", hash_generated_method = "FB6FC5466D59E9C530E92CA40A2B6091")
         
 public static void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
@@ -1064,6 +1195,7 @@ public static void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeIn
      *
      * @see android.view.View.AccessibilityDelegate
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:18.988 -0400", hash_original_method = "4280E8CA0A8375D977DD927F0A6FE108", hash_generated_method = "FDC098EF58DE2FA81B05DBE4DBC3A2B4")
         
 public static void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
@@ -1106,6 +1238,7 @@ public static void setHasTransientState(View view, boolean hasTransientState) {
      *
      * @param view View to invalidate
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.003 -0400", hash_original_method = "13EB7C07EE18A6F4533610314AE46EE4", hash_generated_method = "7AB6431BFACC42EAB466EA6AD2D6CBD7")
         
 public static void postInvalidateOnAnimation(View view) {
@@ -1125,6 +1258,7 @@ public static void postInvalidateOnAnimation(View view) {
      * @param right The right coordinate of the rectangle to invalidate.
      * @param bottom The bottom coordinate of the rectangle to invalidate.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.009 -0400", hash_original_method = "0C44E4531B46F2C870F02629E599CB97", hash_generated_method = "EB0E706D838EB9668F736FB19FECA1C0")
         
 public static void postInvalidateOnAnimation(View view, int left, int top,
@@ -1142,6 +1276,7 @@ public static void postInvalidateOnAnimation(View view, int left, int top,
      * @param view View to post this Runnable to
      * @param action The Runnable that will be executed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.014 -0400", hash_original_method = "5F4A37C40BDB0773A33D63BB030FF77C", hash_generated_method = "11E4E49EECB1842AA09416EC4947CD9C")
         
 public static void postOnAnimation(View view, Runnable action) {
@@ -1161,6 +1296,7 @@ public static void postOnAnimation(View view, Runnable action) {
      * @param delayMillis The delay (in milliseconds) until the Runnable
      *        will be executed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.019 -0400", hash_original_method = "0FAD04BB0A0F09D75E4DF96A69CCF3CB", hash_generated_method = "19F4354D19593418FF2F3BF0AA25F648")
         
 public static void postOnAnimationDelayed(View view, Runnable action, long delayMillis) {
@@ -1180,6 +1316,7 @@ public static void postOnAnimationDelayed(View view, Runnable action, long delay
      * @see #IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
      * @see #IMPORTANT_FOR_ACCESSIBILITY_AUTO
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.024 -0400", hash_original_method = "58153325535AF15DDE2E1ECB138BDE5D", hash_generated_method = "B71673F353948D41996B2FCC5A20AF28")
         
 @ImportantForAccessibility
@@ -1227,6 +1364,7 @@ public static void setImportantForAccessibility(View view,
      * @param arguments Optional action arguments.
      * @return Whether the action was performed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.033 -0400", hash_original_method = "9732AC072CD967AA40BB72464A16FDC3", hash_generated_method = "FC54304D599392C03042D2FD00726A1C")
         
 public static boolean performAccessibilityAction(View view, int action, Bundle arguments) {
@@ -1269,6 +1407,7 @@ public static AccessibilityNodeProviderCompat getAccessibilityNodeProvider(View 
      * <p>By default this is 1.0f. Prior to API 11, the returned value is always 1.0f.
      * @return The opacity of the view.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.043 -0400", hash_original_method = "46EAB694106D4AF66F8F41DED7A5B7C4", hash_generated_method = "695C3524C8D4BBE07A13153ED7417D36")
         
 public static float getAlpha(View view) {
@@ -1336,6 +1475,7 @@ public static void setLayerType(View view, @LayerType int layerType, Paint paint
      * @see #LAYER_TYPE_SOFTWARE
      * @see #LAYER_TYPE_HARDWARE
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.053 -0400", hash_original_method = "052EE158F70370997B34A0226D95F9E6", hash_generated_method = "ED78D781EFC00CC8E5BE809F6E6A32B1")
         
 @LayerType
@@ -1399,6 +1539,7 @@ public static void setLabelFor(View view, int labeledId) {
      *
      * @see #setLayerType(View, int, android.graphics.Paint)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.069 -0400", hash_original_method = "47DF25BC91539BCD776DF84DDF9C3F59", hash_generated_method = "998997BD0E82A4D9D62323B5EB028470")
         
 public static void setLayerPaint(View view, Paint paint) {
@@ -1415,6 +1556,7 @@ public static void setLayerPaint(View view, Paint paint) {
      * For compatibility, this will return {@link #LAYOUT_DIRECTION_LTR} if API version
      * is lower than Jellybean MR1 (API 17)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.073 -0400", hash_original_method = "40594DE735026B6C38028B35D7E018F6", hash_generated_method = "B3729AA9DB3CD1DB76B907B98C3E11BB")
         
 @ResolvedLayoutDirectionMode
@@ -1452,6 +1594,7 @@ public static void setLayoutDirection(View view, @LayoutDirectionMode int layout
      * @param view View to retrieve parent for
      * @return The parent for use in accessibility inspection
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.082 -0400", hash_original_method = "1F2068DDAD86C0FF15102CEE7DBB6F17", hash_generated_method = "AB0E306B912E7392AE72CC72BCD81D67")
         
 public static ViewParent getParentForAccessibility(View view) {
@@ -1467,6 +1610,7 @@ public static ViewParent getParentForAccessibility(View view) {
      *
      * @return True if this View is guaranteed to be fully opaque, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.088 -0400", hash_original_method = "49E3C4AA6CE54B7C84275FBD581C84E3", hash_generated_method = "BB33EBDE412CBDF8A07C94655A243B6D")
         
 public static boolean isOpaque(View view) {

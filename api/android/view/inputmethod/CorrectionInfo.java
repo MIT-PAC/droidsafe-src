@@ -15,7 +15,7 @@ public final class CorrectionInfo implements Parcelable {
     public static final Parcelable.Creator<CorrectionInfo> CREATOR
             = new Parcelable.Creator<CorrectionInfo>() {
     	
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         public CorrectionInfo createFromParcel(Parcel source) {
     		addTaint(source.getTaint());
     		CorrectionInfo retVal = new CorrectionInfo(source);

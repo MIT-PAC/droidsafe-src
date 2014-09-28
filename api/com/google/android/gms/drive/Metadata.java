@@ -48,9 +48,8 @@ public String getDescription()
     	s.addTaint(getTaint());
     	return s;
     }
-
-    @DSSource({DSSourceKind.GOOGLE_DRIVE})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.657 -0400", hash_original_method = "D00097497F8474B1A50D9883AEFD1956", hash_generated_method = "0EC56738ADE4F7735B2D0EF27C462D94")
     
 public DriveId getDriveId()
@@ -158,7 +157,7 @@ public Date getSharedWithMeDate()
     	return d;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.704 -0400", hash_original_method = "07B9B9CC67225347D66AAAEA8290AADB", hash_generated_method = "FF47A35CA17B681F4058EC62599580C5")
     
 public String getTitle()

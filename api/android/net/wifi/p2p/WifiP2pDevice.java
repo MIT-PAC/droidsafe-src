@@ -80,7 +80,7 @@ public class WifiP2pDevice implements Parcelable {
 
     public static final Creator<WifiP2pDevice> CREATOR =
         new Creator<WifiP2pDevice>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.283 -0500", hash_original_method = "5387382CA16A3AD5682D1C391F3488A3", hash_generated_method = "DB007C546816C2DDE05F93E41058B0E5")
         
 public WifiP2pDevice createFromParcel(Parcel in) {
@@ -286,6 +286,7 @@ public boolean isGroupOwner() {
         return other.deviceAddress.equals(deviceAddress);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.270 -0500", hash_original_method = "016D59A2B811BA8203F4683B5513F2D5", hash_generated_method = "011133C52A8A5C2BA1398ECCF2140305")
     

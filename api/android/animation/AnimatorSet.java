@@ -500,7 +500,8 @@ for(Node node : nodesToStart)
 public void onAnimationCancel(Animator anim) {
                     canceled = true;
                 }
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.705 -0500", hash_original_method = "445AE985C63B218AFF9EAABB75FAC581", hash_generated_method = "664D233B6FD238017DE3054CF0A6B711")
+                @DSSafe(DSCat.ANDROID_ANIMATION)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.705 -0500", hash_original_method = "445AE985C63B218AFF9EAABB75FAC581", hash_generated_method = "664D233B6FD238017DE3054CF0A6B711")
                 
 public void onAnimationEnd(Animator anim) {
                     if (!canceled) {

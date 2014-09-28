@@ -24,8 +24,6 @@ import java.security.Provider;
 import java.security.Security;
 import org.apache.harmony.javax.security.auth.callback.CallbackHandler;
 
-
-
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Enumeration;
@@ -39,59 +37,47 @@ public class Sasl {
     private static final String CLIENTFACTORYSRV = "SaslClientFactory";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.667 -0400", hash_original_field = "876D20EF1455BEC74A99743FB11C2DAC", hash_generated_field = "6E6722B39359C13682824D8B96045BDB")
 
-
     // SaslServerFactory service name
     private static final String SERVERFACTORYSRV = "SaslServerFactory";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.667 -0400", hash_original_field = "63E291D8077F42F3C54DC84FCF604278", hash_generated_field = "8B9A9BAEEE75B7314CA0AC674C087732")
 
-
     public static final String POLICY_NOPLAINTEXT = "javax.security.sasl.policy.noplaintext";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.668 -0400", hash_original_field = "4CE360E0BC29510C0E9CCBEE644552F8", hash_generated_field = "68A9369B35A350A84299B3ACFA0E70A2")
-
 
     public static final String POLICY_NOACTIVE = "javax.security.sasl.policy.noactive";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.668 -0400", hash_original_field = "190D35DF7BD0BAD48D9A24B4D3CAC29B", hash_generated_field = "2840BDD4CF75DF812B0D2CCA192C8B4C")
 
-
     public static final String POLICY_NODICTIONARY = "javax.security.sasl.policy.nodictionary";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.669 -0400", hash_original_field = "8296CD85622774271342FC15CA78577F", hash_generated_field = "715CFCBAA40D1BDEF13756C05BC3138F")
-
 
     public static final String POLICY_NOANONYMOUS = "javax.security.sasl.policy.noanonymous";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.670 -0400", hash_original_field = "D87DCB269DB398523C236A334DB75118", hash_generated_field = "799311FCB8E662E0BB5753295DD0BE69")
 
-
     public static final String POLICY_FORWARD_SECRECY = "javax.security.sasl.policy.forward";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.670 -0400", hash_original_field = "7D4DD99AC2EA9D01412482E564CFFF4C", hash_generated_field = "615931B89ABFE7379A04B0317FA1E547")
-
 
     public static final String POLICY_PASS_CREDENTIALS = "javax.security.sasl.policy.credentials";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.671 -0400", hash_original_field = "848FF897FB69DC1940B6498E39E50175", hash_generated_field = "394F3E07D103D2FF772AE015E3B01642")
 
-
     public static final String MAX_BUFFER = "javax.security.sasl.maxbuffer";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.672 -0400", hash_original_field = "764E78A1D7A70F45861A1171F17DAF17", hash_generated_field = "FBB3926C16B2C5DE9E5511432E018CC8")
-
 
     public static final String RAW_SEND_SIZE = "javax.security.sasl.rawsendsize";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.672 -0400", hash_original_field = "68B358104FF94CEAEFC625CBD275D266", hash_generated_field = "BFD50980780CE47E6450323491B204E7")
 
-
     public static final String REUSE = "javax.security.sasl.reuse";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.673 -0400", hash_original_field = "488FF1E9ED26737F7A55AF094F7612F8", hash_generated_field = "A408F77660708637522D4B698AC7DCC2")
-
 
     public static final String QOP = "javax.security.sasl.qop";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.673 -0400", hash_original_field = "E9AE37BEBD86F66835F4A78079188644", hash_generated_field = "6260CE989D647DEC1E4FF731A9D33D26")
 
-
     public static final String STRENGTH = "javax.security.sasl.strength";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.674 -0400", hash_original_field = "A9DD395876782CD74D8F2941ED675833", hash_generated_field = "0843BB158D490DEAFD93D5AAC41C795C")
-
 
     public static final String SERVER_AUTH = "javax.security.sasl.server.authentication";
 
     // Forms new instance of factory
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.675 -0400", hash_original_method = "A22E26D7D508455A024AA2A1D979B72B", hash_generated_method = "95A1D0DF36A51AD50595EF2DE46F3F97")
     
 private static Object newInstance(String factoryName, Provider prv) throws SaslException {
@@ -117,6 +103,7 @@ private static Object newInstance(String factoryName, Provider prv) throws SaslE
      * This method forms the list of SaslClient/SaslServer factories which are
      * implemented in used providers
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.676 -0400", hash_original_method = "F390E337D6352367BF020E091E2B438B", hash_generated_method = "8E32C8D41118D9235A7CC44D6951ACEF")
     
 private static Collection<?> findFactories(String service) {
@@ -156,6 +143,7 @@ private static Collection<?> findFactories(String service) {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.678 -0400", hash_original_method = "2ABEE3248274931C12A5E79833E2E025", hash_generated_method = "23FCE9F5380F579813D3F8671B43C745")
     
 @SuppressWarnings("unchecked")
@@ -164,6 +152,7 @@ private static Collection<?> findFactories(String service) {
         return Collections.enumeration(res);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.679 -0400", hash_original_method = "34B4957EEAD9E52BF4CDC65B23B73862", hash_generated_method = "473CF3CB8403D188A3006EC789D13082")
     
 public static SaslServer createSaslServer(String mechanism, String protocol,

@@ -97,6 +97,7 @@ public PrintJobId(String value) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:01.318 -0400", hash_original_method = "B5B0042016D0742F0C11F3E36079A2CA", hash_generated_method = "DC3C3C57483372761C5F11A9FB7AAE01")
     
 @Override

@@ -51,7 +51,7 @@ private static void throwNotInitialized() throws KeyStoreException {
      * @see #getDefaultType
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.331 -0500", hash_original_method = "8219108C73AF092A133C70DEA775DA97", hash_generated_method = "FEA2A071F474C729EB28D6AA867BFDC0")
     
 public static KeyStore getInstance(String type) throws KeyStoreException {
@@ -88,7 +88,7 @@ public static KeyStore getInstance(String type) throws KeyStoreException {
      * @see #getDefaultType
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.334 -0500", hash_original_method = "E79F87A65CC661E36FF41DA591B3A31D", hash_generated_method = "A2D39DFE38EA02CB2269278A461D92BA")
     
 public static KeyStore getInstance(String type, String provider)
@@ -127,7 +127,7 @@ public static KeyStore getInstance(String type, String provider)
      * @see #getDefaultType
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.337 -0500", hash_original_method = "DAE2CFCBAFEE42DE8D4B61EE11C10C65", hash_generated_method = "7B37C796C47FC24BD1C683EC522000C7")
     
 public static KeyStore getInstance(String type, Provider provider) throws KeyStoreException {
@@ -158,7 +158,7 @@ public static KeyStore getInstance(String type, Provider provider) throws KeySto
      * @return the default type for {@code KeyStore} instances
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.340 -0500", hash_original_method = "57AAB0F03057AE1C147A6E60DF4FEF55", hash_generated_method = "C3FA8A029DE61ED9E58516EBD430AC26")
     
 public static final String getDefaultType() {
@@ -410,7 +410,8 @@ public final void setKeyEntry(String alias, byte[] key, Certificate[] chain)
      * @throws NullPointerException
      *             if {@code alias} is {@code null}.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.364 -0500", hash_original_method = "219C504E98378892F0A1CF69789298BA", hash_generated_method = "6CFC1B4D6B237639B2C802EB0DBEFCF1")
     
 public final void setCertificateEntry(String alias, Certificate cert) throws KeyStoreException {

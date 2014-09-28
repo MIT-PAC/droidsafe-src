@@ -58,6 +58,7 @@ public SaslClient createSaslClient(String[] mechanisms, String authorizationId, 
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.370 -0400", hash_original_method = "448EBF82C00F379207379E92918C1CC3", hash_generated_method = "10A3E0C5DC7BC61B4DD02B5FDA595C79")
     
 public String[] getMechanismNames(Map props)

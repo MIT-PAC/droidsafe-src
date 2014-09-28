@@ -123,11 +123,13 @@ public abstract Display[] getDisplays(String category);
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Display[] getDisplays() {
             return new Display[] { mWindowManager.getDefaultDisplay() };
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Display[] getDisplays(String category) {
             return category == null ? getDisplays() : new Display[0];

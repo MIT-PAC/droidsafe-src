@@ -86,6 +86,7 @@ public ByteOrderMark(String charsetName, int... bytes) {
      *
      * @return the character set name
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.345 -0400", hash_original_method = "62D3F36CA78A6EC4185A2D1A05C169E6", hash_generated_method = "C3E3B8FCC038ED1DFB7C6F3AF5424FEA")
     
 public String getCharsetName() {
@@ -97,6 +98,7 @@ public String getCharsetName() {
      *
      * @return the length of the BOM's bytes
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.345 -0400", hash_original_method = "52567BA40A41F53DE2F6B00E0A08B85C", hash_generated_method = "7B4516413F39E90CDAA552700076F548")
     
 public int length() {
@@ -109,6 +111,7 @@ public int length() {
      * @param pos The position
      * @return The specified byte
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.346 -0400", hash_original_method = "97E73E03DAE09D2D62A9AEEE833FF79F", hash_generated_method = "09CF3219318509718A488D49B6696578")
     
 public int get(int pos) {
@@ -137,6 +140,7 @@ public byte[] getBytes() {
      * @return true if the bom's bytes are equal, otherwise
      * false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.347 -0400", hash_original_method = "17B283E675F13C0A62946A353F07CD53", hash_generated_method = "E45B81EF177F99E3E73457DF095A84DF")
     
 @Override

@@ -1341,7 +1341,7 @@ public void copyFrom(PointerProperties other) {
 
     public static final Parcelable.Creator<MotionEvent> CREATOR
             = new Parcelable.Creator<MotionEvent>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:11.009 -0500", hash_original_method = "E988C06BFCE97E62AC2813BD29B32BEE", hash_generated_method = "EA7995B37BF37B0A751844672E9AEE92")
         
 public MotionEvent createFromParcel(Parcel in) {
@@ -1490,7 +1490,8 @@ public final int getAction() {
      * Use {@link #getActionIndex} to return the index associated with pointer actions.
      * @return The action, such as {@link #ACTION_DOWN} or {@link #ACTION_POINTER_DOWN}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.796 -0500", hash_original_method = "268411790684740D49A019DF59E1FFBB", hash_generated_method = "0EF47299C1014B42203BA87354C5061B")
     
 public final int getActionMasked() {
@@ -2092,7 +2093,7 @@ public final int getButtonState() {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.888 -0500", hash_original_method = "6E457CC599C66DF6B9AC57A3DF3B8E7E", hash_generated_method = "597CB69258293954DEE2444596EE378C")
     
 public final float getRawX() {
@@ -2110,7 +2111,7 @@ public final float getRawX() {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.891 -0500", hash_original_method = "C18C1837908CE668DE325D32328DA600", hash_generated_method = "8E785BFC8053CFC68155ADB53AB44608")
     
 public final float getRawY() {
@@ -2125,7 +2126,8 @@ public final float getRawY() {
      *
      * @see #AXIS_X
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.893 -0500", hash_original_method = "32503B0D7203271814D12FFB8906664F", hash_generated_method = "14EDB92E48A1FE2A6848192BF9462171")
     
 public final float getXPrecision() {
@@ -2140,7 +2142,8 @@ public final float getXPrecision() {
      *
      * @see #AXIS_Y
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.897 -0500", hash_original_method = "77B44C5CFF493101D20AF55AA249AFB4", hash_generated_method = "2C1783A2FC429C6490226761633705BE")
     
 public final float getYPrecision() {
@@ -2176,7 +2179,7 @@ public final int getHistorySize() {
      */
     @DSComment("Event associated with motion")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.902 -0500", hash_original_method = "4F37DFE9294EB232F86D1F83C2ADDC74", hash_generated_method = "A851AF9B1BB802307F420B87ED8B7DBC")
     
 public final long getHistoricalEventTime(int pos) {
@@ -2234,7 +2237,8 @@ public final float getHistoricalY(int pos) {
      * @see #getPressure()
      * @see #AXIS_PRESSURE
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.909 -0500", hash_original_method = "E822398D8AD69E2A637D6F0BC07F61D8", hash_generated_method = "D51D0A816F48D35B65CD1BA1D510DAAF")
     
 public final float getHistoricalPressure(int pos) {
@@ -2427,7 +2431,8 @@ public final float getHistoricalY(int pointerIndex, int pos) {
      * @see #getPressure(int)
      * @see #AXIS_PRESSURE
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.933 -0500", hash_original_method = "A8F703E0BCBA29F53C62C25AACD436ED", hash_generated_method = "252C97CE72516A9BCA7EE5DABB7C62A2")
     
 public final float getHistoricalPressure(int pointerIndex, int pos) {
@@ -2720,7 +2725,8 @@ public final void offsetLocation(float deltaX, float deltaY) {
      * @param x New absolute X location.
      * @param y New absolute Y location.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.965 -0500", hash_original_method = "D9D9F7662138ADF2F9591F7DFAEB3F74", hash_generated_method = "BE9399C2E35FFF89AD55B3C33C31552D")
     
 public final void setLocation(float x, float y) {

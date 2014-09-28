@@ -148,7 +148,7 @@ InetSocketAddress(String hostname, int port, boolean needResolved) {
      *
      * @return the socket endpoint port number.
      */
-    @DSSpec(DSCat.NETWORKING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.643 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "E126B6DCEFD20BABFE67A5DF1C3260B4")
     
@@ -161,7 +161,8 @@ public final int getPort() {
      *
      * @return the socket endpoint address.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.TRIGGER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.646 -0500", hash_original_method = "EBC0D8AF364C08270D1E1C0275ACCE70", hash_generated_method = "58EFD60573CF340F0B118334D4223CC2")
     
 public final InetAddress getAddress() {

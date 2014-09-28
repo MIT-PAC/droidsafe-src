@@ -13,7 +13,7 @@ public class SyncInfo implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.962 -0400", hash_original_field = "A01FEEA498E9DC325074E88D0BA2C977", hash_generated_field = "5C265E4318FC6B04FC842570ABED2BA1")
 
     public static final Creator<SyncInfo> CREATOR = new Creator<SyncInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.951 -0500", hash_original_method = "8CC1AEB78BBF2ED2FA2D9F459276B44F", hash_generated_method = "C46E649958AD9AF7AEBFCDBF4A9B07B0")
         
 public SyncInfo createFromParcel(Parcel in) {

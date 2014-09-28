@@ -97,7 +97,8 @@ public boolean isEnabled() {
      * 
      * @return The icon associated with this component.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.133 -0500", hash_original_method = "39BF66743A5A058B0728A86B3B731327", hash_generated_method = "2063D75F4BECC5EC9C4AE3DBCB9FC602")
     
 public final int getIconResource() {

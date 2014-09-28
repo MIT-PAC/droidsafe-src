@@ -24,7 +24,7 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
      *             if an I/O error occurs.
      */
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.628 -0500", hash_original_method = "1C22500DDD1A1C4CBFF296D433984138", hash_generated_method = "BD5E389F8FE3DF580E59B07FBB199E75")
     
 public static SocketChannel open() throws IOException {
@@ -55,7 +55,7 @@ public static SocketChannel open() throws IOException {
      *             if an I/O error occurs.
      */
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.630 -0500", hash_original_method = "AC2B95C5BDC217F19851C0632D37B5EC", hash_generated_method = "034337553752947731A0C6353DC0D7E3")
     
 public static SocketChannel open(SocketAddress address) throws IOException {
@@ -207,7 +207,7 @@ public abstract boolean connect(SocketAddress address) throws IOException;
      *             if an I/O error occurs.
      */
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.646 -0500", hash_original_method = "81C54D102AA55CD30CE0569D1C7BBF90", hash_generated_method = "16F3CFA8A040FF11376537FFBD2C2C0C")
     
 public abstract boolean finishConnect() throws IOException;
@@ -245,7 +245,7 @@ public abstract boolean finishConnect() throws IOException;
     
     @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.649 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
     
 public abstract int read(ByteBuffer target) throws IOException;
@@ -287,7 +287,7 @@ public abstract int read(ByteBuffer target) throws IOException;
      */
     @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.651 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
     
 public abstract long read(ByteBuffer[] targets, int offset, int length) throws IOException;
@@ -322,7 +322,7 @@ public abstract long read(ByteBuffer[] targets, int offset, int length) throws I
      *             if this channel is not yet connected.
      */
     @DSComment("Activity on IO class")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.654 -0500", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "ED00F097F990FA72EFB9F785613CC911")
     

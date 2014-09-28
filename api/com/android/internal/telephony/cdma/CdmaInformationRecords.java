@@ -61,6 +61,7 @@ public CdmaSignalInfoRec(int isPresent, int signalType, int alertPitch, int sign
             this.signal = signal;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.966 -0500", hash_original_method = "7B06985E180C621ECAFE7B9C193EA068", hash_generated_method = "5C339CA1E8F0EBB79F84F1AB79639F79")
         
@@ -223,6 +224,7 @@ public CdmaLineControlInfoRec(int lineCtrlPolarityIncluded, int lineCtrlToggle,
             this.lineCtrlPowerDenial = (byte)lineCtrlPowerDenial;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.047 -0500", hash_original_method = "31B594EC48675C621293EE1C64F7F9A1", hash_generated_method = "DA5C71EAC058B2D0333678E3B04881B5")
         

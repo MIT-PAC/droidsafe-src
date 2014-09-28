@@ -103,8 +103,8 @@ public synchronized final Scheme get(String name) {
      *          <code>null</code> if none was registered
      */
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.038 -0500", hash_original_method = "BF6DF8E3D28698AF7FF4E9FD5B4A484C", hash_generated_method = "254C69213B5D4D2353215375DE7E6B2C")
     
 public synchronized final Scheme register(Scheme sch) {

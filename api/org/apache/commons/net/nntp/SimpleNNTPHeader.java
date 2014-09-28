@@ -163,6 +163,7 @@ public String getNewsgroups()
      * <p>
      * @return The article header in the form of a String.
      ***/
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:10.723 -0500", hash_original_method = "8EB7107FA2367D701AF7CBC234A81F19", hash_generated_method = "B23ED7B4CA5FBA5E6343C71EA6EDB1E4")
     

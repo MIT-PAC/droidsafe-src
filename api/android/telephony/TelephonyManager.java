@@ -340,6 +340,7 @@ private TelephonyManager() {
      * <p>Requires Permission:
      *   {@link android.Manifest.permission#READ_PHONE_STATE READ_PHONE_STATE}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.840 -0500", hash_original_method = "CBA2DB54A66B89F7737C894703CB092B", hash_generated_method = "4B3F28EB7BBCF026D7BC40CDFD72EF88")
     
@@ -569,6 +570,7 @@ public String getNetworkOperatorName() {
      * unreliable on CDMA networks (use {@link #getPhoneType()} to determine if
      * on a CDMA network).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.941 -0500", hash_original_method = "C6C0AA4A9611C88887AD0284C9B9779A", hash_generated_method = "5F651E5454C364F70695229B3B5F8920")
     
@@ -688,6 +690,7 @@ public boolean hasIccCard() {
      * @see #SIM_STATE_NETWORK_LOCKED
      * @see #SIM_STATE_READY
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.145 -0500", hash_original_method = "09E0380F50AC76521F62251E25C950EA", hash_generated_method = "CE608D46AECF2BEE5A33124C8812763F")
     
@@ -721,6 +724,7 @@ public int getSimState() {
      *
      * @see #getSimState
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.150 -0500", hash_original_method = "31C6D14DB3E72FC3C1A0B120DB42F405", hash_generated_method = "8BCF1599F401E43ADA81847C5B34982D")
     

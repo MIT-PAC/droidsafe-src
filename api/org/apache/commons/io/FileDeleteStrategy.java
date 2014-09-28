@@ -68,6 +68,7 @@ protected FileDeleteStrategy(String name) {
      * @param fileToDelete  the file to delete, null returns true
      * @return true if the file was deleted, or there was no such file
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.670 -0400", hash_original_method = "EFE9EDBED2D379E86C4936EFD5742135", hash_generated_method = "B7BDF83F19C6F2D5DED390CC73A637A3")
     
 public boolean deleteQuietly(File fileToDelete) {
@@ -115,6 +116,7 @@ public void delete(File fileToDelete) throws IOException {
      * @throws NullPointerException if the file is null
      * @throws IOException if an error occurs during file deletion
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.671 -0400", hash_original_method = "57E67E4626031877680FBBC8B7FC5113", hash_generated_method = "A9ECD11D5F0A4E6E316CE167F0F2B13B")
     
 protected boolean doDelete(File fileToDelete) throws IOException {
@@ -158,6 +160,7 @@ ForceFileDeleteStrategy() {
          * @throws NullPointerException if the file is null
          * @throws IOException if an error occurs during file deletion
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.672 -0400", hash_original_method = "36CC05EFC6FFF5A71EED967857A4B132", hash_generated_method = "74518A42848100A4BDB9D86EE55B7F92")
         
 @Override

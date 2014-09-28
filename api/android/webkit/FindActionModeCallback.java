@@ -225,6 +225,7 @@ private void updateMatchesString() {
 
     // ActionMode.Callback implementation
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.286 -0500", hash_original_method = "1F388F0F12B5A9063A03CB19D68FC9E8", hash_generated_method = "7EC6F992846B397AF326B99267A6F5F3")
     
 @Override
@@ -250,6 +251,7 @@ private void updateMatchesString() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.288 -0500", hash_original_method = "9709E7A513557072D77260776E1367DF", hash_generated_method = "D5072C51D02606643722DBF145DA2B3E")
     
 @Override
@@ -259,6 +261,7 @@ private void updateMatchesString() {
         mInput.hideSoftInputFromWindow(mWebView.getWindowToken(), 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.291 -0500", hash_original_method = "6F9DAEA6D666DAEBDC5BF41A6DC31573", hash_generated_method = "9747241BE45539F55CE85977F54744BD")
     
 @Override
@@ -266,6 +269,7 @@ private void updateMatchesString() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.293 -0500", hash_original_method = "B3FE74B35E145494B17BBBE1B965B753", hash_generated_method = "D69F4A150C6E6EDC74BAD9F415587213")
     
 @Override

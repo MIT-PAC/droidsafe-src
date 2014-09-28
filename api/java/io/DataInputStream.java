@@ -58,7 +58,7 @@ public DataInputStream(InputStream in) {
     }
 
     // overridden to add 'final'
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.217 -0500", hash_original_method = "FBBAC6E2F22E2CF0617F10AA12B44AF0", hash_generated_method = "6EFE21C624F4526140DE26DD214855F3")
     
@@ -88,7 +88,7 @@ public DataInputStream(InputStream in) {
      */
     @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.220 -0500", hash_original_method = "C547CA79E9FB46C2C7E21DBC0BF20334", hash_generated_method = "FD30BAD0DC3FB7FDB16BB01F578FEE23")
     
 @Override
@@ -98,7 +98,7 @@ public DataInputStream(InputStream in) {
 
     @DSComment("Activity on IO class")
     @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.222 -0500", hash_original_method = "7A8DE34B63BF8ABCBAC1CB4AC19FEB68", hash_generated_method = "D88517E7D5EE14A5658DEF4EDAD9DB86")
     
 public final boolean readBoolean() throws IOException {
@@ -110,7 +110,7 @@ public final boolean readBoolean() throws IOException {
     }
 
     @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.225 -0500", hash_original_method = "4C5816AE98147904E59B8C8EC0214947", hash_generated_method = "BF89FDFB9F1F44FEE7263800350EBECD")
     
 public final byte readByte() throws IOException {
@@ -121,7 +121,7 @@ public final byte readByte() throws IOException {
         return (byte) temp;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.228 -0500", hash_original_method = "A44D11CC3BE0C88F3640C82011E315A3", hash_generated_method = "B0732E37E958B55BB10FAA52B3D5674C")
     
@@ -129,7 +129,7 @@ public final char readChar() throws IOException {
         return (char) readShort();
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.230 -0500", hash_original_method = "D7A510C090532D6542CA33ECD805653E", hash_generated_method = "D338B640779B17CB7260528C9150884A")
     
@@ -138,7 +138,7 @@ public final double readDouble() throws IOException {
     }
 
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.232 -0500", hash_original_method = "C7FD0C2698771DF8CC60A785DCC40BB4", hash_generated_method = "80593170191F13BFD0E1C07AC7E4AFC0")
     
@@ -147,8 +147,8 @@ public final float readFloat() throws IOException {
     }
 
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.IO})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO}) 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.235 -0500", hash_original_method = "FD74F944C9A8F422C55042589648B5E4", hash_generated_method = "A7F355DBB7B4EAE4A328A9A9E3910E20")
     
 public final void readFully(byte[] dst) throws IOException {
@@ -156,8 +156,8 @@ public final void readFully(byte[] dst) throws IOException {
     }
 
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.IO})
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.IO}) 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.238 -0500", hash_original_method = "DF35152FE50D45334A46E811DED0CD82", hash_generated_method = "63C911CF15A622193902D9D738EE61C2")
     
 public final void readFully(byte[] dst, int offset, int byteCount) throws IOException {
@@ -166,7 +166,7 @@ public final void readFully(byte[] dst, int offset, int byteCount) throws IOExce
     }
 
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.241 -0500", hash_original_method = "9458C501A59EB6F89A7F70AB314A9403", hash_generated_method = "9112DA648D62C2A937D7C558FC5866FC")
     
@@ -180,8 +180,8 @@ public final int readInt() throws IOException {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.244 -0500", hash_original_method = "65FD20FE420262B12F0063D27F62A405", hash_generated_method = "84589DFEC3B64DF8C1541613CF612599")
-    @DSSource(DSSourceKind.IO)
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.IO})
+    @DSSpec(DSCat.IO)
 @Deprecated
     public final String readLine() throws IOException {
         /*StringBuilder line = new StringBuilder(80); // Typical line length
@@ -219,7 +219,7 @@ public final int readInt() throws IOException {
     }
 
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.246 -0500", hash_original_method = "326E32602D90F4299C77023F7351E4DA", hash_generated_method = "F5A3C7CEE92A45C5691BAA619958DC92")
     
@@ -230,7 +230,7 @@ public final long readLong() throws IOException {
     }
 
     @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.249 -0500", hash_original_method = "F2D7E122731E959B896496A8F1F12120", hash_generated_method = "EB42EA6D36573C0AD80D7A6AD7292C79")
     
 public final short readShort() throws IOException {
@@ -241,7 +241,7 @@ public final short readShort() throws IOException {
 
     @DSComment("Activity on IO class")
     @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.251 -0500", hash_original_method = "2685A0C57282E82FAD08AB2620B6B572", hash_generated_method = "598A274726BA31E7F4FFEE9CF67A92C5")
     
 public final int readUnsignedByte() throws IOException {
@@ -253,7 +253,7 @@ public final int readUnsignedByte() throws IOException {
     }
 
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.254 -0500", hash_original_method = "856B18E0C9E8549741083F490D54C8D8", hash_generated_method = "D61B634BAB1210C26ADCEAB5B21DE464")
     
@@ -262,7 +262,7 @@ public final int readUnsignedShort() throws IOException {
     }
 
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.256 -0500", hash_original_method = "5E72291B0CE6A92E15C4771FA586BE01", hash_generated_method = "F3B7E68C8D455A57290BD1DE8C561729")
     

@@ -62,6 +62,7 @@ public MenuDialogHelper(MenuBuilder menu) {
      *
      * @param windowToken Optional token to assign to the window.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.170 -0400", hash_original_method = "1E4FCC92B87A5FEFB76FC732CC250748", hash_generated_method = "637A89E54F27E80A66EB6C66D953970A")
     
 public void show(IBinder windowToken) {
@@ -156,6 +157,7 @@ public void setPresenterCallback(MenuPresenter.Callback cb) {
      *
      * @see Dialog#dismiss()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.177 -0400", hash_original_method = "85B0BC88009D26568BAEDC3852E0DEEF", hash_generated_method = "9414564B2F8D243C48DCAACFC2CBA6D0")
     
 public void dismiss() {
@@ -164,6 +166,7 @@ public void dismiss() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.179 -0400", hash_original_method = "3E9C803E65E5B82ED710485BB8BDB3C5", hash_generated_method = "A6B967A9965B0848EC018F0F8BD8D1EF")
     
 @Override
@@ -171,6 +174,7 @@ public void dismiss() {
         mPresenter.onCloseMenu(mMenu, true);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.183 -0400", hash_original_method = "A718635F64E8AD72FBCA655033555352", hash_generated_method = "788789B7087ECE41FEFD46CE6E1231A5")
     
 @Override
@@ -183,6 +187,7 @@ public void dismiss() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:39.186 -0400", hash_original_method = "DC034CF78D1777A9042EE11EB550F98E", hash_generated_method = "CD7A080BD9ED86827C1C30FFCB92B151")
     
 @Override

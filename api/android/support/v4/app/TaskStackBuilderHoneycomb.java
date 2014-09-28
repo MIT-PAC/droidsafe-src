@@ -9,7 +9,8 @@ import android.content.Context;
 import android.content.Intent;
 
 public class TaskStackBuilderHoneycomb {
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.318 -0500", hash_original_method = "B7B78BA9C82576FBF699E71554D05A8F", hash_generated_method = "5AF0279EC24877E7656EDC0E865839DF")
     
 public static PendingIntent getActivitiesPendingIntent(Context context, int requestCode,

@@ -324,6 +324,8 @@ private static ProcessStartResult startViaZygote(final String processClass,
         return DSUtils.UNKNOWN_LONG;
     }
     
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSource({DSSourceKind.OS_PROCESS})
     public static final int myPid() {
         return DSUtils.UNKNOWN_INT;
     }
@@ -332,6 +334,8 @@ private static ProcessStartResult startViaZygote(final String processClass,
         return DSUtils.UNKNOWN_INT;
     }
     
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSource({DSSourceKind.OS_PROCESS})
     public static final int myUid() {
         return DSUtils.UNKNOWN_INT;
     }
@@ -431,6 +435,7 @@ public static final int getParentPid(int pid) {
      * sharing a common UID will also be able to kill each
      * other's processes.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.763 -0500", hash_original_method = "342A9AA3E93050AFFE91B915061407DC", hash_generated_method = "945BFEB670E29B1B951461073CC2753C")
     
 public static final void killProcess(int pid) {

@@ -53,7 +53,7 @@ static SupplicantState valueOf(String stateName) {
 
     public static final Creator<WifiInfo> CREATOR =
         new Creator<WifiInfo>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.756 -0500", hash_original_method = "183B79FF3465A6A1D81809AF2517D75A", hash_generated_method = "FEE6D34A91D680B8284076E3D708A954")
         
 public WifiInfo createFromParcel(Parcel in) {
@@ -369,6 +369,7 @@ void setSupplicantState(String stateName) {
         mSupplicantState = valueOf(stateName);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.748 -0500", hash_original_method = "E7F8A705E19A9ABF8AEEB72FBC5B6139", hash_generated_method = "DE0D69B9FB95AB6E04C486EE9BBEF739")
     

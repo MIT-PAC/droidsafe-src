@@ -559,7 +559,7 @@ public boolean clearApplicationUserData(String packageName, IPackageDataObserver
 
         public static final Creator<RecentTaskInfo> CREATOR
                 = new Creator<RecentTaskInfo>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.563 -0500", hash_original_method = "754BED839284C604C75BEECB20D1E8CF", hash_generated_method = "E9C8B4C150B27D66C91B9D392B5FFB1D")
             
 public RecentTaskInfo createFromParcel(Parcel source) {
@@ -654,7 +654,7 @@ public void readFromParcel(Parcel source) {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.919 -0400", hash_original_field = "B9911C96575F25BA7EB7A3422AE8B6F1", hash_generated_field = "8DCFCF5E1FAAD8B612615CB5CB186FEC")
 
         public static final Creator<RunningTaskInfo> CREATOR = new Creator<RunningTaskInfo>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.610 -0500", hash_original_method = "289D74B80F1DDE34702D81134C81DC0D", hash_generated_method = "B4F64693C30029455BF6E13BD00A18D9")
             
 public RunningTaskInfo createFromParcel(Parcel source) {
@@ -758,7 +758,7 @@ public void readFromParcel(Parcel source) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.659 -0500", hash_original_field = "0D0E90E785E7E36440F0FAEB5BF0DF21", hash_generated_field = "A7CA2C3264BCA3B8EB9304642C9D25D2")
 
         public static final Creator<TaskThumbnails> CREATOR = new Creator<TaskThumbnails>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             public TaskThumbnails createFromParcel(Parcel source) {
                 return new TaskThumbnails(source);
             }
@@ -860,7 +860,7 @@ public void readFromParcel(Parcel source) {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.952 -0400", hash_original_field = "AD64936DA7390A375DCEFDC8BEB2A286", hash_generated_field = "45AB20E66E709306D076BBEB8007B79C")
 
         public static final Creator<RunningServiceInfo> CREATOR = new Creator<RunningServiceInfo>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.728 -0500", hash_original_method = "E255B8128AC8F9856A7419AECFDCF636", hash_generated_method = "EF4AE1DA8271928E110E47E48AB49FB3")
             
 public RunningServiceInfo createFromParcel(Parcel source) {
@@ -991,7 +991,7 @@ public void readFromParcel(Parcel source) {
 
         public static final Creator<MemoryInfo> CREATOR
                 = new Creator<MemoryInfo>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.773 -0500", hash_original_method = "83921F47BB880779DC0FD4AB57F3B1E1", hash_generated_method = "495A301237E8C89DBCB599934CDB78DC")
             
 public MemoryInfo createFromParcel(Parcel source) {
@@ -1095,7 +1095,7 @@ public void readFromParcel(Parcel source) {
         
         public static final Creator<ProcessErrorStateInfo> CREATOR = 
                 new Creator<ProcessErrorStateInfo>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             public ProcessErrorStateInfo createFromParcel(Parcel source) {
                 return new ProcessErrorStateInfo(source);
             }
@@ -1229,7 +1229,7 @@ public void readFromParcel(Parcel source) {
 
         public static final Creator<RunningAppProcessInfo> CREATOR = 
             new Creator<RunningAppProcessInfo>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             public RunningAppProcessInfo createFromParcel(Parcel source) {
                 return new RunningAppProcessInfo(source);
             }
@@ -1392,7 +1392,7 @@ public List<ApplicationInfo> getRunningExternalApplications() {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.OS_STATE})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.928 -0500", hash_original_method = "BB41AA7EC02A452F0653300FBA1EFF8A", hash_generated_method = "9EC32489CD95F6B4ED507EAF40FA8F6E")
     
 public List<RunningAppProcessInfo> getRunningAppProcesses() {

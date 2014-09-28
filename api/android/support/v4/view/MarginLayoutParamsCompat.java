@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.view;
 
 import droidsafe.annotations.*;
@@ -41,42 +40,50 @@ public class MarginLayoutParamsCompat {
 
     static class MarginLayoutParamsCompatImplBase implements MarginLayoutParamsCompatImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMarginStart(ViewGroup.MarginLayoutParams lp) {
             return lp.leftMargin;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMarginEnd(ViewGroup.MarginLayoutParams lp) {
             return lp.rightMargin;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setMarginStart(ViewGroup.MarginLayoutParams lp, int marginStart) {
             lp.leftMargin = marginStart;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setMarginEnd(ViewGroup.MarginLayoutParams lp, int marginEnd) {
             lp.rightMargin = marginEnd;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isMarginRelative(ViewGroup.MarginLayoutParams lp) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLayoutDirection(ViewGroup.MarginLayoutParams lp) {
             //return ViewCompat.LAYOUT_DIRECTION_LTR;
             return DSUtils.FAKE_INT;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLayoutDirection(ViewGroup.MarginLayoutParams lp, int layoutDirection) {
             // No-op
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void resolveLayoutDirection(ViewGroup.MarginLayoutParams lp, int layoutDirection) {
             // No-op
@@ -85,48 +92,55 @@ public class MarginLayoutParamsCompat {
 
     static class MarginLayoutParamsCompatImplJbMr1 implements MarginLayoutParamsCompatImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMarginStart(ViewGroup.MarginLayoutParams lp) {
             return MarginLayoutParamsCompatJellybeanMr1.getMarginStart(lp);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMarginEnd(ViewGroup.MarginLayoutParams lp) {
             return MarginLayoutParamsCompatJellybeanMr1.getMarginEnd(lp);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setMarginStart(ViewGroup.MarginLayoutParams lp, int marginStart) {
             MarginLayoutParamsCompatJellybeanMr1.setMarginStart(lp, marginStart);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setMarginEnd(ViewGroup.MarginLayoutParams lp, int marginEnd) {
             MarginLayoutParamsCompatJellybeanMr1.setMarginEnd(lp, marginEnd);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isMarginRelative(ViewGroup.MarginLayoutParams lp) {
             return MarginLayoutParamsCompatJellybeanMr1.isMarginRelative(lp);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLayoutDirection(ViewGroup.MarginLayoutParams lp) {
             return MarginLayoutParamsCompatJellybeanMr1.getLayoutDirection(lp);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLayoutDirection(ViewGroup.MarginLayoutParams lp, int layoutDirection) {
             MarginLayoutParamsCompatJellybeanMr1.setLayoutDirection(lp, layoutDirection);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void resolveLayoutDirection(ViewGroup.MarginLayoutParams lp, int layoutDirection) {
             MarginLayoutParamsCompatJellybeanMr1.resolveLayoutDirection(lp, layoutDirection);
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.894 -0400", hash_original_field = "B4D73602A5D6DC3503486B65C1D6FE41", hash_generated_field = "7D50C44D218F071796F75D4CD56AFB2B")
-
 
     static  MarginLayoutParamsCompatImpl IMPL;
     static {

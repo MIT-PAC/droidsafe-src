@@ -37,6 +37,7 @@ public class DroidSafeBinder implements IBinder {
         return true;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public IInterface queryLocalInterface(String descriptor) {
         //something with AIDL?
 

@@ -345,6 +345,7 @@ public void closeIdleConnections(long idletime, TimeUnit tunit) {
     }
 
     // non-javadoc, see interface ClientConnectionManager
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.364 -0500", hash_original_method = "3B23C31C02DC0AC3A698CF8CD25A20B9", hash_generated_method = "17A13C2CF7093AC2A663D1E05FB1F408")
     
 public void shutdown() {

@@ -25,10 +25,15 @@ import android.os.Bundle;
 class NotificationCompatBase {
 
     public static abstract class Action {
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract int getIcon();
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract CharSequence getTitle();
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract PendingIntent getActionIntent();
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract Bundle getExtras();
+        @DSSafe(DSCat.SAFE_LIST)
         protected abstract RemoteInputCompatBase.RemoteInput[] getRemoteInputs();
 
         public interface Factory {

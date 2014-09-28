@@ -756,8 +756,8 @@ public void adjustSuggestedStreamVolume(int direction, int suggestedStreamType, 
      * @see #setRingerMode(int)
      */
     @DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.039 -0500", hash_original_method = "A5416468537A862277C3CD80415076F6", hash_generated_method = "5508A15A9CD18629BD82A5D09E2BE0FC")
     
 public int getRingerMode() {
@@ -1687,7 +1687,7 @@ public int requestAudioFocus(OnAudioFocusChangeListener l, int streamType, int d
      *  @param l the listener with which focus was requested.
      *  @return {@link #AUDIOFOCUS_REQUEST_FAILED} or {@link #AUDIOFOCUS_REQUEST_GRANTED}
      */
-    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.327 -0500", hash_original_method = "32D2590B7FC8AFB5DC09D66E2CA73EB1", hash_generated_method = "21579358F332629CF31E0E350183F580")
     
 public int abandonAudioFocus(OnAudioFocusChangeListener l) {
@@ -1798,7 +1798,7 @@ public void unregisterMediaButtonIntent(PendingIntent pi, ComponentName eventRec
      * @see RemoteControlClient
      */
     @DSComment("potential callback called inside method")
-    @DSSpec(DSCat.TO_MODEL)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.341 -0500", hash_original_method = "226F7C4DEEA463C35DD22DDAE8FCA983", hash_generated_method = "43A97832DAC05830FE6AB0698A3BDBFF")
     
 public void registerRemoteControlClient(RemoteControlClient rcClient) {

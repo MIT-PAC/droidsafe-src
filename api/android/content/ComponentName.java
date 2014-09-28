@@ -84,7 +84,7 @@ public static ComponentName readFromParcel(Parcel in) {
 
     public static final Parcelable.Creator<ComponentName> CREATOR
             = new Parcelable.Creator<ComponentName>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.608 -0500", hash_original_method = "B8B6FA6877F2BC7297214F94718448AF", hash_generated_method = "3AD55BA83A24855DAF688CEA2E3B818C")
         
 public ComponentName createFromParcel(Parcel in) {

@@ -14,7 +14,7 @@ public final class TextInfo implements Parcelable {
 
     public static final Parcelable.Creator<TextInfo> CREATOR
             = new Parcelable.Creator<TextInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.984 -0500", hash_original_method = "C95CDA85767E41F4E63E830DD2608E4F", hash_generated_method = "D7FF489E347355ACCB77123DCC8FEFA6")
         
 @Override

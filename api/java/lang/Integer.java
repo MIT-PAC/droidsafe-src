@@ -67,7 +67,7 @@ private static NumberFormatException invalidInt(String s) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.180 -0500", hash_original_method = "F01C30BD973BCE191A7284E98D1A303E", hash_generated_method = "C1DAAE89FBE184F5C7F6A97080859E37")
     
 public static Integer getInteger(String string) {
@@ -76,7 +76,6 @@ public static Integer getInteger(String string) {
         ret.value = prop.getTaintInt();
         return ret;
     }
-    
 
     /**
      * Returns the {@code Integer} value of the system property identified by
@@ -94,7 +93,7 @@ public static Integer getInteger(String string) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.182 -0500", hash_original_method = "B43E44D829289B070CF83BC460D06D24", hash_generated_method = "A056FC57C20DB105CD700CA7A32403BB")
     
 public static Integer getInteger(String string, int defaultValue) {
@@ -121,7 +120,7 @@ public static Integer getInteger(String string, int defaultValue) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.185 -0500", hash_original_method = "1037DE5287EEBEFE56735B40DF7AE5DF", hash_generated_method = "CE137B705D1095FFD41C9C3C5AC33FD8")
     
     public static Integer getInteger(String string, Integer defaultValue) {

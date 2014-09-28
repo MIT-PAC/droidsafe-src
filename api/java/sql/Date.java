@@ -115,7 +115,7 @@ public Date(long theDate) {
      *             if this method is called.
      */
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.259 -0500", hash_original_method = "9D3BFA18991740345E9C4B50C3BC1C7B", hash_generated_method = "B6CC43AFE75FBF41D2D4659E1E0D1F48")
     
 @Deprecated
@@ -132,7 +132,7 @@ public Date(long theDate) {
      *             if this method is called.
      */
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.262 -0500", hash_original_method = "20D35DA199D26861EF3B1850BF9B2C7B", hash_generated_method = "58BF9117E986858BF62F057055FD3040")
     
 @Deprecated
@@ -234,7 +234,7 @@ public Date(long theDate) {
      * @return a string representation of the date in SQL format - {@code "yyyy-MM-dd"}.
      */
     @DSSource({DSSourceKind.DATE_TIME})
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.277 -0500", hash_original_method = "F7971D7A9962AA78000A8292B336C43C", hash_generated_method = "C4F82B04518E944139744F728FE1B9E7")
     
 @Override

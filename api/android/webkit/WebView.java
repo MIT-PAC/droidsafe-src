@@ -1706,7 +1706,8 @@ boolean onSavePassword(String schemePlusHost, String username,
        return rVal;
     }
 
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.468 -0500", hash_original_method = "B1C529B2D720558A64029A0709B532B0", hash_generated_method = "0A0ED11EBC73AD94DD08C440385BAC74")
     
 @Override
@@ -2093,7 +2094,7 @@ public void setNetworkType(String type, String subtype) {
      */
     @DSComment("Storage access indirectly")
     @DSSpec(DSCat.STORAGE_ACCESS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.533 -0500", hash_original_method = "D76FC1BD4962410EDA97F2F673ACB95E", hash_generated_method = "BE9ECAD12A01D1D3F1757D031FD2DCD0")
     
 public WebBackForwardList saveState(Bundle outState) {
@@ -2340,8 +2341,8 @@ public void clearViewState() {
      * @see #restorePicture
      */
     @DSComment("Storage access indirectly")
-    @DSSpec(DSCat.STORAGE_ACCESS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.563 -0500", hash_original_method = "99FE452D222A3AA897B1F81F94FFC5BD", hash_generated_method = "54F47ABA8CB052ABA402D246AF43C583")
     
 public WebBackForwardList restoreState(Bundle inState) {
@@ -2638,7 +2639,7 @@ public void stopLoading() {
     /**
      * Reload the current url.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.606 -0500", hash_original_method = "012D905CFE3C40A166231928A7F6FD85", hash_generated_method = "5F5638F28E9C0FFF9AA6B8A4D8FA6E4D")
     
 public void reload() {
@@ -2684,6 +2685,7 @@ public void goBack() {
      * Return true if this WebView has a forward history item.
      * @return True iff this Webview has a forward history item.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.613 -0500", hash_original_method = "A6DBD0DBF14922EF2AF63B2C61F82174", hash_generated_method = "79CE959C900EDF44FAAE723F49DA1C13")
     
 public boolean canGoForward() {
@@ -2701,6 +2703,7 @@ public boolean canGoForward() {
     /**
      * Go forward in the history of this WebView.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.615 -0500", hash_original_method = "A9A03BA6D011D5E19312AAC07DA5C107", hash_generated_method = "AF71861260DCCDB38E607EE435555DE6")
     
 public void goForward() {
@@ -3963,6 +3966,7 @@ public void clearFormData() {
     /**
      * Tell the WebView to clear its internal back/forward list.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.831 -0500", hash_original_method = "73CAD65505EA4C263B5AF0640152FBB6", hash_generated_method = "160A1248547810EBD3686902707D3F19")
     
 public void clearHistory() {
@@ -10066,6 +10070,7 @@ public void run() {
                 //Synthesized constructor
             }
 
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
             @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.565 -0500", hash_original_method = "47413D805E887745DF3971F679277823", hash_generated_method = "E7A0B18763B46172481F8F37425DB151")
             
@@ -10168,6 +10173,7 @@ private Container item(int position) {
                 return item.mId;
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.584 -0500", hash_original_method = "19954EF3B060E791A26DF845CEE18A7B", hash_generated_method = "D6664212657AC9A2B62F6CC6A650C851")
             
 @Override
@@ -10175,6 +10181,7 @@ private Container item(int position) {
                 return false;
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.587 -0500", hash_original_method = "66B4CEB83428A6B0A2524002D770BF9B", hash_generated_method = "1E08B79BA7AF08C0F4A444FBF5EA8F5D")
             
 @Override

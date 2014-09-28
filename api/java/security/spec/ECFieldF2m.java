@@ -190,6 +190,7 @@ public ECFieldF2m(int m, int[] ks) {
      * @return {@code true} if the specified object is equal to this finite field,
      *         otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:17.021 -0400", hash_original_method = "01933940D580ED8F19E6A1BB69556FC2", hash_generated_method = "54C712F27FA0691D87F4814756698468")
     
 public boolean equals(Object obj) {

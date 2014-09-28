@@ -38,6 +38,7 @@ public class ViewParentCompat {
     }
 
     static class ViewParentCompatStubImpl implements ViewParentCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean requestSendAccessibilityEvent(
                 ViewParent parent, View child, AccessibilityEvent event) {
@@ -53,6 +54,7 @@ public class ViewParentCompat {
     }
 
     static class ViewParentCompatICSImpl extends ViewParentCompatStubImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean requestSendAccessibilityEvent(
                 ViewParent parent, View child, AccessibilityEvent event) {
@@ -60,7 +62,6 @@ public class ViewParentCompat {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:06.601 -0400", hash_original_field = "977F0D711577C27228F7492B6718B336", hash_generated_field = "2518E0F083689C72F6BB8E1A5B8911B3")
-
 
     static  ViewParentCompatImpl IMPL;
     static {
@@ -89,6 +90,7 @@ public class ViewParentCompat {
      * @param event The event to be sent.
      * @return True if the event was sent.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:06.608 -0400", hash_original_method = "239BB39E98A074D2A5CAC5B24787D859", hash_generated_method = "AD0B1010FD72F56243CED893916A7910")
         
 public static boolean requestSendAccessibilityEvent(

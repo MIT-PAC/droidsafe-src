@@ -287,7 +287,7 @@ public static void distanceBetween(double startLatitude, double startLongitude,
 
     public static final Parcelable.Creator<Location> CREATOR =
         new Parcelable.Creator<Location>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.449 -0500", hash_original_method = "DB5FDF146F5EA69FB4032FD10E69F8C9", hash_generated_method = "620B55AC234CBC6C107A09B2B3194145")
         
 public Location createFromParcel(Parcel in) {
@@ -776,7 +776,7 @@ public boolean hasAccuracy() {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.430 -0500", hash_original_method = "080C41F346C9D7277489423C5A91C89D", hash_generated_method = "A4618DB2E3AC6E93C5056AB62A49CCCE")
     
 public float getAccuracy() {
@@ -837,6 +837,7 @@ public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? null : new Bundle(extras);
     }
 
+    @DSSource({DSSourceKind.LOCATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.444 -0500", hash_original_method = "5688E2364E565225F14DAE87FCAB3981", hash_generated_method = "72ADEEA58D4182F561E8E8CBF4942E15")
     

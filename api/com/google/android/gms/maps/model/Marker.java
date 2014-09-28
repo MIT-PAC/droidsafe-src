@@ -15,7 +15,7 @@ public Marker(DSOnlyType dontcare)
 
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.481 -0400", hash_original_method = "231BF356D5958220FFB804538066F712", hash_generated_method = "DA93DD4DA31E7CD1208BF90EE2F8137E")
     
 public void remove()
@@ -197,6 +197,7 @@ public float getAlpha()
     	return alpha;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.563 -0400", hash_original_method = "C70DEA8A17B60956FD21E629F9CB17C2", hash_generated_method = "7F54E6BD2F54D378E444277D129FFD39")
     
 public boolean equals(Object  r1)
@@ -204,6 +205,7 @@ public boolean equals(Object  r1)
     	return DSUtils.toTaintBoolean(hashCode() + r1.hashCode());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.566 -0400", hash_original_method = "118FFFE90FA4340C330BF58E930B7855", hash_generated_method = "BAF5CD51F04870B2E81141E4E2BD653A")
     
 public int hashCode()

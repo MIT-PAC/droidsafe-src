@@ -88,7 +88,7 @@ public ConnectionResult(int  i0, PendingIntent  r1)
     }
 
     @DSSink({DSSinkKind.GOOGLE_SERVICES})
-    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.418 -0400", hash_original_method = "028B8274BBC2718BC829EDDECF21C0E6", hash_generated_method = "BBFB693008C0E47BF79059FAF63F7BEA")
     
 public void startResolutionForResult(Activity  r1, int  i0) throws SendIntentException
@@ -101,7 +101,7 @@ public void startResolutionForResult(Activity  r1, int  i0) throws SendIntentExc
         }
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.423 -0400", hash_original_method = "D872AF8F90B549081F5E206766F7A552", hash_generated_method = "3D05E793BEFA92EBFFA5345471603245")
     
 public boolean hasResolution()
@@ -140,7 +140,7 @@ public boolean isSuccess()
         return $z0;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.432 -0400", hash_original_method = "3B2E75A568883E051F3AA54B3AF20855", hash_generated_method = "3AD23A285090A69864D5105798732ACE")
     
 public int getErrorCode()
@@ -215,6 +215,7 @@ private String ex()
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.450 -0400", hash_original_method = "599DF267E463A4D561BCF288B0A4175C", hash_generated_method = "54E8A05F8159ED89386EA2CABED2B4BD")
     
 public String toString()

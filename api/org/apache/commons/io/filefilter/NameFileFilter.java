@@ -155,6 +155,7 @@ public NameFileFilter(List<String> names, IOCase caseSensitivity) {
      * @param file  the File to check
      * @return true if the filename matches
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.605 -0400", hash_original_method = "8143C5E13483113836748794199B1228", hash_generated_method = "6AAA4680CC97F82DBA859191A7830431")
     
 @Override
@@ -175,6 +176,7 @@ public NameFileFilter(List<String> names, IOCase caseSensitivity) {
      * @param name  the filename
      * @return true if the filename matches
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.605 -0400", hash_original_method = "F0ECCB0CC9BF3CE73728CA922CC18037", hash_generated_method = "A7E4CE96CF292916155BCD2729422107")
     
 @Override

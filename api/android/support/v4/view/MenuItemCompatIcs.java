@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.view;
 
 import droidsafe.annotations.*;
@@ -23,24 +22,28 @@ import droidsafe.helpers.*;
 import android.view.MenuItem;
 
 class MenuItemCompatIcs {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.576 -0400", hash_original_method = "4B8CCCB17354081770D4346ABBDA6F3D", hash_generated_method = "7DA4082CDF5C7E18A369183234BE7B68")
     
 public static boolean expandActionView(MenuItem item) {
         return item.expandActionView();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.579 -0400", hash_original_method = "96E9F7C2234269C2B00D1FBC2A74794F", hash_generated_method = "A1B37D789195769911C721C5E0D5FB29")
     
 public static boolean collapseActionView(MenuItem item) {
         return item.collapseActionView();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.584 -0400", hash_original_method = "38AC527F8FFDD8192B0AB7EB073EA05A", hash_generated_method = "E6AE4634FE3E80F171939E283BF4CD2E")
     
 public static boolean isActionViewExpanded(MenuItem item) {
         return item.isActionViewExpanded();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:01.588 -0400", hash_original_method = "03F26D583518D0771657FE4126C348DB", hash_generated_method = "AB53818EFD142C13D753EC8F58DF8C43")
     
 public static MenuItem setOnActionExpandListener(MenuItem item,

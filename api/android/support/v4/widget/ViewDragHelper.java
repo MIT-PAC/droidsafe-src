@@ -103,6 +103,7 @@ public class ViewDragHelper {
      * @param cb Callback to provide information and receive events
      * @return a new ViewDragHelper instance
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.730 -0400", hash_original_method = "8C7D01833A54C3D61A2AE4A552879F4D", hash_generated_method = "4D03443D8D6F19C4CE342E5BF8839DA2")
     
 public static ViewDragHelper create(ViewGroup forParent, Callback cb) {
@@ -118,6 +119,7 @@ public static ViewDragHelper create(ViewGroup forParent, Callback cb) {
      * @param cb Callback to provide information and receive events
      * @return a new ViewDragHelper instance
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.734 -0400", hash_original_method = "67650F818F5BA67B783B0F7C4A9FB82C", hash_generated_method = "3FC5B65BDD394EDDB14A3945C4CE4160")
     
 public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Callback cb) {
@@ -199,6 +201,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @see #STATE_DRAGGING
          * @see #STATE_SETTLING
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void onViewDragStateChanged(int state) {}
 
         /**
@@ -221,6 +224,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @param capturedChild Child view that was captured
          * @param activePointerId Pointer id tracking the child capture
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void onViewCaptured(View capturedChild, int activePointerId) {}
 
         /**
@@ -241,6 +245,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @param xvel X velocity of the pointer as it left the screen in pixels per second.
          * @param yvel Y velocity of the pointer as it left the screen in pixels per second.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void onViewReleased(View releasedChild, float xvel, float yvel) {}
 
         /**
@@ -254,6 +259,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @see #EDGE_RIGHT
          * @see #EDGE_BOTTOM
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void onEdgeTouched(int edgeFlags, int pointerId) {}
 
         /**
@@ -265,6 +271,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @param edgeFlags A combination of edge flags describing the edge(s) locked
          * @return true to lock the edge, false to leave it unlocked
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onEdgeLock(int edgeFlags) {
             return false;
         }
@@ -280,6 +287,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @see #EDGE_RIGHT
          * @see #EDGE_BOTTOM
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void onEdgeDragStarted(int edgeFlags, int pointerId) {}
 
         /**
@@ -288,6 +296,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @param index the ordered position to query for
          * @return index of the view that should be ordered at position <code>index</code>
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public int getOrderedChildIndex(int index) {
             return index;
         }
@@ -299,6 +308,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @param child Child view to check
          * @return range of horizontal motion in pixels
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public int getViewHorizontalDragRange(View child) {
             return 0;
         }
@@ -310,6 +320,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @param child Child view to check
          * @return range of vertical motion in pixels
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public int getViewVerticalDragRange(View child) {
             return 0;
         }
@@ -330,6 +341,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @param pointerId ID of the pointer attempting the capture
          * @return true if capture should be allowed, false otherwise
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public abstract boolean tryCaptureView(View child, int pointerId);
 
         /**
@@ -343,6 +355,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @param dx Proposed change in position for left
          * @return The new clamped position for left
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public int clampViewPositionHorizontal(View child, int left, int dx) {
             return 0;
         }
@@ -358,6 +371,7 @@ public static ViewDragHelper create(ViewGroup forParent, float sensitivity, Call
          * @param dy Proposed change in position for top
          * @return The new clamped position for top
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public int clampViewPositionVertical(View child, int top, int dy) {
             return 0;
         }
@@ -417,6 +431,7 @@ private ViewDragHelper(Context context, ViewGroup forParent, Callback cb) {
      *
      * @param minVel Minimum velocity to detect
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.741 -0400", hash_original_method = "E8C4C797E43D83501D2BDBC317F1285A", hash_generated_method = "B7FB6912999C5D2DFC953D3F9B57396A")
     
 public void setMinVelocity(float minVel) {
@@ -441,6 +456,7 @@ public float getMinVelocity() {
      * {@link #STATE_IDLE}, {@link #STATE_DRAGGING} or {@link #STATE_SETTLING}.
      * @return The current drag state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.746 -0400", hash_original_method = "E4EF7246572B936797136AEE1F048FD1", hash_generated_method = "0C1C0C7EC1239D8F49FFEDD7C0159ED1")
     
 public int getViewDragState() {
@@ -459,6 +475,7 @@ public int getViewDragState() {
      * @see #EDGE_RIGHT
      * @see #EDGE_BOTTOM
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.749 -0400", hash_original_method = "76566CAD9CCD9760002FEFEB902E0C15", hash_generated_method = "F331BB89CD785132BD7B30C4CBC00899")
     
 public void setEdgeTrackingEnabled(int edgeFlags) {
@@ -472,6 +489,7 @@ public void setEdgeTrackingEnabled(int edgeFlags) {
      * @return The size of an edge in pixels
      * @see #setEdgeTrackingEnabled(int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.751 -0400", hash_original_method = "46DC0068B02226A73B5E98178BD7F6A7", hash_generated_method = "31CE2EFD6ECF8B84C99C4A72D88B8D20")
     
 public int getEdgeSize() {
@@ -486,6 +504,7 @@ public int getEdgeSize() {
      * @param childView Child view to capture
      * @param activePointerId ID of the pointer that is dragging the captured child view
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.755 -0400", hash_original_method = "27DE1720FBB9077D7C36537FA42151E9", hash_generated_method = "45D2465276E89439717B11D542C86153")
     
 public void captureChildView(View childView, int activePointerId) {
@@ -503,6 +522,7 @@ public void captureChildView(View childView, int activePointerId) {
     /**
      * @return The currently captured view, or null if no view has been captured.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.758 -0400", hash_original_method = "526E805457C8186076C6E2687C93A6C9", hash_generated_method = "2F6379AD91D39A7967EE56D5A0CFAB2D")
     
 public View getCapturedView() {
@@ -522,6 +542,7 @@ public int getActivePointerId() {
     /**
      * @return The minimum distance in pixels that the user must travel to initiate a drag
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.763 -0400", hash_original_method = "67F0F180E3003B6190889A1BC2F20399", hash_generated_method = "34B4AA9E73036073A5C48AA13354B59F")
     
 public int getTouchSlop() {
@@ -532,6 +553,7 @@ public int getTouchSlop() {
      * The result of a call to this method is equivalent to
      * {@link #processTouchEvent(android.view.MotionEvent)} receiving an ACTION_CANCEL event.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.767 -0400", hash_original_method = "90B19D2E471FDC8DB0C0249BB8FDFF3A", hash_generated_method = "8939C01F1E74AEFD73557939BC4DEE84")
     
 public void cancel() {
@@ -548,6 +570,7 @@ public void cancel() {
      * {@link #cancel()}, but also abort all motion in progress and snap to the end of any
      * animation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.770 -0400", hash_original_method = "5385E4239F3271644C59EADEBA07CF81", hash_generated_method = "89E5125952CF29342E63AA0FFB63A490")
     
 public void abort() {
@@ -664,6 +687,7 @@ private int computeSettleDuration(View child, int dx, int dy, int xvel, int yvel
         return (int) (xduration * xweight + yduration * yweight);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.788 -0400", hash_original_method = "B3DBC9C7848D341739D04FAC1432D3EF", hash_generated_method = "C4B224E9FCC7A87B87AFE34586EE9911")
     
 private int computeAxisDuration(int delta, int velocity, int motionRange) {
@@ -698,6 +722,7 @@ private int computeAxisDuration(int delta, int velocity, int motionRange) {
      * @param absMax Absolute value of the maximum value to return
      * @return The clamped value with the same sign as <code>value</code>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.792 -0400", hash_original_method = "1397CD8195531E66C8C5DBEC807C1BCF", hash_generated_method = "49298495639897DB11EED566786901E6")
     
 private int clampMag(int value, int absMin, int absMax) {
@@ -717,6 +742,7 @@ private int clampMag(int value, int absMin, int absMax) {
      * @param absMax Absolute value of the maximum value to return
      * @return The clamped value with the same sign as <code>value</code>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.795 -0400", hash_original_method = "B561BAA277FA985E39026CCF285D3600", hash_generated_method = "4E6A4845482AB54617F6F0CD193F252D")
     
 private float clampMag(float value, float absMin, float absMax) {
@@ -726,6 +752,7 @@ private float clampMag(float value, float absMin, float absMax) {
         return value;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.798 -0400", hash_original_method = "3937E06E79A8643FB4C5C1D74E3AE99C", hash_generated_method = "433BDABF6A3BE98DDED842628BE09CD1")
     
 private float distanceInfluenceForSnapDuration(float f) {
@@ -771,6 +798,7 @@ public void flingCapturedView(int minLeft, int minTop, int maxLeft, int maxTop) 
      *                       invoked as part of layout or drawing.
      * @return true if settle is still in progress
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.806 -0400", hash_original_method = "A155A691C0FBE2504B6AFAA0D213FAF0", hash_generated_method = "F2F2BA42690A123B32FF48A312D4D6CE")
     
 public boolean continueSettling(boolean deferCallbacks) {
@@ -817,6 +845,7 @@ public boolean continueSettling(boolean deferCallbacks) {
      * is the only time it is valid to call {@link #settleCapturedViewAt(int, int)}
      * or {@link #flingCapturedView(int, int, int, int)}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.811 -0400", hash_original_method = "D237D6A9644B9C4EF87601649DFEF242", hash_generated_method = "88CC909B844D5C22ED8CA3B5680B5B18")
     
 private void dispatchViewReleased(float xvel, float yvel) {
@@ -830,6 +859,7 @@ private void dispatchViewReleased(float xvel, float yvel) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.816 -0400", hash_original_method = "E101CD32243E068D9BF1749492F39FEB", hash_generated_method = "C23BA8FB6AFF17E6CD491CFA1D3F1241")
     
 private void clearMotionHistory() {
@@ -846,6 +876,7 @@ private void clearMotionHistory() {
         mPointersDown = 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.820 -0400", hash_original_method = "1E99DE22CCE0D4C624DDCF93B2B3B59F", hash_generated_method = "19E939297262BD66EC0C71892FEB86F1")
     
 private void clearMotionHistory(int pointerId) {
@@ -862,6 +893,7 @@ private void clearMotionHistory(int pointerId) {
         mPointersDown &= ~(1 << pointerId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.827 -0400", hash_original_method = "17F61FBA30C4A3DA0F91DE2758313E0B", hash_generated_method = "2FFA5F423492401BDF43E690510C6727")
     
 private void ensureMotionHistorySizeForId(int pointerId) {
@@ -894,6 +926,7 @@ private void ensureMotionHistorySizeForId(int pointerId) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.830 -0400", hash_original_method = "0C8C63071FDCAD579BDD2D27FD00EF4A", hash_generated_method = "47F7FEC63CB86AF7A483F97480FD34AB")
     
 private void saveInitialMotion(float x, float y, int pointerId) {
@@ -904,6 +937,7 @@ private void saveInitialMotion(float x, float y, int pointerId) {
         mPointersDown |= 1 << pointerId;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.833 -0400", hash_original_method = "B6E8823632287C974BAA792F08A356F1", hash_generated_method = "49068F2C03A3F0DDD919E55FBCF3BAC9")
     
 private void saveLastMotion(MotionEvent ev) {
@@ -930,12 +964,14 @@ private void saveLastMotion(MotionEvent ev) {
      * @param pointerId pointer ID to check; corresponds to IDs provided by MotionEvent
      * @return true if the pointer with the given ID is still down
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.835 -0400", hash_original_method = "4D7B8BABE5479CBD45B0C5C3F099583B", hash_generated_method = "525834005EB3034EB5FD56D005C21B5B")
     
 public boolean isPointerDown(int pointerId) {
         return (mPointersDown & 1 << pointerId) != 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.839 -0400", hash_original_method = "42B26F76D064E1CB49EBEF91D2806964", hash_generated_method = "42B26F76D064E1CB49EBEF91D2806964")
     
 void setDragState(int state) {
@@ -957,6 +993,7 @@ void setDragState(int state) {
      * @param pointerId Pointer to capture with
      * @return true if capture was successful
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.842 -0400", hash_original_method = "6FCBAD4CB98AAC5D3DB8D101EBD98142", hash_generated_method = "20C534E2969807B2274A5948932431FC")
     
 boolean tryCaptureViewForDrag(View toCapture, int pointerId) {
@@ -1017,6 +1054,7 @@ protected boolean canScroll(View v, boolean checkV, int dx, int dy, int x, int y
      * @param ev MotionEvent provided to onInterceptTouchEvent
      * @return true if the parent view should return true from onInterceptTouchEvent
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.852 -0400", hash_original_method = "479C5198C8AAB5B715FD1473007840B3", hash_generated_method = "5FCBD86E9DBE3F8D43E4FE112DF01D20")
     
 public boolean shouldInterceptTouchEvent(MotionEvent ev) {
@@ -1126,6 +1164,7 @@ public boolean shouldInterceptTouchEvent(MotionEvent ev) {
      *
      * @param ev The touch event received by the parent view
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.859 -0400", hash_original_method = "1E1CFA810F5EB34DDE6D0C49CB713F3E", hash_generated_method = "4867C30B5DE9852E28FECAE0F1219194")
     
 public void processTouchEvent(MotionEvent ev) {
@@ -1279,6 +1318,7 @@ public void processTouchEvent(MotionEvent ev) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.863 -0400", hash_original_method = "A47BEB2EEFCF9A9B3EF96D98DEBD5E9F", hash_generated_method = "949469AC419266E82EF0F4467FB91950")
     
 private void reportNewEdgeDrags(float dx, float dy, int pointerId) {
@@ -1302,6 +1342,7 @@ private void reportNewEdgeDrags(float dx, float dy, int pointerId) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.868 -0400", hash_original_method = "DA719FAD2308D1AA2EB906A6123DFBDF", hash_generated_method = "088B0B0E6523FCC6A5AAC4D5930F3715")
     
 private boolean checkNewEdgeDrag(float delta, float odelta, int pointerId, int edge) {
@@ -1331,6 +1372,7 @@ private boolean checkNewEdgeDrag(float delta, float odelta, int pointerId, int e
      * @param dy Motion since initial position along Y axis
      * @return true if the touch slop has been crossed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.872 -0400", hash_original_method = "301FE2FB85D24B4A76E319E2DD66021A", hash_generated_method = "884192727B86385C25E0FCE2C8651E64")
     
 private boolean checkTouchSlop(View child, float dx, float dy) {
@@ -1364,6 +1406,7 @@ private boolean checkTouchSlop(View child, float dx, float dy) {
      *                   {@link #DIRECTION_VERTICAL}, {@link #DIRECTION_ALL}
      * @return true if the slop threshold has been crossed, false otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.877 -0400", hash_original_method = "FF38D43683E269D97B49F81E25478615", hash_generated_method = "0E4F8F02DA6723E5DF7BC478D47A8659")
     
 public boolean checkTouchSlop(int directions) {
@@ -1391,6 +1434,7 @@ public boolean checkTouchSlop(int directions) {
      * @param pointerId ID of the pointer to slop check as specified by MotionEvent
      * @return true if the slop threshold has been crossed, false otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.881 -0400", hash_original_method = "98BE65B4E963E177593CBA4ADBA9257B", hash_generated_method = "C08ED5492D2D8BBE1DBC8A5EF358F554")
     
 public boolean checkTouchSlop(int directions, int pointerId) {
@@ -1423,6 +1467,7 @@ public boolean checkTouchSlop(int directions, int pointerId) {
      *              {@link #EDGE_ALL}
      * @return true if any of the edges specified were initially touched in the current gesture
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.885 -0400", hash_original_method = "549B6BDD6202FEA398797B7763B1FDB7", hash_generated_method = "6F4D7CF685692B0B470DC96DC4F784A7")
     
 public boolean isEdgeTouched(int edges) {
@@ -1445,6 +1490,7 @@ public boolean isEdgeTouched(int edges) {
      *              {@link #EDGE_ALL}
      * @return true if any of the edges specified were initially touched in the current gesture
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.892 -0400", hash_original_method = "D27303B051D074658CE8DE54AD81806E", hash_generated_method = "3CD06AF5688C74D0075E929784B97AA5")
     
 public boolean isEdgeTouched(int edges, int pointerId) {
@@ -1464,6 +1510,7 @@ private void releaseViewForPointerUp() {
         dispatchViewReleased(xvel, yvel);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.899 -0400", hash_original_method = "8CB1596AC7A5C9041A288E08B64ABEE9", hash_generated_method = "EDC3AA45A16F55FB627CED765306623A")
     
 private void dragTo(int left, int top, int dx, int dy) {
@@ -1497,6 +1544,7 @@ private void dragTo(int left, int top, int dx, int dy) {
      * @param y Y position to test in the parent's coordinate system
      * @return true if the captured view is under the given point, false otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.902 -0400", hash_original_method = "1BE0595FF316A638DD7528D569263577", hash_generated_method = "90451322DE97BF807585B54EFAB69579")
     
 public boolean isCapturedViewUnder(int x, int y) {
@@ -1512,6 +1560,7 @@ public boolean isCapturedViewUnder(int x, int y) {
      * @param y Y position to test in the parent's coordinate system
      * @return true if the supplied view is under the given point, false otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.904 -0400", hash_original_method = "4A017A17A3F49AB2F6A7C3BC3B0FFD50", hash_generated_method = "86DD917E20F5DDC9C557F0A1D2C22537")
     
 public boolean isViewUnder(View view, int x, int y) {
@@ -1532,6 +1581,7 @@ public boolean isViewUnder(View view, int x, int y) {
      * @param y Y position to test in the parent's coordinate system
      * @return The topmost child view under (x, y) or null if none found.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.907 -0400", hash_original_method = "7A005296135FAB76F72C26AC55C0F80B", hash_generated_method = "9CF8EB8D86BEC15069331161CEA67A08")
     
 public View findTopChildUnder(int x, int y) {
@@ -1546,6 +1596,7 @@ public View findTopChildUnder(int x, int y) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.910 -0400", hash_original_method = "8F1B1AE00453E5F8FA89A3869E1A4329", hash_generated_method = "87F2A31DEF0A27905C85164CB73EEE32")
     
 private int getEdgesTouched(int x, int y) {

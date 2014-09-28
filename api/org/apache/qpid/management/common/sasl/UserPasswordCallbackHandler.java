@@ -46,6 +46,7 @@ public UserPasswordCallbackHandler(String user, String password)
         this.pwchars = password.toCharArray();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.223 -0400", hash_original_method = "728E5FD592B588D0BD967FD67C6AE746", hash_generated_method = "85AC69400D3C0EF80ACD573BACE91298")
     
 public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException
@@ -69,6 +70,7 @@ public void handle(Callback[] callbacks) throws IOException, UnsupportedCallback
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.224 -0400", hash_original_method = "1879E0720E927299ACBF67C302ED951A", hash_generated_method = "D906ED2B482080374848C8818107B9E4")
     
 private void clearPassword()

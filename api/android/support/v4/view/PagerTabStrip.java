@@ -180,6 +180,7 @@ public PagerTabStrip(Context context, AttributeSet attrs) {
      *
      * @param color Color to set as an 0xRRGGBB value. The high byte (alpha) is ignored.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.064 -0500", hash_original_method = "416E053D9953A7DFD58ABDC9A59B40AE", hash_generated_method = "2D35475DC0D70F5C927CC49B13E18D74")
     
 public void setTabIndicatorColor(int color) {
@@ -219,6 +220,7 @@ public int getTabIndicatorColor() {
         super.setPadding(left, top, right, bottom);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.071 -0500", hash_original_method = "9E708A5002235F54A6E83D6CAB6E0AE5", hash_generated_method = "C8C954E6342AA660D707EC68EBCF2F57")
     
 @Override
@@ -289,6 +291,7 @@ public boolean getDrawFullUnderline() {
         return mDrawFullUnderline;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.082 -0500", hash_original_method = "277E06AC1F137E5CAC62EBE97DB0158F", hash_generated_method = "101CA3233DF15482CD1C9AF570B24E0A")
     
 @Override
@@ -359,6 +362,7 @@ public boolean getDrawFullUnderline() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:21.091 -0500", hash_original_method = "218291EE6C0B81B0F0486DC4B2750F49", hash_generated_method = "8FE85C2488FCD9EE8907565130AB7F46")
     
 @Override

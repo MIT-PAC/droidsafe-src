@@ -197,6 +197,7 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
+    @DSSource({DSSourceKind.IO})
     @DSSpec(DSCat.IO)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.440 -0400", hash_original_method = "FBA121B80064AD99E30C613A90CFA3D6", hash_generated_method = "78E79B0ADA1605C9FAFD14A005E06430")
@@ -224,6 +225,7 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
+    @DSSource({DSSourceKind.IO})
     @DSSpec(DSCat.IO)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.440 -0400", hash_original_method = "4AD28164B3ED3B60A2412B4E7DEDB826", hash_generated_method = "7B97829D7327FE16832AC140D8159784")
@@ -246,6 +248,7 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
+    @DSSource({DSSourceKind.IO})
     @DSSpec(DSCat.IO)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.441 -0400", hash_original_method = "C70C3A95CC69C815CEA97A11A597B28A", hash_generated_method = "04972A776A6CFDACEFE618F29818A262")
@@ -334,6 +337,7 @@ public long getSize() {
      *
      * @return This implementation always returns zero.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.443 -0400", hash_original_method = "A737830B6A2B6F6C2620CA3298757069", hash_generated_method = "9D8868FD69A1D6291C9E6928B0842C7B")
     
 protected int processChar() {
@@ -351,6 +355,7 @@ protected int processChar() {
      * @param offset The offset to start at.
      * @param length The number of characters.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.444 -0400", hash_original_method = "CECA15CD5926CD1CCF5DBC543CFC909D", hash_generated_method = "159894D458809E73B0695BC5746BF16C")
     
 protected void processChars(char[] chars, int offset, int length) {
@@ -365,6 +370,7 @@ protected void processChars(char[] chars, int offset, int length) {
      * @throws EOFException if <code>throwEofException</code> is set
      * to {@code true}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.444 -0400", hash_original_method = "19CB45ABF7C0C1D656700921E322A527", hash_generated_method = "380899F3E1EB67D55FF8A375DB8A9EC3")
     
 private int doEndOfFile() throws EOFException {

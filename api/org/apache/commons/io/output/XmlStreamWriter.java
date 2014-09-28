@@ -181,6 +181,7 @@ public String getDefaultEncoding() {
      * @param len The number of characters to write
      * @throws IOException if an error occurs detecting the encoding
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.918 -0400", hash_original_method = "5F0F76B2AEC559A82852132C77730119", hash_generated_method = "761CCC5FECDDA74F16E4367258F3BE74")
     
 private void detectEncoding(char[] cbuf, int off, int len)

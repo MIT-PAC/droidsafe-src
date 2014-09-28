@@ -54,7 +54,7 @@ public ProxyOutputStream(OutputStream proxy) {
      * @throws IOException if an I/O error occurs
      */
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.264 -0400", hash_original_method = "C10E35B15C5C34D2F11AD8F56A8AFBE7", hash_generated_method = "8538DC9FDF04C178771F287DC9084D00")
     
 @Override
@@ -74,7 +74,7 @@ public ProxyOutputStream(OutputStream proxy) {
      * @throws IOException if an I/O error occurs
      */
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.266 -0400", hash_original_method = "E4B5E15EBD1DC0F51B6909882AA2B9D3", hash_generated_method = "F2EA6D6D1EB28486AFF7B8C18D6CD1F3")
     
 @Override
@@ -97,7 +97,7 @@ public ProxyOutputStream(OutputStream proxy) {
      * @throws IOException if an I/O error occurs
      */
     @DSSink({DSSinkKind.IO})
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.266 -0400", hash_original_method = "6659C26B9D2F6D845755120D9E3C542C", hash_generated_method = "1D85046399E8D016E013E1B1E96055F2")
     
 @Override
@@ -156,6 +156,7 @@ public ProxyOutputStream(OutputStream proxy) {
      * @param n number of bytes to be written
      * @throws IOException if the pre-processing fails
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.268 -0400", hash_original_method = "961C14EE073174624B2AA02C565F3907", hash_generated_method = "52BDA559670D4FF766CC677735730AEA")
     
 protected void beforeWrite(int n) throws IOException {
@@ -175,6 +176,7 @@ protected void beforeWrite(int n) throws IOException {
      * @param n number of bytes written
      * @throws IOException if the post-processing fails
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.269 -0400", hash_original_method = "634EDAC0BBD2C7E1FA3D5BDE9765B3F8", hash_generated_method = "E22D951CDC0C6538752306DA0A369FDB")
     
 protected void afterWrite(int n) throws IOException {
@@ -189,6 +191,7 @@ protected void afterWrite(int n) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.270 -0400", hash_original_method = "A242DFA5F52516C95D0F167B92B745B6", hash_generated_method = "1891156C8FEFAA68CD85CC13506CC1D3")
     
 protected void handleIOException(IOException e) throws IOException {

@@ -90,6 +90,7 @@ protected CanReadFileFilter() {
      * @return {@code true} if the file can be
      *  read, otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.804 -0400", hash_original_method = "04EA67B3A82204BBE7F5B271F46DC797", hash_generated_method = "EEC7700D81C7AA480D18016D7AD00B66")
     
 @Override

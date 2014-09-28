@@ -154,7 +154,7 @@ public void saveRecentQuery(final String queryString, final String line2) {
         }
 
         new Thread("saveRecentQuery") {
-            @DSSpec(DSCat.SPEC_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @Override
             public void run() {
                 saveRecentQueryBlocking(queryString, line2);

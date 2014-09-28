@@ -191,7 +191,7 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
     private static final int MAX_POOL_SIZE = 10;
     public static final Parcelable.Creator<Message> CREATOR
             = new Parcelable.Creator<Message>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.370 -0500", hash_original_method = "C469647B7E7B16486A85AB4B8FE1AC44", hash_generated_method = "5A2A7B37F6B69DB49B562A947E4208DD")
         
 public Message createFromParcel(Parcel source) {
@@ -356,6 +356,7 @@ public Bundle peekData() {
      * @see #getData() 
      * @see #peekData()
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("OS Message")
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.351 -0500", hash_original_method = "2A3AF1BEE5D39047FC40D7968EE3828B", hash_generated_method = "E6DE205F5507518F4C757F398D9B9FC5")
@@ -368,8 +369,9 @@ public void setData(Bundle data) {
      * Sends this Message to the Handler specified by {@link #getTarget}.
      * Throws a null pointer exception if this field has not been set.
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.353 -0500", hash_original_method = "2D3F3759D60A7A1CBA79B8F487061097", hash_generated_method = "35E9C435AC941949A3E301FED5BE4231")
     
 public void sendToTarget() {
@@ -421,6 +423,7 @@ public void sendToTarget() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.IPC})
     @DSSafe(DSCat.SAFE_LIST)
     public String toString(){
 		// Original method

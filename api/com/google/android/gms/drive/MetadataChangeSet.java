@@ -27,13 +27,14 @@ public final class MetadataChangeSet
 			this.description = description;
 			return this;
 		}
-		@DSSafe(DSCat.SAFE_OTHERS)
+		@DSSafe(DSCat.SAFE_LIST)
 		public MetadataChangeSet.Builder setMimeType (String mimeType) {
 			this.mimeType = mimeType;
 			return this;
 		}
 		
-		@DSSafe(DSCat.SAFE_OTHERS)
+		@DSSink({DSSinkKind.GOOGLE_SERVICES})
+        @DSSafe(DSCat.SAFE_LIST)
 		public MetadataChangeSet.Builder setTitle (String title) {
 			this.title = title;
 			return this;
@@ -68,7 +69,8 @@ public final class MetadataChangeSet
             return this;
         }
 
-		@DSSafe(DSCat.SAFE_OTHERS)
+		@DSSink({DSSinkKind.GOOGLE_SERVICES})
+        @DSSafe(DSCat.SAFE_LIST)
         public MetadataChangeSet build() {
 			MetadataChangeSet set = new MetadataChangeSet(this);
 			return set;

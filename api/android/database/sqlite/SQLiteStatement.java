@@ -56,6 +56,8 @@ SQLiteStatement(SQLiteDatabase db, String sql, Object[] bindArgs) {
      * @throws android.database.SQLException If the SQL string is invalid for
      *         some reason
      */
+    @DSSink({DSSinkKind.DATABASE})
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.366 -0500", hash_original_method = "AF1FDD5D94DA5350C3682852D1772235", hash_generated_method = "A885B32B2E08E78A2AC63B81A3B37E4B")
     
 public void execute() {

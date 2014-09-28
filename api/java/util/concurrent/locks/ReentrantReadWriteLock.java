@@ -49,9 +49,11 @@ public ReentrantReadWriteLock(boolean fair) {
         writerLock = new WriteLock(this);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.797 -0500", hash_original_method = "0C7BC9C54BE00E03201ACF18B2913309", hash_generated_method = "0A3ACCFFDE9D727FD4D1A017A5E8C71A")
     
 public ReentrantReadWriteLock.WriteLock writeLock() { return writerLock; }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.799 -0500", hash_original_method = "22D8B34ECDA1804C5F879E9731CF210D", hash_generated_method = "15D9C8959D307D72A44851BD830CC7F8")
     
 public ReentrantReadWriteLock.ReadLock  readLock()  { return readerLock; }

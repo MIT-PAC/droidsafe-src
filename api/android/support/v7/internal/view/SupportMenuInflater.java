@@ -147,6 +147,7 @@ public SupportMenuInflater(Context context) {
      * Called internally to fill the given menu. If a sub menu is seen, it will
      * call this recursively.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.499 -0400", hash_original_method = "9930459085CDC2417094A7A8585D74E6", hash_generated_method = "5A33FCD11FD7601B075450C8B2424E13")
     
 private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)
@@ -250,6 +251,7 @@ private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onMenuItemClick(MenuItem item) {
             try {
                 if (mMethod.getReturnType() == Boolean.TYPE) {
@@ -335,6 +337,7 @@ private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)
             resetGroup();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void resetGroup() {
             groupId = defaultGroupId;
             groupCategory = defaultItemCategory;
@@ -347,6 +350,7 @@ private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)
         /**
          * Called when the parser is pointing to a group tag.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void readGroup(AttributeSet attrs) {
             TypedArray a = mContext.obtainStyledAttributes(attrs, R.styleable.MenuGroup);
 
@@ -365,6 +369,7 @@ private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)
         /**
          * Called when the parser is pointing to an item tag.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void readItem(AttributeSet attrs) {
             TypedArray a = mContext.obtainStyledAttributes(attrs, R.styleable.MenuItem);
 
@@ -416,6 +421,7 @@ private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)
             itemAdded = false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private char getShortcut(String shortcutString) {
             if (shortcutString == null) {
                 return 0;
@@ -424,6 +430,7 @@ private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void setItem(MenuItem item) {
             item.setChecked(itemChecked)
                     .setVisible(itemVisible)
@@ -477,11 +484,13 @@ private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void addItem() {
             itemAdded = true;
             setItem(menu.add(groupId, itemId, itemCategoryOrder, itemTitle));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public SubMenu addSubMenuItem() {
             itemAdded = true;
             SubMenu subMenu = menu.addSubMenu(groupId, itemId, itemCategoryOrder, itemTitle);
@@ -489,10 +498,12 @@ private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu)
             return subMenu;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean hasAddedItem() {
             return itemAdded;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @SuppressWarnings("unchecked")
         private <T> T newInstance(String className, Class<?>[] constructorSignature,
                 Object[] arguments) {

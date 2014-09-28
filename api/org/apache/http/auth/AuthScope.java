@@ -232,6 +232,7 @@ public int match(final AuthScope that) {
     /**
      * @see java.lang.Object#toString()
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.618 -0500", hash_original_method = "AA52C08879A8120A7A68C6044F6A755A", hash_generated_method = "30AE26B8763C7672EA6ED3EAF23EED6C")
     

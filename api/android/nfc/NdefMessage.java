@@ -18,7 +18,7 @@ public final class NdefMessage implements Parcelable {
 
     public static final Parcelable.Creator<NdefMessage> CREATOR =
             new Parcelable.Creator<NdefMessage>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.071 -0500", hash_original_method = "2309D164C76EDDEB5F889CEC6615477A", hash_generated_method = "EAE0E4E842B5024260917892E89EB81B")
         
 @Override
@@ -74,7 +74,7 @@ public NdefMessage(NdefRecord[] records) {
      * @return array of zero or more NDEF records.
      */
     @DSComment("data structure, except writeToParcel")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.060 -0500", hash_original_method = "482F2AD23FF4C5B364DE9FB97EDDBB64", hash_generated_method = "C7BB5CEF292B3E7C1A8B4DC36219E098")
     

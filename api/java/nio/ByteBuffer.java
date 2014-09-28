@@ -119,7 +119,7 @@ ByteBuffer(int capacity, MemoryBlock block) {
      *                if this buffer is not based on an array.
      */
     @DSComment("memory buffer only")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.792 -0500", hash_original_method = "7344C3769A78C71213763E627C382A16", hash_generated_method = "537451EEC285CE457427409DDF7B387C")
     
 public final byte[] array() {

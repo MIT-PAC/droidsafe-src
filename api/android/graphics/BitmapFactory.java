@@ -529,6 +529,7 @@ public Options() {
          *  null, or if inJustDecodeBounds is true, will set outWidth/outHeight
          *  to -1
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.744 -0500", hash_original_method = "1FC603D50B1CC5C62A2F5DE57FF4610A", hash_generated_method = "916058FC98BEB5BEBA4D6C12E44E630C")
         
 public void requestCancelDecode() {

@@ -44,6 +44,7 @@ public static Locale[] getAvailableLocales() {
      * <p>Since the user's locale changes dynamically, avoid caching this value.
      * Instead, use this method to look it up for each use.
      */
+    @DSSource({DSSourceKind.LOCATION})
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
     //@DSSource({DSSourceKind.LOCATION})
@@ -282,7 +283,7 @@ public Locale(String language, String country, String variant) {
      * country and variant.
      */
     @DSComment("From safe class list")
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.113 -0500", hash_original_method = "B2DF95EC92791D38C85586E37BBFDFD0", hash_generated_method = "2A835280D4E5E6F50D1CBDDA6646FDF6")
     
 @Override public boolean equals(Object object) {
@@ -304,7 +305,7 @@ public Locale(String language, String country, String variant) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.119 -0500", hash_original_method = "40EA1D1DD90B3BAB3C58BE2B6A46A98D", hash_generated_method = "7C96061093369960A16CB5146C11B315")
     
 public String getCountry() {
@@ -513,7 +514,7 @@ public String getISO3Language() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.155 -0500", hash_original_method = "1C720E5AEB210852D4C515195DCC49D3", hash_generated_method = "139391AFF317C1270C7570989BBC8F6D")
     
 public String getLanguage() {

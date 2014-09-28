@@ -244,8 +244,8 @@ public String getString(ContentResolver cr, String name) {
          * @return the corresponding value, or null if not present
          */
         @DSComment("System settings/policy")
-        @DSSpec(DSCat.SYSTEM)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.512 -0500", hash_original_method = "BCE17AD551131F3C5B0199F6E8D71A65", hash_generated_method = "0E3882E2540A80A5533039D724BE4002")
         
 public synchronized static String getString(ContentResolver resolver, String name) {
@@ -1221,8 +1221,8 @@ public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
          * @return the corresponding value, or null if not present
          */
         @DSComment("System settings, info collection")
-        @DSSpec(DSCat.SYSTEM)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSource({DSSourceKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.966 -0500", hash_original_method = "673ACF52738B2550EB82A63F524A794C", hash_generated_method = "DF23D5CD90F7627E0234D522B83FB549")
         
 public synchronized static String getString(ContentResolver resolver, String name) {

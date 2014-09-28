@@ -37,26 +37,20 @@ import java.io.IOException;
 public class XmlStreamReaderException extends IOException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.713 -0400", hash_original_field = "7D07EDF60BE7D52BF87500AC6D8FE154", hash_generated_field = "712212474A80BD328114C4C1DC66CBA3")
 
-
     private static final long serialVersionUID = 1L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.714 -0400", hash_original_field = "BCB566D72037AF7F9E064FBC666076E1", hash_generated_field = "EC82926CAB066F06AAFC3726EF2F5BF5")
-
 
     private  String bomEncoding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.714 -0400", hash_original_field = "3534FBB3FFC5B8FED0C0CE5746401C09", hash_generated_field = "293562CF19517A35BB931BB29CBF3076")
 
-
     private  String xmlGuessEncoding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.715 -0400", hash_original_field = "DAFD1F56979D27C6800F92D1F6F82EE0", hash_generated_field = "656761370EB1B6AB6991B2A74412BA8B")
-
 
     private  String xmlEncoding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.715 -0400", hash_original_field = "5AD82F0083A03E78BDA0D5BDE93CC09D", hash_generated_field = "CF0AADC5E49F7DC7EC0DF8E902974BFE")
 
-
     private  String contentTypeMime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.716 -0400", hash_original_field = "EB765441808FEEEA183BED002B64CCBF", hash_generated_field = "C4A1C9E33654E0FF1EF148FC95CCA1FD")
-
 
     private  String contentTypeEncoding;
 
@@ -108,6 +102,7 @@ public XmlStreamReaderException(String msg, String ctMime, String ctEnc,
      *
      * @return the BOM encoding, null if none.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.718 -0400", hash_original_method = "8E6ACC549621DB046C39AAF67FE47CA0", hash_generated_method = "53BA3EE9CD15F4A6E020F2DB2D968979")
     
 public String getBomEncoding() {
@@ -119,6 +114,7 @@ public String getBomEncoding() {
      *
      * @return the encoding guess, null if it couldn't be guessed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.718 -0400", hash_original_method = "93213E0474402E85CBBF9C6807083224", hash_generated_method = "ACE12E2EA479D4EA9C8D845479659B02")
     
 public String getXmlGuessEncoding() {
@@ -130,6 +126,7 @@ public String getXmlGuessEncoding() {
      *
      * @return the encoding of the XML prolog, null if none.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.718 -0400", hash_original_method = "54494C811BAA1F5B46191C70DF542771", hash_generated_method = "52CC0571C63508D20A0FDEAF20E2DECC")
     
 public String getXmlEncoding() {
@@ -157,6 +154,7 @@ public String getContentTypeMime() {
      *         content-type, no encoding in it or the encoding detection did not
      *         involve HTTP.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.719 -0400", hash_original_method = "D63D11323318AB5C82EE37F5F9D391F2", hash_generated_method = "84DB04B4F19567B46C572BFFD719BEBE")
     
 public String getContentTypeEncoding() {

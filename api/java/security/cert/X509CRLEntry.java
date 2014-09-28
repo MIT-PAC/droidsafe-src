@@ -47,6 +47,7 @@ public X509CRLEntry() {}
      * @return {@code true} if the specified object equals to this instance,
      *         otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.036 -0400", hash_original_method = "0B3373746F630C1C5A30B3A669FD61CB", hash_generated_method = "24F907DF1493799F9532DB3221411F9B")
     
 public boolean equals(Object other) {

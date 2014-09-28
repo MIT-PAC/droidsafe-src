@@ -212,6 +212,7 @@ public static CdmaSmsAddress parse(String address) {
 public CdmaSmsAddress(){
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.771 -0500", hash_original_method = "63A53E613DBD8AE7867F216680739B01", hash_generated_method = "09CDD0D7433F20EFD32B305806295534")
     

@@ -50,7 +50,7 @@ public class Intent implements Parcelable, Cloneable {
      * related methods.
      */
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:08.739 -0500", hash_original_method = "43F6EAB342082D2390B2ECED1CCBA8B1", hash_generated_method = "A816FD59E9987469E7B74430ED69774F")
     
@@ -1181,7 +1181,7 @@ public static ShortcutIconResource fromContext(Context context, int resourceId) 
         public static final Parcelable.Creator<ShortcutIconResource> CREATOR =
             new Parcelable.Creator<ShortcutIconResource>() {
 
-                @DSSafe(DSCat.SAFE_LIST)
+                @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:08.720 -0500", hash_original_method = "E5EFB41AF12EFD491D45E99DE4F055C4", hash_generated_method = "B87C27F2C8D77B5D6F6D753DDE5B9250")
             
 public ShortcutIconResource createFromParcel(Parcel source) {
@@ -1623,7 +1623,7 @@ public Intent getIntent() {
 
     public static final Parcelable.Creator<Intent> CREATOR
             = new Parcelable.Creator<Intent>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.617 -0500", hash_original_method = "F9E3C09B709E0EDEDA66B8BB83B427D5", hash_generated_method = "D17491F45B3D1A9A7E33CB57F7E14A74")
         
 public Intent createFromParcel(Parcel in) {
@@ -1881,6 +1881,7 @@ public String getAction() {
      * @see #getScheme
      * @see #setData
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -1890,7 +1891,8 @@ public Uri getData() {
         return mData;
     }
     
-	@DSComment("movement of Intent is spec")
+	@DSSource({DSSourceKind.IPC})
+    @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getDataString() {
@@ -2112,6 +2114,7 @@ public boolean hasFileDescriptors() {
      *
      * @see #putExtra(String, boolean)
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.359 -0500", hash_original_method = "6C77EA53DBDF6A732015829C63BCD454", hash_generated_method = "02A8C2F1680A1423978645221962E29D")
@@ -2153,6 +2156,7 @@ public byte getByteExtra(String name, byte defaultValue) {
      *
      * @see #putExtra(String, short)
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -2195,6 +2199,7 @@ public char getCharExtra(String name, char defaultValue) {
      *
      * @see #putExtra(String, int)
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -2217,6 +2222,7 @@ public int getIntExtra(String name, int defaultValue) {
      *
      * @see #putExtra(String, long)
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -2279,6 +2285,7 @@ public double getDoubleExtra(String name, double defaultValue) {
      *
      * @see #putExtra(String, String)
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -2298,6 +2305,7 @@ public String getStringExtra(String name) {
      *
      * @see #putExtra(String, CharSequence)
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -2307,7 +2315,8 @@ public CharSequence getCharSequenceExtra(String name) {
         return mExtras == null ? null : (CharSequence)mExtras.get(name);
     }
     
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSource({DSSourceKind.IPC})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.428 -0400", hash_original_method = "1C448816D9B902054FE9E8A698247DA2", hash_generated_method = "3E3DEE7B959E87E94EACE1CB55226D17")
     public <T extends Parcelable> T getParcelableExtra(String name) {
         addTaint(name.getTaint());
@@ -2330,13 +2339,14 @@ public CharSequence getCharSequenceExtra(String name) {
      */
     @DSComment("Data serialization/deserialization")
     @DSSafe(DSCat.SERIALIZATION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.382 -0500", hash_original_method = "28D360BBB773D3DC39CC6E8B3FB095BE", hash_generated_method = "95CF13FB7C566158CE15E0D32127AEB6")
     
 public Parcelable[] getParcelableArrayExtra(String name) {
         return mExtras == null ? null : (Parcelable[])mExtras.get(name);
     }
     
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -2361,7 +2371,7 @@ public Parcelable[] getParcelableArrayExtra(String name) {
      */
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.386 -0500", hash_original_method = "9F4D1ACCAA6C6918CB97F661FEDB7260", hash_generated_method = "76C340BC56D9F60CF88D86C558C6825B")
     
 public Serializable getSerializableExtra(String name) {
@@ -2571,6 +2581,7 @@ public double[] getDoubleArrayExtra(String name) {
      *
      * @see #putExtra(String, String[])
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -2609,7 +2620,7 @@ public CharSequence[] getCharSequenceArrayExtra(String name) {
      */
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.416 -0500", hash_original_method = "913345623B540CBB75EA0BDD1C78C162", hash_generated_method = "93F751E5024747FA0CAE2E759F15F6B4")
     
 public Bundle getBundleExtra(String name) {
@@ -2674,6 +2685,7 @@ public Bundle getBundleExtra(String name) {
      * @return the map of all extras previously added with putExtra(),
      * or null if none have been added.
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -2741,6 +2753,7 @@ public String getPackage() {
      * @see #resolveActivity
      * @see #setComponent
      */
+    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -3691,7 +3704,7 @@ public Intent putExtra(String name, Bundle value) {
      */
     @DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.521 -0500", hash_original_method = "49B5D5019DC4C58D3432134ADBF206CE", hash_generated_method = "6A4551931679F7F4C88D98B48A5B93F2")
     
 public Intent putExtras(Intent src) {
@@ -3714,7 +3727,7 @@ public Intent putExtras(Intent src) {
      */
     @DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.INTENT_EXCHANGE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.523 -0500", hash_original_method = "300503D60C48D249178D35D7CDB92339", hash_generated_method = "FC9E29D42D611ABE43D557232408FD20")
     
 public Intent putExtras(Bundle extras) {
@@ -3860,7 +3873,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     }
     
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.459 -0400", hash_original_method = "07D0BC1863460C70C46D0D4DB8E842CD", hash_generated_method = "7F6ACB39663195BC97A4BC6A90961AAC")
     public Intent setClass(Context packageContext, Class<?> cls) {
@@ -4375,6 +4388,7 @@ public void readFromParcel(Parcel in) {
 
     //methods added by droidsafe for api 19 comp.
     
+    @DSSource({DSSourceKind.IPC})
     @DSSafe(DSCat.SAFE_OTHERS)
     public ClipData getClipData () {
         return mClipData;

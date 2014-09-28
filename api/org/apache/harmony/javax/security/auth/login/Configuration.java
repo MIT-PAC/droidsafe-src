@@ -33,12 +33,10 @@ public abstract class Configuration {
             "getLoginConfiguration");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.695 -0400", hash_original_field = "06F1C2B8DC2070FB32B4297A97AC2443", hash_generated_field = "0F3E92B3CE7F8D5641D6E178990306DD")
 
-
     // creates a AuthPermission object with a specify property
     private static final AuthPermission SET_LOGIN_CONFIGURATION = new AuthPermission(
             "setLoginConfiguration");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.695 -0400", hash_original_field = "4DF9D4E30093AE85B87789A04329683F", hash_generated_field = "302CE28EF6AD0C54725BDC42D6C97C67")
-
 
     // Key to security properties, defining default configuration provider.
     private static final String LOGIN_CONFIGURATION_PROVIDER = "login.configuration.provider";
@@ -58,6 +56,7 @@ public static Configuration getConfiguration() {
      * loads the class and instantiates the provider.<br> In case of any
      * exception, wraps it with SecurityException and throws further.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.698 -0400", hash_original_method = "F30DEA7A091BEC57EC5E8AFD58F3922D", hash_generated_method = "9FA9EBC2F5C6E0A3EE306B141CB7BF15")
     
 private static final Configuration getDefaultProvider() {
@@ -67,7 +66,8 @@ private static final Configuration getDefaultProvider() {
 			public void refresh() {
 			}
 			
-			@Override
+			@DSSafe(DSCat.SAFE_LIST)
+        @Override
 			public AppConfigurationEntry[] getAppConfigurationEntry(
 					String applicationName) {
 				return new AppConfigurationEntry[0];
@@ -81,6 +81,7 @@ private static final Configuration getDefaultProvider() {
      * provider, so this method never returns <code>null</code>. <br>
      * This method is synchronized with setConfiguration()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.699 -0400", hash_original_method = "B15F95B21213EA173D82B2E2B1119F4A", hash_generated_method = "A983C53A4FF2CE7ED41BBCCBAAE42A6D")
     
 static Configuration getAccessibleConfiguration() {
@@ -112,6 +113,7 @@ protected Configuration() {
         super();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.700 -0400", hash_original_method = "C70FA0206626337048D22E4C69D13CF4", hash_generated_method = "8595C423BCFD08BB9D7EE237D5D699D8")
     
 public abstract AppConfigurationEntry[] getAppConfigurationEntry(String applicationName);

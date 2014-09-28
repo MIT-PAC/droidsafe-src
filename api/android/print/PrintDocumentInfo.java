@@ -244,6 +244,7 @@ public void setDataSize(long dataSize) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.901 -0400", hash_original_method = "89E4749DF83F9C56EE877E66D6326508", hash_generated_method = "7FFF0C94D95106931710690BCBFA28C2")
     
 @Override
@@ -328,6 +329,7 @@ public Builder(String name) {
          * @param pageCount The number of pages. Must be greater than
          * or equal to zero or {@link PrintDocumentInfo#PAGE_COUNT_UNKNOWN}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.910 -0400", hash_original_method = "10815F659EA24A8023AE0A43C1C2ADC5", hash_generated_method = "4A804237E6A5D8786EFD3D6FEE9728BA")
         
 public Builder setPageCount(int pageCount) {
@@ -352,6 +354,7 @@ public Builder setPageCount(int pageCount) {
          * @see #CONTENT_TYPE_DOCUMENT
          * @see #CONTENT_TYPE_PHOTO
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.912 -0400", hash_original_method = "44F3536188A34FA8DBEADDD6123B1ADC", hash_generated_method = "7C9C928D405C04DB215CE6A9E07218A9")
         
 public Builder setContentType(int type) {
@@ -364,6 +367,7 @@ public Builder setContentType(int type) {
          *
          * @return The new instance.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.914 -0400", hash_original_method = "51AF0CA3B4DCA09459370AC3208366F0", hash_generated_method = "BAACF95DDF004C0BBB69DD37D92BD14B")
         
 public PrintDocumentInfo build() {

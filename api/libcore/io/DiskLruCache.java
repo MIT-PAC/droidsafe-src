@@ -162,6 +162,7 @@ private static String inputStreamToString(InputStream in) throws IOException {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.969 -0400", hash_original_field = "0AB759F1EA2680D4F36A63BC7BD4683F", hash_generated_field = "02934D3CC46F9AC5549E543E7FEE2593")
 
     private final Callable<Void> cleanupCallable = new Callable<Void>() {        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.969 -0400", hash_original_method = "60CB515F13FCF39FB25B426074E3001D", hash_generated_method = "657EDDA2627FCB4772B1A28CA5D1F2C0")
         @Override
         public Void call() throws Exception {
@@ -658,7 +659,7 @@ private FaultHidingOutputStream(OutputStream out) {
             }
 
             @DSSink({DSSinkKind.IO})
-            @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSpec(DSCat.IO)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.996 -0500", hash_original_method = "99CEE7897D6B59DCCBF2A9FD6D32C932", hash_generated_method = "6C39B0CF2DD4ABCCAD25CFF7FF28C502")
             
 @Override public void write(int oneByte) {

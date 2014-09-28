@@ -109,7 +109,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * are fewer than {@code position} headers.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.505 -0500", hash_original_method = "2FDBF8E663ECDF1396771B3FB2E938AE", hash_generated_method = "06437FA6B22B1A855ACD6C65696EC4F8")
     
 @Override public final String getHeaderField(int position) {
@@ -126,7 +126,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * last value is returned.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.507 -0500", hash_original_method = "8E358A78EB7A8F16DBAC360C5AE52593", hash_generated_method = "E975B3413BF7B4CBEA3B72CCBD80757D")
     
 @Override public final String getHeaderField(String fieldName) {
@@ -173,7 +173,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.519 -0500", hash_original_method = "45F412B75FA838EAF632FEA7E5AD9CE7", hash_generated_method = "1471DC304138D06A38141012D0B8ABF1")
     
 @Override public final InputStream getInputStream() throws IOException {
@@ -554,7 +554,7 @@ final void setProxy(Proxy proxy) {
     }
 
     @DSSafe(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.571 -0500", hash_original_method = "9D8B4374AC98844408DFFFE370FDA266", hash_generated_method = "0B499DF550BA661FCA1181BB7DFA6E19")
     
 @Override public String getResponseMessage() throws IOException {
@@ -570,7 +570,7 @@ final void setProxy(Proxy proxy) {
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.576 -0500", hash_original_method = "7F130ED52470D904C9FF4F495D6529EB", hash_generated_method = "403D82FE89DCF2C5B341CE7EB21CF163")
     
 @Override public final void setRequestProperty(String field, String newValue) {

@@ -21,7 +21,7 @@ public class UserInfo implements Parcelable {
 
     public static final Parcelable.Creator<UserInfo> CREATOR
             = new Parcelable.Creator<UserInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.411 -0500", hash_original_method = "33AD9B8ED865CFD9BB809454A11B02C8", hash_generated_method = "8D1C7C6B5FCFE546D9AA7412DBBE5914")
         
 public UserInfo createFromParcel(Parcel source) {

@@ -36,8 +36,8 @@ public class SSLSocketFactory implements LayeredSocketFactory {
      * @return a SSLProtocolSocketFactory
      */
     @DSComment("possible socket creation")
-    @DSSpec(DSCat.NETWORKING)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.632 -0500", hash_original_method = "6B121B894B8B46063AE1809ACAD0482F", hash_generated_method = "87AF58343C860BC81629A279DF58B94F")
     
 public static SSLSocketFactory getSocketFactory() {

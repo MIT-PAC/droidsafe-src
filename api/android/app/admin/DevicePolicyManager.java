@@ -140,7 +140,7 @@ public static DevicePolicyManager create(Context context, Handler handler) {
      */
     @DSComment("device administration")
     @DSSpec(DSCat.DEVICE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.678 -0500", hash_original_method = "DEBAA688BC0765F8640468141F520924", hash_generated_method = "27BF5B51AAA4CF65F3AECBF647F40D39")
     
 public boolean isAdminActive(ComponentName who) {

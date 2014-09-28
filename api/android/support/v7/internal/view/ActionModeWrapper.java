@@ -32,7 +32,6 @@ import android.view.View;
 public class ActionModeWrapper extends ActionMode {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:34.506 -0400", hash_original_field = "F8A6F06EECAE5E1F88EB1D958FECB66C", hash_generated_field = "F8A6F06EECAE5E1F88EB1D958FECB66C")
 
-
      MenuInflater mInflater;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:34.509 -0400", hash_original_field = "A6870F960C783A956211935C5876C7FF", hash_generated_field = "A6870F960C783A956211935C5876C7FF")
 
@@ -66,6 +65,7 @@ public ActionModeWrapper(Context context, android.view.ActionMode frameworkActio
         return mWrappedObject.getTitleOptionalHint();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:34.524 -0400", hash_original_method = "1955C5F435E8D489895FAE838A3D62A3", hash_generated_method = "FEA0806D132F74A2D05C42B0C27136CE")
     
 @Override
@@ -101,6 +101,7 @@ public ActionModeWrapper(Context context, android.view.ActionMode frameworkActio
         mWrappedObject.invalidate();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:34.538 -0400", hash_original_method = "2C644FC46CEDAB21E01FEE987AD613C0", hash_generated_method = "161157D9B7A2030A59978A948952E90E")
     
 @Override
@@ -108,6 +109,7 @@ public ActionModeWrapper(Context context, android.view.ActionMode frameworkActio
         mWrappedObject.finish();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:34.540 -0400", hash_original_method = "62EC8ABFA22AFF3F1F1CD9A3A0F81313", hash_generated_method = "1DBE9CD06932D4BFE7ADE6670197EA8E")
     
 @Override
@@ -178,18 +180,21 @@ public ActionModeWrapper(Context context, android.view.ActionMode frameworkActio
             mWrappedCallback = supportCallback;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onCreateActionMode(android.view.ActionMode mode, android.view.Menu menu) {
             return mWrappedCallback.onCreateActionMode(getActionModeWrapper(mode),
                     MenuWrapperFactory.createMenuWrapper(menu));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onPrepareActionMode(android.view.ActionMode mode, android.view.Menu menu) {
             return mWrappedCallback.onPrepareActionMode(getActionModeWrapper(mode),
                     MenuWrapperFactory.createMenuWrapper(menu));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onActionItemClicked(android.view.ActionMode mode,
                 android.view.MenuItem item) {
@@ -197,15 +202,18 @@ public ActionModeWrapper(Context context, android.view.ActionMode frameworkActio
                     MenuWrapperFactory.createMenuItemWrapper(item));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onDestroyActionMode(android.view.ActionMode mode) {
             mWrappedCallback.onDestroyActionMode(getActionModeWrapper(mode));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setLastStartedActionMode(ActionModeWrapper modeWrapper) {
             mLastStartedActionMode = modeWrapper;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private ActionMode getActionModeWrapper(android.view.ActionMode mode) {
             if (mLastStartedActionMode != null && mLastStartedActionMode.mWrappedObject == mode) {
                 // If the given mode equals our wrapped mode, just return it

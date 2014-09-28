@@ -64,7 +64,7 @@ public static RouteInfo selectBestRoute(Collection<RouteInfo> routes, InetAddres
 
     public static final Creator<RouteInfo> CREATOR =
         new Creator<RouteInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.072 -0500", hash_original_method = "F8D90C254555897C2A5C82BCD0750763", hash_generated_method = "98FB3B478593285346CEEFC12952379E")
         
 public RouteInfo createFromParcel(Parcel in) {

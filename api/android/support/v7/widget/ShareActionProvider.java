@@ -134,10 +134,8 @@ public class ShareActionProvider extends ActionProvider {
     private String mShareHistoryFileName = DEFAULT_SHARE_HISTORY_FILE_NAME;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.196 -0400", hash_original_field = "14ABF3424D70483DB072A6166D335E25", hash_generated_field = "8D0302721DF93B0058B1E99D4AC6931D")
 
-
     private OnShareTargetSelectedListener mOnShareTargetSelectedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.198 -0400", hash_original_field = "4E6DF115C423E32576A5D1CB98B81F8F", hash_generated_field = "A3948F7FA69A8ECB6B19574CCCA8D09F")
-
 
     private OnChooseActivityListener mOnChooseActivityListener;
 
@@ -173,6 +171,7 @@ public void setOnShareTargetSelectedListener(OnShareTargetSelectedListener liste
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.206 -0400", hash_original_method = "1BC9B35CED3034C73A3301B7F5D599F4", hash_generated_method = "4FE3EAC5A4FBA931A0EB238AB5D7D2F5")
         
 @Override
@@ -201,6 +200,7 @@ public void setOnShareTargetSelectedListener(OnShareTargetSelectedListener liste
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.208 -0400", hash_original_method = "35CF29CD4DCA84D0FC63AC1A69E282B0", hash_generated_method = "CF1645D2E26EE80D0A742936B16D492A")
         
 @Override
@@ -211,6 +211,7 @@ public void setOnShareTargetSelectedListener(OnShareTargetSelectedListener liste
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.211 -0400", hash_original_method = "5458A50E7CC261A43D8FD66D69514BF7", hash_generated_method = "9C9DCF571226F099D8D0DA86C844CB03")
         
 @Override
@@ -315,6 +316,7 @@ public void setShareIntent(Intent shareIntent) {
      * Reusable listener for handling share item clicks.
      */
     private class ShareMenuItemOnMenuItemClickListener implements OnMenuItemClickListener {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
@@ -333,6 +335,7 @@ public void setShareIntent(Intent shareIntent) {
      * Set the activity chooser policy of the model backed by the current
      * share history file if needed which is if there is a registered callback.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:52.224 -0400", hash_original_method = "344268FF5DC4DDF2FCAEC43573B8D180", hash_generated_method = "58ADB291D16E488FEC9DB54F6A735676")
         
 private void setActivityChooserPolicyIfNeeded() {
@@ -350,6 +353,7 @@ private void setActivityChooserPolicyIfNeeded() {
      * Policy that delegates to the {@link OnShareTargetSelectedListener}, if such.
      */
     private class ShareActivityChooserModelPolicy implements OnChooseActivityListener {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {
             if (mOnShareTargetSelectedListener != null) {

@@ -171,6 +171,7 @@ private void escapeAndAppendString(char[] buf, int start, int len) throws IOExce
         if (lastPos < pos) append(buf, lastPos, pos-lastPos);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.935 -0500", hash_original_method = "7E5AB062E349C3088BFBC8393DC59A5F", hash_generated_method = "2692C2AF001202648CC95B2A1BB29D8D")
     
 public XmlSerializer attribute(String namespace, String name, String value) throws IOException,
@@ -209,12 +210,14 @@ public void docdecl(String text) throws IOException, IllegalArgumentException,
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.944 -0500", hash_original_method = "1B99F1BEFCF86F47AB36CD07598B151B", hash_generated_method = "E490113F6EF397D40A4A38C98B6CA0CA")
     
 public void endDocument() throws IOException, IllegalArgumentException, IllegalStateException {
         flush();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.946 -0500", hash_original_method = "8586CBBE84EF5F3F7F367B466316141A", hash_generated_method = "51E2D992A1522C705FEC7145A00CA2AD")
     
 public XmlSerializer endTag(String namespace, String name) throws IOException,
@@ -409,6 +412,7 @@ public void setProperty(String name, Object value) throws IllegalArgumentExcepti
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.991 -0500", hash_original_method = "00343745042AD39FAACA3392E54AE598", hash_generated_method = "1AA6FFDC7A661031EB8DA7F49D2CB706")
     
 public void startDocument(String encoding, Boolean standalone) throws IOException,
@@ -417,6 +421,7 @@ public void startDocument(String encoding, Boolean standalone) throws IOExceptio
                 + (standalone ? "yes" : "no") + "' ?>\n");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.993 -0500", hash_original_method = "68622A1CFABB0F79BB6AD105FC0B8924", hash_generated_method = "E490155492998F2625274D719FAE7741")
     
 public XmlSerializer startTag(String namespace, String name) throws IOException,

@@ -26,6 +26,7 @@ import android.widget.PopupMenu;
  * Implementation of PopupMenu compatibility that can call KitKat APIs.
  */
 class PopupMenuCompatKitKat {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.834 -0400", hash_original_method = "1E4988D3FDF368FC33E522CD1C5B4B99", hash_generated_method = "D01D902EC479BF90DD061A3BFFF22919")
     
 public static OnTouchListener getDragToOpenListener(Object popupMenu) {

@@ -723,6 +723,7 @@ BitmapState(BitmapState bitmapState) {
         
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.107 -0500", hash_original_method = "B22D07CBAAEE149FB3D11CBEDB83599B", hash_generated_method = "A2AEE23A8D12D22E83417B98A2AC6B3C")
     
 @Override

@@ -769,7 +769,7 @@ public static void cursorRowToContentValues(Cursor cursor, ContentValues values)
      */
     
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.359 -0500", hash_original_method = "929DBC7A90DC227FF2B26E4E72D12B70", hash_generated_method = "8CC78C93660BD02E2DF389D10B4F12B7")
     
 public static long queryNumEntries(SQLiteDatabase db, String table) {
@@ -787,7 +787,7 @@ public static long queryNumEntries(SQLiteDatabase db, String table) {
      */
     
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.363 -0500", hash_original_method = "14DB54E29D400149A38978E82860E0D6", hash_generated_method = "87854038149496693F499F6CC5631C59")
     
 public static long queryNumEntries(SQLiteDatabase db, String table, String selection) {
@@ -809,7 +809,7 @@ public static long queryNumEntries(SQLiteDatabase db, String table, String selec
      */
     
     @DSComment("IO movement methodName")
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.365 -0500", hash_original_method = "B4D6325E78B6FA18E9BDD75F37F7F7A7", hash_generated_method = "BC0B7A6C7758DC73C629DDD9DF9A80E6")
     
 public static long queryNumEntries(SQLiteDatabase db, String table, String selection,
@@ -1261,7 +1261,8 @@ private synchronized long insertInternal(ContentValues values, boolean allowRepl
          * @param key the column name
          * @return the index of the column
          */
-        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.437 -0500", hash_original_method = "2FE6EA3004F5838FAFB27DD4EF6900C7", hash_generated_method = "F083CAABF23AF09216F669BFCD72D367")
         
 public int getColumnIndex(String key) {
@@ -1279,7 +1280,8 @@ public int getColumnIndex(String key) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSink({DSSinkKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.440 -0500", hash_original_method = "898F1EFFAEB546E6A9657A001F4AE1E8", hash_generated_method = "F9C40C81C68344DF4C359DF8BF2FBEE9")
         
 public void bind(int index, double value) {
@@ -1292,7 +1294,8 @@ public void bind(int index, double value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSink({DSSinkKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.442 -0500", hash_original_method = "85D356AA3C69D35869973C25B38955EB", hash_generated_method = "51159D6A6BCA645A9FECFE7044BCE2E6")
         
 public void bind(int index, float value) {
@@ -1305,7 +1308,8 @@ public void bind(int index, float value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSink({DSSinkKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.444 -0500", hash_original_method = "76F2FAC154909632438A49671F5D33A8", hash_generated_method = "9398ED4569F070ECF144AEEF7742700F")
         
 public void bind(int index, long value) {
@@ -1318,7 +1322,8 @@ public void bind(int index, long value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSink({DSSinkKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.446 -0500", hash_original_method = "A73EABD891E538A0A03C5C4A49C29503", hash_generated_method = "1A141A934B3EFEF0FC0BE64726DE55FA")
         
 public void bind(int index, int value) {
@@ -1331,7 +1336,8 @@ public void bind(int index, int value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSink({DSSinkKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.449 -0500", hash_original_method = "D4E75DDD13795169D0FEAC83726F0F45", hash_generated_method = "C7371512E5E8EE49D9DEB2147152339E")
         
 public void bind(int index, boolean value) {
@@ -1356,7 +1362,8 @@ public void bindNull(int index) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSink({DSSinkKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.454 -0500", hash_original_method = "B7B8BDC3019EC6DD4050CE3C3C2D0B33", hash_generated_method = "F7A9BFB62194C0AAA6AC372A893B199F")
         
 public void bind(int index, byte[] value) {
@@ -1373,7 +1380,8 @@ public void bind(int index, byte[] value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSSink({DSSinkKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.457 -0500", hash_original_method = "70AF33973781662CA48B1120B9D51D5F", hash_generated_method = "3AA8A3379FD3EF5E8F74AFA39939EA2C")
         
 public void bind(int index, String value) {
@@ -1411,6 +1419,8 @@ public long insert(ContentValues values) {
          * @return the row ID of the newly inserted row, or -1 if an
          * error occurred
          */
+        @DSSink({DSSinkKind.DATABASE})
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.462 -0500", hash_original_method = "C80CA050416DA84901D4F7B0B2F41300", hash_generated_method = "DD7ECBBE06923C0BEC652FE851DDA82B")
         
 public long execute() {
@@ -1441,6 +1451,7 @@ public long execute() {
          * <li>execute();
          * </ul>
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.464 -0500", hash_original_method = "BEDC7093698B9136E99447F456E9608C", hash_generated_method = "CDE373DF2B92F0C86FB3B28296D008D6")
         
 public void prepareForInsert() {

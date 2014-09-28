@@ -33,13 +33,13 @@ import android.support.v7.appcompat.R;
  */
 public class ActionBarPolicy {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:22:27.913 -0400", hash_original_method = "C1AE9658A8F4E26920FC7E273B7656D0", hash_generated_method = "5D3126A6749C3F75B77E964EE56D57BE")
     
 public static ActionBarPolicy get(Context context) {
         return new ActionBarPolicy(context);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:22:27.902 -0400", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 
@@ -49,12 +49,14 @@ private ActionBarPolicy(Context context) {
         mContext = context;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:22:27.929 -0400", hash_original_method = "F3903847D57E123FDE0C65542F74E6AD", hash_generated_method = "51C88424D53CCA2411CAC60E92D0AC3B")
     
 public int getMaxActionButtons() {
         return mContext.getResources().getInteger(R.integer.abc_max_action_buttons);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:22:27.936 -0400", hash_original_method = "BF2D98EF8212828E2A7EE2CC042DB644", hash_generated_method = "7B99AE19194027B7E9FCA4599D8E7DBE")
     
 public boolean showsOverflowMenuButton() {
@@ -62,12 +64,14 @@ public boolean showsOverflowMenuButton() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:22:27.944 -0400", hash_original_method = "97BDEC56FEC78BFFF3A1600BF4379389", hash_generated_method = "C18A9995FD3B9FADBBD0A260F92BDFE2")
     
 public int getEmbeddedMenuWidthLimit() {
         return mContext.getResources().getDisplayMetrics().widthPixels / 2;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:22:27.953 -0400", hash_original_method = "0315A136F1B98326243B053612D86DF2", hash_generated_method = "125BB3792FB842305DA0D3424FF08F2A")
     
 public boolean hasEmbeddedTabs() {
@@ -76,6 +80,7 @@ public boolean hasEmbeddedTabs() {
         return mContext.getResources().getBoolean(R.bool.abc_action_bar_embed_tabs_pre_jb);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:22:27.978 -0400", hash_original_method = "2AD7C367393D2ED850FF1565D5AEDC2D", hash_generated_method = "90819A371822F0301F15297B01732168")
     
 public int getTabContainerHeight() {
@@ -93,6 +98,7 @@ public int getTabContainerHeight() {
         return height;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:22:27.990 -0400", hash_original_method = "6B0CA88554A6D82A9E25DDF5AB8D3204", hash_generated_method = "5A034CE1874F1050209F5581980F6C33")
     
 public boolean enableHomeButtonByDefault() {
@@ -101,6 +107,7 @@ public boolean enableHomeButtonByDefault() {
         return mContext.getApplicationInfo().targetSdkVersion < 14; // ICE_CREAM_SANDWICH
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:22:28.002 -0400", hash_original_method = "4EE8069C949D485C17AF0FF4596259DA", hash_generated_method = "0674D1CDFE501DA0C700B8E16E143BB6")
     
 public int getStackedTabMaxWidth() {

@@ -50,7 +50,7 @@ public static ValueAnimator ofInt(int... values) {
      * @return A ValueAnimator object that is set up to animate between the given values.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.675 -0500", hash_original_method = "C4FFEB9A73183FF46069B22DD458EE60", hash_generated_method = "54582EF16FD6B94475134F0A1BB24BFC")
     
 public static ValueAnimator ofFloat(float... values) {
@@ -115,7 +115,7 @@ public static ValueAnimator ofObject(TypeEvaluator evaluator, Object... values) 
      * @return the requested time between frames, in milliseconds
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.718 -0500", hash_original_method = "07F990A9818D41589C4C2DC1FA0032A4", hash_generated_method = "2E8CE722FBAD7FDECF44ADD41AB08358")
     
@@ -673,8 +673,8 @@ public void setStartDelay(long startDelay) {
      * returns the animated value for the first of those objects.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.ANDROID_ANIMATION)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.723 -0500", hash_original_method = "3CBE561BBB42AB3DB3CAF9B67D05776D", hash_generated_method = "22EFA6777EB43E5292C2006CE8F88BB9")
     
 public Object getAnimatedValue() {
@@ -696,8 +696,8 @@ public Object getAnimatedValue() {
      * by this <code>ValueAnimator</code>.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.ANDROID_ANIMATION)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.725 -0500", hash_original_method = "2B530B2B81FC1FAD77C53EC8863AE50E", hash_generated_method = "95B3D48F1C938385295CA1DFB484BC29")
     
 public Object getAnimatedValue(String propertyName) {
@@ -776,6 +776,7 @@ public int getRepeatMode() {
      *
      * @param listener the listener to be added to the current set of listeners for this animation.
      */
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.737 -0500", hash_original_method = "D2A8BFD752ECF80FCD3BD03F5B9AF68A", hash_generated_method = "E8715FCAF5B9509592A14F352BF4E07A")
     
 public void addUpdateListener(AnimatorUpdateListener listener) {
@@ -1068,7 +1069,7 @@ private void start(boolean playBackwards) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.752 -0500", hash_original_method = "0E699EAEE0E759B00B92DBAE6A0AB7E1", hash_generated_method = "FA8CD4B3AE5B32BA3EA9309D6D90182F")
     
 @Override
@@ -1099,7 +1100,7 @@ private void start(boolean playBackwards) {
     }
 
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.758 -0500", hash_original_method = "55C31F194BE33B60E19FAC66D36F0F3B", hash_generated_method = "447644A60D7CD2CBF321171FBA868B0E")
     
 @Override

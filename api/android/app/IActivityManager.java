@@ -334,7 +334,7 @@ public interface IActivityManager extends IInterface {
 
         public static final Parcelable.Creator<ContentProviderHolder> CREATOR
                 = new Parcelable.Creator<ContentProviderHolder>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.774 -0500", hash_original_method = "7B438CD16C21D53CFB945704DA961322", hash_generated_method = "7A0CFFF317A891F2F12E1C6ED753DCFF")
             
 public ContentProviderHolder createFromParcel(Parcel source) {
@@ -398,7 +398,7 @@ public void writeToParcel(Parcel dest, int flags) {
 
         public static final Parcelable.Creator<WaitResult> CREATOR
                 = new Parcelable.Creator<WaitResult>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.804 -0500", hash_original_method = "3791D8DCE3F9483BA1FB831A79748235", hash_generated_method = "E99C5DE349F9FA358314270B7C013CCD")
             
 public WaitResult createFromParcel(Parcel source) {

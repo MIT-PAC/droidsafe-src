@@ -101,6 +101,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         super(activity);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.885 -0400", hash_original_method = "544AB14724FBAA18807A42362828E844", hash_generated_method = "DDF57B003DEF86D7B7AC266D9987BE89")
     
 @Override
@@ -109,6 +110,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         return new ActionBarImplBase(mActivity, mActivity);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.890 -0400", hash_original_method = "4625E1B086925D21D904160D1908801D", hash_generated_method = "D8CC731CE421BB95D137F6920C0D41BA")
     
 @Override
@@ -123,6 +125,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.894 -0400", hash_original_method = "2A810E0433016CF238EB6C089DB68FEB", hash_generated_method = "81265CA319088AD3782CAA3B46CC2FFE")
     
 @Override
@@ -133,6 +136,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.898 -0400", hash_original_method = "39334DEFACBC3014E6C1678D38D71C41", hash_generated_method = "C23D236FFEBDBD7FC86325C129E91780")
     
 @Override
@@ -143,6 +147,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.903 -0400", hash_original_method = "11B2F458B0450E004E181F63E051C584", hash_generated_method = "F924B40C72A52BDF9B18E14489641324")
     
 @Override
@@ -158,6 +163,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         mActivity.onSupportContentChanged();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.908 -0400", hash_original_method = "9A84E32E0714AB3E5FCBAA0060FEA51C", hash_generated_method = "A7433B534C98190F7137B66EE22BACCF")
     
 @Override
@@ -173,6 +179,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         mActivity.onSupportContentChanged();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.913 -0400", hash_original_method = "072225F6C21E6D2F72334F171A2FCFEA", hash_generated_method = "0DE6F68F8B5364F9CE1A9DFD805C12CC")
     
 @Override
@@ -188,6 +195,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         mActivity.onSupportContentChanged();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.917 -0400", hash_original_method = "40C076693F133FC15DA10BF7DCEB2E64", hash_generated_method = "195A776F8C45F5C7B578E9CF7D4E94B3")
     
 @Override
@@ -202,6 +210,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         mActivity.onSupportContentChanged();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.922 -0400", hash_original_method = "32D7339793DCE0D5AEFE6621981EC978", hash_generated_method = "BF3E5F84F0DB5B26D1E199CC08ED339A")
     
 @Override
@@ -209,6 +218,7 @@ ActionBarActivityDelegateBase(ActionBarActivity activity) {
         // Ignore all calls to this method as we call onSupportContentChanged manually above
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.927 -0400", hash_original_method = "3F5C3C668866CAAA177A509556464024", hash_generated_method = "3CC0DB6F369A6B78797E0F1321E4F529")
     
 final void ensureSubDecor() {
@@ -280,6 +290,7 @@ final void ensureSubDecor() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.932 -0400", hash_original_method = "8D0C140DB24874A64D92B914AF1925A8", hash_generated_method = "99710F1DA197A6866DAA9A979956E336")
     
 @Override
@@ -298,6 +309,7 @@ final void ensureSubDecor() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.938 -0400", hash_original_method = "F3A389276680B626842536A2005F9454", hash_generated_method = "6276B81CEB0A9386FFFE2AC6CA5560A9")
     
 @Override
@@ -309,6 +321,7 @@ final void ensureSubDecor() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.943 -0400", hash_original_method = "95BAA0C4FD9C2782C5A3E51A3A2D9CBA", hash_generated_method = "6D73A27BFD7DD5A56CAA0ECA183E6B0F")
     
 @Override
@@ -356,6 +369,7 @@ final void ensureSubDecor() {
         return createdPanelView;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.947 -0400", hash_original_method = "03F62539232B8BD3554CC7C0D8A04F44", hash_generated_method = "E9184D383A351A22B60283C636AE3032")
     
 @Override
@@ -366,6 +380,7 @@ final void ensureSubDecor() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.952 -0400", hash_original_method = "D0FBE5F8815F193B2A5FFC941EB1ED4A", hash_generated_method = "3F09EA26102221C786E975EF8E397859")
     
 @Override
@@ -376,6 +391,7 @@ final void ensureSubDecor() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.956 -0400", hash_original_method = "3D560D7D9A0A1F78AA4B3307FB162103", hash_generated_method = "D9AD02E1DEE878F2DAC702289C95F497")
     
 @Override
@@ -386,6 +402,7 @@ final void ensureSubDecor() {
         return mActivity.superOnMenuItemSelected(featureId, item);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.961 -0400", hash_original_method = "B6A1E7D6BFBBD8FCA0E35E06EF25A1E3", hash_generated_method = "3BDE9B0C25FD2C502C068489384A4053")
     
 @Override
@@ -393,6 +410,7 @@ final void ensureSubDecor() {
         return mActivity.onMenuItemSelected(Window.FEATURE_OPTIONS_PANEL, item);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.965 -0400", hash_original_method = "08D15C6BA057612B39E36616E42F0F8D", hash_generated_method = "088D154A2A70D2255A5470B12130CD83")
     
 @Override
@@ -400,6 +418,7 @@ final void ensureSubDecor() {
         reopenMenu(menu, true);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.969 -0400", hash_original_method = "0E6DB963705CC7BABB9C51126CEDCE46", hash_generated_method = "F8285C11A039A225A622D4354EA922D8")
     
 @Override
@@ -407,6 +426,7 @@ final void ensureSubDecor() {
         mActivity.closeOptionsMenu();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.973 -0400", hash_original_method = "1185DB8BF434B77102D0B31BC3E2A51C", hash_generated_method = "118EDE36DF6A32963DA857B791CCA488")
     
 @Override
@@ -414,6 +434,7 @@ final void ensureSubDecor() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.979 -0400", hash_original_method = "444CE4DB24561452F2ADA2EAC7FDD0FC", hash_generated_method = "15139CB1A93FF10279D0E858EA4B26D8")
     
 @Override
@@ -439,6 +460,7 @@ final void ensureSubDecor() {
         return mActionMode;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.984 -0400", hash_original_method = "D829D03F3EEA688C586DDF7226675AC8", hash_generated_method = "17EB494E3590C36A70139CAD115E8F49")
     
 @Override
@@ -457,6 +479,7 @@ private MenuBuilder createMenu() {
         return menu;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.993 -0400", hash_original_method = "9791CBF5767CB87BF0A074977F6A4187", hash_generated_method = "6E90E8108FE3CE2EF6DEBDC9365D5671")
     
 private void reopenMenu(MenuBuilder menu, boolean toggleMenuMode) {
@@ -474,6 +497,7 @@ private void reopenMenu(MenuBuilder menu, boolean toggleMenuMode) {
         menu.close();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:30.999 -0400", hash_original_method = "B2B61C593E8DC52AE53E783750770F10", hash_generated_method = "C6DC0B73AE460F4986922A7A93462522")
     
 private MenuView getListMenuView(Context context, MenuPresenter.Callback cb) {
@@ -521,6 +545,7 @@ private void setMenu(MenuBuilder menu) {
         }*/
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.008 -0400", hash_original_method = "ADE8C54E67965A162EEB2F00E326D3CE", hash_generated_method = "A532F91AD8FCF0A0A93FF22569A1F970")
     
 @Override
@@ -540,6 +565,7 @@ private void setMenu(MenuBuilder menu) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.013 -0400", hash_original_method = "1BC73AB51342F388FC9E3DB8009AEEC1", hash_generated_method = "0730766A59BA598EC0F115377714DC04")
     
 @Override
@@ -548,6 +574,7 @@ private void setMenu(MenuBuilder menu) {
                 Window.PROGRESS_VISIBILITY_OFF);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.017 -0400", hash_original_method = "036EE14518735D808D3CB8950FF07B41", hash_generated_method = "85CB7FDDE4C46E3A9A70706AEB185361")
     
 @Override
@@ -556,6 +583,7 @@ private void setMenu(MenuBuilder menu) {
                 Window.PROGRESS_VISIBILITY_OFF);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.021 -0400", hash_original_method = "89783CB7DB3794ED51FB9ED1CC8B681C", hash_generated_method = "19F665471CB85D1192FEF1AE93D32A2E")
     
 @Override
@@ -564,6 +592,7 @@ private void setMenu(MenuBuilder menu) {
                 : Window.PROGRESS_INDETERMINATE_OFF);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.025 -0400", hash_original_method = "4EE0A29AC9C8CBDE12E5322B0A6C84A0", hash_generated_method = "2E4E6389E497BE9C564076BEE8ED7199")
     
 @Override
@@ -571,6 +600,7 @@ private void setMenu(MenuBuilder menu) {
         updateProgressBars(Window.PROGRESS_START + progress);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.030 -0400", hash_original_method = "EEC3A9B57896DC93FFFC6E04D6F55636", hash_generated_method = "6131A1F397061CF5300C5599A04569C4")
     
 @Override
@@ -581,6 +611,7 @@ private void setMenu(MenuBuilder menu) {
     /**
      * Progress Bar function. Mostly extracted from PhoneWindow.java
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.036 -0400", hash_original_method = "2AD65621D0635456A6083A503234FC83", hash_generated_method = "B964E97FED374457F5CB3C2FEA97D8BF")
     
 private void updateProgressBars(int value) {
@@ -622,6 +653,7 @@ private void updateProgressBars(int value) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.041 -0400", hash_original_method = "B78744FDBC19EBD333395C4C56E14B8E", hash_generated_method = "7C8FB3F4DCA91C8C3AE3E23F96ABF4EB")
     
 private void showProgressBars(ProgressBarICS horizontalProgressBar,
@@ -635,6 +667,7 @@ private void showProgressBars(ProgressBarICS horizontalProgressBar,
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.045 -0400", hash_original_method = "A3D07F26E9EA151E20B13E144D4A407D", hash_generated_method = "0394834D69D7404738EE423C6409B984")
     
 private void hideProgressBars(ProgressBarICS horizontalProgressBar,
@@ -647,6 +680,7 @@ private void hideProgressBars(ProgressBarICS horizontalProgressBar,
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.050 -0400", hash_original_method = "77FF2A1A01D7AF4EEA1942E588239F03", hash_generated_method = "776F379B96FD481F56E3932C1AA292EE")
     
 private ProgressBarICS getCircularProgressBar() {
@@ -657,6 +691,7 @@ private ProgressBarICS getCircularProgressBar() {
         return pb;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.053 -0400", hash_original_method = "73A1A6EDA3340351A356B2E945EA07D0", hash_generated_method = "AD88E414A05242319862FC97830BC249")
     
 private ProgressBarICS getHorizontalProgressBar() {
@@ -677,18 +712,22 @@ private ProgressBarICS getHorizontalProgressBar() {
             mWrapped = wrapped;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
             return mWrapped.onCreateActionMode(mode, menu);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
             return mWrapped.onPrepareActionMode(mode, menu);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             return mWrapped.onActionItemClicked(mode, item);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void onDestroyActionMode(ActionMode mode) {
             mWrapped.onDestroyActionMode(mode);
             mActivity.onSupportActionModeFinished(mode);
@@ -699,6 +738,7 @@ private ProgressBarICS getHorizontalProgressBar() {
     private class ActionBarDrawableToggleImpl
             implements ActionBarDrawerToggle.Delegate {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Drawable getThemeUpIndicator() {
             final TypedArray a = mActivity.obtainStyledAttributes(ACTION_BAR_DRAWABLE_TOGGLE_ATTRS);
@@ -707,6 +747,7 @@ private ProgressBarICS getHorizontalProgressBar() {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setActionBarUpIndicator(Drawable upDrawable, int contentDescRes) {
             if (mActionBarView != null) {
@@ -714,6 +755,7 @@ private ProgressBarICS getHorizontalProgressBar() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setActionBarDescription(int contentDescRes) {
             // No support for setting Action Bar content description

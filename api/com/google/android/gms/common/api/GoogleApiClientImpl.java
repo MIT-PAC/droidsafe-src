@@ -27,14 +27,14 @@ public class GoogleApiClientImpl implements GoogleApiClient {
         return null;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     public void disconnect(){}
 
     public void reconnect(){}
 
     public void stopAutoManage(){}
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean isConnected(){
         return true;
     }
@@ -43,7 +43,7 @@ public class GoogleApiClientImpl implements GoogleApiClient {
         return true;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     public void registerConnectionCallbacks(ConnectionCallbacks  r0){}
 
     public boolean isConnectionCallbacksRegistered(ConnectionCallbacks  r0){
@@ -52,7 +52,7 @@ public class GoogleApiClientImpl implements GoogleApiClient {
 
     public void unregisterConnectionCallbacks(ConnectionCallbacks  r0){}
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     public void registerConnectionFailedListener(OnConnectionFailedListener  r0){}
 
     public boolean isConnectionFailedListenerRegistered(OnConnectionFailedListener  r0){

@@ -36,16 +36,19 @@ public class AccessibilityEventCompat {
 
     static class AccessibilityEventStubImpl implements AccessibilityEventVersionImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void appendRecord(AccessibilityEvent event, Object record) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getRecord(AccessibilityEvent event, int index) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getRecordCount(AccessibilityEvent event) {
             return 0;
@@ -54,23 +57,25 @@ public class AccessibilityEventCompat {
 
     static class AccessibilityEventIcsImpl extends AccessibilityEventStubImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void appendRecord(AccessibilityEvent event, Object record) {
             AccessibilityEventCompatIcs.appendRecord(event, record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getRecord(AccessibilityEvent event, int index) {
             return AccessibilityEventCompatIcs.getRecord(event, index);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getRecordCount(AccessibilityEvent event) {
             return AccessibilityEventCompatIcs.getRecordCount(event);
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:07.779 -0400", hash_original_field = "7B8855635B22B57E8F1D8B59D0220DA9", hash_generated_field = "4324F97AEF46831155DDBB54D409FF66")
-
 
     private  static AccessibilityEventVersionImpl IMPL;
 
@@ -180,6 +185,7 @@ public static AccessibilityRecordCompat getRecord(AccessibilityEvent event, int 
      * @param event The from which to create a record.
      * @return An {@link AccessibilityRecordCompat}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:07.853 -0400", hash_original_method = "CA554E17FEF2C13A5B2F3A307678C1EA", hash_generated_method = "623EF300810C2F5EB474A798262EBFD6")
         
 public static AccessibilityRecordCompat asRecord(AccessibilityEvent event) {

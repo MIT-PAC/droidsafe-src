@@ -24,7 +24,7 @@ public class PackageInfo implements Parcelable {
 
     public static final Parcelable.Creator<PackageInfo> CREATOR
             = new Parcelable.Creator<PackageInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.785 -0500", hash_original_method = "786D77E8B5ED4A451D329DFF278050D7", hash_generated_method = "1AFC4410E5D3886AD2895E03A805C344")
         
 public PackageInfo createFromParcel(Parcel source) {

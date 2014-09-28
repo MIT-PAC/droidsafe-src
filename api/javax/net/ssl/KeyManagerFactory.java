@@ -195,6 +195,7 @@ public final Provider getProvider() {
      * @throws UnrecoverableKeyException
      *             if a key cannot be recovered.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.585 -0500", hash_original_method = "4FB19D2B9D9DA541468809C3D1BCD49A", hash_generated_method = "1CCC7F83B16C24862DDDC8F2F73E2FD5")
     
 public final void init(KeyStore ks, char[] password) throws KeyStoreException,
@@ -210,6 +211,7 @@ public final void init(KeyStore ks, char[] password) throws KeyStoreException,
      * @throws InvalidAlgorithmParameterException
      *             if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.588 -0500", hash_original_method = "968F65DD7A0A827F06FAF23F78E04C48", hash_generated_method = "CD3068A149CCD5B39C06926A2722E3EE")
     
 public final void init(ManagerFactoryParameters spec)
@@ -223,7 +225,8 @@ public final void init(ManagerFactoryParameters spec)
      *
      * @return a list of key managers.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.590 -0500", hash_original_method = "B9A1EAEE9A7433E4D131EF6C1483617B", hash_generated_method = "62540848042C144645818B31EA640557")
     
 public final KeyManager[] getKeyManagers() {

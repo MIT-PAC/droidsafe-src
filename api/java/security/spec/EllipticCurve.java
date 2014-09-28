@@ -182,6 +182,7 @@ public byte[] getSeed() {
      * @return {@code true} if the specified object is equal to this elliptic
      *         curve, otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:17.354 -0400", hash_original_method = "5D2797A6208FC694571C407EACBBC5A4", hash_generated_method = "E680E45CF3598570AE16BFCD7E30D451")
     
 public boolean equals(Object other) {

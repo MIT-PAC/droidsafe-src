@@ -17,7 +17,7 @@ public class StorageVolume implements Parcelable {
 
     public static final Parcelable.Creator<StorageVolume> CREATOR =
         new Parcelable.Creator<StorageVolume>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.766 -0500", hash_original_method = "A58EACE4A3F53740E5D628758A64E4CC", hash_generated_method = "9073D982142882D66A8936FA7C8E980E")
         
 public StorageVolume createFromParcel(Parcel in) {

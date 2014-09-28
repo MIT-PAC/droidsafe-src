@@ -21,8 +21,8 @@ public final class PlainSocketFactory implements SocketFactory {
      * @return the one and only plain socket factory
      */
     @DSComment("possible socket creation")
-    @DSSpec(DSCat.NETWORKING)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.923 -0500", hash_original_method = "6DB12A6CB7CE4518D36C52EAD158CA98", hash_generated_method = "A70FFEFA7A5819874C872C5173FBAA64")
     
 public static PlainSocketFactory getSocketFactory() {

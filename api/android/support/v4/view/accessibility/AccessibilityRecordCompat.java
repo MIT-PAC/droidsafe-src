@@ -83,393 +83,480 @@ public class AccessibilityRecordCompat {
     }
 
     static class AccessibilityRecordStubImpl implements AccessibilityRecordImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         public Object obtain() {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public Object obtain(Object record) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getAddedCount(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public CharSequence getBeforeText(Object record) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public CharSequence getClassName(Object record) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public CharSequence getContentDescription(Object record) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getCurrentItemIndex(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getFromIndex(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getItemCount(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getMaxScrollX(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getMaxScrollY(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public Parcelable getParcelableData(Object record) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getRemovedCount(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getScrollX(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getScrollY(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public AccessibilityNodeInfoCompat getSource(Object record) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public List<CharSequence> getText(Object record) {
             return Collections.emptyList();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getToIndex(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getWindowId(Object record) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isChecked(Object record) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isEnabled(Object record) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isFullScreen(Object record) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isPassword(Object record) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isScrollable(Object record) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void recycle(Object record) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setAddedCount(Object record, int addedCount) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setBeforeText(Object record, CharSequence beforeText) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setChecked(Object record, boolean isChecked) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setClassName(Object record, CharSequence className) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setContentDescription(Object record, CharSequence contentDescription) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setCurrentItemIndex(Object record, int currentItemIndex) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setEnabled(Object record, boolean isEnabled) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setFromIndex(Object record, int fromIndex) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setFullScreen(Object record, boolean isFullScreen) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setItemCount(Object record, int itemCount) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setMaxScrollX(Object record, int maxScrollX) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setMaxScrollY(Object record, int maxScrollY) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setParcelableData(Object record, Parcelable parcelableData) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setPassword(Object record, boolean isPassword) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setRemovedCount(Object record, int removedCount) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setScrollX(Object record, int scrollX) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setScrollY(Object record, int scrollY) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setScrollable(Object record, boolean scrollable) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setSource(Object record, View source) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setSource(Object record, View root, int virtualDescendantId) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setToIndex(Object record, int toIndex) {
 
         }
     }
 
     static class AccessibilityRecordIcsImpl extends AccessibilityRecordStubImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain() {
             return AccessibilityRecordCompatIcs.obtain();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain(Object record) {
             return AccessibilityRecordCompatIcs.obtain(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getAddedCount(Object record) {
             return AccessibilityRecordCompatIcs.getAddedCount(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getBeforeText(Object record) {
             return AccessibilityRecordCompatIcs.getBeforeText(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getClassName(Object record) {
             return AccessibilityRecordCompatIcs.getClassName(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getContentDescription(Object record) {
             return AccessibilityRecordCompatIcs.getContentDescription(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getCurrentItemIndex(Object record) {
             return AccessibilityRecordCompatIcs.getCurrentItemIndex(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getFromIndex(Object record) {
             return AccessibilityRecordCompatIcs.getFromIndex(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getItemCount(Object record) {
             return AccessibilityRecordCompatIcs.getItemCount(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Parcelable getParcelableData(Object record) {
             return AccessibilityRecordCompatIcs.getParcelableData(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getRemovedCount(Object record) {
             return AccessibilityRecordCompatIcs.getRemovedCount(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getScrollX(Object record) {
             return AccessibilityRecordCompatIcs.getScrollX(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getScrollY(Object record) {
             return AccessibilityRecordCompatIcs.getScrollY(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public AccessibilityNodeInfoCompat getSource(Object record) {
             return AccessibilityNodeInfoCompat.wrapNonNullInstance(
                     AccessibilityRecordCompatIcs.getSource(record));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public List<CharSequence> getText(Object record) {
             return AccessibilityRecordCompatIcs.getText(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getToIndex(Object record) {
             return AccessibilityRecordCompatIcs.getToIndex(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getWindowId(Object record) {
             return AccessibilityRecordCompatIcs.getWindowId(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isChecked(Object record) {
             return AccessibilityRecordCompatIcs.isChecked(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isEnabled(Object record) {
             return AccessibilityRecordCompatIcs.isEnabled(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isFullScreen(Object record) {
             return AccessibilityRecordCompatIcs.isFullScreen(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isPassword(Object record) {
             return AccessibilityRecordCompatIcs.isPassword(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isScrollable(Object record) {
             return AccessibilityRecordCompatIcs.isScrollable(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void recycle(Object record) {
             AccessibilityRecordCompatIcs.recycle(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAddedCount(Object record, int addedCount) {
             AccessibilityRecordCompatIcs.setAddedCount(record, addedCount);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setBeforeText(Object record, CharSequence beforeText) {
             AccessibilityRecordCompatIcs.setBeforeText(record, beforeText);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setChecked(Object record, boolean isChecked) {
             AccessibilityRecordCompatIcs.setChecked(record, isChecked);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setClassName(Object record, CharSequence className) {
             AccessibilityRecordCompatIcs.setClassName(record, className);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setContentDescription(Object record, CharSequence contentDescription) {
             AccessibilityRecordCompatIcs.setContentDescription(record, contentDescription);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setCurrentItemIndex(Object record, int currentItemIndex) {
             AccessibilityRecordCompatIcs.setCurrentItemIndex(record, currentItemIndex);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setEnabled(Object record, boolean isEnabled) {
             AccessibilityRecordCompatIcs.setEnabled(record, isEnabled);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setFromIndex(Object record, int fromIndex) {
             AccessibilityRecordCompatIcs.setFromIndex(record, fromIndex);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setFullScreen(Object record, boolean isFullScreen) {
             AccessibilityRecordCompatIcs.setFullScreen(record, isFullScreen);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setItemCount(Object record, int itemCount) {
             AccessibilityRecordCompatIcs.setItemCount(record, itemCount);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setParcelableData(Object record, Parcelable parcelableData) {
             AccessibilityRecordCompatIcs.setParcelableData(record, parcelableData);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setPassword(Object record, boolean isPassword) {
             AccessibilityRecordCompatIcs.setPassword(record, isPassword);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setRemovedCount(Object record, int removedCount) {
             AccessibilityRecordCompatIcs.setRemovedCount(record, removedCount);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScrollX(Object record, int scrollX) {
             AccessibilityRecordCompatIcs.setScrollX(record, scrollX);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScrollY(Object record, int scrollY) {
             AccessibilityRecordCompatIcs.setScrollY(record, scrollY);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScrollable(Object record, boolean scrollable) {
             AccessibilityRecordCompatIcs.setScrollable(record, scrollable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setSource(Object record, View source) {
             AccessibilityRecordCompatIcs.setSource(record, source);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setToIndex(Object record, int toIndex) {
             AccessibilityRecordCompatIcs.setToIndex(record, toIndex);
@@ -477,21 +564,25 @@ public class AccessibilityRecordCompat {
     }
 
     static class AccessibilityRecordIcsMr1Impl extends AccessibilityRecordIcsImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMaxScrollX(Object record) {
             return AccessibilityRecordCompatIcsMr1.getMaxScrollX(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMaxScrollY(Object record) {
             return AccessibilityRecordCompatIcsMr1.getMaxScrollY(record);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setMaxScrollX(Object record, int maxScrollX) {
             AccessibilityRecordCompatIcsMr1.setMaxScrollX(record, maxScrollX);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setMaxScrollY(Object record, int maxScrollY) {
             AccessibilityRecordCompatIcsMr1.setMaxScrollY(record, maxScrollY);
@@ -499,6 +590,7 @@ public class AccessibilityRecordCompat {
     }
 
     static class AccessibilityRecordJellyBeanImpl extends AccessibilityRecordIcsMr1Impl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setSource(Object record, View root, int virtualDescendantId) {
             AccessibilityRecordCompatJellyBean.setSource(record, root, virtualDescendantId);
@@ -527,6 +619,7 @@ public class AccessibilityRecordCompat {
      *
      * @return An instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.200 -0400", hash_original_method = "AD231933D620BBEEAB028A6E7CC47026", hash_generated_method = "3B1C2B4E56F9EE4429B529F3AEDA0526")
         
 public static AccessibilityRecordCompat obtain(AccessibilityRecordCompat record) {
@@ -539,6 +632,7 @@ public static AccessibilityRecordCompat obtain(AccessibilityRecordCompat record)
      *
      * @return An instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.205 -0400", hash_original_method = "0FCB2F59F0F384BC44DD564E08C514E7", hash_generated_method = "6B295EAB7EFDF3365A836C58611B0E1E")
         
 public static AccessibilityRecordCompat obtain() {
@@ -567,6 +661,7 @@ public AccessibilityRecordCompat(Object record) {
      * @deprecated This method will be removed in a subsequent release of
      * the support library.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.195 -0400", hash_original_method = "2C39E0AE7A2BCE05DB00110D59202E17", hash_generated_method = "6FB7AB3FA39E9C58440C247EE414A4E3")
         
 public Object getImpl() {
@@ -580,6 +675,7 @@ public Object getImpl() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.208 -0400", hash_original_method = "3AFA3A6DDA2E637FC419ECEFA9F818B5", hash_generated_method = "C2F7AC4D176FE4F3E311D525F1A37051")
         
 public void setSource(View source) {
@@ -600,6 +696,7 @@ public void setSource(View source) {
      * @param root The root of the virtual subtree.
      * @param virtualDescendantId The id of the virtual descendant.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.211 -0400", hash_original_method = "C5C1E2089E805FAB545775E080EFBCA2", hash_generated_method = "60D4801F64D31D3994EABE2DDBCA0D56")
         
 public void setSource(View root, int virtualDescendantId) {
@@ -749,6 +846,7 @@ public boolean isScrollable() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.242 -0400", hash_original_method = "601A06B4D95E981EE14DE3F104930987", hash_generated_method = "FE58510EFC010BC3E1EF2B2E91283604")
         
 public void setScrollable(boolean scrollable) {
@@ -773,6 +871,7 @@ public int getItemCount() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.248 -0400", hash_original_method = "D724658F0D124C2BBF450D2DF56F4A64", hash_generated_method = "DC0B9D970B77908F5AA0835A4300F644")
         
 public void setItemCount(int itemCount) {
@@ -827,6 +926,7 @@ public int getFromIndex() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.259 -0400", hash_original_method = "4D25992BD728B158A01F4E5FA9D902DE", hash_generated_method = "6D410BE1E81F30946232744A170837F7")
         
 public void setFromIndex(int fromIndex) {
@@ -851,6 +951,7 @@ public int getToIndex() {
      *
      * @param toIndex The index of selection end or last item index.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.264 -0400", hash_original_method = "414EFB55B509BEB1998DEF9660ADB5DF", hash_generated_method = "BF8311346E90404B78F318471D7817A3")
         
 public void setToIndex(int toIndex) {
@@ -1123,6 +1224,7 @@ public void recycle() {
         return (mRecord == null) ? 0 : mRecord.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:10.327 -0400", hash_original_method = "23C3AD1F1A4F2DE3EE1527927DE9E6EE", hash_generated_method = "0EB6254746C0D84971139AFEEA52BAE8")
         
 @Override

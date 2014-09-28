@@ -19,7 +19,7 @@ public class NetworkInfo implements Parcelable {
 
     public static final Creator<NetworkInfo> CREATOR =
         new Creator<NetworkInfo>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.957 -0500", hash_original_method = "0B6AA9EC9A683520A8AF839D35CAC874", hash_generated_method = "B51726411CE650B90D80BB590E1E30AF")
         
 public NetworkInfo createFromParcel(Parcel in) {
@@ -133,7 +133,7 @@ public NetworkInfo(NetworkInfo source) {
      */
     @DSComment("Only getActiveNetworkInfo() is important")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.911 -0500", hash_original_method = "96E8498F657AF6E41693B86C8B8439F4", hash_generated_method = "12140614F0FA586F324EFC620CF61C60")
     
 public int getType() {
@@ -205,7 +205,7 @@ public String getSubtypeName() {
      * of being established, {@code false} otherwise.
      */
     @DSComment("Only getActiveNetworkInfo() is important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.922 -0500", hash_original_method = "4340B79C926146F86A68CF1464A26E93", hash_generated_method = "2C9C2AC95481D3AC51881A7D7A326BC6")
     
 public boolean isConnectedOrConnecting() {
@@ -220,7 +220,7 @@ public boolean isConnectedOrConnecting() {
      * @return {@code true} if network connectivity exists, {@code false} otherwise.
      */
     @DSComment("Only getActiveNetworkInfo() is important")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.924 -0500", hash_original_method = "E81AE1BB2B0829AC31FE0D849F294E67", hash_generated_method = "8EECB83E305F4FE069A5F2CEC7520E99")
     
 public boolean isConnected() {
@@ -395,6 +395,7 @@ public String getExtraInfo() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.949 -0500", hash_original_method = "AD77F99801D246295506D70C39DE289C", hash_generated_method = "3EFFCE1A061D40DC507257F509A32317")
     

@@ -114,6 +114,7 @@ public synchronized void setThreadFactory(ThreadFactory threadFactory) {
      *
      * @param observer The file system observer to add
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:58.054 -0400", hash_original_method = "2582EB9761FBC4039D57C08A2BAB7EC6", hash_generated_method = "337196F58DBFF1B0EFF866951B08E77A")
     
 public void addObserver(final FileAlterationObserver observer) {

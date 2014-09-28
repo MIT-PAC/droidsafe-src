@@ -61,7 +61,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
      *             class.
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.871 -0500", hash_original_method = "9BF97E3639356761488C43790786ED6D", hash_generated_method = "22AAAEA8B777BEFA6A0FBF037144BB50")
     
 public static Class<?> forName(String className) throws ClassNotFoundException {
@@ -97,7 +97,7 @@ public static Class<?> forName(String className) throws ClassNotFoundException {
      *             class.
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.874 -0500", hash_original_method = "007FA0806960DEBB516C0AC4BBAC43FF", hash_generated_method = "96F9103EAAF63D703BB0D402C06D3482")
     
 public static Class<?> forName(String className, boolean initializeBoolean,
@@ -189,7 +189,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     }
     
     @DSComment("Package priviledge")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     static Field getDeclaredField(Class<?> clazz, String name) {
     	Field ret = new Field();
     	ret.addTaint(clazz.getTaint());
@@ -217,7 +217,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     }
     
     @DSComment("Private Method")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     private static int getModifiers(Class<?> clazz, boolean ignoreInnerClassesAttrib) {
         int temp = 0;
         if (ignoreInnerClassesAttrib)
@@ -288,6 +288,7 @@ public Class<?>[] getClasses() {
         return getFullListOfClasses(true);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.626 -0400", hash_original_method = "F78DA66084C503A2B491A95B3FBC8112", hash_generated_method = "B7A3F7B3DC488C09635B8FBBAAD7576C")
     @Override
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
@@ -443,7 +444,7 @@ public String getCanonicalName() {
      * @see ClassLoader
      */
     @DSComment("Refelction/class loader")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.892 -0500", hash_original_method = "3030130FFB93A0C1BBA3E92339DE84EE", hash_generated_method = "B0FEF2208E9859EF6D970383264412F7")
     
@@ -480,7 +481,7 @@ ClassLoader getClassLoaderImpl() {
     }
     
     @DSComment("Refelction/class loader")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.699 -0400", hash_original_method = "A6D69727DF0CDE095BD59CFD60FF06ED", hash_generated_method = "CDEED6F065A507A7FECB927A85CD4D66")
     public Class<?> getComponentType() {
     	Class<?> cl = (Class)new Object();
@@ -501,7 +502,7 @@ ClassLoader getClassLoaderImpl() {
      * @see #getDeclaredConstructor(Class[])
      */
     @DSComment("Refelction/class loader")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.905 -0500", hash_original_method = "F0845B6DA735A4C36F51E7CB08D1D9A7", hash_generated_method = "2060266FA2D0F6DCF32A8D8414835B9B")
     
@@ -582,14 +583,15 @@ private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] par
      * @see #getDeclaredConstructors()
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.914 -0500", hash_original_method = "A702CB469FC49B7BFA8C73D523E80DBC", hash_generated_method = "C6285A2293FC0FC9E24ABE031CAEAF52")
     
 public Constructor<?>[] getConstructors() {
         return getDeclaredConstructors(this, true);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "2A0D770C788AFD3292AC02E319E3DDE7", hash_generated_method = "DB9C61E181111C55768DF3409E22B2FA")
     public Annotation[] getDeclaredAnnotations() {
     	Annotation[] ret = new Annotation[0];
@@ -677,8 +679,8 @@ private Class<?>[] getFullListOfClasses(boolean publicOnly) {
      * @see #getConstructor(Class[])
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.937 -0500", hash_original_method = "BE852690AE0E27D0B9CC0DDC2FD443E4", hash_generated_method = "D0D731FB6821D6C0AB12837A56C6FE11")
     
 @SuppressWarnings("unchecked")
@@ -716,7 +718,7 @@ public Constructor<?>[] getDeclaredConstructors() {
      * @see #getField(String)
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.945 -0500", hash_original_method = "8A682798BA4F3E7A7CABB0F16EFFEE4D", hash_generated_method = "C66D19B472FEF5D13D7F4877F2BBF29A")
     
@@ -768,7 +770,7 @@ public Field[] getDeclaredFields() {
      * @see #getMethod(String, Class[])
      */
     @DSComment("Refelction/class loader")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.959 -0500", hash_original_method = "03F26499B4401EE2D953FCB368DE68F4", hash_generated_method = "D43A7411BC634182976F9568E4280AC1")
     
@@ -800,6 +802,7 @@ public Method[] getDeclaredMethods() {
         return getDeclaredMethods(this, false);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.716 -0400", hash_original_method = "67DCCE022B38EF56E621E9F7C3410002", hash_generated_method = "A08735CEB9F08341039B8C54A1BD5E61")
     public Class<?> getDeclaringClass() {
     	Class  ret = (Class)new Object();
@@ -807,19 +810,21 @@ public Method[] getDeclaredMethods() {
     }
     
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "B183618DCECD1DBBC6B77A8041AAB5FF", hash_generated_method = "E19B04C40918C59F801E144F365A783E")
     public Class<?> getEnclosingClass() {
     	Class  ret = (Class)new Object();
     	return ret;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "66CD711920ADA841CC04EC44C476AA92", hash_generated_method = "E9EFFA224CF0890C33C432913B5CDC4A")
     public Constructor<?> getEnclosingConstructor() {
     	Constructor  ret = new Constructor();
     	return ret;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "D4C604D782CFEF7F67F7383F824B8549", hash_generated_method = "42F609F6A3577ECAA8EE5F0164C83C69")
     public Method getEnclosingMethod() {
     	Method  ret = new Method();
@@ -834,8 +839,8 @@ public Method[] getDeclaredMethods() {
      * @return an array with the {@code enum} constants or {@code null}.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.987 -0500", hash_original_method = "4BAB4756A542B5987CFE5A9EBB7771C0", hash_generated_method = "501C2BA0B65CD7CC10B3624A12BF9703")
     
 @SuppressWarnings("unchecked") // we only cast after confirming that this class is an enum
@@ -860,7 +865,7 @@ public Method[] getDeclaredMethods() {
      * @see #getDeclaredField(String)
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.990 -0500", hash_original_method = "FA8DAD805A6C401E4747A9C743D605D2", hash_generated_method = "DFB95ADC3E3E5C8B3666944FA264C214")
     
@@ -915,8 +920,8 @@ private Field getPublicFieldRecursive(String name) {
      * @see #getDeclaredFields()
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.995 -0500", hash_original_method = "EE852D72665161D6434FA53D37832A51", hash_generated_method = "B8AF57BF684DA5AEB97D474BC198A0CA")
     
 public Field[] getFields() {
@@ -964,8 +969,8 @@ private void getPublicFieldsRecursive(List<Field> result) {
      *         class represented by this {@code class}.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.001 -0500", hash_original_method = "A82263350C71E60DCD37A3953DD0C780", hash_generated_method = "A29F8C52D29EEC64FFAED8E112A51280")
     
 public Type[] getGenericInterfaces() {
@@ -981,8 +986,8 @@ public Type[] getGenericInterfaces() {
      * @return an instance of {@code Type} representing the superclass.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.003 -0500", hash_original_method = "F49B4034A49DCE93E76B5D95ACE6523A", hash_generated_method = "F60C4EB1F233218BED00254491D8F23F")
     
 public Type getGenericSuperclass() {
@@ -992,7 +997,7 @@ public Type getGenericSuperclass() {
     }
     
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.741 -0400", hash_original_method = "CF68E335012F7245AD886A1F59EC18C3", hash_generated_method = "2692A665379A2F86FF3326F5F5EB1B7B")
     public Class<?>[] getInterfaces() {
     	Class[] ret = new Class[0];
@@ -1017,7 +1022,7 @@ public Type getGenericSuperclass() {
      * @see #getDeclaredMethod(String, Class[])
      */
     @DSComment("Refelction/class loader")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.010 -0500", hash_original_method = "8DB3D81F35D9B25D91AF567693EFE9FF", hash_generated_method = "F6FE7925D7C8D66FCFBB28D88158DAE4")
     
@@ -1044,7 +1049,7 @@ public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMe
      * @see #getDeclaredMethods()
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.012 -0500", hash_original_method = "C97EB7E8DB296134D4BC8E9F9CBD0F21", hash_generated_method = "16F5EFC638AA638137B136FC5EE069E5")
     
@@ -1092,7 +1097,7 @@ private void getPublicMethodsRecursive(List<Method> result) {
      * @return the modifiers of the class represented by this {@code Class}.
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.018 -0500", hash_original_method = "49C2E28E402D8BB5DB2322E2416CA9ED", hash_generated_method = "41DF567D91CEAD08F40DC4816EDC53B5")
     
@@ -1108,7 +1113,7 @@ public int getModifiers() {
      * @return the name of the class represented by this {@code Class}.
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.024 -0500", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "17A7776BBC6BDB5FF5C2292D74566F63")
     
@@ -1135,7 +1140,7 @@ public String getName() {
      * @return the simple name of the class represented by this {@code Class}.
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.030 -0500", hash_original_method = "74B632DBB542B67A6D43387B2BA8D973", hash_generated_method = "5F5DA6A35D4A0CEBE565D4944B684DD0")
     
@@ -1191,7 +1196,8 @@ public ProtectionDomain getProtectionDomain() {
      *         the resource can not be found.
      * @see ClassLoader
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.040 -0500", hash_original_method = "98759567E5146872E262AEC3A30D35ED", hash_generated_method = "473C6F76FA3F6B45C570D7E720A53585")
     
 public URL getResource(String resName) {
@@ -1231,8 +1237,8 @@ public URL getResource(String resName) {
      * @see ClassLoader
      */
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.042 -0500", hash_original_method = "A39605B8A15ACAEBE8FD794856699A1B", hash_generated_method = "86CEEF39D17B80ED6EB9C612DF444F82")
     
 public InputStream getResourceAsStream(String resName) {
@@ -1280,7 +1286,7 @@ public Object[] getSigners() {
     }
     
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.762 -0400", hash_original_method = "D842DF476A1BD7D94C0F81A98F8160A2", hash_generated_method = "6D7E91A123530C9789871A175E332FE3")
     public Class<? super T> getSuperclass() {
     	Class ret = (Class)new Object();
@@ -1296,8 +1302,8 @@ public Object[] getSigners() {
      *         class.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.051 -0500", hash_original_method = "6787AAB5FB05E26F36F8582CB719E4B5", hash_generated_method = "FB368A623C43001AF0F281EC8C9BB200")
     
 @SuppressWarnings("unchecked")
@@ -1314,7 +1320,7 @@ public Object[] getSigners() {
      *         class; {@code false} otherwise.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.054 -0500", hash_original_method = "4ABCCCB32AED1EA36AB75BC1C1D6F00F", hash_generated_method = "0B1CE4556A32614313477B12988F56FD")
     
 public boolean isAnnotation() {
@@ -1324,7 +1330,7 @@ public boolean isAnnotation() {
     }
 
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.056 -0500", hash_original_method = "0543735514B2514B55E5A7CA82A68F41", hash_generated_method = "16BE0F77EC97D1B9B2C1E188F15C5E73")
     
 @Override public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
@@ -1354,6 +1360,7 @@ public boolean isAnnotation() {
      * @return {@code true} if the class represented by this {@code Class} is
      *         anonymous; {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.060 -0500", hash_original_method = "0B2F9CB5B3D3F1E238437E8B96C9A5C6", hash_generated_method = "6890CE8E012769B06F8E5B2F096E744B")
     
     public boolean isAnonymousClass(){
@@ -1394,7 +1401,7 @@ public boolean isArray() {
      *             if {@code cls} is {@code null}.
      */
     @DSComment("Refelction/class loader")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.067 -0500", hash_original_method = "A1982F53FFC7DDA0FE0A72AB5EB8A2B7", hash_generated_method = "7D4144660EDDFA20785744BA037E6F04")
     
     public boolean isAssignableFrom(Class<?> cls){
@@ -1410,7 +1417,7 @@ public boolean isArray() {
      *         {@code enum}; {@code false} otherwise.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.069 -0500", hash_original_method = "52EC957E82FBDA76529AFBCF943E6548", hash_generated_method = "433854292DBBE11D1B7A199C41DDB4FD")
     
 public boolean isEnum() {
@@ -1430,7 +1437,7 @@ public boolean isEnum() {
      *         object} is {@code null} or cannot be cast.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.073 -0500", hash_original_method = "D7FA1612842AB24E73A4821AC9A1116F", hash_generated_method = "A26710A54E7215882856758239B85A71")
     
     public boolean isInstance(Object object){
@@ -1449,7 +1456,7 @@ public boolean isEnum() {
      *         {@code false} otherwise.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.076 -0500", hash_original_method = "FC0FA8D38BCF14F0E529954D267C8D44", hash_generated_method = "08D704271A4540C93EEA278831C40C7C")
     
     public boolean isInterface(){
@@ -1465,7 +1472,7 @@ public boolean isEnum() {
      *         defined locally; {@code false} otherwise.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.079 -0500", hash_original_method = "3F7BF71CE24DC5396B729F24C64FF6F5", hash_generated_method = "106134B6F1D2F0617972FF12F0A7C885")
     
 public boolean isLocalClass() {
@@ -1483,7 +1490,7 @@ public boolean isLocalClass() {
      *         member class; {@code false} otherwise.
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.081 -0500", hash_original_method = "C60F72E8D565680EAC577743F2D63678", hash_generated_method = "ED77BF92668C44C3CF8FD9420EB90C99")
     
 public boolean isMemberClass() {
@@ -1500,7 +1507,7 @@ public boolean isMemberClass() {
      *         {@code false} otherwise.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.085 -0500", hash_original_method = "8FF8B3D321E9B47A5AC7E5D4DF30BFE3", hash_generated_method = "5DA70992F03DF30911CCCBF32E05030B")
     
     public boolean isPrimitive(){
@@ -1538,7 +1545,7 @@ public boolean isSynthetic() {
      *             if the instance can not be created.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.091 -0500", hash_original_method = "5CAD01C91ED82C15E838E91DCE6C6576", hash_generated_method = "FDDB42B0D188A0B956339356BF11732B")
     
 public T newInstance() throws InstantiationException, IllegalAccessException {
@@ -1554,7 +1561,7 @@ public T newInstance() throws InstantiationException, IllegalAccessException {
     }
 
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.097 -0500", hash_original_method = "EB1BF1C423B147859F4E7C903D1661B8", hash_generated_method = "7292E9E5EDF7CF3E16FDA7C8739C03F9")
     
 @Override
@@ -1575,8 +1582,8 @@ public T newInstance() throws InstantiationException, IllegalAccessException {
      *         member or {@code null}.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.099 -0500", hash_original_method = "AFC08E4F788A8A715582FE5BCDA4146B", hash_generated_method = "99264132046FF3CADEE61A42634D3476")
     
 public Package getPackage() {
@@ -1599,7 +1606,7 @@ public Package getPackage() {
      *         Class}.
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.102 -0500", hash_original_method = "979945A4786597A7E7ECDDD9487DBA25", hash_generated_method = "550D874087B9E936358B5AA79DF78671")
     
     public boolean desiredAssertionStatus(){
@@ -1642,7 +1649,7 @@ Class<? extends U> var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090 =             
      *             if the object cannot be cast to the specified type.
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.108 -0500", hash_original_method = "E0CC08D19733748B74C939DEAB4797E1", hash_generated_method = "66593E0828C148F6EA2B3EEA96365AB6")
     
 @SuppressWarnings("unchecked")

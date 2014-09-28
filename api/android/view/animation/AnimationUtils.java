@@ -268,7 +268,7 @@ public static Animation makeInChildBottomAnimation(Context c) {
      */
     @DSComment("no actions/not sensitive")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.830 -0500", hash_original_method = "BDF8B873A1CA7BFCFC39306793FA91B3", hash_generated_method = "2826F5F26A01425B8BA48E1AC8D3ABDF")
     
 public static Interpolator loadInterpolator(Context context, int id) throws NotFoundException {

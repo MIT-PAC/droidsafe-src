@@ -101,7 +101,7 @@ public void write(byte[] buffer, int offset, int count) throws IOException {
      */
     @DSSink({DSSinkKind.IO})
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.835 -0500", hash_original_method = "6F952A0997C9C7FC75CA00C51592E230", hash_generated_method = "EFF3C84F96B0F410A6246A434AA1C3DB")
     
 public abstract void write(int oneByte) throws IOException;

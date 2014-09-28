@@ -83,6 +83,7 @@ public BigInteger getP() {
      * @return {@code true} if the specified object is equal to this finite field,
      *         otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:17.083 -0400", hash_original_method = "13CBEB5F84026BAB57A09069F12B4679", hash_generated_method = "CBB08CBAF3A6BF1693C490D95205D74E")
     
 public boolean equals(Object obj) {

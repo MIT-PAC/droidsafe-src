@@ -213,6 +213,7 @@ private boolean isInImmutableState() {
                 || state == PrintJobInfo.STATE_CANCELED;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:50:58.292 -0400", hash_original_method = "4FD448F86513CA3C34D2143F0A2AEA39", hash_generated_method = "04E358BEA4F7AA74E51E47B23D86AB8D")
     
 @Override

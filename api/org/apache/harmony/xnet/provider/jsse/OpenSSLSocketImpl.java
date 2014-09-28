@@ -911,7 +911,7 @@ public void setHostname(String hostname) {
         throw new SocketException("Methods sendUrgentData, setOOBInline are not supported.");
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.531 -0500", hash_original_method = "E02183BB387F9960402CB70797EE289E", hash_generated_method = "32B36D8D7361BAC8ED0E0F8D32011628")
     
 @Override public void setSoTimeout(int timeoutMilliseconds) throws SocketException {

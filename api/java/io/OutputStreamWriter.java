@@ -281,7 +281,7 @@ public String getEncoding() {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.603 -0500", hash_original_method = "A1014AE81A36DB02C830992F3B254644", hash_generated_method = "A96B07B6EEBAA8EA2F682CB1A720ECE7")
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
 @Override
     public void write(char[] buffer, int offset, int count) throws IOException {
         synchronized (lock) {

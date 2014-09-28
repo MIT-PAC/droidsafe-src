@@ -2409,7 +2409,7 @@ MessageThread(RenderScript rs) {
 
         }
 
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.743 -0500", hash_original_method = "44BE69ACBAD20FBF8ED2712E597F95F7", hash_generated_method = "D1030E413833AC6EA089B2FA95F6EEC0")
         
 public void run() {

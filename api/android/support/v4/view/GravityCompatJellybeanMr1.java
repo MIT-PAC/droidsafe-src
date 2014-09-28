@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.view;
 
 import droidsafe.annotations.*;
@@ -25,6 +24,7 @@ import android.view.Gravity;
 
 class GravityCompatJellybeanMr1 {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.295 -0400", hash_original_method = "77A87285F359A52F08330AD80A5D1C91", hash_generated_method = "38AA03C6E03A4704B6F952AF30C1AB56")
     
 public static int getAbsoluteGravity(int gravity, int layoutDirection) {
@@ -45,6 +45,7 @@ public static void apply(int gravity, int w, int h, Rect container, int xAdj, in
         Gravity.apply(gravity, w, h, container, xAdj, yAdj, outRect);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.312 -0400", hash_original_method = "10CDEA1D9DA95FA94176554FB1F66D46", hash_generated_method = "80087F3F9C468CBB2804103B04D81E18")
     
 public static void applyDisplay(int gravity, Rect display, Rect inoutObj, int layoutDirection) {

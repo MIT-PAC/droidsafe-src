@@ -129,7 +129,8 @@ public String getFormat() {
      *
      * @return the encoded form of this secret key.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.358 -0500", hash_original_method = "3F6C1397C7B2518265F6653D66E9AC87", hash_generated_method = "556F207E69FF8E135FD4E6DBE9F6BD56")
     
 public byte[] getEncoded() {

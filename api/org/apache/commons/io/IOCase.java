@@ -59,6 +59,7 @@ public final class IOCase implements Serializable {
      * @return the IOCase object
      * @throws IllegalArgumentException if the name is invalid
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.392 -0400", hash_original_method = "EA07F80B3356F4FE18699CEFE7BAB81E", hash_generated_method = "CDA7C3FD0BA191C4A0732E0F48959E12")
     
 public static IOCase forName(String name) {
@@ -123,6 +124,7 @@ public String getName() {
      * 
      * @return true if case sensitive
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.394 -0400", hash_original_method = "D4D1A27073CB69531CAF258DC4B9AC95", hash_generated_method = "98754A432EB9D8F169AE9477EF7D9E8E")
     
 public boolean isCaseSensitive() {
@@ -141,6 +143,7 @@ public boolean isCaseSensitive() {
      * @return true if equal using the case rules
      * @throws NullPointerException if either string is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.394 -0400", hash_original_method = "FCED5C8D6D9F97DBA9E3BA0A98F2A945", hash_generated_method = "F40F77431574A3150FA17797E126FF2E")
     
 public int checkCompareTo(String str1, String str2) {
@@ -161,6 +164,7 @@ public int checkCompareTo(String str1, String str2) {
      * @return true if equal using the case rules
      * @throws NullPointerException if either string is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.395 -0400", hash_original_method = "A1834B40E07842ED206E79B7DD652E98", hash_generated_method = "F4C182AD20932A02BEEAB9FC3949970E")
     
 public boolean checkEquals(String str1, String str2) {
@@ -181,6 +185,7 @@ public boolean checkEquals(String str1, String str2) {
      * @return true if equal using the case rules
      * @throws NullPointerException if either string is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.396 -0400", hash_original_method = "DE959B82FAE20A2C02C6F6668F717E02", hash_generated_method = "4CD90662B79A1C6D2C59A1B8CBE902EF")
     
 public boolean checkStartsWith(String str, String start) {
@@ -198,6 +203,7 @@ public boolean checkStartsWith(String str, String start) {
      * @return true if equal using the case rules
      * @throws NullPointerException if either string is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.396 -0400", hash_original_method = "5DEB3C8085F8F60F4136227F14208410", hash_generated_method = "41525E4DB689284CB3F608F32470E945")
     
 public boolean checkEndsWith(String str, String end) {
@@ -220,6 +226,7 @@ public boolean checkEndsWith(String str, String end) {
      * @throws NullPointerException if either string is null
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.397 -0400", hash_original_method = "8D9B60D64D088F60BE3CDF32B6A1EFAB", hash_generated_method = "B4DA0EA953CB1CD697405E702D7BEEDE")
     
 public int checkIndexOf(String str, int strStartIndex, String search) {
@@ -246,6 +253,7 @@ public int checkIndexOf(String str, int strStartIndex, String search) {
      * @return true if equal using the case rules
      * @throws NullPointerException if either string is null
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.398 -0400", hash_original_method = "F30BBDDAAC2E6AD203135C0D7804F286", hash_generated_method = "9B5D5A10ED9024733C087E2E4573FF5D")
     
 public boolean checkRegionMatches(String str, int strStartIndex, String search) {

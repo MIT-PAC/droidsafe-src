@@ -154,6 +154,7 @@ public AgeFileFilter(File cutoffReference, boolean acceptOlder) {
      * @param file  the File to check
      * @return true if the filename matches
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.634 -0400", hash_original_method = "C00DF150BD7A81B8538F88231B296818", hash_generated_method = "E5738BF70A323531E51144F65A827633")
     
 @Override

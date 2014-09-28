@@ -20,7 +20,7 @@ public class ResolveInfo implements Parcelable {
 
     public static final Creator<ResolveInfo> CREATOR
             = new Creator<ResolveInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.616 -0500", hash_original_method = "2EFE85D4E7AF81E923B1CAE80AA7FDC7", hash_generated_method = "F224919CC590333341253A2679D1F1C0")
         
 public ResolveInfo createFromParcel(Parcel source) {
@@ -165,7 +165,7 @@ public CharSequence loadLabel(PackageManager pm) {
      * item does not have an icon, the default activity icon is returned.
      */
     @DSComment("Accessing App Resource")
-    @DSSpec(DSCat.APP_RESOURCE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.598 -0500", hash_original_method = "D0D8D8B431D77A14F0DBD9F876D36006", hash_generated_method = "FB44EDEB4A97D53F1E4B44FF2793ABA6")
     
 public Drawable loadIcon(PackageManager pm) {

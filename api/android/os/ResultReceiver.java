@@ -12,7 +12,7 @@ public class ResultReceiver implements Parcelable {
 
     public static final Parcelable.Creator<ResultReceiver> CREATOR
             = new Parcelable.Creator<ResultReceiver>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.388 -0500", hash_original_method = "90D8D656578FFDEDED0B312BAABC9891", hash_generated_method = "498C30F1A4DD7912BEB39B6F963CC566")
         
 public ResultReceiver createFromParcel(Parcel in) {

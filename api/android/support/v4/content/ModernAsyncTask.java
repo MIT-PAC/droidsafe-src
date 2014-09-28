@@ -67,6 +67,7 @@ public static void execute(Runnable runnable) {
 
         private final AtomicInteger mCount = new AtomicInteger(1);
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.359 -0400", hash_original_method = "77C8792F662CD3BCFB55CC8C0EAE2B98", hash_generated_method = "7C2862DA5F899CBF8BCF21BA933827A7")
         public Thread newThread(Runnable r) {
             Thread varB4EAC82CA7396A68D541C85D26508E83_386065161 = null; 
@@ -120,7 +121,8 @@ public static void execute(Runnable runnable) {
     
 public ModernAsyncTask() {
         mWorker = new WorkerRunnable<Params, Result>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:30.088 -0500", hash_original_method = "A54B00CDBBB35FABA36BF774EC6EA22F", hash_generated_method = "E215EC74B46BA094000534E7464227B4")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 10:56:30.088 -0500", hash_original_method = "A54B00CDBBB35FABA36BF774EC6EA22F", hash_generated_method = "E215EC74B46BA094000534E7464227B4")
             
 public Result call() throws Exception {
                 mTaskInvoked.set(true);
@@ -209,6 +211,7 @@ protected abstract Result doInBackground(Params... params);
      * @see #onPostExecute
      * @see #doInBackground
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.840 -0500", hash_original_method = "D1C6308395AB600921F20543E51EAD98", hash_generated_method = "19E203C96602819786512F2B26D8C26C")
     
 protected void onPreExecute() {
@@ -345,6 +348,7 @@ AsyncTaskResult(ModernAsyncTask task, Data... data) {
      * @see #cancel(boolean)
      * @see #isCancelled()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.849 -0500", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "D07A2E6060CD99151CC30F4F6E6B6769")
     
 protected void onCancelled() {
@@ -360,6 +364,7 @@ protected void onCancelled() {
      *
      * @see #cancel(boolean)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.852 -0500", hash_original_method = "DB46851A4B24FCF8A49F880359D5B78C", hash_generated_method = "FAB2D7F10FB46B180459F0A2CE2A27A3")
     
 public final boolean isCancelled() {
@@ -395,6 +400,7 @@ public final boolean isCancelled() {
      * @see #isCancelled()
      * @see #onCancelled(Object)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.855 -0500", hash_original_method = "79A634F40CF588E281325883FCE2C51B", hash_generated_method = "EA384BF1F67858DA3FEC2C9800628FAC")
     
 public final boolean cancel(boolean mayInterruptIfRunning) {

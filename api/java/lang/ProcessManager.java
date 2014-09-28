@@ -79,7 +79,7 @@ public static ProcessManager getInstance() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.453 -0400", hash_original_method = "65B627E41D9F392064B029711B809D6A", hash_generated_method = "8F2C2A3FD38ED80D61DE63C94471BF94")
     private  ProcessManager() {
         Thread reaperThread = new Thread(ProcessManager.class.getName()) {
-            @DSSpec(DSCat.SPEC_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.536 -0500", hash_original_method = "5EDA8A1888B05474B51AEC07008E0508", hash_generated_method = "95A1875BC116738308AC99181C6ADE9D")
             
 @Override public void run() {
@@ -275,7 +275,7 @@ public InputStream getErrorStream() {
         }
 
         @DSSpec(DSCat.IO)
-        @DSSource({DSSourceKind.IO})
+        @DSSource({DSSourceKind.OS_PROCESS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.586 -0500", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "045B7D54BB0AFFCC2F40B43FACDF9DCC")
         
 public InputStream getInputStream() {

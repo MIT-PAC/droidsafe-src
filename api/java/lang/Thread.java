@@ -120,6 +120,7 @@ public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() {
      * @see Thread#interrupt
      * @see Thread#isInterrupted
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.613 -0500", hash_original_method = "B8A4971B71D8B35D3212DC9C05DB29D4", hash_generated_method = "00ED1370A4CE19FDDCF3473034823E48")
     
 public static boolean interrupted() {
@@ -193,6 +194,7 @@ public static void yield() {
      * @return true if the current thread has a monitor lock on the specified
      *         object; false otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.676 -0500", hash_original_method = "4BFB422FC2892097647B5CFF3006D866", hash_generated_method = "1BCBF2A06539CEF9F83D2539DCAFCEAE")
     
 public static boolean holdsLock(Object object) {
@@ -600,8 +602,8 @@ public final void checkAccess() {
      * @see #getContextClassLoader()
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.588 -0500", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "9633C94A47589C7321EE60A6609E480C")
     
 public ClassLoader getContextClassLoader() {
@@ -618,7 +620,7 @@ public ClassLoader getContextClassLoader() {
      */
     @DSComment("final method& no activity")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.592 -0500", hash_original_method = "AC34FCBA00CFFBED3290FFC752B7D422", hash_generated_method = "50A1BB2B1F2164322D909F16E85CDE7D")
     
 public long getId() {
@@ -632,7 +634,7 @@ public long getId() {
      */
     @DSComment("final method& no activity")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.595 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "CEAA3BC43A9BFF97F5638C3D9028D82D")
     
 public final String getName() {
@@ -673,6 +675,7 @@ public StackTraceElement[] getStackTrace() {
      *
      * @return a {@link State} value.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.603 -0500", hash_original_method = "07EB6E55BA9633DD05ED126331098808", hash_generated_method = "BB5064B4667026FA9295779FABA1A723")
     
 public State getState() {
@@ -955,7 +958,7 @@ public final void join(long millis, int nanos) throws InterruptedException {
      *
      * @see Thread#start
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.633 -0500", hash_original_method = "74F6289977938D08C5FBC2624A0DC216", hash_generated_method = "699B0F71A4A21C34025432D7A8734079")
     
 public void run() {
@@ -1109,6 +1112,7 @@ public final void setPriority(int priority) {
      * @param handler
      *            The handler to set or <code>null</code>.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.653 -0500", hash_original_method = "D58D250923779D2B2016D80FC2081BA1", hash_generated_method = "B182685DA439E90833A3FFE19F71C5BA")
     
 public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
@@ -1125,7 +1129,7 @@ public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
      * @see Thread#run
      */
     @DSComment("Thread starting")
-    @DSSpec(DSCat.OS_LOW_LEVEL)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.661 -0500", hash_original_method = "389CF6E0D3A08F228CF4E4A156CC86D9", hash_generated_method = "4B5E86BEBB59EC254CCB9739B41E550A")
     
 public synchronized void start() {

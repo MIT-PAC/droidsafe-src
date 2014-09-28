@@ -90,15 +90,18 @@ class NotificationCompatKitKat {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void addAction(NotificationCompatBase.Action action) {
             mActionExtrasList.add(NotificationCompatJellybean.writeActionAndGetExtras(b, action));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Notification.Builder getBuilder() {
             return b;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public Notification build() {
             SparseArray<Bundle> actionExtrasMap = NotificationCompatJellybean.buildActionExtrasMap(
                     mActionExtrasList);
@@ -111,18 +114,21 @@ class NotificationCompatKitKat {
             return b.build();
         }
 
-		public void addAction(Action action) {
+		@DSSafe(DSCat.SAFE_LIST)
+        public void addAction(Action action) {
 			// TODO Auto-generated method stub
 			
 		}
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:49:30.573 -0400", hash_original_method = "E5FE84B916E8CA6982921036BE0348D6", hash_generated_method = "0EF4A3CC5034F5F1DD0D457303F9B978")
     
 public static Bundle getExtras(Notification notif) {
         return notif.extras;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:49:30.582 -0400", hash_original_method = "F003A4F1E89732C356AEE51F9A5D5AAA", hash_generated_method = "AE00D31DB2322D1BC51B617EE39D92A3")
     
 public static int getActionCount(Notification notif) {
@@ -130,6 +136,7 @@ public static int getActionCount(Notification notif) {
     	
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:49:30.595 -0400", hash_original_method = "42D45AB99009C0433B4770EBB959CE3D", hash_generated_method = "9855ED94671035113A13BD69DD2ED453")
     
 public static NotificationCompatBase.Action getAction(Notification notif,
@@ -146,24 +153,28 @@ public static NotificationCompatBase.Action getAction(Notification notif,
                 action.icon, action.title, action.actionIntent, actionExtras);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:49:30.605 -0400", hash_original_method = "0BF4B4B594B05F2D6C04143ADE68A543", hash_generated_method = "F105A21E223D1B72BB1C2C99DA7E620F")
     
 public static boolean getLocalOnly(Notification notif) {
         return notif.extras.getBoolean(NotificationCompatJellybean.EXTRA_LOCAL_ONLY);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:49:30.614 -0400", hash_original_method = "E2CEAE72C46926D89760234D6B2D2D7C", hash_generated_method = "86EB95BB6B59EE1FA9A190310200DDFD")
     
 public static String getGroup(Notification notif) {
         return notif.extras.getString(NotificationCompatJellybean.EXTRA_GROUP_KEY);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:49:30.622 -0400", hash_original_method = "2F654C2BEC975FDE8CF315B680354C2A", hash_generated_method = "AD054FFBD7ED52FDAC8CA33DD959D61E")
     
 public static boolean isGroupSummary(Notification notif) {
         return notif.extras.getBoolean(NotificationCompatJellybean.EXTRA_GROUP_SUMMARY);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:49:30.632 -0400", hash_original_method = "C168C71E6F76F600D741075838BC3BFD", hash_generated_method = "C50A14C9DE23947207F0150A4CF18299")
     
 public static String getSortKey(Notification notif) {

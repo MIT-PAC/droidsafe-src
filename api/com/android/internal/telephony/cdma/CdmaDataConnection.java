@@ -86,6 +86,7 @@ private CdmaDataConnection(CDMAPhone phone, String name, int id, RetryManager rm
                 RILConstants.SETUP_DATA_PROTOCOL_IP, msg);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.486 -0500", hash_original_method = "3581014A48A474B85EE6C8602B0DDEFE", hash_generated_method = "33D4CF7E24506DE6193E0AB3A35D9191")
     

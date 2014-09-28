@@ -11,7 +11,7 @@ import org.apache.harmony.kernel.vm.StringUtils;
 
 public class AccessibleObject implements AnnotatedElement {
 
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
 
     @DSComment("Java language reflection")
 
@@ -73,7 +73,7 @@ protected AccessibleObject() {
         // TODO Auto-generated constructor stub
     }*/
 
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
 
     @DSComment("Java language reflection")
 
@@ -86,7 +86,7 @@ public boolean isAccessible() {
         return flag;
     }
 
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
 
     @DSComment("Java language reflection")
 
@@ -100,6 +100,7 @@ public void setAccessible(boolean flag) {
         this.flag = flag;
      }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.498 -0400", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "43B9C3B1D7E884AD2A7C713875A9E867")
     
 @Override public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
@@ -114,7 +115,7 @@ public void setAccessible(boolean flag) {
         throw new UnsupportedOperationException();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 01:11:00.508 -0400", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "0E992320369165946CB376284766369A")
     
@@ -123,6 +124,7 @@ public void setAccessible(boolean flag) {
         return getDeclaredAnnotations();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.854 -0400", hash_original_method = "E854D6B6A4F110252592FEF88B9AB0AA", hash_generated_method = "3568A964D8BA23EB6D5CB01D72AE6A5D")
     public <T extends Annotation> T getAnnotation(Class<T> annotationType) {
         addTaint(annotationType.getTaint());

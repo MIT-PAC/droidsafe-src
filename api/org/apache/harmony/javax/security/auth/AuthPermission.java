@@ -22,8 +22,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import java.security.BasicPermission;
 
-
-
 /**
  * Governs the use of methods in this package and also its subpackages. A
  * <i>target name</i> of the permission specifies which methods are allowed
@@ -58,18 +56,16 @@ import java.security.BasicPermission;
 public final class AuthPermission extends BasicPermission {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.084 -0400", hash_original_field = "B86BA7BFD4F5BA4E8C2E8EC38CF13C94", hash_generated_field = "6A560F38E497E0B5864148F29E68A289")
 
-
     private static final long serialVersionUID = 5806031445061587174L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.085 -0400", hash_original_field = "E6F8779C1656F66AF8E4E1643C20DC17", hash_generated_field = "8A47B958B5E9BBB327BBC5A7CB245F96")
-
 
     private static final String CREATE_LOGIN_CONTEXT = "createLoginContext";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.085 -0400", hash_original_field = "49F1CF68D13C881582C0BF0095A6F002", hash_generated_field = "896D3AA8309564D6E72D0E5BF92E52E1")
 
-
     private static final String CREATE_LOGIN_CONTEXT_ANY = "createLoginContext.*"; //$NON-NLS-1$
 
     // inits permission name.
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.086 -0400", hash_original_method = "622A2B393A4176C15B5D9B111355BD29", hash_generated_method = "715872AC95817349428A07E0F77AA1A3")
     
 private static String init(String name) {

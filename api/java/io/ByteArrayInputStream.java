@@ -132,7 +132,7 @@ public ByteArrayInputStream(byte[] buf, int offset, int length) {
      * @return the byte read or -1 if the end of this stream has been reached.
      */
     @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.637 -0500", hash_original_method = "BB56F6666E3E1FB5BE1E06064B4DC5BD", hash_generated_method = "1CD9D56F7E510AAFDDF684F8D4CA4A37")
     
 @Override

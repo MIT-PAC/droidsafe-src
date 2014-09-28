@@ -12,7 +12,7 @@ public class NetworkState implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.548 -0400", hash_original_field = "639231E2CF24AC818C14B1454EE59F27", hash_generated_field = "8B25ACE201431313251FD6C8326EA110")
 
     public static final Creator<NetworkState> CREATOR = new Creator<NetworkState>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.836 -0500", hash_original_method = "15EBC0DC5CBC737927737366BF6F583B", hash_generated_method = "4551183C47257C0E12461AF767F8E520")
         
 public NetworkState createFromParcel(Parcel in) {

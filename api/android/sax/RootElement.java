@@ -21,6 +21,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
+import droidsafe.annotations.*;
 
 /**
  * The root XML element. The entry point for this API. Not safe for concurrent
@@ -90,6 +91,7 @@ public class RootElement extends Element {
     /**
      * Gets the SAX {@code ContentHandler}. Pass this to your SAX parser.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public ContentHandler getContentHandler() {
         return this.handler;
     }

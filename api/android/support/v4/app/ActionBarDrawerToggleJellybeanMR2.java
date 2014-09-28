@@ -33,6 +33,7 @@ class ActionBarDrawerToggleJellybeanMR2 {
             //R.attr.homeAsUpIndicator
 			DSUtils.FAKE_INT
     };
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.351 -0400", hash_original_method = "7C0F600752A785E987B36C95FA36D9B2", hash_generated_method = "5FECDFEB6B2CBF4F2C67091A1D6E1356")
     
 public static Object setActionBarUpIndicator(Object info, Activity activity,
@@ -42,6 +43,7 @@ public static Object setActionBarUpIndicator(Object info, Activity activity,
         actionBar.setHomeActionContentDescription(contentDescRes);
         return info;
     }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.356 -0400", hash_original_method = "9DE0BDAD694DC908B71A729BF1BCCE9B", hash_generated_method = "84D3EBE6CD05405C5CB2DEA3BDEE9DD8")
     
 public static Object setActionBarDescription(Object info, Activity activity,
@@ -50,6 +52,7 @@ public static Object setActionBarDescription(Object info, Activity activity,
         actionBar.setHomeActionContentDescription(contentDescRes);
         return info;
     }
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.362 -0400", hash_original_method = "8A5AE9AC9313119D692C1ED43667FE3F", hash_generated_method = "FBAE5216BBEB963ACC00EB29E8E63280")
     
 public static Drawable getThemeUpIndicator(Activity activity) {

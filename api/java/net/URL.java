@@ -532,6 +532,7 @@ public URLConnection openConnection(Proxy proxy) throws IOException {
      *
      * @throws URISyntaxException if this URL cannot be converted into a URI.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.822 -0500", hash_original_method = "1E43ADB2B24E4AEE234C287749830ABE", hash_generated_method = "BF31A384C12F3C95702A05E5A660934A")
     
 public URI toURI() throws URISyntaxException {
@@ -558,6 +559,7 @@ public URI toURILenient() throws URISyntaxException {
      * this URL. The returned string is the same as the result of the method
      * {@code toExternalForm()}.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("no suspicious activity, just calls class function")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.827 -0500", hash_original_method = "9D75BD75136BEBAB4AE2F806E85803AD", hash_generated_method = "F41EB6D03A99F60D56FE9D7C7FCBDF03")
@@ -567,7 +569,7 @@ public URI toURILenient() throws URISyntaxException {
     }
     
     @DSComment("accesses networking information")
-    @DSSpec(DSCat.NETWORKING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.975 -0400", hash_original_method = "6763BB94BC9C65378EF7195BF94F5BED", hash_generated_method = "ACF3E5B31DE51D0A38B73B367D8CC436")
     public String toExternalForm() {
         if(streamHandler == null)        
@@ -715,7 +717,7 @@ public int getDefaultPort() {
      */
     @DSComment("no suspicious activity, just gets string")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.853 -0500", hash_original_method = "D4C7450F6A022BC4DF89D66487C9A55A", hash_generated_method = "D8CD1E2528FA75545C0B44B1301B41F0")
     
 public String getFile() {

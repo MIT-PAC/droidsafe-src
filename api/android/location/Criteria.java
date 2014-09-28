@@ -39,7 +39,7 @@ public class Criteria implements Parcelable {
 
     public static final Parcelable.Creator<Criteria> CREATOR =
         new Parcelable.Creator<Criteria>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.343 -0500", hash_original_method = "30491C0C577618E547D91203358C6C24", hash_generated_method = "11A7C9509B71460E736768A86BF2D488")
         
 public Criteria createFromParcel(Parcel in) {
@@ -129,6 +129,7 @@ public Criteria(Criteria criteria) {
      *
      * @throws IllegalArgumentException if accuracy is not one of the supported constants
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.298 -0500", hash_original_method = "F7CDA1AEB030C3E960B93BFBD444E4B1", hash_generated_method = "395B5793E2926228F28A8561FDBE5527")
     
 public void setHorizontalAccuracy(int accuracy) {

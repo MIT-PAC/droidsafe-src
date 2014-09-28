@@ -14,14 +14,14 @@ public class LatLngBounds implements com.google.android.gms.common.internal.safe
 		public Builder() {
 			
 		}
-		@DSSafe(DSCat.SAFE_OTHERS)
+		@DSSafe(DSCat.SAFE_LIST)
 		public LatLngBounds build () {
 			LatLng point = new LatLng(getTaintDouble(), getTaintDouble());
 			LatLngBounds bounds = new LatLngBounds(getTaintInt(), point, point);
 			return bounds;
 		}
 		
-		@DSSafe(DSCat.SAFE_OTHERS)
+		@DSSafe(DSCat.SAFE_LIST)
 		public LatLngBounds.Builder include (LatLng point) {
 			addTaint(point.hashCode());
 			return this;
@@ -240,6 +240,7 @@ private boolean d(double  d0)
         return $z0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.322 -0400", hash_original_method = "1B91E49C74884F25F779352E68B969EA", hash_generated_method = "F21733D582B06668BC5B37742A9794F8")
     
 public int hashCode()
@@ -247,6 +248,7 @@ public int hashCode()
     	return northeast.hashCode() + southwest.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.326 -0400", hash_original_method = "E8BA188245D31B84BB21FA1D5A71106B", hash_generated_method = "BFDEB6F3727F2663AE3127D0F9E8FBED")
     
 public boolean equals(Object  r1)
@@ -280,6 +282,7 @@ public boolean equals(Object  r1)
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.329 -0400", hash_original_method = "99A08874AFCAB8AAB1AFC909958309C4", hash_generated_method = "B49B375DDC621FEF281A75B5615082D5")
     
 public String toString()

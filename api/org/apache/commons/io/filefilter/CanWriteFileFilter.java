@@ -78,6 +78,7 @@ protected CanWriteFileFilter() {
      * @return {@code true} if the file can be
      *  written to, otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.485 -0400", hash_original_method = "B6CCE4550C29DDD6A02AB62B3A5D936A", hash_generated_method = "979F94608D9916FD462CA7E4AAD1B55D")
     
 @Override

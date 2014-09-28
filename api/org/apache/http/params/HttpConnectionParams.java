@@ -15,6 +15,7 @@ public final class HttpConnectionParams implements CoreConnectionPNames {
      *
      * @return timeout in milliseconds
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.661 -0500", hash_original_method = "05BCF4E96AB58D17B392E6E260A9049E", hash_generated_method = "686FD23A2525281745ED9ED4B8C375C5")
     
 public static int getSoTimeout(final HttpParams params) {
@@ -137,6 +138,7 @@ public static void setLinger(final HttpParams params, int value) {
      * 
      * @return timeout in milliseconds.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.681 -0500", hash_original_method = "22B41023B926EDDF5DFDC983ED2E70CB", hash_generated_method = "DD6907D10B3A87975E503CDDB5AEAEEF")
     
 public static int getConnectionTimeout(final HttpParams params) {

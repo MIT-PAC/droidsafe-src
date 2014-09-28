@@ -14,7 +14,7 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
 
     public static final Parcelable.Creator<ProviderInfo> CREATOR
             = new Parcelable.Creator<ProviderInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.944 -0500", hash_original_method = "C62C06CA4B676C4392CBE3A91D8CB99D", hash_generated_method = "4BDCFD95CDE2CC4DED8022218C6A8AF6")
         
 public ProviderInfo createFromParcel(Parcel in) {

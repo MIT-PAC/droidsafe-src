@@ -137,7 +137,7 @@ CharBuffer(int capacity) {
     }
 
     @DSComment("memory buffer only")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.739 -0500", hash_original_method = "B8788BC8872EF40BE08078E90206AB2A", hash_generated_method = "F7EF93A89420C122FCC187990CCE4477")
     
 public final char[] array() {

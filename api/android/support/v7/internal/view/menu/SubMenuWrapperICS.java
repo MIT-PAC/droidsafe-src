@@ -32,6 +32,7 @@ SubMenuWrapperICS(android.view.SubMenu subMenu) {
         super(subMenu);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.167 -0400", hash_original_method = "3DE9352F6ECAFD28A704DE5EC846218B", hash_generated_method = "4D07909FE5B84A07AEEF56BF9A8AF070")
     
 @Override
@@ -84,6 +85,7 @@ SubMenuWrapperICS(android.view.SubMenu subMenu) {
         return this;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:41.184 -0400", hash_original_method = "B824926E601F92195A02B0B3C7B4F731", hash_generated_method = "2DBD0A37140DB878F34FCDFAC0114ED3")
     
 @Override

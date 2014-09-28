@@ -132,6 +132,7 @@ public void addCallback(Callback callback) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.910 -0500", hash_original_method = "C2F2686F3B633A931E5A1A7B954047E4", hash_generated_method = "4C1FB150E92184E19C89CA8156735997")
     
 public void removeCallback(Callback callback) {
@@ -293,7 +294,8 @@ public void unlockCanvasAndPost(Canvas canvas) {
         mSurfaceLock.unlock();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.938 -0500", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "2AAD7E290BC377BCEC98E2821A948720")
     
 public Surface getSurface() {

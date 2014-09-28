@@ -29,7 +29,6 @@ public class ViewPropertyAnimatorCompat {
     private static final String TAG = "ViewAnimatorCompat";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:07.069 -0400", hash_original_field = "A5B20FE04D191664D8A8517C80EBFBE9", hash_generated_field = "DF14B5C6A34E7B3033A2D1CD913985FD")
 
-
     static  ViewPropertyAnimatorCompatImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:06.795 -0400", hash_original_field = "EE42612B793ECF11B4BB1DE5FB8357E6", hash_generated_field = "08E85E83D778EC246746E6855B21BE82")
 
@@ -72,163 +71,195 @@ public class ViewPropertyAnimatorCompat {
 
     static class BaseViewPropertyAnimatorCompatImpl implements ViewPropertyAnimatorCompatImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setDuration(View view, long value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void alpha(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void translationX(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void translationY(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void withEndAction(View view, Runnable runnable) {
             // Other VPA calls are noops pre-ICS; just run the runnable immediately
             runnable.run();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public long getDuration(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setInterpolator(View view, Interpolator value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Interpolator getInterpolator(View view) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setStartDelay(View view, long value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public long getStartDelay(View view) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void alphaBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotation(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationX(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationXBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationY(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationYBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void scaleX(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void scaleXBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void scaleY(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void scaleYBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void cancel(View view) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void x(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void xBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void y(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void yBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void translationXBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void translationYBy(View view, float value) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void start(View view) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void withLayer(View view) {
             // noop on versions prior to ICS
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void withStartAction(View view, Runnable runnable) {
             // Other VPA calls are noops pre-ICS; just run the runnable immediately
             runnable.run();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setListener(View view, ViewPropertyAnimatorListener listener) {
             // Noop
@@ -237,199 +268,239 @@ public class ViewPropertyAnimatorCompat {
 
     static class ICSViewPropertyAnimatorCompatImpl extends BaseViewPropertyAnimatorCompatImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setDuration(View view, long value) {
             ViewPropertyAnimatorCompatICS.setDuration(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void alpha(View view, float value) {
             ViewPropertyAnimatorCompatICS.alpha(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void translationX(View view, float value) {
             ViewPropertyAnimatorCompatICS.translationX(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void translationY(View view, float value) {
             ViewPropertyAnimatorCompatICS.translationY(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public long getDuration(View view) {
             return ViewPropertyAnimatorCompatICS.getDuration(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setInterpolator(View view, Interpolator value) {
             ViewPropertyAnimatorCompatICS.setInterpolator(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setStartDelay(View view, long value) {
             ViewPropertyAnimatorCompatICS.setStartDelay(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public long getStartDelay(View view) {
             return ViewPropertyAnimatorCompatICS.getStartDelay(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void alphaBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.alphaBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotation(View view, float value) {
             ViewPropertyAnimatorCompatICS.rotation(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.rotationBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationX(View view, float value) {
             ViewPropertyAnimatorCompatICS.rotationX(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationXBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.rotationXBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationY(View view, float value) {
             ViewPropertyAnimatorCompatICS.rotationY(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void rotationYBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.rotationYBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void scaleX(View view, float value) {
             ViewPropertyAnimatorCompatICS.scaleX(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void scaleXBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.scaleXBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void scaleY(View view, float value) {
             ViewPropertyAnimatorCompatICS.scaleY(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void scaleYBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.scaleYBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void cancel(View view) {
             ViewPropertyAnimatorCompatICS.cancel(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void x(View view, float value) {
             ViewPropertyAnimatorCompatICS.x(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void xBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.xBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void y(View view, float value) {
             ViewPropertyAnimatorCompatICS.y(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void yBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.yBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void translationXBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.translationXBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void translationYBy(View view, float value) {
             ViewPropertyAnimatorCompatICS.translationYBy(view, value);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void start(View view) {
             ViewPropertyAnimatorCompatICS.start(view);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setListener(View view, ViewPropertyAnimatorListener listener) {
             ViewPropertyAnimatorCompatICS.setListener(view, listener);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void withEndAction(View view, final Runnable runnable) {
             setListener(view, new ViewPropertyAnimatorListener() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onAnimationStart(View view) {
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onAnimationEnd(View view) {
                     runnable.run();
                     setListener(view, null);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onAnimationCancel(View view) {
                 }
             });
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void withStartAction(View view, final Runnable runnable) {
             setListener(view, new ViewPropertyAnimatorListener() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onAnimationStart(View view) {
                     runnable.run();
                     setListener(view, null);
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onAnimationEnd(View view) {
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onAnimationCancel(View view) {
                 }
             });
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void withLayer(View view) {
             //final int currentLayerType = ViewCompat.getLayerType(view);
             setListener(view, new ViewPropertyAnimatorListener() {
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onAnimationStart(View view) {
                     //ViewCompat.setLayerType(view, ViewCompat.LAYER_TYPE_HARDWARE, null);
                 }
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onAnimationEnd(View view) {
                    /* ViewCompat.setLayerType(view, currentLayerType, null);
                     setListener(view, null);*/
                 }
 
-                @Override
+                @DSSafe(DSCat.SAFE_LIST)
+            @Override
                 public void onAnimationCancel(View view) {
                 }
             });
@@ -438,16 +509,19 @@ public class ViewPropertyAnimatorCompat {
 
     static class JBViewPropertyAnimatorCompatImpl extends ICSViewPropertyAnimatorCompatImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void withStartAction(View view, Runnable runnable) {
             ViewPropertyAnimatorCompatJB.withStartAction(view, runnable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void withEndAction(View view, Runnable runnable) {
             ViewPropertyAnimatorCompatJB.withEndAction(view, runnable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void withLayer(View view) {
             ViewPropertyAnimatorCompatJB.withLayer(view);
@@ -456,6 +530,7 @@ public class ViewPropertyAnimatorCompat {
 
     static class JBMr2ViewPropertyAnimatorCompatImpl extends JBViewPropertyAnimatorCompatImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Interpolator getInterpolator(View view) {
             return (Interpolator) ViewPropertyAnimatorCompatJellybeanMr2.getInterpolator(view);

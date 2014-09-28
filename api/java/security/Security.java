@@ -80,6 +80,7 @@ private static void registerDefaultProviders() {
      *         was already in the list. The actual position may be different
      *         from the desired position.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.363 -0500", hash_original_method = "67AE1CD5DCFCA41946EBB236A4A63A0E", hash_generated_method = "CD338293BEA3F7EEA009E3372E54EA98")
     
 public static synchronized int insertProviderAt(Provider provider, int position) {
@@ -315,7 +316,8 @@ public static synchronized Provider[] getProviders(Map<String,String> filter) {
      *            the name of the requested security property.
      * @return the value of the security property.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.383 -0500", hash_original_method = "FBE94713485830A30BBD5079D4570A8E", hash_generated_method = "C17246BF3337C7E14B654907595AA70A")
     
 public static String getProperty(String key) {

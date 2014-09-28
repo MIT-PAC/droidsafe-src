@@ -199,6 +199,7 @@ private void unregisterFromSensor() {
      * SensorEventListener implementation.
      * Callbacks happen on the thread on which we registered - the WebCore thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.261 -0500", hash_original_method = "7AFE6EE6D4C15EE2C452A64798BB4D96", hash_generated_method = "F882DF3E0B42A2F33ACCDD3DBBCA5BAB")
     
 public void onSensorChanged(SensorEvent event) {
@@ -218,6 +219,7 @@ public void onSensorChanged(SensorEvent event) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.264 -0500", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "64E39387A039533466C0623BF8FBA522")
     
 public void onAccuracyChanged(Sensor sensor, int accuracy) {

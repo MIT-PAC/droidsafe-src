@@ -18,7 +18,7 @@ public class LinkMovementMethod extends ScrollingMovementMethod {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.253 -0500", hash_original_method = "E6667732641B60A61EDAFC105088D919", hash_generated_method = "3FAE972164C2BC90980C47B735216463")
     
 public static MovementMethod getInstance() {

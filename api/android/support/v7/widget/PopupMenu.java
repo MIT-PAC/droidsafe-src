@@ -15,7 +15,6 @@
  */
 package android.support.v7.widget;
 
-
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -106,6 +105,7 @@ public Menu getMenu() {
      *
      * @see #getMenu()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.662 -0400", hash_original_method = "DC5914476C6059640110F9C752C58A42", hash_generated_method = "5281F3419711F62B2291D1BB99E185DC")
         
 public MenuInflater getMenuInflater() {
@@ -168,6 +168,7 @@ public void setOnDismissListener(OnDismissListener listener) {
     /**
      * @hide
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.675 -0400", hash_original_method = "930C91C797D93F5ADF8BC528FF612F76", hash_generated_method = "C455005799C8DD0B355D773D8EE59884")
         
 public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
@@ -180,6 +181,7 @@ public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
     /**
      * @hide
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.677 -0400", hash_original_method = "86695013FCDBC0CB589820CBDB9A26C8", hash_generated_method = "DCD399C7DA41B413DC12E99156A0EE27")
         
 public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
@@ -191,6 +193,7 @@ public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
     /**
      * @hide
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.680 -0400", hash_original_method = "B948BC656B334434A5ABFAFD3C309E66", hash_generated_method = "A55AC62D984BED9F419AE79EBC42EAE5")
         
 public boolean onOpenSubMenu(MenuBuilder subMenu) {
@@ -216,6 +219,7 @@ public void onCloseSubMenu(SubMenuBuilder menu) {
     /**
      * @hide
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:50.684 -0400", hash_original_method = "BD3281B75359F57929C0B7D8E3BC0065", hash_generated_method = "C5DDE5ACC8940AA6876CE15F613929AA")
         
 public void onMenuModeChange(MenuBuilder menu) {

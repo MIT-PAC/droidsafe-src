@@ -36,6 +36,7 @@ public Object getParameter(final String name) {
         return param;
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.448 -0500", hash_original_method = "1FD1BD81C0FB0FA6F81246999A2D5591", hash_generated_method = "3F1A4F58012C127ECA7E5436D47FA4D2")
     

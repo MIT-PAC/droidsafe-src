@@ -550,7 +550,7 @@ protected void closeTransportLayer() throws IOException {
      * @see java.net.Socket#connect(SocketAddress)
      * method documentation for more information
      */
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.619 -0500", hash_original_method = "9C6F28F8DBD161E857A3A3894EC60A85", hash_generated_method = "D7D8C3012B2E8229BBDDE272C9BE3C3D")
     
 @Override
@@ -564,7 +564,7 @@ protected void closeTransportLayer() throws IOException {
      * @see java.net.Socket#connect(SocketAddress,int)
      * method documentation for more information
      */
-    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.622 -0500", hash_original_method = "E1471735BF64AF2EDFAE20D8138E7876", hash_generated_method = "FDB570B2CBC178F03F604F889C186F51")
     
 @Override

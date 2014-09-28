@@ -71,6 +71,8 @@ public static FileNameMap getFileNameMap() {
      * @return the guessed content type or {@code null} if the type could not be
      *         determined.
      */
+    @DSSink({DSSinkKind.NETWORK})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.154 -0500", hash_original_method = "CA2040B3E0B7CAC084654E1B2D2F55A4", hash_generated_method = "BCBA41FE6FDB3DB2762019574161AC70")
     
 public static String guessContentTypeFromName(String url) {
@@ -586,7 +588,7 @@ public long getExpiration() {
      * @return the value of the field at position {@code pos}.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.115 -0500", hash_original_method = "4AACA905FA1278AAB35ED38439896081", hash_generated_method = "C41CD50CE2AC5FE72F79E6188B82872F")
     
 public String getHeaderField(int pos) {
@@ -679,7 +681,7 @@ public void addRequestProperty(String field, String newValue) {
      * @return the value of the header field.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.127 -0500", hash_original_method = "565CBD8C4BDCB5C201FDE1F2CB76B55D", hash_generated_method = "C805EF3131A22E118686C0E6E02FD1F4")
     
 public String getHeaderField(String key) {
@@ -782,7 +784,7 @@ public long getIfModifiedSince() {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.138 -0500", hash_original_method = "AC7495DD6573AA12A9CB49C509EE6FD0", hash_generated_method = "FAAEE0050218252D181324FD0AF4D174")
     
 public InputStream getInputStream() throws IOException {
@@ -814,6 +816,7 @@ public long getLastModified() {
      * @throws IOException
      *             if no OutputStream could be created.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     
@@ -1084,6 +1087,7 @@ public void setUseCaches(boolean newValue) {
      * @throws IllegalArgumentException
      *             if the parameter {@code timeout} is less than zero.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSComment("no suspicious activity")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.191 -0500", hash_original_method = "6A558E4FD6643B6A2C9B278FD394A062", hash_generated_method = "8599EBB3492B35B0013C3C655134CE9E")

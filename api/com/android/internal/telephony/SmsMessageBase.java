@@ -406,6 +406,7 @@ protected void parseMessageBody() {
             //Synthesized constructor
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.512 -0500", hash_original_method = "0DAE77F81824922FC906417D2F567A0C", hash_generated_method = "BA24CF6DD454FA51B27C3BD5901CAF3D")
         

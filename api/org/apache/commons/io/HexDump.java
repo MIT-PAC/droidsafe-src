@@ -64,6 +64,7 @@ public class HexDump {
      * @throws IllegalArgumentException if the output stream is null
      */
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.620 -0400", hash_original_method = "472FEF71223996485998F30A706D4370", hash_generated_method = "328A6FCBACECA0A5D6BCAB9052A23BAE")
     
 public static void dump(byte[] data, long offset,
@@ -136,6 +137,7 @@ public static void dump(byte[] data, long offset,
      * @param value  the long value to be dumped
      * @return StringBuilder containing the dumped value.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.622 -0400", hash_original_method = "0A174ACDCB49B94165896CFEF9819231", hash_generated_method = "F5811F017433BFD7E87EDF7D2C287CBC")
     
 private static StringBuilder dump(StringBuilder _lbuffer, long value) {
@@ -153,6 +155,7 @@ private static StringBuilder dump(StringBuilder _lbuffer, long value) {
      * @param value  the byte value to be dumped
      * @return StringBuilder containing the dumped value.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.623 -0400", hash_original_method = "61EC9166C8D178CBF739391CDD148490", hash_generated_method = "C098EAE839A3218982538AE4F7B2246C")
     
 private static StringBuilder dump(StringBuilder _cbuffer, byte value) {

@@ -123,7 +123,7 @@ protected Enum(String name, int ordinal) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.924 -0500", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "45DBC829FBEEC28B377967506702788C")
     
 public final String name() {
@@ -240,7 +240,7 @@ public final int compareTo(E o) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.943 -0500", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "762014D63804DB3D4D80E909CA7FDE71")
     
 @SuppressWarnings("unchecked")

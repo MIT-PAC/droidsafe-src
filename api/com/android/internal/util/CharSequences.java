@@ -90,6 +90,7 @@ static void validate(int start, int end, int length) {
     /**
      * Compares two character sequences for equality.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.196 -0500", hash_original_method = "F74760D693CA529902BCB312B806950B", hash_generated_method = "ACE28FFFFD1910883FF056D2EADE1DDB")
     
 public static boolean equals(CharSequence a, CharSequence b) {

@@ -28,7 +28,6 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
-
 /**
  * Custom progress bar that shows a cycle of colors as widening circles that
  * overdraw each other. When finished, the bar is cleared from the inside out as
@@ -59,7 +58,6 @@ final class SwipeProgressBar {
 
     private static final Interpolator INTERPOLATOR = BakedBezierInterpolator.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.421 -0400", hash_original_field = "1D0586880E5CE88B4198E05E1760434E", hash_generated_field = "90B0608AB53F75A0AC388611FFB8AF86")
-
 
     private final Paint mPaint = new Paint();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.425 -0400", hash_original_field = "F92AFD9EDA36830E595BBAA6D099BED9", hash_generated_field = "56E1D5C7BA6E3BAC4C5A64E620BAA5F1")
@@ -94,7 +92,6 @@ final class SwipeProgressBar {
     private View mParent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.453 -0400", hash_original_field = "811AC12DD4794990F0DFD3FA5A6E3596", hash_generated_field = "E67C945376AAE00DB9440E3399BD8397")
 
-
     private Rect mBounds = new Rect();
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.456 -0400", hash_original_method = "806C8DF3C6CABC490E5F026062B91A07", hash_generated_method = "9EB0338E84F54877F53612FDEDB68F1B")
@@ -117,6 +114,7 @@ public SwipeProgressBar(View parent) {
      * @param color3 Integer representation of a color.
      * @param color4 Integer representation of a color.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.459 -0400", hash_original_method = "7F9B609EC8FBA7C973EA0757F6AB93AD", hash_generated_method = "7F9B609EC8FBA7C973EA0757F6AB93AD")
     
 void setColorScheme(int color1, int color2, int color3, int color4) {
@@ -131,6 +129,7 @@ void setColorScheme(int color1, int color2, int color3, int color4) {
      * gesture. and use this value to update the percentage of the trigger that
      * is shown.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.462 -0400", hash_original_method = "D1F759D4E358ACCBA9C55FF71495AA31", hash_generated_method = "D1F759D4E358ACCBA9C55FF71495AA31")
     
 void setTriggerPercentage(float triggerPercentage) {
@@ -142,6 +141,7 @@ void setTriggerPercentage(float triggerPercentage) {
     /**
      * Start showing the progress animation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.466 -0400", hash_original_method = "4E65DAFB1193371A1339F133EA2A54E6", hash_generated_method = "4E65DAFB1193371A1339F133EA2A54E6")
     
 void start() {
@@ -156,6 +156,7 @@ void start() {
     /**
      * Stop showing the progress animation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.468 -0400", hash_original_method = "382ABFEB62D05869A6A7FF602B7E67FB", hash_generated_method = "382ABFEB62D05869A6A7FF602B7E67FB")
     
 void stop() {
@@ -176,6 +177,7 @@ boolean isRunning() {
         return mRunning || mFinishTime > 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.477 -0400", hash_original_method = "8EAF1C7A73C1CC16F7F125D01A70BA7D", hash_generated_method = "C0F519FF880D92EBE68A88FBB767DFBB")
     
 void draw(Canvas canvas) {
@@ -282,6 +284,7 @@ void draw(Canvas canvas) {
         canvas.restoreToCount(restoreCount);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.481 -0400", hash_original_method = "E7A4B43D71942D4D63F7D4409B75393B", hash_generated_method = "5EE95540AB6F6884E4BB5C733AA4B456")
     
 private void drawTrigger(Canvas canvas, int cx, int cy) {
@@ -313,6 +316,7 @@ private void drawCircle(Canvas canvas, float cx, float cy, int color, float pct)
     /**
      * Set the drawing bounds of this SwipeProgressBar.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.487 -0400", hash_original_method = "61EEE649318014BFB8B1AEC725088AB4", hash_generated_method = "61EEE649318014BFB8B1AEC725088AB4")
     
 void setBounds(int left, int top, int right, int bottom) {

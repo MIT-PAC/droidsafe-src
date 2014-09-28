@@ -843,6 +843,7 @@ public boolean onGenericMotionEvent(MotionEvent event) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.143 -0500", hash_original_method = "4EF468126ED8F0323D4288D03F894270", hash_generated_method = "0B65BF87FD38A097377B2BB6269818B9")
     
 public void onWindowAttributesChanged(WindowManager.LayoutParams params) {
@@ -863,6 +864,7 @@ public void onContentChanged() {
 public void onWindowFocusChanged(boolean hasFocus) {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.149 -0500", hash_original_method = "D6E949EE9F0768F47016EEA4FC0347A8", hash_generated_method = "36EB06ADAB10E1C549B25F3883CC9A04")
     
 public void onAttachedToWindow() {
@@ -994,6 +996,7 @@ public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
     /**
      * @see Activity#onCreatePanelView(int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.167 -0500", hash_original_method = "8FB2859FE43E0606E21921E291A18BDA", hash_generated_method = "25B127EBCB57EFECBD95579CCC6F2900")
     
 public View onCreatePanelView(int featureId) {
@@ -1208,6 +1211,7 @@ public boolean onSearchRequested() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.211 -0500", hash_original_method = "5D1C131301342FA877A860064E23A1A6", hash_generated_method = "ADB9CD66379AA411334D133DA74C3784")
     
 public ActionMode onWindowStartingActionMode(ActionMode.Callback callback) {
@@ -1236,6 +1240,7 @@ public void onActionModeStarted(ActionMode mode) {
      * Note that if you override this method you should always call through
      * to the superclass implementation by calling super.onActionModeFinished(mode).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.215 -0500", hash_original_method = "9FD315390CEABDE5B2497E2EE78C905A", hash_generated_method = "BA03EF9EA31D4CA28509FF660B8525CD")
     
 public void onActionModeFinished(ActionMode mode) {
@@ -1371,7 +1376,7 @@ public void setCancelable(boolean flag) {
      */
     @DSComment("GUI, no security concern")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.238 -0500", hash_original_method = "BD7DFECDBEA3F81451B9076CEFC17564", hash_generated_method = "FFDB8DA5023282815789B2E8846CC855")
     
 public void setCanceledOnTouchOutside(boolean cancel) {

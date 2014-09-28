@@ -72,12 +72,14 @@ public void notifyDataSetInvalidated() {
         mDataSetObservable.notifyInvalidated();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.489 -0500", hash_original_method = "DC1745DFF85763BBC0B3711D531FD60B", hash_generated_method = "9EDAFF54639C3972375E50BCC11C975C")
     
 public boolean areAllItemsEnabled() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.491 -0500", hash_original_method = "C1B9753B52C20D50833727AFD33E53F1", hash_generated_method = "F46CED3B97A44DE88F852585D2A5CACA")
     
 public boolean isEnabled(int position) {
@@ -106,6 +108,7 @@ public int getViewTypeCount() {
         return 1;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.500 -0500", hash_original_method = "837A179B327E763126CB6909C28E4F2B", hash_generated_method = "CD8A3F59B7B104167347DEF141D26EA8")
     
 public boolean isEmpty() {

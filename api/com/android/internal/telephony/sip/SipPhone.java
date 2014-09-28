@@ -122,6 +122,7 @@ public String getSipUri() {
         return mProfile.getUriString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.283 -0500", hash_original_method = "D3C5F9763476A8D0E8037A369F8C496C", hash_generated_method = "5F4569D3DF7F76DD854FA19338CCE4F7")
     
 public boolean equals(SipPhone phone) {

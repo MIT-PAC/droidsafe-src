@@ -71,7 +71,7 @@ public static void setDefault(SSLContext sslContext) {
      *             NoSuchAlgorithmException as in 1.4 release)
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.940 -0500", hash_original_method = "290AE10C7E5CA88B73DF82087A6F1FF6", hash_generated_method = "BF2C0057FB297CFA34EBDA8AFBA00B97")
     
 public static SSLContext getInstance(String protocol) throws NoSuchAlgorithmException {
@@ -101,7 +101,7 @@ public static SSLContext getInstance(String protocol) throws NoSuchAlgorithmExce
      *             NoSuchAlgorithmException as in 1.4 release)
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.942 -0500", hash_original_method = "FB566E7CF465D4D2FD3830A55B204330", hash_generated_method = "7A73B622B29BDE0EDFDF42DADE3800F2")
     
 public static SSLContext getInstance(String protocol, String provider)
@@ -136,7 +136,7 @@ public static SSLContext getInstance(String protocol, String provider)
      *             NoSuchAlgorithmException as in 1.4 release)
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.945 -0500", hash_original_method = "391F8D562A0F9200AE7CEB2E407E9313", hash_generated_method = "AF9B106B072669656950AD6A135A0807")
     
 public static SSLContext getInstance(String protocol, Provider provider)
@@ -239,7 +239,7 @@ public final void init(KeyManager[] km, TrustManager[] tm, SecureRandom sr)
      * @return a socket factory for this instance.
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SECURITY_INFO})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.964 -0500", hash_original_method = "B0765B951456A1F8D049DA95DEF67C61", hash_generated_method = "AE7AC5E9642A89A29A96C5CF6A2BF2BD")
     
 public final SSLSocketFactory getSocketFactory() {

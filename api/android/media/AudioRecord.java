@@ -443,7 +443,7 @@ private void audioBuffSizeCheck(int audioBufferSize) {
      * The object can no longer be used and the reference should be set to null
      * after a call to release()
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.758 -0500", hash_original_method = "6BAFEF4B56071398EF886C8BE9B37DAC", hash_generated_method = "0CB0E51B886DD97EA89E4DF7048B042A")
     
 public void release() {
@@ -524,6 +524,7 @@ public int getChannelCount() {
      * @see AudioRecord#STATE_INITIALIZED
      * @see AudioRecord#STATE_UNINITIALIZED
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.805 -0500", hash_original_method = "10E9373648D5DF4EE43B4904732E3886", hash_generated_method = "4C50D1866B5E804CF0B05EFBD6788B97")
     
 public int getState() {
@@ -602,7 +603,7 @@ public void startRecording()
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 13:40:28.854 -0500", hash_original_method = "DCED7C3D485614A25886EC95E815652B", hash_generated_method = "43A56A783FA9D3770C7E7A10A09AF11F")
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
 public void stop()
     throws IllegalStateException {
         if (mState != STATE_INITIALIZED) {

@@ -57,6 +57,7 @@ public class Element {
      * Gets the child element with the given name. Uses an empty string as the
      * namespace.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public Element getChild(String localName) {
         return getChild("", localName);
     }
@@ -64,6 +65,7 @@ public class Element {
     /**
      * Gets the child element with the given name.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public Element getChild(String uri, String localName) {
         if (endTextElementListener != null) {
             throw new IllegalStateException("This element already has an end"
@@ -83,6 +85,7 @@ public class Element {
      * time if the specified child is missing. This helps you ensure that your
      * listeners are called.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public Element requireChild(String localName) {
         return requireChild("", localName);
     }
@@ -92,6 +95,7 @@ public class Element {
      * {@link org.xml.sax.SAXException} at parsing time if the specified child
      * is missing. This helps you ensure that your listeners are called.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public Element requireChild(String uri, String localName) {
         Element child = getChild(uri, localName);
 
@@ -110,6 +114,7 @@ public class Element {
     /**
      * Sets start and end element listeners at the same time.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public void setElementListener(ElementListener elementListener) {
         setStartElementListener(elementListener);
         setEndElementListener(elementListener);
@@ -126,6 +131,7 @@ public class Element {
     /**
      * Sets a listener for the start of this element.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public void setStartElementListener(
             StartElementListener startElementListener) {
         if (this.startElementListener != null) {
@@ -149,6 +155,7 @@ public class Element {
     /**
      * Sets a listener for the end of this text element.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public void setEndTextElementListener(
             EndTextElementListener endTextElementListener) {
         if (this.endTextElementListener != null) {

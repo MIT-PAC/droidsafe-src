@@ -23,6 +23,7 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
      * @throws IOException
      *             if some I/O error occurs.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.920 -0500", hash_original_method = "FF19FCAA1AEEA14F76CE4D3DFB2AA57C", hash_generated_method = "9FAF3ABF2C27F02B828E01EB0D389166")
     
 public static DatagramChannel open() throws IOException {
@@ -110,7 +111,7 @@ public abstract boolean isConnected();
      *             if some other I/O error occurs.
      */
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.ABSTRACT_METHOD)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.934 -0500", hash_original_method = "0E4CC7391FC9E92A64FAEFA761F4AAC5", hash_generated_method = "1CE4307E43A0C02A4C52A1D038C4A2B1")
     
 public abstract DatagramChannel connect(SocketAddress address)
@@ -249,7 +250,7 @@ public abstract int send(ByteBuffer source, SocketAddress address) throws IOExce
      */
     @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.IO)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.943 -0500", hash_original_method = "84FBB9D1BC5805EDADF4DE7016C44EDC", hash_generated_method = "5540495000FF3F1891B3C274FE56D027")
     
 public abstract int read(ByteBuffer target) throws IOException;
@@ -294,7 +295,7 @@ public abstract int read(ByteBuffer target) throws IOException;
      */
     @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.IO)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.946 -0500", hash_original_method = "D81AA9F357BA1FF198462A59CEE5AF8B", hash_generated_method = "8EE18FA83203D9DC776A8A418E68592C")
     
 public abstract long read(ByteBuffer[] targets, int offset, int length)
@@ -329,7 +330,7 @@ public abstract long read(ByteBuffer[] targets, int offset, int length)
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSpec(DSCat.IO)
+    @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.949 -0500", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "ED00F097F990FA72EFB9F785613CC911")
     
@@ -364,9 +365,9 @@ public synchronized final long read(ByteBuffer[] targets)
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSink({DSSinkKind.IO})
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.INTERNET)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.951 -0500", hash_original_method = "1C9E91C0F072B678D6E4CA1EF7282EDC", hash_generated_method = "CBB72B52B431F1EA5E7EE6413675146F")
     
 public abstract int write(ByteBuffer source) throws IOException;
@@ -409,7 +410,7 @@ public abstract int write(ByteBuffer source) throws IOException;
      * @throws IOException
      *             some other I/O error occurs.
      */
-    @DSSink({DSSinkKind.IO})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.954 -0500", hash_original_method = "0318A187146637F0F5913A32559EC3D8", hash_generated_method = "57D37CA3F87B9F42073B88D7CA95CEF6")
@@ -447,7 +448,7 @@ public abstract long write(ByteBuffer[] sources, int offset, int length)
      *             some other I/O error occurs.
      */
     @DSSpec(DSCat.IO)
-    @DSSink({DSSinkKind.IO})
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.956 -0500", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "80AEBA66643B1ECF4D7AF6ADCD7A806E")
     
 public synchronized final long write(ByteBuffer[] sources)

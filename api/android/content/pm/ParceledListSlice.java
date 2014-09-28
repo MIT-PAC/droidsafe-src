@@ -23,7 +23,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
     @SuppressWarnings("unchecked")
     public static final Parcelable.Creator<ParceledListSlice> CREATOR =
             new Parcelable.Creator<ParceledListSlice>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.755 -0500", hash_original_method = "8E491D44C01D53B45589AFC0F51C5901", hash_generated_method = "F2CB1E3ED7E70E38911746D19D4C2C4E")
         
 public ParceledListSlice createFromParcel(Parcel in) {

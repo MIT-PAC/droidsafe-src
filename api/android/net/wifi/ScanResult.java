@@ -13,7 +13,7 @@ public class ScanResult implements Parcelable {
 
     public static final Creator<ScanResult> CREATOR =
         new Creator<ScanResult>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.202 -0500", hash_original_method = "BC0BC21C35AE7AEEA6D20EE623F1DB0A", hash_generated_method = "B805C8A062C30AB6451CCBD036279207")
         
@@ -67,6 +67,7 @@ public ScanResult(String SSID, String BSSID, String caps, int level, int frequen
         //networkConfig = null;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.195 -0500", hash_original_method = "3BF3B5ECD6A260296AD88686E08D9EA2", hash_generated_method = "9D61867682DEAA67854014FC90C1C4CF")
     

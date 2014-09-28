@@ -51,7 +51,8 @@ public BasicStatusLine(final ProtocolVersion version, int statusCode,
     /**
      * @return the Status-Code
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.472 -0500", hash_original_method = "95EA9BAD16482D8308F9206838B315E7", hash_generated_method = "5DD64D66E1754A99091F8C05EA6F76CC")
     
 public int getStatusCode() {

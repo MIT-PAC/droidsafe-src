@@ -171,7 +171,7 @@ public void dismissAllowingStateLoss() {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.635 -0500", hash_original_method = "D69B3047ADB8F155BAC29C903FDECC6E", hash_generated_method = "D69B3047ADB8F155BAC29C903FDECC6E")
     
 void dismissInternal(boolean allowStateLoss) {
@@ -206,6 +206,7 @@ public Dialog getDialog() {
         return mDialog;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.639 -0500", hash_original_method = "EDA2E352252479FB515DBD558139BFDA", hash_generated_method = "70C10CD453A270D9A3D6BB0351C256D5")
     
 public int getTheme() {
@@ -269,6 +270,7 @@ public boolean getShowsDialog() {
         return mShowsDialog;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.650 -0500", hash_original_method = "4F6E3ACB3030C4724A44B02F1B4FB1BA", hash_generated_method = "409F3CC8703F9FF26D31058EF49DCA85")
     
 @Override
@@ -281,6 +283,7 @@ public boolean getShowsDialog() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.653 -0500", hash_original_method = "2C281285ACC0A61C67E7A68F54E6F98C", hash_generated_method = "F04C9D6168EC15DEF59998ACE39A6657")
     
 @Override
@@ -294,6 +297,7 @@ public boolean getShowsDialog() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.656 -0500", hash_original_method = "B4FC504618F0AC1ACE07BF1B45E5B9CF", hash_generated_method = "9347B65955CA212EDA6B1AB62C4BBD9E")
     
 @Override
@@ -313,6 +317,7 @@ public boolean getShowsDialog() {
     }
 
     /** @hide */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.660 -0500", hash_original_method = "EC067D1F5D74A2844592729119AA0EAB", hash_generated_method = "E54FE9B80EB98CF6B0844591E9573EA1")
     
 @Override
@@ -362,6 +367,7 @@ public boolean getShowsDialog() {
      * 
      * @return Return a new Dialog instance to be displayed by the Fragment.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.662 -0500", hash_original_method = "94CB11021A94D8409376FA3A852A41E9", hash_generated_method = "8854F20A927D4731539FCCDAD7E493F4")
     
 public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -385,6 +391,7 @@ public void onDismiss(DialogInterface dialog) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.669 -0500", hash_original_method = "3427E371293FB144BBDBE8066115235E", hash_generated_method = "0FFD022C4374DE4DC0DFA36DE9F7B604")
     
 @Override
@@ -414,6 +421,7 @@ public void onDismiss(DialogInterface dialog) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.672 -0500", hash_original_method = "CFA39F554612E24A4614D286AB70C801", hash_generated_method = "F4CC27144B9864F5A13121D556F3D501")
     
 @Override
@@ -425,6 +433,7 @@ public void onDismiss(DialogInterface dialog) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.675 -0500", hash_original_method = "36AA220233F5FF78B8725588D009C1D9", hash_generated_method = "E01E9F7B4265B087304DB47188E5C0EA")
     
 @Override
@@ -453,6 +462,7 @@ public void onDismiss(DialogInterface dialog) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.678 -0500", hash_original_method = "17D046BD7350E945F7CAD60E8CDA42D0", hash_generated_method = "F4581EEBAF078137794FB0DF1603F402")
     
 @Override
@@ -466,6 +476,7 @@ public void onDismiss(DialogInterface dialog) {
     /**
      * Remove dialog.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.680 -0500", hash_original_method = "A28646D8654C968065CCEE80C360B171", hash_generated_method = "5BDF40E1FD876DCB9A201D9F7020DAE4")
     
 @Override

@@ -74,6 +74,7 @@ public class NotificationCompat {
     }
 
     static class NotificationCompatImplBase implements NotificationCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:03.983 -0500", hash_original_method = "5D4FEB2788134BE90B1C212DC752B6F1", hash_generated_method = "23EFE036AADA50F55C9E0D020C533D80")
         
 public Notification build(Builder b) {
@@ -87,7 +88,8 @@ public Notification build(Builder b) {
             return result;
         }
 
-		@Override
+		@DSSafe(DSCat.SAFE_LIST)
+        @Override
 		public Bundle getExtras(Notification n) {
 			// TODO Auto-generated method stub
 			Bundle b = new Bundle();
@@ -96,14 +98,16 @@ public Notification build(Builder b) {
 			return b;
 		}
 
-		@Override
+		@DSSafe(DSCat.SAFE_LIST)
+        @Override
 		public int getActionCount(Notification n) {
 			// TODO Auto-generated method stub
 			return (getTaintInt() + n.getTaintInt() + n.sound.getTaintInt() +
 					n.tickerText.getTaintInt());
 		}
 
-		@Override
+		@DSSafe(DSCat.SAFE_LIST)
+        @Override
 		public Action getAction(Notification n, int actionIndex) {
 			// TODO Auto-generated method stub
 			Action a = new Action(DSOnlyType.DONTCARE);
@@ -111,7 +115,8 @@ public Notification build(Builder b) {
 			return a;
 		}
 
-		@Override
+		@DSSafe(DSCat.SAFE_LIST)
+        @Override
 		public Action[] getActionsFromParcelableArrayList(
 				ArrayList<Parcelable> parcelables) {
 			// TODO Auto-generated method stub
@@ -130,13 +135,15 @@ public Notification build(Builder b) {
 			return null;
 		}
 
-		@Override
+		@DSSafe(DSCat.SAFE_LIST)
+        @Override
 		public boolean getLocalOnly(Notification n) {
 			// TODO Auto-generated method stub
 			return DSUtils.toTaintBoolean(getActionCount(n));
 		}
 
-		@Override
+		@DSSafe(DSCat.SAFE_LIST)
+        @Override
 		public String getGroup(Notification n) {
 			// TODO Auto-generated method stub
 			String s = new String();
@@ -144,13 +151,15 @@ public Notification build(Builder b) {
 			return s;
         }
 
-		@Override
+		@DSSafe(DSCat.SAFE_LIST)
+        @Override
 		public boolean isGroupSummary(Notification n) {
 			// TODO Auto-generated method stub
 			return DSUtils.toTaintBoolean(getActionCount(n));
 		}
 
-		@Override
+		@DSSafe(DSCat.SAFE_LIST)
+        @Override
 		public String getSortKey(Notification n) {
 			// TODO Auto-generated method stub
 			String s = new String();
@@ -160,6 +169,7 @@ public Notification build(Builder b) {
     }
 
     static class NotificationCompatImplHoneycomb extends NotificationCompatImplBase {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.036 -0500", hash_original_method = "67C04373CE66FA99B8198774A5156A6F", hash_generated_method = "FE32B9CD306B441DF5F253E294365B6E")
         
 public Notification build(Builder b) {
@@ -170,6 +180,7 @@ public Notification build(Builder b) {
     }
 
     static class NotificationCompatImplIceCreamSandwich extends NotificationCompatImplBase {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.041 -0500", hash_original_method = "DFC79958C39351F890FF4E250FFE701D", hash_generated_method = "10A783334C83A5CD0767ED3C64B63D08")
         
 public Notification build(Builder b) {
@@ -324,6 +335,7 @@ public Builder setUsesChronometer(boolean b) {
          *
          * @param icon A resource ID in the application's package of the drawble to use.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.087 -0500", hash_original_method = "FAFB4ACB08F86EBEED8E9D5D537574CE", hash_generated_method = "F771CB8A0DB101534EAD632FF9B60966")
         
 public Builder setSmallIcon(int icon) {
@@ -341,6 +353,7 @@ public Builder setSmallIcon(int icon) {
          *
          * @see android.graphics.drawable.LevelListDrawable
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.089 -0500", hash_original_method = "9B9483551BCCDB68D2A1FB9E38FCAFD8", hash_generated_method = "FE9E4E81D530B350C895080F6935EE38")
         
 public Builder setSmallIcon(int icon, int level) {
@@ -352,6 +365,7 @@ public Builder setSmallIcon(int icon, int level) {
         /**
          * Set the title (first row) of the notification, in a standard notification.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.092 -0500", hash_original_method = "51D215D9B594EB5434D1A4893B0851B6", hash_generated_method = "A24D5A5914321447B8D2056822EB1FA2")
         
 public Builder setContentTitle(CharSequence title) {
@@ -362,6 +376,7 @@ public Builder setContentTitle(CharSequence title) {
         /**
          * Set the text (second row) of the notification, in a standard notification.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.095 -0500", hash_original_method = "3B85C73BAA4531891B097F4FBFA7845D", hash_generated_method = "9A0C65143F929FA192B834775CCB4487")
         
 public Builder setContentText(CharSequence text) {
@@ -438,6 +453,7 @@ public Builder setContent(RemoteViews views) {
          * read {@link Notification#contentIntent Notification.contentIntent} for
          * how to correctly use this.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.106 -0500", hash_original_method = "13AF9850EB916E3E1CD09235309F6318", hash_generated_method = "35B80BF912DA7A0FF8C66DE39967BF3A")
         
 public Builder setContentIntent(PendingIntent intent) {
@@ -604,6 +620,7 @@ public Builder setOnlyAlertOnce(boolean onlyAlertOnce) {
          * set with {@link #setDeleteIntent} will be broadcast when the notification
          * is canceled.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.136 -0500", hash_original_method = "257247F2DC11FC5C55BDB7D552514CB8", hash_generated_method = "806749D00FE837AC05D93A05ACCC4C98")
         
 public Builder setAutoCancel(boolean autoCancel) {
@@ -631,6 +648,7 @@ public Builder setDefaults(int defaults) {
             return this;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.140 -0500", hash_original_method = "A0A3FE19F4004E74ADDA6928E78F09B0", hash_generated_method = "A46F51C29A192F0C1010201B8C7BC827")
         
 private void setFlag(int mask, boolean value) {
@@ -690,6 +708,7 @@ public Builder addAction(int icon, CharSequence title, PendingIntent intent) {
          *
          * @param style Object responsible for modifying the notification style.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.147 -0500", hash_original_method = "406467D1A4DC4F76367925F19B2DC0D5", hash_generated_method = "D91978C69CA35AC51CCC000004D985CD")
         
 public Builder setStyle(Style style) {
@@ -717,6 +736,7 @@ public Builder setStyle(Style style) {
          * Combine all of the options that have been set and return a new {@link Notification}
          * object.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.151 -0500", hash_original_method = "3A19F0003F1629F770DB1A53DA663D91", hash_generated_method = "E4631F1A36C2C860AC2AB90E40EFABB8")
         
 public Notification build() {
@@ -746,6 +766,7 @@ public Notification build() {
 
         boolean mSummaryTextSet = false;
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:04.332 -0500", hash_original_method = "4E1C32047BCF7D8F068B78C0497D3581", hash_generated_method = "081150EA520A397F53CAE43E2D1E4362")
         
 public void setBuilder(Builder builder) {
@@ -1028,9 +1049,8 @@ public Action(int icon_, CharSequence title_, PendingIntent intent_) {
         }
     }
 
-
-
     static class NotificationCompatImplJellybean extends NotificationCompatImplBase {
+        @DSSafe(DSCat.SAFE_LIST)
         public Notification build(Builder b) {
             NotificationCompatJellybean jbBuilder = new NotificationCompatJellybean(
                     b.mContext, b.mNotification, b.mContentTitle, b.mContentText, b.mContentInfo,
@@ -1067,9 +1087,7 @@ public Action(int icon_, CharSequence title_, PendingIntent intent_) {
         }
     }
 
-
-
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
 	public static Bundle getExtras(Notification notification) {
 		// TODO Auto-generated method stub
 		Bundle b = new Bundle();

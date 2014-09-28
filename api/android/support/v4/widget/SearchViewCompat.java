@@ -55,6 +55,7 @@ public class SearchViewCompat {
 
     static class SearchViewCompatStubImpl implements SearchViewCompatImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.689 -0500", hash_original_method = "601679CFAB3495EA7ECC75098CF37042", hash_generated_method = "01B8D925AF84FA2F5F4F192CDC4B9979")
         
 @Override
@@ -62,24 +63,28 @@ public class SearchViewCompat {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.691 -0500", hash_original_method = "B76D0F0AD70FBD993AA054AC966C0226", hash_generated_method = "C6C7B70F2A7F83E0FCF90D4B7C995C4B")
         
 @Override
         public void setSearchableInfo(View searchView, ComponentName searchableComponent) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.692 -0500", hash_original_method = "A525123A13CFF6A0AFCFA2982BFEE16A", hash_generated_method = "CB00AC21F52D4D35B43E9A48EDE970B5")
         
 @Override
         public void setImeOptions(View searchView, int imeOptions) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.693 -0500", hash_original_method = "6D0E10A0E31C98A87AF3C581EEADAA4A", hash_generated_method = "6B733800A136597907E8848068C55F27")
         
 @Override
         public void setInputType(View searchView, int inputType) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.694 -0500", hash_original_method = "6491A9091D249E5011F8DD599AEB3CCA", hash_generated_method = "006E3F7ABE0A6FBEE4310B24753538C9")
         
 @Override
@@ -87,12 +92,14 @@ public class SearchViewCompat {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.695 -0500", hash_original_method = "567DC5C1492382FEB616EED2C402A4F7", hash_generated_method = "1E5C85C0F161370AEA9DB20B31B995EC")
         
 @Override
         public void setOnQueryTextListener(Object searchView, Object listener) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.696 -0500", hash_original_method = "991A38E7B52D21C9B1D5F35AE238AB09", hash_generated_method = "11EEFE792D32D2754EF8ADABE79336BC")
         
 @Override
@@ -100,12 +107,14 @@ public class SearchViewCompat {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.697 -0500", hash_original_method = "76971B325212E9DD3D41974ACD70434E", hash_generated_method = "9000F76A969149C547059AD76BFD3A52")
         
 @Override
         public void setOnCloseListener(Object searchView, Object listener) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.698 -0500", hash_original_method = "C78964F5320EF9565DC8DC327FD894B2", hash_generated_method = "D957D3B53A2A7F2A425612B2CBD9C8A1")
         
 @Override
@@ -113,24 +122,28 @@ public class SearchViewCompat {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.699 -0500", hash_original_method = "D4A58D7E3132BD0AB88560C3E97D1D57", hash_generated_method = "F084A60A81158B2C92566BCFFDD07D4C")
         
 @Override
         public void setQuery(View searchView, CharSequence query, boolean submit) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.701 -0500", hash_original_method = "D7D6366C0A83FD1B8E7FCE8071B745C2", hash_generated_method = "344F4D461B3BC92655604CE355A22306")
         
 @Override
         public void setQueryHint(View searchView, CharSequence hint) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.702 -0500", hash_original_method = "10E7D23740AED00E2BC47599B22C08AF", hash_generated_method = "126695CCFF1D339F0F450BF85111B8BD")
         
 @Override
         public void setIconified(View searchView, boolean iconify) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.704 -0500", hash_original_method = "7E6006EDBD3BA325BC55954C51734681", hash_generated_method = "77F5F1E8946C454017A414F0CB404CFF")
         
 @Override
@@ -138,12 +151,14 @@ public class SearchViewCompat {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.708 -0500", hash_original_method = "DE75EC18DF3FA78E36F41AA5C6418913", hash_generated_method = "AE84465BB0A1010E51FDFF16400C1C7E")
         
 @Override
         public void setSubmitButtonEnabled(View searchView, boolean enabled) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.710 -0500", hash_original_method = "7EE2BA9E232D2C3B0D88E92BC4D8764B", hash_generated_method = "A9D2BB651671A2F51F406A3F8A815F7F")
         
 @Override
@@ -151,12 +166,14 @@ public class SearchViewCompat {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.712 -0500", hash_original_method = "914624A6E648AEE67FC473A87D6DBD91", hash_generated_method = "8D7AF58102186020240BE07AA75638B0")
         
 @Override
         public void setQueryRefinementEnabled(View searchView, boolean enable) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.714 -0500", hash_original_method = "5A3B9DB7D37066F146E5F4C39F86F3AF", hash_generated_method = "805E5C5118F8E621A716A9C2544BAF2C")
         
 @Override
@@ -164,6 +181,7 @@ public class SearchViewCompat {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:38.716 -0500", hash_original_method = "67C28A2BB127572D04E6FF76F952CC8C", hash_generated_method = "9E08AFAB2E2B11DBCBF59213B0B83E36")
         
 @Override
@@ -173,6 +191,7 @@ public class SearchViewCompat {
 
     static class SearchViewCompatHoneycombImpl extends SearchViewCompatStubImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.052 -0500", hash_original_method = "3F3313353AF86074CB948A37F97575DD", hash_generated_method = "3CB9C7596757F706442476256CB38590")
         
 @Override
@@ -180,6 +199,7 @@ public class SearchViewCompat {
             return SearchViewCompatHoneycomb.newSearchView(context);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.055 -0500", hash_original_method = "5A0E3D1DA8EFCC40B67127D1FD734E5B", hash_generated_method = "BD2414FCF350A50ABC1012B92B5147FD")
         
 @Override
@@ -187,19 +207,22 @@ public class SearchViewCompat {
             SearchViewCompatHoneycomb.setSearchableInfo(searchView, searchableComponent);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.063 -0500", hash_original_method = "18C32C37E3B5529BB32FD609E2137238", hash_generated_method = "52341BBC91F6037BA4D1E4A474E18A73")
         
 @Override
         public Object newOnQueryTextListener(final OnQueryTextListenerCompat listener) {
             return SearchViewCompatHoneycomb.newOnQueryTextListener(
                     new SearchViewCompatHoneycomb.OnQueryTextListenerCompatBridge() {
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:53.446 -0500", hash_original_method = "D5F2F74DAAAF60E7B51CA03B684B3089", hash_generated_method = "1DB8840D9C498F9459B22BB5198B80AD")
+                        @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:53.446 -0500", hash_original_method = "D5F2F74DAAAF60E7B51CA03B684B3089", hash_generated_method = "1DB8840D9C498F9459B22BB5198B80AD")
                 
 @Override
                         public boolean onQueryTextSubmit(String query) {
                             return listener.onQueryTextSubmit(query);
                         }
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:53.447 -0500", hash_original_method = "77B59A3AEE38561B3E73A13D8322A844", hash_generated_method = "C057BA7A4D0B5F051C56A7287662DB1B")
+                        @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:53.447 -0500", hash_original_method = "77B59A3AEE38561B3E73A13D8322A844", hash_generated_method = "C057BA7A4D0B5F051C56A7287662DB1B")
                 
 @Override
                         public boolean onQueryTextChange(String newText) {
@@ -208,6 +231,7 @@ public class SearchViewCompat {
                     });
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.066 -0500", hash_original_method = "B8BB88E51187575EF90C6D368DC7FCD7", hash_generated_method = "7D475CF0E72628BC9C68D9DD89FE025D")
         
 @Override
@@ -215,13 +239,15 @@ public class SearchViewCompat {
             SearchViewCompatHoneycomb.setOnQueryTextListener(searchView, listener);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.068 -0500", hash_original_method = "92007614B8ED41E82FC43932A32D1E39", hash_generated_method = "C64ADE51723ECDFFDEA23FE36C4E3BA5")
         
 @Override
         public Object newOnCloseListener(final OnCloseListenerCompat listener) {
             return SearchViewCompatHoneycomb.newOnCloseListener(
                     new SearchViewCompatHoneycomb.OnCloseListenerCompatBridge() {
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:53.452 -0500", hash_original_method = "CA2D763980D715A5D729671C516D0328", hash_generated_method = "BE64E6081B382AA002DA5E6A96D8E0F5")
+                        @DSSafe(DSCat.SAFE_LIST)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:53.452 -0500", hash_original_method = "CA2D763980D715A5D729671C516D0328", hash_generated_method = "BE64E6081B382AA002DA5E6A96D8E0F5")
                 
 @Override
                         public boolean onClose() {
@@ -230,6 +256,7 @@ public class SearchViewCompat {
                     });
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.069 -0500", hash_original_method = "33CF917C5FB6C1190F3CD89A1AC3F440", hash_generated_method = "BD52E73F1CB550D8AE3C4FC175A9D46A")
         
 @Override
@@ -237,6 +264,7 @@ public class SearchViewCompat {
             SearchViewCompatHoneycomb.setOnCloseListener(searchView, listener);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.071 -0500", hash_original_method = "D851CACDEB3C940AA10E2B0D392D9759", hash_generated_method = "651EC28BA23C12CDE814EE7B7678D821")
         
 @Override
@@ -244,6 +272,7 @@ public class SearchViewCompat {
             return SearchViewCompatHoneycomb.getQuery(searchView);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.072 -0500", hash_original_method = "0D5A26A203A9BAA27F5EEBD5C0017813", hash_generated_method = "78D5CF153AF2A3AE8F60EC8ABB0D657A")
         
 @Override
@@ -251,6 +280,7 @@ public class SearchViewCompat {
             SearchViewCompatHoneycomb.setQuery(searchView, query, submit);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.074 -0500", hash_original_method = "B87B5CF7E9151A87B09469A27DF643FD", hash_generated_method = "4C80DDC7565CD2D2735B34EF7D96184F")
         
 @Override
@@ -258,6 +288,7 @@ public class SearchViewCompat {
             SearchViewCompatHoneycomb.setQueryHint(searchView, hint);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.078 -0500", hash_original_method = "9C3E9BA2F0566AF2F9531703E3823A38", hash_generated_method = "F5C2C739350F47132C62E9C62CE1D3D8")
         
 @Override
@@ -265,6 +296,7 @@ public class SearchViewCompat {
             SearchViewCompatHoneycomb.setIconified(searchView, iconify);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.080 -0500", hash_original_method = "499F19F788FB9FCA57B43F074A0B33F1", hash_generated_method = "B034AC410323BBA2E90ECC4B8A1E323C")
         
 @Override
@@ -272,6 +304,7 @@ public class SearchViewCompat {
             return SearchViewCompatHoneycomb.isIconified(searchView);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.083 -0500", hash_original_method = "00871882DA152846CA80C87FA933E401", hash_generated_method = "8F708A0FA22964E0207E21B7BB89A666")
         
 @Override
@@ -279,6 +312,7 @@ public class SearchViewCompat {
             SearchViewCompatHoneycomb.setSubmitButtonEnabled(searchView, enabled);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.084 -0500", hash_original_method = "F08FB3F15210977E4A1E7BE44E4A6859", hash_generated_method = "7074AADCE5135A48453221D7155C55A0")
         
 @Override
@@ -286,6 +320,7 @@ public class SearchViewCompat {
             return SearchViewCompatHoneycomb.isSubmitButtonEnabled(searchView);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.085 -0500", hash_original_method = "D99029AF60F285ED018BAE7C09721F77", hash_generated_method = "1871DF7CF0E50C6497DC143C5311C7B2")
         
 @Override
@@ -293,6 +328,7 @@ public class SearchViewCompat {
             SearchViewCompatHoneycomb.setQueryRefinementEnabled(searchView, enable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.087 -0500", hash_original_method = "34C1A5C4269609F773E016BCD54C8C30", hash_generated_method = "1EDE1B42AEFA6EE88CAF9DA2FF33C643")
         
 @Override
@@ -300,6 +336,7 @@ public class SearchViewCompat {
             return SearchViewCompatHoneycomb.isQueryRefinementEnabled(searchView);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.088 -0500", hash_original_method = "0B3DB0DB5CE6B6A3C8D9205F6E748CEC", hash_generated_method = "64BD8D3BA27A4F0DC99BE90C7C10DB72")
         
 @Override
@@ -310,6 +347,7 @@ public class SearchViewCompat {
 
     static class SearchViewCompatIcsImpl extends SearchViewCompatHoneycombImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.095 -0500", hash_original_method = "E776F8434C2C960D2EDCCFDB94C38427", hash_generated_method = "3663E27CD32F31005802F5AFBE872EA4")
         
 @Override
@@ -317,6 +355,7 @@ public class SearchViewCompat {
             return SearchViewCompatIcs.newSearchView(context);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.097 -0500", hash_original_method = "85122B8AF025347595EE2D135C1A521D", hash_generated_method = "91E5B5F24FF22A03F33ECEAB6A5AC106")
         
 @Override
@@ -324,6 +363,7 @@ public class SearchViewCompat {
             SearchViewCompatIcs.setImeOptions(searchView, imeOptions);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.099 -0500", hash_original_method = "A66B6FC8B94DB6A5AEC3F5811B6DB9C8", hash_generated_method = "3A1B275BA70A898CFC843D5A38DD5D16")
         
 @Override
@@ -456,6 +496,7 @@ public OnQueryTextListenerCompat() {
          * @return true if the query has been handled by the listener, false to let the
          * SearchView perform the default action.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.121 -0500", hash_original_method = "3B39F743641514621D841B3390715E91", hash_generated_method = "CA0DBD656427F9DD7DF29C2CA8E65819")
         
 public boolean onQueryTextSubmit(String query) {
@@ -470,6 +511,7 @@ public boolean onQueryTextSubmit(String query) {
          * @return false if the SearchView should perform the default action of showing any
          * suggestions if available, true if the action was handled by the listener.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.122 -0500", hash_original_method = "B6F5742F5D55A0164A53BADD48E4641B", hash_generated_method = "3C78693A2A590CC4D13D3E1995175A29")
         
 public boolean onQueryTextChange(String newText) {
@@ -511,6 +553,7 @@ public OnCloseListenerCompat() {
          * @return true if the listener wants to override the default behavior of clearing the
          * text field and dismissing it, false otherwise.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:39.136 -0500", hash_original_method = "D2873CA669226F3F5383EED3E4A66C2F", hash_generated_method = "CF17A1D5C75D2718D1584D512FBC8316")
         
 public boolean onClose() {

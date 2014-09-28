@@ -113,8 +113,8 @@ public DriveId getDriveId()
         return Hz;
     }
 
-    @DSSource({DSSourceKind.GOOGLE_SERVICES})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind. GOOGLE_SERVICES})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.989 -0400", hash_original_method = "D8B6F24D6CE84AA5B472A5A054CBF9C5", hash_generated_method = "AF2BDE2213F5B0AC04144304F8ED91D9")
     
 public InputStream getInputStream()
@@ -143,7 +143,7 @@ public InputStream getInputStream()
         }
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:47.995 -0400", hash_original_method = "EEAF894971DD204B63F1B170A7894732", hash_generated_method = "B552507038AAEA6B7B7E74F58D426C6F")
     
 public OutputStream getOutputStream()
@@ -200,7 +200,7 @@ public void close()
 
 		@Override
 		@DSVerified
-		@DSSafe(DSCat.SAFE_OTHERS)
+		@DSSafe(DSCat.SAFE_LIST)
 		public Contents createFromParcel(Parcel source) {
 			// TODO Auto-generated method stub
 			source.readString();

@@ -157,9 +157,9 @@ public FileInputStream(String path) throws FileNotFoundException {
      * Returns a read-only {@link FileChannel} that shares its position with
      * this stream.
      */
-    @DSSource({DSSourceKind.FILE})
+    
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.127 -0500", hash_original_method = "BB4E25A77FBA5E31003F6019B5643EE2", hash_generated_method = "2FB2F921FF08661F63F300CEEF489872")
     

@@ -193,9 +193,7 @@ private synchronized int deflateImpl(byte[] buf, int offset, int byteCount, int 
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.524 -0400", hash_original_method = "54CA80994C94CBB2D32C9857F1640D60", hash_generated_method = "1E6ADEC5F486A5F0536DA89705CD1920")
     
@@ -211,7 +209,6 @@ private synchronized int deflateImpl(byte[] buf, int offset, int byteCount, int 
     
     	return (int)taintDouble;
     }
-
 
     /**
      * Frees all resources held onto by this deflating algorithm. Any unused
@@ -241,9 +238,7 @@ private void endImpl() {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.525 -0400", hash_original_method = "3E089BB1F2369FD5C4FB6F32377D1DAC", hash_generated_method = "D37840FF1F65E54A18F1909F3D74BED2")
     
@@ -253,7 +248,6 @@ private void endImpl() {
     	taintDouble += handle;
     	addTaint(taintDouble);
     }
-
 
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.810 -0500", hash_original_method = "FC32DF56978CE95FA2CC2CA96409152E", hash_generated_method = "09E00EA73277F9B2AD883CD1303F9264")
@@ -314,9 +308,7 @@ public synchronized int getAdler() {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.528 -0400", hash_original_method = "B92F3D2B64C580905B1CBAEAEEC7E950", hash_generated_method = "61AA5FDACEC6651845F52881D1AA45E1")
     
@@ -328,7 +320,6 @@ public synchronized int getAdler() {
     
     	return (int)taintDouble;
     }
-
 
     /**
      * Returns the total number of bytes of input read by this {@code Deflater}. This
@@ -344,9 +335,7 @@ public synchronized int getTotalIn() {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.529 -0400", hash_original_method = "BB22F222483240F64BF20392C09B432F", hash_generated_method = "FB76E0894AEC3C0AE237576E4437CBE2")
     
@@ -358,7 +347,6 @@ public synchronized int getTotalIn() {
     
     	return (long)taintDouble;
     }
-
 
     /**
      * Returns the total number of bytes written to the output buffer by this {@code
@@ -374,9 +362,7 @@ public synchronized int getTotalOut() {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.530 -0400", hash_original_method = "2C5C1800FBCC7A9569101FDF1B411571", hash_generated_method = "5AF6B3DE8DAA8B45ECC40138EB65121D")
     
@@ -389,12 +375,12 @@ public synchronized int getTotalOut() {
     	return (long)taintDouble;
     }
 
-
     /**
      * Returns true if {@link #setInput setInput} must be called before deflation can continue.
      * If all uncompressed data has been provided to the {@code Deflater},
      * {@link #finish} must be called to ensure the compressed data is output.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.838 -0500", hash_original_method = "F6DEF148508A4D024151CB5B8FE739D4", hash_generated_method = "8994640FCDCD529BAA7DA9F474773FE7")
     
 public synchronized boolean needsInput() {
@@ -422,9 +408,7 @@ public synchronized void reset() {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.531 -0400", hash_original_method = "D92307F0039AB335BB1BCA1E70FBBC75", hash_generated_method = "E5AD6996270CB0317F4EFC6A63FC0EF4")
     
@@ -434,7 +418,6 @@ public synchronized void reset() {
     	taintDouble += handle;
     	addTaint(taintDouble);
     }
-
 
     /**
      * Sets the dictionary to be used for compression by this {@code Deflater}.
@@ -466,9 +449,7 @@ public synchronized void setDictionary(byte[] buf, int offset, int byteCount) {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.533 -0400", hash_original_method = "7E435812B66ABED0B356693E1B3AC0D7", hash_generated_method = "410D1701A2AFAF799D79F1813807FE5A")
     
@@ -482,11 +463,11 @@ public synchronized void setDictionary(byte[] buf, int offset, int byteCount) {
     	addTaint(taintDouble);
     }
 
-
     /**
      * Sets the input buffer the {@code Deflater} will use to extract uncompressed bytes
      * for later compression.
      */
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.UTIL_FUNCTION)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.857 -0500", hash_original_method = "76E6701B8618856CEE42A14EB071C689", hash_generated_method = "19B3B4D9BFCD113AADCC6DB794F536DA")
@@ -499,6 +480,7 @@ public void setInput(byte[] buf) {
      * Sets the input buffer the {@code Deflater} will use to extract uncompressed bytes
      * for later compression.
      */
+    @DSSink({DSSinkKind.IO})
     @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.860 -0500", hash_original_method = "5EAC232252C5BA68B98F924DC24DA75C", hash_generated_method = "F84DF425B88F7030AFB1ADE467975000")
     
@@ -516,9 +498,7 @@ public synchronized void setInput(byte[] buf, int offset, int byteCount) {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.535 -0400", hash_original_method = "6366C8E331223E53339096A4FF906729", hash_generated_method = "F498BBC9F5D71014544CEBA66B82D21E")
     
@@ -531,12 +511,9 @@ public synchronized void setInput(byte[] buf, int offset, int byteCount) {
     	addTaint(taintDouble);
     }
 
-
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.536 -0400", hash_original_method = "CFB5087A7D9EFE706B98C4EB08838FDC", hash_generated_method = "D0CB44C44F11094BAD5A989A17A93627")
     
@@ -549,7 +526,6 @@ public synchronized void setInput(byte[] buf, int offset, int byteCount) {
     	taintDouble += handle;
     	addTaint(taintDouble);
     }
-
 
     /**
      * Sets the compression level to be used when compressing data. The
@@ -619,9 +595,7 @@ public synchronized long getBytesWritten() {
 
     @DSBan(DSCat.PRIVATE_METHOD)
 
-
     @DSComment("Private Method")
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:58.538 -0400", hash_original_method = "C56CB62EAF4356747257EC4F43A6E2A6", hash_generated_method = "BEDDA6B061A376260BA66ADFD27ACE2B")
     
@@ -635,7 +609,6 @@ public synchronized long getBytesWritten() {
     
     	return (long)taintDouble;
     }
-
 
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)

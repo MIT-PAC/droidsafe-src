@@ -429,7 +429,7 @@ public final float getFloat() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.687 -0500", hash_original_method = "4E6E7F41B76F4FD15549F58DC569C010", hash_generated_method = "0DC9794378F16736B8B6E505EC7B7681")
     
 public float getDimension(DisplayMetrics metrics)
@@ -452,7 +452,7 @@ public float getDimension(DisplayMetrics metrics)
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.692 -0500", hash_original_method = "293ADCB2B20AD2D3C2E6AE6F03ECAE91", hash_generated_method = "2B399FDA82D9AF66EA1BEBB4A65D4087")
     
 public float getFraction(float base, float pbase)

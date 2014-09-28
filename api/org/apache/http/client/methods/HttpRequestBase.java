@@ -121,6 +121,7 @@ public void setReleaseTrigger(final ConnectionReleaseTrigger releaseTrigger)
         }
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.163 -0500", hash_original_method = "DAE61D1D90E50FDB083EDE1BB1F7240A", hash_generated_method = "F04B70B4EE6550F70F5742DF03017CD9")
     
 public void abort() {

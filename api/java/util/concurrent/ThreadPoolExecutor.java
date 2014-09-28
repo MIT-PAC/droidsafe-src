@@ -911,7 +911,7 @@ final void runWorker(Worker w) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.881 -0500", hash_original_method = "D2720E6C2ABD70ABBFB850D5E1C9152E", hash_generated_method = "AF11F840864428AD43826C563AB6247D")
     @DSVerified
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
 public void execute(Runnable command) {
         if (command == null)
             throw new NullPointerException();
@@ -1047,6 +1047,7 @@ public boolean isTerminating() {
         return ! isRunning(c) && runStateLessThan(c, TERMINATED);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.893 -0500", hash_original_method = "9F60EBE4EAB8D07AF1E9485C91ACF37E", hash_generated_method = "E44E30C4F70F99496C0D30A48D61809E")
     
 public boolean isTerminated() {
@@ -1093,6 +1094,7 @@ protected void finalize() {
      * @throws NullPointerException if threadFactory is null
      * @see #getThreadFactory
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.900 -0500", hash_original_method = "59E32FCC6E49B2109079BB0F3E4FFE2B", hash_generated_method = "3234BF1E36593507FB72C9C5CD1AC0AC")
     
 public void setThreadFactory(ThreadFactory threadFactory) {
@@ -1107,7 +1109,8 @@ public void setThreadFactory(ThreadFactory threadFactory) {
      * @return the current thread factory
      * @see #setThreadFactory
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.902 -0500", hash_original_method = "304653AC486A914BB8844AA1040FA7EB", hash_generated_method = "30129EE5743E9693C3CFDD056D29B834")
     
 public ThreadFactory getThreadFactory() {
@@ -1256,6 +1259,7 @@ public boolean allowsCoreThreadTimeOut() {
      *
      * @since 1.6
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.923 -0500", hash_original_method = "3CB040DA26A3A7AB5E245CC61764B17D", hash_generated_method = "A0B4D13229D5C1C12C48A6D2CA2CEBE7")
     
 public void allowCoreThreadTimeOut(boolean value) {

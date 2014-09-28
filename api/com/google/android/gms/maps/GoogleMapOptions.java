@@ -151,10 +151,10 @@ public GoogleMapOptions()
 public int describeContents()
     {
 
-
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public int hashCode() {
     	return (int) (toTaintInt(ZA && ZB && Zs && Zt && Zw && Zx && Zy && Zz) +
     				xM + Zu + Zv.hashCode());
@@ -174,12 +174,10 @@ int getVersionCode()
         return xM;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 13:46:48.680 -0400", hash_original_method = "CB0F0B2D8FB08148537D790C5A1DA2FE", hash_generated_method = "EA06390D0999736B2AA8C51AB96C8C57")
     
 public GoogleMapOptions zOrderOnTop(boolean  z0)
     {
-
 
         Zs = Boolean.valueOf(z0);
         return this;
@@ -190,7 +188,6 @@ public GoogleMapOptions zOrderOnTop(boolean  z0)
 public GoogleMapOptions useViewLifecycleInFragment(boolean  z0)
     {
 
-
         Zt = Boolean.valueOf(z0);
         return this;
     }
@@ -199,7 +196,6 @@ public GoogleMapOptions useViewLifecycleInFragment(boolean  z0)
     
 public GoogleMapOptions mapType(int  i0)
     {
-
 
         Zu = i0;
         return this;
@@ -210,7 +206,6 @@ public GoogleMapOptions mapType(int  i0)
 public GoogleMapOptions camera(CameraPosition  r1)
     {
 
-
         Zv = r1;
         return this;
     }
@@ -219,7 +214,6 @@ public GoogleMapOptions camera(CameraPosition  r1)
     
 public GoogleMapOptions zoomControlsEnabled(boolean  z0)
     {
-
 
         Zw = Boolean.valueOf(z0);
         return this;
@@ -230,7 +224,6 @@ public GoogleMapOptions zoomControlsEnabled(boolean  z0)
 public GoogleMapOptions compassEnabled(boolean  z0)
     {
 
-
         Zx = Boolean.valueOf(z0);
         return this;
     }
@@ -239,7 +232,6 @@ public GoogleMapOptions compassEnabled(boolean  z0)
     
 public GoogleMapOptions scrollGesturesEnabled(boolean  z0)
     {
-
 
         Zy = Boolean.valueOf(z0);
         return this;
@@ -250,7 +242,6 @@ public GoogleMapOptions scrollGesturesEnabled(boolean  z0)
 public GoogleMapOptions zoomGesturesEnabled(boolean  z0)
     {
 
-
         Zz = Boolean.valueOf(z0);
         return this;
     }
@@ -259,7 +250,6 @@ public GoogleMapOptions zoomGesturesEnabled(boolean  z0)
     
 public GoogleMapOptions tiltGesturesEnabled(boolean  z0)
     {
-
 
         ZA = Boolean.valueOf(z0);
         return this;
@@ -270,7 +260,6 @@ public GoogleMapOptions tiltGesturesEnabled(boolean  z0)
 public GoogleMapOptions rotateGesturesEnabled(boolean  z0)
     {
 
-
         ZB = Boolean.valueOf(z0);
         return this;
     }
@@ -280,7 +269,6 @@ public GoogleMapOptions rotateGesturesEnabled(boolean  z0)
 public Boolean getZOrderOnTop()
     {
 
-
         return Zs;
     }
 
@@ -288,7 +276,6 @@ public Boolean getZOrderOnTop()
     
 public Boolean getUseViewLifecycleInFragment()
     {
-
 
         return Zt;
     }
@@ -298,7 +285,6 @@ public Boolean getUseViewLifecycleInFragment()
 public int getMapType()
     {
 
-
         return Zu;
     }
 
@@ -306,7 +292,6 @@ public int getMapType()
     
 public CameraPosition getCamera()
     {
-
 
         return Zv;
     }
@@ -316,7 +301,6 @@ public CameraPosition getCamera()
 public Boolean getZoomControlsEnabled()
     {
 
-
         return Zw;
     }
 
@@ -324,7 +308,6 @@ public Boolean getZoomControlsEnabled()
     
 public Boolean getCompassEnabled()
     {
-
 
         return Zx;
     }
@@ -334,7 +317,6 @@ public Boolean getCompassEnabled()
 public Boolean getScrollGesturesEnabled()
     {
 
-
         return Zy;
     }
 
@@ -342,7 +324,6 @@ public Boolean getScrollGesturesEnabled()
     
 public Boolean getZoomGesturesEnabled()
     {
-
 
         return Zz;
     }
@@ -352,7 +333,6 @@ public Boolean getZoomGesturesEnabled()
 public Boolean getTiltGesturesEnabled()
     {
 
-
         return ZA;
     }
 
@@ -361,13 +341,11 @@ public Boolean getTiltGesturesEnabled()
 public Boolean getRotateGesturesEnabled()
     {
 
-
         return ZB;
     }
 
     static
     {
-
 
         CREATOR = new GoogleMapOptionsCreator();
     }

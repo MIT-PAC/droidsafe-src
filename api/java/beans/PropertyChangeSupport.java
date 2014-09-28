@@ -120,7 +120,7 @@ public void removePropertyChangeListener(String propertyName, PropertyChangeList
      * is its listener.
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.456 -0500", hash_original_method = "A38B8477985ECBF9EAC6EDFBD5290064", hash_generated_method = "7F70B7EBC33CEF5EF493D6A553ED7861")
     
 private boolean equals(String aName, EventListener a, EventListener b) {

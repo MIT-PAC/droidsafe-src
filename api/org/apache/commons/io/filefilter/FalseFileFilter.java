@@ -52,6 +52,7 @@ protected FalseFileFilter() {
      * @param file  the file to check (ignored)
      * @return false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.006 -0400", hash_original_method = "DB29F58DE9255B6C1BC35903D533B6E7", hash_generated_method = "29B98D81AE4ACA56229AA8FA1A31E381")
     
 public boolean accept(File file) {
@@ -65,6 +66,7 @@ public boolean accept(File file) {
      * @param name  the filename (ignored)
      * @return false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:54.007 -0400", hash_original_method = "7D8493348446C8D120E5A36A74BD3C3A", hash_generated_method = "E3DA08D883EA35EB225584DEC3AD75AC")
     
 public boolean accept(File dir, String name) {

@@ -124,7 +124,7 @@ public int size() {
      * @return this CharArrayWriter's contents as a new char array.
      */
     @DSComment("not sensitive, memory stream")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.970 -0500", hash_original_method = "A3DCAA229974F9979554B7E0F1F4EF9F", hash_generated_method = "BD6D76D575FBB2C104F30D78DCB06376")
     
 public char[] toCharArray() {
@@ -168,7 +168,7 @@ public char[] toCharArray() {
      */
     @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.975 -0500", hash_original_method = "17F94D6158075BE971F02096E85AEF33", hash_generated_method = "D05819EC49701A68141E334F53010F6E")
     
 @Override
@@ -260,6 +260,7 @@ public void writeTo(Writer out) throws IOException {
      *            the character appended to the CharArrayWriter.
      * @return this CharArrayWriter.
      */
+    @DSSink({DSSinkKind.IO})
     @DSSpec(DSCat.IO)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.986 -0500", hash_original_method = "98F1E9A8C1E20678242580E2421D983C", hash_generated_method = "DBB08E576F65CCCD5C3E9BE56838F079")

@@ -561,6 +561,7 @@ private void lineUpScroll() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:40.252 -0500", hash_original_method = "199CA847E2A702BC0971D902FFD82329", hash_generated_method = "F288CE8DD2AF09B9FE6C3059735F0EA5")
     
 @Override

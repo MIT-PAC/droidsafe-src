@@ -37,8 +37,8 @@ abstract class LoggingPrintStream extends PrintStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.035 -0400", hash_original_method = "9EC321B6DFE561BEEE5F374ADAFA7A30", hash_generated_method = "0CF066A83124D2B7F58571604E6E54B0")
     protected  LoggingPrintStream() {
         super(new OutputStream() {
-            @DSSink(DSSinkKind.IO)
-        @DSSafe(DSCat.SAFE_OTHERS)
+            @DSSink({DSSinkKind.IO})
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.899 -0500", hash_original_method = "17875F81676CAD7D322FCB70A8FEEF63", hash_generated_method = "8D574D3F591F04593DEEAE97ED174B2C")
             
 public void write(int oneByte) throws IOException {
@@ -101,7 +101,7 @@ private void flush(boolean completely) {
     }
 
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.911 -0500", hash_original_method = "2DD612F978C37BC7835E83A5EC002758", hash_generated_method = "C4A7241D547E3682892F683ED267EDFB")
     
 public void write(int oneByte) {

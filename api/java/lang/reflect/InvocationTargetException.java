@@ -62,7 +62,8 @@ public InvocationTargetException(Throwable exception, String detailMessage) {
      *
      * @return the target exception
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.236 -0500", hash_original_method = "F1F2316177C546F546EA483459CFF30B", hash_generated_method = "2207DC53F6302AF64B36ABA7BEE1FE70")
     
 public Throwable getTargetException() {

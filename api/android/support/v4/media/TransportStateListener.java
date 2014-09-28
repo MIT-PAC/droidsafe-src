@@ -29,6 +29,7 @@ public class TransportStateListener {
      * {@link android.support.v4.media.TransportController#isPlaying()
      * TransportController.isPlaying()} to determine the new state.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.297 -0400", hash_original_method = "9B76FFDB28155B01D91724DC47D030C9", hash_generated_method = "52571CC3BA0163D059A844AA409A59C8")
     
 public void onPlayingChanged(TransportController controller) {
@@ -39,6 +40,7 @@ public void onPlayingChanged(TransportController controller) {
      * {@link TransportController#getTransportControlFlags()}
      * TransportController.getTransportControlFlags()} to determine the new state.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.301 -0400", hash_original_method = "B55A0F56B87764193201654BEDDD6C76", hash_generated_method = "5D5C6132E4402015572773EBB1972C56")
     
 public void onTransportControlsChanged(TransportController controller) {

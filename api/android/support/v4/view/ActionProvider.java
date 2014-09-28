@@ -75,7 +75,6 @@ public abstract class ActionProvider {
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.828 -0400", hash_original_field = "0CC45A8F2A3DE3D79B6417F1C5FAF5C0", hash_generated_field = "B0B6D637F5D44582200E582C4D2D6000")
 
-
     private SubUiVisibilityListener mSubUiVisibilityListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.834 -0400", hash_original_field = "BF29511CA55E8788B8128B8F3A1E89ED", hash_generated_field = "0AE9BB679554EA8223E2AE175AD42623")
 
@@ -95,6 +94,7 @@ public ActionProvider(Context context) {
     /**
      * Gets the context associated with this action provider.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.846 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
 public Context getContext() {
@@ -106,6 +106,7 @@ public Context getContext() {
      *
      * @return A new action view.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.852 -0400", hash_original_method = "D34B37B54FEE3A61B3F2EC9EB9350036", hash_generated_method = "A1917FF468BF52201E55304E949C12BA")
     
 public abstract View onCreateActionView();
@@ -122,6 +123,7 @@ public abstract View onCreateActionView();
      * @param forItem MenuItem to create the action view for
      * @return the new action view
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.858 -0400", hash_original_method = "054A392134B5E307AEBFD4EDAB2E6171", hash_generated_method = "206F886AC35E3B1DB720E9ED19A5A3A0")
     
 public View onCreateActionView(MenuItem forItem) {
@@ -136,6 +138,7 @@ public View onCreateActionView(MenuItem forItem) {
      *         it is bound to, false otherwise. The default implementation returns false.
      * @see #isVisible()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.865 -0400", hash_original_method = "92C92075594FFE24E3A24D7123D03315", hash_generated_method = "63C36814B3B9D4508E5A9C68499A65D1")
     
 public boolean overridesItemVisibility() {
@@ -152,6 +155,7 @@ public boolean overridesItemVisibility() {
      * @return true if the MenuItem this ActionProvider is bound to is visible, false if
      *         it is invisible. The default implementation returns true.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.870 -0400", hash_original_method = "ACBF6EABC93AFDF8B48B778834C35F8C", hash_generated_method = "5AF1A9B3328626D15EDDFB3EC3316EE9")
     
 public boolean isVisible() {
@@ -164,6 +168,7 @@ public boolean isVisible() {
      * {@link #isVisible()}. If {@link #overridesItemVisibility()} returns false, this call
      * will have no effect.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.875 -0400", hash_original_method = "4652955A1654C6A096D81626C33205E7", hash_generated_method = "5144480E051894B4E3F4D7832659E1FF")
     
 public void refreshVisibility() {
@@ -203,6 +208,7 @@ public void refreshVisibility() {
      *
      * <p>The default implementation does not perform any action and returns false.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.881 -0400", hash_original_method = "366B075407E0A5F04994070AE9F78DED", hash_generated_method = "8E69AA43F8FD02823DF2F04092FB421C")
     
 public boolean onPerformDefaultAction() {
@@ -218,6 +224,7 @@ public boolean onPerformDefaultAction() {
      *
      * @return true if the item backed by this provider should have an associated submenu
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.887 -0400", hash_original_method = "6145E76FB29B74D78245641D6BEF294B", hash_generated_method = "C47A8DBA8C06C24113E67B7BE29255AD")
     
 public boolean hasSubMenu() {
@@ -233,6 +240,7 @@ public boolean hasSubMenu() {
      *
      * @param subMenu Submenu that will be displayed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.892 -0400", hash_original_method = "F59137EC2C0A4379BE18A71AFD20A9D8", hash_generated_method = "50D6E1FB8293636D3A3A82EEB44F6E67")
     
 public void onPrepareSubMenu(SubMenu subMenu) {
@@ -244,6 +252,7 @@ public void onPrepareSubMenu(SubMenu subMenu) {
      *
      * @hide Pending future API approval
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.897 -0400", hash_original_method = "486EC9DD7EB4D66CD412B7154F65545B", hash_generated_method = "DB9BE510AE24969A41145DFA8A4FE64E")
     
 public void subUiVisibilityChanged(boolean isVisible) {
@@ -255,6 +264,7 @@ public void subUiVisibilityChanged(boolean isVisible) {
     /**
      * @hide Internal use only
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.902 -0400", hash_original_method = "D36B582FBFECE681E89AD6546A9F8E0B", hash_generated_method = "4AF91025E5612C10D13FC03AB2FFE231")
     
 public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
@@ -267,6 +277,7 @@ public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
      *
      * @param listener listener to set
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.908 -0400", hash_original_method = "50A691A3A31F643FC669C3A89353EF35", hash_generated_method = "C0F06DA8FA9C918F6AB17F4463280561")
     
 public void setVisibilityListener(VisibilityListener listener) {

@@ -300,6 +300,7 @@ public WindowManager getWindowManager() {
      *
      * @param callback The desired Callback interface.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.694 -0500", hash_original_method = "DD1DEB01F922CA329B6B6BD86F551D46", hash_generated_method = "5615805491ED61938F7759B1973A8A9C")
     
 public void setCallback(Callback callback) {
@@ -309,6 +310,7 @@ public void setCallback(Callback callback) {
     /**
      * Return the current Callback interface for this window.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.697 -0500", hash_original_method = "F07002384A5D5C29596645EE02BC1965", hash_generated_method = "4DB162AD74090EDDED8FC1B6B98EF150")
     
 public final Callback getCallback() {
@@ -421,6 +423,7 @@ public void setType(int type) {
      *
      * @see PixelFormat
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.714 -0500", hash_original_method = "ADD82385ADE43D8CE9305C2F63E34252", hash_generated_method = "1D66B199B5B9499EFD5F4F6AA78D2275")
     
 public void setFormat(int format) {
@@ -525,7 +528,7 @@ public void clearFlags(int flags) {
      */
     @DSComment("Normal UI operations")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.727 -0500", hash_original_method = "40E42D383A45AE28D15E52653F68CBD5", hash_generated_method = "33AC6D1792EC1888DE667493ABB11B9B")
     
 public void setFlags(int flags, int mask) {
@@ -898,7 +901,8 @@ public abstract void onConfigurationChanged(Configuration newConfig);
      * @param resid The resource identifier of a drawable resource which will be
      *              installed as the new background.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.817 -0500", hash_original_method = "AFC383C5A753BE0283DE80727207DE11", hash_generated_method = "3C1C0B95983C16D6419782DD69A8F724")
     
 public void setBackgroundDrawableResource(int resid)
@@ -1047,6 +1051,7 @@ public boolean isHardwareAccelerated() {
             return mHardwareAccelerated;
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.687 -0500", hash_original_method = "AADD2F7F32065CABAE6715302100F897", hash_generated_method = "216FD5E69D2757A8BF9184F21932F884")
         
 public final void addView(View view, ViewGroup.LayoutParams params) {
@@ -1404,7 +1409,7 @@ public abstract int getVolumeControlStream();
      */
     @DSComment("Normal UI operations")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.894 -0500", hash_original_method = "5C7A5DC825C127CAEB67314627C1344D", hash_generated_method = "E7803D9EA57EDD53A6619582D74C929D")
     
 public void setUiOptions(int uiOptions) { }
@@ -1417,7 +1422,7 @@ public void setUiOptions(int uiOptions) { }
      */
     @DSComment("Normal UI operations")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.897 -0500", hash_original_method = "DD14EAF3AEC819DEC25B96FED2D2DF84", hash_generated_method = "F49B7763563715E51446AA4C72042315")
     
 public void setUiOptions(int uiOptions, int mask) { }

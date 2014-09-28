@@ -203,7 +203,7 @@ private static String getActionSymbolicName(int action) {
 
     public static final Parcelable.Creator<AccessibilityNodeInfo> CREATOR =
             new Parcelable.Creator<AccessibilityNodeInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.411 -0500", hash_original_method = "41FF7B589DD370C35E95646D230DB9E3", hash_generated_method = "080CA144001B0DA333F18A90DD55A2B7")
         
 public AccessibilityNodeInfo createFromParcel(Parcel parcel) {
@@ -1046,7 +1046,7 @@ public void setClassName(CharSequence className) {
      */
     @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.USER_INPUT})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.345 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3C5AE00E10DCE5E04049FCC58EEF7C48")
     
 public CharSequence getText() {

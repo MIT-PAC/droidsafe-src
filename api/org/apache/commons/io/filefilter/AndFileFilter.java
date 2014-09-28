@@ -93,6 +93,7 @@ public AndFileFilter(IOFileFilter filter1, IOFileFilter filter2) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.521 -0400", hash_original_method = "82CBDB26DBAE7C3928EFB659443DD094", hash_generated_method = "CC471BC7923D5FC9EA03851326894D2B")
     
 public void addFileFilter(final IOFileFilter ioFileFilter) {
@@ -130,6 +131,7 @@ public void setFileFilters(final List<IOFileFilter> fileFilters) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.523 -0400", hash_original_method = "15185D73968973515F4C212ED777AF75", hash_generated_method = "3A21D591C6B2C3738307FE36902362AC")
     
 @Override
@@ -148,6 +150,7 @@ public void setFileFilters(final List<IOFileFilter> fileFilters) {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.523 -0400", hash_original_method = "A3F03C923F515CB961B8B37439B16718", hash_generated_method = "C8B3583BEEB87F414ADC6ED553CE7728")
     
 @Override

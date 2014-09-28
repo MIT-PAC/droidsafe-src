@@ -39,6 +39,7 @@ public NativeActionModeAwareLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.967 -0400", hash_original_method = "7B93844020F0CA6E6D45E5B3DBB5AF7C", hash_generated_method = "BAC32E7287583C9238D3A46D4379B962")
     
 public void setActionModeForChildListener(OnActionModeForChildListener listener) {

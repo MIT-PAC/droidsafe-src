@@ -366,7 +366,7 @@ CacheFile(File dir, String name) {
             return lastModified;
         }
 
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.FILE_SYSTEM)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.716 -0500", hash_original_method = "D50DE30B99FDC8E45DF3D781BD6CEC46", hash_generated_method = "3C576BB7C770E964C0DFDBFD5D138C15")
         
 @Override

@@ -215,7 +215,7 @@ public static InetAddress getByName(String host) throws UnknownHostException {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.245 -0500", hash_original_method = "E79319E7983FFD892480819C6E838DC2", hash_generated_method = "42A32443A0500AD60A3EF761DA43EF92")
     
 public static InetAddress getLocalHost() throws UnknownHostException {
@@ -516,7 +516,7 @@ InetAddress(int family, byte[] ipaddress, String hostName) {
      * @return {@code true} if both objects are equal, {@code false} otherwise.
      */
     @DSComment("Data structure only")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.213 -0500", hash_original_method = "3AAFCD043D3971ACCC1BC5F122FB0BE0", hash_generated_method = "D103773655A1C519BA125A1827E9D90D")
     
 @Override
@@ -536,7 +536,7 @@ InetAddress(int family, byte[] ipaddress, String hostName) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.215 -0500", hash_original_method = "0983A0B23668071C038C0A3F8002A354", hash_generated_method = "E4CE6EB2E4BD87D82969FEB5079B693F")
     
 public byte[] getAddress() {
@@ -613,7 +613,7 @@ public String getCanonicalHostName() {
      */
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Data structure only")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.259 -0500", hash_original_method = "0306D8C3E43590D820E89D43080D7C82", hash_generated_method = "BB4B7DC306DE02D48C444870FADF73B1")
     
 @Override
@@ -830,7 +830,7 @@ public boolean isReachable(int timeout) throws IOException {
 for(final InetAddress sourceAddress : sourceAddresses)
         {
             new Thread() {
-                @DSSpec(DSCat.SPEC_OTHERS)
+                @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.299 -0500", hash_original_method = "B701C9C990A30C345CD440F261C9D387", hash_generated_method = "D70307131641C58A9098C363244976E7")
                 
 @Override public void run() {

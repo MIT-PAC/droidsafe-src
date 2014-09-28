@@ -1631,7 +1631,7 @@ public Intent getResultData() {
 public InstrumentationThread(String name) {
             super(name);
         }
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSpec(DSCat.THREADING)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.280 -0500", hash_original_method = "801DE955A4997069AEAE1C9E4306FFC2", hash_generated_method = "D266232BF9AA48C02850913B112602E5")
         
 public void run() {

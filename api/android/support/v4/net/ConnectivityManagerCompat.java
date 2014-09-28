@@ -38,6 +38,7 @@ public class ConnectivityManagerCompat {
     }
 
     static class BaseConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.722 -0500", hash_original_method = "82C8914B64F105CF6CAB5824BAFDEDEF", hash_generated_method = "2BDBA0B89DB22CCDA16A9D6C3B0F1B8A")
         
 @Override
@@ -62,6 +63,7 @@ public class ConnectivityManagerCompat {
     }
 
     static class GingerbreadConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.733 -0500", hash_original_method = "14319738A596A0F37A5E22E9913AC983", hash_generated_method = "9DCB1CAC48FF9418B38218C438825F98")
         
 @Override
@@ -72,6 +74,7 @@ public class ConnectivityManagerCompat {
 
     static class HoneycombMR2ConnectivityManagerCompatImpl
             implements ConnectivityManagerCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.747 -0500", hash_original_method = "EB30443802E74F0983577B9D919AABB3", hash_generated_method = "19EB91090445F3487FB91B1EB6667D27")
         
 @Override
@@ -121,9 +124,8 @@ public static NetworkInfo getNetworkInfoFromBroadcast(ConnectivityManager cm, In
         return cm.getNetworkInfo(info.getType());
     }
 
-
-
     static class JellyBeanConnectivityManagerCompatImpl implements ConnectivityManagerCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isActiveNetworkMetered(ConnectivityManager cm) {
             return ConnectivityManagerCompatJellyBean.isActiveNetworkMetered(cm);

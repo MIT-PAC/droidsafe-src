@@ -15,7 +15,8 @@ public class ViewConfigurationCompat {
      * If running on a pre-{@link android.os.Build.VERSION_CODES#FROYO} device,
      * returns {@link ViewConfiguration#getScaledTouchSlop()}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.438 -0500", hash_original_method = "3528C0183AFB79CCB68AA739BEF357FF", hash_generated_method = "1BC52F06F2C8ECA5BEC4194ED7F7B291")
     
 public static int getScaledPagingTouchSlop(ViewConfiguration config) {
@@ -33,6 +34,7 @@ public static int getScaledPagingTouchSlop(ViewConfiguration config) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.426 -0500", hash_original_method = "40A95D8EF0A43B6ED733EDF4744F0469", hash_generated_method = "1D7E3EB014AE3CF651A36DC6CE49B7BB")
         
 @Override
@@ -50,6 +52,7 @@ public static int getScaledPagingTouchSlop(ViewConfiguration config) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.432 -0500", hash_original_method = "5FB3C1F49AB507E1F7081F1E34699ECD", hash_generated_method = "36E3FC06272A4B4387BED92E9254E9DD")
         
 @Override

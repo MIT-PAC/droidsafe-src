@@ -80,7 +80,7 @@ public static OutputStream newOutputStream(WritableByteChannel channel) {
      * @return a byte channel that reads bytes from the input stream.
      */
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.589 -0500", hash_original_method = "10F29762DE0104F8A39064501FA4AE67", hash_generated_method = "AA1E1902CBC1C56C3259D6D39450828D")
     
 public static ReadableByteChannel newChannel(InputStream inputStream) {
@@ -102,7 +102,7 @@ public static ReadableByteChannel newChannel(InputStream inputStream) {
      * @return a byte channel that writes bytes to the output stream.
      */
     @DSComment("Method returns IO Object")
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.593 -0500", hash_original_method = "0A26450DD89B99CDCEEC5300E1958D40", hash_generated_method = "4F67C407FEF8F96ABDC5077C62504DCB")
     
 public static WritableByteChannel newChannel(OutputStream outputStream) {
@@ -234,7 +234,7 @@ ChannelInputStream(ReadableByteChannel channel) {
         }
 
         @DSSource({DSSourceKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.612 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "EDB147B342555EE99C070665ED7CE828")
         
 @Override public synchronized int read() throws IOException {
@@ -291,7 +291,7 @@ ChannelOutputStream(WritableByteChannel channel) {
         }
 
         @DSSink({DSSinkKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.634 -0500", hash_original_method = "976097BC4C10B6759034E4B1EDA42187", hash_generated_method = "A2DC5F91B490FB6FF0B7BB1EE34B1473")
         
 @Override

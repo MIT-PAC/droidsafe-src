@@ -28,7 +28,7 @@ public DERObject toASN1Object()
 public abstract int hashCode();
     
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.939 -0500", hash_original_method = "ABA676D17E1DCC5B68CA9641467BE6F0", hash_generated_method = "5F04941C356A0F51887E7E2A00CF4487")
     
 public abstract boolean equals(Object o);

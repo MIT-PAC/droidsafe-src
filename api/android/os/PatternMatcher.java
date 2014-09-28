@@ -112,7 +112,7 @@ static boolean matchPattern(String pattern, String match, int type) {
 
     public static final Parcelable.Creator<PatternMatcher> CREATOR
             = new Parcelable.Creator<PatternMatcher>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.373 -0500", hash_original_method = "FD3047E64A944595CFD464C3A36DC690", hash_generated_method = "2A939E89149C05B7DDC26C0EF7DEBCB1")
         
 public PatternMatcher createFromParcel(Parcel source) {

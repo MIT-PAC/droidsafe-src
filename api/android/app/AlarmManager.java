@@ -144,7 +144,7 @@ AlarmManager(IAlarmManager service) {
     }
     
     @DSComment("IPC activity")
-    @DSSpec(DSCat.IPC)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.889 -0400", hash_original_method = "201C17E876772752E3C1FB6083A5FC0F", hash_generated_method = "C077AA8A887A89A055EBE697EB5271ED")
     public void cancel(PendingIntent operation) {
         addTaint(operation.getTaint());

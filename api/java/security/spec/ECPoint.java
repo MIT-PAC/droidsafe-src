@@ -70,6 +70,7 @@ public ECPoint(BigInteger affineX, BigInteger affineY) {
      *
      * @return the x-coordinate, or {@code null} for the infinite point.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:17.170 -0400", hash_original_method = "8BF4809EEBCF8613EAAFA0303B4EEF5E", hash_generated_method = "BE87FDCA6B06AB6841832DCA006E371D")
     
 public BigInteger getAffineX() {
@@ -81,6 +82,7 @@ public BigInteger getAffineX() {
      *
      * @return the y-coordinate, or {@code null} fot the infinite point.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:17.171 -0400", hash_original_method = "23D7238F99D75219754803A7F2104977", hash_generated_method = "8F26A7973A42D9778B5CD0DE116F96E9")
     
 public BigInteger getAffineY() {
@@ -96,6 +98,7 @@ public BigInteger getAffineY() {
      * @return {@code true} if the specified object and this elliptic curve
      *         point are equal, otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:17.173 -0400", hash_original_method = "ED767277BE9B9353BA6E55E45B5D3046", hash_generated_method = "429FF00105B18AA2FB2F0680DF2B3118")
     
 public boolean equals(Object other) {

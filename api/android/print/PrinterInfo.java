@@ -210,6 +210,7 @@ public PrinterCapabilitiesInfo getCapabilities() {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.922 -0400", hash_original_method = "9F45CBD7941382A82867142B4DBDE036", hash_generated_method = "C4EB66614BC912CBDFD4A3F7A0F76C14")
     
 @Override

@@ -59,6 +59,7 @@ public void setUpdateThrottle(long delayMS) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.796 -0500", hash_original_method = "432E7B986B9CB9166C0D2E103A5093E2", hash_generated_method = "2B68A0E7026AEC8A6A9591DCBB10759E")
     
 @Override
@@ -86,6 +87,7 @@ public void setUpdateThrottle(long delayMS) {
      *         because {@link #startLoading()} hasn't been called; returns
      *         <tt>true</tt> otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.799 -0500", hash_original_method = "EED9AFD45373FFA0657A2114031AE14C", hash_generated_method = "4A4B3BB952605C872539E5B90B2B2161")
     
 public boolean cancelLoad() {
@@ -133,7 +135,7 @@ public void onCanceled(D data) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.803 -0500", hash_original_method = "DFA4BC3BC4931E8E36EC6E65D042E4CC", hash_generated_method = "7A879335BCECB8C6BA6A80EBA2EA88EB")
     
 void executePendingTask() {
@@ -192,16 +194,19 @@ void dispatchOnLoadComplete(LoadTask task, D data) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public void commitContentChanged() {
 		// TODO Auto-generated method stub
 		
 	}
+    @DSSafe(DSCat.SAFE_LIST)
     public void rollbackContentChanged() {
     	
     }
 
 	/**
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.811 -0500", hash_original_method = "5399723D11980E7A8470EBBE4A650300", hash_generated_method = "7AFE79446E8B45C68AF3D723F3E91200")
     
 public abstract D loadInBackground();
@@ -215,6 +220,7 @@ public abstract D loadInBackground();
      *
      * @return Implementations must return the result of their load operation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.813 -0500", hash_original_method = "4A83A9163F83587A19BB5376A46D430D", hash_generated_method = "53F8C1A7952C6D72A2DB99C8C81E3BB4")
     
 protected D onLoadInBackground() {
@@ -239,6 +245,7 @@ protected D onLoadInBackground() {
         }
 
         /* Runs on a worker thread */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.767 -0500", hash_original_method = "962D018A6346A7B0135AC9FF7B03DD4E", hash_generated_method = "73EBB57BF6DEE1E88C88B16EAB06ECBF")
         
 @Override
@@ -262,6 +269,7 @@ protected D onLoadInBackground() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.773 -0500", hash_original_method = "B83F1AA509F54D59951BAD91749D4A0A", hash_generated_method = "CC2843AB79537EC4059DD6E24F45EDC8")
         
 @Override
@@ -308,6 +316,7 @@ public void waitForLoader() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.820 -0500", hash_original_method = "3BD2D1BA0575E5C52E87DB33CE550D2F", hash_generated_method = "3E7257BE9C311B4D212E63E51336AD55")
     
 @Override

@@ -775,6 +775,7 @@ private Date error(ParsePosition position, int offset, TimeZone zone) {
      * @throws IllegalArgumentException
      *             if there are invalid characters in the pattern.
      */
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.122 -0500", hash_original_method = "F2F2556FE533C0A730BEC347E52E5292", hash_generated_method = "03617E1213EA0CE091B1A42EE8FE9EE4")

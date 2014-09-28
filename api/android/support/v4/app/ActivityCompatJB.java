@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 class ActivityCompatJB {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.481 -0400", hash_original_method = "EC2F08D2F56161485A23876377125A51", hash_generated_method = "829C0CDC999587A975F155AC40EC741E")
     
 public static void startActivity(Context context, Intent intent, Bundle options) {
@@ -32,6 +33,7 @@ public static void startActivity(Context context, Intent intent, Bundle options)
         context.startActivity(intent);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.488 -0400", hash_original_method = "0A2BEC98B5A7676E54E6B9DAE800F426", hash_generated_method = "DE00602C7D7DB806DFD620EDB4B70678")
     
 public static void startActivityForResult(Activity activity, Intent intent, int requestCode, Bundle options) {
@@ -39,6 +41,7 @@ public static void startActivityForResult(Activity activity, Intent intent, int 
         activity.startActivityForResult(intent, requestCode);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.492 -0400", hash_original_method = "FC2F9520AC746E59C216145672BD1746", hash_generated_method = "47CEE8421520C90519E735514915E54B")
     
 public static void finishAffinity(Activity activity) {

@@ -9,6 +9,7 @@ import android.os.Parcelable;
 
 public class ParcelableCompat {
     
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> Parcelable.Creator<T> newCreator(
             ParcelableCompatCreatorCallbacks<T> callbacks) {
         return new CompatCreator<T>(callbacks);

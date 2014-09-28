@@ -27,10 +27,8 @@ import java.lang.reflect.Method;
 class ICUCompatIcs {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.390 -0400", hash_original_field = "93A074F2D0CE30095324BE8F1F604B49", hash_generated_field = "75AE8698C5AE2610AF1C8FA20E6B04F0")
 
-
     private static final String TAG = "ICUCompatIcs";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.394 -0400", hash_original_field = "CC8DA3C27A51DC54CE7C8EE462ACD8E3", hash_generated_field = "80795AFD3F1BBDE1DF4E227A65AC6B12")
-
 
     private static Method sGetScriptMethod;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.398 -0400", hash_original_field = "91BCB22981CF9CCE00255470BD996CDE", hash_generated_field = "4E24C43CC19F6E2AC03FB5080A8DFE1A")
@@ -52,6 +50,7 @@ class ICUCompatIcs {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.405 -0400", hash_original_method = "389700BBE9A453E32A6259FFD36925D2", hash_generated_method = "C6DBCF8FAA0BBD6E8D73F387A5DD4D6D")
     
 public static String getScript(String locale) {
@@ -71,6 +70,7 @@ public static String getScript(String locale) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.411 -0400", hash_original_method = "33EE41F78141C64DB76D030DB68A0522", hash_generated_method = "C5D2FF3C7D5B0B507638EBE106E5A7F2")
     
 public static String addLikelySubtags(String locale) {

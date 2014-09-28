@@ -196,6 +196,7 @@ public Animation(Context context, AttributeSet attrs) {
      *
      * @see #initialize(int, int, int, int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.816 -0500", hash_original_method = "3AB995FAF173BC91AA72FEE328D0BE86", hash_generated_method = "56AD414A6C21BD31F46118253782A6AA")
     
 public void reset() {
@@ -916,7 +917,7 @@ public long computeDurationHint() {
      */
     @DSComment("no actions/not sensitive")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.910 -0500", hash_original_method = "1D66EEFFAD10DF7675973FFD0CA72C11", hash_generated_method = "AF8652057DAD4A8F9C8E0866DE608D21")
     @DSVerified
 
@@ -1010,7 +1011,7 @@ public boolean getTransformation(long currentTime, Transformation outTransformat
      *        pivot points being rotated or scaled around.
      * @return True if the animation is still running
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.912 -0500", hash_original_method = "2D55A6E78A3D329DDFA1835011833D50", hash_generated_method = "BEF4999254C104668FDB8CAEBDD04900")
     @DSVerified
     @DSSafe(DSCat.SAFE_OTHERS)

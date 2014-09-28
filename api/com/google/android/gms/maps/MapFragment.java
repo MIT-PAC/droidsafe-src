@@ -64,7 +64,7 @@ protected IMapFragmentDelegate fragementDelegate()
     }
 
     GoogleMap googleMap;
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.725 -0400", hash_original_method = "40D16AF3AD525A505DCF522054434A6E", hash_generated_method = "553FBC2F1B7E69328D7336D81FCFF3C0")
     
 public final GoogleMap getMap()
@@ -72,6 +72,7 @@ public final GoogleMap getMap()
     	return googleMap;
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.730 -0400", hash_original_method = "5F2C3381706F5A7C85E1E0E652EA6D95", hash_generated_method = "7F3037BC47BCD5E1BCE13DA4A1470892")
     
 public void onAttach(Activity  r1)
@@ -93,6 +94,7 @@ public void onInflate(Activity  r1, AttributeSet  r2, Bundle  r3)
         r9.putParcelable("MapOptions", r10);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.743 -0400", hash_original_method = "F0C1DD10C068EF145E655CC853186BDA", hash_generated_method = "EA66CA934D06B2B652D8C0D5F46F5118")
     
 public void onCreate(Bundle  r1)
@@ -100,6 +102,7 @@ public void onCreate(Bundle  r1)
         super.onCreate(r1);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.750 -0400", hash_original_method = "621F5CFCEF36307A2F667B7B746DD466", hash_generated_method = "2DEB2523251D25731148FBD76198B768")
     
 public View onCreateView(LayoutInflater  r1, ViewGroup  r2, Bundle  r3)
@@ -108,6 +111,7 @@ public View onCreateView(LayoutInflater  r1, ViewGroup  r2, Bundle  r3)
         return super.onCreateView(r1, r2, r3);
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.753 -0400", hash_original_method = "8A5943792A631AC0907EC67FD2B96764", hash_generated_method = "4F13E4CDAECEE57914B2BBE6F4CBD411")
     
 public void onResume()
@@ -115,6 +119,7 @@ public void onResume()
     	super.onResume();
     }
 
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:50.756 -0400", hash_original_method = "369EAE0B495D0B5CB3640443718195A9", hash_generated_method = "6CD8E07DA238124587A962813BD2D300")
     
 public void onPause()

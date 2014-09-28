@@ -36,7 +36,8 @@ public EdgeEffectCompat(Context context) {
      * @param width Effect width in pixels
      * @param height Effect height in pixels
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.926 -0500", hash_original_method = "D4DAEE1A405642168AB096E0B8E2EAD2", hash_generated_method = "B498A43726E29C2CDF3B80ECFCEDD032")
     
 public void setSize(int width, int height) {
@@ -50,6 +51,7 @@ public void setSize(int width, int height) {
      *
      * @return true if animation is finished, false if drawing should continue on the next frame.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.928 -0500", hash_original_method = "EFAA81473E99AA681742723D4D62AB38", hash_generated_method = "D3236B79F22826E0529DDF103F454015")
     
 public boolean isFinished() {
@@ -60,6 +62,7 @@ public boolean isFinished() {
      * Immediately finish the current animation.
      * After this call {@link #isFinished()} will return true.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.930 -0500", hash_original_method = "9C12A7C81A14CC06F079C8FA3122B4B4", hash_generated_method = "30CF6231B05877BBDC59CDAD6BFD5988")
     
 public void finish() {
@@ -77,6 +80,7 @@ public void finish() {
      *                      back toward the edge reached to initiate the effect.
      * @return true if the host view should call invalidate, false if it should not.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.932 -0500", hash_original_method = "1908B5EE653AB1B5A5CE65E81F6BDB7A", hash_generated_method = "9A640D01A4977E3F4B65B70A033B7231")
     
 public boolean onPull(float deltaDistance) {
@@ -122,47 +126,55 @@ public boolean onAbsorb(int velocity) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.881 -0500", hash_original_method = "598F7EE7163BC02F940E7AE457E81E71", hash_generated_method = "355286D7ACF6715DC4A71E1EFC10BE32")
         
 public Object newEdgeEffect(Context context) {
             return null;
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.884 -0500", hash_original_method = "7AB0823D4C5E0A56EB104E764A6EE643", hash_generated_method = "2A3F2A3644496ACB1CF1EDA0A2938943")
         
 public void setSize(Object edgeEffect, int width, int height) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.886 -0500", hash_original_method = "18A3B4E50EAF82FBFB3F783FB1724270", hash_generated_method = "209B27BE8A70DC329352EB3997FF02D2")
         
 public boolean isFinished(Object edgeEffect) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.888 -0500", hash_original_method = "4537DDA1058A07DD12C2683C46DAE0A0", hash_generated_method = "77E1BC407011D6971D3B0AAA2FC875E7")
         
 public void finish(Object edgeEffect) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.890 -0500", hash_original_method = "6D6767FA0A7FD096DC5FAE330C25B4EB", hash_generated_method = "D4A16B50969E92E180B854DFEB29F16D")
         
 public boolean onPull(Object edgeEffect, float deltaDistance) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.893 -0500", hash_original_method = "4CCDA82CBCC611597E463B09D91011D3", hash_generated_method = "048FBF4CE4B86B1810E1BBBD49C02C8E")
         
 public boolean onRelease(Object edgeEffect) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.895 -0500", hash_original_method = "E4A19D3F19F8749DFC3F77D5467C90AC", hash_generated_method = "C0A49FBA9F3151B3B686FF6CECB264C0")
         
 public boolean onAbsorb(Object edgeEffect, int velocity) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.898 -0500", hash_original_method = "014795F812E9F03FFB958DEDF8F6EEBD", hash_generated_method = "3393E26C320D3FDDEEBEF275690BD46D")
         
 public boolean draw(Object edgeEffect, Canvas canvas) {
@@ -179,49 +191,57 @@ public boolean draw(Object edgeEffect, Canvas canvas) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.902 -0500", hash_original_method = "4DBA645CACC3049A11EF7913FF866293", hash_generated_method = "704CC874AC1A6D8E9DA7E8E94E887166")
         
 public Object newEdgeEffect(Context context) {
             return EdgeEffectCompatIcs.newEdgeEffect(context);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.904 -0500", hash_original_method = "7828FC66149E7A8F26ACE38B475CC37B", hash_generated_method = "12A358F1E0CC70FBC6CB0DC94F3A42EC")
         
 public void setSize(Object edgeEffect, int width, int height) {
             EdgeEffectCompatIcs.setSize(edgeEffect, width, height);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.906 -0500", hash_original_method = "C615DC1E8C401B6C07B9EA0C459CE8A5", hash_generated_method = "A068BC3E0718F9554B4A521E87A7E308")
         
 public boolean isFinished(Object edgeEffect) {
             return EdgeEffectCompatIcs.isFinished(edgeEffect);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.909 -0500", hash_original_method = "AD76F4504BEBAE253EF4AD4435BC2FB9", hash_generated_method = "F51AD21E7905D964A87CBE074E81AA80")
         
 public void finish(Object edgeEffect) {
             EdgeEffectCompatIcs.finish(edgeEffect);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.912 -0500", hash_original_method = "A82E9A0A10EC720EFD1907409B81ECC2", hash_generated_method = "B8DDE75A9C34234C428C883D2CDB7B82")
         
 public boolean onPull(Object edgeEffect, float deltaDistance) {
             return EdgeEffectCompatIcs.onPull(edgeEffect, deltaDistance);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.914 -0500", hash_original_method = "D85EB1006C2B11862110869EE99A2168", hash_generated_method = "282A51D0D4386F09AAEB9DF651CA9FCC")
         
 public boolean onRelease(Object edgeEffect) {
             return EdgeEffectCompatIcs.onRelease(edgeEffect);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.917 -0500", hash_original_method = "DA1A282FCCAC2CD96B6A4C969DDDC50D", hash_generated_method = "70090F8E4927C0E956CE6D8CE505536C")
         
 public boolean onAbsorb(Object edgeEffect, int velocity) {
             return EdgeEffectCompatIcs.onAbsorb(edgeEffect, velocity);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.919 -0500", hash_original_method = "C724F7B236835D74B44177C7968204E4", hash_generated_method = "9368FA0DE94CF02E1022FBBC94CA4E8B")
         
 public boolean draw(Object edgeEffect, Canvas canvas) {
@@ -267,6 +287,7 @@ public boolean draw(Object edgeEffect, Canvas canvas) {
      * @return true if drawing should continue beyond this frame to continue the
      *         animation
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.940 -0500", hash_original_method = "F27D97BEDCE0E3BB57468FC6E19E8F78", hash_generated_method = "4AC54B9402416493AE1941352F872991")
     
 public boolean draw(Canvas canvas) {

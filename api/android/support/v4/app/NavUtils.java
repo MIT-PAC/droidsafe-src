@@ -30,6 +30,7 @@ public class NavUtils {
      * @return true if navigating up should recreate a new task stack, false if the same task
      *         should be used for the destination
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.576 -0400", hash_original_method = "8694053549EB0977F153BD2950135821", hash_generated_method = "ACC35A127CCAD31FB685A26849224D6C")
         
 public static boolean shouldUpRecreateTask(Activity sourceActivity, Intent targetIntent) {
@@ -77,6 +78,7 @@ public static void navigateUpFromSameTask(Activity sourceActivity) {
      * @param sourceActivity The current activity from which the user is attempting to navigate up
      * @param upIntent An intent representing the target destination for up navigation
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.584 -0400", hash_original_method = "5F631F234D0DC1811CD50FBCF3EE9024", hash_generated_method = "16F3E4D2598A69C35DBC6EA447F013C1")
         
 public static void navigateUpTo(Activity sourceActivity, Intent upIntent) {
@@ -93,6 +95,7 @@ public static void navigateUpTo(Activity sourceActivity, Intent upIntent) {
      * @param sourceActivity Activity to fetch a parent intent for
      * @return a new Intent targeting the defined parent activity of sourceActivity
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.587 -0400", hash_original_method = "06EB2AD9FD252CF1628A5B9CC5130567", hash_generated_method = "42BFFB3678B33D0F42F1152FA83CC384")
         
 public static Intent getParentActivityIntent(Activity sourceActivity) {
@@ -109,6 +112,7 @@ public static Intent getParentActivityIntent(Activity sourceActivity) {
      * @return a new Intent targeting the defined parent activity of sourceActivity
      * @throws NameNotFoundException if the ComponentName for sourceActivityClass is invalid
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.593 -0400", hash_original_method = "363BB0EC3D6F8A0C5FB7B8E9948ED7D3", hash_generated_method = "81CC0CD64C399E3E407A18C06B57D902")
         
 public static Intent getParentActivityIntent(Context context, Class<?> sourceActivityClass)
@@ -136,6 +140,7 @@ public static Intent getParentActivityIntent(Context context, Class<?> sourceAct
      * @return a new Intent targeting the defined parent activity of sourceActivity
      * @throws NameNotFoundException if the ComponentName for sourceActivityClass is invalid
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.598 -0400", hash_original_method = "7F228843C0699E10640C9B9C0AEB579A", hash_generated_method = "CDD29196154ED136502FC109D21D91A1")
         
 public static Intent getParentActivityIntent(Context context, ComponentName componentName)
@@ -162,6 +167,7 @@ public static Intent getParentActivityIntent(Context context, ComponentName comp
      * @return The fully qualified class name of sourceActivity's parent activity or null if
      *         it was not specified
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.431 -0500", hash_original_method = "922476F31426D85F4B2D25305741BC34", hash_generated_method = "4C6D380D72A75E89C92FCE8078B650A3")
     
 public static String getParentActivityName(Activity sourceActivity) {
@@ -182,6 +188,7 @@ public static String getParentActivityName(Activity sourceActivity) {
      * @return The fully qualified class name of sourceActivity's parent activity or null if
      *         it was not specified
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.606 -0400", hash_original_method = "0ABDA37123907F4426EEC94BF151061E", hash_generated_method = "197AD77C6BF572390B3B757F52BB8422")
         
 public static String getParentActivityName(Context context, ComponentName componentName)
@@ -206,10 +213,9 @@ public static String getParentActivityName(Context context, ComponentName compon
 private NavUtils() {
     }
 
-
-
     static class NavUtilsImplBase implements NavUtilsImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Intent getParentActivityIntent(Activity activity) {
             String parentName = NavUtils.getParentActivityName(activity);
@@ -230,12 +236,14 @@ private NavUtils() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean shouldUpRecreateTask(Activity activity, Intent targetIntent) {
             String action = activity.getIntent().getAction();
             return action != null && !action.equals(Intent.ACTION_MAIN);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void navigateUpTo(Activity activity, Intent upIntent) {
             upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -243,6 +251,7 @@ private NavUtils() {
             activity.finish();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String getParentActivityName(Context context, ActivityInfo info) {
             if (info.metaData == null) return null;
@@ -257,6 +266,7 @@ private NavUtils() {
 
     static class NavUtilsImplJB extends NavUtilsImplBase {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Intent getParentActivityIntent(Activity activity) {
             // Prefer the "real" JB definition if available,
@@ -268,20 +278,24 @@ private NavUtils() {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         Intent superGetParentActivityIntent(Activity activity) {
             return super.getParentActivityIntent(activity);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean shouldUpRecreateTask(Activity activity, Intent targetIntent) {
             return NavUtilsJB.shouldUpRecreateTask(activity, targetIntent);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void navigateUpTo(Activity activity, Intent upIntent) {
             NavUtilsJB.navigateUpTo(activity, upIntent);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String getParentActivityName(Context context, ActivityInfo info) {
             String result = NavUtilsJB.getParentActivityName(info);
@@ -292,7 +306,6 @@ private NavUtils() {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.571 -0400", hash_original_field = "C6811D4037382D1ADC65F4D3DF5E0CC6", hash_generated_field = "9E77B70C45E2AC10E994AD2C22A6D3C4")
-
 
     private static  NavUtilsImpl IMPL;
 

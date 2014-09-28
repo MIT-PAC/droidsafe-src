@@ -58,7 +58,7 @@ public void addFile(String filename) {
      * and then (b) delete them in reverse order. This is to make sure files
      * get deleted before their parent directories.
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.THREADING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.377 -0500", hash_original_method = "557595D78AF878757FA1B104BCD5B60F", hash_generated_method = "E8CCDADFADCBC5BEA7486B573F3A1A3F")
     
 @Override

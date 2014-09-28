@@ -235,6 +235,7 @@ public void setGravity(int gravity) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.563 -0400", hash_original_method = "60241601236C86A9296272064A15234D", hash_generated_method = "C3B2D6E860B82141D2CA77EF0BF7E624")
     
 @Override
@@ -289,6 +290,7 @@ public void setGravity(int gravity) {
      *
      * @param l this listener will be ignored
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.594 -0400", hash_original_method = "AE9F9278138E36A1F7A0C4102CD0DE5F", hash_generated_method = "E4893921088FD20363D1609510E45D60")
     
 @Override
@@ -296,6 +298,7 @@ public void setGravity(int gravity) {
         throw new RuntimeException("setOnItemClickListener cannot be used with a spinner.");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.602 -0400", hash_original_method = "826DF4E4F08E8F6C45D1E7CAAC075075", hash_generated_method = "826DF4E4F08E8F6C45D1E7CAAC075075")
     
 void setOnItemClickListenerInt(OnItemClickListener l) {
@@ -402,6 +405,7 @@ void setOnItemClickListenerInt(OnItemClickListener l) {
      * @param position Position in the spinner for the view to obtain
      * @return A view that has been added to the spinner
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.654 -0400", hash_original_method = "16A0D15DF35F8329F5BE73262CE9B509", hash_generated_method = "C19A613AD32C7950E4F49F5A1A23137C")
     
 private View makeAndAddView(int position) {
@@ -433,6 +437,7 @@ private View makeAndAddView(int position) {
      *
      * @param child The view to position
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.667 -0400", hash_original_method = "36DE22A04BF6CE4E6D4F683A2B1C4C05", hash_generated_method = "1975EB73AFD491B39B424FDF92F980FB")
     
 private void setUpChild(View child) {
@@ -502,6 +507,7 @@ public void onClick(DialogInterface dialog, int which) {
      * Sets the prompt to display when the dialog is shown.
      * @param prompt the prompt to set
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.692 -0400", hash_original_method = "82831FCEC8FF5E5499EA6A36B12A66DA", hash_generated_method = "DA3402CDD5C9B14C14A06E0299D74748")
     
 public void setPrompt(CharSequence prompt) {
@@ -527,6 +533,7 @@ public CharSequence getPrompt() {
         return mPopup.getHintText();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:06:45.719 -0400", hash_original_method = "EB37E42D6ACA63E84337B27962C39033", hash_generated_method = "5D4F9D30A18F3DF5C0F75DDD5FD04597")
     
 int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
@@ -592,8 +599,7 @@ int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
                 this.mListAdapter = (ListAdapter) adapter;
             }
         }
-
-        @DSSource({DSSourceKind.DATABASE})
+        
         @DSSafe(DSCat.SAFE_LIST)
         public int getCount() {
             return mAdapter == null ? 0 : mAdapter.getCount();
@@ -645,6 +651,7 @@ int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
          * If the wrapped SpinnerAdapter is also a ListAdapter, delegate this call.
          * Otherwise, return true.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean areAllItemsEnabled() {
             final ListAdapter adapter = mListAdapter;
             if (adapter != null) {
@@ -658,6 +665,7 @@ int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
          * If the wrapped SpinnerAdapter is also a ListAdapter, delegate this call.
          * Otherwise, return true.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isEnabled(int position) {
             final ListAdapter adapter = mListAdapter;
             if (adapter != null) {
@@ -676,6 +684,7 @@ int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
             return 1;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isEmpty() {
             return getCount() == 0;
         }
@@ -717,27 +726,33 @@ int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
         private ListAdapter mListAdapter;
         private CharSequence mPrompt;
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void dismiss() {
             mPopup.dismiss();
             mPopup = null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isShowing() {
             return mPopup != null ? mPopup.isShowing() : false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setAdapter(ListAdapter adapter) {
             mListAdapter = adapter;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setPromptText(CharSequence hintText) {
             mPrompt = hintText;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public CharSequence getHintText() {
             return mPrompt;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void show() {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
             if (mPrompt != null) {
@@ -782,21 +797,25 @@ int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
             setOnItemClickListener(listener);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAdapter(ListAdapter adapter) {
             super.setAdapter(adapter);
             mAdapter = adapter;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public CharSequence getHintText() {
             return mHintText;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setPromptText(CharSequence hintText) {
             // Hint text is ignored for dropdowns, but maintain it here.
             mHintText = hintText;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void show() {
             final int spinnerPaddingLeft = SpinnerICS.this.getPaddingLeft();

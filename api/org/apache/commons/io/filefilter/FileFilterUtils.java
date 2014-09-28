@@ -70,6 +70,7 @@ public class FileFilterUtils {
      * 
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.864 -0400", hash_original_method = "A8E8FF499B26F30A7AD9BD8A02ED630C", hash_generated_method = "A6C7A9F31EF5371018CE196D9A9EE1BF")
     
 public static File[] filter(IOFileFilter filter, File... files) {
@@ -117,6 +118,7 @@ public static File[] filter(IOFileFilter filter, File... files) {
      * 
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.865 -0400", hash_original_method = "8582EE7341DF9449A238DD2AE8C481BF", hash_generated_method = "75A4E540880D451D1C5884189A9D7E22")
     
 public static File[] filter(IOFileFilter filter, Iterable<File> files) {
@@ -149,6 +151,7 @@ public static File[] filter(IOFileFilter filter, Iterable<File> files) {
      *         or <code>files</code> contains a {@code null} value. 
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.865 -0400", hash_original_method = "299D153268C4B9CA717774AFA30078F3", hash_generated_method = "BDFD905E69FBAD3C0856625421DE690B")
     
 public static List<File> filterList(IOFileFilter filter, Iterable<File> files) {
@@ -180,6 +183,7 @@ public static List<File> filterList(IOFileFilter filter, Iterable<File> files) {
      *         or <code>files</code> contains a {@code null} value. 
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.866 -0400", hash_original_method = "A82F449242BF2022D0871D0F4E2983CD", hash_generated_method = "61F93F0925555631E7444D54EEEEB298")
     
 public static List<File> filterList(IOFileFilter filter, File... files) {
@@ -355,6 +359,7 @@ public static IOFileFilter suffixFileFilter(String suffix, IOCase caseSensitivit
      * @return a name checking filter
      * @see NameFileFilter
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.870 -0400", hash_original_method = "4A5BBE95AA88C5704ABBACA3A9164E73", hash_generated_method = "A1433B2D7C0B436DA90DF75973B3A7F9")
     
 public static IOFileFilter nameFileFilter(String name) {
@@ -370,6 +375,7 @@ public static IOFileFilter nameFileFilter(String name) {
      * @see NameFileFilter
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.871 -0400", hash_original_method = "C9DEC901D489056B6C33764CD8784603", hash_generated_method = "6CA4A88AF085C82DDE910B54F344F663")
     
 public static IOFileFilter nameFileFilter(String name, IOCase caseSensitivity) {
@@ -382,6 +388,7 @@ public static IOFileFilter nameFileFilter(String name, IOCase caseSensitivity) {
      * @return file filter that accepts only directories and not files
      * @see DirectoryFileFilter#DIRECTORY
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.871 -0400", hash_original_method = "EB113DC613E865F1731A88848A368345", hash_generated_method = "86FD479F44CA5E7D8023B9B1142C4511")
     
 public static IOFileFilter directoryFileFilter() {
@@ -446,6 +453,7 @@ public static IOFileFilter fileFileFilter() {
      * @see AndFileFilter
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.874 -0400", hash_original_method = "0A51AA436E84FC1839627DBD91C415A7", hash_generated_method = "A0CB6D6463B2DF102D642EA511770E72")
     
 public static IOFileFilter and(IOFileFilter... filters) {
@@ -463,6 +471,7 @@ public static IOFileFilter and(IOFileFilter... filters) {
      * @see OrFileFilter
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.874 -0400", hash_original_method = "B64EF0C9C53C2B8E1037A43848D2E008", hash_generated_method = "DBCE7A953E02A2949C6911887A619ADA")
     
 public static IOFileFilter or(IOFileFilter... filters) {
@@ -478,6 +487,7 @@ public static IOFileFilter or(IOFileFilter... filters) {
      *         null value.
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.875 -0400", hash_original_method = "B92A5D5411F17E788E19D12E602D51DB", hash_generated_method = "8F0275C0DB8FB8DDB36E0D0B06918D34")
     
 public static List<IOFileFilter> toList(IOFileFilter... filters) {
@@ -501,6 +511,7 @@ public static List<IOFileFilter> toList(IOFileFilter... filters) {
      * @return a filter that NOTs the specified filter
      * @see NotFileFilter
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.875 -0400", hash_original_method = "842F06004C71964D73C76D585C53C035", hash_generated_method = "2269A8644752FBCC6369CC307F232B1E")
     
 public static IOFileFilter notFileFilter(IOFileFilter filter) {
@@ -846,6 +857,7 @@ public static IOFileFilter makeSVNAware(IOFileFilter filter) {
      * @see DirectoryFileFilter#DIRECTORY
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.888 -0400", hash_original_method = "C583E738065B40E214C664AD56CC21CE", hash_generated_method = "5F3B8072603ACB325A709E1A3F57BE59")
     
 public static IOFileFilter makeDirectoryOnly(IOFileFilter filter) {
@@ -863,6 +875,7 @@ public static IOFileFilter makeDirectoryOnly(IOFileFilter filter) {
      * @see FileFileFilter#FILE
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.888 -0400", hash_original_method = "4F3E4875B5D995F245642A033A3E9859", hash_generated_method = "34877BF524E2DB7C2C78FF9F429235F5")
     
 public static IOFileFilter makeFileOnly(IOFileFilter filter) {

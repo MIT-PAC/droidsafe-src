@@ -25,6 +25,7 @@ import android.graphics.drawable.Drawable;
  * Implementation of drawable compatibility that can call Honeycomb APIs.
  */
 class DrawableCompatHoneycomb {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:57.314 -0400", hash_original_method = "F744FB0B371A76C5A0DB23B608108605", hash_generated_method = "E3379BB730DE073C3C8D12BA63B85753")
     
 public static void jumpToCurrentState(Drawable drawable) {

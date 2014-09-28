@@ -64,7 +64,6 @@ public ToNetASCIIInputStream(InputStream input)
         __status = __NOTHING_SPECIAL;
     }
 
-
     /***
      * Reads and returns the next byte in the stream.  If the end of the
      * message has been reached, returns -1.
@@ -74,6 +73,7 @@ public ToNetASCIIInputStream(InputStream input)
      * @exception IOException If an error occurs while reading the underlying
      *            stream.
      ***/
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.323 -0500", hash_original_method = "A3DC32615BCC1627FA6F5D9720F7FDA3", hash_generated_method = "364063D4FD99910199DCA9476E1586D9")
     @DSSpec(DSCat.IO)
 public int read() throws IOException
@@ -108,7 +108,6 @@ public int read() throws IOException
         //return ch;
     }
 
-
     /***
      * Reads the next number of bytes from the stream into an array and
      * returns the number of bytes read.  Returns -1 if the end of the
@@ -120,6 +119,7 @@ public int read() throws IOException
      * @exception IOException If an error occurs in reading the underlying
      *            stream.
      ***/
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.326 -0500", hash_original_method = "1AF05D3B3AC1A0BE6FEC3ED8E4AD92D7", hash_generated_method = "602CBE64B37DDC68026D3CD1EA56EC7D")
     @DSVerified
     @DSSpec(DSCat.IO)
@@ -127,7 +127,6 @@ public int read(byte buffer[]) throws IOException
     {
         return read(buffer, 0, buffer.length);
     }
-
 
     /***
      * Reads the next number of bytes from the stream into an array and returns
@@ -143,6 +142,7 @@ public int read(byte buffer[]) throws IOException
      * @exception IOException If an error occurs while reading the underlying
      *            stream.
      ***/
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.329 -0500", hash_original_method = "A62229E028B48C960393B7A95C0B3743", hash_generated_method = "2240EB94EB9D0F7EECFEA2AD7D8B2D5A")
     @DSVerified
     @DSSpec(DSCat.IO)

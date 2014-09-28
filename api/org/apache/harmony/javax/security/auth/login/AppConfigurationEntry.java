@@ -56,18 +56,21 @@ public AppConfigurationEntry(String loginModuleName,
         this.options = Collections.unmodifiableMap(options);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.348 -0400", hash_original_method = "F6F114924EB5A23396CC11BAEC568103", hash_generated_method = "F109AD4CE42BD488416FF1C09B497D56")
     
 public String getLoginModuleName() {
         return loginModuleName;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.348 -0400", hash_original_method = "3F703EA909EEF6F1132A6D962CE5FE25", hash_generated_method = "2A236CEC8A958DB1EE8EDC4E22EAFC7E")
     
 public LoginModuleControlFlag getControlFlag() {
         return controlFlag;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.349 -0400", hash_original_method = "17CD54894C02C35166936FB5BD0056E2", hash_generated_method = "8FF26E11ABFC9A9DEB313543F50FA651")
     
 public Map<java.lang.String, ?> getOptions() {

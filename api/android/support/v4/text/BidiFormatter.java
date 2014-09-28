@@ -146,6 +146,7 @@ public final class BidiFormatter {
          *
          * @param isRtlContext Whether the context is RTL or not.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private void initialize(boolean isRtlContext) {
             mIsRtlContext = isRtlContext;
             mTextDirectionHeuristicCompat = DEFAULT_TEXT_DIRECTION_HEURISTIC;
@@ -177,6 +178,7 @@ public final class BidiFormatter {
             return this;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private static BidiFormatter getDefaultInstanceFromContext(boolean isRtlContext) {
             return isRtlContext ? DEFAULT_RTL_INSTANCE : DEFAULT_LTR_INSTANCE;
         }
@@ -184,6 +186,7 @@ public final class BidiFormatter {
         /**
          * @return A BidiFormatter with the specified options.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public BidiFormatter build() {
             if (mFlags == DEFAULT_FLAGS &&
                     mTextDirectionHeuristicCompat == DEFAULT_TEXT_DIRECTION_HEURISTIC) {
@@ -200,13 +203,11 @@ public final class BidiFormatter {
     private static final int DEFAULT_FLAGS = FLAG_STEREO_RESET;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.719 -0400", hash_original_field = "FCFD4CC022F8E3CAE7AC3DC68498E017", hash_generated_field = "D30340A8A031620D564093518B63E5AB")
 
-
     private static final BidiFormatter DEFAULT_LTR_INSTANCE = new BidiFormatter(
             false /* LTR context */,
             DEFAULT_FLAGS,
             DEFAULT_TEXT_DIRECTION_HEURISTIC);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.724 -0400", hash_original_field = "19DA72F0C33FFB18F4E4AD086EC4805C", hash_generated_field = "F1E17A539E4188A7D07BB498523389B3")
-
 
     private static final BidiFormatter DEFAULT_RTL_INSTANCE = new BidiFormatter(
             true /* RTL context */,
@@ -251,6 +252,7 @@ public static BidiFormatter getInstance(Locale locale) {
      * @param locale The Locale whose directionality will be checked to be RTL or LTR
      * @return true if the {@code locale} directionality is RTL. False otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.816 -0400", hash_original_method = "84A0E8AB3674727DEC6722E50692F22C", hash_generated_method = "EFF2B3198CFE3536C07C2D7B7E8EDFD5")
     
 private static boolean isRtlLocale(Locale locale) {
@@ -280,6 +282,7 @@ private static boolean isRtlLocale(Locale locale) {
      *
      * @param str the string to check.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.836 -0400", hash_original_method = "A9C3B64055F6D9EFCDEFD371E36895B0", hash_generated_method = "1B8D6D53CCC6A81208F2BC69C34A1DEF")
     
 private static int getExitDir(String str) {
@@ -299,13 +302,13 @@ private static int getExitDir(String str) {
      *
      * @param str the string to check.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.843 -0400", hash_original_method = "95BF2F917E94A75622C973BCABDC8C56", hash_generated_method = "EB4F55D4EE67352A94733A92409CAD2B")
     
 private static int getEntryDir(String str) {
         return new DirectionalityEstimator(str, false /* isHtml */).getEntryDir();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.730 -0400", hash_original_field = "28E7D87CD78F7C7EE1DDBC0E147804F0", hash_generated_field = "FFEA939CBF0300165F45E2F2E3486F15")
-
 
     private  boolean mIsRtlContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.736 -0400", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "43F71E9173849705E01112D0229448B4")
@@ -341,6 +344,7 @@ public boolean isRtlContext() {
      * @return Whether directionality "reset" should also be done before a string being
      * bidi-wrapped, not just after it.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.774 -0400", hash_original_method = "C5444ED64A05E137B698AF6900A68A98", hash_generated_method = "21256D4514D07CC6FF3986BA09F027AF")
     
 public boolean getStereoReset() {
@@ -362,6 +366,7 @@ public boolean getStereoReset() {
      * @return LRM for RTL text in LTR context; RLM for LTR text in RTL context;
      *     else, the empty string.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.780 -0400", hash_original_method = "A2D29B57AFD0F164958373A3CCDE2D3C", hash_generated_method = "4B6B6F52052AE32415C317D8BDA4E100")
     
 private String markAfter(String str, TextDirectionHeuristicCompat heuristic) {
@@ -391,6 +396,7 @@ private String markAfter(String str, TextDirectionHeuristicCompat heuristic) {
      * @return LRM for RTL text in LTR context; RLM for LTR text in RTL context;
      *     else, the empty string.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.785 -0400", hash_original_method = "E5011B08C4331FE64294B99E10137DB5", hash_generated_method = "7E68449E17C2BF1C1F9157DEB69B681E")
     
 private String markBefore(String str, TextDirectionHeuristicCompat heuristic) {
@@ -445,6 +451,7 @@ public boolean isRtl(String str) {
      *     content around it
      * @return Input string after applying the above processing.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.797 -0400", hash_original_method = "C0B1E1B530FD4993A85CD928BA0D6C34", hash_generated_method = "D4A6D89F19E35EC268C6156A40689FA5")
     
 public String unicodeWrap(String str, TextDirectionHeuristicCompat heuristic, boolean isolate) {
@@ -476,6 +483,7 @@ public String unicodeWrap(String str, TextDirectionHeuristicCompat heuristic, bo
      * @param heuristic The algorithm to be used to estimate the string's overall direction.
      * @return Input string after applying the above processing.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.802 -0400", hash_original_method = "9F55B9949C814EBEE6C7401DF013ABFD", hash_generated_method = "EFB5398C23FF6FB78CBAE550F52BDF8D")
     
 public String unicodeWrap(String str, TextDirectionHeuristicCompat heuristic) {
@@ -491,6 +499,7 @@ public String unicodeWrap(String str, TextDirectionHeuristicCompat heuristic) {
      *     content around it
      * @return Input string after applying the above processing.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.807 -0400", hash_original_method = "2DDFDCA58A0B9F3ADB8FAF8AB51F14F5", hash_generated_method = "E7B380B6A56D8E7070409A1733350D37")
     
 public String unicodeWrap(String str, boolean isolate) {
@@ -504,6 +513,7 @@ public String unicodeWrap(String str, boolean isolate) {
      * @param str The input string.
      * @return Input string after applying the above processing.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:19.812 -0400", hash_original_method = "04D26B1058FAD618EFDDF549D9F0D914", hash_generated_method = "7B511CC305053ED89AB6B2E9DAF3309A")
     
 public String unicodeWrap(String str) {
@@ -590,6 +600,7 @@ public String unicodeWrap(String str) {
          * after RLE/RLO. The results are undefined for a string containing unbalanced
          * LRE/RLE/LRO/RLO/PDF characters.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         int getEntryDir() {
             // The reason for this method name, as opposed to getFirstStrongDir(), is that
             // "first strong" is a commonly used description of Unicode's estimation algorithm,
@@ -687,6 +698,7 @@ public String unicodeWrap(String str) {
          * matching PDF as a strong character, LTR after LRE/LRO, and RTL after RLE/RLO. The results
          * are undefined for a string containing unbalanced LRE/RLE/LRO/RLO/PDF characters.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         int getExitDir() {
             // The reason for this method name, as opposed to getLastStrongDir(), is that "last
             // strong" sounds like the exact opposite of "first strong", which is a commonly used
@@ -751,6 +763,7 @@ public String unicodeWrap(String str) {
          * a cache for speed. Not designed for supplementary codepoints, whose results we do not
          * cache.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private static byte getCachedDirectionality(char c) {
             return c < DIR_TYPE_CACHE_SIZE ? DIR_TYPE_CACHE[c] : Character.getDirectionality(c);
         }
@@ -764,6 +777,7 @@ public String unicodeWrap(String str) {
          *
          * @throws java.lang.IndexOutOfBoundsException if called when charIndex >= length or < 0.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         byte dirTypeForward() {
             lastChar = text.charAt(charIndex);
             if (Character.isHighSurrogate(lastChar)) {
@@ -794,6 +808,7 @@ public String unicodeWrap(String str) {
          *
          * @throws java.lang.IndexOutOfBoundsException if called when charIndex > length or <= 0.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         byte dirTypeBackward() {
             lastChar = text.charAt(charIndex - 1);
             if (Character.isLowSurrogate(lastChar)) {
@@ -820,6 +835,7 @@ public String unicodeWrap(String str) {
          * does not change charIndex and returns Character.DIRECTIONALITY_OTHER_NEUTRALS (for the
          * &lt; that hadn't been part of a tag after all).
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private byte skipTagForward() {
             int initialCharIndex = charIndex;
             while (charIndex < length) {
@@ -849,6 +865,7 @@ public String unicodeWrap(String str) {
          * "&gt;&gt;&gt;&gt;", because skipTagBackward() also stops looking for a matching &lt;
          * when it encounters another &gt;.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private byte skipTagBackward() {
             int initialCharIndex = charIndex;
             while (charIndex > 0) {
@@ -877,6 +894,7 @@ public String unicodeWrap(String str) {
          * &amp; has already been read) and returns Character.DIRECTIONALITY_WHITESPACE. It would be
          * best to figure out the actual character and return its dirtype, but this is good enough.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private byte skipEntityForward() {
             while (charIndex < length && (lastChar = text.charAt(charIndex++)) != ';') {}
             return Character.DIRECTIONALITY_WHITESPACE;
@@ -892,6 +910,7 @@ public String unicodeWrap(String str) {
          * linear in the size of the text, even for a text like ";;;;;;;", because skipTagBackward()
          * also stops looking for a matching &amp; when it encounters another ;.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private byte skipEntityBackward() {
             int initialCharIndex = charIndex;
             while (charIndex > 0) {

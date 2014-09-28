@@ -96,7 +96,7 @@ public StringBuffer(CharSequence cs) {
      * @see String#valueOf(boolean)
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.054 -0500", hash_original_method = "AD3312372D1C20C6FA4349EE546D8C31", hash_generated_method = "5D5448789B272975A2988E62DB673EA0")
     
 public StringBuffer append(boolean b) {
@@ -112,7 +112,7 @@ public StringBuffer append(boolean b) {
      * @see String#valueOf(char)
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.057 -0500", hash_original_method = "CEE54B5A4214CACDA44FA719AFBE18BD", hash_generated_method = "479211C586724C2B02DAEA765B5A2A07")
     
 public synchronized StringBuffer append(char ch) {
@@ -130,7 +130,7 @@ public synchronized StringBuffer append(char ch) {
      * @see String#valueOf(double)
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.059 -0500", hash_original_method = "0AFE0A1757F436EAD0779848DAA16349", hash_generated_method = "F6AB23291A5B282DA207B93C0353B068")
     
 public StringBuffer append(double d) {
@@ -148,7 +148,7 @@ public StringBuffer append(double d) {
      * @see String#valueOf(float)
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.061 -0500", hash_original_method = "E91CEA6395085A2C805805AEC660F914", hash_generated_method = "7E86911A557B95B7B6AC85986E42C999")
     
 public StringBuffer append(float f) {
@@ -166,7 +166,7 @@ public StringBuffer append(float f) {
      * @see String#valueOf(int)
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.064 -0500", hash_original_method = "BEA181157FE20523F8DAE95D96DA45D4", hash_generated_method = "7D280E4AD18897171EECE2E55A094B2E")
     
 public StringBuffer append(int i) {
@@ -184,7 +184,7 @@ public StringBuffer append(int i) {
      * @see String#valueOf(long)
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.066 -0500", hash_original_method = "83E6088E5FD422B34A78952B80516F81", hash_generated_method = "D02F3B64A279C32A1CC10AD39F39AB60")
     
 public StringBuffer append(long l) {
@@ -206,7 +206,7 @@ public StringBuffer append(long l) {
      * @see String#valueOf(Object)
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.069 -0500", hash_original_method = "2D15CD6872414C1946401A7870801F7E", hash_generated_method = "0680B24696FEFB38714FEC87A351DC5B")
     
 public synchronized StringBuffer append(Object obj) {
@@ -225,7 +225,7 @@ public synchronized StringBuffer append(Object obj) {
      * @return this StringBuffer.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.071 -0500", hash_original_method = "BA0CFF22AB5EB829F1FAF589162ABBEB", hash_generated_method = "918BB57509315C997E6103AE872DAA7C")
     
 public synchronized StringBuffer append(String string) {
@@ -247,7 +247,7 @@ public synchronized StringBuffer append(String string) {
      * @since 1.4
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.074 -0500", hash_original_method = "F6E1A459EC09255D7DD48512D99C9457", hash_generated_method = "E37E86CF6BC125A770B254F284CB6953")
     
     public synchronized StringBuffer append(StringBuffer sb) {
@@ -265,7 +265,7 @@ public synchronized StringBuffer append(String string) {
      *            if {@code chars} is {@code null}.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.076 -0500", hash_original_method = "711104B80207109E628FE8DD74956179", hash_generated_method = "03D4713F9A09AE1CFF33A93E20B13BCA")
     
 public synchronized StringBuffer append(char[] chars) {
@@ -290,7 +290,7 @@ public synchronized StringBuffer append(char[] chars) {
      *            if {@code chars} is {@code null}.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.078 -0500", hash_original_method = "46001E95C0F59DFED22A324D2D070740", hash_generated_method = "BF273AFD2BD6FD003E3BC80121842413")
     
 public synchronized StringBuffer append(char[] chars, int start, int length) {
@@ -311,7 +311,7 @@ public synchronized StringBuffer append(char[] chars, int start, int length) {
      * @since 1.5
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.081 -0500", hash_original_method = "2C28D2E65709E046DB9D8E48F9D4C881", hash_generated_method = "CF5F54D37511371BF72B6F64B465B028")
     
     public synchronized StringBuffer append(CharSequence s) {
@@ -339,7 +339,7 @@ public synchronized StringBuffer append(char[] chars, int start, int length) {
      * @since 1.5
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.084 -0500", hash_original_method = "C1E3B870A5740951AADEEF0491CD7264", hash_generated_method = "F736447AA6D7242FF8318D00F32A2D4C")
     
     public synchronized StringBuffer append(CharSequence s, int start, int end) {
@@ -837,7 +837,7 @@ public synchronized StringBuffer reverse() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.153 -0500", hash_original_method = "5E8E344457E07DCAD9D3AB0618D1D4EE", hash_generated_method = "AF499A2A33AF6CDF77B7FE0D2F4F7363")
     
 @Override

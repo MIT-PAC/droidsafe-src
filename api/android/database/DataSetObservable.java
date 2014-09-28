@@ -18,7 +18,7 @@ public class DataSetObservable extends Observable<DataSetObserver> {
      * changed, and which when read contains the new state of the data.
      */
     @DSComment("callback will be invoked")
-    @DSSpec(DSCat.CALLBACK_INVOKE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.895 -0500", hash_original_method = "FCDAC37DCBE00C8E72E2289D698E0B3F", hash_generated_method = "BB4CEAAC9B3708D7274C54F7C0920423")
     
 public void notifyChanged() {

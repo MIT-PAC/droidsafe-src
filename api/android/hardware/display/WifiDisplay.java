@@ -39,7 +39,7 @@ public final class WifiDisplay implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:08.670 -0500", hash_original_field = "B3557C6228303312B6AE7E799F55A5BF", hash_generated_field = "C4BA2A490F483DE6F6AF7A2534C33D99")
 
     public static final Creator<WifiDisplay> CREATOR = new Creator<WifiDisplay>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         public WifiDisplay createFromParcel(Parcel in) {
             String deviceAddress = in.readString();
             String deviceName = in.readString();
@@ -125,6 +125,7 @@ public String getFriendlyDisplayName() {
         return o instanceof WifiDisplay && equals((WifiDisplay)o);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 11:24:08.692 -0500", hash_original_method = "02782289F52040DE0CFDA7897FDFAA19", hash_generated_method = "5CFCC1F4C6B90EF8E099D7248F27BA35")
     
 public boolean equals(WifiDisplay other) {

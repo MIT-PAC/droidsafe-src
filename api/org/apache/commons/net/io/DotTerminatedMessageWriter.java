@@ -127,7 +127,7 @@ public void write(int ch) throws IOException
      *            output.
      ***/
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:05.957 -0500", hash_original_method = "41630DBB62E0DD4474E2353E85A23DEC", hash_generated_method = "51F12645A0F3999256B122AE6A18CCC9")
     
 public void write(char[] buffer, int offset, int length) throws IOException

@@ -162,7 +162,7 @@ private void checkNotClosed() throws IOException {
      */
     @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.505 -0500", hash_original_method = "45333A97ED5F96C22A3D88C235B79D5A", hash_generated_method = "5AA7A43BC98370BA14A74751C65BA048")
     
 @Override

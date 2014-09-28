@@ -179,7 +179,7 @@ public void finish() throws IOException {
         done = true;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.827 -0500", hash_original_method = "DD8DF91486AFD685531F1A8944310E80", hash_generated_method = "8F716C7D080C02AB7834C5B17E78CDC1")
     

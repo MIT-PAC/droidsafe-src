@@ -8,7 +8,7 @@ import android.util.Log;
 public final class eu
 {
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.847 -0400", hash_original_method = "0EDCCB167192AFF5C2D02D386B8A761D", hash_generated_method = "57246BD4383C5FB9CC8C28B1F590CCEC")
     
 public static void z(String  r0)
@@ -75,7 +75,7 @@ public static void C(String  r0)
         }
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.877 -0400", hash_original_method = "B43F2D32A660E0FC9A17E7FD4FE6F5C9", hash_generated_method = "3252C29E0E785293597259D40A131E21")
     
 public static void D(String  r0)

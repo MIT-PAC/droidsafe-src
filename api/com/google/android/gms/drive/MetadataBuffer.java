@@ -38,7 +38,7 @@ public Object get(int  i0)
     	return obj;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.032 -0400", hash_original_method = "16F5324F6915752C4A7BE2CE49AACA8C", hash_generated_method = "75BFE76012C60A754B7808B1F402660F")
     
 public String getNextPageToken()

@@ -59,6 +59,7 @@ protected FileFileFilter() {
      * @param file  the File to check
      * @return true if the file is a file
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.720 -0400", hash_original_method = "981FD37767829C6F7D8558BD0416446C", hash_generated_method = "EF53AA7565D23EFB8E8E742395670F3B")
     
 @Override

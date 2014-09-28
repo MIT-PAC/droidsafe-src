@@ -65,6 +65,7 @@ public static void setDefaultExecutor(Executor exec) {
 
         private final AtomicInteger mCount = new AtomicInteger(1);
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.861 -0400", hash_original_method = "B4DE4405298900F09E8E832E952AEF02", hash_generated_method = "A4D12BFC850B96B3DEBA3947DCCDBB60")
         public Thread newThread(Runnable r) {
             Thread varB4EAC82CA7396A68D541C85D26508E83_1226229624 = null; 
@@ -147,6 +148,7 @@ private Result postResult(Result result) {
      *
      * @return The current status.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.255 -0500", hash_original_method = "C7B50D6362AC0A992140F3FAC71C75FC", hash_generated_method = "43A258D3633FEB76DAF4ECCF46B59AF2")
     
 public final Status getStatus() {

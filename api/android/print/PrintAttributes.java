@@ -267,6 +267,7 @@ public void setColorMode(int colorMode) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.005 -0400", hash_original_method = "9F49CB3CE4BB5B5C69AB9FFDD3CD133C", hash_generated_method = "E9FFD32A1D7DA3BDDDADACDDE8E6322E")
     
 @Override
@@ -984,6 +985,7 @@ void writeToParcel(Parcel parcel) {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.290 -0400", hash_original_method = "03D597ED7E98885AF9A90C57B588B58B", hash_generated_method = "6C7472F117952C58BDB9F172A3ED4DFE")
         
 @Override
@@ -1162,6 +1164,7 @@ void writeToParcel(Parcel parcel) {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.334 -0400", hash_original_method = "B8866F3A9BEA2B26716170ADB7CAEFB6", hash_generated_method = "27B21D6633FC4A08722A4CCAE4FCFECE")
         
 @Override
@@ -1317,6 +1320,7 @@ void writeToParcel(Parcel parcel) {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.366 -0400", hash_original_method = "C222FF0142CA43047EAA74CB6053BFB2", hash_generated_method = "1FD041C179857AF59DED4709CEE84C17")
         
 @Override
@@ -1407,6 +1411,7 @@ public void clear() {
          * @param mediaSize The media size.
          * @return This builder.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.380 -0400", hash_original_method = "6BE538D23A8C81E86D1C3376A5E7D30C", hash_generated_method = "6A7A250E619E5DE31BFE72AB57079650")
         
 public Builder setMediaSize(MediaSize mediaSize) {
@@ -1450,6 +1455,7 @@ public Builder setMinMargins(Margins margins) {
          * @see PrintAttributes#COLOR_MODE_MONOCHROME
          * @see PrintAttributes#COLOR_MODE_COLOR
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.386 -0400", hash_original_method = "106C9A08C183715955BABC2F6BE00730", hash_generated_method = "E190833F03822356DACFE4BEECB6B1DF")
         
 public Builder setColorMode(int colorMode) {
@@ -1465,6 +1471,7 @@ public Builder setColorMode(int colorMode) {
          *
          * @return The new instance.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:10.387 -0400", hash_original_method = "DA3684E3D16470606958F88F1E26F4AB", hash_generated_method = "DC9F6299A21C8E4FF32DDC441ED986DE")
         
 public PrintAttributes build() {

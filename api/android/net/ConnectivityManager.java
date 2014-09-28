@@ -411,6 +411,7 @@ public int stopUsingNetworkFeature(int networkType, String feature) {
      * @param hostAddress the IP address of the host to which the route is desired
      * @return {@code true} on success, {@code false} on failure
      */
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.009 -0500", hash_original_method = "C11FA4279C0A187DA118461D9F53788F", hash_generated_method = "A59DF0CDA78CA80C163B11A00636E787")
     
 public boolean requestRouteToHost(int networkType, int hostAddress) {
@@ -811,7 +812,7 @@ public boolean isNetworkSupported(int networkType) {
         return false;
     }
     @DSVerified
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.NETWORK)
     public boolean isActiveNetworkMetered() {
         return getTaintBoolean();
     }

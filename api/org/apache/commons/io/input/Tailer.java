@@ -128,6 +128,7 @@ public class Tailer implements Runnable {
      * @param bufSize buffer size.
      * @return The new tailer
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.551 -0400", hash_original_method = "C216811775A6723BB41E0D3A835823FC", hash_generated_method = "2E1788EBA86DBE00B0A103790D8375CB")
     
 public static Tailer create(File file, TailerListener listener, long delayMillis, boolean end, int bufSize) {
@@ -149,6 +150,7 @@ public static Tailer create(File file, TailerListener listener, long delayMillis
      * @param bufSize buffer size.
      * @return The new tailer
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.552 -0400", hash_original_method = "77CB7B14C0920E2315B4EAFBAD54E6D3", hash_generated_method = "25A400C91FDB6DE244445ADCA4231F0E")
     
 public static Tailer create(File file, TailerListener listener, long delayMillis, boolean end, boolean reOpen, 
@@ -169,6 +171,7 @@ public static Tailer create(File file, TailerListener listener, long delayMillis
      * @param end Set to true to tail from the end of the file, false to tail from the beginning of the file.
      * @return The new tailer
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.553 -0400", hash_original_method = "E6DE67B17B1FA33B29D27621C538E66B", hash_generated_method = "D6EBAA38BAAAD9B840A522F8810F5649")
     
 public static Tailer create(File file, TailerListener listener, long delayMillis, boolean end) {
@@ -185,6 +188,7 @@ public static Tailer create(File file, TailerListener listener, long delayMillis
      * @param reOpen whether to close/reopen the file between chunks
      * @return The new tailer
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.553 -0400", hash_original_method = "7C746AA13415E8E0AE7778068EA348B5", hash_generated_method = "833FB290FD68776643CC40816924356F")
     
 public static Tailer create(File file, TailerListener listener, long delayMillis, boolean end, boolean reOpen) {
@@ -199,6 +203,7 @@ public static Tailer create(File file, TailerListener listener, long delayMillis
      * @param delayMillis the delay between checks of the file for new content in milliseconds.
      * @return The new tailer
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.554 -0400", hash_original_method = "010EB4E68D4169840D612501A178DC5A", hash_generated_method = "BF88707516C13A89332BB74417756DF5")
     
 public static Tailer create(File file, TailerListener listener, long delayMillis) {
@@ -213,6 +218,7 @@ public static Tailer create(File file, TailerListener listener, long delayMillis
      * @param listener the TailerListener to use.
      * @return The new tailer
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.554 -0400", hash_original_method = "384D8F40DBB3390AC47A6D604F80EC3E", hash_generated_method = "66965F1F6AC5BAF8A8FD7A6B45E8FED9")
     
 public static Tailer create(File file, TailerListener listener) {
@@ -475,6 +481,8 @@ public void stop() {
      * @return The new position after the lines have been read
      * @throws java.io.IOException if an I/O error occurs.
      */
+    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.559 -0400", hash_original_method = "BAA3ED875E19911C3E75F2F82717033E", hash_generated_method = "EA1346BDE73EBCB5A920CE6AC9ADD2FD")
     
 private long readLines(RandomAccessFile reader) throws IOException {

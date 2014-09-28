@@ -29,12 +29,14 @@ import droidsafe.helpers.DSUtils;
 public class Camera {
     
     @DSComment("Camera control")
-    @DSSpec(DSCat.DEVICE)
+    @DSSafe(DSCat.SAFE_LIST)
     public static int getNumberOfCameras() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962180813 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962180813;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CAMERA})
     public static void getCameraInfo(int cameraId, CameraInfo cameraInfo) {
     }
 
@@ -272,7 +274,7 @@ protected void finalize() {
      * <p>You must call this as soon as you're done with the Camera object.</p>
      */
     @DSComment("Camera control")
-    @DSSpec(DSCat.DEVICE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.968 -0500", hash_original_method = "4B0BDA2F6C7B983609E1F519CAFAFE92", hash_generated_method = "5B0807539A32E762718C72FE86F9D29B")
     
 public final void release() {
@@ -524,6 +526,7 @@ public final void setPreviewCallback(PreviewCallback cb) {
      * @param cb a callback object that receives a copy of the next preview frame,
      *     or null to stop receiving callbacks.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.041 -0500", hash_original_method = "24870DBDAFF44FBB695A42B8C4F5E47B", hash_generated_method = "238A27BA52E4944675D6A53FB91F2CF4")
     
 public final void setOneShotPreviewCallback(PreviewCallback cb) {
@@ -723,6 +726,7 @@ private final void addCallbackBuffer(byte[] callbackBuffer, int msgType)
      * @see android.hardware.Camera.Parameters#setAutoExposureLock(boolean)
      * @see android.hardware.Camera.Parameters#setAutoWhiteBalanceLock(boolean)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.091 -0500", hash_original_method = "0E3CC922487DC63C4A5A24CA78FD017D", hash_generated_method = "F212B5C068D6E01BFE37F56DFF4A43E1")
     
 public final void autoFocus(AutoFocusCallback cb)
@@ -1368,6 +1372,7 @@ public void dump() {
          * @return a String with all values from this Parameters object, in
          *         semi-colon delimited key-value pairs
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.672 -0500", hash_original_method = "E90C6E0F7F8E9CA9BC2EBC890074459A", hash_generated_method = "46D3C956E7D272874CD3790DC1C377E9")
         
 public String flatten() {
@@ -1391,6 +1396,7 @@ public String flatten() {
          * @param flattened a String of parameters (key-value paired) that
          *                  are semi-colon delimited
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.675 -0500", hash_original_method = "5AA143467542BDE17D4CF17C4A163B7B", hash_generated_method = "12D2A58A9AE022CC9795E3DA8FBD2EE8")
         
 public void unflatten(String flattened) {
@@ -1530,7 +1536,7 @@ public int getInt(String key) {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.695 -0500", hash_original_method = "6987138C4F07A5DAB158AF960652B331", hash_generated_method = "1DBF0D0FEE6E5153176543EA49CE334B")
         
 public void setPreviewSize(int width, int height) {
@@ -1544,6 +1550,7 @@ public void setPreviewSize(int width, int height) {
          * @return a Size object with the width and height setting
          *          for the preview picture
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.697 -0500", hash_original_method = "FFDCE2F5212818E42781ADE1E098D0AA", hash_generated_method = "00593D158FF5EA5E6F06422C6C8C5283")
         
 public Size getPreviewSize() {
@@ -1769,7 +1776,8 @@ public int getJpegQuality() {
          * @see #setPreviewCallbackWithBuffer(Camera.PreviewCallback)
          * @see #getSupportedPreviewFpsRange()
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.733 -0500", hash_original_method = "6968DA252510074FDC520CD1B2513339", hash_generated_method = "9C70C9496F6BB96D13D47D0BCC4A3B68")
         
 public void setPreviewFpsRange(int min, int max) {
@@ -1785,6 +1793,7 @@ public void setPreviewFpsRange(int min, int max) {
          * @see #PREVIEW_FPS_MAX_INDEX
          * @see #getSupportedPreviewFpsRange()
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.737 -0500", hash_original_method = "694B13D03BD40D12B87F5E9E7F0CCA71", hash_generated_method = "1C53DEE1661FC57FE5EEFB37EFEC6687")
         
 public void getPreviewFpsRange(int[] range) {
@@ -1812,7 +1821,8 @@ public void getPreviewFpsRange(int[] range) {
          * @see #PREVIEW_FPS_MIN_INDEX
          * @see #PREVIEW_FPS_MAX_INDEX
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.740 -0500", hash_original_method = "37F4ABC3F60B37AD6F5647AB4E5273E8", hash_generated_method = "324E8645B0571B0588B13481475ABFB4")
         
 public List<int[]> getSupportedPreviewFpsRange() {
@@ -2254,7 +2264,8 @@ public List<String> getSupportedWhiteBalance() {
          * @see #EFFECT_BLACKBOARD
          * @see #EFFECT_AQUA
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.799 -0500", hash_original_method = "EBDE73BA19867EBFCE22D321F450F04C", hash_generated_method = "60CD23ED292B48B8C6C23BECBF7F7192")
         
 public String getColorEffect() {
@@ -2269,7 +2280,7 @@ public String getColorEffect() {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.802 -0500", hash_original_method = "0DAF9E55870C866B1D9028B63F9B1051", hash_generated_method = "08EAA4356B2FBD8419F87D628512BD41")
         
 public void setColorEffect(String value) {
@@ -2285,7 +2296,7 @@ public void setColorEffect(String value) {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.805 -0500", hash_original_method = "17E8CABB5939F7293955A7E6B8E9706B", hash_generated_method = "2C0E927348936C6C3776C79A0F363098")
         
 public List<String> getSupportedColorEffects() {
@@ -2361,7 +2372,7 @@ public List<String> getSupportedAntibanding() {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.815 -0500", hash_original_method = "392D4B71E895D4140EEFD980EB15B5EB", hash_generated_method = "691DA46143DA9BF9938A86839D45704C")
         
 public String getSceneMode() {
@@ -2382,7 +2393,7 @@ public String getSceneMode() {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.817 -0500", hash_original_method = "F340D9AF77CABF3FCAC1513FFFE1B10A", hash_generated_method = "9BA5915BA5E81E16DD36AD91AAE89DF0")
         
 public void setSceneMode(String value) {
@@ -2398,7 +2409,7 @@ public void setSceneMode(String value) {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.820 -0500", hash_original_method = "AB0AD307D147C1A6D4713ECB3D12ACCF", hash_generated_method = "9F2E42C9F7D53169DE36AC9173B23BA3")
         
 public List<String> getSupportedSceneModes() {
@@ -2419,7 +2430,7 @@ public List<String> getSupportedSceneModes() {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.823 -0500", hash_original_method = "7750780C979B83A925E226C6EFF8842D", hash_generated_method = "E83475C7B7538A7AE276AD39CA15EA70")
         
 public String getFlashMode() {
@@ -2434,7 +2445,7 @@ public String getFlashMode() {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.825 -0500", hash_original_method = "C9F8B5AECF6107B196C9E01FA7C3624E", hash_generated_method = "5B25B77173D426BAB2F628CE784BFCBA")
         
 public void setFlashMode(String value) {
@@ -2450,7 +2461,7 @@ public void setFlashMode(String value) {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.828 -0500", hash_original_method = "9F7096D0E359D5569731888F2DB333B8", hash_generated_method = "FAD1C14B30051AA4ED799F4063F11D5E")
         
 public List<String> getSupportedFlashModes() {
@@ -2474,7 +2485,7 @@ public List<String> getSupportedFlashModes() {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.831 -0500", hash_original_method = "E2184619B509409238D8385BD3A054E5", hash_generated_method = "F6449A4CBF51EDCBF2AC20B6A387F80E")
         
 public String getFocusMode() {
@@ -2489,7 +2500,7 @@ public String getFocusMode() {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.833 -0500", hash_original_method = "7416CBC128B7B3D1CBE2DFA875979AFE", hash_generated_method = "87FECA6DF3FC52B36F1AD507E4EC5FFA")
         
 public void setFocusMode(String value) {
@@ -2505,7 +2516,7 @@ public void setFocusMode(String value) {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.836 -0500", hash_original_method = "87EBF137327885002F74E14885E0F854", hash_generated_method = "CC849BFF1A0DB8B865F34DAEA25187FF")
         
 public List<String> getSupportedFocusModes() {
@@ -2560,7 +2571,8 @@ public float getVerticalViewAngle() {
          *         #getMaxExposureCompensation}. 0 means exposure is not
          *         adjusted.
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.846 -0500", hash_original_method = "5FCFE536B3898D346449D108449D390F", hash_generated_method = "BFD7464C646A695F80942FB1CDACF74D")
         
 public int getExposureCompensation() {
@@ -2577,7 +2589,8 @@ public int getExposureCompensation() {
          *        getMinExposureCompensation and getMaxExposureCompensation to
          *        know if exposure compensation is supported.
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.848 -0500", hash_original_method = "111B767E933C2CD9576CD967C7CB52EF", hash_generated_method = "2EB79FABFD9C0A01B5FDD9366985D416")
         
 public void setExposureCompensation(int value) {
@@ -2591,7 +2604,8 @@ public void setExposureCompensation(int value) {
          *         method and {@link #getMinExposureCompensation} return 0,
          *         exposure compensation is not supported.
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.852 -0500", hash_original_method = "075FA30D94BD252A505071BE80B3A2DE", hash_generated_method = "A1699AD07848A0FFDE06486DB87DDB6A")
         
 public int getMaxExposureCompensation() {
@@ -2605,7 +2619,8 @@ public int getMaxExposureCompensation() {
          *         method and {@link #getMaxExposureCompensation} return 0,
          *         exposure compensation is not supported.
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.854 -0500", hash_original_method = "B03007C077325F58AA26E52D0D9C3FEA", hash_generated_method = "BE4FAD1065457AFBE725279D9F9D3823")
         
 public int getMinExposureCompensation() {
@@ -2620,7 +2635,8 @@ public int getMinExposureCompensation() {
          *         exposure compensation index is -6 and step is 0.333333333, EV
          *         is -2.
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.857 -0500", hash_original_method = "9B0A72FE96E27833E9483AB189C9FCA2", hash_generated_method = "38C1BA754F74F5FDA22DCE3572B06AD5")
         
 public float getExposureCompensationStep() {
@@ -2792,7 +2808,7 @@ public boolean isAutoWhiteBalanceLockSupported() {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.875 -0500", hash_original_method = "3CA678C8AE8E3F66428134128CE7EEC9", hash_generated_method = "6D30BEAF19965DB197F1AF9EBC491D4A")
         
 public int getZoom() {
@@ -2811,7 +2827,7 @@ public int getZoom() {
          */
         @DSComment("data structure class")
         @DSSafe(DSCat.DATA_STRUCTURE)
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.878 -0500", hash_original_method = "4C7A1B4E8D019C0A8169E6EC8AF83500", hash_generated_method = "809429A3F9B65A95969FFFF807B2F0E6")
         
 public void setZoom(int value) {
@@ -2930,7 +2946,8 @@ public void getFocusDistances(float[] output) {
          * @return the maximum number of focus areas supported by the camera.
          * @see #getFocusAreas()
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.894 -0500", hash_original_method = "B9C518AE022CEE0A2E16335F0D4F42AA", hash_generated_method = "A230E4F6004AD9F358682A9EC42DF8B0")
         
 public int getMaxNumFocusAreas() {
@@ -2979,7 +2996,8 @@ public int getMaxNumFocusAreas() {
          *
          * @return a list of current focus areas
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.897 -0500", hash_original_method = "1F7F1457F62663F3FBD9FCD39F49FAC0", hash_generated_method = "92A35D538949BD35F19D090AD392FD32")
         
 public List<Area> getFocusAreas() {
@@ -2992,6 +3010,7 @@ public List<Area> getFocusAreas() {
          * @param focusAreas the focus areas
          * @see #getFocusAreas()
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.901 -0500", hash_original_method = "282CBAFBAC13AEC2BEC36481C427E569", hash_generated_method = "C3D1760DB5A86F79D064AC4A5C13B872")
         
 public void setFocusAreas(List<Area> focusAreas) {
@@ -3006,7 +3025,8 @@ public void setFocusAreas(List<Area> focusAreas) {
          * @return the maximum number of metering areas supported by the camera.
          * @see #getMeteringAreas()
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.903 -0500", hash_original_method = "A4B96F518C484696647FE84A6B3DFFDC", hash_generated_method = "1E7CBB1A1D4C9EE3513A78F9CE481888")
         
 public int getMaxNumMeteringAreas() {
@@ -3053,7 +3073,8 @@ public int getMaxNumMeteringAreas() {
          *
          * @return a list of current metering areas
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.906 -0500", hash_original_method = "4184DAADE6BD6ABC78AAB559556E3679", hash_generated_method = "8377C8001BBA4F651374F15163D6B253")
         
 public List<Area> getMeteringAreas() {
@@ -3067,6 +3088,7 @@ public List<Area> getMeteringAreas() {
          * @param meteringAreas the metering areas
          * @see #getMeteringAreas()
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.908 -0500", hash_original_method = "EDE536DB365D3616ED4EF1065A695BCF", hash_generated_method = "A77AE423EE815FD593F476FD2570F0D5")
         
 public void setMeteringAreas(List<Area> meteringAreas) {
@@ -3166,7 +3188,8 @@ public boolean isVideoSnapshotSupported() {
          * @see #isVideoStabilizationSupported()
          * @see #getVideoStabilization()
          */
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.919 -0500", hash_original_method = "9F60C08F2ED5DD6FF6AE5E03CD68E34B", hash_generated_method = "047EF69BB2F5615B6406A11E040D9922")
         
 public void setVideoStabilization(boolean toggle) {
@@ -3181,7 +3204,8 @@ public void setVideoStabilization(boolean toggle) {
          * @see #isVideoStabilizationSupported()
          * @see #setVideoStabilization(boolean)
          */
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.923 -0500", hash_original_method = "206980091DCF06EE02F8F95474290B64", hash_generated_method = "8F88BB22621EFC71E6A9431C87163017")
         
 public boolean getVideoStabilization() {
@@ -3197,6 +3221,7 @@ public boolean getVideoStabilization() {
          * @see #setVideoStabilization(boolean)
          * @see #getVideoStabilization()
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.925 -0500", hash_original_method = "7565DC492C39C0F6D368D835BD28A381", hash_generated_method = "6786179B938DFDBC6BDB28B183BB7E3D")
         
 public boolean isVideoStabilizationSupported() {
@@ -3483,6 +3508,7 @@ private boolean same(String s1, String s2) {
      *
      * @see #autoFocus(Camera.AutoFocusCallback)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.103 -0500", hash_original_method = "2EF0F393A3D655AFB514BFE787466093", hash_generated_method = "9BBCA5F1368C0129438B0C03CF2B16E1")
     
 public final void cancelAutoFocus()
@@ -3670,6 +3696,7 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
      *                position is 0 (landscape).
      * @see #setPreviewDisplay(SurfaceHolder)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.156 -0500", hash_original_method = "4194592279C5F487807EC326C09E0EDE", hash_generated_method = "DC9DF9A8B6356F0DFB9E48FFC5E87F4D")
     
     public final void setDisplayOrientation(int degrees){
@@ -3821,6 +3848,7 @@ public final void setErrorCallback(ErrorCallback cb)
      * @throws RuntimeException if any parameter is invalid or not supported.
      * @see #getParameters()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.231 -0500", hash_original_method = "626488C7E8947ED02FA722E13C8A89F1", hash_generated_method = "504C86AD096C8F6E5F3DAD232986015D")
     
 public void setParameters(Parameters params) {
@@ -3834,6 +3862,8 @@ public void setParameters(Parameters params) {
      *
      * @see #setParameters(Camera.Parameters)
      */
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CAMERA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.233 -0500", hash_original_method = "5DDAD998A9057F14B2A0711CFDC833B3", hash_generated_method = "07CF34F07E8C2D025541953C51E476D3")
     
 public Parameters getParameters() {

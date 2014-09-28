@@ -81,8 +81,8 @@ public StringWriter(int initialSize) {
      * @return a reference to this writer's internal {@code StringBuffer}.
      */
     @DSComment("not sensitive, memory stream")
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.101 -0500", hash_original_method = "A7A377F1952FAEFB7BC2FB8A1C51454F", hash_generated_method = "9DACA42F3BBA428D705F71B19D733A93")
     
 public StringBuffer getBuffer() {
@@ -95,7 +95,7 @@ public StringBuffer getBuffer() {
      * @return this writer's contents as a string.
      */
     @DSComment("not sensitive, memory stream")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.104 -0500", hash_original_method = "B210C316A5935A34586C62D959011891", hash_generated_method = "1774137BABF77D6332E3E77ADE4EE85A")
     
 @Override
@@ -118,6 +118,7 @@ public StringBuffer getBuffer() {
      *             offset + count} is greater than the size of {@code buf}.
      */
     
+    @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.106 -0500", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "9CDF0FF8BCA96E90FC2C10775DCA5372")
@@ -139,7 +140,8 @@ public StringBuffer getBuffer() {
      *            the character to write to this writer's {@code StringBuffer}.
      */
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.109 -0500", hash_original_method = "9E74599A1E38039394CB519CF0982BB0", hash_generated_method = "C5C3795F9028875601BFA514394360DA")
     
 @Override
@@ -155,9 +157,9 @@ public StringBuffer getBuffer() {
      *            the non-null string containing the characters to write.
      */
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.111 -0500", hash_original_method = "C709310F14478B827E3F0AC974DDA1E9", hash_generated_method = "B9E6C838B077F39FFE8F290B8FE54952")
-    
+    @DSSink({DSSinkKind.IO})
 @Override
     public void write(String str) {
         buf.append(str);
@@ -178,9 +180,9 @@ public StringBuffer getBuffer() {
      *             offset + count} is greater than the length of {@code str}.
      */
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.114 -0500", hash_original_method = "944E85902A11A60E741C7A4261619164", hash_generated_method = "A8BBB0A5273822517081196A431752C3")
-    
+    @DSSink({DSSinkKind.IO})
 @Override
     public void write(String str, int offset, int count) {
         String sub = str.substring(offset, offset + count);
@@ -216,6 +218,7 @@ public StringBuffer getBuffer() {
      * @return this writer.
      */
     
+    @DSSink({DSSinkKind.IO})
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.119 -0500", hash_original_method = "4F8B551F847F79C820191D7A1919C8D2", hash_generated_method = "B284D98AD1C78CD17BCF774DB4E26F37")
     

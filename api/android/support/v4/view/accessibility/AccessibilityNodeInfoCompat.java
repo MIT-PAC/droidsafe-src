@@ -105,322 +105,386 @@ public class AccessibilityNodeInfoCompat {
     }
 
     static class AccessibilityNodeInfoStubImpl implements AccessibilityNodeInfoImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain() {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain(View source) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain(View root, int virtualDescendantId) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain(Object info) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void addAction(Object info, int action) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void addChild(Object info, View child) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void addChild(Object info, View child, int virtualDescendantId) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
             return Collections.emptyList();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getActions(Object info) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void getBoundsInParent(Object info, Rect outBounds) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void getBoundsInScreen(Object info, Rect outBounds) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getChild(Object info, int index) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getChildCount(Object info) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getClassName(Object info) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getContentDescription(Object info) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getPackageName(Object info) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getParent(Object info) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getText(Object info) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getWindowId(Object info) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isCheckable(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isChecked(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isClickable(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isEnabled(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isFocusable(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isFocused(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isVisibleToUser(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isAccessibilityFocused(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isLongClickable(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isPassword(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isScrollable(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isSelected(Object info) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean performAction(Object info, int action) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean performAction(Object info, int action, Bundle arguments) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setMovementGranularities(Object info, int granularities) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMovementGranularities(Object info) {
             return 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setBoundsInParent(Object info, Rect bounds) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setBoundsInScreen(Object info, Rect bounds) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setCheckable(Object info, boolean checkable) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setChecked(Object info, boolean checked) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setClassName(Object info, CharSequence className) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setClickable(Object info, boolean clickable) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setContentDescription(Object info, CharSequence contentDescription) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setEnabled(Object info, boolean enabled) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setFocusable(Object info, boolean focusable) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setFocused(Object info, boolean focused) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setVisibleToUser(Object info, boolean visibleToUser) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAccessibilityFocused(Object info, boolean focused) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLongClickable(Object info, boolean longClickable) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setPackageName(Object info, CharSequence packageName) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setParent(Object info, View parent) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setPassword(Object info, boolean password) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScrollable(Object info, boolean scrollable) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setSelected(Object info, boolean selected) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setSource(Object info, View source) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setSource(Object info, View root, int virtualDescendantId) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object findFocus(Object info, int focus) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object focusSearch(Object info, int direction) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setText(Object info, CharSequence text) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void recycle(Object info) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setParent(Object info, View root, int virtualDescendantId) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String getViewIdResourceName(Object info) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setViewIdResourceName(Object info, String viewId) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLiveRegion(Object info) {
             //return ViewCompat.ACCESSIBILITY_LIVE_REGION_NONE;
         	return DSUtils.FAKE_INT;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLiveRegion(Object info, int mode) {
             // No-op
@@ -428,236 +492,283 @@ public class AccessibilityNodeInfoCompat {
     }
 
     static class AccessibilityNodeInfoIcsImpl extends AccessibilityNodeInfoStubImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain() {
             return AccessibilityNodeInfoCompatIcs.obtain();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain(View source) {
             return AccessibilityNodeInfoCompatIcs.obtain(source);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain(Object info) {
             return AccessibilityNodeInfoCompatIcs.obtain(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void addAction(Object info, int action) {
             AccessibilityNodeInfoCompatIcs.addAction(info, action);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void addChild(Object info, View child) {
             AccessibilityNodeInfoCompatIcs.addChild(info, child);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public List<Object> findAccessibilityNodeInfosByText(Object info, String text) {
             return AccessibilityNodeInfoCompatIcs.findAccessibilityNodeInfosByText(info, text);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getActions(Object info) {
             return AccessibilityNodeInfoCompatIcs.getActions(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void getBoundsInParent(Object info, Rect outBounds) {
             AccessibilityNodeInfoCompatIcs.getBoundsInParent(info, outBounds);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void getBoundsInScreen(Object info, Rect outBounds) {
             AccessibilityNodeInfoCompatIcs.getBoundsInScreen(info, outBounds);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getChild(Object info, int index) {
             return AccessibilityNodeInfoCompatIcs.getChild(info, index);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getChildCount(Object info) {
             return AccessibilityNodeInfoCompatIcs.getChildCount(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getClassName(Object info) {
             return AccessibilityNodeInfoCompatIcs.getClassName(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getContentDescription(Object info) {
             return AccessibilityNodeInfoCompatIcs.getContentDescription(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getPackageName(Object info) {
             return AccessibilityNodeInfoCompatIcs.getPackageName(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object getParent(Object info) {
             return AccessibilityNodeInfoCompatIcs.getParent(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public CharSequence getText(Object info) {
             return AccessibilityNodeInfoCompatIcs.getText(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getWindowId(Object info) {
             return AccessibilityNodeInfoCompatIcs.getWindowId(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isCheckable(Object info) {
             return AccessibilityNodeInfoCompatIcs.isCheckable(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isChecked(Object info) {
             return AccessibilityNodeInfoCompatIcs.isChecked(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isClickable(Object info) {
             return AccessibilityNodeInfoCompatIcs.isClickable(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isEnabled(Object info) {
             return AccessibilityNodeInfoCompatIcs.isEnabled(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isFocusable(Object info) {
             return AccessibilityNodeInfoCompatIcs.isFocusable(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isFocused(Object info) {
             return AccessibilityNodeInfoCompatIcs.isFocused(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isLongClickable(Object info) {
             return AccessibilityNodeInfoCompatIcs.isLongClickable(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isPassword(Object info) {
             return AccessibilityNodeInfoCompatIcs.isPassword(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isScrollable(Object info) {
             return AccessibilityNodeInfoCompatIcs.isScrollable(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isSelected(Object info) {
             return AccessibilityNodeInfoCompatIcs.isSelected(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean performAction(Object info, int action) {
             return AccessibilityNodeInfoCompatIcs.performAction(info, action);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setBoundsInParent(Object info, Rect bounds) {
             AccessibilityNodeInfoCompatIcs.setBoundsInParent(info, bounds);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setBoundsInScreen(Object info, Rect bounds) {
             AccessibilityNodeInfoCompatIcs.setBoundsInScreen(info, bounds);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setCheckable(Object info, boolean checkable) {
             AccessibilityNodeInfoCompatIcs.setCheckable(info, checkable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setChecked(Object info, boolean checked) {
             AccessibilityNodeInfoCompatIcs.setChecked(info, checked);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setClassName(Object info, CharSequence className) {
             AccessibilityNodeInfoCompatIcs.setClassName(info, className);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setClickable(Object info, boolean clickable) {
             AccessibilityNodeInfoCompatIcs.setClickable(info, clickable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setContentDescription(Object info, CharSequence contentDescription) {
             AccessibilityNodeInfoCompatIcs.setContentDescription(info, contentDescription);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setEnabled(Object info, boolean enabled) {
             AccessibilityNodeInfoCompatIcs.setEnabled(info, enabled);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setFocusable(Object info, boolean focusable) {
             AccessibilityNodeInfoCompatIcs.setFocusable(info, focusable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setFocused(Object info, boolean focused) {
             AccessibilityNodeInfoCompatIcs.setFocused(info, focused);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLongClickable(Object info, boolean longClickable) {
             AccessibilityNodeInfoCompatIcs.setLongClickable(info, longClickable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setPackageName(Object info, CharSequence packageName) {
             AccessibilityNodeInfoCompatIcs.setPackageName(info, packageName);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setParent(Object info, View parent) {
             AccessibilityNodeInfoCompatIcs.setParent(info, parent);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setPassword(Object info, boolean password) {
             AccessibilityNodeInfoCompatIcs.setPassword(info, password);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScrollable(Object info, boolean scrollable) {
             AccessibilityNodeInfoCompatIcs.setScrollable(info, scrollable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setSelected(Object info, boolean selected) {
             AccessibilityNodeInfoCompatIcs.setSelected(info, selected);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setSource(Object info, View source) {
             AccessibilityNodeInfoCompatIcs.setSource(info, source);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setText(Object info, CharSequence text) {
             AccessibilityNodeInfoCompatIcs.setText(info, text);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.recycle(info);
@@ -665,66 +776,79 @@ public class AccessibilityNodeInfoCompat {
     }
 
     static class AccessibilityNodeInfoJellybeanImpl extends AccessibilityNodeInfoIcsImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object obtain(View root, int virtualDescendantId) {
             return AccessibilityNodeInfoCompatJellyBean.obtain(root, virtualDescendantId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object findFocus(Object info, int focus) {
             return AccessibilityNodeInfoCompatJellyBean.findFocus(info, focus);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object focusSearch(Object info, int direction) {
             return AccessibilityNodeInfoCompatJellyBean.focusSearch(info, direction);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void addChild(Object info, View child, int virtualDescendantId) {
             AccessibilityNodeInfoCompatJellyBean.addChild(info, child, virtualDescendantId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setSource(Object info, View root, int virtualDescendantId) {
             AccessibilityNodeInfoCompatJellyBean.setSource(info, root, virtualDescendantId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isVisibleToUser(Object info) {
             return AccessibilityNodeInfoCompatJellyBean.isVisibleToUser(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setVisibleToUser(Object info, boolean visibleToUser) {
             AccessibilityNodeInfoCompatJellyBean.setVisibleToUser(info, visibleToUser);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isAccessibilityFocused(Object info) {
             return AccessibilityNodeInfoCompatJellyBean.isAccessibilityFocused(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setAccessibilityFocused(Object info, boolean focused) {
             AccessibilityNodeInfoCompatJellyBean.setAccesibilityFocused(info, focused);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean performAction(Object info, int action, Bundle arguments) {
             return AccessibilityNodeInfoCompatJellyBean.performAction(info, action, arguments);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setMovementGranularities(Object info, int granularities) {
             AccessibilityNodeInfoCompatJellyBean.setMovementGranularities(info, granularities);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getMovementGranularities(Object info) {
             return AccessibilityNodeInfoCompatJellyBean.getMovementGranularities(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setParent(Object info, View root, int virtualDescendantId) {
             AccessibilityNodeInfoCompatJellyBean.setParent(info, root, virtualDescendantId);
@@ -733,11 +857,13 @@ public class AccessibilityNodeInfoCompat {
 
     static class AccessibilityNodeInfoJellybeanMr2Impl extends AccessibilityNodeInfoJellybeanImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public String getViewIdResourceName(Object info) {
             return AccessibilityNodeInfoCompatJellybeanMr2.getViewIdResourceName(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setViewIdResourceName(Object info, String viewId) {
             AccessibilityNodeInfoCompatJellybeanMr2.setViewIdResourceName(info, viewId);
@@ -745,11 +871,13 @@ public class AccessibilityNodeInfoCompat {
     }
 
     static class AccessibilityNodeInfoKitKatImpl extends AccessibilityNodeInfoJellybeanMr2Impl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getLiveRegion(Object info) {
             return AccessibilityNodeInfoCompatKitKat.getLiveRegion(info);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setLiveRegion(Object info, int mode) {
             AccessibilityNodeInfoCompatKitKat.setLiveRegion(info, mode);
@@ -897,6 +1025,7 @@ public class AccessibilityNodeInfoCompat {
      * @param object The info to wrap.
      * @return A wrapper for if the object is not null, null otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.712 -0400", hash_original_method = "2DFE928CC0A7C8B2845A0A9C19748EC7", hash_generated_method = "FD1A1E5EAF915CFBA0FDBCD5053E48C9")
         
 static AccessibilityNodeInfoCompat wrapNonNullInstance(Object object) {
@@ -913,6 +1042,7 @@ static AccessibilityNodeInfoCompat wrapNonNullInstance(Object object) {
      * @return An instance.
      * @see #setSource(View)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.720 -0400", hash_original_method = "F9AA2D570A3175E85EA88CC7CBE5041C", hash_generated_method = "49AC34C441BC55CC4E6DED083F40E68C")
         
 public static AccessibilityNodeInfoCompat obtain(View source) {
@@ -929,6 +1059,7 @@ public static AccessibilityNodeInfoCompat obtain(View source) {
      *
      * @see #setSource(View, int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.724 -0400", hash_original_method = "7BFD5802F760348263B626FB8A12835C", hash_generated_method = "C5ACC94206ECD69C2F9D20F9AA2861D6")
         
 public static AccessibilityNodeInfoCompat obtain(View root, int virtualDescendantId) {
@@ -941,6 +1072,7 @@ public static AccessibilityNodeInfoCompat obtain(View root, int virtualDescendan
      *
      * @return An instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.726 -0400", hash_original_method = "272D52BEF9820381418060E4EE596F9C", hash_generated_method = "AF3B3E12D0337DB41978A195C832F209")
         
 public static AccessibilityNodeInfoCompat obtain() {
@@ -954,12 +1086,14 @@ public static AccessibilityNodeInfoCompat obtain() {
      * @param info The other info.
      * @return An instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.729 -0400", hash_original_method = "78780BBC3BE59608C62FADBC53E0363A", hash_generated_method = "50982A2D65173EA810560A83102FC8B6")
         
 public static AccessibilityNodeInfoCompat obtain(AccessibilityNodeInfoCompat info) {
         return AccessibilityNodeInfoCompat.wrapNonNullInstance(IMPL.obtain(info.mInfo));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.899 -0400", hash_original_method = "DBC6612AC976A9F762D088C047C7CF9C", hash_generated_method = "A51EAB80893C5E25C7B9BA4D588B0C0F")
         
 private static String getActionSymbolicName(int action) {
@@ -1023,6 +1157,7 @@ public AccessibilityNodeInfoCompat(Object info) {
     /**
      * @return The wrapped {@link android.view.accessibility.AccessibilityNodeInfo}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.717 -0400", hash_original_method = "A54689839F6FFAA9158E320BE92D3988", hash_generated_method = "DCCD49288D99218A38C96EC4094E8F79")
         
 public Object getInfo() {
@@ -1034,6 +1169,7 @@ public Object getInfo() {
      *
      * @param source The info source.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.731 -0400", hash_original_method = "DBD6C4E567C7947922529BA45E2088C3", hash_generated_method = "90B66C2995A5D6DDFBBCBCFC7050DA5D")
         
 public void setSource(View source) {
@@ -1059,6 +1195,7 @@ public void setSource(View source) {
      * @param root The root of the virtual subtree.
      * @param virtualDescendantId The id of the virtual descendant.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.735 -0400", hash_original_method = "7954D3A09383A096032D62B125ADE25C", hash_generated_method = "CF5787C77447F4E59A64736D5DFC78AE")
         
 public void setSource(View root, int virtualDescendantId) {
@@ -1154,6 +1291,7 @@ public AccessibilityNodeInfoCompat getChild(int index) {
      * @param child The child.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.751 -0400", hash_original_method = "96991CF3D104F82AE28D15A837764722", hash_generated_method = "16E809D8BA444B09A15AA1DB6234B0DB")
         
 public void addChild(View child) {
@@ -1174,6 +1312,7 @@ public void addChild(View child) {
      * @param root The root of the virtual subtree.
      * @param virtualDescendantId The id of the virtual child.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.755 -0400", hash_original_method = "27ACF91E2BB26DB3FB9A03AE42473C80", hash_generated_method = "E8F23D4BB6F80C1381F656208C6E0876")
         
 public void addChild(View root, int virtualDescendantId) {
@@ -1189,6 +1328,7 @@ public void addChild(View root, int virtualDescendantId) {
      * @see android.view.accessibility.AccessibilityNodeInfo#ACTION_SELECT
      * @see android.view.accessibility.AccessibilityNodeInfo#ACTION_CLEAR_SELECTION
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.758 -0400", hash_original_method = "933CE3223B5CD7F54D5F21B403DB8A7E", hash_generated_method = "537D5CB0A559CBBF67228F479B60ED73")
         
 public int getActions() {
@@ -1206,6 +1346,7 @@ public int getActions() {
      * @param action The action.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.760 -0400", hash_original_method = "F620D8EC3817B6EC64D02A805E40B2B4", hash_generated_method = "1F3F2FFA9362EAD00B99DB76616D4CD3")
         
 public void addAction(int action) {
@@ -1261,6 +1402,7 @@ public boolean performAction(int action, Bundle arguments) {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.768 -0400", hash_original_method = "EF36E97AF685EFB246C7E0DB4903F5E7", hash_generated_method = "CC1B038B95474C9F08EAD3A83F2E072A")
         
 public void setMovementGranularities(int granularities) {
@@ -1272,6 +1414,7 @@ public void setMovementGranularities(int granularities) {
      *
      * @return The bit mask with granularities.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.771 -0400", hash_original_method = "165530901FAD09423D54567E2ACB4A57", hash_generated_method = "D138F1B8AE8CF20BE2B460986621EB91")
         
 public int getMovementGranularities() {
@@ -1331,6 +1474,7 @@ public AccessibilityNodeInfoCompat getParent() {
      * @param parent The parent.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.780 -0400", hash_original_method = "86518FC5D5AE3E2BA199BEEAA088933F", hash_generated_method = "A9CC7F035545F94FB6F4921F709546B9")
         
 public void setParent(View parent) {
@@ -1356,6 +1500,7 @@ public void setParent(View parent) {
      * @param root The root of the virtual subtree.
      * @param virtualDescendantId The id of the virtual descendant.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.783 -0400", hash_original_method = "7AB699AAF54FCCF23DA69F8C685E3524", hash_generated_method = "B498B5BF869F09FF4D688384ACE2DDD3")
         
 public void setParent(View root, int virtualDescendantId) {
@@ -1367,6 +1512,7 @@ public void setParent(View root, int virtualDescendantId) {
      *
      * @param outBounds The output node bounds.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.785 -0400", hash_original_method = "E0ACD239D05CD134F4788FDE11AB973D", hash_generated_method = "DF442BEA6EFF145BFDDC74F1596920B2")
         
 public void getBoundsInParent(Rect outBounds) {
@@ -1384,6 +1530,7 @@ public void getBoundsInParent(Rect outBounds) {
      * @param bounds The node bounds.
      *@throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.787 -0400", hash_original_method = "3D18F1D3A722CB931F3C0EA8FCAAFCB7", hash_generated_method = "4800FFEAA8FE374D7F76DD508373AD10")
         
 public void setBoundsInParent(Rect bounds) {
@@ -1395,6 +1542,7 @@ public void setBoundsInParent(Rect bounds) {
      *
      * @param outBounds The output node bounds.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.790 -0400", hash_original_method = "603EEE18F9883128AEF640A26C131D4C", hash_generated_method = "DD24380EE95AB6750BC5D493BDB21D91")
         
 public void getBoundsInScreen(Rect outBounds) {
@@ -1412,6 +1560,7 @@ public void getBoundsInScreen(Rect outBounds) {
      * @param bounds The node bounds.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.792 -0400", hash_original_method = "430D1838A28087C23844BEEDDC51F0AD", hash_generated_method = "09AEB8EF4B01EEEB391FC10D88383349")
         
 public void setBoundsInScreen(Rect bounds) {
@@ -1423,6 +1572,7 @@ public void setBoundsInScreen(Rect bounds) {
      *
      * @return True if the node is checkable.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.795 -0400", hash_original_method = "AC8D43F54DC3BA7E7C149D4503D525F3", hash_generated_method = "F2938EAA3048AB629FE1EE997D43827D")
         
 public boolean isCheckable() {
@@ -1451,6 +1601,7 @@ public void setCheckable(boolean checkable) {
      *
      * @return True if the node is checked.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.800 -0400", hash_original_method = "519FEB307C383A2CCF5C74B89068518B", hash_generated_method = "43860E8682617411EB0F8D925489E905")
         
 public boolean isChecked() {
@@ -1479,6 +1630,7 @@ public void setChecked(boolean checked) {
      *
      * @return True if the node is focusable.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.804 -0400", hash_original_method = "C9FC8F868000F9B33292AD780E66DCA0", hash_generated_method = "1B0C7C9ED4E3061FC117CF300391E932")
         
 public boolean isFocusable() {
@@ -1496,6 +1648,7 @@ public boolean isFocusable() {
      * @param focusable True if the node is focusable.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.807 -0400", hash_original_method = "FBAE0F38121F1E86CBC8B993867A4A27", hash_generated_method = "9EE3B225F0BB900FFF66FF8CFE4D2755")
         
 public void setFocusable(boolean focusable) {
@@ -1507,6 +1660,7 @@ public void setFocusable(boolean focusable) {
      *
      * @return True if the node is focused.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.810 -0400", hash_original_method = "4F186107AF4B40F30B1A87108529D484", hash_generated_method = "1CE5FAA6469CB8E3576D4A61733A2FB1")
         
 public boolean isFocused() {
@@ -1524,6 +1678,7 @@ public boolean isFocused() {
      * @param focused True if the node is focused.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.812 -0400", hash_original_method = "9869A69DD9422BD72F2EA6EC374F4934", hash_generated_method = "20F520430D8D21E4D7B31FF626E2060D")
         
 public void setFocused(boolean focused) {
@@ -1535,6 +1690,7 @@ public void setFocused(boolean focused) {
      *
      * @return Whether the node is visible to the user.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.815 -0400", hash_original_method = "A8DEEB549F9B553F594403F7D5242DB9", hash_generated_method = "C58903448AC17A6A2D63D59A7CDF8D37")
         
 public boolean isVisibleToUser() {
@@ -1553,6 +1709,7 @@ public boolean isVisibleToUser() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.818 -0400", hash_original_method = "510D47E0125ACE2A9F163ED65DBE5145", hash_generated_method = "C7AFC8E49A87CCAB09E6D03A81D90359")
         
 public void setVisibleToUser(boolean visibleToUser) {
@@ -1564,6 +1721,7 @@ public void setVisibleToUser(boolean visibleToUser) {
      *
      * @return True if the node is accessibility focused.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.820 -0400", hash_original_method = "1DDBF526F2F38229BD98FC5AEA0C0D4E", hash_generated_method = "B730E645006C06397B6CFC17CA80349D")
         
 public boolean isAccessibilityFocused() {
@@ -1582,6 +1740,7 @@ public boolean isAccessibilityFocused() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.822 -0400", hash_original_method = "BB0DBAB86C9C8CBDDFF7BA1405B1C600", hash_generated_method = "9930BFA5429A7BBCD53A985D256B6434")
         
 public void setAccessibilityFocused(boolean focused) {
@@ -1593,6 +1752,7 @@ public void setAccessibilityFocused(boolean focused) {
      *
      * @return True if the node is selected.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.825 -0400", hash_original_method = "DDA60D7434111992259669E63D890C29", hash_generated_method = "F851DFD3AB4682AEC9781FD2E8716529")
         
 public boolean isSelected() {
@@ -1610,6 +1770,7 @@ public boolean isSelected() {
      * @param selected True if the node is selected.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.827 -0400", hash_original_method = "CCBAF3645335D86B821DEAC9BDDB4ED2", hash_generated_method = "00F8596CE99ACE290DD1B676F34D71C6")
         
 public void setSelected(boolean selected) {
@@ -1621,6 +1782,7 @@ public void setSelected(boolean selected) {
      *
      * @return True if the node is clickable.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.830 -0400", hash_original_method = "6F39B6C0009288DFEA1A8807AE028922", hash_generated_method = "A3D847D73DF1E2DD92FCBC32FE6B781B")
         
 public boolean isClickable() {
@@ -1638,6 +1800,7 @@ public boolean isClickable() {
      * @param clickable True if the node is clickable.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.832 -0400", hash_original_method = "CBF9AA1E7F6DA4EEE21EFD519E970C6E", hash_generated_method = "43B26BD6D513B5F41067E1E4D4FAF666")
         
 public void setClickable(boolean clickable) {
@@ -1649,6 +1812,7 @@ public void setClickable(boolean clickable) {
      *
      * @return True if the node is long clickable.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.834 -0400", hash_original_method = "2A0651AA24697C87D5B10A2F592D15AE", hash_generated_method = "4D2C2FC18945A9E163C831680B184A24")
         
 public boolean isLongClickable() {
@@ -1666,6 +1830,7 @@ public boolean isLongClickable() {
      * @param longClickable True if the node is long clickable.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.837 -0400", hash_original_method = "C41DB90B24D967665ADB7BE195D933F7", hash_generated_method = "450B17F683658666E99C7B3076539982")
         
 public void setLongClickable(boolean longClickable) {
@@ -1677,6 +1842,7 @@ public void setLongClickable(boolean longClickable) {
      *
      * @return True if the node is enabled.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.839 -0400", hash_original_method = "652E5B5F063CB50BC77186FF37F33BDF", hash_generated_method = "6BA66641655E00C9ED155D7F2DCE0E9C")
         
 public boolean isEnabled() {
@@ -1694,6 +1860,7 @@ public boolean isEnabled() {
      * @param enabled True if the node is enabled.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.841 -0400", hash_original_method = "38B56F1A12BFB4B4EFFD2BC2116AF996", hash_generated_method = "6CE97DBF8734F261892A971A7D8BDF52")
         
 public void setEnabled(boolean enabled) {
@@ -1705,6 +1872,7 @@ public void setEnabled(boolean enabled) {
      *
      * @return True if the node is a password.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.844 -0400", hash_original_method = "65A99E085FF9E307AFC93D67B83055DB", hash_generated_method = "C464D20B5B06D4A8BB2AAB921D019802")
         
 public boolean isPassword() {
@@ -1733,6 +1901,7 @@ public void setPassword(boolean password) {
      *
      * @return True if the node is scrollable, false otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.850 -0400", hash_original_method = "C7AAD2830522B8BD5949276001A4D042", hash_generated_method = "930838EDEF0DD5A1791DF4F002E34E4C")
         
 public boolean isScrollable() {
@@ -1750,6 +1919,7 @@ public boolean isScrollable() {
      * @param scrollable True if the node is scrollable, false otherwise.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.852 -0400", hash_original_method = "EF0CC581E7F7F261AFF7A1550C16EBCA", hash_generated_method = "FF10968521D7D7EE6AA386EF051FC800")
         
 public void setScrollable(boolean scrollable) {
@@ -1761,6 +1931,7 @@ public void setScrollable(boolean scrollable) {
      *
      * @return The package name.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.854 -0400", hash_original_method = "11DA2F2F6D35A0A5BD4D3AD5855546F2", hash_generated_method = "E376132D49C22EECF8940FC095DC9C7A")
         
 public CharSequence getPackageName() {
@@ -1778,6 +1949,7 @@ public CharSequence getPackageName() {
      * @param packageName The package name.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.857 -0400", hash_original_method = "51BDE657C455C3947A276CD4621D88BF", hash_generated_method = "B10217DFFD45DFE59CD0708B3A3739E6")
         
 public void setPackageName(CharSequence packageName) {
@@ -1789,6 +1961,7 @@ public void setPackageName(CharSequence packageName) {
      *
      * @return The class name.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.860 -0400", hash_original_method = "80725931141339E528C95BCDFA69AC67", hash_generated_method = "AD5985DA033FE7AA31D10BC4686F4408")
         
 public CharSequence getClassName() {
@@ -1806,6 +1979,7 @@ public CharSequence getClassName() {
      * @param className The class name.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.863 -0400", hash_original_method = "95DBB6C9D00CCAE01AE6EC9F7D77613E", hash_generated_method = "8F56A94F6ACCE2223C09F279D7B8EC3A")
         
 public void setClassName(CharSequence className) {
@@ -1817,6 +1991,7 @@ public void setClassName(CharSequence className) {
      *
      * @return The text.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.865 -0400", hash_original_method = "384621808EBD921F20A6EB28B91ADAD5", hash_generated_method = "5E5A150E827CB2DE5FA31B44CEBACCE2")
         
 public CharSequence getText() {
@@ -1845,6 +2020,7 @@ public void setText(CharSequence text) {
      *
      * @return The content description.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.870 -0400", hash_original_method = "17A5AE651613EAEE40274E28D0DBF3CB", hash_generated_method = "7BA20ABCE576512166E9EC2E2C4CCBB0")
         
 public CharSequence getContentDescription() {
@@ -1862,6 +2038,7 @@ public CharSequence getContentDescription() {
      * @param contentDescription The content description.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.873 -0400", hash_original_method = "0581568FD089D03E78C8C673EC290A8E", hash_generated_method = "68AF30028603DEE6092DD3B53086E5AA")
         
 public void setContentDescription(CharSequence contentDescription) {
@@ -1875,6 +2052,7 @@ public void setContentDescription(CharSequence contentDescription) {
      *
      * @throws IllegalStateException If the info is already recycled.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.875 -0400", hash_original_method = "4012C2A77CF6E1C54F1B4372AFDF8962", hash_generated_method = "371816176A0FE984D43E7A281211A3A7")
         
 public void recycle() {
@@ -1910,6 +2088,7 @@ public void setViewIdResourceName(String viewId) {
      *
      * @return The id resource name.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.880 -0400", hash_original_method = "CCDB5C412314CB74E4323C8B128154AE", hash_generated_method = "886FA95681D42CD22F99D956BC28AFD1")
         
 public String getViewIdResourceName() {
@@ -1966,6 +2145,7 @@ public void setLiveRegion(int mode) {
         return (mInfo == null) ? 0 : mInfo.hashCode();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:08.891 -0400", hash_original_method = "9F360410AD288A74DD17C77A13BAB054", hash_generated_method = "C5D6ED61C819BF3A883EE2D10FA827A0")
         
 @Override

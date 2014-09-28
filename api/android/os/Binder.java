@@ -22,16 +22,19 @@ public class Binder implements IBinder {
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213128804;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public static final int getCallingUid() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889067269 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889067269;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public static final long clearCallingIdentity() {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1969549158 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1969549158;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public static final void restoreCallingIdentity(long token) {
     }
     
@@ -136,6 +139,7 @@ public boolean isBinderAlive() {
      * associated IInterface if it matches the requested
      * descriptor.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.159 -0500", hash_original_method = "5F53634C89FC8CF0041CE9B2B1E024B8", hash_generated_method = "C636C74DCE4A34923431FE496CBD3E65")
     
 public IInterface queryLocalInterface(String descriptor) {
@@ -392,6 +396,7 @@ BinderProxy() {
     	return getTaintBoolean();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.202 -0500", hash_original_method = "B707B72714522D5F23CBE8D4C77B554B", hash_generated_method = "DB9A5309E19F1DA01E9E9CCD2E3F347D")
     
 public IInterface queryLocalInterface(String descriptor) {

@@ -25,6 +25,7 @@ import android.widget.Scroller;
  * ICS API access for Scroller
  */
 class ScrollerCompatIcs {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:37.521 -0500", hash_original_method = "E030C3845B81F0A581ED2A6FFAB845FA", hash_generated_method = "9DA3E3CB997A49484FE436B4EC2B6318")
     
 public static float getCurrVelocity(Scroller scroller) {

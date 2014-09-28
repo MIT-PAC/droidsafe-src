@@ -32,7 +32,8 @@ public final class CookieManager {
      * 
      * @return CookieManager
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.569 -0500", hash_original_method = "320195B5814A82CDAD5D188DBD73B8D9", hash_generated_method = "041F3F39198BFF3134D422820E8011E0")
     
 public static synchronized CookieManager getInstance() {
@@ -342,6 +343,7 @@ boolean pathMatch(String urlPath) {
             return false;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.553 -0500", hash_original_method = "08415E5687C0C693DFF8536ADAD3E2AA", hash_generated_method = "66C3B49355618198D7266A87F8C66D10")
         
@@ -885,6 +887,7 @@ public synchronized boolean hasCookies(boolean privateBrowsing) {
     /**
      * Remove all expired cookies
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.627 -0500", hash_original_method = "EBBBDCC80F6ABDA541004A954FD75C00", hash_generated_method = "6D0268756977AA60E0FD133F74344ED7")
     
 public void removeExpiredCookie() {

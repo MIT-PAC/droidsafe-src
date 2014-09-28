@@ -73,6 +73,7 @@ boolean isEngineBased() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:12.868 -0400", hash_original_method = "97505DB29D99D00F8564C9243E542B06", hash_generated_method = "393F08649BA51AE6644A73B1DC70C2C8")
     
 @Override

@@ -25,6 +25,7 @@ import android.net.ConnectivityManager;
  * Implementation of ConnectivityManagerCompat that can use Jellybean APIs.
  */
 class ConnectivityManagerCompatJellyBean {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:09:00.458 -0400", hash_original_method = "B1FC19CCE287F8E14F62EA49FCB597CD", hash_generated_method = "A0C5777474F30754FDA901AAC25B0982")
     
 public static boolean isActiveNetworkMetered(ConnectivityManager cm) {

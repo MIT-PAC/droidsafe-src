@@ -358,7 +358,7 @@ public boolean removeFooterView(View v) {
     }
     
     @DSComment("ListView")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Override
 	public ListAdapter getAdapter() {
 		// TODO Auto-generated method stub
@@ -3075,7 +3075,7 @@ public boolean getItemsCanFocus() {
 
     @DSComment("ListView")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.428 -0500", hash_original_method = "465D449366429949FD8ADA654918A0E2", hash_generated_method = "342E58F6677C3BA7760B7791A690FB25")
     
 @Override

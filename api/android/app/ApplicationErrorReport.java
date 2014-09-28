@@ -115,7 +115,7 @@ static ComponentName getErrorReportReceiver(PackageManager pm, String errorPacka
 
     public static final Parcelable.Creator<ApplicationErrorReport> CREATOR
             = new Parcelable.Creator<ApplicationErrorReport>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.889 -0500", hash_original_method = "D02E7C98CADEACD71C390EF313CCEAC7", hash_generated_method = "1654D8AB8523F725D653BBEBF31060C6")
         
 public ApplicationErrorReport createFromParcel(Parcel source) {

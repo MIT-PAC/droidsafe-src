@@ -78,6 +78,7 @@ public class ShareCompat {
 
     static class ShareCompatImplBase implements ShareCompatImpl {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.259 -0500", hash_original_method = "2E6B3ADFD44E0D73A052C11528C54D60", hash_generated_method = "FC21D994471D7907742966DC79B722EE")
         
 private static void withinStyle(StringBuilder out, CharSequence text,
@@ -105,12 +106,14 @@ private static void withinStyle(StringBuilder out, CharSequence text,
                 }
             }
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.252 -0500", hash_original_method = "C3E2EAA5FDB39D2940E924EA83A92CD9", hash_generated_method = "7B4B3C704833A3B8F9D597BF61650835")
         
 public void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
             item.setIntent(shareIntent.createChooserIntent());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.255 -0500", hash_original_method = "9806F7FA6AF2B88CA22BBC7126655294", hash_generated_method = "9CFCB3513F06FB61BCE979532A65A44E")
         
 public String escapeHtml(CharSequence text) {
@@ -121,6 +124,7 @@ public String escapeHtml(CharSequence text) {
     }
 
     static class ShareCompatImplICS extends ShareCompatImplBase {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.264 -0500", hash_original_method = "720A861674BD19DDF349D0A647948753", hash_generated_method = "C8D137BAA8A811CA4ED9BB083CE1DA02")
         
 public void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
@@ -131,6 +135,7 @@ public void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.266 -0500", hash_original_method = "B41498ADC231C1B6FE6FB180270839F6", hash_generated_method = "B41498ADC231C1B6FE6FB180270839F6")
         
 boolean shouldAddChooserIntent(MenuItem item) {
@@ -138,7 +143,6 @@ boolean shouldAddChooserIntent(MenuItem item) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.271 -0500", hash_original_field = "64D4298DFDBF8439D20B7BFA9187D2D2", hash_generated_field = "1BF51C8837B8F6C5C574D00A856658A9")
-
 
     private static ShareCompatImpl IMPL;
 
@@ -162,6 +166,7 @@ boolean shouldAddChooserIntent(MenuItem item) {
      * @param calledActivity Current activity that was launched to share content
      * @return Name of the calling package
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.274 -0500", hash_original_method = "067B1B9A930CE55C02EE0415F2995920", hash_generated_method = "49D83731A9820A823FEFC5097F5A4E49")
     
 public static String getCallingPackage(Activity calledActivity) {
@@ -184,6 +189,7 @@ public static String getCallingPackage(Activity calledActivity) {
      * @param calledActivity Current activity that was launched to share content
      * @return ComponentName of the calling activity
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.276 -0500", hash_original_method = "9CF512AFECB6E76B3CEACB77EA9097D5", hash_generated_method = "BE096B8672A35F2E20C5AA7EE0FCD569")
     
 public static ComponentName getCallingActivity(Activity calledActivity) {
@@ -225,6 +231,7 @@ public static ComponentName getCallingActivity(Activity calledActivity) {
      * @param item MenuItem to configure for sharing
      * @param shareIntent IntentBuilder with data about the content to share
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.279 -0500", hash_original_method = "3ED9C7185B1B187DD0596DDF60FB405D", hash_generated_method = "7ABB0685830F178B9CF4ABD68C0D29DB")
     
 public static void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
@@ -239,6 +246,7 @@ public static void configureMenuItem(MenuItem item, IntentBuilder shareIntent) {
      * @param shareIntent IntentBuilder with data about the content to share
      * @see #configureMenuItem(MenuItem, IntentBuilder)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.284 -0500", hash_original_method = "A5392CB50560BE4951F0540F56864AA5", hash_generated_method = "21080C2E0894364C283BDB3C647C8202")
     
 public static void configureMenuItem(Menu menu, int menuItemId, IntentBuilder shareIntent) {
@@ -289,7 +297,6 @@ public static IntentBuilder from(Activity launchingActivity) {
         private ArrayList<String> mBccAddresses;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.313 -0500", hash_original_field = "C257DE59BDDDAB6C6845D8752A063867", hash_generated_field = "E38B530386D6624B9CC752A26937D70B")
 
-
         private ArrayList<Uri> mStreams;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.323 -0500", hash_original_method = "DF152584278C8F8C835FFB6AA3E923E0", hash_generated_method = "7D58730987C1999A7BF8406449862C3D")
@@ -311,6 +318,7 @@ private IntentBuilder(Activity launchingActivity) {
          *
          * @return The current Intent being configured by this builder
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.327 -0500", hash_original_method = "CC05494BB54ABC476F91DA83FFC83A1D", hash_generated_method = "E7336E542888521AC6DBD2E3F2182324")
         
 public Intent getIntent() {
@@ -357,12 +365,14 @@ public Intent getIntent() {
             return mIntent;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.332 -0500", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "3F17133E8D63AE8C7414DC58966291E3")
         
 Activity getActivity() {
             return mActivity;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.336 -0500", hash_original_method = "026504B88DB15C0C017BBB730BD6CA05", hash_generated_method = "778A08B27866B4CE862A5D0FF5D43346")
         
 private void combineArrayExtra(String extra, ArrayList<String> add) {
@@ -376,6 +386,7 @@ private void combineArrayExtra(String extra, ArrayList<String> add) {
             mIntent.putExtra(extra, finalAddresses);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.340 -0500", hash_original_method = "BD64BC57794A356441B2316C07AE8DAC", hash_generated_method = "F5F98F5475C7ACF53C7FFB7F5F651574")
         
 private void combineArrayExtra(String extra, String[] add) {
@@ -396,6 +407,7 @@ private void combineArrayExtra(String extra, String[] add) {
          *
          * @return A chooser Intent for the currently configured sharing action
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.343 -0500", hash_original_method = "4A271FB631FE734F0A005F0662E72303", hash_generated_method = "E3F5232E4353DFC203EDE16572F5A3DB")
         
 public Intent createChooserIntent() {
@@ -423,6 +435,7 @@ public void startChooser() {
          * @param title Title string
          * @return This IntentBuilder for method chaining
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.351 -0500", hash_original_method = "06E956E502A80DA9473ED82266A5A9DE", hash_generated_method = "77D6631FB136B1C27AF9A12D22049C62")
         
 public IntentBuilder setChooserTitle(CharSequence title) {
@@ -436,6 +449,7 @@ public IntentBuilder setChooserTitle(CharSequence title) {
          * @param resId Resource ID of the title string to use
          * @return This IntentBuilder for method chaining
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.353 -0500", hash_original_method = "03DF458E6ED02C68488BE88E21862CDF", hash_generated_method = "335DF9E156B7786B9ED667D4D450D491")
         
 public IntentBuilder setChooserTitle(int resId) {
@@ -464,6 +478,7 @@ public IntentBuilder setType(String mimeType) {
          * @return This IntentBuilder for method chaining
          * @see Intent#EXTRA_TEXT
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.359 -0500", hash_original_method = "C395D7124DB9BC11CF728AC9FB5C05F1", hash_generated_method = "7A3F4859E225E0013766BCAE59DE1892")
         
 public IntentBuilder setText(CharSequence text) {
@@ -503,6 +518,7 @@ public IntentBuilder setHtmlText(String htmlText) {
          * @return This IntentBuilder for method chaining
          * @see Intent#EXTRA_STREAM
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.366 -0500", hash_original_method = "0CC67542367F5DDA6287793533CA2797", hash_generated_method = "79C491B8A576BDB2E170890B763379BC")
         
 public IntentBuilder setStream(Uri streamUri) {
@@ -735,7 +751,6 @@ public static IntentReader from(Activity activity) {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.452 -0500", hash_original_field = "3895D7E6DB5042DA7856DC78E391C7B9", hash_generated_field = "B0D69375984D6EE7DC93AC12DB4DFC55")
 
-
         private Activity mActivity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.454 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
 
@@ -747,7 +762,6 @@ public static IntentReader from(Activity activity) {
 
         private ComponentName mCallingActivity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.459 -0500", hash_original_field = "C257DE59BDDDAB6C6845D8752A063867", hash_generated_field = "E38B530386D6624B9CC752A26937D70B")
-
 
         private ArrayList<Uri> mStreams;
 
@@ -796,6 +810,7 @@ public boolean isSingleShare() {
          *
          * @return true if the activity was started with an ACTION_SEND_MULTIPLE intent
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.472 -0500", hash_original_method = "220CAE272FCF85686BA0D747BFA1F020", hash_generated_method = "836B9C9681444B45A8E43EEFF3D5838D")
         
 public boolean isMultipleShare() {
@@ -820,6 +835,7 @@ public String getType() {
          * @return Literal shared text or null if none was supplied
          * @see Intent#EXTRA_TEXT
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.476 -0500", hash_original_method = "001799CDC7AD568A5D9791D68F82B19E", hash_generated_method = "612F6C83360DF6BC27D03BD4219E1CCA")
         
 public CharSequence getText() {
@@ -900,6 +916,7 @@ public Uri getStream(int index) {
          *
          * @return Count of text items contained within the Intent
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:02.486 -0500", hash_original_method = "BC61684682118C8B50538A4E9628C32B", hash_generated_method = "6AD32AA0F1C5BE459432F591E855460F")
         
 public int getStreamCount() {
@@ -1071,13 +1088,13 @@ public CharSequence getCallingApplicationLabel() {
         }
     }
 
-
-
     static class ShareCompatImplJB extends ShareCompatImplICS {
+        @DSSafe(DSCat.SAFE_LIST)
         public String escapeHtml(CharSequence html) {
             return ShareCompatJB.escapeHtml(html);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         boolean shouldAddChooserIntent(MenuItem item) {
             return false;

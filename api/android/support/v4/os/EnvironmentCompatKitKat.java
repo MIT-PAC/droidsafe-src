@@ -24,6 +24,7 @@ import android.os.Environment;
 import java.io.File;
 
 class EnvironmentCompatKitKat {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:16.526 -0400", hash_original_method = "E9172AEEB835DABE9C6BD71DD60048D7", hash_generated_method = "702D2F76CFB9E1F467F787E8E71B00C9")
     
 public static String getStorageState(File path) {

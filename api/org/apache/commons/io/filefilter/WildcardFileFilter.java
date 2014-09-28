@@ -163,6 +163,7 @@ public WildcardFileFilter(List<String> wildcards, IOCase caseSensitivity) {
      * @param name  the filename
      * @return true if the filename matches one of the wildcards
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.450 -0400", hash_original_method = "0D7E6F981525F2AA16F60F5ED0631F0E", hash_generated_method = "0EFF912A30B012B49096373770DFC277")
     
 @Override
@@ -181,6 +182,7 @@ public WildcardFileFilter(List<String> wildcards, IOCase caseSensitivity) {
      * @param file  the file to check
      * @return true if the filename matches one of the wildcards
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.451 -0400", hash_original_method = "C244C034F5D60E2DBFF912D07EE9EFE9", hash_generated_method = "DED07B33CEBD3C0F8835ED2ECA4DED35")
     
 @Override

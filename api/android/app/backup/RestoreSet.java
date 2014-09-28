@@ -13,7 +13,7 @@ public class RestoreSet implements Parcelable {
 
     public static final Parcelable.Creator<RestoreSet> CREATOR
             = new Parcelable.Creator<RestoreSet>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.546 -0500", hash_original_method = "BAC0E1D02FA6C265C2D5D1FA79671B4B", hash_generated_method = "4ADCCD2B1E1F80E21C15C859BEE302EF")
         
 public RestoreSet createFromParcel(Parcel in) {

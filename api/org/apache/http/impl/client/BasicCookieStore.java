@@ -47,6 +47,7 @@ public BasicCookieStore() {
      * @see #addCookies(Cookie[])
      * 
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.548 -0500", hash_original_method = "47E381A9C2C1FA70862098466A29B040", hash_generated_method = "71248FA2B4A9118200223D402E4C25A9")
     
 public synchronized void addCookie(Cookie cookie) {
@@ -90,7 +91,8 @@ public synchronized void addCookies(Cookie[] cookies) {
      * 
      * @return an array of {@link Cookie cookies}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.553 -0500", hash_original_method = "4518D291A6406FB94614916CA57C71BE", hash_generated_method = "B03207FF93EBC9252776C36B81C2329D")
     
 public synchronized List<Cookie> getCookies() {
@@ -121,6 +123,7 @@ public synchronized boolean clearExpired(final Date date) {
         return removed;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.559 -0500", hash_original_method = "3BF0AB240A348C3188E3D51149860C91", hash_generated_method = "DD60D1499FF9AAF6DD237D4EE34C3711")
     

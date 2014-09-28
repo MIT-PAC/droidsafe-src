@@ -221,6 +221,7 @@ public ListPopupWindow(Context context, AttributeSet attrs, int defStyleAttr) {
      *
      * @param adapter The adapter to use to create this window's content.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.420 -0400", hash_original_method = "B55D1F7EE07C2CDF60B7B314069C1E48", hash_generated_method = "B764CB836CA397C20E9F89EB820E1329")
     
 public void setAdapter(ListAdapter adapter) {
@@ -247,6 +248,7 @@ public void setAdapter(ListAdapter adapter) {
      * @see #POSITION_PROMPT_ABOVE
      * @see #POSITION_PROMPT_BELOW
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.422 -0400", hash_original_method = "7CC61A3797371517F86E3D676D22847C", hash_generated_method = "F9B7E352B31FDFA171B19567C2207FC5")
     
 public void setPromptPosition(int position) {
@@ -272,6 +274,7 @@ public int getPromptPosition() {
      *
      * @param modal {@code true} if the popup window should be modal, {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.427 -0400", hash_original_method = "320A57FA9129485B3F1A01EDA8808ED5", hash_generated_method = "6C2C1410866D1D61A1A62A8C0391C92E")
     
 public void setModal(boolean modal) {
@@ -369,6 +372,7 @@ public void setListSelector(Drawable selector) {
     /**
      * @return The background drawable for the popup window.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.444 -0400", hash_original_method = "48A20BD7A1656DF8848E524613AD69C1", hash_generated_method = "8361F633C9EE2A209A5F0E8043587AC9")
     
 public Drawable getBackground() {
@@ -380,6 +384,7 @@ public Drawable getBackground() {
      *
      * @param d A drawable to set as the background.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.447 -0400", hash_original_method = "53EE8E67A046C4A20122C0C008F8CCAA", hash_generated_method = "3F2D5FAE7B7F15768348E05BF53B40CD")
     
 public void setBackgroundDrawable(Drawable d) {
@@ -413,6 +418,7 @@ public int getAnimationStyle() {
      *
      * @return The popup's anchor view
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.453 -0400", hash_original_method = "875C75F19631B214BE64A011FD6A41E4", hash_generated_method = "018CCB43785B73150669A8D96162E023")
     
 public View getAnchorView() {
@@ -425,6 +431,7 @@ public View getAnchorView() {
      *
      * @param anchor The view to use as an anchor.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.455 -0400", hash_original_method = "91753F7FEC6E3180927B7B9D55B8E090", hash_generated_method = "05957B93E91DF796FD2FC16581760FF3")
     
 public void setAnchorView(View anchor) {
@@ -445,6 +452,7 @@ public int getHorizontalOffset() {
      *
      * @param offset The horizontal offset of the popup from its anchor.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.459 -0400", hash_original_method = "37914D7AC2B7A80AA5FE528B058A9DBC", hash_generated_method = "9895E3FFBA6000436D485FAD8DC69D5D")
     
 public void setHorizontalOffset(int offset) {
@@ -468,6 +476,7 @@ public int getVerticalOffset() {
      *
      * @param offset The vertical offset of the popup from its anchor.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.463 -0400", hash_original_method = "F61671411958DBF85FB58F84EEE162C4", hash_generated_method = "F2E0C247361B54640FD6BE9AB2AD3808")
     
 public void setVerticalOffset(int offset) {
@@ -490,6 +499,7 @@ public int getWidth() {
      *
      * @param width Width of the popup window.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.467 -0400", hash_original_method = "1FDBBF009B47D57DAE1EE309EAA8DA19", hash_generated_method = "8822955A1449CC5CD1B2A22976B7B662")
     
 public void setWidth(int width) {
@@ -502,6 +512,7 @@ public void setWidth(int width) {
      *
      * @param width Desired width of content in pixels.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.471 -0400", hash_original_method = "1CC81B1489D8EBDAA358E87EA72284F9", hash_generated_method = "B7561C3A7CA7F311BEEA8084196A7B42")
     
 public void setContentWidth(int width) {
@@ -540,6 +551,7 @@ public void setHeight(int height) {
      * @param clickListener Listener to register
      * @see ListView#setOnItemClickListener(android.widget.AdapterView.OnItemClickListener)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.478 -0400", hash_original_method = "500645EE5CDA87E171AAE4D175AC763E", hash_generated_method = "4F93B27CDA566E1947C562DDACAB23C1")
     
 public void setOnItemClickListener(AdapterView.OnItemClickListener clickListener) {
@@ -590,6 +602,7 @@ public void postShow() {
      * Show the popup list. If the list is already showing, this method will recalculate the popup's
      * size and position.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.488 -0400", hash_original_method = "D10CE17DC95AE21D783C9B3DBD60C86E", hash_generated_method = "D06AD8CA4EA9EB4EE4F0785C8756E630")
     
 public void show() {
@@ -678,6 +691,7 @@ public void show() {
     /**
      * Dismiss the popup window.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.490 -0400", hash_original_method = "B4B1B4676A26C0E0D07AD81974E2090B", hash_generated_method = "50D7A428D0408225B9A85847B875AC8B")
     
 public void dismiss() {
@@ -693,12 +707,14 @@ public void dismiss() {
      *
      * @param listener Listener that will be notified when the popup is dismissed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.492 -0400", hash_original_method = "C7BE29500BF4339E2FDC892E2A139524", hash_generated_method = "5C97EF6AB530266F013AE5B9157C4053")
     
 public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
         mPopup.setOnDismissListener(listener);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.495 -0400", hash_original_method = "202D4492803683737094012DDF6DD86F", hash_generated_method = "3AA7D4B2D9BCE578A6C1E3296F0D706C")
     
 private void removePromptView() {
@@ -722,6 +738,7 @@ private void removePromptView() {
      * @see #getInputMethodMode()
      * @see #show()
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.497 -0400", hash_original_method = "288B7DB6446AD4FA82AB3ACE9506A35B", hash_generated_method = "664404492444FE4EDB8C9EF235897445")
     
 public void setInputMethodMode(int mode) {
@@ -744,6 +761,7 @@ public int getInputMethodMode() {
      *
      * @param position List position to set as selected.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.501 -0400", hash_original_method = "119CA9359C56E2DDD442B9A05EFE812C", hash_generated_method = "3B3BC52D181D5841E7CE1A55B23BB93A")
     
 public void setSelection(int position) {
@@ -760,6 +778,7 @@ public void setSelection(int position) {
     /**
      * Clear any current list selection. Only valid when {@link #isShowing()} == {@code true}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.504 -0400", hash_original_method = "9FE5053F258DDD587667D4A39E171317", hash_generated_method = "76BEFD456FBFF24DEC5EC451C7927F62")
     
 public void clearListSelection() {
@@ -775,6 +794,7 @@ public void clearListSelection() {
     /**
      * @return {@code true} if the popup is currently showing, {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.506 -0400", hash_original_method = "CA9C4C0CD645F38E1AAA797FE00ECFCE", hash_generated_method = "A74A360685D68080E9B081E8BB4886F7")
     
 public boolean isShowing() {
@@ -785,6 +805,7 @@ public boolean isShowing() {
      * @return {@code true} if this popup is configured to assume the user does not need to interact
      *         with the IME while it is showing, {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.507 -0400", hash_original_method = "C5EEC00F4CE1C916DAF561B7CF397229", hash_generated_method = "304924423F1B5B5A901202A22B2D39F6")
     
 public boolean isInputMethodNotNeeded() {
@@ -871,6 +892,7 @@ public View getSelectedView() {
      * @return The {@link ListView} displayed within the popup window. Only valid when {@link
      *         #isShowing()} == {@code true}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.522 -0400", hash_original_method = "D21142DAF85C899FDAA3783E4BBEC12E", hash_generated_method = "7312C25846E6B9BBA3DB1F353BAB6BF7")
     
 public ListView getListView() {
@@ -1024,6 +1046,7 @@ public boolean onKeyUp(int keyCode, KeyEvent event) {
      *
      * @return the content's height or -1 if content already exists
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.547 -0400", hash_original_method = "1B4455855C167883C1E8F6D78183240B", hash_generated_method = "E549967C6F52D04E95AC8746E202A053")
     
 private int buildDropDown() {
@@ -1206,6 +1229,7 @@ private int buildDropDown() {
      * @return The maximum available height for the popup to be completely shown.
      * @hide Pending API council approval.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:48.551 -0400", hash_original_method = "30B117DC125F3A321207CE7AF03D46F5", hash_generated_method = "1422ECB4C929E7ADD9DD972A6A8F7F88")
     
 public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomDecorations) {
@@ -1301,6 +1325,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
          * @return The next selectable position starting at position and then searching either up or
          *         down. Returns {@link #INVALID_POSITION} if nothing can be found.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private int lookForSelectablePosition(int position, boolean lookDown) {
             final ListAdapter adapter = getAdapter();
             if (adapter == null || isInTouchMode()) {

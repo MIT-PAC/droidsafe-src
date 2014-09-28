@@ -103,6 +103,7 @@ public ActionBarContainer(Context context, AttributeSet attrs) {
         mActionBarView = (ActionBarView) findViewById(R.id.action_bar);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.624 -0400", hash_original_method = "9228EFD1E4986AEF3CD32311D0C43BFB", hash_generated_method = "5530D4562AA7D496D239E3BDD1E8C68C")
     
 public void setPrimaryBackground(Drawable bg) {
@@ -119,6 +120,7 @@ public void setPrimaryBackground(Drawable bg) {
         invalidate();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.627 -0400", hash_original_method = "9DEDC72F824E4DF30539209C43650A5D", hash_generated_method = "9EAE1385C76A33EC9306C0D805A91F62")
     
 public void setStackedBackground(Drawable bg) {
@@ -135,6 +137,7 @@ public void setStackedBackground(Drawable bg) {
         invalidate();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.629 -0400", hash_original_method = "85599A854AA5352F33F419A55E445D36", hash_generated_method = "F1A61162B41FB8A069351EA656CE1A24")
     
 public void setSplitBackground(Drawable bg) {
@@ -233,6 +236,7 @@ public boolean onHoverEvent(MotionEvent ev) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.649 -0400", hash_original_method = "03170B741846887ACE1767F41E2626CD", hash_generated_method = "D5D8D96F2D70AB3439828FB89FD2BFE7")
     
 public void setTabContainer(ScrollingTabContainerView tabView) {

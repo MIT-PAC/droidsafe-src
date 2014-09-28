@@ -112,12 +112,14 @@ public ActionMenuItemView(Context context, AttributeSet attrs, int defStyle) {
         super.setPadding(l, t, r, b);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.519 -0400", hash_original_method = "F39E0849ABCF707480ABC0B9D2EE2311", hash_generated_method = "B0B9AF9FA2DDD827E4877533896893E2")
     
 public MenuItemImpl getItemData() {
         return mItemData;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.558 -0400", hash_original_method = "F3ADD2CA2E2A1F1636EEF9ECFE1172AF", hash_generated_method = "3BD3E26FCD7FBA7C893F1862F0D48A86")
     
 public void initialize(MenuItemImpl itemData, int menuType) {
@@ -140,12 +142,14 @@ public void onClick(View v) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.573 -0400", hash_original_method = "D4B10D907261C4745939FD5942191820", hash_generated_method = "4783FD42B5554823B93906301DBAAE90")
     
 public void setItemInvoker(MenuBuilder.ItemInvoker invoker) {
         mItemInvoker = invoker;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.579 -0400", hash_original_method = "A2F62AB27113ADE9EE493677370BEC6F", hash_generated_method = "EAF4F3B980307BACF84AAB2557327ACE")
     
 public boolean prefersCondensedTitle() {
@@ -175,6 +179,7 @@ public void setExpandedFormat(boolean expandedFormat) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.611 -0400", hash_original_method = "78929A2ED0A9B50DFA4E11E3E3810E89", hash_generated_method = "6B0784586522D5DF776D9F2880678965")
     
 private void updateTextButtonVisibility() {
@@ -185,6 +190,7 @@ private void updateTextButtonVisibility() {
         setText(visible ? mTitle : null);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.621 -0400", hash_original_method = "BC3EB91626A3C866EB6D8A60C3997455", hash_generated_method = "D5ACFABEC3E1732DEB6F1F60D1E7345E")
     
 public void setIcon(Drawable icon) {
@@ -194,6 +200,7 @@ public void setIcon(Drawable icon) {
         updateTextButtonVisibility();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.629 -0400", hash_original_method = "9EAD604ADB1D4A5592653CDC25C03213", hash_generated_method = "4A708C44397566E5C649F115FE4957CF")
     
 public boolean hasText() {
@@ -206,6 +213,7 @@ public void setShortcut(boolean showShortcut, char shortcutKey) {
         // Action buttons don't show text for shortcut keys.
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.644 -0400", hash_original_method = "826A85A4B958D464F222316151EFD6CA", hash_generated_method = "E83A1B8C7E958E3880E551277E930313")
     
 public void setTitle(CharSequence title) {
@@ -221,12 +229,14 @@ public boolean showsIcon() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.658 -0400", hash_original_method = "6E6CD62A341ADB3BA1A0AA59225DD877", hash_generated_method = "FE88FE30B1A5236EA1B105EE42CE4F1F")
     
 public boolean needsDividerBefore() {
         return hasText() && mItemData.getIcon() == null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 14:23:36.664 -0400", hash_original_method = "20C5403BD48B33FD0977D6BAA2D766A2", hash_generated_method = "A0E113A1C8848D7BFCD7B37E8887D853")
     
 public boolean needsDividerAfter() {

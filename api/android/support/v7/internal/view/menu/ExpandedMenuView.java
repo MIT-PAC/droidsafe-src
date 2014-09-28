@@ -51,6 +51,7 @@ public ExpandedMenuView(Context context, AttributeSet attrs) {
         setOnItemClickListener(this);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.269 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "8C5044F8CB626DD3FF17E33FE647A547")
     
 @Override
@@ -69,6 +70,7 @@ public ExpandedMenuView(Context context, AttributeSet attrs) {
         setChildrenDrawingCacheEnabled(false);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:37.276 -0400", hash_original_method = "52251A4D38FF83C9B55C46C571A25CAE", hash_generated_method = "3EF784071FFCABC376B8BA97B2D8D2B9")
     
 @Override

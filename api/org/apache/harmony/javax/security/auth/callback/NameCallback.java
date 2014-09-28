@@ -22,23 +22,17 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import java.io.Serializable;
 
-
-
 public class NameCallback implements Callback, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.755 -0400", hash_original_field = "A3C11AEB9C788395CA72C535218186FB", hash_generated_field = "F6D0611AF8E2CAA2D631C0B9614AD880")
-
 
     private static final long serialVersionUID = 3770938795909392253L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.756 -0400", hash_original_field = "E39008C8C5530C4D0AB35F720027C03F", hash_generated_field = "73A8FB617E5E6FEE69E01BC210863E4D")
 
-
     private String prompt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.756 -0400", hash_original_field = "84BC5372A12AA239726FB6B8D530CCAC", hash_generated_field = "676A68C7EDA9705849D412F44CD2024A")
 
-
     private String defaultName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.757 -0400", hash_original_field = "68F20AC0301385291B7516AB94715C9C", hash_generated_field = "C10F0F4D214138BFEDA4939AA454644A")
-
 
     private String inputName;
 
@@ -57,6 +51,7 @@ public NameCallback(String prompt, String defaultName) {
         setDefaultName(defaultName);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.757 -0400", hash_original_method = "698D470B766BBB13E508EDEAA9F21795", hash_generated_method = "2E1AE1532527C2F20C18C9014EA808B3")
     
 private void setPrompt(String prompt) {
@@ -66,6 +61,7 @@ private void setPrompt(String prompt) {
         this.prompt = prompt;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.758 -0400", hash_original_method = "934F4D2487A1B0733A090229C78788ED", hash_generated_method = "87BB3C59ACD18B6E9ACEFDF14246B15D")
     
 private void setDefaultName(String defaultName) {
@@ -81,18 +77,23 @@ public String getPrompt() {
         return prompt;
     }
 
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.760 -0400", hash_original_method = "9E72FEF43745CDBD97CE6C988EB7AE65", hash_generated_method = "ECD0709DD2A76BD64614896D5ED35CB8")
     
 public String getDefaultName() {
         return defaultName;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.761 -0400", hash_original_method = "AD5B82CAF75084F52E6A3C6164D5626C", hash_generated_method = "91FDCA38DD999B0C2E79CCB8CDB3C079")
     
 public void setName(String name) {
         this.inputName = name;
     }
 
+    @DSSource({DSSourceKind.SECURITY_INFO})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.761 -0400", hash_original_method = "243D323BC9BABC1A0E63E09475AB0B6A", hash_generated_method = "6C8E7B674A17E0FBCDB8A5A8B7B851E5")
     
 public String getName() {

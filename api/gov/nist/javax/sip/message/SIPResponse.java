@@ -690,6 +690,7 @@ public String getSIPVersion() {
         return this.statusLine.getSipVersion();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.607 -0500", hash_original_method = "11E3A7EA0BB166C76EF5663B1C05C1DB", hash_generated_method = "FEDF0922A0CDE1027F0FCBB4054C4E54")
     

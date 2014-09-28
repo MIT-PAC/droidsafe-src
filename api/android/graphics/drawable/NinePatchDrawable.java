@@ -448,7 +448,7 @@ public Paint getPaint() {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.493 -0500", hash_original_method = "015B10918498A51630C2035B52469361", hash_generated_method = "640199D0185C3012747587975300B093")
     
 @Override
@@ -456,6 +456,7 @@ public Paint getPaint() {
         return mNinePatch.getTransparentRegion(getBounds());
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.495 -0500", hash_original_method = "4F3C3B017CDA56F4212D4719D10B45C1", hash_generated_method = "6618F5A17DC86C374E914E9C8B20F0B8")
     
 @Override

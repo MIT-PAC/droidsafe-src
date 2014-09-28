@@ -27,6 +27,7 @@ import android.widget.TextView;
 import java.util.Locale;
 
 class PagerTitleStripIcs {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:29.759 -0500", hash_original_method = "B0A851A0B0BB297371B5DC2B145B2E98", hash_generated_method = "7ED54DB1D913AE8916877F28D5520124")
     
 public static void setSingleLineAllCaps(TextView text) {

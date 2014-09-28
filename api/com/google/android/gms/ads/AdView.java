@@ -48,7 +48,7 @@ public AdView(Context  r1, AttributeSet  r2, int  i0)
         //kx = new au(this, r2, false);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.815 -0400", hash_original_method = "8515908A075CB738827CDE99AF1DFBCC", hash_generated_method = "CC7CEA69F42A96A63184D04C0DA9A491")
     
 public void destroy()
@@ -105,7 +105,7 @@ public void loadAd(AdRequest  r1)
         //kx.a(r1.T());
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.853 -0400", hash_original_method = "16B8EBEF08F6A0DD1AB1FF78593FC92F", hash_generated_method = "21D77C1D935D513F25DD5EE5BBFA968E")
     
 public void pause()
@@ -114,7 +114,7 @@ public void pause()
         //kx.pause();
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.859 -0400", hash_original_method = "A2ABFA756BC51342FC1EE11A4C6C81AD", hash_generated_method = "4E418D477787BD275C05AA8FCCBD705F")
     
 public void resume()
@@ -124,7 +124,7 @@ public void resume()
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.865 -0400", hash_original_method = "304525B11ACBB719ECEFA31F894D6DE4", hash_generated_method = "F93D7C0BC3BB8EDB39FBBABBDC7AB8A8")
-   @DSSafe(DSCat.ANDROID_CALLBACK) 
+   @DSSafe(DSCat.SAFE_LIST) 
 public void setAdListener(AdListener  r1)
     {
     	adListener = r1;
@@ -141,7 +141,7 @@ public void setAdListener(AdListener  r1)
         //kx.setAdListener(r1);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.872 -0400", hash_original_method = "4F2C2DA30E6C97AA0575917A5FF72310", hash_generated_method = "3EC09901CB86248DD39514561A6E2972")
     
 public void setAdSize(AdSize  r1)
@@ -151,7 +151,7 @@ public void setAdSize(AdSize  r1)
         //kx.setAdSizes($r3);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.879 -0400", hash_original_method = "E86533FDA8CE9B764C42BE8B3FE7C919", hash_generated_method = "3A4689349F9A08AA662375A39ACFEF7A")
     
 public void setAdUnitId(String  r1)
@@ -196,6 +196,7 @@ protected void onLayout(boolean  z0, int  i0, int  i1, int  i2, int  i3)
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:44.913 -0400", hash_original_method = "04A8D271449338CCC0CD8FD772AD00A0", hash_generated_method = "5B363BC20EF4761F90EBBBEA1621BE7D")
     
 protected void onMeasure(int  i0, int  i1)

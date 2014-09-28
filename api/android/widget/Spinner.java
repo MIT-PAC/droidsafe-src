@@ -585,6 +585,7 @@ public void unregisterDataSetObserver(DataSetObserver observer) {
          * If the wrapped SpinnerAdapter is also a ListAdapter, delegate this call.
          * Otherwise, return true. 
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.104 -0500", hash_original_method = "C6F9771E1B3DE27F3DC1DA3F2DDBE42B", hash_generated_method = "9CD65AF04440386CF916AA4E6D43755F")
         
 public boolean areAllItemsEnabled() {
@@ -600,6 +601,7 @@ public boolean areAllItemsEnabled() {
          * If the wrapped SpinnerAdapter is also a ListAdapter, delegate this call.
          * Otherwise, return true.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.107 -0500", hash_original_method = "5A692D7025642F2703B563EEC7270EF6", hash_generated_method = "E011B19A3542CE68D2FBEF3AAE19E48F")
         
 public boolean isEnabled(int position) {
@@ -626,6 +628,7 @@ public int getViewTypeCount() {
             return 1;
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.114 -0500", hash_original_method = "837A179B327E763126CB6909C28E4F2B", hash_generated_method = "CD8A3F59B7B104167347DEF141D26EA8")
         
 public boolean isEmpty() {

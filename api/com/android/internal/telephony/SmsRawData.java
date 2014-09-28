@@ -13,7 +13,7 @@ public class SmsRawData implements Parcelable {
 
     public static final Parcelable.Creator<SmsRawData> CREATOR
             = new Parcelable.Creator<SmsRawData> (){
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.214 -0500", hash_original_method = "F1422F1901EE9861E97E875C16081393", hash_generated_method = "CC2AE54837ED271F414AE0BE9B40DF87")
         
 public SmsRawData createFromParcel(Parcel source) {

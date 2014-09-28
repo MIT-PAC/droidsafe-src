@@ -36,7 +36,7 @@ public final class DisplayInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:02:44.051 -0500", hash_original_field = "6E0D7442AB053AE9DB6EF3D772972E65", hash_generated_field = "3F7429CDD0E8C84C58A4ECC0FCEBD655")
 
     public static final Creator<DisplayInfo> CREATOR = new Creator<DisplayInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @Override
         public DisplayInfo createFromParcel(Parcel source) {
             return new DisplayInfo(source);
@@ -165,6 +165,7 @@ private DisplayInfo(Parcel source) {
         return o instanceof DisplayInfo && equals((DisplayInfo)o);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 13:02:44.068 -0500", hash_original_method = "A06C395832BF7C387F17237D6E575B82", hash_generated_method = "CA547CCD4771079F7500FCF44B9AF6E6")
     
 public boolean equals(DisplayInfo other) {

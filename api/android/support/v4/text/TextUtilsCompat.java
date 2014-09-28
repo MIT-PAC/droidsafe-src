@@ -74,6 +74,7 @@ public static String htmlEncode(String s) {
      *
      * Be careful: this code will need to be updated when vertical scripts will be supported
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.856 -0400", hash_original_method = "EA4B1C30E74AC3F7D7DE72341698A5E5", hash_generated_method = "74C69D4F2E24755C9B3B302E4D6E39DF")
     
 public static int getLayoutDirectionFromLocale(Locale locale) {
@@ -103,6 +104,7 @@ public static int getLayoutDirectionFromLocale(Locale locale) {
      *
      * Be careful: this code will need to be updated when vertical scripts will be supported
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.860 -0400", hash_original_method = "98D8B8A84775C00D46AC8250E2764E84", hash_generated_method = "5AD778DD1D39AF6F86B335BFBA02F10E")
     
 private static int getLayoutDirectionFromFirstChar(Locale locale) {
@@ -118,10 +120,8 @@ private static int getLayoutDirectionFromFirstChar(Locale locale) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.864 -0400", hash_original_field = "4ABE01D70CAE30A0541D83182D27F4F4", hash_generated_field = "4427B6337423388CAAA054ECED459FB3")
 
-
     public static final Locale ROOT = new Locale("", "");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.869 -0400", hash_original_field = "F1EC188F6B9A64E9CC2DDF1BFE231004", hash_generated_field = "E671077DBE84DEFDA400ACC06557696C")
-
 
     private static String ARAB_SCRIPT_SUBTAG = "Arab";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.873 -0400", hash_original_field = "444B44F4D44F456A016C4AA30A616C72", hash_generated_field = "585680D6F417A4378E85E18D90332D17")

@@ -65,7 +65,6 @@ public abstract class WakefulBroadcastReceiver extends BroadcastReceiver {
     private static final String EXTRA_WAKE_LOCK_ID = "android.support.content.wakelockid";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:02.142 -0400", hash_original_field = "461ECF45DA142D02A050353EDEF8C4AF", hash_generated_field = "A071AA3FE7BB2665B361876E6BCC8427")
 
-
     private static final SparseArray<PowerManager.WakeLock> mActiveWakeLocks
             = new SparseArray<PowerManager.WakeLock>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:02.146 -0400", hash_original_field = "DDEBD2B6B6719B15608C92715A57FE2C", hash_generated_field = "EFF85A3A9EECB3EE43798F3C006C52C5")
@@ -120,6 +119,7 @@ public static ComponentName startWakefulService(Context context, Intent intent) 
      * @return Returns true if the intent is associated with a wake lock that is
      * now released; returns false if there was no wake lock specified for it.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:02.158 -0400", hash_original_method = "81847DB42B8EE70124935F08B1EF516E", hash_generated_method = "94550867779F6A5C3F2A67FC7C9A3421")
     
 public static boolean completeWakefulIntent(Intent intent) {

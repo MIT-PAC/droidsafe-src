@@ -127,13 +127,14 @@ public DummyTabFactory(Context context) {
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:27.311 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
             
 public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:27.313 -0500", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "020465B62F970B98C266AF229149E391")
             
 public SavedState[] newArray(int size) {
@@ -197,6 +198,7 @@ public FragmentTabHost(Context context, AttributeSet attrs) {
         initFragmentTabHost(context, attrs);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:59.786 -0400", hash_original_method = "242CE4EA9C30ACBC3221539B58B803C1", hash_generated_method = "0170C3EF83BEA65706F7AFDE64E0BB85")
     
 private void initFragmentTabHost(Context context, AttributeSet attrs) {
@@ -252,6 +254,7 @@ public void setup(Context context, FragmentManager manager, int containerId) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.603 -0500", hash_original_method = "E573AA9E8A82A5687D7AD5397977D367", hash_generated_method = "3D6F86187FCF93430D1385FDA3767286")
     
 private void ensureContent() {
@@ -389,6 +392,7 @@ public void addTab(TabHost.TabSpec tabSpec, Class<?> clss, Bundle args) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:13.621 -0500", hash_original_method = "F57C18B3BB396717773B7D7B14EB3F45", hash_generated_method = "7431B2E81987B636A47FCD89C38872B9")
     
 private FragmentTransaction doTabChanged(String tabId, FragmentTransaction ft) {
@@ -426,6 +430,7 @@ private FragmentTransaction doTabChanged(String tabId, FragmentTransaction ft) {
         return ft;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:59.794 -0400", hash_original_method = "C4F0733BBEF37CFAC4D5F85831503571", hash_generated_method = "D8606A52E3FE9B6C40B1EFCD16633A6B")
     
 private void ensureHierarchy(Context context) {

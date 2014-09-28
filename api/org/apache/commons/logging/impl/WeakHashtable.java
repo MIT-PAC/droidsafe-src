@@ -399,6 +399,7 @@ private Entry(Object key, Object value) {
             this.value = value;
         }
     
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.648 -0400", hash_original_method = "63EDE4DC98940778CD8C3564DBC21CD5", hash_generated_method = "B3FC9773E5899CFD89CDFEDC1BA320B0")
         
 public boolean equals(Object o) {
@@ -496,6 +497,7 @@ private Object getValue() {
             return reference.get();
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:47.655 -0400", hash_original_method = "4545B6AF944B2503B68ED877FC6C9013", hash_generated_method = "772D301BC4D757831BF62EF65CEAC5FB")
         
 public boolean equals(Object o) {

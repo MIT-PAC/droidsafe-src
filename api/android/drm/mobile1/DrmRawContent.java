@@ -124,7 +124,7 @@ public int available() throws IOException {
          * @see java.io.InputStream#read()
          */
         @DSSource({DSSourceKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.367 -0500", hash_original_method = "287241C29465CA302A7D4AC4EAA3FF8F", hash_generated_method = "0E29C605E7DB5EFCB46408A5A48F143A")
         
 public int read() throws IOException {

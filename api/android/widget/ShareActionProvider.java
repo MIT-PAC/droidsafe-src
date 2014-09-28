@@ -184,6 +184,7 @@ public void setShareHistoryFileName(String shareHistoryFile) {
         {
             //Synthesized constructor
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.269 -0500", hash_original_method = "9C4E8B2E808FE0B52E60FC78C14CA469", hash_generated_method = "BCEB5A74B50F4C8F134CC96CC477B833")
         
 @Override
@@ -278,14 +279,14 @@ public void setShareIntent(Intent shareIntent) {
 
         shareIntent.getStringExtra("");
         shareIntent.getStringArrayExtra("");
-        shareIntent.getStringArrayListExtra("");      
+        shareIntent.getStringArrayListExtra("");
 
         shareIntent.getCharExtra("", 'a');
         shareIntent.getCharArrayExtra("");
         
         shareIntent.getCharSequenceArrayExtra("");
         shareIntent.getCharSequenceArrayListExtra("");
-        shareIntent.getCharSequenceExtra("");              
+        shareIntent.getCharSequenceExtra("");
 
         shareIntent.getData();
         shareIntent.getFlags();

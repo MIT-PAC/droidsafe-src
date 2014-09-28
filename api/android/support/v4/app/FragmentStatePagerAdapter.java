@@ -96,10 +96,12 @@ public FragmentStatePagerAdapter(FragmentManager fm) {
     /**
      * Return the Fragment associated with a specified position.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:03.594 -0500", hash_original_method = "0C9300C8E0F0C0E8B44008DC047CEFF9", hash_generated_method = "918C6D014DB9AA643E9330669120C48C")
     
 public abstract Fragment getItem(int position);
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:03.595 -0500", hash_original_method = "40E78EFA38F0994EA71F26DADE781C52", hash_generated_method = "C451CD9BEC048C5D65EB3785ED5E5CC8")
     
 @Override
@@ -145,6 +147,7 @@ public abstract Fragment getItem(int position);
         return fragment;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:03.603 -0500", hash_original_method = "755EB6CA7B109EC556DEC84EC15F7654", hash_generated_method = "FD2AF3778C28EC343796AEAAC6853C5B")
     
 @Override
@@ -184,6 +187,7 @@ public abstract Fragment getItem(int position);
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:03.610 -0500", hash_original_method = "82B7432FA4441721C4132291867EEFCE", hash_generated_method = "CE61AFE2F603793B40738C76BEDE2639")
     
 @Override
@@ -195,6 +199,7 @@ public abstract Fragment getItem(int position);
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:03.612 -0500", hash_original_method = "326A6E6DDD52502D387B1D32B8739E1F", hash_generated_method = "AF3559343D13818878146CEE853F63B6")
     
 @Override
@@ -227,6 +232,7 @@ public abstract Fragment getItem(int position);
         return state;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:03.623 -0500", hash_original_method = "25FE30AF757A8A2C6A4CB7F31C78F0A7", hash_generated_method = "B0658ABD7FD11EA942E56268A6C2EA9D")
     
 @Override

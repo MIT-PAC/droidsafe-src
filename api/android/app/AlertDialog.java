@@ -986,7 +986,7 @@ public Builder setRecycleOnMeasureEnabled(boolean enabled) {
          * to do and want this to be created and displayed.
          */
         @DSComment("New Dialog")
-        @DSSpec(DSCat.SPEC_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.145 -0500", hash_original_method = "24F2ECF5FEA53B0907C34A4AFC4C2134", hash_generated_method = "316857243741277D06918E544FCD71B7")
         
 public AlertDialog create() {
@@ -1042,7 +1042,7 @@ public AlertDialog create() {
          */
         @DSComment("From safe class list")
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.147 -0500", hash_original_method = "9ED881995B2EAB3CB90B8129D2705377", hash_generated_method = "FECC0B8CEF43AB35AB1E1B32C0D7658C")
         
 public AlertDialog show() {

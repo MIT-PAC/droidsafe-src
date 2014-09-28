@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.animation.Interpolator;
 
 class ViewPropertyAnimatorCompatJellybeanMr2 {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:07.713 -0400", hash_original_method = "451122CF84D7574C0940D9087FDB7881", hash_generated_method = "44F048EC3A95059C2E6E36A470DE194F")
     
 public static Interpolator getInterpolator(View view) {

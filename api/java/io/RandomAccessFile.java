@@ -190,7 +190,8 @@ public void close() throws IOException {
      *
      * @return this file's file channel instance.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.194 -0500", hash_original_method = "C91B0C3B79D457313F842097EE5F90EE", hash_generated_method = "71023C0B035767FEDEF5C724C59A4BDF")
     
 public final synchronized FileChannel getChannel() {
@@ -228,7 +229,7 @@ public final FileDescriptor getFD() throws IOException {
      */
     @DSComment("not sensitive")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.199 -0500", hash_original_method = "BF89D60C39AB56A10CD4BF202DEE6E59", hash_generated_method = "78E5DC27F44F7D2899D06F9452A20977")
     
 public long getFilePointer() throws IOException {
@@ -268,6 +269,7 @@ public long length() throws IOException {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.204 -0500", hash_original_method = "9CBC8BBFD7044A0BC3A194777FBBD2CA", hash_generated_method = "C43FAE37877C94D1A4278A353B3DC98F")
@@ -289,6 +291,7 @@ public int read() throws IOException {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.206 -0500", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "6E5D00FFA2D494E6084FF31B9747697A")
@@ -311,6 +314,7 @@ public int read(byte[] buffer) throws IOException {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
+    @DSSource({DSSourceKind.FILE})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.208 -0500", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "DC7919B1248E944CD403B40630CBB67F")
@@ -356,7 +360,7 @@ public final boolean readBoolean() throws IOException {
      * @see #writeBoolean(boolean)
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.214 -0500", hash_original_method = "2659119ED4E9182341F4E2CF2510ACC4", hash_generated_method = "60488882DC013DC02E5B18F972072683")
     
 public final byte readByte() throws IOException {
@@ -493,7 +497,7 @@ public final void readFully(byte[] dst, int offset, int byteCount) throws IOExce
      * @see #writeInt(int)
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.230 -0500", hash_original_method = "623A6326FEE6BEAC4C71D9EAB23D5BE9", hash_generated_method = "5D6C62E5010CBE21FE3E33B342C82583")
     
 public final int readInt() throws IOException {
@@ -516,7 +520,7 @@ public final int readInt() throws IOException {
      *             if this file is closed or another I/O error occurs.
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.233 -0500", hash_original_method = "A3561FB7999FC54AB0AB272B825D1BA9", hash_generated_method = "BEAFAA89A57C515E05B4E556EACE92EE")
     
 public final String readLine() throws IOException {
@@ -562,7 +566,7 @@ public final String readLine() throws IOException {
      * @see #writeLong(long)
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.235 -0500", hash_original_method = "469514DB0DA90571D02A531A0FA63D6F", hash_generated_method = "A9605FE51958909BD225DA582AF5352D")
     
 public final long readLong() throws IOException {
@@ -653,7 +657,7 @@ public final int readUnsignedShort() throws IOException {
      * @see #writeUTF(String)
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.246 -0500", hash_original_method = "1E6F905958EDDE8569C0995497961028", hash_generated_method = "9185F536AED2E9334E1588BCE6D15B49")
     
 public final String readUTF() throws IOException {
@@ -710,7 +714,8 @@ public void seek(long offset) throws IOException {
      * @throws IOException
      *             if this file is closed or another I/O error occurs.
      */
-    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.251 -0500", hash_original_method = "385EF87B8915AB37CD3540061C92256B", hash_generated_method = "AB5A5369B402ECB690F6A9D77ABACB90")
     
 public void setLength(long newLength) throws IOException {
@@ -810,6 +815,7 @@ public void write(byte[] buffer, int byteOffset, int byteCount) throws IOExcepti
      *             if this file is closed or another I/O error occurs.
      * @see #read()
      */
+    @DSSink({DSSinkKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.262 -0500", hash_original_method = "9AECC3BD7576DA9A6BE139AE80679C12", hash_generated_method = "5ED746FBDAF085038B13817E660DB906")
@@ -888,7 +894,8 @@ public final void writeBytes(String str) throws IOException {
      *             if an I/O error occurs while writing to this file.
      * @see #readChar()
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.272 -0500", hash_original_method = "ECFC19989A55A064EF569F6E00E03595", hash_generated_method = "932B9992937F002B26811C18101888C1")
     
 public final void writeChar(int val) throws IOException {
@@ -905,7 +912,8 @@ public final void writeChar(int val) throws IOException {
      *             if an I/O error occurs while writing to this file.
      * @see #readChar()
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.274 -0500", hash_original_method = "C993D359026F2BBBDD097DA5FA69EA70", hash_generated_method = "9C778C35E08DCB80938DC8E57B2C1AA4")
     
 public final void writeChars(String str) throws IOException {

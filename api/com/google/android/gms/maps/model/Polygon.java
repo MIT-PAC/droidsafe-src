@@ -16,7 +16,7 @@ public final class Polygon
 
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.000 -0400", hash_original_method = "8C5C8D440A9E2FD14E570298FDD80D93", hash_generated_method = "6DFFC6DF15A18B80DE947DB1F4A773FF")
     
 public void remove()
@@ -44,7 +44,7 @@ public void setPoints(List  r1)
     }
 
     @DSSource({DSSourceKind.LOCATION})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.010 -0400", hash_original_method = "1CE7B9C76662FF9B11920E114F5ED131", hash_generated_method = "50CF9278E96BAF04ECA29F85C99639AA")
     
 public List getPoints()
@@ -101,7 +101,7 @@ public int getStrokeColor()
 
     int fillColor;
     
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.034 -0400", hash_original_method = "B7529198E3F1F8C6F039CD825BEB2732", hash_generated_method = "211ADD048FB0A8A556B53A3F6F23A977")
     
 public void setFillColor(int  i0)
@@ -134,7 +134,7 @@ public float getZIndex()
 
     boolean visible;
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.046 -0400", hash_original_method = "4F1D59F1FE23C1AC9513AD19CD3A381A", hash_generated_method = "1D75F6E28B0DA69907E5BD97376FDDD7")
     
 public void setVisible(boolean  z0)
@@ -165,6 +165,7 @@ public boolean isGeodesic()
     	return geodesic;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.060 -0400", hash_original_method = "809AF0F364938F8F716C89E088C8C53E", hash_generated_method = "377BDCC703B3DE85CF40BFBB6E1F71BE")
     
 public boolean equals(Object  r1)
@@ -172,6 +173,7 @@ public boolean equals(Object  r1)
     	return DSUtils.toTaintBoolean(hashCode() + r1.hashCode());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.063 -0400", hash_original_method = "9550DE143575228768275CC736E1A5FF", hash_generated_method = "A1B92EE775D4E6ACE2E8E8B69017F7F7")
     
 public int hashCode()

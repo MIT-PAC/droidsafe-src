@@ -55,6 +55,7 @@ public NotFileFilter(IOFileFilter filter) {
      * @param file  the File to check
      * @return true if the filter returns false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.657 -0400", hash_original_method = "B4759F01CF5E4CDF4AA4061B5D979652", hash_generated_method = "C02ACDC6ABE91F179513EE3945969CFE")
     
 @Override
@@ -69,6 +70,7 @@ public NotFileFilter(IOFileFilter filter) {
      * @param name  the filename
      * @return true if the filter returns false
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.657 -0400", hash_original_method = "B0A127C96A64726487AA51E16A0E3CC5", hash_generated_method = "FF66116A90D47F0E1CA729B601FC7903")
     
 @Override

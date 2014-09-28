@@ -362,7 +362,7 @@ private void initImageView() {
     */
     @DSComment("Safe excetp setImageURI")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.883 -0500", hash_original_method = "53D05784890C72350FD6879A6582F7F3", hash_generated_method = "DF96164158117DC7A0136AF51CE8F171")
     
 public Drawable getDrawable() {

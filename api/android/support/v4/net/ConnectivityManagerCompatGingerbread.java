@@ -34,6 +34,7 @@ import android.net.NetworkInfo;
  * Implementation of ConnectivityManagerCompat that can use Gingerbread APIs.
  */
 class ConnectivityManagerCompatGingerbread {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.634 -0500", hash_original_method = "C6559DF7BF3C27D69D98B909D0ECFC0C", hash_generated_method = "63E623C3370A87E2FAB8E61B55777083")
     
 public static boolean isActiveNetworkMetered(ConnectivityManager cm) {

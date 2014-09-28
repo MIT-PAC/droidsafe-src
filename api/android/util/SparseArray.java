@@ -325,7 +325,7 @@ public void remove(int key) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void append(int key, E value){
 		put(key, value);
 		ArrayUtils.idealIntArraySize(0);

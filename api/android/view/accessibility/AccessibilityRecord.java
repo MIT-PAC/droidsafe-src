@@ -706,7 +706,7 @@ public void setClassName(CharSequence className) {
      */
     @DSComment("Data structure/no action")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.059 -0500", hash_original_method = "DC632160826FC3F04AF23253967928B9", hash_generated_method = "379A6D4AD7B63386276D4CACD9E2EDDC")
     
 public List<CharSequence> getText() {
@@ -720,7 +720,7 @@ public List<CharSequence> getText() {
      */
     @DSComment("Data structure/no action")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.061 -0500", hash_original_method = "FE2FD614296585A25D259709588FAD5E", hash_generated_method = "A052B70B6CA03CBA54AC63E969604818")
     
 public CharSequence getBeforeText() {

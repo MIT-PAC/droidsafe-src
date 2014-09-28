@@ -106,7 +106,6 @@ import static android.support.v7.widget.SuggestionsAdapter.getColumnString;
 public class SearchView extends LinearLayout implements CollapsibleActionView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.311 -0400", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
-
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.315 -0400", hash_original_field = "285462A5A2F0D193A8AC4963A14D117D", hash_generated_field = "DEE7E6EBCAD52D0BE04774C5F3845528")
 
@@ -116,9 +115,9 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     private static final String IME_OPTION_NO_MICROPHONE = "nm";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.408 -0400", hash_original_field = "84ABD9B5C5185B4C6C9C5D67F550C3E4", hash_generated_field = "9A0BB803E93B38C38BCD5BFB84DC1FAD")
 
-
     static final AutoCompleteTextViewReflector HIDDEN_METHOD_INVOKER = new AutoCompleteTextViewReflector();
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.688 -0400", hash_original_method = "1515F3198E379060DCB8EFB4F4DD3EF3", hash_generated_method = "068CF4650A3DEA4B1C4E446DD99717AD")
                 
 static boolean isLandscapeMode(Context context) {
@@ -126,7 +125,6 @@ static boolean isLandscapeMode(Context context) {
                 == Configuration.ORIENTATION_LANDSCAPE;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.322 -0400", hash_original_field = "D71B2E306714DA8E1EF41A767F883DED", hash_generated_field = "20DE7328B76C4576C54CEA1C31A5A5DD")
-
 
     private OnQueryTextListener mOnQueryChangeListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.325 -0400", hash_original_field = "049DE66D3E82D49950E638157EA51E49", hash_generated_field = "3E6EDBFCD15829E88C823AD6BD9DA13F")
@@ -142,7 +140,6 @@ static boolean isLandscapeMode(Context context) {
 
     private OnClickListener mOnSearchClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.342 -0400", hash_original_field = "8C35EB60F6E37267D6E27D8228401F77", hash_generated_field = "DBB17EC605FD9389E7F62B38DE47A3A4")
-
 
     private boolean mIconifiedByDefault;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.344 -0400", hash_original_field = "03390C90FB7F945E48A21937ED57883A", hash_generated_field = "77805A492451B977E1816BA9783A9397")
@@ -213,7 +210,6 @@ static boolean isLandscapeMode(Context context) {
     private int mCollapsedImeOptions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.403 -0400", hash_original_field = "48D170239934FB4D79AA195112CE1340", hash_generated_field = "6F1511307A7DE5E4BDCE1D082D25D113")
 
-
     private SearchableInfo mSearchable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.405 -0400", hash_original_field = "15421EAEB4E151ECA9251D997F5C011B", hash_generated_field = "59F218E5E058390715FC276BA2A49292")
 
@@ -221,6 +217,7 @@ static boolean isLandscapeMode(Context context) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.416 -0400", hash_original_field = "E485A8F01C5FA92CF489DEC7697516E6", hash_generated_field = "7E064CF55E900335F94FA1E5196711A6")
 
     private Runnable mShowImeRunnable = new Runnable() {
+        @DSSafe(DSCat.SAFE_LIST)
         public void run() {
             InputMethodManager imm = (InputMethodManager)
                     getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -232,16 +229,16 @@ static boolean isLandscapeMode(Context context) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.422 -0400", hash_original_field = "ABBD044399DFF308E6A48CA29870A248", hash_generated_field = "26DD1A0C04DF75721BF9C984A385D525")
 
-
     private Runnable mUpdateDrawableStateRunnable = new Runnable() {
+        @DSSafe(DSCat.SAFE_LIST)
         public void run() {
             updateFocusedState();
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.428 -0400", hash_original_field = "C3F02173F568114A92276DA2E8FE583D", hash_generated_field = "AFABA5D8AB606B2E33C096BDAE201C9A")
 
-
     private Runnable mReleaseCursorRunnable = new Runnable() {
+        @DSSafe(DSCat.SAFE_LIST)
         public void run() {
             if (mSuggestionsAdapter != null && mSuggestionsAdapter instanceof SuggestionsAdapter) {
                 mSuggestionsAdapter.changeCursor(null);
@@ -328,9 +325,9 @@ static boolean isLandscapeMode(Context context) {
             new WeakHashMap<String, Drawable.ConstantState>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.585 -0400", hash_original_field = "2A506A8E67594D93F57922AC5B16C0AB", hash_generated_field = "FC78C71AE885D02C82BD9F2374A54A16")
 
-
     private final OnClickListener mOnClickListener = new OnClickListener() {
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void onClick(View v) {
             if (v == mSearchButton) {
                 onSearchClicked();
@@ -385,7 +382,6 @@ static boolean isLandscapeMode(Context context) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.616 -0400", hash_original_field = "233059F5F43076B703D2E177C72B67B0", hash_generated_field = "6F07156C9AD9482F93C507A6F64408CC")
 
-
     private final OnEditorActionListener mOnEditorActionListener = new OnEditorActionListener() {
 
         /**
@@ -398,7 +394,6 @@ static boolean isLandscapeMode(Context context) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.651 -0400", hash_original_field = "959489BF40BB958C75A92A19EC215207", hash_generated_field = "D787B2DF56A912011D2E520CD40860EE")
 
-
     private final OnItemClickListener mOnItemClickListener = new OnItemClickListener() {
 
         /**
@@ -410,7 +405,6 @@ static boolean isLandscapeMode(Context context) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.659 -0400", hash_original_field = "AC76BC4431BD6E1E87151319792B3314", hash_generated_field = "3228634D353F032F19BC71C0D1C6FD2A")
-
 
     private final OnItemSelectedListener mOnItemSelectedListener = new OnItemSelectedListener() {
 
@@ -486,7 +480,8 @@ public SearchView(Context context, AttributeSet attrs) {
         // Inform any listener of focus changes
         mQueryTextView.setOnFocusChangeListener(new OnFocusChangeListener() {
 
-            public void onFocusChange(View v, boolean hasFocus) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public void onFocusChange(View v, boolean hasFocus) {
                 if (mOnQueryTextFocusChangeListener != null) {
                     mOnQueryTextFocusChangeListener.onFocusChange(SearchView.this, hasFocus);
                 }
@@ -543,6 +538,7 @@ public SearchView(Context context, AttributeSet attrs) {
         updateQueryHint();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.471 -0400", hash_original_method = "46A7452C85106D0F4649C160834C88C8", hash_generated_method = "91F013C0C41501213018AADBE5AD8C33")
                 
 private void addOnLayoutChangeListenerToDropDownAnchorSDK11() {
@@ -555,6 +551,7 @@ private void addOnLayoutChangeListenerToDropDownAnchorSDK11() {
         });
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.478 -0400", hash_original_method = "9786864648F02B4210CBE8DCA0D2F57C", hash_generated_method = "9DFE06A6B64554595A83B2D13B6C0281")
                 
 private void addOnLayoutChangeListenerToDropDownAnchorBase() {
@@ -613,6 +610,7 @@ public void setAppSearchData(Bundle appSearchData) {
      *
      * @attr ref android.R.styleable#SearchView_imeOptions
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.485 -0400", hash_original_method = "A9C55FF5F962662498ECAD2C137876AF", hash_generated_method = "CD89AF8E515C0184BE23683937420891")
                 
 public void setImeOptions(int imeOptions) {
@@ -640,6 +638,7 @@ public int getImeOptions() {
      *
      * @attr ref android.R.styleable#SearchView_inputType
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.489 -0400", hash_original_method = "48CC06180C89621288EE9E924CBC5764", hash_generated_method = "346C2C21BCF3B3A413D45389660087CA")
                 
 public void setInputType(int inputType) {
@@ -659,6 +658,7 @@ public int getInputType() {
     }
 
     /** @hide */
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.498 -0400", hash_original_method = "83E343EB647417E47B475AFEA392BC7D", hash_generated_method = "1761412290BB35D10E0439D748A4962E")
                 
 @Override
@@ -680,6 +680,7 @@ public int getInputType() {
     }
 
     /** @hide */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.501 -0400", hash_original_method = "65B369A9FAEBC12EA58ACD6F427C9883", hash_generated_method = "63FBD5DD240AAA1F7E25DA4F6E31636B")
                 
 @Override
@@ -769,6 +770,7 @@ public CharSequence getQuery() {
      * @param submit whether to submit the query right now or only update the contents of
      * text field.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.517 -0400", hash_original_method = "5A003F43910A9D1575D33030D363451B", hash_generated_method = "AF0B00D82064BDC024C095E543F65AA8")
                 
 public void setQuery(CharSequence query, boolean submit) {
@@ -792,6 +794,7 @@ public void setQuery(CharSequence query, boolean submit) {
      *
      * @attr ref android.R.styleable#SearchView_queryHint
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.522 -0400", hash_original_method = "E72A59E6C313C94D91D305DFD6AC06A2", hash_generated_method = "A6C99F300FD2422A675F2D7AC022816F")
                 
 public void setQueryHint(CharSequence hint) {
@@ -833,6 +836,7 @@ public CharSequence getQueryHint() {
      *
      * @attr ref android.R.styleable#SearchView_iconifiedByDefault
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.527 -0400", hash_original_method = "ACA6D63CA1F64B4CD762BEE0367B8A15", hash_generated_method = "37460F3A41A1EEC6E2E27D431FF93FA6")
                 
 public void setIconifiedByDefault(boolean iconified) {
@@ -864,6 +868,7 @@ public boolean isIconfiedByDefault() {
      * @param iconify a true value will collapse the SearchView to an icon, while a false will
      * expand it.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.531 -0400", hash_original_method = "1D615B467973354655EE36C4E6E1B780", hash_generated_method = "C09A92E6147C8CBBBE9D074799B9E1A8")
                 
 public void setIconified(boolean iconify) {
@@ -880,6 +885,7 @@ public void setIconified(boolean iconify) {
      * @return true if the SearchView is currently iconified, false if the search field is
      * fully visible.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.533 -0400", hash_original_method = "844ED2B05054700D6A1A7C47A43DB3F5", hash_generated_method = "3685A368962CA6F1123C758E5F5A80B4")
                 
 public boolean isIconified() {
@@ -975,6 +981,7 @@ public CursorAdapter getSuggestionsAdapter() {
      *
      * @attr ref android.R.styleable#SearchView_maxWidth
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.548 -0400", hash_original_method = "8FF296A57B18752E84CEF7286CDC8903", hash_generated_method = "35898894372962CF4B39196DCA943707")
                 
 public void setMaxWidth(int maxpixels) {
@@ -996,6 +1003,7 @@ public int getMaxWidth() {
         return mMaxWidth;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.553 -0400", hash_original_method = "455591DBA8980F8F128C9C99FA0F791A", hash_generated_method = "C04B9D8722CAA0D6B8C17D9F254771AE")
                 
 @Override
@@ -1033,6 +1041,7 @@ public int getMaxWidth() {
         super.onMeasure(MeasureSpec.makeMeasureSpec(width, widthMode), heightMeasureSpec);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.555 -0400", hash_original_method = "A382CB5B23A797D1354D3CFF9420A6EA", hash_generated_method = "5771CE8D7B28EB091BE1057EFBDBD24F")
                 
 private int getPreferredWidth() {
@@ -1040,6 +1049,7 @@ private int getPreferredWidth() {
                 .getDimensionPixelSize(R.dimen.abc_search_view_preferred_width);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.558 -0400", hash_original_method = "7F3DE149B8C5E14764DBC69CC4EE105A", hash_generated_method = "1196652786F5812346058BF26B05A7CA")
                 
 private void updateViewsVisibility(final boolean collapsed) {
@@ -1058,6 +1068,7 @@ private void updateViewsVisibility(final boolean collapsed) {
         updateSubmitArea();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.560 -0400", hash_original_method = "1F6B21487B2FA81D5679515DB4F108DF", hash_generated_method = "1BB2BF66E14BCD3AE44340217B36AD5B")
                 
 private boolean hasVoiceSearch() {
@@ -1077,12 +1088,14 @@ private boolean hasVoiceSearch() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.562 -0400", hash_original_method = "E98BAF533B4581CBC109A603E4339AE5", hash_generated_method = "AD23F41A7E00EA85995BEB5AD85CBAC4")
                 
 private boolean isSubmitAreaEnabled() {
         return (mSubmitButtonEnabled || mVoiceButtonEnabled) && !isIconified();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.564 -0400", hash_original_method = "956EC0D217930FCBDABBCC447139885F", hash_generated_method = "73529CCDE2A6E9981D3FEBF7D75D0B13")
                 
 private void updateSubmitButton(boolean hasText) {
@@ -1094,6 +1107,7 @@ private void updateSubmitButton(boolean hasText) {
         mSubmitButton.setVisibility(visibility);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.567 -0400", hash_original_method = "FF9871F833F63C36B3921C4F59B0ED2F", hash_generated_method = "1B38B8A2A8BAB3CCCB5E4A3FD23CF235")
                 
 private void updateSubmitArea() {
@@ -1106,6 +1120,7 @@ private void updateSubmitArea() {
         mSubmitArea.setVisibility(visibility);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.569 -0400", hash_original_method = "31438C0932D7B883B0B6F7C1A8D11C73", hash_generated_method = "5944F95480569FD75D5F773EF6D2938F")
                 
 private void updateCloseButton() {
@@ -1117,12 +1132,14 @@ private void updateCloseButton() {
         mCloseButton.getDrawable().setState(hasText ? ENABLED_STATE_SET : EMPTY_STATE_SET);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.571 -0400", hash_original_method = "A19187F7BD510E54AC677DCF71153712", hash_generated_method = "AD57BDCA7E253262647EAEFB8A94D7E2")
                 
 private void postUpdateFocusedState() {
         post(mUpdateDrawableStateRunnable);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.573 -0400", hash_original_method = "2FABE728CB7CDC63DD618939E6086EE5", hash_generated_method = "C1E3D4F2A6D6D989B4BA04D8A52BC794")
                 
 private void updateFocusedState() {
@@ -1132,6 +1149,7 @@ private void updateFocusedState() {
         invalidate();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.575 -0400", hash_original_method = "466B44C18A399269336D5B13075B3DD5", hash_generated_method = "E87FADC23B2C7E10E4785C8106E6563D")
                 
 @Override
@@ -1141,6 +1159,7 @@ private void updateFocusedState() {
         super.onDetachedFromWindow();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.577 -0400", hash_original_method = "10C83777364EAA061E75B08DB527338D", hash_generated_method = "13EC671B668FDD461062FA3FC7A304D2")
                 
 private void setImeVisibility(final boolean visible) {
@@ -1161,7 +1180,8 @@ private void setImeVisibility(final boolean visible) {
      * Called by the SuggestionsAdapter
      * @hide
      */
-    /* package */@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.580 -0400", hash_original_method = "364D10214479FA13BFF6BDB192F3E0CD", hash_generated_method = "364D10214479FA13BFF6BDB192F3E0CD")
+    /* package */@DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.580 -0400", hash_original_method = "364D10214479FA13BFF6BDB192F3E0CD", hash_generated_method = "364D10214479FA13BFF6BDB192F3E0CD")
                 
 void onQueryRefine(CharSequence queryText) {
         setQuery(queryText);
@@ -1176,6 +1196,7 @@ void onQueryRefine(CharSequence queryText) {
      *
      * @return true if the event was handled here, or false if not.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.588 -0400", hash_original_method = "FC84E4A8BF0E09073CCD70635A812333", hash_generated_method = "BF5EA9E7A15462E00E7029C2C6C6D36E")
                 
 @Override
@@ -1192,6 +1213,7 @@ void onQueryRefine(CharSequence queryText) {
      * action keys. If not handled, try refocusing regular characters into the
      * EditText.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.598 -0400", hash_original_method = "46431FBFEF9551A6D8E8837913415000", hash_generated_method = "B20B377478F75480AD1EA0BA6BD2E5D8")
                 
 private boolean onSuggestionsKey(View v, int keyCode, KeyEvent event) {
@@ -1236,6 +1258,7 @@ private boolean onSuggestionsKey(View v, int keyCode, KeyEvent event) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.600 -0400", hash_original_method = "91811970C9F8C86EE5433C59C9AF7DFD", hash_generated_method = "56B62EAD89A0427F348F8FD4E0E7675C")
                 
 private int getSearchIconId() {
@@ -1244,6 +1267,7 @@ private int getSearchIconId() {
         return outValue.resourceId;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.603 -0400", hash_original_method = "BEC25B8B383259674E4804BA5A8143D3", hash_generated_method = "44066A10F8E9500F3FAB028F54FF591C")
                 
 private CharSequence getDecoratedHint(CharSequence hintText) {
@@ -1259,6 +1283,7 @@ private CharSequence getDecoratedHint(CharSequence hintText) {
         return ssb;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.605 -0400", hash_original_method = "86FF55CF6755F81D1B5EAA7CA81FA50B", hash_generated_method = "92448411192D34826A399651377BD42A")
                 
 private void updateQueryHint() {
@@ -1281,6 +1306,7 @@ private void updateQueryHint() {
     /**
      * Updates the auto-complete text view.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.608 -0400", hash_original_method = "2738F80C50C0F9505AEBBB0DF2ACB0FD", hash_generated_method = "A9673426F6DC0CC80584FEA05F9F4914")
                 
 private void updateSearchAutoComplete() {
@@ -1327,6 +1353,7 @@ private void updateSearchAutoComplete() {
      * @param empty whether the search query text field is empty. If it is, then the other
      * criteria apply to make the voice button visible.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.611 -0400", hash_original_method = "3C9F3ABEF9459DE6C607B751B6CB866E", hash_generated_method = "1FD85F4CFDE1CDE27B49BF424218A660")
                 
 private void updateVoiceButton(boolean empty) {
@@ -1338,6 +1365,7 @@ private void updateVoiceButton(boolean empty) {
         mVoiceButton.setVisibility(visibility);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.618 -0400", hash_original_method = "1411F54CFFACC3FC33F099091662F124", hash_generated_method = "3C397B31E83B8A3D9C285FE1141EDC6C")
                 
 private void onTextChanged(CharSequence newText) {
@@ -1354,6 +1382,7 @@ private void onTextChanged(CharSequence newText) {
         mOldQueryText = newText.toString();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.620 -0400", hash_original_method = "5AEA0BD14CD513B7E21145454A43DADF", hash_generated_method = "A414A69964DB2EDDD93A5DD5422F8F53")
                 
 private void onSubmitQuery() {
@@ -1370,12 +1399,14 @@ private void onSubmitQuery() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.622 -0400", hash_original_method = "8D9A2C9AF67AD5F3EB2818A3F7453E73", hash_generated_method = "F96111D7026ABAE36329B7CFE45D22EB")
                 
 private void dismissSuggestions() {
         mQueryTextView.dismissDropDown();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.625 -0400", hash_original_method = "E1C21CB17E5E6548A25ED1EEE1C98C9D", hash_generated_method = "0C53F7B2978BD459719E403313087410")
                 
 private void onCloseClicked() {
@@ -1398,6 +1429,7 @@ private void onCloseClicked() {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.627 -0400", hash_original_method = "4C174341C531719A99E642D8022F787E", hash_generated_method = "D65670BA560AE783A84167E5E8E45789")
                 
 private void onSearchClicked() {
@@ -1409,6 +1441,7 @@ private void onSearchClicked() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.629 -0400", hash_original_method = "5B2168D9C175988BD80847D561C5C5CC", hash_generated_method = "AAF32B7AB04CF54D05C73A4D63265109")
                 
 private void onVoiceClicked() {
@@ -1434,6 +1467,7 @@ private void onVoiceClicked() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.631 -0400", hash_original_method = "4D3FC77D85FEC9D80C6560FAE74CDA60", hash_generated_method = "5C44600C46592041A47B81971EB66968")
                 
 void onTextFocusChanged() {
@@ -1446,6 +1480,7 @@ void onTextFocusChanged() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.634 -0400", hash_original_method = "6BC34AF35099192BA7E60BCC11E3C756", hash_generated_method = "F7D1510C3205597107CC3CA86E133104")
                 
 @Override
@@ -1458,6 +1493,7 @@ void onTextFocusChanged() {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.636 -0400", hash_original_method = "5D7477A3D9C6D568A19E621F4FAE5DD7", hash_generated_method = "8E15890FE8C1E16FFF8183FE8EA51626")
                 
 @Override
@@ -1471,6 +1507,7 @@ void onTextFocusChanged() {
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.638 -0400", hash_original_method = "F734C19BE6B7D5E142C7745125215DDF", hash_generated_method = "C9ABA9855018003C93815F32D566CE45")
                 
 @Override
@@ -1484,7 +1521,7 @@ void onTextFocusChanged() {
         setIconified(false);
     }
 
-
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.640 -0400", hash_original_method = "58D1D0E657FD45AA5397F00624675B63", hash_generated_method = "60FBB7C67290152B18F46FD3323D7822")
                 
 private void adjustDropDownSizeAndPosition() {
@@ -1505,6 +1542,7 @@ private void adjustDropDownSizeAndPosition() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.643 -0400", hash_original_method = "5FDC493391F791D62FF75AE849BF4213", hash_generated_method = "D97A43FE417E7623923C8248271D9B22")
                 
 private boolean onItemClicked(int position, int actionKey, String actionMsg) {
@@ -1518,6 +1556,7 @@ private boolean onItemClicked(int position, int actionKey, String actionMsg) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.645 -0400", hash_original_method = "08FFA8C71E803D9BC52878D0BDC1227B", hash_generated_method = "D9287C4CC7F8F95FC25FFE15955460C1")
                 
 private boolean onItemSelected(int position) {
@@ -1532,6 +1571,7 @@ private boolean onItemSelected(int position) {
     /**
      * Query rewriting.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.662 -0400", hash_original_method = "FE5C7BD493A3B7C4988BF7B094450FE1", hash_generated_method = "2E791D59EA01A15F27EF5E146953F31F")
                 
 private void rewriteQueryFromSuggestion(int position) {
@@ -1567,6 +1607,7 @@ private void rewriteQueryFromSuggestion(int position) {
      *        or <code>null</code> if none.
      * @return true if a successful launch, false if could not (e.g. bad position).
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.664 -0400", hash_original_method = "1026A945AA7D5E936A04225BB74423F6", hash_generated_method = "526AD01A8145198E6E90EDF77DA844EA")
                 
 private boolean launchSuggestion(int position, int actionKey, String actionMsg) {
@@ -1586,6 +1627,7 @@ private boolean launchSuggestion(int position, int actionKey, String actionMsg) 
     /**
      * Launches an intent, including any special intent handling.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.666 -0400", hash_original_method = "B092F13CA13C6A372C37DCEFCF94B5BC", hash_generated_method = "584E434D946C5FE4F9C56FDAC4C7DDDE")
                 
 private void launchIntent(Intent intent) {
@@ -1604,6 +1646,7 @@ private void launchIntent(Intent intent) {
     /**
      * Sets the text in the query box, without updating the suggestions.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.668 -0400", hash_original_method = "DBAD05D6D0FBDB0F3C2E2D7A3D1DEA39", hash_generated_method = "4A5B9A3A0047F83968B622CE9280338F")
                 
 private void setQuery(CharSequence query) {
@@ -1612,6 +1655,7 @@ private void setQuery(CharSequence query) {
         mQueryTextView.setSelection(TextUtils.isEmpty(query) ? 0 : query.length());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.671 -0400", hash_original_method = "A610C255BB7D93FEE4A49CEF406D7E3C", hash_generated_method = "3A7DF92BD5F041D72A8251C175ACCB40")
                 
 private void launchQuerySearch(int actionKey, String actionMsg, String query) {
@@ -1667,6 +1711,7 @@ private Intent createIntent(String action, Uri data, String extraData, String qu
     /**
      * Create and return an Intent that can launch the voice search activity for web search.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.676 -0400", hash_original_method = "88ED2A4CD1E55FCB278985A3652D43A1", hash_generated_method = "4283836B167ED982507321DF5E9FF938")
                 
 private Intent createVoiceWebSearchIntent(Intent baseIntent, SearchableInfo searchable) {
@@ -1684,6 +1729,7 @@ private Intent createVoiceWebSearchIntent(Intent baseIntent, SearchableInfo sear
      * @param baseIntent The voice app search intent to start from
      * @return A completely-configured intent ready to send to the voice search activity
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.680 -0400", hash_original_method = "5D74F0494562FB84F425FDE65654BA8C", hash_generated_method = "AA02645CC7E117FF9A241D2B087075EA")
                 
 private Intent createVoiceAppSearchIntent(Intent baseIntent, SearchableInfo searchable) {
@@ -1757,6 +1803,7 @@ private Intent createVoiceAppSearchIntent(Intent baseIntent, SearchableInfo sear
      *        or <code>null</code> if none.
      * @return An intent for the suggestion at the cursor's position.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.683 -0400", hash_original_method = "AB898CD02BDAC1EC395FEB762AAF8CC2", hash_generated_method = "858861D843B36063B9DA287E078A747D")
                 
 private Intent createIntentFromSuggestion(Cursor c, int actionKey, String actionMsg) {
@@ -1802,6 +1849,7 @@ private Intent createIntentFromSuggestion(Cursor c, int actionKey, String action
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-26 16:22:44.686 -0400", hash_original_method = "366325057160BB83E1BEC9126629B266", hash_generated_method = "AAA914BA2146378156C18412928647ED")
                 
 private void forceSuggestionQuery() {
@@ -1833,10 +1881,12 @@ private void forceSuggestionQuery() {
             mThreshold = getThreshold();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         void setSearchView(SearchView searchView) {
             mSearchView = searchView;
         }
 
+        @DSSafe(DSCat.GUI)
         @Override
         public void setThreshold(int threshold) {
             super.setThreshold(threshold);
@@ -1846,6 +1896,7 @@ private void forceSuggestionQuery() {
         /**
          * Returns true if the text field is empty, or contains only whitespace.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private boolean isEmpty() {
             return TextUtils.getTrimmedLength(getText()) == 0;
         }
@@ -1872,6 +1923,7 @@ private void forceSuggestionQuery() {
          * We override this method to be sure and show the soft keyboard if
          * appropriate when the TextView has focus.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onWindowFocusChanged(boolean hasWindowFocus) {
             super.onWindowFocusChanged(hasWindowFocus);
@@ -1888,6 +1940,7 @@ private void forceSuggestionQuery() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
             super.onFocusChanged(focused, direction, previouslyFocusedRect);
@@ -1898,11 +1951,13 @@ private void forceSuggestionQuery() {
          * We override this method so that we can allow a threshold of zero,
          * which ACTV does not.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean enoughToFilter() {
             return mThreshold <= 0 || super.enoughToFilter();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onKeyPreIme(int keyCode, KeyEvent event) {
             if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -1966,6 +2021,7 @@ private void forceSuggestionQuery() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         void doBeforeTextChanged(AutoCompleteTextView view) {
             if (doBeforeTextChanged != null) {
                 try {
@@ -1975,6 +2031,7 @@ private void forceSuggestionQuery() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         void doAfterTextChanged(AutoCompleteTextView view) {
             if (doAfterTextChanged != null) {
                 try {
@@ -1984,6 +2041,7 @@ private void forceSuggestionQuery() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         void ensureImeVisible(AutoCompleteTextView view, boolean visible) {
             if (ensureImeVisible != null) {
                 try {
@@ -1993,6 +2051,7 @@ private void forceSuggestionQuery() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         void showSoftInputUnchecked(InputMethodManager imm, View view, int flags) {
             if (showSoftInputUnchecked != null) {
                 try {

@@ -107,6 +107,7 @@ public abstract DocumentBuilder newDocumentBuilder()
      *                  for XML namespaces; false otherwise.
      */
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.041 -0500", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "4FD13D12045B2E9F47E39E40A44BDDEE")
     
 public void setNamespaceAware(boolean awareness) {

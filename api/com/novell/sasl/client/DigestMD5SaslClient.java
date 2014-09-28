@@ -33,7 +33,6 @@ public class DigestMD5SaslClient implements SaslClient
 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:02:38.079 -0400", hash_original_field = "FA87AC59973B38ADAE8DBDA5D2B21C75", hash_generated_field = "A32BD57A6E912677A21C3C344A408FA1")
 
-
     private static final int   STATE_INITIAL = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:02:38.079 -0400", hash_original_field = "1EACCFB4BC8511179EBB11B73883EF96", hash_generated_field = "030D8793D6DA04860BD9AFE934E67D84")
 
@@ -49,13 +48,11 @@ public class DigestMD5SaslClient implements SaslClient
     private static final int   STATE_DISPOSED = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:02:38.080 -0400", hash_original_field = "C9E2B82451163FF5F78D3A7C70062FE1", hash_generated_field = "CCE9BD44A9BD0B8AAA99CF11A20514A8")
 
-
     private static final int   NONCE_BYTE_COUNT = 32;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:02:38.081 -0400", hash_original_field = "C7F53400E76C2001C6F8CA23C0F121B7", hash_generated_field = "F691E2EAA8FD6374E826CDAF56A045E7")
 
     private static final int   NONCE_HEX_COUNT = 2*NONCE_BYTE_COUNT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:02:38.081 -0400", hash_original_field = "530D3D362EE226A4263422B088AD44F5", hash_generated_field = "2D7383530BA1017246DF1467E3BB2D9F")
-
 
     private static final String DIGEST_METHOD = "AUTHENTICATE";
 
@@ -133,7 +130,6 @@ public static SaslClient getClient(
         return new DigestMD5SaslClient(authorizationId, protocol,
                                        serverName, props, cbh);
     }
-
 
     /**
      * This function returns hex character representing the value of the input
@@ -290,6 +286,7 @@ private  DigestMD5SaslClient(
      *
      * @return  true if this mechanism has an initial response
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:02:38.083 -0400", hash_original_method = "1ECCE9E7B8E4B2ABE7862485905FED28", hash_generated_method = "5D6143BFB96C7D98182A05D61ACED164")
     
 public boolean hasInitialResponse()
@@ -451,6 +448,7 @@ public void dispose()
      * @exception SaslException   If an error occurred while processing the
      *                            challenge or generating a response.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:02:38.086 -0400", hash_original_method = "31AD7988DC6C484C1191489DC59E082D", hash_generated_method = "FFE848F30B13C91D22B81735BFBF10C0")
     
 public byte[] evaluateChallenge(
@@ -591,7 +589,6 @@ char[] DigestCalcHA1(
         return convertToHex(hash);
     }
 
-
     /**
      * This function calculates the response-value of the response directive of
      * the digest-response as documented in RFC 2831
@@ -671,7 +668,6 @@ char[] DigestCalcResponse(
 
         return convertToHex(respHash);
     }
-
 
     /**
      * Creates the intial response to be sent to the server.
@@ -806,7 +802,6 @@ private String createDigestResponse(
 
         return digestResponse.toString();
      }
-     
      
     /**
      * This function validates the server response. This step performs a 

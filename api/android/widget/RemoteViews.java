@@ -45,7 +45,7 @@ public class RemoteViews implements Parcelable, Filter {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.797 -0400", hash_original_field = "3C81D1A6471DBF098FBC5010948AFD3D", hash_generated_field = "BD08AD711A0271B27E85FFB2A2737195")
 
     public static final Parcelable.Creator<RemoteViews> CREATOR = new Parcelable.Creator<RemoteViews>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.117 -0500", hash_original_method = "FC3F962DDEC04FB3CB8064B237D4AD2E", hash_generated_method = "6E797158973DFFCE7F4F903A273D2687")
         
 public RemoteViews createFromParcel(Parcel parcel) {
@@ -253,7 +253,7 @@ private void addAction(Action a) {
      * @param viewId The id of the parent {@link ViewGroup} to add child into.
      * @param nestedView {@link RemoteViews} that describes the child.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.INTERGUI_ACTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.017 -0500", hash_original_method = "4A1BA0269DB90E506DB0959643DF475B", hash_generated_method = "4886D770A7C3676B878E94B59BBB7E59")
     
 public void addView(int viewId, RemoteViews nestedView) {
@@ -266,7 +266,7 @@ public void addView(int viewId, RemoteViews nestedView) {
      * @param viewId The id of the parent {@link ViewGroup} to remove all
      *            children from.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.INTERGUI_ACTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.020 -0500", hash_original_method = "E70CF2F379D754A9B2BAC52704294677", hash_generated_method = "E327FE5A66D475AA2BFDABFFE1E15FE2")
     
 public void removeAllViews(int viewId) {
@@ -315,8 +315,8 @@ public void setDisplayedChild(int viewId, int childIndex) {
      * @param visibility The new visibility for the view
      */
     @DSComment("check setOnClickPendingIntent")
-    @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.INTERGUI_ACTION)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.028 -0500", hash_original_method = "DEE52A50DF8AF905161D8440F9C7FD6B", hash_generated_method = "D35680D2C11D87B825D492B72945A47A")
     
 public void setViewVisibility(int viewId, int visibility) {
@@ -330,8 +330,8 @@ public void setViewVisibility(int viewId, int visibility) {
      * @param text The new text for the view
      */
     @DSComment("check setOnClickPendingIntent")
-    @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.INTERGUI_ACTION)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.030 -0500", hash_original_method = "5F8A789C1791A65B082D971694A97107", hash_generated_method = "775D8E18D63705C8DCFC41111F9CBAE4")
     
 public void setTextViewText(int viewId, CharSequence text) {
@@ -345,8 +345,8 @@ public void setTextViewText(int viewId, CharSequence text) {
      * @param srcId The new resource id for the drawable
      */
     @DSComment("check setOnClickPendingIntent")
-    @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.INTERGUI_ACTION)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.032 -0500", hash_original_method = "BA7406E13895A91025A0507F41BF6313", hash_generated_method = "DBB6736C78776F4BCF9F89E2FEF0F799")
     
 public void setImageViewResource(int viewId, int srcId) {   
@@ -359,8 +359,8 @@ public void setImageViewResource(int viewId, int srcId) {
      * @param viewId The id of the view whose drawable should change
      * @param uri The Uri for the image
      */
-    @DSSpec(DSCat.SPEC_OTHERS)
-    @DSSink({DSSinkKind.NETWORK})
+    @DSSpec(DSCat.INTERGUI_ACTION)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.036 -0500", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "94D346594F571696B4CA207279C9B47E")
     
 public void setImageViewUri(int viewId, Uri uri) {
@@ -669,8 +669,8 @@ public void setShort(int viewId, String methodName, short value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.INTERGUI_ACTION)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.073 -0500", hash_original_method = "2BA2097F7597ED476DFE96444FF2B47B", hash_generated_method = "F9D14C9D9162D6EA5023E288E9A57F79")
     
 public void setInt(int viewId, String methodName, int value) {

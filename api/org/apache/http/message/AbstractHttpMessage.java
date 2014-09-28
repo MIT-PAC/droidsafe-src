@@ -67,12 +67,9 @@ public Header getLastHeader(final String name) {
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
 
-
     @DSSafe(DSCat.DATA_STRUCTURE)
 
-
     @DSVerified
-
 
     // non-javadoc, see interface HttpMessage
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:36.190 -0400", hash_original_method = "89AD2C028927AB3E8715A79204D69C99", hash_generated_method = "63C533063E49D4C17E422E4EB5F66B97")
@@ -82,6 +79,7 @@ public Header[] getAllHeaders() {
     }
     
     // non-javadoc, see interface HttpMessage
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.242 -0500", hash_original_method = "1DE731CFF4ECF4DBA0EF3FE32BB726E4", hash_generated_method = "353991C9C556FF2420F3A5952CCD0B0F")
     @DSVerified
     @DSSafe(DSCat.DATA_STRUCTURE)
@@ -90,6 +88,7 @@ public void addHeader(final Header header) {
     }
 
     // non-javadoc, see interface HttpMessage
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.245 -0500", hash_original_method = "4C12242853C02960B9FD442E279D83C0", hash_generated_method = "D123C766B9C3F2FA03DB4CB537C58272")
     @DSVerified
     @DSSafe(DSCat.DATA_STRUCTURE)

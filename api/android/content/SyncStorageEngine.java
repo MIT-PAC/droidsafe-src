@@ -69,6 +69,7 @@ public static SyncStorageEngine getSingleton() {
         return sSyncStorageEngine;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.604 -0500", hash_original_method = "2B5AC1B2F847EAF34CB62BA72FDAD096", hash_generated_method = "2FCBA234A8E3D4B9EC09881E21D44428")
     
 public static boolean equals(Bundle b1, Bundle b2) {

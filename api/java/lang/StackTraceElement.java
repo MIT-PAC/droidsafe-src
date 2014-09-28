@@ -132,7 +132,7 @@ public StackTraceElement(String cls, String method, String file, int line) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.887 -0500", hash_original_method = "BE14A042BD1289020FF0D183A63A0F88", hash_generated_method = "515F10678B5E0C1375183D39EA13494A")
     
 public String getClassName() {

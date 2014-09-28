@@ -107,7 +107,8 @@ private void initPrefs() {
 @Override
     protected String[] childrenNamesSpi() throws BackingStoreException {
         String[] names = dir.list(new FilenameFilter() {
-            public boolean accept(File parent, String name) {
+            @DSSafe(DSCat.SAFE_LIST)
+        public boolean accept(File parent, String name) {
                 return new File(path + File.separator + name).isDirectory();
             }
         });

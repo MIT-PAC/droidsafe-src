@@ -191,6 +191,7 @@ synchronized void updateNfcService(NfcActivityState state) {
         {
             //Synthesized constructor
         }
+        @DSSource({DSSourceKind.NFC})
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.167 -0500", hash_original_method = "0458F1EA3F9A5785CA2A5D797EF2D2B7", hash_generated_method = "01563C0C26DD18610EAF408D8701D01E")
         

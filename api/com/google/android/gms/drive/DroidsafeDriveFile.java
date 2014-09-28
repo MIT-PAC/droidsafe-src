@@ -33,7 +33,8 @@ public class DroidsafeDriveFile implements DriveFile {
 		return res;
 	}
 
-	@Override
+	@DSSafe(DSCat.SAFE_LIST)
+    @Override
 	public DriveId getDriveId() {
 		// TODO Auto-generated method stub
 		String idStr = new String();
@@ -64,7 +65,7 @@ public class DroidsafeDriveFile implements DriveFile {
 		return res;
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	@Override
 	public PendingResult discardContents(GoogleApiClient r0, Contents r1) {
 		// TODO Auto-generated method stub

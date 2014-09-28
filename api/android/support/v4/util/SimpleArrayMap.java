@@ -57,6 +57,7 @@ public class SimpleArrayMap<K, V> {
 
     static int mTwiceBaseCacheSize;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.542 -0400", hash_original_method = "A9476A1EEB8913C9E9932D0B7E7DDF89", hash_generated_method = "BFA4786C4DCA2621AC95051AA5811F74")
     
 private static void freeArrays(final int[] hashes, final Object[] array, final int size) {
@@ -139,6 +140,7 @@ public SimpleArrayMap(SimpleArrayMap map) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.525 -0400", hash_original_method = "A25D329AED0FC45488C75E184A8E590D", hash_generated_method = "AB34D97F47A669A37D55920E9E5B672A")
     
 int indexOf(Object key, int hash) {
@@ -179,6 +181,7 @@ int indexOf(Object key, int hash) {
         return ~end;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.530 -0400", hash_original_method = "076C98F15276A17990CA16A9FAB64216", hash_generated_method = "864066E34CCAE212B34AB8ABDF2A431C")
     
 int indexOfNull() {
@@ -219,6 +222,7 @@ int indexOfNull() {
         return ~end;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.537 -0400", hash_original_method = "7F2186F200D69C67DC84F80AE7755398", hash_generated_method = "985B8C5252ABAA578289784F3CA49BD2")
     
 private void allocArrays(final int size) {
@@ -275,6 +279,7 @@ public void clear() {
      * Ensure the array map can hold at least <var>minimumCapacity</var>
      * items.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.561 -0400", hash_original_method = "577EA5DA8974E61A386C8E147A3CEF63", hash_generated_method = "95DAE55CDE1E508ACD62AF5CD93D719E")
     
 public void ensureCapacity(int minimumCapacity) {
@@ -303,6 +308,7 @@ public boolean containsKey(Object key) {
         return key == null ? (indexOfNull() >= 0) : (indexOf(key, key.hashCode()) >= 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.569 -0400", hash_original_method = "0C4D12D0B2AB19F9897899616C77750E", hash_generated_method = "0C4D12D0B2AB19F9897899616C77750E")
     
 int indexOfValue(Object value) {
@@ -357,6 +363,7 @@ public V get(Object key) {
      * @param index The desired index, must be between 0 and {@link #size()}-1.
      * @return Returns the key stored at the given index.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.582 -0400", hash_original_method = "943099AB2885A4BDD8B9C646B5F94275", hash_generated_method = "9B4C3F6F3E948F433E0CB6833B663B3A")
     
 public K keyAt(int index) {
@@ -368,6 +375,7 @@ public K keyAt(int index) {
      * @param index The desired index, must be between 0 and {@link #size()}-1.
      * @return Returns the value stored at the given index.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.588 -0400", hash_original_method = "C68F9C1CA0ECDC5E3EA9380F963B92A4", hash_generated_method = "B7EB395BBA2A6FD76A1273DB5A773C28")
     
 public V valueAt(int index) {
@@ -380,6 +388,7 @@ public V valueAt(int index) {
      * @param value The new value to store at this index.
      * @return Returns the previous value at the given index.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.592 -0400", hash_original_method = "B02392C48FFF6B3C28B3112109C950FE", hash_generated_method = "DE6C44054C568937985AFE7C8841D3C5")
     
 public V setValueAt(int index, V value) {
@@ -507,6 +516,7 @@ public V remove(Object key) {
      * @param index The desired index, must be between 0 and {@link #size()}-1.
      * @return Returns the value that was stored at this index.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.616 -0400", hash_original_method = "B60560CE6362D056056BD3B06A5B4503", hash_generated_method = "A79A8914298914F4D41BD6986C6163EA")
     
 public V removeAt(int index) {
@@ -578,6 +588,7 @@ public int size() {
      * values of both maps are compared. If the values for any key are not
      * equal, the method returns false, otherwise it returns true.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:23.624 -0400", hash_original_method = "600CF8179180C586440A53D82C1F6217", hash_generated_method = "5203B8FF6AF41420301DADF7C14DBDB9")
     
 @Override

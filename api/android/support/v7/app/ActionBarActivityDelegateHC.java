@@ -30,6 +30,7 @@ ActionBarActivityDelegateHC(ActionBarActivity activity) {
         super(activity);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.434 -0400", hash_original_method = "1880A25C06C3EE2C2E1D61C88E96B80B", hash_generated_method = "F1F5D426BF91D963D74F976C09CE159C")
     
 @Override
@@ -46,6 +47,7 @@ ActionBarActivityDelegateHC(ActionBarActivity activity) {
         super.onCreate(savedInstanceState);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:31.440 -0400", hash_original_method = "75B3B44244FB022562B42FFEB818AD88", hash_generated_method = "4D956D0F2C263B5E8ABE602CC78F543C")
     
 @Override

@@ -13,7 +13,7 @@ public class UsbInterface implements Parcelable {
 
     public static final Parcelable.Creator<UsbInterface> CREATOR =
         new Parcelable.Creator<UsbInterface>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.592 -0500", hash_original_method = "3B04131A8CBD1CFB2F6A52BD485FA731", hash_generated_method = "3C5B6F42675DCCFE9B6FDF19FEC87935")
         
 public UsbInterface createFromParcel(Parcel in) {

@@ -12,7 +12,7 @@ import android.content.Intent;
 
 class ActivityCompatHoneycomb {
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.342 -0500", hash_original_method = "B0A1865910DB6E870CEA82F98D9E3069", hash_generated_method = "5B035CD3E0C4A183BCC08A40E143D49E")
     
 static void invalidateOptionsMenu(Activity activity) {

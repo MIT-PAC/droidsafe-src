@@ -214,7 +214,8 @@ private static void generateSnapshotHeader(String processName, PackageInfo packa
             dir.setExecutable(true, false);
             if (dir.isDirectory()) {
                 snapshotWriter = Executors.newSingleThreadExecutor(new ThreadFactory() {
-                        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.429 -0500", hash_original_method = "0CDBA4487C2472A49E498ACF4C9DC17B", hash_generated_method = "9BECBBFD0B8DB73E5850D803C0924DE6")
+                        @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.429 -0500", hash_original_method = "0CDBA4487C2472A49E498ACF4C9DC17B", hash_generated_method = "9BECBBFD0B8DB73E5850D803C0924DE6")
                     
 public Thread newThread(Runnable r) {
                             return new Thread(r, TAG);

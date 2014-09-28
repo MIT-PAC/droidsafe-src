@@ -288,6 +288,7 @@ public SwipeRefreshLayout(Context context, AttributeSet attrs) {
         removeCallbacks(mCancel);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.913 -0400", hash_original_method = "35CDC380E2A2A758436FBF1265AE98A4", hash_generated_method = "9515BAFB2BD372F002B6B8805BBB4CCE")
     
 private void animateOffsetToStartPosition(int from, AnimationListener listener) {
@@ -309,6 +310,7 @@ public void setOnRefreshListener(OnRefreshListener listener) {
         mListener = listener;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.919 -0400", hash_original_method = "9BD4C85542B0E9E6237E7481D15CA6CB", hash_generated_method = "CA7958F515FEA54CE97DF0DE21C7C1C4")
     
 private void setTriggerPercentage(float percent) {
@@ -328,6 +330,7 @@ private void setTriggerPercentage(float percent) {
      *
      * @param refreshing Whether or not the view should show refresh progress.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.922 -0400", hash_original_method = "38B05F87B627D6B2265B3ED7E489E7E3", hash_generated_method = "FCE6402494ADFAA5D1F62DD65E96C00A")
     
 public void setRefreshing(boolean refreshing) {
@@ -358,6 +361,7 @@ public void setRefreshing(boolean refreshing) {
      * The first color will also be the color of the bar that grows in response
      * to a user swipe gesture.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.930 -0400", hash_original_method = "0E7A28D063B01B12BE60C40B12A03B10", hash_generated_method = "CCE5CB89223B763F4A8600220BBCE8CC")
     
 public void setColorSchemeResources(int colorRes1, int colorRes2, int colorRes3,
@@ -372,6 +376,7 @@ public void setColorSchemeResources(int colorRes1, int colorRes2, int colorRes3,
      * also be the color of the bar that grows in response to a user swipe
      * gesture.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.934 -0400", hash_original_method = "9EAA9454083F13D1B9044B9DBDC17E54", hash_generated_method = "242A63C2EDAB80F374868AD578754C01")
     
 public void setColorSchemeColors(int color1, int color2, int color3, int color4) {
@@ -389,6 +394,7 @@ public boolean isRefreshing() {
         return mRefreshing;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.940 -0400", hash_original_method = "4CCB40E4AF1A19D516D9C6F00CE1B10A", hash_generated_method = "53FFFD90557921AD389543FC055E8270")
     
 private void ensureTarget() {
@@ -462,6 +468,7 @@ private void ensureTarget() {
      * @return Whether it is possible for the child view of this layout to
      *         scroll up. Override this if the child view is a custom view.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.955 -0400", hash_original_method = "B601FF077A2397A8086214412F14617F", hash_generated_method = "3B6020F55923E98E93C1130E772D5D85")
     
 public boolean canChildScrollUp() {
@@ -632,6 +639,7 @@ public boolean canChildScrollUp() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.974 -0400", hash_original_method = "58BB2098DCFC98AA6B90735D08DFA1BF", hash_generated_method = "E9FB6E335729BB43583DC8694A9841F9")
     
 private void startRefresh() {
@@ -641,6 +649,7 @@ private void startRefresh() {
         mListener.onRefresh();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.979 -0400", hash_original_method = "FFF9C12FAA7545F4A9EA8E78D88D6D8C", hash_generated_method = "658AEC053134EBF11B26B2AA2E289B96")
     
 private void updateContentOffsetTop(int targetTop) {
@@ -653,6 +662,7 @@ private void updateContentOffsetTop(int targetTop) {
         setTargetOffsetTopAndBottom(targetTop - currentTop);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.983 -0400", hash_original_method = "41C491EF516AF0CD32DFE18410BCE502", hash_generated_method = "FC4417FDA5E7D5D0D143FB1FE214A951")
     
 private void setTargetOffsetTopAndBottom(int offset) {
@@ -660,6 +670,7 @@ private void setTargetOffsetTopAndBottom(int offset) {
         mCurrentTargetOffsetTop = mTarget.getTop();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.988 -0400", hash_original_method = "D9A272DE451AB1025BB1CFD31664AEB3", hash_generated_method = "252219E3564F9930BFE4F016AD23E64F")
     
 private void updatePositionTimeout() {
@@ -667,6 +678,7 @@ private void updatePositionTimeout() {
         postDelayed(mCancel, RETURN_TO_ORIGINAL_POSITION_TIMEOUT);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:11.994 -0400", hash_original_method = "97862B3FFA37C2623BB875BD793331D3", hash_generated_method = "609BFA1E4065C06539D8D1B5782D144C")
     
 private void onSecondaryPointerUp(MotionEvent ev) {

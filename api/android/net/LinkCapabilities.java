@@ -45,7 +45,7 @@ protected static void log(String s) {
 
     public static final Creator<LinkCapabilities> CREATOR =
         new Creator<LinkCapabilities>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.888 -0500", hash_original_method = "EE10B5AF562143A35856727EE7786CE8", hash_generated_method = "907427722BA360BB4F22035161CCA8EF")
         

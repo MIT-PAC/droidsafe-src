@@ -314,7 +314,7 @@ public SpannableStringBuilder delete(int start, int end) {
 	}
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @Override
 	public Editable append(CharSequence text) {
 		// TODO Auto-generated method stub
@@ -323,7 +323,7 @@ public SpannableStringBuilder delete(int start, int end) {
 	}
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @Override
 	public Editable append(CharSequence text, int start, int end) {
 		// TODO Auto-generated method stub
@@ -332,7 +332,7 @@ public SpannableStringBuilder delete(int start, int end) {
 	}
     
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @Override
 	public Editable append(char text) {
 		// TODO Auto-generated method stub
@@ -726,7 +726,7 @@ private void setSpan(boolean send, Object what, int start, int end, int flags) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.839 -0500", hash_original_method = "DD4C166AC7D5C475EE46AC767DBD33EB", hash_generated_method = "D57039BB89705C38EEC76A5F0188763A")
     
 public int getSpanStart(Object what) {
@@ -753,7 +753,7 @@ public int getSpanStart(Object what) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.842 -0500", hash_original_method = "1CAC5A6045B202B1FC928510B17AEEDD", hash_generated_method = "37B0998B57691BB4CF884757474F4BED")
     
 public int getSpanEnd(Object what) {

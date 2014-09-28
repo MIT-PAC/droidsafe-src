@@ -136,7 +136,7 @@ private void startLoadFromDisk() {
             mLoaded = false;
         }
         new Thread("SharedPreferencesImpl-load") {
-            @DSSpec(DSCat.SPEC_OTHERS)
+            @DSSafe(DSCat.SAFE_LIST)
         public void run() {
                 synchronized (SharedPreferencesImpl.this) {
                     loadFromDiskLocked();
@@ -267,7 +267,8 @@ private void awaitLoadedLocked() {
         // }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.851 -0500", hash_original_method = "BA8526BB1455076706AECC9BAC06F7D3", hash_generated_method = "ECB33FC46975FA69CE8C28BBBA3C60BB")
     
 public Map<String, ?> getAll() {
@@ -290,7 +291,8 @@ public String getString(String key, String defValue) {
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.856 -0500", hash_original_method = "66BFB743F0303E06F65F01D81F24C82B", hash_generated_method = "3257449D6FCC49EACC659EEDC81B8928")
     
 public Set<String> getStringSet(String key, Set<String> defValues) {
@@ -302,7 +304,7 @@ public Set<String> getStringSet(String key, Set<String> defValues) {
     }
 
     @DSSafe(DSCat.SYSTEM_PREFERENCES)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.858 -0500", hash_original_method = "ACC29E9B287DA38F520685100499E9BD", hash_generated_method = "793DD6153732330EE594C05370693AC7")
     
 public int getInt(String key, int defValue) {
@@ -313,7 +315,7 @@ public int getInt(String key, int defValue) {
         }
     }
     @DSSafe(DSCat.SYSTEM_PREFERENCES)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.860 -0500", hash_original_method = "44BE6AE8D3AB2ABE731A78B854B12E07", hash_generated_method = "16DF23A599684AF0C176C7762E0FC2B2")
     
 public long getLong(String key, long defValue) {
@@ -333,7 +335,7 @@ public float getFloat(String key, float defValue) {
             return v != null ? v : defValue;
         }
     }
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSSafe(DSCat.SYSTEM_PREFERENCES)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.864 -0500", hash_original_method = "726255BCC2D6177085677A1712342F0B", hash_generated_method = "A70269ED9C7B03CAF7C4A7C147E793A7")
     
@@ -345,6 +347,7 @@ public boolean getBoolean(String key, boolean defValue) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.867 -0500", hash_original_method = "62FFF74487B278708D1160DE5B5FB2C0", hash_generated_method = "C3297CD856EE628EA97B8A540FC5A1BF")
     
 public boolean contains(String key) {
@@ -402,9 +405,8 @@ public void setDiskWriteResult(boolean result) {
         {
             //Synthesized constructor
         }
-
-        @DSSink({DSSinkKind.SHARED_PREFERENCES})
-        @DSSpec(DSCat.SHARED_PREFERENCES)
+        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.895 -0500", hash_original_method = "EFFD7B235C5590A6C15EA464602A0862", hash_generated_method = "82DA87CBC74279FC655F72E59DBC7466")
         
 public Editor putString(String key, String value) {
@@ -413,9 +415,8 @@ public Editor putString(String key, String value) {
                 return this;
             }
         }
-
-        @DSSink({DSSinkKind.SHARED_PREFERENCES})
-        @DSSpec(DSCat.SHARED_PREFERENCES)
+        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.897 -0500", hash_original_method = "799426C68EE59A97CAF3D6E033ED6AED", hash_generated_method = "C08C5E45E5163C9F3F90DC1E87096FB1")
         
 public Editor putStringSet(String key, Set<String> values) {
@@ -424,8 +425,8 @@ public Editor putStringSet(String key, Set<String> values) {
                 return this;
             }
         }
-        @DSSink({DSSinkKind.SHARED_PREFERENCES})
-        @DSSpec(DSCat.SHARED_PREFERENCES)
+        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.899 -0500", hash_original_method = "B5181352BC82403801755A11BC05DCE9", hash_generated_method = "FEB23B5D5239BE73E48028E4AC67807F")
         
 public Editor putInt(String key, int value) {
@@ -434,8 +435,8 @@ public Editor putInt(String key, int value) {
                 return this;
             }
         }
-        @DSSink({DSSinkKind.SHARED_PREFERENCES})
-        @DSSpec(DSCat.SHARED_PREFERENCES)
+        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.902 -0500", hash_original_method = "2390F394A779B486378B9C93DB0AC773", hash_generated_method = "68A433FCEF6F5F18A8F0EFF50B293F1B")
         
 public Editor putLong(String key, long value) {
@@ -454,8 +455,8 @@ public Editor putFloat(String key, float value) {
                 return this;
             }
         }
-        @DSSink({DSSinkKind.SHARED_PREFERENCES})
-        @DSSpec(DSCat.SHARED_PREFERENCES)
+        
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.906 -0500", hash_original_method = "FBC14C4FFFA5A0EBC88C6D503172C819", hash_generated_method = "B4DD0EC9BE234E95F84C4A4A58B7AEFA")
         
 public Editor putBoolean(String key, boolean value) {
@@ -465,7 +466,7 @@ public Editor putBoolean(String key, boolean value) {
             }
         }
 
-        @DSSpec(DSCat.SHARED_PREFERENCES)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.908 -0500", hash_original_method = "7C60C1DCB4FF55A3B2BA6A50F523FE33", hash_generated_method = "EFA50E21F7BCB42D7FD80A28DF3C2018")
         
 public Editor remove(String key) {
@@ -475,7 +476,7 @@ public Editor remove(String key) {
             }
         }
 
-        @DSSpec(DSCat.SHARED_PREFERENCES)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.911 -0500", hash_original_method = "59F9BBF7AADFDAE77F62CA904307DAB9", hash_generated_method = "8E006F8E896C5083155211611DD21E2F")
         
 public Editor clear() {
@@ -485,6 +486,7 @@ public Editor clear() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.920 -0500", hash_original_method = "874FED7345E8B1C9E07FEF0510B9D798", hash_generated_method = "E4726B52DDF73D2F25CDDB0B64663818")
         
 public void apply() {
@@ -585,7 +587,7 @@ private MemoryCommitResult commitToMemory() {
             return null;
         }
 
-        @DSSpec(DSCat.SHARED_PREFERENCES)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.925 -0500", hash_original_method = "23D73852609E646C4CF9B990F4BA7C23", hash_generated_method = "B941E20570A0708A8A4C7429464090D9")
         
 public boolean commit() {

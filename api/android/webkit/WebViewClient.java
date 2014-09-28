@@ -112,6 +112,7 @@ public void onPageStarted(WebView view, String url, Bitmap favicon) {
      * @param view The WebView that is initiating the callback.
      * @param url The url of the page.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.232 -0500", hash_original_method = "3C74EFC6CC5DEEE74470BD61275572DD", hash_generated_method = "4F00DD59B5B3BE95C41F7A52C4687657")
     
 public void onPageFinished(WebView view, String url) {

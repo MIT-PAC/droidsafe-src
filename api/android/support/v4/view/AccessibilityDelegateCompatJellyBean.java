@@ -45,6 +45,7 @@ class AccessibilityDelegateCompatJellyBean {
         public boolean performAccessibilityAction(View host, int action, Bundle args);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.627 -0400", hash_original_method = "7E58444EB0B3B83173AB9B039DCD6C05", hash_generated_method = "284FA2ACE51242B2A38C08A3EE810C1D")
         
 public static Object newAccessibilityDelegateBridge(
@@ -108,6 +109,7 @@ public static Object newAccessibilityDelegateBridge(
         };
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.632 -0400", hash_original_method = "2DA3C5628107A4D95EC42F8370E703ED", hash_generated_method = "FE5C09C02C8E2CC4AB17B858E96EAA15")
         
 public static Object getAccessibilityNodeProvider(Object delegate,
@@ -115,6 +117,7 @@ public static Object getAccessibilityNodeProvider(Object delegate,
         return ((AccessibilityDelegate) delegate).getAccessibilityNodeProvider(host);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:28:58.637 -0400", hash_original_method = "4C6EDD3B252E4B69548D3413F51E993F", hash_generated_method = "C5BA9072A4704CB57A4958BB5729FA40")
         
 public static boolean performAccessibilityAction(Object delegate, View host, int action,

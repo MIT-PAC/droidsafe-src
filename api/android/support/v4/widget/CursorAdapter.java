@@ -151,6 +151,7 @@ void init(Context context, Cursor c, int flags) {
      * Returns the cursor.
      * @return the cursor.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.206 -0500", hash_original_method = "ED4C67C6B1C11ED6A644F86CCA800916", hash_generated_method = "C2683DC62F0FF2A1098E741198B98052")
     
 public Cursor getCursor() {
@@ -280,6 +281,7 @@ public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
      * @param parent The parent to which the new view is attached to
      * @return the newly created view.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.226 -0500", hash_original_method = "4EAF37DD2AC2B68CF9F2E847E9D5C2B4", hash_generated_method = "5AE8A92A3E307F742AA8A763AF9271C1")
     
 public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
@@ -305,6 +307,7 @@ public abstract void bindView(View view, Context context, Cursor cursor);
      * 
      * @param cursor The new cursor to be used
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.230 -0500", hash_original_method = "A3DB89FF308CDDA8076F4DD4182DC99B", hash_generated_method = "D6E23DB93BD6815A1322DD8DDE2D2D57")
     
 public void changeCursor(Cursor cursor) {
@@ -324,6 +327,7 @@ public void changeCursor(Cursor cursor) {
      * If the given new Cursor is the same instance is the previously set
      * Cursor, null is also returned.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.233 -0500", hash_original_method = "3AE932C7E61F472FB82D7B0D8E632CE6", hash_generated_method = "CE2E8D958EB4A03214BB0FCF770CFC17")
     
 public Cursor swapCursor(Cursor newCursor) {
@@ -361,6 +365,7 @@ public Cursor swapCursor(Cursor newCursor) {
      * @param cursor the cursor to convert to a CharSequence
      * @return a CharSequence representing the value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.235 -0500", hash_original_method = "AC3E4A96BAEBA3C91CE9B7B72B03BE17", hash_generated_method = "6B89865200507DE42E51170FD21FEDC5")
     
 public CharSequence convertToString(Cursor cursor) {
@@ -506,6 +511,7 @@ public void setFilterQueryProvider(FilterQueryProvider filterQueryProvider) {
      * 
      * @see ContentObserver#onChange(boolean)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.246 -0500", hash_original_method = "A04D68B5B58FA27E71C6ECAA728402A5", hash_generated_method = "50F672FCCBB94C76F107B3C88A4DAAA0")
     
 protected void onContentChanged() {

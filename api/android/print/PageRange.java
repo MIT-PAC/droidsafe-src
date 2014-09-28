@@ -132,6 +132,7 @@ public int getEnd() {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 12:51:00.136 -0400", hash_original_method = "06D3CB01D0ED6D0A2FD3EF15377F76C9", hash_generated_method = "3B9F6E66AD549257E60E4C1EEDCE6DD4")
     
 @Override

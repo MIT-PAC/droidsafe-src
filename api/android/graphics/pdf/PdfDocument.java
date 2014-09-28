@@ -132,6 +132,7 @@ public PdfDocument() {
      *
      * @see #finishPage(Page)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.715 -0500", hash_original_method = "875B7258209E0128224E02311342A47A", hash_generated_method = "917D85DAA579CF9116CF508A41A3CE83")
     
 public Page startPage(PageInfo pageInfo) {
@@ -158,6 +159,7 @@ public Page startPage(PageInfo pageInfo) {
      *
      * @see #startPage(PageInfo)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.721 -0500", hash_original_method = "CD2CB32C0161993A8B4CED30CE12FB3F", hash_generated_method = "A3DF3941E8F5B0A0CE9C1EF948105B08")
     
 public void finishPage(Page page) {
@@ -224,6 +226,7 @@ public List<PageInfo> getPages() {
      * calling {@link #finishPage(Page)}.
      * </p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-26 10:48:13.732 -0500", hash_original_method = "60C9D2C918CC7A4D6BA4FC03B58ED22A", hash_generated_method = "5FCAEC6D873EDBBBD46142F855D6952A")
     
 public void close() {

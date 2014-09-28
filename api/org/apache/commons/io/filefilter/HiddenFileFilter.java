@@ -74,6 +74,7 @@ protected HiddenFileFilter() {
      * @return {@code true} if the file is
      *  <i>hidden</i>, otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.476 -0400", hash_original_method = "423B72A848C918F2592E84C74B14F648", hash_generated_method = "F90A3FFCCBFE0EFFBA55263D9E24990E")
     
 @Override

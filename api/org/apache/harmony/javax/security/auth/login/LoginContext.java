@@ -39,15 +39,11 @@ import org.apache.harmony.javax.security.auth.AuthPermission;
 
 import org.apache.harmony.javax.security.auth.login.AppConfigurationEntry.LoginModuleControlFlag;
 
-
-
 public class LoginContext {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.564 -0400", hash_original_field = "786C4516A34DD6924235607C72BBFE3D", hash_generated_field = "465F28CD88257C051E6128DC1AD51EB1")
 
-
     private static final String DEFAULT_CALLBACK_HANDLER_PROPERTY = "auth.login.defaultCallbackHandler";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.565 -0400", hash_original_field = "B5957D3D1087D15DD4712AC531AA4754", hash_generated_field = "10283C997C1D4E9976DF96451CD94C37")
-
 
     /*
      * Integer constants which serve as a replacement for the corresponding
@@ -57,14 +53,11 @@ public class LoginContext {
     private static final int OPTIONAL = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.565 -0400", hash_original_field = "D9EAFF0F40F3524F487216C929653C6A", hash_generated_field = "6C5B7D4F716BFD782CD0C5C30D70DF3B")
 
-
     private static final int REQUIRED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.566 -0400", hash_original_field = "4D17B7C67AEF647825AF00D6D9320EDD", hash_generated_field = "BDFCB22B3663206FEC10DE32F8360C8C")
 
-
     private static final int REQUISITE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.566 -0400", hash_original_field = "E3977FE1387CF15CEE8B617F7A052432", hash_generated_field = "08011BABD5E92F29CC26BCDF1A8B06D9")
-
 
     private static final int SUFFICIENT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.567 -0400", hash_original_field = "30BAA2E2AE0B9CC8117DC874E7246F92", hash_generated_field = "EFE21B59DD4BD4F533148D4E82C7B2AF")
@@ -145,6 +138,7 @@ public LoginContext(String name, Subject subject, CallbackHandler cbHandler,
     }
 
     // Does all the machinery needed for the initialization.
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.577 -0400", hash_original_method = "9368DF244C2CD5DADDF75C85089AC8BD", hash_generated_method = "1FA093070BF44ED080D5A716990E1315")
     
 private void init(String name, Subject subject, final CallbackHandler cbHandler,
@@ -196,7 +190,8 @@ private void init(String name, Subject subject, final CallbackHandler cbHandler,
          */
         try {
             AccessController.doPrivileged(new PrivilegedExceptionAction<Void>() {
-                public Void run() throws Exception {
+                @DSSafe(DSCat.SAFE_LIST)
+        public Void run() throws Exception {
                     // First, set the 'contextClassLoader'
                     contextClassLoader = Thread.currentThread().getContextClassLoader();
                     if (contextClassLoader == null) {
@@ -248,7 +243,8 @@ public Subject getSubject() {
     
 public void login() throws LoginException {
         PrivilegedExceptionAction<Void> action = new PrivilegedExceptionAction<Void>() {
-            public Void run() throws LoginException {
+            @DSSafe(DSCat.SAFE_LIST)
+        public Void run() throws LoginException {
                 loginImpl();
                 return null;
             }
@@ -268,6 +264,7 @@ public void login() throws LoginException {
      * The real implementation of login() method whose calls are wrapped into
      * appropriate doPrivileged calls in login().
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.581 -0400", hash_original_method = "65CB23093571023AFD966C156CCF81DC", hash_generated_method = "82EF4FC138409DCC182E9C80804C5C0D")
     
 private void loginImpl() throws LoginException {
@@ -320,7 +317,7 @@ private void loginImpl() throws LoginException {
                 }
             }
         }
-        // end of PHASE1, 
+        // end of PHASE1,
 
         // Let's decide whether we have either overall success or a total failure
         boolean fail = true;
@@ -354,7 +351,7 @@ private void loginImpl() throws LoginException {
         // clear it
         total[0] = total[1] = total[2] = total[3] = 0;
         if (!fail) {
-            // PHASE 2: 
+            // PHASE 2:
 
             for (Module module : modules) {
                 if (module.klass != null) {
@@ -419,7 +416,8 @@ private void loginImpl() throws LoginException {
     
 public void logout() throws LoginException {
         PrivilegedExceptionAction<Void> action = new PrivilegedExceptionAction<Void>() {
-            public Void run() throws LoginException {
+            @DSSafe(DSCat.SAFE_LIST)
+        public Void run() throws LoginException {
                 logoutImpl();
                 return null;
             }
@@ -439,6 +437,7 @@ public void logout() throws LoginException {
      * The real implementation of logout() method whose calls are wrapped into
      * appropriate doPrivileged calls in logout().
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.583 -0400", hash_original_method = "A9891476F065F752D65076C47DD0F56C", hash_generated_method = "5E4D9365EB88F796C24EBE2347160B86")
     
 private void logoutImpl() throws LoginException {
@@ -489,13 +488,15 @@ ContextedCallbackHandler(CallbackHandler handler) {
             this.hiddenHandlerRef = handler;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.587 -0400", hash_original_method = "8ADA70CB1CC38DBCF15EE720477AB34C", hash_generated_method = "F5A5E71A239FDAD6780AAC911D697EAA")
         
 public void handle(final Callback[] callbacks) throws IOException,
                 UnsupportedCallbackException {
             try {
                 AccessController.doPrivileged(new PrivilegedExceptionAction<Void>() {
-                    public Void run() throws IOException, UnsupportedCallbackException {
+                    @DSSafe(DSCat.SAFE_LIST)
+            public Void run() throws IOException, UnsupportedCallbackException {
                         hiddenHandlerRef.handle(callbacks);
                         return null;
                     }
@@ -543,6 +544,7 @@ Module(AppConfigurationEntry entry) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.590 -0400", hash_original_method = "A505ACE4B2757A66973C93875ABE4BCC", hash_generated_method = "A505ACE4B2757A66973C93875ABE4BCC")
         
 int getFlag() {
@@ -553,6 +555,7 @@ int getFlag() {
          * Loads class of the LoginModule, instantiates it and then calls
          * initialize().
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.591 -0400", hash_original_method = "B00ECC3366986543C948864F6AC687FF", hash_generated_method = "4701467D424149486DFEDEFF7F429925")
         
 void create(Subject subject, CallbackHandler callbackHandler, Map<String, ?> sharedState)

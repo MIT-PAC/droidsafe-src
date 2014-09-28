@@ -389,16 +389,19 @@ public class ViewPager extends ViewGroup {
      * every method of {@link OnPageChangeListener}.
      */
     public static class SimpleOnPageChangeListener implements OnPageChangeListener {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             // This space for rent
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPageSelected(int position) {
             // This space for rent
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPageScrollStateChanged(int state) {
             // This space for rent
@@ -453,6 +456,7 @@ public ViewPager(Context context, AttributeSet attrs) {
         initViewPager();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.008 -0400", hash_original_method = "D6715E200EACFC8731E53939FF68AD4E", hash_generated_method = "D6715E200EACFC8731E53939FF68AD4E")
                     
 void initViewPager() {
@@ -492,6 +496,7 @@ void initViewPager() {
         super.onDetachedFromWindow();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.015 -0400", hash_original_method = "4262062B81822B06D8AED49B64669778", hash_generated_method = "D789F4DAA73E4B99CD285736DF5CD1BC")
                     
 private void setScrollState(int newState) {
@@ -562,6 +567,7 @@ public void setAdapter(PagerAdapter adapter) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.024 -0400", hash_original_method = "18421C7E85141EF2E7552011BA442EAC", hash_generated_method = "8A221515DB3CEADBF732AA5B01E19177")
                     
 private void removeNonDecorViews() {
@@ -580,18 +586,21 @@ private void removeNonDecorViews() {
      *
      * @return The currently registered PagerAdapter
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.027 -0400", hash_original_method = "F7E052C477B11777DA7EBFEE8452F40F", hash_generated_method = "3DEA33F0B759DE6CB68DD18B15A50E8C")
                     
 public PagerAdapter getAdapter() {
         return mAdapter;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.031 -0400", hash_original_method = "36FAA41620F55873E46894195D62C0FE", hash_generated_method = "36FAA41620F55873E46894195D62C0FE")
                     
 void setOnAdapterChangeListener(OnAdapterChangeListener listener) {
         mAdapterChangeListener = listener;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.034 -0400", hash_original_method = "66095F6105796737CEB4984AF7D5B78E", hash_generated_method = "2F687F56557FC4F778DCA68719983D33")
                     
 private int getClientWidth() {
@@ -605,6 +614,7 @@ private int getClientWidth() {
      *
      * @param item Item index to select
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.037 -0400", hash_original_method = "7A2B970E4C717952A0CD3574FF0FD69D", hash_generated_method = "CAE1F099F051C01C04F4000A5C2C344D")
                     
 public void setCurrentItem(int item) {
@@ -618,6 +628,7 @@ public void setCurrentItem(int item) {
      * @param item Item index to select
      * @param smoothScroll True to smoothly scroll to the new item, false to transition immediately
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.040 -0400", hash_original_method = "F21F60BCB144D38A5AE0B59AB369F197", hash_generated_method = "D8A9430462F114E8441CF903A905C8FD")
                     
 public void setCurrentItem(int item, boolean smoothScroll) {
@@ -625,18 +636,21 @@ public void setCurrentItem(int item, boolean smoothScroll) {
         setCurrentItemInternal(item, smoothScroll, false);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.043 -0400", hash_original_method = "A82ABDE9609B8643904FAA59A05D3729", hash_generated_method = "4EA11EE08D6B462D16A2F7650D7279F1")
                     
 public int getCurrentItem() {
         return mCurItem;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.047 -0400", hash_original_method = "975AAD75311F294CDFC8362C48B3CCF3", hash_generated_method = "975AAD75311F294CDFC8362C48B3CCF3")
                     
 void setCurrentItemInternal(int item, boolean smoothScroll, boolean always) {
         setCurrentItemInternal(item, smoothScroll, always, 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.052 -0400", hash_original_method = "FC808409F90C8FC59A405ECC7759B8CB", hash_generated_method = "94706F34570C99E0DA3C59EB2A7DE67B")
                     
 void setCurrentItemInternal(int item, boolean smoothScroll, boolean always, int velocity) {
@@ -682,6 +696,7 @@ void setCurrentItemInternal(int item, boolean smoothScroll, boolean always, int 
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.056 -0400", hash_original_method = "2FEF3D3B0B3305629A5B08364630B560", hash_generated_method = "CB85B3A94BAD18DC5C73DBD3A5115543")
                     
 private void scrollToItem(int item, boolean smoothScroll, int velocity,
@@ -755,6 +770,7 @@ public void setPageTransformer(boolean reverseDrawingOrder, PageTransformer tran
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.069 -0400", hash_original_method = "C978E7E276B15C4E2F646357766C5D45", hash_generated_method = "C978E7E276B15C4E2F646357766C5D45")
                     
 void setChildrenDrawingOrderEnabledCompat(boolean enable) {
@@ -790,6 +806,7 @@ void setChildrenDrawingOrderEnabledCompat(boolean enable) {
      * @param listener Listener to set
      * @return The old listener that was set, if any.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.076 -0400", hash_original_method = "BEC1D9D7EF0862149EE21D17618B274F", hash_generated_method = "BEC1D9D7EF0862149EE21D17618B274F")
                     
 OnPageChangeListener setInternalPageChangeListener(OnPageChangeListener listener) {
@@ -878,6 +895,7 @@ public int getPageMargin() {
      *
      * @param d Drawable to display between pages
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.091 -0400", hash_original_method = "BA05FEAA10A774C185287C0B628011BB", hash_generated_method = "5F4955C560BC9697A93654DEAAC9E378")
                     
 public void setPageMarginDrawable(Drawable d) {
@@ -892,6 +910,7 @@ public void setPageMarginDrawable(Drawable d) {
      *
      * @param resId Resource ID of a drawable to display between pages
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.095 -0400", hash_original_method = "194EE6D0EDD674D9D2DE52CA6B5FC234", hash_generated_method = "1BBDE39E4433597F6CF8BB52331AE552")
                     
 public void setPageMarginDrawable(int resId) {
@@ -922,6 +941,7 @@ public void setPageMarginDrawable(int resId) {
     // the screen has to travel, however, we don't want this duration to be effected in a
     // purely linear fashion. Instead, we use this method to moderate the effect that the distance
     // of travel has on the overall snap duration.
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.104 -0400", hash_original_method = "3937E06E79A8643FB4C5C1D74E3AE99C", hash_generated_method = "C2D664939EAFCE729E5DD220A9CB71B7")
                     
 float distanceInfluenceForSnapDuration(float f) {
@@ -936,6 +956,7 @@ float distanceInfluenceForSnapDuration(float f) {
      * @param x the number of pixels to scroll by on the X axis
      * @param y the number of pixels to scroll by on the Y axis
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.107 -0400", hash_original_method = "BC18C642FF487E008261AE9ED73575D8", hash_generated_method = "BC18C642FF487E008261AE9ED73575D8")
                     
 void smoothScrollTo(int x, int y) {
@@ -949,6 +970,7 @@ void smoothScrollTo(int x, int y) {
      * @param y the number of pixels to scroll by on the Y axis
      * @param velocity the velocity associated with a fling, if applicable. (0 otherwise)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.112 -0400", hash_original_method = "CEB26546A58978F4776325A00049C304", hash_generated_method = "85D06BC80F00848ADCBA1AC6BFBCA5B4")
                     
 void smoothScrollTo(int x, int y, int velocity) {
@@ -992,6 +1014,7 @@ void smoothScrollTo(int x, int y, int velocity) {
         ViewCompat.postInvalidateOnAnimation(this);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.116 -0400", hash_original_method = "FB9F8CBDCCA84095C377C3539AB52389", hash_generated_method = "FB9F8CBDCCA84095C377C3539AB52389")
                     
 ItemInfo addNewItem(int position, int index) {
@@ -1007,6 +1030,7 @@ ItemInfo addNewItem(int position, int index) {
         return ii;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.121 -0400", hash_original_method = "5560A47B7F5A4DF4B8A020B1B108A0E7", hash_generated_method = "5C76FA2980B3AB6A9D2C073543D549D8")
                     
 void dataSetChanged() {
@@ -1080,12 +1104,14 @@ void dataSetChanged() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.124 -0400", hash_original_method = "0477C1647AC2E7F880E5411B87F74B08", hash_generated_method = "0477C1647AC2E7F880E5411B87F74B08")
                     
 void populate() {
         populate(mCurItem);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.135 -0400", hash_original_method = "4CB8C89E402380268632F1798F2F766A", hash_generated_method = "270A3BD53F750B41E2C27198C4AA1D12")
                     
 void populate(int newCurrentItem) {
@@ -1294,6 +1320,7 @@ private void sortChildDrawingOrder() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.147 -0400", hash_original_method = "F7D7C9063A6F43EAF908F157A0BA7744", hash_generated_method = "1307550CE7933EE9CA4989F05FA6CAF4")
                     
 private void calculatePageOffsets(ItemInfo curItem, int curIndex, ItemInfo oldCurInfo) {
@@ -1415,11 +1442,13 @@ private void calculatePageOffsets(ItemInfo curItem, int curIndex, ItemInfo oldCu
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = ParcelableCompat.newCreator(new ParcelableCompatCreatorCallbacks<SavedState>() {
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     public SavedState createFromParcel(Parcel in, ClassLoader loader) {
                         return new SavedState(in, loader);
                     }
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     public SavedState[] newArray(int size) {
                         return new SavedState[size];
                     }
@@ -1514,6 +1543,7 @@ private void calculatePageOffsets(ItemInfo curItem, int curIndex, ItemInfo oldCu
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.208 -0400", hash_original_method = "3A127F64616A326BFDC211D8F4FB8341", hash_generated_method = "3A127F64616A326BFDC211D8F4FB8341")
                     
 ItemInfo infoForChild(View child) {
@@ -1526,6 +1556,7 @@ ItemInfo infoForChild(View child) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.212 -0400", hash_original_method = "1D0A995632EA6711A9479487500A682E", hash_generated_method = "1D0A995632EA6711A9479487500A682E")
                     
 ItemInfo infoForAnyChild(View child) {
@@ -1539,6 +1570,7 @@ ItemInfo infoForAnyChild(View child) {
         return infoForChild(child);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.216 -0400", hash_original_method = "7DFF680EFE09575B43B460115F8D4114", hash_generated_method = "7DFF680EFE09575B43B460115F8D4114")
                     
 ItemInfo infoForPosition(int position) {
@@ -1671,6 +1703,7 @@ ItemInfo infoForPosition(int position) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.248 -0400", hash_original_method = "169B5FBCA2FE13F6505E7BE606AB2B1A", hash_generated_method = "C7EAA0D144B24F560BA5A13E8BCBA95B")
                     
 private void recomputeScrollPosition(int width, int oldWidth, int margin, int oldMargin) {
@@ -1840,6 +1873,7 @@ private void recomputeScrollPosition(int width, int oldWidth, int margin, int ol
         completeScroll(true);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.264 -0400", hash_original_method = "C795FED3D71CA514B8F09F5A87BCE7B0", hash_generated_method = "016779ED5EF604F753766F975922F009")
                     
 private boolean pageScrolled(int xpos) {
@@ -1882,6 +1916,7 @@ private boolean pageScrolled(int xpos) {
      * @param offset Value from [0, 1) indicating the offset from the page at position.
      * @param offsetPixels Value in pixels indicating the offset from position.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.268 -0400", hash_original_method = "8C7470321BBC969FCE769F7F641DD625", hash_generated_method = "28EC7994ADDD0CAB87B4BFEAC7C55C97")
                     
 protected void onPageScrolled(int position, float offset, int offsetPixels) {
@@ -1949,6 +1984,7 @@ protected void onPageScrolled(int position, float offset, int offsetPixels) {
         mCalledSuper = true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.272 -0400", hash_original_method = "235A5D3808DB25C9237FA2FC04938A9F", hash_generated_method = "850457B060AC5ADF4F99C14331EF72F6")
                     
 private void completeScroll(boolean postEvents) {
@@ -1982,12 +2018,14 @@ private void completeScroll(boolean postEvents) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.275 -0400", hash_original_method = "38316FF7A4E21EDC8BF9C2341D946AF3", hash_generated_method = "941C3C1D6B658C7A3F450181D8D646A2")
                     
 private boolean isGutterDrag(float x, float dx) {
         return (x < mGutterSize && dx > 0) || (x > getWidth() - mGutterSize && dx < 0);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.279 -0400", hash_original_method = "EE4942911EFFFC9EA8DCE2B8F8DD381C", hash_generated_method = "794A3B35CD2BC279FE97105195FCB45C")
                     
 private void enableLayers(boolean enable) {
@@ -2275,6 +2313,7 @@ private void enableLayers(boolean enable) {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.296 -0400", hash_original_method = "2A77DACAB181D352AA82E0E67187F209", hash_generated_method = "172F7796BFC3DA4ADA9C6608963F823D")
                     
 private void requestParentDisallowInterceptTouchEvent(boolean disallowIntercept) {
@@ -2284,6 +2323,7 @@ private void requestParentDisallowInterceptTouchEvent(boolean disallowIntercept)
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.300 -0400", hash_original_method = "C599C3F6C951EB41FB9490FE1C39F337", hash_generated_method = "5683F03DA576FFD8EB938730381E9EC2")
                     
 private boolean performDrag(float x) {
@@ -2337,6 +2377,7 @@ private boolean performDrag(float x) {
      * @return Info about the page at the current scroll position.
      *         This can be synthetic for a missing middle page; the 'object' field can be null.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.304 -0400", hash_original_method = "A91BBEAEAAD7B5E62B0E02FDA8B6AD6A", hash_generated_method = "F0CE347EBCB5A7B4659ED7472514E3BA")
                     
 private ItemInfo infoForCurrentScrollPosition() {
@@ -2381,6 +2422,7 @@ private ItemInfo infoForCurrentScrollPosition() {
         return lastItem;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.308 -0400", hash_original_method = "735F35E85D1E61A83AB8F0E2B66A4AE3", hash_generated_method = "BFAB25BA3BB9006BE7644F2930A62E63")
                     
 private int determineTargetPage(int currentPage, float pageOffset, int velocity, int deltaX) {
@@ -2631,6 +2673,7 @@ public boolean isFakeDragging() {
         return mFakeDragging;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.335 -0400", hash_original_method = "0206AC68AD27D7D682B52A43262096FD", hash_generated_method = "10CA48021E16D8469C3CB9386E27A296")
                     
 private void onSecondaryPointerUp(MotionEvent ev) {
@@ -2648,6 +2691,7 @@ private void onSecondaryPointerUp(MotionEvent ev) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.338 -0400", hash_original_method = "6F589820542A60985222493865875D9E", hash_generated_method = "7D9A26F3E89ABDFE52D17DF136B12E41")
                     
 private void endDrag() {
@@ -2660,6 +2704,7 @@ private void endDrag() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.341 -0400", hash_original_method = "2B073E6A9B3015E7E6D245BDA0374ADD", hash_generated_method = "3F8924C3B50E28F08F707C0688EC9CF2")
                     
 private void setScrollingCacheEnabled(boolean enabled) {
@@ -2749,6 +2794,7 @@ protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
      * @param event The key event to execute.
      * @return Return true if the event was handled, else false.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.355 -0400", hash_original_method = "017D0A0A9E198144CB9BC76029528664", hash_generated_method = "426D4EDFFC97717C83960ED3DA39DBE5")
                     
 public boolean executeKeyEvent(KeyEvent event) {
@@ -2777,6 +2823,7 @@ public boolean executeKeyEvent(KeyEvent event) {
         return handled;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.360 -0400", hash_original_method = "D835219FDDCF7DC78B278CD8B24035DD", hash_generated_method = "63721EF5C9863E01A9964A20DC4D0E24")
                     
 public boolean arrowScroll(int direction) {
@@ -2845,6 +2892,7 @@ public boolean arrowScroll(int direction) {
         return handled;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.365 -0400", hash_original_method = "9B5D127EF884A99E441BD66749DC0FFF", hash_generated_method = "8D8DE3712AE3F73FD5F83A140EF1694A")
                     
 private Rect getChildRectInPagerCoordinates(Rect outRect, View child) {
@@ -2873,6 +2921,7 @@ private Rect getChildRectInPagerCoordinates(Rect outRect, View child) {
         return outRect;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.367 -0400", hash_original_method = "912A9F83854DBABFF351742D4C2540EB", hash_generated_method = "912A9F83854DBABFF351742D4C2540EB")
                     
 boolean pageLeft() {
@@ -2883,6 +2932,7 @@ boolean pageLeft() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.370 -0400", hash_original_method = "09CF7C21498AA4945971EA3F1CB23A09", hash_generated_method = "09CF7C21498AA4945971EA3F1CB23A09")
                     
 boolean pageRight() {
@@ -3023,6 +3073,7 @@ boolean pageRight() {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.389 -0400", hash_original_method = "763708F2B4B4E396A96E9D3340F0B010", hash_generated_method = "DA1288B08801ADDE6F9C8699A1A5E871")
                     
 @Override
@@ -3030,6 +3081,7 @@ boolean pageRight() {
         return new LayoutParams();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.392 -0400", hash_original_method = "D8A26BF8CEB61DB2275E97CE7D907FB8", hash_generated_method = "0B4432410FDF215B1918B71D7F6285D1")
                     
 @Override
@@ -3045,6 +3097,7 @@ boolean pageRight() {
         return p instanceof LayoutParams && super.checkLayoutParams(p);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:05.398 -0400", hash_original_method = "1C9B9BBEC46A39865FCD3A7288415ECD", hash_generated_method = "C4E1D1D633134DBA474501AB48EC2962")
                     
 @Override
@@ -3054,6 +3107,7 @@ boolean pageRight() {
 
     class MyAccessibilityDelegate extends AccessibilityDelegateCompat {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
             super.onInitializeAccessibilityEvent(host, event);
@@ -3068,6 +3122,7 @@ boolean pageRight() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCompat info) {
             super.onInitializeAccessibilityNodeInfo(host, info);
@@ -3081,6 +3136,7 @@ boolean pageRight() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean performAccessibilityAction(View host, int action, Bundle args) {
             if (super.performAccessibilityAction(host, action, args)) {
@@ -3103,6 +3159,7 @@ boolean pageRight() {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private boolean canScroll() {
             return (mAdapter != null) && (mAdapter.getCount() > 1);
         }

@@ -21,7 +21,7 @@ public class AssetFileDescriptor implements Parcelable {
 
     public static final Parcelable.Creator<AssetFileDescriptor> CREATOR
             = new Parcelable.Creator<AssetFileDescriptor>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.812 -0500", hash_original_method = "1A4F03E8300F0259C61020522681AA45", hash_generated_method = "1A68C4DFC8269B9003C31D1062EC747A")
         
 public AssetFileDescriptor createFromParcel(Parcel in) {
@@ -92,7 +92,7 @@ public ParcelFileDescriptor getParcelFileDescriptor() {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.741 -0500", hash_original_method = "44C1CE26DE6098783D46BD5B3EB1BDD6", hash_generated_method = "AAD5723250B4FD2A2C783AFDFFD1F5F0")
     
 public FileDescriptor getFileDescriptor() {
@@ -104,7 +104,7 @@ public FileDescriptor getFileDescriptor() {
      */
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.743 -0500", hash_original_method = "F15F7E68559FE94D65E8E77E2E4D8AE9", hash_generated_method = "8D97620EF9AD25B7CC0B648BD738E0E0")
     
 public long getStartOffset() {
@@ -124,7 +124,7 @@ public long getStartOffset() {
      */
     @DSComment("not sensitive/not an action")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.745 -0500", hash_original_method = "CF0C8205090CB57B9B1EACE80CFEFFE6", hash_generated_method = "F1D872A0D86B7EF8F27AE8B5C27ED7A5")
     
 public long getLength() {
@@ -371,7 +371,7 @@ public AutoCloseOutputStream(AssetFileDescriptor fd) throws IOException {
             super.write(buffer);
         }
 
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSSink({DSSinkKind.IO})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.799 -0500", hash_original_method = "1210B34247DB6E03D45CB2428D3624D7", hash_generated_method = "332339B8451EA97A43A552B9C585D46F")
         

@@ -92,7 +92,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public CharSequence getText(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -119,8 +119,7 @@ public Resources getResources() {
     }
 		*/
 	}
-    
-	@DSSource({DSSourceKind.RESOURCES})
+	
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -184,7 +183,6 @@ public Resources getResources() {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
-    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean getBoolean(int index, boolean defValue){
@@ -214,7 +212,6 @@ public Resources getResources() {
 		*/
 	}
     
-    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -245,7 +242,6 @@ public Resources getResources() {
 		*/
 	}
     
-    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -255,7 +251,6 @@ public Resources getResources() {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
-    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -280,7 +275,6 @@ public Resources getResources() {
 		*/
 	}
     
-    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -306,7 +300,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public float getDimension(int index, float defValue){
 		return getTaintFloat();
 		// Original method
@@ -329,7 +323,7 @@ public Resources getResources() {
     
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getDimensionPixelOffset(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -350,7 +344,6 @@ public Resources getResources() {
 		*/
 	}
     
-    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -440,8 +433,7 @@ public Resources getResources() {
     }
 		*/
 	}
-    
-	@DSSource({DSSourceKind.RESOURCES})
+	
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -463,7 +455,6 @@ public Resources getResources() {
 		*/
 	}
     
-    @DSSource({DSSourceKind.RESOURCES})
     @DSComment("data structure class")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -490,7 +481,8 @@ public Resources getResources() {
 		*/
 	}
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     public CharSequence[] getTextArray(int index){
 		return mResources.getTextArray(mValue.resourceId);
 		// Original method

@@ -100,11 +100,13 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
     }
 
     private static class ActionBarDrawerToggleImplBase implements ActionBarDrawerToggleImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Drawable getThemeUpIndicator(Activity activity) {
             return null;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object setActionBarUpIndicator(Object info, Activity activity,
                 Drawable themeImage, int contentDescRes) {
@@ -112,6 +114,7 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
             return info;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object setActionBarDescription(Object info, Activity activity, int contentDescRes) {
             // No action bar to set
@@ -120,11 +123,13 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
     }
 
     private static class ActionBarDrawerToggleImplHC implements ActionBarDrawerToggleImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Drawable getThemeUpIndicator(Activity activity) {
             return ActionBarDrawerToggleHoneycomb.getThemeUpIndicator(activity);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object setActionBarUpIndicator(Object info, Activity activity,
                 Drawable themeImage, int contentDescRes) {
@@ -132,6 +137,7 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
                     themeImage, contentDescRes);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Object setActionBarDescription(Object info, Activity activity, int contentDescRes) {
             return ActionBarDrawerToggleHoneycomb.setActionBarDescription(info, activity,
@@ -242,6 +248,7 @@ public ActionBarDrawerToggle(Activity activity, DrawerLayout drawerLayout,
      * may have diverged in such a way that the ActionBarDrawerToggle was not notified.
      * (For example, if you stop forwarding appropriate drawer events for a period of time.)</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.176 -0400", hash_original_method = "925D87B60FB18100ACD88BE41DF08165", hash_generated_method = "BE04B474BF198682EF3757043DAF9944")
                 
 public void syncState() {
@@ -338,6 +345,7 @@ public boolean onOptionsItemSelected(MenuItem item) {
      * @param drawerView The child view that was moved
      * @param slideOffset The new offset of this drawer within its range, from 0-1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.221 -0400", hash_original_method = "D1D263AC5E5D2A557BB570BCD198E93E", hash_generated_method = "FA5199665AD0A33483056C95BFFADBC4")
                 
 @Override
@@ -358,6 +366,7 @@ public boolean onOptionsItemSelected(MenuItem item) {
      *
      * @param drawerView Drawer view that is now open
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.229 -0400", hash_original_method = "FF0C2A2B254D560E335AF8580E0901CF", hash_generated_method = "D9C5934FF90EE4DBADC36AAA2786B983")
                 
 @Override
@@ -375,6 +384,7 @@ public boolean onOptionsItemSelected(MenuItem item) {
      *
      * @param drawerView Drawer view that is now closed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.238 -0400", hash_original_method = "75A34173E93846776B69589B664F15EF", hash_generated_method = "D250AB88C814B1741180EB1FE6522EAC")
                 
 @Override
@@ -392,12 +402,14 @@ public boolean onOptionsItemSelected(MenuItem item) {
      * 
      * @param newState The new drawer motion state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.245 -0400", hash_original_method = "DC5390A82B0A943C7A3BF0DA55FE173F", hash_generated_method = "634B8405B399F3463A611691184BFB58")
                 
 @Override
     public void onDrawerStateChanged(int newState) {
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.252 -0400", hash_original_method = "9268C3F8728CF207561358E9A6DDC1DF", hash_generated_method = "9268C3F8728CF207561358E9A6DDC1DF")
                 
 Drawable getThemeUpIndicator() {
@@ -407,6 +419,7 @@ Drawable getThemeUpIndicator() {
         return IMPL.getThemeUpIndicator(mActivity);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.295 -0400", hash_original_method = "9E16714F60063FF6396099FF22689690", hash_generated_method = "9E16714F60063FF6396099FF22689690")
                 
 void setActionBarUpIndicator(Drawable upDrawable, int contentDescRes) {
@@ -418,6 +431,7 @@ void setActionBarUpIndicator(Drawable upDrawable, int contentDescRes) {
                 .setActionBarUpIndicator(mSetIndicatorInfo, mActivity, upDrawable, contentDescRes);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:53.307 -0400", hash_original_method = "B571390A648B25B2E34394867315D38B", hash_generated_method = "B571390A648B25B2E34394867315D38B")
                 
 void setActionBarDescription(int contentDescRes) {
@@ -445,11 +459,13 @@ void setActionBarDescription(int contentDescRes) {
          *
          * @param position a value between 0 and 1
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void setPosition(float position) {
             mPosition = position;
             invalidateSelf();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public float getPosition() {
             return mPosition;
         }

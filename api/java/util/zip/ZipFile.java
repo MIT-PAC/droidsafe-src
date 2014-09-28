@@ -136,6 +136,7 @@ public ZipFile(String name) throws IOException {
      * @throws IOException
      *             if an IOException occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.342 -0500", hash_original_method = "B3BE4D570FA623471DB2047631197E6D", hash_generated_method = "F3FD63ABD3BE3678AF17069F54E5D0D5")
     
 public void close() throws IOException {
@@ -177,7 +178,7 @@ public boolean hasMoreElements() {
                 return iterator.hasNext();
             }
 
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.349 -0500", hash_original_method = "0AFF9A2DED00798BA27B7711FA7E95F7", hash_generated_method = "D79A666F419DCD9B04F294A5770B2CDB")
             
 public ZipEntry nextElement() {
@@ -256,7 +257,7 @@ public RAFStream(RandomAccessFile raf, long pos) throws IOException {
         }
 
         @DSSource({DSSourceKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.381 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
         
 @Override public int read() throws IOException {
@@ -353,7 +354,7 @@ public ZipInflaterInputStream(InputStream is, Inflater inf, int bsize, ZipEntry 
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.358 -0500", hash_original_method = "B69421FB9318C1ABE9ECEEB1DD311069", hash_generated_method = "8EAC736ACC17C5ECCFFF65C0A3EE6FFC")
     
 public InputStream getInputStream(ZipEntry entry) throws IOException {
@@ -392,7 +393,8 @@ public InputStream getInputStream(ZipEntry entry) throws IOException {
      *
      * @return the file name of this {@code ZipFile}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.360 -0500", hash_original_method = "16A0E81CED7078E4D61B7DA2166E122D", hash_generated_method = "61220CBF47CC3FDA292F55A4F9600680")
     
 public String getName() {

@@ -77,6 +77,7 @@ protected EmptyFileFilter() {
      * @return {@code true} if the file or directory
      *  is <i>empty</i>, otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.731 -0400", hash_original_method = "5C49B996D079DB6527DA00AF822DC40F", hash_generated_method = "5624A64A7FDD26CB713D3EDF643DAEE8")
     
 @Override

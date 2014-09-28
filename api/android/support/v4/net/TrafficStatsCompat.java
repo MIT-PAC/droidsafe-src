@@ -49,6 +49,7 @@ public class TrafficStatsCompat {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.110 -0500", hash_original_field = "B25EEFE942F3522AE9B7C87C81A575B6", hash_generated_field = "F94787120B7DCB7AB43791A107524046")
 
         private ThreadLocal<SocketTags> mThreadSocketTags = new ThreadLocal<SocketTags>() {
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:10.568 -0500", hash_original_method = "917426AFC28735098682F2B9D9CB79DB", hash_generated_method = "33F4ECD1E86E2B8E57F485FE00B0D17E")
             
 @Override
@@ -57,6 +58,7 @@ public class TrafficStatsCompat {
             }
         };
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.117 -0500", hash_original_method = "29F40184016458593923928B54B72D58", hash_generated_method = "80A109C59EA99F23123176D30E91DFD9")
         
 @Override
@@ -64,6 +66,7 @@ public class TrafficStatsCompat {
             mThreadSocketTags.get().statsTag = -1;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.123 -0500", hash_original_method = "A544838E51C242497C15D6C7B9A1DB6E", hash_generated_method = "8E20A3F2D078921B3E7D46BFDBF3B9DE")
         
 @Override
@@ -71,19 +74,22 @@ public class TrafficStatsCompat {
             return mThreadSocketTags.get().statsTag;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.130 -0500", hash_original_method = "ADC5B446D7FD7ADEC8E6E99BE6A89ACD", hash_generated_method = "D7B91E7E1FAD02CA0DB14B052CA702B3")
         
 @Override
         public void incrementOperationCount(int operationCount) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.136 -0500", hash_original_method = "C2D2CABC8BAA7DE31FFBC5C61CBBFF4B", hash_generated_method = "46122297344479221A99BF173B5CD1BD")
         
 @Override
         public void incrementOperationCount(int tag, int operationCount) {
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.142 -0500", hash_original_method = "9E4D6173C835AE0B3ACB1B95EE549A39", hash_generated_method = "D2741C37BD8EDC73E7CA77FD70C29DE1")
         
 @Override
@@ -91,12 +97,14 @@ public class TrafficStatsCompat {
             mThreadSocketTags.get().statsTag = tag;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.149 -0500", hash_original_method = "28BB71644E0B41424DD4E7871B3DCC8E", hash_generated_method = "9A2DFEB15CB0DFEE3E3753A2A9E66D83")
         
 @Override
         public void tagSocket(Socket socket) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.155 -0500", hash_original_method = "5A2A1CCFECD670B6FBDB133DA240D623", hash_generated_method = "827AD048CE7F254E007562036A773EAD")
         
 @Override
@@ -105,6 +113,7 @@ public class TrafficStatsCompat {
     }
 
     static class IcsTrafficStatsCompatImpl implements TrafficStatsCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.172 -0500", hash_original_method = "D5F8F40C9A6EF9C3E2D80BDD13420E3C", hash_generated_method = "0DEC5FB669806F5FB311B93BBA17BFCD")
         
 @Override
@@ -112,6 +121,7 @@ public class TrafficStatsCompat {
             TrafficStatsCompatIcs.clearThreadStatsTag();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.176 -0500", hash_original_method = "C607CD6AC1DFBE73A196F08B4FC9F846", hash_generated_method = "2929EA68FF0C6DEFABE566439D0038AD")
         
 @Override
@@ -119,6 +129,7 @@ public class TrafficStatsCompat {
             return TrafficStatsCompatIcs.getThreadStatsTag();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.181 -0500", hash_original_method = "7826ADD4BD4CFED6127952D7C225D733", hash_generated_method = "A793C7905EE77DE8466B53C6E1B09323")
         
 @Override
@@ -126,6 +137,7 @@ public class TrafficStatsCompat {
             TrafficStatsCompatIcs.incrementOperationCount(operationCount);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.185 -0500", hash_original_method = "036A1A617530622DBDCD1BDAD5B43CE3", hash_generated_method = "B29A4F080D15CB73CFA6B7BFB088AD2E")
         
 @Override
@@ -133,7 +145,8 @@ public class TrafficStatsCompat {
             TrafficStatsCompatIcs.incrementOperationCount(tag, operationCount);
         }
 
-        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSSafe(DSCat.SAFE_LIST)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.188 -0500", hash_original_method = "1738DCB0EBCA30BF1C05152FFD4491B7", hash_generated_method = "009CF9C13BB840465EB25F63CA293850")
         
 @Override
@@ -141,6 +154,7 @@ public class TrafficStatsCompat {
             TrafficStatsCompatIcs.setThreadStatsTag(tag);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.193 -0500", hash_original_method = "B6FE1385E96F3D2720B2284B417D81E5", hash_generated_method = "050ADB6056B7550D259E23C44E76045F")
         
 @Override
@@ -148,6 +162,7 @@ public class TrafficStatsCompat {
             TrafficStatsCompatIcs.tagSocket(socket);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.199 -0500", hash_original_method = "749F735AEEA0FACC46E02DE25255B9A4", hash_generated_method = "85EE4B0945106617829A3F3182E66640")
         
 @Override

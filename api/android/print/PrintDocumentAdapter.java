@@ -246,6 +246,7 @@ public abstract void onWrite(PageRange[] pages, ParcelFileDescriptor destination
      * resources acquired in {@link #onStart()}. This method is invoked on
      * the main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 14:41:22.657 -0400", hash_original_method = "9ED06CCFCFACDB9CA8B363E3B5FDDEA1", hash_generated_method = "ACB5767BBD2A92BCDA88E2F209857C10")
     
 public void onFinish() {
@@ -274,6 +275,7 @@ public WriteResultCallback() {
          * @param pages The pages that were written. Cannot be <code>null</code>
          * or empty.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 14:41:22.659 -0400", hash_original_method = "67F1BBA01BD092CBBA1437D08F1D0DB0", hash_generated_method = "BB9B69738E2AAB8AEA85C2D71DB5E528")
         
 public void onWriteFinished(PageRange[] pages) {
@@ -286,6 +288,7 @@ public void onWriteFinished(PageRange[] pages) {
          * @param error The <strong>localized</strong> error message.
          * shown to the user. May be <code>null</code> if error is unknown.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 14:41:22.660 -0400", hash_original_method = "D1C6B77F30DFCE9F26DD38BC0841311D", hash_generated_method = "B5F64E6D6BEAAC9C224EB7647F9B0FB8")
         
 public void onWriteFailed(CharSequence error) {
@@ -326,6 +329,7 @@ public LayoutResultCallback() {
          *
          * @see PrintDocumentInfo
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 14:41:22.664 -0400", hash_original_method = "BEF5A08F3B4930C16ABE0638CA15753C", hash_generated_method = "C1950AC7438F5EB63F6434E3D92EF714")
         
 public void onLayoutFinished(PrintDocumentInfo info, boolean changed) {
@@ -338,6 +342,7 @@ public void onLayoutFinished(PrintDocumentInfo info, boolean changed) {
          * @param error The <strong>localized</strong> error message.
          * shown to the user. May be <code>null</code> if error is unknown.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 14:41:22.666 -0400", hash_original_method = "097BFBD434F8D3342C3F0968773EA509", hash_generated_method = "EF9ADED59D25D772ECDA9E494312A6CF")
         
 public void onLayoutFailed(CharSequence error) {
@@ -347,6 +352,7 @@ public void onLayoutFailed(CharSequence error) {
         /**
          * Notifies that layout was cancelled as a result of a cancellation request.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-05 14:41:22.666 -0400", hash_original_method = "8585989943102480E7ACCEF6AC5446A6", hash_generated_method = "504EC4CD187DDD078C47E074734245B0")
         
 public void onLayoutCancelled() {

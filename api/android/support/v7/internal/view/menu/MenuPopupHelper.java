@@ -126,12 +126,14 @@ public void setAnchorView(View anchor) {
         mAnchorView = anchor;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.519 -0400", hash_original_method = "DBE6A6207EE05003848472E8CEC3C651", hash_generated_method = "0FE25DF4DA9F68C2316C8563F150CE74")
     
 public void setForceShowIcon(boolean forceShow) {
         mForceShowIcon = forceShow;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.522 -0400", hash_original_method = "8955EF8FDCAE4E81ACF8C17A7D97E901", hash_generated_method = "A2A82048B8BFEC883AC484F934AF2351")
     
 public void show() {
@@ -140,6 +142,7 @@ public void show() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.526 -0400", hash_original_method = "2B90C377E65BD62BAE1A05BEB2337153", hash_generated_method = "0DFC187222234D10A3CFEF43A0A55DB3")
     
 public boolean tryShow() {
@@ -170,6 +173,7 @@ public boolean tryShow() {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.528 -0400", hash_original_method = "E9FEE97D49E51EA661DEC346433EEFC8", hash_generated_method = "133F656F32D87890156BDE5083D0E03C")
     
 public void dismiss() {
@@ -193,6 +197,7 @@ public void onDismiss() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.533 -0400", hash_original_method = "063A1DE93E3AAE9F6194B4EEC84DC023", hash_generated_method = "8FB150C0636C855FDE107610841320C1")
     
 public boolean isShowing() {
@@ -217,6 +222,7 @@ public boolean onKey(View v, int keyCode, KeyEvent event) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.542 -0400", hash_original_method = "E67C1B003E378A3103858A8D234C2EBA", hash_generated_method = "14C21BC89B209B5CE3F5599F8409CB03")
     
 private int measureContentWidth(ListAdapter adapter) {
@@ -260,6 +266,7 @@ private int measureContentWidth(ListAdapter adapter) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.547 -0400", hash_original_method = "596FF06362BA36AEC7FC1AB43ADB5BB8", hash_generated_method = "10513C7D7E2E54B30F884F764A40E757")
     
 @Override
@@ -274,6 +281,7 @@ private int measureContentWidth(ListAdapter adapter) {
         throw new UnsupportedOperationException("MenuPopupHelpers manage their own views");
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.553 -0400", hash_original_method = "F34A2AD435F2295843BB37C7A495BDF3", hash_generated_method = "09051A00F74015A201650E5FB2165D64")
     
 @Override
@@ -283,6 +291,7 @@ private int measureContentWidth(ListAdapter adapter) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.555 -0400", hash_original_method = "10FF3E14371A7D0CA3058A6B9B33844C", hash_generated_method = "F6C496CC72FE6F7A403B63FD5A754BFF")
     
 @Override
@@ -290,6 +299,7 @@ private int measureContentWidth(ListAdapter adapter) {
         mPresenterCallback = cb;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.558 -0400", hash_original_method = "248A3012A015004678EE499361542EC2", hash_generated_method = "B9FA22C810531D832491734E6A46493F")
     
 @Override
@@ -319,6 +329,7 @@ private int measureContentWidth(ListAdapter adapter) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.561 -0400", hash_original_method = "A04CFA4E6A6AAC9868005A584CC382D0", hash_generated_method = "52227F10AC79F701509CAB5EAED0758A")
     
 @Override
@@ -334,6 +345,7 @@ private int measureContentWidth(ListAdapter adapter) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.563 -0400", hash_original_method = "4C665EA7F97447510193964EEFD645AE", hash_generated_method = "53EA63F11892B6B76B90A02A4F7BB199")
     
 @Override
@@ -341,18 +353,21 @@ private int measureContentWidth(ListAdapter adapter) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.567 -0400", hash_original_method = "5F1249279FE45B816C21E97DA3013708", hash_generated_method = "1AC0563B74EC3CB7F8AA75918408F79E")
     
 public boolean expandItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.569 -0400", hash_original_method = "06DF13061AFE044B0D38F9C19B18A57A", hash_generated_method = "7FACC901E2C2CF1ADC66B0D53290352D")
     
 public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.572 -0400", hash_original_method = "B74F33F41EA76949D2B7FFC2C0C48D8F", hash_generated_method = "C0CB620CEC980AD85BC1EE1B6EA7B000")
     
 @Override
@@ -360,6 +375,7 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.574 -0400", hash_original_method = "F5855573BDD3346EB58FBC078F0D1E94", hash_generated_method = "D7C142582BEA8E084D7F8C19441F7839")
     
 @Override
@@ -367,6 +383,7 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.577 -0400", hash_original_method = "0C3EAD71D41C59A31F244EC76F29937C", hash_generated_method = "EA02457E24D7D58E860CD649C8CDC212")
     
 @Override
@@ -393,8 +410,7 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
             }
             return items.size() - 1;
         }
-
-        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        
         @DSSafe(DSCat.SAFE_LIST)
         public MenuItemImpl getItem(int position) {
             ArrayList<MenuItemImpl> items = mOverflowOnly ?
@@ -427,6 +443,7 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
             return convertView;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         void findExpandedIndex() {
             final MenuItemImpl expandedItem = mMenu.getExpandedItem();
             if (expandedItem != null) {

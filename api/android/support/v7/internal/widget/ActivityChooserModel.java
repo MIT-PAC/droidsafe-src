@@ -223,6 +223,7 @@ public class ActivityChooserModel extends DataSetObservable {
      *
      * @return The model.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.683 -0400", hash_original_method = "FB8C54A39D7C61FF0CE3E2FAB0EA8CA1", hash_generated_method = "5C651673D31A886DC2B8AC58C596302C")
                 
 public static ActivityChooserModel get(Context context, String historyFileName) {
@@ -302,6 +303,7 @@ private ActivityChooserModel(Context context, String historyFileName) {
      *
      * @param intent The intent.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.690 -0400", hash_original_method = "9EC6E574DF9F53B3D60531ED7660ED4E", hash_generated_method = "CAAB4F801D5425E09B1CBC44551EA237")
                 
 public void setIntent(Intent intent) {
@@ -335,6 +337,7 @@ public Intent getIntent() {
      *
      * @see #setIntent(Intent)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.695 -0400", hash_original_method = "CB604CF6F7EC306A817BBCAF0F70025A", hash_generated_method = "CFE76709EAC76551C13A72BD1DAE1783")
                 
 public int getActivityCount() {
@@ -352,6 +355,7 @@ public int getActivityCount() {
      * @see ActivityResolveInfo
      * @see #setIntent(Intent)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.697 -0400", hash_original_method = "1B0A3814AC487B67DAF612DBEF1BDFE5", hash_generated_method = "E3FD7DE6668E7CF4A379AC9AF949E8D6")
                 
 public ResolveInfo getActivity(int index) {
@@ -368,6 +372,7 @@ public ResolveInfo getActivity(int index) {
      *
      * @return The index if found, -1 otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.700 -0400", hash_original_method = "AD65ED2867E599270F70CD60FB235911", hash_generated_method = "E680CBBC7240CEC731AADC1B2CEBD8A0")
                 
 public int getActivityIndex(ResolveInfo activity) {
@@ -403,6 +408,7 @@ public int getActivityIndex(ResolveInfo activity) {
      * @see HistoricalRecord
      * @see OnChooseActivityListener
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.704 -0400", hash_original_method = "1DC600F29ED81B06DEF3384D196E650E", hash_generated_method = "ED81C9D10ACF0D7FA17B05467B13E9B5")
                 
 public Intent chooseActivity(int index) {
@@ -445,6 +451,7 @@ public Intent chooseActivity(int index) {
      *
      * @param listener The listener.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.706 -0400", hash_original_method = "EB55A208F402E96A3376D4F0422A1E09", hash_generated_method = "FD0E448CC6F127033633D71927F19035")
                 
 public void setOnChooseActivityListener(OnChooseActivityListener listener) {
@@ -462,6 +469,7 @@ public void setOnChooseActivityListener(OnChooseActivityListener listener) {
      *
      * @see #getActivity(int)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.709 -0400", hash_original_method = "FA7B4E129FB5F6C086A6E3A337504581", hash_generated_method = "FC0DC0D763744F504FDBAC841038ADD4")
                 
 public ResolveInfo getDefaultActivity() {
@@ -484,6 +492,7 @@ public ResolveInfo getDefaultActivity() {
      *
      * @param index The index of the activity to set as default.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.712 -0400", hash_original_method = "8B0DB707CEA03E4BA7B6875C0E496601", hash_generated_method = "7DB741163C7B8647E43E359FFDD18D7E")
                 
 public void setDefaultActivity(int index) {
@@ -520,6 +529,7 @@ public void setDefaultActivity(int index) {
      * @throws IllegalStateException If this method is called before a call to
      *         {@link #readHistoricalDataIfNeeded()}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.715 -0400", hash_original_method = "209A62AF988D749892F65257D6145080", hash_generated_method = "1C1A41C0B54EEA6513D648B8C20A7D7D")
                 
 private void persistHistoricalDataIfNeeded() {
@@ -539,6 +549,7 @@ private void persistHistoricalDataIfNeeded() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.720 -0400", hash_original_method = "BAFD993BBD82CB84276576F8D5FDD895", hash_generated_method = "E672EC03A1D4F00C5C0ACEC8CC4D7C50")
                 
 private void executePersistHistoryAsyncTaskBase() {
@@ -546,6 +557,7 @@ private void executePersistHistoryAsyncTaskBase() {
                 mHistoryFileName);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.723 -0400", hash_original_method = "FADD507E0E85921409C707BA6101DE40", hash_generated_method = "F8DCB8D6A5EBD82E833AA05190DB1110")
                 
 private void executePersistHistoryAsyncTaskSDK11() {
@@ -620,6 +632,7 @@ public int getHistoryMaxSize() {
      *
      * @return The history size.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.731 -0400", hash_original_method = "9B45C2BFC279CDACCB9347FAF1679D51", hash_generated_method = "9F1C451129AA1B546D062A652652D32F")
                 
 public int getHistorySize() {
@@ -635,6 +648,7 @@ public int getHistorySize() {
      * most recent history has been read, and the activities
      * are sorted.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.733 -0400", hash_original_method = "C8E6729DBDDC67B48FBBDC2AC81E5D74", hash_generated_method = "0E9ECC7A7CB2B733DEF50A0230D5335B")
                 
 private void ensureConsistentState() {
@@ -654,6 +668,7 @@ private void ensureConsistentState() {
      *
      * @return Whether sorting was performed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.735 -0400", hash_original_method = "1A8605E4E7CD77197A5F5DA1109DB487", hash_generated_method = "1BC00650A7A485F43F43BD54A977C6BF")
                 
 private boolean sortActivitiesIfNeeded() {
@@ -672,6 +687,7 @@ private boolean sortActivitiesIfNeeded() {
      *
      * @return Whether loading was performed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.739 -0400", hash_original_method = "3B904F3732F4C6E82850FFDDFD903CF6", hash_generated_method = "5FE7C06D940C569780DCBD63CB028860")
                 
 private boolean loadActivitiesIfNeeded() {
@@ -697,6 +713,7 @@ private boolean loadActivitiesIfNeeded() {
      *
      * @return Whether reading was performed.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.742 -0400", hash_original_method = "49E4E78833E76EEF4730637B23CDA76B", hash_generated_method = "A6ADE035B455659ADF76CC19B178D78F")
                 
 private boolean readHistoricalDataIfNeeded() {
@@ -716,6 +733,7 @@ private boolean readHistoricalDataIfNeeded() {
      * @param historicalRecord The record to add.
      * @return True if the record was added.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.745 -0400", hash_original_method = "F623006C7E6259D3299EB4AD1E2DE1D8", hash_generated_method = "F219D6A4B7B079D54E315E4D72568431")
                 
 private boolean addHisoricalRecord(HistoricalRecord historicalRecord) {
@@ -733,6 +751,7 @@ private boolean addHisoricalRecord(HistoricalRecord historicalRecord) {
     /**
      * Prunes older excessive records to guarantee maxHistorySize.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.747 -0400", hash_original_method = "3591731D17F4E6B8170BBCAE2D523197", hash_generated_method = "16DD98FB2EFB5890ECB469304383E555")
                 
 private void pruneExcessiveHistoricalRecordsIfNeeded() {
@@ -804,6 +823,7 @@ private void pruneExcessiveHistoricalRecordsIfNeeded() {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean equals(Object obj) {
             if (this == obj) {
@@ -875,6 +895,7 @@ private void pruneExcessiveHistoricalRecordsIfNeeded() {
             return 31 + Float.floatToIntBits(weight);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean equals(Object obj) {
             if (this == obj) {
@@ -958,6 +979,7 @@ private void pruneExcessiveHistoricalRecordsIfNeeded() {
     /**
      * Command for reading the historical records from a file off the UI thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:45.819 -0400", hash_original_method = "D36B62E6A823BBB40CAD2D69425DF5D9", hash_generated_method = "91466DCA219D6894A701DAEF160C42B0")
                 
 private void readHistoricalDataImpl() {
@@ -1036,6 +1058,7 @@ private void readHistoricalDataImpl() {
      */
     private final class PersistHistoryAsyncTask extends AsyncTask<Object, Void, Void> {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         @SuppressWarnings("unchecked")
         public Void doInBackground(Object... args) {

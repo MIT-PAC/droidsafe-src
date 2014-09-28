@@ -27,18 +27,21 @@ import android.view.accessibility.AccessibilityRecord;
  */
 class AccessibilityEventCompatIcs {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:26.206 -0500", hash_original_method = "734AB2E40956FCBD0EB2BC35639EB37D", hash_generated_method = "B76C5AFC70CE948B4F7531949C972F45")
     
 public static int getRecordCount(AccessibilityEvent event) {
         return event.getRecordCount();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:26.207 -0500", hash_original_method = "A93BFBF408BB0A53396D00D04FBC85AB", hash_generated_method = "68368AFA2A2E07C99E468E0B015B3830")
     
 public static void appendRecord(AccessibilityEvent event, Object record) {
         event.appendRecord((AccessibilityRecord) record);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:26.208 -0500", hash_original_method = "AEFA1D9BC3943F705C8EF9ED91D496C4", hash_generated_method = "DC73AE4C02E7F7A4AD409A3EBB2EEF26")
     
 public static Object getRecord(AccessibilityEvent event, int index) {

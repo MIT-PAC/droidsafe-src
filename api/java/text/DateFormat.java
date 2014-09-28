@@ -545,6 +545,7 @@ protected DateFormat() {
      *            if {@code object} is neither a {@code Date} nor a
      *            {@code Number} instance.
      */
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     
@@ -570,6 +571,7 @@ protected DateFormat() {
      *            the date to format.
      * @return the formatted string.
      */
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     
@@ -598,6 +600,7 @@ public final String format(Date date) {
      *            of the alignment field in the formatted text.
      * @return the string buffer.
      */
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.048 -0500", hash_original_method = "CCA64E9C4F95BFBA0963A237E8C02CBB", hash_generated_method = "B7B10EE9D6E6167008ADC116705062BB")
@@ -612,7 +615,7 @@ public abstract StringBuffer format(Date date, StringBuffer buffer,
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.053 -0500", hash_original_method = "AC2D491D0E9EF49D1E9DF4E35BBACC3B", hash_generated_method = "9CCA2A38B21AEC6F62F360BFF7610E34")
     
 public Calendar getCalendar() {
@@ -787,7 +790,7 @@ public void setCalendar(Calendar cal) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.107 -0500", hash_original_method = "C0CD4ED6DB9107DF0F000BE04B2DBCDB", hash_generated_method = "77C364A8166B57DB585E631363560368")
     
 public void setLenient(boolean value) {
@@ -816,7 +819,7 @@ public void setNumberFormat(NumberFormat format) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.112 -0500", hash_original_method = "21956223404148B0DA41DA5118D6AFF3", hash_generated_method = "7D12735F5FACD641C52739A935BD1364")
     
 public void setTimeZone(TimeZone timezone) {

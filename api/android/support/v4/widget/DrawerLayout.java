@@ -157,6 +157,7 @@ private static boolean hasOpaqueBackground(View v) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.248 -0400", hash_original_method = "1D2E68F16D483D47ED2BC556B1D9D8B3", hash_generated_method = "B83F5284E24BD195BDF99C47541B78D2")
         
 private static boolean includeChildForAccessibilitiy(View child) {
@@ -262,18 +263,22 @@ private static boolean includeChildForAccessibilitiy(View child) {
      * Override this if you only care about a few of the available callback methods.
      */
     public static abstract class SimpleDrawerListener implements DrawerListener {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onDrawerSlide(View drawerView, float slideOffset) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onDrawerOpened(View drawerView) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onDrawerClosed(View drawerView) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onDrawerStateChanged(int newState) {
         }
@@ -420,6 +425,7 @@ public void setDrawerListener(DrawerListener listener) {
      * @param lockMode The new lock mode for the given drawer. One of {@link #LOCK_MODE_UNLOCKED},
      *                 {@link #LOCK_MODE_LOCKED_CLOSED} or {@link #LOCK_MODE_LOCKED_OPEN}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.886 -0400", hash_original_method = "B3E0D029EEFC61440338FF42B1227314", hash_generated_method = "C0E7689C2F7B915D9296C9D0937C5547")
         
 public void setDrawerLockMode(int lockMode) {
@@ -496,6 +502,7 @@ public void setDrawerLockMode(int lockMode, @EdgeGravity int edgeGravity) {
      * @see #LOCK_MODE_LOCKED_CLOSED
      * @see #LOCK_MODE_LOCKED_OPEN
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.906 -0400", hash_original_method = "B2E81D7C4F5D5432DDB979EFC6A2D55F", hash_generated_method = "65C24BD5CA4F5D28916CAC5839DB6E41")
         
 public void setDrawerLockMode(int lockMode, View drawerView) {
@@ -534,6 +541,7 @@ public int getDrawerLockMode(@EdgeGravity int edgeGravity) {
      * @return one of {@link #LOCK_MODE_UNLOCKED}, {@link #LOCK_MODE_LOCKED_CLOSED} or
      *         {@link #LOCK_MODE_LOCKED_OPEN}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.921 -0400", hash_original_method = "117D2A957267B5D8B458287919539AC3", hash_generated_method = "119AB4E7C91C4218BF09810E727FD41A")
         
 public int getDrawerLockMode(View drawerView) {
@@ -550,6 +558,7 @@ public int getDrawerLockMode(View drawerView) {
      * Resolve the shared state of all drawers from the component ViewDragHelpers.
      * Should be called whenever a ViewDragHelper's state changes.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.942 -0400", hash_original_method = "96881A3CC271E47044D9DE139130AB25", hash_generated_method = "96881A3CC271E47044D9DE139130AB25")
         
 void updateDrawerState(int forGravity, int activeState, View activeDrawer) {
@@ -583,6 +592,7 @@ void updateDrawerState(int forGravity, int activeState, View activeDrawer) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.949 -0400", hash_original_method = "5C6986B225D608EFC8113E274B77629E", hash_generated_method = "4DD9732122465140B1A715C938914AFD")
         
 void dispatchOnDrawerClosed(View drawerView) {
@@ -615,6 +625,7 @@ void dispatchOnDrawerClosed(View drawerView) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.955 -0400", hash_original_method = "D464C7782235B554E1AF5BA5C2A5550C", hash_generated_method = "556ADAA58ED219802F731D92FF5A6EE3")
         
 void dispatchOnDrawerOpened(View drawerView) {
@@ -640,6 +651,7 @@ void dispatchOnDrawerOpened(View drawerView) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.270 -0400", hash_original_method = "140C5B34D506C079860F7F11508D96C5", hash_generated_method = "140C5B34D506C079860F7F11508D96C5")
         
 void dispatchOnDrawerSlide(View drawerView, float slideOffset) {
@@ -648,6 +660,7 @@ void dispatchOnDrawerSlide(View drawerView, float slideOffset) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.276 -0400", hash_original_method = "BAC3676B11CBEF43765A167CD87E3D85", hash_generated_method = "BAC3676B11CBEF43765A167CD87E3D85")
         
 void setDrawerViewOffset(View drawerView, float slideOffset) {
@@ -660,6 +673,7 @@ void setDrawerViewOffset(View drawerView, float slideOffset) {
         dispatchOnDrawerSlide(drawerView, slideOffset);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.282 -0400", hash_original_method = "2C2A1CC62A04C86B48FC0026BEF9751C", hash_generated_method = "2C2A1CC62A04C86B48FC0026BEF9751C")
         
 float getDrawerViewOffset(View drawerView) {
@@ -670,6 +684,7 @@ float getDrawerViewOffset(View drawerView) {
      * @return the absolute gravity of the child drawerView, resolved according
      *         to the current layout direction
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.287 -0400", hash_original_method = "D09FFB156570AA317329474871F55D61", hash_generated_method = "D09FFB156570AA317329474871F55D61")
         
 int getDrawerViewAbsoluteGravity(View drawerView) {
@@ -677,6 +692,7 @@ int getDrawerViewAbsoluteGravity(View drawerView) {
         return GravityCompat.getAbsoluteGravity(gravity, ViewCompat.getLayoutDirection(this));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.293 -0400", hash_original_method = "D67722EB08FA196DA7EC38F1040AD3E7", hash_generated_method = "D67722EB08FA196DA7EC38F1040AD3E7")
         
 boolean checkDrawerViewAbsoluteGravity(View drawerView, int checkFor) {
@@ -684,6 +700,7 @@ boolean checkDrawerViewAbsoluteGravity(View drawerView, int checkFor) {
         return (absGravity & checkFor) == checkFor;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.298 -0400", hash_original_method = "A59E037FB19E440569F6237E64730038", hash_generated_method = "A59E037FB19E440569F6237E64730038")
         
 View findOpenDrawer() {
@@ -717,6 +734,7 @@ void moveDrawerToOffset(View drawerView, float slideOffset) {
      *            layout direction.
      * @return the drawer with the specified gravity
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.311 -0400", hash_original_method = "CCED97483D8521C15A95C0F29507D2A1", hash_generated_method = "CCED97483D8521C15A95C0F29507D2A1")
         
 View findDrawerWithGravity(int gravity) {
@@ -1009,12 +1027,14 @@ View findDrawerWithGravity(int gravity) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.392 -0400", hash_original_method = "9CE3D073616FE9E91F0395CAB74719F6", hash_generated_method = "9CE3D073616FE9E91F0395CAB74719F6")
         
 boolean isContentView(View child) {
         return ((LayoutParams) child.getLayoutParams()).gravity == Gravity.NO_GRAVITY;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.398 -0400", hash_original_method = "DAB162665F11EC6BE6BDCB87519847D6", hash_generated_method = "DAB162665F11EC6BE6BDCB87519847D6")
         
 boolean isDrawerView(View child) {
@@ -1146,12 +1166,14 @@ public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
     /**
      * Close all currently open drawer views by animating them out of view.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.423 -0400", hash_original_method = "DB6292B15897C24C66A9066234A7AE38", hash_generated_method = "B0B32C4571D0EED7DBDB97560ED8BC30")
         
 public void closeDrawers() {
         closeDrawers(false);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.430 -0400", hash_original_method = "468DC80E189DB6347C6F966C963880DF", hash_generated_method = "468DC80E189DB6347C6F966C963880DF")
         
 void closeDrawers(boolean peekingOnly) {
@@ -1191,6 +1213,7 @@ void closeDrawers(boolean peekingOnly) {
      *
      * @param drawerView Drawer view to open
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.436 -0400", hash_original_method = "B48E0F56B3FA5C3B73D6F1F3B912592C", hash_generated_method = "47B4C5988B4770BE55AD3A1CDABF934F")
         
 public void openDrawer(View drawerView) {
@@ -1235,6 +1258,7 @@ public void openDrawer(@EdgeGravity int gravity) {
      *
      * @param drawerView Drawer view to close
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.448 -0400", hash_original_method = "75F962D9B52C8023F4C69D7D10233070", hash_generated_method = "51EE5185896A92F76F9C55BA630742D4")
         
 public void closeDrawer(View drawerView) {
@@ -1284,6 +1308,7 @@ public void closeDrawer(@EdgeGravity int gravity) {
      * @return true if the given drawer view is in an open state
      * @see #isDrawerVisible(android.view.View)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.461 -0400", hash_original_method = "E509B2226D5CD1DFCE2770531D33BB5C", hash_generated_method = "7864A248E04A3FC736BCB527AFA53624")
         
 public boolean isDrawerOpen(View drawer) {
@@ -1320,6 +1345,7 @@ public boolean isDrawerOpen(@EdgeGravity int drawerGravity) {
      * @return true if the given drawer is visible on-screen
      * @see #isDrawerOpen(android.view.View)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.472 -0400", hash_original_method = "A5844FA3AD051D68E41EF1DB2A92B52F", hash_generated_method = "468B953506E6B82D745E8E135178B775")
         
 public boolean isDrawerVisible(View drawer) {
@@ -1347,6 +1373,7 @@ public boolean isDrawerVisible(@EdgeGravity int drawerGravity) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.484 -0400", hash_original_method = "561151D89D845662BE87511D0C2DF167", hash_generated_method = "EA80D3AF818210335F10B87809E37516")
         
 private boolean hasPeekingDrawer() {
@@ -1393,12 +1420,14 @@ private boolean hasPeekingDrawer() {
         return new LayoutParams(getContext(), attrs);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.515 -0400", hash_original_method = "72EE23FEEE53E74D565B9A0A6580D095", hash_generated_method = "045B07A27E6EECC17D0F396EC77CA6ED")
         
 private boolean hasVisibleDrawer() {
         return findVisibleDrawer() != null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.520 -0400", hash_original_method = "1D7EBBD6C182651ED5E70793B9D48104", hash_generated_method = "A2EC318939953F1981F8B21E196A5064")
         
 private View findVisibleDrawer() {
@@ -1412,6 +1441,7 @@ private View findVisibleDrawer() {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:43:52.525 -0400", hash_original_method = "766D4F998F7E8AC254DFD532008A9B44", hash_generated_method = "6F57E10640260ED9E4A9AC72EE20D5FB")
         
 void cancelChildViewTouch() {
@@ -1442,6 +1472,7 @@ void cancelChildViewTouch() {
                 return new SavedState(source);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @Override
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
@@ -1483,14 +1514,17 @@ void cancelChildViewTouch() {
             mAbsGravity = gravity;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setDragger(ViewDragHelper dragger) {
             mDragger = dragger;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void removeCallbacks() {
             DrawerLayout.this.removeCallbacks(mPeekRunnable);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean tryCaptureView(View child, int pointerId) {
             // Only capture views where the gravity matches what we're looking for.
@@ -1499,6 +1533,7 @@ void cancelChildViewTouch() {
                     && getDrawerLockMode(child) == LOCK_MODE_UNLOCKED;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onViewDragStateChanged(int state) {
             updateDrawerState(mAbsGravity, state, mDragger.getCapturedView());
@@ -1521,6 +1556,7 @@ void cancelChildViewTouch() {
             invalidate();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onViewCaptured(View capturedChild, int activePointerId) {
             final LayoutParams lp = (LayoutParams) capturedChild.getLayoutParams();
@@ -1529,6 +1565,7 @@ void cancelChildViewTouch() {
             closeOtherDrawer();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void closeOtherDrawer() {
             final int otherGrav = mAbsGravity == Gravity.LEFT ? Gravity.RIGHT : Gravity.LEFT;
             final View toClose = findDrawerWithGravity(otherGrav);
@@ -1537,6 +1574,7 @@ void cancelChildViewTouch() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onViewReleased(View releasedChild, float xvel, float yvel) {
             // Offset is how open the drawer is, therefore left/right values
@@ -1556,11 +1594,13 @@ void cancelChildViewTouch() {
             invalidate();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onEdgeTouched(int edgeFlags, int pointerId) {
             postDelayed(mPeekRunnable, PEEK_DELAY);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void peekDrawer() {
             final View toCapture;
             final int childLeft;
@@ -1588,6 +1628,7 @@ void cancelChildViewTouch() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onEdgeLock(int edgeFlags) {
             if (ALLOW_EDGE_LOCK) {
@@ -1600,6 +1641,7 @@ void cancelChildViewTouch() {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onEdgeDragStarted(int edgeFlags, int pointerId) {
             final View toCapture;
@@ -1614,11 +1656,13 @@ void cancelChildViewTouch() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getViewHorizontalDragRange(View child) {
             return child.getWidth();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int clampViewPositionHorizontal(View child, int left, int dx) {
             if (checkDrawerViewAbsoluteGravity(child, Gravity.LEFT)) {
@@ -1629,6 +1673,7 @@ void cancelChildViewTouch() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int clampViewPositionVertical(View child, int top, int dy) {
             return child.getTop();
@@ -1676,6 +1721,7 @@ void cancelChildViewTouch() {
     class AccessibilityDelegate extends AccessibilityDelegateCompat {
         private final Rect mTmpRect = new Rect();
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCompat info) {
             final AccessibilityNodeInfoCompat superNode = AccessibilityNodeInfoCompat.obtain(info);
@@ -1693,6 +1739,7 @@ void cancelChildViewTouch() {
             addChildrenForAccessibility(info, (ViewGroup) host);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void addChildrenForAccessibility(AccessibilityNodeInfoCompat info, ViewGroup v) {
             final int childCount = v.getChildCount();
             for (int i = 0; i < childCount; i++) {
@@ -1726,6 +1773,7 @@ void cancelChildViewTouch() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                 AccessibilityEvent event) {
@@ -1735,6 +1783,7 @@ void cancelChildViewTouch() {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean filter(View child) {
             final View openDrawer = findOpenDrawer();
             return openDrawer != null && openDrawer != child;
@@ -1745,6 +1794,7 @@ void cancelChildViewTouch() {
          * seem to be a few elements that are not easily cloneable using the underlying API.
          * Leave it private here as it's not general-purpose useful.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private void copyNodeInfoNoChildren(AccessibilityNodeInfoCompat dest,
                 AccessibilityNodeInfoCompat src) {
             final Rect rect = mTmpRect;
@@ -1771,6 +1821,7 @@ void cancelChildViewTouch() {
             dest.addAction(src.getActions());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.512 -0400", hash_original_method = "3136D41FD5802BFCA8E16EA5B3F8477F", hash_generated_method = "C2BBBEC8913DC421C9137F8DDC736DAB")
             
 @Override
@@ -1797,6 +1848,7 @@ void cancelChildViewTouch() {
             return super.dispatchPopulateAccessibilityEvent(host, event);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.505 -0400", hash_original_method = "86645AEBE3B736DED3186835A665D0EC", hash_generated_method = "18C91D9F648DEA6E4E50E6F536EC26E4")
             
 @Override
@@ -1807,6 +1859,7 @@ void cancelChildViewTouch() {
         }}
 
     final class ChildAccessibilityDelegate extends AccessibilityDelegateCompat {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityNodeInfo(View child,
                 AccessibilityNodeInfoCompat info) {

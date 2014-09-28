@@ -38,11 +38,9 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 public class HttpResponseException extends ClientProtocolException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:30.571 -0400", hash_original_field = "A760B8BDAE612093D0B796BF7FA7209C", hash_generated_field = "87BB67E37DADA1C43C717CC168BF2E18")
-
     
     private static final long serialVersionUID = -7186627969477257933L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:30.572 -0400", hash_original_field = "7D58E974091311E54CFA3738B5F585EF", hash_generated_field = "1626BC0851E962932D77E9DFF3CA1BE0")
-
 
     private  int statusCode;
     
@@ -53,6 +51,8 @@ public HttpResponseException(int statusCode, final String s) {
         this.statusCode = statusCode;
     }
 
+    @DSSource({DSSourceKind.NETWORK})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:30.574 -0400", hash_original_method = "95EA9BAD16482D8308F9206838B315E7", hash_generated_method = "5DD64D66E1754A99091F8C05EA6F76CC")
     
 public int getStatusCode() {

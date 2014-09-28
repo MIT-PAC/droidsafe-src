@@ -65,6 +65,7 @@ public void deliverResult(D data) {
     /**
      * @return an application context retrieved from the Context passed to the constructor.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.101 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
 public Context getContext() {
@@ -87,6 +88,7 @@ public int getId() {
      *
      * <p>Must be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.106 -0500", hash_original_method = "F7FC6EAD1080F4315E95C53063FFE31D", hash_generated_method = "6F14E7D5CBB62D3846689962BA66AFE8")
     
 public void registerListener(int id, OnLoadCompleteListener<D> listener) {
@@ -102,6 +104,7 @@ public void registerListener(int id, OnLoadCompleteListener<D> listener) {
      *
      * Must be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.108 -0500", hash_original_method = "F0B8962C538754B5FF8377ACC78D9441", hash_generated_method = "9F30B196EA73C4F76C09270F56611058")
     
 public void unregisterListener(OnLoadCompleteListener<D> listener) {
@@ -119,6 +122,7 @@ public void unregisterListener(OnLoadCompleteListener<D> listener) {
      * has been called and no calls to {@link #stopLoading()} or
      * {@link #reset()} have yet been made.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.111 -0500", hash_original_method = "4FF549E03853BC8FE3FDFAEBF99B8097", hash_generated_method = "011F17A6E1B0A4655AC9CB141825EFD5")
     
 public boolean isStarted() {
@@ -130,6 +134,7 @@ public boolean isStarted() {
      * loader <em>must not</em> report any new data, and <em>must</em> keep
      * its last reported data valid until it is finally reset.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.113 -0500", hash_original_method = "A2FBF2FF6E2191DA1A91C50D7F722DEF", hash_generated_method = "376AAACABE682930F4AC5377B5C459AD")
     
 public boolean isAbandoned() {
@@ -141,6 +146,7 @@ public boolean isAbandoned() {
      * has not yet been started for the first time, or its {@link #reset()}
      * has been called.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.115 -0500", hash_original_method = "6F78AC76FABAE5B00729D2DF0B0C81EB", hash_generated_method = "BB9BBFFEC1CEA5136C58814820AD315E")
     
 public boolean isReset() {
@@ -162,6 +168,7 @@ public boolean isReset() {
      *
      * <p>Must be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.118 -0500", hash_original_method = "8E7A6B4B56209ADF45890FC32754A367", hash_generated_method = "A8FDC28840DC97D7B5C895BB675AFA80")
     
 public final void startLoading() {
@@ -176,6 +183,7 @@ public final void startLoading() {
      * as per {@link #startLoading()}.  This is not called by clients directly,
      * but as a result of a call to {@link #startLoading()}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.120 -0500", hash_original_method = "DA06EE0B2F861EB56F065785FCE355AD", hash_generated_method = "82A80F2F9384B501AB683D80A79AB3A5")
     
 protected void onStartLoading() {
@@ -189,6 +197,7 @@ protected void onStartLoading() {
      *
      * <p>Must be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.122 -0500", hash_original_method = "E102AD0C3BB2F8D5B106A9E25CAC340A", hash_generated_method = "7C65C609A676021DC6E00C13415FEFCD")
     
 public void forceLoad() {
@@ -199,6 +208,7 @@ public void forceLoad() {
      * Subclasses must implement this to take care of requests to {@link #forceLoad()}.
      * This will always be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.124 -0500", hash_original_method = "FE3F333F9E40E18C50A63599879C8FC2", hash_generated_method = "0085AE78BD24D90851730D9CC9CFF4EA")
     
 protected void onForceLoad() {
@@ -218,6 +228,7 @@ protected void onForceLoad() {
      *
      * <p>Must be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.126 -0500", hash_original_method = "98899B741F509D9E0CD920B3A41ABA16", hash_generated_method = "3F87F9E134A29D5D691BEA0A3D6F7DB5")
     
 public void stopLoading() {
@@ -231,6 +242,7 @@ public void stopLoading() {
      * but as a result of a call to {@link #stopLoading()}.
      * This will always be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.128 -0500", hash_original_method = "61C04D3A0F64307AA142FA0229BCD9C9", hash_generated_method = "E65242F5E7BCCB09D085C1F6A436A2F7")
     
 protected void onStopLoading() {
@@ -241,6 +253,7 @@ protected void onStopLoading() {
      * to {@link #reset} to have it retain its current data but not report
      * any new data.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.130 -0500", hash_original_method = "ACB324D8F1768E7142E127CF7A1A7031", hash_generated_method = "48EA11BD72707F304B6A1EE7D8D93FD6")
     
 public void abandon() {
@@ -257,6 +270,7 @@ public void abandon() {
      * {@link #onReset()} happens.  You can retrieve the current abandoned
      * state with {@link #isAbandoned}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.133 -0500", hash_original_method = "A161936916B264DFAEE5DB9D8DEA7F5D", hash_generated_method = "CBC00E77921BBCC552F1B3DA797F6D5F")
     
 protected void onAbandon() {        
@@ -274,6 +288,7 @@ protected void onAbandon() {
      *
      * <p>Must be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.135 -0500", hash_original_method = "1D7BF800397B2CC75C7600D5EBC7C29A", hash_generated_method = "E573CB7964BA333ED5A8B0E9DFBCEE8D")
     
 public void reset() {
@@ -290,6 +305,7 @@ public void reset() {
      * but as a result of a call to {@link #reset()}.
      * This will always be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.138 -0500", hash_original_method = "16611E3F48156A317644CA113F750BCD", hash_generated_method = "7263AB7619FC664C9743FCE8FF63E928")
     
 protected void onReset() {
@@ -300,6 +316,7 @@ protected void onReset() {
      * changed while it was stopped.  If it had, true is returned and the
      * flag is cleared.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.140 -0500", hash_original_method = "C55C1C662CB28045D31932504C1021C3", hash_generated_method = "FB79F93498345AEA72EC028E85462AAE")
     
 public boolean takeContentChanged() {
@@ -316,6 +333,7 @@ public boolean takeContentChanged() {
      *
      * <p>Must be called from the process's main thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.142 -0500", hash_original_method = "9CACF0CE278273BE0AB1B5F570D8CB20", hash_generated_method = "0BBB21E67670D69FBD1DFC64D6E42AA5")
     
 public void onContentChanged() {
@@ -363,6 +381,7 @@ public String dataToString(D data) {
      * @param writer A PrintWriter to which the dump is to be set.
      * @param args Additional arguments to the dump request.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.149 -0500", hash_original_method = "DC77AF55A2A9006E9EA4E79F1D0E0673", hash_generated_method = "96B5713FB4F642D42FB97E334FFFFC83")
     
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {

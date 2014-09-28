@@ -43,6 +43,7 @@ abstract class AbstractFileComparator implements Comparator<File> {
      * @return The sorted array
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.645 -0400", hash_original_method = "8CDF48221E968696B6D0A82E43FAB730", hash_generated_method = "69B313C2510158007FAA0150D612CEBB")
     
 public File[] sort(File... files) {
@@ -62,6 +63,7 @@ public File[] sort(File... files) {
      * @return The sorted list
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.646 -0400", hash_original_method = "905EE6016178F91F1EDE19136C3B52C8", hash_generated_method = "938CED60CBAEE13E2DAA331DCC5A31EE")
     
 public List<File> sort(List<File> files) {

@@ -496,6 +496,7 @@ private byte[] readBlockDataLong() throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.360 -0500", hash_original_method = "43182B65F59B21B8425D068A4900EB3A", hash_generated_method = "56A81332F158117C3BDA56D23B5D1F78")
@@ -768,6 +769,7 @@ private Object readCyclicReference() throws InvalidObjectException, IOException 
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.383 -0500", hash_original_method = "7C91F28BD77A4ED641420E614D9FCB15", hash_generated_method = "7756E71F951822D28642A19BC06AC8CF")
@@ -1339,8 +1341,9 @@ private void readObjectForClass(Object object, ObjectStreamClass classDesc)
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.428 -0500", hash_original_method = "D31E8D2825D4043295F3D0C685B93717", hash_generated_method = "E9843F0E9026BCD63DD0DCCFFB3E80A4")
     
 public int readInt() throws IOException {
@@ -1376,7 +1379,7 @@ public int readInt() throws IOException {
      *             if an error occurs while reading from the source stream.
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSource({DSSourceKind.SERIALIZATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.433 -0500", hash_original_method = "70C9FFE9F08A2EBCF32FC4C20D730AD7", hash_generated_method = "B01CFE6D9156E407A7419A8C068B709D")
     
 public long readLong() throws IOException {
@@ -1970,7 +1973,7 @@ private Object readNewLongString(boolean unshared) throws IOException {
      * @see ObjectOutputStream#writeObject(Object)
      */
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.IO)
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SERIALIZATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.477 -0500", hash_original_method = "D5CBFBA6D0DD1CCB325BD55A2992CB88", hash_generated_method = "8B539A099312D41A4AC5038F6E707F3F")
     
@@ -2175,6 +2178,7 @@ public int readUnsignedShort() throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSSource({DSSourceKind.IO})
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.503 -0500", hash_original_method = "B2994D3A3B821949D517613320FA5065", hash_generated_method = "1EE882612647600C4FE16F9494A0E09D")
@@ -2609,7 +2613,7 @@ public abstract Object get(String name, Object defaultValue)
      * @see ObjectOutputStream#annotateClass(Class)
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.521 -0500", hash_original_method = "38B51F7C504D6211D87B81513F39C956", hash_generated_method = "8BE13CA5FD5F5C0BA8A874380177710B")
     
 protected Class<?> resolveClass(ObjectStreamClass osClass)

@@ -36,6 +36,7 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 		return ret;
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     static <A extends Annotation> A getAnnotation(Class<?> declaringClass, int slot, Class<A> annotationType) {
 		A ret = (A) new Object();
 		ret.addTaint(declaringClass.getTaint());
@@ -44,6 +45,7 @@ public final class Method extends AccessibleObject implements GenericDeclaration
 		return ret;
 	}
     
+    @DSSafe(DSCat.SAFE_LIST)
     static boolean isAnnotationPresent(Class<?> declaringClass, int slot, Class<? extends Annotation> annotationType) {
         Object obj = new Object();
         obj.addTaint(declaringClass.getTaint());
@@ -216,7 +218,8 @@ private synchronized void initGenericTypes() {
         }
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.483 -0500", hash_original_method = "0F068F731FE610BBACFD836E6A61AACF", hash_generated_method = "7CE5B759EE56284BB83AD91C7E51B619")
     
 public TypeVariable<Method>[] getTypeParameters() {
@@ -306,7 +309,8 @@ public String toGenericString() {
      *             if any parameter type points to a type that cannot be
      *             instantiated for some reason
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.496 -0500", hash_original_method = "A9CCE739D5419EE3EB1324AC76C431BA", hash_generated_method = "597DE9D598A5006361DA519667FA4A87")
     
 public Type[] getGenericParameterTypes() {
@@ -328,7 +332,8 @@ public Type[] getGenericParameterTypes() {
      *             if any exception type points to a type that cannot be
      *             instantiated for some reason
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.499 -0500", hash_original_method = "D98F12BC8A74E89DDBE36E53E80FD275", hash_generated_method = "789F7B04AD124F733C6FAD0CF66E18E1")
     
 public Type[] getGenericExceptionTypes() {
@@ -349,7 +354,8 @@ public Type[] getGenericExceptionTypes() {
      *             if the return type points to a type that cannot be
      *             instantiated for some reason
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.501 -0500", hash_original_method = "83125796E1541F4C47F8F2176AE50053", hash_generated_method = "C08643DE90FFCB58BAFBA77559D06E81")
     
 public Type getGenericReturnType() {
@@ -366,6 +372,7 @@ public Type getGenericReturnType() {
         return getDeclaredAnnotations(declaringClass, slot);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.118 -0400", hash_original_method = "C04F97610183E33B13FB9B4273375B6D", hash_generated_method = "1C787FA354E0C9F896C47EB81A5471B7")
     @Override
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
@@ -386,6 +393,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_629409244 =         getAnnotation(declarin
         //return getAnnotation(declaringClass, slot, annotationType);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.517 -0500", hash_original_method = "D8B142EB73E138FF5927E6AE1DAD56D2", hash_generated_method = "426D294074F23AB43B6C5EEBDA3CD9A8")
     
 @Override public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
@@ -421,6 +429,7 @@ public Annotation[][] getParameterAnnotations() {
      *
      * @return {@code true} if a vararg is declared, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.537 -0500", hash_original_method = "47D8C519D80AD7FA8ACDBB9291AF9C1F", hash_generated_method = "98BBA26B4299357852C815497BEBBE80")
     
 public boolean isVarArgs() {
@@ -433,6 +442,7 @@ public boolean isVarArgs() {
      *
      * @return {@code true} if this method is a bridge, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.539 -0500", hash_original_method = "F604FBBB689DE54F8A9C0A1F2713AB23", hash_generated_method = "8F3E1B44078EF0F4429406371B786882")
     
 public boolean isBridge() {
@@ -445,6 +455,7 @@ public boolean isBridge() {
      *
      * @return {@code true} if this method is synthetic, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.542 -0500", hash_original_method = "B698BCB06B0A737FF1A228493D2DEAD0", hash_generated_method = "740D269471105F6754C2E8C0B1DE05E7")
     
 public boolean isSynthetic() {
@@ -520,7 +531,8 @@ public Class<?> getDeclaringClass() {
      *
      * @return the declared exception classes
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.556 -0500", hash_original_method = "0803D161ECCDE8E4916E8597C31C5EAF", hash_generated_method = "1AD8748424F084736A9DD63261A66A14")
     
 public Class<?>[] getExceptionTypes() {
@@ -554,7 +566,7 @@ public int getModifiers() {
      * @return the name of this method
      */
     @DSComment("Java language reflection")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.566 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
@@ -585,8 +597,8 @@ public Class<?>[] getParameterTypes() {
      * @return the return type
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.571 -0500", hash_original_method = "952CC59854183D9751F85A9597A378CE", hash_generated_method = "F8F970361961EA482B13AE142C333181")
     
 public Class<?> getReturnType() {
@@ -653,7 +665,6 @@ public Class<?> getReturnType() {
     @DSComment("Java language reflection")
     @DSSpec(DSCat.REFLECTION)
     @DSSource({DSSourceKind.REFLECTION})
-    @DSSink({DSSinkKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.576 -0500", hash_original_method = "4A7D773CBB2CABEB3FBD24437D2F9CE8", hash_generated_method = "2FD521E61FBF204709DD6167E6F69FD0")
     
 public Object invoke(Object receiver, Object... args)

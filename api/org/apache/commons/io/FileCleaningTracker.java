@@ -74,6 +74,7 @@ public class FileCleaningTracker {
      * @param marker  the marker object used to track the file, not null
      * @throws NullPointerException if the file is null
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.325 -0400", hash_original_method = "F07020199FD227FDE709D6E57E38422A", hash_generated_method = "FE6ABE5F9F8279E840F1B593ED77BA5D")
     
 public void track(File file, Object marker) {
@@ -90,6 +91,7 @@ public void track(File file, Object marker) {
      * @param deleteStrategy  the strategy to delete the file, null means normal
      * @throws NullPointerException if the file is null
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.325 -0400", hash_original_method = "86C594F1F9E71F35FFEC0A77C084143C", hash_generated_method = "451F8B81BF1B43C8797ECA03377447B6")
     
 public void track(File file, Object marker, FileDeleteStrategy deleteStrategy) {
@@ -108,6 +110,7 @@ public void track(File file, Object marker, FileDeleteStrategy deleteStrategy) {
      * @param marker  the marker object used to track the file, not null
      * @throws NullPointerException if the path is null
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.326 -0400", hash_original_method = "A3E86DDC0D794AB85A77D2E23B6B45C0", hash_generated_method = "2A6F3ECCBB536761B0EE18A98D670F1B")
     
 public void track(String path, Object marker) {
@@ -124,6 +127,7 @@ public void track(String path, Object marker) {
      * @param deleteStrategy  the strategy to delete the file, null means normal
      * @throws NullPointerException if the path is null
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.326 -0400", hash_original_method = "543B22C2EC07CA4C1AEB003D5BB6B718", hash_generated_method = "F952677652B1D1C01B115CD23A0864CB")
     
 public void track(String path, Object marker, FileDeleteStrategy deleteStrategy) {
@@ -140,6 +144,7 @@ public void track(String path, Object marker, FileDeleteStrategy deleteStrategy)
      * @param marker  the marker object used to track the file, not null
      * @param deleteStrategy  the strategy to delete the file, null means normal
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.327 -0400", hash_original_method = "954E11DA9D99B56A3E0C00DDF1274471", hash_generated_method = "ECD28A95C2DD57DE45861ACB0CB555AE")
     
 private synchronized void addTracker(String path, Object marker, FileDeleteStrategy deleteStrategy) {
@@ -161,6 +166,7 @@ private synchronized void addTracker(String path, Object marker, FileDeleteStrat
      *
      * @return the number of files being tracked
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.327 -0400", hash_original_method = "0EFA130573A478F2919BB30F1541B30D", hash_generated_method = "F8484D6AAE9ABBE9333E6292CCA82A75")
     
 public int getTrackCount() {
@@ -200,6 +206,7 @@ public List<String> getDeleteFailures() {
      * in the resource cleanup code, such as {@link javax.servlet.ServletContextListener#contextDestroyed}.
      * Once called, no new objects can be tracked by the file cleaner.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.328 -0400", hash_original_method = "4DFB4596FA2073A710F42E9B9443E144", hash_generated_method = "C3FBB34989325B690EECF2AF37871121")
     
 public synchronized void exitWhenFinished() {
@@ -230,7 +237,7 @@ Reaper() {
          * Run the reaper thread that will delete files as their associated
          * marker objects are reclaimed by the garbage collector.
          */
-        @DSSpec(DSCat.SPEC_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.330 -0400", hash_original_method = "63BD1C8F3C17781753BA16C837ECEC6F", hash_generated_method = "E5468C1E2BA5EAE22EA27D6A25B3384C")
         
 @Override
@@ -285,6 +292,7 @@ Tracker(String path, FileDeleteStrategy deleteStrategy, Object marker, Reference
          *
          * @return the path
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.332 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "685DA06B3205BF0988B63E7E0C7CEB6C")
         
 public String getPath() {
@@ -297,6 +305,7 @@ public String getPath() {
          * @return {@code true} if the file was deleted successfully;
          *         {@code false} otherwise.
          */
+        @DSSpec(DSCat.SPEC_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.333 -0400", hash_original_method = "D48AE50A84087A4C1BFE9CE0B93380B9", hash_generated_method = "4B053211185EA99FD2BC5B2841DAEC8F")
         
 public boolean delete() {

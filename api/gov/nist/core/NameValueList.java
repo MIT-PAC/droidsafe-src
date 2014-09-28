@@ -332,7 +332,7 @@ public Set<java.util.Map.Entry<String, NameValue>> entrySet() {
      * (non-Javadoc)
      * @see java.util.Map#get(java.lang.Object)
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.355 -0500", hash_original_method = "EA67EE9A45F5352AADEB9693E72F1050", hash_generated_method = "C5651D9A2CDBEA25F713AF6A1C5B7D9D")
     
@@ -374,7 +374,7 @@ public void putAll(Map<? extends String, ? extends NameValue> map) {
      * (non-Javadoc)
      * @see java.util.Map#remove(java.lang.Object)
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.364 -0500", hash_original_method = "790110009BF426B36394178253C0659C", hash_generated_method = "3ECFCE028BE9B366085522A857FB2584")
     
 public NameValue remove(Object key) {

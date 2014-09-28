@@ -36,6 +36,7 @@ import android.net.NetworkInfo;
  * Implementation of ConnectivityManagerCompat that can use Honeycomb MR2 APIs.
  */
 class ConnectivityManagerCompatHoneycombMR2 {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:56.921 -0500", hash_original_method = "AE16958E049AF3298F03043273C994A2", hash_generated_method = "EEC2362FDCB8ABC195A4E52C4E83EC56")
     
 public static boolean isActiveNetworkMetered(ConnectivityManager cm) {

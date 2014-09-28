@@ -545,7 +545,7 @@ public AbsListView(Context context, AttributeSet attrs) {
     
     @DSComment("Abstract AbsListView")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getCheckedItemCount(){
 		return getTaintInt();
 		// Original method
@@ -589,7 +589,7 @@ public AbsListView(Context context, AttributeSet attrs) {
     
     @DSComment("Abstract AbsListView")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public SparseBooleanArray getCheckedItemPositions(){
 		// Original method
 		/*
@@ -644,7 +644,7 @@ public AbsListView(Context context, AttributeSet attrs) {
     
     @DSComment("Abstract AbsListView")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     public void setItemChecked(int position, boolean value){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -660,7 +660,7 @@ public AbsListView(Context context, AttributeSet attrs) {
     
     @DSComment("Abstract AbsListView")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     public int getChoiceMode(){
 		return getTaintInt();
 		// Original method
@@ -766,7 +766,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     public void setFastScrollAlwaysVisible(boolean alwaysShow){
 		// Original method
 		/*
@@ -1324,7 +1325,8 @@ protected void layoutChildren() {
 		//Return nothing
 	}
     
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @Override @ViewDebug.ExportedProperty public View getSelectedView(){
 		// Original method
 		{
@@ -2478,7 +2480,7 @@ abstract void setSelectionInt(int position);
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -3100,6 +3102,7 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
             mWrapped = wrapped;
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onCreateActionMode(ActionMode mode, Menu menu){
 			// Original method
 			/*
@@ -3114,6 +3117,7 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
 			return false;
 		}
         
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onPrepareActionMode(ActionMode mode, Menu menu){
 			// Original method
 			/*
@@ -3124,6 +3128,7 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
 			return false;
 		}
         
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onActionItemClicked(ActionMode mode, MenuItem item){
 			// Original method
 			/*
@@ -3134,6 +3139,7 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
 			return false;
 		}
         
+        @DSSafe(DSCat.SAFE_LIST)
         public void onDestroyActionMode(ActionMode mode){
 			// Original method
 			/*

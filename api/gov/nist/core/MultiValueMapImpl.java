@@ -152,7 +152,7 @@ public Object remove(String key, V item) {
         }
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.051 -0500", hash_original_method = "08F032B341F8C34A7104B10254E1B693", hash_generated_method = "50D00F6756BC4700D7C0AD4E12C562D1")
     
 public List<V> get(Object key) {
@@ -167,7 +167,7 @@ public List<V> put(String key, List<V> value) {
         return this.map.put(key,(ArrayList<V>) value);
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.225 -0500", hash_original_method = "7B07E9B7FC8B36A67A63DC78734F6C09", hash_generated_method = "6A7958B0A3022682292CF76F808DF8BB")
     
 public List<V> remove(Object key) {

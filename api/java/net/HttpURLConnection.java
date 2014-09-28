@@ -339,7 +339,7 @@ public String getResponseMessage() throws IOException {
      * @see #getRequestMethod()
      * @see #method
      */
-    @DSSink({DSSinkKind.NETWORK})
+    
     @DSComment("no suspicious activity, just gets string")
     @DSSafe(DSCat.SAFE_OTHERS)
     

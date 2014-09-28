@@ -106,6 +106,7 @@ PrintHelperKitkat(Context context) {
      * @param scaleMode {@link #SCALE_MODE_FIT} or
      *                  {@link #SCALE_MODE_FILL}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.665 -0400", hash_original_method = "34C779008FEF06045E290E16D4422CAE", hash_generated_method = "468FB373A4AF9A30089B2F9EC4E99A8C")
     
 public void setScaleMode(int scaleMode) {
@@ -118,6 +119,7 @@ public void setScaleMode(int scaleMode) {
      * @return The scale Mode: {@link #SCALE_MODE_FIT} or
      * {@link #SCALE_MODE_FILL}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.671 -0400", hash_original_method = "3DE4F4432EF799C5AB82A8AA7CD590FF", hash_generated_method = "94E982ACAE6AA1E5BFFF2B3AF388BECC")
     
 public int getScaleMode() {
@@ -132,6 +134,7 @@ public int getScaleMode() {
      * @param colorMode The color mode which is one of
      *                  {@link #COLOR_MODE_COLOR} and {@link #COLOR_MODE_MONOCHROME}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.676 -0400", hash_original_method = "5A543531DAA9FCEC5B365BB94F788213", hash_generated_method = "98072600C00A1A83246B580DD3493D43")
     
 public void setColorMode(int colorMode) {
@@ -144,6 +147,7 @@ public void setColorMode(int colorMode) {
      * @param orientation The page orientation which is one of
      *                    {@link #ORIENTATION_LANDSCAPE} or {@link #ORIENTATION_PORTRAIT}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.682 -0400", hash_original_method = "F059BEA018C060B8AF19EC0186D2EAFF", hash_generated_method = "2A5B54B208BB54C5BBC827439F7666A7")
     
 public void setOrientation(int orientation) {
@@ -156,6 +160,7 @@ public void setOrientation(int orientation) {
      * @return The preferred orientation which is one of
      * {@link #ORIENTATION_LANDSCAPE} or {@link #ORIENTATION_PORTRAIT}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.687 -0400", hash_original_method = "6BA82D6B625174A8AC80664141F0D361", hash_generated_method = "BD403A9700920A99F22D5BAAE290999D")
     
 public int getOrientation() {
@@ -168,6 +173,7 @@ public int getOrientation() {
      * @return The color mode which is one of {@link #COLOR_MODE_COLOR}
      * and {@link #COLOR_MODE_MONOCHROME}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.693 -0400", hash_original_method = "36D12AF97D8587DD3CA677862F4AAD34", hash_generated_method = "994FA1D223BDF2E3402F4149BDD61803")
     
 public int getColorMode() {
@@ -180,6 +186,7 @@ public int getColorMode() {
      * @param jobName The print job name.
      * @param bitmap  The bitmap to print.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.740 -0400", hash_original_method = "C03CE6C0B4BDE86A0992EDA9C1D12921", hash_generated_method = "6CB0D5F59B6360A2C46A725C72295DDA")
     
 public void printBitmap(final String jobName, final Bitmap bitmap) {
@@ -275,6 +282,7 @@ public void printBitmap(final String jobName, final Bitmap bitmap) {
      * @param fittingMode The mode of fitting {@link #SCALE_MODE_FILL} vs {@link #SCALE_MODE_FIT}
      * @return Matrix to be used in canvas.drawBitmap(bitmap, matrix, null) call
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.750 -0400", hash_original_method = "945A952854711429C92EA555514B4F60", hash_generated_method = "614361F1D604EF74823028183B898141")
     
 private Matrix getMatrix(int imageWidth, int imageHeight, RectF content, int fittingMode) {
@@ -306,6 +314,7 @@ private Matrix getMatrix(int imageWidth, int imageHeight, RectF content, int fit
      * @param imageFile The <code>Uri</code> pointing to an image to print.
      * @throws FileNotFoundException if <code>Uri</code> is not pointing to a valid image.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.871 -0400", hash_original_method = "26AA80910AB549358B100D7C1531A95F", hash_generated_method = "2F887FE87D7F65D69528FB233FF11C96")
     
 public void printBitmap(final String jobName, final Uri imageFile)
@@ -355,7 +364,8 @@ public void printBitmap(final String jobName, final Uri imageFile)
                                 });
                     }
 
-                    @Override
+                    @DSSafe(DSCat.SAFE_LIST)
+            @Override
                     protected Bitmap doInBackground(Uri... uris) {
                         try {
                             return loadConstrainedBitmap(imageFile, MAX_PRINT_SIZE);
@@ -396,7 +406,8 @@ public void printBitmap(final String jobName, final Uri imageFile)
                 mAttributes = newPrintAttributes;
             }
 
-            private void cancelLoad() {
+            @DSSafe(DSCat.SAFE_LIST)
+        private void cancelLoad() {
                 synchronized (mLock) { // prevent race with set null below
                     if (mDecodeOptions != null) {
                         mDecodeOptions.requestCancelDecode();
@@ -405,7 +416,8 @@ public void printBitmap(final String jobName, final Uri imageFile)
                 }
             }
 
-            @Override
+            @DSSafe(DSCat.SAFE_LIST)
+        @Override
             public void onFinish() {
                 super.onFinish();
                 cancelLoad();
@@ -482,6 +494,7 @@ public void printBitmap(final String jobName, final Uri imageFile)
      * @return the Bitmap
      * @throws FileNotFoundException if the Uri does not point to an image
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.881 -0400", hash_original_method = "E45D810E27DEB8EDDA67451B15978E84", hash_generated_method = "A5B6C243EF046598C8D2E0E941E8B4F5")
     
 private Bitmap loadConstrainedBitmap(Uri uri, int maxSideLength) throws FileNotFoundException {
@@ -534,6 +547,7 @@ private Bitmap loadConstrainedBitmap(Uri uri, int maxSideLength) throws FileNotF
      * Returns the bitmap from the given uri loaded using the given options.
      * Returns null on failure.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:18.887 -0400", hash_original_method = "D07BA372213C37876FFC4CE01F67E27E", hash_generated_method = "C7294A02A01D12F8A4E071D78384383D")
     
 private Bitmap loadBitmap(Uri uri, BitmapFactory.Options o) throws FileNotFoundException {

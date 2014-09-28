@@ -182,6 +182,7 @@ public void setViewBinder(ViewBinder viewBinder) {
      * @param v ImageView to receive an image
      * @param value the value retrieved from the cursor
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.643 -0500", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "A3BA9232B932A48C4241116FDADFE82E")
     
 public void setViewImage(ImageView v, String value) {
@@ -203,6 +204,7 @@ public void setViewImage(ImageView v, String value) {
      * @param v TextView to receive text
      * @param text the text to be set for the TextView
      */    
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.646 -0500", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "78A796D1AAAB9527A328641E2AF2A0ED")
     
 public void setViewText(TextView v, String text) {
@@ -293,6 +295,7 @@ public void setCursorToStringConverter(CursorToStringConverter cursorToStringCon
      *
      * @return a non-null CharSequence representing the cursor
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.657 -0500", hash_original_method = "600E1910E4ECD6C26E4D3B813A27ACFC", hash_generated_method = "92FBC115C9B18DFF04C67ACA9C6FAA42")
     
 @Override
@@ -313,7 +316,7 @@ public void setCursorToStringConverter(CursorToStringConverter cursorToStringCon
      * @param from the Strings naming the columns of interest
      */
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.659 -0500", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "F6BB161E6EF8993E01BF9BFC3DEBA729")
     
 private void findColumns(String[] from) {
@@ -331,6 +334,7 @@ private void findColumns(String[] from) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.662 -0500", hash_original_method = "F69CFA3E437766E0BB7C3F894D67D08E", hash_generated_method = "6CACD6A14D6F9DF0C686D3123B833DE9")
     
 @Override

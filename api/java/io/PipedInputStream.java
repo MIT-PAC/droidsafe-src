@@ -185,7 +185,7 @@ synchronized void establishConnection() throws IOException {
      *             stream is no longer alive.
      */
     @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.863 -0500", hash_original_method = "2CE52A22634017D3B9A1E29444B8338A", hash_generated_method = "6B35C78925AC44ADD51236A6E5FEBB2D")
     
 @Override

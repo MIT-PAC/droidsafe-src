@@ -310,7 +310,8 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
         
 public AmsTask(Activity activity, Handler handler, AccountManagerCallback<Bundle> callback) {
             super(new Callable<Bundle>() {
-                public Bundle call() throws Exception {
+                @DSSafe(DSCat.SAFE_LIST)
+            public Bundle call() throws Exception {
                     throw new IllegalStateException("this should never be called");
                 }
             });
@@ -473,7 +474,8 @@ public void onError(int code, String message) {
         
 public BaseFutureTask(Handler handler) {
             super(new Callable<T>() {
-                public T call() throws Exception {
+                @DSSafe(DSCat.SAFE_LIST)
+            public T call() throws Exception {
                     throw new IllegalStateException("this should never be called");
                 }
             });
@@ -783,7 +785,7 @@ public void doWork() throws RemoteException {
                         }}, mHandler);
         }
 
-        @DSSpec(DSCat.SPEC_OTHERS)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.247 -0500", hash_original_method = "770A26A7F965A1883CF21DF75B7155CF", hash_generated_method = "789EE338FABA28369118D635F320E85B")
         
 public void run(AccountManagerFuture<Bundle> future) {

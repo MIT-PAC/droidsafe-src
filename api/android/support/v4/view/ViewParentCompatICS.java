@@ -27,6 +27,7 @@ import android.view.accessibility.AccessibilityEvent;
  * ICS-specific ViewParent API implementation.
  */
 public class ViewParentCompatICS {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:06.643 -0400", hash_original_method = "3029085C9DDF5696641D117A68420012", hash_generated_method = "38EDE3D067B408C1487DFC71A274F627")
     
 public static boolean requestSendAccessibilityEvent(

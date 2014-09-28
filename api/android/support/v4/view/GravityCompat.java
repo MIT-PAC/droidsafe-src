@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package android.support.v4.view;
 
 import droidsafe.annotations.*;
@@ -37,6 +36,7 @@ public class GravityCompat {
     }
 
     static class GravityCompatImplBase implements GravityCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getAbsoluteGravity(int gravity, int layoutDirection) {
             // Just strip off the relative bit to get LEFT/RIGHT.
@@ -55,6 +55,7 @@ public class GravityCompat {
             Gravity.apply(gravity, w, h, container, xAdj, yAdj, outRect);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void applyDisplay(int gravity, Rect display, Rect inoutObj,
                 int layoutDirection) {
@@ -63,6 +64,7 @@ public class GravityCompat {
     }
 
     static class GravityCompatImplJellybeanMr1 implements GravityCompatImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getAbsoluteGravity(int gravity, int layoutDirection) {
             return GravityCompatJellybeanMr1.getAbsoluteGravity(gravity, layoutDirection);
@@ -81,13 +83,13 @@ public class GravityCompat {
                     layoutDirection);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void applyDisplay(int gravity, Rect display, Rect inoutObj, int layoutDirection) {
             GravityCompatJellybeanMr1.applyDisplay(gravity, display, inoutObj, layoutDirection);
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.162 -0400", hash_original_field = "6FB04C8EF0021B9B20BBE605F60E55DE", hash_generated_field = "2A28AAC9A7DFC53CC9D75BB43432ECD5")
-
 
     static  GravityCompatImpl IMPL;
     static {
@@ -204,6 +206,7 @@ public static void applyDisplay(int gravity, Rect display, Rect inoutObj, int la
      * @param layoutDirection The layout direction.
      * @return gravity converted to absolute (horizontal) values.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:00.203 -0400", hash_original_method = "DF2E98D464BC3D298CD3C59AC14EEDAC", hash_generated_method = "6A552C14A36A4D4FCFD44E2C56891794")
         
 public static int getAbsoluteGravity(int gravity, int layoutDirection) {

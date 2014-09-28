@@ -112,7 +112,7 @@ public static Logger getAnonymousLogger(String resourceBundleName) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.314 -0500", hash_original_method = "CCC6971033B3E92E36973DF1CB62F316", hash_generated_method = "809F3C4D6A84AB87A94C2B953B2694E5")
     
 public static Logger getLogger(String name) {
@@ -137,7 +137,7 @@ public static Logger getLogger(String name) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.318 -0500", hash_original_method = "FF215F56C3D4087B17E522721EB89987", hash_generated_method = "42AB9F239C505B8562FF36527980C955")
     
 public static Logger getLogger(String name, String resourceBundleName) {
@@ -684,6 +684,7 @@ private boolean internalIsLoggable(Level l) {
      * @return {@code true} if this logger will actually log this level,
      *         otherwise {@code false}.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.361 -0500", hash_original_method = "904F2CC481716D2A69398E078779E717", hash_generated_method = "8F13C7ACEBB1838E2FA30B8D5C4BDCE9")
@@ -907,6 +908,7 @@ public void throwing(String sourceClass, String sourceMethod,
      * @param msg
      *            the message to log.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.382 -0500", hash_original_method = "39E3D8B91640D479DA185B55C5F18ED7", hash_generated_method = "7576FD4BCC2BAD5942C013686FA59187")
@@ -922,6 +924,7 @@ public void severe(String msg) {
      * @param msg
      *            the message to log.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.384 -0500", hash_original_method = "9B873E08976E1118628273040FB34C9B", hash_generated_method = "95A46BB0521C23AE9351F9074AC2996D")
@@ -937,6 +940,7 @@ public void warning(String msg) {
      * @param msg
      *            the message to log.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.386 -0500", hash_original_method = "A33A2B3E69AB56EF6FB383879DD3AA60", hash_generated_method = "6BCA1CC837AF57F6E0DB13ECBDB19DD1")
@@ -967,6 +971,7 @@ public void config(String msg) {
      * @param msg
      *            the message to log.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.392 -0500", hash_original_method = "F6C08EB4A1B7FF590904F23378CA203B", hash_generated_method = "A9A1537EEBF808682B54FD1DEAED5C76")
@@ -1014,6 +1019,7 @@ public void finest(String msg) {
      * @param msg
      *            the message to log.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.398 -0500", hash_original_method = "0FA200A9B65429375731C8E52EE8CDC0", hash_generated_method = "07F34EE4496765EAD403180F4AE8BD23")
@@ -1036,6 +1042,7 @@ public void log(Level logLevel, String msg) {
      * @param param
      *            the parameter associated with the event that is logged.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.400 -0500", hash_original_method = "D979CE3AE03009B0125FD7C45D827AC8", hash_generated_method = "1E4E1EF5EF8DFF2DEE554DF5C1CB64B6")
@@ -1063,6 +1070,7 @@ public void log(Level logLevel, String msg, Object param) {
      * @param params
      *            the parameter array associated with the event that is logged.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.403 -0500", hash_original_method = "ABCEA4F06C4D017F6CAEB91F3D863D84", hash_generated_method = "FB5F5EF61221C4C9234FA7D9CD6A9D99")
@@ -1091,6 +1099,7 @@ public void log(Level logLevel, String msg, Object[] params) {
      *            the {@code Throwable} object associated with the event that is
      *            logged.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.406 -0500", hash_original_method = "716D8C8B34FB6F1C9D3989DC5260DE1A", hash_generated_method = "62A0660D3E2EE0B3CF359C31CD341872")
@@ -1122,6 +1131,7 @@ public void log(Level logLevel, String msg, Throwable thrown) {
      * @param record
      *            the log record to be logged.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.409 -0500", hash_original_method = "C1F56DDBB680AA085D861AC11B4970DE", hash_generated_method = "F22B02776DB70F1C85585159D2F9449E")

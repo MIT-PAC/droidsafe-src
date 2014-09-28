@@ -226,7 +226,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         return sslParameters.getUseClientMode();
     }
 
-    @DSSpec(DSCat.IO)
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.919 -0500", hash_original_method = "99974EADFE56BC36D8DB1EC28EC422DC", hash_generated_method = "99EF77F3105C5D5B8A0321C96B886399")
     
 @Override

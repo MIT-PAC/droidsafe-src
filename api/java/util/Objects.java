@@ -74,7 +74,8 @@ public static boolean deepEquals(Object a, Object b) {
   /**
    * Null-safe equivalent of {@code a.equals(b)}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:00.118 -0400", hash_original_method = "7F4DF225AC904C331E7FB492360A1E07", hash_generated_method = "E98A7781B5E7B24EFCC62BA6AB0985E3")
+  @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:00.118 -0400", hash_original_method = "7F4DF225AC904C331E7FB492360A1E07", hash_generated_method = "E98A7781B5E7B24EFCC62BA6AB0985E3")
     
 public static boolean equals(Object a, Object b) {
     return (a == null) ? (b == null) : a.equals(b);

@@ -79,6 +79,7 @@ private synchronized final void ensureReadParams() {
         fetchedParams = true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.840 -0400", hash_original_method = "A8E76146701BD1A403D26A7E710DA7A6", hash_generated_method = "5D90346649FAC4EFA76AFE0DDAA4AD0E")
     
 @Override
@@ -87,6 +88,7 @@ private synchronized final void ensureReadParams() {
         return g;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.841 -0400", hash_original_method = "352ED2F1B0F40E79B0935D6DDB9366D4", hash_generated_method = "D62B8F957E4B7FA969E5A42F756E07ED")
     
 @Override
@@ -95,6 +97,7 @@ private synchronized final void ensureReadParams() {
         return p;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.841 -0400", hash_original_method = "A9560A55B69502543DA642CFBA58C5F5", hash_generated_method = "1D523D782981C94C5135AE61C0D9FE13")
     
 @Override
@@ -117,6 +120,7 @@ BigInteger getX() {
         return x;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.842 -0400", hash_original_method = "88BBECE09CFCD0C903B9A63F26FB4290", hash_generated_method = "4BCEF8510E87705E36E8F26C57E0BF6D")
     
 @Override

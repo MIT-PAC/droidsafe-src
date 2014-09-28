@@ -136,6 +136,7 @@ public final class Subject implements Serializable {
     }
 
     // instantiates a new context and passes it to AccessController
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.935 -0400", hash_original_method = "A33CBDD8BC9D958C31BE9E7737E61E38", hash_generated_method = "BFFE29E4C8FF9DE59909AC2C5C51AF44")
     
 @SuppressWarnings("unchecked")
@@ -222,6 +223,7 @@ public final class Subject implements Serializable {
     }
 
     // instantiates a new context and passes it to AccessController
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.937 -0400", hash_original_method = "F403058294F81F85A4D22425610A5032", hash_generated_method = "7E737254DAD158B11110CA6EDE0E3462")
     
 @SuppressWarnings("unchecked")
@@ -241,7 +243,8 @@ public final class Subject implements Serializable {
         }
 
         PrivilegedAction<AccessControlContext> dccAction = new PrivilegedAction<AccessControlContext>() {
-            public AccessControlContext run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public AccessControlContext run() {
                 return new AccessControlContext(context, combiner);
             }
         };
@@ -269,7 +272,8 @@ public static Subject getSubject(final AccessControlContext context) {
             throw new NullPointerException("auth.09"); //$NON-NLS-1$
         }
         PrivilegedAction<DomainCombiner> action = new PrivilegedAction<DomainCombiner>() {
-            public DomainCombiner run() {
+            @DSSafe(DSCat.SAFE_LIST)
+        public DomainCombiner run() {
                 return context.getDomainCombiner();
             }
         };
@@ -282,6 +286,7 @@ public static Subject getSubject(final AccessControlContext context) {
     }
 
     // checks passed permission
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.947 -0400", hash_original_method = "68C8C533405D4A524F1441177C1DCFFF", hash_generated_method = "05244F5C4A28D3425C129B2DE91455D9")
     
 private static void checkPermission(Permission p) {
@@ -362,6 +367,7 @@ public Subject(boolean readOnly, Set<? extends Principal> subjPrincipals,
      * @return {@code true} if the specified {@code Subject} is equal to this
      *         one.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.938 -0400", hash_original_method = "9A73CF0E6C91EA95CE15AF8BB9E040DF", hash_generated_method = "8A8BF022A29E9018EE40C18E3BC669CF")
     
 @Override
@@ -390,6 +396,7 @@ public Subject(boolean readOnly, Set<? extends Principal> subjPrincipals,
      *
      * @return this {@code Subject}'s {@link Principal}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.939 -0400", hash_original_method = "CE83A4A49B82D71D3046E9B4674B5C53", hash_generated_method = "F86211B5BD9C0EBADDE671FF9A7B45A0")
     
 public Set<Principal> getPrincipals() {
@@ -407,6 +414,7 @@ public Set<Principal> getPrincipals() {
      *         returned set of {@code Principal}s do not affect this {@code
      *         Subject}'s set.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public <T extends Principal> Set<T> getPrincipals(Class<T> c) {
         return ((SecureSet<Principal>) principals).get(c);
     }
@@ -562,6 +570,7 @@ private void writeObject(ObjectOutputStream out) throws IOException {
     }
 
     // FIXME is used only in two places. remove?
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.948 -0400", hash_original_method = "FD52BC15183885BA696BA24DDFFEB7B2", hash_generated_method = "282850BF179216CBE6D7B71CE1E1AF0B")
     
 private void checkState() {
@@ -622,6 +631,7 @@ protected SecureSet(AuthPermission perm, Collection<? extends SST> s) {
         }
 
         // verifies new set element
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.953 -0400", hash_original_method = "C2DA609635F1136D9CF304EAF89F8F65", hash_generated_method = "ABE19008878854AAF43F1EF070AD876F")
         
 private void verifyElement(Object o) {
@@ -709,6 +719,8 @@ private void verifyElement(Object o) {
          * return set with elements that are instances or subclasses of the
          * specified class
          */
+        @DSSource({DSSourceKind.SECURITY_INFO})
+        @DSSafe(DSCat.SAFE_LIST)
         protected final <E> Set<E> get(final Class<E> c) {
 
             if (c == null) {

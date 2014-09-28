@@ -54,6 +54,7 @@ public CountingOutputStream( OutputStream out ) {
      * @param n number of bytes to be written to the stream
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.692 -0400", hash_original_method = "06A3A1AA076BADB04E4D922D26953A96", hash_generated_method = "F3F51984BE10A496D3376E237FC9D1AB")
     
 @Override
@@ -112,6 +113,7 @@ public int resetCount() {
      * @return the number of bytes accumulated
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.694 -0400", hash_original_method = "D4B641936093CD491A905A89AC9170C1", hash_generated_method = "0B2C938D13BA6DA3FD429D302C917749")
     
 public synchronized long getByteCount() {
@@ -128,6 +130,7 @@ public synchronized long getByteCount() {
      * @return the count previous to resetting
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.695 -0400", hash_original_method = "B4FA3AE06204AB7289DB84225F541AF1", hash_generated_method = "ADC309CA8828389521AD207F87DEF6F3")
     
 public synchronized long resetByteCount() {

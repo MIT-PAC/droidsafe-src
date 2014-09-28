@@ -125,6 +125,7 @@ PrivateCredentialPermission(String credentialClass, Set<Principal> principals) {
      * name has a correct format: CredentialClass 1*(PrincipalClass
      * "PrincipalName")
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.215 -0400", hash_original_method = "F5A0E19D9D1F2531226B3B43BC9AECC5", hash_generated_method = "64EE037A78D29A1E2753014EACA4C479")
     
 private void initTargetName(String name) {
@@ -242,6 +243,7 @@ public String[][] getPrincipals() {
      *
      * @return the class name of the credential associated with this permission.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.217 -0400", hash_original_method = "92595E1B074EEA1AC40006DE5D65F330", hash_generated_method = "90E6091A3297F7CC78D7A2585E8260BA")
     
 public String getCredentialClass() {
@@ -260,6 +262,7 @@ public String getCredentialClass() {
         return getCredentialClass().hashCode() + hash;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.218 -0400", hash_original_method = "9674C8E6D6A6C595215B15DDC108D395", hash_generated_method = "CBC429B90EF1C5A3BF74420E0A2E0589")
     
 @Override
@@ -326,6 +329,7 @@ public String getCredentialClass() {
      * Returns true if the two arrays have the same length, and every member of
      * one array is contained in another array
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.220 -0400", hash_original_method = "F2C311997B1BD2792B1132EA724E574F", hash_generated_method = "38C9B028E6E8B805F65CD5A833DC0539")
     
 private boolean sameMembers(Object[] ar1, Object[] ar2, int length) {
@@ -390,6 +394,7 @@ CredOwner(String principalClass, String principalName) {
         }
 
         // Checks if this CredOwner implies the specified Object. 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.225 -0400", hash_original_method = "9F0EDFA95BE2D4CD4833B8DA622FEBD9", hash_generated_method = "9F0EDFA95BE2D4CD4833B8DA622FEBD9")
         
 boolean implies(Object obj) {
@@ -408,6 +413,7 @@ boolean implies(Object obj) {
         }
 
         // Checks two CredOwner objects for equality. 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.225 -0400", hash_original_method = "EF17C73AD8F7227B2959368EE77536F2", hash_generated_method = "2B41756CE1DF0075C0FE638DB686FF70")
         
 @Override

@@ -194,6 +194,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return preference.getView(convertView, parent);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.986 -0500", hash_original_method = "ED75A4DEF716F8048DFD61CCEF0A4510", hash_generated_method = "1EF13F6984EE92A11EDB6A7242B66E97")
     
 @Override
@@ -202,6 +203,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return this.getItem(position).isSelectable();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.988 -0500", hash_original_method = "19954EF3B060E791A26DF845CEE18A7B", hash_generated_method = "1EFB24A37727A528A1C712837625FE3B")
     
 @Override

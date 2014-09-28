@@ -16,7 +16,8 @@ public PrivilegedActionException(Exception ex) {
         super(ex);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.046 -0500", hash_original_method = "96C5131DB95D0ADB8B79CD396371D505", hash_generated_method = "62075EAC3CC2E3C979959E7B4E819281")
     
 public Exception getException() {

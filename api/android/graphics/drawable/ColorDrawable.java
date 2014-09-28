@@ -191,6 +191,7 @@ public int getOpacity() {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.392 -0500", hash_original_method = "4A867A0EE58AB54D1A1755C00D03A40D", hash_generated_method = "D328269FA4DE1E27DC0EA952FFEBF9D7")
     
 @Override

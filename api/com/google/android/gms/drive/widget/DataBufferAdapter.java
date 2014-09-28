@@ -126,7 +126,8 @@ public DataBufferAdapter(Context  r1, int  i0, DataBuffer[]  r2)
         this.LV = null;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.557 -0400", hash_original_method = "AD4DF83DE92D9CD449F4F0B0A8006189", hash_generated_method = "04675B154620A48FFCB9420D9C59F84C")
     
 public void append(DataBuffer  r1)
@@ -140,7 +141,7 @@ public void append(DataBuffer  r1)
         }
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.562 -0400", hash_original_method = "3E4801BA7E37546C296353C9FD28009C", hash_generated_method = "2224F52B9031D621DEC16E59441543AB")
     
 public void clear()
@@ -164,6 +165,7 @@ public void clear()
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.566 -0400", hash_original_method = "5D3FE53CD63696029740B9C7BBD9A29E", hash_generated_method = "E3DACA7BC2A6C9044D068A996474E547")
     
 public void notifyDataSetChanged()
@@ -189,6 +191,8 @@ public Context getContext()
         return mContext;
     }
 
+    @DSSource({DSSourceKind.DATABASE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.577 -0400", hash_original_method = "65BD61761E4E2925D75936086459838F", hash_generated_method = "8FF634C97FFA366B2A6FD50D52C71ADB")
     
 public int getCount()
@@ -205,6 +209,8 @@ public int getCount()
         return i0;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.582 -0400", hash_original_method = "23EA664A10DEDD5FFC56AFAFD75D95C6", hash_generated_method = "1B17C607B207FB15B2192B63933B4B4D")
     
 public Object getItem(int  i0) throws android.database.CursorIndexOutOfBoundsException
@@ -231,6 +237,8 @@ public Object getItem(int  i0) throws android.database.CursorIndexOutOfBoundsExc
         throw new CursorIndexOutOfBoundsException(i0, this.getCount());
     }
 
+    @DSSource({DSSourceKind.DATABASE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.586 -0400", hash_original_method = "680BCDE07EC38134C41F09798364548A", hash_generated_method = "42D13A05946A243693FC1402B05AEF47")
     
 public long getItemId(int  i0)
@@ -279,6 +287,7 @@ private View a(int  i0, View  r1, ViewGroup  r2, int  i1)
         return r3;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.596 -0400", hash_original_method = "C504C7C2DA2504C1080738D93F8BCC68", hash_generated_method = "8E86602D3B2DA3E75B98A697FF67B65B")
     
 public View getView(int  i0, View  r1, ViewGroup  r2)
@@ -287,6 +296,8 @@ public View getView(int  i0, View  r1, ViewGroup  r2)
         return this.a(i0, r1, r2, LR);
     }
 
+    @DSSource({DSSourceKind.DATABASE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:49.600 -0400", hash_original_method = "E78BF4A16CE324ED28F4ABB354455F58", hash_generated_method = "A69606443145F79A19AF1EBBBAA4C526")
     
 public View getDropDownView(int  i0, View  r1, ViewGroup  r2)

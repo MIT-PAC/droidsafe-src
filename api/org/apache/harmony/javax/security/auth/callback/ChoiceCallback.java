@@ -22,31 +22,23 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import java.io.Serializable;
 
-
-
 public class ChoiceCallback implements Callback, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.996 -0400", hash_original_field = "D5AA81EF30F3D1B20BEC310DCCEA9F89", hash_generated_field = "45005D00672054049C72A6B224F83A29")
-
 
     private static final long serialVersionUID = -3975664071579892167L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.997 -0400", hash_original_field = "D2AB274F69020A37003CA8E48E45D03C", hash_generated_field = "08A3646B678A949962FDDEB246CB921B")
 
-
     private int defaultChoice;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.998 -0400", hash_original_field = "E39008C8C5530C4D0AB35F720027C03F", hash_generated_field = "73A8FB617E5E6FEE69E01BC210863E4D")
-
 
     private String prompt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.998 -0400", hash_original_field = "41ACF3ADD3DF525299741F431CA8CE6C", hash_generated_field = "7F5C79A334009FA9B56C9C5E97E310EF")
 
-
     private boolean multipleSelectionsAllowed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.999 -0400", hash_original_field = "F7541E064B67E6200FE2DDA0D76B470F", hash_generated_field = "532265EEBC91FD86FB045A3ABC7569AF")
 
-
     private String[] choices;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:08.999 -0400", hash_original_field = "EE1AA5D41DC680973225DFB10236A201", hash_generated_field = "A214636FDEE520BEFBE5AB9BEBCAB6F6")
-
 
     private int[] selections;
 
@@ -61,6 +53,7 @@ public ChoiceCallback(String prompt, String[] choices, int defaultChoice,
         this.multipleSelectionsAllowed = multipleSelectionsAllowed;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.000 -0400", hash_original_method = "029EDADAEDA2AFC5DBDBABFA218BA091", hash_generated_method = "26CD81BC0804DD96242D53AC771B1F1E")
     
 private void setChoices(String[] choices) {
@@ -77,6 +70,7 @@ private void setChoices(String[] choices) {
 
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.000 -0400", hash_original_method = "698D470B766BBB13E508EDEAA9F21795", hash_generated_method = "2E1AE1532527C2F20C18C9014EA808B3")
     
 private void setPrompt(String prompt) {
@@ -86,6 +80,7 @@ private void setPrompt(String prompt) {
         this.prompt = prompt;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.001 -0400", hash_original_method = "025CDC269FD5E1E4B569BFF83796DB74", hash_generated_method = "151AC78B034D2D8C8B6141685330F60F")
     
 private void setDefaultChoice(int defaultChoice) {
@@ -101,6 +96,7 @@ public boolean allowMultipleSelections() {
         return multipleSelectionsAllowed;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.003 -0400", hash_original_method = "FF74700781D07E0EF995BFE9E824CB43", hash_generated_method = "56907F71F2E0193931EDC8D69EDD884A")
     
 public String[] getChoices() {
@@ -119,6 +115,7 @@ public String getPrompt() {
         return prompt;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.004 -0400", hash_original_method = "995CB5E79E79C6A3551F8C82F3149623", hash_generated_method = "E5ED818407341CB56D09D6418F24D6F7")
     
 public int[] getSelectedIndexes() {

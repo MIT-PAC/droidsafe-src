@@ -62,6 +62,7 @@ public class TaggedIOException extends IOExceptionWithCause {
      * @return {@code true} if the throwable has the specified tag,
      * otherwise {@code false}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.694 -0400", hash_original_method = "63E0E48FCFAD3B9CDC2B7151B763236E", hash_generated_method = "BBABA609D970B3C755CFB46C4556000E")
     
 public static boolean isTaggedWith(Throwable throwable, Object tag) {
@@ -92,6 +93,7 @@ public static boolean isTaggedWith(Throwable throwable, Object tag) {
      * @param tag tag object
      * @throws IOException original exception from the tagged decorator, if any
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:57.694 -0400", hash_original_method = "6F0D83A0421B43B98C64CC4ED5F9276C", hash_generated_method = "C0143962DB8A2834BF4ADCA279761328")
     
 public static void throwCauseIfTaggedWith(Throwable throwable, Object tag)

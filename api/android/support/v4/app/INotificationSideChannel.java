@@ -24,7 +24,8 @@ private static final java.lang.String DESCRIPTOR = "android.support.v4.app.INoti
  * Cast an IBinder object into an android.support.v4.app.INotificationSideChannel interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.254 -0400", hash_original_method = "15AD5F2E186907E0C05A7D99A8035997", hash_generated_method = "4E27867674AF0763BCC9E8D6AF398E78")
+@DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:00.254 -0400", hash_original_method = "15AD5F2E186907E0C05A7D99A8035997", hash_generated_method = "4E27867674AF0763BCC9E8D6AF398E78")
         
 public static android.support.v4.app.INotificationSideChannel asInterface(android.os.IBinder obj)
 {
@@ -89,7 +90,8 @@ _data.recycle();
 /**
      * Cancel an already-notified notification.
      */
-@Override public void cancel(java.lang.String packageName, int id, java.lang.String tag) throws android.os.RemoteException
+@DSSafe(DSCat.SAFE_LIST)
+            @Override public void cancel(java.lang.String packageName, int id, java.lang.String tag) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -106,7 +108,8 @@ _data.recycle();
 /**
      * Cancel all notifications for the given package.
      */
-@Override public void cancelAll(java.lang.String packageName) throws android.os.RemoteException
+@DSSafe(DSCat.SAFE_LIST)
+            @Override public void cancelAll(java.lang.String packageName) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

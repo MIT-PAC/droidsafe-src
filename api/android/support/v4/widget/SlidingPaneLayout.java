@@ -223,12 +223,15 @@ private static boolean viewIsOpaque(View v) {
      * of the listener methods you can extend this instead of implement the full interface.
      */
     public static class SimplePanelSlideListener implements PanelSlideListener {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPanelSlide(View panel, float slideOffset) {
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPanelOpened(View panel) {
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onPanelClosed(View panel) {
         }
@@ -341,6 +344,7 @@ public void setPanelSlideListener(PanelSlideListener listener) {
         mPanelSlideListener = listener;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.239 -0400", hash_original_method = "9200384BFC8C572C67BB35F0E383B940", hash_generated_method = "9200384BFC8C572C67BB35F0E383B940")
         
 void dispatchOnPanelSlide(View panel) {
@@ -349,6 +353,7 @@ void dispatchOnPanelSlide(View panel) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.246 -0400", hash_original_method = "076B596B953AAB890ED85CFE265CED71", hash_generated_method = "076B596B953AAB890ED85CFE265CED71")
         
 void dispatchOnPanelOpened(View panel) {
@@ -358,6 +363,7 @@ void dispatchOnPanelOpened(View panel) {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.252 -0400", hash_original_method = "206FA8CECF0D7215420AE12C4F2D65AB", hash_generated_method = "206FA8CECF0D7215420AE12C4F2D65AB")
         
 void dispatchOnPanelClosed(View panel) {
@@ -367,6 +373,7 @@ void dispatchOnPanelClosed(View panel) {
         sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.087 -0400", hash_original_method = "03B83C7D6245A99096FE1BE44F2A07C1", hash_generated_method = "A72AFF2A0EDFC8D37C3AF2331CEEA49C")
         
 void updateObscuredViewsVisibility(View panel) {
@@ -415,6 +422,7 @@ void updateObscuredViewsVisibility(View panel) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.272 -0400", hash_original_method = "5CE7A5A3A8529E998FC7D6BAD2B14C28", hash_generated_method = "5CE7A5A3A8529E998FC7D6BAD2B14C28")
         
 void setAllChildrenVisible() {
@@ -885,6 +893,7 @@ void setAllChildrenVisible() {
         return wantTouchEvents;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.382 -0400", hash_original_method = "F136A81A04E7B2D21EBF2FF80CD7385C", hash_generated_method = "42D65E121A8CC492DE11BFFB97DE5902")
         
 private boolean closePane(View pane, int initialVelocity) {
@@ -895,6 +904,7 @@ private boolean closePane(View pane, int initialVelocity) {
         return false;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.388 -0400", hash_original_method = "8A9BBA94E1FACEA0CE51E7A63CDD39D1", hash_generated_method = "9F3BC672FE5F9DC7ABFC3F61A4CBFCC9")
         
 private boolean openPane(View pane, int initialVelocity) {
@@ -921,6 +931,7 @@ private boolean openPane(View pane, int initialVelocity) {
      *
      * @return true if the pane was slideable and is now open/in the process of opening
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.398 -0400", hash_original_method = "A42F5DC1E44356EC0C5F79607264EF8B", hash_generated_method = "B0C4D7DE38D452009CA68C00585EEB53")
         
 public boolean openPane() {
@@ -943,6 +954,7 @@ public boolean openPane() {
      *
      * @return true if the pane was slideable and is now closed/in the process of closing
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.408 -0400", hash_original_method = "62B85591A7B3309A9CD85088CEB124AC", hash_generated_method = "C1AE630AC2868613EC7BA435F4134C5B")
         
 public boolean closePane() {
@@ -955,6 +967,7 @@ public boolean closePane() {
      *
      * @return true if sliding panels are completely open
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.413 -0400", hash_original_method = "847FE5B05BC94AAC0D4FED725CFC85F0", hash_generated_method = "411B7724FEC90EAC3AC80C1EA40FC524")
         
 public boolean isOpen() {
@@ -978,12 +991,14 @@ public boolean isOpen() {
      *
      * @return true if content in this layout can be slid open and closed
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.422 -0400", hash_original_method = "52CB6F0E07109B0C7A4E78DE1CE0C813", hash_generated_method = "B472B0BEEAC92000D5C4E06B83F4F1AD")
         
 public boolean isSlideable() {
         return mCanSlide;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.246 -0400", hash_original_method = "3BC9EDE7A074F5F60ADC077E7EC44EAD", hash_generated_method = "6CF43280D212D2F6CD0D96E2437B0483")
         
 private void onPanelDragged(int newLeft) {
@@ -1014,6 +1029,7 @@ private void onPanelDragged(int newLeft) {
         dispatchOnPanelSlide(mSlideableView);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.438 -0400", hash_original_method = "ED528DA2E74DBEE272DB6BCEC84A259A", hash_generated_method = "432AED40A82B4C0358EC193006786AD9")
         
 private void dimChildView(View v, float mag, int fadeColor) {
@@ -1089,6 +1105,7 @@ private void dimChildView(View v, float mag, int fadeColor) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.451 -0400", hash_original_method = "4B5342F4AA278236A87AA8C27A4B1283", hash_generated_method = "905D3D8CFF7E1B8CAE8753EE8A1C3620")
         
 private void invalidateChildRegion(View v) {
@@ -1101,6 +1118,7 @@ private void invalidateChildRegion(View v) {
      * @param slideOffset position to animate to
      * @param velocity initial velocity in case of fling, or 0.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.275 -0400", hash_original_method = "163EDC5D069EC6088E356FC7F8A55688", hash_generated_method = "4A155CCF6C86C02F3661264C45E30ABF")
         
 boolean smoothSlideTo(float slideOffset, int velocity) {
@@ -1151,6 +1169,7 @@ boolean smoothSlideTo(float slideOffset, int velocity) {
      *
      * @param d drawable to use as a shadow
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.286 -0400", hash_original_method = "D456004BC6B64C61E0C2D4C192C0A2BD", hash_generated_method = "2278A2DECDFA2B83E54623BF269E5409")
         
 @Deprecated
@@ -1209,6 +1228,7 @@ boolean smoothSlideTo(float slideOffset, int velocity) {
         shadowDrawable.draw(c);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.326 -0400", hash_original_method = "F06380959A4CF712885BA2D2A3C742C2", hash_generated_method = "90FA20CD11A41F8F609CAADA2F1F96FB")
         
 private void parallaxOtherViews(float slideOffset) {
@@ -1271,6 +1291,7 @@ protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
         return checkV && ViewCompat.canScrollHorizontally(v, (isLayoutRtlSupport() ? dx : -dx));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:44:03.499 -0400", hash_original_method = "56ED602BC0E5F7530318A3CD57B3DF74", hash_generated_method = "56ED602BC0E5F7530318A3CD57B3DF74")
         
 boolean isDimmed(View child) {
@@ -1343,6 +1364,7 @@ boolean isDimmed(View child) {
 
     private class DragHelperCallback extends ViewDragHelper.Callback {
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean tryCaptureView(View child, int pointerId) {
             if (mIsUnableToDrag) {
@@ -1352,6 +1374,7 @@ boolean isDimmed(View child) {
             return ((LayoutParams) child.getLayoutParams()).slideable;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onViewDragStateChanged(int state) {
             if (mDragHelper.getViewDragState() == ViewDragHelper.STATE_IDLE) {
@@ -1366,6 +1389,7 @@ boolean isDimmed(View child) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onViewCaptured(View capturedChild, int activePointerId) {
             // Make all child views visible in preparation for sliding things around
@@ -1378,6 +1402,7 @@ boolean isDimmed(View child) {
             invalidate();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onViewReleased(View releasedChild, float xvel, float yvel) {
             final LayoutParams lp = (LayoutParams) releasedChild.getLayoutParams();
@@ -1389,11 +1414,13 @@ boolean isDimmed(View child) {
             invalidate();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getViewHorizontalDragRange(View child) {
             return mSlideRange;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int clampViewPositionHorizontal(View child, int left, int dx) {
             final LayoutParams lp = (LayoutParams) mSlideableView.getLayoutParams();
@@ -1405,11 +1432,13 @@ boolean isDimmed(View child) {
             return newLeft;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onEdgeDragStarted(int edgeFlags, int pointerId) {
             mDragHelper.captureChildView(mSlideableView, pointerId);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.422 -0400", hash_original_method = "F82BAC20401988C1E724711CE338C27B", hash_generated_method = "7A2698997AEDE196F2F58AF0529D5C93")
             
 @Override
@@ -1483,6 +1512,7 @@ boolean isDimmed(View child) {
                 return new SavedState(in);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
@@ -1511,6 +1541,7 @@ boolean isDimmed(View child) {
     }
 
     static class SlidingPanelLayoutImplBase implements SlidingPanelLayoutImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         public void invalidateChildRegion(SlidingPaneLayout parent, View child) {
             ViewCompat.postInvalidateOnAnimation(parent, child.getLeft(), child.getTop(),
                     child.getRight(), child.getBottom());
@@ -1543,6 +1574,7 @@ boolean isDimmed(View child) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void invalidateChildRegion(SlidingPaneLayout parent, View child) {
             if (mGetDisplayList != null && mRecreateDisplayList != null) {
@@ -1562,6 +1594,7 @@ boolean isDimmed(View child) {
     }
 
     static class SlidingPanelLayoutImplJBMR1 extends SlidingPanelLayoutImplBase {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void invalidateChildRegion(SlidingPaneLayout parent, View child) {
             ViewCompat.setLayerPaint(child, ((LayoutParams) child.getLayoutParams()).dimPaint);
@@ -1571,6 +1604,7 @@ boolean isDimmed(View child) {
     class AccessibilityDelegate extends AccessibilityDelegateCompat {
         private final Rect mTmpRect = new Rect();
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCompat info) {
             final AccessibilityNodeInfoCompat superNode = AccessibilityNodeInfoCompat.obtain(info);
@@ -1600,6 +1634,7 @@ boolean isDimmed(View child) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
             super.onInitializeAccessibilityEvent(host, event);
@@ -1607,6 +1642,7 @@ boolean isDimmed(View child) {
             event.setClassName(SlidingPaneLayout.class.getName());
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                 AccessibilityEvent event) {
@@ -1616,6 +1652,7 @@ boolean isDimmed(View child) {
             return false;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean filter(View child) {
             return isDimmed(child);
         }
@@ -1625,6 +1662,7 @@ boolean isDimmed(View child) {
          * seem to be a few elements that are not easily cloneable using the underlying API.
          * Leave it private here as it's not general-purpose useful.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private void copyNodeInfoNoChildren(AccessibilityNodeInfoCompat dest,
                 AccessibilityNodeInfoCompat src) {
             final Rect rect = mTmpRect;
@@ -1678,6 +1716,7 @@ boolean isDimmed(View child) {
      *
      * @param d drawable to use as a shadow
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.297 -0400", hash_original_method = "D4CAE6D3200E06DBB37AA00E17AB84FC", hash_generated_method = "FEF97D2B2E5FEA2E54C583B8E30A3B5C")
         
 public void setShadowDrawableRight(Drawable d) {
@@ -1699,6 +1738,7 @@ public void setShadowResourceLeft(int resId) {
 
     private Drawable mShadowDrawableLeft;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.657 -0400", hash_original_method = "A54B147584955D06E420F90BEDB19470", hash_generated_method = "463406EACA32FD2D8126DA5174025851")
             
 private boolean isLayoutRtlSupport() {
@@ -1726,6 +1766,7 @@ public void setShadowResourceRight(int resId) {
      *
      * @param d drawable to use as a shadow
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:17:05.291 -0400", hash_original_method = "4D13455D83DCC855DC616F929F4D5E40", hash_generated_method = "6D552621362E8129440D54476180378C")
         
 public void setShadowDrawableLeft(Drawable d) {

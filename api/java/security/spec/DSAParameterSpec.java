@@ -61,6 +61,7 @@ public DSAParameterSpec(BigInteger p, BigInteger q, BigInteger g) {
      *
      * @return the base {@code g}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.922 -0400", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "FBDB40C3059FF68266098ECF54AD2FB6")
     
 public BigInteger getG() {
@@ -72,6 +73,7 @@ public BigInteger getG() {
      *
      * @return the prime {@code p}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.923 -0400", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "FA39994F0F567A64C38613032682F7D7")
     
 public BigInteger getP() {
@@ -83,6 +85,7 @@ public BigInteger getP() {
      *
      * @return the sub-prime {@code q}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:16.924 -0400", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "5A6F1A696B2A6370C598909B1A9A2601")
     
 public BigInteger getQ() {

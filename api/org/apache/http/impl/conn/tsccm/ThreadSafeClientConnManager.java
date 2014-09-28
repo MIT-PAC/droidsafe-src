@@ -132,7 +132,6 @@ public void abortRequest() {
             }
             
             @DSSource({DSSourceKind.NETWORK_INFORMATION})
-
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:39.882 -0400", hash_original_method = "6069BCC0A12724F289E46465DF3930EB", hash_generated_method = "D6BE21BEFC25F7F837BCD631BB872C2F")
             
@@ -227,6 +226,7 @@ public void releaseConnection(ManagedClientConnection conn, long validDuration, 
     }
 
     // non-javadoc, see interface ClientConnectionManager
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.023 -0500", hash_original_method = "5B798EEC995C1D56865AC1580F955080", hash_generated_method = "CEE6CB689845EDD2EA493E239BD36C85")
     
 public void shutdown() {

@@ -25,7 +25,7 @@ public CreateFileActivityBuilder()
 
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.118 -0400", hash_original_method = "3F6E085929D3BA98173A806E53461CA5", hash_generated_method = "2B82D4735DEAFF8208E156ADFC39239D")
     
 public CreateFileActivityBuilder setInitialContents(Contents  r1)
@@ -33,7 +33,7 @@ public CreateFileActivityBuilder setInitialContents(Contents  r1)
         return this;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.123 -0400", hash_original_method = "753F0487C7294C7A635426B14FEE062A", hash_generated_method = "EC9E049169AFA13AE9CF6D45D8ED138E")
     
 public CreateFileActivityBuilder setInitialMetadata(MetadataChangeSet  r1)
@@ -56,7 +56,7 @@ public CreateFileActivityBuilder setActivityTitle(String  r1)
         return this;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:48.135 -0400", hash_original_method = "977026DC499D9B58C254D9A55C8E22E0", hash_generated_method = "00654CD32CCFF190C869960713D147FF")
     
 public IntentSender build(GoogleApiClient  r1)

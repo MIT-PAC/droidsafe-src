@@ -180,7 +180,7 @@ private InputStream getDirectoryListing(File f) {
      *             if an IO error occurs
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.758 -0500", hash_original_method = "632E8A34CACC91F3F004CEC65E6938CD", hash_generated_method = "ED2775841B5F9FBCF8526B5C47FF6631")
     
 @Override

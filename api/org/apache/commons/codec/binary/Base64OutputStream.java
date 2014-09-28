@@ -120,7 +120,7 @@ public Base64OutputStream(OutputStream out, boolean doEncode, int lineLength, by
      *             if an I/O error occurs.
      */
     @DSSink({DSSinkKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-24 16:09:10.102 -0500", hash_original_method = "D38D28D8C40C92DB1F9D6C2E1B0DC8AA", hash_generated_method = "69B7B62672AB1D4CC5087EE6A83EB249")
     
 public void write(int i) throws IOException {

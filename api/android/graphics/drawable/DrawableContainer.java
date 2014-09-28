@@ -919,6 +919,7 @@ public synchronized boolean canConstantState() {
         
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.194 -0500", hash_original_method = "7CCE0C3F432CC06D16574FAD35E80869", hash_generated_method = "BFD7E791B9533CDD0EE1A0E4FCAFC20E")
     
 @Override

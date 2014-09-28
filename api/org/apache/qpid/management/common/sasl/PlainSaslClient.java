@@ -71,6 +71,7 @@ public PlainSaslClient(String authorizationID, CallbackHandler cbh) throws SaslE
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.332 -0400", hash_original_method = "64279EE9EE92C626800A17E7364AC837", hash_generated_method = "6BDE3D14ABE2AC713366E6AE1749B522")
     
 public byte[] evaluateChallenge(byte[] challenge) throws SaslException
@@ -118,6 +119,7 @@ public String getMechanismName()
         return "PLAIN";
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.334 -0400", hash_original_method = "C8D270CED56C1E00EC276007B15E00A7", hash_generated_method = "2B50E7AA1BE804AD046CB432D70E6989")
     
 public boolean hasInitialResponse()
@@ -183,6 +185,7 @@ public Object getNegotiatedProperty(String propName)
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.337 -0400", hash_original_method = "8D2DDD850DCF58F27A8499342A932184", hash_generated_method = "BC14B2796FB6AD7997671DB8E3D342C1")
     
 private void clearPassword()
@@ -212,6 +215,7 @@ protected void finalize()
         clearPassword();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:28.339 -0400", hash_original_method = "921D41C25A2FFEB5C3F6BA120EE50021", hash_generated_method = "1AB5C5436BB2E3FA8E74A6E8F7159B4D")
     
 private Object[] getUserInfo() throws SaslException

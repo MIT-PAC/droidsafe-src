@@ -169,6 +169,7 @@ public class FileSystemUtils {
      * @throws IOException if an error occurs when finding the free space
      * @since 1.2, enhanced OS support in 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:56.413 -0400", hash_original_method = "0D0D2FAADAF548F2FF72661A7907F188", hash_generated_method = "3A8E4EF20CBB7F065F94A974E4FB0BA2")
     
 public static long freeSpaceKb(String path) throws IOException {
@@ -200,6 +201,7 @@ public static long freeSpaceKb(String path) throws IOException {
      * @throws IOException if an error occurs when finding the free space
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:56.414 -0400", hash_original_method = "5423FB8AFED9E1B5F3184B921E9E3F36", hash_generated_method = "B7194734D9D643F6B9A3D4773FBE051B")
     
 public static long freeSpaceKb(String path, long timeout) throws IOException {
@@ -218,6 +220,7 @@ public static long freeSpaceKb(String path, long timeout) throws IOException {
      * @throws IOException if an error occurs when finding the free space
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:56.415 -0400", hash_original_method = "D9A32E80E4ED59FA929BDC4209C2457F", hash_generated_method = "75A3CE2AB5EBCE7A4F263D9790321343")
     
 public static long freeSpaceKb() throws IOException {
@@ -238,6 +241,7 @@ public static long freeSpaceKb() throws IOException {
      * @throws IOException if an error occurs when finding the free space
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:56.415 -0400", hash_original_method = "8F587A01B80DDA3C7D203EBD5F10C9EB", hash_generated_method = "0558DDE90C7DCDD03DD215D98F170BBD")
     
 public static long freeSpaceKb(long timeout) throws IOException {
@@ -305,6 +309,7 @@ long freeSpaceOS(String path, int os, boolean kb, long timeout) throws IOExcepti
      * @return the amount of free drive space on the drive
      * @throws IOException if an error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:56.417 -0400", hash_original_method = "97DC8BEF6DA4F2C77A7C47140A7E5DBB", hash_generated_method = "E5C9BEB5C08CF7BC7E37FD9017B6D1B3")
     
 long freeSpaceWindows(String path, long timeout) throws IOException {
@@ -343,6 +348,7 @@ long freeSpaceWindows(String path, long timeout) throws IOException {
      * @return the number of bytes
      * @throws IOException if an error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:56.418 -0400", hash_original_method = "BF05C25EF740B0B2989A55D0BCB5E47A", hash_generated_method = "41BBD58874EB33676CAB5C7BF3C43288")
     
 long parseDir(String line, String path) throws IOException {
@@ -459,6 +465,7 @@ long freeSpaceUnix(String path, boolean kb, boolean posix, long timeout) throws 
      * @return the number of bytes
      * @throws IOException if an error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:56.420 -0400", hash_original_method = "9B456979926FBEBDCE0D7990B1D4EAD2", hash_generated_method = "9B456979926FBEBDCE0D7990B1D4EAD2")
     
 long parseBytes(String freeSpace, String path) throws IOException {
@@ -489,6 +496,7 @@ long parseBytes(String freeSpace, String path) throws IOException {
      * @return the parsed data
      * @throws IOException if an error occurs
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:56.422 -0400", hash_original_method = "33C4C2C18C24F6A9AB6F6705D1C4986B", hash_generated_method = "F21A2971278C3B7FBBB3A74CBAFEF3A2")
     
 List<String> performCommand(String[] cmdAttribs, int max, long timeout) throws IOException {

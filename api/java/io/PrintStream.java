@@ -708,7 +708,7 @@ protected void setError() {
      * @param oneByte
      *            the byte to be written
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.109 -0500", hash_original_method = "18F006677191AEE023EC3E30B84DCBEE", hash_generated_method = "83A206AAFDBAE22539ADABBF4F92F72F")
     
@@ -779,6 +779,7 @@ public PrintStream append(CharSequence charSequence) {
      *             the length of {@code charSequence}.
      */
     
+    @DSSink({DSSinkKind.IO})
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.116 -0500", hash_original_method = "E6E1D45C488E30FA7AAEB51CD532F3E9", hash_generated_method = "2CCB3331F640FEC4F2ECC7BDFC23CD2A")
     

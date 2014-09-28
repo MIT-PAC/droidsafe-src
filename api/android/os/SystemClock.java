@@ -50,13 +50,13 @@ public static void sleep(long ms)
     }
     
     @DSComment("SystemClock only allows reading time")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.SPEC_OTHERS)
     public static long uptimeMillis() {
         return DSUtils.UNKNOWN_LONG;
     }
     
     @DSComment("SystemClock only allows reading time")
-    @DSSafe(DSCat.OS_GENERAL)
+    @DSSpec(DSCat.SPEC_OTHERS)
     public static long elapsedRealtime() {
         return DSUtils.UNKNOWN_LONG;
     }

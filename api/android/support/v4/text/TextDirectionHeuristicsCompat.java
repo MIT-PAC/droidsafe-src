@@ -16,7 +16,6 @@
 
 package android.support.v4.text;
 
-
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -63,6 +62,7 @@ public class TextDirectionHeuristicsCompat {
 
     private static final int STATE_UNKNOWN = 2;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.563 -0400", hash_original_method = "821E392DB1CF71B190514BB1D9F6B09D", hash_generated_method = "EF0ADF1CABEC1B95BE9EC94A6E546B68")
     
 private static int isRtlText(int directionality) {
@@ -77,6 +77,7 @@ private static int isRtlText(int directionality) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:20.568 -0400", hash_original_method = "5160D465A86981EEFCC72C5BA2038EBF", hash_generated_method = "A51FDB60044231B5C1D95A580B93872F")
     
 private static int isRtlTextOrFormat(int directionality) {
@@ -110,13 +111,16 @@ private static int isRtlTextOrFormat(int directionality) {
         /**
          * Return true if the default text direction is rtl.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         abstract protected boolean defaultIsRtl();
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isRtl(char[] array, int start, int count) {
             return isRtl(CharBuffer.wrap(array), start, count);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isRtl(CharSequence cs, int start, int count) {
             if (cs == null || start < 0 || count < 0 || cs.length() - count < start) {
@@ -128,6 +132,7 @@ private static int isRtlTextOrFormat(int directionality) {
             return doCheck(cs, start, count);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private boolean doCheck(CharSequence cs, int start, int count) {
             switch(mAlgorithm.checkRtl(cs, start, count)) {
                 case STATE_TRUE:
@@ -149,6 +154,7 @@ private static int isRtlTextOrFormat(int directionality) {
             mDefaultIsRtl = defaultIsRtl;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         protected boolean defaultIsRtl() {
             return mDefaultIsRtl;
@@ -170,6 +176,7 @@ private static int isRtlTextOrFormat(int directionality) {
      * direction. This is the standard Unicode Bidirectional algorithm.
      */
     private static class FirstStrong implements TextDirectionAlgorithm {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int checkRtl(CharSequence cs, int start, int count) {
             int result = STATE_UNKNOWN;
@@ -193,6 +200,7 @@ private static int isRtlTextOrFormat(int directionality) {
     private static class AnyStrong implements TextDirectionAlgorithm {
         private final boolean mLookForRtl;
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int checkRtl(CharSequence cs, int start, int count) {
             boolean haveUnlookedFor = false;
@@ -237,6 +245,7 @@ private static int isRtlTextOrFormat(int directionality) {
             super(null);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         protected boolean defaultIsRtl() {
             final int dir = TextUtilsCompat.getLayoutDirectionFromLocale(java.util.Locale.getDefault());

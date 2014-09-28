@@ -54,6 +54,7 @@ public final class PrintHelper {
      *
      * @return True if printing is supported.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:17.131 -0400", hash_original_method = "507B8E55BFEC88A5542BE95F01C3DF80", hash_generated_method = "88AFB6FC799C4050D8461190EE6BA5E9")
     
 public static boolean systemSupportsPrint() {
@@ -64,7 +65,6 @@ public static boolean systemSupportsPrint() {
         return false;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 10:08:17.122 -0400", hash_original_field = "1569E048FF58A1A3F740F7EDE6BEBB69", hash_generated_field = "1569E048FF58A1A3F740F7EDE6BEBB69")
-
 
     PrintHelperVersionImpl mImpl;
 
@@ -98,36 +98,44 @@ public static boolean systemSupportsPrint() {
         int mScaleMode = SCALE_MODE_FILL;
         int mColorMode = COLOR_MODE_COLOR;
         int mOrientation = ORIENTATION_LANDSCAPE;
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScaleMode(int scaleMode) {
             mScaleMode = scaleMode;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getColorMode() {
             return mColorMode;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setColorMode(int colorMode) {
             mColorMode = colorMode;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setOrientation(int orientation) { mOrientation = orientation; }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getOrientation() { return mOrientation; }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getScaleMode() {
             return mScaleMode;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void printBitmap(String jobName, Bitmap bitmap) {
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void printBitmap(String jobName, Uri imageFile) {
         }
@@ -143,41 +151,49 @@ public static boolean systemSupportsPrint() {
             mPrintHelper = new PrintHelperKitkat(context);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setScaleMode(int scaleMode) {
             mPrintHelper.setScaleMode(scaleMode);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getScaleMode() {
             return mPrintHelper.getScaleMode();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setColorMode(int colorMode) {
             mPrintHelper.setColorMode(colorMode);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getColorMode() {
             return mPrintHelper.getColorMode();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setOrientation(int orientation) {
             mPrintHelper.setOrientation(orientation);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public int getOrientation() {
             return mPrintHelper.getOrientation();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void printBitmap(String jobName, Bitmap bitmap) {
             mPrintHelper.printBitmap(jobName, bitmap);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void printBitmap(String jobName, Uri imageFile) throws FileNotFoundException {
             mPrintHelper.printBitmap(jobName, imageFile);

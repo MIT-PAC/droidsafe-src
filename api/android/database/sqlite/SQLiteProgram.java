@@ -266,8 +266,8 @@ public void bindNull(int index) {
      * @param value The value to bind
      */
     @DSComment("Database access")
-    @DSSpec(DSCat.DATABASE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.187 -0500", hash_original_method = "DDFF1311EF84C79E9F0283B8959C214A", hash_generated_method = "3388891A13AB586E95F3639121D7334F")
     
 public void bindLong(int index, long value) {
@@ -296,8 +296,8 @@ public void bindDouble(int index, double value) {
      * @param value The value to bind
      */
     @DSComment("Database access")
-    @DSSpec(DSCat.DATABASE)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.192 -0500", hash_original_method = "963A4C4D7269247053E24419DAA13FC1", hash_generated_method = "8F5D6A2064655E7863E1E3363920F842")
     
 public void bindString(int index, String value) {

@@ -219,6 +219,7 @@ public HostnameVerifier getHostnameVerifier() {
      * @throws IllegalArgumentException
      *             if the specified socket factory is {@code null}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.219 -0500", hash_original_method = "C38E7A94B75C24B6865C99F80CA80171", hash_generated_method = "99EAC1F9578B8B4C14F2A6E108BD6E47")
     
 public void setSSLSocketFactory(SSLSocketFactory sf) {

@@ -114,6 +114,7 @@ private Picture(int nativePicture) {
      * endRecording(). At this point the Canvas that was returned must no longer
      * be referenced, and nothing should be drawn into it.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.318 -0500", hash_original_method = "20E22D7D195E3391E43BD9FB13A423DE", hash_generated_method = "8C3B3B505356E2C21BC55C3D8E1AC0C3")
     
 public Canvas beginRecording(int width, int height) {
@@ -129,6 +130,7 @@ public Canvas beginRecording(int width, int height) {
      * be referenced anymore. This is automatically called if Picture.draw() or
      * Canvas.drawPicture() is called.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.320 -0500", hash_original_method = "4B70DEBF1EF0DC56C3D034BE86F32949", hash_generated_method = "AB5001A157CFF8A5A20525D29A48DDF9")
     
 public void endRecording() {

@@ -108,7 +108,7 @@ public boolean hasResolution()
     	return getTaintBoolean();
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.006 -0400", hash_original_method = "5C8C1404976646390107527FEACE73EB", hash_generated_method = "287214D70E372F51BA469A6B67AA66D6")
     
 public boolean isSuccess()
@@ -147,6 +147,7 @@ public PendingIntent getResolution()
         return mPendingIntent;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.028 -0400", hash_original_method = "D391776F0E39A1FB8C97B34EC216BD97", hash_generated_method = "2E27F609647BBF07251372A543D5F68E")
     
 public int hashCode()
@@ -161,6 +162,7 @@ private String ex()
         return Es;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:46.043 -0400", hash_original_method = "599DF267E463A4D561BCF288B0A4175C", hash_generated_method = "54E8A05F8159ED89386EA2CABED2B4BD")
     
 public String toString()

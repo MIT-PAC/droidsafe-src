@@ -204,6 +204,7 @@ public final String getAlgorithm() {
      * @throws InvalidKeyException
      *             if {@code publicKey} is not valid.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.531 -0500", hash_original_method = "6F44917D7B2EA34B37DC316438211882", hash_generated_method = "7AC2C6D9E95974CE38D91A7C3E434C24")
     
 public final void initVerify(PublicKey publicKey)
@@ -227,6 +228,7 @@ public final void initVerify(PublicKey publicKey)
      *             if the publicKey in the certificate is not valid or not to be
      *             used for signing.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.534 -0500", hash_original_method = "D5B41FE621F8332C2172FC7A18EF69C6", hash_generated_method = "DDF556FC8F0D194FA3654C15665AEE50")
     
 public final void initVerify(Certificate certificate)
@@ -270,6 +272,7 @@ public final void initVerify(Certificate certificate)
      * @throws InvalidKeyException
      *             if {@code privateKey} is not valid.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.537 -0500", hash_original_method = "B6C8D7AE33737E5AFF4E8BA0A220ACB3", hash_generated_method = "3D65D2EBE6315842C68943EE4644E80D")
     
 public final void initSign(PrivateKey privateKey)
@@ -290,6 +293,7 @@ public final void initSign(PrivateKey privateKey)
      * @throws InvalidKeyException
      *             if {@code privateKey} is not valid.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.539 -0500", hash_original_method = "94B0D7FD7FB8599FDCD6F4025918B2A9", hash_generated_method = "449474DDB7FA3B6EFC721186B6B8AC32")
     
 public final void initSign(PrivateKey privateKey, SecureRandom random)
@@ -374,6 +378,7 @@ public final int sign(byte[] outbuf, int offset, int len)
      *             if this {@code Signature} instance is not initialized
      *             properly.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.547 -0500", hash_original_method = "C9B26283C94B06BB8BE60C57C40A18DF", hash_generated_method = "C6178168B9E534E03C2854300238FFED")
     
 public final boolean verify(byte[] signature) throws SignatureException {
@@ -407,6 +412,7 @@ public final boolean verify(byte[] signature) throws SignatureException {
      *             if {@code offset} or {@code length} are not valid in respect
      *             to {@code signature}.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.550 -0500", hash_original_method = "59329C8B89ACE0AC6C4DAAF18DA3F3C5", hash_generated_method = "511FF8E21388EE59F7680784D9254081")
     
 public final boolean verify(byte[] signature, int offset, int length)
@@ -431,6 +437,7 @@ public final boolean verify(byte[] signature, int offset, int length)
      *             if this {@code Signature} instance is not initialized
      *             properly.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.553 -0500", hash_original_method = "79EA6E53B3D29CDFCD3B6E1380EAFC50", hash_generated_method = "68F9AA849CDC5FD1651DFF62727C6D16")
     
 public final void update(byte b) throws SignatureException {
@@ -450,6 +457,7 @@ public final void update(byte b) throws SignatureException {
      *             if this {@code Signature} instance is not initialized
      *             properly.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.556 -0500", hash_original_method = "7FDD4CB7D645E432F89E836C71DCF871", hash_generated_method = "E7518FC75DA191FDACF66EBCFB860ABF")
     
 public final void update(byte[] data) throws SignatureException {
@@ -473,6 +481,7 @@ public final void update(byte[] data) throws SignatureException {
      *             if this {@code Signature} instance is not initialized
      *             properly.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.559 -0500", hash_original_method = "935040FEA1E890342F7B1ED90DB7090F", hash_generated_method = "60BEE513AA8FF5BD2E3C2D1289042F40")
     
 public final void update(byte[] data, int off, int len)
@@ -497,6 +506,7 @@ public final void update(byte[] data, int off, int len)
      *             if this {@code Signature} instance is not initialized
      *             properly.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.561 -0500", hash_original_method = "4D212376BB0D0E0EE1EF0BE20DC8A649", hash_generated_method = "99E561088C80DE19CDBA8295BF4EA8D5")
     
 public final void update(ByteBuffer data) throws SignatureException {

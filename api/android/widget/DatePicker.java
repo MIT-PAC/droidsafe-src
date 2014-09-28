@@ -434,7 +434,8 @@ public CalendarView getCalendarView () {
      *
      * @param shown True if the calendar view is to be shown.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.352 -0500", hash_original_method = "A6F7D559BB2BFC23B5A4662DCD0F1C14", hash_generated_method = "6C31E4096210697EF421BEBE5F364620")
     
 public void setCalendarViewShown(boolean shown) {
@@ -458,7 +459,8 @@ public boolean getSpinnersShown() {
      *
      * @param shown True if the spinners are to be shown.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.356 -0500", hash_original_method = "754F8D4BE212034B7CC0AFCD20BC9A92", hash_generated_method = "B23BC79C99E594F98A0EBC6F1119D81F")
     
 public void setSpinnersShown(boolean shown) {
@@ -556,7 +558,7 @@ private void reorderSpinners() {
      * @param dayOfMonth The day of the month.
      */
     @DSComment("GUI/Date Picker")
-    @DSSafe(DSCat.GUI)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.366 -0500", hash_original_method = "4C1492E37715D23031DBB004E3447195", hash_generated_method = "1AF5CC187F6B38A39E57E1A57802103F")
     
 public void updateDate(int year, int month, int dayOfMonth) {
@@ -728,7 +730,7 @@ private void updateCalendarView() {
         // suppress unused and hiding
         public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
 
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
@@ -800,7 +802,7 @@ private SavedState(Parcel in) {
      */
     @DSComment("GUI/Date Picker")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.390 -0500", hash_original_method = "3B3D6844E7A836293DFA1A3CC86782AF", hash_generated_method = "DD341252CD551E4373C2459CBB155055")
     
 public int getYear() {
@@ -812,7 +814,7 @@ public int getYear() {
      */
     @DSComment("GUI/Date Picker")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.392 -0500", hash_original_method = "38D3E39BF141F42FF09C6079CAB15EDC", hash_generated_method = "BCC5269CEB2B4BEF16D7C70CB3E9CE5C")
     
 public int getMonth() {
@@ -824,7 +826,7 @@ public int getMonth() {
      */
     @DSComment("GUI/Date Picker")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.394 -0500", hash_original_method = "8FBF5DD56EFFBE6D332AE82BD8F4BBB9", hash_generated_method = "36944E655057A73626616DEC6406B85E")
     
 public int getDayOfMonth() {

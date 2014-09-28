@@ -440,6 +440,7 @@ public static final Bitmap getBitmap(ContentResolver cr, Uri url)
              * @return The URL to the newly created image
              * @throws FileNotFoundException
              */
+            @DSSink({DSSinkKind.CONTENT})
             @DSComment("Insert an image and create a thumbnail")
             @DSSpec(DSCat.IO)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.510 -0500", hash_original_method = "7EDFE27F4065D73B827ECCB92823E704", hash_generated_method = "F4811B325135D139327C3CD84EF94612")
@@ -623,7 +624,7 @@ public static final Cursor queryMiniThumbnails(ContentResolver cr, Uri uri, int 
             }
 
             @DSSafe(DSCat.SAFE_OTHERS)
-            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.544 -0500", hash_original_method = "BE9254821AC284A8AB44D13688ACA7DE", hash_generated_method = "E5ADCA2D02DCA0BD2BD1E6467DD1DEF8")
             
 public static final Cursor queryMiniThumbnail(ContentResolver cr, long origId, int kind,
@@ -659,7 +660,7 @@ public static void cancelThumbnailRequest(ContentResolver cr, long origId) {
              *         associated with origId doesn't exist or memory is not enough.
              */
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.549 -0500", hash_original_method = "069003E9CCA7A32718F8DD9AFC8DF3AC", hash_generated_method = "A2CA56D487630ADB7C82FA26BA7E1D58")
-            @DSSafe(DSCat.SAFE_OTHERS)  
+            @DSSpec(DSCat.IO)  
             @DSSource({DSSourceKind.IMAGE})
 public static Bitmap getThumbnail(ContentResolver cr, long origId, int kind,
                     BitmapFactory.Options options) {
@@ -697,7 +698,7 @@ public static void cancelThumbnailRequest(ContentResolver cr, long origId, long 
              */
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.555 -0500", hash_original_method = "5AD0BFBA0AD49773CFC5CC711D3149F0", hash_generated_method = "0DB0B69D293B44BF86D28E74E32FBB26")
             
-               @DSSafe(DSCat.SAFE_OTHERS)
+               @DSSpec(DSCat.IO)
                @DSSource({DSSourceKind.IMAGE})
 public static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId,
                     int kind, BitmapFactory.Options options) {

@@ -27,8 +27,8 @@ public final class Array {
      *             if {@code  index < 0 || index >= array.length}
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.893 -0500", hash_original_method = "DC819166ADE9A9BB796EBD77364A49D8", hash_generated_method = "B57FA28A23A3CBE2087765A9CBD0CB7A")
     
 public static Object get(Object array, int index)
@@ -280,8 +280,8 @@ public static int getInt(Object array, int index)
      *             if {@code array} is not an array
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.914 -0500", hash_original_method = "01924EF6E2610B26238572C631DDDD41", hash_generated_method = "09C4DE3DCD0A88FB68A0D99BE393988C")
     
 public static int getLength(Object array) {
@@ -518,8 +518,8 @@ public static Object newInstance(Class<?> componentType, int size)
      *             if {@code  index < 0 || index >= array.length}
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.939 -0500", hash_original_method = "FADDAEE666A0FA8B6A8804C4360DADA9", hash_generated_method = "B34412158113A1AF647DBD12A67F2D85")
     
 public static void set(Object array, int index, Object value)

@@ -127,7 +127,7 @@ ServerSocketAdapter(ServerSocketChannelImpl aChannelImpl) throws IOException {
             channelImpl.isBound = true;
         }
 
-        @DSSpec(DSCat.IO)
+        @DSSpec(DSCat.INTERNET)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.891 -0500", hash_original_method = "FFAB0B1226A929FA42E5D3CF52806643", hash_generated_method = "293F7FEEDA4C3BC2516C104E6D67C9E5")
         
 @Override public Socket accept() throws IOException {

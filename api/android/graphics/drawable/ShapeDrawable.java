@@ -121,7 +121,7 @@ public ShaderFactory getShaderFactory() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.646 -0500", hash_original_method = "F97BA42DC4507A8A136D2774D1D1BA0E", hash_generated_method = "068B430F7B4C53C726FFF413D2F3A531")
     
 public Paint getPaint() {
@@ -449,6 +449,7 @@ private void updateShape() {
         invalidateSelf();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.693 -0500", hash_original_method = "A9816EFD17AF344D0CD39D6855E6F73A", hash_generated_method = "70DABC3C391B17AA3468BC899E17105E")
     
 @Override

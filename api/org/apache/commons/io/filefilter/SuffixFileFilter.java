@@ -161,6 +161,7 @@ public SuffixFileFilter(List<String> suffixes, IOCase caseSensitivity) {
      * @param file  the File to check
      * @return true if the filename ends with one of our suffixes
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.697 -0400", hash_original_method = "5E16E41D2D30710800B0664BA6AD31F5", hash_generated_method = "114EC3F5851B2323B437569B8F4A3B29")
     
 @Override
@@ -181,6 +182,7 @@ public SuffixFileFilter(List<String> suffixes, IOCase caseSensitivity) {
      * @param name  the filename
      * @return true if the filename ends with one of our suffixes
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.697 -0400", hash_original_method = "850FABEC2D0BD7FBD751AF5978866C44", hash_generated_method = "E7D3766D57DB6BD7F507FD5D6C091065")
     
 @Override

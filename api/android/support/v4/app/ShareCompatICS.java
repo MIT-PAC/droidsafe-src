@@ -30,6 +30,7 @@ class ShareCompatICS {
 
     private static final String HISTORY_FILENAME_PREFIX = ".sharecompat_";
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:53:57.109 -0500", hash_original_method = "412B6883D84857E64446D127AF58A967", hash_generated_method = "C07B141D45FAF6B637912EFDE873649C")
     
 public static void configureMenuItem(MenuItem item, Activity callingActivity, Intent intent) {

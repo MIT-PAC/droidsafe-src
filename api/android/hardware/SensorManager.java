@@ -160,6 +160,7 @@ public class SensorManager {
      * @see #remapCoordinateSystem(float[], int, int, float[])
      */
 
+    @DSSource({DSSourceKind.SENSOR})
     @DSComment("Request/Change/Listen Android Manger")
     @DSSafe(DSCat.SAFE_OTHERS)
     
@@ -1227,6 +1228,7 @@ boolean unregisterSensor(int legacyType) {
             return true;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.085 -0500", hash_original_method = "E64F8429635EF9F3222DE4609CE00D63", hash_generated_method = "FA00D9D1552D778DEA40C006FD6803C4")
         
 @SuppressWarnings("deprecation")
@@ -1239,6 +1241,7 @@ boolean unregisterSensor(int legacyType) {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.091 -0500", hash_original_method = "7B74886508DCBDDEB63A3DDB570295F3", hash_generated_method = "B343CE4D45AC9AC463FB58C5FEF47D1C")
         
 @SuppressWarnings("deprecation")
@@ -2196,7 +2199,7 @@ private void unregisterListener(Object listener) {
     // orphaned legacy method
     
 	@DSComment("Request/Change/Listen Android Manger")
-    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSafe(DSCat.SAFE_LIST)
     
     public Sensor getDefaultSensor(int i) {
 		return new Sensor(i);

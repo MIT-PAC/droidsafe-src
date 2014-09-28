@@ -54,7 +54,8 @@ public class SaslClientFactory implements
 		return null;
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:36.301 -0400", hash_original_method = "DC0C359999BC87C8658EF8F99046F8EB", hash_generated_method = "5DD020E5E00F00E3FC40FD9DF891BD65")
+	@DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:36.301 -0400", hash_original_method = "DC0C359999BC87C8658EF8F99046F8EB", hash_generated_method = "5DD020E5E00F00E3FC40FD9DF891BD65")
 	
 @Override
 	public String[] getMechanismNames(Map<String, ?> props) {

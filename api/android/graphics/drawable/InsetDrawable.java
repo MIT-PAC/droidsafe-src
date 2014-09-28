@@ -300,6 +300,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mInsetState.mDrawable.getIntrinsicHeight();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.953 -0500", hash_original_method = "1E9E2DEF1AEF301447A2F1B1CB9B55FF", hash_generated_method = "89BCCAFBA0248D2F2B83AFE96D296A26")
     
 @Override

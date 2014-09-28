@@ -100,16 +100,13 @@ public static URLClassLoader newInstance(final URL[] urls, final ClassLoader par
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:47.272 -0400", hash_original_field = "8493272A5AB4A77AB209F22490E9A299", hash_generated_field = "8493272A5AB4A77AB209F22490E9A299")
 
-
     ArrayList<URL> originalUrls;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:47.272 -0400", hash_original_field = "6EEE0C60179788AF966E079989CB5CB3", hash_generated_field = "6EEE0C60179788AF966E079989CB5CB3")
-
 
     List<URL> searchList;
 
     static class IndexFile {
         //private URLClassLoader host;
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:47.275 -0400", hash_original_method = "F2256C562ABA1A793D732471535C7B66", hash_generated_method = "C68D2BD6272B0373AF7CD47F3BB1AED1")
         
@@ -181,7 +178,6 @@ private static URL getParentURL(URL url) throws IOException {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:47.274 -0400", hash_original_field = "76A176000CA2730D7340962D00AB47FA", hash_generated_field = "8CA0A10A56B7E322DF59FAF09C201F44")
 
-
         private HashMap<String, ArrayList<URL>> map;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:47.276 -0400", hash_original_method = "379F12D2048DD620EF06C57D0B8DE6F0", hash_generated_method = "D3363781B695DF1B83D498BBB8704458")
@@ -234,7 +230,6 @@ Class<?> findClass(String packageName, String name, String origName) {
             }
             return null;
         }
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:47.281 -0400", hash_original_method = "73460255618B48EEC6C92DAEEADA9765", hash_generated_method = "73460255618B48EEC6C92DAEEADA9765")
         
@@ -639,9 +634,7 @@ public URLFileHandler(URL url) {
     Map<URL, URLHandler> handlerMap = new HashMap<URL, URLHandler>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:47.273 -0400", hash_original_field = "9DB50F5F7BDAD32B470567919A87AA9C", hash_generated_field = "E43CA7AA04ACD2FE8928E03B47B06D76")
 
-
     private URLStreamHandlerFactory factory;
-
 
     /**
      * Constructs a new {@code URLClassLoader} instance. The newly created
@@ -811,6 +804,7 @@ protected void addURL(URL url) {
      *
      * @return the list of all known URLs of this instance.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:47.301 -0400", hash_original_method = "E74D6D295FD8DF7C4B8AB85761E02982", hash_generated_method = "DD8947860091513FECFE2D9141D4503D")
     
 public URL[] getURLs() {

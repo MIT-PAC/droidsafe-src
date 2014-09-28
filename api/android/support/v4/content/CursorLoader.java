@@ -68,6 +68,7 @@ public CursorLoader(Context context, Uri uri, String[] projection, String select
     }
 
     /* Runs on a worker thread */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.306 -0500", hash_original_method = "F9FA66289F481A177ACDB3A6ED9AD777", hash_generated_method = "84B0A27B8A893C643D749B604AF5B21C")
     
 @Override
@@ -87,7 +88,7 @@ public CursorLoader(Context context, Uri uri, String[] projection, String select
      * when the cursor needs to be refreshed.
      */
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.308 -0500", hash_original_method = "020E778E16877AE64A0EC7CA895AF414", hash_generated_method = "020E778E16877AE64A0EC7CA895AF414")
     
 void registerContentObserver(Cursor cursor, ContentObserver observer) {
@@ -95,6 +96,7 @@ void registerContentObserver(Cursor cursor, ContentObserver observer) {
     }
 
     /* Runs on the UI thread */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.311 -0500", hash_original_method = "37FD37E6CF73F613BFDCC98E888F8BCC", hash_generated_method = "8FE3F2116195103EB694A26B1AEB3EB6")
     
 @Override
@@ -125,6 +127,7 @@ void registerContentObserver(Cursor cursor, ContentObserver observer) {
      *
      * Must be called from the UI thread
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.318 -0500", hash_original_method = "FEDEC1668E99CC7AC8B63903F046C2E4", hash_generated_method = "270B33800028B49BD2EC75D7757AD67D")
     
 @Override
@@ -140,6 +143,7 @@ void registerContentObserver(Cursor cursor, ContentObserver observer) {
     /**
      * Must be called from the UI thread
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.320 -0500", hash_original_method = "9D6573E0227A73E2122897AF91440AD0", hash_generated_method = "F511E4B7EE637E5BAD99C2CE0F97AB45")
     
 @Override
@@ -148,6 +152,7 @@ void registerContentObserver(Cursor cursor, ContentObserver observer) {
         cancelLoad();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.322 -0500", hash_original_method = "880E0574E2EB66A6B5B217A64A77BCD6", hash_generated_method = "4247A5254EAD005A6D3F5B6172EF4717")
     
 @Override
@@ -157,6 +162,7 @@ void registerContentObserver(Cursor cursor, ContentObserver observer) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.325 -0500", hash_original_method = "CBB8B33455486DDE9DE82F5D7E5B319A", hash_generated_method = "13010ABD9857D09EDAA4093213956033")
     
 @Override
@@ -232,6 +238,7 @@ public void setSortOrder(String sortOrder) {
         mSortOrder = sortOrder;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.351 -0500", hash_original_method = "F4CED264AFFA6312AA112E1BE872302C", hash_generated_method = "180D303CC0A14CD1C11DC938DA32F769")
     
 @Override

@@ -14,7 +14,7 @@ public class PathPermission extends PatternMatcher {
 
     public static final Parcelable.Creator<PathPermission> CREATOR
             = new Parcelable.Creator<PathPermission>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.997 -0500", hash_original_method = "FB68BFC6586F43B368BF10107C1ED83E", hash_generated_method = "1AFC65BC869A1C74AF5325F225D8D2A3")
         
 public PathPermission createFromParcel(Parcel source) {

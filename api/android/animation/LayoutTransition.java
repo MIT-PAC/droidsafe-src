@@ -633,7 +633,8 @@ private void setupChangeAnimation(final ViewGroup parent, final int changeReason
         ValueAnimator pendingAnimRemover = ValueAnimator.ofFloat(0f, 1f).
                 setDuration(duration + 100);
         pendingAnimRemover.addListener(new AnimatorListenerAdapter() {
-            @Override
+            @DSSafe(DSCat.ANDROID_ANIMATION)
+        @Override
             public void onAnimationEnd(Animator animation) {
                 pendingAnimations.remove(child);
             }
@@ -700,7 +701,8 @@ private void setupChangeAnimation(final ViewGroup parent, final int changeReason
         // Remove the animation from the cache when it ends
         anim.addListener(new AnimatorListenerAdapter() {
 
-            @Override
+            @DSSafe(DSCat.ANDROID_ANIMATION)
+        @Override
             public void onAnimationStart(Animator animator) {
                 if (mListeners != null) {
                     for (TransitionListener listener : mListeners) {
@@ -717,7 +719,8 @@ private void setupChangeAnimation(final ViewGroup parent, final int changeReason
                 layoutChangeListenerMap.remove(child);
             }
 
-            @Override
+            @DSSafe(DSCat.ANDROID_ANIMATION)
+        @Override
             public void onAnimationEnd(Animator animator) {
                 currentChangingAnimations.remove(child);
                 if (mListeners != null) {
@@ -930,7 +933,8 @@ private void runAppearingTransition(final ViewGroup parent, final View child) {
         }
         if (mListeners != null) {
             anim.addListener(new AnimatorListenerAdapter() {
-                @Override
+                @DSSafe(DSCat.ANDROID_ANIMATION)
+        @Override
                 public void onAnimationEnd(Animator anim) {
                     currentAppearingAnimations.remove(child);
                     for (TransitionListener listener : mListeners) {
@@ -970,7 +974,8 @@ private void runDisappearingTransition(final ViewGroup parent, final View child)
         anim.setTarget(child);
         if (mListeners != null) {
             anim.addListener(new AnimatorListenerAdapter() {
-                @Override
+                @DSSafe(DSCat.ANDROID_ANIMATION)
+        @Override
                 public void onAnimationEnd(Animator anim) {
                     currentDisappearingAnimations.remove(child);
                     for (TransitionListener listener : mListeners) {

@@ -48,6 +48,7 @@ public abstract class AtomicLongFieldUpdater<T> {
      * or the field is inaccessible to the caller according to Java language
      * access control
      */
+    @DSSafe(DSCat.SAFE_LIST)
     public static <U> AtomicLongFieldUpdater<U> newUpdater(Class<U> tclass, String fieldName) {
         if (AtomicLong.VM_SUPPORTS_LONG_CAS)
             return new CASUpdater<U>(tclass, fieldName);
@@ -146,6 +147,7 @@ public abstract long get(T obj);
      * @param newValue the new value
      * @return the previous value
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.657 -0400", hash_original_method = "073A4CF50E22F9EE4C4340BA9014F29C", hash_generated_method = "F37DB669BD0B6ECF5267E1024E989380")
     
 public long getAndSet(T obj, long newValue) {
@@ -382,7 +384,6 @@ private void ensureProtectedAccess(T obj) {
             );
         }
     }
-
 
     private static class LockedUpdater<T> extends AtomicLongFieldUpdater<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:23.667 -0400", hash_original_field = "45AA3EADCAC9C9E31A558AD2E7D920BC", hash_generated_field = "225667B44D983DC733D3AAE856B0466F")

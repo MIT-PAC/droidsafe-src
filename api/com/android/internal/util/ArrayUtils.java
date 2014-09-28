@@ -68,6 +68,7 @@ public static int idealLongArraySize(int need) {
      * @param length the number of bytes to check
      * @return true if they're equal, false otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.307 -0500", hash_original_method = "F616355A61EDB472AF49A2D85F949B07", hash_generated_method = "FC9D3D53408896E06586C68BE0F93BE5")
     
 public static boolean equals(byte[] array1, byte[] array2, int length) {

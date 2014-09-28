@@ -136,7 +136,7 @@ public PolygonOptions add(LatLng[]  r1)
         return this;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.221 -0400", hash_original_method = "C22FD3528A9F032A145FEFCF168739E6", hash_generated_method = "2E076E4062EBD3B222FB23C0CB85C697")
     
 public PolygonOptions addAll(Iterable  r1)
@@ -176,7 +176,7 @@ public PolygonOptions addHole(Iterable  r1)
         return this;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.227 -0400", hash_original_method = "C760C07D51A23F099BE25073F346F149", hash_generated_method = "6F983768E68E5929C6EFE310B6A55ED1")
     
 public PolygonOptions strokeWidth(float  f0)
@@ -195,7 +195,7 @@ public PolygonOptions strokeColor(int  i0)
         return this;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.233 -0400", hash_original_method = "D255E86BD3D35673710E0C572CA40374", hash_generated_method = "B43D758FB0052485B281DE743FD2F096")
     
 public PolygonOptions fillColor(int  i0)
@@ -223,7 +223,7 @@ public PolygonOptions visible(boolean  z0)
         return this;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:52.241 -0400", hash_original_method = "3BA1604699C98FDF8652B6A785CF97E8", hash_generated_method = "6090E100E8CDEC1B4515E83F104231C7")
     
 public PolygonOptions geodesic(boolean  z0)

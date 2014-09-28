@@ -44,7 +44,7 @@ public class DroidsafeGoogleApiClient implements GoogleApiClient {
 		return result;
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	@Override
 	public void disconnect() {
 		// TODO Auto-generated method stub
@@ -65,7 +65,7 @@ public class DroidsafeGoogleApiClient implements GoogleApiClient {
 		
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	@Override
 	public boolean isConnected() {
 		// TODO Auto-generated method stub
@@ -78,7 +78,7 @@ public class DroidsafeGoogleApiClient implements GoogleApiClient {
 		return getTaintBoolean();
 	}
 
-	@DSSafe(DSCat.ANDROID_CALLBACK)
+	@DSSafe(DSCat.SAFE_LIST)
 	@Override
 	public void registerConnectionCallbacks(ConnectionCallbacks r0) {
 		// TODO Auto-generated method stub
@@ -102,7 +102,7 @@ public class DroidsafeGoogleApiClient implements GoogleApiClient {
 		
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	@Override
 	public void registerConnectionFailedListener(OnConnectionFailedListener r0) {
 		// TODO Auto-generated method stub

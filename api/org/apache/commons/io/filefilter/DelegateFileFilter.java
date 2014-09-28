@@ -77,6 +77,7 @@ public DelegateFileFilter(FileFilter filter) {
      * @param file  the file to check
      * @return true if the filter matches
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.942 -0400", hash_original_method = "66B0B66E42A219E5BE68409D81797981", hash_generated_method = "6BD1834286C3D9588B2C22BBE55956C1")
     
 @Override
@@ -95,6 +96,7 @@ public DelegateFileFilter(FileFilter filter) {
      * @param name  the filename in the directory
      * @return true if the filter matches
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.942 -0400", hash_original_method = "49013355B881E412B579D906E9AC6664", hash_generated_method = "74332A0658EDB6DE54B62DC0D060A9D4")
     
 @Override

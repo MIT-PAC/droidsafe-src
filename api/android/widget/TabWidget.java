@@ -568,6 +568,7 @@ void setTabSelectionListener(OnTabSelectionChanged listener) {
     }
 
     /** {@inheritDoc} */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.868 -0500", hash_original_method = "4E088FBB30D7470D105CC06A4CB02903", hash_generated_method = "0FDD57BDAFB5BACCA45890A5626C8C6A")
     
 public void onFocusChange(View v, boolean hasFocus) {

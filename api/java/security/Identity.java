@@ -304,6 +304,7 @@ public String getInfo() {
      * @return {@code true} if the specified object is equal to this {@code
      *         Identity}, otherwise {@code false}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.624 -0400", hash_original_method = "C1638042E8E9C99D965D888EF717C8C0", hash_generated_method = "24E6F2A1D62152C28ED0A94695759E79")
     
 @Override

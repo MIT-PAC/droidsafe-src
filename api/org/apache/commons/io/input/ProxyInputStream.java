@@ -56,7 +56,7 @@ public ProxyInputStream(InputStream proxy) {
      * @return the byte read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.473 -0400", hash_original_method = "54B5A34E53A0B96BE3D94E0D4A7D572A", hash_generated_method = "3D6BB7F1FA6BA070C87313FFEA7AFD38")
     
@@ -79,7 +79,7 @@ public ProxyInputStream(InputStream proxy) {
      * @return the number of bytes read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.474 -0400", hash_original_method = "ACF1A17E0D23809C356E177971499CFB", hash_generated_method = "C084603B1E8F1EDF53DB37D1B859A462")
     
@@ -104,7 +104,7 @@ public ProxyInputStream(InputStream proxy) {
      * @return the number of bytes read or -1 if the end of stream
      * @throws IOException if an I/O error occurs
      */
-    @DSSpec(DSCat.IO)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.474 -0400", hash_original_method = "2C3D85339C2DDA831F01519845123B39", hash_generated_method = "AA79F4B08C140AB947EEDF78E949FA4F")
     
@@ -232,6 +232,7 @@ public ProxyInputStream(InputStream proxy) {
      * @param n number of bytes that the caller asked to be read
      * @throws IOException if the pre-processing fails
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.479 -0400", hash_original_method = "5DF216E1C56E8B7D3C0329D45F13AA7E", hash_generated_method = "FD212A4C535EA30D1B50D105A0130F85")
     
 protected void beforeRead(int n) throws IOException {
@@ -254,6 +255,7 @@ protected void beforeRead(int n) throws IOException {
      * @param n number of bytes read, or -1 if the end of stream was reached
      * @throws IOException if the post-processing fails
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.479 -0400", hash_original_method = "C3D8A276950C0BAD0FCEDE931894DAB6", hash_generated_method = "B1D8425EF51444B0AAD78DEEF31E88A8")
     
 protected void afterRead(int n) throws IOException {
@@ -268,6 +270,7 @@ protected void afterRead(int n) throws IOException {
      * @throws IOException if an I/O error occurs
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.479 -0400", hash_original_method = "A242DFA5F52516C95D0F167B92B745B6", hash_generated_method = "1891156C8FEFAA68CD85CC13506CC1D3")
     
 protected void handleIOException(IOException e) throws IOException {

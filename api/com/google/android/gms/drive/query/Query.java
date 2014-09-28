@@ -84,13 +84,13 @@ public void writeToParcel(Parcel  r1, int  i0)
     	String token;
     	SortOrder sortOrder;
     	
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
     	public Query.Builder addFilter (Filter filter) {
     		this.filter = new LogicalFilter();
     		this.filter.addTaint(filter.getTaint());
     		return this;
     	}
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSafe(DSCat.SAFE_LIST)
     	public Query.Builder setPageToken (String token) {
     		this.token = token;
     		return this;
@@ -101,7 +101,8 @@ public void writeToParcel(Parcel  r1, int  i0)
     		return this;
     	}
 
-    	@DSSafe(DSCat.SAFE_OTHERS)
+    	@DSSink({DSSinkKind.GOOGLE_SERVICES})
+        @DSSafe(DSCat.SAFE_LIST)
     	public Query build () {
     		return new Query(0, filter, token, sortOrder);
     		

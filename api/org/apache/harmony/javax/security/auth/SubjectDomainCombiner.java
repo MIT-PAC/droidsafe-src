@@ -59,6 +59,7 @@ public SubjectDomainCombiner(Subject subject) {
      *
      * @return the entity to which this domain combiner is associated.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.744 -0400", hash_original_method = "8F8546B49FE91B43BAB94BCEBEF4AEC2", hash_generated_method = "C9A8F9D777EF4E434CA26B202936002B")
     
 public Subject getSubject() {

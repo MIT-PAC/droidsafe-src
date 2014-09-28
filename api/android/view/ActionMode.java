@@ -46,17 +46,17 @@ public void setTag(Object tag) {
     //added by droidsafe for api 19 compat.
     private boolean mTitleOptionalHint = false;
 
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean getTitleOptionalHint () {
         return mTitleOptionalHint;
     }
 
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     public void setTitleOptionalHint (boolean titleOptional) {
         mTitleOptionalHint = titleOptional;
     }
 
-    @DSSafe
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean isTitleOptional () {
         return true;
     }
@@ -73,7 +73,7 @@ public void setTag(Object tag) {
      */
     @DSComment("Action mode, providing alternative interaction mode")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.147 -0500", hash_original_method = "15C9157ADF1B79E512CAFF71050D7BD7", hash_generated_method = "1B4659EEE0161BE6922AFBEB646209D7")
     
 public Object getTag() {

@@ -92,7 +92,7 @@ public ProtocolVersion getProtocolVersion() {
 
     // non-javadoc, see interface HttpResponse
     @DSSafe(DSCat.NETWORK)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.892 -0500", hash_original_method = "17E71ED31D66483D3BDF78C743004CA2", hash_generated_method = "8ABB7B3878FF89EA492FEE050D9D5995")
     
 public StatusLine getStatusLine() {
@@ -101,7 +101,7 @@ public StatusLine getStatusLine() {
 
     // non-javadoc, see interface HttpResponse
     @DSSafe(DSCat.NETWORK)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.894 -0500", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "F26E442D152B9CF496C6F072484628AD")
     
 public HttpEntity getEntity() {

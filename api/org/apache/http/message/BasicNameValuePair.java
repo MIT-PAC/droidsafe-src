@@ -19,7 +19,6 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 
     @DSSafe(DSCat.SAFE_OTHERS)
 
-
     /**
      * Default Constructor taking a name and a value. The value may be null.
      * 
@@ -37,14 +36,11 @@ public BasicNameValuePair(final String name, final String value) {
         this.value = value;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-
+    @DSSource({DSSourceKind.NETWORK})
 
     @DSSafe(DSCat.SAFE_LIST)
 
-
     @DSComment("From safe class list")
-
 
     /**
      * Returns the name.
@@ -57,14 +53,11 @@ public String getName() {
         return this.name;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-
+    @DSSource({DSSourceKind.NETWORK})
 
     @DSSafe(DSCat.SAFE_LIST)
 
-
     @DSComment("From safe class list")
-
 
     /**
      * Returns the value.

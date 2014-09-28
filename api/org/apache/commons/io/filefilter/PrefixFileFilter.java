@@ -160,6 +160,7 @@ public PrefixFileFilter(List<String> prefixes, IOCase caseSensitivity) {
      * @param file  the File to check
      * @return true if the filename starts with one of our prefixes
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.767 -0400", hash_original_method = "78167C09373DD6928792D289D7DC6BD6", hash_generated_method = "6A8AAA15A216A30859ED1E5340541FA8")
     
 @Override
@@ -180,6 +181,7 @@ public PrefixFileFilter(List<String> prefixes, IOCase caseSensitivity) {
      * @param name  the filename
      * @return true if the filename starts with one of our prefixes
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.767 -0400", hash_original_method = "45A7DB6D0E51F61500372E7D66178EF3", hash_generated_method = "CC299A24F1B408C9BA22030D92327A98")
     
 @Override

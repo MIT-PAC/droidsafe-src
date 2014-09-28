@@ -48,18 +48,21 @@ public MySearchView(Context context) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:34.250 -0500", hash_original_method = "2B819AB785909BEF41694881B01D550A", hash_generated_method = "FC9064C413605E8658365B3B67176F78")
     
 public static View newSearchView(Context context) {
         return new MySearchView(context);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:34.251 -0500", hash_original_method = "C8204A6FCB580F191EB8157433EC5C84", hash_generated_method = "EC8DC9FE3E822BC2A7358B304D942459")
     
 public static void setImeOptions(View searchView, int imeOptions) {
         ((SearchView) searchView).setImeOptions(imeOptions);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:34.252 -0500", hash_original_method = "D6D2D57ED99B395C40122C9A058EA520", hash_generated_method = "64B40734BF8B07D78141E9E790CAE51F")
     
 public static void setInputType(View searchView, int inputType) {

@@ -233,6 +233,7 @@ private void maybeSendChange(double alpha, double beta, double gamma) {
      * SensorEventListener implementation.
      * Callbacks happen on the thread on which we registered - the WebCore thread.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.673 -0500", hash_original_method = "2695E209DFB6DD433B7C6CE1A619CE79", hash_generated_method = "F216DEEC3BE2568BC69A2E14A939134F")
     
 public void onSensorChanged(SensorEvent event) {
@@ -268,6 +269,7 @@ public void onSensorChanged(SensorEvent event) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.675 -0500", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "64E39387A039533466C0623BF8FBA522")
     
 public void onAccuracyChanged(Sensor sensor, int accuracy) {

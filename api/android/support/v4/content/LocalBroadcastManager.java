@@ -19,7 +19,8 @@ import android.os.Message;
 
 public class LocalBroadcastManager {
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.523 -0500", hash_original_method = "3CB1B74AD53F3369E7790EFD811F3D13", hash_generated_method = "47819F899C9500AFBEECAF5945D64459")
     
 public static LocalBroadcastManager getInstance(Context context) {
@@ -151,7 +152,8 @@ BroadcastRecord(Intent _intent, ArrayList<ReceiverRecord> _receivers) {
      *
      * @see #unregisterReceiver
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.534 -0500", hash_original_method = "D32BC0D25E86F605EE68EB4056334640", hash_generated_method = "828E2E55CD6766C364D07FA88A5CE8D5")
     
 public void registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
@@ -184,6 +186,7 @@ public void registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
      *
      * @see #registerReceiver
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.537 -0500", hash_original_method = "8566D0E7C4974CA9CB93E779F651E45B", hash_generated_method = "0636FABA3318CBEDB289BB9DD6803AAE")
     
 public void unregisterReceiver(BroadcastReceiver receiver) {
@@ -223,7 +226,8 @@ public void unregisterReceiver(BroadcastReceiver receiver) {
      *
      * @see #registerReceiver
      */
-    @DSSink({DSSinkKind.LOG})
+    @DSSpec(DSCat.SPEC_OTHERS)
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.542 -0500", hash_original_method = "D242868C7C53E8784BBDECD4F038DC32", hash_generated_method = "C889A277772E7F5A7183DAD0C616AEDF")
     
 public boolean sendBroadcast(Intent intent) {
@@ -311,7 +315,7 @@ public void sendBroadcastSync(Intent intent) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.547 -0500", hash_original_method = "3F6742DF10D1E655ECFD08018DEE1CF4", hash_generated_method = "2833AEBD2A648D4F5FC47CC83599C8FF")
     
 private void executePendingBroadcasts() {

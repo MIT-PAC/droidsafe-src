@@ -367,6 +367,7 @@ public static Uri getUriForFile(Context context, String authority, File file) {
      * Return {@link PathStrategy} for given authority, either by parsing or
      * returning from cache.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.131 -0400", hash_original_method = "E129B4399451F8674DD39A0E7CBCC5EA", hash_generated_method = "6282077DAC532C3FE717D0F593172FE5")
     
 private static PathStrategy getPathStrategy(Context context, String authority) {
@@ -395,6 +396,7 @@ private static PathStrategy getPathStrategy(Context context, String authority) {
      *
      * @see #getPathStrategy(Context, String)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.139 -0400", hash_original_method = "068861A9A0E16B168E079E5B5EDEDA5A", hash_generated_method = "E65AD53DCD2DA0E86068943EC6950B4D")
     
 private static PathStrategy parsePathStrategy(Context context, String authority)
@@ -441,6 +443,7 @@ private static PathStrategy parsePathStrategy(Context context, String authority)
     /**
      * Copied from ContentResolver.java
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.198 -0400", hash_original_method = "D657DAEE761AFD9012312ABC677E7519", hash_generated_method = "D958FA3652A93A6EE059D19E8AF1F007")
         
 private static int modeToMode(String mode) {
@@ -468,6 +471,7 @@ private static int modeToMode(String mode) {
         return modeBits;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.203 -0400", hash_original_method = "A401ED47DFC203755A76A0F64581CB79", hash_generated_method = "94A342A67B720692F695050CEC3501AB")
         
 private static File buildPath(File base, String... segments) {
@@ -480,6 +484,7 @@ private static File buildPath(File base, String... segments) {
         return cur;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.210 -0400", hash_original_method = "F613644377B0DE0C3E09502BD823EF62", hash_generated_method = "ABFF6C3A18FD54C1B2038EA08F132031")
         
 private static String[] copyOf(String[] original, int newLength) {
@@ -488,6 +493,7 @@ private static String[] copyOf(String[] original, int newLength) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:02:01.215 -0400", hash_original_method = "0E56360ADB1E855B8DF2379AA85A1287", hash_generated_method = "4B4FBDB56379D9F5ECF7D645F92CEA4B")
         
 private static Object[] copyOf(Object[] original, int newLength) {
@@ -671,6 +677,7 @@ private static Object[] copyOf(Object[] original, int newLength) {
          * Add a mapping from a name to a filesystem root. The provider only offers
          * access to files that live under configured roots.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void addRoot(String name, File root) {
             if (TextUtils.isEmpty(name)) {
                 throw new IllegalArgumentException("Name must not be empty");
@@ -687,6 +694,7 @@ private static Object[] copyOf(Object[] original, int newLength) {
             mRoots.put(name, root);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public Uri getUriForFile(File file) {
             String path;
@@ -725,6 +733,7 @@ private static Object[] copyOf(Object[] original, int newLength) {
                     .authority(mAuthority).encodedPath(path).build();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public File getFileForUri(Uri uri) {
             String path = uri.getEncodedPath();

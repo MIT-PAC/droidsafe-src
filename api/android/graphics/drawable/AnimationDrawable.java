@@ -138,7 +138,7 @@ public void run() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.532 -0500", hash_original_method = "078F231D1E4DEE307E947B896715B9FA", hash_generated_method = "5025FEE6B92BF88A77E6F8353AA4EAD6")
     
 public int getNumberOfFrames() {
@@ -150,7 +150,7 @@ public int getNumberOfFrames() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.534 -0500", hash_original_method = "924497ADC8C942C05D9D7A5BCA11BCAD", hash_generated_method = "8BA7E4E455DA62781E9BC042F465DB3A")
     
 public Drawable getFrame(int index) {
@@ -163,7 +163,7 @@ public Drawable getFrame(int index) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.537 -0500", hash_original_method = "F1980307C7F7FBBB813440E411F73714", hash_generated_method = "2059BCCA67A341C5AD3C2C8972CC3936")
     
 public int getDuration(int i) {
@@ -188,7 +188,7 @@ public boolean isOneShot() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.541 -0500", hash_original_method = "E8F5482B51D48B1DAA2F24BE9877736B", hash_generated_method = "E0EBA634D159BA1B4DB52D6C94AA449F")
     
 public void setOneShot(boolean oneShot) {

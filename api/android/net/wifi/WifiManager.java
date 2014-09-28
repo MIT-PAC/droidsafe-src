@@ -367,7 +367,7 @@ public void setReferenceCounted(boolean refCounted) {
          * @return true if this WifiLock is held, false otherwise
          */
         @DSComment("Wifi subsystem")
-        @DSSpec(DSCat.WIFI)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.437 -0500", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "6E5AE3C21361B5E024A600F344792BD5")
         
 public boolean isHeld() {
@@ -586,7 +586,7 @@ public void setReferenceCounted(boolean refCounted) {
          * @return true if this MulticastLock is held, false otherwise
          */
         @DSComment("Wifi subsystem")
-        @DSSpec(DSCat.WIFI)
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.477 -0500", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "6E5AE3C21361B5E024A600F344792BD5")
         
 public boolean isHeld() {
@@ -821,7 +821,7 @@ public boolean removeNetwork(int netId) {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSink({DSSinkKind.NETWORK})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.306 -0500", hash_original_method = "A063D2F3A1A45A8B2BB20D41F98AEB1B", hash_generated_method = "5589CB694139C3927BD03E556015C3E5")
     
 public boolean enableNetwork(int netId, boolean disableOthers) {
@@ -1023,7 +1023,7 @@ public List<ScanResult> getScanResults() {
      * @return {@code true} if the operation succeeded
      */
     @DSComment("Wifi subsystem")
-    @DSSpec(DSCat.WIFI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.330 -0500", hash_original_method = "D1E32319AD181FF60DD93B5B2DB831F1", hash_generated_method = "1DA1A834FB6AFB8AE93CF220DEA6178C")
     
 public boolean saveConfiguration() {
@@ -1166,7 +1166,7 @@ public int getWifiState() {
      * @see #getWifiState()
      */
     @DSComment("Wifi subsystem")
-    @DSSpec(DSCat.WIFI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.347 -0500", hash_original_method = "D7F0AFD1306EBF22F34F7E014A2C9B11", hash_generated_method = "F3D7FB4B1B4B8151872D04C5B84B09C5")
     
 public boolean isWifiEnabled() {
@@ -1548,7 +1548,7 @@ public WifiLock createWifiLock(String tag) {
      *
      * @see MulticastLock
      */
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.453 -0500", hash_original_method = "90BF24DBA9F26B31ED84B0CABBF9287E", hash_generated_method = "44ED1D34D5A2181B0D15F63F3B719EC5")
     
 public MulticastLock createMulticastLock(String tag) {

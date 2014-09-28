@@ -123,7 +123,7 @@ public GridView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.418 -0500", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "5911CDE294032BE1D85FC272F0A8BA9B")
     
 @Override
@@ -2067,6 +2067,7 @@ public void setGravity(int gravity) {
      *
      * @attr ref android.R.styleable#GridView_horizontalSpacing
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.596 -0500", hash_original_method = "F4AD294FF1286508B5C248EDCA212E5B", hash_generated_method = "5DEE44ABB512D0CC9A048216808F8B17")
     
 public void setHorizontalSpacing(int horizontalSpacing) {
@@ -2085,6 +2086,7 @@ public void setHorizontalSpacing(int horizontalSpacing) {
      *
      * @attr ref android.R.styleable#GridView_verticalSpacing
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.598 -0500", hash_original_method = "18D0FB9D8A0D215DBABAAD70588CEE39", hash_generated_method = "543EC8DA62BBEF590A2B2362755B8950")
     
 public void setVerticalSpacing(int verticalSpacing) {
@@ -2102,6 +2104,7 @@ public void setVerticalSpacing(int verticalSpacing) {
      *
      * @attr ref android.R.styleable#GridView_stretchMode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.600 -0500", hash_original_method = "C49A7586B9CFE9BA77F47A780C0C8544", hash_generated_method = "3CACC7AB0EB24497AB99DF73637693E8")
     
 public void setStretchMode(int stretchMode) {
@@ -2125,6 +2128,7 @@ public int getStretchMode() {
      *
      * @attr ref android.R.styleable#GridView_columnWidth
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.605 -0500", hash_original_method = "2D3707A47407D7324964709BC50279C2", hash_generated_method = "8D3B64827C11D10879C4EF5C7CB79CD5")
     
 public void setColumnWidth(int columnWidth) {

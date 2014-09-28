@@ -37,7 +37,7 @@ private static final int parseHexDigit(int nibble) {
 
     public static final Parcelable.Creator<Signature> CREATOR
             = new Parcelable.Creator<Signature>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.828 -0500", hash_original_method = "59AB50688ABB8B89A247E93F4C76880C", hash_generated_method = "94463D2ECA0FB0B4DCCBF0065392C4B9")
         
 public Signature createFromParcel(Parcel source) {

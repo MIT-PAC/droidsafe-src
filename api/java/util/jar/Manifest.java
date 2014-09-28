@@ -281,7 +281,7 @@ public Map<String, Attributes> getEntries() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.204 -0500", hash_original_method = "E50165B574B80B3A6D479CE79F6197B1", hash_generated_method = "C4BF8381294FCDC1FAB64ADD93A2235A")
     
 public Attributes getMainAttributes() {

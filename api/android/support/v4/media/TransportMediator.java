@@ -83,6 +83,7 @@ public class TransportMediator extends TransportController {
 
     public final static int FLAG_KEY_MEDIA_NEXT = 1 << 7;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.119 -0400", hash_original_method = "2AAD7E34FCCB772FC0546DD31C4AB75A", hash_generated_method = "3A05002EFFA92F0CD783A43892235B3A")
     
 static boolean isMediaKey(int keyCode) {
@@ -129,27 +130,30 @@ static boolean isMediaKey(int keyCode) {
 
     final TransportMediatorCallback mTransportKeyCallback
             = new TransportMediatorCallback() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void handleKey(KeyEvent key) {
             key.dispatch(mKeyEventCallback);
         }
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void handleAudioFocusChange(int focusChange) {
             mCallbacks.onAudioFocusChange(focusChange);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public long getPlaybackPosition() {
             return mCallbacks.onGetCurrentPosition();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void playbackPositionUpdate(long newPositionMs) {
             mCallbacks.onSeekTo(newPositionMs);
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.151 -0400", hash_original_field = "FE718FA38C5E519A779B06B524D16D24", hash_generated_field = "57508295FCB4AB902075A78ABC06242B")
-
 
     final KeyEvent.Callback mKeyEventCallback = new KeyEvent.Callback() {
         @Override
@@ -248,6 +252,7 @@ public void unregisterStateListener(TransportStateListener listener) {
         mListeners.remove(listener);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.194 -0400", hash_original_method = "4501A4957BDF52B4E3ACEB7865C4407C", hash_generated_method = "EE6757D62F15FB7208313044B50A9B61")
     
 private TransportStateListener[] getListeners() {
@@ -259,6 +264,7 @@ private TransportStateListener[] getListeners() {
         return listeners;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.199 -0400", hash_original_method = "8F9E5E249CE3B57418C2F22FC95D9D9D", hash_generated_method = "64B0AAB98EEADFEA1CE174C63E46D2B4")
     
 private void reportPlayingChanged() {
@@ -270,6 +276,7 @@ private void reportPlayingChanged() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.204 -0400", hash_original_method = "C10480DAD5C4DFFB3BCC3890493E5651", hash_generated_method = "E7E682192B744D9D1A59C5798CACFEC8")
     
 private void reportTransportControlsChanged() {
@@ -281,6 +288,7 @@ private void reportTransportControlsChanged() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.209 -0400", hash_original_method = "3F48A9A676FBDCEDDB4B6AA91BAD5A4B", hash_generated_method = "CE61BE9EFECF3E197204205BAD5A17E6")
     
 private void pushControllerState() {

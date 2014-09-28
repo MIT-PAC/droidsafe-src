@@ -9,7 +9,7 @@ import droidsafe.annotations.*;
 public class SparseArrayCompat<E> {
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.206 -0500", hash_original_method = "7DB5AA23E16883217822FBC6D13669D2", hash_generated_method = "FEB35469F5B9E3BA231D8C8D51EF0135")
     
 private static int binarySearch(int[] a, int start, int len, int key) {
@@ -33,7 +33,7 @@ private static int binarySearch(int[] a, int start, int len, int key) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.208 -0500", hash_original_method = "78F4782A9945BD922AE4F703F6706A7E", hash_generated_method = "B882F8244F97164E1A58459C59541F76")
     
 static int idealByteArraySize(int need) {
@@ -45,7 +45,7 @@ static int idealByteArraySize(int need) {
     }
 
     @DSComment("Package priviledge")
-    @DSBan(DSCat.DEFAULT_MODIFIER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.211 -0500", hash_original_method = "C5D38D95B60B446AE8BAAF7982426E2B", hash_generated_method = "62DCA05F0054FCC37EAAC319A156AB93")
     
 static int idealIntArraySize(int need) {
@@ -125,6 +125,7 @@ public E get(int key, E valueIfKeyNotFound) {
     /**
      * Removes the mapping from the specified key, if there was any.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.171 -0500", hash_original_method = "D16C073A10FD3671AE05EBC49E38DA17", hash_generated_method = "80887C79768229A316C39532A8C6419F")
     
 public void delete(int key) {
@@ -141,6 +142,7 @@ public void delete(int key) {
     /**
      * Alias for {@link #delete(int)}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.173 -0500", hash_original_method = "EE51F875218CA8C1C2C8959A48F2A4BB", hash_generated_method = "C7FFA05DD1740D5D19664E20B4CEE216")
     
 public void remove(int key) {
@@ -150,6 +152,7 @@ public void remove(int key) {
     /**
      * Removes the mapping at the specified index.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.175 -0500", hash_original_method = "1992218C2CA2A9A793E8A4995C16BACA", hash_generated_method = "64D74600A863EF1A66C3817EBCC9190A")
     
 public void removeAt(int index) {
@@ -175,7 +178,7 @@ public void removeAtRange(int index, int size) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.180 -0500", hash_original_method = "7868047E3541D358CB50D9A842861F65", hash_generated_method = "83C61FF7853C3689F47327323B6A23E5")
     
 private void gc() {
@@ -282,6 +285,7 @@ public int size() {
      * the key from the <code>index</code>th key-value mapping that this
      * SparseArray stores.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.189 -0500", hash_original_method = "AD3650995583655A8D059B5C8CE85FAD", hash_generated_method = "366CF084EB99511539C960AAB90DA5DB")
     
 public int keyAt(int index) {
@@ -329,6 +333,7 @@ public void setValueAt(int index, E value) {
      * specified key, or a negative number if the specified
      * key is not mapped.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.196 -0500", hash_original_method = "2AE05DC6F4A524A5C2D1FCD4B3573FB7", hash_generated_method = "E89EF5B21BDA47A9D7B7079CAA41EA4A")
     
 public int indexOfKey(int key) {
@@ -364,6 +369,7 @@ public int indexOfValue(E value) {
     /**
      * Removes all key-value mappings from this SparseArray.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.201 -0500", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "BEA9506A49791E09E851664F93E1DBF1")
     
 public void clear() {

@@ -164,8 +164,9 @@ protected DataConnection(PhoneBase phone, String name, int id, RetryManager rm) 
     }
 
     //***** Abstract methods
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.415 -0500", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "756F2EF371660D429BB5FEF72144B300")
     
 @Override

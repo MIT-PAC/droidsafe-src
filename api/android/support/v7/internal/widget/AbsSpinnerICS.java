@@ -95,6 +95,7 @@ AbsSpinnerICS(Context context, AttributeSet attrs, int defStyle) {
     /**
      * Common code for different constructor flavors
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.239 -0400", hash_original_method = "189B5B9E645B86B5245C2FF55DEC5907", hash_generated_method = "362784A39455FECC93B9947BF59423D1")
     
 private void initAbsSpinner() {
@@ -108,6 +109,7 @@ private void initAbsSpinner() {
      * relative to the selected item.
      * @param adapter The SpinnerAdapter to use for this Spinner
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.242 -0400", hash_original_method = "E5824BE9B0ACFF3A1B32EE310E006300", hash_generated_method = "A8CD1C7048782E7BF32B6A2A7FAD0DB3")
     
 @Override
@@ -153,6 +155,7 @@ private void initAbsSpinner() {
     /**
      * Clear out all children from the list
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.244 -0400", hash_original_method = "5DEE49E4A107B00C6160988898CCE14A", hash_generated_method = "5DEE49E4A107B00C6160988898CCE14A")
     
 void resetList() {
@@ -255,18 +258,21 @@ void resetList() {
         mWidthMeasureSpec = widthMeasureSpec;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.251 -0400", hash_original_method = "44D3B1A6F440757321735895159CF3F5", hash_generated_method = "44D3B1A6F440757321735895159CF3F5")
     
 int getChildHeight(View child) {
         return child.getMeasuredHeight();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.254 -0400", hash_original_method = "3D627342594CC491E8B9982EF63DBDD8", hash_generated_method = "3D627342594CC491E8B9982EF63DBDD8")
     
 int getChildWidth(View child) {
         return child.getMeasuredWidth();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.256 -0400", hash_original_method = "2179BEF90E842D00377926E5531ABF89", hash_generated_method = "ABC5E9F5739A26EC765110A888213B88")
     
 @Override
@@ -276,6 +282,7 @@ int getChildWidth(View child) {
                 ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.259 -0400", hash_original_method = "DFD3706513DF6E8DDAF3349BC14B096B", hash_generated_method = "3756C1E95ADF2491444863684B6E563E")
     
 void recycleAllViews() {
@@ -294,6 +301,7 @@ void recycleAllViews() {
     /**
      * Jump directly to a specific item in the adapter data.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.262 -0400", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "C3A5D610F87F4D3CECAE59DEBB9EE18C")
     
 public void setSelection(int position, boolean animate) {
@@ -303,6 +311,7 @@ public void setSelection(int position, boolean animate) {
         setSelectionInt(position, shouldAnimate);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.264 -0400", hash_original_method = "7E33360CBDBF59A4E473BBC01C4A9D09", hash_generated_method = "5A7C3B76C3326CF67657E51BD1F90B58")
     
 @Override
@@ -319,6 +328,7 @@ public void setSelection(int position, boolean animate) {
      * @param animate Should the transition be animated
      *
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.267 -0400", hash_original_method = "63246E2C9E0D90A96046BA94228CF775", hash_generated_method = "63246E2C9E0D90A96046BA94228CF775")
     
 void setSelectionInt(int position, boolean animate) {
@@ -336,6 +346,7 @@ void setSelectionInt(int position, boolean animate) {
     
 abstract void layout(int delta, boolean animate);
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.271 -0400", hash_original_method = "B9D708BD110913DD38C752A46A05BBB4", hash_generated_method = "513703D89AB4B12AE4736D2F5E964FD5")
     
 @Override
@@ -363,6 +374,7 @@ abstract void layout(int delta, boolean animate);
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:42.276 -0400", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "B2AD20E240F1F5A7AD66020C9F08265C")
     
 @Override
@@ -416,6 +428,7 @@ public int pointToPosition(int x, int y) {
                 return new SavedState(in);
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
@@ -495,10 +508,12 @@ public int pointToPosition(int x, int y) {
     class RecycleBin {
         private final SparseArray<View> mScrapHeap = new SparseArray<View>();
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void put(int position, View v) {
             mScrapHeap.put(position, v);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         View get(int position) {
             // System.out.print("Looking for " + position);
             View result = mScrapHeap.get(position);
@@ -511,6 +526,7 @@ public int pointToPosition(int x, int y) {
             return result;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         void clear() {
             final SparseArray<View> scrapHeap = mScrapHeap;
             final int count = scrapHeap.size();

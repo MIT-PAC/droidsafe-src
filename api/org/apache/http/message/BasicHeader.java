@@ -62,6 +62,7 @@ public String getValue() {
      *
      * @return a string
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.040 -0500", hash_original_method = "F969228997B8CD2234867EA0CA894312", hash_generated_method = "ACA16CD0056313E82F84368A4B3CF52E")
     

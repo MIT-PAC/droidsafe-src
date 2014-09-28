@@ -58,7 +58,7 @@ public AtomicReference() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.205 -0500", hash_original_method = "479D74F52EAA9F8F31AB11658696490B", hash_generated_method = "48DC9DDD5B35A417180739369A87118B")
     
 public final V get() {

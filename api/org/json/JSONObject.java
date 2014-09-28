@@ -71,6 +71,7 @@ public static String quote(String data) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.299 -0400", hash_original_field = "69D6A2BFA9970459DEF9916A4A819505", hash_generated_field = "3F3D3946D0FBB086C49E80D158F100D9")
 
     public static final Object NULL = new Object() {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.345 -0500", hash_original_method = "4F2355DBC727B25E0D2B31778D32159D", hash_generated_method = "A167818F648781FE5D4BB7B0C4526A86")
         
 @Override public boolean equals(Object o) {
@@ -741,7 +742,7 @@ public JSONArray names() {
      * <pre>{"query":"Pizza","locations":[94043,90210]}</pre>
      */
     @DSComment("no input, no suspicious activity")
-    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.462 -0500", hash_original_method = "CC6BE78472EEEAF64E530CA9F9B14BB5", hash_generated_method = "000C0FCE86F8834F70EB7B14EA12E002")
     
 @Override public String toString() {

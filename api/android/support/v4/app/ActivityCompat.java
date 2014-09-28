@@ -94,9 +94,6 @@ public static boolean startActivities(Activity activity, Intent[] intents) {
     {
         //Synthesized constructor
     }
-    
-
-
 
     /**
      * Start an activity with additional launch information, if able.
@@ -162,6 +159,7 @@ public static void startActivityForResult(Activity activity, Intent intent, int 
      * <p>On Android 4.1+ calling this method will call through to the native version of this
      * method. For other platforms {@link Activity#finish()} will be called instead.</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:05:54.436 -0400", hash_original_method = "52B53D972317D121FBBAC098C4A03574", hash_generated_method = "7EC59511B332B8C2C414302C0531E947")
     
 public static void finishAffinity(Activity activity) {

@@ -12,7 +12,6 @@ import android.widget.FilterQueryProvider;
 import droidsafe.annotations.*;
 
 public class DroidsafeFilterQueryProvider implements FilterQueryProvider {
-
 	
 	@DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public DroidsafeFilterQueryProvider() {
@@ -22,8 +21,8 @@ public class DroidsafeFilterQueryProvider implements FilterQueryProvider {
 	@Override
 	@DSVerified
 	@DSComment("Abstract Method")
-	@DSSpec(DSCat.DATABASE)
-	@DSSource(DSSourceKind.DATABASE_INFORMATION)
+	@DSSafe(DSCat.SAFE_LIST)
+	
 	public Cursor runQuery(CharSequence constraint) {
 		// TODO Auto-generated method stub
 		Cursor cursor = new DSCursor(DSOnlyType.DONTCARE);

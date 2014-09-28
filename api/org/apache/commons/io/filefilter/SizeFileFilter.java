@@ -95,6 +95,7 @@ public SizeFileFilter(long size, boolean acceptLarger) {
      * @param file  the File to check
      * @return true if the filename matches
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.823 -0400", hash_original_method = "13EB4F7103C9E58EC2AD605053CF5788", hash_generated_method = "04EAA1D3BAE93CD85D2EFFC337CD1254")
     
 @Override

@@ -72,6 +72,7 @@ public class PagerTitleStrip extends ViewGroup implements ViewPager.Decor {
 
     private static  PagerTitleStripImpl IMPL;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.120 -0500", hash_original_method = "8A1039A258802121A36A7EA483714545", hash_generated_method = "EB7F6ED5BA95C3E9550B03050754AAF0")
     
 private static void setSingleLineAllCaps(TextView text) {
@@ -119,6 +120,7 @@ private static void setSingleLineAllCaps(TextView text) {
     }
 
     static class PagerTitleStripImplBase implements PagerTitleStripImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.115 -0500", hash_original_method = "0CB06A06A9C05B0CCDFA7CD0E85CFD57", hash_generated_method = "EC347066EAA8B6E090F723801C3C066B")
         
 public void setSingleLineAllCaps(TextView text) {
@@ -127,6 +129,7 @@ public void setSingleLineAllCaps(TextView text) {
     }
 
     static class PagerTitleStripImplIcs implements PagerTitleStripImpl {
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.117 -0500", hash_original_method = "47ABCBC0DA420E91F72BDDE0CE8B03D5", hash_generated_method = "C4905185FE399E833D5D5B66CEBBC30B")
         
 public void setSingleLineAllCaps(TextView text) {
@@ -217,6 +220,7 @@ public PagerTitleStrip(Context context, AttributeSet attrs) {
      *
      * @param spacingPixels Spacing between each title displayed in pixels
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.131 -0500", hash_original_method = "2519DA94E840AA5BC78DFFB6AFA12BAD", hash_generated_method = "6C76EA4C73B62027E0712FEFBD7E9043")
     
 public void setTextSpacing(int spacingPixels) {
@@ -227,6 +231,7 @@ public void setTextSpacing(int spacingPixels) {
     /**
      * @return The required spacing between title segments in pixels
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.133 -0500", hash_original_method = "F95FEA536A7B88B38F2CCFF5449A0320", hash_generated_method = "B5612F3FCEE6064C6E6D5F64065C3027")
     
 public int getTextSpacing() {
@@ -238,6 +243,7 @@ public int getTextSpacing() {
      *
      * @param alpha Opacity value in the range 0-1f
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.135 -0500", hash_original_method = "1B0C50F7A2C10752F175ACE77F04BC8A", hash_generated_method = "F4116F6900D8A83A8CED413B2670C778")
     
 public void setNonPrimaryAlpha(float alpha) {
@@ -273,6 +279,7 @@ public void setTextColor(int color) {
      * @param unit The desired dimension unit
      * @param size The desired size in the given units
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.140 -0500", hash_original_method = "ABA1A9E9733CD7AD4FC9439B74E6026F", hash_generated_method = "F7CDC37E8EFADB77A63C599517F5451E")
     
 public void setTextSize(int unit, float size) {
@@ -330,6 +337,7 @@ public void setGravity(int gravity) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.148 -0500", hash_original_method = "E27774F6130A4F6B6CB104EE8BFBF848", hash_generated_method = "7D3D10B4936027CF92250FDFC572D640")
     
 void updateText(int currentItem, PagerAdapter adapter) {
@@ -380,6 +388,7 @@ void updateText(int currentItem, PagerAdapter adapter) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.153 -0500", hash_original_method = "EAF924632CCF71246331B8833B944AA0", hash_generated_method = "EAF924632CCF71246331B8833B944AA0")
     
 void updateAdapter(PagerAdapter oldAdapter, PagerAdapter newAdapter) {
@@ -399,6 +408,7 @@ void updateAdapter(PagerAdapter oldAdapter, PagerAdapter newAdapter) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.160 -0500", hash_original_method = "4031212F20DB7BF6694A94FE5410BA3F", hash_generated_method = "4031212F20DB7BF6694A94FE5410BA3F")
     
 void updateTextPositions(int position, float positionOffset, boolean force) {
@@ -535,6 +545,7 @@ void updateTextPositions(int position, float positionOffset, boolean force) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.168 -0500", hash_original_method = "5F597790016BBA247C3C04F7E22AC0D1", hash_generated_method = "5F597790016BBA247C3C04F7E22AC0D1")
     
 int getMinHeight() {
@@ -552,6 +563,7 @@ int getMinHeight() {
 
         private int mScrollState;
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.171 -0500", hash_original_method = "6C358B1B424AD01247E78823B26F3317", hash_generated_method = "787B7536EF9C4BB9A019603598E4AA29")
         
 @Override
@@ -563,6 +575,7 @@ int getMinHeight() {
             updateTextPositions(position, positionOffset, false);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.173 -0500", hash_original_method = "BDE5366BD51457451209BD696A487B58", hash_generated_method = "8E0A125F931E9981104B9D7888EDFA53")
         
 @Override
@@ -576,6 +589,7 @@ int getMinHeight() {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.175 -0500", hash_original_method = "7D09E30D83D104D1B391B393C60F770D", hash_generated_method = "2C1D1A2266E25176C415ED9EBEA30F84")
         
 @Override
@@ -583,6 +597,7 @@ int getMinHeight() {
             mScrollState = state;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:54:19.176 -0500", hash_original_method = "61B15A1B041ED988FCE0F531C9B4D949", hash_generated_method = "2BF34629A81712FE654495C0DF81AB11")
         
 @Override

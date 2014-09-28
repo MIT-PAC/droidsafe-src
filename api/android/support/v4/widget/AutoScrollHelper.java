@@ -137,6 +137,7 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
 
     private static final int DEFAULT_RAMP_DOWN_DURATION = 500;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.953 -0400", hash_original_method = "263E4A0D32648DA26FDBBAACB6117645", hash_generated_method = "4CAD43C25667B715B2E10F9061A28618")
     
 private static int constrain(int value, int min, int max) {
@@ -149,6 +150,7 @@ private static int constrain(int value, int min, int max) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.960 -0400", hash_original_method = "B44B2D3A0D1B4D106AF63A1A59BB5B42", hash_generated_method = "998C3D6B252A59F6CEE63EB21BA01803")
     
 private static float constrain(float value, float min, float max) {
@@ -317,6 +319,7 @@ public boolean isExclusive() {
      *            {@link #NO_MAX} to leave the relative value unconstrained.
      * @return The scroll helper, which may used to chain setter calls.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.810 -0400", hash_original_method = "1A8F05B9F126B225CD502D23316E7608", hash_generated_method = "8CBDE253D1D8C84E8DE28ABD03B8ADC2")
     
 public AutoScrollHelper setMaximumVelocity(float horizontalMax, float verticalMax) {
@@ -337,6 +340,7 @@ public AutoScrollHelper setMaximumVelocity(float horizontalMax, float verticalMa
      *            {@link #NO_MIN} to leave the relative value unconstrained.
      * @return The scroll helper, which may used to chain setter calls.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.818 -0400", hash_original_method = "26EEF6185167D01A06D30EE82F2D2401", hash_generated_method = "CFD66EB22CC96F1E6F5EAB1768D255E2")
     
 public AutoScrollHelper setMinimumVelocity(float horizontalMin, float verticalMin) {
@@ -360,6 +364,7 @@ public AutoScrollHelper setMinimumVelocity(float horizontalMin, float verticalMi
      *            ignore.
      * @return The scroll helper, which may used to chain setter calls.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.825 -0400", hash_original_method = "0463A69A26778FD1217A604619B7A7DC", hash_generated_method = "64A67A2FC2BCB74AD7E1960D91415643")
     
 public AutoScrollHelper setRelativeVelocity(float horizontal, float vertical) {
@@ -383,6 +388,7 @@ public AutoScrollHelper setRelativeVelocity(float horizontal, float vertical) {
      * @param type The type of edge to use.
      * @return The scroll helper, which may used to chain setter calls.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.831 -0400", hash_original_method = "7F8AAF66020E10F65BC6E0682EC10E1E", hash_generated_method = "A533AA0EBC06A90E1B68F70B0A6F5F34")
     
 public AutoScrollHelper setEdgeType(int type) {
@@ -404,6 +410,7 @@ public AutoScrollHelper setEdgeType(int type) {
      *            maximum value.
      * @return The scroll helper, which may used to chain setter calls.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.838 -0400", hash_original_method = "3B151E9D0A68EE4ABC433836E13673BF", hash_generated_method = "5FD4A00138B2E6AC9915DE545132367F")
     
 public AutoScrollHelper setRelativeEdges(float horizontal, float vertical) {
@@ -428,6 +435,7 @@ public AutoScrollHelper setRelativeEdges(float horizontal, float vertical) {
      *            value.
      * @return The scroll helper, which may used to chain setter calls.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.845 -0400", hash_original_method = "97CCC02C015F548A6AD741142197C3CD", hash_generated_method = "B94C7491E20238B692C47D9457921D6E")
     
 public AutoScrollHelper setMaximumEdges(float horizontalMax, float verticalMax) {
@@ -447,6 +455,7 @@ public AutoScrollHelper setMaximumEdges(float horizontalMax, float verticalMax) 
      * @param delayMillis The activation delay in milliseconds.
      * @return The scroll helper, which may used to chain setter calls.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.851 -0400", hash_original_method = "53C1E9165159486B60483FDF06754875", hash_generated_method = "86B42EA982960F78BAEB67A0687DAD78")
     
 public AutoScrollHelper setActivationDelay(int delayMillis) {
@@ -464,6 +473,7 @@ public AutoScrollHelper setActivationDelay(int delayMillis) {
      * @param durationMillis The ramp-up duration in milliseconds.
      * @return The scroll helper, which may used to chain setter calls.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.858 -0400", hash_original_method = "94F526D2B82367F23351B670038C3C29", hash_generated_method = "FCDE9D9AF61417E1EBC3C575D40451F1")
     
 public AutoScrollHelper setRampUpDuration(int durationMillis) {
@@ -481,6 +491,7 @@ public AutoScrollHelper setRampUpDuration(int durationMillis) {
      * @param durationMillis The ramp-down duration in milliseconds.
      * @return The scroll helper, which may used to chain setter calls.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.865 -0400", hash_original_method = "1D78BF04625477BA0136ABE81CEFF9FC", hash_generated_method = "3E3F4BCEEABE406810C7B6FF7650987E")
     
 public AutoScrollHelper setRampDownDuration(int durationMillis) {
@@ -535,6 +546,7 @@ public AutoScrollHelper setRampDownDuration(int durationMillis) {
     /**
      * @return whether the target is able to scroll in the requested direction
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.884 -0400", hash_original_method = "B26BA7C061EADCB2BB6D73BE44B07002", hash_generated_method = "733A0C8D057F565CFA38CE5A94E46729")
     
 private boolean shouldAnimate() {
@@ -549,6 +561,7 @@ private boolean shouldAnimate() {
     /**
      * Starts the scroll animation.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.893 -0400", hash_original_method = "1D5C1CAD470C382319CB84CDAF0CED74", hash_generated_method = "FB47F8FFE188A17B6D7F9F0ECE864AD5")
     
 private void startAnimating() {
@@ -575,6 +588,7 @@ private void startAnimating() {
      * activation delay, this may occur between posting the animation and
      * actually running it.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.899 -0400", hash_original_method = "32219D50AD51418C26556F1ADF039C62", hash_generated_method = "8E6A8709F3121B51F7BADC93125AC0E3")
     
 private void requestStop() {
@@ -587,6 +601,7 @@ private void requestStop() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.911 -0400", hash_original_method = "21B2ACA116C244D6D0246AA1099DB2D2", hash_generated_method = "1F36F3B0EAE2A2DDD1006FF16A16E492")
     
 private float computeTargetVelocity(
@@ -621,6 +636,7 @@ private float computeTargetVelocity(
      * @param deltaX The number of pixels to scroll by horizontally.
      * @param deltaY The number of pixels to scroll by vertically.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.918 -0400", hash_original_method = "6FAB8B17B383926E4B3CB6169D2EF56A", hash_generated_method = "10316ED7B1B991CA66D86A845B473C0F")
     
 public abstract void scrollTargetBy(int deltaX, int deltaY);
@@ -634,6 +650,7 @@ public abstract void scrollTargetBy(int deltaX, int deltaY);
      * @return true if the target view is able to horizontally scroll in the
      *         specified direction.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.923 -0400", hash_original_method = "5AE6F97030A2B2872ADB03A39C656588", hash_generated_method = "2A560E07FC4F4562BB30B13EB3CA3F23")
     
 public abstract boolean canTargetScrollHorizontally(int direction);
@@ -647,6 +664,7 @@ public abstract boolean canTargetScrollHorizontally(int direction);
      * @return true if the target view is able to vertically scroll in the
      *         specified direction.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.930 -0400", hash_original_method = "7CCD3473E7C9441C52232BE49B124D54", hash_generated_method = "6C8DAB5C4ADC2BA8D2DD4AF7A7F523A8")
     
 public abstract boolean canTargetScrollVertically(int direction);
@@ -663,6 +681,7 @@ public abstract boolean canTargetScrollVertically(int direction);
      * @param current Touch position within within the total size.
      * @return Interpolated value of the touch position within the edge.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.939 -0400", hash_original_method = "BA83F8BF39A6AE721B21CF37BA4DF633", hash_generated_method = "E8B0F1FA5CCFA12D045D340EE13DB219")
     
 private float getEdgeValue(float relativeValue, float size, float maxValue, float current) {
@@ -683,6 +702,7 @@ private float getEdgeValue(float relativeValue, float size, float maxValue, floa
         return constrain(interpolated, -1, 1);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.945 -0400", hash_original_method = "5116BD62E83073320DAB98090F1C225F", hash_generated_method = "7251BA6549CEB5C52C388E97D53E8956")
     
 private float constrainEdgeValue(float current, float leading) {
@@ -718,6 +738,7 @@ private float constrainEdgeValue(float current, float leading) {
      * Sends a {@link MotionEvent#ACTION_CANCEL} event to the target view,
      * canceling any ongoing touch events.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:04.966 -0400", hash_original_method = "84B2CF4E7502DF9E54D7F292238924DB", hash_generated_method = "750483E8F4E0E593319844415ACC1A3A")
     
 private void cancelTargetTouch() {
@@ -796,10 +817,12 @@ private void cancelTargetTouch() {
             mDeltaY = 0;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setRampUpDuration(int durationMillis) {
             mRampUpDuration = durationMillis;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void setRampDownDuration(int durationMillis) {
             mRampDownDuration = durationMillis;
         }
@@ -807,6 +830,7 @@ private void cancelTargetTouch() {
         /**
          * Starts the scroller at the current animation time.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void start() {
             mStartTime = AnimationUtils.currentAnimationTimeMillis();
             mStopTime = -1;
@@ -819,6 +843,7 @@ private void cancelTargetTouch() {
         /**
          * Stops the scroller at the current animation time.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void requestStop() {
             final long currentTime = AnimationUtils.currentAnimationTimeMillis();
             mEffectiveRampDown = constrain((int) (currentTime - mStartTime), 0, mRampDownDuration);
@@ -826,11 +851,13 @@ private void cancelTargetTouch() {
             mStopTime = currentTime;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isFinished() {
             return mStopTime > 0
                     && AnimationUtils.currentAnimationTimeMillis() > mStopTime + mEffectiveRampDown;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private float getValueAt(long currentTime) {
             if (currentTime < mStartTime) {
                 return 0f;
@@ -851,6 +878,7 @@ private void cancelTargetTouch() {
          * @param value The value to interpolate, between 0 and 1.
          * @return the interpolated value, between 0 and 1.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         private float interpolateValue(float value) {
             return -4 * value * value + 4 * value;
         }
@@ -862,6 +890,7 @@ private void cancelTargetTouch() {
          * @see #getDeltaX()
          * @see #getDeltaY()
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void computeScrollDelta() {
             if (mDeltaTime == 0) {
                 throw new RuntimeException("Cannot compute scroll delta before calling start()");
@@ -883,15 +912,18 @@ private void cancelTargetTouch() {
          * @param x The target X velocity in pixels per millisecond.
          * @param y The target Y velocity in pixels per millisecond.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void setTargetVelocity(float x, float y) {
             mTargetVelocityX = x;
             mTargetVelocityY = y;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getHorizontalDirection() {
             return (int) (mTargetVelocityX / Math.abs(mTargetVelocityX));
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         public int getVerticalDirection() {
             return (int) (mTargetVelocityY / Math.abs(mTargetVelocityY));
         }
@@ -900,6 +932,7 @@ private void cancelTargetTouch() {
          * The distance traveled in the X-coordinate computed by the last call
          * to {@link #computeScrollDelta()}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public int getDeltaX() {
             return mDeltaX;
         }
@@ -908,6 +941,7 @@ private void cancelTargetTouch() {
          * The distance traveled in the Y-coordinate computed by the last call
          * to {@link #computeScrollDelta()}.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public int getDeltaY() {
             return mDeltaY;
         }

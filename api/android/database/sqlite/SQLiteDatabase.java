@@ -146,6 +146,7 @@ private static SQLiteDatabase openDatabase(String path, CursorFactory factory, i
     /**
      * Equivalent to openDatabase(file.getPath(), factory, CREATE_IF_NECESSARY).
      */
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.146 -0500", hash_original_method = "18158E65D0AEC4A5DB9A049F4B71DBBA", hash_generated_method = "54E9E3271F913909401DE9AF04EFF66C")
     
 public static SQLiteDatabase openOrCreateDatabase(File file, CursorFactory factory) {
@@ -155,6 +156,7 @@ public static SQLiteDatabase openOrCreateDatabase(File file, CursorFactory facto
     /**
      * Equivalent to openDatabase(path, factory, CREATE_IF_NECESSARY).
      */
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.148 -0500", hash_original_method = "8E5844484F4010F8E8AD05E1ADE2036F", hash_generated_method = "9A64F576CDEAEC3C965553C2321EC500")
     
 public static SQLiteDatabase openOrCreateDatabase(String path, CursorFactory factory) {
@@ -164,6 +166,7 @@ public static SQLiteDatabase openOrCreateDatabase(String path, CursorFactory fac
     /**
      * Equivalent to openDatabase(path, factory, CREATE_IF_NECESSARY, errorHandler).
      */
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.151 -0500", hash_original_method = "0BAAB26A173C80C4AB32C48250BFAADD", hash_generated_method = "28D90A01EDCDC7248932D45C65058399")
     
 public static SQLiteDatabase openOrCreateDatabase(String path, CursorFactory factory,
@@ -1604,6 +1607,7 @@ public void setPageSize(long numBytes) {
      * @return A pre-compiled {@link SQLiteStatement} object. Note that
      * {@link SQLiteStatement}s are not synchronized, see the documentation for more details.
      */
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("returned DB object")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.211 -0500", hash_original_method = "C05C583B39FD005C236783082CBB4E55", hash_generated_method = "A1E3106D38FC0C0A02CB8FBC096B7941")
@@ -1798,7 +1802,7 @@ public Cursor query(String table, String[] columns, String selection,
      */
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSink({DSSinkKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.224 -0500", hash_original_method = "76B8F97A589187A4837E14E72F2396A8", hash_generated_method = "65A12FD6153DC4A6ABBCE28A6BA06DA3")
     
 public Cursor rawQuery(String sql, String[] selectionArgs) {
@@ -2142,6 +2146,7 @@ for(i = setValuesSize;i < bindArgsSize;i++)
      * not supported.
      * @throws SQLException if the SQL string is invalid
      */
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.250 -0500", hash_original_method = "25D536EB53093A036E9DAE961A0D97E6", hash_generated_method = "D29CB13B2063DDA1D0AA901FD0386254")
@@ -2193,6 +2198,7 @@ public void execSQL(String sql) throws SQLException {
      * @param bindArgs only byte[], String, Long and Double are supported in bindArgs.
      * @throws SQLException if the SQL string is invalid
      */
+    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.253 -0500", hash_original_method = "C75317BDB75C741C750B94F218C97882", hash_generated_method = "EBB1B2E9ABAA2FAB66A09DC8431DF450")
@@ -2285,6 +2291,7 @@ public boolean needUpgrade(int newVersion) {
      *
      * @return the path to our database file.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.271 -0500", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "571136F21505319981CAF88E560329CE")
     

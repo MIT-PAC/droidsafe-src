@@ -33,7 +33,7 @@ private static State rilStateToState(String s) {
 
     public static final Creator<OperatorInfo> CREATOR =
         new Creator<OperatorInfo>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.367 -0500", hash_original_method = "C8813B4601E45790F7843A2D1EA70A49", hash_generated_method = "E2399B99ED9146E351F847DAEB58514F")
         
 public OperatorInfo createFromParcel(Parcel in) {

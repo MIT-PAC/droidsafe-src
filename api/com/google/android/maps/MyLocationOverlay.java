@@ -52,10 +52,13 @@ public class MyLocationOverlay extends Overlay
     
     public synchronized void onSensorChanged(int paramInt, float[] paramArrayOfFloat) {  }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public synchronized void onLocationChanged(Location paramLocation) {  }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public void onStatusChanged(String paramString, int paramInt, Bundle paramBundle) {  }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public void onProviderEnabled(String paramString) { 
         onSensorChanged(0, new float[]{0.0f});
         onLocationChanged(new Location("GPS"));
@@ -66,6 +69,7 @@ public class MyLocationOverlay extends Overlay
         dispatchTap();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     public void onProviderDisabled(String paramString) {  }
     
     public boolean onSnapToItem(int paramInt1, int paramInt2, Point paramPoint, MapView paramMapView) { mMapView = paramMapView; return getTaintBoolean(); }

@@ -196,6 +196,7 @@ public MenuItem getItem(int index) {
         return mItems.get(index);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.871 -0400", hash_original_method = "532C8DD0C10231ED8CD60F99EDE083DF", hash_generated_method = "910FB5F30C2357F9B770A96A29C6F443")
     
 public boolean hasVisibleItems() {
@@ -230,6 +231,7 @@ private ActionMenuItem findItemWithShortcut(int keyCode, KeyEvent event) {
         return null;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.874 -0400", hash_original_method = "0DDA4D68AC5B1CCD6E78D7F4D7CE7D1C", hash_generated_method = "67DF47C1B89556F866C6C61567BFA168")
     
 public boolean isShortcutKey(int keyCode, KeyEvent event) {
@@ -248,6 +250,7 @@ public boolean performIdentifierAction(int id, int flags) {
         return mItems.get(index).invoke();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.877 -0400", hash_original_method = "FCFFBF46B978E57B9C08F24E71664A9C", hash_generated_method = "C5F221F18C7BFEBA9712D00E45E0A483")
     
 public boolean performShortcut(int keyCode, KeyEvent event, int flags) {
@@ -259,6 +262,7 @@ public boolean performShortcut(int keyCode, KeyEvent event, int flags) {
         return item.invoke();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.878 -0400", hash_original_method = "1F9D30FEFC27598836CC1250640F4BD2", hash_generated_method = "35EA1FB5B42B314C3FDEE263B340FD42")
     
 public void removeGroup(int groupId) {
@@ -275,6 +279,7 @@ public void removeGroup(int groupId) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.879 -0400", hash_original_method = "4E0C2E2AB07D1BFF314FF21B1A923D78", hash_generated_method = "37E1EFE346E157C1964AD6B86B9D4ACD")
     
 public void removeItem(int id) {
@@ -335,6 +340,7 @@ public void setQwertyMode(boolean isQwerty) {
         mIsQwerty = isQwerty;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 15:47:22.885 -0400", hash_original_method = "5327FF82295AE99159722BB0995F8072", hash_generated_method = "B001909A1E3FF23FBA9BDC7968BCB51C")
     
 public int size() {

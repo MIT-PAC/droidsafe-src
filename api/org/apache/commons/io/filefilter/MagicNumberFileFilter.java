@@ -237,6 +237,7 @@ public MagicNumberFileFilter(byte[] magicNumber, long offset) {
      * @return {@code true} if the file contains the filter's magic number 
      *         at the specified offset, {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.986 -0400", hash_original_method = "B71D2F390F50A93DB66E9BFC22DCB2BE", hash_generated_method = "A38847374E5303EDABDBBBA7B0B041C8")
     
 @Override

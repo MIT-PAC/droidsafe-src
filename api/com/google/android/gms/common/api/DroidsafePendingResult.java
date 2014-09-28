@@ -14,7 +14,7 @@ public class DroidsafePendingResult implements PendingResult {
 		
 	}
 	
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	@Override
 	public Result await() {
 		// TODO Auto-generated method stub
@@ -22,7 +22,7 @@ public class DroidsafePendingResult implements PendingResult {
 		return res;
 	}
 
-	@DSSafe(DSCat.SAFE_OTHERS)
+	@DSSafe(DSCat.SAFE_LIST)
 	@Override
 	public Result await(long l0, TimeUnit r1) {
 		// TODO Auto-generated method stub
@@ -46,7 +46,7 @@ public class DroidsafePendingResult implements PendingResult {
 		return getTaintBoolean();
 	}
 
-	 @DSSafe(DSCat.CALLBACK_INVOKE)
+	 @DSSafe(DSCat.SAFE_LIST)
 	 public void setResultCallback(ResultCallback  r0) {
 		 if (r0 != null) {
 			 Result res = new Status(getTaintInt());
@@ -54,7 +54,7 @@ public class DroidsafePendingResult implements PendingResult {
 		 }
 	 }
 
-	 @DSSafe(DSCat.CALLBACK_INVOKE)
+	 @DSSafe(DSCat.SAFE_LIST)
      public void setResultCallback(ResultCallback  r0, long  l1, TimeUnit  r2) {
     	 if (r0 != null) {
     		 int code = (int)(l1 + r2.hashCode() + getTaintInt());

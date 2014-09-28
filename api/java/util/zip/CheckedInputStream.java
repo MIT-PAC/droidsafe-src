@@ -46,7 +46,7 @@ public CheckedInputStream(InputStream is, Checksum csum) {
      *             if an {@code IOException} occurs.
      */
     @DSSource({DSSourceKind.IO})
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.618 -0500", hash_original_method = "4C16D1761C9EE9C5267A2DEA3E7C4510", hash_generated_method = "85B82615DADE129198492E31080E9E81")
     
 @Override

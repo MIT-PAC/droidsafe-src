@@ -45,6 +45,7 @@ static public ClipData newPlainText(CharSequence label, CharSequence text) {
      * @param intent The actual Intent in the clip.
      * @return Returns a new ClipData containing the specified data.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.669 -0500", hash_original_method = "4E92BB296FD3CDEF44C04DC9305DF09F", hash_generated_method = "616324D254BCF2C43662D8927D30FA51")
     
 static public ClipData newIntent(CharSequence label, Intent intent) {
@@ -128,7 +129,7 @@ static public ClipData newRawUri(CharSequence label, Uri uri) {
     public static final Parcelable.Creator<ClipData> CREATOR =
         new Parcelable.Creator<ClipData>() {
 
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.696 -0500", hash_original_method = "E9B77AA38C2D4F67ACBCF421C777825E", hash_generated_method = "3DC0675F011A5E949860AC49DFD80659")
         
 public ClipData createFromParcel(Parcel source) {
@@ -210,6 +211,7 @@ ClipData(Parcel in) {
      * Return the {@link ClipDescription} associated with this data, describing
      * what it contains.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.CLIPBOARD})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.677 -0500", hash_original_method = "8475A7793CA47249207DFD30E601781C", hash_generated_method = "E6CC842A9FBA72E929DACF15D1422EBF")
     
@@ -306,6 +308,7 @@ public CharSequence getText() {
         /**
          * Retrieve the raw Intent contained in this Item.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.CLIPBOARD})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.651 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
         

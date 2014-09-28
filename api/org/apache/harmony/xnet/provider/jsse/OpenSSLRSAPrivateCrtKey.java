@@ -219,6 +219,7 @@ public OpenSSLRSAPrivateCrtKey(RSAPrivateCrtKeySpec rsaKeySpec) throws InvalidKe
         return crtCoefficient;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:13.589 -0400", hash_original_method = "1429BB928872A7F4F3A71701C58D7693", hash_generated_method = "6E9776C36CA898B20918E4F1036C5999")
     
 @Override

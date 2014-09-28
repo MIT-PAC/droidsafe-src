@@ -31,6 +31,7 @@ import android.view.MenuItem;
  */
 public final class MenuWrapperFactory {
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.791 -0400", hash_original_method = "A7DB189133F11D01232564292CF2F9B5", hash_generated_method = "2DDCDA83FE8AE225A6D5FE39DFE9690A")
     
 public static Menu createMenuWrapper(android.view.Menu frameworkMenu) {
@@ -40,6 +41,7 @@ public static Menu createMenuWrapper(android.view.Menu frameworkMenu) {
         return frameworkMenu;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.795 -0400", hash_original_method = "1486C69AD9CF92997B6FD39F62B7C24F", hash_generated_method = "30497D7840D7443D90E1B3BC0374B7E9")
     
 public static MenuItem createMenuItemWrapper(android.view.MenuItem frameworkMenuItem) {
@@ -60,6 +62,7 @@ public static SupportMenu createSupportMenuWrapper(android.view.Menu frameworkMe
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.802 -0400", hash_original_method = "C34963244CC7679A5C7C787AB9EB8753", hash_generated_method = "6C09B453779ED50A7E1E9A7F4DC02FBF")
     
 public static SupportSubMenu createSupportSubMenuWrapper(
@@ -70,6 +73,7 @@ public static SupportSubMenu createSupportSubMenuWrapper(
         throw new UnsupportedOperationException();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.806 -0400", hash_original_method = "F4F86DC1898C0732ECA5A7C3F74FC1BF", hash_generated_method = "1BFE975CA6CD5305DF3691E7C1C3C2CF")
     
 public static SupportMenuItem createSupportMenuItemWrapper(

@@ -157,7 +157,7 @@ public static Class<?> getProxyClass(ClassLoader loader,
      *                if the interfaces or any of its elements are null
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.188 -0500", hash_original_method = "4375560191FF9AF2AD66AAFC6EDA1910", hash_generated_method = "403419D6FE97EEEE4440D238B61372F5")
     
 public static Object newProxyInstance(ClassLoader loader,
@@ -217,7 +217,8 @@ public static boolean isProxyClass(Class<?> cl) {
      * @throws IllegalArgumentException
      *                if the supplied {@code proxy} is not a proxy object
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.193 -0500", hash_original_method = "BDB130E146D4EEE1EE2A0139344DF6E4", hash_generated_method = "53B5EC9ED5B48FB9ADC94ECB944BF755")
     
 public static InvocationHandler getInvocationHandler(Object proxy)

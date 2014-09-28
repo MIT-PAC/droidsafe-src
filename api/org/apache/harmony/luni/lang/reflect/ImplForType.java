@@ -37,7 +37,8 @@ public ImplForType(ImplForType ownerType, String rawTypeName,
         this.loader = loader;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.011 -0500", hash_original_method = "467C0CA3F26F8ADD49B2C117FFDDE5B5", hash_generated_method = "33FDA3A2CE3AAA9B3851D022DD546ECA")
     
 public Type[] getActualTypeArguments() {
@@ -45,7 +46,8 @@ public Type[] getActualTypeArguments() {
         return args.getResolvedTypes().clone();
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.013 -0500", hash_original_method = "607EB162392181215E5C2613EAFAE402", hash_generated_method = "17909C7E64462095813ED1B781EFFC23")
     
 public Type getOwnerType() {

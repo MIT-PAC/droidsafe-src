@@ -127,7 +127,7 @@ public void setAlpha(float alpha) {
      */
     @DSComment("no actions/not sensitive")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.931 -0500", hash_original_method = "84CA63CC358414A9CD87B6516C604402", hash_generated_method = "BB0D60558DFDFA2BC395B22614DE6493")
     
 public float getAlpha() {

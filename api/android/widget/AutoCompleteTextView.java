@@ -174,7 +174,7 @@ public AutoCompleteTextView(Context context, AttributeSet attrs, int defStyle) {
         super.setOnClickListener(mPassThroughClickListener);
     }
 
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.038 -0500", hash_original_method = "C1942F3D6CF625065E36951B3C995636", hash_generated_method = "B20AF43F2EEAFF7AD7EDC0F3F3D5C991")
     
 @Override
@@ -252,7 +252,8 @@ public int getDropDownWidth() {
      * 
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownWidth
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.047 -0500", hash_original_method = "B270189DDD36B930B898EDE5BD590C69", hash_generated_method = "E55EDD4E31E177747521386D45E056CD")
     
 public void setDropDownWidth(int width) {
@@ -300,7 +301,8 @@ public void setDropDownHeight(int height) {
      * 
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownAnchor
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.053 -0500", hash_original_method = "983C379A49D6519E05BB04A2322E89F2", hash_generated_method = "47B37E22C0C8134B5DD2F1C2D09AD204")
     
 public int getDropDownAnchor() {
@@ -330,7 +332,8 @@ public void setDropDownAnchor(int id) {
      * 
      * @attr ref android.R.styleable#PopupWindow_popupBackground
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.058 -0500", hash_original_method = "AF968841F9ADA345DD97E068FA7BD610", hash_generated_method = "B9F5A4E86C16A1269D847E12A60592B2")
     
 public Drawable getDropDownBackground() {
@@ -394,7 +397,8 @@ public int getDropDownVerticalOffset() {
      * 
      * @param offset the horizontal offset
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.069 -0500", hash_original_method = "6A22527360686DE12C48E20144984DC3", hash_generated_method = "7D53B2885E28A76B6CAEC543641AFBEC")
     
 public void setDropDownHorizontalOffset(int offset) {
@@ -511,7 +515,8 @@ public void setDropDownDismissedOnCompletion(boolean dropDownDismissedOnCompleti
      *
      * @see #setThreshold(int)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.085 -0500", hash_original_method = "D355B3B251BB91FAED293791929579AC", hash_generated_method = "3394DC2838DC305525F1033F25137CAE")
     
 public int getThreshold() {
@@ -552,7 +557,7 @@ public void setThreshold(int threshold) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.090 -0500", hash_original_method = "B69DF6D8B348285F7F509DAAD23C3372", hash_generated_method = "7842F66D843EA6654D84B924FD053A47")
     @DSVerified
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.SAFE_LIST)
 public void setOnItemClickListener(AdapterView.OnItemClickListener l) {
         mItemClickListener = l;
         if (l != null) {
@@ -570,7 +575,7 @@ public void setOnItemClickListener(AdapterView.OnItemClickListener l) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.092 -0500", hash_original_method = "48F24F393448111E92CC5CFF766C1584", hash_generated_method = "A61D054416CB4681E7ED1D9CB20ED173")
     @DSVerified
-    @DSSafe(DSCat.ANDROID_CALLBACK)   
+    @DSSafe(DSCat.SAFE_LIST)   
 public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener l) {
         mItemSelectedListener = l;
         if (l != null) {
@@ -688,6 +693,7 @@ public ListAdapter getAdapter() {
         //mPopup.setAdapter(mAdapter);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.108 -0500", hash_original_method = "1E2534A3F57B1DBFCDE49E1B48E26A0E", hash_generated_method = "991226CDAFEA77A8960DE06ED6E79A37")
     
 @Override
@@ -782,6 +788,7 @@ public ListAdapter getAdapter() {
      * this to impose a different standard for when filtering will be
      * triggered.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.116 -0500", hash_original_method = "845425AE754C4142506C6C975210339B", hash_generated_method = "37F16E8131F3F6A5190F950D6D13D8DC")
     
 public boolean enoughToFilter() {
@@ -843,6 +850,7 @@ void doAfterTextChanged() {
      *
      * @return true if the popup menu is showing, false otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.131 -0500", hash_original_method = "82AB47D081F83CBFD677A62933F7FE17", hash_generated_method = "B07C2907453F667B21F350D9D3606E25")
     
 public boolean isPopupShowing() {
@@ -867,6 +875,7 @@ protected CharSequence convertSelectionToString(Object selectedItem) {
      * <p>Clear the list selection.  This may only be temporary, as user input will often bring 
      * it back.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.136 -0500", hash_original_method = "7623D1558693BF470F22C595BECC6733", hash_generated_method = "A3F0AA39F28FDC2E34EBEF922A4A3535")
     
 public void clearListSelection() {
@@ -878,7 +887,8 @@ public void clearListSelection() {
      * 
      * @param position The position to move the selector to.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.138 -0500", hash_original_method = "133DE5DB01039801737429C3DDB0411B", hash_generated_method = "511115DE2EE242D3198E20B99BBA03EF")
     
 public void setListSelection(int position) {
@@ -895,7 +905,8 @@ public void setListSelection(int position) {
      * 
      * @see ListView#getSelectedItemPosition()
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.140 -0500", hash_original_method = "FACA63936D6E82D9A31B7F667F19A5C4", hash_generated_method = "494BAF6C10428ED1B29905126FB73382")
     
 public int getListSelection() {
@@ -997,7 +1008,7 @@ public boolean isPerformingCompletion() {
      * @hide Pending API council approval.
      */
     @DSComment("Autocomplete")
-    @DSSafe(DSCat.GUI)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.155 -0500", hash_original_method = "3F95D8A8308B140C895762391C3A32C6", hash_generated_method = "24DAE7F22FFD61C7AE872D912B41AF03")
     
 public void setText(CharSequence text, boolean filter) {
@@ -1065,6 +1076,7 @@ private void updateDropDownForFilter(int count) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.164 -0500", hash_original_method = "2BBFCFB03CA88D4E4428D247CF9B4D7A", hash_generated_method = "58AD942C8C862DEDE86F6EC904E535BF")
     
 @Override
@@ -1089,6 +1101,7 @@ private void updateDropDownForFilter(int count) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.169 -0500", hash_original_method = "28987A1F68AF8291400818B9FA8A6C7A", hash_generated_method = "C9FE1046269B11C730916E3DFEFACE21")
     
 @Override
@@ -1123,6 +1136,7 @@ private void updateDropDownForFilter(int count) {
     /**
      * <p>Closes the drop down if present on screen.</p>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.175 -0500", hash_original_method = "B307D50FE74ACB01B1CCF5403B3C4263", hash_generated_method = "E479173901F9EF1AB207EFBF64346D88")
     
 public void dismissDropDown() {

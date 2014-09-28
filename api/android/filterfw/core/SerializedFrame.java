@@ -131,7 +131,7 @@ public byte[] getByteArray() {
         }
 
         @DSSink({DSSinkKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.009 -0400", hash_original_method = "E8BCE52F682A74DB971811628682A338", hash_generated_method = "2112BD4FB2BB736357E81C1901E22034")
         
 @Override
@@ -184,7 +184,7 @@ public DirectByteInputStream(byte[] buffer, int size) {
         }
 
         @DSSource({DSSourceKind.IO})
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSpec(DSCat.IO)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:05.026 -0400", hash_original_method = "85AFEDD2D5FA019C7D10275E66B7A151", hash_generated_method = "6F4DA5ED0B942B92D8836C28D2E3B2C6")
         
 @Override

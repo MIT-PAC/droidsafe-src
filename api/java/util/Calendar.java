@@ -37,7 +37,7 @@ public static synchronized Locale[] getAvailableLocales() {
      */
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.820 -0500", hash_original_method = "13DC520F4333E665034B03AB416FC5C0", hash_generated_method = "797174B25A8DDE1C62252B85466EB816")
     
 public static synchronized Calendar getInstance() {
@@ -54,7 +54,7 @@ public static synchronized Calendar getInstance() {
      */
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.823 -0500", hash_original_method = "691484FDA756A7151BBC682C05DB892E", hash_generated_method = "D23801B3F583C8565835C978CAC9E4FD")
     
 public static synchronized Calendar getInstance(Locale locale) {
@@ -72,7 +72,7 @@ public static synchronized Calendar getInstance(Locale locale) {
      */
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.826 -0500", hash_original_method = "8659E4BE21B4ECA0C79A0D434746E08E", hash_generated_method = "8FB50815B1A4F787597CC8F8F4F87772")
     
 public static synchronized Calendar getInstance(TimeZone timezone) {
@@ -92,7 +92,7 @@ public static synchronized Calendar getInstance(TimeZone timezone) {
      */
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.829 -0500", hash_original_method = "1579030499B60D9EDE224A7FC4647CD2", hash_generated_method = "C8EA010EC7DFE5460AEC766482B2448D")
     
 public static synchronized Calendar getInstance(TimeZone timezone, Locale locale) {
@@ -763,7 +763,7 @@ public long getTimeInMillis() {
      * @return the {@code TimeZone} used by this {@code Calendar}.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.846 -0500", hash_original_method = "A62BA7A8B3AE52F44B15929DB0809596", hash_generated_method = "524E7797970F542E897CBB3E44B0D9E1")
     
@@ -884,7 +884,7 @@ public abstract void roll(int field, boolean increment);
      *            the value.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.864 -0500", hash_original_method = "41A9E001F522D5852F11FBD319F3A5A6", hash_generated_method = "EEB5FE9A242FA94FDA1DF2E8AE027E44")
     
 public void set(int field, int value) {
@@ -914,7 +914,7 @@ public void set(int field, int value) {
      *            the day of the month.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.866 -0500", hash_original_method = "E11C90BCB39036715964798223610892", hash_generated_method = "382574715A132933C4F1A96C29BAB6FE")
     
@@ -940,7 +940,7 @@ public final void set(int year, int month, int day) {
      *            the minute.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.869 -0500", hash_original_method = "B4EBEBE6ED320058BB13C1E33AF949E4", hash_generated_method = "396504D08E42B024F7F32C7E28DC7024")
     
@@ -969,7 +969,7 @@ public final void set(int year, int month, int day, int hourOfDay,
      *            the second.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.872 -0500", hash_original_method = "071B019FF423902B33C61C7D7703D8F0", hash_generated_method = "02E66189939C24081396104958954FC7")
     
@@ -999,7 +999,7 @@ public void setFirstDayOfWeek(int value) {
      *            a boolean value.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.876 -0500", hash_original_method = "769D5CCA341B85723A2FDFB2D353BC44", hash_generated_method = "D8A4E2565741252BEA897243BCA0D17F")
     
 public void setLenient(boolean value) {
@@ -1025,7 +1025,7 @@ public void setMinimalDaysInFirstWeek(int value) {
      *            a {@code Date} object.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.881 -0500", hash_original_method = "8326734B6F30C707435A4BD203126230", hash_generated_method = "89DD3665E4887379FA91D0FAB7FFB3C5")
     
@@ -1040,7 +1040,7 @@ public final void setTime(Date date) {
      *            the time as the number of milliseconds since Jan. 1, 1970.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.883 -0500", hash_original_method = "2FA47445AF3A8C90A658A67E45128F41", hash_generated_method = "D037828412FE9050EB1010FB3CDF0A1B")
     
 public void setTimeInMillis(long milliseconds) {
@@ -1058,6 +1058,7 @@ public void setTimeInMillis(long milliseconds) {
      * @param timezone
      *            a {@code TimeZone}.
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.886 -0500", hash_original_method = "C71A9CD315A030E06030733CE10A6247", hash_generated_method = "B7AADE9B728D570FAA215A9CDF58CB0B")
     
 public void setTimeZone(TimeZone timezone) {

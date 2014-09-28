@@ -37,12 +37,10 @@ import android.widget.FrameLayout;
 public class ActionBarOverlayLayout extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:43.294 -0400", hash_original_field = "8B9AA64DE0559AE2DDE83CD543EB91AA", hash_generated_field = "3F2DAAE7D4FCE3FD4B025D0C96E78599")
 
-
     static final int[] mActionBarSizeAttr = new int[]{
             R.attr.actionBarSize
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:43.277 -0400", hash_original_field = "3331C193E66804926FFCE834E4CEAA34", hash_generated_field = "0190A10D8C7207CAB2DE904F7B512C63")
-
 
     private int mActionBarHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:43.279 -0400", hash_original_field = "AFDC62FB2771CBC68D8F8907D45F2196", hash_generated_field = "F1560C03BA0B36CA5EB1F5530A3F9251")
@@ -81,6 +79,7 @@ public ActionBarOverlayLayout(Context context, AttributeSet attrs) {
         init(context);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:43.301 -0400", hash_original_method = "8F6526D6401454D34D0D4C0C094AAD3D", hash_generated_method = "A7EAB12BD27AF92AB08B1C21F91F85DB")
     
 private void init(Context context) {
@@ -89,6 +88,7 @@ private void init(Context context) {
         ta.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:43.303 -0400", hash_original_method = "57961BDB1DDB70D7E3CF1C1B9165CEE6", hash_generated_method = "C4E974DC492C111E0F3DE07BB58CE88A")
     
 public void setActionBar(ActionBar impl) {

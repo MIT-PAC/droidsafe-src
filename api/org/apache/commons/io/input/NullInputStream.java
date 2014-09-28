@@ -217,8 +217,8 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
-    @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.814 -0400", hash_original_method = "58A7A50486EDC9346A5D459542A5BDB7", hash_generated_method = "56B74626BE81A12F04EB89EA486FC9FD")
     
 @Override
@@ -244,8 +244,8 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
-    @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.814 -0400", hash_original_method = "1E949846598722C79E2F0E8E4DF0AE25", hash_generated_method = "DBD45AE7C79C3D96484923938B09E477")
     
 @Override
@@ -266,8 +266,8 @@ public long getSize() {
      * <code>throwEofException</code> is set to {@code true}.
      * @throws IOException if trying to read past the end of file.
      */
-    @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.IO})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.815 -0400", hash_original_method = "05A90D0FB660BAF10AD4D61031A72FD9", hash_generated_method = "4BBF2732884EE85DD846B0E6BB60AB12")
     
 @Override
@@ -354,6 +354,7 @@ public long getSize() {
      *
      * @return This implementation always returns zero.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.818 -0400", hash_original_method = "F722CD05EE5576BABE566E57360BDAA4", hash_generated_method = "3C0F1395BED2A6E0D07718D78A4C00FC")
     
 protected int processByte() {
@@ -371,6 +372,7 @@ protected int processByte() {
      * @param offset The offset to start at.
      * @param length The number of bytes.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.818 -0400", hash_original_method = "8351070DA7823031FCCA3BE9B1CDBB4D", hash_generated_method = "5E144588AF176953A74CB8C14F71C89C")
     
 protected void processBytes(byte[] bytes, int offset, int length) {
@@ -385,6 +387,7 @@ protected void processBytes(byte[] bytes, int offset, int length) {
      * @throws EOFException if <code>throwEofException</code> is set
      * to {@code true}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.819 -0400", hash_original_method = "19CB45ABF7C0C1D656700921E322A527", hash_generated_method = "380899F3E1EB67D55FF8A375DB8A9EC3")
     
 private int doEndOfFile() throws EOFException {

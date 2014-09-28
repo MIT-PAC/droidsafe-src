@@ -86,6 +86,7 @@ public void setTokenizer(Tokenizer t) {
      * {@link Tokenizer#findTokenStart} to {@link #getSelectionEnd}
      * meets or exceeds {@link #getThreshold}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.632 -0500", hash_original_method = "4B7E111CDE46EB7665419BBE701F6868", hash_generated_method = "5AF05FDD7F3944E020E9499E3021F972")
     
 @Override

@@ -95,6 +95,7 @@ public MenuInflater getMenuInflater() {
      * popupMenu.getMenuInflater().inflate(menuRes, popupMenu.getMenu()).
      * @param menuRes Menu resource to inflate
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.869 -0500", hash_original_method = "B5DA97073214511A8C4FCCDCD0202705", hash_generated_method = "BBC392AB846AD249328566D60A8DB052")
     
 public void inflate(int menuRes) {
@@ -208,8 +209,6 @@ public void onCloseSubMenu(SubMenuBuilder menu) {
     
 public void onMenuModeChange(MenuBuilder menu) {
     }
-    
-    
 
     /**
      * Returns an {@link OnTouchListener} that can be added to the anchor view

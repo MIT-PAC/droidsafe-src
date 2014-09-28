@@ -18,7 +18,8 @@ public ImplForArray(Type componentType) {
         this.componentType = componentType;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.096 -0500", hash_original_method = "DF2F4D0FDA59F8B376BF76172F429ABC", hash_generated_method = "F54BF30A1F49AEE5A1AF09CA296E86D0")
     
 public Type getGenericComponentType() {

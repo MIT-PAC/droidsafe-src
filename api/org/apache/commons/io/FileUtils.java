@@ -185,6 +185,7 @@ public static File getFile(String... names) {
      * 
      * @since 2.0
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.139 -0400", hash_original_method = "39921D8C4196813D5991988D53C17281", hash_generated_method = "DFFE88B4A6D2A53CE2CAD7042C66626B")
     
 public static String getTempDirectoryPath() {
@@ -211,6 +212,7 @@ public static File getTempDirectory() {
      * 
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.140 -0400", hash_original_method = "30D1360F61FF7F9E4BC3E57BF7B13777", hash_generated_method = "CA1716C278E5FF4D4410466CB48E0E21")
     
 public static String getUserDirectoryPath() {
@@ -249,6 +251,8 @@ public static File getUserDirectory() {
      * @throws IOException if the file cannot be read
      * @since 1.3
      */
+    @DSSource({DSSourceKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.141 -0400", hash_original_method = "BF60686065C15B72A3B22E7A91E35BC7", hash_generated_method = "E2EBEA9C2BB5E805B6D176D12EEA7ADB")
     
 public static FileInputStream openInputStream(File file) throws IOException {
@@ -286,6 +290,7 @@ public static FileInputStream openInputStream(File file) throws IOException {
      * @throws IOException if a parent directory needs creating but that fails
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.142 -0400", hash_original_method = "8666A64FD62D8ED1C010CD4AD8923E52", hash_generated_method = "F4C88261138952C182AF198E26B124EC")
     
 public static FileOutputStream openOutputStream(File file) throws IOException {
@@ -314,6 +319,7 @@ public static FileOutputStream openOutputStream(File file) throws IOException {
      * @throws IOException if a parent directory needs creating but that fails
      * @since 2.1
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.142 -0400", hash_original_method = "A6B95138842F3B6586A5D9FB9B0AB382", hash_generated_method = "911E10DA4233582219D8F03C0C998601")
     
 public static FileOutputStream openOutputStream(File file, boolean append) throws IOException {
@@ -449,6 +455,7 @@ public static File[] convertFileCollectionToFileArray(Collection<File> files) {
      * @param filter the filter to apply to files and directories.
      * @param includeSubDirectories indicates if will include the subdirectories themselves
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.146 -0400", hash_original_method = "9E77FAB6736E7503C45B87AFC676673E", hash_generated_method = "E178A606E22440D1A0851EBA2C112E58")
     
 private static void innerListFiles(Collection<File> files, File directory,
@@ -494,6 +501,7 @@ private static void innerListFiles(Collection<File> files, File directory,
      * @see org.apache.commons.io.filefilter.FileFilterUtils
      * @see org.apache.commons.io.filefilter.NameFileFilter
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.147 -0400", hash_original_method = "4606BB90FD0D6AA350916E2C4FD8D064", hash_generated_method = "77F77F4B877965446FF2B907759C02BE")
     
 public static Collection<File> listFiles(
@@ -652,6 +660,7 @@ public static Iterator<File> iterateFilesAndDirs(File directory, IOFileFilter fi
      * @param extensions  an array of extensions. Format: {"java", "xml"}
      * @return an array of suffixes. Format: {".java", ".xml"}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.152 -0400", hash_original_method = "07B0B4B1C33FE11526EFF377A8F71FF7", hash_generated_method = "951CF3533930AC7B0133A25611F79034")
     
 private static String[] toSuffixes(String[] extensions) {
@@ -661,7 +670,6 @@ private static String[] toSuffixes(String[] extensions) {
         }
         return suffixes;
     }
-
 
     /**
      * Finds files within a given directory (and optionally its subdirectories)
@@ -673,6 +681,7 @@ private static String[] toSuffixes(String[] extensions) {
      * @param recursive  if true all subdirectories are searched as well
      * @return an collection of java.io.File with the matching files
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.152 -0400", hash_original_method = "25C5B7A23CB49F643BCDC481452D2C99", hash_generated_method = "2B8C00376BFC582E1797467A1C8ED4E6")
     
 public static Collection<File> listFiles(
@@ -839,6 +848,7 @@ public static boolean contentEqualsIgnoreEOL(File file1, File file2, String char
      * @return the equivalent <code>File</code> object, or {@code null}
      *  if the URL's protocol is not <code>file</code>
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.156 -0400", hash_original_method = "423E8D2E17886B2A24728679F6E4F4A5", hash_generated_method = "830734DA97EC048B3B116AC082725CF7")
     
 public static File toFile(URL url) {
@@ -865,6 +875,7 @@ public static File toFile(URL url) {
      * @return The decoded URL or {@code null} if the input was
      *         {@code null}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.157 -0400", hash_original_method = "159923F6B9CA82C5350EB0A6B4A12D5A", hash_generated_method = "9F5FC8C15CCE409DDDF7416020861B28")
     
 static String decodeUrl(String url) {
@@ -983,6 +994,7 @@ public static URL[] toURLs(File[] files) throws IOException {
      * @throws IOException if an IO error occurs during copying
      * @see #copyFile(File, File, boolean)
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.159 -0400", hash_original_method = "C1FA7983626BFE927096208123A11E85", hash_generated_method = "85BF78089DED0CD0625B96C55A197E97")
     
 public static void copyFileToDirectory(File srcFile, File destDir) throws IOException {
@@ -1014,6 +1026,7 @@ public static void copyFileToDirectory(File srcFile, File destDir) throws IOExce
      * @see #copyFile(File, File, boolean)
      * @since 1.3
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.159 -0400", hash_original_method = "B4AE79CD800DFE80E4CD43AEB9BBD70C", hash_generated_method = "C2369AFFF1207FBB910F622B9DA46AC9")
     
 public static void copyFileToDirectory(File srcFile, File destDir, boolean preserveFileDate) throws IOException {
@@ -1048,6 +1061,7 @@ public static void copyFileToDirectory(File srcFile, File destDir, boolean prese
      * @throws IOException if an IO error occurs during copying
      * @see #copyFileToDirectory(File, File)
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.160 -0400", hash_original_method = "6315F5AC396C0ECBDEDD940D97F3672B", hash_generated_method = "AF20AB97298F03040D9F217100ADF726")
     
 public static void copyFile(File srcFile, File destFile) throws IOException {
@@ -1078,6 +1092,7 @@ public static void copyFile(File srcFile, File destFile) throws IOException {
      * @throws IOException if an IO error occurs during copying
      * @see #copyFileToDirectory(File, File, boolean)
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.162 -0400", hash_original_method = "DF9C3F1A4ED4CF90C1F5F7295046CF93", hash_generated_method = "EAB459DB0650DC80E8F0C7A7DF83D0A7")
     
 public static void copyFile(File srcFile, File destFile,
@@ -1126,6 +1141,7 @@ public static void copyFile(File srcFile, File destFile,
      *             if an I/O error occurs
      * @since 2.1
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.162 -0400", hash_original_method = "FA74FA0AB2970D0A2A58D7292C0359A2", hash_generated_method = "FCE82F0F1B82413C83C4F4A0E17DA5C2")
     
 public static long copyFile(File input, OutputStream output) throws IOException {
@@ -1145,6 +1161,7 @@ public static long copyFile(File input, OutputStream output) throws IOException 
      * @param preserveFileDate  whether to preserve the file date
      * @throws IOException if an error occurs
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.164 -0400", hash_original_method = "75A2BF9566AA1720575AC35B18B3F7AE", hash_generated_method = "7BB1F4CE156719EC4F2ED2A76AB7B47F")
     
 private static void doCopyFile(File srcFile, File destFile, boolean preserveFileDate) throws IOException {
@@ -1250,6 +1267,7 @@ public static void copyDirectoryToDirectory(File srcDir, File destDir) throws IO
      * @throws IOException if an IO error occurs during copying
      * @since 1.1
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.166 -0400", hash_original_method = "E561EAB7CB3D40D46F8BE4AD7303A0E1", hash_generated_method = "D4BAF7F8AE825ED9ED83CCFCE7433478")
     
 public static void copyDirectory(File srcDir, File destDir) throws IOException {
@@ -1282,6 +1300,7 @@ public static void copyDirectory(File srcDir, File destDir) throws IOException {
      * @throws IOException if an IO error occurs during copying
      * @since 1.1
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.166 -0400", hash_original_method = "1604F8A1509ACC9F7E457DB45F010D3A", hash_generated_method = "8E09507316670FDF755FCDE2051B2A47")
     
 public static void copyDirectory(File srcDir, File destDir,
@@ -1333,6 +1352,7 @@ public static void copyDirectory(File srcDir, File destDir,
      * @throws IOException if an IO error occurs during copying
      * @since 1.4
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.167 -0400", hash_original_method = "B6238B99EFF342E8047E326C1E45188E", hash_generated_method = "D321BAA282FBF1D48A87AC66EA01EB53")
     
 public static void copyDirectory(File srcDir, File destDir,
@@ -1386,6 +1406,7 @@ public static void copyDirectory(File srcDir, File destDir,
      * @throws IOException if an IO error occurs during copying
      * @since 1.4
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.168 -0400", hash_original_method = "CDB3DC4589413BFA39703035FCECCCE3", hash_generated_method = "AF77B50754063FDC53CEAE7EAB5E6DDC")
     
 public static void copyDirectory(File srcDir, File destDir,
@@ -1432,6 +1453,7 @@ public static void copyDirectory(File srcDir, File destDir,
      * @throws IOException if an error occurs
      * @since 1.1
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.169 -0400", hash_original_method = "3A2EB4D569355BA71C0E0FA5BABABA3C", hash_generated_method = "2BDB5583EA646A9E298BAF5B29E076EC")
     
 private static void doCopyDirectory(File srcDir, File destDir, FileFilter filter,
@@ -1543,6 +1565,7 @@ public static void copyURLToFile(URL source, File destination,
      * @throws IOException if an IO error occurs during copying
      * @since 2.0
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.171 -0400", hash_original_method = "CFB495FE4DB92E496BC54159047212ED", hash_generated_method = "3C6294CCD4BE984C3F7DB68D0925984D")
     
 public static void copyInputStreamToFile(InputStream source, File destination) throws IOException {
@@ -1566,6 +1589,7 @@ public static void copyInputStreamToFile(InputStream source, File destination) t
      * @param directory  directory to delete
      * @throws IOException in case deletion is unsuccessful
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.172 -0400", hash_original_method = "4F8BC4B02FA590E6AB961D704D5180C8", hash_generated_method = "E1A34038E8E0FFFDAF780D23BB69F715")
     
 public static void deleteDirectory(File directory) throws IOException {
@@ -1599,6 +1623,7 @@ public static void deleteDirectory(File directory) throws IOException {
      *
      * @since 1.4
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.173 -0400", hash_original_method = "E1B6DB66C36B4EE9F064117D3D6BA6B4", hash_generated_method = "AC5C44ABDAD7281CAC600A23E1C28402")
     
 public static boolean deleteQuietly(File file) {
@@ -1677,6 +1702,7 @@ public static boolean directoryContains(final File directory, final File child) 
      * @param directory directory to clean
      * @throws IOException in case cleaning is unsuccessful
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.175 -0400", hash_original_method = "A40ED954B76C615400DB0B23BD975A04", hash_generated_method = "9EA37840470799A5B406CEE1D4B2EEA5")
     
 public static void cleanDirectory(File directory) throws IOException {
@@ -1755,6 +1781,8 @@ public static boolean waitFor(File file, int seconds) {
      * @throws IOException in case of an I/O error
      * @since 2.3
      */
+    @DSSource({DSSourceKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.176 -0400", hash_original_method = "AC2448C633688F1D1E3E7E73CF19AB88", hash_generated_method = "632C881B3A7ABCF55BF15FD73DC82D54")
     
 public static String readFileToString(File file, Charset encoding) throws IOException {
@@ -1782,12 +1810,13 @@ public static String readFileToString(File file, Charset encoding) throws IOExce
      *             supported.
      * @since 2.3
      */
+    @DSSource({DSSourceKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.177 -0400", hash_original_method = "D32EEB375779F97BCF12B169B556A960", hash_generated_method = "9FC0E0DF3457CB8C5EB053B18DF07AD7")
     
 public static String readFileToString(File file, String encoding) throws IOException {
         return readFileToString(file, Charsets.toCharset(encoding));
     }
-
 
     /**
      * Reads the contents of a file into a String using the default encoding for the VM. 
@@ -1798,6 +1827,8 @@ public static String readFileToString(File file, String encoding) throws IOExcep
      * @throws IOException in case of an I/O error
      * @since 1.3.1
      */
+    @DSSource({DSSourceKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.177 -0400", hash_original_method = "62281B2E12D378656BC0D7BC411D0334", hash_generated_method = "B1DE2972562DDD7AE23DF3C8C8ECEBDD")
     
 public static String readFileToString(File file) throws IOException {
@@ -1835,6 +1866,8 @@ public static byte[] readFileToByteArray(File file) throws IOException {
      * @throws IOException in case of an I/O error
      * @since 2.3
      */
+    @DSSource({DSSourceKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.179 -0400", hash_original_method = "514B53EAF74C98998110AA9D495193D2", hash_generated_method = "EE4A58E734701902E489D319FB6E4670")
     
 public static List<String> readLines(File file, Charset encoding) throws IOException {
@@ -1862,6 +1895,8 @@ public static List<String> readLines(File file, Charset encoding) throws IOExcep
      *             supported.
      * @since 1.1
      */
+    @DSSource({DSSourceKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.180 -0400", hash_original_method = "EBF7D2B1C77EFA08A2773E012A2E12C0", hash_generated_method = "DE2827FF9476EB651F2E94F06D9245AB")
     
 public static List<String> readLines(File file, String encoding) throws IOException {
@@ -1877,6 +1912,8 @@ public static List<String> readLines(File file, String encoding) throws IOExcept
      * @throws IOException in case of an I/O error
      * @since 1.3
      */
+    @DSSource({DSSourceKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.180 -0400", hash_original_method = "FBBC561E9493F2B7846AFE590CD5B4BF", hash_generated_method = "CE282376FB6D4EC406D4F6371AB255F4")
     
 public static List<String> readLines(File file) throws IOException {
@@ -1914,6 +1951,7 @@ public static List<String> readLines(File file) throws IOException {
      * @throws IOException in case of an I/O error (file closed)
      * @since 1.2
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.181 -0400", hash_original_method = "5350C1336B32E4261A913009173F5A4E", hash_generated_method = "3A6FE14738A4B9AF28751E92109A6F8A")
     
 public static LineIterator lineIterator(File file, String encoding) throws IOException {
@@ -1939,6 +1977,7 @@ public static LineIterator lineIterator(File file, String encoding) throws IOExc
      * @since 1.3
      * @see #lineIterator(File, String)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.181 -0400", hash_original_method = "498D343F9E83CB06D9E88720A3570206", hash_generated_method = "6DAC4BCEDF77481D939D5B7849BFA5A2")
     
 public static LineIterator lineIterator(File file) throws IOException {
@@ -1959,6 +1998,8 @@ public static LineIterator lineIterator(File file) throws IOException {
      * @throws java.io.UnsupportedEncodingException if the encoding is not supported by the VM
      * @since 2.4
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.182 -0400", hash_original_method = "1338BBC1C2AD825C126016F6F886BB61", hash_generated_method = "EDE6373B1FA03748C45E8525AECCDB05")
     
 public static void writeStringToFile(File file, String data, Charset encoding) throws IOException {
@@ -1977,6 +2018,8 @@ public static void writeStringToFile(File file, String data, Charset encoding) t
      * @throws IOException in case of an I/O error
      * @throws java.io.UnsupportedEncodingException if the encoding is not supported by the VM
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.182 -0400", hash_original_method = "E7D0FDC2FC1050BE7968264CFF59C18B", hash_generated_method = "088B7C4BF190AF1A36A018E1FD689589")
     
 public static void writeStringToFile(File file, String data, String encoding) throws IOException {
@@ -1994,6 +2037,8 @@ public static void writeStringToFile(File file, String data, String encoding) th
      * @throws IOException in case of an I/O error
      * @since 2.3
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.183 -0400", hash_original_method = "BD337BA032101647B7F6AAF312F9C74B", hash_generated_method = "088E1FDC0606258AF1B3EF1F58A835BD")
     
 public static void writeStringToFile(File file, String data, Charset encoding, boolean append) throws IOException {
@@ -2021,6 +2066,8 @@ public static void writeStringToFile(File file, String data, Charset encoding, b
      *             supported by the VM
      * @since 2.1
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.184 -0400", hash_original_method = "CC940DEAD31703B07C115DBDFF904C00", hash_generated_method = "BB56B6662D5F900B39CE5CE303E36706")
     
 public static void writeStringToFile(File file, String data, String encoding, boolean append) throws IOException {
@@ -2034,6 +2081,8 @@ public static void writeStringToFile(File file, String data, String encoding, bo
      * @param data  the content to write to the file
      * @throws IOException in case of an I/O error
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.184 -0400", hash_original_method = "CDEDFD984A6FD029B231EAE10904EA53", hash_generated_method = "B6F4D3A3400E51E5FDCD4E8E778C2311")
     
 public static void writeStringToFile(File file, String data) throws IOException {
@@ -2050,6 +2099,8 @@ public static void writeStringToFile(File file, String data) throws IOException 
      * @throws IOException in case of an I/O error
      * @since 2.1
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.185 -0400", hash_original_method = "5D5891067305793B1BFB385E46628F87", hash_generated_method = "FEA09886E15EE34CF4A6F329B896DBA7")
     
 public static void writeStringToFile(File file, String data, boolean append) throws IOException {
@@ -2210,6 +2261,8 @@ public static void writeByteArrayToFile(File file, byte[] data, boolean append) 
      * @throws java.io.UnsupportedEncodingException if the encoding is not supported by the VM
      * @since 1.1
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.190 -0400", hash_original_method = "868D91C93AC11F23ACC1A0197C9B3BB6", hash_generated_method = "6FDAF0289EF000AE7051ECF8494D2C1C")
     
 public static void writeLines(File file, String encoding, Collection<?> lines) throws IOException {
@@ -2230,6 +2283,8 @@ public static void writeLines(File file, String encoding, Collection<?> lines) t
      * @throws java.io.UnsupportedEncodingException if the encoding is not supported by the VM
      * @since 2.1
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.191 -0400", hash_original_method = "CD97A2D66C593036586D6221390299B7", hash_generated_method = "BCF42D547A39C948D45A20919591EE6A")
     
 public static void writeLines(File file, String encoding, Collection<?> lines, boolean append) throws IOException {
@@ -2246,6 +2301,8 @@ public static void writeLines(File file, String encoding, Collection<?> lines, b
      * @throws IOException in case of an I/O error
      * @since 1.3
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.191 -0400", hash_original_method = "D85C95A1BC3DD652B43ABCCC24BB8B76", hash_generated_method = "8DAC215D6E10F1A38ABA131F4D502E9B")
     
 public static void writeLines(File file, Collection<?> lines) throws IOException {
@@ -2264,6 +2321,8 @@ public static void writeLines(File file, Collection<?> lines) throws IOException
      * @throws IOException in case of an I/O error
      * @since 2.1
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.192 -0400", hash_original_method = "8414B6D4CB25174C916084B1680ECA65", hash_generated_method = "EABA24B5B5D9B7240352ACF9EA79CD2A")
     
 public static void writeLines(File file, Collection<?> lines, boolean append) throws IOException {
@@ -2286,6 +2345,8 @@ public static void writeLines(File file, Collection<?> lines, boolean append) th
      * @throws java.io.UnsupportedEncodingException if the encoding is not supported by the VM
      * @since 1.1
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.192 -0400", hash_original_method = "61B68200ED327F129B4748F269F81B81", hash_generated_method = "24F22909957B8ACB1A51C86D2B238C30")
     
 public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding)
@@ -2308,6 +2369,8 @@ public static void writeLines(File file, String encoding, Collection<?> lines, S
      * @throws java.io.UnsupportedEncodingException if the encoding is not supported by the VM
      * @since 2.1
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.194 -0400", hash_original_method = "309FAA7BF49A8E8756D5FB6B1649F47B", hash_generated_method = "FF1ED8300D344F67934E36DA8C06943F")
     
 public static void writeLines(File file, String encoding, Collection<?> lines, String lineEnding, boolean append)
@@ -2335,6 +2398,8 @@ public static void writeLines(File file, String encoding, Collection<?> lines, S
      * @throws IOException in case of an I/O error
      * @since 1.3
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.195 -0400", hash_original_method = "3154661078E59224754D0E69E10DDFB6", hash_generated_method = "37574DF2C28BFC93DF4FFF3E9C9847C8")
     
 public static void writeLines(File file, Collection<?> lines, String lineEnding) throws IOException {
@@ -2354,6 +2419,8 @@ public static void writeLines(File file, Collection<?> lines, String lineEnding)
      * @throws IOException in case of an I/O error
      * @since 2.1
      */
+    @DSSink({DSSinkKind.FILE})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.195 -0400", hash_original_method = "938AE78AF8B46523ABCC297819B82B4E", hash_generated_method = "22A3DEB9A88DF9C00A41F1E04A9DAD42")
     
 public static void writeLines(File file, Collection<?> lines, String lineEnding, boolean append)
@@ -2377,6 +2444,7 @@ public static void writeLines(File file, Collection<?> lines, String lineEnding,
      * @throws FileNotFoundException if the file was not found
      * @throws IOException in case deletion is unsuccessful
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.196 -0400", hash_original_method = "E25718AB6960845CFAC1401B9BC3C91E", hash_generated_method = "7CEA953081E3CE1BD0564A61883076F1")
     
 public static void forceDelete(File file) throws IOException {
@@ -2403,6 +2471,7 @@ public static void forceDelete(File file) throws IOException {
      * @throws NullPointerException if the file is {@code null}
      * @throws IOException in case deletion is unsuccessful
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.197 -0400", hash_original_method = "7B966E73ED9336BE4B4A8DBC17BBD644", hash_generated_method = "743F342384183D60C7D3F3C49847D58F")
     
 public static void forceDeleteOnExit(File file) throws IOException {
@@ -2420,6 +2489,7 @@ public static void forceDeleteOnExit(File file) throws IOException {
      * @throws NullPointerException if the directory is {@code null}
      * @throws IOException in case deletion is unsuccessful
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.197 -0400", hash_original_method = "1F1851D6DD9C95BEB661D5FE0F05F9BE", hash_generated_method = "D27548A5E6DAB9D507CC35D929275FB8")
     
 private static void deleteDirectoryOnExit(File directory) throws IOException {
@@ -2440,6 +2510,7 @@ private static void deleteDirectoryOnExit(File directory) throws IOException {
      * @throws NullPointerException if the directory is {@code null}
      * @throws IOException in case cleaning is unsuccessful
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.198 -0400", hash_original_method = "8EEF9B68072320A00A8FBEC49448AF5F", hash_generated_method = "69DD207580D28EA480DE203AAD63BA85")
     
 private static void cleanDirectoryOnExit(File directory) throws IOException {
@@ -2483,6 +2554,7 @@ private static void cleanDirectoryOnExit(File directory) throws IOException {
      * @throws NullPointerException if the directory is {@code null}
      * @throws IOException if the directory cannot be created or the file already exists but is not a directory
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.199 -0400", hash_original_method = "B614C74ED63189045A32D08339051EE5", hash_generated_method = "7B697BADD9858F7C74DB4DF7ED5BDDB6")
     
 public static void forceMkdir(File directory) throws IOException {
@@ -2528,6 +2600,7 @@ public static void forceMkdir(File directory) throws IOException {
      *         
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.200 -0400", hash_original_method = "87204643B37D4EAE7C3154594F6DD087", hash_generated_method = "0A8E6B48C0DA1A903E7C290643E9D7F7")
     
 public static long sizeOf(File file) {
@@ -2590,6 +2663,7 @@ public static BigInteger sizeOfAsBigInteger(File file) {
      * @throws NullPointerException
      *             if the directory is {@code null}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.201 -0400", hash_original_method = "913EB251B42955AE0E1F4AA1A22D7BEC", hash_generated_method = "77279E905A13E5C82C8FD18634D0822C")
     
 public static long sizeOfDirectory(File directory) {
@@ -2682,7 +2756,8 @@ private static void checkDirectory(File directory) {
      * @throws IllegalArgumentException if the file is {@code null}
      * @throws IllegalArgumentException if the reference file is {@code null} or doesn't exist
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.203 -0400", hash_original_method = "E704B5FFDAB5E24BC26C51A387B1C1CD", hash_generated_method = "9A63E15D88FB73F50F30CF4384255BFC")
+     @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.203 -0400", hash_original_method = "E704B5FFDAB5E24BC26C51A387B1C1CD", hash_generated_method = "9A63E15D88FB73F50F30CF4384255BFC")
     
 public static boolean isFileNewer(File file, File reference) {
         if (reference == null) {
@@ -2707,6 +2782,7 @@ public static boolean isFileNewer(File file, File reference) {
      * @throws IllegalArgumentException if the file is {@code null}
      * @throws IllegalArgumentException if the date is {@code null}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.204 -0400", hash_original_method = "ED944854A8F02AEADF4CC8C107FECB1E", hash_generated_method = "B484DF978297E9AEF193B14D747C1808")
     
 public static boolean isFileNewer(File file, Date date) {
@@ -2728,7 +2804,8 @@ public static boolean isFileNewer(File file, Date date) {
      * the given time reference.
      * @throws IllegalArgumentException if the file is {@code null}
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.204 -0400", hash_original_method = "5CBF4EFA626DEC304F1893B39058BBEF", hash_generated_method = "850B57D2923841CC2E0A94D8374367B6")
+     @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.204 -0400", hash_original_method = "5CBF4EFA626DEC304F1893B39058BBEF", hash_generated_method = "850B57D2923841CC2E0A94D8374367B6")
     
 public static boolean isFileNewer(File file, long timeMillis) {
         if (file == null) {
@@ -2739,7 +2816,6 @@ public static boolean isFileNewer(File file, long timeMillis) {
         }
         return file.lastModified() > timeMillis;
     }
-
 
     //-----------------------------------------------------------------------
     /**
@@ -2755,7 +2831,8 @@ public static boolean isFileNewer(File file, long timeMillis) {
      * @throws IllegalArgumentException if the file is {@code null}
      * @throws IllegalArgumentException if the reference file is {@code null} or doesn't exist
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.205 -0400", hash_original_method = "FCDFE61653D9A35ED4066A5E6B984F4F", hash_generated_method = "DFAC34CC78324E0C08DD883C57ADD511")
+     @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.205 -0400", hash_original_method = "FCDFE61653D9A35ED4066A5E6B984F4F", hash_generated_method = "DFAC34CC78324E0C08DD883C57ADD511")
     
 public static boolean isFileOlder(File file, File reference) {
         if (reference == null) {
@@ -2780,6 +2857,7 @@ public static boolean isFileOlder(File file, File reference) {
      * @throws IllegalArgumentException if the file is {@code null}
      * @throws IllegalArgumentException if the date is {@code null}
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.206 -0400", hash_original_method = "30C6AD04EA1FBD0DAE5C136947812A29", hash_generated_method = "1EDB856DC010FCC78F29D6381EEACFB1")
     
 public static boolean isFileOlder(File file, Date date) {
@@ -2801,7 +2879,8 @@ public static boolean isFileOlder(File file, Date date) {
      * the given time reference.
      * @throws IllegalArgumentException if the file is {@code null}
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.206 -0400", hash_original_method = "552A0F275D497E7BD4574D885ADCD2D5", hash_generated_method = "5265D0504BE114034C41A56C519080CB")
+     @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.206 -0400", hash_original_method = "552A0F275D497E7BD4574D885ADCD2D5", hash_generated_method = "5265D0504BE114034C41A56C519080CB")
     
 public static boolean isFileOlder(File file, long timeMillis) {
         if (file == null) {
@@ -2850,6 +2929,7 @@ public static long checksumCRC32(File file) throws IOException {
      * @throws IOException if an IO error occurs reading the file
      * @since 1.3
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.208 -0400", hash_original_method = "2DE8BFE94665650AE4259E3EFE6910D3", hash_generated_method = "964BCCE45C2229381E572AEE8BD1CE4D")
     
 public static Checksum checksum(File file, Checksum checksum) throws IOException {
@@ -2879,6 +2959,7 @@ public static Checksum checksum(File file, Checksum checksum) throws IOException
      * @throws IOException if an IO error occurs moving the file
      * @since 1.4
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.209 -0400", hash_original_method = "2BB487B18E5FB280D54FBE5684C98468", hash_generated_method = "3FE9F51999529E02E83E06DE652589F5")
     
 public static void moveDirectory(File srcDir, File destDir) throws IOException {
@@ -2924,6 +3005,7 @@ public static void moveDirectory(File srcDir, File destDir) throws IOException {
      * @throws IOException if an IO error occurs moving the file
      * @since 1.4
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.210 -0400", hash_original_method = "180873F10A7C6AF95005511FB04A1244", hash_generated_method = "A50BD33D4BEB9334EB3E0CF234B27CDD")
     
 public static void moveDirectoryToDirectory(File src, File destDir, boolean createDestDir) throws IOException {
@@ -2960,6 +3042,7 @@ public static void moveDirectoryToDirectory(File src, File destDir, boolean crea
      * @throws IOException if an IO error occurs moving the file
      * @since 1.4
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.211 -0400", hash_original_method = "5EB3021A042FE7111E0120410B88C0A6", hash_generated_method = "0A7FBFA90D0CBD6B19BC2B26FC5FDF6C")
     
 public static void moveFile(File srcFile, File destFile) throws IOException {
@@ -3005,6 +3088,7 @@ public static void moveFile(File srcFile, File destFile) throws IOException {
      * @throws IOException if an IO error occurs moving the file
      * @since 1.4
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.212 -0400", hash_original_method = "74FDB871002DCF784A8E7581BFA34847", hash_generated_method = "9BD449AC9D3F5F732F975FC1CA0D3CE4")
     
 public static void moveFileToDirectory(File srcFile, File destDir, boolean createDestDir) throws IOException {
@@ -3075,6 +3159,7 @@ public static void moveToDirectory(File src, File destDir, boolean createDestDir
      * @throws IOException if an IO error occurs while checking the file
      * @since 2.0
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:51.213 -0400", hash_original_method = "41F26259B8D8166C55086C17E096C730", hash_generated_method = "F9A2D56597E3D8B56076EB4499332648")
     
 public static boolean isSymlink(File file) throws IOException {

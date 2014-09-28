@@ -91,12 +91,13 @@ public static void setErr(PrintStream newErr) {
     }
     
     @DSComment("From safe class list")
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     public static long currentTimeMillis() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048;
 	}
     
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSComment("From safe class list")
     @DSSpec(DSCat.TRIGGER)
     public static long nanoTime() {
@@ -417,6 +418,7 @@ public static String getProperty(String prop, String defaultValue) {
      * @return the old value of the property or {@code null} if the property
      *         didn't exist.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.669 -0500", hash_original_method = "68A3BD921E5BE0343D8AB590A3A0C1ED", hash_generated_method = "8A6ABB9FC5C9F153DD0093091F1EAAA5")
     
@@ -469,8 +471,8 @@ public static Console console() {
      * @return null
      */
     @DSComment("Android Manager retrieved/accessed")
-    @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.FILE_INFORMATION})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.678 -0500", hash_original_method = "C8F7CB4F1804392B0063D92E89423E1A", hash_generated_method = "4FDF597B2D74E6DD9D48FFB24DE4E3C9")
     
 public static SecurityManager getSecurityManager() {
@@ -681,7 +683,7 @@ public SystemEnvironment(Map<String, String> map) {
             return map.entrySet();
         }
 
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.737 -0500", hash_original_method = "427258176260CD297BEE74A463DA23FE", hash_generated_method = "058B2ACC34010774810D06841FBEC1D8")
         
 @Override public String get(Object key) {

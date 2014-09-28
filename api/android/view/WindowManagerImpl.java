@@ -197,6 +197,7 @@ CompatModeWrapper(WindowManager wm, CompatibilityInfoHolder ci) {
             mCompatibilityInfo = ci;
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.185 -0500", hash_original_method = "7609871ECBC27319C7927D8EEDE045EA", hash_generated_method = "59B7CCFC44E9F9537209D07193279B67")
         
 @Override
@@ -204,6 +205,7 @@ CompatModeWrapper(WindowManager wm, CompatibilityInfoHolder ci) {
             mWindowManager.addView(view, params, mCompatibilityInfo);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.189 -0500", hash_original_method = "919C5545CD5BB1E858D85286FE5FCBED", hash_generated_method = "337942A79A23E7E7E090DB8800F772ED")
         
 @Override
@@ -212,6 +214,7 @@ CompatModeWrapper(WindowManager wm, CompatibilityInfoHolder ci) {
 
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.191 -0500", hash_original_method = "5F05EF082DAFF0E6020E51FDACFCFBF6", hash_generated_method = "17E49B7305C00113E27E42BB2607EBA3")
         
 @Override
@@ -243,6 +246,7 @@ CompatModeWrapper(WindowManager wm, CompatibilityInfoHolder ci) {
         
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.213 -0500", hash_original_method = "3A47767500C080C4B7D3F95A5195D385", hash_generated_method = "F22E3DE9CC62087BE72CB136222C6BE6")
     
 public void addView(View view) {
@@ -250,18 +254,21 @@ public void addView(View view) {
             WindowManager.LayoutParams.TYPE_APPLICATION, 0, PixelFormat.OPAQUE));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.215 -0500", hash_original_method = "133D7EA484587CEAA64BDEB4AE9186C6", hash_generated_method = "A62741000A341E18B97847A5EADB8D70")
     
 public void addView(View view, ViewGroup.LayoutParams params) {
         addView(view, params, null, false);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.217 -0500", hash_original_method = "6E55E902889BC8630B8C2A4EBA8587B9", hash_generated_method = "D83261CDC8E50232C364B0AA8880E61C")
     
 public void addView(View view, ViewGroup.LayoutParams params, CompatibilityInfoHolder cih) {
         addView(view, params, cih, false);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.222 -0500", hash_original_method = "FC07162832A382775417964F34DC350F", hash_generated_method = "E5462A6FDB7A4C6BA026203F5468746C")
     
 private void addView(View view, ViewGroup.LayoutParams params,
@@ -350,6 +357,7 @@ private void addView(View view, ViewGroup.LayoutParams params,
         root.setView(view, wparams, panelParentView);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.225 -0500", hash_original_method = "ED95BEACF52CBB6AE255A4987CA1BF10", hash_generated_method = "4F30676E8293DE94A18B4EB1861C0C85")
     
 public void updateViewLayout(View view, ViewGroup.LayoutParams params) {
@@ -370,6 +378,7 @@ public void updateViewLayout(View view, ViewGroup.LayoutParams params) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.228 -0500", hash_original_method = "6ED1D335390D20FBE30CC53F4D61DE9F", hash_generated_method = "97555D333EA1C440F3216E288199576F")
     
 public void removeView(View view) {

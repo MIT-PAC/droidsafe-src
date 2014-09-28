@@ -193,7 +193,7 @@ private static SearchableInfo getActivityMetaData(Context context, XmlPullParser
 
     public static final Parcelable.Creator<SearchableInfo> CREATOR
     = new Parcelable.Creator<SearchableInfo>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.747 -0500", hash_original_method = "C51AD4A0A61C2936B4CD4648DD0FC0FA", hash_generated_method = "78A1C36C4F1DBC9F0398C35E1EE2C239")
         
 public SearchableInfo createFromParcel(Parcel in) {
@@ -419,7 +419,8 @@ SearchableInfo(Parcel in) {
      * @return The search suggestions authority, or {@code null} if not set.
      * @see android.R.styleable#Searchable_searchSuggestAuthority
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.628 -0500", hash_original_method = "9CC6B7578CF19F95DF8C884BF5987E46", hash_generated_method = "EC23893D732D283C3C3B0ED241B8FC79")
     
 public String getSuggestAuthority() {
@@ -442,7 +443,8 @@ public String getSuggestPackage() {
      *
      * @return A component name, never {@code null}.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.632 -0500", hash_original_method = "F3041DF7A3866005E32579E92AEBEE6A", hash_generated_method = "565C255112EEEFB32D36280DE41BEFD1")
     
 public ComponentName getSearchActivity() {
@@ -480,6 +482,7 @@ public boolean useBadgeIcon() {
      *
      * @see android.R.styleable#Searchable_searchMode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.638 -0500", hash_original_method = "B8AED61CE994D23FCE3A1E2344A9A897", hash_generated_method = "84E455895C890BB175A60E44375E3B7B")
     
 public boolean shouldRewriteQueryFromData() {
@@ -491,6 +494,7 @@ public boolean shouldRewriteQueryFromData() {
      *
      * @see android.R.styleable#Searchable_searchMode
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.641 -0500", hash_original_method = "5A9C6F4DB0BEA2BB31C909F5BB55A3E0", hash_generated_method = "01391EDFBAD2071E255DF8EBB2C3EB51")
     
 public boolean shouldRewriteQueryFromText() {
@@ -516,7 +520,8 @@ public int getSettingsDescriptionId() {
      * @return The suggestion path, or {@code null} if not set.
      * @see android.R.styleable#Searchable_searchSuggestPath
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.645 -0500", hash_original_method = "E8F19B2AFF47ACFE52244E7315CE6CBA", hash_generated_method = "694A77E95A67DA9C300CA8B4E342FCEB")
     
 public String getSuggestPath() {
@@ -528,7 +533,8 @@ public String getSuggestPath() {
      *
      * @see android.R.styleable#Searchable_searchSuggestSelection
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.647 -0500", hash_original_method = "03B94AF5E978777AF0A4DF7C1D53B2F0", hash_generated_method = "8E8980105DE99008FBE975F1367C2247")
     
 public String getSuggestSelection() {
@@ -546,7 +552,8 @@ public String getSuggestSelection() {
      * @return The default intent action, or {@code null} if not set.
      * @see android.R.styleable#Searchable_searchSuggestIntentAction
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.650 -0500", hash_original_method = "41669F0953535FACC4B7926CFCBDA8A1", hash_generated_method = "E3DA79DD5A382F537A22382E0961CCBC")
     
 public String getSuggestIntentAction() {
@@ -566,7 +573,8 @@ public String getSuggestIntentAction() {
      * @return The default intent data, or {@code null} if not set.
      * @see android.R.styleable#Searchable_searchSuggestIntentData
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.652 -0500", hash_original_method = "E2551EFF005AD652F4CA5C2DEBD8F1C5", hash_generated_method = "B191A4542121F5FC83B78AED5A206150")
     
 public String getSuggestIntentData() {
@@ -579,7 +587,8 @@ public String getSuggestIntentData() {
      * @return The suggestion threshold, or {@code 0} if not set.
      * @see android.R.styleable#Searchable_searchSuggestThreshold
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.654 -0500", hash_original_method = "EC28F48C38E111E12DD92E58268AB4B1", hash_generated_method = "B8209BFF0FA95D93374D8728371F8723")
     
 public int getSuggestThreshold() {
@@ -678,7 +687,8 @@ public int getLabelId() {
      * @return A resource id, or {@code 0} if no hint was specified.
      * @see android.R.styleable#Searchable_hint
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.713 -0500", hash_original_method = "DC9D54FA42277F7545187887A5854A7A", hash_generated_method = "151EFC8B2E023C83C7C982701028207B")
     
 public int getHintId() {
@@ -706,7 +716,8 @@ public int getIconId() {
      *
      * @see android.R.styleable#Searchable_voiceSearchMode
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.718 -0500", hash_original_method = "BD4587B1756B2E1B29D5C797A6E8E884", hash_generated_method = "ED059A87FEB437C33E40B96F0E387EBD")
     
 public boolean getVoiceSearchEnabled() {
@@ -718,7 +729,8 @@ public boolean getVoiceSearchEnabled() {
      *
      * @see android.R.styleable#Searchable_voiceSearchMode
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.720 -0500", hash_original_method = "AD4F5DA741FB0C864BEACDD753D4C8F3", hash_generated_method = "CD7F6120C24225F28D37505E9C101ACD")
     
 public boolean getVoiceSearchLaunchWebSearch() {
@@ -859,7 +871,8 @@ public void writeToParcel(Parcel dest, int flags) {
      *
      * @see android.R.styleable#Searchable_voiceSearchMode
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.722 -0500", hash_original_method = "8242FA220A8F4815DCA2E78C8BAC691A", hash_generated_method = "3E44592355CF85742965CE50A634775D")
     
 public boolean getVoiceSearchLaunchRecognizer() {
@@ -872,7 +885,8 @@ public boolean getVoiceSearchLaunchRecognizer() {
      * @return A resource id, or {@code 0} if no language model was specified.
      * @see android.R.styleable#Searchable_voiceLanguageModel
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.724 -0500", hash_original_method = "AE92C4DB1762FDEF1095AB548D604322", hash_generated_method = "B2ECBB9F354AE606EA6A7E6222E740CE")
     
 public int getVoiceLanguageModeId() {
@@ -885,7 +899,8 @@ public int getVoiceLanguageModeId() {
      * @return A resource id, or {@code 0} if no voice prompt text was specified.
      * @see android.R.styleable#Searchable_voicePromptText
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.726 -0500", hash_original_method = "22DBBDA410168ED4037FF766F7DE7742", hash_generated_method = "E92A73194AA1661CCAAA5221A15DA4FD")
     
 public int getVoicePromptTextId() {
@@ -898,7 +913,8 @@ public int getVoicePromptTextId() {
      * @return A resource id, or {@code 0} if no language was specified.
      * @see android.R.styleable#Searchable_voiceLanguage
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.728 -0500", hash_original_method = "79CDC130EB87863FB2A36D85DFC36EA0", hash_generated_method = "F5B3093EE692CA0BDDF4E0D15FCA34D9")
     
 public int getVoiceLanguageId() {
@@ -912,7 +928,8 @@ public int getVoiceLanguageId() {
      *         activity's metadata, or {@code 0} if not specified.
      * @see android.R.styleable#Searchable_voiceMaxResults
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.730 -0500", hash_original_method = "77BBA2ED9E38231A613E9BF06CBFC2B7", hash_generated_method = "A1DF65056B987F37E85014C20D3AA519")
     
 public int getVoiceMaxResults() {
@@ -941,7 +958,8 @@ public int getSearchButtonText() {
      * @return the input type
      * @see android.R.styleable#Searchable_inputType
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.734 -0500", hash_original_method = "4835EFF052D409983E396160FFE84050", hash_generated_method = "E7AFB2F42BD48557E749F8D913AF0DFE")
     
 public int getInputType() {
@@ -956,7 +974,8 @@ public int getInputType() {
      * @return the input type
      * @see android.R.styleable#Searchable_imeOptions
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.REMOTE_APP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.736 -0500", hash_original_method = "1FE8811970C0953B1D5BA2B119F61221", hash_generated_method = "569F51AB84521F8E02418CDB78DB70EA")
     
 public int getImeOptions() {

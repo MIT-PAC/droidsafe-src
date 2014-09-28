@@ -127,6 +127,7 @@ public static MessageDigest getInstance(String algorithm, Provider provider)
      *            the second digest to be compared
      * @return {@code true} if the two hashes are equal, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.417 -0500", hash_original_method = "8E343D7D0CF266D2D2F5F12353F2E5FB", hash_generated_method = "3F0DC5CF6405BEFFC970BFCD2FEB88B1")
     
 public static boolean isEqual(byte[] digesta, byte[] digestb) {
@@ -242,6 +243,7 @@ public void update(byte[] input) {
      * @return the computed one way hash value
      * @see #reset
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
     @DSComment("no suspicious activity, just creates object")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -269,6 +271,7 @@ public byte[] digest() {
      *             {@code buf}
      * @see #reset()
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
     @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.408 -0500", hash_original_method = "427D2D0CC508C9C4E8BC486441041E72", hash_generated_method = "4224D6AC70D62E706B8319BA24B874F8")
     
@@ -293,6 +296,7 @@ public int digest(byte[] buf, int offset, int len) throws DigestException {
      * @return the computed one way hash value
      * @see #reset()
      */
+    @DSSource({DSSourceKind.SECURITY_INFO})
     @DSComment("no suspicious activity, just creates object")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -323,7 +327,8 @@ public byte[] digest(byte[] input) {
      *
      * @return the name of the algorithm of this {@code MessageDigest}
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.419 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {
@@ -349,7 +354,8 @@ public final Provider getProvider() {
      *
      * @return the digest length in bytes, or {@code 0}
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.424 -0500", hash_original_method = "CB1E3F95FB76C6289C61CD25B71DC6B2", hash_generated_method = "88911DEE53843AD051BBEE6C556BB1DD")
     
 public final int getDigestLength() {

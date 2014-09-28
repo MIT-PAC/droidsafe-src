@@ -92,6 +92,7 @@ public class FragmentActivity extends Activity {
 
     static final int MSG_RESUME_PENDING = 2;
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.306 -0400", hash_original_method = "3274893E9C9F22CAC70DF93D680DD8B1", hash_generated_method = "CF399103EB831757AC957B278C4C83D7")
     
 private static String viewToString(View view) {
@@ -187,6 +188,7 @@ private static String viewToString(View view) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:26.873 -0400", hash_original_field = "5FCD3FCB0C48EC9F428EAE9789E56596", hash_generated_field = "19B31D6A5D2DDF3AAD759FDDD8EE70CE")
 
     final FragmentContainer mContainer = new FragmentContainer() {
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public View findViewById(int id) {
             return FragmentActivity.this.findViewById(id);
@@ -607,6 +609,7 @@ public void onBackPressed() {
      * where its fragments are resumed.  Be sure to always call through to
      * the super-class.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.208 -0400", hash_original_method = "571F1484F02501E8599B33312B988FBD", hash_generated_method = "7B7758434599706A4943A71A2355767C")
     
 protected void onResumeFragments() {
@@ -637,6 +640,7 @@ protected void onResumeFragments() {
     /**
      * @hide
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.225 -0400", hash_original_method = "EEA7C88B5ECEA90DEF8DDF72CC395A60", hash_generated_method = "3175417E6133C2CAFA94BAEAE945513A")
     
 protected boolean onPrepareOptionsPanel(View view, Menu menu) {
@@ -783,6 +787,7 @@ protected boolean onPrepareOptionsPanel(View view, Menu menu) {
      * Use this instead of {@link #onRetainNonConfigurationInstance()}.
      * Retrieve later with {@link #getLastCustomNonConfigurationInstance()}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.268 -0400", hash_original_method = "F55A4C6A01F3D0AB15650B3080E9EF76", hash_generated_method = "ED3655B6F542816CCC0E0842D7F40916")
     
 public Object onRetainCustomNonConfigurationInstance() {
@@ -808,6 +813,7 @@ public Object getLastCustomNonConfigurationInstance() {
      * of the menu to fully update via calls to onCreateOptionsMenu and
      * onPrepareOptionsMenu the next time the menu is requested.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.283 -0400", hash_original_method = "9AD1865EB184E07C9164FA8858758524", hash_generated_method = "65EE9AE13852D2235D9D2C15ABF8F320")
     
 public void supportInvalidateOptionsMenu() {
@@ -863,6 +869,7 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
         dumpViewHierarchy(prefix + "  ", writer, getWindow().getDecorView());
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.314 -0400", hash_original_method = "0B7E3349E1F0303BBAAE6767112F50B2", hash_generated_method = "6A3DAAEAA2C9E6732B30ABDD653554F6")
     
 private void dumpViewHierarchy(String prefix, PrintWriter writer, View view) {
@@ -886,6 +893,7 @@ private void dumpViewHierarchy(String prefix, PrintWriter writer, View view) {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.321 -0400", hash_original_method = "4C92BE36A72450E440D9BAAFB03D8955", hash_generated_method = "4C92BE36A72450E440D9BAAFB03D8955")
     
 void doReallyStop(boolean retaining) {
@@ -904,6 +912,7 @@ void doReallyStop(boolean retaining) {
      * we need to know this, to know whether to retain fragments.  This will
      * tell us what we need to know.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.328 -0400", hash_original_method = "E4D0A1E9799E4532B863FFE2D6A92452", hash_generated_method = "E4D0A1E9799E4532B863FFE2D6A92452")
     
 void onReallyStop() {
@@ -928,6 +937,7 @@ void onReallyStop() {
     /**
      * Called when a fragment is attached to the activity.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.335 -0400", hash_original_method = "28C2B4CF762BABC0F8C194FDD6A98E77", hash_generated_method = "90E52C4BC3A65267BADEC04167F68D07")
     
 public void onAttachFragment(Fragment fragment) {
@@ -937,6 +947,7 @@ public void onAttachFragment(Fragment fragment) {
      * Return the FragmentManager for interacting with fragments associated
      * with this activity.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.341 -0400", hash_original_method = "A30369BEE359642894950823DFC915CE", hash_generated_method = "B5CD8D953477451DBD109BD650F133D0")
     
 public FragmentManager getSupportFragmentManager() {
@@ -977,6 +988,7 @@ public void startActivityFromFragment(Fragment fragment, Intent intent,
         super.startActivityForResult(intent, ((fragment.mIndex+1)<<16) + (requestCode&0xffff));
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.366 -0400", hash_original_method = "6D742EEA8D7FFBA4C7362E83B04A53C8", hash_generated_method = "3032C09552B4E17980204B5CA8CEBD57")
     
 void invalidateSupportFragment(String who) {

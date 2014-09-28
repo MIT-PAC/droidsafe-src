@@ -42,8 +42,8 @@ public LogWriter(String tag) {
         flushBuilder();
     }
 
-    @DSSink(DSSinkKind.IO)
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.IO})
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.558 -0500", hash_original_method = "87C8CDE1CE20D2763C465BB465CBAFDD", hash_generated_method = "72F623F59FC9F90F70CCD532565A22B3")
     
 @Override public void write(char[] buf, int offset, int count) {
@@ -59,7 +59,7 @@ public LogWriter(String tag) {
     }
 
     @DSComment("Private Method")
-    @DSBan(DSCat.PRIVATE_METHOD)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.560 -0500", hash_original_method = "A3E85FE8F46B76369541B6339B556DCC", hash_generated_method = "F54FE92EA92674829E386B9EB3BD3D09")
     
 private void flushBuilder() {

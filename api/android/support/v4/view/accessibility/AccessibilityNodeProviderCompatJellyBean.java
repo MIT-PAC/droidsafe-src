@@ -36,6 +36,7 @@ class AccessibilityNodeProviderCompatJellyBean {
             int virtualViewId);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:29:09.740 -0400", hash_original_method = "44F5271AD5630B6E14772B702EAC03DE", hash_generated_method = "BBCEFE66A01BCF2DECBDB00E077414EC")
         
 public static Object newAccessibilityNodeProviderBridge(

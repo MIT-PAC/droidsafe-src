@@ -374,7 +374,6 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
         //getApplicationContext().unregisterComponentCallbacks(callback);
     }
     
-    @DSSource({DSSourceKind.RESOURCES})
     @DSSafe(DSCat.SAFE_OTHERS)
     
     public final CharSequence getText(int resId) {
@@ -396,7 +395,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
      *
      * @param resId Resource id for the string
      */
-    @DSSource({DSSourceKind.RESOURCES})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.875 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
@@ -413,8 +412,7 @@ public final String getString(int resId) {
      * @param resId Resource id for the format string
      * @param formatArgs The format arguments that will be used for substitution.
      */
-
-    @DSSource({DSSourceKind.RESOURCES})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.877 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
@@ -449,7 +447,7 @@ public int getThemeResId() {
     /**
      * Return the Theme object associated with this Context.
      */
-    @DSSource({DSSourceKind.RESOURCES})
+    
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.883 -0500", hash_original_method = "7ACE2B655A5B877874BCA55245CA4650", hash_generated_method = "CF306A85F4EDB21EEEBC87F9574CE37E")
     
@@ -521,7 +519,7 @@ public final TypedArray obtainStyledAttributes(
      */
     
     @DSComment("Abstract Method")
-    @DSSpec(DSCat.CLASS_LOADER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.896 -0500", hash_original_method = "8A810E4DE3086C301A9EB2A3F9E45FA2", hash_generated_method = "488BD79C00E2507C7A9C8DB8CE74E57B")
     
 public abstract ClassLoader getClassLoader();
@@ -611,7 +609,7 @@ public abstract File getSharedPrefsFile(String name);
      * @see #MODE_WORLD_WRITEABLE
      * @see #MODE_MULTI_PROCESS
      */
-    @DSSource({DSSourceKind.PREFERENCES})
+    
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.909 -0500", hash_original_method = "0A32AB6B1755B7A435A6F215DDF3C5B4", hash_generated_method = "58E69BCA38F976DBC2163BAC4DCC28FE")
@@ -662,7 +660,7 @@ public abstract FileInputStream openFileInput(String name)
      * @see #deleteFile
      * @see java.io.FileOutputStream#FileOutputStream(String)
      */
-    @DSSink({DSSinkKind.FILE})
+    
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.913 -0500", hash_original_method = "BEE63DE917C6EB7327F3CD638CB5E201", hash_generated_method = "C3F3F1D5E8BA5B4F3D287ECFD48EBDEA")
@@ -1520,7 +1518,7 @@ public abstract Intent registerReceiver(BroadcastReceiver receiver,
      * @see #registerReceiver
      */
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.990 -0500", hash_original_method = "A9535E587929A917D1046B408007AAB8", hash_generated_method = "B1E9C90A32AC9A1F8ABA260A8A39EB87")
     
 public abstract void unregisterReceiver(BroadcastReceiver receiver);
@@ -1571,6 +1569,7 @@ public abstract void unregisterReceiver(BroadcastReceiver receiver);
      * @see #stopService
      * @see #bindService
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.992 -0500", hash_original_method = "299DC35BFC98468366A24298AABF9029", hash_generated_method = "9E29465F9BF8E95E0E1D32A7BC59A66B")
@@ -1605,7 +1604,7 @@ public abstract ComponentName startService(Intent service);
      * @see #startService
      */
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.994 -0500", hash_original_method = "C04E26FF6D7273574E38F7525B1B5BFE", hash_generated_method = "D1BBC18DADDAD8020B4B7AF9615658E7")
     
 public abstract boolean stopService(Intent service);
@@ -1673,8 +1672,9 @@ public abstract boolean bindService(Intent service, ServiceConnection conn,
      *
      * @see #bindService
      */
+    @DSSink({DSSinkKind.IPC})
     @DSComment("Abstract Method")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.999 -0500", hash_original_method = "AD50D89FB73F95E5DD03D493BB040603", hash_generated_method = "7E573E5A290A954C1D1A58189D55F91E")
     
 public abstract void unbindService(ServiceConnection conn);

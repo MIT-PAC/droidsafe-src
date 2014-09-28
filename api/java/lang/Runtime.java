@@ -27,7 +27,7 @@ public class Runtime {
      * @return the {@code Runtime} object for the current application.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.119 -0500", hash_original_method = "CF79B4C7AE45CC6197E4369ECF161253", hash_generated_method = "7F8C2B8A85E75003A22377212FF0E3F4")
     
@@ -292,7 +292,7 @@ public Process exec(String prog, String[] envp, File directory) throws java.io.I
      *            abnormal terminations.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.108 -0500", hash_original_method = "06E9B7958C64599C6A29BDE55862BAAD", hash_generated_method = "849CF09FE771298F8364E356A2F1C2ED")
     
 public void exit(int code) {
@@ -608,7 +608,7 @@ public void traceMethodCalls(boolean enable) {
      *             if the VM is already shutting down.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.161 -0500", hash_original_method = "4A60C315F45CCAAE039020003BF5AFDA", hash_generated_method = "0CB2C0DD3FA775AC9C9F386D313E0205")
     
 public void addShutdownHook(Thread hook) {
@@ -687,7 +687,7 @@ public void halt(int code) {
      * Returns the number of processors available to the VM, at least 1.
      */
     @DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.168 -0500", hash_original_method = "1DA5795546617F35E1E74BDB5F5DDD58", hash_generated_method = "878D85E66666C4CA6A7F7C1FFC6D09CD")
     
 public int availableProcessors() {

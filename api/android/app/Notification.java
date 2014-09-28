@@ -137,7 +137,7 @@ public class Notification implements Parcelable
     public static final Parcelable.Creator<Notification> CREATOR
             = new Parcelable.Creator<Notification>()
     {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-05-05 09:45:16.269 -0400", hash_original_method = "640E6F5E88B10B67950DC22B82259969", hash_generated_method = "DBA7908684BF656EA8BA45DF5B36E06D")
         
 public Notification createFromParcel(Parcel parcel)
@@ -228,7 +228,7 @@ public Notification[] newArray(int size)
 
         public static final Parcelable.Creator<Action> CREATOR
         = new Parcelable.Creator<Action>() {
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             public Action createFromParcel(Parcel in) {
                 return new Action(in);
             }
@@ -502,7 +502,8 @@ public int describeContents() {
     /**
      * Flatten this notification from a parcel.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.887 -0500", hash_original_method = "5C0DC043738AC4333F4B83B519C04DF0", hash_generated_method = "59AF87A64B36E5B102009AA38D857716")
     
 public void writeToParcel(Parcel parcel, int flags)
@@ -891,7 +892,7 @@ public Builder setUsesChronometer(boolean b) {
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:51.992 -0500", hash_original_method = "76509FA1EC330D1A963F56DC8E00B5D8", hash_generated_method = "0D277F3C63A7802E216A2AFC8D6C9730")
         @DSVerified
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.GUI)
 public Builder setSmallIcon(int icon) {
             mSmallIcon = icon;
             return this;
@@ -982,7 +983,7 @@ public Builder setContentInfo(CharSequence info) {
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:52.005 -0500", hash_original_method = "D0B2BE14A572EFF2EC3981BC799BA989", hash_generated_method = "6E0D3C0BC51827EB7CD05EFAE4B7F4F0")
         @DSVerified
-        @DSSafe(DSCat.DATA_STRUCTURE)
+        @DSSafe(DSCat.GUI)
 public Builder setProgress(int max, int progress, boolean indeterminate) {
             mProgressMax = max;
             mProgress = progress;
@@ -1150,7 +1151,7 @@ public Builder setSound(Uri sound, int streamType) {
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:52.026 -0500", hash_original_method = "A86D234FAB504C5B3A4DEC6712517174", hash_generated_method = "5597004A27277A950C64200D68BFB2EF")   
         @DSVerified
-        @DSBan(DSCat.PRIVATE_METHOD)
+        @DSSafe(DSCat.SAFE_LIST)
         
 public Builder setVibrate(long[] pattern) {
             mVibrate = pattern;
@@ -1542,7 +1543,7 @@ private Notification buildUnstyled() {
          * @deprecated Use {@link #build()} instead.
          */
         @DSSafe(DSCat.UTIL_FUNCTION)
-        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:52.065 -0500", hash_original_method = "5752A873E7B6FE6901D822366F1E539B", hash_generated_method = "F7D2E55096D0FEE79BDB70A7F86C3B7A")
         
 @Deprecated
@@ -1923,7 +1924,7 @@ public InboxStyle(Builder builder) {
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:52.142 -0500", hash_original_method = "DED53C6C97CBAC4C2523CA519F3D60D8", hash_generated_method = "644EC6CCE079E178746E2E8E8B23F2FD")
         @DSVerified
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.GUI)
 public InboxStyle setBigContentTitle(CharSequence title) {
             internalSetBigContentTitle(title);
             return this;
@@ -1934,7 +1935,7 @@ public InboxStyle setBigContentTitle(CharSequence title) {
          */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:52.143 -0500", hash_original_method = "7E1B18A0E9DC7092B942BFB58DF923CD", hash_generated_method = "4F13CAE2105C1B3583B5E5F82319B352")
         @DSVerified
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.GUI)
 public InboxStyle setSummaryText(CharSequence cs) {
             internalSetSummaryText(cs);
             return this;
@@ -1942,7 +1943,7 @@ public InboxStyle setSummaryText(CharSequence cs) {
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 23:22:52.146 -0500", hash_original_method = "4A24CF50FAD49F68396B9687C7D6208C", hash_generated_method = "5CEAFD8985071C87987A8E6DDC37270E")
         @DSVerified
-        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSafe(DSCat.GUI)
 public InboxStyle addLine(CharSequence cs) {
             mTexts.add(cs);
             return this;

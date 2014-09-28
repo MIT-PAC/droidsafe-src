@@ -116,7 +116,7 @@ public FilterOutputStream(OutputStream out) {
      *             if an I/O error occurs while writing to this stream.
      */
     @DSComment("Activity on IO class")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.179 -0500", hash_original_method = "10EC24027333F66A6325D4B91084AA70", hash_generated_method = "72256F3E593320096EE1351175BB4E9C")
     

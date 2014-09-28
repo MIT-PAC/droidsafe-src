@@ -60,6 +60,7 @@ public class ActionMenuView extends LinearLayoutICS // implements MenuBuilder.It
      * @param parentHeightPadding     Padding present in the parent view
      * @return Number of cells this child was measured to occupy
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.829 -0400", hash_original_method = "095E841216803529C033AD610D8363A3", hash_generated_method = "A2185A5B418CBD78AA35043A072DA03D")
     
 static int measureChildForCells(View child, int cellSize, int cellsRemaining,
@@ -153,6 +154,7 @@ public ActionMenuView(Context context, AttributeSet attrs) {
         a.recycle();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.694 -0400", hash_original_method = "F8B2E0B9AF6B77951E8DA779DE9E37B4", hash_generated_method = "F57C2CCCDFA8C19F841E8A365C66C0C9")
     
 public void setPresenter(ActionMenuPresenter presenter) {
@@ -217,6 +219,7 @@ public boolean isExpandedFormat() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.814 -0400", hash_original_method = "9D5FAA757ACD3BC6F73045CC1C70F766", hash_generated_method = "23AB258569EB1F5E65929EC335AF6167")
     
 private void onMeasureExactFormat(int widthMeasureSpec, int heightMeasureSpec) {
@@ -554,12 +557,14 @@ public boolean isOverflowReserved() {
         return mReserveOverflow;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.871 -0400", hash_original_method = "F5103BD0EA93D884CF8413DB778005C1", hash_generated_method = "B82F98E8C95E384D621AB24537CC57B4")
     
 public void setOverflowReserved(boolean reserveOverflow) {
         mReserveOverflow = reserveOverflow;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.878 -0400", hash_original_method = "DEBB4048965D8045F192555AB279F2BA", hash_generated_method = "29BEB9B545D88184017C9E3123770325")
     
 @Override
@@ -570,6 +575,7 @@ public void setOverflowReserved(boolean reserveOverflow) {
         return params;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.886 -0400", hash_original_method = "AED9080C69042489485342721EE0B0B1", hash_generated_method = "4AD7665169039F61ACFF3C8481974477")
     
 @Override
@@ -577,6 +583,7 @@ public void setOverflowReserved(boolean reserveOverflow) {
         return new LayoutParams(getContext(), attrs);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.893 -0400", hash_original_method = "6543FCE3043AA8E09E4AB46D137D1290", hash_generated_method = "26BFBF2498F471584ACFC84914ECE101")
     
 @Override
@@ -599,6 +606,7 @@ public void setOverflowReserved(boolean reserveOverflow) {
         return p != null && p instanceof LayoutParams;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.906 -0400", hash_original_method = "AF673847AD60845228ED5C7DBF294789", hash_generated_method = "16FD06704D4C3D23EE9E8C85745CB17B")
     
 public LayoutParams generateOverflowButtonLayoutParams() {
@@ -619,12 +627,14 @@ public int getWindowAnimations() {
         return 0;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.923 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "4239B6BD8C1C7C2E7AC8C3A17352B70E")
     
 public void initialize(MenuBuilder menu) {
         mMenu = menu;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-19 13:37:54.928 -0400", hash_original_method = "3AD27366CD169731101D50D4445554A3", hash_generated_method = "F8C3EAE22EAFF0CD433A6A13273589FD")
     
 protected boolean hasSupportDividerBeforeChildAt(int childIndex) {

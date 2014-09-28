@@ -14,7 +14,7 @@ public class DroidSafeSensorManager extends SensorManager {
 		super(null);	
 	}
 	
-	@DSSpec(DSCat.ANDROID_MANAGER)
+	@DSSafe(DSCat.SAFE_LIST)
     public Sensor getDefaultSensor(int i) {
 		return null;
 	}

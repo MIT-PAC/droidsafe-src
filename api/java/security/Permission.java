@@ -11,7 +11,8 @@ public abstract class Permission implements Guard, Serializable {
     
 public Permission(String name) { }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SECURITY_INFO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.123 -0500", hash_original_method = "BD1D69B57EF82CC836CADC372B210DA8", hash_generated_method = "1FEC139DF0BDEA5B2B34BC8A24D414EF")
     
 public final String getName() { return null; }

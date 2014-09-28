@@ -202,6 +202,7 @@ public final boolean isSecure(Socket sock)
      *
      * @return  iff the argument is this object
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:22.051 -0400", hash_original_method = "F7B998F5AE180E31090E44B8A03A92F7", hash_generated_method = "08FF0ED30143F58CAB4DEB62E6201927")
     
 @Override

@@ -304,7 +304,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.838 -0500", hash_original_method = "8999420BFE5728B346477621EA154ABF", hash_generated_method = "28CDA3F8FDA37851E62A8AF5FDB0583F")
     
@@ -323,7 +323,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(packageName);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.841 -0500", hash_original_method = "9B4FC7EA40C0BB7AEEEEEF1D86D28DE8", hash_generated_method = "EF6DFEB0D241F5E7703A22910B5FF935")
     
@@ -704,7 +704,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.907 -0500", hash_original_method = "3A6513CB26C2E0AF7DACFC2B8A5D560B", hash_generated_method = "F53A7551C4AA05FB097DA099CB348C9E")
     
@@ -815,7 +815,7 @@ ApplicationPackageManager(ContextImpl context,
         return null;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.921 -0500", hash_original_method = "E8823DE045849946097DF943F50B58DB", hash_generated_method = "04E5C7A2AE8474A337A5572B23A268A8")
     
@@ -824,7 +824,7 @@ ApplicationPackageManager(ContextImpl context,
         return getActivityInfo(activityName, 0).loadIcon(this);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.923 -0500", hash_original_method = "EF5F409F30F5D50F1964B6AB6B7F75B7", hash_generated_method = "C75839D6E1579E8FC96CA43A864F25D8")
     
@@ -852,7 +852,7 @@ ApplicationPackageManager(ContextImpl context,
             com.android.internal.R.drawable.sym_def_app_icon);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.928 -0500", hash_original_method = "C2186A062EDEC18E9DD8F87E8E6291D1", hash_generated_method = "CB3A075E196795909980D831E6793C11")
     
@@ -860,7 +860,7 @@ ApplicationPackageManager(ContextImpl context,
         return info.loadIcon(this);
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.931 -0500", hash_original_method = "49256B647BD52234F52BC973E3B03E0B", hash_generated_method = "E0CB6A2F18DB4FEEC1933E37BC8C24EE")
     
@@ -1092,7 +1092,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         return null;
     }
 
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.IPC)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.002 -0500", hash_original_method = "4AFDE050276913F392973B277F54706D", hash_generated_method = "6F92466A776DBA6739B13B32017ADBC6")
     

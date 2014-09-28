@@ -78,6 +78,7 @@ public boolean getBooleanParameter(final String name, boolean defaultValue) {
         return ((Boolean)param).booleanValue();
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.785 -0500", hash_original_method = "E4FF8AAC25178FB9DD8E5DC61133723C", hash_generated_method = "ABAE7C89DD514381027CD96A98F6A263")
     
 public HttpParams setBooleanParameter(final String name, boolean value) {

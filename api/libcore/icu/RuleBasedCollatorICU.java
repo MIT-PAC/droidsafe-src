@@ -210,6 +210,7 @@ private String characterIteratorToString(CharacterIterator it) {
         return 42; // No-one uses RuleBasedCollatorICU as a hash key.
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.753 -0500", hash_original_method = "33726095AFF4CCE7845E5A8AF95C560E", hash_generated_method = "B2129DDB57F0B982A725D4AB1A49846D")
     
 public boolean equals(String source, String target) {

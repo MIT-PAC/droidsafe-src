@@ -27,6 +27,7 @@ import android.widget.ListPopupWindow;
  * Implementation of ListPopupWindow compatibility that can call KitKat APIs.
  */
 class ListPopupWindowCompatKitKat {
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:08.754 -0400", hash_original_method = "720C5536D3C615873E5E569CAB7226AD", hash_generated_method = "0EEB1353902207076049CFAA8CF67C6A")
     
 public static OnTouchListener createDragToOpenListener(Object listPopupWindow, View src) {

@@ -48,7 +48,7 @@ public class DropBoxManager {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.403 -0500", hash_original_method = "A391752DBE5FDE90AB459A0FCBEFF4D2", hash_generated_method = "3F9FC880A62633725193C63B42998327")
             
 public Entry[] newArray(int size) { return new Entry[size]; }
-            @DSSafe(DSCat.SAFE_LIST)
+            @DSSafe(DSCat.SAFE_OTHERS)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.406 -0500", hash_original_method = "946DD766314338FFDBA7B29D274BE59A", hash_generated_method = "4066987818FA603CCE0C5DC4EDFC22BF")
             
 public Entry createFromParcel(Parcel in) {

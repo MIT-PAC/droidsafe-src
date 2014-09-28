@@ -24,6 +24,7 @@ public final class Field extends AccessibleObject implements Member {
     	return ret;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     private static <A extends Annotation> A getAnnotation(
             Class<?> declaringClass, int slot, Class<A> annotationType) {
     	A ret = (A)new Object();
@@ -33,6 +34,7 @@ public final class Field extends AccessibleObject implements Member {
     	return ret;
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     private static boolean isAnnotationPresent(
             Class<?> declaringClass, int slot, Class<? extends Annotation> annotationType) {
             
@@ -188,6 +190,7 @@ private synchronized void initGenericType() {
      *
      * @return {@code true} if this field is synthetic, {@code false} otherwise
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.263 -0500", hash_original_method = "FC3424D2079ACBF27BEC7269ECB48C94", hash_generated_method = "3C1589722F7DF9BF4FE6C3BC09F89D05")
     
 public boolean isSynthetic() {
@@ -243,7 +246,8 @@ public boolean isEnumConstant() {
      *             if the generic type points to a type that cannot be
      *             instantiated for some reason
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.271 -0500", hash_original_method = "963F10B2A4697E7A9ECC1BB94066D74F", hash_generated_method = "FD2CCB94E0B27938FC7C6CEA8DFA5A0E")
     
 public Type getGenericType() {
@@ -259,7 +263,8 @@ public Type getGenericType() {
         return getDeclaredAnnotations(declaringClass, slot);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.008 -0400", hash_original_method = "C04F97610183E33B13FB9B4273375B6D", hash_generated_method = "5FA34C6FB9279968DCAA09543A6D1EB0")
+@DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.008 -0400", hash_original_method = "C04F97610183E33B13FB9B4273375B6D", hash_generated_method = "5FA34C6FB9279968DCAA09543A6D1EB0")
     @Override
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
         addTaint(annotationType.getTaint());
@@ -279,6 +284,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
         //return getAnnotation(declaringClass, slot, annotationType);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.286 -0500", hash_original_method = "D8B142EB73E138FF5927E6AE1DAD56D2", hash_generated_method = "426D294074F23AB43B6C5EEBDA3CD9A8")
     
 @Override public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
@@ -334,8 +340,8 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
      *             if this field is not accessible
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.REFLECTION})
+    @DSSpec(DSCat.REFLECTION)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.294 -0500", hash_original_method = "7AE3BC00249CC99885BB0445C93FB18A", hash_generated_method = "81AB090C4B0E06E8EAE64B54F604EA2C")
     
 public Object get(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -529,7 +535,7 @@ public float getFloat(Object object) throws IllegalAccessException, IllegalArgum
      *             if this field is not accessible
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
     @DSSource({DSSourceKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.312 -0500", hash_original_method = "5CB83BC53ADA020FA0FD37C15AAD9E62", hash_generated_method = "9D7296B3392D54E0B4B59D734A1FEECF")
     
@@ -660,8 +666,8 @@ public short getShort(Object object) throws IllegalAccessException, IllegalArgum
      * @return the type of this field
      */
     @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.330 -0500", hash_original_method = "21C93A7CC51FD6114C8D944747F943F4", hash_generated_method = "0EEEE4F02A27E714D03E663A59C6B204")
     
 public Class<?> getType() {
@@ -717,8 +723,8 @@ public Class<?> getType() {
      *             if this field is not accessible
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.REFLECTION)
+    @DSSink({DSSinkKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.335 -0500", hash_original_method = "6D24AA0F6B01F01D922DBBA93FD91F81", hash_generated_method = "30D8F62F862AD3637A8B07C21E9E5524")
     
 public void set(Object object, Object value) throws IllegalAccessException,
@@ -755,7 +761,7 @@ public void set(Object object, Object value) throws IllegalAccessException,
      *             if this field is not accessible
      */
     @DSComment("Java language reflection")
-    @DSBan(DSCat.REFLECTION)
+    @DSSpec(DSCat.REFLECTION)
     @DSSink({DSSinkKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.337 -0500", hash_original_method = "25FFB4639E444F2A9FD12AF0E909B7A5", hash_generated_method = "50D46A62976E2A32D29DFB63C6D79FD9")
     
@@ -931,7 +937,8 @@ public void setFloat(Object object, float value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSpec(DSCat.REFLECTION)
+    @DSSink({DSSinkKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.350 -0500", hash_original_method = "DA13B1330D08A636280F51E51FF711B2", hash_generated_method = "6392FEF2EBBE8D70E43184E3B192A066")
     
 public void setInt(Object object, int value) throws IllegalAccessException,

@@ -601,7 +601,7 @@ public boolean isParseBigDecimal() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.878 -0500", hash_original_method = "86D86A0FD4BCEEB43D34AB98DA52821C", hash_generated_method = "ABDCE81DD5C3B5AB0732C3F903CDAF3F")
     
 public void setDecimalFormatSymbols(DecimalFormatSymbols value) {

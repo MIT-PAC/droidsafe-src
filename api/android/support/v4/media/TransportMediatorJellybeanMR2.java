@@ -134,12 +134,14 @@ public TransportMediatorJellybeanMR2(Context context, AudioManager audioManager,
         mTargetView.getViewTreeObserver().addOnWindowFocusChangeListener(mWindowFocusListener);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.790 -0400", hash_original_method = "0BB2C1D5E39EACE5AE12CFF6FCF02813", hash_generated_method = "AFA4D1DDA6015BD5FD86417F763EE715")
     
 public Object getRemoteControlClient() {
         return mRemoteControl;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.795 -0400", hash_original_method = "7F4B3BFCA1B0CA9B62E02B6F5CCA6E83", hash_generated_method = "BEDC4F3418B427D4C676C589272A880E")
     
 public void destroy() {
@@ -148,6 +150,7 @@ public void destroy() {
         //mTargetView.getViewTreeObserver().removeOnWindowFocusChangeListener(mWindowFocusListener);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.800 -0400", hash_original_method = "10768445EB951FE5442174B2BD534C5A", hash_generated_method = "10768445EB951FE5442174B2BD534C5A")
     
 void windowAttached() {
@@ -159,6 +162,7 @@ void windowAttached() {
         mRemoteControl.setPlaybackPositionUpdateListener(this);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.804 -0400", hash_original_method = "3B4A51E8F28D6E804B5B56B055A08141", hash_generated_method = "3B4A51E8F28D6E804B5B56B055A08141")
     
 void gainFocus() {
@@ -172,6 +176,7 @@ void gainFocus() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.809 -0400", hash_original_method = "3103108A8D5A088BBEC63FBBFE8B1FF4", hash_generated_method = "3103108A8D5A088BBEC63FBBFE8B1FF4")
     
 void takeAudioFocus() {
@@ -182,6 +187,7 @@ void takeAudioFocus() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.813 -0400", hash_original_method = "3F5BE999A20E57B0E8BF6D722B3D4753", hash_generated_method = "2E3AF89ACFB1C18DB71B9D89E981E225")
     
 public void startPlaying() {
@@ -208,6 +214,7 @@ public void startPlaying() {
         mTransportCallback.playbackPositionUpdate(newPositionMs);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.828 -0400", hash_original_method = "FBD67BA8A31809EAFA4A4846B6495AC8", hash_generated_method = "5D502D63DC62689F301DF7738FAC1186")
     
 public void refreshState(boolean playing, long position, int transportControls) {
@@ -218,6 +225,7 @@ public void refreshState(boolean playing, long position, int transportControls) 
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.833 -0400", hash_original_method = "5DA49539E8680FE60FAAD6F624FBFDB0", hash_generated_method = "7C6891C8F120C6270A278069115DB3F4")
     
 public void pausePlaying() {
@@ -228,6 +236,7 @@ public void pausePlaying() {
         dropAudioFocus();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.837 -0400", hash_original_method = "62E6A9788C24EA78B3AF9770D2D5214C", hash_generated_method = "6B28F14149016E43A63BDD8EE33770F8")
     
 public void stopPlaying() {
@@ -238,6 +247,7 @@ public void stopPlaying() {
         dropAudioFocus();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.842 -0400", hash_original_method = "A055FEE32C59123FF3DDAD9441282612", hash_generated_method = "A055FEE32C59123FF3DDAD9441282612")
     
 void dropAudioFocus() {
@@ -247,6 +257,7 @@ void dropAudioFocus() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.846 -0400", hash_original_method = "C9E2EDEF98B099E11080C94F711AA2E8", hash_generated_method = "C9E2EDEF98B099E11080C94F711AA2E8")
     
 void loseFocus() {
@@ -258,6 +269,7 @@ void loseFocus() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:08:59.851 -0400", hash_original_method = "65BEE818776ACB3C08D6ED5800ABD703", hash_generated_method = "65BEE818776ACB3C08D6ED5800ABD703")
     
 void windowDetached() {

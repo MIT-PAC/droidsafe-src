@@ -66,7 +66,7 @@ public class Resources {
 	}
     
 	@DSComment("System resources")
-    @DSSpec(DSCat.SYSTEM)
+    @DSSafe(DSCat.SAFE_LIST)
     
     public static Resources getSystem(){
 	    if (mSystem == null)

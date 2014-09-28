@@ -398,6 +398,7 @@ void restartPrintJob(PrintJobId printJobId) {
      *
      * @see PrintJob
      */
+    @DSSpec(DSCat.SPEC_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.118 -0400", hash_original_method = "DB76197B791C3360ABCE2D710B34C7EA", hash_generated_method = "C0EB4482F0F19ABDD988F50025182264")
     
 public PrintJob print(String printJobName, PrintDocumentAdapter documentAdapter,
@@ -946,6 +947,7 @@ public MyLayoutResultCallback(ILayoutResultCallback callback,
                 mSequence = sequence;
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.233 -0400", hash_original_method = "DCBB01DA9B11FF2BF44F7377A1C0ECC2", hash_generated_method = "59639AF28EE821BDC70106792823E540")
             
 @Override
@@ -972,6 +974,7 @@ public MyLayoutResultCallback(ILayoutResultCallback callback,
                 }
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.236 -0400", hash_original_method = "D24EA9A6964725B5F63991D09ED4FB76", hash_generated_method = "336E8897874F14CF9B139077F8D8F4B1")
             
 @Override
@@ -995,6 +998,7 @@ public MyLayoutResultCallback(ILayoutResultCallback callback,
                 }
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.238 -0400", hash_original_method = "B10D77053D86AA29573F53C6B499E0FB", hash_generated_method = "82ACEF5654A940B98BC92BA13C1B12C9")
             
 @Override
@@ -1038,6 +1042,7 @@ public MyWriteResultCallback(IWriteResultCallback callback,
                 mCallback = callback;
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.270 -0400", hash_original_method = "F1B26067997851E085FB9B0D08E55B32", hash_generated_method = "20DA2BBB2B238A480A901B063C5A6830")
             
 @Override
@@ -1067,6 +1072,7 @@ public MyWriteResultCallback(IWriteResultCallback callback,
                 }
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-06 08:48:11.273 -0400", hash_original_method = "9C19F0A820701829709659C1CBB69573", hash_generated_method = "5F5C0881BC53E78771CF8E50BB891061")
             
 @Override

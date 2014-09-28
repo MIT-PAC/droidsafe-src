@@ -2871,7 +2871,7 @@ private void externalHelpComplete(WorkQueue q, ForkJoinTask<?> root) {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.966 -0400", hash_original_method = "FCD0471AE3D6BA8280EE0A9C2A42AADB", hash_generated_method = "3BA3B11880CCB6BF48996A45DDDF5E36")
     
 public void execute(ForkJoinTask<?> task) {
@@ -2887,7 +2887,7 @@ public void execute(ForkJoinTask<?> task) {
      * @throws RejectedExecutionException if the task cannot be
      *         scheduled for execution
      */
-    @DSSpec(DSCat.THREADING)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.966 -0400", hash_original_method = "698926B422931FDEA21840143F195B4F", hash_generated_method = "370D82990C064CD4B2F3382F282B515D")
     
 public void execute(Runnable task) {
@@ -3424,6 +3424,7 @@ public List<Runnable> shutdownNow() {
      *
      * @return {@code true} if all tasks have completed following shut down
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:01:12.978 -0400", hash_original_method = "74884CE7610B47231B000511924050E4", hash_generated_method = "721B9802B1E97C149FE2ECB448B1C8B1")
     
 public boolean isTerminated() {

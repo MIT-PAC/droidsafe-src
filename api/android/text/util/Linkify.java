@@ -403,7 +403,8 @@ public class Linkify {
                 return 0;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.807 -0500", hash_original_method = "41879F3ECE84BDD3E4B04325E71E8A69", hash_generated_method = "F0FFBDE17DFCB00CE91A2991226C5D29")
+            @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.807 -0500", hash_original_method = "41879F3ECE84BDD3E4B04325E71E8A69", hash_generated_method = "F0FFBDE17DFCB00CE91A2991226C5D29")
             
             public final boolean equals(Object o) {
                 return false;

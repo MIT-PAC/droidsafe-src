@@ -300,7 +300,7 @@ public boolean before(Timestamp theTimestamp) {
      * @throws ClassCastException
      *             if the supplied object is not a {@code Timestamp} object.
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.607 -0500", hash_original_method = "05A91DEA116C3E2F5603F3F0D29353F9", hash_generated_method = "6913C2CAA66A64CC02A4479F7027889D")
     
 @Override
@@ -325,7 +325,7 @@ public boolean before(Timestamp theTimestamp) {
      *         supplied {@code Timestamp}</li>
      *         </ul>
      */
-    @DSSafe(DSCat.SAFE_LIST)
+    @DSSpec(DSCat.TRIGGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.609 -0500", hash_original_method = "5F716ED3C44AF0E8E5B469B5E8E10C8F", hash_generated_method = "4BF9FAA4B4AB3AC55D9B8EB82863EA44")
     
 public int compareTo(Timestamp theTimestamp) {
@@ -354,7 +354,7 @@ public int compareTo(Timestamp theTimestamp) {
      *         is not a {@code Timestamp} object or if the object is a {@code
      *         Timestamp} but represents a different instant in time.
      */
-    @DSSpec(DSCat.TRIGGER)
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.612 -0500", hash_original_method = "94CEF17B9A7A2098B0DD6F205E7F606C", hash_generated_method = "E9928B27F2DF539B2F0201B1CD0966F1")
     
 @Override
@@ -374,6 +374,7 @@ public int compareTo(Timestamp theTimestamp) {
      * @return {@code true} if this {@code Timestamp} object is equal to the
      *         supplied {@code Timestamp} object, {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.615 -0500", hash_original_method = "42296DC9EADFEA8A232AFEC4CE089FE4", hash_generated_method = "5F24148571F9B41E8B35FB5513F9ABD6")
     
 public boolean equals(Timestamp theTimestamp) {
@@ -405,7 +406,7 @@ public int getNanos() {
      *         00:00:00.000 GMT.
      */
     @DSSpec(DSCat.TRIGGER)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.DATE_TIME})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.620 -0500", hash_original_method = "66C377BC30C9278F77FB30382314DC3B", hash_generated_method = "500B3D6CEDD1457D33FBA0F9085B83A5")
     
 @Override
@@ -482,8 +483,8 @@ private void setTimeImpl(long theTime) {
      * @return A string representing the instant defined by the {@code
      *         Timestamp}, in JDBC Timestamp escape format.
      */
-    @DSSource({DSSourceKind.DATE_TIME})
-    @DSSpec(DSCat.TRIGGER)
+    
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.630 -0500", hash_original_method = "2B0509572F21FC3F2C9AAE0AC4AFD2F5", hash_generated_method = "1A641F963856371CD431B2C5A921C583")
     
 @SuppressWarnings("deprecation")

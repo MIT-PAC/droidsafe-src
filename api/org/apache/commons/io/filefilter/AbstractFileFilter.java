@@ -39,6 +39,7 @@ public abstract class AbstractFileFilter implements IOFileFilter {
      * @param file  the File to check
      * @return true if this file matches the test
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.789 -0400", hash_original_method = "D5DE3D5D9AF246B7B9A0720792C74103", hash_generated_method = "59B0806481D8C8BA3E3B25E052B9470F")
     
 public boolean accept(File file) {
@@ -52,6 +53,7 @@ public boolean accept(File file) {
      * @param name  the filename within the directory to check
      * @return true if this file matches the test
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.790 -0400", hash_original_method = "0C86CF264F403F294009DA2383C206BD", hash_generated_method = "9A0D2328B6F82E9E4A31E48E09F45068")
     
 public boolean accept(File dir, String name) {

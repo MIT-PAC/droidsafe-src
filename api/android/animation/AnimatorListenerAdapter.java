@@ -27,6 +27,7 @@ public abstract class AnimatorListenerAdapter implements Animator.AnimatorListen
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.299 -0500", hash_original_method = "5CF474E58C527E8964A758ECD279FAE2", hash_generated_method = "C2ECE5469BDB91F3EC103716966680AA")
     
 @Override
@@ -45,6 +46,7 @@ public abstract class AnimatorListenerAdapter implements Animator.AnimatorListen
     /**
      * {@inheritDoc}
      */
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.304 -0500", hash_original_method = "B990D1A680B01C8A5486D22741D7E96B", hash_generated_method = "A0DF4431BC87990F62C49C1D9C1CE1F8")
     
 @Override

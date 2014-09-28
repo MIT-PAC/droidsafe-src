@@ -75,6 +75,7 @@ public int compare(File file1, File file2) {
      * @param file The file
      * @return 1 for directories and 2 for files
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:50.636 -0400", hash_original_method = "F734E00AC7C86C91DF2349E696F92B1F", hash_generated_method = "B28C7C7B0E6CEFE543224F5C11580A1A")
     
 private int getType(File file) {

@@ -139,6 +139,7 @@ private DeferredFileOutputStream(int threshold, File outputFile, String prefix, 
      *
      * @exception IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.098 -0400", hash_original_method = "F995E868509776850AFF6498E755EFC4", hash_generated_method = "D4CA15ED89B95EC7FC8D484D064F3925")
     
 @Override
@@ -155,6 +156,7 @@ private DeferredFileOutputStream(int threshold, File outputFile, String prefix, 
      *
      * @exception IOException if an error occurs.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.099 -0400", hash_original_method = "90F9D8BE12A4409DA41E0CA93662D129", hash_generated_method = "4E7ABC686CA9C6B8AC9AD36A794F05FD")
     
 @Override
@@ -178,6 +180,7 @@ private DeferredFileOutputStream(int threshold, File outputFile, String prefix, 
      * @return {@code true} if the data is available in memory;
      *         {@code false} otherwise.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:52.100 -0400", hash_original_method = "02F113772DEC1618BE4A7F2BC7B846DE", hash_generated_method = "5B772556B53A8F8B9942E093E8A9593E")
     
 public boolean isInMemory()

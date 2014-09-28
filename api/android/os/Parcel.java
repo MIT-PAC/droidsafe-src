@@ -212,7 +212,7 @@ public final class Parcel {
     private static final int EX_HAS_REPLY_HEADER = -128;
     public final static Parcelable.Creator<String> STRING_CREATOR
              = new Parcelable.Creator<String>() {
-        @DSSafe(DSCat.SAFE_LIST)
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.084 -0500", hash_original_method = "CF5066ADB23AB15A8F47A7B0F4466503", hash_generated_method = "00F386650A051887ED9112C5F2C23E06")
         
 public String createFromParcel(Parcel source) {
@@ -1418,7 +1418,7 @@ public String[] newArray(int size) {
     }
 
     @DSComment("Data serialization/deserialization")
-    @DSSpec(DSCat.SERIALIZATION)
+    @DSSafe(DSCat.SAFE_LIST)
     public final void writeParcelable(Parcelable p, int parcelableFlags){
 		mValueParcelable = p;
 		// Original method
@@ -1680,7 +1680,7 @@ public String[] newArray(int size) {
 	}
     
     @DSComment("Refelction/class loader")
-    @DSSpec(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     public final void readList(List outVal, ClassLoader loader){
 		outVal.addAll(mValueList);
 		// Original method
@@ -1694,7 +1694,7 @@ public String[] newArray(int size) {
 	}
     
     @DSComment("Refelction/class loader")
-    @DSSpec(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     public final HashMap readHashMap(ClassLoader loader){
 		return (HashMap)mValueMap;
 		// Original method
@@ -2084,7 +2084,7 @@ public String[] newArray(int size) {
 	}
     
     @DSComment("Refelction/class loader")
-    @DSSpec(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     
     public final Object readValue(ClassLoader loader){
         return mValueObject;
@@ -2092,7 +2092,7 @@ public String[] newArray(int size) {
         /* Original Method Too Long, Refer to Original Implementation */
     }
     
-    @DSSpec(DSCat.REFLECTION)
+    @DSSafe(DSCat.SAFE_LIST)
     public final <T extends Parcelable> T readParcelable(ClassLoader loader) {
 		return (T) mValueParcelable;
 		// Original method

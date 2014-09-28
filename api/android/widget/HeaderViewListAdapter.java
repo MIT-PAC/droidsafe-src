@@ -73,6 +73,7 @@ public int getFootersCount() {
         return mFooterViewInfos.size();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.803 -0500", hash_original_method = "D7DEAD009C651EAC8E2A235B793425D9", hash_generated_method = "18936EBD4FFB4E563382822A2557BD7F")
     
 public boolean isEmpty() {
@@ -144,6 +145,7 @@ public int getCount() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.814 -0500", hash_original_method = "BA6CC34361A3C86CCD3E8BF91B771D57", hash_generated_method = "7D9A7D32748E440039C2FB8CDE762C66")
     
 public boolean areAllItemsEnabled() {
@@ -154,6 +156,7 @@ public boolean areAllItemsEnabled() {
         }
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.817 -0500", hash_original_method = "DF42B35442C4183A344219B7FD0FCDD1", hash_generated_method = "31E5441154685EDB94F95C6086683FA9")
     
 public boolean isEnabled(int position) {

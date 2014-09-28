@@ -122,6 +122,7 @@ MenuWrapperICS(android.view.Menu object) {
         return result;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.888 -0400", hash_original_method = "2F9C004A2CBE82F08990AAA124DD3C3F", hash_generated_method = "C1778217CB646BBF00A49CD5CA64D974")
     
 @Override
@@ -130,6 +131,7 @@ MenuWrapperICS(android.view.Menu object) {
         mWrappedObject.removeItem(id);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.891 -0400", hash_original_method = "A592150386128C41C7E38FC5CA61044F", hash_generated_method = "C1427D1C106A742CDF98FD1ADCA162B1")
     
 @Override
@@ -171,6 +173,7 @@ MenuWrapperICS(android.view.Menu object) {
         mWrappedObject.setGroupEnabled(group, enabled);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.909 -0400", hash_original_method = "59DEC0284ACDDA9C490DE2C76BF5C130", hash_generated_method = "AE2547D75C865D6F7401CF897036A13B")
     
 @Override
@@ -186,6 +189,7 @@ MenuWrapperICS(android.view.Menu object) {
         return getMenuItemWrapper(mWrappedObject.findItem(id));
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.914 -0400", hash_original_method = "5AA51E2163B149F83CFCCC9D627FD0F5", hash_generated_method = "E916DCD210471216C16C74262FE6E9B9")
     
 @Override
@@ -209,6 +213,7 @@ MenuWrapperICS(android.view.Menu object) {
         mWrappedObject.close();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.921 -0400", hash_original_method = "B9E06C680FF0CF9757AC2C271DC23C85", hash_generated_method = "E1820E8C2B5FF15B4E19AA811D349DAC")
     
 @Override
@@ -216,6 +221,7 @@ MenuWrapperICS(android.view.Menu object) {
         return mWrappedObject.performShortcut(keyCode, event, flags);
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 21:46:40.924 -0400", hash_original_method = "E77EC88DA5E39909814167B0989F671E", hash_generated_method = "B5D25B6AF891B06DEAC3B75A26AF1412")
     
 @Override

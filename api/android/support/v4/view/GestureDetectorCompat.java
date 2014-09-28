@@ -166,6 +166,7 @@ public class GestureDetectorCompat {
             init(context);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void init(Context context) {
             if (context == null) {
                 throw new IllegalArgumentException("Context must not be null");
@@ -192,6 +193,7 @@ public class GestureDetectorCompat {
          * @param onDoubleTapListener the listener invoked for all the callbacks, or
          *        null to stop listening for double-tap gestures.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void setOnDoubleTapListener(OnDoubleTapListener onDoubleTapListener) {
             mDoubleTapListener = onDoubleTapListener;
         }
@@ -205,6 +207,7 @@ public class GestureDetectorCompat {
          *
          * @param isLongpressEnabled whether longpress should be enabled.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public void setIsLongpressEnabled(boolean isLongpressEnabled) {
             mIsLongpressEnabled = isLongpressEnabled;
         }
@@ -212,6 +215,7 @@ public class GestureDetectorCompat {
         /**
          * @return true if longpress is enabled, else false.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean isLongpressEnabled() {
             return mIsLongpressEnabled;
         }
@@ -224,6 +228,7 @@ public class GestureDetectorCompat {
          * @return true if the {@link OnGestureListener} consumed the event,
          *              else false.
          */
+        @DSSafe(DSCat.SAFE_LIST)
         public boolean onTouchEvent(MotionEvent ev) {
             final int action = ev.getAction();
 
@@ -438,6 +443,7 @@ public class GestureDetectorCompat {
             }
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private boolean isConsideredDoubleTap(MotionEvent firstDown, MotionEvent firstUp,
                 MotionEvent secondDown) {
             if (!mAlwaysInBiggerTapRegion) {
@@ -453,6 +459,7 @@ public class GestureDetectorCompat {
             return (deltaX * deltaX + deltaY * deltaY < mDoubleTapSlopSquare);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         private void dispatchLongPress() {
             mHandler.removeMessages(TAP);
             mDeferConfirmSingleTap = false;
@@ -469,21 +476,25 @@ public class GestureDetectorCompat {
             mDetector = new GestureDetector(context, listener, handler);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isLongpressEnabled() {
             return mDetector.isLongpressEnabled();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onTouchEvent(MotionEvent ev) {
             return mDetector.onTouchEvent(ev);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setIsLongpressEnabled(boolean enabled) {
             mDetector.setIsLongpressEnabled(enabled);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setOnDoubleTapListener(OnDoubleTapListener listener) {
             mDetector.setOnDoubleTapListener(listener);
@@ -498,21 +509,25 @@ public class GestureDetectorCompat {
             mDetector = new GestureDetector(context, listener, handler);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean isLongpressEnabled() {
             return mDetector.isLongpressEnabled();
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public boolean onTouchEvent(MotionEvent ev) {
             return mDetector.onTouchEvent(ev);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setIsLongpressEnabled(boolean enabled) {
             mDetector.setIsLongpressEnabled(enabled);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void setOnDoubleTapListener(OnDoubleTapListener listener) {
             mDetector.setOnDoubleTapListener(listener);
