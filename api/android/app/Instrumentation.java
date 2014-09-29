@@ -672,6 +672,7 @@ public boolean invokeMenuActionSync(Activity targetActivity,
             private final int flags;
             boolean returnValue;
             
+        @DSSafe(DSCat.SAFE_LIST)
             public MenuRunnable(Activity _activity, int _identifier,
                                     int _flags) {
                 activity = _activity;
@@ -679,6 +680,7 @@ public boolean invokeMenuActionSync(Activity targetActivity,
                 flags = _flags;
             }
             
+        @DSSafe(DSCat.SAFE_LIST)
             public void run() {
                 Window win = activity.getWindow();
                 
@@ -737,6 +739,7 @@ public boolean invokeContextMenuAction(Activity targetActivity, int id, int flag
             private final int flags;
             boolean returnValue;
             
+        @DSSafe(DSCat.SAFE_LIST)
             public ContextMenuRunnable(Activity _activity, int _identifier,
                                     int _flags) {
                 activity = _activity;
@@ -744,6 +747,7 @@ public boolean invokeContextMenuAction(Activity targetActivity, int id, int flag
                 flags = _flags;
             }
             
+        @DSSafe(DSCat.SAFE_LIST)
             public void run() {
                 Window win = activity.getWindow();
                 returnValue = win.performContextMenuIdentifierAction(

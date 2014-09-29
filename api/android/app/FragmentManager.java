@@ -374,12 +374,14 @@ final class FragmentManagerState implements Parcelable {
             = new Parcelable.Creator<FragmentManagerState>() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.348 -0500", hash_original_method = "ECDC6A4E7C91D1C5B65C994C4484624F", hash_generated_method = "C02CF7F6521D674473A0622E67866AE4")
         
+        @DSSafe(DSCat.SAFE_LIST)
 public FragmentManagerState createFromParcel(Parcel in) {
             return new FragmentManagerState(in);
         }
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.351 -0500", hash_original_method = "91265EDFBDBEA59F353323C915A4EF4F", hash_generated_method = "BC21AC906A7818F48F75A0EFD7490E16")
         
+        @DSSafe(DSCat.SAFE_LIST)
 public FragmentManagerState[] newArray(int size) {
             return new FragmentManagerState[size];
         }
@@ -566,6 +568,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     Runnable mExecCommit = new Runnable() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:18.327 -0400", hash_original_method = "C2BA1C69EB0B4CCFF1A319535DB79508", hash_generated_method = "FEDC918E58215E12D8175F59CA2BA6B4")
         @Override
+        @DSSafe(DSCat.SAFE_LIST)
         public void run() {
             execPendingActions();
             
@@ -601,6 +604,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
 @Override
     public void popBackStack() {
         enqueueAction(new Runnable() {
+        	@DSSafe(DSCat.SAFE_LIST)
             @Override public void run() {
                 popBackStackState(mActivity.mHandler, null, -1, 0);
             }
@@ -621,6 +625,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
 @Override
     public void popBackStack(final String name, final int flags) {
         enqueueAction(new Runnable() {
+        @DSSafe(DSCat.SAFE_LIST)
             @Override public void run() {
                 popBackStackState(mActivity.mHandler, name, -1, flags);
             }
@@ -644,6 +649,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
             throw new IllegalArgumentException("Bad id: " + id);
         }
         enqueueAction(new Runnable() {
+        @DSSafe(DSCat.SAFE_LIST)
             @Override public void run() {
                 popBackStackState(mActivity.mHandler, null, id, flags);
             }
@@ -1181,6 +1187,7 @@ switch(f.mState){
                                     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.476 -0500", hash_original_method = "9D8EA3EF50700F2206500D8F97DFE625", hash_generated_method = "797676F2F0FFE37D9904E07195EA32BE")
                                 
 @Override
+        							@DSSafe(DSCat.SAFE_LIST)
                                     public void onAnimationEnd(Animator anim) {
                                         container.endViewTransition(view);
                                         if (fragment.mAnimatingAway != null) {
@@ -1423,6 +1430,7 @@ public void removeFragment(Fragment fragment, int transition, int transitionStyl
                         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.505 -0500", hash_original_method = "FE6C0F24C850190D502A7783FD2F34FA", hash_generated_method = "BD771F6592A189A6BCABA5F150D1DF17")
                         
 @Override
+        @DSSafe(DSCat.SAFE_LIST)
                         public void onAnimationEnd(Animator animation) {
                             if (finalFragment.mView != null) {
                                 finalFragment.mView.setVisibility(View.GONE);
