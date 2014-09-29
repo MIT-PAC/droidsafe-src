@@ -93,6 +93,7 @@ public class Project {
             add("android-support-v4.jar");
             add("android-support-v7.jar");
             add("android-support-v7-appcompat.jar ");
+            add("google-play-services.jar");
         }};
 
     static {
