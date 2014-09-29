@@ -148,6 +148,16 @@
                id="org.eclipse.ui.commands.toggleState">
          </state>
       </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
+            id="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
+            name="Show Taint Sources">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
+            id="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
+            name="FIlter Taint Sources">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -205,6 +215,11 @@
             <command
                   commandId="droidsafe.eclipse.plugin.core.commands.CleanMarkers"
                   label="Remove Droidsafe Markers"
+                  style="push">
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.AddMarkers"
+                  label="Add Droidsafe Markers"
                   style="push">
             </command>
          </menu>
@@ -556,6 +571,24 @@
                style="push">
          </command>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.CompilationUnitEditor.EditorContext?after=additions">
+         <separator
+               name="droidsafe.eclipse.plugin.core.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
+               label="Filter Taint Sources"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
+               label="Show Taint Sources"
+               style="push">
+         </command>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
@@ -600,6 +633,10 @@
             class="droidsafe.eclipse.plugin.core.marker.DroidsafeMarkerResolutionGenerator"
             markerType="droidsafe.eclipse.plugin.core.droidsafemarker">
       </markerResolutionGenerator>
+      <!-- <markerResolutionGenerator -->
+      <!--       class="droidsafe.eclipse.plugin.core.TaintMarkerResolutionGenerator" -->
+      <!--       markerType="droidsafe.taintmarker"> -->
+      <!-- </markerResolutionGenerator> -->
    </extension>
    <extension
          point="org.eclipse.ui.views">
@@ -640,6 +677,14 @@
       </view>
       <view
             category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.infoflow.TaintSourcesViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.TaintSourcesView"
+            name="Taint Sources"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
             class="droidsafe.eclipse.plugin.core.view.value.ValueViewPart"
             icon="icons/android.png"
             id="droidsafe.eclipse.plugin.core.view.ValueView"
@@ -666,6 +711,73 @@
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="droidsafe.eclipse.plugin.core.DroidsafePerspective">
+         <viewShortcut id="droidsafe.eclipse.plugin.core.view.TaintSourcesView"/>
+      </perspectiveExtension>
    </extension>
+
+   <extension
+         id="droidsafe.taintmarker"
+         name="Taint Marker"
+         point="org.eclipse.core.resources.markers">
+      <super type="org.eclipse.core.resources.textmarker"/>
+      <super type="org.eclipse.core.resources.marker"/>
+      <!-- <persistent value="true"/> -->
+      <attribute
+            name="sources">
+      </attribute>
+      <attribute
+            name="filteredSources">
+      </attribute>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.editors.annotationTypes">
+      <type
+            markerSeverity="0"
+            super="org.eclipse.ui.workbench.texteditor.info"
+            markerType="droidsafe.taintmarker"
+            name="droidsafe.taint">
+      </type>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.editors.markerAnnotationSpecification">
+      <specification
+            annotationType="droidsafe.taint"
+            colorPreferenceKey="droidsafe.taint.color"
+            colorPreferenceValue="210,180,140"
+            highlightPreferenceKey="droidsafe.taint.highlight"
+            highlightPreferenceValue="true"
+            includeOnPreferencePage="true"
+            label="Droidsafe Taint Annotation"
+            icon="icons/taint.png"
+            overviewRulerPreferenceKey="droidsafe.taint.overview"
+            overviewRulerPreferenceValue="true"
+            presentationLayer="5"
+            textPreferenceKey="droidsafe.taint.text"
+            textPreferenceValue="true"
+            textStylePreferenceKey="droidsafe.taint.textstyle"
+            textStylePreferenceValue="NONE"
+            verticalRulerPreferenceKey="droidsafe.taint.ruler"
+            verticalRulerPreferenceValue="true">
+      </specification>
+   </extension>
+
+  <!-- define the marker updater class-->
+  <extension point="org.eclipse.ui.editors.markerUpdaters">
+      <updater
+            id="droidsafe.TaintMarkerUpdater"
+            class="droidsafe.eclipse.plugin.core.marker.TaintMarkerUpdater"
+            markerType="droidsafe.taintmarker">
+      </updater>
+  </extension>
+
+  <extension point="org.eclipse.jdt.ui.javaEditorTextHovers">
+      <hover
+            id="droidsafe.eclipse.plugin.core.marker.TaintMarkerTextHover"
+            class="droidsafe.eclipse.plugin.core.marker.TaintMarkerTextHover">
+      </hover>
+  </extension>
 
 </plugin>

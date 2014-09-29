@@ -6,11 +6,8 @@ import java.util.List;
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.State;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.util.Util;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -20,15 +17,14 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
+import droidsafe.eclipse.plugin.core.marker.ProjectTaintMarkerProcessor;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
@@ -74,8 +70,11 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
      *        security spec for the currently selected project cannot be found.
      */
     private SecuritySpecModel initializeSecuritySpec(Composite parent) {
+        IProject project = getProject();
         String projectRootPath = getProject().getLocation().toOSString();
-        return SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
+        SecuritySpecModel securitySpec = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
+        ProjectTaintMarkerProcessor.get(project).init(securitySpec);
+        return securitySpec;
     }
 
     /**
@@ -197,7 +196,7 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
     public SecuritySpecModel getSecuritySpec() {
         return fInputElement;
     }
-
+    
     /**
      * Method that executes the menu command SetTopLevelNodeForView from the outline view drop down
      * menu.
@@ -269,38 +268,6 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
         if (!selectedElements.isEmpty()) {
             fTreeViewer.setSelection(new StructuredSelection(selectedElements), true);
         }
-    }
-
-    /**
-     * Looks for a selected project in the Eclipse Project Explorer that may have a security spec.
-     * 
-     * @return the selected project or project enclosing a selected resource.
-     */
-    protected IProject getSelectedProject() {
-        ISelectionService ss =
-                Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getSelectionService();
-        String projExpID = "org.eclipse.ui.navigator.ProjectExplorer";
-        ISelection sel = ss.getSelection(projExpID);
-        if (sel == null) {
-            projExpID = "org.eclipse.jdt.ui.PackageExplorer";
-            sel = ss.getSelection(projExpID);
-        }
-
-        Object selectedObject = sel;
-        if (sel instanceof IStructuredSelection) {
-            selectedObject = ((IStructuredSelection) sel).getFirstElement();
-        }
-        if (selectedObject instanceof IAdaptable) {
-            IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
-            if (res != null) {
-                IProject project = res.getProject();
-                if (project != null) {
-                    // logger.debug("Project found: " + project.getName());
-                    return project;
-                }
-            }
-        }
-        return null;
     }
 
     public void setLabelTypeForMethodName(String currentState) {

@@ -1,12 +1,9 @@
 package droidsafe.eclipse.plugin.core.util;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,30 +22,33 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.jface.action.IStatusLineManager;
+import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.ITypeRoot;
+import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.Region;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionBars;
-import org.eclipse.ui.IEditorActionBarContributor;
 import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.SubActionBars;
-import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.ide.FileStoreEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.ITextEditor;
@@ -60,10 +60,10 @@ import org.slf4j.LoggerFactory;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.JsonSyntaxException;
 
 import droidsafe.android.app.Project;
 import droidsafe.eclipse.plugin.core.Activator;
+import droidsafe.eclipse.plugin.core.marker.ProjectTaintMarkerProcessor;
 import droidsafe.eclipse.plugin.core.view.spec.TreeElementLabelProvider;
 import droidsafe.main.Config;
 import droidsafe.speclang.model.CodeLocationModel;
@@ -86,6 +86,54 @@ public class DroidsafePluginUtilities {
      * Id for the markers to be added to the Android app files.
      */
     public static final String DROIDSAFE_MARKER_ID = Activator.PLUGIN_ID + ".droidsafemarker";
+
+    /**
+     * Looks for a selected project in the Eclipse Project Explorer that may have a security spec.
+     * 
+     * @return the selected project or project enclosing a selected resource.
+     */
+    public static IProject getSelectedProject() {
+        IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+        return getSelectedProject(window);
+    }
+
+    public static IProject getSelectedProject(IEditorPart editor) {
+        IWorkbenchWindow window = editor.getSite().getWorkbenchWindow();
+        return getSelectedProject(window);
+    }
+
+    /**
+     * Looks for a selected project in the Eclipse Project Explorer that may have a security spec.
+     * 
+     * @return the selected project or project enclosing a selected resource.
+     */
+    private static IProject getSelectedProject(IWorkbenchWindow window) {
+        if (window != null) {
+            ISelectionService ss = window.getSelectionService();
+            String projExpID = "org.eclipse.ui.navigator.ProjectExplorer";
+            ISelection sel = ss.getSelection(projExpID);
+            if (sel == null) {
+                projExpID = "org.eclipse.jdt.ui.PackageExplorer";
+                sel = ss.getSelection(projExpID);
+            }
+
+            Object selectedObject = sel;
+            if (sel instanceof IStructuredSelection) {
+                selectedObject = ((IStructuredSelection) sel).getFirstElement();
+            }
+            if (selectedObject instanceof IAdaptable) {
+                IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
+                if (res != null) {
+                    IProject project = res.getProject();
+                    if (project != null) {
+                        // logger.debug("Project found: " + project.getName());
+                        return project;
+                    }
+                }
+            }
+        }
+        return null;
+    }
 
     /**
      * Returns the relative path for a fully qualified classname. Adds "src/" before the pathname for
@@ -569,12 +617,21 @@ public class DroidsafePluginUtilities {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        if (openEditor == null)
-            error("Failed to find Java source for class " + className);      
+        if (openEditor == null) {
+            error("Failed to find Java source for class " + className);
+        } else {
+            ProjectTaintMarkerProcessor.get(project).showTaintedData(openEditor, className);
+        }
         return openEditor;
     }
 
-
+    public static IFile getEditorInputFile(IEditorPart editor) {
+        IEditorInput input = editor.getEditorInput();
+        if (input instanceof FileEditorInput) {
+            return ((FileEditorInput) input).getFile();
+        }
+        return null;
+    }
 
     /**
      * Returns the path name for Apac Home.
@@ -725,6 +782,36 @@ public class DroidsafePluginUtilities {
         marker.setAttribute(IMarker.MESSAGE, message);
     }
 
+    public static IEditorPart getActiveEditor() {
+        IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+        if (window != null) {
+            IWorkbenchPage page= window.getActivePage();
+            if (page != null) {
+                return page.getActiveEditor();
+            }
+        }
+        return null;
+    }
+    
+    public static ITypeRoot getJavaInput(IEditorPart part) {
+        IEditorInput editorInput= part.getEditorInput();
+        if (editorInput != null) {
+            IJavaElement input= JavaUI.getEditorInputJavaElement(editorInput);
+            if (input instanceof ITypeRoot) {
+                return (ITypeRoot) input;
+            }
+        }
+        return null;    
+    }
+
+    public static void selectInEditor(ITextEditor editor, int offset, int length) {
+        IEditorPart active = getActiveEditor();
+        if (active != editor) {
+            editor.getSite().getPage().activate(editor);
+        }
+        editor.selectAndReveal(offset, length);
+    }
+    
     /**
      * Helper Method to load the images
      * 

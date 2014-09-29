@@ -21,6 +21,7 @@ import org.eclipse.ui.part.PageBook;
 import org.eclipse.ui.part.ViewPart;
 
 import droidsafe.eclipse.plugin.core.Activator;
+import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
@@ -136,45 +137,12 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
     }
 
     /**
-     * Return the selected project in the Eclipse Project Explorer.
-     * 
-     * @return the selected project or project enclosing a selected resource.
-     */
-    protected IProject getSelectedProject() {
-        ISelectionService ss =
-                Activator.getDefault().getWorkbench().getActiveWorkbenchWindow()
-                .getSelectionService();
-        String projExpID = "org.eclipse.ui.navigator.ProjectExplorer";
-        ISelection sel = ss.getSelection(projExpID);
-        if (sel == null) {
-            projExpID = "org.eclipse.jdt.ui.PackageExplorer";
-            sel = ss.getSelection(projExpID);
-        }
-
-        Object selectedObject = sel;
-        if (sel instanceof IStructuredSelection) {
-            selectedObject = ((IStructuredSelection) sel).getFirstElement();
-        }
-        if (selectedObject instanceof IAdaptable) {
-            IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
-            if (res != null) {
-                IProject project = res.getProject();
-                if (project != null) {
-                    // logger.debug("Project found: " + project.getName());
-                    return project;
-                }
-            }
-        }
-        return null;
-    }
-
-    /**
      * Set the value of the selectedProject field if it is null and return the value of the
      * selectedProject field.
      */
     public IProject getProject() {
         if (fSelectedProject == null) {
-            fSelectedProject = getSelectedProject();
+            fSelectedProject = DroidsafePluginUtilities.getSelectedProject();
         }
         return fSelectedProject;
     }
