@@ -129,6 +129,7 @@ public Notification build(Builder b) {
 		}
 
 		@Override
+		@DSSafe(DSCat.SAFE_LIST)
 		public ArrayList<Parcelable> getParcelableArrayListForActions(
 				Action[] actions) {
 			// TODO Auto-generated method stub

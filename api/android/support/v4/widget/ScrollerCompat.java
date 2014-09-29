@@ -347,24 +347,24 @@ public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
         public boolean computeScrollOffset(Object scroller) {
             return ((Scroller) scroller).computeScrollOffset();
         }
-
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void startScroll(Object scroller, int startX, int startY, int dx, int dy) {
             ((Scroller) scroller).startScroll(startX, startY, dx, dy);
         }
-
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void startScroll(Object scroller, int startX, int startY, int dx, int dy,
                 int duration) {
             ((Scroller) scroller).startScroll(startX, startY, dx, dy, duration);
         }
-
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void fling(Object scroller, int startX, int startY, int velX, int velY,
                 int minX, int maxX, int minY, int maxY) {
             ((Scroller) scroller).fling(startX, startY, velX, velY, minX, maxX, minY, maxY);
         }
-
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void fling(Object scroller, int startX, int startY, int velX, int velY,
                 int minX, int maxX, int minY, int maxY, int overX, int overY) {
@@ -376,13 +376,13 @@ public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
         public void abortAnimation(Object scroller) {
             ((Scroller) scroller).abortAnimation();
         }
-
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void notifyHorizontalEdgeReached(Object scroller, int startX, int finalX,
                 int overX) {
             // No-op
         }
-
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void notifyVerticalEdgeReached(Object scroller, int startY, int finalY, int overY) {
             // No-op
@@ -483,12 +483,14 @@ public static ScrollerCompat create(Context context) {
             ScrollerCompatGingerbread.abortAnimation(scroller);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void notifyHorizontalEdgeReached(Object scroller, int startX, int finalX,
                 int overX) {
             ScrollerCompatGingerbread.notifyHorizontalEdgeReached(scroller, startX, finalX, overX);
         }
 
+        @DSSafe(DSCat.SAFE_LIST)
         @Override
         public void notifyVerticalEdgeReached(Object scroller, int startY, int finalY, int overY) {
             ScrollerCompatGingerbread.notifyVerticalEdgeReached(scroller, startY, finalY, overY);

@@ -181,6 +181,7 @@ private List<Class<? extends TestCase>> testCaseClassesInPackage(String packageN
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.340 -0500", hash_original_method = "D443F8BF084E7C4C20680ADEEDC43BF0", hash_generated_method = "675A098E23EE3D3BDBA4D58835C30ED6")
+        @DSSafe(DSCat.SAFE_LIST)
         
 public int compare(Class<? extends TestCase> class1,
                 Class<? extends TestCase> class2) {
@@ -204,6 +205,7 @@ public int compare(Class<? extends TestCase> class1,
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.345 -0500", hash_original_method = "4B1D58D6EFFB49C224C33511FACEBC5F", hash_generated_method = "37F1A5E69F8AB7EBC7B50ADB225A6EB7")
+        @DSSafe(DSCat.SAFE_LIST)
         
 public int compare(Class<? extends TestCase> class1,
                 Class<? extends TestCase> class2) {

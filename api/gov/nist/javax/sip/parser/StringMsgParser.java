@@ -91,6 +91,7 @@ public static void main(String[] args) throws ParseException {
                 this.messages = messagesToParse;
             }
 
+            @DSSafe(DSCat.SAFE_LIST)
             public void run() {
                 for (int i = 0; i < messages.length; i++) {
                     StringMsgParser smp = new StringMsgParser();

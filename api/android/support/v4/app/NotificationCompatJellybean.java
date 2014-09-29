@@ -449,6 +449,7 @@ private static boolean ensureActionReflectionReadyLocked() {
     public static final String TAG = "NotificationCompat";
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:14:46.263 -0400", hash_original_method = "4F997561A85D84EDC8D59BE1EF9FF56F", hash_generated_method = "3C213256C4885145FBD929CE21CF1994")
+    @DSSafe(DSCat.SAFE_LIST)
     
 public static ArrayList<Parcelable> getParcelableArrayListForActions(
             NotificationCompatBase.Action[] actions) {

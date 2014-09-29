@@ -50,6 +50,7 @@ public class Collections {
         return -mid - (result < 0 ? 1 : 2);
     }
     
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static <T> int binarySearch(List<? extends T> list, T object,
             Comparator<? super T> comparator) {

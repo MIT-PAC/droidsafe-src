@@ -157,13 +157,15 @@ JarFileEnumerator(Enumeration<? extends ZipEntry> zenum, JarFile jf) {
             }
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.847 -0500", hash_original_method = "9E60B2163115C0F4A5143AACEF20F301", hash_generated_method = "5076C090B4C6D92111ACB2E13F1662EB")
-            
+
+    	    @DSSafe(DSCat.SAFE_LIST)  
 public boolean hasMoreElements() {
                 return ze.hasMoreElements();
             }
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.850 -0500", hash_original_method = "5675597FFA2F5C3F421325DE8580ECC3", hash_generated_method = "5BDC623339D2BC42818751FF9BCF82B4")
-            
+
+    	    @DSSafe(DSCat.SAFE_LIST)  
 public JarEntry nextElement() {
                 JarEntry je = new JarEntry(ze.nextElement());
                 je.parentJar = jf;

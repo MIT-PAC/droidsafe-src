@@ -4,6 +4,7 @@ package java.util;
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
@@ -3083,7 +3084,7 @@ public static short[] copyOfRange(short[] original, int start, int end) {
         System.arraycopy(original, start, result, 0, copyLength);
         return result;
     }
-    
+    @DSSafe(DSCat.SAFE_LIST)  
     @SuppressWarnings("unchecked")
     public static <T, U> T[] copyOfRange(U[] original, int start, int end, Class<? extends T[]> newType) {
         if (start > end) {

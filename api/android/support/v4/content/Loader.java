@@ -55,7 +55,8 @@ public Loader(Context context) {
      * @param data the result of the load
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.099 -0500", hash_original_method = "7AF94F59AC743CB047D54940F8BB69AC", hash_generated_method = "5FD77500856C7DA55A21EC1D34CDB499")
-    
+    @DSSafe(DSCat.SAFE_LIST)
+     
 public void deliverResult(D data) {
         if (mListener != null) {
             mListener.onLoadComplete(this, data);
@@ -352,6 +353,7 @@ public void onContentChanged() {
      * a string that can be printed.  Must handle a null data.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.144 -0500", hash_original_method = "F5B015CDDEBA6C005C6DD563385EE3D7", hash_generated_method = "F15119CA027EE50228CCEEB28B580515")
+    @DSSafe(DSCat.SAFE_LIST)
     
 public String dataToString(D data) {
         StringBuilder sb = new StringBuilder(64);

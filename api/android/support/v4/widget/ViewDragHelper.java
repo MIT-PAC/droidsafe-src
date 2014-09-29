@@ -600,6 +600,7 @@ public void abort() {
      * @param finalTop Final top position of child
      * @return true if animation should continue through {@link #continueSettling(boolean)} calls
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.773 -0400", hash_original_method = "6E3E98490637FF01A45DBA85DD1FA457", hash_generated_method = "A6C0484D003B2D88B802909C76F338DC")
     
 public boolean smoothSlideViewTo(View child, int finalLeft, int finalTop) {
@@ -620,6 +621,7 @@ public boolean smoothSlideViewTo(View child, int finalLeft, int finalTop) {
      * @param finalTop Settled top edge position for the captured view
      * @return true if animation should continue through {@link #continueSettling(boolean)} calls
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.777 -0400", hash_original_method = "DC5DD3FA625D12E26CD7D9E8DE8C2BEF", hash_generated_method = "4AE4ABE0AB906C6AFBC9ED2ADB64D53C")
     
 public boolean settleCapturedViewAt(int finalLeft, int finalTop) {
@@ -642,6 +644,7 @@ public boolean settleCapturedViewAt(int finalLeft, int finalTop) {
      * @param yvel Vertical velocity
      * @return true if animation should continue through {@link #continueSettling(boolean)} calls
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 11:53:44.780 -0400", hash_original_method = "D8DF325A92DA35A7699993005814FDB6", hash_generated_method = "485718728B6DB63FF299DA842E059316")
     
 private boolean forceSettleCapturedViewAt(int finalLeft, int finalTop, int xvel, int yvel) {

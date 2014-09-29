@@ -32,6 +32,7 @@ import java.util.Set;
  */
 abstract class MapCollections<K, V> {
 
+    @DSSafe(DSCat.SAFE_LIST)
     public static <K, V> boolean containsAllHelper(Map<K, V> map, Collection<?> collection) {
         Iterator<?> it = collection.iterator();
         while (it.hasNext()) {
@@ -42,6 +43,7 @@ abstract class MapCollections<K, V> {
         return true;
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public static <K, V> boolean removeAllHelper(Map<K, V> map, Collection<?> collection) {
         int oldSize = map.size();
         Iterator<?> it = collection.iterator();
@@ -51,6 +53,7 @@ abstract class MapCollections<K, V> {
         return oldSize != map.size();
     }
 
+    @DSSafe(DSCat.SAFE_LIST)
     public static <K, V> boolean retainAllHelper(Map<K, V> map, Collection<?> collection) {
         int oldSize = map.size();
         Iterator<K> it = map.keySet().iterator();

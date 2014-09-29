@@ -76,6 +76,7 @@ public static void startScroll(Object scroller, int startX, int startY, int dx, 
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:09.370 -0400", hash_original_method = "FD3D229780E5B099F816374C035F002F", hash_generated_method = "371B0705AA72B20823A013C7724C76D5")
+        @DSSafe(DSCat.SAFE_LIST)
     
 public static void fling(Object scroller, int startX, int startY, int velX, int velY,
             int minX, int maxX, int minY, int maxY) {
@@ -83,6 +84,7 @@ public static void fling(Object scroller, int startX, int startY, int velX, int 
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:09.375 -0400", hash_original_method = "15B8EA28E2460ECA8B4A49FCD05A950D", hash_generated_method = "F84CE3887AC3B715E75DE17DEA27F61E")
+        @DSSafe(DSCat.SAFE_LIST)
     
 public static void fling(Object scroller, int startX, int startY, int velX, int velY,
             int minX, int maxX, int minY, int maxY, int overX, int overY) {
@@ -99,6 +101,7 @@ public static void abortAnimation(Object scroller) {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:09.383 -0400", hash_original_method = "66FAA0B03FA7700BB44C9B7567AEFC0F", hash_generated_method = "286DF4A40C9878AE846BA2057C64CE27")
     
+        @DSSafe(DSCat.SAFE_LIST)
 public static void notifyHorizontalEdgeReached(Object scroller, int startX, int finalX,
             int overX) {
         ((OverScroller) scroller).notifyHorizontalEdgeReached(startX, finalX, overX);
@@ -106,6 +109,7 @@ public static void notifyHorizontalEdgeReached(Object scroller, int startX, int 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:03:09.387 -0400", hash_original_method = "5DC01C450C29D4948F0FD03828F4F61B", hash_generated_method = "40E79BC2B2757C300023032F81FD7C36")
     
+        @DSSafe(DSCat.SAFE_LIST)
 public static void notifyVerticalEdgeReached(Object scroller, int startY, int finalY, int overY) {
         ((OverScroller) scroller).notifyVerticalEdgeReached(startY, finalY, overY);
     }

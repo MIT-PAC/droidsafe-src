@@ -306,6 +306,7 @@ static private MotionEvent obtain() {
      * @param source The source of this event.
      * @param flags The motion event flags.
      */
+        @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.758 -0500", hash_original_method = "A204D392D258EF41A56793600F1CE50A", hash_generated_method = "6879D47F66BD84CD6DB9E290DBCB8772")
     
 static public MotionEvent obtain(long downTime, long eventTime,
@@ -352,6 +353,7 @@ static public MotionEvent obtain(long downTime, long eventTime,
      * instead.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.762 -0500", hash_original_method = "29303BD9CA676DA8DA0C6D61C95B80AD", hash_generated_method = "4FEA28EE77F11A453C77B10F7808B967")
+        @DSSafe(DSCat.SAFE_LIST)
     
 @Deprecated
     static public MotionEvent obtain(long downTime, long eventTime,
@@ -520,6 +522,7 @@ static public MotionEvent obtain(MotionEvent other) {
      * any historical point information.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.775 -0500", hash_original_method = "EF06BFAED4C963D2A51D5D03CF5F89C2", hash_generated_method = "9E12C719D4E2F9DE70DB8E186EDBD052")
+    @DSSafe(DSCat.SAFE_LIST)
     
 static public MotionEvent obtainNoHistory(MotionEvent other) {
         if (other == null) {

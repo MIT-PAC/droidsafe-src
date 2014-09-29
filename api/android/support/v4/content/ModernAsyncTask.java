@@ -157,7 +157,7 @@ public Result call() throws Exception {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.831 -0500", hash_original_method = "3B97ED7071D46F297921BB0773C1C347", hash_generated_method = "B892F3B62337C7FA8F4DB2B283CECB48")
-    
+    @DSBan(DSCat.PRIVATE_METHOD) 
 private void postResultIfNotInvoked(Result result) {
         final boolean wasTaskInvoked = mTaskInvoked.get();
         if (!wasTaskInvoked) {
@@ -166,7 +166,7 @@ private void postResultIfNotInvoked(Result result) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.834 -0500", hash_original_method = "1FE912CF37AD5F28EFBFA6E2EE976D7C", hash_generated_method = "602FBAA8201076CF27A77C6A020DD7E3")
-    
+    @DSBan(DSCat.PRIVATE_METHOD) 
 private Result postResult(Result result) {
         Message message = sHandler.obtainMessage(MESSAGE_POST_RESULT,
                 new AsyncTaskResult<Result>(this, result));
@@ -202,7 +202,8 @@ public final Status getStatus() {
      * @see #publishProgress
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.838 -0500", hash_original_method = "050FF2806404EDD55751088E715072CB", hash_generated_method = "1DABA09C2EFA51EF8D9CEC44618A8740")
-    
+    @DSSafe(DSCat.SAFE_LIST)
+     
 protected abstract Result doInBackground(Params... params);
 
     /**
@@ -232,6 +233,7 @@ protected void onPreExecute() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.842 -0500", hash_original_method = "815F7407CD3192690B947D6EE1FFAB09", hash_generated_method = "AD609ADA895A3E153D035F81FAEF3E1A")
     
 @SuppressWarnings({"UnusedDeclaration"})
+        @DSSafe(DSCat.SAFE_LIST)
     protected void onPostExecute(Result result) {
     }
     
@@ -311,6 +313,7 @@ AsyncTaskResult(ModernAsyncTask task, Data... data) {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.844 -0500", hash_original_method = "157B3FBC0632B3CAE882248D445D8AAC", hash_generated_method = "A730193FC2E19B8CA66C41764F3098FF")
     
+   @DSSafe(DSCat.SAFE_LIST)
 @SuppressWarnings({"UnusedDeclaration"})
     protected void onProgressUpdate(Progress... values) {
     }
@@ -332,6 +335,7 @@ AsyncTaskResult(ModernAsyncTask task, Data... data) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.847 -0500", hash_original_method = "D59B5ED17FD1F167CEB40DD1D5E0C9AC", hash_generated_method = "7E43458B6C54753F6FA513FCA2BB81E3")
     
 @SuppressWarnings({"UnusedParameters"})
+        @DSSafe(DSCat.SAFE_LIST)
     protected void onCancelled(Result result) {
         onCancelled();
     }
@@ -509,6 +513,7 @@ public final ModernAsyncTask<Params, Progress, Result> execute(Params... params)
      *          or {@link android.os.AsyncTask.Status#FINISHED}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.866 -0500", hash_original_method = "2D658F6D3BDE5104FE23D8DBAC134A95", hash_generated_method = "D7A7EF08D4CC189B5BB96678F7C7E5D6")
+    @DSSafe(DSCat.SAFE_LIST)
     
 public final ModernAsyncTask<Params, Progress, Result> executeOnExecutor(Executor exec,
             Params... params) {
@@ -558,7 +563,8 @@ protected final void publishProgress(Progress... values) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.873 -0500", hash_original_method = "14AF9B49F1E9643B41861D03798B3831", hash_generated_method = "8F31C3EAE93F9501ED89483BC6EC48A8")
-    
+    @DSBan(DSCat.PRIVATE_METHOD) 
+
 private void finish(Result result) {
         if (isCancelled()) {
             onCancelled(result);

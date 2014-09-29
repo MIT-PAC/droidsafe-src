@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.v4.content.Loader;
 import android.support.v4.util.DebugUtils;
 import android.support.v4.util.SparseArrayCompat;
+import droidsafe.annotations.*;
 
 public abstract class LoaderManager {
 
@@ -149,7 +150,7 @@ void updateActivity(FragmentActivity activity) {
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.122 -0500", hash_original_method = "31DF1B394D718AFF7F9D42E1B24A1D9F", hash_generated_method = "DDEC0A96F03D9CD3869FEE215F4D438E")
-    
+    @DSBan(DSCat.PRIVATE_METHOD)
 private LoaderInfo createLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<Object> callback) {
         LoaderInfo info = new LoaderInfo(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
@@ -159,7 +160,7 @@ private LoaderInfo createLoader(int id, Bundle args,
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.124 -0500", hash_original_method = "D2BDC915DCB9CB038EA75210255617B9", hash_generated_method = "D30BD7B7333A5E33E1D2154B4AD3B1C0")
-    
+    @DSBan(DSCat.PRIVATE_METHOD)
 private LoaderInfo createAndInstallLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<Object> callback) {
         try {
@@ -173,7 +174,7 @@ private LoaderInfo createAndInstallLoader(int id, Bundle args,
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.127 -0500", hash_original_method = "112626D5EBE4C2D89FE7194A836F5D8E", hash_generated_method = "270C8A6EC15A6C96C82389014CEF07D4")
-    
+    @DSSafe(DSCat.SAFE_LIST)
 void installLoader(LoaderInfo info) {
         mLoaders.put(info.mId, info);
         if (mStarted) {
@@ -697,6 +698,7 @@ void destroy() {
             }
         }
         
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.100 -0500", hash_original_method = "5D6E68340AACAB27821B5B5851C94699", hash_generated_method = "88E9F98DB6600345E8FEB07B27EA2E73")
         
 @Override public void onLoadComplete(Loader<Object> loader, Object data) {
@@ -780,6 +782,7 @@ void callOnLoadFinished(Loader<Object> loader, Object data) {
         }
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.106 -0500", hash_original_method = "6152E6E73795403DAC53E06540200214", hash_generated_method = "FC6A6C7BEB09F74E956A4DE307491705")
+        @DSSafe(DSCat.SAFE_LIST)
         
 @Override
         public String toString() {
@@ -796,6 +799,7 @@ void callOnLoadFinished(Loader<Object> loader, Object data) {
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.109 -0500", hash_original_method = "130B539E0C9D3012BFA3C99178E2C6F6", hash_generated_method = "118927D2D3B68F4DDA7767AFFFDD5C05")
         
+        @DSSafe(DSCat.SAFE_LIST)
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
             writer.print(prefix); writer.print("mId="); writer.print(mId);
                     writer.print(" mArgs="); writer.println(mArgs);

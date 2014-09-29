@@ -278,6 +278,7 @@ public static Set<File> filterSet(IOFileFilter filter, Iterable<File> files) {
      * @throws IllegalArgumentException if the filter is {@code null} 
      *         or <code>files</code> contains a {@code null} value. 
      */
+    @DSBan(DSCat.PRIVATE_METHOD)
     private static <T extends Collection<File>> T filter(IOFileFilter filter,
             Iterable<File> files, T acceptedFiles) {
         if (filter == null) {
@@ -402,7 +403,8 @@ public static IOFileFilter directoryFileFilter() {
      * @see FileFileFilter#FILE
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.872 -0400", hash_original_method = "088DF8F7AE1AF0A6FC6325953692637E", hash_generated_method = "6C3FECB1746D0A1C9DB670D415174D67")
-    
+
+    @DSSafe(DSCat.SAFE_LIST)  
 public static IOFileFilter fileFileFilter() {
         return FileFileFilter.FILE;
     }
@@ -419,7 +421,8 @@ public static IOFileFilter fileFileFilter() {
      * @deprecated use {@link #and(IOFileFilter...)}
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.872 -0400", hash_original_method = "C366AABFB464B05ADB50C836A40C4BAE", hash_generated_method = "5A0462484410C7D0FF9FB0F000ABDD57")
-    
+
+    @DSSafe(DSCat.SAFE_LIST)  
 @Deprecated
     public static IOFileFilter andFileFilter(IOFileFilter filter1, IOFileFilter filter2) {
         return new AndFileFilter(filter1, filter2);
@@ -436,7 +439,8 @@ public static IOFileFilter fileFileFilter() {
      * @deprecated use {@link #or(IOFileFilter...)}
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:53.873 -0400", hash_original_method = "9315C2581CF2931FD314CE0DD09752F7", hash_generated_method = "14B4431922B0597712A05D186921B79D")
-    
+
+    @DSSafe(DSCat.SAFE_LIST)  
 @Deprecated
     public static IOFileFilter orFileFilter(IOFileFilter filter1, IOFileFilter filter2) {
         return new OrFileFilter(filter1, filter2);

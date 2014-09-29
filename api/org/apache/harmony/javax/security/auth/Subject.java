@@ -651,6 +651,8 @@ private void verifyElement(Object o) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.954 -0400", hash_original_method = "DEACFE9986F4C4A4405BB0BA90E5A571", hash_generated_method = "0A790DA89CDDF22E8010ADA34FED7ACD")
         
 @Override
+
+		@DSSafe(DSCat.SAFE_LIST) 
         public boolean add(SST o) {
 
             verifyElement(o);
@@ -786,7 +788,7 @@ private void verifyElement(Object o) {
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.961 -0400", hash_original_method = "63A479756CA23F0B1DA6F370079C1EA4", hash_generated_method = "12FC7F0151B61146E5471B3C6E079F3F")
-        
+        @DSBan(DSCat.PRIVATE_METHOD)
 private void readObject(ObjectInputStream in) throws IOException,
                 ClassNotFoundException {
             in.defaultReadObject();
@@ -812,7 +814,8 @@ private void readObject(ObjectInputStream in) throws IOException,
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:09.962 -0400", hash_original_method = "4889097D99FD37D87E16537E55A8A8C1", hash_generated_method = "8F8C66783F207F048B56D85D1A25FCA3")
-        
+        @DSSink({DSSinkKind.IO})
+        @DSSafe(DSCat.SAFE_LIST)
 private void writeObject(ObjectOutputStream out) throws IOException {
 
             if (permission == _PRIVATE_CREDENTIALS) {

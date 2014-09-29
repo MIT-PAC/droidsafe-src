@@ -130,7 +130,7 @@ public boolean cancelLoad() {
      * to properly dispose of the result.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.801 -0500", hash_original_method = "6EDCFF0D227BFAAE1F619E412FD9521B", hash_generated_method = "9FEC541D061BA7A4CCE8EF034DC255B4")
-    
+    @DSSafe(DSCat.SAFE_LIST)
 public void onCanceled(D data) {
     }
 
@@ -163,6 +163,7 @@ void executePendingTask() {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:01:59.744 -0400", hash_original_method = "6F889D2313C3AF179C915052A4D42116", hash_generated_method = "6F889D2313C3AF179C915052A4D42116")
     
+    @DSSafe(DSCat.SAFE_LIST)
 void dispatchOnCancelled(LoadTask task, D data) {
         onCanceled(data);
         if (mCancellingTask == task) {
@@ -175,6 +176,7 @@ void dispatchOnCancelled(LoadTask task, D data) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 15:01:59.753 -0400", hash_original_method = "60255F832A19B4AE733DAA83200BB399", hash_generated_method = "09E167AE34BECEDE706ED8B919BE4945")
+    @DSSafe(DSCat.SAFE_LIST)
     
 void dispatchOnLoadComplete(LoadTask task, D data) {
         if (mTask != task) {
@@ -259,6 +261,7 @@ protected D onLoadInBackground() {
         /* Runs on the UI thread */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.770 -0500", hash_original_method = "58FAE55DC10E415A2FA190657D4F1D85", hash_generated_method = "3FC1816C8A4BBA47018C242C78C0E1B1")
         
+        @DSSafe(DSCat.SAFE_LIST)
 @Override
         protected void onPostExecute(D data) {
             if (DEBUG) Log.v(TAG, this + " onPostExecute");
@@ -289,8 +292,11 @@ protected D onLoadInBackground() {
         public void run() {
             waiting = false;
             AsyncTaskLoader.this.executePendingTask();
+            onForceLoad();
+            onCancelled();
+            onPostExecute(result);
+            onLoadInBackground();
         }
-        
     }
 
     /**

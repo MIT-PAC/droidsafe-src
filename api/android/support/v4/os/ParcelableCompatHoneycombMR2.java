@@ -23,6 +23,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 class ParcelableCompatCreatorHoneycombMR2Stub {
+    @DSSafe(DSCat.SAFE_LIST)
     static <T> Parcelable.Creator<T> instantiate(ParcelableCompatCreatorCallbacks<T> callbacks) {
         return new ParcelableCompatCreatorHoneycombMR2<T>(callbacks);
     }
@@ -34,19 +35,20 @@ class ParcelableCompatCreatorHoneycombMR2<T> implements Parcelable.ClassLoaderCr
     private  ParcelableCompatCreatorCallbacks<T> mCallbacks;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:56.126 -0500", hash_original_method = "6B4EA7F5329B9AD7AB24C24081C5781B", hash_generated_method = "EFC4D9F60004D73746F7E3E14F0D6D06")
+    @DSSafe(DSCat.SAFE_LIST)
     
 public ParcelableCompatCreatorHoneycombMR2(ParcelableCompatCreatorCallbacks<T> callbacks) {
         mCallbacks = callbacks;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:56.127 -0500", hash_original_method = "52A728D45CED91BA6B017F7FCEEE53FB", hash_generated_method = "89D844B06D3C2CADBA949A9CE0796070")
     
 public T createFromParcel(Parcel in) {
         return mCallbacks.createFromParcel(in, null);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:56.128 -0500", hash_original_method = "A7CE79B4A20BAA4EA8FDFB810F2AE2AD", hash_generated_method = "D170AF0E8C4238F0C6694A57558F704F")
     
 public T createFromParcel(Parcel in, ClassLoader loader) {
@@ -54,6 +56,7 @@ public T createFromParcel(Parcel in, ClassLoader loader) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-27 09:55:56.129 -0500", hash_original_method = "5AB872DFD1AEB45ECC63ABABFF71FE11", hash_generated_method = "AD0C03D4514BA515FAA23549907CF8C4")
+    @DSSafe(DSCat.SAFE_LIST)
     
 public T[] newArray(int size) {
         return mCallbacks.newArray(size);

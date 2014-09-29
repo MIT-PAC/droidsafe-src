@@ -248,6 +248,7 @@ protected D onLoadInBackground() {
 
         /* Runs on the UI thread */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.488 -0500", hash_original_method = "CA3BD1BFF35CD0AF15EEE08BAA19ADDD", hash_generated_method = "60430D20397DCF6CD464A7AB8FF9A24D")
+        @DSSafe(DSCat.SAFE_LIST)
         
 @Override
         protected void onPostExecute(D data) {

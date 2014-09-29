@@ -73,6 +73,7 @@ public String getName() {
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.587 -0500", hash_original_method = "45FF804DBFA2BB4F4071CDF27CE28633", hash_generated_method = "DE85DD5FA87051E0F364973767E0E8A1")
     
+        @DSSafe(DSCat.SAFE_LIST)
 public boolean add(HDR objectToAdd) {
         hlist.add((HDR)objectToAdd);
         return true;
@@ -86,7 +87,7 @@ public boolean add(HDR objectToAdd) {
      *            Genericobject to set
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.590 -0500", hash_original_method = "87B618AF10705C22EFB36E4A71158D56", hash_generated_method = "54A200294B7C93768F11F3C3B2B34FAD")
-    
+    @DSSafe(DSCat.SAFE_LIST) 
 public void addFirst(HDR obj) {
         hlist.add(0,(HDR) obj);
     }
@@ -100,7 +101,7 @@ public void addFirst(HDR obj) {
      *            is true if we want to add to the top of the list.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.594 -0500", hash_original_method = "3D14CCA72C816FE4801BBC05991E4343", hash_generated_method = "06F3350CA231C61E6E3D685EA2191004")
-    
+    @DSSafe(DSCat.SAFE_LIST) 
 public void add(HDR sipheader, boolean top) {
         if (top)
             this.addFirst(sipheader);
@@ -121,7 +122,7 @@ public void add(HDR sipheader, boolean top) {
      *             if the two lists are not compatible
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.597 -0500", hash_original_method = "2C5EDAC0235777863EFD087B4072277C", hash_generated_method = "9E7C21291AC9652038CC874A9632FB81")
-    
+    @DSSafe(DSCat.SAFE_LIST)
 public void concatenate(SIPHeaderList<HDR> other, boolean topFlag)
             throws IllegalArgumentException {
         if (!topFlag) {
@@ -301,7 +302,7 @@ public ListIterator<HDR> listIterator(int position) {
      * Remove the first element of this list.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.632 -0500", hash_original_method = "66F538C19C1B45B9F4975D517A08EBE7", hash_generated_method = "9AE1AEC462E0711E2705F635F396C136")
-    
+    @DSSafe(DSCat.SAFE_LIST) 
 public void removeFirst() {
         if (hlist.size() != 0)
             hlist.remove(0);
@@ -312,7 +313,7 @@ public void removeFirst() {
      * Remove the last element of this list.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.635 -0500", hash_original_method = "56685A1560151077841543B2BC810F93", hash_generated_method = "438653CD56BAA77611CAFBBADC3F6DC5")
-    
+    @DSSafe(DSCat.SAFE_LIST) 
 public void removeLast() {
         if (hlist.size() != 0)
             hlist.remove(hlist.size() - 1);
@@ -326,7 +327,7 @@ public void removeLast() {
      * @return boolean
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.637 -0500", hash_original_method = "6090D81CA85470AC09234766F76789C0", hash_generated_method = "BF14AB6561EF00397BB414AC6D1395B7")
-    
+    @DSSafe(DSCat.SAFE_LIST) 
 public boolean remove(HDR obj) {
         if (hlist.size() == 0)
             return false;
@@ -342,7 +343,7 @@ public boolean remove(HDR obj) {
      *            class to set
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.641 -0500", hash_original_method = "23B9304014C757503CC0D5B9D6DB550F", hash_generated_method = "FE282A1BA4803976A805E0476682E2C2")
-    
+    @DSSafe(DSCat.SAFE_LIST) 
 protected void setMyClass(Class<HDR> cl) {
         this.myClass = cl;
     }
@@ -421,7 +422,7 @@ public int indexOf(GenericObject gobj) {
      */
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.656 -0500", hash_original_method = "D4A0602F4424EB672EFBEE9811EC3EF2", hash_generated_method = "994D15028CCE2587BC5BF1494F96A5CF")
-    
+    @DSSafe(DSCat.SAFE_LIST)
 public void add(int index, HDR  sipHeader)
             throws IndexOutOfBoundsException {
         hlist.add(index, sipHeader);
@@ -761,7 +762,7 @@ public int hashCode() {
      * @see List#set(int, java.lang.Object)
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.744 -0500", hash_original_method = "A9FD382DBA3FE66AACB46D6203100A0D", hash_generated_method = "C6D352BFFEECAC0F38AAD655317FD08C")
-    
+    @DSSafe(DSCat.SAFE_LIST) 
 public HDR set(int position, HDR sipHeader) {
 
         return hlist.set(position, sipHeader);

@@ -1344,7 +1344,7 @@ public static void postOnAnimationDelayed(View view, Runnable action, long delay
      * @see #IMPORTANT_FOR_ACCESSIBILITY_AUTO
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.028 -0400", hash_original_method = "5E2E1B6E922D63BE31F5AFAD700C1499", hash_generated_method = "37A75EE6BF881183B79B33A3EF4CF4B7")
-        
+    @DSSafe(DSCat.SAFE_LIST)
 public static void setImportantForAccessibility(View view,
             @ImportantForAccessibility int mode) {
         IMPL.setImportantForAccessibility(view, mode);
@@ -1454,7 +1454,7 @@ public static float getAlpha(View view) {
      *        {@link #LAYER_TYPE_NONE}
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 14:58:19.048 -0400", hash_original_method = "84359FA4C14479ECD3B07394092306F7", hash_generated_method = "52F52D2B0C1590FC5FC7B3D889597290")
-        
+    @DSSafe(DSCat.SAFE_LIST)
 public static void setLayerType(View view, @LayerType int layerType, Paint paint) {
         IMPL.setLayerType(view, layerType, paint);
     }

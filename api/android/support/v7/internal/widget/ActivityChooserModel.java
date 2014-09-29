@@ -940,6 +940,7 @@ private void pruneExcessiveHistoricalRecordsIfNeeded() {
         private final Map<String, ActivityResolveInfo> mPackageNameToActivityMap =
                 new HashMap<String, ActivityResolveInfo>();
 
+        @DSSafe(DSCat.SAFE_LIST)
         public void sort(Intent intent, List<ActivityResolveInfo> activities,
                 List<HistoricalRecord> historicalRecords) {
             Map<String, ActivityResolveInfo> packageNameToActivityMap =

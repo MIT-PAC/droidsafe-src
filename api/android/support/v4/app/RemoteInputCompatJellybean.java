@@ -81,6 +81,7 @@ static RemoteInputCompatBase.RemoteInput[] fromBundleArray(Bundle[] bundles,
         return remoteInputs;
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:07.195 -0400", hash_original_method = "C219B281B1A31315FE2CDCFC8D81AB83", hash_generated_method = "00891D5FFDEB714E926E7FD304D9E6DE")
+    @DSSafe(DSCat.SAFE_LIST)
     
 static Bundle[] toBundleArray(RemoteInputCompatBase.RemoteInput[] remoteInputs) {
         if (remoteInputs == null) {
@@ -110,7 +111,7 @@ static Bundle getResultsFromIntent(Intent intent) {
         return null;
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 12:06:07.202 -0400", hash_original_method = "9A0C0F689217DA160B385BD282ABD42F", hash_generated_method = "8859B0A46AD7ACF64A415FA860CDE9EC")
-    
+    @DSSafe(DSCat.SAFE_LIST)
 static void addResultsToIntent(RemoteInputCompatBase.RemoteInput[] remoteInputs, Intent intent,
             Bundle results) {
         Bundle resultsBundle = new Bundle();

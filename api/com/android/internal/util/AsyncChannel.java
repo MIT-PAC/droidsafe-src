@@ -219,6 +219,7 @@ public void connect(Context srcContext, Handler srcHandler, String dstPackageNam
             String mDstPackageName;
             String mDstClassName;
 
+            @DSSafe(DSCat.SAFE_LIST)
             ConnectAsync(Context srcContext, Handler srcHandler, String dstPackageName,
                     String dstClassName) {
                 mSrcCtx = srcContext;
@@ -228,6 +229,7 @@ public void connect(Context srcContext, Handler srcHandler, String dstPackageNam
             }
 
             @Override
+            @DSSafe(DSCat.SAFE_LIST)
             public void run() {
                 int result = connectSrcHandlerToPackageSync(mSrcCtx, mSrcHdlr, mDstPackageName,
                         mDstClassName);

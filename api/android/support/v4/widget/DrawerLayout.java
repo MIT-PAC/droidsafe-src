@@ -135,6 +135,7 @@ public class DrawerLayout extends ViewGroup {
      * @param gravity Absolute gravity value
      * @return LEFT or RIGHT as appropriate, or a hex string
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.009 -0400", hash_original_method = "806409CA94403904BCAE7E49635B0868", hash_generated_method = "FE8C1E45DEFAF6D13F32B5972901D9CE")
         
 static String gravityToString(@EdgeGravity int gravity) {
@@ -354,6 +355,7 @@ public DrawerLayout(Context context, AttributeSet attrs, int defStyle) {
      * @param shadowDrawable Shadow drawable to use at the edge of a drawer
      * @param gravity Which drawer the shadow should apply to
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.860 -0400", hash_original_method = "3AA3C4510F0B528EEF7C3C0CFC6F19FE", hash_generated_method = "B5D3E4CE4144F144DD11D5413D36CD08")
         
 public void setDrawerShadow(Drawable shadowDrawable, @EdgeGravity int gravity) {
@@ -382,6 +384,7 @@ public void setDrawerShadow(Drawable shadowDrawable, @EdgeGravity int gravity) {
      * @param resId Resource id of a shadow drawable to use at the edge of a drawer
      * @param gravity Which drawer the shadow should apply to
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.868 -0400", hash_original_method = "406E2F555730FA23B50427ED69F7F601", hash_generated_method = "D8CC6E6C56167162147D896BCC24014C")
         
 public void setDrawerShadow(int resId, @EdgeGravity int gravity) {
@@ -452,6 +455,7 @@ public void setDrawerLockMode(int lockMode) {
      * @see #LOCK_MODE_LOCKED_CLOSED
      * @see #LOCK_MODE_LOCKED_OPEN
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.898 -0400", hash_original_method = "94EB8A3AFA48EF715CCFDDCD1AB0FEFE", hash_generated_method = "82B1DA6BA869DF32035DEC219EDEDB4C")
         
 public void setDrawerLockMode(int lockMode, @EdgeGravity int edgeGravity) {
@@ -521,6 +525,7 @@ public void setDrawerLockMode(int lockMode, View drawerView) {
      * @return one of {@link #LOCK_MODE_UNLOCKED}, {@link #LOCK_MODE_LOCKED_CLOSED} or
      *         {@link #LOCK_MODE_LOCKED_OPEN}.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.914 -0400", hash_original_method = "56D29209219CC1D29C3EE2DAE33ED4E5", hash_generated_method = "246CD12D3D6888B80ABDB4EBF83DCA89")
         
 public int getDrawerLockMode(@EdgeGravity int edgeGravity) {
@@ -1242,6 +1247,7 @@ public void openDrawer(View drawerView) {
      * @param gravity Gravity.LEFT to move the left drawer or Gravity.RIGHT for the right.
      *                GravityCompat.START or GravityCompat.END may also be used.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.126 -0400", hash_original_method = "88CAA022F1285CF57E6CD98C82011E5A", hash_generated_method = "AC4B07EC6323C2CD5405C4A8F905AC54")
         
 public void openDrawer(@EdgeGravity int gravity) {
@@ -1287,6 +1293,7 @@ public void closeDrawer(View drawerView) {
      * @param gravity Gravity.LEFT to move the left drawer or Gravity.RIGHT for the right.
      *                GravityCompat.START or GravityCompat.END may also be used.
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.139 -0400", hash_original_method = "663E2609D092ABEB2C3E8BE7EEC66220", hash_generated_method = "9FC5A4318BAA90CBF0C1464D4BC6B569")
         
 public void closeDrawer(@EdgeGravity int gravity) {
@@ -1327,6 +1334,7 @@ public boolean isDrawerOpen(View drawer) {
      * @param drawerGravity Gravity of the drawer to check
      * @return true if the given drawer view is in an open state
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.151 -0400", hash_original_method = "EABA63D32426F723CDAF47E0DF451843", hash_generated_method = "133DC2FD97D6154760177D1E60260B33")
         
 public boolean isDrawerOpen(@EdgeGravity int drawerGravity) {
@@ -1363,6 +1371,7 @@ public boolean isDrawerVisible(View drawer) {
      * @param drawerGravity Gravity of the drawer to check
      * @return true if the given drawer is visible on-screen
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:24.165 -0400", hash_original_method = "D2C18FD3CBFE030BE116683AF1F044D0", hash_generated_method = "A96F07D7974BB2DD05E3E93711326664")
         
 public boolean isDrawerVisible(@EdgeGravity int drawerGravity) {
@@ -1957,6 +1966,7 @@ void cancelChildViewTouch() {
      * @return The title of the drawer, or null if none set.
      * @see #setDrawerTitle(int, CharSequence)
      */
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-18 15:34:23.934 -0400", hash_original_method = "13C47A49F10E2C13EBB169FE2D2F5A39", hash_generated_method = "30D816389D559970F9E794566EEA4D63")
         
     public CharSequence getDrawerTitle(@EdgeGravity int edgeGravity) {
