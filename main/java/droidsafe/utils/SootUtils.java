@@ -401,9 +401,6 @@ public class SootUtils {
      * It then searches parent classes if the method cannot be found in this class.
      */
     public static SootMethod resolveMethod(SootClass clz, String signature) {
-        if (Scene.v().containsMethod(signature)) 
-            return Scene.v().getMethod(signature);
-
         //check this class for the method with polymorpism
         String mName = grabName(signature);
         String[] args = grabArgs(signature);
