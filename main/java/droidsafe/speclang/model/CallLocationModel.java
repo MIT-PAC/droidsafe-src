@@ -1,7 +1,9 @@
 package droidsafe.speclang.model;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +38,13 @@ public class CallLocationModel extends CodeLocationModel {
     private String targetMethodSig = "";
 
     /**
+     * A map from call statements to their associated source line models.
+     */
+    private static Map<Stmt, CallLocationModel> map = new HashMap<Stmt, CallLocationModel>();
+    
+    private Set<String> infoKinds = null;
+    
+    /**
      * Create a call statement source line model and compute its fields.
      * 
      * @param clz name of the class where the new expression for the AllocNode resides in
@@ -68,6 +77,15 @@ public class CallLocationModel extends CodeLocationModel {
     public String getTargetMethodSig() {
         return targetMethodSig;
     }
+
+    public Set<String> getInfoKinds() {
+        return (infoKinds == null) ? Collections.EMPTY_SET : infoKinds;
+    }
+    
+    
+    public void setInfoKinds(Set<String> kinds) {
+        infoKinds = kinds;
+    }
     
     @Override
     public String toString() {
@@ -76,11 +94,6 @@ public class CallLocationModel extends CodeLocationModel {
         return targetMethodSig + " - " + clz + " line: " + line;
     }
 
-    /**
-     * A map from call statements to their associated source line models.
-     */
-    private static Map<Stmt, CallLocationModel> map = new HashMap<Stmt, CallLocationModel>();
-    
     /**
      * Clear the static map from call edges to their associated source line models.
      */

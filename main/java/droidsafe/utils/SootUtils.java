@@ -78,6 +78,7 @@ import soot.tagkit.LineNumberTag;
 import soot.tagkit.SourceFileTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
+import soot.toolkits.scalar.Pair;
 import soot.Type;
 import soot.Unit;
 import soot.util.Chain;
@@ -867,6 +868,70 @@ public class SootUtils {
 
         return null;
     }
+
+    public static int getMethodEndLine(SootMethod method) {
+        int endLine = 0;
+        if (method != null && method.isConcrete()) {
+            Chain<Unit> units = ((StmtBody)method.retrieveActiveBody()).getUnits();
+            for (Unit unit: units) {
+                LineNumberTag lineNumberTag = (LineNumberTag) unit.getTag("LineNumberTag");
+                if (lineNumberTag != null) {
+                    int line = lineNumberTag.getLineNumber();
+                    if (line > endLine)
+                        endLine = line;
+                }
+            }
+        }
+        return endLine;
+    }
+
+    private static Map<SootMethod, IntRange> methodRangeMap = new HashMap<SootMethod, IntRange>();
+
+    public static IntRange getMethodLineRange(SootMethod method) {
+        if (method != null && method.isConcrete() && !Modifier.isSynthetic(method.getModifiers())) {
+            IntRange range = methodRangeMap.get(method);
+            if (range == null) {
+                int min = 0;
+                int max = 0;
+                Chain<Unit> units = ((StmtBody)method.retrieveActiveBody()).getUnits();
+                for (Unit unit: units) {
+                    if (!(unit instanceof JIdentityStmt)) {
+                        LineNumberTag lineNumberTag = (LineNumberTag) unit.getTag("LineNumberTag");
+                        if (lineNumberTag != null) {
+                            int line = lineNumberTag.getLineNumber();
+                            if (line > 1) {
+                                if (min == 0)
+                                    min = line;
+                                if (line > max)
+                                    max = line;
+                            }
+                        }
+                    }
+                }
+                if (min > 0 && max > 0) {
+                    range = new IntRange(min, max);
+                    methodRangeMap.put(method, range);
+                }
+            }
+            return range;
+        }
+        return null;
+    }
+
+    /**
+     * Return the source line number of a Jimple statement.
+     */
+    public static int getSourceLine(Stmt stmt) {
+        if (stmt != null) {
+            LineNumberTag lineNumberTag = (LineNumberTag) stmt.getTag("LineNumberTag");
+            if (lineNumberTag != null) {
+                        return lineNumberTag.getLineNumber();
+            } 
+            logger.debug("Cannot find line number tag for {}", stmt);
+        }
+        return -1;
+    }
+
 
     private static Map<Stmt, SourceLocationTag> stmtToSourceLocMap = new HashMap<Stmt, SourceLocationTag>();
 
