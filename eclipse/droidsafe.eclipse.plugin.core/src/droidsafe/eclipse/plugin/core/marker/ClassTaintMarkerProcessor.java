@@ -169,7 +169,6 @@ public class ClassTaintMarkerProcessor {
             if (isConstr) {
                 methodName = methodName + getParamsSig(node);
             }
-            //System.out.println(VAUtils.indent(depth) + "visit method "+methodName);
             Map<IntRange, Map<String, Set<CallLocationModel>>> rangeMap = fTaintedDataMap.get(methodName);
             if (rangeMap != null) {
                 int offset = node.getStartPosition();
@@ -199,9 +198,7 @@ public class ClassTaintMarkerProcessor {
         }
 
         public void endVisit(MethodDeclaration node) {
-            // System.out.println(VAUtils.indent(depth) + "exit method "+node.getName().getIdentifier());
             dataMapStack.pop();
-            // depth--;
         }
 
         private String getParamsSig(MethodDeclaration node) {
@@ -225,19 +222,16 @@ public class ClassTaintMarkerProcessor {
 
         public boolean visit(SimpleName node) {
             collectTaint(node, true);
-            // System.out.println(VAUtils.indent(depth) + "  visit simple name "+node + ((foundTaint) ? "- found taint" : ""));
             return false;
         }
         
         public boolean visit(QualifiedName node) {
             collectTaint(node, false);
-            // System.out.println(VAUtils.indent(depth) + "  visit qualified name "+node + ((foundTaint) ? "- found taint" : ""));
             return false;
         }
         
         public boolean visit(FieldAccess node) {
             collectTaint(node, false);
-            // System.out.println(VAUtils.indent(depth) + "  visit field access "+ node + ((foundTaint) ? "- found taint" : ""));
             return false;
         }
         

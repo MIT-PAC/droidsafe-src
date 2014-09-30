@@ -365,8 +365,6 @@ PropertyChangeListener {
             infoVals.addAll(InformationFlowAnalysis.v().getTaints(methodContext, (Local) value));
         } else {
             for (IAllocNode allocNode: PTABridge.v().getPTSetIns(value)) {
-                if (value instanceof FieldRef)
-                    System.out.print("");
                 infoVals.addAll(InformationFlowAnalysis.v().getTaints(allocNode));
             }
         }
