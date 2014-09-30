@@ -199,7 +199,8 @@ public class SearchDialog extends Dialog {
             if (!searchResult.isEmpty()) {
                 labelProvider.setSearchString(searchString);
                 labelProvider.setSearchElement(searchResult.get(searchIndex));
-                updateTreeViewer(searchResult);                
+                updateTreeViewer(searchResult);
+                treeViewer.reveal(searchResult.get(0));
             }
          }
         updateStatusLabel();
