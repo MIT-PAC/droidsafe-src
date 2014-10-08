@@ -193,7 +193,11 @@ public Matcher matcher(CharSequence input) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.868 -0500", hash_original_method = "F7B5873C63BE8AA500AA3CBEE5803928", hash_generated_method = "210B3786FCACE3FBF89CF5B32240270F")
     
 public String[] split(CharSequence input, int limit) {
-        return Splitter.split(this, pattern, input.toString(), limit);
+        String[] ret = new String[1];
+        ret[0] = new String("SPLIT_STRING");
+        ret[0].addTaint(input.getTaint());
+        return ret;
+        
     }
 
     /**
