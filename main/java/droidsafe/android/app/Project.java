@@ -90,7 +90,10 @@ public class Project {
      */
     private static final Set<String> IGNORE_LIB_JARS = new HashSet<String>() 
         {{
-            add("android-support-v4.jar");                                      
+            add("android-support-v4.jar");
+            add("android-support-v7.jar");
+            add("android-support-v7-appcompat.jar ");
+            add("google-play-services.jar");
         }};
 
     static {
@@ -269,8 +272,10 @@ public class Project {
         //filter out jar files that are modeled as api classes
         for (Iterator<File> it = appLibJars.iterator(); it.hasNext(); ) {
             File file = it.next();
-            if (IGNORE_LIB_JARS.contains(FilenameUtils.getName(file.toString()))) 
-                it.remove();
+            if (IGNORE_LIB_JARS.contains(FilenameUtils.getName(file.toString()))) {
+               it.remove();
+               logger.info("Removing user lib {} because modeled as api.", FilenameUtils.getName(file.toString()));
+            }
         }
         
         return appLibJars;

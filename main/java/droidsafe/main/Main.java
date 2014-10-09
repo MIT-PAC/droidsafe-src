@@ -59,15 +59,18 @@ import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -170,6 +173,9 @@ public class Main {
         ObjectSensitivityCloner.reset();
         RCFG.reset();
 
+        //used to create the eng 4a concrete methods list
+        //dumpConcreteMethods();
+        
         if (Config.v().infoFlowTrackAll) {
             monitor.worked(1);
             AutomatedSourceTagging.run();
@@ -314,26 +320,27 @@ public class Main {
 
       
         
-        {
-            //account for any transformations
-            if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
+        //account for any transformations
+        if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
 
-            /*
+        /*
             if (Config.v().dumpCallGraph) {
                 CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
             }
-             */
+         */
 
-            //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()
-            //replace calls with new expressions, and let the modeling pass taint appropriately
-            driverMsg("Converting AbstractStringBuilder.toString()");
-            TransformStringBuilderInvokes.run();
-        }
+        //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()
+        //replace calls with new expressions, and let the modeling pass taint appropriately
+        driverMsg("Converting AbstractStringBuilder.toString()");
+        TransformStringBuilderInvokes.run();
+
 
         if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
+        
+        
         //new TestPTA();     
 
         driverMsg("Starting Generate RCFG...");
@@ -877,4 +884,133 @@ public class Main {
             throw new IllegalStateException();
         }
     }
+    
+    
+    //used for eng 4 to find concrete methods for each method in white team list
+    //TODO: MOVE OUT OF HERE AS SOON AS ENGAGEMENT IS OVER
+    public static void dumpConcreteMethods() {
+        int synthetic = 0;
+        try {
+            FileWriter fw = new FileWriter("eng4-concrete-calls.txt");
+            BufferedReader br = new BufferedReader(new FileReader("/Users/mgordon/research/droidsafe/engagements/4a/calls_by_name.txt"));
+            String line;
+                        
+            while ((line = br.readLine()) != null) {
+                // process the line.
+                
+                //break up the line
+                String[] splitted = line.split(" ");
+                String clazzName = splitted[0];
+                String methodName = splitted[1];
+                
+                if ("<init>".equals(methodName))
+                    continue;
+                
+                //now search for method in class and all ancestors
+                SootClass sc = Scene.v().getSootClass(clazzName);
+                
+                
+                Set<SootMethod> possibleTargets = new HashSet<SootMethod>();
+                soot.Hierarchy hierarchy = Scene.v().getActiveHierarchy();
+                
+                if (sc.isInterface()) {
+                    
+                    Collection<SootClass> implementors = hierarchy.getImplementersOf(sc);
+                    for (SootClass implementor : implementors) {
+                        //now get all superclasses 
+                        possibleTargets.addAll(getAllTargetMethodsPrecise(implementor, methodName));
+                    }
+                    
+                } else {       
+                    possibleTargets.addAll(getAllTargetMethodsPrecise(sc, methodName));
+                                       
+                    //search down for concrete calls in subclasses
+                    for (SootClass subclass : hierarchy.getSubclassesOfIncluding(sc)) {
+                        for (SootMethod sm : subclass.getMethods()) {
+                            if (sm.getName().equals(methodName)) {
+                                possibleTargets.add(sm);
+                            }
+                        }
+                        
+                    }
+                }
+                
+                //write only empty
+                //if (possibleTargets.isEmpty()) {
+                //    fw.write(line + "\n");
+               // }
+                
+               
+                //write all
+                fw.write(line + "\n");
+                for (SootMethod method : possibleTargets) {
+                    if (SootUtils.isSynthetic(method)) {
+                        synthetic++;
+                        continue;
+                    }
+                    fw.write("\t" + method + "\n");
+                }
+               
+             }
+            
+             br.close();
+             fw.close(); 
+            
+        } catch (Exception e) {
+            logger.error("Problem with concrete search: ", e);
+        }
+        System.out.println("Synthetic: " + synthetic);  
+    }
+   
+
+    
+    private static Collection<SootMethod> getAllTargetMethodsPrecise(SootClass sc, String methodName) {
+        Set<SootMethod> possibleTargets = new HashSet<SootMethod>();
+                        
+        SootClass current = sc;
+        while (true) {
+            for (SootMethod method : current.getMethods()) {
+                if (method.getName().equals(methodName)) {
+                    SootMethod resolved = SootUtils.resolveMethod(sc, method.getSignature());
+                    if (resolved != null && resolved.equals(method))
+                        possibleTargets.add(method);
+                }
+            }
+            
+            if (!current.hasSuperclass())
+                break;
+            
+            current = current.getSuperclass();
+        }
+        
+        return possibleTargets; 
+    }
+   
+    
+    private static Collection<SootMethod> getAllTargetMethodsFast(SootClass sc, String methodName) {
+        
+        Set<SootMethod> possibleTargets = new HashSet<SootMethod>();
+        //search up inheritance tree for first declaration of method
+        Set<String> subSigsAdded = new HashSet<String>();
+        
+        SootClass current = sc;
+        while (true) {
+            for (SootMethod method : current.getMethods()) {
+                if (method.getName().equals(methodName) &&
+                        !subSigsAdded.contains(method.getSubSignature())) {
+                    //match not added before
+                    subSigsAdded.add(method.getSubSignature());
+                    possibleTargets.add(method);
+                }
+            }
+            
+            if (!current.hasSuperclass())
+                break;
+            
+            current = current.getSuperclass();
+        }
+        
+        return possibleTargets; 
+    }
+  
 }
