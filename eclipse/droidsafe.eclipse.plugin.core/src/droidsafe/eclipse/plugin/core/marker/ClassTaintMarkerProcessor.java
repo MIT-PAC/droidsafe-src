@@ -47,7 +47,6 @@ import droidsafe.analyses.value.VAUtils;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.infoflow.TaintSourcesViewPart;
 import droidsafe.speclang.model.CallLocationModel;
-import droidsafe.speclang.model.TaintInfo;
 import droidsafe.utils.IntRange;
 
 public class ClassTaintMarkerProcessor {

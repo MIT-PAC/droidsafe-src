@@ -19,7 +19,6 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
-import droidsafe.speclang.model.TaintInfo;
 import droidsafe.utils.IntRange;
 
 public class ProjectTaintMarkerProcessor {
@@ -61,7 +60,7 @@ public class ProjectTaintMarkerProcessor {
     }
 
     public String getClassName(IFile file) {
-        if (file != null) {
+        if (file != null && fTaintedDataMap != null) {
             for (String className: fTaintedDataMap.keySet()) {
                 if (file.equals(DroidsafePluginUtilities.getFile(fProject, className))) {
                     return className;
@@ -91,7 +90,7 @@ public class ProjectTaintMarkerProcessor {
     }
 
     public void showTaintedData(IEditorPart openedEditor, String className) {
-        if (openedEditor != null && openedEditor instanceof ITextEditor) {
+        if (openedEditor != null && openedEditor instanceof ITextEditor && fProcessedClasses != null) {
             ITextEditor editor = (ITextEditor) openedEditor;
             if (fProcessedClasses.contains(className)) {
                 if (fClassesNeedUpdate.contains(className)) {
