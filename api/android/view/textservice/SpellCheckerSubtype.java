@@ -153,7 +153,7 @@ public int getNameResId() {
     /**
      * @return the locale of the subtype
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.418 -0500", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "EE03D54FF1419549D24B5FD49A307399")
     
 public String getLocale() {
@@ -163,7 +163,7 @@ public String getLocale() {
     /**
      * @return the extra value of the subtype
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.421 -0500", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "B0B48211E788C5E773FA1B3FFFFC18D8")
     
 public String getExtraValue() {
@@ -203,7 +203,7 @@ public String getExtraValue() {
      * specified by mSubtypeNameResId. If mSubtypeNameResId is not specified (== 0), it's up to the
      * framework to generate an appropriate display name.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.431 -0500", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "D9FE477B4AE71540ABA1B09AB9219FF9")
     
 public CharSequence getDisplayName(

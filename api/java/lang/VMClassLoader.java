@@ -24,7 +24,7 @@ class VMClassLoader {
      */
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.660 -0500", hash_original_method = "AF486A7D7E964EDE4DDBB83EBC604A43", hash_generated_method = "6271D690045E117ED2B73930093ED883")
     
 static URL getResource(String name) {
@@ -59,7 +59,7 @@ static URL getResource(String name) {
      */
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.663 -0500", hash_original_method = "41BB43040C33BB8F9D26EFBD637FF5E0", hash_generated_method = "BA6F8EFE5770630EF076EF012F1DAE80")
     
 static List<URL> getResources(String name) {

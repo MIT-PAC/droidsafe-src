@@ -93,7 +93,7 @@ protected void setState(Call.State state) {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.258 -0500", hash_original_method = "A8956DD6ACAC2731E62816490C646631", hash_generated_method = "B1A1FA6B39A06DC717D428ED095C0FFF")
     
 @Override
@@ -101,7 +101,7 @@ protected void setState(Call.State state) {
         return createTime;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.261 -0500", hash_original_method = "540CF01EF64CF5C6BAC1246743ECA8F1", hash_generated_method = "9FDC297BE29AC7A51F39BB908DDC6457")
     
 @Override
@@ -109,7 +109,7 @@ protected void setState(Call.State state) {
         return connectTime;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.264 -0500", hash_original_method = "D17BC9E58BABC2D5CE1B7492B59E2165", hash_generated_method = "28814308B62ED222C43D328969EB2BFC")
     
 @Override
@@ -117,7 +117,7 @@ protected void setState(Call.State state) {
         return disconnectTime;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.266 -0500", hash_original_method = "8E0034C90F1E75659D16C0CDCE6F5793", hash_generated_method = "14D360010D46309FCCF2DEC011B6578D")
     
 @Override
@@ -131,7 +131,7 @@ protected void setState(Call.State state) {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.269 -0500", hash_original_method = "2CFF5FB4AC83B238AC9B892D795EB1DE", hash_generated_method = "C27E3D8B3D0F244CDF6E0242B67E0CF1")
     
 @Override
@@ -191,7 +191,7 @@ void setDisconnectCause(DisconnectCause cause) {
     
 protected abstract Phone getPhone();
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.288 -0500", hash_original_method = "0D579DEEA4ADF8476D536663A83CC650", hash_generated_method = "6B6193B09C1F95FF7144F4A8F0D20ACE")
     
 @Override
@@ -223,7 +223,7 @@ private void log(String msg) {
         return Connection.PRESENTATION_ALLOWED;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.295 -0500", hash_original_method = "8B171385F62C7AA97B0882209EC3A206", hash_generated_method = "A7CDB321431F80E4F7558E868C9870D5")
     
 @Override

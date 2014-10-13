@@ -497,7 +497,7 @@ public String[] getReplyStrings()
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:02.439 -0500", hash_original_method = "84E293B796CFF792E36C37EFD2119006", hash_generated_method = "7A2D3AD43224B53EF4FBD29D4B1D280A")
     @DSVerified
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
 public String getReplyString()
     {
         Enumeration en;

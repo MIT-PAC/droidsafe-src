@@ -367,7 +367,7 @@ protected void finalize() {
         if(DBG) log("finalize");
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.711 -0500", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "7FA214E5FB8E9E7053C952EA5299E35F")
     
 @Override
@@ -1404,14 +1404,14 @@ private boolean isRoamingBetweenOperators(boolean gsmRoaming, ServiceState s) {
      */
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.772 -0500", hash_original_method = "462522C9E25E239E090C32F4DC1CCDBD", hash_generated_method = "462522C9E25E239E090C32F4DC1CCDBD")
     
 int getCurrentGprsState() {
         return gprsState;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.774 -0500", hash_original_method = "76A0DFDE7E82168261B9485993735FA8", hash_generated_method = "068649D7EB132587836305BEE0BFD86C")
     
 public int getCurrentDataConnectionState() {

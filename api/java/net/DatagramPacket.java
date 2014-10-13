@@ -171,7 +171,7 @@ public DatagramPacket(byte[] data, int offset, int length,
      */
     @DSComment("Data structure only")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.359 -0500", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "C1DC99F69AF6376A7FC069FBD1826D41")
     
 public synchronized InetAddress getAddress() {
@@ -186,7 +186,7 @@ public synchronized InetAddress getAddress() {
      */
     @DSComment("Data structure only")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.361 -0500", hash_original_method = "B9E74D06348E60D6DDB9FA9E07D464F9", hash_generated_method = "A16CB4E41E808ED016EB88BE01DF9A6C")
     
     public synchronized byte[] getData() {
@@ -201,7 +201,7 @@ public synchronized InetAddress getAddress() {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.364 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "2DB509520BC98A42BC7C0D8F720E796A")
     
 public synchronized int getLength() {
@@ -213,7 +213,7 @@ public synchronized int getLength() {
      *
      * @return the position of the received data or the data to be sent.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.366 -0500", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "5481909E9946628917952CC7F7C31227")
     
 public synchronized int getOffset() {
@@ -228,7 +228,7 @@ public synchronized int getOffset() {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.369 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "FDD2B2E226295EB6A09A09D12ED55358")
     
 public synchronized int getPort() {
@@ -355,7 +355,7 @@ public synchronized void setPort(int aPort) {
      *
      * @return the SocketAddress of the target host.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.395 -0500", hash_original_method = "FA4C710C49AB0B200E625D4A04A47D21", hash_generated_method = "98653A3A077D3CCCC6EF171E73494A06")
     
 public synchronized SocketAddress getSocketAddress() {

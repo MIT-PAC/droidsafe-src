@@ -11,7 +11,7 @@ public class AudioCodec {
     /**
      * Returns system supported audio codecs.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.960 -0500", hash_original_method = "A02F235322CEC49098638CFAA7891025", hash_generated_method = "D78F8061E8F13431B3661F566FE40755")
     
 public static AudioCodec[] getCodecs() {
@@ -28,7 +28,7 @@ public static AudioCodec[] getCodecs() {
      *     attribute, or null if it is not available.
      * @return The configured AudioCodec or {@code null} if it is not supported.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.963 -0500", hash_original_method = "4B34E1AD78FB7AEDA5C9AAEBE5789D37", hash_generated_method = "9CDF3EC00B2A7297DFC9321B0E5924EB")
     
 public static AudioCodec getCodec(int type, String rtpmap, String fmtp) {

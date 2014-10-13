@@ -456,7 +456,7 @@ public final void attach(
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.459 -0500", hash_original_method = "8DA57A133C364DA0C4CA877026045103", hash_generated_method = "F6EF08CB09E5F3BCA9DE4EF151038199")
     
 final String getClassName() {

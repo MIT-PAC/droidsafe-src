@@ -613,7 +613,7 @@ public synchronized void onServiceDisconnected() {
             });
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.620 -0500", hash_original_method = "9AC2F72588B70E9E489A1C9892FF58B7", hash_generated_method = "6CC4DC1940AB4F29E9DB83F0CF535A7A")
         
 public synchronized IRemoteViewsFactory getRemoteViewsFactory() {

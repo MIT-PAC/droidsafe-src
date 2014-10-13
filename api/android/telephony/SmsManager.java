@@ -42,7 +42,7 @@ public static SmsManager getDefault() {
      *
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.979 -0500", hash_original_method = "99ADD055A9B6DECFD44D9DAC14E75079", hash_generated_method = "51B1764F4C3503DB865B1030185E8A32")
     
 public static ArrayList<SmsMessage> getAllMessagesFromIcc() {

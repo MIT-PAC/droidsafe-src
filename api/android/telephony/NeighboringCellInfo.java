@@ -169,7 +169,7 @@ public NeighboringCellInfo(Parcel in) {
      * 0 means "-113 dBm or less" and 31 means "-51 dBm or greater"
      * For UMTS, it is the Level index of CPICH RSCP defined in TS 25.125
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.343 -0500", hash_original_method = "EAA2EB56C456A75F6A36236287457095", hash_generated_method = "941E5DA09E96558F6267EFA8918B8C44")
     
 public int getRssi() {
@@ -180,7 +180,7 @@ public int getRssi() {
      * @return LAC in GSM, 0xffff max legal value
      *  UNKNOWN_CID if in UMTS or CMDA or unknown
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.347 -0500", hash_original_method = "9D27DA83295DE88E54D1A14DE01D13B2", hash_generated_method = "A18DED515734753DC64C50C9F3494A83")
     
 public int getLac() {
@@ -191,7 +191,7 @@ public int getLac() {
      * @return cell id in GSM, 0xffff max legal value
      *  UNKNOWN_CID if in UMTS or CDMA or unknown
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.351 -0500", hash_original_method = "03F3B6133F275A943C2D43BD3469FDB7", hash_generated_method = "ED491AA69C7D5EA58049D948836E075E")
     
 public int getCid() {
@@ -202,7 +202,7 @@ public int getCid() {
      * @return Primary Scrambling Code in 9 bits format in UMTS, 0x1ff max value
      *  UNKNOWN_CID if in GSM or CMDA or unknown
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.355 -0500", hash_original_method = "0E29DC7205E312820087B8B417C09B13", hash_generated_method = "27709C0F99A78EF49BB7521467E3693E")
     
 public int getPsc() {
@@ -230,7 +230,7 @@ public int getPsc() {
      * which {@link NeighboringCellInfo#getPsc NeighboringCellInfo.getPsc}
      * should be called to access location.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.359 -0500", hash_original_method = "BA8FF13D9B34325771E51CDF8D4F958D", hash_generated_method = "3D7DA4F48FFE0ADC9CF5C63B2EFB399C")
     
 public int getNetworkType() {
@@ -271,7 +271,7 @@ public int getNetworkType() {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.370 -0500", hash_original_method = "8F5318BC3FCF7BF30F83B998176BAD1B", hash_generated_method = "1F44B4C64F2483A0B6483992276D06CA")
     
 @Override

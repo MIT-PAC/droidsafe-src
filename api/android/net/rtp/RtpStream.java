@@ -71,7 +71,7 @@ RtpStream(InetAddress address) throws SocketException {
     /**
      * Returns the network address of the local host.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.451 -0500", hash_original_method = "F28BFDFF195309DBD86E5144551EE7AD", hash_generated_method = "DF44113E6B59CA44A7F42A9D99002DE1")
     
 public InetAddress getLocalAddress() {
@@ -81,7 +81,7 @@ public InetAddress getLocalAddress() {
     /**
      * Returns the network port of the local host.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.453 -0500", hash_original_method = "7C31E9E70AC59EA03FD32B04D9A6DCA9", hash_generated_method = "2DF0EB1F58B9B44C339C90A52EA29722")
     
 public int getLocalPort() {
@@ -92,7 +92,7 @@ public int getLocalPort() {
      * Returns the network address of the remote host or {@code null} if the
      * stream is not associated.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.461 -0500", hash_original_method = "DA9171B440EA3ADB706340063F8102C7", hash_generated_method = "9CF498C475C4F21DB4C831F5FD5926E1")
     
 public InetAddress getRemoteAddress() {
@@ -103,7 +103,7 @@ public InetAddress getRemoteAddress() {
      * Returns the network port of the remote host or {@code -1} if the stream
      * is not associated.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.463 -0500", hash_original_method = "B0A2085CD61C2E0240384F40F555D7FA", hash_generated_method = "C29BA3E5679A16A9A5933B07EF8FAE37")
     
 public int getRemotePort() {
@@ -124,7 +124,7 @@ public boolean isBusy() {
     /**
      * Returns the current mode.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.467 -0500", hash_original_method = "46CDEAEE57FC46504BB8BB611AFCF88D", hash_generated_method = "70517447F35CFDB022215DEF7415008A")
     
 public int getMode() {

@@ -65,7 +65,7 @@ public SSLParameters(String[] cipherSuites,
      * Returns a copy of the cipher suites, or null if none have been
      * specified.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.167 -0500", hash_original_method = "4A4F1106EE48461B88F50C671836AAA1", hash_generated_method = "FD30555C3E201135B1513809C5273D60")
     
 public String[] getCipherSuites() {
@@ -91,7 +91,7 @@ public void setCipherSuites(String[] cipherSuites) {
      * Returns a copy of the protocols, or null if none have been
      * specified.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.171 -0500", hash_original_method = "4DAE6AE8C86EF57BE9BF60BD0F445F08", hash_generated_method = "AB882CCD2AD470372C7D7B261FE0FB8F")
     
 public String[] getProtocols() {
@@ -118,7 +118,7 @@ public void setProtocols(String[] protocols) {
      * during handshaking. If this returns true, {@link
      * #getWantClientAuth} will return false.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.176 -0500", hash_original_method = "0562A9D6063DDE1E14D46646F3CBBD06", hash_generated_method = "8C7AC36BF0CBD51C2B7ABE20875E1D7E")
     
 public boolean getNeedClientAuth () {
@@ -141,7 +141,7 @@ public void setNeedClientAuth (boolean needClientAuth) {
      * client during handshaking. If this returns true, {@link
      * #getNeedClientAuth} will return false.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.180 -0500", hash_original_method = "B012F9400DE611969BC8B2969D6766E0", hash_generated_method = "4FCD8CBF74DFCB44AAAF6A45D8039EDC")
     
 public boolean getWantClientAuth () {

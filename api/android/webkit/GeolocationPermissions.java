@@ -20,7 +20,7 @@ public final class GeolocationPermissions {
     /**
      * Gets the singleton instance of the class.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.193 -0500", hash_original_method = "CF5DE03BD00FE0AD7B0AF2C378080A57", hash_generated_method = "916FC6682CB5E8EDC51BB9668378D669")
     
 public static GeolocationPermissions getInstance() {

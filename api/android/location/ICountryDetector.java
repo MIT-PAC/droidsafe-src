@@ -58,7 +58,7 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSSource({DSSourceKind.LOCATION_INFORMATION})
+@DSSource({DSSourceKind.LOCATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.667 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
@@ -69,7 +69,7 @@ return DESCRIPTOR;
      * Start detecting the country that the user is in.
      * @return the country if it is available immediately, otherwise null will be returned.
      */
-@DSSource({DSSourceKind.LOCATION_INFORMATION})
+@DSSource({DSSourceKind.LOCATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.670 -0500", hash_original_method = "A28BDDBF00AA3279A8205DA7A1FF9FD6", hash_generated_method = "EDF3E952A6E9BA582F57CD6AC2AE84BF")
             
 public android.location.Country detectCountry() throws android.os.RemoteException
@@ -145,7 +145,7 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSSource({DSSourceKind.LOCATION_INFORMATION})
+@DSSource({DSSourceKind.LOCATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.653 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()

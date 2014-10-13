@@ -370,7 +370,7 @@ public abstract boolean getEnableSessionCreation();
      *
      * @since 1.6
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.392 -0500", hash_original_method = "B1069FA99460064F4DAFA14459B677AD", hash_generated_method = "E49272E6A5C5F4C5B789C28E3A1AD325")
     
 public SSLParameters getSSLParameters() {

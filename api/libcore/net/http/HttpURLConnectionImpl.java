@@ -60,7 +60,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
     }
 
     @DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.497 -0500", hash_original_method = "07B4C440A95D9405D35DB78948CBC089", hash_generated_method = "0896A3457DB910274CD957E12A356867")
     
 @Override public final void connect() throws IOException {
@@ -108,7 +108,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * Returns the value of the field at {@code position}. Returns null if there
      * are fewer than {@code position} headers.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.505 -0500", hash_original_method = "2FDBF8E663ECDF1396771B3FB2E938AE", hash_generated_method = "06437FA6B22B1A855ACD6C65696EC4F8")
@@ -126,7 +126,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * null if there is no such field. If the field has multiple values, the
      * last value is returned.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.507 -0500", hash_original_method = "8E358A78EB7A8F16DBAC360C5AE52593", hash_generated_method = "E975B3413BF7B4CBEA3B72CCBD80757D")
@@ -175,7 +175,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.519 -0500", hash_original_method = "45F412B75FA838EAF632FEA7E5AD9CE7", hash_generated_method = "1471DC304138D06A38141012D0B8ABF1")
     
 @Override public final InputStream getInputStream() throws IOException {
@@ -203,7 +203,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
     }
 
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.521 -0500", hash_original_method = "37EC8C214191B016BC801CEDA20A2C80", hash_generated_method = "90A3BD13B64C0D5D9A78F0CA7D768269")
     
 @Override public final OutputStream getOutputStream() throws IOException {
@@ -556,14 +556,14 @@ final void setProxy(Proxy proxy) {
     }
 
     @DSSafe(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.571 -0500", hash_original_method = "9D8B4374AC98844408DFFFE370FDA266", hash_generated_method = "0B499DF550BA661FCA1181BB7DFA6E19")
     
 @Override public String getResponseMessage() throws IOException {
         return getResponse().getResponseHeaders().getHeaders().getResponseMessage();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.573 -0500", hash_original_method = "721B81AA4282A5EC0FCB04AA341634A3", hash_generated_method = "60A77DCA9BF2BED0D957882C1E30A07F")
     

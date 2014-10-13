@@ -166,7 +166,7 @@ void setSSID(String SSID) {
      */
     @DSComment("Wifi subsystem")
     @DSSpec(DSCat.WIFI)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.701 -0500", hash_original_method = "79B89773022C9616E7A28BB8F338ADFD", hash_generated_method = "C2EEA641DC127571BADAA8674E69F26A")
     
 public String getSSID() {
@@ -188,7 +188,7 @@ void setBSSID(String BSSID) {
      */
     @DSComment("Wifi subsystem")
     @DSSpec(DSCat.WIFI)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.705 -0500", hash_original_method = "4164893247FD5E84E98B26376E6216D7", hash_generated_method = "33D3B695984FE58097D7766F3B30F4EB")
     
 public String getBSSID() {
@@ -201,7 +201,7 @@ public String getBSSID() {
      * <p><strong>This is not normalized, but should be!</strong></p>
      * @return the RSSI, in the range ??? to ???
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.707 -0500", hash_original_method = "EAA2EB56C456A75F6A36236287457095", hash_generated_method = "941E5DA09E96558F6267EFA8918B8C44")
     
 public int getRssi() {
@@ -223,7 +223,7 @@ void setRssi(int rssi) {
      */
     @DSComment("Wifi subsystem")
     @DSSpec(DSCat.WIFI)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.711 -0500", hash_original_method = "78D01A80334309441C41F6B9CC957D2A", hash_generated_method = "1A12703182C96635CEB77DEB614A9A91")
     
 public int getLinkSpeed() {
@@ -252,7 +252,7 @@ void setMacAddress(String macAddress) {
 
     @DSComment("Wifi subsystem")
     @DSSpec(DSCat.WIFI)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.717 -0500", hash_original_method = "3C8E67358ACD99AD783D244CA0276ACD", hash_generated_method = "2DFC50A3778FC48D626A671E77081C38")
     
 public String getMacAddress() {
@@ -291,7 +291,7 @@ public void setExplicitConnect(boolean explicitConnect) {
      * returns the ID for the currently connected network.
      * @return the network ID, or -1 if there is no currently connected network
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.725 -0500", hash_original_method = "B76AAD80CE4B08426894CE7F5D58A537", hash_generated_method = "637E6B0E5E1D730FCF7E33D5A0BB3D16")
     
 public int getNetworkId() {
@@ -305,7 +305,7 @@ public int getNetworkId() {
      */
     @DSComment("Wifi subsystem")
     @DSSpec(DSCat.WIFI)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.727 -0500", hash_original_method = "8E3F1F3B329B69F39A487C61B59EF2C9", hash_generated_method = "D2362E116557988672F965102DAA1533")
     
 public SupplicantState getSupplicantState() {
@@ -328,7 +328,7 @@ void setInetAddress(InetAddress address) {
         mIpAddress = address;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.734 -0500", hash_original_method = "B90838B740ABA91EEFFDC5A9A5E25B34", hash_generated_method = "E78FF920665B00C85E06520C31C73BB6")
     
 public int getIpAddress() {
@@ -340,7 +340,7 @@ public int getIpAddress() {
      * @return {@code true} if this network does not broadcast its SSID, so an
      * SSID-specific probe request must be used for scans.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.736 -0500", hash_original_method = "C4A754B6DCF0E16A6381A21399FCB1B9", hash_generated_method = "E77E70F9E868C52B9C3502A000851180")
     
 public boolean getHiddenSSID() {
@@ -369,7 +369,7 @@ void setSupplicantState(String stateName) {
         mSupplicantState = valueOf(stateName);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.748 -0500", hash_original_method = "E7F8A705E19A9ABF8AEEB72FBC5B6139", hash_generated_method = "DE0D69B9FB95AB6E04C486EE9BBEF739")
     

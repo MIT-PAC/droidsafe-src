@@ -66,7 +66,7 @@ public LinkAddress(InterfaceAddress interfaceAddress) {
         this.prefixLength = interfaceAddress.getNetworkPrefixLength();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.544 -0500", hash_original_method = "5FAB79F8CDEEE71CFB15A1270E373FE2", hash_generated_method = "41184820433EEA60DC65BB7B286C78B8")
     
@@ -110,7 +110,7 @@ public LinkAddress(InterfaceAddress interfaceAddress) {
     /**
      * Returns the InetAddress for this address.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.551 -0500", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "824B3030C6402BCEBDA9F70F4F75F58E")
     
 public InetAddress getAddress() {
@@ -120,7 +120,7 @@ public InetAddress getAddress() {
     /**
      * Get network prefix length
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.553 -0500", hash_original_method = "2E2106DAF5193DB540436A7E1AE68959", hash_generated_method = "7335CB03B4DBBE641112BD64B8954681")
     
 public int getNetworkPrefixLength() {

@@ -268,7 +268,7 @@ protected void finalize() {
         if(LOCAL_DEBUG) Log.d(LOG_TAG, "GSMPhone finalized");
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.113 -0500", hash_original_method = "DA0F221C2247572C4D631280E4033E9A", hash_generated_method = "D478D89558ABAB62076DEF8330267072")
     
 public ServiceState
@@ -276,7 +276,7 @@ public ServiceState
         return mSST.ss;
     }
 
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.115 -0500", hash_original_method = "E38329BE2FF507326358BBAF596945E6", hash_generated_method = "AC8CC4104D0FCBE937A2BAB0898984B6")
     
 public CellLocation getCellLocation() {
@@ -296,7 +296,7 @@ public String getPhoneName() {
         return "GSM";
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.122 -0500", hash_original_method = "8F0362114FB07F54B581B179D597F815", hash_generated_method = "F6ABF6B6D76CBFA3612F9B0DDC282765")
     
 public int getPhoneType() {
@@ -309,21 +309,21 @@ public SignalStrength getSignalStrength() {
         return mSST.mSignalStrength;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.126 -0500", hash_original_method = "79AFD9B845E4547B981131DAC9E3A14D", hash_generated_method = "42619EEC092A0EA3A9A304ABD8213F11")
     
 public CallTracker getCallTracker() {
         return mCT;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.128 -0500", hash_original_method = "BD481539215D5A66E62B4E6909625141", hash_generated_method = "0972DE88684B8D25204CEF316794F013")
     
 public ServiceStateTracker getServiceStateTracker() {
         return mSST;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.130 -0500", hash_original_method = "077104DE86BE536BE2C981492E640B74", hash_generated_method = "B7D25768B4ED693EE044BF8E201BD6BD")
     
 public List<? extends MmiCode>
@@ -1296,7 +1296,7 @@ public void setMute(boolean muted) {
         mCT.setMute(muted);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.324 -0500", hash_original_method = "FA6E824680C8944626A1A959DCEA6499", hash_generated_method = "3E1D6B8514C7CF066D919EF92B2E88D5")
     
 public boolean getMute() {
@@ -1717,7 +1717,7 @@ public PhoneSubInfo getPhoneSubInfo(){
     /**
      * Retrieves the IccSmsInterfaceManager of the GSMPhone
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.368 -0500", hash_original_method = "3207E33C673BD37AF8FDF81E31830AE6", hash_generated_method = "E0617445F495205DED357DCB7FB34B1D")
     
 public IccSmsInterfaceManager getIccSmsInterfaceManager(){
@@ -1727,7 +1727,7 @@ public IccSmsInterfaceManager getIccSmsInterfaceManager(){
     /**
      * Retrieves the IccPhoneBookInterfaceManager of the GSMPhone
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:26.371 -0500", hash_original_method = "6E6477AE345E3D007CED20614912A5C4", hash_generated_method = "0241F763B37857992D012ADBFF624E35")
     
 public IccPhoneBookInterfaceManager getIccPhoneBookInterfaceManager(){

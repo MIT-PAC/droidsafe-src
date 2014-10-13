@@ -47,7 +47,7 @@ public static void setThreadStatsTag(int tag) {
      */
     @DSComment("Traffic statistics")
     @DSSpec(DSCat.NETWORK_STATS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.261 -0500", hash_original_method = "241455C0E3DABE2C90F976AA351D8F6B", hash_generated_method = "D358E2458BE1AB76C109717C0B831B41")
     
 public static int getThreadStatsTag() {
@@ -201,66 +201,66 @@ public static void incrementOperationCount(int tag, int operationCount) {
         }
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getMobileTxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getMobileRxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getMobileTxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getMobileRxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getTxPackets(String iface) {
         return iface.getTaintInt();
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getRxPackets(String iface) {
         return iface.getTaintInt();
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getTxBytes(String iface) {
         return iface.getTaintInt();
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getRxBytes(String iface) {
         return iface.getTaintInt();
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getTotalTxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getTotalRxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
     
     @DSComment("Traffic statistics")
     @DSSpec(DSCat.NETWORK_STATS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getTotalTxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
     
     @DSComment("Traffic statistics")
     @DSSpec(DSCat.NETWORK_STATS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     public static long getTotalRxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }

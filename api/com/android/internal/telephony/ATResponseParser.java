@@ -75,7 +75,7 @@ public int
         return ret;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.778 -0500", hash_original_method = "098AF12FD324D863E13EA52B5E17698D", hash_generated_method = "166CB708896172395E3726729E517306")
     
 public String

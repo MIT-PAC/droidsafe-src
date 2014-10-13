@@ -31,7 +31,7 @@ public IccIoResult(int sw1, int sw2, String hexString) {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.916 -0500", hash_original_method = "C2E2D21A49FBAEB09CAD48E279230B17", hash_generated_method = "5F7907B14DF5087E1E3A698D5E1EBBE7")
     
 public String toString() {
@@ -53,7 +53,7 @@ public boolean success() {
     /**
      * Returns exception on error or null if success
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.921 -0500", hash_original_method = "6314A49369EA2E2C83A84515E57327FB", hash_generated_method = "FEE8C406F8DB898558F7556FFBD1BFDB")
     
 public IccException getException() {

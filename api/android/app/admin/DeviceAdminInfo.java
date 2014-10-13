@@ -380,7 +380,7 @@ public void dump(Printer pw, String prefix) {
         mReceiver.dump(pw, prefix + "  ");
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.388 -0500", hash_original_method = "337DF8B9CB781ADE72580EF8EE42E4C5", hash_generated_method = "DDAFBE19093D528F6385011F89BC68D2")
     

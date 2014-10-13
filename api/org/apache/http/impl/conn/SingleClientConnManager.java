@@ -111,7 +111,7 @@ public SchemeRegistry getSchemeRegistry() {
      *
      * @return  the connection operator to use
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.340 -0500", hash_original_method = "25E4E60569E24699D7326BD2975E9BC2", hash_generated_method = "CDFBE14A441ACDD32840AD53090D9F1C")
     
 protected ClientConnectionOperator
@@ -179,7 +179,7 @@ public ManagedClientConnection getConnection(
      * @return  a connection that can be used to communicate
      *          along the given route
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.353 -0500", hash_original_method = "781D1E313D4AFDE231A72D7CBA370F5D", hash_generated_method = "38849830D340DFE19D1DD85AD4AFB2AB")
     
 public ManagedClientConnection getConnection(HttpRoute route, Object state) {

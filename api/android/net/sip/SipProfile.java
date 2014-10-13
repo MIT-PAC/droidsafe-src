@@ -158,7 +158,7 @@ public SipURI getUri() {
      */
     @DSComment("Data structure only, except writeToParcel")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.368 -0500", hash_original_method = "8967C0A1855BD4ECE9D4EFBDFCF47E43", hash_generated_method = "BF50A503FFF8E58300C49312CA915F38")
     
 public String getUriString() {
@@ -177,7 +177,7 @@ public String getUriString() {
      * @return the SIP address of this profile
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.370 -0500", hash_original_method = "15923319AE2A6D9E076B860EB8423C19", hash_generated_method = "AA07A4C14990AFB91DEDEEF0866474DE")
     
 public Address getSipAddress() {
@@ -191,7 +191,7 @@ public Address getSipAddress() {
      */
     @DSComment("Data structure only, except writeToParcel")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.372 -0500", hash_original_method = "986E0B7E655AC166DA3BC65E473D37F3", hash_generated_method = "E1D73EE245674BB839176FD2E2F3E033")
     
 public String getDisplayName() {
@@ -205,7 +205,7 @@ public String getDisplayName() {
      */
     @DSComment("Data structure only, except writeToParcel")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.374 -0500", hash_original_method = "5CC4F03701178BF5DF2B7731C175F0C0", hash_generated_method = "19441879268764ACC8D0F353D88AF234")
     
 public String getUserName() {
@@ -219,7 +219,7 @@ public String getUserName() {
      * @return the authentication username
      * @see #getUserName
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.376 -0500", hash_original_method = "95E3B173DEC08F5D485CDBF035AFC6AC", hash_generated_method = "078780B80C0E2AF331BAB1D8763A6405")
     
 public String getAuthUserName() {
@@ -231,7 +231,7 @@ public String getAuthUserName() {
      *
      * @return the password
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.379 -0500", hash_original_method = "352B20CA8286B4BCFAD735A80A162186", hash_generated_method = "9B2AF8FA5A4898123492BF46BD6C9002")
     
 public String getPassword() {
@@ -245,7 +245,7 @@ public String getPassword() {
      */
     @DSComment("Data structure only, except writeToParcel")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.381 -0500", hash_original_method = "B8163CA1BE0927DF0B70D99008321B49", hash_generated_method = "1DB85475B114B6FF212FD8A1D167E541")
     
 public String getSipDomain() {
@@ -257,7 +257,7 @@ public String getSipDomain() {
      *
      * @return the port number of the SIP server
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.383 -0500", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "33B8E8C1C43AC396F100852932189626")
     
 public int getPort() {
@@ -269,7 +269,7 @@ public int getPort() {
      *
      * @return the protocol
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.386 -0500", hash_original_method = "259570BEE3678204ECD026726561CF7F", hash_generated_method = "8F1EAEC8EB0D8F93DE7E24D552C33424")
     
 public String getProtocol() {
@@ -281,7 +281,7 @@ public String getProtocol() {
      *
      * @return the network address of the server outbound proxy
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.388 -0500", hash_original_method = "3AA5E492CF333F83039FEED9B349A3B0", hash_generated_method = "C6862B17D4584DACD1601D3BC8C9CAF8")
     
 public String getProxyAddress() {
@@ -293,7 +293,7 @@ public String getProxyAddress() {
      *
      * @return name of the profile
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.389 -0500", hash_original_method = "9B8D5C45DA02E326FD388B2D1055F434", hash_generated_method = "6314F94D62800DF6C757400E73F0CAEE")
     
 public String getProfileName() {
@@ -577,7 +577,7 @@ public SipProfile build() {
      *
      * @return the flag of sending SIP keep-alive messages.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.391 -0500", hash_original_method = "0FCF61873B0EC3A9D19B7E99B4FC0FAA", hash_generated_method = "22121916FA3DEAFAF1C056B74068BD16")
     
 public boolean getSendKeepAlive() {
@@ -589,7 +589,7 @@ public boolean getSendKeepAlive() {
      *
      * @return the flag of registering the profile automatically.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.394 -0500", hash_original_method = "BE11F0672CD5463C56A90C5E0BC73CFE", hash_generated_method = "17567A49A3FEC3341D7374C88F33661B")
     
 public boolean getAutoRegistration() {

@@ -504,14 +504,14 @@ void initViews() {
     
     @DSComment("no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.584 -0500", hash_original_method = "F107DE3A8547E443866FF02369203993", hash_generated_method = "4CF1F70C1CBF341A5B589F607395DBC8")
     
 public LayoutInflater getLayoutInflater() {
         return mInflater;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.586 -0500", hash_original_method = "B35683FF457638BA2516208C83F2FBFC", hash_generated_method = "3B26147A9537504F5487B422467FEB84")
     
 public Dialog getWindow() {
@@ -524,7 +524,7 @@ public void setBackDisposition(int disposition) {
         mBackDisposition = disposition;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.591 -0500", hash_original_method = "FA0668AA74F2A3E40C75CD8A8BEC8D4A", hash_generated_method = "00DCF349E7F676C605558BCC0EF33FD8")
     
 public int getBackDisposition() {
@@ -561,7 +561,7 @@ public int getMaxWidth() {
      * Return the currently active InputBinding for the input method, or
      * null if there is none.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.595 -0500", hash_original_method = "064CBE2A131D4B226EADDD6A40CEAEED", hash_generated_method = "B6BEA4C803EDE2F29CDE1D3E32D1286E")
     
 public InputBinding getCurrentInputBinding() {
@@ -574,7 +574,7 @@ public InputBinding getCurrentInputBinding() {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.598 -0500", hash_original_method = "25EFF753F3CF5167178BD7379B9659BF", hash_generated_method = "773E32CFFB6DFB776828E00B3A745593")
     
 public InputConnection getCurrentInputConnection() {
@@ -585,7 +585,7 @@ public InputConnection getCurrentInputConnection() {
         return mInputConnection;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.600 -0500", hash_original_method = "26F207E076BC370412C35CB8C7E97837", hash_generated_method = "632DACABD4ABB9A7681CFF8FCED9BF60")
     
 public boolean getCurrentInputStarted() {
@@ -594,7 +594,7 @@ public boolean getCurrentInputStarted() {
     
     @DSComment("not sensitive")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.602 -0500", hash_original_method = "659C592D4ABB3DB82261D1C4692ABF2E", hash_generated_method = "D176431D91B0F46E596F046F6DFE48B1")
     
 public EditorInfo getCurrentInputEditorInfo() {
@@ -2292,7 +2292,7 @@ public boolean onExtractTextContextMenuItem(int id) {
      * 
      * @return Returns a label to use, or null if there is no action.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.773 -0500", hash_original_method = "9F91BE1CB3CE4671D110A2B57AE2570E", hash_generated_method = "2097EE534C4A509424A681A2B60AC2B1")
     
 public CharSequence getTextForImeAction(int imeOptions) {

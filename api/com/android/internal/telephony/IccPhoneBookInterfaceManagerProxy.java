@@ -52,7 +52,7 @@ public boolean
                 newTag, newPhoneNumber, index, pin2);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.366 -0500", hash_original_method = "1CAFC4CE677429A2AF90987C4E8DEFFE", hash_generated_method = "3BE8329F69EE86FDEEB3C00B73CC018F")
     
 public int[] getAdnRecordsSize(int efid) throws android.os.RemoteException {

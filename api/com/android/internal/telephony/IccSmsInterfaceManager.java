@@ -173,7 +173,7 @@ public void sendMultipartText(String destAddr, String scAddr, List<String> parts
      * @param messages List of message records from EF_SMS.
      * @return SmsRawData list of all in-used records
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.959 -0500", hash_original_method = "26382ED0E59B10B13781F79838E812B0", hash_generated_method = "5DB03524DBBD28AC2186937E3E446110")
     
 protected ArrayList<SmsRawData> buildValidRawData(ArrayList<byte[]> messages) {
@@ -201,7 +201,7 @@ protected ArrayList<SmsRawData> buildValidRawData(ArrayList<byte[]> messages) {
      * @param pdu Raw message PDU.
      * @return byte array for the record.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.961 -0500", hash_original_method = "D79D646E773875E9B0C4106E95D311F1", hash_generated_method = "C7D71DE575D67D09C999189F654E7463")
     
 protected byte[] makeSmsRecordData(int status, byte[] pdu) {

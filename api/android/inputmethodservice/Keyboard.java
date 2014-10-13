@@ -240,7 +240,7 @@ for(int keyIndex = 0;keyIndex < numKeys;++keyIndex)
         // Original Method Too Long, Refer to Original Implementation
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.276 -0400", hash_original_method = "9C5EC889910FC63E2BE3F348DAE4AAAD", hash_generated_method = "6A1C99C56D0E6437E54B114688BD2F7B")
     public List<Key> getKeys() {
 List<Key> var5AEE71826958DB6E612956708AF0BFCD_1356398994 =         mKeys;
@@ -250,7 +250,7 @@ List<Key> var5AEE71826958DB6E612956708AF0BFCD_1356398994 =         mKeys;
         //return mKeys;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.278 -0400", hash_original_method = "E40925805CEC2A064551415A821E0FB9", hash_generated_method = "4EAEA954F4A3DA048442B2088B01A4FA")
     public List<Key> getModifierKeys() {
 List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
@@ -260,7 +260,7 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         //return mModifierKeys;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.279 -0400", hash_original_method = "55D65ED4C1F27D39714A25D8EDD1319F", hash_generated_method = "4C8C68526B6BC25E8E3A8A235A7C8E92")
     protected int getHorizontalGap() {
         int varC79D914900B3B6C61E5B360316CBA655_1518276091 = (mDefaultHorizontalGap);
@@ -277,7 +277,7 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         //mDefaultHorizontalGap = gap;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.283 -0400", hash_original_method = "232957D9F7E6BFBC8E2B05B34F9668F2", hash_generated_method = "183A2F3999BC9AF05C99A33B35BEB238")
     protected int getVerticalGap() {
         int varB90FCDDDE2B86F29C97A0A7D6A048733_359082145 = (mDefaultVerticalGap);
@@ -294,7 +294,7 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         //mDefaultVerticalGap = gap;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.287 -0400", hash_original_method = "8CEE4CDE272B313204033BF04DE43200", hash_generated_method = "B8546B56780D6CDF2C569229B852DCAE")
     protected int getKeyHeight() {
         int var22A67E3B3D6F0C9D7F9CD85B78FCFD44_1819774508 = (mDefaultHeight);
@@ -328,7 +328,7 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         //mDefaultWidth = width;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.298 -0400", hash_original_method = "D150DA54A75C2BA86B65582A3A41C5A6", hash_generated_method = "CA1DF79121F29C143D5A0F624251960C")
     public int getHeight() {
         int var8EF93AC90BB3417A4396010B3DF77EE9_1946702634 = (mTotalHeight);
@@ -389,7 +389,7 @@ for(Key shiftKey : mShiftKeys)
         //return mShifted;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.308 -0400", hash_original_method = "91DF01E3B8C10F94CBF3B151E0DB8E32", hash_generated_method = "475718D9ADAC90FDEFDB8DE868F2D45D")
     public int[] getShiftKeyIndices() {
         int[] var16CC8CC8AD90E69615E18685CCE3D353_32761915 = (mShiftKeyIndices);
@@ -399,7 +399,7 @@ for(Key shiftKey : mShiftKeys)
         //return mShiftKeyIndices;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.310 -0400", hash_original_method = "82B171C39309CF9EDE40413656430B43", hash_generated_method = "A2E685F250BC6E1E70B6308C7389D603")
     public int getShiftKeyIndex() {
         int var0902804C1B4968253FC8F47DBCBBE2B2_1576048204 = (mShiftKeyIndices[0]);
@@ -445,7 +445,7 @@ for(int i = 0;i < mKeys.size();i++)
         // Original Method Too Long, Refer to Original Implementation
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.324 -0400", hash_original_method = "9099142BCFA8D4BBDACC6C89C180FADC", hash_generated_method = "AB115BD961CFFEA0C7C063CDBE8DE68B")
     public int[] getNearestKeys(int x, int y) {
         addTaint(y);
@@ -662,7 +662,7 @@ for(int i = 0;i < mShiftKeys.length;i++)
     
         @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     static int getDimensionOrFraction(TypedArray a, int index, int base, int defValue) {
         TypedValue value = a.peekValue(index);
         if (value == null) return defValue;
@@ -1014,7 +1014,7 @@ for(int i = 0;i < mShiftKeys.length;i++)
             //return xDist * xDist + yDist * yDist;
         }
         
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.417 -0400", hash_original_method = "A312018CFE68CC41CED7C34A2BAC04C3", hash_generated_method = "815782FCC891DA1DF269592299EFAEB9")
         public int[] getCurrentDrawableState() {
             int[] states = KEY_STATE_NORMAL;

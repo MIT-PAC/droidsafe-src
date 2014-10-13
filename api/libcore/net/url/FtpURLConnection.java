@@ -177,7 +177,7 @@ private void cd() throws IOException {
      * @see URLStreamHandler
      */
     @DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.276 -0500", hash_original_method = "1FC662ADE026A6EC6E72DFD849EB4C0C", hash_generated_method = "85E1BD66594FB807FDC8148CFC6E4EC3")
     
 @Override
@@ -325,7 +325,7 @@ private void getFile() throws IOException {
      *
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.286 -0500", hash_original_method = "71DB7CA360B0ED6E855C6F8E83FB7FD7", hash_generated_method = "4C37CF1AFC0137215B4753FA4EA259CA")
     
 @Override

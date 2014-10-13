@@ -144,7 +144,7 @@ public void setHorizontalAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_MEDIUM},
      * {@link #ACCURACY_HIGH} or {@link #NO_REQUIREMENT}.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.300 -0500", hash_original_method = "2F566A20A5A9A3E4947DCE83AA9DF67E", hash_generated_method = "EB8464243AF7ED99CEFF9EF12492C38F")
     
 public int getHorizontalAccuracy() {
@@ -173,7 +173,7 @@ public void setVerticalAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
      * or {@link #NO_REQUIREMENT}.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.305 -0500", hash_original_method = "E46E133CF34270F0210C8D2BD309B3F5", hash_generated_method = "94819062ECBCBB5F4BA9A798966004AB")
     
 public int getVerticalAccuracy() {
@@ -202,7 +202,7 @@ public void setSpeedAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
      * or {@link #NO_REQUIREMENT}.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.309 -0500", hash_original_method = "87339E07174611DFFFF3AC3EA0F5BF3F", hash_generated_method = "D84B90D39E5AACB43C21888DD25278A3")
     
 public int getSpeedAccuracy() {
@@ -231,7 +231,7 @@ public void setBearingAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
      * or {@link #NO_REQUIREMENT}.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.313 -0500", hash_original_method = "0A4814C8F779184929A4F3680AE62C8F", hash_generated_method = "7697EC11E830EBC0BE062129992E126B")
     
 public int getBearingAccuracy() {
@@ -267,7 +267,7 @@ public void setAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_FINE} if desired location
      * is fine, else it can be {@link #ACCURACY_COARSE}.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.318 -0500", hash_original_method = "738CC4C555122D617CAE26F950A7954B", hash_generated_method = "00869F8EC38CFA4A6F3EE3578ACFA369")
     
 public int getAccuracy() {
@@ -298,7 +298,7 @@ public void setPowerRequirement(int level) {
      * Returns a constant indicating the desired power requirement.  The
      * returned
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.323 -0500", hash_original_method = "50AB5D6061392E8FAC8A81CA41B14FB2", hash_generated_method = "3E881DFE958F83CAFAEFC8ECCCA7BA30")
     
 public int getPowerRequirement() {

@@ -243,7 +243,7 @@ public DERObject getLoadedObject()
 abstract void encode(DEROutputStream  out)
         throws IOException;
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.158 -0500", hash_original_method = "5750585E0FAF2C7F60E10F96F297B6DF", hash_generated_method = "103ACC5A0DA98A573B1996BD5781ECB8")
     

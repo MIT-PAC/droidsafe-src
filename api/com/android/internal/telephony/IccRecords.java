@@ -112,7 +112,7 @@ public abstract void dispose();
 protected abstract void onRadioOffOrNotAvailable();
 
     //***** Public Methods
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.973 -0500", hash_original_method = "6A785FD128F813B36570564C326DA1E7", hash_generated_method = "F54AB348B8B82CC266C9D70F9FD31DA4")
     
 public AdnRecordCache getAdnCache() {
@@ -143,7 +143,7 @@ public void unregisterForRecordsLoaded(Handler h) {
      *
      * @return null if SIM is not yet ready or unavailable
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.980 -0500", hash_original_method = "2D99B4210681FA66696D3EA5B94D1A66", hash_generated_method = "D07FF8ECA1A43CBFAF7B5B8FA1903995")
     
 public String getIMSI() {
@@ -189,7 +189,7 @@ public void setMsisdnNumber(String alphaTag, String number,
                 obtainMessage(EVENT_SET_MSISDN_DONE, onComplete));
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.988 -0500", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "1B4AFE5064CD03ADA2B3761686668224")
     
 public String getMsisdnAlphaTag() {
@@ -245,7 +245,7 @@ public String getServiceProviderName() {
 public abstract void setVoiceMailNumber(String alphaTag, String voiceNumber,
             Message onComplete);
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.997 -0500", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "6D7368A0D77DC432B7AD7E84B26C6DBA")
     
 public String getVoiceMailAlphaTag() {
@@ -266,7 +266,7 @@ public String getVoiceMailAlphaTag() {
 public abstract void setVoiceMessageWaiting(int line, int countWaiting);
 
     /** @return  true if there are messages waiting, false otherwise. */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.002 -0500", hash_original_method = "2B603A0C333C2CCE42826636EDAB70FC", hash_generated_method = "C9243707B25847389D532C5A4935E3B8")
     
 public boolean getVoiceMessageWaiting() {
@@ -278,7 +278,7 @@ public boolean getVoiceMessageWaiting() {
      * If not available (eg, on an older CPHS SIM) -1 is returned if
      * getVoiceMessageWaiting() is true
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.005 -0500", hash_original_method = "E7F9312CD80A2D040F1A458CAC0EDAD1", hash_generated_method = "E64BBB2EF71825FBED23550C0B065816")
     
 public int getVoiceMessageCount() {
@@ -296,7 +296,7 @@ public int getVoiceMessageCount() {
     
 public abstract void onRefresh(boolean fileChanged, int[] fileList);
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.009 -0500", hash_original_method = "4C58BD1C1A36FD4BA9D906F07C4CE729", hash_generated_method = "2DE8597787F0514D4E7C8099C0FD095B")
     
 public boolean getRecordsLoaded() {
@@ -382,7 +382,7 @@ public boolean isCspPlmnEnabled() {
      * or is not valid for the type of IccCard. Generally used for
      * GSM/UMTS and the like SIMS
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.023 -0500", hash_original_method = "9AAC604385E70B59FD0C2282B5610980", hash_generated_method = "1740F4A1C31AFBDD107474BA66B0ED09")
     
 public String getOperatorNumeric() {
@@ -403,7 +403,7 @@ public String getOperatorNumeric() {
      *
      * @return true if enabled
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.026 -0500", hash_original_method = "2E5510735E3E74118CEEB63E6C24CB4C", hash_generated_method = "ECB5C300527CA9DF7B638E841845ACC4")
     
 public boolean getVoiceCallForwardingFlag() {
@@ -460,14 +460,14 @@ protected abstract void loge(String s);
      * Return an interface to retrieve the ISIM records for IMS, if available.
      * @return the interface to retrieve the ISIM records, or null if not supported
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.037 -0500", hash_original_method = "F728AE330C688766112F3603C63CB40C", hash_generated_method = "F38716A79F5F207C64B6480E1897599F")
     
 public IsimRecords getIsimRecords() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.040 -0500", hash_original_method = "EA614E93014D97DC1971866BFCB21C89", hash_generated_method = "E6E534FEEFC1CCE8640124F46C5DCEAD")
     
 public UsimServiceTable getUsimServiceTable() {

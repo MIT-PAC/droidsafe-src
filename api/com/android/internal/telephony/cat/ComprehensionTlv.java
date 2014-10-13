@@ -162,7 +162,7 @@ protected ComprehensionTlv(int tag, boolean cr, int length, byte[] data,
         mRawValue = data;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.947 -0500", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "92179372CE49E6423B644726BDCEE63E")
     
 public int getTag() {
@@ -175,21 +175,21 @@ public boolean isComprehensionRequired() {
         return mCr;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.952 -0500", hash_original_method = "6E6502D65176BC2328E9B790ED2B205C", hash_generated_method = "544B3A7F11FA8D9AB474295517BA3BC2")
     
 public int getLength() {
         return mLength;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.954 -0500", hash_original_method = "6B24631B893BC9498B1E30027D9EDCB1", hash_generated_method = "C9F0841A43D3E17AA9D4067501A54E3F")
     
 public int getValueIndex() {
         return mValueIndex;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.956 -0500", hash_original_method = "2E1D90837620CE8C27D1ADC653AC7836", hash_generated_method = "6CD4DDF687E624B08BD9D8D0A92D95AE")
     
 public byte[] getRawValue() {

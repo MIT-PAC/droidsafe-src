@@ -125,7 +125,7 @@ public AuthScope(final AuthScope authscope) {
     /**
      * @return the host
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.603 -0500", hash_original_method = "052AA62CF2AFB76178CB036EF4B7BAB4", hash_generated_method = "C50FCE23852EDA3AF845FEC4AC445DA3")
     
 public String getHost() {
@@ -232,7 +232,7 @@ public int match(final AuthScope that) {
     /**
      * @see java.lang.Object#toString()
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.618 -0500", hash_original_method = "AA52C08879A8120A7A68C6044F6A755A", hash_generated_method = "30AE26B8763C7672EA6ED3EAF23EED6C")
     

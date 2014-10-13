@@ -45,7 +45,7 @@ public boolean copyMessageToIccEf(int status, byte[] pdu,
         return mIccSmsInterfaceManager.copyMessageToIccEf(status, pdu, smsc);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.309 -0500", hash_original_method = "6F960BE075575D7400653ACEFE5617FE", hash_generated_method = "3EE3342D94CCAF39D397AD1D6B31B932")
     
 public List<SmsRawData> getAllMessagesFromIccEf() throws android.os.RemoteException {

@@ -66,7 +66,7 @@ public static int
         //Synthesized constructor
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.345 -0500", hash_original_method = "7BACCCFD399686BD18F0B929D0C46F63", hash_generated_method = "92BEBCF1C005A037AEE58D191E487C04")
     

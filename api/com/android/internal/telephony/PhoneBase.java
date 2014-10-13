@@ -988,7 +988,7 @@ public void setPreferredNetworkType(int networkType, Message response) {
         mCM.setPreferredNetworkType(networkType, response);
     }
 
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:20.542 -0500", hash_original_method = "379A4BC143905A2FA132EF757E52297F", hash_generated_method = "964A3A7FA8B49FA6E5C9C1F03E577710")
     
 public void getPreferredNetworkType(Message response) {

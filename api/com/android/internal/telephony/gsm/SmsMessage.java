@@ -128,7 +128,7 @@ public static SmsMessage createFromEfRecord(int index, byte[] data) {
      * Get the TP-Layer-Length for the given SMS-SUBMIT PDU Basically, the
      * length in bytes (not hex chars) less the SMSC header
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.021 -0500", hash_original_method = "C944CD27F2D3E7001043FCCEFD128BFD", hash_generated_method = "46461381B45FD8583C9EA7263AB16736")
     
 public static int getTPLayerLengthForPDU(String pdu) {
@@ -530,7 +530,7 @@ public boolean isTypeZero() {
     }
 
     /** {@inheritDoc} */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.100 -0500", hash_original_method = "E7C032F027F70A1B6B025F651AAD0755", hash_generated_method = "D0A3376B6F4063092AC4655CAD816EF4")
     
 @Override
@@ -544,7 +544,7 @@ public boolean isTypeZero() {
      */
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.102 -0500", hash_original_method = "5E449C3565950C318CBD3ECE2F1F0BD6", hash_generated_method = "5E449C3565950C318CBD3ECE2F1F0BD6")
     
 int getDataCodingScheme() {
@@ -619,7 +619,7 @@ int getDataCodingScheme() {
     }
 
     /** {@inheritDoc} */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.118 -0500", hash_original_method = "A6874122EB6D2A9BF852845259D73D4C", hash_generated_method = "6725D3B3E5383D07C3E186E5387548AF")
     
 @Override
@@ -987,7 +987,7 @@ PduParser(byte[] pdu) {
          */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.061 -0500", hash_original_method = "99E23657D695EA8C595E80B24F474921", hash_generated_method = "243F2B931658B5001F9E98F7D11774DD")
         
 String getSCAddress() {
@@ -1021,7 +1021,7 @@ String getSCAddress() {
          */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.064 -0500", hash_original_method = "2F75C981EB64A28A85FF5D6FE13A88A1", hash_generated_method = "2F75C981EB64A28A85FF5D6FE13A88A1")
         
 int getByte() {
@@ -1034,7 +1034,7 @@ int getByte() {
          */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.066 -0500", hash_original_method = "F408E9DA0C4025DEBACF10CB13B7E7DC", hash_generated_method = "70AAB02D2D20B1391B02DB280AF4CC74")
         
 GsmSmsAddress getAddress() {
@@ -1061,7 +1061,7 @@ GsmSmsAddress getAddress() {
 
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.070 -0500", hash_original_method = "E4DF9155D0C40868D52456F5AA0ADEBA", hash_generated_method = "6D607DB2DE95B38F8D534CC70486F143")
         
 long getSCTimestampMillis() {
@@ -1173,7 +1173,7 @@ int constructUserData(boolean hasUserDataHeader, boolean dataInSeptets) {
          */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.075 -0500", hash_original_method = "832EF14448695517A54541076D502A0C", hash_generated_method = "832EF14448695517A54541076D502A0C")
         
 byte[] getUserData() {
@@ -1189,7 +1189,7 @@ byte[] getUserData() {
          */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.077 -0500", hash_original_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9", hash_generated_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9")
         
 int getUserDataSeptetPadding() {
@@ -1203,7 +1203,7 @@ int getUserDataSeptetPadding() {
          */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.079 -0500", hash_original_method = "4DA43BCCB17FE826B675411D64594E85", hash_generated_method = "4DA43BCCB17FE826B675411D64594E85")
         
 SmsHeader getUserDataHeader() {
@@ -1219,7 +1219,7 @@ SmsHeader getUserDataHeader() {
          */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.082 -0500", hash_original_method = "51731F422A9CB8603202E115B88733FC", hash_generated_method = "51731F422A9CB8603202E115B88733FC")
         
 String getUserDataGSM7Bit(int septetCount, int languageTable,
@@ -1243,7 +1243,7 @@ String getUserDataGSM7Bit(int septetCount, int languageTable,
          */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.085 -0500", hash_original_method = "97FC9E20E0F795CD7B2A52C595E2E8DE", hash_generated_method = "97FC9E20E0F795CD7B2A52C595E2E8DE")
         
 String getUserDataUCS2(int byteCount) {
@@ -1269,7 +1269,7 @@ String getUserDataUCS2(int byteCount) {
          */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.088 -0500", hash_original_method = "D8D8AF92C3889C36EC89CBE6C5FEE71F", hash_generated_method = "D8D8AF92C3889C36EC89CBE6C5FEE71F")
         
 String getUserDataKSC5601(int byteCount) {

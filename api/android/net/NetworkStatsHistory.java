@@ -252,14 +252,14 @@ public int size() {
         return bucketCount;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.485 -0500", hash_original_method = "D0E743773F77C0F20C1DE2E3BE48F30B", hash_generated_method = "F4EF50E64ED121D5FB37AC5426615CCE")
     
 public long getBucketDuration() {
         return bucketDuration;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.487 -0500", hash_original_method = "0DA78BB7B3F99E1543E4DC9DFD2BD9F4", hash_generated_method = "D81F7F9D960A997742FEAD9FBF254858")
     
 public long getStart() {
@@ -270,7 +270,7 @@ public long getStart() {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.489 -0500", hash_original_method = "D4476AE88A84FACA51BF4BF1E3EE2F8D", hash_generated_method = "647A0BEB8A762AF3AE998B23B95B98F6")
     
 public long getEnd() {
@@ -285,7 +285,7 @@ public long getEnd() {
      * Return index of bucket that contains or is immediately before the
      * requested time.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.492 -0500", hash_original_method = "44CA8F6D269FC47862A9173C06F73618", hash_generated_method = "9775442B5D2C0BFF5F821524E90E04DE")
     
 public int getIndexBefore(long time) {
@@ -302,7 +302,7 @@ public int getIndexBefore(long time) {
      * Return index of bucket that contains or is immediately after the
      * requested time.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.494 -0500", hash_original_method = "44680AD61A9756C7015B14278BDED4D1", hash_generated_method = "E571632BDC27D70F8B4B5FBF02D40351")
     
 public int getIndexAfter(long time) {

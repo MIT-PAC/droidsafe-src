@@ -61,7 +61,7 @@ protected OpenSSLServerSocketImpl(int port,
         this.sslParameters = sslParameters;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.880 -0500", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "F0850E2B8F230278D1EE6575AFA464E6")
     
 @Override
@@ -82,7 +82,7 @@ protected OpenSSLServerSocketImpl(int port,
      * connection.
      * @return an array of protocols names
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.885 -0500", hash_original_method = "B10F1AAC80A139AD997D0D8B0338DD89", hash_generated_method = "AC03A33ED96900A1F6F22E082B4D218D")
     
 @Override
@@ -120,7 +120,7 @@ protected OpenSSLServerSocketImpl(int port,
         enabledProtocols = NativeCrypto.checkEnabledProtocols(protocols);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.892 -0500", hash_original_method = "1B8AAFC0DA0BD632205C9BB94F36BE40", hash_generated_method = "FC9C3F1BC74E6756C08730F8099184A3")
     
 @Override
@@ -178,7 +178,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         enabledCompressionMethods = NativeCrypto.checkEnabledCompressionMethods(methods);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.905 -0500", hash_original_method = "BFCFACF4683D2DA63944456ACA1AFE4C", hash_generated_method = "C498EFFB7EA33937BE58E3D8E2A82C77")
     
 @Override
@@ -194,7 +194,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         sslParameters.setWantClientAuth(want);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.910 -0500", hash_original_method = "01CDFCACAD6C113BE18D967A4C320F8F", hash_generated_method = "1AC7C5FF07516804848811840A468A8B")
     
 @Override
@@ -218,7 +218,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         sslParameters.setUseClientMode(mode);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.917 -0500", hash_original_method = "01F03276D647357C499C358366605A7A", hash_generated_method = "C189C4A91AE7529C93E5FE1A68636F7D")
     
 @Override

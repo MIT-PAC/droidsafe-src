@@ -166,7 +166,7 @@ protected RouteSpecificPool getRoutePool(HttpRoute route,
     }
 
     //@@@ consider alternatives for gathering statistics
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.282 -0500", hash_original_method = "BC602BD8B10C5776DF65F2D8A63D167D", hash_generated_method = "1F8CB93833AC002F19CB03C0E120A93D")
     
 public int getConnectionsInPool(HttpRoute route) {

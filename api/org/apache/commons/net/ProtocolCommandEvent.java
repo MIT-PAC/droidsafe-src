@@ -167,7 +167,7 @@ public boolean isReply()
      * <p>
      * @return The entire message sent to or received from the server.
      ***/
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:38:11.882 -0500", hash_original_method = "FA236082A8FEACD0E825C22F5D6921C2", hash_generated_method = "6038A56F1274B114EF2CB0ABD692B0C9")
     @DSComment("getter function")
     @DSSafe(DSCat.SAFE_OTHERS)

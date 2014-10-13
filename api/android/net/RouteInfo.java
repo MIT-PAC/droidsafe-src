@@ -176,14 +176,14 @@ private boolean isDefault() {
         return val;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.049 -0500", hash_original_method = "1DFF4C9A700CC3886F6C70CFCDBFA85F", hash_generated_method = "AFA3FBEF4C70A0EA4281450697C789A6")
     
 public LinkAddress getDestination() {
         return mDestination;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.051 -0500", hash_original_method = "EBF08E83FF9E78B73EDA9A9990BB8494", hash_generated_method = "4C54B4C28077AFC9A5FA43B4F820BE9B")
     
 public InetAddress getGateway() {

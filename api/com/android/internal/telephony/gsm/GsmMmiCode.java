@@ -614,7 +614,7 @@ public State
         return state;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.826 -0500", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "5CEF4B02F22CFEE27A7F9878596252B0")
     
 public CharSequence
@@ -721,7 +721,7 @@ boolean
      */
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.852 -0500", hash_original_method = "29290542493AE0E5F1628242CAC04AE5", hash_generated_method = "29290542493AE0E5F1628242CAC04AE5")
     
 int

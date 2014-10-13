@@ -24,7 +24,7 @@ DefaultSSLServerSocketFactory(String mes) {
         errMessage = mes;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.044 -0500", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "75E10C557E5ED421A6A96DF7BC668ED0")
     
 @Override
@@ -32,7 +32,7 @@ DefaultSSLServerSocketFactory(String mes) {
         return EmptyArray.STRING;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.047 -0500", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "EF7DACA8298C2A694CB6406898565668")
     
 @Override

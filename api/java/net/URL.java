@@ -559,7 +559,7 @@ public URI toURILenient() throws URISyntaxException {
      * this URL. The returned string is the same as the result of the method
      * {@code toExternalForm()}.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("no suspicious activity, just calls class function")
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.827 -0500", hash_original_method = "9D75BD75136BEBAB4AE2F806E85803AD", hash_generated_method = "F41EB6D03A99F60D56FE9D7C7FCBDF03")

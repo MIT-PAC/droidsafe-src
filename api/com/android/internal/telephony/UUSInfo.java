@@ -69,7 +69,7 @@ public UUSInfo(int uusType, int uusDcs, byte[] uusData) {
         this.uusData = uusData;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.998 -0500", hash_original_method = "352357FC22D874D178D2C62527C60010", hash_generated_method = "D8A68906E0A1B676D09C265ADB1341BD")
     
 public int getDcs() {
@@ -82,7 +82,7 @@ public void setDcs(int uusDcs) {
         this.uusDcs = uusDcs;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.002 -0500", hash_original_method = "C3F90AEC24B57BCB14BA37794741B56A", hash_generated_method = "3DC43089F580225612164102460EA340")
     
 public int getType() {
@@ -95,7 +95,7 @@ public void setType(int uusType) {
         this.uusType = uusType;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.007 -0500", hash_original_method = "CBC9083E31E276860957A8B7835786FF", hash_generated_method = "92D8CDF2DC5F5446A34943FEE234D686")
     
 public byte[] getUserData() {

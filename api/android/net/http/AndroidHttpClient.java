@@ -154,7 +154,7 @@ public static InputStream getUngzippedContent(HttpEntity entity)
      * @param data The bytes to compress
      * @return Entity holding the data
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.305 -0500", hash_original_method = "586A4DE9A7BEA0D61F483CA95951D7E7", hash_generated_method = "1F03825B8352BD0C2FBFC0CD948614D3")
     
 public static AbstractHttpEntity getCompressedEntity(byte data[], ContentResolver resolver)
@@ -177,7 +177,7 @@ public static AbstractHttpEntity getCompressedEntity(byte data[], ContentResolve
      * Retrieves the minimum size for compressing data.
      * Shorter data will not be compressed.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.307 -0500", hash_original_method = "00A5E5473EE4C9FC1A353D8B3CCE7E3C", hash_generated_method = "8B574BF026C27475130E8DE9C55EC22D")
     
 public static long getMinGzipSize(ContentResolver resolver) {
@@ -348,7 +348,7 @@ public static long parseDate(String dateString) {
     
 private AndroidHttpClient(ClientConnectionManager ccm, HttpParams params) {
         this.delegate = new DefaultHttpClient(ccm, params) {
-            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSSource({DSSourceKind.NETWORK})
         @Override
             protected BasicHttpProcessor createHttpProcessor() {
                 // Add interceptor to prevent making requests from main thread.
@@ -412,7 +412,7 @@ public HttpParams getParams() {
         return delegate.getParams();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.281 -0500", hash_original_method = "53260AB8F43CDB4D95BC832EBA5D95FD", hash_generated_method = "5F4D78440F220D2DB6534D9486F68957")
     
 public ClientConnectionManager getConnectionManager() {

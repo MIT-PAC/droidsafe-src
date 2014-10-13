@@ -91,11 +91,11 @@ public class MapView extends ViewGroup
     }
 
     @DSSafe(DSCat.SOURCE)    
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     public int getLatitudeSpan() { return getTaintInt(); }
     
     @DSSafe(DSCat.SOURCE)    
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     public int getLongitudeSpan() { return getTaintInt();}
     
     @DSSafe(DSCat.GUI)

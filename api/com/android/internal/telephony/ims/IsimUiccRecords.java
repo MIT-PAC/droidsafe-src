@@ -105,7 +105,7 @@ void log(String s) {
         {
             //Synthesized constructor
         }
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.905 -0500", hash_original_method = "81740E578FCC01A298E59A120ACB7A20", hash_generated_method = "BEE5E19915FCA317DBE884B194D8CD87")
         
 public String getEfName() {
@@ -128,7 +128,7 @@ public void onRecordLoaded(AsyncResult ar) {
         {
             //Synthesized constructor
         }
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.913 -0500", hash_original_method = "6ACADD4D30DF15849A74BDE374634092", hash_generated_method = "7D4AAE68E3498576AF02DACE532CB04F")
         
 public String getEfName() {
@@ -157,7 +157,7 @@ public void onRecordLoaded(AsyncResult ar) {
         {
             //Synthesized constructor
         }
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.921 -0500", hash_original_method = "42CE7E28C1D31526FC06B2AB64B01116", hash_generated_method = "0DEBF20B3A0FC149A864AFCF5C1CC810")
         
 public String getEfName() {
@@ -186,7 +186,7 @@ void loge(String s) {
      * Returns null if the IMPI hasn't been loaded or isn't present on the ISIM.
      * @return the IMS private user identity string, or null if not available
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.938 -0500", hash_original_method = "0C48887FF3A7960AF9ADE0B3DADCC487", hash_generated_method = "262B6AF4C0CB2FB6F8BDFCF66BBA7630")
     
 public String getIsimImpi() {
@@ -198,7 +198,7 @@ public String getIsimImpi() {
      * Returns null if the IMS domain hasn't been loaded or isn't present on the ISIM.
      * @return the IMS home network domain name, or null if not available
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.940 -0500", hash_original_method = "4243CC1C17FF1186628D392C9E7E1EB1", hash_generated_method = "C57F990C7B2B0F2B5409D3AF146913D2")
     
 public String getIsimDomain() {
@@ -210,7 +210,7 @@ public String getIsimDomain() {
      * Returns null if the IMPU hasn't been loaded or isn't present on the ISIM.
      * @return an array of IMS public user identity strings, or null if not available
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.943 -0500", hash_original_method = "9090A8F6ED42A9AE952A72E5A0840C23", hash_generated_method = "87737102519F03269A9C1EC738B780F8")
     
 public String[] getIsimImpu() {

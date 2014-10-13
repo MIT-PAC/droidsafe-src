@@ -10,14 +10,14 @@ public class GeoPoint
         
     }
     
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSSafe(DSCat.LOCATION)
     public int getLatitudeE6()
     {
         return 0;
     }
     
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSSafe(DSCat.LOCATION)
     public int getLongitudeE6() 
     { 
@@ -35,7 +35,7 @@ public class GeoPoint
         return this == paramObject;
     }
     
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSSafe(DSCat.LOCATION)
     public int hashCode() { 
         return 0;

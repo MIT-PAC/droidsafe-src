@@ -3706,7 +3706,7 @@ private int computeRealVerticalScrollRange() {
      * @return The url for the current page.
      */
     @DSSpec(DSCat.URI_EXCHANGE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.790 -0500", hash_original_method = "C4EBBFF9818941C5D5824E8B3F51971E", hash_generated_method = "F38C676B99E9ECCC987DAE6C3277ADF4")
     
 public String getUrl() {
@@ -10070,7 +10070,7 @@ public void run() {
                 //Synthesized constructor
             }
 
-            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSSource({DSSourceKind.NETWORK})
             @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.565 -0500", hash_original_method = "47413D805E887745DF3971F679277823", hash_generated_method = "E7A0B18763B46172481F8F37425DB151")
             

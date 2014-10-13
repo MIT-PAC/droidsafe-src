@@ -246,7 +246,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mImeiSv;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.675 -0500", hash_original_method = "9816ECED47475DB23BCECA20DA4E2B5A", hash_generated_method = "78B92215C2B85EF5F14717FCDA18017C")
     
 @Override
@@ -262,7 +262,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mIccRecords.getMsisdnNumber();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.680 -0500", hash_original_method = "4DC55439AC7C450EEFD22BFFC07D3CE9", hash_generated_method = "4B89959CC41D0CB5D374F11DBE99A97A")
     
 @Override

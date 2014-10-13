@@ -993,7 +993,7 @@ void putAttribute(String name, String value) {
          *
          * @return the type of this {@code Service}.
          */
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.651 -0500", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "B5025B3379E65F477B29B0C5C8B783DF")
         
 public final String getType() {
@@ -1007,7 +1007,7 @@ public final String getType() {
          * @return the name of the algorithm implemented by this {@code
          *         Service}.
          */
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.654 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
         
 public final String getAlgorithm() {
@@ -1031,7 +1031,7 @@ public final Provider getProvider() {
          *
          * @return the name of the class implementing this {@code Service}.
          */
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.659 -0500", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "6F8397AF6B6307E3E16D7AA5343B4357")
         
 public final String getClassName() {
@@ -1048,7 +1048,7 @@ public final String getClassName() {
          * @throws NullPointerException
          *             if {@code name} is {@code null}.
          */
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.662 -0500", hash_original_method = "0C10317D01C11D1034B9356679E58CA0", hash_generated_method = "C0E670EE7DC6D3A2B10A0AC8916D30AF")
         
 public final String getAttribute(String name) {
@@ -1063,7 +1063,7 @@ public final String getAttribute(String name) {
 
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.664 -0500", hash_original_method = "7A6F8F40D5019A1C644CF7CAD3518923", hash_generated_method = "7A6F8F40D5019A1C644CF7CAD3518923")
         
 List<String> getAliases() {

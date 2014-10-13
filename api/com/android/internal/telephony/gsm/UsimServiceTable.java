@@ -20,7 +20,7 @@ public boolean isAvailable(UsimService service) {
         return super.isAvailable(service.ordinal());
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.723 -0500", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "B571DFE3EED0772F1CF5DFD247BE4C20")
     
 @Override
@@ -28,7 +28,7 @@ public boolean isAvailable(UsimService service) {
         return "UsimServiceTable";
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.725 -0500", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "9AF79B41A56042B3A8942DF1FC353844")
     
 @Override

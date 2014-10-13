@@ -43,7 +43,7 @@ public Node appendChild(Node newChild) throws DOMException {
         return insertChildAt(newChild, children.size());
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.633 -0500", hash_original_method = "8F58F724DAE50380735EAE0A1E873E0C", hash_generated_method = "5A0137E101F54A715AFCF24EC1D83A21")
     
 public NodeList getChildNodes() {
@@ -56,21 +56,21 @@ public NodeList getChildNodes() {
         return list;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.635 -0500", hash_original_method = "135BB34C460FCFA99784841F3EF5F177", hash_generated_method = "ECCFB26398F78676F565BA5D66A09E5B")
     
 public Node getFirstChild() {
         return (!children.isEmpty() ? children.get(0) : null);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.638 -0500", hash_original_method = "56E890D8D2E0854FB8D72E107BF6DE5B", hash_generated_method = "1406C87A3999DDE1FCC445B82FD39ED1")
     
 public Node getLastChild() {
         return (!children.isEmpty() ? children.get(children.size() - 1) : null);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.640 -0500", hash_original_method = "DC63B22231FC6D38D6E19E3A9D1523CF", hash_generated_method = "FC6A26CA5BCFEAD3D28518BEEF4E3F1F")
     
 public Node getNextSibling() {
@@ -109,7 +109,7 @@ public Node insertBefore(Node newChild, Node refChild) throws DOMException {
      */
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.648 -0500", hash_original_method = "CC52893233A8017E84157556EAC90FCB", hash_generated_method = "CC52893233A8017E84157556EAC90FCB")
     
 Node insertChildAt(Node newChild, int index) throws DOMException {
@@ -220,7 +220,7 @@ public Node replaceChild(Node newChild, Node oldChild) throws DOMException {
         return oldChild;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.662 -0500", hash_original_method = "32F8137481F8B7A6AF322114BC5A4B22", hash_generated_method = "CF8BCE57276D2FB5C5A25597BC22E7D3")
     
 public String getTextContent() throws DOMException {
@@ -241,7 +241,7 @@ public String getTextContent() throws DOMException {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.664 -0500", hash_original_method = "1B7875C51CF051392D3264002D3285E5", hash_generated_method = "1B7875C51CF051392D3264002D3285E5")
     
 void getTextContent(StringBuilder buf) throws DOMException {
@@ -266,7 +266,7 @@ final boolean hasTextContent(Node child) {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.668 -0500", hash_original_method = "FBC9DCE28E1410ABABC4D8105012C635", hash_generated_method = "FBC9DCE28E1410ABABC4D8105012C635")
     
 void getElementsByTagName(NodeListImpl out, String name) {
@@ -283,7 +283,7 @@ void getElementsByTagName(NodeListImpl out, String name) {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.671 -0500", hash_original_method = "E06ADC8546BD526D25CE87ECAD401587", hash_generated_method = "E06ADC8546BD526D25CE87ECAD401587")
     
 void getElementsByTagNameNS(NodeListImpl out, String namespaceURI, String localName) {

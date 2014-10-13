@@ -94,7 +94,7 @@ public class MyLocationOverlay extends Overlay
     
     public Location getLastFix() { return new Location("GPS"); }
     
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     public float getOrientation() { return getTaintFloat(); }
     
     public boolean isMyLocationEnabled() { return getTaintBoolean(); }

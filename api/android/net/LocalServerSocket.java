@@ -63,7 +63,7 @@ public LocalServerSocket(FileDescriptor fd) throws IOException
      *
      * @return local address
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.243 -0500", hash_original_method = "E608923787A6482FF0ABAB03074C01F6", hash_generated_method = "7955BA736BD8AD783B98FFDED7E574D5")
     
 public LocalSocketAddress getLocalSocketAddress()
@@ -94,7 +94,7 @@ public LocalSocket accept() throws IOException
      *
      * @return fd or null
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.247 -0500", hash_original_method = "48E5039C4FB2B8BAB81B3561EAA65E0E", hash_generated_method = "0FA483774DCFD89C5E0A6792E5C45D30")
     
 public FileDescriptor getFileDescriptor() {

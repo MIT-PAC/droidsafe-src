@@ -51,7 +51,7 @@ protected SSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.ssl.SSLServerSocketFactory#getDefaultCipherSuites()
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.126 -0500", hash_original_method = "D2E4703F25DE73045253D43D661F8658", hash_generated_method = "F28A7F75D17BAB5AF6CF7A48106E8A68")
     
 @Override
@@ -65,7 +65,7 @@ protected SSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.ssl.SSLServerSocketFactory#getSupportedCipherSuites()
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.129 -0500", hash_original_method = "107E6937D2B525F81A260013B97CF7D4", hash_generated_method = "ADFA088456815838E904E8BFB04AE9AA")
     
 @Override

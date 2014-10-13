@@ -345,7 +345,7 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
 public SmsHeader() {}
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.717 -0500", hash_original_method = "3B501A432F153619ABA258E9F603F65E", hash_generated_method = "A70A906DA2583C1C28BD7D300E931087")
     
 @Override

@@ -89,7 +89,7 @@ void restartConnection(boolean abort) {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.421 -0500", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "28A13316B46B35CCB565BDA96B57339B")
     
 String getScheme() {

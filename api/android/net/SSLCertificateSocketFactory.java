@@ -38,7 +38,7 @@ public class SSLCertificateSocketFactory extends SSLSocketFactory {
      *         for none.  The socket timeout is reset to 0 after the handshake.
      * @return a new SSLSocketFactory with the specified parameters
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.577 -0500", hash_original_method = "9B83296BE05C48282E9011D28DDCB54A", hash_generated_method = "CB977BF0A1060F0AE5EA7CA6E29C8F81")
     
 public static SocketFactory getDefault(int handshakeTimeoutMillis) {
@@ -54,7 +54,7 @@ public static SocketFactory getDefault(int handshakeTimeoutMillis) {
      * @param cache The {@link SSLSessionCache} to use, or null for no cache.
      * @return a new SSLSocketFactory with the specified parameters
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.579 -0500", hash_original_method = "D309EC844DB2702B3C1C595ED44EB7A8", hash_generated_method = "A1A1C3D80A49D2EB99337C229B0EA022")
     
 public static SSLSocketFactory getDefault(int handshakeTimeoutMillis, SSLSessionCache cache) {
@@ -73,7 +73,7 @@ public static SSLSocketFactory getDefault(int handshakeTimeoutMillis, SSLSession
      * @param cache The {@link SSLSessionCache} to use, or null for no cache.
      * @return an insecure SSLSocketFactory with the specified parameters
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.582 -0500", hash_original_method = "C4FBB842E4910E23FBBA605D8D51EE7B", hash_generated_method = "5FA2F21F66AC9F08D4E7CB28250381CD")
     
 public static SSLSocketFactory getInsecure(int handshakeTimeoutMillis, SSLSessionCache cache) {
@@ -89,7 +89,7 @@ public static SSLSocketFactory getInsecure(int handshakeTimeoutMillis, SSLSessio
      * @param cache The {@link SSLSessionCache} to use, or null for no cache.
      * @return a new SocketFactory with the specified parameters
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.584 -0500", hash_original_method = "B91AC610B6C1C479BA647D792CBD1DEC", hash_generated_method = "8E07145F90B05324EC9374A411254DB7")
     
 public static org.apache.http.conn.ssl.SSLSocketFactory getHttpSocketFactory(
@@ -153,7 +153,7 @@ private static boolean isSslCheckRelaxed() {
 
     private static final TrustManager[] INSECURE_TRUST_MANAGER = new TrustManager[] {
         new X509TrustManager() {
-            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.545 -0500", hash_original_method = "26F2D3EE02564BFED1F63E8224D261E2", hash_generated_method = "4B421804C4196085705F57A169F61AAF")
         
 public X509Certificate[] getAcceptedIssuers() { return null; }
@@ -397,7 +397,7 @@ public void setKeyManagers(KeyManager[] keyManagers) {
         return s;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.615 -0500", hash_original_method = "6359CF219DCC414C7F8837CF1055EDC0", hash_generated_method = "3BE7DC34A9F64CDA0387010A3791573C")
     
 @Override
@@ -405,7 +405,7 @@ public void setKeyManagers(KeyManager[] keyManagers) {
         return getDelegate().getSupportedCipherSuites();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.617 -0500", hash_original_method = "51E2A3335139F25255D5BC1DBCD2892E", hash_generated_method = "5731D498CD82ADFFA650F550E298D16E")
     
 @Override

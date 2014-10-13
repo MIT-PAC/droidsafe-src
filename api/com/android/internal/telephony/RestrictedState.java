@@ -108,7 +108,7 @@ public boolean isCsRestricted() {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.871 -0500", hash_original_method = "845D0E6369A38FB89C7B9C67406A7898", hash_generated_method = "11081E9454E6AB52E292A7C378A60628")
     
 @Override

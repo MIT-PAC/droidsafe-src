@@ -144,14 +144,14 @@ RuimRecords(CDMAPhone p) {
         recordsRequested = false;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.895 -0500", hash_original_method = "08E37B8778E680438FC3D481E4B7618D", hash_generated_method = "882E7F333F5853919445F1FD999C5C7B")
     
 public String getMdnNumber() {
         return mMyMobileNumber;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.898 -0500", hash_original_method = "70E8E8D1A91067A8AAF119FFCE233CA9", hash_generated_method = "5920C3FD27058F950B22AF9ACF76F346")
     
 public String getCdmaMin() {
@@ -159,7 +159,7 @@ public String getCdmaMin() {
     }
 
     /** Returns null if RUIM is not yet ready */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.900 -0500", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "7DD390FA72255EC2B3B0362AC1AB9654")
     
 public String getPrlVersion() {
@@ -199,7 +199,7 @@ public String getPrlVersion() {
      * Returns the 5 or 6 digit MCC/MNC of the operator that
      *  provided the RUIM card. Returns null of RUIM is not yet ready
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.910 -0500", hash_original_method = "1499AC64B3568BF128EFDB3C9845AC3C", hash_generated_method = "951A50BCD18A3DFD623BEB79035586BE")
     
 public String getRUIMOperatorNumeric() {
@@ -421,7 +421,7 @@ private void fetchRuimRecords() {
      *
      * No Display rule for RUIMs yet.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.929 -0500", hash_original_method = "409F5B7F98F19D492107B7A38CA851EE", hash_generated_method = "23225C73CA5AA4B9CF1348436C17266B")
     
 @Override

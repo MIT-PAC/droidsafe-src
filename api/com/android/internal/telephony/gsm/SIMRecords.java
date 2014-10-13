@@ -308,7 +308,7 @@ protected void onRadioOffOrNotAvailable() {
     /**
      * {@inheritDoc}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.387 -0500", hash_original_method = "3D26DD60574339032566256F631F5DB8", hash_generated_method = "30902BBBDE8901613FD04AFCBCDF5D8D")
     
 @Override
@@ -323,7 +323,7 @@ public String getMsisdnNumber() {
         return msisdn;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.393 -0500", hash_original_method = "F96F62208A76C85F8691E193053EFC74", hash_generated_method = "92490C5A0963DA62E05967DBBA236143")
     
 @Override
@@ -362,7 +362,7 @@ public void setMsisdnNumber(String alphaTag, String number,
                 obtainMessage(EVENT_SET_MSISDN_DONE, onComplete));
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.398 -0500", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "1B4AFE5064CD03ADA2B3761686668224")
     
 public String getMsisdnAlphaTag() {
@@ -435,7 +435,7 @@ public void setVoiceMailNumber(String alphaTag, String voiceNumber,
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.405 -0500", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "6D7368A0D77DC432B7AD7E84B26C6DBA")
     
 public String getVoiceMailAlphaTag()
@@ -512,7 +512,7 @@ public void
     /**
      * {@inheritDoc}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.410 -0500", hash_original_method = "2A8D94361FF074096EDCA291A7FA986D", hash_generated_method = "11A08D604E28D1B060A36949FF3CD94A")
     
 @Override
@@ -591,7 +591,7 @@ public void onRefresh(boolean fileChanged, int[] fileList) {
     /**
      * {@inheritDoc}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.418 -0500", hash_original_method = "7E03E5ED77A0C757F38448793B936037", hash_generated_method = "AAE9B0A11E77036A447B96185EFC9D28")
     
 @Override
@@ -1524,7 +1524,7 @@ protected void fetchSimRecords() {
      *
      * If the SPN is not found on the SIM, the rule is always PLMN_ONLY.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.464 -0500", hash_original_method = "409DDAA47064BEED68B0319934A64CD2", hash_generated_method = "06A868A91D8AC4D7D5B235F1B42741D9")
     
 @Override

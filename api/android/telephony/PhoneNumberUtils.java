@@ -1085,7 +1085,7 @@ private static boolean isNonSeparator(String address) {
      *
      * Returns null if network portion is empty.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.480 -0500", hash_original_method = "AF7754C02AEA7A015FB424C581D10AD2", hash_generated_method = "FD9BF84B8C812B5C208BF3E65AA98275")
     
 public static byte[]
@@ -1098,7 +1098,7 @@ public static byte[]
      * Same as {@link #networkPortionToCalledPartyBCD}, but includes a
      * one-byte length prefix.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.484 -0500", hash_original_method = "53FAAB919D090E6E7EF0B0376A95BD6B", hash_generated_method = "A6151625BD87F00B194EBC8CCF6C1190")
     
 public static byte[]
@@ -1210,7 +1210,7 @@ public static String formatNumber(String source, int defaultFormattingType) {
      * @return The formatting type for the given locale, or FORMAT_UNKNOWN if the formatting
      * rules are not known for the given locale
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.516 -0500", hash_original_method = "2035A43BA247538550AB3B62E959FF45", hash_generated_method = "732EDFC543A716276529B9845579B8CC")
     
 public static int getFormatTypeForLocale(Locale locale) {

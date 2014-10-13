@@ -834,7 +834,7 @@ void
 
     /*package*/ @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.886 -0500", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "11907D6A9C6D8F23B8C0FECA1425D0D1")
     
 boolean
@@ -941,7 +941,7 @@ void hangupAllConnections(GsmCall call) throws CallStateException{
     /* package */
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:20.902 -0500", hash_original_method = "A13EE98B51441FF2D592407455BBCDEE", hash_generated_method = "A13EE98B51441FF2D592407455BBCDEE")
     
 GsmConnection getConnectionByIndex(GsmCall call, int index)

@@ -42,7 +42,7 @@ public final class DOMErrorImpl implements DOMError {
             
         }
         
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.882 -0400", hash_original_method = "BD213E5A838EDE8A4D1403172904A1AB", hash_generated_method = "5254BCC77657250B9A05F6256FC455A2")
         public Node getRelatedNode() {
             Node varB4EAC82CA7396A68D541C85D26508E83_2051227868 = null; 
@@ -52,7 +52,7 @@ public final class DOMErrorImpl implements DOMError {
             
         }
         
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:35.882 -0400", hash_original_method = "08DC8B98EA7E10D6197A6D233921DA55", hash_generated_method = "CD4F23A9BDE71DF49DFCB648FC57E9F7")
         public String getUri() {
             String varB4EAC82CA7396A68D541C85D26508E83_1385380363 = null; 
@@ -77,42 +77,42 @@ public DOMErrorImpl(short severity, String type) {
         this.type = type;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.995 -0500", hash_original_method = "486D9FD618449ECBCAAA947A01B6396E", hash_generated_method = "4409A54EDA0D5EAD1A7F56DAE8D7CC0D")
     
 public short getSeverity() {
         return severity;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.997 -0500", hash_original_method = "736EB773CAD78737D003DEF14371364B", hash_generated_method = "408F57AA41E2F6C2B398418935F53B99")
     
 public String getMessage() {
         return type;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.000 -0500", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "375DB45064AFC367CAD6F27C4CB89612")
     
 public String getType() {
         return type;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.002 -0500", hash_original_method = "69DC7C3C45CF145B81BFA491DBEA3D67", hash_generated_method = "AC8FC4F97FEE75D77977DB72AB311E83")
     
 public Object getRelatedException() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.004 -0500", hash_original_method = "2E051F1CC67E124CEB94F15E64801D89", hash_generated_method = "77DACDE0FAEBC7449E9F05D781B5201B")
     
 public Object getRelatedData() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.006 -0500", hash_original_method = "5FDC1F3E63CCD7CD3042D9A19CD94FF4", hash_generated_method = "F4ED7AFB9391AD93A8637C83535B7335")
     
 public DOMLocator getLocation() {

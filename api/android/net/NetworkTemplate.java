@@ -168,7 +168,7 @@ public int describeContents() {
         return 0;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.260 -0500", hash_original_method = "743C43E5DEE5FAC4123020B60468B1AB", hash_generated_method = "DFDA57643119B4A1B3F31BCCCA687D48")
     
@@ -201,7 +201,7 @@ public int describeContents() {
     }
 
     /** {@hide} */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.267 -0500", hash_original_method = "F3B6429C6B29080B6AB6244CD6E2C6C6", hash_generated_method = "4FE6FFDE74FB6A449F71EEE91B6C997E")
     
 public int getMatchRule() {
@@ -209,7 +209,7 @@ public int getMatchRule() {
     }
 
     /** {@hide} */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.269 -0500", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "A7AB8B338BFAABE54CF6CD80FDE63752")
     
 public String getSubscriberId() {

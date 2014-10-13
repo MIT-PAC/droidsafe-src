@@ -217,7 +217,7 @@ private void loadEriFileFromXml() {
      * Returns the version of the ERI file
      *
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.585 -0500", hash_original_method = "C9469B68514D99711DF201C8FE7DFBA7", hash_generated_method = "D1E7158C97910CA51D94C509924F2A50")
     
 public int getEriFileVersion() {
@@ -228,7 +228,7 @@ public int getEriFileVersion() {
      * Returns the number of ERI entries parsed
      *
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.588 -0500", hash_original_method = "61A833F46D3B8953A540625C42A0EB37", hash_generated_method = "3BF13A25945591AC4447C2719D699FAB")
     
 public int getEriNumberOfEntries() {
@@ -239,7 +239,7 @@ public int getEriNumberOfEntries() {
      * Returns the ERI file type value ( 0 for Phase 0, 1 for Phase 1)
      *
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.590 -0500", hash_original_method = "1FA8D7F59FB6C59B7F4FF404D7CADD99", hash_generated_method = "691B7E4EBBD1F924EBB5DC55E73A9D4A")
     
 public int getEriFileType() {
@@ -535,21 +535,21 @@ private EriDisplayInformation getEriDisplayInformation(int roamInd, int defRoamI
         return ret;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.602 -0500", hash_original_method = "0CC10569A68EA715FF25360AD6D9EC97", hash_generated_method = "0DE45E1248F6209B92F10815DEF40E4B")
     
 public int getCdmaEriIconIndex(int roamInd, int defRoamInd){
         return getEriDisplayInformation(roamInd, defRoamInd).mEriIconIndex;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.604 -0500", hash_original_method = "9AB048E0DEB3BE0C35B104EC83429815", hash_generated_method = "2306462A913835AD68AEA1F9EECEAB05")
     
 public int getCdmaEriIconMode(int roamInd, int defRoamInd){
         return getEriDisplayInformation(roamInd, defRoamInd).mEriIconMode;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.607 -0500", hash_original_method = "180B939948D08F85119E751A7703AC82", hash_generated_method = "840339AD107E413B35E633678D9C4D67")
     
 public String getCdmaEriText(int roamInd, int defRoamInd){

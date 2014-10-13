@@ -83,7 +83,7 @@ public static boolean isIncomingCallIntent(Intent intent) {
      * @param incomingCallIntent the incoming call broadcast intent
      * @return the call ID or null if the intent does not contain it
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.214 -0500", hash_original_method = "70AF429815E14941562A6F2DBFF9EBC1", hash_generated_method = "52E866D12AAA4D385EA44EAC9105F06B")
     
 public static String getCallId(Intent incomingCallIntent) {
@@ -98,7 +98,7 @@ public static String getCallId(Intent incomingCallIntent) {
      * @return the offer session description or null if the intent does not
      *      have it
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.216 -0500", hash_original_method = "F464808FDF7202E950EC68A83A29D052", hash_generated_method = "A2E0CA5FB8870BDA79D65B68641AFB08")
     
 public static String getOfferSessionDescription(Intent incomingCallIntent) {
@@ -310,7 +310,7 @@ public void close(String localProfileUri) throws SipException {
      * @return true if the profile is enabled to receive calls
      * @throws SipException if calling the SIP service results in an error
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.199 -0500", hash_original_method = "360E1B00872B2424D301125F3BB142C6", hash_generated_method = "6CE6B367989B93B9BB247196E863E8E9")
     
 public boolean isOpened(String localProfileUri) throws SipException {
@@ -410,7 +410,7 @@ private String getUri(ISipSession session) {
      */
     @DSComment("Sip Manager")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.201 -0500", hash_original_method = "5A38205B94FE9DB78D17F700EB0D1FB0", hash_generated_method = "81A6B6372084AE54793B63AF5FF9FA54")
     
 public boolean isRegistered(String localProfileUri) throws SipException {
@@ -608,7 +608,7 @@ public void unregister(SipProfile localProfile,
      * @param incomingCallIntent the incoming call broadcast intent
      * @return the session object that handles the incoming call
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.226 -0500", hash_original_method = "EDCDF2FC84E74B60CE6B84F2ED6BCA20", hash_generated_method = "C977213B7D15E378A034987AAE287794")
     @DSVerified
     @DSSpec(DSCat.INTENT_EXCHANGE)
@@ -653,7 +653,7 @@ public SipSession createSipSession(SipProfile localProfile,
      * (username, password and display name) are crossed out.
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.232 -0500", hash_original_method = "1735A7464BE0976B91AB92297644D35E", hash_generated_method = "2E9A676A61C75A93778AB6EFD769CCB2")
     
 public SipProfile[] getListOfProfiles() {

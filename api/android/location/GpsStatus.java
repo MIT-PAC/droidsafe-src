@@ -186,7 +186,7 @@ void setTimeToFirstFix(int ttff) {
      */
     @DSComment("GPS status inquiry")
     @DSSpec(DSCat.LOCATION)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.869 -0500", hash_original_method = "75FBD0BC51265BCFA2480910110E8F36", hash_generated_method = "30B430B55C77B02A9FBB5B23D6213947")
     
 public int getTimeToFirstFix() {
@@ -199,7 +199,7 @@ public int getTimeToFirstFix() {
      *
      * @return the list of satellites
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.871 -0500", hash_original_method = "8623867703A7BB23EDE8EB2AB29E2B88", hash_generated_method = "C088CB919884494187C652A2575B61CC")
     
 public Iterable<GpsSatellite> getSatellites() {
@@ -212,7 +212,7 @@ public Iterable<GpsSatellite> getSatellites() {
      *
      * @return the maximum number of satellites
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.873 -0500", hash_original_method = "30B567DEF49ED207BED02E25B8D7701A", hash_generated_method = "0F1BF08BACC5EBC7335C7957322E860B")
     
 public int getMaxSatellites() {

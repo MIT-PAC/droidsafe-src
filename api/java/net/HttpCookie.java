@@ -821,7 +821,7 @@ public void setVersion(int v) {
      * {@code Cookie} header line in an HTTP request.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.059 -0400", hash_original_method = "A6BA199B9FBC744F2FAD7704A47DCC59", hash_generated_method = "AD09D263DED54A4D9A75CF64F68A1CE9")
     
 @Override public String toString() {

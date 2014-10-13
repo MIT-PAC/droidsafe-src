@@ -27,7 +27,7 @@ public class SSLContext {
      * the default instance.
      * @since 1.6
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.935 -0500", hash_original_method = "95B85BB32D8715FAB21A58C07C90C0CF", hash_generated_method = "AE9C5CE95C71C9318BAA63E07FB050DC")
     
 public static SSLContext getDefault() throws NoSuchAlgorithmException {
@@ -192,7 +192,7 @@ protected SSLContext(SSLContextSpi contextSpi, Provider provider, String protoco
      *
      * @return the name of the secure socket protocol of this instance.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.957 -0500", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "4DF996DD4ED6E38DFDC56EAB9AE5D939")
     
 public final String getProtocol() {
@@ -204,7 +204,7 @@ public final String getProtocol() {
      *
      * @return the provider of this {@code SSLContext} instance.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.959 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -251,7 +251,7 @@ public final SSLSocketFactory getSocketFactory() {
      *
      * @return a server socket factory for this instance.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.967 -0500", hash_original_method = "6B854724B17F4BE278032C18BCD40494", hash_generated_method = "63ACCC172110C9DC2EB130015056916C")
     
 public final SSLServerSocketFactory getServerSocketFactory() {
@@ -297,7 +297,7 @@ public final SSLEngine createSSLEngine(String peerHost, int peerPort) {
      *         if the underlying provider does not provide an implementation of
      *         the {@code SSLSessionContext} interface.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.975 -0500", hash_original_method = "13CFBFF97EBEA17DB24F1E636C863192", hash_generated_method = "DE6B68E8F154C129FD28449F1FBE3003")
     
 public final SSLSessionContext getServerSessionContext() {
@@ -312,7 +312,7 @@ public final SSLSessionContext getServerSessionContext() {
      *         if the underlying provider does not provide an implementation of
      *         the {@code SSLSessionContext} interface.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.977 -0500", hash_original_method = "ECC6F07A2C60018ED286E62595778908", hash_generated_method = "A186EB06C2FF4FC0DB898AE584F21371")
     
 public final SSLSessionContext getClientSessionContext() {
@@ -326,7 +326,7 @@ public final SSLSessionContext getClientSessionContext() {
      * @throws UnsupportedOperationException
      * @since 1.6
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.979 -0500", hash_original_method = "EF50F11BBBC92F54F2BB8CD8681E5FD1", hash_generated_method = "B9973F15E21F332D6EF816356C41E08A")
     
 public final SSLParameters getDefaultSSLParameters() {
@@ -340,7 +340,7 @@ public final SSLParameters getDefaultSSLParameters() {
      * @throws UnsupportedOperationException
      * @since 1.6
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.981 -0500", hash_original_method = "B61455860318644024B430BCDF123BB8", hash_generated_method = "C36A8CD37168C1EB898C2E0B1717444A")
     
 public final SSLParameters getSupportedSSLParameters() {

@@ -279,7 +279,7 @@ static int
      *
      * @throws RuntimeException on invalid format
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.036 -0500", hash_original_method = "5CA794846447D2C6B22D76C82E64F776", hash_generated_method = "38419854DDD9759FDC9FBB9E51521BEE")
     
 public static byte[]
@@ -388,7 +388,7 @@ public static String
      * @param length The length of image body
      * @return The bitmap
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.046 -0500", hash_original_method = "9890A8A6F25E4747FAE9BE4A49E40888", hash_generated_method = "967A2AA9C5B7A76C59928E83829106FB")
     
 public static Bitmap parseToBnW(byte[] data, int length){
@@ -437,7 +437,7 @@ private static int bitToRGB(int bit){
      * @param transparency with or without transparency
      * @return The color bitmap
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.052 -0500", hash_original_method = "B2B9C2CAFA68DE31B1652169B991D7C7", hash_generated_method = "4DCCD9846A398E942F29E613D3E79B18")
     
 public static Bitmap parseToRGB(byte[] data, int length,

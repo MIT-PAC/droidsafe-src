@@ -591,7 +591,7 @@ OnKeyboardActionListener varCA74E3A39D116C170964E820A8E794C6_425890983 =        
         //mAbortKey = true;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.820 -0400", hash_original_method = "984E33167FBB351AF6D207D6648DD7BE", hash_generated_method = "E07063A84AF8BC6549A47C5285A9A8AE")
     public Keyboard getKeyboard() {
 Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
@@ -2126,7 +2126,7 @@ for(int i=1;i < N;i++)
             //return mXVelocity;
         }
         
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:45.010 -0400", hash_original_method = "73AA3D89DA3C408C7388B69E1FFC2A00", hash_generated_method = "70DDD5D7FABDFC2C4F1B92D8245EF258")
         public float getYVelocity() {
             float varBC25413923BE9DD3356C08F88CF628DC_2109502741 = (mYVelocity);

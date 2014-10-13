@@ -21,7 +21,7 @@ class IconLoader extends Handler {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.645 -0500", hash_original_method = "10E76DA53BC66F7E84AC913A1A382A5D", hash_generated_method = "3CA2F1EE9B38A7F66535F31F612C0A2B")
     
 static IconLoader getInstance(Handler caller, IccFileHandler fh) {
@@ -42,7 +42,7 @@ static IconLoader getInstance(Handler caller, IccFileHandler fh) {
      * @param length The length of image body
      * @return The bitmap
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.673 -0500", hash_original_method = "2A78BD7C43C6EA7A88473349A445518E", hash_generated_method = "F02845359F6B6044975DC5E98AE8CF68")
     
 public static Bitmap parseToBnW(byte[] data, int length){
@@ -99,7 +99,7 @@ private static int bitToBnW(int bit){
      * @param clut coulor lookup table
      * @return The color bitmap
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.679 -0500", hash_original_method = "9AF939262FB3DB6E45968B076173B00B", hash_generated_method = "11463A3BFE88B5F071F1874A4BF48D6F")
     
 public static Bitmap parseToRGB(byte[] data, int length,

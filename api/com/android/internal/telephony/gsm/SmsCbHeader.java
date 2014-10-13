@@ -201,7 +201,7 @@ public SmsCbHeader(byte[] pdu) throws IllegalArgumentException {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.607 -0500", hash_original_method = "F77CFF978B7542934CFB3B1620EE83C7", hash_generated_method = "0B43DE98EFC8CC82B5F9A939E4FCF369")
     

@@ -19,7 +19,7 @@ class CommandParamsFactory extends Handler {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.916 -0500", hash_original_method = "902F6654BACA21B759C69CE5678E59A7", hash_generated_method = "F41D5CB95F3D9937A947AF7B2BE929CC")
     
 static synchronized CommandParamsFactory getInstance(RilMessageDecoder caller,

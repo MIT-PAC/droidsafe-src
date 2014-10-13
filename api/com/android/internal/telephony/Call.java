@@ -111,7 +111,7 @@ public boolean isIdle() {
      * Returns the Connection associated with this Call that was created
      * first, or null if there are no Connections in this Call
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.390 -0500", hash_original_method = "EADA1B2297DA3CAB3CFE5B591670DF74", hash_generated_method = "ACEB13664304309AF4846C775A69615B")
     
 public Connection
@@ -142,7 +142,7 @@ public Connection
         return earliest;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.394 -0500", hash_original_method = "259AE56D0CCB8C7D336EA51014BAFBD4", hash_generated_method = "694B93E1CD996C155FD6BF023A5236CA")
     
 public long
@@ -168,7 +168,7 @@ public long
         return time;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.397 -0500", hash_original_method = "4FCBF4743EBF22DA857FFD7B3BA209EB", hash_generated_method = "70C8DDCABB05E4F8DC7A0DAFCFE8C149")
     
 public long
@@ -210,7 +210,7 @@ public boolean
      * Returns the Connection associated with this Call that was created
      * last, or null if there are no Connections in this Call
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.407 -0500", hash_original_method = "D3D12A7045E5E26EBF89650CB45460A7", hash_generated_method = "4558929149DE334138F10DA6DC7EFE45")
     
 public Connection

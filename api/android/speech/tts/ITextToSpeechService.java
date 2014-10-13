@@ -58,7 +58,7 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSSource({DSSourceKind.NETWORK_INFORMATION})
+@DSSource({DSSourceKind.NETWORK})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.882 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
@@ -282,7 +282,7 @@ return _result;
      *         The country and variant may be {@code ""}. If country is empty, then variant must
      *         be empty too.
      */
-@DSSource({DSSourceKind.NETWORK_INFORMATION})
+@DSSource({DSSourceKind.NETWORK})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.902 -0500", hash_original_method = "C569A45F37C99B6F9C602D91F256E18B", hash_generated_method = "9025E5D36B5C831FE62F0750C27B378D")
             
 public java.lang.String[] getLanguage() throws android.os.RemoteException
@@ -315,7 +315,7 @@ return _result;
      *         {@link TextToSpeech#LANG_MISSING_DATA}
      *         {@link TextToSpeech#LANG_NOT_SUPPORTED}.
      */
-@DSSource({DSSourceKind.NETWORK_INFORMATION})
+@DSSource({DSSourceKind.NETWORK})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.904 -0500", hash_original_method = "7913CAD8BCC780BF05B2FE9B44B9A1B3", hash_generated_method = "17ED0F06197C57D4B2B238A2A16743CD")
             
 public int isLanguageAvailable(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
@@ -351,7 +351,7 @@ return _result;
      *         the supplied locale. The array of strings must not contain 
      *         duplicates.
      */
-@DSSource({DSSourceKind.NETWORK_INFORMATION})
+@DSSource({DSSourceKind.NETWORK})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.908 -0500", hash_original_method = "FE2BB20EC8B6AA673E11F37A3F20D812", hash_generated_method = "60D596B86DC92BF1CD5D540698D93A8E")
             
 public java.lang.String[] getFeaturesForLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
@@ -468,7 +468,7 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSSource({DSSourceKind.NETWORK_INFORMATION})
+@DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.866 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()

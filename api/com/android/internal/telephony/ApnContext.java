@@ -60,14 +60,14 @@ public ApnContext(String apnType, String logTag) {
         LOG_TAG = logTag;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.606 -0500", hash_original_method = "0F76476B5A4DDD20A8502B6237356474", hash_generated_method = "404D87534D9D6DFDB599986D9136CBCD")
     
 public String getApnType() {
         return mApnType;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.609 -0500", hash_original_method = "D5BD92E96A7D4915CF46215470E9C147", hash_generated_method = "F145C487474C22A69650797E15C94A84")
     
 public synchronized DataConnection getDataConnection() {
@@ -81,7 +81,7 @@ public synchronized void setDataConnection(DataConnection dataConnection) {
         mDataConnection = dataConnection;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.614 -0500", hash_original_method = "5BBBEC6A4F77592BB47CD138BBF3A7B6", hash_generated_method = "3A587714334DB694F4AADAE7B1B5285E")
     
 public synchronized DataConnectionAc getDataConnectionAc() {
@@ -100,7 +100,7 @@ public synchronized void setDataConnectionAc(DataConnectionAc dcac) {
         mDataConnectionAc = dcac;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.619 -0500", hash_original_method = "2BB406053D6E60D1A0AB6AAF52F2E2C8", hash_generated_method = "79B5AE2F0E940A9A251BE86E13D477B9")
     
 public synchronized ApnSetting getApnSetting() {
@@ -122,7 +122,7 @@ public synchronized void setWaitingApns(ArrayList<ApnSetting> waitingApns) {
         mWaitingApnsPermanentFailureCountDown.set(mWaitingApns.size());
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.627 -0500", hash_original_method = "BB542F2E9EBFB107E0306A16FFD4893E", hash_generated_method = "6056CBF86CD8C31D706AF32B0CD7909A")
     
 public int getWaitingApnsPermFailCount() {
@@ -135,7 +135,7 @@ public void decWaitingApnsPermFailCount() {
         mWaitingApnsPermanentFailureCountDown.decrementAndGet();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.633 -0500", hash_original_method = "8169EBCA601DA0905CCE375C31CE1E4C", hash_generated_method = "A3548EA292AAEEF602F75177AF1F794F")
     
 public synchronized ApnSetting getNextWaitingApn() {
@@ -158,7 +158,7 @@ public synchronized void removeNextWaitingApn() {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.637 -0500", hash_original_method = "3EEE20ABAF340D832C1A12335FDE6C3B", hash_generated_method = "0C2653FA62790458AA1255D1F53409DB")
     
 public synchronized ArrayList<ApnSetting> getWaitingApns() {
@@ -205,7 +205,7 @@ public synchronized void setReason(String reason) {
         mReason = reason;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.650 -0500", hash_original_method = "2809EBE4FEE36399CFA439CAAE81BBAE", hash_generated_method = "03C2A6500E0CD509D7AF782E38E4C6E9")
     
 public synchronized String getReason() {
@@ -246,7 +246,7 @@ public void setDependencyMet(boolean met) {
         mDependencyMet.set(met);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.663 -0500", hash_original_method = "0BCF198B460FB01FAD42E5667908EAA7", hash_generated_method = "53C8FAA7C1157222FCA8E53EB189B98E")
     
 public boolean getDependencyMet() {

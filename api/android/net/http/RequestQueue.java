@@ -164,7 +164,7 @@ private synchronized void setProxyConfig() {
      * used by webkit
      * @return proxy host if set, null otherwise
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.289 -0500", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "4BC88B0C4F8420EA46933C51803C4057")
     
 public HttpHost getProxyHost() {
@@ -330,7 +330,7 @@ synchronized void dump() {
     /*
      * RequestFeeder implementation
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.323 -0500", hash_original_method = "8F04B443A564D50EFFE076AEA97295A7", hash_generated_method = "C5662E3D0008E6019496C6C0594DABDB")
     
 public synchronized Request getRequest() {
@@ -346,7 +346,7 @@ public synchronized Request getRequest() {
     /**
      * @return a request for given host if possible
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.326 -0500", hash_original_method = "871E1F4E9BD2BA7BA6F72CE2CEEFAC66", hash_generated_method = "68016E68CF819C1B2617E31465E380F1")
     
 public synchronized Request getRequest(HttpHost host) {
@@ -521,7 +521,7 @@ void logState() {
             HttpLog.v(dump.toString());
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.260 -0500", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "4BC88B0C4F8420EA46933C51803C4057")
         
 public HttpHost getProxyHost() {
@@ -548,7 +548,7 @@ void disablePersistence() {
            if this turns out to be a hotspot */
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.264 -0500", hash_original_method = "4350BDA0BFA960DC6ECB5B267907B720", hash_generated_method = "4350BDA0BFA960DC6ECB5B267907B720")
         
 ConnectionThread getThread(HttpHost host) {
@@ -564,7 +564,7 @@ ConnectionThread getThread(HttpHost host) {
             return null;
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.266 -0500", hash_original_method = "FFEAD5D96A31C5526086E61D15C11F62", hash_generated_method = "5ECF59203E07C45B00F91B0521BC4B5D")
         
 public Connection getConnection(Context context, HttpHost host) {
@@ -596,7 +596,7 @@ public boolean recycleConnection(Connection connection) {
         
 SyncFeeder() {
         }
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.303 -0500", hash_original_method = "E0C38BA5AF5E9B7363BEA9E204F697F3", hash_generated_method = "C74EDD87A503CBBE7FA9739CE06E1684")
         
 public Request getRequest() {
@@ -604,7 +604,7 @@ public Request getRequest() {
             mRequest = null;
             return r;
         }
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.305 -0500", hash_original_method = "DE8B4E1CA9B86F476AFDBAF1FF7FD442", hash_generated_method = "8784B9E19CB677C96570406E17C21CA8")
         
 public Request getRequest(HttpHost host) {

@@ -36,7 +36,7 @@ public HandshakeCompletedEvent(SSLSocket sock, SSLSession s) {
      *
      * @return the SSL session associated with this event.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.696 -0500", hash_original_method = "2F35DBDDEE25D44180770FC68EA02FBF", hash_generated_method = "BD23FC6460B0B92CC62DD72D6181F539")
     
 public SSLSession getSession() {
@@ -48,7 +48,7 @@ public SSLSession getSession() {
      *
      * @return the name of the cipher suite negotiated during this handshake.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.698 -0500", hash_original_method = "AA50F870D8B0EDDAC30AA11C075FA460", hash_generated_method = "1E2316B36D9A675C7A1758C2B77C8D60")
     
 public String getCipherSuite() {
@@ -63,7 +63,7 @@ public String getCipherSuite() {
      *         the local identity certificate followed by CAs, or {@code null}
      *         if no certificates were used during the handshake.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.701 -0500", hash_original_method = "12F750698B4C5596A2F6F73DC7614702", hash_generated_method = "FEA58E2B2F18281695F91F43418F913F")
     
 public Certificate[] getLocalCertificates() {
@@ -79,7 +79,7 @@ public Certificate[] getLocalCertificates() {
      * @throws SSLPeerUnverifiedException
      *             if the identity of the peer has not been verified.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.703 -0500", hash_original_method = "4973BE3A4ED587D46EBF93135059669C", hash_generated_method = "97670E79A63F3CAA72BC4440460312FF")
     
 public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
@@ -97,7 +97,7 @@ public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
      * @throws SSLPeerUnverifiedException
      *             if the identity of the peer has not been verified.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.706 -0500", hash_original_method = "8A3AA58C9CA390E089E395D78527A15D", hash_generated_method = "A00D8369328A7F94E77615415D402AB0")
     
 public X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
@@ -111,7 +111,7 @@ public X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedExcep
      * @throws SSLPeerUnverifiedException
      *             if the identity of the peer has not been verified.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.708 -0500", hash_original_method = "E52328DA42ED4C7658029875D0FD2A85", hash_generated_method = "E324F5EECAE3FF37E04A099278BAB1CF")
     
 public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
@@ -123,7 +123,7 @@ public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
      *
      * @return the {@code Principal} used to identify during the handshake.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.710 -0500", hash_original_method = "9AEFAC82D29E63E6CA9E21A60A8B85D0", hash_generated_method = "C8B4F8151B42CE0791579ACAFA97691F")
     
 public Principal getLocalPrincipal() {
@@ -135,7 +135,7 @@ public Principal getLocalPrincipal() {
      *
      * @return the SSL socket that produced this event.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.712 -0500", hash_original_method = "D59F011BF3B2DFBF72B84D897263E8E1", hash_generated_method = "BB47FC9AF47A846EBF1058E99ECDE85D")
     
 public SSLSocket getSocket() {

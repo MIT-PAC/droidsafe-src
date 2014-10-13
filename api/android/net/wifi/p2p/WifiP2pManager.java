@@ -554,7 +554,7 @@ public void requestConnectionInfo(Channel c, ConnectionInfoListener listener) {
      * @param c is the channel created at {@link #initialize}
      * @param listener for callback when group info is available. Can be null.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.812 -0500", hash_original_method = "7D2D3B8E934838E23E15D5EFD9489887", hash_generated_method = "BE20F831DEBB442923C6C2AB4B220EBD")
     
@@ -570,7 +570,7 @@ public void requestGroupInfo(Channel c, GroupInfoListener listener) {
      * @return Messenger pointing to the WifiP2pService handler
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.814 -0500", hash_original_method = "A358F8361C96DABE1A63B04B5804B3F5", hash_generated_method = "DA6144D34D1ABFD0D2380EC6E44B953A")
     
 public Messenger getMessenger() {

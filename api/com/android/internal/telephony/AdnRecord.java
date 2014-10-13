@@ -171,7 +171,7 @@ public AdnRecord(int efid, int recordNumber, String alphaTag, String number) {
 
     //***** Instance Methods
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.011 -0500", hash_original_method = "AC3A7A9E3A191B711B11224D0DA9AF99", hash_generated_method = "C6C026948750D4A59426CB675308E75D")
     
 public String getAlphaTag() {
@@ -185,7 +185,7 @@ public String getNumber() {
         return number;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.015 -0500", hash_original_method = "92D2F53049B5866D80AA794995783C1B", hash_generated_method = "58F920E22CF735F4E3FD4CB7C5603917")
     
 public String[] getEmails() {
@@ -199,7 +199,7 @@ public void setEmails(String[] emails) {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.020 -0500", hash_original_method = "68220200E4F2B5D293B76BDD34BEE487", hash_generated_method = "B5961EECC367908660F81F6106FD4E80")
     
 public String toString() {
@@ -251,7 +251,7 @@ public void writeToParcel(Parcel dest, int flags) {
      * @return hex byte[recordSize] to be written to EF record
      *          return null for wrong format of dialing number or tag
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.039 -0500", hash_original_method = "43E5A3A3017D389C996FCD504E7A9103", hash_generated_method = "E3F599972D04B8E5D7F86AB1411559E9")
     
 public byte[] buildAdnString(int recordSize) {

@@ -112,7 +112,7 @@ public ThrottleManager(IThrottleManager service) {
      * named interface
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.234 -0500", hash_original_method = "2AA7855A594B5700D93ECFB7D9A7B7C4", hash_generated_method = "00AAF153CAD6F43142CCD48B660EE6E1")
     
 public long getResetTime(String iface) {
@@ -128,7 +128,7 @@ public long getResetTime(String iface) {
      * named interface
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.236 -0500", hash_original_method = "71ECD56B8A0A75240BCCEB36337D3BA2", hash_generated_method = "27004AEAC6536CCC806B5A1DD6876C00")
     
 public long getPeriodStartTime(String iface) {
@@ -147,7 +147,7 @@ public long getPeriodStartTime(String iface) {
      * the current period, 1 is the last one, 2 was two periods ago..
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.238 -0500", hash_original_method = "8241A155E8F913EC462AEA4A2F5ED1F8", hash_generated_method = "9B2499667709BB9044812486E9C40A0B")
     
 public long getByteCount(String iface, int direction, int period, int ago) {
@@ -163,7 +163,7 @@ public long getByteCount(String iface, int direction, int period, int ago) {
      * takes effect on the named iface.  Currently only cliff #1 is supported (1 step)
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.241 -0500", hash_original_method = "1E5CE1E6E971F0A1DB09E08194D8A23E", hash_generated_method = "777A471138E20BADC0B90CD9134D1836")
     
 public long getCliffThreshold(String iface, int cliff) {
@@ -179,7 +179,7 @@ public long getCliffThreshold(String iface, int cliff) {
      * only cliff #1 is currently supported.
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.243 -0500", hash_original_method = "1E0667CC63B486C17ACE24556BBA89F5", hash_generated_method = "0E60E67229A17D7C53E20A54366AD866")
     
 public int getCliffLevel(String iface, int cliff) {
@@ -194,7 +194,7 @@ public int getCliffLevel(String iface, int cliff) {
      * returns the help URI for throttling
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.245 -0500", hash_original_method = "BE6DD87215E82DDA8E4A2908333DC9D4", hash_generated_method = "F171CDEF41A927211228DE1BFF74934F")
     
 public String getHelpUri() {

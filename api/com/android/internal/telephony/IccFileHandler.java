@@ -606,7 +606,7 @@ public void handleMessage(Message msg) {
      * @param efId
      * @return root path of the file.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.059 -0500", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "CF5B8D360BCB350AC0A0BB5F6BDA0EA6")
     
 protected String getCommonIccEFPath(int efid) {

@@ -88,7 +88,7 @@ public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
         return false;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.148 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
     
 public IBinder asBinder()
@@ -114,7 +114,7 @@ public IBinder asBinder() {
         return mRemote;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.156 -0500", hash_original_method = "02C17092CC4D0E934B4324BDE37272C4", hash_generated_method = "B28DEB8DAA227469176CA94BEABBA96A")
     
 public IBinder getService(String name) throws RemoteException {

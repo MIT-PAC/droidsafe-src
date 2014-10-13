@@ -119,28 +119,28 @@ public NetworkIdentity(int type, int subType, String subscriberId, boolean roami
                 + scrubSubscriberId + roaming + "]";
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.029 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "32498FCDA3AC1E9A676800B51A331335")
     
 public int getType() {
         return mType;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.031 -0500", hash_original_method = "A4DDC328E17941CDB6FA9336B74814D9", hash_generated_method = "9D4666CD302A26D0071E781A6FD2DF73")
     
 public int getSubType() {
         return mSubType;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.033 -0500", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "A7AB8B338BFAABE54CF6CD80FDE63752")
     
 public String getSubscriberId() {
         return mSubscriberId;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.036 -0500", hash_original_method = "27B48B56BD1E05F31D9E74CC53E25407", hash_generated_method = "CC0583C9CA1287F8D242AB48312C845D")
     
 public boolean getRoaming() {

@@ -35,7 +35,7 @@ public static NetworkPolicyManager getSystemService(Context context) {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.947 -0500", hash_original_method = "CBFD2FDBFDFB4EFA099581BCEB3F98CA", hash_generated_method = "DBBC21F33A5E90AF42C16BFD9569FBE9")
     
 public static long computeLastCycleBoundary(long currentTime, NetworkPolicy policy) {
@@ -64,7 +64,7 @@ public static long computeLastCycleBoundary(long currentTime, NetworkPolicy poli
     }
 
     /** {@hide} */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.949 -0500", hash_original_method = "58D6599320C3CC8F75660ECB99865F1C", hash_generated_method = "D16F8CF340EEB741DE09FCD341171787")
     
 public static long computeNextCycleBoundary(long currentTime, NetworkPolicy policy) {
@@ -221,7 +221,7 @@ public void setNetworkPolicies(NetworkPolicy[] policies) {
     }
 
     /** {@hide} */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.935 -0500", hash_original_method = "025521C078EE07825554E8E10F94F333", hash_generated_method = "A44435FCB6185608A5F722FE4A1B05ED")
     
 public NetworkPolicy[] getNetworkPolicies() {
@@ -248,7 +248,7 @@ public void setUidPolicy(int uid, int policy) {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.939 -0500", hash_original_method = "7AF3F24A0466D6FB5C5D518CC41F56AD", hash_generated_method = "F6E15D18BE3FD28ACAC69E0BB3285AFE")
     
 public int getUidPolicy(int uid) {

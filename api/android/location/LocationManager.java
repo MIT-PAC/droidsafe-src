@@ -114,7 +114,7 @@ private LocationProvider createProvider(String name, Bundle info) {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.058 -0500", hash_original_method = "4EC410201344BFF6367B3FC4DEB2ECDD", hash_generated_method = "743109C465594858F9765AFB2A2594A5")
     
 public List<String> getAllProviders() {
@@ -162,7 +162,7 @@ public List<String> getProviders(boolean enabledOnly) {
      * @throws SecurityException if the caller is not permitted to access the
      * given provider.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.063 -0500", hash_original_method = "14AFABFCECA2A03E46C22CB46D5D2D56", hash_generated_method = "41A2E1B2987ECA2E0DAA7270E6282C9B")
     
 public LocationProvider getProvider(String name) {
@@ -232,7 +232,7 @@ public List<String> getProviders(Criteria criteria, boolean enabledOnly) {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.067 -0500", hash_original_method = "E63BBD2716EE0B4343F6D6F30C802349", hash_generated_method = "530A21AD4FE12EA44349E10E88F47DC1")
     
 public String getBestProvider(Criteria criteria, boolean enabledOnly) {
@@ -1064,7 +1064,7 @@ public void removeTestProvider(String provider) {
      * Settings.Secure.ALLOW_MOCK_LOCATION}} system setting is not enabled
      * @throws IllegalArgumentException if no provider with the given name exists
      */
-    @DSSink({DSSinkKind.LOCATION_INFORMATION})
+    @DSSink({DSSinkKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.118 -0500", hash_original_method = "68207A112A1E7BBE4826B19769FC12DA", hash_generated_method = "8B9988E8B7E36011874EE986E1CAF008")
     
 public void setTestProviderLocation(String provider, Location loc) {
@@ -1362,7 +1362,7 @@ public void clearTestProviderLocation(String provider) {
      * Settings.Secure.ALLOW_MOCK_LOCATION}} system setting is not enabled
      * @throws IllegalArgumentException if no provider with the given name exists
      */
-    @DSSink({DSSinkKind.LOCATION_INFORMATION})
+    @DSSink({DSSinkKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.122 -0500", hash_original_method = "48C675867948B21786DBAE4C1AE4920C", hash_generated_method = "F5D18F237734E111A8E172A140A4EE91")
     
 public void setTestProviderEnabled(String provider, boolean enabled) {
@@ -1408,7 +1408,7 @@ public void clearTestProviderEnabled(String provider) {
      * Settings.Secure.ALLOW_MOCK_LOCATION}} system setting is not enabled
      * @throws IllegalArgumentException if no provider with the given name exists
      */
-    @DSSink({DSSinkKind.LOCATION_INFORMATION})
+    @DSSink({DSSinkKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.127 -0500", hash_original_method = "03886DE73D19ECB6C62373F8D9D58CA9", hash_generated_method = "A00A94A7CECAB50C33C43BB2D669A834")
     
 public void setTestProviderStatus(String provider, int status, Bundle extras, long updateTime) {
@@ -1552,7 +1552,7 @@ public void removeNmeaListener(GpsStatus.NmeaListener listener) {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.193 -0500", hash_original_method = "58632EF952FC4DB3D625E7340D0B4D49", hash_generated_method = "946F1B5F569EDD5FFF9500D0E41B562A")
     
 public GpsStatus getGpsStatus(GpsStatus status) {
@@ -1574,7 +1574,7 @@ public GpsStatus getGpsStatus(GpsStatus status) {
      *
      * @return true if the command succeeds.
      */
-    @DSSink({DSSinkKind.LOCATION_INFORMATION})
+    @DSSink({DSSinkKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.195 -0500", hash_original_method = "A7B31AF326321489C7AFBE2F446F3E30", hash_generated_method = "B7C00E37E606958AED57A98D7B947491")
     
 public boolean sendExtraCommand(String provider, String command, Bundle extras) {
@@ -1592,7 +1592,7 @@ public boolean sendExtraCommand(String provider, String command, Bundle extras) 
      *
      * {@hide}
      */
-    @DSSink({DSSinkKind.LOCATION_INFORMATION})
+    @DSSink({DSSinkKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.197 -0500", hash_original_method = "486A02DD90A0BB213EFD64094D84B261", hash_generated_method = "40A3234209117E05B4CC7A1B82C3BC36")
     
 public boolean sendNiResponse(int notifId, int userResponse) {

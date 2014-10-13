@@ -127,7 +127,7 @@ protected void handleRadioAvailable() {
      * of getCurrentCalls() will be postponed until this
      * operation is also complete.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.195 -0500", hash_original_method = "91C44089CAD2AA24231C5131EC918B32", hash_generated_method = "01BAEF5CCE5CB24D1DB173014C73734F")
     
 protected Message

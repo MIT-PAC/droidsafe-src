@@ -78,7 +78,7 @@ public abstract class SmsMessageBase {
      * Returns the address of the SMS service center that relayed this message
      * or null if there is none.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.527 -0500", hash_original_method = "852AB853407A268846BFEA18AE440E9F", hash_generated_method = "3E605C1FE68614AAC812FC5872AE1A75")
     
 public String getServiceCenterAddress() {
@@ -89,7 +89,7 @@ public String getServiceCenterAddress() {
      * Returns the originating address (sender) of this SMS message in String
      * form or null if unavailable
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.529 -0500", hash_original_method = "2AFA8196465DE272F0DC79D229118536", hash_generated_method = "81EAC08A777C5C28124944A8F2B82D10")
     
 public String getOriginatingAddress() {
@@ -105,7 +105,7 @@ public String getOriginatingAddress() {
      * was from an email gateway. Returns null if originating address
      * unavailable.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.532 -0500", hash_original_method = "FD557C93F70B0337CD517510ED3486DC", hash_generated_method = "967FE1F7DA13385A123320CA4C74EF30")
     
 public String getDisplayOriginatingAddress() {
@@ -120,7 +120,7 @@ public String getDisplayOriginatingAddress() {
      * Returns the message body as a String, if it exists and is text based.
      * @return message body is there is one, otherwise null
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.534 -0500", hash_original_method = "38D6DF2B366D642F936058839D02FFF6", hash_generated_method = "C7D99EAEEAF8DC7F92458EB6BAE14559")
     
 public String getMessageBody() {
@@ -138,7 +138,7 @@ public abstract MessageClass getMessageClass();
      * Returns the message body, or email message body if this message was from
      * an email gateway. Returns null if message body unavailable.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.539 -0500", hash_original_method = "294CD2EFEADD47C746EB46385E4DBE4C", hash_generated_method = "1A0D4EE64BBC5F9468BD74E8AC612DDB")
     
 public String getDisplayMessageBody() {
@@ -153,7 +153,7 @@ public String getDisplayMessageBody() {
      * Unofficial convention of a subject line enclosed in parens empty string
      * if not present
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.541 -0500", hash_original_method = "C834A1A0643901270795A5B4BCF99FAB", hash_generated_method = "42C213E1283BFD7276924D9464C51132")
     
 public String getPseudoSubject() {
@@ -163,7 +163,7 @@ public String getPseudoSubject() {
     /**
      * Returns the service centre timestamp in currentTimeMillis() format
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.544 -0500", hash_original_method = "43D56B1D4867C5433D89553E5EBA105D", hash_generated_method = "5FB4B80755B3F1590BC259380D61686C")
     
 public long getTimestampMillis() {
@@ -186,7 +186,7 @@ public boolean isEmail() {
      * @return if isEmail() is true, body of the email sent through the gateway.
      *         null otherwise
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.549 -0500", hash_original_method = "919AAA5779B3BEE7D0F95136809BE031", hash_generated_method = "BED9E707F6CA1927762B6F4C1DF8DADD")
     
 public String getEmailBody() {
@@ -197,7 +197,7 @@ public String getEmailBody() {
      * @return if isEmail() is true, email from address of email sent through
      *         the gateway. null otherwise
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.552 -0500", hash_original_method = "A55C12CE9F92FEDF0E5D1A5BBEF00065", hash_generated_method = "A8C91CB89F046AEB25D117B71F6C32F1")
     
 public String getEmailFrom() {
@@ -269,7 +269,7 @@ public abstract boolean isMwiDontStore();
      * returns the user data section minus the user data header if one was
      * present.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.574 -0500", hash_original_method = "832EF14448695517A54541076D502A0C", hash_generated_method = "3C6B7B4E0AEF9204FAF6411B9A1EC06B")
     
 public byte[] getUserData() {
@@ -281,7 +281,7 @@ public byte[] getUserData() {
      *
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.577 -0500", hash_original_method = "4DA43BCCB17FE826B675411D64594E85", hash_generated_method = "AB01DF03CB1FA9D50ECC033F79C319DD")
     
 public SmsHeader getUserDataHeader() {
@@ -298,7 +298,7 @@ public SmsHeader getUserDataHeader() {
     /**
      * Returns the raw PDU for the message.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.579 -0500", hash_original_method = "8FB8695B65A836E3485315734D763070", hash_generated_method = "8BC9FED7DDF3572EAF3A38218494B90C")
     
 public byte[] getPdu() {
@@ -350,7 +350,7 @@ public abstract boolean isReplyPathPresent();
      *         SmsManager.STATUS_ON_ICC_SEND
      *         SmsManager.STATUS_ON_ICC_UNSENT
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.589 -0500", hash_original_method = "2631F0A4279B64E7D3B05442B104C580", hash_generated_method = "D4F63F8FC4A4B3637BE6377D8105CFB7")
     
 public int getStatusOnIcc() {
@@ -362,7 +362,7 @@ public int getStatusOnIcc() {
      * @return the record index of the message on the ICC, or -1 if this
      *         SmsMessage was not created from a ICC SMS EF record.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.592 -0500", hash_original_method = "AAC76DD7B09CC0753456FB5F01AB7263", hash_generated_method = "5821FB7208E6845C0E5A0C15B59D7F15")
     
 public int getIndexOnIcc() {
@@ -406,7 +406,7 @@ protected void parseMessageBody() {
             //Synthesized constructor
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.512 -0500", hash_original_method = "0DAE77F81824922FC906417D2F567A0C", hash_generated_method = "BA24CF6DD454FA51B27C3BD5901CAF3D")
         

@@ -309,7 +309,7 @@ protected URLConnection(URL url) {
      *             if an error occurs while connecting to the resource.
      */
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.074 -0500", hash_original_method = "E3B3D609A299C20BEA286BB272FDF5DD", hash_generated_method = "12E46584ED58D785D1E4DDAC8B414223")
@@ -587,7 +587,7 @@ public long getExpiration() {
      *            the field position of the response header.
      * @return the value of the field at position {@code pos}.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.115 -0500", hash_original_method = "4AACA905FA1278AAB35ED38439896081", hash_generated_method = "C41CD50CE2AC5FE72F79E6188B82872F")
@@ -681,7 +681,7 @@ public void addRequestProperty(String field, String newValue) {
      *            the name of the header field.
      * @return the value of the header field.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.127 -0500", hash_original_method = "565CBD8C4BDCB5C201FDE1F2CB76B55D", hash_generated_method = "C805EF3131A22E118686C0E6E02FD1F4")
@@ -818,7 +818,7 @@ public long getLastModified() {
      * @throws IOException
      *             if no OutputStream could be created.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
     
@@ -1157,7 +1157,7 @@ public int getReadTimeout() {
      * @return the string representation of this {@code URLConnection} instance.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.201 -0500", hash_original_method = "C85D603FFD624A90EAB88172CE67727C", hash_generated_method = "00A4330AEE9AE3EEEA21DC02C53F22B7")
     
 @Override

@@ -343,7 +343,7 @@ boolean pathMatch(String urlPath) {
             return false;
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.553 -0500", hash_original_method = "08415E5687C0C693DFF8536ADAD3E2AA", hash_generated_method = "66C3B49355618198D7266A87F8C66D10")
         

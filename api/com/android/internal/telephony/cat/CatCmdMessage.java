@@ -148,7 +148,7 @@ public AppInterface.CommandType getCmdType() {
         return AppInterface.CommandType.fromInt(mCmdDet.typeOfCommand);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.401 -0500", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "DCDBC063D5B5258CB417C095AA16E240")
     
 public Menu getMenu() {
@@ -173,7 +173,7 @@ public BrowserSettings getBrowserSettings() {
         return mBrowserSettings;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.410 -0500", hash_original_method = "7E3240C4BE07A52ADC96DFEAA4674C6F", hash_generated_method = "532037AD900501825AFB75B03F43FB35")
     
 public ToneSettings getToneSettings() {

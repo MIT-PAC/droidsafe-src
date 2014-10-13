@@ -58,7 +58,7 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSSource({DSSourceKind.NETWORK_INFORMATION})
+@DSSource({DSSourceKind.NETWORK})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.053 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
@@ -87,7 +87,7 @@ _data.recycle();
 }
 return _result;
 }
-@DSSource({DSSourceKind.NETWORK_INFORMATION})
+@DSSource({DSSourceKind.NETWORK})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.060 -0500", hash_original_method = "85837FBC16C4ABC19A4F56F7E6AD5AB4", hash_generated_method = "FA3C2E57C7CC5996B38ED109F545A44B")
             
 public byte[] getCertificate(java.lang.String alias) throws android.os.RemoteException
@@ -235,7 +235,7 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSSource({DSSourceKind.NETWORK_INFORMATION})
+@DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.036 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()

@@ -193,7 +193,7 @@ protected HttpHost determineProxy(HttpHost    target,
      * <br/>
      * (TODO: determine format for IPv6 addresses, with or without [brackets])
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.719 -0500", hash_original_method = "E71E40B42A0A74E659F7570AD29A596D", hash_generated_method = "D753955B088170EDBEF92362EF8B671E")
     
 protected String getHost(InetSocketAddress isa) {

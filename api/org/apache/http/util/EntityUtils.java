@@ -108,7 +108,7 @@ public static String toString(
         return buffer.toString();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.700 -0500", hash_original_method = "18E1FD8C759BC52F17E10CB5464A552C", hash_generated_method = "39E83DFB0DA3AA8BED21A3D9EE4975C6")
     

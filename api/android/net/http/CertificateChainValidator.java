@@ -24,7 +24,7 @@ class CertificateChainValidator {
     /**
      * @return The singleton instance of the certificates chain validator
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.195 -0500", hash_original_method = "0F243599E8016F5D4F15CBBF70F43AE6", hash_generated_method = "02D8009B6E1299C3B3A212C7B30F1CD2")
     
 public static CertificateChainValidator getInstance() {

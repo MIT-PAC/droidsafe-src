@@ -1654,7 +1654,7 @@ public TimeStamp() {
             super(TimeZone.getDefault().getID());   // 3GPP2 timestamps use the local timezone
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.742 -0500", hash_original_method = "ED297E11B9020980F3FCB379731AD215", hash_generated_method = "5CAF47C4B1E925E4E0D8B0F356E4F50E")
         

@@ -170,7 +170,7 @@ public ServiceState getServiceState() {
         return mActivePhone.getServiceState();
     }
 
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.230 -0500", hash_original_method = "977991957EA985C198AAE07D77598BC6", hash_generated_method = "0020C7A4B47D7882DD5EAE6AC3BD58A2")
     
 public CellLocation getCellLocation() {
@@ -798,7 +798,7 @@ public void setPreferredNetworkType(int networkType, Message response) {
         mActivePhone.setPreferredNetworkType(networkType, response);
     }
 
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.447 -0500", hash_original_method = "25A22EEE8A64E80AD17264AC62119D91", hash_generated_method = "D6D7B5C81F85D6803682C7455434F19B")
     
 public void getPreferredNetworkType(Message response) {

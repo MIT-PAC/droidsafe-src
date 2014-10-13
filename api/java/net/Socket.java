@@ -393,7 +393,7 @@ public synchronized void close() throws IOException {
      */
     @DSComment("potential info leak")
     @DSSpec(DSCat.NETWORK)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.762 -0500", hash_original_method = "084821CC0A1E0331CE4D2BB5EC46E415", hash_generated_method = "035752FAFAA541B776502AEB7625AC4B")
     
 public InetAddress getInetAddress() {
@@ -413,7 +413,7 @@ public InetAddress getInetAddress() {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.764 -0500", hash_original_method = "83F4AB21434B41B13879E1F39D268878", hash_generated_method = "6A888960A97927C9FE7BA113727A3BC0")
     
 public InputStream getInputStream() throws IOException {
@@ -441,7 +441,7 @@ public boolean getKeepAlive() throws SocketException {
      */
     @DSComment("potential info leak")
     @DSSpec(DSCat.NETWORK)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.769 -0500", hash_original_method = "B81D9B2A12700622583B88DBCF07EC2E", hash_generated_method = "E7886D89DC17F90FB319BF6401B5F681")
     
 public InetAddress getLocalAddress() {
@@ -453,7 +453,7 @@ public InetAddress getLocalAddress() {
      */
     @DSComment("no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.772 -0500", hash_original_method = "F5BB694DF3469EBFBD82064FFB1FEAE0", hash_generated_method = "7757875108A58B1E253356DE798623DA")
     
 public int getLocalPort() {
@@ -473,7 +473,7 @@ public int getLocalPort() {
      */
     @DSComment("Method returns IO Object")
     @DSSafe(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.774 -0500", hash_original_method = "0AB25EAA0774AA81766D4356986FC34F", hash_generated_method = "7FE0092975A1C779207A619656F7BC91")
     
 public OutputStream getOutputStream() throws IOException {
@@ -490,7 +490,7 @@ public OutputStream getOutputStream() throws IOException {
      */
     @DSComment("no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.777 -0500", hash_original_method = "0A0FE55C893091E17125D546A7D59C8C", hash_generated_method = "2CD0DBDC8C6EBD34BBC1C81F3A3F646A")
     
 public int getPort() {
@@ -725,7 +725,7 @@ private boolean usingSocks() {
      *
      * @return the textual representation of this socket.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.816 -0500", hash_original_method = "881D40A46B027F3EDC8B30A9F4F44097", hash_generated_method = "28E5917CBB14515A1B4DB8F75FF70BE0")
     
@@ -849,7 +849,7 @@ public SocketAddress getLocalSocketAddress() {
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.NETWORK)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.829 -0500", hash_original_method = "7C698472BF26D61A7917F4B5238C5FF7", hash_generated_method = "C1CDFAAC803588FC140B6196FA164411")
     
 public SocketAddress getRemoteSocketAddress() {
