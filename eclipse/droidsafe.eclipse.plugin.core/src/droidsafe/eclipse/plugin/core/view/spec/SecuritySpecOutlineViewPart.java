@@ -1,7 +1,9 @@
 package droidsafe.eclipse.plugin.core.view.spec;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.State;
@@ -24,7 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
-import droidsafe.eclipse.plugin.core.marker.ProjectTaintMarkerProcessor;
+import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
@@ -56,33 +58,18 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
 
     /** The ID of the view as specified by the extension. */
     public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.DroidsafeSpecView";
-
-    /**
-     * Tries to find a security spec model for the currently selected project. If there is no selected
-     * project, it creates a text viewer telling the user to select a project in the Project Explorer.
-     * If there is a selected project in the Explorer View, the method looks for a serialized version
-     * of the spec in the droidsafe directory in the root folder of the application project. If a spec
-     * is available, the class field securitySpecModel is set. If a spec cannot be found, because
-     * droidsafe has not yet been executed for this application, then a message is displayed to the
-     * user instructing how to run the droidsafe analysis.
-     * 
-     * @param parent The composite container for the viewer. Used to create a text viewer in case a
-     *        security spec for the currently selected project cannot be found.
-     */
-    private SecuritySpecModel initializeSecuritySpec(Composite parent) {
-        IProject project = getProject();
-        String projectRootPath = getProject().getLocation().toOSString();
-        SecuritySpecModel securitySpec = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
-        ProjectTaintMarkerProcessor.get(project).init(securitySpec);
-        return securitySpec;
+    
+    public void refreshSpecAndOutlineView() {
+    	refreshSpecAndOutlineView(false);
     }
 
     /**
      * Rereads the serialized spec from file and resets the tree input.
+     * @param reInitialize always deserialize the spec from file
      */
-    public void refreshSpecAndOutlineView() {
+    public void refreshSpecAndOutlineView(boolean reInitialize) {
         fInputElement = null;
-        fInputElement = initializeSecuritySpec(fParentComposite);
+        fInputElement = DroidsafePluginUtilities.getSecuritySpec(reInitialize);
         if (fInputElement == null) {
             fEmptyPageLabel.setText("Droidsafe spec for selected project has not been computed yet. "
                     + "\nSelect the project on the Project Explorer "

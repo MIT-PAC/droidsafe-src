@@ -27,7 +27,7 @@ public class RefreshOutlineView extends AbstractHandler {
         IWorkbenchPart part = HandlerUtil.getActivePart(event);
         if (part instanceof SecuritySpecOutlineViewPart) {
             SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
-            droidsafeView.refreshSpecAndOutlineView();
+            droidsafeView.refreshSpecAndOutlineView(true);
         } else if (part instanceof IndicatorViewPart) {
             ((IndicatorViewPart) part).updateView(true);
         }

@@ -91,6 +91,11 @@
             name="Collapse Node">
       </command>
       <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+            id="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+            name="Search">
+      </command>
+      <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.RerunDroidsafeAnalysis"
             id="droidsafe.eclipse.plugin.core.commands.RerunDroidsafeAnalysis"
             name="Rerun Droidsafe">
@@ -151,12 +156,17 @@
       <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
             id="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
-            name="Show Taint Sources">
+            name="Show Droidsafe Taint Sources">
       </command>
       <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
             id="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
-            name="FIlter Taint Sources">
+            name="FIlter Droidsafe Taint Sources">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.ShowCallGraph"
+            id="droidsafe.eclipse.plugin.core.commands.ShowCallGraph"
+            name="Show Droidsafe Call Graph">
       </command>
    </extension>
    <extension
@@ -240,6 +250,13 @@
                icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
                id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
                label="Collapse All"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+               icon="icons/search.png"
+               id="droidsafe.eclipse.plugin.core.view.menu.Search"
+               label="Search"
                style="push">
          </command>
       </menuContribution>
@@ -458,6 +475,13 @@
                label="Collapse All"
                style="push">
          </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+               icon="icons/search.png"
+               id="droidsafe.eclipse.plugin.core.view.menu.Search"
+               label="Search"
+               style="push">
+         </command>
       </menuContribution>
       <menuContribution
             allPopups="false"
@@ -513,6 +537,13 @@
                icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
                id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
                label="Collapse All"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+               icon="icons/search.png"
+               id="droidsafe.eclipse.plugin.core.view.menu.Search"
+               label="Search"
                style="push">
          </command>
       </menuContribution>
@@ -580,14 +611,27 @@
          </separator>
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
-               label="Filter Taint Sources"
+               label="Filter Droisafe Taint Sources"
                style="push">
          </command>
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
-               label="Show Taint Sources"
+               label="Show Droidsafe Taint Sources"
                style="push">
          </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ShowCallGraph"
+               label="Show Droidsafe Call Graph"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:droidsafe.eclipse.plugin.core.view.CallGraphView">
+         <dynamic
+               class="droidsafe.eclipse.plugin.core.view.callgraph.ContextMethodMenu"
+               id="droidsafe.eclipse.plugin.core.view.callgraph.ContextMethodMenu">
+         </dynamic>
       </menuContribution>
    </extension>
    <extension
@@ -685,6 +729,14 @@
       </view>
       <view
             category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.CallGraphView"
+            name="Call Graph"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
             class="droidsafe.eclipse.plugin.core.view.value.ValueViewPart"
             icon="icons/android.png"
             id="droidsafe.eclipse.plugin.core.view.ValueView"
@@ -717,7 +769,7 @@
    </extension>
 
    <extension
-         id="droidsafe.taintmarker"
+         id="droidsafe.taint.marker"
          name="Taint Marker"
          point="org.eclipse.core.resources.markers">
       <super type="org.eclipse.core.resources.textmarker"/>
@@ -736,8 +788,14 @@
       <type
             markerSeverity="0"
             super="org.eclipse.ui.workbench.texteditor.info"
-            markerType="droidsafe.taintmarker"
+            markerType="droidsafe.taint.marker"
             name="droidsafe.taint">
+      </type>
+      <type
+            markerSeverity="0"
+            markerType="droidsafe.deadcode.marker"
+            name="droidsafe.deadcode"
+            super="org.eclipse.ui.workbench.texteditor.info">
       </type>
    </extension>
 
@@ -762,6 +820,24 @@
             verticalRulerPreferenceKey="droidsafe.taint.ruler"
             verticalRulerPreferenceValue="true">
       </specification>
+      <specification
+            annotationType="droidsafe.deadcode"
+            colorPreferenceKey="droidsafe.deadcode.color"
+            colorPreferenceValue="190,190,190"
+            highlightPreferenceKey="droidsafe.deadcode.highlight"
+            highlightPreferenceValue="true"
+            includeOnPreferencePage="true"
+            label="Droidsafe Dead Code Annotation"
+            overviewRulerPreferenceKey="droidsafe.deadcode.overview"
+            overviewRulerPreferenceValue="false"
+            presentationLayer="5"
+            textPreferenceKey="droidsafe.deadcode.text"
+            textPreferenceValue="true"
+            textStylePreferenceKey="droidsafe.deadcode.textstyle"
+            textStylePreferenceValue="NONE"
+            verticalRulerPreferenceKey="droidsafe.deadcode.ruler"
+            verticalRulerPreferenceValue="false">
+      </specification>
    </extension>
 
   <!-- define the marker updater class-->
@@ -769,7 +845,12 @@
       <updater
             id="droidsafe.TaintMarkerUpdater"
             class="droidsafe.eclipse.plugin.core.marker.TaintMarkerUpdater"
-            markerType="droidsafe.taintmarker">
+            markerType="droidsafe.taint.marker">
+      </updater>
+      <updater
+            class="droidsafe.eclipse.plugin.core.marker.DeadCodeMarkerUpdater"
+            id="droidsafe.DeadCodeMarkerUpdater"
+            markerType="droidsafe.deadcode.marker">
       </updater>
   </extension>
 
@@ -778,6 +859,17 @@
             id="droidsafe.eclipse.plugin.core.marker.TaintMarkerTextHover"
             class="droidsafe.eclipse.plugin.core.marker.TaintMarkerTextHover">
       </hover>
+  </extension>
+  <extension
+        id="droidsafe.deadcode.marker"
+        name="Taint Marker"
+        point="org.eclipse.core.resources.markers">
+     <super
+           type="org.eclipse.core.resources.textmarker">
+     </super>
+     <super
+           type="org.eclipse.core.resources.marker">
+     </super>
   </extension>
 
 </plugin>

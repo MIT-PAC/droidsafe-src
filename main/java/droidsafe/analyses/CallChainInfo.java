@@ -188,14 +188,12 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
         fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
         fp.printf ("%s  %s,\n", indent, json_field ("link", link));
         fp.printf ("%s  %s,\n", indent, json_field ("signature", method.getSignature()));
-        if (stmt != null) {
-            SourceLocationTag slt = getSourceLocation(stmt);
-            if (slt != null) {
-                fp.printf ("%s  %s", indent, json_field ("src-loc"));
-                fp.printf ("{ %s, %s},\n", json_field ("class", slt.getClz()), 
-                        json_field ("line", slt.getLine()));
-            }
-        }   
+        SourceLocationTag slt = (stmt == null) ? SootUtils.getMethodLocation(method) : getSourceLocation(stmt);
+        if (slt != null) {
+        	fp.printf ("%s  %s", indent, json_field ("src-loc"));
+        	fp.printf ("{ %s, %s},\n", json_field ("class", slt.getClz()), 
+        			json_field ("line", slt.getLine()));
+        }
         fp.printf ("%s  %s,\n", indent, json_field ("syscalls", syscalls));
         fp.printf ("%s  %s,\n", indent, json_field ("calls", calls));
 

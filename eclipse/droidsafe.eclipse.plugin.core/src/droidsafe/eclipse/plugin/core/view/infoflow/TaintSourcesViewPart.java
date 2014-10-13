@@ -36,7 +36,7 @@ import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.texteditor.ITextEditor;
 
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.marker.ClassTaintMarkerProcessor;
+import droidsafe.eclipse.plugin.core.marker.ClassMarkerProcessor;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
@@ -84,7 +84,7 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
                 if (resetViewer)
                     resetViewer();
                 showPage(PAGE_VIEWER);
-                Set<String> kinds = ClassTaintMarkerProcessor.getFilteredTaintKinds(fMarker);
+                Set<String> kinds = ClassMarkerProcessor.getFilteredTaintKinds(fMarker);
                 setContentDescription("Sources for " + fTaint + ": " + kinds);
                 fTreeViewer.setInput(fMarker);
             }

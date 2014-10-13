@@ -84,7 +84,7 @@ public class IndicatorViewState {
                 if (child.isJsonObject()) {
                     JsonObject childObj = child.getAsJsonObject();
                     computeMethodMap(childObj);
-                    List<MethodModel> methods = getMethodModels(childObj);
+                    List<MethodModel> methods = Utils.getMethodModels(spec, childObj);
                     if (!methods.isEmpty()) {
                         if (methods.size() > 1) {
                             changed = true;
@@ -117,39 +117,6 @@ public class IndicatorViewState {
         }
         copy.addProperty(CONTEXT_PROP, Integer.valueOf(context));
         return copy;
-    }
-
-    private List<MethodModel> getMethodModels(JsonObject jsonObj) {
-        String link = Utils.getFieldValueAsString(jsonObj, "link");
-        String sig = Utils.getSignature(jsonObj);
-        String srcClass = Utils.getSourceClass(jsonObj);
-        int srcLine = Utils.getSourceLine(jsonObj);
-       return getMethodModels(spec, sig, srcClass, srcLine, link);
-    }
-
-    private List<MethodModel> getMethodModels(SecuritySpecModel spec, String sig, String srcClass,
-            int srcLine, String link) {
-        List<MethodModel> result = new ArrayList<MethodModel>();
-        if (sig != null && srcClass != null && srcLine >= 0) {
-            if (link != null) {
-                if (link.equals("as_entry_point")) {
-                    for (MethodModel entryPoint: spec.getInputEventBlocks().keySet()) {
-                        if (sig.equals(entryPoint.getSignature()))
-                            result.add(entryPoint);
-                    }
-                } else if (link.equals("as_call")) {
-                    for (MethodModel call: spec.getOutputEventBlocks().keySet()) {
-                        if (sig.equals(call.getSignature())) {
-                            SourceLocationTag line = DroidsafePluginUtilities.getLine(call);
-                            if (line != null && line.getClz().equals(srcClass) && line.getLine() == srcLine) {
-                                result.add(call);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return result;
     }
 
     private void computeDefaultFilters(File indicatorFile, JsonObject jsonObj) {

@@ -28,8 +28,8 @@ import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 
-import droidsafe.eclipse.plugin.core.marker.ClassTaintMarkerProcessor;
-import droidsafe.eclipse.plugin.core.marker.ProjectTaintMarkerProcessor;
+import droidsafe.eclipse.plugin.core.marker.ClassMarkerProcessor;
+import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.wizards.NewFilterWizard;
@@ -41,7 +41,7 @@ public class FilterTaintSources extends AbstractHandler {
         IProject project = DroidsafePluginUtilities.getSelectedProject();
         IEditorPart editor = DroidsafePluginUtilities.getActiveEditor();
         if (project != null && editor != null && editor instanceof ITextEditor) {
-            ProjectTaintMarkerProcessor taintMarkerProcessor = ProjectTaintMarkerProcessor.get(project);
+            ProjectMarkerProcessor taintMarkerProcessor = ProjectMarkerProcessor.get(project);
             List<String> taintKinds = taintMarkerProcessor.getTaintKinds();
             Set<String> filteredTaintKinds = taintMarkerProcessor.getFilteredTaintKinds();
             Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();

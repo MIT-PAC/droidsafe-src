@@ -1,6 +1,8 @@
 package droidsafe.eclipse.plugin.core.view.indicator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -13,6 +15,9 @@ import com.google.gson.JsonPrimitive;
 
 import droidsafe.analyses.value.VAUtils;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
+import droidsafe.utils.SourceLocationTag;
 
 public class Utils {
     
@@ -102,6 +107,25 @@ public class Utils {
         int pos2 = sig.indexOf("(", pos1);
         pos1 = sig.lastIndexOf(" ", pos2) + 1;
         return sig.substring(pos1, pos2);
+    }
+
+    public static String[] signatureParameterTypes(String sig) {
+    	int pos1 = sig.indexOf("(");
+    	int pos2 = sig.indexOf(",", pos1 + 1);
+    	int pos3 = sig.lastIndexOf(")");
+    	String paramType;
+    	List<String> paramTypes = new ArrayList<String>();
+    	while (pos2 > 0) {
+    		paramType = sig.substring(pos1 + 1, pos2);
+    		paramTypes.add(paramType);
+    		pos1 = pos2;
+    		// TODO: handle ',' in array dimensions
+    		pos2 = sig.indexOf(",", pos1 + 1);
+    	}
+		paramType = sig.substring(pos1 + 1, pos3);
+		if (!paramType.isEmpty())
+			paramTypes.add(paramType);
+    	return paramTypes.toArray(new String[0]);
     }
 
     public static Set<String> getFilterFields(JsonObject jsonObj) {
@@ -254,29 +278,70 @@ public class Utils {
         return 0;
     }
 
-    public static String getSignature(JsonObject jsonObj) {
+    public static String getSignature(JsonElement jsonObj) {
         String sig = getFieldValueAsString(jsonObj, "signature");
         if (sig != null && sig.startsWith("<"))
             sig = sig.substring(1, sig.length() - 1);
         return sig;
     }
 
-    public static JsonObject getSourceLoc(JsonObject jsonObject) {
+    public static JsonObject getSourceLoc(JsonElement jsonObject) {
         return Utils.getFieldValueAsObject(jsonObject, SOURCE_LOCATION_PROP);
     }
     
-    public static String getSourceClass(JsonObject jsonObject) {
+    public static String getSourceClass(JsonElement jsonObject) {
         JsonObject sourceLoc = getSourceLoc(jsonObject);
         if (sourceLoc != null)
             return Utils.getFieldValueAsString(sourceLoc, "class");
         return null;
     }
 
-    public static int getSourceLine(JsonObject jsonObject) {
+    public static int getSourceLine(JsonElement jsonObject) {
         JsonObject sourceLoc = getSourceLoc(jsonObject);
         if (sourceLoc != null)
             return sourceLoc.get("line").getAsInt();
         return -1;
     }
+
+    public static List<MethodModel> getMethodModels(SecuritySpecModel spec, JsonObject jsonObj) {
+    	if (spec != null && jsonObj != null) {
+    		String link = Utils.getFieldValueAsString(jsonObj, "link");
+    		String sig = Utils.getSignature(jsonObj);
+    		String srcClass = Utils.getSourceClass(jsonObj);
+    		int srcLine = Utils.getSourceLine(jsonObj);
+    		return getMethodModels(spec, sig, srcClass, srcLine, link);
+    	}
+    	return Collections.EMPTY_LIST;
+    }
+
+    public static  List<MethodModel> getMethodModels(SecuritySpecModel spec, String sig, String srcClass,
+            int srcLine, String link) {
+        List<MethodModel> result = new ArrayList<MethodModel>();
+        if (sig != null && srcClass != null && srcLine >= 0) {
+            if (link != null) {
+                if (link.equals("as_entry_point")) {
+                    for (MethodModel entryPoint: spec.getInputEventBlocks().keySet()) {
+                        if (sig.equals(entryPoint.getSignature()))
+                            result.add(entryPoint);
+                    }
+                } else if (link.equals("as_call")) {
+                    for (MethodModel call: spec.getOutputEventBlocks().keySet()) {
+                        if (sig.equals(call.getSignature())) {
+                            SourceLocationTag line = DroidsafePluginUtilities.getLine(call);
+                            if (line != null && line.getClz().equals(srcClass) && line.getLine() == srcLine) {
+                                result.add(call);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+	public static List<MethodModel> getMethodModels(JsonObject data) {
+    	SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec();
+		return getMethodModels(spec, data);
+	}
 
 }

@@ -14,7 +14,7 @@ import droidsafe.speclang.model.CallLocationModel;
 public class TaintMarker {
 
     //Marker ID
-    public static final String TYPE = "droidsafe.taintmarker";
+    public static final String TYPE = "droidsafe.taint.marker";
     
     //Annotation ID
     public static final String ANNOTATION = "droidsafe.taint";
