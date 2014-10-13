@@ -363,7 +363,7 @@ public abstract Iterator<E> iterator();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.357 -0400", hash_original_method = "A06C3538162F748E28317896970387BE", hash_generated_method = "22C4F41EBA3A6ACE287F6D60148ADCF8")
     @Override
     public String toString() {
-        String retStr = new String("[]");
+        String retStr = new String();
         retStr.addTaint(getTaint());
         return retStr;
     }

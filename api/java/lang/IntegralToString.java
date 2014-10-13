@@ -13,7 +13,7 @@ public final class IntegralToString {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.174 -0500", hash_original_method = "84A07FBCA269378A9147D6530126000E", hash_generated_method = "CF6A398FCDDC219326C41A995D5477D8")
     
     public static String intToString(int i, int radix) {
-        String str = new String("<Integral.toString()>");
+        String str = new String();
         str.addTaint(i);
         str.addTaint(radix);
         return str;
@@ -25,7 +25,7 @@ public final class IntegralToString {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.176 -0500", hash_original_method = "B1B4D5F6DCA8EF0F22789512858C9AFE", hash_generated_method = "B3ECD37125ED3587B94ECCC77B8D6BA4")
     
     public static String intToString(int i) {
-        String str = new String("<Integral.intToString()>");
+        String str = new String();
         str.addTaint(i);
         return str;
         //return convertInt(null, i);
@@ -49,7 +49,7 @@ public static void appendInt(AbstractStringBuilder sb, int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.183 -0500", hash_original_method = "18F04DADB801BEC6FD2BF5A5509D8E24", hash_generated_method = "E79DB73A536926B98FC83AF3DDCD828E")
     
 private static String convertInt(AbstractStringBuilder sb, int i) {
-        String str = new String("<IntegralToString.convertInt>");
+        String str = new String();
         str.addTaint(i);
         
         if (sb != null) {
@@ -66,7 +66,7 @@ private static String convertInt(AbstractStringBuilder sb, int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.186 -0500", hash_original_method = "37B28104B332535CD9A4BDBCC29D5030", hash_generated_method = "B837EAB259A841BED217DC0BA5724CFC")
     
     public static String longToString(long v, int radix) {
-        String str = new String("<IntegralToString.longToString>");
+        String str = new String();
         str.addTaint(v);
         str.addTaint(radix);
         return str;
@@ -78,7 +78,7 @@ private static String convertInt(AbstractStringBuilder sb, int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.188 -0500", hash_original_method = "153B7EAD25B0FBAAC892ABA7B6CC50EA", hash_generated_method = "07305E55971D5721CD811119E18E7393")
     
 public static String longToString(long l) {
-        String str = new String("<IntegralToString.longToString>");
+        String str = new String();
         str.addTaint(l);
         
         return str;
@@ -103,7 +103,7 @@ public static void appendLong(AbstractStringBuilder sb, long l) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.195 -0500", hash_original_method = "335087D7FF3CE8ACF704F016666ED5E4", hash_generated_method = "9C2CF14366EC4FEC5E2510809E61CCA2")
     
 private static String convertLong(AbstractStringBuilder sb, long n) {
-        String str = new String("<IntegralToString.longToString>");
+        String str = new String();
         str.addTaint(n);
 
         if (sb != null) {
@@ -134,7 +134,7 @@ private static int intIntoCharArray(char[] buf, int cursor, int n) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.201 -0500", hash_original_method = "A41E5D3875136344B237460B8AD39DE0", hash_generated_method = "BF9029A36E87AD6C0F7646EBDC2AD21F")
     
 public static String intToBinaryString(int i) {
-        String str = new String("<IntegralToString");
+        String str = new String();
         str.addTaint(i);
         return str;
         /*
@@ -153,7 +153,7 @@ public static String intToBinaryString(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.203 -0500", hash_original_method = "425709456D43055F08B99D956BED133A", hash_generated_method = "19DE5B453C600CEADCEE9910F20C6563")
     
 public static String longToBinaryString(long v) {
-        String str = new String("<IntegralToString");
+        String str = new String();
         str.addTaint(v);
         return str;
         /*
@@ -185,7 +185,7 @@ public static StringBuilder appendByteAsHex(StringBuilder sb, byte b, boolean up
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.208 -0500", hash_original_method = "010E15EE749C468A15543203E9BC66F2", hash_generated_method = "65341427BE591FEECBDD3EBCD1A98B15")
     
 public static String byteToHexString(byte b, boolean upperCase) {
-        String str = new String("<IntegeralToString>");
+        String str = new String();
         str.addTaint(b);
         return str;
     }
@@ -193,7 +193,7 @@ public static String byteToHexString(byte b, boolean upperCase) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.211 -0500", hash_original_method = "744A47F287A2754D655F5FDE5DEB2E5D", hash_generated_method = "8851B88F67110322BF450F54F6CBA037")
     
     public static String bytesToHexString(byte[] bytes, boolean upperCase) {
-        String str = new String("<IntegralToString>");
+        String str = new String();
         str.addTaint(bytes[0]);
         return str;
         /*
@@ -211,7 +211,7 @@ public static String byteToHexString(byte b, boolean upperCase) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.213 -0500", hash_original_method = "53C9BEADC911A160577C54E5E3F03689", hash_generated_method = "1B231099D778F3AA3ECB08BDBE1B4A8A")
     
 public static String intToHexString(int i, boolean upperCase, int minWidth) {
-        String str = new String("<IntegralToString");
+        String str = new String();
         str.addTaint(i);
         str.addTaint(minWidth);
         str.addTaint(upperCase);
@@ -234,7 +234,7 @@ public static String intToHexString(int i, boolean upperCase, int minWidth) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.216 -0500", hash_original_method = "40D5415945BB8116A305EC0340CF03D3", hash_generated_method = "AC3B506B8F65F32340C42CCE255AD773")
     
 public static String longToHexString(long v) {
-        String str = new String("<IntegralToString");
+        String str = new String();
         str.addTaint(v);
         return str;
         /*
@@ -258,7 +258,7 @@ public static String longToHexString(long v) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.219 -0500", hash_original_method = "45CC1A585F589498B158F1646F8FCD50", hash_generated_method = "491C057DAC348EAD6D01733B5670B1D3")
     
 public static String intToOctalString(int i) {
-        String str = new String("<IntegralToString");
+        String str = new String();
         str.addTaint(i);
         return str;
 
@@ -278,7 +278,7 @@ public static String intToOctalString(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.222 -0500", hash_original_method = "0B792E8186913E3E66D8EB47F2B35BC9", hash_generated_method = "CD5497C1B1686D3D197A7F06DC143795")
     
 public static String longToOctalString(long v) {
-        String str = new String("<IntegralToString");
+        String str = new String();
         str.addTaint(v);
         return str;
 

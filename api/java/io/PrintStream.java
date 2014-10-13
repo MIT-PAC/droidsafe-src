@@ -255,7 +255,7 @@ protected void clearError() {
     
 @Override
     public synchronized void flush() {
-        if (out != null) {
+        /*        if (out != null) {
             try {
                 out.flush();
                 return;
@@ -264,6 +264,7 @@ protected void clearError() {
             }
         }
         setError();
+        */
     }
 
     /**
@@ -311,10 +312,10 @@ public PrintStream format(String format, Object... args) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.046 -0500", hash_original_method = "A0786364FBC116E551740BAAD4532E24", hash_generated_method = "C1FAA506AEBAF707B9693792FA852381")
     
 public PrintStream format(Locale l, String format, Object... args) {
-        if (format == null) {
+        /*if (format == null) {
             throw new NullPointerException("format == null");
         }
-        new Formatter(this, l).format(format, args);
+        new Formatter(this, l).format(format, args);*/
         return this;
     }
 

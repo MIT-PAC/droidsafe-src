@@ -782,9 +782,9 @@ public TextView(Context context,
                      AttributeSet attrs,
                      int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+        //addTaint(defStyle);
+        //addTaint(attrs.getTaint());
+        //addTaint(context.getTaint());
         mText = new StringBuffer();
         final Resources res = getResources();
         final CompatibilityInfo compat = res.getCompatibilityInfo();
@@ -3502,9 +3502,9 @@ public final void append(CharSequence text) {
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.520 -0400", hash_original_method = "B2621C1C8DC7A6B197F310747926C024", hash_generated_method = "2D8CCB202FABF6DFC18EDB9314F71358")
     public void append(CharSequence text, int start, int end) {
-        addTaint(end);
-        addTaint(start);
-        addTaint(text.getTaint());
+        //addTaint(end);
+        //addTaint(start);
+        //addTaint(text.getTaint());
         /*if(!(mText instanceof Editable))        
         {
             setText(mText, BufferType.EDITABLE);
@@ -3668,7 +3668,7 @@ void removeMisspelledSpans(Spannable spannable) {
     @Override
     public void onRestoreInstanceState(Parcelable state) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(state.getTaint());
+        //addTaint(state.getTaint());
         if(!(state instanceof SavedState))        
         {
             super.onRestoreInstanceState(state);
@@ -3782,7 +3782,7 @@ public boolean getFreezesText() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.530 -0400", hash_original_method = "F37C8918E495A353D909855BE6AEA0B3", hash_generated_method = "170DA8E8BD4336C0FB792281FDE81EAF")
     @android.view.RemotableViewMethod
     public final void setText(CharSequence text) {
-        addTaint(text.getTaint());
+        //addTaint(text.getTaint());
         //setText(text, mBufferType);
         mText = text;
         // ---------- Original Method ----------
@@ -3831,8 +3831,8 @@ public void setText(CharSequence text, BufferType type) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.534 -0400", hash_original_method = "EBAE4ED74D570AD4FF310073DD3BF4E5", hash_generated_method = "2BA93A7A63A103A1E7CA1F5FB9BB442F")
     private void setText(CharSequence text, BufferType type,
                          boolean notifyBefore, int oldlen) {
-        addTaint(oldlen);
-        addTaint(notifyBefore);
+        //addTaint(oldlen);
+        //addTaint(notifyBefore);
         /*
         if(text == null)        
         {
@@ -7175,7 +7175,7 @@ private Layout makeSingleLayout(int wantWidth, BoringLayout.Metrics boring, int 
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.609 -0400", hash_original_method = "F38DBB61FA92C8376A0BF0DADC8F1411", hash_generated_method = "B13012CAC0E1563228581F5DFB50ADC7")
     private boolean compressText(float width) {
-        addTaint(width);
+        //addTaint(width);
         if(isHardwareAccelerated())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1239452033 = (false);
@@ -7254,7 +7254,7 @@ public void setIncludeFontPadding(boolean includepad) {
     
 @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        addTaint(widthMeasureSpec + heightMeasureSpec);
+        //addTaint(widthMeasureSpec + heightMeasureSpec);
         
         //We are only interested in catching the override, this whole thing can be 
         //NOOP
@@ -7959,7 +7959,7 @@ private void convertFromViewportToContentCoordinates(Rect r) {
         r.top += verticalOffset;
         r.bottom += verticalOffset;
         
-        r.addTaint(horizontalOffset + verticalOffset);
+        //r.addTaint(horizontalOffset + verticalOffset);
     }
 
     @DSComment("Private Method")
@@ -8429,9 +8429,9 @@ private void sendBeforeTextChanged(CharSequence text, int start, int before, int
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.642 -0400", hash_original_method = "3C2834233455B82E3097E9750018AB89", hash_generated_method = "9746CE50A0BC4885ABD44D4FB3A5D0A5")
     private <T> void removeIntersectingSpans(int start, int end, Class<T> type) {
-        addTaint(type.getTaint());
-        addTaint(end);
-        addTaint(start);
+        //addTaint(type.getTaint());
+        //addTaint(end);
+        //addTaint(start);
         if(!(mText instanceof Editable))        
             return;
         Editable text = (Editable) mText;
@@ -12576,7 +12576,7 @@ public void hide() {
         @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.770 -0400", hash_original_method = "0D5333D88B146866CC739B7BC1FA2E0A", hash_generated_method = "35C87A0497B2DDA10AB5E7767F78297E")
         void showActionPopupWindow(int delay) {
-            addTaint(delay);
+            //addTaint(delay);
             if(mActionPopupWindow == null)            
             {
                 mActionPopupWindow = new ActionPopupWindow();

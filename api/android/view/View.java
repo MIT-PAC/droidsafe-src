@@ -121,8 +121,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
         String str = new String();
         str.addTaint(flags);
-		return str;
-	}
+        return str;
+    }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -244,7 +244,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         */
         View v = new View();
         v.mContext = context;
-        v.addTaint(resource);
+        //v.addTaint(resource);
         v.mParent = root;
         return v;
 	}
@@ -5919,7 +5919,7 @@ public void invalidate() {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
-	    addTaint(invalidateCache);
+	    //addTaint(invalidateCache);
 	}
     
     public void fastInvalidate(){
@@ -6681,7 +6681,7 @@ public InvalidateInfo getNextPoolable() {
 			}
             @DSSafe(DSCat.SAFE_OTHERS)            
             public void setPooled(boolean isPooled){
-				addTaint(isPooled);
+                //addTaint(isPooled);
 				// Original method
 				/*
 				{
@@ -7119,10 +7119,10 @@ AttachInfo(IWindowSession session, IWindow window,
         return handler.post(action);
     }
 		*/
-    	addTaint(action.getTaint());
+    	//addTaint(action.getTaint());
         //call action directly
         action.run();
-        return getTaintBoolean();
+        return true;
 	}
 
     /**
@@ -7151,8 +7151,8 @@ AttachInfo(IWindowSession session, IWindow window,
 
     public boolean performAccessibilityActionInternal(int action, Bundle args) {
         // TODO Auto-generated method stub
-        addTaint(action);
-        addTaint(args.getTaint());
+        //addTaint(action);
+        //addTaint(args.getTaint());
         return getTaintBoolean();
     }
 
@@ -7196,7 +7196,7 @@ AttachInfo(IWindowSession session, IWindow window,
         return true;
     }
 		*/
-    	addTaint(action.getTaint());
+    	//addTaint(action.getTaint());
     	Handler handler;
         AttachInfo attachInfo = mAttachInfo;
         if (attachInfo != null) {
@@ -7206,7 +7206,7 @@ AttachInfo(IWindowSession session, IWindow window,
             ViewRootImpl.getRunQueue().removeCallbacks(action);
         }
         
-        return getTaintBoolean();
+        return true;
 	}
     
     @DSComment("Normal GUI")
@@ -7336,7 +7336,7 @@ public void computeScroll() {
     }
 		*/
 		//Return nothing
-    	addTaint(horizontalFadingEdgeEnabled);
+    	//addTaint(horizontalFadingEdgeEnabled);
     	if (isHorizontalFadingEdgeEnabled() != horizontalFadingEdgeEnabled) {
             if (horizontalFadingEdgeEnabled) {
                 initScrollCache();
@@ -8020,7 +8020,7 @@ protected void onDraw(Canvas canvas) {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setLayerType(int layerType, Paint paint){
-		addTaint(layerType);
+        //addTaint(layerType);
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
@@ -8748,7 +8748,7 @@ public final int[] getDrawableState() {
     
     @RemotableViewMethod 
 	public void setBackgroundResource(int resid){
-		addTaint(resid);
+        //addTaint(resid);
 		// Original method
 		/*
 		{
@@ -8894,9 +8894,9 @@ public Drawable getBackground() {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.SAFE_LIST)
     public void setPadding(int left, int top, int right, int bottom){
-		addTaint(left);
-		addTaint(right);
-		addTaint(bottom);
+        //addTaint(left);
+        //addTaint(right);
+        //addTaint(bottom);
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
@@ -8904,8 +8904,8 @@ public Drawable getBackground() {
     
     @DSSafe(DSCat.SAFE_LIST)
     public void setPaddingRelative(int start, int top, int end, int bottom){
-		addTaintLocal(start);
-		addTaintLocal(end);
+        //addTaintLocal(start);
+        //addTaintLocal(end);
 		// Original method
 		/*
 		{
@@ -9017,7 +9017,7 @@ public Drawable getBackground() {
     @DSSafe(DSCat.GUI)
     
     public void setSelected(boolean selected){
-	    addTaintLocal(selected); 
+	    //addTaintLocal(selected); 
 		// Original method
 		/*
 		{
@@ -9061,7 +9061,7 @@ protected void dispatchSetSelected(boolean selected) {
     @DSSafe(DSCat.GUI)
     //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setActivated(boolean activated){
-	    addTaint(activated);
+	    //addTaint(activated);
 	}
 
     /**
@@ -9264,7 +9264,7 @@ protected void dispatchSetActivated(boolean activated) {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public void setId(int id){
-		addTaint(id);
+        addTaint(id);
 		// Original method
 		/*
 		{

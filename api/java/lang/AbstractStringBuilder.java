@@ -9,13 +9,11 @@ import java.util.Arrays;
 
 import libcore.util.EmptyArray;
 
+/** Tainted class, should not access fields for taint */
 abstract class AbstractStringBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.701 -0500", hash_original_field = "F46BD29C6E17578C395874054BC81C6E", hash_generated_field = "737C5532807A143D11A79A7148513E52")
 
     static final int INITIAL_CAPACITY = 16;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.704 -0500", hash_original_field = "CA3CEF12FBB39E8368D4DC357E1B2764", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
-
-    private char[] value;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.706 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
 
     private int count;
@@ -23,12 +21,13 @@ abstract class AbstractStringBuilder {
 
     private boolean shared;
 
+    private char[] value = new char[1];
+
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.718 -0500", hash_original_method = "C4ACD0AC259F7EA41C20592CA02F17C8", hash_generated_method = "C4ACD0AC259F7EA41C20592CA02F17C8")
     
-AbstractStringBuilder() {
-        value = new char[INITIAL_CAPACITY];
+    AbstractStringBuilder() {
     }
 
     @DSComment("Package priviledge")
@@ -36,10 +35,10 @@ AbstractStringBuilder() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.721 -0500", hash_original_method = "18E3A9BF20D4EDF142A00D9C9EE6DE65", hash_generated_method = "18E3A9BF20D4EDF142A00D9C9EE6DE65")
     
 AbstractStringBuilder(int capacity) {
-        if (capacity < 0) {
+         if (capacity < 0) {
             throw new NegativeArraySizeException();
         }
-        value = new char[capacity];
+        addTaint(capacity);
     }
 
     @DSComment("Package priviledge")
@@ -49,8 +48,7 @@ AbstractStringBuilder(int capacity) {
 AbstractStringBuilder(String string) {
         count = string.length();
         shared = false;
-        value = new char[count + INITIAL_CAPACITY];
-        string._getChars(0, count, value, 0);
+        this.addTaint(string.getTaint());
     }
 
     /*
@@ -58,10 +56,10 @@ AbstractStringBuilder(String string) {
      */
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.711 -0500", hash_original_method = "CA36BDE7C01AB0B5E4CF30DF6E006183", hash_generated_method = "2BE9E3503687526A3D670895B26B03C2")
     
-final char[] getValue() {
+    final char[] getValue() {
+        value[0] = getTaintChar();
         return value;
     }
 
@@ -72,9 +70,9 @@ final char[] getValue() {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.713 -0500", hash_original_method = "BF651BBA1175DAD67C837DDC7CF4E9BB", hash_generated_method = "3E0B77C959AFAA2A6E95669BF1F6B2A2")
     
-final char[] shareValue() {
+    final char[] shareValue() {
         shared = true;
-        return value;
+        return getValue();
     }
 
     /*
@@ -93,8 +91,8 @@ final void set(char[] val, int len) throws InvalidObjectException {
         }
 
         shared = false;
-        value = val;
-        count = len;
+        addTaint(val.getTaint());
+        addTaint(val[0]);
     }
 
     @DSComment("Private Method")
@@ -169,7 +167,7 @@ final void append0(String string) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.745 -0500", hash_original_method = "4EDD82B1AA77527A58B2DDD935211532", hash_generated_method = "2A8E845FAB75D5F75E0F9358D232401F")
     
 public int capacity() {
-        return value.length;
+        return this.getTaintInt();
     }
 
     /**
@@ -185,9 +183,8 @@ public int capacity() {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.748 -0500", hash_original_method = "447DEA66ED097ABAE0E9735DA732DBDF", hash_generated_method = "FAC07C09F852D642353F0EF74A2A34E0")
-    
-public char charAt(int index) {
-        return value[index];
+    public char charAt(int index) {
+        return getTaintChar();
     }
 
     @DSComment("Private Method")

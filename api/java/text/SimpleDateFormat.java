@@ -460,7 +460,10 @@ private AttributedCharacterIterator formatToCharacterIteratorImpl(Date date) {
     
 private StringBuffer formatImpl(Date date, StringBuffer buffer,
             FieldPosition field, List<FieldPosition> fields) {
-
+        StringBuffer buf = new StringBuffer();
+        buf.append(buf);
+        return buf;
+        /*
         boolean quote = false;
         int next, last = -1, count = 0;
         calendar.setTime(date);
@@ -509,6 +512,7 @@ private StringBuffer formatImpl(Date date, StringBuffer buffer,
             append(buffer, field, fields, (char) last, count);
         }
         return buffer;
+        */
     }
 
     @DSComment("Private Method")
@@ -782,8 +786,10 @@ private Date error(ParsePosition position, int offset, TimeZone zone) {
     
 @Override
     public StringBuffer format(Date date, StringBuffer buffer, FieldPosition fieldPos) {
-        // Harmony delegates to ICU's SimpleDateFormat, we implement it directly
-        return formatImpl(date, buffer, fieldPos, null);
+        //simplified 
+        StringBuffer buf = new StringBuffer();
+        buf.append(buffer);
+        return buf;
     }
 
     /**

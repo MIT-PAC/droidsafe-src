@@ -108,7 +108,7 @@ public static byte parseByte(String string, int radix) throws NumberFormatExcept
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.467 -0500", hash_original_method = "178909B2C58CF7188A6A8BC8023FFA15", hash_generated_method = "BA098F90A3D5AA4F49CACD160D9F0877")
     
 public static String toHexString(byte b, boolean upperCase) {
-        String str = new String("<Byte.toHexString>");
+        String str = new String();
         str.addTaint(b);
         str.addTaint(upperCase);
         return str;
@@ -127,7 +127,7 @@ public static String toHexString(byte b, boolean upperCase) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.470 -0500", hash_original_method = "A5C9B1F940A6E4E0B7C56A8CD89F3E5B", hash_generated_method = "CF35E1D7B63D21B25C3AC38B2AA64EC0")
     
 public static String toString(byte value) {
-        String str = new String("<Byte.toString>");
+        String str = new String();
         str.addTaint(value);
         return str;
 
@@ -367,7 +367,7 @@ public int compareTo(Byte object) {
     
 @Override
     public String toString() {
-        String str = new String("<Byte.toString()>");
+        String str = new String();
         str.addTaint(value);
         return str;
     }

@@ -2006,10 +2006,8 @@ public Object readUnshared() throws IOException, ClassNotFoundException {
     
 private Object readObject(boolean unshared) throws OptionalDataException,
             ClassNotFoundException, IOException {
-        Object obj = new Object();
-        obj.addTaint(getTaint());
-        obj.addTaint(unshared);
-        return obj;
+        //needed for fallback modeling
+        return null;
         
     /*    boolean restoreInput = (primitiveData == input);
         if (restoreInput) {

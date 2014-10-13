@@ -1721,7 +1721,7 @@ public Intent() {
         {
             this.mSelector = new Intent(o.mSelector);
         } //End block
-        addTaint(getTaint());
+        //addTaint(getTaint());
         // ---------- Original Method ----------
         //this.mAction = o.mAction;
         //this.mData = o.mData;
@@ -1779,7 +1779,7 @@ public Intent() {
     public Intent(String action) {
             this();
         mAction = action;
-        this.addTaint(action.getTaint());
+        //this.addTaint(action.getTaint());
     }
     
 	@DSComment("constructor")
@@ -1788,8 +1788,8 @@ public Intent() {
             this();
         mAction = action;
         mData = uri;
-        this.addTaint(action.getTaint());
-        this.addTaint(uri.getTaint());
+        //this.addTaint(action.getTaint());
+        //this.addTaint(uri.getTaint());
     }
     
     @DSComment("constructor")
@@ -1812,7 +1812,7 @@ public Intent() {
             Context packageContext, Class<?> cls) {
         this();
         mClsComponent = cls;
-        addTaint(action.getTaint());
+        //addTaint(action.getTaint());
         setAction(action);
         mData = uri;
         mComponent = new ComponentName(packageContext, cls.getName());
@@ -1829,7 +1829,7 @@ public Intent() {
     
 protected Intent(Parcel in) {
         this();
-        addTaint(in.getTaint());
+        //addTaint(in.getTaint());
         readFromParcel(in);
     }
 
@@ -2075,7 +2075,7 @@ public boolean hasFileDescriptors() {
 	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setAllowFds(boolean allowFds) {
 		// NOTE:  mExtras is a Bundle, perhaps it is best to push the taint down to that level
-		addTaint(allowFds);
+            //addTaint(allowFds);
 		/*
         if (mExtras != null) {
             mExtras.setAllowFds(allowFds);
@@ -2319,9 +2319,9 @@ public CharSequence getCharSequenceExtra(String name) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.428 -0400", hash_original_method = "1C448816D9B902054FE9E8A698247DA2", hash_generated_method = "3E3DEE7B959E87E94EACE1CB55226D17")
     public <T extends Parcelable> T getParcelableExtra(String name) {
-        addTaint(name.getTaint());
+        //addTaint(name.getTaint());
         T varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787 =         mExtras == null ? null : (T) mExtras.get(name);
-        varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787.addTaint(getTaint());
+        //varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787.addTaint(getTaint());
         return varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787;
         // ---------- Original Method ----------
         //return mExtras == null ? null : mExtras.<T>getParcelable(name);
@@ -2352,7 +2352,7 @@ public Parcelable[] getParcelableArrayExtra(String name) {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.429 -0400", hash_original_method = "BB02D0F500EDCAC2282F912174ECF594", hash_generated_method = "8496E3B52B9613F422993EC5A62C4915")
     public <T extends Parcelable> ArrayList<T> getParcelableArrayListExtra(String name) {
-        addTaint(name.getTaint());
+        //addTaint(name.getTaint());
         ArrayList<T> var2AA7AC40ADC652D6C8E180CF68F49870_1307005652 =         mExtras == null ? null : (ArrayList<T>)mExtras.get(name);
         return var2AA7AC40ADC652D6C8E180CF68F49870_1307005652;
         // ---------- Original Method ----------
@@ -2883,17 +2883,17 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
     @DSSafe(DSCat.INTENT_EXCHANGE)
     
     public Intent setAction(String action) {
-		mAction = action;
-        //mAction = action != null ? action.intern() : null;
-		addTaint(action.getTaint());
-        return this;
-    }
+            mAction = action;
+            //mAction = action != null ? action.intern() : null;
+            //addTaint(action.getTaint());
+            return this;
+        }
     
 	@DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.INTENT_EXCHANGE)
     public Intent setData(Uri data) {
         mData = data;
-        addTaint(data.getTaint());
+        //addTaint(data.getTaint());
 		/*
         mType = null;
         */
@@ -2905,7 +2905,7 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
     public Intent setType(String type) {
             mData=null;
             mType = type;
-            addTaint(type.getTaint());
+                //addTaint(type.getTaint());
             return this;
     }
     
@@ -2915,10 +2915,10 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
     public Intent setDataAndType(Uri data, String type) {
         mData = data;
         mType = type;
-Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1185276063.addTaint(getTaint());
-        addTaint(data.getTaint());
-        addTaint(type.getTaint());
+        Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
+        //var72A74007B2BE62B849F475C7BDA4658B_1185276063.addTaint(getTaint());
+        //addTaint(data.getTaint());
+        //addTaint(type.getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_1185276063;
         // ---------- Original Method ----------
         //mData = data;
@@ -2929,7 +2929,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
     @DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.INTENT_EXCHANGE)
     public Intent addCategory(String category) {
-		mCategories.addTaint(category.getTaint());
+        //mCategories.addTaint(category.getTaint());
         if (mCategories == null) {
             mCategories = new HashSet<String>();
         }
@@ -2961,18 +2961,18 @@ public void removeCategory(String category) {
         {
             IllegalArgumentException varDB28EE105FC601F18A42EF13E45407D0_474748705 = new IllegalArgumentException(
                     "Intent being set as a selector of itself");
-            varDB28EE105FC601F18A42EF13E45407D0_474748705.addTaint(getTaint());
+            //varDB28EE105FC601F18A42EF13E45407D0_474748705.addTaint(getTaint());
             throw varDB28EE105FC601F18A42EF13E45407D0_474748705;
         } //End block
         if(selector != null && mPackage != null)        
         {
             IllegalArgumentException var8BA32FA43E547F20BF608AAF6B7199B5_1000380269 = new IllegalArgumentException(
                     "Can't set selector when package name is already set");
-            var8BA32FA43E547F20BF608AAF6B7199B5_1000380269.addTaint(getTaint());
+            //var8BA32FA43E547F20BF608AAF6B7199B5_1000380269.addTaint(getTaint());
             throw var8BA32FA43E547F20BF608AAF6B7199B5_1000380269;
         } //End block
         mSelector = selector;
-        addTaint(selector.getTaint());
+        //addTaint(selector.getTaint());
         // ---------- Original Method ----------
         //if (selector == this) {
             //throw new IllegalArgumentException(
@@ -3788,9 +3788,9 @@ public void removeExtra(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.457 -0400", hash_original_method = "240F6D2BBC198957F28DF199FF71FA51", hash_generated_method = "323448496A1EB64B6B509F0F11F239D5")
     public Intent setFlags(int flags) {
         mFlags = flags;
-        addTaint(flags);
-Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_238535034.addTaint(getTaint());
+        //addTaint(flags);
+        Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
+        //var72A74007B2BE62B849F475C7BDA4658B_238535034.addTaint(getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_238535034;
         // ---------- Original Method ----------
         //mFlags = flags;
@@ -3800,19 +3800,20 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
 	@DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.INTENT_EXCHANGE)
     public Intent addFlags(int flags) {
-        addTaint(flags);
+            this.mFlags = flags;
+            //addTaint(flags);
         return this;
     }
     
 	@DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.INTENT_EXCHANGE)
     public Intent setPackage(String packageName) {
-        addTaint(packageName.getTaint());
+            //addTaint(packageName.getTaint());
         if (packageName != null && mSelector != null) {
             IllegalArgumentException exception = 
             new IllegalArgumentException(
                     "Can't set package name when selector is already set");
-            exception.addTaint(getTaint());
+                //exception.addTaint(getTaint());
             throw exception;
         }
         mPackage = packageName;
@@ -3828,7 +3829,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
                 mClsComponent = Class.forName(component.getClassName());    
             } catch (ClassNotFoundException e){
             }
-            addTaint(component.getTaint());
+            //addTaint(component.getTaint());
             return this;
     }
     
@@ -3842,10 +3843,10 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
             mClsComponent = Class.forName(className);  
         } catch (ClassNotFoundException e) {
         }
-        addTaint(packageContext.getTaint());
-        addTaint(className.getTaint()); 
+        //addTaint(packageContext.getTaint());
+        //addTaint(className.getTaint()); 
         Intent var72A74007B2BE62B849F475C7BDA4658B_607451133 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_607451133.addTaint(getTaint());
+        //var72A74007B2BE62B849F475C7BDA4658B_607451133.addTaint(getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_607451133;
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageContext, className);
@@ -3857,15 +3858,15 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.458 -0400", hash_original_method = "0DAD204BCD083F4BEBCC949C19CA4443", hash_generated_method = "5CEF145A6CCA0AADAE7E7BECBD589C6D")
     public Intent setClassName(String packageName, String className) {
-        addTaint(packageName.getTaint());
-        addTaint(className.getTaint());
+        //addTaint(packageName.getTaint());
+        //addTaint(className.getTaint());
         try {
             mClsComponent = Class.forName(className);  
         } catch (ClassNotFoundException e) {
         }
         mComponent = new ComponentName(packageName, className);
         Intent var72A74007B2BE62B849F475C7BDA4658B_1442856412 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1442856412.addTaint(getTaint());
+        //var72A74007B2BE62B849F475C7BDA4658B_1442856412.addTaint(getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_1442856412;
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageName, className);
@@ -3878,11 +3879,11 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.459 -0400", hash_original_method = "07D0BC1863460C70C46D0D4DB8E842CD", hash_generated_method = "7F6ACB39663195BC97A4BC6A90961AAC")
     public Intent setClass(Context packageContext, Class<?> cls) {
         mClsComponent = cls;
-        addTaint(packageContext.getTaint());
-        addTaint(cls.getTaint());
+        //addTaint(packageContext.getTaint());
+        //addTaint(cls.getTaint());
         mComponent = new ComponentName(packageContext, cls.getName());
-Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1106282301.addTaint(getTaint());
+        Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
+        //var72A74007B2BE62B849F475C7BDA4658B_1106282301.addTaint(getTaint());
         return var72A74007B2BE62B849F475C7BDA4658B_1106282301;
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageContext, cls);
@@ -3900,7 +3901,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         {
             mSourceBounds = null;
         } //End block
-        addTaint(r.getTaint());
+        //addTaint(r.getTaint());
         // ---------- Original Method ----------
         //if (r != null) {
             //mSourceBounds = new Rect(r);
@@ -3912,8 +3913,8 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.461 -0400", hash_original_method = "E5580C6082A47C0EDDA03A45ABBBF7D7", hash_generated_method = "4B8FA51A496FF6E4B5BA8D2EE3D46DB1")
     public int fillIn(Intent other, int flags) {
-        addTaint(flags);
-        addTaint(other.getTaint());
+        //addTaint(flags);
+        //addTaint(other.getTaint());
         int changes = 0;
         if(other.mAction != null
                 && (mAction == null || (flags&FILL_IN_ACTION) != 0))        
@@ -3997,9 +3998,12 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.462 -0400", hash_original_method = "B6E4053A3570119C1E3D361525D403A8", hash_generated_method = "C8D6E623D6274E5B094908B5C049F5B2")
     public boolean filterEquals(Intent other) {
-        addTaint(other.getTaint());
-        return getTaintBoolean();
+        //addTaint(other.getTaint());
         
+        //return getTaintBoolean();
+        
+        return true;
+
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

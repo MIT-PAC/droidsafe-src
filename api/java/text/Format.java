@@ -151,12 +151,6 @@ public final String format(Object object) {
 public abstract StringBuffer format(Object object, StringBuffer buffer,
             FieldPosition field);
 
-    @DSBan(DSCat.DROIDSAFE_INTERNAL)
-    public StringBuffer droidsafeFormat(Object obj, StringBuffer buffer, FieldPosition field) {
-        StringBuffer sb = new StringBuffer();
-        sb.addTaint(obj.getTaintInt() + buffer.getTaintInt() + field.getTaintInt());
-        return sb;
-    }
     /**
      * Formats the specified object using the rules of this format and returns
      * an {@code AttributedCharacterIterator} with the formatted string and no

@@ -78,7 +78,7 @@ public class DSCursor implements Cursor {
     @DSSafe(DSCat.DB_CURSOR)
     
     public String getColumnName(int columnIndex) {
-        String str = new String("DSUnknown");
+        String str = new String();
         str.addTaint(getTaint());
         return str;
     }
@@ -144,7 +144,7 @@ public class DSCursor implements Cursor {
     @DSSafe(DSCat.DB_CURSOR)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public String getString(int columnIndex) {
-        return new String("DSUnknown");
+        return new String();
     }
     
     @DSSource({DSSourceKind.DATABASE_INFORMATION})

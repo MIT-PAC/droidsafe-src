@@ -94,7 +94,7 @@ public static double parseDouble(String string) throws NumberFormatException {
     
 public static String toString(double d) {
         //return RealToString.getInstance().doubleToString(d);
-        String s = new String("<double>");
+        String s = new String();
         s.addTaint(d);
         return s;
     }
@@ -201,7 +201,7 @@ public static Double valueOf(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.688 -0500", hash_original_method = "1D9798A0A4D63301EAA0C709DA651E0D", hash_generated_method = "4777531DC6DAFBE5D6CD7B3DF1F501A7")
     
 public static String toHexString(double d) {
-        String ret = new String("<Double.toHexString>");
+        String ret = new String();
         ret.addTaint(d);
         return ret;
         /*
