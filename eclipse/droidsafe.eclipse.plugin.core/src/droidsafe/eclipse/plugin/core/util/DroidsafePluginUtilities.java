@@ -653,8 +653,8 @@ public class DroidsafePluginUtilities {
         }
         if (openEditor == null) {
             error("Failed to find Java source for class " + className);
-        } else {
-            ProjectMarkerProcessor.get(project).showDroidsafeAnnotations(openEditor, className);
+//        } else {
+//            ProjectMarkerProcessor.get(project).showDroidsafeAnnotations(openEditor, className);
         }
         return openEditor;
     }

@@ -1,9 +1,7 @@
 package droidsafe.eclipse.plugin.core.view.spec;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.State;
@@ -19,9 +17,13 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IPartListener2;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchPartReference;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
+import org.eclipse.ui.texteditor.ITextEditor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -99,6 +101,10 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
      */
     @Override
     public void createPartControl(Composite parent) {
+        IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+        if (window != null) {
+        	window.getPartService().addPartListener(new EditorVisibleListener());
+        }
         super.createPartControl(parent);
         fTreeViewer.getControl().addKeyListener(new KeyAdapter() {
             @Override
@@ -116,6 +122,50 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
             }
         });
         showOtherDroidsafeViews(VIEW_ID);
+    }
+    
+    class EditorVisibleListener implements IPartListener2 {
+
+    	@Override
+		public void partActivated(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partBroughtToTop(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partClosed(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partDeactivated(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partOpened(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partHidden(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partVisible(IWorkbenchPartReference partRef) {
+			IWorkbenchPart part = partRef.getPart(false);
+			if (part instanceof ITextEditor) {
+				IProject project = DroidsafePluginUtilities.getSelectedProject();
+				if (project != null) {
+					ProjectMarkerProcessor projectMarkerProcessor = ProjectMarkerProcessor.get(project);
+					projectMarkerProcessor.showDroidsafeAnnotations((ITextEditor)part);
+				}
+			}
+		}
+
+		@Override
+		public void partInputChanged(IWorkbenchPartReference partRef) {
+		}
+    	
     }
     
     private void updateCurrentViewerSettings() {

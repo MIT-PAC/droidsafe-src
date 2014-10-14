@@ -88,40 +88,12 @@ public class ProjectMarkerProcessor {
         		fClassesNeedUpdate = new HashSet<String>();
         		IEditorPart editor = DroidsafePluginUtilities.getActiveEditor();
         		if (editor != null) {
-        			if (!editorsListenedTo.contains(editor)) {
-        				addInputChangedListenerToEditor(editor);
-        				editorsListenedTo.add(editor);
-        			}
         			showDroidsafeAnnotations(editor);
          		}
         	}
         }
     }
     
-    private static void addInputChangedListenerToEditor(final IEditorPart editor) {
-		editor.addPropertyListener(new IPropertyListener() {
-
-			@Override
-			public void propertyChanged(Object source, int propId) {
-				if (propId == IEditorPart.PROP_INPUT) {
-					IProject project = DroidsafePluginUtilities.getSelectedProject();
-					if (project != null) {
-						ProjectMarkerProcessor projectMarkerProcessor = get(project);
-						projectMarkerProcessor.showDroidsafeAnnotations(editor);
-					}
-				}
-			}});
-		
-		((EditorPart)editor).addPartPropertyListener(new IPropertyChangeListener() {
-
-			@Override
-			public void propertyChange(PropertyChangeEvent event) {
-				String prop = event.getProperty();
-				
-			}});
-    	
-    }
-
     public void showDroidsafeAnnotations(IEditorPart editor) {
     	IFile file = DroidsafePluginUtilities.getEditorInputFile(editor);
     	if (file != null) {
