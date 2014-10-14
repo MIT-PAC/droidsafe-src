@@ -17,6 +17,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IPartListener2;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartReference;
@@ -34,6 +35,7 @@ import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.SpecInfoOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
@@ -70,7 +72,6 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
      * @param reInitialize always deserialize the spec from file
      */
     public void refreshSpecAndOutlineView(boolean reInitialize) {
-        fInputElement = null;
         fInputElement = DroidsafePluginUtilities.getSecuritySpec(reInitialize);
         if (fInputElement == null) {
             fEmptyPageLabel.setText("Droidsafe spec for selected project has not been computed yet. "
@@ -80,6 +81,13 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
         } else {
             updateView();
             InfoFlowSummaryViewPart.openView(fInputElement);
+            if (reInitialize) {
+            	IndicatorViewPart indicatorView = IndicatorViewPart.openView();
+            	if (indicatorView != null) {
+            		indicatorView.forceReloadAll();
+            		indicatorView.updateView();
+            	}
+            }
         }
     }
 
@@ -153,11 +161,11 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
 		@Override
 		public void partVisible(IWorkbenchPartReference partRef) {
 			IWorkbenchPart part = partRef.getPart(false);
-			if (part instanceof ITextEditor) {
+			if (part instanceof IEditorPart) {
 				IProject project = DroidsafePluginUtilities.getSelectedProject();
 				if (project != null) {
 					ProjectMarkerProcessor projectMarkerProcessor = ProjectMarkerProcessor.get(project);
-					projectMarkerProcessor.showDroidsafeAnnotations((ITextEditor)part);
+					projectMarkerProcessor.showDroidsafeTextMarkers((IEditorPart)part);
 				}
 			}
 		}

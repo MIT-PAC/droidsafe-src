@@ -438,7 +438,7 @@
          </command>
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
-               label="Refresh Outline View"
+               label="Reload Spec and Refresh All"
                style="push">
          </command>
       </menuContribution>
@@ -578,7 +578,7 @@
          </menu>
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
-               label="Refresh Outline View"
+               label="Reload Indicator and Refresh"
                style="push">
          </command>
          <separator

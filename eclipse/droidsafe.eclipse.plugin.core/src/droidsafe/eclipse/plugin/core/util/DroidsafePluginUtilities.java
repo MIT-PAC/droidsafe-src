@@ -613,16 +613,15 @@ public class DroidsafePluginUtilities {
     }
 
     public static SecuritySpecModel getSecuritySpec(boolean reInitialize) {
-        IProject project = getSelectedProject();
-        if (project != null) {
-        	if (reInitialize)
-        		return initializeSecuritySpec(project);
-        	SecuritySpecModel spec = specMap.get(project);
-        	if (spec == null)
-        		spec = initializeSecuritySpec(project);
-        	return spec;
-        }
-        return null;
+    	IProject project = getSelectedProject();
+    	if (project != null) {
+    		SecuritySpecModel spec = specMap.get(project);
+    		if (reInitialize || spec == null) {
+    			spec = initializeSecuritySpec(project);
+    		}
+			return spec;
+    	}
+    	return null;
     }
 
     /**
@@ -653,8 +652,6 @@ public class DroidsafePluginUtilities {
         }
         if (openEditor == null) {
             error("Failed to find Java source for class " + className);
-//        } else {
-//            ProjectMarkerProcessor.get(project).showDroidsafeAnnotations(openEditor, className);
         }
         return openEditor;
     }

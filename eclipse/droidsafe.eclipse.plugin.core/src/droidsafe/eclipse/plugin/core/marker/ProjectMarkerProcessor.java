@@ -11,12 +11,8 @@ import java.util.TreeSet;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.jface.util.IPropertyChangeListener;
-import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IPropertyListener;
-import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.ITextEditor;
 
@@ -29,10 +25,12 @@ public class ProjectMarkerProcessor {
 
     private static Map<IProject, ProjectMarkerProcessor> instanceMap = new HashMap<IProject, ProjectMarkerProcessor>();
 
-    private Map<String, ClassMarkerProcessor> classProcessorMap = new HashMap<String, ClassMarkerProcessor>();
+    private Map<String, ClassMarkerProcessor> fClassProcessorMap;
 
     private IProject fProject;
 
+    private SecuritySpecModel fSecuritySpec;
+    
     private List<String> fTaintKinds;
     private Set<String> fFilteredTaintKinds;
     private Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> fTaintedDataMap;
@@ -41,8 +39,6 @@ public class ProjectMarkerProcessor {
     private Set<String> fProcessedClasses;
 
     private Set<String> fClassesNeedUpdate;
-
-	private static Set<IEditorPart> editorsListenedTo = new HashSet<IEditorPart>();
 
     public ProjectMarkerProcessor(IProject project) {
         fProject = project;
@@ -58,10 +54,10 @@ public class ProjectMarkerProcessor {
     }
 
     public ClassMarkerProcessor get(String className) {
-        ClassMarkerProcessor processor = classProcessorMap.get(className);
+        ClassMarkerProcessor processor = fClassProcessorMap.get(className);
         if (processor == null) {
             processor = new ClassMarkerProcessor(this, className);
-            classProcessorMap.put(className, processor);
+            fClassProcessorMap.put(className, processor);
         }
         return processor;
     }
@@ -78,6 +74,14 @@ public class ProjectMarkerProcessor {
     }
 
     public void init(SecuritySpecModel securitySpec) {
+    	if (fSecuritySpec != null) {
+    		for (String className: fProcessedClasses) {
+    			ClassMarkerProcessor classProcessor = get(className);
+    			classProcessor.removeAllDroidsafeTextMarkers();
+    		}
+    	}
+    	fClassProcessorMap = new HashMap<String, ClassMarkerProcessor>();
+    	fSecuritySpec = securitySpec;
         fTaintedDataMap = securitySpec.getTaintedDataMap();
         fUnreachableSourceMethodMap = securitySpec.getUnreachableSourceMethodMap();
         if (fTaintedDataMap != null && fUnreachableSourceMethodMap != null) {
@@ -88,28 +92,28 @@ public class ProjectMarkerProcessor {
         		fClassesNeedUpdate = new HashSet<String>();
         		IEditorPart editor = DroidsafePluginUtilities.getActiveEditor();
         		if (editor != null) {
-        			showDroidsafeAnnotations(editor);
+        			showDroidsafeTextMarkers(editor);
          		}
         	}
         }
     }
     
-    public void showDroidsafeAnnotations(IEditorPart editor) {
+    public void showDroidsafeTextMarkers(IEditorPart editor) {
     	IFile file = DroidsafePluginUtilities.getEditorInputFile(editor);
     	if (file != null) {
     		String className = getClassName(file);
     		if (className != null)
-    			showDroidsafeAnnotations(editor, className);
+    			showDroidsafeTextMarkers(editor, className);
     	}
     }
 
-    public void showDroidsafeAnnotations(IEditorPart openedEditor, String className) {
+    public void showDroidsafeTextMarkers(IEditorPart openedEditor, String className) {
     	if (openedEditor != null && openedEditor instanceof ITextEditor && fProcessedClasses != null) {
     		ITextEditor editor = (ITextEditor) openedEditor;
     		if (fProcessedClasses.contains(className)) {
     			if (fClassesNeedUpdate.contains(className)) {
     				ClassMarkerProcessor classProcessor = get(className);
-    				classProcessor.updateTaintMarkerAnnotations(editor);
+    				classProcessor.updateTaintMarkers(editor);
     				fClassesNeedUpdate.remove(className);
     			}
     		} else {
@@ -120,7 +124,7 @@ public class ProjectMarkerProcessor {
     				IEditorInput input = editor.getEditorInput();
     				if (input instanceof FileEditorInput) {
     					ClassMarkerProcessor classProcessor = get(className);
-    					classProcessor.addDroidsafeAnnotations(editor);
+    					classProcessor.showDroidsafeTextMarkers(editor);
     				}
     			}
     		}
@@ -176,7 +180,7 @@ public class ProjectMarkerProcessor {
     		String className = getClassName(file);
     		if (className != null) {
     			ClassMarkerProcessor processor = get(className);
-    			processor.updateTaintMarkerAnnotations(editor);
+    			processor.updateTaintMarkers(editor);
     			activeClassName = className;
     		}
     	}

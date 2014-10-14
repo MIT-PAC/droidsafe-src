@@ -1,6 +1,7 @@
 package droidsafe.eclipse.plugin.core.marker;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -12,6 +13,7 @@ import java.util.TreeSet;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -25,7 +27,6 @@ import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.FieldAccess;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
-import org.eclipse.jdt.core.dom.Name;
 import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
@@ -43,7 +44,6 @@ import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.ui.texteditor.SimpleMarkerAnnotation;
 
-import droidsafe.analyses.value.VAUtils;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.infoflow.TaintSourcesViewPart;
 import droidsafe.speclang.model.CallLocationModel;
@@ -61,6 +61,9 @@ public class ClassMarkerProcessor {
     private Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>> fTaintedDataMap;
     private Map<Position, Set<CallLocationModel>> fTaintSourcesMap = new HashMap<Position, Set<CallLocationModel>>();
     private Map<Position, SimpleMarkerAnnotation> fTaintAnnotationMap = new HashMap<Position, SimpleMarkerAnnotation>();
+    private Set<SimpleMarkerAnnotation> fDeadCodeAnnotations = new HashSet<SimpleMarkerAnnotation>();
+
+	private ITextEditor fEditor;
 
     public ClassMarkerProcessor(ProjectMarkerProcessor projectProcessor, String className) {
         fProjectProcessor = projectProcessor;
@@ -73,16 +76,16 @@ public class ClassMarkerProcessor {
         return fProjectProcessor.getTaintKinds();
     }
     
-    public void addDroidsafeAnnotations(final IEditorPart openedEditor) {
+    public void showDroidsafeTextMarkers(final IEditorPart openedEditor) {
         if (openedEditor instanceof ITextEditor) {
-            final ITextEditor editor = (ITextEditor)openedEditor;
-            computeDroidsafeTextMarkerInfo(editor);
+        	fEditor = (ITextEditor)openedEditor;
+            computeDroidsafeTextMarkerInfo(fEditor);
             WorkspaceModifyOperation op = new WorkspaceModifyOperation() {
 
                 @Override
                 protected void execute(IProgressMonitor monitor) throws CoreException {
                     Map<Annotation, Position> annotationsToAdd = createDroidsafeTextMarkers();
-                    AnnotationModel annotationModel = getAnnotationModel(editor);
+                    AnnotationModel annotationModel = getAnnotationModel(fEditor);
                     updateAnnotationModel(annotationModel, new Annotation[0], annotationsToAdd);
                 }
             };
@@ -292,13 +295,13 @@ public class ClassMarkerProcessor {
         }
     }
 
-    void updateTaintMarkerAnnotations(ITextEditor editor) {
-        final AnnotationModel annotationModel = getAnnotationModel(editor);
-        final TaintSourcesViewPart sourceView = TaintSourcesViewPart.findView();
+    void updateTaintMarkers(final ITextEditor editor) {
         WorkspaceModifyOperation op = new WorkspaceModifyOperation() {
             @Override
             protected void execute(IProgressMonitor monitor) throws CoreException {
-                IMarker sourceViewMarker = (sourceView == null) ? null : sourceView.getMarker();
+                AnnotationModel annotationModel = getAnnotationModel(editor);
+                TaintSourcesViewPart sourceView = TaintSourcesViewPart.findView();
+                        IMarker sourceViewMarker = (sourceView == null) ? null : sourceView.getMarker();
                 boolean sourceViewMarkerUpdated = false;
                 boolean sourceViewMarkerRemoved = false;
                 //iamf.connect(document);
@@ -371,5 +374,28 @@ public class ClassMarkerProcessor {
         }
         return kinds;
     }
-    
+
+	public void removeAllDroidsafeTextMarkers() {
+        WorkspaceModifyOperation op = new WorkspaceModifyOperation() {
+            @Override
+            protected void execute(IProgressMonitor monitor) throws CoreException {
+            	int depth = IResource.DEPTH_INFINITE;
+            	fFile.deleteMarkers(TaintMarker.TYPE, true, depth);
+            	fFile.deleteMarkers(DeadCodeMarker.TYPE, true, depth);
+                AnnotationModel annotationModel = getAnnotationModel(fEditor);
+                List<SimpleMarkerAnnotation> annotationsToRemove = new ArrayList<SimpleMarkerAnnotation>(fTaintAnnotationMap.values());
+                annotationsToRemove.addAll(fDeadCodeAnnotations);
+                updateAnnotationModel(annotationModel, annotationsToRemove.toArray(new Annotation[0]), Collections.EMPTY_MAP);
+            }
+        };
+		
+        try {
+        	op.run(null);
+        } catch (InvocationTargetException ex) {
+        	DroidsafePluginUtilities.error("Error in removing droidsafe text markers from file " + fFile);
+        } catch (InterruptedException e) {
+        	Assert.isTrue(false, "this operation can not be canceled"); //$NON-NLS-1$
+        }
+	}
+
 }

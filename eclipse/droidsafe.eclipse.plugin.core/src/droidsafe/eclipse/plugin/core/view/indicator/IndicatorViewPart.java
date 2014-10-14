@@ -3,6 +3,7 @@ package droidsafe.eclipse.plugin.core.view.indicator;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -74,6 +75,8 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
     
     private IndicatorViewState fState;
 
+	private Set<File> fFilesToReoad = new HashSet<File>();
+
     public Map<String, Boolean> getVisibilityMap() {
         return fState.visibilityMap;
     }
@@ -137,13 +140,9 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
      * Set the input element for the viewer and update the contents of the view.
      */
     protected void setInputElement(File indicatorFile) {
-        setInputElement(indicatorFile, false);
-    }
-
-    protected void setInputElement(File indicatorFile, boolean reload) {
         if (indicatorFile != fInputElement || fTreeViewer.getInput() == null) {
             fInputElement = indicatorFile;
-            updateView(reload);
+            updateView();
         }
     }
     
@@ -162,19 +161,14 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
      * Update the content of the outline view.
      */
     public void updateView() {
-        updateView(false);
-    }
-
-    /**
-     * Update the content of the outline view.
-     */
-    public void updateView(boolean reload) {
         if (fInputElement != null && fParentComposite != null) {
             IndicatorViewState oldState = fStateMap.get(fInputElement);
+            boolean reload = fFilesToReoad.contains(fInputElement);
             if (reload || oldState == null ) {
                 JsonObject jsonObject = DroidsafePluginUtilities.parseIndicatorFile(fInputElement);
                 if (jsonObject == null)
                     return;
+                fFilesToReoad.remove(fInputElement);
                 fState = new IndicatorViewState(fInputElement, jsonObject, getSecuritySpec(), oldState);
                 fStateMap.put(fInputElement, fState);
             } else {
@@ -470,5 +464,17 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
             }   
         }
     }
+
+	public boolean needsReload(File file) {
+		return fFilesToReoad.contains(file);
+	}
+
+	public void forceReload(File file) {
+		fFilesToReoad.add(file);
+	}
+	
+	public void forceReloadAll() {
+		fFilesToReoad.addAll(fStateMap.keySet());
+	}
     
 }
