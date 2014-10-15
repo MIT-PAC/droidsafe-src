@@ -12,10 +12,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import soot.MethodOrMethodContext;
 import soot.SootMethod;
-import droidsafe.analyses.CallChainInfo;
 import droidsafe.analyses.SourceCallChainBuilder;
+import droidsafe.analyses.SourceCallChainInfo;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 
@@ -32,7 +31,7 @@ public class SourceCallTree {
     private static int timeout = 5 * 60 * 1000;
 
     private static SourceCallTree v;
-    private List<CallChainInfo> entry_points = new ArrayList<CallChainInfo>();
+    private List<SourceCallChainInfo> entry_points = new ArrayList<SourceCallChainInfo>();
     
     private SourceCallTree() {
         forEntryPoints();
@@ -55,7 +54,7 @@ public class SourceCallTree {
             if (RCFG.isUserEntryPoint(method)) {
                 logger.info ("Found entry  point {}", method);
                 SourceCallChainBuilder cb = new SourceCallChainBuilder (timeout, true);
-                CallChainInfo cci = cb.process_call_chain (null, method);
+                SourceCallChainInfo cci = cb.process_call_chain (null, method);
                 if (cci != null) {
                 	cci.type = "entry-point";
                 	cci.link = "as_entry_point";
@@ -71,7 +70,7 @@ public class SourceCallTree {
         try {
             fp = new PrintStream(parentDir + File.separator + FILE_NAME);
             fp.print (json_call_graph_header ("Entry Points", Collections.EMPTY_MAP));
-            for (CallChainInfo cci : entry_points) {
+            for (SourceCallChainInfo cci : entry_points) {
                 cci.dump_json (fp, "  ");
                 fp.print(",");
             }

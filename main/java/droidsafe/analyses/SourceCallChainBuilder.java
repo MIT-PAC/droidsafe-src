@@ -1,17 +1,10 @@
 package droidsafe.analyses;
 
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
@@ -19,48 +12,18 @@ import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import soot.Body;
-import soot.BodyTransformer;
-import soot.Local;
 import soot.MethodOrMethodContext;
-import soot.NormalUnitPrinter;
-import soot.RefType;
-import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
-import soot.SootMethodRef;
-import soot.Trap;
-import soot.Unit;
-import soot.UnitBox;
-import soot.Value;
-import soot.jimple.AssignStmt;
-import soot.jimple.GotoStmt;
-import soot.jimple.IfStmt;
-import soot.jimple.InstanceInvokeExpr;
-import soot.jimple.InvokeExpr;
-import soot.jimple.InvokeStmt;
-import soot.jimple.Jimple;
-import soot.jimple.JimpleBody;
-import soot.jimple.ReturnStmt;
-import soot.jimple.SpecialInvokeExpr;
-import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
-import soot.tagkit.AnnotationTag;
-import soot.tagkit.Tag;
-import soot.tagkit.VisibilityAnnotationTag;
-import soot.util.Chain;
+import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
+import droidsafe.analyses.collapsedcg.StmtEdge;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
-import droidsafe.android.system.InfoKind;
-import droidsafe.transforms.va.VATransform;
-import droidsafe.utils.CannotFindMethodException;
-import droidsafe.utils.SootUtils;
-import droidsafe.utils.SourceLocationTag;
-import static droidsafe.analyses.CatchBlocks.*;
 public class SourceCallChainBuilder {
     
     /** Logging field */
@@ -107,18 +70,18 @@ public class SourceCallChainBuilder {
      * @param method      - Method to start at
      * @param s       - Stmt that called mc
      */
-    public  CallChainInfo process_call_chain (Stmt s, SootMethod method) { 
+    public  SourceCallChainInfo process_call_chain (Stmt s, SootMethod method) { 
         
     	if (is_terminal (method))
-    		return new CallChainInfo (method, s, "syscall");
+    		return new SourceCallChainInfo (method, s, "syscall");
 
     	if (isSourceMethod(method)) {
 
-    		CallChainInfo cci = new CallChainInfo (method, s, "call-chain");
+    		SourceCallChainInfo cci = new SourceCallChainInfo (method, s, "call-chain");
     		CallGraph cg = PTABridge.v().getCallGraph();
 
     		Set<SootMethod> processed_methods = new HashSet<SootMethod>();
-    		List<CallChainInfo> calls = new ArrayList<CallChainInfo>();
+    		List<SourceCallChainInfo> calls = new ArrayList<SourceCallChainInfo>();
     		StmtBody stmtBody = (StmtBody)method.getActiveBody();
     		Iterator stmtIt = stmtBody.getUnits().snapshotIterator();
     		while (stmtIt.hasNext()) {
@@ -126,7 +89,8 @@ public class SourceCallChainBuilder {
     				break;
     			Stmt stmt = (Stmt)stmtIt.next();
     			if (stmt.containsInvokeExpr()) {
-    				for (SootMethod callee : PTABridge.v().getTargetsInsNoContext(method, stmt)) {
+    				for (StmtEdge<SootMethod> edge : CollaspedCallGraph.v().getTargetsForStmt(stmt)) {
+     					SootMethod callee = edge.getV2();
     					if (ignore_dup_methods) {
     						if (processed_methods.contains(callee)) {
     							logger.info ("pcc: method {}, duplicate callee {}", method, callee);
@@ -141,14 +105,14 @@ public class SourceCallChainBuilder {
     						// ignore recursive  call
     					} else { // normal call 
     						stack.push (callee);
-    						CallChainInfo calleeCci = process_call_chain (stmt, callee);
+    						SourceCallChainInfo calleeCci = process_call_chain (stmt, callee);
     						stack.pop();
     						if (calleeCci != null) {
     							if (print_callee) {
     								calls.add (calleeCci);
     							} else { // skip callee and just add what it calls
     								if (ignore_dup_methods) {
-    									for (CallChainInfo callee_call : calleeCci.contents) {
+    									for (SourceCallChainInfo callee_call : calleeCci.contents) {
     										if (!processed_methods.contains (callee_call.method)) {
     											calls.add (callee_call);
     											processed_methods.add(callee_call.method);
