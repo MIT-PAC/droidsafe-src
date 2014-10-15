@@ -314,9 +314,9 @@ private StackTraceElement[] getInternalStackTrace() {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
+    @DSSink(DSSinkKind.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.615 -0500", hash_original_method = "721611E9E00924F0C591FE9FD87A98DF", hash_generated_method = "E081C99283B0C7FAF2830771267339F1")
-    
-public void printStackTrace(PrintStream err) {
+    public void printStackTrace(PrintStream err) {
         /*
         try {
             printStackTrace(err, "", null);
@@ -325,7 +325,7 @@ public void printStackTrace(PrintStream err) {
             throw new AssertionError();
         }
         */
-        err.addTaint(getTaint());
+        //err.addTaint(getTaint());
     }
 
     /**
@@ -365,13 +365,13 @@ public void printStackTrace(PrintWriter err) {
     @DSComment("Private Method")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.620 -0500", hash_original_method = "9161BE82060982591CF587E371FF5EC1", hash_generated_method = "E41462E11C26A6D1B3DA6F23FE79D53C")
-    
+    @DSSink(DSSinkKind.IO)
 private void printStackTrace(Appendable err, String indent, StackTraceElement[] parentStack)
             throws IOException {
-        err.addTaint(indent.getTaint());
-        err.addTaint(getTaint());
-        if (parentStack != null)
-            err.addTaint(parentStack[0].getTaint());
+        //err.addTaint(indent.getTaint());
+        //err.addTaint(getTaint());
+        //if (parentStack != null)
+        //    err.addTaint(parentStack[0].getTaint());
         /*
         err.append(toString());
         err.append("\n");

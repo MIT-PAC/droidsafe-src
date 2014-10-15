@@ -131,7 +131,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
         Class<?> result = (Class<?>) new Class();
         
         result.addTaint(className.getTaintInt() + 
-                        toTaintInt(initializeBoolean) + classLoader.getTaintInt());
+                        (initializeBoolean ? 1 : 0) + classLoader.getTaintInt());
         result.droidsafeSetLoader(classLoader);
         return result;
         
@@ -148,7 +148,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     static Class<?> classForName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
     	Class<?> cl = new Class();
-    	cl.addTaint(className.getTaintInt() + toTaintInt(initializeBoolean) +
+    	cl.addTaint(className.getTaintInt() + (initializeBoolean ? 1 : 0) +
     	            classLoader.getTaintInt());
     	cl.droidsafeSetLoader(classLoader);
     	return cl;
@@ -1479,7 +1479,7 @@ public boolean isLocalClass() {
         boolean enclosed = (getEnclosingMethod() != null ||
                          getEnclosingConstructor() != null);
         //return enclosed && !isAnonymousClass();
-        return toTaintBoolean(toTaintInt(enclosed) + toTaintInt(isAnonymousClass()));
+        return toTaintBoolean((enclosed ? 1 : 0) + (isAnonymousClass() ? 1 : 0));
     }
 
     /**

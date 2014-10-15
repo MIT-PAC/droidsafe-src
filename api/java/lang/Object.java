@@ -12,17 +12,6 @@ public class Object {
     private class DSTaintObject {
     }
     
-    public static final int toTaintInt(boolean intValue) {
-        return 0;
-    }
-    
-    public static final double toTaintFloat(boolean intValue) {
-        return 0;
-    }
-            
-    public static final boolean toTaintBoolean(double intValue) {
-        return false;
-    }
 
     private DSTaintObject taint = null;
 
@@ -43,7 +32,6 @@ public Object() {
         if(!(this instanceof Cloneable))        
         {
             CloneNotSupportedException varAAEB03D14830D479070633B166EED001_1798330854 = new CloneNotSupportedException("Class doesn't implement Cloneable");
-            varAAEB03D14830D479070633B166EED001_1798330854.addTaint(getTaint());
             throw varAAEB03D14830D479070633B166EED001_1798330854;
         } //End block
         
@@ -99,7 +87,7 @@ public Object() {
     @DSVerified()
 public boolean equals(Object o) {
         //return this == o;
-        return toTaintBoolean(getTaintInt() + o.getTaintInt());
+        return getTaintBoolean() && o.getTaintBoolean();
     }
 
     /**
@@ -257,8 +245,8 @@ public boolean equals(Object o) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.161 -0500", hash_original_method = "7905F5E0624643BB59BB03B2872919E1", hash_generated_method = "2078E1806981FD5222134E2086EC67E9")
     @DSVerified()
-public String toString() {
-        String str = new String("Object.toString()");
+    public String toString() {
+        String str = new String();
         str.addTaint(hashCode());
         return str;
         //return getClass().getName() + '@' + Integer.toHexString(hashCode());

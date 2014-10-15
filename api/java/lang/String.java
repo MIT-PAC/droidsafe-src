@@ -859,12 +859,16 @@ public final class String implements Serializable, Comparable<String>, CharSeque
      * all strings can be encoded.
      */
     @DSComment("From safe class list")
-        @DSSafe(DSCat.SAFE_LIST)
+    @DSSafe(DSCat.SAFE_LIST)
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.883 -0500", hash_original_method = "2E4CA200D3933E45C3FC02936B120C89", hash_generated_method = "0A6A6039C4B3B9F2FADF6ED1F57152BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.883 -0500", hash_original_method = "2E4CA200D3933E45C3FC02936B120C89", hash_generated_method = "0A6A6039C4B3B9F2FADF6ED1F57152BB")
     
-        public byte[] getBytes() {
-        return getBytes(Charset.defaultCharset());
+    public byte[] getBytes() {
+        byte[] bytes = new byte[1];
+        
+        bytes.addTaint(getTaintInt());
+        bytes[0] = getTaintByte();
+        return bytes;
     }
 
     /**
