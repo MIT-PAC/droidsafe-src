@@ -303,7 +303,7 @@ public class Utils {
         return -1;
     }
 
-    public static List<MethodModel> getMethodModels(SecuritySpecModel spec, JsonObject jsonObj) {
+    public static Set<MethodModel> getMethodModels(SecuritySpecModel spec, JsonElement jsonObj) {
     	if (spec != null && jsonObj != null) {
     		String link = Utils.getFieldValueAsString(jsonObj, "link");
     		String sig = Utils.getSignature(jsonObj);
@@ -311,12 +311,12 @@ public class Utils {
     		int srcLine = Utils.getSourceLine(jsonObj);
     		return getMethodModels(spec, sig, srcClass, srcLine, link);
     	}
-    	return Collections.EMPTY_LIST;
+    	return Collections.EMPTY_SET;
     }
 
-    public static  List<MethodModel> getMethodModels(SecuritySpecModel spec, String sig, String srcClass,
+    public static Set<MethodModel> getMethodModels(SecuritySpecModel spec, String sig, String srcClass,
             int srcLine, String link) {
-        List<MethodModel> result = new ArrayList<MethodModel>();
+        Set<MethodModel> result = new TreeSet<MethodModel>();
         if (sig != null && srcClass != null && srcLine >= 0) {
             if (link != null) {
                 if (link.equals("as_entry_point")) {
@@ -339,7 +339,7 @@ public class Utils {
         return result;
     }
 
-	public static List<MethodModel> getMethodModels(JsonObject data) {
+	public static Set<MethodModel> getMethodModels(JsonElement data) {
     	SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec();
 		return getMethodModels(spec, data);
 	}

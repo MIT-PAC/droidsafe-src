@@ -15,6 +15,14 @@ public class SourceMethodNode {
 		this.signature = signature;
 	}
 	
+	public String getSourceClass() {
+		return sourceClass;
+	}
+	
+	public int getLine() {
+		return line;
+	}
+	
 	static SourceMethodNode get(String signature) {
 		SourceMethodNode node = nodeMap.get(signature);
 		if (node == null) {

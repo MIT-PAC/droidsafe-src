@@ -1,6 +1,9 @@
 package droidsafe.eclipse.plugin.core.view.callgraph;
 
-import java.util.List;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -8,11 +11,10 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 
-import com.google.gson.JsonObject;
+import com.google.gson.JsonElement;
 
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
-import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
@@ -21,7 +23,6 @@ import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 import droidsafe.speclang.model.MethodModel;
-import droidsafe.speclang.model.SecuritySpecModel;
 
 /**
  * View for displaying the info flow on the receiver/arguments of a given method. 
@@ -99,21 +100,48 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
                 Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
                 if (selectedNode instanceof TreeElement<?, ?>) {
                     TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
-                    Object data = treeElement.getData();
-                    if (data instanceof JsonObject) {
-                        List<MethodModel> methods = Utils.getMethodModels((JsonObject) data);
-                        MethodModel method = (methods.isEmpty()) ? null : methods.get(0);
-                        InfoFlowDetailsViewPart.openView(method);
-                        ValueViewPart.openView(method);
-                        PointsToViewPart.openView(method);
-                    }
+                    Set<MethodModel> methods = getMethodModels(treeElement);
+                    MethodModel method = (methods.isEmpty()) ? null : methods.iterator().next();
+                    InfoFlowDetailsViewPart.openView(method);
+                    ValueViewPart.openView(method);
+                    PointsToViewPart.openView(method);
                 }
             }
             fTreeViewer.getControl().setFocus();
         }
     }
 
-    /**
+    public static Set<MethodModel> getMethodModels(TreeElement<?, ?> treeElement) {
+    	Object data = treeElement.getData();
+    	if (data instanceof JsonElement) {
+    		return Utils.getMethodModels((JsonElement) data);
+
+    	} else if (data instanceof SourceMethodNode) {
+    		Map<String, Map<String, Set<JsonElement>>> callerMap = CallerGraph.getCallerMap();
+    		TreeElement<?, ?> parent = treeElement.getParent();
+    		if (parent != null) {
+    			Object parentData = parent.getData();
+    			if (parentData != null && parentData instanceof SourceMethodNode) {
+    				String parentSig = ((SourceMethodNode) parentData).signature;
+    				String sig = ((SourceMethodNode) data).signature;
+    				Map<String, Set<JsonElement>> callers = callerMap.get(parentSig);
+    				Set<JsonElement> calls = callers.get(sig);
+    				if (calls != null) {
+        				Set<MethodModel> result = new TreeSet<MethodModel>();
+        				for (JsonElement call: calls) {
+        					Set<MethodModel> methods = Utils.getMethodModels(call);
+        					if (methods != null)
+        						result.addAll(methods);
+        				}
+    					return result;
+    				}
+    			}
+    		}
+    	}
+    	return Collections.EMPTY_SET;
+    }
+
+	/**
      * Open the outline view for the given input element.
      * @param line 
      */

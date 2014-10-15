@@ -1,10 +1,9 @@
 package droidsafe.eclipse.plugin.core.view.callgraph;
 
-import java.util.List;
+import java.util.Set;
 
 import org.eclipse.swt.graphics.Image;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
@@ -12,7 +11,6 @@ import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 import droidsafe.speclang.model.MethodModel;
-import droidsafe.speclang.model.SecuritySpecModel;
 
 public class CallGraphTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
     /**
@@ -46,17 +44,19 @@ public class CallGraphTreeElementLabelProvider extends DroidsafeInfoTreeElementL
     }
 
     public String getToolTipText(Object element) {
-        if (element instanceof TreeElement<?, ?>) {
-            TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
-            Object data = treeElement.getData();
-            if (data instanceof JsonObject) {
-                List<MethodModel> methods = Utils.getMethodModels((JsonObject) data);
-                if (methods.size() > 1)
+    	if (element instanceof TreeElement<?, ?>) {
+    		TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
+    		Set<MethodModel> methods = CallGraphViewPart.getMethodModels(treeElement);
+    		if (methods.size() > 1) {
+                Object data = treeElement.getData();
+                if (data instanceof JsonObject)
                 	return methods.size() + " contexts";
-            }
-        }
-        return null;
-      }
+                if (data instanceof SourceMethodNode)
+                	return methods.size() + " calls with contexts";
+    		}
+    	}
+    	return null;
+    }
 
     /**
      * Returns the icon image for the tree node.

@@ -369,7 +369,7 @@ PropertyChangeListener {
         if (value instanceof Local && value.getType() instanceof PrimType) {
             infoVals.addAll(InformationFlowAnalysis.v().getTaints(methodContext, (Local) value));
         } else {
-            for (IAllocNode allocNode: PTABridge.v().getPTSetIns(value)) {
+        	for (IAllocNode allocNode: PTABridge.v().getPTSet(value, methodContext.context())) {
                 infoVals.addAll(InformationFlowAnalysis.v().getTaints(allocNode));
             }
         }

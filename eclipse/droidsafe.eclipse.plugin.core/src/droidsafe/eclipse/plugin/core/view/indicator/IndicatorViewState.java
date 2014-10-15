@@ -84,19 +84,22 @@ public class IndicatorViewState {
                 if (child.isJsonObject()) {
                     JsonObject childObj = child.getAsJsonObject();
                     computeMethodMap(childObj);
-                    List<MethodModel> methods = Utils.getMethodModels(spec, childObj);
+                    Set<MethodModel> methods = Utils.getMethodModels(spec, childObj);
                     if (!methods.isEmpty()) {
                         if (methods.size() > 1) {
                             changed = true;
-                            for (int j = 1; j < methods.size(); j++) {
-                                MethodModel method = methods.get(j);
-                                JsonObject copy = copyWithContext(childObj, j + 1);
-                                newChildrenArray.add(copy);
-                                methodMap.put(copy, method);
+                            int j = 0;
+                            for (MethodModel method: methods) {
+                            	if (j > 0) {
+                            		JsonObject copy = copyWithContext(childObj, j + 1);
+                            		newChildrenArray.add(copy);
+                            		methodMap.put(copy, method);
+                            	}
+                            	j++;
                             }
                             childObj.addProperty(CONTEXT_PROP, Integer.valueOf(1));
                         }
-                        methodMap.put(childObj, methods.get(0));
+                        methodMap.put(childObj, methods.iterator().next());
                     }
                 } 
             }
