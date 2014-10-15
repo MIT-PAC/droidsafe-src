@@ -23,6 +23,8 @@ import com.google.gson.JsonElement;
 
 import droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart;
 import droidsafe.eclipse.plugin.core.view.callgraph.CallGraph;
+import droidsafe.eclipse.plugin.core.view.callgraph.CallerGraph;
+import droidsafe.eclipse.plugin.core.view.callgraph.SourceMethodNode;
 
 public class ShowCallGraph extends AbstractHandler {
 
@@ -47,9 +49,23 @@ public class ShowCallGraph extends AbstractHandler {
 		            String pkgName = typeRoot.getParent().getElementName();
 		            String srcClassName = pkgName + "." + typeRoot.getElementName().replace(".java", "");
 		            boolean showCallees = method.isResolved();
-		            Set<JsonElement> methodNodes = CallGraph.findMethodNodes(method, className, srcClassName, line, showCallees);
-		            CallGraph cg = new CallGraph(methodNodes, showCallees, method);
-					CallGraphViewPart.openView(cg);
+		            if (showCallees) {
+		            	Set<JsonElement> targets = CallGraph.findCallTargets(method, className, srcClassName, line);
+		            	if (targets.isEmpty())
+		            		CallGraphViewPart.openView(null);
+		            	else {
+		            		CallGraph cg = new CallGraph(targets, method);
+		            		CallGraphViewPart.openView(cg);
+		            	}
+		            } else {
+		            	SourceMethodNode methodNode = CallerGraph.findSourceMethodNodeWithCallers(method, className, srcClassName, line);
+		            	if (methodNode == null)
+		            		CallGraphViewPart.openView(null);
+		            	else {
+		            		CallerGraph cg = new CallerGraph(methodNode, method);
+		            		CallGraphViewPart.openView(cg);
+		            	}
+		            }
 				}
 			} catch (JavaModelException e) {
 				// TODO Auto-generated catch block

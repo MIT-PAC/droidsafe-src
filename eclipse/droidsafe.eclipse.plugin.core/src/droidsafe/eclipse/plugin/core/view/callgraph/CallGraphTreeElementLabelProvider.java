@@ -34,6 +34,12 @@ public class CallGraphTreeElementLabelProvider extends DroidsafeInfoTreeElementL
     				return sig;
     			}
     			return DroidsafePluginUtilities.removeCloneSuffix(data.toString());
+    		} else if (data instanceof SourceMethodNode) {
+    			String sig = ((SourceMethodNode)data).signature;
+    			if (sig != null) {
+    				sig = sig.substring(1, sig.length() - 1);
+    				return sig;
+    			}
     		}
     	}
     	return DroidsafePluginUtilities.removeCloneSuffix(element.toString());

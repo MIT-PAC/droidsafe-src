@@ -21,11 +21,11 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     protected Map<Object, Object[]> inputToRoots = new HashMap<Object, Object[]>();
 
     /** The object on which the droidsafe analysis info is to be displayed in the outline view */
-    protected CallGraph fInput;
+    protected ICallGraph fInput;
 
     @Override
     public Object[] getElements(Object input) {
-        this.fInput = (CallGraph) input;
+        this.fInput = (ICallGraph) input;
         Object[] roots = inputToRoots.get(input);
         if (roots == null) {
             roots = initializeRoots();
@@ -37,7 +37,7 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     @Override
     public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
         this.fViewer = (TreeViewer) viewer;
-        this.fInput = (CallGraph) newInput;
+        this.fInput = (ICallGraph) newInput;
     }
 
     /**
@@ -52,14 +52,19 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
      */
     protected Object[] initializeRoots() {
     	getTreeElementMap().clear();
+    	if (fInput instanceof CallGraph)
+    		return initializeCallGraphRoots();
+    	else
+    		return initializeCallerGraphRoots();
+    }
+    
+    private Object[] initializeCallGraphRoots() {
     	List<TreeElement<JsonElement, JsonElement>> roots = new ArrayList<TreeElement<JsonElement, JsonElement>>();
-    	Set<JsonElement> rootNodes = fInput.getRoots();
-    	boolean calleeBased = fInput.isCalleeBased();
+    	CallGraph callGraph = (CallGraph) fInput;
+    	Set<JsonElement> rootNodes = callGraph.getRoots();
     	for (JsonElement rootElement: rootNodes) {
     		if (!Utils.isEmptyJsonObject(rootElement)) {
-    			TreeElement<JsonElement, JsonElement> root = (calleeBased) 
-    					? initializeCalleeTree(rootElement)
-    					: initializeCallerTree(rootElement);
+    			TreeElement<JsonElement, JsonElement> root = initializeCalleeTree(rootElement);
     			roots.add(root);
     		}
     	}
@@ -82,13 +87,22 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     	return element;
     }
 
-    private TreeElement<JsonElement, JsonElement> initializeCallerTree(JsonElement jsonElement) {
-    	TreeElement<JsonElement, JsonElement> element = new TreeElement<JsonElement, JsonElement>(jsonElement.toString(), jsonElement, JsonElement.class);
-    	getTreeElementMap().put(jsonElement, element);
-    	Set<JsonElement> callers = CallGraph.callerMap.get(jsonElement);
+    private Object[] initializeCallerGraphRoots() {
+    	List<TreeElement<SourceMethodNode, SourceMethodNode>> roots = new ArrayList<TreeElement<SourceMethodNode, SourceMethodNode>>();
+    	CallerGraph callerGraph = (CallerGraph) fInput;
+    	SourceMethodNode rootNode = callerGraph.getRoot();
+    	TreeElement<SourceMethodNode, SourceMethodNode> root = initializeCallerTree(rootNode);
+    	return new Object[]{root};
+    }
+
+    private TreeElement<SourceMethodNode, SourceMethodNode> initializeCallerTree(SourceMethodNode methodNode) {
+    	TreeElement<SourceMethodNode, SourceMethodNode> element = new TreeElement<SourceMethodNode, SourceMethodNode>(methodNode.toString(), methodNode, SourceMethodNode.class);
+    	getTreeElementMap().put(methodNode, element);
+    	Map<String, Set<JsonElement>> callers = CallerGraph.callerMap.get(methodNode.signature);
     	if (callers != null) {
-    		for (JsonElement callerElement: callers) {
-    			TreeElement<JsonElement, JsonElement> caller = initializeCalleeTree(callerElement);
+    		for (String callerSig: callers.keySet()) {
+    			SourceMethodNode callerNode = SourceMethodNode.get(callerSig);
+    			TreeElement<SourceMethodNode, SourceMethodNode> caller = initializeCallerTree(callerNode);
     			element.addChild(caller);
     		}
     	}

@@ -35,7 +35,7 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.CallGraphView";
     
     /** The method on which the call graph is to be displayed. */
-    private CallGraph fCallGraph;
+    private ICallGraph fCallGraph;
     
     private boolean fShowCallees;
 
@@ -82,7 +82,7 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     /**
      * Set the input element for the viewer and update the contents of the view.
      */
-    protected void setInput(CallGraph callGraph) {
+    protected void setInput(ICallGraph callGraph) {
         if ((callGraph == null && fCallGraph != null) || 
                 (callGraph != null && !callGraph.equals(fCallGraph))) {
         	fCallGraph = callGraph;
@@ -117,7 +117,7 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
      * Open the outline view for the given input element.
      * @param line 
      */
-	public static void openView(CallGraph cg) {
+	public static void openView(ICallGraph cg) {
         IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
         CallGraphViewPart view = (CallGraphViewPart) activePage.findView(VIEW_ID);
         if (view == null) {
@@ -138,7 +138,7 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
         return view;
     }
 
-    public CallGraph getCallGraph() {
+    public ICallGraph getCallGraph() {
         return fCallGraph;
     }
 
