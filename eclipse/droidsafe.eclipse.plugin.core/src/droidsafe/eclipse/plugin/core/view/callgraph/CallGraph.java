@@ -26,13 +26,37 @@ public class CallGraph {
     
     private Set<JsonElement> fRoots;
     private boolean fCalleeBased;
-    
-    public CallGraph(Set<JsonElement> roots, boolean calleeBased) {
+
+	private String fDesription;
+
+    public CallGraph(Set<JsonElement> roots, boolean calleeBased, IMethod method) {
     	fRoots = roots;
     	fCalleeBased = calleeBased;
+    	fDesription = computeDescription(method);
     }
 
-    public Set<JsonElement> getRoots() {
+    private String computeDescription(IMethod method) {
+    	StringBuffer buf = new StringBuffer();
+    	if (fCalleeBased) {
+    		buf.append("Callees of ");
+    	} else {
+    		buf.append("Callers of ");
+    	}
+    	buf.append(method.getElementName());
+    	buf.append("(");
+    	boolean first = true;
+    	for (String paramType: method.getParameterTypes()) {
+    		if (first)
+    			first = false;
+    		else
+    			buf.append(",");
+    		buf.append(Signature.toString(paramType));
+    	}
+    	buf.append(")");
+		return buf.toString();
+	}
+
+	public Set<JsonElement> getRoots() {
     	return fRoots;
     }
     
@@ -40,6 +64,10 @@ public class CallGraph {
     	return fCalleeBased;
     }
     
+	public String getDescription() {
+		return fDesription;
+	}
+
     public boolean equals(Object obj) {
     	if (this == obj)
     		return true;
@@ -118,7 +146,9 @@ public class CallGraph {
     				int srcLine0 = Utils.getSourceLine(childElement);
     				if (srcClassName0 != null && srcLine0 > 0 && srcClassName0.equals(srcClassName) && 
     						(!calleeBased || srcLine0 == srcLine)) {
-        				String sig = Utils.getFieldValueAsString(childElement, "signature");
+    					String sig = Utils.getFieldValueAsString(childElement, "source-signature");
+        				if (sig == null)
+        					sig = Utils.getFieldValueAsString(childElement, "signature");
         				if (sig != null) {
         					String methodName0 = Utils.signatureMethodName(sig);
         					if (methodName0.equals(methodName)) {

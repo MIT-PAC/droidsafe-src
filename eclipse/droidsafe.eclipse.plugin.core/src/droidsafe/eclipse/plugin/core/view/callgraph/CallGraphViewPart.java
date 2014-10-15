@@ -62,11 +62,10 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
                 if (resetViewer)
                     resetViewer();
                 showPage(PAGE_VIEWER);
-                String type = (fShowCallees) ? "Callee" : "Caller" ;
-                setContentDescription(type + " Hierarchy ");
+                setContentDescription(fCallGraph.getDescription());
                 fTreeViewer.setInput(fCallGraph);
             }
-        }        
+        }
     }
 
     @Override

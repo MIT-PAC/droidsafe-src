@@ -6,11 +6,11 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeRoot;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.internal.core.SourceMethod;
 import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.text.TextSelection;
 import org.eclipse.jface.viewers.ISelection;
@@ -21,8 +21,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 import com.google.gson.JsonElement;
 
-import droidsafe.eclipse.plugin.core.view.callgraph.CallGraph;
 import droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart;
+import droidsafe.eclipse.plugin.core.view.callgraph.CallGraph;
 
 public class ShowCallGraph extends AbstractHandler {
 
@@ -40,15 +40,15 @@ public class ShowCallGraph extends AbstractHandler {
             ITypeRoot typeRoot = JavaUI.getEditorInputTypeRoot(editor.getEditorInput());
             try {
 				IJavaElement[] elements = typeRoot.codeSelect(textSelection.getOffset(), textSelection.getLength());
-				if (elements != null && elements.length == 1 && elements[0] instanceof SourceMethod) {
-					SourceMethod method = (SourceMethod) elements[0];
+				if (elements != null && elements.length == 1 && elements[0] instanceof IMethod) {
+					IMethod method = (IMethod) elements[0];
 					int line = textSelection.getStartLine() + 1;
 		            String className = getEnclosingClassName(method);
 		            String pkgName = typeRoot.getParent().getElementName();
 		            String srcClassName = pkgName + "." + typeRoot.getElementName().replace(".java", "");
 		            boolean showCallees = method.isResolved();
 		            Set<JsonElement> methodNodes = CallGraph.findMethodNodes(method, className, srcClassName, line, showCallees);
-		            CallGraph cg = new CallGraph(methodNodes, showCallees);
+		            CallGraph cg = new CallGraph(methodNodes, showCallees, method);
 					CallGraphViewPart.openView(cg);
 				}
 			} catch (JavaModelException e) {
