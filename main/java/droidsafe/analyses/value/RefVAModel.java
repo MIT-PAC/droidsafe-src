@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.jimple.toolkits.pta.IAllocNode;
+import soot.jimple.spark.pag.StringConstantByMethod;
 import soot.jimple.spark.pag.StringConstantNode;
 import soot.ArrayType;
 import soot.RefLikeType;
@@ -73,9 +74,9 @@ public abstract class RefVAModel extends VAModel {
             }
             if(allocNodes.size() > 0){
                 for(IAllocNode allocNode : allocNodes) {
-                    if(allocNode instanceof StringConstantNode) {
+                    if(PTABridge.isStringConstant(allocNode)) {
                         StringVAModel stringVAModel = new StringVAModel();
-                        stringVAModel.addValue(((StringConstantNode)allocNode).getString());
+                        stringVAModel.addValue(PTABridge.getValueOfStringConstant(allocNode));
                         fieldVAModels.add(stringVAModel);
                     } else {
                         VAModel vaModel = ValueAnalysis.v().getResult(allocNode);

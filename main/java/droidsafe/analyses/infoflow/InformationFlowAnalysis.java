@@ -118,6 +118,10 @@ public class InformationFlowAnalysis {
         this.allocNodeUtils = new AllocNodeUtils();
     }
 
+    /**
+     * Given an alloc node and a calling context, return the taint of the allocnode that is accessed 
+     * in all code reachable from the method context.
+     */
     public Set<InfoValue> getTaints(IAllocNode rootAllocNode, MethodOrMethodContext methodContext) {
         Set<InfoValue> values = new HashSet<InfoValue>();
 
@@ -187,6 +191,10 @@ public class InformationFlowAnalysis {
         return this.state.locals.get(context, local);
     }
 
+    /**
+     * Given an alloc node return a set of all taint reachable from the node.  Recursively search
+     * all reachable memory (through field references).
+     */
     public Set<InfoValue> getTaints(IAllocNode allocNode) {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
         Set<IAllocNode> reachableAllocNodes = this.allocNodeUtils.reachableAllocNodes(allocNode);

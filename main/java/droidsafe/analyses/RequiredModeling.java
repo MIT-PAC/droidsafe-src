@@ -71,11 +71,13 @@ public class RequiredModeling {
      */
     public static void run() {
         Set<String> toModel = new TreeSet<String>();
-
+        
         for (SootMethod method : PTABridge.v().getReachableMethods()) {
             //loop through all reachable methods, and find system methods that are not modeled
             //or system methods that do not exist (but are called)
             //ignore clinits
+            
+                        
             if (API.v().isSystemClass(method.getDeclaringClass()) && 
                     !ignoreNotModeled(method) &&  
                     !API.v().isAPIModeledMethod(method) &&
@@ -121,12 +123,54 @@ public class RequiredModeling {
         }
 
         reportMissingAPIFieldsAndMethods();
+        printGetAddTaintCalls();
     }
 
+    private static void printGetAddTaintCalls() {
+        try {
+            
+            FileWriter taintCalls = new FileWriter(Project.v().getOutputDir() + File.separator + 
+                    "taint-calls.txt");
+            
+            for (SootClass clz : Scene.v().getClasses()) {
+                for (SootMethod method : clz.getMethods()) {
+                    if (!method.isConcrete()) 
+                        continue;
+
+                    StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+
+                    // get body's unit as a chain
+                    Chain units = stmtBody.getUnits();
+
+                    Iterator stmtIt = units.iterator(); 
+
+                    while (stmtIt.hasNext()) {
+                        Stmt stmt = (Stmt)stmtIt.next();
+
+                        if (stmt.containsInvokeExpr()) {
+                            Set<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(stmt);
+                            for (SootMethod t : targets) {
+                                if ("addTaint".equals(t.getName()) || "getTaint".equals(t.getName())) {
+                                    taintCalls.write(SootUtils.getSourceLocation(stmt) + " calls " + t + "\n");                                    
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            taintCalls.close();
+        } catch (Exception e) {
+
+        }
+    }
+    
     private static void reportMissingAPIFieldsAndMethods() {
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + 
                     "generated-phantom-summary.txt");
+            
             for (SootClass clz : Scene.v().getClasses()) {
                 if (!(Project.v().isLibClass(clz) || Project.v().isSrcClass(clz)))
                     continue;

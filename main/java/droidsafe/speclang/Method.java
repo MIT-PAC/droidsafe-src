@@ -577,9 +577,21 @@ public class Method implements Comparable<Method> {
 
     /**
      * For argument at i return the set of all api calls in user code that could reach the 
-     * argument (or one of its fields).
+     * argument (or one of its fields).  If Config.v().preciseInfoFlow is true, use memory
+     * access analysis on the argument (if a reference). 
      */
     public Map<InfoKind, Set<Stmt>> getArgSourceInfoUnits(int i) {
+        if (Config.v().preciseInfoFlow)
+            return argFlowsPrecise[i];
+        else
+            return argFlows[i];
+    }
+    
+    /**
+     * For argument at i return the set of all api calls in user code that could reach the 
+     * argument (or one of its fields).
+     */
+    public Map<InfoKind, Set<Stmt>> getArgSourceInfoUnitsConservative(int i) {
         return argFlows[i];
     }
     
@@ -599,13 +611,25 @@ public class Method implements Comparable<Method> {
         return methodFlows;
     }
 
-   
+    /**
+     * For argument at i, return set of high level information kinds that the argument is possible tainted with
+     * If the config option "preciseinfoflow" is true, memory access analysis will be employed.
+     * 
+     */
+    public Set<InfoKind> getArgInfoKinds(int i) {
+        if (Config.v().preciseInfoFlow) {
+            return getArgInfoKindsPrecise(i);
+        } else {
+            return getArgInfoKindsConservative(i);
+        }
+    }
 
     /**
      * For argument at i, return the set of high level information kinds that the argument could possibly 
-     * be tainted with.
+     * be tainted with.  Conservatively report on all taints reachable from memory of argument (does not
+     * use memory access analysis).
      */
-    public Set<InfoKind> getArgInfoKinds(int i) {
+    public Set<InfoKind> getArgInfoKindsConservative(int i) {
         if (InformationFlowAnalysis.v() == null)
             return Collections.emptySet(); 
         //info flow result is cached
@@ -621,7 +645,7 @@ public class Method implements Comparable<Method> {
 
     /**
      * For argument at i, return the set of high level information kinds that the argument could possibly 
-     * be tainted with.
+     * be tainted with.  Use memory access analysis.
      */
     public Set<InfoKind> getArgInfoKindsPrecise(int i) {
         if (InformationFlowAnalysis.v() == null)

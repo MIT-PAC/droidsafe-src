@@ -48,6 +48,7 @@ public class TestPTA  {
         // TODO Auto-generated constructor stub
         //testUserMethods();
         findPTSets();
+        callsOnObj();
     }
 
 
@@ -64,6 +65,37 @@ public class TestPTA  {
         System.out.println("Call: " + sm);
     }
     
+    private void callsOnObj() {
+        for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
+            SootMethod method = momc.method();
+            Context context = momc.context();
+                               
+            if (!method.isConcrete())
+                continue;
+            if (!method.hasActiveBody()) {
+                method.retrieveActiveBody();
+            }
+            
+            // We first gather all the memory access expressions
+            for (Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
+                Stmt st = (Stmt) stmts.next();
+                if (st.containsInvokeExpr()) {
+                    if (st.getInvokeExpr() instanceof InstanceInvokeExpr) {
+                        InstanceInvokeExpr iie = (InstanceInvokeExpr) st.getInvokeExpr();
+                        
+                        for (IAllocNode node : PTABridge.v().getPTSet(iie.getBase(), context)) {
+                            if (node.getType().equals(RefType.v("android.widget.Button"))) {
+                                System.out.println(node);
+                                System.out.println("\tCaller: " + method);
+                                System.out.println("\tCallee: " + iie.getMethodRef());                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     private void findPTSets() {
         for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
             SootMethod method = momc.method();
@@ -75,7 +107,10 @@ public class TestPTA  {
                 method.retrieveActiveBody();
             }
             
-            if (API.v().isSystemMethod(method))
+          /*  if (API.v().isSystemMethod(method))
+                continue;*/
+            
+            if (!"<android.widget.TextView$ActionPopupWindow: void initContentView()>".equals(method.getSignature()))
                 continue;
  
             System.out.println(momc);
@@ -87,6 +122,12 @@ public class TestPTA  {
                 System.out.println("\t" + edges.next().getTgt());
             }
             
+            edges = Scene.v().getCallGraph().edgesInto(momc);
+            
+            System.out.println("\nIncoming Edges: \n");
+            while (edges.hasNext()) {
+                System.out.println("\t" + edges.next().getTgt());
+            }
             
             
             // We first gather all the memory access expressions
@@ -170,9 +211,9 @@ public class TestPTA  {
         //if (API.v().isSystemMethod(sm))
         //    return;
         
-        if (!sm.getSignature().startsWith("<"))
+        if (!"test".equals(sm.getName()))
             return;
-
+        
         numMethods++;
         System.out.println("Test Method: " + sm);
 

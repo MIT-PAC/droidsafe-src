@@ -27,6 +27,7 @@ import soot.jimple.StringConstant;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.toolkits.pta.IStringConstantNode;
 import soot.jimple.toolkits.pta.IClassConstantNode;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAMethodInformation;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
@@ -252,9 +253,9 @@ public class RCFGToSSL {
         //iterate over all the nodes pointed to and see if they are all constants
         //if not, break and remember
         for (IAllocNode node : ptsToSet) {
-            if (node instanceof IStringConstantNode) {
+            if (PTABridge.isStringConstant(node)) {
                 //create new string values just in case this is all constants
-                String value = ((IStringConstantNode)node).getString();
+                String value = PTABridge.getValueOfStringConstant(node);
                 constants.add(new StringValue(value));
             } else if (node instanceof IClassConstantNode) {
                 //create a new concrete arg value just in case this is all constants

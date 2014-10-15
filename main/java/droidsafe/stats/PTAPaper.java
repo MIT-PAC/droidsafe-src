@@ -161,7 +161,7 @@ public class PTAPaper {
                                 hierarchy.isClassSubclassOfIncluding(((RefType)formalArgType).getSootClass(), throwable))
                             continue;
 
-                        for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getArgSourceInfoUnits(i).entrySet()) {
+                        for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getArgSourceInfoUnitsConservative(i).entrySet()) {
                             for (Stmt source : flows.getValue()) {
                                 if (InfoKind.callsSensitiveSource(source)) {
                                     if (!invokeToSourcesArgs.containsKey(ie)) {

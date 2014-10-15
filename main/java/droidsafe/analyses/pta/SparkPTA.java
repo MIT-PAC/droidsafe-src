@@ -185,7 +185,7 @@ public class SparkPTA extends PTABridge {
             dumpTextGraph(Project.v().getOutputDir() + File.separator + fileName);
         }
 
-        //System.out.println(SparkEvaluator.v().toString());
+        //System.out.println(SparkEvaluator.v().toString());      
     }
 
     private void dumpReachablesAndAllocNodes() {
@@ -809,17 +809,23 @@ public class SparkPTA extends PTABridge {
     private void addGUIClasses(StringBuffer buf) {
         if (buf.length() > 0 && ',' != buf.charAt(buf.length() - 1))
             buf.append(',');
-        
+        int i = 0;
+        int j = 0;
         for (SootClass clz : Scene.v().getClasses()) {
             if (clz.isInterface())
                 continue;
             
+            j++;
+            
             if (API.v().isGUIClass(clz)) {
                 buf.append(clz + ",");
+                i++;
                 logger.info("Adding class to limit heap context list of spark: {}", clz);
             }
             
         }
+        System.out.println("GUI no context " + i);
+        System.out.println("Total classes: " + j);
     }
 
     private void addStringClasses(StringBuffer buf) {
@@ -832,11 +838,13 @@ public class SparkPTA extends PTABridge {
 
     private String buildNoContextList() {
         StringBuffer buf = new StringBuffer();
-
+        int i = 0;
+        
         for (String str : NO_CONTEXT) {
             SootClass clz = Scene.v().getSootClass(str);
 
-            for (SootClass child : Scene.v().getActiveHierarchy().getSubclassesOfIncluding(clz)) { 
+            for (SootClass child : Scene.v().getActiveHierarchy().getSubclassesOfIncluding(clz)) {
+                i++;
                 buf.append(child + ",");
                 logger.info("Adding class to ignore context list of spark: {}", child);
             }
@@ -846,6 +854,8 @@ public class SparkPTA extends PTABridge {
 
         ret = ret.substring(0, ret.length() - 1);
 
+        System.out.println("No context: " + i);
+        
         return ret;
 
     }

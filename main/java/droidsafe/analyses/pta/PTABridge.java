@@ -31,6 +31,7 @@ import soot.Value;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
+import soot.jimple.spark.pag.StringConstantByMethod;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
@@ -294,5 +295,24 @@ public abstract class PTABridge {
             edges.add(it.next());
         
         return edges;
+    }
+    
+    /**
+     * Is this node a string constant (with or without context)
+     */
+    public static boolean isStringConstant(IAllocNode node) {
+        return (node.getNewExpr() instanceof StringConstantByMethod);
+    }
+    
+
+    /**
+     * if this node is a string constant node, then get the value of the string constant
+     */
+    public static String getValueOfStringConstant(IAllocNode node) {
+        if (!isStringConstant(node)) {
+            logger.error("Trying to get string constant value of non-string constant node: {}", node);
+        }
+        
+        return ((StringConstantByMethod)node.getNewExpr()).getStringConstant().value;
     }
 }

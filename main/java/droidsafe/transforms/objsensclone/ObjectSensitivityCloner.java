@@ -331,17 +331,13 @@ public class ObjectSensitivityCloner {
      * 
      * if onlyusermethods is true, only clone methods based on calls from user methods
      */
-    public static void cloneStaticMethods(boolean onlyUserMethods) {
+    public static void cloneStaticMethods() {
         HashMap<SootMethod, List<StaticInvokeExpr>> map = new HashMap<SootMethod, List<StaticInvokeExpr>>();
 
         for (SootMethod method : PTABridge.v().getReachableMethods()) {
             if (method.isAbstract() || !method.isConcrete())
                 continue;
 
-            //if we just want to clone from user methods, then continue if we see a system method
-            if (onlyUserMethods && API.v().isSystemMethod(method))
-                continue;
-            
             Body body = method.getActiveBody();
             StmtBody stmtBody = (StmtBody)body;
             Chain units = stmtBody.getUnits();
@@ -353,10 +349,18 @@ public class ObjectSensitivityCloner {
                     SootMethod target = ((StaticInvokeExpr)stmt.getInvokeExpr()).getMethod();
                     if (!PTABridge.v().isReachableMethod(target))
                         continue;
-                    if (!map.containsKey(target)) {
-                        map.put(target, new LinkedList<StaticInvokeExpr>());
-                    }  
-                    map.get(target).add(((StaticInvokeExpr)stmt.getInvokeExpr()));
+                    
+                    //if it is a call in a user method
+                    //or if it is a call to a java.util or java.lang method anywhere
+                    //then clone
+                    if (!API.v().isSystemMethod(method) ||
+                            target.getDeclaringClass().getName().startsWith("java.util") ||
+                            target.getDeclaringClass().getName().startsWith("java.lang")) {
+                        if (!map.containsKey(target)) {
+                            map.put(target, new LinkedList<StaticInvokeExpr>());
+                        }  
+                        map.get(target).add(((StaticInvokeExpr)stmt.getInvokeExpr()));
+                    }                                        
                 }
             }
         }

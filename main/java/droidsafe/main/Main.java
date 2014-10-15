@@ -289,7 +289,7 @@ public class Main {
 
         driverMsg("Cloning static methods to introduce call site context...");
         monitor.subTask("Cloning static methods to introduce callsite context...");
-        ObjectSensitivityCloner.cloneStaticMethods(true);
+        ObjectSensitivityCloner.cloneStaticMethods();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -544,6 +544,23 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
 
+            try {
+                String[] values = Config.v().infoFlowValues;
+                if (values != null) {
+                    for (String value : values) {
+                        String pathName = Project.v().getOutputDir() + File.separator + value + ".txt";
+                        BufferedWriter writer = new BufferedWriter(new FileWriter(pathName));
+                        InformationFlowAnalysis.v().printContextLocals(value, writer);
+                        InformationFlowAnalysis.v().printAllocNodeFields(value, writer);
+                        InformationFlowAnalysis.v().printAllocNodes(value, writer);
+                        InformationFlowAnalysis.v().printFields(value, writer);
+                        writer.close();
+                    }
+                }
+            } catch (IOException exp) {
+                logger.error(exp.toString());
+            }
+            
             if (Config.v().infoFlowNative) {
                 try {
                     CloggedNativeMethods.run();

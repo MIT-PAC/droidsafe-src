@@ -68,7 +68,7 @@ public class OutputEvent implements PTAMethodInformation {
         receiverNodes.add(an);
         receiverNodeTypes.add(an.getType());
     }
-    
+
     /**
      * Try to grab the invoke expression from the context
      */
@@ -101,7 +101,7 @@ public class OutputEvent implements PTAMethodInformation {
             logger.error("Cannot find context invoke expr in context: {}.", context);
             droidsafe.main.Main.exit(1);
         }
-       
+
 
         //do some checks for things we might not fully understand yet.
         if (invokeExpr instanceof DynamicInvokeExpr) {
@@ -116,7 +116,7 @@ public class OutputEvent implements PTAMethodInformation {
     public InvokeExpr getInvokeExpr() {
         return invokeExpr;
     }
-    
+
     /** 
      * Return the number of args in the invoke expression.
      */
@@ -145,7 +145,7 @@ public class OutputEvent implements PTAMethodInformation {
         return ((InstanceInvokeExpr)invokeExpr).getBase();
     }
 
-    
+
     /**
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
@@ -162,7 +162,7 @@ public class OutputEvent implements PTAMethodInformation {
     public boolean isReceiverPointer() {
         return PTABridge.v().isPointer(getReceiver());
     }
-    
+
     /**
      * Return the type of the receiver value.
      */
@@ -183,7 +183,7 @@ public class OutputEvent implements PTAMethodInformation {
      */
     public Set<? extends IAllocNode> getArgPTSet(int i) {
         Value v = getArgValue(i);
-        
+
         return PTABridge.v().getPTSet(v, invokeEdge.srcCtxt() );
     }
 
@@ -192,15 +192,15 @@ public class OutputEvent implements PTAMethodInformation {
      */
     public Set<IAllocNode> getAllArgsPTSet() {
         HashSet<IAllocNode> nodes = new HashSet<IAllocNode>();
-        
+
         for (int i = 0; i < getNumArgs(); i++) {
             if (isArgPointer(i))
                 nodes.addAll(getArgPTSet(i));
         }
-        
+
         return nodes;
     }
-    
+
     /**
      * Return the context
      */
@@ -234,7 +234,7 @@ public class OutputEvent implements PTAMethodInformation {
     public boolean isArgPointer(int i) {
         return PTABridge.v().isPointer(getArgValue(i));
     }
-    
+
     /**
      * Return the enclosing RCFGNode.
      */
@@ -269,14 +269,10 @@ public class OutputEvent implements PTAMethodInformation {
                     Set<? extends IAllocNode> nodes = getArgPTSet(i);
                     formatter.format("\tArg %d (size %d)\n", i, nodes.size());
                     for (IAllocNode node : nodes) {
-                        if (node instanceof IStringConstantNode) {
-                            formatter.format("\t\tString Constant: %s %s\n", node, 
-                                ((IStringConstantNode)node).getString());
-                        } else {
-                            formatter.format("\t\tNode: %s (%s), New expr: %s (%s)\n", 
-                                node, node.getClass(), node.getNewExpr(), 
-                                node.getNewExpr().getClass());
-                        }
+                        formatter.format("\t\tNode: %s (%s), New expr: %s (%s)\n", 
+                            node, node.getClass(), node.getNewExpr(), 
+                            node.getNewExpr().getClass());
+
                     }
                 } else {
                     formatter.format("\tArg %d: %s (%s)\n", i, getArgValue(i).getClass(), getArgValue(i));

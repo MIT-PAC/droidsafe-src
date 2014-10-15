@@ -186,7 +186,9 @@ public class Config {
     public boolean extraArrayContext = true;
     /** ignore flows through throwable objects */
     public boolean ignoreThrowableFlows = false;
-        
+    /** use precise reporting for info flow results of args to sinks */
+    public boolean preciseInfoFlow = false;
+    
     public boolean ptaInfoFlowRefinement = false;
     /** should we run multiple passes of fallback modeling create unmodeled objects from API */
     public boolean multipassfb = false;
@@ -304,6 +306,9 @@ public class Config {
         Option fullContextForStrings = new Option("fullcontextforstrings", "Do not limit context depth for Strings in PTA");
         options.addOption(fullContextForStrings);
         
+        Option preciseInfoFlow = new Option("preciseinfoflow", "For info flow reporting use memory access analysis for args to sinks.");
+        options.addOption(preciseInfoFlow);
+        
         Option fullContextForGUI = new Option("fullcontextforgui", "Do not limit context depth for some GUI objects PTA");
         options.addOption(fullContextForGUI);
         
@@ -390,7 +395,7 @@ public class Config {
                 .withArgName("INFOVALUE")
                 .hasArg()
                 .withDescription(
-                        "Print contexts and local variables that have INFOVALUE")
+                        "Print contexts and local variables that have INFOVALUE. Use \"\\$$r1 = ...\" if line has $.")
                         .withLongOpt("infoflow-value").create("x");
         options.addOption(infoFlowValue);
         
@@ -543,6 +548,10 @@ public class Config {
         
         if (cmd.hasOption("fullcontextforstrings")) {
             this.fullContextForStrings = true;
+        }
+        
+        if (cmd.hasOption("preciseinfoflow")) {
+            this.preciseInfoFlow = true;
         }
         
         if (cmd.hasOption("refinement")) {

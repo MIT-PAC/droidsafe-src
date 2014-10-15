@@ -24,7 +24,6 @@ import soot.jimple.Jimple;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
-import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.Local;
 import soot.RefType;

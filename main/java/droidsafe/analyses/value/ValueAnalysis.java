@@ -39,6 +39,8 @@ import soot.jimple.StringConstant;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ObjectSensitiveAllocNode;
+import soot.jimple.spark.pag.StringConstantByMethod;
+import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.toolkits.pta.IStringConstantNode;
@@ -285,7 +287,9 @@ public class ValueAnalysis  {
             if (baseModel == null)
                 continue;
             
-            //boolean debug = (an.getType().equals(RefType.v("android.net.Uri")));                    
+            //System.out.println(an);
+            
+            //boolean debug = (an.getType().equals(RefType.v("android.widget.Button")));                    
             
             //if (debug) System.out.printf("Looking at: %s\n", an);
             
@@ -305,9 +309,15 @@ public class ValueAnalysis  {
                     Set<? extends IAllocNode> fieldPTSet = PTABridge.v().getPTSet(an, sootField);
                     
                     if (fieldVAModel instanceof StringVAModel) {
+                        /*if (debug) System.out.printf("Found tracked field: %s\n", fieldName);
+                        /if (debug) {
+                            for (IAllocNode node : fieldPTSet) {
+                                System.out.println("\t" + node);
+                            }
+                        }*/
                         handleStringFieldValue((StringVAModel)fieldVAModel, fieldPTSet);
                     } else if (fieldVAModel instanceof ClassVAModel) {
-                       // if (debug) System.out.printf("Found tracked field: %s\n", fieldName);
+                        //if (debug) System.out.printf("Found tracked field: %s\n", fieldName);
                         handleClassFieldValue((ClassVAModel)fieldVAModel, fieldPTSet);
                     }
                 } catch (Exception e) {
@@ -411,7 +421,8 @@ public class ValueAnalysis  {
         if (assignStmt.getRightOp() instanceof Constant) {
             //if a direct string constant, then get the string constant node from pta
             Set<IAllocNode> nodes = new HashSet<IAllocNode>();
-            nodes.add(PTABridge.v().getAllocNode(assignStmt.getRightOp(), context));
+            IAllocNode node = PTABridge.v().getAllocNode(assignStmt.getRightOp(), context); 
+            nodes.add(node);            
             rhsNodes = nodes;
         } else {
             //if not a string constant, then query pta
@@ -450,9 +461,10 @@ public class ValueAnalysis  {
         for(IAllocNode rhsNode : rhsNodes) {
             boolean knownValue = false;
             
-            if(rhsNode.getNewExpr() instanceof StringConstant) {
+            if (PTABridge.isStringConstant(rhsNode)) {
+                //System.out.println(rhsNode);
                 //logger.info("handleString: {}", rhsNode.getMethod());
-                StringConstant sc = (StringConstant)rhsNode.getNewExpr();
+                StringConstant sc = ((StringConstantByMethod)rhsNode.getNewExpr()).getStringConstant();
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
                 if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc) || rhsNodes.size() <= 5) {
                     String value = sc.value;
