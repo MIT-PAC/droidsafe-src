@@ -486,7 +486,7 @@ public boolean startTone(int toneType) {
     	taintDouble += durationMs;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     /**

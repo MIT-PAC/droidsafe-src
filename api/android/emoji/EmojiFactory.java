@@ -392,7 +392,7 @@ public CustomLinkedHashMap() {
         
 @Override
         protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
-            return toTaintBoolean(size() + sCacheSize);
+            return (((size() + sCacheSize)) == 1);
         }
         
     }

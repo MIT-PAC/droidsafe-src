@@ -24,7 +24,7 @@ public class MarkerOptionsCreator implements android.os.Parcelable.Creator
     	options.anchor(f, f);
     	options.rotation(f);
     	
-    	boolean b = DSUtils.toTaintBoolean(f);
+    	boolean b = ((f) == 1);
     	options.flat(b);
     	options.draggable(b);
     	options.visible(b);

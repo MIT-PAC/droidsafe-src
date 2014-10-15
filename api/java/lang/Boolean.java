@@ -21,7 +21,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
     
 public static int compare(boolean lhs, boolean rhs) {
         //return lhs == rhs ? 0 : lhs ? 1 : -1;
-        return toTaintInt(lhs) + toTaintInt(rhs);
+        return ((lhs) ? 1 : 0) + ((rhs) ? 1 : 0);
     }
 
     /**
@@ -246,7 +246,7 @@ public int compareTo(Boolean that) {
 @Override
     public int hashCode() {
         //return value ? 1231 : 1237;
-        return toTaintInt(value);
+        return ((value) ? 1 : 0);
     }
 
     /**

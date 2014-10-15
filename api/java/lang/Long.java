@@ -274,7 +274,7 @@ private static long parse(String string, int offset, int radix, boolean negative
         return result;
         */
         
-        return (string.length() + offset + radix + toTaintInt(negative));
+        return (string.length() + offset + radix + ((negative) ? 1 : 0));
     }
 
     /**

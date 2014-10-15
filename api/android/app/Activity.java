@@ -1769,7 +1769,7 @@ public View onCreatePanelView(int featureId) {
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
 		return toTaintBoolean(toTaintInt(onPrepareOptionsMenu(menu)) + 
-                              toTaintInt(mFragments.dispatchPrepareOptionsMenu(menu))  + toTaintInt(menu.hasVisibleItems()));
+                              toTaintInt(mFragments.dispatchPrepareOptionsMenu(menu))  + (((menu.hasVisibleItems())) ? 1 : 0));
 		// Original method
 		/*
 		{

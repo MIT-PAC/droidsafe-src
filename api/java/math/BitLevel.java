@@ -95,7 +95,7 @@ static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
             ;
         }
         //return ((i != intCount) || (digits[i] << (32 - bitCount) != 0));
-        return toTaintBoolean(numberOfBits + digits[0]);
+        return ((numberOfBits + digits[0]) == 1);
     }
 
     @DSComment("Package priviledge")

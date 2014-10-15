@@ -312,7 +312,7 @@ private Configuration(Parcel source) {
 public boolean isLayoutSizeAtLeast(int size) {
         int cur = screenLayout&SCREENLAYOUT_SIZE_MASK;
         if (cur == SCREENLAYOUT_SIZE_UNDEFINED) return false;
-        return toTaintBoolean(cur + size);
+        return ((cur + size) == 1);
     }
     
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -468,7 +468,7 @@ public boolean isOtherSeqNewer(Configuration other) {
             // sequence has wrapped around.
             return false;
         }
-        return toTaintBoolean(diff);
+        return ((diff) == 1);
     }
     
     /**

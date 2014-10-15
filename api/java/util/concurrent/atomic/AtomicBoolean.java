@@ -73,7 +73,7 @@ public final boolean get() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.090 -0500", hash_original_method = "F4EDC6324B18AED31374999FCFCE4700", hash_generated_method = "A44868BB070126C586D116031BF7BDEA")
     
 public final boolean compareAndSet(boolean expect, boolean update) {
-        value = toTaintBoolean(toTaintInt(expect) + toTaintInt(update));
+        value = toTaintBoolean(((expect) ? 1 : 0) + ((update) ? 1 : 0));
         return value;
     }
 
@@ -94,7 +94,7 @@ public final boolean compareAndSet(boolean expect, boolean update) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.096 -0500", hash_original_method = "788D44D9ED0FFD916FA1001367F68A82", hash_generated_method = "CD9B06279AE1596651A40D0F8BE72E2B")
     
 public boolean weakCompareAndSet(boolean expect, boolean update) {
-        value = toTaintBoolean(toTaintInt(expect) + toTaintInt(update));
+        value = toTaintBoolean(((expect) ? 1 : 0) + ((update) ? 1 : 0));
         return value;
     }
 

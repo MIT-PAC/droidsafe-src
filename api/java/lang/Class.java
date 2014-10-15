@@ -614,7 +614,7 @@ public Constructor<?>[] getConstructors() {
     
     private boolean isDeclaredAnnotationPresent(Class<? extends Annotation> annotationClass){
     	//Formerly a native method
-        return toTaintBoolean(getTaintInt() + annotationClass.getTaintInt());
+        return (((getTaintInt() + annotationClass.getTaintInt())) == 1);
     	//addTaint(annotationClass.getTaint());
     	//return getTaintBoolean();
     }
@@ -1406,7 +1406,7 @@ public boolean isArray() {
     
     public boolean isAssignableFrom(Class<?> cls){
     	//Formerly a native method
-        return toTaintBoolean(getTaintInt() + cls.getTaintInt());
+        return (((getTaintInt() + cls.getTaintInt())) == 1);
     }
 
     /**
@@ -1422,7 +1422,7 @@ public boolean isArray() {
     
 public boolean isEnum() {
         //return ((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class);
-        return toTaintBoolean(getModifiers() + getSuperclass().getTaintInt());
+        return (((getModifiers() + getSuperclass().getTaintInt())) == 1);
     }
 
     /**
@@ -1446,7 +1446,7 @@ public boolean isEnum() {
     	addTaint(object.getTaint());
     	return getTaintBoolean();
     	*/
-        return toTaintBoolean(object.getTaintInt() + getTaintInt());
+        return (((object.getTaintInt() + getTaintInt())) == 1);
     }
 
     /**

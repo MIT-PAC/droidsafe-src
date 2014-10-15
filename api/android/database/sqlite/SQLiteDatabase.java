@@ -1099,7 +1099,7 @@ public void setTransactionSuccessful() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.108 -0500", hash_original_method = "6E9122EA7DDDF4A7FCE3C41AA714113C", hash_generated_method = "16CBF7F783BDC7B78DB3833DD187A118")
     
 public boolean inTransaction() {
-        return toTaintBoolean(mLock.getHoldCount() + toTaintInt(mTransactionUsingExecSql));
+        return toTaintBoolean(mLock.getHoldCount() + ((mTransactionUsingExecSql) ? 1 : 0));
     }
 
     /* package */ @DSComment("Package priviledge")
@@ -1180,7 +1180,7 @@ public boolean isDbLockedByCurrentThread() {
     
 public boolean isDbLockedByOtherThreads() {
         //return !mLock.isHeldByCurrentThread() && mLock.isLocked();
-        return toTaintBoolean(toTaintInt(mLock.isHeldByCurrentThread()) +  toTaintInt(mLock.isLocked()));
+        return toTaintBoolean((((mLock.isHeldByCurrentThread())) ? 1 : 0) +  (((mLock.isLocked())) ? 1 : 0));
     }
 
     /**
@@ -2277,13 +2277,13 @@ public boolean isReadOnly() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.266 -0500", hash_original_method = "61E254D128D08D9B7DD7C5EEB86B883E", hash_generated_method = "A1637FC4A8E8E14962FA82A2C62D9651")
     
 public boolean isOpen() {
-        return toTaintBoolean(mNativeHandle + 0);
+        return ((mNativeHandle + 0) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.269 -0500", hash_original_method = "4C8276EC0F604B529F31103A74E610FF", hash_generated_method = "4EA51A5D93D5EF17E015E1AF712B1538")
     
 public boolean needUpgrade(int newVersion) {
-        return toTaintBoolean(newVersion + getVersion());
+        return (((newVersion + getVersion())) == 1);
     }
 
     /**
@@ -2842,7 +2842,7 @@ private synchronized SQLiteDatabase getParentDbConnObj() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.337 -0500", hash_original_method = "D4EECEC449FC4C156499058FCB2B2B85", hash_generated_method = "29541D645EA91C1D35EAA40FFF0D5229")
     
 private boolean isPooledConnection() {
-        return toTaintBoolean(this.mConnectionNum + 0);
+        return ((this.mConnectionNum + 0) == 1);
     }
 
     /* package */ @DSComment("Package priviledge")

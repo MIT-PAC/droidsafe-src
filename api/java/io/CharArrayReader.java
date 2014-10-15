@@ -251,7 +251,7 @@ private void checkNotClosed() throws IOException {
     public boolean ready() throws IOException {
         synchronized (lock) {
             checkNotClosed();
-            return toTaintBoolean(pos + count);
+            return ((pos + count) == 1);
         }
     }
 

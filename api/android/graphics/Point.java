@@ -98,7 +98,7 @@ public final void offset(int dx, int dy) {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public final boolean equals(int x, int y){
-        return toTaintBoolean(x + y + getSumTaintInt());
+        return (((x + y + getSumTaintInt())) == 1);
         // Original method
         /*
         {

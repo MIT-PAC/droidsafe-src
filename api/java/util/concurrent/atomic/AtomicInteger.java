@@ -135,7 +135,7 @@ public final boolean compareAndSet(int expect, int update) {
         //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
         value = update;
         addTaintLocal(update);
-        return toTaintBoolean(expect + update + getTaintInt());
+        return (((expect + update + getTaintInt())) == 1);
     }
 
     /**

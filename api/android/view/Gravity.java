@@ -199,7 +199,7 @@ public static void applyDisplay(int gravity, Rect display, Rect inoutObj) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.347 -0500", hash_original_method = "1F47EE467986BB0FFF0B9D8C3E5BF63C", hash_generated_method = "7832ED6601F42177E105964EB06301A4")
     
 public static boolean isVertical(int gravity) {
-        return toTaintBoolean(gravity);
+        return ((gravity) == 1);
     }
 
     /**

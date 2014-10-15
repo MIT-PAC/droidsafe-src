@@ -29,13 +29,13 @@ public class NetworkUtils {
     }
     
     public static boolean runDhcp(String interfaceName, DhcpInfoInternal ipInfo) {
-        return toTaintBoolean(toTaintInt(interfaceName.getTaintBoolean()) + 
-                toTaintInt(ipInfo.getTaintBoolean()));
+        return toTaintBoolean((((interfaceName.getTaintBoolean())) ? 1 : 0) + 
+                (((ipInfo.getTaintBoolean())) ? 1 : 0));
     }
     
     public static boolean runDhcpRenew(String interfaceName, DhcpInfoInternal ipInfo) {
-        return toTaintBoolean(toTaintInt(interfaceName.getTaintBoolean()) + 
-                              toTaintInt(ipInfo.getTaintBoolean()));
+        return toTaintBoolean((((interfaceName.getTaintBoolean())) ? 1 : 0) + 
+                              (((ipInfo.getTaintBoolean())) ? 1 : 0));
     }
     
     public static boolean stopDhcp(String interfaceName) {

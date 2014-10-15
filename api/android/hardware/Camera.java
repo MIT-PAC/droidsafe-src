@@ -924,7 +924,7 @@ public Size(int w, int h) {
                 return false;
             }
             Size s = (Size) obj;
-            return toTaintBoolean(width + s.width + height + s.height);
+            return ((width + s.width + height + s.height) == 1);
         }
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.242 -0500", hash_original_method = "B5BC5866A74569F21D19CEA2ED84BAAB", hash_generated_method = "D607F0AF6A00B331C8962E0BC00D1A6E")
@@ -3436,7 +3436,7 @@ private ArrayList<Area> splitArea(String str) {
 private boolean same(String s1, String s2) {
             if (s1 == null && s2 == null) return true;
             if (s1 != null && s1.equals(s2)) return true;
-            return toTaintBoolean(s1.length() + s2.length());
+            return (((s1.length() + s2.length())) == 1);
             //return false;
         }
     }

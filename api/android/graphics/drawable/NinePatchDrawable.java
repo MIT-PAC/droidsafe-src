@@ -443,7 +443,7 @@ public Paint getPaint() {
         /* return mNinePatch.hasAlpha() || (mPaint != null && mPaint.getAlpha() < 255) ?
                 PixelFormat.TRANSLUCENT : PixelFormat.OPAQUE;
         */
-        return toTaintInt(mNinePatch.hasAlpha()) +  mPaint.getAlpha();  
+        return (((mNinePatch.hasAlpha())) ? 1 : 0) +  mPaint.getAlpha();  
     }
 
     @DSComment("From safe class list")

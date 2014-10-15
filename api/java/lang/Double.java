@@ -52,7 +52,7 @@ public static boolean isInfinite(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.659 -0500", hash_original_method = "A570339C802CFE5901F930FCAA1CB116", hash_generated_method = "7F8B0D286435B57612BBCABE86B8E8D3")
     
 public static boolean isNaN(double d) {
-        return toTaintBoolean(d);
+        return ((d) == 1);
         //return d != d;
     }
     

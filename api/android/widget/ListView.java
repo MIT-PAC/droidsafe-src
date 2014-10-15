@@ -2041,7 +2041,7 @@ private boolean commonKey(int keyCode, int count, KeyEvent event) {
        // all the onKeyXYZ call this method.  Normally the overriding method
        // from the user code is more of a security concern, we can just do a 
        // no op for this method
-       return toTaintBoolean(keyCode + count + event.getTaintInt() + getTaintInt());
+       return (((keyCode + count + event.getTaintInt() + getTaintInt())) == 1);
       /*  if (mAdapter == null || !mIsAttached) {
             return false;
         }

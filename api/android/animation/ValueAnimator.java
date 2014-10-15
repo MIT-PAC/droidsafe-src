@@ -1128,7 +1128,7 @@ private void start(boolean playBackwards) {
     
 @Override
     public boolean isRunning() {
-        return toTaintBoolean(mPlayingState + toTaintInt(mRunning));
+        return toTaintBoolean(mPlayingState + ((mRunning) ? 1 : 0));
         //return (mPlayingState == RUNNING || mRunning);
     }
 

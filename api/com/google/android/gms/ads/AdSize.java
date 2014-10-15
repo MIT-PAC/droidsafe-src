@@ -38,12 +38,12 @@ public class AdSize {
 
 	@DSSafe(DSCat.SAFE_LIST)
 	public boolean isAutoHeight() {
-		return toTaintBoolean(width + height);
+		return ((width + height) == 1);
 	}
 
 	@DSSafe(DSCat.SAFE_LIST)
 	public boolean isFullWidth() {
-		return toTaintBoolean(width + height);
+		return ((width + height) == 1);
 		
 	}
 	

@@ -1185,7 +1185,7 @@ private void createNativeEventHandler() {
     private final int native_setEnabled(boolean enabled){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(enabled);
+    	taintDouble += ((enabled) ? 1 : 0);
     	addTaint(taintDouble);
     
     	return (int)taintDouble;
@@ -1197,7 +1197,7 @@ private void createNativeEventHandler() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:48.818 -0400", hash_original_method = "E8B71D39962D5FE9E08B8EAE5FFF8FCD", hash_generated_method = "3C579DE3694F25FC8AFA44571273A968")
@@ -1206,7 +1206,7 @@ private void createNativeEventHandler() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:26.737 -0400", hash_original_method = "5898858D61B878A2FF924C9A717767D0", hash_generated_method = "8EA4383B0E5C79D993423BEF795C939F")

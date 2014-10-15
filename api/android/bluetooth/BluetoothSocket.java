@@ -272,7 +272,7 @@ public OutputStream getOutputStream() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.672 -0500", hash_original_method = "1C0993C098E9F3E04F29E582E3A28E0E", hash_generated_method = "32CB958E44C866934BC578A28B4E816D")
     
 public boolean isConnected() {
-        return toTaintBoolean(getTaintInt() + mSocketState.getTaintInt());
+        return (((getTaintInt() + mSocketState.getTaintInt())) == 1);
     }
 
     /**

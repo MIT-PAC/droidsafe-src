@@ -2743,7 +2743,7 @@ final boolean applyConfigurationToResourcesLocked(Configuration config,
             }
         }
         
-        return toTaintBoolean(changes); 
+        return ((changes) == 1); 
     }
 
     @DSComment("Package priviledge")
@@ -4572,7 +4572,7 @@ ResourcesKey(String resDir, float scale) {
                 return false;
             }
             ResourcesKey peer = (ResourcesKey) obj;
-            return toTaintBoolean(obj.getTaintInt() + getTaintInt() + mScale);
+            return (((obj.getTaintInt() + getTaintInt() + mScale)) == 1);
             //return mResDir.equals(peer.mResDir) && mScale == peer.mScale;
         }
         

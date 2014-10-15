@@ -21,7 +21,7 @@ public Object createFromParcel(Parcel  r1)
     {
     	GoogleMapOptions opt = new GoogleMapOptions();
     	float f = r1.readFloat();
-    	boolean b = DSUtils.toTaintBoolean(f);
+    	boolean b = ((f) == 1);
     	opt.compassEnabled(b);
     	opt.rotateGesturesEnabled(b);
     	opt.scrollGesturesEnabled(b);

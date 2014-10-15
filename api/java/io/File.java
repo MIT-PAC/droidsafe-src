@@ -1146,7 +1146,7 @@ public boolean mkdirs() {
 
         /* Otherwise, try to create a parent directory and then this directory */
         return toTaintBoolean(toTaintInt(new File(parentDir).mkdirs()) +
-                              toTaintInt(mkdir()));
+                              (((mkdir())) ? 1 : 0));
     }
 
     /**

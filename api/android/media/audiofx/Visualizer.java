@@ -590,7 +590,7 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     private final int native_setEnabled(boolean enabled){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(enabled);
+    	taintDouble += ((enabled) ? 1 : 0);
     	addTaint(taintDouble);
     
     	return (int)taintDouble;
@@ -602,7 +602,7 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:29.090 -0400", hash_original_method = "EC22AA8EEA04A40F54E298919530920A", hash_generated_method = "BE2754679FD3EF93799F55DCBAECF5B1")
@@ -662,8 +662,8 @@ public int setDataCaptureListener(OnDataCaptureListener listener,
     	//Formerly a native method
     	double taintDouble = 0;
     	taintDouble += rate;
-    	taintDouble += toTaintInt(waveForm);
-    	taintDouble += toTaintInt(fft);
+    	taintDouble += ((waveForm) ? 1 : 0);
+    	taintDouble += ((fft) ? 1 : 0);
     	addTaint(taintDouble);
     
     	return (int)taintDouble;

@@ -233,7 +233,7 @@ public boolean tryLock() {
 public boolean tryLock(long timeout, TimeUnit unit)
             throws InterruptedException {
 //        return sync.tryAcquireNanos(1, unit.toNanos(timeout));
-        return toTaintBoolean(getTaintInt() + timeout + unit.getTaintInt());
+        return (((getTaintInt() + timeout + unit.getTaintInt())) == 1);
     }
 
     /**
@@ -653,7 +653,7 @@ final boolean nonfairTryAcquire(int acquires) {
                 return true;
             }
             return false;*/
-            return toTaintBoolean(acquires + getTaintInt());
+            return (((acquires + getTaintInt())) == 1);
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.082 -0500", hash_original_method = "F58D783FAFD21E630011410A68B89B8B", hash_generated_method = "3E82D59643E85E9651F99240EFB1CE2D")
@@ -670,7 +670,7 @@ protected final boolean tryRelease(int releases) {
             setState(c);
             return free;*/
 
-            return toTaintBoolean(releases + getTaintInt());
+            return (((releases + getTaintInt())) == 1);
         }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.084 -0500", hash_original_method = "A843CC28FFAE9A089B89A0058BA2B9D5", hash_generated_method = "F9F3075EA01C68039167225BB13CE9C6")
@@ -763,7 +763,7 @@ final void lock() {
         
 protected final boolean tryAcquire(int acquires) {
             //return nonfairTryAcquire(acquires);
-            return toTaintBoolean(acquires + getTaintInt());
+            return (((acquires + getTaintInt())) == 1);
         }
     }
     
@@ -812,7 +812,7 @@ protected final boolean tryAcquire(int acquires) {
                 return true;
             }
             return false;*/
-            return toTaintBoolean(acquires + getTaintInt());
+            return (((acquires + getTaintInt())) == 1);
         }
     }
 

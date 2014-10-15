@@ -433,7 +433,7 @@ boolean isCandidate(Rect srcRect, Rect destRect, int direction) {
             throw new IllegalArgumentException("direction must be one of "
                     + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
 
-        return (toTaintBoolean(direction + srcRect.getTaintInt() + destRect.getTaintInt()));
+        return ((((direction + srcRect.getTaintInt() + destRect.getTaintInt())) == 1));
     }
 
     /**
@@ -485,7 +485,7 @@ boolean isToDirectionOf(int direction, Rect src, Rect dest) {
             throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
         
-        return toTaintBoolean(direction + src.getTaintInt() + dest.getTaintInt());
+        return (((direction + src.getTaintInt() + dest.getTaintInt())) == 1);
     }
 
     /**
@@ -648,7 +648,7 @@ private boolean isTouchCandidate(int x, int y, Rect destRect, int direction) {
             throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
 
-        return toTaintBoolean(x + y + destRect.getTaintInt() +  direction);
+        return (((x + y + destRect.getTaintInt() +  direction)) == 1);
     }
 }
 

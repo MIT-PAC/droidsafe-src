@@ -60,7 +60,7 @@ public static String quoteReplacement(String s) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean hitEndImpl(int addr) {
-        return toTaintBoolean(addr);
+        return ((addr) == 1);
     }
     
     @DSComment("Private Method")
@@ -84,7 +84,7 @@ public static String quoteReplacement(String s) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean requireEndImpl(int addr) {
-        return toTaintBoolean(addr);
+        return ((addr) == 1);
     }
     
     @DSComment("Private Method")

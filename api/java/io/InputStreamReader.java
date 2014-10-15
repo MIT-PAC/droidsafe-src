@@ -322,7 +322,7 @@ private boolean isOpen() {
                 throw new IOException("InputStreamReader is closed");
             }
             try {
-                return toTaintBoolean(toTaintInt(bytes.hasRemaining()) +
+                return toTaintBoolean((((bytes.hasRemaining())) ? 1 : 0) +
                                       in.available());
             } catch (IOException e) {
                 return false;

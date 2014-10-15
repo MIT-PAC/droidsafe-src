@@ -203,7 +203,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.453 -0500", hash_original_method = "B2B7B20D9A81D2665491427CA669DC48", hash_generated_method = "FDA7F3F3F70CC070FC719E68A65BF66A")
     
 @Override public boolean inDaylightTime(Date time) {
-        return toTaintBoolean(time.getHours() + getTaintInt());
+        return (((time.getHours() + getTaintInt())) == 1);
        /* long when = time.getTime();
         int unix = (int) (when / 1000);
         int transition = Arrays.binarySearch(mTransitions, unix);
@@ -250,7 +250,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         if (mUseDst != other.mUseDst) {
             return false;
         }
-        return toTaintBoolean(getTaintInt() + other.getTaintInt());
+        return (((getTaintInt() + other.getTaintInt())) == 1);
     }
 
     @DSSafe(DSCat.SAFE_LIST)

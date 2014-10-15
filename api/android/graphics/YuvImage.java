@@ -54,7 +54,7 @@ public class YuvImage {
     	taintDouble += stream.getTaintInt();
     	taintDouble += tempStorage[0];
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 

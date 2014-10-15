@@ -77,7 +77,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -87,7 +87,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -97,7 +97,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -107,7 +107,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -117,7 +117,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -133,7 +133,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -145,7 +145,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -155,7 +155,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -175,7 +175,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:39:04.267 -0400", hash_original_method = "72AA0749EB72637CFB3A4B9EB2F826FD", hash_generated_method = "79412C44C5EBC96089ED825481F0892D")
@@ -183,9 +183,9 @@ public class WifiNative {
     public static boolean scanCommand(boolean forceActive){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(forceActive);
+    	taintDouble += ((forceActive) ? 1 : 0);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -194,9 +194,9 @@ public class WifiNative {
     public static boolean setScanModeCommand(boolean setActive){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(setActive);
+    	taintDouble += ((setActive) ? 1 : 0);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -233,7 +233,7 @@ public class WifiNative {
     	taintDouble += name.getTaintInt();
     	taintDouble += value.getTaintInt();
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -258,7 +258,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += netId;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:39:04.286 -0400", hash_original_method = "4DFC85118F05814AB27D9083EFBC6940", hash_generated_method = "7DCBB2910A81E776757970F711CCDB28")
@@ -267,9 +267,9 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     	taintDouble += netId;
-    	taintDouble += toTaintInt(disableOthers);
+    	taintDouble += ((disableOthers) ? 1 : 0);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -281,7 +281,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += netId;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:54.425 -0400", hash_original_method = "1FD932A179999665DABCE38CECB75BAA", hash_generated_method = "5409B7E260D2EFF5BB62F9C967BABDFF")
@@ -290,7 +290,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -300,7 +300,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -310,7 +310,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -356,7 +356,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -366,7 +366,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -381,7 +381,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -395,7 +395,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -409,7 +409,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -423,7 +423,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -436,7 +436,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += mode;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:54.459 -0400", hash_original_method = "83F3538632BF73896EB15A683899A7FF", hash_generated_method = "EA5B209910E5170099228440681166CF")
@@ -458,7 +458,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += band;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:54.465 -0400", hash_original_method = "9CC8B120186AE03A9FB33A49510BBC39", hash_generated_method = "619EFEB69CAA8FB75912A1F41AF553B4")
@@ -488,7 +488,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += mode;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     /**
@@ -504,9 +504,9 @@ public class WifiNative {
     public static boolean setBluetoothCoexistenceScanModeCommand(boolean setCoexScanMode){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(setCoexScanMode);
+    	taintDouble += ((setCoexScanMode) ? 1 : 0);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -516,7 +516,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -526,7 +526,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -539,7 +539,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += mode;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -550,7 +550,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += bssid.getTaintInt();
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:54.483 -0400", hash_original_method = "E78BE117D2BFD149ECDA4C37949EB819", hash_generated_method = "42AD052F23E4D7B232B6640352218870")
@@ -559,7 +559,7 @@ public class WifiNative {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -572,7 +572,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += bssid.getTaintInt();
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -584,7 +584,7 @@ public class WifiNative {
     	taintDouble += bssid.getTaintInt();
     	taintDouble += apPin.getTaintInt();
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -605,9 +605,9 @@ public class WifiNative {
     public static boolean setSuspendOptimizationsCommand(boolean enabled){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(enabled);
+    	taintDouble += ((enabled) ? 1 : 0);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 
@@ -619,7 +619,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += countryCode.getTaintInt();
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     /**
@@ -661,7 +661,7 @@ public class WifiNative {
     	double taintDouble = 0;
     	taintDouble += command.getTaintInt();
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 

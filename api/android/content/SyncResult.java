@@ -134,9 +134,9 @@ public boolean hasHardError() {
         return toTaintBoolean(stats.numParseExceptions 
                 + stats.numConflictDetectedExceptions 
                 + stats.numAuthExceptions 
-                + toTaintInt(tooManyDeletions)
-                + toTaintInt(tooManyRetries)
-                + toTaintInt(databaseError));
+                + ((tooManyDeletions) ? 1 : 0)
+                + ((tooManyRetries) ? 1 : 0)
+                + ((databaseError) ? 1 : 0));
     }
 
     /**
@@ -154,7 +154,7 @@ public boolean hasHardError() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.090 -0500", hash_original_method = "E6525D3C6B30E4EB9644C9103954127F", hash_generated_method = "9501DA9F7834C052A289D8FDA5F42DC7")
     
 public boolean hasSoftError() {
-        return toTaintBoolean(toTaintInt(syncAlreadyInProgress) + stats.numIoExceptions); 
+        return toTaintBoolean(((syncAlreadyInProgress) ? 1 : 0) + stats.numIoExceptions); 
     }
 
     /**
@@ -164,14 +164,14 @@ public boolean hasSoftError() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.092 -0500", hash_original_method = "4476315D4E8DB7AB870F2DCC294654C2", hash_generated_method = "51CA7377457AE130DE117AD44ED74083")
     
 public boolean hasError() {
-        return toTaintBoolean(toTaintInt(hasSoftError()) + toTaintInt(hasHardError()));
+        return toTaintBoolean((((hasSoftError())) ? 1 : 0) + (((hasHardError())) ? 1 : 0));
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.094 -0500", hash_original_method = "8205DB1BC4B4653595BD73EDC8C83B31", hash_generated_method = "447B617A7E00FF3BECDC34806D63E514")
     
 public boolean madeSomeProgress() {
         return toTaintBoolean(stats.numDeletes  +
-                    toTaintInt(tooManyDeletions) +
+                    ((tooManyDeletions) ? 1 : 0) +
                     stats.numInserts + 
                     stats.numUpdates);  
     }

@@ -188,7 +188,7 @@ public void tearDown() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:44.132 -0400", hash_original_method = "9146149D3DCC230E7EA94BBBF3368A15", hash_generated_method = "E7FC21276ACAD27B060DD1829450FA9C")
@@ -197,7 +197,7 @@ public void tearDown() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:44.135 -0400", hash_original_method = "2A16798BAAF58E9C0902644312AE4C96", hash_generated_method = "5FEA9AA00CA1A7C2DF8BB94737ABD49F")
@@ -206,7 +206,7 @@ public void tearDown() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.056 -0400", hash_original_method = "EDFBA5170FC1AEB79109BC7DA0CA3F81", hash_generated_method = "D83398C3A44A270598A12E8EBE7EDF55")
@@ -217,7 +217,7 @@ public void tearDown() {
     	taintDouble += libName.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.060 -0400", hash_original_method = "A18B0CB04C76BEFD8BDA3D587DD6D5ED", hash_generated_method = "4AACCBEC3B2C0693312FF10FF948334C")
@@ -228,7 +228,7 @@ public void tearDown() {
     	taintDouble += funcName.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.063 -0400", hash_original_method = "AF36DC66D95255D05B92761F0B0AF14B", hash_generated_method = "3AB9FB6CC306C37CCE8DDCDD98F9DD4C")
@@ -239,7 +239,7 @@ public void tearDown() {
     	taintDouble += funcName.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.067 -0400", hash_original_method = "951C017F6A3DB62B76B242CE4361AC0B", hash_generated_method = "A07DAC91C3D9E4029F850CB6125B0F91")
@@ -250,7 +250,7 @@ public void tearDown() {
     	taintDouble += funcName.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.072 -0400", hash_original_method = "AF8AB256829AA4624261077B41141ED4", hash_generated_method = "8D61A6F3816D502839CA298726FD5AF8")
@@ -261,7 +261,7 @@ public void tearDown() {
     	taintDouble += funcName.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.076 -0400", hash_original_method = "FFD947916C968CB7419676711DFF8B55", hash_generated_method = "4357E1CC8B68D372C89616418F29193D")
@@ -272,7 +272,7 @@ public void tearDown() {
     	taintDouble += funcName.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.081 -0400", hash_original_method = "90ABF7DBAFD9B313091F3F963485A45A", hash_generated_method = "39DFE23E733C030CFF55ECE94041D344")
@@ -283,7 +283,7 @@ public void tearDown() {
     	taintDouble += funcName.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:44.157 -0400", hash_original_method = "A8B4FE8D95A9EFAB156D3D53298ED8C4", hash_generated_method = "AE9141634CA0BCB5A23EAE94D8804D1E")
@@ -292,7 +292,7 @@ public void tearDown() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.089 -0400", hash_original_method = "7A0743A8AD090CD973795EC8E9D29080", hash_generated_method = "185BFE27EE6FD57E846940FE4FAC2C3B")
@@ -304,7 +304,7 @@ public void tearDown() {
     	taintDouble += value.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:22.093 -0400", hash_original_method = "B78DA7D8F71349ED8BCEC32E6E5DBB68", hash_generated_method = "7057B1C804BC2139DF2E898A908B9960")
@@ -329,7 +329,7 @@ public void tearDown() {
     	taintDouble += output.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:44.170 -0400", hash_original_method = "0817ED5A93B361D3F369BA9A37FB243C", hash_generated_method = "F2526CE4EA0FC747100898B0CAA1944D")
     
@@ -337,7 +337,7 @@ public void tearDown() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:44.172 -0400", hash_original_method = "7BEDC8CC0BE7FB55DC419DF8DE5919BD", hash_generated_method = "4C05CFF3AB2D3FDB5FCBEAF5082DD8BE")
@@ -346,7 +346,7 @@ public void tearDown() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 }

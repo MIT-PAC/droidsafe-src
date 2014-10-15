@@ -5860,7 +5860,7 @@ private void drawCursor(Canvas canvas, int cursorOffsetVertical) {
         r.addTaint(mLayout.getLineTop(lineNum) + mLayout.getLineBottom(lineNum) +
                 mLayout.getPrimaryHorizontal(lineNum));
         
-        if (toTaintBoolean(selStart + selEnd)) {
+        if (((selStart + selEnd) == 1)) {
             if (mHighlightPath == null) mHighlightPath = new Path();
             if (mHighlightPathBogus) {
                 mHighlightPath.reset();

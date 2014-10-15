@@ -106,7 +106,7 @@ public final boolean readBoolean() throws IOException {
         if (temp < 0) {
             throw new EOFException();
         }
-        return toTaintBoolean(temp + 0);
+        return ((temp + 0) == 1);
     }
 
     @DSSource({DSSourceKind.IO})

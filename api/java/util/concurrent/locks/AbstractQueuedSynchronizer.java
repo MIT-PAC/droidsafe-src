@@ -1145,7 +1145,7 @@ public final boolean isQueued(Thread thread) {
             if (p.thread == thread)
                 return true;
         return false;*/
-        return toTaintBoolean(thread.getTaintInt() + getTaintInt());
+        return (((thread.getTaintInt() + getTaintInt())) == 1);
     }
 
     /**
@@ -2088,7 +2088,7 @@ public final boolean owns(ConditionObject condition) {
             throw new NullPointerException();
         return condition.isOwnedBy(this);
         */
-        return toTaintBoolean(condition.getTaintInt() + getTaintInt());
+        return (((condition.getTaintInt() + getTaintInt())) == 1);
     }
 
     /**
@@ -2113,7 +2113,7 @@ public final boolean hasWaiters(ConditionObject condition) {
 /*        if (!owns(condition))
             throw new IllegalArgumentException("Not owner");
         return condition.hasWaiters();*/
-        return toTaintBoolean(getTaintInt() + condition.getTaintInt());
+        return (((getTaintInt() + condition.getTaintInt())) == 1);
     }
 
     /**

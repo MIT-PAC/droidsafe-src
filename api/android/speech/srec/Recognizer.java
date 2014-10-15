@@ -452,7 +452,7 @@ public static String eventToString(int event) {
     	double taintDouble = 0;
     	taintDouble += recognizer;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:21.982 -0400", hash_original_method = "EE3D30598F907AF82632A27CD3FA386A", hash_generated_method = "1B6816FE6D8BE3857F208226BB972083")
@@ -487,7 +487,7 @@ public static String eventToString(int event) {
     	taintDouble += recognizer;
     	taintDouble += key.getTaintInt();
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:22.008 -0400", hash_original_method = "47E73C37E9F871351FC4AF213D2D9450", hash_generated_method = "28E2B2EDFD9A1B3DA292EE3DEBC49AC5")
@@ -524,7 +524,7 @@ public static String eventToString(int event) {
     	double taintDouble = 0;
     	taintDouble += recognizer;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:22.046 -0400", hash_original_method = "537E5446E86719D75C5D95B3959101A3", hash_generated_method = "BC3BFA9317046164BCB44FABDDBA8416")
@@ -557,7 +557,7 @@ public static String eventToString(int event) {
     	taintDouble += grammar;
     	taintDouble += ruleName.getTaintInt();
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:22.079 -0400", hash_original_method = "DC0531E1DC2F95AE8FF1B0E8FDE49D40", hash_generated_method = "ED0F2732C06AC5DD36670063CFB49DD4")
@@ -569,7 +569,7 @@ public static String eventToString(int event) {
     	taintDouble += recognizer;
     	taintDouble += grammar;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:22.086 -0400", hash_original_method = "3D6905A3B4A06E25FA07C6234A68E23E", hash_generated_method = "FF2F37645A4BDF68E1198ACFA4AFC6E1")
@@ -582,7 +582,7 @@ public static String eventToString(int event) {
     	taintDouble += buffer[0];
     	taintDouble += offset;
     	taintDouble += length;
-    	taintDouble += toTaintInt(isLast);
+    	taintDouble += ((isLast) ? 1 : 0);
     
     	return (int)taintDouble;
     }
@@ -610,7 +610,7 @@ public static String eventToString(int event) {
     	double taintDouble = 0;
     	taintDouble += recognizer;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:22.109 -0400", hash_original_method = "585FFD43DE9EAA93FE7E9CE1D99699C8", hash_generated_method = "8838B6AD7544A14D8774830388362779")
@@ -620,7 +620,7 @@ public static String eventToString(int event) {
     	double taintDouble = 0;
     	taintDouble += recognizer;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:22.116 -0400", hash_original_method = "35CE95561D33754A9785ECBDF23F3983", hash_generated_method = "1A70AB8384907DF11FDF54B88E650EEB")
@@ -630,7 +630,7 @@ public static String eventToString(int event) {
     	double taintDouble = 0;
     	taintDouble += recognizer;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:22.123 -0400", hash_original_method = "E3A9C2972834ABBDD94A33DD53E183DA", hash_generated_method = "A5BB242CB53401A4A3571E8FA385FF59")
@@ -640,7 +640,7 @@ public static String eventToString(int event) {
     	double taintDouble = 0;
     	taintDouble += recognizer;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:22.131 -0400", hash_original_method = "CA3290A7A5FB7731F42F3B3E2E6B1CF3", hash_generated_method = "F543BC9F60F1FFFA921FFE600E993B72")
@@ -650,7 +650,7 @@ public static String eventToString(int event) {
     	double taintDouble = 0;
     	taintDouble += recognizer;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:22.142 -0400", hash_original_method = "A583B65DD7C7318216DF3A9B984945F6", hash_generated_method = "7715EAA17CE0074EEC463A53523EE6CB")
@@ -660,7 +660,7 @@ public static String eventToString(int event) {
     	double taintDouble = 0;
     	taintDouble += recognizer;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     // private static native void SR_Recognizer_Change_Sample_Rate (size_t new_sample_rate);

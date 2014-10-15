@@ -538,7 +538,7 @@ public boolean supportsMulticast() throws SocketException {
 private boolean hasFlag(int mask) throws SocketException {
         /*int flags = readIntFile("/sys/class/net/" + name + "/flags");
         return (flags & mask) != 0;*/
-        return toTaintBoolean(mask + getTaintInt());
+        return (((mask + getTaintInt())) == 1);
     }
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})

@@ -791,7 +791,7 @@ public void endChangingAnimations() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.096 -0500", hash_original_method = "8C9364165F532DD8BD43415668542398", hash_generated_method = "D88BD879963879B9E1B8DEA5D63DE73C")
     
 public boolean isChangingLayout() {
-        return toTaintBoolean(currentChangingAnimations.size()); 
+        return (((currentChangingAnimations.size())) == 1); 
     }
 
     /**

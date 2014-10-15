@@ -935,7 +935,7 @@ public int getTransitionStyle() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.292 -0500", hash_original_method = "98C448D4C76D2FE85810E0C03648865C", hash_generated_method = "4C3597D03BC4A9BBC6133022DEEAE7F4")
     
 public boolean isEmpty() {
-        return toTaintBoolean(getTaintInt() + mNumOp);
+        return (((getTaintInt() + mNumOp)) == 1);
         //return mNumOp == 0;
     }
 }

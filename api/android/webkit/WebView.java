@@ -8442,7 +8442,7 @@ boolean isRectFitOnScreen(Rect rect) {
         float scale = Math.min((float) viewWidth / rectWidth, (float) viewHeight / rectHeight);
         scale = mZoomManager.computeScaleWithLimits(scale);
         
-        return toTaintBoolean(rect.getTaintInt() + scale + viewWidth + viewHeight);
+        return (((rect.getTaintInt() + scale + viewWidth + viewHeight)) == 1);
        /* 
         return !mZoomManager.willScaleTriggerZoom(scale)
                 && contentToViewX(rect.left) >= mScrollX

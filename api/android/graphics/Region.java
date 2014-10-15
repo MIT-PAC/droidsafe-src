@@ -376,7 +376,7 @@ public boolean getBoundaryPath(Path path) {
     
     public boolean contains(int x, int y){
     	//Formerly a native method
-    	return toTaintBoolean(getTaintInt() + x + y);
+    	return (((getTaintInt() + x + y)) == 1);
     }
 
     /**
@@ -390,7 +390,7 @@ public boolean getBoundaryPath(Path path) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.238 -0500", hash_original_method = "963E643D37666FF20B3A3B029F181389", hash_generated_method = "E5D3FDE45AA5BD19E1FD088D74ECF497")
     
 public boolean quickContains(Rect r) {
-        return toTaintBoolean(r.getTaintInt() + getTaintInt()) ;
+        return (((r.getTaintInt() + getTaintInt())) == 1) ;
     }
 
     /**
@@ -406,7 +406,7 @@ public boolean quickContains(Rect r) {
     public boolean quickContains(int left, int top, int right,
                                             int bottom){
     	//Formerly a native method
-    	return toTaintBoolean(left + right + top + bottom + getTaintInt());
+    	return (((left + right + top + bottom + getTaintInt())) == 1);
     }
 
     /**
@@ -419,7 +419,7 @@ public boolean quickContains(Rect r) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.244 -0500", hash_original_method = "99713AAB8FDC91BA4FFF953154B93F70", hash_generated_method = "41CB867DCDD72D9ED89078F64DB12175")
     
 public boolean quickReject(Rect r) {
-        return toTaintBoolean(r.getTaintInt() + getTaintInt());
+        return (((r.getTaintInt() + getTaintInt())) == 1);
     }
 
     /**
@@ -433,7 +433,7 @@ public boolean quickReject(Rect r) {
     
     public boolean quickReject(int left, int top, int right, int bottom){
     	//Formerly a native method
-        return toTaintBoolean(getTaintInt() + left + right + top + bottom);
+        return (((getTaintInt() + left + right + top + bottom)) == 1);
     }
 
     /**
@@ -447,7 +447,7 @@ public boolean quickReject(Rect r) {
     
     public boolean quickReject(Region rgn){
     	//Formerly a native method
-        return toTaintBoolean(rgn.getTaintInt() + getTaintInt());
+        return (((rgn.getTaintInt() + getTaintInt())) == 1);
     }
 
     /**
@@ -613,7 +613,7 @@ public void writeToParcel(Parcel p, int flags) {
         if (obj == null || !(obj instanceof Region)) {
             return false;
         }
-        return toTaintBoolean(obj.getTaintInt() + getTaintInt());
+        return (((obj.getTaintInt() + getTaintInt())) == 1);
     }
 
     @DSComment("From safe class list")

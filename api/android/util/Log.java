@@ -141,7 +141,7 @@ public static int w(String tag, String msg, Throwable tr) {
     @DSComment("Android logging subsystem")
     @DSSafe(DSCat.SAFE_LIST)
     public static boolean isLoggable(String tag, int level) {
-        return Object.toTaintBoolean(tag.getTaintInt() + level);
+        return (((tag.getTaintInt() + level)) == 1);
     }
 
     /*

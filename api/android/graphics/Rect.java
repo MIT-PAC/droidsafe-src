@@ -39,7 +39,7 @@ public final class Rect implements Parcelable {
                && a.top < b.bottom && b.top < a.bottom;
     }
 		*/
-        return toTaintBoolean(a.getSumTaintInt() + b.getSumTaintInt());
+        return (((a.getSumTaintInt() + b.getSumTaintInt())) == 1);
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.574 -0500", hash_original_field = "C827880A18B6ACBC60E1778FF671B928", hash_generated_field = "22CBDD4FA5AC4D71EB10C39DCFB71CD2")
 
@@ -154,7 +154,7 @@ public Rect() {}
 		*/
         Rect r = (Rect) obj;
         if (r != null) {
-            return toTaintBoolean(r.getSumTaintInt() + getSumTaintInt());
+            return (((r.getSumTaintInt() + getSumTaintInt())) == 1);
         }
  
 		return false;
@@ -253,7 +253,7 @@ public Rect() {}
         return left >= right || top >= bottom;
     }
 		*/
-		return toTaintBoolean(getSumTaintInt());
+		return (((getSumTaintInt())) == 1);
 	}
     
     @DSComment("From safe class list")
@@ -431,7 +431,7 @@ public Rect() {}
                && x >= left && x < right && y >= top && y < bottom;
     }
 		*/
-		return toTaintBoolean(x + y + getSumTaintInt());
+		return (((x + y + getSumTaintInt())) == 1);
 	}
     
     @DSComment("From safe class list")
@@ -445,7 +445,7 @@ public Rect() {}
                 && this.right >= right && this.bottom >= bottom;
     }
 		*/
-		return toTaintBoolean(left + top + right + bottom + getSumTaintInt());
+		return (((left + top + right + bottom + getSumTaintInt())) == 1);
 	}
     
     @DSComment("From safe class list")
@@ -459,7 +459,7 @@ public Rect() {}
                && right >= r.right && bottom >= r.bottom;
     }
 		*/
-		return toTaintBoolean(r.getSumTaintInt() + getSumTaintInt());
+		return (((r.getSumTaintInt() + getSumTaintInt())) == 1);
 	}
     
     @DSComment("From safe class list")
@@ -536,7 +536,7 @@ public Rect() {}
                && this.top < bottom && top < this.bottom;
     }
 		*/
-        return toTaintBoolean(left + top + right + bottom + getSumTaintInt());
+        return (((left + top + right + bottom + getSumTaintInt())) == 1);
 	}
     
     @DSComment("From safe class list")

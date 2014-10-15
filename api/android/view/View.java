@@ -74,7 +74,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return (value < -NONZERO_EPSILON || value > NONZERO_EPSILON);
     }
 		*/
-		return toTaintBoolean(value);
+		return ((value) == 1);
 	}
     
     protected static boolean isLayoutDirectionRtl(Locale locale){
@@ -3000,7 +3000,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 	public boolean isEnabled(){
 		// Original method
         //return (mViewFlags & ENABLED_MASK) == ENABLED;
-        return toTaintBoolean(mViewFlags);
+        return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3017,7 +3017,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
-        setFlags(toTaintInt(enabled), DSUtils.UNKNOWN_INT);
+        setFlags(((enabled) ? 1 : 0), DSUtils.UNKNOWN_INT);
 	}
     
     @DSComment("Normal GUI")
@@ -3034,7 +3034,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
-        setFlags(toTaintInt(focusable), DSUtils.UNKNOWN_INT);
+        setFlags(((focusable) ? 1 : 0), DSUtils.UNKNOWN_INT);
 	}
     
     @DSComment("Normal GUI")
@@ -3051,7 +3051,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 
-        setFlags(toTaintInt(focusableInTouchMode), DSUtils.UNKNOWN_INT);
+        setFlags(((focusableInTouchMode) ? 1 : 0), DSUtils.UNKNOWN_INT);
 		//Return nothing
 	}
     
@@ -3067,7 +3067,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		*/
 		//Return nothing
 
-        setFlags(toTaintInt(soundEffectsEnabled), DSUtils.UNKNOWN_INT);
+        setFlags(((soundEffectsEnabled) ? 1 : 0), DSUtils.UNKNOWN_INT);
 	}
     
     @DSComment("Normal GUI")
@@ -3080,7 +3080,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return SOUND_EFFECTS_ENABLED == (mViewFlags & SOUND_EFFECTS_ENABLED);
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3095,7 +3095,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		*/
 		//Return nothing
 
-        setFlags(toTaintInt(hapticFeedbackEnabled), DSUtils.UNKNOWN_INT); 
+        setFlags(((hapticFeedbackEnabled) ? 1 : 0), DSUtils.UNKNOWN_INT); 
 	}
     
     @DSComment("Normal GUI")
@@ -3108,7 +3108,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return HAPTIC_FEEDBACK_ENABLED == (mViewFlags & HAPTIC_FEEDBACK_ENABLED);
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3164,7 +3164,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL);
     }
 		*/
-        return toTaintBoolean(getResolvedLayoutDirection());
+        return (((getResolvedLayoutDirection())) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3178,7 +3178,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
-        setFlags(toTaintInt(willNotDraw), 0); 
+        setFlags(((willNotDraw) ? 1 : 0), 0); 
 	}
     
     @DSComment("Normal GUI")
@@ -3191,7 +3191,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (mViewFlags & DRAW_MASK) == WILL_NOT_DRAW;
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3205,7 +3205,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
-        setFlags(toTaintInt(willNotCacheDrawing), 0); 
+        setFlags(((willNotCacheDrawing) ? 1 : 0), 0); 
 	}
     
     @DSComment("Normal GUI")
@@ -3218,7 +3218,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (mViewFlags & WILL_NOT_CACHE_DRAWING) == WILL_NOT_CACHE_DRAWING;
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3231,7 +3231,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (mViewFlags & CLICKABLE) == CLICKABLE;
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3245,7 +3245,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
-        setFlags(toTaintInt(clickable), 0); 
+        setFlags(((clickable) ? 1 : 0), 0); 
 	}
     
     @DSComment("Normal GUI")
@@ -3257,7 +3257,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         return (mViewFlags & LONG_CLICKABLE) == LONG_CLICKABLE;
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3271,7 +3271,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     }
 		*/
 		//Return nothing
-        setFlags(toTaintInt(longClickable), 0);
+        setFlags(((longClickable) ? 1 : 0), 0);
 	}
     
     @DSComment("Normal GUI")
@@ -3292,7 +3292,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		*/
 		//Return nothing
 
-        mPrivateFlags += PRESSED + toTaintInt(pressed);
+        mPrivateFlags += PRESSED + ((pressed) ? 1 : 0);
 	}
 
     /**
@@ -3316,7 +3316,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return (mPrivateFlags & PRESSED) == PRESSED;
     }
 		*/
-		return toTaintBoolean(mPrivateFlags);
+		return ((mPrivateFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3328,7 +3328,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return (mViewFlags & SAVE_DISABLED_MASK) != SAVE_DISABLED;
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3342,7 +3342,7 @@ protected void dispatchSetPressed(boolean pressed) {
     }
 		*/
 		//Return nothing
-        setFlags(toTaintInt(enabled), 0);
+        setFlags(((enabled) ? 1 : 0), 0);
 	}
     
     @DSComment("Normal GUI")
@@ -3355,7 +3355,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return (mViewFlags & FILTER_TOUCHES_WHEN_OBSCURED) != 0;
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3370,7 +3370,7 @@ protected void dispatchSetPressed(boolean pressed) {
     }
 		*/
 		//Return nothing
-        setFlags(toTaintInt(enabled), 0);
+        setFlags(((enabled) ? 1 : 0), 0);
 	}
     
     @DSComment("Normal GUI")
@@ -3382,7 +3382,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return (mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED;
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3396,7 +3396,7 @@ protected void dispatchSetPressed(boolean pressed) {
     }
 		*/
 		//Return nothing
-        setFlags(toTaintInt(enabled), 0);
+        setFlags(((enabled) ? 1 : 0), 0);
 	}
     
     @DSComment("Normal GUI")
@@ -3409,7 +3409,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return FOCUSABLE == (mViewFlags & FOCUSABLE_MASK);
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -3422,7 +3422,7 @@ protected void dispatchSetPressed(boolean pressed) {
         return FOCUSABLE_IN_TOUCH_MODE == (mViewFlags & FOCUSABLE_IN_TOUCH_MODE);
     }
 		*/
-		return toTaintBoolean(mViewFlags);
+		return ((mViewFlags) == 1);
 	}
     
     @DSVerified
@@ -3454,7 +3454,7 @@ protected void dispatchSetPressed(boolean pressed) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.008 -0500", hash_original_method = "3A7E0D4CA01222234C5493EC87211574", hash_generated_method = "FC584848E967C1F8159AB204C291F20A")
     
 public boolean dispatchUnhandledMove(View focused, int direction) {
-        return toTaintBoolean(focused.getTaintInt() + direction);
+        return (((focused.getTaintInt() + direction)) == 1);
     }
     
     @DSComment("Package priviledge")
@@ -3801,7 +3801,7 @@ public void onFinishTemporaryDetach() {
         return true;
     }
 		*/
-		return toTaintBoolean(mViewFlags + event.getFlags());
+		return (((mViewFlags + event.getFlags())) == 1);
 	}
     
     @DSComment("potential callback called inside method")
@@ -4221,7 +4221,7 @@ public boolean onKeyPreIme(int keyCode, KeyEvent event) {
     }
 		*/
 		//return false;
-        return toTaintBoolean(mViewFlags + keyCode + event.getTaintInt());
+        return (((mViewFlags + keyCode + event.getTaintInt())) == 1);
 	}
 
     /**
@@ -5335,7 +5335,7 @@ protected void dispatchDraw(Canvas canvas) {
     @DSSafe(DSCat.GUI)
     public boolean isDirty(){
 		// Original method
-        return toTaintBoolean(mPrivateFlags & DIRTY_MASK); 
+        return ((mPrivateFlags & DIRTY_MASK) == 1); 
 	}
     
     @DSComment("Normal GUI")
@@ -5644,7 +5644,7 @@ protected void dispatchDraw(Canvas canvas) {
                 && localY >= 0 && localY < (mBottom - mTop);
     }
 		*/
-		return toTaintBoolean(localX + localY + mRight + mLeft + mBottom + mTop);
+		return ((localX + localY + mRight + mLeft + mBottom + mTop) == 1);
 	}
     
     @DSComment("Private Method")
@@ -5657,7 +5657,7 @@ protected void dispatchDraw(Canvas canvas) {
                 localY < ((mBottom - mTop) + slop);
     }
 		*/
-		return toTaintBoolean(localX + localY + mRight + mLeft + mBottom + mTop + slop);
+		return ((localX + localY + mRight + mLeft + mBottom + mTop + slop) == 1);
 	}
     
     @DSComment("Normal GUI")
@@ -9416,13 +9416,13 @@ public void setTag(final Object tag) {
         return onConsistencyCheck(consistency);
     }
 		*/
-		return toTaintBoolean(getTaintInt() + consistency);
+		return (((getTaintInt() + consistency)) == 1);
 	}
     
     protected boolean onConsistencyCheck(int consistency){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return toTaintBoolean(getTaintInt() + consistency);
+		return (((getTaintInt() + consistency)) == 1);
 	}
     
     public void debug(){
@@ -9924,7 +9924,7 @@ public boolean onDragEvent(DragEvent event) {
         return (mPrivateFlags2 & DRAG_CAN_ACCEPT) != 0;
     }
 		*/
-		return toTaintBoolean(mPrivateFlags2);
+		return ((mPrivateFlags2) == 1);
 	}
 
     /**

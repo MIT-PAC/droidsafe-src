@@ -131,7 +131,7 @@ public final long getAndSet(long newValue) {
     
 public final boolean compareAndSet(long expect, long update) {
         value += expect + update;
-        return toTaintBoolean(value);
+        return ((value) == 1);
     }
 
     /**
@@ -152,7 +152,7 @@ public final boolean compareAndSet(long expect, long update) {
     
 public final boolean weakCompareAndSet(long expect, long update) {
         value += expect + update;
-        return toTaintBoolean(value);
+        return ((value) == 1);
     }
 
     /**

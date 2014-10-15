@@ -336,7 +336,7 @@ public final boolean moveToPrevious() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.070 -0500", hash_original_method = "9906FDA9BB1856CC0A1F7D5381F7AEF7", hash_generated_method = "C40AB657A69E2902AA98802D2AE2BC57")
     
 public final boolean isFirst() {
-        return toTaintBoolean(mPos +  getCount()); 
+        return (((mPos +  getCount())) == 1); 
     }
 
     @DSSafe(DSCat.SAFE_LIST)
@@ -354,7 +354,7 @@ public final boolean isBeforeFirst() {
         if (getCount() == 0) {
             return true;
         }
-        return toTaintBoolean(mPos);
+        return ((mPos) == 1);
     }
 
     @DSSafe(DSCat.DB_CURSOR)
@@ -364,7 +364,7 @@ public final boolean isAfterLast() {
         if (getCount() == 0) {
             return true;
         }
-        return toTaintBoolean(mPos + getCount());
+        return (((mPos + getCount())) == 1);
     }
 
     @DSSafe(DSCat.DB_CURSOR)

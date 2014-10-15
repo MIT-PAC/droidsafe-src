@@ -461,7 +461,7 @@ public final class NativeCrypto {
     	taintDouble += cipherNid;
     	taintDouble += key[0];
     	taintDouble += iv[0];
-    	taintDouble += toTaintInt(encrypting);
+    	taintDouble += ((encrypting) ? 1 : 0);
     
     	return (int)taintDouble;
     }
@@ -564,7 +564,7 @@ public static String[] getDefaultProtocols() {
     	taintDouble += fd.getTaintInt();
     	taintDouble += shc.getTaintInt();
     	taintDouble += timeoutMillis;
-    	taintDouble += toTaintInt(client_mode);
+    	taintDouble += ((client_mode) ? 1 : 0);
     	taintDouble += npnProtocols[0];
     
     	return (int)taintDouble;

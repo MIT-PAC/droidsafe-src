@@ -3281,7 +3281,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:59.511 -0400", hash_original_method = "51B536FC783003F49FBF583EBABDA000", hash_generated_method = "E9E6E8FA03A38E2B4F7B22C31F409508")
@@ -3290,7 +3290,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:22:11.033 -0400", hash_original_method = "3B6CA7B24C36B662CB5B1AEC413DB28D", hash_generated_method = "0DAB225627D67322CE3F5E19CB1C0E87")
@@ -3371,7 +3371,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += value.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.593 -0400", hash_original_method = "BECBF187FFB34FCB4D52D168AB69D2A6", hash_generated_method = "73E929C669301DD08A9008BDF47E9401")
@@ -3383,7 +3383,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += value;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.597 -0400", hash_original_method = "5F7F7D6B28C214738B0B37834ECCD852", hash_generated_method = "F75F2ECB937ADE3BA177B8C00296D55D")
@@ -3395,7 +3395,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += value;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:59.537 -0400", hash_original_method = "7237E5A1E5B85127AE4BC8A163BAACA2", hash_generated_method = "9F9505235C952BB6D031850BE81A915B")
@@ -3404,7 +3404,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:59.539 -0400", hash_original_method = "360BEC7C437750736B0535A7ACC2D0E9", hash_generated_method = "4DF2998F97737928A56F819F40C79146")
@@ -3413,7 +3413,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.607 -0400", hash_original_method = "0E72D1B6B60B0E0BAE085493F56B96AA", hash_generated_method = "C0F618BFF2249C003564F4883D5383A2")
@@ -3425,7 +3425,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += timeout_ms;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.610 -0400", hash_original_method = "3E18CB80049407F3CFA22F1D68DAABEE", hash_generated_method = "48E9ECB417DAB7AAAA67352BCCCEFCDB")
@@ -3437,7 +3437,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += timeout_ms;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:59.546 -0400", hash_original_method = "38EE72FABCA4DC5E9C80C573DE957EAD", hash_generated_method = "F9360208823F690A640AB46DF340A057")
     
@@ -3458,7 +3458,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += address.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.619 -0400", hash_original_method = "3F46C71B2050F96708A238DBF6D2B85C", hash_generated_method = "9542E3FA0CCED37AB069155F70D65D50")
@@ -3469,7 +3469,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += objectPath.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.623 -0400", hash_original_method = "BDD3804241DBCCCB95D1FAA417D47516", hash_generated_method = "471D4ED2CEB5E01D7644293A9C152820")
@@ -3495,7 +3495,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += nativeData;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.630 -0400", hash_original_method = "7965AF2410A1D23CB36EEAF21A720D9B", hash_generated_method = "C3158B523BEC2A8C5A2AED7F0E2627B2")
@@ -3508,7 +3508,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += nativeData;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.633 -0400", hash_original_method = "DF5461E8BBFC99195294633EC99C38A4", hash_generated_method = "EA0B55B4F28B6B21BDD825CFD49E829D")
@@ -3521,7 +3521,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += nativeData;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:39:09.400 -0400", hash_original_method = "FBC0B4969C7C7832C86D8116FA6E93FE", hash_generated_method = "B06648379376AD786B9550105BBB3FAA")
     
@@ -3530,11 +3530,11 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	//Formerly a native method
     	double taintDouble = 0;
     	taintDouble += address.getTaintInt();
-    	taintDouble += toTaintInt(confirm);
+    	taintDouble += ((confirm) ? 1 : 0);
     	taintDouble += nativeData;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.639 -0400", hash_original_method = "7407BD3CC6544027E5D0C45402CFE147", hash_generated_method = "1EB131CD76A823BC273BD199C8153F12")
@@ -3549,7 +3549,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += nativeData;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.642 -0400", hash_original_method = "21593BFEFF25112A05131665234AEC78", hash_generated_method = "A81646B687D61AC60A958C1AD47D601D")
@@ -3563,7 +3563,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += value;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.646 -0400", hash_original_method = "0D3B8791F6B9796D4BD1C779CE2A2D83", hash_generated_method = "2A17298E7BF48EB1DAA99655D948E6D2")
@@ -3577,7 +3577,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += value.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.649 -0400", hash_original_method = "07C8574252DB220D50E308961EEBA2C2", hash_generated_method = "978243A68B793384AC79ABC9517B1145")
@@ -3588,7 +3588,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += address.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.652 -0400", hash_original_method = "8E1A150BF1CD2E1203B237CB424A5D18", hash_generated_method = "FF9DA9DA2460C409499D16B98910FEE0")
@@ -3600,7 +3600,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += pattern.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.656 -0400", hash_original_method = "765A148A6C0A58403B8E2DB1A1259F87", hash_generated_method = "96E89C347A0176D0BB9A4720740F496A")
@@ -3626,7 +3626,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += handle;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.662 -0400", hash_original_method = "E44B679DAD5A1646007BE7DE8CD9592F", hash_generated_method = "9838F9E96F95F3D603A03D3887B5FF92")
@@ -3638,7 +3638,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += num_slots;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.665 -0400", hash_original_method = "CE008BD6BF6A1014A4BBD6D0E491D152", hash_generated_method = "2D3F996F5F4F7F474722138C0B5F15AA")
@@ -3649,7 +3649,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.668 -0400", hash_original_method = "121411D25B428573564DFE366B812ECB", hash_generated_method = "143221148EB9BB303486C423234CE675")
@@ -3660,7 +3660,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:39:09.423 -0400", hash_original_method = "FA2217A8DE4022FA6D873EBB4C5735B4", hash_generated_method = "4D88D10830B2D220A2D78D5771A4A54E")
@@ -3668,12 +3668,12 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     boolean setBluetoothTetheringNative(boolean value, String nap, String bridge){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(value);
+    	taintDouble += ((value) ? 1 : 0);
     	taintDouble += nap.getTaintInt();
     	taintDouble += bridge.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.675 -0400", hash_original_method = "437233521ADCB518902AA201E3534A10", hash_generated_method = "85A98BDF6404B89006675EE6C6D3E95A")
@@ -3685,7 +3685,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += dstRole.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.678 -0400", hash_original_method = "4064A28C025832F18760FF0DB3DF1BD3", hash_generated_method = "EF35E8B1D990009794D75351C3EBE4EF")
@@ -3696,7 +3696,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.681 -0400", hash_original_method = "598E25A33102CBC820D90EB4F5119B57", hash_generated_method = "13E39DC16554D1F28FF78B02E4EB08D9")
@@ -3710,7 +3710,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += iface.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.683 -0400", hash_original_method = "05AAF5040BC1B6D1D2D502B30DC45DEC", hash_generated_method = "8EC2FBEDD9F7E94488FC87B1D6DE1445")
@@ -3734,7 +3734,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += handles[0];
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     // Health API
@@ -3778,7 +3778,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.699 -0400", hash_original_method = "F2620CDF3C92B1F5017EBB5F76E84202", hash_generated_method = "7D905AC49FFDCABBC084DAFD62B708A9")
@@ -3793,7 +3793,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += code;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.702 -0400", hash_original_method = "1C5EF9067AD7C6A56E79970AA2A4B6AC", hash_generated_method = "B3E7C88D4A27CEF66BB3947B43B0DE2B")
@@ -3806,7 +3806,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += code;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:37.705 -0400", hash_original_method = "D26CDCD0389A6FF45ECA8A06B76AE4D8", hash_generated_method = "3A218C5B9F8EC23B0877A15BFB127D6C")
@@ -3856,7 +3856,7 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	taintDouble += channelPath.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:39:09.455 -0400", hash_original_method = "72F87CBF90B1ADC9C8F1684BF6FD5860", hash_generated_method = "627C72DE0B4F1D4532ED589E4973E094")
     
@@ -3864,11 +3864,11 @@ public void writeIncomingConnectionState(String address, Pair<Integer, String> d
     	//Formerly a native method
     	double taintDouble = 0;
     	taintDouble += address.getTaintInt();
-    	taintDouble += toTaintInt(value);
+    	taintDouble += ((value) ? 1 : 0);
     	taintDouble += data;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 }

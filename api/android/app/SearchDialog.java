@@ -648,7 +648,7 @@ private boolean isOutOfBounds(View v, MotionEvent event) {
         final int x = (int) event.getX();
         final int y = (int) event.getY();
         final int slop = ViewConfiguration.get(mContext).getScaledWindowTouchSlop();
-        return toTaintBoolean(x + y + slop + v.getWidth() + v.getHeight());
+        return (((x + y + slop + v.getWidth() + v.getHeight())) == 1);
     }
 
     @DSSafe(DSCat.GUI)

@@ -125,16 +125,16 @@ GoogleMapOptions(int  i0, byte  b1, byte  b2, int  i3, CameraPosition  r1, byte 
 
         Zu = -1;
         xM = i0;
-        Zs = DSUtils.toTaintBoolean(b1);
-        Zt = DSUtils.toTaintBoolean(b2);
+        Zs = ((b1) == 1);
+        Zt = ((b2) == 1);
         Zu = i3;
         Zv = r1;
-        Zw = DSUtils.toTaintBoolean(b4);
-        Zx = DSUtils.toTaintBoolean(b5);
-        Zy = DSUtils.toTaintBoolean(b6);
-        Zz = DSUtils.toTaintBoolean(b7);
-        ZA = DSUtils.toTaintBoolean(b8);
-        ZB = DSUtils.toTaintBoolean(b9);
+        Zw = ((b4) == 1);
+        Zx = ((b5) == 1);
+        Zy = ((b6) == 1);
+        Zz = ((b7) == 1);
+        ZA = ((b8) == 1);
+        ZB = ((b9) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-24 13:46:48.673 -0400", hash_original_method = "E166DD72784D578DDB0C6FD3849289D7", hash_generated_method = "B4A8E2134DD214A6ECAD6A336AB8301B")
@@ -156,7 +156,7 @@ public int describeContents()
 
     @DSSafe(DSCat.SAFE_LIST)
     public int hashCode() {
-    	return (int) (toTaintInt(ZA && ZB && Zs && Zt && Zw && Zx && Zy && Zz) +
+    	return (int) (((ZA && ZB && Zs && Zt && Zw && Zx && Zy && Zz) ? 1 : 0) +
     				xM + Zu + Zv.hashCode());
     }
     

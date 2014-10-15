@@ -50,7 +50,7 @@ private static boolean isValidCharsetNameCharacter(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') ||
                 c == '-' || c == '.' || c == ':' || c == '_';
         */
-        return toTaintBoolean(c);
+        return ((c) == 1);
     }
 
     /**
@@ -528,7 +528,7 @@ public final int compareTo(Charset charset) {
     public final boolean equals(Object obj) {
         if (obj instanceof Charset) {
             Charset that = (Charset) obj;
-            return toTaintBoolean(canonicalName.getTaintInt() - that.canonicalName.getTaintInt());
+            return (((canonicalName.getTaintInt() - that.canonicalName.getTaintInt())) == 1);
         }
         return false;
     }
@@ -617,7 +617,7 @@ public final int compareTo(Charset charset) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.309 -0500", hash_original_method = "A170E8D5F907BC2C49EE2B6B025995E0", hash_generated_method = "69BECE17D88537817044B7AB49A588D2")
         public boolean contains(Charset charset) {
             // TODO Auto-generated method stub
-            return toTaintBoolean(getTaintInt() + charset.getTaintInt());
+            return (((getTaintInt() + charset.getTaintInt())) == 1);
         }
 
         @Override

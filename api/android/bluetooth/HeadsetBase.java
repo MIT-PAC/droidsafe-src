@@ -309,7 +309,7 @@ public boolean connect(Handler handler) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     /*
@@ -428,7 +428,7 @@ public synchronized boolean sendURC(String urc) {
     	taintDouble += urc.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:05:55.001 -0400", hash_original_method = "6D3C788D0D3D9CDBFD863C3856BB1B63", hash_generated_method = "5D0193EB873CFC9EE38BFA3BEC15892D")

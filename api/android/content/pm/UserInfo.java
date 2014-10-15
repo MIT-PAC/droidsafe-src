@@ -78,20 +78,20 @@ private UserInfo(Parcel source) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.392 -0500", hash_original_method = "C03AE380E4F338F1E70E5C1BDC1E37B9", hash_generated_method = "D8E752725A82D370D55E64D675AA5AA2")
     
 public boolean isPrimary() {
-        return toTaintBoolean(flags + getTaintInt()); 
+        return (((flags + getTaintInt())) == 1); 
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.394 -0500", hash_original_method = "AB675EF64043DB6994A1BFFAAF9F7F55", hash_generated_method = "8968E374D36D976197B721875E7BF326")
     
 public boolean isAdmin() {
-        return toTaintBoolean(flags + getTaintInt()); 
+        return (((flags + getTaintInt())) == 1); 
         //return (flags & FLAG_ADMIN) == FLAG_ADMIN;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.396 -0500", hash_original_method = "C17F5F8C940B592632E4868007F4D830", hash_generated_method = "52AE29ED93B6329CE7750137C8AA1A6D")
     
 public boolean isGuest() {
-        return toTaintBoolean(flags + getTaintInt()); 
+        return (((flags + getTaintInt())) == 1); 
         //return (flags & FLAG_GUEST) == FLAG_GUEST;
     }
 

@@ -107,7 +107,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                   float right, float bottom,
                                                   int regionOp) {
 
-        return toTaintBoolean(nCanvas + left + top + right + bottom + regionOp);
+        return ((nCanvas + left + top + right + bottom + regionOp) == 1);
     }
     
     @DSComment("Private Method")
@@ -115,7 +115,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_clipPath(int nativeCanvas,
                                                   int nativePath,
                                                   int regionOp) {
-        return toTaintBoolean(nativeCanvas + nativePath + regionOp);
+        return ((nativeCanvas + nativePath + regionOp) == 1);
     }
     
     @DSComment("Private Method")
@@ -124,7 +124,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                     int nativeRegion,
                                                     int regionOp) {
 
-        return toTaintBoolean(nativeCanvas + nativeRegion + regionOp);
+        return ((nativeCanvas + nativeRegion + regionOp) == 1);
     }
     
     @DSComment("Private Method")
@@ -137,7 +137,7 @@ protected static void checkRange(int length, int offset, int count) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_getClipBounds(int nativeCanvas,
                                                        Rect bounds) {
-        return toTaintBoolean(nativeCanvas + bounds.getTaintInt());
+        return (((nativeCanvas + bounds.getTaintInt())) == 1);
     }
     
     @DSComment("Private Method")
@@ -150,7 +150,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_quickReject(int nativeCanvas,
                                                      RectF rect,
                                                      int native_edgeType) {
-        return toTaintBoolean(nativeCanvas + rect.getTaintInt() + native_edgeType);
+        return (((nativeCanvas + rect.getTaintInt() + native_edgeType)) == 1);
     }
     
     @DSComment("Private Method")
@@ -159,7 +159,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      int path,
                                                      int native_edgeType) {
 
-        return toTaintBoolean(nativeCanvas + path + native_edgeType);
+        return ((nativeCanvas + path + native_edgeType) == 1);
     }
     
     @DSComment("Private Method")
@@ -168,7 +168,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      float left, float top,
                                                      float right, float bottom,
                                                      int native_edgeType) {
-        return toTaintBoolean(nativeCanvas + left + top + right + bottom + native_edgeType);
+        return ((nativeCanvas + left + top + right + bottom + native_edgeType) == 1);
     }
     
     @DSComment("Private Method")

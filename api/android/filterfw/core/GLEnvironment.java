@@ -43,7 +43,7 @@ public static boolean isAnyContextActive() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:06:02.638 -0400", hash_original_field = "5312F3B11B036D51457E62D19332CB5B", hash_generated_field = "836AF212C39306A6DE9B2DAD8EABBB66")
@@ -199,7 +199,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.452 -0400", hash_original_method = "27823144E2C3DC027BFB63BA7141BEFA", hash_generated_method = "EEFDAFBA818C390091ACBD91000F6F65")
@@ -208,7 +208,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.455 -0400", hash_original_method = "8F19BBE56160A05D8AABF421C6AE0D71", hash_generated_method = "99ED90BA556BACB91A59E41431E03057")
@@ -217,7 +217,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.457 -0400", hash_original_method = "429D16685BCAC565C484E3FE04151D47", hash_generated_method = "C2D2A3DA3AC8F95A0ABD0B8E813C447E")
@@ -226,7 +226,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.463 -0400", hash_original_method = "57D25A50BBF10FA53BB44C7D6DF9FC93", hash_generated_method = "1F9B755D93F5F98E49C7FA9AE1BFF840")
@@ -235,7 +235,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.466 -0400", hash_original_method = "E698B26A12BBCE8DC563A41F7DDD333D", hash_generated_method = "87B74D5717ED71A95C08BA91E285589E")
@@ -244,7 +244,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.469 -0400", hash_original_method = "1EF329BDA254D0F92DB2285897276B31", hash_generated_method = "24322855273E2A735603C3B7A3428FD0")
@@ -253,7 +253,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.471 -0400", hash_original_method = "6301909CA2626FBD0F9D5CE1EA448C05", hash_generated_method = "BCA8B32BD11B1B2D2C036C109DB889BF")
@@ -262,7 +262,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.474 -0400", hash_original_method = "C5D13A7D2DE40061D17A5A19349F9B46", hash_generated_method = "B240A7932BE0CB51D42FA1BDE6059C94")
@@ -271,7 +271,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.182 -0400", hash_original_method = "6B6DE041197588F0ED616D34566A1756", hash_generated_method = "D11BD7811306F9B16B5680082CCC3231")
@@ -317,7 +317,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	taintDouble += mediaRecorder.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.198 -0400", hash_original_method = "5F17AFC2D1F31F7702F1B3326F4F54F4", hash_generated_method = "B1734C22791173017A02857BF102618F")
@@ -328,7 +328,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	taintDouble += surfaceId;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.202 -0400", hash_original_method = "B15325895F651CA9C5F158C2C8B63A15", hash_generated_method = "3D2FF8D4E55475985C4C2DA8C30A29D0")
@@ -339,7 +339,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	taintDouble += surfaceId;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.206 -0400", hash_original_method = "660A7742E0B8992B12FFDC85C87113E3", hash_generated_method = "70CBB6019EB959FA49DDC6E9145D0842")
@@ -350,7 +350,7 @@ public void setSurfaceTimestamp(long timestamp) {
     	taintDouble += timestamp;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 }
