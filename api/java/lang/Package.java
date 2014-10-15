@@ -348,7 +348,7 @@ public boolean isSealed() {
     
 public boolean isSealed(URL url) {
         //return sealBase != null && sealBase.sameFile(url);
-        return toTaintBoolean(sealBase.getTaintInt() + toTaintInt(sealBase.sameFile(url)));
+        return 1 == (sealBase.getTaintInt() + (sealBase.sameFile(url) ? 1 : 0));
     }
 
     @DSComment("From safe class list")

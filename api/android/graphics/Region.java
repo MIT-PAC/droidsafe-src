@@ -14,7 +14,7 @@ public class Region implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeEquals(int native_r1, int native_r2) {
-        return toTaintBoolean((native_r1 + native_r2));
+        return 1 == ((native_r1 + native_r2));
     }
     
     @DSComment("Private Method")
@@ -32,55 +32,55 @@ public class Region implements Parcelable {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetRegion(int native_dst,
                                                   int native_src) {
-        return toTaintBoolean((native_dst + native_src));
+        return 1 == ((native_dst + native_src));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetRect(int native_dst, int left,
                                                 int top, int right, int bottom) {
-        return toTaintBoolean((native_dst + left + top + right + bottom));
+        return 1 == ((native_dst + left + top + right + bottom));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetPath(int native_dst, int native_path,
                                                 int native_clip) {
-        return toTaintBoolean((native_dst + native_path + native_clip));
+        return 1 == ((native_dst + native_path + native_clip));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeGetBounds(int native_region, Rect rect) {
-        return toTaintBoolean((native_region + rect.getTaintInt()));
+        return 1 == ((native_region + rect.getTaintInt()));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeGetBoundaryPath(int native_region,
                                                         int native_path) {
-        return toTaintBoolean((native_region + native_path));
+        return 1 == ((native_region + native_path));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, int left, int top,
                                            int right, int bottom, int op) {
-        return toTaintBoolean((native_dst + left + top + right + bottom + op));
+        return 1 == ((native_dst + left + top + right + bottom + op));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, Rect rect,
                                            int native_region, int op) {
-        return toTaintBoolean((native_dst + rect.getTaintInt() + native_region + op));
+        return 1 == ((native_dst + rect.getTaintInt() + native_region + op));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, int native_region1,
                                            int native_region2, int op) {
-        return toTaintBoolean((native_dst + native_region1 + native_region2 + op));
+        return 1 == ((native_dst + native_region1 + native_region2 + op));
     }
     
     @DSComment("Private Method")

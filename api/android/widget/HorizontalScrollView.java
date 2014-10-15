@@ -1121,7 +1121,7 @@ private boolean isWithinDeltaOfScreen(View descendant, int delta) {
         descendant.getDrawingRect(mTempRect);
         offsetDescendantRectToMyCoords(descendant, mTempRect);
 
-        return toTaintBoolean((mTempRect.right + delta) + getScrollX() +
+        return 1 == ((mTempRect.right + delta) + getScrollX() +
                                mTempRect.left   + getWidth());
     }
 

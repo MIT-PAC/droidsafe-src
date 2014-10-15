@@ -211,7 +211,7 @@ public boolean equals(Object  r1)
 public int hashCode()
     {
     	return (int)(alpha + anchor + rotation  +
-    			    DSUtils.toTaintFloat(draggable || flat || visible) +
+                     ((draggable || flat || visible) ? 1.0f : 0.0f)+
     			    icon.hashCode() + id.hashCode() +
     			    position.hashCode() +
     			    title.hashCode() +

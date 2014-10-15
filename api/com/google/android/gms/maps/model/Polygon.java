@@ -180,7 +180,7 @@ public int hashCode()
     {
     	return (int)(
     			fillColor + stroke + strokeColor + zIndex +
-    			DSUtils.toTaintFloat(geodesic && visible) +
+    			((geodesic && visible) ? 1.0f : 0.0f) +
     			id.hashCode() + points.get(0).hashCode() +
     			holes.get(0).hashCode());
       

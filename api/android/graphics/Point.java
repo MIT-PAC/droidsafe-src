@@ -115,7 +115,7 @@ public final void offset(int dx, int dy) {
         
         if (o instanceof Point) {
             Point p = (Point) o;
-            return toTaintBoolean(
+            return 1 == (
                     this.getSumTaintInt() +
                     p.getSumTaintInt());
         }

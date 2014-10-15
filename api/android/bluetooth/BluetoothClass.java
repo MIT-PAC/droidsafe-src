@@ -478,7 +478,7 @@ public boolean doesClassMatch(int profile) {
             }
         }
 
-        return toTaintBoolean(profile + getDeviceClass() + toTaintInt(hasService(profile)));
+        return 1 == (profile + getDeviceClass() + (hasService(profile) ? 1 : 0));
         
         /*
          else if (profile == PROFILE_HID) {

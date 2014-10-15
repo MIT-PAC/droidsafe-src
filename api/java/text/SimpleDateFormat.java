@@ -367,7 +367,7 @@ public void applyPattern(String template) {
       /*  return super.equals(object) && pattern.equals(simple.pattern)
                 && formatData.equals(simple.formatData);*/
         
-        return toTaintBoolean(getTaintInt() + object.getTaintInt() + 
+        return 1 == (getTaintInt() + object.getTaintInt() + 
                 simple.pattern.getTaintInt() + pattern.getTaintInt());
     }
 

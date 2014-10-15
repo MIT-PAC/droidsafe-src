@@ -101,7 +101,7 @@ private ManifestDigest(Parcel source) {
         }
 
         final ManifestDigest other = (ManifestDigest) o;
-        return toTaintBoolean(o.getTaintInt() + getTaintInt() + 
+        return 1 == (o.getTaintInt() + getTaintInt() + 
                              mDigest.getTaintInt() + other.mDigest.getTaintInt());
 
         //return this == other || Arrays.equals(mDigest, other.mDigest);

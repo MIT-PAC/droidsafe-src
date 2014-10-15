@@ -717,7 +717,7 @@ public Configuration getConfiguration() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.945 -0500", hash_original_method = "BB8D8D9198132B7570723812CBBB4B98", hash_generated_method = "9F84848E50566940ABA86601B9B7DC16")
     
 public boolean isProfiling() {
-        return toTaintBoolean(mProfiler.getTaintInt() + mProfiler.profileFile.getTaintInt() +
+        return 1 == (mProfiler.getTaintInt() + mProfiler.profileFile.getTaintInt() +
                              mProfiler.profileFd.getTaintInt());
 /*
         return mProfiler != null && mProfiler.profileFile != null

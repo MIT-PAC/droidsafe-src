@@ -42,13 +42,13 @@ public static String quoteReplacement(String s) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean findImpl(int addr, String s, int startIndex, int[] offsets) {
-        return toTaintBoolean((addr + s.getTaintInt() + startIndex + offsets[0] + offsets.getTaintInt()));
+        return 1 == ((addr + s.getTaintInt() + startIndex + offsets[0] + offsets.getTaintInt()));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean findNextImpl(int addr, String s, int[] offsets) {
-        return toTaintBoolean((addr + s.getTaintInt() + offsets[0] + offsets.getTaintInt()));
+        return 1 == ((addr + s.getTaintInt() + offsets[0] + offsets.getTaintInt()));
     }
     
     @DSComment("Private Method")
@@ -66,13 +66,13 @@ public static String quoteReplacement(String s) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean lookingAtImpl(int addr, String s, int[] offsets) {
-        return toTaintBoolean((addr + s.getTaintInt() + offsets[0] + offsets.getTaintInt()));
+        return 1 == ((addr + s.getTaintInt() + offsets[0] + offsets.getTaintInt()));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean matchesImpl(int addr, String s, int[] offsets) {
-        return toTaintBoolean((addr + s.getTaintInt() + offsets[0] + offsets.getTaintInt()));
+        return 1 == ((addr + s.getTaintInt() + offsets[0] + offsets.getTaintInt()));
     }
     
     @DSComment("Private Method")

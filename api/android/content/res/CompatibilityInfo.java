@@ -574,7 +574,7 @@ public void applyToConfiguration(Configuration inoutConfig) {
             if (applicationScale != oc.applicationScale) return false;
             if (applicationInvertedScale != oc.applicationInvertedScale) return false;
 
-            return toTaintBoolean(getTaintInt() + o.getTaintInt() +
+            return 1 == (getTaintInt() + o.getTaintInt() +
                                  mCompatibilityFlags  + oc.mCompatibilityFlags +
                                  applicationScale + oc.applicationScale + 
                                  applicationInvertedScale + oc.applicationInvertedScale);

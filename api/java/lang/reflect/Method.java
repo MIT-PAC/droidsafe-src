@@ -434,7 +434,7 @@ public Annotation[][] getParameterAnnotations() {
     
 public boolean isVarArgs() {
         int modifiers = getMethodModifiers(declaringClass, slot);
-        return toTaintBoolean((modifiers & Modifier.VARARGS) + 0);
+        return 1 == ((modifiers & Modifier.VARARGS) + 0);
     }
 
     /**
@@ -447,7 +447,7 @@ public boolean isVarArgs() {
     
 public boolean isBridge() {
         int modifiers = getMethodModifiers(declaringClass, slot);
-        return toTaintBoolean((modifiers & Modifier.BRIDGE) + 0);
+        return 1 == ((modifiers & Modifier.BRIDGE) + 0);
     }
 
     /**
@@ -460,7 +460,7 @@ public boolean isBridge() {
     
 public boolean isSynthetic() {
         int modifiers = getMethodModifiers(declaringClass, slot);
-        return toTaintBoolean((modifiers & Modifier.SYNTHETIC) + 0);
+        return 1 == ((modifiers & Modifier.SYNTHETIC) + 0);
     }
 
     /**

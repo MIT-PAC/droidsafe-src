@@ -1431,7 +1431,7 @@ public Bitmap extractAlpha() {
     
 public boolean sameAs(Bitmap other) {
         //return this == other || (other != null && nativeSameAs(mNativeBitmap, other.mNativeBitmap));
-        return toTaintBoolean(getTaintInt() + other.getTaintInt() +
+        return 1 == (getTaintInt() + other.getTaintInt() +
                               mNativeBitmap + other.mNativeBitmap);
                               
     }

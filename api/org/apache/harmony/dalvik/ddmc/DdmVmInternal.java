@@ -18,7 +18,7 @@ public class DdmVmInternal {
     
     public static boolean heapSegmentNotify(int when, int what,
         boolean isNative) {
-        return toTaintBoolean(when + what + ((isNative) ? 1 : 0));
+        return 1 == (when + what + ((isNative) ? 1 : 0));
     }
     
     public static byte[] getThreadStats() {

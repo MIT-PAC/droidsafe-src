@@ -696,7 +696,7 @@ final public FragmentManager getFragmentManager() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.046 -0500", hash_original_method = "C0D74F5DDFD9A01C19E54F3379BA7652", hash_generated_method = "618EE3A321C4FFDE67749913AA58ADE8")
     
 final public boolean isAdded() {
-        return toTaintBoolean(((mAdded) ? 1 : 0) + mActivity.getTaintInt());
+        return 1 == (((mAdded) ? 1 : 0) + mActivity.getTaintInt());
     }
 
     /**
@@ -774,7 +774,7 @@ final public boolean isVisible() {
     
 final public boolean isHidden() {
         //return mHidden;
-        return toTaintBoolean(getTaintInt() + ((mHidden) ? 1 : 0));
+        return 1 == (getTaintInt() + ((mHidden) ? 1 : 0));
     }
     
     /**

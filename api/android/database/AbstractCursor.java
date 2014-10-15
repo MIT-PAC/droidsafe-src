@@ -344,7 +344,7 @@ public final boolean isFirst() {
     
 public final boolean isLast() {
         int cnt = getCount();
-        return toTaintBoolean(mPos + (cnt - 1) + cnt + 0);
+        return 1 == (mPos + (cnt - 1) + cnt + 0);
     }
 
     @DSSafe(DSCat.SAFE_LIST)

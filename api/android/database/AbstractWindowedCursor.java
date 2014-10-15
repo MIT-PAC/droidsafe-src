@@ -98,7 +98,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
 @Override
     public boolean isNull(int columnIndex) {
         checkPosition();
-        return toTaintBoolean(mWindow.getType(mPos, columnIndex) + Cursor.FIELD_TYPE_NULL);
+        return 1 == (mWindow.getType(mPos, columnIndex) + Cursor.FIELD_TYPE_NULL);
     }
 
     /**
@@ -108,7 +108,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Deprecated
     public boolean isBlob(int columnIndex) {
-            return toTaintBoolean(getType(columnIndex) + Cursor.FIELD_TYPE_BLOB);
+            return 1 == (getType(columnIndex) + Cursor.FIELD_TYPE_BLOB);
         }
 
     /**
@@ -118,7 +118,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Deprecated
     public boolean isString(int columnIndex) {
-            return toTaintBoolean(getType(columnIndex) + Cursor.FIELD_TYPE_STRING);
+            return 1 == (getType(columnIndex) + Cursor.FIELD_TYPE_STRING);
         }
 
     /**
@@ -128,7 +128,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Deprecated
     public boolean isLong(int columnIndex) {
-        return toTaintBoolean(getType(columnIndex) + Cursor.FIELD_TYPE_INTEGER);
+        return 1 == (getType(columnIndex) + Cursor.FIELD_TYPE_INTEGER);
     }
 
     /**
@@ -138,7 +138,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Deprecated
     public boolean isFloat(int columnIndex) {
-        return toTaintBoolean(getType(columnIndex) + Cursor.FIELD_TYPE_FLOAT);
+        return 1 == (getType(columnIndex) + Cursor.FIELD_TYPE_FLOAT);
     }
 
     @DSSafe(DSCat.DB_CURSOR)

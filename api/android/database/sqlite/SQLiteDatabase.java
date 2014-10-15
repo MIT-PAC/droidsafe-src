@@ -1099,7 +1099,7 @@ public void setTransactionSuccessful() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.108 -0500", hash_original_method = "6E9122EA7DDDF4A7FCE3C41AA714113C", hash_generated_method = "16CBF7F783BDC7B78DB3833DD187A118")
     
 public boolean inTransaction() {
-        return toTaintBoolean(mLock.getHoldCount() + ((mTransactionUsingExecSql) ? 1 : 0));
+        return 1 == (mLock.getHoldCount() + ((mTransactionUsingExecSql) ? 1 : 0));
     }
 
     /* package */ @DSComment("Package priviledge")
@@ -1180,7 +1180,7 @@ public boolean isDbLockedByCurrentThread() {
     
 public boolean isDbLockedByOtherThreads() {
         //return !mLock.isHeldByCurrentThread() && mLock.isLocked();
-        return toTaintBoolean((((mLock.isHeldByCurrentThread())) ? 1 : 0) +  (((mLock.isLocked())) ? 1 : 0));
+        return 1 == ((((mLock.isHeldByCurrentThread())) ? 1 : 0) +  (((mLock.isLocked())) ? 1 : 0));
     }
 
     /**
@@ -2266,7 +2266,7 @@ public void execSQL(String sql, Object[] bindArgs) throws SQLException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.263 -0500", hash_original_method = "B8251338AB8EB8352A863E35E41B939B", hash_generated_method = "ECE4AC413AF33B7DFA339587851A633B")
     
 public boolean isReadOnly() {
-        return toTaintBoolean((mFlags & OPEN_READ_MASK) + OPEN_READONLY);
+        return 1 == ((mFlags & OPEN_READ_MASK) + OPEN_READONLY);
     }
 
     /**

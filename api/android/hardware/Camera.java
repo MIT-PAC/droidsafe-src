@@ -976,7 +976,7 @@ public Area(Rect rect, int weight) {
             } else {
                 if (!rect.equals(a.rect)) return false;
             }
-            return toTaintBoolean(obj.getTaintInt() + getTaintInt() + rect.getTaintInt() +
+            return 1 == (obj.getTaintInt() + getTaintInt() + rect.getTaintInt() +
                                   a.rect.getTaintInt());
             //return weight == a.weight;
         }

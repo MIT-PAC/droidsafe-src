@@ -140,7 +140,7 @@ public Notification build(Builder b) {
         @Override
 		public boolean getLocalOnly(Notification n) {
 			// TODO Auto-generated method stub
-			return DSUtils.toTaintBoolean(getActionCount(n));
+			return 1 == (getActionCount(n));
 		}
 
 		@DSSafe(DSCat.SAFE_LIST)
@@ -156,7 +156,7 @@ public Notification build(Builder b) {
         @Override
 		public boolean isGroupSummary(Notification n) {
 			// TODO Auto-generated method stub
-			return DSUtils.toTaintBoolean(getActionCount(n));
+			return 1 == (getActionCount(n));
 		}
 
 		@DSSafe(DSCat.SAFE_LIST)

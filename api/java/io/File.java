@@ -145,7 +145,7 @@ public static File[] listRoots() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean setLastModifiedImpl(String path, long time) {
-        return toTaintBoolean(((int)time + path.getTaintInt()));
+        return 1 == (((int)time + path.getTaintInt()));
 	}
     
     @DSComment("Private Method")
@@ -487,13 +487,13 @@ public boolean exists() {
     public String getAbsolutePath() {
         if(isAbsolute())        
         {
-String var535F4D9720F3B0C96D8143873CE0638C_1405753140 =             path;
-            var535F4D9720F3B0C96D8143873CE0638C_1405753140.addTaint(getTaint());
+            String var535F4D9720F3B0C96D8143873CE0638C_1405753140 =             path;
+            //var535F4D9720F3B0C96D8143873CE0638C_1405753140.addTaint(getTaint());
             return var535F4D9720F3B0C96D8143873CE0638C_1405753140;
         } //End block
         String userDir = "user.dir" + path;
         String var4F090B9F25B3E37BF995BFA6769B0207_1493143672 = userDir, path;
-        var4F090B9F25B3E37BF995BFA6769B0207_1493143672.addTaint(getTaint());
+        //var4F090B9F25B3E37BF995BFA6769B0207_1493143672.addTaint(getTaint());
         return var4F090B9F25B3E37BF995BFA6769B0207_1493143672;
         // ---------- Original Method ----------
         //if (isAbsolute()) {
@@ -675,7 +675,7 @@ public String getPath() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.507 -0500", hash_original_method = "9F2931F68825A4578F9E89212BCAE059", hash_generated_method = "2E75DF42A48FEC873AC09333063133CF")
     
 public boolean isAbsolute() {
-        return toTaintBoolean(path.length() + path.charAt(0) + separatorChar);
+        return 1 == (path.length() + path.charAt(0) + separatorChar);
     }
 
     /**
@@ -1145,8 +1145,8 @@ public boolean mkdirs() {
         }
 
         /* Otherwise, try to create a parent directory and then this directory */
-        return toTaintBoolean(toTaintInt(new File(parentDir).mkdirs()) +
-                              (((mkdir())) ? 1 : 0));
+        return ((new File(parentDir).mkdirs()) &&
+                     (((mkdir()))));
     }
 
     /**
@@ -1244,25 +1244,25 @@ public boolean renameTo(File newPath) {
         {
             if(!name.startsWith("/"))            
             {
-URI var81CE9C8452AED16CEDF893615168C3D2_1760874075 =                 new URI("file", null, "/" + name, null, null);
-                var81CE9C8452AED16CEDF893615168C3D2_1760874075.addTaint(getTaint());
+                URI var81CE9C8452AED16CEDF893615168C3D2_1760874075 =                 new URI("file", null, "/" + name, null, null);
+                //var81CE9C8452AED16CEDF893615168C3D2_1760874075.addTaint(getTaint());
                 return var81CE9C8452AED16CEDF893615168C3D2_1760874075;
             } //End block
             else
             if(name.startsWith("//"))            
             {
-URI var29D90A9A6DADA7CCD352DB7E1FC69FFB_1073480290 =                 new URI("file", "", name, null);
-                var29D90A9A6DADA7CCD352DB7E1FC69FFB_1073480290.addTaint(getTaint());
+                URI var29D90A9A6DADA7CCD352DB7E1FC69FFB_1073480290 =                 new URI("file", "", name, null);
+                //var29D90A9A6DADA7CCD352DB7E1FC69FFB_1073480290.addTaint(getTaint());
                 return var29D90A9A6DADA7CCD352DB7E1FC69FFB_1073480290;
             } //End block
-URI varEF9537D825B1B2B07B3A54F3FC640952_313304114 =             new URI("file", null, name, null, null);
-            varEF9537D825B1B2B07B3A54F3FC640952_313304114.addTaint(getTaint());
+            URI varEF9537D825B1B2B07B3A54F3FC640952_313304114 =             new URI("file", null, name, null, null);
+            //varEF9537D825B1B2B07B3A54F3FC640952_313304114.addTaint(getTaint());
             return varEF9537D825B1B2B07B3A54F3FC640952_313304114;
         } //End block
         catch (URISyntaxException e)
         {
-URI var540C13E9E156B687226421B24F2DF178_816445735 =             null;
-            var540C13E9E156B687226421B24F2DF178_816445735.addTaint(getTaint());
+            URI var540C13E9E156B687226421B24F2DF178_816445735 =             null;
+            //var540C13E9E156B687226421B24F2DF178_816445735.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_816445735;
         } //End block
         // ---------- Original Method ----------
@@ -1285,19 +1285,19 @@ URI var540C13E9E156B687226421B24F2DF178_816445735 =             null;
         String name = getAbsoluteName();
         if(!name.startsWith("/"))        
         {
-URL var347EE1274B4A53E8A16CAFF7EB7D3896_581746080 =             new URL("file", "", -1, "/" + name, null);
-            var347EE1274B4A53E8A16CAFF7EB7D3896_581746080.addTaint(getTaint());
+            URL var347EE1274B4A53E8A16CAFF7EB7D3896_581746080 =             new URL("file", "", -1, "/" + name, null);
+            //var347EE1274B4A53E8A16CAFF7EB7D3896_581746080.addTaint(getTaint());
             return var347EE1274B4A53E8A16CAFF7EB7D3896_581746080;
         } //End block
         else
         if(name.startsWith("//"))        
         {
-URL varB6E76567327A20845E8CD7E94383DAA5_1818859224 =             new URL("file:" + name);
-            varB6E76567327A20845E8CD7E94383DAA5_1818859224.addTaint(getTaint());
+            URL varB6E76567327A20845E8CD7E94383DAA5_1818859224 =             new URL("file:" + name);
+            //varB6E76567327A20845E8CD7E94383DAA5_1818859224.addTaint(getTaint());
             return varB6E76567327A20845E8CD7E94383DAA5_1818859224;
         } //End block
-URL var9F0992E1CDD9692D51AE22365958494F_479158924 =         new URL("file", "", -1, name, null);
-        var9F0992E1CDD9692D51AE22365958494F_479158924.addTaint(getTaint());
+        URL var9F0992E1CDD9692D51AE22365958494F_479158924 =         new URL("file", "", -1, name, null);
+        //var9F0992E1CDD9692D51AE22365958494F_479158924.addTaint(getTaint());
         return var9F0992E1CDD9692D51AE22365958494F_479158924;
         // ---------- Original Method ----------
         //String name = getAbsoluteName();

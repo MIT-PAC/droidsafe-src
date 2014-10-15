@@ -574,12 +574,12 @@ public URI toURILenient() throws URISyntaxException {
     public String toExternalForm() {
         if(streamHandler == null)        
         {
-String var4719CC78653EB410AA0D53C0ADA4DFAC_317018758 =             "unknown protocol(" + protocol + ")://" + host + file;
-            var4719CC78653EB410AA0D53C0ADA4DFAC_317018758.addTaint(getTaint());
+            String var4719CC78653EB410AA0D53C0ADA4DFAC_317018758 =             "unknown protocol(" + protocol + ")://" + host + file;
+            //var4719CC78653EB410AA0D53C0ADA4DFAC_317018758.addTaint(getTaint());
             return var4719CC78653EB410AA0D53C0ADA4DFAC_317018758;
         } //End block
-String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toExternalForm(this);
-        varDCCA36446C90D2AF904BB9935AD90339_445251136.addTaint(getTaint());
+        String varDCCA36446C90D2AF904BB9935AD90339_445251136 =         streamHandler.toExternalForm(this);
+        //varDCCA36446C90D2AF904BB9935AD90339_445251136.addTaint(getTaint());
         return varDCCA36446C90D2AF904BB9935AD90339_445251136;
         // ---------- Original Method ----------
         //if (streamHandler == null) {

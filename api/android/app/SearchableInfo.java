@@ -474,7 +474,7 @@ public boolean useBadgeLabel() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.636 -0500", hash_original_method = "FEE9D772AE5D3D19558CCEFFB0D8835C", hash_generated_method = "0C8169242869498E87B1B7CB9AD5D6CC")
     
 public boolean useBadgeIcon() {
-        return toTaintBoolean((mSearchMode & SEARCH_MODE_BADGE_ICON) + mIconId); 
+        return 1 == ((mSearchMode & SEARCH_MODE_BADGE_ICON) + mIconId); 
     }
 
     /**

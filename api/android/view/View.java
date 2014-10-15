@@ -2966,7 +2966,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
     @DSSafe(DSCat.GUI)
     public boolean fitsSystemWindows(){
 		// Original method
-        return toTaintBoolean((mViewFlags & FITS_SYSTEM_WINDOWS) + FITS_SYSTEM_WINDOWS);
+        return 1 == ((mViewFlags & FITS_SYSTEM_WINDOWS) + FITS_SYSTEM_WINDOWS);
 	}
     
     @DSComment("From safe class list")

@@ -36,7 +36,7 @@ public class SystemProperties {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_get_boolean(String key, boolean def) {
-        return toTaintBoolean(key.getTaintInt() + ((def) ? 1 : 0));
+        return 1 == (key.getTaintInt() + ((def) ? 1 : 0));
 	}
     
     @DSComment("Private Method")

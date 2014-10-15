@@ -1768,8 +1768,8 @@ public View onCreatePanelView(int featureId) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
-		return toTaintBoolean(toTaintInt(onPrepareOptionsMenu(menu)) + 
-                              toTaintInt(mFragments.dispatchPrepareOptionsMenu(menu))  + (((menu.hasVisibleItems())) ? 1 : 0));
+        return 1 == ((onPrepareOptionsMenu(menu) ? 1 : 0) + 
+                     (mFragments.dispatchPrepareOptionsMenu(menu) ? 1 : 0)  + (((menu.hasVisibleItems())) ? 1 : 0));
 		// Original method
 		/*
 		{

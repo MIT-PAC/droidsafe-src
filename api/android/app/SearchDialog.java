@@ -836,7 +836,7 @@ private Intent createIntent(String action, Uri data, String extraData, String qu
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.841 -0500", hash_original_method = "F1F42C772C06A28CE3769310F1841510", hash_generated_method = "F787CA429662AB1A9B883868F90AEB8B")
     
 private boolean isEmpty(AutoCompleteTextView actv) {
-        return toTaintBoolean(TextUtils.getTrimmedLength(actv.getText())); 
+        return 1 == (TextUtils.getTrimmedLength(actv.getText())); 
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.844 -0500", hash_original_method = "85C012DD8E7654DEDC3FCC35E518B3D4", hash_generated_method = "6B0AB955F4D93B7616DA539A73AA7B05")

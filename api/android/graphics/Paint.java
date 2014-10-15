@@ -74,7 +74,7 @@ public class Paint {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_getFillPath(int native_object,
                                                      int src, int dst) {
-        return toTaintBoolean((native_object + src + dst) + 0);
+        return 1 == ((native_object + src + dst) + 0);
     }
     
     @DSComment("Private Method")
@@ -582,7 +582,7 @@ public void setBidiFlags(int flags) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.602 -0500", hash_original_method = "5965A0E7316AAA95881AE3D055547B57", hash_generated_method = "75CC9E4CFD4DB5920EF6129A9FB0C362")
     
 public final boolean isAntiAlias() {
-        return toTaintBoolean((getFlags() & ANTI_ALIAS_FLAG) + 0);
+        return 1 == ((getFlags() & ANTI_ALIAS_FLAG) + 0);
     }
     
 	@DSComment("From safe class list")
@@ -607,7 +607,7 @@ public final boolean isAntiAlias() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.607 -0500", hash_original_method = "365AF52E63589F5A5C820D079E688641", hash_generated_method = "527320AD9F0FCCD508946053C0EEB737")
     
 public final boolean isDither() {
-        return toTaintBoolean((getFlags() & DITHER_FLAG) + 0);
+        return 1 == ((getFlags() & DITHER_FLAG) + 0);
     }
     
     /**
@@ -639,7 +639,7 @@ public final boolean isDither() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.613 -0500", hash_original_method = "9B687614DCB13072E0D397A968085B41", hash_generated_method = "E36F9309AB656F144D6146154772BFBD")
     
 public final boolean isLinearText() {
-        return toTaintBoolean((getFlags() & LINEAR_TEXT_FLAG) + 0);
+        return 1 == ((getFlags() & LINEAR_TEXT_FLAG) + 0);
     }
 
     /**
@@ -667,7 +667,7 @@ public final boolean isLinearText() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.619 -0500", hash_original_method = "8BAC5D567D23AEF728D22298071CB50B", hash_generated_method = "7CC254380C7C581B743D681C114E17D6")
     
 public final boolean isSubpixelText() {
-        return toTaintBoolean((getFlags() & SUBPIXEL_TEXT_FLAG) + 0);
+        return 1 == ((getFlags() & SUBPIXEL_TEXT_FLAG) + 0);
     }
     
     /**
@@ -695,7 +695,7 @@ public final boolean isSubpixelText() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.624 -0500", hash_original_method = "540058EB824CF1779470649F70CA731D", hash_generated_method = "BFAAB3C0B70D2D919A809A18C1212413")
     
 public final boolean isUnderlineText() {
-        return toTaintBoolean((getFlags() & UNDERLINE_TEXT_FLAG) + 0);
+        return 1 == ((getFlags() & UNDERLINE_TEXT_FLAG) + 0);
     }
 
     /**
@@ -723,7 +723,7 @@ public final boolean isUnderlineText() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.630 -0500", hash_original_method = "4D8DFD32FB0492CC10F2A4C48D6AABE0", hash_generated_method = "B71DB3D06622A0296C91FB46F93540CF")
     
 public final boolean isStrikeThruText() {
-        return toTaintBoolean((getFlags() & STRIKE_THRU_TEXT_FLAG) + 0);
+        return 1 == ((getFlags() & STRIKE_THRU_TEXT_FLAG) + 0);
     }
 
     /**
@@ -751,7 +751,7 @@ public final boolean isStrikeThruText() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.636 -0500", hash_original_method = "64C8195C0C6E03DDD3FCE77D9F18F499", hash_generated_method = "7DB5F020C0D78329D215290C0CE9C2E6")
     
 public final boolean isFakeBoldText() {
-        return toTaintBoolean((getFlags() & FAKE_BOLD_TEXT_FLAG) + 0);
+        return 1 == ((getFlags() & FAKE_BOLD_TEXT_FLAG) + 0);
     }
 
     /**
@@ -782,7 +782,7 @@ public final boolean isFakeBoldText() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.643 -0500", hash_original_method = "69EBEFD820D698F0EA00B7F4C8854ABB", hash_generated_method = "CB21E98A2D5462330CE1379FB39264CC")
     
 public final boolean isFilterBitmap() {
-        return toTaintBoolean((getFlags() & FILTER_BITMAP_FLAG) + 0);
+        return 1 == ((getFlags() & FILTER_BITMAP_FLAG) + 0);
     }
     
     @DSComment("From safe class list")

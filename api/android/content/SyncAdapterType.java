@@ -212,8 +212,8 @@ public boolean equals(Object o) {
         final SyncAdapterType other = (SyncAdapterType)o;
         // don't include userVisible or supportsUploading in the equality check
         //return authority.equals(other.authority) && accountType.equals(other.accountType);
-        return toTaintBoolean(toTaintInt(authority.equals(other.authority))  +
-                              toTaintInt(accountType.equals(other.accountType)));
+        return (authority.equals(other.authority)) &&
+            accountType.equals(other.accountType);
     }
 
     @DSSafe(DSCat.SAFE_LIST)

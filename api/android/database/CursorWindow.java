@@ -127,7 +127,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutLong(int windowPtr, long value, int row, int column) {
-        return toTaintBoolean(windowPtr + row + column + (int)value);
+        return 1 == (windowPtr + row + column + (int)value);
     }
     
     @DSComment("Private Method")
@@ -440,7 +440,7 @@ public void freeLastRow(){
     
 @Deprecated
     public boolean isNull(int row, int column) {
-        return toTaintBoolean(getType(row, column) + Cursor.FIELD_TYPE_NULL);
+        return 1 == (getType(row, column) + Cursor.FIELD_TYPE_NULL);
     }
 
     /**
@@ -474,7 +474,7 @@ public void freeLastRow(){
     
 @Deprecated
     public boolean isLong(int row, int column) {
-        return toTaintBoolean(getType(row, column) + Cursor.FIELD_TYPE_INTEGER);
+        return 1 == (getType(row, column) + Cursor.FIELD_TYPE_INTEGER);
     }
 
     /**
@@ -490,7 +490,7 @@ public void freeLastRow(){
     
 @Deprecated
     public boolean isFloat(int row, int column) {
-        return toTaintBoolean(getType(row, column) + Cursor.FIELD_TYPE_FLOAT);
+        return 1 == (getType(row, column) + Cursor.FIELD_TYPE_FLOAT);
     }
 
     /**

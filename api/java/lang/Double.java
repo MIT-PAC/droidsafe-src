@@ -35,7 +35,7 @@ public final class Double extends Number implements Comparable<Double> {
     
 public static boolean isInfinite(double d) {
         //return (d == POSITIVE_INFINITY) || (d == NEGATIVE_INFINITY);
-        return toTaintBoolean((d + POSITIVE_INFINITY) + (d + NEGATIVE_INFINITY));
+        return 1 == ((d + POSITIVE_INFINITY) + (d + NEGATIVE_INFINITY));
     }
 
     /**

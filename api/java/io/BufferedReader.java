@@ -448,7 +448,7 @@ public String readLine() throws IOException {
     public boolean ready() throws IOException {
         synchronized (lock) {
             checkNotClosed();
-            return toTaintBoolean((end - pos) + (((in.ready())) ? 1 : 0));
+            return 1 == ((end - pos) + (((in.ready())) ? 1 : 0));
         }
     }
 

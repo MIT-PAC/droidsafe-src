@@ -166,8 +166,8 @@ public static void sleep(long time) throws InterruptedException {
     public static void sleep(long millis, int nanos) throws InterruptedException {
         if (DroidSafeAndroidRuntime.control) {
             InterruptedException ex = new InterruptedException();
-            ex.addTaint(millis);
-            ex.addTaint(nanos);
+            //ex.addTaint(millis);
+            //ex.addTaint(nanos);
             throw ex;
         }
         /*

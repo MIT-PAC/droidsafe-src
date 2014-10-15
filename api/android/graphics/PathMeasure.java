@@ -65,7 +65,7 @@ public class PathMeasure {
     
     private static boolean native_getSegment(int native_instance, float startD, float stopD, int native_path, boolean startWithMoveTo){
     	//Formerly a native method
-        return toTaintBoolean(native_instance + startD + stopD + native_path + 
+        return 1 == (native_instance + startD + stopD + native_path + 
                        ((startWithMoveTo) ? 1 : 0));
     }
 

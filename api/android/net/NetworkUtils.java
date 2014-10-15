@@ -29,12 +29,12 @@ public class NetworkUtils {
     }
     
     public static boolean runDhcp(String interfaceName, DhcpInfoInternal ipInfo) {
-        return toTaintBoolean((((interfaceName.getTaintBoolean())) ? 1 : 0) + 
+        return 1 == ((((interfaceName.getTaintBoolean())) ? 1 : 0) + 
                 (((ipInfo.getTaintBoolean())) ? 1 : 0));
     }
     
     public static boolean runDhcpRenew(String interfaceName, DhcpInfoInternal ipInfo) {
-        return toTaintBoolean((((interfaceName.getTaintBoolean())) ? 1 : 0) + 
+        return 1 == ((((interfaceName.getTaintBoolean())) ? 1 : 0) + 
                               (((ipInfo.getTaintBoolean())) ? 1 : 0));
     }
     

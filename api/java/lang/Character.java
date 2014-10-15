@@ -98,7 +98,7 @@ public static boolean isValidCodePoint(int codePoint) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.097 -0500", hash_original_method = "7350229310DA887712F911A12A06A250", hash_generated_method = "FC74D85BFBCFD2A20FD40A9D9685DBD3")
     
 public static boolean isSupplementaryCodePoint(int codePoint) {
-        return toTaintBoolean((MIN_SUPPLEMENTARY_CODE_POINT + codePoint + MAX_CODE_POINT + codePoint));
+        return 1 == ((MIN_SUPPLEMENTARY_CODE_POINT + codePoint + MAX_CODE_POINT + codePoint));
     }
 
     /**
@@ -1174,7 +1174,7 @@ public static boolean isMirrored(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isMirroredImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1302,7 +1302,7 @@ public static boolean isDigit(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isDigitImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1349,7 +1349,7 @@ public static boolean isIdentifierIgnorable(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isIdentifierIgnorableImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1382,7 +1382,7 @@ public static boolean isISOControl(char c) {
     
 public static boolean isISOControl(int c) {
         return ((c) == 1);
-        //return toTaintBoolean((c + 0 + c + 0x1f) + (c + 0x7f + c + 0x9f));
+        //return 1 == ((c + 0 + c + 0x1f) + (c + 0x7f + c + 0x9f));
     }
 
     /**
@@ -1419,9 +1419,9 @@ public static boolean isJavaIdentifierPart(int codePoint) {
         // Use precomputed bitmasks to optimize the ASCII range.
         /*
         if (codePoint < 64) {
-            return toTaintBoolean((0x3ff00100fffc1ffL & (1L << codePoint)) + 0);
+            return 1 == ((0x3ff00100fffc1ffL & (1L << codePoint)) + 0);
         } else if (codePoint < 128) {
-            return toTaintBoolean((0x87fffffe87fffffeL & (1L << (codePoint - 64))) + 0);
+            return 1 == ((0x87fffffe87fffffeL & (1L << (codePoint - 64))) + 0);
         }
         int type = getType(codePoint);
         return (type >= UPPERCASE_LETTER && type <= OTHER_LETTER)
@@ -1469,7 +1469,7 @@ public static boolean isJavaIdentifierStart(int codePoint) {
         if (codePoint < 64) {
             return ((codePoint + '$') == 1); // There's only one character in this range).
         } else if (codePoint < 128) {
-            return toTaintBoolean((0x7fffffe87fffffeL & (1L << (codePoint - 64))) + 0);
+            return 1 == ((0x7fffffe87fffffeL & (1L << (codePoint - 64))) + 0);
         }
         int type = getType(codePoint);
         return ((codePoint) == 1);
@@ -1559,7 +1559,7 @@ public static boolean isLetter(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isLetterImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1607,7 +1607,7 @@ public static boolean isLetterOrDigit(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isLetterOrDigitImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1652,7 +1652,7 @@ public static boolean isLowerCase(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isLowerCaseImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1723,7 +1723,7 @@ public static boolean isSpaceChar(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isSpaceCharImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1761,7 +1761,7 @@ public static boolean isTitleCase(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isTitleCaseImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1801,7 +1801,7 @@ public static boolean isUnicodeIdentifierPart(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isUnicodeIdentifierPartImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1841,7 +1841,7 @@ public static boolean isUnicodeIdentifierStart(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isUnicodeIdentifierStartImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1886,7 +1886,7 @@ public static boolean isUpperCase(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isUpperCaseImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
@@ -1940,7 +1940,7 @@ public static boolean isWhitespace(int codePoint) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isWhitespaceImpl(int codePoint) {
-        return toTaintBoolean((codePoint + 0));
+        return 1 == ((codePoint + 0));
 	}
 
     /**
