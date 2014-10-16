@@ -17,19 +17,25 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IPartListener2;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchPartReference;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
+import org.eclipse.ui.texteditor.ITextEditor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
-import droidsafe.eclipse.plugin.core.marker.ProjectTaintMarkerProcessor;
+import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.SpecInfoOutlineViewPart;
+import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
@@ -56,33 +62,17 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
 
     /** The ID of the view as specified by the extension. */
     public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.DroidsafeSpecView";
-
-    /**
-     * Tries to find a security spec model for the currently selected project. If there is no selected
-     * project, it creates a text viewer telling the user to select a project in the Project Explorer.
-     * If there is a selected project in the Explorer View, the method looks for a serialized version
-     * of the spec in the droidsafe directory in the root folder of the application project. If a spec
-     * is available, the class field securitySpecModel is set. If a spec cannot be found, because
-     * droidsafe has not yet been executed for this application, then a message is displayed to the
-     * user instructing how to run the droidsafe analysis.
-     * 
-     * @param parent The composite container for the viewer. Used to create a text viewer in case a
-     *        security spec for the currently selected project cannot be found.
-     */
-    private SecuritySpecModel initializeSecuritySpec(Composite parent) {
-        IProject project = getProject();
-        String projectRootPath = getProject().getLocation().toOSString();
-        SecuritySpecModel securitySpec = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
-        ProjectTaintMarkerProcessor.get(project).init(securitySpec);
-        return securitySpec;
+    
+    public void refreshSpecAndOutlineView() {
+    	refreshSpecAndOutlineView(false);
     }
 
     /**
      * Rereads the serialized spec from file and resets the tree input.
+     * @param reInitialize always deserialize the spec from file
      */
-    public void refreshSpecAndOutlineView() {
-        fInputElement = null;
-        fInputElement = initializeSecuritySpec(fParentComposite);
+    public void refreshSpecAndOutlineView(boolean reInitialize) {
+        fInputElement = DroidsafePluginUtilities.getSecuritySpec(reInitialize);
         if (fInputElement == null) {
             fEmptyPageLabel.setText("Droidsafe spec for selected project has not been computed yet. "
                     + "\nSelect the project on the Project Explorer "
@@ -91,6 +81,13 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
         } else {
             updateView();
             InfoFlowSummaryViewPart.openView(fInputElement);
+            if (reInitialize) {
+            	IndicatorViewPart indicatorView = IndicatorViewPart.openView();
+            	if (indicatorView != null) {
+            		indicatorView.forceReloadAll();
+            		indicatorView.updateView();
+            	}
+            }
         }
     }
 
@@ -112,6 +109,10 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
      */
     @Override
     public void createPartControl(Composite parent) {
+        IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+        if (window != null) {
+        	window.getPartService().addPartListener(new EditorVisibleListener());
+        }
         super.createPartControl(parent);
         fTreeViewer.getControl().addKeyListener(new KeyAdapter() {
             @Override
@@ -129,6 +130,50 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
             }
         });
         showOtherDroidsafeViews(VIEW_ID);
+    }
+    
+    class EditorVisibleListener implements IPartListener2 {
+
+    	@Override
+		public void partActivated(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partBroughtToTop(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partClosed(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partDeactivated(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partOpened(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partHidden(IWorkbenchPartReference partRef) {
+		}
+
+		@Override
+		public void partVisible(IWorkbenchPartReference partRef) {
+			IWorkbenchPart part = partRef.getPart(false);
+			if (part instanceof IEditorPart) {
+				IProject project = DroidsafePluginUtilities.getSelectedProject();
+				if (project != null) {
+					ProjectMarkerProcessor projectMarkerProcessor = ProjectMarkerProcessor.get(project);
+					projectMarkerProcessor.showDroidsafeTextMarkers((IEditorPart)part);
+				}
+			}
+		}
+
+		@Override
+		public void partInputChanged(IWorkbenchPartReference partRef) {
+		}
+    	
     }
     
     private void updateCurrentViewerSettings() {

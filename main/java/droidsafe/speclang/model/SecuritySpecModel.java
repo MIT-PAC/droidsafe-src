@@ -164,6 +164,8 @@ PropertyChangeListener {
 
     private Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> taintedDataMap;
     private List<String> taintKinds;
+    
+    private Map<String, Map<String, Set<IntRange>>> unreachableSourceMethodMap;
 
     /**
      * Main constructor for the spec model. Translate the original droidsafe spec into a simpler
@@ -175,11 +177,14 @@ PropertyChangeListener {
         this.projectRootPath = projectPath;
         translateModel(originalSpec);
         computeTaintInfo();
-        if (Config.v().debug)
+        computeUneachableSourceMethods();
+        if (Config.v().debug) {
             printTaintInfo();
+            printUnreachableSourceMethods();
+        }
     }
 
-    public Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> getTaintedDataMap() {
+	public Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> getTaintedDataMap() {
         return taintedDataMap;
     }
 
@@ -331,7 +336,7 @@ PropertyChangeListener {
 
     private void printTaintInfo() {
         try {
-            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "TaintedData.txt");
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "tainted-data.txt");
             for (String clsName:  taintedDataMap.keySet()) {
                 fw.write(clsName+"\n");
                 Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>> methodMap = taintedDataMap.get(clsName);
@@ -390,6 +395,70 @@ PropertyChangeListener {
         }
         return result;
     }
+
+	public Map<String, Map<String, Set<IntRange>>> getUnreachableSourceMethodMap() {
+        return unreachableSourceMethodMap;
+    }
+
+	private void computeUneachableSourceMethods() {
+		unreachableSourceMethodMap = new TreeMap<String, Map<String, Set<IntRange>>>();
+		Set<String> srcClassNames = Project.v().getSrcClasses();
+		for (String srcClassName : srcClassNames) {
+			SootClass srcClass = Scene.v().getSootClass(srcClassName);
+			if (!srcClass.isPhantomClass()) {
+				for (SootMethod method: srcClass.getMethods()) {
+					if (!PTABridge.v().isReachableMethod(method)) {
+						String methodName = getSourceMethodName(method);
+						if (methodName != null) {
+							SourceLocationTag loc = SootUtils.getMethodLocation(method);
+							if (loc != null) {
+								String clsName = loc.getClz();
+								if (Project.v().isSrcClass(clsName)) {
+									Map<String, Set<IntRange>> methodMap = unreachableSourceMethodMap.get(clsName);
+									if (methodMap == null) {
+										methodMap = new TreeMap<String, Set<IntRange>>();
+										unreachableSourceMethodMap.put(clsName, methodMap);
+									}
+									IntRange range = SootUtils.getMethodLineRange(method);
+									if (range != null) {
+										Set<IntRange> ranges = methodMap.get(methodName);
+										if (ranges == null) {
+											ranges = new TreeSet<IntRange>();
+											methodMap.put(methodName, ranges);
+										}
+										ranges.add(range);
+									}
+								}
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+    private void printUnreachableSourceMethods() {
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "unreachable-source-methods.txt");
+            for (String clsName:  unreachableSourceMethodMap.keySet()) {
+                fw.write(clsName+"\n");
+                Map<String, Set<IntRange>> methodMap = unreachableSourceMethodMap.get(clsName);
+                for (String methodName: methodMap.keySet()) {
+                    fw.write("\n  " + methodName + "\n");
+                    Set<IntRange> ranges = methodMap.get(methodName);
+                    for (IntRange range: ranges) {
+                        fw.write("\n    [" + range.min + ", " + range.max + "]\n");
+                    }
+                }
+                fw.write("\n");
+            }
+            fw.close();
+        } catch (IOException e) {
+            logger.error("Error writing unreachable source methods file.");
+            droidsafe.main.Main.exit(1);
+        }     
+	}
 
     public Set<MethodModel> getWhitelist() {
         return this.whitelist;

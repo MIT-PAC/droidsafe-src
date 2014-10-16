@@ -38,6 +38,7 @@ import org.eclipse.jface.text.Region;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorDescriptor;
@@ -63,7 +64,7 @@ import com.google.gson.JsonParser;
 
 import droidsafe.android.app.Project;
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.marker.ProjectTaintMarkerProcessor;
+import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
 import droidsafe.eclipse.plugin.core.view.spec.TreeElementLabelProvider;
 import droidsafe.main.Config;
 import droidsafe.speclang.model.CodeLocationModel;
@@ -591,6 +592,38 @@ public class DroidsafePluginUtilities {
         return null;
     }
 
+    private static Map<IProject, SecuritySpecModel> specMap = new HashMap<IProject, SecuritySpecModel>();
+
+    /**
+     * Tries to find a security spec model for the currently selected project. 
+     * If there is a selected project in the Explorer View, the method looks for a serialized version
+     * of the spec in the droidsafe directory in the root folder of the application project. 
+     * @param project 
+     */
+    public static SecuritySpecModel initializeSecuritySpec(IProject project) {
+        String projectRootPath = project.getLocation().toOSString();
+        SecuritySpecModel securitySpec = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
+        ProjectMarkerProcessor.get(project).init(securitySpec);
+        specMap.put(project, securitySpec);
+        return securitySpec;
+    }
+    
+    public static SecuritySpecModel getSecuritySpec() {
+    	return getSecuritySpec(false);
+    }
+
+    public static SecuritySpecModel getSecuritySpec(boolean reInitialize) {
+    	IProject project = getSelectedProject();
+    	if (project != null) {
+    		SecuritySpecModel spec = specMap.get(project);
+    		if (reInitialize || spec == null) {
+    			spec = initializeSecuritySpec(project);
+    		}
+			return spec;
+    	}
+    	return null;
+    }
+
     /**
      * Returns an editor on the given Java class for the given project. Activates  
      * the editor if the parameter 'activate' is true.
@@ -619,8 +652,6 @@ public class DroidsafePluginUtilities {
         }
         if (openEditor == null) {
             error("Failed to find Java source for class " + className);
-        } else {
-            ProjectTaintMarkerProcessor.get(project).showTaintedData(openEditor, className);
         }
         return openEditor;
     }

@@ -1,5 +1,7 @@
 package droidsafe.eclipse.plugin.core.commands;
 
+import java.io.File;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -25,11 +27,14 @@ public class RefreshOutlineView extends AbstractHandler {
     @Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
         IWorkbenchPart part = HandlerUtil.getActivePart(event);
-        if (part instanceof SecuritySpecOutlineViewPart) {
+        if (part instanceof SecuritySpecOutlineViewPart || part instanceof IndicatorViewPart) {
             SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
-            droidsafeView.refreshSpecAndOutlineView();
+            droidsafeView.refreshSpecAndOutlineView(true);
         } else if (part instanceof IndicatorViewPart) {
-            ((IndicatorViewPart) part).updateView(true);
+        	IndicatorViewPart indicatorView = (IndicatorViewPart) part;
+        	File file = indicatorView.getInputElement();
+        	indicatorView.forceReload(file);
+        	indicatorView.updateView();
         }
         return null;
     }

@@ -15,7 +15,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.part.FileEditorInput;
 
-import droidsafe.eclipse.plugin.core.marker.ProjectTaintMarkerProcessor;
+import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.infoflow.TaintSourcesViewPart;
 
@@ -37,7 +37,7 @@ public class ShowTaintSources extends AbstractHandler {
                 IFile file = ((FileEditorInput)input).getFile();
                 int offset = textSelection.getOffset();
                 int length = textSelection.getLength();
-                IMarker taintMarker = ProjectTaintMarkerProcessor.get(project).findTaintMarker(file, offset, length);
+                IMarker taintMarker = ProjectMarkerProcessor.get(project).findTaintMarker(file, offset, length);
                 if (taintMarker != null) {
                     TaintSourcesViewPart.openView(taintMarker, textSelection.getText());
                 }

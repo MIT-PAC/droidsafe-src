@@ -1,78 +1,36 @@
 package droidsafe.analyses;
 
-import java.io.FileNotFoundException;
+import static droidsafe.analyses.CallChainBuilder.is_system;
+import static droidsafe.reports.JSONUtils.json_field;
+
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Stack;
 
-import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import soot.Body;
-import soot.BodyTransformer;
-import soot.Local;
-import soot.MethodOrMethodContext;
-import soot.NormalUnitPrinter;
-import soot.RefType;
-import soot.Scene;
-import soot.SootClass;
 import soot.SootMethod;
-import soot.SootMethodRef;
-import soot.Trap;
 import soot.Unit;
-import soot.UnitBox;
-import soot.Value;
-import soot.jimple.AssignStmt;
-import soot.jimple.GotoStmt;
-import soot.jimple.IfStmt;
-import soot.jimple.InstanceInvokeExpr;
-import soot.jimple.InvokeExpr;
-import soot.jimple.InvokeStmt;
-import soot.jimple.Jimple;
-import soot.jimple.JimpleBody;
-import soot.jimple.ReturnStmt;
-import soot.jimple.SpecialInvokeExpr;
-import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
-import soot.jimple.StmtBody;
-import soot.jimple.toolkits.callgraph.CallGraph;
-import soot.jimple.toolkits.callgraph.Edge;
-import soot.tagkit.AnnotationTag;
-import soot.tagkit.Tag;
-import soot.tagkit.VisibilityAnnotationTag;
-import soot.util.Chain;
-import droidsafe.analyses.pta.PTABridge;
-import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
-import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
-
-import static droidsafe.analyses.CatchBlocks.*;
-import static droidsafe.analyses.CallChainBuilder.*;
-import static droidsafe.reports.JSONUtils.*;
 
 
 /** 
  * A call graph structure.  Nested arrays are used to represent the graph.
  * Recursion is not supported (the graph is truncated at a recursive call)
  **/
-public class CallChainInfo implements Comparable<CallChainInfo> {
+public class SourceCallChainInfo implements Comparable<SourceCallChainInfo> {
    
     /** Logging field */
-    private static final Logger logger = LoggerFactory.getLogger(CallChainInfo.class);
+    private static final Logger logger = LoggerFactory.getLogger(SourceCallChainInfo.class);
            
     public String type;
     public String link;
@@ -81,10 +39,10 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
     int syscalls;
     int calls;
     int score;
-    CallChainInfo[] contents = new CallChainInfo[0];
+    SourceCallChainInfo[] contents = new SourceCallChainInfo[0];
         
     /** Creates a call from Stmt s to SootMethod m **/
-    public CallChainInfo (SootMethod m, Stmt s, String type) {
+    public SourceCallChainInfo (SootMethod m, Stmt s, String type) {
 
         this.type = type;
         this.link = "as_call";
@@ -98,7 +56,7 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
  
  
     /** merge multiple call chains from different contexts **/
-    public void merge (CallChainInfo other) {
+    public void merge (SourceCallChainInfo other) {
         if (method != other.method) 
             throw new RuntimeException ("methods don't match: " 
                     + method + ", " + other.method + " " + method.equals(other.method)
@@ -109,12 +67,12 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
         } else if (other.contents.length == 0) {
             return;
         }
-        List<CallChainInfo> ccis = new ArrayList<CallChainInfo>(Arrays.asList(contents));
-        Map<SootMethod,CallChainInfo> minfo = new HashMap<SootMethod,CallChainInfo>();
-        for (CallChainInfo cci : contents) 
+        List<SourceCallChainInfo> ccis = new ArrayList<SourceCallChainInfo>(Arrays.asList(contents));
+        Map<SootMethod,SourceCallChainInfo> minfo = new HashMap<SootMethod,SourceCallChainInfo>();
+        for (SourceCallChainInfo cci : contents) 
             minfo.put(cci.method, cci);
-        for (CallChainInfo other_cci : other.contents) {
-            CallChainInfo cci = minfo.get(other_cci.method);
+        for (SourceCallChainInfo other_cci : other.contents) {
+            SourceCallChainInfo cci = minfo.get(other_cci.method);
             if (cci == null)
                 ccis.add(other_cci);
             else
@@ -125,7 +83,7 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
         else
             logger.info ("merge: {} orig {} elems, new {} elems", method, 
                     contents.length, ccis.size());
-        contents = ccis.toArray (new CallChainInfo[0]);
+        contents = ccis.toArray (new SourceCallChainInfo[0]);
     }
     
     /** merge any duplicate method calls **/
@@ -133,10 +91,10 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
         if (contents.length == 0)
             return;
         Arrays.sort (contents);
-        List<CallChainInfo> unique_calls = new ArrayList<CallChainInfo>();
+        List<SourceCallChainInfo> unique_calls = new ArrayList<SourceCallChainInfo>();
         unique_calls.add (contents[0]);
         for (int ii = 1; ii < contents.length; ii++) {
-            CallChainInfo top = unique_calls.get(unique_calls.size()-1);
+            SourceCallChainInfo top = unique_calls.get(unique_calls.size()-1);
             if (contents[ii].method == top.method)
                 top.merge (contents[ii]);
             else
@@ -144,11 +102,11 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
         }
         logger.info ("merge_contents {}: old {} elems, new {} elems", 
                 method, contents.length, unique_calls.size());
-        contents = unique_calls.toArray(new CallChainInfo[0]);
+        contents = unique_calls.toArray(new SourceCallChainInfo[0]);
     }
 
     /** order by signature **/
-    public int compareTo (CallChainInfo other) {
+    public int compareTo (SourceCallChainInfo other) {
         return method.getSignature().compareTo(other.method.getSignature());
     }
     
@@ -173,7 +131,7 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
             }                   
             return;
         }
-        for (CallChainInfo cci : contents) {
+        for (SourceCallChainInfo cci : contents) {
             cci.calculate_scores();
             calls += cci.calls;
             syscalls += cci.syscalls;
@@ -187,7 +145,15 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
     public void dump_json (PrintStream fp, String indent) {
         fp.printf ("%s{ %s,\n", indent, json_field ("type", type));
         fp.printf ("%s  %s,\n", indent, json_field ("link", link));
-        fp.printf ("%s  %s,\n", indent, json_field ("signature", method.getSignature()));
+        String sig = method.getSignature();
+        fp.printf ("%s  %s,\n", indent, json_field ("signature", sig));
+        if (stmt != null) {
+        	SootMethod invoke = stmt.getInvokeExpr().getMethod();
+        	String invokeSig = invoke.getSignature();
+        	if (!invokeSig.equals(sig)) {
+        		fp.printf ("%s  %s,\n", indent, json_field ("source-signature", invokeSig));
+        	}
+        }
         SourceLocationTag slt = (stmt == null) ? SootUtils.getMethodLocation(method) : getSourceLocation(stmt);
         if (slt != null) {
         	fp.printf ("%s  %s", indent, json_field ("src-loc"));
@@ -201,7 +167,7 @@ public class CallChainInfo implements Comparable<CallChainInfo> {
             fp.printf ("%s  %s,\n", indent, json_field ("score", score));
             fp.printf ("%s  %s [\n", indent, json_field ("contents"));
             String delim = "";
-            for (CallChainInfo cci : contents) {
+            for (SourceCallChainInfo cci : contents) {
                 fp.print (delim);
                 delim = ",\n";
                 cci.dump_json (fp, indent + "  ");

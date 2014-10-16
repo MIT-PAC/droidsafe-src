@@ -1,5 +1,8 @@
 package droidsafe.eclipse.plugin.core.view;
 
+import java.util.List;
+import java.util.Set;
+
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.util.Util;
 import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
@@ -27,6 +30,8 @@ import com.google.gson.JsonObject;
 import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
+import droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart;
+import droidsafe.eclipse.plugin.core.view.callgraph.SourceMethodNode;
 import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 import droidsafe.speclang.model.MethodArgumentModel;
@@ -152,8 +157,18 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
                     int lineNumber = Utils.getSourceLine(jsonObject);
                     if (className != null && lineNumber >= 0)
                         DroidsafePluginUtilities.revealInEditor(getProject(), className, lineNumber, activate); 
+                } else if (data instanceof SourceMethodNode) {
+                	Set<MethodModel> methods = CallGraphViewPart.getMethodModels(treeElement);
+                	if (methods == null || methods.isEmpty()) {
+                		SourceMethodNode methodNode = (SourceMethodNode) data;
+                        String className = methodNode.getSourceClass();
+                        int lineNumber = methodNode.getLine();
+                		DroidsafePluginUtilities.revealInEditor(getProject(), className, lineNumber, activate); 
+                	} else {
+                        DroidsafePluginUtilities.revealInEditor(getProject(), methods.iterator().next(), activate);
+                	}
                 }
-            }
+            } 
         }
     }
     
