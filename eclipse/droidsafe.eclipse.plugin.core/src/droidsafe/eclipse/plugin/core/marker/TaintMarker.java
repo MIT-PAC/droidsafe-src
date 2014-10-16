@@ -1,6 +1,7 @@
 package droidsafe.eclipse.plugin.core.marker;
 
 import java.util.Collections;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -27,8 +28,8 @@ public class TaintMarker {
      * Creates a Taint Marker
      */
     public static IMarker createMarker(IFile file, Position taintPosition, Set<CallLocationModel> sources, 
-                                       Set<CallLocationModel> filteredSources)
-                                               throws CoreException {
+    		Map<String, Set<CallLocationModel>> filteredSources)
+    				throws CoreException {
         IMarker marker = file.createMarker(TYPE);
         int offset = taintPosition.getOffset();
         int length = taintPosition.getLength();
@@ -48,24 +49,14 @@ public class TaintMarker {
         return Collections.EMPTY_SET;
     }
     
-    public static Set<CallLocationModel> getFilteredSources(IMarker marker) {
+    public static Map<String, Set<CallLocationModel>> getFilteredTaintSourcesMap(IMarker marker) {
         try {
-            Set<CallLocationModel> sources = (Set<CallLocationModel>) marker.getAttribute(FILTERED_SOURCES);
+        	Map<String, Set<CallLocationModel>> sources = (Map<String, Set<CallLocationModel>>) marker.getAttribute(FILTERED_SOURCES);
             return sources;
         } catch (CoreException e) {
             e.printStackTrace();
         }
-        return Collections.EMPTY_SET;
+        return Collections.EMPTY_MAP;
     }
     
-    public static Set<String> getFilteredTaintKinds(IMarker marker) {
-        Set<String> kinds = new TreeSet<String>();
-        for (CallLocationModel source: TaintMarker.getFilteredSources(marker)) {
-            Set<String> sourceKinds = source.getInfoKinds();
-            if (sourceKinds != null)
-                kinds.addAll(sourceKinds);
-        }
-        return kinds;
-    }
-
 }

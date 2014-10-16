@@ -177,6 +177,17 @@ public class DroidsafePluginUtilities {
         return null;
     }
 
+    public static String getClassName(IProject project, IFile file) {
+    	String filePath = file.getFullPath().toString();
+    	String projectPath = project.getFullPath().toString();
+    	String srcPath = projectPath + File.separator + "src" + File.separator;
+    	if (filePath.startsWith(srcPath) && filePath.endsWith(".java")) {
+    		String className = filePath.substring(srcPath.length(), filePath.length() - 5).replace(File.separator, ".");
+    		return className;
+    	}
+    	return null;
+    }
+    
     public static String droidsafeOutputFile(IProject project, String fileName) {
         String outputDir = getProjectOutputDir(project);
         String fullPath = outputDir + File.separator + fileName;

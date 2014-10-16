@@ -1,8 +1,13 @@
 package droidsafe.eclipse.plugin.core.commands;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -13,7 +18,10 @@ import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
@@ -21,6 +29,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.dialogs.CheckedTreeSelectionDialog;
 import org.eclipse.ui.dialogs.ListSelectionDialog;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.internal.ide.dialogs.SimpleListContentProvider;
@@ -30,36 +39,56 @@ import org.eclipse.ui.texteditor.ITextEditor;
 
 import droidsafe.eclipse.plugin.core.marker.ClassMarkerProcessor;
 import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
+import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
+import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
+import droidsafe.eclipse.plugin.core.view.infoflow.SourceSinkPair;
 import droidsafe.eclipse.plugin.core.wizards.NewFilterWizard;
+import droidsafe.speclang.model.CallLocationModel;
+import droidsafe.speclang.model.IModelChangeSupport;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
 
 public class FilterTaintSources extends AbstractHandler {
+	
+	private TaintSoucesContentProvider fContentProvider;
 
-    @Override
+	@Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
         IProject project = DroidsafePluginUtilities.getSelectedProject();
         IEditorPart editor = DroidsafePluginUtilities.getActiveEditor();
         if (project != null && editor != null && editor instanceof ITextEditor) {
             ProjectMarkerProcessor taintMarkerProcessor = ProjectMarkerProcessor.get(project);
-            List<String> taintKinds = taintMarkerProcessor.getTaintKinds();
-            Set<String> filteredTaintKinds = taintMarkerProcessor.getFilteredTaintKinds();
+            Map<String,Set<CallLocationModel>> taintKinds = taintMarkerProcessor.getTaintKinds();
+            Map<String,Set<CallLocationModel>> filteredTaintKinds = taintMarkerProcessor.getFilteredTaintSourcesMap();
             Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-            ListSelectionDialog dialog =
-                    new ListSelectionDialog(
-                        shell,
-                        taintKinds,
-                        ArrayContentProvider.getInstance(),
-                        new LabelProvider(),
-                        "Select the kinds of taint sources to display:");
-            dialog.setInitialSelections(filteredTaintKinds.toArray());
-            dialog.setTitle("Filter Taint Sources");
-            dialog.open();
-            Object[] result = dialog.getResult();
+            CheckedTreeSelectionDialog selectionDialog =
+            		new CheckedTreeSelectionDialog(shell, new LabelProvider(), getContentProvider(project));
+            selectionDialog.setTitle("Filter Taint Sources");
+            selectionDialog.setMessage("Select the taint sources to display:");
+            selectionDialog.setContainerMode(true);
+            selectionDialog.setInput(project);
+            selectionDialog.setExpandedElements(getExpandedElements());
+            selectionDialog.setInitialElementSelections(getInitialSelection());
+            
+            selectionDialog.open();
+            Object[] result = selectionDialog.getResult();
             if (result != null) {
-                Set<String> newFilteredTaintKinds = new TreeSet<String>();
+            	Map<String, Set<CallLocationModel>> newFilteredTaintKinds = new TreeMap<String, Set<CallLocationModel>>();
                 for (Object selected: result) {
-                    newFilteredTaintKinds.add((String)selected);
+                	TreeElement<?, ?> selectedElement = (TreeElement<?, ?>) selected;
+                	Object data = selectedElement.getData();
+                	if (data instanceof CallLocationModel) {
+                		String taintKind = (String) selectedElement.getParent().getData();
+                		CallLocationModel taintSource = (CallLocationModel) data;
+                        Set<CallLocationModel> taintSources = newFilteredTaintKinds.get(taintKind);
+                        if (taintSources == null) {
+                        	taintSources = new TreeSet<CallLocationModel>();
+                        	newFilteredTaintKinds.put(taintKind, taintSources);
+                        }
+                        taintSources.add(taintSource);
+                	}
                 }
                 if (!newFilteredTaintKinds.equals(filteredTaintKinds)) {
                     ITextEditor textEditor = (ITextEditor) editor;
@@ -68,5 +97,116 @@ public class FilterTaintSources extends AbstractHandler {
             }
         }
         return null;
+    }
+	
+	private ITreeContentProvider getContentProvider(IProject project) {
+		if (fContentProvider == null) {
+			fContentProvider = new TaintSoucesContentProvider();
+		}
+		fContentProvider.init(project);
+		return fContentProvider;
+	}
+
+	private List getInitialSelection() {
+		return fContentProvider.getInitialSelection();
+	}
+
+    private Object[] getExpandedElements() {
+    	return fContentProvider.getExpandedElements();
+	}
+
+	class TaintSoucesContentProvider extends DroidsafeInfoTreeElementContentProvider {
+
+        protected Map<Object, Object[]> inputToRoots = new HashMap<Object, Object[]>();
+
+        private IProject fProject;
+        private Map<String, Set<CallLocationModel>> fTaintSourcesMap;
+        private Map<String, Set<CallLocationModel>> fFilteredTaintSourcesMap;
+        
+        /**
+         * Auxiliary map from domain model objects to tree element objects. We use this map to keep track
+         * of the tree node elements associated with each domain object (methods, and code location).
+         */
+        private Map<Object, TreeElement<?, ?>> fTreeElementMap =
+            new HashMap<Object, TreeElement<?, ?>>();
+
+        @Override
+		public Object[] getElements(Object inputElement) {
+			if (inputElement instanceof IProject) {
+				Object[] roots = inputToRoots.get(fProject);
+				return roots;
+			}
+			return NO_CHILDREN;
+		}
+
+		@Override
+		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+	        fViewer = (TreeViewer) viewer;
+//	        if (newInput instanceof IProject) {
+//	        	init((IProject) newInput);
+//	        }
+		}
+
+		@Override
+		protected Object[] initializeRoots() {
+			if (fTaintSourcesMap.isEmpty())
+				return NO_CHILDREN;
+			List<Object> roots = new ArrayList<Object>();
+			for (Entry<String, Set<CallLocationModel>> entry : fTaintSourcesMap.entrySet()) {
+				String taintKind = entry.getKey();
+				TreeElement<String, CallLocationModel> root =
+						new TreeElement<String, CallLocationModel>(taintKind, taintKind, CallLocationModel.class);
+				fTreeElementMap.put(taintKind, root);
+				for (CallLocationModel taintSource : entry.getValue()) {
+					TreeElement<CallLocationModel, Object> taintSourceElement =
+							new TreeElement<CallLocationModel, Object>(taintSource.toString(), taintSource, Object.class);
+					fTreeElementMap.put(taintSource, taintSourceElement);
+					root.addChild(taintSourceElement);
+				}
+				roots.add(root);
+			}
+			
+			return roots.toArray();
+		}
+
+		@Override
+		protected void reset() {
+		}
+
+		void init(IProject project) {
+            fProject = project;
+			ProjectMarkerProcessor markerProcessor = ProjectMarkerProcessor.get(fProject);
+			fTaintSourcesMap = markerProcessor.getTaintKinds();
+			fFilteredTaintSourcesMap = markerProcessor.getFilteredTaintSourcesMap();
+			Object[] roots = initializeRoots();
+			inputToRoots.put(fProject, roots);
+		}
+		
+		
+		Object[] getExpandedElements() {
+			List<Object> toExpand = new ArrayList<Object>();
+			for (Entry<String, Set<CallLocationModel>> entry: fFilteredTaintSourcesMap.entrySet()) {
+				String taintKind = entry.getKey();
+				Set<CallLocationModel> filteredTaintSources = entry.getValue();
+				Set<CallLocationModel> taintSources = fTaintSourcesMap.get(taintKind);
+				if (filteredTaintSources.size() != taintSources.size()) {
+					toExpand.add(fTreeElementMap.get(taintKind));
+				}
+			}
+			return toExpand.toArray(new Object[0]);
+		}
+
+		List getInitialSelection() {
+			List<Object> initialSelection = new ArrayList<Object>();
+			for (Entry<String, Set<CallLocationModel>> entry: fFilteredTaintSourcesMap.entrySet()) {
+				String taintKind = entry.getKey();
+				initialSelection.add(fTreeElementMap.get(taintKind));
+				for (CallLocationModel taintSource : entry.getValue()) {
+					initialSelection.add(fTreeElementMap.get(taintSource));
+				}
+			}
+			return initialSelection;
+		}
+
     }
 }

@@ -25,6 +25,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeMap;
@@ -163,7 +164,7 @@ PropertyChangeListener {
     Map<String, Map<String, Set<MethodModel>>> infoFlowSummaryMap = new TreeMap<String, Map<String, Set<MethodModel>>>();
 
     private Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> taintedDataMap;
-    private List<String> taintKinds;
+    private Map<String, Set<CallLocationModel>> taintSourcesMap;
     
     private Map<String, Map<String, Set<IntRange>>> unreachableSourceMethodMap;
 
@@ -178,23 +179,23 @@ PropertyChangeListener {
         translateModel(originalSpec);
         computeTaintInfo();
         computeUneachableSourceMethods();
-        if (Config.v().debug) {
+//        if (Config.v().debug) {
             printTaintInfo();
             printUnreachableSourceMethods();
-        }
+//        }
     }
 
 	public Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> getTaintedDataMap() {
         return taintedDataMap;
     }
 
-    public List<String> getTaintKinds() {
-        return taintKinds;
+    public Map<String, Set<CallLocationModel>> getTaintSourcesMap() {
+        return taintSourcesMap;
     }
 
     private void computeTaintInfo() {
         taintedDataMap = new TreeMap<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>>();
-        Set<String> allTaintKinds = new TreeSet<String>();
+        taintSourcesMap = new TreeMap<String, Set<CallLocationModel>>();
         Set<MethodOrMethodContext> methodContexts = PTABridge.v().getReachableMethodContexts();
         for (MethodOrMethodContext methodContext : methodContexts) {
             SootMethod method = methodContext.method();
@@ -221,8 +222,8 @@ PropertyChangeListener {
                                 dataMap = new HashMap<String, Set<CallLocationModel>>();
                                 rangeMap.put(range, dataMap);
                             }
-                            computeTaintInfoForMethodLocals(methodContext, allTaintKinds, dataMap);
-                            computeTaintInfoForMethodFieldRefs(methodContext, allTaintKinds, dataMap);
+                            computeTaintInfoForMethodLocals(methodContext, dataMap);
+                            computeTaintInfoForMethodFieldRefs(methodContext, dataMap);
                             if (dataMap.isEmpty()) {
                                 rangeMap.remove(range);
                                 if (rangeMap.isEmpty()) {
@@ -236,7 +237,6 @@ PropertyChangeListener {
                 }
             }
         }
-        taintKinds = new ArrayList<String>(allTaintKinds);
     }
     
     private String getSourceMethodName(SootMethod method) {
@@ -278,12 +278,12 @@ PropertyChangeListener {
         return buffer.toString();
     }
 
-    private void computeTaintInfoForMethodLocals(MethodOrMethodContext methodContext, Set<String> allTaintKinds, Map<String, Set<CallLocationModel>> methodMap) {
+    private void computeTaintInfoForMethodLocals(MethodOrMethodContext methodContext, Map<String, Set<CallLocationModel>> methodMap) {
         for (Local local: methodContext.method().getActiveBody().getLocals()) {
             String name = local.getName();
             if (!name.equals("this") && !name.startsWith("$") && !name.startsWith("_$") && !name.matches("l\\d+")) {
                 String origName = name.replaceFirst("#\\d+$", "");
-                Set<CallLocationModel> vals = getTaints(methodContext, local, allTaintKinds);
+                Set<CallLocationModel> vals = getTaints(methodContext, local);
                 if (!vals.isEmpty()) {
                     Set<CallLocationModel> infoVals = methodMap.get(origName);
                     if (infoVals == null) {
@@ -296,7 +296,7 @@ PropertyChangeListener {
         }
     }
 
-    private void computeTaintInfoForMethodFieldRefs(MethodOrMethodContext methodContext, Set<String> allTaintKinds, Map<String, Set<CallLocationModel>> methodMap) {
+    private void computeTaintInfoForMethodFieldRefs(MethodOrMethodContext methodContext, Map<String, Set<CallLocationModel>> methodMap) {
         for (Unit unit: methodContext.method().getActiveBody().getUnits()) {
             Stmt stmt = (Stmt) unit;
             if (stmt.containsFieldRef()) {
@@ -306,7 +306,7 @@ PropertyChangeListener {
                     String name = valueToString(fieldRef);
                     if (!name.startsWith("$") && !name.startsWith("_$")) {
                         String origName = name.replaceFirst("#\\d+", "");
-                        Set<CallLocationModel> vals = getTaints(methodContext, fieldRef, allTaintKinds);
+                        Set<CallLocationModel> vals = getTaints(methodContext, fieldRef);
                         if (!vals.isEmpty()) {
                             Set<CallLocationModel> infoVals = methodMap.get(origName);
                             if (infoVals == null) {
@@ -356,7 +356,14 @@ PropertyChangeListener {
                 }
                 fw.write("\n");
             }
-            fw.write("\nTaint kinds: "+taintKinds);
+            fw.write("\nTaint kinds:\n");
+            for (Entry<String, Set<CallLocationModel>> entry: taintSourcesMap.entrySet()) {
+            	String taintKind = entry.getKey();
+            	fw.write("\n  " + taintKind);
+            	for (CallLocationModel call: entry.getValue()) {
+            		fw.write("\n    " + call);
+            	}
+            }
             fw.close();
         } catch (IOException e) {
             logger.error("Error writing tainted data file.");
@@ -364,7 +371,7 @@ PropertyChangeListener {
         }     
     }
 
-    private Set<CallLocationModel> getTaints(MethodOrMethodContext methodContext, Value value, Set<String> allTaintKinds) {
+    private Set<CallLocationModel> getTaints(MethodOrMethodContext methodContext, Value value) {
         Set<InfoValue> infoVals = new HashSet<InfoValue>();
         if (value instanceof Local && value.getType() instanceof PrimType) {
             infoVals.addAll(InformationFlowAnalysis.v().getTaints(methodContext, (Local) value));
@@ -385,10 +392,15 @@ PropertyChangeListener {
                         for (InfoKind infoKind: InfoKind.getSourceInfoKinds(stmt)) {
                             String kind = infoKind.toString();
                             infoKinds.add(kind);
+                            Set<CallLocationModel> taintUnits = taintSourcesMap.get(kind);
+                            if (taintUnits == null) {
+                            	taintUnits = new TreeSet<CallLocationModel>();
+                            	taintSourcesMap.put(kind, taintUnits);
+                            }
+                            taintUnits.add(line);
                         }
                         line.setInfoKinds(infoKinds);
                     }
-                    allTaintKinds.addAll(infoKinds);
                     result.add(line);
                 }
             }
