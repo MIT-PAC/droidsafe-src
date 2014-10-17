@@ -48,7 +48,7 @@ public class TestPTA  {
         // TODO Auto-generated constructor stub
         //testUserMethods();
         findPTSets();
-        callsOnObj();
+        //callsOnObj();
     }
 
 
@@ -110,7 +110,7 @@ public class TestPTA  {
           /*  if (API.v().isSystemMethod(method))
                 continue;*/
             
-            if (!"<android.widget.TextView$ActionPopupWindow: void initContentView()>".equals(method.getSignature()))
+            if (!"<org.nws.aweather.AWeatherService: void handleError(org.nws.aweather.Msg)>".equals(method.getSignature()))
                 continue;
  
             System.out.println(momc);
