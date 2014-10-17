@@ -175,9 +175,9 @@ public class Config {
     /** if true, use types (instead of alloc sites) for object sensitive context elements > 1 */
     public boolean typesForContext = false;
     /** in spark limit heap context for strings if we are object sensitive */
-    public boolean fullContextForStrings = false;
+    public boolean fullContextForStrings = true;
     /** in spark limit heap context for some GUI elements */
-    public boolean fullContextForGUI = false;
+    public boolean fullContextForGUI = true;
     /** name of benchmark we are running */    
     public String appName = "";
     /** some additional information about configuration */
@@ -188,6 +188,9 @@ public class Config {
     public boolean ignoreThrowableFlows = false;
     /** use precise reporting for info flow results of args to sinks */
     public boolean preciseInfoFlow = false;
+    /** When querying the info flow through Method.java, only report flows through args
+     * and receiver */      
+    public boolean reportOnlyArgFlows = false;
     
     public boolean ptaInfoFlowRefinement = false;
     /** should we run multiple passes of fallback modeling create unmodeled objects from API */
@@ -303,14 +306,17 @@ public class Config {
         Option refinement = new Option("refinement", "Experimental refinement of pta and information flow");
         options.addOption(refinement);
 
-        Option fullContextForStrings = new Option("fullcontextforstrings", "Do not limit context depth for Strings in PTA");
-        options.addOption(fullContextForStrings);
+        Option limitContextForStrings = new Option("limitcontextforstrings", "Limit context depth for Strings in PTA");
+        options.addOption(limitContextForStrings);
         
         Option preciseInfoFlow = new Option("preciseinfoflow", "For info flow reporting use memory access analysis for args to sinks.");
         options.addOption(preciseInfoFlow);
         
-        Option fullContextForGUI = new Option("fullcontextforgui", "Do not limit context depth for some GUI objects PTA");
-        options.addOption(fullContextForGUI);
+        Option reportOnlyArgFlows = new Option("reportonlyargsflows", "For infoflow reporting, report only flows through args and receiver of sinks");
+        options.addOption(reportOnlyArgFlows);
+        
+        Option limitContextForGUI = new Option("limitcontextforgui", "Limit context depth for some GUI objects PTA");
+        options.addOption(limitContextForGUI);
         
         Option ignoreExceptionFlows = new Option("ignoreexceptionflows", "Ignore flows through throwable objects and their fields.");
         options.addOption(ignoreExceptionFlows);
@@ -546,20 +552,24 @@ public class Config {
             this.impreciseStrings = true;
         }
         
-        if (cmd.hasOption("fullcontextforstrings")) {
-            this.fullContextForStrings = true;
+        if (cmd.hasOption("limitcontextforstrings")) {
+            this.fullContextForStrings = false;
         }
         
         if (cmd.hasOption("preciseinfoflow")) {
             this.preciseInfoFlow = true;
         }
         
+        if (cmd.hasOption("reportonlyargsflows")) {
+            this.reportOnlyArgFlows = true;
+        }
+        
         if (cmd.hasOption("refinement")) {
             ptaInfoFlowRefinement = true;
         }
         
-        if (cmd.hasOption("fullcontextforgui")) {
-            this.fullContextForGUI = true;
+        if (cmd.hasOption("limitcontextforgui")) {
+            this.fullContextForGUI = false;
         }
                
         if (cmd.hasOption("typesforcontext")) {
@@ -830,8 +840,8 @@ public class Config {
             case 2: //default
                 kobjsens = 3;
                 ignoreNoContextFlows = false;
-                fullContextForGUI = false;
-                fullContextForStrings = false;
+                fullContextForGUI = true;
+                fullContextForStrings = true;
                 runStringAnalysis = true;
                 runValueAnalysis = true;
                 cloneStaticCalls = true;

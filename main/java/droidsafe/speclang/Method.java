@@ -687,7 +687,7 @@ public class Method implements Comparable<Method> {
     public Set<InfoKind> getMethodInfoKinds() {
         methodFlows = new LinkedHashMap<InfoKind, Set<Stmt>>();
         
-        if (InformationFlowAnalysis.v() == null)
+        if (InformationFlowAnalysis.v() == null || Config.v().reportOnlyArgFlows)
             return Collections.<InfoKind>emptySet();
 
         Set<InfoKind> methodKinds = new HashSet<InfoKind>();
