@@ -1,5 +1,6 @@
 package droidsafe.eclipse.plugin.core.view.infoflow;
 
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.filebuffers.FileBuffers;
@@ -37,12 +38,14 @@ import org.eclipse.ui.texteditor.ITextEditor;
 
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.marker.ClassMarkerProcessor;
+import droidsafe.eclipse.plugin.core.marker.TaintMarker;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
+import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.MethodModel;
 
 /**
@@ -84,8 +87,7 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
                 if (resetViewer)
                     resetViewer();
                 showPage(PAGE_VIEWER);
-                Set<String> kinds = ClassMarkerProcessor.getFilteredTaintKinds(fMarker);
-                setContentDescription("Sources for " + fTaint + ": " + kinds);
+                setContentDescription("Sources for " + fTaint);
                 fTreeViewer.setInput(fMarker);
             }
         }        

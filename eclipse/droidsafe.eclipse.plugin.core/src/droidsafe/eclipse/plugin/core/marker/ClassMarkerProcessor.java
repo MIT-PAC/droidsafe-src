@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.eclipse.core.resources.IFile;
@@ -72,7 +73,7 @@ public class ClassMarkerProcessor {
         fUnreachableSourceMethodMap = projectProcessor.getUnreachableSourceMethodMap(className);
     }
     
-    public List<String> getTaintKinds() {
+    public Map<String, Set<CallLocationModel>> getTaintKinds() {
         return fProjectProcessor.getTaintKinds();
     }
     
@@ -119,10 +120,10 @@ public class ClassMarkerProcessor {
         final Map<Annotation, Position> annotationsToAdd = new HashMap<Annotation, Position>();
         for (Position pos: fTaintSourcesMap.keySet()) {
             Set<CallLocationModel> sources = fTaintSourcesMap.get(pos);
-            Set<CallLocationModel> filteredSources = fProjectProcessor.computeFilteredTaintSources(sources);
-            if (!filteredSources.isEmpty()) {
+            Map<String, Set<CallLocationModel>> filteredSourcesMap = fProjectProcessor.computeFilteredTaintSourcesMap(sources);
+            if (!filteredSourcesMap.isEmpty()) {
                 try {
-                    IMarker marker = TaintMarker.createMarker(fFile, pos, sources, filteredSources);
+                    IMarker marker = TaintMarker.createMarker(fFile, pos, sources, filteredSourcesMap);
                     SimpleMarkerAnnotation annotation = new SimpleMarkerAnnotation(TaintMarker.ANNOTATION, marker);
                     annotationsToAdd.put(annotation, pos);
                     fTaintAnnotationMap.put(pos, annotation);
@@ -152,8 +153,8 @@ public class ClassMarkerProcessor {
         return annotationModel;
     }
     
-    public Set<String> getFilteredTaintKinds() {
-        return fProjectProcessor.getFilteredTaintKinds();
+    public Map<String, Set<CallLocationModel>> getFilteredTaintSourcesMap() {
+        return fProjectProcessor.getFilteredTaintSourcesMap();
     }
     
     public IMarker findTaintMarker(int offset, int length) {
@@ -310,27 +311,27 @@ public class ClassMarkerProcessor {
                 for (Position taintPosition: fTaintSourcesMap.keySet()) {
                     SimpleMarkerAnnotation annotation = fTaintAnnotationMap.get(taintPosition);
                     Set<CallLocationModel> sources = fTaintSourcesMap.get(taintPosition);
-                    Set<CallLocationModel> newFilteredSources = fProjectProcessor.computeFilteredTaintSources(sources);
+                    Map<String, Set<CallLocationModel>> newFilteredSourcesMap = fProjectProcessor.computeFilteredTaintSourcesMap(sources);
                     try {
                         if (annotation == null) {
-                            if (!newFilteredSources.isEmpty()) {
-                                IMarker marker = TaintMarker.createMarker(fFile, taintPosition, sources, newFilteredSources);
+                            if (!newFilteredSourcesMap.isEmpty()) {
+                                IMarker marker = TaintMarker.createMarker(fFile, taintPosition, sources, newFilteredSourcesMap);
                                 annotation = new SimpleMarkerAnnotation(TaintMarker.ANNOTATION, marker);
                                 fTaintAnnotationMap.put(taintPosition, annotation);
                                 annotationsToAdd.put(annotation, taintPosition);
                             }
                         } else {
                             IMarker marker = annotation.getMarker();
-                            Set<CallLocationModel> oldFilteredSources = TaintMarker.getFilteredSources(marker);
-                            if (!newFilteredSources.equals(oldFilteredSources)) {
-                                if (newFilteredSources.isEmpty()) {
+                            Map<String, Set<CallLocationModel>> oldFilteredSources = TaintMarker.getFilteredTaintSourcesMap(marker);
+                            if (!newFilteredSourcesMap.equals(oldFilteredSources)) {
+                                if (newFilteredSourcesMap.isEmpty()) {
                                     if (marker == sourceViewMarker)
                                         sourceViewMarkerRemoved = true;
                                     fTaintAnnotationMap.remove(taintPosition);
                                     annotationsToRemove.add(annotation);
                                     marker.delete();
                                 } else {
-                                    marker.setAttribute(TaintMarker.FILTERED_SOURCES, newFilteredSources);
+                                    marker.setAttribute(TaintMarker.FILTERED_SOURCES, newFilteredSourcesMap);
                                     if (marker == sourceViewMarker)
                                         sourceViewMarkerUpdated = true;
                                 }
@@ -365,16 +366,6 @@ public class ClassMarkerProcessor {
         }
     }
     
-    public static Set<String> getFilteredTaintKinds(IMarker marker) {
-        Set<String> kinds = new TreeSet<String>();
-        for (CallLocationModel source: TaintMarker.getFilteredSources(marker)) {
-            Set<String> sourceKinds = source.getInfoKinds();
-            if (sourceKinds != null)
-                kinds.addAll(sourceKinds);
-        }
-        return kinds;
-    }
-
 	public void removeAllDroidsafeTextMarkers() {
         WorkspaceModifyOperation op = new WorkspaceModifyOperation() {
             @Override

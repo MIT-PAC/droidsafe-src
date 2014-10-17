@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.eclipse.core.resources.IFile;
@@ -31,8 +33,8 @@ public class ProjectMarkerProcessor {
 
     private SecuritySpecModel fSecuritySpec;
     
-    private List<String> fTaintKinds;
-    private Set<String> fFilteredTaintKinds;
+    private Map<String,Set<CallLocationModel>> fTaintSourcesMap;
+    private Map<String,Set<CallLocationModel>> fFilteredTaintSourcesMap;
     private Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> fTaintedDataMap;
     private Map<String, Map<String, Set<IntRange>>> fUnreachableSourceMethodMap;
     
@@ -63,14 +65,7 @@ public class ProjectMarkerProcessor {
     }
 
     public String getClassName(IFile file) {
-        if (file != null && fTaintedDataMap != null) {
-            for (String className: fTaintedDataMap.keySet()) {
-                if (file.equals(DroidsafePluginUtilities.getFile(fProject, className))) {
-                    return className;
-                };
-            }
-        }
-        return null;
+        return DroidsafePluginUtilities.getClassName(fProject, file);
     }
 
     public void init(SecuritySpecModel securitySpec) {
@@ -86,8 +81,8 @@ public class ProjectMarkerProcessor {
         fUnreachableSourceMethodMap = securitySpec.getUnreachableSourceMethodMap();
         if (fTaintedDataMap != null && fUnreachableSourceMethodMap != null) {
         	if (!fTaintedDataMap.isEmpty() || !fUnreachableSourceMethodMap.isEmpty()) {
-        		fTaintKinds = securitySpec.getTaintKinds();
-        		fFilteredTaintKinds = new TreeSet<String>(fTaintKinds);
+        		fTaintSourcesMap = securitySpec.getTaintSourcesMap();
+        		fFilteredTaintSourcesMap = new TreeMap<String,Set<CallLocationModel>>(fTaintSourcesMap);
         		fProcessedClasses = new HashSet<String>();
         		fClassesNeedUpdate = new HashSet<String>();
         		IEditorPart editor = DroidsafePluginUtilities.getActiveEditor();
@@ -131,35 +126,39 @@ public class ProjectMarkerProcessor {
     	}
     }
 
-    public List<String> getTaintKinds() {
-    	return fTaintKinds;
+    public Map<String,Set<CallLocationModel>>  getTaintKinds() {
+    	return fTaintSourcesMap;
     }
 
-    public Set<String> getFilteredTaintKinds() {
-    	return (fFilteredTaintKinds.isEmpty()) ? Collections.EMPTY_SET : fFilteredTaintKinds;
+    public Map<String,Set<CallLocationModel>>  getFilteredTaintSourcesMap() {
+    	return (fFilteredTaintSourcesMap.isEmpty()) ? Collections.EMPTY_MAP : fFilteredTaintSourcesMap;
     }
 
-    private Set<CallLocationModel> computeFilteredTaintSources(IMarker marker) {
+    private Map<String, Set<CallLocationModel>> computeFilteredTaintSourcesMap(IMarker marker) {
     	Set<CallLocationModel> sources = TaintMarker.getSources(marker);
-    	return computeFilteredTaintSources(sources);
+    	return computeFilteredTaintSourcesMap(sources);
     }
 
-    Set<CallLocationModel> computeFilteredTaintSources(Set<CallLocationModel> sources) {
+    Map<String, Set<CallLocationModel>> computeFilteredTaintSourcesMap(Set<CallLocationModel> sources) {
     	if (!sources.isEmpty()) {
-    		if (fFilteredTaintKinds != null && !fFilteredTaintKinds.isEmpty()) {
-    			Set<CallLocationModel> filteredSources = new TreeSet<CallLocationModel>();
-    			for (CallLocationModel source: sources) {
-    				for (String kind: source.getInfoKinds()) {
-    					if (fFilteredTaintKinds.contains(kind)) {
+    		if (fFilteredTaintSourcesMap != null && !fFilteredTaintSourcesMap.isEmpty()) {
+    			Map<String, Set<CallLocationModel>> result = new TreeMap<String, Set<CallLocationModel>>();
+    			for (Entry<String, Set<CallLocationModel>> entry: fFilteredTaintSourcesMap.entrySet()) {
+    				Set<CallLocationModel> filteredSources = new TreeSet<CallLocationModel>();
+    				for (CallLocationModel source: entry.getValue()) {
+    					if (sources.contains(source)) {
     						filteredSources.add(source);
-    						break;
     					}
     				}
+    				if (!filteredSources.isEmpty()) {
+    					String taintKind = entry.getKey();
+    					result.put(taintKind, filteredSources);
+    				}
     			}
-    			return filteredSources;
+        		return result;
     		}
     	}
-    	return Collections.EMPTY_SET;
+    	return Collections.EMPTY_MAP;
     }
 
     public IMarker findTaintMarker(IFile file, int offset, int length) {
@@ -172,8 +171,8 @@ public class ProjectMarkerProcessor {
     	return null;
     }
 
-    public void setFilteredTaintSources(ITextEditor editor, Set<String> newFilteredTaintKinds) {
-    	fFilteredTaintKinds = newFilteredTaintKinds;
+    public void setFilteredTaintSources(ITextEditor editor, Map<String,Set<CallLocationModel>>  newFilteredTaintKinds) {
+    	fFilteredTaintSourcesMap = newFilteredTaintKinds;
     	IFile file = DroidsafePluginUtilities.getEditorInputFile(editor);
     	String activeClassName = null;
     	if (file != null) {

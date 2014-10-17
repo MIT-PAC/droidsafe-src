@@ -1,5 +1,7 @@
 package droidsafe.eclipse.plugin.core.marker;
 
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
@@ -11,6 +13,7 @@ import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.ui.IEditorPart;
 
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
+import droidsafe.speclang.model.CallLocationModel;
 
 public class TaintMarkerTextHover implements IJavaEditorTextHover {
 
@@ -26,8 +29,16 @@ public class TaintMarkerTextHover implements IJavaEditorTextHover {
     				ProjectMarkerProcessor taintMarkerProcessor = ProjectMarkerProcessor.get(project);
     				IMarker marker = taintMarkerProcessor.findTaintMarker(file, hoverRegion.getOffset(), hoverRegion.getLength());
     				if (marker != null) {
-    					Set<String> kinds = TaintMarker.getFilteredTaintKinds(marker);
-    					return "Taint " + kinds.toString();
+    					Map<String, Set<CallLocationModel>> map = TaintMarker.getFilteredTaintSourcesMap(marker);
+    					StringBuffer buf = new StringBuffer("Taint Sources: " + map.keySet() + "\n ");
+    					for (Entry<String, Set<CallLocationModel>> entry: map.entrySet()) {
+    						buf.append("<br><br>" + entry.getKey() + "\n  <ul>\n");
+    						for (CallLocationModel source: entry.getValue()) {
+    							buf.append("    <li>"+ source + "</li>\n");
+    						}
+    						buf.append("  </ul>\n");
+    					}
+    					return buf.toString();
     				}
     			}
     		}

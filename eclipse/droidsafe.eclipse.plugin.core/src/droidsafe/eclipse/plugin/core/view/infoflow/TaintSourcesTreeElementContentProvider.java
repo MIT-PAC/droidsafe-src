@@ -2,6 +2,7 @@ package droidsafe.eclipse.plugin.core.view.infoflow;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.eclipse.core.resources.IMarker;
@@ -49,22 +50,24 @@ public class TaintSourcesTreeElementContentProvider extends DroidsafeInfoTreeEle
      * Populate the tree elements of the info sources outline view. Return the root elements.
      */
     protected Object[] initializeRoots() {
-        IMarker taintMarker = (IMarker) fInput;
-        Object[] roots = NO_CHILDREN;
-        try {
-            Set<CallLocationModel> filteredSources = (Set<CallLocationModel>) taintMarker.getAttribute(TaintMarker.FILTERED_SOURCES);
-            roots = new Object[filteredSources.size()];
-            int i = 0;
-            for (CallLocationModel source: filteredSources) {
-                TreeElement<CallLocationModel, Object> root =
-                        new TreeElement<CallLocationModel, Object>(source.toString(), source, Object.class);
-                roots[i] = root;
-                i++;
-            }
-        } catch (CoreException e) {
-            e.printStackTrace();
-        }
-        return roots;
+    	IMarker taintMarker = (IMarker) fInput;
+    	Object[] roots = NO_CHILDREN;
+    	Map<String, Set<CallLocationModel>> filteredSourcesMap = TaintMarker.getFilteredTaintSourcesMap(taintMarker);
+    	roots = new Object[filteredSourcesMap.size()];
+    	int i = 0;
+    	for (Entry<String, Set<CallLocationModel>> entry: filteredSourcesMap.entrySet()) {
+    		String taintKinds = entry.getKey();
+    		TreeElement<String, CallLocationModel> root =
+    				new TreeElement<String, CallLocationModel>(taintKinds, taintKinds, CallLocationModel.class);
+    		for (CallLocationModel source: entry.getValue()) {
+    			TreeElement<CallLocationModel, Object> child =
+    					new TreeElement<CallLocationModel, Object>(source.toString(), source, Object.class);
+    			root.addChild(child);
+    		}
+    		roots[i] = root;
+    		i++;
+    	}
+    	return roots;
     }
 
 }
