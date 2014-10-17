@@ -117,24 +117,15 @@ public class FilterTaintSources extends AbstractHandler {
 
 	class TaintSoucesContentProvider extends DroidsafeInfoTreeElementContentProvider {
 
-        protected Map<Object, Object[]> inputToRoots = new HashMap<Object, Object[]>();
-
         private IProject fProject;
+        private Object[] fRoots;
         private Map<String, Set<CallLocationModel>> fTaintSourcesMap;
         private Map<String, Set<CallLocationModel>> fFilteredTaintSourcesMap;
         
-        /**
-         * Auxiliary map from domain model objects to tree element objects. We use this map to keep track
-         * of the tree node elements associated with each domain object (methods, and code location).
-         */
-        private Map<Object, TreeElement<?, ?>> fTreeElementMap =
-            new HashMap<Object, TreeElement<?, ?>>();
-
         @Override
 		public Object[] getElements(Object inputElement) {
 			if (inputElement instanceof IProject) {
-				Object[] roots = inputToRoots.get(fProject);
-				return roots;
+				return fRoots;
 			}
 			return NO_CHILDREN;
 		}
@@ -142,9 +133,6 @@ public class FilterTaintSources extends AbstractHandler {
 		@Override
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 	        fViewer = (TreeViewer) viewer;
-//	        if (newInput instanceof IProject) {
-//	        	init((IProject) newInput);
-//	        }
 		}
 
 		@Override
@@ -156,11 +144,9 @@ public class FilterTaintSources extends AbstractHandler {
 				String taintKind = entry.getKey();
 				TreeElement<String, CallLocationModel> root =
 						new TreeElement<String, CallLocationModel>(taintKind, taintKind, CallLocationModel.class);
-				fTreeElementMap.put(taintKind, root);
 				for (CallLocationModel taintSource : entry.getValue()) {
 					TreeElement<CallLocationModel, Object> taintSourceElement =
 							new TreeElement<CallLocationModel, Object>(taintSource.toString(), taintSource, Object.class);
-					fTreeElementMap.put(taintSource, taintSourceElement);
 					root.addChild(taintSourceElement);
 				}
 				roots.add(root);
@@ -178,19 +164,21 @@ public class FilterTaintSources extends AbstractHandler {
 			ProjectMarkerProcessor markerProcessor = ProjectMarkerProcessor.get(fProject);
 			fTaintSourcesMap = markerProcessor.getTaintKinds();
 			fFilteredTaintSourcesMap = markerProcessor.getFilteredTaintSourcesMap();
-			Object[] roots = initializeRoots();
-			inputToRoots.put(fProject, roots);
+			fRoots = initializeRoots();
 		}
 		
 		
 		Object[] getExpandedElements() {
 			List<Object> toExpand = new ArrayList<Object>();
-			for (Entry<String, Set<CallLocationModel>> entry: fFilteredTaintSourcesMap.entrySet()) {
-				String taintKind = entry.getKey();
-				Set<CallLocationModel> filteredTaintSources = entry.getValue();
-				Set<CallLocationModel> taintSources = fTaintSourcesMap.get(taintKind);
-				if (filteredTaintSources.size() != taintSources.size()) {
-					toExpand.add(fTreeElementMap.get(taintKind));
+			for (Object root: getElements(fProject)) {
+				TreeElement<?, ?> rootElement = (TreeElement<?, ?>) root;
+				String taintKind = (String) rootElement.getData();
+				Set<CallLocationModel> filteredTaintSources = fFilteredTaintSourcesMap.get(taintKind);
+				if (filteredTaintSources != null) {
+					Set<CallLocationModel> taintSources = fTaintSourcesMap.get(taintKind);
+					if (filteredTaintSources.size() != taintSources.size()) {
+						toExpand.add(rootElement);
+					}
 				}
 			}
 			return toExpand.toArray(new Object[0]);
@@ -198,11 +186,17 @@ public class FilterTaintSources extends AbstractHandler {
 
 		List getInitialSelection() {
 			List<Object> initialSelection = new ArrayList<Object>();
-			for (Entry<String, Set<CallLocationModel>> entry: fFilteredTaintSourcesMap.entrySet()) {
-				String taintKind = entry.getKey();
-				initialSelection.add(fTreeElementMap.get(taintKind));
-				for (CallLocationModel taintSource : entry.getValue()) {
-					initialSelection.add(fTreeElementMap.get(taintSource));
+			for (Object root: getElements(fProject)) {
+				TreeElement<?, ?> rootElement = (TreeElement<?, ?>) root;
+				String taintKind = (String) rootElement.getData();
+				Set<CallLocationModel> filteredTaintSources = fFilteredTaintSourcesMap.get(taintKind);
+				if (filteredTaintSources != null) {
+					Set<CallLocationModel> taintSources = fTaintSourcesMap.get(taintKind);
+					for (TreeElement<?, ?> child: rootElement.getChildren()) {
+						if (filteredTaintSources.contains(child.getData())) {
+							initialSelection.add(child);
+						}
+					}
 				}
 			}
 			return initialSelection;
