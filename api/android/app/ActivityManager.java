@@ -180,8 +180,8 @@ public static boolean isRunningInTestHarness() {
       ActivityManager(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
-        addTaint(context.getTaint());
-        addTaint(handler.getTaint());
+        //addTaint(context.getTaint());
+        //addTaint(handler.getTaint());
         // ---------- Original Method ----------
         //mContext = context;
         //mHandler = handler;
@@ -192,7 +192,7 @@ public static boolean isRunningInTestHarness() {
     public ActivityManager(Context context) {
         mContext = context;
         mHandler = new Handler();
-        addTaint(context.getTaint());
+        //addTaint(context.getTaint());
         // ---------- Original Method ----------
         //mContext = context;
         //mHandler = handler;

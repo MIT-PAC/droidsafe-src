@@ -204,7 +204,7 @@ public static void clearAllAnimations() {
         protected ArrayList<ValueAnimator> initialValue() {
             ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_248712503 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_248712503 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_248712503.addTaint(getTaint()); 
+            //varB4EAC82CA7396A68D541C85D26508E83_248712503.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_248712503;
             
         }
@@ -219,7 +219,7 @@ public static void clearAllAnimations() {
         protected ArrayList<ValueAnimator> initialValue() {
             ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_1102750751 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1102750751 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_1102750751.addTaint(getTaint()); 
+            //varB4EAC82CA7396A68D541C85D26508E83_1102750751.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1102750751;
             
         }
@@ -234,7 +234,7 @@ public static void clearAllAnimations() {
         protected ArrayList<ValueAnimator> initialValue() {
             ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_750130945 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_750130945 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_750130945.addTaint(getTaint()); 
+            //varB4EAC82CA7396A68D541C85D26508E83_750130945.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_750130945;
             
         }
@@ -249,7 +249,7 @@ public static void clearAllAnimations() {
         protected ArrayList<ValueAnimator> initialValue() {
             ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_1291337822 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1291337822 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_1291337822.addTaint(getTaint()); 
+            //varB4EAC82CA7396A68D541C85D26508E83_1291337822.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1291337822;
             
         }
@@ -264,7 +264,7 @@ public static void clearAllAnimations() {
         protected ArrayList<ValueAnimator> initialValue() {
             ArrayList<ValueAnimator> varB4EAC82CA7396A68D541C85D26508E83_1528695003 = null; 
             varB4EAC82CA7396A68D541C85D26508E83_1528695003 = new ArrayList<ValueAnimator>();
-            varB4EAC82CA7396A68D541C85D26508E83_1528695003.addTaint(getTaint()); 
+            //varB4EAC82CA7396A68D541C85D26508E83_1528695003.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1528695003;
             
         }

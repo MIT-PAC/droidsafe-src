@@ -47,9 +47,9 @@ public TreeSet() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.545 -0400", hash_original_method = "98B2B75BFA703DD0E35ED82DE7014603", hash_generated_method = "9295DFAB1B2A4F093CB6CC0F48F4D93E")
     public  TreeSet(Collection<? extends E> collection) {
         this();
-        addTaint(collection.getTaint());
+        //addTaint(collection.getTaint());
         addAll(collection);
-        backingMap.addTaint(collection.getTaint());
+        //backingMap.addTaint(collection.getTaint());
         // ---------- Original Method ----------
         //addAll(collection);
     }
@@ -94,7 +94,7 @@ public TreeSet(SortedSet<E> set) {
     @Override
     
     public boolean add(E object) {
-        backingMap.addTaint(object.getTaint());
+        //backingMap.addTaint(object.getTaint());
         return super.add(object);
     }
     

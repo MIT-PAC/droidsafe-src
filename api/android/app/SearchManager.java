@@ -219,7 +219,7 @@ SearchManager(Context context, Handler handler)  {
     
     public SearchManager(Context context) {
         mContext = context;
-        addTaint(context.getTaint());
+        //addTaint(context.getTaint());
 
     }
 

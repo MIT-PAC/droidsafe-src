@@ -1369,26 +1369,26 @@ public Bundle getBundle(String key) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.589 -0400", hash_original_method = "3B646958426B4FA703D61CD64DB4127C", hash_generated_method = "572C7E2ACF1B7DC166C7E159C488DD53")
     public <T extends Parcelable> T getParcelable(String key) {
-        addTaint(key.getTaint());
+        //addTaint(key.getTaint());
         unparcel();
         Object o = mMap.get(key);
         if(o == null)        
         {
 T var540C13E9E156B687226421B24F2DF178_321169882 =             null;
-            var540C13E9E156B687226421B24F2DF178_321169882.addTaint(getTaint());
+//var540C13E9E156B687226421B24F2DF178_321169882.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_321169882;
         } //End block
         try 
         {
 T varDD72649790B0E769482C6AFD3C9BD666_938487632 =             (T) o;
-            varDD72649790B0E769482C6AFD3C9BD666_938487632.addTaint(getTaint());
+//varDD72649790B0E769482C6AFD3C9BD666_938487632.addTaint(getTaint());
             return varDD72649790B0E769482C6AFD3C9BD666_938487632;
         } //End block
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Parcelable", e);
 T var540C13E9E156B687226421B24F2DF178_1182490752 =             null;
-            var540C13E9E156B687226421B24F2DF178_1182490752.addTaint(getTaint());
+//var540C13E9E156B687226421B24F2DF178_1182490752.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_1182490752;
         } //End block
         // ---------- Original Method ----------
@@ -1443,20 +1443,20 @@ public Parcelable[] getParcelableArray(String key) {
         if(o == null)        
         {
 ArrayList<T> var540C13E9E156B687226421B24F2DF178_806477092 =             null;
-            var540C13E9E156B687226421B24F2DF178_806477092.addTaint(getTaint());
+//var540C13E9E156B687226421B24F2DF178_806477092.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_806477092;
         } //End block
         try 
         {
 ArrayList<T> var8C4736B669D2FF87EF2D545A6CBB1081_558148862 =             (ArrayList<T>) o;
-            var8C4736B669D2FF87EF2D545A6CBB1081_558148862.addTaint(getTaint());
+//var8C4736B669D2FF87EF2D545A6CBB1081_558148862.addTaint(getTaint());
             return var8C4736B669D2FF87EF2D545A6CBB1081_558148862;
         } //End block
         catch (ClassCastException e)
         {
             typeWarning(key, o, "ArrayList", e);
 ArrayList<T> var540C13E9E156B687226421B24F2DF178_763858156 =             null;
-            var540C13E9E156B687226421B24F2DF178_763858156.addTaint(getTaint());
+//var540C13E9E156B687226421B24F2DF178_763858156.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_763858156;
         } //End block
         // ---------- Original Method ----------
@@ -1484,20 +1484,20 @@ ArrayList<T> var540C13E9E156B687226421B24F2DF178_763858156 =             null;
         if(o == null)        
         {
 SparseArray<T> var540C13E9E156B687226421B24F2DF178_438871606 =             null;
-            var540C13E9E156B687226421B24F2DF178_438871606.addTaint(getTaint());
+//var540C13E9E156B687226421B24F2DF178_438871606.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_438871606;
         } //End block
         try 
         {
 SparseArray<T> varDF1763F4CB2B8A56FADAF6645F7D7547_1869242010 =             (SparseArray<T>) o;
-            varDF1763F4CB2B8A56FADAF6645F7D7547_1869242010.addTaint(getTaint());
+//varDF1763F4CB2B8A56FADAF6645F7D7547_1869242010.addTaint(getTaint());
             return varDF1763F4CB2B8A56FADAF6645F7D7547_1869242010;
         } //End block
         catch (ClassCastException e)
         {
             typeWarning(key, o, "SparseArray", e);
 SparseArray<T> var540C13E9E156B687226421B24F2DF178_1931449992 =             null;
-            var540C13E9E156B687226421B24F2DF178_1931449992.addTaint(getTaint());
+//var540C13E9E156B687226421B24F2DF178_1931449992.addTaint(getTaint());
             return var540C13E9E156B687226421B24F2DF178_1931449992;
         } //End block
         // ---------- Original Method ----------

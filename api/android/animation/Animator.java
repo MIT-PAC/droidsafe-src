@@ -158,7 +158,7 @@ public boolean isStarted() {
     @DSVerified("callback modeled")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public void addListener(AnimatorListener listener) {
-        addTaint(listener.getTaint());
+        //addTaint(listener.getTaint());
         if(mListeners == null)        
         {
             mListeners = new ArrayList<AnimatorListener>();

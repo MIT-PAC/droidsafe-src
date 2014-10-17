@@ -33,7 +33,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.728 -0400", hash_original_method = "51A3F20C6E131F4E066F002E9C38CBA5", hash_generated_method = "E801E70E5B9A8065A7FA1C2E98EF899F")
     public  LinkedHashMap(int initialCapacity, float loadFactor) {
         this(initialCapacity);
-        addTaint(loadFactor);
+        //addTaint(loadFactor);
         // ---------- Original Method ----------
     }
         
@@ -43,9 +43,9 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     public  LinkedHashMap(
             int initialCapacity, float loadFactor, boolean accessOrder) {
         super(initialCapacity, loadFactor);
-        addTaint(loadFactor);
-        addTaint(initialCapacity);
-        addTaint(accessOrder);
+        //addTaint(loadFactor);
+        //addTaint(initialCapacity);
+        //addTaint(accessOrder);
         // ---------- Original Method ----------
         //init();
         //this.accessOrder = accessOrder;
@@ -56,7 +56,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.729 -0400", hash_original_method = "D1B0A8129B2843C851AD81FABBEE8B92", hash_generated_method = "F3C1A40CECC0CD85D317FD2AB157DBCF")
     public  LinkedHashMap(Map<? extends K, ? extends V> map) {
         this(map.size());
-        addTaint(map.getTaint());
+        //addTaint(map.getTaint());
         putAll(map);
         // ---------- Original Method ----------
         //constructorPutAll(map);
@@ -66,7 +66,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     public Entry<K, V> eldest() {
         HashSet<Entry<K,V>> set = (HashSet<Entry<K,V>>)super.getEntrySet();
         Entry<K,V> entry = set.getFirstElement();
-        entry.addTaint(getTaint());
+        //entry.addTaint(getTaint());
         return entry;
         // ---------- Original Method ----------
         //LinkedEntry<K, V> eldest = header.nxt;
@@ -75,7 +75,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.737 -0400", hash_original_method = "F4EE8618F7DE6E7966D8D47C993C665B", hash_generated_method = "1EEB337668D8491541D42D67AA524259")
     protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
-        addTaint(eldest.getTaint());
+        //addTaint(eldest.getTaint());
         getEntrySet().remove(eldest);
         return getTaintBoolean();
         // ---------- Original Method ----------

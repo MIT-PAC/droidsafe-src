@@ -111,7 +111,7 @@ static public void noteWakeupAlarm(PendingIntent ps) {
             IBinder b = ServiceManager.getService("activity");
             IActivityManager am = asInterface(b);
             varB4EAC82CA7396A68D541C85D26508E83_1441821956 = am;
-            varB4EAC82CA7396A68D541C85D26508E83_1441821956.addTaint(getTaint()); 
+            //varB4EAC82CA7396A68D541C85D26508E83_1441821956.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1441821956;
             
         }

@@ -49,7 +49,7 @@ NotificationManager(Context context, Handler handler)
     }
     
     public NotificationManager(Context context) {
-        addTaint(context.getTaint());
+        //addTaint(context.getTaint());
         mContext = context;
     }
 

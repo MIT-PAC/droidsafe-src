@@ -96,9 +96,9 @@ public class Resources {
 	@DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static String stringForQuantityCode(int quantityCode){
-    	String str = new String();
-		str.addTaint(quantityCode);
-		return str;
+            String str = new String();
+            str.addTaint(quantityCode);
+            return str;
 
 	}
     
@@ -264,7 +264,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     @DSSafe(DSCat.SAFE_LIST)
     
     public final String getString(int resId) {
-		String str = new String();
+        String str = new String();
         str.addTaint(resId);
         return str;
 	}
@@ -336,11 +336,11 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
     
     public CharSequence getText(int id, CharSequence def){
     	String str = new String();
-		str.addTaint(id);
-		str.addTaint(def.getTaint());
-		str.addTaint(getTaint());
-		return str;
-	}
+        str.addTaint(id);
+        str.addTaint(def.getTaint());
+        str.addTaint(getTaint());
+        return str;
+    }
     
 	@DSComment("Resource is a data structure, getting system resource is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)

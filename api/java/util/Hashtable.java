@@ -56,7 +56,6 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.344 -0400", hash_original_method = "6003D4D798348C1583CB15DE42C187C6", hash_generated_method = "C0EB67B815B968B704ED802BE6142354")
     public  Hashtable(int capacity) {
-        addTaint(capacity);
         backingMap.requestCapacity(capacity);
         
         // ---------- Original Method ----------
@@ -85,12 +84,12 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.346 -0400", hash_original_method = "5B6B569F078844A0FAD42909C56D1E6D", hash_generated_method = "91BC277383C1006AE68C521E66A2CAB0")
     public  Hashtable(int capacity, float loadFactor) {
         this(capacity);
-        addTaint(loadFactor);
-        addTaint(capacity);
+        //addTaint(loadFactor);
+        //addTaint(capacity);
         if (DroidSafeAndroidRuntime.control)
         {
             IllegalArgumentException var5B3332F9036D49CF8BF1BBF51FC6B72E_1155103858 = new IllegalArgumentException("Load factor: " + loadFactor);
-            var5B3332F9036D49CF8BF1BBF51FC6B72E_1155103858.addTaint(getTaint());
+            //var5B3332F9036D49CF8BF1BBF51FC6B72E_1155103858.addTaint(getTaint());
             throw var5B3332F9036D49CF8BF1BBF51FC6B72E_1155103858;
         } //End block
         // ---------- Original Method ----------
@@ -104,7 +103,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.346 -0400", hash_original_method = "6950B91F5E6C68C49CB594AFD1673B84", hash_generated_method = "B59FAFD8CEADB25F80DD1853537DF4FA")
     public  Hashtable(Map<? extends K, ? extends V> map) {
         this(map.size());
-        addTaint(map.getTaint());
+        //addTaint(map.getTaint());
         backingMap.putAll(map);
         // ---------- Original Method ----------
         //constructorPutAll(map);
@@ -123,7 +122,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_358918830 = 
                     new AssertionError(new CloneNotSupportedException());
-            varA5A331D65C8C3F32D42E49D64BCF4109_358918830.addTaint(getTaint());
+            //varA5A331D65C8C3F32D42E49D64BCF4109_358918830.addTaint(getTaint());
             throw varA5A331D65C8C3F32D42E49D64BCF4109_358918830;
         } //End block
         
@@ -168,7 +167,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.352 -0400", hash_original_method = "0D498A226869DEB0F3920DC31F67162F", hash_generated_method = "D037CE715676A07C60713D1D613B4CA4")
     public synchronized V get(Object key) {
         V value = backingMap.get(key);
-        value.addTaint(getTaint());
+        //value.addTaint(getTaint());
         return value;
         // ---------- Original Method ----------
         //int hash = key.hashCode();
@@ -240,12 +239,12 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.356 -0400", hash_original_method = "70A37B9812099DB6AA6597919714B995", hash_generated_method = "758D3CDC605A984AF4341EA96D3A0293")
     
     public synchronized V put(K key, V value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
+            //addTaint(value.getTaint());
+            //addTaint(key.getTaint());
         if (DroidSafeAndroidRuntime.control)
         {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_609880649 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_609880649.addTaint(getTaint());
+            //var7338BC9F48D81FE0BBD6183F4014DCC4_609880649.addTaint(getTaint());
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_609880649;
         } //End block
         return backingMap.put(key,  value);
@@ -280,7 +279,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.358 -0400", hash_original_method = "46C920EF16234ECC2EBDE62DDADD6435", hash_generated_method = "54874BF81DEC6C650960B5D6E3D4D392")
     public synchronized void putAll(Map<? extends K, ? extends V> map) {
-        addTaint(map.getTaint());
+            //addTaint(map.getTaint());
         backingMap.putAll(map);
         // ---------- Original Method ----------
         //ensureCapacity(map.size());
@@ -308,9 +307,9 @@ protected void rehash() {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.366 -0400", hash_original_method = "B19FA41811C96CC39A17F943778772D8", hash_generated_method = "80B04D515B1317EE61E1AAF9F5382248")
     public synchronized V remove(Object key) {
-        addTaint(key.getTaint());
+        //addTaint(key.getTaint());
         V value = backingMap.remove(key);
-        value.addTaint(getTaint());
+        //value.addTaint(getTaint());
         return value;
         
         // ---------- Original Method ----------
@@ -351,7 +350,7 @@ protected void rehash() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.367 -0400", hash_original_method = "476F610DDCFF0EB4D26DB47138B4B0A3", hash_generated_method = "0BF30D06B517FD8D8DA79FFC3A6A2F5C")
     public synchronized Set<K> keySet() {
         Set<K> ks = backingMap.keySet();
-        ks.addTaint(getTaint());
+        //ks.addTaint(getTaint());
         return ks;
         // ---------- Original Method ----------
         //Set<K> ks = keySet;
@@ -363,7 +362,7 @@ protected void rehash() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.367 -0400", hash_original_method = "04B12ED0E2A0A54B9C93D860501FCFFB", hash_generated_method = "E59F3976A2B93651AD7EFEBF2CC2964C")
     public synchronized Collection<V> values() {
         Collection<V> values = backingMap.values();
-        values.addTaint(getTaint());
+        //values.addTaint(getTaint());
         return values;
         // ---------- Original Method ----------
         //Collection<V> vs = values;
@@ -375,7 +374,7 @@ protected void rehash() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.368 -0400", hash_original_method = "54875E203703AD755476CBDF0B4AFC75", hash_generated_method = "CF6379F765767D007D563C4052D00846")
     public synchronized Set<Entry<K, V>> entrySet() {
         Set<Entry<K, V>> es = backingMap.getEntrySet();
-        es.addTaint(getTaint());
+        //es.addTaint(getTaint());
         return es;
         // ---------- Original Method ----------
         //Set<Entry<K, V>> es = entrySet;
@@ -398,7 +397,7 @@ protected void rehash() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.368 -0400", hash_original_method = "D92B3AB4F78D152BCFDB4F438052384E", hash_generated_method = "3698A0D9DC498C7A503FBCDCEFC73B91")
     public synchronized Enumeration<V> elements() {
 Enumeration<V> var3998A6162E9CBDC16A5D7E7745A926CC_955772035 =         new ValueEnumeration<V>();
-        var3998A6162E9CBDC16A5D7E7745A926CC_955772035.addTaint(getTaint());
+     var3998A6162E9CBDC16A5D7E7745A926CC_955772035.addTaint(getTaint());
         return var3998A6162E9CBDC16A5D7E7745A926CC_955772035;
         // ---------- Original Method ----------
         //return new ValueEnumeration();
@@ -486,8 +485,8 @@ public final V setValue(V value) {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.369 -0400", hash_original_method = "CF57466F07C2DB8AF5EFB522D22E3680", hash_generated_method = "871E41CFD4777EF0B724B8C5351615A3")
     private synchronized boolean containsMapping(Object key, Object value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
+        //addTaint(value.getTaint());
+        //addTaint(key.getTaint());
         
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815748013 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815748013;
@@ -507,8 +506,8 @@ public final V setValue(V value) {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.371 -0400", hash_original_method = "A191738781408606E816E9A37080097D", hash_generated_method = "D8F6E8E7E7FD3058625E314BE1505141")
     private synchronized boolean removeMapping(Object key, Object value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
+        //addTaint(value.getTaint());
+        //addTaint(key.getTaint());
         backingMap.remove(key);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_467110774 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_467110774;
@@ -638,7 +637,7 @@ public final V setValue(V value) {
         if(capacity < 0)        
         {
             InvalidObjectException var4B6A7F779A4667EA55847180B6A27960_1436446989 = new InvalidObjectException("Capacity: " + capacity);
-            var4B6A7F779A4667EA55847180B6A27960_1436446989.addTaint(getTaint());
+            //var4B6A7F779A4667EA55847180B6A27960_1436446989.addTaint(getTaint());
             throw var4B6A7F779A4667EA55847180B6A27960_1436446989;
         } //End block
         
@@ -646,7 +645,7 @@ public final V setValue(V value) {
         if(size < 0)        
         {
             InvalidObjectException varE685AABC7A986A19539C13F2F8920021_1526559440 = new InvalidObjectException("Size: " + size);
-            varE685AABC7A986A19539C13F2F8920021_1526559440.addTaint(getTaint());
+            //varE685AABC7A986A19539C13F2F8920021_1526559440.addTaint(getTaint());
             throw varE685AABC7A986A19539C13F2F8920021_1526559440;
         } //End block
 for(int i = 0;i < size;i++)
@@ -680,7 +679,7 @@ for(int i = 0;i < size;i++)
         public K nextElement() {
             // TODO Auto-generated method stub
             K item = iter.next();
-            item.addTaint(Hashtable.this.getTaint());
+            //item.addTaint(Hashtable.this.getTaint());
             return item;
         }
     }
@@ -707,7 +706,7 @@ for(int i = 0;i < size;i++)
         public V nextElement() {
             // TODO Auto-generated method stub
             V item = iter.next();
-            item.addTaint(Hashtable.this.getTaint());
+            //item.addTaint(Hashtable.this.getTaint());
             return item;
         }
     }
