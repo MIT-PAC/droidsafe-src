@@ -55,9 +55,13 @@ public class CallLocationModel extends CodeLocationModel {
         super(clz, line);
         if (stmt.containsInvokeExpr()) {
             SootMethod targetMethod = stmt.getInvokeExpr().getMethod();
+            /*
             String subSig = targetMethod.getSubSignature();
             int namePos = subSig.indexOf(targetMethod.getName());
             targetMethodSig = targetMethod.getDeclaringClass().getName() + "." + subSig.substring(namePos) + ": " + targetMethod.getReturnType();
+            */
+            String sig = targetMethod.getSignature();
+            targetMethodSig = sig.substring(1, sig.length() - 1);
         }
     }
 

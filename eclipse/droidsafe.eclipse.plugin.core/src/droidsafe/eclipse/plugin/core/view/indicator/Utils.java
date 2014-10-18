@@ -326,7 +326,8 @@ public class Utils {
                     }
                 } else if (link.equals("as_call")) {
                     for (MethodModel call: spec.getOutputEventBlocks().keySet()) {
-                        if (sig.equals(call.getSignature())) {
+                    	String callSig = call.getSignature();
+                        if (sig.equals(callSig)) {
                             SourceLocationTag line = DroidsafePluginUtilities.getLine(call);
                             if (line != null && line.getClz().equals(srcClass) && line.getLine() == srcLine) {
                                 result.add(call);
