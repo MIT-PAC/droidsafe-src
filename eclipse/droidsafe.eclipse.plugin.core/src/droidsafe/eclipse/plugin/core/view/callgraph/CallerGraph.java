@@ -72,7 +72,7 @@ public class CallerGraph implements ICallGraph {
     	return false;
     }
     
-    static Map<String, Map<String, Set<JsonElement>>> getCallerMap() {
+    public static Map<String, Map<String, Set<JsonElement>>> getCallerMap() {
     	if (callerMap == null) {
     		JsonElement callGraph = CallGraph.getProjectCallGraph();
     		if (callGraph != null) {
@@ -92,6 +92,8 @@ public class CallerGraph implements ICallGraph {
     			if (child.isJsonObject() && !Utils.isEmptyJsonObject(child)) {
     				JsonObject childObj = child.getAsJsonObject();
     				String childSig = Utils.getFieldValueAsString(childObj, "signature");
+    				if (sig != null && sig.contains("onDone") && childSig != null && childSig.contains("onDone"))
+    					System.out.print("");
     				if (!topLevel) {
     					Map<String, Set<JsonElement>> callers = callerMap.get(childSig);
     					if (callers == null) {

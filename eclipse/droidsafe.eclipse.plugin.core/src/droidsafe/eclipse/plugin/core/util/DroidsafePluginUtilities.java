@@ -65,6 +65,7 @@ import com.google.gson.JsonParser;
 import droidsafe.android.app.Project;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
+import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 import droidsafe.eclipse.plugin.core.view.spec.TreeElementLabelProvider;
 import droidsafe.main.Config;
 import droidsafe.speclang.model.CodeLocationModel;
@@ -261,6 +262,13 @@ public class DroidsafePluginUtilities {
         revealInEditor(project, className, lineNumber, activate);
     }
 
+	public static void revealInEditor(IProject project, JsonElement jsonElement,
+			boolean activate) {
+        String className = Utils.getSourceClass(jsonElement);
+        int lineNumber = Utils.getSourceLine(jsonElement);
+        if (className != null && lineNumber >= 0)
+            DroidsafePluginUtilities.revealInEditor(project, className, lineNumber, activate); 
+	}
     /**
      * Reveals and highlights the given source line for the given project in an editor. Activates  
      * the editor if the parameter 'activate' is true.
@@ -876,5 +884,6 @@ public class DroidsafePluginUtilities {
             strings[i] = values[i].toString();
         return strings;
     }
+
 }
 

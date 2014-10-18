@@ -15,6 +15,10 @@ public class SourceMethodNode {
 		this.signature = signature;
 	}
 	
+	public String getSignature() {
+		return signature;
+	}
+	
 	public String getSourceClass() {
 		return sourceClass;
 	}

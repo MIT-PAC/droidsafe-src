@@ -1,6 +1,7 @@
 package droidsafe.eclipse.plugin.core.view;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.jface.action.MenuManager;
@@ -31,6 +32,7 @@ import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart;
+import droidsafe.eclipse.plugin.core.view.callgraph.CallerGraph;
 import droidsafe.eclipse.plugin.core.view.callgraph.SourceMethodNode;
 import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
@@ -151,19 +153,24 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
                     DroidsafePluginUtilities.revealInEditor(getProject(), (MethodArgumentModel) data, activate);
                 } else if (data instanceof MethodModel) {
                     DroidsafePluginUtilities.revealInEditor(getProject(), (MethodModel) data, activate);
-                } else if (data instanceof JsonObject) {
-                    JsonObject jsonObject = (JsonObject) data;
-                    String className = Utils.getSourceClass(jsonObject);
-                    int lineNumber = Utils.getSourceLine(jsonObject);
-                    if (className != null && lineNumber >= 0)
-                        DroidsafePluginUtilities.revealInEditor(getProject(), className, lineNumber, activate); 
+                } else if (data instanceof JsonElement) {
+                	DroidsafePluginUtilities.revealInEditor(getProject(), (JsonElement) data, activate);
                 } else if (data instanceof SourceMethodNode) {
                 	Set<MethodModel> methods = CallGraphViewPart.getMethodModels(treeElement);
                 	if (methods == null || methods.isEmpty()) {
-                		SourceMethodNode methodNode = (SourceMethodNode) data;
-                        String className = methodNode.getSourceClass();
-                        int lineNumber = methodNode.getLine();
-                		DroidsafePluginUtilities.revealInEditor(getProject(), className, lineNumber, activate); 
+                		Set<JsonElement> calls = CallGraphViewPart.getCalls(treeElement);
+                		if (!calls.isEmpty())
+                			DroidsafePluginUtilities.revealInEditor(getProject(), calls.iterator().next(), activate);
+                		else {
+                			SourceMethodNode methodNode = (SourceMethodNode) data;
+                			String className = methodNode.getSourceClass();
+                			int lineNumber = methodNode.getLine();
+                			if (className != null || lineNumber > 0) {
+                				DroidsafePluginUtilities.revealInEditor(getProject(), className, lineNumber, activate);
+                			} else {
+                				DroidsafePluginUtilities.error("No source location info for method " + methodNode);
+                			}
+                		}
                 	} else {
                         DroidsafePluginUtilities.revealInEditor(getProject(), methods.iterator().next(), activate);
                 	}

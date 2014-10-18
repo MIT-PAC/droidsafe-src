@@ -134,6 +134,23 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     		return Utils.getMethodModels((JsonElement) data);
 
     	} else if (data instanceof SourceMethodNode) {
+    		Set<JsonElement> calls = getCalls(treeElement);
+    		if (!calls.isEmpty()) {
+    			Set<MethodModel> result = new TreeSet<MethodModel>();
+    			for (JsonElement call: calls) {
+    				Set<MethodModel> methods = Utils.getMethodModels(call);
+    				if (methods != null)
+    					result.addAll(methods);
+    			}
+    			return result;
+    		}
+    	}
+    	return Collections.EMPTY_SET;
+    }
+
+    public static Set<JsonElement> getCalls(TreeElement<?, ?> treeElement) {
+    	Object data = treeElement.getData();
+    	if (data instanceof SourceMethodNode) {
     		Map<String, Map<String, Set<JsonElement>>> callerMap = CallerGraph.getCallerMap();
     		TreeElement<?, ?> parent = treeElement.getParent();
     		if (parent != null) {
@@ -144,20 +161,13 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     				Map<String, Set<JsonElement>> callers = callerMap.get(parentSig);
     				Set<JsonElement> calls = callers.get(sig);
     				if (calls != null) {
-        				Set<MethodModel> result = new TreeSet<MethodModel>();
-        				for (JsonElement call: calls) {
-        					Set<MethodModel> methods = Utils.getMethodModels(call);
-        					if (methods != null)
-        						result.addAll(methods);
-        				}
-    					return result;
+    					return calls;
     				}
     			}
     		}
     	}
     	return Collections.EMPTY_SET;
     }
-
 	/**
      * Open the outline view for the given input element.
      * @param line 
