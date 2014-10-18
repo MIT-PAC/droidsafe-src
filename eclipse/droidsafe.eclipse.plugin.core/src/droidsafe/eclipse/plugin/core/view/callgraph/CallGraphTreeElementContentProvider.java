@@ -1,6 +1,7 @@
 package droidsafe.eclipse.plugin.core.view.callgraph;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,7 +62,7 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     private Object[] initializeCallGraphRoots() {
     	List<TreeElement<JsonElement, JsonElement>> roots = new ArrayList<TreeElement<JsonElement, JsonElement>>();
     	CallGraph callGraph = (CallGraph) fInput;
-    	Set<JsonElement> rootNodes = callGraph.getRoots();
+    	Collection<JsonElement> rootNodes = callGraph.getRoots();
     	for (JsonElement rootElement: rootNodes) {
     		if (!Utils.isEmptyJsonObject(rootElement)) {
     			TreeElement<JsonElement, JsonElement> root = initializeCalleeTree(rootElement);

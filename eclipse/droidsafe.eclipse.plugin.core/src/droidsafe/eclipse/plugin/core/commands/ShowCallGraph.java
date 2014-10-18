@@ -1,5 +1,6 @@
 package droidsafe.eclipse.plugin.core.commands;
 
+import java.util.Collection;
 import java.util.Set;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -50,7 +51,7 @@ public class ShowCallGraph extends AbstractHandler {
 		            String srcClassName = pkgName + "." + typeRoot.getElementName().replace(".java", "");
 		            boolean showCallees = method.isResolved();
 		            if (showCallees) {
-		            	Set<JsonElement> targets = CallGraph.findCallTargets(method, className, srcClassName, line);
+		            	Collection<JsonElement> targets = CallGraph.findCallTargets(method, className, srcClassName, line);
 		            	if (targets.isEmpty())
 		            		CallGraphViewPart.openView(null);
 		            	else {

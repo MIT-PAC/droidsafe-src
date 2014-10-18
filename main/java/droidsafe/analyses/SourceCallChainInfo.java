@@ -34,12 +34,12 @@ public class SourceCallChainInfo implements Comparable<SourceCallChainInfo> {
            
     public String type;
     public String link;
-    SootMethod method;
+    public SootMethod method;
     Stmt stmt;
     int syscalls;
     int calls;
     int score;
-    SourceCallChainInfo[] contents = new SourceCallChainInfo[0];
+    public SourceCallChainInfo[] contents = new SourceCallChainInfo[0];
         
     /** Creates a call from Stmt s to SootMethod m **/
     public SourceCallChainInfo (SootMethod m, Stmt s, String type) {

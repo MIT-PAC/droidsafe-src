@@ -1,6 +1,7 @@
 package droidsafe.eclipse.plugin.core.view.callgraph;
 
 import java.io.File;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -24,12 +25,12 @@ public class CallGraph implements ICallGraph {
 
 	static Map<String, Map<String, Set<JsonElement>>> callerMap = new HashMap<String, Map<String, Set<JsonElement>>>();
     
-    private Set<JsonElement> fRoots;
+    private Collection<JsonElement> fRoots;
 
 	private String fDesription;
 
-    public CallGraph(Set<JsonElement> roots, IMethod method) {
-    	fRoots = roots;
+    public CallGraph(Collection<JsonElement> targets, IMethod method) {
+    	fRoots = targets;
     	fDesription = computeDescription(method);
     }
 
@@ -50,7 +51,7 @@ public class CallGraph implements ICallGraph {
 		return buf.toString();
 	}
 
-	public Set<JsonElement> getRoots() {
+	public Collection<JsonElement> getRoots() {
     	return fRoots;
     }
     
@@ -63,7 +64,7 @@ public class CallGraph implements ICallGraph {
 			return true;
 		if (obj != null && obj instanceof CallGraph) {
 			CallGraph other = (CallGraph) obj;
-			Set<JsonElement> otherRoots = other.getRoots();
+			Collection<JsonElement> otherRoots = other.getRoots();
 			if (fRoots == null)
 				return otherRoots == null;
 			if (fRoots.equals(otherRoots))
@@ -89,20 +90,20 @@ public class CallGraph implements ICallGraph {
     	return null;
     }
 
-	public static Set<JsonElement> findCallTargets(IMethod method, String className, String srcClassName,
+	public static Collection<JsonElement> findCallTargets(IMethod method, String className, String srcClassName,
     		int srcLine) {
     	String methodName = method.getElementName();
     	String[] paramTypes = method.getParameterTypes();
     	JsonElement callGraph = getProjectCallGraph();
     	if (callGraph == null)
     		return null;
-    	Set<JsonElement> result = new HashSet<JsonElement>();
-    	findCallTargets(callGraph, methodName, paramTypes, className, srcClassName, srcLine, result);
-    	return result;
+    	Map<String, JsonElement> targetMap = new HashMap<String, JsonElement>();
+    	findCallTargets(callGraph, methodName, paramTypes, className, srcClassName, srcLine, targetMap);
+    	return targetMap.values();
     }
 
-    public static void findCallTargets(JsonElement jsonElement, String methodName, String[] paramTypes, String className,
-    		String srcClassName, int srcLine, Set<JsonElement> result) {
+	public static void findCallTargets(JsonElement jsonElement, String methodName, String[] paramTypes, String className,
+    		String srcClassName, int srcLine, Map<String, JsonElement> targetMap) {
     	JsonArray childrenArray = Utils.getChildrenArray(jsonElement);
     	if (childrenArray != null) {
     		for (int i = 0; i < childrenArray.size(); i++) {
@@ -121,13 +122,18 @@ public class CallGraph implements ICallGraph {
         						String className0 = Utils.signatureClass(sig);
         						if (className0.equals(className)) {
         							String[] paramTypes0 = Utils.signatureParameterTypes(sig);
-        							if (typesMatch(paramTypes0, paramTypes))
-        								result.add(childElement);
+        							if (typesMatch(paramTypes0, paramTypes)) {
+        								String key = sig + " " + className + " " + srcLine;
+        								JsonElement target = targetMap.get(key);
+        								if (target == null) {
+        									targetMap.put(key, childElement);
+        								}
+        							}
         						}
         					}
         				}
     				}
-    				findCallTargets(childElement, methodName, paramTypes, className, srcClassName, srcLine, result);
+    				findCallTargets(childElement, methodName, paramTypes, className, srcClassName, srcLine, targetMap);
     			}
     		}
     	}

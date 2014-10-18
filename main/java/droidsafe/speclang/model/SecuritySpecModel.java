@@ -62,6 +62,7 @@ import droidsafe.analyses.strings.JSAStrings.Hotspot;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
+import droidsafe.reports.SourceCallTree;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.transforms.UnmodeledGeneratedClasses;
@@ -167,6 +168,8 @@ PropertyChangeListener {
     private Map<String, Set<CallLocationModel>> taintSourcesMap;
     
     private Map<String, Map<String, Set<IntRange>>> unreachableSourceMethodMap;
+    
+    private Map<String, SourceLocationTag> sourceMethodLocationMap;
 
     /**
      * Main constructor for the spec model. Translate the original droidsafe spec into a simpler
@@ -179,9 +182,11 @@ PropertyChangeListener {
         translateModel(originalSpec);
         computeTaintInfo();
         computeUneachableSourceMethods();
+        computeSourceMethodLocationMap();
 //        if (Config.v().debug) {
             printTaintInfo();
             printUnreachableSourceMethods();
+            printSourceMethodLocationMap();
 //        }
     }
 
@@ -191,6 +196,10 @@ PropertyChangeListener {
 
     public Map<String, Set<CallLocationModel>> getTaintSourcesMap() {
         return taintSourcesMap;
+    }
+
+    public Map<String, SourceLocationTag> getSourceMethodLocationMap() {
+        return sourceMethodLocationMap;
     }
 
     private void computeTaintInfo() {
@@ -472,7 +481,30 @@ PropertyChangeListener {
         }     
 	}
 
-    public Set<MethodModel> getWhitelist() {
+	private void computeSourceMethodLocationMap() {
+		sourceMethodLocationMap = new HashMap<String, SourceLocationTag>();
+		for (SootMethod method: SourceCallTree.v().collectSourceMethods()) {
+			SourceLocationTag loc = SootUtils.getMethodLocation(method);
+			if (loc != null) {
+				sourceMethodLocationMap.put(method.getSignature(), loc);
+			}
+		}
+	}
+
+    private void printSourceMethodLocationMap() {
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "source-method-locations.txt");
+            for (Entry<String, SourceLocationTag> entry:  sourceMethodLocationMap.entrySet()) {
+                fw.write(entry.getKey() + " : "+ entry.getValue() + "\n");
+            }
+            fw.close();
+        } catch (IOException e) {
+            logger.error("Error writing source method locations file.");
+            droidsafe.main.Main.exit(1);
+        }     
+	}
+
+   public Set<MethodModel> getWhitelist() {
         return this.whitelist;
     }
 

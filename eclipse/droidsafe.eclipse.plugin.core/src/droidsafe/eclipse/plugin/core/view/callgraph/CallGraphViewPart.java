@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -15,6 +16,7 @@ import com.google.gson.JsonElement;
 
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
@@ -23,6 +25,8 @@ import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
+import droidsafe.utils.SourceLocationTag;
 
 /**
  * View for displaying the info flow on the receiver/arguments of a given method. 
@@ -95,11 +99,24 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     public void selectionChanged(SelectionChangedEvent e) {
         if (e.getSelectionProvider() == fTreeViewer) {
             ISelection selection = e.getSelection();
-            revealSelectionInEditor(selection, false);
             if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
                 Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
                 if (selectedNode instanceof TreeElement<?, ?>) {
                     TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
+                    if (fCallGraph instanceof CallGraph && treeElement.getParent() == null) {
+                    	JsonElement root = (JsonElement) treeElement.getData();
+                    	String sig = Utils.getSignature(root);
+                    	SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec();
+                    	Map<String, SourceLocationTag> methodLocMap = spec.getSourceMethodLocationMap();
+                    	SourceLocationTag methodLoc = methodLocMap.get("<"+sig+">");
+                    	if (methodLoc != null) {
+                    		DroidsafePluginUtilities.revealInEditor(getProject(), methodLoc, false);
+                    	} else {
+                    		revealSelectionInEditor(selection, false);
+                    	}
+                    } else {
+                    	revealSelectionInEditor(selection, false);
+                    }
                     Set<MethodModel> methods = getMethodModels(treeElement);
                     MethodModel method = (methods.isEmpty()) ? null : methods.iterator().next();
                     InfoFlowDetailsViewPart.openView(method);
