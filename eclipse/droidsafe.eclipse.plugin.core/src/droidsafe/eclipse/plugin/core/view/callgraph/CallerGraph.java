@@ -92,8 +92,6 @@ public class CallerGraph implements ICallGraph {
     			if (child.isJsonObject() && !Utils.isEmptyJsonObject(child)) {
     				JsonObject childObj = child.getAsJsonObject();
     				String childSig = Utils.getFieldValueAsString(childObj, "signature");
-    				if (sig != null && sig.contains("onDone") && childSig != null && childSig.contains("onDone"))
-    					System.out.print("");
     				if (!topLevel) {
     					Map<String, Set<JsonElement>> callers = callerMap.get(childSig);
     					if (callers == null) {

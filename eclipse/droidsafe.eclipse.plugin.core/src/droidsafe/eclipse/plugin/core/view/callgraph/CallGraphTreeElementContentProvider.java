@@ -3,6 +3,7 @@ package droidsafe.eclipse.plugin.core.view.callgraph;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -92,19 +93,23 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     	List<TreeElement<SourceMethodNode, SourceMethodNode>> roots = new ArrayList<TreeElement<SourceMethodNode, SourceMethodNode>>();
     	CallerGraph callerGraph = (CallerGraph) fInput;
     	SourceMethodNode rootNode = callerGraph.getRoot();
-    	TreeElement<SourceMethodNode, SourceMethodNode> root = initializeCallerTree(rootNode);
+    	Set<SourceMethodNode> processedNodes = new HashSet<SourceMethodNode>();
+    	TreeElement<SourceMethodNode, SourceMethodNode> root = initializeCallerTree(rootNode, processedNodes);
     	return new Object[]{root};
     }
 
-    private TreeElement<SourceMethodNode, SourceMethodNode> initializeCallerTree(SourceMethodNode methodNode) {
+    private TreeElement<SourceMethodNode, SourceMethodNode> initializeCallerTree(SourceMethodNode methodNode, Set<SourceMethodNode> processedNodes) {
     	TreeElement<SourceMethodNode, SourceMethodNode> element = new TreeElement<SourceMethodNode, SourceMethodNode>(methodNode.toString(), methodNode, SourceMethodNode.class);
     	getTreeElementMap().put(methodNode, element);
-    	Map<String, Set<JsonElement>> callers = CallerGraph.callerMap.get(methodNode.signature);
-    	if (callers != null) {
-    		for (String callerSig: callers.keySet()) {
-    			SourceMethodNode callerNode = SourceMethodNode.get(callerSig);
-    			TreeElement<SourceMethodNode, SourceMethodNode> caller = initializeCallerTree(callerNode);
-    			element.addChild(caller);
+    	if (!processedNodes.contains(methodNode)) {
+    		processedNodes.add(methodNode);
+    		Map<String, Set<JsonElement>> callers = CallerGraph.callerMap.get(methodNode.signature);
+    		if (callers != null) {
+    			for (String callerSig: callers.keySet()) {
+    				SourceMethodNode callerNode = SourceMethodNode.get(callerSig);
+    				TreeElement<SourceMethodNode, SourceMethodNode> caller = initializeCallerTree(callerNode, processedNodes);
+    				element.addChild(caller);
+    			}
     		}
     	}
     	return element;
