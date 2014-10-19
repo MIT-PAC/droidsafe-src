@@ -286,6 +286,15 @@ public abstract class PTABridge {
         
     }
     
+    public Edge findEdge(MethodOrMethodContext caller, Stmt stmt, MethodOrMethodContext callee) {
+        List<Edge> outgoing = outgoingEdges(caller, stmt);        
+        for (Edge edge : outgoing) {
+            if (callee.equals(edge.getTgt()))
+                return edge;
+        }
+        return null;
+    }
+    
     /** return edges into a method/method+context */
     public List<Edge> incomingEdges(MethodOrMethodContext momc) {
         List<Edge> edges = new LinkedList<Edge>();

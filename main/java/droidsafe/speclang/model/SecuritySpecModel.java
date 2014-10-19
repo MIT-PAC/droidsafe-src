@@ -49,8 +49,10 @@ import soot.Value;
 import soot.ValueBox;
 import soot.jimple.FieldRef;
 import soot.jimple.InstanceFieldRef;
+import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.scalar.Pair;
 import droidsafe.analyses.infoflow.InfoUnit;
@@ -166,9 +168,9 @@ PropertyChangeListener {
 
     private Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> taintedDataMap;
     private Map<String, Set<CallLocationModel>> taintSourcesMap;
-    
+
     private Map<String, Map<String, Set<IntRange>>> unreachableSourceMethodMap;
-    
+
     private Map<String, SourceLocationTag> sourceMethodLocationMap;
 
     /**
@@ -183,14 +185,14 @@ PropertyChangeListener {
         computeTaintInfo();
         computeUneachableSourceMethods();
         computeSourceMethodLocationMap();
-//        if (Config.v().debug) {
-            printTaintInfo();
-            printUnreachableSourceMethods();
-            printSourceMethodLocationMap();
-//        }
+        //        if (Config.v().debug) {
+        printTaintInfo();
+        printUnreachableSourceMethods();
+        printSourceMethodLocationMap();
+        //        }
     }
 
-	public Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> getTaintedDataMap() {
+    public Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> getTaintedDataMap() {
         return taintedDataMap;
     }
 
@@ -247,7 +249,7 @@ PropertyChangeListener {
             }
         }
     }
-    
+
     private String getSourceMethodName(SootMethod method) {
         String methodName = method.getName();
         if (methodName.equals("DS__FAKE__CALLBACKS__") || 
@@ -269,7 +271,7 @@ PropertyChangeListener {
         }
         return methodName;
     }
-    
+
     private String getParamsSig(SootMethod method) {
         StringBuffer buffer = new StringBuffer();
         buffer.append("(");
@@ -329,7 +331,7 @@ PropertyChangeListener {
             }
         }
     }
-    
+
     private String valueToString(Value value) {
         if (value instanceof InstanceFieldRef) {
             InstanceFieldRef instanceFieldRef = (InstanceFieldRef) value;
@@ -367,11 +369,11 @@ PropertyChangeListener {
             }
             fw.write("\nTaint kinds:\n");
             for (Entry<String, Set<CallLocationModel>> entry: taintSourcesMap.entrySet()) {
-            	String taintKind = entry.getKey();
-            	fw.write("\n  " + taintKind);
-            	for (CallLocationModel call: entry.getValue()) {
-            		fw.write("\n    " + call);
-            	}
+                String taintKind = entry.getKey();
+                fw.write("\n  " + taintKind);
+                for (CallLocationModel call: entry.getValue()) {
+                    fw.write("\n    " + call);
+                }
             }
             fw.close();
         } catch (IOException e) {
@@ -393,71 +395,86 @@ PropertyChangeListener {
         for (InfoValue infoVal: infoVals) {
             if (infoVal instanceof InfoUnit && ((InfoUnit)infoVal).getUnit() instanceof Stmt) {
                 Stmt stmt = (Stmt) ((InfoUnit)infoVal).getUnit();
-                CallLocationModel line = CallLocationModel.get(stmt);
-                if (line != null) {
-                    Set<String> infoKinds = line.getInfoKinds();
-                    if (line.getInfoKinds().isEmpty()) {
-                        infoKinds = new HashSet<String>();
-                        for (InfoKind infoKind: InfoKind.getSourceInfoKinds(stmt)) {
-                            String kind = infoKind.toString();
-                            infoKinds.add(kind);
-                            Set<CallLocationModel> taintUnits = taintSourcesMap.get(kind);
-                            if (taintUnits == null) {
-                            	taintUnits = new TreeSet<CallLocationModel>();
-                            	taintSourcesMap.put(kind, taintUnits);
-                            }
-                            taintUnits.add(line);
-                        }
-                        line.setInfoKinds(infoKinds);
+
+                Set<Edge> edges = new LinkedHashSet<Edge>(); 
+                if (stmt.containsInvokeExpr()) {
+                    if (stmt.getInvokeExpr() instanceof InstanceInvokeExpr) {
+                        for (MethodOrMethodContext target : PTABridge.v().getTargets(methodContext, stmt)) {
+                            edges.add(PTABridge.v().findEdge(methodContext, stmt, target));
+                        }                        
+                    } else {
+                        //static invoke
+                        edges.add(Scene.v().getCallGraph().findEdge(stmt, stmt.getInvokeExpr().getMethod()));
                     }
-                    result.add(line);
+                }
+
+                for (Edge edge : edges) {
+                    CallLocationModel line = CallLocationModel.get(edge);
+                    if (line != null) {
+                        Set<String> infoKinds = line.getInfoKinds();
+                        if (line.getInfoKinds().isEmpty()) {
+                            infoKinds = new HashSet<String>();
+                            for (InfoKind infoKind: InfoKind.getSourceInfoKinds(stmt)) {
+                                String kind = infoKind.toString();
+                                infoKinds.add(kind);
+                                Set<CallLocationModel> taintUnits = taintSourcesMap.get(kind);
+                                if (taintUnits == null) {
+                                    taintUnits = new TreeSet<CallLocationModel>();
+                                    taintSourcesMap.put(kind, taintUnits);
+                                }
+                                taintUnits.add(line);
+                            }
+                            line.setInfoKinds(infoKinds);
+                        }
+                        result.add(line);
+                    }
                 }
             }
         }
         return result;
     }
 
-	public Map<String, Map<String, Set<IntRange>>> getUnreachableSourceMethodMap() {
+    public Map<String, Map<String, Set<IntRange>>> getUnreachableSourceMethodMap() {
         return unreachableSourceMethodMap;
     }
 
-	private void computeUneachableSourceMethods() {
-		unreachableSourceMethodMap = new TreeMap<String, Map<String, Set<IntRange>>>();
-		Set<String> srcClassNames = Project.v().getSrcClasses();
-		for (String srcClassName : srcClassNames) {
-			SootClass srcClass = Scene.v().getSootClass(srcClassName);
-			if (!srcClass.isPhantomClass()) {
-				for (SootMethod method: srcClass.getMethods()) {
-					if (!PTABridge.v().isReachableMethod(method)) {
-						String methodName = getSourceMethodName(method);
-						if (methodName != null) {
-							SourceLocationTag loc = SootUtils.getMethodLocation(method);
-							if (loc != null) {
-								String clsName = loc.getClz();
-								if (Project.v().isSrcClass(clsName)) {
-									Map<String, Set<IntRange>> methodMap = unreachableSourceMethodMap.get(clsName);
-									if (methodMap == null) {
-										methodMap = new TreeMap<String, Set<IntRange>>();
-										unreachableSourceMethodMap.put(clsName, methodMap);
-									}
-									IntRange range = SootUtils.getMethodLineRange(method);
-									if (range != null) {
-										Set<IntRange> ranges = methodMap.get(methodName);
-										if (ranges == null) {
-											ranges = new TreeSet<IntRange>();
-											methodMap.put(methodName, ranges);
-										}
-										ranges.add(range);
-									}
-								}
-							}
-						}
+    private void computeUneachableSourceMethods() {
+        unreachableSourceMethodMap = new TreeMap<String, Map<String, Set<IntRange>>>();
+        Set<String> srcClassNames = Project.v().getSrcClasses();
+        for (String srcClassName : srcClassNames) {
+            SootClass srcClass = Scene.v().getSootClass(srcClassName);
+            if (!srcClass.isPhantomClass()) {
+                for (SootMethod method: srcClass.getMethods()) {
+                    if (!PTABridge.v().isReachableMethod(method)) {
+                        String methodName = getSourceMethodName(method);
+                        if (methodName != null) {
+                            SourceLocationTag loc = SootUtils.getMethodLocation(method);
+                            if (loc != null) {
+                                String clsName = loc.getClz();
+                                if (Project.v().isSrcClass(clsName)) {
+                                    Map<String, Set<IntRange>> methodMap = unreachableSourceMethodMap.get(clsName);
+                                    if (methodMap == null) {
+                                        methodMap = new TreeMap<String, Set<IntRange>>();
+                                        unreachableSourceMethodMap.put(clsName, methodMap);
+                                    }
+                                    IntRange range = SootUtils.getMethodLineRange(method);
+                                    if (range != null) {
+                                        Set<IntRange> ranges = methodMap.get(methodName);
+                                        if (ranges == null) {
+                                            ranges = new TreeSet<IntRange>();
+                                            methodMap.put(methodName, ranges);
+                                        }
+                                        ranges.add(range);
+                                    }
+                                }
+                            }
+                        }
 
-					}
-				}
-			}
-		}
-	}
+                    }
+                }
+            }
+        }
+    }
 
     private void printUnreachableSourceMethods() {
         try {
@@ -479,17 +496,17 @@ PropertyChangeListener {
             logger.error("Error writing unreachable source methods file.");
             droidsafe.main.Main.exit(1);
         }     
-	}
+    }
 
-	private void computeSourceMethodLocationMap() {
-		sourceMethodLocationMap = new HashMap<String, SourceLocationTag>();
-		for (SootMethod method: SourceCallTree.v().collectSourceMethods()) {
-			SourceLocationTag loc = SootUtils.getMethodLocation(method);
-			if (loc != null) {
-				sourceMethodLocationMap.put(method.getSignature(), loc);
-			}
-		}
-	}
+    private void computeSourceMethodLocationMap() {
+        sourceMethodLocationMap = new HashMap<String, SourceLocationTag>();
+        for (SootMethod method: SourceCallTree.v().collectSourceMethods()) {
+            SourceLocationTag loc = SootUtils.getMethodLocation(method);
+            if (loc != null) {
+                sourceMethodLocationMap.put(method.getSignature(), loc);
+            }
+        }
+    }
 
     private void printSourceMethodLocationMap() {
         try {
@@ -502,9 +519,9 @@ PropertyChangeListener {
             logger.error("Error writing source method locations file.");
             droidsafe.main.Main.exit(1);
         }     
-	}
+    }
 
-   public Set<MethodModel> getWhitelist() {
+    public Set<MethodModel> getWhitelist() {
         return this.whitelist;
     }
 
@@ -1023,5 +1040,5 @@ PropertyChangeListener {
             }
         }
     }
-    
+
 }

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -12,10 +13,13 @@ import java.util.TreeMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Scene;
 import soot.SootMethod;
 import soot.Type;
 import soot.jimple.Stmt;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.InfoKind;
 import droidsafe.android.system.Permissions;
 import droidsafe.speclang.ArgumentValue;
@@ -229,10 +233,15 @@ public class MethodModel extends ModelChangeSupport
         for (InfoKind infoKind : map.keySet()) {
           List<CallLocationModel> argSourceInfoUnits = new ArrayList<CallLocationModel>();
           for (Stmt stmt : map.get(infoKind)) {
-            CallLocationModel line = CallLocationModel.get(stmt);
-            if (line != null) {
-              argSourceInfoUnits.add(line);
-            }
+            
+            Iterator<Edge> edges = Scene.v().getCallGraph().edgesOutOf(stmt);
+            while (edges.hasNext()) {
+                Edge edge = edges.next();
+                CallLocationModel line = CallLocationModel.get(edge);
+                if (line != null) {
+                    argSourceInfoUnits.add(line);
+                }
+            }      
           }
           Collections.sort(argSourceInfoUnits);
           mapModel.put(infoKind.toString(), argSourceInfoUnits);
@@ -323,14 +332,19 @@ public class MethodModel extends ModelChangeSupport
     Map<InfoKind, Set<Stmt>> map = originalMethod.getReceiverSourceInfoUnits();
     if (!map.isEmpty()) {
       for (InfoKind infoKind : map.keySet()) {
-        List<CallLocationModel> sourceInfoUnits = new ArrayList<CallLocationModel>();
-        for (Stmt stmt : map.get(infoKind)) {
-          CallLocationModel line = CallLocationModel.get(stmt);
-          if (line != null) {
-            sourceInfoUnits.add(line);
-            hasInfo = true;
+          List<CallLocationModel> sourceInfoUnits = new ArrayList<CallLocationModel>();
+          for (Stmt stmt : map.get(infoKind)) {
+              Iterator<Edge> edges = Scene.v().getCallGraph().edgesOutOf(stmt);
+              while (edges.hasNext()) {
+                  Edge edge = edges.next();
+                  CallLocationModel line = CallLocationModel.get(edge);
+                  if (line != null) {
+                      sourceInfoUnits.add(line);
+                      hasInfo = true;
+                  }
+              }
+
           }
-        }
         Collections.sort(sourceInfoUnits);
         receiverSourceInfoUnits.put(infoKind.toString(), sourceInfoUnits);
       }

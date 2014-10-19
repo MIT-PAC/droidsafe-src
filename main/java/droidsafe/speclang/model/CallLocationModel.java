@@ -8,6 +8,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.MethodOrMethodContext;
 import soot.SootMethod;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.Edge;
@@ -40,7 +41,7 @@ public class CallLocationModel extends CodeLocationModel {
     /**
      * A map from call statements to their associated source line models.
      */
-    private static Map<Stmt, CallLocationModel> map = new HashMap<Stmt, CallLocationModel>();
+    private static Map<Edge, CallLocationModel> map = new HashMap<Edge, CallLocationModel>();
     
     private Set<String> infoKinds = null;
     
@@ -51,18 +52,17 @@ public class CallLocationModel extends CodeLocationModel {
      * @param line the line number for the new expression corresponding to the underlying AllocNode
      * @param stmt the underlying call statement
      */
-    public CallLocationModel(String clz, int line, Stmt stmt) {
+    private CallLocationModel(String clz, int line, Edge edge) {
         super(clz, line);
-        if (stmt.containsInvokeExpr()) {
-            SootMethod targetMethod = stmt.getInvokeExpr().getMethod();
+                
+        SootMethod targetMethod = edge.tgt();
             /*
             String subSig = targetMethod.getSubSignature();
             int namePos = subSig.indexOf(targetMethod.getName());
             targetMethodSig = targetMethod.getDeclaringClass().getName() + "." + subSig.substring(namePos) + ": " + targetMethod.getReturnType();
             */
-            String sig = targetMethod.getSignature();
-            targetMethodSig = sig.substring(1, sig.length() - 1);
-        }
+        String sig = targetMethod.getSignature();
+        targetMethodSig = sig.substring(1, sig.length() - 1);        
     }
 
     /**
@@ -71,7 +71,7 @@ public class CallLocationModel extends CodeLocationModel {
      * @param srcLoc the source location tag for the call expression corresponding to the underlying call edge
      * @param callEdge the underlying call edge
      */
-    public CallLocationModel(SourceLocationTag srcLoc, Stmt callEdge) {
+    public CallLocationModel(SourceLocationTag srcLoc, Edge callEdge) {
         this(srcLoc.getClz(), srcLoc.getLine(), callEdge);
     }
 
@@ -108,31 +108,17 @@ public class CallLocationModel extends CodeLocationModel {
     /**
      * Return the source line model for the give call edge. Return empty set of any problems.
      */
-    public static CallLocationModel get(Edge callEdge) {
-        Stmt stmt = callEdge.srcStmt() ;
-
-        if (stmt == null) {
-            logger.debug("Cannot find source statement for call edge: {}", callEdge);
-            return null;
-        }
-
-        return get(stmt);
-    }
-
-    /**
-     * Return the source line model for the give call edge. Return empty set of any problems.
-     */
-    public static CallLocationModel get(Stmt stmt) {
-        CallLocationModel line = map.get(stmt);
+    public static CallLocationModel get(Edge edge) {
+        CallLocationModel line = map.get(edge);
         if (line == null) {
             // LWG
-            SourceLocationTag srcLoc =  SootUtils.getSourceLocation(stmt);
+            SourceLocationTag srcLoc =  SootUtils.getSourceLocation(edge.srcStmt());
             if (srcLoc == null) {
-                logger.debug("Cannot find source location for statement: {}", stmt);
+                logger.debug("Cannot find source location for statement: {}", edge.srcStmt());
                 return null;
             }
-            line = new CallLocationModel(srcLoc, stmt);
-            map.put(stmt, line);
+            line = new CallLocationModel(srcLoc, edge);
+            map.put(edge, line);
         }
         return line;
         
