@@ -633,6 +633,25 @@
                id="droidsafe.eclipse.plugin.core.view.callgraph.ContextMethodMenu">
          </dynamic>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.CallGraphView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">

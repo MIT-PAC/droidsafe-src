@@ -8,6 +8,7 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IPackageFragment;
@@ -25,8 +26,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import com.google.gson.JsonElement;
 
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
-import droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart;
 import droidsafe.eclipse.plugin.core.view.callgraph.CallGraph;
+import droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart;
 import droidsafe.eclipse.plugin.core.view.callgraph.CallerGraph;
 import droidsafe.eclipse.plugin.core.view.callgraph.SourceMethodNode;
 
@@ -55,7 +56,8 @@ public class ShowCallGraph extends AbstractHandler {
         					String className = getEnclosingClassName(method);
         					String pkgName = typeRoot.getParent().getElementName();
         					String srcClassName = pkgName + "." + typeRoot.getElementName().replace(".java", "");
-        					boolean showCallees = method.isResolved();
+        					IJavaElement parent = method.getParent();
+        					boolean showCallees = method.isResolved() && !(parent instanceof IType);
         					if (showCallees) {
         						Collection<JsonElement> targets = CallGraph.findCallTargets(projectCallGraph, method, className, srcClassName, line);
         						if (targets.isEmpty())
@@ -101,7 +103,8 @@ public class ShowCallGraph extends AbstractHandler {
     		return parentName;
     	if (parentName == null)
     		return name;
-    	return parentName + "." + name;
+    	String sep = (parent instanceof ICompilationUnit) ? "." : "$";
+    	return parentName + sep + name;
 	}
 
 }

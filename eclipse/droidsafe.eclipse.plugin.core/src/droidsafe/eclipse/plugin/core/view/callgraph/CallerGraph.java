@@ -1,6 +1,5 @@
 package droidsafe.eclipse.plugin.core.view.callgraph;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -14,9 +13,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
-import droidsafe.reports.SourceCallTree;
 
 public class CallerGraph implements ICallGraph {
 	
@@ -121,7 +118,7 @@ public class CallerGraph implements ICallGraph {
 			String methodName0 = Utils.signatureMethodName(sig);
 			if (methodName0.equals(methodName)) {
 				String className0 = Utils.signatureClass(sig);
-				if (className0.equals(className)) {
+				if (classNamesMatch(className0, className)) {
 					String[] paramTypes0 = Utils.signatureParameterTypes(sig);
 					if (typesMatch(paramTypes0, paramTypes)) {
 						SourceMethodNode methodNode = SourceMethodNode.get(sig);
@@ -135,12 +132,19 @@ public class CallerGraph implements ICallGraph {
     	return null;
     }
 
-	private static boolean typesMatch(String[] sootParamTypes, String[] paramTypes2) {
-		if (sootParamTypes.length != paramTypes2.length) {
+	private static boolean classNamesMatch(String sootClassName, String eclipseClassName) {
+		if (sootClassName.equals(eclipseClassName))
+			return true;
+		String strippedSootClassName = sootClassName.replaceAll("\\$\\d+", "\\$");
+		return strippedSootClassName.equals(eclipseClassName);
+	}
+
+	private static boolean typesMatch(String[] sootParamTypes, String[] eclipseParamTypes) {
+		if (sootParamTypes.length != eclipseParamTypes.length) {
 			return false;
 		}
 		for (int i = 0; i < sootParamTypes.length; i++) {
-			if (!typeMatch(sootParamTypes[i], paramTypes2[i]))
+			if (!typeMatch(sootParamTypes[i], eclipseParamTypes[i]))
 				return false;
 		}
 		return true;
