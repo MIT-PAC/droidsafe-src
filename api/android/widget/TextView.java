@@ -1268,7 +1268,6 @@ public int length() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.563 -0500", hash_original_method = "7ED3A36B3A9686857AF495D746EF7144", hash_generated_method = "EE75B94FCCCA9A8B2BF2609EB9C259A6")
     
 public Editable getEditableText() {
@@ -2724,7 +2723,6 @@ public final ColorStateList getHintTextColors() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.711 -0500", hash_original_method = "1826756F3CA2F0D97D555C81DC90D9D1", hash_generated_method = "38EDD1A900BDA63B4C18954FE58B5474")
     
 public final int getCurrentHintTextColor() {

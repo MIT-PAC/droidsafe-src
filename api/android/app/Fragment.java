@@ -608,7 +608,6 @@ final public int getTargetRequestCode() {
      */
     @DSComment("GUI, Fragment")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.033 -0500", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "325AD2BF1D0A0B24371BA04573D4605C")
     
 final public Activity getActivity() {
@@ -620,7 +619,6 @@ final public Activity getActivity() {
      */
     @DSComment("GUI, Fragment")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.036 -0500", hash_original_method = "A8E18DB36BC334E1CF5901C727187C18", hash_generated_method = "E4C0928E700635ED038F7599AF52D3F4")
     
 final public Resources getResources() {

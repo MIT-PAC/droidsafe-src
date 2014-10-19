@@ -169,11 +169,10 @@ private static InetAddress parseNumericAddressNoThrow(String address) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.235 -0500", hash_original_method = "DD1533442534100575D70C182ADE1C96", hash_generated_method = "042C59E72021E1834F301CC5C89036C8")
     
 public static InetAddress getByName(String host) throws UnknownHostException {
-        return getAllByNameImpl(host)[0];
+        return new InetAddress(0, new byte[1] , host);
     }
 
     /**
@@ -496,7 +495,7 @@ private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
     @DSBan(DSCat.DEFAULT_MODIFIER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.211 -0500", hash_original_method = "D743789B4770A2F65AD981CCEDC5E9F2", hash_generated_method = "D743789B4770A2F65AD981CCEDC5E9F2")
     
-InetAddress(int family, byte[] ipaddress, String hostName) {
+public InetAddress(int family, byte[] ipaddress, String hostName) {
         this.family = family;
         this.ipaddress = ipaddress;
         this.hostName = hostName;

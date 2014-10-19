@@ -318,6 +318,7 @@ public NdefRecord[] newArray(int size) {
      */
     @DSComment("data structure")
     @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink(DSSinkKind.NFC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.189 -0500", hash_original_method = "FB48E937FC56CBD69B2A6F082227DD21", hash_generated_method = "DE7D3367A8D67D13F8EFFB1D24B2E12A")
     
 public NdefRecord(short tnf, byte[] type, byte[] id, byte[] payload) {
@@ -434,8 +435,11 @@ public byte[] getId() {
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.204 -0500", hash_original_method = "1327F8BA6EFB58D178B7F3819A329700", hash_generated_method = "3209572B1428FC77D1ED81F46732F85B")
     
-public byte[] getPayload() {
-        return mPayload.clone();
+public byte[] getPayload() 
+    {
+        byte[] ret = new byte[1];
+        ret[0] = (byte)ret.getTaintInt();
+        return ret;
     }
 
     /**

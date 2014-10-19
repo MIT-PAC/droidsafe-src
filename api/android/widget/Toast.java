@@ -25,8 +25,6 @@ public class Toast {
     @DSSafe(DSCat.SAFE_LIST)
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
-        result.addTaint(text.getTaint());
-        result.addTaint(duration);
         /*  DSModel: Not needed for ds modeling
         LayoutInflater inflate = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -183,8 +181,6 @@ public int getDuration() {
     }
     
     public void setMargin(float horizontalMargin, float verticalMargin) {
-    	addTaint(horizontalMargin);
-    	addTaint(verticalMargin);
     	//DSModel nothing
         //mTN.mHorizontalMargin = horizontalMargin;
         //mTN.mVerticalMargin = verticalMargin;
@@ -204,9 +200,6 @@ public int getDuration() {
     @DSComment("Toast")
     @DSSafe(DSCat.GUI)
     public void setGravity(int gravity, int xOffset, int yOffset) {
-    	addTaint(gravity);
-    	addTaint(xOffset);
-    	addTaint(yOffset);
     }
     
     private static class TN extends ITransientNotification.Stub {
@@ -392,13 +385,11 @@ public void handleHide() {
 
     @DSSafe(DSCat.GUI)
     public void setText(int resId) {
-        addTaint(resId);
     }
     
     @DSComment("Toast")
     @DSSafe(DSCat.GUI)
     public void setText(CharSequence s) {
-    	addTaint(s.toString().getTaint());
     	/*
         if (mNextView == null) {
             throw new RuntimeException("This Toast was not created with Toast.makeText()");

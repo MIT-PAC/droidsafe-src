@@ -383,6 +383,8 @@ public synchronized void receive(DatagramPacket pack) throws IOException {
 
         pack.setLength(pack.getCapacity());
         impl.receive(pack);
+        pack.setAddress(new InetAddress(0, new byte[1], new String()));
+        pack.setData(new byte[1]);
         // pack's length field is now updated by native code call;
         // pack's capacity field is unchanged
     }

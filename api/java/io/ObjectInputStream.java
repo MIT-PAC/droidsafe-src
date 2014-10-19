@@ -19,6 +19,7 @@ import libcore.util.EmptyArray;
 import dalvik.system.VMStack;
 
 public class ObjectInputStream extends InputStream implements ObjectInput, ObjectStreamConstants {
+        public static int CRAP;
 
     /*
      * Format the class signature for ObjectStreamField, for example,
@@ -28,6 +29,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.393 -0500", hash_original_method = "74747FD805E3D37BE3EFCD383C26D2DE", hash_generated_method = "B7968BBB2631E48A86888FD83216759B")
     
+
 private static String formatClassSig(String classSig) {
         int start = 0;
         int end = classSig.length();
@@ -214,6 +216,7 @@ public ObjectInputStream(InputStream input) throws StreamCorruptedException, IOE
         // Has to be done here according to the specification
         readStreamHeader();
         primitiveData = emptyStream;
+        this.addTaint(input.getTaint());
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
@@ -1996,7 +1999,7 @@ public final Object readObject() throws OptionalDataException,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.479 -0500", hash_original_method = "B5062D634E2B9403462F68486501694A", hash_generated_method = "8B3DC90FB0B404E3B29A4C71658BE04A")
     
 public Object readUnshared() throws IOException, ClassNotFoundException {
-        return readObject(true);
+        return null;
     }
 
     @DSSource({DSSourceKind.SERIALIZATION})
@@ -2007,7 +2010,17 @@ public Object readUnshared() throws IOException, ClassNotFoundException {
 private Object readObject(boolean unshared) throws OptionalDataException,
             ClassNotFoundException, IOException {
         //needed for fallback modeling
-        return null;
+
+        Object ret = null;
+
+        switch (CRAP) {
+        case 1: ret = new Integer(1); break;
+        case 2: ret = new byte[1]; ((byte[])ret)[0] = (byte)this.getTaintInt(); break;
+        case 3: ret = new java.net.InetAddress(0, new byte[1], new String()); break;
+        }
+
+        ret.addTaint(this.getTaint());
+        return ret;
         
     /*    boolean restoreInput = (primitiveData == input);
         if (restoreInput) {
