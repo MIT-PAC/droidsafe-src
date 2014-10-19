@@ -25,41 +25,41 @@ import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 public class SourceCallChainBuilder {
-    
+
     /** Logging field */
     private static final Logger logger = LoggerFactory.getLogger(SourceCallChainBuilder.class);
 
     /** timer so we can timeout after a reasonable amount of time **/
     private StopWatch timer = new StopWatch();
-    
+
     /** Timeout (milliseconds).  The output will be incomplete **/
     private int timeout;
-    
+
     /** True if we should look for callbacks through system calls **/
     private boolean process_callbacks;
-    
+
     /** Rather than creating normal output, dump the entire call graph **/
     private  boolean dump_all_calls = false;  
-    
+
     /** just ignore duplicate methods rather than merging call chains **/
     private boolean ignore_dup_methods = false;
-            
+
     /** Call stack to detect recursion **/
     Stack<SootMethod> stack = new Stack<SootMethod>();
- 
+
     /** set of method names known not to have callbacks **/
     private static HashSet<String> no_callback_methods = new HashSet<String>();
-    
+
     static {
         no_callback_methods.add ("valueOf");
         no_callback_methods.add ("toString");
     }
-    
+
     public SourceCallChainBuilder (int timeout, boolean process_callbacks) {
         this.timeout = timeout;
         this.process_callbacks = process_callbacks;
     }
- 
+
     /**
      * Process the call chain and returns a CallChainInfo that 
      * describes this call and any call that it makes.
@@ -71,70 +71,70 @@ public class SourceCallChainBuilder {
      * @param s       - Stmt that called mc
      */
     public  SourceCallChainInfo process_call_chain (Stmt s, SootMethod method) { 
-        
-    	if (is_terminal (method))
-    		return new SourceCallChainInfo (method, s, "syscall");
 
-    	if (isSourceMethod(method)) {
+        if (is_terminal (method))
+            return new SourceCallChainInfo (method, s, "syscall");
 
-    		SourceCallChainInfo cci = new SourceCallChainInfo (method, s, "call-chain");
-    		CallGraph cg = PTABridge.v().getCallGraph();
+        if (isSourceMethod(method)) {
 
-    		Set<SootMethod> processed_methods = new HashSet<SootMethod>();
-    		List<SourceCallChainInfo> calls = new ArrayList<SourceCallChainInfo>();
-    		StmtBody stmtBody = (StmtBody)method.getActiveBody();
-    		Iterator stmtIt = stmtBody.getUnits().snapshotIterator();
-    		while (stmtIt.hasNext()) {
-    			if (timeout())
-    				break;
-    			Stmt stmt = (Stmt)stmtIt.next();
-    			if (stmt.containsInvokeExpr()) {
-    				for (StmtEdge<SootMethod> edge : CollaspedCallGraph.v().getTargetsForStmt(stmt)) {
-     					SootMethod callee = edge.getV2();
-    					if (ignore_dup_methods) {
-    						if (processed_methods.contains(callee)) {
-    							logger.info ("pcc: method {}, duplicate callee {}", method, callee);
-    							continue;
-    						}
-    						processed_methods.add (callee);
-    					}
-    					boolean print_callee = !(is_system(method) && is_system (callee));
-    					if (callee.toString().contains ("<clinit>")) {
-    						continue;
-    					} else if (stack.contains(callee)) {
-    						// ignore recursive  call
-    					} else { // normal call 
-    						stack.push (callee);
-    						SourceCallChainInfo calleeCci = process_call_chain (stmt, callee);
-    						stack.pop();
-    						if (calleeCci != null) {
-    							if (print_callee) {
-    								calls.add (calleeCci);
-    							} else { // skip callee and just add what it calls
-    								if (ignore_dup_methods) {
-    									for (SourceCallChainInfo callee_call : calleeCci.contents) {
-    										if (!processed_methods.contains (callee_call.method)) {
-    											calls.add (callee_call);
-    											processed_methods.add(callee_call.method);
-    										}
-    									}
-    								} else {
-    									calls.addAll (Arrays.asList(calleeCci.contents));
-    								}
-    							}
-    						}
-    					}
-    				}
-    			}
-    		}
-    		cci.contents = calls.toArray(cci.contents);
-    		if (ignore_dup_methods)
-    			Arrays.sort(cci.contents);
-    		else
-    			cci.merge_contents();
-    		return cci;
-    	}
-    	return null;
+            SourceCallChainInfo cci = new SourceCallChainInfo (method, s, "call-chain");
+            CallGraph cg = PTABridge.v().getCallGraph();
+
+            Set<SootMethod> processed_methods = new HashSet<SootMethod>();
+            List<SourceCallChainInfo> calls = new ArrayList<SourceCallChainInfo>();
+            StmtBody stmtBody = (StmtBody)method.getActiveBody();
+            Iterator stmtIt = stmtBody.getUnits().snapshotIterator();
+            while (stmtIt.hasNext()) {
+                if (timeout())
+                    break;
+                Stmt stmt = (Stmt)stmtIt.next();
+                if (stmt.containsInvokeExpr()) {
+                    for (StmtEdge<SootMethod> edge : CollaspedCallGraph.v().getTargetsForStmt(stmt)) {
+                        SootMethod callee = edge.getV2();
+                        if (ignore_dup_methods) {
+                            if (processed_methods.contains(callee)) {
+                                logger.info ("pcc: method {}, duplicate callee {}", method, callee);
+                                continue;
+                            }
+                            processed_methods.add (callee);
+                        }
+                        boolean print_callee = !(is_system(method) && is_system (callee));
+                        if (callee.toString().contains ("<clinit>")) {
+                            continue;
+                        } else if (stack.contains(callee)) {
+                            // ignore recursive  call
+                        } else { // normal call 
+                            stack.push (callee);
+                            SourceCallChainInfo calleeCci = process_call_chain (stmt, callee);
+                            stack.pop();
+                            if (calleeCci != null) {
+                                if (print_callee) {
+                                    calls.add (calleeCci);
+                                } else { // skip callee and just add what it calls
+                                    if (ignore_dup_methods) {
+                                        for (SourceCallChainInfo callee_call : calleeCci.contents) {
+                                            if (!processed_methods.contains (callee_call.method)) {
+                                                calls.add (callee_call);
+                                                processed_methods.add(callee_call.method);
+                                            }
+                                        }
+                                    } else {
+                                        calls.addAll (Arrays.asList(calleeCci.contents));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            cci.contents = calls.toArray(cci.contents);
+            if (ignore_dup_methods)
+                Arrays.sort(cci.contents);
+            else
+                cci.merge_contents();
+            return cci;
+        }
+        return null;
     }
 
     /**
@@ -147,7 +147,7 @@ public class SourceCallChainBuilder {
     public  boolean is_terminal (MethodOrMethodContext mc) {
         Stack<SootMethod> sys_stack = new Stack<SootMethod>();
         boolean result;
-        
+
         if (!is_system(mc.method()))
             result = false;
         else { // calling system method
@@ -164,32 +164,32 @@ public class SourceCallChainBuilder {
                 }
             }
         }
- 
+
         logger.info ("  {} terminal = {}", mc.method(), result);
         return result;
     }
-    
+
     private boolean isSourceMethod(SootMethod method) {
-    	// include synthetic methods e.g. doInBackground(Object[]) which call the real method defined by the user
-    	if (!method.isConcrete() || !method.hasActiveBody()) // SootUtils.isSynthetic(method) || 
-    		return false;
-    	SootClass cls = method.getDeclaringClass();
-    	if (!Project.v().isSrcClass(cls))
-    		return false;
-    	String methodName = method.getName();
-    	if (methodName.equals("DS__FAKE__CALLBACKS__") || 
-    			methodName.startsWith("OBJECTGETCLASS_TO_CLASSCONSTANT_LOCAL") || 
-    			methodName.matches(".*\\$\\d+.*"))
-    		return false;
-    	return true;
+        // include synthetic methods e.g. doInBackground(Object[]) which call the real method defined by the user
+        if (!method.isConcrete() || !method.hasActiveBody()) // SootUtils.isSynthetic(method) || 
+            return false;
+        SootClass cls = method.getDeclaringClass();
+        if (!Project.v().isSrcClass(cls))
+            return false;
+        String methodName = method.getName();
+        if (methodName.equals("DS__FAKE__CALLBACKS__") || 
+                methodName.startsWith("OBJECTGETCLASS_TO_CLASSCONSTANT_LOCAL") /* || 
+    			methodName.matches(".*\\$\\d+.*")*/)
+            return false;
+        return true;
     }
-    
+
     /** Returns true if an app method is called directly or indirectly from mc **/
     private boolean calls_app_method (MethodOrMethodContext mc, Stack<SootMethod> stack) {
         CallGraph cg = PTABridge.v().getCallGraph();
         logger.info("  cam: entering iterator, stack = {}", stack);
-        
-       if (no_callback_methods.contains (mc.method().getName()))
+
+        if (no_callback_methods.contains (mc.method().getName()))
             return false;
         if (system_depth (stack) > 5) {
             no_callback_methods.add (mc.method().getName());
@@ -200,7 +200,7 @@ public class SourceCallChainBuilder {
             Edge e = tit.next();
             SootMethod m = e.getTgt().method();
             logger.info("  cam: considering method {} ({})", m, ii++);
- 
+
             if (no_callback_methods.contains (m.getName()))
                 continue;
             if (m.toString().contains("<clinit>"))
@@ -223,8 +223,8 @@ public class SourceCallChainBuilder {
         no_callback_methods.add (mc.method().getName());
         return false;
     }
-    
- 
+
+
     /** Returns the number of calls back to the last non-system call **/
     private static int system_depth (Stack<SootMethod> stack) {
         for (int ii = stack.size()-1; ii > 0; ii--) {
@@ -234,14 +234,14 @@ public class SourceCallChainBuilder {
         }
         return stack.size();
     }
-    
+
     /** Returns true if the specified method is a system (android or java) class **/
     public static boolean is_system (SootMethod m) {
         Project p = Project.v();
         SootClass c = m.getDeclaringClass();
         return !p.isSrcClass(c) && !p.isLibClass(c);
     }  
-    
+
     /**
      * Returns true if the specified system method can possibly
      * have callbacks (according to our annotations).  In this case
@@ -251,8 +251,8 @@ public class SourceCallChainBuilder {
      */
     public boolean can_have_callbacks (SootMethod m) {
         logger.info ("method {} ipcsink = {}, ipcmethod = {}", m, 
-                API.v().isIPCSink(m), API.v().isIPCMethod(m));
-         return (API.v().isIPCSink(m) || API.v().isIPCMethod(m));
+            API.v().isIPCSink(m), API.v().isIPCMethod(m));
+        return (API.v().isIPCSink(m) || API.v().isIPCMethod(m));
     }
     /** Returns true if we have timed out **/
     public boolean timeout() {

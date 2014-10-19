@@ -355,7 +355,8 @@ public class ObjectSensitivityCloner {
                     //then clone
                     if (!API.v().isSystemMethod(method) ||
                             target.getDeclaringClass().getName().startsWith("java.util") ||
-                            target.getDeclaringClass().getName().startsWith("java.lang")) {
+                            target.getDeclaringClass().getName().startsWith("java.lang") ||
+                            target.getDeclaringClass().getName().startsWith("java.net")) {
                         if (!map.containsKey(target)) {
                             map.put(target, new LinkedList<StaticInvokeExpr>());
                         }  

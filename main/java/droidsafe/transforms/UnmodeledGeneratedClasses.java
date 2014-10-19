@@ -15,6 +15,7 @@ import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.main.Config;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.SootUtils;
 import soot.ArrayType;
@@ -173,6 +174,10 @@ public class UnmodeledGeneratedClasses {
         if (baseValue == null)
             return;
 
+        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.getElementType().toString().replace(".", "_") + "_array", 
+            type, Modifier.PUBLIC | Modifier.STATIC);
+        dummyClass.addField(field);
+        
         //create a local for the field reference
         Local dummyLocal = Jimple.v().newLocal("_$TU" + localID++, baseValue.getType());
         body.getLocals().add(dummyLocal);
@@ -212,6 +217,10 @@ public class UnmodeledGeneratedClasses {
         addStmt(Jimple.v().newAssignStmt(
             Jimple.v().newArrayRef(elementPtr, IntConstant.v(0)), 
             dummyLocal)); 
+        
+        addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), arrayLocal));
+        
+        typeToAddedField.put(type, field);
 
     }
 
@@ -265,7 +274,13 @@ public class UnmodeledGeneratedClasses {
         }
 
         //clone clz
-        ClassCloner cloner = ClassCloner.cloneClass(clz);
+        ClassCloner cloner;
+        if (Config.v().reportUnmodeledFlows && 
+                ("android.content.Intent".equals(clz.getName()) || "android.nfc.NdefRecord".equals(clz.getName())))
+            cloner = ClassCloner.cloneClassAndInheritedMethods(clz, true);
+        else 
+            cloner = ClassCloner.cloneClass(clz);
+        
         SootClass clone = cloner.getClonedClass();
 
         logger.info("Creating cloned class for fallback modeling: {}", clone);
@@ -276,7 +291,7 @@ public class UnmodeledGeneratedClasses {
 
         //make all methods of unmodeled type
         for (SootMethod method : clone.getMethods()) {
-            API.v().addSourceInfoKind(method, "UNMODELED", false);
+            API.v().addSourceInfoKind(method, "UNMODELED", Config.v().reportUnmodeledFlows);
         }
 
         //field and add creation of object
@@ -311,6 +326,9 @@ public class UnmodeledGeneratedClasses {
      */
     private void installNoArgConstructor(SootClass clone) {
         boolean cloned = false;
+        
+        if (clone.declaresMethod("void <init>()"))
+            return;
 
         //first try to clone the superclass's init method
         if (clone.getSuperclass().declaresMethod("void <init>()")) {

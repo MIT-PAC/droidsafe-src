@@ -67,7 +67,7 @@ public class StartServiceTransform implements VATransform {
 
         intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
 
-        for (SootField serviceField : IntentUtils.v().getIntentServiceTargetHarnessFields(stmt, intentNodes)) {
+        for (SootField serviceField : IntentUtils.v().getIntentServiceTargetHarnessFields(stmt, callee, intentNodes)) {
             if (!(serviceField.getType() instanceof RefType))
                 continue;           
 

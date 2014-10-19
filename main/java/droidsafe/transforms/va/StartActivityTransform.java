@@ -92,7 +92,7 @@ class StartActivityTransform implements VATransform {
             return;
 
 
-        for (SootField activityField : IntentUtils.v().getIntentActivityTargetHarnessFields(stmt, intentNodes)) {
+        for (SootField activityField : IntentUtils.v().getIntentActivityTargetHarnessFields(stmt, callee, intentNodes)) {
             if (!(activityField.getType() instanceof RefType) || 
                     !Hierarchy.inheritsFromAndroidActivity(((RefType)activityField.getType()).getSootClass()))
                 continue;

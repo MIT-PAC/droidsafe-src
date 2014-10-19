@@ -52,6 +52,7 @@ public class InsertUnmodeledObjects {
     /** Static singleton */
     private static InsertUnmodeledObjects v;
     private static final int NUM_PASSES = 5;
+    private boolean firstRun = true;
 
     private InsertUnmodeledObjects() {
         // TODO Auto-generated constructor stub
@@ -80,6 +81,7 @@ public class InsertUnmodeledObjects {
                     Main.afterTransformPrecise(monitor, false, 2); 
                     
                     int numChanges = findAPICallsWithNullReturnValues();
+                    firstRun = false;
                     System.out.printf("Ran fallback API object insertion phase %d with %d objects created.\n", 
                         i, numChanges);    
                     
@@ -93,6 +95,7 @@ public class InsertUnmodeledObjects {
                 Main.afterTransformPrecise(monitor, false, 2); 
                 
                 findAPICallsWithNullReturnValues();
+                firstRun = false;
             }
             
             //find fields of components created in harness main that reference other user components
@@ -230,6 +233,7 @@ public class InsertUnmodeledObjects {
                         AssignStmt assign = (AssignStmt) stmt;
                         if (assign.getRightOp() instanceof InvokeExpr) {
                             boolean hasAPITarget = false;
+                            boolean hack = false;
                             InvokeExpr invoke = (InvokeExpr)assign.getRightOp();
 
                             //don't care if the return type is a primitive
@@ -241,11 +245,16 @@ public class InsertUnmodeledObjects {
                             for (SootMethod target : targets) 
                                 if (API.v().isSystemMethod(target)) {
                                     hasAPITarget = true;
-                                    break;
+                                    
+                                    hack = ("<android.app.Activity: android.content.Intent getIntent()>".equals(target.getSignature())) 
+                                            && firstRun && Config.v().reportUnmodeledFlows && "com.pondl.Pondl".equals(method.getDeclaringClass().getName());
+                                      
+                                    //removing for hack
+                                    //break;
                                 }
 
 
-                            if (hasAPITarget) {
+                            if (hasAPITarget || hack) {
                                 //we have a method that could target the api, now see if the return value has 
                                 //anything in its pt set
                                 if (PTABridge.v().getPTSetIns(assign.getLeftOp()).isEmpty()) {

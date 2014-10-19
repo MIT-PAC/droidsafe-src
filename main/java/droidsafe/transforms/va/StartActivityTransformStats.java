@@ -109,7 +109,7 @@ public class StartActivityTransformStats {
                             // column #2 - type
                             rowEntries.add("EXPLICIT");
                             // column #3 - # of possible targets
-                            targetClsStrings = IntentUtils.v().getExplicitIntentTargetClsStrings(null, intentRefVAModel);
+                            targetClsStrings = IntentUtils.v().getExplicitIntentTargetClsStrings(intentAllocNode, null, null, intentRefVAModel);
                             if(targetClsStrings == null) {
                                 rowEntries.add("UNKNOWN");
                                 // the without data column is identical for explicit intents
@@ -132,7 +132,7 @@ public class StartActivityTransformStats {
                     }
                     // column #5 - # of possible targets in-app
                     if(intentType == IntentType.IMPLICIT) {
-                         targetClsStrings = IntentUtils.v().getImplicitIntentInAppTargetClsStrings(null, intentRefVAModel);
+                         targetClsStrings = IntentUtils.v().getImplicitIntentInAppTargetClsStrings(intentAllocNode, null, null, intentRefVAModel);
                     }
                     Set<SootField> targetHarnessFlds = IntentUtils.v().getHarnessFldsForClsStrings(targetClsStrings);
                     if(targetHarnessFlds == null) {

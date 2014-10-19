@@ -191,6 +191,8 @@ public class Config {
     /** When querying the info flow through Method.java, only report flows through args
      * and receiver */      
     public boolean reportOnlyArgFlows = false;
+    /** report on unmodeled taint */
+    public boolean reportUnmodeledFlows = false;
     
     public boolean ptaInfoFlowRefinement = false;
     /** should we run multiple passes of fallback modeling create unmodeled objects from API */
@@ -314,6 +316,9 @@ public class Config {
         
         Option reportOnlyArgFlows = new Option("reportonlyargsflows", "For infoflow reporting, report only flows through args and receiver of sinks");
         options.addOption(reportOnlyArgFlows);
+        
+        Option reportUnmodeledFlows = new Option("reportunmodeledflows", "Report on flows from objects introduced by fallback modeling");
+        options.addOption(reportUnmodeledFlows);
         
         Option limitContextForGUI = new Option("limitcontextforgui", "Limit context depth for some GUI objects PTA");
         options.addOption(limitContextForGUI);
@@ -562,6 +567,10 @@ public class Config {
         
         if (cmd.hasOption("reportonlyargsflows")) {
             this.reportOnlyArgFlows = true;
+        }
+        
+        if (cmd.hasOption("reportunmodeledflows")) {
+            this.reportUnmodeledFlows = true;
         }
         
         if (cmd.hasOption("refinement")) {

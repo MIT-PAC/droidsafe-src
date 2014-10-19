@@ -246,7 +246,7 @@ public class API {
             classificationCat = new HashMap<SootMethod, String>();
 
             SENSITIVE_UNCATEGORIZED = InfoKind.getInfoKind("SENSITIVE_UNCATEGORIZED", false);
-            UNMODELED = InfoKind.getInfoKind("UNMODELED", false);
+            UNMODELED = InfoKind.getInfoKind("UNMODELED", Config.v().reportUnmodeledFlows);
 
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
@@ -586,7 +586,7 @@ public class API {
             }
 
             srcsMapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind, sensitive));
-            logger.info("Adding source infokind category for {} as {}", sootMethod, infoKind);
+            logger.info("Adding source infokind category for {} as {} ({})", sootMethod, infoKind, sensitive);
         }
 
 
@@ -725,7 +725,7 @@ public class API {
      * Should a call to this method be reported in the security specification?
      */
     public boolean reportInSpec(SootMethod method) {
-        return isSensitiveAction(method) || hasSinkInfoKind(method);
+        return isSensitiveAction(method) || hasSinkInfoKind(method) || hasSourceInfoKind(method);
     }
 
     public String api_xref (String method_sig, String txt) {

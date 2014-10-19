@@ -1,0 +1,9 @@
+android.annotation.
+android.support.v
+com.android.future.usb.
+com.google.android.maps.
+com.google.android.media.effects.
+org.apache.http.
+org.bouncycastle2.
+org.slf4j.
+org.xmlpull.

@@ -17,6 +17,7 @@ import soot.ByteType;
 import soot.CharType;
 import soot.Context;
 import soot.IntType;
+import soot.ShortType;
 import soot.Type;
 import soot.Value;
 import soot.jimple.ClassConstant;
@@ -302,7 +303,7 @@ public class RCFGToSSL {
                 listArg.add(BooleanValue.getBooleanValue(intValue));
             } else if (type instanceof CharType) {
                 listArg.add(new CharValue((char)intValue));
-            } else if (type instanceof IntType) {
+            } else if (type instanceof IntType || type instanceof ShortType) {
                 listArg.add(new IntValue(intValue));
             } else if (type instanceof ByteType) {
                 listArg.add(new ByteValue((byte)intValue));

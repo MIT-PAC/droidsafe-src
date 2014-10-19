@@ -67,7 +67,7 @@ public class ServiceBindTransform implements VATransform {
         //for all service destinations from the intent 
         //for the services created in the harness
         Set<? extends IAllocNode> intentNodes = PTABridge.v().getPTSetIns(invoke.getArg(0));
-        for (SootField serviceFld : IntentUtils.v().getIntentServiceTargetHarnessFields(stmt, intentNodes)) {
+        for (SootField serviceFld : IntentUtils.v().getIntentServiceTargetHarnessFields(stmt, callee, intentNodes)) {
             if (!(serviceFld.getType() instanceof RefType))
                 continue;           
             
