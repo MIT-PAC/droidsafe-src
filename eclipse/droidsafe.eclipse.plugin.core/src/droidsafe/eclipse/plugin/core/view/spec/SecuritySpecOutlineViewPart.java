@@ -72,7 +72,8 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
      * @param reInitialize always deserialize the spec from file
      */
     public void refreshSpecAndOutlineView(boolean reInitialize) {
-        fInputElement = DroidsafePluginUtilities.getSecuritySpec(reInitialize);
+    	IProject project = getProject();
+        fInputElement = DroidsafePluginUtilities.getSecuritySpec(project, true, reInitialize);
         if (fInputElement == null) {
             fEmptyPageLabel.setText("Droidsafe spec for selected project has not been computed yet. "
                     + "\nSelect the project on the Project Explorer "
@@ -162,10 +163,11 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
 		public void partVisible(IWorkbenchPartReference partRef) {
 			IWorkbenchPart part = partRef.getPart(false);
 			if (part instanceof IEditorPart) {
-				IProject project = DroidsafePluginUtilities.getSelectedProject();
+				IEditorPart editor = (IEditorPart) part;
+	    		IProject project = DroidsafePluginUtilities.getProcessedDroidsafeProjectForEditor(editor);
 				if (project != null) {
 					ProjectMarkerProcessor projectMarkerProcessor = ProjectMarkerProcessor.get(project);
-					projectMarkerProcessor.showDroidsafeTextMarkers((IEditorPart)part);
+					projectMarkerProcessor.showDroidsafeTextMarkers(editor);
 				}
 			}
 		}

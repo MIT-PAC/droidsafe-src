@@ -146,38 +146,28 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
             Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
             if (selectedNode instanceof TreeElement<?, ?>) {
                 TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
-                Object data = treeElement.getData();
-                if (data instanceof SourceLocationTag) {
-                    DroidsafePluginUtilities.revealInEditor(getProject(), (SourceLocationTag) data, activate);
-                } else if (data instanceof MethodArgumentModel) {
-                    DroidsafePluginUtilities.revealInEditor(getProject(), (MethodArgumentModel) data, activate);
-                } else if (data instanceof MethodModel) {
-                    DroidsafePluginUtilities.revealInEditor(getProject(), (MethodModel) data, activate);
-                } else if (data instanceof JsonElement) {
-                	DroidsafePluginUtilities.revealInEditor(getProject(), (JsonElement) data, activate);
-                } else if (data instanceof SourceMethodNode) {
-                	Set<MethodModel> methods = CallGraphViewPart.getMethodModels(treeElement);
-                	if (methods == null || methods.isEmpty()) {
-                		Set<JsonElement> calls = CallGraphViewPart.getCalls(treeElement);
-                		if (!calls.isEmpty())
-                			DroidsafePluginUtilities.revealInEditor(getProject(), calls.iterator().next(), activate);
-                		else {
-                			SourceMethodNode methodNode = (SourceMethodNode) data;
-                			String className = methodNode.getSourceClass();
-                			int lineNumber = methodNode.getLine();
-                			if (className != null || lineNumber > 0) {
-                				DroidsafePluginUtilities.revealInEditor(getProject(), className, lineNumber, activate);
-                			} else {
-                				DroidsafePluginUtilities.error("No source location info for method " + methodNode);
-                			}
-                		}
-                	} else {
-                        DroidsafePluginUtilities.revealInEditor(getProject(), methods.iterator().next(), activate);
-                	}
-                }
+                revealInEditor(treeElement, activate);
             } 
         }
     }
+    
+    /**
+     * Reveals and highlights the source code for the given tree element in an editor. Activates  
+     * the editor if the parameter 'activate' is true.
+     * 
+     */
+    protected void revealInEditor(TreeElement<?, ?> treeElement, boolean activate) {
+        Object data = treeElement.getData();
+    	if (data instanceof SourceLocationTag) {
+    		DroidsafePluginUtilities.revealInEditor(getProject(), (SourceLocationTag) data, activate);
+    	} else if (data instanceof MethodArgumentModel) {
+    		DroidsafePluginUtilities.revealInEditor(getProject(), (MethodArgumentModel) data, activate);
+    	} else if (data instanceof MethodModel) {
+    		DroidsafePluginUtilities.revealInEditor(getProject(), (MethodModel) data, activate);
+    	} else if (data instanceof JsonElement) {
+    		DroidsafePluginUtilities.revealInEditor(getProject(), (JsonElement) data, activate);
+    	}
+    } 
     
     public DroidsafeInfoTreeElementContentProvider getContentProvider() {
         return fContentProvider;

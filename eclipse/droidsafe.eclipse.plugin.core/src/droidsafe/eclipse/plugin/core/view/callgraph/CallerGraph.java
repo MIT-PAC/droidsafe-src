@@ -20,19 +20,20 @@ import droidsafe.reports.SourceCallTree;
 
 public class CallerGraph implements ICallGraph {
 	
-    public static Map<IProject, JsonObject> callGraphMap = new HashMap<IProject, JsonObject>();
-
-	static Map<String, Map<String, Set<JsonElement>>> callerMap = null;
+	static Map<IProject, Map<String, Map<String, Set<JsonElement>>>> projectCallerMap = new HashMap<IProject, Map<String, Map<String, Set<JsonElement>>>>();
     
     private SourceMethodNode fRoot;
 
 	private String fDesription;
+	
+	private IProject fProject;
 
-    public CallerGraph(SourceMethodNode root, IMethod method) {
+    public CallerGraph(IProject project, SourceMethodNode root, IMethod method) {
+    	fProject = project;
     	fRoot = root;
     	fDesription = computeDescription(method);
     }
-
+    
     private String computeDescription(IMethod method) {
     	StringBuffer buf = new StringBuffer();
     		buf.append("Callers of ");
@@ -72,18 +73,19 @@ public class CallerGraph implements ICallGraph {
     	return false;
     }
     
-    public static Map<String, Map<String, Set<JsonElement>>> getCallerMap() {
+    public static Map<String, Map<String, Set<JsonElement>>> getCallerMap(IProject project) {
+    	Map<String, Map<String, Set<JsonElement>>> callerMap = projectCallerMap.get(project);
     	if (callerMap == null) {
-    		JsonElement callGraph = CallGraph.getProjectCallGraph();
+    		JsonElement callGraph = CallGraph.getProjectCallGraph(project);
     		if (callGraph != null) {
     			callerMap = new HashMap<String, Map<String, Set<JsonElement>>>();
-    			computeCallerMap(callGraph, true);
+    			computeCallerMap(callGraph, true, callerMap);
     		}
     	}
     	return callerMap;
     }
 
-    static void computeCallerMap(JsonElement jsonElt, boolean topLevel) {
+    static void computeCallerMap(JsonElement jsonElt, boolean topLevel, Map<String, Map<String, Set<JsonElement>>> callerMap) {
     	JsonArray childrenArray = Utils.getChildrenArray(jsonElt);
     	String sig = Utils.getFieldValueAsString(jsonElt, "signature");
     	if (childrenArray != null) {
@@ -105,18 +107,16 @@ public class CallerGraph implements ICallGraph {
     					}
     					calls.add(jsonElt);
     				}
-    				computeCallerMap(childObj, false);
+    				computeCallerMap(childObj, false, callerMap);
     			} 
     		}
     	}
     }
 
-	public static SourceMethodNode findSourceMethodNodeWithCallers(IMethod method, String className, String srcClassName,
+	public static SourceMethodNode findSourceMethodNodeWithCallers(Map<String, Map<String, Set<JsonElement>>> callerMap, IMethod method, String className, String srcClassName,
     		int srcLine) {
     	String methodName = method.getElementName();
     	String[] paramTypes = method.getParameterTypes();
-    	if (getCallerMap() == null)
-    		return null;
     	for (String sig: callerMap.keySet()) {
 			String methodName0 = Utils.signatureMethodName(sig);
 			if (methodName0.equals(methodName)) {
@@ -153,6 +153,15 @@ public class CallerGraph implements ICallGraph {
 		if (eclipseType.startsWith("Q") && droidsafe.utils.Utils.extractClassname(sootType).equals(type))
 			return true;
 		return false;
+	}
+
+	@Override
+	public IProject getProject() {
+		return fProject;
+	}
+
+	public Map<String, Map<String, Set<JsonElement>>> getCallerMap() {
+		return getCallerMap(fProject);
 	}
 
 }

@@ -21,15 +21,16 @@ import droidsafe.reports.SourceCallTree;
 
 public class CallGraph implements ICallGraph {
 	
-    public static Map<IProject, JsonObject> callGraphMap = new HashMap<IProject, JsonObject>();
+    public static Map<IProject, JsonObject> projectCallGraphMap = new HashMap<IProject, JsonObject>();
 
-	static Map<String, Map<String, Set<JsonElement>>> callerMap = new HashMap<String, Map<String, Set<JsonElement>>>();
-    
     private Collection<JsonElement> fRoots;
 
 	private String fDesription;
 
-    public CallGraph(Collection<JsonElement> targets, IMethod method) {
+	private IProject fProject;
+
+    public CallGraph(IProject project, Collection<JsonElement> targets, IMethod method) {
+    	fProject = project;
     	fRoots = targets;
     	fDesription = computeDescription(method);
     }
@@ -73,16 +74,15 @@ public class CallGraph implements ICallGraph {
 		return false;
 	}
 
-    public static JsonElement getProjectCallGraph() {
-    	IProject project = DroidsafePluginUtilities.getSelectedProject();
+    public static JsonElement getProjectCallGraph(IProject project) {
     	if (project != null) {
-    		JsonObject callGraph = callGraphMap.get(project);
+    		JsonObject callGraph = projectCallGraphMap.get(project);
     		if (callGraph == null) {
     			String fileName = DroidsafePluginUtilities.droidsafeOutputFile(project, SourceCallTree.FILE_NAME);
     			File file = new File(fileName);
     			if (file.exists()) {
     				callGraph = DroidsafePluginUtilities.parseIndicatorFile(file);
-    				callGraphMap.put(project, callGraph);
+    				projectCallGraphMap.put(project, callGraph);
     			}
     		}
     		return callGraph;
@@ -90,15 +90,14 @@ public class CallGraph implements ICallGraph {
     	return null;
     }
 
-	public static Collection<JsonElement> findCallTargets(IMethod method, String className, String srcClassName,
+	public static Collection<JsonElement> findCallTargets(JsonElement projectCallGraph, IMethod method, String className, String srcClassName,
     		int srcLine) {
+    	if (projectCallGraph == null)
+    		return null;
     	String methodName = method.getElementName();
     	String[] paramTypes = method.getParameterTypes();
-    	JsonElement callGraph = getProjectCallGraph();
-    	if (callGraph == null)
-    		return null;
     	Map<String, JsonElement> targetMap = new HashMap<String, JsonElement>();
-    	findCallTargets(callGraph, methodName, paramTypes, className, srcClassName, srcLine, targetMap);
+    	findCallTargets(projectCallGraph, methodName, paramTypes, className, srcClassName, srcLine, targetMap);
     	return targetMap.values();
     }
 
@@ -157,6 +156,11 @@ public class CallGraph implements ICallGraph {
 		if (eclipseType.startsWith("Q") && droidsafe.utils.Utils.extractClassname(sootType).equals(type))
 			return true;
 		return false;
+	}
+
+	@Override
+	public IProject getProject() {
+		return fProject;
 	}
 
 }

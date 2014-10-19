@@ -56,8 +56,10 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     	getTreeElementMap().clear();
     	if (fInput instanceof CallGraph)
     		return initializeCallGraphRoots();
-    	else
-    		return initializeCallerGraphRoots();
+    	else {
+    		Map<String, Map<String, Set<JsonElement>>> callerMap = ((CallerGraph)fInput).getCallerMap();
+    		return initializeCallerGraphRoots(callerMap);
+    	}
     }
     
     private Object[] initializeCallGraphRoots() {
@@ -89,25 +91,25 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     	return element;
     }
 
-    private Object[] initializeCallerGraphRoots() {
+    private Object[] initializeCallerGraphRoots(Map<String, Map<String, Set<JsonElement>>> callerMap) {
     	List<TreeElement<SourceMethodNode, SourceMethodNode>> roots = new ArrayList<TreeElement<SourceMethodNode, SourceMethodNode>>();
     	CallerGraph callerGraph = (CallerGraph) fInput;
     	SourceMethodNode rootNode = callerGraph.getRoot();
     	Set<SourceMethodNode> processedNodes = new HashSet<SourceMethodNode>();
-    	TreeElement<SourceMethodNode, SourceMethodNode> root = initializeCallerTree(rootNode, processedNodes);
+    	TreeElement<SourceMethodNode, SourceMethodNode> root = initializeCallerTree(rootNode, processedNodes, callerMap);
     	return new Object[]{root};
     }
 
-    private TreeElement<SourceMethodNode, SourceMethodNode> initializeCallerTree(SourceMethodNode methodNode, Set<SourceMethodNode> processedNodes) {
+    private TreeElement<SourceMethodNode, SourceMethodNode> initializeCallerTree(SourceMethodNode methodNode, Set<SourceMethodNode> processedNodes, Map<String, Map<String, Set<JsonElement>>> callerMap) {
     	TreeElement<SourceMethodNode, SourceMethodNode> element = new TreeElement<SourceMethodNode, SourceMethodNode>(methodNode.toString(), methodNode, SourceMethodNode.class);
     	getTreeElementMap().put(methodNode, element);
     	if (!processedNodes.contains(methodNode)) {
     		processedNodes.add(methodNode);
-    		Map<String, Set<JsonElement>> callers = CallerGraph.callerMap.get(methodNode.signature);
+    		Map<String, Set<JsonElement>> callers = callerMap.get(methodNode.signature);
     		if (callers != null) {
     			for (String callerSig: callers.keySet()) {
     				SourceMethodNode callerNode = SourceMethodNode.get(callerSig);
-    				TreeElement<SourceMethodNode, SourceMethodNode> caller = initializeCallerTree(callerNode, processedNodes);
+    				TreeElement<SourceMethodNode, SourceMethodNode> caller = initializeCallerTree(callerNode, processedNodes, callerMap);
     				element.addChild(caller);
     			}
     		}

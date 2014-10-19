@@ -9,10 +9,18 @@ import com.google.gson.JsonObject;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
+import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 import droidsafe.speclang.model.MethodModel;
 
 public class CallGraphTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
+
+	private CallGraphViewPart viewPart;
+    
+    public CallGraphTreeElementLabelProvider(CallGraphViewPart viewPart) {
+        this.viewPart = viewPart;
+    }
+
     /**
      * Returns the label for the tree node to display in the tree outline view.
      * 
@@ -46,7 +54,7 @@ public class CallGraphTreeElementLabelProvider extends DroidsafeInfoTreeElementL
     public String getToolTipText(Object element) {
     	if (element instanceof TreeElement<?, ?>) {
     		TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
-    		Set<MethodModel> methods = CallGraphViewPart.getMethodModels(treeElement);
+    		Set<MethodModel> methods = viewPart.getMethodModels(treeElement);
     		if (methods.size() > 1) {
                 Object data = treeElement.getData();
                 if (data instanceof JsonObject)

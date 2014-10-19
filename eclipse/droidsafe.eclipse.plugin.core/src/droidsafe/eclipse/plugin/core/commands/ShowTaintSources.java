@@ -25,25 +25,27 @@ public class ShowTaintSources extends AbstractHandler {
 
     @Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
-        IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
-        IWorkbenchPage activePage = window.getActivePage();
-        ISelection selection = HandlerUtil.getActiveSite(event).getSelectionProvider().getSelection();
-        IProject project = DroidsafePluginUtilities.getSelectedProject();
-        if (project != null && selection instanceof TextSelection) {
-            TextSelection textSelection = (TextSelection) selection;
-            IEditorPart editor = activePage.getActiveEditor();
-            IEditorInput input = editor.getEditorInput();
-            if (input instanceof FileEditorInput) {
-                IFile file = ((FileEditorInput)input).getFile();
-                int offset = textSelection.getOffset();
-                int length = textSelection.getLength();
-                IMarker taintMarker = ProjectMarkerProcessor.get(project).findTaintMarker(file, offset, length);
-                if (taintMarker != null) {
-                    TaintSourcesViewPart.openView(taintMarker, textSelection.getText());
-                }
-            }
-        }
-        return null;
+    	IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
+    	IWorkbenchPage activePage = window.getActivePage();
+    	ISelection selection = HandlerUtil.getActiveSite(event).getSelectionProvider().getSelection();
+    	if (selection instanceof TextSelection) {
+    		TextSelection textSelection = (TextSelection) selection;
+    		IEditorPart editor = activePage.getActiveEditor();
+    		IProject project = DroidsafePluginUtilities.getProcessedDroidsafeProjectForEditor(editor);
+    		if (project != null) {
+    			IEditorInput input = editor.getEditorInput();
+    			if (input instanceof FileEditorInput) {
+    				IFile file = ((FileEditorInput)input).getFile();
+    				int offset = textSelection.getOffset();
+    				int length = textSelection.getLength();
+    				IMarker taintMarker = ProjectMarkerProcessor.get(project).findTaintMarker(file, offset, length);
+    				if (taintMarker != null) {
+    					TaintSourcesViewPart.openView(taintMarker, textSelection.getText());
+    				}
+    			}
+    		}
+    	}
+    	return null;
     }
 
 }

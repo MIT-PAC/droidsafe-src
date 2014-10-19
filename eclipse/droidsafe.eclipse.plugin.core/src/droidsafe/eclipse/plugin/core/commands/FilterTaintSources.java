@@ -56,45 +56,47 @@ public class FilterTaintSources extends AbstractHandler {
 
 	@Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
-        IProject project = DroidsafePluginUtilities.getSelectedProject();
         IEditorPart editor = DroidsafePluginUtilities.getActiveEditor();
-        if (project != null && editor != null && editor instanceof ITextEditor) {
-            ProjectMarkerProcessor taintMarkerProcessor = ProjectMarkerProcessor.get(project);
-            Map<String,Set<CallLocationModel>> taintKinds = taintMarkerProcessor.getTaintKinds();
-            Map<String,Set<CallLocationModel>> filteredTaintKinds = taintMarkerProcessor.getFilteredTaintSourcesMap();
-            Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-            CheckedTreeSelectionDialog selectionDialog =
-            		new CheckedTreeSelectionDialog(shell, new LabelProvider(), getContentProvider(project));
-            selectionDialog.setTitle("Filter Taint Sources");
-            selectionDialog.setMessage("Select the taint sources to display:");
-            selectionDialog.setContainerMode(true);
-            selectionDialog.setInput(project);
-            selectionDialog.setExpandedElements(getExpandedElements());
-            selectionDialog.setInitialElementSelections(getInitialSelection());
-            
-            selectionDialog.open();
-            Object[] result = selectionDialog.getResult();
-            if (result != null) {
-            	Map<String, Set<CallLocationModel>> newFilteredTaintKinds = new TreeMap<String, Set<CallLocationModel>>();
-                for (Object selected: result) {
-                	TreeElement<?, ?> selectedElement = (TreeElement<?, ?>) selected;
-                	Object data = selectedElement.getData();
-                	if (data instanceof CallLocationModel) {
-                		String taintKind = (String) selectedElement.getParent().getData();
-                		CallLocationModel taintSource = (CallLocationModel) data;
-                        Set<CallLocationModel> taintSources = newFilteredTaintKinds.get(taintKind);
-                        if (taintSources == null) {
-                        	taintSources = new TreeSet<CallLocationModel>();
-                        	newFilteredTaintKinds.put(taintKind, taintSources);
-                        }
-                        taintSources.add(taintSource);
-                	}
-                }
-                if (!newFilteredTaintKinds.equals(filteredTaintKinds)) {
-                    ITextEditor textEditor = (ITextEditor) editor;
-                    taintMarkerProcessor.setFilteredTaintSources(textEditor, newFilteredTaintKinds);
-                }
-            }
+        if (editor != null && editor instanceof ITextEditor) {
+        	IProject project = DroidsafePluginUtilities.getProcessedDroidsafeProjectForEditor(editor);
+        	if (project != null) {
+        		ProjectMarkerProcessor taintMarkerProcessor = ProjectMarkerProcessor.get(project);
+        		Map<String,Set<CallLocationModel>> taintKinds = taintMarkerProcessor.getTaintKinds();
+        		Map<String,Set<CallLocationModel>> filteredTaintKinds = taintMarkerProcessor.getFilteredTaintSourcesMap();
+        		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+        		CheckedTreeSelectionDialog selectionDialog =
+        				new CheckedTreeSelectionDialog(shell, new LabelProvider(), getContentProvider(project));
+        		selectionDialog.setTitle("Filter Taint Sources");
+        		selectionDialog.setMessage("Select the taint sources to display:");
+        		selectionDialog.setContainerMode(true);
+        		selectionDialog.setInput(project);
+        		selectionDialog.setExpandedElements(getExpandedElements());
+        		selectionDialog.setInitialElementSelections(getInitialSelection());
+
+        		selectionDialog.open();
+        		Object[] result = selectionDialog.getResult();
+        		if (result != null) {
+        			Map<String, Set<CallLocationModel>> newFilteredTaintKinds = new TreeMap<String, Set<CallLocationModel>>();
+        			for (Object selected: result) {
+        				TreeElement<?, ?> selectedElement = (TreeElement<?, ?>) selected;
+        				Object data = selectedElement.getData();
+        				if (data instanceof CallLocationModel) {
+        					String taintKind = (String) selectedElement.getParent().getData();
+        					CallLocationModel taintSource = (CallLocationModel) data;
+        					Set<CallLocationModel> taintSources = newFilteredTaintKinds.get(taintKind);
+        					if (taintSources == null) {
+        						taintSources = new TreeSet<CallLocationModel>();
+        						newFilteredTaintKinds.put(taintKind, taintSources);
+        					}
+        					taintSources.add(taintSource);
+        				}
+        			}
+        			if (!newFilteredTaintKinds.equals(filteredTaintKinds)) {
+        				ITextEditor textEditor = (ITextEditor) editor;
+        				taintMarkerProcessor.setFilteredTaintSources(textEditor, newFilteredTaintKinds);
+        			}
+        		}
+        	}
         }
         return null;
     }

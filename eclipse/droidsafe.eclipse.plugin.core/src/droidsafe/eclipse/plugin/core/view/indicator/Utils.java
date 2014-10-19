@@ -340,9 +340,4 @@ public class Utils {
         return result;
     }
 
-	public static Set<MethodModel> getMethodModels(JsonElement data) {
-    	SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec();
-		return getMethodModels(spec, data);
-	}
-
 }

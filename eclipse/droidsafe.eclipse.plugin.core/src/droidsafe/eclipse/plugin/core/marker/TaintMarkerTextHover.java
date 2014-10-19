@@ -22,28 +22,30 @@ public class TaintMarkerTextHover implements IJavaEditorTextHover {
     @Override
     public String getHoverInfo(ITextViewer textViewer, IRegion hoverRegion) {
     	if (fEditor != null) {
-    		IProject project = DroidsafePluginUtilities.getSelectedProject(fEditor);
-    		if (project != null) {
-    			IFile file = DroidsafePluginUtilities.getEditorInputFile(fEditor);
-    			if (file != null) {
-    				ProjectMarkerProcessor taintMarkerProcessor = ProjectMarkerProcessor.get(project);
-    				IMarker marker = taintMarkerProcessor.findTaintMarker(file, hoverRegion.getOffset(), hoverRegion.getLength());
-    				if (marker != null) {
-    					Map<String, Set<CallLocationModel>> map = TaintMarker.getFilteredTaintSourcesMap(marker);
-    					StringBuffer buf = new StringBuffer("Taint Sources: " + map.keySet() + "\n ");
-    					for (Entry<String, Set<CallLocationModel>> entry: map.entrySet()) {
-    						buf.append("<br><br>" + entry.getKey() + "\n  <ul>\n");
-    						for (CallLocationModel source: entry.getValue()) {
-    							buf.append("    <li>"+ source + "</li>\n");
+    		IFile file = DroidsafePluginUtilities.getEditorInputFile(fEditor);
+    		if (file != null) {
+    			IProject project = DroidsafePluginUtilities.getProcessedDroidsafeProjectForEditor(fEditor);
+    			if (project != null) {
+    				if (DroidsafePluginUtilities.getSecuritySpec(project, false, false) != null) {
+    					ProjectMarkerProcessor taintMarkerProcessor = ProjectMarkerProcessor.get(project);
+    					IMarker marker = taintMarkerProcessor.findTaintMarker(file, hoverRegion.getOffset(), hoverRegion.getLength());
+    					if (marker != null) {
+    						Map<String, Set<CallLocationModel>> map = TaintMarker.getFilteredTaintSourcesMap(marker);
+    						StringBuffer buf = new StringBuffer("Taint Sources: " + map.keySet() + "\n ");
+    						for (Entry<String, Set<CallLocationModel>> entry: map.entrySet()) {
+    							buf.append("<br><br>" + entry.getKey() + "\n  <ul>\n");
+    							for (CallLocationModel source: entry.getValue()) {
+    								buf.append("    <li>"+ source + "</li>\n");
+    							}
+    							buf.append("  </ul>\n");
     						}
-    						buf.append("  </ul>\n");
+    						return buf.toString();
     					}
-    					return buf.toString();
     				}
     			}
     		}
     	}
-        return null;
+    	return null;
     }
 
     @Override

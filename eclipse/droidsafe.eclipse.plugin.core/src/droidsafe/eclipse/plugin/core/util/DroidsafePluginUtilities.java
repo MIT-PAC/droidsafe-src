@@ -626,16 +626,11 @@ public class DroidsafePluginUtilities {
         specMap.put(project, securitySpec);
         return securitySpec;
     }
-    
-    public static SecuritySpecModel getSecuritySpec() {
-    	return getSecuritySpec(false);
-    }
 
-    public static SecuritySpecModel getSecuritySpec(boolean reInitialize) {
-    	IProject project = getSelectedProject();
+    public static SecuritySpecModel getSecuritySpec(IProject project, boolean initialize, boolean reInitialize) {
     	if (project != null) {
     		SecuritySpecModel spec = specMap.get(project);
-    		if (reInitialize || spec == null) {
+    		if (reInitialize || (spec == null && initialize)) {
     			spec = initializeSecuritySpec(project);
     		}
 			return spec;
@@ -643,6 +638,17 @@ public class DroidsafePluginUtilities {
     	return null;
     }
 
+    public static IProject getProcessedDroidsafeProjectForEditor(IEditorPart editor) {
+		IFile file = DroidsafePluginUtilities.getEditorInputFile(editor);
+		if (file != null) {
+			IProject project = file.getProject();
+			if (project != null)
+				if (DroidsafePluginUtilities.getSecuritySpec(project, false, false) != null)
+					return project;
+		}
+		return null;		
+    }
+    
     /**
      * Returns an editor on the given Java class for the given project. Activates  
      * the editor if the parameter 'activate' is true.

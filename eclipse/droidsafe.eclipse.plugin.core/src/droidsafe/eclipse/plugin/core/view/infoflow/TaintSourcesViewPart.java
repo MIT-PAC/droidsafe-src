@@ -8,6 +8,7 @@ import org.eclipse.core.filebuffers.IFileBuffer;
 import org.eclipse.core.filebuffers.IFileBufferListener;
 import org.eclipse.core.filebuffers.ITextFileBuffer;
 import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.jface.text.DocumentEvent;
@@ -53,6 +54,7 @@ import droidsafe.eclipse.plugin.core.view.pointsto.PointsToTreeElementLabelProvi
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 import droidsafe.speclang.model.CallLocationModel;
+import droidsafe.speclang.model.MethodArgumentModel;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.utils.SourceLocationTag;
@@ -94,7 +96,8 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
     				Object data = treeElement.getData();
     				if (data instanceof CallLocationModel) {
     					revealSelectionInEditor(selection, false);
-    					SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec(false);
+    		    		IProject project = fMarker.getResource().getProject();
+    					SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec(project, false, false);
     					if (spec != null) {
     						CallLocationModel call = (CallLocationModel) data;
     						String sig = call.getTargetMethodSig();
@@ -113,6 +116,19 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
     	}
     }
 
+    /**
+     * Reveals and highlights the source code for the given tree element in an editor. Activates  
+     * the editor if the parameter 'activate' is true.
+     * 
+     */
+    protected void revealInEditor(TreeElement<?, ?> treeElement, boolean activate) {
+        Object data = treeElement.getData();
+    	if (data instanceof SourceLocationTag) {
+    		IProject project = fMarker.getResource().getProject();
+    		DroidsafePluginUtilities.revealInEditor(project, (SourceLocationTag) data, activate);
+    	}
+    }
+    
     @Override
     protected void updateView() {
         updateView(false);

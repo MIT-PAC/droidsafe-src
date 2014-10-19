@@ -46,7 +46,7 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
 
     @Override
     protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
-        return new CallGraphTreeElementLabelProvider();
+        return new CallGraphTreeElementLabelProvider(this);
     }
 
     @Override
@@ -103,14 +103,15 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
                 Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
                 if (selectedNode instanceof TreeElement<?, ?>) {
                     TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
+                    IProject project = fCallGraph.getProject();
                     if (fCallGraph instanceof CallGraph && treeElement.getParent() == null) {
                     	JsonElement root = (JsonElement) treeElement.getData();
                     	String sig = Utils.getSignature(root);
-                    	SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec();
+                    	SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec(project, false, false);
                     	Map<String, SourceLocationTag> methodLocMap = spec.getSourceMethodLocationMap();
                     	SourceLocationTag methodLoc = methodLocMap.get("<"+sig+">");
                     	if (methodLoc != null) {
-                    		DroidsafePluginUtilities.revealInEditor(getProject(), methodLoc, false);
+                    		DroidsafePluginUtilities.revealInEditor(project, methodLoc, false);
                     	} else {
                     		revealSelectionInEditor(selection, false);
                     	}
@@ -128,17 +129,53 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
         }
     }
 
-    public static Set<MethodModel> getMethodModels(TreeElement<?, ?> treeElement) {
+    /**
+     * Reveals and highlights the source code for the given tree element in an editor. Activates  
+     * the editor if the parameter 'activate' is true.
+     * 
+     */
+    protected void revealInEditor(TreeElement<?, ?> treeElement, boolean activate) {
+        IProject project = fCallGraph.getProject();
+    	Object data = treeElement.getData();
+    	if (data instanceof SourceMethodNode) {
+    		Set<MethodModel> methods = getMethodModels(treeElement);
+    		if (methods == null || methods.isEmpty()) {
+        		CallerGraph callerGraph = (CallerGraph) fCallGraph;
+    			Set<JsonElement> calls = getCalls(callerGraph, treeElement);
+    			if (!calls.isEmpty())
+    				DroidsafePluginUtilities.revealInEditor(project, calls.iterator().next(), activate);
+    			else {
+    				SourceMethodNode methodNode = (SourceMethodNode) data;
+    				String className = methodNode.getSourceClass();
+    				int lineNumber = methodNode.getLine();
+    				if (className != null || lineNumber > 0) {
+    					DroidsafePluginUtilities.revealInEditor(project, className, lineNumber, activate);
+    				} else {
+    					DroidsafePluginUtilities.error("No source location info for method " + methodNode);
+    				}
+    			}
+    		} else {
+    			DroidsafePluginUtilities.revealInEditor(project, methods.iterator().next(), activate);
+    		}
+    	} else if (data instanceof JsonElement) {
+    		DroidsafePluginUtilities.revealInEditor(project, (JsonElement) data, activate);
+    	}
+    } 
+    
+    public Set<MethodModel> getMethodModels(TreeElement<?, ?> treeElement) {
+        IProject project = fCallGraph.getProject();
+        SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec(project, false, false);
     	Object data = treeElement.getData();
     	if (data instanceof JsonElement) {
-    		return Utils.getMethodModels((JsonElement) data);
+    		return Utils.getMethodModels(spec, (JsonElement) data);
 
     	} else if (data instanceof SourceMethodNode) {
-    		Set<JsonElement> calls = getCalls(treeElement);
+    		CallerGraph callerGraph = (CallerGraph) fCallGraph;
+    		Set<JsonElement> calls = getCalls(callerGraph, treeElement);
     		if (!calls.isEmpty()) {
     			Set<MethodModel> result = new TreeSet<MethodModel>();
     			for (JsonElement call: calls) {
-    				Set<MethodModel> methods = Utils.getMethodModels(call);
+    				Set<MethodModel> methods = Utils.getMethodModels(spec, call);
     				if (methods != null)
     					result.addAll(methods);
     			}
@@ -148,10 +185,10 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     	return Collections.EMPTY_SET;
     }
 
-    public static Set<JsonElement> getCalls(TreeElement<?, ?> treeElement) {
+    public static Set<JsonElement> getCalls(CallerGraph callerGraph, TreeElement<?, ?> treeElement) {
     	Object data = treeElement.getData();
     	if (data instanceof SourceMethodNode) {
-    		Map<String, Map<String, Set<JsonElement>>> callerMap = CallerGraph.getCallerMap();
+    		Map<String, Map<String, Set<JsonElement>>> callerMap = callerGraph.getCallerMap();
     		TreeElement<?, ?> parent = treeElement.getParent();
     		if (parent != null) {
     			Object parentData = parent.getData();
