@@ -1675,7 +1675,7 @@ public abstract boolean bindService(Intent service, ServiceConnection conn,
      *
      * @see #bindService
      */
-    @DSSink({DSSinkKind.IPC})
+    //@DSSink({DSSinkKind.IPC})
     @DSComment("Abstract Method")
     @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.999 -0500", hash_original_method = "AD50D89FB73F95E5DD03D493BB040603", hash_generated_method = "7E573E5A290A954C1D1A58189D55F91E")

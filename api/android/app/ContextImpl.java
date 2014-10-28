@@ -1256,7 +1256,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         return true;
     }
 
-    @DSSink({DSSinkKind.IPC})
+    //@DSSink({DSSinkKind.IPC})
     @DSVerified
     @DSSpec(DSCat.SERVICE) 
     @Override
