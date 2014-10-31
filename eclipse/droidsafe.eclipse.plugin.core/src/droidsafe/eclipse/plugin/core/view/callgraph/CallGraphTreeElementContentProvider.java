@@ -83,8 +83,14 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     		for (int i = 0; i < childrenArray.size(); i++) {
     			JsonElement childElement = childrenArray.get(i);
     			if (!Utils.isEmptyJsonObject(childElement)) {
-    				TreeElement<JsonElement, JsonElement> child = initializeCalleeTree(childElement);
-    				element.addChild(child);
+    				String sig = Utils.getSignature(childElement);
+    				if (sig != null) {
+    					String methodName = Utils.signatureMethodName(sig);
+    					if (!methodName.matches(".*access\\$\\d+.*")) {
+    						TreeElement<JsonElement, JsonElement> child = initializeCalleeTree(childElement);
+    						element.addChild(child);
+    					}
+    				}
     			}
     		}
     	}

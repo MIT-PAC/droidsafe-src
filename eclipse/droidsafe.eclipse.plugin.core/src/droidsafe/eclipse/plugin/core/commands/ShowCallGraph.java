@@ -8,6 +8,7 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.jdt.core.IClassFile;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IMethod;
@@ -15,6 +16,7 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeRoot;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.internal.core.SourceType;
 import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.text.TextSelection;
 import org.eclipse.jface.viewers.ISelection;
@@ -57,7 +59,7 @@ public class ShowCallGraph extends AbstractHandler {
         					String pkgName = typeRoot.getParent().getElementName();
         					String srcClassName = pkgName + "." + typeRoot.getElementName().replace(".java", "");
         					IJavaElement parent = method.getParent();
-        					boolean showCallees = method.isResolved() && !(parent instanceof IType);
+        					boolean showCallees = method.isResolved() && !(parent instanceof SourceType);
         					if (showCallees) {
         						Collection<JsonElement> targets = CallGraph.findCallTargets(projectCallGraph, method, className, srcClassName, line);
         						if (targets.isEmpty())
@@ -103,7 +105,7 @@ public class ShowCallGraph extends AbstractHandler {
     		return parentName;
     	if (parentName == null)
     		return name;
-    	String sep = (parent instanceof ICompilationUnit) ? "." : "$";
+    	String sep = (parent instanceof ICompilationUnit || parent instanceof IClassFile) ? "." : "$";
     	return parentName + sep + name;
 	}
 
