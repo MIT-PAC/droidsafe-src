@@ -41,7 +41,7 @@ public class UnresolvedICC {
 
     private Map<SootClass, TopLevelContent> added;
 
-    private static final String FILE_NAME = "icc_calls_unresolved.json";
+    private static final String FILE_NAME = "ipc_calls_unresolved.json";
 
     private Set<Object> alreadyAdded = new HashSet<Object>();
 
