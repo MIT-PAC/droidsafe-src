@@ -14,6 +14,7 @@ import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.IntentUtils;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.ICCMap;
 import droidsafe.utils.JimpleRelationships;
 import soot.ArrayType;
@@ -67,7 +68,7 @@ public class StartServiceTransform implements VATransform {
 
         intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
 
-        for (SootField serviceField : IntentUtils.v().getIntentServiceTargetHarnessFields(stmt, callee, intentNodes)) {
+        for (SootField serviceField : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNodes)) {
             if (!(serviceField.getType() instanceof RefType))
                 continue;           
 

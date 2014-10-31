@@ -21,6 +21,9 @@ import droidsafe.analyses.value.primitives.ClassVAModel;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
+import droidsafe.android.app.resources.AndroidManifest.ComponentBaseElement;
+import droidsafe.android.app.resources.Resources;
+import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.UnresolvedICC;
 import droidsafe.transforms.objsensclone.ClassCloner;
 
@@ -28,8 +31,6 @@ public class IntentUtils {
     /** if true, then delivery unresolveable intents to all targets to be conservative
      *  if false, then ignore effects of unresolveable intents, not accurate!
      */
-    private static final boolean CONSERVATIVE = false;
-
     private Set<IAllocNode> queriedNodes;
 
     private static IntentUtils v;
@@ -54,52 +55,17 @@ public class IntentUtils {
     /**
      * 
      */
-    public Set<SootField> getIntentActivityTargetHarnessFields(Stmt stmt, SootMethod target, Set<? extends IAllocNode> allocNodes) {
+    public Set<SootField> getIntentTargetHarnessFields(AndroidComponents component, Stmt stmt, SootMethod target, Set<? extends IAllocNode> allocNodes) {
         Set<SootField> allHarnessActivityFlds = new LinkedHashSet<SootField>();
 
-        if (CONSERVATIVE) {
-            for (SootClass clz : Harness.v().getCreatedClasses()) {
-                if (Hierarchy.inheritsFromAndroidActivity(clz)) {
-                    allHarnessActivityFlds.add(Harness.v().getFieldForCreatedClass(clz));
-                }
+
+        for (SootClass clz : Harness.v().getCreatedClasses()) {
+            if (Hierarchy.inheritsFromAndroidComponent(component, clz)) {
+                allHarnessActivityFlds.add(Harness.v().getFieldForCreatedClass(clz));
             }
         }
 
-        return getIntentTargetHarnessFlds(stmt, target, allocNodes, allHarnessActivityFlds);
-    }
-
-    /**
-     * 
-     */
-    public Set<SootField> getIntentBroadcastReceiverTargetHarnessFields(Stmt stmt, SootMethod target, Set<? extends IAllocNode> allocNodes) {
-        Set<SootField> allHarnessServiceFlds = new LinkedHashSet<SootField>();
-
-        if (CONSERVATIVE) {
-            for (SootClass clz : Harness.v().getCreatedClasses()) {
-                if (Hierarchy.inheritsFromAndroidBroadcastReceiver(clz)) {
-                    allHarnessServiceFlds.add(Harness.v().getFieldForCreatedClass(clz));
-                }
-            }
-        }
-
-        return getIntentTargetHarnessFlds(stmt, target, allocNodes, allHarnessServiceFlds);
-    }
-    
-    /**
-     * 
-     */
-    public Set<SootField> getIntentServiceTargetHarnessFields(Stmt stmt, SootMethod target, Set<? extends IAllocNode> allocNodes) {
-        Set<SootField> allHarnessServiceFlds = new LinkedHashSet<SootField>();
-
-        if (CONSERVATIVE) {
-            for (SootClass clz : Harness.v().getCreatedClasses()) {
-                if (Hierarchy.inheritsFromAndroidService(clz)) {
-                    allHarnessServiceFlds.add(Harness.v().getFieldForCreatedClass(clz));
-                }
-            }
-        }
-
-        return getIntentTargetHarnessFlds(stmt, target, allocNodes, allHarnessServiceFlds);
+        return getIntentTargetHarnessFlds(stmt, target, allocNodes, component, allHarnessActivityFlds);
     }
 
     /**
@@ -108,7 +74,7 @@ public class IntentUtils {
      */
 
     private Set<SootField> getIntentTargetHarnessFlds(Stmt stmt, SootMethod target, Set<? extends IAllocNode> allocNodes, 
-        Set<SootField> allPossibleFieldTargets) {
+        AndroidComponents component, Set<SootField> allPossibleFieldTargets) {
         Set<SootField> resolvedTargetHarnessFlds = new HashSet<SootField>();
 
 
@@ -117,35 +83,19 @@ public class IntentUtils {
             VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
             if(vaModel != null && vaModel instanceof RefVAModel) {
                 RefVAModel intentRefVAModel = (RefVAModel)vaModel;
-                Set<String> targetClsStrings = null;
+                //add all targets of this intent
                 switch(getIntentType(intentRefVAModel)) {
                     case EXPLICIT:
-                        targetClsStrings = getExplicitIntentTargetClsStrings(allocNode, stmt, target, intentRefVAModel);
+                        resolvedTargetHarnessFlds.addAll(
+                            getExplicitIntentTargetClsStrings(allocNode, stmt, target, intentRefVAModel, allPossibleFieldTargets));
                         break;
                     case IMPLICIT:  
-                        targetClsStrings = getImplicitIntentInAppTargetClsStrings(allocNode, stmt, target, intentRefVAModel);
+                        resolvedTargetHarnessFlds.addAll(
+                            getImplicitIntentInAppTargetClsStrings(allocNode, stmt, target, intentRefVAModel, component, allPossibleFieldTargets));
                         break;
-                }
-                if(targetClsStrings != null) {
-                    Set<SootField> targetHarnessFlds = getHarnessFldsForClsStrings(targetClsStrings);
-                    // If we didn't get a field for each possible target class, then be conservative and use all
-                    if (targetClsStrings.size() > targetHarnessFlds.size()){
-                        UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
-                        if (CONSERVATIVE) 
-                            resolvedTargetHarnessFlds.addAll(allPossibleFieldTargets);
-                        else 
-                            resolvedTargetHarnessFlds.addAll(targetHarnessFlds);
-                    } else if (targetClsStrings.size() == targetHarnessFlds.size()){
-                        resolvedTargetHarnessFlds.addAll(targetHarnessFlds);
-                    } else {
-                        logger.error("Should not get back more target harness fields than target class strings.");
-                        //System.exit(1);
-                    }
-                } else {
-                    UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
-                    resolvedTargetHarnessFlds.addAll(allPossibleFieldTargets);
-                }
+                }               
             } else {
+                //no va model, so have to add everything!
                 UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
                 resolvedTargetHarnessFlds.addAll(allPossibleFieldTargets);
             }
@@ -179,50 +129,63 @@ public class IntentUtils {
             return null;
 
         Set<SootField> sootFlds = new HashSet<SootField>();
-        for(String clsString : clsStrings) {
-            if(!clsString.equals("")) {
-                SootClass sootCls = Scene.v().getSootClass(clsString);
-                if(sootCls != null) {
-                    SootField activityHarnessFld = Harness.v().getFieldForCreatedClass(sootCls);
-                    if(activityHarnessFld != null) {
-                        sootFlds.add(activityHarnessFld);
 
-                    }
-                }
-            }
+        for(String clsString : clsStrings) {
+            sootFlds.add(getHarnessFldForClsString(clsString));
         }
         return sootFlds;
+    }
+
+    /**
+     * Return harness field for class string of fully qualified name
+     */
+    public SootField getHarnessFldForClsString(String clsString) {
+        if(!clsString.equals("")) {
+            SootClass sootCls = Scene.v().getSootClass(clsString);
+            if(sootCls != null) {
+                SootField activityHarnessFld = Harness.v().getFieldForCreatedClass(sootCls);
+                if(activityHarnessFld != null) {
+                    return activityHarnessFld;
+                }
+            }        
+        }
+
+        logger.error("could not find harness field for {}", clsString);
+
+        return null;
     }
 
     /**
      * @return set of class strings that the passed in explicit intent may target
      *         null if we cannot resolved them unambiguously
      */
-    public Set<String> getExplicitIntentTargetClsStrings(IAllocNode allocNode, Stmt stmt, SootMethod target, RefVAModel intentRefVAModel) {
+    public Set<SootField> getExplicitIntentTargetClsStrings(IAllocNode allocNode, Stmt stmt, 
+        SootMethod target, RefVAModel intentRefVAModel,
+        Set<SootField> allPossibleFieldTargets) {
 
         // container for results
-        Set<String> targetClsStrings = new HashSet<String>();
+        Set<SootField> targetClsStrings = new HashSet<SootField>();
         // iterate over every possible componentName field value
         SootClass clonedIntentSootClass = ((RefType)(intentRefVAModel.getAllocNode().getType())).getSootClass();
         SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedIntentSootClass);
-        
-        
+
+
         //first check the cls constant field
         Set<VAModel> clsFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mClsComponent"));
         if (clsFldVAModels.size() > 0) {
             boolean allConstants = true;;
-            
+
             for (VAModel clz : clsFldVAModels) {
                 if (clz.invalidated()) {
                     allConstants = false;
                     UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
                     continue;
                 }
-                    
+
                 if (clz instanceof ClassVAModel) {
                     ClassVAModel clzModel = (ClassVAModel)clz;
                     for (SootClass value : clzModel.getValues()) {
-                        targetClsStrings.add(value.getName());
+                        targetClsStrings.add(getHarnessFldForClsString(value.getName()));
                         System.out.println("resolve explicit intent: " + value.getName());
                     }
                 } else {
@@ -230,14 +193,14 @@ public class IntentUtils {
                     allConstants = false;
                 } 
             }
-            
+
             if (allConstants)
                 return targetClsStrings;
         } else {
             UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
         }
 
-        
+
         Set<VAModel> componentNameFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mComponent"));
 
         for(VAModel componentNameFldVAModel : componentNameFldVAModels) {
@@ -245,7 +208,7 @@ public class IntentUtils {
             // cls strings and must return null
             if(componentNameFldVAModel.invalidated() || componentNameFldVAModel instanceof UnknownVAModel){
                 UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
-                return null;
+                return allPossibleFieldTargets;
             }
             // the next four lines get the VA models for the 'mClass' field
             RefVAModel componentNameRefVAModel = (RefVAModel)componentNameFldVAModel;
@@ -258,12 +221,12 @@ public class IntentUtils {
                 // strings and must return null
                 if(mClassVAModel.invalidated() || mClassVAModel instanceof UnknownVAModel) {
                     UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
-                    return null;
+                    return allPossibleFieldTargets;
                 }
                 // get the class strings
                 Set<String> mClassObjects = ((StringVAModel)mClassVAModel).getValues();
                 for(String mClassObject : mClassObjects) {
-                    targetClsStrings.add(mClassObject);
+                    targetClsStrings.add(getHarnessFldForClsString(mClassObject));
                 }
             }
         }
@@ -274,12 +237,36 @@ public class IntentUtils {
      * @return set of class strings that the passed in explicit intent may target
      *         null if we cannot resolved them unambiguously
      */
-    public Set<String> getImplicitIntentInAppTargetClsStrings(IAllocNode allocNode, Stmt stmt, SootMethod target, RefVAModel intentRefVAModel) {
-        // for each Activity
+    public Set<SootField> getImplicitIntentInAppTargetClsStrings(IAllocNode allocNode, Stmt stmt, SootMethod target, 
+        RefVAModel intentRefVAModel, AndroidComponents component,
+        Set<SootField> allPossibleFieldTargets) {
+        
+        Set<SootField> calculatedTargets = new HashSet<SootField>();
+        calculatedTargets.addAll(allPossibleFieldTargets);
+        
+        //if the intent values cannot be resolved, still should remove all components that don't define
+        //an intent filter
+        
+        // for each component
         // for each intentFilter
         // if match, return cls string of activity
+        for (ComponentBaseElement manifestComp : Resources.v().getManifest().getComponentsByType(component)) {
+            SootField harnessField = getHarnessFldForClsString(manifestComp.getSootClass().getName());
+            
+            if (harnessField == null) {
+                logger.error("No harness field for manifest class: {}", manifestComp.getSootClass());
+            }
+            
+            if (!manifestComp.hasIntentFilter()) {
+                calculatedTargets.remove(harnessField);
+            }
+            
+            
+        }
+        
+        
         UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
-        return null;
+        return calculatedTargets;
     }
 
     /**

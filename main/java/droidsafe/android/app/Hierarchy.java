@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Set;
 
 import droidsafe.android.system.API;
+import droidsafe.android.system.AndroidComponents;
 import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
-
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -49,6 +49,13 @@ public class Hierarchy {
 	    return methods;
 	}
 	
+	public static boolean inheritsFromAndroidComponent(AndroidComponents component, SootClass cn) {
+	    if (cn.isInterface())
+            return false;
+        
+        return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, 
+            Components.getSootClassForComponent(component));
+	}
 		
 	/** 
      * Returns true if cn is class android/app/Service or is a class

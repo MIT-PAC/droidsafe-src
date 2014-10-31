@@ -12,6 +12,7 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.ICCMap;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.JimpleRelationships;
@@ -92,7 +93,7 @@ class StartActivityTransform implements VATransform {
             return;
 
 
-        for (SootField activityField : IntentUtils.v().getIntentActivityTargetHarnessFields(stmt, callee, intentNodes)) {
+        for (SootField activityField : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.ACTIVITY, stmt, callee, intentNodes)) {
             if (!(activityField.getType() instanceof RefType) || 
                     !Hierarchy.inheritsFromAndroidActivity(((RefType)activityField.getType()).getSootClass()))
                 continue;

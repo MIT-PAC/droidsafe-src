@@ -138,9 +138,6 @@ public class Config {
     /** if true, compute value analysis result stats */
     public boolean dumpVAStats = false;
 
-    /** if true, compute StartActivityTransform ICC result stats */
-    public boolean dumpICCStats = false;
-
     /** if true, use the small manual set of android classes for the api model, for a fast run. */
     public boolean useManualModeling = false;
 
@@ -355,10 +352,6 @@ public class Config {
                 new Option("vastats", "Dump VA stats.");
         options.addOption(vaStats);
 
-        Option iccStats =
-                new Option("iccstats", "Dump ICC stats.");
-        options.addOption(iccStats);
-
         Option allStatsRun =
                 new Option("stats", "Perform extra work to generate stats.");
         options.addOption(allStatsRun);
@@ -516,9 +509,7 @@ public class Config {
         if (cmd.hasOption("vastats"))
             this.dumpVAStats = true;
 
-        if (cmd.hasOption("iccstats"))
-            this.dumpICCStats = true;
-
+        
         if (cmd.hasOption("stats"))
             this.statsRun = true;
 

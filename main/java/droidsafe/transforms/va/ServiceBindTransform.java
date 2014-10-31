@@ -16,6 +16,7 @@ import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.ICCMap;
 import droidsafe.utils.SootUtils;
 import soot.Body;
@@ -67,7 +68,7 @@ public class ServiceBindTransform implements VATransform {
         //for all service destinations from the intent 
         //for the services created in the harness
         Set<? extends IAllocNode> intentNodes = PTABridge.v().getPTSetIns(invoke.getArg(0));
-        for (SootField serviceFld : IntentUtils.v().getIntentServiceTargetHarnessFields(stmt, callee, intentNodes)) {
+        for (SootField serviceFld : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNodes)) {
             if (!(serviceFld.getType() instanceof RefType))
                 continue;           
             

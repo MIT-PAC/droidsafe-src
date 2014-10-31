@@ -49,4 +49,14 @@ public class Components {
 	public static boolean isComponentClass(String name) {
 		return CLASS_NAMES.contains(name);
 	}
+	
+	public static SootClass getSootClassForComponent(AndroidComponents c) {
+	    switch (c) {
+	        case ACTIVITY : return Scene.v().getSootClass(ACTIVITY_CLASS);
+	        case SERVICE : return Scene.v().getSootClass(SERVICE_CLASS);
+	        case CONTENT_PROVIDER : return Scene.v().getSootClass(CONTENTPROVIDER_CLASS);
+	        case BROADCAST_RECEIVER : return Scene.v().getSootClass(BROADCASTRECEIVER_CLASS);
+	        default: return null;
+	    }
+	}
 }

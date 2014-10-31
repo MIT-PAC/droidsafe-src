@@ -46,7 +46,6 @@ import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.ObjectGetClassToClassConstant;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
-import droidsafe.transforms.va.StartActivityTransformStats;
 import droidsafe.transforms.va.VATransformsSuite;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
@@ -743,21 +742,6 @@ public class Main {
         driverMsg("Running Value Analysis Tranform Suite...");
         VATransformsSuite.run();
         driverMsg("Finished Value Analysis Transforms Suite: " + vaTimer);
-
-        if (Config.v().dumpICCStats) {
-            driverMsg("Dumping ICC Stats");
-            monitor.subTask("Dumping ICC Stats");
-            StopWatch iccStatsTimer = new StopWatch();
-            iccStatsTimer.start();
-            StartActivityTransformStats.run();
-            iccStatsTimer.stop();
-            monitor.worked(1);
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
-            driverMsg("Finished Computing ICC Stats: " + iccStatsTimer.toString());
-        }
-
 
         driverMsg("Undoing String Analysis Result Injection.");
         monitor.subTask("Undoing String Analysis Result Injection.");

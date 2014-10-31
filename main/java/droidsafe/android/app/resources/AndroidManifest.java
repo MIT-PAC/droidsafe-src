@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.*;
 
+import droidsafe.android.system.AndroidComponents;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -67,7 +68,22 @@ public class AndroidManifest {
     }
 
     this.manifest = new Manifest (null, e);
- }
+ }  
+  
+  public Set<SootClass> allComponents() {
+      return components;
+  }
+  
+  public List<? extends ComponentBaseElement> getComponentsByType(AndroidComponents type) {
+      switch (type) {
+          case ACTIVITY: return activities;
+          case SERVICE: return services;
+          case BROADCAST_RECEIVER: return receivers; 
+          case CONTENT_PROVIDER: return providers;
+          default: return null;
+      }
+         
+  }
 
   public boolean isDefinedInManifest(SootClass clz) {
       return scToBaseElement.containsKey(clz);
