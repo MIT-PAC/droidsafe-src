@@ -500,7 +500,7 @@ public Context getBaseContext() {
 
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.190 -0500", hash_original_method = "130F62140951A945508EBFB32B94A765", hash_generated_method = "992EA6715D65F485692876B471F1C6B9")
     
 @Override
@@ -508,7 +508,7 @@ public Context getBaseContext() {
         mBase.startActivity(intent);
     }
 
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.193 -0500", hash_original_method = "013A3CF6138EA6FE6C22614936FE13C8", hash_generated_method = "52762932C0CF308D26FC5B36BA40DE9B")
     

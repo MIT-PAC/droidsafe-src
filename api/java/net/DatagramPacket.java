@@ -172,7 +172,6 @@ public DatagramPacket(byte[] data, int offset, int length,
      */
     @DSComment("Data structure only")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.359 -0500", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "C1DC99F69AF6376A7FC069FBD1826D41")
     
     public synchronized InetAddress getAddress() {

@@ -338,7 +338,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.303 -0500", hash_original_method = "10BBC39B201767C43F0FBBE296ABD273", hash_generated_method = "CCFE85678B34F377226A32E287A87E2A")
     
@@ -347,7 +347,7 @@ public class MockContext extends Context {
         throw new UnsupportedOperationException();
     }
 
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.305 -0500", hash_original_method = "8A0FF876EE34DCD944B6E38C35E12478", hash_generated_method = "6885ED0EBB2AB9E46607CCF54F7B5495")
     
