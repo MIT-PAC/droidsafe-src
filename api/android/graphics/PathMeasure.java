@@ -31,7 +31,7 @@ public class PathMeasure {
     
     private static int native_create(int native_path, boolean forceClosed){
     	//Formerly a native method
-        return (native_path + toTaintInt(forceClosed));
+        return (native_path + ((forceClosed) ? 1 : 0));
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.014 -0400", hash_original_method = "567E9E159700565C09C389ECA22B6620", hash_generated_method = "779F001808F5A8EDC28D079AC509A17E")
@@ -51,36 +51,36 @@ public class PathMeasure {
     
     private static boolean native_getPosTan(int native_instance, float distance, float pos[], float tan[]){
     	//Formerly a native method
-        return toTaintBoolean(native_instance + distance + pos[0] + tan[0]);
+        return ((native_instance + distance + pos[0] + tan[0]) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.023 -0400", hash_original_method = "F51A0D8AADC796054F42D603742F12F1", hash_generated_method = "2FE63BAAFFEC9E512F3FEF698240D51A")
     
     private static boolean native_getMatrix(int native_instance, float distance, int native_matrix, int flags){
     	//Formerly a native method
-        return toTaintBoolean(native_instance + distance + native_matrix + flags);
+        return ((native_instance + distance + native_matrix + flags) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.025 -0400", hash_original_method = "0F1EE4FA6598637D7ED506721C795C20", hash_generated_method = "B36C3BEA24F9CA069FD47424F517C08B")
     
     private static boolean native_getSegment(int native_instance, float startD, float stopD, int native_path, boolean startWithMoveTo){
     	//Formerly a native method
-        return toTaintBoolean(native_instance + startD + stopD + native_path + 
-                       toTaintInt(startWithMoveTo));
+        return 1 == (native_instance + startD + stopD + native_path + 
+                       ((startWithMoveTo) ? 1 : 0));
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.028 -0400", hash_original_method = "6BD382F6E956A4FF1CD0495566393FDA", hash_generated_method = "2DA8CC997D225862B165A05DDD4669A7")
     
     private static boolean native_isClosed(int native_instance){
     	//Formerly a native method
-    	return toTaintBoolean(native_instance);
+    	return ((native_instance) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.030 -0400", hash_original_method = "259080968E75270D13A075C89664E7AA", hash_generated_method = "A1F67F85B1CFADD4380AC2F672C1C68D")
     
     private static boolean native_nextContour(int native_instance){
     	//Formerly a native method
-    	return toTaintBoolean(native_instance);
+    	return ((native_instance) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-24 16:07:14.040 -0400", hash_original_method = "B81DF364C933ABCAE1ADD3F423CD055D", hash_generated_method = "3B048B55832076F266ED1A96019CB853")

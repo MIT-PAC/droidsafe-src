@@ -54,7 +54,7 @@ abstract public AsyncServiceInfo createHandler();
     /**
      * Get the handler
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.443 -0500", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "5553470799CBD6C40F98FB733AE4E7EA")
     
 public Handler getHandler() {

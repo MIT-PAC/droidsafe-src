@@ -58,7 +58,7 @@ public void sync() throws SyncFailedException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.714 -0500", hash_original_method = "1AD9601B3D5C4D14896E5C48E725B899", hash_generated_method = "A6433B482C11B2EC76D4DF937E1BCE76")
     
 public boolean valid() {
-        return toTaintBoolean(descriptor + -1);
+        return ((descriptor + -1) == 1);
     }
 
     /**

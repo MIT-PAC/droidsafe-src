@@ -131,7 +131,7 @@ protected abstract SSLSessionContext engineGetClientSessionContext();
      *
      * @since 1.6
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.617 -0500", hash_original_method = "38369B007DD3DFBC2F17B36F6861DA09", hash_generated_method = "19B85BDCFFFD7283752B67100B24DF80")
     
 protected javax.net.ssl.SSLParameters engineGetDefaultSSLParameters() {
@@ -147,7 +147,7 @@ protected javax.net.ssl.SSLParameters engineGetDefaultSSLParameters() {
      *
      * @since 1.6
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.620 -0500", hash_original_method = "86210C07C6F5D2D352BAF9AB53AE79CE", hash_generated_method = "43B4830D41E80F841649FB50919541A4")
     
 protected javax.net.ssl.SSLParameters engineGetSupportedSSLParameters() {

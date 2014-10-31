@@ -382,14 +382,14 @@ boolean
         return isIncoming == c.isMT && equalsHandlesNulls(address, cAddress);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.609 -0500", hash_original_method = "6F928BB99E2E6BC2006496B43FE5B2BF", hash_generated_method = "DBBDA58DEEBF55C34D5BEB75B3F597B1")
     
 public String getOrigDialString(){
         return dialString;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.611 -0500", hash_original_method = "1A89DAB454CED0757504258169B34CDA", hash_generated_method = "9D79DFDD8EA73AA9BC42783E0AB77415")
     
 public String getAddress() {
@@ -414,28 +414,28 @@ public CdmaCall getCall() {
         return parent;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.621 -0500", hash_original_method = "A8956DD6ACAC2731E62816490C646631", hash_generated_method = "A28981F024E432A69A5EE6C2C2A713AE")
     
 public long getCreateTime() {
         return createTime;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.623 -0500", hash_original_method = "540CF01EF64CF5C6BAC1246743ECA8F1", hash_generated_method = "F3878C4EA8EC161DB4C86B7EE0828514")
     
 public long getConnectTime() {
         return connectTime;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.625 -0500", hash_original_method = "D17BC9E58BABC2D5CE1B7492B59E2165", hash_generated_method = "B4593A4A250C143E07993447C4BE4305")
     
 public long getDisconnectTime() {
         return disconnectTime;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.628 -0500", hash_original_method = "BD4C2261BA208AFE25AC1FD20DCCA9E3", hash_generated_method = "CF314DE5EA8CCD1CF80C405480A4ED6D")
     
 public long getDurationMillis() {
@@ -448,7 +448,7 @@ public long getDurationMillis() {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.630 -0500", hash_original_method = "34EF3C96D32FA03DD59341E50744B728", hash_generated_method = "2583FED46A8ECBE5646568C473EF4089")
     
 public long getHoldDurationMillis() {
@@ -795,7 +795,7 @@ void
 
     /*package*/ @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.670 -0500", hash_original_method = "94F7523429B223E41798A5302127009B", hash_generated_method = "94F7523429B223E41798A5302127009B")
     
 int
@@ -888,7 +888,7 @@ private boolean
         return true;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.683 -0500", hash_original_method = "5249FEA4AA339015595CA186429F9201", hash_generated_method = "FD96968B234F3C04DC131E4845C7C7FE")
     
 public String getRemainingPostDialString() {
@@ -1133,7 +1133,7 @@ private void log(String msg) {
         Log.d(LOG_TAG, "[CDMAConn] " + msg);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.723 -0500", hash_original_method = "B2C780D7BF03A84FC8B3CC6F33ADADA1", hash_generated_method = "3CE0451A12E5CCA47D0CDA3753FACBAF")
     
 @Override
@@ -1141,7 +1141,7 @@ private void log(String msg) {
         return numberPresentation;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:55.725 -0500", hash_original_method = "8B171385F62C7AA97B0882209EC3A206", hash_generated_method = "59C272D085C12CF443E0D702BB83E292")
     
 @Override

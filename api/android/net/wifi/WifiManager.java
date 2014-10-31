@@ -704,7 +704,7 @@ public WifiManager(IWifiManager service, Handler handler) {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.295 -0500", hash_original_method = "7B7EDD72C806D0E7DC8642CC316AA722", hash_generated_method = "2972D3BD198B6B1632E78F6CE3F43BE5")
     
 public List<WifiConfiguration> getConfiguredNetworks() {
@@ -985,7 +985,7 @@ public boolean startScanActive() {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.326 -0500", hash_original_method = "8E854EE6D7B979BB188C54EFD6BB6717", hash_generated_method = "BACD07F224066A26A350E7EE166370CC")
     
 public WifiInfo getConnectionInfo() {
@@ -1002,7 +1002,7 @@ public WifiInfo getConnectionInfo() {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.328 -0500", hash_original_method = "ADD60A4DA3445A3E968EB713F725E5F1", hash_generated_method = "AEC55E2ABA1887606E01EC0E53450CF4")
     
 public List<ScanResult> getScanResults() {
@@ -1077,7 +1077,7 @@ public void setFrequencyBand(int band, boolean persist) {
      *     {@code -1} on failure.
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.337 -0500", hash_original_method = "481BDDBC9D497285776974614BBC7D82", hash_generated_method = "04053C7CC2F55838307435A1788B8D36")
     
 public int getFrequencyBand() {
@@ -1110,7 +1110,7 @@ public boolean isDualBandSupported() {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.341 -0500", hash_original_method = "711DEA09870DB7E049F72B7F8BEBC0A1", hash_generated_method = "7E4E74EA6FA5BC303296784B3C9F1971")
     
 public DhcpInfo getDhcpInfo() {
@@ -1149,7 +1149,7 @@ public boolean setWifiEnabled(boolean enabled) {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.345 -0500", hash_original_method = "661FA885AE58B8C5231BF7DCF436505F", hash_generated_method = "0B5E55BEB69AF7D54D6ACFBCC094A048")
     
 public int getWifiState() {
@@ -1206,7 +1206,7 @@ public boolean setWifiApEnabled(WifiConfiguration wifiConfig, boolean enabled) {
      *
      * @hide Dont open yet
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.356 -0500", hash_original_method = "B0BA72D208162E33734DF133F2E7F6AA", hash_generated_method = "5BA4CEE0E3538E92F0EF3710195F7D78")
     
 public int getWifiApState() {
@@ -1236,7 +1236,7 @@ public boolean isWifiApEnabled() {
      *
      * @hide Dont open yet
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.361 -0500", hash_original_method = "99407E6898AC76390D3E229EC6CF35C4", hash_generated_method = "35049D917064A3DE3F998087FB518C89")
     
 public WifiConfiguration getWifiApConfiguration() {
@@ -1483,7 +1483,7 @@ public Messenger getMessenger() {
      * Returns the file in which IP and proxy configuration data is stored
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.408 -0500", hash_original_method = "F47F46BF01C13AECFB0A8E0A7BCA30AB", hash_generated_method = "0EEF0277E1EF24BD942F97C28A062DDB")
     
 public String getConfigFile() {

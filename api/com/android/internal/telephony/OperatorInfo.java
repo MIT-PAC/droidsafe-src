@@ -88,7 +88,7 @@ public OperatorInfo(String operatorAlphaLong,
                 operatorNumeric, rilStateToState(stateString));
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.342 -0500", hash_original_method = "B51FA3C3765E71F08A241B1C8BA79C96", hash_generated_method = "CB638F59BD0B25A23177222101C9E3B6")
     
 public String
@@ -96,7 +96,7 @@ public String
         return operatorAlphaLong;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.344 -0500", hash_original_method = "A8269EAEF0CA69A19C2F3D33BBF8152B", hash_generated_method = "FB481291A527FECB4BD90F8095874EFC")
     
 public String
@@ -104,7 +104,7 @@ public String
         return operatorAlphaShort;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.347 -0500", hash_original_method = "06DBB2F851A1F540C7CE21639E1F11FC", hash_generated_method = "839AF192B0AA543A2D859FC12F24D1D0")
     
 public String
@@ -120,7 +120,7 @@ public State
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.359 -0500", hash_original_method = "3A69A53B1D569DD83E423933B58E91F0", hash_generated_method = "4BB95C078DA1404522803CF8E4B187E1")
     
 public String toString() {

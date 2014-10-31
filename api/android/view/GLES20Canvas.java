@@ -74,13 +74,13 @@ static boolean isAvailable() {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int nCreateTextureLayer(boolean opaque, int[] layerInfo) {
-        return toTaintInt(opaque) + layerInfo[0];
+        return ((opaque) ? 1 : 0) + layerInfo[0];
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static int nCreateLayer(int width, int height, boolean isOpaque, int[] layerInfo) {
-        return (width + height + toTaintInt(isOpaque) + layerInfo[0]);
+        return (width + height + ((isOpaque) ? 1 : 0) + layerInfo[0]);
     }
     
     @DSComment("Package priviledge")
@@ -112,7 +112,7 @@ static boolean isAvailable() {
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static boolean nCopyLayer(int layerId, int bitmap) {
-        return toTaintBoolean(layerId + bitmap);
+        return ((layerId + bitmap) == 1);
     }
     
     @DSComment("Private Method")
@@ -211,7 +211,7 @@ public static void disableVsync() {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nCallDrawGLFunction(int renderer, int drawGLFunction) {
-        return toTaintBoolean(renderer + drawGLFunction);
+        return ((renderer + drawGLFunction) == 1);
         //return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -307,7 +307,7 @@ static int getDisplayListSize(int displayList) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nDrawDisplayList(int renderer, int displayList,
             int width, int height, Rect dirty) {
-        return  toTaintBoolean(renderer + displayList + width + height + dirty.getTaintInt());
+        return  (((renderer + displayList + width + height + dirty.getTaintInt())) == 1);
     }
     
     @DSComment("Private Method")
@@ -336,27 +336,27 @@ static int getDisplayListSize(int displayList) {
             float right, float bottom, int op) {
         //return DSUtils.UNKNOWN_BOOLEAN;
 
-        return toTaintBoolean(renderer + left + top + right + bottom + op);
+        return ((renderer + left + top + right + bottom + op) == 1);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nClipRect(int renderer, int left, int top, int right, int bottom,
             int op) {
-        return toTaintBoolean(renderer + left + top + right + bottom + op);
+        return ((renderer + left + top + right + bottom + op) == 1);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nGetClipBounds(int renderer, Rect bounds) {
-        return toTaintBoolean(renderer + bounds.getTaintInt());
+        return (((renderer + bounds.getTaintInt())) == 1);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nQuickReject(int renderer, float left, float top,
             float right, float bottom, int edge) {
-        return toTaintBoolean(renderer + left + top + right + bottom + edge);
+        return ((renderer + left + top + right + bottom + edge) == 1);
     }
     
     @DSComment("Private Method")

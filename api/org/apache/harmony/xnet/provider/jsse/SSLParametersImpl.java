@@ -20,7 +20,7 @@ import javax.net.ssl.X509TrustManager;
 
 public class SSLParametersImpl implements Cloneable {
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.139 -0500", hash_original_method = "004CFD6937DD69D079A03D412E117735", hash_generated_method = "0CFEAC380A184FD68AEDCE8F560ADD02")
     
 protected static SSLParametersImpl getDefault() throws KeyManagementException {
@@ -85,7 +85,7 @@ private static X509KeyManager findX509KeyManager(KeyManager[] kms) {
      *
      * TODO: Move this to a published API under dalvik.system.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.194 -0500", hash_original_method = "A83D18BF15DA4AB9B98DC7D822883D44", hash_generated_method = "D78C35A2A0644AD108F95F54A59E8836")
     
 public static X509TrustManager getDefaultTrustManager() {
@@ -250,7 +250,7 @@ protected CipherSuite[] getEnabledCipherSuitesMember() {
     /**
      * @return server session context
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.141 -0500", hash_original_method = "658F9BFC8B9B3779298360EB3ED283E0", hash_generated_method = "D8D83B69782AACFB427F0100E273F491")
     
 protected ServerSessionContext getServerSessionContext() {
@@ -260,7 +260,7 @@ protected ServerSessionContext getServerSessionContext() {
     /**
      * @return client session context
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.144 -0500", hash_original_method = "F2ACF841A45F78E0C0C46B366B8BBEF0", hash_generated_method = "87D038D420D89D8B04423A4E4D1B2062")
     
 protected ClientSessionContext getClientSessionContext() {
@@ -270,7 +270,7 @@ protected ClientSessionContext getClientSessionContext() {
     /**
      * @return key manager
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.146 -0500", hash_original_method = "55EECB48B318CBDDE6A76E7D2964C45E", hash_generated_method = "A7A484D22ACFDE787395902510E0CD80")
     
 protected X509KeyManager getKeyManager() {
@@ -280,7 +280,7 @@ protected X509KeyManager getKeyManager() {
     /**
      * @return trust manager
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.148 -0500", hash_original_method = "6C6A481BDDE46D9B11307A3C2E7627FB", hash_generated_method = "F8C13A194F51E541C6BCDEEF75D511EB")
     
 protected X509TrustManager getTrustManager() {
@@ -290,7 +290,7 @@ protected X509TrustManager getTrustManager() {
     /**
      * @return secure random
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.150 -0500", hash_original_method = "067B45F1A56F6A0D2A18E621BA5CC8CE", hash_generated_method = "6EC567827A79B62A5BD135BCC4893E2C")
     
 protected SecureRandom getSecureRandom() {
@@ -309,7 +309,7 @@ protected SecureRandom getSecureRandom() {
     /**
      * @return the secure random member reference, even it is null
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.153 -0500", hash_original_method = "3F930A54995EF963563BF853943EBA6D", hash_generated_method = "A0E0AC72733B99663BE1814F4C3E8A50")
     
 protected SecureRandom getSecureRandomMember() {
@@ -405,7 +405,7 @@ protected void setUseClientMode(boolean mode) {
      * Returns the value indicating if the parameters configured to work
      * in client mode.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.168 -0500", hash_original_method = "90A3F3D7EBB1ED0C929CAB981D05518C", hash_generated_method = "F92BCE1154BA7C0517D67C5A6199989F")
     
 protected boolean getUseClientMode() {
@@ -427,7 +427,7 @@ protected void setNeedClientAuth(boolean need) {
      * Returns the value indicating if the peer with this parameters tuned
      * to require client authentication
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.172 -0500", hash_original_method = "2471CA6C7557FB2D62663705E2DBC565", hash_generated_method = "F8BCB80ACEB307CDA2CA691533D4DC86")
     
 protected boolean getNeedClientAuth() {
@@ -450,7 +450,7 @@ protected void setWantClientAuth(boolean want) {
      * tuned to request client authentication
      * @return
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.176 -0500", hash_original_method = "180B768884625BF4E09AC4E909474C3B", hash_generated_method = "2CB78DCE22E22F454F1BA7582F4C6FE1")
     
 protected boolean getWantClientAuth() {
@@ -471,7 +471,7 @@ protected void setEnableSessionCreation(boolean flag) {
      * Returns the value indicating if the peer with this parameters
      * allowed to cteate new SSL session
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.181 -0500", hash_original_method = "73058AE9A102A5DCB03ABA90C3F4D3DE", hash_generated_method = "61E79086593D4F6A3CB1A4061344C97C")
     
 protected boolean getEnableSessionCreation() {

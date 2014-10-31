@@ -35,7 +35,7 @@ public class CallerInfo {
      * @return the CallerInfo which contains the caller id for the given
      * number. The returned CallerInfo is null if no number is supplied.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.400 -0500", hash_original_method = "5A41265338B441253D84C904D0572F1D", hash_generated_method = "D527D4D2440A499A7FDB9223A8D1728A")
     
 public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
@@ -136,7 +136,7 @@ public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor c
      * @return the CallerInfo which contains the caller id for the given
      * number. The returned CallerInfo is null if no number is supplied.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.403 -0500", hash_original_method = "C8DFF2D0C3894E1B9175858C5EE3D3BB", hash_generated_method = "237AEB559BC360557812F8BE65E7FC45")
     
 public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
@@ -155,7 +155,7 @@ public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
      * a matching number is not found, then a generic caller info is returned,
      * with all relevant fields empty or null.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.406 -0500", hash_original_method = "B6705B43DEEA0F2192B48F9F777B01B4", hash_generated_method = "FE8D81ECCCA8A8D5C94A6A43ADF78785")
     
 public static CallerInfo getCallerInfo(Context context, String number) {
@@ -529,7 +529,7 @@ public boolean isVoiceMailNumber() {
     // should be displayed.
     /* package */ @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.418 -0500", hash_original_method = "0EF2E0F94875209BDFD349217543907F", hash_generated_method = "0EF2E0F94875209BDFD349217543907F")
     
 CallerInfo markAsEmergency(Context context) {
@@ -551,7 +551,7 @@ CallerInfo markAsEmergency(Context context) {
     // string in the phone number field.
     /* package */ @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.421 -0500", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "80AC8B6BE9B156C3EE30B3EFE4A2A8F1")
     
 CallerInfo markAsVoiceMail() {
@@ -598,7 +598,7 @@ public void updateGeoDescription(Context context, String fallbackNumber) {
      * @return a string debug representation of this instance.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.440 -0500", hash_original_method = "B2E8AF8AE71BB271A220763604B9FEA5", hash_generated_method = "7A65E4C100BDD67B7E46680E057873AC")
     
 public String toString() {

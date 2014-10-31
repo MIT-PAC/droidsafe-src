@@ -202,7 +202,7 @@ public float getAlpha()
     
 public boolean equals(Object  r1)
     {
-    	return DSUtils.toTaintBoolean(hashCode() + r1.hashCode());
+    	return (((hashCode() + r1.hashCode())) == 1);
     }
 
     @DSSafe(DSCat.SAFE_LIST)
@@ -211,7 +211,7 @@ public boolean equals(Object  r1)
 public int hashCode()
     {
     	return (int)(alpha + anchor + rotation  +
-    			    DSUtils.toTaintFloat(draggable || flat || visible) +
+                     ((draggable || flat || visible) ? 1.0f : 0.0f)+
     			    icon.hashCode() + id.hashCode() +
     			    position.hashCode() +
     			    title.hashCode() +

@@ -17,7 +17,7 @@ public class DroidSafeProjection implements Projection {
     }
     
     @DSSafe(DSCat.GUI)
-    @DSSource(DSSourceKind.LOCATION_INFORMATION)
+    @DSSource(DSSourceKind.LOCATION)
     public float metersToEquatorPixels(float meters) { 
         addTaint(meters);
         return getTaintFloat();

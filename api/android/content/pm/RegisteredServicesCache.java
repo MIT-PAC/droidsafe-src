@@ -135,7 +135,7 @@ public void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.878 -0500", hash_original_method = "D8F0001D796B123F3D4D73C4471FA428", hash_generated_method = "B683D4E1159000788828D139458F35FF")
     
 public RegisteredServicesCacheListener<V> getListener() {

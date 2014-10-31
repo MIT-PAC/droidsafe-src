@@ -29,7 +29,7 @@ public class RectF implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.926 -0500", hash_original_method = "1FAEC0442F27706D6D5F3E840B971AB4", hash_generated_method = "B7ECD36105B38ABAEED5381ABDCCD9B3")
     
 public static boolean intersects(RectF a, RectF b) {
-        return toTaintBoolean(a.getTaintInt() + b.getTaintInt());
+        return (((a.getTaintInt() + b.getTaintInt())) == 1);
     }
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.336 -0400", hash_original_field = "5E7201C60E05C026DD3550B3101B80A5", hash_generated_field = "C46FA4AE8D434E2146AE8F7264B82507")
@@ -254,7 +254,7 @@ public void inset(float dx, float dy) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.910 -0500", hash_original_method = "7C65F21BA78E9C886CB99F3A821D7FC2", hash_generated_method = "478A0BFDE6FD19E13A25783CBA08CD39")
     
 public boolean contains(float x, float y) {
-        return toTaintBoolean(x + y + getTaintInt());
+        return (((x + y + getTaintInt())) == 1);
     }
     
     /**
@@ -275,7 +275,7 @@ public boolean contains(float x, float y) {
     
 public boolean contains(float left, float top, float right, float bottom) {
                 // check for empty first
-        return toTaintBoolean(left + top + right + bottom + getTaintInt());
+        return (((left + top + right + bottom + getTaintInt())) == 1);
     }
     
     /**
@@ -292,7 +292,7 @@ public boolean contains(float left, float top, float right, float bottom) {
     
 public boolean contains(RectF r) {
                 // check for empty first
-        return toTaintBoolean(r.getTaintInt() + getTaintInt());
+        return (((r.getTaintInt() + getTaintInt())) == 1);
     }
     
     /**
@@ -318,7 +318,7 @@ public boolean contains(RectF r) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.917 -0500", hash_original_method = "B665C4D2FA87DEF248CEB5906A538992", hash_generated_method = "2D0C490DF28548B6DC59C756C6E5ED0F")
     
 public boolean intersect(float left, float top, float right, float bottom) {
-    return toTaintBoolean(left + top + right + bottom + getTaintInt());
+    return (((left + top + right + bottom + getTaintInt())) == 1);
     /*
         if (this.left < right && left < this.right
                 && this.top < bottom && top < this.bottom) {
@@ -416,7 +416,7 @@ public boolean intersects(float left, float top, float right,
         return this.left < right && left < this.right
                 && this.top < bottom && top < this.bottom;
         */
-        return toTaintBoolean(left + top + right + bottom + getTaintInt());
+        return (((left + top + right + bottom + getTaintInt())) == 1);
     }
     
     /**

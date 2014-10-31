@@ -14,7 +14,7 @@ public class Region implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeEquals(int native_r1, int native_r2) {
-        return toTaintBoolean((native_r1 + native_r2));
+        return 1 == ((native_r1 + native_r2));
     }
     
     @DSComment("Private Method")
@@ -32,55 +32,55 @@ public class Region implements Parcelable {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetRegion(int native_dst,
                                                   int native_src) {
-        return toTaintBoolean((native_dst + native_src));
+        return 1 == ((native_dst + native_src));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetRect(int native_dst, int left,
                                                 int top, int right, int bottom) {
-        return toTaintBoolean((native_dst + left + top + right + bottom));
+        return 1 == ((native_dst + left + top + right + bottom));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetPath(int native_dst, int native_path,
                                                 int native_clip) {
-        return toTaintBoolean((native_dst + native_path + native_clip));
+        return 1 == ((native_dst + native_path + native_clip));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeGetBounds(int native_region, Rect rect) {
-        return toTaintBoolean((native_region + rect.getTaintInt()));
+        return 1 == ((native_region + rect.getTaintInt()));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeGetBoundaryPath(int native_region,
                                                         int native_path) {
-        return toTaintBoolean((native_region + native_path));
+        return 1 == ((native_region + native_path));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, int left, int top,
                                            int right, int bottom, int op) {
-        return toTaintBoolean((native_dst + left + top + right + bottom + op));
+        return 1 == ((native_dst + left + top + right + bottom + op));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, Rect rect,
                                            int native_region, int op) {
-        return toTaintBoolean((native_dst + rect.getTaintInt() + native_region + op));
+        return 1 == ((native_dst + rect.getTaintInt() + native_region + op));
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeOp(int native_dst, int native_region1,
                                            int native_region2, int op) {
-        return toTaintBoolean((native_dst + native_region1 + native_region2 + op));
+        return 1 == ((native_dst + native_region1 + native_region2 + op));
     }
     
     @DSComment("Private Method")
@@ -376,7 +376,7 @@ public boolean getBoundaryPath(Path path) {
     
     public boolean contains(int x, int y){
     	//Formerly a native method
-    	return toTaintBoolean(getTaintInt() + x + y);
+    	return (((getTaintInt() + x + y)) == 1);
     }
 
     /**
@@ -390,7 +390,7 @@ public boolean getBoundaryPath(Path path) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.238 -0500", hash_original_method = "963E643D37666FF20B3A3B029F181389", hash_generated_method = "E5D3FDE45AA5BD19E1FD088D74ECF497")
     
 public boolean quickContains(Rect r) {
-        return toTaintBoolean(r.getTaintInt() + getTaintInt()) ;
+        return (((r.getTaintInt() + getTaintInt())) == 1) ;
     }
 
     /**
@@ -406,7 +406,7 @@ public boolean quickContains(Rect r) {
     public boolean quickContains(int left, int top, int right,
                                             int bottom){
     	//Formerly a native method
-    	return toTaintBoolean(left + right + top + bottom + getTaintInt());
+    	return (((left + right + top + bottom + getTaintInt())) == 1);
     }
 
     /**
@@ -419,7 +419,7 @@ public boolean quickContains(Rect r) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.244 -0500", hash_original_method = "99713AAB8FDC91BA4FFF953154B93F70", hash_generated_method = "41CB867DCDD72D9ED89078F64DB12175")
     
 public boolean quickReject(Rect r) {
-        return toTaintBoolean(r.getTaintInt() + getTaintInt());
+        return (((r.getTaintInt() + getTaintInt())) == 1);
     }
 
     /**
@@ -433,7 +433,7 @@ public boolean quickReject(Rect r) {
     
     public boolean quickReject(int left, int top, int right, int bottom){
     	//Formerly a native method
-        return toTaintBoolean(getTaintInt() + left + right + top + bottom);
+        return (((getTaintInt() + left + right + top + bottom)) == 1);
     }
 
     /**
@@ -447,7 +447,7 @@ public boolean quickReject(Rect r) {
     
     public boolean quickReject(Region rgn){
     	//Formerly a native method
-        return toTaintBoolean(rgn.getTaintInt() + getTaintInt());
+        return (((rgn.getTaintInt() + getTaintInt())) == 1);
     }
 
     /**
@@ -613,7 +613,7 @@ public void writeToParcel(Parcel p, int flags) {
         if (obj == null || !(obj instanceof Region)) {
             return false;
         }
-        return toTaintBoolean(obj.getTaintInt() + getTaintInt());
+        return (((obj.getTaintInt() + getTaintInt())) == 1);
     }
 
     @DSComment("From safe class list")

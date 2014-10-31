@@ -965,7 +965,7 @@ private String convertUriToPath(Uri uri) {
     	taintDouble += mimeType.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:14.354 -0400", hash_original_method = "DA4A150A4386AF296514FABE0EE51600", hash_generated_method = "269C060BE37A8F9D110499F0FE7852AE")

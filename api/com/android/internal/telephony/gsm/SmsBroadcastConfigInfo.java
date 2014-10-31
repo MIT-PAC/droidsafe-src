@@ -48,7 +48,7 @@ public void setFromServiceId(int fromServiceId) {
     /**
      * @return the fromServiceId
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.785 -0500", hash_original_method = "000CFE123E4AC86430B83F6EA13C644C", hash_generated_method = "06D80871D93C0FECA5AFFF1D4C89C5F9")
     
 public int getFromServiceId() {
@@ -67,7 +67,7 @@ public void setToServiceId(int toServiceId) {
     /**
      * @return the toServiceId
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.790 -0500", hash_original_method = "708E088605DA57A3DA16BEEB2BE47BA2", hash_generated_method = "4D34601116B76A9C44D59B4CC78B5007")
     
 public int getToServiceId() {
@@ -86,7 +86,7 @@ public void setFromCodeScheme(int fromCodeScheme) {
     /**
      * @return the fromCodeScheme
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.794 -0500", hash_original_method = "7AEC5FB7E81910AF5A7A8C716EA8E7A5", hash_generated_method = "BF03F8B5D499ECB725C44BAD2E9EEE21")
     
 public int getFromCodeScheme() {
@@ -105,7 +105,7 @@ public void setToCodeScheme(int toCodeScheme) {
     /**
      * @return the toCodeScheme
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.799 -0500", hash_original_method = "70F3C47437BA22E7BE36EFF6F1AA8F5B", hash_generated_method = "2F2A70E3835D925BF0181FB345693EAD")
     
 public int getToCodeScheme() {

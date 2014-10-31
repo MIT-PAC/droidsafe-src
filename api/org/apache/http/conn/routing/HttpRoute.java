@@ -389,7 +389,7 @@ public final boolean isSecure() {
      *
      * @return  a human-readable representation of this route
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.856 -0500", hash_original_method = "ED2086285AC52BF0F96F27196507174B", hash_generated_method = "9D5086139D65F6BC1FBFA408C4EC6E59")
     

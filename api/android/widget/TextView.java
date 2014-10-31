@@ -782,9 +782,9 @@ public TextView(Context context,
                      AttributeSet attrs,
                      int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+        //addTaint(defStyle);
+        //addTaint(attrs.getTaint());
+        //addTaint(context.getTaint());
         mText = new StringBuffer();
         final Resources res = getResources();
         final CompatibilityInfo compat = res.getCompatibilityInfo();
@@ -804,52 +804,6 @@ public TextView(Context context,
         int styleIndex = -1;
         boolean allCaps = false;
         final Resources.Theme theme = context.getTheme();
-        TypedArray a = theme.obtainStyledAttributes(
-            attrs, com.android.internal.R.styleable.TextViewAppearance, defStyle, 0);
-        TypedArray appearance = null;
-        int ap = a.getResourceId(
-            com.android.internal.R.styleable.TextViewAppearance_textAppearance, -1);
-        a.recycle();
-        if(ap != -1)        
-        {
-            appearance = theme.obtainStyledAttributes(
-                ap, com.android.internal.R.styleable.TextAppearance);
-        } //End block
-        if(appearance != null)        
-        {
-            int n = appearance.getIndexCount();
-            for(int i = 0;i < n;i++)
-            {
-                int attr = appearance.getIndex(i);
-                switch(attr){
-                    case com.android.internal.R.styleable.TextAppearance_textColorHighlight:
-                        textColorHighlight = appearance.getColor(attr, textColorHighlight);
-                        break;
-                    case com.android.internal.R.styleable.TextAppearance_textColor:
-                        textColor = appearance.getColorStateList(attr);
-                        break;
-                    case com.android.internal.R.styleable.TextAppearance_textColorHint:
-                        textColorHint = appearance.getColorStateList(attr);
-                        break;
-                    case com.android.internal.R.styleable.TextAppearance_textColorLink:
-                        textColorLink = appearance.getColorStateList(attr);
-                        break;
-                    case com.android.internal.R.styleable.TextAppearance_textSize:
-                        textSize = appearance.getDimensionPixelSize(attr, textSize);
-                        break;
-                    case com.android.internal.R.styleable.TextAppearance_typeface:
-                        typefaceIndex = appearance.getInt(attr, -1);
-                        break;
-                    case com.android.internal.R.styleable.TextAppearance_textStyle:
-                        styleIndex = appearance.getInt(attr, -1);
-                        break;
-                    case com.android.internal.R.styleable.TextAppearance_textAllCaps:
-                        allCaps = appearance.getBoolean(attr, false);
-                        break;
-                }
-            } //End block
-            appearance.recycle();
-        } //End block
         boolean editable = getDefaultEditable();
         CharSequence inputMethod = null;
         int numeric = 0;
@@ -876,258 +830,6 @@ public TextView(Context context,
         float r = 0;
         boolean password = false;
         int inputType = EditorInfo.TYPE_NULL;
-        a = theme.obtainStyledAttributes(
-            attrs, com.android.internal.R.styleable.TextView, defStyle, 0);
-        int n = a.getIndexCount();
-        for(int i = 0;i < n;i++)
-        {
-            int attr = a.getIndex(i);
-            switch(attr){
-                case com.android.internal.R.styleable.TextView_editable:
-                    editable = a.getBoolean(attr, editable);
-                    break;
-                case com.android.internal.R.styleable.TextView_inputMethod:
-                    inputMethod = a.getText(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_numeric:
-                    numeric = a.getInt(attr, numeric);
-                    break;
-                case com.android.internal.R.styleable.TextView_digits:
-                    digits = a.getText(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_phoneNumber:
-                    phone = a.getBoolean(attr, phone);
-                    break;
-                case com.android.internal.R.styleable.TextView_autoText:
-                    autotext = a.getBoolean(attr, autotext);
-                    break;
-                case com.android.internal.R.styleable.TextView_capitalize:
-                    autocap = a.getInt(attr, autocap);
-                    break;
-                case com.android.internal.R.styleable.TextView_bufferType:
-                    buffertype = a.getInt(attr, buffertype);
-                    break;
-                case com.android.internal.R.styleable.TextView_selectAllOnFocus:
-                    selectallonfocus = a.getBoolean(attr, selectallonfocus);
-                    break;
-                case com.android.internal.R.styleable.TextView_autoLink:
-                    mAutoLinkMask = a.getInt(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_linksClickable:
-                    mLinksClickable = a.getBoolean(attr, true);
-                    break;
-                case com.android.internal.R.styleable.TextView_drawableLeft:
-                    drawableLeft = a.getDrawable(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_drawableTop:
-                    drawableTop = a.getDrawable(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_drawableRight:
-                    drawableRight = a.getDrawable(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_drawableBottom:
-                    drawableBottom = a.getDrawable(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_drawableStart:
-                    drawableStart = a.getDrawable(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_drawableEnd:
-                    drawableEnd = a.getDrawable(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_drawablePadding:
-                    drawablePadding = a.getDimensionPixelSize(attr, drawablePadding);
-                    break;
-                case com.android.internal.R.styleable.TextView_maxLines:
-                    setMaxLines(a.getInt(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_maxHeight:
-                    setMaxHeight(a.getDimensionPixelSize(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_lines:
-                    setLines(a.getInt(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_height:
-                    setHeight(a.getDimensionPixelSize(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_minLines:
-                    setMinLines(a.getInt(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_minHeight:
-                    setMinHeight(a.getDimensionPixelSize(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_maxEms:
-                    setMaxEms(a.getInt(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_maxWidth:
-                    setMaxWidth(a.getDimensionPixelSize(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_ems:
-                    setEms(a.getInt(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_width:
-                    setWidth(a.getDimensionPixelSize(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_minEms:
-                    setMinEms(a.getInt(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_minWidth:
-                    setMinWidth(a.getDimensionPixelSize(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_gravity:
-                    setGravity(a.getInt(attr, -1));
-                    break;
-                case com.android.internal.R.styleable.TextView_hint:
-                    hint = a.getText(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_text:
-                   // text = a.getText(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_scrollHorizontally:
-                    if(a.getBoolean(attr, false))            
-                    {
-                        setHorizontallyScrolling(true);
-                    } //End block
-                    break;
-                case com.android.internal.R.styleable.TextView_singleLine:
-                    singleLine = a.getBoolean(attr, singleLine);
-                    break;
-                case com.android.internal.R.styleable.TextView_ellipsize:
-                    ellipsize = a.getInt(attr, ellipsize);
-                    break;
-                case com.android.internal.R.styleable.TextView_marqueeRepeatLimit:
-                    setMarqueeRepeatLimit(a.getInt(attr, mMarqueeRepeatLimit));
-                    break;
-                case com.android.internal.R.styleable.TextView_includeFontPadding:
-                    if(!a.getBoolean(attr, true))            
-                    {
-                        setIncludeFontPadding(false);
-                    } //End block
-                    break;
-                case com.android.internal.R.styleable.TextView_cursorVisible:
-                    if(!a.getBoolean(attr, true))            
-                    {
-                        setCursorVisible(false);
-                    } //End block
-                    break;
-                case com.android.internal.R.styleable.TextView_maxLength:
-                    maxlength = a.getInt(attr, -1);
-                    break;
-                case com.android.internal.R.styleable.TextView_textScaleX:
-                    setTextScaleX(a.getFloat(attr, 1.0f));
-                    break;
-                case com.android.internal.R.styleable.TextView_freezesText:
-                    mFreezesText = a.getBoolean(attr, false);
-                    break;
-                case com.android.internal.R.styleable.TextView_shadowColor:
-                    shadowcolor = a.getInt(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_shadowDx:
-                    dx = a.getFloat(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_shadowDy:
-                    dy = a.getFloat(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_shadowRadius:
-                    r = a.getFloat(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_enabled:
-                    setEnabled(a.getBoolean(attr, isEnabled()));
-                    break;
-                case com.android.internal.R.styleable.TextView_textColorHighlight:
-                    textColorHighlight = a.getColor(attr, textColorHighlight);
-                    break;
-                case com.android.internal.R.styleable.TextView_textColor:
-                    textColor = a.getColorStateList(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_textColorHint:
-                    textColorHint = a.getColorStateList(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_textColorLink:
-                    textColorLink = a.getColorStateList(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_textSize:
-                    textSize = a.getDimensionPixelSize(attr, textSize);
-                    break;
-                case com.android.internal.R.styleable.TextView_typeface:
-                    typefaceIndex = a.getInt(attr, typefaceIndex);
-                    break;
-                case com.android.internal.R.styleable.TextView_textStyle:
-                    styleIndex = a.getInt(attr, styleIndex);
-                    break;
-                case com.android.internal.R.styleable.TextView_password:
-                    password = a.getBoolean(attr, password);
-                    break;
-                case com.android.internal.R.styleable.TextView_lineSpacingExtra:
-                    mSpacingAdd = a.getDimensionPixelSize(attr, (int) mSpacingAdd);
-                    break;
-                case com.android.internal.R.styleable.TextView_lineSpacingMultiplier:
-                    mSpacingMult = a.getFloat(attr, mSpacingMult);
-                    break;
-                case com.android.internal.R.styleable.TextView_inputType:
-                    inputType = a.getInt(attr, mInputType);
-                    break;
-                case com.android.internal.R.styleable.TextView_imeOptions:
-                    if(mInputContentType == null)            
-                    {
-                        mInputContentType = new InputContentType();
-                    } //End block
-                    mInputContentType.imeOptions = a.getInt(attr,
-                        mInputContentType.imeOptions);
-                    break;
-                case com.android.internal.R.styleable.TextView_imeActionLabel:
-                    if(mInputContentType == null)            
-                    {
-                        mInputContentType = new InputContentType();
-                    } //End block
-                    mInputContentType.imeActionLabel = a.getText(attr);
-                    break;
-                case com.android.internal.R.styleable.TextView_imeActionId:
-                    if(mInputContentType == null)            
-                    {
-                        mInputContentType = new InputContentType();
-                    } //End block
-                    mInputContentType.imeActionId = a.getInt(attr,
-                        mInputContentType.imeActionId);
-                    break;
-                case com.android.internal.R.styleable.TextView_privateImeOptions:
-                    setPrivateImeOptions(a.getString(attr));
-                    break;
-                case com.android.internal.R.styleable.TextView_editorExtras:
-                    try 
-                    {
-                        setInputExtras(a.getResourceId(attr, 0));
-                    } //End block
-                    catch (XmlPullParserException e)
-                    {
-                    } //End block
-                    catch (IOException e)
-                    {
-                    } //End block
-                    break;
-                case com.android.internal.R.styleable.TextView_textCursorDrawable:
-                    mCursorDrawableRes = a.getResourceId(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_textSelectHandleLeft:
-                    mTextSelectHandleLeftRes = a.getResourceId(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_textSelectHandleRight:
-                    mTextSelectHandleRightRes = a.getResourceId(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_textSelectHandle:
-                    mTextSelectHandleRes = a.getResourceId(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_textEditSuggestionItemLayout:
-                    mTextEditSuggestionItemLayout = a.getResourceId(attr, 0);
-                    break;
-                case com.android.internal.R.styleable.TextView_textIsSelectable:
-                    mTextIsSelectable = a.getBoolean(attr, false);
-                    break;
-                case com.android.internal.R.styleable.TextView_textAllCaps:
-                    allCaps = a.getBoolean(attr, false);
-                    break;
-            }
-        } //End block
-        a.recycle();
         BufferType bufferType = BufferType.EDITABLE;
         final int variation = inputType & (EditorInfo.TYPE_MASK_CLASS | EditorInfo.TYPE_MASK_VARIATION);
         final boolean passwordInputType = variation
@@ -1368,29 +1070,9 @@ public TextView(Context context,
         mBufferType = bufferType;
         if(hint != null)        
             setHint(hint);
-        a = context.obtainStyledAttributes(attrs,
-            com.android.internal.R.styleable.View,
-            defStyle, 0);
         boolean focusable = mMovement != null || mInput != null;
         boolean clickable = focusable;
         boolean longClickable = focusable;
-        n = a.getIndexCount();
-        for(int i = 0;i < n;i++)
-        {
-            int attr = a.getIndex(i);
-            switch(attr){
-                case com.android.internal.R.styleable.View_focusable:
-                    focusable = a.getBoolean(attr, focusable);
-                    break;
-                case com.android.internal.R.styleable.View_clickable:
-                    clickable = a.getBoolean(attr, clickable);
-                    break;
-                case com.android.internal.R.styleable.View_longClickable:
-                    longClickable = a.getBoolean(attr, longClickable);
-                    break;
-            }
-        } //End block
-        a.recycle();
         setFocusable(focusable);
         setClickable(clickable);
         setLongClickable(longClickable);
@@ -1586,7 +1268,6 @@ public int length() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.563 -0500", hash_original_method = "7ED3A36B3A9686857AF495D746EF7144", hash_generated_method = "EE75B94FCCCA9A8B2BF2609EB9C259A6")
     
 public Editable getEditableText() {
@@ -3042,7 +2723,6 @@ public final ColorStateList getHintTextColors() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.711 -0500", hash_original_method = "1826756F3CA2F0D97D555C81DC90D9D1", hash_generated_method = "38EDD1A900BDA63B4C18954FE58B5474")
     
 public final int getCurrentHintTextColor() {
@@ -3502,9 +3182,9 @@ public final void append(CharSequence text) {
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.520 -0400", hash_original_method = "B2621C1C8DC7A6B197F310747926C024", hash_generated_method = "2D8CCB202FABF6DFC18EDB9314F71358")
     public void append(CharSequence text, int start, int end) {
-        addTaint(end);
-        addTaint(start);
-        addTaint(text.getTaint());
+        //addTaint(end);
+        //addTaint(start);
+        //addTaint(text.getTaint());
         /*if(!(mText instanceof Editable))        
         {
             setText(mText, BufferType.EDITABLE);
@@ -3668,7 +3348,7 @@ void removeMisspelledSpans(Spannable spannable) {
     @Override
     public void onRestoreInstanceState(Parcelable state) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(state.getTaint());
+        //addTaint(state.getTaint());
         if(!(state instanceof SavedState))        
         {
             super.onRestoreInstanceState(state);
@@ -3782,7 +3462,7 @@ public boolean getFreezesText() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.530 -0400", hash_original_method = "F37C8918E495A353D909855BE6AEA0B3", hash_generated_method = "170DA8E8BD4336C0FB792281FDE81EAF")
     @android.view.RemotableViewMethod
     public final void setText(CharSequence text) {
-        addTaint(text.getTaint());
+        //addTaint(text.getTaint());
         //setText(text, mBufferType);
         mText = text;
         // ---------- Original Method ----------
@@ -3831,8 +3511,8 @@ public void setText(CharSequence text, BufferType type) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.534 -0400", hash_original_method = "EBAE4ED74D570AD4FF310073DD3BF4E5", hash_generated_method = "2BA93A7A63A103A1E7CA1F5FB9BB442F")
     private void setText(CharSequence text, BufferType type,
                          boolean notifyBefore, int oldlen) {
-        addTaint(oldlen);
-        addTaint(notifyBefore);
+        //addTaint(oldlen);
+        //addTaint(notifyBefore);
         /*
         if(text == null)        
         {
@@ -5860,7 +5540,7 @@ private void drawCursor(Canvas canvas, int cursorOffsetVertical) {
         r.addTaint(mLayout.getLineTop(lineNum) + mLayout.getLineBottom(lineNum) +
                 mLayout.getPrimaryHorizontal(lineNum));
         
-        if (toTaintBoolean(selStart + selEnd)) {
+        if (((selStart + selEnd) == 1)) {
             if (mHighlightPath == null) mHighlightPath = new Path();
             if (mHighlightPathBogus) {
                 mHighlightPath.reset();
@@ -7175,7 +6855,7 @@ private Layout makeSingleLayout(int wantWidth, BoringLayout.Metrics boring, int 
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.609 -0400", hash_original_method = "F38DBB61FA92C8376A0BF0DADC8F1411", hash_generated_method = "B13012CAC0E1563228581F5DFB50ADC7")
     private boolean compressText(float width) {
-        addTaint(width);
+        //addTaint(width);
         if(isHardwareAccelerated())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1239452033 = (false);
@@ -7254,7 +6934,7 @@ public void setIncludeFontPadding(boolean includepad) {
     
 @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        addTaint(widthMeasureSpec + heightMeasureSpec);
+        //addTaint(widthMeasureSpec + heightMeasureSpec);
         
         //We are only interested in catching the override, this whole thing can be 
         //NOOP
@@ -7959,7 +7639,7 @@ private void convertFromViewportToContentCoordinates(Rect r) {
         r.top += verticalOffset;
         r.bottom += verticalOffset;
         
-        r.addTaint(horizontalOffset + verticalOffset);
+        //r.addTaint(horizontalOffset + verticalOffset);
     }
 
     @DSComment("Private Method")
@@ -8429,9 +8109,9 @@ private void sendBeforeTextChanged(CharSequence text, int start, int before, int
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.642 -0400", hash_original_method = "3C2834233455B82E3097E9750018AB89", hash_generated_method = "9746CE50A0BC4885ABD44D4FB3A5D0A5")
     private <T> void removeIntersectingSpans(int start, int end, Class<T> type) {
-        addTaint(type.getTaint());
-        addTaint(end);
-        addTaint(start);
+        //addTaint(type.getTaint());
+        //addTaint(end);
+        //addTaint(start);
         if(!(mText instanceof Editable))        
             return;
         Editable text = (Editable) mText;
@@ -12576,7 +12256,7 @@ public void hide() {
         @DSBan(DSCat.DEFAULT_MODIFIER)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:07.770 -0400", hash_original_method = "0D5333D88B146866CC739B7BC1FA2E0A", hash_generated_method = "35C87A0497B2DDA10AB5E7767F78297E")
         void showActionPopupWindow(int delay) {
-            addTaint(delay);
+            //addTaint(delay);
             if(mActionPopupWindow == null)            
             {
                 mActionPopupWindow = new ActionPopupWindow();

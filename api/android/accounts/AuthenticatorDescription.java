@@ -133,7 +133,7 @@ public int hashCode() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.116 -0500", hash_original_method = "56302D274B0C35098461E26F41A371FE", hash_generated_method = "8636066B283EEC770CB81C9AD3F3AA54")
     
 public boolean equals(Object o) {
-        return toTaintBoolean(getTaintInt() + o.getTaintInt()); 
+        return (((getTaintInt() + o.getTaintInt())) == 1); 
         /*
         if (o == this) return true;
         if (!(o instanceof AuthenticatorDescription)) return false;

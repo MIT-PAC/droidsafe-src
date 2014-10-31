@@ -10,7 +10,7 @@ import droidsafe.helpers.DSUtils;
 public final class OpcodeInfo {
     
     public static boolean isInvoke(int packedOpcode) {
-        return toTaintBoolean(packedOpcode); 
+        return ((packedOpcode) == 1); 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.849 -0500", hash_original_field = "4FC28CE92B75E1906A0B6484F1AD5778", hash_generated_field = "4094A39D9EE5963244CA34FCE55F822C")
 

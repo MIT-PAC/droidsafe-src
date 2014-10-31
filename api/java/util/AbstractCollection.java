@@ -42,8 +42,6 @@ protected AbstractCollection() {
     public boolean add(E object) {
         if (DroidSafeAndroidRuntime.control) {
             UnsupportedOperationException ex = new UnsupportedOperationException();
-            ex.addTaint(object.getTaint());
-            ex.addTaint(getTaint());
             throw ex;
         }
 
@@ -118,11 +116,11 @@ protected AbstractCollection() {
     
 public abstract Iterator<E> iterator();
         
-@DSComment("From safe class list")
-    @DSSafe(DSCat.SAFE_LIST)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.349 -0400", hash_original_method = "CCD29C39CF9628BFB1346470270188CD", hash_generated_method = "FCC356F1E2BB914CD3D0E5867CDC0F78")
+    @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.349 -0400", hash_original_method = "CCD29C39CF9628BFB1346470270188CD", hash_generated_method = "FCC356F1E2BB914CD3D0E5867CDC0F78")
     public boolean remove(Object object) {
-        addTaint(object.getTaint());
+        //addTaint(object.getTaint());
         int index = getIndexOf(object);
         if (index != -1)
             removeElementAt(index);
@@ -178,7 +176,7 @@ public abstract Iterator<E> iterator();
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] contents) {
 
-        contents.addTaint(getTaint());
+    //contents.addTaint(getTaint());
 
         int size = size();
         for (int i = 0; i < size; i++) {
@@ -208,8 +206,8 @@ public abstract Iterator<E> iterator();
     protected E getElementAt(int index) {
         if (index >= len || index < 0) {
             IndexOutOfBoundsException ex = new IndexOutOfBoundsException();
-            ex.addTaint(getTaint());
-            ex.addTaint(index);
+            //ex.addTaint(getTaint());
+            //ex.addTaint(index);
             throw ex; 
         }
         return collectionData[index];
@@ -218,14 +216,14 @@ public abstract Iterator<E> iterator();
     protected void setElementAt(int index, E obj) {
         if (index >= len || index < 0) {
             IndexOutOfBoundsException ex = new IndexOutOfBoundsException();
-            ex.addTaint(getTaint());
-            ex.addTaint(index);
-            ex.addTaint(obj.getTaint());
+            //ex.addTaint(getTaint());
+            //ex.addTaint(index);
+            //ex.addTaint(obj.getTaint());
             throw ex;
         }
         
-        addTaint(index);
-        addTaint(obj.getTaint());
+        //addTaint(index);
+        //addTaint(obj.getTaint());
         collectionData[index] = obj;
     }
     
@@ -235,17 +233,17 @@ public abstract Iterator<E> iterator();
             collectionData[i] = collectionData[i+1];
         }
         len -= 1;
-        retElem.addTaint(getTaint());
+        //retElem.addTaint(getTaint());
         return retElem;
     }
     
     protected boolean addElementAt(int index, E object) {
-        addTaint(index);
-        addTaint(object.getTaint());
+        //addTaint(index);
+        //addTaint(object.getTaint());
         
         if (index > len) {
             IndexOutOfBoundsException ex = new IndexOutOfBoundsException();
-            ex.addTaint(getTaint());
+            //ex.addTaint(getTaint());
             throw ex; 
         }
 
@@ -290,13 +288,13 @@ public abstract Iterator<E> iterator();
     }
     
     protected E getFirstElement(){
-        collectionData[0].addTaint(getTaint());
+        //collectionData[0].addTaint(getTaint());
         return collectionData[0];
     }
     
     protected E getLastElement(){
         if (len > 0) {
-            collectionData[len-1].addTaint(getTaint());
+            //collectionData[len-1].addTaint(getTaint());
             return collectionData[len-1];
         }
         return null;
@@ -335,25 +333,25 @@ public abstract Iterator<E> iterator();
     
     public Iterator<E>getIterator(){
         Iterator<E> iter = new BasicIterator<E>(); 
-        iter.addTaint(getTaint());
+        //iter.addTaint(getTaint());
         return iter;
     }
     
     public Iterator<E>getReverseIterator(){
         Iterator<E> iter = new BasicReverseIterator<E>(); 
-        iter.addTaint(getTaint());
+        //iter.addTaint(getTaint());
         return iter;
     }
     
     public ListIterator<E>getListIterator(int location){
         ListIterator<E> iter = new BasicIterator<E>(location); 
-        iter.addTaint(getTaint());
+        //iter.addTaint(getTaint());
         return iter;
     }
      
     public Enumeration<E> getEnumeration(){
         Enumeration<E> retEnum = new BasicEnumeration<E>(); 
-        retEnum.addTaint(getTaint());
+        //retEnum.addTaint(getTaint());
         return retEnum;
     }
         
@@ -363,8 +361,9 @@ public abstract Iterator<E> iterator();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.357 -0400", hash_original_method = "A06C3538162F748E28317896970387BE", hash_generated_method = "22C4F41EBA3A6ACE287F6D60148ADCF8")
     @Override
     public String toString() {
-        String retStr = new String("[]");
+        String retStr = new String();
         retStr.addTaint(getTaint());
+        retStr.addTaint(collectionData[0].getTaint());
         return retStr;
     }
         
@@ -382,7 +381,7 @@ public abstract Iterator<E> iterator();
         BasicIterator(int location) {
             start = location;
             current = start - 1;
-            addTaint(location);
+            //addTaint(location);
         }
         
         @Override
@@ -415,7 +414,7 @@ public abstract Iterator<E> iterator();
             E tmpObj = (E)object;
             //addElementAt(current, tmpObj);
             addElementAt(current, tmpObj);
-            addTaint(object.getTaint());
+            //addTaint(object.getTaint());
         }
 
         @DSSafe(DSCat.SAFE_LIST)
@@ -458,7 +457,7 @@ public abstract Iterator<E> iterator();
         public void set(T object) {
             // TODO Auto-generated method stub
             setElementAt(current, (E)object);
-            addTaint(object.getTaint());
+            //addTaint(object.getTaint());
         }
      }
      

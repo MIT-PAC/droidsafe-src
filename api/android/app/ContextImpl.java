@@ -672,7 +672,7 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
     public void startActivity(Intent intent) {
@@ -717,7 +717,7 @@ private File getPreferencesDir() {
         intent.getScheme();
     }
     
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
     public void startActivities(Intent[] intents) {

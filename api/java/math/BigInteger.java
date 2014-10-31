@@ -708,7 +708,7 @@ public boolean testBit(int n) {
                     digit = ~digit;
                 }
             }
-            return toTaintBoolean(((digit & n) + 0));
+            return 1 == (((digit & n) + 0));
         }
     }
 

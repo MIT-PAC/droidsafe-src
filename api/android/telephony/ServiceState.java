@@ -358,7 +358,7 @@ public int describeContents() {
      * @see #STATE_POWER_OFF
      */
     @DSSpec(DSCat.PHONE_STATE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.206 -0500", hash_original_method = "10E9373648D5DF4EE43B4904732E3886", hash_generated_method = "4C50D1866B5E804CF0B05EFBD6788B97")
     
 public int getState() {
@@ -373,7 +373,7 @@ public int getState() {
      *              and ONS is different from SPN
      *
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.209 -0500", hash_original_method = "27B48B56BD1E05F31D9E74CC53E25407", hash_generated_method = "CC0583C9CA1287F8D242AB48312C845D")
     
 public boolean getRoaming() {
@@ -392,7 +392,7 @@ public boolean isEmergencyOnly() {
     /**
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.215 -0500", hash_original_method = "83FC91D4D13183AA7E425917DAA84866", hash_generated_method = "55CDB0D2B5EECF7B91A4F3482629015C")
     
 public int getCdmaRoamingIndicator(){
@@ -402,7 +402,7 @@ public int getCdmaRoamingIndicator(){
     /**
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.218 -0500", hash_original_method = "66A4F6EB11ADB385A490C7939EB92055", hash_generated_method = "02B13842F295C9D0F74173E0177EC54D")
     
 public int getCdmaDefaultRoamingIndicator(){
@@ -412,7 +412,7 @@ public int getCdmaDefaultRoamingIndicator(){
     /**
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.221 -0500", hash_original_method = "A86147562C8C2CE9187BA7AFC3028DA0", hash_generated_method = "815BDCF6E5DD57192CA54D7505B8BC0B")
     
 public int getCdmaEriIconIndex() {
@@ -422,7 +422,7 @@ public int getCdmaEriIconIndex() {
     /**
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.224 -0500", hash_original_method = "637A5E08A8AA09E09B00A7308F96EA32", hash_generated_method = "F017A7B00345E00DDEAEF7841A32DBF4")
     
 public int getCdmaEriIconMode() {
@@ -438,7 +438,7 @@ public int getCdmaEriIconMode() {
      * @return long name of operator, null if unregistered or unknown
      */
     @DSSpec(DSCat.PHONE_STATE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.227 -0500", hash_original_method = "550CF77EB1CEA79355B2985E6B5A4349", hash_generated_method = "DCCAC5F4BADF15C4277416570E2E2717")
     
 public String getOperatorAlphaLong() {
@@ -452,7 +452,7 @@ public String getOperatorAlphaLong() {
      *
      * @return short name of operator, null if unregistered or unknown
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.230 -0500", hash_original_method = "86619391C7B398160E7B9E543643DBB4", hash_generated_method = "362808BE7F7349D19E875163AF7F8F42")
     
 public String getOperatorAlphaShort() {
@@ -471,7 +471,7 @@ public String getOperatorAlphaShort() {
      * The country code can be decoded using
      * {@link com.android.internal.telephony.MccTable#countryCodeForMcc(int)}.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.233 -0500", hash_original_method = "608E7A84F718D26C8A9F8E19A83C0931", hash_generated_method = "F97365A18373FE64A7A630F546A3515D")
     
 public String getOperatorNumeric() {
@@ -483,7 +483,7 @@ public String getOperatorNumeric() {
      *
      * @return true if manual mode, false if automatic mode
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.236 -0500", hash_original_method = "233C7A13AF785DA7BC75C18AF3C8DB71", hash_generated_method = "2372D1A6AC89F39DC0E4479843C88867")
     
 public boolean getIsManualSelection() {
@@ -540,7 +540,7 @@ public boolean getIsManualSelection() {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.250 -0500", hash_original_method = "8261C946B0851B9612BB2224B1BDDEEE", hash_generated_method = "5C0308D8B835085CC67933DCD6C0B9DC")
     
 @Override
@@ -755,7 +755,7 @@ public void setSystemAndNetworkId(int systemId, int networkId) {
     }
 
     /** @hide */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.312 -0500", hash_original_method = "D4EB1377E20B241083847F14436F60D5", hash_generated_method = "6EEB42EC4DDC5EDA4ECEC65062412920")
     
 public int getRadioTechnology() {
@@ -763,7 +763,7 @@ public int getRadioTechnology() {
     }
 
     /** @hide */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.315 -0500", hash_original_method = "5F3502ED7337480E1E948E539B84EEE6", hash_generated_method = "161CF8434587677DABD0ECD505F5A2EA")
     
 public int getCssIndicator() {
@@ -771,7 +771,7 @@ public int getCssIndicator() {
     }
 
     /** @hide */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.318 -0500", hash_original_method = "909C93F66AD557988A123F548D8C31FC", hash_generated_method = "3C8DAA33B7EF9A3BB4D25A7A63500EE0")
     
 public int getNetworkId() {
@@ -779,7 +779,7 @@ public int getNetworkId() {
     }
 
     /** @hide */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.321 -0500", hash_original_method = "E5E4F22C1EB64E5BA2863333F6C891A3", hash_generated_method = "318DA97F6722F5CBE558371991B6EC9C")
     
 public int getSystemId() {

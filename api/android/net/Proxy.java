@@ -35,7 +35,7 @@ public final class Proxy {
      *         A null value means that no host is to be used.
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.945 -0500", hash_original_method = "66D3F50ED16481B0B14959535BF8F553", hash_generated_method = "528CCAEC6E9BE135E54AC7B8FB019990")
     
 public static final java.net.Proxy getProxy(Context ctx, String url) {
@@ -72,7 +72,7 @@ public static final java.net.Proxy getProxy(Context ctx, String url) {
      * @deprecated Use standard java vm proxy values to find the host, port
      *         and exclusion list.  This call ignores the exclusion list.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.948 -0500", hash_original_method = "F0F69366C00A2E0E35F4A59DBEA02BB9", hash_generated_method = "0E70946C3B52F40077328D4F152C081F")
     
 public static final String getHost(Context ctx) {
@@ -112,7 +112,7 @@ public static final int getPort(Context ctx) {
      *         exclusion list.  This call ignores the exclusion list and no
      *         longer reports only mobile-data apn-based proxy values.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.953 -0500", hash_original_method = "E669A7ACE9D8EEFE98E3D6369305AEB7", hash_generated_method = "7FC5045A7478361888863018FE1881A6")
     
 public static final String getDefaultHost() {
@@ -153,7 +153,7 @@ public static final int getDefaultPort() {
      * is no proxy.
      * {@hide}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.958 -0500", hash_original_method = "0DC6892F9119B40AD3A553AA53E42E93", hash_generated_method = "F705D319450A7271C0F406E7D09BA266")
     
 public static final HttpHost getPreferredHttpHost(Context context,

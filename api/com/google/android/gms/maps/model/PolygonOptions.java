@@ -105,7 +105,7 @@ List jP()
 public void writeToParcel(Parcel  r1, int  i0)
     {
     	r1.writeInt(i0);
-    	r1.writeDouble(aau + aav + aaw + xM + DSUtils.toTaintFloat(aay && aaZ));
+    	r1.writeDouble(aau + aav + aaw + xM + ((aay && aaZ) ? 1.0f : 0.0f));
     	r1.addTaint(aaX.get(0).getTaint());
     	r1.addTaint(aaY.get(0).getTaint());
     }

@@ -461,7 +461,7 @@ public WifiConfiguration(WifiConfiguration source) {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.000 -0500", hash_original_method = "97D3C3FCC664C1BBD8134CCAC12AD4F6", hash_generated_method = "604B03D24FF61983A38980528F3D6549")
     
@@ -556,7 +556,7 @@ public WifiConfiguration(WifiConfiguration source) {
     }
 
     /** @hide */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.007 -0500", hash_original_method = "9AFA2ED3E118B7190C0E7E9D5FFF2220", hash_generated_method = "76ECF00D1675A34E05C62D6DA70DC7E5")
     
 public int getAuthType() {

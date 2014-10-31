@@ -22,7 +22,7 @@ public final class TextServicesManager {
      * Retrieve the global TextServicesManager instance, creating it if it doesn't already exist.
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.512 -0500", hash_original_method = "818A9F7557AFA3E51F48AB4545B2EDDB", hash_generated_method = "7A23ECBE53D73EDFB2A1F08003C262F0")
     
 public static TextServicesManager getInstance() {
@@ -149,7 +149,7 @@ public SpellCheckerSession newSpellCheckerSession(Bundle bundle, Locale locale,
     /**
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.518 -0500", hash_original_method = "996F778F72629C35F59A814BE7E587F6", hash_generated_method = "E251415AB5E626FBDF7980F548B14732")
     
 public SpellCheckerInfo[] getEnabledSpellCheckers() {
@@ -168,7 +168,7 @@ public SpellCheckerInfo[] getEnabledSpellCheckers() {
     /**
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.521 -0500", hash_original_method = "A6F1D379519B22786C64C08B94869872", hash_generated_method = "67E1A73C9BB08CF84E611330E81B471E")
     
 public SpellCheckerInfo getCurrentSpellChecker() {
@@ -200,7 +200,7 @@ public void setCurrentSpellChecker(SpellCheckerInfo sci) {
     /**
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.526 -0500", hash_original_method = "A09B5B882B337AC1ACCDB12AE24B1D1D", hash_generated_method = "36DE492E4C2B12A218D9F69B818CB76C")
     
 public SpellCheckerSubtype getCurrentSpellCheckerSubtype(

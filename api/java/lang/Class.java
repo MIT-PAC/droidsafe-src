@@ -130,8 +130,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
         }
         Class<?> result = (Class<?>) new Class();
         
-        result.addTaint(className.getTaintInt() + 
-                        toTaintInt(initializeBoolean) + classLoader.getTaintInt());
+        //result.addTaint(className.getTaintInt() + 
+        //                (initializeBoolean ? 1 : 0) + classLoader.getTaintInt());
         result.droidsafeSetLoader(classLoader);
         return result;
         
@@ -140,7 +140,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     ClassLoader droidsafeClassLoader = null;
     void droidsafeSetLoader(ClassLoader loader) {
         droidsafeClassLoader = loader;
-        addTaint(loader.getTaint());
+       //addTaint(loader.getTaint());
     }
     
     @DSComment("Package priviledge")
@@ -148,8 +148,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     static Class<?> classForName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
     	Class<?> cl = new Class();
-    	cl.addTaint(className.getTaintInt() + toTaintInt(initializeBoolean) +
-    	            classLoader.getTaintInt());
+            //cl.addTaint(className.getTaintInt() + (initializeBoolean ? 1 : 0) +
+            //       classLoader.getTaintInt());
     	cl.droidsafeSetLoader(classLoader);
     	return cl;
     }
@@ -164,8 +164,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSBan(DSCat.PRIVATE_METHOD)
     private static Class<?>[] getDeclaredClasses(Class<?> clazz, boolean publicOnly) {
     	Class[] ret = new Class[0];
-    	ret.addTaint(clazz.getTaint());
-    	ret.addTaint(publicOnly);
+    	//ret.addTaint(clazz.getTaint());
+    	//ret.addTaint(publicOnly);
     	return ret;
     }
     
@@ -174,8 +174,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     private static <T> Constructor<T>[] getDeclaredConstructors(
             Class<T> clazz, boolean publicOnly) {
     	Constructor[] ret = new Constructor[0];
-    	ret.addTaint(clazz.getTaint());
-    	ret.addTaint(publicOnly);
+    	//ret.addTaint(clazz.getTaint());
+    	//ret.addTaint(publicOnly);
     	return ret;
     }
     
@@ -183,8 +183,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSSafe(DSCat.SAFE_LIST)
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
     	Field[] ret = new Field[0];
-    	ret.addTaint(clazz.getTaint());
-    	ret.addTaint(publicOnly);
+        //    	ret.addTaint(clazz.getTaint());
+    	//ret.addTaint(publicOnly);
     	return ret;
     }
     
@@ -192,8 +192,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSSafe(DSCat.SAFE_LIST)
     static Field getDeclaredField(Class<?> clazz, String name) {
     	Field ret = new Field();
-    	ret.addTaint(clazz.getTaint());
-    	ret.addTaint(name.getTaint());
+    	//ret.addTaint(clazz.getTaint());
+    	//ret.addTaint(name.getTaint());
     	return ret;
     }
     
@@ -201,8 +201,8 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSSafe(DSCat.SAFE_LIST)
     static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
     	Method[] ret = new Method[0];
-    	ret[0].addTaint(clazz.getTaint());
-    	ret[0].addTaint(publicOnly);
+    	//ret[0].addTaint(clazz.getTaint());
+    	//ret[0].addTaint(publicOnly);
     	return ret;
     }
     
@@ -210,9 +210,9 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
     	Method ret = new Method();
-    	ret.addTaint(clazz.getTaint());
-    	ret.addTaint(name.getTaint());
-    	ret.addTaint(args[0].getTaint());
+        //    	ret.addTaint(clazz.getTaint());
+    	//ret.addTaint(name.getTaint());
+    	//ret.addTaint(args[0].getTaint());
     	return ret;
     }
     
@@ -268,7 +268,7 @@ private String getSignatureAttribute() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.692 -0400", hash_original_method = "D517197DC7BA53960E7471B1FA197117", hash_generated_method = "580560D142C0CD8EEA5AC831F856A095")
     private Object[] getSignatureAnnotation() {
     	Object[] foo = new Object[0];
-    	foo.addTaint(this.getTaint());
+    	//foo.addTaint(this.getTaint());
     	return foo;
     }
 
@@ -292,18 +292,18 @@ public Class<?>[] getClasses() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.626 -0400", hash_original_method = "F78DA66084C503A2B491A95B3FBC8112", hash_generated_method = "B7A3F7B3DC488C09635B8FBBAAD7576C")
     @Override
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
-        addTaint(annotationType.getTaint());
+        //addTaint(annotationType.getTaint());
         if(annotationType == null)        
         {
             NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_369997871 = new NullPointerException("annotationType == null");
-            varD3565833EFC12BC5822ABFE94D257EDE_369997871.addTaint(getTaint());
+            //varD3565833EFC12BC5822ABFE94D257EDE_369997871.addTaint(getTaint());
             throw varD3565833EFC12BC5822ABFE94D257EDE_369997871;
         } //End block
         A annotation = getDeclaredAnnotation(annotationType);
         if(annotation != null)        
         {
-A varB5EBB19788F53663B19E3EA6F1AE265A_918165834 =             annotation;
-            varB5EBB19788F53663B19E3EA6F1AE265A_918165834.addTaint(getTaint());
+            A varB5EBB19788F53663B19E3EA6F1AE265A_918165834 =             annotation;
+            //varB5EBB19788F53663B19E3EA6F1AE265A_918165834.addTaint(getTaint());
             return varB5EBB19788F53663B19E3EA6F1AE265A_918165834;
         } //End block
         if(annotationType.isAnnotationPresent(Inherited.class))        
@@ -314,13 +314,13 @@ for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
                 if(annotation != null)                
                 {
 A varB5EBB19788F53663B19E3EA6F1AE265A_526672705 =                     annotation;
-                    varB5EBB19788F53663B19E3EA6F1AE265A_526672705.addTaint(getTaint());
+//                    varB5EBB19788F53663B19E3EA6F1AE265A_526672705.addTaint(getTaint());
                     return varB5EBB19788F53663B19E3EA6F1AE265A_526672705;
                 } //End block
             } //End block
         } //End block
-A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
-        var540C13E9E156B687226421B24F2DF178_936883154.addTaint(getTaint());
+        A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
+        //var540C13E9E156B687226421B24F2DF178_936883154.addTaint(getTaint());
         return var540C13E9E156B687226421B24F2DF178_936883154;
         // ---------- Original Method ----------
         //if (annotationType == null) {
@@ -485,7 +485,7 @@ ClassLoader getClassLoaderImpl() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.699 -0400", hash_original_method = "A6D69727DF0CDE095BD59CFD60FF06ED", hash_generated_method = "CDEED6F065A507A7FECB927A85CD4D66")
     public Class<?> getComponentType() {
     	Class<?> cl = (Class)new Object();
-    	cl.addTaint(this.getTaint());
+    	//cl.addTaint(this.getTaint());
     	return cl;
     }
 
@@ -601,7 +601,7 @@ public Constructor<?>[] getConstructors() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "097083D90BBF2FCC58AC81DB8664E54F", hash_generated_method = "33C06C0DC63918D788913C928E9A0C55")
     private <A extends Annotation> A getDeclaredAnnotation(Class<A> annotationClass) {
     	A ret = (A)new Object();
-       	addTaint(annotationClass.getTaint());
+       	//addTaint(annotationClass.getTaint());
     	return ret;
     }
 
@@ -614,7 +614,7 @@ public Constructor<?>[] getConstructors() {
     
     private boolean isDeclaredAnnotationPresent(Class<? extends Annotation> annotationClass){
     	//Formerly a native method
-        return toTaintBoolean(getTaintInt() + annotationClass.getTaintInt());
+        return (((getTaintInt() + annotationClass.getTaintInt())) == 1);
     	//addTaint(annotationClass.getTaint());
     	//return getTaintBoolean();
     }
@@ -1126,7 +1126,7 @@ public String getName() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.755 -0400", hash_original_method = "31D33A7314A957E536E7D171A57CAB24", hash_generated_method = "D2A1F2570A688E342CB66374B5D563FA")
     private String getNameNative() {
-    	String ret = new String("<Class getName()>");
+    	String ret = new String();
     	return ret;
     }
 
@@ -1326,7 +1326,7 @@ public Object[] getSigners() {
 public boolean isAnnotation() {
         final int ACC_ANNOTATION = 0x2000;  // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
-        return toTaintBoolean((mod & ACC_ANNOTATION) + 0);
+        return 1 == ((mod & ACC_ANNOTATION) + 0);
     }
 
     @DSComment("Refelction/class loader")
@@ -1406,7 +1406,7 @@ public boolean isArray() {
     
     public boolean isAssignableFrom(Class<?> cls){
     	//Formerly a native method
-        return toTaintBoolean(getTaintInt() + cls.getTaintInt());
+        return (((getTaintInt() + cls.getTaintInt())) == 1);
     }
 
     /**
@@ -1422,7 +1422,7 @@ public boolean isArray() {
     
 public boolean isEnum() {
         //return ((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class);
-        return toTaintBoolean(getModifiers() + getSuperclass().getTaintInt());
+        return (((getModifiers() + getSuperclass().getTaintInt())) == 1);
     }
 
     /**
@@ -1446,7 +1446,7 @@ public boolean isEnum() {
     	addTaint(object.getTaint());
     	return getTaintBoolean();
     	*/
-        return toTaintBoolean(object.getTaintInt() + getTaintInt());
+        return (((object.getTaintInt() + getTaintInt())) == 1);
     }
 
     /**
@@ -1479,7 +1479,7 @@ public boolean isLocalClass() {
         boolean enclosed = (getEnclosingMethod() != null ||
                          getEnclosingConstructor() != null);
         //return enclosed && !isAnonymousClass();
-        return toTaintBoolean(toTaintInt(enclosed) + toTaintInt(isAnonymousClass()));
+        return 1 == ((enclosed ? 1 : 0) + (isAnonymousClass() ? 1 : 0));
     }
 
     /**
@@ -1526,7 +1526,7 @@ public boolean isMemberClass() {
 public boolean isSynthetic() {
         final int ACC_SYNTHETIC = 0x1000;   // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
-        return toTaintBoolean((mod & ACC_SYNTHETIC) + 0);
+        return 1 == ((mod & ACC_SYNTHETIC) + 0);
     }
 
     /**
@@ -1617,17 +1617,17 @@ public Package getPackage() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "500D2CEF070061FBCB8343E3F70AD3A9", hash_generated_method = "910E7DFE96B4605E85B9C0C2ACD0BD70")
     @SuppressWarnings("unchecked")
     public <U> Class<? extends U> asSubclass(Class<U> clazz) {
-        addTaint(clazz.getTaint());
+        //addTaint(clazz.getTaint());
         if(clazz.isAssignableFrom(this))        
         {
 Class<? extends U> var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090 =             (Class<? extends U>)this;
-            var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090.addTaint(getTaint());
+//var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090.addTaint(getTaint());
             return var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090;
         } //End block
         String actualClassName = this.getName();
         String desiredClassName = clazz.getName();
         ClassCastException var7B10A624B63DE93BBB3082FF2B62182B_1271522509 = new ClassCastException(actualClassName + " cannot be cast to " + desiredClassName);
-        var7B10A624B63DE93BBB3082FF2B62182B_1271522509.addTaint(getTaint());
+        //var7B10A624B63DE93BBB3082FF2B62182B_1271522509.addTaint(getTaint());
         throw var7B10A624B63DE93BBB3082FF2B62182B_1271522509;
         // ---------- Original Method ----------
         //if (clazz.isAssignableFrom(this)) {

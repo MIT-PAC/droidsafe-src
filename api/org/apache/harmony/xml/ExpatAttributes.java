@@ -120,7 +120,7 @@ abstract int getParserPointer();
     
 public abstract int getPointer();
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.266 -0500", hash_original_method = "57C7829583448928D2E62C8F0C20470B", hash_generated_method = "D44D9B2F6F876B0DD533D027E2251D75")
     
 public String getURI(int index) {
@@ -130,7 +130,7 @@ public String getURI(int index) {
         return getURI(getParserPointer(), getPointer(), index);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.268 -0500", hash_original_method = "0BE26DE1FC37C5F8E294AD66DA35C798", hash_generated_method = "75A124B5A812511743303C11A7C5F8BF")
     
 public String getLocalName(int index) {
@@ -139,7 +139,7 @@ public String getLocalName(int index) {
                 : getLocalName(getParserPointer(), getPointer(), index);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.270 -0500", hash_original_method = "0E62167FF9D29B28633236898C212817", hash_generated_method = "86C153B103570822649435FFE000EFBA")
     
 public String getQName(int index) {
@@ -148,7 +148,7 @@ public String getQName(int index) {
                 : getQName(getParserPointer(), getPointer(), index);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.273 -0500", hash_original_method = "906F8D6EEECA09A0EB9B2E9E5289B227", hash_generated_method = "3DA7637C02F123D6A1C9A96EB4E7641F")
     
 public String getType(int index) {
@@ -165,7 +165,7 @@ public String getValue(int index) {
                 : getValueByIndex(getPointer(), index);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.277 -0500", hash_original_method = "C871C7E3F593C081235C517FE9A1E558", hash_generated_method = "5A7D792BE7E975B22C73FB9F60075C99")
     
 public int getIndex(String uri, String localName) {
@@ -182,7 +182,7 @@ public int getIndex(String uri, String localName) {
         return getIndex(pointer, uri, localName);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.279 -0500", hash_original_method = "980758BEF60D7C26C232D3CAD78E7835", hash_generated_method = "7572B56221D3A77033066354DCE60F38")
     
 public int getIndex(String qName) {
@@ -196,7 +196,7 @@ public int getIndex(String qName) {
         return getIndexForQName(pointer, qName);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.281 -0500", hash_original_method = "374AA6D4EA76C101E4A1F3245973703C", hash_generated_method = "36E38E31951FF1891C04A34963A6096F")
     
 public String getType(String uri, String localName) {
@@ -209,7 +209,7 @@ public String getType(String uri, String localName) {
         return getIndex(uri, localName) == -1 ? null : CDATA;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.283 -0500", hash_original_method = "845C2A9D603CFD94A25AD0FA47DD5097", hash_generated_method = "874E9A6EECCAEA1BFA628B6B54FEBDEF")
     
 public String getType(String qName) {

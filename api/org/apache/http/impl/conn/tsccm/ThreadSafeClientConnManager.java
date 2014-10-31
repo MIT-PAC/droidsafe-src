@@ -97,7 +97,7 @@ protected AbstractConnPool createConnectionPool(final HttpParams params) {
      *
      * @return  the connection operator to use
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.006 -0500", hash_original_method = "25E4E60569E24699D7326BD2975E9BC2", hash_generated_method = "CDFBE14A441ACDD32840AD53090D9F1C")
     
 protected ClientConnectionOperator
@@ -131,7 +131,7 @@ public void abortRequest() {
                 poolRequest.abortRequest();
             }
             
-            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSSource({DSSourceKind.NETWORK})
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:39.882 -0400", hash_original_method = "6069BCC0A12724F289E46465DF3930EB", hash_generated_method = "D6BE21BEFC25F7F837BCD631BB872C2F")
             
@@ -243,7 +243,7 @@ public void shutdown() {
      *
      * @return  the total number of pooled connections for that route
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.025 -0500", hash_original_method = "52C9DA1F5E2D598BCB82BD013D1068AD", hash_generated_method = "465C2C57EE0EF189E08CEF080378B6A3")
     
 public int getConnectionsInPool(HttpRoute route) {
@@ -261,7 +261,7 @@ public int getConnectionsInPool(HttpRoute route) {
      */
     @DSComment("not network data manipulation")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.027 -0500", hash_original_method = "A7E68EC885457C399BA150A4DD387F90", hash_generated_method = "AE043477A09E5726953EC376CD87E313")
     
 public int getConnectionsInPool() {

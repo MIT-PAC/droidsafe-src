@@ -107,7 +107,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                   float right, float bottom,
                                                   int regionOp) {
 
-        return toTaintBoolean(nCanvas + left + top + right + bottom + regionOp);
+        return ((nCanvas + left + top + right + bottom + regionOp) == 1);
     }
     
     @DSComment("Private Method")
@@ -115,7 +115,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_clipPath(int nativeCanvas,
                                                   int nativePath,
                                                   int regionOp) {
-        return toTaintBoolean(nativeCanvas + nativePath + regionOp);
+        return ((nativeCanvas + nativePath + regionOp) == 1);
     }
     
     @DSComment("Private Method")
@@ -124,7 +124,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                     int nativeRegion,
                                                     int regionOp) {
 
-        return toTaintBoolean(nativeCanvas + nativeRegion + regionOp);
+        return ((nativeCanvas + nativeRegion + regionOp) == 1);
     }
     
     @DSComment("Private Method")
@@ -137,7 +137,7 @@ protected static void checkRange(int length, int offset, int count) {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_getClipBounds(int nativeCanvas,
                                                        Rect bounds) {
-        return toTaintBoolean(nativeCanvas + bounds.getTaintInt());
+        return (((nativeCanvas + bounds.getTaintInt())) == 1);
     }
     
     @DSComment("Private Method")
@@ -150,7 +150,7 @@ protected static void checkRange(int length, int offset, int count) {
     private static boolean native_quickReject(int nativeCanvas,
                                                      RectF rect,
                                                      int native_edgeType) {
-        return toTaintBoolean(nativeCanvas + rect.getTaintInt() + native_edgeType);
+        return (((nativeCanvas + rect.getTaintInt() + native_edgeType)) == 1);
     }
     
     @DSComment("Private Method")
@@ -159,7 +159,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      int path,
                                                      int native_edgeType) {
 
-        return toTaintBoolean(nativeCanvas + path + native_edgeType);
+        return ((nativeCanvas + path + native_edgeType) == 1);
     }
     
     @DSComment("Private Method")
@@ -168,7 +168,7 @@ protected static void checkRange(int length, int offset, int count) {
                                                      float left, float top,
                                                      float right, float bottom,
                                                      int native_edgeType) {
-        return toTaintBoolean(nativeCanvas + left + top + right + bottom + native_edgeType);
+        return ((nativeCanvas + left + top + right + bottom + native_edgeType) == 1);
     }
     
     @DSComment("Private Method")
@@ -508,8 +508,9 @@ public boolean isHardwareAccelerated() {
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void setBitmap(Bitmap bitmap) {
-		addTaint(bitmap.getTaint());
-		addTaint(bitmap.getDensity()); //getDensity will return a tainted value
+            mBitmap = bitmap;
+            //addTaint(bitmap.getTaint());
+            //addTaint(bitmap.getDensity()); //getDensity will return a tainted value
 		/*
         if (isHardwareAccelerated()) {
             throw new RuntimeException("Can't set a bitmap device on a GL canvas");
@@ -599,8 +600,8 @@ public void setViewport(int width, int height) {
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void setDensity(int density) {
-		addTaint(density);  //Density is saved both here and in the bitmap
-		mBitmap.setDensity(density);  //setDensity will track the taint in the Bitmap object
+            //addTaint(density);  //Density is saved both here and in the bitmap
+            mBitmap.setDensity(density);  //setDensity will track the taint in the Bitmap object
 		/*
         if (mBitmap != null) {
             mBitmap.setDensity(density);
@@ -804,21 +805,21 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
     
     public void restoreToCount(int saveCount){
     	//Formerly a native method
-    	addTaint(saveCount);
+    	//addTaint(saveCount);
     }
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void translate(float dx, float dy) {
-		addTaint(dx);
-		addTaint(dy);
+            //addTaint(dx);
+            //addTaint(dy);
 	}
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void scale(float sx, float sy) {
-		addTaint(sx);
-		addTaint(sy);
+            //addTaint(sx);
+            //addTaint(sy);
 	}
 
     /**
@@ -842,7 +843,7 @@ public final void scale(float sx, float sy, float px, float py) {
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void rotate(float degrees) {
-		addTaint(degrees);
+            //addTaint(degrees);
 	}
 
     /**
@@ -874,14 +875,14 @@ public final void rotate(float degrees, float px, float py) {
     
     public void skew(float sx, float sy){
     	//Formerly a native method
-    	addTaint(sx);
-    	addTaint(sy);
+    	//addTaint(sx);
+    	//addTaint(sy);
     }
     
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public void concat(Matrix matrix) {
-		addTaint(matrix.getTaint());
+            addTaint(matrix.getTaint());
     }
     
     /**
@@ -925,7 +926,7 @@ public void getMatrix(Matrix ctm) {
 public final Matrix getMatrix() {
         Matrix m = new Matrix();
         //getMatrix(m);
-        m.addTaint(getTaint());
+        //m.addTaint(getTaint());
         return m;
     }
     
@@ -941,8 +942,8 @@ public final Matrix getMatrix() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.173 -0500", hash_original_method = "ADF2B4EDD750040189755D8AA2B089F0", hash_generated_method = "11763958C4DDE97C38EB6CF50AA0DC5D")
     
 public boolean clipRect(RectF rect, Region.Op op) {
-        addTaint(rect.getTaint());
-        addTaint(op.nativeInt);
+        //addTaint(rect.getTaint());
+        //addTaint(op.nativeInt);
         return getTaintBoolean();
         /*
         return native_clipRect(mNativeCanvas,
@@ -969,7 +970,7 @@ public boolean clipRect(Rect rect, Region.Op op) {
                                rect.left, rect.top, rect.right, rect.bottom,
                                op.nativeInt);
         */
-        addTaint(rect.getTaintInt() + op.nativeInt);
+        //addTaint(rect.getTaintInt() + op.nativeInt);
         return getTaintBoolean();
     }
 

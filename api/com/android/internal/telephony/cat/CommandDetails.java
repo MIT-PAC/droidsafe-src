@@ -72,7 +72,7 @@ public CommandDetails(Parcel in) {
         commandQualifier = in.readInt();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.975 -0500", hash_original_method = "C0C704DA5801253794AC36F584EC8459", hash_generated_method = "6BA592661465FD7F1BC3FF34B79A1591")
     
 public ComprehensionTlvTag getTag() {
@@ -131,7 +131,7 @@ class DeviceIdentities extends ValueObject {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.004 -0500", hash_original_method = "08D7E03586C546439C1E191A295F1932", hash_generated_method = "08D7E03586C546439C1E191A295F1932")
     
 ComprehensionTlvTag getTag() {
@@ -158,7 +158,7 @@ class IconId extends ValueObject {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.010 -0500", hash_original_method = "FDA08E7237336A8674293BF7C0007438", hash_generated_method = "FDA08E7237336A8674293BF7C0007438")
     
 ComprehensionTlvTag getTag() {
@@ -185,7 +185,7 @@ class ItemsIconId extends ValueObject {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.018 -0500", hash_original_method = "7B0D04191966D298CC63DF323042C1B7", hash_generated_method = "7B0D04191966D298CC63DF323042C1B7")
     
 ComprehensionTlvTag getTag() {

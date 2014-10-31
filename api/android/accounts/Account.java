@@ -61,7 +61,7 @@ public Account(Parcel in) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.359 -0500", hash_original_method = "8952178E80D6EF68D44FC6803A31AC53", hash_generated_method = "E11F1B2B48F4426422AA38A1FF583D29")
     
 public boolean equals(Object o) {
-        return toTaintBoolean(o.getTaintInt() + getTaintInt());
+        return (((o.getTaintInt() + getTaintInt())) == 1);
         /*
         if (o == this) return true;
         if (!(o instanceof Account)) return false;

@@ -167,7 +167,7 @@ public ApnSetting(int id, String numeric, String carrier, String apn,
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.576 -0500", hash_original_method = "A2933E4E94FCB15D27495600AE7ECB36", hash_generated_method = "B90D3A1B8CDDD45FECAA4AF9318F6404")
     
 public String toString() {

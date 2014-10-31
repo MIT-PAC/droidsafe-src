@@ -46,8 +46,8 @@ static int count(Iterator<?> iterator) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:12.547 -0400", hash_original_method = "078A1DB9555D9E606EA5FF406F56B2E6", hash_generated_method = "00940CF90AFA854079CAC5C992323851")
         public int compare(Comparable a, Comparable b) {
             int varC15B2565AD7A5177ED0132648C5386D9_18628642 = (a.compareTo(b));
-            addTaint(a.getTaint());
-            addTaint(b.getTaint());
+            //addTaint(a.getTaint());
+            //addTaint(b.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221955437 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221955437;
             
@@ -80,7 +80,7 @@ static int count(Iterator<?> iterator) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.367 -0400", hash_original_method = "317880CC1AD8B8CC7D9C11CC941EE8C3", hash_generated_method = "C50778A3B9FF17C06EAC39C559AF87B9")
     public  TreeMap(Map<? extends K, ? extends V> copyFrom) {
         this();
-        addTaint(copyFrom.getTaint());
+        //addTaint(copyFrom.getTaint());
         for(Map.Entry<? extends K, ? extends V> entry : copyFrom.entrySet())
         {
             put(entry.getKey(), entry.getValue());
@@ -96,7 +96,7 @@ static int count(Iterator<?> iterator) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.369 -0400", hash_original_method = "C1FE892CAD9D3780A675F5A8CA11F4FA", hash_generated_method = "39BB15B650529D91F63E90DE9C103299")
     @SuppressWarnings("unchecked")
     public  TreeMap(Comparator<? super K> comparator) {
-        addTaint(comparator.getTaint());
+        //addTaint(comparator.getTaint());
         this.comparator = comparator;
         // ---------- Original Method ----------
         //if (comparator != null) {
@@ -111,7 +111,7 @@ static int count(Iterator<?> iterator) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.369 -0400", hash_original_method = "2607F9CE6A88866DC32D385287E67644", hash_generated_method = "88414D93BF999D1A507D7F23D1F831E8")
     @SuppressWarnings("unchecked")
     public  TreeMap(SortedMap<K, ? extends V> copyFrom) {
-        addTaint(copyFrom.getTaint());
+        //addTaint(copyFrom.getTaint());
         Comparator<? super K> sourceComparator = copyFrom.comparator();
         this.comparator = sourceComparator;
 
@@ -136,16 +136,7 @@ static int count(Iterator<?> iterator) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.371 -0400", hash_original_method = "FB8B1056739768AF92CF25DB3C2D30EB", hash_generated_method = "CE6AA112E1019EE80B24D939F4FE6814")
     @Override
     public Object clone() {
-        if (DroidSafeAndroidRuntime.control) 
-        {
-            AssertionError varA81442E36297E737EB908877E58260E8_1101679512 = new AssertionError();
-            varA81442E36297E737EB908877E58260E8_1101679512.addTaint(getTaint());
-            throw varA81442E36297E737EB908877E58260E8_1101679512;
-        } //End block
-        TreeMap<K, V> map = new TreeMap<K, V>(); 
-        map.putAll(this);
-        map.addTaint(getTaint());
-        return map;
+       return this;
         // ---------- Original Method ----------
         //try {
             //@SuppressWarnings("unchecked") 
@@ -161,10 +152,10 @@ static int count(Iterator<?> iterator) {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.384 -0400", hash_original_method = "E2F61A98BB539F90A11465C6A8354CE5", hash_generated_method = "36A8E8F7C8F1548B797F92A82E79587A")
     private SimpleImmutableEntry<K, V> immutableCopy(Entry<K, V> entry) {
-        addTaint(entry.getTaint());
+        //addTaint(entry.getTaint());
         SimpleImmutableEntry<K, V> var00719393D67D40742FD53C80CE0E5B0C_107891035 =         
                 new SimpleImmutableEntry<K, V>(entry);
-        var00719393D67D40742FD53C80CE0E5B0C_107891035.addTaint(getTaint());
+        //var00719393D67D40742FD53C80CE0E5B0C_107891035.addTaint(getTaint());
         return var00719393D67D40742FD53C80CE0E5B0C_107891035;
         // ---------- Original Method ----------
         //return entry == null ? null : new SimpleImmutableEntry<K, V>(entry);
@@ -192,7 +183,7 @@ static int count(Iterator<?> iterator) {
         if(DroidSafeAndroidRuntime.control)
         {
             NoSuchElementException var28D00AB599969908D71F102AF992D49A_873687230 = new NoSuchElementException();
-            var28D00AB599969908D71F102AF992D49A_873687230.addTaint(getTaint());
+            //var28D00AB599969908D71F102AF992D49A_873687230.addTaint(getTaint());
             throw var28D00AB599969908D71F102AF992D49A_873687230;
         } //End block
         return super.getFirstKey();
@@ -226,7 +217,7 @@ static int count(Iterator<?> iterator) {
         if(DroidSafeAndroidRuntime.control)
         {
             NoSuchElementException var28D00AB599969908D71F102AF992D49A_451909438 = new NoSuchElementException();
-            var28D00AB599969908D71F102AF992D49A_451909438.addTaint(getTaint());
+            //var28D00AB599969908D71F102AF992D49A_451909438.addTaint(getTaint());
             throw var28D00AB599969908D71F102AF992D49A_451909438;
         } //End block
         return super.getLastKey();
@@ -240,7 +231,7 @@ static int count(Iterator<?> iterator) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.385 -0400", hash_original_method = "9D71F38DCAD7DBC2AA9FACCDA9CF4866", hash_generated_method = "CE49465CD0F5C880DD3A31B61D48C0EE")
     public Entry<K, V> lowerEntry(K key) {
-        addTaint(key.getTaint());
+        //addTaint(key.getTaint());
         return super.getSomeEntry();
         // ---------- Original Method ----------
         //return immutableCopy(find(key, LOWER));
@@ -259,7 +250,7 @@ static int count(Iterator<?> iterator) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.386 -0400", hash_original_method = "5D12D4D534218428856149792C7C973A", hash_generated_method = "C7817021B619213D3EE27C4AA91BDD1F")
     public Entry<K, V> floorEntry(K key) {
-        addTaint(key.getTaint());
+        //addTaint(key.getTaint());
         return super.getSomeEntry();
         // ---------- Original Method ----------
         //return immutableCopy(find(key, FLOOR));
@@ -269,7 +260,7 @@ static int count(Iterator<?> iterator) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.386 -0400", hash_original_method = "9E3521C1E5D0BB4CA97E65B4B91FC561", hash_generated_method = "880CD88C17EE808F26C08DF26CFB2B4F")
     public K floorKey(K key) {
-        addTaint(key.getTaint());
+    //addTaint(key.getTaint());
         return floorEntry(key).getKey();
         // ---------- Original Method ----------
         //Entry<K, V> entry = find(key, FLOOR);
@@ -279,7 +270,7 @@ static int count(Iterator<?> iterator) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.386 -0400", hash_original_method = "14BBCA12BBBC651385215255CDF3836D", hash_generated_method = "80B3DF47CCA9DFA0A0B061B97C037B4B")
     public Entry<K, V> ceilingEntry(K key) {
-        addTaint(key.getTaint());
+        //addTaint(key.getTaint());
         return super.getSomeEntry();
         // ---------- Original Method ----------
         //return immutableCopy(find(key, CEILING));
@@ -321,7 +312,7 @@ static int count(Iterator<?> iterator) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.388 -0400", hash_original_method = "6A8618E17145F23513711DA8498038AE", hash_generated_method = "671CFE180618C227BE3F9BE8B24C616A")
     public Comparator<? super K> comparator() {
 Comparator<? super K> varFC8F75816E5A2BE67601D262F4DD4CC3_1185112911 = comparator;        
-        varFC8F75816E5A2BE67601D262F4DD4CC3_1185112911.addTaint(getTaint());
+//varFC8F75816E5A2BE67601D262F4DD4CC3_1185112911.addTaint(getTaint());
         return varFC8F75816E5A2BE67601D262F4DD4CC3_1185112911;
         // ---------- Original Method ----------
         //return comparator != NATURAL_ORDER ? comparator : null;
@@ -332,7 +323,7 @@ Comparator<? super K> varFC8F75816E5A2BE67601D262F4DD4CC3_1185112911 = comparato
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.389 -0400", hash_original_method = "016115EA38C293C7AAA8E892AEA754CA", hash_generated_method = "D88D54D5795839FF7F07BA1C52D59A51")
     public NavigableSet<K> navigableKeySet() {
         NavigableSet<K> varA3D98E595497E0937159D5BF4C5A28F3_450087542 = new KeySet();
-        varA3D98E595497E0937159D5BF4C5A28F3_450087542.addTaint(getTaint());
+        //varA3D98E595497E0937159D5BF4C5A28F3_450087542.addTaint(getTaint());
         return varA3D98E595497E0937159D5BF4C5A28F3_450087542;
         // ---------- Original Method ----------
         //KeySet result = keySet;
@@ -555,7 +546,7 @@ public K higher(K key) {
         public K pollFirst() {
             Entry<K, V> entry = getFirstEntry();
             K var15DE16EBAA69B0A4EA051FB5DEC39C10_1410747018 = entry != null ? entry.getKey() : null;
-            var15DE16EBAA69B0A4EA051FB5DEC39C10_1410747018.addTaint(getTaint());
+            //var15DE16EBAA69B0A4EA051FB5DEC39C10_1410747018.addTaint(getTaint());
             return var15DE16EBAA69B0A4EA051FB5DEC39C10_1410747018;
             // ---------- Original Method ----------
             //Entry<K, V> entry = internalPollFirstEntry();
@@ -567,7 +558,7 @@ public K higher(K key) {
         public K pollLast() {
             Entry<K, V> entry = getLastEntry();
             K var15DE16EBAA69B0A4EA051FB5DEC39C10_237366973 =             entry != null ? entry.getKey() : null;
-            var15DE16EBAA69B0A4EA051FB5DEC39C10_237366973.addTaint(getTaint());
+            //var15DE16EBAA69B0A4EA051FB5DEC39C10_237366973.addTaint(getTaint());
             return var15DE16EBAA69B0A4EA051FB5DEC39C10_237366973;
             // ---------- Original Method ----------
             //Entry<K, V> entry = internalPollLastEntry();
@@ -624,7 +615,7 @@ public SortedSet<K> tailSet(K fromInclusive) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.397 -0400", hash_original_method = "1704B63D396CC7A2877008D7CE821A20", hash_generated_method = "130374D647FE97BA9B570550A5F45882")
         public NavigableSet<K> descendingSet() {
             NavigableSet<K> var147103AFA753373FDDCF430FA02E998F_940472183 = new KeySet();
-            var147103AFA753373FDDCF430FA02E998F_940472183.addTaint(getTaint());
+            //var147103AFA753373FDDCF430FA02E998F_940472183.addTaint(getTaint());
             return var147103AFA753373FDDCF430FA02E998F_940472183;
             // ---------- Original Method ----------
             //return new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet();
@@ -814,11 +805,11 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
              if (DroidSafeAndroidRuntime.control)
              {
                  NoSuchElementException var28D00AB599969908D71F102AF992D49A_1341202273 = new NoSuchElementException();
-                 var28D00AB599969908D71F102AF992D49A_1341202273.addTaint(getTaint());
+                 //var28D00AB599969908D71F102AF992D49A_1341202273.addTaint(getTaint());
                  throw var28D00AB599969908D71F102AF992D49A_1341202273;
              } //End block
              K varE5CD6225CB16CF7AEFEC373E217B052C_347516471 = getFirstKey();
-             varE5CD6225CB16CF7AEFEC373E217B052C_347516471.addTaint(getTaint());
+             //varE5CD6225CB16CF7AEFEC373E217B052C_347516471.addTaint(getTaint());
              return varE5CD6225CB16CF7AEFEC373E217B052C_347516471;
              // ---------- Original Method ----------
              //Entry<K, V> entry = endpoint(true);
@@ -832,7 +823,7 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.406 -0400", hash_original_method = "3349B358C55B472B88F39549996E074C", hash_generated_method = "A78AA2AEE5BBE2BAA15204452435ACB1")
          public Entry<K, V> lastEntry() {
              Entry<K, V> varDB864FBFECFDD7EF32688DE10742D92E_84084912 =  getLastEntry();
-             varDB864FBFECFDD7EF32688DE10742D92E_84084912.addTaint(getTaint());
+             //varDB864FBFECFDD7EF32688DE10742D92E_84084912.addTaint(getTaint());
              return varDB864FBFECFDD7EF32688DE10742D92E_84084912;
              // ---------- Original Method ----------
              //return immutableCopy(endpoint(false));
@@ -842,7 +833,7 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.407 -0400", hash_original_method = "4E391E55891B2D72162CA8FBBFDB8088", hash_generated_method = "CDA95D4A9FCD45FFE54B9FF98BF0CCAE")
          public Entry<K, V> pollLastEntry() {
              Entry<K, V> var6B63F11358115BF1F4CDE6AD6F400177_1564928535 =  removeLastEntry();
-             var6B63F11358115BF1F4CDE6AD6F400177_1564928535.addTaint(getTaint());
+             //var6B63F11358115BF1F4CDE6AD6F400177_1564928535.addTaint(getTaint());
              return var6B63F11358115BF1F4CDE6AD6F400177_1564928535;
              // ---------- Original Method ----------
              //Node<K, V> result = endpoint(false);
@@ -858,11 +849,11 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
              if(DroidSafeAndroidRuntime.control)
              {
                  NoSuchElementException var28D00AB599969908D71F102AF992D49A_2022465659 = new NoSuchElementException();
-                 var28D00AB599969908D71F102AF992D49A_2022465659.addTaint(getTaint());
+                 //var28D00AB599969908D71F102AF992D49A_2022465659.addTaint(getTaint());
                  throw var28D00AB599969908D71F102AF992D49A_2022465659;
              } //End block
              K varE5CD6225CB16CF7AEFEC373E217B052C_1394501131 =  getLastKey(); 
-             varE5CD6225CB16CF7AEFEC373E217B052C_1394501131.addTaint(getTaint());
+             //varE5CD6225CB16CF7AEFEC373E217B052C_1394501131.addTaint(getTaint());
              return varE5CD6225CB16CF7AEFEC373E217B052C_1394501131;
              // ---------- Original Method ----------
              //Entry<K, V> entry = endpoint(false);
@@ -881,7 +872,7 @@ BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
              Bound toBoundForCheck = toBound;
              
              Entry<K, V> var5E7C8E05686CD046B5E518E1A524CD5B_736542112 =  getSomeEntry();
-             var5E7C8E05686CD046B5E518E1A524CD5B_736542112.addTaint(getTaint());
+             //var5E7C8E05686CD046B5E518E1A524CD5B_736542112.addTaint(getTaint());
              return var5E7C8E05686CD046B5E518E1A524CD5B_736542112;
              // ---------- Original Method ----------
              // Original Method Too Long, Refer to Original Implementation
@@ -1064,7 +1055,7 @@ public NavigableMap<K, V> tailMap(K fromInclusive) {
                  if(!isInBounds(from, fromBoundToCheck, this.toBound))                
                  {
                      IllegalArgumentException varAAE60559F56B2D07E4FD593449F5EA72_1154125570 = outOfBounds(to, fromBoundToCheck, this.toBound);
-                     varAAE60559F56B2D07E4FD593449F5EA72_1154125570.addTaint(getTaint());
+                     //varAAE60559F56B2D07E4FD593449F5EA72_1154125570.addTaint(getTaint());
                      throw varAAE60559F56B2D07E4FD593449F5EA72_1154125570;
                  } //End block
              } //End block
@@ -1079,12 +1070,12 @@ public NavigableMap<K, V> tailMap(K fromInclusive) {
                  if(!isInBounds(to, this.fromBound, toBoundToCheck))                
                  {
                      IllegalArgumentException var56B3D45BCEE596AC83A0B23A3B92857C_293578796 = outOfBounds(to, this.fromBound, toBoundToCheck);
-                     var56B3D45BCEE596AC83A0B23A3B92857C_293578796.addTaint(getTaint());
+                     //var56B3D45BCEE596AC83A0B23A3B92857C_293578796.addTaint(getTaint());
                      throw var56B3D45BCEE596AC83A0B23A3B92857C_293578796;
                  } //End block
              } //End block
              NavigableMap<K, V> varEC04A97C55B7258B88C9CBFBFF445575_3340594 =             new BoundedMap(ascending, from, fromBound, to, toBound);
-             varEC04A97C55B7258B88C9CBFBFF445575_3340594.addTaint(getTaint());
+             //varEC04A97C55B7258B88C9CBFBFF445575_3340594.addTaint(getTaint());
              return varEC04A97C55B7258B88C9CBFBFF445575_3340594;
              // ---------- Original Method ----------
              // Original Method Too Long, Refer to Original Implementation
@@ -1102,7 +1093,7 @@ private IllegalArgumentException outOfBounds(Object value, Bound fromBound, Boun
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.439 -0400", hash_original_method = "9F20C8CFE1A741092D9743A31C3F8586", hash_generated_method = "83FB27AB0EB8C1109558C0AF671DF845")
          Object writeReplace() throws ObjectStreamException {
              Object var7F4944441F64C47E165D9A9EC6DB3E3C_1279999326 = new Object(); 
-             var7F4944441F64C47E165D9A9EC6DB3E3C_1279999326.addTaint(getTaint());
+             //var7F4944441F64C47E165D9A9EC6DB3E3C_1279999326.addTaint(getTaint());
              return var7F4944441F64C47E165D9A9EC6DB3E3C_1279999326;
              // ---------- Original Method ----------
              //return ascending

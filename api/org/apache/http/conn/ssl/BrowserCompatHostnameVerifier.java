@@ -24,7 +24,7 @@ public final void verify(
         verify(host, cns, subjectAlts, false);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.854 -0500", hash_original_method = "94D0B9A8609089C8ED7C7100365BC140", hash_generated_method = "BE653C5EDDDF61D380B1C56384ED39D2")
     

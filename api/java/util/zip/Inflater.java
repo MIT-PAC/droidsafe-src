@@ -66,7 +66,7 @@ public Inflater(boolean noHeader) {
     private long createStream(boolean noHeader1){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(noHeader1);
+    	taintDouble += ((noHeader1) ? 1 : 0);
     	addTaint(taintDouble);
     
     	return (long)taintDouble;

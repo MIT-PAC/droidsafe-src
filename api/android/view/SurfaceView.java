@@ -873,7 +873,7 @@ private void updateWindow(boolean force, boolean redrawNeeded) {
                     
                     final int surfaceWidth = mSurfaceFrame.right;
                     final int surfaceHeight = mSurfaceFrame.bottom;
-                    realSizeChanged = toTaintBoolean(mLastSurfaceWidth + mLastSurfaceHeight + 
+                    realSizeChanged = 1 == (mLastSurfaceWidth + mLastSurfaceHeight + 
                                                     surfaceWidth + surfaceHeight);
                     mLastSurfaceWidth = surfaceWidth;
                     mLastSurfaceHeight = surfaceHeight;

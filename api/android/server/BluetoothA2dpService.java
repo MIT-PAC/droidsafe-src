@@ -700,7 +700,7 @@ private void onConnectSinkResult(String deviceObjectPath, boolean result) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:22:06.585 -0400", hash_original_method = "0C2EE552DC7F558BD6A4A53E3AFE7F2F", hash_generated_method = "98CBBA9AEDB786D020329F7CBF121502")
@@ -717,7 +717,7 @@ private void onConnectSinkResult(String deviceObjectPath, boolean result) {
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:33.201 -0400", hash_original_method = "403324192B795BCA5743A71826DA520B", hash_generated_method = "8484FA5FA0807BD3046ACEC419E65992")
@@ -728,7 +728,7 @@ private void onConnectSinkResult(String deviceObjectPath, boolean result) {
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:33.205 -0400", hash_original_method = "B0E2A721781E8336DD74015E36F93AF2", hash_generated_method = "8E4F41701E019C7DD048BA612C75DE85")
@@ -739,7 +739,7 @@ private void onConnectSinkResult(String deviceObjectPath, boolean result) {
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:33.209 -0400", hash_original_method = "EFB7529219D3C04F81399BB83968494E", hash_generated_method = "E8329001BD409C579E631008CB15DAAA")
@@ -750,7 +750,7 @@ private void onConnectSinkResult(String deviceObjectPath, boolean result) {
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:33.213 -0400", hash_original_method = "EBC56FED6C650E0906D172BC3BEF88DD", hash_generated_method = "3A848EA1BC130911E7A86760BA20878E")
@@ -775,7 +775,7 @@ private void onConnectSinkResult(String deviceObjectPath, boolean result) {
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:33.220 -0400", hash_original_method = "9BA8689E3938B2DF476597636059B0E6", hash_generated_method = "DEF3A7DB947CF8B54A0ED0C8E709DDE1")
@@ -786,7 +786,7 @@ private void onConnectSinkResult(String deviceObjectPath, boolean result) {
     	taintDouble += path.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 }

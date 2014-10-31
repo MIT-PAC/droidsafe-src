@@ -73,7 +73,7 @@ static int bitCount(BigInteger val) {
 static boolean testBit(BigInteger val, int n) {
         val.prepareJavaRepresentation();
         // PRE: 0 <= n < val.bitLength()
-        return toTaintBoolean(((val.digits[n >> 5] & (1 << (n & 31))) + 0));
+        return 1 == (((val.digits[n >> 5] & (1 << (n & 31))) + 0));
     }
 
     /**
@@ -95,7 +95,7 @@ static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
             ;
         }
         //return ((i != intCount) || (digits[i] << (32 - bitCount) != 0));
-        return toTaintBoolean(numberOfBits + digits[0]);
+        return ((numberOfBits + digits[0]) == 1);
     }
 
     @DSComment("Package priviledge")

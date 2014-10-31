@@ -17,7 +17,7 @@ public final class DOMImplementationImpl implements DOMImplementation {
      *
      * @return The singleton Android DOMImplementationImpl instance.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.149 -0500", hash_original_method = "37FEFE6F908BEC1F33DA86D06B31B3D4", hash_generated_method = "FEB95F4D075C0905BCC04B590962FC6B")
     
 public static DOMImplementationImpl getInstance() {
@@ -75,7 +75,7 @@ public boolean hasFeature(String feature, String version) {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.152 -0500", hash_original_method = "F21DF5440792B1D9F1F89E7A46F56ED2", hash_generated_method = "1AEA478582F0F07A4FE8A7CB652A4BE8")
     
 public Object getFeature(String feature, String version) {

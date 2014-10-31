@@ -60,7 +60,7 @@ protected void finalize() {
         super.handleMessage(msg);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.384 -0500", hash_original_method = "607B460DC742A6DBDB6C6AB4B03B96A2", hash_generated_method = "32779E0C05F7B98AC48AD904F7F2057A")
     
 protected String getEFPath(int efid) {

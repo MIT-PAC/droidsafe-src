@@ -257,7 +257,7 @@ public InetAddress getInetAddress() {
      */
     @DSComment("Could try to obtain device IP")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.626 -0500", hash_original_method = "120EDBD12BFFA2CD78689E1CCCEFC0A6", hash_generated_method = "A531F469508AA52D412D092323D2C43A")
     
 public InetAddress getLocalAddress() {
@@ -278,7 +278,7 @@ public InetAddress getLocalAddress() {
      */
     @DSComment("no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.628 -0500", hash_original_method = "C20A7438B6018D8C8B6C316459831E1B", hash_generated_method = "E91F065498979E799788353E3516CE74")
     
 public int getLocalPort() {
@@ -383,6 +383,8 @@ public synchronized void receive(DatagramPacket pack) throws IOException {
 
         pack.setLength(pack.getCapacity());
         impl.receive(pack);
+        pack.setAddress(new InetAddress(0, new byte[1], new String()));
+        pack.setData(new byte[1]);
         // pack's length field is now updated by native code call;
         // pack's capacity field is unchanged
     }
@@ -404,7 +406,6 @@ public void send(DatagramPacket pack) throws IOException {
         pack.getTaint();
         checkOpen();
         ensureBound();
-        this.addTaint(pack.data[0]);
 
         InetAddress packAddr = pack.getAddress();
         if (address != null) { // The socket is connected

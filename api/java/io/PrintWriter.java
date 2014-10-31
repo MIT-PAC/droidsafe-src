@@ -796,7 +796,7 @@ private final void doWrite(char[] buf, int offset, int count) {
     
 @Override
     public void write(String str) {
-        write(str.toCharArray());
+        addTaint(str.getTaint());
     }
 
     /**
@@ -819,7 +819,8 @@ private final void doWrite(char[] buf, int offset, int count) {
     
 @Override
     public void write(String str, int offset, int count) {
-        write(str.substring(offset, offset + count).toCharArray());
+        addTaint(offset + count);  
+        addTaint(str.getTaint());
     }
 
     /**

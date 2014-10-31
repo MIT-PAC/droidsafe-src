@@ -438,33 +438,33 @@ public class GLES20 {
 	}
     
     public static boolean glIsBuffer(int buffer) {
-        return toTaintBoolean(buffer + 0);
+        return ((buffer + 0) == 1);
 	}
     
     public static boolean glIsEnabled(int cap) {
-        return toTaintBoolean(cap + 0);
+        return ((cap + 0) == 1);
 	}
     
     public static boolean glIsFramebuffer(int framebuffer) {
-        return toTaintBoolean(framebuffer + 0);
+        return ((framebuffer + 0) == 1);
 	}
     
     public static boolean glIsProgram(int program) {
-        return toTaintBoolean(program + 0);
+        return ((program + 0) == 1);
 	}
     
     public static boolean glIsRenderbuffer(int renderbuffer) {
-        return toTaintBoolean(renderbuffer + 0);
+        return ((renderbuffer + 0) == 1);
 	}
     
     public static boolean glIsShader(int shader) {
-        return toTaintBoolean(shader + 0);
+        return ((shader + 0) == 1);
 	}
     
     @DSComment("OpenGL Graphics Manipulation")
     @DSSafe(DSCat.GRAPHICS)
     public static boolean glIsTexture(int texture) {
-        return toTaintBoolean(texture + 0);
+        return ((texture + 0) == 1);
 	}
     
     @DSComment("OpenGL Graphics Manipulation")

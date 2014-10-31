@@ -399,7 +399,7 @@ static boolean isExternalizable(Class<?> cl) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.359 -0500", hash_original_method = "6FE1F5C82C04AB08E12223950D7EB08A", hash_generated_method = "0970F67E09B2A5AAF9041B560FB4FFF3")
     
 static boolean isPrimitiveType(char typecode) {
-        return toTaintBoolean((typecode + '[' + typecode + 'L'));
+        return 1 == ((typecode + '[' + typecode + 'L'));
     }
 
     /**

@@ -46,7 +46,7 @@ public AudioStream(InetAddress address) throws SocketException {
     /**
      * Returns the joined {@link AudioGroup}.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.062 -0500", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "13763D327C25270880CF36A0BD0A059D")
     
 public AudioGroup getGroup() {
@@ -87,7 +87,7 @@ public void join(AudioGroup group) {
      *
      * @see #setCodec(AudioCodec)
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.066 -0500", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "5487DAF43AFC33675BBC0738CAC2EA16")
     
 public AudioCodec getCodec() {
@@ -119,7 +119,7 @@ public void setCodec(AudioCodec codec) {
      *
      * @see #setDtmfType(int)
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.071 -0500", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "3C0067CBF059856A8FA81892062A2D81")
     
 public int getDtmfType() {

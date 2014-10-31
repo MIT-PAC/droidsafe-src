@@ -52,7 +52,7 @@ public abstract String getAddress();
      * Gets CDMA CNAP name associated with connection.
      * @return cnap name or null if unavailable
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.350 -0500", hash_original_method = "2C38CD1ADD524A252486CD5B36783C9F", hash_generated_method = "977B46BF7C6BECB233470445DAA69B61")
     
 public String getCnapName() {
@@ -63,7 +63,7 @@ public String getCnapName() {
      * Get original dial string.
      * @return original dial string or null if unavailable
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.352 -0500", hash_original_method = "451C5F2C0CC4276FE6380FF80081B9A6", hash_generated_method = "E1B4B45B5D082442182B78D1A2D1DC36")
     
 public String getOrigDialString(){
@@ -75,7 +75,7 @@ public String getOrigDialString(){
      * @return cnap name or null if unavailable
      */
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.355 -0500", hash_original_method = "2E0374E6F9E8D6BE31ABEC176AD57E5E", hash_generated_method = "78A115B1616402C8FA483E3309971C35")
     
 public int getCnapNamePresentation() {
@@ -216,7 +216,7 @@ public boolean
      *
      * @return the userdata set in setUserData()
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.383 -0500", hash_original_method = "E65D3701CFC74E9E6B255CE6C7739495", hash_generated_method = "2F8A7CB1E20B4B0B7AAD4274D395C82D")
     
 public Object getUserData() {
@@ -377,7 +377,7 @@ public abstract UUSInfo getUUSInfo();
      * @return a string representing the internal state of this connection.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.414 -0500", hash_original_method = "81B11B98158DBCB6EBD3953D4E6C7CF3", hash_generated_method = "F9D02C82B1FE8820E8127AA89EF8D779")
     
 public String toString() {

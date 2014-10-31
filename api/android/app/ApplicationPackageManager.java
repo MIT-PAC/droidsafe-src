@@ -959,7 +959,7 @@ ApplicationPackageManager(ContextImpl context,
             if (mCachedSafeMode < 0) {
                 mCachedSafeMode = mPM.isSafeMode() ? 1 : 0;
             }
-            return toTaintBoolean(mCachedSafeMode + toTaintInt(mPM.isSafeMode())); 
+            return 1 == (mCachedSafeMode + (((mPM.isSafeMode())) ? 1 : 0)); 
         } catch (RemoteException e) {
             throw new RuntimeException("Package manager has died", e);
         }

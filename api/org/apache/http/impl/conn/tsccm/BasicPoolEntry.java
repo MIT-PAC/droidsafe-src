@@ -36,7 +36,7 @@ public BasicPoolEntry(ClientConnectionOperator op,
         this.reference = new BasicPoolEntryRef(this, queue);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.132 -0500", hash_original_method = "833089AC155D5F0DD92B0C74A18F2763", hash_generated_method = "6DBABF868B1BA6B5FD49B300E658EAE5")
     
 protected final OperatedClientConnection getConnection() {

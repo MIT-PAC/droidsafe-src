@@ -1026,7 +1026,7 @@ public boolean onCreatePanelMenu(int featureId, Menu menu) {
 public boolean onPreparePanel(int featureId, View view, Menu menu) {
         if (featureId == Window.FEATURE_OPTIONS_PANEL && menu != null) {
             boolean goforit = onPrepareOptionsMenu(menu);
-            return toTaintBoolean(toTaintInt(goforit) + toTaintInt(menu.hasVisibleItems()));
+            return 1 == (((goforit) ? 1 : 0) + (((menu.hasVisibleItems())) ? 1 : 0));
         }
         return true;
     }

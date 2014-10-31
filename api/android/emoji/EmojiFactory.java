@@ -275,7 +275,7 @@ public int getMaximumAndroidPua() {
     
     private void nativeDestructor(int factory){
     	//Formerly a native method
-    	addTaint(factory);
+    	//addTaint(factory);
     }
     
     @DSComment("Private Method")
@@ -283,7 +283,7 @@ public int getMaximumAndroidPua() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.143 -0400", hash_original_method = "3AA105C3169886A719F2BF7A3237E4A3", hash_generated_method = "1FEDBE13E2C3435ECCCBB1756DB5C9E3")
 	private Bitmap nativeGetBitmapFromAndroidPua(int nativeEmojiFactory, int AndroidPua) {
 		Bitmap bm = new Bitmap();
-		bm.addTaint(this.getTaint());
+		//bm.addTaint(this.getTaint());
 		return bm;
 	}
     @DSComment("Private Method")
@@ -293,8 +293,8 @@ public int getMaximumAndroidPua() {
     private int nativeGetAndroidPuaFromVendorSpecificSjis(int nativeEmojiFactory,
                 char sjis){
     	//Formerly a native method
-    	addTaint(nativeEmojiFactory);
-    	addTaint(sjis);
+    	//addTaint(nativeEmojiFactory);
+    	//addTaint(sjis);
     	return getTaintInt();
     }
 
@@ -305,8 +305,8 @@ public int getMaximumAndroidPua() {
     private int nativeGetVendorSpecificSjisFromAndroidPua(int nativeEmojiFactory,
                 int pua){
     	//Formerly a native method
-    	addTaint(nativeEmojiFactory);
-    	addTaint(pua);
+    	//addTaint(nativeEmojiFactory);
+    	//addTaint(pua);
     	return getTaintInt();
     }
 
@@ -317,8 +317,8 @@ public int getMaximumAndroidPua() {
     private int nativeGetAndroidPuaFromVendorSpecificPua(int nativeEmojiFactory,
                 int vsp){
     	//Formerly a native method
-    	addTaint(nativeEmojiFactory);
-    	addTaint(vsp);
+    	//addTaint(nativeEmojiFactory);
+    	//addTaint(vsp);
     	return getTaintInt();
     }
 
@@ -329,8 +329,8 @@ public int getMaximumAndroidPua() {
     private int nativeGetVendorSpecificPuaFromAndroidPua(int nativeEmojiFactory,
                 int pua){
     	//Formerly a native method
-    	addTaint(nativeEmojiFactory);
-    	addTaint(pua);
+    	//addTaint(nativeEmojiFactory);
+    	//addTaint(pua);
     	return getTaintInt();
     }
 
@@ -340,7 +340,7 @@ public int getMaximumAndroidPua() {
     
     private int nativeGetMaximumVendorSpecificPua(int nativeEmojiFactory){
     	//Formerly a native method
-    	addTaint(nativeEmojiFactory);
+    	//addTaint(nativeEmojiFactory);
     	return getTaintInt();
     }
 
@@ -350,7 +350,7 @@ public int getMaximumAndroidPua() {
     
     private int nativeGetMinimumVendorSpecificPua(int nativeEmojiFactory){
     	//Formerly a native method
-    	addTaint(nativeEmojiFactory);
+    	//addTaint(nativeEmojiFactory);
     	return getTaintInt();
     }
 
@@ -360,7 +360,7 @@ public int getMaximumAndroidPua() {
     
     private int nativeGetMaximumAndroidPua(int nativeEmojiFactory){
     	//Formerly a native method
-    	addTaint(nativeEmojiFactory);
+    	//addTaint(nativeEmojiFactory);
     	return getTaintInt();
     }
 
@@ -370,7 +370,7 @@ public int getMaximumAndroidPua() {
     
     private int nativeGetMinimumAndroidPua(int nativeEmojiFactory){
     	//Formerly a native method
-    	addTaint(nativeEmojiFactory);
+    	//addTaint(nativeEmojiFactory);
     	return getTaintInt();
     }
     
@@ -392,7 +392,7 @@ public CustomLinkedHashMap() {
         
 @Override
         protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
-            return toTaintBoolean(size() + sCacheSize);
+            return (((size() + sCacheSize)) == 1);
         }
         
     }

@@ -171,7 +171,7 @@ public int getVboId() {
     	taintDouble += size;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:45.886 -0400", hash_original_method = "C5D13A7D2DE40061D17A5A19349F9B46", hash_generated_method = "B240A7932BE0CB51D42FA1BDE6059C94")
@@ -180,7 +180,7 @@ public int getVboId() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.828 -0400", hash_original_method = "B008EA5EAE1D78CF60323223B23112C0", hash_generated_method = "DB9D3915DCF330A7854A0E564C5106A0")
@@ -193,7 +193,7 @@ public int getVboId() {
     	taintDouble += length;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.831 -0400", hash_original_method = "2047716A79A9E9406699C20C7A268A40", hash_generated_method = "431F2A0CB3A7814C0347AEEA4DA821C1")
@@ -204,7 +204,7 @@ public int getVboId() {
     	taintDouble += ints[0];
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.835 -0400", hash_original_method = "88CBED05920219A258C2F99CB4EDFE1D", hash_generated_method = "C0A8BCC26755F86A54824EBDD91E7B3C")
@@ -215,7 +215,7 @@ public int getVboId() {
     	taintDouble += floats[0];
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:45.898 -0400", hash_original_method = "F5E0A87A45A339E1E99CABC265EAF2A4", hash_generated_method = "20CEC4C717A81A984B6DB7224BFF3610")

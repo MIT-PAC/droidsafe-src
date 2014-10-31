@@ -44,7 +44,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.121 -0400", hash_original_method = "CA8A1B06476946B0324CCA25F612E720", hash_generated_method = "5A556DD598DD4B7AE272E66D69A80C0F")
     public void addFirst(E object) {
-        addTaint(object.getTaint());
+        //addTaint(object.getTaint());
         addElementAt(0, object);
         // ---------- Original Method ----------
         //addFirstImpl(object);
@@ -54,7 +54,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.122 -0400", hash_original_method = "13A36680ECD01352EC1F894705FA522D", hash_generated_method = "5E57D6CF03EA15D68138243087D069FE")
     public void addLast(E object) {
-        addTaint(object.getTaint());
+        //addTaint(object.getTaint());
         addElementAt(size()-1, object);
         // ---------- Original Method ----------
         //addLastImpl(object);
@@ -66,12 +66,7 @@ public LinkedList(Collection<? extends E> collection) {
     @SuppressWarnings("unchecked")
     @Override
     public Object clone() {
-
-        LinkedList l = new LinkedList();
-        l.addAll(this);
-        Object var792FD495AAD83D144D2F19BF9BB22987_1928323188 =             l;
-        var792FD495AAD83D144D2F19BF9BB22987_1928323188.addTaint(getTaint());
-        return var792FD495AAD83D144D2F19BF9BB22987_1928323188;
+        return this;
     }
     
     @DSComment("From safe class list")
@@ -79,7 +74,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.126 -0400", hash_original_method = "0073A2AD94DC363435B793B69AD53800", hash_generated_method = "82AD0E2AD0C962DA96A1294602E8A14B")
     public E getFirst() {
         E var47B6E8AF818F6390E3E49621F01F780F_453290605 =         getElementAt(0);
-        var47B6E8AF818F6390E3E49621F01F780F_453290605.addTaint(getTaint());
+        //var47B6E8AF818F6390E3E49621F01F780F_453290605.addTaint(getTaint());
         return var47B6E8AF818F6390E3E49621F01F780F_453290605;
         // ---------- Original Method ----------
         //return getFirstImpl();
@@ -91,12 +86,12 @@ public LinkedList(Collection<? extends E> collection) {
     public E getLast() {
         if (DroidSafeAndroidRuntime.control) {
             NoSuchElementException var28D00AB599969908D71F102AF992D49A_1562898767 = new NoSuchElementException();
-            var28D00AB599969908D71F102AF992D49A_1562898767.addTaint(getTaint());
+            //var28D00AB599969908D71F102AF992D49A_1562898767.addTaint(getTaint());
             throw var28D00AB599969908D71F102AF992D49A_1562898767;
         }
 
         E lastData = getElementAt(size() -1);
-        lastData.addTaint(getTaint());
+        //lastData.addTaint(getTaint());
         return lastData;
 
         // ---------- Original Method ----------
@@ -144,7 +139,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "B739DCE0B4C0EF3D97CD82250338592B", hash_generated_method = "5BFD32313DD750C7CA5760471E7BA36B")
     public Iterator<E> descendingIterator() {
         Iterator<E> iter = getReverseIterator();
-        iter.addTaint(getTaint());
+        //iter.addTaint(getTaint());
         return iter;
         // ---------- Original Method ----------
         //return new ReverseLinkIterator<E>(this);
@@ -154,7 +149,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "EDFB7FC0634DB7C00BD3AB035EBD094A", hash_generated_method = "78D7639AE5EBC21A98948F5640215680")
     public boolean offerFirst(E e) {
-        addTaint(e.getTaint());
+        //addTaint(e.getTaint());
         addFirstElement(e);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_421322830 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_421322830;
@@ -166,7 +161,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.133 -0400", hash_original_method = "89DCF7809C68E43568923DE3D2E1D02D", hash_generated_method = "1E07379150837DD74ABC9481EE0631B5")
     public boolean offerLast(E e) {
-        addTaint(e.getTaint());
+        //addTaint(e.getTaint());
         addLastElement(e);
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_388533516 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_388533516;
@@ -179,8 +174,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "969AA46310549C7B2FEE1AAA28767998", hash_generated_method = "22691D0470A83276A2325A7168F7857B")
     public E peekFirst() {
         E elem = getFirstElement();
-        if (elem != null)
-            elem.addTaint(getTaint());
+        //elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //return peekFirstImpl();
@@ -191,8 +185,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "E1ADBCAD0BAE3B6D44E0B3EBBD31EB6D", hash_generated_method = "024A9E03091FFAC89C64A05EB8A81FCD")
     public E peekLast() {
         E elem = getLastElement();
-        if (elem != null)
-            elem.addTaint(getTaint());
+        //elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //Link<E> last = voidLink.previous;
@@ -204,8 +197,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "E15F23512F244F97C3914B4E0B9502A4", hash_generated_method = "1A057191B4C5100708D2FBE5065E8D57")
     public E pollFirst() {
         E elem = removeFirstElement();
-        if (elem != null)
-            elem.addTaint(getTaint());
+        //elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //return (size == 0) ? null : removeFirstImpl();
@@ -216,8 +208,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "70D8873C9DDF66392CA17B903A435D10", hash_generated_method = "D8A7FF381D9EC211AEFBBB90A4CAA3B0")
     public E pollLast() {
         E elem = removeLastElement();
-        if (elem != null)
-            elem.addTaint(getTaint());
+        //elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //return (size == 0) ? null : removeLastImpl();
@@ -228,8 +219,6 @@ public LinkedList(Collection<? extends E> collection) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "A1E9A1EB062A81F6CBAFDDDD06F9F273", hash_generated_method = "B11AB0C013FCB9A8E3C22E5318684A99")
     public E pop() {
         E elem = removeLastElement();
-        if (elem != null)
-            elem.addTaint(getTaint());
         return elem;
         // ---------- Original Method ----------
         //return removeFirstImpl();
@@ -239,7 +228,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "9D0F4BD741629A4E20781C5DA21CB652", hash_generated_method = "8E3E5AB8C2EFDDF648D93DCEA06B9D05")
     public void push(E e) {
-        addTaint(e.getTaint());
+        //addTaint(e.getTaint());
         addLastElement(e);
         // ---------- Original Method ----------
         //addFirstImpl(e);
@@ -249,7 +238,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "87160631C9EB1EFA1DB767740655C072", hash_generated_method = "6F4E8A748C546CBF7A9F3CDA57E3F37A")
     public boolean removeFirstOccurrence(Object o) {
-        addTaint(o.getTaint());
+        //addTaint(o.getTaint());
         int index = indexOf(o);
         if (index != -1) {
             removeElementAt(index);
@@ -264,7 +253,7 @@ public LinkedList(Collection<? extends E> collection) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.134 -0400", hash_original_method = "1733EDDF12DE29E16D5005CF30B5972D", hash_generated_method = "732CCFFDB97E0915B522A631347B728D")
     public boolean removeLastOccurrence(Object o) {
-        addTaint(o.getTaint());
+        //addTaint(o.getTaint());
         int index = lastIndexOf(o);
         if (index != -1) {
             removeElementAt(index);
@@ -292,7 +281,7 @@ private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.135 -0400", hash_original_method = "E7666F96333DE978F541663657705932", hash_generated_method = "DCC9F2A6A9C30329E761FE33538AF32F")
     public boolean offer(E o) {
-        addTaint(o.getTaint());
+        //addTaint(o.getTaint());
         addLastElement(o);
         return getTaintBoolean();
         // ---------- Original Method ----------
@@ -304,8 +293,6 @@ private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.135 -0400", hash_original_method = "55052725C8F8219BC4435ABBF88EDF4F", hash_generated_method = "4F808C3914D5953ED32384E74C14C1ED")
     public E poll() {
         E elem = removeFirstElement();
-        if (elem != null)
-            elem.addTaint(getTaint());
         return elem;
     }
     
@@ -314,8 +301,7 @@ private boolean removeOneOccurrence(Object o, Iterator<E> iter) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.136 -0400", hash_original_method = "E6C80B22C4B6B543BB93E41D88CAD5EF", hash_generated_method = "4D9B6E58041F68E73A123755B0BF1FA7")
     public E remove() {
         E elem = removeFirstElement();
-        if (elem != null)
-            elem.addTaint(getTaint());
+
         return elem;
     }
     

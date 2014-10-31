@@ -61,7 +61,7 @@ boolean containsCarrier(String carrier) {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.805 -0500", hash_original_method = "50C2E249A143A488875B9940B1F1FDE1", hash_generated_method = "50C2E249A143A488875B9940B1F1FDE1")
     
 String getCarrierName(String carrier) {
@@ -81,7 +81,7 @@ String getVoiceMailNumber(String carrier) {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.809 -0500", hash_original_method = "DE969177752DBF24A725FEF909B2130D", hash_generated_method = "DE969177752DBF24A725FEF909B2130D")
     
 String getVoiceMailTag(String carrier) {

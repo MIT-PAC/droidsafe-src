@@ -30,7 +30,7 @@ public class AndroidCharacter {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static boolean mirror(char[] text, int start, int count) {
-                return toTaintBoolean(text[0] + text.getTaintInt() + start + count);
+                return (((text[0] + text.getTaintInt() + start + count)) == 1);
     }
     
     @DSComment("From safe class list")

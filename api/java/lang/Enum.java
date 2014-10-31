@@ -40,7 +40,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
             sharedConstantsCache = new HashMap<Class<? extends Enum>, Object[]>();
             Object[] objs = new Object[1];
             objs[0] = new Object();
-            objs[0].addTaint(enumType.getTaint());
+            //objs[0].addTaint(enumType.getTaint());
             sharedConstantsCache.put(enumType, objs);
         }
         return (T[]) sharedConstantsCache.get(enumType);
@@ -110,8 +110,8 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
 protected Enum(String name, int ordinal) {
         this.name = name;
         this.ordinal = ordinal;
-        addTaint(name.getTaint());
-        addTaint(ordinal);
+        //addTaint(name.getTaint());
+        //addTaint(ordinal);
     }
 
     /**

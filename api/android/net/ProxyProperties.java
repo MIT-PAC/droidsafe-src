@@ -83,7 +83,7 @@ public ProxyProperties(ProxyProperties source) {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.159 -0500", hash_original_method = "207ACF10C117D35BCDF8E06D043E3E5B", hash_generated_method = "7B7AADB70ACF5CF7CA7C38E0754108F7")
     
 public InetSocketAddress getSocketAddress() {
@@ -94,14 +94,14 @@ public InetSocketAddress getSocketAddress() {
         return inetSocketAddress;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.161 -0500", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "6A355E9CFD8CF295DC08D3692B6B0773")
     
 public String getHost() {
         return mHost;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.163 -0500", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "33B8E8C1C43AC396F100852932189626")
     
 public int getPort() {
@@ -109,7 +109,7 @@ public int getPort() {
     }
 
     // comma separated
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.165 -0500", hash_original_method = "A9FE56F63855512203F6AE795614409C", hash_generated_method = "1F8C84F141B71D9D0D4DA10181CF7E55")
     
 public String getExclusionList() {

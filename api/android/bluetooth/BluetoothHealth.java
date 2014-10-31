@@ -511,7 +511,7 @@ private boolean checkAppParam(String name, int role, int channelType,
         if (callback != null)
             callbackInt = callback.getTaintInt();
 
-        return toTaintBoolean(role + channelType + name.length() + callbackInt);
+        return (((role + channelType + name.length() + callbackInt)) == 1);
         
 /*
         if (name == null || (role != SOURCE_ROLE && role != SINK_ROLE) ||

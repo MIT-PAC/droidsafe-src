@@ -87,7 +87,7 @@ public JarURLConnectionImpl(URL url) throws MalformedURLException,
      * @see java.net.URLConnection#connect()
      */
     @DSSpec(DSCat.INTERNET)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.479 -0500", hash_original_method = "0D95FCCAA7871FCD5DE5E8081721F47B", hash_generated_method = "FBA25A5DDABF75A218EAB00E77AC5330")
     
 @Override
@@ -244,7 +244,7 @@ private void findJarEntry() throws IOException {
      *             if an IO error occurs while connecting to the resource.
      */
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.494 -0500", hash_original_method = "96C498B69E21157D37D76B9902545F24", hash_generated_method = "C56B586BDAB524E470136EBBC5C9B019")
     
 @Override

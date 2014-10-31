@@ -127,7 +127,7 @@ CdmaSMSDispatcher(CDMAPhone phone, SmsStorageMonitor storageMonitor,
         mCm.unSetOnNewCdmaSms(this);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.309 -0500", hash_original_method = "77401C8F23584A16465C2C7060977D74", hash_generated_method = "93DF60DDAC92EB100A9B814E3AD7E1D5")
     
 @Override

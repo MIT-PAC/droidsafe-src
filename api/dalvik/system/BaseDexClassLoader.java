@@ -100,7 +100,7 @@ public BaseDexClassLoader(String dexPath, File optimizedDirectory,
      * @return the package information for the class, or {@code null}
      * if there is no package information available for it
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.511 -0500", hash_original_method = "CA22ACC2BBED318A2E853CC270258DF9", hash_generated_method = "1C71499B6A9BAE929FEA7A8293AB5740")
     
 @Override

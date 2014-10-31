@@ -283,7 +283,7 @@ public int describeContents() {
      * Get the GSM Signal Strength, valid values are (0-31, 99) as defined in TS 27.007 8.5
      */
     @DSSpec(DSCat.PHONE_STATE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.584 -0500", hash_original_method = "BF744C5FBE02CF825B56C3345AF59498", hash_generated_method = "CBC90B152B3CA37C0698181443702CA1")
     
 public int getGsmSignalStrength() {
@@ -294,7 +294,7 @@ public int getGsmSignalStrength() {
      * Get the GSM bit error rate (0-7, 99) as defined in TS 27.007 8.5
      */
     @DSSpec(DSCat.PHONE_STATE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.590 -0500", hash_original_method = "092AE71FB082AB370F835236471B5652", hash_generated_method = "B16D3AA7A53422306E3A8740E3C67D7F")
     
 public int getGsmBitErrorRate() {
@@ -305,7 +305,7 @@ public int getGsmBitErrorRate() {
      * Get the CDMA RSSI value in dBm
      */
     @DSSpec(DSCat.PHONE_STATE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.594 -0500", hash_original_method = "4A3A20AF02DE258CADBBD180CAF3D12D", hash_generated_method = "836885968B8AC0E5580F43B2D5AA9963")
     
 public int getCdmaDbm() {
@@ -315,7 +315,7 @@ public int getCdmaDbm() {
     /**
      * Get the CDMA Ec/Io value in dB*10
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.598 -0500", hash_original_method = "38AEFFB984E37DCE606B9F88ABDA8DE8", hash_generated_method = "7CF8615F4999A1DEB5E9E69E4C71105C")
     
 public int getCdmaEcio() {
@@ -325,7 +325,7 @@ public int getCdmaEcio() {
     /**
      * Get the EVDO RSSI value in dBm
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.602 -0500", hash_original_method = "D895F9B1A344D14CB24D80BCC48EF38D", hash_generated_method = "CF1E921B63371517D651D32B6D66885C")
     
 public int getEvdoDbm() {
@@ -335,7 +335,7 @@ public int getEvdoDbm() {
     /**
      * Get the EVDO Ec/Io value in dB*10
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.606 -0500", hash_original_method = "E512C4871B3839CD9850A80797FFBB27", hash_generated_method = "E0F1C04DCDFEA48FF27E7568449A248F")
     
 public int getEvdoEcio() {
@@ -345,7 +345,7 @@ public int getEvdoEcio() {
     /**
      * Get the signal to noise ratio. Valid values are 0-8. 8 is the highest.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.610 -0500", hash_original_method = "76215695BF499679C7BA84176FCF6732", hash_generated_method = "A75B4C92D8C401436FA5CEE42A38C107")
     
 public int getEvdoSnr() {
@@ -357,7 +357,7 @@ public int getEvdoSnr() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.615 -0500", hash_original_method = "7504E540028056CDE39219F81B4E1E59", hash_generated_method = "842F87F6F7F7B7D9924C69932C2B9958")
     
 public int getLevel() {
@@ -396,7 +396,7 @@ public int getLevel() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.620 -0500", hash_original_method = "6887E245B7148208FA71118C76512694", hash_generated_method = "AFF46E2FBC9A6ABC9ADD5E2B1D3DF9B0")
     
 public int getAsuLevel() {
@@ -434,7 +434,7 @@ public int getAsuLevel() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.625 -0500", hash_original_method = "91A92262F8869E8CA480E3922C8E164F", hash_generated_method = "F8AEE6964D3BBAC08D70507D411198EC")
     
 public int getDbm() {
@@ -462,7 +462,7 @@ public int getDbm() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.630 -0500", hash_original_method = "EDC72A768CC18025065D104AFB382B7A", hash_generated_method = "C2C2B71C0BEA196AE42DC8779609DC06")
     
 public int getGsmDbm() {
@@ -484,7 +484,7 @@ public int getGsmDbm() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.635 -0500", hash_original_method = "B3F3D7206F2B752B03A36760D7E06194", hash_generated_method = "ACEA269BFABDE7496A419B66B3513F13")
     
 public int getGsmLevel() {
@@ -509,7 +509,7 @@ public int getGsmLevel() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.641 -0500", hash_original_method = "F4862B9CE73023A8FAAD3B95D31594BE", hash_generated_method = "8BDA35C9EE527BAD2783CF4D97290121")
     
 public int getGsmAsuLevel() {
@@ -527,7 +527,7 @@ public int getGsmAsuLevel() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.646 -0500", hash_original_method = "CB4649EF15F9DF295DD79289916B6CB5", hash_generated_method = "CB1E07E237199AC54ED3FFE24C4C8914")
     
 public int getCdmaLevel() {
@@ -559,7 +559,7 @@ public int getCdmaLevel() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.652 -0500", hash_original_method = "EE526C4AB692E407ACE78BB15D53BCB0", hash_generated_method = "D2D8EEE5422E48683C1F8010CF6B6580")
     
 public int getCdmaAsuLevel() {
@@ -593,7 +593,7 @@ public int getCdmaAsuLevel() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.658 -0500", hash_original_method = "0AB26F5835CA97F0ED2A069B69FE7D82", hash_generated_method = "8AEBD915D6EC034217EB3BFF97C8E6F8")
     
 public int getEvdoLevel() {
@@ -624,7 +624,7 @@ public int getEvdoLevel() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.663 -0500", hash_original_method = "B3D272849081E8A85734C2EAD9030507", hash_generated_method = "2D9D2D57ADE9025D1A571DBA72780BFF")
     
 public int getEvdoAsuLevel() {
@@ -657,7 +657,7 @@ public int getEvdoAsuLevel() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.668 -0500", hash_original_method = "94E656AC1ABF6547309F24472B6D486E", hash_generated_method = "A2FB0A483B2495384417590B637B00B3")
     
 public int getLteDbm() {
@@ -669,7 +669,7 @@ public int getLteDbm() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.672 -0500", hash_original_method = "CDB40306822E2DC8617AD5A6BB9C97E4", hash_generated_method = "53FE26EDA023995FA53580B41C15C3E2")
     
 public int getLteLevel() {
@@ -692,7 +692,7 @@ public int getLteLevel() {
      *
      * @hide
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.678 -0500", hash_original_method = "8F8EC9A4414474C4302B52EA8F689AB4", hash_generated_method = "83860E8BA866BDB665AC2749FB5AD6E5")
     
 public int getLteAsuLevel() {
@@ -708,7 +708,7 @@ public int getLteAsuLevel() {
     /**
      * @return true if this is for GSM
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSpec(DSCat.PHONE_STATE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.682 -0500", hash_original_method = "7CBC52492CE7EC66B1A8811456B7D40A", hash_generated_method = "B70409FA6ADEB0B1159578592B61EB05")
     
@@ -773,7 +773,7 @@ public boolean isGsm() {
      * @return string representation.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:47.698 -0500", hash_original_method = "4C867D664E694B283CE0DE88ADFC0BF6", hash_generated_method = "15FEA039970CFFA8D149F77DE1D83B8A")
     
 @Override

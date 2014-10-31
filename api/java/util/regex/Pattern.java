@@ -194,7 +194,7 @@ public Matcher matcher(CharSequence input) {
     
 public String[] split(CharSequence input, int limit) {
         String[] ret = new String[1];
-        ret[0] = new String("SPLIT_STRING");
+        ret[0] = new String();
         ret[0].addTaint(input.getTaint());
         return ret;
         

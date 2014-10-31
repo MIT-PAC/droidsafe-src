@@ -210,7 +210,7 @@ public int getStyle() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.654 -0500", hash_original_method = "F9C5D984693E715CACA8B421F6CE6BD8", hash_generated_method = "1E88F458374AD4516F7A9850FC969AC0")
     
 public final boolean isBold() {
-        return toTaintBoolean((getStyle() & BOLD) + 0);
+        return 1 == ((getStyle() & BOLD) + 0);
     }
 
     /** Returns true if getStyle() has the ITALIC bit set. */
@@ -219,7 +219,7 @@ public final boolean isBold() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.656 -0500", hash_original_method = "55AE9D2665222680CD04F733708ADD28", hash_generated_method = "9FD604C75922F775EE3B6BFFCC00423B")
     
 public final boolean isItalic() {
-        return toTaintBoolean((getStyle() & ITALIC) + 0);
+        return 1 == ((getStyle() & ITALIC) + 0);
     }
 
     @DSComment("From safe class list")

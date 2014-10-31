@@ -84,7 +84,7 @@ public void removeStorage(MtpStorage storage) {
     	//Formerly a native method
     	double taintDouble = 0;
     	taintDouble += database.getTaintInt();
-    	taintDouble += toTaintInt(usePtp);
+    	taintDouble += ((usePtp) ? 1 : 0);
     	addTaint(taintDouble);
     }
 

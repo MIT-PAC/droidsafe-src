@@ -291,7 +291,7 @@ public synchronized void setCookieSpecs(final CookieSpecRegistry cookieSpecRegis
         supportedCookieSpecs = cookieSpecRegistry;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.063 -0500", hash_original_method = "280140DA9BF4BB510F1D77AFF1FE6E38", hash_generated_method = "023482637699E150EE17E22E584E16C7")
     
 public synchronized final ConnectionReuseStrategy getConnectionReuseStrategy() {
@@ -307,7 +307,7 @@ public synchronized void setReuseStrategy(final ConnectionReuseStrategy reuseStr
         this.reuseStrategy = reuseStrategy;
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.067 -0500", hash_original_method = "0109C95DAAF90D45512D49D44811C1BC", hash_generated_method = "D27F30C4281AB71C25EAC4B28E5A4B47")
     
 public synchronized final ConnectionKeepAliveStrategy getConnectionKeepAliveStrategy() {

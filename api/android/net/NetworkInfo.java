@@ -147,7 +147,7 @@ public int getType() {
      * of the network.
      * @return the network subtype
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.913 -0500", hash_original_method = "9F9664F87EC47D562C2DFD7EF2768060", hash_generated_method = "F7EDDADCEDAFB936492F75E6A9C474D6")
     
 public int getSubtype() {
@@ -172,7 +172,7 @@ void setSubtype(int subtype, String subtypeName) {
      * for example "WIFI" or "MOBILE".
      * @return the name of the network type
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.917 -0500", hash_original_method = "55AF35A663CF7527013DF4B2AE75FC8F", hash_generated_method = "AC133991089D02159E3531697222933A")
     
 public String getTypeName() {
@@ -186,7 +186,7 @@ public String getTypeName() {
      * @return the name of the network subtype
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.920 -0500", hash_original_method = "0043E0CF1F933E5EC5CD97392CA0E5B0", hash_generated_method = "F6F74B76F3FBAEECF2D7DD5FDACFDAC7")
     
 public String getSubtypeName() {
@@ -334,7 +334,7 @@ public State getState() {
      * Reports the current fine-grained state of the network.
      * @return the fine-grained state
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSpec(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.940 -0500", hash_original_method = "EF299E7A8E902EE5662452C8EC565B0C", hash_generated_method = "061FCDC7F5E040ECCA6F4ED8FF0403D3")
     
@@ -370,7 +370,7 @@ public void setDetailedState(DetailedState detailedState, String reason, String 
      * @return the reason for failure, or null if not available
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.945 -0500", hash_original_method = "788F68C9DAC18237AEDF0C4BED188B0D", hash_generated_method = "B6A9CC282648BE1583E2C5365A01C4FF")
     
 public String getReason() {
@@ -386,7 +386,7 @@ public String getReason() {
      * @return the extra information, or null if not available
      */
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.947 -0500", hash_original_method = "74D0311B373A7BB37462D7229B3CD3F9", hash_generated_method = "9CB31D64DF097D60A610ACE07788F4CD")
     
 public String getExtraInfo() {
@@ -395,7 +395,7 @@ public String getExtraInfo() {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.949 -0500", hash_original_method = "AD77F99801D246295506D70C39DE289C", hash_generated_method = "3EFFCE1A061D40DC507257F509A32317")
     

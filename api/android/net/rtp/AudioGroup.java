@@ -46,7 +46,7 @@ public AudioGroup() {
     /**
      * Returns the {@link AudioStream}s in this group.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.269 -0500", hash_original_method = "868089D57ED1EE56E9ACF33DE8DED38E", hash_generated_method = "6E7CF440C1005896AC75B06E058557E9")
     
 public AudioStream[] getStreams() {
@@ -58,7 +58,7 @@ public AudioStream[] getStreams() {
     /**
      * Returns the current mode.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.271 -0500", hash_original_method = "46CDEAEE57FC46504BB8BB611AFCF88D", hash_generated_method = "70517447F35CFDB022215DEF7415008A")
     
 public int getMode() {

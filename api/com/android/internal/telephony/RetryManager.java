@@ -187,7 +187,7 @@ public boolean isRetryNeeded() {
     /**
      * Return the timer that should be used to trigger the data reconnection
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.965 -0500", hash_original_method = "FDEB093A88716C2A22E1A70262EC26E6", hash_generated_method = "CEDDFEBEC8D9728456D728063F197A7C")
     
 public int getRetryTimer() {
@@ -212,7 +212,7 @@ public int getRetryTimer() {
     /**
      * @return retry count
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.967 -0500", hash_original_method = "7864A3188C49B1562B5127F41B9781EB", hash_generated_method = "326DE1F25DCF12CC873B034629E47978")
     
 public int getRetryCount() {

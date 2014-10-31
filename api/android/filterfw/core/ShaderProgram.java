@@ -332,7 +332,7 @@ public void beginDrawing() {
     	taintDouble += fragmentShader.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:45.090 -0400", hash_original_method = "9146149D3DCC230E7EA94BBBF3368A15", hash_generated_method = "E7FC21276ACAD27B060DD1829450FA9C")
@@ -341,7 +341,7 @@ public void beginDrawing() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:45.093 -0400", hash_original_method = "8AF148E20F2332AA6C9887D50C0F196C", hash_generated_method = "94778360B3ACE73928DE8B6E44A291EC")
@@ -350,7 +350,7 @@ public void beginDrawing() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.027 -0400", hash_original_method = "56CACE7B1111C40C912A571DEA490194", hash_generated_method = "60DE510454E6012A957ADDB59F73DBAE")
@@ -362,7 +362,7 @@ public void beginDrawing() {
     	taintDouble += output.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.031 -0400", hash_original_method = "02242603F41A919B6900325BC0CB472A", hash_generated_method = "400D93FBD418C26255680F8581E00D4A")
@@ -374,7 +374,7 @@ public void beginDrawing() {
     	taintDouble += value.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.035 -0400", hash_original_method = "0375EA9105518F02B068F631222F799F", hash_generated_method = "1FA273FA8F6DD7AF2403597560FCD31F")
@@ -406,7 +406,7 @@ public void beginDrawing() {
     	taintDouble += y3;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.044 -0400", hash_original_method = "0A6D1E9787CD1A3592E7EE16DE33F6B5", hash_generated_method = "4E06F509C514A883DFD5876F7F9761A4")
@@ -425,7 +425,7 @@ public void beginDrawing() {
     	taintDouble += y3;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:55.171 -0400", hash_original_method = "DA0853BF797039D07ABAFD6B37FC6FE4", hash_generated_method = "00648FEA05B728146448D30C3B3F27A9")
@@ -433,10 +433,10 @@ public void beginDrawing() {
     private boolean setShaderClearsOutput(boolean clears){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(clears);
+    	taintDouble += ((clears) ? 1 : 0);
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:55.174 -0400", hash_original_method = "A877920A933240EB26149604AF6DAB65", hash_generated_method = "5837E6038E807F3EECE2CB085E972852")
@@ -444,10 +444,10 @@ public void beginDrawing() {
     private boolean setShaderBlendEnabled(boolean enable){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(enable);
+    	taintDouble += ((enable) ? 1 : 0);
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.061 -0400", hash_original_method = "A703E8E2D56F488E1B7A9936A9DB9BCF", hash_generated_method = "12F09D52B4C49EB64D19D862A7BF10CD")
@@ -459,7 +459,7 @@ public void beginDrawing() {
     	taintDouble += dfactor;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.065 -0400", hash_original_method = "174C7B19100D70D5D83DBF0E71D8C40D", hash_generated_method = "A75019B7BA64CDAF150422CDE400D3BC")
@@ -472,7 +472,7 @@ public void beginDrawing() {
     	taintDouble += b;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.069 -0400", hash_original_method = "4F5825A74EACEDBEA33A8AE3B2BA1DE1", hash_generated_method = "965FE68B00B4D6A1D4B05AD04B7F1030")
@@ -483,7 +483,7 @@ public void beginDrawing() {
     	taintDouble += drawMode;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.074 -0400", hash_original_method = "7E24AA3DE2F23987F17F823DAD41B466", hash_generated_method = "CE408237BB5377D7CF0AE12235E9F108")
@@ -495,7 +495,7 @@ public void beginDrawing() {
     	taintDouble += yCount;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.077 -0400", hash_original_method = "F5CCA9000D603F753022C746FC4B770D", hash_generated_method = "D5DD67C845ABF42485BFFC0509F8D0FC")
@@ -506,7 +506,7 @@ public void beginDrawing() {
     	taintDouble += vertexCount;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:45.136 -0400", hash_original_method = "CE528040139B9F0A51E33CE767D23A1B", hash_generated_method = "A5062FD61C3787A7DB9FD9C359858447")
@@ -515,7 +515,7 @@ public void beginDrawing() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:23.085 -0400", hash_original_method = "166895198048089D3756FB69404DAC65", hash_generated_method = "24CD0C16BA9C77F60B1E51E82A2B5D5A")
@@ -530,7 +530,7 @@ public void beginDrawing() {
     	taintDouble += componentCount;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:55.199 -0400", hash_original_method = "B344A961881B5E424A682809764F8CAF", hash_generated_method = "4196466FAF318599905A2517E6F18EB7")
@@ -550,10 +550,10 @@ public void beginDrawing() {
     	taintDouble += componentCount;
     	taintDouble += strideInBytes;
     	taintDouble += offsetInBytes;
-    	taintDouble += toTaintInt(normalize);
+    	taintDouble += ((normalize) ? 1 : 0);
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 }

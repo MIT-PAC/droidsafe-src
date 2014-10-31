@@ -62,7 +62,7 @@ void setStatus(GpsSatellite satellite) {
      *
      * @return PRN number
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.918 -0500", hash_original_method = "1CFB1A0ACEFDBC53538E3DE39E0274F8", hash_generated_method = "9D12234AEAD19A1636D5EE376830E3B5")
     
 public int getPrn() {
@@ -74,7 +74,7 @@ public int getPrn() {
      *
      * @return the signal to noise ratio
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.920 -0500", hash_original_method = "86375E5795460EBC5BAEFE7343FFC8C2", hash_generated_method = "615F32EE6FC6C9BC6A26FC500FAA152C")
     
 public float getSnr() {
@@ -87,7 +87,7 @@ public float getSnr() {
      *
      * @return the elevation in degrees
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.923 -0500", hash_original_method = "45660D841120F9B89BAE31417734A703", hash_generated_method = "EDEF84553F172FBB0C214A1401CBF9F7")
     
 public float getElevation() {
@@ -100,7 +100,7 @@ public float getElevation() {
      *
      * @return the azimuth in degrees
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.925 -0500", hash_original_method = "F306C300B6B496BB95E6F8AB34665AA0", hash_generated_method = "B4727536B9AA9573E0538EA21A8129DC")
     
 public float getAzimuth() {

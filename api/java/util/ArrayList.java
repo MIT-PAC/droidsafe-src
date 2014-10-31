@@ -42,7 +42,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         if(capacity < 0)        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_866917787 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_866917787.addTaint(getTaint());
+            //var5783EF97022AA508B74A1E3EA38534AF_866917787.addTaint(getTaint());
             throw var5783EF97022AA508B74A1E3EA38534AF_866917787;
         } //End block
     }
@@ -60,7 +60,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.820 -0400", hash_original_method = "AE7C60C91D4192AC5637CB5677158233", hash_generated_method = "D918CF514940FBDA5D9A59D94625E26F")
     public  ArrayList(Collection<? extends E> collection) {
-        addTaint(collection.getTaint());
+        //addTaint(collection.getTaint());
         super.addAll(collection);
         
         // ---------- Original Method ----------
@@ -99,7 +99,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.827 -0400", hash_original_method = "0AF2E3B013DB3C28C26CEAAD130BA61A", hash_generated_method = "8998FC02A06EB07E3D275DF69BC11A86")
     public void ensureCapacity(int minimumCapacity) {
-        addTaint(minimumCapacity);
+    //addTaint(minimumCapacity);
         Object[] a = collectionData;
         if(a.length < minimumCapacity)        
         {
@@ -161,7 +161,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.837 -0400", hash_original_method = "B6BBD42460E139DEDE8E165726366EA3", hash_generated_method = "D4C09056C6EE738803BED4E24FA86358")
     @Override
     public boolean equals(Object o) {
-        addTaint(o.getTaint());
+    //addTaint(o.getTaint());
         if(o == this)        
             return true;
         
@@ -174,7 +174,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.838 -0400", hash_original_method = "291F806CA114E9A8DDD079DF7CDB05EA", hash_generated_method = "5F8684799088AA1AFC2FFB96C7FF18A5")
     private void writeObject(ObjectOutputStream stream) throws IOException {
-        addTaint(stream.getTaint());
+    addTaint(stream.getTaint());
         stream.defaultWriteObject();
         stream.writeInt(size());
         for(int i = 0;i < size();i++)
@@ -200,7 +200,7 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         {
             InvalidObjectException var273D26CAC01DC448104B1EC1CDD9496E_2047464109 = new InvalidObjectException(
                     "Capacity: " + cap + " < size: ");
-            var273D26CAC01DC448104B1EC1CDD9496E_2047464109.addTaint(getTaint());
+            //var273D26CAC01DC448104B1EC1CDD9496E_2047464109.addTaint(getTaint());
             throw var273D26CAC01DC448104B1EC1CDD9496E_2047464109;
         } //End block
         for(int i = 0;i < cap;i++)

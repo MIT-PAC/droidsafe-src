@@ -447,7 +447,7 @@ final void setIndex(int index) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.006 -0500", hash_original_method = "B0D28796550366EF842F99A3D9D59C11", hash_generated_method = "D60291057198FF92ECFB3CAF33EB7BBB")
     
 final boolean isInBackStack() {
-        return toTaintBoolean(mBackStackNesting + getTaintInt()); 
+        return (((mBackStackNesting + getTaintInt())) == 1); 
     }
 
     /**
@@ -608,7 +608,6 @@ final public int getTargetRequestCode() {
      */
     @DSComment("GUI, Fragment")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.033 -0500", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "325AD2BF1D0A0B24371BA04573D4605C")
     
 final public Activity getActivity() {
@@ -620,7 +619,6 @@ final public Activity getActivity() {
      */
     @DSComment("GUI, Fragment")
     @DSSafe(DSCat.GUI)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.036 -0500", hash_original_method = "A8E18DB36BC334E1CF5901C727187C18", hash_generated_method = "E4C0928E700635ED038F7599AF52D3F4")
     
 final public Resources getResources() {
@@ -696,7 +694,7 @@ final public FragmentManager getFragmentManager() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.046 -0500", hash_original_method = "C0D74F5DDFD9A01C19E54F3379BA7652", hash_generated_method = "618EE3A321C4FFDE67749913AA58ADE8")
     
 final public boolean isAdded() {
-        return toTaintBoolean(toTaintInt(mAdded) + mActivity.getTaintInt());
+        return 1 == (((mAdded) ? 1 : 0) + mActivity.getTaintInt());
     }
 
     /**
@@ -760,7 +758,7 @@ final public boolean isVisible() {
         return isAdded() && !isHidden() && mView != null
                 && mView.getWindowToken() != null && mView.getVisibility() == View.VISIBLE;
         */
-        return toTaintBoolean(getTaintInt() + mView.getTaintInt());
+        return (((getTaintInt() + mView.getTaintInt())) == 1);
     }
     
     /**
@@ -774,7 +772,7 @@ final public boolean isVisible() {
     
 final public boolean isHidden() {
         //return mHidden;
-        return toTaintBoolean(getTaintInt() + toTaintInt(mHidden));
+        return 1 == (getTaintInt() + ((mHidden) ? 1 : 0));
     }
     
     /**

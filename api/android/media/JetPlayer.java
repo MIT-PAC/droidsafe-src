@@ -637,7 +637,7 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	taintDouble += trackBufferSize;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:21:59.052 -0400", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "F4F0ABEE314221212592CD2BBD7D2805")
     
@@ -659,7 +659,7 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	taintDouble += pathToJetFile.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:25.563 -0400", hash_original_method = "9687809347122C52F95F18CED1CAC545", hash_generated_method = "31F9D47C9C6835792655DA871B8B0AE5")
@@ -672,7 +672,7 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	taintDouble += len;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:47.650 -0400", hash_original_method = "35827CF8B6E41385AB0C10883E47A097", hash_generated_method = "95A1EE9F4D4A2E51AC7B80C24E16D965")
     
@@ -680,7 +680,7 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:47.654 -0400", hash_original_method = "9765DB84F64F7ED2114A283E849E138B", hash_generated_method = "9CC0B1CC3CFD512A672EFB886D07C438")
@@ -689,7 +689,7 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:47.657 -0400", hash_original_method = "763093B87D1B57159D1C410854619849", hash_generated_method = "BEA645CEC327B85176FD0226910B29E3")
@@ -698,7 +698,7 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:25.579 -0400", hash_original_method = "36A18D7794B4AF7C18E21A1C8DD303FE", hash_generated_method = "0E672690FCCB8E10C6069BEA79CCD53A")
@@ -715,7 +715,7 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	taintDouble += userID;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:57.687 -0400", hash_original_method = "764AC5309CEF6D945E53C81CE1760E49", hash_generated_method = "28589546A6B44D28EE0310BDC617E4D6")
     
@@ -727,11 +727,11 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	taintDouble += libNum;
     	taintDouble += repeatCount;
     	taintDouble += transpose;
-    	taintDouble += toTaintInt(muteArray[0]);
+    	taintDouble += ((muteArray[0]) ? 1 : 0);
     	taintDouble += userID;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:57.690 -0400", hash_original_method = "FC4C019E40F2D81322CA45FCE167178F", hash_generated_method = "292BDA8522A3302618F7BE5441F0D632")
@@ -740,10 +740,10 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	//Formerly a native method
     	double taintDouble = 0;
     	taintDouble += muteFlags;
-    	taintDouble += toTaintInt(sync);
+    	taintDouble += ((sync) ? 1 : 0);
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:57.693 -0400", hash_original_method = "7965B80BB9CFEEDC942DF71457568BD4", hash_generated_method = "FBFC0CFFA1C995E9E242168DE12E1D2A")
@@ -751,11 +751,11 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     private final boolean native_setMuteArray(boolean[]muteArray, boolean sync){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(muteArray[0]);
-    	taintDouble += toTaintInt(sync);
+    	taintDouble += ((muteArray[0]) ? 1 : 0);
+    	taintDouble += ((sync) ? 1 : 0);
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:57.696 -0400", hash_original_method = "63886ABBB0AA0A2A6090A23CC71C7C92", hash_generated_method = "5AA8CCFC7D67D951D580DA8A977E4C0C")
@@ -764,11 +764,11 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	//Formerly a native method
     	double taintDouble = 0;
     	taintDouble += trackId;
-    	taintDouble += toTaintInt(muteFlag);
-    	taintDouble += toTaintInt(sync);
+    	taintDouble += ((muteFlag) ? 1 : 0);
+    	taintDouble += ((sync) ? 1 : 0);
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:25.599 -0400", hash_original_method = "A83C9A030FE24E78D0EF202E36F789B6", hash_generated_method = "667369581D1D397BC0290D071620D539")
@@ -779,7 +779,7 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	taintDouble += clipId;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:47.678 -0400", hash_original_method = "C73BFE4788EA844AE10AD9C37F3FCE8E", hash_generated_method = "5C2BB589096CFF8F060F579E801B8DF6")
     
@@ -787,7 +787,7 @@ public void setEventListener(OnJetEventListener listener, Handler handler) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
  
 }

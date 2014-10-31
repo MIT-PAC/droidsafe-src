@@ -598,7 +598,7 @@ public boolean decodeXWapInitiatorURI(int startIndex) {
     /**
      * The data length of latest operation.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.614 -0500", hash_original_method = "097EE97643EAEF3891CA5DC97464AC94", hash_generated_method = "EC9F5ADC14F341FBC07C2F35981FE3DF")
     
 public int getDecodedDataLength() {
@@ -757,7 +757,7 @@ public int getDecodedDataLength() {
     /**
      * The 32-bits result of latest operation.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.617 -0500", hash_original_method = "222353B4CE9A8EDC30DC1C12168B96BB", hash_generated_method = "AC69C7C36273AF6F057F89D981224EAB")
     
 public long getValue32() {
@@ -767,7 +767,7 @@ public long getValue32() {
     /**
      * The String result of latest operation.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.619 -0500", hash_original_method = "8109E4DB1588BAB17F9AEE1B35CA6B07", hash_generated_method = "98A308431A618363FBF44E7348C16BD5")
     
 public String getValueString() {
@@ -784,7 +784,7 @@ public String getValueString() {
      *         unassigned parameter.  If a parameter has No-Value the value will be null.
      *
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.621 -0500", hash_original_method = "F1FCA07D8088CB011EA83E53B391A96C", hash_generated_method = "935124A4CF397E53F7FFD7156B3259CA")
     
 public HashMap<String, String> getContentParameters() {

@@ -64,7 +64,7 @@ public static CellLocation newFromBundle(Bundle bundle) {
      * location, or null for unknown/none phone radio types.
      *
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.170 -0500", hash_original_method = "772CDA5B255ED5AFC7BB2F44019BFECD", hash_generated_method = "211FE06CF4C76A637818F279C819EF77")
     
 public static CellLocation getEmpty() {

@@ -444,7 +444,7 @@ private void assertGLEnvValid() {
     	taintDouble += height;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.568 -0400", hash_original_method = "03523908ED8B11673A5D48A76B44EE35", hash_generated_method = "8A7FB346EC4BBD84554B7470ECC8F640")
@@ -461,7 +461,7 @@ private void assertGLEnvValid() {
     	taintDouble += height;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.573 -0400", hash_original_method = "DDB58720C6D6E3FE692A9195DAC245D6", hash_generated_method = "3FF7B7D096483F2D2E0A209D601D5875")
@@ -478,7 +478,7 @@ private void assertGLEnvValid() {
     	taintDouble += height;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.577 -0400", hash_original_method = "422CB52C10656D7E44FE121CA126BF91", hash_generated_method = "37C74810B084ABE902C6821785703C64")
@@ -489,7 +489,7 @@ private void assertGLEnvValid() {
     	taintDouble += env.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.871 -0400", hash_original_method = "C5D13A7D2DE40061D17A5A19349F9B46", hash_generated_method = "B240A7932BE0CB51D42FA1BDE6059C94")
@@ -498,7 +498,7 @@ private void assertGLEnvValid() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.585 -0400", hash_original_method = "B008EA5EAE1D78CF60323223B23112C0", hash_generated_method = "DB9D3915DCF330A7854A0E564C5106A0")
@@ -511,7 +511,7 @@ private void assertGLEnvValid() {
     	taintDouble += length;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.877 -0400", hash_original_method = "0CDA28160C9A5C0DC3D1C6484E3FA045", hash_generated_method = "FF35CD365978FED412AA095CD77FF2C6")
@@ -533,7 +533,7 @@ private void assertGLEnvValid() {
     	taintDouble += ints[0];
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.598 -0400", hash_original_method = "88CBED05920219A258C2F99CB4EDFE1D", hash_generated_method = "C0A8BCC26755F86A54824EBDD91E7B3C")
@@ -544,7 +544,7 @@ private void assertGLEnvValid() {
     	taintDouble += floats[0];
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.887 -0400", hash_original_method = "81E9CE5D152943B1180D2B2B4410CA1A", hash_generated_method = "9E5EE35C97C22896A330041F1B091CC7")
@@ -578,7 +578,7 @@ private void assertGLEnvValid() {
     	taintDouble += size;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.615 -0400", hash_original_method = "23143653D9213132827701339A03557C", hash_generated_method = "337D8AF9E5C736FE34D5923F2C28F107")
@@ -589,7 +589,7 @@ private void assertGLEnvValid() {
     	taintDouble += bitmap.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.619 -0400", hash_original_method = "2308E7A848EC5796D50EF11678C38562", hash_generated_method = "112AD0EE42A32EC3A01B67B636D3EE57")
@@ -603,7 +603,7 @@ private void assertGLEnvValid() {
     	taintDouble += height;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.903 -0400", hash_original_method = "2A0BEF4BD3FA66E8C8B202C5483364C5", hash_generated_method = "5E7F211D7D236C9AC7A5715D467ABF17")
@@ -630,7 +630,7 @@ private void assertGLEnvValid() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.636 -0400", hash_original_method = "F944BAAF7A5BA111DFDCD72BEF3E8177", hash_generated_method = "A46412658C5ABCCEB4727E1D1F242749")
@@ -642,7 +642,7 @@ private void assertGLEnvValid() {
     	taintDouble += value;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.916 -0400", hash_original_method = "23EE7EC8AA368D8B0BB5DA5C6C6AA176", hash_generated_method = "4EAC39F81B33D8D5B5D321EFB75BB78C")
@@ -651,7 +651,7 @@ private void assertGLEnvValid() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.644 -0400", hash_original_method = "4AAA1963F74E551C88426B820B381324", hash_generated_method = "D98ADAE63A177915B45128E092AF964A")
@@ -662,7 +662,7 @@ private void assertGLEnvValid() {
     	taintDouble += frame.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:20.648 -0400", hash_original_method = "8EE5FFA3E1866792DC021D861E52C38E", hash_generated_method = "E181817671F3569D40046BA60CE0103A")
@@ -673,7 +673,7 @@ private void assertGLEnvValid() {
     	taintDouble += frame.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.925 -0400", hash_original_method = "5C39D5AF38352115E9F43A31376CF046", hash_generated_method = "56FAD824DB8882D6110E189A7AEACB52")
@@ -682,7 +682,7 @@ private void assertGLEnvValid() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.928 -0400", hash_original_method = "D9767F3BE31C5055B0252F4C4496F40B", hash_generated_method = "E026546DD6FBE3A92DAF804101696635")
@@ -691,7 +691,7 @@ private void assertGLEnvValid() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:42.931 -0400", hash_original_method = "38053EE393261C8440AEFFCC66D98C87", hash_generated_method = "F1CE8C595B03878188E844E11AA72586")
@@ -700,7 +700,7 @@ private void assertGLEnvValid() {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 }

@@ -38,14 +38,14 @@ public OpenSSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
         this.sslParameters.setUseClientMode(false);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.421 -0500", hash_original_method = "0281EF5D8B3BC852A1CC14F175899740", hash_generated_method = "9FD76030E98DF5EC3E130ABDB050FF21")
     
 public String[] getDefaultCipherSuites() {
         return NativeCrypto.getDefaultCipherSuites();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.423 -0500", hash_original_method = "1B8AAFC0DA0BD632205C9BB94F36BE40", hash_generated_method = "F00706CA72F49A75DCD594C7E421B0AE")
     
 public String[] getSupportedCipherSuites() {

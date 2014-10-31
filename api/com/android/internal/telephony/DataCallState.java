@@ -256,7 +256,7 @@ SetupResult() {
             mFailCause = FailCause.fromInt(0);
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.576 -0500", hash_original_method = "5F26F82C9A88D8418FA108D7C7A8A2D4", hash_generated_method = "64C3FEA450DED716E1BA34FB24E75F15")
             

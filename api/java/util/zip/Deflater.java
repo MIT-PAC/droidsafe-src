@@ -604,7 +604,7 @@ public synchronized long getBytesWritten() {
     	double taintDouble = 0;
     	taintDouble += level;
     	taintDouble += strategy1;
-    	taintDouble += toTaintInt(noHeader1);
+    	taintDouble += ((noHeader1) ? 1 : 0);
     	addTaint(taintDouble);
     
     	return (long)taintDouble;

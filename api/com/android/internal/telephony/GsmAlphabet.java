@@ -169,7 +169,7 @@ public static char
      * @throws EncodeException if String is too large to encode
      * @see #stringToGsm7BitPackedWithHeader(String, byte[], int, int)
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.462 -0500", hash_original_method = "2F721D777A36DFB8DFB35BB3F12A2C71", hash_generated_method = "8CBE85E4D5CC888894020E43CC5894C6")
     
 public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header)
@@ -199,7 +199,7 @@ public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header)
      * @return Byte array containing header and encoded data.
      * @throws EncodeException if String is too large to encode
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.465 -0500", hash_original_method = "830AB81103073BE5F7AB467D579AEC22", hash_generated_method = "CB5A5F887997C6D64518DFB5BAE29853")
     
 public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
@@ -236,7 +236,7 @@ public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
      * @return the encoded string
      * @throws EncodeException if String is too large to encode
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.468 -0500", hash_original_method = "4B8A35C111D653EE4FB3175AA95E287D", hash_generated_method = "60D0EAA4AAAF6E66518CDCAD0A181CD4")
     
 public static byte[] stringToGsm7BitPacked(String data)
@@ -262,7 +262,7 @@ public static byte[] stringToGsm7BitPacked(String data)
      * @return the encoded string
      * @throws EncodeException if String is too large to encode
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.471 -0500", hash_original_method = "0327FB2868DF4020C01C73472A1250C2", hash_generated_method = "5C840CD56D613D383A8D887516F98DEF")
     
 public static byte[] stringToGsm7BitPacked(String data, int languageTable,
@@ -292,7 +292,7 @@ public static byte[] stringToGsm7BitPacked(String data, int languageTable,
      *
      * @throws EncodeException if String is too large to encode
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.474 -0500", hash_original_method = "FBF38886347372CA6BF9139CF8BB5D1E", hash_generated_method = "BAA46BF94DCECA4E55750EF8C3D81E2D")
     
 public static byte[] stringToGsm7BitPacked(String data, int startingSeptetOffset,
@@ -570,7 +570,7 @@ public static String
      * @param s the string to encode
      * @return the 8-bit GSM encoded byte array for the string
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.494 -0500", hash_original_method = "9F01E3A806C3F2E1984EAD9F3EE0C531", hash_generated_method = "74D44612EBB0C935680D45AD73197323")
     
 public static byte[]

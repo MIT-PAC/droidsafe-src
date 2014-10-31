@@ -164,17 +164,17 @@ protected void assertWritable() {
     	taintDouble += size;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:38:53.674 -0400", hash_original_method = "6BF09881E6E6559E458D4F4C5A2986DD", hash_generated_method = "C7EAA34BBF48174348735AE540B65FFF")
     
     private boolean deallocate(boolean ownsData){
     	//Formerly a native method
     	double taintDouble = 0;
-    	taintDouble += toTaintInt(ownsData);
+    	taintDouble += ((ownsData) ? 1 : 0);
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.540 -0400", hash_original_method = "C03D70BB82D2A03447A2A16734005831", hash_generated_method = "04A6057D33096A64659E52508ED1FB9D")
@@ -185,7 +185,7 @@ protected void assertWritable() {
     	taintDouble += buffer.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 }

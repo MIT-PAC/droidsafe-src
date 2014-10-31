@@ -40,7 +40,7 @@ public final class Float extends Number implements Comparable<Float> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.286 -0500", hash_original_method = "F3C86372B308CB7AC0FC99B1DB4B622C", hash_generated_method = "683D8A9E5B30B40DB742F066FBD6598C")
     
 public static boolean isInfinite(float f) {
-        return toTaintBoolean(f); 
+        return ((f) == 1); 
     }
 
     /**
@@ -57,7 +57,7 @@ public static boolean isInfinite(float f) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.291 -0500", hash_original_method = "797988AA09B377AAD595A673B0C7988B", hash_generated_method = "D920FE10DB13EBBC00F5D9F8CC7066A9")
     
 public static boolean isNaN(float f) {
-        return toTaintBoolean(f);
+        return ((f) == 1);
         //return f != f;
     }
 

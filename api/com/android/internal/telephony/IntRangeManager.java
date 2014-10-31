@@ -414,7 +414,7 @@ private boolean tryAddSingleRange(int startId, int endId, boolean selected) {
      * Returns whether the list of ranges is completely empty.
      * @return true if there are no enabled ranges
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.677 -0500", hash_original_method = "3535E42AC2A5B7497897BAD158CB88AF", hash_generated_method = "B948E6FAB4BE4D2FE2FB2AB8D0C9B61A")
     
 public boolean isEmpty() {

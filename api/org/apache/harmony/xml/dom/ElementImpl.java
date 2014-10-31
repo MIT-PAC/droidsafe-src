@@ -83,7 +83,7 @@ private int indexOfAttributeNS(String namespaceURI, String localName) {
         return -1;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.635 -0500", hash_original_method = "813C4DD10F102D6D885192D956222478", hash_generated_method = "64C63F1020C09A8001E8D22C9C233A8A")
     
 public String getAttribute(String name) {
@@ -96,7 +96,7 @@ public String getAttribute(String name) {
         return attr.getValue();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.637 -0500", hash_original_method = "2AD352ABD4B75CC40A48A87FB5C80EF1", hash_generated_method = "540AE61A32C69F3F77346A7063A09A6D")
     
 public String getAttributeNS(String namespaceURI, String localName) {
@@ -109,7 +109,7 @@ public String getAttributeNS(String namespaceURI, String localName) {
         return attr.getValue();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.639 -0500", hash_original_method = "83D3ED81624F77A7E713E4996ABE0363", hash_generated_method = "9AED552B1AF24A10DF029E5953ECD409")
     
 public AttrImpl getAttributeNode(String name) {
@@ -122,7 +122,7 @@ public AttrImpl getAttributeNode(String name) {
         return attributes.get(i);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.641 -0500", hash_original_method = "3B62D6330977637E22606F97FB7DAA33", hash_generated_method = "2282D3125F8E69F0FBA11413D5601053")
     
 public AttrImpl getAttributeNodeNS(String namespaceURI, String localName) {
@@ -135,7 +135,7 @@ public AttrImpl getAttributeNodeNS(String namespaceURI, String localName) {
         return attributes.get(i);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.644 -0500", hash_original_method = "DB6D276ECDED2CB7A7381953F02FE1C2", hash_generated_method = "D01AF0B2F7BD79BB194F63F371D9FE26")
     
 @Override
@@ -182,7 +182,7 @@ Element getElementById(String name) {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.648 -0500", hash_original_method = "6E8835CC5AA6D9440E7C33D346671E0B", hash_generated_method = "168E7265B92B25940BE256C44126574B")
     
 public NodeList getElementsByTagName(String name) {
@@ -191,7 +191,7 @@ public NodeList getElementsByTagName(String name) {
         return result;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.650 -0500", hash_original_method = "A5BCB04504E6AD1A3895B6FBC1B390B7", hash_generated_method = "564D369733C1D7372018653373C517B0")
     
 public NodeList getElementsByTagNameNS(String namespaceURI, String localName) {
@@ -200,7 +200,7 @@ public NodeList getElementsByTagNameNS(String namespaceURI, String localName) {
         return result;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.653 -0500", hash_original_method = "006A1593C2EDDFD80B5C8C9A0B08E49A", hash_generated_method = "F987DC43BC4FDF1130057C0E487D8DB9")
     
 @Override
@@ -208,7 +208,7 @@ public NodeList getElementsByTagNameNS(String namespaceURI, String localName) {
         return namespaceAware ? localName : null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.655 -0500", hash_original_method = "1455FE8FE34AF373D39E8278191439A8", hash_generated_method = "5C655AA6CF7D48092CB41BEF30260410")
     
 @Override
@@ -216,7 +216,7 @@ public NodeList getElementsByTagNameNS(String namespaceURI, String localName) {
         return namespaceURI;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.657 -0500", hash_original_method = "24A50BD0D938263A925A0CD0D8B09D61", hash_generated_method = "4B3C0890BB8DB7FFA65115C787FEE909")
     
 @Override
@@ -224,14 +224,14 @@ public NodeList getElementsByTagNameNS(String namespaceURI, String localName) {
         return getTagName();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.659 -0500", hash_original_method = "8EDB6CFF77634EC46F3FE6E39D5C4072", hash_generated_method = "ACC664DFF7152508BC19C53725D96D5C")
     
 public short getNodeType() {
         return Node.ELEMENT_NODE;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.662 -0500", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "C905C4F3356722AF0C0E9CD6FA7F3CCD")
     
 @Override
@@ -239,7 +239,7 @@ public short getNodeType() {
         return prefix;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.664 -0500", hash_original_method = "84D6D79E2DD8ACB2C7098589FE413C76", hash_generated_method = "111EF6F217D5B08089301545BF5647B6")
     
 public String getTagName() {
@@ -394,7 +394,7 @@ public Attr setAttributeNodeNS(Attr newAttr) throws DOMException {
         this.prefix = validatePrefix(prefix, namespaceAware, namespaceURI);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.720 -0500", hash_original_method = "C51D6ACA797563231B3A9D05774313B4", hash_generated_method = "4EB9EC1BDB5787FF00F4421C186C425B")
     
 public TypeInfo getSchemaTypeInfo() {
@@ -441,7 +441,7 @@ public void setIdAttributeNode(Attr idAttr, boolean isId) throws DOMException {
             //Synthesized constructor
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.694 -0500", hash_original_method = "FF1F71CDD63994FD93D39F9EA196EECF", hash_generated_method = "A09471171D017419D2F2F222F7DEC4BE")
         
 public int getLength() {
@@ -464,14 +464,14 @@ private int indexOfItemNS(String namespaceURI, String localName) {
             return ElementImpl.this.indexOfAttributeNS(namespaceURI, localName);
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.700 -0500", hash_original_method = "5386255E2AB4AB2C7C1C9B01DBB08720", hash_generated_method = "9EC35E60DE585173C34E79A3D203BDFC")
         
 public Node getNamedItem(String name) {
             return ElementImpl.this.getAttributeNode(name);
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.703 -0500", hash_original_method = "4A42E6CB38C61058D8EEC911A360EDF7", hash_generated_method = "CE8F5690EF45A1C10F75F983EC9DDCA2")
         
 public Node getNamedItemNS(String namespaceURI, String localName) {

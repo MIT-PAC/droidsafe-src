@@ -75,7 +75,7 @@ protected void detach() {
         duration = Long.MAX_VALUE;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.443 -0500", hash_original_method = "6A8409740777F9B554371FD5CA23B84B", hash_generated_method = "6C654E86E20140E0ABF98E328BA36F13")
     
 protected OperatedClientConnection getWrappedConnection() {

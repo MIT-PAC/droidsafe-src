@@ -334,7 +334,7 @@ public static TextEncodingDetails calculateLength(CharSequence messageBody,
      */
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.847 -0500", hash_original_method = "B1ECCC301AA91188E5EEB90EE18562E0", hash_generated_method = "A3F46B2E5D7E5D6512D9983CE5F52EC9")
     
 private synchronized static int getNextMessageId() {
@@ -506,7 +506,7 @@ private static SubmitPdu privateGetSubmitPdu(String destAddrStr, boolean statusR
     /**
      * Note: This function is a GSM specific functionality which is not supported in CDMA mode.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.796 -0500", hash_original_method = "CFC9E8C6C71B803A9382349B0D254790", hash_generated_method = "1E62D1DAC0FFB971B9F7AA54D8238671")
     
 public int getProtocolIdentifier() {
@@ -581,7 +581,7 @@ public boolean isMwiDontStore() {
      * For not interfering with status codes from GSM, this status code is
      * shifted to the bits 31-16.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.810 -0500", hash_original_method = "03B5EE24FC37A73D7F31FE2BAB3C2BFD", hash_generated_method = "D61B9EC8352A34F8304694E35F8F3AB4")
     
 public int getStatus() {
@@ -616,7 +616,7 @@ public boolean isReplyPathPresent() {
     */
     /* package */ @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.826 -0500", hash_original_method = "BA17728EC06E4E9670ACA616D9E29C12", hash_generated_method = "BA17728EC06E4E9670ACA616D9E29C12")
     
 int getTeleService() {
@@ -632,7 +632,7 @@ int getTeleService() {
     */
     /* package */ @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.828 -0500", hash_original_method = "1BE3451C0D43919E5115D33DA4A62DB3", hash_generated_method = "1BE3451C0D43919E5115D33DA4A62DB3")
     
 int getMessageType() {
@@ -1014,7 +1014,7 @@ private byte convertDtmfToAscii(byte dtmfDigit) {
      */
     /*package*/ @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.859 -0500", hash_original_method = "D8D3E4C6269124C18E32B3734994B647", hash_generated_method = "D8D3E4C6269124C18E32B3734994B647")
     
 int getNumOfVoicemails() {
@@ -1030,7 +1030,7 @@ int getNumOfVoicemails() {
      */
     /* package */ @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.861 -0500", hash_original_method = "ECE8D39C64EEB1FB74B915B4B0882D92", hash_generated_method = "ECE8D39C64EEB1FB74B915B4B0882D92")
     
 byte[] getIncomingSmsFingerprint() {

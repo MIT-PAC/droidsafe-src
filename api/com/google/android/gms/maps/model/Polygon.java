@@ -170,7 +170,7 @@ public boolean isGeodesic()
     
 public boolean equals(Object  r1)
     {
-    	return DSUtils.toTaintBoolean(hashCode() + r1.hashCode());
+    	return (((hashCode() + r1.hashCode())) == 1);
     }
 
     @DSSafe(DSCat.SAFE_LIST)
@@ -180,7 +180,7 @@ public int hashCode()
     {
     	return (int)(
     			fillColor + stroke + strokeColor + zIndex +
-    			DSUtils.toTaintFloat(geodesic && visible) +
+    			((geodesic && visible) ? 1.0f : 0.0f) +
     			id.hashCode() + points.get(0).hashCode() +
     			holes.get(0).hashCode());
       

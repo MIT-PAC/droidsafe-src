@@ -157,7 +157,7 @@ int getVersionCode()
     
 public boolean equals(Object  r1)
     {
-    	return DSUtils.toTaintBoolean(hashCode() + r1.hashCode());
+    	return (((hashCode() + r1.hashCode())) == 1);
     }
 
     @DSSafe(DSCat.SAFE_LIST)

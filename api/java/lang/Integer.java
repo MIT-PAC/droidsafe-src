@@ -185,7 +185,7 @@ public static int parseInt(String string, int radix) throws NumberFormatExceptio
     
 private static int parse(String string, int offset, int radix, boolean negative) throws NumberFormatException {
         //TODO: maybe incorporate negative into taint
-        return parseInt(string, radix) + offset + toTaintInt(negative);
+        return parseInt(string, radix) + offset + ((negative) ? 1 : 0);
     }
 
     /**
@@ -201,7 +201,7 @@ private static int parse(String string, int offset, int radix, boolean negative)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.210 -0500", hash_original_method = "9D8F65BFD86E7A18329171709CBF3046", hash_generated_method = "E737365418F916A96DC7B6DCF8FED481")
     
 public static String toBinaryString(int i) {
-        String str = new String("<Integer.toBinaryString>");
+        String str = new String();
         str.addTaint(i);
         return str;
     }
@@ -220,7 +220,7 @@ public static String toBinaryString(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.212 -0500", hash_original_method = "3979972EEEC4E88868F959A411D789BE", hash_generated_method = "C7BC11F923377AFB81EB38684EC95967")
     
 public static String toHexString(int i) {
-        String str = new String("<Integer.toHexString>");
+        String str = new String();
         str.addTaint(i);
         return str;
 
@@ -239,7 +239,7 @@ public static String toHexString(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.215 -0500", hash_original_method = "72067B50D522BDEF5353890C050CC074", hash_generated_method = "39DB8FB2BAD3FBA7DDE4A06C2EF9F726")
     
     public static String toOctalString(int i) {
-        String str = new String("<Integer.toOctalString>");
+        String str = new String();
         str.addTaint(i);
         return str;
 
@@ -259,7 +259,7 @@ public static String toHexString(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.220 -0500", hash_original_method = "83FFC2042E386057ACE3416E6CB82244", hash_generated_method = "937E52F3011B3AAE21ECE10A2A8E9C67")
     
 public static String toString(int i) {
-        String str = new String("<Integer.toString>");
+        String str = new String();
         str.addTaint(i);
         return str;
 
@@ -289,7 +289,7 @@ public static String toString(int i) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.223 -0500", hash_original_method = "175FD40B6A0B4257AFDD7BA871A3507B", hash_generated_method = "2703FF1CAB3D642CD02346A51DCCD5AB")
     
 public static String toString(int i, int radix) {
-        String str = new String("<Integer.toString>");
+        String str = new String();
         str.addTaint(i);
         str.addTaint(radix);
         return str;
@@ -720,7 +720,7 @@ public int compareTo(Integer object) {
     
 @Override
     public String toString() {
-        String str = new String("<Integer.toString>");
+        String str = new String();
         str.addTaint(value);
         return str;
     }

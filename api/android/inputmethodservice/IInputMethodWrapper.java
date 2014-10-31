@@ -145,7 +145,7 @@ public void sessionCreated(InputMethodSession session) {
         
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.999 -0500", hash_original_method = "578FDF861144B5ACC99AF98F1B65A29F", hash_generated_method = "32B6135A6011BC01F69AD00B76E7BC8D")
     
 public InputMethod getInternalInputMethod() {

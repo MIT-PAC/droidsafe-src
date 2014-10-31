@@ -39,7 +39,7 @@ void add(NodeImpl node) {
         children.add(node);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.457 -0500", hash_original_method = "91DC5DE88E19C57D8C382EFD5B1079BB", hash_generated_method = "C2BBA1299B7523F687324429EBEEAFEA")
     
 public int getLength() {

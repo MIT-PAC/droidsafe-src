@@ -51,13 +51,13 @@ public class Path {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_isEmpty(int nPath) {
-        return toTaintBoolean(nPath);  
+        return ((nPath) == 1);  
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_isRect(int nPath, RectF rect) {
-        return toTaintBoolean(nPath + rect.getTaintInt());
+        return (((nPath + rect.getTaintInt())) == 1);
     }
     
     @DSComment("Private Method")
@@ -340,7 +340,7 @@ public void setFillType(FillType ft) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.188 -0500", hash_original_method = "659A2CB8B4863836C5C292B196F32903", hash_generated_method = "60472A76FE7A5B817C24F7714958844A")
     
 public boolean isInverseFillType() {
-        //return toTaintBoolean(mNativePath);
+        //return ((mNativePath) == 1);
         return getTaintBoolean();
     }
     
@@ -410,7 +410,7 @@ public boolean isRect(RectF rect) {
     public void computeBounds(RectF bounds, boolean exact) {
         /*
         native_computeBounds(mNativePath, bounds);
-        mNativePath += toTaintInt(true);
+        mNativePath += ((true) ? 1 : 0);
         */
         bounds.addTaint(exact);
         bounds.addTaint(getTaint());
@@ -631,7 +631,7 @@ public void arcTo(RectF oval, float startAngle, float sweepAngle,
         isSimplePath = false;
         /*
         native_arcTo(mNativePath, oval, startAngle, sweepAngle, forceMoveTo);
-        mNativePath += (int)(oval.getTaintInt() + startAngle + sweepAngle + toTaintInt(forceMoveTo));
+        mNativePath += (int)(oval.getTaintInt() + startAngle + sweepAngle + ((forceMoveTo) ? 1 : 0));
         addTaint(mNativePath);
         addTaint(isSimplePath);
         */
@@ -685,7 +685,7 @@ private void detectSimplePath(float left, float top, float right, float bottom, 
             }
         }
         */
-        isSimplePath = toTaintBoolean(left + top + right + bottom + dir.nativeInt);
+        isSimplePath = ((left + top + right + bottom + dir.nativeInt) == 1);
         
     }
 

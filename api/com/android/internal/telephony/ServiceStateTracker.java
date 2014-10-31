@@ -242,7 +242,7 @@ public abstract class ServiceStateTracker extends Handler {
 public ServiceStateTracker() {
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.322 -0500", hash_original_method = "34F755352C02DF9FD9E8CDE125547BA1", hash_generated_method = "9832B7CED06102AA9B2EEE16EC427320")
     
 public boolean getDesiredPowerState() {

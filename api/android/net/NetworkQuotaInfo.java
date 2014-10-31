@@ -55,21 +55,21 @@ public NetworkQuotaInfo(Parcel in) {
         mHardLimitBytes = in.readLong();
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.542 -0500", hash_original_method = "9A1B44DAAD2420BC074FF7BE5F6986CE", hash_generated_method = "7B5797C97FC4868BE78B242DA78472BC")
     
 public long getEstimatedBytes() {
         return mEstimatedBytes;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.544 -0500", hash_original_method = "C8858C0BE5B1D5B7AD428D2F09A67941", hash_generated_method = "E451D4FDE91725E866E5C0B1AFE3631C")
     
 public long getSoftLimitBytes() {
         return mSoftLimitBytes;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.546 -0500", hash_original_method = "32F0E566D231A4A60EB6312295EBA3AB", hash_generated_method = "3EE034154F6FEC6670C6BDE752990FCB")
     
 public long getHardLimitBytes() {

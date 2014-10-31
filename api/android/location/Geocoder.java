@@ -110,7 +110,7 @@ public Geocoder(Context context) {
      */
     @DSComment("Utility function")
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.068 -0500", hash_original_method = "284E75C67527B2849F40BED710ED6A66", hash_generated_method = "457A8E4836C67CBA625FDDB93C2539DD")
     
 public List<Address> getFromLocation(double latitude, double longitude, int maxResults)
@@ -161,7 +161,7 @@ public List<Address> getFromLocation(double latitude, double longitude, int maxR
      */
     @DSComment("Utility function")
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.070 -0500", hash_original_method = "29488D3CE065C208A897F66C86CADF17", hash_generated_method = "6C17B046873F8D38E071B5695D8A1BD9")
     
 public List<Address> getFromLocationName(String locationName, int maxResults) throws IOException {
@@ -220,7 +220,7 @@ public List<Address> getFromLocationName(String locationName, int maxResults) th
      */
     @DSComment("Utility function")
     @DSSafe(DSCat.UTIL_FUNCTION)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.073 -0500", hash_original_method = "13307F87291B7F7130BBF7F095A5BF05", hash_generated_method = "0B1DBFCDA45AB3795CE5CC65B4E634BC")
     
 public List<Address> getFromLocationName(String locationName, int maxResults,

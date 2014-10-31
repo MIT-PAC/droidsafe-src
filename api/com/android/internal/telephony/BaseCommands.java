@@ -1237,7 +1237,7 @@ protected void onRadioAvailable() {
     /**
      * {@inheritDoc}
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.612 -0500", hash_original_method = "5CCABDB2C29BD5F7AE98CB3F70B855A8", hash_generated_method = "878B3C3B065232DBAD0E4007DC184F63")
     
 @Override

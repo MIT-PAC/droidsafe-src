@@ -29,14 +29,14 @@ public final class Telephony {
     private static final String TAG = "Telephony";
     
     public static final class Sms implements BaseColumns, TextBasedSmsColumns {
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.524 -0500", hash_original_method = "91491FADEEC62466B0F9FF75744CEEB2", hash_generated_method = "4116C537EA1E1C0A55E8CE52971B78AD")
         
 public static final Cursor query(ContentResolver cr, String[] projection) {
             return cr.query(CONTENT_URI, projection, null, null, DEFAULT_SORT_ORDER);
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.527 -0500", hash_original_method = "B0F13298A0CBF5A4AA63780A1FEDFE05", hash_generated_method = "FB43394C3A2ED7C0643EFD2496CAF1D5")
         
 public static final Cursor query(ContentResolver cr, String[] projection,
@@ -364,7 +364,7 @@ public static Uri addMessage(ContentResolver resolver,
              * @param intent the intent to read from
              * @return an array of SmsMessages for the PDUs
              */
-            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSSource({DSSourceKind.NETWORK})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.637 -0500", hash_original_method = "30B8C5FF17840C780307DC9CA4EA96D5", hash_generated_method = "B4D9EFA98711619F8882196BFB843AEA")
             
 public static SmsMessage[] getMessagesFromIntent(

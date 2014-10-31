@@ -81,7 +81,7 @@ public Country(Country country) {
     /**
      * @return the ISO 3166-1 two letters country code
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.542 -0500", hash_original_method = "5F3223376651F8BE6A8AF3345618A060", hash_generated_method = "FE03559B487B253CD88FB05A6271FD9E")
     
 public final String getCountryIso() {
@@ -98,7 +98,7 @@ public final String getCountryIso() {
      *         <li>{@link #COUNTRY_SOURCE_LOCALE}</li>
      *         </ul>
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.544 -0500", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "140E77934072FF233DC1E12178DC3B39")
     
 public final int getSource() {

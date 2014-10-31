@@ -1182,7 +1182,7 @@ void doForget() {
 
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.908 -0500", hash_original_method = "DB6C3DBDD9CEB1EED1EE508C536B0201", hash_generated_method = "DB6C3DBDD9CEB1EED1EE508C536B0201")
         
 ServiceConnectionLeaked getLocation() {
@@ -1191,7 +1191,7 @@ ServiceConnectionLeaked getLocation() {
 
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.911 -0500", hash_original_method = "14318317B55D028C50F4E970D5AD5F89", hash_generated_method = "14318317B55D028C50F4E970D5AD5F89")
         
 ServiceConnection getServiceConnection() {
@@ -1200,7 +1200,7 @@ ServiceConnection getServiceConnection() {
 
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.913 -0500", hash_original_method = "A871391E91E358F0260A3C41C2649BF6", hash_generated_method = "A871391E91E358F0260A3C41C2649BF6")
         
 IServiceConnection getIServiceConnection() {
@@ -1209,7 +1209,7 @@ IServiceConnection getIServiceConnection() {
 
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.915 -0500", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "CE8F8E5E4A30C515D6BD9049A49703B9")
         
 int getFlags() {
@@ -1226,7 +1226,7 @@ void setUnbindLocation(RuntimeException ex) {
 
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.919 -0500", hash_original_method = "8CFC5DB6BE83E965DCFCD58443A1D896", hash_generated_method = "8CFC5DB6BE83E965DCFCD58443A1D896")
         
 RuntimeException getUnbindLocation() {

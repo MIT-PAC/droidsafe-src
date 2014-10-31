@@ -32,7 +32,7 @@ public PPreferredService()
         super(P_PREFERRED_SERVICE);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.006 -0500", hash_original_method = "13CD5B55BBBCA0548D99A959291FFE7D", hash_generated_method = "6B6D27B1CD38111B325EFBAF0BC00AC3")
     
 @Override

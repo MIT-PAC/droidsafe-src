@@ -164,7 +164,7 @@ protected DataConnection(PhoneBase phone, String name, int id, RetryManager rm) 
     }
 
     //***** Abstract methods
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.415 -0500", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "756F2EF371660D429BB5FEF72144B300")
@@ -287,7 +287,7 @@ protected int getRadioTechnology(int defaultRadioTechnology) {
     /**
      * Get the DataConnection ID
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.442 -0500", hash_original_method = "AAF5779D145C421CCE90F0916803977D", hash_generated_method = "17C32165BE6E00CB52C703BBAB958164")
     
 public int getDataConnectionId() {
@@ -297,7 +297,7 @@ public int getDataConnectionId() {
     /**
      * @return retry manager retryCount
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.447 -0500", hash_original_method = "FC51BF074579EE4E5F8C7AB511B49B8A", hash_generated_method = "FC5EB280939A7335FB3656C981AABC0E")
     
 public int getRetryCount() {
@@ -307,7 +307,7 @@ public int getRetryCount() {
     /**
      * @return retry manager retryTimer
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.449 -0500", hash_original_method = "21D3097027A7BF6D8D1F04609D8A2AE9", hash_generated_method = "34EE7508D16254DC2F4E0B8AD7891E2D")
     
 public int getRetryTimer() {
@@ -409,7 +409,7 @@ FailCause(int errorCode) {
 
         @DSComment("Package priviledge")
         @DSBan(DSCat.DEFAULT_MODIFIER)
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.335 -0500", hash_original_method = "2CAF9569868B361A0FCF2D9EDEA3395A", hash_generated_method = "2CAF9569868B361A0FCF2D9EDEA3395A")
             
 int getErrorCode() {
@@ -463,7 +463,7 @@ CallSetupException (int retryOverride) {
             mRetryOverride = retryOverride;
         }
 
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.355 -0500", hash_original_method = "474AEB2E917376DACCA3A8D3E49DB29C", hash_generated_method = "96C83208FBD26CDFFC9C3754156612F9")
         
 public int getRetryOverride() {
@@ -1097,7 +1097,7 @@ public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
     /**
      * @return retry manager isRetryNeeded
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.453 -0500", hash_original_method = "BE0E8B7CBE5F430456218437A69801A6", hash_generated_method = "63D61DEBE696AB53F58E55129B2BEA7E")
     
 public boolean isRetryNeeded() {
@@ -1125,7 +1125,7 @@ public void retryForeverUsingLastTimeout() {
     /**
      * @return retry manager isRetryForever
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.460 -0500", hash_original_method = "7BE7662A27A4557E7DE38D4C4F7B834F", hash_generated_method = "4D25C45DD61B55EC85A4BCDC82B33DF8")
     
 public boolean isRetryForever() {

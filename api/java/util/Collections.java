@@ -1299,7 +1299,7 @@ Iterator<E> varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739 =             new Ite
                     throw new UnsupportedOperationException();
                 }
 };
-            varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739.addTaint(getTaint());
+//varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739.addTaint(getTaint());
             return varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739;
             // ---------- Original Method ----------
             //return new Iterator<E>() {
@@ -1500,13 +1500,13 @@ Iterator<Map.Entry<K, V>> var72555FFA480563A744615CB3042A10C3_693483736 =       
                             throw new UnsupportedOperationException();
                         }
 };
-                var72555FFA480563A744615CB3042A10C3_693483736.addTaint(getTaint());
+//var72555FFA480563A744615CB3042A10C3_693483736.addTaint(getTaint());
                 return var72555FFA480563A744615CB3042A10C3_693483736;
                 // ---------- Original Method ----------
                 // Original Method Too Long, Refer to Original Implementation
             }
 };
-            varC1C98ED33EBE8D5F809497AE1618869F_181985594.addTaint(getTaint());
+//varC1C98ED33EBE8D5F809497AE1618869F_181985594.addTaint(getTaint());
             return varC1C98ED33EBE8D5F809497AE1618869F_181985594;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
@@ -2512,7 +2512,7 @@ Iterator<E> var17584F965577555F1B3BEAB9FFD781E4_1722746458 =             new Ite
                     throw new UnsupportedOperationException();
                 }
 };
-            var17584F965577555F1B3BEAB9FFD781E4_1722746458.addTaint(getTaint());
+//var17584F965577555F1B3BEAB9FFD781E4_1722746458.addTaint(getTaint());
             return var17584F965577555F1B3BEAB9FFD781E4_1722746458;
             // ---------- Original Method ----------
             //return new Iterator<E>() {

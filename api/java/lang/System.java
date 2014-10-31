@@ -160,10 +160,10 @@ private static String getenv(String name, String defaultValue) {
             throw new NullPointerException("name == null");
         }
         /*String value = Libcore.os.getenv(name);
-        return (value != null) ? value : defaultValue;*/
+         */
         String newStr = new String(name);
-        newStr.addTaint(defaultValue.getTaint());
-        return newStr;
+        //some dummy boolean return newstr or default value
+        return (defaultValue != "") ? newStr : defaultValue;
     }
     
     @DSComment("Private Method")
@@ -652,10 +652,10 @@ public static void setSecurityManager(SecurityManager sm) {
     }
     
     public static String mapLibraryName(String userLibName) {
-		String ret = new String();
-		ret.addTaint(userLibName.getTaint());
-		return ret;
-	}
+        String ret = new String();
+        ret.addTaint(userLibName.getTaint());
+        return ret;
+    }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)

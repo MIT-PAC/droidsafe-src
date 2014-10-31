@@ -32,7 +32,7 @@ protected AbstractMap() {
         public void requestCapacity(int capacity) {
             valuesCollection.requestCapacity(capacity);
             keySet.requestCapacity(capacity);
-            addTaint(capacity);
+            //addTaint(capacity);
         }
         
 @DSComment("From safe class list")
@@ -109,9 +109,9 @@ public abstract Set<Map.Entry<K, V>> entrySet();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.578 -0400", hash_original_method = "5B9317AAB202C2AFA6ECB99B62EB1150", hash_generated_method = "DBD8B1A42F9CC9FA5EA8264BA255A505")
     @Override
     public boolean equals(Object object) {
-        addTaint(object.getTaint());
-        return getTaintBoolean();
-        
+    //this needs a new implementation of get / add taint
+    return this.getTaintBoolean() && object.getTaintBoolean();
+       
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -120,10 +120,10 @@ public abstract Set<Map.Entry<K, V>> entrySet();
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.579 -0400", hash_original_method = "80DED5B1493F4175A64A94324F6ABF01", hash_generated_method = "DE4E462DDFAD080821E1F2FDD12CBB2F")
     public V get(Object key) {
-        addTaint(key.getTaint());
+        //addTaint(key.getTaint());
         int keyIndex = keySet.getIndexOf(key);
         V value = valuesCollection.get(keyIndex);
-        value.addTaint(getTaint());
+        //value.addTaint(getTaint());
         return value;
         
         // ---------- Original Method ----------
@@ -183,11 +183,11 @@ public abstract Set<Map.Entry<K, V>> entrySet();
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.584 -0400", hash_original_method = "1AE25A34BEB4A8F08F41373ADFFCFE34", hash_generated_method = "68BBC7F50DC671ED0F56BA1A5CF63CD0")
     public V put(K key, V value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
+        //addTaint(value.getTaint());
+        //addTaint(key.getTaint());
         if (DroidSafeAndroidRuntime.control) {
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1588673601 = new UnsupportedOperationException();
-            var81FA7E299EEE7F062EBFBEEF08B0464D_1588673601.addTaint(getTaint());
+            //var81FA7E299EEE7F062EBFBEEF08B0464D_1588673601.addTaint(getTaint());
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_1588673601;
         }
         
@@ -226,25 +226,25 @@ public void putAll(Map<? extends K, ? extends V> map) {
         Entry<K,V> entry = backingEntrySet.removeFirstElement();
         valuesCollection.removeFirstElement();
         keySet.removeFirstElement();
-        entry.addTaint(getTaint());
+        //entry.addTaint(getTaint());
         return entry;
     }
     
     protected Entry<K,V> getFirstEntry() {
         Entry<K,V> entry = backingEntrySet.getFirstElement();
-        entry.addTaint(getTaint());
+        //entry.addTaint(getTaint());
         return entry;
     }
      
     protected V getFirstValue() {
         V value = backingEntrySet.getFirstElement().getValue();
-        value.addTaint(getTaint());
+        //value.addTaint(getTaint());
         return value;
     }
     
     protected K getFirstKey() {
         K key = backingEntrySet.getFirstElement().getKey();
-        key.addTaint(getTaint());
+        //key.addTaint(getTaint());
         return key;
     }
     
@@ -252,31 +252,31 @@ public void putAll(Map<? extends K, ? extends V> map) {
         Entry<K,V> entry = backingEntrySet.removeLastElement();
         valuesCollection.removeLastElement();
         keySet.removeLastElement();
-        entry.addTaint(getTaint());
+        //entry.addTaint(getTaint());
         return entry;
     }
     
     protected Entry<K,V> getLastEntry() {
         Entry<K,V> entry = backingEntrySet.getLastElement();
-        entry.addTaint(getTaint());
+        //entry.addTaint(getTaint());
         return entry;
     }
    
     protected V getLastValue() {
         V value = backingEntrySet.getLastElement().getValue();
-        value.addTaint(getTaint());
+        //value.addTaint(getTaint());
         return value;
     }
     
     protected K getLastKey() {
         K key = backingEntrySet.getLastElement().getKey();
-        key.addTaint(getTaint());
+        //key.addTaint(getTaint());
         return key;
     }
     
     protected Entry<K,V> getSomeEntry() {
         Entry<K,V> entry = backingEntrySet.getElementAt(getTaintInt());
-        entry.addTaint(getTaint());
+        //entry.addTaint(getTaint());
         return entry;
     }
         
@@ -284,7 +284,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.585 -0400", hash_original_method = "DF925EC53E8E5501C52A21B969B7A962", hash_generated_method = "A8C27B378C94E544EE89D7FD0FB575DD")
     public V remove(Object key) {
-        addTaint(key.getTaint());
+       //addTaint(key.getTaint());
         
         int index = keySet.getIndexOf(key);
         if (index == -1) {
@@ -296,7 +296,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
 
         V value = valuesCollection.getElementAt(index);
         valuesCollection.removeElementAt(index);
-        value.addTaint(getTaint());
+        //value.addTaint(getTaint());
         
         return value;
         
@@ -392,14 +392,14 @@ public void putAll(Map<? extends K, ? extends V> map) {
 
         if (DroidSafeAndroidRuntime.control) {
             CloneNotSupportedException ex = new CloneNotSupportedException();
-            ex.addTaint(getTaint());
+            //ex.addTaint(getTaint());
             throw ex; 
         }
 
         AbstractMap<K, V> result = (AbstractMap<K, V>) super.clone();
         result.putAll(this);
         Object varDC838461EE2FA0CA4C9BBB70A15456B0_1501740900 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1501740900.addTaint(getTaint());
+        //varDC838461EE2FA0CA4C9BBB70A15456B0_1501740900.addTaint(getTaint());
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1501740900;
         // ---------- Original Method ----------
         //AbstractMap<K, V> result = (AbstractMap<K, V>) super.clone();
@@ -463,10 +463,10 @@ public V getValue() {
         public V setValue(V object) {
             if (DroidSafeAndroidRuntime.control) {
                 UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2054359486 = new UnsupportedOperationException();
-                var81FA7E299EEE7F062EBFBEEF08B0464D_2054359486.addTaint(getTaint());
+                //var81FA7E299EEE7F062EBFBEEF08B0464D_2054359486.addTaint(getTaint());
                 throw var81FA7E299EEE7F062EBFBEEF08B0464D_2054359486;
             }
-            addTaint(object.getTaint());
+            //addTaint(object.getTaint());
             value = object;
             return object;
             // ---------- Original Method ----------
@@ -558,7 +558,7 @@ public SimpleEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
         //@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.593 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "DED2DCB7D9AC2A45C93F999F67F3F5F9")
         public K getKey() {
-             key.addTaint(getTaint());
+    //key.addTaint(getTaint());
              return key;
             //return key;
         }
@@ -615,7 +615,7 @@ public V setValue(V object) {
         @Override
         public String toString() {
 String varFE698C13EFD83B87FAF2DC2AB0874271_1884902144 =             key + "=" + value;
-            varFE698C13EFD83B87FAF2DC2AB0874271_1884902144.addTaint(getTaint());
+//varFE698C13EFD83B87FAF2DC2AB0874271_1884902144.addTaint(getTaint());
             return varFE698C13EFD83B87FAF2DC2AB0874271_1884902144;
             // ---------- Original Method ----------
             //return key + "=" + value;

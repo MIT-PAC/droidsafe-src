@@ -121,7 +121,7 @@ public void setFeature(String name, boolean value)
         throw new SAXNotRecognizedException(name);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.938 -0500", hash_original_method = "22B8A6F31FF28964E09EDBCB1671EC65", hash_generated_method = "BB7642854414D86C54BD9B612ABE13A9")
     
 public Object getProperty(String name)
@@ -165,7 +165,7 @@ public void setEntityResolver(EntityResolver resolver) {
         this.entityResolver = resolver;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.945 -0500", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "21235A3EAE7DB933DABF4A20E9939299")
     
 public EntityResolver getEntityResolver() {
@@ -178,7 +178,7 @@ public void setDTDHandler(DTDHandler dtdHandler) {
         this.dtdHandler = dtdHandler;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.949 -0500", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "59B05D24F37BFA393F25F99590382F55")
     
 public DTDHandler getDTDHandler() {
@@ -192,7 +192,7 @@ public void setContentHandler(ContentHandler handler) {
         this.contentHandler = handler;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.954 -0500", hash_original_method = "E04698427463FF6147E1A918B2D0CE2E", hash_generated_method = "EBED72EFADFDECD7CE352F24919248CE")
     
 public ContentHandler getContentHandler() {
@@ -205,7 +205,7 @@ public void setErrorHandler(ErrorHandler handler) {
         this.errorHandler = handler;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.958 -0500", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "DB848F72598F990979C28BB722D11B1F")
     
 public ErrorHandler getErrorHandler() {
@@ -218,7 +218,7 @@ public ErrorHandler getErrorHandler() {
      * @return the current lexical handler, or null if none has been registered
      * @see #setLexicalHandler
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.960 -0500", hash_original_method = "6DC1F08FFDA197EBCFE51BBDA6091085", hash_generated_method = "3FE1BA211FE1B97BC202645699DC16DB")
     
 public LexicalHandler getLexicalHandler() {

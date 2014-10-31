@@ -19,8 +19,8 @@ public final class Field extends AccessibleObject implements Member {
     @DSSafe(DSCat.SAFE_LIST)
     private static Annotation[] getDeclaredAnnotations(Class declaringClass, int slot) {
     	Annotation[] ret = new Annotation[0];
-    	ret[0].addTaint(declaringClass.getTaint());
-    	ret[0].addTaint(slot);
+    	//ret[0].addTaint(declaringClass.getTaint());
+    	//ret[0].addTaint(slot);
     	return ret;
     }
     
@@ -28,9 +28,9 @@ public final class Field extends AccessibleObject implements Member {
     private static <A extends Annotation> A getAnnotation(
             Class<?> declaringClass, int slot, Class<A> annotationType) {
     	A ret = (A)new Object();
-    	ret.addTaint(declaringClass.getTaint());
-    	ret.addTaint(slot);
-    	ret.addTaint(annotationType.getTaint());
+    	//ret.addTaint(declaringClass.getTaint());
+    	//ret.addTaint(slot);
+    	//ret.addTaint(annotationType.getTaint());
     	return ret;
     }
     
@@ -39,9 +39,9 @@ public final class Field extends AccessibleObject implements Member {
             Class<?> declaringClass, int slot, Class<? extends Annotation> annotationType) {
             
             Object obj = new Object();
-            obj.addTaint(declaringClass.getTaint());
-            obj.addTaint(slot);
-            obj.addTaint(annotationType.getTaint());
+            //obj.addTaint(declaringClass.getTaint());
+            //obj.addTaint(slot);
+            //obj.addTaint(annotationType.getTaint());
             return obj.getTaintBoolean();
     }
     
@@ -180,8 +180,8 @@ private synchronized void initGenericType() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.759 -0400", hash_original_method = "5161131687230E0D7EE89383FDDF9117", hash_generated_method = "F1BBACEA836E9C65FE0E5D9A22FF7006")
     private Object[] getSignatureAnnotation(Class declaringClass, int slot) {
-    	addTaint(declaringClass.getTaint());
-    	addTaint(slot);
+    	//addTaint(declaringClass.getTaint());
+    	//addTaint(slot);
     	return new Object[0];
     }
 
@@ -195,7 +195,7 @@ private synchronized void initGenericType() {
     
 public boolean isSynthetic() {
         int flags = getFieldModifiers(declaringClass, slot);
-        return toTaintBoolean((flags & Modifier.SYNTHETIC) + 0);
+        return 1 == ((flags & Modifier.SYNTHETIC) + 0);
     }
 
     /**
@@ -231,7 +231,7 @@ public String toGenericString() {
     
 public boolean isEnumConstant() {
         int flags = getFieldModifiers(declaringClass, slot);
-        return toTaintBoolean((flags & Modifier.ENUM) + 0);
+        return 1 == ((flags & Modifier.ENUM) + 0);
     }
 
     /**
@@ -267,7 +267,7 @@ public Type getGenericType() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.008 -0400", hash_original_method = "C04F97610183E33B13FB9B4273375B6D", hash_generated_method = "5FA34C6FB9279968DCAA09543A6D1EB0")
     @Override
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
-        addTaint(annotationType.getTaint());
+    //addTaint(annotationType.getTaint());
         if(annotationType == null)        
         {
             NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_286909647 = new NullPointerException("annotationType == null");

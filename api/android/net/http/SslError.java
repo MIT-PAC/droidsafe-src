@@ -129,7 +129,7 @@ public SslError(int error, X509Certificate certificate, String url) {
      * Gets the SSL certificate associated with this object.
      * @return The SSL certificate, non-null.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.927 -0500", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "2A53C857BC2F74C73D597759713CC1E0")
     
 public SslCertificate getCertificate() {
@@ -140,7 +140,7 @@ public SslCertificate getCertificate() {
      * Gets the URL associated with this object.
      * @return The URL, non-null.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.929 -0500", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "B64A7CF604F22C84E5CFF07E83B9389F")
     
 public String getUrl() {
@@ -185,7 +185,7 @@ public boolean hasError(int error) {
      * Returns -1 if the set is empty.
      * @return The most severe SSL error, or -1 if the set is empty.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.936 -0500", hash_original_method = "3A5499989FF366B2E4D135ECA3891E4C", hash_generated_method = "270D5F33BC3111844A7C6690511A252A")
     
 public int getPrimaryError() {

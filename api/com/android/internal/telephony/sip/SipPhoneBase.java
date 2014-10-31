@@ -148,7 +148,7 @@ public ServiceState getServiceState() {
         return s;
     }
 
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:24.379 -0500", hash_original_method = "C91EF993CFF3E980A5E5083D47787FE2", hash_generated_method = "420F67F3650F8FB7EA60A37E2604A77A")
     
 public CellLocation getCellLocation() {

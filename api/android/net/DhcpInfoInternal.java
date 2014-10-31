@@ -71,7 +71,7 @@ public class DhcpInfoInternal {
         mRoutes.add(routeInfo);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.919 -0500", hash_original_method = "A7B26240781BB7C0E135CB45CD0D9800", hash_generated_method = "7304006BADE7268B32CBBD8D9383478F")
     public Collection<RouteInfo> getRoutes() {
         return Collections.unmodifiableCollection(mRoutes);
@@ -166,7 +166,7 @@ public class DhcpInfoInternal {
         }
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.944 -0500", hash_original_method = "4AA9FBC2D45E1110E54A5D07C5B867F3", hash_generated_method = "3F4A5CA090E96D2F4C531A5FED0F07B2")
     public String toString() {

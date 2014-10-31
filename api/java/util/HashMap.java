@@ -89,7 +89,7 @@ private static int roundUpToPowerOfTwo(int i) {
         if(capacity < 0)        
         {
             IllegalArgumentException varE68AB0C8AF29B541CCF795D60D7AEAE6_237232596 = new IllegalArgumentException("Capacity: " + capacity);
-            varE68AB0C8AF29B541CCF795D60D7AEAE6_237232596.addTaint(getTaint());
+            //varE68AB0C8AF29B541CCF795D60D7AEAE6_237232596.addTaint(getTaint());
             throw varE68AB0C8AF29B541CCF795D60D7AEAE6_237232596;
         } //End block
         super.requestCapacity(capacity);
@@ -148,7 +148,7 @@ public HashMap(int capacity, float loadFactor) {
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.971 -0400", hash_original_method = "D988B3BE94D6CE1D83E9BB54AA86E55F", hash_generated_method = "D8E5CB87B1CD6B8482A863452313CF44")
     public  HashMap(Map<? extends K, ? extends V> map) {
-        addTaint(map.getTaint());
+        //addTaint(map.getTaint());
         putAll(map);
         // ---------- Original Method ----------
         //constructorPutAll(map);
@@ -168,12 +168,12 @@ public HashMap(int capacity, float loadFactor) {
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_1421621907 = new AssertionError(e);
-            varA5A331D65C8C3F32D42E49D64BCF4109_1421621907.addTaint(getTaint());
+            //varA5A331D65C8C3F32D42E49D64BCF4109_1421621907.addTaint(getTaint());
             throw varA5A331D65C8C3F32D42E49D64BCF4109_1421621907;
         } //End block
         result.init();
-Object varDC838461EE2FA0CA4C9BBB70A15456B0_649335864 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_649335864.addTaint(getTaint());
+        Object varDC838461EE2FA0CA4C9BBB70A15456B0_649335864 =         result;
+        //varDC838461EE2FA0CA4C9BBB70A15456B0_649335864.addTaint(getTaint());
         return varDC838461EE2FA0CA4C9BBB70A15456B0_649335864;
         // ---------- Original Method ----------
         //HashMap<K, V> result;
@@ -218,9 +218,9 @@ void init() { }
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.977 -0400", hash_original_method = "DB078B96D3A026778ABE08AF9188B4AF", hash_generated_method = "B269550FE5C2A2D1F2C81140D8484158")
     private boolean containsMapping(Object key, Object value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
-        return getTaintBoolean();
+    addTaint(value.getTaint());
+    addTaint(key.getTaint());
+    return getTaintBoolean();
         // ---------- Original Method ----------
         
         //if (key == null) {
@@ -242,7 +242,7 @@ void init() { }
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.978 -0400", hash_original_method = "04BAFB4D83496263E755E7BD0F7C13FF", hash_generated_method = "52C658DC0E2F13C5A057F812129BFFD0")
     private void writeObject(ObjectOutputStream stream) throws IOException {
-        addTaint(stream.getTaint());
+        //addTaint(stream.getTaint());
         ObjectOutputStream.PutField fields = stream.putFields();
         fields.put("loadFactor", DEFAULT_LOAD_FACTOR);
         stream.writeFields();
@@ -269,13 +269,13 @@ for(Entry<K, V> e : entrySet())
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.979 -0400", hash_original_method = "332DDC73CD162DC81E3D2D410CF74F29", hash_generated_method = "084A0B9A938F9631A78FC483203ED3E4")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
-        addTaint(stream.getTaint());
+    addTaint(stream.getTaint());
         stream.defaultReadObject();
         int capacity = stream.readInt();
         if(capacity < 0)        
         {
             InvalidObjectException var4B6A7F779A4667EA55847180B6A27960_1717193179 = new InvalidObjectException("Capacity: " + capacity);
-            var4B6A7F779A4667EA55847180B6A27960_1717193179.addTaint(getTaint());
+            //var4B6A7F779A4667EA55847180B6A27960_1717193179.addTaint(getTaint());
             throw var4B6A7F779A4667EA55847180B6A27960_1717193179;
         } //End block
         
@@ -284,7 +284,7 @@ for(Entry<K, V> e : entrySet())
         if(size < 0)        
         {
             InvalidObjectException varE685AABC7A986A19539C13F2F8920021_14933937 = new InvalidObjectException("Size: " + size);
-            varE685AABC7A986A19539C13F2F8920021_14933937.addTaint(getTaint());
+            //varE685AABC7A986A19539C13F2F8920021_14933937.addTaint(getTaint());
             throw varE685AABC7A986A19539C13F2F8920021_14933937;
         } //End block
         init();

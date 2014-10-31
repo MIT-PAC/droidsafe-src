@@ -92,7 +92,7 @@ public CharArrayBuffer getBuffer() {
         return this.buffer;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.682 -0500", hash_original_method = "45FB39B4E67563C5A568E25DDBF414D1", hash_generated_method = "78CB532AFE764110A4E51A23C38737C5")
     

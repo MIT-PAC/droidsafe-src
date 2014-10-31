@@ -96,7 +96,7 @@ private BerTlv(int tag, List<ComprehensionTlv> ctlvs) {
      *
      * @return A list of COMPREHENSION-TLV object
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.215 -0500", hash_original_method = "4DB54AB9F503DA894E5725BF1F0BC01C", hash_generated_method = "31036B0C79BC3AE7FC0A6AE828E11749")
     
 public List<ComprehensionTlv> getComprehensionTlvs() {
@@ -108,7 +108,7 @@ public List<ComprehensionTlv> getComprehensionTlvs() {
      *
      * @return A tag integer.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.217 -0500", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "92179372CE49E6423B644726BDCEE63E")
     
 public int getTag() {

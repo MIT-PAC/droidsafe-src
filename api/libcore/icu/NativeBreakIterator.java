@@ -89,7 +89,7 @@ public static NativeBreakIterator getWordInstance(Locale where) {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean isBoundaryImpl(int address, int offset) {
-        return toTaintBoolean(address + offset);
+        return ((address + offset) == 1);
     }
     
     @DSComment("Private Method")

@@ -171,7 +171,7 @@ public boolean isRedirectMax() {
         return mRedirectCount >= MAX_REDIRECT_COUNT;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.832 -0500", hash_original_method = "3AC7970B74E2F8214DB13CA8BCAB44BF", hash_generated_method = "2E435D44E0ED540C4EDE05E6BFEC6EB2")
     
 public int getRedirectCount() {
@@ -326,7 +326,7 @@ private void setupAuthResponse() {
     /**
      * @return HTTP request method (GET, PUT, etc).
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.847 -0500", hash_original_method = "E02C2F0EA498C425350A019498EEA751", hash_generated_method = "1C2EAF92FC42C6E1A4C4DB991962A8CD")
     
 public String getMethod() {

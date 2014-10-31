@@ -336,14 +336,8 @@ public final Application getApplication() {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public final boolean isChild(){
-		return getTaintBoolean();
-		// Original method
-		/*
-		{
         return mParent != null;
     }
-		*/
-	}
     
     /** Return the parent activity if this view is an embedded child. */
     @DSComment("Normal GUI")
@@ -363,6 +357,7 @@ public final Activity getParent() {
         if (mParent != null) {
         
         }
+        //what to do here?
         Intent intent = new Intent();
         intent.addTaint(getTaint());
         return intent;
@@ -869,14 +864,8 @@ public CharSequence onCreateDescription() {
     @DSSafe
     @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     public int getChangingConfigurations(){
-		return getTaintInt();
-		// Original method
-		/*
-		{
         return mConfigChangeFlags;
     }
-		*/
-	}
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
@@ -1290,9 +1279,9 @@ public void setFinishOnTouchOutside(boolean finish) {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public final void setDefaultKeyMode(int mode){
-		addTaint(mode);
-		mDefaultKeySsb = new SpannableStringBuilder();
-		Selection.setSelection(mDefaultKeySsb,0);
+        //addTaint(mode);
+        mDefaultKeySsb = new SpannableStringBuilder();
+        Selection.setSelection(mDefaultKeySsb,0);
 		// Original method
 		/*
 		{
@@ -1779,8 +1768,8 @@ public View onCreatePanelView(int featureId) {
     @DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
-		return toTaintBoolean(toTaintInt(onPrepareOptionsMenu(menu)) + 
-                              toTaintInt(mFragments.dispatchPrepareOptionsMenu(menu))  + toTaintInt(menu.hasVisibleItems()));
+        return 1 == ((onPrepareOptionsMenu(menu) ? 1 : 0) + 
+                     (mFragments.dispatchPrepareOptionsMenu(menu) ? 1 : 0)  + (((menu.hasVisibleItems())) ? 1 : 0));
 		// Original method
 		/*
 		{
@@ -2305,28 +2294,21 @@ public void closeContextMenu() {
     @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onSearchRequested(){
         startSearch(null, false, null, false); 
-        return getTaintBoolean();
-        // Original method
-        /*
-          {
-          startSearch(null, false, null, false); 
-          return true;
-          }
-        */
+        return true;
     }
     
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.IPC})
     public void startSearch(String initialQuery, boolean selectInitialQuery, 
             Bundle appSearchData, boolean globalSearch){
-    	addTaint(initialQuery.getTaint());
-    	addTaint(selectInitialQuery);
-    	addTaint(appSearchData.getTaint());
-    	addTaint(globalSearch);
-		ensureSearchManager();
-		mSearchManager.startSearch(initialQuery, selectInitialQuery, getComponentName(),
-                appSearchData, globalSearch); 
+    	//addTaint(initialQuery.getTaint());
+    	//addTaint(selectInitialQuery);
+    	//addTaint(appSearchData.getTaint());
+    	//addTaint(globalSearch);
+        ensureSearchManager();
+        mSearchManager.startSearch(initialQuery, selectInitialQuery, getComponentName(),
+                                   appSearchData, globalSearch); 
 		// Original method
 		/*
 		{
@@ -2492,7 +2474,7 @@ public LayoutInflater getLayoutInflater() {
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     public void startActivityForResult(Intent intent, int requestCode){
         intent.getAction();
         intent.getBooleanArrayExtra("");
@@ -2607,7 +2589,7 @@ public LayoutInflater getLayoutInflater() {
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     @Override public void startActivity(Intent intent){
     	
     	String result = intent.getAction() + intent.getDataString();
@@ -2658,7 +2640,7 @@ public LayoutInflater getLayoutInflater() {
      */
     @DSVerified
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.156 -0500", hash_original_method = "E2A55AFC4750254BD88786F18353EE8B", hash_generated_method = "0DAB0CC521B4AF9EA1AD5FA3E319D475")
     @Override
     public void startActivities(Intent[] intents) {
@@ -2822,15 +2804,16 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
     @DSSpec(DSCat.IPC)
     @DSSink(DSSinkKind.IPC)
     public final void setResult(int resultCode){
-		addTaint(resultCode);
-		// Original method
-		/*
-		{
-        synchronized (this) {
-            mResultCode = resultCode;
-            mResultData = null;
-        }
-    }
+        mResultCode = resultCode;
+        //addTaint(resultCode);
+        // Original method
+        /*
+          {
+          synchronized (this) {
+          mResultCode = resultCode;
+          mResultData = null;
+          }
+          }
 		*/
 		//Return nothing
 	}
@@ -2839,16 +2822,17 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
     @DSSpec(DSCat.IPC)
     @DSSink(DSSinkKind.IPC)
     public final void setResult(int resultCode, Intent data){
-		addTaint(resultCode);
-		mResultData = data;
-		// Original method
-		/*
-		{
-        synchronized (this) {
-            mResultCode = resultCode;
-            mResultData = data;
-        }
-    }
+        //addTaint(resultCode);
+        mResultData = data;
+        mResultCode = resultCode;
+        // Original method
+        /*
+          {
+          synchronized (this) {
+          mResultCode = resultCode;
+          mResultData = data;
+          }
+          }
 		*/
 		//Return nothing
 	}
@@ -2908,10 +2892,10 @@ public ComponentName getCallingActivity() {
     }
     
     public void setVisible(boolean visible){
-		addTaint(visible);
-		makeVisible();
-		mDecor.setVisibility(View.INVISIBLE);
-		// Original method
+        //addTaint(visible);
+        makeVisible();
+        mDecor.setVisibility(View.INVISIBLE);
+        // Original method
 		/*
 		{
         if (mVisibleFromClient != visible) {
@@ -2949,23 +2933,11 @@ public ComponentName getCallingActivity() {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     public boolean isFinishing(){
-		return getTaintBoolean();
-		// Original method
-		/*
-		{
         return mFinished;
     }
-		*/
-	}
     
     public boolean isChangingConfigurations(){
-		return getTaintBoolean();
-		// Original method
-		/*
-		{
         return mChangingConfigurations;
-    }
-		*/
 	}
     
     @DSSafe(DSCat.SAFE_LIST)
@@ -3349,17 +3321,17 @@ public SharedPreferences getPreferences(int mode) {
         if (DroidSafeAndroidRuntime.control || getBaseContext()==null) {
              IllegalStateException exception = new IllegalStateException(
                     "System services not available to Activities before onCreate()");
-             exception.addTaint(getTaint());
+                 //exception.addTaint(getTaint());
         }
 
         if (name.equals(SEARCH_SERVICE)) {
             ensureSearchManager();
-            mSearchManager.addTaint(getTaint());
+                //mSearchManager.addTaint(getTaint());
             return mSearchManager;
         }
         
         if (name.equals(WINDOW_SERVICE)) {
-            mWindowManager.addTaint(getTaint());
+            //mWindowManager.addTaint(getTaint());
             return mWindowManager;
         }
 
@@ -3417,16 +3389,8 @@ public void setTitle(int titleId) {
     }
     
     public void setTitleColor(int textColor){
-		addTaint(textColor);
-		onTitleChanged(mTitle, textColor);
-		// Original method
-		/*
-		{
         mTitleColor = textColor;
         onTitleChanged(mTitle, textColor);
-    }
-		*/
-		//Return nothing
 	}
 
     @DSComment("Normal GUI")
@@ -3440,13 +3404,7 @@ public final CharSequence getTitle() {
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getTitleColor(){
-		return getTaintInt();
-		// Original method
-		/*
-		{
-        return mTitleColor;
-    }
-		*/
+        return         mTitleColor;
 	}
     
     @DSSpec(DSCat.IPC)
@@ -3858,13 +3816,13 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		mMainThread = aThread;  //Preserved
 		mInstrumentation = instr;  //Preserved
 		mToken = token;  //Preserved
-		addTaint(ident);
+		//addTaint(ident);
 		mApplication = application;  //Preserved
 		mIntent = intent;  //Preserved
 		mActivityInfo = info;  //Preserved
 		mTitle = title;  //Preserved
 		mParent = parent;  //Preserved
-		addTaint(id.getTaint());
+		//addTaint(id.getTaint());
 		mLastNonConfigurationInstances = lastNonConfigurationInstances;  //Preserved
 		mCurrentConfig = config;  //Preserved
 		attachBaseContext(context);
@@ -4050,14 +4008,8 @@ final void performUserLeaving() {
 	}
     
     public final boolean isResumed(){
-		return getTaintBoolean();
-		// Original method
-		/*
-		{
         return mResumed;
     }
-		*/
-	}
     
     @DSVerified
     @DSComment("Package priviledge")
@@ -4103,8 +4055,8 @@ final void performUserLeaving() {
     // orphaned legacy method
      //called by dsruntime to perform the onCreate
 	public final void performCreate(Bundle icicle, Context context){
-        addTaint(icicle.getTaint());
-        addTaint(context.getTaint());
+        //addTaint(icicle.getTaint());
+        //addTaint(context.getTaint());
 		mIntent = droidsafeGetIntent();
 
 		this.attachBaseContext(context);

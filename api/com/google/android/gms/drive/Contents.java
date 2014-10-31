@@ -84,10 +84,10 @@ public void writeToParcel(Parcel  r1, int  i0)
     	r1.writeInt(ra);
     	r1.writeInt(xM);
     	r1.writeString(HA); 
-    	r1.writeInt(toTaintInt(HB));
-    	r1.writeInt(toTaintInt(HC));
-    	r1.writeInt(toTaintInt(HD));
-    	r1.writeInt(toTaintInt(mClosed));
+    	r1.writeInt(((HB) ? 1 : 0));
+    	r1.writeInt(((HC) ? 1 : 0));
+    	r1.writeInt(((HD) ? 1 : 0));
+    	r1.writeInt(((mClosed) ? 1 : 0));
     	r1.writeInt(Hy);
     	r1.writeInt(Hz.getTaintInt());
 

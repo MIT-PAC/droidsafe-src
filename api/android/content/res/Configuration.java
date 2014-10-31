@@ -42,7 +42,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     
 public static boolean needNewResources(int configChanges, int interestingChanges) {
         //return (configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE)) != 0;
-        return toTaintBoolean(configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE));
+        return 1 == (configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE));
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.303 -0500", hash_original_field = "5D73236DF3C2B1F3FA582709E51BE31B", hash_generated_field = "B346CDA4558DB20C72B6AF98D39CC438")
 
@@ -312,7 +312,7 @@ private Configuration(Parcel source) {
 public boolean isLayoutSizeAtLeast(int size) {
         int cur = screenLayout&SCREENLAYOUT_SIZE_MASK;
         if (cur == SCREENLAYOUT_SIZE_UNDEFINED) return false;
-        return toTaintBoolean(cur + size);
+        return ((cur + size) == 1);
     }
     
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
@@ -468,7 +468,7 @@ public boolean isOtherSeqNewer(Configuration other) {
             // sequence has wrapped around.
             return false;
         }
-        return toTaintBoolean(diff);
+        return ((diff) == 1);
     }
     
     /**
@@ -607,7 +607,7 @@ public boolean equals(Configuration that) {
         if (that == null) return false;
         if (that == this) return true;
         //return this.compareTo(that) == 0;
-        return toTaintBoolean(this.compareTo(that));
+        return 1 == (this.compareTo(that));
     }
 
     @DSSafe(DSCat.SAFE_LIST)

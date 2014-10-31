@@ -291,7 +291,7 @@ public boolean importFile(int objectHandle, String destPath) {
     	taintDouble += fd;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:22:04.782 -0400", hash_original_method = "6753B93585F19A7AC1519FB4DFF90D14", hash_generated_method = "75E92DEDBEC5DB3628B1DCB207D9511C")
     
@@ -396,7 +396,7 @@ public boolean importFile(int objectHandle, String destPath) {
     	taintDouble += objectHandle;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:31.388 -0400", hash_original_method = "A7969E9F341EBBA0BCDA58E96E692FDD", hash_generated_method = "876BD8DDDE08B9480F240AB2771C27CD")
@@ -430,7 +430,7 @@ public boolean importFile(int objectHandle, String destPath) {
     	taintDouble += destPath.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 }

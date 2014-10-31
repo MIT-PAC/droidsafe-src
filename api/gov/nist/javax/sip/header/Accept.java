@@ -33,7 +33,7 @@ public boolean allowsAllContentTypes() {
         if (mediaRange == null)
             return false;
         else
-            return toTaintBoolean(mediaRange.type.compareTo(STAR));
+            return 1 == (mediaRange.type.compareTo(STAR));
     }
 
     /**
@@ -47,7 +47,7 @@ public boolean allowsAllContentSubTypes() {
         if (mediaRange == null) {
             return false;
         } else
-            return toTaintBoolean(mediaRange.getSubtype().compareTo(STAR)); 
+            return 1 == (mediaRange.getSubtype().compareTo(STAR)); 
     }
 
     /** Encode the value of this header into cannonical form.

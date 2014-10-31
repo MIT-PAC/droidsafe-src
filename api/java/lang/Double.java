@@ -35,7 +35,7 @@ public final class Double extends Number implements Comparable<Double> {
     
 public static boolean isInfinite(double d) {
         //return (d == POSITIVE_INFINITY) || (d == NEGATIVE_INFINITY);
-        return toTaintBoolean((d + POSITIVE_INFINITY) + (d + NEGATIVE_INFINITY));
+        return 1 == ((d + POSITIVE_INFINITY) + (d + NEGATIVE_INFINITY));
     }
 
     /**
@@ -52,7 +52,7 @@ public static boolean isInfinite(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.659 -0500", hash_original_method = "A570339C802CFE5901F930FCAA1CB116", hash_generated_method = "7F8B0D286435B57612BBCABE86B8E8D3")
     
 public static boolean isNaN(double d) {
-        return toTaintBoolean(d);
+        return ((d) == 1);
         //return d != d;
     }
     
@@ -94,7 +94,7 @@ public static double parseDouble(String string) throws NumberFormatException {
     
 public static String toString(double d) {
         //return RealToString.getInstance().doubleToString(d);
-        String s = new String("<double>");
+        String s = new String();
         s.addTaint(d);
         return s;
     }
@@ -201,7 +201,7 @@ public static Double valueOf(double d) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.688 -0500", hash_original_method = "1D9798A0A4D63301EAA0C709DA651E0D", hash_generated_method = "4777531DC6DAFBE5D6CD7B3DF1F501A7")
     
 public static String toHexString(double d) {
-        String ret = new String("<Double.toHexString>");
+        String ret = new String();
         ret.addTaint(d);
         return ret;
         /*

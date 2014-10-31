@@ -13,7 +13,7 @@ public class ErrorStrings {
      * Get the localized error message resource for the given error code.
      * If the code is unknown, we'll return a generic error message.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.092 -0500", hash_original_method = "620302E9CD7FB340599AB59B48404262", hash_generated_method = "B3670E43A8B7EF586CE3BC31E856416A")
     
 public static String getString(int errorCode, Context context) {

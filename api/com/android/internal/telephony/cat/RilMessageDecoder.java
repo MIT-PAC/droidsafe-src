@@ -22,7 +22,7 @@ class RilMessageDecoder extends StateMachine {
      * @param fh
      * @return RilMesssageDecoder
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.489 -0500", hash_original_method = "903735E0D39211F3CD1FCDD839935A4F", hash_generated_method = "D4496C5954757CE1790873D1D41C4360")
     
 public static synchronized RilMessageDecoder getInstance(Handler caller, IccFileHandler fh) {

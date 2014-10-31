@@ -10,7 +10,7 @@ public interface HttpResponse extends HttpMessage {
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.NETWORK)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     StatusLine getStatusLine();
     
     @DSComment("Abstract Method")
@@ -37,7 +37,7 @@ public interface HttpResponse extends HttpMessage {
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.NETWORK)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     HttpEntity getEntity();
     
     @DSComment("Abstract Method")

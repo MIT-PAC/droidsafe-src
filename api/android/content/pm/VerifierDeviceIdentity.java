@@ -231,7 +231,7 @@ private VerifierDeviceIdentity(Parcel source) {
         }
 
         final VerifierDeviceIdentity o = (VerifierDeviceIdentity) other;
-        return toTaintBoolean(getTaintInt() + o.getTaintInt() + 
+        return 1 == (getTaintInt() + o.getTaintInt() + 
                               mIdentity +  o.mIdentity);
     }
 

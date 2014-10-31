@@ -140,7 +140,7 @@ public
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:35.067 -0500", hash_original_method = "7AA84AC8F947102F8EF05D3C97C1753D", hash_generated_method = "25758D42FA7052B410176A40010A8A87")
     
 public String

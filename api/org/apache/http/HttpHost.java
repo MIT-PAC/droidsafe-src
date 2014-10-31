@@ -94,7 +94,7 @@ public HttpHost (final HttpHost httphost) {
      * 
      * @return the host name (IP or DNS name)
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.915 -0500", hash_original_method = "FF0006634ABBE2C97788D559B23C884A", hash_generated_method = "1990813A386F67A8FC0A02079ED98F7E")
     
 public String getHostName() {

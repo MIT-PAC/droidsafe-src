@@ -292,7 +292,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	taintDouble += capacity;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:43.873 -0400", hash_original_method = "C5D13A7D2DE40061D17A5A19349F9B46", hash_generated_method = "B240A7932BE0CB51D42FA1BDE6059C94")
@@ -301,7 +301,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:43.875 -0400", hash_original_method = "6E986F427644A4A64ED0D6D91162CD0A", hash_generated_method = "B7282686DF017C5D81B8D25AAFBB9DEA")
@@ -323,7 +323,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	taintDouble += length;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.797 -0400", hash_original_method = "03500FE5AEE71C3399A63C4DE8259AEF", hash_generated_method = "60B3C2D31D78E3E59BB43C3DF26365DA")
@@ -347,7 +347,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	taintDouble += buffer.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.805 -0400", hash_original_method = "2047716A79A9E9406699C20C7A268A40", hash_generated_method = "431F2A0CB3A7814C0347AEEA4DA821C1")
@@ -358,7 +358,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	taintDouble += ints[0];
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.809 -0400", hash_original_method = "88CBED05920219A258C2F99CB4EDFE1D", hash_generated_method = "C0A8BCC26755F86A54824EBDD91E7B3C")
@@ -369,7 +369,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	taintDouble += floats[0];
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.813 -0400", hash_original_method = "E7AA6156590D219429B51E7417E59CD9", hash_generated_method = "1CECC7BC57C6878D9A1AAB162A5740FB")
@@ -408,7 +408,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	taintDouble += bytesPerSample;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.825 -0400", hash_original_method = "5A3058CD0FF689DA5F7D1CD0293664C5", hash_generated_method = "F215E199D97DA856D1A9E142C6830199")
@@ -421,7 +421,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	taintDouble += bytesPerSample;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.829 -0400", hash_original_method = "4AAA1963F74E551C88426B820B381324", hash_generated_method = "D98ADAE63A177915B45128E092AF964A")
@@ -432,7 +432,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	taintDouble += frame.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:14:21.833 -0400", hash_original_method = "8EE5FFA3E1866792DC021D861E52C38E", hash_generated_method = "E181817671F3569D40046BA60CE0103A")
@@ -443,7 +443,7 @@ NativeFrame(FrameFormat format, FrameManager frameManager) {
     	taintDouble += frame.getTaintInt();
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
 }

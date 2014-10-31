@@ -53,7 +53,7 @@ public LocationProvider(String name, ILocationManager service) {
     /**
      * Returns the name of this provider.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.754 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
     
 public String getName() {
@@ -162,7 +162,7 @@ public abstract boolean supportsBearing();
      */
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.774 -0500", hash_original_method = "2F50AAAB2647BF8230ECBEB434938FE5", hash_generated_method = "34DD62495694D40DE49D2D104CB0D3B2")
     
 public abstract int getPowerRequirement();
@@ -176,7 +176,7 @@ public abstract int getPowerRequirement();
      */
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.776 -0500", hash_original_method = "DF70590EBA658BF9F5EE889268264DFA", hash_generated_method = "CD4BE7A1C5BB4B32874B2664C730697D")
     
 public abstract int getAccuracy();

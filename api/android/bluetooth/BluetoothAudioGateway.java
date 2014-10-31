@@ -279,7 +279,7 @@ protected void finalize() throws Throwable {
     	taintDouble += timeoutMs;
     	addTaint(taintDouble);
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:24:33.357 -0400", hash_original_method = "2B138DFAFED77D77A0EF6B672D4B7D43", hash_generated_method = "15CAC9E9D399A94B9C92694012680F0B")
     
@@ -287,7 +287,7 @@ protected void finalize() throws Throwable {
     	//Formerly a native method
     	double taintDouble = 0;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-03-25 14:21:44.632 -0400", hash_original_method = "AB9B201BDC5272676E7CEA131DBEA3B1", hash_generated_method = "A5FDB50B9764F02C629BF7B764FC7862")

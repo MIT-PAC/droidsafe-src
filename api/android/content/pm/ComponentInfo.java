@@ -87,7 +87,7 @@ protected ComponentInfo(Parcel source) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.131 -0500", hash_original_method = "CF29F8673A9FD20E39B97C12C8CE0496", hash_generated_method = "C9F8B26C82EDB70FBC40AAAFB8FA016B")
     
 public boolean isEnabled() {
-        return toTaintBoolean(toTaintInt(enabled) + toTaintInt(applicationInfo.enabled));
+        return 1 == (((enabled) ? 1 : 0) + ((applicationInfo.enabled) ? 1 : 0));
     }
     
     /**

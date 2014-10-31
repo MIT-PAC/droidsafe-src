@@ -210,7 +210,7 @@ public InetAddress getInetAddress() {
      */
     @DSComment("local port has to be provided, no new info leaking")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.852 -0500", hash_original_method = "F5BB694DF3469EBFBD82064FFB1FEAE0", hash_generated_method = "7757875108A58B1E253356DE798623DA")
     
 public int getLocalPort() {
@@ -284,7 +284,7 @@ public synchronized void setSoTimeout(int timeout) throws SocketException {
      *
      * @return the textual socket representation.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.866 -0500", hash_original_method = "577ACC2D572353EA5861EB3648159EF5", hash_generated_method = "6449E1D40009C093BF2C3A48885041E6")
     

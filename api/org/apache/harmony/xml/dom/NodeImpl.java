@@ -194,7 +194,7 @@ private static List<Object> createEqualityKey(Node node) {
 
     static final TypeInfo NULL_TYPE_INFO = new TypeInfo() {
         
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.372 -0400", hash_original_method = "D6670B1956B399E1F4484C7409D24E32", hash_generated_method = "B4051AD4FF44AD338624469365B280F8")
         public String getTypeName() {
             String varB4EAC82CA7396A68D541C85D26508E83_366710541 = null; 
@@ -204,7 +204,7 @@ private static List<Object> createEqualityKey(Node node) {
             
         }
         
-        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSSource({DSSourceKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.373 -0400", hash_original_method = "076EDBD720D64B1CD58A3E3161F3A408", hash_generated_method = "83D91F2300DCAB76D6EC29A18904FFB6")
         public String getTypeNamespace() {
             String varB4EAC82CA7396A68D541C85D26508E83_2015477207 = null; 
@@ -250,56 +250,56 @@ public final Node cloneNode(boolean deep) {
         return document.cloneOrImportNode(UserDataHandler.NODE_CLONED, this, deep);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.169 -0500", hash_original_method = "E2D79625FBECAF1E43447A0BEFC228B9", hash_generated_method = "F93927BCF29AB4CCA8EFBF832137603C")
     
 public NamedNodeMap getAttributes() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.171 -0500", hash_original_method = "1F381BCE8228355FEE86D697E02DDE0B", hash_generated_method = "1ED27F314E2126FC1BB2F8C1F787096F")
     
 public NodeList getChildNodes() {
         return EMPTY_LIST;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.173 -0500", hash_original_method = "DB31E0DD76C8C1947AB843730A5D8205", hash_generated_method = "A2835D1CD8E281CA60B54343298C349E")
     
 public Node getFirstChild() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.175 -0500", hash_original_method = "6070A4A9C5DDD0223B459D45F6FD5CBB", hash_generated_method = "0393C378A39C4B1B35CDED5A945D8F64")
     
 public Node getLastChild() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.177 -0500", hash_original_method = "DEB04882A70946FEC78DD7AD3ABDE01B", hash_generated_method = "72B2C09EF2527400688B3ECA412FC84B")
     
 public String getLocalName() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.179 -0500", hash_original_method = "4D95F58ABD4076A5B25FED87E28A6FD8", hash_generated_method = "3200B922BB7D869E3E3D1561EF351142")
     
 public String getNamespaceURI() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.182 -0500", hash_original_method = "D23B45CE7514A5E8C576F43815BA5C75", hash_generated_method = "2163D07AD240EE8FB15A46AC29230C59")
     
 public Node getNextSibling() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.184 -0500", hash_original_method = "FDA68CAC7DBE692AD654EACCAEB8ADF4", hash_generated_method = "15BE672E670A14A468C529C3FF846AB0")
     
 public String getNodeName() {
@@ -312,35 +312,35 @@ public String getNodeName() {
     
 public abstract short getNodeType();
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.188 -0500", hash_original_method = "5D533F6B29FA017DED37EB54506CEFCE", hash_generated_method = "09F08BD2031C8DC15E6ABA4C033F8BE8")
     
 public String getNodeValue() throws DOMException {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.190 -0500", hash_original_method = "683FB3B36E3C0C255B09CB1FE69555EA", hash_generated_method = "A5914BB150184644977FBF3D8F2A20FB")
     
 public final Document getOwnerDocument() {
         return document == this ? null : document;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.192 -0500", hash_original_method = "2F661FBCA438408BEACED1A87A3CFAEE", hash_generated_method = "CBB5D0875BD6BBE90B07A3C3E00D40AF")
     
 public Node getParentNode() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.194 -0500", hash_original_method = "727413C23E49E727D2327332BBC1F81A", hash_generated_method = "733EB16CF618211DCD50AC4465EBF684")
     
 public String getPrefix() {
         return null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.197 -0500", hash_original_method = "70F44FC98E437F8103C8C034DB4ECB33", hash_generated_method = "F5362F7A7F598714FCDCEBB489892969")
     
 public Node getPreviousSibling() {
@@ -428,7 +428,7 @@ public final void setNodeValue(String nodeValue) throws DOMException {
 public void setPrefix(String prefix) throws DOMException {
     }
     
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.664 -0400", hash_original_method = "DD28C7A733028F46F0F8ECAE2D47C2BC", hash_generated_method = "D5F1AA75A751F62DFBA88F7DF6AFE239")
     public final String getBaseURI() {
 switch(getNodeType()){
@@ -537,7 +537,7 @@ public short compareDocumentPosition(Node other)
         throw new UnsupportedOperationException(); // TODO
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.237 -0500", hash_original_method = "67AC02ADFBE93754C1AB8AE0D37378EE", hash_generated_method = "70FFC50792BB2E94BA92027FF912E313")
     
 public String getTextContent() throws DOMException {
@@ -546,7 +546,7 @@ public String getTextContent() throws DOMException {
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.239 -0500", hash_original_method = "6ADB0BF10CD256A5C763161A1385CD79", hash_generated_method = "6ADB0BF10CD256A5C763161A1385CD79")
     
 void getTextContent(StringBuilder buf) throws DOMException {
@@ -855,7 +855,7 @@ private boolean namedNodeMapsEqual(NamedNodeMap a, NamedNodeMap b) {
         return true;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.273 -0500", hash_original_method = "654AD0B7653E61CCCCF2A287DD7A9FCF", hash_generated_method = "F21C3E203E1643D3A53B867FA5DC5478")
     
 public final Object getFeature(String feature, String version) {
@@ -894,7 +894,7 @@ public final Object setUserData(String key, Object data, UserDataHandler handler
         return previous != null ? previous.value : null;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.278 -0500", hash_original_method = "B29B782E95D64D942AA9D9D3C7EEF744", hash_generated_method = "7129FCAB54DD956423A4E6410148D2D8")
     
 public final Object getUserData(String key) {

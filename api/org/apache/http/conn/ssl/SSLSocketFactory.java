@@ -199,7 +199,7 @@ private SSLSocketFactory() {
     }
 
     // non-javadoc, see interface org.apache.http.conn.SocketFactory
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.666 -0500", hash_original_method = "63050927494CC5AD1D14809EA278FFBF", hash_generated_method = "2D16386E7F46613604C88B4691B040E5")
     
 public Socket createSocket()
@@ -333,7 +333,7 @@ public void setHostnameVerifier(X509HostnameVerifier hostnameVerifier) {
         this.hostnameVerifier = hostnameVerifier;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.678 -0500", hash_original_method = "E4B056341E706F6A6ED43C64885CAEDA", hash_generated_method = "E6917D33729ADF2866948C5F78D5FE60")
     
 public X509HostnameVerifier getHostnameVerifier() {

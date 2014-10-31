@@ -68,7 +68,7 @@ protected SSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.ssl.SSLSocketFactory#getSupportedCipherSuites()
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.990 -0500", hash_original_method = "107E6937D2B525F81A260013B97CF7D4", hash_generated_method = "ADFA088456815838E904E8BFB04AE9AA")
     
 @Override

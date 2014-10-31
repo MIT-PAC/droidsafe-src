@@ -419,7 +419,7 @@ public AllocationBuilder(RenderScript rs) {
         * @return internal index of the last vertex buffer type added to
         *         builder
         **/
-        @DSSource({DSSourceKind.LOCATION_INFORMATION})
+        @DSSource({DSSourceKind.LOCATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.514 -0500", hash_original_method = "F2CC44AB8332A9CEBA185D757457B141", hash_generated_method = "AB6444224FCF13EB25D4DC9D3EE44929")
         
 public int getCurrentVertexTypeIndex() {
@@ -430,7 +430,7 @@ public int getCurrentVertexTypeIndex() {
         * @return internal index of the last index set added to the
         *         builder
         **/
-        @DSSource({DSSourceKind.LOCATION_INFORMATION})
+        @DSSource({DSSourceKind.LOCATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.516 -0500", hash_original_method = "390DA790368F4A077D3D7345AE862264", hash_generated_method = "3E79BFC79E6F8702652F2302554A8854")
         
 public int getCurrentIndexSetIndex() {

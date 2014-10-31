@@ -953,7 +953,7 @@ private int daysInYear(boolean leapYear, int month) {
      *            the field.
      * @return the maximum value of the specified field.
      */
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.CALENDAR})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.406 -0500", hash_original_method = "F6A8281F341CD14B238EE5FA427449C3", hash_generated_method = "913FDEF5112DA93F0557A07043E98A89")
     
 @Override
@@ -1027,7 +1027,7 @@ private int daysInYear(boolean leapYear, int month) {
      *            the field.
      * @return the minimum value of the specified field.
      */
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.CALENDAR})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.409 -0500", hash_original_method = "0094646504037C44C448A8626AEC2CA3", hash_generated_method = "9859DA9E3BF6480B52F971E718B8EF8F")
     
 @Override
@@ -1043,7 +1043,7 @@ private int daysInYear(boolean leapYear, int month) {
      *            the field.
      * @return the greatest minimum value of the specified field.
      */
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.CALENDAR})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.411 -0500", hash_original_method = "F3CD156C4D2759DEA34A15A000EAB551", hash_generated_method = "06503E779DF1AAE63FA9E76A736474C4")
     
 @Override
@@ -1059,7 +1059,7 @@ private int daysInYear(boolean leapYear, int month) {
      */
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.CALENDAR})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.414 -0500", hash_original_method = "BD206861177D272D9EC33433339CB64F", hash_generated_method = "6F349129557415586896680515720B93")
     
 public final Date getGregorianChange() {
@@ -1074,7 +1074,7 @@ public final Date getGregorianChange() {
      *            the field.
      * @return the smallest maximum value of the specified field.
      */
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.CALENDAR})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.417 -0500", hash_original_method = "3B0100990EBACC07D6E54BAA89A3102A", hash_generated_method = "7B78DAC75A84381CCBABA20E70062944")
     
 @Override
@@ -1100,7 +1100,7 @@ public final Date getGregorianChange() {
      *            the field.
      * @return the greatest maximum value of the specified field.
      */
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.CALENDAR})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.419 -0500", hash_original_method = "80794FF1ED1E8F2177114BCAA53EED59", hash_generated_method = "FB0DD220BDF24E9F0F24D7EAE89D9387")
     
 @Override
@@ -1115,7 +1115,7 @@ public final Date getGregorianChange() {
      *            the field.
      * @return the smallest minimum value of the specified field.
      */
-    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
+    @DSSource({DSSourceKind.CALENDAR})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.421 -0500", hash_original_method = "1A09A14EE8971B3B0503081305AF18CB", hash_generated_method = "D44877A6918017B79756798A76B891F2")
     
 @Override

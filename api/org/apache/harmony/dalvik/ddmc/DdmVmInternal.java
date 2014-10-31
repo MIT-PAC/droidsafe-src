@@ -13,12 +13,12 @@ public class DdmVmInternal {
     }
     
     public static boolean heapInfoNotify(int when) {
-        return toTaintBoolean(when + 0);
+        return ((when + 0) == 1);
     }
     
     public static boolean heapSegmentNotify(int when, int what,
         boolean isNative) {
-        return toTaintBoolean(when + what + toTaintInt(isNative));
+        return 1 == (when + what + ((isNative) ? 1 : 0));
     }
     
     public static byte[] getThreadStats() {

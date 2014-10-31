@@ -43,7 +43,7 @@ public static boolean acceptableCountryWildcard(String cn) {
         return true;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.012 -0500", hash_original_method = "C25ECD7D454DB4AB3277245C5D270567", hash_generated_method = "657A26BB04447AE8348C0B39BD6AB467")
     
 public static String[] getCNs(X509Certificate cert) {
@@ -102,7 +102,7 @@ public static String[] getCNs(X509Certificate cert) {
      * @param cert X509Certificate
      * @return Array of SubjectALT DNS names stored in the certificate.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.015 -0500", hash_original_method = "65DFD545582BECEFB6B5BE93EC963DC7", hash_generated_method = "02924B578253271BF7E3344A6F4C2C76")
     
 public static String[] getDNSSubjectAlts(X509Certificate cert) {

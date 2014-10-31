@@ -286,7 +286,7 @@ public boolean isGroupOwner() {
         return other.deviceAddress.equals(deviceAddress);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.270 -0500", hash_original_method = "016D59A2B811BA8203F4683B5513F2D5", hash_generated_method = "011133C52A8A5C2BA1398ECCF2140305")
     

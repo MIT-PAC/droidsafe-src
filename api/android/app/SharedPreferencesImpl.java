@@ -223,7 +223,7 @@ private boolean hasFileChangedUnexpectedly() {
             return true;
         }
         synchronized (this) {
-            return toTaintBoolean(mStatTimestamp + stat.mtime +  mStatSize + stat.size);
+            return ((mStatTimestamp + stat.mtime +  mStatSize + stat.size) == 1);
         }
     }
 

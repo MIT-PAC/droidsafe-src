@@ -347,7 +347,7 @@ public boolean getWantsAllOnMoveCalls() throws RemoteException {
             DatabaseUtils.readExceptionFromParcel(reply);
 
             int result = reply.readInt();
-            return toTaintBoolean(result + 0);
+            return ((result + 0) == 1);
         } finally {
             data.recycle();
             reply.recycle();

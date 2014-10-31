@@ -77,7 +77,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
         namespaceAware = false;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.549 -0500", hash_original_method = "18E3291D22CB922EEB4EFC42536C583A", hash_generated_method = "CE3A709CF5F906BDFA69FE3E3C90941E")
     
 @Override
@@ -99,7 +99,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
         return false;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.556 -0500", hash_original_method = "F8DF5811CFC2B33C1997BC6906E28600", hash_generated_method = "16602D19C7704B69970676F8A06EF9AB")
     
 @Override

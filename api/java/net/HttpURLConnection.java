@@ -224,7 +224,7 @@ public abstract void disconnect();
      */
     @DSComment("Method returns IO Object")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.608 -0500", hash_original_method = "6640096D2D877ED3E740627246DA5AF9", hash_generated_method = "58330C89C9E2E008813741E1516603AD")
     
 public InputStream getErrorStream() {
@@ -280,7 +280,7 @@ public String getRequestMethod() {
      */
     @DSComment("accessing network response data")
     @DSSafe(DSCat.SAFE_OTHERS)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.619 -0500", hash_original_method = "7D3B203196D55AEFB0033919830A54D2", hash_generated_method = "E5CEF15CCA918C333D4C4BE375BE6761")
     
 public int getResponseCode() throws IOException {
@@ -316,7 +316,7 @@ public int getResponseCode() throws IOException {
      * @see #getResponseCode()
      */
     @DSSafe(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.621 -0500", hash_original_method = "2B517AE93F70715BB09FC42E79EE9551", hash_generated_method = "268A72CA5053EB689B330389DCC43810")
     
 public String getResponseMessage() throws IOException {

@@ -878,29 +878,7 @@ public void setTime(long milliseconds) {
     
 @Override
     public String toString() {
-        // TODO: equivalent to the following one-liner, though that's slower on stingray
-        // at 476us versus 69us...
-        //   return new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").format(d);
-        LocaleData localeData = LocaleData.get(Locale.US);
-        Calendar cal = new GregorianCalendar(milliseconds);
-        TimeZone tz = cal.getTimeZone();
-        StringBuilder result = new StringBuilder();
-        result.append(localeData.shortWeekdayNames[cal.get(Calendar.DAY_OF_WEEK)]);
-        result.append(' ');
-        result.append(localeData.shortMonthNames[cal.get(Calendar.MONTH)]);
-        result.append(' ');
-        appendTwoDigits(result, cal.get(Calendar.DAY_OF_MONTH));
-        result.append(' ');
-        appendTwoDigits(result, cal.get(Calendar.HOUR_OF_DAY));
-        result.append(':');
-        appendTwoDigits(result, cal.get(Calendar.MINUTE));
-        result.append(':');
-        appendTwoDigits(result, cal.get(Calendar.SECOND));
-        result.append(' ');
-        result.append(tz.getDisplayName(tz.inDaylightTime(this), TimeZone.SHORT));
-        result.append(' ');
-        result.append(cal.get(Calendar.YEAR));
-        return result.toString();
+        return new String();
     }
 
     @DSComment("Private Method")

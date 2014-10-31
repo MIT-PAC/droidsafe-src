@@ -97,7 +97,7 @@ public void finishedEvent(int seq, boolean handled) {
         
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.679 -0500", hash_original_method = "FE0809D61F310D1DE2584DA263F14DCD", hash_generated_method = "1847811CEE0A517628367422540146E9")
     
 public InputMethodSession getInternalInputMethodSession() {

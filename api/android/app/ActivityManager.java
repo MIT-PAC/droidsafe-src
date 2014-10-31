@@ -180,8 +180,8 @@ public static boolean isRunningInTestHarness() {
       ActivityManager(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
-        addTaint(context.getTaint());
-        addTaint(handler.getTaint());
+        //addTaint(context.getTaint());
+        //addTaint(handler.getTaint());
         // ---------- Original Method ----------
         //mContext = context;
         //mHandler = handler;
@@ -192,7 +192,7 @@ public static boolean isRunningInTestHarness() {
     public ActivityManager(Context context) {
         mContext = context;
         mHandler = new Handler();
-        addTaint(context.getTaint());
+        //addTaint(context.getTaint());
         // ---------- Original Method ----------
         //mContext = context;
         //mHandler = handler;
@@ -497,9 +497,7 @@ public void moveTaskToFront(int taskId, int flags) {
      */
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.741 -0500", hash_original_method = "93643A575557EDD801C5647B318BA97A", hash_generated_method = "730538D1525354C0CB955120CEF75E1F")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.741 -0500", hash_original_method = "93643A575557EDD801C5647B318BA97A", hash_generated_method = "730538D1525354C0CB955120CEF75E1F")    
 public List<RunningServiceInfo> getRunningServices(int maxNum)
             throws SecurityException {
         try {

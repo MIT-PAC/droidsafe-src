@@ -157,7 +157,7 @@ public Address(Locale locale) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.947 -0500", hash_original_method = "95F8746C49CE2A7FBF7EA83DF206E003", hash_generated_method = "A1D784B67B002754E37DDB902EBC5ECA")
     
 public Locale getLocale() {
@@ -170,7 +170,7 @@ public Locale getLocale() {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.949 -0500", hash_original_method = "E1E6237F606789C7A5294059179DF025", hash_generated_method = "B30732385F679D009FA9475F8F07188B")
     
 public int getMaxAddressLineIndex() {
@@ -185,7 +185,7 @@ public int getMaxAddressLineIndex() {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.951 -0500", hash_original_method = "D824FE2CFE40DB25058DC1465F2D4439", hash_generated_method = "E07AE75D76B73CCF005AADE236B3948A")
     
 public String getAddressLine(int index) {
@@ -232,7 +232,7 @@ public void setAddressLine(int index, String line) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.955 -0500", hash_original_method = "D108F727B4ED1E44A68F4DDDAA8864A4", hash_generated_method = "FB47B831AC1CCB642EA8CD38A1FB24D4")
     
 public String getFeatureName() {
@@ -254,7 +254,7 @@ public void setFeatureName(String featureName) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.959 -0500", hash_original_method = "EDE4D65E7936029E84B8376D150F4DDE", hash_generated_method = "AFCAB53B8CC6CE56AE2B9E8199BA7D7B")
     
 public String getAdminArea() {
@@ -276,7 +276,7 @@ public void setAdminArea(String adminArea) {
      * Returns the sub-administrative area name of the address, for example, "Santa Clara County",
      * or null if it is unknown
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.964 -0500", hash_original_method = "84D73E83BF1D1209648491141222963A", hash_generated_method = "DE94FA12C502F4B42BCBA80B3C079F65")
     
 public String getSubAdminArea() {
@@ -297,7 +297,7 @@ public void setSubAdminArea(String subAdminArea) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.968 -0500", hash_original_method = "3743C626E0A5809CC359BBE60C0BEF8D", hash_generated_method = "73AFC5AD3CD0A46E156C307263BEDE45")
     
 public String getLocality() {
@@ -319,7 +319,7 @@ public void setLocality(String locality) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.973 -0500", hash_original_method = "4565445A715D9E082E3330822780EE14", hash_generated_method = "0F1DA46038847C235A541B3BE19AD8AC")
     
 public String getSubLocality() {
@@ -339,7 +339,7 @@ public void setSubLocality(String sublocality) {
      * Returns the thoroughfare name of the address, for example, "1600 Ampitheater Parkway",
      * which may be null
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.977 -0500", hash_original_method = "1512262039F5521B933A04882815530C", hash_generated_method = "8D3E8923D4D77C2126FFFBBF22470494")
     
 public String getThoroughfare() {
@@ -359,7 +359,7 @@ public void setThoroughfare(String thoroughfare) {
      * Returns the sub-thoroughfare name of the address, which may be null.
      * This may correspond to the street number of the address.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.981 -0500", hash_original_method = "8EFF44F66BA44D813DFBCA9FC34B8EF5", hash_generated_method = "70675E1BD9C4434040F5220B076FC66F")
     
 public String getSubThoroughfare() {
@@ -378,7 +378,7 @@ public void setSubThoroughfare(String subthoroughfare) {
     /**
      * Returns the premises of the address, or null if it is unknown.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.986 -0500", hash_original_method = "C1BF40685BD6E248364BFB485F611555", hash_generated_method = "2A5BBEF6B0F64414B9EDDA6C2E5DC49D")
     
 public String getPremises() {
@@ -400,7 +400,7 @@ public void setPremises(String premises) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.990 -0500", hash_original_method = "9B5379769D21EFABDDB2785674C4DE4D", hash_generated_method = "807D83B90E9CDF129CBC03CA17E8BD00")
     
 public String getPostalCode() {
@@ -425,7 +425,7 @@ public void setPostalCode(String postalCode) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.994 -0500", hash_original_method = "E8D66F74FB4E1AF79CCB258931950FBE", hash_generated_method = "97553366601A44B32E9FBEBAF3F0CAE5")
     
 public String getCountryCode() {
@@ -450,7 +450,7 @@ public void setCountryCode(String countryCode) {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.998 -0500", hash_original_method = "A82A5DCEE67796EF014C1F79656EFD25", hash_generated_method = "9CF145F0ECFD07227D18E7F299E97839")
     
 public String getCountryName() {
@@ -485,7 +485,7 @@ public boolean hasLatitude() {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.004 -0500", hash_original_method = "74A963FE4AC8482F316E1B3E19ABA2D8", hash_generated_method = "4A3E9D32F12678BE5FC881662775EF32")
     
 public double getLatitude() {
@@ -533,7 +533,7 @@ public boolean hasLongitude() {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.014 -0500", hash_original_method = "90E38F72A8C0EDFD5CFCC6EABD3BD432", hash_generated_method = "32D9DFBF78F14745340DA7BDD1496829")
     
 public double getLongitude() {
@@ -570,7 +570,7 @@ public void clearLongitude() {
      * @throws IllegalStateException if this Address has not been assigned
      * a latitude.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.021 -0500", hash_original_method = "EB9EE516F482EB01602422E9FA56CA5C", hash_generated_method = "7269D5F8AA84063A166ED918C8F457BD")
     
 public String getPhone() {
@@ -590,7 +590,7 @@ public void setPhone(String phone) {
      * Returns the public URL for the address if known,
      * or null if it is unknown.
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.026 -0500", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "B64A7CF604F22C84E5CFF07E83B9389F")
     
 public String getUrl() {
@@ -621,7 +621,7 @@ public void setUrl(String Url) {
      * </ul>
      * -->
      */
-    @DSSource({DSSourceKind.LOCATION_INFORMATION})
+    @DSSource({DSSourceKind.LOCATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.030 -0500", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "4808B2FAD06A275B25AB6F7116EE8421")
     
 public Bundle getExtras() {
@@ -639,7 +639,7 @@ public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? null : new Bundle(extras);
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.036 -0500", hash_original_method = "F2CDEB7D6ECCED8CC4C514EA700B26BB", hash_generated_method = "C7F1A618984BF16555BE41E35CBE58B9")
     

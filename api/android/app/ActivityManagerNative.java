@@ -111,7 +111,7 @@ static public void noteWakeupAlarm(PendingIntent ps) {
             IBinder b = ServiceManager.getService("activity");
             IActivityManager am = asInterface(b);
             varB4EAC82CA7396A68D541C85D26508E83_1441821956 = am;
-            varB4EAC82CA7396A68D541C85D26508E83_1441821956.addTaint(getTaint()); 
+            //varB4EAC82CA7396A68D541C85D26508E83_1441821956.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1441821956;
             
         }
@@ -1760,7 +1760,7 @@ public boolean startNextMatchingActivity(IBinder callingActivity,
         int result = reply.readInt();
         reply.recycle();
         data.recycle();
-        return toTaintBoolean(result); 
+        return ((result) == 1); 
     }
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.152 -0500", hash_original_method = "91E82D39E0DA0BAF3D9668B58FD8BE2D", hash_generated_method = "51169BDC420B5824522C25A41C863501")

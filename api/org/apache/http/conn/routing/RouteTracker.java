@@ -381,7 +381,7 @@ public final HttpRoute toRoute() {
      *
      * @return  a human-readable representation of the tracked route
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.198 -0500", hash_original_method = "B9AFE31805DA49D5CF66B21B19FA6A72", hash_generated_method = "6BD011116FB54A602164B5846E190397")
     

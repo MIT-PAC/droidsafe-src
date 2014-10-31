@@ -69,7 +69,7 @@ private static int toUNormalizationMode(Form form) {
     	taintDouble += src.getTaintInt();
     	taintDouble += form;
     
-    	return toTaintBoolean(taintDouble);
+    	return ((taintDouble) == 1);
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)

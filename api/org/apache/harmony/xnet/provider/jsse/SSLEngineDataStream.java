@@ -57,7 +57,7 @@ public boolean hasData() {
         return available > 0;
     }
 
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.524 -0500", hash_original_method = "C75EAA43F8837BF85C32F9A85EFFF2A3", hash_generated_method = "14E7B9E525A28443B8697F7833C40486")
     
 public byte[] getData(int length) {

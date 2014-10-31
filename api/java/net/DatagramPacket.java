@@ -17,6 +17,7 @@ public final class DatagramPacket {
     int capacity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:50.572 -0400", hash_original_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4", hash_generated_field = "220CE3F94E98B4B531A4938FAFF932C0")
 
+@DSVAModeled
     private InetAddress address;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 15:00:50.572 -0400", hash_original_field = "BAF684EECB20D799A434AFCF1B13F01D", hash_generated_field = "F51DF048A4B5B6B4A61A3652544F4757")
 
@@ -171,11 +172,9 @@ public DatagramPacket(byte[] data, int offset, int length,
      */
     @DSComment("Data structure only")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.359 -0500", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "C1DC99F69AF6376A7FC069FBD1826D41")
     
-public synchronized InetAddress getAddress() {
-    address.addTaint(this.getTaint());
+    public synchronized InetAddress getAddress() {
         return address;
     }
 
@@ -186,11 +185,12 @@ public synchronized InetAddress getAddress() {
      */
     @DSComment("Data structure only")
     @DSSpec(DSCat.IO)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.361 -0500", hash_original_method = "B9E74D06348E60D6DDB9FA9E07D464F9", hash_generated_method = "A16CB4E41E808ED016EB88BE01DF9A6C")
     
-    public synchronized byte[] getData() {
-        data.addTaint(this.getTaint());
+    public synchronized byte[] getData() {        
+        this.addTaint(data.getTaint());
+        data[0] = getTaintByte();
         return data;
     }
 
@@ -201,7 +201,7 @@ public synchronized InetAddress getAddress() {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.364 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "2DB509520BC98A42BC7C0D8F720E796A")
     
 public synchronized int getLength() {
@@ -213,7 +213,7 @@ public synchronized int getLength() {
      *
      * @return the position of the received data or the data to be sent.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.366 -0500", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "5481909E9946628917952CC7F7C31227")
     
 public synchronized int getOffset() {
@@ -228,7 +228,7 @@ public synchronized int getOffset() {
      */
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.369 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "FDD2B2E226295EB6A09A09D12ED55358")
     
 public synchronized int getPort() {
@@ -241,9 +241,7 @@ public synchronized int getPort() {
      * @param addr
      *            the target host address.
      */
-    @DSSink({DSSinkKind.NETWORK})
-    @DSComment("Data structure only")
-    @DSSpec(DSCat.IO)
+        @DSComment("Data structure only")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.372 -0500", hash_original_method = "C8080B968BD32815251343303FD7866E", hash_generated_method = "49236674C02A8A8DC3D9405507855A3C")
     
 public synchronized void setAddress(InetAddress addr) {
@@ -253,7 +251,6 @@ public synchronized void setAddress(InetAddress addr) {
     /**
      * Sets the data buffer for this datagram packet.
      */
-    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.375 -0500", hash_original_method = "5E0274686A01B4FB96908A6A9486BA81", hash_generated_method = "2DA12462DD5F5F3C0044E4B33DF841F2")
     @DSSafe(DSCat.DATA_STRUCTURE)
 public synchronized void setData(byte[] data, int offset, int byteCount) {
@@ -273,7 +270,7 @@ public synchronized void setData(byte[] data, int offset, int byteCount) {
      * @param buf
      *            the buffer to store the data.
      */
-    @DSSink({DSSinkKind.NETWORK})
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.378 -0500", hash_original_method = "90578DC03777F39E5EBE6643D9CBD4FE", hash_generated_method = "B57994F332F0EFF7B5747BCD72DD9853")
         @DSSafe(DSCat.DATA_STRUCTURE)
 public synchronized void setData(byte[] buf) {
@@ -337,7 +334,6 @@ synchronized void setLengthOnly(int length) {
      * @param aPort
      *            the target host port number.
      */
-    @DSSink({DSSinkKind.NETWORK})
     @DSComment("Data structure only")
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.387 -0500", hash_original_method = "CC3AA0BB5DF3EE4831739014FCB197DF", hash_generated_method = "14D0D4C0E504C45EE17EF675E5057C05")
@@ -355,7 +351,7 @@ public synchronized void setPort(int aPort) {
      *
      * @return the SocketAddress of the target host.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.395 -0500", hash_original_method = "FA4C710C49AB0B200E625D4A04A47D21", hash_generated_method = "98653A3A077D3CCCC6EF171E73494A06")
     
 public synchronized SocketAddress getSocketAddress() {

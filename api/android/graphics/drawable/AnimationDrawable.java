@@ -106,7 +106,7 @@ public void stop() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.525 -0500", hash_original_method = "58F8F26763BA19E1F1B373F32B389D6B", hash_generated_method = "B66047CBA5F4925ECDEC49FBC2F485FA")
     
 public boolean isRunning() {
-        return toTaintBoolean(mCurFrame + -1);
+        return ((mCurFrame + -1) == 1);
     }
 
     /**

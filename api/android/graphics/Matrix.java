@@ -38,14 +38,14 @@ public class Matrix {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_isIdentity(int native_object){
 		//Formerly a native function
-        return toTaintBoolean(native_object);
+        return ((native_object) == 1);
 	}
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_rectStaysRect(int native_object){
 		//Formerly a native function
-        return toTaintBoolean(native_object);
+        return ((native_object) == 1);
 	}
     
     @DSComment("Private Method")
@@ -139,7 +139,7 @@ public class Matrix {
     private static boolean native_setConcat(int native_object,
                                                    int a, int b){
 		//Formerly a native function
-        return toTaintBoolean(native_object + a + b);
+        return ((native_object + a + b) == 1);
 	}
     
     @DSComment("Private Method")
@@ -147,7 +147,7 @@ public class Matrix {
     private static boolean native_preTranslate(int native_object,
                                                       float dx, float dy){
 		//Formerly a native function
-        return toTaintBoolean(native_object + dx + dy);
+        return ((native_object + dx + dy) == 1);
 	}
     
     @DSComment("Private Method")
@@ -155,7 +155,7 @@ public class Matrix {
     private static boolean native_preScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
-        return toTaintBoolean(native_object + sx + sy + px + py);
+        return ((native_object + sx + sy + px + py) == 1);
 	}
     
     @DSComment("Private Method")
@@ -163,7 +163,7 @@ public class Matrix {
     private static boolean native_preScale(int native_object,
                                                   float sx, float sy){
 		//Formerly a native function
-        return toTaintBoolean(native_object + sx + sy);
+        return ((native_object + sx + sy) == 1);
 	}
     
     @DSComment("Private Method")
@@ -171,7 +171,7 @@ public class Matrix {
     private static boolean native_preRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
-        return toTaintBoolean(native_object + degrees + px + py);
+        return ((native_object + degrees + px + py) == 1);
 	}
     
     @DSComment("Private Method")
@@ -179,7 +179,7 @@ public class Matrix {
     private static boolean native_preRotate(int native_object,
                                                    float degrees){
 		//Formerly a native function
-        return toTaintBoolean(native_object + degrees);
+        return ((native_object + degrees) == 1);
 	}
     
     @DSComment("Private Method")
@@ -187,7 +187,7 @@ public class Matrix {
     private static boolean native_preSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
-        return toTaintBoolean(native_object + kx + ky + px + py);
+        return ((native_object + kx + ky + px + py) == 1);
 	}
     
     @DSComment("Private Method")
@@ -195,7 +195,7 @@ public class Matrix {
     private static boolean native_preSkew(int native_object,
                                                  float kx, float ky){
 		//Formerly a native function
-        return toTaintBoolean(native_object + kx + ky);
+        return ((native_object + kx + ky) == 1);
 	}
     
     @DSComment("Private Method")
@@ -203,7 +203,7 @@ public class Matrix {
     private static boolean native_preConcat(int native_object,
                                                    int other_matrix){
 		//Formerly a native function
-        return toTaintBoolean(native_object + other_matrix);
+        return ((native_object + other_matrix) == 1);
 	}
     
     @DSComment("Private Method")
@@ -211,7 +211,7 @@ public class Matrix {
     private static boolean native_postTranslate(int native_object,
                                                        float dx, float dy){
 		//Formerly a native function
-        return toTaintBoolean(native_object + dx + dy);
+        return ((native_object + dx + dy) == 1);
 	}
     
     @DSComment("Private Method")
@@ -219,7 +219,7 @@ public class Matrix {
     private static boolean native_postScale(int native_object,
                                         float sx, float sy, float px, float py){
 		//Formerly a native function
-        return toTaintBoolean(native_object + sx + sy + px + py);
+        return ((native_object + sx + sy + px + py) == 1);
 	}
     
     @DSComment("Private Method")
@@ -227,7 +227,7 @@ public class Matrix {
     private static boolean native_postScale(int native_object,
                                                    float sx, float sy){
 		//Formerly a native function
-        return toTaintBoolean(native_object + sx + sy);
+        return ((native_object + sx + sy) == 1);
 	}
     
     @DSComment("Private Method")
@@ -235,7 +235,7 @@ public class Matrix {
     private static boolean native_postRotate(int native_object,
                                             float degrees, float px, float py){
 		//Formerly a native function
-        return toTaintBoolean(native_object + px + py);
+        return ((native_object + px + py) == 1);
 	}
     
     @DSComment("Private Method")
@@ -243,7 +243,7 @@ public class Matrix {
     private static boolean native_postRotate(int native_object,
                                                     float degrees){
 		//Formerly a native function
-        return toTaintBoolean(native_object + degrees);
+        return ((native_object + degrees) == 1);
 	}
     
     @DSComment("Private Method")
@@ -251,7 +251,7 @@ public class Matrix {
     private static boolean native_postSkew(int native_object,
                                         float kx, float ky, float px, float py){
 		//Formerly a native function
-        return toTaintBoolean(native_object + kx + ky + px + py);
+        return ((native_object + kx + ky + px + py) == 1);
 	}
     
     @DSComment("Private Method")
@@ -259,7 +259,7 @@ public class Matrix {
     private static boolean native_postSkew(int native_object,
                                                   float kx, float ky){
 		//Formerly a native function
-        return toTaintBoolean(native_object + kx + ky);
+        return ((native_object + kx + ky) == 1);
 	}
     
     @DSComment("Private Method")
@@ -267,7 +267,7 @@ public class Matrix {
     private static boolean native_postConcat(int native_object,
                                                     int other_matrix){
 		//Formerly a native function
-        return toTaintBoolean(native_object + other_matrix);
+        return ((native_object + other_matrix) == 1);
 	}
     
     @DSComment("Private Method")
@@ -275,7 +275,7 @@ public class Matrix {
     private static boolean native_setRectToRect(int native_object,
                                                 RectF src, RectF dst, int stf){
 		//Formerly a native function
-        return toTaintBoolean(dst.getTaintInt() + native_object + src.getTaintInt() + stf);
+        return (((dst.getTaintInt() + native_object + src.getTaintInt() + stf)) == 1);
     }
     
     @DSComment("Private Method")
@@ -286,14 +286,14 @@ public class Matrix {
         for (int i = 0; i < src.length; i++) {
             dst[i] = src[i] + native_object + srcIndex + dstIndex + pointCount;
         }
-        return toTaintBoolean(dst[0]);
+        return ((dst[0]) == 1);
 	}
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_invert(int native_object, int inverse){
 		//Formerly a native function
-        return toTaintBoolean(native_object + inverse);
+        return ((native_object + inverse) == 1);
 	}
     
     @DSComment("Private Method")
@@ -310,7 +310,7 @@ public class Matrix {
     private static boolean native_mapRect(int native_object,
                                                  RectF dst, RectF src){
 		//Formerly a native function
-        return toTaintBoolean(native_object + src.getTaintInt() + dst.getTaintInt());
+        return (((native_object + src.getTaintInt() + dst.getTaintInt())) == 1);
 	}
     
     @DSComment("Private Method")
@@ -341,7 +341,7 @@ public class Matrix {
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean native_equals(int native_a, int native_b){
 		//Formerly a native function
-        return toTaintBoolean(native_a + native_b);
+        return ((native_a + native_b) == 1);
 	}
     
     @DSComment("Private Method")
@@ -454,7 +454,7 @@ public class Matrix {
                native_equals(native_instance, ((Matrix)obj).native_instance);
     }
 		*/
-        return toTaintBoolean(getTaintInt() + obj.getTaintInt());
+        return (((getTaintInt() + obj.getTaintInt())) == 1);
 	}
     
     @DSComment("From safe class list")

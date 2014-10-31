@@ -146,7 +146,7 @@ private boolean equals(String aName, EventListener a, EventListener b) {
             aName = null;
         }
         //return aName == null && Objects.equal(a, b);
-        return toTaintBoolean(aName.getTaintInt() + a.getTaintInt() + b.getTaintInt()); 
+        return (((aName.getTaintInt() + a.getTaintInt() + b.getTaintInt())) == 1); 
     }
 
     /**

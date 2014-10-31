@@ -12,7 +12,7 @@ public class NinePatch {
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static boolean isNinePatchChunk(byte[] chunk) {
-        return toTaintBoolean(chunk[0]);
+        return ((chunk[0]) == 1);
     }
     
     @DSComment("Private Method")

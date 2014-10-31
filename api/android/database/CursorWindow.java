@@ -54,13 +54,13 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeSetNumColumns(int windowPtr, int columnNum) {
-        return toTaintBoolean(windowPtr + columnNum);
+        return ((windowPtr + columnNum) == 1);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativeAllocRow(int windowPtr) {
-        return toTaintBoolean(windowPtr); 
+        return ((windowPtr) == 1); 
     }
     
     @DSComment("Private Method")
@@ -115,31 +115,31 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutBlob(int windowPtr, byte[] value, int row, int column) {
-        return toTaintBoolean(windowPtr + value[0] + row + column + value.getTaintInt());
+        return (((windowPtr + value[0] + row + column + value.getTaintInt())) == 1);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutString(int windowPtr, String value, int row, int column) {
-        return toTaintBoolean(windowPtr + row + column + value.getTaintInt());
+        return (((windowPtr + row + column + value.getTaintInt())) == 1);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutLong(int windowPtr, long value, int row, int column) {
-        return toTaintBoolean(windowPtr + row + column + (int)value);
+        return 1 == (windowPtr + row + column + (int)value);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutDouble(int windowPtr, double value, int row, int column) {
-        return toTaintBoolean(value + windowPtr + row + column );
+        return ((value + windowPtr + row + column ) == 1);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static boolean nativePutNull(int windowPtr, int row, int column) {
-        return toTaintBoolean(windowPtr + row + column); 
+        return ((windowPtr + row + column) == 1); 
     }
     
     @DSComment("Private Method")
@@ -440,7 +440,7 @@ public void freeLastRow(){
     
 @Deprecated
     public boolean isNull(int row, int column) {
-        return toTaintBoolean(getType(row, column) + Cursor.FIELD_TYPE_NULL);
+        return 1 == (getType(row, column) + Cursor.FIELD_TYPE_NULL);
     }
 
     /**
@@ -458,7 +458,7 @@ public void freeLastRow(){
 @Deprecated
     public boolean isBlob(int row, int column) {
         int type = getType(row, column);
-        return toTaintBoolean(type + Cursor.FIELD_TYPE_BLOB + type + Cursor.FIELD_TYPE_NULL);
+        return ((type + Cursor.FIELD_TYPE_BLOB + type + Cursor.FIELD_TYPE_NULL) == 1);
     }
 
     /**
@@ -474,7 +474,7 @@ public void freeLastRow(){
     
 @Deprecated
     public boolean isLong(int row, int column) {
-        return toTaintBoolean(getType(row, column) + Cursor.FIELD_TYPE_INTEGER);
+        return 1 == (getType(row, column) + Cursor.FIELD_TYPE_INTEGER);
     }
 
     /**
@@ -490,7 +490,7 @@ public void freeLastRow(){
     
 @Deprecated
     public boolean isFloat(int row, int column) {
-        return toTaintBoolean(getType(row, column) + Cursor.FIELD_TYPE_FLOAT);
+        return 1 == (getType(row, column) + Cursor.FIELD_TYPE_FLOAT);
     }
 
     /**
@@ -508,7 +508,7 @@ public void freeLastRow(){
 @Deprecated
     public boolean isString(int row, int column) {
         int type = getType(row, column);
-        return toTaintBoolean(type + Cursor.FIELD_TYPE_STRING + type + Cursor.FIELD_TYPE_NULL);
+        return ((type + Cursor.FIELD_TYPE_STRING + type + Cursor.FIELD_TYPE_NULL) == 1);
     }
 
     /**

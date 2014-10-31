@@ -30,13 +30,10 @@ public class ContextThemeWrapper extends ContextWrapper {
     
     @DSComment("no security concern")
     @DSSafe(DSCat.SAFE_OTHERS)
-    public ContextThemeWrapper(Context base, int themeres) {
-        super(base);
-        addTaint(themeres);
-        /*
+    public ContextThemeWrapper(Context base, int themeres) {        
+        super(base);        
         mBase = base;
         mThemeResource = themeres;
-        */
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:59.295 -0500", hash_original_method = "78AA434171DBBE0A89D0F8DC1618D34C", hash_generated_method = "A3E53F65C4B9CCA66AC69BAB2FC338EC")

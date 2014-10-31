@@ -202,7 +202,7 @@ public PublicKey getPublicKey() throws CertificateException {
         try {
             if (obj != null) {
                 Signature other = (Signature)obj;
-                return toTaintBoolean(getTaintInt() + other.getTaintInt() + 
+                return 1 == (getTaintInt() + other.getTaintInt() + 
                                      mSignature.getTaintInt() + other.mSignature.getTaintInt());
                 //return this == other || Arrays.equals(mSignature, other.mSignature);
             }

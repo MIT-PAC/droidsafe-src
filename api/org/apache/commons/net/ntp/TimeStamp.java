@@ -234,7 +234,7 @@ private static void appendHexString(StringBuffer buf, long l)
      * separated by fractional seconds.
      */
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.874 -0500", hash_original_method = "8D01996EB7B68AD896BC3623C3BCF2F5", hash_generated_method = "E3B8323B4E1DE71A252FFB148966DCBC")
     
 public static String toString(long ntpTime)
@@ -415,7 +415,7 @@ public boolean equals(Object obj)
      * @return NTP timestamp 64-bit long value as hex string with seconds
      * separated by fractional seconds.
      */
-    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-02-25 10:37:54.863 -0500", hash_original_method = "7FBFA5DF7A2D6014C9CA2F913F0914FC", hash_generated_method = "F39600EBE8DF940850F3163642F0ABA9")
     

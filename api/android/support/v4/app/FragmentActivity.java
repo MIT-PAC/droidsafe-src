@@ -959,7 +959,7 @@ public FragmentManager getSupportFragmentManager() {
      * This imposes a restriction that requestCode be <= 0xffff.
      */
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
-    @DSSink({DSSinkKind.START_ACTIVITY})
+    @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-17 12:44:27.349 -0400", hash_original_method = "5BE63D387764C79BADD7265D6253130D", hash_generated_method = "228971E4038BBD75957201B044AA9C5F")
     
 @Override
