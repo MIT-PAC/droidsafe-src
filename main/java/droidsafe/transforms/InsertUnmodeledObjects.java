@@ -233,7 +233,6 @@ public class InsertUnmodeledObjects {
                         AssignStmt assign = (AssignStmt) stmt;
                         if (assign.getRightOp() instanceof InvokeExpr) {
                             boolean hasAPITarget = false;
-                            boolean hack = false;
                             InvokeExpr invoke = (InvokeExpr)assign.getRightOp();
 
                             //don't care if the return type is a primitive
@@ -245,16 +244,11 @@ public class InsertUnmodeledObjects {
                             for (SootMethod target : targets) 
                                 if (API.v().isSystemMethod(target)) {
                                     hasAPITarget = true;
-                                    
-                                    hack = ("<android.app.Activity: android.content.Intent getIntent()>".equals(target.getSignature())) 
-                                            && firstRun && Config.v().reportUnmodeledFlows && "com.pondl.Pondl".equals(method.getDeclaringClass().getName());
-                                      
-                                    //removing for hack
-                                    //break;
+                                    break;
                                 }
 
 
-                            if (hasAPITarget || hack) {
+                            if (hasAPITarget) {
                                 //we have a method that could target the api, now see if the return value has 
                                 //anything in its pt set
                                 if (PTABridge.v().getPTSetIns(assign.getLeftOp()).isEmpty()) {
