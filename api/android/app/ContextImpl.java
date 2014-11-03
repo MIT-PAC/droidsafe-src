@@ -676,6 +676,9 @@ private File getPreferencesDir() {
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
     public void startActivity(Intent intent) {
+        //add default category as per intent resolution documentation 
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+
         intent.getAction();
         intent.getBooleanArrayExtra("");
         intent.getBooleanExtra("", false);

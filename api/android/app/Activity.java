@@ -2516,6 +2516,8 @@ public LayoutInflater getLayoutInflater() {
         intent.getType();
         intent.getScheme();
 
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+
 		/*
                   
         The modeling required here will create the call to onActivityResult that 
@@ -2594,31 +2596,33 @@ public LayoutInflater getLayoutInflater() {
     	
     	String result = intent.getAction() + intent.getDataString();
     	
-		onActivityResult(-1, -1, intent);
-		
-		droidsafeTemp = droidsafeTemp + result;
-		
-		/*
-		  * This is called for activities that set launchMode to "singleTop" in
-		     * their package, or if a client used the {@link Intent#FLAG_ACTIVITY_SINGLE_TOP}
-		     * flag when calling {@link #startActivity}.  In either case, when the
-		     * activity is re-launched while at the top of the activity stack instead
-		     * of a new instance of the activity being started, onNewIntent() will be
-		     * called on the existing instance with the Intent that was used to
-		     * re-launch it */
-		// on lauchmode to singleStop or SINGLE_ACTIVTY_SINGLE
-		// if ((intent.getFlags() & Intent.FLAG_ACTIVITY_SINGLE_TOP) != 0) {
-		// }
-		onNewIntent(intent);
+        onActivityResult(-1, -1, intent);
 	
-		// Original method
-		/*
-		{
+        droidsafeTemp = droidsafeTemp + result;
+
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+	
+        /*
+         * This is called for activities that set launchMode to "singleTop" in
+         * their package, or if a client used the {@link Intent#FLAG_ACTIVITY_SINGLE_TOP}
+         * flag when calling {@link #startActivity}.  In either case, when the
+         * activity is re-launched while at the top of the activity stack instead
+         * of a new instance of the activity being started, onNewIntent() will be
+         * called on the existing instance with the Intent that was used to
+         * re-launch it */
+        // on lauchmode to singleStop or SINGLE_ACTIVTY_SINGLE
+        // if ((intent.getFlags() & Intent.FLAG_ACTIVITY_SINGLE_TOP) != 0) {
+        // }
+        onNewIntent(intent);
+	
+        // Original method
+        /*
+          {
         startActivityForResult(intent, -1);
-    }
+        }
 		*/
 		//Return nothing
-	}
+    }
 
     /**
      * Launch a new activity.  You will not receive any information about when

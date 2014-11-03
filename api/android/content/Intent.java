@@ -1661,14 +1661,16 @@ public Intent[] newArray(int size) {
 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.272 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "43F71E9173849705E01112D0229448B4")
 
-    @DSVAModeled
     private int mFlags;
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.275 -0500", hash_original_field = "F5406B98105BE593D67B771784EBBF5F", hash_generated_field = "0CC4E2884DD354D66A438C7E26DB89B1")
+    
+    @DSVAModeled
+    private String DSmCategories;
 
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.275 -0500", hash_original_field = "F5406B98105BE593D67B771784EBBF5F", hash_generated_field = "0CC4E2884DD354D66A438C7E26DB89B1")
+ 
     private HashSet<String> mCategories;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.276 -0500", hash_original_field = "8E33C9E28D87B1286C4160446ABF7B5C", hash_generated_field = "5596C79D633F3A9F64294D3BD6D43156")
 
-    @DSVAModeled
     private Map<String, Object> mExtras;
 
     //added by droidsafe
@@ -2930,10 +2932,11 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
     @DSSafe(DSCat.INTENT_EXCHANGE)
     public Intent addCategory(String category) {
         //mCategories.addTaint(category.getTaint());
+        DSmCategories = category;
         if (mCategories == null) {
             mCategories = new HashSet<String>();
         }
-        mCategories.add(category.intern());
+        mCategories.add(category);
         return this;
     }
 
@@ -3936,6 +3939,7 @@ public void removeExtra(String name) {
             if(other.mCategories != null)            
             {
                 mCategories = new HashSet<String>(other.mCategories);
+                this.DSmCategories = other.DSmCategories;
             } //End block
             changes |= FILL_IN_CATEGORIES;
         } //End block
@@ -4356,6 +4360,7 @@ public void readFromParcel(Parcel in) {
             int i;
             for (i=0; i<N; i++) {
                 mCategories.add(in.readString().intern());
+                DSmCategories = in.readString().intern();
             }
         } else {
             mCategories = null;
