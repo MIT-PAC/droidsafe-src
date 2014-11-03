@@ -302,15 +302,15 @@ public class Harness {
                             addCategory.makeRef(), stringLocal)));
             }
             
-            if (intentFilter.dataUri != null) {
-                logger.debug("Found intent filter uri  {} ", intentFilter.dataUri);
+            for (String dataUri : intentFilter.dataUri) {    
+                logger.debug("Found intent filter uri  {} ", dataUri);
                 Local stringLocal = Jimple.v().newLocal(String.format("_$dsUriString%03d", LOCAL_COUNTER++),  
                     RefType.v("java.lang.String"));
                 body.getLocals().add(stringLocal);
 
                 //localString = "constant"
                 body.getUnits().add(Jimple.v().
-                    newAssignStmt(stringLocal, StringConstant.v(intentFilter.dataUri)));
+                    newAssignStmt(stringLocal, StringConstant.v(dataUri)));
 
                 body.getUnits().add(
                     Jimple.v().newInvokeStmt(

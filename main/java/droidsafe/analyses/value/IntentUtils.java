@@ -1,5 +1,7 @@
 package droidsafe.analyses.value;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -249,11 +251,11 @@ public class IntentUtils {
         // for each component
         for (ComponentBaseElement manifestComp : Resources.v().getManifest().getComponentsByType(component)) {
             SootField harnessField = getHarnessFldForClsString(manifestComp.getSootClass().getName());
-            
+
             if (harnessField == null) {
                 logger.error("No harness field for manifest class: {}", manifestComp.getSootClass());
             }
-                
+                      
             //if the intent values cannot be resolved, still should remove all components that don't define
             //an intent filter
             if (!manifestComp.hasIntentFilter()) {
@@ -262,79 +264,92 @@ public class IntentUtils {
                 continue;
             }
             
-            //action test, if actions don't match, then remove component from target list
-            if (!actionsMatch(intentRefVAModel, manifestComp)) {
-                logger.info("Implicit Intent Action Test, failed for Intent {} on Filter of {}", intentRefVAModel, manifestComp);
-                calculatedTargets.remove(harnessField);
+            boolean matchesSomeIntentFilter = false;
+            for (IntentFilter intentfilter : manifestComp.intent_filters) {
+            
+                //action test, if actions don't match, then remove component from target list
+                if (!actionsMatch(intentRefVAModel, intentfilter)) {
+                    logger.info("Implicit Intent Action Test, failed for Intent {} on Filter of {}", intentRefVAModel, intentfilter);
+                    continue;
+                }            
+
+                logger.info("Implicit Intent Action Test, passed for Intent {} on Filter of {}", intentRefVAModel, intentfilter);
+
+                //category test            
+                if (!categoriesMatch(intentRefVAModel, intentfilter)) {
+                    logger.info("Implicit Intent Category Test, failed for Intent {} on Filter {}", intentRefVAModel, intentfilter);
+                    continue;
+                }
+
+                logger.info("Implicit Intent Category Test, passed for Intent {} on Filter of {}", intentRefVAModel, intentfilter);
+
+                //data and type test
+
+                if (!typesMatch(intentRefVAModel, intentfilter)) {
+                    logger.info("Implicit Intent Type Test Failed for Intent {} on Filter {}", intentRefVAModel, intentfilter);
+                    continue;                
+                }
+
+                logger.info("Implicit Intent Type Test passed for Intent {} on Filter {}", intentRefVAModel, intentfilter);
+
+                if (!dataMatch(intentRefVAModel, intentfilter)) {
+                    logger.info("Implicit Intent Data Test Failed for Intent {} on Filter {}", intentRefVAModel, intentfilter);
+                    continue;
+                }
                 
-                //it is removed, no need to continue
-                continue;
-            }            
-            
-            logger.info("Implicit Intent Action Test, passed for Intent {} on Filter of {}", intentRefVAModel, manifestComp);
-            
-            //category test            
-            if (!categoriesMatch(intentRefVAModel, manifestComp)) {
-                logger.info("Implicit Intent Category Test, failed for Intent {} on Filter {}", intentRefVAModel, manifestComp);
-                calculatedTargets.remove(harnessField);
-                continue;
+                logger.info("Implicit Intent Data Test passed for Intent {} on Filter {}", intentRefVAModel, intentfilter);
+                
+                //everything passed so pass                
+                //no need to find another match
+                matchesSomeIntentFilter = true;
+                break;
             }
             
-            logger.info("Implicit Intent Category Test, passed for Intent {} on Filter of {}", intentRefVAModel, manifestComp);
-            
-            //data and type test
-            
+            //no matches so remove component
+            if (!matchesSomeIntentFilter) {
+                calculatedTargets.remove(harnessField);
+                logger.info("** Implicit Intent test FAILED for {} and component {}", intentRefVAModel, manifestComp);
+            } else {
+                logger.info("** Implicit Intent test PASSED for {} and component {}", intentRefVAModel, manifestComp);
+            }
         }
         
         
-        UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
+        //UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
         return calculatedTargets;
     }
 
     /**
-     * @return set of class strings that the passed in explicit intent may target
-     *         null if we cannot resolved them unambiguously
+     * 
      */
-    public boolean isImplicitIntentTargettingAmbiguous(RefVAModel intentRefVAModel, boolean countData) {
+    public boolean getDataFieldForIntent(RefVAModel intentRefVAModel, Set<String> resolvedValues) {
         SootClass clonedIntentSootClass = ((RefType)(intentRefVAModel.getAllocNode().getType())).getSootClass();
         SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedIntentSootClass);
 
-        // iterate over every possible action field value
-        Set<VAModel> actionFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mAction"));
-        for(VAModel actionFldVAModel : actionFldVAModels) {
-            if(actionFldVAModel.invalidated() || actionFldVAModel instanceof UnknownVAModel){
-                return true;
+        // iterate over every possible data field value
+        Set<VAModel> dataFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mData"));
+        for(VAModel dataFldVAModel : dataFldVAModels) {
+            if(dataFldVAModel.invalidated() || dataFldVAModel instanceof UnknownVAModel ){
+                return false;
             }
-        }
-
-        // iterate over every possible type field value
-        Set<VAModel> typeFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mType"));
-        for(VAModel typeFldVAModel : typeFldVAModels) {
-            if(typeFldVAModel.invalidated() || typeFldVAModel instanceof UnknownVAModel){
-                return true;
+            RefVAModel uriRefVAModel = (RefVAModel)dataFldVAModel;
+            SootClass clonedURISootClass = ((RefType)(uriRefVAModel.getAllocNode().getType())).getSootClass();
+            SootClass uriSootClass = ClassCloner.getClonedClassFromClone(clonedURISootClass);
+            // iterate over every possible action field value
+            Set<VAModel> uriStringFldVAModels = uriRefVAModel.getFieldVAModels(uriSootClass.getFieldByName("uriString"));
+            for(VAModel uriStringFldVAModel : uriStringFldVAModels) {
+                if(uriStringFldVAModel.invalidated() || (!(uriStringFldVAModel instanceof StringVAModel))){
+                    return false;
+                }
+                
+                //if we get here, it is a resolved string va model value
+                for (String str : ((StringVAModel)uriStringFldVAModel).getValues()) {
+                    resolvedValues.add(str);
+                }
             }
         }
         
-        if (countData) {
-            // iterate over every possible data field value
-            Set<VAModel> dataFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mData"));
-            for(VAModel dataFldVAModel : dataFldVAModels) {
-                if(dataFldVAModel.invalidated() || dataFldVAModel instanceof UnknownVAModel ){
-                    return true;
-                }
-                RefVAModel uriRefVAModel = (RefVAModel)dataFldVAModel;
-                SootClass clonedURISootClass = ((RefType)(uriRefVAModel.getAllocNode().getType())).getSootClass();
-                SootClass uriSootClass = ClassCloner.getClonedClassFromClone(clonedURISootClass);
-                // iterate over every possible action field value
-                Set<VAModel> uriStringFldVAModels = uriRefVAModel.getFieldVAModels(uriSootClass.getFieldByName("uriString"));
-                for(VAModel uriStringFldVAModel : uriStringFldVAModels) {
-                    if(uriStringFldVAModel.invalidated() || uriStringFldVAModel instanceof UnknownVAModel){
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
+        return true;
     }
     
     /**
@@ -371,7 +386,7 @@ public class IntentUtils {
     /**
      * Return true if the action field matches for this intent / intent filter combination
      */
-    private boolean actionsMatch(RefVAModel intentRefVAModel, ComponentBaseElement componentElement) {
+    private boolean actionsMatch(RefVAModel intentRefVAModel, IntentFilter intentFilter) {
         /*
          * 1. action of intent must match one of filters
          * 2. filter with no actions fails all tests
@@ -380,10 +395,8 @@ public class IntentUtils {
         
         //build list of filter actions
         Set<String> filterActions = new HashSet<String>();
-        for (IntentFilter intentF : componentElement.intent_filters) {
-            filterActions.addAll(intentF.actions); 
-        }
-        
+        filterActions.addAll(intentFilter.actions); 
+                
         for (String action : filterActions) {
             logger.info("Action Test, intent filter actions: {}", action);
         }
@@ -415,7 +428,7 @@ public class IntentUtils {
     /**
      * Return true if the category field matches the intent filter.
      */
-    private boolean categoriesMatch(RefVAModel intentRefVAModel, ComponentBaseElement componentElement) {
+    private boolean categoriesMatch(RefVAModel intentRefVAModel, IntentFilter intentFilter) {
         /*
          *
           1. every category of intent must match a category in filter
@@ -428,13 +441,7 @@ public class IntentUtils {
              (this is taken care of by the modeling, we add this category to all intents called with startactivity
          */
         
-        //build a list of filter categories
-        Set<String> filterCategories = new HashSet<String>();
-        for (IntentFilter intentF : componentElement.intent_filters) {
-            filterCategories.addAll(intentF.categories); 
-        }
-        
-        for (String category : filterCategories) {
+        for (String category : intentFilter.categories) {
             logger.info("Category Test, intent filter categories: {}", category);
         }
         
@@ -444,7 +451,7 @@ public class IntentUtils {
             if (intentCategories.size() == 0)
                 return true;
             
-            for (String filterCategory : filterCategories) {
+            for (String filterCategory : intentFilter.categories) {
                 //if one of the filter categories could not possibly be in the intent, then return false 
                 if (!intentCategories.contains(filterCategory)) {
                     return false;
@@ -456,6 +463,94 @@ public class IntentUtils {
         } else {
             //could not resolve categories from va, so always match
             logger.info("Category Test Passed, could not resolve category field for Intent");
+            return true;
+        }
+    }
+    
+    /**
+     * return true if types match from intent to component manifest mimetype data filter
+     */
+    private boolean typesMatch(RefVAModel intentRefVAModel, IntentFilter intentFilter) {
+        /*
+         * due to flow insensitivity, if any of type value in intent matches filter, then pass
+         */
+             
+        for (String type : intentFilter.dataMime) {
+            logger.info("Type Test, intent filter types: {}", type);
+        }
+        
+        Set<String> intenttypes = new HashSet<String>();
+        if (getFieldFromImplicitIntent("mType", intentRefVAModel, intenttypes)) {
+            //nothing to check
+            if (intenttypes.size() == 0 && intentFilter.dataMime.size() == 0)
+                return true;
+            
+            //if the intent does not specify a type and the filter does, then it cannot pass 
+            if (intenttypes.size() == 0 && intentFilter.dataMime.size() > 0 )
+                return false;
+            
+            //check if any of the possible intent types match
+            for (String intentType : intenttypes) {
+                for (String filterType : intentFilter.dataMime) {
+                    if (filterType.contains("*")) {
+                        //some wildcard
+                        if (intentType.startsWith(filterType.substring(0, filterType.indexOf('*'))))
+                            return true;
+                    } else if (filterType.equals(intentType))
+                        return true;                        
+                    }
+                }
+                    
+            //no type matches
+            return false;
+        } else {
+            logger.info("Type Test Passed, could not resolve type field for Intent");
+            return true;
+        }
+    }
+    
+    
+    /**
+     * return true if data of intent could match intent filter.
+     */
+    private boolean dataMatch(RefVAModel intentRefVAModel, IntentFilter intentFilter) {
+        
+        for (String data : intentFilter.dataUri) {
+            logger.info("Data Test, intent filter has data: {}", data);
+        }
+        
+        //if the intent filter does not define any data filtering, then everything passes
+        if (intentFilter.dataUri.size() == 0) {
+            return true;
+        }        
+        
+        Set<String> intentDatas = new HashSet<String>();
+        if (getDataFieldForIntent(intentRefVAModel, intentDatas)) {            
+            //if any of the intent uri could match a filter uri, then it could be a target
+            for (String intentData : intentDatas) {
+                try {
+                    URI parsedIntentData = new URI(intentData);
+                } catch (URISyntaxException e) {
+                    //if we get here, something wrong with the uri we resolved
+                    //so conservatively pass this test
+                    logger.info("Data Test, Invalid resolved data value for URI: {}", intentData);
+                    return true;
+                }
+                
+                //if we get here, this intent data is valid
+                //so check against all re's for intent filter
+                for (String filterData : intentFilter.dataUri) {
+                    if (intentData.matches(filterData)) {
+                        logger.info("Data Test, intent data {} matched filter {}", intentData, filterData);
+                        return true;
+                    }
+                }
+            }
+            
+            //we resolved all valid uri's and none of them matched a filter, so false;
+            return false;
+        } else {
+            logger.info("Data Test Passed, could not resolve mData field for Intent");
             return true;
         }
     }
