@@ -22,6 +22,7 @@ import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.resources.AndroidManifest.ComponentBaseElement;
+import droidsafe.android.app.resources.AndroidManifest.IntentFilter;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.UnresolvedICC;
@@ -244,23 +245,44 @@ public class IntentUtils {
         Set<SootField> calculatedTargets = new HashSet<SootField>();
         calculatedTargets.addAll(allPossibleFieldTargets);
         
-        //if the intent values cannot be resolved, still should remove all components that don't define
-        //an intent filter
         
         // for each component
-        // for each intentFilter
-        // if match, return cls string of activity
         for (ComponentBaseElement manifestComp : Resources.v().getManifest().getComponentsByType(component)) {
             SootField harnessField = getHarnessFldForClsString(manifestComp.getSootClass().getName());
             
             if (harnessField == null) {
                 logger.error("No harness field for manifest class: {}", manifestComp.getSootClass());
             }
-            
+                
+            //if the intent values cannot be resolved, still should remove all components that don't define
+            //an intent filter
             if (!manifestComp.hasIntentFilter()) {
                 calculatedTargets.remove(harnessField);
+                logger.info("Implicit Intent Test Failed, no intent filter for {}", manifestComp);
+                continue;
             }
             
+            //action test, if actions don't match, then remove component from target list
+            if (!actionsMatch(intentRefVAModel, manifestComp)) {
+                logger.info("Implicit Intent Action Test, failed for Intent {} on Filter of {}", intentRefVAModel, manifestComp);
+                calculatedTargets.remove(harnessField);
+                
+                //it is removed, no need to continue
+                continue;
+            }            
+            
+            logger.info("Implicit Intent Action Test, passed for Intent {} on Filter of {}", intentRefVAModel, manifestComp);
+            
+            //category test            
+            if (!categoriesMatch(intentRefVAModel, manifestComp)) {
+                logger.info("Implicit Intent Category Test, failed for Intent {} on Filter {}", intentRefVAModel, manifestComp);
+                calculatedTargets.remove(harnessField);
+                continue;
+            }
+            
+            logger.info("Implicit Intent Category Test, passed for Intent {} on Filter of {}", intentRefVAModel, manifestComp);
+            
+            //data and type test
             
         }
         
@@ -292,6 +314,7 @@ public class IntentUtils {
                 return true;
             }
         }
+        
         if (countData) {
             // iterate over every possible data field value
             Set<VAModel> dataFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mData"));
@@ -312,5 +335,128 @@ public class IntentUtils {
             }
         }
         return false;
+    }
+    
+    /**
+     * Try to get resolved field values for intent.  
+     * 
+     * Return true if all resolved.  False otherwise.
+     * 
+     * If all resolved, then return the list of strings in the resolvedValues set
+     */
+    public boolean getFieldFromImplicitIntent(String fieldName, RefVAModel intentRefVAModel, Set<String> resolvedValues) {
+        SootClass clonedIntentSootClass = ((RefType)(intentRefVAModel.getAllocNode().getType())).getSootClass();
+        SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedIntentSootClass);
+
+        // iterate over every possible field value
+        Set<VAModel> fldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName(fieldName));
+        for(VAModel fldVAModel : fldVAModels) {
+            
+            logger.info("For {}, VA Type {} {}", fieldName, fldVAModel, fldVAModel.getClass());
+            
+            if (fldVAModel.invalidated() || (!(fldVAModel instanceof StringVAModel))){
+                return false;
+            } 
+            
+            //if we get here, it is a resolved string va model value
+            for (String str : ((StringVAModel)fldVAModel).getValues()) {
+                resolvedValues.add(str);
+            }
+        }
+        
+        //no field va models resolved
+        return true;
+    }
+    
+    /**
+     * Return true if the action field matches for this intent / intent filter combination
+     */
+    private boolean actionsMatch(RefVAModel intentRefVAModel, ComponentBaseElement componentElement) {
+        /*
+         * 1. action of intent must match one of filters
+         * 2. filter with no actions fails all tests
+         * 3. intent with no action will pass if filter defines at least one action
+         */
+        
+        //build list of filter actions
+        Set<String> filterActions = new HashSet<String>();
+        for (IntentFilter intentF : componentElement.intent_filters) {
+            filterActions.addAll(intentF.actions); 
+        }
+        
+        for (String action : filterActions) {
+            logger.info("Action Test, intent filter actions: {}", action);
+        }
+        
+        // #2
+        if (filterActions.size() == 0)
+            return false;
+        
+        //build list of intent actions
+        Set<String> intentActions = new HashSet<String>();
+        if (getFieldFromImplicitIntent("mAction", intentRefVAModel, intentActions)) {
+            for (String intentAction : intentActions) {
+                logger.info("\tAction Test, checking intent action: {}", intentAction);
+                //look for intent action in filter action
+                if (filterActions.contains(intentAction))
+                    return true;  //found action / return true
+            }
+            
+            //could not find intent action in the intent filter actions
+            logger.info("Action Test, could not find intent action in intent filter");
+            return false;
+        } else {
+            //could not resolve actions from value analysis, so always match
+            logger.info("Action Test Passed, could not resolve action field for Intent");
+            return true;
+        }
+    }
+    
+    /**
+     * Return true if the category field matches the intent filter.
+     */
+    private boolean categoriesMatch(RefVAModel intentRefVAModel, ComponentBaseElement componentElement) {
+        /*
+         *
+          1. every category of intent must match a category in filter
+             - reverse not necessary 
+          
+          2. Intent with no categories will pass all tests
+          
+          3. Android automatically applies CATEGORY_DEFAULT to all start activity / start activity for result
+             - So intent filters on activities must delcare this category
+             (this is taken care of by the modeling, we add this category to all intents called with startactivity
+         */
+        
+        //build a list of filter categories
+        Set<String> filterCategories = new HashSet<String>();
+        for (IntentFilter intentF : componentElement.intent_filters) {
+            filterCategories.addAll(intentF.categories); 
+        }
+        
+        for (String category : filterCategories) {
+            logger.info("Category Test, intent filter categories: {}", category);
+        }
+        
+        Set<String> intentCategories = new HashSet<String>();
+        if (getFieldFromImplicitIntent("DSmCategories", intentRefVAModel, intentCategories)) {
+            //# 2
+            if (intentCategories.size() == 0)
+                return true;
+            
+            for (String filterCategory : filterCategories) {
+                //if one of the filter categories could not possibly be in the intent, then return false 
+                if (!intentCategories.contains(filterCategory)) {
+                    return false;
+                }                
+            }
+            
+            //all categories in filter could be in the intent
+            return true;
+        } else {
+            //could not resolve categories from va, so always match
+            logger.info("Category Test Passed, could not resolve category field for Intent");
+            return true;
+        }
     }
 }

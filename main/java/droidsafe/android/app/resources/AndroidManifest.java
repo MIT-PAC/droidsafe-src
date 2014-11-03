@@ -236,6 +236,7 @@ public class AndroidManifest {
    *
    */
   public abstract class ComponentBaseElement extends BaseElement {
+      public List<IntentFilter> intent_filters = new ArrayList<IntentFilter>();
       public boolean enabled = true;
 	  public ComponentBaseElement (Node n, BaseElement parent) throws 
 	  InvalidPropertiesFormatException {
@@ -311,7 +312,7 @@ public class AndroidManifest {
 
     public String label;
     public String name;
-    public List<IntentFilter> intent_filters = new ArrayList<IntentFilter>();
+    
     public List<MetaData> metaDataList = new LinkedList<MetaData>();
         
     public Activity (BaseElement parent, Node n) 
@@ -357,8 +358,6 @@ public class AndroidManifest {
       public String name;
       public String permission;
       public String process;
-
-      public List<IntentFilter> intent_filters = new ArrayList<IntentFilter>();
 
       public Service (BaseElement parent, Node n) 
               throws InvalidPropertiesFormatException {
@@ -408,7 +407,6 @@ public class AndroidManifest {
     @Attribute public String permission;
     @Attribute public String process;
 
-    public List<IntentFilter> intent_filters = new ArrayList<IntentFilter>();
     public List<MetaData> metadata = new ArrayList<MetaData>();
 
     public Receiver (BaseElement parent, Node n) 
@@ -483,8 +481,6 @@ public class AndroidManifest {
     @Attribute public String readPermission;
     @Attribute public Boolean syncable;
     @Attribute public String writePermission;
-
-    public List<IntentFilter> intent_filters = new ArrayList<IntentFilter>();
 
     public Provider (BaseElement parent, Node n) 
       throws InvalidPropertiesFormatException {
