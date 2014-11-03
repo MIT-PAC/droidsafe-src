@@ -738,7 +738,7 @@ public class AndroidManifest {
 
                     //no path, so just add the uri string built
                     if (!hasPath) {
-                        dataUri.add(uriBuilder.toString()); 
+                        dataUri.add(uriBuilder.toString() + "/*"); 
                     }
 
 
