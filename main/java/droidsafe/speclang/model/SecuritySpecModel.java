@@ -399,9 +399,11 @@ PropertyChangeListener {
                 Set<Edge> edges = new LinkedHashSet<Edge>(); 
                 if (stmt.containsInvokeExpr()) {
                     if (stmt.getInvokeExpr() instanceof InstanceInvokeExpr) {
-                        for (MethodOrMethodContext target : PTABridge.v().getTargets(methodContext, stmt)) {
-                            edges.add(PTABridge.v().findEdge(methodContext, stmt, target));
-                        }                        
+                        Iterator<Edge> edgeIter = Scene.v().getCallGraph().edgesOutOf(stmt);
+                        while (edgeIter.hasNext()) {
+                            Edge edge = edgeIter.next();
+                            edges.add(edge);
+                        }
                     } else {
                         //static invoke
                         edges.add(Scene.v().getCallGraph().findEdge(stmt, stmt.getInvokeExpr().getMethod()));
