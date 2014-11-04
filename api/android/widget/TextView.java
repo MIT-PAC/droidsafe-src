@@ -1242,7 +1242,7 @@ protected MovementMethod getDefaultMovementMethod() {
      */
     @DSComment("TextView, check callbacks modeled")
     @DSSafe(DSCat.GUI)
-    
+    @DSSource({DSSourceKind.GUI_TEXT}) 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.559 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "07E497F06FCA3C4F8CABDACFD16853C1")
 @ViewDebug.CapturedViewProperty
     public CharSequence getText() {

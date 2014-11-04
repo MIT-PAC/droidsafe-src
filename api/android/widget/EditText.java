@@ -59,7 +59,7 @@ public EditText(Context context, AttributeSet attrs, int defStyle) {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    
+    @DSSource({DSSourceKind.USER_INPUT}) 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.047 -0500", hash_original_method = "7E84A3A8580CD7F3BD2A1E596441D1C1", hash_generated_method = "8266E1AA5ACD94F6F88AA30EBD01D147")
     
 @Override

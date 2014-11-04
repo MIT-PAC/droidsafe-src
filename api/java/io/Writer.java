@@ -140,7 +140,7 @@ public void write(int oneChar) throws IOException {
      */
     @DSComment("Activity on IO class")
     @DSSpec(DSCat.IO)
-    
+    @DSSink({DSSinkKind.IO}) 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.998 -0500", hash_original_method = "2CB0ACB6DB74A20D3FAA9874B0AAEB97", hash_generated_method = "56B10BCA62907989A5623B6EAB45E393")
     
 public void write(String str) throws IOException {
