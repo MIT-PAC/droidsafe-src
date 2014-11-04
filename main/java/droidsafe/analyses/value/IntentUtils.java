@@ -519,11 +519,6 @@ public class IntentUtils {
             logger.info("Data Test, intent filter has data: {}", data);
         }
         
-        //if the intent filter does not define any data filtering, then everything passes
-        if (intentFilter.dataUri.size() == 0) {
-            return true;
-        }        
-        
         Set<String> intentDatas = new HashSet<String>();
         if (getDataFieldForIntent(intentRefVAModel, intentDatas)) {            
             //if any of the intent uri could match a filter uri, then it could be a target
