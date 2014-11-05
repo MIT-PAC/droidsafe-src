@@ -109,7 +109,7 @@ public class ContentProviderTransform implements VATransform {
             sigsOfInvokesToTransform.add("<android.content.ContentResolver: int delete(android.net.Uri,java.lang.String,java.lang.String[])>");
             sigsOfInvokesToTransform.add("<android.content.ContentResolver: int update(android.net.Uri,android.content.ContentValues,java.lang.String,java.lang.String[])>");
             sigsOfInvokesToTransform.add("<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>");
-            sigsOfInvokesToTransform.add("android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>");
+            sigsOfInvokesToTransform.add("<android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>");
         }
         
         // TODO Auto-generated method stub
