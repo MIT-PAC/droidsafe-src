@@ -103,16 +103,13 @@ public RowBuilder newRow() {
      * @param columnValues in the same order as the the column names specified
      *  at cursor construction time
      */
-    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.748 -0500", hash_original_method = "48B10D52D633E686D99B492C35189F09", hash_generated_method = "87F3E7DEB331588F9FEE85FE0B266C4D")
     
 public void addRow(Object[] columnValues) {
         if (columnValues.length != columnCount) {
-            throw new IllegalArgumentException("columnNames.length = "
-                    + columnCount + ", columnValues.length = "
-                    + columnValues.length);
+            throw new IllegalArgumentException();
         }
 
         int start = rowCount++ * columnCount;
@@ -129,7 +126,6 @@ public void addRow(Object[] columnValues) {
      * @param columnValues in the same order as the the column names specified
      *  at cursor construction time
      */
-    @DSSink({DSSinkKind.DATABASE})
     @DSComment("MatrixCursor is array backed data structure")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.751 -0500", hash_original_method = "30233D359459EB079BFCFD374250902B", hash_generated_method = "56703011C0300D55CE4BB4F75D9CA356")
@@ -166,7 +162,6 @@ public void addRow(Iterable<?> columnValues) {
     }
 
     /** Optimization for {@link ArrayList}. */
-    @DSSink({DSSinkKind.DATABASE})
     @DSComment("Private Method")
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.753 -0500", hash_original_method = "F5D0F3FA334A37A2680A290D6DEEBDBE", hash_generated_method = "4542ED27461748289DDD7AF553420831")
@@ -191,15 +186,7 @@ private void addRow(ArrayList<?> columnValues, int start) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.756 -0500", hash_original_method = "0FD21978EF299D1119588B65FAE6C3BE", hash_generated_method = "F9728CB00BE91D5A5FC0C8091EAAA7DA")
     
 private void ensureCapacity(int size) {
-        if (size > data.length) {
-            Object[] oldData = this.data;
-            int newSize = data.length * 2;
-            if (newSize < size) {
-                newSize = size;
-            }
-            this.data = new Object[newSize];
-            System.arraycopy(oldData, 0, this.data, 0, oldData.length);
-        }
+
     }
 
     // AbstractCursor implementation.
@@ -225,13 +212,12 @@ private void ensureCapacity(int size) {
 
     @DSSafe(DSCat.DB_CURSOR)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.777 -0500", hash_original_method = "FF3178260B85D85D43C7EA714D59B46B", hash_generated_method = "2DBB0A17A3D1D018DA998CC6AF1F85E3")
-    
-@Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.777 -0500", hash_original_method = "FF3178260B85D85D43C7EA714D59B46B", hash_generated_method = "2DBB0A17A3D1D018DA998CC6AF1F85E3")    
+    @Override
     public String getString(int column) {
         Object value = get(column);
         if (value == null) return null;
-        return value.toString();
+        return new String(value.toString());
     }
 
     @DSSource({DSSourceKind.DATABASE_INFORMATION})

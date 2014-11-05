@@ -365,8 +365,7 @@ public String getDeviceSoftwareVersion() {
     @DSComment("Request/Change/Listen Android Manger")
     @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.846 -0500", hash_original_method = "D15182A782B2311FD9923C2371701B25", hash_generated_method = "EC5736B5E669E36CBA199401F68D88A2")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.846 -0500", hash_original_method = "D15182A782B2311FD9923C2371701B25", hash_generated_method = "EC5736B5E669E36CBA199401F68D88A2")    
 public String getDeviceId() {
         return new String();
         /*        try {
