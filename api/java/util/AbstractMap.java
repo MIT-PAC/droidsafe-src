@@ -17,7 +17,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.575 -0400", hash_original_field = "8169AE04F2776F041E9D71005E918170", hash_generated_field = "BE71573A2BD5F9F8A42171B5E82953DE")
 
-    AbstractList<V> valuesCollection = (AbstractList<V>)AbstractList.newSimpleList();
+        AbstractList<V> valuesCollection = (AbstractList<V>)new AbstractList.SubAbstractList<V>();
     
     HashSet<Entry<K,V>> backingEntrySet = new HashSet<Entry<K,V>>();
     protected int capacity = DEF_MAP_SIZE;
@@ -196,6 +196,7 @@ public abstract Set<Map.Entry<K, V>> entrySet();
             keySet.add(key);
             index = size() - 1;
         }
+
         valuesCollection.set(index, value);
         
         backingEntrySet.setElementAt(index, new SimpleEntry(key, value));

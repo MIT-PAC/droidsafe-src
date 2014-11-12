@@ -3205,13 +3205,13 @@ public Intent putExtra(String name, double value) {
      */
     @DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.INTENT_EXCHANGE)
-    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.474 -0500", hash_original_method = "FFA94FE476B4FC82FDFAB8191F06F76A", hash_generated_method = "4F3AC23F2FDE2E244EBF603512230CB6")
     
-public Intent putExtra(String name, String value) {
+public Intent putExtra(String name, String value) {        
         mExtras.put(name, value);
         return this;
     }
+
 
     /**
      * Add extended data to the intent.  The name must include a package
