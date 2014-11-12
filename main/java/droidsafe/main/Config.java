@@ -194,6 +194,12 @@ public class Config {
     public boolean ptaInfoFlowRefinement = false;
     /** should we run multiple passes of fallback modeling create unmodeled objects from API */
     public boolean multipassfb = false;
+    /** if true, then produce a json file that describes the possible inter-applications sinks */
+    public boolean produceInterAppFlowsFile = false;
+    /** if not empty, then read the file given as possible interapp flows from other applications to be 
+     * considered
+     */
+    public String readInterAppFlowsFile = "";
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -356,6 +362,9 @@ public class Config {
                 new Option("stats", "Perform extra work to generate stats.");
         options.addOption(allStatsRun);
 
+        Option produceInterAppFlows = new Option("writeinterappflows", "Produce json file for possible inter app sinks in this app");
+        options.addOption(produceInterAppFlows);
+        
         Option ptaPackage = 
                 OptionBuilder.withArgName("package").hasArg()
                 .withDescription("Run with pta package: spark, paddle, geo")
@@ -554,6 +563,10 @@ public class Config {
         
         if (cmd.hasOption("preciseinfoflow")) {
             this.preciseInfoFlow = true;
+        }
+        
+        if (cmd.hasOption("writeinterappflows")) {
+            this.produceInterAppFlowsFile = true;
         }
         
         if (cmd.hasOption("reportonlyargsflows")) {

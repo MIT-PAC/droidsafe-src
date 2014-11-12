@@ -201,21 +201,15 @@ public class InformationFlowAnalysis {
         for (IAllocNode reachableAllocNode : reachableAllocNodes) {
             Type type = reachableAllocNode.getType();
             if (type instanceof RefType) {
-                if (reachableAllocNode instanceof soot.jimple.spark.pag.AllocNode) {
-                    Set<soot.jimple.spark.pag.AllocDotField> allocDotFields = ((soot.jimple.spark.pag.AllocNode)reachableAllocNode).getFields();
-                    for (soot.jimple.spark.pag.AllocDotField allocDotField : allocDotFields) {
-                        SootField field = (SootField)allocDotField.getField();
-                        ImmutableSet<InfoValue> vs = this.state.instances.get(reachableAllocNode, field);
-                        values.addAll(vs);
-                    }
-                } else if (allocNode instanceof soot.jimple.paddle.AllocNode) {
-                    Iterator allocDotFields = ((soot.jimple.paddle.AllocNode)allocNode).fields();
-                    while (allocDotFields.hasNext()) {
-                        soot.jimple.paddle.AllocDotField allocDotField = (soot.jimple.paddle.AllocDotField)allocDotFields.next();
-                        SootField field = (SootField)allocDotField.field();
-                        ImmutableSet<InfoValue> vs = this.state.instances.get(reachableAllocNode, field);
-                        values.addAll(vs);
-                    }
+                //account for the taint field, which may not be present in the points to analysis if not 
+                //accessed in reachable code
+                ImmutableSet<InfoValue> taintVs = this.state.instances.get(reachableAllocNode, this.objectUtils.taint);
+                values.addAll(taintVs);
+                Set<soot.jimple.spark.pag.AllocDotField> allocDotFields = ((soot.jimple.spark.pag.AllocNode)reachableAllocNode).getFields();
+                for (soot.jimple.spark.pag.AllocDotField allocDotField : allocDotFields) {                        
+                    SootField field = (SootField)allocDotField.getField();
+                    ImmutableSet<InfoValue> vs = this.state.instances.get(reachableAllocNode, field);
+                    values.addAll(vs);
                 }
             } else if (type instanceof ArrayType) {
                 ImmutableSet<InfoValue> vs = this.state.instances.get(reachableAllocNode, this.objectUtils.taint);

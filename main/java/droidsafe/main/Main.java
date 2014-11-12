@@ -5,6 +5,7 @@ import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
+import droidsafe.analyses.interapp.GenerateInterAppSourceFlows;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.PTABridge;
@@ -341,7 +342,7 @@ public class Main {
 
         
         
-            //new TestPTA();     
+        //new TestPTA();     
 
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
@@ -406,7 +407,6 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -437,6 +437,9 @@ public class Main {
             timer.stop();
             driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
+            //find inter app flows here
+            GenerateInterAppSourceFlows.v().run(spec);
+            
             if (spec != null) {
                 if (Config.v().infoFlow)
                     InformationFlowReport.create(spec);
@@ -461,6 +464,9 @@ public class Main {
             RCFGToSSL.run(true);
             logger.error("Not implemented yet!");
         }
+        
+       
+        
 
         PTAPaper.writeReport();
 

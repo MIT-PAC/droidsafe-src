@@ -110,7 +110,12 @@ public class TestPTA  {
           /*  if (API.v().isSystemMethod(method))
                 continue;*/
             
-            if (!"<org.nws.aweather.AWeatherService: void handleError(org.nws.aweather.Msg)>".equals(method.getSignature()))
+            /*if (!"<org.nws.aweather.AWeatherService: void handleError(org.nws.aweather.Msg)>".equals(method.getSignature()))
+                continue;*/
+            
+            if (API.v().isSystemMethod(method) && 
+                    !(method.getDeclaringClass().getName().equals("android.content.Intent") ||
+                            method.getDeclaringClass().getName().startsWith("java.util")))
                 continue;
  
             System.out.println(momc);
@@ -131,9 +136,9 @@ public class TestPTA  {
             
             
             // We first gather all the memory access expressions
-            for (Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
+            for (Iterator stmts = method.getActiveBody().getUnits().iterator(); stmts.hasNext();) {                
                 Stmt st = (Stmt) stmts.next();
-                
+                System.out.println(st);
                 for (ValueBox vb : st.getUseAndDefBoxes()) {
                     Value value = vb.getValue();
                     if (PTABridge.v().isPointer(value)) {

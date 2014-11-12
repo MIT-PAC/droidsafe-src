@@ -95,7 +95,7 @@ public class IntentUtils {
                     case IMPLICIT:  
                         resolvedTargetHarnessFlds.addAll(
                             getImplicitIntentInAppTargetClsStrings(allocNode, stmt, target, intentRefVAModel, component, allPossibleFieldTargets));
-                        break;
+                        break;            
                 }               
             } else {
                 //no va model, so have to add everything!
