@@ -536,8 +536,7 @@ public class Method implements Comparable<Method> {
                 //System.out.println(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()));                
                 //System.out.println(ptaInfo.getArgValue(i) + "\n");
                 infoValues = 
-                        InformationFlowAnalysis.v().getTaints(JimpleRelationships.v().getEnclosingStmt(ptaInfo.getInvokeExpr()), 
-                            ptaInfo.getEdge().getSrc(), (Local)ptaInfo.getArgValue(i));
+                        InformationFlowAnalysis.v().getTaints(ptaInfo.getEdge().getSrc(), (Local)ptaInfo.getArgValue(i));
                 //for primitives, the precise and non-precise are the same since access analysis is not used
                 infoValuesPrecise = infoValues; 
             } else if (ptaInfo.getArgValue(i) instanceof Constant) {

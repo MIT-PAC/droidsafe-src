@@ -127,13 +127,14 @@ public class InformationFlowAnalysis {
 
         // HACK
         values.addAll(this.state.instances.get(AllocNodeField.v(rootAllocNode, this.objectUtils.taint)));
+        
         values.addAll(this.state.arrays.get(rootAllocNode));
 
         Set<IAllocNode> reachableAllocNodes = this.allocNodeUtils.reachableAllocNodes(rootAllocNode);
 
         Set<AllocNodeField> allocNodeFields = this.allocNodeFieldsReadAnalysis.getRecursively(methodContext);
-        for (AllocNodeField allocNodeField : allocNodeFields) {
-            IAllocNode allocNode = allocNodeField.allocNode;
+        for (AllocNodeField allocNodeField : allocNodeFields) {            
+            IAllocNode allocNode = allocNodeField.allocNode;           
             if (reachableAllocNodes.contains(allocNode)) {
                 ImmutableSet<InfoValue> vs = this.state.instances.get(allocNodeField);
                 values.addAll(vs);
@@ -184,12 +185,7 @@ public class InformationFlowAnalysis {
         return this.state.locals.get(context, local);
     }
 
-    public Set<InfoValue> getTaints(Stmt stmt, MethodOrMethodContext srcMethodContext, Local local) {
-        assert srcMethodContext.method().getActiveBody().getUnits().contains(stmt);
-        assert local.getType() instanceof PrimType;
-        Context context = srcMethodContext.context();
-        return this.state.locals.get(context, local);
-    }
+   
 
     /**
      * Given an alloc node return a set of all taint reachable from the node.  Recursively search

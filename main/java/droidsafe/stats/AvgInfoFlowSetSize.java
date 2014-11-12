@@ -66,7 +66,7 @@ public class AvgInfoFlowSetSize {
                                 thisSetSize += InformationFlowAnalysis.v().getTaints(an, oe.getEdge().getTgt()).size();
                             }
                         } else {
-                            Set<InfoValue> taints = InformationFlowAnalysis.v().getTaints(enclosing, oe.getEdge().getSrc(), 
+                            Set<InfoValue> taints = InformationFlowAnalysis.v().getTaints(oe.getEdge().getSrc(), 
                                 (Local)oe.getArgValue(i));
 
                             thisSetSize += taints.size();
