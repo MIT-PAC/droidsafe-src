@@ -6,6 +6,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import soot.jimple.Stmt;
+import droidsafe.analyses.value.IntentModel;
 import droidsafe.android.system.InfoKind;
 
 public class SourceFlow {
@@ -14,11 +15,11 @@ public class SourceFlow {
     /** Strings representing the generating source statements */
     private Collection<String> srcStmts;
     /** The reolved intent for the source flow */
-    private ResolvedIntent intent;
+    private IntentModel intent;
     /** The generating api call type */
     private InterAppApiCall apiCall;
     
-    public SourceFlow(InterAppApiCall apiCall, InfoKind srcKind, Collection<Stmt> srcSootStmts, ResolvedIntent intent) {
+    public SourceFlow(InterAppApiCall apiCall, InfoKind srcKind, Collection<Stmt> srcSootStmts, IntentModel intent) {
         super();
         this.apiCall = apiCall;
         this.srcKind = srcKind;
@@ -54,11 +55,11 @@ public class SourceFlow {
         this.srcStmts = srcStmts;
     }
 
-    public ResolvedIntent getIntent() {
+    public IntentModel getIntent() {
         return intent;
     }
 
-    public void setIntent(ResolvedIntent intent) {
+    public void setIntent(IntentModel intent) {
         this.intent = intent;
     }
 

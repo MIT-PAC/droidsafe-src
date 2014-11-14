@@ -51,6 +51,7 @@ public class GenerateInterAppSourceFlows {
                         for (Entry<InfoKind, Set<Stmt>> flow : oe.getArgSourceInfoUnitsConservative(i).entrySet()) {
                             
                             SourceFlow interAppFlow = new SourceFlow(type, flow.getKey(), flow.getValue(), null);
+                            flows.add(interAppFlow);
                             System.out.printf("Found InterApp: %s\n", interAppFlow);
                         } 
                     }                    

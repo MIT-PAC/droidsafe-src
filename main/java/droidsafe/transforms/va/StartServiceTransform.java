@@ -68,66 +68,68 @@ public class StartServiceTransform implements VATransform {
 
         intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
 
-        for (SootField serviceField : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNodes)) {
-            if (!(serviceField.getType() instanceof RefType))
-                continue;           
+        for (IAllocNode intentNode : intentNodes) {
+            for (SootField serviceField : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNode)) {
+                if (!(serviceField.getType() instanceof RefType))
+                    continue;           
 
-            if (!Hierarchy.inheritsFromAndroidService(((RefType)serviceField.getType()).getSootClass()))
-                continue;
+                if (!Hierarchy.inheritsFromAndroidService(((RefType)serviceField.getType()).getSootClass()))
+                    continue;
 
-            logger.info("Adding onStartCommand call in {} to {}", JimpleRelationships.v().getEnclosingMethod(stmt), serviceField);
-            //call set intent on these activities with local   
+                logger.info("Adding onStartCommand call in {} to {}", JimpleRelationships.v().getEnclosingMethod(stmt), serviceField);
+                //call set intent on these activities with local   
 
-            //create local and add to body
-            Local local = Jimple.v().newLocal("_$startservice_local_" + localID++, serviceField.getType());
-            body.getLocals().add(local);
+                //create local and add to body
+                Local local = Jimple.v().newLocal("_$startservice_local_" + localID++, serviceField.getType());
+                body.getLocals().add(local);
 
-            //set field of component to local [local = harness.activityfield]
-            //set local to field
-            Stmt localAssign = Jimple.v().newAssignStmt
-                    (local, Jimple.v().newStaticFieldRef(serviceField.makeRef()));
-            body.getUnits().insertBefore(localAssign, stmt);
+                //set field of component to local [local = harness.activityfield]
+                //set local to field
+                Stmt localAssign = Jimple.v().newAssignStmt
+                        (local, Jimple.v().newStaticFieldRef(serviceField.makeRef()));
+                body.getUnits().insertBefore(localAssign, stmt);
 
 
-            List<Value> args = new LinkedList<Value>();
+                List<Value> args = new LinkedList<Value>();
 
-            args.add(intentArg);
-            args.add(IntConstant.v(0));
-            args.add(IntConstant.v(0));
-            Stmt onStartCall = 
-                    Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
-                        (local, onStartCommand.makeRef(), args));
+                args.add(intentArg);
+                args.add(IntConstant.v(0));
+                args.add(IntConstant.v(0));
+                Stmt onStartCall = 
+                        Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
+                            (local, onStartCommand.makeRef(), args));
 
-            body.getUnits().insertAfter(onStartCall, localAssign);
-            //ignore making output events for this call we add
-            RCFG.v().ignoreInvokeForOutputEvents(onStartCall);
+                body.getUnits().insertAfter(onStartCall, localAssign);
+                //ignore making output events for this call we add
+                RCFG.v().ignoreInvokeForOutputEvents(onStartCall);
 
-            //now add the call to onStart()
+                //now add the call to onStart()
 
-            args = new LinkedList<Value>();
+                args = new LinkedList<Value>();
 
-            args.add(intentArg);
-            args.add(IntConstant.v(0));
-            Stmt onStartDepCall = 
-                    Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
-                        (local, onStart.makeRef(), args));
+                args.add(intentArg);
+                args.add(IntConstant.v(0));
+                Stmt onStartDepCall = 
+                        Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
+                            (local, onStart.makeRef(), args));
 
-            body.getUnits().insertAfter(onStartDepCall, onStartCall);
-            //ignore making output events for this call we add
-            RCFG.v().ignoreInvokeForOutputEvents(onStartDepCall);
+                body.getUnits().insertAfter(onStartDepCall, onStartCall);
+                //ignore making output events for this call we add
+                RCFG.v().ignoreInvokeForOutputEvents(onStartDepCall);
 
-            //add to icc report 
+                //add to icc report 
 
-            SootClass target = ((RefType)serviceField.getType()).getSootClass(); 
-            SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStartCommand);
+                SootClass target = ((RefType)serviceField.getType()).getSootClass(); 
+                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStartCommand);
 
-            ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
-                target, stmt, resolved);          
+                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
+                    target, stmt, resolved);          
 
-            resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStart);
-            ICCMap.v().addInfo(containingMthd.getDeclaringClass(),
-                target, stmt, resolved);
+                resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStart);
+                ICCMap.v().addInfo(containingMthd.getDeclaringClass(),
+                    target, stmt, resolved);
 
+            }
         }
     }
 

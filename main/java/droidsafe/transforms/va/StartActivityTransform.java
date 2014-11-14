@@ -92,47 +92,48 @@ class StartActivityTransform implements VATransform {
         } else
             return;
 
+        for (IAllocNode intentNode : intentNodes) {
+            for (SootField activityField : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.ACTIVITY, stmt, callee, intentNode)) {
+                if (!(activityField.getType() instanceof RefType) || 
+                        !Hierarchy.inheritsFromAndroidActivity(((RefType)activityField.getType()).getSootClass()))
+                    continue;
 
-        for (SootField activityField : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.ACTIVITY, stmt, callee, intentNodes)) {
-            if (!(activityField.getType() instanceof RefType) || 
-                    !Hierarchy.inheritsFromAndroidActivity(((RefType)activityField.getType()).getSootClass()))
-                continue;
+                logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
+                //call set intent on these activities with local   
 
-            logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
-            //call set intent on these activities with local   
+                //create local and add to body
+                Local local = Jimple.v().newLocal("_$setIntent_local_" + localID++, activityField.getType());
+                body.getLocals().add(local);
 
-            //create local and add to body
-            Local local = Jimple.v().newLocal("_$setIntent_local_" + localID++, activityField.getType());
-            body.getLocals().add(local);
+                //set field of activity to local [local = harness.activityfield]
+                //set local to field
+                Stmt localAssign = Jimple.v().newAssignStmt
+                        (local, Jimple.v().newStaticFieldRef(activityField.makeRef()));
+                body.getUnits().insertBefore(localAssign, stmt);
 
-            //set field of activity to local [local = harness.activityfield]
-            //set local to field
-            Stmt localAssign = Jimple.v().newAssignStmt
-                    (local, Jimple.v().newStaticFieldRef(activityField.makeRef()));
-            body.getUnits().insertBefore(localAssign, stmt);
+                //call setActivity on local with local arg from start activity
+                List<Value> args = new LinkedList<Value>();
+                //this will work for both startActivity and startActivityForResult
+                args.add(intentArg);
+                Stmt setIntentCall = 
+                        Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
+                            (local, setIntentMethod.makeRef(), args));
 
-            //call setActivity on local with local arg from start activity
-            List<Value> args = new LinkedList<Value>();
-            //this will work for both startActivity and startActivityForResult
-            args.add(intentArg);
-            Stmt setIntentCall = 
-                    Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
-                        (local, setIntentMethod.makeRef(), args));
-
-            body.getUnits().insertAfter(setIntentCall, localAssign);
-            //ignore making output events for this call we add
-            RCFG.v().ignoreInvokeForOutputEvents(setIntentCall);
-            try  {
-                //register in report of icc
-                if (activityField.getType() instanceof RefType) {
-                    SootClass target  = ((RefType)activityField.getType()).getSootClass();
-                    SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, setIntentMethod);
-                    ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
-                        target, 
-                        stmt, resolved);
+                body.getUnits().insertAfter(setIntentCall, localAssign);
+                //ignore making output events for this call we add
+                RCFG.v().ignoreInvokeForOutputEvents(setIntentCall);
+                try  {
+                    //register in report of icc
+                    if (activityField.getType() instanceof RefType) {
+                        SootClass target  = ((RefType)activityField.getType()).getSootClass();
+                        SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, setIntentMethod);
+                        ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
+                            target, 
+                            stmt, resolved);
+                    }
+                } catch (Exception e) {
+                    logger.warn("Issue resolve method for target in startActivityTransform:", e);
                 }
-            } catch (Exception e) {
-                logger.warn("Issue resolve method for target in startActivityTransform:", e);
             }
         }
     }
