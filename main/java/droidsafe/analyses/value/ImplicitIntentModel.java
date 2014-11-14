@@ -10,13 +10,15 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.utils.GsonExclude;
 import soot.jimple.toolkits.pta.IAllocNode;
 
 public class ImplicitIntentModel extends IntentModel {
     private static final Logger logger = LoggerFactory.getLogger(ImplicitIntentModel.class);
     /** Alloc Node cooresponding to this implicit intent model */
+    @GsonExclude
     private IAllocNode node;
-    
+    @GsonExclude
     private RefVAModel vaModel;
     
     private boolean[] isInvalidated;

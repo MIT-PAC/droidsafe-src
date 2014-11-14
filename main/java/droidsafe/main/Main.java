@@ -438,7 +438,8 @@ public class Main {
             driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
             //find inter app flows here
-            GenerateInterAppSourceFlows.v().run(spec);
+            if (Config.v().produceInterAppFlowsFile)
+                GenerateInterAppSourceFlows.v().run(spec);
             
             if (spec != null) {
                 if (Config.v().infoFlow)
