@@ -812,8 +812,11 @@ public class Resources {
 
 			String layout_name = resource_name.replace ("layout.", "");
 			Layout layout = find_layout_by_name (layout_name);
-			if (layout == null) 
-				bad_idiom (cn, m, "No layout named %s", layout);
+			if (layout == null) {
+				//bad_idiom (cn, m, "No layout named %s", layout_name);
+				logger.warn("Couldn't find layout {} ", layout_name);
+				return;
+			}
 
 			layout.activities.add(activity);
 

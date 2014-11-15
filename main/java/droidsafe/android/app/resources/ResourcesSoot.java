@@ -1053,6 +1053,10 @@ public class ResourcesSoot {
         String   idName    = makeIdName("String", intId); 
         String   className = makeClassName("java.lang.String");
 
+        if (mNumberToIDMap == null) {
+            logger.warn("mNumberToIDMap not set");
+        	return null;
+        }
         if (!mNumberToIDMap.containsKey(intId)) {
             logger.warn("ID {} is not in the resource info ", String.format("%x", intId));
             return null;
@@ -1101,6 +1105,10 @@ public class ResourcesSoot {
      * @return
      */
     public SootMethod addGetCharSequence_ID(Integer intId) {
+    	if (intId == null) {
+            logger.warn("addGetCharSequence_ID null ");
+            return null;
+    	}
         SootField sootField = resolveStringMember(intId); 
         if (sootField == null)  {
             logger.warn("Cannot create String field for {} ", String.format("%x", intId));
