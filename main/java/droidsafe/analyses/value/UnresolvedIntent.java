@@ -15,4 +15,8 @@ public class UnresolvedIntent extends IntentModel {
     public boolean isResolved() {
         return false;
     }
+    
+    public String toString() {
+        return "Unresolved Intent";
+    }
 }

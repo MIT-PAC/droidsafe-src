@@ -34,6 +34,10 @@ public  class InfoKind implements InfoValue {
     /** map of strings to the info kind that represents them */
     private static HashMap<InfoKind,InfoKind> infoKinds = new HashMap<InfoKind,InfoKind>();
 
+    public String getName() {
+        return name;
+    }
+    
     /**
      * Return true if any of the infokinds for this infovalue call statement are 
      * defined as sensitive.

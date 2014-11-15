@@ -107,17 +107,12 @@ public class TestPTA  {
                 method.retrieveActiveBody();
             }
             
-          /*  if (API.v().isSystemMethod(method))
-                continue;*/
+            if (API.v().isSystemMethod(method))
+                continue;
             
             /*if (!"<org.nws.aweather.AWeatherService: void handleError(org.nws.aweather.Msg)>".equals(method.getSignature()))
                 continue;*/
             
-            if (API.v().isSystemMethod(method) && 
-                    !(method.getDeclaringClass().getName().equals("android.content.Intent") ||
-                            method.getDeclaringClass().getName().startsWith("java.util")))
-                continue;
- 
             System.out.println(momc);
             
             Iterator<Edge> edges = Scene.v().getCallGraph().edgesOutOf(momc);

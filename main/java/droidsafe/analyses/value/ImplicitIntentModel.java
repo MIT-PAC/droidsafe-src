@@ -15,7 +15,7 @@ import soot.jimple.toolkits.pta.IAllocNode;
 
 public class ImplicitIntentModel extends IntentModel {
     private static final Logger logger = LoggerFactory.getLogger(ImplicitIntentModel.class);
-    /** Alloc Node cooresponding to this implicit intent model */
+    /** Alloc Node corresponding to this implicit intent model */
     @GsonExclude
     private IAllocNode node;
     @GsonExclude
@@ -168,5 +168,10 @@ public class ImplicitIntentModel extends IntentModel {
             return index;
         }
     }
-    
+
+    @Override
+    public String toString() {
+        return "ImplicitIntentModel [isInvalidated=" + Arrays.toString(isInvalidated) + ", values="
+                + Arrays.toString(values) + "]";
+    }    
 }

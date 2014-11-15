@@ -47,14 +47,12 @@ public class IntentUtils {
     }
 
     private Map<IAllocNode, IntentModel> allocToIntentModel;
-    private Map<AllocNodeAndTargetType, Set<SootField>> allocToTargetHarnessFields;
     
     private static final Logger logger = LoggerFactory.getLogger(IntentUtils.class);
 
     public IntentUtils() {
         queriedNodes = new LinkedHashSet<IAllocNode>();
-        allocToIntentModel = new HashMap<IAllocNode, IntentModel>();
-        allocToTargetHarnessFields = new HashMap<AllocNodeAndTargetType, Set<SootField>>();
+        allocToIntentModel = new HashMap<IAllocNode, IntentModel>();       
     }
 
     public Set<IAllocNode> getAllQueriedIntents() {
@@ -101,28 +99,11 @@ public class IntentUtils {
     
     /**
      * Return set of fields of the harness for components that could be targeted with by the 
-     * Intent alloc node.  Use the value analysis result to resolve field of the Intent and
+     * Intent model  Use the value analysis result to resolve field of the Intent and
      * find destination components of the given component type.  If the Intent cannot be resolved,
      * then return all components of the given type in the application.
      */
-    public Set<SootField> getIntentTargetHarnessFields(AndroidComponents component, Stmt stmt, 
-        SootMethod target, IAllocNode allocNode) {
-        AllocNodeAndTargetType nodeAndType = new AllocNodeAndTargetType(allocNode, component);
-        
-        //check if we have cached this alloc node 
-        if (allocToTargetHarnessFields.containsKey(nodeAndType)) {
-            if (!allocToIntentModel.containsKey(allocNode)) {
-                logger.error("Inconsistency with caching in IntentUtils: cached fields but not IntentModel");
-                droidsafe.main.Main.exit(1);
-            }
-            
-            //remember that the statement employed an unresolved intent
-            if (allocToIntentModel.get(allocNode).equals(UnresolvedIntent.v())) {
-                UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");                
-            }
-            
-            return allocToTargetHarnessFields.get(nodeAndType);
-        }
+    public Set<SootField> getIntentTargetHarnessFields(AndroidComponents component, IntentModel im) {
         
         Set<SootField> allHarnessActivityFlds = new LinkedHashSet<SootField>();
 
@@ -133,23 +114,34 @@ public class IntentUtils {
         }
 
         Set<SootField> targetFields;
-        IntentModel im = getIntentModel(allocNode);
         if (im instanceof ResolvedExplicitIntent) {
             targetFields = getExplicitIntentTargetClsStrings((ResolvedExplicitIntent)im, 
-                    allocNode, stmt, target, allHarnessActivityFlds);
+                    allHarnessActivityFlds);
         } else if (im instanceof ImplicitIntentModel) {
             targetFields = getImplicitIntentInAppTargetClsStrings((ImplicitIntentModel)im, 
-                allocNode, stmt, target, component, allHarnessActivityFlds);
+                    component, allHarnessActivityFlds);
         } else {
             //unresolved, add all fields of component type
-            targetFields = allHarnessActivityFlds;
-            recordUnresolvedStmt(allocNode, stmt, target, "Unresolved Intent");
-        }
-        
-        //cache calculation
-        allocToTargetHarnessFields.put(nodeAndType, targetFields);
+            targetFields = allHarnessActivityFlds;            
+        }       
         
         return targetFields;
+    }
+    
+    /**
+     * Return set of fields of the harness for components that could be targeted with by the 
+     * Intent alloc node.  Use the value analysis result to resolve field of the Intent and
+     * find destination components of the given component type.  If the Intent cannot be resolved,
+     * then return all components of the given type in the application.
+     */
+    public Set<SootField> getIntentTargetHarnessFields(AndroidComponents component, Stmt stmt, 
+        SootMethod target, IAllocNode allocNode) {  
+        IntentModel im = getIntentModel(allocNode);
+        if (im instanceof UnresolvedIntent) 
+            recordUnresolvedStmt(allocNode, stmt, target, "Unresolved Intent");
+        
+        return getIntentTargetHarnessFields(component, im);
+
     }
 
     /**
@@ -214,8 +206,7 @@ public class IntentUtils {
     /**
      * @return set of class strings that the passed in explicit intent may target
      */
-    public Set<SootField> getExplicitIntentTargetClsStrings(ResolvedExplicitIntent intent, IAllocNode allocNode, Stmt stmt, 
-        SootMethod target, Set<SootField> allPossibleFieldTargets) {
+    public Set<SootField> getExplicitIntentTargetClsStrings(ResolvedExplicitIntent intent, Set<SootField> allPossibleFieldTargets) {
         
         // container for results
         Set<SootField> targetClsStrings = new HashSet<SootField>();
@@ -231,8 +222,8 @@ public class IntentUtils {
      * @return set of class strings that the passed in explicit intent may target
      *         null if we cannot resolved them unambiguously
      */
-    public Set<SootField> getImplicitIntentInAppTargetClsStrings(ImplicitIntentModel intent, IAllocNode allocNode, 
-        Stmt stmt, SootMethod target, AndroidComponents component, Set<SootField> allPossibleFieldTargets) {
+    public Set<SootField> getImplicitIntentInAppTargetClsStrings(ImplicitIntentModel intent,
+        AndroidComponents component, Set<SootField> allPossibleFieldTargets) {
         
         Set<SootField> calculatedTargets = new HashSet<SootField>();
         calculatedTargets.addAll(allPossibleFieldTargets);
@@ -507,9 +498,13 @@ public class IntentUtils {
         for (String data : intentFilter.dataUri) {
             logger.info("Data Test, intent filter has data: {}", data);
         }        
-        
-        if (!intent.isFieldInvalidated(ImplicitIntentFields.DATA)) {
+                        
+        if (!intent.isFieldInvalidated(ImplicitIntentFields.DATA)) {            
             Set<String> intentDatas = intent.getValues(ImplicitIntentFields.DATA);
+            //if no data in intent and no data in filter, then match
+            if (intentDatas.size() == 0 && intentFilter.dataUri.size() == 0)
+                return true;
+            
             //if any of the intent uri could match a filter uri, then it could be a target
             for (String intentData : intentDatas) {
                 //if we get here, this intent data is valid
@@ -529,42 +524,4 @@ public class IntentUtils {
             return true;
         }
     }
-    
-    public class AllocNodeAndTargetType {
-        IAllocNode node;
-        AndroidComponents component;
-                
-        public AllocNodeAndTargetType(IAllocNode node, AndroidComponents component) {
-            super();
-            this.node = node;
-            this.component = component;
-        }
-
-        @Override
-        public int hashCode() {
-            final int prime = 31;
-            int result = 1;
-            result = prime * result + getOuterType().hashCode();
-            result = prime * result + ((component == null) ? 0 : component.hashCode());
-            result = prime * result + ((node == null) ? 0 : node.hashCode());
-            return result;
-        }
-        
-        @Override
-        public boolean equals(Object obj) {
-            if (this == obj) return true;
-            if (obj == null) return false;
-            if (getClass() != obj.getClass()) return false;
-            AllocNodeAndTargetType other = (AllocNodeAndTargetType) obj;
-            if (!getOuterType().equals(other.getOuterType())) return false;
-            if (component != other.component) return false;
-            if (node == null) {
-                if (other.node != null) return false;
-            } else if (!node.equals(other.node)) return false;
-            return true;
-        }
-        private IntentUtils getOuterType() {
-            return IntentUtils.this;
-        }        
-    }    
 }

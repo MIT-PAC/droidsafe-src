@@ -455,6 +455,12 @@ public class Config {
                 .withDescription("APK file to run the analysis on")
                 .create("apkfile");
         options.addOption(apkFile);
+        
+        Option interAppFlowFile = 
+                OptionBuilder.withArgName("file").hasArg()
+                .withDescription("Inject inter app flows from file")
+                .create("injectflows");
+        options.addOption(interAppFlowFile);
 
         Option libPkgPrefixesFile =
                 OptionBuilder.withArgName("file").hasArg()
@@ -664,6 +670,10 @@ public class Config {
         APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
         logger.info("approot: {}", APP_ROOT_DIR);
 
+        if (cmd.hasOption("injectflows")) {
+            this.readInterAppFlowsFile =  cmd.getOptionValue("injectflows");
+        }
+        
         if (cmd.hasOption("apkfile")) {
             this.apk = getPathFrom(cmd.getOptionValue("apkfile"), APP_ROOT_DIR);
         } else if (cmd.hasOption("apk")) {

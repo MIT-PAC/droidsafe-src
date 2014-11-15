@@ -6,6 +6,7 @@ import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.interapp.GenerateInterAppSourceFlows;
+import droidsafe.analyses.interapp.InjectInterAppFlows;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.PTABridge;
@@ -306,6 +307,12 @@ public class Main {
             //ServiceTransforms.v().run();
 
         }
+        
+        //inject inter app flows if defined
+        if (!Config.v().readInterAppFlowsFile.isEmpty()) {
+            driverMsg("Injecting inter-app flows...");
+            InjectInterAppFlows.v().run();            
+        }
 
         //add fallback object modeling for any value from the api that leaks into user
         //code as null    
@@ -338,11 +345,9 @@ public class Main {
 
 
         if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-
+            return DroidsafeExecutionStatus.CANCEL_STATUS;        
         
-        
-        //new TestPTA();     
+        new TestPTA();     
 
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();

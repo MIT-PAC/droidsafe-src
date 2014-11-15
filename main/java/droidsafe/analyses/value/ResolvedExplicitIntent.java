@@ -114,4 +114,12 @@ public class ResolvedExplicitIntent extends IntentModel {
     public void setComponentNames(Set<String> componentNames) {
         this.componentNames = componentNames;
     }
+    
+    public String toString() {
+        String ret = "Explicit Intent[";
+        for (String cn : componentNames) 
+            ret += (cn + ";");
+        
+        return ret + "]";
+    }
 }

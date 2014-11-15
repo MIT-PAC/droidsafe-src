@@ -15,6 +15,7 @@ import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.SootUtils;
@@ -67,6 +68,8 @@ public class UnmodeledGeneratedClasses {
     public static int localID = 0;
 
     private Set<SootClass> classesAdded;
+    
+    private SootClass lastClonedClass;
 
     public static void reset() {
         v = null;
@@ -139,7 +142,7 @@ public class UnmodeledGeneratedClasses {
         
         String suffix = Character.toUpperCase(type.toString().charAt(0)) + type.toString().substring(1);
         
-        SootField field = new SootField(DUMMY_FIELD_PREFIX + suffix, type, Modifier.PUBLIC | Modifier.STATIC);
+        SootField field = new SootField(DUMMY_FIELD_PREFIX + suffix + localID, type, Modifier.PUBLIC | Modifier.STATIC);
 
         dummyClass.addField(field);
 
@@ -165,16 +168,16 @@ public class UnmodeledGeneratedClasses {
         return field;
     }
 
-    private void addArrayType(ArrayType type) {
+    private SootField addArrayType(ArrayType type) {
         Type baseType = type.getArrayElementType();
         JimpleBody body = dummyInitBody;
 
         Value baseValue = getSootFieldForType(baseType);
 
         if (baseValue == null)
-            return;
+            return null;
 
-        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.getElementType().toString().replace(".", "_") + "_array", 
+        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.getElementType().toString().replace(".", "_") + "_array" + localID, 
             type, Modifier.PUBLIC | Modifier.STATIC);
         dummyClass.addField(field);
         
@@ -220,7 +223,7 @@ public class UnmodeledGeneratedClasses {
         
         addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), arrayLocal));
         
-        typeToAddedField.put(type, field);
+        return field;
 
     }
 
@@ -238,7 +241,7 @@ public class UnmodeledGeneratedClasses {
             return null;
         }
 
-        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.toString().replace(".", "_"), 
+        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.toString().replace(".", "_") + localID, 
             type, Modifier.PUBLIC | Modifier.STATIC);
         dummyClass.addField(field);
 
@@ -257,8 +260,17 @@ public class UnmodeledGeneratedClasses {
         return field;
     }
     
-    private SootField addRefType(RefType type) {
-        //see if any current type can replace it
+    public SootClass getLastCloneCreated() {
+        return lastClonedClass;
+    }
+    
+    /**
+     * Add a unmodeled object in the DroidSafeDummies generated class.  Create a cloned type of the 
+     * given type and allocate an object of the cloned type.  Tag all methods of the cloned type with 
+     * the given source info kind.  Do not check to see if another object of the type has been created, and
+     * do not cache this object / field.
+     */
+    public SootField addRefType(RefType type, InfoKind unmodeledFlowType, boolean deepClone) {
         SootClass clz = type.getSootClass();
         //if an interface, find a direct implementor of and instantiate that...
         if (!clz.isConcrete()) {
@@ -275,13 +287,14 @@ public class UnmodeledGeneratedClasses {
 
         //clone clz
         ClassCloner cloner;
-        if (Config.v().reportUnmodeledFlows && 
-                ("android.content.Intent".equals(clz.getName()) || "android.nfc.NdefRecord".equals(clz.getName())))
+        if (deepClone || (Config.v().reportUnmodeledFlows && 
+                ("android.content.Intent".equals(clz.getName()) || "android.nfc.NdefRecord".equals(clz.getName()))))
             cloner = ClassCloner.cloneClassAndInheritedMethods(clz, true);
         else 
             cloner = ClassCloner.cloneClass(clz);
         
         SootClass clone = cloner.getClonedClass();
+        lastClonedClass = clone;
 
         logger.info("Creating cloned class for fallback modeling: {}", clone);
 
@@ -291,7 +304,7 @@ public class UnmodeledGeneratedClasses {
 
         //make all methods of unmodeled type
         for (SootMethod method : clone.getMethods()) {
-            API.v().addSourceInfoKind(method, "UNMODELED", Config.v().reportUnmodeledFlows);
+            API.v().addSourceInfoKind(method, unmodeledFlowType.getName(), unmodeledFlowType.isSensitive());
         }
 
         //field and add creation of object
@@ -300,12 +313,9 @@ public class UnmodeledGeneratedClasses {
             return null;
         }
 
-        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.toString().replace(".", "_"), 
+        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.toString().replace(".", "_") + localID, 
             type, Modifier.PUBLIC | Modifier.STATIC);
-        dummyClass.addField(field);
-            
-        if (!SootUtils.isStringOrSimilarType(type))
-            typeToAddedField.put(type, field);
+        dummyClass.addField(field);                
 
         //add initialization code to dummy init method
         Local local = Jimple.v().newLocal("_$UG" + localID++, type);
@@ -389,12 +399,15 @@ public class UnmodeledGeneratedClasses {
                 //if a reference, create dummy object
                 if (type instanceof RefType) {
                     //class type
-                    addRefType((RefType)type);
+                    field = addRefType((RefType)type, 
+                        InfoKind.getInfoKind("UNMODELED", Config.v().reportUnmodeledFlows), false);
                 } else if (type instanceof ArrayType) {
                     //array type
-                    addArrayType((ArrayType)type);
+                    field = addArrayType((ArrayType)type);
                 } 
+                typeToAddedField.put(type, field);
             }
+            
             field = typeToAddedField.get(type);
         }
 

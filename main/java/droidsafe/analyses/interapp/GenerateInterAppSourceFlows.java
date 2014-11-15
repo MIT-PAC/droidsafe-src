@@ -33,12 +33,10 @@ public class GenerateInterAppSourceFlows {
     
     private static GenerateInterAppSourceFlows v;
     private SecuritySpecification spec;
-    private Map<String, InterAppApiCall> sigToAPICallType;
     private List<SourceFlow> flows;
     private static final String FILE_NAME = "InterAppSourceFlows.gson";
     
-    private GenerateInterAppSourceFlows() {
-        createAPIMap();
+    private GenerateInterAppSourceFlows() {   
         flows = new ArrayList<SourceFlow>();
     }
 
@@ -63,14 +61,19 @@ public class GenerateInterAppSourceFlows {
         for (Map.Entry<Method, List<Method>> entry: spec.getEventBlocks().entrySet()) {
             for (Method oe : entry.getValue()) {
                 System.out.println(oe.getSignature());
-                if (sigToAPICallType.containsKey(oe.getSignature())) {
-                    InterAppApiCall type = sigToAPICallType.get(oe.getSignature());
+                if (SourceFlow.isSourceFlowMethodSig(oe.getSignature())) {
+                    InterAppApiCall type = SourceFlow.getInterAppApiCallForSig(oe.getSignature());
 
                     for (int i = 0; i < oe.getNumArgs(); i++) {
                         for (Entry<InfoKind, Set<Stmt>> flow : oe.getArgSourceInfoUnitsConservative(i).entrySet()) {
                             for (IAllocNode node : oe.getArgAllocNodes(i)) {
                                 IntentModel im = IntentUtils.v().getIntentModel(node);
-                                SourceFlow interAppFlow = new SourceFlow(type, flow.getKey(), flow.getValue(), im);
+                                List<String> srcStmts = new ArrayList<String>();
+                                for (Stmt stmt : flow.getValue()) {
+                                    srcStmts.add(stmt.toString());
+                                }
+
+                                SourceFlow interAppFlow = new SourceFlow(type, flow.getKey(), srcStmts, im);
                                 flows.add(interAppFlow);
                                 System.out.printf("Found InterApp: %s\n", interAppFlow);
                             }
@@ -98,46 +101,6 @@ public class GenerateInterAppSourceFlows {
             logger.warn("Error writing json file.", e);
         }
 
-    }
-
-    private void createAPIMap() {
-        sigToAPICallType = new HashMap<String, InterAppApiCall>();
-        sigToAPICallType.put("<android.app.Activity: void startActivity(android.content.Intent)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.app.Activity: void startActivity(android.content.Intent,android.os.Bundle)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.app.Activity: void startActivityForResult(android.content.Intent,int,android.os.Bundle)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int,android.os.Bundle)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.content.Context: void startActivity(android.content.Intent)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.app.ContexImpl: void startActivity(android.content.Intent)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.app.Service: void startActivity(android.content.Intent)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.app.Application: void startActivity(android.content.Intent)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put( "<android.app.Fragment: void startActivity(android.content.Intent)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.app.Fragment: void startActivityForResult(android.content.Intent,int)>", InterAppApiCall.START_ACTIVITY);
-        sigToAPICallType.put("<android.content.ContextWrapper: void startActivity(android.content.Intent)>", InterAppApiCall.START_ACTIVITY);
-
-        sigToAPICallType.put("<android.content.Context: android.content.ComponentName startService(android.content.Intent)>", InterAppApiCall.START_SERVICE);
-        sigToAPICallType.put("<android.app.ContextImpl: android.content.ComponentName startService(android.content.Intent)>", InterAppApiCall.START_SERVICE);
-        sigToAPICallType.put("<android.content.ContextWrapper: android.content.ComponentName startService(android.content.Intent)>", InterAppApiCall.START_SERVICE);
-
-        sigToAPICallType.put("<android.content.Context: void sendBroadcast(android.content.Intent)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.Context: void sendBroadcast(android.content.Intent,java.lang.String)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.Context: void sendOrderedBroadcast(android.content.Intent,java.lang.String)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.Context: void sendOrderedBroadcast(android.content.Intent,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.Context: void sendStickyBroadcast(android.content.Intent)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.Context: void sendStickyOrderedBroadcast(android.content.Intent,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.ContextWrapper: void sendBroadcast(android.content.Intent)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.ContextWrapper: void sendBroadcast(android.content.Intent,java.lang.String)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.ContextWrapper: void sendOrderedBroadcast(android.content.Intent,java.lang.String)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.ContextWrapper: void sendOrderedBroadcast(android.content.Intent,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.ContextWrapper: void sendStickyBroadcast(android.content.Intent)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.content.ContextWrapper: void sendStickyOrderedBroadcast(android.content.Intent,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.app.ContextImpl: void sendBroadcast(android.content.Intent)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.app.ContextImpl: void sendBroadcast(android.content.Intent,java.lang.String)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.app.ContextImpl: void sendOrderedBroadcast(android.content.Intent,java.lang.String)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.app.ContextImpl: void sendOrderedBroadcast(android.content.Intent,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.app.ContextImpl: void sendStickyBroadcast(android.content.Intent)>", InterAppApiCall.SEND_BROADCAST);
-        sigToAPICallType.put("<android.app.ContextImpl: void sendStickyOrderedBroadcast(android.content.Intent,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>", InterAppApiCall.SEND_BROADCAST);
     }
     
     public class IntentModelExclusionStrategy implements ExclusionStrategy {
