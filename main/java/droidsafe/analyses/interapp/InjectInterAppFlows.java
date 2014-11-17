@@ -22,9 +22,11 @@ import soot.SootMethod;
 import soot.SootMethodRef;
 import soot.Value;
 import soot.jimple.AssignStmt;
+import soot.jimple.IntConstant;
 import soot.jimple.InvokeStmt;
 import soot.jimple.Jimple;
 import soot.jimple.Stmt;
+import soot.jimple.toolkits.pta.IAllocNode;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -33,6 +35,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.ImplicitIntentModel;
 import droidsafe.analyses.value.IntentModel;
@@ -40,6 +43,7 @@ import droidsafe.analyses.value.IntentUtils;
 import droidsafe.analyses.value.ResolvedExplicitIntent;
 import droidsafe.analyses.value.UnresolvedIntent;
 import droidsafe.android.app.Harness;
+import droidsafe.android.app.Hierarchy;
 import droidsafe.android.system.AndroidComponents;
 import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
@@ -50,8 +54,8 @@ import droidsafe.utils.JimpleRelationships;
 /**
  * 
  * 
- * Currently will work taint return values for injected intent methods that return string or primitive.
- * This is because fall back modeling will inject objects that are not tainted.
+ * Currently will taint return values for injected intent methods that return string or primitive.
+ * This is because fall back modeling injects objects that will not be tainted.
  * 
  * @author mgordon
  *
@@ -160,9 +164,64 @@ public class InjectInterAppFlows {
         //ignore making output events for this call we add
         RCFG.v().ignoreInvokeForOutputEvents(setIntentCall);             
     }
-        
+      
+    /**
+     * For a service, create calls to onStart and onStartCommand with the created Intent for the 
+     * injected flows.
+     */
     private void injectForService(SootField serviceField, SootField intentField) {
-        //TODO
+        
+        SootMethod onStartCommand = Scene.v().getMethod("<android.app.Service: int onStartCommand(android.content.Intent,int,int)>");
+        SootMethod onStart = Scene.v().getMethod("<android.app.Service: void onStart(android.content.Intent,int)>");
+
+        logger.info("Adding onStartCommand/onStart call in Harness for Field {}", serviceField);
+        //call set intent on these activities with local   
+
+        //create local and add to body
+        Local compLocal = Jimple.v().newLocal("_$injectinterapp_comp_local_" + localID++, serviceField.getType());
+        Harness.v().addLocalToMain(compLocal);
+        
+        //create local and add to body
+        Local intentLocal = Jimple.v().newLocal("_$injectinterapp_intent_local_" + localID++, intentField.getType());
+        Harness.v().addLocalToMain(intentLocal);                
+
+        //set field of component to local [local = harness.activityfield]
+        //set local to field
+        Stmt compLocalAssign = Jimple.v().newAssignStmt
+                (compLocal, Jimple.v().newStaticFieldRef(serviceField.makeRef()));
+        Harness.v().addStmtToEndOfMainLoop(compLocalAssign);
+        
+        //set local for intent to the field for the created intent
+        Stmt intentAssign = Jimple.v().newAssignStmt
+                (intentLocal, Jimple.v().newStaticFieldRef(intentField.makeRef()));
+        Harness.v().addStmtToEndOfMainLoop(intentAssign);
+
+        List<Value> args = new LinkedList<Value>();
+
+        args.add(intentLocal);
+        args.add(IntConstant.v(0));
+        args.add(IntConstant.v(0));
+        Stmt onStartCall = 
+                Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
+                    (compLocal, onStartCommand.makeRef(), args));
+
+        Harness.v().addStmtToEndOfMainLoop(onStartCall);
+        //ignore making output events for this call we add
+        RCFG.v().ignoreInvokeForOutputEvents(onStartCall);
+
+        //now add the call to onStart()
+
+        args = new LinkedList<Value>();
+
+        args.add(intentLocal);
+        args.add(IntConstant.v(0));
+        Stmt onStartDepCall = 
+                Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
+                    (compLocal, onStart.makeRef(), args));
+
+        Harness.v().addStmtToEndOfMainLoop(onStartDepCall);
+        //ignore making output events for this call we add
+        RCFG.v().ignoreInvokeForOutputEvents(onStartDepCall);
     }
     
     private void injectForBroadcastReceiver(SootField receiverField,SootField intentField) {
