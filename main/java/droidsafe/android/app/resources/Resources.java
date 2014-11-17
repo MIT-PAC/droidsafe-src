@@ -154,7 +154,10 @@ public class Resources {
 
 			// Process the activities of the application
 			for (Activity a : v.manifest.activities) {
-				a.setSootClass(a.name);
+				if (a.setSootClass(a.name) == false) {
+					logger.warn("Cannot resolve activity {} ", a);
+					continue;
+				}
 				v.process_activity (a);
 				am.components.add(a.getSootClass());
 				
@@ -614,6 +617,12 @@ public class Resources {
 		// as well.
 		
 		final SootClass cn = activity.getSootClass();
+		
+		String className = cn.getName();
+		if (className.matches("^(android|com.android|org.apache).*/")) {
+			logger.info("process_activity: skip built-in activity");
+			return;
+		}
 
 		//NOTE: do we want to read in all methods????????
 
@@ -794,7 +803,8 @@ public class Resources {
 
 			if (!(expr.getArgs().get(0) instanceof IntConstant)) {
 				logger.error("Found call to setContentView(int) with non-constant argument: {}", expr.getArgs().get(0));
-				droidsafe.main.Main.exit(1);
+				//droidsafe.main.Main.exit(1);
+				logger.error("class {} ", calling.getDeclaringClass().getName());
 				return;
 			}
 
