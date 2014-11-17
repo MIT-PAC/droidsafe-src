@@ -735,6 +735,13 @@ public class IntegrateXMLLayouts extends BodyTransformer {
         // get a snapshot iterator of the unit since we are going to
         // mutate the chain when iterating over it.
         Iterator<Unit> stmtIt = units.snapshotIterator();
+        
+        String className = b.getMethod().getDeclaringClass().getName();
+        
+        if (className.matches("^(android|com.android|org.apache).*")) {
+        	logger.warn("XML Transform: Skipping built-in classes ");
+        	return;
+        }
 
         if (debugOn) {
             logger.info("Output body again ");

@@ -58,7 +58,6 @@ import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.NoContext;
 import soot.jimple.toolkits.callgraph.Edge;
-import soot.jimple.toolkits.callgraph.Targets;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
@@ -125,11 +124,6 @@ public class InformationFlowAnalysis {
     public Set<InfoValue> getTaints(IAllocNode rootAllocNode, MethodOrMethodContext methodContext) {
         Set<InfoValue> values = new HashSet<InfoValue>();
 
-        // HACK
-        values.addAll(this.state.instances.get(AllocNodeField.v(rootAllocNode, this.objectUtils.taint)));
-        
-        values.addAll(this.state.arrays.get(rootAllocNode));
-
         Set<IAllocNode> reachableAllocNodes = this.allocNodeUtils.reachableAllocNodes(rootAllocNode);
 
         Set<AllocNodeField> allocNodeFields = this.allocNodeFieldsReadAnalysis.getRecursively(methodContext);
@@ -186,7 +180,6 @@ public class InformationFlowAnalysis {
     }
 
    
-
     /**
      * Given an alloc node return a set of all taint reachable from the node.  Recursively search
      * all reachable memory (through field references).
@@ -1234,52 +1227,180 @@ class AllocNodeFieldsReadAnalysis {
         doAnalysis();
     }
 
-    Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, MethodOrMethodContext methodContext) {
-        Set<AllocNodeField> allocNodeFields = null;
+    Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, final MethodOrMethodContext methodContext) {
         Value rValue = stmt.getRightOp();
-        if (rValue instanceof InstanceFieldRef) {
-            allocNodeFields = getAllocNodeFieldsRead(stmt, (InstanceFieldRef)rValue, methodContext);
-        } else if (rValue instanceof InvokeExpr) {
-            allocNodeFields = getAllocNodeFieldsRead(stmt, (InvokeExpr)rValue, methodContext);
-        } else if (rValue instanceof LengthExpr) {
-            allocNodeFields = getAllocNodeFieldsRead(stmt, (LengthExpr)rValue, methodContext);
-        }
-        return allocNodeFields;
+        MyAbstractRValueSwitch rValueSwitch = new MyAbstractRValueSwitch() {
+            @Override
+            public void caseConstant(Constant constant) {
+                setResult(null);
+            }
+
+            @Override
+            public void caseLocal(Local local) {
+                setResult(getAllocNodeFieldsRead(local, methodContext));
+            }
+
+            @Override
+            public void caseInstanceFieldRef(InstanceFieldRef instanceFieldRef) {
+                setResult(getAllocNodeFieldsRead(instanceFieldRef, methodContext));
+            }
+
+            @Override
+            public void caseStaticFieldRef (StaticFieldRef staticFieldRef) {
+                setResult(getAllocNodeFieldsRead(staticFieldRef, methodContext));
+            }
+
+            @Override
+            public void caseArrayRef(ArrayRef arrayRef) {
+                setResult(getAllocNodeFieldsRead(arrayRef, methodContext));
+            }
+
+            @Override
+            public void caseNewExpr(NewExpr newExpr) {
+                setResult(null);
+            }
+
+            @Override
+            public void caseNewArrayExpr(NewArrayExpr newArrayExpr) {
+                Immediate immediate = (Immediate)newArrayExpr.getSize();
+                setResult(getAllocNodeFieldsRead(immediate, methodContext));
+            }
+
+            @Override
+            public void caseNewMultiArrayExpr(NewMultiArrayExpr newMultiArrayExpr) {
+                Set<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>();
+                List<Immediate> sizes = newMultiArrayExpr.getSizes();
+                for (Immediate size : sizes) {
+                    Set<AllocNodeField> afs = getAllocNodeFieldsRead(size, methodContext);
+                    if (afs != null) {
+                        allocNodeFields.addAll(afs);
+                    }
+                }
+                setResult(allocNodeFields);
+            }
+
+            @Override
+            public void caseCastExpr(CastExpr castExpr) {
+                Immediate immediate = (Immediate)castExpr.getOp();
+                setResult(getAllocNodeFieldsRead(immediate, methodContext));
+            }
+
+            @Override
+            public void caseInstanceOfExpr(InstanceOfExpr instanceOfExpr) {
+                Immediate immediate = (Immediate)instanceOfExpr.getOp();
+                setResult(getAllocNodeFieldsRead(immediate, methodContext));
+            }
+
+            @Override
+            public void caseUnopExpr(UnopExpr unopExpr) {
+                Immediate immediate = (Immediate)unopExpr.getOp();
+                setResult(getAllocNodeFieldsRead(immediate, methodContext));
+            }
+
+            @Override
+            public void caseBinopExpr(BinopExpr binopExpr) {
+                Set<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>();
+                Immediate[] immediates = {(Immediate)binopExpr.getOp1(), (Immediate)binopExpr.getOp2()};
+                for (Immediate immediate : immediates) {
+                    Set<AllocNodeField> afs = getAllocNodeFieldsRead(immediate, methodContext);
+                    if (afs != null) {
+                        allocNodeFields.addAll(afs);
+                    }
+                }
+                setResult(allocNodeFields);
+            }
+
+            @Override
+            public void caseInvokeExpr(InvokeExpr invokeExpr) {
+                setResult(getAllocNodeFieldsRead(invokeExpr, methodContext));
+            }
+        };
+        stmt.getRightOp().apply(rValueSwitch);
+        return (Set<AllocNodeField>)rValueSwitch.getResult();
     }
 
-    Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, InstanceFieldRef instanceFieldRef, MethodOrMethodContext methodContext) {
-        Set<AllocNodeField> allocNodeFields = null;
-        SootField field = instanceFieldRef.getField();
-        if (!(field.getType() instanceof RefLikeType)) {
-            allocNodeFields = new HashSet<AllocNodeField>();
-            Value baseValue = instanceFieldRef.getBase();
+    Set<AllocNodeField> getAllocNodeFieldsRead(InvokeStmt stmt, MethodOrMethodContext methodContext) {
+        InvokeExpr invokeExpr = stmt.getInvokeExpr();
+        return getAllocNodeFieldsRead(invokeExpr, methodContext);
+    }
+
+    Set<AllocNodeField> getAllocNodeFieldsRead(ReturnStmt stmt, MethodOrMethodContext methodContext) {
+        Immediate immediate = (Immediate)stmt.getOp();
+        return getAllocNodeFieldsRead(immediate, methodContext);
+    }
+
+    Set<AllocNodeField> getAllocNodeFieldsRead(InvokeExpr invokeExpr, MethodOrMethodContext methodContext) {
+        assert !(invokeExpr instanceof DynamicInvokeExpr);
+        Set<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>();
+        if (invokeExpr instanceof InstanceInvokeExpr) {
+            InstanceInvokeExpr instanceInvokeExpr = (InstanceInvokeExpr)invokeExpr;
+            Local base = (Local)instanceInvokeExpr.getBase();
             Context context = methodContext.context();
-            Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseValue, context);
+            Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(base, context);
             for (IAllocNode allocNode : allocNodes) {
-                allocNodeFields.add((AllocNodeField.v(allocNode, field)));
+                allocNodeFields.add(AllocNodeField.v(allocNode, this.objectUtils.taint));
+            }
+        }
+        List<Value> args = invokeExpr.getArgs();
+        for (Value arg : args) {
+            Set<AllocNodeField> afs = getAllocNodeFieldsRead((Immediate)arg, methodContext);
+            if (afs != null) {
+                allocNodeFields.addAll(afs);
             }
         }
         return allocNodeFields;
     }
 
-    Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, InvokeExpr invokeExpr, MethodOrMethodContext methodContext) {
-        Set<AllocNodeField> allocNodeFields = null;
-        boolean isGetTaint = false;
-        List<Edge> callEdges = PTABridge.v().outgoingEdges(methodContext, stmt);
-        Iterator<MethodOrMethodContext> tgtMethodContexts = new Targets(callEdges.iterator());
-        while (tgtMethodContexts.hasNext()) {
-            MethodOrMethodContext tgtMethodContext = tgtMethodContexts.next();
-            SootMethod method = tgtMethodContext.method();
-            if (this.objectUtils.isGetTaint(method)) {
-                isGetTaint = true;
-                break;
+    Set<AllocNodeField> getAllocNodeFieldsRead(Immediate immediate, final MethodOrMethodContext methodContext) {
+        MyAbstractImmediateSwitch immediateSwitch = new MyAbstractImmediateSwitch() {
+            @Override
+            public void caseLocal(Local local) {
+                setResult(getAllocNodeFieldsRead(local, methodContext));
+            }
+
+            @Override
+            public void caseConstant(Constant constant) {
+                setResult(null);
+            }
+        };
+        immediate.apply(immediateSwitch);
+        return (Set<AllocNodeField>)immediateSwitch.getResult();
+    }
+
+    Set<AllocNodeField> getAllocNodeFieldsRead(InstanceFieldRef instanceFieldRef, MethodOrMethodContext methodContext) {
+        Set<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>();
+        Local base = (Local)instanceFieldRef.getBase();
+        Context context = methodContext.context();
+        Set<IAllocNode> baseAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(base, context);
+        for (IAllocNode baseAllocNode : baseAllocNodes) {
+            allocNodeFields.add(AllocNodeField.v(baseAllocNode, this.objectUtils.taint));
+        }
+        SootField field = instanceFieldRef.getField();
+        if (field.getType() instanceof RefLikeType) {
+            for (IAllocNode baseAllocNode : baseAllocNodes) {
+                Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseAllocNode, field);
+                for (IAllocNode allocNode : allocNodes) {
+                    allocNodeFields.add(AllocNodeField.v(allocNode, this.objectUtils.taint));
+                }
+            }
+        } else {
+            for (IAllocNode baseAllocNode : baseAllocNodes) {
+                allocNodeFields.add(AllocNodeField.v(baseAllocNode, field));
             }
         }
-        if (isGetTaint) {
-            allocNodeFields = new HashSet<AllocNodeField>();
-            Local local = (Local)((VirtualInvokeExpr)invokeExpr).getBase();
-            Context context = methodContext.context();
-            Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(local, context);
+        return allocNodeFields;
+    }
+
+    Set<AllocNodeField> getAllocNodeFieldsRead(ArrayRef arrayRef, MethodOrMethodContext methodContext) {
+        Set<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>();
+        Local base = (Local)arrayRef.getBase();
+        Context context = methodContext.context();
+        Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(base, context);
+        for (IAllocNode allocNode : allocNodes) {
+            allocNodeFields.add(AllocNodeField.v(allocNode, this.objectUtils.taint));
+        }
+        if (arrayRef.getType() instanceof RefLikeType) {
+            allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(arrayRef, context);
             for (IAllocNode allocNode : allocNodes) {
                 allocNodeFields.add(AllocNodeField.v(allocNode, this.objectUtils.taint));
             }
@@ -1287,13 +1408,28 @@ class AllocNodeFieldsReadAnalysis {
         return allocNodeFields;
     }
 
-    Set<AllocNodeField> getAllocNodeFieldsRead(AssignStmt stmt, LengthExpr lengthExpr, MethodOrMethodContext methodContext) {
-        Set<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>();
-        Value opImmediate = lengthExpr.getOp();
-        Context context = methodContext.context();
-        Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(opImmediate, context);
-        for (IAllocNode allocNode : allocNodes) {
-            allocNodeFields.add((AllocNodeField.v(allocNode, this.objectUtils.taint)));
+    Set<AllocNodeField> getAllocNodeFieldsRead(StaticFieldRef staticFieldRef, MethodOrMethodContext methodContext) {
+        Set<AllocNodeField> allocNodeFields = null;
+        if (staticFieldRef.getType() instanceof RefLikeType) {
+            allocNodeFields = new HashSet<AllocNodeField>();
+            Context context = methodContext.context();
+            Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(staticFieldRef, context);
+            for (IAllocNode allocNode : allocNodes) {
+                allocNodeFields.add(AllocNodeField.v(allocNode, this.objectUtils.taint));
+            }
+        }
+        return allocNodeFields;
+    }
+
+    Set<AllocNodeField> getAllocNodeFieldsRead(Local local, MethodOrMethodContext methodContext) {
+        Set<AllocNodeField> allocNodeFields = null;
+        if (local.getType() instanceof RefLikeType) {
+            allocNodeFields = new HashSet<AllocNodeField>();
+            Context context = methodContext.context();
+            Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(local, context);
+            for (IAllocNode allocNode : allocNodes) {
+                allocNodeFields.add(AllocNodeField.v(allocNode, this.objectUtils.taint));
+            }
         }
         return allocNodeFields;
     }
@@ -1304,7 +1440,7 @@ class AllocNodeFieldsReadAnalysis {
             if (method.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(method)) && !(this.objectUtils.isAddTaint(method)) && !(this.objectUtils.isGetTaint(method))) {
                 List<Block> blocks = this.superControlFlowGraph.methodToBlocks.get(method);
                 Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
-                for (MethodOrMethodContext methodContext : methodContexts) {
+                for (final MethodOrMethodContext methodContext : methodContexts) {
                     Context context = methodContext.context();
                     if (InformationFlowAnalysis.ignoreContext(context)) {
                         continue;
@@ -1314,10 +1450,24 @@ class AllocNodeFieldsReadAnalysis {
                         Iterator<Unit> units = block.iterator();
                         while (units.hasNext()) {
                             Unit unit = units.next();
-                            Set<AllocNodeField> afs = null;
-                            if (unit instanceof AssignStmt) {
-                                afs = getAllocNodeFieldsRead((AssignStmt)unit, methodContext);
-                            }
+                            AbstractStmtSwitch stmtSwitch = new AbstractStmtSwitch() {
+                                @Override
+                                public void caseAssignStmt(AssignStmt stmt) {
+                                    setResult(getAllocNodeFieldsRead(stmt, methodContext));
+                                }
+
+                                @Override
+                                public void caseInvokeStmt(InvokeStmt stmt) {
+                                    setResult(getAllocNodeFieldsRead(stmt, methodContext));
+                                }
+
+                                @Override
+                                public void caseReturnStmt(ReturnStmt stmt) {
+                                    setResult(getAllocNodeFieldsRead(stmt, methodContext));
+                                }
+                            };
+                            unit.apply(stmtSwitch);
+                            Set<AllocNodeField> afs = (Set<AllocNodeField>)stmtSwitch.getResult();
                             if (afs != null) {
                                 allocNodeFields.addAll(afs);
                             }
