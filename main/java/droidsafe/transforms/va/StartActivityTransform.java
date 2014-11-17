@@ -19,6 +19,7 @@ import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,17 +29,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Body;
+import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.Stmt;
+import soot.jimple.spark.pag.ObjectSensitiveAllocNode;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.ArrayType;
 import soot.Local;
+import soot.MethodContext;
+import soot.MethodOrMethodContext;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
+import soot.Unit;
 import soot.Value;
 
 /**
@@ -98,6 +105,9 @@ class StartActivityTransform implements VATransform {
                         !Hierarchy.inheritsFromAndroidActivity(((RefType)activityField.getType()).getSootClass()))
                     continue;
 
+                if (callee.getSubSignature().contains("startActivityForResult"))
+                    setResultTransform(containingMthd, invoke, activityField, intentNode);
+                
                 logger.info("Adding setIntent call in " + JimpleRelationships.v().getEnclosingMethod(stmt));
                 //call set intent on these activities with local   
 
@@ -137,6 +147,123 @@ class StartActivityTransform implements VATransform {
             }
         }
     }
+    
+    /**
+     * setResult calls in target of startActivityForResult will be transformed to call the 
+     * onActivityResult of the caller activity.  This links the proper intent to the onActivityResult intent 
+     * argument.
+     */
+    private void setResultTransform(SootMethod caller, InvokeExpr startActivtyForResult, 
+                                    SootField targetActivityField, IAllocNode intentNode) {
+        //setResult(arg) -> onActivityResult(startActivityForResult.arg1, arg, getIntent())
+        //setResult(arg0, arg1) -> onActivityResult(startActivityForResult.arg1, arg0, arg1)
+        
+        SootClass callerClass = caller.getDeclaringClass();
+        SootField callerFieldInHarness = IntentUtils.v().getHarnessFldForClsString(callerClass.getName());
+        if (callerFieldInHarness == null) {
+            logger.error("Could not find harness field for calling activity {} of startActivityForResult", callerClass);
+            return;
+        }
+        
+        logger.info("Found caller for startActivity for result, class: {}, field: {}", callerClass, callerFieldInHarness);
+        
+        //Find the alloc nodes that are associated with the caller activity's field in the harness
+        Set<IAllocNode>callerContexts = 
+                (Set<IAllocNode>) PTABridge.v().getPTSetIns(Jimple.v().newStaticFieldRef(targetActivityField.makeRef()));
+        
+        SootMethod setResult2 = Scene.v().getMethod("<android.app.Activity: void setResult(int,android.content.Intent)>");
+        SootMethod setResult1 = Scene.v().getMethod("<android.app.Activity: void setResult(int)>");
+        SootMethod onActivityResult = Scene.v().getMethod("<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>");
+        SootMethod getIntent = Scene.v().getMethod("<android.app.Activity: android.content.Intent getIntent()>");
+        
+        for (IAllocNode node : callerContexts) {
+            if (!(node instanceof ObjectSensitiveAllocNode)) 
+                continue;                        
+            ObjectSensitiveAllocNode osan = (ObjectSensitiveAllocNode) node;
+            
+            //find all calls to setResult(int, Intent) on node            
+            MethodOrMethodContext mc2 = MethodContext.v(setResult2, osan);
+            
+            Iterator<Edge> edges2 = Scene.v().getCallGraph().edgesInto(mc2);
+            while (edges2.hasNext()) { 
+                //for each call to setIntent(int, Intent) create statements to call onActivityResult
+                Edge call = edges2.next();
+                SootMethod setResultCallerMethod = call.src();
+                Stmt callStmt = call.srcStmt();
+                              
+                Local callerActFieldLocal = 
+                        Jimple.v().newLocal("_$setResult_local_" + localID++, callerFieldInHarness.getType());
+                setResultCallerMethod.getActiveBody().getLocals().add(callerActFieldLocal);
+                Stmt setActField = 
+                        Jimple.v().newAssignStmt(callerActFieldLocal, Jimple.v().newStaticFieldRef(callerFieldInHarness.makeRef()));
+                
+                List<Value> args = new LinkedList<Value>();
+                //hopefully the request code will be handled by the default modeling of startActivityForResult's call to onActivityResult
+                args.add(IntConstant.v(0));
+                args.add(callStmt.getInvokeExpr().getArg(0));
+                args.add(callStmt.getInvokeExpr().getArg(1));
+                                                
+                Stmt onActcall = 
+                        Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(callerActFieldLocal, onActivityResult.makeRef(), args));
+                
+                List<Unit> toInsert = new LinkedList<Unit>();
+                toInsert.add(setActField);
+                toInsert.add(onActcall);
+                                
+                //insert call to onActivityResult here                
+                setResultCallerMethod.getActiveBody().getUnits().insertAfter(toInsert, (Unit)callStmt);
+                logger.info("Inserting call to onActivityResult(int, int, Intent) for setResult(int, Intent) in {} in {} in {}",
+                    callStmt, setResultCallerMethod, osan);
+            }
+            
+            //find all calls to setResult(int) on node            
+            MethodOrMethodContext mc1 = MethodContext.v(setResult1, osan);
+            
+            Iterator<Edge> edges1 = Scene.v().getCallGraph().edgesInto(mc1);
+            while (edges1.hasNext()) {                
+                Edge call = edges1.next();
+                SootMethod setResultCallerMethod = call.src();
+                Stmt callStmt = call.srcStmt();
+                
+                List<Unit> toInsert = new LinkedList<Unit>();
+                
+                Local callerActFieldLocal = 
+                        Jimple.v().newLocal("_$setResult_local_" + localID++, callerFieldInHarness.getType());
+                setResultCallerMethod.getActiveBody().getLocals().add(callerActFieldLocal);
+                Stmt setActField = 
+                        Jimple.v().newAssignStmt(callerActFieldLocal, Jimple.v().newStaticFieldRef(callerFieldInHarness.makeRef()));
+                toInsert.add(setActField);
+                
+                Local getIntentLocal =
+                        Jimple.v().newLocal("_$setResult_getIntent_local_" + localID++, getIntent.getReturnType());
+                setResultCallerMethod.getActiveBody().getLocals().add(getIntentLocal);
+                
+                Stmt getIntentLocalAssign = 
+                        Jimple.v().newAssignStmt(getIntentLocal, 
+                            Jimple.v().newVirtualInvokeExpr(setResultCallerMethod.getActiveBody().getThisLocal(),
+                            getIntent.makeRef()));
+                
+                toInsert.add(getIntentLocalAssign);
+                
+                List<Value> args = new LinkedList<Value>();
+                //hopefully the request code will be handled by the default modeling of startActivityForResult's call to onActivityResult
+                args.add(IntConstant.v(0));
+                args.add(callStmt.getInvokeExpr().getArg(0));
+                args.add(getIntentLocal);
+                                                
+                Stmt onActcall = 
+                        Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(callerActFieldLocal, onActivityResult.makeRef(), args));
+                
+                toInsert.add(onActcall);
+                                
+                //insert call to onActivityResult here                
+                setResultCallerMethod.getActiveBody().getUnits().insertAfter(toInsert, (Unit)callStmt);
+                logger.info("Inserting call to onActivityResult(int, int, Intent) for setResult(int) in {} in {} in {}",
+                    callStmt, setResultCallerMethod, osan);
+            }
+            
+        }        
+    }
 
     @Override
     public Set<String> sigsOfInvokesToTransform() {
@@ -154,7 +281,7 @@ class StartActivityTransform implements VATransform {
             sigsOfInvokesToTransform.add("<android.app.Service: void startActivity(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.app.Application: void startActivity(android.content.Intent)>");
 
-            sigsOfInvokesToTransform.add( "<android.app.Fragment: void startActivity(android.content.Intent)>");
+            sigsOfInvokesToTransform.add("<android.app.Fragment: void startActivity(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.app.Fragment: void startActivityForResult(android.content.Intent,int)>");
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void startActivity(android.content.Intent)>");
 
