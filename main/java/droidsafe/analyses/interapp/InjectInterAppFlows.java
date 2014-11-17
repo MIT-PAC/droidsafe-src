@@ -22,6 +22,7 @@ import soot.SootMethod;
 import soot.SootMethodRef;
 import soot.Value;
 import soot.jimple.AssignStmt;
+import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeStmt;
 import soot.jimple.Jimple;
@@ -42,6 +43,7 @@ import droidsafe.analyses.value.IntentModel;
 import droidsafe.analyses.value.IntentUtils;
 import droidsafe.analyses.value.ResolvedExplicitIntent;
 import droidsafe.analyses.value.UnresolvedIntent;
+import droidsafe.analyses.value.VAUtils;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.system.AndroidComponents;
@@ -224,10 +226,61 @@ public class InjectInterAppFlows {
         RCFG.v().ignoreInvokeForOutputEvents(onStartDepCall);
     }
     
-    private void injectForBroadcastReceiver(SootField receiverField,SootField intentField) {
-        //TODO
+    /**
+     * Inject source flow into broadcast receiver field by injecting a call to onReceiver with the
+     * created Intent.
+     */
+    private void injectForBroadcastReceiver(SootField brField, SootField intentField) {
+        SootMethod onReceive = Scene.v().getMethod("<android.content.BroadcastReceiver: void onReceive(android.content.Context,android.content.Intent)>");
+
+
+        logger.info("Adding onReceive call in Harness for Field {}", brField);
+        //call set intent on these activities with local   
+
+        //create local and add to body
+        Local compLocal = Jimple.v().newLocal("_$injectinterapp_comp_local_" + localID++, brField.getType());
+        Harness.v().addLocalToMain(compLocal);
+        
+        //create local and add to body
+        Local intentLocal = Jimple.v().newLocal("_$injectinterapp_intent_local_" + localID++, intentField.getType());
+        Harness.v().addLocalToMain(intentLocal);                
+
+
+        //set field of component to local [local = harness.activityfield]
+        //set local to field
+        Stmt compLocalAssign = Jimple.v().newAssignStmt
+                (compLocal, Jimple.v().newStaticFieldRef(brField.makeRef()));
+        Harness.v().addStmtToEndOfMainLoop(compLocalAssign);
+        
+        //set local for intent to the field for the created intent
+        Stmt intentAssign = Jimple.v().newAssignStmt
+                (intentLocal, Jimple.v().newStaticFieldRef(intentField.makeRef()));
+        Harness.v().addStmtToEndOfMainLoop(intentAssign);
+        
+        //for the context, grab the context from the DroidSafeAndroidRuntime
+        
+        //create local and add to body
+        Local contextLocal = Jimple.v().newLocal("_$injectinterapp_content_local_" + localID++, intentField.getType());
+        Harness.v().addLocalToMain(contextLocal);
+        SootField contextField = 
+                Scene.v().getSootClass("droidsafe.runtime.DroidSafeAndroidRuntime").getFieldByName("context");
+        Stmt contextAssign = 
+                Jimple.v().newAssignStmt(contextLocal, Jimple.v().newStaticFieldRef(contextField.makeRef()));
+        Harness.v().addStmtToEndOfMainLoop(contextAssign);
+
+        List<Value> args = new LinkedList<Value>();
+        args.add(contextLocal);
+        args.add(intentLocal);
+        Stmt onReceiveCall = 
+                Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr
+                    (compLocal, onReceive.makeRef(), args));
+
+        Harness.v().addStmtToEndOfMainLoop(onReceiveCall);
+        
+        //ignore making output events for this call we add
+        RCFG.v().ignoreInvokeForOutputEvents(onReceiveCall);
     }      
-    
+
     private void deserializeJsonToSourceFlows(String json) {
         Gson gson = new Gson();
         JsonParser parser = new JsonParser();

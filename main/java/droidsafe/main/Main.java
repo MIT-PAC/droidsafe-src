@@ -347,7 +347,7 @@ public class Main {
         if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;        
         
-        new TestPTA();     
+        //new TestPTA();     
 
         driverMsg("Starting Generate RCFG...");
         StopWatch rcfgTimer = new StopWatch();
