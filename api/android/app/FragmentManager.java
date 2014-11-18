@@ -394,7 +394,7 @@ public FragmentManagerState[] newArray(int size) {
     int[] mAdded;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.336 -0500", hash_original_field = "EEA20C5C67D270067553BCDE313A7B27", hash_generated_field = "EEA20C5C67D270067553BCDE313A7B27")
 
-    BackStackState[] mBackStack;
+    BackStackState mBackStack;
     
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.339 -0500", hash_original_method = "4ADB2DBBD6899E89144480A7958A6490", hash_generated_method = "001680BC3C0AA33814887A60387200FC")
@@ -407,7 +407,7 @@ public FragmentManagerState() {
 public FragmentManagerState(Parcel in) {
         mActive = in.createTypedArray(FragmentState.CREATOR);
         mAdded = in.createIntArray();
-        mBackStack = in.createTypedArray(BackStackState.CREATOR);
+        //mBackStack = in.createTypedArray(BackStackState.CREATOR);
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.344 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
@@ -422,7 +422,7 @@ public int describeContents() {
 public void writeToParcel(Parcel dest, int flags) {
         dest.writeTypedArray(mActive, flags);
         dest.writeIntArray(mAdded);
-        dest.writeTypedArray(mBackStack, flags);
+        //dest.writeTypedArray(mBackStack, flags);
     }
     // orphaned legacy method
     public FragmentManagerState createFromParcel(Parcel in) {
@@ -523,13 +523,13 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     ArrayList<Integer> mAvailIndices;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.383 -0500", hash_original_field = "A66A7C10189C949E8CDC007D4D07280E", hash_generated_field = "A66A7C10189C949E8CDC007D4D07280E")
 
-    ArrayList<BackStackRecord> mBackStack;
+    BackStackRecord mBackStack;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.385 -0500", hash_original_field = "9F6E7D7F78C72C3E1BF132D62E1BFDF7", hash_generated_field = "9F6E7D7F78C72C3E1BF132D62E1BFDF7")
 
     ArrayList<Fragment> mCreatedMenus;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.387 -0500", hash_original_field = "89571A39B2AB736200FBD57A213BDB4D", hash_generated_field = "89571A39B2AB736200FBD57A213BDB4D")
 
-    ArrayList<BackStackRecord> mBackStackIndices;
+   BackStackRecord mBackStackIndices;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.389 -0500", hash_original_field = "27AED91E8586753C6865FA558A4716C8", hash_generated_field = "27AED91E8586753C6865FA558A4716C8")
 
     ArrayList<Integer> mAvailBackStackIndices;
@@ -673,7 +673,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     
 @Override
     public int getBackStackEntryCount() {
-        return mBackStack != null ? mBackStack.size() : 0;
+        return 0;
     }
 
     @DSSafe(DSCat.SAFE_OTHERS)
@@ -681,7 +681,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     
 @Override
     public BackStackEntry getBackStackEntryAt(int index) {
-        return mBackStack.get(index);
+        return mBackStack;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.448 -0500", hash_original_method = "5B02C223CD8F1AC3632AF80A3BE5FAF1", hash_generated_method = "CD42180E56219A3E765F41507C27AA02")
@@ -770,110 +770,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     
 @Override
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
-        String innerPrefix = prefix + "    ";
-
-        int N;
-        if (mActive != null) {
-            N = mActive.size();
-            if (N > 0) {
-                writer.print(prefix); writer.print("Active Fragments in ");
-                        writer.print(Integer.toHexString(System.identityHashCode(this)));
-                        writer.println(":");
-                for (int i=0; i<N; i++) {
-                    Fragment f = mActive.get(i);
-                    writer.print(prefix); writer.print("  #"); writer.print(i);
-                            writer.print(": "); writer.println(f);
-                    if (f != null) {
-                        f.dump(innerPrefix, fd, writer, args);
-                    }
-                }
-            }
-        }
-
-        if (mAdded != null) {
-            N = mAdded.size();
-            if (N > 0) {
-                writer.print(prefix); writer.println("Added Fragments:");
-                for (int i=0; i<N; i++) {
-                    Fragment f = mAdded.get(i);
-                    writer.print(prefix); writer.print("  #"); writer.print(i);
-                            writer.print(": "); writer.println(f.toString());
-                }
-            }
-        }
-
-        if (mCreatedMenus != null) {
-            N = mCreatedMenus.size();
-            if (N > 0) {
-                writer.print(prefix); writer.println("Fragments Created Menus:");
-                for (int i=0; i<N; i++) {
-                    Fragment f = mCreatedMenus.get(i);
-                    writer.print(prefix); writer.print("  #"); writer.print(i);
-                            writer.print(": "); writer.println(f.toString());
-                }
-            }
-        }
-
-        if (mBackStack != null) {
-            N = mBackStack.size();
-            if (N > 0) {
-                writer.print(prefix); writer.println("Back Stack:");
-                for (int i=0; i<N; i++) {
-                    BackStackRecord bs = mBackStack.get(i);
-                    writer.print(prefix); writer.print("  #"); writer.print(i);
-                            writer.print(": "); writer.println(bs.toString());
-                    bs.dump(innerPrefix, fd, writer, args);
-                }
-            }
-        }
-
-        synchronized (this) {
-            if (mBackStackIndices != null) {
-                N = mBackStackIndices.size();
-                if (N > 0) {
-                    writer.print(prefix); writer.println("Back Stack Indices:");
-                    for (int i=0; i<N; i++) {
-                        BackStackRecord bs = mBackStackIndices.get(i);
-                        writer.print(prefix); writer.print("  #"); writer.print(i);
-                                writer.print(": "); writer.println(bs);
-                    }
-                }
-            }
-
-            if (mAvailBackStackIndices != null && mAvailBackStackIndices.size() > 0) {
-                writer.print(prefix); writer.print("mAvailBackStackIndices: ");
-                        writer.println(Arrays.toString(mAvailBackStackIndices.toArray()));
-            }
-        }
-
-        if (mPendingActions != null) {
-            N = mPendingActions.size();
-            if (N > 0) {
-                writer.print(prefix); writer.println("Pending Actions:");
-                for (int i=0; i<N; i++) {
-                    Runnable r = mPendingActions.get(i);
-                    writer.print(prefix); writer.print("  #"); writer.print(i);
-                            writer.print(": "); writer.println(r);
-                }
-            }
-        }
-
-        writer.print(prefix); writer.println("FragmentManager misc state:");
-        writer.print(prefix); writer.print("  mCurState="); writer.print(mCurState);
-                writer.print(" mStateSaved="); writer.print(mStateSaved);
-                writer.print(" mDestroyed="); writer.println(mDestroyed);
-        if (mNeedMenuInvalidate) {
-            writer.print(prefix); writer.print("  mNeedMenuInvalidate=");
-                    writer.println(mNeedMenuInvalidate);
-        }
-        if (mNoTransactionsBecause != null) {
-            writer.print(prefix); writer.print("  mNoTransactionsBecause=");
-                    writer.println(mNoTransactionsBecause);
-        }
-        if (mAvailIndices != null && mAvailIndices.size() > 0) {
-            writer.print(prefix); writer.print("  mAvailIndices: ");
-                    writer.println(Arrays.toString(mAvailIndices.toArray()));
-        }
+     
     }
 
     @DSComment("Package priviledge")
@@ -1612,18 +1509,16 @@ public void enqueueAction(Runnable action, boolean allowStateLoss) {
 public int allocBackStackIndex(BackStackRecord bse) {
         synchronized (this) {
             if (mAvailBackStackIndices == null || mAvailBackStackIndices.size() <= 0) {
-                if (mBackStackIndices == null) {
-                    mBackStackIndices = new ArrayList<BackStackRecord>();
-                }
-                int index = mBackStackIndices.size();
+
+                int index = 0;
                 if (DEBUG) Log.v(TAG, "Setting back stack index " + index + " to " + bse);
-                mBackStackIndices.add(bse);
+                //mBackStackIndices = bse;
                 return index;
 
             } else {
                 int index = mAvailBackStackIndices.remove(mAvailBackStackIndices.size()-1);
                 if (DEBUG) Log.v(TAG, "Adding back stack index " + index + " with " + bse);
-                mBackStackIndices.set(index, bse);
+                //mBackStackIndices = bse;
                 return index;
             }
         }
@@ -1634,16 +1529,13 @@ public int allocBackStackIndex(BackStackRecord bse) {
     
 public void setBackStackIndex(int index, BackStackRecord bse) {
         synchronized (this) {
-            if (mBackStackIndices == null) {
-                mBackStackIndices = new ArrayList<BackStackRecord>();
-            }
-            int N = mBackStackIndices.size();
+
+            int N = 0;
             if (index < N) {
                 if (DEBUG) Log.v(TAG, "Setting back stack index " + index + " to " + bse);
-                mBackStackIndices.set(index, bse);
+                //mBackStackIndices = bse;
             } else {
                 while (N < index) {
-                    mBackStackIndices.add(null);
                     if (mAvailBackStackIndices == null) {
                         mAvailBackStackIndices = new ArrayList<Integer>();
                     }
@@ -1652,7 +1544,7 @@ public void setBackStackIndex(int index, BackStackRecord bse) {
                     N++;
                 }
                 if (DEBUG) Log.v(TAG, "Adding back stack index " + index + " with " + bse);
-                mBackStackIndices.add(bse);
+                //mBackStackIndices=bse;
             }
         }
     }
@@ -1661,7 +1553,6 @@ public void setBackStackIndex(int index, BackStackRecord bse) {
     
 public void freeBackStackIndex(int index) {
         synchronized (this) {
-            mBackStackIndices.set(index, null);
             if (mAvailBackStackIndices == null) {
                 mAvailBackStackIndices = new ArrayList<Integer>();
             }
@@ -1748,9 +1639,9 @@ void reportBackStackChanged() {
     
 void addBackStackState(BackStackRecord state) {
         if (mBackStack == null) {
-            mBackStack = new ArrayList<BackStackRecord>();
+            //mBackStack = new ArrayList<BackStackRecord>();
         }
-        mBackStack.add(state);
+        //mBackStack.add(state);
         reportBackStackChanged();
     }
     
@@ -1763,11 +1654,11 @@ boolean popBackStackState(Handler handler, String name, int id, int flags) {
             return false;
         }
         if (name == null && id < 0 && (flags&POP_BACK_STACK_INCLUSIVE) == 0) {
-            int last = mBackStack.size()-1;
+            int last = 0;//mBackStack.size()-1;
             if (last < 0) {
                 return false;
             }
-            final BackStackRecord bss = mBackStack.remove(last);
+            final BackStackRecord bss = mBackStack;
             bss.popFromBackStack(true);
             reportBackStackChanged();
         } else {
@@ -1775,9 +1666,9 @@ boolean popBackStackState(Handler handler, String name, int id, int flags) {
             if (name != null || id >= 0) {
                 // If a name or ID is specified, look for that place in
                 // the stack.
-                index = mBackStack.size()-1;
+                index = 0; //mBackStack.size()-1;
                 while (index >= 0) {
-                    BackStackRecord bss = mBackStack.get(index);
+                    BackStackRecord bss = mBackStack;
                     if (name != null && name.equals(bss.getName())) {
                         break;
                     }
@@ -1793,7 +1684,7 @@ boolean popBackStackState(Handler handler, String name, int id, int flags) {
                     index--;
                     // Consume all following entries that match.
                     while (index >= 0) {
-                        BackStackRecord bss = mBackStack.get(index);
+                        BackStackRecord bss = mBackStack;
                         if ((name != null && name.equals(bss.getName()))
                                 || (id >= 0 && id == bss.mIndex)) {
                             index--;
@@ -1803,13 +1694,13 @@ boolean popBackStackState(Handler handler, String name, int id, int flags) {
                     }
                 }
             }
-            if (index == mBackStack.size()-1) {
+            if (index == 0/*mBackStack.size()-1*/) {
                 return false;
             }
             final ArrayList<BackStackRecord> states
                     = new ArrayList<BackStackRecord>();
-            for (int i=mBackStack.size()-1; i>index; i--) {
-                states.add(mBackStack.remove(i));
+            for (int i=0/*mBackStack.size()-1*/; i>index; i--) {
+                states.add(mBackStack);
             }
             final int LAST = states.size()-1;
             for (int i=0; i<=LAST; i++) {
@@ -1982,13 +1873,13 @@ Parcelable saveAllState() {
         
         // Now save back stack.
         if (mBackStack != null) {
-            N = mBackStack.size();
+            N = 0;//mBackStack.size();
             if (N > 0) {
                 backStack = new BackStackState[N];
                 for (int i=0; i<N; i++) {
-                    backStack[i] = new BackStackState(this, mBackStack.get(i));
+                    backStack[i] = new BackStackState(this, mBackStack);
                     if (DEBUG) Log.v(TAG, "saveAllState: adding back stack #" + i
-                            + ": " + mBackStack.get(i));
+                            + ": " + mBackStack);
                 }
             }
         }
@@ -1996,7 +1887,7 @@ Parcelable saveAllState() {
         FragmentManagerState fms = new FragmentManagerState();
         fms.mActive = active;
         fms.mAdded = added;
-        fms.mBackStack = backStack;
+        fms.mBackStack = backStack[0];
         return fms;
     }
     
@@ -2090,23 +1981,7 @@ void restoreAllState(Parcelable state, ArrayList<Fragment> nonConfig) {
             }
         } else {
             mAdded = null;
-        }
-        
-        // Build the back stack.
-        if (fms.mBackStack != null) {
-            mBackStack = new ArrayList<BackStackRecord>(fms.mBackStack.length);
-            for (int i=0; i<fms.mBackStack.length; i++) {
-                BackStackRecord bse = fms.mBackStack[i].instantiate(this);
-                if (DEBUG) Log.v(TAG, "restoreAllState: adding bse #" + i
-                        + " (index " + bse.mIndex + "): " + bse);
-                mBackStack.add(bse);
-                if (bse.mIndex >= 0) {
-                    setBackStackIndex(bse.mIndex, bse);
-                }
-            }
-        } else {
-            mBackStack = null;
-        }
+        }        
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.572 -0500", hash_original_method = "1A90D3789635EF8BA5063E635EAF56EA", hash_generated_method = "D86258A762A7AC6C3A2A4183328B640C")

@@ -2379,8 +2379,8 @@ public boolean isRestricted() {
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public Intent __ds__registerIntentFilter(IntentFilter intentFilter) {
 	    this.__ds__intentFilters.add(intentFilter);
-	    Intent intent = new Intent(intentFilter.getAction(getTaintInt()));
-	    intent.addCategory(intentFilter.getCategory(getTaintInt()));
+	    Intent intent = new Intent(intentFilter.getAction(0));
+	    intent.addCategory(intentFilter.getCategory(0));
 	    this.__ds__intentsFromFilter.add(intent);
             
             return intent;
@@ -2389,7 +2389,7 @@ public boolean isRestricted() {
     @DSVerified
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
 	public Intent droidsafeGetIntent() {
-	    return __ds__intentsFromFilter.get(getTaintInt());
+	    return __ds__intentsFromFilter.get(0);
 	}
 
     @DSSafe(DSCat.SAFE_OTHERS)
