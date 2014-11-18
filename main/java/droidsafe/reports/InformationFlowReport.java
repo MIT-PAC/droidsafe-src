@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -210,29 +211,45 @@ public class InformationFlowReport {
             // Now we are building set for comparision
             Set<String> expectedFlowSet = new HashSet<String>();
             Set<String> resultFlowSet = new HashSet<String>();
+            Map<String, String> expectedMap  = new HashMap<String, String>();
+            Map<String, String> origResultMap = new HashMap<String, String>();
 
             checkerResult.append("\n\n========================================\n");
             checkerResult.append("Checking infoflow result against expected flows \n");
             for (String flow: expectedFlows) {
-                flow = flow.replaceAll("\\s", "");
+            	String origFlow = flow;
                 flow = flow.replace("FLOW:", ""); 
                 flow = flow.replaceAll("#.*", "");
+                flow = flow.replaceAll(".*\\|", "");
+                flow = flow.replaceAll("\\s+", "");
+            	flow = flow.replaceAll("/(ARG|RECEIVER)", "");
                 if (flow.length() > 0)
-                    expectedFlowSet.add(flow);
-
+                	expectedMap.put(flow, origFlow);
             }
+            expectedFlowSet = expectedMap.keySet();
+            
+            logger.debug("exptedSet {} ", expectedFlowSet);
 
             for (String flow: formattedFlowSet){
-                resultFlowSet.add(flow.replaceAll("\\s",  ""));
+            	String orig = flow;
+                flow = flow.replaceAll("#.*", "");
+                flow = flow.replaceAll(".*\\|", "");
+                flow = flow.replaceAll("\\s+", "");
+            	flow = flow.replaceAll("/(ARG|RECEIVER)", "");
+                origResultMap.put(flow, orig);
             }
 
+            resultFlowSet = origResultMap.keySet();
+            
             int missing = 0;
             int found = 0;
             for (String flow: expectedFlowSet) {
                 if (resultFlowSet.contains(flow))
                     found++;
                 else {
-                    checkerResult.append("MISSING: ").append(flow).append("\n");
+
+                	String prettyFlow = expectedMap.get(flow);
+                    checkerResult.append("MISSING: ").append(prettyFlow).append("\n");
                     missing++;
                     infoflowOK = false;
                 }
@@ -241,8 +258,9 @@ public class InformationFlowReport {
             int extra = 0;
             for (String flow: resultFlowSet) {
                 if (!expectedFlowSet.contains(flow)) {
+                	String prettyFlow = origResultMap.get(flow);
                     extra++;
-                    checkerResult.append("EXTRA: ").append(flow).append("\n");
+                    checkerResult.append("EXTRA: ").append(prettyFlow).append("\n");
                 }
             }                
             sb.append(checkerResult);
