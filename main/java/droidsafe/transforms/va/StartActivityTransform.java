@@ -5,6 +5,7 @@ import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.analyses.value.IntentUtils;
 import droidsafe.analyses.value.RefVAModel;
+import droidsafe.analyses.value.ResolvedExplicitIntent;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAModel;
 import droidsafe.analyses.value.UnknownVAModel;
@@ -99,8 +100,19 @@ class StartActivityTransform implements VATransform {
         } else
             return;
 
-        for (IAllocNode intentNode : intentNodes) {
-            for (SootField activityField : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.ACTIVITY, stmt, callee, intentNode)) {
+        boolean allResolvedExplicitIntentsFoundTargets = true;
+        
+        for (IAllocNode intentNode : intentNodes) {                                
+            Set<SootField> targetHarnessFields = 
+                    IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.ACTIVITY, stmt, callee, intentNode);
+            
+            //if we don't have a resolved explicit intent or if we have a resolved explicit intent with 
+            //no in app target, then we don't have all resolved in app explicit
+            if (!(IntentUtils.v().getIntentModel(intentNode) instanceof ResolvedExplicitIntent) ||
+                    targetHarnessFields.isEmpty()) 
+                allResolvedExplicitIntentsFoundTargets = false;
+            
+            for (SootField activityField : targetHarnessFields ) {
                 if (!(activityField.getType() instanceof RefType) || 
                         !Hierarchy.inheritsFromAndroidActivity(((RefType)activityField.getType()).getSootClass()))
                     continue;
@@ -145,6 +157,11 @@ class StartActivityTransform implements VATransform {
                     logger.warn("Issue resolve method for target in startActivityTransform:", e);
                 }
             }
+        }
+        
+        if (allResolvedExplicitIntentsFoundTargets) { 
+          //if all resolved explicit intents in app, the ignore the start activity call          
+          RCFG.v().ignoreInvokeForOutputEvents(stmt);
         }
     }
     

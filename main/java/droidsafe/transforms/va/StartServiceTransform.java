@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.IntentUtils;
+import droidsafe.analyses.value.ResolvedExplicitIntent;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.AndroidComponents;
@@ -68,8 +69,19 @@ public class StartServiceTransform implements VATransform {
 
         intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
 
+        boolean allResolvedExplicitIntentsFoundTargets = true;
+                      
         for (IAllocNode intentNode : intentNodes) {
-            for (SootField serviceField : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNode)) {
+            Set<SootField> targetHarnessFields = 
+                    IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNode);
+            
+            //if we don't have a resolved explicit intent or if we have a resolved explicit intent with 
+            //no in app target, then we don't have all resolved in app explicit
+            if (!(IntentUtils.v().getIntentModel(intentNode) instanceof ResolvedExplicitIntent) ||
+                    targetHarnessFields.isEmpty()) 
+                allResolvedExplicitIntentsFoundTargets = false;
+            
+            for (SootField serviceField : targetHarnessFields) {
                 if (!(serviceField.getType() instanceof RefType))
                     continue;           
 
@@ -130,6 +142,11 @@ public class StartServiceTransform implements VATransform {
                     target, stmt, resolved);
 
             }
+        }
+        
+        if (allResolvedExplicitIntentsFoundTargets) { 
+            //if all resolved explicit intents in app, the ignore the start activity call          
+            RCFG.v().ignoreInvokeForOutputEvents(stmt);
         }
     }
 
