@@ -2586,8 +2586,6 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
-    String droidsafeTemp = "";
-    
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
@@ -2597,8 +2595,6 @@ public LayoutInflater getLayoutInflater() {
     	String result = intent.getAction() + intent.getDataString();
     	
         onActivityResult(-1, -1, intent);
-	
-        droidsafeTemp = droidsafeTemp + result;
 
         intent.addCategory(Intent.CATEGORY_DEFAULT);
 	
