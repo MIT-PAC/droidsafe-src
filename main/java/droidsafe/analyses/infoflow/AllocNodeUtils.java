@@ -3,6 +3,7 @@ package droidsafe.analyses.infoflow;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 import soot.ArrayType;
@@ -19,8 +20,9 @@ class AllocNodeUtils {
     Set<IAllocNode> reachableAllocNodes(IAllocNode allocNode) {
         HashSet<IAllocNode> visitedAllocNodes = new HashSet<IAllocNode>();
         return reachableAllocNodes(allocNode, visitedAllocNodes);
+        //return reachableAllocNodesDebug(allocNode, visitedAllocNodes, allocNode.getType().toString());
     }
-
+    
     Set<IAllocNode> reachableAllocNodes(IAllocNode allocNode, Set<IAllocNode> visitedAllocNodes) {
         visitedAllocNodes.add(allocNode);
 
@@ -73,6 +75,58 @@ class AllocNodeUtils {
         for (IAllocNode directlyReachableAllocNode : directlyReachableAllocNodes) {
             if (!(visitedAllocNodes.contains(directlyReachableAllocNode))) {
                 reachableAllocNodes.addAll(reachableAllocNodes(directlyReachableAllocNode, visitedAllocNodes));
+            }
+        }
+        this.allocNodeToReachableAllocNodes.put(allocNode, reachableAllocNodes);
+
+        return reachableAllocNodes;
+    }
+
+    Set<IAllocNode> reachableAllocNodesDebug(IAllocNode allocNode, Set<IAllocNode> visitedAllocNodes, String prefix) {
+        visitedAllocNodes.add(allocNode);
+
+        if (this.allocNodeToReachableAllocNodes.containsKey(allocNode)) {
+            return this.allocNodeToReachableAllocNodes.get(allocNode);
+        }
+
+        Set<IAllocNode> reachableAllocNodes = new HashSet<IAllocNode>();
+        reachableAllocNodes.add(allocNode);
+        Map<SootField, Set<IAllocNode>> directlyReachableAllocNodes = new HashMap<SootField, Set<IAllocNode>>();
+        Type type = allocNode.getType();
+        if (type instanceof RefType) {
+            if (allocNode instanceof soot.jimple.spark.pag.AllocNode) {
+                Set<soot.jimple.spark.pag.AllocDotField> allocDotFields = ((soot.jimple.spark.pag.AllocNode)allocNode).getFields();
+                for (soot.jimple.spark.pag.AllocDotField allocDotField : allocDotFields) {
+                    // FIXME FIXME       FIXME       FIXME                   FIXME
+                    // FIXME             FIXME             FIXME       FIXME
+                    // FIXME FIXME       FIXME                   FIXME
+                    // FIXME             FIXME             FIXME       FIXME
+                    // FIXME             FIXME       FIXME                   FIXME
+
+                    SootField field = (SootField)allocDotField.getField();                    
+                    Set<IAllocNode> allocNodes = (Set<IAllocNode>) PTABridge.v().getPTSet(allocNode, field);
+                    System.out.println(prefix + "." + field);
+                    for (IAllocNode node : allocNodes) {
+                        System.out.println("\t" + node);
+                    }
+                    directlyReachableAllocNodes.put(field, allocNodes);
+                }
+            }
+        } else if (type instanceof ArrayType) {
+            directlyReachableAllocNodes.put(new SootField("element", RefType.v("java.lang.Object")), 
+                (Set<IAllocNode>) PTABridge.v().getPTSetOfArrayElement(allocNode));
+        }
+        for (Map.Entry<SootField, Set<IAllocNode>> entry : directlyReachableAllocNodes.entrySet()) {
+            for (IAllocNode directlyReachableAllocNode : entry.getValue()) {
+                if (!(visitedAllocNodes.contains(directlyReachableAllocNode))) {
+                    String fieldString = "<UNKNOWN>";
+                    try {
+                        fieldString = entry.getKey().toString();
+                    } catch (Exception e){
+                        
+                    }
+                    reachableAllocNodes.addAll(reachableAllocNodesDebug(directlyReachableAllocNode, visitedAllocNodes, prefix + "." + fieldString));
+                }
             }
         }
         this.allocNodeToReachableAllocNodes.put(allocNode, reachableAllocNodes);

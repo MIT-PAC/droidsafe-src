@@ -58,10 +58,12 @@ import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.NoContext;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.callgraph.EdgePredicate;
+import soot.jimple.toolkits.callgraph.Filter;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
+import soot.jimple.toolkits.callgraph.VirtualCalls;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
-
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
@@ -128,16 +130,16 @@ public class InformationFlowAnalysis {
 
         Set<AllocNodeField> allocNodeFields = this.allocNodeFieldsReadAnalysis.getRecursively(methodContext);
         for (AllocNodeField allocNodeField : allocNodeFields) {            
-            IAllocNode allocNode = allocNodeField.allocNode;           
-            if (reachableAllocNodes.contains(allocNode)) {
+            IAllocNode allocNode = allocNodeField.allocNode;               
+            if (reachableAllocNodes.contains(allocNode)) {              
                 ImmutableSet<InfoValue> vs = this.state.instances.get(allocNodeField);
                 values.addAll(vs);
             }
         }
 
         Set<IAllocNode> allocNodes = this.allocNodesReadAnalysis.getRecursively(methodContext);
-        for (IAllocNode allocNode : allocNodes) {
-            if (reachableAllocNodes.contains(allocNode)) {
+        for (IAllocNode allocNode : allocNodes) {            
+            if (reachableAllocNodes.contains(allocNode)) {          
                 ImmutableSet<InfoValue> vs = this.state.arrays.get(allocNode);
                 values.addAll(vs);
             }
@@ -1479,8 +1481,26 @@ class AllocNodeFieldsReadAnalysis {
         }
     }
 
-    private Map<MethodOrMethodContext, ImmutableSet<AllocNodeField>> methodContextToAllocNodeFieldsRecursively = new HashMap<MethodOrMethodContext, ImmutableSet<AllocNodeField>>();
-    private TransitiveTargets transitiveTargets = new TransitiveTargets(Scene.v().getCallGraph());
+    private Map<MethodOrMethodContext, ImmutableSet<AllocNodeField>> methodContextToAllocNodeFieldsRecursively =new HashMap<MethodOrMethodContext, ImmutableSet<AllocNodeField>>();
+    
+    private EdgePredicate clinitFilter = new EdgePredicate () {
+        @Override
+        public boolean want(Edge e) {
+            if ( e.tgt().isStatic() &&
+                    e.tgt().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                return false;
+            }
+
+            if ( e.src().isStatic() &&
+                    e.src().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                return false;
+            }
+
+            return true;
+        }
+    };
+    
+    private TransitiveTargets transitiveTargets = new TransitiveTargets(Scene.v().getCallGraph(), new Filter(clinitFilter));     
 
     ImmutableSet<AllocNodeField> getRecursively(MethodOrMethodContext methodContext) {
         if (this.methodContextToAllocNodeFieldsRecursively.containsKey(methodContext)) {
@@ -1573,7 +1593,25 @@ class AllocNodesReadAnalysis {
     }
 
     private Map<MethodOrMethodContext, ImmutableSet<IAllocNode>> methodContextToAllocNodesRecursively = new HashMap<MethodOrMethodContext, ImmutableSet<IAllocNode>>();
-    TransitiveTargets transitiveTargets = new TransitiveTargets(Scene.v().getCallGraph());
+  
+    private EdgePredicate clinitFilter = new EdgePredicate () {
+        @Override
+        public boolean want(Edge e) {
+            if ( e.tgt().isStatic() &&
+                    e.tgt().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                return false;
+            }
+
+            if ( e.src().isStatic() &&
+                    e.src().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                return false;
+            }
+
+            return true;
+        }
+    };
+    
+    TransitiveTargets transitiveTargets = new TransitiveTargets(Scene.v().getCallGraph(), new Filter(clinitFilter));
 
     ImmutableSet<IAllocNode> getRecursively(MethodOrMethodContext methodContext) {
         if (this.methodContextToAllocNodesRecursively.containsKey(methodContext)) {
@@ -1655,7 +1693,25 @@ class FieldsReadAnalysis {
     }
 
     private Map<MethodOrMethodContext, ImmutableSet<SootField>> methodContextToFieldsRecursively = new HashMap<MethodOrMethodContext, ImmutableSet<SootField>>();
-    TransitiveTargets transitiveTargets = new TransitiveTargets(Scene.v().getCallGraph());
+    
+    private EdgePredicate clinitFilter = new EdgePredicate () {
+        @Override
+        public boolean want(Edge e) {
+            if ( e.tgt().isStatic() &&
+                    e.tgt().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                return false;
+            }
+
+            if ( e.src().isStatic() &&
+                    e.src().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                return false;
+            }
+
+            return true;
+        }
+    };
+    
+    TransitiveTargets transitiveTargets = new TransitiveTargets(Scene.v().getCallGraph(), new Filter(clinitFilter));
 
     ImmutableSet<SootField> getRecursively(MethodOrMethodContext methodContext) {
         if (this.methodContextToFieldsRecursively.containsKey(methodContext)) {
@@ -1760,7 +1816,25 @@ class InjectedValuesAnalysis {
     }
 
     private Map<MethodOrMethodContext, ImmutableSet<InfoValue>> methodContextToValuesRecursively = new HashMap<MethodOrMethodContext, ImmutableSet<InfoValue>>();
-    private TransitiveTargets transitiveTargets = new TransitiveTargets(Scene.v().getCallGraph());
+ 
+    private EdgePredicate clinitFilter = new EdgePredicate () {
+        @Override
+        public boolean want(Edge e) {
+            if ( e.tgt().isStatic() &&
+                    e.tgt().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                return false;
+            }
+
+            if ( e.src().isStatic() &&
+                    e.src().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                return false;
+            }
+
+            return true;
+        }
+    };
+    
+    private TransitiveTargets transitiveTargets = new TransitiveTargets(Scene.v().getCallGraph(), new Filter(clinitFilter));
 
     ImmutableSet<InfoValue> getRecursively(MethodOrMethodContext methodContext) {
         if (this.methodContextToValuesRecursively.containsKey(methodContext)) {
