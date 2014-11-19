@@ -398,8 +398,8 @@ public String[] newArray(int size) {
 		//Return nothing
 		addTaint(size);
 	}
-    
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+       
+    @DSSafe(DSCat.SAFE_LIST)
     public final void setDataPosition(int pos){
 		//Formerly a native function
 		//Return nothing
@@ -426,6 +426,7 @@ public String[] newArray(int size) {
 	}
     
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSafe(DSCat.SAFE_LIST)
     public final byte[] marshall(){
 		//Formerly a native function
         byte[] ret = new byte[1];
@@ -433,7 +434,8 @@ public String[] newArray(int size) {
         ret.addTaint(this.getTaint());
         return ret;
     }
-    
+
+    @DSSafe(DSCat.SAFE_LIST)
     public final void unmarshall(byte[] data, int offest, int length){
 		//Formerly a native function
 		//Return nothing
