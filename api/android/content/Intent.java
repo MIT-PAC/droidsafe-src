@@ -2096,7 +2096,6 @@ public boolean hasFileDescriptors() {
      * @deprecated
      * @hide
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.356 -0500", hash_original_method = "4C23C66584C2E08F8D8923DC65F21B8A", hash_generated_method = "8E55B4B1B007A0564AE7967E42C097A0")
     
 @Deprecated
@@ -2116,7 +2115,6 @@ public boolean hasFileDescriptors() {
      *
      * @see #putExtra(String, boolean)
      */
-    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.359 -0500", hash_original_method = "6C77EA53DBDF6A732015829C63BCD454", hash_generated_method = "02A8C2F1680A1423978645221962E29D")
@@ -2138,7 +2136,6 @@ public boolean getBooleanExtra(String name, boolean defaultValue) {
      *
      * @see #putExtra(String, byte)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.361 -0500", hash_original_method = "7FB23DDD0BCB246CA49844E5ABE7B23C", hash_generated_method = "9C79D394A2437EF6849851316B5829CF")
     
 public byte getByteExtra(String name, byte defaultValue) {
@@ -2158,10 +2155,8 @@ public byte getByteExtra(String name, byte defaultValue) {
      *
      * @see #putExtra(String, short)
      */
-    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    
+    @DSSafe(DSCat.DATA_STRUCTURE)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.364 -0500", hash_original_method = "7EF2CF350AA07FA1327C85A618EDDBDF", hash_generated_method = "7A2D49D6A8AA9AC64B52D23A1885544E")
     
 public short getShortExtra(String name, short defaultValue) {
@@ -2181,9 +2176,7 @@ public short getShortExtra(String name, short defaultValue) {
      *
      * @see #putExtra(String, char)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.366 -0500", hash_original_method = "49AA93250C5B660485540E34F899D621", hash_generated_method = "4D4CAD39AD186500077E3E4B006A1F0E")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.366 -0500", hash_original_method = "49AA93250C5B660485540E34F899D621", hash_generated_method = "4D4CAD39AD186500077E3E4B006A1F0E")    
 public char getCharExtra(String name, char defaultValue) {
         return mExtras == null ? defaultValue :
             ((Character)mExtras.get(name)).charValue();
@@ -2201,10 +2194,8 @@ public char getCharExtra(String name, char defaultValue) {
      *
      * @see #putExtra(String, int)
      */
-    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    
+    @DSSafe(DSCat.DATA_STRUCTURE)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.368 -0500", hash_original_method = "E0513A91E6CBAE3AB1C6E2298E28F4E9", hash_generated_method = "7536F8C642D6EC6EFAEB49F7A1E8EE03")
     
 public int getIntExtra(String name, int defaultValue) {
@@ -2224,10 +2215,8 @@ public int getIntExtra(String name, int defaultValue) {
      *
      * @see #putExtra(String, long)
      */
-    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    
+    @DSSafe(DSCat.DATA_STRUCTURE)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.370 -0500", hash_original_method = "C094BEE2071DFD73ABD25F184B7F6CE5", hash_generated_method = "0EF10534F63415F2F7F0D8DF79122B66")
     
 public long getLongExtra(String name, long defaultValue) {
@@ -2247,9 +2236,7 @@ public long getLongExtra(String name, long defaultValue) {
      *
      * @see #putExtra(String, float)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.372 -0500", hash_original_method = "468C9940FDAFD3DDCC0968AC84566FDC", hash_generated_method = "7702D18407DBD55E8482994ED0B8C662")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.372 -0500", hash_original_method = "468C9940FDAFD3DDCC0968AC84566FDC", hash_generated_method = "7702D18407DBD55E8482994ED0B8C662")    
 public float getFloatExtra(String name, float defaultValue) {
         return mExtras == null ? defaultValue :
             ((Float)mExtras.get(name)).floatValue();
@@ -2268,8 +2255,7 @@ public float getFloatExtra(String name, float defaultValue) {
      * @see #putExtra(String, double)
      */
     @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    
+    @DSSafe(DSCat.DATA_STRUCTURE)   
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.374 -0500", hash_original_method = "9D513802316CA501D261DB0FDD177D9E", hash_generated_method = "237FBC9F07BF14699CA58B8E750592D1")
     
 public double getDoubleExtra(String name, double defaultValue) {
@@ -2287,10 +2273,8 @@ public double getDoubleExtra(String name, double defaultValue) {
      *
      * @see #putExtra(String, String)
      */
-    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    
+    @DSSafe(DSCat.DATA_STRUCTURE)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.376 -0500", hash_original_method = "8063ECA9F5AA2AEF21F6A345FFE2B7E6", hash_generated_method = "92DA4B9217AE26D6B16B4A7152FDE01A")
     
 public String getStringExtra(String name) {
@@ -2307,17 +2291,14 @@ public String getStringExtra(String name) {
      *
      * @see #putExtra(String, CharSequence)
      */
-    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    
+    @DSSafe(DSCat.DATA_STRUCTURE)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.378 -0500", hash_original_method = "1694F41DCC8D039EBF419B4A0F2C4125", hash_generated_method = "0261ACCD25A2458F32FBB474CDC883CF")
     
 public CharSequence getCharSequenceExtra(String name) {
         return mExtras == null ? null : (CharSequence)mExtras.get(name);
     }
     
-    @DSSource({DSSourceKind.IPC})
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.428 -0400", hash_original_method = "1C448816D9B902054FE9E8A698247DA2", hash_generated_method = "3E3DEE7B959E87E94EACE1CB55226D17")
     public <T extends Parcelable> T getParcelableExtra(String name) {
@@ -2341,7 +2322,6 @@ public CharSequence getCharSequenceExtra(String name) {
      */
     @DSComment("Data serialization/deserialization")
     @DSSafe(DSCat.SERIALIZATION)
-    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.382 -0500", hash_original_method = "28D360BBB773D3DC39CC6E8B3FB095BE", hash_generated_method = "95CF13FB7C566158CE15E0D32127AEB6")
     
 public Parcelable[] getParcelableArrayExtra(String name) {
@@ -2373,7 +2353,6 @@ public Parcelable[] getParcelableArrayExtra(String name) {
      */
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.386 -0500", hash_original_method = "9F4D1ACCAA6C6918CB97F661FEDB7260", hash_generated_method = "76C340BC56D9F60CF88D86C558C6825B")
     
 public Serializable getSerializableExtra(String name) {
@@ -2390,7 +2369,6 @@ public Serializable getSerializableExtra(String name) {
      *
      * @see #putIntegerArrayListExtra(String, ArrayList)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.388 -0500", hash_original_method = "E5A5C9C6BF01CEEFEAABCB20BBD32323", hash_generated_method = "9D819F72EA76BB36C2E7C757B77E7E73")
     
 public ArrayList<Integer> getIntegerArrayListExtra(String name) {
@@ -2408,8 +2386,7 @@ public ArrayList<Integer> getIntegerArrayListExtra(String name) {
      * @see #putStringArrayListExtra(String, ArrayList)
      */
     @DSComment("movement of Intent is spec")
-    @DSSafe(DSCat.DATA_STRUCTURE)
-    
+    @DSSafe(DSCat.DATA_STRUCTURE)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.390 -0500", hash_original_method = "D8E538521D5877A04B9E1243CFFC8BD3", hash_generated_method = "C957CBF04B8FE7BC5D3B612E6C8EF2B8")
     
 public ArrayList<String> getStringArrayListExtra(String name) {
@@ -2426,7 +2403,6 @@ public ArrayList<String> getStringArrayListExtra(String name) {
      *
      * @see #putCharSequenceArrayListExtra(String, ArrayList)
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.392 -0500", hash_original_method = "3C0B0EF6206949D4005752F37A471C32", hash_generated_method = "ECD41137BFE2663E1A6EF1072F5BC8BD")
     
 public ArrayList<CharSequence> getCharSequenceArrayListExtra(String name) {
@@ -2443,7 +2419,6 @@ public ArrayList<CharSequence> getCharSequenceArrayListExtra(String name) {
      *
      * @see #putExtra(String, boolean[])
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.394 -0500", hash_original_method = "FE55BFBE9F4BF617BE3A0BE7101EDA89", hash_generated_method = "46C15F919A0BC4FC1F5845C5606E2FCA")
     
 public boolean[] getBooleanArrayExtra(String name) {
@@ -2460,7 +2435,6 @@ public boolean[] getBooleanArrayExtra(String name) {
      *
      * @see #putExtra(String, byte[])
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.397 -0500", hash_original_method = "8982B2CEDDCF3062481CA9400546FBDD", hash_generated_method = "AA610F065416BB90204CAC0C5A97C0BA")
     
 public byte[] getByteArrayExtra(String name) {
@@ -2477,7 +2451,6 @@ public byte[] getByteArrayExtra(String name) {
      *
      * @see #putExtra(String, short[])
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.400 -0500", hash_original_method = "CD9B24503F7344F42640A5B885850704", hash_generated_method = "C14AAA2A7CB39D2AACEA331C248790B9")
     
 public short[] getShortArrayExtra(String name) {
@@ -2494,7 +2467,6 @@ public short[] getShortArrayExtra(String name) {
      *
      * @see #putExtra(String, char[])
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.402 -0500", hash_original_method = "CC419D577155763512853EA59FC750C3", hash_generated_method = "6449192E644028A86E4E2A1C58F0BF9F")
     
 public char[] getCharArrayExtra(String name) {
@@ -2513,7 +2485,6 @@ public char[] getCharArrayExtra(String name) {
      */
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.404 -0500", hash_original_method = "0A82189594F324AE308815E53494E5B0", hash_generated_method = "18315128FFB19E0CB138FC41A8F8B9F1")
     
 public int[] getIntArrayExtra(String name) {
@@ -2532,7 +2503,6 @@ public int[] getIntArrayExtra(String name) {
      */
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.406 -0500", hash_original_method = "2B191C1241796E74336A46C43420CA80", hash_generated_method = "E9465F183BBDCF9BF79C15025BB3B762")
     
 public long[] getLongArrayExtra(String name) {
@@ -2549,7 +2519,6 @@ public long[] getLongArrayExtra(String name) {
      *
      * @see #putExtra(String, float[])
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.408 -0500", hash_original_method = "8DC240B1B74093D697F56B17354B0D80", hash_generated_method = "CD9CEAF80BD4CFD40B3E7E06ECE8F68A")
     
 public float[] getFloatArrayExtra(String name) {
@@ -2566,9 +2535,7 @@ public float[] getFloatArrayExtra(String name) {
      *
      * @see #putExtra(String, double[])
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.410 -0500", hash_original_method = "3975857C05E9D537152AB546E3F37275", hash_generated_method = "101A5FF3F013762428C03E757BC8781C")
-    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.410 -0500", hash_original_method = "3975857C05E9D537152AB546E3F37275", hash_generated_method = "101A5FF3F013762428C03E757BC8781C")    
 public double[] getDoubleArrayExtra(String name) {
         return mExtras == null ? null : (double[])mExtras.get(name);
     }
@@ -2583,7 +2550,6 @@ public double[] getDoubleArrayExtra(String name) {
      *
      * @see #putExtra(String, String[])
      */
-    @DSSource({DSSourceKind.IPC})
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
     
@@ -2603,7 +2569,6 @@ public String[] getStringArrayExtra(String name) {
      *
      * @see #putExtra(String, CharSequence[])
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.414 -0500", hash_original_method = "9443A9A4C1E608DAA4A110E653269318", hash_generated_method = "6F6F167168942EAE44475ED712DAA9C6")
     
 public CharSequence[] getCharSequenceArrayExtra(String name) {
@@ -2622,7 +2587,6 @@ public CharSequence[] getCharSequenceArrayExtra(String name) {
      */
     @DSComment("movement of Intent is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    @DSSource({DSSourceKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.416 -0500", hash_original_method = "913345623B540CBB75EA0BDD1C78C162", hash_generated_method = "93F751E5024747FA0CAE2E759F15F6B4")
     
 public Bundle getBundleExtra(String name) {
@@ -2642,7 +2606,6 @@ public Bundle getBundleExtra(String name) {
      * @deprecated
      * @hide
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.419 -0500", hash_original_method = "657BCF405F69BF4C38A0897E9F672C84", hash_generated_method = "B639443AE0ACCF354B03C0F3832CFB4A")
     
 @Deprecated
@@ -2665,7 +2628,6 @@ public Bundle getBundleExtra(String name) {
      * @deprecated
      * @hide
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.421 -0500", hash_original_method = "EF34C6BD33619501EBC4FFC15D7C460E", hash_generated_method = "93501DF6387A1AF4B62D0F0AE31DA0AC")
     
 @Deprecated
