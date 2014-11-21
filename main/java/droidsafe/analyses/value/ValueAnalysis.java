@@ -159,6 +159,35 @@ public class ValueAnalysis  {
 
         return am;
     }
+    
+    /**
+     * For a string field of a modeled alloc node, get resolved string values.
+     * Store valuse in arg <resolvedValues>. 
+     * Return false if field is invalidated or otherwise could not be resolved.
+     *   
+     */
+    public boolean getStringFieldValues(IAllocNode node, SootField field, Set<String> resolvedValues) {
+        VAModel model = getResult(node);
+        if (model instanceof RefVAModel) {
+            RefVAModel refVAModel = (RefVAModel)model;
+            
+            Set<VAModel> fldVAModels = refVAModel.getFieldVAModels(field);
+            for(VAModel fldVAModel : fldVAModels) {
+                                              
+                if (fldVAModel.invalidated() || (!(fldVAModel instanceof StringVAModel))){
+                    return false;
+                } 
+                
+                //if we get here, it is a resolved string va model value
+                for (String str : ((StringVAModel)fldVAModel).getValues()) {
+                    resolvedValues.add(str);
+                }
+            }
+            return true;
+        }
+        
+        return false;
+    }
 
     /** run the analysis to fixed point */
     public static void run() {

@@ -501,6 +501,21 @@ public class AndroidManifest {
         public String toString() {
             return name;
         }
+        
+        /**
+         * Return true if the provided authority is defined in the authorities attribute.
+         */
+        public boolean definesAuthority(String authority) {
+            String[] splitAuthorities = authorities.split(";");
+            
+            for (String defined : splitAuthorities) {
+                defined = defined.trim();
+                if (authority.equals(defined))
+                    return true;
+            }
+            
+            return false;
+        }
     }
 
     /**

@@ -1,5 +1,6 @@
 package droidsafe.transforms.va;
 
+import java.net.URI;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -7,10 +8,15 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
+import droidsafe.android.app.resources.AndroidManifest.Provider;
+import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.AndroidComponents;
+import droidsafe.reports.UnresolvedICC;
 import soot.Body;
 import soot.Local;
 import soot.RefType;
@@ -24,6 +30,7 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.Stmt;
 import soot.jimple.internal.JAssignStmt;
+import soot.jimple.toolkits.pta.IAllocNode;
 
 /**
  * Value analysis to conservatively model the common usage of a content provider.
@@ -57,6 +64,46 @@ public class ContentProviderTransform implements VATransform {
         }        
     }
 
+    /**
+     * For a Uri alloc node, try to find the set of target content providers targeted by the 
+     * resolved va values for the uri.  If invalidated or unresolved, then target all providers.
+     */
+    private boolean addToTargets(IAllocNode node, Set<SootField> targetCPFields, Stmt stmt) {
+        try {
+            Set<String> uriValues = new HashSet<String>(); 
+
+            SootField field = ((RefType)node.getType()).getSootClass().getFieldByName("uriString");
+
+            boolean isResolved = ValueAnalysis.v().getStringFieldValues(node, field, uriValues);
+
+            if (isResolved) {
+                for (String uriString : uriValues) {                    
+                    URI uri = new URI(uriString); 
+                    String authority = uri.getAuthority();
+                    
+                    for (Provider p : Resources.v().getManifest().providers) {
+                        if (p.definesAuthority(authority)) {
+                            //this provider is a target for the uri, 
+                            //so find the field for it
+                            
+                            SootClass pClass = p.getSootClass();
+                            targetCPFields.add(Harness.v().getFieldForCreatedClass(pClass));
+                            logger.info("Found target for Content Provider stmt {}, uri {}, target {}", stmt, uriString, pClass);
+                        }
+                    }
+                }
+                return true;
+            } else {
+                targetCPFields.addAll(allHarnessCPFlds);
+                return false;
+            }    
+        } catch (Exception e) {
+            //just in case anything goes wrong with va resolution
+            targetCPFields.addAll(allHarnessCPFlds);
+            return false;
+        }
+    }
+
     @Override
     public void tranformsInvoke(SootMethod containingMthd, SootMethod callee,
                                 InvokeExpr invokeExpr, Stmt stmt, Body body) {
@@ -64,12 +111,25 @@ public class ContentProviderTransform implements VATransform {
         if (stmt instanceof AssignStmt) {
             lvalue = ((AssignStmt)stmt).getLeftOp();
         }
+
+        Set<SootField> targetCPFields = new LinkedHashSet<SootField>();
+
+        boolean resolved = true;
         
+        for (IAllocNode node : PTABridge.v().getPTSetIns(invokeExpr.getArg(0))) {
+            resolved = addToTargets(node, targetCPFields, stmt);
+
+            if (!resolved) {
+                UnresolvedICC.v().addInfo(stmt, callee, "Unresolved URI for Content Provider");
+                break;
+            }
+        }
+
         //for each field of harness that is a content provider
-        for (SootField cpField : allHarnessCPFlds) {
+        for (SootField cpField : targetCPFields) {
             SootClass cpClass = ((RefType)cpField.getType()).getSootClass();
             SootMethod target = cpClass.getMethod(callee.getSubSignature());
-            
+
             //create local and add to body
             Local local = Jimple.v().newLocal("_$contentprovider_local_" + localID++, cpField.getType());
             body.getLocals().add(local);
@@ -80,9 +140,9 @@ public class ContentProviderTransform implements VATransform {
                     (local, Jimple.v().newStaticFieldRef(cpField.makeRef()));
             //insert before original statement
             body.getUnits().insertBefore(localAssign, stmt);
-            
+
             InvokeExpr newInvoke = Jimple.v().newVirtualInvokeExpr(local, target.makeRef(), invokeExpr.getArgs());
-            
+
             //create statement to invoke
             Stmt toInsert = null; 
             if (lvalue == null) {
@@ -96,10 +156,14 @@ public class ContentProviderTransform implements VATransform {
             body.getUnits().insertAfter(toInsert, stmt);
             logger.info("Adding {} call to ContentProvider {} in method {}", 
                 callee.getSubSignature(), cpClass, containingMthd);
-            
+
             //ignore generated calls in rcfg
             RCFG.v().ignoreInvokeForOutputEvents(toInsert);
         }
+        
+        //if resolved and in app target, then don't report
+        if (resolved && targetCPFields.size() > 0) 
+            RCFG.v().ignoreInvokeForOutputEvents(stmt);
     }
 
     @Override
@@ -111,7 +175,7 @@ public class ContentProviderTransform implements VATransform {
             sigsOfInvokesToTransform.add("<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>");
             sigsOfInvokesToTransform.add("<android.content.ContentResolver: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>");
         }
-        
+
         // TODO Auto-generated method stub
         return sigsOfInvokesToTransform;
     }
