@@ -67,10 +67,13 @@ public class VAUtils {
      * For each node in nodes, find the VA result, and then find all primitive values of type T
      * of the field.  Does not report of any invalidations.
      */
-    public static <T> List<T> getAnyVAValuesForField(Set<IAllocNode> nodes, String field) {
-        List<T> ret = new LinkedList<T>();
+    public static <T> boolean getAnyVAValuesForField(Set<IAllocNode> nodes, String field, List<T> ret) {
         for (IAllocNode node : nodes) {
             VAModel vaModel = ValueAnalysis.v().getResult(node);
+            
+            if (vaModel.invalidated())
+                return false;
+            
             if(vaModel != null && vaModel instanceof RefVAModel) {
                 RefVAModel refVAModel = (RefVAModel)vaModel;
                 SootClass clonedSootClass = ((RefType)(refVAModel.getAllocNode().getType())).getSootClass();
@@ -78,18 +81,23 @@ public class VAUtils {
 
                 Set<VAModel> fieldVAModels = refVAModel.getFieldVAModels(intentSootClass.getFieldByName(field));
                 if (fieldVAModels.size() > 0) {
-                    for (VAModel clz : fieldVAModels) {
+                    for (VAModel clz : fieldVAModels) {                        
                         if (clz instanceof PrimVAModel) {
                             PrimVAModel<T> clzModel = (PrimVAModel<T>)clz;
+                            if (clzModel.invalidated())
+                                return false;
+                            
                             for (T value : clzModel.getValues()) {
                                 ret.add(value);
                             }
                         } 
                     }
                 }
-            }
+            } else {
+                return false;
+            }            
         }
-        return ret;
+        return true;
     }
     
 }
