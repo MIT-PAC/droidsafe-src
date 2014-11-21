@@ -203,7 +203,7 @@ public final FileDescriptor getFD() throws IOException {
     
 @Override
     public void write(byte[] buffer, int byteOffset, int byteCount) throws IOException {
-        //IoBridge.write(fd, buffer, byteOffset, byteCount);
+        write(buffer[0]);
     }
 
     @DSComment("Activity on IO class")
@@ -213,7 +213,7 @@ public final FileDescriptor getFD() throws IOException {
     
 @Override
     public void write(int oneByte) throws IOException {
-        //write(new byte[] { (byte) oneByte }, 0, 1);
+        addTaint(oneByte);
     }
     
 }

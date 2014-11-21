@@ -481,12 +481,14 @@ private File getPreferencesDir() {
     @Override
     @DSSpec(DSCat.IO)
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
-       return INPUT_STREAM;
+        INPUT_STREAM.addTaint(OUTPUT_STREAM.getTaint());
+        return INPUT_STREAM;
     }
     
     @Override
     @DSSpec(DSCat.IO)
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
+        OUTPUT_STREAM.addTaint(INPUT_STREAM.getTaint());
        return OUTPUT_STREAM;
     }
     
