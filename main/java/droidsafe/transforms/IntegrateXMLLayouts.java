@@ -738,8 +738,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
         
         String className = b.getMethod().getDeclaringClass().getName();
         
-        if (className.matches("^(android|com.android|org.apache).*")) {
-        	logger.warn("XML Transform: Skipping built-in classes ");
+        if (!Project.v().isSrcClass(className)) {
+        	logger.info("XML Transform: Skipping built-in classes ");
         	return;
         }
 

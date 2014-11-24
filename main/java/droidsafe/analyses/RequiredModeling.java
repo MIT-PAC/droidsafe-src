@@ -71,13 +71,13 @@ public class RequiredModeling {
      */
     public static void run() {
         Set<String> toModel = new TreeSet<String>();
-        
+
         for (SootMethod method : PTABridge.v().getReachableMethods()) {
             //loop through all reachable methods, and find system methods that are not modeled
             //or system methods that do not exist (but are called)
             //ignore clinits
-            
-                        
+
+
             if (API.v().isSystemClass(method.getDeclaringClass()) && 
                     !ignoreNotModeled(method) &&  
                     !API.v().isAPIModeledMethod(method) &&
@@ -93,13 +93,17 @@ public class RequiredModeling {
                     method.isAbstract(),
                     method.isConcrete());
 
-                SootMethod resolved  = SootUtils.resolveMethod(method);
-                if (resolved != method && resolved != null) {
-                    logger.debug("Method {} has an implementation {} ", method, resolved);
-                    if (API.v().isAPIModeledMethod(resolved))
-                        continue;
+                try {
+                    SootMethod resolved  = SootUtils.resolveMethod(method);
+                    if (resolved != method && resolved != null) {
+                        logger.debug("Method {} has an implementation {} ", method, resolved);
+                        if (API.v().isAPIModeledMethod(resolved))
+                            continue;
+                    }
+                    toModel.add(method.getSignature());
+                } catch (Exception e) {
+                    logger.info("Cannot find method in model: {}", method);
                 }
-                toModel.add(method.getSignature());
             }
         }
 
@@ -128,10 +132,10 @@ public class RequiredModeling {
 
     private static void printGetAddTaintCalls() {
         try {
-            
+
             FileWriter taintCalls = new FileWriter(Project.v().getOutputDir() + File.separator + 
-                    "taint-calls.txt");
-            
+                "taint-calls.txt");
+
             for (SootClass clz : Scene.v().getClasses()) {
                 for (SootMethod method : clz.getMethods()) {
                     if (!method.isConcrete()) 
@@ -165,12 +169,12 @@ public class RequiredModeling {
 
         }
     }
-    
+
     private static void reportMissingAPIFieldsAndMethods() {
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + 
                     "generated-phantom-summary.txt");
-            
+
             for (SootClass clz : Scene.v().getClasses()) {
                 if (!(Project.v().isLibClass(clz) || Project.v().isSrcClass(clz)))
                     continue;
