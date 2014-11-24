@@ -129,6 +129,7 @@ public static Class<?> forName(String className, boolean initializeBoolean,
             throw new ClassNotFoundException();
         }
         Class<?> result = (Class<?>) new Class();
+        result.droidsafeSetName(className);
         
         //result.addTaint(className.getTaintInt() + 
         //                (initializeBoolean ? 1 : 0) + classLoader.getTaintInt());
@@ -137,6 +138,14 @@ public static Class<?> forName(String className, boolean initializeBoolean,
         
     }
     
+    @DSVAModeled
+    private String dsClassName;
+
+    @DSBan
+    void droidsafeSetName(String name) {
+        dsClassName = name;
+    }
+
     ClassLoader droidsafeClassLoader = null;
     void droidsafeSetLoader(ClassLoader loader) {
         droidsafeClassLoader = loader;
@@ -1027,11 +1036,17 @@ public Type getGenericSuperclass() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.010 -0500", hash_original_method = "8DB3D81F35D9B25D91AF567693EFE9FF", hash_generated_method = "F6FE7925D7C8D66FCFBB28D88158DAE4")
     
 public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMethodException {
+        /*
         Member member = getConstructorOrMethod(name, true, true, parameterTypes);
         if (member instanceof Constructor) {
             throw new NoSuchMethodException(name);
         }
         return (Method) member;
+        */
+        //droidsafe specific constructor
+        Method method = new Method(name, this.dsClassName);
+
+        return method;
     }
 
     /**

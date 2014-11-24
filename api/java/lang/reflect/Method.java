@@ -124,6 +124,10 @@ public int compare(Method a, Method b) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.447 -0500", hash_original_field = "09F7A5BA4BC6B04AB18035FB41A6CB6C", hash_generated_field = "6B06F56F1EB868ADA8CFFD63973A7E09")
 
     private int slot;
+
+    @DSVAModeled 
+    private String dsDeclaringClassName;
+    
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.449 -0500", hash_original_field = "241D06F27490B4FC35F16806876AF0D3", hash_generated_field = "EC96049C106D95C970CBF94E8CE21744")
 
     @DSVAModeled
@@ -191,6 +195,11 @@ private Method(Class<?> declaring, Class<?>[] paramTypes, Class<?>[] exceptTypes
     }
     // orphaned legacy method
     
+    public Method(String name, String declaringClass) {
+        this.dsDeclaringClassName = declaringClass;
+        this.name = name;
+    }
+
     @DSSafe(DSCat.SAFE_OTHERS)
     public Method() {
 
