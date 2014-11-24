@@ -925,6 +925,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         addTaint(index);
         addTaint(end);
         addTaint(start);
+	buffer[0] = getTaintChar();
         buffer.addTaint(getTaintInt());
     }
 
