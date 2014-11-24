@@ -44,6 +44,7 @@ import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
+import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
 import droidsafe.reports.UnresolvedICC;
 import droidsafe.utils.CannotFindMethodException;
@@ -110,10 +111,11 @@ public class CallBackModeling {
         
         for (SootClass clz : sortedClasses) {
             if (!clz.isInterface() && Hierarchy.isAndroidComponentClass(clz) && !Harness.v().hasCreatedField(clz) &&
-                    Project.v().isSrcClass(clz)) {
+                    Project.v().isSrcClass(clz) && Resources.v().getManifest().isEnabled(clz)) {
                 //found component that is not allocated, should we call is??
                 logger.warn("Found component not in manifest and not created in code: {}. Adding modeling.", 
-                    clz);
+                    clz);                               
+                
                 Harness.v().createComponentsNotInManifest(clz);
             }
         }

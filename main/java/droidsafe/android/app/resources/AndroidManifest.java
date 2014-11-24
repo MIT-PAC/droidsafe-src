@@ -98,6 +98,13 @@ public class AndroidManifest {
 
         return scToBaseElement.get(clz).isExported();
     }
+    
+    public boolean isEnabled(SootClass clz) {
+        if (!isDefinedInManifest(clz))
+            return true;
+       
+        return scToBaseElement.get(clz).enabled;
+    }
 
     /**
      * Return the set of all components as sootclasses.

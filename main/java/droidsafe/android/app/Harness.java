@@ -51,6 +51,7 @@ import droidsafe.transforms.UnmodeledGeneratedClasses;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.Utils;
 import droidsafe.android.app.resources.AndroidManifest;
+import droidsafe.android.app.resources.AndroidManifest.ComponentBaseElement;
 import droidsafe.android.app.resources.AndroidManifest.IntentFilter;
 import droidsafe.android.app.resources.Layout;
 import droidsafe.android.app.resources.Resources;
@@ -347,9 +348,9 @@ public class Harness {
      * 
      * @param component: one of the provider, service, application and receiver
      */
-    private void injectXMLComponent(String compType, SootClass compClass, 
+    private void injectXMLComponent(ComponentBaseElement xmlComponent, String compType, SootClass compClass, 
                                     List<IntentFilter> intentFilterList, StmtBody body) {
-        injectXMLComponent(compType, compClass, intentFilterList, body, null);
+        injectXMLComponent(xmlComponent, compType, compClass, intentFilterList, body, null);
     }
 
     /**
@@ -360,8 +361,13 @@ public class Harness {
      * @param body
      * @param appLocal - local to hold application
      */
-    private void injectXMLComponent(String compType, SootClass compClass, 
+    private void injectXMLComponent(ComponentBaseElement xmlElement, String compType, SootClass compClass, 
                                     List<IntentFilter> intentFilterList, StmtBody body, Local appLocal) {
+        
+        //don't create non-enabled components
+        if (!xmlElement.enabled)
+            return;
+        
         if (compClass != null) {
             logger.info("Type {} ", compType);
 
@@ -520,26 +526,26 @@ public class Harness {
         for (Activity context : manifest.activities) {
 
             logger.info("Activity {} ", context);			
-            injectXMLComponent(Components.ACTIVITY_CLASS, context.getSootClass(), context.intent_filters, body); 
+            injectXMLComponent(context, Components.ACTIVITY_CLASS, context.getSootClass(), context.intent_filters, body); 
         }
 
         //Services
         for (Service context : manifest.services) {
             logger.info("Service {} ", context);
 
-            injectXMLComponent(Components.SERVICE_CLASS, context.getSootClass(), context.intent_filters, body); 
+            injectXMLComponent(context, Components.SERVICE_CLASS, context.getSootClass(), context.intent_filters, body); 
         }
 
         // content provider should not have any
         for (Provider p : manifest.providers) {
             logger.info("Content provider {} ", p);
-            injectXMLComponent(Components.CONTENTPROVIDER_CLASS, p.getSootClass(), p.intent_filters, body); 
+            injectXMLComponent(p, Components.CONTENTPROVIDER_CLASS, p.getSootClass(), p.intent_filters, body); 
         }
 
         for (Receiver r : manifest.receivers) {
             logger.info("Receiver {} ", r);
 
-            injectXMLComponent(Components.BROADCASTRECEIVER_CLASS, r.getSootClass(), 
+            injectXMLComponent(r, Components.BROADCASTRECEIVER_CLASS, r.getSootClass(), 
                 r.intent_filters, body, appLocal); 
             if (r.intent_filters.size() > 0) {
                 logger.warn("has intent filter for {}:{}", r.name, r);

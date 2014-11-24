@@ -38,7 +38,9 @@ public class VATransformsSuite  {
         new ServiceBindTransform(),
         new StartServiceTransform(),
         new BroadcastReceiverTransform(),
-        new ContentProviderTransform()
+        new ContentProviderTransform(),
+        new NewInstanceTransform(),
+        new MethodInvokeTransform()
             );
 
     // enforce singleton pattern
