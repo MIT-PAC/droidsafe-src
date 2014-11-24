@@ -355,9 +355,11 @@ final void chompNewline() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.816 -0500", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "4EED909B4B3AA6607F4DB5B32DA059E8")
     
 public String readLine() throws IOException {
+        return new String();
+        /*
         synchronized (lock) {
             checkNotClosed();
-            /* has the underlying stream been exhausted? */
+
             if (pos == end && fillBuf() == -1) {
                 return null;
             }
@@ -383,13 +385,12 @@ public String readLine() throws IOException {
 
             char eol = '\0';
             StringBuilder result = new StringBuilder(80);
-            /* Typical Line Length */
-
+            
             result.append(buf, pos, end - pos);
             while (true) {
                 pos = end;
 
-                /* Are there buffered characters available? */
+                // Are there buffered characters available? 
                 if (eol == '\n') {
                     return result.toString();
                 }
@@ -427,7 +428,7 @@ public String readLine() throws IOException {
                 }
             }
         }
-
+    */
     }
 
     /**
