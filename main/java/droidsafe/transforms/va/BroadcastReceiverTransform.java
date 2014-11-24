@@ -23,6 +23,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.ICCMap;
 import droidsafe.reports.UnresolvedICC;
+import droidsafe.stats.IntentResolutionStats;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
@@ -101,7 +102,7 @@ public class BroadcastReceiverTransform implements VATransform {
                             }
                         }
 
-                        if (resolved) {//intent resolved
+                        if (resolved) {//intent resolved                            
                             for (String action : actions) {
                                 //associate with sootclass of arg 0
                                 for (SootClass clz : brs) {
@@ -146,29 +147,45 @@ public class BroadcastReceiverTransform implements VATransform {
         Set<IAllocNode> intentNodes;
 
         intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
+                
+        
+        IntentResolutionStats.v().intentObjects += intentNodes.size();
+        IntentResolutionStats.v().intentCalls++;
 
         //find actions strings of intents
 
         List<String> intentActions = new LinkedList<String>(); 
         boolean resolved = VAUtils.<String>getAnyVAValuesForField(intentNodes, "mAction", intentActions);
+        
         //did we find in app targets for all broadcast calls?
         boolean foundAllTargets = true;
         Set<SootClass> classTargets = new LinkedHashSet<SootClass>();
 
         //calculate target for Intent based on action
         if (resolved) {
+            IntentResolutionStats.v().resolvedImplictIntents += intentNodes.size();
+            
+            IntentResolutionStats.v().callsWithResolvedIntents++;
             classTargets.addAll(receiversWithUnresolvedFilters);
             for (String action : intentActions) {                                
                 if (!filterActionsToClass.containsKey(action)) {
-                    foundAllTargets = false;
+                    foundAllTargets = false;                    
                     continue;
                 } 
 
-                classTargets.addAll(filterActionsToClass.get(action));                
+                classTargets.addAll(filterActionsToClass.get(action));   
+
+                if (!foundAllTargets) {
+                    IntentResolutionStats.v().callsTargetNotInApp++;
+                }
+                
+                IntentResolutionStats.v().inAppComponentsTotalTargets += classTargets.size();
             }
 
         } else {
             //not resolved add all broadcast receivers
+            IntentResolutionStats.v().callsWithUnresolvedIntent++;
+            
             for (SootClass clz : Harness.v().getCreatedClasses()) {
                 if (Hierarchy.inheritsFromAndroidComponent(AndroidComponents.BROADCAST_RECEIVER, clz)) {
                     classTargets.add(clz);

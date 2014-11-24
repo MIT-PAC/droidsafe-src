@@ -40,6 +40,7 @@ import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.speclang.SecuritySpecification;
+import droidsafe.stats.IntentResolutionStats;
 import droidsafe.stats.PTAPaper;
 import droidsafe.transforms.CallBackModeling;
 import droidsafe.transforms.ClassGetNameToClassString;
@@ -398,6 +399,8 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+        
+        IntentResolutionStats.v().writeStats();
 
         if (Config.v().produceReports)
             writeJSONReports();

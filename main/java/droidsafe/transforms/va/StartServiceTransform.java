@@ -11,12 +11,15 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.value.ImplicitIntentModel;
 import droidsafe.analyses.value.IntentUtils;
 import droidsafe.analyses.value.ResolvedExplicitIntent;
+import droidsafe.analyses.value.UnresolvedIntent;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.ICCMap;
+import droidsafe.stats.IntentResolutionStats;
 import droidsafe.utils.JimpleRelationships;
 import soot.ArrayType;
 import soot.Body;
@@ -59,6 +62,8 @@ public class StartServiceTransform implements VATransform {
             return;
         }
         modified.add(stmt);
+        
+        IntentResolutionStats.v().intentCalls++;
 
         SootMethod onStartCommand = Scene.v().getMethod("<android.app.Service: int onStartCommand(android.content.Intent,int,int)>");
         SootMethod onStart = Scene.v().getMethod("<android.app.Service: void onStart(android.content.Intent,int)>");
@@ -70,10 +75,32 @@ public class StartServiceTransform implements VATransform {
         intentNodes = (Set<IAllocNode>)PTABridge.v().getPTSetIns(intentArg);
 
         boolean allResolvedExplicitIntentsFoundTargets = true;
+        boolean allIntentsNodeResolved = true;
+        boolean noInAppTarget = false;
+        Set<SootField> inAppTargets = new HashSet<SootField>();
+        
                       
         for (IAllocNode intentNode : intentNodes) {
+            IntentResolutionStats.v().intentObjects++;
             Set<SootField> targetHarnessFields = 
                     IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNode);
+                              
+            if (IntentUtils.v().getIntentModel(intentNode) instanceof UnresolvedIntent) {
+                allIntentsNodeResolved = false;
+            } else {
+                //resolved
+                if (IntentUtils.v().getIntentModel(intentNode) instanceof ImplicitIntentModel) {
+                    IntentResolutionStats.v().resolvedImplictIntents++;
+                } else {
+                    IntentResolutionStats.v().resolvedExplicitIntents++;
+                }
+                
+                if (targetHarnessFields.isEmpty()) {
+                    noInAppTarget = true;
+                }
+            }
+            
+            inAppTargets.addAll(targetHarnessFields);
             
             //if we don't have a resolved explicit intent or if we have a resolved explicit intent with 
             //no in app target, then we don't have all resolved in app explicit
@@ -147,6 +174,15 @@ public class StartServiceTransform implements VATransform {
         if (allResolvedExplicitIntentsFoundTargets) { 
             //if all resolved explicit intents in app, the ignore the start activity call          
             RCFG.v().ignoreInvokeForOutputEvents(stmt);
+        }
+        
+        if (allIntentsNodeResolved) {
+            IntentResolutionStats.v().callsWithResolvedIntents++;
+            if (noInAppTarget)
+                IntentResolutionStats.v().callsTargetNotInApp++;
+            IntentResolutionStats.v().inAppComponentsTotalTargets += inAppTargets.size();
+        } else {
+            IntentResolutionStats.v().callsWithUnresolvedIntent++;
         }
     }
 

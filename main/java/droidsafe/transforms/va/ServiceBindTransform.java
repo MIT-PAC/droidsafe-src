@@ -10,7 +10,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.value.ImplicitIntentModel;
 import droidsafe.analyses.value.IntentUtils;
+import droidsafe.analyses.value.ResolvedExplicitIntent;
+import droidsafe.analyses.value.UnresolvedIntent;
 import droidsafe.analyses.value.VAModel;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Harness;
@@ -18,6 +21,7 @@ import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.ICCMap;
+import droidsafe.stats.IntentResolutionStats;
 import droidsafe.utils.SootUtils;
 import soot.Body;
 import soot.Local;
@@ -61,6 +65,8 @@ public class ServiceBindTransform implements VATransform {
         }
         modified.add(stmt);
 
+        IntentResolutionStats.v().intentCalls++;
+        
         logger.info("Found call to transform {} in {}\n", stmt, containingMthd);
         InvokeExpr invoke = stmt.getInvokeExpr();
 
@@ -68,8 +74,35 @@ public class ServiceBindTransform implements VATransform {
         //for all service destinations from the intent 
         //for the services created in the harness
         Set<? extends IAllocNode> intentNodes = PTABridge.v().getPTSetIns(invoke.getArg(0));
+        
+        boolean allIntentsNodeResolved = true;
+        boolean noInAppTarget = false;
+        Set<SootField> inAppTargets = new HashSet<SootField>();
+        
         for (IAllocNode intentNode : intentNodes) {
-            for (SootField serviceFld : IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNode)) {
+            IntentResolutionStats.v().intentObjects++;
+            
+            Set<SootField> targetHarnessFields = IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNode);
+            
+            //if we don't have a resolved explicit intent or if we have a resolved explicit intent with 
+            //no in app target, then we don't have all resolved in app explicit
+            if (IntentUtils.v().getIntentModel(intentNode) instanceof UnresolvedIntent) {
+                allIntentsNodeResolved = false;
+            } else {
+                //resolved
+                if (IntentUtils.v().getIntentModel(intentNode) instanceof ImplicitIntentModel) {
+                    IntentResolutionStats.v().resolvedImplictIntents++;
+                } else {
+                    IntentResolutionStats.v().resolvedExplicitIntents++;
+                }
+                if (targetHarnessFields.isEmpty()) {
+                    noInAppTarget = true;
+                }
+            }
+            
+            inAppTargets.addAll(targetHarnessFields);
+            
+            for (SootField serviceFld : targetHarnessFields) {
                 if (!(serviceFld.getType() instanceof RefType))
                     continue;           
 
@@ -108,6 +141,15 @@ public class ServiceBindTransform implements VATransform {
                 SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(serviceClz, onBindMethod);
                 ICCMap.v().addInfo(containingMthd.getDeclaringClass(), serviceClz, stmt, resolved);
             }
+        }
+        
+        if (allIntentsNodeResolved) {
+            IntentResolutionStats.v().callsWithResolvedIntents++;
+            if (noInAppTarget)
+                IntentResolutionStats.v().callsTargetNotInApp++;
+            IntentResolutionStats.v().inAppComponentsTotalTargets += inAppTargets.size();
+        } else {
+            IntentResolutionStats.v().callsWithUnresolvedIntent++;
         }
     }
 

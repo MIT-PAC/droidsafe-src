@@ -13,10 +13,12 @@ import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
+import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.AndroidManifest.Provider;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.UnresolvedICC;
+import droidsafe.stats.IntentResolutionStats;
 import soot.Body;
 import soot.Local;
 import soot.RefType;
@@ -54,6 +56,7 @@ public class ContentProviderTransform implements VATransform {
     private Set<String> sigsOfInvokesToTransform;
     /** All fields of harness for content providers */
     private Set<SootField> allHarnessCPFlds = new LinkedHashSet<SootField>();
+    private Set<Stmt> modified = new HashSet<Stmt>();
 
     public ContentProviderTransform() {
         // init set of all content provider harness fields
@@ -107,6 +110,18 @@ public class ContentProviderTransform implements VATransform {
     @Override
     public void tranformsInvoke(SootMethod containingMthd, SootMethod callee,
                                 InvokeExpr invokeExpr, Stmt stmt, Body body) {
+        
+        if(!Project.v().isSrcClass(containingMthd.getDeclaringClass())){
+            return;
+        }
+
+        if (modified.contains(stmt)) {
+            return;
+        }
+        modified.add(stmt);
+
+        IntentResolutionStats.v().contentProviderOps++;
+        
         Value lvalue = null;
         if (stmt instanceof AssignStmt) {
             lvalue = ((AssignStmt)stmt).getLeftOp();
@@ -121,9 +136,12 @@ public class ContentProviderTransform implements VATransform {
 
             if (!resolved) {
                 UnresolvedICC.v().addInfo(stmt, callee, "Unresolved URI for Content Provider");
+                //can break here because we added all possible content provider destinations
+                IntentResolutionStats.v().contentProviderOpsUnresolvedUri++;
                 break;
             }
         }
+               
 
         //for each field of harness that is a content provider
         for (SootField cpField : targetCPFields) {
@@ -162,8 +180,17 @@ public class ContentProviderTransform implements VATransform {
         }
         
         //if resolved and in app target, then don't report
-        if (resolved && targetCPFields.size() > 0) 
-            RCFG.v().ignoreInvokeForOutputEvents(stmt);
+        if (resolved) {
+            IntentResolutionStats.v().contentProviderOpsResolvedUri++;
+            if (targetCPFields.size() > 0) {           
+                RCFG.v().ignoreInvokeForOutputEvents(stmt);       
+                IntentResolutionStats.v().contentProviderOpsInAppTotalTargets += targetCPFields.size();
+            } else {
+                IntentResolutionStats.v().contentProviderOpsInterAppTarget++;
+            }
+        }
+        
+        
     }
 
     @Override

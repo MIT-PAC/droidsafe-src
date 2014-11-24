@@ -3,9 +3,11 @@ package droidsafe.transforms.va;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.value.primitives.StringVAModel;
+import droidsafe.analyses.value.ImplicitIntentModel;
 import droidsafe.analyses.value.IntentUtils;
 import droidsafe.analyses.value.RefVAModel;
 import droidsafe.analyses.value.ResolvedExplicitIntent;
+import droidsafe.analyses.value.UnresolvedIntent;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAModel;
 import droidsafe.analyses.value.UnknownVAModel;
@@ -15,6 +17,7 @@ import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.android.system.AndroidComponents;
 import droidsafe.reports.ICCMap;
+import droidsafe.stats.IntentResolutionStats;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
@@ -82,6 +85,8 @@ class StartActivityTransform implements VATransform {
             return;
         }
         modified.add(stmt);
+        
+        IntentResolutionStats.v().intentCalls++;
 
         SootMethod setIntentMethod = Scene.v().getMethod("<android.app.Activity: void setIntent(android.content.Intent)>");
 
@@ -100,11 +105,36 @@ class StartActivityTransform implements VATransform {
         } else
             return;
 
+        boolean allIntentsNodeResolved = true;
+        boolean noInAppTarget = false;
+        Set<SootField> inAppTargets = new HashSet<SootField>();
+        
         boolean allResolvedExplicitIntentsFoundTargets = true;
         
-        for (IAllocNode intentNode : intentNodes) {                                
+        for (IAllocNode intentNode : intentNodes) {  
+            IntentResolutionStats.v().intentObjects++;
             Set<SootField> targetHarnessFields = 
                     IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.ACTIVITY, stmt, callee, intentNode);
+            
+          //if we don't have a resolved explicit intent or if we have a resolved explicit intent with 
+            //no in app target, then we don't have all resolved in app explicit
+            if (IntentUtils.v().getIntentModel(intentNode) instanceof UnresolvedIntent) {
+                allIntentsNodeResolved = false;
+            } else {
+                //resolved
+                
+                if (IntentUtils.v().getIntentModel(intentNode) instanceof ImplicitIntentModel) {
+                    IntentResolutionStats.v().resolvedImplictIntents++;
+                } else {
+                    IntentResolutionStats.v().resolvedExplicitIntents++;
+                }
+                
+                if (targetHarnessFields.isEmpty()) {
+                    noInAppTarget = true;
+                }            
+            }
+            
+            inAppTargets.addAll(targetHarnessFields);
             
             //if we don't have a resolved explicit intent or if we have a resolved explicit intent with 
             //no in app target, then we don't have all resolved in app explicit
@@ -162,6 +192,15 @@ class StartActivityTransform implements VATransform {
         if (allResolvedExplicitIntentsFoundTargets) { 
           //if all resolved explicit intents in app, the ignore the start activity call          
           RCFG.v().ignoreInvokeForOutputEvents(stmt);
+        }
+        
+        if (allIntentsNodeResolved) {
+            IntentResolutionStats.v().callsWithResolvedIntents++;
+            if (noInAppTarget)
+                IntentResolutionStats.v().callsTargetNotInApp++;
+            IntentResolutionStats.v().inAppComponentsTotalTargets += inAppTargets.size();
+        } else {
+            IntentResolutionStats.v().callsWithUnresolvedIntent++;
         }
     }
     
