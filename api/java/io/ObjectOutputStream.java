@@ -16,6 +16,11 @@ import libcore.io.Memory;
 import libcore.io.SizeOf;
 
 public class ObjectOutputStream extends OutputStream implements ObjectOutput, ObjectStreamConstants {
+
+    public static int dsSharedInt;
+    public static Object dsSharedObject;
+    public static boolean dsSharedBoolean;
+    public static double dsSharedDouble;
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
@@ -531,8 +536,10 @@ public void useProtocolVersion(int version) throws IOException {
     @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.043 -0500", hash_original_method = "4335176A8BF0CB76C8983C14BE755AB0", hash_generated_method = "2396E7855518FCB39100A578F5EF0B6D")
     
-@Override
+    @Override
     public void write(byte[] buffer, int offset, int length) throws IOException {
+        //share with ObjectInputStream
+        dsSharedInt = buffer[0];
         checkWritePrimitiveTypes();
         primitiveTypes.write(buffer, offset, length);
     }
@@ -554,6 +561,7 @@ public void useProtocolVersion(int version) throws IOException {
     
 @Override
     public void write(int value) throws IOException {
+        dsSharedInt = value;
         checkWritePrimitiveTypes();
         primitiveTypes.write(value);
     }
@@ -572,6 +580,7 @@ public void useProtocolVersion(int version) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.047 -0500", hash_original_method = "253E21281D84BB4AEC7BC00A39E22928", hash_generated_method = "029F21A115C14D88BF09E962FA8E82B1")
     
 public void writeBoolean(boolean value) throws IOException {
+        dsSharedBoolean = value;
         checkWritePrimitiveTypes();
         primitiveTypes.writeBoolean(value);
     }
@@ -589,6 +598,7 @@ public void writeBoolean(boolean value) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.049 -0500", hash_original_method = "DCBF5513EE5F9BB37CF570D282A66C5E", hash_generated_method = "B50D824F31325598242CF2A68080FEDA")
     
 public void writeByte(int value) throws IOException {
+        dsSharedInt = value;
         checkWritePrimitiveTypes();
         primitiveTypes.writeByte(value);
     }
@@ -608,6 +618,7 @@ public void writeByte(int value) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.052 -0500", hash_original_method = "2FD9E25E34EBC831C98FBB1774A09056", hash_generated_method = "3FC5B8F8F72A713B2C0960DBC8B0282B")
     
 public void writeBytes(String value) throws IOException {
+        dsSharedObject = value;        
         checkWritePrimitiveTypes();
         primitiveTypes.writeBytes(value);
     }
@@ -625,6 +636,7 @@ public void writeBytes(String value) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.054 -0500", hash_original_method = "A70BC61472A0A40B7DA1B300459E269C", hash_generated_method = "3194C3B1826DCE69B6DA63887D9F90F5")
     
 public void writeChar(int value) throws IOException {
+        dsSharedInt = value;
         checkWritePrimitiveTypes();
         primitiveTypes.writeChar(value);
     }
@@ -643,6 +655,7 @@ public void writeChar(int value) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.057 -0500", hash_original_method = "2819E1113D5EFA42F2CF8A185C5FE232", hash_generated_method = "B8C53EDFE2427B81C0D7CC5F8B84A55F")
     
 public void writeChars(String value) throws IOException {
+        dsSharedObject = value;
         checkWritePrimitiveTypes();
         primitiveTypes.writeChars(value);
     }
@@ -752,6 +765,7 @@ private void writeCyclicReference(int handle) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.065 -0500", hash_original_method = "02DC35912BAFF16550D8FBDB82DDCD50", hash_generated_method = "B0839B5ACE77F3E590FC761BCFCBBA2A")
     
 public void writeDouble(double value) throws IOException {
+        dsSharedDouble = value;
         checkWritePrimitiveTypes();
         primitiveTypes.writeDouble(value);
     }
@@ -948,7 +962,8 @@ private void writeFieldValues(Object obj, ObjectStreamClass classDesc) throws IO
     @DSSink({DSSinkKind.IO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.080 -0500", hash_original_method = "2F0CF28A5E4A8655D2779BA683FB03E5", hash_generated_method = "97206FF0F5149E705B689D6DF50FE57D")
     
-public void writeFloat(float value) throws IOException {
+    public void writeFloat(float value) throws IOException {
+        dsSharedDouble = (double)value;
         checkWritePrimitiveTypes();
         primitiveTypes.writeFloat(value);
     }
@@ -983,6 +998,7 @@ public void writeFloat(float value) throws IOException {
     
 private void writeHierarchy(Object object, ObjectStreamClass classDesc)
             throws IOException, NotActiveException {
+        dsSharedObject = object;
         if (object == null) {
             throw new NotActiveException();
         }
@@ -1049,6 +1065,7 @@ private void writeHierarchy(Object object, ObjectStreamClass classDesc)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.086 -0500", hash_original_method = "4D560E72502C61E130F3258421731401", hash_generated_method = "DB98D19071CCC9064BAB18D4DCD03CE1")
     
 public void writeInt(int value) throws IOException {
+        dsSharedInt = value;
         checkWritePrimitiveTypes();
         primitiveTypes.writeInt(value);
     }
@@ -1066,6 +1083,7 @@ public void writeInt(int value) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.089 -0500", hash_original_method = "1C4CA2BE4C70907161A2CF485CB22A3E", hash_generated_method = "159023B26ABF7EB4239CF31CE78EA5AF")
     
 public void writeLong(long value) throws IOException {
+        dsSharedInt = (int) value;
         checkWritePrimitiveTypes();
         primitiveTypes.writeLong(value);
     }
@@ -1093,6 +1111,7 @@ public void writeLong(long value) throws IOException {
     
 private int writeNewArray(Object array, Class<?> arrayClass, ObjectStreamClass arrayClDesc,
             Class<?> componentType, boolean unshared) throws IOException {
+        dsSharedObject = array;
         output.writeByte(TC_ARRAY);
         writeClassDesc(arrayClDesc, false);
 
@@ -1189,6 +1208,7 @@ private int writeNewArray(Object array, Class<?> arrayClass, ObjectStreamClass a
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.095 -0500", hash_original_method = "EFEEB16087FF4E0EE92685A5C26C0D2A", hash_generated_method = "11AD60B7E0E9DA9AF48A09450772E69D")
     
 private int writeNewClass(Class<?> object, boolean unshared) throws IOException {
+        
         output.writeByte(TC_CLASS);
 
         // Instances of java.lang.Class are always Serializable, even if their
@@ -1331,8 +1351,9 @@ private void writeNewException(Exception ex) throws IOException {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.106 -0500", hash_original_method = "AD17E67664AB2CFE5D575A9D2DBC90D0", hash_generated_method = "6C44F521E14CD6D680627A624B1A6196")
     
-private int writeNewObject(Object object, Class<?> theClass, ObjectStreamClass clDesc,
+private int writeNewObject(Object object, Class<?> theClass, ObjectStreamClass clDesc,                           
             boolean unshared) throws IOException {
+        dsSharedObject = object;
         // Not String, not null, not array, not cyclic reference
 
         EmulatedFieldsForDumping originalCurrentPutField = currentPutField; // save
@@ -1417,6 +1438,7 @@ private int writeNewObject(Object object, Class<?> theClass, ObjectStreamClass c
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.109 -0500", hash_original_method = "BE97C7FA5FB694719D79A72C051D442C", hash_generated_method = "CD49258FB0912708F891AF64058A753C")
     
 private int writeNewString(String object, boolean unshared) throws IOException {
+        dsSharedObject = object;
         long count = ModifiedUtf8.countBytes(object, false);
         byte[] buffer;
         int offset = 0;
@@ -1501,6 +1523,7 @@ public void writeUnshared(Object object) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.120 -0500", hash_original_method = "6135D4458B19CC3120CAE3855FF2BEA8", hash_generated_method = "E5BDC9807B0FDC2792FD9C88BAFE44FB")
     
 private void writeObject(Object object, boolean unshared) throws IOException {
+        dsSharedObject = object;
         boolean setOutput = (primitiveTypes == output);
         if (setOutput) {
             primitiveTypes = null;
@@ -1822,6 +1845,7 @@ protected void writeObjectOverride(Object object) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.136 -0500", hash_original_method = "F969E0C742AA855339F3D16852D29508", hash_generated_method = "56ACD159CD8C7DEAAF4C2A7416345641")
     
 public void writeShort(int value) throws IOException {
+        dsSharedInt = value;
         checkWritePrimitiveTypes();
         primitiveTypes.writeShort(value);
     }

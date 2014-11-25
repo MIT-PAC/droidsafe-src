@@ -36,7 +36,7 @@ public ByteArrayInputStream(byte[] buf) {
         this.buf = buf;
         this.count = buf.length;
         addTaint(buf.getTaint());
-        buf[0] = (byte)getTaintInt();
+        addTaint((double)buf[0]);
     }
 
     /**

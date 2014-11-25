@@ -75,24 +75,9 @@ public static byte[] decode(byte[] input, int flags) {
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.844 -0500", hash_original_method = "795AFD2FD16C81A1775B830E04DF9E9F", hash_generated_method = "E1784E1E0B1A65AD0A028EC0396E05B0")
     
-public static byte[] decode(byte[] input, int offset, int len, int flags) {
-        // Allocate space for the most data the input could represent.
-        // (It could contain less if it contains whitespace, etc.)
-        Decoder decoder = new Decoder(flags, new byte[len*3/4]);
-
-        if (!decoder.process(input, offset, len, true)) {
-            throw new IllegalArgumentException("bad base-64");
-        }
-
-        // Maybe we got lucky and allocated exactly enough output space.
-        if (decoder.op == decoder.output.length) {
-            return decoder.output;
-        }
-
-        // Need to shorten the array, so allocate a new one of the
-        // right size and copy.
-        byte[] temp = new byte[decoder.op];
-        System.arraycopy(decoder.output, 0, temp, 0, decoder.op);
+    public static byte[] decode(byte[] input, int offset, int len, int flags) {
+        byte[] temp = new byte[1];
+        temp[0] = input[0];
         return temp;
     }
 

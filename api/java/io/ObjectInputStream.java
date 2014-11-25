@@ -407,8 +407,9 @@ private void pushbackTC() {
     
 @Override
     public int read() throws IOException {
-        checkReadPrimitiveTypes();
-        return primitiveData.droidsafeRead();
+        return ObjectOutputStream.dsSharedInt;
+        /*checkReadPrimitiveTypes();
+          return primitiveData.droidsafeRead();*/
     }
 
     /**
@@ -440,13 +441,20 @@ private void pushbackTC() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.352 -0500", hash_original_method = "7E3B2630C90BBA61B0E7CD83B04481D2", hash_generated_method = "17C0B89F710648736C76E8163CC98F55")
     
 @Override
-    public int read(byte[] buffer, int offset, int length) throws IOException {
+public int read(byte[] buffer, int offset, int length) throws IOException {
+        buffer[0] = (byte)ObjectOutputStream.dsSharedInt;
+        buffer[0] = ((byte[])ObjectOutputStream.dsSharedObject)[0];
+
+        return 0;
+        //TODO: might need more here
+        /*
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
         if (length == 0) {
             return 0;
         }
         checkReadPrimitiveTypes();
         return primitiveData.read(buffer, offset, length);
+        */
     }
 
     /**
@@ -464,9 +472,18 @@ private void pushbackTC() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.355 -0500", hash_original_method = "35383BB5231F8136A4FECB09DEC2FE93", hash_generated_method = "1C03820D8116427A920F9A19EFAFA7E1")
     
 private byte[] readBlockData() throws IOException {
+        byte[] buffer = new byte[1];
+        buffer[0] = (byte)ObjectOutputStream.dsSharedInt;
+        buffer[0] = (byte)ObjectOutputStream.dsSharedDouble;
+        buffer[0] = (byte)(ObjectOutputStream.dsSharedBoolean ? 1 : 0);
+        buffer[0] = ((byte[])ObjectOutputStream.dsSharedObject)[0];
+
+        return buffer;
+        /*
         byte[] result = new byte[input.readByte() & 0xff];
         input.readFully(result);
         return result;
+        */
     }
 
     /**
@@ -484,9 +501,18 @@ private byte[] readBlockData() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.358 -0500", hash_original_method = "478D7B43D09CD1BAF3CA95670FAE291A", hash_generated_method = "E5D46E2A85AA403CC816C040B9832E4C")
     
 private byte[] readBlockDataLong() throws IOException {
+ byte[] buffer = new byte[1];
+        buffer[0] = (byte)ObjectOutputStream.dsSharedInt;
+        buffer[0] = (byte)ObjectOutputStream.dsSharedDouble;
+        buffer[0] = (byte)(ObjectOutputStream.dsSharedBoolean ? 1 : 0);
+        buffer[0] = ((byte[])ObjectOutputStream.dsSharedObject)[0];
+
+        return buffer;
+        /*
         byte[] result = new byte[input.readInt()];
         input.readFully(result);
         return result;
+        */
     }
 
     /**
@@ -505,7 +531,8 @@ private byte[] readBlockDataLong() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.360 -0500", hash_original_method = "43182B65F59B21B8425D068A4900EB3A", hash_generated_method = "56A81332F158117C3BDA56D23B5D1F78")
     
 public boolean readBoolean() throws IOException {
-        return primitiveTypes.readBoolean();
+        return ObjectOutputStream.dsSharedBoolean;
+        //return primitiveTypes.readBoolean();
     }
 
     /**
@@ -523,7 +550,8 @@ public boolean readBoolean() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.362 -0500", hash_original_method = "F1C938A529B536DE0EA7C0848AC19388", hash_generated_method = "8AF10F987D87488CD22BBBC1A94EBAB2")
     
 public byte readByte() throws IOException {
-        return primitiveTypes.readByte();
+        return (byte)ObjectOutputStream.dsSharedInt;
+        //        return primitiveTypes.readByte();
     }
 
     /**
@@ -541,7 +569,8 @@ public byte readByte() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.365 -0500", hash_original_method = "08C7569945A67E2D251F3B449209E666", hash_generated_method = "26188AAC2A9765FB27045F28907DF948")
     
 public char readChar() throws IOException {
-        return primitiveTypes.readChar();
+        return (char)ObjectOutputStream.dsSharedInt;
+        //return primitiveTypes.readChar();
     }
 
     /**
@@ -639,6 +668,8 @@ private StreamCorruptedException corruptStream(byte tc) throws StreamCorruptedEx
     
 private Object readContent(byte tc) throws ClassNotFoundException,
             IOException {
+        return ObjectOutputStream.dsSharedObject;
+        /*
         switch (tc) {
             case TC_BLOCKDATA:
                 return readBlockData();
@@ -669,6 +700,7 @@ private Object readContent(byte tc) throws ClassNotFoundException,
             default:
                 throw corruptStream(tc);
         }
+        */
     }
 
     /**
@@ -692,6 +724,8 @@ private Object readContent(byte tc) throws ClassNotFoundException,
     
 private Object readNonPrimitiveContent(boolean unshared)
             throws ClassNotFoundException, IOException {
+        return ObjectOutputStream.dsSharedObject;
+        /*        
         checkReadPrimitiveTypes();
         if (primitiveData.available() > 0) {
             OptionalDataException e = new OptionalDataException();
@@ -740,6 +774,7 @@ private Object readNonPrimitiveContent(boolean unshared)
             }
             // Only TC_RESET falls through
         } while (true);
+        */
     }
 
     /**
@@ -759,7 +794,9 @@ private Object readNonPrimitiveContent(boolean unshared)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.381 -0500", hash_original_method = "821B45232EA8F88246A504603C8240EF", hash_generated_method = "A1A38C40A4D574580ED6E4965907783D")
     
 private Object readCyclicReference() throws InvalidObjectException, IOException {
-        return registeredObjectRead(readNewHandle());
+        return ObjectOutputStream.dsSharedObject;
+
+        //return registeredObjectRead(readNewHandle());
     }
 
     /**
@@ -778,7 +815,9 @@ private Object readCyclicReference() throws InvalidObjectException, IOException 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.383 -0500", hash_original_method = "7C91F28BD77A4ED641420E614D9FCB15", hash_generated_method = "7756E71F951822D28642A19BC06AC8CF")
     
 public double readDouble() throws IOException {
-        return primitiveTypes.readDouble();
+        return ObjectOutputStream.dsSharedDouble;
+                
+        //return primitiveTypes.readDouble();
     }
 
     /**
@@ -1101,7 +1140,9 @@ private void readFieldValues(Object obj, ObjectStreamClass classDesc) throws Opt
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.405 -0500", hash_original_method = "E7BFAC98C28E1C1B49BD33FC0E76EA53", hash_generated_method = "5793794E9B8046275BA3A984375CF554")
     
 public float readFloat() throws IOException {
-        return primitiveTypes.readFloat();
+        return (float)ObjectOutputStream.dsSharedDouble;
+
+        //return primitiveTypes.readFloat();
     }
 
     /**
@@ -1121,7 +1162,12 @@ public float readFloat() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.407 -0500", hash_original_method = "917418BB5C848A4690F4E96972002BAD", hash_generated_method = "6BE355C156BB46B842CB65F73AE99956")
     
 public void readFully(byte[] dst) throws IOException {
-        primitiveTypes.readFully(dst);
+        dst[0] = (byte)ObjectOutputStream.dsSharedInt;
+        dst[0] = (byte)ObjectOutputStream.dsSharedDouble;
+        dst[0] = (byte)(ObjectOutputStream.dsSharedBoolean ? 1 : 0);
+        dst[0] = ((byte[])ObjectOutputStream.dsSharedObject)[0];
+
+        //primitiveTypes.readFully(dst);
     }
 
     /**
@@ -1145,7 +1191,12 @@ public void readFully(byte[] dst) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.409 -0500", hash_original_method = "046EB506BDA13B9ED79306898615169A", hash_generated_method = "AD228AC0C6066AA186ED24483B5C1CB9")
     
 public void readFully(byte[] dst, int offset, int byteCount) throws IOException {
-        primitiveTypes.readFully(dst, offset, byteCount);
+                dst[0] = (byte)ObjectOutputStream.dsSharedInt;
+        dst[0] = (byte)ObjectOutputStream.dsSharedDouble;
+        dst[0] = (byte)(ObjectOutputStream.dsSharedBoolean ? 1 : 0);
+        dst[0] = ((byte[])ObjectOutputStream.dsSharedObject)[0];
+        
+        //primitiveTypes.readFully(dst, offset, byteCount);
     }
 
     /**
@@ -1181,6 +1232,8 @@ public void readFully(byte[] dst, int offset, int byteCount) throws IOException 
     
 private void readHierarchy(Object object, ObjectStreamClass classDesc)
             throws IOException, ClassNotFoundException, NotActiveException {
+        //        return ObjectOutputStream.dsSharedObject;
+        /*
         if (object == null && mustResolve) {
             throw new NotActiveException();
         }
@@ -1211,6 +1264,7 @@ private void readHierarchy(Object object, ObjectStreamClass classDesc)
                 }
             }
         }
+        */
     }
 
     @DSComment("Private Method")
@@ -1350,7 +1404,9 @@ private void readObjectForClass(Object object, ObjectStreamClass classDesc)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.428 -0500", hash_original_method = "D31E8D2825D4043295F3D0C685B93717", hash_generated_method = "E9843F0E9026BCD63DD0DCCFFB3E80A4")
     
 public int readInt() throws IOException {
-        return primitiveTypes.readInt();
+        return ObjectOutputStream.dsSharedInt;
+
+        //return primitiveTypes.readInt();
     }
 
     /**
@@ -1368,7 +1424,9 @@ public int readInt() throws IOException {
     
 @Deprecated
     public String readLine() throws IOException {
-        return primitiveTypes.readLine();
+        return (String)ObjectOutputStream.dsSharedObject;
+
+        //return primitiveTypes.readLine();
     }
 
     /**
@@ -1386,7 +1444,9 @@ public int readInt() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.433 -0500", hash_original_method = "70C9FFE9F08A2EBCF32FC4C20D730AD7", hash_generated_method = "B01CFE6D9156E407A7419A8C068B709D")
     
 public long readLong() throws IOException {
-        return primitiveTypes.readLong();
+        return (long)ObjectOutputStream.dsSharedInt;
+
+        //return primitiveTypes.readLong();
     }
 
     /**
@@ -1410,6 +1470,10 @@ public long readLong() throws IOException {
     
 private Object readNewArray(boolean unshared) throws OptionalDataException,
             ClassNotFoundException, IOException {
+
+        return ObjectOutputStream.dsSharedObject;
+
+        /*
         ObjectStreamClass classDesc = readClassDesc();
 
         if (classDesc == null) {
@@ -1488,6 +1552,7 @@ private Object readNewArray(boolean unshared) throws OptionalDataException,
             registerObjectRead(result, newHandle, false);
         }
         return result;
+        */
     }
     
     @DSComment("Private Method")
@@ -1587,6 +1652,8 @@ private ObjectStreamClass readEnumDescInternal() throws IOException, ClassNotFou
 @SuppressWarnings("unchecked")// For the Enum.valueOf call
     private Object readEnum(boolean unshared) throws OptionalDataException,
             ClassNotFoundException, IOException {
+        return ObjectOutputStream.dsSharedObject;
+        /*
         // read classdesc for Enum first
         ObjectStreamClass classDesc = readEnumDesc();
         int newHandle = nextHandle();
@@ -1612,6 +1679,7 @@ private ObjectStreamClass readEnumDescInternal() throws IOException, ClassNotFou
         registerObjectRead(result, newHandle, unshared);
 
         return result;
+        */
     }
 
     /**
@@ -1777,7 +1845,9 @@ protected Class<?> resolveProxyClass(String[] interfaceNames)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.462 -0500", hash_original_method = "11D3D467DA55FCE7098C1D9AB901525D", hash_generated_method = "C542D506D4CA9C4FADA8DD2EBB335C0E")
     
 private int readNewHandle() throws IOException {
-        return input.readInt();
+        return ObjectOutputStream.dsSharedInt;
+                
+        //return input.readInt();
     }
 
     /**
@@ -1808,6 +1878,8 @@ private int readNewHandle() throws IOException {
     
 private Object readNewObject(boolean unshared)
             throws OptionalDataException, ClassNotFoundException, IOException {
+        return ObjectOutputStream.dsSharedObject;
+        /*
         ObjectStreamClass classDesc = readClassDesc();
 
         if (classDesc == null) {
@@ -1902,6 +1974,7 @@ private Object readNewObject(boolean unshared)
             registerObjectRead(result, newHandle, unshared);
         }
         return result;
+        */
     }
 
     @DSComment("Private Method")
@@ -1927,6 +2000,8 @@ private InvalidClassException missingClassDescriptor() throws InvalidClassExcept
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.471 -0500", hash_original_method = "CF984AE9FCCB80A5CA5459E50D42D99D", hash_generated_method = "B0125642BC3A5B08BA4F04D4F98FC258")
     
 private Object readNewString(boolean unshared) throws IOException {
+        return ObjectOutputStream.dsSharedObject;
+        /*
         Object result = input.readUTF();
         if (enableResolve) {
             result = resolveObject(result);
@@ -1934,6 +2009,7 @@ private Object readNewString(boolean unshared) throws IOException {
         registerObjectRead(result, nextHandle(), unshared);
 
         return result;
+        */
     }
 
     /**
@@ -1952,6 +2028,10 @@ private Object readNewString(boolean unshared) throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.474 -0500", hash_original_method = "E3603577D9590FDF3626C23DB61D460D", hash_generated_method = "4122514E18275DB27149C98C47E4C47C")
     
 private Object readNewLongString(boolean unshared) throws IOException {
+        String str = new String();
+        str.addTaint(ObjectOutputStream.dsSharedInt);
+        return str;
+        /*
         long length = input.readLong();
         Object result = input.decodeUTF((int) length);
         if (enableResolve) {
@@ -1960,6 +2040,7 @@ private Object readNewLongString(boolean unshared) throws IOException {
         registerObjectRead(result, nextHandle(), unshared);
 
         return result;
+        */
     }
 
     /**
@@ -1982,7 +2063,8 @@ private Object readNewLongString(boolean unshared) throws IOException {
     
 public final Object readObject() throws OptionalDataException,
             ClassNotFoundException, IOException {
-        return readObject(false);
+        return ObjectOutputStream.dsSharedObject;
+        //return readObject(false);
     }
 
     /**
@@ -1998,9 +2080,12 @@ public final Object readObject() throws OptionalDataException,
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.479 -0500", hash_original_method = "B5062D634E2B9403462F68486501694A", hash_generated_method = "8B3DC90FB0B404E3B29A4C71658BE04A")
     
-public Object readUnshared() throws IOException, ClassNotFoundException {
-        return null;
+    public Object readUnshared() throws IOException, ClassNotFoundException {
+        return ObjectOutputStream.dsSharedObject;
+        //return null;
     }
+
+    public static Object dsCreated = null;
 
     @DSSource({DSSourceKind.SERIALIZATION})
     @DSComment("Private Method")
@@ -2009,18 +2094,7 @@ public Object readUnshared() throws IOException, ClassNotFoundException {
     
 private Object readObject(boolean unshared) throws OptionalDataException,
             ClassNotFoundException, IOException {
-        //needed for fallback modeling
-
-        Object ret = null;
-
-        switch (CRAP) {
-        case 1: ret = new Integer(1); break;
-        case 2: ret = new byte[1]; ((byte[])ret)[0] = (byte)this.getTaintInt(); break;
-        case 3: ret = new java.net.InetAddress(0, new byte[1], new String()); break;
-        }
-
-        ret.addTaint(this.getTaint());
-        return ret;
+        return ObjectOutputStream.dsSharedObject;
         
     /*    boolean restoreInput = (primitiveData == input);
         if (restoreInput) {
@@ -2116,7 +2190,9 @@ protected Object readObjectOverride() throws OptionalDataException,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.494 -0500", hash_original_method = "E1F1666A9CC2BCC43C42662EA935D779", hash_generated_method = "EB0585B1D3FEE5ED16B364C5496B7E86")
     
 public short readShort() throws IOException {
-        return primitiveTypes.readShort();
+        return (short)ObjectOutputStream.dsSharedInt;
+                
+        //return primitiveTypes.readShort();
     }
 
     /**
@@ -2155,7 +2231,9 @@ protected void readStreamHeader() throws IOException,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.499 -0500", hash_original_method = "50996F70792020DA658FB7FFCF1EF910", hash_generated_method = "BAF7F2B2ABD5AC131E4AF0C9AEC88B22")
     
 public int readUnsignedByte() throws IOException {
-        return primitiveTypes.readUnsignedByte();
+        return ObjectOutputStream.dsSharedInt;
+        
+        //        return primitiveTypes.readUnsignedByte();
     }
 
     /**
@@ -2174,7 +2252,9 @@ public int readUnsignedByte() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.501 -0500", hash_original_method = "ABA376385639B6CB8F725C68F1CED979", hash_generated_method = "AF49784520D9CEEEF364EC34713765A6")
     
 public int readUnsignedShort() throws IOException {
-        return primitiveTypes.readUnsignedShort();
+        return ObjectOutputStream.dsSharedInt;
+
+        //return primitiveTypes.readUnsignedShort();
     }
 
     /**
@@ -2195,7 +2275,11 @@ public int readUnsignedShort() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.503 -0500", hash_original_method = "B2994D3A3B821949D517613320FA5065", hash_generated_method = "1EE882612647600C4FE16F9494A0E09D")
     
 public String readUTF() throws IOException {
-        return primitiveTypes.readUTF();
+        String str = new String();
+        str.addTaint(ObjectOutputStream.dsSharedObject.getTaint());
+        return str;
+
+        //return primitiveTypes.readUTF();
     }
 
     /**
