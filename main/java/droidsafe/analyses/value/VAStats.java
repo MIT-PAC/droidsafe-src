@@ -170,7 +170,7 @@ public class VAStats {
                                         if(vaModel instanceof PrimVAModel) {
                                             PrimVAModel primVAModel = (PrimVAModel)vaModel;
                                             // if the primitive field is invalidated, we can't trust the number of values
-                                            if(primVAModel.invalidated() || primVAModel.hasUnknown()) {
+                                            if(primVAModel.invalidated()) {
                                                 size = -1;
                                                 break;
                                             } else {

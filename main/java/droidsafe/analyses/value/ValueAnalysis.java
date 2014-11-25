@@ -421,7 +421,7 @@ public class ValueAnalysis  {
                                                                 rightOpConstant.getClass());
                                                         System.exit(1);
                                                     }
-                                                } else {
+                                                } else { //not a constant or string
                                                     fieldPrimVAModel.invalidate();
                                                 }
                                             }
@@ -481,7 +481,7 @@ public class ValueAnalysis  {
                     " the value it is assigned, " + 
                     rhsNode + " is not a constant. Contained values beforehand: " + 
                     fieldPrimVAModel.getValues());
-                fieldPrimVAModel.assignUnknown();
+                fieldPrimVAModel.invalidate();
             }
         }   
     }
@@ -513,7 +513,7 @@ public class ValueAnalysis  {
                     " the value it is assigned, " + 
                     rhsNode + " is not a constant. Contained values beforehand: " + 
                     fieldPrimVAModel.getValues());
-                fieldPrimVAModel.assignUnknown();
+                fieldPrimVAModel.invalidate();
             }
         }   
     }

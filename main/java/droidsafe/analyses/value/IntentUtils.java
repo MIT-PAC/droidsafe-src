@@ -64,7 +64,7 @@ public class IntentUtils {
      * stmt that targets the IPC method target.
      */
     public IntentModel getIntentModel(IAllocNode node) {
-        if (!(node.getType() instanceof RefType) ||
+              if (!(node.getType() instanceof RefType) ||
                 !(ClassCloner.getClonedClassFromClone(((RefType)node.getType()).getSootClass()).
                         equals(Scene.v().getSootClass("android.content.Intent")))) {
             logger.error("Called getIntentModel on non Intent type: {}", node);

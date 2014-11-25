@@ -108,7 +108,12 @@ public class JSAResultInjection extends BodyTransformer {
                         continue;
                     }
                     
+                    //for now, only handle string constants
+                    if (!JSAStrings.v().isConstant(v)) 
+                        continue;
+                    
                     String jsaRE = JSAStrings.v().getRegex(v);
+                    
                     //don't track empty or any string values from jsa
                     if (JSAStrings.v().ignoreRE(jsaRE)) {
                         continue;
