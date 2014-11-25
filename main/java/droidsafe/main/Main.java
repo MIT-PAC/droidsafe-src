@@ -450,8 +450,7 @@ public class Main {
                 GenerateInterAppSourceFlows.v().run(spec);
             
             if (spec != null) {
-                if (Config.v().infoFlow)
-                    InformationFlowReport.create(spec);
+               
                 driverMsg("Creating Eclipse Plugin Serialized Specification...");
                 timer.reset();
                 timer.start();
@@ -462,6 +461,9 @@ public class Main {
 
                 timer.stop();
                 driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
+                
+                if (Config.v().infoFlow)
+                    InformationFlowReport.create(spec);
             }
             monitor.worked(1);
             if (monitor.isCanceled()) {
