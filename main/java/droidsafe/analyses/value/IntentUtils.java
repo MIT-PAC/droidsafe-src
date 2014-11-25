@@ -65,7 +65,8 @@ public class IntentUtils {
      */
     public IntentModel getIntentModel(IAllocNode node) {
         if (!(node.getType() instanceof RefType) ||
-                !(((RefType)node.getType()).getSootClass()).equals(Scene.v().getSootClass("android.content.Intent"))) {
+                !(ClassCloner.getClonedClassFromClone(((RefType)node.getType()).getSootClass()).
+                        equals(Scene.v().getSootClass("android.content.Intent")))) {
             logger.error("Called getIntentModel on non Intent type: {}", node);
         }
 
