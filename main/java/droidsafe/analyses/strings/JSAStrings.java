@@ -31,6 +31,7 @@ import soot.ValueBox;
 import soot.jimple.Expr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
+import soot.jimple.StringConstant;
 import dk.brics.string.StringAnalysis;
 import dk.brics.string.grammar.Nonterminal;
 import droidsafe.analyses.strings.AutomataUtil.RE;
@@ -71,7 +72,7 @@ public class JSAStrings {
     private boolean hasRun = false;
 
     /** The number of regular expressions generated for hotspots. */
-    private Map<Value, String> regexMap = new HashMap<Value, String>();
+    private Map<Value, RE> regexMap = new HashMap<Value, RE>();
 
     /** timeout value (in minutes) for running the string analysis. */
     private static long timeout;
@@ -364,8 +365,10 @@ public class JSAStrings {
      * @return
      */
     public String getRegex(Value v) {
-        String res = regexMap.get(v);
-        return (res == null) ? "<any string>" : res;
+    	if (v instanceof StringConstant)
+    		return ((StringConstant)v).value;
+        RE re = regexMap.get(v);
+        return (re == null) ? "<any string>" : re.getString();
     }
 
     /**
@@ -375,14 +378,16 @@ public class JSAStrings {
      * @return
      */
     public String generateRegex(Value v)  throws InterruptedException {
-        try {
-            RE regex = gv.getRE(nonterminals.get(v));
-            String res = regex.simplifyOps().toString();
-            regexMap.put(v, res);
-            return res;
-        } catch (NullPointerException e) {
-            return "";
-        }
+    	if (v instanceof StringConstant)
+    		return ((StringConstant)v).value;
+    	try {
+    		RE regex = gv.getRE(nonterminals.get(v));
+    		RE re = regex.simplifyOps();
+    		regexMap.put(v, re);
+    		return re.getString();
+    	} catch (NullPointerException e) {
+    		return "";
+    	}
     }
 
     /**
@@ -409,6 +414,17 @@ public class JSAStrings {
             logger.info("Exception when generating regex for " + v + ": " + e.getCause());
         }
         return "<any string>";
+    }
+
+    /** Returns true is the given value is a string constant.
+     * @param v the value
+     * @return true if v is a string constant
+     */
+    public boolean isConstant(Value v) {
+    	if (v instanceof StringConstant)
+    		return true;
+        RE re = regexMap.get(v);
+        return re != null && re.isConstant();
     }
 
     /**

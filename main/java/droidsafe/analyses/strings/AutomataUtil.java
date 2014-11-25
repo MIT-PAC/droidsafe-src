@@ -171,6 +171,11 @@ public class AutomataUtil {
          **/
         public String meta;
 
+        /**
+         * Cashed string representation of the regular expression.
+         */
+		private String string;
+
 
         /** The singleton empty string. **/
         public static final RE epsilon = new RE(ReOp.EPSILON);
@@ -727,6 +732,49 @@ public class AutomataUtil {
         }
 
         /**
+         * Returns true if the RE is a string constant.
+         * 
+         * @return true if the RE is a string constant.
+         */
+        public boolean isConstant() {
+            if (this.meta != null) {
+                 return false;
+            }
+
+            switch (this.op) {
+            case EMPTY:
+            case EPSILON:
+            case STRING:
+            	return true;
+
+            case CONCAT:
+            	for (RE r : cats) {
+            		if (!r.isConstant())
+            			return false;
+            	}
+            	return true;
+
+            case UNION:
+            	if (alts.size() == 1) {
+            		RE re = alts.iterator().next();
+            		return re.isConstant();
+            	}
+            	return false;
+            	
+            case RANGE:
+            case STAR:
+            case PLUS:
+            case OPTION:
+            case BINOP:
+            case UNOP:
+            	return false;
+
+            default:
+            	return false;
+            }
+        }
+
+       /**
          * Union the parameter regular expression with this regular expression.
          * 
          * @param y
@@ -1613,6 +1661,13 @@ public class AutomataUtil {
                 return set;
             }
         }
+
+
+		public String getString() {
+			if (string == null)
+				string = toString();
+			return string;
+		}
     }
 
 }
