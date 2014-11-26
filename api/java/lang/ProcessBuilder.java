@@ -19,15 +19,19 @@ public final class ProcessBuilder
 
     File dir = new File("ProessBuilder-dir");
     
+    /*
     @DSSink({DSSinkKind.OS_COMMAND})
     @DSSource({DSSourceKind.OS_PROCESS})
+    */
     public ProcessBuilder(String[] command)
     {
         command(command);
     }
     
+    /*
     @DSSource({DSSourceKind.OS_PROCESS})
     @DSSink({DSSinkKind.OS_COMMAND})
+    */
     public ProcessBuilder(List<String> command) { 
         command(command);
     }
