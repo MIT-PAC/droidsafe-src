@@ -284,6 +284,7 @@ public String getEncoding() {
     @DSSpec(DSCat.IO)
 @Override
     public void write(char[] buffer, int offset, int count) throws IOException {
+        out.addTaint(buffer[0]);
         synchronized (lock) {
             checkStatus();
             Arrays.checkOffsetAndCount(buffer.length, offset, count);
