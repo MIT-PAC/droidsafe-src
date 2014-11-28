@@ -479,27 +479,45 @@ public class InformationFlowAnalysis {
 
     // assign_stmt = local "=" array_ref
     private void execute(AssignStmt stmt, Local lLocal, ArrayRef arrayRef, State state) {
-        if (lLocal.getType() instanceof RefLikeType) {
-            assert arrayRef.getType() instanceof RefLikeType;
-        } else {
-            assert !(arrayRef.getType() instanceof RefLikeType);
-            Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
-            Body body = block.getBody();
-            SootMethod method = body.getMethod();
-            // array_ref = immediate "[" immediate "]";
-            Local baseLocal = (Local)arrayRef.getBase();
-            Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
-            for (MethodOrMethodContext methodContext : methodContexts) {
-                Context context = methodContext.context();
-                if (ignoreContext(context)) {
-                    continue;
+        Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+        Body body = block.getBody();
+        SootMethod method = body.getMethod();
+        // array_ref = immediate "[" immediate "]";
+        Local baseLocal = (Local)arrayRef.getBase();
+        Immediate indexImmediate = (Immediate)arrayRef.getIndex();
+        Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
+        for (MethodOrMethodContext methodContext : methodContexts) {
+            Context context = methodContext.context();
+            if (ignoreContext(context)) {
+                continue;
+            }
+
+            HashSet<InfoValue> values = new HashSet<InfoValue>();
+
+            Set<IAllocNode> baseAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
+            for (IAllocNode allocNode : baseAllocNodes) {
+                ImmutableSet<InfoValue> baseValues = state.instances.get(allocNode, this.objectUtils.taint);
+                values.addAll(baseValues);
+            }
+
+            if (!(Config.v().infoFlowNoArrayIndex)) {
+                ImmutableSet<InfoValue> indexValues = evaluate(context, indexImmediate, state.locals);
+                values.addAll(indexValues);
+            }
+
+            if (!(lLocal.getType() instanceof RefLikeType)) {
+                for (IAllocNode allocNode : baseAllocNodes) {
+                    ImmutableSet<InfoValue> baseValues = state.arrays.get(allocNode);
+                    values.addAll(baseValues);
                 }
-                HashSet<InfoValue> values = new HashSet<InfoValue>();
-                Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
-                for (IAllocNode allocNode : allocNodes) {
-                    ImmutableSet<InfoValue> vs = state.arrays.get(allocNode);
-                    values.addAll(vs);
+            }
+
+            if (lLocal.getType() instanceof RefLikeType) {
+                Set<IAllocNode> lLocalAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, context);
+                for (IAllocNode allocNode : lLocalAllocNodes) {
+                    state.instances.putW(allocNode, this.objectUtils.taint, ImmutableSet.<InfoValue>copyOf(values));
                 }
+            } else {
                 state.locals.putW(context, lLocal, values);
             }
         }

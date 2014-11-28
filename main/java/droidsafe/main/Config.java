@@ -111,6 +111,8 @@ public class Config {
     public boolean infoFlowTrackAll = false;
     /** If true, list native methods that cut information flows. */
     public boolean infoFlowNative = false;
+    /** If true, do not transfer taints that flow into array indices. */
+    public boolean infoFlowNoArrayIndex = false;
     /** if true, use event context, otherwise, use insensitive result */
     public boolean eventContextPTA = false;
     /** should we call unreachable callbacks, and insert dummy objects for unmodeled api calls? */
@@ -428,6 +430,8 @@ public class Config {
         Option infoflowNative = new Option("native", "List native methods that cut information flows");
         options.addOption(infoflowNative);
 
+        options.addOption(new Option("noarrayindex", "Do not transfer taints that flow into array indices"));
+
         Option approot =
                 OptionBuilder.withArgName("dir").hasArg()
                 .withDescription("The Android application root directory").create("approot");
@@ -618,7 +622,12 @@ public class Config {
             assert this.infoFlow;
             this.infoFlowNative = true;
         }
-   
+
+        if (cmd.hasOption("noarrayindex")) {
+            assert this.infoFlow;
+            this.infoFlowNoArrayIndex = true;
+        }
+
         if (cmd.hasOption("pta")) {
             String ptaPackage = cmd.getOptionValue("pta");
             if ("spark".equals(ptaPackage)) 
