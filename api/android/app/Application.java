@@ -31,7 +31,7 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.744 -0500", hash_original_method = "C931B33981954029459F423E4A87FAC0", hash_generated_method = "F0E4FB0F5E319AAF30983CD5CD1CB19D")
     
 public Application() {
-        super(null);
+        super(DroidSafeAndroidRuntime.context);
     }
 
     /**
