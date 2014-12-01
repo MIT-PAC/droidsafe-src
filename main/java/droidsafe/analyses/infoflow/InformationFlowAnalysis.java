@@ -53,6 +53,7 @@ import soot.jimple.ReturnStmt;
 import soot.jimple.ReturnVoidStmt;
 import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
+import soot.jimple.StringConstant;
 import soot.jimple.UnopExpr;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
@@ -64,8 +65,10 @@ import soot.jimple.toolkits.callgraph.TransitiveTargets;
 import soot.jimple.toolkits.callgraph.VirtualCalls;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
+
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
+import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.transforms.UnmodeledGeneratedClasses;
 import droidsafe.utils.SootUtils;
@@ -93,6 +96,7 @@ public class InformationFlowAnalysis {
     }
 
     final ObjectUtils objectUtils;
+    final DSUtilsUtils dsUtilsUtils;
     final SuperControlFlowGraph superControlFlowGraph;
 
     private final AllocNodeFieldsReadAnalysis allocNodeFieldsReadAnalysis;
@@ -107,6 +111,7 @@ public class InformationFlowAnalysis {
         AllocNodeField.invalidateCache();
 
         this.objectUtils = new ObjectUtils();
+        this.dsUtilsUtils = new DSUtilsUtils();
         this.superControlFlowGraph = new SuperControlFlowGraph(this.objectUtils);
 
         this.allocNodeFieldsReadAnalysis = new AllocNodeFieldsReadAnalysis(this.objectUtils, this.superControlFlowGraph);
@@ -883,6 +888,9 @@ public class InformationFlowAnalysis {
         } else if (this.objectUtils.isToTaint(invokeMethod)) {
             executeToTaint(stmt, invokeExpr, state);
             return;
+        } else if (this.dsUtilsUtils.isGenerateTaint(invokeMethod)) {
+            executeGenerateTaint(stmt, invokeExpr, state);
+            return;
         }
 
         Block callerBlock = this.superControlFlowGraph.unitToBlock.get(stmt);
@@ -1019,6 +1027,29 @@ public class InformationFlowAnalysis {
                         continue;
                     }
                     ImmutableSet<InfoValue> values = state.locals.get(context, argLocal);
+                    state.locals.putW(context, lLocal, values);
+                }
+            }
+        }
+    }
+
+    private void executeGenerateTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {
+        Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+        Body body = block.getBody();
+        SootMethod method = body.getMethod();
+        if (stmt instanceof AssignStmt) {
+            // local "=" "staticinvoke" "[" DSUtils.dsGenerateTaint* "]" "(" string_constant ")"
+            Local lLocal = (Local)((AssignStmt)stmt).getLeftOp();
+            Immediate argImmediate = (Immediate)invokeExpr.getArg(0);
+            if (argImmediate instanceof StringConstant) {
+                StringConstant argStringConstant = (StringConstant)argImmediate;
+                Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
+                for (MethodOrMethodContext methodContext : methodContexts) {
+                    Context context = methodContext.context();
+                    if (ignoreContext(context)) {
+                        continue;
+                    }
+                    ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoKind.getInfoKind(argStringConstant.value, true));
                     state.locals.putW(context, lLocal, values);
                 }
             }
