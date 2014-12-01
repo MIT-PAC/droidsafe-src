@@ -110,8 +110,6 @@ public ComponentName[] newArray(int size) {
     @DSComment("constructor")
     @DSSafe(DSCat.SAFE_OTHERS)
     public ComponentName() {
-        mPackage = "DSDummyValue";
-        mClass = "DSDummyValue";
     }
 
     /**

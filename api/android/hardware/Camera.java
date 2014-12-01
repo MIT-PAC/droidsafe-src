@@ -513,6 +513,7 @@ public final void setPreviewCallback(PreviewCallback cb) {
         // doing one-shot preview continuously.
         setHasPreviewCallback(cb != null, false);
         if (cb != null) {
+            //need to inject taint here!
             cb.onPreviewFrame(new byte[1], this);
         }
     }

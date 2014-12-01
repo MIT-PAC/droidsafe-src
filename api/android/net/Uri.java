@@ -78,15 +78,7 @@ public static Uri fromFile(File file) {
     
 public static Uri fromParts(String scheme, String ssp,
             String fragment) {
-        if (scheme == null) {
-            throw new NullPointerException("scheme");
-        }
-        if (ssp == null) {
-            throw new NullPointerException("ssp");
-        }
-
-        return new OpaqueUri(scheme, Part.fromDecoded(ssp),
-                Part.fromDecoded(fragment));
+        return new Uri(scheme + ssp + fragment);
     }
 
     /**
@@ -368,9 +360,9 @@ public static String decode(String s) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.507 -0500", hash_original_method = "39777FDE2593A579E76592A008126365", hash_generated_method = "F04C9A83020F5098114C752E2F7E0883")
     
 public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
-        Builder builder = baseUri.buildUpon();
-        builder = builder.appendEncodedPath(pathSegment);
-        return builder.build();
+        //ignore path segment for now
+        return new Uri(baseUri.uriString);
+
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.888 -0500", hash_original_field = "3844FFA99A999BB4EDDD7DE578438A79", hash_generated_field = "CFC1AACEA60AD0E5F3AD35D47126879D")
 
