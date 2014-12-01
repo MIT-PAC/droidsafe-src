@@ -48,4 +48,11 @@ public class DSUtils {
 		return intents;
 	}
     **/
+
+    /** 
+     * Used to inject taint of info kind constant in the API code
+     */
+    public static int dsGenerateTaint(String constant) {
+        return 0;
+    }
 }
