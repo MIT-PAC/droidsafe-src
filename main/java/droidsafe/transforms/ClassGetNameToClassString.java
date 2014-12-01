@@ -6,6 +6,9 @@ import droidsafe.utils.JimpleRelationships;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -18,6 +21,7 @@ import soot.jimple.AssignStmt;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
+import soot.jimple.spark.pag.ObjectSensitiveAllocNode;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.toolkits.pta.IClassConstantNode;
 import soot.jimple.Stmt;
@@ -54,7 +58,7 @@ public class ClassGetNameToClassString extends BodyTransformer {
             }
         }
     }
-    
+
     protected void internalTransform(Body b, String phaseName, Map options)  {
         StmtBody stmtBody = (StmtBody)b;
         // get body's unit as a chain
@@ -80,41 +84,63 @@ public class ClassGetNameToClassString extends BodyTransformer {
         AssignStmt assign = (AssignStmt)stmt;
         InvokeExpr invoke = (InvokeExpr)assign.getRightOp();
         try {
-            Collection<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(JimpleRelationships.v().getEnclosingMethod(stmt), stmt);
+            Set<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(JimpleRelationships.v().getEnclosingMethod(stmt), stmt);
 
             if (targets.size() != 1)
                 return false;
-            
-            //if we get here we have one target
-            for (SootMethod target : targets) {
-                //replace java.lang.Class.getName() with a string constant if possible
-                if ("<java.lang.Class: java.lang.String getName()>".equals(target.getSignature())) {
-                    InstanceInvokeExpr iie = (InstanceInvokeExpr) invoke;
-                    Set<? extends IAllocNode> nodes = PTABridge.v().getPTSetIns(iie.getBase());
-                    for(IAllocNode node : nodes) {
-                        if (!(node instanceof IClassConstantNode))
-                            return false;
+
+            SootMethod target = targets.iterator().next();
+
+            //replace java.lang.Class.getName() with a string constant if possible
+            if ("<java.lang.Class: java.lang.String getName()>".equals(target.getSignature())) {
+                logger.info("Found Class.getName() call {}", stmt);
+                InstanceInvokeExpr iie = (InstanceInvokeExpr) invoke;
+                Set<? extends IAllocNode> nodes = PTABridge.v().getPTSetIns(iie.getBase());
+                for(IAllocNode node : nodes) {
+                    if (!(node instanceof IClassConstantNode) && 
+                            !((node instanceof ObjectSensitiveAllocNode) && 
+                                    ((ObjectSensitiveAllocNode)node).getContextElement(0) instanceof IClassConstantNode)) {
+                        logger.info("Not class constant: {}", node);
+                        return false;
                     }
-    
-                    // add a local variable
-                    Local newLocal = Jimple.v().newLocal(LOCAL_PREFIX + LOCAL_ID++, RefType.v("java.lang.String"));
-                    stmtBody.getLocals().add(newLocal);
-                           
-                    for (IAllocNode node : nodes) {
-                        String name = ((IClassConstantNode)node).getClassConstant().getValue().replace("/", ".");
-                        StringConstant sc = StringConstant.v(name);
-                        JSAResultInjection.trackedStringConstants.add(sc);
-                        AssignStmt localAssign = Jimple.v().newAssignStmt(newLocal, sc);
-                        units.insertBefore(localAssign, stmt);
-                        assign.setRightOp(newLocal);
-                    }
-                    return true;
                 }
+
+                // add a local variable
+                Local newLocal = Jimple.v().newLocal(LOCAL_PREFIX + LOCAL_ID++, RefType.v("java.lang.String"));
+                stmtBody.getLocals().add(newLocal);
+
+                Set<String> nameStrings = new LinkedHashSet<String>();
+                
+                for (IAllocNode node : nodes) {
+                    IClassConstantNode ccNode;
+                    if (node instanceof IClassConstantNode)
+                        ccNode = ((IClassConstantNode)node);
+                    else {
+                        ccNode = (IClassConstantNode)((ObjectSensitiveAllocNode)node).getContextElement(0);
+                    }
+                        
+                    String name =                    
+                            ccNode.getClassConstant().getValue().replace("/", ".");
+                    nameStrings.add(name);
+                }
+                
+                for (String name : nameStrings) {                
+                    StringConstant sc = StringConstant.v(name);
+                    JSAResultInjection.trackedStringConstants.add(sc);
+                    AssignStmt localAssign = Jimple.v().newAssignStmt(newLocal, sc);
+                    units.insertBefore(localAssign, stmt);
+                    assign.setRightOp(newLocal);
+                    logger.info("Replacing class.getName() with string {} {}", stmt, name);
+
+                }
+                
+                return true;
             }
+
         } catch (Exception e) {
             logger.error("Something wrong, ignoring: ", e);
         }
-        
+
         return false;
     }
 }
