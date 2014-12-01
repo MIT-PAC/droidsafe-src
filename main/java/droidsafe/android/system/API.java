@@ -4,7 +4,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.LineNumberReader;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -24,6 +26,10 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
+import soot.jimple.spark.pag.ObjectSensitiveAllocNode;
+import soot.jimple.toolkits.pta.IAllocNode;
+import soot.jimple.toolkits.pta.IClassConstantNode;
+import soot.jimple.toolkits.pta.IStringConstantNode;
 import soot.tagkit.AnnotationArrayElem;
 import soot.tagkit.AnnotationElem;
 import soot.tagkit.AnnotationEnumElem;
@@ -275,8 +281,52 @@ public class API {
         //old load classification code from config_files/system_calls.txt
         //now we classify based on the annotation DSModeled
         //loadClassification();
+        
+        //createFlowDroidSrcsSinksFile();      
     }
 
+    private void createFlowDroidSrcsSinksFile() {
+        Set<String> sourceMethods = new LinkedHashSet<String>();
+        Set<String> sinkMethods = new LinkedHashSet<String>();
+        
+        for (SootMethod src : srcsMapping.keySet()) {
+            for (SootClass subClz : SootUtils.getChildrenIncluding(src.getDeclaringClass())) {
+                String sig = "<" + subClz.getName() + ": " + src.getSubSignature() + ">";
+                sourceMethods.add(sig);
+            }
+        }
+        
+        for (SootMethod sink : sinksMapping.keySet()) {
+            for (SootClass subClz : SootUtils.getChildrenIncluding(sink.getDeclaringClass())) {
+                String sig = "<" + subClz.getName() + ": " + sink.getSubSignature() + ">";
+                sinkMethods.add(sig);
+            }
+        }
+        
+        
+        try {            
+            PrintWriter pw = new PrintWriter(new FileWriter(Project.v().getOutputDir() + File.separator + "SourcesAndSinks.txt"));
+            
+            for (String method : sourceMethods) {
+                pw.println(method + " -> _SOURCE_");
+            }
+            
+            for (String method : sinkMethods) {
+                pw.println(method + " -> _SINK_");
+            }
+            
+            
+            pw.flush();
+            pw.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        
+    
+    }
+    
     /**
      * Add the given class to the list of system classes.  Used when new classes are created.
      */
