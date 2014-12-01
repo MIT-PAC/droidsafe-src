@@ -101,7 +101,7 @@ public Throwable() {
     
 public Throwable(String detailMessage) {
         this();
-        this.detailMessage = new String();
+        this.detailMessage = detailMessage;  //new String();
     }
 
     /**
@@ -119,7 +119,7 @@ public Throwable(String detailMessage) {
     
 public Throwable(String detailMessage, Throwable throwable) {
         this();
-        this.detailMessage = new String();
+        this.detailMessage = detailMessage;//new String();
         cause = throwable;
     }
 
