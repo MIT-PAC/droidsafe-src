@@ -579,7 +579,10 @@ public final void setPreviewCallbackWithBuffer(PreviewCallback cb) {
         mWithBuffer = true;
         setHasPreviewCallback(cb != null, true);
         if (cb != null) {
-            cb.onPreviewFrame(new byte[1], this);
+	     //need to inject taint here!
+            byte[] b = new byte[1];
+            b[0] = (byte)droidsafe.helpers.DSUtils.dsGenerateTaint("CAMERA");
+            cb.onPreviewFrame(b, this);
         }
     }
 
