@@ -1,8 +1,12 @@
 package droidsafe.speclang;
 
+import droidsafe.analyses.infoflow.InfoValue;
+import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
+import droidsafe.main.Config;
 import droidsafe.utils.SourceLocationTag;
 
 import java.io.File;
@@ -12,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -28,8 +33,18 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Local;
+import soot.PrimType;
 import soot.SootMethod;
+import soot.Value;
+import soot.VoidType;
 import soot.jimple.InvokeExpr;
+import soot.jimple.Jimple;
+import soot.jimple.ReturnStmt;
+import soot.jimple.Stmt;
+import soot.jimple.StmtBody;
+import soot.jimple.toolkits.pta.IAllocNode;
+import soot.util.Chain;
 
 
 /**
@@ -166,6 +181,11 @@ public class SecuritySpecification  {
             eventBlocks.get(inputEvent).add(outputEvent);
     }
 
+    public void addInputEvent(Method inputEvent) {
+        if (!eventBlocks.containsKey(inputEvent))
+            eventBlocks.put(inputEvent, new ArrayList<Method>());
+    }
+    
     /**
      * Add the outputevent to the input event's api call list.  Don't group methods.
      * 
@@ -213,6 +233,75 @@ public class SecuritySpecification  {
         return false;
     }
 
+    private String findAidlFlows(Method ie) {
+
+        if (!Config.v().infoFlow || !API.v().isAIDLCallback(ie.getSootMethod()))
+            return "";       
+        
+        //found a possible aidl callback
+        logger.info("Found aidl call, looking for flows that can escape: {}", ie.getSootMethod());
+
+        String sinkStr = " -> AIDL (" + ie.getSootMethod();
+        StringBuffer buf = new StringBuffer();
+        try {    
+            //find taints on args values (if references)
+            for (int i = 0; i < ie.getNumArgs(); i++) {
+                if (!PTABridge.v().isPointer(ie.getPTAInfo().getArgValue(i)))
+                    continue;
+
+                Set<InfoKind> argKinds = ie.getArgInfoKinds(i);
+
+                for (InfoKind argKind : argKinds) {
+                    buf.append("\t" + argKind + sinkStr + " on arg " + i + ")\n");
+                }
+            }
+
+            //find taints on return values
+            if (!ie.getSootMethod().getReturnType().equals(VoidType.v())) {
+                StmtBody stmtBody = (StmtBody)ie.getSootMethod().getActiveBody();
+                // get body's unit as a chain
+                Chain units = stmtBody.getUnits();
+                // get a snapshot iterator of the unit since we are going to mutate the chain when iterating over it.
+                Iterator stmtIt = units.snapshotIterator();
+
+                while (stmtIt.hasNext()) {
+                    Stmt stmt = (Stmt)stmtIt.next();
+                    if (stmt instanceof ReturnStmt) {
+                        ReturnStmt retStmt = (ReturnStmt)stmt;
+                        if (retStmt.getOp() instanceof Local) {
+                            Value retV = retStmt.getOp();
+                            Set<InfoValue> taints = null;
+                            if (PTABridge.v().isPointer(retV)) {
+                                taints = new LinkedHashSet<InfoValue>();
+                                for (IAllocNode node : PTABridge.v().getPTSet(retV, ie.getPTAInfo().getEdge().getTgt().context())) {
+                                    taints.addAll(InformationFlowAnalysis.v().getTaints(node, ie.getPTAInfo().getEdge().getTgt()));
+                                }                                
+                            } else if (retV instanceof Local && retV.getType() instanceof PrimType) {
+                                taints = 
+                                        InformationFlowAnalysis.v().getTaints(ie.getPTAInfo().getEdge().getTgt(), (Local)retV);
+                            } else {
+                                continue;
+                            }
+                                                     
+                            for (InfoValue iv : taints) {
+                                for (InfoKind ik : InfoKind.getSourceInfoKinds(iv)) {
+                                    buf.append("\t"+ ik + sinkStr + " on return value)\n");
+                                }
+                            }
+                        } else {
+                            logger.info("return value not local for return statement of aidl: {}", stmt );
+                        }
+                    }
+                        
+                }
+            }
+        } catch (Exception e) {
+            logger.warn("Error calculating AIDL Flows:", e);
+        }
+        
+        return buf.toString();        
+    }
+
     private String calculateHighlevelFlows() {
         Map<InvokeExpr, Set<InfoKind>> methodToSinks = new HashMap<InvokeExpr, Set<InfoKind>>();
         Map<InvokeExpr, Set<InfoKind>> methodToSources = new HashMap<InvokeExpr, Set<InfoKind>>();
@@ -220,46 +309,50 @@ public class SecuritySpecification  {
 
         List<Method> methods = new ArrayList<Method>(eventBlocks.keySet());
 
+        StringBuffer aidlFlows = new StringBuffer();
+        
         Collections.sort (methods);
         for (Method ie : methods) {
 
+            aidlFlows.append(findAidlFlows(ie));
+            
             List<Method> outm = new ArrayList<Method>(eventBlocks.get(ie));
             Collections.sort (outm);
 
             for (Method oe : outm) {
                 InvokeExpr invokeE = oe.getInvokeExpr();
-                
+
                 Set<InfoKind> sinks = oe.getSinkInfoKinds();
                 Set<InfoKind> sources = oe.getSourcesInfoKinds();
 
                 for (InfoKind srcKind : sources) {
                     if (! methodToSources.containsKey(invokeE))
                         methodToSources.put(invokeE, new HashSet<InfoKind>());
-                    
+
                     methodToSources.get(invokeE).add(srcKind);
                 }
 
                 for (InfoKind sinkKind : sinks) {
                     if (! methodToSinks.containsKey(invokeE))
                         methodToSinks.put(invokeE, new HashSet<InfoKind>());
-                    
+
                     methodToSinks.get(invokeE).add(sinkKind);
                 }
             }
         }
-        
+
         int highLevelFlows = 0;
         StringBuffer sb = new StringBuffer();
         for (InvokeExpr invokeE : methodToSinks.keySet()) {
             for (InfoKind sinkKind : methodToSinks.get(invokeE)) {
                 if (!methodToSources.containsKey(invokeE))
                     continue;
-                
+
                 for (InfoKind srcKind : methodToSources.get(invokeE)) {
                     sb.append("\t" + srcKind + " -> " + sinkKind + "\n");
                     highLevelFlows++;
                 }
-                       
+
             }
         }
 
@@ -273,6 +366,10 @@ public class SecuritySpecification  {
             out.close();
         }
         System.out.println("High Level Flows: " + highLevelFlows);
+        
+        //append aidl flows
+        sb.append(aidlFlows);
+        
         return sb.toString();
     }
 
@@ -288,7 +385,7 @@ public class SecuritySpecification  {
          */
 
         //keep a string of high level flows
-       
+
 
         List<Method> methods = new ArrayList<Method>(eventBlocks.keySet());
         Collections.sort (methods);
@@ -311,14 +408,14 @@ public class SecuritySpecification  {
                 //print out the method and flag unsupport (true arg to toString())
                 buf.append(oe.toString(true).replaceAll("\n", "\n\t") + ";\n\n");
 
-               
+
             }
 
             buf.append("}\n\n");
         }
 
         String highLevelFlows = "Flow Summary {\n" + calculateHighlevelFlows() + "}\n";
-        
+
         buf.insert(0, highLevelFlows);
 
         System.out.println("Num output events: " + numActions);

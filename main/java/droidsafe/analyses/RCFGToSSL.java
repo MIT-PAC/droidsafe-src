@@ -116,8 +116,15 @@ public class RCFGToSSL {
         for (RCFGNode node : rcfg.getNodes()) {
             logger.info("Converting rCFG Node: " + node);
             Method ie = makeInputEventMethod(node);
+            
+            if (API.v().isAIDLCallback(ie.getSootMethod()))
+                spec.addInputEvent(ie);
+            
             for (OutputEvent oe : node.getOutputEvents())
                 spec.addOutputEventToInputEvent(ie, methodsFromOutputEvent(oe));
+            
+            
+            
         }
     }
 

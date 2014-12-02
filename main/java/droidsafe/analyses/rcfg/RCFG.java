@@ -186,6 +186,13 @@ public class RCFG  {
                     //now we have an entry point
                     //find all reachable user code from method
                     //for each method call, see if it is an api call
+                    
+                    //add ie for aidl callback no matter if there are sensitive calls
+                    if (API.v().isAIDLCallback(sootMethod)) {
+                        //this will create the rcfgnode
+                        getNodeForEntryEdge(incomingEdge);
+                    }
+                    
                     findOutputEventsForEventEdge(incomingEdge);
                 }
             }

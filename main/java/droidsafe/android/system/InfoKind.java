@@ -140,32 +140,6 @@ public  class InfoKind implements InfoValue {
         return sinkKinds;
     }
     
-    /**
-     * Given a value from the invoke statement (either receiver or an argument), query the 
-     * information flow for the units the flow to it, and then use the PTA to find all the targets
-     * of the sink statements to see if any of them have higher level sink InfoKind associated with them.
-     * Return the set of all InfoKinds for the targets of all sinks.
-     */
-    public static Set<InfoKind> getSinkInfoKinds(InfoValue iv) {
-
-        Set<InfoKind> sinkKinds = new HashSet<InfoKind>();
-
-        if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt) {
-
-            Stmt stmt = (Stmt)((InfoUnit)iv).getUnit();
-
-           sinkKinds = getSinkInfoKinds(stmt);
-
-        } else if (iv instanceof InfoKind) {
-            sinkKinds.add((InfoKind)iv);
-        } else {
-            logger.warn("Strange info value: {} {}", iv, iv.getClass());
-        }
-
-
-        return sinkKinds;
-    }
-    
     
     /** 
      * Given a string return (or create and return) the InfoKind object that

@@ -92,6 +92,10 @@ public class Method implements Comparable<Method> {
         cacheRecInfoFlows();
     }
 
+    public PTAMethodInformation getPTAInfo() {
+        return ptaInfo;
+    }
+    
     /**
      * Call this method to check if the target method is a synthetic method in a user class, and if so,
      * find the real target through the synthetic method.  This is used to report correct line numbers
