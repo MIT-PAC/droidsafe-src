@@ -65,11 +65,11 @@ import soot.jimple.toolkits.callgraph.TransitiveTargets;
 import soot.jimple.toolkits.callgraph.VirtualCalls;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
-
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
+import droidsafe.transforms.NativeMethodBuilder;
 import droidsafe.transforms.UnmodeledGeneratedClasses;
 import droidsafe.utils.SootUtils;
 
@@ -935,6 +935,7 @@ public class InformationFlowAnalysis {
                 }
             }
         }
+
         for (MethodOrMethodContext callerMethodContext : callerMethodContexts) {
             Context callerContext = callerMethodContext.context();
             if (ignoreContext(callerContext)) {
@@ -948,13 +949,65 @@ public class InformationFlowAnalysis {
                     continue;
                 }
                 SootMethod calleeMethod = calleeMethodContext.method();
-                if (calleeMethod.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(calleeMethod))) {
+                if (calleeMethod.hasActiveBody() && !(SootUtils.isRuntimeStubMethod(calleeMethod)) && !(NativeMethodBuilder.v().wasNativeAppMethod(calleeMethod))) {
                     HashSet<InfoValue>[] argumentValues = contextToArguments.get(calleeContext);
                     Local[] parameterLocals = getParameterLocals(calleeMethod);
                     for (int i = 0; i < parameterLocals.length; i++) {
                         Local local = parameterLocals[i]; 
                         if (!(local.getType() instanceof RefLikeType)) {
                             state.locals.putW(calleeContext, parameterLocals[i], argumentValues[i]);
+                        }
+                    }
+                }
+            }
+        }
+
+        if (stmt instanceof AssignStmt) {
+            Local lLocal = (Local)((AssignStmt)stmt).getLeftOp();
+            Type lLocalType = lLocal.getType();
+            if (lLocalType instanceof PrimType ||
+                (lLocalType instanceof ArrayType && ((ArrayType)lLocalType).getElementType() instanceof PrimType)) {
+                for (MethodOrMethodContext callerMethodContext : callerMethodContexts) {
+                    Context callerContext = callerMethodContext.context();
+                    if (ignoreContext(callerContext)) {
+                        continue;
+                    }
+                    List<Edge> callEdges = PTABridge.v().outgoingEdges(callerMethodContext, stmt);
+                    for (Edge callEdge : callEdges) {
+                        MethodOrMethodContext calleeMethodContext = callEdge.getTgt();
+                        Context calleeContext = calleeMethodContext.context();
+                        if (ignoreContext(calleeContext)) {
+                            continue;
+                        }
+                        SootMethod calleeMethod = calleeMethodContext.method();
+                        if (NativeMethodBuilder.v().wasNativeAppMethod(calleeMethod)) {
+                            HashSet<InfoValue> values = new HashSet<InfoValue>();
+                            for (int i = 0; i < argumentCount; i++) {
+                                Immediate argImmediate = (Immediate)argumentImmediates.get(i);
+                                Type argType = argImmediate.getType();
+                                if (argType instanceof PrimType) {
+                                    ImmutableSet<InfoValue> vs = evaluate(callerContext, argImmediate, state.locals);
+                                    values.addAll(vs);
+                                } else if (argType instanceof ArrayType && ((ArrayType)argType).getElementType() instanceof PrimType) {
+                                    Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
+                                    for (IAllocNode allocNode : allocNodes) {
+                                        ImmutableSet <InfoValue> vs = state.instances.get(allocNode, this.objectUtils.taint);
+                                        values.addAll(vs);
+                                        vs = state.arrays.get(allocNode);
+                                        values.addAll(vs);
+                                    }
+                                }
+                            }
+                            if (lLocalType instanceof PrimType) {
+                                state.locals.putW(callerContext, lLocal, values);
+                            } else {
+                                ImmutableSet<InfoValue> vs = ImmutableSet.copyOf(values);
+                                Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, callerContext);
+                                for (IAllocNode allocNode : allocNodes) {
+                                    state.instances.putW(allocNode, this.objectUtils.taint, vs);
+                                    state.arrays.putW(allocNode, vs);
+                                }
+                            }
                         }
                     }
                 }
