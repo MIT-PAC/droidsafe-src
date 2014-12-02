@@ -71,6 +71,10 @@ public class NativeMethodBuilder {
         }
     }
     
+    public boolean wasNativeAppMethod(SootMethod method) {
+        return wasNative.contains(method);
+    }
+    
     private void buildBody(SootMethod method) {
         //create new body that just returns a new string
         Body newBody = Jimple.v().newBody();
