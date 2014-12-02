@@ -97,7 +97,7 @@ public class NativeMethodBuilder {
         logger.info("Implementing app native method: {}", method);
         //turn off native modifier
         method.setModifiers(method.getModifiers() ^ soot.Modifier.NATIVE);
-        
+        newBody.setMethod(method);
         method.setActiveBody(newBody);
         wasNative.add(method);
        
