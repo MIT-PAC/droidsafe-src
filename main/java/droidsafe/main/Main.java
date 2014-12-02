@@ -47,6 +47,7 @@ import droidsafe.transforms.ClassGetNameToClassString;
 import droidsafe.transforms.InsertUnmodeledObjects;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
+import droidsafe.transforms.NativeMethodBuilder;
 import droidsafe.transforms.ObjectGetClassToClassConstant;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.transforms.va.VATransformsSuite;
@@ -204,6 +205,16 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
+        driverMsg("Implementing native methods.");
+        monitor.subTask("Implementing native methods.");
+        NativeMethodBuilder.v().run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+
+        
+        
         driverMsg("Create tags for the overriden system methods in user code.");
         monitor.subTask("Create tags for overriden system methods");
         TagImplementedSystemMethods.run();

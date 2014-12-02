@@ -53,7 +53,7 @@ public class UnmodeledGeneratedClasses {
 
     public static final String DUMMY_FIELD_PREFIX = "__DUMMY_FIELD_";
 
-    private static final String noArgConsSubSig = "void <init>()";
+    public static final String noArgConsSubSig = "void <init>()";
 
     private SootClass dummyClass;
 
@@ -334,7 +334,7 @@ public class UnmodeledGeneratedClasses {
     /**
      * Create a no arg constructor either by cloning super's no arg constructor (if exists) or creating an empty
      */
-    private void installNoArgConstructor(SootClass clone) {
+    public static void installNoArgConstructor(SootClass clone) {
         boolean cloned = false;
         
         if (clone.declaresMethod("void <init>()"))
