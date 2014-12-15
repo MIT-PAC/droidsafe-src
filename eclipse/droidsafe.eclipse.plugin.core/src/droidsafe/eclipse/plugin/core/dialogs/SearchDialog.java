@@ -16,11 +16,13 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
@@ -60,7 +62,7 @@ public class SearchDialog extends Dialog {
 
     public SearchDialog(Shell parentShell, DroidsafeInfoOutlineViewPart viewPart) {
         super(parentShell);
-        setShellStyle(SWT.APPLICATION_MODAL);
+        setShellStyle(SWT.MODELESS); // SWT.APPLICATION_MODAL
         this.viewPart = viewPart;
         this.labelProvider = viewPart.getLabelProvider();
         this.contentProvider = viewPart.getContentProvider();
@@ -166,17 +168,22 @@ public class SearchDialog extends Dialog {
     }
 
     protected void resetSearch() {
-        if (searchString != null && searchResult != null) {
-            labelProvider.setSearchString(null);
-            labelProvider.setSearchElement(null);
-            if (!searchResult.isEmpty())
-                updateTreeViewer(searchResult);
-        }
-    }
+    	if (searchString != null && searchResult != null) {
+    		labelProvider.setSearchString(null);
+    		labelProvider.setSearchElement(null);
+    		if (!searchResult.isEmpty())
+    			updateTreeViewer(searchResult);
+    	}
+   }
 
     private void updateTreeViewer(List<Object> elements) {
         for (Object element: elements) {
-            treeViewer.update(element, null);
+        	// expanding parent before calling treeViewer.reveal(element) seems to avoid a problem
+        	// with the reveal call
+        	TreeElement<?, ?> parent = ((TreeElement<?,?>)element).getParent();
+        	if (parent != null)
+        		treeViewer.setExpandedState(parent, true);
+        	treeViewer.update(element, null);
         }
     }
     
@@ -197,10 +204,18 @@ public class SearchDialog extends Dialog {
             resetSearch();
             computeSearchResult(newSearchString);
             if (!searchResult.isEmpty()) {
+                final Object element = searchResult.get(searchIndex);
                 labelProvider.setSearchString(searchString);
-                labelProvider.setSearchElement(searchResult.get(searchIndex));
+                labelProvider.setSearchElement(element);
                 updateTreeViewer(searchResult);
-                treeViewer.reveal(searchResult.get(0));
+                // calling reveal in a background thread seems to avoid a problem
+                // with the element not revealed when scrolling is required
+                final Runnable reveal = new Runnable() {
+                    public void run() {
+                      treeViewer.reveal(element);
+                    }
+                  };
+                  Display.getDefault().asyncExec(reveal);
             }
          }
         updateStatusLabel();
