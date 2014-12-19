@@ -110,10 +110,10 @@ public class CallBackModeling {
         });
         
         for (SootClass clz : sortedClasses) {
-            if (!clz.isInterface() && Hierarchy.isAndroidComponentClass(clz) && !Harness.v().hasCreatedField(clz) &&
+            if (!clz.isInterface() && Hierarchy.inheritsFromAndroidBroadcastReceiver(clz) && !Harness.v().hasCreatedField(clz) &&
                     Project.v().isSrcClass(clz) && Resources.v().getManifest().isEnabled(clz)) {
                 //found component that is not allocated, should we call is??
-                logger.warn("Found component not in manifest and not created in code: {}. Adding modeling.", 
+                logger.warn("Found BroadcastReceiver not in manifest and not created in code: {}. Adding modeling.", 
                     clz);                               
                 
                 Harness.v().createComponentsNotInManifest(clz);

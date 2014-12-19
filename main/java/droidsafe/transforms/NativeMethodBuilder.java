@@ -1,8 +1,10 @@
 package droidsafe.transforms;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -83,7 +85,7 @@ public class NativeMethodBuilder {
         for (int i = 0; i < method.getParameterCount(); i++) {
             Local p = Jimple.v().newLocal("_$native_builder_" + localID++, method.getParameterType(i));
             newBody.getLocals().add(p);
-            newBody.getUnits().add(Jimple.v().newIdentityStmt(p, Jimple.v().newParameterRef(method.getParameterType(i), i)));
+            newBody.getUnits().add(Jimple.v().newIdentityStmt(p, Jimple.v().newParameterRef(method.getParameterType(i), i)));            
         }
         
         //return new value
