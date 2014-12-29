@@ -51,8 +51,8 @@ public class Config {
     public PointsToAnalysisPackage POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.SPARK;
 
     public static final Set<String> TARGETS = new LinkedHashSet<String>(Arrays.asList("specdump",
-            "confcheck"));
-
+            "confcheck", "errorhandling"));
+   
     /** Value analysis depth for following fields when printing */
     public static final int VA_PRINTING_LEVEL = 3;
 
@@ -442,6 +442,7 @@ public class Config {
              
         Option target =
                 OptionBuilder.withArgName("target").hasArg().withDescription("Target pass to run")
+                .withLongOpt("target")
                 .create("t");
         options.addOption(target);
 

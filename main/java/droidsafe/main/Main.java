@@ -3,6 +3,7 @@ package droidsafe.main;
 import au.com.bytecode.opencsv.CSVWriter;
 import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
+import droidsafe.analyses.errorhandling.ErrorHandlingAnalysis;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.interapp.GenerateInterAppSourceFlows;
@@ -283,7 +284,13 @@ public class Main {
             if (monitor.isCanceled())
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
+        
+        System.out.println(Config.v().target);
+        if (Config.v().target.equals("errorhandling")) {
+            ErrorHandlingAnalysis.v().run(monitor);
+            return DroidsafeExecutionStatus.OK_STATUS;
+        }
+        
         //run jsa after we inject strings from XML values and layout
         //does not need a pta run before
         driverMsg("Starting String Analysis...");
@@ -893,7 +900,7 @@ public class Main {
     /**
      * Dump jimple files for all application classes.
      */
-    private static void writeAllAppClasses() {
+    public static void writeAllAppClasses() {
         for (SootClass clz : Scene.v().getClasses()) {
             if (clz.isApplicationClass() /* && Project.v().isSrcClass(clz.toString()) */) {
                 SootUtils.writeByteCodeAndJimple(

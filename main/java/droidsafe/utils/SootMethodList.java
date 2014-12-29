@@ -88,7 +88,7 @@ public class SootMethodList implements Iterable<SootMethod>{
 	 * method list given polymorphism.
 	 */
 	public SootMethod getMethod(SootMethod method) {
-		logger.debug("Calling getMethod() with {}", method);
+		//logger.debug("Calling getMethod() with {}", method);
 		//return the method if the direct method exists
 		if (methods.contains(method)) 
 			return method;
@@ -106,6 +106,9 @@ public class SootMethodList implements Iterable<SootMethod>{
 				method.getReturnType().toString(), method.getParameterCount());
 
 		for (SootMethod possible : possibleMethods) {
+		    if (!this.contains(possible))
+		        continue;
+		    
 			boolean allTrue = true;
 			for (int i = 0; i < method.getParameterCount(); i++) {	
 				boolean subType = SootUtils.isSubTypeOfIncluding(method.getParameterType(i), possible.getParameterType(i));
@@ -115,7 +118,7 @@ public class SootMethodList implements Iterable<SootMethod>{
 				}
 
 			}
-			if (allTrue && this.contains(possible)) {
+			if (allTrue) {
 				//if we get here, method name, return type, and args all match
 				//and it is in this list
 				return possible;
