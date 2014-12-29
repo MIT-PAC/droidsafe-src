@@ -341,7 +341,8 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
      */
     @DSComment("Java language reflection")
     @DSSpec(DSCat.REFLECTION)
-    
+    @DSSink(DSSinkKind.REFLECTION)
+    @DSSource({DSSourceKind.REFLECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.294 -0500", hash_original_method = "7AE3BC00249CC99885BB0445C93FB18A", hash_generated_method = "81AB090C4B0E06E8EAE64B54F604EA2C")
     
 public Object get(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -1054,12 +1055,13 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.775 -0400", hash_original_method = "2E771D0497C584665EAFE5039BCB9B58", hash_generated_method = "5DD6344BFC9E3A8D7857167F9BE20F54")
     private Object getField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck) throws IllegalAccessException {
-    	addTaint(o.getTaint());
-    	addTaint(declaringClass.getTaint());
-    	addTaint(type.getTaint());
-    	addTaint(slot);
-    	addTaint(noAccessCheck);
-    	return new Object();
+    	// addTaint(o.getTaint());
+    	// addTaint(declaringClass.getTaint());
+    	// addTaint(type.getTaint());
+    	// addTaint(slot);
+    	// addTaint(noAccessCheck);
+    	// return new Object();
+        return null;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.367 -0500", hash_original_method = "E4CBB65FF20F2B42AAAA5852C9FC84C9", hash_generated_method = "7D4CC84E642A9B8F84899FF8124D047E")

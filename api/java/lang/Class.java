@@ -191,9 +191,10 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSComment("Package priviledge")
     @DSSafe(DSCat.SAFE_LIST)
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
-    	Field[] ret = new Field[0];
+    	Field[] ret = new Field[1];
         //    	ret.addTaint(clazz.getTaint());
     	//ret.addTaint(publicOnly);
+        ret[0] = new Field();
     	return ret;
     }
     
