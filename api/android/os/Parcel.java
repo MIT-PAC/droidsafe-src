@@ -20,6 +20,7 @@ public final class Parcel {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.OS_STATE})
     public static Parcel obtain(){
 		return new Parcel(0);
 		// Original method
@@ -257,7 +258,7 @@ public String[] newArray(int size) {
     private boolean[] mValueBooleanArray;
     
     // orphaned legacy field
-    private IBinder mValueIBinder;
+    public IBinder mValueIBinder;
     
     // orphaned legacy field
     private List<String> mValueStringList;

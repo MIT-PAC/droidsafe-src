@@ -270,6 +270,10 @@ public final boolean transact(int code, Parcel data, Parcel reply,
         if (reply != null) {
             reply.setDataPosition(0);
         }
+        this.addTaint(data.getTaint());
+        this.addTaint(reply.getTaint());
+        data.mValueIBinder = this;
+        reply.mValueIBinder = this;
         return r;
     }
     
