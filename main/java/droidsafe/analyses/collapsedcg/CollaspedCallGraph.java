@@ -15,6 +15,7 @@ import org.jgrapht.graph.DirectedMultigraph;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.jgrapht.traverse.BreadthFirstIterator;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Harness;
 import droidsafe.android.system.API;
@@ -25,6 +26,18 @@ import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 
+/**
+ * This class represents the call grpah after a pta run is performed.  It is an overlay 
+ * for the soot call graph that does not include API methods, but shortcuts edges between app methods
+ * through the api.  For example if USER_A -> API_M -> USER_B, where USER_A and USER_B, are user methods, 
+ * and API_M is an api method, then the collapsed call graph will have an edge from USER_A to USER_B, but 
+ * API_M is not in the graph.
+ * 
+ * To create the graph use the sequence of reset() and v().
+ *  
+ * @author mgordon
+ *
+ */
 public class CollaspedCallGraph {
     private final static Logger logger = LoggerFactory.getLogger(CollaspedCallGraph.class);
     
@@ -53,7 +66,7 @@ public class CollaspedCallGraph {
         return v;
     }
     
-    public void reset() {
+    public static void reset() {
         v = null;
     }
     
@@ -194,6 +207,13 @@ public class CollaspedCallGraph {
                 }
             }
         }
+    }
+    
+    public BreadthFirstIterator<SootMethod,StmtEdge> getBreadthFirstTraversalFrom(SootMethod startVertex) {
+        BreadthFirstIterator<SootMethod,StmtEdge> bfi = 
+                new BreadthFirstIterator<SootMethod,StmtEdge>(callgraph, startVertex);
+        
+        return bfi;
     }
     
     public Set<StmtEdge> getAllThroughAPIEdges() {
