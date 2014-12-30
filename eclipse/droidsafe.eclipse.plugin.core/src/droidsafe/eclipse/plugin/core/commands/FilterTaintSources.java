@@ -50,10 +50,24 @@ import droidsafe.speclang.model.IModelChangeSupport;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 
+/**
+ * Command for specifying filters for tainted data to be displayed in the Java editor.
+ * 
+ * @author gilham
+ *
+ */
 public class FilterTaintSources extends AbstractHandler {
 	
-	private TaintSoucesContentProvider fContentProvider;
+	/**
+	 * The taint sources content provider that provides the tree contents for the tainted data filtering 
+	 * selection dialog.
+	 */
+	private TaintSourcesContentProvider fContentProvider;
 
+	/**
+	 * Command implementation. Presents a tree selection dialog for the user to select source kinds and
+	 * source units to be displayed in the Java editor.
+	 */
 	@Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
         IEditorPart editor = DroidsafePluginUtilities.getActiveEditor();
@@ -61,7 +75,7 @@ public class FilterTaintSources extends AbstractHandler {
         	IProject project = DroidsafePluginUtilities.getProcessedDroidsafeProjectForEditor(editor);
         	if (project != null) {
         		ProjectMarkerProcessor taintMarkerProcessor = ProjectMarkerProcessor.get(project);
-        		Map<String,Set<CallLocationModel>> taintKinds = taintMarkerProcessor.getTaintKinds();
+        		Map<String,Set<CallLocationModel>> taintKinds = taintMarkerProcessor.getTaintSourcesMap();
         		Map<String,Set<CallLocationModel>> filteredTaintKinds = taintMarkerProcessor.getFilteredTaintSourcesMap();
         		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
         		CheckedTreeSelectionDialog selectionDialog =
@@ -101,27 +115,64 @@ public class FilterTaintSources extends AbstractHandler {
         return null;
     }
 	
+	/**
+	 * Returns the taint sources content provider for the tainted data filtering selection diaglog
+	 * 
+	 * @param project - the currently selected project in which the tainted data are to be filtered
+	 * @return the taint sources content provider
+	 */
 	private ITreeContentProvider getContentProvider(IProject project) {
 		if (fContentProvider == null) {
-			fContentProvider = new TaintSoucesContentProvider();
+			fContentProvider = new TaintSourcesContentProvider();
 		}
 		fContentProvider.init(project);
 		return fContentProvider;
 	}
 
+	/**
+	 * Returns the initially selected tree elements in the taint sources filter dialog.
+	 * 
+	 * @return the initial selection
+	 */
 	private List getInitialSelection() {
 		return fContentProvider.getInitialSelection();
 	}
 
+    /**
+     * Returns the expanded tree elements in the taint sources filter dialog.
+     * 
+     * @return the expanded elements
+     */
     private Object[] getExpandedElements() {
     	return fContentProvider.getExpandedElements();
 	}
 
-	class TaintSoucesContentProvider extends DroidsafeInfoTreeElementContentProvider {
+	/**
+	 * Provides the tree contents for the taint sources filters.
+	 * 
+	 * @author gilham
+	 *
+	 */
+	class TaintSourcesContentProvider extends DroidsafeInfoTreeElementContentProvider {
 
+        /**
+         * The currently selected project in which the tainted data are to be filtered
+         */
         private IProject fProject;
+        
+        /**
+         * The root elements of the tree contents
+         */
         private Object[] fRoots;
+
+        /**
+         * A map from info source kind to the corresponding info sources.
+         */
         private Map<String, Set<CallLocationModel>> fTaintSourcesMap;
+
+        /**
+         * A map from filtered info source kind to the corresponding filtered info sources.
+         */
         private Map<String, Set<CallLocationModel>> fFilteredTaintSourcesMap;
         
         @Override
@@ -161,15 +212,24 @@ public class FilterTaintSources extends AbstractHandler {
 		protected void reset() {
 		}
 
+		/**
+		 * Initializes the taint sources content provider for the given project.
+		 * @param project - the project
+		 */
 		void init(IProject project) {
             fProject = project;
 			ProjectMarkerProcessor markerProcessor = ProjectMarkerProcessor.get(fProject);
-			fTaintSourcesMap = markerProcessor.getTaintKinds();
+			fTaintSourcesMap = markerProcessor.getTaintSourcesMap();
 			fFilteredTaintSourcesMap = markerProcessor.getFilteredTaintSourcesMap();
 			fRoots = initializeRoots();
 		}
 		
 		
+		/**
+		 * Returns the expanded tree elements.
+		 * 
+		 * @return the expanded elements
+		 */
 		Object[] getExpandedElements() {
 			List<Object> toExpand = new ArrayList<Object>();
 			for (Object root: getElements(fProject)) {
@@ -186,6 +246,11 @@ public class FilterTaintSources extends AbstractHandler {
 			return toExpand.toArray(new Object[0]);
 		}
 
+		/**
+		 * Returns the list of initially selected elements.
+		 * 
+		 * @return initially selected elements
+		 */
 		List getInitialSelection() {
 			List<Object> initialSelection = new ArrayList<Object>();
 			for (Object root: getElements(fProject)) {

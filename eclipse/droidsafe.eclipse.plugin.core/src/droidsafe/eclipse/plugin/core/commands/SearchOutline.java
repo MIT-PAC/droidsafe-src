@@ -11,10 +11,18 @@ import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 
+/**
+ * Command for searching text in a droidsafe outline.
+ * 
+ * @author gilham
+ *
+ */
 public class SearchOutline extends AbstractHandler {
 
-    public static final String COMMAND_ID = "droidsafe.eclipse.plugin.core.commands.SearchOutline";
-
+	/**
+	 * Command implementation. Presents a search dialog for the user to enter search string and to
+	 * navigate the results.
+	 */
     @Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
         IWorkbenchPart view = HandlerUtil.getActivePart(event);

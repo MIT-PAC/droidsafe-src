@@ -10,14 +10,18 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.CompoundContributionItem;
 
-public class TypeVisibilityMenu extends CompoundContributionItem {
+/**
+ * A dynamic menu for type visibility control. The menu contains a check list of
+ * element types in the indicator.
+ * 
+ * @author gilham
+ *
+ */
+public class DynamicTypeVisibilityMenu extends CompoundContributionItem {
 
+    /** The contribution items when there are no visibility control in the project. */
     static IContributionItem[] NO_VISIBILITY_CONTROL;
     
     static {
@@ -30,9 +34,11 @@ public class TypeVisibilityMenu extends CompoundContributionItem {
         };
     }
     
-    @Override
+    /* (non-Javadoc)
+     * @see org.eclipse.ui.actions.CompoundContributionItem#getContributionItems()
+     */
     protected IContributionItem[] getContributionItems() {
-        final IndicatorViewPart view = getView();
+        final IndicatorViewPart view = Utils.getIndicatorView();
         if (view == null)
             return new IContributionItem[0];
 
@@ -41,10 +47,10 @@ public class TypeVisibilityMenu extends CompoundContributionItem {
         if (visibilityMap.isEmpty())
             return NO_VISIBILITY_CONTROL;
         
-        Set<String> fields = visibilityMap.keySet();
-        IContributionItem[] items = new IContributionItem[fields.size()];
+        Set<String> types = visibilityMap.keySet();
+        IContributionItem[] items = new IContributionItem[types.size()];
         int i = 0;
-        for (final String field: fields) {
+        for (final String type: types) {
             items[i++] = new ContributionItem() {
 
                 /*
@@ -55,17 +61,17 @@ public class TypeVisibilityMenu extends CompoundContributionItem {
                  */
                 public void fill(Menu menu, int index) {
                     MenuItem item = new MenuItem(menu, SWT.CHECK);
-                    item.setText(field);
-                    item.addListener(SWT.Selection, getMenuItemListener(field, view));
-                    item.setSelection(view.getVisibility(field));
+                    item.setText(type);
+                    item.addListener(SWT.Selection, getMenuItemListener(type, view));
+                    item.setSelection(view.getVisibility(type));
                 }
 
                 /**
-                 * Return the menu item listener for selection of a filter.
+                 * Returns the menu item listener for checking/unchecking a type visibility control.
                  * 
-                 * @param type
-                 * @param view
-                 * @return Listener
+                 * @param type - the type
+                 * @param view - the indicator outline view
+                 * @return the listener
                  */
                 private Listener getMenuItemListener(final String type,
                                                      final IndicatorViewPart view) {
@@ -88,26 +94,6 @@ public class TypeVisibilityMenu extends CompoundContributionItem {
 
         return items;
 
-    }
-
-    /**
-     * Get the view this contribution is working on.
-     * 
-     * @return JsonViewPart or <code>null</code> if the active view isn't a JsonViewPart
-     */
-    IndicatorViewPart getView() {
-        IWorkbenchWindow active = PlatformUI.getWorkbench()
-                .getActiveWorkbenchWindow();
-        if (active == null)
-            return null;
-        IWorkbenchPage page = active.getActivePage();
-        if (page == null)
-            return null;
-        IWorkbenchPart part = page.getActivePart();
-        if (!(part instanceof IndicatorViewPart))
-            return null;
-
-        return (IndicatorViewPart) part;
     }
 
 }

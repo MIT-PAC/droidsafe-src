@@ -9,13 +9,14 @@ import org.eclipse.jface.viewers.Viewer;
 import droidsafe.speclang.model.SecuritySpecModel;
 
 /**
- * Content provider for the tree structure of the points-to outline view.
+ * Content provider for the tree structure of the security spec outline view.
  * 
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
 abstract public class SpecInfoTreeElementContentProvider extends DroidsafeInfoTreeElementContentProvider {
 
+    /** A map from input objects to the corresponding arrays of root elements. */
     protected Map<Object, Object[]> inputToRoots = new HashMap<Object, Object[]>();
 
     /** The droidsafe security spec to be displayed in the outline view */
@@ -37,7 +38,7 @@ abstract public class SpecInfoTreeElementContentProvider extends DroidsafeInfoTr
     }
 
     /**
-     * Reset the content of this content provider.
+     * Resets the content of this content provider.
      */
     @Override
     protected void reset() {

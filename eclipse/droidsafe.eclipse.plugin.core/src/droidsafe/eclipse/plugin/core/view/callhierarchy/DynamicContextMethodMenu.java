@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view.callgraph;
+package droidsafe.eclipse.plugin.core.view.callhierarchy;
 
 import java.io.File;
 import java.util.List;
@@ -31,21 +31,28 @@ import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 import droidsafe.speclang.model.MethodModel;
 
-public class ContextMethodMenu extends CompoundContributionItem {
+/**
+ * A dynamic context menu for tree elements in the call hierarchy view. 
+ * The menu contains method models corresponding to the tree element.
+ * 
+ * @author gilham
+ *
+ */
+public class DynamicContextMethodMenu extends CompoundContributionItem {
 
     @Override
     protected IContributionItem[] getContributionItems() {
     	IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
     	if (page != null) {
     		IWorkbenchPart part = page.getActivePart();
-    		if (part != null && part instanceof CallGraphViewPart) {
-    			CallGraphViewPart callGraphViewPart = (CallGraphViewPart) part;
+    		if (part != null && part instanceof CallHierarchyViewPart) {
+    			CallHierarchyViewPart callHierarchyViewPart = (CallHierarchyViewPart) part;
     			ISelection selection = page.getSelection();
     			if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
     				Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
     				if (selectedNode instanceof TreeElement<?, ?>) {
     					TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
-    					Set<MethodModel> methods = callGraphViewPart.getMethodModels(treeElement);
+    					Set<MethodModel> methods = callHierarchyViewPart.getMethodModels(treeElement);
     					int size = methods.size();
     					if (size > 1) {
     						IContributionItem[] items = new IContributionItem[size];
@@ -53,12 +60,6 @@ public class ContextMethodMenu extends CompoundContributionItem {
     						for (final MethodModel method: methods) {
     							items[i++] = new ContributionItem() {
 
-    								/*
-    								 * (non-Javadoc)
-    								 * 
-    								 * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu,
-    								 *      int)
-    								 */
     								public void fill(Menu menu, int index) {
     									MenuItem item = new MenuItem(menu, SWT.PUSH);
     									String label = DroidsafePluginUtilities.removeCloneSuffix(method.getSignature());
@@ -67,18 +68,13 @@ public class ContextMethodMenu extends CompoundContributionItem {
     								}
 
     								/**
-    								 * Return the menu item listener for selection of a filter.
-    								 * 
-    								 * @param type
-    								 * @param view
-    								 * @return Listener
+    								 * Return the menu item listener for selection of a method model.
     								 */
     								private Listener getMenuItemListener(final MethodModel method) {
     									return new Listener() {
-    										/*
-    										 * (non-Javadoc)
-    										 * 
-    										 * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
+    										/**
+    										 * Show info flow details, value analysis results, and points-to info for
+    										 * the selected method model.
     										 */
     										public void handleEvent(Event event) {
     											InfoFlowDetailsViewPart.openView(method);

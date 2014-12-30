@@ -15,10 +15,30 @@ import org.eclipse.ui.IEditorPart;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.model.CallLocationModel;
 
+/**
+ * Text hover for taint markers. Displays the filtered source info for the marker being hovered over.
+ * 
+ * @author gilham
+ *
+ */
 public class TaintMarkerTextHover implements IJavaEditorTextHover {
 
+    /**
+     * The Java editor for the Java source file containing the taint marker.
+     */
     private IEditorPart fEditor;
 
+    /**
+     * Returns a string that contains the filtered taint source info in the format:
+     * 
+     * Taint Sources: <info kinds>
+     * 
+     *   <info kind>
+     *     <info unit>
+     *     ...
+     *   ...
+     *   
+     */
     @Override
     public String getHoverInfo(ITextViewer textViewer, IRegion hoverRegion) {
     	if (fEditor != null) {

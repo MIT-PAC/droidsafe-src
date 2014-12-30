@@ -10,16 +10,54 @@ import com.google.gson.JsonObject;
 
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 
+/**
+ * Represents a boolean predicate that is used to filter the viewable contents of an indicator.
+ * Currently only predicates of forms
+ * 
+ *   AND <boolean clauses>, and
+ *   OR <boolean clauses>
+ *   
+ *     where each boolean clause is of form
+ *     
+ *       <field> <comparison op> <value>
+ *   
+ * are supported.
+ * 
+ * @author gilham
+ *
+ */
 public class FilterPred {
 
+    /**
+     * The boolean operator to apply to the boolean clauses, default value is 'AND'.
+     */
     private BoolOp boolOp = BoolOp.AND;
+    
+    /**
+     * The boolean clauses, each clause is of form
+     *   <field> <CompareOp> <value>
+     */
     private List<FilterPredClause> clauses = new ArrayList<FilterPredClause>();
     
+    /**
+     * Constructs a FilterPred with the given boolean operator and the given list
+     * of boolean clauses.
+     * 
+     * @param boolOp - the boolean op
+     * @param clauses - the list of boolean clauses
+     */
     public FilterPred(BoolOp boolOp, List<FilterPredClause> clauses) {
         this.boolOp = boolOp;
         this.clauses = clauses;
     }
 
+    /**
+     * Constructs a FilterPred by copying the boolean operator and the clauses from the 
+     * given FilterPred.
+     * 
+     * @param boolOp - the boolean op
+     * @param clauses - the list of boolean clauses
+     */
     public FilterPred(FilterPred pred) {
         this.boolOp = pred.getBoolOp();
         for (FilterPredClause clause: pred.getClauses()) {
@@ -27,18 +65,40 @@ public class FilterPred {
         }
     }
 
+    /**
+     * Constructs a FilterPred with a single boolean clause.
+     * 
+     * @param clause - the single boolean clause
+     */
     public FilterPred(FilterPredClause clause) {
         clauses.add(clause);
     }
 
+    /**
+     * Returns the boolean operator for this FilterPred.
+     * 
+     * @return the boolean operator
+     */
     public BoolOp getBoolOp() {
         return boolOp;
     }
 
+    /**
+     * Return the boolean clauses for this FilterPred.
+     * 
+     * @return the boolean clauses
+     */
     public List<FilterPredClause> getClauses() {
         return clauses;
     }
 
+    /**
+     * Apply this FilterPred to the given JsonElement and return the
+     * resulting boolean value.
+     * 
+     * @param jsonElt - the JsonElement to apply the FilterPred
+     * @return the resulting boolean value
+     */
     public boolean apply(JsonElement jsonElt) {
         boolean result = (boolOp == BoolOp.AND) ? true : false;
         for (FilterPredClause clause: clauses) {
@@ -56,6 +116,10 @@ public class FilterPred {
         return result;
     }
     
+    /**
+     * Returns the string representation of this FilterPred.
+     */
+    @Override
     public String toString() {
         StringBuffer buf = new StringBuffer();
         boolean first = true;
@@ -72,7 +136,16 @@ public class FilterPred {
         return buf.toString();
     }
 
-    public static FilterPred parse(JsonElement filterElt, Set<String> filterFields) throws FilterException {
+    /**
+     * Given a JsonElement that represents a filter predicate and a set of filter field names, parses this JsonElement
+     * into a FilterPred and returns the result.
+     * 
+     * @param filterElt - a JsonElement that represents a filter predicate
+     * @param filterFields - a set of filter fields used to check the validity of the fields in the filterElt
+     * @return the resulting FilterPred
+     * @throws FilterParseException
+     */
+    public static FilterPred parse(JsonElement filterElt, Set<String> filterFields) throws FilterParseException {
         JsonElement predElt = Utils.getFieldValue(filterElt, "pred");
         if (predElt != null) {
             FilterPredClause clause = FilterPredClause.parse(predElt, filterFields);
@@ -91,10 +164,19 @@ public class FilterPred {
                 }
             }
         }
-        throw new FilterException("Missing predicate property \"pred\", \"conjuncts\", or \"disjuncts\" in\n" + filterElt);
+        throw new FilterParseException("Missing predicate property \"pred\", \"conjuncts\", or \"disjuncts\" in\n" + filterElt);
     }
 
-    private static List<FilterPredClause> parsePredClauses(JsonArray clauseArr, Set<String> filterFields) throws FilterException {
+    /**
+     * Given a JsonArray that represents the boolean filter clauses and a set of filter field names, parses 
+     * the JsonArray into a list of FilterPredClauses and returns the result.
+     * 
+     * @param clauseArr - a JsonArray that represents the filter predicate clauses
+     * @param filterFields - a set of filter fields used to check the validity of the fields contained in the clause array
+     * @return the resulting list of FilterPredClauses
+     * @throws FilterParseException
+     */
+    private static List<FilterPredClause> parsePredClauses(JsonArray clauseArr, Set<String> filterFields) throws FilterParseException {
         List<FilterPredClause> result = new ArrayList<FilterPredClause>();
         for (int i = 0; i < clauseArr.size(); i++) {
             FilterPredClause clause = FilterPredClause.parse(clauseArr.get(i), filterFields);

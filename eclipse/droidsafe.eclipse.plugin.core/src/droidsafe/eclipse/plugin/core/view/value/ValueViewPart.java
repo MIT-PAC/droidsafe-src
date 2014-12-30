@@ -70,6 +70,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
         return fInputElement;
     }
 
+	@Override
     protected void projectSelected() {
         resetViewer();
         setInputElement(null);
@@ -83,6 +84,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
         fTextViewer.getDocument().set("");
     }
     
+	@Override
     protected void resetViewer() {
         methodToValuesText.clear();
     }
@@ -117,8 +119,13 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
         }        
     }
 
+    /** A map from method models to the corresponding values text. */
     static Map<MethodModel, String> methodToValuesText = new HashMap<MethodModel, String>();
     
+    /**
+     * Given a method model, returns the text for the values of the method
+     * arguments and the method receiver.
+     */
     private String getValuesText(MethodModel method) {
         if (!method.hasValueInfo()) {
             return "";
@@ -161,6 +168,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
         return fTextViewer;
     }
 
+	@Override
     protected Control getControl() {
         return fTextViewer.getControl();
     }

@@ -6,14 +6,16 @@ import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.Position;
 import org.eclipse.ui.texteditor.IMarkerUpdater;
 
+/**
+ * A marker updater for dead code markers.
+ * 
+ * @author gilham
+ *
+ */
 public class DeadCodeMarkerUpdater implements IMarkerUpdater {
 
-    /*
-    *Returns the attributes for which this updater is responsible.
-    *If the result is null, the updater assumes responsibility for any attributes.
-    */
-    @Override
-    public String[] getAttribute() {
+	@Override
+	public String[] getAttribute() {
           return null;
     }
 

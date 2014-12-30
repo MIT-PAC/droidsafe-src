@@ -11,32 +11,38 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.CompoundContributionItem;
 
-public class LabelDisplayMenu extends CompoundContributionItem {
+/**
+ * A dynamic menu for label display options. The menu is of form
+ * 
+ *   Use Long Label
+ *   Show <field name>
+ *   ...
+ *   Show <field name>
+ * 
+ * @author gilham
+ *
+ */
+public class DynamicLabelDisplayMenu extends CompoundContributionItem {
 
-    @Override
+    /* (non-Javadoc)
+     * @see org.eclipse.ui.actions.CompoundContributionItem#getContributionItems()
+     */
     protected IContributionItem[] getContributionItems() {
-        final IndicatorViewPart view = getView();
+        final IndicatorViewPart view = Utils.getIndicatorView();
         if (view == null)
             return new IContributionItem[0];
 
-        Map<String, Boolean> displayMap = view.getDisplayMap();
+        Map<String, Boolean> displayMap = view.getLabelDisplayMap();
 
         Set<String> fields = displayMap.keySet();
         IContributionItem[] items = new IContributionItem[fields.isEmpty() ? 1 : fields.size() + 2];
         items[0] = new ContributionItem() {
 
-            /*
-             * (non-Javadoc)
-             * 
-             * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu,
-             *      int)
-             */
+        	/* (non-Javadoc)
+        	 * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu, int)
+        	 */
             public void fill(Menu menu, int index) {
                 MenuItem item = new MenuItem(menu, SWT.CHECK);
                 item.setText("Use Long Label");
@@ -45,19 +51,17 @@ public class LabelDisplayMenu extends CompoundContributionItem {
             }
 
             /**
-             * Return the menu item listener for selection of a filter.
+             * Returns the menu item listener for "Use Long Label".
              * 
-             * @param field
-             * @param view
-             * @return Listener
+             * @param view - the indicator outline view
+             * @return the listener
              */
             private Listener getMenuItemListener(final IndicatorViewPart view) {
                 return new Listener() {
-                    /*
-                     * (non-Javadoc)
-                     * 
-                     * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
-                     */
+
+                	/* (non-Javadoc)
+                	 * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
+                	 */
                     public void handleEvent(Event event) {
                         if (view != null) {
                             view.setLongLabel(!view.longLabel());
@@ -73,37 +77,32 @@ public class LabelDisplayMenu extends CompoundContributionItem {
             for (final String field: fields) {
                 items[i++] = new ContributionItem() {
 
-                    /*
-                     * (non-Javadoc)
-                     * 
-                     * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu,
-                     *      int)
-                     */
+                	/* (non-Javadoc)
+                	 * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu, int)
+                	 */
                     public void fill(Menu menu, int index) {
                         MenuItem item = new MenuItem(menu, SWT.CHECK);
                         item.setText("Show "+field);
                         item.addListener(SWT.Selection, getMenuItemListener(field, view));
-                        item.setSelection(view.getDisplay(field));
+                        item.setSelection(view.getLabelDisplay(field));
                     }
 
                     /**
-                     * Return the menu item listener for selection of a filter.
+                     * Returns the menu item listener for checking/unchecking a "Show <field>"
+                     * item..
                      * 
-                     * @param field
-                     * @param view
-                     * @return Listener
+                     * @param field - the field
+                     * @param view - the indicator outline view
+                     * @return the listener
                      */
                     private Listener getMenuItemListener(final String field,
                                                          final IndicatorViewPart view) {
                         return new Listener() {
-                            /*
-                             * (non-Javadoc)
-                             * 
-                             * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
-                             */
+
+                        	@Override
                             public void handleEvent(Event event) {
                                 if (view != null) {
-                                    view.toggleDisplay(field);
+                                    view.toggleLabelDisplay(field);
                                     view.updateLabels();
                                 }
                             }
@@ -115,26 +114,6 @@ public class LabelDisplayMenu extends CompoundContributionItem {
 
         return items;
 
-    }
-
-    /**
-     * Get the view this contribution is working on.
-     * 
-     * @return JsonViewPart or <code>null</code> if the active view isn't a JsonViewPart
-     */
-    IndicatorViewPart getView() {
-        IWorkbenchWindow active = PlatformUI.getWorkbench()
-                .getActiveWorkbenchWindow();
-        if (active == null)
-            return null;
-        IWorkbenchPage page = active.getActivePage();
-        if (page == null)
-            return null;
-        IWorkbenchPart part = page.getActivePart();
-        if (!(part instanceof IndicatorViewPart))
-            return null;
-
-        return (IndicatorViewPart) part;
     }
 
 }

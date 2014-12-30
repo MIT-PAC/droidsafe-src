@@ -39,16 +39,16 @@ public class DroidsafeImages {
     public static final Image UNSAFE_SOURCE_LOCATION_IMAGE = PlatformUI.getWorkbench()
         .getSharedImages().getImage(ISharedImages.IMG_OBJS_ERROR_TSK);
 
-    /** The image for a method receiver node in the points-to outline view */
+    /** The image for a method receiver node in the droidsafe outline view */
     public static final Image METHOD_RECEIVER_IMAGE = DroidsafePluginUtilities.getImage("meth-receiver.png");
 
-    /** The image for a method argument node in the points-to outline view */
+    /** The image for a method argument node in the droidsafe outline view */
     public static final Image METHOD_ARG_IMAGE = DroidsafePluginUtilities.getImage("meth-arg.png");
 
-    /** The image for an allocation node in the points-to outline view */
+    /** The image for an allocation node in the droidsafe outline view */
     public static final Image ALLOC_NODE_IMAGE = DroidsafePluginUtilities.getImage("pointsto.png");
 
-    /** The image for a call edge in the points-to outline view */
+    /** The image for a call edge in the droidsafe outline view */
     public static final Image CODE_LOC_IMAGE = DroidsafePluginUtilities.getImage("change.png");
 
     /** The image for a source info kind in the info flow outline view */

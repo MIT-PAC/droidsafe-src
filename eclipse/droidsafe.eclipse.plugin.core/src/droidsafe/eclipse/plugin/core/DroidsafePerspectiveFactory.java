@@ -13,6 +13,13 @@ import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
 import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 
+/**
+ * Droidsafe perspective factory that generates the initial page layout and visible
+ * action set for the Droidsafe user interface.
+ * 
+ * @author gilham
+ *
+ */
 public class DroidsafePerspectiveFactory implements IPerspectiveFactory {
 
     @Override

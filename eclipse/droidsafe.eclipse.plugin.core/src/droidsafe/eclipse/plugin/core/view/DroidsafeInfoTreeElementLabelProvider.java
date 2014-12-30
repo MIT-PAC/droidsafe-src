@@ -18,23 +18,35 @@ import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.MethodArgumentModel;
 
 /**
- * Label provider for the nodes of the points-to outline view.
+ * Label provider for the nodes of the droidsafe outline view.
  * 
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
 public class DroidsafeInfoTreeElementLabelProvider extends StyledCellLabelProvider {
 
+    /** The current search string for an outline text search */
     private String searchString;
     
-    private Object searchElement;
+    /** The current search result element for an outline text search */
+    private Object searchResultElement;
 
+    /**
+     * Sets the current search string to the given string.
+     * 
+     * @param searchString - a string to search for
+     */
     public void setSearchString(String searchString) {
         this.searchString = searchString;
     }
 
-     public void setSearchElement(Object searchElement) {
-        this.searchElement = searchElement;
+    /**
+     * Sets the current search result element to the given element.
+     * 
+     * @param searchResultElement - the new search result element 
+     */
+    public void setSearchResultElement(Object searchResultElement) {
+        this.searchResultElement = searchResultElement;
     }
 
     @Override
@@ -81,7 +93,10 @@ public class DroidsafeInfoTreeElementLabelProvider extends StyledCellLabelProvid
         return null;
     }
 
+    /** The color constant for the red color. */
     private static final Color RED = Display.getDefault().getSystemColor(SWT.COLOR_RED);
+
+    /** The color constant for the yellow color. */
     private static final Color YELLOW = Display.getDefault().getSystemColor(SWT.COLOR_YELLOW);
 
     /**
@@ -119,17 +134,13 @@ public class DroidsafeInfoTreeElementLabelProvider extends StyledCellLabelProvid
       if (searchString != null) {
           int pos = StringUtils.indexOfIgnoreCase(text, searchString);
           if (pos >= 0) {
-              Styler styler = (element == searchElement) ? RED_BACKGROUND : YELLOW_BACKGROUND;
+              Styler styler = (element == searchResultElement) ? RED_BACKGROUND : YELLOW_BACKGROUND;
               styledString.setStyle(pos, searchString.length(), styler);
           }
       }
       cell.setStyleRanges(styledString.getStyleRanges());
       cell.setImage(getImage(element));
       super.update(cell);
-    }
-
-    public boolean longLabel() {
-        return false;
     }
 
 }
