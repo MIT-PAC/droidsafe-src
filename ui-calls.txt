@@ -37,3 +37,4 @@ android.widget.TextView|onDraw
 android.widget.TextView|onAttachedToWindow
 android.widget.TextView|append
 android.widget.TextView|setText
+android.widget.Toast|makeText
