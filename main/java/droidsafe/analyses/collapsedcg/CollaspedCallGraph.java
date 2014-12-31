@@ -227,6 +227,14 @@ public class CollaspedCallGraph {
         return edges;
     }
     
+    public Set<StmtEdge> getSourcesForMethod(SootMethod method) {
+        if (callgraph.containsVertex(method)) {
+            return callgraph.incomingEdgesOf(method);
+        } else
+            return Collections.emptySet();
+       
+    }
+    
     public Set<StmtEdge> getTargetsForMethod(SootMethod method) {
         if (callgraph.containsVertex(method)) {
             return callgraph.outgoingEdgesOf(method);

@@ -625,6 +625,7 @@ public class SootUtils {
 
 
         for (SootClass parent : classes) {
+            logger.debug("Looking at {}", parent);
             for (SootMethod method : parent.getMethods()) {
                 //logger.debug("Looking at {} in {}", method, parent);
                 if (method.getName().equals(name))
