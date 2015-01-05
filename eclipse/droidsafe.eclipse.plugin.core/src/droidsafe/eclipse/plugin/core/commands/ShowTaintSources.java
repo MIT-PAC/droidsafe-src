@@ -19,10 +19,21 @@ import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.infoflow.TaintSourcesViewPart;
 
+/**
+ * Command to show taint sources for the selected tainted variable or field reference in the Java editor
+ * window.
+ * 
+ * @author gilham
+ *
+ */
 public class ShowTaintSources extends AbstractHandler {
 
-    public static final String COMMAND_ID = "droidsafe.eclipse.plugin.core.commands.ShowTaintSources";
-
+	/**
+	 * Command implementation. When the current selection in the Java editor is a tainted variable or
+	 * field reference, display in an outline window the taint sources for the selection. The first
+	 * level in the outline contains the filtered source kinds.  The second level contains the filtered
+	 * source units for each source kind.
+	 */
     @Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
     	IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);

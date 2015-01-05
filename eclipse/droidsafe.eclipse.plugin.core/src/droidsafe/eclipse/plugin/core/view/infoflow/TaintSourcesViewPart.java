@@ -48,7 +48,7 @@ import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoOutlineViewPart;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementLabelProvider;
-import droidsafe.eclipse.plugin.core.view.callgraph.CallGraph;
+import droidsafe.eclipse.plugin.core.view.callhierarchy.CalleeHierarchy;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToTreeElementLabelProvider;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
@@ -60,7 +60,7 @@ import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.utils.SourceLocationTag;
 
 /**
- * View for displaying the info flow on the receiver/arguments of a given method. 
+ * Outline view for displaying the info sources of a tainted variable or field.
  * 
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
@@ -71,9 +71,10 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
     public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.TaintSourcesView";
 
     /** The taint marker on which the info flow sources are to be displayed. */
-    private IMarker fMarker;
+    private IMarker fTaintMarker;
     
-    private String fTaint;
+    /** The string representation of the tainted data */
+    private String fTaintedData;
 
     @Override
     protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
@@ -96,7 +97,7 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
     				Object data = treeElement.getData();
     				if (data instanceof CallLocationModel) {
     					revealSelectionInEditor(selection, false);
-    		    		IProject project = fMarker.getResource().getProject();
+    		    		IProject project = fTaintMarker.getResource().getProject();
     					SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec(project, false, false);
     					if (spec != null) {
     						CallLocationModel call = (CallLocationModel) data;
@@ -124,7 +125,7 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
     protected void revealInEditor(TreeElement<?, ?> treeElement, boolean activate) {
         Object data = treeElement.getData();
     	if (data instanceof SourceLocationTag) {
-    		IProject project = fMarker.getResource().getProject();
+    		IProject project = fTaintMarker.getResource().getProject();
     		DroidsafePluginUtilities.revealInEditor(project, (SourceLocationTag) data, activate);
     	}
     }
@@ -134,16 +135,20 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
         updateView(false);
     }
 
+    /**
+     * Updates the taint sources outline view. Resets the viewer first if
+     * the parameter resetViewer is true.
+     */
     public void updateView(boolean resetViewer) {
         if (fParentComposite != null) {
-            if (fMarker == null) {
+            if (fTaintMarker == null) {
                 showPage(PAGE_EMPTY);
             } else {
                 if (resetViewer)
                     resetViewer();
                 showPage(PAGE_VIEWER);
-                setContentDescription("Sources for " + fTaint);
-                fTreeViewer.setInput(fMarker);
+                setContentDescription("Sources for " + fTaintedData);
+                fTreeViewer.setInput(fTaintMarker);
             }
         }        
     }
@@ -163,10 +168,10 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
      * Set the input element for the viewer and update the contents of the view.
      */
     protected void setInput(IMarker inputElement, String taint) {
-        if ((inputElement == null && fMarker != null) || 
-                (inputElement != null && !inputElement.equals(fMarker))) {
-            fMarker = inputElement;
-            fTaint = taint;
+        if ((inputElement == null && fTaintMarker != null) || 
+                (inputElement != null && !inputElement.equals(fTaintMarker))) {
+            fTaintMarker = inputElement;
+            fTaintedData = taint;
             updateView();
         }
     }
@@ -189,18 +194,27 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
         activePage.activate(view);
     }
 
+    /**
+     * Returns the instance of TaintSourcesViewPart in the workbench.
+     */
     public static TaintSourcesViewPart findView() {
         IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
         TaintSourcesViewPart view = (TaintSourcesViewPart) activePage.findView(VIEW_ID);
         return view;
     }
 
-    public IMarker getMarker() {
-        return fMarker;
+    /**
+     * Returns the input taint marker.
+     */
+    public IMarker getTaintMarker() {
+        return fTaintMarker;
     }
 
+    /**
+     * Resets the taint sources outline view.
+     */
     public void reset() {
-        fMarker = null;
+        fTaintMarker = null;
         updateView();
     }
 

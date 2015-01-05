@@ -55,6 +55,7 @@ public class PointsToViewPart extends MethodInfoOutlineViewPart {
         activePage.activate(view);
     }
 
+    @Override
     protected MethodModel getMethod() {
         return (MethodModel) fInputElement;
     }

@@ -99,14 +99,23 @@ public class DroidsafePluginUtilities {
         return getSelectedProject(window);
     }
 
+    /**
+     * Given a text editor, Looks for a selected project in the Eclipse Project Explorer that 
+     * may have a security spec.
+     * 
+     * @param editor - text editor
+     * @return the selected project or project enclosing a selected resource.
+     */
     public static IProject getSelectedProject(IEditorPart editor) {
         IWorkbenchWindow window = editor.getSite().getWorkbenchWindow();
         return getSelectedProject(window);
     }
 
     /**
-     * Looks for a selected project in the Eclipse Project Explorer that may have a security spec.
+     * Given a workbench window, looks for a selected project in the Eclipse Project 
+     * Explorer that may have a security spec.
      * 
+     * @param window - a workbench window
      * @return the selected project or project enclosing a selected resource.
      */
     private static IProject getSelectedProject(IWorkbenchWindow window) {
@@ -178,6 +187,9 @@ public class DroidsafePluginUtilities {
         return null;
     }
 
+    /**
+     * Returns the Java class name for the given file in the given project.
+     */
     public static String getClassName(IProject project, IFile file) {
     	String filePath = file.getFullPath().toString();
     	String projectPath = project.getFullPath().toString();
@@ -189,16 +201,27 @@ public class DroidsafePluginUtilities {
     	return null;
     }
     
+    /**
+     * Given a project and a droidsafe output file name, returns the full path name of this 
+     * file.
+     */
     public static String droidsafeOutputFile(IProject project, String fileName) {
         String outputDir = getProjectOutputDir(project);
         String fullPath = outputDir + File.separator + fileName;
         return fullPath;
     }
     
+    /**
+     * Returns all indicator files for the given project.
+     */
     public static File[] getIndicatorFiles(IProject project) {
         return getOutputFilesWithExtension(project, ".json");
     }
 
+    /**
+     * Returns all droidsafe output files in the given project with the given file 
+     * extension.
+     */
     public static File[] getOutputFilesWithExtension(IProject project, final String ext) {
         File outputDir = new File(getProjectOutputDir(project));
         File[] files = outputDir.listFiles(new FilenameFilter() {
@@ -209,6 +232,10 @@ public class DroidsafePluginUtilities {
         return files;
     }
     
+    /**
+     * Returns the full path name of the droidsafe output directory for the given
+     * project.
+     */
     public static String getProjectOutputDir (IProject project) {
         String projectRootPath = project.getLocation().toOSString();
         String outputDir = projectRootPath + File.separator + Project.OUTPUT_DIR;
@@ -231,12 +258,25 @@ public class DroidsafePluginUtilities {
         return null;
     }
 
+    /**
+     * Shows error in a message diaglog.
+     * 
+     * @param title - the title for the message dialog
+     * @param msg - the error message
+     */
     public static void showError(String title, String msg) {
         showError(title, msg, null);
     }
 
+    /**
+     * Shows error in a message diaglog.
+     * 
+     * @param title - the title for the message dialog
+     * @param msg - the error message
+     * @param ex - the exception
+     */
     public static void showError(String title, String msg, Exception ex) {
-        Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+    	Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
         if (ex != null)
             msg = msg + "\n\n" + ex;
         MessageDialog.openError(shell, title, msg);
@@ -253,8 +293,8 @@ public class DroidsafePluginUtilities {
     }
 
     /**
-     * Reveals and highlights the given source line for the given project in an editor. Activates  
-     * the editor if the parameter 'activate' is true.
+     * Reveals and highlights the given source location tag for the given project in an editor.   
+     * Activates the editor if the parameter 'activate' is true.
      */
     public static void revealInEditor(IProject project, SourceLocationTag line, boolean activate) {
         String className = line.getClz();
@@ -262,6 +302,10 @@ public class DroidsafePluginUtilities {
         revealInEditor(project, className, lineNumber, activate);
     }
 
+    /**
+     * Reveals and highlights the source line for the given Json element and the given project
+     * in an editor. Activates the editor if the parameter 'activate' is true.
+     */
 	public static void revealInEditor(IProject project, JsonElement jsonElement,
 			boolean activate) {
         String className = Utils.getSourceClass(jsonElement);
@@ -269,9 +313,10 @@ public class DroidsafePluginUtilities {
         if (className != null && lineNumber >= 0)
             DroidsafePluginUtilities.revealInEditor(project, className, lineNumber, activate); 
 	}
+	
     /**
-     * Reveals and highlights the given source line for the given project in an editor. Activates  
-     * the editor if the parameter 'activate' is true.
+     * Reveals and highlights the given line in the given source class for the given project
+     * in an editor. Activates the editor if the parameter 'activate' is true.
      */
     public static void revealInEditor(IProject project, String className, int lineNumber, boolean activate) {
         IEditorPart openedEditor = openEditor(project, className, activate);
@@ -291,6 +336,9 @@ public class DroidsafePluginUtilities {
         }
     }
 
+    /**
+     * Displays the given error message in the status line.
+     */
     public static void error(String errMsg) {
         //IActionBars bars = viewPart.getViewSite().getActionBars();
         //((SubActionBars)bars).activate();
@@ -351,6 +399,9 @@ public class DroidsafePluginUtilities {
         }
     }
 
+    /**
+     * Returns the first source line for the given method.
+     */
     public static SourceLocationTag getLine(MethodModel method) {
         List<CodeLocationModel> lines = method.getLines();
         SourceLocationTag line = null;
@@ -627,6 +678,11 @@ public class DroidsafePluginUtilities {
         return securitySpec;
     }
 
+    /**
+     * Initializes the security spec for the given project if the spec does not exist and 
+     * the parameter 'initialize' is true or if the parameter 'reInitialize' is true. 
+     * Return the existing or (re-)initialized spec.
+     */
     public static SecuritySpecModel getSecuritySpec(IProject project, boolean initialize, boolean reInitialize) {
     	if (project != null) {
     		SecuritySpecModel spec = specMap.get(project);
@@ -638,6 +694,10 @@ public class DroidsafePluginUtilities {
     	return null;
     }
 
+    /**
+     * Looks for the project for the current file in the given editor. Returns the
+     * project if the security spec for the project has been initialized.
+     */
     public static IProject getProcessedDroidsafeProjectForEditor(IEditorPart editor) {
 		IFile file = DroidsafePluginUtilities.getEditorInputFile(editor);
 		if (file != null) {
@@ -681,6 +741,9 @@ public class DroidsafePluginUtilities {
         return openEditor;
     }
 
+    /**
+     * Returns the input file for the given editor.
+     */
     public static IFile getEditorInputFile(IEditorPart editor) {
         IEditorInput input = editor.getEditorInput();
         if (input instanceof FileEditorInput) {
@@ -716,6 +779,9 @@ public class DroidsafePluginUtilities {
         return fullname.replaceFirst("^.*[.]", "");
     }
 
+    /**
+     * Removes all droidsafe markers from the given project.
+     */
     public static void removeAllDroidsafeMarkers(IProject project) {
         IMarker markers[];
         if (project != null) {
@@ -730,6 +796,10 @@ public class DroidsafePluginUtilities {
         }
     }
 
+    /**
+     * Returns a string resulted from removing class clone suffix and method clone suffix 
+     * from the given string.
+     */
     public static String removeCloneSuffix(String str) {
         return CloneInheritedMethods.removeMethodCloneSuffix(ClassCloner.removeClassCloneSuffix(str));
     }
@@ -828,6 +898,15 @@ public class DroidsafePluginUtilities {
         }
     }
 
+    /**
+     * Adds a droidsafe marker for the given method to the given file.
+     * 
+     * @param method - a method
+     * @param file - the file containing the method
+     * @param message - the message for the marker
+     * @param lineNbr - the line number for the marker
+     * @throws CoreException
+     */
     private static void addMarkerForMethod(MethodModel method, IFile file, String message, int lineNbr)
             throws CoreException {
         IMarker marker = file.createMarker(DROIDSAFE_MARKER_ID);
@@ -838,6 +917,9 @@ public class DroidsafePluginUtilities {
         marker.setAttribute(IMarker.MESSAGE, message);
     }
 
+    /**
+     * Returns the active editor in the workbench.
+     */
     public static IEditorPart getActiveEditor() {
         IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
         if (window != null) {
@@ -849,6 +931,9 @@ public class DroidsafePluginUtilities {
         return null;
     }
     
+    /**
+     * Returns the type root Java element for the input of the given editor.
+     */
     public static ITypeRoot getJavaInput(IEditorPart part) {
         IEditorInput editorInput= part.getEditorInput();
         if (editorInput != null) {
@@ -860,6 +945,9 @@ public class DroidsafePluginUtilities {
         return null;    
     }
 
+    /**
+     * Selects and reveals the text with given offset and length in the given editor.
+     */
     public static void selectInEditor(ITextEditor editor, int offset, int length) {
         IEditorPart active = getActiveEditor();
         if (active != editor) {
@@ -883,6 +971,13 @@ public class DroidsafePluginUtilities {
         return image.createImage();
     }
 
+    /**
+     * Given an Enum object, returns the string representations of the Enum constants
+     * for the Enum type.
+     * 
+     * @param e - the Enum object
+     * @return the array of string representations of the Enum constants
+     */
     public static String[] enumStrings(Class<? extends Enum<?>> e) {
         Enum<?>[] values = e.getEnumConstants();
         String[] strings = new String[values.length];

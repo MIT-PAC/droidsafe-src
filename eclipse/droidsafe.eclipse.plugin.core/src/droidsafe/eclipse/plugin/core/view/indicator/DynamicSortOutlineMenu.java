@@ -1,7 +1,5 @@
 package droidsafe.eclipse.plugin.core.view.indicator;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.jface.action.ContributionItem;
@@ -11,17 +9,22 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.CompoundContributionItem;
 
-public class SortOutlineMenu extends CompoundContributionItem {
+/**
+ * A dynamic menu for outline sorting options. The menu contains the fields by
+ * which the indicator outline can be sorted.
+ * 
+ * @author gilham
+ *
+ */
+public class DynamicSortOutlineMenu extends CompoundContributionItem {
 
-    @Override
-    protected IContributionItem[] getContributionItems() {
-        final IndicatorViewPart view = getView();
+	/* (non-Javadoc)
+	 * @see org.eclipse.ui.actions.CompoundContributionItem#getContributionItems()
+	 */
+	protected IContributionItem[] getContributionItems() {
+        final IndicatorViewPart view = Utils.getIndicatorView();
         if (view == null)
             return new IContributionItem[0];
 
@@ -50,11 +53,11 @@ public class SortOutlineMenu extends CompoundContributionItem {
                 }
 
                 /**
-                 * Return the menu item listener for selection of a filter.
+                 * Returns the menu item listener for selection of a field to sort by.
                  * 
-                 * @param field
-                 * @param view
-                 * @return Listener
+                 * @param field - a field to sort by
+                 * @param view - the indicator outline view
+                 * @return the listener
                  */
                 private Listener getMenuItemListener(final String field,
                                                      final IndicatorViewPart view) {
@@ -79,26 +82,6 @@ public class SortOutlineMenu extends CompoundContributionItem {
 
         return items;
 
-    }
-
-    /**
-     * Get the view this contribution is working on.
-     * 
-     * @return JsonViewPart or <code>null</code> if the active view isn't a JsonViewPart
-     */
-    IndicatorViewPart getView() {
-        IWorkbenchWindow active = PlatformUI.getWorkbench()
-                .getActiveWorkbenchWindow();
-        if (active == null)
-            return null;
-        IWorkbenchPage page = active.getActivePage();
-        if (page == null)
-            return null;
-        IWorkbenchPart part = page.getActivePart();
-        if (!(part instanceof IndicatorViewPart))
-            return null;
-
-        return (IndicatorViewPart) part;
     }
 
 }

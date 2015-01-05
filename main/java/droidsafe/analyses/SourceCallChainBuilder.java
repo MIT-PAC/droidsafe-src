@@ -24,6 +24,13 @@ import droidsafe.analyses.collapsedcg.StmtEdge;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+
+/**
+ * Builds a source call tree rooted at a user entry point by processing the call chain
+ * at each call statement in the body of the entry point and then processing the call targets
+ * recursively.
+ *
+ */
 public class SourceCallChainBuilder {
 
     /** Logging field */
@@ -55,6 +62,12 @@ public class SourceCallChainBuilder {
         no_callback_methods.add ("toString");
     }
 
+    /**
+     * Create a SourceCallChainBuilder with specified timeout and process_callbacks flag.
+     * 
+     * @param timeout - timeout in milliseconds
+     * @param process_callbacks - true if we should look for callbacks through system calls
+     */
     public SourceCallChainBuilder (int timeout, boolean process_callbacks) {
         this.timeout = timeout;
         this.process_callbacks = process_callbacks;
@@ -67,8 +80,8 @@ public class SourceCallChainBuilder {
      * calls and static initializers.  Terminates on system calls
      * that do not contain callbacks.
      * 
-     * @param method      - Method to start at
      * @param s       - Stmt that called mc
+     * @param method      - Method to start at
      */
     public  SourceCallChainInfo process_call_chain (Stmt s, SootMethod method) { 
 
@@ -89,6 +102,7 @@ public class SourceCallChainBuilder {
                     break;
                 Stmt stmt = (Stmt)stmtIt.next();
                 if (stmt.containsInvokeExpr()) {
+                	// iterate over the context insensitive edges in the collapsed call graph
                     for (StmtEdge<SootMethod> edge : CollaspedCallGraph.v().getTargetsForStmt(stmt)) {
                         SootMethod callee = edge.getV2();
                         if (ignore_dup_methods) {
@@ -169,6 +183,12 @@ public class SourceCallChainBuilder {
         return result;
     }
 
+    /**
+     * Returns true if the specified method is a method in a source class and it should be included in the source
+     * call graph computation. Returns false for droidsafe-generated methods and most compiler-generated methods.
+     * @param method
+     * @return
+     */
     private boolean isSourceMethod(SootMethod method) {
         // include synthetic methods e.g. doInBackground(Object[]) which call the real method defined by the user
         if (!method.isConcrete() || !method.hasActiveBody()) // SootUtils.isSynthetic(method) || 

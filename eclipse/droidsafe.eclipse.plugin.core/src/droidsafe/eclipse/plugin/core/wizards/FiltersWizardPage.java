@@ -34,18 +34,40 @@ import org.eclipse.ui.PlatformUI;
 import droidsafe.eclipse.plugin.core.filters.Filter;
 import droidsafe.eclipse.plugin.core.view.DroidsafeImages;
 
+/**
+ * A wizard page for editing the filters for the current indicator display.
+ * 
+ * @author gilham
+ *
+ */
 public class FiltersWizardPage extends WizardPage {
-    private TableViewer tableViewer;
-    private Table table;
-    private ArrayList<Filter> newFilters;
-    private Composite buttonsContainer;
+
+    /** The array of fields which can be used for filtering the current indicator display. */
     private String[] filterFields;
+    
+    /** The resulting new filters. */
+    private List<Filter> newFilters;
+
+    /** The table of filters. */
+    private Table table;
+
+    /** The table viewer for the table of filters. */
+    private TableViewer tableViewer;
+
+    /** A container for the delete button and the edit button. */
+    private Composite buttonsContainer;
+
+    /** An Button widget for deleting the selected filter */
     private Button deleteButton;
+
+    /** An Button widget for editing the selected filter */
     private Button editButton;
 
     /**
-     * Create the wizard.
-     * @param filters 
+     * Constructs a FiltersWizardPage.
+     * 
+     * @param filters - the filters being edited
+     * @param filterFields - The fields that can be used for filtering the indicator display 
      */
     public FiltersWizardPage(List<Filter> filters, String[] filterFields) {
         super("wizardPage");
@@ -58,13 +80,17 @@ public class FiltersWizardPage extends WizardPage {
         this.filterFields = filterFields;
     }
 
+    /**
+     * Returns the new list of filters.
+     */
     public List<Filter> getNewFilters() {
         return newFilters;
     }
     
     /**
-     * Create contents of the wizard.
-     * @param parent
+     * Creates contents of the wizard.
+     * 
+     * @param parent - the parent composite
      */
     public void createControl(Composite parent) {
         Composite container = new Composite(parent, SWT.NULL);
@@ -140,6 +166,11 @@ public class FiltersWizardPage extends WizardPage {
         });
     }
     
+    /**
+     * Presents an EditFiterWizard for the user to edit the given filter.
+     * 
+     * @param filter - a filter
+     */
     private void editFilter(Filter filter) {
         IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
         EditFilterWizard wizard = new EditFilterWizard();
@@ -151,6 +182,11 @@ public class FiltersWizardPage extends WizardPage {
 
     }
 
+    /**
+     * Creates table columns for the names, the specs, and enabled statuses of the filters.
+     * 
+     * @param parent - the parent composite
+     */
     private void createColumns(Composite parent) {
         TableViewerColumn nameCol = createTableViewerColumn("Filter Name", 150, 0);
         nameCol.setLabelProvider(new ColumnLabelProvider() {
@@ -167,20 +203,10 @@ public class FiltersWizardPage extends WizardPage {
             @Override
             public String getText(Object element) {
                 Filter filter = (Filter) element;
-                return filter.op + " " + filter.pred;
+                return filter.type + " " + filter.pred;
             }
         });
 
-//        TableViewerColumn filterOpCol = createTableViewerColumn("FilterOp", 100, 0);
-//        filterOpCol.setLabelProvider(new ColumnLabelProvider() {
-//            @Override
-//            public String getText(Object element) {
-//                Filter filter = (Filter) element;
-//                return filter.op.toString();
-//            }
-//        });
-//        filterOpCol.setEditingSupport(new FilterOpEditingSupport());
-        
         TableViewerColumn enabledCol = createTableViewerColumn("Enabled", 50, 1);
         enabledCol.setLabelProvider(new ColumnLabelProvider() {
             @Override
@@ -199,52 +225,33 @@ public class FiltersWizardPage extends WizardPage {
         enabledCol.setEditingSupport(new EnabledEditingSupport());
     }
 
-    private TableViewerColumn createTableViewerColumn(String title, int bound,
+    /**
+     * Creates one table viewer column with the given title, width, and column number.
+     * Returns the resulting column.
+     */
+    private TableViewerColumn createTableViewerColumn(String title, int width,
                                                       final int colNumber) {
         final TableViewerColumn viewerColumn = new TableViewerColumn(tableViewer,
             SWT.NONE);
         final TableColumn column = viewerColumn.getColumn();
         column.setText(title);
-        column.setWidth(bound);
+        column.setWidth(width);
         column.setResizable(true);
         column.setMoveable(true);
         return viewerColumn;
     }
 
-//    public class FilterOpEditingSupport extends EditingSupport {
-//
-//        public FilterOpEditingSupport() {
-//            super(viewer);
-//        }
-//
-//        @Override
-//        protected boolean canEdit(Object element) {
-//            return true;
-//        }
-//
-//        @Override
-//        protected CellEditor getCellEditor(Object element) {
-//            return new ComboBoxCellEditor(table, FilterOp.strings, SWT.READ_ONLY);
-//        }
-//
-//        @Override
-//        protected Object getValue(Object element) {
-//            Filter filter = (Filter) element;
-//            return filter.op.getValue();
-//
-//        }
-//
-//        @Override
-//        protected void setValue(Object element, Object value) {
-//            Filter filter = (Filter) element;
-//            int i = ((Integer) value).intValue();
-//            filter.op = FilterOp.values()[i];
-//            viewer.update(element, null);
-//        }
-//    }
-
+    /**
+     * An editing support for editing the enabled status of a filter.
+     * 
+     * @author gilham
+     *
+     */
     public class EnabledEditingSupport extends EditingSupport {
 
+        /**
+         * Constructs an EnabledEditingSupport.
+         */
         public EnabledEditingSupport() {
             super(tableViewer);
         }
@@ -253,10 +260,10 @@ public class FiltersWizardPage extends WizardPage {
         protected boolean canEdit(Object element) {
             return true;
         }
+        
         @Override
         protected CellEditor getCellEditor(Object element) {
             return new CheckboxCellEditor(null, SWT.CHECK | SWT.READ_ONLY);
-
         }
 
         @Override

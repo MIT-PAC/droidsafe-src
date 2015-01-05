@@ -9,13 +9,14 @@ import org.eclipse.jface.viewers.Viewer;
 import droidsafe.speclang.model.MethodModel;
 
 /**
- * Content provider for the tree structure of the points-to outline view.
+ * Content provider for the tree structure of a droidsafe method info outline view.
  * 
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
 abstract public class MethodInfoTreeElementContentProvider extends DroidsafeInfoTreeElementContentProvider {
 
+    /** A map from input objects to the corresponding arrays of root elements. */
     protected Map<Object, Object[]> inputToRoots = new HashMap<Object, Object[]>();
 
     /** The object on which the droidsafe analysis info is to be displayed in the outline view */
@@ -39,7 +40,7 @@ abstract public class MethodInfoTreeElementContentProvider extends DroidsafeInfo
     }
 
     /**
-     * Reset the content of this content provider.
+     * Resets the content of this content provider.
      */
     @Override
     protected void reset() {

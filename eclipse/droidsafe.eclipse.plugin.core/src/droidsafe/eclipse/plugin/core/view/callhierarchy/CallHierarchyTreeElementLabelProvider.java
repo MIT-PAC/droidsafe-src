@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view.callgraph;
+package droidsafe.eclipse.plugin.core.view.callhierarchy;
 
 import java.util.Set;
 
@@ -13,11 +13,24 @@ import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 import droidsafe.speclang.model.MethodModel;
 
-public class CallGraphTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
+/**
+ * Label provider for the tree elements of a call hierarchy view.
+ * 
+ * @author gilham
+ *
+ */
+ class CallHierarchyTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
 
-	private CallGraphViewPart viewPart;
+	
+	/** The corresponding call hierarchy outline view */
+	private CallHierarchyViewPart viewPart;
     
-    public CallGraphTreeElementLabelProvider(CallGraphViewPart viewPart) {
+    /**
+     * Constructs a CallHierarchyTreeElementLabelProvider with the given view part.
+     * 
+     * @param viewPart - a call hierarchy outline view
+     */
+    public CallHierarchyTreeElementLabelProvider(CallHierarchyViewPart viewPart) {
         this.viewPart = viewPart;
     }
 
@@ -51,16 +64,17 @@ public class CallGraphTreeElementLabelProvider extends DroidsafeInfoTreeElementL
     	return DroidsafePluginUtilities.removeCloneSuffix(element.toString());
     }
 
+    @Override
     public String getToolTipText(Object element) {
     	if (element instanceof TreeElement<?, ?>) {
     		TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
     		Set<MethodModel> methods = viewPart.getMethodModels(treeElement);
     		if (methods.size() > 1) {
-                Object data = treeElement.getData();
-                if (data instanceof JsonObject)
-                	return methods.size() + " contexts";
-                if (data instanceof SourceMethodNode)
-                	return methods.size() + " calls with contexts";
+    			Object data = treeElement.getData();
+    			if (data instanceof JsonObject)
+    				return methods.size() + " contexts";
+    			if (data instanceof SourceMethodNode)
+    				return methods.size() + " calls with contexts";
     		}
     	}
     	return null;

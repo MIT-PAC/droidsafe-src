@@ -8,6 +8,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -19,23 +24,44 @@ import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.utils.SourceLocationTag;
 
+/**
+ * Class to store general utility methods for indicators.
+ * 
+ * @author gilham
+ *
+ */
 public class Utils {
     
+    /** The name of the children property. */
     public static final String CHILDREN_PROP = "contents";
     
-    public static final List<String> SIGNATURE_FIELDS;
-
+    /** The name of the source location property. */
     public static final String SOURCE_LOCATION_PROP = "src-loc";
+
+    /** The fields for a Json object representing a method signature. */
+    public static final List<String> SIGNATURE_FIELDS;
 
     static {
         String[] sigFields = {"class", "method-name"};
         SIGNATURE_FIELDS = Arrays.asList(sigFields);
     }
 
+    /**
+     * Returns the value of the 'type' property for the given Json element.
+     * 
+     * @param jsonElement - a Json element
+     * @return the type
+     */
     public static String getObjectType(JsonElement jsonElement) {
         return getFieldValueAsString(jsonElement, "type");
     }
     
+    /**
+     * Returns the value of the children property for the given Json element.
+     * 
+     * @param jsonElement - a Json element
+     * @return the Json array of the children elements
+     */
     public static JsonArray getChildrenArray(JsonElement jsonElement) {
         if (jsonElement.isJsonObject()) {
             JsonElement value = ((JsonObject) jsonElement).get(CHILDREN_PROP);
@@ -45,6 +71,13 @@ public class Utils {
         return null;
     }
     
+    /**
+     * Returns the field value of the given Json element and the given field as a string.
+     * 
+     * @param jsonElement - a Json element
+     * @param field - a field
+     * @return the field value as a string
+     */
     public static String getFieldValueAsString(JsonElement jsonElement, String field) {
         JsonElement value = getFieldValue(jsonElement, field);
         if (value != null) {
@@ -55,6 +88,13 @@ public class Utils {
         return null;
     }
 
+    /**
+     * Returns the field value of the given Json element and the given field as a Json object.
+     * 
+     * @param jsonElement - a Json element
+     * @param field - a field
+     * @return the field value as a Json object
+     */
     public static JsonObject getFieldValueAsObject(JsonElement jsonElement, String field) {
         JsonElement value = getFieldValue(jsonElement, field);
         if (value != null && value.isJsonObject()) {
@@ -63,6 +103,13 @@ public class Utils {
         return null;
     }
 
+    /**
+     * Returns the field value of the given Json element and the given field as a Json array.
+     * 
+     * @param jsonElement - a Json element
+     * @param field - a field
+     * @return the field value as a Json array
+     */
     public static JsonArray getFieldValueAsArray(JsonElement jsonElement, String field) {
         JsonElement value = getFieldValue(jsonElement, field);
         if (value != null && value.isJsonArray()) {
@@ -71,6 +118,13 @@ public class Utils {
         return null;
     }
 
+    /**
+     * Returns the field value for the given Json element and the given field.
+     * 
+     * @param jsonElement - a Json element
+     * @param field - a field
+     * @return the field value
+     */
     public static JsonElement getFieldValue(JsonElement jsonElement, String field) {
         if (jsonElement.isJsonObject()) {
             JsonObject jsonObject = (JsonObject) jsonElement;
@@ -79,6 +133,14 @@ public class Utils {
         }
         return null;
     }
+    /**
+     * Returns the field value for the given Json element and the given signature
+     * field as a string.
+     * 
+     * @param jsonElement - a Json element
+     * @param field - a field
+     * @return the signature field value as a string
+     */
     public static String getSignatureFieldValueAsString(JsonElement jsonElement, String field) {
         String sig = getFieldValueAsString(jsonElement, "signature");
         if (sig != null) {
@@ -90,6 +152,13 @@ public class Utils {
         return null;
     }
 
+    /**
+     * Return a short version of the given method signature, with the angle brackets
+     * and the package qualifiers removed.
+     * 
+     * @param sig - a method signature
+     * @return the short version of the signature
+     */
     public static String shortSignature(String sig) {
         // remove the angle brackets
         sig = sig.substring(1,  sig.length() - 1);
@@ -97,11 +166,23 @@ public class Utils {
         return sig.replaceAll("[a-zA-Z._]*[.]", "");
     }
 
+    /**
+     * Given a method signature, returns a substring denoting the class name.
+     * 
+     * @param sig - a method signature
+     * @return the class name
+     */
     public static String signatureClass(String sig) {
         int pos = sig.indexOf(": ");
         return sig.substring(1, pos);
     }
 
+    /**
+     * Given a method signature, returns a substring denoting the method name.
+     * 
+     * @param sig - a method signature
+     * @return the method name
+     */
     public static String signatureMethodName(String sig) {
         int pos1 = sig.indexOf(": ") + 2;
         int pos2 = sig.indexOf("(", pos1);
@@ -109,6 +190,12 @@ public class Utils {
         return sig.substring(pos1, pos2);
     }
 
+    /**
+     * Given a method signature, returns a substring denoting the parameter types.
+     * 
+     * @param sig - a method signature
+     * @return the parameter types
+     */
     public static String[] signatureParameterTypes(String sig) {
     	int pos1 = sig.indexOf("(");
     	int pos2 = sig.indexOf(",", pos1 + 1);
@@ -128,6 +215,14 @@ public class Utils {
     	return paramTypes.toArray(new String[0]);
     }
 
+    /**
+     * Given a Json object, returns the set of fields that can be used
+     * to filter the indicator display.  The filter fields contain signature
+     * fields and primitive fields.   
+     * 
+     * @param jsonObj - a Json object
+     * @return the filter fields for the object
+     */
     public static Set<String> getFilterFields(JsonObject jsonObj) {
         Set<String> fields = new TreeSet<String>();
         for (Map.Entry<String, JsonElement> entry: jsonObj.entrySet()) {
@@ -144,27 +239,51 @@ public class Utils {
         return fields;
     }
 
+    /**
+     * Given a top-level Json object, returns the set of fields collected 
+     * from the object and its descendants that can be used to filter the  
+     * indicator display.  
+     * 
+     * @param jsonObj - a Json object
+     */
     public static Set<String> getAllFilterFields(JsonObject jsonObj) {
-        Set<String> fields = new TreeSet<String>();
-        getAllFilterFields(jsonObj, fields, true);
-        return fields;
+        Set<String> filterFields = new TreeSet<String>();
+        getAllFilterFields(jsonObj, filterFields, true);
+        return filterFields;
     }
 
-    private static void getAllFilterFields(JsonObject jsonObj, Set<String> fields, boolean topLevel) {
+    /**
+     * Given a Json object, collects fields that can be used to filter the  
+     * indicator display from the object and its descendants and adds the
+     * fields to the accumulated filter fields. 
+     * 
+     * @param jsonObj - a Json object
+     * @param filterFields - filterFields collected so far
+     * @param topLevel - true if this is the top-level call, not a recursive call
+     */
+    private static void getAllFilterFields(JsonObject jsonObj, Set<String> filterFields, boolean topLevel) {
         if (!topLevel) {
-            fields.addAll(getFilterFields(jsonObj));
+            filterFields.addAll(getFilterFields(jsonObj));
         }
         JsonArray childrenArray = Utils.getChildrenArray(jsonObj);
         if (childrenArray != null) {
             for (int i = 0; i < childrenArray.size(); i++) {
                 JsonElement child = childrenArray.get(i);
                 if (child.isJsonObject()) {
-                    getAllFilterFields((JsonObject)child, fields, false);
+                    getAllFilterFields((JsonObject)child, filterFields, false);
                 }
             }
         }
     }
 
+    /**
+     * Given a Json object, returns the set of fields that can be used to sort the  
+     * indicator display.  The fields include the signature fields and primitive
+     * fields excluding the 'type' field.
+     * 
+     * @param jsonObj - a Json object
+     * @return the sort-by fields
+     */
     public static Set<String> getSortByFields(JsonObject jsonObj) {
         Set<String> fields = new TreeSet<String>();
         fields.add("label");
@@ -185,14 +304,25 @@ public class Utils {
         return fields;
     }
 
+    /**
+     * Returns true if the given Json element is an empty Json object, i.e.
+     * with no properties.
+     */
     public static boolean isEmptyJsonObject(JsonElement jsonElt) {
         return jsonElt.isJsonObject() && ((JsonObject)jsonElt).entrySet().isEmpty();
     }
     
+    /**
+     * Returns a pretty printed string of the given Json element.
+     */
     public static String toStringPretty(JsonElement jsonElt) {
         return toStringPretty(jsonElt, 0);
     }
     
+    /**
+     * Returns a pretty printed string of the given Json element, indented
+     * at the given level.
+     */
     public static String toStringPretty(JsonElement jsonElt, int level) {
         if (jsonElt.isJsonObject())
             return toStringPretty((JsonObject)jsonElt, level);
@@ -201,6 +331,10 @@ public class Utils {
         return jsonElt.toString();
     }
     
+    /**
+     * Returns a pretty printed string of the given Json object, indented
+     * at the given level.
+     */
     public static String toStringPretty(JsonObject jsonObj, int level) {
         StringBuffer buf = new StringBuffer();
         buf.append("{");
@@ -209,6 +343,10 @@ public class Utils {
         return buf.toString();
     }
 
+    /**
+     * Returns a pretty printed string of the field values for the given 
+     * Json object, indented at the given level.
+     */
     private static String fieldsToStringPretty(JsonObject jsonObj, int level) {
         StringBuffer buf = new StringBuffer();
         String indent = "\n" + VAUtils.indent(level);
@@ -232,6 +370,10 @@ public class Utils {
         return buf.toString();
     }
 
+    /**
+     * Returns a pretty printed string of the given Json array, indented
+     * at the given level.
+     */
     private static String toStringPretty(JsonArray jsonArray, int level) {
         StringBuffer buf = new StringBuffer();
         buf.append("[");
@@ -250,6 +392,17 @@ public class Utils {
         return buf.toString();
     }
     
+    /**
+     * Given two Json objects, compares the values of the given field and returns
+     *   - a negative integer if the first field value is less than the second
+     *   - a positive integer if the first field value is greater than the second
+     *   - zero if the first field value is equal to the second
+     *   
+     * @param jsonObj1 - the first Json object
+     * @param jsonObj2 - the second Json object
+     * @param field - a field
+     * @return the comparison result
+     */
     public static int compareField(JsonObject jsonObj1, JsonObject jsonObj2, String field) {
         if (SIGNATURE_FIELDS.contains(field)) {
             String val1 = getSignatureFieldValueAsString(jsonObj1, field);
@@ -278,6 +431,13 @@ public class Utils {
         return 0;
     }
 
+    /**
+     * Given a Json element, returns its signature value if it has a 
+     * 'signature' field. Otherwise returns null.
+     * 
+     * @param jsonObj - a Json object
+     * @return the signature
+     */
     public static String getSignature(JsonElement jsonObj) {
         String sig = getFieldValueAsString(jsonObj, "signature");
         if (sig != null && sig.startsWith("<"))
@@ -285,10 +445,24 @@ public class Utils {
         return sig;
     }
 
+    /**
+     * Given a Json element, returns the source location value as a Json object
+     * if the element has a 'src-loc' field. Otherwise returns null.
+     * 
+     * @param jsonObj - a Json object
+     * @return the signature
+     */
     public static JsonObject getSourceLoc(JsonElement jsonObject) {
         return Utils.getFieldValueAsObject(jsonObject, SOURCE_LOCATION_PROP);
     }
     
+    /**
+     * Given a Json element, returns the source class string
+     * if the element has a 'src-loc' field. Otherwise returns null.
+     * 
+     * @param jsonObj - a Json object
+     * @return the source class string
+     */
     public static String getSourceClass(JsonElement jsonObject) {
         JsonObject sourceLoc = getSourceLoc(jsonObject);
         if (sourceLoc != null)
@@ -296,6 +470,13 @@ public class Utils {
         return null;
     }
 
+    /**
+     * Given a Json element, returns the source line number
+     * if the element has a 'src-loc' field. Otherwise returns -1.
+     * 
+     * @param jsonObj - a Json object
+     * @return the source line number
+     */
     public static int getSourceLine(JsonElement jsonObject) {
         JsonObject sourceLoc = getSourceLoc(jsonObject);
         if (sourceLoc != null)
@@ -303,6 +484,14 @@ public class Utils {
         return -1;
     }
 
+    /**
+     * Looks for method models in the given security spec model that match the given 
+     * Json object. Returns the method models if found, otherwise returns the empty set.
+     * 
+     * @param spec - a security spec model
+     * @param jsonObj - a Json object representing a method or method call
+     * @return the method models
+     */
     public static Set<MethodModel> getMethodModels(SecuritySpecModel spec, JsonElement jsonObj) {
     	if (spec != null && jsonObj != null) {
     		String link = Utils.getFieldValueAsString(jsonObj, "link");
@@ -314,6 +503,18 @@ public class Utils {
     	return Collections.EMPTY_SET;
     }
 
+    /**
+     * Looks for method models in the given security spec model that match the given
+     * field values from a Json object. Returns the method models if found, otherwise 
+     * returns the empty set.
+     * 
+     * @param spec - a security spec model
+     * @param sig - the method signature
+     * @param srcClass - the source class name
+     * @param srcLine - the source line number
+     * @param link - the link to method models
+     * @return the method models
+     */
     public static Set<MethodModel> getMethodModels(SecuritySpecModel spec, String sig, String srcClass,
             int srcLine, String link) {
         Set<MethodModel> result = new TreeSet<MethodModel>();
@@ -338,6 +539,25 @@ public class Utils {
             }
         }
         return result;
+    }
+
+    /**
+     * Returns the active indicator outline view. Returns null if the active view isn't 
+     * an IndicatorViewPart.
+     */
+    public static IndicatorViewPart getIndicatorView() {
+        IWorkbenchWindow active = PlatformUI.getWorkbench()
+                .getActiveWorkbenchWindow();
+        if (active == null)
+            return null;
+        IWorkbenchPage page = active.getActivePage();
+        if (page == null)
+            return null;
+        IWorkbenchPart part = page.getActivePart();
+        if (!(part instanceof IndicatorViewPart))
+            return null;
+
+        return (IndicatorViewPart) part;
     }
 
 }

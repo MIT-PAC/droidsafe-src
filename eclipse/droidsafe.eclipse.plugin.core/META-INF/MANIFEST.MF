@@ -1,8 +1,8 @@
-xManifest-Version: 1.0
+Manifest-Version: 2.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Core
 Bundle-SymbolicName: droidsafe.eclipse.plugin.core; singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-Activator: droidsafe.eclipse.plugin.core.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,

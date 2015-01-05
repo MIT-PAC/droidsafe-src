@@ -164,13 +164,36 @@ PropertyChangeListener {
             new LinkedHashMap<CodeLocationModel, Map<MethodModel, List<MethodModel>>>();
 
 
+    /**
+     * A map from source info kind and sink info kind to the set of sink method models where there are info flows
+     * from the source kind to the sink kind.  This information is used to display Info Flow Summary outline in
+     * the Eclipse plugin.
+     */
     Map<String, Map<String, Set<MethodModel>>> infoFlowSummaryMap = new TreeMap<String, Map<String, Set<MethodModel>>>();
 
+    /**
+     * A map from class names, method ids, method line ranges, and tainted variables/fields to
+     * the corresponding sets of info sources that flow through the tainted variables/fields.
+     * This information is used to display tainted data in the Java sources viewed in the 
+     * Eclipse plugin.
+     */
     private Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> taintedDataMap;
+
+    /**
+     * A map from info source kinds to the corresponding sets of info sources.  This information is 
+     * used by the Eclipse plugin to facilitate project-wise display filtering of tainted data.
+     */
     private Map<String, Set<CallLocationModel>> taintSourcesMap;
 
+    /**
+     * A map from class names and method ids to the corresponding sets of source line ranges of 
+     * unreachable methods.  This information is used by the Eclipse plugin to locate dead code.
+     */
     private Map<String, Map<String, Set<IntRange>>> unreachableSourceMethodMap;
 
+    /**
+     * A map from source method signatures to source method code locations. 
+     */
     private Map<String, SourceLocationTag> sourceMethodLocationMap;
 
     /**
@@ -186,31 +209,50 @@ PropertyChangeListener {
         computeUneachableSourceMethods();
         computeSourceMethodLocationMap();
         //        if (Config.v().debug) {
-        printTaintInfo();
-        printUnreachableSourceMethods();
-        printSourceMethodLocationMap();
+        writeTaintInfoToFile();
+        writeUnreachableSourceMethodsToFile();
+        writeSourceMethodLocationMapToFile();
         //        }
     }
-
+    
+    /**
+     * Returns the map from class name, method id, method line range, and tainted variable/field name to 
+     * the info sources that flow through the tainted variable/field.
+     * 
+     * @return the tainted data map
+     */
     public Map<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>> getTaintedDataMap() {
         return taintedDataMap;
     }
 
+    /**
+     * Returns the map from info source kind to the corresponding info sources.
+     * 
+     * @return the taint sources map
+     */
     public Map<String, Set<CallLocationModel>> getTaintSourcesMap() {
         return taintSourcesMap;
     }
 
+    /**
+     * Returns the map from source method signatures to source method code locations. 
+     * 
+     * @return the source method location map
+     */
     public Map<String, SourceLocationTag> getSourceMethodLocationMap() {
         return sourceMethodLocationMap;
     }
 
+    /**
+     * Compute the tainted data map and the tainted sources map for the spec model.
+     */
     private void computeTaintInfo() {
         taintedDataMap = new TreeMap<String, Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>>>();
         taintSourcesMap = new TreeMap<String, Set<CallLocationModel>>();
         Set<MethodOrMethodContext> methodContexts = PTABridge.v().getReachableMethodContexts();
         for (MethodOrMethodContext methodContext : methodContexts) {
             SootMethod method = methodContext.method();
-            String methodName = getSourceMethodName(method);
+            String methodName = getSourceMethodID(method);
             if (methodName != null) {
                 SourceLocationTag loc = SootUtils.getMethodLocation(method);
                 if (loc != null) {
@@ -250,7 +292,15 @@ PropertyChangeListener {
         }
     }
 
-    private String getSourceMethodName(SootMethod method) {
+    /**
+     * Returns the method name if the given method is not a constructor.  Returns 
+     * the short class name and the short parameter signature if the given method 
+     * is a constructor.
+     * 
+     * @param method - the method
+     * @return
+     */
+    private String getSourceMethodID(SootMethod method) {
         String methodName = method.getName();
         if (methodName.equals("DS__FAKE__CALLBACKS__") || 
                 methodName.startsWith("OBJECTGETCLASS_TO_CLASSCONSTANT_LOCAL") || 
@@ -266,13 +316,19 @@ PropertyChangeListener {
                 methodName = className.substring(pos + 1);
             else 
                 methodName = Utils.extractClassname(className);
-            String paramsSig = getParamsSig(method);
+            String paramsSig = getParamsShortSig(method);
             methodName = (methodName + paramsSig).intern();
         }
         return methodName;
     }
 
-    private String getParamsSig(SootMethod method) {
+    /**
+     * Returns short signature (without package names) for the parameters of the given method.
+     * 
+     * @param method - the method
+     * @return
+     */
+    private String getParamsShortSig(SootMethod method) {
         StringBuffer buffer = new StringBuffer();
         buffer.append("(");
         List<Type> paramTypes = method.getParameterTypes();
@@ -289,6 +345,15 @@ PropertyChangeListener {
         return buffer.toString();
     }
 
+    /**
+     * Given a method context and a method, computes taint info for the local variables
+     * in the method, and updates the map from variable name to info sources that
+     * can flow through the variable.
+     * 
+     * @param methodContext - the method context
+     * @param methodMap - a map from variable name to info sources that can flow through
+     *                    the variable
+     */
     private void computeTaintInfoForMethodLocals(MethodOrMethodContext methodContext, Map<String, Set<CallLocationModel>> methodMap) {
         for (Local local: methodContext.method().getActiveBody().getLocals()) {
             String name = local.getName();
@@ -307,6 +372,15 @@ PropertyChangeListener {
         }
     }
 
+    /**
+     * Given a method context and a method, computes taint info for the fields referenced
+     * in the method, and updates the map from field name to info sources that
+     * can flow through the field.
+     * 
+     * @param methodContext - the method context
+     * @param methodMap - a map from field name to info sources that can flow through
+     *                    the field
+     */
     private void computeTaintInfoForMethodFieldRefs(MethodOrMethodContext methodContext, Map<String, Set<CallLocationModel>> methodMap) {
         for (Unit unit: methodContext.method().getActiveBody().getUnits()) {
             Stmt stmt = (Stmt) unit;
@@ -314,7 +388,7 @@ PropertyChangeListener {
                 FieldRef fieldRef = stmt.getFieldRef();
                 String fieldName = fieldRef.getField().getName();
                 if (!fieldName.contains("$") && !fieldName.startsWith(UnmodeledGeneratedClasses.DUMMY_FIELD_PREFIX)) {
-                    String name = valueToString(fieldRef);
+                    String name = fieldRefToString(fieldRef);
                     if (!name.startsWith("$") && !name.startsWith("_$")) {
                         String origName = name.replaceFirst("#\\d+", "");
                         Set<CallLocationModel> vals = getTaints(methodContext, fieldRef);
@@ -332,20 +406,29 @@ PropertyChangeListener {
         }
     }
 
-    private String valueToString(Value value) {
-        if (value instanceof InstanceFieldRef) {
-            InstanceFieldRef instanceFieldRef = (InstanceFieldRef) value;
-            return valueToString(instanceFieldRef.getBase()) + "." + instanceFieldRef.getField().getName();
-        } else if (value instanceof StaticFieldRef) {
-            StaticFieldRef staticFieldRef = (StaticFieldRef) value;
+    /**
+     * Returns the string representation of the given field reference.
+     * 
+     * @param fieldRef - the field reference
+     * @return the string representation of the field reference
+     */
+    private String fieldRefToString(FieldRef fieldRef) {
+        if (fieldRef instanceof InstanceFieldRef) {
+            InstanceFieldRef instanceFieldRef = (InstanceFieldRef) fieldRef;
+            Value base = instanceFieldRef.getBase();
+            String baseStr = (base instanceof FieldRef)? fieldRefToString((FieldRef)base) : base.toString();
+            return baseStr + "." + instanceFieldRef.getField().getName();
+        } else {
+            StaticFieldRef staticFieldRef = (StaticFieldRef) fieldRef;
             String className = staticFieldRef.getFieldRef().declaringClass().getName();
             return className + "." + staticFieldRef.getField().getName();
-        } else {
-            return value.toString();
-        }
+        } 
     }
 
-    private void printTaintInfo() {
+    /**
+     * Writes the tainted data information to a file 'tained-data.txt' in the droidsafe output directory.
+     */
+    private void writeTaintInfoToFile() {
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "tainted-data.txt");
             for (String clsName:  taintedDataMap.keySet()) {
@@ -382,6 +465,14 @@ PropertyChangeListener {
         }     
     }
 
+    /**
+     * Returns the set of info sources that can flow through the given value under the given
+     * method context.
+     * 
+     * @param methodContext - the method context
+     * @param value - the value on which the taint sources are to be calculated
+     * @return
+     */
     private Set<CallLocationModel> getTaints(MethodOrMethodContext methodContext, Value value) {
         Set<InfoValue> infoVals = new HashSet<InfoValue>();
         if (value instanceof Local && value.getType() instanceof PrimType) {
@@ -436,10 +527,19 @@ PropertyChangeListener {
         return result;
     }
 
+    /**
+     * Returns the map from class name and method id to the set of source line ranges of unreachable methods
+     * with the method id.
+     * 
+     * @return the unreachable source method map
+     */
     public Map<String, Map<String, Set<IntRange>>> getUnreachableSourceMethodMap() {
         return unreachableSourceMethodMap;
     }
 
+    /**
+     * Computes source methods that are unreachable and sets the field unreachableSourceMethodMap.
+     */
     private void computeUneachableSourceMethods() {
         unreachableSourceMethodMap = new TreeMap<String, Map<String, Set<IntRange>>>();
         Set<String> srcClassNames = Project.v().getSrcClasses();
@@ -448,7 +548,7 @@ PropertyChangeListener {
             if (!srcClass.isPhantomClass()) {
                 for (SootMethod method: srcClass.getMethods()) {
                     if (!PTABridge.v().isReachableMethod(method)) {
-                        String methodName = getSourceMethodName(method);
+                        String methodName = getSourceMethodID(method);
                         if (methodName != null) {
                             SourceLocationTag loc = SootUtils.getMethodLocation(method);
                             if (loc != null) {
@@ -478,7 +578,11 @@ PropertyChangeListener {
         }
     }
 
-    private void printUnreachableSourceMethods() {
+    /**
+     * Writes info on the unreachable source methods to a file 'unreachable-source-methods.txt' in the droidsafe output
+     * directory.
+     */
+    private void writeUnreachableSourceMethodsToFile() {
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "unreachable-source-methods.txt");
             for (String clsName:  unreachableSourceMethodMap.keySet()) {
@@ -500,6 +604,9 @@ PropertyChangeListener {
         }     
     }
 
+    /**
+     * Computes locations of the source methods and sets the field sourceMethodLocationMap.
+     */
     private void computeSourceMethodLocationMap() {
         sourceMethodLocationMap = new HashMap<String, SourceLocationTag>();
         for (SootMethod method: SourceCallTree.v().collectSourceMethods()) {
@@ -510,7 +617,11 @@ PropertyChangeListener {
         }
     }
 
-    private void printSourceMethodLocationMap() {
+    /**
+     * Writes the source method location map to a file 'source-method-locations.txt' in the droidsafe output
+     * directory.
+     */
+    private void writeSourceMethodLocationMapToFile() {
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "source-method-locations.txt");
             for (Entry<String, SourceLocationTag> entry:  sourceMethodLocationMap.entrySet()) {
@@ -523,18 +634,39 @@ PropertyChangeListener {
         }     
     }
 
+    /**
+     * Returns the white list.
+     * 
+     * @return the write list
+     */
     public Set<MethodModel> getWhitelist() {
         return this.whitelist;
     }
 
+    /**
+     * Returns the entry point methods of the spec model.
+     * 
+     * @return the entry points
+     */
     public Set<MethodModel> getEntryPoints() {
         return this.inputEventBlocks.keySet();
     }
 
+    /**
+     * Returns the output events originated from the given method.
+     * @param method - the method
+     * @return
+     */
     public List<MethodModel> getOutputEvents(MethodModel method) {
         return this.inputEventBlocks.get(method);
     }
 
+    /**
+     * Returns the map from source info kind and sink info kind to the set of sink method models where there are info flows
+     * from the source kind to the sink kind. 
+     * 
+     * @return the info flow summary map
+     */
     public Map<String, Map<String, Set<MethodModel>>> getInfoFlowSummaryMap() {
         return this.infoFlowSummaryMap;
     }
@@ -552,6 +684,11 @@ PropertyChangeListener {
 
 
 
+    /**
+     * Populates the fields from the information stored in the original specification.
+     * 
+     * @param originalSpec - the security specification to be translated
+     */
     private void translateModel(SecuritySpecification originalSpec) {
         for (Method m : originalSpec.getWhitelist()) {
             MethodModel model = new MethodModel(m);
@@ -629,6 +766,13 @@ PropertyChangeListener {
         return map;
     }
 
+    /**
+     * Updates the info flow summary map if the given method is a sink method and there are info flows
+     * from some info sources into this sink method.
+     * 
+     * @param methodModel - the method model
+     * @param method - the method corresponding to the method model
+     */
     private void updateInfoFlowSummaryMap(MethodModel methodModel, Method method) {
         Set<InfoKind> sourcesInfoKinds = method.getSourcesInfoKinds();
         Set<InfoKind> sinkInfoKinds = method.getSinkInfoKinds();
@@ -653,6 +797,11 @@ PropertyChangeListener {
         }
     }
 
+    /**
+     * Returns the string representation of this spec model.
+     * 
+     * @return the string representation of this spec model.
+     */
     public String printSpecModel() {
         StringBuffer sb = new StringBuffer("Droidsafe Spec Model");
         sb.append("\nWhitelist\n");
@@ -726,10 +875,22 @@ PropertyChangeListener {
         }
     }
 
+    /**
+     * Returns the input event blocks, i.e. the map from entry points (input events) to output events
+     * (API calls).
+     * 
+     * @return the input event blocks
+     */
     public Map<MethodModel, List<MethodModel>> getInputEventBlocks() {
         return this.inputEventBlocks;
     }
 
+    /**
+     * Returns the output event blocks, i.e. the map from output events (API calls) to entry points 
+     * (input events) to code locations.
+     * 
+     * @return the output event blocks
+     */
     public Map<MethodModel, Map<MethodModel, List<CodeLocationModel>>> getOutputEventBlocks() {
         if (this.outputEventBlocks == null || this.outputEventBlocks.isEmpty()) {
             computeOutputEventBlocks();
@@ -737,6 +898,12 @@ PropertyChangeListener {
         return this.outputEventBlocks;
     }
 
+    /**
+     * Returns the code location event blocks, i.e. the map from code location and input eventt to
+     * the list of output events in which the parent code location is present.
+     * 
+     * @return the code location event blocks
+     */
     public Map<CodeLocationModel, Map<MethodModel, List<MethodModel>>> getCodeLocationEventBlocks() {
         if (this.codeLocationEventBlocks == null || this.codeLocationEventBlocks.isEmpty()) {
             computeCodeLocationEventBlocks();
@@ -819,7 +986,7 @@ PropertyChangeListener {
      * Print points-to info associated with the security spec to a file in the droidsafe folder of 
      * the current selected Android app.
      */
-    public static void printPointsToInfo(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+    public static void writePointsToInfoToFile(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + POINTS_TO_INFO_FILE_NAME);
             Set<MethodModel> entryPoints = securitySpecModel.getEntryPoints();
@@ -859,7 +1026,7 @@ PropertyChangeListener {
      * Print points-to info associated with the security spec to a file in the droidsafe folder of 
      * the current selected Android app.
      */
-    public static void printValueInfo(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+    public static void writeValueInfoToFile(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + VALUE_INFO_FILE_NAME);
             Set<MethodModel> entryPoints = securitySpecModel.getEntryPoints();
@@ -959,14 +1126,22 @@ PropertyChangeListener {
 
     }
 
-    public static void printSpecInfo(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
-        printInfoFlowSummary(securitySpecModel, Config.v().APP_ROOT_DIR);
-        printInfoFlowDetails(securitySpecModel, Config.v().APP_ROOT_DIR);
-        printValueInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
-        printPointsToInfo(securitySpecModel, Config.v().APP_ROOT_DIR);
+    /**
+     * Writes info flow info, value flow info, and points to info associated with the security spec to separate
+     * files in the droidsafe folder of the current selected Android app.
+     */
+    public static void writeSpecInfoToFiles(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+        writeInfoFlowSummaryToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+        writeInfoFlowDetailsToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+        writeValueInfoToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+        writePointsToInfoToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
     }
 
-    public static void printInfoFlowSummary(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+    /**
+     * Writes info flow summary info associated with the security spec to a file in the droidsafe folder of 
+     * the current selected Android app.
+     */
+    public static void writeInfoFlowSummaryToFile(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + INFO_FLOW_SUMMARY_FILE_NAME);
             Map<String, Map<String, Set<MethodModel>>> infoFlowSummaryMap = securitySpecModel.getInfoFlowSummaryMap();
@@ -988,10 +1163,10 @@ PropertyChangeListener {
     }
 
     /**
-     * Print detailed info flow info associated with the security spec to a file in the droidsafe folder of 
+     * Writes detailed info flow info associated with the security spec to a file in the droidsafe folder of 
      * the current selected Android app.
      */
-    public static void printInfoFlowDetails(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
+    public static void writeInfoFlowDetailsToFile(SecuritySpecModel securitySpecModel, String app_ROOT_DIR) {
         try {
             FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + INFO_FLOW_DETAILS_FILE_NAME);
             Set<MethodModel> entryPoints = securitySpecModel.getEntryPoints();
@@ -1026,6 +1201,15 @@ PropertyChangeListener {
         }     
     }
 
+    /** 
+     * Writes the detailed info flow info associated with a method argument or receiver using the given FileWriter.
+     * 
+     * @param desc - the description (a method argument or a method receiver) of the value where the info flows through
+     * @param infoKinds - the info kinds of the flows
+     * @param infoUnits - the info units of the flows
+     * @param fw - the file writer
+     * @throws IOException
+     */
     private static void writeInfoFlowDetails(String desc, List<String> infoKinds,
                                              Map<String, List<CallLocationModel>> infoUnits, FileWriter fw) throws IOException {
         if ((infoKinds != null && !infoKinds.isEmpty()) || (infoUnits != null && !infoUnits.isEmpty())) {

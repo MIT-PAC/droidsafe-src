@@ -15,11 +15,18 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.speclang.model.CallLocationModel;
 
+/**
+ * Content provider for the tree structure of a taint sources outline view.
+ * 
+ * @author gilham
+ *
+ */
 public class TaintSourcesTreeElementContentProvider extends DroidsafeInfoTreeElementContentProvider {
 
+    /** A map from input objects to the corresponding arrays of root elements. */
     protected Map<Object, Object[]> inputToRoots = new HashMap<Object, Object[]>();
 
-    /** The object on which the droidsafe analysis info is to be displayed in the outline view */
+    /** The taint marker whose taint sources are to be displayed in the outline view */
     protected Object fInput;
 
     @Override
@@ -47,7 +54,19 @@ public class TaintSourcesTreeElementContentProvider extends DroidsafeInfoTreeEle
         inputToRoots.clear();
     }
     /**
-     * Populate the tree elements of the info sources outline view. Return the root elements.
+     * Populate the tree elements of the info sources outline view. The contents are of form:
+     * 
+     *   <info kind>
+     *     <info source>
+     *     ...
+     *     <info source>
+     *   ...
+     *   <info kind>
+     *     <info source>
+     *     ...
+     *     <info source>
+     *     
+     * Return the root elements.
      */
     protected Object[] initializeRoots() {
     	IMarker taintMarker = (IMarker) fInput;

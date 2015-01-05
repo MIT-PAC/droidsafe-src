@@ -20,7 +20,7 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
     protected Object fInputElement;
 
     /**
-     * Set the input element for the viewer and update the contents of the view.
+     * Sets the input element for the viewer and update the contents of the view.
      */
     protected void setInputElement(Object inputElement) {
         if ((inputElement == null && fInputElement != null) || 
@@ -31,19 +31,23 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
     }
 
     /**
-     * Return the input element for this outline.
+     * Returns the input element for this outline.
      */
     public Object getInputElement() {
         return fInputElement;
     }
 
+    /**
+     * Resets the content when a different project is selected.
+     */
+    @Override
     protected void projectSelected() {
         resetViewer();
         setInputElement(null);
      }
     
     /**
-     * Return the method on which the droidsafe analysis info is displayed on this outline.
+     * Returns the method on which the droidsafe analysis info is displayed on this outline.
      */
     protected abstract MethodModel getMethod();
 

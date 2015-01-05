@@ -1,8 +1,6 @@
 package droidsafe.eclipse.plugin.core.view.indicator;
 
 import java.io.File;
-import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.jface.action.ContributionItem;
 import org.eclipse.jface.action.IContributionItem;
@@ -17,14 +15,28 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.CompoundContributionItem;
 
-public class IndicatorMenu extends CompoundContributionItem {
+/**
+ * A dynamic menu for displaying the indicators in the project
+ * other than the one being displayed.
+ * 
+ * @author gilham
+ *
+ */
+public class DynamicIndicatorMenu extends CompoundContributionItem {
 
+    /** The contribution items when there are no indicators in the project. */
     static IContributionItem[] NO_INDICATOR;
+
+    /** The contribution items when there are no other indicators in the project. */
     static IContributionItem[] NO_OTHER_INDICATOR;
     
     static {
         NO_INDICATOR = new IContributionItem[1];
         NO_INDICATOR[0] = new ContributionItem() {
+
+        	/* (non-Javadoc)
+             * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu, int)
+             */
             public void fill(Menu menu, int index) {
                 MenuItem item = new MenuItem(menu, SWT.READ_ONLY);
                 item.setText("<No indicators>");
@@ -33,6 +45,10 @@ public class IndicatorMenu extends CompoundContributionItem {
         
         NO_OTHER_INDICATOR = new IContributionItem[1];
         NO_OTHER_INDICATOR[0] = new ContributionItem() {
+
+        	/* (non-Javadoc)
+             * @see org.eclipse.jface.action.ContributionItem#fill(org.eclipse.swt.widgets.Menu, int)
+             */
             public void fill(Menu menu, int index) {
                 MenuItem item = new MenuItem(menu, SWT.READ_ONLY);
                 item.setText("<No other indicators>");
@@ -40,9 +56,11 @@ public class IndicatorMenu extends CompoundContributionItem {
         };
     }
     
-    @Override
+    /* (non-Javadoc)
+     * @see org.eclipse.ui.actions.CompoundContributionItem#getContributionItems()
+     */
     protected IContributionItem[] getContributionItems() {
-        final IndicatorViewPart view = getView();
+        final IndicatorViewPart view = Utils.getIndicatorView();
         if (view == null)
             return new IContributionItem[0];
 
@@ -100,26 +118,6 @@ public class IndicatorMenu extends CompoundContributionItem {
 
         return items;
 
-    }
-
-    /**
-     * Get the view this contribution is working on.
-     * 
-     * @return JsonViewPart or <code>null</code> if the active view isn't a JsonViewPart
-     */
-    IndicatorViewPart getView() {
-        IWorkbenchWindow active = PlatformUI.getWorkbench()
-                .getActiveWorkbenchWindow();
-        if (active == null)
-            return null;
-        IWorkbenchPage page = active.getActivePage();
-        if (page == null)
-            return null;
-        IWorkbenchPart part = page.getActivePart();
-        if (!(part instanceof IndicatorViewPart))
-            return null;
-
-        return (IndicatorViewPart) part;
     }
 
 }

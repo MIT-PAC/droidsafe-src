@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view.callgraph;
+package droidsafe.eclipse.plugin.core.view.callhierarchy;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,16 +18,23 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 
-public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElementContentProvider {
+/**
+ * Content provider for the tree structure of a call hierarchy view.
+ * 
+ * @author gilham
+ *
+ */
+public class CallHierarchyTreeElementContentProvider extends DroidsafeInfoTreeElementContentProvider {
 
+    /** A map from input objects to the corresponding arrays of root elements. */
     protected Map<Object, Object[]> inputToRoots = new HashMap<Object, Object[]>();
 
-    /** The object on which the droidsafe analysis info is to be displayed in the outline view */
-    protected ICallGraph fInput;
+    /** The call hierarchy to be displayed in the outline view */
+    protected CallHierarchy fInput;
 
     @Override
     public Object[] getElements(Object input) {
-        this.fInput = (ICallGraph) input;
+        this.fInput = (CallHierarchy) input;
         Object[] roots = inputToRoots.get(input);
         if (roots == null) {
             roots = initializeRoots();
@@ -39,33 +46,37 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     @Override
     public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
         this.fViewer = (TreeViewer) viewer;
-        this.fInput = (ICallGraph) newInput;
+        this.fInput = (CallHierarchy) newInput;
     }
 
     /**
-     * Reset the content of this content provider.
+     * Resets the content of this content provider.
      */
     @Override
     protected void reset() {
         inputToRoots.clear();
     }
+
     /**
-     * Populate the tree elements of the info sources outline view. Return the root elements.
+     * Creates tree elements for the callee/caller hierarchy outline view. Returns the root elements.
      */
     protected Object[] initializeRoots() {
     	getTreeElementMap().clear();
-    	if (fInput instanceof CallGraph)
-    		return initializeCallGraphRoots();
+    	if (fInput instanceof CalleeHierarchy)
+    		return initializeCalleeHiearchyRoots();
     	else {
-    		Map<String, Map<String, Set<JsonElement>>> callerMap = ((CallerGraph)fInput).getCallerMap();
-    		return initializeCallerGraphRoots(callerMap);
+    		Map<String, Map<String, Set<JsonElement>>> callerMap = ((CallerHierarchy)fInput).getCallerMap();
+    		return initializeCallerHierarchyRoots(callerMap);
     	}
     }
     
-    private Object[] initializeCallGraphRoots() {
+    /**
+     * Creates tree elements for the call hierarchy outline view. Returns the root elements.
+     */
+    private Object[] initializeCalleeHiearchyRoots() {
     	List<TreeElement<JsonElement, JsonElement>> roots = new ArrayList<TreeElement<JsonElement, JsonElement>>();
-    	CallGraph callGraph = (CallGraph) fInput;
-    	Collection<JsonElement> rootNodes = callGraph.getRoots();
+    	CalleeHierarchy calleeHierarchy = (CalleeHierarchy) fInput;
+    	Collection<JsonElement> rootNodes = calleeHierarchy.getRoots();
     	for (JsonElement rootElement: rootNodes) {
     		if (!Utils.isEmptyJsonObject(rootElement)) {
     			TreeElement<JsonElement, JsonElement> root = initializeCalleeTree(rootElement);
@@ -75,6 +86,9 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     	return roots.toArray();
     }
 
+    /**
+     * Creates tree elements for the callee hierarchy rooted at the given Json element. Returns the root element.
+     */
     private TreeElement<JsonElement, JsonElement> initializeCalleeTree(JsonElement jsonElement) {
     	TreeElement<JsonElement, JsonElement> element = new TreeElement<JsonElement, JsonElement>(jsonElement.toString(), jsonElement, JsonElement.class);
     	getTreeElementMap().put(jsonElement, element);
@@ -97,16 +111,28 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     	return element;
     }
 
-    private Object[] initializeCallerGraphRoots(Map<String, Map<String, Set<JsonElement>>> callerMap) {
+    /**
+     * Creates tree elements for the caller hierarchy outline view. Returns the root elements.
+     * @param callerMap - a map from callee signatures to caller signatures to sets of method calls
+     * @return the root elements
+     */
+    private Object[] initializeCallerHierarchyRoots(Map<String, Map<String, Set<JsonElement>>> callerMap) {
     	List<TreeElement<SourceMethodNode, SourceMethodNode>> roots = new ArrayList<TreeElement<SourceMethodNode, SourceMethodNode>>();
-    	CallerGraph callerGraph = (CallerGraph) fInput;
-    	SourceMethodNode rootNode = callerGraph.getRoot();
+    	CallerHierarchy callerHierarchy = (CallerHierarchy) fInput;
+    	SourceMethodNode rootNode = callerHierarchy.getRoot();
     	Set<SourceMethodNode> processedNodes = new HashSet<SourceMethodNode>();
-    	TreeElement<SourceMethodNode, SourceMethodNode> root = initializeCallerTree(rootNode, processedNodes, callerMap);
+    	TreeElement<SourceMethodNode, SourceMethodNode> root = initializeCallerHierarchy(rootNode, processedNodes, callerMap);
     	return new Object[]{root};
     }
 
-    private TreeElement<SourceMethodNode, SourceMethodNode> initializeCallerTree(SourceMethodNode methodNode, Set<SourceMethodNode> processedNodes, Map<String, Map<String, Set<JsonElement>>> callerMap) {
+    /**
+     * Creates tree elements for the caller hierarchy rooted at the given node. Returns the root element.
+     * @param methodNode - a source method node
+     * @param processedNodes - a set of source mothod nodes already processed
+     * @param callerMap - a map from callee signatures to caller signatures to sets of method calls
+     * @return the root element
+     */
+    private TreeElement<SourceMethodNode, SourceMethodNode> initializeCallerHierarchy(SourceMethodNode methodNode, Set<SourceMethodNode> processedNodes, Map<String, Map<String, Set<JsonElement>>> callerMap) {
     	TreeElement<SourceMethodNode, SourceMethodNode> element = new TreeElement<SourceMethodNode, SourceMethodNode>(methodNode.toString(), methodNode, SourceMethodNode.class);
     	getTreeElementMap().put(methodNode, element);
     	if (!processedNodes.contains(methodNode)) {
@@ -115,7 +141,7 @@ public class CallGraphTreeElementContentProvider extends DroidsafeInfoTreeElemen
     		if (callers != null) {
     			for (String callerSig: callers.keySet()) {
     				SourceMethodNode callerNode = SourceMethodNode.get(callerSig);
-    				TreeElement<SourceMethodNode, SourceMethodNode> caller = initializeCallerTree(callerNode, processedNodes, callerMap);
+    				TreeElement<SourceMethodNode, SourceMethodNode> caller = initializeCallerHierarchy(callerNode, processedNodes, callerMap);
     				element.addChild(caller);
     			}
     		}

@@ -17,18 +17,30 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider;
 
 /**
- * Content provider for the tree structure of the points-to outline view.
+ * Content provider for the tree structure of an indicator outline view.
  * 
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
 public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElementContentProvider {
     
-    /** The object on which the droidsafe analysis info is to be displayed in the outline view */
+    /** The top-level Json object representing the indicator to be displayed in the outline view. */
     protected JsonObject fInput;
 
+    /** The underlying indicator outline view. */
     private IndicatorViewPart viewPart;
 
+    /**
+     * Constructs an IndicatorTreeElementContentProvider with the given indicator
+     * outline view.
+     */
+    public IndicatorTreeElementContentProvider(IndicatorViewPart viewPart) {
+        this.viewPart = viewPart;
+    }
+
+    /* (non-Javadoc)
+     * @see droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider#getRootElements()
+     */
     public Object[] getRootElements() {
         Object[] rootElements = viewPart.getRootElements();
         if (rootElements == null) {
@@ -38,10 +50,16 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         return rootElements;
     }
     
+    /* (non-Javadoc)
+     * @see droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider#setRootElements(java.lang.Object[])
+     */
     public void setRootElements(Object[] rootElements) {
         viewPart.setRootElements(rootElements);
     }
 
+    /* (non-Javadoc)
+     * @see droidsafe.eclipse.plugin.core.view.DroidsafeInfoTreeElementContentProvider#getSortedRootElements()
+     */
     public Object[] getSortedRootElements() {
         Object[] rootElements = viewPart.getRootElements();
         if (rootElements != null)
@@ -49,10 +67,9 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         return rootElements;
     }
     
-    public IndicatorTreeElementContentProvider(IndicatorViewPart viewPart) {
-        this.viewPart = viewPart;
-    }
-
+    /* (non-Javadoc)
+     * @see org.eclipse.jface.viewers.ITreeContentProvider#getElements(java.lang.Object)
+     */
     @Override
     public Object[] getElements(Object input) {
         if (input instanceof JsonObject) {
@@ -61,6 +78,9 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         return NO_CHILDREN;
     }
 
+    /* (non-Javadoc)
+     * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+     */
     @Override
     public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
         this.fViewer = (TreeViewer) viewer;
@@ -68,7 +88,8 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
     }
 
     /**
-     * Populate the tree elements of the JSON object outline view. Return the root elements.
+     * Populates the tree elements of the indicator outline view applying the visibility control
+     * and the filters. Returns the visible and filtered root elements.
      */
     protected Object[] initializeRoots() {
         getTreeElementMap().clear();
@@ -88,6 +109,10 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         return NO_CHILDREN;
     }
 
+    /**
+     * Creates the tree elements for the given Json element if it is visible.
+     * Returns the children tree elements or empty list if the Json element is not visible.
+     */
     private List<TreeElement<JsonElement, JsonElement>> initializeTree(JsonElement jsonElement) {
         List<TreeElement<JsonElement, JsonElement>> result = new ArrayList<TreeElement<JsonElement, JsonElement>>();
         boolean visible = isVisible(jsonElement);
@@ -116,6 +141,13 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         return result;
     }
     
+    /**
+     * Applies all filters to the trees rooted at the given root elements. Removes all the 
+     * tree elements that are filtered out. Returns the resulting filtered root elements.
+     * 
+     * @param roots - the root elements
+     * @return the filtered root elements
+     */
     private List<TreeElement<JsonElement, JsonElement>> applyFilters(
             List<TreeElement<JsonElement, JsonElement>> roots) {
         for (Filter filter: viewPart.getFilters()) {
@@ -126,6 +158,14 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         return roots;
     }
 
+    /**
+     * Applies the given filter to the trees rooted at the given root elements. Removes all the 
+     * tree elements that are filtered out. Returns the resulting filtered root elements.
+     * 
+     * @param roots - the root elements
+     * @param filter - a filter
+     * @return the filtered root elements
+     */
     private List<TreeElement<JsonElement, JsonElement>> applyFilter(
             List<TreeElement<JsonElement, JsonElement>> roots, Filter filter) {
         List<TreeElement<JsonElement, JsonElement>> results = 
@@ -139,6 +179,13 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         return results;
     }
 
+    /**
+     * Applies the given filter to the descendants of the given tree element. Removes all the 
+     * descendants that are filtered out from the tree.
+     * 
+     * @param element - a tree element
+     * @param filter - a filter
+     */
     private void applyFilterToChildren(TreeElement<JsonElement, JsonElement> element, Filter filter) {
         List<TreeElement<JsonElement, ?>> toRemove = new ArrayList<TreeElement<JsonElement, ?>>();
         for (TreeElement<JsonElement, ?> child : element.getChildren()) {
@@ -153,10 +200,13 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         }
     }
 
+    /**
+     * Returns true if the given element is filtered out by the given filter.
+     */
     private boolean isFiltered(TreeElement<JsonElement, ?> element, Filter filter) {
         JsonElement jsonElt = element.getData();
         FilterPred pred = filter.pred;
-        switch (filter.op) {
+        switch (filter.type) {
             case EXCLUDE: return pred.apply(jsonElt);
             case INCLUDE: return !pred.apply(jsonElt);
             default: // SHOW
@@ -164,6 +214,14 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         }
     }
 
+    /**
+     * Returns true if the given filter predicate is satisfied by any of the elements
+     * in the tree rooted at the given tree element
+     * 
+     * @param element - a tree element
+     * @param pred - a filter predicate
+     * @return true if the predicate is satisfied by any element in the tree
+     */
     private boolean satisfiedInTree(TreeElement<JsonElement, ?> element, FilterPred pred) {
         JsonElement jsonElt = element.getData();
         boolean satisfied = pred.apply(jsonElt);
@@ -176,6 +234,10 @@ public class IndicatorTreeElementContentProvider extends DroidsafeInfoTreeElemen
         return false;
     }
 
+    /**
+     * Returns true the if given Json element is visible according to the
+     * visibility control.
+     */
     private boolean isVisible(JsonElement jsonElement) {
         Map<String, Boolean> visibilityMap = viewPart.getVisibilityMap();
         String type = Utils.getObjectType(jsonElement);

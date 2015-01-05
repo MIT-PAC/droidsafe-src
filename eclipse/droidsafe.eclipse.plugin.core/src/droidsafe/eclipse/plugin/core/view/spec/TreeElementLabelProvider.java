@@ -99,6 +99,7 @@ public class TreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvi
     return DroidsafePluginUtilities.removeCloneSuffix(element.toString());
   }
 
+  @Override
   public String getToolTipText(Object obj) {
     if (obj instanceof TreeElement<?, ?>) {
       TreeElement<?, ?> element = (TreeElement<?, ?>) obj;
@@ -135,7 +136,7 @@ public class TreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvi
    * @param element The tree node element to display.
    * @return The icon image to display together with the label in the outline view.
    */
-  // @Override
+  @Override
   public Image getImage(Object element) {
     if (element instanceof TreeElement<?, ?>) {
       TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;

@@ -39,18 +39,18 @@ public class CallLocationModel extends CodeLocationModel {
     private String targetMethodSig = "";
 
     /**
-     * A map from call statements to their associated source line models.
+     * A map from call edges to their associated source line models.
      */
     private static Map<Edge, CallLocationModel> map = new HashMap<Edge, CallLocationModel>();
     
     private Set<String> infoKinds = null;
     
     /**
-     * Create a call statement source line model and compute its fields.
+     * Create a call edge source line model and compute its fields.
      * 
      * @param clz name of the class where the new expression for the AllocNode resides in
      * @param line the line number for the new expression corresponding to the underlying AllocNode
-     * @param stmt the underlying call statement
+     * @param stmt the underlying call edge
      */
     private CallLocationModel(String clz, int line, Edge edge) {
         super(clz, line);

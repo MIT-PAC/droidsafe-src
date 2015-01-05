@@ -24,7 +24,7 @@ import droidsafe.utils.SourceLocationTag;
 
 
 /** 
- * A call graph structure.  Nested arrays are used to represent the graph.
+ * A source call graph structure.  Nested arrays are used to represent the graph.
  * Recursion is not supported (the graph is truncated at a recursive call)
  **/
 public class SourceCallChainInfo implements Comparable<SourceCallChainInfo> {
