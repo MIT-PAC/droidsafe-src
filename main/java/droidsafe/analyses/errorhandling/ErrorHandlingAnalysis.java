@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 
 import soot.Body;
 import soot.Hierarchy;
+import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -27,6 +28,10 @@ import soot.Trap;
 import soot.Unit;
 import soot.UnitBox;
 import soot.jimple.Stmt;
+import soot.jimple.ThrowStmt;
+import soot.jimple.internal.JThrowStmt;
+import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.ExceptionalUnitGraph;
 import droidsafe.analyses.CatchBlocks;
 import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
@@ -58,9 +63,10 @@ public class ErrorHandlingAnalysis {
     private Set<Stmt> connectionCallsErrorsIgnored = new LinkedHashSet<Stmt>();
     private Set<Stmt> connectionCallsErrorsNotIgnored = new LinkedHashSet<Stmt>();
     private PrintStream out;
+    private SootClass throwableClass;
 
     private ErrorHandlingAnalysis() {
-        // TODO Auto-generated constructor stub
+        throwableClass = Scene.v().getSootClass("java.lang.Throwable");
     }
 
     public static ErrorHandlingAnalysis v() {
@@ -189,7 +195,6 @@ public class ErrorHandlingAnalysis {
         try {
             out = new PrintStream(new File(Project.v().getOutputDir() + File.separator + "connection-error-analysis.txt"));
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             logger.error("Unable to create output file for error handling analysis");
         }
 
@@ -302,7 +307,7 @@ public class ErrorHandlingAnalysis {
                     break;
                 }
             }
-        }
+        }        
         
         if (firstTrap == null) {        
             //could not find a trap in enclosing method for this exception
@@ -312,11 +317,45 @@ public class ErrorHandlingAnalysis {
                 if (se.getV1().isConcrete())
                     findAllHandlers(se.getV1().getActiveBody(), exception, se.getStmt(), allHandlerUnits);
             }
-        } else {                                        
-            allHandlerUnits.add(getAllUnitsForCatch(body, firstTrap.getHandlerUnit()));
+        } else {  
+            List<Unit> trapUnits = getAllUnitsForCatch(body, firstTrap.getHandlerUnit());                        
+            
+            //add the found trap in this method to the list of handlers bodies 
+            allHandlerUnits.add(trapUnits);
+            
+            //check to see if there are any possible thrown exceptions, track each throw the stack
+            processThrownExceptions(body, trapUnits, allHandlerUnits);
         }
     }
 
+    /**
+     * Given a list of units that represents the units of a trap (catch block), scan 
+     * the trap units for "throw" statements.  Use the pta to return the possible classes
+     * thrown by all the throw statements of the trap.
+     * 
+     * For each throw statement, recursively call findAllHandlers, to find the handlers for the 
+     * throw. Add the handler units to the passed around list of units.
+     */
+    private void  processThrownExceptions(Body body, List<Unit> trapUnits, List<List<Unit>> allHandlerUnits) {       
+        for (Unit current : trapUnits) {
+            if (current instanceof ThrowStmt) {
+                ThrowStmt throwStmt = (ThrowStmt) current;
+                //use the points to analysis to find the type of the thrown op
+                if (PTABridge.v().isPointer(throwStmt.getOp())) {
+                    Set<AllocNode> nodes = (Set<AllocNode>)PTABridge.v().getPTSetIns(throwStmt.getOp());
+                    for (AllocNode node : nodes) {
+                        if (node.getType() instanceof RefType) {
+                            SootClass clz = ((RefType)node.getType()).getSootClass();
+                            if (Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(clz, throwableClass)) {
+                                findAllHandlers(body, clz, throwStmt, allHandlerUnits);
+                            }
+                        }
+                    }
+                }
+            }            
+        }     
+    }
+    
     private boolean handlerHasReachableUI(SootMethod containingM, List<Unit> handlerUnits) {
         //check handler units directly for calls to ui
         //build list of directly reachable app methods from handler
