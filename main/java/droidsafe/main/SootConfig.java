@@ -75,7 +75,7 @@ public class SootConfig {
 		 // allow for the absence of some classes
 		 soot.options.Options.v().set_allow_phantom_refs(true);
 		 
-		 soot.options.Options.v().ignore_resolution_errors();
+		 soot.options.Options.v().set_ignore_resolution_errors(true);
 	}
 	
 	/**
