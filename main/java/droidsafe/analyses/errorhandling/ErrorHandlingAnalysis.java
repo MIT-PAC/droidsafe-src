@@ -297,8 +297,8 @@ public class ErrorHandlingAnalysis {
             out.printf("%s %s\n", JimpleRelationships.v().getEnclosingMethod(stmt), stmt);
         }
 
-        //for debugging
-        writeAllAppClasses();
+        if (Config.v().debug)
+            writeAllAppClasses();
         out.close();
     }
 
