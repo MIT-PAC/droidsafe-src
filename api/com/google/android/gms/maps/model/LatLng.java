@@ -19,6 +19,8 @@ public final class LatLng implements com.google.android.gms.common.internal.safe
 
     public  double longitude;
 
+	public static final LatLngCreator CREATOR = new LatLngCreator();
+	
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-22 10:25:51.119 -0400", hash_original_method = "E98817C1CC1CA6A57ACE02E90274E49A", hash_generated_method = "C861BA6E4661C805CA73B258D874E65D")
     
@@ -131,4 +133,5 @@ public String toString()
         return (new StringBuilder()).append("lat/lng: (").append(latitude).append(",").append(longitude).append(")").toString();
     }
 
+    
 }
