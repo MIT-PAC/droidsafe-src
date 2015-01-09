@@ -215,7 +215,9 @@ public class AndroidManifest {
 
             if (name.startsWith("."))
                 className = Resources.v().package_name + name;
-            else 
+            else if (!name.contains("\\.")) 
+                className = Resources.v().package_name + "." + name;
+            else
                 className = name;
             try {
                 if (!Scene.v().containsClass(className))
