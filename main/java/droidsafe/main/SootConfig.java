@@ -74,6 +74,8 @@ public class SootConfig {
 		 soot.options.Options.v().setPhaseOption("wjop", "enabled:false");
 		 // allow for the absence of some classes
 		 soot.options.Options.v().set_allow_phantom_refs(true);
+		 
+		 soot.options.Options.v().set_ignore_resolution_errors(true);
 	}
 	
 	/**

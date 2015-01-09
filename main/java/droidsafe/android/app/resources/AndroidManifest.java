@@ -122,7 +122,8 @@ public class AndroidManifest {
 
         if (n.getNodeType() == Node.ELEMENT_NODE) {
             String name = n.getNodeName();
-            if (name.equalsIgnoreCase ("application"))
+            if (name.equalsIgnoreCase ("application") ||
+               (name.equalsIgnoreCase ("android.app.application")))
                 application = new Application (parent, n);
             else if (name.equalsIgnoreCase ("activity"))
                 activities.add (new Activity (parent, n));
@@ -213,10 +214,14 @@ public class AndroidManifest {
         public void setSootClass(String name) {
             String className;
 
-            if (name.startsWith("."))
+            if (name.startsWith(".")) {
+            	logger.info("name started with . " + name);
                 className = Resources.v().package_name + name;
-            else if (!name.contains("\\.")) 
+            }
+            else if (!name.contains("."))  {
+            	logger.info("name does not contain DOT " + name);
                 className = Resources.v().package_name + "." + name;
+            }
             else
                 className = name;
             try {
