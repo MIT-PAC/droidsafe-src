@@ -1017,6 +1017,8 @@ public class SootUtils {
             throw new CannotFindMethodException(invoke, container);
         }
     }
+    
+    
 
     /**
      * Wrapped resolve concrete dispatch method that will throw a more useful exception when
@@ -1728,6 +1730,52 @@ public class SootUtils {
         return invokeStmtList;
     }
 
+    
+    /**
+     * Use hierarchy analysis to resolve possible targets of method invoke.
+     * This is not precise, and should only be used if pta information is not available
+     * 
+     * @param invoke
+     * @return
+     */
+    public static Set<SootMethod> getTargetsCHA(InvokeExpr invoke) {
+        Set<SootMethod> targets = new LinkedHashSet<SootMethod>();
+        SootMethod container = JimpleRelationships.v().getEnclosingMethod(invoke);
+        try {
+            if (invoke instanceof SpecialInvokeExpr) {
+                SootMethod target = Scene.v().getActiveHierarchy().resolveSpecialDispatch( (SpecialInvokeExpr)invoke, container);
+                targets.add(target);
+            } else if (invoke instanceof StaticInvokeExpr || invoke instanceof InstanceInvokeExpr) {            
+                SootClass clz = null;
+
+                if (invoke instanceof InstanceInvokeExpr) { 
+                    InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;                
+                    Type baseType = iie.getBase().getType();
+                    if (baseType instanceof RefType)
+                        clz =  ((RefType)baseType).getSootClass();
+                    else if (baseType instanceof ArrayType) {
+                        clz = (RefType.v("java.lang.Object")).getSootClass();                    
+                    } else {
+                        logger.error("Unable to resolve targets using CHA of instance invoke on type: {} {}", baseType, invoke);
+                        return targets;
+                    }                
+                } else if (invoke instanceof StaticInvokeExpr) {
+                    clz = ((StaticInvokeExpr)invoke).getMethodRef().declaringClass();
+                }
+
+                SootMethod method = invoke.getMethod();
+                List<SootMethod> resolvedTargets = Scene.v().getActiveHierarchy().resolveAbstractDispatch(clz, method);
+                targets.addAll(resolvedTargets);
+            } else {
+                logger.error("Unknown invoke type for CHA target resolution: {}, ignoring...", invoke);
+            }
+        } catch (Exception e) {
+            logger.debug("Unable to find target for invoke {}", invoke);
+        }
+
+        return targets;
+    }
+    
 }
 
 

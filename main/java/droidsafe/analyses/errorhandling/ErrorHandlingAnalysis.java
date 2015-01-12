@@ -31,6 +31,8 @@ import soot.jimple.Stmt;
 import soot.jimple.ThrowStmt;
 import soot.jimple.internal.JThrowStmt;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.callgraph.CHATransformer;
+import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.ExceptionalUnitGraph;
 import droidsafe.analyses.CatchBlocks;
@@ -75,6 +77,15 @@ public class ErrorHandlingAnalysis {
             v = new ErrorHandlingAnalysis();
 
         return v;
+    }
+    
+    public void runCHA() {
+        CHATransformer.v().transform();
+        CallGraph cg = Scene.v().getCallGraph();
+        
+        //patch reflection invokes?
+        
+        //maybe just don't count methods without preds?
     }
 
    
@@ -223,7 +234,7 @@ public class ErrorHandlingAnalysis {
                 if (!PTABridge.v().isReachableMethod(method))
                     continue;
 
-
+                logger.info("ErrorHandlingAnalysis inspecting: {}", method);
                 Body body = method.getActiveBody();                
                 
                 Iterator<Unit> units = body.getUnits().iterator();
@@ -453,7 +464,7 @@ public class ErrorHandlingAnalysis {
     }
 
     //assume the list of traps in jimple keeps the static ordering for multiple catch blocks
-    private Map<Unit, List<Trap>> getUnitToTrapMap(Body body) {
+    static Map<Unit, List<Trap>> getUnitToTrapMap(Body body) {
         HashMap<Unit, List<Trap>> map = new HashMap<Unit, List<Trap>>();
 
         for (Trap trap : body.getTraps()) {
@@ -482,7 +493,7 @@ public class ErrorHandlingAnalysis {
         }
     }
 
-    private List<Unit> getAllUnitsForCatch(Body body, Unit startCatch) {
+    static List<Unit> getAllUnitsForCatch(Body body, Unit startCatch) {
         ExceptionalUnitGraph cfg = new ExceptionalUnitGraph(body);
         List<Unit> catchBlock = new LinkedList<Unit>();
         catchBlock.add(startCatch);
@@ -507,7 +518,7 @@ public class ErrorHandlingAnalysis {
         return catchBlock;
     }
 
-    private void getReachableUnits(ExceptionalUnitGraph cfg, Unit current, Set<Unit> reachable) {
+    static void getReachableUnits(ExceptionalUnitGraph cfg, Unit current, Set<Unit> reachable) {
         if (reachable.contains(current)) 
             return;
 

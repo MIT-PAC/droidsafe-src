@@ -203,15 +203,22 @@ public class IntegrateXMLLayouts extends BodyTransformer {
                 if (API.v().isSystemMethod(meth))
                     continue;
 
+                if (!PTABridge.v().isReachableMethod(meth)) 
+                    continue;
+
                 if (debugOn) {
                     logger.info("Checking method {} ", meth);
                 }
-                if (meth.isConcrete()) {
-                    if (debugOn) {
-                        logger.info("XML transform: {} ", meth);
-                        logger.info("{}", meth.retrieveActiveBody());
+                try {
+                    if (meth.isConcrete()) {
+                        if (debugOn) {
+                            logger.info("XML transform: {} ", meth);
+                            logger.info("{}", meth.retrieveActiveBody());
+                        }                    
+                        v.transform(meth.retrieveActiveBody());
                     }
-                    v.transform(meth.retrieveActiveBody());
+                } catch (Exception e) {
+                    logger.debug("Error in IntegrateXMLLayouts. Ignoring... {} {}", e, meth);
                 }
             }
         }
@@ -735,12 +742,12 @@ public class IntegrateXMLLayouts extends BodyTransformer {
         // get a snapshot iterator of the unit since we are going to
         // mutate the chain when iterating over it.
         Iterator<Unit> stmtIt = units.snapshotIterator();
-        
+
         String className = b.getMethod().getDeclaringClass().getName();
-        
+
         if (!Project.v().isSrcClass(className)) {
-        	logger.info("XML Transform: Skipping built-in classes ");
-        	return;
+            logger.info("XML Transform: Skipping built-in classes ");
+            return;
         }
 
         if (debugOn) {

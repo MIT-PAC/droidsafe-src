@@ -3,6 +3,7 @@ package droidsafe.main;
 import au.com.bytecode.opencsv.CSVWriter;
 import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
+import droidsafe.analyses.errorhandling.CheapErrorHandlingAnalysis;
 import droidsafe.analyses.errorhandling.ErrorHandlingAnalysis;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
@@ -177,6 +178,11 @@ public class Main {
         CallLocationModel.reset();
         ObjectSensitivityCloner.reset();
         RCFG.reset();
+        
+        if (Config.v().target.equals("errorhandling")) {
+            CheapErrorHandlingAnalysis.v().run(monitor);
+            return DroidsafeExecutionStatus.OK_STATUS;
+        }
 
         //used to create the eng 4a concrete methods list
         //dumpConcreteMethods();
@@ -189,7 +195,7 @@ public class Main {
             }
         }
 
-
+        
         driverMsg("Removing identity overrides.");
         monitor.subTask("Removing identity overrides.");
         RemoveStupidOverrides.run();
@@ -204,8 +210,9 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-
+        }         
+        
+        
         driverMsg("Implementing native methods.");
         monitor.subTask("Implementing native methods.");
         NativeMethodBuilder.v().run();
@@ -285,7 +292,6 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
         
-        System.out.println(Config.v().target);
         if (Config.v().target.equals("errorhandling")) {
             ErrorHandlingAnalysis.v().run(monitor);
             return DroidsafeExecutionStatus.OK_STATUS;

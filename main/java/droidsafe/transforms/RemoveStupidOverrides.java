@@ -54,9 +54,13 @@ public class RemoveStupidOverrides {
             // Do not touch lang classes
             if (!clzName.startsWith("java.lang")) {
                 SootMethod[] methods = clz.getMethods().toArray(new SootMethod[0]);
-                for (SootMethod meth : methods) {
+                for (SootMethod meth : methods) {                    
                     if (meth.isConcrete() && !meth.isStatic() && !meth.isConstructor())
-                        transformer.removeMethodIfStupid(clz, meth);
+                        try {
+                            transformer.removeMethodIfStupid(clz, meth);
+                        } catch (Exception e) {
+                            logger.debug("Error in RemoveStupidOverrides. Ignoring...", e);
+                        }
                 }
             }
         }
