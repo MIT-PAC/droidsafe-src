@@ -15,8 +15,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 
-import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
-import droidsafe.analyses.collapsedcg.StmtEdge;
+import droidsafe.analyses.cg.StmtEdge;
+import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph;
 import droidsafe.transforms.va.ServiceBindTransform;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;

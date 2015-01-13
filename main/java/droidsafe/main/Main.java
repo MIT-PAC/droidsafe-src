@@ -2,7 +2,7 @@ package droidsafe.main;
 
 import au.com.bytecode.opencsv.CSVWriter;
 import droidsafe.analyses.CheckInvokeSpecials;
-import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
+import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph;
 import droidsafe.analyses.errorhandling.CheapErrorHandlingAnalysis;
 import droidsafe.analyses.errorhandling.ErrorHandlingAnalysis;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
@@ -180,7 +180,7 @@ public class Main {
         RCFG.reset();
         
         if (Config.v().target.equals("errorhandling")) {
-            CheapErrorHandlingAnalysis.v().run(monitor);
+            ErrorHandlingAnalysis.v().run(monitor);
             return DroidsafeExecutionStatus.OK_STATUS;
         }
 

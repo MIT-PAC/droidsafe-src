@@ -1,4 +1,4 @@
-package droidsafe.analyses.collapsedcg;
+package droidsafe.analyses.cg.collapsedcg;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -14,8 +14,9 @@ import java.util.Set;
 import org.jgrapht.graph.DirectedMultigraph;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.jgrapht.traverse.BreadthFirstIterator;
+
+import droidsafe.analyses.cg.StmtEdge;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Harness;
 import droidsafe.android.system.API;
@@ -42,8 +43,6 @@ public class CollaspedCallGraph {
     private final static Logger logger = LoggerFactory.getLogger(CollaspedCallGraph.class);
     
     private static CollaspedCallGraph v;
-    
-    private static boolean enabled = false;
     
     private DirectedMultigraph<SootMethod, StmtEdge> callgraph;
     

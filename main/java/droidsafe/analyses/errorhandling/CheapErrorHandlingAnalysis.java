@@ -31,8 +31,9 @@ import soot.jimple.Stmt;
 import soot.jimple.ThrowStmt;
 import soot.jimple.toolkits.callgraph.CHATransformer;
 import soot.jimple.toolkits.callgraph.CallGraph;
-import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
-import droidsafe.analyses.collapsedcg.StmtEdge;
+import droidsafe.analyses.cg.StmtEdge;
+import droidsafe.analyses.cg.cha.CHACallGraph;
+import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph;
 import droidsafe.analyses.errorhandling.ErrorHandlingAnalysis.StmtAndException;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
@@ -132,6 +133,7 @@ public class CheapErrorHandlingAnalysis {
         System.out.println("Error Handling Analysis...");
 
         JimpleRelationships.reset();
+        CHACallGraph.v(false);
 
         //out = System.out;
         try {
