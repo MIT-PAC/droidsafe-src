@@ -3,6 +3,9 @@ package dk.brics.string.java;
 import java.util.Collections;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import soot.ArrayType;
 import soot.Hierarchy;
 import soot.NullType;
@@ -19,6 +22,9 @@ import soot.jimple.InstanceInvokeExpr;
  * application.
  */
 public class AbstractDispatchClassHierarchy implements AbstractDispatchStrategy {
+	// LWG
+    private Logger log = LoggerFactory.getLogger(AbstractDispatchClassHierarchy.class); // FIXME: check uses of log4j ?!
+
     private Hierarchy hierarchy;
     
     public AbstractDispatchClassHierarchy(Hierarchy hierarchy) {
@@ -40,7 +46,13 @@ public class AbstractDispatchClassHierarchy implements AbstractDispatchStrategy 
             targets = Collections.singletonList(hierarchy.resolveConcreteDispatch(rc, m));
         } else {
             rc = ((RefType) v.getType()).getSootClass();
-            targets = hierarchy.resolveAbstractDispatch(rc, m);
+            // LWG: TEMPORARY HACK - return empty list when failed to resolve abstract dispatch
+            try {
+            	targets = hierarchy.resolveAbstractDispatch(rc, m);
+            } catch (RuntimeException e) {
+            	log.warn(e.getMessage());
+            	return Collections.emptyList();
+            }
         }
         
         return targets;
