@@ -78,6 +78,7 @@ import soot.tagkit.LineNumberTag;
 import soot.tagkit.SourceFileTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
+import soot.toolkits.graph.ExceptionalUnitGraph;
 import soot.toolkits.scalar.Pair;
 import soot.Type;
 import soot.Unit;
@@ -1775,7 +1776,39 @@ public class SootUtils {
 
         return targets;
     }
-    
+
+    /** 
+     * Search backwards from statement to find the first definition of v in body.  
+     * 
+     * Only search the basic block that stmt is in.
+     * 
+     * If we don't find a def in the basic block, return null.
+     */
+    public static Stmt getPrevDef(Body body, Stmt stmt, Value v) {
+        ExceptionalUnitGraph cfg = new ExceptionalUnitGraph(body);
+        
+        Stmt current = stmt;
+
+        while (true) {
+            List<Unit> preds = cfg.getPredsOf(current);
+            if (preds.size() != 1) {
+                //out of basic block
+                return null;
+            }
+            current = (Stmt)preds.get(0);
+
+            boolean foundThrowOp = false;
+
+            for (ValueBox vb : current.getDefBoxes()) {
+                if (v.equals(vb.getValue())) {
+                    return current;
+                }
+            }
+
+            //got here, did not find a def of the thrown op
+            //so another iteration...
+        }
+    }
 }
 
 

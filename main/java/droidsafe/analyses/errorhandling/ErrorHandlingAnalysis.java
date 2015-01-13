@@ -374,7 +374,7 @@ public class ErrorHandlingAnalysis {
                 ThrowStmt throwStmt = (ThrowStmt) current;
 
                 //search backwards for last def of op of throw
-                Stmt lastDefOfThrownOp = lastDefOfThrowOp(body, throwStmt);
+                Stmt lastDefOfThrownOp = SootUtils.getPrevDef(body, throwStmt, throwStmt.getOp());
                 logger.info("lastDefOfThrownOp: {}", lastDefOfThrownOp);
                 SootClass reThrownType = null;
 
@@ -407,37 +407,6 @@ public class ErrorHandlingAnalysis {
         }  
 
         return true;
-    }
-
-    /**
-     * Return null if something we don't understand
-     */
-    private Stmt lastDefOfThrowOp(Body body, ThrowStmt stmt) {
-        ExceptionalUnitGraph cfg = new ExceptionalUnitGraph(body);
-        Value thrownOp = stmt.getOp();
-
-        Stmt current = stmt;
-
-        while (true) {
-            List<Unit> preds = cfg.getPredsOf(current);
-            if (preds.size() != 1) {
-                //some control flow that is complex
-                logger.info("Found complex control flow when searching for throw statement op def: {}", current);
-                return null;
-            }
-            current = (Stmt)preds.get(0);
-
-            boolean foundThrowOp = false;
-
-            for (ValueBox vb : current.getDefBoxes()) {
-                if (thrownOp.equals(vb.getValue())) {
-                    return current;
-                }
-            }
-
-            //got here, did not find a def of the thrown op
-            //so another iteration...
-        }
     }
 
     private boolean handlerHasReachableUI(SootMethod containingM, List<Unit> handlerUnits) {
