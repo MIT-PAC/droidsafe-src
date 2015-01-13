@@ -110,6 +110,9 @@ public class StringAnalysis {
     
     private StaticStringTypes staticStringTypes;
 
+    // LWG: TEMPORARY HACK - use DEBUG to add additional control on debug logging
+	public static boolean DEBUG = false;
+
     // LWG: New. Allow application classes to be filtered from soot.Scene
     private static Collection<SootClass> applicationClasses = null;
 
@@ -330,7 +333,7 @@ public class StringAnalysis {
         // find invalid assertion statements
         OperationAssertionAnalysis assertions = new OperationAssertionAnalysis(app, reachingDefinitions);
         
-        if (log.isDebugEnabled()) {
+        if (debug()) {
             log.debug(app.toDot(reachingDefinitions, alias, assertions, hotspot_statements));
         }
         
@@ -349,7 +352,7 @@ public class StringAnalysis {
         diagnostics.flowGraphCompleted(g);
         
         Map<Statement, Node> m2 = tr.getTranslationMap();
-        if (log.isDebugEnabled()) {
+        if (debug()) {
             log.debug("Statement -> Node:");
             for (Map.Entry<Statement, Node> me : m2.entrySet()) {
                 log.debug("  " + me.getKey() + " -> " + me.getValue());
@@ -377,9 +380,11 @@ public class StringAnalysis {
                 n2.setTaint(true);
             }
         }
-        if (log.isDebugEnabled()) {
+        /* LWG: TEMPORARY HACK - to avoid 'OutOfMemoryError: Requested array size exceeds VM limit'
+        if (debug()) {
             log.debug(g.toDot(nodes));
         }
+        */
         log.info("Transforming into grammar...");
         FlowGraph2Grammar f2g = new FlowGraph2Grammar(g);
         Grammar r = f2g.convert();
@@ -387,7 +392,7 @@ public class StringAnalysis {
         for (Node hn : nodes) {
             hs_nt.add(f2g.getNonterminal(hn));
         }
-        if (log.isDebugEnabled()) {
+        if (debug()) {
             log.debug(r.toString() + "Hotspots: " + hs_nt);
         }
 
@@ -396,7 +401,7 @@ public class StringAnalysis {
         r.approximateOperationCycles();
         log.info("Performing regular approximation...");
         r.approximateNonLinear(hs_nt);
-        if (log.isDebugEnabled()) {
+        if (debug()) {
             log.debug(r.toString() + "Hotspots: " + hs_nt);
         }
         log.info("Converting to MLFA...");
@@ -458,7 +463,12 @@ public class StringAnalysis {
         mlfa2aut = new MLFA2Automaton(mlfa);
     }
 
-    private void propagateTaint(Grammar r) {
+    // LWG: TEMPORARY HACK - use DEBUG to add additional control on debug logging
+    private boolean debug() {
+		return DEBUG && log.isDebugEnabled();
+	}
+
+	private void propagateTaint(Grammar r) {
         final boolean done[] = {false};
         ProductionVisitor v = new ProductionVisitor() {
             public void visitAutomatonProduction(Nonterminal a, AutomatonProduction p) {
