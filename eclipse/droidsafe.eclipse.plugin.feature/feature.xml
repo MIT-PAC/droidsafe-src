@@ -2,7 +2,7 @@
 <feature
       id="droidsafe.eclipse.plugin.feature"
       label="Droidsafe Plugin"
-      version="1.0.0.qualifier"
+      version="2.0.0.qualifier"
       provider-name="Kestrel Institute">
 
    <description url="http://www.example.com/description">
@@ -32,6 +32,6 @@ All rights reserved.
          id="droidsafe.eclipse.plugin.core"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"/>
+         version="2.0.0.qualifier"/>
 
 </feature>
