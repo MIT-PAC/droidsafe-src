@@ -443,7 +443,7 @@ public class API {
                     }
 
                     if (c != Classification.NONE && at.getElems().size() > 0) {
-                        String category = ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
+                        String category = ((AnnotationEnumElem)at.getElems().iterator().next()).getConstantName();
                         logger.info("Adding classification category for {}: {}", method, category);
                         classificationCat.put(method, category);
                     } 
@@ -574,12 +574,13 @@ public class API {
 
 
     private void addSinkTag(SootMethod sootMethod, AnnotationTag at) {
-        if (!(at.getElemAt(0) instanceof AnnotationArrayElem)) {
-            logger.error("DSSink/DSSource Annotation incorrect for: {} is {}", sootMethod, at.getElemAt(0).getClass());
+    	AnnotationElem elem = at.getElems().iterator().next();
+        if (!(elem instanceof AnnotationArrayElem)) {
+            logger.error("DSSink/DSSource Annotation incorrect for: {} is {}", sootMethod, elem.getClass());
             droidsafe.main.Main.exit(1);
         }
 
-        for (AnnotationElem ae : ((AnnotationArrayElem)at.getElemAt(0)).getValues()) {
+        for (AnnotationElem ae : ((AnnotationArrayElem)elem).getValues()) {
             if (!(ae instanceof AnnotationEnumElem)) {
                 logger.error("DSSink/DSSource Annotation Element incorrect for: {} is {}", sootMethod, ae.getClass());
                 droidsafe.main.Main.exit(1);
@@ -608,12 +609,13 @@ public class API {
 
 
     private void addSourceTag(SootMethod sootMethod, AnnotationTag at) {
-        if (!(at.getElemAt(0) instanceof AnnotationArrayElem)) {
-            logger.error("DSSink/DSSource Annotation incorrect for: {} is {}", sootMethod, at.getElemAt(0).getClass());
+    	AnnotationElem elem = at.getElems().iterator().next();
+        if (!(elem instanceof AnnotationArrayElem)) {
+            logger.error("DSSink/DSSource Annotation incorrect for: {} is {}", sootMethod, elem.getClass());
             droidsafe.main.Main.exit(1);
         }
 
-        for (AnnotationElem ae : ((AnnotationArrayElem)at.getElemAt(0)).getValues()) {
+        for (AnnotationElem ae : ((AnnotationArrayElem)elem).getValues()) {
             if (!(ae instanceof AnnotationEnumElem)) {
                 logger.error("DSSink/DSSource Annotation Element incorrect for: {} is {}", sootMethod, ae.getClass());
                 droidsafe.main.Main.exit(1);
@@ -644,7 +646,7 @@ public class API {
 
     private String getCategoryFromClassificationTag(AnnotationTag at) {
         if (at.getElems().size() > 0)
-            return ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
+            return ((AnnotationEnumElem)at.getElems().iterator().next()).getConstantName();
         return "";
     }
 

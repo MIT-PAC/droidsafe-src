@@ -229,50 +229,49 @@ public class IntegrateXMLLayouts extends BodyTransformer {
         Chain<Unit> units = stmtBody.getUnits();
 
         //List<ValueBox> boxList = stmt.getUseAndDefBoxes();
-        List<ValueBox> boxList = stmt.getUseBoxes();
+        if (stmt.getInvokeExpr() instanceof InstanceInvokeExpr) {
+        	InstanceInvokeExpr iInvokeExpr = (InstanceInvokeExpr) stmt.getInvokeExpr();
 
-        //stmt will have format below
-        //virtualinvoke r0.<org.tomdroid.ui.ShortcutActivity: void setContentView(int)>(2130903050);
-        //box0 JimpleLocalBox(r0), box1 ImmediateBox(2130903050), box2 InvokeExprBox
-        logger.debug("Box Count {} ", boxList.size());
-        logger.debug("box0 {} box1 {}, box2 {} ", boxList.get(0), boxList.get(1), boxList.get(2));
+        	//stmt will have format below
+        	//virtualinvoke r0.<org.tomdroid.ui.ShortcutActivity: void setContentView(int)>(2130903050);
 
-        Integer intId;
+        	Integer intId;
 
-        ValueBox objectBox = boxList.get(0);
-        ValueBox idBox = boxList.get(1);
+        	ValueBox objectBox = iInvokeExpr.getBaseBox();
+        	ValueBox idBox = iInvokeExpr.getArgBox(0);
 
-        try {
-            intId = new Integer(idBox.getValue().toString());
-        }
-        catch (Exception ex) {
-            logger.info("Couldn't replace findViewById(): {} ", stmt);
-            return;
-        }
+        	try {
+        		intId = new Integer(idBox.getValue().toString());
+        	}
+        	catch (Exception ex) {
+        		logger.info("Couldn't replace findViewById(): {} ", stmt);
+        		return;
+        	}
 
-        if (ResourcesSoot.isAndroidId(intId)) {
-            logger.info("android builtin IDs, ignored ");
-            return;
-        }
+        	if (ResourcesSoot.isAndroidId(intId)) {
+        		logger.info("android builtin IDs, ignored ");
+        		return;
+        	}
 
-        SootMethod method = ResourcesSoot.v().lookupInitLayout_ID(intId);
+        	SootMethod method = ResourcesSoot.v().lookupInitLayout_ID(intId);
 
-        if (method == null) {
-            logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
-            return;
-        }
+        	if (method == null) {
+        		logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+        		return;
+        	}
 
-        Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), objectBox.getValue()); 
-        Stmt invokeStmt = Jimple.v().newInvokeStmt(invokeExpr);
+        	Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), objectBox.getValue()); 
+        	Stmt invokeStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
-        logger.info("replacing {} ", stmt);
-        try {
-            units.swapWith(stmt, invokeStmt);
-            logger.info("with {} => OK", invokeStmt);
-        }
-        catch (Exception ex) {
-            logger.warn("Replacing with {} => NOT OK", invokeStmt);
-        }
+        	logger.info("replacing {} ", stmt);
+        	try {
+        		units.swapWith(stmt, invokeStmt);
+        		logger.info("with {} => OK", invokeStmt);
+        	}
+        	catch (Exception ex) {
+        		logger.warn("Replacing with {} => NOT OK", invokeStmt);
+        	}
+        } 
     }
 
 
@@ -283,70 +282,74 @@ public class IntegrateXMLLayouts extends BodyTransformer {
      */
     void replaceGetCharSequence(StmtBody stmtBody, Stmt stmt) {
 
-        // get body's unit as a chain
-        Chain<Unit> units = stmtBody.getUnits();
+    	if (stmt.getInvokeExpr() instanceof InstanceInvokeExpr) {
+    		InstanceInvokeExpr iInvokeExpr = (InstanceInvokeExpr) stmt.getInvokeExpr();
 
-        List<ValueBox> useBoxList = stmt.getUseBoxes();
-        List<ValueBox> defBoxList = stmt.getDefBoxes();
+    		// get body's unit as a chain
+    		Chain<Unit> units = stmtBody.getUnits();
 
-        ValueBox callerObjectBox = useBoxList.get(0);
-        ValueBox idValueBox      = useBoxList.get(1);
-        ValueBox assignToBox = null;
+    		List<ValueBox> defBoxList = stmt.getDefBoxes();
 
-        if (defBoxList != null && defBoxList.size() > 0)
-            assignToBox = defBoxList.get(0);
+    		ValueBox callerObjectBox = iInvokeExpr.getBaseBox();
+    		ValueBox idValueBox      = iInvokeExpr.getArgBox(0);
+    		ValueBox assignToBox = null;
 
-        logger.debug("UseBoxes: {} ", stmt.getUseBoxes());
-        logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
+    		if (defBoxList != null && defBoxList.size() > 0)
+    			assignToBox = defBoxList.get(0);
 
-        if (callerObjectBox == null || idValueBox == null) {
-            logger.warn("Couldnot get boxes for replacement "); 
-            return;
-        }
+    		logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
 
-        Integer intId;
-        String stringId = idValueBox.getValue().toString();
+    		if (callerObjectBox == null || idValueBox == null) {
+    			logger.warn("Couldnot get boxes for replacement "); 
+    			return;
+    		}
 
-        try {
-            intId = new Integer(stringId);
-        }
-        catch (Exception ex) {
-            logger.info("Couldn't replace getString()  - {} NOT an integer constant", stringId);
-            return;
-        }
+    		Integer intId;
+    		String stringId = idValueBox.getValue().toString();
 
-        //SootMethod getStringMethod = ResourcesSoot.v().addGetCharSequence_ID(intId);
-        SootMethod getStringMethod = ResourcesSoot.v().retrieveGetCharSequence_ID(intId);
+    		try {
+    			intId = new Integer(stringId);
+    		}
+    		catch (Exception ex) {
+    			logger.info("Couldn't replace getString()  - {} NOT an integer constant", stringId);
+    			return;
+    		}
 
-        if (getStringMethod == null) {
-            logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));
-            logger.warn("Class {} ", stmtBody.getMethod().getDeclaringClass());
-            return;
-        }
+    		//SootMethod getStringMethod = ResourcesSoot.v().addGetCharSequence_ID(intId);
+    		SootMethod getStringMethod = ResourcesSoot.v().retrieveGetCharSequence_ID(intId);
 
-        /*
+    		if (getStringMethod == null) {
+    			logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));
+    			logger.warn("Class {} ", stmtBody.getMethod().getDeclaringClass());
+    			return;
+    		}
+
+    		/*
 			   if (getStringMethod != null) {
 			   logger.warn("Skipped replacing getString() for now ");
 			   return;
 			   }
-         */
+    		 */
 
-        Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getStringMethod.makeRef()); 
+    		Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getStringMethod.makeRef()); 
 
-        Stmt lookupStmt; 
-        if (assignToBox != null)
-            lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
-        else
-            lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
+    		Stmt lookupStmt; 
+    		if (assignToBox != null)
+    			lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
+    		else
+    			lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
-        logger.info("replaced {} ", stmt);
-        try {
-            units.swapWith(stmt, lookupStmt);
-            logger.info("replacing with {}, OK ", lookupStmt);
-        }
-        catch (Exception ex) {
-            logger.warn("replacing with {} => NOT OK", lookupStmt);
-        }
+    		logger.info("replaced {} ", stmt);
+    		try {
+    			units.swapWith(stmt, lookupStmt);
+    			logger.info("replacing with {}, OK ", lookupStmt);
+    		}
+    		catch (Exception ex) {
+    			logger.warn("replacing with {} => NOT OK", lookupStmt);
+    		}
+    	} else {
+    		logger.warn("InvokeExpr in {} is not an InstanceInvokeExpr", stmt);
+    	}
     }
 
 
@@ -357,124 +360,120 @@ public class IntegrateXMLLayouts extends BodyTransformer {
      * @return
      */
     Object[] extractVariableArguments(StmtBody stmtBody, Stmt stmt) {
-        // get body's unit as a chain
-        Chain<Unit> units = stmtBody.getUnits();
+    	InvokeExpr invokeExpr = stmt.getInvokeExpr();
+    	logger.debug("invokeExpr args {} ", invokeExpr.getArgs());
 
-        List<ValueBox> useBoxList = stmt.getUseBoxes();
-        List<ValueBox> defBoxList = stmt.getDefBoxes();
+    	// get body's unit as a chain
+    	Chain<Unit> units = stmtBody.getUnits();
 
-        ValueBox callerObjectBox = useBoxList.get(0);
-        ValueBox idValueBox      = useBoxList.get(1);
-        ValueBox objArrayBox     = useBoxList.get(2);
-        ValueBox assignToBox = null;
+    	List<ValueBox> defBoxList = stmt.getDefBoxes();
+    	ValueBox idValueBox      = invokeExpr.getArgBox(0);
+    	ValueBox objArrayBox     = invokeExpr.getArgBox(1);
+    	ValueBox assignToBox = null;
 
-        Value objectArray = objArrayBox.getValue();
+    	Value objectArray = objArrayBox.getValue();
 
-        if (defBoxList != null && defBoxList.size() > 0)
-            assignToBox = defBoxList.get(0);
+    	if (defBoxList != null && defBoxList.size() > 0)
+    		assignToBox = defBoxList.get(0);
 
-        logger.debug("UseBoxes: {} ", stmt.getUseBoxes());
-        logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
+    	logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
 
-        if (callerObjectBox == null || idValueBox == null) {
-            logger.debug("Couldnot get boxes for replacement "); 
-            return null;
-        }
+    	if (idValueBox == null) {
+    		logger.debug("Couldnot get boxes for replacement "); 
+    		return null;
+    	}
 
-        InvokeExpr invokeExpr = stmt.getInvokeExpr();
-        logger.debug("invokeExpr args {} ", invokeExpr.getArgs());
+    	//Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getStringMethod.makeRef()); 
+    	List<String> argList = new LinkedList<String>();
 
-        //Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getStringMethod.makeRef()); 
-        List<String> argList = new LinkedList<String>();
+    	Stmt prevStatement = (Stmt) units.getPredOf(stmt);
+    	HashBiMap<Value, Value> map = HashBiMap.create();
 
-        Stmt prevStatement = (Stmt) units.getPredOf(stmt);
-        HashBiMap<Value, Value> map = HashBiMap.create();
+    	String objectPattern = String.format("%s[", objectArray.toString());
+    	String objectName = objectArray.toString();
 
-        String objectPattern = String.format("%s[", objectArray.toString());
-        String objectName = objectArray.toString();
+    	List<Value> valueList = new LinkedList<Value>();
 
-        List<Value> valueList = new LinkedList<Value>();
+    	while (prevStatement != null) {
+    		logger.debug("prevStatement {} ", prevStatement);
+    		if (!(prevStatement instanceof AssignStmt)) {
+    			prevStatement = (Stmt)units.getPredOf(prevStatement);
+    			continue;
+    		}
+    		AssignStmt assignStmt = (AssignStmt) prevStatement;
+    		defBoxList = prevStatement.getDefBoxes();
+    		Value leftSide  = assignStmt.getLeftOp();
+    		Value rightSide = assignStmt.getRightOp();
 
-        while (prevStatement != null) {
-            logger.debug("prevStatement {} ", prevStatement);
-            if (!(prevStatement instanceof AssignStmt)) {
-                prevStatement = (Stmt)units.getPredOf(prevStatement);
-                continue;
-            }
-            defBoxList = prevStatement.getDefBoxes();
-            useBoxList = prevStatement.getUseBoxes();
-            Value leftSide  = defBoxList.get(0).getValue();
-            Value rightSide = useBoxList.get(useBoxList.size() - 1).getValue();
+    		String leftSideName = leftSide.toString();
 
-            String leftSideName = leftSide.toString();
+    		if (leftSideName.startsWith(objectPattern) ||
+    				map.inverse().containsKey(leftSide))
+    		{
+    			if (leftSideName.startsWith(objectPattern))
+    				valueList.add(leftSide);
+    			map.put(leftSide, rightSide);
+    			logger.debug("added");
+    		}
 
-            if (leftSideName.startsWith(objectPattern) ||
-                    map.inverse().containsKey(leftSide))
-            {
-                if (leftSideName.startsWith(objectPattern))
-                    valueList.add(leftSide);
-                map.put(leftSide, rightSide);
-                logger.debug("added");
-            }
+    		prevStatement = (Stmt)units.getPredOf(prevStatement);
+    	}
 
-            prevStatement = (Stmt)units.getPredOf(prevStatement);
-        }
+    	if (valueList.size() == 0)
+    		return null;
 
-        if (valueList.size() == 0)
-            return null;
+    	Collections.reverse(valueList);
 
-        Collections.reverse(valueList);
+    	Object[] objArray = new Object[valueList.size()];
 
-        Object[] objArray = new Object[valueList.size()];
+    	for (int i = 0; i < valueList.size(); i++) {
+    		Value obj = valueList.get(i);
+    		Value assignedFrom = map.get(obj);
+    		while (map.containsKey(assignedFrom))
+    			assignedFrom = map.get(assignedFrom);
 
-        for (int i = 0; i < valueList.size(); i++) {
-            Value obj = valueList.get(i);
-            Value assignedFrom = map.get(obj);
-            while (map.containsKey(assignedFrom))
-                assignedFrom = map.get(assignedFrom);
+    		String varTypeName = assignedFrom.getType().toString();
 
-            String varTypeName = assignedFrom.getType().toString();
+    		logger.debug("Type {} => {} ", assignedFrom.getType(), assignedFrom.getType().toString());
 
-            logger.debug("Type {} => {} ", assignedFrom.getType(), assignedFrom.getType().toString());
+    		if (!varTypeName.startsWith("java.lang.")) {
+    			logger.info("not java.lang objects, give up ");
+    			return null;
+    		}
 
-            if (!varTypeName.startsWith("java.lang.")) {
-                logger.info("not java.lang objects, give up ");
-                return null;
-            }
+    		if (assignedFrom.getType().equals(RefType.v("java.lang.String"))) {
+    			if (!(assignedFrom instanceof StringConstant)) {
+    				logger.debug("String {} is not constant ", assignedFrom);
+    				return null;
+    			}
+    			objArray[i] = assignedFrom.toString().replaceAll("\"", "");
 
-            if (assignedFrom.getType().equals(RefType.v("java.lang.String"))) {
-                if (!(assignedFrom instanceof StringConstant)) {
-                    logger.debug("String {} is not constant ", assignedFrom);
-                    return null;
-                }
-                objArray[i] = assignedFrom.toString().replaceAll("\"", "");
+    			logger.debug("String constant => {} ", objArray[i]);
+    			continue;
+    		}
 
-                logger.debug("String constant => {} ", objArray[i]);
-                continue;
-            }
+    		logger.debug("varTypeName {} ", varTypeName);
 
-            logger.debug("varTypeName {} ", varTypeName);
+    		Value paramValue = ((ValueBox)assignedFrom.getUseBoxes().get(0)).getValue();
+    		logger.debug("useboxes {} ", assignedFrom.getUseBoxes());
 
-            Value paramValue = ((ValueBox)assignedFrom.getUseBoxes().get(0)).getValue();
-            logger.debug("useboxes {} ", assignedFrom.getUseBoxes());
+    		if (paramValue instanceof Immediate) {
+    			try {
+    				Class clz = Class.forName(assignedFrom.getType().toString());
+    				Class[] paramString = new Class[] { String.class };
+    				logger.debug("Immediate => {}, type {} ", paramValue, paramValue.getType());
+    				Method method = clz.getDeclaredMethod("valueOf", paramString);
+    				Object data = method.invoke(null, paramValue.toString());
+    				objArray[i] = data;
+    			}
+    			catch (Exception ex) {
+    				logger.debug("Exception {} ", ex);
+    				return null;
+    			}
+    		}
+    	}
 
-            if (paramValue instanceof Immediate) {
-                try {
-                    Class clz = Class.forName(assignedFrom.getType().toString());
-                    Class[] paramString = new Class[] { String.class };
-                    logger.debug("Immediate => {}, type {} ", paramValue, paramValue.getType());
-                    Method method = clz.getDeclaredMethod("valueOf", paramString);
-                    Object data = method.invoke(null, paramValue.toString());
-                    objArray[i] = data;
-                }
-                catch (Exception ex) {
-                    logger.debug("Exception {} ", ex);
-                    return null;
-                }
-            }
-        }
-
-        return objArray;
+    	return objArray;
     }
 
     int localStringIndex = 0;
@@ -486,171 +485,179 @@ public class IntegrateXMLLayouts extends BodyTransformer {
      */
     void replaceGetStringVariableArgs(StmtBody stmtBody, Stmt stmt) {
 
-        // get body's unit as a chain
-        Chain<Unit> units = stmtBody.getUnits();
+    	if (stmt.getInvokeExpr() instanceof InstanceInvokeExpr) {
+    		InstanceInvokeExpr iInvokeExpr = (InstanceInvokeExpr) stmt.getInvokeExpr();
+    		// get body's unit as a chain
+    		Chain<Unit> units = stmtBody.getUnits();
 
-        List<ValueBox> useBoxList = stmt.getUseBoxes();
-        List<ValueBox> defBoxList = stmt.getDefBoxes();
+    		List<ValueBox> defBoxList = stmt.getDefBoxes();
 
-        ValueBox callerObjectBox = useBoxList.get(0);
-        ValueBox idValueBox      = useBoxList.get(1);
-        ValueBox objArrayBox     = useBoxList.get(2);
-        ValueBox assignToBox = null;
+    		ValueBox callerObjectBox = iInvokeExpr.getBaseBox();
+    		ValueBox idValueBox      = iInvokeExpr.getArgBox(0);
+    		ValueBox objArrayBox     = iInvokeExpr.getArgBox(1);
+    		ValueBox assignToBox = null;
 
-        Value objectArray = objArrayBox.getValue();
+    		Value objectArray = objArrayBox.getValue();
 
-        if (defBoxList != null && defBoxList.size() > 0)
-            assignToBox = defBoxList.get(0);
+    		if (defBoxList != null && defBoxList.size() > 0)
+    			assignToBox = defBoxList.get(0);
 
-        if (assignToBox == null) {
-            logger.warn("Cannot replace {} ", stmt);
-            return;
-        }
+    		if (assignToBox == null) {
+    			logger.warn("Cannot replace {} ", stmt);
+    			return;
+    		}
 
-        if (callerObjectBox == null || idValueBox == null) {
-            logger.warn("Couldnot get boxes for replacement "); 
-            return;
-        }
+    		if (callerObjectBox == null || idValueBox == null) {
+    			logger.warn("Couldnot get boxes for replacement "); 
+    			return;
+    		}
 
-        Integer intId;
-        String stringId = idValueBox.getValue().toString();
+    		Integer intId;
+    		String stringId = idValueBox.getValue().toString();
 
-        try {
-            intId = new Integer(stringId);
-        }
-        catch (Exception ex) {
-            logger.info("Couldn't replace getString()  - {} NOT an integer constant", stringId);
-            return;
-        }
+    		try {
+    			intId = new Integer(stringId);
+    		}
+    		catch (Exception ex) {
+    			logger.info("Couldn't replace getString()  - {} NOT an integer constant", stringId);
+    			return;
+    		}
 
-        SootMethod getStringMethod = ResourcesSoot.v().addGetCharSequence_ID(intId);
+    		SootMethod getStringMethod = ResourcesSoot.v().addGetCharSequence_ID(intId);
 
-        if (getStringMethod == null) {
-            logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));
-            logger.warn("Class {} ", stmtBody.getMethod().getDeclaringClass());
-            return;
-        }
+    		if (getStringMethod == null) {
+    			logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));
+    			logger.warn("Class {} ", stmtBody.getMethod().getDeclaringClass());
+    			return;
+    		}
 
-        InvokeExpr invokeExpr = stmt.getInvokeExpr();
-        logger.debug("invokeExpr args {} ", invokeExpr.getArgs());
+    		InvokeExpr invokeExpr = stmt.getInvokeExpr();
+    		logger.debug("invokeExpr args {} ", invokeExpr.getArgs());
 
-        Object[] paramList = extractVariableArguments(stmtBody, stmt);
+    		Object[] paramList = extractVariableArguments(stmtBody, stmt);
 
-        if (paramList == null)
-            return;
+    		if (paramList == null)
+    			return;
 
-        String localStringName = String.format("_$%s%03d", "localString", localStringIndex++);
+    		String localStringName = String.format("_$%s%03d", "localString", localStringIndex++);
 
-        Local localString = Jimple.v().newLocal(localStringName,  RefType.v("java.lang.String"));
-        stmtBody.getLocals().add(localString);
+    		Local localString = Jimple.v().newLocal(localStringName,  RefType.v("java.lang.String"));
+    		stmtBody.getLocals().add(localString);
 
-        Local localCond = Jimple.v().newLocal("_$localCond",  BooleanType.v());
-        stmtBody.getLocals().add(localCond);
+    		Local localCond = Jimple.v().newLocal("_$localCond",  BooleanType.v());
+    		stmtBody.getLocals().add(localCond);
 
-        FieldRef fieldRef =  Jimple.v().newStaticFieldRef(
-            ResourcesSoot.v().getConditionField().makeRef());
-        units.insertBefore(Jimple.v().newAssignStmt(localCond, fieldRef), stmt); 
+    		FieldRef fieldRef =  Jimple.v().newStaticFieldRef(
+    				ResourcesSoot.v().getConditionField().makeRef());
+    		units.insertBefore(Jimple.v().newAssignStmt(localCond, fieldRef), stmt); 
 
-        ConditionExpr condExpr = Jimple.v().newEqExpr(localCond, IntConstant.v(0));
+    		ConditionExpr condExpr = Jimple.v().newEqExpr(localCond, IntConstant.v(0));
 
-        Stmt afterStmt = (Stmt)units.getSuccOf(stmt);
+    		Stmt afterStmt = (Stmt)units.getSuccOf(stmt);
 
-        for (String stringValue: ResourcesSoot.v().getStringValues(intId)) {
-            String resolvedString = null;
-            try {
-                resolvedString = String.format(stringValue, paramList);
-            }
-            catch(Exception ex) {
-                return;
-            }
+    		for (String stringValue: ResourcesSoot.v().getStringValues(intId)) {
+    			String resolvedString = null;
+    			try {
+    				resolvedString = String.format(stringValue, paramList);
+    			}
+    			catch(Exception ex) {
+    				return;
+    			}
 
-            // condition statement
-            //Stmt condStmt =  Jimple.v().newIfStmt(condExpr, stmt);
-            Stmt ifStmt = Jimple.v().newIfStmt(condExpr, afterStmt);
-            units.insertBefore(ifStmt, stmt);
+    			// condition statement
+    			//Stmt condStmt =  Jimple.v().newIfStmt(condExpr, stmt);
+    			Stmt ifStmt = Jimple.v().newIfStmt(condExpr, afterStmt);
+    			units.insertBefore(ifStmt, stmt);
 
-            Stmt localAssign = Jimple.v().newAssignStmt(localString, StringConstant.v(resolvedString));
-            units.insertBefore(localAssign, stmt);
-        }
+    			Stmt localAssign = Jimple.v().newAssignStmt(localString, StringConstant.v(resolvedString));
+    			units.insertBefore(localAssign, stmt);
+    		}
 
-        Stmt lookupStmt; 
-        lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), localString);
+    		Stmt lookupStmt; 
+    		lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), localString);
 
-        logger.info("replaced {} ", stmt);
-        try {
-            units.swapWith(stmt, lookupStmt);
-            logger.info("replacing with {}, OK ", lookupStmt);
-        }
-        catch (Exception ex) {
-            logger.warn("replacing with {} => NOT OK", lookupStmt);
-        }
+    		logger.info("replaced {} ", stmt);
+    		try {
+    			units.swapWith(stmt, lookupStmt);
+    			logger.info("replacing with {}, OK ", lookupStmt);
+    		}
+    		catch (Exception ex) {
+    			logger.warn("replacing with {} => NOT OK", lookupStmt);
+    		}
+    	} else {
+    		logger.warn("InvokeExpr in {} is not an InstanceInvokeExpr", stmt);
+    	}
     }
+
     /**
      * replaceFindViewById:
      *    replace findViewById invocation statement with replacement code that call getView_<id>
      */
     void replaceFindViewById(StmtBody stmtBody, Stmt stmt) {
 
-        // get body's unit as a chain
-        Chain<Unit> units = stmtBody.getUnits();
+        if (stmt.getInvokeExpr() instanceof InstanceInvokeExpr) {
+            // get body's unit as a chain
+            Chain<Unit> units = stmtBody.getUnits();
 
-        List<ValueBox> useBoxList = stmt.getUseBoxes();
-        List<ValueBox> defBoxList = stmt.getDefBoxes();
+        	InstanceInvokeExpr iInvokeExpr = (InstanceInvokeExpr) stmt.getInvokeExpr();
+        	List<ValueBox> defBoxList = stmt.getDefBoxes();
 
-        ValueBox callerObjectBox = useBoxList.get(0);
-        ValueBox idValueBox      = useBoxList.get(1);
-        ValueBox assignToBox = null;
+        	ValueBox callerObjectBox = iInvokeExpr.getBaseBox();
+        	ValueBox idValueBox      = iInvokeExpr.getArgBox(0);
+        	ValueBox assignToBox = null;
 
-        if (defBoxList != null && defBoxList.size() > 0)
-            assignToBox = defBoxList.get(0);
+        	if (defBoxList != null && defBoxList.size() > 0)
+        		assignToBox = defBoxList.get(0);
 
-        logger.debug("UseBoxes: {} ", stmt.getUseBoxes());
-        logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
+        	logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
 
-        if (callerObjectBox == null || idValueBox == null) {
-            logger.warn("Couldnot get boxes for replacement "); 
-            return;
-        }
+        	if (callerObjectBox == null || idValueBox == null) {
+        		logger.warn("Couldnot get boxes for replacement "); 
+        		return;
+        	}
 
-        Integer intId;
+        	Integer intId;
 
-        try {
-            intId = new Integer(idValueBox.getValue().toString());
-        }
-        catch (Exception ex) {
-            logger.info("Couldn't replace {} ", stmt);
-            return;
-        }
+        	try {
+        		intId = new Integer(idValueBox.getValue().toString());
+        	}
+        	catch (Exception ex) {
+        		logger.info("Couldn't replace {} ", stmt);
+        		return;
+        	}
 
-        if (ResourcesSoot.isAndroidId(intId)) {
-            logger.info("android builtin IDs, ignored ");
-            return;
-        }
+        	if (ResourcesSoot.isAndroidId(intId)) {
+        		logger.info("android builtin IDs, ignored ");
+        		return;
+        	}
 
-        //SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
-        SootMethod getViewMethod = ResourcesSoot.v().lookupGetUi_ID(intId);
+        	//SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
+        	SootMethod getViewMethod = ResourcesSoot.v().lookupGetUi_ID(intId);
 
-        if (getViewMethod == null) {
-            logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
-            return;
-        }
+        	if (getViewMethod == null) {
+        		logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+        		return;
+        	}
 
-        Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), callerObjectBox.getValue()); 
+        	Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), callerObjectBox.getValue()); 
 
-        Stmt lookupStmt; 
-        if (assignToBox != null)
-            lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
-        else
-            lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
+        	Stmt lookupStmt; 
+        	if (assignToBox != null)
+        		lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
+        	else
+        		lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
-        try {
-            units.swapWith(stmt, lookupStmt);
-            logger.info("replacing {} ", stmt);
-            logger.info("with {}, OK ", lookupStmt);
-        }
-        catch (Exception ex) {
-            logger.warn("replacing {} ", stmt);
-            logger.warn("with {} => NOT OK", lookupStmt);
+        	try {
+        		units.swapWith(stmt, lookupStmt);
+        		logger.info("replacing {} ", stmt);
+        		logger.info("with {}, OK ", lookupStmt);
+        	}
+        	catch (Exception ex) {
+        		logger.warn("replacing {} ", stmt);
+        		logger.warn("with {} => NOT OK", lookupStmt);
+        	}
+        } else {
+        	logger.warn("InvokeExpr in {} is not an InstanceInvokeExpr", stmt);
         }
     }
 
@@ -660,66 +667,69 @@ public class IntegrateXMLLayouts extends BodyTransformer {
      */
     void replaceFindFragmentById(StmtBody stmtBody, Stmt stmt) {
 
-        // get body's unit as a chain
-        Chain<Unit> units = stmtBody.getUnits();
+    	if (stmt.getInvokeExpr() instanceof InstanceInvokeExpr) {
+    		InstanceInvokeExpr iInvokeExpr = (InstanceInvokeExpr) stmt.getInvokeExpr();
+    		// get body's unit as a chain
+    		Chain<Unit> units = stmtBody.getUnits();
 
-        List<ValueBox> useBoxList = stmt.getUseBoxes();
-        List<ValueBox> defBoxList = stmt.getDefBoxes();
+    		List<ValueBox> defBoxList = stmt.getDefBoxes();
 
-        ValueBox callerObjectBox = useBoxList.get(0);
-        ValueBox idValueBox      = useBoxList.get(1);
-        ValueBox assignToBox = null;
+    		ValueBox callerObjectBox = iInvokeExpr.getBaseBox();
+    		ValueBox idValueBox      = iInvokeExpr.getArgBox(0);
+    		ValueBox assignToBox = null;
 
-        if (defBoxList != null && defBoxList.size() > 0)
-            assignToBox = defBoxList.get(0);
+    		if (defBoxList != null && defBoxList.size() > 0)
+    			assignToBox = defBoxList.get(0);
 
-        logger.debug("UseBoxes: {} ", stmt.getUseBoxes());
-        logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
+    		logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
 
-        if (callerObjectBox == null || idValueBox == null) {
-            logger.warn("Couldnot get boxes for replacement "); 
-            return;
-        }
+    		if (callerObjectBox == null || idValueBox == null) {
+    			logger.warn("Couldnot get boxes for replacement "); 
+    			return;
+    		}
 
-        Integer intId;
+    		Integer intId;
 
-        try {
-            intId = new Integer(idValueBox.getValue().toString());
-        }
-        catch (Exception ex) {
-            logger.info("Couldn't replace {} ", stmt);
-            return;
-        }
+    		try {
+    			intId = new Integer(idValueBox.getValue().toString());
+    		}
+    		catch (Exception ex) {
+    			logger.info("Couldn't replace {} ", stmt);
+    			return;
+    		}
 
-        if (ResourcesSoot.isAndroidId(intId)) {
-            logger.info("android builtin IDs, ignored ");
-            return;
-        }
+    		if (ResourcesSoot.isAndroidId(intId)) {
+    			logger.info("android builtin IDs, ignored ");
+    			return;
+    		}
 
-        SootMethod getViewMethod = ResourcesSoot.v().lookupGetUi_ID(intId);
+    		SootMethod getViewMethod = ResourcesSoot.v().lookupGetUi_ID(intId);
 
-        if (getViewMethod == null) {
-            logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
-            return;
-        }
+    		if (getViewMethod == null) {
+    			logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+    			return;
+    		}
 
-        Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), callerObjectBox.getValue()); 
+    		Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), callerObjectBox.getValue()); 
 
-        Stmt lookupStmt; 
-        if (assignToBox != null)
-            lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
-        else
-            lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
+    		Stmt lookupStmt; 
+    		if (assignToBox != null)
+    			lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
+    		else
+    			lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
-        try {
-            units.swapWith(stmt, lookupStmt);
-            logger.info("replacing {} ", stmt);
-            logger.info("with {}, OK ", lookupStmt);
-        }
-        catch (Exception ex) {
-            logger.warn("replacing {} ", stmt);
-            logger.warn("with {} => NOT OK", lookupStmt);
-        }
+    		try {
+    			units.swapWith(stmt, lookupStmt);
+    			logger.info("replacing {} ", stmt);
+    			logger.info("with {}, OK ", lookupStmt);
+    		}
+    		catch (Exception ex) {
+    			logger.warn("replacing {} ", stmt);
+    			logger.warn("with {} => NOT OK", lookupStmt);
+    		}
+    	} else {
+    		logger.warn("InvokeExpr in {} is not an InstanceInvokeExpr", stmt);
+    	}
     }
 
 

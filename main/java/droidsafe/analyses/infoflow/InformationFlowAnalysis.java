@@ -562,7 +562,7 @@ public class InformationFlowAnalysis {
         // sized_dims = "[" immediate "]" next_sized_dims;
         // next_sized_dims = "[" immediate "]" next_sized_dims | ;
         // empty_dims = "[]" empty_dims | ;
-        List<Immediate> sizeImmediates = newMultiArrayExpr.getSizes();
+        List<Value> sizeImmediates = newMultiArrayExpr.getSizes();
         Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
         for (MethodOrMethodContext methodContext : methodContexts) {
             Context context = methodContext.context();
@@ -570,8 +570,8 @@ public class InformationFlowAnalysis {
                 continue;
             }
             HashSet<InfoValue> values = new HashSet<InfoValue>();
-            for (Immediate sizeImmediate : sizeImmediates) {
-                ImmutableSet<InfoValue> sizeValues = evaluate(context, sizeImmediate, state.locals);
+            for (Value sizeImmediate : sizeImmediates) {
+                ImmutableSet<InfoValue> sizeValues = evaluate(context, (Immediate) sizeImmediate, state.locals);
                 values.addAll(sizeValues);
             }
             if (!(values.isEmpty())) {
@@ -1373,9 +1373,9 @@ class AllocNodeFieldsReadAnalysis {
             @Override
             public void caseNewMultiArrayExpr(NewMultiArrayExpr newMultiArrayExpr) {
                 Set<AllocNodeField> allocNodeFields = new HashSet<AllocNodeField>();
-                List<Immediate> sizes = newMultiArrayExpr.getSizes();
-                for (Immediate size : sizes) {
-                    Set<AllocNodeField> afs = getAllocNodeFieldsRead(size, methodContext);
+                List<Value> sizes = newMultiArrayExpr.getSizes();
+                for (Value size : sizes) {
+                    Set<AllocNodeField> afs = getAllocNodeFieldsRead((Immediate)size, methodContext);
                     if (afs != null) {
                         allocNodeFields.addAll(afs);
                     }
