@@ -349,7 +349,7 @@ public class ObjectSensitivityCloner {
                     SootMethod target = ((StaticInvokeExpr)stmt.getInvokeExpr()).getMethod();
                     if (!PTABridge.v().isReachableMethod(target))
                         continue;
-                    
+
                     //if it is a call in a user method
                     //or if it is a call to a java.util or java.lang method anywhere
                     //then clone
@@ -367,51 +367,55 @@ public class ObjectSensitivityCloner {
         }
 
         int clonesAdded = 0;
-        for (SootMethod method : map.keySet()) {
+        for (SootMethod method : map.keySet()) {            
             if (map.get(method).size() <= 1) 
                 continue;
 
-            //otherwise clone all instances but one of the method, changing static invokes
-            int i = 0;
-            for (StaticInvokeExpr si : map.get(method)) {
-                i++;
+            try {
+                //otherwise clone all instances but one of the method, changing static invokes
+                int i = 0;
+                for (StaticInvokeExpr si : map.get(method)) {
+                    i++;
 
-                //skip first
-                if (i == 1)
-                    continue;
-                
-                //clone and install method
-                //create new method
-                String cloneName = method.getName() + CloneInheritedMethods.CLONED_METHOD_SUFFIX + i;
-                
-                SootMethod newMeth = new SootMethod(cloneName, method.getParameterTypes(),
-                    method.getReturnType(), method.getModifiers(), method.getExceptions());
+                    //skip first
+                    if (i == 1)
+                        continue;
 
-                //System.out.printf("\tAdding method %s.\n", method);
-                //register method
-                method.getDeclaringClass().addMethod(newMeth);
-                newMeth.setDeclaringClass(method.getDeclaringClass());
-                
-                //copy over any api classifications
-                API.v().cloneMethodClassifications(method, newMeth);
+                    //clone and install method
+                    //create new method
+                    String cloneName = method.getName() + CloneInheritedMethods.CLONED_METHOD_SUFFIX + i;
 
-                //clone body
-                Body newBody = (Body)method.retrieveActiveBody().clone();
-                newMeth.setActiveBody(newBody);
+                    SootMethod newMeth = new SootMethod(cloneName, method.getParameterTypes(),
+                        method.getReturnType(), method.getModifiers(), method.getExceptions());
 
-                JSAStrings.v().updateJSAResults(method.retrieveActiveBody(), newBody);
-                
-                //update static invoke
-                si.setMethodRef(newMeth.makeRef());
-                
-                logger.info("Cloning static method {} in {}", newMeth, si);
-                clonesAdded++;
+                    //System.out.printf("\tAdding method %s.\n", method);
+                    //register method
+                    method.getDeclaringClass().addMethod(newMeth);
+                    newMeth.setDeclaringClass(method.getDeclaringClass());
+
+                    //copy over any api classifications
+                    API.v().cloneMethodClassifications(method, newMeth);
+
+                    //clone body
+                    Body newBody = (Body)method.retrieveActiveBody().clone();
+                    newMeth.setActiveBody(newBody);
+
+                    JSAStrings.v().updateJSAResults(method.retrieveActiveBody(), newBody);
+
+                    //update static invoke
+                    si.setMethodRef(newMeth.makeRef());
+
+                    logger.info("Cloning static method {} in {}", newMeth, si);
+                    clonesAdded++;
+                }
+            } catch (Exception e) {
+                logger.debug("Error during cloning static method: {}", method, e);
             }
         }
-        
+
         System.out.println("Cloned static methods added: " + clonesAdded);
     }
-    
+
     /**
      * Add the effects of cloning to the remember clone context for each original method
      * @param cloneToOrg
