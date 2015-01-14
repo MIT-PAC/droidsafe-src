@@ -326,9 +326,16 @@ public class ErrorHandlingAnalysis {
     }
 
     private String formatMethod(SootMethod method) {
-        String bcs = method.getBytecodeSignature(); 
-        //remove < >
-        return bcs.substring(1, bcs.length() - 1);
+        String bcs = method.getBytecodeSignature();
+        bcs =  bcs.substring(1, bcs.length() - 1);
+        String classSig = bcs.substring(0, bcs.indexOf(": "));
+        classSig = classSig.replace('.', '/');
+        
+        String methodSig = bcs.substring(bcs.indexOf(": ") + 2);
+        
+        
+        
+        return classSig + "." + methodSig;
     }
     
     /**
