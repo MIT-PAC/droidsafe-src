@@ -162,7 +162,11 @@ public class CHACallGraph {
         //only include method in same top level package, with same number of args
         String packageName = containingM.getDeclaringClass().getPackageName();
         int secondDot = packageName.indexOf('.', packageName.indexOf('.') + 1);
-        String topLevelPackage =  packageName.substring(0, secondDot);       
+        String topLevelPackage = "";
+        
+        if (secondDot >= 0) {
+             topLevelPackage =  packageName.substring(0, secondDot);
+        }
         
         logger.info("Found reflected invoke in {} with {} args and top level package {}", containingM, numArgs, topLevelPackage);
         
