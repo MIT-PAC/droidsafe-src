@@ -395,6 +395,7 @@ public class ErrorHandlingAnalysis {
                 } else {
                     //not a reflected edge
                     if (se.getV1().isConcrete()) {
+                        logger.debug("recursing through edge: {}", se);
                         int recurseReturn = findAndTestAllHandlers(se.getV1().getActiveBody(), exception, se.getStmt(), 
                             visiting, visited, depth + 1, debug);
 
@@ -444,7 +445,12 @@ public class ErrorHandlingAnalysis {
                                         Set<StmtAndException> visiting,
                                         Map<StmtAndException, Integer> visited, int depth, boolean debug) {
 
-        logger.debug("processThrownExceptions: depth {} method {}", depth, body.getMethod());  
+        logger.debug("processThrownExceptions: depth {} method {}", depth, body.getMethod()); 
+        
+        if (API.v().isSystemMethod(body.getMethod())) {
+            logger.debug("Not traversing into system call.");
+            return 1;
+        }
 
         if (depth > DEPTH_LIMIT) {
             logger.debug("Reached recursion depth.");
