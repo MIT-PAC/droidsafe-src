@@ -303,7 +303,14 @@ public class Main {
 
         driverMsg("Cloning static methods to introduce call site context...");
         monitor.subTask("Cloning static methods to introduce callsite context...");
-        ObjectSensitivityCloner.cloneStaticMethods();
+        try {
+        	ObjectSensitivityCloner.cloneStaticMethods();
+        }
+        catch (Exception ex) {
+        	logger.warn("Excpetion while cloning static methods {} ", ex);
+        	logger.warn("Stack Trace {} ", ex.getStackTrace());
+            System.exit(-1);
+        }
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -311,7 +318,14 @@ public class Main {
 
         //run value analysis, if it runs, then the code may have veen transformed
         if (Config.v().runValueAnalysis) {
-            runVA(monitor);
+        	driverMsg("Running Value Analysis");
+        	try {
+        		runVA(monitor);
+        	}
+        	catch (Exception ex) {
+        		logger.warn("VA throws exection {}, stack {} ", ex, ex.getStackTrace());
+        		System.exit(-1);
+        	}
         }
 
         {
