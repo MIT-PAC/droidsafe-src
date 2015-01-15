@@ -76,18 +76,18 @@ public class APICallSpecialization extends BodyTransformer {
 					for (AnnotationTag at : vat.getAnnotations()) {
 						if (at.getType().equals("Ldroidsafe/annotations/DSSpecialize;")) {
 							logger.info("Found api specialized method: {}\n", method);
-							if (!method.hasActiveBody() || at.getNumElems() != 1 ||
-									!(at.getElemAt(0) instanceof AnnotationArrayElem)) {
+							if (!method.hasActiveBody() || at.getElems().size() != 1 ||
+									!(at.getElems().iterator().next() instanceof AnnotationArrayElem)) {
 									logger.error("Modeled api method has no active body or other problem: {}", method);
 									droidsafe.main.Main.exit(1);
 							}
-							AnnotationArrayElem templateArray = (AnnotationArrayElem)at.getElemAt(0);
+							AnnotationArrayElem templateArray = (AnnotationArrayElem)at.getElems().iterator().next();
 							for (int i = 0; i < templateArray.getNumValues(); i++) {
 								AnnotationTag template = ((AnnotationAnnotationElem)templateArray.getValueAt(i)).getValue();
-								
-								int arg = ((AnnotationIntElem)template.getElemAt(0)).getValue();
-								String value = ((AnnotationStringElem)template.getElemAt(1)).getValue();
-								String meth = ((AnnotationStringElem)template.getElemAt(2)).getValue();
+								Object[] elems = template.getElems().toArray();
+								int arg = ((AnnotationIntElem)elems[0]).getValue();
+								String value = ((AnnotationStringElem)elems[1]).getValue();
+								String meth = ((AnnotationStringElem)elems[2]).getValue();
 								
 								
 								SootMethod specializedMeth = method.getDeclaringClass().getMethodByName(meth);
