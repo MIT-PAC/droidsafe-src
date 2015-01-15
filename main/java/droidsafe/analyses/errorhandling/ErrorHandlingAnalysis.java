@@ -70,7 +70,7 @@ public class ErrorHandlingAnalysis {
     private Set<Stmt> connectionCallsErrorsUnknown = new LinkedHashSet<Stmt>();
     private PrintStream out;
     private SootClass throwableClass;
-    private int DEPTH_LIMIT = 50;
+    private int DEPTH_LIMIT = 70;
 
     private ErrorHandlingAnalysis() {
         throwableClass = Scene.v().getSootClass("java.lang.Throwable");
@@ -255,19 +255,21 @@ public class ErrorHandlingAnalysis {
 
                                     //for each trap, check if the exception is one we are interested in
                                     for (SootClass ex : connectionMethodToException.get(connectionMethods.getMethod(target))) {
-                                        int retValue = findAndTestAllHandlers(body, ex, stmt, new HashMap<StmtAndException, Integer>(), 
-                                            0, debug);
+                                        int retValue = 
+                                                findAndTestAllHandlers(body, ex, stmt, new HashSet<StmtAndException>(),
+                                                    new HashMap<StmtAndException, Integer>(), 
+                                                    0, debug);
 
                                         switch (retValue) {
                                             case -1:
-                                                logger.debug("Connection call found, but has reachable UI call in handler: %s\n", stmt);
+                                                logger.debug("Connection call found, but has reachable UI call in handler: {}\n", stmt);
                                                 //remember we could not complete the search, and thus is never a candidate
                                                 connectionCallsErrorsNotIgnored.add(stmt);
                                                 //remove from candidates if a different error was ignored previously
                                                 connectionCallsErrorsIgnored.remove(stmt);
                                                 break;
                                             case 0:
-                                                logger.debug("Connection call found, but has reachable UI call in handler: %s\n", stmt);
+                                                logger.debug("Connection call found, but cannot classify: {}\n", stmt);
                                                 //remember we could not complete the search, and thus is never a candidate
                                                 connectionCallsErrorsUnknown.add(stmt);
                                                 //remove from candidates if a different error was ignored previously
@@ -276,7 +278,7 @@ public class ErrorHandlingAnalysis {
                                             case 1:
                                                 //for now, this is a candidate for removal, since it does not have a ui call 
                                                 // in this handler, and a ui call was not found in a previous handler (see check above)
-                                                logger.debug("** Connection call found with no reachable UI calls in handler: %s\n", stmt);
+                                                logger.debug("** Connection call found with no reachable UI calls in handler: {}\n", stmt);
                                                 connectionCallsErrorsIgnored.add(stmt);        
                                                 break;
                                         }
@@ -296,30 +298,30 @@ public class ErrorHandlingAnalysis {
 
         for (Stmt stmt : connectionCallsErrorsIgnored) {
             InvokeExpr invoke = stmt.getInvokeExpr();
-            
+
             out.printf("%s from %s\n", formatMethod(invoke.getMethod()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
         }
 
         out.println("\nConnect calls with handling unknown (either recursion depth reached or unknown thrown exception type): " +
                 connectionCallsErrorsUnknown.size());
-        
+
         for (Stmt stmt : connectionCallsErrorsUnknown) {
             InvokeExpr invoke = stmt.getInvokeExpr();
-            
+
             out.printf("%s from %s\n", formatMethod(invoke.getMethod()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
         }
 
-        
+
         out.println("\nConnect calls handled (trigger possible ui call): " +
                 connectionCallsErrorsNotIgnored.size());
 
         for (Stmt stmt : connectionCallsErrorsNotIgnored) {
             InvokeExpr invoke = stmt.getInvokeExpr();
-            
+
             out.printf("%s from %s\n", formatMethod(invoke.getMethod()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
         }
 
-        
+
         if (Config.v().debug)
             writeAllAppClasses();
         out.close();
@@ -330,33 +332,44 @@ public class ErrorHandlingAnalysis {
         bcs =  bcs.substring(1, bcs.length() - 1);
         String classSig = bcs.substring(0, bcs.indexOf(": "));
         classSig = classSig.replace('.', '/');
-        
+
         String methodSig = bcs.substring(bcs.indexOf(": ") + 2);
-        
-        
-        
+
+
+
         return classSig + "." + methodSig;
     }
-    
+
     /**
      * return 1 if we did not find any ui calls in handlers
      * return 0 if we reached recursion depth or some other unknown issue and we cannot find all handlers
      * return -1 if we found a ui handler
      */
-    private int findAndTestAllHandlers(Body body, SootClass exception, Stmt stmt,
+    private int findAndTestAllHandlers(Body body, SootClass exception, Stmt stmt, Set<StmtAndException> visiting,
                                        Map<StmtAndException, Integer> visited, int depth, boolean debug) {        
-        if (debug)
-            logger.debug("Looking for handler (depth {}) in method {}", depth, body.getMethod());
+
+        logger.debug("findAndTestAllHandlers: depth {} method {} stmt {} exception {}", depth, body.getMethod(), stmt, exception);          
+
+        StmtAndException probe = new StmtAndException(stmt, exception);
+
+        if (visited.containsKey(probe))
+            return visited.get(probe).intValue();
+
+        //currently visiting this stmt and exception higher in recursion depth, so just 
+        //return that we have not found anything on this path
+        if (visiting.contains(probe)) {
+            return 1;
+        }
+
+        visiting.add(probe);
 
         //check for already visited statements, limit recursion
         if (depth > DEPTH_LIMIT) {
             logger.debug("Reached depth limit in findAllHandlers");
+            visited.put(probe, 0);
+            visiting.remove(probe);
             return 0;
         }
-
-        StmtAndException probe = new StmtAndException(stmt, exception);
-        if (visited.containsKey(probe))
-            return visited.get(probe).intValue();       
 
         Map<Unit, List<Trap>> unitToTraps = getUnitToTrapMap(body);
         Trap firstTrap = null;
@@ -375,13 +388,21 @@ public class ErrorHandlingAnalysis {
             //need to search up the stack...
             //find all calling statements
             for (StmtEdge<SootMethod> se : CHACallGraph.v(false).getSourcesForMethod(body.getMethod())) {
-                if (se.getV1().isConcrete()) {
-                    int recurseReturn = findAndTestAllHandlers(se.getV1().getActiveBody(), exception, se.getStmt(), 
-                        visited, depth + 1, debug);
+                if (CHACallGraph.v(false).isReflectedEdge(se)) {
+                    //pred is the result of a reflected call
+                    //TODO: HACK!
+                    // for now assume that exceptions through reflected calls are not handled, so ignore them                    
+                } else {
+                    //not a reflected edge
+                    if (se.getV1().isConcrete()) {
+                        int recurseReturn = findAndTestAllHandlers(se.getV1().getActiveBody(), exception, se.getStmt(), 
+                            visiting, visited, depth + 1, debug);
 
-                    if (recurseReturn < 1) {
-                        visited.put(probe, recurseReturn);
-                        return recurseReturn;
+                        if (recurseReturn < 1) {
+                            visited.put(probe, recurseReturn);
+                            visiting.remove(probe);
+                            return recurseReturn;
+                        }
                     }
                 }
             }
@@ -393,16 +414,19 @@ public class ErrorHandlingAnalysis {
 
             if (retValue < 1) {               
                 visited.put(probe, retValue);
+                visiting.remove(probe);
                 return retValue;
             }
 
             //check to see if there are any possible thrown exceptions, track each throw the stack
-            retValue =  processThrownExceptions(body, exception, trapUnits, visited, depth, debug);
+            retValue =  processThrownExceptions(body, exception, trapUnits, visiting, visited, depth, debug);
             visited.put(probe, retValue);
+            visiting.remove(probe);
             return retValue;
         }
 
         visited.put(probe, 1);
+        visiting.remove(probe);
         return 1;
     }
 
@@ -416,8 +440,12 @@ public class ErrorHandlingAnalysis {
      * 
      * Return false if we have exceeded the recursion depth limit during our search
      */
-    private int processThrownExceptions(Body body, SootClass exceptionClass, Collection<Unit> trapUnits,                                             
+    private int processThrownExceptions(Body body, SootClass exceptionClass, Collection<Unit> trapUnits, 
+                                        Set<StmtAndException> visiting,
                                         Map<StmtAndException, Integer> visited, int depth, boolean debug) {
+
+        logger.debug("processThrownExceptions: depth {} method {}", depth, body.getMethod());  
+
         if (depth > DEPTH_LIMIT) {
             logger.debug("Reached recursion depth.");
             return 0;
@@ -432,7 +460,7 @@ public class ErrorHandlingAnalysis {
                     for (SootMethod target : CHACallGraph.v(false).getTargetsForStmt(current)) {
                         Body targetBody = target.retrieveActiveBody();
                         int recurseVal = processThrownExceptions(targetBody, null, targetBody.getUnits(), 
-                            visited, depth+1, debug);
+                            visiting, visited, depth+1, debug);
 
                         if (recurseVal < 1)
                             return recurseVal;
@@ -443,6 +471,8 @@ public class ErrorHandlingAnalysis {
             } else if (current instanceof ThrowStmt) {
                 ThrowStmt throwStmt = (ThrowStmt) current;
 
+                logger.debug("Found throw: {} in {}", throwStmt, body.getMethod());
+
                 //search backwards for last def of op of throw
                 Stmt lastDefOfThrownOp = SootUtils.getPrevDef(body, throwStmt, throwStmt.getOp());
                 logger.debug("lastDefOfThrownOp: {}", lastDefOfThrownOp);
@@ -450,6 +480,7 @@ public class ErrorHandlingAnalysis {
 
                 if (lastDefOfThrownOp == null) {
                     //something we don't handle
+                    logger.debug("Unknown last def of thrown exception: {}", lastDefOfThrownOp);
                     return 0;
                 } else if (lastDefOfThrownOp instanceof IdentityStmt &&
                         ((IdentityStmt)lastDefOfThrownOp).getRightOp() instanceof CaughtExceptionRef) {
@@ -473,7 +504,11 @@ public class ErrorHandlingAnalysis {
                     return 0;
                 }
 
-                int recurseVal = findAndTestAllHandlers(body, reThrownType, throwStmt, visited, depth + 1, debug);
+                if (!Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(reThrownType, throwableClass)) {
+                    logger.debug("Class of rethrown exception is not an exception type: {}", reThrownType);
+                }
+
+                int recurseVal = findAndTestAllHandlers(body, reThrownType, throwStmt, visiting, visited, depth + 1, debug);
 
                 if (recurseVal < 1)
                     return recurseVal;
@@ -489,6 +524,9 @@ public class ErrorHandlingAnalysis {
      * Return false if ui method is reachable
      */
     private int handlerHasReachableUI(SootMethod containingM, List<Unit> handlerUnits, boolean debug) {
+
+        logger.debug("handlerHasReachableUI: method {}", containingM);
+
         //check handler units directly for calls to ui
         //build list of directly reachable app methods from handler
         List<SootMethod> directlyCalledAppMethods = new LinkedList<SootMethod>();
@@ -509,7 +547,7 @@ public class ErrorHandlingAnalysis {
 
                     //is this a uiMethod?
                     if (uiMethods.containsPoly(target)) {
-                        logger.debug("Found ui method call in handler %s: %s\n",  containingM, hStmt);
+                        logger.debug("Found ui method call in handler {}: {}\n",  containingM, hStmt);
                         return -1;
                     }
 
@@ -538,7 +576,7 @@ public class ErrorHandlingAnalysis {
                 visited.add(current);          
 
                 if (uiMethods.containsPoly(current)) {
-                    logger.debug("Found reachable app method that implements ui method: %s\n", current);
+                    logger.debug("Found reachable app method that implements ui method: {}\n", current);
                     return -1;
                 }
 
@@ -547,7 +585,7 @@ public class ErrorHandlingAnalysis {
                         logger.debug("EHADEBUG Reachable API method: {}", apiCall);
 
                     if (uiMethods.containsPoly(apiCall)) {
-                        logger.debug("Found call to ui method in reachable app method %s: %s\n",  current, apiCall);
+                        logger.debug("Found call to ui method in reachable app method {}: {}\n",  current, apiCall);
                         return -1;
                     }
                 }

@@ -1,6 +1,7 @@
 package droidsafe.analyses.cg.cha;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -56,6 +57,8 @@ public class CHACallGraph {
     private DirectedMultigraph<SootMethod, StmtEdge> callgraph;
 
     private Map<Stmt, Set<StmtEdge<SootMethod>>> stmtToEdges;
+    
+    private Set<StmtEdge<SootMethod>> reflectedEdges;
 
     private boolean includeAPI;
     
@@ -64,6 +67,7 @@ public class CHACallGraph {
     private CHACallGraph(boolean includeAPI) {
         callgraph = new DirectedMultigraph<SootMethod, StmtEdge>(StmtEdge.class);
         stmtToEdges = new LinkedHashMap<Stmt, Set<StmtEdge<SootMethod>>>();
+        reflectedEdges = new HashSet<StmtEdge<SootMethod>>();
         this.includeAPI = includeAPI;
         methodInvoke = Scene.v().getMethod("<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>");
         createCG();
@@ -113,22 +117,17 @@ public class CHACallGraph {
                         if (stmt.containsInvokeExpr()) {
                             InvokeExpr invoke = stmt.getInvokeExpr();
                             Set<SootMethod> targets = SootUtils.getTargetsCHA(invoke);
+                                                     
+                            for (SootMethod target : targets) {
+                               addEdge(method, target, stmt);
+                            }
                             
                             if (INCLUDE_REFLECTION) {
-                                targets.addAll(getReflectedInvokeTargets(method, body, stmt));
-                            }
-
-                            for (SootMethod target : targets) {
-                                callgraph.addVertex(target);
-                                StmtEdge<SootMethod> newEdge = new StmtEdge<SootMethod>(method, target, stmt, false);
-
-                                callgraph.addEdge(method, target, newEdge);
-
-                                if (!stmtToEdges.containsKey(stmt)) {
-                                    stmtToEdges.put(stmt, new LinkedHashSet<StmtEdge<SootMethod>>());
-                                }
-
-                                stmtToEdges.get(stmt).add(newEdge);
+                                targets = getReflectedInvokeTargets(method, body, stmt);
+                                for (SootMethod target : targets) {
+                                    StmtEdge<SootMethod> newEdge = addEdge(method, target, stmt);
+                                    reflectedEdges.add(newEdge);
+                                 }
                             }
                         }
                     }                   
@@ -137,6 +136,21 @@ public class CHACallGraph {
                 }
             }
         }
+    }
+    
+    private StmtEdge<SootMethod> addEdge(SootMethod source, SootMethod target, Stmt stmt) {
+        callgraph.addVertex(target);
+        StmtEdge<SootMethod> newEdge = new StmtEdge<SootMethod>(source, target, stmt, false);
+
+        callgraph.addEdge(source, target, newEdge);
+
+        if (!stmtToEdges.containsKey(stmt)) {
+            stmtToEdges.put(stmt, new LinkedHashSet<StmtEdge<SootMethod>>());
+        }
+
+        stmtToEdges.get(stmt).add(newEdge);
+        
+        return newEdge;
     }
 
     private Set<SootMethod> getReflectedInvokeTargets(SootMethod containingM, Body body, Stmt stmt) {
@@ -239,5 +253,12 @@ public class CHACallGraph {
         }
         
         return apiTargets;
+    }
+    
+    /**
+     * Return true if the edge was added as a result of a reflected call.
+     */
+    public boolean isReflectedEdge(StmtEdge<SootMethod> e) {
+        return reflectedEdges.contains(e);
     }
 }
