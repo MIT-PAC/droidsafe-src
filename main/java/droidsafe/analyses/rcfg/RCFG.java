@@ -393,7 +393,14 @@ public class RCFG  {
             return "";
 
         StringBuilder strBuilder = new StringBuilder();
-        StmtBody stmtBody = (StmtBody)src.retrieveActiveBody();
+        StmtBody stmtBody = null;
+        try {
+        	stmtBody = (StmtBody)src.retrieveActiveBody();
+        }
+        catch (Exception ex) {
+        	logger.info("Exception retrieving method body {}", ex);
+        	return "";
+        }
 
         // get body's unit as a chain
         Chain<Unit> units = stmtBody.getUnits();

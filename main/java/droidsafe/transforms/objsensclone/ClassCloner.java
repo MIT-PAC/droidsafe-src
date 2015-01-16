@@ -162,7 +162,15 @@ public class ClassCloner {
         RefType originalType = RefType.v(original);
         RefType cloneType = RefType.v(clone);
         for (SootMethod method : clone.getMethods()) {        
-            StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+            StmtBody stmtBody = null;
+            try {
+            	stmtBody = (StmtBody)method.retrieveActiveBody();
+            }
+            catch (Exception ex) {
+            	logger.info("Exception retrieving method body {}", ex);
+            	continue;
+            }
+
             for (ValueBox vb : stmtBody.getUseAndDefBoxes()) {
                 if (vb.getValue() instanceof NewExpr &&
                         ((NewExpr)vb.getValue()).getBaseType().equals(originalType)) {

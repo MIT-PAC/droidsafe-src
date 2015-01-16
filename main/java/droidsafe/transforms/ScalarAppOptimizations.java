@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.android.app.Project;
+import soot.Body;
 import soot.G;
 import soot.Scene;
 import soot.SootClass;
@@ -21,12 +22,21 @@ public class ScalarAppOptimizations {
 					if (!meth.isConcrete())
 						continue;
 					logger.debug("Calling Constant Prop and folding on {}", meth);
+					Body body = null;
+					try {
+						body = meth.retrieveActiveBody();
+					}
+					catch (Exception ex) {
+						logger.info("Exception retrieving method body {}", ex);
+						continue;
+					}
+
 					G.v().soot_jimple_toolkits_scalar_ConstantPropagatorAndFolder().
-						transform(meth.retrieveActiveBody());
+						transform(body);
 					
 					logger.debug("Calling CSE on {}", meth);
 					G.v().soot_jimple_toolkits_scalar_CommonSubexpressionEliminator().
-						transform(meth.retrieveActiveBody());
+						transform(body);
 				}
 			}
 		}

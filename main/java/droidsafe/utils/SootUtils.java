@@ -853,7 +853,15 @@ public class SootUtils {
      */
     public static SourceLocationTag getMethodLocation(SootMethod method) {
         if (method != null && method.isConcrete()) {
-            Chain<Unit> stmts = ((StmtBody)method.retrieveActiveBody()).getUnits();
+
+            Chain<Unit> stmts = null;
+            try {
+            stmts = ((StmtBody)method.retrieveActiveBody()).getUnits();
+            } catch (Exception ex) {
+            	logger.info("Exception retrieving method body {}", ex);
+            	return null;
+            }
+
             Iterator<Unit> stmtIt = stmts.snapshotIterator();
 
             while (stmtIt.hasNext()) {
@@ -869,7 +877,15 @@ public class SootUtils {
     public static int getMethodEndLine(SootMethod method) {
         int endLine = 0;
         if (method != null && method.isConcrete()) {
-            Chain<Unit> units = ((StmtBody)method.retrieveActiveBody()).getUnits();
+            Chain<Unit> units = null;
+            try {
+            	units = ((StmtBody)method.retrieveActiveBody()).getUnits();
+            }
+            catch (Exception ex) {
+            	logger.info("Exception retrieving method body {}", ex);
+            	return -1;
+            }
+
             for (Unit unit: units) {
                 LineNumberTag lineNumberTag = (LineNumberTag) unit.getTag("LineNumberTag");
                 if (lineNumberTag != null) {
@@ -890,7 +906,15 @@ public class SootUtils {
             if (range == null) {
                 int min = 0;
                 int max = 0;
-                Chain<Unit> units = ((StmtBody)method.retrieveActiveBody()).getUnits();
+                Chain<Unit> units = null;
+                try {
+                	units = ((StmtBody)method.retrieveActiveBody()).getUnits();
+                }
+                catch (Exception ex) {
+                	logger.info("Exception retrieving method body {}", ex);
+                	return null;
+                }
+
                 for (Unit unit: units) {
                     if (!(unit instanceof JIdentityStmt)) {
                         LineNumberTag lineNumberTag = (LineNumberTag) unit.getTag("LineNumberTag");

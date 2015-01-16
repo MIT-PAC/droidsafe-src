@@ -157,7 +157,14 @@ public class JSAUtils {
             while (mi.hasNext()) {
                 SootMethod sm = (SootMethod) mi.next();
                 if (sm.isConcrete()) {
-                    Body body = sm.retrieveActiveBody();
+                    Body body = null;
+                    try {
+                    	body = sm.retrieveActiveBody();
+                    }
+                    catch (Exception ex) {
+                    	logger.info("Exception retrieving method body {}", ex);
+                    	continue;
+                    }
                     for (Unit unit : body.getUnits()) {
                         Stmt stmt = (Stmt) unit;
                         if (stmt.containsInvokeExpr()) {

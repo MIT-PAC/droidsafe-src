@@ -92,7 +92,15 @@ public class RemoveStupidOverrides {
             return;
          */
 
-        StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+        StmtBody stmtBody = null;
+        try {
+        	stmtBody = (StmtBody)method.retrieveActiveBody();
+        }
+        catch (Exception ex) {
+        	logger.info("Exception retrieving method body {}", ex);
+        	return;
+        }
+
 
         // get body's unit as a chain
         Unit[] units = stmtBody.getUnits().toArray(new Unit[0]);

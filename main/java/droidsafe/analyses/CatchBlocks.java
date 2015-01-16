@@ -185,7 +185,14 @@ public class CatchBlocks {
      */
     private void proc_method (SootMethod meth) {
     	
-    	JimpleBody body = (JimpleBody) meth.retrieveActiveBody();
+    	JimpleBody body = null;
+    	try {
+    		body = (JimpleBody) meth.retrieveActiveBody();
+    	}
+    	catch (Exception ex) {
+    		logger.info("Exception retrieving method body {}", ex);
+    		return;
+    	}
     	Chain <Unit> insts = body.getUnits();
         // NormalUnitPrinter nup = new NormalUnitPrinter(b);
 

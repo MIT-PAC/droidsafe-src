@@ -54,7 +54,13 @@ public class ClassGetNameToClassString extends BodyTransformer {
         for (SootClass clz : Scene.v().getClasses()) {
             for (SootMethod meth : clz.getMethods()) {
                 if (meth.isConcrete())
-                    transformer.transform(meth.retrieveActiveBody());
+                	try {
+                		transformer.transform(meth.retrieveActiveBody());
+                	}
+                	catch (Exception ex) {
+                		logger.info("Exception retrieving method body {}", ex);
+                		continue;
+                	}
             }
         }
     }

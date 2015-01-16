@@ -74,7 +74,15 @@ public class JimpleRelationships {
             for (SootMethod method : clz.getMethods()) {
                 if (!method.isConcrete()) 
                     continue;
-                StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+
+                StmtBody stmtBody = null;
+                try {
+                	stmtBody = (StmtBody)method.retrieveActiveBody();
+                }
+                catch (Exception ex) {
+                	logger.info("Exception retrieving method body {}", ex);
+                	continue;
+                }
                 
              // get body's unit as a chain
                 Chain units = stmtBody.getUnits();

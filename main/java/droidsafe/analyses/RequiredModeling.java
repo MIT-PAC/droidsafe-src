@@ -141,7 +141,14 @@ public class RequiredModeling {
                     if (!method.isConcrete()) 
                         continue;
 
-                    StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+                    StmtBody stmtBody = null;
+                    try {
+                    	stmtBody = (StmtBody)method.retrieveActiveBody();
+                    }
+                    catch (Exception ex) {
+                    	logger.info("Exception retrieving method body {}", ex);
+                    	continue;
+                    }
 
                     // get body's unit as a chain
                     Chain units = stmtBody.getUnits();
@@ -313,7 +320,14 @@ public class RequiredModeling {
 
                 if (!method.isConcrete()) 
                     continue;
-                StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+                StmtBody stmtBody = null;
+                try {
+                	stmtBody = (StmtBody)method.retrieveActiveBody();
+                }
+                catch (Exception ex) {
+                	logger.info("Exception retrieving method body {}", ex);
+                	continue;
+                }
 
                 // get body's unit as a chain
                 Chain units = stmtBody.getUnits();
@@ -350,7 +364,13 @@ public class RequiredModeling {
 
             for (SootMethod meth : clazz.getMethods()) {
                 if (meth.isConcrete() && PTABridge.v().isReachableMethod(meth)) {
-                    checkInvokes(meth, meth.retrieveActiveBody(), fw);
+                	try {
+                		checkInvokes(meth, meth.retrieveActiveBody(), fw);
+                	}
+                	catch (Exception ex) {
+                		logger.info("Exception retrieving method body {}", ex);
+                		continue;
+                	}
                 }
             }
         }

@@ -97,12 +97,21 @@ public class HoistAllocations extends BodyTransformer {
                 for (SootMethod meth : clz.getMethods()) {
                     if (meth.isConcrete()) {
                         List<Unit> orig_chain = null;
+
+                        Body b = null;
+                        try {
+                        	b = meth.retrieveActiveBody();
+                        }
+                        catch (Exception ex) {
+                        	logger.info("Exception retrieving method body {}", ex);
+                        	continue;
+                        }
+
                         if (logger.isInfoEnabled()) {
-                          Body b = meth.retrieveActiveBody();
                           orig_chain = new ArrayList<Unit>();
                           orig_chain.addAll (b.getUnits());
                         }
-                        transformer.transform(meth.retrieveActiveBody());
+                        transformer.transform(b);
                         log_diffs (logger, orig_chain, meth);
                     }
                 }

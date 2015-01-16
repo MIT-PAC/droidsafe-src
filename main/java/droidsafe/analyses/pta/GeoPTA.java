@@ -676,7 +676,13 @@ public class GeoPTA extends PTABridge {
             if (!sm.isConcrete())
                 continue;
             if (!sm.hasActiveBody()) {
-                sm.retrieveActiveBody();
+            	try {
+            		sm.retrieveActiveBody();
+            	}
+            	catch (Exception ex) {
+            		logger.info("Exception retrieving method body {}", ex);
+            		continue;
+            	}
             }
             if ( !ptsProvider.isValidMethod(sm) )
                 continue;

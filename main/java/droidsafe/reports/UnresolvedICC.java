@@ -161,7 +161,14 @@ public class UnresolvedICC {
                 if (!method.isConcrete())
                     continue;
                 if (!method.hasActiveBody()) {
-                    method.retrieveActiveBody();
+                	try {
+                		method.retrieveActiveBody();
+                	}
+                	catch (Exception ex) {
+                		logger.info("Exception retrieving method body {}", ex);
+                		continue;
+                	}
+
                 }
 
                 // find all calls to sendMessage / send

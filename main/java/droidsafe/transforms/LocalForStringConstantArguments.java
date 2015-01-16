@@ -3,6 +3,9 @@ package droidsafe.transforms;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import droidsafe.android.app.Project;
 
 import soot.Body;
@@ -33,6 +36,7 @@ import soot.util.Chain;
  */
 public class LocalForStringConstantArguments extends BodyTransformer {
 	
+	private final static Logger logger = LoggerFactory.getLogger(LocalForStringConstantArguments.class);
 	private static int LOCALID = 0;
 	public static final String LOCAL_PREFIX = "_$DS_STRING_ARG";
 
@@ -44,8 +48,17 @@ public class LocalForStringConstantArguments extends BodyTransformer {
 		for (SootClass clz : Scene.v().getClasses()) {
 			if (Project.v().isSrcClass(clz.toString())) {
 				for (SootMethod meth : clz.getMethods()) {
-					if (meth.isConcrete())
-						transformer.transform(meth.retrieveActiveBody());
+					if (meth.isConcrete()) {
+						try {
+							transformer.transform(meth.retrieveActiveBody());
+						}
+						catch (Exception ex) {
+							logger.info("Exception retrieving method body {}", ex);
+							continue;
+						}
+
+					}
+					
 				}
 			}
 		}

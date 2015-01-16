@@ -38,7 +38,13 @@ public class CheckInvokeSpecials {
                 if (method.isAbstract() || !method.isConcrete())
                     continue;
                 
-                method.retrieveActiveBody();
+                try {
+                	method.retrieveActiveBody();
+                }
+                catch (Exception ex) {
+                	logger.info("Exception retrieving method body {}", ex);
+                	continue;
+                }
 
                 Body body = method.getActiveBody();
                 StmtBody stmtBody = (StmtBody)body;

@@ -139,8 +139,16 @@ public class ResolveStringConstants extends BodyTransformer {
         for (SootClass clz : Scene.v().getClasses()) {
             if (Project.v().isSrcClass(clz.toString())) {
                 for (SootMethod meth : clz.getMethods()) {
-                    if (meth.isConcrete())
-                        transformer.transform(meth.retrieveActiveBody());
+                    if (meth.isConcrete()) {
+                    	try {
+                    		transformer.transform(meth.retrieveActiveBody());
+                    	}
+                    	catch (Exception ex) {
+                    		logger.info("Exception retrieving method body {}", ex);
+                    		continue;
+                    	}
+
+                    }
                 }
             }
         }

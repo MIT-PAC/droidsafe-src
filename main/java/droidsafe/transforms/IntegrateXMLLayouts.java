@@ -207,11 +207,13 @@ public class IntegrateXMLLayouts extends BodyTransformer {
                     logger.info("Checking method {} ", meth);
                 }
                 if (meth.isConcrete()) {
-                    if (debugOn) {
-                        logger.info("XML transform: {} ", meth);
-                        logger.info("{}", meth.retrieveActiveBody());
-                    }
-                    v.transform(meth.retrieveActiveBody());
+                	try {
+                		v.transform(meth.retrieveActiveBody());
+                	}
+                	catch (Exception ex) {
+                		logger.info("Exception retrieving method body {}", ex);
+                		continue;
+                	}
                 }
             }
         }

@@ -9,10 +9,14 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.transforms.APICallSpecialization;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
@@ -34,6 +38,8 @@ import soot.jimple.toolkits.pta.IAllocNode;
 import soot.util.Chain;
 
 public class FindAPICallsWithNonLocalEffects {
+	private final static Logger logger = LoggerFactory.getLogger(FindAPICallsWithNonLocalEffects.class);
+	
     private FileWriter fw;
     private Map<ReceiverTarget, Set<IAllocNode>> receiverToReturns;
     private Map<ReceiverTarget, Set<IAllocNode>> receiverToArgs;
@@ -60,7 +66,15 @@ public class FindAPICallsWithNonLocalEffects {
             if (method.isAbstract() || method.isPhantom() || !method.isConcrete())
                 continue;
 
-            StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+            StmtBody stmtBody = null;
+            try {
+            	stmtBody = (StmtBody)method.retrieveActiveBody();
+            }
+            catch (Exception ex) {
+            	logger.info("Exception retrieving method body {}", ex);
+            	continue;
+            }
+
             // get body's unit as a chain
             Chain<Unit> units = stmtBody.getUnits();
             // get a snapshot iterator of the unit since we are going to
