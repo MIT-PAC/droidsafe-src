@@ -261,4 +261,18 @@ public class CHACallGraph {
     public boolean isReflectedEdge(StmtEdge<SootMethod> e) {
         return reflectedEdges.contains(e);
     }
+    
+    /**
+     * Return true if all incoming (pred) edges to this method are reflected 
+     * edges.   Good indicator that this is an entry method?
+     */
+    public boolean hasOnlyReflectedPreds(SootMethod m) {
+        for (StmtEdge<SootMethod> e : getSourcesForMethod(m)) {
+            if (!isReflectedEdge(e)) 
+                return false;
+        }
+        
+        //didn't find any non-reflected edges
+        return true;
+    }
 }

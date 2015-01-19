@@ -47,6 +47,7 @@ import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
 import droidsafe.main.Main;
+import droidsafe.transforms.NativeMethodBuilder;
 import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootMethodList;
@@ -70,10 +71,12 @@ public class ErrorHandlingAnalysis {
     private Set<Stmt> connectionCallsErrorsUnknown = new LinkedHashSet<Stmt>();
     private PrintStream out;
     private SootClass throwableClass;
+    private SootClass runnableClass;
     private int DEPTH_LIMIT = 70;
 
     private ErrorHandlingAnalysis() {
         throwableClass = Scene.v().getSootClass("java.lang.Throwable");
+        runnableClass = Scene.v().getSootClass("java.lang.Runnable");
     }
 
     public static ErrorHandlingAnalysis v() {
@@ -387,7 +390,18 @@ public class ErrorHandlingAnalysis {
             //could not find a trap in enclosing method for this exception
             //need to search up the stack...
             //find all calling statements
-            for (StmtEdge<SootMethod> se : CHACallGraph.v(false).getSourcesForMethod(body.getMethod())) {
+            
+            Set<StmtEdge> srcEdges = CHACallGraph.v(false).getSourcesForMethod(body.getMethod());
+            
+            if (srcEdges.isEmpty()) {
+                //no preds, so this exception is not handled and can cause a crash, 
+                //so we label that as handled...
+                visited.put(probe, -1);
+                visiting.remove(probe);
+                return -1;
+            }
+                    
+            for (StmtEdge<SootMethod> se : srcEdges) {
                 if (CHACallGraph.v(false).isReflectedEdge(se)) {
                     //pred is the result of a reflected call
                     //TODO: HACK!
@@ -420,7 +434,7 @@ public class ErrorHandlingAnalysis {
             }
 
             //check to see if there are any possible thrown exceptions, track each throw the stack
-            retValue =  processThrownExceptions(body, exception, trapUnits, visiting, visited, depth, debug);
+            retValue =  processThrownExceptions(body, exception, trapUnits, visiting, visited, new HashSet<Body>(), depth, debug);
             visited.put(probe, retValue);
             visiting.remove(probe);
             return retValue;
@@ -442,11 +456,12 @@ public class ErrorHandlingAnalysis {
      * Return false if we have exceeded the recursion depth limit during our search
      */
     private int processThrownExceptions(Body body, SootClass exceptionClass, Collection<Unit> trapUnits, 
-                                        Set<StmtAndException> visiting,
-                                        Map<StmtAndException, Integer> visited, int depth, boolean debug) {
+                                        Set<StmtAndException> findTestVisiting,
+                                        Map<StmtAndException, Integer> findTestvisited, 
+                                        Set<Body> processThrownVisiting, int depth, boolean debug) {
 
         logger.debug("processThrownExceptions: depth {} method {}", depth, body.getMethod()); 
-        
+
         if (API.v().isSystemMethod(body.getMethod())) {
             logger.debug("Not traversing into system call.");
             return 1;
@@ -457,19 +472,43 @@ public class ErrorHandlingAnalysis {
             return 0;
         }
 
+        //visiting this body in the current process thrown exception search
+        if (processThrownVisiting.contains(body))
+            return 1;
+        
+        processThrownVisiting.add(body);
+        
         for (Unit currentU : trapUnits) {
             Stmt current = (Stmt)currentU;
 
             if (current.containsInvokeExpr()) {
                 try {
+                    //get targets of invoke expr
+                    Set<SootMethod> targets = CHACallGraph.v(false).getTargetsForStmt(current);
+                    //account for runnables passed in the api
+                    targets.addAll(accountForUserRunnables(current));
+                    
                     //check called method for thrown exceptions
-                    for (SootMethod target : CHACallGraph.v(false).getTargetsForStmt(current)) {
-                        Body targetBody = target.retrieveActiveBody();
-                        int recurseVal = processThrownExceptions(targetBody, null, targetBody.getUnits(), 
-                            visiting, visited, depth+1, debug);
+                    for (SootMethod target : targets) {                                                
+                        if (target.isConcrete()) {
+                            Body targetBody = target.retrieveActiveBody();
+                            int recurseVal = processThrownExceptions(targetBody, null, targetBody.getUnits(), 
+                                findTestVisiting, findTestvisited, processThrownVisiting, depth+1, debug);
 
-                        if (recurseVal < 1)
-                            return recurseVal;
+                            if (recurseVal < 1)
+                                return recurseVal;
+                        } else if (target.isNative() || NativeMethodBuilder.v().wasNativeAppMethod(target)) {
+                            //native method invoke
+                            for (SootClass throwsEx : target.getExceptions()) {
+                                //for each exception declared throws by the native method
+                                //see if it is handled
+                                logger.debug("Found call to native method {} that throws exception: {}", current.getInvokeExpr(), throwsEx);
+                                int recurseVal = findAndTestAllHandlers(body, throwsEx, current, findTestVisiting, findTestvisited, depth + 1, debug);
+
+                                if (recurseVal < 1)
+                                    return recurseVal;
+                            }
+                        }
                     } 
                 } catch (Exception e) {
                     //ignore retrieving active body exception
@@ -514,7 +553,7 @@ public class ErrorHandlingAnalysis {
                     logger.debug("Class of rethrown exception is not an exception type: {}", reThrownType);
                 }
 
-                int recurseVal = findAndTestAllHandlers(body, reThrownType, throwStmt, visiting, visited, depth + 1, debug);
+                int recurseVal = findAndTestAllHandlers(body, reThrownType, throwStmt, findTestVisiting, findTestvisited, depth + 1, debug);
 
                 if (recurseVal < 1)
                     return recurseVal;
@@ -546,7 +585,8 @@ public class ErrorHandlingAnalysis {
             Stmt hStmt = (Stmt)handlerU;
             if (hStmt.containsInvokeExpr()) {
                 Set<SootMethod> targets = CHACallGraph.v(false).getTargetsForStmt(hStmt);
-
+                //account for runnables in api methods
+                targets.addAll(accountForUserRunnables(hStmt));
                 logger.debug("Found invoke in catch block: {}", hStmt);
                 for (SootMethod target : targets) {
                     logger.debug("\tTarget: {}", target);
@@ -602,6 +642,35 @@ public class ErrorHandlingAnalysis {
         return 1;
     }
 
+    private Collection<SootMethod> accountForUserRunnables(Stmt stmt) {
+        //determine invoke is to api, and if so, see if any runnables are passed
+        //if so, then add then class's run() method to the return list
+        Set<SootMethod> targets = CHACallGraph.v(false).getTargetsForStmt(stmt);
+        Set<SootMethod> throughAPITargets = new LinkedHashSet<SootMethod>();
+        
+        InvokeExpr ie = stmt.getInvokeExpr();
+        
+        for (SootMethod target : targets) {
+            if (API.v().isSystemMethod(target)) {
+                for (int i = 0; i < target.getParameterCount(); i++) {
+                    if (ie.getArg(i).getType() instanceof RefType) {
+                        SootClass actualClass = ((RefType)ie.getArg(i).getType()).getSootClass();
+                        logger.debug("Found api call {} with param: {}", target, actualClass);
+                        if (SootUtils.getParents(actualClass).contains(runnableClass)) {                            
+                            try {
+                                throughAPITargets.add(actualClass.getMethod("void run()"));
+                            } catch (Exception e) {
+                                logger.debug("Cannot retrieve run method for runnable {} passed in API call {}", actualClass, stmt);
+                            }
+                        }                        
+                    }
+                }
+            }
+        }
+    
+        return throughAPITargets;
+    }
+    
     //assume the list of traps in jimple keeps the static ordering for multiple catch blocks
     static Map<Unit, List<Trap>> getUnitToTrapMap(Body body) {
         HashMap<Unit, List<Trap>> map = new HashMap<Unit, List<Trap>>();
